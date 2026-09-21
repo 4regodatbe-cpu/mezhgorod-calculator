@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
   const q = request.nextUrl.searchParams.get("q")?.trim() ?? "";
   if (q.length < 3) return NextResponse.json({ items: [] });
   const url = new URL("https://photon.komoot.io/api/");
-  url.searchParams.set("q", q); url.searchParams.set("lang", "ru"); url.searchParams.set("limit", "6");
+  url.searchParams.set("q", q); url.searchParams.set("limit", "6");
   try {
     const response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalculator/1.0" }, next: { revalidate: 300 } });
     if (!response.ok) throw new Error(`Photon ${response.status}`);
