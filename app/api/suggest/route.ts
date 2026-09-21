@@ -1,38 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 
-type HereItem = {
-  id?: string;
-  title?: string;
-  address?: { label?: string };
-  position?: { lat?: number; lng?: number };
-};
+type PhotonFeature = { geometry?: { coordinates?: [number, number] }; properties?: Record<string, string | number | undefined> };
+
+function getLabel(feature: PhotonFeature) {
+  const p = feature.properties ?? {};
+  const street = [p.street, p.housenumber].filter(Boolean).join(", ");
+  return [p.name || street, p.city, p.state, p.country].filter(Boolean).join(", ");
+}
 
 export async function GET(request: NextRequest) {
   const q = request.nextUrl.searchParams.get("q")?.trim() ?? "";
   if (q.length < 3) return NextResponse.json({ items: [] });
-  if (!process.env.HERE_API_KEY) return NextResponse.json({ error: "Сервис маршрутов ещё не настроен" }, { status: 503 });
-
-  const url = new URL("https://geocode.search.hereapi.com/v1/geocode");
-  url.searchParams.set("q", q);
-  url.searchParams.set("in", "countryCode:RUS");
-  url.searchParams.set("lang", "ru-RU");
-  url.searchParams.set("limit", "6");
-  url.searchParams.set("apiKey", process.env.HERE_API_KEY);
+  const url = new URL("https://photon.komoot.io/api/");
+  url.searchParams.set("q", q); url.searchParams.set("lang", "ru"); url.searchParams.set("limit", "6");
   try {
-    const response = await fetch(url, { headers: { Accept: "application/json" } });
-    if (!response.ok) throw new Error(`HERE ${response.status}`);
-    const data = (await response.json()) as { items?: HereItem[] };
-    const items = (data.items ?? []).flatMap((item, index) => {
-      const lat = item.position?.lat;
-      const lng = item.position?.lng;
-      if (typeof lat !== "number" || typeof lng !== "number") return [];
-      const title = item.title ?? item.address?.label ?? q;
-      return [{
-        id: item.id ?? `${lat},${lng}-${index}`,
-        title,
-        label: item.address?.label ?? title,
-        position: { lat, lng },
-      }];
+    const response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalculator/1.0" }, next: { revalidate: 300 } });
+    if (!response.ok) throw new Error(`Photon ${response.status}`);
+    const data = (await response.json()) as { features?: PhotonFeature[] };
+    const seen = new Set<string>();
+    const items = (data.features ?? []).flatMap((feature, index) => {
+      const coordinates = feature.geometry?.coordinates, label = getLabel(feature);
+      if (!coordinates || !label || seen.has(label)) return [];
+      seen.add(label);
+      return [{ id: `${feature.properties?.osm_type ?? "place"}-${feature.properties?.osm_id ?? index}`, title: String(feature.properties?.name ?? feature.properties?.city ?? label), label, position: { lat: coordinates[1], lng: coordinates[0] } }];
     });
     return NextResponse.json({ items });
   } catch {
