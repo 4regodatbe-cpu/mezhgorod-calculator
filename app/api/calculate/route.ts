@@ -6,7 +6,7 @@ type Located = { label: string; position: { lat: number; lng: number } };
 async function geocode(point: Point): Promise<Located> {
   if (point.position) return { label: point.label, position: point.position };
   const url = new URL("https://photon.komoot.io/api/");
-  url.searchParams.set("q", point.label); url.searchParams.set("lang", "ru"); url.searchParams.set("limit", "1");
+  url.searchParams.set("q", point.label); url.searchParams.set("limit", "1");
   const response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalculator/1.0" } });
   if (!response.ok) throw new Error("GEOCODE_UNAVAILABLE");
   const data = (await response.json()) as { features?: Array<{ geometry?: { coordinates?: [number, number] }; properties?: Record<string, string | undefined> }> };
