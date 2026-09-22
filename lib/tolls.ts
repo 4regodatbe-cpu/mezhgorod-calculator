@@ -29,6 +29,18 @@ const M4: TollSegment[] = [
   { name: "М-4: 1195–1319 км", start: [39.79, 46.13], end: [39.03, 45.07], weekday: 600, weekend: 760 },
 ];
 
+// A-289 Krasnodar — Slavyansk-na-Kubani — Temryuk, category I.
+// The whole paid direction costs 800 rubles from 02.03.2026.
+const A289: TollSegment[] = [
+  {
+    name: "А-289: Марьянская — Темрюк",
+    start: [38.62, 45.09],
+    end: [37.42, 45.25],
+    weekday: 800,
+    weekend: 800,
+  },
+];
+
 function distanceKm(a: Coordinate, b: Coordinate) {
   const rad = Math.PI / 180;
   const dLat = (b[1] - a[1]) * rad;
@@ -45,7 +57,7 @@ export function estimateTolls(route: Coordinate[], departureAt?: string) {
   const date = departureAt ? new Date(departureAt) : new Date();
   const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
   const weekend = day === 0 || day === 5 || day === 6;
-  const segments = M4.filter((segment) => nearRoute(route, segment.start) && nearRoute(route, segment.end));
+  const segments = [...M4, ...A289].filter((segment) => nearRoute(route, segment.start) && nearRoute(route, segment.end));
   return {
     amount: segments.reduce((sum, segment) => sum + (weekend ? segment.weekend : segment.weekday), 0),
     period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
