@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.os.Build
 import android.view.View
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
@@ -32,6 +33,12 @@ class MainActivity : Activity() {
             domStorageEnabled = true
             setSupportZoom(false)
             userAgentString = "$userAgentString MezhgorodAndroid/1.0"
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                isAlgorithmicDarkeningAllowed = true
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                @Suppress("DEPRECATION")
+                forceDark = android.webkit.WebSettings.FORCE_DARK_ON
+            }
         }
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
