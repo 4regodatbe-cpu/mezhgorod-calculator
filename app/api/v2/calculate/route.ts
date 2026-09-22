@@ -31,6 +31,23 @@ async function valhalla(from: Located, to: Located, useTolls: 0 | 1) {
   return { meters: Math.round(summary.length * 1000), seconds: Math.round(summary.time) };
 }
 
+async function brouterFree(from: Located, to: Located) {
+  const url = new URL("https://brouter.de/brouter");
+  url.searchParams.set("lonlats", `${from.position.lng},${from.position.lat}|${to.position.lng},${to.position.lat}`);
+  url.searchParams.set("profile", "car-vario");
+  url.searchParams.set("profile:avoid_toll", "1");
+  url.searchParams.set("alternativeidx", "0");
+  url.searchParams.set("format", "geojson");
+  const response = await fetch(url, { headers: { Accept: "application/geo+json", "User-Agent": "MezhgorodCalc/2.0" }, cache: "no-store", signal: AbortSignal.timeout(45_000) });
+  if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
+  const data = (await response.json()) as { features?: Array<{ properties?: { "track-length"?: string | number; "total-time"?: string | number } }> };
+  const properties = data.features?.[0]?.properties;
+  const meters = Number(properties?.["track-length"]);
+  const seconds = Number(properties?.["total-time"]);
+  if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new Error("ROUTE_NOT_FOUND");
+  return { meters: Math.round(meters), seconds: Math.round(seconds) };
+}
+
 async function geometry(from: Located, to: Located) {
   const path = `${from.position.lng},${from.position.lat};${to.position.lng},${to.position.lat}`;
   const url = new URL(`https://router.project-osrm.org/route/v1/driving/${path}`);
@@ -43,9 +60,15 @@ async function geometry(from: Located, to: Located) {
 }
 
 async function leg(from: Located, to: Located, departureAt?: string) {
-  const [fast, free, routeGeometry] = await Promise.all([valhalla(from, to, 1), valhalla(from, to, 0), geometry(from, to)]);
+  const [fast, free, routeGeometry] = await Promise.all([
+    valhalla(from, to, 1),
+    brouterFree(from, to).catch(() => valhalla(from, to, 0)),
+    geometry(from, to),
+  ]);
   return { from: from.label, to: to.label, fast: { ...fast, tolls: estimateTolls(routeGeometry, departureAt) }, free };
 }
+
+export const maxDuration = 60;
 
 export async function POST(request: NextRequest) {
   try {
