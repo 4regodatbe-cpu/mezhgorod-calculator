@@ -10,6 +10,8 @@ body { margin:0; min-width:320px; background:var(--background); color:var(--fore
 .panel { border:1px solid rgb(203 213 225 / 75%); border-radius:1.5rem; background:rgb(255 255 255 / 88%); padding:1.125rem; box-shadow:0 18px 48px rgb(15 23 42 / 8%); backdrop-filter:blur(16px); }
 .panel.compact { padding:1rem 1.125rem; }
 .logo { display:grid; place-items:center; width:3rem; height:3rem; border-radius:1rem; color:white; background:linear-gradient(145deg,#2563eb,#1d4ed8); box-shadow:0 10px 24px rgb(37 99 235 / 28%); }
+.compact-logo { width:2.5rem; height:2.5rem; border-radius:.8rem; }
+.calculator-panel { padding:.9rem; }
 .route-card { border:1px solid rgb(203 213 225 / 70%); border-radius:1.5rem; background:rgb(255 255 255 / 92%); padding:1.125rem; box-shadow:0 14px 38px rgb(15 23 42 / 7%); }
 .route-fast { border-top:4px solid #2563eb; } .route-free { border-top:4px solid #10b981; }
 .route-pill { flex:none; border-radius:999px; background:#dbeafe; color:#1d4ed8; padding:.4rem .7rem; font-weight:800; font-size:.875rem; }
@@ -20,6 +22,6 @@ body { margin:0; min-width:320px; background:var(--background); color:var(--fore
 .section-icon { display:grid; place-items:center; width:2.75rem; height:2.75rem; border-radius:.9rem; color:#1d4ed8; background:#dbeafe; }
 .support-card { border:1px solid rgb(16 185 129 / 28%); border-radius:1.5rem; background:linear-gradient(145deg,rgb(236 253 245 / 92%),rgb(255 255 255 / 92%)); padding:1.125rem; box-shadow:0 14px 38px rgb(15 23 42 / 7%); }
 .support-icon { color:#047857; background:#d1fae5; }
-.privacy-note { display:flex; align-items:flex-start; gap:.75rem; border:1px solid rgb(16 185 129 / 22%); border-radius:1.1rem; background:rgb(236 253 245 / 70%); padding:.9rem 1rem; color:#475569; font-size:.78rem; line-height:1.55; }
-@media (min-width:640px) { .panel,.route-card { padding:1.5rem; } }
-@media (prefers-color-scheme:dark) { body { background-image:radial-gradient(circle at 50% -20%,rgb(59 130 246 / 16%),transparent 42%); } .panel,.route-card { border-color:rgb(51 65 85 / 80%); background:rgb(15 23 42 / 86%); box-shadow:0 18px 48px rgb(0 0 0 / 25%); } .route-pill { background:rgb(30 64 175 / 40%); color:#bfdbfe; } .route-card dl>div { border-color:#334155; } .route-card dt { color:#94a3b8; } .route-card .total dd { color:#93c5fd; } .form-control { border-color:#334155; background:#0f172a; color:#f1f5f9; } .section-icon { background:rgb(30 64 175 / 35%); color:#bfdbfe; } .support-card { border-color:rgb(16 185 129 / 28%); background:linear-gradient(145deg,rgb(6 78 59 / 28%),rgb(15 23 42 / 88%)); } .support-icon { background:rgb(6 78 59 / 55%); color:#a7f3d0; } .privacy-note { border-color:rgb(16 185 129 / 25%); background:rgb(6 78 59 / 20%); color:#cbd5e1; } }
+@media (min-width:640px) { .panel,.route-card { padding:1.5rem; } .calculator-panel { padding:1.2rem 1.5rem; } }
+@media (max-height:700px) and (max-width:639px) { .calculator-panel { padding:.75rem .9rem; } }
+@media (prefers-color-scheme:dark) { body { background-image:radial-gradient(circle at 50% -20%,rgb(59 130 246 / 16%),transparent 42%); } .panel,.route-card { border-color:rgb(51 65 85 / 80%); background:rgb(15 23 42 / 86%); box-shadow:0 18px 48px rgb(0 0 0 / 25%); } .route-pill { background:rgb(30 64 175 / 40%); color:#bfdbfe; } .route-card dl>div { border-color:#334155; } .route-card dt { color:#94a3b8; } .route-card .total dd { color:#93c5fd; } .form-control { border-color:#334155; background:#0f172a; color:#f1f5f9; } .section-icon { background:rgb(30 64 175 / 35%); color:#bfdbfe; } .support-card { border-color:rgb(16 185 129 / 28%); background:linear-gradient(145deg,rgb(6 78 59 / 28%),rgb(15 23 42 / 88%)); } .support-icon { background:rgb(6 78 59 / 55%); color:#a7f3d0; } }
