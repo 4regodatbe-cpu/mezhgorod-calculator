@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Межгород Calc — расчёт расстояния и стоимости междугородней поездки.">
+  <title>Межгород Calc</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307111f'/%3E%3Cpath d='M16 44c10-22 22-25 32-25M17 44h31' fill='none' stroke='%234fd1a5' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='44' r='5' fill='%23fff'/%3E%3Ccircle cx='48' cy='19' r='5' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=bc96c2af-c6a0-4238-988f-9b091871e9e9&lang=ru_RU" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">↗</div>
+      <div class="brand-copy"><h1>Межгород Calc</h1><p>Маршрут и цена за несколько секунд</p></div>
+      <button id="resetTop" class="icon-button" type="button" aria-label="Сбросить расчёт">↻</button>
+    </header>
+
+    <section class="calculator-card" aria-labelledby="calcTitle">
+      <h2 id="calcTitle" class="sr-only">Калькулятор поездки</h2>
+      <label class="dual-row" for="dualMode">
+        <span><b>Два тарифа</b><small>Разделить маршрут промежуточной точкой</small></span>
+        <span class="switch"><input id="dualMode" type="checkbox"><i></i></span>
+      </label>
+
+      <div class="route-fields">
+        <label class="field"><span>Откуда</span><input id="from" autocomplete="off" placeholder="Город, адрес, аэропорт…"></label>
+        <label id="viaField" class="field hidden"><span>Промежуточная точка</span><input id="via" autocomplete="off" placeholder="Город или адрес между точками…"></label>
+        <button id="swap" class="swap-button" type="button">⇅ Поменять начало и конец</button>
+        <label class="field"><span>Куда</span><input id="to" autocomplete="off" placeholder="Город, адрес, гостиница…"></label>
+      </div>
+
+      <div id="rates" class="rates-grid">
+        <label class="field rate-field"><span id="rateOneLabel">Стоимость 1 км</span><div><input id="rateOne" type="number" min="1" inputmode="decimal" value="35"><i>₽/км</i></div></label>
+        <label id="rateTwoField" class="field rate-field hidden"><span>Тариф: второй участок</span><div><input id="rateTwo" type="number" min="1" inputmode="decimal" value="45"><i>₽/км</i></div></label>
+      </div>
+
+      <label class="remember-row" for="remember"><span>Запомнить тарифы</span><span class="switch small"><input id="remember" type="checkbox" checked><i></i></span></label>
+      <div id="error" class="error hidden" role="alert"></div>
+      <button id="calculate" class="primary-button" type="button"><span>⌖</span> Рассчитать</button>
+      <p class="hint">Ориентировочно, без платных дорог и дополнительных расходов.</p>
+    </section>
+
+    <section id="results" class="results hidden" aria-live="polite">
+      <div id="routeCards" class="route-cards"></div>
+      <div id="grandTotal" class="grand-total hidden"><span>Общая стоимость поездки</span><strong></strong></div>
+      <div class="actions"><button id="copy" type="button">▣ Скопировать расчёт</button><button id="newCalc" type="button">↻ Новый расчёт</button></div>
+    </section>
+
+    <section class="secondary-grid">
+      <details class="secondary-card">
+        <summary>Предложить улучшение <span>＋</span></summary>
+        <form id="feedbackForm">
+          <label class="field"><span>Ваша идея</span><textarea id="feedback" maxlength="1000" required placeholder="Что добавить или улучшить?"></textarea></label>
+          <button class="secondary-button" type="submit">Отправить предложение</button>
+          <p id="feedbackStatus" class="form-status"></p>
+        </form>
+      </details>
+      <a class="donate-card" href="https://www.tbank.ru/cf/8cnjvG9c20z" target="_blank" rel="noopener noreferrer"><span class="donate-icon">♥</span><span><b>Поддержать проект</b><small>Добровольный донат через Т‑Банк</small></span><i>→</i></a>
+    </section>
+  </main>
+</body>
+</html>
