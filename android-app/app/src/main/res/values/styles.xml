@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.Mezhgorod" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item><item name="android:colorAccent">#2563EB</item>
+        <item name="android:navigationBarColor">#F2F6FB</item><item name="android:statusBarColor">#F2F6FB</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
