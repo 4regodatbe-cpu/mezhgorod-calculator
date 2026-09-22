@@ -1,0 +1,13 @@
+{
+  "name": "mezhgorod-calc-vk",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "./",
+  "scripts": {
+    "serve": "npx serve dist",
+    "deploy": "vk-miniapps-deploy"
+  },
+  "devDependencies": {
+    "@vkontakte/vk-miniapps-deploy": "^1.1.3"
+  }
+}
