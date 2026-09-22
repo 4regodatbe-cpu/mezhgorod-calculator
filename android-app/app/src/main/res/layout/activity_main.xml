@@ -6,6 +6,6 @@
         android:layout_width="match_parent" android:layout_height="3dp" android:indeterminate="true" />
     <TextView android:id="@+id/offline" android:layout_width="match_parent" android:layout_height="match_parent"
         android:gravity="center" android:padding="32dp" android:visibility="gone"
-        android:background="#F2F6FB" android:textColor="#0F172A" android:textSize="17sp"
+        android:background="#080F1D" android:textColor="#F1F5F9" android:textSize="17sp"
         android:text="Нет соединения с интернетом.\n\nНажмите, чтобы повторить." />
 </FrameLayout>
