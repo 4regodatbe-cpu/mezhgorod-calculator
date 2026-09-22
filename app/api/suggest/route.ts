@@ -8,6 +8,13 @@ function getLabel(feature: PhotonFeature) {
   return [p.name || street, p.city, p.state, p.country].filter(Boolean).join(", ");
 }
 
+function getRegion(feature: PhotonFeature) {
+  const p = feature.properties ?? {};
+  return [p.city || p.county || p.state, p.state, p.country]
+    .filter((value, index, values) => value && values.indexOf(value) === index)
+    .join(", ");
+}
+
 export async function GET(request: NextRequest) {
   const q = request.nextUrl.searchParams.get("q")?.trim() ?? "";
   if (q.length < 3) return NextResponse.json({ items: [] });
@@ -22,7 +29,7 @@ export async function GET(request: NextRequest) {
       const coordinates = feature.geometry?.coordinates, label = getLabel(feature);
       if (!coordinates || !label || seen.has(label)) return [];
       seen.add(label);
-      return [{ id: `${feature.properties?.osm_type ?? "place"}-${feature.properties?.osm_id ?? index}`, title: String(feature.properties?.name ?? feature.properties?.city ?? label), label, position: { lat: coordinates[1], lng: coordinates[0] } }];
+      return [{ id: `${feature.properties?.osm_type ?? "place"}-${feature.properties?.osm_id ?? index}`, title: String(feature.properties?.name ?? feature.properties?.city ?? label), label, region: getRegion(feature), position: { lat: coordinates[1], lng: coordinates[0] } }];
     });
     return NextResponse.json({ items });
   } catch {
