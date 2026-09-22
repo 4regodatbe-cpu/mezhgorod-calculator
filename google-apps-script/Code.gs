@@ -12,6 +12,8 @@ function doPost(e) {
       book.getSheetByName("Маршруты").appendRow([now, data.fromRegion, data.toRegion, data.distanceKm, data.durationMin, data.rate, data.total]);
     } else if (data.type === "feedback") {
       book.getSheetByName("Предложения").appendRow([now, data.category, data.message, "Новое"]);
+    } else if (data.type === "visit") {
+      book.getSheetByName("Посещения").appendRow([now, "Новый браузер"]);
     } else return json({ ok: false, error: "unknown_type" });
     return json({ ok: true });
   } catch (error) {
