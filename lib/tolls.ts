@@ -104,10 +104,16 @@ const CKAD: TollSegment[] = [
   { name: "ЦКАД: Носовихинское — Егорьевское шоссе", start: [38.35, 55.65], via: [38.36, 55.59], end: [38.34, 55.53], weekday: 81, weekend: 81, radius: 8 },
   { name: "ЦКАД: Егорьевское шоссе — М-5", start: [38.34, 55.53], via: [38.2, 55.46], end: [38.05, 55.39], weekday: 271, weekend: 271, radius: 9 },
   { name: "ЦКАД: М-5 — Домодедово", start: [38.05, 55.39], via: [37.93, 55.36], end: [37.8, 55.35], weekday: 248, weekend: 248, radius: 8 },
-  { name: "ЦКАД: Домодедово — М-4", start: [37.8, 55.35], via: [37.77, 55.34], end: [37.75, 55.32], weekday: 63, weekend: 63, radius: 5 },
   { name: "ЦКАД: М-4 — М-2", start: [37.75, 55.32], via: [37.65, 55.29], end: [37.55, 55.28], weekday: 140, weekend: 140, radius: 8 },
   { name: "ЦКАД: М-2 — Калужское шоссе", start: [37.55, 55.28], via: [37.4, 55.28], end: [37.25, 55.31], weekday: 204, weekend: 204, radius: 9 },
   { name: "ЦКАД: Калужское шоссе — западный участок", start: [37.25, 55.31], via: [37.08, 55.39], end: [36.95, 55.5], weekday: 92, weekend: 92, radius: 9 },
+];
+
+const FULL_ROUTES = [
+  { name: "М-12: Москва — Екатеринбург", start: [37.62, 55.76] as Coordinate, end: [60.61, 56.84] as Coordinate, weekday: 8580, weekend: 8580, radius: 85 },
+  { name: "М-12: Москва — Казань", start: [37.62, 55.76] as Coordinate, end: [49.11, 55.8] as Coordinate, weekday: 5909, weekend: 5909, radius: 55 },
+  { name: "М-11: Москва — Санкт-Петербург", start: [37.62, 55.76] as Coordinate, end: [30.34, 59.93] as Coordinate, weekday: 4580, weekend: 4780, radius: 55 },
+  { name: "М-4: Москва — Краснодар", start: [37.62, 55.76] as Coordinate, end: [38.98, 45.04] as Coordinate, weekday: 5040, weekend: 6090, radius: 55 },
 ];
 
 function distanceKm(a: Coordinate, b: Coordinate) {
@@ -122,10 +128,23 @@ function nearRoute(route: Coordinate[], point: Coordinate, radius = 16) {
   return route.some((coordinate) => distanceKm(coordinate, point) <= radius);
 }
 
+function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinate, radius: number) {
+  if (route.length < 2) return false;
+  const first = route[0], last = route[route.length - 1];
+  return (distanceKm(first, start) <= radius && distanceKm(last, end) <= radius)
+    || (distanceKm(first, end) <= radius && distanceKm(last, start) <= radius);
+}
+
 export function estimateTolls(route: Coordinate[], departureAt?: string) {
   const date = departureAt ? new Date(departureAt) : new Date();
   const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
   const weekend = day === 0 || day === 5 || day === 6;
+  const completeRoute = FULL_ROUTES.find((item) => matchesRouteEnds(route, item.start, item.end, item.radius));
+  if (completeRoute) return {
+    amount: weekend ? completeRoute.weekend : completeRoute.weekday,
+    period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
+    segments: [completeRoute.name],
+  };
   const segments = [...M1, ...M3, ...M4, ...M11, ...M12, ...CKAD, ...A289, ...REGIONAL].filter((segment) => nearRoute(route, segment.start, segment.radius) && nearRoute(route, segment.end, segment.radius) && (!segment.via || nearRoute(route, segment.via, segment.radius)));
   return {
     amount: segments.reduce((sum, segment) => sum + (weekend ? segment.weekend : segment.weekday), 0),
