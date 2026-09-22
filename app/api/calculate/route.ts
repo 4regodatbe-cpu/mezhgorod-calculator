@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
-type Point = { label: string; position?: { lat: number; lng: number } };
-type Located = { label: string; position: { lat: number; lng: number } };
+type Point = { label: string; region?: string; position?: { lat: number; lng: number } };
+type Located = { label: string; region: string; position: { lat: number; lng: number } };
 
 async function geocode(point: Point): Promise<Located> {
-  if (point.position) return { label: point.label, position: point.position };
+  if (point.position) return { label: point.label, region: point.region || "Не определён", position: point.position };
   const url = new URL("https://photon.komoot.io/api/");
   url.searchParams.set("q", point.label); url.searchParams.set("limit", "1");
   const response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalculator/1.0" } });
@@ -13,7 +13,8 @@ async function geocode(point: Point): Promise<Located> {
   const item = data.features?.[0], coordinates = item?.geometry?.coordinates;
   if (!coordinates) throw new Error("ADDRESS_NOT_FOUND");
   const p = item?.properties ?? {}, label = [p.name, p.city, p.state, p.country].filter(Boolean).join(", ") || point.label;
-  return { label, position: { lat: coordinates[1], lng: coordinates[0] } };
+  const region = [p.city || p.county || p.state, p.state, p.country].filter((value, index, values) => value && values.indexOf(value) === index).join(", ") || "Не определён";
+  return { label, region, position: { lat: coordinates[1], lng: coordinates[0] } };
 }
 
 async function build(origin: Located["position"], destination: Located["position"]) {
@@ -35,7 +36,7 @@ export async function POST(request: NextRequest) {
     if (!Number.isFinite(body.rate) || body.rate! <= 0 || body.rate! > 10000) return NextResponse.json({ error: "Введите корректную стоимость 1 км" }, { status: 400 });
     const [from, to] = await Promise.all([geocode(body.from), geocode(body.to)]);
     const route = await build(from.position, to.position);
-    return NextResponse.json({ from: from.label, to: to.label, route, rate: body.rate });
+    return NextResponse.json({ from: from.label, to: to.label, route, rate: body.rate, analytics: { fromRegion: from.region, toRegion: to.region } });
   } catch (error) {
     const code = error instanceof Error ? error.message : "UNKNOWN";
     const messages: Record<string, string> = { ADDRESS_NOT_FOUND: "Адрес не найден. Уточните населённый пункт, улицу или объект.", GEOCODE_UNAVAILABLE: "Поиск адресов временно недоступен. Попробуйте ещё раз позже.", ROUTE_NOT_FOUND: "Между выбранными точками не удалось построить автомобильный маршрут.", ROUTE_UNAVAILABLE: "Сервис маршрутов временно недоступен. Попробуйте позже." };
