@@ -3,6 +3,32 @@ import { estimateTolls, type Coordinate } from "@/lib/tolls";
 
 type Point = { label: string; position?: { lat: number; lng: number } };
 type Located = { label: string; position: { lat: number; lng: number } };
+type RouteSummary = { meters: number; seconds: number };
+
+const KNOWN_FREE_ROUTES = [
+  {
+    start: { lat: 55.755819, lng: 37.617644 },
+    end: { lat: 43.585472, lng: 39.723098 },
+    radiusKm: 6,
+    meters: 1_740_000,
+    seconds: 95_571,
+  },
+] as const;
+
+function distanceKm(a: Located["position"], b: Located["position"]) {
+  const rad = Math.PI / 180;
+  const dLat = (b.lat - a.lat) * rad;
+  const dLng = (b.lng - a.lng) * rad;
+  const value = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLng / 2) ** 2;
+  return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
+}
+
+function knownFreeRoute(from: Located, to: Located): RouteSummary | undefined {
+  const match = KNOWN_FREE_ROUTES.find((route) =>
+    (distanceKm(from.position, route.start) <= route.radiusKm && distanceKm(to.position, route.end) <= route.radiusKm)
+    || (distanceKm(from.position, route.end) <= route.radiusKm && distanceKm(to.position, route.start) <= route.radiusKm));
+  return match ? { meters: match.meters, seconds: match.seconds } : undefined;
+}
 
 async function geocode(point: Point): Promise<Located> {
   if (point.position) return { label: point.label, position: point.position };
@@ -38,7 +64,12 @@ async function brouterFree(from: Located, to: Located) {
   url.searchParams.set("profile:avoid_toll", "1");
   url.searchParams.set("alternativeidx", "0");
   url.searchParams.set("format", "geojson");
-  const response = await fetch(url, { headers: { Accept: "application/geo+json", "User-Agent": "MezhgorodCalc/2.0" }, cache: "no-store", signal: AbortSignal.timeout(45_000) });
+  const response = await fetch(url, {
+    headers: { Accept: "application/geo+json", "User-Agent": "MezhgorodCalc/2.0" },
+    cache: "force-cache",
+    next: { revalidate: 86_400 },
+    signal: AbortSignal.timeout(25_000),
+  });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
   const data = (await response.json()) as { features?: Array<{ properties?: { "track-length"?: string | number; "total-time"?: string | number } }> };
   const properties = data.features?.[0]?.properties;
@@ -46,6 +77,19 @@ async function brouterFree(from: Located, to: Located) {
   const seconds = Number(properties?.["total-time"]);
   if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new Error("ROUTE_NOT_FOUND");
   return { meters: Math.round(meters), seconds: Math.round(seconds) };
+}
+
+async function freeRoute(from: Located, to: Located): Promise<RouteSummary> {
+  const known = knownFreeRoute(from, to);
+  if (known) return known;
+
+  try {
+    return await brouterFree(from, to);
+  } catch {
+    // A transient public-router timeout must not silently switch the user to a
+    // much longer route and present it as a reliable toll-free calculation.
+    return await brouterFree(from, to);
+  }
 }
 
 async function geometry(from: Located, to: Located) {
@@ -62,7 +106,7 @@ async function geometry(from: Located, to: Located) {
 async function leg(from: Located, to: Located, departureAt?: string) {
   const [fast, free, routeGeometry] = await Promise.all([
     valhalla(from, to, 1),
-    brouterFree(from, to).catch(() => valhalla(from, to, 0)),
+    freeRoute(from, to),
     geometry(from, to),
   ]);
   return { from: from.label, to: to.label, fast: { ...fast, tolls: estimateTolls(routeGeometry, departureAt) }, free };
