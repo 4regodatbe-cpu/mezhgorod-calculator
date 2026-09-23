@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
+import { safeRoutePositions } from "@/lib/safe-route";
 
 type Point = { label: string; position?: { lat: number; lng: number } };
 type Located = { label: string; position: { lat: number; lng: number } };
@@ -54,7 +55,7 @@ async function geocode(point: Point): Promise<Located> {
 
 async function valhalla(from: Located, to: Located, useTolls: 0 | 1) {
   const url = new URL("https://valhalla1.openstreetmap.de/route");
-  const query = { locations: [{ lat: from.position.lat, lon: from.position.lng }, { lat: to.position.lat, lon: to.position.lng }], costing: "auto", costing_options: { auto: { use_tolls: useTolls } }, units: "kilometers", directions_type: "none" };
+  const query = { locations: safeRoutePositions(from, to).map((point) => ({ lat: point.lat, lon: point.lng })), costing: "auto", costing_options: { auto: { use_tolls: useTolls } }, units: "kilometers", directions_type: "none" };
   url.searchParams.set("json", JSON.stringify(query));
   const response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" }, cache: "no-store" });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
@@ -66,7 +67,7 @@ async function valhalla(from: Located, to: Located, useTolls: 0 | 1) {
 
 async function brouterFree(from: Located, to: Located) {
   const url = new URL("https://brouter.de/brouter");
-  url.searchParams.set("lonlats", `${from.position.lng},${from.position.lat}|${to.position.lng},${to.position.lat}`);
+  url.searchParams.set("lonlats", safeRoutePositions(from, to).map((point) => `${point.lng},${point.lat}`).join("|"));
   url.searchParams.set("profile", "car-vario");
   url.searchParams.set("profile:avoid_toll", "1");
   url.searchParams.set("alternativeidx", "0");
@@ -100,7 +101,7 @@ async function freeRoute(from: Located, to: Located): Promise<RouteSummary> {
 }
 
 async function osrmRoute(from: Located, to: Located) {
-  const path = `${from.position.lng},${from.position.lat};${to.position.lng},${to.position.lat}`;
+  const path = safeRoutePositions(from, to).map((point) => `${point.lng},${point.lat}`).join(";");
   const url = new URL(`https://router.project-osrm.org/route/v1/driving/${path}`);
   url.searchParams.set("overview", "full");
   url.searchParams.set("geometries", "geojson");

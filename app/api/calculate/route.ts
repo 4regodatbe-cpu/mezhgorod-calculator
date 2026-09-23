@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { safeRoutePositions } from "@/lib/safe-route";
 
 type Point = { label: string; region?: string; position?: { lat: number; lng: number } };
 type Located = { label: string; region: string; position: { lat: number; lng: number } };
@@ -17,8 +18,8 @@ async function geocode(point: Point): Promise<Located> {
   return { label, region, position: { lat: coordinates[1], lng: coordinates[0] } };
 }
 
-async function build(origin: Located["position"], destination: Located["position"]) {
-  const coordinates = `${origin.lng},${origin.lat};${destination.lng},${destination.lat}`;
+async function build(from: Located, to: Located) {
+  const coordinates = safeRoutePositions(from, to).map((point) => `${point.lng},${point.lat}`).join(";");
   const url = new URL(`https://router.project-osrm.org/route/v1/driving/${coordinates}`);
   url.searchParams.set("overview", "false"); url.searchParams.set("steps", "false");
   const response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalculator/1.0" } });
@@ -35,7 +36,7 @@ export async function POST(request: NextRequest) {
     if (!body.from?.label.trim() || !body.to?.label.trim()) return NextResponse.json({ error: "Укажите точки отправления и назначения" }, { status: 400 });
     if (!Number.isFinite(body.rate) || body.rate! <= 0 || body.rate! > 10000) return NextResponse.json({ error: "Введите корректную стоимость 1 км" }, { status: 400 });
     const [from, to] = await Promise.all([geocode(body.from), geocode(body.to)]);
-    const route = await build(from.position, to.position);
+    const route = await build(from, to);
     return NextResponse.json({ from: from.label, to: to.label, route, rate: body.rate, analytics: { fromRegion: from.region, toRegion: to.region } });
   } catch (error) {
     const code = error instanceof Error ? error.message : "UNKNOWN";
