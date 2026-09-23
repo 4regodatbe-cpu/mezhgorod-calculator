@@ -12,10 +12,34 @@ type RouteQuality = {
   distanceSpreadPercent: number | null;
   message: string;
 };
+type KnownRoute = {
+  start: Located["position"];
+  end: Located["position"];
+  radiusKm: number;
+  meters: number;
+  seconds: number;
+};
 
 const MAX_VERIFIED_SPREAD_PERCENT = 7;
 
-const KNOWN_FREE_ROUTES = [
+const KNOWN_FAST_ROUTES: readonly KnownRoute[] = [
+  {
+    start: { lat: 44.894818, lng: 37.316367 },
+    end: { lat: 51.660781, lng: 39.200296 },
+    radiusKm: 12,
+    meters: 990_000,
+    seconds: 39_720,
+  },
+];
+
+const KNOWN_FREE_ROUTES: readonly KnownRoute[] = [
+  {
+    start: { lat: 44.894818, lng: 37.316367 },
+    end: { lat: 51.660781, lng: 39.200296 },
+    radiusKm: 12,
+    meters: 1_030_000,
+    seconds: 52_380,
+  },
   {
     start: { lat: 55.755819, lng: 37.617644 },
     end: { lat: 45.03547, lng: 38.975313 },
@@ -37,7 +61,7 @@ const KNOWN_FREE_ROUTES = [
     meters: 2_467_508,
     seconds: 133_720,
   },
-] as const;
+];
 
 function distanceKm(a: Located["position"], b: Located["position"]) {
   const rad = Math.PI / 180;
@@ -47,11 +71,19 @@ function distanceKm(a: Located["position"], b: Located["position"]) {
   return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
 }
 
-function knownFreeRoute(from: Located, to: Located): RouteSummary | undefined {
-  const match = KNOWN_FREE_ROUTES.find((route) =>
+function knownRoute(routes: readonly KnownRoute[], from: Located, to: Located): RouteSummary | undefined {
+  const match = routes.find((route) =>
     (distanceKm(from.position, route.start) <= route.radiusKm && distanceKm(to.position, route.end) <= route.radiusKm)
     || (distanceKm(from.position, route.end) <= route.radiusKm && distanceKm(to.position, route.start) <= route.radiusKm));
   return match ? { meters: match.meters, seconds: match.seconds } : undefined;
+}
+
+function knownFreeRoute(from: Located, to: Located) {
+  return knownRoute(KNOWN_FREE_ROUTES, from, to);
+}
+
+function knownFastRoute(from: Located, to: Located) {
+  return knownRoute(KNOWN_FAST_ROUTES, from, to);
 }
 
 function spreadPercent(a: RouteSummary, b: RouteSummary) {
@@ -220,6 +252,7 @@ async function leg(from: Located, to: Located, departureAt?: string) {
   const selectedFast = selectRoute(
     fastResult.status === "fulfilled" ? { name: "Valhalla", route: fastResult.value } : undefined,
     osrmResult.status === "fulfilled" ? { name: "OSRM", route: osrmResult.value } : undefined,
+    knownFastRoute(from, to),
   );
   const known = knownFreeRoute(from, to);
   const selectedFree = (() => {

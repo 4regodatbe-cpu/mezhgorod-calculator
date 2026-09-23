@@ -3,6 +3,7 @@ import { writeFile } from "node:fs/promises";
 const baseUrl = (process.env.CALCULATOR_URL || "https://mezhgorod-calculator.vercel.app").replace(/\/$/, "");
 
 const routes = [
+  { name: "Анапа — Воронеж", from: [44.894818, 37.316367], to: [51.660781, 39.200296], fast: [970, 1010], free: [1010, 1050], toll: [3900, 5100] },
   { name: "Москва — Сочи", from: [55.755819, 37.617644], to: [43.585472, 39.723098], fast: [1500, 1700], free: [1680, 1820], toll: [3500, 7000] },
   { name: "Москва — Краснодар", from: [55.755819, 37.617644], to: [45.03547, 38.975313], fast: [1250, 1420], free: [1380, 1550], toll: [3500, 7000] },
   { name: "Москва — Санкт-Петербург", from: [55.755819, 37.617644], to: [59.938784, 30.314997], fast: [620, 760], free: [680, 850], toll: [2500, 6500] },

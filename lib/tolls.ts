@@ -110,6 +110,7 @@ const CKAD: TollSegment[] = [
 ];
 
 const FULL_ROUTES = [
+  { name: "М-4: Анапа — Воронеж", start: [37.316367, 44.894818] as Coordinate, end: [39.200296, 51.660781] as Coordinate, weekday: 4090, weekend: 4930, radius: 12 },
   { name: "М-12: Москва — Екатеринбург", start: [37.62, 55.76] as Coordinate, end: [60.61, 56.84] as Coordinate, weekday: 8580, weekend: 8580, radius: 85 },
   { name: "М-12: Москва — Казань", start: [37.62, 55.76] as Coordinate, end: [49.11, 55.8] as Coordinate, weekday: 5909, weekend: 5909, radius: 55 },
   { name: "М-11: Москва — Санкт-Петербург", start: [37.62, 55.76] as Coordinate, end: [30.34, 59.93] as Coordinate, weekday: 4580, weekend: 4780, radius: 55 },
