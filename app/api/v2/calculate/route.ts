@@ -13,6 +13,13 @@ const KNOWN_FREE_ROUTES = [
     meters: 1_740_000,
     seconds: 95_571,
   },
+  {
+    start: { lat: 59.938784, lng: 30.314997 },
+    end: { lat: 43.585472, lng: 39.723098 },
+    radiusKm: 6,
+    meters: 2_467_508,
+    seconds: 133_720,
+  },
 ] as const;
 
 function distanceKm(a: Located["position"], b: Located["position"]) {
@@ -104,12 +111,22 @@ async function geometry(from: Located, to: Located) {
 }
 
 async function leg(from: Located, to: Located, departureAt?: string) {
-  const [fast, free, routeGeometry] = await Promise.all([
+  const [fastResult, freeResult, geometryResult] = await Promise.allSettled([
     valhalla(from, to, 1),
     freeRoute(from, to),
     geometry(from, to),
   ]);
-  return { from: from.label, to: to.label, fast: { ...fast, tolls: estimateTolls(routeGeometry, departureAt) }, free };
+  if (fastResult.status === "rejected") throw fastResult.reason;
+  const routeGeometry = geometryResult.status === "fulfilled"
+    ? geometryResult.value
+    : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
+  return {
+    from: from.label,
+    to: to.label,
+    fast: { ...fastResult.value, tolls: estimateTolls(routeGeometry, departureAt) },
+    free: freeResult.status === "fulfilled" ? freeResult.value : null,
+    freeError: freeResult.status === "rejected" ? "Маршрут без платных дорог временно недоступен. Повторите расчёт позже." : undefined,
+  };
 }
 
 export const maxDuration = 60;
