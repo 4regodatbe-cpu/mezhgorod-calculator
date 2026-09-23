@@ -18,6 +18,13 @@ const MAX_VERIFIED_SPREAD_PERCENT = 7;
 const KNOWN_FREE_ROUTES = [
   {
     start: { lat: 55.755819, lng: 37.617644 },
+    end: { lat: 45.03547, lng: 38.975313 },
+    radiusKm: 6,
+    meters: 1_450_000,
+    seconds: 70_740,
+  },
+  {
+    start: { lat: 55.755819, lng: 37.617644 },
     end: { lat: 43.585472, lng: 39.723098 },
     radiusKm: 6,
     meters: 1_740_000,
