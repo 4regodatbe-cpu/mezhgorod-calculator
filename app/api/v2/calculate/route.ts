@@ -99,31 +99,36 @@ async function freeRoute(from: Located, to: Located): Promise<RouteSummary> {
   }
 }
 
-async function geometry(from: Located, to: Located) {
+async function osrmRoute(from: Located, to: Located) {
   const path = `${from.position.lng},${from.position.lat};${to.position.lng},${to.position.lat}`;
   const url = new URL(`https://router.project-osrm.org/route/v1/driving/${path}`);
   url.searchParams.set("overview", "full");
   url.searchParams.set("geometries", "geojson");
   const response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" }, cache: "no-store" });
-  if (!response.ok) return [] as Coordinate[];
-  const data = (await response.json()) as { routes?: Array<{ geometry?: { coordinates?: Coordinate[] } }> };
-  return data.routes?.[0]?.geometry?.coordinates ?? [];
+  if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
+  const data = (await response.json()) as { routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] } }> };
+  const route = data.routes?.[0];
+  if (!route?.distance || !route.duration) throw new Error("ROUTE_NOT_FOUND");
+  return { meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[] };
 }
 
 async function leg(from: Located, to: Located, departureAt?: string) {
-  const [fastResult, freeResult, geometryResult] = await Promise.allSettled([
+  const [fastResult, freeResult, osrmResult] = await Promise.allSettled([
     valhalla(from, to, 1),
     freeRoute(from, to),
-    geometry(from, to),
+    osrmRoute(from, to),
   ]);
-  if (fastResult.status === "rejected") throw fastResult.reason;
-  const routeGeometry = geometryResult.status === "fulfilled"
-    ? geometryResult.value
+  if (fastResult.status === "rejected" && osrmResult.status === "rejected") throw fastResult.reason;
+  const fast = fastResult.status === "fulfilled"
+    ? fastResult.value
+    : { meters: osrmResult.status === "fulfilled" ? osrmResult.value.meters : 0, seconds: osrmResult.status === "fulfilled" ? osrmResult.value.seconds : 0 };
+  const routeGeometry = osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
+    ? osrmResult.value.coordinates
     : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
   return {
     from: from.label,
     to: to.label,
-    fast: { ...fastResult.value, tolls: estimateTolls(routeGeometry, departureAt) },
+    fast: { ...fast, tolls: estimateTolls(routeGeometry, departureAt) },
     free: freeResult.status === "fulfilled" ? freeResult.value : null,
     freeError: freeResult.status === "rejected" ? "Маршрут без платных дорог временно недоступен. Повторите расчёт позже." : undefined,
   };
