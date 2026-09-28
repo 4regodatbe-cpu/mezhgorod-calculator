@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Calculator, Car, Clock3, LoaderCircle, MapPin, Percent, Route, Settings2, ShieldCheck, X } from "lucide-react";
 
 type Place = { label: string; position?: { lat: number; lng: number } };
@@ -84,7 +84,6 @@ export default function V2Page() {
   const [result, setResult] = useState<Result | null>(null); const [error, setError] = useState(""); const [loading, setLoading] = useState(false); const [manualToll, setManualToll] = useState("");
   useEffect(() => { localStorage.setItem("mezhgorod-v2-rates", JSON.stringify(rates)); }, [rates]);
   const multiplier = urgent ? 1 + Math.max(0, urgentPercent) / 100 : 1;
-  const dualTotals = useMemo(() => result?.legs.map((leg) => ({ fast: leg.fast.meters / 1000, free: leg.free ? leg.free.meters / 1000 : null })) ?? [], [result]);
   const standardLeg = result?.legs[0];
   const standardHasTolls = (standardLeg?.fast.tolls.segments.length ?? 0) > 0;
   const standardOptimal = standardLeg ? pickOptimal(standardLeg.fast, standardLeg.free) : null;
