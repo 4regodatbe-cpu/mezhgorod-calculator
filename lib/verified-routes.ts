@@ -8,6 +8,8 @@ export type VerifiedRoute = {
   freeKm: number;
   freeMinutes: number;
   tollRub: number;
+  tollWeekdayRub?: number;
+  tollWeekendRub?: number;
   verifiedAt: string;
   source: string;
   accuracyPercent: number;
@@ -34,6 +36,24 @@ const CITIES: Record<string, { name: string; aliases: string[] }> = {
   adler: { name: "Адлер", aliases: ["адлер"] },
   "mineralnye-vody": { name: "Минеральные Воды", aliases: ["минеральные воды", "минводы", "мин воды"] },
 };
+
+
+const TOLL_PERIODS: Record<string, { weekday: number; weekend: number }> = {
+  "anapa|voronezh": { weekday: 4090, weekend: 4930 },
+  "krasnodar|moscow": { weekday: 5040, weekend: 6090 },
+  "moscow|sochi": { weekday: 5040, weekend: 6090 },
+  "moscow|saint-petersburg": { weekday: 4580, weekend: 4780 },
+  "saint-petersburg|sochi": { weekday: 9620, weekend: 10870 },
+};
+
+export function tollPeriodsForRoute(route: VerifiedRoute) {
+  const key = [route.from, route.to].sort().join("|");
+  const known = TOLL_PERIODS[key];
+  return {
+    weekday: route.tollWeekdayRub ?? known?.weekday ?? route.tollRub,
+    weekend: route.tollWeekendRub ?? known?.weekend ?? route.tollRub,
+  };
+}
 
 function normalize(value: string) {
   return value.toLocaleLowerCase("ru-RU").replace(/ё/g, "е").replace(/[^а-яa-z0-9-]+/g, " ").trim();
