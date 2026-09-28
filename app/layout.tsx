@@ -16,8 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body className="antialiased">{children}</body>
+    <html lang="ru" suppressHydrationWarning>
+      <body className="antialiased">
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("mezhgorod-theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.classList.add(t);document.documentElement.style.colorScheme=t}catch(e){}` }} />
+        {children}
+      </body>
     </html>
   );
 }
