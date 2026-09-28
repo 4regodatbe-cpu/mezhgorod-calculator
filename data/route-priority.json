@@ -1,0 +1,235 @@
+{
+  "updatedAt": "2026-09-28",
+  "policy": {
+    "source": "Яндекс Карты",
+    "tolerancePercent": 3,
+    "batchSize": 10,
+    "fields": [
+      "fastKm",
+      "fastMinutes",
+      "freeKm",
+      "freeMinutes",
+      "tollRub",
+      "verifiedAt",
+      "source"
+    ],
+    "rules": [
+      "Не записывать расстояние или стоимость без проверки источника",
+      "Если платных участков нет, tollRub равен 0",
+      "Если варианты фактически совпадают, fast и free хранятся одинаково",
+      "Маршруты из Крыма строятся через Краснодарский край"
+    ]
+  },
+  "routes": [
+    {
+      "rank": 1,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Туапсе",
+      "status": "pending"
+    },
+    {
+      "rank": 2,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Адлер",
+      "status": "pending"
+    },
+    {
+      "rank": 3,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Минеральные Воды",
+      "status": "pending"
+    },
+    {
+      "rank": 4,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Пятигорск",
+      "status": "pending"
+    },
+    {
+      "rank": 5,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Кисловодск",
+      "status": "pending"
+    },
+    {
+      "rank": 6,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Волгоград",
+      "status": "pending"
+    },
+    {
+      "rank": 7,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Астрахань",
+      "status": "pending"
+    },
+    {
+      "rank": 8,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Ейск",
+      "status": "pending"
+    },
+    {
+      "rank": 9,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Армавир",
+      "status": "pending"
+    },
+    {
+      "rank": 10,
+      "batch": 1,
+      "from": "Краснодар",
+      "to": "Нальчик",
+      "status": "pending"
+    },
+    {
+      "rank": 11,
+      "batch": 2,
+      "from": "Краснодар",
+      "to": "Владикавказ",
+      "status": "pending"
+    },
+    {
+      "rank": 12,
+      "batch": 2,
+      "from": "Ростов-на-Дону",
+      "to": "Сочи",
+      "status": "pending"
+    },
+    {
+      "rank": 13,
+      "batch": 2,
+      "from": "Ростов-на-Дону",
+      "to": "Анапа",
+      "status": "pending"
+    },
+    {
+      "rank": 14,
+      "batch": 2,
+      "from": "Ростов-на-Дону",
+      "to": "Геленджик",
+      "status": "pending"
+    },
+    {
+      "rank": 15,
+      "batch": 2,
+      "from": "Ростов-на-Дону",
+      "to": "Новороссийск",
+      "status": "pending"
+    },
+    {
+      "rank": 16,
+      "batch": 2,
+      "from": "Ростов-на-Дону",
+      "to": "Симферополь",
+      "status": "pending"
+    },
+    {
+      "rank": 17,
+      "batch": 2,
+      "from": "Ростов-на-Дону",
+      "to": "Севастополь",
+      "status": "pending"
+    },
+    {
+      "rank": 18,
+      "batch": 2,
+      "from": "Москва",
+      "to": "Симферополь",
+      "status": "pending"
+    },
+    {
+      "rank": 19,
+      "batch": 2,
+      "from": "Москва",
+      "to": "Севастополь",
+      "status": "pending"
+    },
+    {
+      "rank": 20,
+      "batch": 2,
+      "from": "Москва",
+      "to": "Ялта",
+      "status": "pending"
+    },
+    {
+      "rank": 21,
+      "batch": 3,
+      "from": "Москва",
+      "to": "Керчь",
+      "status": "pending"
+    },
+    {
+      "rank": 22,
+      "batch": 3,
+      "from": "Москва",
+      "to": "Ставрополь",
+      "status": "pending"
+    },
+    {
+      "rank": 23,
+      "batch": 3,
+      "from": "Москва",
+      "to": "Минеральные Воды",
+      "status": "pending"
+    },
+    {
+      "rank": 24,
+      "batch": 3,
+      "from": "Санкт-Петербург",
+      "to": "Краснодар",
+      "status": "pending"
+    },
+    {
+      "rank": 25,
+      "batch": 3,
+      "from": "Санкт-Петербург",
+      "to": "Ростов-на-Дону",
+      "status": "pending"
+    },
+    {
+      "rank": 26,
+      "batch": 3,
+      "from": "Санкт-Петербург",
+      "to": "Анапа",
+      "status": "pending"
+    },
+    {
+      "rank": 27,
+      "batch": 3,
+      "from": "Санкт-Петербург",
+      "to": "Симферополь",
+      "status": "pending"
+    },
+    {
+      "rank": 28,
+      "batch": 3,
+      "from": "Сочи",
+      "to": "Анапа",
+      "status": "pending"
+    },
+    {
+      "rank": 29,
+      "batch": 3,
+      "from": "Сочи",
+      "to": "Геленджик",
+      "status": "pending"
+    },
+    {
+      "rank": 30,
+      "batch": 3,
+      "from": "Сочи",
+      "to": "Новороссийск",
+      "status": "pending"
+    }
+  ]
+}
