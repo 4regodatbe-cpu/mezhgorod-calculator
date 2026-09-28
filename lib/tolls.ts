@@ -127,8 +127,40 @@ function distanceKm(a: Coordinate, b: Coordinate) {
   return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
 }
 
-function nearRoute(route: Coordinate[], point: Coordinate, radius = 16) {
-  return route.some((coordinate) => distanceKm(coordinate, point) <= radius);
+function nearestRouteIndex(route: Coordinate[], point: Coordinate, radius = 8) {
+  let bestIndex = -1;
+  let bestDistance = Number.POSITIVE_INFINITY;
+  route.forEach((coordinate, index) => {
+    const value = distanceKm(coordinate, point);
+    if (value <= radius && value < bestDistance) { bestDistance = value; bestIndex = index; }
+  });
+  return bestIndex;
+}
+
+function pathDistance(route: Coordinate[], fromIndex: number, toIndex: number) {
+  const start = Math.min(fromIndex, toIndex);
+  const end = Math.max(fromIndex, toIndex);
+  let total = 0;
+  for (let index = start + 1; index <= end; index += 1) total += distanceKm(route[index - 1], route[index]);
+  return total;
+}
+
+function matchesSegment(route: Coordinate[], segment: TollSegment) {
+  if (route.length < 2) return false;
+  const radius = Math.min(segment.radius ?? 8, 12);
+  const startIndex = nearestRouteIndex(route, segment.start, radius);
+  const endIndex = nearestRouteIndex(route, segment.end, radius);
+  if (startIndex < 0 || endIndex < 0 || startIndex === endIndex) return false;
+  const direct = distanceKm(segment.start, segment.end);
+  const travelled = pathDistance(route, startIndex, endIndex);
+  if (travelled < direct * 0.65 || travelled > direct * 2.2) return false;
+  if (segment.via) {
+    const viaIndex = nearestRouteIndex(route, segment.via, radius);
+    const low = Math.min(startIndex, endIndex);
+    const high = Math.max(startIndex, endIndex);
+    if (viaIndex < low || viaIndex > high) return false;
+  }
+  return true;
 }
 
 function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinate, radius: number) {
@@ -142,16 +174,23 @@ export function estimateTolls(route: Coordinate[], departureAt?: string) {
   const date = departureAt ? new Date(departureAt) : new Date();
   const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
   const weekend = day === 0 || day === 5 || day === 6;
-  const completeRoute = FULL_ROUTES.find((item) => matchesRouteEnds(route, item.start, item.end, item.radius));
-  if (completeRoute) return {
-    amount: weekend ? completeRoute.weekend : completeRoute.weekday,
-    period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
-    segments: [completeRoute.name],
-  };
-  const segments = [...M1, ...M3, ...M4, ...M11, ...M12, ...CKAD, ...A289, ...REGIONAL].filter((segment) => nearRoute(route, segment.start, segment.radius) && nearRoute(route, segment.end, segment.radius) && (!segment.via || nearRoute(route, segment.via, segment.radius)));
+  const segments = [...M1, ...M3, ...M4, ...M11, ...M12, ...CKAD, ...A289, ...REGIONAL]
+    .filter((segment) => matchesSegment(route, segment));
+  const completeRoute = segments.length > 0
+    ? FULL_ROUTES.find((item) => matchesRouteEnds(route, item.start, item.end, item.radius))
+    : undefined;
+  const weekdayAmount = completeRoute
+    ? completeRoute.weekday
+    : segments.reduce((sum, segment) => sum + segment.weekday, 0);
+  const weekendAmount = completeRoute
+    ? completeRoute.weekend
+    : segments.reduce((sum, segment) => sum + segment.weekend, 0);
   return {
-    amount: segments.reduce((sum, segment) => sum + (weekend ? segment.weekend : segment.weekday), 0),
+    amount: weekend ? weekendAmount : weekdayAmount,
+    weekdayAmount,
+    weekendAmount,
     period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
-    segments: segments.map((segment) => segment.name),
+    segments: completeRoute ? [completeRoute.name] : segments.map((segment) => segment.name),
+    confidence: segments.length > 0 ? "matched" as const : "none" as const,
   };
 }
