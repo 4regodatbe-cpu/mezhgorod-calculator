@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "android-app/**"
+      - "android-app-v2/**"
       - ".github/workflows/android-apk.yml"
 
 permissions:
@@ -26,16 +27,25 @@ jobs:
       - name: Build APK
         working-directory: android-app
         run: gradle assembleDebug --no-daemon
+      - name: Build APK 2.0
+        working-directory: android-app-v2
+        run: gradle assembleDebug --no-daemon
       - name: Prepare APK
-        run: cp android-app/app/build/outputs/apk/debug/app-debug.apk Mezhgorod-Calc.apk
+        run: |
+          cp android-app/app/build/outputs/apk/debug/app-debug.apk Mezhgorod-Calc.apk
+          cp android-app-v2/app/build/outputs/apk/debug/app-debug.apk Mezhgorod-Calc-2.apk
       - uses: actions/upload-artifact@v4
         with:
           name: Mezhgorod-Calc-APK
-          path: Mezhgorod-Calc.apk
+          path: |
+            Mezhgorod-Calc.apk
+            Mezhgorod-Calc-2.apk
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: android-latest
           name: Межгород Calc — Android APK
-          body: Установочный APK калькулятора межгородних поездок.
-          files: Mezhgorod-Calc.apk
+          body: Установочные APK калькуляторов Межгород Calc 1.0 и 2.0.
+          files: |
+            Mezhgorod-Calc.apk
+            Mezhgorod-Calc-2.apk
           make_latest: true
