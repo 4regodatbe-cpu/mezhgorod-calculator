@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Calculator, Car, Clock3, LoaderCircle, MapPin, Percent, Route, Settings2, ShieldCheck, X } from "lucide-react";
+import { Calculator, Car, Download, Clock3, LoaderCircle, MapPin, Percent, Route, Settings2, ShieldCheck, X } from "lucide-react";
 
 type Place = { label: string; position?: { lat: number; lng: number } };
 type Suggestion = Place & { id: string; title: string; region: string };
@@ -82,8 +82,9 @@ export default function V2Page() {
   const [from, setFrom] = useState<Place>({ label: "" }); const [via, setVia] = useState<Place>({ label: "" }); const [to, setTo] = useState<Place>({ label: "" });
   const [rates, setRates] = useState(() => { if (typeof window === "undefined") return defaults; try { const saved = localStorage.getItem("mezhgorod-v2-rates"); return saved ? { ...defaults, ...JSON.parse(saved) } : defaults; } catch { return defaults; } }); const [rate1, setRate1] = useState(25); const [rate2, setRate2] = useState(35);
   const [urgent, setUrgent] = useState(false); const [urgentPercent, setUrgentPercent] = useState(20);
-  const [result, setResult] = useState<Result | null>(null); const [error, setError] = useState(""); const [loading, setLoading] = useState(false); const [manualToll, setManualToll] = useState("");
+  const [result, setResult] = useState<Result | null>(null); const [error, setError] = useState(""); const [loading, setLoading] = useState(false); const [manualToll, setManualToll] = useState(""); const [isAndroidApp, setIsAndroidApp] = useState(false);
   useEffect(() => { localStorage.setItem("mezhgorod-v2-rates", JSON.stringify(rates)); }, [rates]);
+  useEffect(() => { setIsAndroidApp(navigator.userAgent.includes("MezhgorodAndroidV2")); }, []);
   const multiplier = urgent ? 1 + Math.max(0, urgentPercent) / 100 : 1;
   const standardLeg = result?.legs[0];
   const standardHasTolls = (standardLeg?.fast.tolls.segments.length ?? 0) > 0;
@@ -94,7 +95,7 @@ export default function V2Page() {
 
   return <main className="calculator-modern min-h-screen bg-slate-100 text-slate-950 dark:bg-[#070b14] dark:text-slate-100">
     <div className="mx-auto max-w-5xl px-3 py-4 sm:px-6 sm:py-8">
-      <header className="mb-4 flex items-center justify-between gap-3"><div className="flex items-center gap-3"><div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-700 shadow-lg shadow-blue-900/30"><Car className="h-6 w-6"/></div><div><h1 className="text-xl font-black sm:text-2xl">Межгород Calc <span className="text-blue-400">2.0</span></h1><p className="text-xs text-slate-500 dark:text-slate-400">Честный расчёт двух вариантов маршрута</p></div></div><ThemeToggle /></header>
+      <header className="mb-4 flex items-center justify-between gap-3"><div className="flex items-center gap-3"><div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-700 shadow-lg shadow-blue-900/30"><Car className="h-6 w-6"/></div><div><h1 className="text-xl font-black sm:text-2xl">Межгород Calc <span className="text-blue-400">2.0</span></h1><p className="text-xs text-slate-500 dark:text-slate-400">Честный расчёт двух вариантов маршрута</p></div></div><div className="flex items-center gap-2"><ThemeToggle />{!isAndroidApp && <a href="https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/download/android-latest/Mezhgorod-Calc-2.apk" download="Mezhgorod-Calc-2.apk" className="flex h-10 items-center gap-1.5 rounded-xl bg-blue-600 px-3 text-xs font-bold text-white shadow-md transition hover:bg-blue-700"><Download className="h-4 w-4"/>APK 2.0</a>}</div></header>
       <section className="rounded-[1.5rem] border border-slate-800 bg-slate-900/70 p-3 shadow-2xl backdrop-blur sm:p-5">
         <div className="mb-4 grid grid-cols-2 rounded-xl bg-slate-950 p-1"><button onClick={() => { setMode("standard"); setResult(null); }} className={`min-h-11 rounded-lg px-3 text-sm font-bold transition ${mode === "standard" ? "bg-blue-600 text-white" : "text-slate-400"}`}>Обычный расчёт</button><button onClick={() => { setMode("dual"); setResult(null); }} className={`min-h-11 rounded-lg px-3 text-sm font-bold transition ${mode === "dual" ? "bg-blue-600 text-white" : "text-slate-400"}`}>Двойная тарификация</button></div>
         <div className={`grid gap-3 ${mode === "dual" ? "lg:grid-cols-3" : "sm:grid-cols-2"}`}><AddressField label="Точка A" value={from} onChange={setFrom} placeholder="Откуда"/>{mode === "dual" && <AddressField label="Промежуточная точка" value={via} onChange={setVia} placeholder="Граница тарифа"/>}<AddressField label="Точка B" value={to} onChange={setTo} placeholder="Куда"/></div>
