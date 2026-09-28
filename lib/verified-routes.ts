@@ -20,6 +20,16 @@ const CITIES: Record<string, { name: string; aliases: string[] }> = {
   moscow: { name: "Москва", aliases: ["москва", "московск"] },
   sochi: { name: "Сочи", aliases: ["сочи"] },
   "saint-petersburg": { name: "Санкт-Петербург", aliases: ["санкт-петербург", "петербург", "спб"] },
+  gelendzhik: { name: "Геленджик", aliases: ["геленджик"] },
+  novorossiysk: { name: "Новороссийск", aliases: ["новороссийск"] },
+  rostov: { name: "Ростов-на-Дону", aliases: ["ростов-на-дону", "ростов на дону"] },
+  stavropol: { name: "Ставрополь", aliases: ["ставрополь"] },
+  maykop: { name: "Майкоп", aliases: ["майкоп"] },
+  "goryachiy-klyuch": { name: "Горячий Ключ", aliases: ["горячий ключ"] },
+  simferopol: { name: "Симферополь", aliases: ["симферополь"] },
+  yalta: { name: "Ялта", aliases: ["ялта"] },
+  sevastopol: { name: "Севастополь", aliases: ["севастополь"] },
+  kerch: { name: "Керчь", aliases: ["керчь", "керч"] },
 };
 
 function normalize(value: string) {
