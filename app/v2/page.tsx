@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Calculator, Car, Clock3, LoaderCircle, MapPin, Percent, Route, Settings2, ShieldCheck, X } from "lucide-react";
 
 type Place = { label: string; position?: { lat: number; lng: number } };
@@ -91,9 +92,9 @@ export default function V2Page() {
   const dualVariants: Array<"fast" | "free" | "optimal"> = dualHasTolls ? ["fast", "free"] : ["optimal"];
   async function calculate() { setError(""); setResult(null); setLoading(true); setManualToll(""); try { const response = await fetch("/api/v2/calculate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mode, from, via, to, departureAt: new Date().toISOString() }) }); const data = await response.json(); if (!response.ok) throw new Error(data.error); setResult(data); } catch (e) { setError(e instanceof Error ? e.message : "Не удалось выполнить расчёт"); } finally { setLoading(false); } }
 
-  return <main className="min-h-screen bg-[#070b14] text-slate-100">
+  return <main className="calculator-modern min-h-screen bg-slate-100 text-slate-950 dark:bg-[#070b14] dark:text-slate-100">
     <div className="mx-auto max-w-5xl px-3 py-4 sm:px-6 sm:py-8">
-      <header className="mb-4 flex items-center gap-3"><div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-700 shadow-lg shadow-blue-900/30"><Car className="h-6 w-6"/></div><div><h1 className="text-xl font-black sm:text-2xl">Межгород Calc <span className="text-blue-400">2.0</span></h1><p className="text-xs text-slate-400">Честный расчёт двух вариантов маршрута</p></div></header>
+      <header className="mb-4 flex items-center justify-between gap-3"><div className="flex items-center gap-3"><div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-700 shadow-lg shadow-blue-900/30"><Car className="h-6 w-6"/></div><div><h1 className="text-xl font-black sm:text-2xl">Межгород Calc <span className="text-blue-400">2.0</span></h1><p className="text-xs text-slate-500 dark:text-slate-400">Честный расчёт двух вариантов маршрута</p></div></div><ThemeToggle /></header>
       <section className="rounded-[1.5rem] border border-slate-800 bg-slate-900/70 p-3 shadow-2xl backdrop-blur sm:p-5">
         <div className="mb-4 grid grid-cols-2 rounded-xl bg-slate-950 p-1"><button onClick={() => { setMode("standard"); setResult(null); }} className={`min-h-11 rounded-lg px-3 text-sm font-bold transition ${mode === "standard" ? "bg-blue-600 text-white" : "text-slate-400"}`}>Обычный расчёт</button><button onClick={() => { setMode("dual"); setResult(null); }} className={`min-h-11 rounded-lg px-3 text-sm font-bold transition ${mode === "dual" ? "bg-blue-600 text-white" : "text-slate-400"}`}>Двойная тарификация</button></div>
         <div className={`grid gap-3 ${mode === "dual" ? "lg:grid-cols-3" : "sm:grid-cols-2"}`}><AddressField label="Точка A" value={from} onChange={setFrom} placeholder="Откуда"/>{mode === "dual" && <AddressField label="Промежуточная точка" value={via} onChange={setVia} placeholder="Граница тарифа"/>}<AddressField label="Точка B" value={to} onChange={setTo} placeholder="Куда"/></div>
