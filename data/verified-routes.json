@@ -262,5 +262,41 @@
     "verifiedAt": "2026-09-28",
     "source": "Яндекс Карты",
     "accuracyPercent": 0
+  },
+  {
+    "from": "krasnodar",
+    "to": "tuapse",
+    "fastKm": 175,
+    "fastMinutes": 174,
+    "freeKm": 175,
+    "freeMinutes": 174,
+    "tollRub": 0,
+    "verifiedAt": "2026-09-28",
+    "source": "Яндекс Карты",
+    "accuracyPercent": 3
+  },
+  {
+    "from": "krasnodar",
+    "to": "adler",
+    "fastKm": 317,
+    "fastMinutes": 356,
+    "freeKm": 317,
+    "freeMinutes": 356,
+    "tollRub": 0,
+    "verifiedAt": "2026-09-28",
+    "source": "Яндекс Карты",
+    "accuracyPercent": 3
+  },
+  {
+    "from": "krasnodar",
+    "to": "mineralnye-vody",
+    "fastKm": 404,
+    "fastMinutes": 335,
+    "freeKm": 404,
+    "freeMinutes": 335,
+    "tollRub": 0,
+    "verifiedAt": "2026-09-28",
+    "source": "Яндекс Карты",
+    "accuracyPercent": 3
   }
 ]
