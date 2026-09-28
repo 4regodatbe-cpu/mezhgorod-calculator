@@ -27,7 +27,17 @@ body { margin:0; min-width:320px; background:var(--background); color:var(--fore
 .support-icon { color:#047857; background:#d1fae5; }
 @media (min-width:640px) { .panel,.route-card { padding:1.5rem; } .calculator-panel { padding:1.2rem 1.5rem; } }
 @media (max-height:700px) and (max-width:639px) { .calculator-panel { padding:.75rem .9rem; } }
-html.dark body { background-image:radial-gradient(circle at 50% -20%,rgb(59 130 246 / 16%),transparent 42%); } .panel,.route-card { border-color:rgb(51 65 85 / 80%); background:rgb(15 23 42 / 86%); box-shadow:0 18px 48px rgb(0 0 0 / 25%); } .route-pill { background:rgb(30 64 175 / 40%); color:#bfdbfe; } .route-card dl>div { border-color:#334155; } .route-card dt { color:#94a3b8; } .route-card .total dd,.grand-total strong { color:#93c5fd; } .grand-total { border-color:#1e3a8a; background:linear-gradient(135deg,rgb(30 58 138 / 25%),rgb(15 23 42 / 90%)); } .form-control { border-color:#334155; background:#0f172a; color:#f1f5f9; } .section-icon { background:rgb(30 64 175 / 35%); color:#bfdbfe; } .support-card { border-color:rgb(16 185 129 / 28%); background:linear-gradient(145deg,rgb(6 78 59 / 28%),rgb(15 23 42 / 88%)); } .support-icon { background:rgb(6 78 59 / 55%); color:#a7f3d0; } }
+html.dark body { background-image:radial-gradient(circle at 50% -20%,rgb(59 130 246 / 16%),transparent 42%); }
+html.dark .panel,html.dark .route-card { border-color:rgb(51 65 85 / 80%); background:rgb(15 23 42 / 86%); box-shadow:0 18px 48px rgb(0 0 0 / 25%); }
+html.dark .route-pill { background:rgb(30 64 175 / 40%); color:#bfdbfe; }
+html.dark .route-card dl>div { border-color:#334155; }
+html.dark .route-card dt { color:#94a3b8; }
+html.dark .route-card .total dd,html.dark .grand-total strong { color:#93c5fd; }
+html.dark .grand-total { border-color:#1e3a8a; background:linear-gradient(135deg,rgb(30 58 138 / 25%),rgb(15 23 42 / 90%)); }
+html.dark .form-control { border-color:#334155; background:#0f172a; color:#f1f5f9; }
+html.dark .section-icon { background:rgb(30 64 175 / 35%); color:#bfdbfe; }
+html.dark .support-card { border-color:rgb(16 185 129 / 28%); background:linear-gradient(145deg,rgb(6 78 59 / 28%),rgb(15 23 42 / 88%)); }
+html.dark .support-icon { background:rgb(6 78 59 / 55%); color:#a7f3d0; }
 
 /* Светлая тема для рабочих поверхностей 2.0 и 3.0 */
 html.light .calculator-modern section,
