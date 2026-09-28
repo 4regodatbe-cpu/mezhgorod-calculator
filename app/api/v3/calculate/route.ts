@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { findVerifiedRoute, verifiedRouteCount } from "@/lib/verified-routes";
+import { findVerifiedRoute, tollPeriodsForRoute, verifiedRouteCount } from "@/lib/verified-routes";
 
 type Point = { label?: string };
 
@@ -21,6 +21,7 @@ function calculateLeg(fromLabel: string, toLabel: string) {
       reason: "Эта пара городов ещё не сверена с Яндекс Картами.",
     };
   }
+  const tollPeriods = tollPeriodsForRoute(result.route);
   return {
     status: "verified" as const,
     from: result.from.name,
@@ -28,6 +29,8 @@ function calculateLeg(fromLabel: string, toLabel: string) {
     fast: { meters: result.route.fastKm * 1000, seconds: result.route.fastMinutes * 60 },
     free: { meters: result.route.freeKm * 1000, seconds: result.route.freeMinutes * 60 },
     tollRub: result.route.tollRub,
+    tollWeekdayRub: tollPeriods.weekday,
+    tollWeekendRub: tollPeriods.weekend,
     source: result.route.source,
     verifiedAt: result.route.verifiedAt,
     accuracyPercent: result.route.accuracyPercent,
