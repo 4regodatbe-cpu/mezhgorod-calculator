@@ -7,8 +7,8 @@
     "reference": "Росстат / сводная таблица городов России по численности населения"
   },
   "pace": {
-    "routesPerRun": 3,
-    "minimumPendingBuffer": 12
+    "routesPerRun": 15,
+    "minimumPendingBuffer": 45
   },
   "stages": [
     {
