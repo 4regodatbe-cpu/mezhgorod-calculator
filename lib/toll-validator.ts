@@ -1,5 +1,14 @@
 import type { Coordinate } from "@/lib/tolls";
 
+export type TollBoothEvent = {
+  wayId: string | null;
+  roadNames: string[];
+  edgeIndex: number;
+  edgeToll: boolean;
+  beginShapeIndex?: number;
+  endShapeIndex?: number;
+};
+
 export type TollValidation = {
   status: "toll" | "free" | "unknown";
   source: "Valhalla map matching";
@@ -8,12 +17,19 @@ export type TollValidation = {
   wayIds: string[];
   roadNames: string[];
   message: string;
+  tollBoothCount?: number;
+  tollBooths?: TollBoothEvent[];
 };
 
 type TraceEdge = {
   toll?: boolean;
   way_id?: string | number;
   names?: string[];
+  begin_shape_index?: number;
+  end_shape_index?: number;
+  end_node?: {
+    type?: string;
+  };
 };
 
 const MAX_TRACE_POINTS = 320;
@@ -73,6 +89,8 @@ function unknown(message: string): TollValidation {
     checkedEdgeCount: 0,
     wayIds: [],
     roadNames: [],
+    tollBoothCount: 0,
+    tollBooths: [],
     message,
   };
 }
@@ -99,7 +117,15 @@ async function validateChunk(route: Coordinate[], chunkNumber: number): Promise<
         },
         filters: {
           action: "include",
-          attributes: ["edge.toll", "edge.way_id", "edge.names", "edge.length"],
+          attributes: [
+            "edge.toll",
+            "edge.way_id",
+            "edge.names",
+            "edge.length",
+            "edge.begin_shape_index",
+            "edge.end_shape_index",
+            "node.type",
+          ],
         },
       }),
       signal: AbortSignal.timeout(18_000),
@@ -117,17 +143,30 @@ async function validateChunk(route: Coordinate[], chunkNumber: number): Promise<
     const tollEdges = edges.filter((edge) => edge.toll === true);
     const wayIds = [...new Set(tollEdges.map((edge) => edge.way_id).filter((value): value is string | number => value !== undefined).map(String))];
     const roadNames = [...new Set(tollEdges.flatMap((edge) => edge.names ?? []).filter(Boolean))].slice(0, 20);
+    const tollBooths: TollBoothEvent[] = edges.flatMap((edge, edgeIndex) => {
+      if (edge.end_node?.type !== "toll_booth") return [];
+      return [{
+        wayId: edge.way_id === undefined ? null : String(edge.way_id),
+        roadNames: edge.names ?? [],
+        edgeIndex,
+        edgeToll: edge.toll === true,
+        beginShapeIndex: edge.begin_shape_index,
+        endShapeIndex: edge.end_shape_index,
+      }];
+    });
 
     return {
-      status: tollEdges.length > 0 ? "toll" : "free",
+      status: tollEdges.length > 0 || tollBooths.length > 0 ? "toll" : "free",
       source: "Valhalla map matching",
       tollEdgeCount: tollEdges.length,
       checkedEdgeCount: edges.length,
       wayIds,
       roadNames,
-      message: tollEdges.length > 0
-        ? `Часть ${chunkNumber}: найдено платных рёбер ${tollEdges.length}`
-        : `Часть ${chunkNumber}: платных рёбер нет`,
+      tollBoothCount: tollBooths.length,
+      tollBooths,
+      message: tollEdges.length > 0 || tollBooths.length > 0
+        ? `Часть ${chunkNumber}: платных рёбер ${tollEdges.length}, ПВП ${tollBooths.length}`
+        : `Часть ${chunkNumber}: платных рёбер и ПВП нет`,
     };
   } catch (error) {
     const details = error instanceof Error ? error.message : "неизвестная ошибка";
@@ -156,6 +195,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
   const tollEdgeCount = results.reduce((sum, item) => sum + item.tollEdgeCount, 0);
   const wayIds = [...new Set(results.flatMap((item) => item.wayIds))];
   const roadNames = [...new Set(results.flatMap((item) => item.roadNames))].slice(0, 20);
+  const tollBooths = results.flatMap((item) => item.tollBooths ?? []);
 
   if (tollResults.length > 0) {
     return {
@@ -165,7 +205,9 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       checkedEdgeCount,
       wayIds,
       roadNames,
-      message: `Платность подтверждена: ${tollEdgeCount} рёбер, проверено частей ${results.length}${unknownResults.length ? `, не проверено ${unknownResults.length}` : ""}`,
+      tollBoothCount: tollBooths.length,
+      tollBooths,
+      message: `Платность подтверждена: ${tollEdgeCount} рёбер, ПВП ${tollBooths.length}, проверено частей ${results.length}${unknownResults.length ? `, не проверено ${unknownResults.length}` : ""}`,
     };
   }
 
@@ -177,6 +219,8 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       checkedEdgeCount,
       wayIds: [],
       roadNames: [],
+      tollBoothCount: tollBooths.length,
+      tollBooths,
       message: `Не удалось полностью проверить ${unknownResults.length} из ${results.length} частей: ${unknownResults[0].message}`,
     };
   }
@@ -188,6 +232,8 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     checkedEdgeCount,
     wayIds: [],
     roadNames: [],
-    message: `Платные рёбра не обнаружены, проверено частей ${results.length}`,
+    tollBoothCount: 0,
+    tollBooths: [],
+    message: `Платные рёбра и ПВП не обнаружены, проверено частей ${results.length}`,
   };
 }
