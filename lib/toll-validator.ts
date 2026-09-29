@@ -1,6 +1,7 @@
 import type { Coordinate } from "@/lib/tolls";
 
 export type TollBoothEvent = {
+  osmNodeId: string | null;
   wayId: string | null;
   roadNames: string[];
   edgeIndex: number;
@@ -24,11 +25,13 @@ export type TollValidation = {
 type TraceEdge = {
   toll?: boolean;
   way_id?: string | number;
+  node_id?: string | number;
   names?: string[];
   begin_shape_index?: number;
   end_shape_index?: number;
   end_node?: {
     type?: string;
+    node_id?: string | number;
   };
 };
 
@@ -124,6 +127,8 @@ async function validateChunk(route: Coordinate[], chunkNumber: number): Promise<
             "edge.length",
             "edge.begin_shape_index",
             "edge.end_shape_index",
+            "edge.begin_osm_node_id",
+            "edge.end_osm_node_id",
             "node.type",
           ],
         },
@@ -145,7 +150,9 @@ async function validateChunk(route: Coordinate[], chunkNumber: number): Promise<
     const roadNames = [...new Set(tollEdges.flatMap((edge) => edge.names ?? []).filter(Boolean))].slice(0, 20);
     const tollBooths: TollBoothEvent[] = edges.flatMap((edge, edgeIndex) => {
       if (edge.end_node?.type !== "toll_booth") return [];
+      const nodeId = edge.end_node.node_id;
       return [{
+        osmNodeId: nodeId === undefined ? null : String(nodeId),
         wayId: edge.way_id === undefined ? null : String(edge.way_id),
         roadNames: edge.names ?? [],
         edgeIndex,
