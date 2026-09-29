@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
+import { recoverM4Tolls } from "@/lib/toll-recovery";
 import { safeRoutePositions } from "@/lib/safe-route";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { findVerifiedRoute, tollPeriodsForRoute } from "@/lib/verified-routes";
@@ -405,9 +406,11 @@ async function leg(from: Located, to: Located, departureAt?: string) {
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
   const verifiedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
   const matchedTolls = mapMatchedTollFallback(verifiedTolls, fastValidation);
+  const recoveredM4 = matchedTolls.amount <= 0 ? recoverM4Tolls(routeGeometry, fastValidation, departureAt) : null;
+  const pricedTolls: TollEstimate = recoveredM4 ?? matchedTolls;
   const tolls = selectedFree && fastValidation.status === "unknown"
-    ? routingDifferenceTollFallback(selectedFast.route, selectedFree.route, matchedTolls)
-    : matchedTolls;
+    ? routingDifferenceTollFallback(selectedFast.route, selectedFree.route, pricedTolls)
+    : pricedTolls;
 
   const hadFreeCandidates = freeCandidates.length > 0;
   const allFreeCandidatesPaid = hadFreeCandidates && freeCandidates.every((candidate) => candidate.validation.status === "toll");
