@@ -1,0 +1,32 @@
+name: PVP 515 node discovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pvp-515-discovery.yml'
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Query targeted PVP window
+        shell: bash
+        run: |
+          set -euo pipefail
+          url='https://mezhgorod-calculator.vercel.app/api/v2/debug-pvp-node'
+          curl --fail --retry 2 --retry-delay 4 --max-time 45 \
+            --get "$url" \
+            --data-urlencode 'from=Краснодар' \
+            --data-urlencode 'to=Москва' \
+            --data-urlencode 'lat=51.660641' \
+            --data-urlencode 'lon=39.301775' \
+            -o pvp-515.json
+          jq . pvp-515.json
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: pvp-515-discovery
+          path: pvp-515.json
+          retention-days: 2
