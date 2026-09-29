@@ -1,0 +1,106 @@
+name: Targeted M4 PVP 515 audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/osm-m4-515-audit.yml'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Resolve PVP 515 and query nearby OSM toll booths
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audit515
+
+          # Resolve the actual named place/address independently before querying OSM.
+          curl --fail --show-error --silent --max-time 20 \
+            -A 'MezhgorodCalcRouteAudit/1.2 (GitHub Actions)' \
+            --get 'https://nominatim.openstreetmap.org/search' \
+            --data-urlencode 'q=Пункт взимания платы М-4 515 километр, Отрадное, Новоусманский район, Воронежская область, Россия' \
+            --data-urlencode 'format=jsonv2' \
+            --data-urlencode 'limit=5' \
+            -o audit515/nominatim.json || echo '[]' > audit515/nominatim.json
+
+          curl --fail --show-error --silent --max-time 20 \
+            -A 'MezhgorodCalcRouteAudit/1.2 (GitHub Actions)' \
+            --get 'https://photon.komoot.io/api/' \
+            --data-urlencode 'q=Пункт взимания платы М-4 515 километр Отрадное Воронежская область' \
+            --data-urlencode 'limit=5' \
+            -o audit515/photon.json || echo '{"features":[]}' > audit515/photon.json
+
+          echo '=== Nominatim candidates ==='
+          jq -r '.[] | [.lat,.lon,.display_name,.type,.class,.osm_type,.osm_id] | @tsv' audit515/nominatim.json || true
+          echo '=== Photon candidates ==='
+          jq -r '.features[]? | [.geometry.coordinates[1],.geometry.coordinates[0],(.properties.name // ""),(.properties.city // ""),(.properties.state // ""),(.properties.osm_type // ""),(.properties.osm_id // "")] | @tsv' audit515/photon.json || true
+
+          # Small boxes across the Otradnoye / M-4 bypass zone. The old anchor
+          # (51.8915,39.3428) is intentionally included as a separate box so we
+          # can prove whether it is the real PVP or a false local toll object.
+          boxes=(
+            '51.76,39.25,51.86,39.45'
+            '51.84,39.25,51.94,39.45'
+          )
+          endpoints=(
+            'https://maps.mail.ru/osm/tools/overpass/api/interpreter'
+            'https://overpass.private.coffee/api/interpreter'
+            'https://overpass-api.de/api/interpreter'
+          )
+
+          fetch_box() {
+            local bbox="$1"
+            local output="$2"
+            local query="[out:json][timeout:35];(node[\"barrier\"=\"toll_booth\"](${bbox});way[\"barrier\"=\"toll_booth\"](${bbox});node[\"amenity\"=\"toll_booth\"](${bbox}););out center tags;"
+            local endpoint
+            for endpoint in "${endpoints[@]}"; do
+              echo "bbox=${bbox}: trying ${endpoint}"
+              if curl --fail --show-error --silent --max-time 45 \
+                -A 'MezhgorodCalcRouteAudit/1.2 (GitHub Actions)' \
+                -H 'Content-Type: application/x-www-form-urlencoded' \
+                --data-urlencode "data=${query}" \
+                "$endpoint" -o "$output"; then
+                jq -e '.elements | type == "array"' "$output" >/dev/null
+                echo "bbox=${bbox}: received $(jq '.elements | length' "$output") elements"
+                return 0
+              fi
+              rm -f "$output"
+            done
+            echo "All Overpass endpoints failed for bbox=${bbox}" >&2
+            return 1
+          }
+
+          index=0
+          for bbox in "${boxes[@]}"; do
+            index=$((index + 1))
+            fetch_box "$bbox" "audit515/overpass-${index}.json"
+          done
+
+          jq -s '{elements: ([.[].elements[]] | unique_by([.type,.id]))}' audit515/overpass-*.json > audit515/osm-toll-booths.json
+
+          echo '=== OSM toll booths around Otradnoye / old anchor ==='
+          jq -r '.elements[] | [
+            .type,
+            .id,
+            (.lat // .center.lat // null),
+            (.lon // .center.lon // null),
+            (.tags.name // ""),
+            (.tags.ref // ""),
+            (.tags.operator // ""),
+            (.tags.description // ""),
+            (.tags.highway // ""),
+            (.tags.toll // "")
+          ] | @tsv' audit515/osm-toll-booths.json
+
+      - name: Upload audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m4-pvp-515-audit
+          path: audit515/*.json
+          retention-days: 7
+          if-no-files-found: warn
