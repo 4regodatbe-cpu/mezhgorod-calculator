@@ -1,6 +1,16 @@
 name: Ежедневная проверка маршрутов
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "app/api/v2/**"
+      - "lib/toll*.ts"
+      - "lib/verified-routes.ts"
+      - "data/verified-routes.json"
+      - "scripts/route-monitor.mjs"
+      - ".github/workflows/route-quality.yml"
   schedule:
     - cron: "17 2 * * *"
   workflow_dispatch:
@@ -12,7 +22,7 @@ permissions:
 jobs:
   check-routes:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
