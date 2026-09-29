@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { priceM4TollEvents } from "@/lib/toll-engine/m4-engine";
+import { priceM4TollValidation } from "@/lib/toll-engine/m4-engine";
+import type { TollValidation } from "@/lib/toll-validator";
 
 export const maxDuration = 60;
 
@@ -26,8 +27,8 @@ export async function GET(request: NextRequest) {
   const data = await response.json().catch(() => null) as {
     legs?: Array<{
       fast?: {
-        tollValidation?: { tollBooths?: Parameters<typeof priceM4TollEvents>[0] };
-        m4PricingDiagnostic?: ReturnType<typeof priceM4TollEvents>;
+        tollValidation?: TollValidation;
+        m4PricingDiagnostic?: ReturnType<typeof priceM4TollValidation>;
         [key: string]: unknown;
       };
       [key: string]: unknown;
@@ -41,9 +42,8 @@ export async function GET(request: NextRequest) {
 
   if (response.ok && Array.isArray(data.legs)) {
     for (const leg of data.legs) {
-      if (!leg.fast) continue;
-      const events = leg.fast.tollValidation?.tollBooths ?? [];
-      leg.fast.m4PricingDiagnostic = priceM4TollEvents(events);
+      if (!leg.fast?.tollValidation) continue;
+      leg.fast.m4PricingDiagnostic = priceM4TollValidation(leg.fast.tollValidation);
     }
   }
 
