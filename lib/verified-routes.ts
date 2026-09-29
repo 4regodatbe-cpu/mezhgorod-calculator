@@ -45,13 +45,18 @@ const CITIES: Record<string, { name: string; aliases: string[] }> = {
   vladikavkaz: { name: "Владикавказ", aliases: ["владикавказ"] },
 };
 
-
 const TOLL_PERIODS: Record<string, { weekday: number; weekend: number }> = {
   "anapa|voronezh": { weekday: 4090, weekend: 4930 },
   "krasnodar|moscow": { weekday: 5040, weekend: 6090 },
   "moscow|sochi": { weekday: 5040, weekend: 6090 },
   "moscow|saint-petersburg": { weekday: 4580, weekend: 4780 },
   "saint-petersburg|sochi": { weekday: 9620, weekend: 10870 },
+  // Verified Crimea ↔ Moscow routes use the safe corridor through Krasnodar:
+  // Crimea ↔ Krasnodar 800 + Krasnodar ↔ Moscow 5040/6090.
+  "moscow|simferopol": { weekday: 5840, weekend: 6890 },
+  "moscow|sevastopol": { weekday: 5840, weekend: 6890 },
+  "moscow|yalta": { weekday: 5840, weekend: 6890 },
+  "kerch|moscow": { weekday: 5840, weekend: 6890 },
 };
 
 export function tollPeriodsForRoute(route: VerifiedRoute) {
@@ -67,10 +72,26 @@ function normalize(value: string) {
   return value.toLocaleLowerCase("ru-RU").replace(/ё/g, "е").replace(/[^а-яa-z0-9-]+/g, " ").trim();
 }
 
+function findCityInText(text: string, exactOnly = false) {
+  const normalized = normalize(text).replace(/^(город|г)\s+/, "");
+  return Object.entries(CITIES).find(([, city]) => city.aliases.some((alias) => {
+    const normalizedAlias = normalize(alias);
+    if (normalized === normalizedAlias) return true;
+    if (exactOnly) return false;
+    const haystack = ` ${normalized.replace(/-/g, " ")} `;
+    const needle = ` ${normalizedAlias.replace(/-/g, " ")} `;
+    return haystack.includes(needle);
+  }));
+}
+
 export function resolveCity(label: string) {
-  const text = normalize(label);
-  const match = Object.entries(CITIES).find(([, city]) => city.aliases.some((alias) => text.includes(normalize(alias))));
-  return match ? { key: match[0], name: match[1].name } : null;
+  // Geocoders normally return "city, region, country". Resolve the city from
+  // the first component first so "Сочи, Краснодарский край" can never be
+  // mistaken for Краснодар because of the region name.
+  const firstPart = label.split(",")[0] ?? label;
+  const primary = findCityInText(firstPart, true);
+  const fallback = primary ?? findCityInText(label);
+  return fallback ? { key: fallback[0], name: fallback[1].name } : null;
 }
 
 export function findVerifiedRoute(fromLabel: string, toLabel: string) {
