@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-09-29",
   "policy": {
     "source": "Яндекс Карты",
     "tolerancePercent": 3,
-    "batchSize": 10,
+    "batchSize": 15,
     "fields": [
       "fastKm",
       "fastMinutes",
@@ -66,9 +66,8 @@
       "batch": 1,
       "from": "Краснодар",
       "to": "Волгоград",
-      "status": "pending",
-      "lastCheckedAt": "2026-09-29",
-      "pendingReason": "Публичные Яндекс Карты не смогли построить автомобильный маршрут"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 7,
@@ -107,114 +106,112 @@
       "batch": 2,
       "from": "Краснодар",
       "to": "Владикавказ",
-      "status": "pending",
-      "lastCheckedAt": "2026-09-29",
-      "pendingReason": "Яндекс Карты не вернули значения расстояния и времени"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 12,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Сочи",
-      "status": "pending",
-      "lastCheckedAt": "2026-09-29",
-      "pendingReason": "Яндекс Карты не вернули значения расстояния и времени"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 13,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Анапа",
-      "status": "pending",
-      "lastCheckedAt": "2026-09-29",
-      "pendingReason": "Не показана стоимость платных участков для подтверждённого маршрута"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 14,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Геленджик",
-      "status": "pending",
-      "lastCheckedAt": "2026-09-29",
-      "pendingReason": "Не показана стоимость платных участков для подтверждённого маршрута"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 15,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Новороссийск",
-      "status": "pending",
-      "lastCheckedAt": "2026-09-29",
-      "pendingReason": "Не показана стоимость платных участков для подтверждённого маршрута"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 16,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Симферополь",
-      "status": "pending",
-      "lastCheckedAt": "2026-09-29",
-      "pendingReason": "Безопасное направление через Краснодар подтверждено, но бесплатный вариант не удалось однозначно проверить"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 17,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Севастополь",
-      "status": "pending",
-      "lastCheckedAt": "2026-09-29",
-      "pendingReason": "Безопасное направление через Краснодар подтверждено, но стоимость платных участков не показана"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 18,
       "batch": 2,
       "from": "Москва",
       "to": "Симферополь",
-      "status": "pending",
-      "lastCheckedAt": "2026-09-29",
-      "pendingReason": "При обязательном направлении через Краснодар Яндекс Карты не вернули итоговые значения"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 19,
       "batch": 2,
       "from": "Москва",
       "to": "Севастополь",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 20,
       "batch": 2,
       "from": "Москва",
       "to": "Ялта",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 21,
       "batch": 3,
       "from": "Москва",
       "to": "Керчь",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 22,
       "batch": 3,
       "from": "Москва",
       "to": "Ставрополь",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 23,
       "batch": 3,
       "from": "Москва",
       "to": "Минеральные Воды",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 24,
       "batch": 3,
       "from": "Санкт-Петербург",
       "to": "Краснодар",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 25,
@@ -256,6 +253,174 @@
       "batch": 3,
       "from": "Сочи",
       "to": "Новороссийск",
+      "status": "pending"
+    },
+    {
+      "rank": 31,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Туапсе",
+      "status": "pending"
+    },
+    {
+      "rank": 32,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Адлер",
+      "status": "pending"
+    },
+    {
+      "rank": 33,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Ставрополь",
+      "status": "pending"
+    },
+    {
+      "rank": 34,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Минеральные Воды",
+      "status": "pending"
+    },
+    {
+      "rank": 35,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Пятигорск",
+      "status": "pending"
+    },
+    {
+      "rank": 36,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Кисловодск",
+      "status": "pending"
+    },
+    {
+      "rank": 37,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Нальчик",
+      "status": "pending"
+    },
+    {
+      "rank": 38,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Владикавказ",
+      "status": "pending"
+    },
+    {
+      "rank": 39,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Волгоград",
+      "status": "pending"
+    },
+    {
+      "rank": 40,
+      "batch": 4,
+      "from": "Ростов-на-Дону",
+      "to": "Астрахань",
+      "status": "pending"
+    },
+    {
+      "rank": 41,
+      "batch": 5,
+      "from": "Москва",
+      "to": "Туапсе",
+      "status": "pending"
+    },
+    {
+      "rank": 42,
+      "batch": 5,
+      "from": "Москва",
+      "to": "Адлер",
+      "status": "pending"
+    },
+    {
+      "rank": 43,
+      "batch": 5,
+      "from": "Москва",
+      "to": "Пятигорск",
+      "status": "pending"
+    },
+    {
+      "rank": 44,
+      "batch": 5,
+      "from": "Москва",
+      "to": "Кисловодск",
+      "status": "pending"
+    },
+    {
+      "rank": 45,
+      "batch": 5,
+      "from": "Москва",
+      "to": "Волгоград",
+      "status": "pending"
+    },
+    {
+      "rank": 46,
+      "batch": 5,
+      "from": "Москва",
+      "to": "Астрахань",
+      "status": "pending"
+    },
+    {
+      "rank": 47,
+      "batch": 5,
+      "from": "Санкт-Петербург",
+      "to": "Геленджик",
+      "status": "pending"
+    },
+    {
+      "rank": 48,
+      "batch": 5,
+      "from": "Санкт-Петербург",
+      "to": "Новороссийск",
+      "status": "pending"
+    },
+    {
+      "rank": 49,
+      "batch": 5,
+      "from": "Санкт-Петербург",
+      "to": "Севастополь",
+      "status": "pending"
+    },
+    {
+      "rank": 50,
+      "batch": 5,
+      "from": "Санкт-Петербург",
+      "to": "Ялта",
+      "status": "pending"
+    },
+    {
+      "rank": 51,
+      "batch": 6,
+      "from": "Санкт-Петербург",
+      "to": "Керчь",
+      "status": "pending"
+    },
+    {
+      "rank": 52,
+      "batch": 6,
+      "from": "Санкт-Петербург",
+      "to": "Ставрополь",
+      "status": "pending"
+    },
+    {
+      "rank": 53,
+      "batch": 6,
+      "from": "Санкт-Петербург",
+      "to": "Минеральные Воды",
+      "status": "pending"
+    },
+    {
+      "rank": 54,
+      "batch": 6,
+      "from": "Санкт-Петербург",
+      "to": "Волгоград",
       "status": "pending"
     }
   ]
