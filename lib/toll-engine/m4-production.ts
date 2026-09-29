@@ -1,5 +1,6 @@
 import type { Coordinate } from "@/lib/tolls";
 import type { TollValidation } from "@/lib/toll-validator";
+import { priceA289Route } from "@/lib/toll-engine/a289-engine";
 import { priceM4RoutePlazaValidation } from "@/lib/toll-engine/m4-local-pricing";
 import { validateKnownM4Plazas, type M4RoutePlazaValidation } from "@/lib/toll-engine/m4-route-validator";
 
@@ -44,9 +45,14 @@ function asTollValidation(validation: M4RoutePlazaValidation): TollValidation {
   };
 }
 
+function hasOtherLegacyTollSystems(segmentNames: string[]) {
+  return segmentNames.some((name) => !name.startsWith("М-4") && !name.startsWith("А-289"));
+}
+
 export async function calculateProductionM4(
   route: Coordinate[],
   departureAt?: string,
+  legacySegmentNames: string[] = [],
 ): Promise<ProductionM4Result> {
   if (route.length < 2) {
     return {
@@ -87,21 +93,39 @@ export async function calculateProductionM4(
     };
   }
 
+  if (hasOtherLegacyTollSystems(legacySegmentNames)) {
+    return {
+      candidate: true,
+      exact: false,
+      tolls: null,
+      validation: responseValidation,
+      reason: "Legacy-геометрия обнаружила платную систему вне M-4/A-289; точный составной итог заблокирован до отдельного road-specific engine.",
+    };
+  }
+
+  const a289 = priceA289Route(route, departureAt);
+  const weekdayAmount = pricing.weekdayAmount + a289.weekdayAmount;
+  const weekendAmount = pricing.weekendAmount + a289.weekendAmount;
+  const amount = pricing.period === "пятница–воскресенье" ? weekendAmount : weekdayAmount;
+
   return {
     candidate: true,
     exact: true,
     tolls: {
-      amount: pricing.amount,
-      weekdayAmount: pricing.weekdayAmount,
-      weekendAmount: pricing.weekendAmount,
+      amount,
+      weekdayAmount,
+      weekendAmount,
       period: pricing.period,
       segments: [
         "М-4 Дон: точный расчёт по локально подтверждённым ПВП",
         ...pricing.pricedPlazas.map((item) => `М-4: ПВП/участок ${item.km} км`),
+        ...a289.segments,
       ],
       confidence: "matched",
     },
     validation: responseValidation,
-    reason: pricing.message,
+    reason: a289.status === "priced"
+      ? `${pricing.message} Дополнительно подтверждены рамки A-289: ${a289.crossedFrames.join(", ")}.`
+      : pricing.message,
   };
 }
