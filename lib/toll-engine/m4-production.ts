@@ -44,14 +44,9 @@ function asTollValidation(validation: M4RoutePlazaValidation): TollValidation {
   };
 }
 
-function hasOtherLegacyTollSystems(segmentNames: string[]) {
-  return segmentNames.some((name) => !name.startsWith("М-4"));
-}
-
 export async function calculateProductionM4(
   route: Coordinate[],
-  departureAt: string | undefined,
-  legacySegmentNames: string[],
+  departureAt?: string,
 ): Promise<ProductionM4Result> {
   if (route.length < 2) {
     return {
@@ -76,17 +71,6 @@ export async function calculateProductionM4(
 
   const responseValidation = asTollValidation(validation);
   const pricing = priceM4RoutePlazaValidation(validation, departureAt);
-
-  if (hasOtherLegacyTollSystems(legacySegmentNames)) {
-    return {
-      candidate: true,
-      exact: false,
-      tolls: null,
-      validation: responseValidation,
-      reason: "На маршруте обнаружены платные системы помимо М-4; точный M-4 итог пока нельзя безопасно подменить без композиции дорожных движков",
-    };
-  }
-
   const exact = validation.complete
     && pricing.status === "priced"
     && pricing.amount !== null
