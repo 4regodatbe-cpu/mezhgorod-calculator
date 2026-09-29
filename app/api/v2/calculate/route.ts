@@ -421,23 +421,31 @@ async function leg(from: Located, to: Located, departureAt?: string) {
       ? osrmResult.value.coordinates
       : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
-  const selectedFree = await selectFreeRoute(valhallaFreeResult, brouterResult, knownFreeRoute(from, to));
+  // Always validate the fast route, even when a legacy price source already
+  // has a number. Run this concurrently with free-route validation so it does
+  // not add another serial network round-trip to the request.
+  const fastValidationPromise: Promise<TollValidation> = routeGeometry.length > 2
+    ? validateTollEdges(routeGeometry)
+    : Promise.resolve(unknownValidation("Быстрый маршрут не вернул достаточно геометрии для map matching"));
+  const selectedFreePromise = selectFreeRoute(valhallaFreeResult, brouterResult, knownFreeRoute(from, to));
+  const [selectedFree, fastValidation] = await Promise.all([selectedFreePromise, fastValidationPromise]);
   const differenceEvidence = selectedFree ? routeDifferenceEvidence(selectedFast.route, selectedFree.route) : false;
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
   const verifiedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
-  let fastValidation = unknownValidation(verifiedTolls.amount > 0
-    ? "Стоимость уже подтверждена локальным или проверенным источником; удалённый map matching не требуется"
-    : "Удалённый map matching ещё не выполнялся");
 
+  // Keep legacy pricing behavior unchanged at this stage. The independent
+  // map-matching result is collected on every fast route, but the old local
+  // corridor recovery still uses conservative non-map-matched thresholds until
+  // the new PVP-based price engine is ready.
   let pricedTolls: TollEstimate = verifiedTolls;
   if (pricedTolls.amount <= 0) {
-    const localRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
+    const conservativeValidation = unknownValidation("Локальный коридорный fallback без доверия к удалённому map matching");
+    const localRecovery = recoverCorridorTolls(routeGeometry, conservativeValidation, departureAt, differenceEvidence);
     if (localRecovery) pricedTolls = localRecovery;
   }
 
-  if (pricedTolls.amount <= 0 && routeGeometry.length > 2) {
-    fastValidation = await validateTollEdges(routeGeometry);
+  if (pricedTolls.amount <= 0) {
     const matchedTolls = mapMatchedTollFallback(pricedTolls, fastValidation);
     const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
     pricedTolls = remoteRecovery ?? matchedTolls;
