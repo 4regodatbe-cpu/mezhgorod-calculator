@@ -19,11 +19,19 @@ const ROUTES = [
   },
 ];
 
-const anchors = [
-  { name: "Темрюк", lon: 37.42, lat: 45.25 },
-  { name: "Варениковская", lon: 37.64, lat: 45.14 },
-  { name: "Славянск-на-Кубани", lon: 38.14, lat: 45.24 },
-  { name: "Марьянская", lon: 38.62, lat: 45.09 },
+// OSM highway=toll_gantry nodes inventoried on 2026-09-30.
+// Multiple nodes may represent opposite carriageways or duplicate mapping;
+// this audit deliberately reports every observed node before production rules
+// choose one normalized anchor per physical charging frame.
+const gantries = [
+  { group: "РВП 23 км", id: "13022464435", lon: 38.5327744, lat: 45.171408 },
+  { group: "РВП 23 км", id: "13022464436", lon: 38.5326562, lat: 45.1713281 },
+  { group: "РВП 82 км", id: "12439881648", lon: 37.8330177, lat: 45.1961096 },
+  { group: "РВП 82 км", id: "12787972033", lon: 37.8066089, lat: 45.1955326 },
+  { group: "РВП 103 км", id: "12439892927", lon: 37.5878131, lat: 45.168457 },
+  { group: "РВП 103 км", id: "12806246303", lon: 37.5877882, lat: 45.1683514 },
+  { group: "unlabelled-A289-candidate", id: "9516280711", lon: 37.6244358, lat: 45.1649198 },
+  { group: "unlabelled-A289-candidate", id: "12787971946", lon: 37.6246064, lat: 45.1650058 },
 ];
 
 function decodePolyline(encoded, precision = 6) {
@@ -64,17 +72,37 @@ function distanceKm(a, b) {
   return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
 }
 
-function nearest(route, anchor) {
+function pointToSegmentKm(anchor, a, b) {
+  const latScale = 110.574;
+  const lonScale = 111.320 * Math.cos(anchor.lat * Math.PI / 180);
+  const ax = (a[0] - anchor.lon) * lonScale;
+  const ay = (a[1] - anchor.lat) * latScale;
+  const bx = (b[0] - anchor.lon) * lonScale;
+  const by = (b[1] - anchor.lat) * latScale;
+  const dx = bx - ax;
+  const dy = by - ay;
+  const lengthSquared = dx * dx + dy * dy;
+  if (lengthSquared <= 1e-12) return Math.hypot(ax, ay);
+  const t = Math.max(0, Math.min(1, -(ax * dx + ay * dy) / lengthSquared));
+  return Math.hypot(ax + t * dx, ay + t * dy);
+}
+
+function nearestSegment(route, anchor) {
   let best = Number.POSITIVE_INFINITY;
   let bestIndex = -1;
-  route.forEach((point, index) => {
-    const d = distanceKm(point, [anchor.lon, anchor.lat]);
+  for (let index = 0; index < route.length - 1; index += 1) {
+    const d = pointToSegmentKm(anchor, route[index], route[index + 1]);
     if (d < best) {
       best = d;
       bestIndex = index;
     }
-  });
-  return { distanceKm: Math.round(best * 1000) / 1000, index: bestIndex, point: route[bestIndex] };
+  }
+  return {
+    distanceKm: Math.round(best * 1000) / 1000,
+    segmentIndex: bestIndex,
+    fromPoint: route[bestIndex],
+    toPoint: route[bestIndex + 1],
+  };
 }
 
 async function route(test) {
@@ -87,7 +115,7 @@ async function route(test) {
     directions_type: "none",
   }));
   const response = await fetch(url, {
-    headers: { Accept: "application/json", "User-Agent": "MezhgorodA289Audit/1.0" },
+    headers: { Accept: "application/json", "User-Agent": "MezhgorodA289Audit/1.1" },
     signal: AbortSignal.timeout(30_000),
   });
   if (!response.ok) throw new Error(`Valhalla HTTP ${response.status}: ${(await response.text()).slice(0, 200)}`);
@@ -104,19 +132,19 @@ async function route(test) {
 const results = [];
 for (const test of ROUTES) {
   const built = await route(test);
-  const audit = anchors.map((anchor) => ({ anchor: anchor.name, ...nearest(built.geometry, anchor) }));
-  const nearAllA289Anchors = audit.every((item) => item.distanceKm <= 8);
+  const audit = gantries.map((gantry) => ({ ...gantry, ...nearestSegment(built.geometry, gantry) }));
+  const crossedGroups = [...new Set(audit.filter((item) => item.distanceKm <= 0.12).map((item) => item.group))];
   results.push({
     name: test.name,
     routeKm: built.km,
     routeMinutes: built.minutes,
     geometryPoints: built.geometry.length,
-    nearAllA289Anchors,
+    crossedGroupsAt120m: crossedGroups,
     audit,
   });
   console.log(`=== ${test.name} ===`);
-  console.table(audit.map(({ anchor, distanceKm, index }) => ({ anchor, distanceKm, index })));
-  console.log(`nearAllA289Anchors=${nearAllA289Anchors}`);
+  console.table(audit.map(({ group, id, distanceKm, segmentIndex }) => ({ group, id, distanceKm, segmentIndex })));
+  console.log(`crossedGroupsAt120m=${crossedGroups.join(",") || "none"}`);
 }
 
 await writeFile("a289-yaltamoscow-audit.json", `${JSON.stringify({ generatedAt: new Date().toISOString(), results }, null, 2)}\n`);
