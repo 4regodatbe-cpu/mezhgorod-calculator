@@ -1,0 +1,33 @@
+name: Temporary OSM M4 toll inventory
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/osm-m4-toll-inventory.yml'
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Query OSM toll booths in M4 corridor
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p inventory
+          query='[out:json][timeout:90];node["barrier"="toll_booth"](44.0,36.5,56.2,41.5);out body;'
+          curl --fail --retry 4 --retry-delay 10 --max-time 120 \
+            -G 'https://overpass-api.de/api/interpreter' \
+            --data-urlencode "data=$query" \
+            -o inventory/m4-toll-booths.json
+          jq '[.elements[] | {id,lat,lon,tags}]' inventory/m4-toll-booths.json > inventory/m4-toll-booths-compact.json
+          echo "Found $(jq '.elements | length' inventory/m4-toll-booths.json) toll-booth nodes in corridor"
+          jq -r '.elements[] | [.id,.lat,.lon,(.tags.name // ""),(.tags.ref // ""),(.tags.operator // ""),(.tags.highway // ""),(.tags.toll // "")] | @tsv' inventory/m4-toll-booths.json | head -n 200
+
+      - name: Upload inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: osm-m4-toll-inventory
+          path: inventory/*.json
+          retention-days: 3
