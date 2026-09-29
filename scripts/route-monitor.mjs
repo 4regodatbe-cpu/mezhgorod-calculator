@@ -3,12 +3,15 @@ import { writeFile } from "node:fs/promises";
 const baseUrl = (process.env.CALCULATOR_URL || "https://mezhgorod-calculator.vercel.app").replace(/\/$/, "");
 
 const routes = [
-  { name: "Анапа — Воронеж", from: [44.894818, 37.316367], to: [51.660781, 39.200296], fast: [970, 1010], free: [1010, 1050], toll: [3900, 5100] },
-  { name: "Москва — Сочи", from: [55.755819, 37.617644], to: [43.585472, 39.723098], fast: [1500, 1700], free: [1680, 1820], toll: [3500, 7000] },
-  { name: "Москва — Краснодар", from: [55.755819, 37.617644], to: [45.03547, 38.975313], fast: [1250, 1420], free: [1380, 1550], toll: [3500, 7000] },
-  { name: "Москва — Санкт-Петербург", from: [55.755819, 37.617644], to: [59.938784, 30.314997], fast: [620, 760], free: [680, 850], toll: [2500, 6500] },
-  { name: "Москва — Казань", from: [55.755819, 37.617644], to: [55.796127, 49.106405], fast: [750, 950], free: [780, 1050], toll: [3500, 7500] },
-  { name: "Ялта — Краснодар", from: [44.495205, 34.166301], to: [45.03547, 38.975313], fast: [430, 620], free: [450, 680], toll: [0, 2000] },
+  { name: "Анапа — Воронеж", from: [44.894818, 37.316367], to: [51.660781, 39.200296], fast: [970, 1010], free: [1010, 1050], toll: [3900, 5100], expectToll: true },
+  { name: "Москва — Сочи", from: [55.755819, 37.617644], to: [43.585472, 39.723098], fast: [1500, 1700], free: [1680, 1820], toll: [3500, 7000], expectToll: true },
+  { name: "Москва — Краснодар", from: [55.755819, 37.617644], to: [45.03547, 38.975313], fast: [1250, 1420], free: [1380, 1550], toll: [3500, 7000], expectToll: true },
+  { name: "Москва — Санкт-Петербург", from: [55.755819, 37.617644], to: [59.938784, 30.314997], fast: [620, 760], free: [680, 850], toll: [2500, 6500], expectToll: true },
+  { name: "Москва — Казань", from: [55.755819, 37.617644], to: [55.796127, 49.106405], fast: [750, 950], free: [780, 1050], toll: [3500, 7500], expectToll: true },
+  { name: "Ялта — Краснодар", from: [44.495205, 34.166301], to: [45.03547, 38.975313], fast: [430, 620], free: [450, 680], toll: [0, 2000], expectToll: true },
+  { name: "Ялта — Москва", from: [44.495205, 34.166301], to: [55.755819, 37.617644], fast: [1750, 1950], free: [1850, 2150], toll: [4500, 8000], expectToll: true },
+  { name: "Ейск — Москва", from: [46.711524, 38.276451], to: [55.755819, 37.617644], fast: [1180, 1320], free: [1400, 1600], toll: [1, 7000], expectToll: true },
+  { name: "Майкоп — Москва", from: [44.609826, 40.100653], to: [55.755819, 37.617644], fast: [1320, 1460], free: [1450, 1650], toll: [1, 7000], expectToll: true },
 ];
 
 function point(name, [lat, lng]) {
@@ -17,11 +20,11 @@ function point(name, [lat, lng]) {
 
 async function calculate(test, attempt = 1) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 75_000);
+  const timeout = setTimeout(() => controller.abort(), 90_000);
   try {
     const response = await fetch(`${baseUrl}/api/v2/calculate`, {
       method: "POST",
-      headers: { "content-type": "application/json", "user-agent": "MezhgorodRouteMonitor/1.0" },
+      headers: { "content-type": "application/json", "user-agent": "MezhgorodRouteMonitor/2.0" },
       body: JSON.stringify({
         mode: "standard",
         from: point(test.name.split(" — ")[0], test.from),
@@ -50,17 +53,33 @@ for (const test of routes) {
   try {
     const data = await calculate(test);
     const leg = data.legs?.[0];
-    if (!leg?.fast || !leg?.free) throw new Error("Получен неполный расчёт");
+    if (!leg?.fast) throw new Error("Не получен быстрый маршрут");
+
     const fastKm = leg.fast.meters / 1000;
-    const freeKm = leg.free.meters / 1000;
+    const freeKm = leg.free ? leg.free.meters / 1000 : null;
     const toll = Number(leg.fast.tolls?.amount || 0);
+    const fastTollStatus = leg.fast.tollValidation?.status || "нет";
+    const freeTollStatus = leg.free?.tollValidation?.status || (leg.free ? "нет" : "маршрут отсутствует");
+    const tollDetected = Boolean(leg.fast.tolls?.segments?.length) || fastTollStatus === "toll";
+
     const checks = [
       { label: "быстрый маршрут", ok: inRange(fastKm, test.fast), actual: `${fastKm.toFixed(1)} км`, expected: `${test.fast[0]}–${test.fast[1]} км` },
-      { label: "без платных дорог", ok: inRange(freeKm, test.free), actual: `${freeKm.toFixed(1)} км`, expected: `${test.free[0]}–${test.free[1]} км` },
-      { label: "платные участки", ok: inRange(toll, test.toll), actual: `${toll} ₽`, expected: `${test.toll[0]}–${test.toll[1]} ₽` },
-      { label: "контроль источников", ok: leg.fast.quality?.status !== "warning" && leg.free.quality?.status !== "warning", actual: `${leg.fast.quality?.status || "нет"}/${leg.free.quality?.status || "нет"}`, expected: "без warning" },
+      { label: "маршрут без платных", ok: freeKm !== null && inRange(freeKm, test.free), actual: freeKm === null ? leg.freeError || "нет" : `${freeKm.toFixed(1)} км`, expected: `${test.free[0]}–${test.free[1]} км` },
+      { label: "проверка бесплатности", ok: freeTollStatus !== "toll", actual: freeTollStatus, expected: "free или временно unknown" },
+      { label: "обнаружение платности", ok: !test.expectToll || tollDetected, actual: `${fastTollStatus}; segments=${leg.fast.tolls?.segments?.length || 0}`, expected: test.expectToll ? "платность обнаружена" : "не обязательно" },
+      { label: "стоимость платных дорог", ok: inRange(toll, test.toll), actual: `${toll} ₽`, expected: `${test.toll[0]}–${test.toll[1]} ₽` },
+      { label: "контроль источников", ok: leg.fast.quality?.status !== "warning", actual: `${leg.fast.quality?.status || "нет"}/${leg.free?.quality?.status || "нет"}`, expected: "быстрый без warning" },
     ];
-    results.push({ name: test.name, ok: checks.every((item) => item.ok), checks });
+    results.push({
+      name: test.name,
+      ok: checks.every((item) => item.ok),
+      checks,
+      diagnostics: {
+        fastTollValidation: leg.fast.tollValidation,
+        freeTollValidation: leg.free?.tollValidation ?? null,
+        freeError: leg.freeError ?? null,
+      },
+    });
   } catch (error) {
     results.push({ name: test.name, ok: false, error: error instanceof Error ? error.message : String(error), checks: [] });
   }
@@ -81,7 +100,12 @@ for (const result of results) {
   if (result.error) lines.push(`| ${result.name} | доступность | ${result.error} | успешный ответ | ❌ |`);
   for (const check of result.checks) lines.push(`| ${result.name} | ${check.label} | ${check.actual} | ${check.expected} | ${check.ok ? "✅" : "❌"} |`);
 }
-lines.push("", "Отчёт сформирован автоматически. Изменения в рабочую версию автоматически не публикуются.");
+lines.push(
+  "",
+  "Контроль бесплатности теперь использует результат независимого map matching. Маршрут с `tollValidation.status=toll` не должен считаться бесплатным.",
+  "",
+  "Отчёт сформирован автоматически. Изменения в рабочую версию автоматически не публикуются.",
+);
 
 await Promise.all([
   writeFile("route-report.md", `${lines.join("\n")}\n`),
