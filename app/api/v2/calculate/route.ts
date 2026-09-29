@@ -24,7 +24,7 @@ type KnownRoute = {
 type TollEstimate = ReturnType<typeof estimateTolls>;
 
 const MAX_VERIFIED_SPREAD_PERCENT = 7;
-const VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT = 3;
+const VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT = 5;
 const MIN_TOLL_VARIANT_DISTANCE_KM = 10;
 const MIN_TOLL_VARIANT_DISTANCE_PERCENT = 1;
 const MIN_TOLL_VARIANT_TIME_MINUTES = 15;
@@ -327,8 +327,8 @@ async function leg(from: Located, to: Located, departureAt?: string) {
       : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
   const verifiedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
-  const tolls = fastResult.status === "fulfilled" && valhallaFreeResult.status === "fulfilled"
-    ? routingDifferenceTollFallback(fastResult.value, valhallaFreeResult.value, verifiedTolls)
+  const tolls = selectedFree
+    ? routingDifferenceTollFallback(selectedFast.route, selectedFree.route, verifiedTolls)
     : verifiedTolls;
   return {
     from: from.label,
