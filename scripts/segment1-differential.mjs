@@ -6,6 +6,7 @@ const baselineUrl = (process.env.BASELINE_URL || "https://mezhgorod-calculator.v
 const points = {
   moscow: { label: "Москва", position: { lat: 55.755819, lng: 37.617644 } },
   yalta: { label: "Ялта", position: { lat: 44.495205, lng: 34.166301 } },
+  sochi: { label: "Сочи", position: { lat: 43.585472, lng: 39.723098 } },
   spb: { label: "Санкт-Петербург", position: { lat: 59.938784, lng: 30.314997 } },
   kazan: { label: "Казань", position: { lat: 55.796127, lng: 49.106405 } },
 };
@@ -30,6 +31,8 @@ const cases = [
     forbiddenA289Frames: ["РВП 23"],
   },
   { name: "moscow-spb", from: points.moscow, to: points.spb, protectTollTotal: true },
+  { name: "sochi-spb", from: points.sochi, to: points.spb, protectTollTotal: true, mixedRoadGuard: true },
+  { name: "spb-sochi", from: points.spb, to: points.sochi, protectTollTotal: true, mixedRoadGuard: true },
   { name: "moscow-kazan", from: points.moscow, to: points.kazan, protectTollTotal: false },
 ];
 
@@ -40,7 +43,7 @@ async function calculate(baseUrl, test) {
   try {
     const response = await fetch(`${baseUrl}/api/v2/calculate`, {
       method: "POST",
-      headers: { "content-type": "application/json", "user-agent": "MezhgorodSegment1Differential/1.1" },
+      headers: { "content-type": "application/json", "user-agent": "MezhgorodSegment1Differential/1.2" },
       body: JSON.stringify({
         mode: "standard",
         from: test.from,
@@ -114,6 +117,13 @@ for (const test of cases) {
         ok: candidate.tollAmount >= baseline.tollAmount,
         actual: `${baseline.tollAmount} -> ${candidate.tollAmount} ₽`,
       });
+      if (test.mixedRoadGuard) {
+        checks.push({
+          label: "mixed M4+M11 not replaced by M4-only adapter",
+          ok: !candidate.segments[0]?.includes("точный расчёт по локально подтверждённым ПВП"),
+          actual: candidate.segments[0] || "missing",
+        });
+      }
     }
 
     const ok = checks.every((item) => item.ok);
