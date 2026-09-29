@@ -4,6 +4,7 @@ import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { safeRoutePositions } from "@/lib/safe-route";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { findVerifiedRoute, tollPeriodsForRoute } from "@/lib/verified-routes";
+import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
 
 type Point = { label: string; position?: { lat: number; lng: number } };
 type Located = { label: string; position: { lat: number; lng: number } };
@@ -429,10 +430,14 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
   const differenceEvidence = selectedFree ? routeDifferenceEvidence(selectedFast.route, selectedFree.route) : false;
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
-  const verifiedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
-  let fastValidation = diagnosticFastValidation ?? unknownValidation(verifiedTolls.amount > 0
-    ? "Стоимость уже подтверждена локальным или проверенным источником; полный map matching быстрого маршрута не требуется"
-    : "Map matching быстрого маршрута ещё не выполнялся");
+  const productionM4 = await calculateProductionM4(routeGeometry, departureAt, geometricTolls.segments);
+  const verifiedTolls = productionM4.tolls
+    ?? verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
+  let fastValidation = productionM4.validation
+    ?? diagnosticFastValidation
+    ?? unknownValidation(verifiedTolls.amount > 0
+      ? "Стоимость уже подтверждена локальным или проверенным источником; полный map matching быстрого маршрута не требуется"
+      : "Map matching быстрого маршрута ещё не выполнялся");
 
   let pricedTolls: TollEstimate = verifiedTolls;
   if (pricedTolls.amount <= 0) {
