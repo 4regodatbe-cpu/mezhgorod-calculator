@@ -20,6 +20,11 @@ export type TollValidation = {
   message: string;
   tollBoothCount?: number;
   tollBooths?: TollBoothEvent[];
+  chunkCount: number;
+  checkedChunkCount: number;
+  failedChunkCount: number;
+  complete: boolean;
+  boothEventCoverage: "complete" | "partial" | "none";
 };
 
 type TraceEdge = {
@@ -84,7 +89,12 @@ function splitRoute(route: Coordinate[]) {
   return chunks;
 }
 
-function unknown(message: string): TollValidation {
+function coverage(checkedChunkCount: number, failedChunkCount: number): TollValidation["boothEventCoverage"] {
+  if (checkedChunkCount === 0) return "none";
+  return failedChunkCount === 0 ? "complete" : "partial";
+}
+
+function unknown(message: string, chunkCount = 0): TollValidation {
   return {
     status: "unknown",
     source: "Valhalla map matching",
@@ -94,6 +104,11 @@ function unknown(message: string): TollValidation {
     roadNames: [],
     tollBoothCount: 0,
     tollBooths: [],
+    chunkCount,
+    checkedChunkCount: 0,
+    failedChunkCount: chunkCount,
+    complete: false,
+    boothEventCoverage: "none",
     message,
   };
 }
@@ -138,12 +153,12 @@ async function validateChunk(route: Coordinate[], chunkNumber: number): Promise<
 
     if (!response.ok) {
       const details = await response.text().catch(() => "");
-      return unknown(`Часть ${chunkNumber}: HTTP ${response.status}${details ? ` — ${details.slice(0, 120)}` : ""}`);
+      return unknown(`Часть ${chunkNumber}: HTTP ${response.status}${details ? ` — ${details.slice(0, 120)}` : ""}`, 1);
     }
 
     const data = (await response.json()) as { edges?: TraceEdge[] };
     const edges = data.edges ?? [];
-    if (edges.length === 0) return unknown(`Часть ${chunkNumber}: дорожные рёбра не возвращены`);
+    if (edges.length === 0) return unknown(`Часть ${chunkNumber}: дорожные рёбра не возвращены`, 1);
 
     const tollEdges = edges.filter((edge) => edge.toll === true);
     const wayIds = [...new Set(tollEdges.map((edge) => edge.way_id).filter((value): value is string | number => value !== undefined).map(String))];
@@ -171,13 +186,18 @@ async function validateChunk(route: Coordinate[], chunkNumber: number): Promise<
       roadNames,
       tollBoothCount: tollBooths.length,
       tollBooths,
+      chunkCount: 1,
+      checkedChunkCount: 1,
+      failedChunkCount: 0,
+      complete: true,
+      boothEventCoverage: "complete",
       message: tollEdges.length > 0 || tollBooths.length > 0
         ? `Часть ${chunkNumber}: платных рёбер ${tollEdges.length}, ПВП ${tollBooths.length}`
         : `Часть ${chunkNumber}: платных рёбер и ПВП нет`,
     };
   } catch (error) {
     const details = error instanceof Error ? error.message : "неизвестная ошибка";
-    return unknown(`Часть ${chunkNumber}: ${details}`);
+    return unknown(`Часть ${chunkNumber}: ${details}`, 1);
   }
 }
 
@@ -191,6 +211,24 @@ async function validateChunks(chunks: Coordinate[][]) {
   return results;
 }
 
+function dedupeBoothEvents(results: TollValidation[]) {
+  const seen = new Set<string>();
+  const events: TollBoothEvent[] = [];
+
+  results.forEach((result, chunkIndex) => {
+    (result.tollBooths ?? []).forEach((event) => {
+      const key = event.osmNodeId
+        ? `node:${event.osmNodeId}`
+        : `fallback:${chunkIndex}:${event.wayId ?? ""}:${event.edgeIndex}:${event.beginShapeIndex ?? ""}:${event.endShapeIndex ?? ""}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      events.push(event);
+    });
+  });
+
+  return events;
+}
+
 export async function validateTollEdges(route: Coordinate[]): Promise<TollValidation> {
   if (route.length < 3) return unknown("Недостаточно геометрии для проверки платных дорог");
 
@@ -198,11 +236,15 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
   const results = await validateChunks(chunks);
   const tollResults = results.filter((item) => item.status === "toll");
   const unknownResults = results.filter((item) => item.status === "unknown");
+  const checkedChunkCount = results.filter((item) => item.status !== "unknown").length;
+  const failedChunkCount = unknownResults.length;
+  const complete = failedChunkCount === 0 && checkedChunkCount === chunks.length;
+  const boothEventCoverage = coverage(checkedChunkCount, failedChunkCount);
   const checkedEdgeCount = results.reduce((sum, item) => sum + item.checkedEdgeCount, 0);
   const tollEdgeCount = results.reduce((sum, item) => sum + item.tollEdgeCount, 0);
   const wayIds = [...new Set(results.flatMap((item) => item.wayIds))];
   const roadNames = [...new Set(results.flatMap((item) => item.roadNames))].slice(0, 20);
-  const tollBooths = results.flatMap((item) => item.tollBooths ?? []);
+  const tollBooths = dedupeBoothEvents(results);
 
   if (tollResults.length > 0) {
     return {
@@ -214,7 +256,12 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       roadNames,
       tollBoothCount: tollBooths.length,
       tollBooths,
-      message: `Платность подтверждена: ${tollEdgeCount} рёбер, ПВП ${tollBooths.length}, проверено частей ${results.length}${unknownResults.length ? `, не проверено ${unknownResults.length}` : ""}`,
+      chunkCount: chunks.length,
+      checkedChunkCount,
+      failedChunkCount,
+      complete,
+      boothEventCoverage,
+      message: `Платность подтверждена: ${tollEdgeCount} рёбер, ПВП ${tollBooths.length}, проверено частей ${checkedChunkCount} из ${chunks.length}${failedChunkCount ? `, не проверено ${failedChunkCount}` : ""}`,
     };
   }
 
@@ -228,7 +275,12 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       roadNames: [],
       tollBoothCount: tollBooths.length,
       tollBooths,
-      message: `Не удалось полностью проверить ${unknownResults.length} из ${results.length} частей: ${unknownResults[0].message}`,
+      chunkCount: chunks.length,
+      checkedChunkCount,
+      failedChunkCount,
+      complete: false,
+      boothEventCoverage,
+      message: `Не удалось полностью проверить ${failedChunkCount} из ${chunks.length} частей: ${unknownResults[0].message}`,
     };
   }
 
@@ -241,6 +293,11 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     roadNames: [],
     tollBoothCount: 0,
     tollBooths: [],
-    message: `Платные рёбра и ПВП не обнаружены, проверено частей ${results.length}`,
+    chunkCount: chunks.length,
+    checkedChunkCount,
+    failedChunkCount: 0,
+    complete: true,
+    boothEventCoverage: "complete",
+    message: `Платные рёбра и ПВП не обнаружены, проверено частей ${checkedChunkCount} из ${chunks.length}`,
   };
 }
