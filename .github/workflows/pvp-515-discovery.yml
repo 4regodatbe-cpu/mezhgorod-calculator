@@ -34,6 +34,18 @@ jobs:
           query northbound 'Краснодар' 'Москва'
           query southbound 'Москва' 'Краснодар'
 
+      - name: Fetch exact OSM node coordinates
+        shell: bash
+        run: |
+          set -euo pipefail
+          for node in 3257030196 3200592308; do
+            echo "=== OSM node $node ==="
+            curl --fail --retry 2 --retry-delay 3 --max-time 20 \
+              "https://api.openstreetmap.org/api/0.6/node/$node.json" \
+              -o "node-$node.json"
+            jq '.elements[0] | {id,lat,lon,tags}' "node-$node.json"
+          done
+
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
