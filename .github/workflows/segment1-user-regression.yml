@@ -1,0 +1,40 @@
+name: Segment 1 user API regression
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - "app/api/v2/calculate/**"
+      - "lib/toll-engine/**"
+      - "lib/tolls.ts"
+      - "lib/toll-recovery.ts"
+      - "lib/toll-validator.ts"
+      - "scripts/segment1-user-regression.mjs"
+      - ".github/workflows/segment1-user-regression.yml"
+  workflow_dispatch:
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Wait for matching Vercel preview and run user API tests
+        env:
+          CALCULATOR_URL: https://mezhgorod-calculator-git-optimize-calculator-2-4regodatbe-5310.vercel.app
+          EXPECTED_COMMIT: ${{ github.sha }}
+        run: node scripts/segment1-user-regression.mjs
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment1-user-regression
+          path: segment1-user-regression.json
+          retention-days: 30
+          if-no-files-found: warn
