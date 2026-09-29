@@ -18,6 +18,8 @@ type FullRoute = {
   weekend: number;
   radius: number;
   requirements: Array<{ prefix: string; min: number }>;
+  expectedKm?: number;
+  distanceTolerancePercent?: number;
 };
 
 // M-4 Don, category I, no transponder. Prices current from 02.03.2026.
@@ -120,13 +122,13 @@ const CKAD: TollSegment[] = [
 ];
 
 const FULL_ROUTES: FullRoute[] = [
-  { name: "М-4: Анапа — Воронеж", start: [37.316367, 44.894818], end: [39.200296, 51.660781], weekday: 4090, weekend: 4930, radius: 12, requirements: [{ prefix: "М-4:", min: 6 }] },
+  { name: "М-4: Анапа — Воронеж", start: [37.316367, 44.894818], end: [39.200296, 51.660781], weekday: 4090, weekend: 4930, radius: 12, requirements: [{ prefix: "М-4:", min: 6 }], expectedKm: 990, distanceTolerancePercent: 6 },
   { name: "М-12: Москва — Екатеринбург", start: [37.62, 55.76], end: [60.61, 56.84], weekday: 8580, weekend: 8580, radius: 85, requirements: [{ prefix: "М-12:", min: 8 }] },
   { name: "М-12: Москва — Казань", start: [37.62, 55.76], end: [49.11, 55.8], weekday: 5909, weekend: 5909, radius: 55, requirements: [{ prefix: "М-12:", min: 7 }] },
-  { name: "М-11: Москва — Санкт-Петербург", start: [37.62, 55.76], end: [30.34, 59.93], weekday: 4580, weekend: 4780, radius: 55, requirements: [{ prefix: "М-11:", min: 3 }] },
-  { name: "М-4 + М-11: Сочи — Санкт-Петербург", start: [39.72, 43.59], end: [30.34, 59.93], weekday: 9620, weekend: 10870, radius: 65, requirements: [{ prefix: "М-4:", min: 6 }, { prefix: "М-11:", min: 3 }] },
-  { name: "М-4: Москва — Сочи", start: [37.62, 55.76], end: [39.72, 43.59], weekday: 5040, weekend: 6090, radius: 65, requirements: [{ prefix: "М-4:", min: 8 }] },
-  { name: "М-4: Москва — Краснодар", start: [37.62, 55.76], end: [38.98, 45.04], weekday: 5040, weekend: 6090, radius: 55, requirements: [{ prefix: "М-4:", min: 8 }] },
+  { name: "М-11: Москва — Санкт-Петербург", start: [37.62, 55.76], end: [30.34, 59.93], weekday: 4580, weekend: 4780, radius: 55, requirements: [{ prefix: "М-11:", min: 3 }], expectedKm: 708, distanceTolerancePercent: 6 },
+  { name: "М-4 + М-11: Сочи — Санкт-Петербург", start: [39.72, 43.59], end: [30.34, 59.93], weekday: 9620, weekend: 10870, radius: 65, requirements: [{ prefix: "М-4:", min: 6 }, { prefix: "М-11:", min: 3 }], expectedKm: 2310, distanceTolerancePercent: 6 },
+  { name: "М-4: Москва — Сочи", start: [37.62, 55.76], end: [39.72, 43.59], weekday: 5040, weekend: 6090, radius: 65, requirements: [{ prefix: "М-4:", min: 8 }], expectedKm: 1625, distanceTolerancePercent: 6 },
+  { name: "М-4: Москва — Краснодар", start: [37.62, 55.76], end: [38.98, 45.04], weekday: 5040, weekend: 6090, radius: 55, requirements: [{ prefix: "М-4:", min: 8 }], expectedKm: 1352, distanceTolerancePercent: 6 },
 ];
 
 const CHECKPOINT_RADIUS_KM = 2;
@@ -145,16 +147,10 @@ function distanceKm(a: Coordinate, b: Coordinate) {
   return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
 }
 
-function interpolate(a: Coordinate, b: Coordinate, fraction: number): Coordinate {
-  return [a[0] + (b[0] - a[0]) * fraction, a[1] + (b[1] - a[1]) * fraction];
-}
-
-function automaticInteriorCheckpoints(segment: TollSegment) {
-  if (segment.via) return [segment.via];
-  const direct = distanceKm(segment.start, segment.end);
-  if (direct < 12) return [];
-  const fractions = direct >= 150 ? [0.25, 0.5, 0.75] : direct >= 70 ? [1 / 3, 2 / 3] : [0.5];
-  return fractions.map((fraction) => interpolate(segment.start, segment.end, fraction));
+function interiorCheckpoints(segment: TollSegment) {
+  // Only use a control point when it is an explicitly stored point on the road.
+  // Synthetic straight-line points caused false negatives on curved highways.
+  return segment.via ? [segment.via] : [];
 }
 
 function interiorCheckpointRadius(segment: TollSegment) {
@@ -217,7 +213,7 @@ function matchesSegment(route: Coordinate[], segment: TollSegment) {
   if (travelled > direct * MAX_PATH_TO_DIRECT_RATIO + toleranceKm) return false;
 
   const direction = endIndex > startIndex ? 1 : -1;
-  const checkpoints = automaticInteriorCheckpoints(segment);
+  const checkpoints = interiorCheckpoints(segment);
   const orderedCheckpoints = direction > 0 ? checkpoints : [...checkpoints].reverse();
   const checkpointRadius = interiorCheckpointRadius(segment);
   let previousIndex = startIndex;
@@ -241,8 +237,24 @@ function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinat
     || (distanceKm(first, end) <= effectiveRadius && distanceKm(last, start) <= effectiveRadius);
 }
 
+function routeLengthKm(route: Coordinate[]) {
+  return route.length < 2 ? 0 : pathDistance(route, 0, route.length - 1);
+}
+
 function matchesFullRoute(route: Coordinate[], matchedSegments: TollSegment[], item: FullRoute) {
   if (!matchesRouteEnds(route, item.start, item.end, item.radius)) return false;
+
+  // For routes that have been checked against the control base, endpoint +
+  // total-length agreement is a safer fallback than approximate kilometre
+  // markers. A 6% window separates the paid fast route from the longer free
+  // alternative on the known M-4 directions.
+  if (item.expectedKm) {
+    const actualKm = routeLengthKm(route);
+    const tolerance = item.distanceTolerancePercent ?? 6;
+    const deviation = Math.abs(actualKm - item.expectedKm) / item.expectedKm * 100;
+    if (deviation <= tolerance) return true;
+  }
+
   return item.requirements.every((requirement) =>
     matchedSegments.filter((segment) => segment.name.startsWith(requirement.prefix)).length >= requirement.min);
 }
@@ -286,6 +298,6 @@ export function estimateTolls(route: Coordinate[], departureAt?: string) {
     weekendAmount,
     period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
     segments: completeRoute ? [completeRoute.name] : segments.map((segment) => segment.name),
-    confidence: segments.length > 0 ? "matched" as const : "none" as const,
+    confidence: completeRoute || segments.length > 0 ? "matched" as const : "none" as const,
   };
 }
