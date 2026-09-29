@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { priceM4TollEvents } from "@/lib/toll-engine/m4-engine";
 
 export const maxDuration = 60;
 
@@ -22,9 +23,29 @@ export async function GET(request: NextRequest) {
     signal: AbortSignal.timeout(55_000),
   });
 
-  const body = await response.text();
-  return new NextResponse(body, {
-    status: response.status,
-    headers: { "Content-Type": response.headers.get("content-type") ?? "application/json" },
-  });
+  const data = await response.json().catch(() => null) as {
+    legs?: Array<{
+      fast?: {
+        tollValidation?: { tollBooths?: Parameters<typeof priceM4TollEvents>[0] };
+        m4PricingDiagnostic?: ReturnType<typeof priceM4TollEvents>;
+        [key: string]: unknown;
+      };
+      [key: string]: unknown;
+    }>;
+    [key: string]: unknown;
+  } | null;
+
+  if (!data) {
+    return NextResponse.json({ error: "Diagnostic upstream response is not valid JSON" }, { status: 502 });
+  }
+
+  if (response.ok && Array.isArray(data.legs)) {
+    for (const leg of data.legs) {
+      if (!leg.fast) continue;
+      const events = leg.fast.tollValidation?.tollBooths ?? [];
+      leg.fast.m4PricingDiagnostic = priceM4TollEvents(events);
+    }
+  }
+
+  return NextResponse.json(data, { status: response.status });
 }
