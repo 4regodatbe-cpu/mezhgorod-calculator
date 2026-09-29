@@ -1,4 +1,4 @@
-import type { TollBoothEvent } from "@/lib/toll-validator";
+import type { TollBoothEvent, TollValidation } from "@/lib/toll-validator";
 import { M4_DATA } from "@/lib/toll-engine/m4-data";
 import { M4_NODE_TO_PLAZA, type M4PlazaNodeGroup, type PlazaNodeVerification } from "@/lib/toll-engine/m4-plaza-nodes";
 
@@ -15,7 +15,7 @@ export type M4PricedPlaza = {
 };
 
 export type M4UnresolvedItem = {
-  code: "mixed_zone" | "ambiguous_545" | "alternative_corridor" | "missing_tariff";
+  code: "mixed_zone" | "ambiguous_545" | "alternative_corridor" | "missing_tariff" | "incomplete_validation";
   kms: number[];
   message: string;
 };
@@ -33,6 +33,9 @@ export type M4PricingResult = {
   recognizedEventCount: number;
   unrecognizedEventCount: number;
   evidence: "osm_toll_booth_node";
+  inputComplete: boolean | null;
+  checkedChunkCount: number | null;
+  chunkCount: number | null;
   message: string;
 };
 
@@ -204,6 +207,41 @@ export function priceM4TollEvents(events: TollBoothEvent[], departureAt?: string
     recognizedEventCount,
     unrecognizedEventCount,
     evidence: "osm_toll_booth_node",
+    inputComplete: null,
+    checkedChunkCount: null,
+    chunkCount: null,
     message,
+  };
+}
+
+export function priceM4TollValidation(validation: TollValidation, departureAt?: string): M4PricingResult {
+  const result = priceM4TollEvents(validation.tollBooths ?? [], departureAt);
+  const base = {
+    ...result,
+    inputComplete: validation.complete,
+    checkedChunkCount: validation.checkedChunkCount,
+    chunkCount: validation.chunkCount,
+  };
+
+  if (validation.complete) return base;
+
+  const unresolved = [
+    ...result.unresolved,
+    {
+      code: "incomplete_validation" as const,
+      kms: [],
+      message: `Map matching проверил ${validation.checkedChunkCount} из ${validation.chunkCount} частей маршрута; найденный набор ПВП может быть неполным.`,
+    },
+  ];
+
+  return {
+    ...base,
+    status: result.pricedPlazas.length > 0 ? "partial" : "unresolved",
+    confidence: result.pricedPlazas.length > 0 ? "low" : "none",
+    amount: null,
+    unresolved,
+    message: result.pricedPlazas.length > 0
+      ? `Распознано ${result.pricedPlazas.length} ПВП, но проверено только ${validation.checkedChunkCount} из ${validation.chunkCount} частей маршрута. Итоговая точная сумма заблокирована.`
+      : `Маршрут проверен не полностью (${validation.checkedChunkCount} из ${validation.chunkCount} частей); безопасно определить точную сумму М-4 нельзя.`,
   };
 }
