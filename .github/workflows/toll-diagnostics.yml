@@ -34,12 +34,23 @@ jobs:
               --data-urlencode "from=$from" \
               --data-urlencode "to=$to" \
               -o "diagnostics/$name.json"
-            jq '{from: .legs[0].from, to: .legs[0].to, fastKm: (.legs[0].fast.meters / 1000), freeKm: (if .legs[0].free then .legs[0].free.meters / 1000 else null end), tolls: .legs[0].fast.tolls, tollValidation: .legs[0].fast.tollValidation, freeValidation: .legs[0].free.tollValidation}' "diagnostics/$name.json"
+            jq '{
+              from: .legs[0].from,
+              to: .legs[0].to,
+              fastKm: (.legs[0].fast.meters / 1000),
+              freeKm: (if .legs[0].free then .legs[0].free.meters / 1000 else null end),
+              tolls: .legs[0].fast.tolls,
+              tollValidation: .legs[0].fast.tollValidation,
+              m4PricingDiagnostic: .legs[0].fast.m4PricingDiagnostic,
+              freeValidation: .legs[0].free.tollValidation
+            }' "diagnostics/$name.json"
           }
 
           query yeisk-moscow 'Ейск' 'Москва'
           query maykop-moscow 'Майкоп' 'Москва'
           query yalta-moscow 'Ялта' 'Москва'
+          query krasnodar-moscow 'Краснодар' 'Москва'
+          query sochi-moscow 'Сочи' 'Москва'
 
       - name: Upload diagnostic JSON
         uses: actions/upload-artifact@v4
