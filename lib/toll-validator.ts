@@ -20,11 +20,14 @@ export type TollValidation = {
   message: string;
   tollBoothCount?: number;
   tollBooths?: TollBoothEvent[];
-  chunkCount: number;
-  checkedChunkCount: number;
-  failedChunkCount: number;
-  complete: boolean;
-  boothEventCoverage: "complete" | "partial" | "none";
+  // New validators always fill these fields. They remain optional at the type
+  // boundary so older fallback constructors can coexist during the staged
+  // migration. Missing coverage metadata must never be treated as complete.
+  chunkCount?: number;
+  checkedChunkCount?: number;
+  failedChunkCount?: number;
+  complete?: boolean;
+  boothEventCoverage?: "complete" | "partial" | "none";
 };
 
 type TraceEdge = {
@@ -89,7 +92,7 @@ function splitRoute(route: Coordinate[]) {
   return chunks;
 }
 
-function coverage(checkedChunkCount: number, failedChunkCount: number): TollValidation["boothEventCoverage"] {
+function coverage(checkedChunkCount: number, failedChunkCount: number): NonNullable<TollValidation["boothEventCoverage"]> {
   if (checkedChunkCount === 0) return "none";
   return failedChunkCount === 0 ? "complete" : "partial";
 }
