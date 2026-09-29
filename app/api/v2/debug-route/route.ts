@@ -16,6 +16,7 @@ export async function GET(request: NextRequest) {
       from: { label: from },
       to: { label: to },
       mode: "standard",
+      diagnostics: true,
     }),
     cache: "no-store",
     signal: AbortSignal.timeout(55_000),
