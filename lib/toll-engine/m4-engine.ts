@@ -216,21 +216,28 @@ export function priceM4TollEvents(events: TollBoothEvent[], departureAt?: string
 
 export function priceM4TollValidation(validation: TollValidation, departureAt?: string): M4PricingResult {
   const result = priceM4TollEvents(validation.tollBooths ?? [], departureAt);
-  const base = {
+  const chunkCount = validation.chunkCount ?? null;
+  const checkedChunkCount = validation.checkedChunkCount ?? null;
+  // Missing coverage metadata belongs to an older/fallback validation object.
+  // It is intentionally treated as incomplete rather than guessed complete.
+  const inputComplete = validation.complete === true && chunkCount !== null && checkedChunkCount === chunkCount;
+  const base: M4PricingResult = {
     ...result,
-    inputComplete: validation.complete,
-    checkedChunkCount: validation.checkedChunkCount,
-    chunkCount: validation.chunkCount,
+    inputComplete,
+    checkedChunkCount,
+    chunkCount,
   };
 
-  if (validation.complete) return base;
+  if (inputComplete) return base;
 
+  const checkedText = checkedChunkCount === null ? "неизвестно" : String(checkedChunkCount);
+  const totalText = chunkCount === null ? "неизвестно" : String(chunkCount);
   const unresolved = [
     ...result.unresolved,
     {
       code: "incomplete_validation" as const,
       kms: [],
-      message: `Map matching проверил ${validation.checkedChunkCount} из ${validation.chunkCount} частей маршрута; найденный набор ПВП может быть неполным.`,
+      message: `Map matching проверил ${checkedText} из ${totalText} частей маршрута; найденный набор ПВП может быть неполным.`,
     },
   ];
 
@@ -241,7 +248,7 @@ export function priceM4TollValidation(validation: TollValidation, departureAt?: 
     amount: null,
     unresolved,
     message: result.pricedPlazas.length > 0
-      ? `Распознано ${result.pricedPlazas.length} ПВП, но проверено только ${validation.checkedChunkCount} из ${validation.chunkCount} частей маршрута. Итоговая точная сумма заблокирована.`
-      : `Маршрут проверен не полностью (${validation.checkedChunkCount} из ${validation.chunkCount} частей); безопасно определить точную сумму М-4 нельзя.`,
+      ? `Распознано ${result.pricedPlazas.length} ПВП, но полнота проверки маршрута не подтверждена (${checkedText} из ${totalText}). Итоговая точная сумма заблокирована.`
+      : `Полнота проверки маршрута не подтверждена (${checkedText} из ${totalText}); безопасно определить точную сумму М-4 нельзя.`,
   };
 }
