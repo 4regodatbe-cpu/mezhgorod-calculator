@@ -80,6 +80,49 @@ jobs:
           query moscow-krasnodar 'Москва' 'Краснодар'
           query moscow-sochi 'Москва' 'Сочи'
 
+      - name: Assert M4 regression invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          assert_route() {
+            local name="$1"
+            local weekday="$2"
+            local weekend="$3"
+            local file="diagnostics/$name.json"
+
+            echo "=== assert $name ==="
+            jq -e \
+              --argjson weekday "$weekday" \
+              --argjson weekend "$weekend" '
+                (.validation.complete == true) and
+                (.validation.checkedCandidateCount == .validation.candidateCount) and
+                (.validation.unknownCount == 0) and
+                (.pricing.status == "priced") and
+                ((.pricing.unresolved | length) == 0) and
+                (.pricing.weekdayAmount == $weekday) and
+                (.pricing.weekendAmount == $weekend) and
+                ((.pricing.amount == $weekday) or (.pricing.amount == $weekend)) and
+                ((.pricing.confidence == "medium") or (.pricing.confidence == "high"))
+              ' "$file" >/dev/null
+
+            echo "PASS $name: weekday=${weekday}, weekend=${weekend}, confidence=$(jq -r '.pricing.confidence' "$file")"
+          }
+
+          # Exact tariff expectations from the verified 2026-09-29 M-4 snapshot.
+          assert_route yeisk-moscow 5240 7240
+          assert_route maykop-moscow 6090 8400
+          assert_route yalta-moscow 5240 7240
+          assert_route krasnodar-moscow 6090 8400
+          assert_route sochi-moscow 6090 8400
+
+          # Reverse directions must remain tariff-symmetric for the same corridor.
+          assert_route moscow-yeisk 5240 7240
+          assert_route moscow-maykop 6090 8400
+          assert_route moscow-yalta 5240 7240
+          assert_route moscow-krasnodar 6090 8400
+          assert_route moscow-sochi 6090 8400
+
       - name: Upload diagnostic JSON
         if: always()
         uses: actions/upload-artifact@v4
