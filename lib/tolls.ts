@@ -10,6 +10,16 @@ type TollSegment = {
   radius?: number;
 };
 
+type FullRoute = {
+  name: string;
+  start: Coordinate;
+  end: Coordinate;
+  weekday: number;
+  weekend: number;
+  radius: number;
+  requirements: Array<{ prefix: string; min: number }>;
+};
+
 // M-4 Don, category I, no transponder. Prices current from 02.03.2026.
 const M4: TollSegment[] = [
   { name: "М-4: Дальний западный обход Краснодара", start: [38.98, 45.24], end: [38.68, 45.0], weekday: 410, weekend: 410, radius: 13 },
@@ -109,14 +119,14 @@ const CKAD: TollSegment[] = [
   { name: "ЦКАД: Калужское шоссе — западный участок", start: [37.25, 55.31], via: [37.08, 55.39], end: [36.95, 55.5], weekday: 92, weekend: 92, radius: 9 },
 ];
 
-const FULL_ROUTES = [
-  { name: "М-4: Анапа — Воронеж", start: [37.316367, 44.894818] as Coordinate, end: [39.200296, 51.660781] as Coordinate, weekday: 4090, weekend: 4930, radius: 12 },
-  { name: "М-12: Москва — Екатеринбург", start: [37.62, 55.76] as Coordinate, end: [60.61, 56.84] as Coordinate, weekday: 8580, weekend: 8580, radius: 85 },
-  { name: "М-12: Москва — Казань", start: [37.62, 55.76] as Coordinate, end: [49.11, 55.8] as Coordinate, weekday: 5909, weekend: 5909, radius: 55 },
-  { name: "М-11: Москва — Санкт-Петербург", start: [37.62, 55.76] as Coordinate, end: [30.34, 59.93] as Coordinate, weekday: 4580, weekend: 4780, radius: 55 },
-  { name: "М-4 + М-11: Сочи — Санкт-Петербург", start: [39.72, 43.59] as Coordinate, end: [30.34, 59.93] as Coordinate, weekday: 9620, weekend: 10870, radius: 65 },
-  { name: "М-4: Москва — Сочи", start: [37.62, 55.76] as Coordinate, end: [39.72, 43.59] as Coordinate, weekday: 5040, weekend: 6090, radius: 65 },
-  { name: "М-4: Москва — Краснодар", start: [37.62, 55.76] as Coordinate, end: [38.98, 45.04] as Coordinate, weekday: 5040, weekend: 6090, radius: 55 },
+const FULL_ROUTES: FullRoute[] = [
+  { name: "М-4: Анапа — Воронеж", start: [37.316367, 44.894818], end: [39.200296, 51.660781], weekday: 4090, weekend: 4930, radius: 12, requirements: [{ prefix: "М-4:", min: 6 }] },
+  { name: "М-12: Москва — Екатеринбург", start: [37.62, 55.76], end: [60.61, 56.84], weekday: 8580, weekend: 8580, radius: 85, requirements: [{ prefix: "М-12:", min: 8 }] },
+  { name: "М-12: Москва — Казань", start: [37.62, 55.76], end: [49.11, 55.8], weekday: 5909, weekend: 5909, radius: 55, requirements: [{ prefix: "М-12:", min: 7 }] },
+  { name: "М-11: Москва — Санкт-Петербург", start: [37.62, 55.76], end: [30.34, 59.93], weekday: 4580, weekend: 4780, radius: 55, requirements: [{ prefix: "М-11:", min: 3 }] },
+  { name: "М-4 + М-11: Сочи — Санкт-Петербург", start: [39.72, 43.59], end: [30.34, 59.93], weekday: 9620, weekend: 10870, radius: 65, requirements: [{ prefix: "М-4:", min: 6 }, { prefix: "М-11:", min: 3 }] },
+  { name: "М-4: Москва — Сочи", start: [37.62, 55.76], end: [39.72, 43.59], weekday: 5040, weekend: 6090, radius: 65, requirements: [{ prefix: "М-4:", min: 8 }] },
+  { name: "М-4: Москва — Краснодар", start: [37.62, 55.76], end: [38.98, 45.04], weekday: 5040, weekend: 6090, radius: 55, requirements: [{ prefix: "М-4:", min: 8 }] },
 ];
 
 const CHECKPOINT_RADIUS_KM = 2;
@@ -124,6 +134,8 @@ const COMPLETE_ROUTE_ENDPOINT_RADIUS_KM = 3;
 const MAX_GEOMETRY_GAP_KM = 0.75;
 const MIN_PATH_TO_DIRECT_RATIO = 0.78;
 const MAX_PATH_TO_DIRECT_RATIO = 1.65;
+const MODERN_HIGHWAY_INTERIOR_RADIUS_KM = 4;
+const GENERAL_INTERIOR_RADIUS_KM = 6;
 
 function distanceKm(a: Coordinate, b: Coordinate) {
   const rad = Math.PI / 180;
@@ -131,6 +143,24 @@ function distanceKm(a: Coordinate, b: Coordinate) {
   const dLng = (b[0] - a[0]) * rad;
   const value = Math.sin(dLat / 2) ** 2 + Math.cos(a[1] * rad) * Math.cos(b[1] * rad) * Math.sin(dLng / 2) ** 2;
   return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
+}
+
+function interpolate(a: Coordinate, b: Coordinate, fraction: number): Coordinate {
+  return [a[0] + (b[0] - a[0]) * fraction, a[1] + (b[1] - a[1]) * fraction];
+}
+
+function automaticInteriorCheckpoints(segment: TollSegment) {
+  if (segment.via) return [segment.via];
+  const direct = distanceKm(segment.start, segment.end);
+  if (direct < 12) return [];
+  const fractions = direct >= 150 ? [0.25, 0.5, 0.75] : direct >= 70 ? [1 / 3, 2 / 3] : [0.5];
+  return fractions.map((fraction) => interpolate(segment.start, segment.end, fraction));
+}
+
+function interiorCheckpointRadius(segment: TollSegment) {
+  return segment.name.startsWith("М-11:") || segment.name.startsWith("М-12:")
+    ? MODERN_HIGHWAY_INTERIOR_RADIUS_KM
+    : GENERAL_INTERIOR_RADIUS_KM;
 }
 
 function densifyRoute(route: Coordinate[], maxGapKm = MAX_GEOMETRY_GAP_KM) {
@@ -173,10 +203,8 @@ function pathDistance(route: Coordinate[], fromIndex: number, toIndex: number) {
 }
 
 function matchesSegment(route: Coordinate[], segment: TollSegment) {
-  if (route.length < 2) return false;
+  if (route.length < 3) return false;
 
-  // Segment data contains historical broad radii, but matching is deliberately
-  // capped at 2 km so a nearby free road cannot trigger a paid section.
   const radius = Math.min(segment.radius ?? CHECKPOINT_RADIUS_KM, CHECKPOINT_RADIUS_KM);
   const startIndex = nearestRouteIndex(route, segment.start, radius);
   const endIndex = nearestRouteIndex(route, segment.end, radius);
@@ -188,18 +216,24 @@ function matchesSegment(route: Coordinate[], segment: TollSegment) {
   if (travelled < direct * MIN_PATH_TO_DIRECT_RATIO - toleranceKm) return false;
   if (travelled > direct * MAX_PATH_TO_DIRECT_RATIO + toleranceKm) return false;
 
-  if (segment.via) {
-    const viaIndex = nearestRouteIndex(route, segment.via, radius);
-    if (viaIndex < 0) return false;
-    const direction = endIndex > startIndex ? 1 : -1;
-    if ((viaIndex - startIndex) * direction <= 0 || (endIndex - viaIndex) * direction <= 0) return false;
+  const direction = endIndex > startIndex ? 1 : -1;
+  const checkpoints = automaticInteriorCheckpoints(segment);
+  const orderedCheckpoints = direction > 0 ? checkpoints : [...checkpoints].reverse();
+  const checkpointRadius = interiorCheckpointRadius(segment);
+  let previousIndex = startIndex;
+  for (const checkpoint of orderedCheckpoints) {
+    const checkpointIndex = nearestRouteIndex(route, checkpoint, checkpointRadius);
+    if (checkpointIndex < 0) return false;
+    if ((checkpointIndex - previousIndex) * direction <= 0) return false;
+    if ((endIndex - checkpointIndex) * direction <= 0) return false;
+    previousIndex = checkpointIndex;
   }
 
   return true;
 }
 
 function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinate, radius: number) {
-  if (route.length < 2) return false;
+  if (route.length < 3) return false;
   const effectiveRadius = Math.min(radius, COMPLETE_ROUTE_ENDPOINT_RADIUS_KM);
   const first = route[0];
   const last = route[route.length - 1];
@@ -207,16 +241,39 @@ function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinat
     || (distanceKm(first, end) <= effectiveRadius && distanceKm(last, start) <= effectiveRadius);
 }
 
+function matchesFullRoute(route: Coordinate[], matchedSegments: TollSegment[], item: FullRoute) {
+  if (!matchesRouteEnds(route, item.start, item.end, item.radius)) return false;
+  return item.requirements.every((requirement) =>
+    matchedSegments.filter((segment) => segment.name.startsWith(requirement.prefix)).length >= requirement.min);
+}
+
+function emptyTolls(date: Date) {
+  const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
+  const weekend = day === 0 || day === 5 || day === 6;
+  return {
+    amount: 0,
+    weekdayAmount: 0,
+    weekendAmount: 0,
+    period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
+    segments: [] as string[],
+    confidence: "none" as const,
+  };
+}
+
 export function estimateTolls(route: Coordinate[], departureAt?: string) {
   const date = departureAt ? new Date(departureAt) : new Date();
+
+  // A real Valhalla/OSRM geometry contains many points. Two points mean the
+  // routing providers did not return geometry and the caller supplied only
+  // origin/destination. Never infer toll roads from that straight line.
+  if (route.length < 3) return emptyTolls(date);
+
   const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
   const weekend = day === 0 || day === 5 || day === 6;
   const denseRoute = densifyRoute(route);
   const segments = [...M1, ...M3, ...M4, ...M11, ...M12, ...CKAD, ...A289, ...REGIONAL]
     .filter((segment) => matchesSegment(denseRoute, segment));
-  const completeRoute = segments.length > 0
-    ? FULL_ROUTES.find((item) => matchesRouteEnds(denseRoute, item.start, item.end, item.radius))
-    : undefined;
+  const completeRoute = FULL_ROUTES.find((item) => matchesFullRoute(denseRoute, segments, item));
   const weekdayAmount = completeRoute
     ? completeRoute.weekday
     : segments.reduce((sum, segment) => sum + segment.weekday, 0);
