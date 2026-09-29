@@ -35,6 +35,12 @@ const CITIES: Record<string, { name: string; aliases: string[] }> = {
   tuapse: { name: "Туапсе", aliases: ["туапсе"] },
   adler: { name: "Адлер", aliases: ["адлер"] },
   "mineralnye-vody": { name: "Минеральные Воды", aliases: ["минеральные воды", "минводы", "мин воды"] },
+  pyatigorsk: { name: "Пятигорск", aliases: ["пятигорск"] },
+  kislovodsk: { name: "Кисловодск", aliases: ["кисловодск"] },
+  astrakhan: { name: "Астрахань", aliases: ["астрахань"] },
+  yeisk: { name: "Ейск", aliases: ["ейск"] },
+  armavir: { name: "Армавир", aliases: ["армавир"] },
+  nalchik: { name: "Нальчик", aliases: ["нальчик"] },
 };
 
 
