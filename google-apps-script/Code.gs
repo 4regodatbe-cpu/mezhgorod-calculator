@@ -10,7 +10,7 @@ function doPost(e) {
     const now = new Date().toISOString();
     const routes = ensureSheet(book, "Маршруты", ["Дата и время (UTC)", "Город / регион A", "Город / регион B", "Расстояние, км", "Время, мин", "Тариф, ₽/км", "Стоимость, ₽", "Версия", "Вариант маршрута", "Стандарт, ₽", "Комфорт, ₽", "Комфорт+, ₽", "Минивэн, ₽", "Платная дорога Пн–Чт, ₽", "Платная дорога Пт–Вс, ₽"]);
     const feedback = ensureSheet(book, "Предложения", ["Дата и время (UTC)", "Категория", "Предложение", "Статус"]);
-    const visits = ensureSheet(book, "Посещения", ["Первый вход (UTC)", "Анонимный ID браузера", "Версия"]);
+    const visits = ensureVisitsSheet(book);
     if (data.type === "route") {
       routes.appendRow([now, data.fromRegion, data.toRegion, data.distanceKm, data.durationMin, data.rate, data.total, "1.0"]);
     } else if (data.type === "route_v2") {
@@ -39,6 +39,21 @@ function ensureSheet(book, name, headers) {
   if (sheet.getLastRow() === 0) sheet.appendRow(headers);
   else if (sheet.getLastColumn() < headers.length) sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
   sheet.setFrozenRows(1);
+  return sheet;
+}
+
+function ensureVisitsSheet(book) {
+  let sheet = book.getSheetByName("Посещения");
+  if (!sheet) {
+    sheet = book.insertSheet("Посещения");
+    sheet.getRange("A1").setValue("Уникальные входы (браузеры)");
+    sheet.getRange("B1").setFormula("=MAX(0;COUNTA(A4:A))");
+    sheet.getRange("A2").setValue("Один браузер учитывается один раз. Очистка данных или другое устройство создают новый вход.");
+    sheet.getRange("A3:C3").setValues([["Дата и время первого входа (UTC)", "Анонимный ID браузера", "Версия"]]);
+  } else {
+    sheet.getRange("A3:C3").setValues([["Дата и время первого входа (UTC)", "Анонимный ID браузера", "Версия"]]);
+  }
+  sheet.setFrozenRows(3);
   return sheet;
 }
 
