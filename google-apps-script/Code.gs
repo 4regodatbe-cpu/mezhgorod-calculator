@@ -12,9 +12,8 @@ function doPost(e) {
     const feedback = ensureSheet(book, "Предложения", ["Дата и время (UTC)", "Категория", "Предложение", "Статус"]);
     const visits = ensureVisitsSheet(book);
     if (data.type === "route") {
-      routes.appendRow([now, data.fromRegion, data.toRegion, data.distanceKm, data.durationMin, data.rate, data.total, "1.0"]);
-    } else if (data.type === "route_v2") {
-      routes.appendRow([now, data.fromRegion, data.toRegion, data.distanceKm, data.durationMin, "", "", "2.0", data.routeType, data.totals.standard, data.totals.comfort, data.totals.comfortPlus, data.totals.minivan, data.tollWeekday, data.tollWeekend]);
+      if (data.version === "2.0" && data.totals) routes.appendRow([now, data.fromRegion, data.toRegion, data.distanceKm, data.durationMin, "", "", "2.0", data.routeType, data.totals.standard, data.totals.comfort, data.totals.comfortPlus, data.totals.minivan, data.tollWeekday, data.tollWeekend]);
+      else routes.appendRow([now, data.fromRegion, data.toRegion, data.distanceKm, data.durationMin, data.rate, data.total, "1.0"]);
     } else if (data.type === "feedback") {
       feedback.appendRow([now, data.category, data.message, "Новое"]);
     } else if (data.type === "visit") {
