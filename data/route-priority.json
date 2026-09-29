@@ -50,105 +50,129 @@
       "batch": 1,
       "from": "Краснодар",
       "to": "Пятигорск",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 5,
       "batch": 1,
       "from": "Краснодар",
       "to": "Кисловодск",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 6,
       "batch": 1,
       "from": "Краснодар",
       "to": "Волгоград",
-      "status": "pending"
+      "status": "pending",
+      "lastCheckedAt": "2026-09-29",
+      "pendingReason": "Публичные Яндекс Карты не смогли построить автомобильный маршрут"
     },
     {
       "rank": 7,
       "batch": 1,
       "from": "Краснодар",
       "to": "Астрахань",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 8,
       "batch": 1,
       "from": "Краснодар",
       "to": "Ейск",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 9,
       "batch": 1,
       "from": "Краснодар",
       "to": "Армавир",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 10,
       "batch": 1,
       "from": "Краснодар",
       "to": "Нальчик",
-      "status": "pending"
+      "status": "verified",
+      "verifiedAt": "2026-09-29"
     },
     {
       "rank": 11,
       "batch": 2,
       "from": "Краснодар",
       "to": "Владикавказ",
-      "status": "pending"
+      "status": "pending",
+      "lastCheckedAt": "2026-09-29",
+      "pendingReason": "Яндекс Карты не вернули значения расстояния и времени"
     },
     {
       "rank": 12,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Сочи",
-      "status": "pending"
+      "status": "pending",
+      "lastCheckedAt": "2026-09-29",
+      "pendingReason": "Яндекс Карты не вернули значения расстояния и времени"
     },
     {
       "rank": 13,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Анапа",
-      "status": "pending"
+      "status": "pending",
+      "lastCheckedAt": "2026-09-29",
+      "pendingReason": "Не показана стоимость платных участков для подтверждённого маршрута"
     },
     {
       "rank": 14,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Геленджик",
-      "status": "pending"
+      "status": "pending",
+      "lastCheckedAt": "2026-09-29",
+      "pendingReason": "Не показана стоимость платных участков для подтверждённого маршрута"
     },
     {
       "rank": 15,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Новороссийск",
-      "status": "pending"
+      "status": "pending",
+      "lastCheckedAt": "2026-09-29",
+      "pendingReason": "Не показана стоимость платных участков для подтверждённого маршрута"
     },
     {
       "rank": 16,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Симферополь",
-      "status": "pending"
+      "status": "pending",
+      "lastCheckedAt": "2026-09-29",
+      "pendingReason": "Безопасное направление через Краснодар подтверждено, но бесплатный вариант не удалось однозначно проверить"
     },
     {
       "rank": 17,
       "batch": 2,
       "from": "Ростов-на-Дону",
       "to": "Севастополь",
-      "status": "pending"
+      "status": "pending",
+      "lastCheckedAt": "2026-09-29",
+      "pendingReason": "Безопасное направление через Краснодар подтверждено, но стоимость платных участков не показана"
     },
     {
       "rank": 18,
       "batch": 2,
       "from": "Москва",
       "to": "Симферополь",
-      "status": "pending"
+      "status": "pending",
+      "lastCheckedAt": "2026-09-29",
+      "pendingReason": "При обязательном направлении через Краснодар Яндекс Карты не вернули итоговые значения"
     },
     {
       "rank": 19,
