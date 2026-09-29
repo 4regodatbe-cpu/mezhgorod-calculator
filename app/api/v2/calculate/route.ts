@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
 import { safeRoutePositions } from "@/lib/safe-route";
+import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { findVerifiedRoute, tollPeriodsForRoute } from "@/lib/verified-routes";
 
 type Point = { label: string; position?: { lat: number; lng: number } };
@@ -19,6 +20,11 @@ type KnownRoute = {
   radiusKm: number;
   meters: number;
   seconds: number;
+};
+type ValidatedCandidate = {
+  name: string;
+  route: RouteWithGeometry;
+  validation: TollValidation;
 };
 
 type TollEstimate = ReturnType<typeof estimateTolls>;
@@ -147,6 +153,43 @@ function selectRoute(
   };
 }
 
+function selectValidatedFreeRoute(candidates: ValidatedCandidate[], known?: RouteSummary) {
+  if (known) {
+    const selected = selectRoute(
+      candidates[0] ? { name: candidates[0].name, route: candidates[0].route } : undefined,
+      candidates[1] ? { name: candidates[1].name, route: candidates[1].route } : undefined,
+      known,
+    );
+    const confirmed = candidates.find((candidate) => candidate.validation.status === "free");
+    return { ...selected, validation: confirmed?.validation ?? candidates[0]?.validation ?? null };
+  }
+
+  const confirmedFree = candidates.filter((candidate) => candidate.validation.status === "free");
+  const unknown = candidates.filter((candidate) => candidate.validation.status === "unknown");
+  const usable = confirmedFree.length > 0 ? confirmedFree : unknown;
+  if (usable.length === 0) return null;
+
+  const selected = selectRoute(
+    usable[0] ? { name: usable[0].name, route: usable[0].route } : undefined,
+    usable[1] ? { name: usable[1].name, route: usable[1].route } : undefined,
+  );
+  const validation = usable[0].validation;
+
+  if (confirmedFree.length === 0) {
+    return {
+      ...selected,
+      quality: {
+        ...selected.quality,
+        status: "warning" as const,
+        message: "Маршрут построен без платных дорог, но независимая проверка платности временно недоступна",
+      },
+      validation,
+    };
+  }
+
+  return { ...selected, validation };
+}
+
 async function geocode(point: Point): Promise<Located> {
   if (point.position) return { label: point.label, position: point.position };
   const url = new URL("https://photon.komoot.io/api/");
@@ -210,7 +253,7 @@ async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Promise<Ro
   return { meters: Math.round(summary.length * 1000), seconds: Math.round(summary.time), coordinates };
 }
 
-async function brouterFree(from: Located, to: Located) {
+async function brouterFree(from: Located, to: Located): Promise<RouteWithGeometry> {
   const url = new URL("https://brouter.de/brouter");
   url.searchParams.set("lonlats", safeRoutePositions(from, to).map((point) => `${point.lng},${point.lat}`).join("|"));
   url.searchParams.set("profile", "car-vario");
@@ -224,12 +267,18 @@ async function brouterFree(from: Located, to: Located) {
     signal: AbortSignal.timeout(25_000),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as { features?: Array<{ properties?: { "track-length"?: string | number; "total-time"?: string | number } }> };
-  const properties = data.features?.[0]?.properties;
+  const data = (await response.json()) as {
+    features?: Array<{
+      properties?: { "track-length"?: string | number; "total-time"?: string | number };
+      geometry?: { coordinates?: Coordinate[] };
+    }>;
+  };
+  const feature = data.features?.[0];
+  const properties = feature?.properties;
   const meters = Number(properties?.["track-length"]);
   const seconds = Number(properties?.["total-time"]);
   if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new Error("ROUTE_NOT_FOUND");
-  return { meters: Math.round(meters), seconds: Math.round(seconds) };
+  return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates: feature?.geometry?.coordinates ?? [] };
 }
 
 async function osrmRoute(from: Located, to: Located): Promise<RouteWithGeometry> {
@@ -277,6 +326,17 @@ function verifiedTollFallback(from: Located, to: Located, fast: RouteSummary, cu
   };
 }
 
+function mapMatchedTollFallback(current: TollEstimate, validation: TollValidation): TollEstimate {
+  if (current.segments.length > 0 || validation.status !== "toll") return current;
+  return {
+    ...current,
+    segments: [validation.roadNames.length > 0
+      ? `Map matching: ${validation.roadNames.slice(0, 3).join(", ")}`
+      : "Map matching: подтверждены платные дорожные рёбра"],
+    confidence: "matched",
+  };
+}
+
 function routingDifferenceTollFallback(fast: RouteSummary, free: RouteSummary, current: TollEstimate): TollEstimate {
   if (current.segments.length > 0) return current;
 
@@ -303,39 +363,65 @@ async function leg(from: Located, to: Located, departureAt?: string) {
     brouterFree(from, to),
     osrmRoute(from, to),
   ]);
+
   const selectedFast = selectRoute(
     fastResult.status === "fulfilled" ? { name: "Valhalla", route: fastResult.value } : undefined,
     osrmResult.status === "fulfilled" ? { name: "OSRM", route: osrmResult.value } : undefined,
     knownFastRoute(from, to),
   );
-  const known = knownFreeRoute(from, to);
-  const selectedFree = (() => {
-    try {
-      return selectRoute(
-        valhallaFreeResult.status === "fulfilled" ? { name: "Valhalla", route: valhallaFreeResult.value } : undefined,
-        brouterResult.status === "fulfilled" ? { name: "BRouter", route: brouterResult.value } : undefined,
-        known,
-      );
-    } catch {
-      return null;
-    }
-  })();
+
   const routeGeometry = fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
     ? fastResult.value.coordinates
     : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
       ? osrmResult.value.coordinates
       : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
+
+  const [fastValidation, valhallaFreeValidation, brouterValidation] = await Promise.all([
+    validateTollEdges(routeGeometry),
+    valhallaFreeResult.status === "fulfilled" && valhallaFreeResult.value.coordinates.length > 0
+      ? validateTollEdges(valhallaFreeResult.value.coordinates)
+      : Promise.resolve(null),
+    brouterResult.status === "fulfilled" && brouterResult.value.coordinates.length > 0
+      ? validateTollEdges(brouterResult.value.coordinates)
+      : Promise.resolve(null),
+  ]);
+
+  const freeCandidates: ValidatedCandidate[] = [];
+  if (valhallaFreeResult.status === "fulfilled" && valhallaFreeValidation) {
+    freeCandidates.push({ name: "Valhalla", route: valhallaFreeResult.value, validation: valhallaFreeValidation });
+  }
+  if (brouterResult.status === "fulfilled" && brouterValidation) {
+    freeCandidates.push({ name: "BRouter", route: brouterResult.value, validation: brouterValidation });
+  }
+
+  const selectedFree = (() => {
+    try {
+      return selectValidatedFreeRoute(freeCandidates, knownFreeRoute(from, to));
+    } catch {
+      return null;
+    }
+  })();
+
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
   const verifiedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
-  const tolls = selectedFree
-    ? routingDifferenceTollFallback(selectedFast.route, selectedFree.route, verifiedTolls)
-    : verifiedTolls;
+  const matchedTolls = mapMatchedTollFallback(verifiedTolls, fastValidation);
+  const tolls = selectedFree && fastValidation.status === "unknown"
+    ? routingDifferenceTollFallback(selectedFast.route, selectedFree.route, matchedTolls)
+    : matchedTolls;
+
+  const hadFreeCandidates = freeCandidates.length > 0;
+  const allFreeCandidatesPaid = hadFreeCandidates && freeCandidates.every((candidate) => candidate.validation.status === "toll");
+
   return {
     from: from.label,
     to: to.label,
-    fast: { ...selectedFast.route, quality: selectedFast.quality, tolls },
-    free: selectedFree ? { ...selectedFree.route, quality: selectedFree.quality } : null,
-    freeError: selectedFree ? undefined : "Маршрут без платных дорог временно недоступен. Повторите расчёт позже.",
+    fast: { ...selectedFast.route, quality: selectedFast.quality, tolls, tollValidation: fastValidation },
+    free: selectedFree ? { ...selectedFree.route, quality: selectedFree.quality, tollValidation: selectedFree.validation } : null,
+    freeError: selectedFree
+      ? undefined
+      : allFreeCandidatesPaid
+        ? "Маршрутизаторы предложили варианты с платными участками. Полностью бесплатный маршрут не подтверждён."
+        : "Маршрут без платных дорог временно недоступен. Повторите расчёт позже.",
   };
 }
 
