@@ -1,18 +1,18 @@
-name: Temporary toll diagnostics
+name: M4 local toll diagnostics
 
 on:
   push:
     branches: [main]
     paths:
       - '.github/workflows/toll-diagnostics.yml'
-      - 'lib/toll-validator.ts'
       - 'lib/toll-engine/**'
-      - 'app/api/v2/**'
+      - 'app/api/v2/debug-m4/**'
   workflow_dispatch:
 
 jobs:
   diagnose:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - name: Wait for production deployment
         run: sleep 75
@@ -21,7 +21,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          base='https://mezhgorod-calculator.vercel.app/api/v2/debug-route'
+          base='https://mezhgorod-calculator.vercel.app/api/v2/debug-m4'
           mkdir -p diagnostics
 
           query() {
@@ -29,20 +29,39 @@ jobs:
             local from="$2"
             local to="$3"
             echo "=== $name ==="
-            curl --fail --retry 3 --retry-delay 10 --max-time 70 \
+            curl --fail --retry 1 --retry-delay 5 --max-time 50 \
               --get "$base" \
               --data-urlencode "from=$from" \
               --data-urlencode "to=$to" \
               -o "diagnostics/$name.json"
             jq '{
-              from: .legs[0].from,
-              to: .legs[0].to,
-              fastKm: (.legs[0].fast.meters / 1000),
-              freeKm: (if .legs[0].free then .legs[0].free.meters / 1000 else null end),
-              tolls: .legs[0].fast.tolls,
-              tollValidation: .legs[0].fast.tollValidation,
-              m4PricingDiagnostic: .legs[0].fast.m4PricingDiagnostic,
-              freeValidation: .legs[0].free.tollValidation
+              from,
+              to,
+              fastKm,
+              fastMinutes,
+              geometryPoints,
+              totalElapsedMs,
+              validation: {
+                candidateRadiusKm: .validation.candidateRadiusKm,
+                candidateCount: .validation.candidateCount,
+                checkedCandidateCount: .validation.checkedCandidateCount,
+                confirmedCount: .validation.confirmedCount,
+                rejectedCount: .validation.rejectedCount,
+                unknownCount: .validation.unknownCount,
+                complete: .validation.complete,
+                message: .validation.message,
+                checks: [.validation.checks[] | {km,status,nearestDistanceKm,matchedNodeIds,message}]
+              },
+              pricing: {
+                status: .pricing.status,
+                confidence: .pricing.confidence,
+                amount: .pricing.amount,
+                weekdayAmount: .pricing.weekdayAmount,
+                weekendAmount: .pricing.weekendAmount,
+                pricedPlazas: .pricing.pricedPlazas,
+                unresolved: .pricing.unresolved,
+                message: .pricing.message
+              }
             }' "diagnostics/$name.json"
           }
 
@@ -53,8 +72,10 @@ jobs:
           query sochi-moscow 'Сочи' 'Москва'
 
       - name: Upload diagnostic JSON
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: toll-diagnostics
+          name: m4-local-diagnostics
           path: diagnostics/*.json
-          retention-days: 2
+          retention-days: 4
+          if-no-files-found: warn
