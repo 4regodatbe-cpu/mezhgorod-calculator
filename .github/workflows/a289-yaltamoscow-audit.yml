@@ -1,0 +1,30 @@
+name: A289 Yalta-Moscow audit
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - "scripts/a289-yaltamoscow-audit.mjs"
+      - ".github/workflows/a289-yaltamoscow-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+      - name: Audit A289 geometry
+        run: node scripts/a289-yaltamoscow-audit.mjs
+      - name: Upload audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a289-yaltamoscow-audit
+          path: a289-yaltamoscow-audit.json
+          retention-days: 30
+          if-no-files-found: warn
