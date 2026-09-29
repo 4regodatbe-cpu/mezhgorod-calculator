@@ -29,10 +29,11 @@ export async function POST(request: NextRequest) {
     const token = process.env.GOOGLE_SHEETS_TOKEN;
     if (!endpoint || !token) return NextResponse.json({ error: "Сбор данных ещё настраивается" }, { status: 503 });
 
+    const webhookBody = body.type === "route_v2" ? { ...body, type: "route", version: "2.0", rate: 0, total: body.totals.standard } : body;
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify({ token, ...body }),
+      body: JSON.stringify({ token, ...webhookBody }),
       cache: "no-store",
     });
     const result = await response.json().catch(() => ({ ok: false }));
