@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
 import { safeRoutePositions } from "@/lib/safe-route";
+import { findVerifiedRoute, tollPeriodsForRoute } from "@/lib/verified-routes";
 
 type Point = { label: string; position?: { lat: number; lng: number } };
 type Located = { label: string; position: { lat: number; lng: number } };
@@ -20,7 +21,10 @@ type KnownRoute = {
   seconds: number;
 };
 
+type TollEstimate = ReturnType<typeof estimateTolls>;
+
 const MAX_VERIFIED_SPREAD_PERCENT = 7;
+const VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT = 3;
 
 const KNOWN_FAST_ROUTES: readonly KnownRoute[] = [
   {
@@ -242,6 +246,33 @@ async function osrmRoute(from: Located, to: Located): Promise<RouteWithGeometry>
   return { meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[] };
 }
 
+function verifiedTollFallback(from: Located, to: Located, fast: RouteSummary, current: TollEstimate, departureAt?: string): TollEstimate {
+  if (current.segments.length > 0) return current;
+
+  const verified = findVerifiedRoute(from.label, to.label).route;
+  if (!verified || verified.tollRub <= 0 || verified.fastKm <= 0) return current;
+
+  const actualKm = fast.meters / 1000;
+  const deviationPercent = Math.abs(actualKm - verified.fastKm) / verified.fastKm * 100;
+  const tolerancePercent = Math.max(VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT, verified.accuracyPercent || 0);
+  if (deviationPercent > tolerancePercent) return current;
+
+  const periods = tollPeriodsForRoute(verified);
+  const date = departureAt ? new Date(departureAt) : new Date();
+  const validDate = Number.isNaN(date.getTime()) ? new Date() : date;
+  const day = validDate.getDay();
+  const weekend = day === 0 || day === 5 || day === 6;
+
+  return {
+    amount: weekend ? periods.weekend : periods.weekday,
+    weekdayAmount: periods.weekday,
+    weekendAmount: periods.weekend,
+    period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
+    segments: [`Проверенная база: ${verified.source}`],
+    confidence: "matched",
+  };
+}
+
 async function leg(from: Located, to: Located, departureAt?: string) {
   const [fastResult, valhallaFreeResult, brouterResult, osrmResult] = await Promise.allSettled([
     valhalla(from, to, 1),
@@ -271,10 +302,12 @@ async function leg(from: Located, to: Located, departureAt?: string) {
     : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
       ? osrmResult.value.coordinates
       : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
+  const geometricTolls = estimateTolls(routeGeometry, departureAt);
+  const tolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
   return {
     from: from.label,
     to: to.label,
-    fast: { ...selectedFast.route, quality: selectedFast.quality, tolls: estimateTolls(routeGeometry, departureAt) },
+    fast: { ...selectedFast.route, quality: selectedFast.quality, tolls },
     free: selectedFree ? { ...selectedFree.route, quality: selectedFree.quality } : null,
     freeError: selectedFree ? undefined : "Маршрут без платных дорог временно недоступен. Повторите расчёт позже.",
   };
