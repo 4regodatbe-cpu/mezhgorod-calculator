@@ -26,9 +26,11 @@ const exactM4 = [
   ["moscow-sochi", points.moscow, points.sochi, 6090, 8400],
 ];
 
-const mixedGuards = [
-  ["yalta-moscow", points.yalta, points.moscow],
-  ["moscow-yalta", points.moscow, points.yalta],
+// Exact mixed-system controls: Valhalla geometry crosses A-289 RVP 82 and 103
+// but not RVP 23. Official category-I charge is 205 + 180 = 385 rubles.
+const exactM4A289 = [
+  ["yalta-moscow", points.yalta, points.moscow, 5625, 7625],
+  ["moscow-yalta", points.moscow, points.yalta, 5625, 7625],
 ];
 
 const nonM4Guards = [
@@ -45,7 +47,7 @@ async function waitForDeployment() {
   while (Date.now() < deadline) {
     try {
       const response = await fetch(`${baseUrl}/api/version?ts=${Date.now()}`, {
-        headers: { "cache-control": "no-cache", "user-agent": "MezhgorodSegment1Regression/1.0" },
+        headers: { "cache-control": "no-cache", "user-agent": "MezhgorodSegment1Regression/1.1" },
       });
       const data = await response.json().catch(() => ({}));
       last = data.commit || `HTTP ${response.status}`;
@@ -64,7 +66,7 @@ async function calculate(from, to) {
   try {
     const response = await fetch(`${baseUrl}/api/v2/calculate`, {
       method: "POST",
-      headers: { "content-type": "application/json", "user-agent": "MezhgorodSegment1Regression/1.0" },
+      headers: { "content-type": "application/json", "user-agent": "MezhgorodSegment1Regression/1.1" },
       body: JSON.stringify({
         mode: "standard",
         from,
@@ -103,8 +105,8 @@ for (const [name, from, to, weekday, weekend] of exactM4) {
       { label: "weekday M4 amount", ok: tolls?.weekdayAmount === weekday, actual: String(tolls?.weekdayAmount) },
       { label: "weekend M4 amount", ok: tolls?.weekendAmount === weekend, actual: String(tolls?.weekendAmount) },
       { label: "exact M4 adapter used", ok: tolls?.segments?.[0]?.includes("точный расчёт по локально подтверждённым ПВП") === true, actual: tolls?.segments?.[0] || "missing" },
+      { label: "no A289 frame charged", ok: !(tolls?.segments ?? []).some((segment) => segment.startsWith("А-289:")), actual: (tolls?.segments ?? []).filter((segment) => segment.startsWith("А-289:")).join(" | ") || "none" },
       { label: "toll crossing confirmed", ok: fast?.tollValidation?.status === "toll", actual: fast?.tollValidation?.status || "missing" },
-      { label: "nonzero total", ok: Number(tolls?.amount) > 0, actual: String(tolls?.amount) },
     ];
     record(name, checks, { fastKm: fast?.meters ? fast.meters / 1000 : null, tolls, validation: fast?.tollValidation });
   } catch (error) {
@@ -113,16 +115,19 @@ for (const [name, from, to, weekday, weekend] of exactM4) {
   }
 }
 
-// Yalta routes can include another paid road system. Segment 1 deliberately
-// refuses to replace the combined legacy total with an M-4-only amount.
-for (const [name, from, to] of mixedGuards) {
+for (const [name, from, to, weekday, weekend] of exactM4A289) {
   try {
     const data = await calculate(from, to);
     const fast = data.legs?.[0]?.fast;
     const tolls = fast?.tolls;
+    const a289Segments = (tolls?.segments ?? []).filter((segment) => segment.startsWith("А-289:"));
     const checks = [
-      { label: "request succeeds", ok: Boolean(fast), actual: fast ? "ok" : "missing fast route" },
-      { label: "paid route not reduced to zero", ok: Number(tolls?.amount) > 0 || (tolls?.segments?.length ?? 0) > 0, actual: `${tolls?.amount ?? "missing"} / ${(tolls?.segments ?? []).join(" | ")}` },
+      { label: "weekday M4+A289 amount", ok: tolls?.weekdayAmount === weekday, actual: String(tolls?.weekdayAmount) },
+      { label: "weekend M4+A289 amount", ok: tolls?.weekendAmount === weekend, actual: String(tolls?.weekendAmount) },
+      { label: "RVP 82 charged", ok: a289Segments.some((segment) => segment.includes("РВП 82")), actual: a289Segments.join(" | ") || "missing" },
+      { label: "RVP 103 charged", ok: a289Segments.some((segment) => segment.includes("РВП 103")), actual: a289Segments.join(" | ") || "missing" },
+      { label: "RVP 23 not charged", ok: !a289Segments.some((segment) => segment.includes("РВП 23")), actual: a289Segments.join(" | ") || "missing" },
+      { label: "toll crossing confirmed", ok: fast?.tollValidation?.status === "toll", actual: fast?.tollValidation?.status || "missing" },
     ];
     record(name, checks, { fastKm: fast?.meters ? fast.meters / 1000 : null, tolls, validation: fast?.tollValidation });
   } catch (error) {
@@ -132,7 +137,7 @@ for (const [name, from, to] of mixedGuards) {
 }
 
 // Non-M4 controls only protect routing availability/range in this segment;
-// their toll engines are intentionally scheduled for later segments.
+// their exact road-specific toll engines are handled in later segments.
 for (const [name, from, to, minKm, maxKm] of nonM4Guards) {
   try {
     const data = await calculate(from, to);
