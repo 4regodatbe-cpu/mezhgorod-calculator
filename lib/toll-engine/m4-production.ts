@@ -45,8 +45,14 @@ function asTollValidation(validation: M4RoutePlazaValidation): TollValidation {
   };
 }
 
+function isSupportedLegacyComponent(name: string) {
+  // Deliberately require the colon immediately after the road id. Composite
+  // legacy labels such as "М-4 + М-11: ..." must NOT be mistaken for M-4-only.
+  return name.startsWith("М-4:") || name.startsWith("А-289:");
+}
+
 function hasOtherLegacyTollSystems(segmentNames: string[]) {
-  return segmentNames.some((name) => !name.startsWith("М-4") && !name.startsWith("А-289"));
+  return segmentNames.some((name) => !isSupportedLegacyComponent(name));
 }
 
 export async function calculateProductionM4(
