@@ -37,8 +37,8 @@ function FeedbackForm() {
 }
 
 function DonationCard() {
-  const url = process.env.NEXT_PUBLIC_DONATION_URL || "https://www.tbank.ru/cf/8cnjvG9c20z";
-  return <section className="support-card mt-5" aria-labelledby="support-title"><div className="section-icon support-icon"><HeartHandshake className="size-5" /></div><h2 id="support-title" className="mt-4 text-xl font-extrabold">Поддержать развитие</h2><p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">Добровольная поддержка поможет оплачивать сервисы и добавлять новые возможности.</p>{url ? <Button asChild className="mt-5 h-12 w-full rounded-2xl bg-emerald-600 font-bold text-white hover:bg-emerald-700"><a href={url} target="_blank" rel="noopener noreferrer"><HeartHandshake className="size-4" />Поддержать через СБП</a></Button> : <Button disabled className="mt-5 h-12 w-full rounded-2xl font-bold"><HeartHandshake className="size-4" />СБП скоро появится</Button>}<p className="mt-3 text-center text-xs text-slate-500">Платёжные данные на сайте не вводятся — перевод откроется на защищённой странице банка.</p></section>;
+  const url = "https://t.tb.ru/pm_short/4YCKLToUeM6";
+  return <section className="support-card mt-5" aria-labelledby="support-title"><div className="section-icon support-icon"><HeartHandshake className="size-5" /></div><h2 id="support-title" className="mt-4 text-xl font-extrabold">Сбор на API Яндекс Карт</h2><p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">Хотим получать маршруты напрямую от Яндекса — это сделает расстояния и расчёт платных дорог максимально точными. Сейчас бесплатные источники требуют ручных проверок.</p><Button asChild className="mt-5 h-12 w-full rounded-2xl bg-emerald-600 font-bold text-white hover:bg-emerald-700"><a href={url} target="_blank" rel="noopener noreferrer"><HeartHandshake className="size-4" />Поддержать подключение</a></Button><p className="mt-3 text-center text-xs text-slate-500">Перевод откроется на защищённой странице Т‑Банка.</p></section>;
 }
 
 const BLOCKED_GROUPS = [
