@@ -119,6 +119,12 @@ const FULL_ROUTES = [
   { name: "М-4: Москва — Краснодар", start: [37.62, 55.76] as Coordinate, end: [38.98, 45.04] as Coordinate, weekday: 5040, weekend: 6090, radius: 55 },
 ];
 
+const CHECKPOINT_RADIUS_KM = 2;
+const COMPLETE_ROUTE_ENDPOINT_RADIUS_KM = 3;
+const MAX_GEOMETRY_GAP_KM = 0.75;
+const MIN_PATH_TO_DIRECT_RATIO = 0.78;
+const MAX_PATH_TO_DIRECT_RATIO = 1.65;
+
 function distanceKm(a: Coordinate, b: Coordinate) {
   const rad = Math.PI / 180;
   const dLat = (b[1] - a[1]) * rad;
@@ -127,12 +133,33 @@ function distanceKm(a: Coordinate, b: Coordinate) {
   return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
 }
 
-function nearestRouteIndex(route: Coordinate[], point: Coordinate, radius = 8) {
+function densifyRoute(route: Coordinate[], maxGapKm = MAX_GEOMETRY_GAP_KM) {
+  if (route.length < 2) return route;
+  const dense: Coordinate[] = [route[0]];
+  for (let index = 1; index < route.length; index += 1) {
+    const from = route[index - 1];
+    const to = route[index];
+    const steps = Math.max(1, Math.ceil(distanceKm(from, to) / maxGapKm));
+    for (let step = 1; step <= steps; step += 1) {
+      const progress = step / steps;
+      dense.push([
+        from[0] + (to[0] - from[0]) * progress,
+        from[1] + (to[1] - from[1]) * progress,
+      ]);
+    }
+  }
+  return dense;
+}
+
+function nearestRouteIndex(route: Coordinate[], point: Coordinate, radius = CHECKPOINT_RADIUS_KM) {
   let bestIndex = -1;
   let bestDistance = Number.POSITIVE_INFINITY;
   route.forEach((coordinate, index) => {
     const value = distanceKm(coordinate, point);
-    if (value <= radius && value < bestDistance) { bestDistance = value; bestIndex = index; }
+    if (value <= radius && value < bestDistance) {
+      bestDistance = value;
+      bestIndex = index;
+    }
   });
   return bestIndex;
 }
@@ -147,37 +174,48 @@ function pathDistance(route: Coordinate[], fromIndex: number, toIndex: number) {
 
 function matchesSegment(route: Coordinate[], segment: TollSegment) {
   if (route.length < 2) return false;
-  const radius = Math.min(segment.radius ?? 8, 12);
+
+  // Segment data contains historical broad radii, but matching is deliberately
+  // capped at 2 km so a nearby free road cannot trigger a paid section.
+  const radius = Math.min(segment.radius ?? CHECKPOINT_RADIUS_KM, CHECKPOINT_RADIUS_KM);
   const startIndex = nearestRouteIndex(route, segment.start, radius);
   const endIndex = nearestRouteIndex(route, segment.end, radius);
   if (startIndex < 0 || endIndex < 0 || startIndex === endIndex) return false;
+
   const direct = distanceKm(segment.start, segment.end);
   const travelled = pathDistance(route, startIndex, endIndex);
-  if (travelled < direct * 0.65 || travelled > direct * 2.2) return false;
+  const toleranceKm = radius * 2;
+  if (travelled < direct * MIN_PATH_TO_DIRECT_RATIO - toleranceKm) return false;
+  if (travelled > direct * MAX_PATH_TO_DIRECT_RATIO + toleranceKm) return false;
+
   if (segment.via) {
     const viaIndex = nearestRouteIndex(route, segment.via, radius);
-    const low = Math.min(startIndex, endIndex);
-    const high = Math.max(startIndex, endIndex);
-    if (viaIndex < low || viaIndex > high) return false;
+    if (viaIndex < 0) return false;
+    const direction = endIndex > startIndex ? 1 : -1;
+    if ((viaIndex - startIndex) * direction <= 0 || (endIndex - viaIndex) * direction <= 0) return false;
   }
+
   return true;
 }
 
 function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinate, radius: number) {
   if (route.length < 2) return false;
-  const first = route[0], last = route[route.length - 1];
-  return (distanceKm(first, start) <= radius && distanceKm(last, end) <= radius)
-    || (distanceKm(first, end) <= radius && distanceKm(last, start) <= radius);
+  const effectiveRadius = Math.min(radius, COMPLETE_ROUTE_ENDPOINT_RADIUS_KM);
+  const first = route[0];
+  const last = route[route.length - 1];
+  return (distanceKm(first, start) <= effectiveRadius && distanceKm(last, end) <= effectiveRadius)
+    || (distanceKm(first, end) <= effectiveRadius && distanceKm(last, start) <= effectiveRadius);
 }
 
 export function estimateTolls(route: Coordinate[], departureAt?: string) {
   const date = departureAt ? new Date(departureAt) : new Date();
   const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
   const weekend = day === 0 || day === 5 || day === 6;
+  const denseRoute = densifyRoute(route);
   const segments = [...M1, ...M3, ...M4, ...M11, ...M12, ...CKAD, ...A289, ...REGIONAL]
-    .filter((segment) => matchesSegment(route, segment));
+    .filter((segment) => matchesSegment(denseRoute, segment));
   const completeRoute = segments.length > 0
-    ? FULL_ROUTES.find((item) => matchesRouteEnds(route, item.start, item.end, item.radius))
+    ? FULL_ROUTES.find((item) => matchesRouteEnds(denseRoute, item.start, item.end, item.radius))
     : undefined;
   const weekdayAmount = completeRoute
     ? completeRoute.weekday
