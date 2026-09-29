@@ -1,14 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
 type RouteEvent = { type: "route"; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; rate: number; total: number };
+type RouteV2Event = { type: "route_v2"; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; routeType: string; totals: { standard: number; comfort: number; comfortPlus: number; minivan: number }; tollWeekday: number; tollWeekend: number };
 type FeedbackEvent = { type: "feedback"; category: string; message: string; website?: string };
-type VisitEvent = { type: "visit" };
+type VisitEvent = { type: "visit"; visitorId: string; version?: string };
 
 const clean = (value: unknown, max: number) => typeof value === "string" ? value.trim().slice(0, max) : "";
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as RouteEvent | FeedbackEvent | VisitEvent;
+    const body = (await request.json()) as RouteEvent | RouteV2Event | FeedbackEvent | VisitEvent;
     if (body.type === "feedback") {
       if (body.website) return NextResponse.json({ ok: true });
       const message = clean(body.message, 1000);
@@ -17,7 +18,12 @@ export async function POST(request: NextRequest) {
     } else if (body.type === "route") {
       const numbers = [body.distanceKm, body.durationMin, body.rate, body.total];
       if (!clean(body.fromRegion, 120) || !clean(body.toRegion, 120) || numbers.some((n) => !Number.isFinite(n) || n < 0)) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
-    } else if (body.type !== "visit") return NextResponse.json({ error: "Неизвестный тип данных" }, { status: 400 });
+    } else if (body.type === "route_v2") {
+      const numbers = [body.distanceKm, body.durationMin, body.tollWeekday, body.tollWeekend, ...Object.values(body.totals ?? {})];
+      if (!clean(body.fromRegion, 120) || !clean(body.toRegion, 120) || !clean(body.routeType, 30) || numbers.length !== 8 || numbers.some((n) => !Number.isFinite(n) || n < 0)) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
+    } else if (body.type === "visit") {
+      if (!/^[a-zA-Z0-9-]{16,64}$/.test(clean(body.visitorId, 64))) return NextResponse.json({ error: "Некорректный идентификатор" }, { status: 400 });
+    } else return NextResponse.json({ error: "Неизвестный тип данных" }, { status: 400 });
 
     const endpoint = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
     const token = process.env.GOOGLE_SHEETS_TOKEN;
