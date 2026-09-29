@@ -86,11 +86,11 @@ export const M4_PLAZA_NODES: readonly M4PlazaNodeGroup[] = [
   {
     km: 515,
     model: "open",
-    verification: "spatial_local",
-    source: "targeted OSM local query + official Avtodor 515-km location",
-    nodeIds: ["1866127574"],
-    anchors: [{ lat: 51.8915249, lon: 39.3427937 }],
-    notes: "The other local barrier node was explicitly a paid beach entrance and was excluded. This remaining unnamed road toll-booth stays lower-confidence until independently named/matched.",
+    verification: "operator_local",
+    source: "Valhalla traversal + OSM named/operator nodes + Avtodor",
+    nodeIds: ["3257030196", "3200592308"],
+    anchors: [{ lat: 51.6630021, lon: 39.3022825 }],
+    notes: "Both travel directions confirmed by live Valhalla traversal. Node 3257030196 is explicitly named 'ПВП 515 км'; node 3200592308 is the opposite-direction Autodor toll-booth in the same physical plaza cluster. Replaces the earlier false candidate 1866127574.",
   },
   {
     km: 545,
