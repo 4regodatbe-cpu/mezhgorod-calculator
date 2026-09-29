@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Межгород Calc 2.0 — расчёт стоимости поездки",
+  title: "Калькулятор межгород",
   description: "Расчёт междугородней поездки по четырём тарифам, с платной и бесплатной дорогой.",
 };
 
