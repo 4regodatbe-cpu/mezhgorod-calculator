@@ -15,6 +15,10 @@ on:
       - ".github/workflows/segment1-user-regression.yml"
   workflow_dispatch:
 
+concurrency:
+  group: segment1-user-regression-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   regression:
     runs-on: ubuntu-latest
