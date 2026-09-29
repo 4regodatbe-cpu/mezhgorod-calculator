@@ -25,6 +25,10 @@ type TollEstimate = ReturnType<typeof estimateTolls>;
 
 const MAX_VERIFIED_SPREAD_PERCENT = 7;
 const VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT = 3;
+const MIN_TOLL_VARIANT_DISTANCE_KM = 10;
+const MIN_TOLL_VARIANT_DISTANCE_PERCENT = 1;
+const MIN_TOLL_VARIANT_TIME_MINUTES = 15;
+const MIN_TOLL_VARIANT_TIME_PERCENT = 5;
 
 const KNOWN_FAST_ROUTES: readonly KnownRoute[] = [
   {
@@ -273,6 +277,25 @@ function verifiedTollFallback(from: Located, to: Located, fast: RouteSummary, cu
   };
 }
 
+function routingDifferenceTollFallback(fast: RouteSummary, free: RouteSummary, current: TollEstimate): TollEstimate {
+  if (current.segments.length > 0) return current;
+
+  const distanceDeltaKm = (free.meters - fast.meters) / 1000;
+  const distancePercent = fast.meters > 0 ? (free.meters - fast.meters) / fast.meters * 100 : 0;
+  const timeDeltaMinutes = (free.seconds - fast.seconds) / 60;
+  const timePercent = fast.seconds > 0 ? (free.seconds - fast.seconds) / fast.seconds * 100 : 0;
+  const distanceDiffers = distanceDeltaKm >= MIN_TOLL_VARIANT_DISTANCE_KM && distancePercent >= MIN_TOLL_VARIANT_DISTANCE_PERCENT;
+  const timeDiffers = timeDeltaMinutes >= MIN_TOLL_VARIANT_TIME_MINUTES && timePercent >= MIN_TOLL_VARIANT_TIME_PERCENT;
+
+  if (!distanceDiffers && !timeDiffers) return current;
+
+  return {
+    ...current,
+    segments: ["Маршрут без платных дорог отличается от быстрого варианта"],
+    confidence: "none",
+  };
+}
+
 async function leg(from: Located, to: Located, departureAt?: string) {
   const [fastResult, valhallaFreeResult, brouterResult, osrmResult] = await Promise.allSettled([
     valhalla(from, to, 1),
@@ -303,7 +326,10 @@ async function leg(from: Located, to: Located, departureAt?: string) {
       ? osrmResult.value.coordinates
       : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
-  const tolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
+  const verifiedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
+  const tolls = fastResult.status === "fulfilled" && valhallaFreeResult.status === "fulfilled"
+    ? routingDifferenceTollFallback(fastResult.value, valhallaFreeResult.value, verifiedTolls)
+    : verifiedTolls;
   return {
     from: from.label,
     to: to.label,
