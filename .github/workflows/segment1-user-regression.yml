@@ -11,13 +11,14 @@ on:
       - "lib/toll-recovery.ts"
       - "lib/toll-validator.ts"
       - "scripts/segment1-user-regression.mjs"
+      - "scripts/segment1-differential.mjs"
       - ".github/workflows/segment1-user-regression.yml"
   workflow_dispatch:
 
 jobs:
   regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 28
+    timeout-minutes: 34
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -57,15 +58,23 @@ jobs:
           CALCULATOR_URL: http://127.0.0.1:3000
         run: node scripts/segment1-user-regression.mjs
 
+      - name: Compare protected routes with current production
+        env:
+          CALCULATOR_URL: http://127.0.0.1:3000
+          BASELINE_URL: https://mezhgorod-calculator.vercel.app
+        run: node scripts/segment1-differential.mjs
+
       - name: Show server log on failure
         if: failure()
         run: cat /tmp/mezhgorod-next.log || true
 
-      - name: Upload report
+      - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: segment1-user-regression
-          path: segment1-user-regression.json
+          name: segment1-regression
+          path: |
+            segment1-user-regression.json
+            segment1-differential.json
           retention-days: 30
           if-no-files-found: warn
