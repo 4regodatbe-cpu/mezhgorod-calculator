@@ -12,7 +12,7 @@ on:
 jobs:
   diagnose:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 16
     steps:
       - name: Wait for production deployment
         run: sleep 75
@@ -65,11 +65,20 @@ jobs:
             }' "diagnostics/$name.json"
           }
 
+          # South -> Moscow control set.
           query yeisk-moscow 'Ейск' 'Москва'
           query maykop-moscow 'Майкоп' 'Москва'
           query yalta-moscow 'Ялта' 'Москва'
           query krasnodar-moscow 'Краснодар' 'Москва'
           query sochi-moscow 'Сочи' 'Москва'
+
+          # Exact reverse directions: validates opposite-direction OSM nodes and
+          # reverse route-order branches of the mixed-zone pricing logic.
+          query moscow-yeisk 'Москва' 'Ейск'
+          query moscow-maykop 'Москва' 'Майкоп'
+          query moscow-yalta 'Москва' 'Ялта'
+          query moscow-krasnodar 'Москва' 'Краснодар'
+          query moscow-sochi 'Москва' 'Сочи'
 
       - name: Upload diagnostic JSON
         if: always()
