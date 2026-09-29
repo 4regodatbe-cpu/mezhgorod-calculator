@@ -111,7 +111,7 @@ function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
 
 function verificationRank(value: M4PricedPlaza["verification"]) {
   if (value === "exact_name") return 3;
-  if (value === "operator_local") return 2;
+  if (value === "operator_local" || value === "route_traversal") return 2;
   return 1;
 }
 
