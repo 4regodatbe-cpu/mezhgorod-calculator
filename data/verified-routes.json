@@ -298,5 +298,77 @@
     "verifiedAt": "2026-09-28",
     "source": "Яндекс Карты",
     "accuracyPercent": 3
+  },
+  {
+    "from": "krasnodar",
+    "to": "pyatigorsk",
+    "fastKm": 425,
+    "fastMinutes": 366,
+    "freeKm": 425,
+    "freeMinutes": 367,
+    "tollRub": 0,
+    "verifiedAt": "2026-09-29",
+    "source": "Яндекс Карты",
+    "accuracyPercent": 1
+  },
+  {
+    "from": "krasnodar",
+    "to": "kislovodsk",
+    "fastKm": 449,
+    "fastMinutes": 380,
+    "freeKm": 449,
+    "freeMinutes": 381,
+    "tollRub": 0,
+    "verifiedAt": "2026-09-29",
+    "source": "Яндекс Карты",
+    "accuracyPercent": 1
+  },
+  {
+    "from": "krasnodar",
+    "to": "astrakhan",
+    "fastKm": 821,
+    "fastMinutes": 680,
+    "freeKm": 821,
+    "freeMinutes": 688,
+    "tollRub": 0,
+    "verifiedAt": "2026-09-29",
+    "source": "Яндекс Карты",
+    "accuracyPercent": 1
+  },
+  {
+    "from": "krasnodar",
+    "to": "yeisk",
+    "fastKm": 251,
+    "fastMinutes": 228,
+    "freeKm": 251,
+    "freeMinutes": 228,
+    "tollRub": 0,
+    "verifiedAt": "2026-09-29",
+    "source": "Яндекс Карты",
+    "accuracyPercent": 1
+  },
+  {
+    "from": "krasnodar",
+    "to": "armavir",
+    "fastKm": 220,
+    "fastMinutes": 209,
+    "freeKm": 220,
+    "freeMinutes": 212,
+    "tollRub": 0,
+    "verifiedAt": "2026-09-29",
+    "source": "Яндекс Карты",
+    "accuracyPercent": 1
+  },
+  {
+    "from": "krasnodar",
+    "to": "nalchik",
+    "fastKm": 499,
+    "fastMinutes": 445,
+    "freeKm": 499,
+    "freeMinutes": 445,
+    "tollRub": 0,
+    "verifiedAt": "2026-09-29",
+    "source": "Яндекс Карты",
+    "accuracyPercent": 1
   }
 ]
