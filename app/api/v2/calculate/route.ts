@@ -401,7 +401,7 @@ function routingDifferenceTollFallback(fast: RouteSummary, free: RouteSummary, c
   };
 }
 
-async function leg(from: Located, to: Located, departureAt?: string) {
+async function leg(from: Located, to: Located, departureAt?: string, diagnostics = false) {
   const [fastResult, valhallaFreeResult, brouterResult, osrmResult] = await Promise.allSettled([
     valhalla(from, to, 1),
     valhalla(from, to, 0),
@@ -421,23 +421,19 @@ async function leg(from: Located, to: Located, departureAt?: string) {
       ? osrmResult.value.coordinates
       : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
-  // Always validate the fast route, even when a legacy price source already
-  // has a number. Run this concurrently with free-route validation so it does
-  // not add another serial network round-trip to the request.
-  const fastValidationPromise: Promise<TollValidation> = routeGeometry.length > 2
-    ? validateTollEdges(routeGeometry)
-    : Promise.resolve(unknownValidation("Быстрый маршрут не вернул достаточно геометрии для map matching"));
   const selectedFreePromise = selectFreeRoute(valhallaFreeResult, brouterResult, knownFreeRoute(from, to));
-  const [selectedFree, fastValidation] = await Promise.all([selectedFreePromise, fastValidationPromise]);
+  const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
+    ? validateTollEdges(routeGeometry)
+    : Promise.resolve(null);
+  const [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
   const differenceEvidence = selectedFree ? routeDifferenceEvidence(selectedFast.route, selectedFree.route) : false;
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
   const verifiedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
+  let fastValidation = diagnosticFastValidation ?? unknownValidation(verifiedTolls.amount > 0
+    ? "Стоимость уже подтверждена локальным или проверенным источником; полный map matching быстрого маршрута не требуется"
+    : "Map matching быстрого маршрута ещё не выполнялся");
 
-  // Keep legacy pricing behavior unchanged at this stage. The independent
-  // map-matching result is collected on every fast route, but the old local
-  // corridor recovery still uses conservative non-map-matched thresholds until
-  // the new PVP-based price engine is ready.
   let pricedTolls: TollEstimate = verifiedTolls;
   if (pricedTolls.amount <= 0) {
     const conservativeValidation = unknownValidation("Локальный коридорный fallback без доверия к удалённому map matching");
@@ -445,7 +441,11 @@ async function leg(from: Located, to: Located, departureAt?: string) {
     if (localRecovery) pricedTolls = localRecovery;
   }
 
-  if (pricedTolls.amount <= 0) {
+  // Normal user requests only pay the cost of fast-route map matching when all
+  // local price sources failed. Diagnostics can request it eagerly to collect
+  // PVP evidence without slowing down every calculation.
+  if (pricedTolls.amount <= 0 && routeGeometry.length > 2) {
+    if (!diagnosticFastValidation) fastValidation = await validateTollEdges(routeGeometry);
     const matchedTolls = mapMatchedTollFallback(pricedTolls, fastValidation);
     const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
     pricedTolls = remoteRecovery ?? matchedTolls;
@@ -470,12 +470,12 @@ export const maxDuration = 60;
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as { from?: Point; via?: Point; to?: Point; mode?: "standard" | "dual"; departureAt?: string };
+    const body = (await request.json()) as { from?: Point; via?: Point; to?: Point; mode?: "standard" | "dual"; departureAt?: string; diagnostics?: boolean };
     if (!body.from?.label.trim() || !body.to?.label.trim() || (body.mode === "dual" && !body.via?.label.trim())) return NextResponse.json({ error: "Заполните все точки маршрута" }, { status: 400 });
     const located = await Promise.all([geocode(body.from), ...(body.mode === "dual" && body.via ? [geocode(body.via)] : []), geocode(body.to)]);
     const legs = body.mode === "dual"
-      ? await Promise.all([leg(located[0], located[1], body.departureAt), leg(located[1], located[2], body.departureAt)])
-      : [await leg(located[0], located[1], body.departureAt)];
+      ? await Promise.all([leg(located[0], located[1], body.departureAt, body.diagnostics === true), leg(located[1], located[2], body.departureAt, body.diagnostics === true)])
+      : [await leg(located[0], located[1], body.departureAt, body.diagnostics === true)];
     return NextResponse.json({ legs });
   } catch (error) {
     const code = error instanceof Error ? error.message : "UNKNOWN";
