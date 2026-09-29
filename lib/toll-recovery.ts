@@ -9,6 +9,14 @@ type RecoverySegment = {
   weekend: number;
 };
 
+type RecoveryRoad = {
+  id: "M4" | "M12";
+  segments: RecoverySegment[];
+  minRunWithMapMatch: number;
+  minRunWithoutMapMatch: number;
+  requiresRouteDifference: boolean;
+};
+
 export type RecoveredTolls = {
   amount: number;
   weekdayAmount: number;
@@ -18,9 +26,10 @@ export type RecoveredTolls = {
   confidence: "matched";
 };
 
-// Recovery data uses the same 2026 category-I tariffs as the main toll table.
-// It is deliberately used only after map matching has independently confirmed
-// that the route contains toll-tagged road edges.
+// Category-I tariffs used by the current 2.0 model. The recovery provider is
+// intentionally conservative: it is activated only when the route follows a
+// long sequence of one known toll corridor. It never decides toll status from
+// one nearby point.
 const M4_RECOVERY: RecoverySegment[] = [
   { name: "М-4: 21–93 км", start: [37.72, 55.55], end: [38.08, 54.99], weekday: 210, weekend: 270 },
   { name: "М-4: 93–211 км", start: [38.08, 54.99], end: [38.16, 53.98], weekday: 320, weekend: 410 },
@@ -39,6 +48,33 @@ const M4_RECOVERY: RecoverySegment[] = [
   { name: "М-4: 1091–1119 км", start: [39.75, 46.9], end: [39.73, 46.51], weekday: 220, weekend: 250 },
   { name: "М-4: 1119–1195 км", start: [39.73, 46.51], end: [39.79, 46.13], weekday: 320, weekend: 370 },
   { name: "М-4: 1195–1319 км", start: [39.79, 46.13], end: [39.03, 45.07], weekday: 600, weekend: 760 },
+];
+
+const M12_RECOVERY: RecoverySegment[] = [
+  { name: "М-12: Москва — Электроугли", start: [37.87, 55.75], end: [38.22, 55.72], weekday: 176, weekend: 176 },
+  { name: "М-12: Электроугли — ЦКАД", start: [38.22, 55.72], end: [38.46, 55.72], weekday: 322, weekend: 322 },
+  { name: "М-12: ЦКАД — Орехово-Зуево", start: [38.46, 55.72], end: [38.94, 55.8], weekday: 244, weekend: 244 },
+  { name: "М-12: Орехово-Зуево — Петушки", start: [38.94, 55.8], end: [39.46, 55.93], weekday: 359, weekend: 359 },
+  { name: "М-12: Петушки — Владимир", start: [39.46, 55.93], end: [40.41, 56.08], weekday: 636, weekend: 636 },
+  { name: "М-12: Владимир — Гусь-Хрустальный", start: [40.41, 56.08], end: [40.65, 55.62], weekday: 165, weekend: 165 },
+  { name: "М-12: Гусь-Хрустальный — Меленки", start: [40.65, 55.62], end: [41.63, 55.34], weekday: 522, weekend: 522 },
+  { name: "М-12: Меленки — Муром", start: [41.63, 55.34], end: [42.04, 55.58], weekday: 205, weekend: 205 },
+  { name: "М-12: Муром — Дивеево", start: [42.04, 55.58], end: [43.24, 55.04], weekday: 510, weekend: 510 },
+  { name: "М-12: Дивеево — Арзамас", start: [43.24, 55.04], end: [43.84, 55.39], weekday: 311, weekend: 311 },
+  { name: "М-12: Арзамас — Сергач", start: [43.84, 55.39], end: [45.47, 55.52], weekday: 602, weekend: 602 },
+  { name: "М-12: Сергач — Шумерля", start: [45.47, 55.52], end: [46.42, 55.5], weekday: 348, weekend: 348 },
+  { name: "М-12: Шумерля — Канаш", start: [46.42, 55.5], end: [47.5, 55.5], weekday: 392, weekend: 392 },
+  { name: "М-12: Канаш — Большие Кайбицы", start: [47.5, 55.5], end: [48.17, 55.4], weekday: 215, weekend: 215 },
+  { name: "М-12: Большие Кайбицы — Иннополис", start: [48.17, 55.4], end: [48.75, 55.75], weekday: 243, weekend: 243 },
+  { name: "М-12: Иннополис — Тетюши", start: [48.75, 55.75], end: [48.84, 54.94], weekday: 155, weekend: 155 },
+  { name: "М-12: Тетюши — аэропорт Казань", start: [48.84, 54.94], end: [49.28, 55.61], weekday: 280, weekend: 280 },
+  { name: "М-12: аэропорт Казань — Казань", start: [49.28, 55.61], end: [49.12, 55.78], weekday: 162, weekend: 162 },
+  { name: "М-12: Казань — Шали", start: [49.12, 55.78], end: [49.66, 55.51], weekday: 62, weekend: 62 },
+];
+
+const ROADS: RecoveryRoad[] = [
+  { id: "M4", segments: M4_RECOVERY, minRunWithMapMatch: 2, minRunWithoutMapMatch: 4, requiresRouteDifference: true },
+  { id: "M12", segments: M12_RECOVERY, minRunWithMapMatch: 2, minRunWithoutMapMatch: 5, requiresRouteDifference: false },
 ];
 
 const RECOVERY_RADIUS_KM = 10;
@@ -101,34 +137,74 @@ function matches(route: Coordinate[], segment: RecoverySegment) {
   return travelled >= direct * 0.68 - 12 && travelled <= direct * 1.75 + 12;
 }
 
-function likelyM4(validation: TollValidation, matchedCount: number) {
-  const names = validation.roadNames.join(" ").toLocaleLowerCase("ru-RU");
-  const namedM4 = /(^|\s)(м-?4|m-?4)(\s|$)|дон/.test(names);
-  return namedM4 || matchedCount >= 2;
+function longestRun(indexes: number[]) {
+  if (indexes.length === 0) return 0;
+  const sorted = [...indexes].sort((a, b) => a - b);
+  let best = 1;
+  let current = 1;
+  for (let index = 1; index < sorted.length; index += 1) {
+    if (sorted[index] - sorted[index - 1] <= 2) current += 1;
+    else current = 1;
+    best = Math.max(best, current);
+  }
+  return best;
 }
 
-export function recoverM4Tolls(route: Coordinate[], validation: TollValidation, departureAt?: string): RecoveredTolls | null {
-  if (validation.status !== "toll" || route.length < 3) return null;
+function recoverRoad(route: Coordinate[], road: RecoveryRoad, mapMatched: boolean, routeDifferenceConfirmed: boolean) {
+  const matchedIndexes: number[] = [];
+  const matched: RecoverySegment[] = [];
+  road.segments.forEach((segment, index) => {
+    if (matches(route, segment)) {
+      matchedIndexes.push(index);
+      matched.push(segment);
+    }
+  });
 
+  const run = longestRun(matchedIndexes);
+  const minimumRun = mapMatched ? road.minRunWithMapMatch : road.minRunWithoutMapMatch;
+  if (run < minimumRun) return null;
+  if (!mapMatched && road.requiresRouteDifference && !routeDifferenceConfirmed) return null;
+
+  return { road, matched, run };
+}
+
+export function recoverCorridorTolls(
+  route: Coordinate[],
+  validation: TollValidation,
+  departureAt?: string,
+  routeDifferenceConfirmed = false,
+): RecoveredTolls | null {
+  if (route.length < 3) return null;
   const dense = densify(route);
-  const matched = M4_RECOVERY.filter((segment) => matches(dense, segment));
-  if (matched.length === 0 || !likelyM4(validation, matched.length)) return null;
+  const mapMatched = validation.status === "toll";
 
-  const weekdayAmount = matched.reduce((sum, segment) => sum + segment.weekday, 0);
-  const weekendAmount = matched.reduce((sum, segment) => sum + segment.weekend, 0);
+  const candidates = ROADS
+    .map((road) => recoverRoad(dense, road, mapMatched, routeDifferenceConfirmed))
+    .filter((candidate): candidate is NonNullable<typeof candidate> => Boolean(candidate))
+    .sort((a, b) => b.run - a.run || b.matched.length - a.matched.length);
+
+  const selected = candidates[0];
+  if (!selected) return null;
+
+  const weekdayAmount = selected.matched.reduce((sum, segment) => sum + segment.weekday, 0);
+  const weekendAmount = selected.matched.reduce((sum, segment) => sum + segment.weekend, 0);
   if (weekdayAmount <= 0) return null;
 
   const date = departureAt ? new Date(departureAt) : new Date();
   const validDate = Number.isNaN(date.getTime()) ? new Date() : date;
   const day = validDate.getDay();
   const weekend = day === 0 || day === 5 || day === 6;
+  const evidence = mapMatched ? "map matching + геометрия" : "геометрия + сравнение маршрутов";
 
   return {
     amount: weekend ? weekendAmount : weekdayAmount,
     weekdayAmount,
     weekendAmount,
     period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
-    segments: matched.map((segment) => `Коридорный расчёт ${segment.name}`),
+    segments: [
+      `Коридорный расчёт ${selected.road.id}: ${evidence}`,
+      ...selected.matched.map((segment) => segment.name),
+    ],
     confidence: "matched",
   };
 }
