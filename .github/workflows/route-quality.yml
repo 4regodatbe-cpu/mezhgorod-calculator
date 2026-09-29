@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "app/api/v2/**"
+      - "app/api/version/**"
       - "lib/toll*.ts"
       - "lib/verified-routes.ts"
       - "data/verified-routes.json"
@@ -32,6 +33,7 @@ jobs:
         continue-on-error: true
         env:
           CALCULATOR_URL: https://mezhgorod-calculator.vercel.app
+          EXPECTED_COMMIT: ${{ github.sha }}
         run: node scripts/route-monitor.mjs
       - name: Сохранить отчёт
         if: always()
