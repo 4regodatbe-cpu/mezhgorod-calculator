@@ -17,13 +17,25 @@ jobs:
           set -euo pipefail
           mkdir -p inventory
           query='[out:json][timeout:90];node["barrier"="toll_booth"](44.0,36.5,56.2,41.5);out body;'
-          curl --fail --retry 4 --retry-delay 10 --max-time 120 \
-            -G 'https://overpass-api.de/api/interpreter' \
-            --data-urlencode "data=$query" \
-            -o inventory/m4-toll-booths.json
+
+          fetch_overpass() {
+            local endpoint="$1"
+            echo "Trying $endpoint"
+            curl --fail --show-error --max-time 120 \
+              -A 'MezhgorodCalcRouteAudit/1.0 (GitHub Actions)' \
+              -H 'Content-Type: application/x-www-form-urlencoded' \
+              --data-urlencode "data=$query" \
+              "$endpoint" \
+              -o inventory/m4-toll-booths.json
+          }
+
+          fetch_overpass 'https://overpass.kumi.systems/api/interpreter' \
+            || fetch_overpass 'https://overpass.nchc.org.tw/api/interpreter' \
+            || fetch_overpass 'https://overpass-api.de/api/interpreter'
+
           jq '[.elements[] | {id,lat,lon,tags}]' inventory/m4-toll-booths.json > inventory/m4-toll-booths-compact.json
           echo "Found $(jq '.elements | length' inventory/m4-toll-booths.json) toll-booth nodes in corridor"
-          jq -r '.elements[] | [.id,.lat,.lon,(.tags.name // ""),(.tags.ref // ""),(.tags.operator // ""),(.tags.highway // ""),(.tags.toll // "")] | @tsv' inventory/m4-toll-booths.json | head -n 200
+          jq -r '.elements[] | [.id,.lat,.lon,(.tags.name // ""),(.tags.ref // ""),(.tags.operator // ""),(.tags.highway // ""),(.tags.toll // "")] | @tsv' inventory/m4-toll-booths.json | head -n 250 || true
 
       - name: Upload inventory
         uses: actions/upload-artifact@v4
