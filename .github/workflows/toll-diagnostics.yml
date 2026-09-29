@@ -1,0 +1,49 @@
+name: Temporary toll diagnostics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/toll-diagnostics.yml'
+      - 'lib/toll-validator.ts'
+      - 'lib/toll-engine/**'
+      - 'app/api/v2/**'
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for production deployment
+        run: sleep 75
+
+      - name: Query problem routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://mezhgorod-calculator.vercel.app/api/v2/debug-route'
+          mkdir -p diagnostics
+
+          query() {
+            local name="$1"
+            local from="$2"
+            local to="$3"
+            echo "=== $name ==="
+            curl --fail --retry 3 --retry-delay 10 --max-time 70 \
+              --get "$base" \
+              --data-urlencode "from=$from" \
+              --data-urlencode "to=$to" \
+              -o "diagnostics/$name.json"
+            jq '{from: .legs[0].from, to: .legs[0].to, fastKm: (.legs[0].fast.meters / 1000), freeKm: (if .legs[0].free then .legs[0].free.meters / 1000 else null end), tolls: .legs[0].fast.tolls, tollValidation: .legs[0].fast.tollValidation, freeValidation: .legs[0].free.tollValidation}' "diagnostics/$name.json"
+          }
+
+          query yeisk-moscow 'Ейск' 'Москва'
+          query maykop-moscow 'Майкоп' 'Москва'
+          query yalta-moscow 'Ялта' 'Москва'
+
+      - name: Upload diagnostic JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: toll-diagnostics
+          path: diagnostics/*.json
+          retention-days: 2
