@@ -1,0 +1,65 @@
+name: M4 PVP evidence discovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pvp-evidence-discovery.yml'
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Wait for diagnostic endpoint deployment
+        run: sleep 75
+
+      - name: Query PVP 803 and 911 both directions
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://mezhgorod-calculator.vercel.app/api/v2/debug-pvp-node'
+          mkdir -p evidence
+
+          query() {
+            local name="$1"
+            local from="$2"
+            local to="$3"
+            local lat="$4"
+            local lon="$5"
+            echo "=== $name ==="
+            curl --fail --retry 2 --retry-delay 4 --max-time 45 \
+              --get "$base" \
+              --data-urlencode "from=$from" \
+              --data-urlencode "to=$to" \
+              --data-urlencode "lat=$lat" \
+              --data-urlencode "lon=$lon" \
+              -o "evidence/$name.json"
+            jq '{anchor,nearestDistanceKm,tollEdgeCount,tollBooths,elapsedMs}' "evidence/$name.json"
+          }
+
+          query pvp803-north 'Краснодар' 'Москва' '49.3731618' '40.6005796'
+          query pvp803-south 'Москва' 'Краснодар' '49.3731618' '40.6005796'
+          query pvp911-north 'Краснодар' 'Москва' '48.4813922' '40.3408998'
+          query pvp911-south 'Москва' 'Краснодар' '48.4813922' '40.3408998'
+
+      - name: Fetch OSM tags for expected nodes
+        shell: bash
+        run: |
+          set -euo pipefail
+          for node in 75715767 11838757138 11838466120 11838466121; do
+            echo "=== OSM node $node ==="
+            curl --fail --retry 2 --retry-delay 3 --max-time 20 \
+              "https://api.openstreetmap.org/api/0.6/node/$node.json" \
+              -o "evidence/node-$node.json"
+            jq '.elements[0] | {id,lat,lon,tags}' "evidence/node-$node.json"
+          done
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m4-pvp-evidence
+          path: evidence/*.json
+          retention-days: 3
+          if-no-files-found: warn
