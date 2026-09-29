@@ -41,7 +41,10 @@ const CITIES: Record<string, { name: string; aliases: string[] }> = {
   yeisk: { name: "Ейск", aliases: ["ейск"] },
   armavir: { name: "Армавир", aliases: ["армавир"] },
   nalchik: { name: "Нальчик", aliases: ["нальчик"] },
+  volgograd: { name: "Волгоград", aliases: ["волгоград"] },
+  vladikavkaz: { name: "Владикавказ", aliases: ["владикавказ"] },
 };
+
 
 const TOLL_PERIODS: Record<string, { weekday: number; weekend: number }> = {
   "anapa|voronezh": { weekday: 4090, weekend: 4930 },
@@ -64,31 +67,10 @@ function normalize(value: string) {
   return value.toLocaleLowerCase("ru-RU").replace(/ё/g, "е").replace(/[^а-яa-z0-9-]+/g, " ").trim();
 }
 
-function findCityInText(text: string) {
-  const candidates = Object.entries(CITIES).flatMap(([key, city]) =>
-    city.aliases.flatMap((alias) => {
-      const normalizedAlias = normalize(alias);
-      const index = text.indexOf(normalizedAlias);
-      return index >= 0 ? [{ key, city, alias: normalizedAlias, index }] : [];
-    }),
-  );
-
-  candidates.sort((a, b) => a.index - b.index || b.alias.length - a.alias.length);
-  const best = candidates[0];
-  return best ? { key: best.key, name: best.city.name } : null;
-}
-
 export function resolveCity(label: string) {
-  // Address suggestions are usually "city, region, country". Resolve the
-  // leading place name first so "Сочи, Краснодарский край" cannot be
-  // mistaken for Краснодар because of the region name.
-  const primary = normalize(label.split(",")[0] ?? "");
-  const primaryMatch = primary ? findCityInText(primary) : null;
-  if (primaryMatch) return primaryMatch;
-
-  // Fallback for labels without commas or unusual formatting: choose the
-  // earliest city alias in the whole string instead of relying on object order.
-  return findCityInText(normalize(label));
+  const text = normalize(label);
+  const match = Object.entries(CITIES).find(([, city]) => city.aliases.some((alias) => text.includes(normalize(alias))));
+  return match ? { key: match[0], name: match[1].name } : null;
 }
 
 export function findVerifiedRoute(fromLabel: string, toLabel: string) {
