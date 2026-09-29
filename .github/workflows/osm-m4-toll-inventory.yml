@@ -10,7 +10,7 @@ on:
 jobs:
   inventory:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Query OSM toll booths in M4 corridor
         shell: bash
@@ -18,17 +18,23 @@ jobs:
           set -euo pipefail
           mkdir -p inventory/parts
 
-          # A single Moscow–Krasnodar bbox repeatedly timed out on public
-          # Overpass instances. Split the M-4 corridor into overlapping regional
-          # boxes; barrier=toll_booth is sparse, so the combined result stays
-          # small and can be filtered/matched to official PVPs afterwards.
+          # Public Overpass instances repeatedly timed out on broad southern
+          # Russia boxes. Query a chain of narrow, overlapping tiles following
+          # the M-4 corridor instead. Each tile is small enough to be cheap and
+          # partial results are always preserved for diagnostics.
           boxes=(
-            '54.8,36.8,56.2,39.5'
-            '53.0,37.3,55.0,40.2'
-            '51.2,37.8,53.2,40.6'
-            '49.2,38.2,51.4,41.3'
-            '47.0,38.2,49.4,41.3'
-            '44.2,37.4,47.2,40.8'
+            '55.0,37.0,56.1,39.0'
+            '54.0,37.0,55.2,39.2'
+            '53.0,37.2,54.2,39.5'
+            '52.0,37.5,53.2,39.8'
+            '51.0,38.0,52.2,40.2'
+            '50.0,38.8,51.2,41.0'
+            '49.0,39.0,50.2,41.0'
+            '48.0,39.0,49.2,41.0'
+            '47.0,38.8,48.2,40.8'
+            '46.0,38.5,47.2,40.5'
+            '45.0,38.3,46.2,40.5'
+            '44.2,37.5,45.2,40.2'
           )
 
           endpoints=(
@@ -40,32 +46,37 @@ jobs:
           fetch_box() {
             local bbox="$1"
             local output="$2"
-            local query="[out:json][timeout:45];node[\"barrier\"=\"toll_booth\"](${bbox});out body;"
+            local query="[out:json][timeout:35];node[\"barrier\"=\"toll_booth\"](${bbox});out body;"
             local endpoint
 
             for endpoint in "${endpoints[@]}"; do
               echo "bbox=${bbox}: trying ${endpoint}"
-              if curl --fail --show-error --silent --max-time 55 \
-                -A 'MezhgorodCalcRouteAudit/1.1 (GitHub Actions)' \
+              if curl --fail --show-error --silent --max-time 45 \
+                -A 'MezhgorodCalcRouteAudit/1.2 (GitHub Actions)' \
                 -H 'Content-Type: application/x-www-form-urlencoded' \
                 --data-urlencode "data=${query}" \
                 "${endpoint}" \
                 -o "${output}"; then
-                jq -e '.elements | type == "array"' "${output}" >/dev/null
-                echo "bbox=${bbox}: received $(jq '.elements | length' "${output}") nodes"
-                return 0
+                if jq -e '.elements | type == "array"' "${output}" >/dev/null; then
+                  echo "bbox=${bbox}: received $(jq '.elements | length' "${output}") nodes"
+                  return 0
+                fi
               fi
               rm -f "${output}"
             done
 
-            echo "All Overpass endpoints failed for bbox=${bbox}" >&2
+            echo "bbox=${bbox}: all endpoints failed" >&2
+            printf '{"version":0.6,"elements":[]}' > "${output}"
             return 1
           }
 
           index=0
+          failed=0
           for bbox in "${boxes[@]}"; do
             index=$((index + 1))
-            fetch_box "${bbox}" "inventory/parts/part-${index}.json"
+            if ! fetch_box "${bbox}" "inventory/parts/part-${index}.json"; then
+              failed=$((failed + 1))
+            fi
           done
 
           jq -s '{
@@ -77,14 +88,26 @@ jobs:
           jq '[.elements[] | {id,lat,lon,tags}]' \
             inventory/m4-toll-booths.json > inventory/m4-toll-booths-compact.json
 
-          echo "Found $(jq '.elements | length' inventory/m4-toll-booths.json) unique toll-booth nodes in corridor"
+          jq -n --argjson requested "${#boxes[@]}" --argjson failed "$failed" \
+            --argjson nodes "$(jq '.elements | length' inventory/m4-toll-booths.json)" \
+            '{requestedTiles:$requested, failedTiles:$failed, complete:($failed == 0), uniqueNodes:$nodes}' \
+            > inventory/m4-inventory-status.json
+
+          echo "Found $(jq '.elements | length' inventory/m4-toll-booths.json) unique toll-booth nodes; failed tiles: ${failed}/${#boxes[@]}"
           jq -r '.elements[] | [.id,.lat,.lon,(.tags.name // ""),(.tags.ref // ""),(.tags.operator // ""),(.tags.highway // ""),(.tags.toll // "")] | @tsv' \
-            inventory/m4-toll-booths.json | head -n 300 || true
+            inventory/m4-toll-booths.json | head -n 500 || true
+
+          # Fail only after writing/uploading the combined partial inventory.
+          if [ "$failed" -gt 0 ]; then
+            exit 1
+          fi
 
       - name: Upload inventory
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: osm-m4-toll-inventory
-          path: inventory/*.json
+          path: |
+            inventory/*.json
+            inventory/parts/*.json
           retention-days: 7
