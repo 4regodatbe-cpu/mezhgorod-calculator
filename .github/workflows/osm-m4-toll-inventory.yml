@@ -10,36 +10,81 @@ on:
 jobs:
   inventory:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Query OSM toll booths in M4 corridor
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p inventory
-          query='[out:json][timeout:90];node["barrier"="toll_booth"](44.0,36.5,56.2,41.5);out body;'
+          mkdir -p inventory/parts
 
-          fetch_overpass() {
-            local endpoint="$1"
-            echo "Trying $endpoint"
-            curl --fail --show-error --max-time 120 \
-              -A 'MezhgorodCalcRouteAudit/1.0 (GitHub Actions)' \
-              -H 'Content-Type: application/x-www-form-urlencoded' \
-              --data-urlencode "data=$query" \
-              "$endpoint" \
-              -o inventory/m4-toll-booths.json
+          # A single Moscow–Krasnodar bbox repeatedly timed out on public
+          # Overpass instances. Split the M-4 corridor into overlapping regional
+          # boxes; barrier=toll_booth is sparse, so the combined result stays
+          # small and can be filtered/matched to official PVPs afterwards.
+          boxes=(
+            '54.8,36.8,56.2,39.5'
+            '53.0,37.3,55.0,40.2'
+            '51.2,37.8,53.2,40.6'
+            '49.2,38.2,51.4,41.3'
+            '47.0,38.2,49.4,41.3'
+            '44.2,37.4,47.2,40.8'
+          )
+
+          endpoints=(
+            'https://maps.mail.ru/osm/tools/overpass/api/interpreter'
+            'https://overpass.private.coffee/api/interpreter'
+            'https://overpass-api.de/api/interpreter'
+          )
+
+          fetch_box() {
+            local bbox="$1"
+            local output="$2"
+            local query="[out:json][timeout:45];node[\"barrier\"=\"toll_booth\"](${bbox});out body;"
+            local endpoint
+
+            for endpoint in "${endpoints[@]}"; do
+              echo "bbox=${bbox}: trying ${endpoint}"
+              if curl --fail --show-error --silent --max-time 55 \
+                -A 'MezhgorodCalcRouteAudit/1.1 (GitHub Actions)' \
+                -H 'Content-Type: application/x-www-form-urlencoded' \
+                --data-urlencode "data=${query}" \
+                "${endpoint}" \
+                -o "${output}"; then
+                jq -e '.elements | type == "array"' "${output}" >/dev/null
+                echo "bbox=${bbox}: received $(jq '.elements | length' "${output}") nodes"
+                return 0
+              fi
+              rm -f "${output}"
+            done
+
+            echo "All Overpass endpoints failed for bbox=${bbox}" >&2
+            return 1
           }
 
-          fetch_overpass 'https://overpass.kumi.systems/api/interpreter' \
-            || fetch_overpass 'https://overpass.nchc.org.tw/api/interpreter' \
-            || fetch_overpass 'https://overpass-api.de/api/interpreter'
+          index=0
+          for bbox in "${boxes[@]}"; do
+            index=$((index + 1))
+            fetch_box "${bbox}" "inventory/parts/part-${index}.json"
+          done
 
-          jq '[.elements[] | {id,lat,lon,tags}]' inventory/m4-toll-booths.json > inventory/m4-toll-booths-compact.json
-          echo "Found $(jq '.elements | length' inventory/m4-toll-booths.json) toll-booth nodes in corridor"
-          jq -r '.elements[] | [.id,.lat,.lon,(.tags.name // ""),(.tags.ref // ""),(.tags.operator // ""),(.tags.highway // ""),(.tags.toll // "")] | @tsv' inventory/m4-toll-booths.json | head -n 250 || true
+          jq -s '{
+            version: 0.6,
+            generator: "mezhgorod-m4-inventory",
+            elements: ([.[].elements[]] | unique_by(.id))
+          }' inventory/parts/*.json > inventory/m4-toll-booths.json
+
+          jq '[.elements[] | {id,lat,lon,tags}]' \
+            inventory/m4-toll-booths.json > inventory/m4-toll-booths-compact.json
+
+          echo "Found $(jq '.elements | length' inventory/m4-toll-booths.json) unique toll-booth nodes in corridor"
+          jq -r '.elements[] | [.id,.lat,.lon,(.tags.name // ""),(.tags.ref // ""),(.tags.operator // ""),(.tags.highway // ""),(.tags.toll // "")] | @tsv' \
+            inventory/m4-toll-booths.json | head -n 300 || true
 
       - name: Upload inventory
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: osm-m4-toll-inventory
           path: inventory/*.json
-          retention-days: 3
+          retention-days: 7
