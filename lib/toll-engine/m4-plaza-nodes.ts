@@ -1,4 +1,4 @@
-export type PlazaNodeVerification = "exact_name" | "operator_local" | "spatial_local";
+export type PlazaNodeVerification = "exact_name" | "operator_local" | "route_traversal" | "spatial_local";
 
 export type M4PlazaAnchor = {
   lat: number;
@@ -16,9 +16,10 @@ export type M4PlazaNodeGroup = {
 };
 
 // OSM toll-booth nodes collected on 2026-09-29 and matched to the official
-// M-4 plaza kilometre list. Named matches are strongest. operator_local and
-// spatial_local entries are deliberately marked weaker so the pricing engine
-// can downgrade confidence instead of pretending all evidence is equivalent.
+// M-4 plaza kilometre list. Named matches are strongest. operator_local,
+// route_traversal and spatial_local entries keep their evidence class explicit
+// so the pricing engine can downgrade confidence instead of pretending all
+// evidence is equivalent.
 //
 // anchors are compact centroids of the actual OSM toll-booth lane-node clusters
 // from the saved inventory artifacts. They are used only to select a very small
@@ -107,20 +108,20 @@ export const M4_PLAZA_NODES: readonly M4PlazaNodeGroup[] = [
   {
     km: 803,
     model: "open",
-    verification: "spatial_local",
-    source: "targeted OSM local query + official Avtodor 741–803/PVP 803 evidence",
+    verification: "route_traversal",
+    source: "Valhalla traversal both directions + targeted OSM local query + official Avtodor PVP 803 evidence",
     nodeIds: ["75715767", "11838757138"],
     anchors: [{ lat: 49.3731618, lon: 40.6005796 }],
-    notes: "Unnamed paired toll-booth nodes found in a narrow PVP-803 target box; retain reduced confidence until an explicit name/operator tag or route-event match confirms them.",
+    notes: "Unnamed paired OSM toll-booth nodes on M-4/E115 are confirmed by live route traversal in both directions: 75715767 northbound and 11838757138 southbound. Official Avtodor evidence independently confirms PVP 803 in this corridor.",
   },
   {
     km: 911,
     model: "open",
-    verification: "spatial_local",
-    source: "targeted OSM local query + official Avtodor PVP 911 evidence",
+    verification: "route_traversal",
+    source: "Valhalla traversal both directions + targeted OSM local query + official Avtodor PVP 911 evidence",
     nodeIds: ["11838466120", "11838466121"],
     anchors: [{ lat: 48.4813922, lon: 40.3408998 }],
-    notes: "Unnamed paired toll-booth nodes in the narrow official 911-km target zone.",
+    notes: "Unnamed paired OSM toll-booth nodes on M-4/E115 are confirmed by live route traversal in both directions: 11838466120 northbound and 11838466121 southbound. Official Avtodor evidence independently confirms PVP 911 in this corridor.",
   },
   {
     km: 1046,
