@@ -1,6 +1,11 @@
 name: M12 OSM toll inventory
 
 on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - ".github/workflows/m12-osm-inventory.yml"
   workflow_dispatch:
 
 jobs:
