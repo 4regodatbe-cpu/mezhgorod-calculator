@@ -11,8 +11,24 @@ const points = {
 };
 
 const cases = [
-  { name: "yalta-moscow", from: points.yalta, to: points.moscow, protectTollTotal: true },
-  { name: "moscow-yalta", from: points.moscow, to: points.yalta, protectTollTotal: true },
+  {
+    name: "yalta-moscow",
+    from: points.yalta,
+    to: points.moscow,
+    expectedWeekday: 5625,
+    expectedWeekend: 7625,
+    expectedA289Frames: ["РВП 82", "РВП 103"],
+    forbiddenA289Frames: ["РВП 23"],
+  },
+  {
+    name: "moscow-yalta",
+    from: points.moscow,
+    to: points.yalta,
+    expectedWeekday: 5625,
+    expectedWeekend: 7625,
+    expectedA289Frames: ["РВП 82", "РВП 103"],
+    forbiddenA289Frames: ["РВП 23"],
+  },
   { name: "moscow-spb", from: points.moscow, to: points.spb, protectTollTotal: true },
   { name: "moscow-kazan", from: points.moscow, to: points.kazan, protectTollTotal: false },
 ];
@@ -24,7 +40,7 @@ async function calculate(baseUrl, test) {
   try {
     const response = await fetch(`${baseUrl}/api/v2/calculate`, {
       method: "POST",
-      headers: { "content-type": "application/json", "user-agent": "MezhgorodSegment1Differential/1.0" },
+      headers: { "content-type": "application/json", "user-agent": "MezhgorodSegment1Differential/1.1" },
       body: JSON.stringify({
         mode: "standard",
         from: test.from,
@@ -67,7 +83,32 @@ for (const test of cases) {
       },
     ];
 
-    if (test.protectTollTotal && baseline.tollAmount > 0) {
+    if (test.expectedWeekday !== undefined) {
+      checks.push({
+        label: "evidence-based weekday toll",
+        ok: candidate.weekdayAmount === test.expectedWeekday,
+        actual: `${baseline.weekdayAmount} -> ${candidate.weekdayAmount} ₽; expected ${test.expectedWeekday}`,
+      });
+      checks.push({
+        label: "evidence-based weekend toll",
+        ok: candidate.weekendAmount === test.expectedWeekend,
+        actual: `${baseline.weekendAmount} -> ${candidate.weekendAmount} ₽; expected ${test.expectedWeekend}`,
+      });
+      for (const frame of test.expectedA289Frames ?? []) {
+        checks.push({
+          label: `A289 ${frame} present`,
+          ok: candidate.segments.some((segment) => segment.includes(frame)),
+          actual: candidate.segments.filter((segment) => segment.startsWith("А-289:")).join(" | ") || "none",
+        });
+      }
+      for (const frame of test.forbiddenA289Frames ?? []) {
+        checks.push({
+          label: `A289 ${frame} absent`,
+          ok: !candidate.segments.some((segment) => segment.includes(frame)),
+          actual: candidate.segments.filter((segment) => segment.startsWith("А-289:")).join(" | ") || "none",
+        });
+      }
+    } else if (test.protectTollTotal && baseline.tollAmount > 0) {
       checks.push({
         label: "paid total not silently reduced",
         ok: candidate.tollAmount >= baseline.tollAmount,
