@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "road": "M-12 Восток",
   "vehicleCategory": "I",
   "currency": "RUB",
@@ -14,7 +14,8 @@
   "notes": [
     "Category I passenger-vehicle snapshot only.",
     "Pricing data is official-source evidence and is intentionally stored separately from OSM/route-traversal evidence.",
-    "Ивановское (Р241) is the current official matrix label for the stop also shown as Иннополис on the public adjacent-section tariff page."
+    "Ивановское (Р241) is the current official matrix label for the stop also shown as Иннополис on the public adjacent-section tariff page.",
+    "sections[].rvpKm reproduces the RVP kilometre marker published for the corresponding adjacent section on Avtodor's current tariff page; it is not inferred from route geometry."
   ],
   "stops": [
     { "id": "moscow", "name": "Москва" },
@@ -39,6 +40,27 @@
     { "id": "shali", "name": "Шали" }
   ],
   "adjacentCategory1Rub": [176, 322, 244, 359, 636, 165, 522, 205, 510, 311, 602, 348, 392, 215, 243, 155, 280, 162, 62],
+  "sections": [
+    { "from": "moscow", "to": "elektrougli", "rvpKm": 33, "category1Rub": 176 },
+    { "from": "elektrougli", "to": "ckad", "rvpKm": 65, "category1Rub": 322 },
+    { "from": "ckad", "to": "orekhovo_a108", "rvpKm": 81, "category1Rub": 244 },
+    { "from": "orekhovo_a108", "to": "petushki", "rvpKm": 118, "category1Rub": 359 },
+    { "from": "petushki", "to": "vladimir", "rvpKm": 174, "category1Rub": 636 },
+    { "from": "vladimir", "to": "gus_khrustalny_p132", "rvpKm": 184, "category1Rub": 165 },
+    { "from": "gus_khrustalny_p132", "to": "melenki", "rvpKm": 281, "category1Rub": 522 },
+    { "from": "melenki", "to": "murom", "rvpKm": 314, "category1Rub": 205 },
+    { "from": "murom", "to": "diveevo", "rvpKm": 392, "category1Rub": 510 },
+    { "from": "diveevo", "to": "arzamas_p158", "rvpKm": 420, "category1Rub": 311 },
+    { "from": "arzamas_p158", "to": "sergach", "rvpKm": 485, "category1Rub": 602 },
+    { "from": "sergach", "to": "shumerlya", "rvpKm": 591, "category1Rub": 348 },
+    { "from": "shumerlya", "to": "kanash_a151", "rvpKm": 635, "category1Rub": 392 },
+    { "from": "kanash_a151", "to": "bolshie_kaybitsy", "rvpKm": 722, "category1Rub": 215 },
+    { "from": "bolshie_kaybitsy", "to": "ivanovskoe_p241", "rvpKm": 764, "category1Rub": 243 },
+    { "from": "ivanovskoe_p241", "to": "tetyushi", "rvpKm": 769, "category1Rub": 155 },
+    { "from": "tetyushi", "to": "kazan_airport", "rvpKm": 782, "category1Rub": 280 },
+    { "from": "kazan_airport", "to": "kazan_p239", "rvpKm": 806, "category1Rub": 162 },
+    { "from": "kazan_p239", "to": "shali", "rvpKm": 832, "category1Rub": 62 }
+  ],
   "officialMatrixAssertions": [
     { "from": "moscow", "to": "kazan_p239", "rub": 5847 },
     { "from": "kazan_p239", "to": "moscow", "rub": 5847 },
