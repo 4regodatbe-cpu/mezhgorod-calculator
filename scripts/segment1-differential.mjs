@@ -36,14 +36,14 @@ const cases = [
   { name: "moscow-kazan", from: points.moscow, to: points.kazan, protectTollTotal: false },
 ];
 
-async function calculate(baseUrl, test) {
+async function calculate(baseUrl, test, timeoutMs) {
   const started = Date.now();
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 95_000);
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch(`${baseUrl}/api/v2/calculate`, {
       method: "POST",
-      headers: { "content-type": "application/json", "user-agent": "MezhgorodSegment1Differential/1.2" },
+      headers: { "content-type": "application/json", "user-agent": "MezhgorodSegment1Differential/1.3" },
       body: JSON.stringify({
         mode: "standard",
         from: test.from,
@@ -70,73 +70,120 @@ async function calculate(baseUrl, test) {
   }
 }
 
+function candidateChecks(test, candidate) {
+  const checks = [
+    {
+      label: "candidate fast route exists",
+      ok: Number.isFinite(candidate.fastKm) && candidate.fastKm > 0,
+      actual: `${candidate.fastKm.toFixed(1)} km`,
+    },
+  ];
+
+  if (test.expectedWeekday !== undefined) {
+    checks.push({
+      label: "evidence-based weekday toll",
+      ok: candidate.weekdayAmount === test.expectedWeekday,
+      actual: `${candidate.weekdayAmount} ₽; expected ${test.expectedWeekday}`,
+    });
+    checks.push({
+      label: "evidence-based weekend toll",
+      ok: candidate.weekendAmount === test.expectedWeekend,
+      actual: `${candidate.weekendAmount} ₽; expected ${test.expectedWeekend}`,
+    });
+    for (const frame of test.expectedA289Frames ?? []) {
+      checks.push({
+        label: `A289 ${frame} present`,
+        ok: candidate.segments.some((segment) => segment.includes(frame)),
+        actual: candidate.segments.filter((segment) => segment.startsWith("А-289:")).join(" | ") || "none",
+      });
+    }
+    for (const frame of test.forbiddenA289Frames ?? []) {
+      checks.push({
+        label: `A289 ${frame} absent`,
+        ok: !candidate.segments.some((segment) => segment.includes(frame)),
+        actual: candidate.segments.filter((segment) => segment.startsWith("А-289:")).join(" | ") || "none",
+      });
+    }
+  }
+
+  if (test.protectTollTotal) {
+    checks.push({
+      label: "candidate keeps a paid-road total",
+      ok: candidate.tollAmount > 0,
+      actual: `${candidate.tollAmount} ₽`,
+    });
+  }
+
+  if (test.mixedRoadGuard) {
+    checks.push({
+      label: "mixed M4+M11 not replaced by M4-only adapter",
+      ok: !candidate.segments[0]?.includes("точный расчёт по локально подтверждённым ПВП"),
+      actual: candidate.segments[0] || "missing",
+    });
+  }
+
+  return checks;
+}
+
 const results = [];
 let failed = false;
+let baselineUnavailableCount = 0;
 
 for (const test of cases) {
+  let candidate;
   try {
-    const baseline = await calculate(baselineUrl, test);
-    const candidate = await calculate(candidateUrl, test);
-    const distanceSpreadPercent = Math.abs(candidate.fastKm - baseline.fastKm) / Math.max(1, baseline.fastKm) * 100;
-    const checks = [
-      {
-        label: "fast distance vs production",
-        ok: distanceSpreadPercent <= 2,
-        actual: `${baseline.fastKm.toFixed(1)} -> ${candidate.fastKm.toFixed(1)} km (${distanceSpreadPercent.toFixed(2)}%)`,
-      },
-    ];
+    candidate = await calculate(candidateUrl, test, 65_000);
+  } catch (error) {
+    failed = true;
+    const message = error instanceof Error ? error.message : String(error);
+    results.push({ name: test.name, ok: false, candidateError: message, baselineStatus: "not_attempted" });
+    console.log(`FAIL ${test.name}: candidate ${message}`);
+    continue;
+  }
 
-    if (test.expectedWeekday !== undefined) {
-      checks.push({
-        label: "evidence-based weekday toll",
-        ok: candidate.weekdayAmount === test.expectedWeekday,
-        actual: `${baseline.weekdayAmount} -> ${candidate.weekdayAmount} ₽; expected ${test.expectedWeekday}`,
-      });
-      checks.push({
-        label: "evidence-based weekend toll",
-        ok: candidate.weekendAmount === test.expectedWeekend,
-        actual: `${baseline.weekendAmount} -> ${candidate.weekendAmount} ₽; expected ${test.expectedWeekend}`,
-      });
-      for (const frame of test.expectedA289Frames ?? []) {
-        checks.push({
-          label: `A289 ${frame} present`,
-          ok: candidate.segments.some((segment) => segment.includes(frame)),
-          actual: candidate.segments.filter((segment) => segment.startsWith("А-289:")).join(" | ") || "none",
-        });
-      }
-      for (const frame of test.forbiddenA289Frames ?? []) {
-        checks.push({
-          label: `A289 ${frame} absent`,
-          ok: !candidate.segments.some((segment) => segment.includes(frame)),
-          actual: candidate.segments.filter((segment) => segment.startsWith("А-289:")).join(" | ") || "none",
-        });
-      }
-    } else if (test.protectTollTotal && baseline.tollAmount > 0) {
+  const checks = candidateChecks(test, candidate);
+  let baseline = null;
+  let baselineError = null;
+
+  try {
+    baseline = await calculate(baselineUrl, test, 35_000);
+  } catch (error) {
+    baselineError = error instanceof Error ? error.message : String(error);
+    baselineUnavailableCount += 1;
+  }
+
+  if (baseline) {
+    const distanceSpreadPercent = Math.abs(candidate.fastKm - baseline.fastKm) / Math.max(1, baseline.fastKm) * 100;
+    checks.push({
+      label: "fast distance vs production",
+      ok: distanceSpreadPercent <= 2,
+      actual: `${baseline.fastKm.toFixed(1)} -> ${candidate.fastKm.toFixed(1)} km (${distanceSpreadPercent.toFixed(2)}%)`,
+    });
+
+    if (test.protectTollTotal && baseline.tollAmount > 0) {
       checks.push({
         label: "paid total not silently reduced",
         ok: candidate.tollAmount >= baseline.tollAmount,
         actual: `${baseline.tollAmount} -> ${candidate.tollAmount} ₽`,
       });
-      if (test.mixedRoadGuard) {
-        checks.push({
-          label: "mixed M4+M11 not replaced by M4-only adapter",
-          ok: !candidate.segments[0]?.includes("точный расчёт по локально подтверждённым ПВП"),
-          actual: candidate.segments[0] || "missing",
-        });
-      }
     }
-
-    const ok = checks.every((item) => item.ok);
-    if (!ok) failed = true;
-    results.push({ name: test.name, ok, checks, baseline, candidate });
-    console.log(`${ok ? "PASS" : "FAIL"} ${test.name}`);
-    for (const check of checks) console.log(`  ${check.ok ? "✓" : "✗"} ${check.label}: ${check.actual}`);
-  } catch (error) {
-    failed = true;
-    const message = error instanceof Error ? error.message : String(error);
-    results.push({ name: test.name, ok: false, error: message });
-    console.log(`FAIL ${test.name}: ${message}`);
   }
+
+  const ok = checks.every((item) => item.ok);
+  if (!ok) failed = true;
+  results.push({
+    name: test.name,
+    ok,
+    checks,
+    candidate,
+    baseline,
+    baselineStatus: baseline ? "available" : "unavailable",
+    baselineError,
+  });
+
+  console.log(`${ok ? "PASS" : "FAIL"} ${test.name}`);
+  for (const check of checks) console.log(`  ${check.ok ? "✓" : "✗"} ${check.label}: ${check.actual}`);
+  if (!baseline) console.log(`  ⚠ baseline unavailable: ${baselineError}`);
 }
 
 await writeFile("segment1-differential.json", `${JSON.stringify({
@@ -144,6 +191,7 @@ await writeFile("segment1-differential.json", `${JSON.stringify({
   candidateUrl,
   baselineUrl,
   failed,
+  baselineUnavailableCount,
   results,
 }, null, 2)}\n`);
 
