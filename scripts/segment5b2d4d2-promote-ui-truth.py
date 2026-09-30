@@ -64,7 +64,7 @@ copy_replacement = (
     '  async function copyDual(key: string, title: string, trips: Trip[], total: number, tollWeekday: number, tollWeekend: number, tollUnknown: boolean) { const lines = [`Калькулятор межгород`, title, ...result!.legs.map((leg, index) => `Участок ${index + 1}: ${leg.from} → ${leg.to} · ${distance(trips[index].meters)} · ${duration(trips[index].seconds)} · ${money(trips[index].meters / 1000 * (index === 0 ? rate1 : rate2) * multiplier)}`), `Итого: ${money(total)}`]; if (tollUnknown) lines.push("Платная дорога: стоимость не определена"); else if (tollWeekday > 0) lines.push(tollWeekday !== tollWeekend ? `Платная дорога: Пн–Чт ${money(tollWeekday)}, Пт–Вс ${money(tollWeekend)}` : `Платная дорога: ${money(tollWeekday)}`); await navigator.clipboard.writeText(lines.join("\\n")); setCopiedKey(key); setTimeout(() => setCopiedKey(""), 1800); }\n\n'
     '  return <main'
 )
-page, count = copy_pattern.subn(copy_replacement, page, count=1)
+page, count = copy_pattern.subn(lambda _match: copy_replacement, page, count=1)
 if count != 1:
     raise SystemExit(f"copy functions: expected 1 replacement, found {count}")
 
