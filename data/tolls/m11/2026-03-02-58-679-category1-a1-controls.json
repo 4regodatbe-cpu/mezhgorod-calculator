@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "road": "M-11 Neva",
+  "systemId": "m11-58-679-avtodor",
+  "sectionKm": { "from": 58, "to": 679 },
+  "operator": "ГК «Автодор» / оператор платного участка",
+  "vehicleCategory": {
+    "id": "I",
+    "description": "I категория ТС по приказу от 26.12.2016 № 311 в ред. приказа от 30.08.2018 № 182"
+  },
+  "currency": "RUB",
+  "effectiveFrom": "2026-03-02T00:00:00+03:00",
+  "effectiveTo": null,
+  "source": {
+    "kind": "official_operator_pdf",
+    "url": "https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf",
+    "approvedBy": "Государственная компания «Российские автомобильные дороги»",
+    "order": "Приказ от 27.02.2026 № 35",
+    "officialTariffPage": "https://avtodor-tr.ru/road/tariffs/"
+  },
+  "paymentModel": "official_matrix_cash_card_and_listed_interoperable_transponders",
+  "dayProfiles": {
+    "monThu": "Понедельник–четверг, кроме выходных, нерабочих праздничных и предпраздничных дней",
+    "friSun": "Пятница–воскресенье, выходные, нерабочие праздничные и предпраздничные дни"
+  },
+  "extraction": {
+    "completeMatrix": false,
+    "usage": "diagnostic_controls_only_not_for_arbitrary_pair_pricing",
+    "note": "A1 содержит официальный порядок тарифных точек и полностью проверенную строку от км58. Полные две матрицы должны быть внесены и независимо проверены в 6A3A2 до использования для произвольных пар."
+  },
+  "points": [
+    { "id": "p58", "routeKm": 58, "pvpKm": 58, "label": "км 58 / ПВП км 58", "corridorLabel": "д. Пешки" },
+    { "id": "p67", "routeKm": 67, "pvpKm": 67, "label": "км 67 / ПВП км 67", "corridorLabel": "д. Обухово" },
+    { "id": "p89", "routeKm": 89, "pvpKm": 89, "label": "км 89 / ПВП км 89", "corridorLabel": "г.о. Клин" },
+    { "id": "p97", "routeKm": 97, "pvpKm": 97, "label": "км 97 / ПВП км 97", "corridorLabel": "д. Ямуга" },
+    { "id": "p124", "routeKm": 124, "pvpKm": 124, "label": "км 124 / ПВП км 124", "corridorLabel": "д. Мирный" },
+    { "id": "p147", "routeKm": 149, "pvpKm": 147, "label": "км 149 / ПВП км 147", "corridorLabel": "г. Тверь" },
+    { "id": "p159", "routeKm": 159, "pvpKm": 159, "label": "км 159 / ПВП км 159", "corridorLabel": "д. Каблуково" },
+    { "id": "p177", "routeKm": 177, "pvpKm": 177, "label": "км 177 / ПВП км 177", "corridorLabel": "Р-132 Бежецкое ш." },
+    { "id": "p209", "routeKm": 208, "pvpKm": 209, "label": "км 208 / ПВП км 209", "corridorLabel": "д. Романово" },
+    { "id": "p214", "routeKm": 214, "pvpKm": 214, "label": "км 214 / ПВП км 214", "corridorLabel": "д. Букарево" },
+    { "id": "p258", "routeKm": 258, "pvpKm": 258, "label": "км 258 / ПВП км 258", "corridorLabel": "д. Будово" },
+    { "id": "p330", "routeKm": 334, "pvpKm": 330, "label": "км 334 / ПВП км 330", "corridorLabel": "д. Коломно" },
+    { "id": "p348", "routeKm": 348, "pvpKm": 348, "label": "км 348 / ПВП км 348", "corridorLabel": "г. Бологое" },
+    { "id": "p385", "routeKm": 385, "pvpKm": 385, "label": "км 385 / ПВП км 385", "corridorLabel": "г. Валдай" },
+    { "id": "p402", "routeKm": 402, "pvpKm": 402, "label": "км 402 / ПВП км 402", "corridorLabel": "р.п. Угловка" },
+    { "id": "p444", "routeKm": 444, "pvpKm": 444, "label": "км 444 / ПВП км 444", "corridorLabel": "д. Малый Борок" },
+    { "id": "p524", "routeKm": 524, "pvpKm": 524, "label": "км 524 / ПВП км 524", "corridorLabel": "д. Посад" },
+    { "id": "p545", "routeKm": 543, "pvpKm": 545, "label": "км 543 / ПВП км 545", "corridorLabel": "г. Великий Новгород" },
+    { "id": "p647", "routeKm": 646, "pvpKm": 647, "label": "км 646 / ПВП км 647", "corridorLabel": "г. Тосно" },
+    { "id": "p668", "routeKm": 668, "pvpKm": 668, "label": "км 668 / ПВП км 668", "corridorLabel": "г. Пушкин" },
+    { "id": "p679", "routeKm": 679, "pvpKm": 679, "label": "км 679 / ПВП км 679", "corridorLabel": "г. Санкт-Петербург" }
+  ],
+  "verifiedRowFromP58": {
+    "p67": { "monThu": 70, "friSun": 100 },
+    "p89": { "monThu": 200, "friSun": 260 },
+    "p97": { "monThu": 280, "friSun": 350 },
+    "p124": { "monThu": 460, "friSun": 570 },
+    "p147": { "monThu": 610, "friSun": 750 },
+    "p159": { "monThu": 710, "friSun": 850 },
+    "p177": { "monThu": 890, "friSun": 1030 },
+    "p209": { "monThu": 1240, "friSun": 1380 },
+    "p214": { "monThu": 1250, "friSun": 1390 },
+    "p258": { "monThu": 1480, "friSun": 1620 },
+    "p330": { "monThu": 1910, "friSun": 2050 },
+    "p348": { "monThu": 2030, "friSun": 2170 },
+    "p385": { "monThu": 2250, "friSun": 2400 },
+    "p402": { "monThu": 2350, "friSun": 2490 },
+    "p444": { "monThu": 2570, "friSun": 2710 },
+    "p524": { "monThu": 3050, "friSun": 3200 },
+    "p545": { "monThu": 3160, "friSun": 3320 },
+    "p647": { "monThu": 3600, "friSun": 3890 },
+    "p668": { "monThu": 3790, "friSun": 4070 },
+    "p679": { "monThu": 3900, "friSun": 4200 }
+  }
+}
