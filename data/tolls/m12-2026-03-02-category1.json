@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "road": "M-12 Восток",
+  "vehicleCategory": "I",
+  "currency": "RUB",
+  "order": {
+    "issuer": "Государственная компания «Российские автомобильные дороги»",
+    "number": "57",
+    "date": "2026-02-27",
+    "effectiveFrom": "2026-03-02",
+    "sourcePdf": "https://avtodor-tr.ru/upload/iblock/fe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf",
+    "sourceTariffPage": "https://avtodor-tr.ru/road/tariffs/"
+  },
+  "notes": [
+    "Category I passenger-vehicle snapshot only.",
+    "Pricing data is official-source evidence and is intentionally stored separately from OSM/route-traversal evidence.",
+    "Ивановское (Р241) is the current official matrix label for the stop also shown as Иннополис on the public adjacent-section tariff page."
+  ],
+  "stops": [
+    { "id": "moscow", "name": "Москва" },
+    { "id": "elektrougli", "name": "Электроугли" },
+    { "id": "ckad", "name": "ЦКАД" },
+    { "id": "orekhovo_a108", "name": "Орехово-Зуево (A108)" },
+    { "id": "petushki", "name": "Петушки" },
+    { "id": "vladimir", "name": "Владимир" },
+    { "id": "gus_khrustalny_p132", "name": "Гусь-Хрустальный (P132)" },
+    { "id": "melenki", "name": "Меленки" },
+    { "id": "murom", "name": "Муром" },
+    { "id": "diveevo", "name": "Дивеево" },
+    { "id": "arzamas_p158", "name": "Арзамас (P158)" },
+    { "id": "sergach", "name": "Сергач" },
+    { "id": "shumerlya", "name": "Шумерля" },
+    { "id": "kanash_a151", "name": "Канаш (A151)" },
+    { "id": "bolshie_kaybitsy", "name": "Большие Кайбицы" },
+    { "id": "ivanovskoe_p241", "name": "Ивановское (P241)" },
+    { "id": "tetyushi", "name": "Тетюши" },
+    { "id": "kazan_airport", "name": "аэр. Казань" },
+    { "id": "kazan_p239", "name": "Казань (P239)" },
+    { "id": "shali", "name": "Шали" }
+  ],
+  "adjacentCategory1Rub": [176, 322, 244, 359, 636, 165, 522, 205, 510, 311, 602, 348, 392, 215, 243, 155, 280, 162, 62],
+  "officialMatrixAssertions": [
+    { "from": "moscow", "to": "kazan_p239", "rub": 5847 },
+    { "from": "kazan_p239", "to": "moscow", "rub": 5847 },
+    { "from": "moscow", "to": "shali", "rub": 5909 },
+    { "from": "elektrougli", "to": "kazan_p239", "rub": 5671 },
+    { "from": "ckad", "to": "kazan_p239", "rub": 5349 },
+    { "from": "orekhovo_a108", "to": "kazan_p239", "rub": 5105 }
+  ]
+}
