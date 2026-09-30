@@ -1,0 +1,132 @@
+name: Segment 4D Valhalla route PBF probe
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - ".github/workflows/segment4d-route-pbf-probe.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: segment4d-route-pbf-probe-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install protobuf decoder
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq protobuf-compiler
+          protoc --version
+
+      - name: Fetch current Valhalla protobuf descriptors only
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/valhalla/valhalla.git /tmp/valhalla
+          git -C /tmp/valhalla sparse-checkout set proto/descriptors
+          test -f /tmp/valhalla/proto/descriptors/api.proto
+          test -f /tmp/valhalla/proto/descriptors/trip.proto
+
+      - name: Request Moscow to Voronezh as one route PBF
+        run: |
+          cat > /tmp/route-request.json <<'JSON'
+          {
+            "locations": [
+              {"lat":55.755819,"lon":37.617644},
+              {"lat":51.660781,"lon":39.200296}
+            ],
+            "costing":"auto",
+            "units":"kilometers",
+            "directions_type":"none",
+            "format":"pbf",
+            "pbf_field_selector":{
+              "options":false,
+              "trip":true,
+              "directions":true
+            }
+          }
+          JSON
+          curl --fail-with-body --silent --show-error \
+            --max-time 90 \
+            -H 'Content-Type: application/json' \
+            -H 'Accept: application/x-protobuf' \
+            -H 'User-Agent: MezhgorodCalc-Segment4D/1.0' \
+            --data-binary @/tmp/route-request.json \
+            https://valhalla1.openstreetmap.de/route \
+            -o /tmp/route.pb
+          test -s /tmp/route.pb
+          wc -c /tmp/route.pb
+
+      - name: Decode Api response
+        run: |
+          protoc \
+            --proto_path=/tmp/valhalla/proto/descriptors \
+            --decode=valhalla.Api \
+            /tmp/valhalla/proto/descriptors/api.proto \
+            < /tmp/route.pb > segment4d-route-pbf.txt
+          test -s segment4d-route-pbf.txt
+
+      - name: Analyze exact M4 node evidence
+        run: |
+          python3 - <<'PY'
+          import json, re
+          from pathlib import Path
+
+          text = Path('segment4d-route-pbf.txt').read_text()
+          expected = {
+            '62': ['1755090321','4598844673'],
+            '71': ['285903913','3036681110','3036681112','5051960274','5051960276','5051960280','5051960284','5051960288','5051960290','5051960294','5051960295','5051960296','5051960316','5052113768','5052113770','5052113773','5052113775','5052113777','5052113783','5052113786','5052113789','5052113792','5052113796','5052113798','5052113800','5052114048','5052114054'],
+            '133': ['4341143825','4341143826'],
+            '228': ['3598939354','3598939357','3598939358','3598939361','5061776819','5061777323','5061777327','5061777330','5061777334','5061777337','5061777340','5061777348','5061777353','5061777358','5061777363','5061777367','5061777372','5061777377'],
+            '322': ['2431427636','2486362587'],
+            '339': ['3598837929','3598837930'],
+            '355': ['3974833666'],
+            '416': ['1051218389','1051218390','2401530844','2401530849','3717382716','3717382717','3717382718','3717382719','3717382720','3717382721','3717382722','3717382723'],
+            '460': ['75724804','1051205779','1131284396','1419001745','3598837549'],
+            '515': ['3257030196','3200592308'],
+          }
+
+          present = []
+          for km, ids in expected.items():
+            matched = [node_id for node_id in ids if re.search(rf'\b(?:begin_osm_node_id|end_osm_node_id): {re.escape(node_id)}\b', text)]
+            if matched:
+              present.append({'km': km, 'matchedNodeIds': matched})
+
+          summary = {
+            'hasTrip': bool(re.search(r'^trip \{', text, re.M)),
+            'hasDirections': bool(re.search(r'^directions \{', text, re.M)),
+            'tripNodeBlocks': len(re.findall(r'^\s*node \{', text, re.M)),
+            'tollBoothTypes': len(re.findall(r'type: kTollBooth', text)),
+            'tollGantryTypes': len(re.findall(r'type: kTollGantry', text)),
+            'beginOsmNodeIds': len(re.findall(r'begin_osm_node_id:', text)),
+            'endOsmNodeIds': len(re.findall(r'end_osm_node_id:', text)),
+            'knownM4PlazasWithExactIds': present,
+          }
+          Path('segment4d-route-pbf-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n')
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+
+          if not summary['hasTrip']:
+            raise SystemExit('CAPABILITY_REJECTED: /route PBF did not include Trip data')
+          if summary['beginOsmNodeIds'] + summary['endOsmNodeIds'] == 0:
+            raise SystemExit('CAPABILITY_REJECTED: /route PBF has no OSM node IDs')
+          if summary['tollBoothTypes'] == 0:
+            raise SystemExit('CAPABILITY_REJECTED: /route PBF has no toll-booth node types')
+          if len(present) == 0:
+            raise SystemExit('CAPABILITY_REJECTED: no known M4 PVP OSM IDs were reproduced')
+          PY
+
+      - name: Upload probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment4d-route-pbf-probe
+          path: |
+            segment4d-route-pbf.txt
+            segment4d-route-pbf-summary.json
+          retention-days: 30
+          if-no-files-found: warn
