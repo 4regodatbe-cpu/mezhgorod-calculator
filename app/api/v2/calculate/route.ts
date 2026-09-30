@@ -33,6 +33,12 @@ type SelectedFree = {
   truth: "confirmed_free" | "candidate_unverified";
 };
 type TollEstimate = ReturnType<typeof estimateTolls>;
+type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount"> & {
+  amount: number | null;
+  weekdayAmount: number | null;
+  weekendAmount: number | null;
+  pricingStatus: "priced" | "free" | "unknown";
+};
 
 const MAX_VERIFIED_SPREAD_PERCENT = 7;
 const VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT = 5;
@@ -91,6 +97,19 @@ function unknownValidation(message: string): TollValidation {
     wayIds: [],
     roadNames: [],
     message,
+  };
+}
+
+function tollsForApi(tolls: TollEstimate, validation: TollValidation): ApiTolls {
+  const hasPositivePrice = tolls.amount > 0 || tolls.weekdayAmount > 0 || tolls.weekendAmount > 0;
+  if (hasPositivePrice) return { ...tolls, pricingStatus: "priced" };
+  if (validation.status === "free") return { ...tolls, pricingStatus: "free" };
+  return {
+    ...tolls,
+    amount: null,
+    weekdayAmount: null,
+    weekendAmount: null,
+    pricingStatus: "unknown",
   };
 }
 
@@ -529,7 +548,7 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
   return {
     from: from.label,
     to: to.label,
-    fast: { ...selectedFast.route, quality: selectedFast.quality, tolls, tollValidation: fastValidation },
+    fast: { ...selectedFast.route, quality: selectedFast.quality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation },
     free: confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
     freeCandidate: freeCandidate ? { ...freeCandidate.route, quality: freeCandidate.quality, tollValidation: freeCandidate.validation } : null,
     freeError: confirmedFree
