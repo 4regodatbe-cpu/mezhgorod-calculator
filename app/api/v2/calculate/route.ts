@@ -24,7 +24,12 @@ type KnownRoute = {
   seconds: number;
 };
 type FreeCandidate = { name: string; route: RouteWithGeometry };
-type SelectedFree = { route: RouteSummary; quality: RouteQuality; validation: TollValidation };
+type SelectedFree = {
+  route: RouteSummary;
+  quality: RouteQuality;
+  validation: TollValidation;
+  truth: "confirmed_free" | "candidate_unverified";
+};
 type TollEstimate = ReturnType<typeof estimateTolls>;
 
 const MAX_VERIFIED_SPREAD_PERCENT = 7;
@@ -186,6 +191,26 @@ function qualityForCandidate(selected: FreeCandidate, other: FreeCandidate | und
   };
 }
 
+function selectedCandidate(
+  selected: FreeCandidate,
+  other: FreeCandidate | undefined,
+  validation: TollValidation,
+  truth: SelectedFree["truth"],
+): SelectedFree {
+  return {
+    route: selected.route,
+    quality: qualityForCandidate(selected, other, validation),
+    validation,
+    truth,
+  };
+}
+
+async function validateFreeCandidate(candidate: FreeCandidate, ordinal: "Первый" | "Второй") {
+  return candidate.route.coordinates.length > 2
+    ? validateTollEdges(candidate.route.coordinates)
+    : unknownValidation(`${ordinal} источник не вернул геометрию`);
+}
+
 async function selectFreeRoute(
   valhallaFreeResult: PromiseSettledResult<RouteWithGeometry>,
   brouterResult: PromiseSettledResult<RouteWithGeometry>,
@@ -204,45 +229,48 @@ async function selectFreeRoute(
     );
     return {
       ...selected,
-      validation: unknownValidation("Бесплатный маршрут взят из контрольной базы; дополнительный map matching не требуется"),
+      validation: unknownValidation("Контрольная база подтверждает длину/время альтернативы, но не отсутствие платных дорог"),
+      truth: "candidate_unverified",
     };
   }
 
   const first = candidates[0];
   const second = candidates[1];
-  const firstValidation = first.route.coordinates.length > 2
-    ? await validateTollEdges(first.route.coordinates)
-    : unknownValidation("Первый источник не вернул геометрию");
+  const firstValidation = await validateFreeCandidate(first, "Первый");
 
   if (firstValidation.status === "free") {
-    return { route: first.route, quality: qualityForCandidate(first, second, firstValidation), validation: firstValidation };
+    return selectedCandidate(first, second, firstValidation, "confirmed_free");
   }
 
-  if (firstValidation.status === "toll") {
-    if (!second) return null;
-    const secondValidation = second.route.coordinates.length > 2
-      ? await validateTollEdges(second.route.coordinates)
-      : unknownValidation("Второй источник не вернул геометрию");
-    if (secondValidation.status === "toll") return null;
-    return { route: second.route, quality: qualityForCandidate(second, first, secondValidation), validation: secondValidation };
-  }
-
-  if (second && spreadPercent(first.route, second.route) > MAX_VERIFIED_SPREAD_PERCENT) {
-    const secondValidation = second.route.coordinates.length > 2
-      ? await validateTollEdges(second.route.coordinates)
-      : unknownValidation("Второй источник не вернул геометрию");
+  let secondValidation: TollValidation | null = null;
+  if (second) {
+    secondValidation = await validateFreeCandidate(second, "Второй");
     if (secondValidation.status === "free") {
-      return { route: second.route, quality: qualityForCandidate(second, first, secondValidation), validation: secondValidation };
-    }
-    if (secondValidation.status === "unknown") {
-      const shorter = first.route.meters <= second.route.meters ? first : second;
-      const shorterValidation = shorter === first ? firstValidation : secondValidation;
-      const other = shorter === first ? second : first;
-      return { route: shorter.route, quality: qualityForCandidate(shorter, other, shorterValidation), validation: shorterValidation };
+      return selectedCandidate(second, first, secondValidation, "confirmed_free");
     }
   }
 
-  return { route: first.route, quality: qualityForCandidate(first, second, firstValidation), validation: firstValidation };
+  const firstUnknown = firstValidation.status === "unknown";
+  const secondUnknown = second && secondValidation?.status === "unknown";
+  if (!firstUnknown && !secondUnknown) return null;
+
+  if (firstUnknown && !secondUnknown) {
+    return selectedCandidate(first, second, firstValidation, "candidate_unverified");
+  }
+  if (second && secondUnknown && !firstUnknown) {
+    return selectedCandidate(second, first, secondValidation!, "candidate_unverified");
+  }
+
+  if (second && secondValidation) {
+    const selected = spreadPercent(first.route, second.route) > MAX_VERIFIED_SPREAD_PERCENT
+      ? (first.route.meters <= second.route.meters ? first : second)
+      : first;
+    const validation = selected === first ? firstValidation : secondValidation;
+    const other = selected === first ? second : first;
+    return selectedCandidate(selected, other, validation, "candidate_unverified");
+  }
+
+  return selectedCandidate(first, undefined, firstValidation, "candidate_unverified");
 }
 
 async function geocode(point: Point): Promise<Located> {
@@ -397,7 +425,7 @@ function routingDifferenceTollFallback(fast: RouteSummary, free: RouteSummary, c
   if (!routeDifferenceEvidence(fast, free)) return current;
   return {
     ...current,
-    segments: ["Маршрут без платных дорог существенно отличается от быстрого варианта"],
+    segments: ["Подтверждённый бесплатный маршрут существенно отличается от быстрого варианта"],
     confidence: "none",
   };
 }
@@ -427,7 +455,9 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
   const [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
-  const differenceEvidence = selectedFree ? routeDifferenceEvidence(selectedFast.route, selectedFree.route) : false;
+  const confirmedFree = selectedFree?.truth === "confirmed_free" ? selectedFree : null;
+  const freeCandidate = selectedFree?.truth === "candidate_unverified" ? selectedFree : null;
+  const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFast.route, confirmedFree.route) : false;
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
   const productionM4 = await calculateProductionM4(routeGeometry, departureAt, geometricTolls.segments);
@@ -456,18 +486,21 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
     pricedTolls = remoteRecovery ?? matchedTolls;
   }
 
-  const tolls = selectedFree
-    ? routingDifferenceTollFallback(selectedFast.route, selectedFree.route, pricedTolls)
+  const tolls = confirmedFree
+    ? routingDifferenceTollFallback(selectedFast.route, confirmedFree.route, pricedTolls)
     : pricedTolls;
 
   return {
     from: from.label,
     to: to.label,
     fast: { ...selectedFast.route, quality: selectedFast.quality, tolls, tollValidation: fastValidation },
-    free: selectedFree ? { ...selectedFree.route, quality: selectedFree.quality, tollValidation: selectedFree.validation } : null,
-    freeError: selectedFree
+    free: confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
+    freeCandidate: freeCandidate ? { ...freeCandidate.route, quality: freeCandidate.quality, tollValidation: freeCandidate.validation } : null,
+    freeError: confirmedFree
       ? undefined
-      : "Маршрутизаторы не смогли подтвердить полностью бесплатный вариант. Показан только быстрый маршрут.",
+      : freeCandidate
+        ? "Найден альтернативный маршрут, но независимая проверка не подтвердила отсутствие платных участков."
+        : "Маршрутизаторы не смогли подтвердить полностью бесплатный вариант. Показан только быстрый маршрут.",
   };
 }
 
