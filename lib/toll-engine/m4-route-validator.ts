@@ -178,7 +178,7 @@ async function localTrace(window: Coordinate[], deadlineAt: number): Promise<Loc
         body: JSON.stringify({
           shape,
           costing: "auto",
-          shape_match: "edge_walk",
+          shape_match: "walk_or_snap",
           trace_options: {
             search_radius: 45,
             gps_accuracy: 8,
