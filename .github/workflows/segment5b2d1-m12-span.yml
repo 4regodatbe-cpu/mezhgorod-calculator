@@ -1,0 +1,53 @@
+name: Segment 5B2D-1 M12 span helper
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - lib/toll-engine/m12-valhalla-span.ts
+      - scripts/segment5b2d1-m12-span-assertions.ts
+      - .github/workflows/segment5b2d1-m12-span.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Compile span helper assertions
+        run: >-
+          pnpm exec tsc
+          lib/toll-engine/m12-valhalla-span.ts
+          scripts/segment5b2d1-m12-span-assertions.ts
+          --target ES2022
+          --module NodeNext
+          --moduleResolution NodeNext
+          --skipLibCheck
+          --outDir .tmp-segment5b2d1
+
+      - name: Run deterministic span assertions
+        run: node .tmp-segment5b2d1/scripts/segment5b2d1-m12-span-assertions.js
+
+      - name: Full application build
+        run: pnpm build
