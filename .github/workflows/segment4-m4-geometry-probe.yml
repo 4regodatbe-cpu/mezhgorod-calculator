@@ -1,0 +1,70 @@
+name: Segment 4 M4 geometry probe
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - "scripts/segment4-m4-geometry-probe.mjs"
+      - ".github/workflows/segment4-m4-geometry-probe.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: segment4-m4-geometry-probe-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build branch
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          PORT=3000 pnpm start > /tmp/mezhgorod-next.log 2>&1 &
+          echo $! > /tmp/mezhgorod-next.pid
+          for i in {1..45}; do
+            if curl --fail --silent http://127.0.0.1:3000/api/version >/dev/null; then
+              exit 0
+            fi
+            if ! kill -0 "$(cat /tmp/mezhgorod-next.pid)" 2>/dev/null; then
+              cat /tmp/mezhgorod-next.log
+              exit 1
+            fi
+            sleep 2
+          done
+          cat /tmp/mezhgorod-next.log
+          exit 1
+
+      - name: Probe M4 geometry against current validator
+        env:
+          CALCULATOR_URL: http://127.0.0.1:3000
+        run: node scripts/segment4-m4-geometry-probe.mjs
+
+      - name: Show server log on failure
+        if: failure()
+        run: cat /tmp/mezhgorod-next.log || true
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment4-m4-geometry-probe
+          path: segment4-m4-geometry-probe.json
+          retention-days: 30
+          if-no-files-found: warn
