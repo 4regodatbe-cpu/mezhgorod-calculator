@@ -1,0 +1,29 @@
+name: Segment 5B2D-4C M12 unknown adapter
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment5b2d4c-m12-unknown-adapter.mjs
+      - .github/workflows/segment5b2d4c-m12-unknown-adapter.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run unknown adapter assertion
+        run: node --experimental-strip-types scripts/segment5b2d4c-m12-unknown-adapter.mjs
