@@ -78,3 +78,5 @@ jobs:
           if [ -f /tmp/mezhgorod-segment5b2d4d2.pid ]; then
             kill "$(cat /tmp/mezhgorod-segment5b2d4d2.pid)" || true
           fi
+
+# retrigger after the YAML block-scalar fix
