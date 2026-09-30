@@ -1,0 +1,39 @@
+name: Segment 5B2B-2 M12 partial span
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment5b2b2-m12-partial-span.mjs
+      - .github/workflows/segment5b2b2-m12-partial-span.yml
+      - checkpoints/M12_SEGMENT_5B2B2_PLAN.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify partial-route M12 span stability
+        run: node scripts/segment5b2b2-m12-partial-span.mjs
+
+      - name: Upload partial-span evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5b2b2-m12-partial-span
+          path: segment5b2b2-m12-partial-span.json
+          if-no-files-found: warn
+          retention-days: 7
