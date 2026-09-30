@@ -5,11 +5,13 @@ import { safeRoutePositions } from "@/lib/safe-route";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { findVerifiedRoute, tollPeriodsForRoute } from "@/lib/verified-routes";
 import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
+import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
+import { deriveStrictM12Span, type M12StrictRouteSpan, type M12ValhallaManeuver } from "@/lib/toll-engine/m12-valhalla-span";
 
 type Point = { label: string; position?: { lat: number; lng: number } };
 type Located = { label: string; position: { lat: number; lng: number } };
 type RouteSummary = { meters: number; seconds: number };
-type RouteWithGeometry = RouteSummary & { coordinates: Coordinate[] };
+type RouteWithGeometry = RouteSummary & { coordinates: Coordinate[]; m12StrictSpan?: M12StrictRouteSpan | null };
 type RouteQuality = {
   status: "verified" | "single" | "warning";
   providers: string[];
@@ -320,7 +322,16 @@ function decodePolyline(encoded: string, precision = 6): Coordinate[] {
 
 async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Promise<RouteWithGeometry> {
   const url = new URL("https://valhalla1.openstreetmap.de/route");
-  const query = { locations: safeRoutePositions(from, to).map((point) => ({ lat: point.lat, lon: point.lng })), costing: "auto", costing_options: { auto: { use_tolls: useTolls } }, units: "kilometers", directions_type: "none" };
+  const query = {
+    locations: safeRoutePositions(from, to).map((point) => ({ lat: point.lat, lon: point.lng })),
+    costing: "auto",
+    costing_options: { auto: { use_tolls: useTolls } },
+    units: "kilometers",
+    shape_format: "polyline6",
+    ...(useTolls === 1
+      ? { directions_options: { language: "ru-RU", units: "kilometers" } }
+      : { directions_type: "none" }),
+  };
   url.searchParams.set("json", JSON.stringify(query));
   const response = await fetch(url, {
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
@@ -329,11 +340,26 @@ async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Promise<Ro
     signal: AbortSignal.timeout(25_000),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as { trip?: { summary?: { length?: number; time?: number }; legs?: Array<{ shape?: string }> } };
+  const data = (await response.json()) as {
+    trip?: {
+      summary?: { length?: number; time?: number };
+      legs?: Array<{ shape?: string; maneuvers?: M12ValhallaManeuver[] }>;
+    };
+  };
   const summary = data.trip?.summary;
   if (!summary?.length || !summary.time) throw new Error("ROUTE_NOT_FOUND");
-  const coordinates = (data.trip?.legs ?? []).flatMap((item) => item.shape ? decodePolyline(item.shape) : []);
-  return { meters: Math.round(summary.length * 1000), seconds: Math.round(summary.time), coordinates };
+  const decodedLegs = (data.trip?.legs ?? []).map((item) => ({
+    coordinates: item.shape ? decodePolyline(item.shape) : [],
+    maneuvers: item.maneuvers,
+  }));
+  const coordinates = decodedLegs.flatMap((item) => item.coordinates);
+  const m12StrictSpan = useTolls === 1 ? deriveStrictM12Span(decodedLegs) : null;
+  return {
+    meters: Math.round(summary.length * 1000),
+    seconds: Math.round(summary.time),
+    coordinates,
+    m12StrictSpan,
+  };
 }
 
 async function brouterFree(from: Located, to: Located): Promise<RouteWithGeometry> {
@@ -460,10 +486,20 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFast.route, confirmedFree.route) : false;
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
+  const productionM12 = fastResult.status === "fulfilled"
+    ? calculateProductionM12(
+        fastResult.value.coordinates,
+        fastResult.value.m12StrictSpan,
+        geometricTolls.segments,
+        departureAt,
+      )
+    : null;
   const productionM4 = await calculateProductionM4(routeGeometry, departureAt, geometricTolls.segments);
   const verifiedTolls = productionM4.tolls
+    ?? productionM12?.tolls
     ?? verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
   let fastValidation = productionM4.validation
+    ?? productionM12?.validation
     ?? diagnosticFastValidation
     ?? unknownValidation(verifiedTolls.amount > 0
       ? "Стоимость уже подтверждена локальным или проверенным источником; полный map matching быстрого маршрута не требуется"
