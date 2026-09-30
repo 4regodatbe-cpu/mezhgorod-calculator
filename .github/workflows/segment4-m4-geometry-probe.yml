@@ -5,6 +5,7 @@ on:
     branches:
       - optimize-calculator-2
     paths:
+      - "lib/toll-engine/m4-route-validator.ts"
       - "scripts/segment4-m4-geometry-probe.mjs"
       - ".github/workflows/segment4-m4-geometry-probe.yml"
   workflow_dispatch:
