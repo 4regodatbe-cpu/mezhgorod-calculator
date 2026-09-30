@@ -104,7 +104,7 @@ Dedicated API controls:
 - Москва → Сочи: `free=null`, `freeCandidate=1740.0 km`, validation `unknown`.
 
 ### Segment 4 — reduce dependence on public Valhalla / M-4 latency
-Status: IN PROGRESS — 4A DONE, 4B REJECTED+ROLLED BACK, 4C RUNNING.
+Status: IN PROGRESS — 4A DONE, 4B REJECTED+ROLLED BACK, 4C DONE, 4D PLANNED.
 
 Current safe M-4 validator:
 - `shape_match=walk_or_snap`;
@@ -113,7 +113,7 @@ Current safe M-4 validator:
 - exact proof requires the expected concrete OSM `toll_booth` node;
 - request timeout 4.5 s with one retry;
 - global validation budget 24 s;
-- safe concurrency baseline = 3.
+- safe/promoted concurrency = 4.
 
 #### Segment 4A — geometry/evidence benchmark
 Status: DONE
@@ -159,31 +159,55 @@ Interpretation:
 - a future exact-unsampled-shape experiment may be tested separately, with provenance-aware fallback to `walk_or_snap`.
 
 #### Segment 4C — concurrency tuning with unchanged evidence semantics
-Status: RUNNING
+Status: DONE
 Plan: `checkpoints/SEGMENT_4C_CONCURRENCY_PLAN.md`
-Probe workflow: `.github/workflows/segment4c-concurrency-probe.yml`
-Probe commit: `0bd1175ab0d8c778034e772e8af216403ac55d42`.
+Checkpoint: `checkpoints/SEGMENT_4C_COMPLETE.md`
+Probe run: `36718699421` — SUCCESS.
+Promoted source commit: `ffbab1338af6d8762a03a28beba546b1f3e1ab23`.
+Final normal branch regression: `36720431413` — SUCCESS.
 
-Method:
-- branch source remains at safe `CONCURRENCY=3`;
-- workflow changes only its ephemeral runner copy to `CONCURRENCY=4`;
-- same 10-direction M-4 corpus is run;
-- acceptance requires 10 complete routes, exactly 192 labelled checks, 162 confirmed, 30 rejected, 0 unknown, and average validator time <=15,000 ms;
-- if accepted, source change will still require a full Segment 1 user API regression before being checkpointed;
-- if rejected, branch source remains unchanged and the next experiment is exact-unsampled Valhalla shape or another request-reduction strategy.
+Result:
+- concurrency increased from 3 to 4 with `walk_or_snap` and all evidence rules unchanged;
+- probe preserved 10/10 complete routes, 192 candidates, 162 confirmed, 30 rejected, 0 unknown;
+- average validator time: 14,916 ms; max: 16,913 ms;
+- roughly 9% faster than the latest 16,363 ms baseline and roughly 19% faster than the first 18,371 ms baseline;
+- an ephemeral promotion gate ran the full user API suite successfully;
+- the actual committed source change then passed the normal branch regression successfully.
+
+#### Segment 4D — one-call `/route` PBF evidence probe
+Status: PLANNED / RESEARCH
+Plan: `checkpoints/SEGMENT_4D_ROUTE_PBF_PLAN.md`
+
+Goal:
+- determine whether the original Valhalla `/route` response can expose the exact OSM node IDs and toll-booth node type needed by the existing M-4 proof model;
+- if yes, test elimination of the second `trace_attributes` network layer;
+- if not, reject this path quickly and retain the proven Segment 4C validator.
+
+Acceptance:
+- route PBF must reproduce exact known PVP OSM toll-booth IDs without a second map-match;
+- any internal-only GraphIds, absent OSM IDs, missing node type or unstable evidence rejects the approach;
+- no approximate geometry threshold is allowed as a substitute.
 
 ### Segment 5 — M-12 / free-flow toll engine
 Status: RESEARCH STARTED, IMPLEMENTATION NOT STARTED
+Plan for first diagnostic subsegment: `checkpoints/SEGMENT_5A_M12_DIAGNOSTIC_PLAN.md`
 Goal: replace current geometry corridor heuristic with a free-flow ordered-traversal model using official tariffs.
 
 Confirmed control:
-- Москва → Казань, category I, 2026: `5847 ₽`.
+- Москва → Казань, category I, tariff effective 2026-02-27: `5847 ₽`.
 
 Confirmed model:
 - M-12 is barrier-free `Свободный поток`;
 - exact calculation must use ordered gantry/entry-exit context, not approximate nearby sections;
-- broad OSM inventory found 138 toll-related objects and is intentionally noisy;
-- route traversal must filter unrelated booths/gantries and guard exit/re-entry cases.
+- current adjacent segment amounts already reproduce the official cumulative Moscow→Kazan tariff, so tariff arithmetic is not the primary defect;
+- broad OSM inventory found many noisy toll-related objects and route traversal must filter unrelated objects and guard exit/re-entry cases;
+- the legacy anchor labelled `Иннополис` corresponds in the current official matrix to `Ивановское (Р241)` and will be corrected in the new versioned model.
+
+Planned subsegments:
+- 5A: diagnostic-only reproduction of current recovery failure plus route-relative OSM/RVP evidence;
+- 5B: versioned official M-12 tariff-point/matrix data model;
+- 5C: ordered free-flow traversal detector/pricing core;
+- 5D: integrate behind safe fallbacks and run forward/reverse/partial-route regression.
 
 ### Segment 6 — other paid road families
 Status: NOT STARTED
@@ -231,4 +255,4 @@ Required before claiming optimization complete:
 
 ## Current next action
 
-Finish Segment 4C concurrency=4 probe. If and only if it preserves the exact 192-candidate classification with 0 unknown and improves average validation to <=15 s, promote concurrency=4 on the working branch and rerun full user regression. Otherwise document rejection and move to an isolated exact-unsampled-shape experiment while retaining safe `walk_or_snap` + concurrency=3 in branch code.
+Execute Segment 4D as a short research/capability probe. If public Valhalla route/PBF cannot expose the exact OSM toll-booth IDs/types required by the existing proof model, checkpoint the rejection and proceed immediately to Segment 5A. If it can, test the one-call evidence path in isolation against the 10-direction M-4 corpus before changing production code.
