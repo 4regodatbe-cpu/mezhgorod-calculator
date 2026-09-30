@@ -6,6 +6,7 @@ on:
       - optimize-calculator-2
     paths:
       - "app/api/v2/calculate/**"
+      - "app/api/v2/debug-m4/**"
       - "lib/toll-engine/**"
       - "lib/tolls.ts"
       - "lib/toll-recovery.ts"
