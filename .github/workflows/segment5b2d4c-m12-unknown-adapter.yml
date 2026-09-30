@@ -1,4 +1,4 @@
-name: Segment 5B2D-4C M12 unknown adapter
+name: Segment 5B2D-4C M12 unknown API diagnostic
 
 on:
   push:
@@ -13,17 +13,62 @@ permissions:
   contents: read
 
 jobs:
-  verify:
+  diagnose:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '22.13.0'
+          cache: pnpm
 
-      - name: Run unknown adapter assertion
-        run: node --experimental-strip-types scripts/segment5b2d4c-m12-unknown-adapter.mjs
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build branch
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          pnpm start > /tmp/mezhgorod-segment5b2d4c.log 2>&1 &
+          echo $! > /tmp/mezhgorod-segment5b2d4c.pid
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3000/ >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/mezhgorod-segment5b2d4c.log
+          exit 1
+
+      - name: Diagnose unknown M12 user API control
+        run: node scripts/segment5b2d4c-m12-unknown-adapter.mjs
+
+      - name: Upload diagnostic JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5b2d4c-m12-unknown-api
+          path: segment5b2d4c-m12-unknown-api.json
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Show server log on failure
+        if: failure()
+        run: tail -n 300 /tmp/mezhgorod-segment5b2d4c.log || true
+
+      - name: Stop local server
+        if: always()
+        run: |
+          if [ -f /tmp/mezhgorod-segment5b2d4c.pid ]; then
+            kill "$(cat /tmp/mezhgorod-segment5b2d4c.pid)" || true
+          fi
