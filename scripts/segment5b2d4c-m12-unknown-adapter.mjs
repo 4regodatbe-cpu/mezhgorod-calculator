@@ -29,6 +29,7 @@ const report = {
   amount: leg.fast?.tolls?.amount ?? null,
   weekdayAmount: leg.fast?.tolls?.weekdayAmount ?? null,
   weekendAmount: leg.fast?.tolls?.weekendAmount ?? null,
+  pricingStatus: leg.fast?.tolls?.pricingStatus ?? null,
   segments: leg.fast?.tolls?.segments ?? null,
   validationStatus: leg.fast?.tollValidation?.status ?? null,
   validationSource: leg.fast?.tollValidation?.source ?? null,
@@ -40,3 +41,16 @@ const report = {
 
 await writeFile("segment5b2d4c-m12-unknown-api.json", `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify(report));
+
+const failures = [];
+if (report.validationStatus !== "unknown") failures.push(`validationStatus=${report.validationStatus}`);
+if (report.amount !== null) failures.push(`amount=${report.amount}, expected null`);
+if (report.weekdayAmount !== null) failures.push(`weekdayAmount=${report.weekdayAmount}, expected null`);
+if (report.weekendAmount !== null) failures.push(`weekendAmount=${report.weekendAmount}, expected null`);
+if (report.pricingStatus !== "unknown") failures.push(`pricingStatus=${report.pricingStatus}, expected unknown`);
+if (report.freePresent) failures.push("free route must not be asserted for unresolved control");
+if (!report.freeCandidatePresent) failures.push("unverified alternative should remain visible as freeCandidate");
+
+if (failures.length > 0) {
+  throw new Error(`M12 unknown pricing truth regression: ${failures.join("; ")}`);
+}
