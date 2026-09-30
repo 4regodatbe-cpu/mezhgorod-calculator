@@ -104,7 +104,7 @@ Dedicated API controls:
 - Москва → Сочи: `free=null`, `freeCandidate=1740.0 km`, validation `unknown`.
 
 ### Segment 4 — reduce dependence on public Valhalla / M-4 latency
-Status: IN PROGRESS — 4A DONE, 4B REJECTED+ROLLED BACK, 4C DONE, 4D PLANNED.
+Status: DONE — safe public-server optimum established for current evidence model.
 
 Current safe M-4 validator:
 - `shape_match=walk_or_snap`;
@@ -113,7 +113,7 @@ Current safe M-4 validator:
 - exact proof requires the expected concrete OSM `toll_booth` node;
 - request timeout 4.5 s with one retry;
 - global validation budget 24 s;
-- safe/promoted concurrency = 4.
+- promoted concurrency = 4.
 
 #### Segment 4A — geometry/evidence benchmark
 Status: DONE
@@ -128,8 +128,7 @@ Corpus result:
 
 Observed latency:
 - first recorded baseline average validator time: 18,371 ms, max 19,741 ms;
-- rollback confirmation average: 16,363 ms, max 17,852 ms;
-- therefore public-service latency varies, but the second remote local-matching layer is materially expensive.
+- rollback confirmation average: 16,363 ms, max 17,852 ms.
 
 Geometry-only decision:
 - confirmed PVP anchors were 4–53 m from the route shape;
@@ -153,11 +152,6 @@ Result:
 - the one-line experiment was immediately reverted;
 - rollback probe restored 10/10 complete and 0 unknown.
 
-Interpretation:
-- Valhalla documents `edge_walk` for exact shapes originating from a prior Valhalla route;
-- current local windows are sampled, so this test does not justify using `edge_walk` on the current representation;
-- a future exact-unsampled-shape experiment may be tested separately, with provenance-aware fallback to `walk_or_snap`.
-
 #### Segment 4C — concurrency tuning with unchanged evidence semantics
 Status: DONE
 Plan: `checkpoints/SEGMENT_4C_CONCURRENCY_PLAN.md`
@@ -171,26 +165,34 @@ Result:
 - probe preserved 10/10 complete routes, 192 candidates, 162 confirmed, 30 rejected, 0 unknown;
 - average validator time: 14,916 ms; max: 16,913 ms;
 - roughly 9% faster than the latest 16,363 ms baseline and roughly 19% faster than the first 18,371 ms baseline;
-- an ephemeral promotion gate ran the full user API suite successfully;
-- the actual committed source change then passed the normal branch regression successfully.
+- actual committed source change passed the normal branch regression successfully.
 
 #### Segment 4D — one-call `/route` PBF evidence probe
-Status: PLANNED / RESEARCH
+Status: REJECTED FOR CURRENT PUBLIC SERVER
 Plan: `checkpoints/SEGMENT_4D_ROUTE_PBF_PLAN.md`
+Result: `checkpoints/SEGMENT_4D_ROUTE_PBF_RESULT.md`
+Workflow run: `36722406803`.
+Artifact: `11102570130`.
 
-Goal:
-- determine whether the original Valhalla `/route` response can expose the exact OSM node IDs and toll-booth node type needed by the existing M-4 proof model;
-- if yes, test elimination of the second `trace_attributes` network layer;
-- if not, reject this path quickly and retain the proven Segment 4C validator.
+External Valhalla schema supports TripLeg OSM node IDs/types, and a maintainer has recommended selecting `trip+directions` in one PBF route response. The actual public-server probe was therefore performed rather than assumed.
 
-Acceptance:
-- route PBF must reproduce exact known PVP OSM toll-booth IDs without a second map-match;
-- any internal-only GraphIds, absent OSM IDs, missing node type or unstable evidence rejects the approach;
-- no approximate geometry threshold is allowed as a substitute.
+Observed `valhalla1.openstreetmap.de` response for Moscow→Voronezh:
+- valid PBF response, 21,566 bytes, decoded successfully;
+- `directions` present;
+- `trip` absent despite `trip=true` field selector;
+- zero Trip nodes;
+- zero toll-booth/toll-gantry node types;
+- zero begin/end OSM node IDs;
+- zero known M-4 PVP IDs reproduced.
+
+Decision:
+- current public HTTP `/route` cannot replace the second exact-evidence layer;
+- retain local `trace_attributes` + exact expected-node proof + concurrency 4;
+- further substantial M-4 latency reduction would require a different/self-hosted Valhalla configuration/runtime or another exact edge-evidence provider, not a safe code-only change on the current public service.
 
 ### Segment 5 — M-12 / free-flow toll engine
-Status: RESEARCH STARTED, IMPLEMENTATION NOT STARTED
-Plan for first diagnostic subsegment: `checkpoints/SEGMENT_5A_M12_DIAGNOSTIC_PLAN.md`
+Status: 5A STARTING
+Plan: `checkpoints/SEGMENT_5A_M12_DIAGNOSTIC_PLAN.md`
 Goal: replace current geometry corridor heuristic with a free-flow ordered-traversal model using official tariffs.
 
 Confirmed control:
@@ -255,4 +257,4 @@ Required before claiming optimization complete:
 
 ## Current next action
 
-Execute Segment 4D as a short research/capability probe. If public Valhalla route/PBF cannot expose the exact OSM toll-booth IDs/types required by the existing proof model, checkpoint the rejection and proceed immediately to Segment 5A. If it can, test the one-call evidence path in isolation against the 10-direction M-4 corpus before changing production code.
+Execute Segment 5A as a diagnostic-only workflow. Reproduce the current M-12 Moscow↔Kazan recovery decisions against live route geometry, measure every official/legacy anchor relative to the route, and collect route-relative OSM toll-gantry evidence. Do not modify user pricing until the exact failure mechanism and stable first/last free-flow evidence are documented.
