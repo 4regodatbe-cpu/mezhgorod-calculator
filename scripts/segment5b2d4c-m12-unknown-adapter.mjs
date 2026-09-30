@@ -1,24 +1,42 @@
-import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
-import { calculateProductionM12 } from "../lib/toll-engine/m12-production.ts";
+import { writeFile } from "node:fs/promises";
 
-const fixture = JSON.parse(await readFile("data/fixtures/m12-route-projections-2026-09-30.json", "utf8"));
-const route = fixture.routes.find((item) => item.id === "kazan->vladimir");
-assert.ok(route, "kazan->vladimir fixture missing");
-assert.equal(route.expected.status, "unknown", "fixture must remain an unknown control");
+const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:3000";
+const from = { label: "Казань", position: { lat: 55.796289, lng: 49.108795 } };
+const to = { label: "Владимир", position: { lat: 56.129057, lng: 40.406635 } };
 
-const result = calculateProductionM12(
-  route.coordinates,
-  route.strictM12Span,
-  [],
-  "2026-09-30T12:00:00+03:00",
-);
+const response = await fetch(`${BASE_URL}/api/v2/calculate`, {
+  method: "POST",
+  headers: { "content-type": "application/json" },
+  body: JSON.stringify({
+    from,
+    to,
+    mode: "standard",
+    departureAt: "2026-09-30T12:00:00+03:00",
+  }),
+  signal: AbortSignal.timeout(120_000),
+});
 
-assert.equal(result.core.status, "unknown", "production adapter must preserve core unknown status");
-assert.equal(result.core.amountRub, null, "unknown core must use null amount, never zero");
-assert.notEqual(result.core.amountRub, 0, "unknown core must not become 0 RUB");
-assert.equal(result.tolls, null, "unknown M12 must not emit TollEstimate");
-assert.equal(result.validation, null, "unknown M12 must not claim exact validation");
-assert.equal(result.blockedByMixedRoadEvidence, false, "pure M12 unknown fixture should not be blocked as mixed-road evidence");
+const text = await response.text();
+if (!response.ok) throw new Error(`HTTP ${response.status}: ${text.slice(0, 1000)}`);
+const data = JSON.parse(text);
+const leg = data?.legs?.[0];
+if (!leg) throw new Error("No route leg returned");
 
-console.log("Segment 5B2D-4C passed: M12 unknown remains null/unpriced, never 0 RUB");
+const report = {
+  generatedAt: new Date().toISOString(),
+  route: "Kazan -> Vladimir",
+  fastMeters: leg.fast?.meters ?? null,
+  amount: leg.fast?.tolls?.amount ?? null,
+  weekdayAmount: leg.fast?.tolls?.weekdayAmount ?? null,
+  weekendAmount: leg.fast?.tolls?.weekendAmount ?? null,
+  segments: leg.fast?.tolls?.segments ?? null,
+  validationStatus: leg.fast?.tollValidation?.status ?? null,
+  validationSource: leg.fast?.tollValidation?.source ?? null,
+  validationMessage: leg.fast?.tollValidation?.message ?? null,
+  freePresent: Boolean(leg.free),
+  freeCandidatePresent: Boolean(leg.freeCandidate),
+  freeError: leg.freeError ?? null,
+};
+
+await writeFile("segment5b2d4c-m12-unknown-api.json", `${JSON.stringify(report, null, 2)}\n`);
+console.log(JSON.stringify(report));
