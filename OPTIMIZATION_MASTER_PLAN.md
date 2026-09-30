@@ -1,6 +1,6 @@
 # Calculator 2.0 — master optimization plan
 
-Updated: 2026-09-30
+Updated: 2026-10-01
 Working branch: `optimize-calculator-2`
 Base checkpoint: `d9caf0edb50590c246745e6c50c801907a866c04`
 Production `main`: intentionally unchanged until branch regression gates pass.
@@ -71,7 +71,7 @@ Exact controls:
 Protected controls:
 - Москва → Санкт-Петербург: 710.3 km, 4580 ₽ retained;
 - Сочи ↔ Санкт-Петербург: about 2338–2339 km, 9620 ₽ retained, M-4+M-11 composite not replaced;
-- Москва → Казань: about 820.2 km distance retained; M-12 toll underpricing remains a later-segment defect.
+- Москва → Казань: about 820.2 km distance retained; M-12 toll underpricing was addressed in Segment 5.
 
 ### Segment 2 — unify diagnostic and production M-4 calculation core
 Status: DONE
@@ -174,52 +174,57 @@ Result: `checkpoints/SEGMENT_4D_ROUTE_PBF_RESULT.md`
 Workflow run: `36722406803`.
 Artifact: `11102570130`.
 
-External Valhalla schema supports TripLeg OSM node IDs/types, and a maintainer has recommended selecting `trip+directions` in one PBF route response. The actual public-server probe was therefore performed rather than assumed.
-
-Observed `valhalla1.openstreetmap.de` response for Moscow→Voronezh:
-- valid PBF response, 21,566 bytes, decoded successfully;
+Observed public-server result for Moscow→Voronezh:
+- valid PBF response decoded successfully;
 - `directions` present;
 - `trip` absent despite `trip=true` field selector;
-- zero Trip nodes;
-- zero toll-booth/toll-gantry node types;
-- zero begin/end OSM node IDs;
-- zero known M-4 PVP IDs reproduced.
+- zero Trip nodes and zero useful toll-booth/toll-gantry OSM node evidence.
 
 Decision:
 - current public HTTP `/route` cannot replace the second exact-evidence layer;
 - retain local `trace_attributes` + exact expected-node proof + concurrency 4;
-- further substantial M-4 latency reduction would require a different/self-hosted Valhalla configuration/runtime or another exact edge-evidence provider, not a safe code-only change on the current public service.
+- further substantial M-4 latency reduction requires a different/self-hosted Valhalla configuration/runtime or another exact edge-evidence provider.
 
 ### Segment 5 — M-12 / free-flow toll engine
-Status: 5A STARTING
-Plan: `checkpoints/SEGMENT_5A_M12_DIAGNOSTIC_PLAN.md`
-Goal: replace current geometry corridor heuristic with a free-flow ordered-traversal model using official tariffs.
+Status: DONE — current M-12 stabilization checkpoint complete.
+Final checkpoint: `checkpoints/M12_SEGMENT_5B2D_4D2_RESULT.md`
+Validated branch head after gated UI/analytics promotion: `ed7bf089cb62f258b542afa413dbfb6f37909f1b`.
+Final promotion workflow run `36783522336`: SUCCESS.
 
-Confirmed control:
-- Москва → Казань, category I, tariff effective 2026-02-27: `5847 ₽`.
+Completed:
+- reproduced the legacy M-12 failure against current route geometry instead of assuming the official full-route tariff always applies;
+- built a versioned official M-12 tariff-point/matrix model;
+- established strict route-relative M-12 span/RVP evidence and a deterministic pure route core;
+- persisted a deterministic 10-route projection fixture for core regression without network requests;
+- exact route-core pricing requires sufficient direct calibrated evidence, continuous official RVP reconstruction, proven entry/exit bounds, and complete tariff coverage;
+- incomplete evidence returns `status=unknown`, `amountRub=null`;
+- integrated the core into `/api/v2/calculate` using the existing fast Valhalla route response; no second full-route request was introduced;
+- preserved M-4/A-289/mixed-road composition protections;
+- fixed the generic API boundary so unresolved toll pricing is serialized as `pricingStatus=unknown` with nullable money rather than false numeric zero;
+- propagated `priced | free | unknown` semantics through the V2 UI, clipboard, dual-route presentation and route analytics;
+- `freeCandidate` remains separate from independently proven `free`.
 
-Confirmed model:
-- M-12 is barrier-free `Свободный поток`;
-- exact calculation must use ordered gantry/entry-exit context, not approximate nearby sections;
-- current adjacent segment amounts already reproduce the official cumulative Moscow→Kazan tariff, so tariff arithmetic is not the primary defect;
-- broad OSM inventory found many noisy toll-related objects and route traversal must filter unrelated objects and guard exit/re-entry cases;
-- the legacy anchor labelled `Иннополис` corresponds in the current official matrix to `Ивановское (Р241)` and will be corrected in the new versioned model.
+Key checkpoints:
+- `checkpoints/M12_SEGMENT_5B2C_RESULT.md` — deterministic reusable core;
+- `checkpoints/M12_SEGMENT_5B2D_4D1_RESULT.md` — API pricing truth;
+- `checkpoints/M12_SEGMENT_5B2D_4D2_RESULT.md` — UI/analytics pricing truth and final promotion gate.
 
-Planned subsegments:
-- 5A: diagnostic-only reproduction of current recovery failure plus route-relative OSM/RVP evidence;
-- 5B: versioned official M-12 tariff-point/matrix data model;
-- 5C: ordered free-flow traversal detector/pricing core;
-- 5D: integrate behind safe fallbacks and run forward/reverse/partial-route regression.
+Current observed control behavior:
+- the pure core's current Moscow↔Kazan same-corridor route geometry prices the actually traversed M-12 RVP chain, rather than blindly substituting the full official Moscow→Kazan tariff;
+- a control routed by Valhalla through M-7/E22 remains outside M-12 ownership and therefore cannot be forced into an M-12 price;
+- unknown/incomplete pricing cannot be represented as exact `0 ₽` at the covered API/client boundaries.
+
+Production `main` remains intentionally unchanged.
 
 ### Segment 6 — other paid road families
-Status: NOT STARTED
+Status: STARTING WITH M-11 DIAGNOSTIC
 Order after M-4 and M-12 stabilization:
 1. M-11;
 2. ЦКАД;
 3. finish standalone/general A-289 integration;
 4. M-3 / M-1 and other common operator systems.
 
-Each system gets an explicit tariff model, evidence model and regression corpus.
+Each system gets an explicit tariff model, evidence model and regression corpus. No road-family pricing is promoted from a legacy heuristic until a diagnostic checkpoint documents current behavior and proves the replacement rules.
 
 ### Segment 7 — tariff data versioning and updater checks
 Status: NOT STARTED
@@ -257,4 +262,4 @@ Required before claiming optimization complete:
 
 ## Current next action
 
-Execute Segment 5A as a diagnostic-only workflow. Reproduce the current M-12 Moscow↔Kazan recovery decisions against live route geometry, measure every official/legacy anchor relative to the route, and collect route-relative OSM toll-gantry evidence. Do not modify user pricing until the exact failure mechanism and stable first/last free-flow evidence are documented.
+Start Segment 6A as diagnostic-only M-11 work. First inventory the existing M-11 logic and current user-API controls, identify exactly what evidence currently determines M-11 traversal and pricing, and document the official tariff model needed for exact calculation. Do not change M-11 user pricing until the diagnostic plan and baseline regression evidence are persisted.
