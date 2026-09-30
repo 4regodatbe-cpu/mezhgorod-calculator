@@ -1,0 +1,138 @@
+name: Segment 5B2D-4D1 promote API pricing truth
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - .github/workflows/segment5b2d4d-promote-api-truth.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: optimize-calculator-2
+          fetch-depth: 1
+
+      - name: Patch API truth boundary
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('app/api/v2/calculate/route.ts')
+          text = path.read_text()
+
+          type_marker = 'type TollEstimate = ReturnType<typeof estimateTolls>;\n'
+          type_insert = '''type TollEstimate = ReturnType<typeof estimateTolls>;
+          type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount"> & {
+            amount: number | null;
+            weekdayAmount: number | null;
+            weekendAmount: number | null;
+            pricingStatus: "priced" | "free" | "unknown";
+          };
+          '''
+          if text.count(type_marker) != 1:
+              raise SystemExit(f'Unexpected TollEstimate marker count: {text.count(type_marker)}')
+          text = text.replace(type_marker, type_insert, 1)
+
+          helper_marker = '''function unknownValidation(message: string): TollValidation {
+            return {
+              status: "unknown",
+              source: "Valhalla map matching",
+              tollEdgeCount: 0,
+              checkedEdgeCount: 0,
+              wayIds: [],
+              roadNames: [],
+              message,
+            };
+          }
+          '''
+          helper_insert = helper_marker + '''
+          function tollsForApi(tolls: TollEstimate, validation: TollValidation): ApiTolls {
+            const hasPositivePrice = tolls.amount > 0 || tolls.weekdayAmount > 0 || tolls.weekendAmount > 0;
+            if (hasPositivePrice) return { ...tolls, pricingStatus: "priced" };
+            if (validation.status === "free") return { ...tolls, pricingStatus: "free" };
+            return {
+              ...tolls,
+              amount: null,
+              weekdayAmount: null,
+              weekendAmount: null,
+              pricingStatus: "unknown",
+            };
+          }
+          '''
+          if text.count(helper_marker) != 1:
+              raise SystemExit(f'Unexpected unknownValidation marker count: {text.count(helper_marker)}')
+          text = text.replace(helper_marker, helper_insert, 1)
+
+          return_marker = 'fast: { ...selectedFast.route, quality: selectedFast.quality, tolls, tollValidation: fastValidation },'
+          return_insert = 'fast: { ...selectedFast.route, quality: selectedFast.quality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation },'
+          if text.count(return_marker) != 1:
+              raise SystemExit(f'Unexpected fast return marker count: {text.count(return_marker)}')
+          text = text.replace(return_marker, return_insert, 1)
+
+          path.write_text(text)
+          PY
+
+          git diff --check
+          git diff -- app/api/v2/calculate/route.ts
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build branch
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          pnpm start > /tmp/mezhgorod-segment5b2d4d.log 2>&1 &
+          echo $! > /tmp/mezhgorod-segment5b2d4d.pid
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3000/ >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/mezhgorod-segment5b2d4d.log
+          exit 1
+
+      - name: Assert unknown pricing truth
+        run: node scripts/segment5b2d4c-m12-unknown-adapter.mjs
+
+      - name: Commit only after green gate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/api/v2/calculate/route.ts
+          git commit -m "Segment 5B2D-4D1: enforce API pricing truth boundary"
+          git push origin HEAD:optimize-calculator-2
+
+      - name: Show server log on failure
+        if: failure()
+        run: tail -n 300 /tmp/mezhgorod-segment5b2d4d.log || true
+
+      - name: Stop local server
+        if: always()
+        run: |
+          if [ -f /tmp/mezhgorod-segment5b2d4d.pid ]; then
+            kill "$(cat /tmp/mezhgorod-segment5b2d4d.pid)" || true
+          fi
