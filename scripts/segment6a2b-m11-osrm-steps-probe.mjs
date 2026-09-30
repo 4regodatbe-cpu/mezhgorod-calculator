@@ -19,18 +19,28 @@ function round(value, digits = 3) {
   return Math.round(value * factor) / factor;
 }
 
-function stringsOf(step) {
+function strictRoadStrings(step) {
+  return [step.name, step.ref]
+    .filter((value) => typeof value === "string" && value.trim())
+    .map((value) => value.trim());
+}
+
+function clueStrings(step) {
   return [step.name, step.ref, step.destinations]
     .filter((value) => typeof value === "string" && value.trim())
     .map((value) => value.trim());
 }
 
 function isStrictM11(step) {
-  return stringsOf(step).some((value) => M11_NAME.test(value));
+  return strictRoadStrings(step).some((value) => M11_NAME.test(value));
+}
+
+function isDestinationM11Candidate(step) {
+  return typeof step.destinations === "string" && M11_NAME.test(step.destinations);
 }
 
 function isNevaCandidate(step) {
-  return stringsOf(step).some((value) => NEVA.test(value));
+  return clueStrings(step).some((value) => NEVA.test(value));
 }
 
 function edgeCoordinates(step) {
@@ -65,7 +75,15 @@ function analyzeSteps(steps) {
     const distanceKm = (Number(steps[i].distance) || 0) / 1000;
     const beginKm = routeKm;
     const endKm = routeKm + distanceKm;
-    annotated.push({ step: steps[i], stepIndex: i, beginKm, endKm, strictM11: isStrictM11(steps[i]), nevaCandidate: isNevaCandidate(steps[i]) });
+    annotated.push({
+      step: steps[i],
+      stepIndex: i,
+      beginKm,
+      endKm,
+      strictM11: isStrictM11(steps[i]),
+      destinationM11Candidate: isDestinationM11Candidate(steps[i]),
+      nevaCandidate: isNevaCandidate(steps[i]),
+    });
     routeKm = endKm;
   }
 
@@ -90,6 +108,7 @@ function analyzeSteps(steps) {
 
   return {
     strictM11StepCount: strict.length,
+    destinationM11CandidateStepCount: annotated.filter((item) => item.destinationM11Candidate && !item.strictM11).length,
     nevaCandidateStepCount: annotated.filter((item) => item.nevaCandidate).length,
     blocks: blocks.map((block) => {
       const first = block.steps[0];
@@ -111,6 +130,9 @@ function analyzeSteps(steps) {
         steps: block.steps.map((item) => compactStep(item.step, item.stepIndex, item.beginKm, item.endKm)),
       };
     }),
+    destinationM11Clues: annotated
+      .filter((item) => item.destinationM11Candidate && !item.strictM11)
+      .map((item) => compactStep(item.step, item.stepIndex, item.beginKm, item.endKm)),
     nevaOnlyClues: annotated
       .filter((item) => item.nevaCandidate && !item.strictM11)
       .map((item) => compactStep(item.step, item.stepIndex, item.beginKm, item.endKm)),
