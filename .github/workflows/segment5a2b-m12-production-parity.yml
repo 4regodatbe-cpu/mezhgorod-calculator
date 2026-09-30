@@ -1,0 +1,38 @@
+name: Segment 5A2b M12 production parity
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment5a2b-m12-production-parity.mjs
+      - .github/workflows/segment5a2b-m12-production-parity.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Audit production-parity M12 route evidence
+        run: node scripts/segment5a2b-m12-production-parity.mjs
+
+      - name: Upload normalized diagnostic JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5a2b-m12-production-parity
+          path: segment5a2b-m12-production-parity.json
+          if-no-files-found: warn
+          retention-days: 14
