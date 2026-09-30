@@ -1,0 +1,82 @@
+name: Segment 5B2D-4D1B cross-road regression
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - .github/workflows/segment5b2d4d-crossroad-regression.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: optimize-calculator-2
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build branch
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          pnpm start > /tmp/mezhgorod-segment5b2d4d-crossroad.log 2>&1 &
+          echo $! > /tmp/mezhgorod-segment5b2d4d-crossroad.pid
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3000/ >/dev/null 2>&1; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/mezhgorod-segment5b2d4d-crossroad.log
+          exit 1
+
+      - name: Run M4 A289 and non-M4 route regression
+        env:
+          CALCULATOR_URL: http://127.0.0.1:3000
+        run: node scripts/segment1-user-regression.mjs
+
+      - name: Run free truth regression
+        env:
+          CALCULATOR_URL: http://127.0.0.1:3000
+        run: node scripts/segment3-free-truth.mjs
+
+      - name: Upload regression reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5b2d4d-crossroad-regression
+          path: |
+            segment1-user-regression.json
+            segment3-free-truth.json
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Show server log on failure
+        if: failure()
+        run: tail -n 300 /tmp/mezhgorod-segment5b2d4d-crossroad.log || true
+
+      - name: Stop local server
+        if: always()
+        run: |
+          if [ -f /tmp/mezhgorod-segment5b2d4d-crossroad.pid ]; then
+            kill "$(cat /tmp/mezhgorod-segment5b2d4d-crossroad.pid)" || true
+          fi
