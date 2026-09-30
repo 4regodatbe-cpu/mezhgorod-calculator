@@ -13,7 +13,8 @@ Work only in small segments. Every segment must:
 3. run targeted validation and, where applicable, build/regression;
 4. save the observed result in a dedicated checkpoint file;
 5. update this file with current state and next segment;
-6. never treat `unknown`/timeout/incomplete evidence as `0 ₽` or as proof of a free route.
+6. never treat `unknown`/timeout/incomplete evidence as `0 ₽` or as proof of a free route;
+7. hard-bound each execution attempt to no more than 20 minutes; after a timeout inspect evidence, split/revise the approach, then retry rather than repeating the same attempt.
 
 Do not modify production `main` until the working branch passes the required regression gates. The branch may be merged only after user-facing `/api/v2/calculate` passes the same invariants currently proven in the diagnostic contour.
 
@@ -59,65 +60,44 @@ Result:
 - production behavior unchanged.
 
 ### Segment 1 — integrate proven M-4 engine into user calculation core
-Status: FINAL REGRESSION IN PROGRESS
-Goal: user `/api/v2/calculate` uses proven local M-4 PVP validation/pricing while preserving safe fallbacks and mixed-road totals.
+Status: DONE
+Checkpoint: `checkpoints/SEGMENT_1_COMPLETE.md`
+Validated branch head: `5bafe9dd34ef441f6e05e0e0c74b77ad163fccc0`
+Workflow run: `36677462903` — SUCCESS.
 
-Implemented so far:
-- production-safe M-4 adapter added and wired into `/api/v2/calculate` before legacy recovery;
+Completed:
+- production-safe M-4 adapter wired into `/api/v2/calculate` before legacy recovery;
 - exact amount accepted only for complete M-4 validation, `status=priced`, no unresolved context and confidence >= medium;
 - generic/legacy fallbacks remain when exact result is unavailable;
-- CI builds the branch locally and POSTs to the real user endpoint, avoiding Vercel preview authentication;
-- superseded branch regressions are automatically cancelled with workflow `concurrency`;
-- differential regression compares protected routes against current production.
+- CI builds the branch locally and POSTs to the real user endpoint;
+- workflow `concurrency` cancels superseded regressions;
+- whole regression attempt is capped at 20 minutes;
+- production baseline outages are recorded separately and no longer masquerade as candidate failures;
+- mixed M-4+M-11 routes are protected from M-4-only replacement;
+- A-289 RVP 82/103 evidence is composed with exact M-4 for Yalta↔Moscow.
 
-Exact M-4 control targets already observed through the user endpoint:
+Final exact controls:
 - Ейск ↔ Москва: 5240 / 7240 ₽;
 - Майкоп ↔ Москва: 6090 / 8400 ₽;
 - Краснодар ↔ Москва: 6090 / 8400 ₽;
-- Сочи ↔ Москва: 6090 / 8400 ₽.
+- Сочи ↔ Москва: 6090 / 8400 ₽;
+- Ялта ↔ Москва: 5625 / 7625 ₽, with RVP 82 + RVP 103 and without RVP 23.
 
-#### A-289 finding pulled forward into Segment 1
-Yalta↔Moscow exposed a mixed-road issue. Old production returned `5840 ₽` from the verified-route database (`Яндекс Карты — через Краснодар`) rather than fresh road-event evidence.
-
-OSM inventory and route audit established A-289 free-flow gantries:
-- RVP 23: route Yalta↔Moscow does NOT cross it (about 13.5 km away);
-- RVP 82: route crosses it within roughly 0–12 m;
-- RVP 103: route crosses it within roughly 0–12 m.
-
-Official current category-I tariff matrix gives:
-- Славянск-на-Кубани → Варениковская: 205 ₽;
-- Варениковская → Темрюк: 180 ₽;
-- therefore actual A-289 component on this route = 385 ₽.
-
-Added `lib/toll-engine/a289-engine.ts` using exact OSM free-flow gantry anchors. For M-4+A-289 composition the evidence-based targets are now:
-- Ялта ↔ Москва weekday: 5240 + 385 = 5625 ₽;
-- Ялта ↔ Москва weekend M-4 period: 7240 + 385 = 7625 ₽.
-
-This does NOT yet promote A-289 as a standalone universal production engine; in Segment 1 it is composed only when M-4 itself is exact.
-
-#### Mixed M-4 + M-11 protection
-Found that legacy complete-route label `М-4 + М-11: ...` could be mistaken for pure M-4 by a prefix check. Fixed the classifier: only labels beginning exactly `М-4:` or `А-289:` are considered covered components. Composite M-4+M-11 routes remain on the legacy combined fallback until an exact M-11 engine exists. Differential guards now include Sochi↔Saint-Petersburg.
-
-#### Remaining known defects not hidden by Segment 1
-- Moscow→Kazan currently produces about 1238 ₽ because the legacy M-12 recognizer sees only several sections; official 2026 category-I Moscow→Kazan target is 5847 ₽.
-- verified-route toll values can be stale/manual and currently have a minimum tolerance wide enough to override live geometry; they need demotion from pricing truth to QA/fallback evidence.
-- free-route truth model can still expose `unknown` candidates too optimistically; fixed later in Segment 3.
-
-Segment 1 regression gate before DONE:
-- branch build green;
-- 8 pure M-4 user-API exact directions green;
-- 2 Yalta↔Moscow M-4+A-289 exact directions green at 5625/7625;
-- M-4+M-11 mixed routes are not reduced to M-4-only totals;
-- non-M-4 distance controls do not regress.
+Protected controls:
+- Москва → Санкт-Петербург: 710.3 km, 4580 ₽ retained;
+- Сочи ↔ Санкт-Петербург: about 2338–2339 km, 9620 ₽ retained, M-4+M-11 composite not replaced;
+- Москва → Казань: 820.2 km distance retained; toll underpricing remains a later-segment defect.
 
 ### Segment 2 — unify diagnostic and production M-4 calculation core
-Status: NOT STARTED
+Status: STARTING
 Goal: remove duplicate M-4 validation/pricing orchestration so debug endpoint and user endpoint exercise the same reusable core.
-Regression gate: same M-4 evidence/pricing outputs for known controls; Segment 1 user regression remains green.
+Scope: pure refactor only; no tariff mathematics, route selection, M-4 evidence thresholds, A-289 composition or fallback behavior may change.
+Regression gate: build green; diagnostic outputs unchanged for known controls; Segment 1 user regression remains green within the 20-minute cap.
 
 ### Segment 3 — make free-route truth model strict
 Status: NOT STARTED
 Goal: distinguish `confirmed_free`, `candidate_unverified`, `toll_detected`, `unavailable`.
+Research finding to test first: Valhalla supports hard `exclude_tolls`, but the concrete public instance must be probed because hard exclusions can be disabled server-side.
 Rules:
 - route-provider “avoid tolls” preference is not proof of free route;
 - `unknown` cannot be displayed as confirmed free;
@@ -127,20 +107,24 @@ Regression gate: known M-4/M-11/M-12 cases plus deliberately ambiguous/provider-
 
 ### Segment 4 — reduce dependence on public Valhalla availability
 Status: NOT STARTED
-Goal: avoid expensive full-route map matching in normal long-haul requests.
-Approach:
-- road-specific targeted validators for known paid systems;
+Goal: avoid expensive full-route or unnecessary repeated map matching in normal long-haul requests.
+Research candidates:
+- because the route geometry itself comes from Valhalla, test `edge_walk`/equivalent exact-walk matching instead of `walk_or_snap` where valid;
+- test a very tight route-shape crossing against known PVP nodes as a first-level deterministic check;
+- remote map matching only for ambiguous cases;
 - cache deterministic local evidence where safe;
 - generic full-route validation retained as fallback/QA, not universal hot-path dependency.
+Current M-4 validator has a 24-second global external-validation budget, so latency improvement is material.
 
 ### Segment 5 — M-12 / free-flow toll engine
 Status: RESEARCH STARTED, IMPLEMENTATION NOT STARTED
-Goal: replace current geometry corridor heuristic with a free-flow entry/exit model using official tariffs.
-Confirmed official 2026 control: Moscow→Kazan (P239), category I = `5847 ₽`.
-Confirmed system model: M-12 is barrier-free “Свободный поток”; official tariff is an entry/exit matrix, so the engine should identify ordered entry/exit context rather than merely sum approximate road pieces.
+Goal: replace current geometry corridor heuristic with a free-flow ordered-traversal model using official tariffs.
+Confirmed official 2026 control: Moscow→Kazan, category I = `5847 ₽`.
+Confirmed system model: M-12 is barrier-free “Свободный поток”; exact calculation must use ordered gantry/entry-exit context, not approximate nearby sections.
+Existing inventory workflow found 138 broad-corridor toll objects; this dataset is intentionally noisy and must be filtered by actual route traversal before use.
 Rules:
 - model free-flow gantries/entry-exit context separately from M-4 toll booths;
-- infer traversal from ordered route evidence;
+- infer traversal from ordered route evidence and guard re-entry/exit cases;
 - exact amount requires complete entry/exit context;
 - never hard-code one OD pair as the calculation algorithm.
 
@@ -175,9 +159,11 @@ Goal: test, not trust, HERE/TollGuru or another provider against official Russia
 - compare route geometry compatibility, toll coverage, amount and failure modes;
 - external provider may become an independent validator/fallback, not the sole source of truth, unless evidence proves otherwise.
 
-### Segment 10 — final regression and production readiness
+### Segment 10 — UX truthfulness and final regression / production readiness
 Status: NOT STARTED
 Required before claiming optimization complete:
+- remove/update obsolete Yandex-API copy that claims monetary toll calculation would become maximally accurate;
+- UI must distinguish confirmed free, unverified avoid-toll candidate, toll detected but unpriced, and priced toll;
 - build/lint clean;
 - user `/api/v2/calculate` regression suite green;
 - targeted road-engine suites green;
@@ -187,4 +173,4 @@ Required before claiming optimization complete:
 
 ## Current next action
 
-Finish Segment 1 regression on the latest branch SHA. If green, create a dedicated Segment 1 checkpoint and begin Segment 2 shared-core refactor. If red, fix only the failing invariant and rerun before moving on.
+Execute Segment 2 as a small pure-refactor segment: persist its plan, create one shared M-4 calculation core used by diagnostic and production wrappers, then rerun targeted build/regression. If the run cannot finish within 20 minutes, split diagnostic and user regression gates before retrying.
