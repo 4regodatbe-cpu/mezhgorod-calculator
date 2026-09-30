@@ -103,30 +103,74 @@ Dedicated API controls:
 - Москва → Краснодар: `free=null`, `freeCandidate=1450.0 km`, validation `unknown`;
 - Москва → Сочи: `free=null`, `freeCandidate=1740.0 km`, validation `unknown`.
 
-### Segment 4 — reduce dependence on public Valhalla availability
-Status: PROBE STARTING
-Goal: avoid unnecessary repeated remote map matching in normal long-haul requests without reducing evidence quality.
+### Segment 4 — reduce dependence on public Valhalla / M-4 latency
+Status: IN PROGRESS — 4A DONE, 4B REJECTED+ROLLED BACK, 4C RUNNING.
 
-Current M-4 validator facts:
-- the fast route geometry itself is already a road-snapped Valhalla polyline;
-- known M-4 PVP candidates are first found geometrically within 1.5 km;
-- each candidate is then re-validated by local `trace_attributes` windows;
-- external-validation budget is currently 24 seconds, so latency and public-service availability are material.
+Current safe M-4 validator:
+- `shape_match=walk_or_snap`;
+- PVP candidate radius 1.5 km;
+- local window ±4 km, sampled to at most 120 points;
+- exact proof requires the expected concrete OSM `toll_booth` node;
+- request timeout 4.5 s with one retry;
+- global validation budget 24 s;
+- safe concurrency baseline = 3.
 
-Segment 4A probe:
-- collect all M-4 candidate checks for the exact regression corpus;
-- compare `nearestDistanceKm`, route order and current confirmed/rejected status;
-- determine whether a very tight geometric crossing threshold cleanly separates any confirmed PVP set from rejected branch/parallel-road candidates;
-- measure current validator elapsed time;
-- make no production threshold change during the probe.
+#### Segment 4A — geometry/evidence benchmark
+Status: DONE
+Checkpoint: `checkpoints/SEGMENT_4A_GEOMETRY_PROBE.md`
+Baseline workflow run: `36700119800`.
+Rollback confirmation run after 4B: `36717998885`.
 
-Only if 4A demonstrates safe separation:
-- use deterministic route-shape evidence for unambiguous crossings;
-- retain remote `trace_attributes` only for ambiguous candidates;
-- keep incomplete/ambiguous results non-exact;
-- rerun the full Segment 1 exact-control corpus and Segment 3 truth gate.
+Corpus result:
+- 10/10 M-4 control directions complete;
+- 192 labelled candidate checks;
+- 162 confirmed / 30 rejected / 0 unknown.
 
-Generic full-route validation remains fallback/QA, not a desired universal hot-path dependency.
+Observed latency:
+- first recorded baseline average validator time: 18,371 ms, max 19,741 ms;
+- rollback confirmation average: 16,363 ms, max 17,852 ms;
+- therefore public-service latency varies, but the second remote local-matching layer is materially expensive.
+
+Geometry-only decision:
+- confirmed PVP anchors were 4–53 m from the route shape;
+- rejected candidates were 3–345 m from the route shape;
+- no useful geometric distance threshold achieved zero false positives;
+- examples: PVP 62 can be rejected at 3 m, PVP 355 rejected at 13 m, while valid PVP 545 can be 47–53 m away.
+
+Decision: geometry proximity remains candidate evidence only and must not prove a toll crossing.
+
+#### Segment 4B — `edge_walk` on sampled local windows
+Status: REJECTED AND ROLLED BACK
+Checkpoint: `checkpoints/SEGMENT_4B_EDGE_WALK_RESULT.md`
+Experimental commit: `51e4050b62d7cfb5599b55269cc2997e87a95276`
+Experiment workflow run: `36701053276`.
+Rollback commit: `b876322bf54465ac4f6f874ce55a08f0347aab04`.
+
+Result:
+- all 10 routes became incomplete;
+- PVP 515 and, in several directions, PVP 545 became `unknown`;
+- no safe material latency gain was demonstrated;
+- the one-line experiment was immediately reverted;
+- rollback probe restored 10/10 complete and 0 unknown.
+
+Interpretation:
+- Valhalla documents `edge_walk` for exact shapes originating from a prior Valhalla route;
+- current local windows are sampled, so this test does not justify using `edge_walk` on the current representation;
+- a future exact-unsampled-shape experiment may be tested separately, with provenance-aware fallback to `walk_or_snap`.
+
+#### Segment 4C — concurrency tuning with unchanged evidence semantics
+Status: RUNNING
+Plan: `checkpoints/SEGMENT_4C_CONCURRENCY_PLAN.md`
+Probe workflow: `.github/workflows/segment4c-concurrency-probe.yml`
+Probe commit: `0bd1175ab0d8c778034e772e8af216403ac55d42`.
+
+Method:
+- branch source remains at safe `CONCURRENCY=3`;
+- workflow changes only its ephemeral runner copy to `CONCURRENCY=4`;
+- same 10-direction M-4 corpus is run;
+- acceptance requires 10 complete routes, exactly 192 labelled checks, 162 confirmed, 30 rejected, 0 unknown, and average validator time <=15,000 ms;
+- if accepted, source change will still require a full Segment 1 user API regression before being checkpointed;
+- if rejected, branch source remains unchanged and the next experiment is exact-unsampled Valhalla shape or another request-reduction strategy.
 
 ### Segment 5 — M-12 / free-flow toll engine
 Status: RESEARCH STARTED, IMPLEMENTATION NOT STARTED
@@ -187,4 +231,4 @@ Required before claiming optimization complete:
 
 ## Current next action
 
-Execute Segment 4A as a read/measure-only performance-and-evidence probe. Persist candidate-distance/status/timing results for the M-4 control corpus. Do not change M-4 confirmation thresholds until the probe demonstrates which cases, if any, can be resolved deterministically from route geometry without a second remote map-matching request.
+Finish Segment 4C concurrency=4 probe. If and only if it preserves the exact 192-candidate classification with 0 unknown and improves average validation to <=15 s, promote concurrency=4 on the working branch and rerun full user regression. Otherwise document rejection and move to an isolated exact-unsampled-shape experiment while retaining safe `walk_or_snap` + concurrency=3 in branch code.
