@@ -1,8 +1,7 @@
 import type { Coordinate } from "@/lib/tolls";
 import type { TollValidation } from "@/lib/toll-validator";
 import { priceA289Route } from "@/lib/toll-engine/a289-engine";
-import { priceM4RoutePlazaValidation } from "@/lib/toll-engine/m4-local-pricing";
-import { validateKnownM4Plazas, type M4RoutePlazaValidation } from "@/lib/toll-engine/m4-route-validator";
+import { calculateM4Core } from "@/lib/toll-engine/m4-core";
 
 export type ProductionM4Tolls = {
   amount: number;
@@ -20,30 +19,6 @@ export type ProductionM4Result = {
   validation: TollValidation | null;
   reason: string;
 };
-
-function asTollValidation(validation: M4RoutePlazaValidation): TollValidation {
-  const hasConfirmedToll = validation.confirmedCount > 0;
-  return {
-    status: hasConfirmedToll ? "toll" : "unknown",
-    source: "Valhalla map matching",
-    tollEdgeCount: validation.confirmedCount,
-    checkedEdgeCount: validation.checkedCandidateCount,
-    wayIds: [],
-    roadNames: hasConfirmedToll ? ["М-4 Дон"] : [],
-    tollBoothCount: validation.events.length,
-    tollBooths: validation.events,
-    chunkCount: validation.candidateCount,
-    checkedChunkCount: validation.checkedCandidateCount,
-    failedChunkCount: validation.unknownCount,
-    complete: validation.complete,
-    boothEventCoverage: validation.complete
-      ? "complete"
-      : validation.checkedCandidateCount > 0
-        ? "partial"
-        : "none",
-    message: `M-4 local PVP validator: ${validation.message}`,
-  };
-}
 
 function isSupportedLegacyComponent(name: string) {
   // Deliberately require the colon immediately after the road id. Composite
@@ -70,7 +45,9 @@ export async function calculateProductionM4(
     };
   }
 
-  const validation = await validateKnownM4Plazas(route);
+  const core = await calculateM4Core(route, departureAt);
+  const { validation, pricing, tollValidation: responseValidation, exact } = core;
+
   if (validation.candidateCount === 0) {
     return {
       candidate: false,
@@ -80,14 +57,6 @@ export async function calculateProductionM4(
       reason: "Маршрут не пересекает зоны известных ПВП М-4",
     };
   }
-
-  const responseValidation = asTollValidation(validation);
-  const pricing = priceM4RoutePlazaValidation(validation, departureAt);
-  const exact = validation.complete
-    && pricing.status === "priced"
-    && pricing.amount !== null
-    && pricing.unresolved.length === 0
-    && (pricing.confidence === "medium" || pricing.confidence === "high");
 
   if (!exact || pricing.amount === null) {
     return {
