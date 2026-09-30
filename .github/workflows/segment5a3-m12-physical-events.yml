@@ -1,0 +1,41 @@
+name: Segment 5A3 M12 physical events
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - data/fixtures/m12-osm-5a2-limited.json
+      - scripts/segment5a2c-m12-parity-fixture.mjs
+      - scripts/segment5a3-m12-physical-events.mjs
+      - .github/workflows/segment5a3-m12-physical-events.yml
+      - checkpoints/M12_SEGMENT_5A3_PLAN.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prove:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prove mirrored M12 physical events
+        run: node scripts/segment5a3-m12-physical-events.mjs
+
+      - name: Upload proof JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5a3-m12-physical-events
+          path: segment5a3-m12-physical-events.json
+          if-no-files-found: warn
+          retention-days: 7
