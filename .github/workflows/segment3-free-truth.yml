@@ -7,6 +7,8 @@ on:
     paths:
       - "app/api/v2/calculate/**"
       - "app/v2/**"
+      - "lib/toll-engine/**"
+      - "lib/toll-validator.ts"
       - "scripts/segment3-free-truth.mjs"
       - ".github/workflows/segment3-free-truth.yml"
   workflow_dispatch:
