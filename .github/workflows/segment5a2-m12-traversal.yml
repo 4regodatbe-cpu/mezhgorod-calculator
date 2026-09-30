@@ -1,0 +1,38 @@
+name: Segment 5A2 M12 traversal diagnostic
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment5a2-m12-traversal.mjs
+      - .github/workflows/segment5a2-m12-traversal.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build route-relative M12 traversal evidence
+        run: node scripts/segment5a2-m12-traversal.mjs
+
+      - name: Upload traversal JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5a2-m12-traversal
+          path: segment5a2-m12-traversal.json
+          if-no-files-found: warn
+          retention-days: 14
