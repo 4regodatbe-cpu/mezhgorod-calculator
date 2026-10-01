@@ -1,5 +1,5 @@
-import type { M11BoundaryResolution } from "./m11-boundary-resolver.ts";
-import { priceM11CurrentPartialCategory1, type M11CurrentTariffLookupResult } from "./m11-current-tariffs.ts";
+import type { M11BoundaryResolution } from "./m11-boundary-resolver";
+import { priceM11CurrentPartialCategory1, type M11CurrentTariffLookupResult } from "./m11-current-tariffs";
 
 export type M11CurrentSelectionResult = M11CurrentTariffLookupResult | {
   status: "unknown";
