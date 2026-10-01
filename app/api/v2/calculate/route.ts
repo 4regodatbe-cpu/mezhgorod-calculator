@@ -363,11 +363,15 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
     goldenRouteReference(from.label, to.label, "fast"),
   );
 
-  const routeGeometry = fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
+  const routeGeometry = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
     ? fastResult.value.coordinates
-    : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
+    : selectedFast.provider === "OSRM" && osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
       ? osrmResult.value.coordinates
-      : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
+      : fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
+        ? fastResult.value.coordinates
+        : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
+          ? osrmResult.value.coordinates
+          : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
   const selectedFreePromise = selectFreeRoute(valhallaFreeResult, brouterResult, goldenRouteReference(from.label, to.label, "free"));
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
@@ -379,7 +383,7 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFast.route, confirmedFree.route) : false;
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
-  const productionM12 = fastResult.status === "fulfilled"
+  const productionM12 = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled"
     ? calculateProductionM12(
         fastResult.value.coordinates,
         fastResult.value.m12StrictSpan,
