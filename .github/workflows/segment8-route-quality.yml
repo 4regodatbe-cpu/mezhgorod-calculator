@@ -27,7 +27,7 @@ jobs:
       - name: Pure route-quality corpus
         run: node --experimental-strip-types scripts/segment8-route-quality-test.ts
       - name: Golden route corpus integrity
-        run: node scripts/segment8-golden-corpus-test.ts
+        run: node --experimental-strip-types scripts/segment8-golden-corpus-test.ts
       - name: No hidden stored-route substitution
         run: |
           ! grep -q 'KNOWN_FAST_ROUTES\|KNOWN_FREE_ROUTES\|return.*route: known' app/api/v2/calculate/route.ts
