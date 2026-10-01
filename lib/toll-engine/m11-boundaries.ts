@@ -2,6 +2,7 @@ import type { Coordinate } from "@/lib/tolls";
 
 export type M11BoundarySpatialStatus =
   | "official_coordinate_backed"
+  | "independently_verified_infrastructure"
   | "legacy_only"
   | "route_provider_derived"
   | "unresolved";
@@ -12,6 +13,21 @@ export type M11BoundarySpatialEvidence = {
   source: string | null;
 };
 
+export type M11BoundaryFacility = {
+  systemId: string;
+  tariffPointId: string;
+  facilityId: string;
+  officialNumber: string | null;
+  officialLabel: string;
+  facilityKind: "mainline_pvp" | "interchange_pvp" | "virtual_boundary" | "other";
+  routeKm: number | null;
+  accessRoadKm: number | null;
+  directionText: string | null;
+  identitySource: string;
+  note: string | null;
+  spatial: M11BoundarySpatialEvidence;
+};
+
 export type M11TariffBoundaryPoint = {
   systemId: string;
   pointId: string;
@@ -19,7 +35,7 @@ export type M11TariffBoundaryPoint = {
   order: number;
   routeKm: number | null;
   pvpKm: number | null;
-  spatial: M11BoundarySpatialEvidence;
+  facilities: readonly M11BoundaryFacility[];
 };
 
 export type M11TariffBoundarySystem = {
@@ -55,13 +71,28 @@ type M11Section58679Snapshot = {
   points: M11Section58679Point[];
 };
 
-function unresolvedSpatialEvidence(): M11BoundarySpatialEvidence {
-  return {
-    status: "unresolved",
-    coordinate: null,
-    source: null,
+type M11FacilityEvidenceItem = {
+  facilityId: string;
+  tariffPointId: string;
+  officialNumber: string | null;
+  officialLabel: string;
+  facilityKind: M11BoundaryFacility["facilityKind"];
+  routeKm: number | null;
+  accessRoadKm: number | null;
+  directionText: string | null;
+  coordinate: Coordinate | null;
+  spatialStatus: M11BoundarySpatialStatus;
+  facilityOwnerOperatorNote?: string;
+  note?: string;
+};
+
+type M11FacilityEvidenceSnapshot = {
+  systemId: string;
+  source: {
+    url: string;
   };
-}
+  facilities: M11FacilityEvidenceItem[];
+};
 
 function assertUniquePointIds(systemId: string, points: readonly M11TariffBoundaryPoint[]) {
   const ids = new Set<string>();
@@ -81,15 +112,74 @@ function assertContiguousOrder(systemId: string, points: readonly M11TariffBound
   }
 }
 
-function buildSection1558(snapshot: M11Section1558Snapshot): M11TariffBoundarySystem {
-  const points = Object.entries(snapshot.points).map(([pointId, label], order) => ({
+function facilitiesForSystem(
+  systemId: string,
+  allowedPointIds: ReadonlySet<string>,
+  evidenceSnapshots: readonly M11FacilityEvidenceSnapshot[],
+) {
+  const result = new Map<string, M11BoundaryFacility[]>();
+  const facilityIds = new Set<string>();
+
+  for (const snapshot of evidenceSnapshots.filter((item) => item.systemId === systemId)) {
+    for (const facility of snapshot.facilities) {
+      if (!allowedPointIds.has(facility.tariffPointId)) {
+        throw new Error(`M11_FACILITY_UNKNOWN_TARIFF_POINT:${systemId}:${facility.facilityId}:${facility.tariffPointId}`);
+      }
+      if (facilityIds.has(facility.facilityId)) {
+        throw new Error(`M11_DUPLICATE_FACILITY:${systemId}:${facility.facilityId}`);
+      }
+      facilityIds.add(facility.facilityId);
+
+      if (facility.coordinate === null && facility.spatialStatus !== "unresolved") {
+        throw new Error(`M11_FACILITY_STATUS_WITHOUT_COORDINATE:${systemId}:${facility.facilityId}`);
+      }
+      if (facility.coordinate !== null && facility.spatialStatus === "unresolved") {
+        throw new Error(`M11_FACILITY_COORDINATE_WITHOUT_STATUS:${systemId}:${facility.facilityId}`);
+      }
+
+      const value: M11BoundaryFacility = {
+        systemId,
+        tariffPointId: facility.tariffPointId,
+        facilityId: facility.facilityId,
+        officialNumber: facility.officialNumber,
+        officialLabel: facility.officialLabel,
+        facilityKind: facility.facilityKind,
+        routeKm: facility.routeKm,
+        accessRoadKm: facility.accessRoadKm,
+        directionText: facility.directionText,
+        identitySource: snapshot.source.url,
+        note: facility.note ?? facility.facilityOwnerOperatorNote ?? null,
+        spatial: {
+          status: facility.spatialStatus,
+          coordinate: facility.coordinate,
+          source: facility.coordinate === null ? null : snapshot.source.url,
+        },
+      };
+
+      const existing = result.get(facility.tariffPointId) ?? [];
+      existing.push(value);
+      result.set(facility.tariffPointId, existing);
+    }
+  }
+
+  return result;
+}
+
+function buildSection1558(
+  snapshot: M11Section1558Snapshot,
+  evidenceSnapshots: readonly M11FacilityEvidenceSnapshot[],
+): M11TariffBoundarySystem {
+  const pointEntries = Object.entries(snapshot.points);
+  const pointIds = new Set(pointEntries.map(([pointId]) => pointId));
+  const facilityMap = facilitiesForSystem(snapshot.systemId, pointIds, evidenceSnapshots);
+  const points = pointEntries.map(([pointId, label], order) => ({
     systemId: snapshot.systemId,
     pointId,
     label,
     order,
     routeKm: null,
     pvpKm: null,
-    spatial: unresolvedSpatialEvidence(),
+    facilities: facilityMap.get(pointId) ?? [],
   } satisfies M11TariffBoundaryPoint));
 
   assertUniquePointIds(snapshot.systemId, points);
@@ -102,7 +192,12 @@ function buildSection1558(snapshot: M11Section1558Snapshot): M11TariffBoundarySy
   };
 }
 
-function buildSection58679(snapshot: M11Section58679Snapshot): M11TariffBoundarySystem {
+function buildSection58679(
+  snapshot: M11Section58679Snapshot,
+  evidenceSnapshots: readonly M11FacilityEvidenceSnapshot[],
+): M11TariffBoundarySystem {
+  const pointIds = new Set(snapshot.points.map((point) => point.id));
+  const facilityMap = facilitiesForSystem(snapshot.systemId, pointIds, evidenceSnapshots);
   const points = snapshot.points.map((point, order) => ({
     systemId: snapshot.systemId,
     pointId: point.id,
@@ -110,7 +205,7 @@ function buildSection58679(snapshot: M11Section58679Snapshot): M11TariffBoundary
     order,
     routeKm: point.routeKm,
     pvpKm: point.pvpKm,
-    spatial: unresolvedSpatialEvidence(),
+    facilities: facilityMap.get(point.id) ?? [],
   } satisfies M11TariffBoundaryPoint));
 
   assertUniquePointIds(snapshot.systemId, points);
@@ -126,6 +221,7 @@ function buildSection58679(snapshot: M11Section58679Snapshot): M11TariffBoundary
 export function buildM11BoundaryModel(
   section1558: M11Section1558Snapshot,
   section58679: M11Section58679Snapshot,
+  facilityEvidence: readonly M11FacilityEvidenceSnapshot[] = [],
 ): M11BoundaryModel {
   if (section1558.systemId !== "m11-15-58-ossp") {
     throw new Error(`M11_UNEXPECTED_SYSTEM:${section1558.systemId}`);
@@ -135,6 +231,9 @@ export function buildM11BoundaryModel(
   }
 
   return {
-    systems: [buildSection1558(section1558), buildSection58679(section58679)],
+    systems: [
+      buildSection1558(section1558, facilityEvidence),
+      buildSection58679(section58679, facilityEvidence),
+    ],
   };
 }
