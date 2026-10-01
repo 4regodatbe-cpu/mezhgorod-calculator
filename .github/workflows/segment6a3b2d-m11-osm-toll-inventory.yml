@@ -7,6 +7,7 @@ on:
     paths:
       - checkpoints/SEGMENT_6A3B2D_M11_OSM_OBJECT_INVENTORY_PLAN.md
       - scripts/segment6a3b2d-m11-osm-toll-inventory.mjs
+      - scripts/segment6a3b2d-m11-osm-parent-context.mjs
       - .github/workflows/segment6a3b2d-m11-osm-toll-inventory.yml
   workflow_dispatch:
 
@@ -29,19 +30,25 @@ jobs:
       - name: Query bounded M11 toll-object inventory
         run: node scripts/segment6a3b2d-m11-osm-toll-inventory.mjs
 
+      - name: Query parent-road context for control candidates
+        run: node scripts/segment6a3b2d-m11-osm-parent-context.mjs
+
       - name: Assert diagnostic-only scope
         run: |
           set -euo pipefail
           test -s m11-osm-toll-inventory.json
-          if grep -R "segment6a3b2d\|m11-osm-toll-inventory" app/api/v2/calculate lib/toll-engine/m11-current-tariffs.ts 2>/dev/null; then
-            echo "Diagnostic inventory must not be imported into production calculation"
+          test -s m11-osm-parent-context.json
+          if grep -R "segment6a3b2d\|m11-osm-toll-inventory\|m11-osm-parent-context" app/api/v2/calculate lib/toll-engine/m11-current-tariffs.ts 2>/dev/null; then
+            echo "Diagnostic OSM evidence must not be imported into production calculation"
             exit 1
           fi
 
-      - name: Upload OSM inventory
+      - name: Upload OSM diagnostic evidence
         uses: actions/upload-artifact@v4
         with:
           name: m11-osm-toll-object-inventory
-          path: m11-osm-toll-inventory.json
+          path: |
+            m11-osm-toll-inventory.json
+            m11-osm-parent-context.json
           if-no-files-found: error
           retention-days: 7
