@@ -18,6 +18,9 @@ assert.equal(historical.systemId, "m11-58-679-avtodor");
 assert.equal(current.systemId, historical.systemId);
 assert.equal(current.snapshotKind, "current_diagnostic_a1");
 assert.equal(current.observedCurrentAt, "2026-10-01");
+assert.equal(current.sourceDocumentOrder, "№ 274");
+assert.equal(current.sourceDocumentDate, "2026-09-03");
+assert.equal(current.tariffEffectiveFrom, null, "unverified effective-from timestamp must stay null");
 assert.equal(current.extraction.completeMatrix, false);
 assert.equal(current.extraction.usage, "diagnostic_controls_only_not_for_arbitrary_pair_pricing");
 
