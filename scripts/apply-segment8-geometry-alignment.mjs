@@ -1,0 +1,12 @@
+import fs from "node:fs";
+const path = "app/api/v2/calculate/route.ts";
+let s = fs.readFileSync(path, "utf8");
+const before = s;
+const oldGeometry = `  const routeGeometry = fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0\n    ? fastResult.value.coordinates\n    : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0\n      ? osrmResult.value.coordinates\n      : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];`;
+const newGeometry = `  const routeGeometry = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0\n    ? fastResult.value.coordinates\n    : selectedFast.provider === "OSRM" && osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0\n      ? osrmResult.value.coordinates\n      : fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0\n        ? fastResult.value.coordinates\n        : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0\n          ? osrmResult.value.coordinates\n          : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];`;
+s = s.replace(oldGeometry, newGeometry);
+s = s.replace('  const productionM12 = fastResult.status === "fulfilled"\n    ? calculateProductionM12(', '  const productionM12 = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled"\n    ? calculateProductionM12(');
+if (s === before) throw new Error("Geometry alignment migration made no changes");
+if (!s.includes('selectedFast.provider === "OSRM"')) throw new Error("Selected provider geometry not aligned");
+fs.writeFileSync(path, s);
+console.log("Segment 8 geometry alignment applied");
