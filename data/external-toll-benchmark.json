@@ -1,0 +1,37 @@
+[
+{"id":"m4-01","road":"M4","from":"Moscow","to":"Voronezh","expectedTollRub":1830,"controlSource":"verified-routes:2026-09-28","expectToll":true},
+{"id":"m4-02","road":"M4","from":"Moscow","to":"Rostov-on-Don","expectedTollRub":3810,"controlSource":"verified-routes:2026-09-28","expectToll":true},
+{"id":"m4-03","road":"M4","from":"Moscow","to":"Krasnodar","expectedTollRub":5040,"controlSource":"verified-routes:2026-09-28","expectToll":true},
+{"id":"m4-04","road":"M4","from":"Moscow","to":"Anapa","expectedTollRub":5700,"controlSource":"verified-routes:2026-09-28","expectToll":true},
+{"id":"m4-05","road":"M4","from":"Moscow","to":"Novorossiysk","expectedTollRub":5865,"controlSource":"verified-routes:2026-09-28","expectToll":true},
+{"id":"m4-06","road":"M4","from":"Moscow","to":"Gelendzhik","expectedTollRub":4670,"controlSource":"verified-routes:2026-09-28","expectToll":true},
+{"id":"m4-07","road":"M4","from":"Rostov-on-Don","to":"Krasnodar","expectedTollRub":850,"controlSource":"verified-routes:2026-09-28","expectToll":true},
+{"id":"m4-08","road":"M4","from":"Rostov-on-Don","to":"Sochi","expectedTollRub":850,"controlSource":"verified-routes:2026-09-29","expectToll":true},
+{"id":"m4-09","road":"M4","from":"Rostov-on-Don","to":"Anapa","expectedTollRub":1880,"controlSource":"verified-routes:2026-09-29","expectToll":true},
+{"id":"m4-10","road":"M4","from":"Krasnodar","to":"Sochi","expectedTollRub":0,"controlSource":"verified-routes:2026-09-28","expectToll":false},
+
+{"id":"m11-01","road":"M11","from":"Moscow","to":"Saint Petersburg","expectedTollRub":4760,"controlSource":"verified-routes:2026-09-28","expectToll":true},
+{"id":"m11-02","road":"M11","from":"Moscow","to":"Tver","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m11-03","road":"M11","from":"Tver","to":"Veliky Novgorod","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m11-04","road":"M11","from":"Veliky Novgorod","to":"Saint Petersburg","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m11-05","road":"M11","from":"Moscow","to":"Zelenograd","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m11-06","road":"M11","from":"Klin","to":"Tver","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m11-07","road":"M11","from":"Tver","to":"Torzhok","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m11-08","road":"M11","from":"Chudovo","to":"Saint Petersburg","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+
+{"id":"m12-01","road":"M12","from":"Moscow","to":"Kazan","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m12-02","road":"M12","from":"Moscow","to":"Vladimir","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m12-03","road":"M12","from":"Moscow","to":"Murom","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m12-04","road":"M12","from":"Moscow","to":"Arzamas","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m12-05","road":"M12","from":"Vladimir","to":"Kazan","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m12-06","road":"M12","from":"Murom","to":"Kazan","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m12-07","road":"M12","from":"Arzamas","to":"Kazan","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"m12-08","road":"M12","from":"Nizhny Novgorod","to":"Kazan","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+
+{"id":"ckad-01","road":"CKAD","from":"M10 north interchange","to":"M4 south interchange","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"ckad-02","road":"CKAD","from":"M4 interchange","to":"M2 interchange","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"ckad-03","road":"CKAD","from":"M2 interchange","to":"M3 interchange","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"ckad-04","road":"CKAD","from":"M3 interchange","to":"M1 interchange","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"ckad-05","road":"CKAD","from":"M1 interchange","to":"M10 north interchange","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true},
+{"id":"ckad-06","road":"CKAD","from":"M11 interchange","to":"M4 interchange","expectedTollRub":null,"controlSource":"official-amount-pending","expectToll":true}
+]
