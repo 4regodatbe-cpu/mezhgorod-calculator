@@ -47,5 +47,13 @@ fs.mkdirSync("artifacts", { recursive: true });
 fs.writeFileSync("artifacts/live-user-route-audit.json", JSON.stringify(output, null, 2));
 console.log(JSON.stringify(output, null, 2));
 
-const grossUnderprices = output.filter((row) => ["krasnodar-spb", "golubitskaya-spb", "vityazevo-spb"].includes(row.id) && row.pricingStatus === "priced" && Number(row.tollAmount) < 8000);
+const longSpbIds = new Set(["krasnodar-spb", "golubitskaya-spb", "vityazevo-spb"]);
+const longSpb = output.filter((row) => longSpbIds.has(row.id));
+const grossUnderprices = longSpb.filter((row) => row.pricingStatus === "priced" && Number(row.tollAmount) < 8000);
 if (grossUnderprices.length) throw new Error(`Gross partial toll total still exposed: ${grossUnderprices.map((row) => `${row.id}=${row.tollAmount}`).join(", ")}`);
+
+const pricedWithoutM11 = longSpb.filter((row) => row.pricingStatus === "priced" && !(row.tollSegments ?? []).some((segment) => String(segment).includes("М-11")));
+if (pricedWithoutM11.length) throw new Error(`Long SPB total exposed without M11 component: ${pricedWithoutM11.map((row) => row.id).join(", ")}`);
+
+const falseCkad = longSpb.filter((row) => (row.tollSegments ?? []).some((segment) => String(segment).includes("ЦКАД")));
+if (falseCkad.length) throw new Error(`False CKAD component detected on M4→Moscow→M11 control routes: ${falseCkad.map((row) => row.id).join(", ")}`);
