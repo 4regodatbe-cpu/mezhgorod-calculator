@@ -498,11 +498,19 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
     fastValidation = compositionValidation(composition.priced, `Полный итог составлен из дорожных систем: ${composition.priced.join(", ")}`);
   } else if (composition.status === "unknown") {
     routeCompositionBlocked = true;
+    const missingReasons = components
+      .filter((component) => composition.missing.includes(component.id))
+      .map((component) => `${component.id}: ${component.reason ?? "причина не указана"}`);
     pricedTolls = zeroUnknownTolls(
       geometricTolls,
-      [`Обнаружены, но не полностью оценены платные системы: ${composition.missing.join(", ")}`],
+      [
+        `Обнаружены, но не полностью оценены платные системы: ${composition.missing.join(", ")}`,
+        ...missingReasons,
+      ],
     );
-    fastValidation = unknownValidation(`Нельзя показывать частичную сумму как итог маршрута. Не оценены: ${composition.missing.join(", ")}`);
+    fastValidation = unknownValidation(
+      `Нельзя показывать частичную сумму как итог маршрута. Не оценены: ${missingReasons.join("; ")}`,
+    );
   } else {
     pricedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
     fastValidation = diagnosticFastValidation
