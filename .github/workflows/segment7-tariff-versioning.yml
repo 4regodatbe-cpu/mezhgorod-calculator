@@ -1,27 +1,29 @@
 name: Segment 7 tariff versioning and freshness
-
 on:
   push:
     branches: [optimize-calculator-2]
     paths:
-      - 'lib/toll-engine/tariff-versioning.ts'
-      - 'lib/toll-engine/tariff-registry.ts'
-      - 'scripts/segment7-versioning-fixture.mjs'
-      - 'scripts/check-tariff-freshness.mjs'
-      - '.github/workflows/segment7-tariff-versioning.yml'
+      - lib/toll-engine/tariff-versioning.ts
+      - lib/toll-engine/tariff-registry.ts
+      - scripts/segment7-versioning-fixture.mjs
+      - scripts/check-tariff-freshness.mjs
+      - .github/workflows/segment7-tariff-versioning.yml
   workflow_dispatch:
   schedule:
     - cron: '17 5 * * 1'
-
+permissions:
+  contents: read
 jobs:
   tariff-versioning:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 11.25.0 }
       - uses: actions/setup-node@v4
-        with:
-          node-version: 22
+        with: { node-version: '22.13.0', cache: pnpm }
+      - run: pnpm install --frozen-lockfile
       - name: Deterministic version-selection fixtures
         run: node scripts/segment7-versioning-fixture.mjs
       - name: Current freshness report
@@ -29,6 +31,4 @@ jobs:
           TARIFF_AS_OF: '2026-10-01'
         run: node scripts/check-tariff-freshness.mjs
       - name: TypeScript build gate
-        run: |
-          npm ci
-          npm run build
+        run: pnpm build
