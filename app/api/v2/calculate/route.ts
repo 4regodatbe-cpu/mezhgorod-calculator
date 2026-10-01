@@ -4,7 +4,7 @@ import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { safeRoutePositions } from "@/lib/safe-route";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { findVerifiedRoute, goldenRouteReference, tollPeriodsForRoute } from "@/lib/verified-routes";
-import { MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, selectLiveRoute, type GoldenRouteReference, type RouteQuality } from "@/lib/route-quality";
+import { MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, selectLiveRoute, selectLiveRouteCandidates, type GoldenRouteReference, type RouteQuality } from "@/lib/route-quality";
 import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
 import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { deriveM11EvidenceFromValhalla, type M11RoadEvidence, type M11ValhallaManeuver } from "@/lib/toll-engine/m11-road-evidence";
@@ -289,17 +289,17 @@ async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Promise<Ro
   };
 }
 
-async function brouterFree(from: Located, to: Located): Promise<RouteWithGeometry> {
+async function brouterRoute(from: Located, to: Located, avoidTolls: boolean): Promise<RouteWithGeometry> {
   const url = new URL("https://brouter.de/brouter");
   url.searchParams.set("lonlats", safeRoutePositions(from, to).map((point) => `${point.lng},${point.lat}`).join("|"));
   url.searchParams.set("profile", "car-vario");
-  url.searchParams.set("profile:avoid_toll", "1");
+  if (avoidTolls) url.searchParams.set("profile:avoid_toll", "1");
   url.searchParams.set("alternativeidx", "0");
   url.searchParams.set("format", "geojson");
   const response = await fetch(url, {
     headers: { Accept: "application/geo+json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
-    next: { revalidate: 86_400 },
+    next: { revalidate: 21_600 },
     signal: AbortSignal.timeout(25_000),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
@@ -315,6 +315,14 @@ async function brouterFree(from: Located, to: Located): Promise<RouteWithGeometr
   const seconds = Number(properties?.["total-time"]);
   if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new Error("ROUTE_NOT_FOUND");
   return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates: feature?.geometry?.coordinates ?? [] };
+}
+
+function brouterFree(from: Located, to: Located) {
+  return brouterRoute(from, to, true);
+}
+
+function brouterFast(from: Located, to: Located) {
+  return brouterRoute(from, to, false);
 }
 
 async function osrmRoute(from: Located, to: Located): Promise<RouteWithGeometry> {
@@ -398,28 +406,33 @@ function familySegments(segments: string[], family: RouteTollComponentId) {
 }
 
 async function leg(from: Located, to: Located, departureAt?: string, diagnostics = false) {
-  const [fastResult, valhallaFreeResult, brouterResult, osrmResult] = await Promise.allSettled([
+  const [fastResult, valhallaFreeResult, brouterResult, osrmResult, brouterFastResult] = await Promise.allSettled([
     valhalla(from, to, 1),
     valhalla(from, to, 0),
     brouterFree(from, to),
     osrmRoute(from, to),
+    brouterFast(from, to),
   ]);
 
-  const selectedFast = selectLiveRoute(
-    fastResult.status === "fulfilled" ? { name: "Valhalla", route: fastResult.value } : undefined,
-    osrmResult.status === "fulfilled" ? { name: "OSRM", route: osrmResult.value } : undefined,
-    goldenRouteReference(from.label, to.label, "fast"),
-  );
+  const selectedFast = selectLiveRouteCandidates([
+    ...(fastResult.status === "fulfilled" ? [{ name: "Valhalla", route: fastResult.value }] : []),
+    ...(osrmResult.status === "fulfilled" ? [{ name: "OSRM", route: osrmResult.value }] : []),
+    ...(brouterFastResult.status === "fulfilled" ? [{ name: "BRouter", route: brouterFastResult.value }] : []),
+  ], goldenRouteReference(from.label, to.label, "fast"));
 
   const routeGeometry = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
     ? fastResult.value.coordinates
     : selectedFast.provider === "OSRM" && osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
       ? osrmResult.value.coordinates
-      : fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
-        ? fastResult.value.coordinates
-        : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
-          ? osrmResult.value.coordinates
-          : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
+      : selectedFast.provider === "BRouter" && brouterFastResult.status === "fulfilled" && brouterFastResult.value.coordinates.length > 0
+        ? brouterFastResult.value.coordinates
+        : fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
+          ? fastResult.value.coordinates
+          : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
+            ? osrmResult.value.coordinates
+            : brouterFastResult.status === "fulfilled" && brouterFastResult.value.coordinates.length > 0
+              ? brouterFastResult.value.coordinates
+              : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
   const selectedFreePromise = selectFreeRoute(valhallaFreeResult, brouterResult, goldenRouteReference(from.label, to.label, "free"));
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
