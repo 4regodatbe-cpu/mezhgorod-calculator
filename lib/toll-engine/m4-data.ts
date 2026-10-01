@@ -57,8 +57,17 @@ export const M4_DATA: TollRoadDataset = {
       model: "mixed_entry_exit",
       plazaKms: [636, 672],
       fullSectionTariff: rub(640, 770),
+      partialGateTariffs: [
+        {
+          km: 672,
+          sectionFromKm: 633,
+          sectionToKm: 672,
+          tariff: rub(440, 500),
+          notes: "Official category-I no-transponder tariff for the partial 633-672 traversal through PVP 672.",
+        },
+      ],
       maxTransitMinutes: 120,
-      notes: "Mixed system. The official tariff table also contains a separate 672-km tariff row (440/500 RUB); a gate-to-gate matrix must be applied before production pricing.",
+      notes: "Official mixed system: full 633-741 traversal is charged once; PVP 672 has a separate partial-section tariff.",
     },
   ],
 };
