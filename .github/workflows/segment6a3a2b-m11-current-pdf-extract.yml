@@ -1,0 +1,65 @@
+name: Segment 6A3A2B M11 current PDF extract
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - checkpoints/SEGMENT_6A3A2B_M11_CURRENT_MATRIX_ACQUISITION_PLAN.md
+      - .github/workflows/segment6a3a2b-m11-current-pdf-extract.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install PDF tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y poppler-utils
+
+      - name: Download official current M11 tariff PDF
+        run: |
+          set -euo pipefail
+          url='https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf'
+          curl --fail --location --silent --show-error --connect-timeout 15 --max-time 60 \
+            --retry 1 --retry-delay 2 \
+            -A 'Mozilla/5.0 (compatible; MezhgorodCalc/2.0; +https://github.com/4regodatbe-cpu/mezhgorod-calculator)' \
+            "$url" -o /tmp/m11-current.pdf
+          test -s /tmp/m11-current.pdf
+          file /tmp/m11-current.pdf
+          sha256sum /tmp/m11-current.pdf | tee /tmp/m11-current.sha256
+          stat -c '%s bytes' /tmp/m11-current.pdf | tee /tmp/m11-current.size.txt
+
+      - name: Extract layout text
+        run: |
+          set -euo pipefail
+          pdftotext -layout -enc UTF-8 /tmp/m11-current.pdf /tmp/m11-current.txt
+          test -s /tmp/m11-current.txt
+          wc -l /tmp/m11-current.txt
+          printf '\n=== 593 matches ===\n'
+          grep -n -C 2 '593' /tmp/m11-current.txt | head -120 || true
+          printf '\n=== 679 matches ===\n'
+          grep -n -C 2 '679' /tmp/m11-current.txt | head -120 || true
+          printf '\n=== order / category / profiles ===\n'
+          grep -n -E -C 2 '274|03.*сентябр|I категория|понедельник|пятниц|воскрес' /tmp/m11-current.txt | head -240 || true
+          grep -q '593' /tmp/m11-current.txt
+          grep -q '679' /tmp/m11-current.txt
+
+      - name: Upload extracted tariff text
+        uses: actions/upload-artifact@v4
+        with:
+          name: m11-current-tariff-pdf-text
+          path: |
+            /tmp/m11-current.txt
+            /tmp/m11-current.sha256
+            /tmp/m11-current.size.txt
+          if-no-files-found: error
+          retention-days: 7
