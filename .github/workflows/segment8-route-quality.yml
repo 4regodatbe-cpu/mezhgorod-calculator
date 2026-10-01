@@ -1,0 +1,31 @@
+name: Segment 8 route distance quality
+on:
+  push:
+    branches: [optimize-calculator-2]
+    paths:
+      - lib/route-quality.ts
+      - lib/verified-routes.ts
+      - data/verified-routes.json
+      - scripts/segment8-route-quality-test.ts
+      - scripts/segment8-golden-corpus-test.ts
+      - .github/workflows/segment8-route-quality.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  route-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 11.25.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22.13.0' }
+      - run: pnpm install --frozen-lockfile
+      - name: Pure route-quality corpus
+        run: node --experimental-strip-types scripts/segment8-route-quality-test.ts
+      - name: Golden route corpus integrity
+        run: node scripts/segment8-golden-corpus-test.ts
+      - name: Production build
+        run: pnpm build
