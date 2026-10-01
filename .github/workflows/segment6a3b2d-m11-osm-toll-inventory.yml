@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 jobs:
-  inventory:
+  context:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -27,28 +27,22 @@ jobs:
         with:
           node-version: '22.13.0'
 
-      - name: Query bounded M11 toll-object inventory
-        run: node scripts/segment6a3b2d-m11-osm-toll-inventory.mjs
-
-      - name: Query parent-road context for control candidates
+      - name: Query narrow parent-road context for accepted inventory candidates
         run: node scripts/segment6a3b2d-m11-osm-parent-context.mjs
 
       - name: Assert diagnostic-only scope
         run: |
           set -euo pipefail
-          test -s m11-osm-toll-inventory.json
           test -s m11-osm-parent-context.json
-          if grep -R "segment6a3b2d\|m11-osm-toll-inventory\|m11-osm-parent-context" app/api/v2/calculate lib/toll-engine/m11-current-tariffs.ts 2>/dev/null; then
-            echo "Diagnostic OSM evidence must not be imported into production calculation"
+          if grep -R "segment6a3b2d\|m11-osm-parent-context" app/api/v2/calculate lib/toll-engine/m11-current-tariffs.ts 2>/dev/null; then
+            echo "Diagnostic OSM context must not be imported into production calculation"
             exit 1
           fi
 
-      - name: Upload OSM diagnostic evidence
+      - name: Upload OSM context evidence
         uses: actions/upload-artifact@v4
         with:
-          name: m11-osm-toll-object-inventory
-          path: |
-            m11-osm-toll-inventory.json
-            m11-osm-parent-context.json
+          name: m11-osm-parent-context
+          path: m11-osm-parent-context.json
           if-no-files-found: error
           retention-days: 7
