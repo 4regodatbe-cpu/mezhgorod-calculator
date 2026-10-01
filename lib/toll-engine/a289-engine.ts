@@ -18,15 +18,18 @@ export type A289PricingResult = {
   confidence: "matched" | "none";
 };
 
-// Official category-I tariffs without a transponder, effective 2026-03-02.
-// Source: Avtodor tariff table for A-289.
+// Official category-I tariffs WITHOUT a transponder, snapshot observed 2026-10-01.
+// Source: data/tolls/2026-10-01-avtodor-other-roads-category1.json
 // A-289 uses free-flow charging. Each physical charging frame is counted once,
 // regardless of how many OSM nodes/anchors represent its carriageways.
+// Current no-transponder section amounts are 555 + 278 + 270 = 1103 RUB for
+// the full Марьянская → Темрюк traversal. This deliberately matches the UI's
+// declared "без транспондера" mode and replaces the older 800 RUB composition.
 const A289_FRAMES: readonly A289Frame[] = [
   {
     id: "23",
     label: "РВП 23 км — Марьянская / Славянск-на-Кубани",
-    tariff: 415,
+    tariff: 555,
     anchors: [
       { lat: 45.171408, lon: 38.5327744, osmNodeId: "13022464435" },
       { lat: 45.1713281, lon: 38.5326562, osmNodeId: "13022464436" },
@@ -35,7 +38,7 @@ const A289_FRAMES: readonly A289Frame[] = [
   {
     id: "82",
     label: "РВП 82 км — Славянск-на-Кубани / Варениковская",
-    tariff: 205,
+    tariff: 278,
     anchors: [
       { lat: 45.1961096, lon: 37.8330177, osmNodeId: "12439881648" },
       { lat: 45.1955326, lon: 37.8066089, osmNodeId: "12787972033" },
@@ -44,7 +47,7 @@ const A289_FRAMES: readonly A289Frame[] = [
   {
     id: "103",
     label: "РВП 103 км — Варениковская / Темрюк",
-    tariff: 180,
+    tariff: 270,
     anchors: [
       { lat: 45.168457, lon: 37.5878131, osmNodeId: "12439892927" },
       { lat: 45.1683514, lon: 37.5877882, osmNodeId: "12806246303" },
@@ -136,7 +139,7 @@ export function priceA289Route(route: Coordinate[], departureAt?: string): A289P
     weekendAmount: amount,
     period,
     crossedFrames: crossed.map((item) => item.frame.id),
-    segments: crossed.map((item) => `А-289: ${item.frame.label} — ${item.frame.tariff} ₽`),
+    segments: crossed.map((item) => `А-289: ${item.frame.label} — ${item.frame.tariff} ₽ без транспондера`),
     confidence: "matched",
   };
 }
