@@ -1,0 +1,51 @@
+name: Segment 6A3A2 M11 current tariff refresh
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - data/tolls/m11/2026-10-01-58-679-category1-a1-current.json
+      - data/tolls/m11/2026-03-02-58-679-category1-a1-controls.json
+      - data/tolls/m11/2026-09-18-58-679-facility-delta.json
+      - scripts/segment6a3a2-m11-current-tariff-refresh-test.ts
+      - .github/workflows/segment6a3a2-m11-current-tariff-refresh.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run deterministic current M11 tariff assertions
+        run: node --experimental-strip-types scripts/segment6a3a2-m11-current-tariff-refresh-test.ts
+
+      - name: Assert no production API integration
+        run: |
+          if grep -q "2026-10-01-58-679-category1-a1-current" app/api/v2/calculate/route.ts; then
+            echo "Segment 6A3A2 must not integrate current A1 tariff data into production API"
+            exit 1
+          fi
+
+      - name: Production build
+        run: pnpm build
