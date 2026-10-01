@@ -10,6 +10,8 @@ on:
       - data/tolls/m11/2026-04-24-15-58-category1.json
       - data/tolls/m11/2026-03-02-58-679-category1-a1-controls.json
       - data/tolls/m11/2026-02-24-15-58-facility-evidence.json
+      - data/tolls/m11/2026-03-02-58-679-facility-evidence.json
+      - data/tolls/m11/2026-09-18-58-679-facility-delta.json
       - .github/workflows/segment6a3b2-m11-boundary-model.yml
   workflow_dispatch:
 
