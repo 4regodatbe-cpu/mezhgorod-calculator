@@ -144,6 +144,7 @@ export function calculateM11MoscowToPetersburg(
 
   const entry = nearestSegment(route, [MOSCOW_M11_ENTRY]);
   const p58 = nearestSegment(route, facilityAnchors("p58"));
+  const p147 = nearestSegment(route, facilityAnchors("p147"));
   const p593 = nearestSegment(route, facilityAnchors("p593"));
   const p679 = nearestSegment(route, facilityAnchors("p679"));
   const evidenceBase = {
@@ -163,6 +164,48 @@ export function calculateM11MoscowToPetersburg(
   ).length;
   const candidate = entry.distanceKm <= ENTRY_MAX_DISTANCE_KM || strictFacilityHits >= 2;
   if (entry.distanceKm > ENTRY_MAX_DISTANCE_KM) return { candidate, exact: false, tolls: null, reason: candidate ? "moscow_m11_entry_not_proven" : "m11_geometry_not_proven", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
+
+  // Southbound Tver→Moscow traversal: the route crosses the independently
+  // anchored p147 and p58 tariff boundaries and then the 15-km Moscow entry.
+  // The official category-I matrix (order 53, 22.02.2026) directly verifies
+  // p58↔p147 as 610 RUB Mon-Thu and 750 RUB Fri-Sun. This is an explicit
+  // matrix cell, not a subtraction/derived tariff.
+  const southboundTver = p147.distanceKm <= FACILITY_MAX_DISTANCE_KM
+    && p58.distanceKm <= FACILITY_MAX_DISTANCE_KM
+    && entry.distanceKm <= ENTRY_MAX_DISTANCE_KM
+    && p147.index < p58.index
+    && p58.index < entry.index;
+  if (southboundTver) {
+    const start = startDate(departureAt);
+    const p58At = crossingAt(start, route, p58.index, routeSeconds);
+    const entryAt = crossingAt(start, route, entry.index, routeSeconds);
+    const p58to147 = p58Profile(p58At) === "monThu" ? 610 : 750;
+    const section15 = section15Amount(entryAt);
+    const weekdayAmount = 610 + section15Snapshot.tariffs.monThuDay0600to0100;
+    const weekendAmount = 750 + Math.max(
+      section15Snapshot.tariffs.fridayDay0600to0100,
+      section15Snapshot.tariffs.saturdayDay0600to0100,
+      section15Snapshot.tariffs.sundayDay0600to0100,
+    );
+    return {
+      candidate: true,
+      exact: true,
+      tolls: {
+        amount: p58to147 + section15.amount,
+        weekdayAmount,
+        weekendAmount,
+        period: `по времени фактического проезда М-11 (${section15.profile})`,
+        segments: [
+          `М-11 147–58: Тверь→Солнечногорск ${p58to147} ₽`,
+          `М-11 58–15: Солнечногорск→Москва ${section15.amount} ₽`,
+        ],
+        confidence: "matched",
+      },
+      reason: "m11_tver_p147_p58_moscow_entry_sequence_verified",
+      evidence: { ...evidenceBase, entryAt: entryAt.toISOString(), p58At: p58At.toISOString() },
+    };
+  }
+
   if ([p58, p593, p679].some((item) => item.distanceKm > FACILITY_MAX_DISTANCE_KM)) {
     return { candidate: true, exact: false, tolls: null, reason: "m11_58_679_facility_sequence_incomplete", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
   }
