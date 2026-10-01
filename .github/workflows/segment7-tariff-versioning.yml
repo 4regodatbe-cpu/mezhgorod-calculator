@@ -29,9 +29,12 @@ jobs:
         run: node scripts/segment7-versioning-fixture.mjs
       - name: Direct TypeScript core contract
         run: node --experimental-strip-types scripts/segment7-versioning-core-test.ts
-      - name: Current freshness report
+      - name: Deterministic freshness regression
         env:
           TARIFF_AS_OF: '2026-10-01'
+        run: node scripts/check-tariff-freshness.mjs
+      - name: Live scheduled stale-data warning
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: node scripts/check-tariff-freshness.mjs
       - name: TypeScript build gate
         run: pnpm build
