@@ -1,0 +1,18 @@
+import fs from "node:fs";
+const read=(p)=>fs.readFileSync(p,"utf8");
+const assert=(v,m)=>{if(!v)throw new Error(`Segment 10 gate failed: ${m}`)};
+const api=read("app/api/v2/calculate/route.ts");
+const ui=read("app/v2/page.tsx");
+const root=read("app/page.tsx");
+assert(api.includes('pricingStatus: "priced" | "free" | "unknown"'),"API pricing truth enum missing");
+assert(api.includes('amount: null')&&api.includes('pricingStatus: "unknown"'),"unknown toll must remain null");
+assert(api.includes('truth: "confirmed_free" | "candidate_unverified"'),"free-route truth enum missing");
+assert(ui.includes('pricingStatus === "unknown"'),"UI does not render unknown toll state");
+assert(ui.includes("Платность не подтверждена"),"unverified alternative warning missing");
+assert(ui.includes("Стоимость не определена"),"unknown toll price label missing");
+assert(!ui.includes("toll.amount ?? 0) > 0 ? String(toll.amount) : \"0\""),"unknown toll coerced to zero in UI");
+assert(!root.includes("это сделает расстояния и расчёт платных дорог максимально точными"),"obsolete Yandex exact-toll copy remains");
+assert(!root.includes("маршруты: OSRM</footer>"),"obsolete single-provider attribution remains");
+const segment9=read("scripts/segment9-regression.mjs");
+assert(segment9.includes("must not coerce to zero"),"Segment 9 fail-closed gate missing");
+console.log("Segment 10 static truthfulness gates GREEN");

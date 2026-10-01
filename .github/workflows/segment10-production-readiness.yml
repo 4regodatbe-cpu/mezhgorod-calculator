@@ -1,0 +1,36 @@
+name: Segment 10 production readiness
+on:
+  push:
+    branches: [segment10-production-readiness]
+  pull_request:
+    branches: [optimize-calculator-2]
+jobs:
+  final-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 11.25.0 }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: node scripts/segment10-production-readiness.mjs
+      - run: node scripts/segment5a1-m12-recovery-replay.mjs
+      - run: node scripts/segment9-regression.mjs
+      - run: pnpm lint
+      - run: pnpm build
+      - name: Start production server
+        run: |
+          pnpm start > /tmp/mezhgorod-next.log 2>&1 &
+          echo $! > /tmp/mezhgorod-next.pid
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:3000/v2 >/dev/null && exit 0; sleep 1; done
+          cat /tmp/mezhgorod-next.log
+          exit 1
+      - name: User API free-truth regression
+        run: node scripts/segment3-free-truth.mjs
+      - name: Stop production server
+        if: always()
+        run: test ! -f /tmp/mezhgorod-next.pid || kill $(cat /tmp/mezhgorod-next.pid) || true
