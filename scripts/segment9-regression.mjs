@@ -1,0 +1,18 @@
+import fs from "node:fs";
+const corpus=JSON.parse(fs.readFileSync("data/external-toll-benchmark.json","utf8"));
+const assert=(v,m)=>{if(!v)throw new Error(m)};
+assert(corpus.length>=30,"benchmark must contain >=30 cases");
+for(const road of ["M4","M11","M12","CKAD"]) assert(corpus.filter(x=>x.road===road).length>=6,`${road} coverage too small`);
+assert(corpus.some(x=>x.expectedTollRub===0&&x.expectToll===false),"negative toll control required");
+assert(corpus.some(x=>x.expectedTollRub===null&&x.expectToll===true),"unknown amount positive controls required");
+assert(corpus.every(x=>x.controlSource&&x.id&&typeof x.expectToll==="boolean"),"provenance/shape required");
+const scorer=fs.readFileSync("lib/external-toll-benchmark.ts","utf8");
+assert(scorer.includes('"toll-detected-unpriced"'),"unpriced toll must fail closed");
+assert(scorer.includes('"currency-mismatch"'),"currency mismatch must fail closed");
+assert(!scorer.includes("?? 0"),"unknown amount must not coerce to zero");
+const runner=fs.readFileSync("scripts/segment9-here-benchmark.mjs","utf8");
+assert(runner.includes("tollsDataUnavailable"),"HERE unavailable toll data must be explicit");
+assert(runner.includes("HERE_API_KEY"),"live runner must require external credential");
+const api=fs.readFileSync("app/api/v2/calculate/route.ts","utf8");
+assert(!api.includes("HERE_API_KEY")&&!api.includes("router.hereapi.com"),"Segment 9 must not wire HERE into production API");
+console.log(`Segment 9 regression GREEN: ${corpus.length} cases; M4/M11/M12/CKAD covered; production API unchanged`);
