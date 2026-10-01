@@ -1,0 +1,30 @@
+name: Systemic toll composition fix
+on:
+  push:
+    branches: [fix-systemic-toll-composition]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  toll-composition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 11.25.0 }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+      - run: pnpm install --frozen-lockfile
+      - name: Pure composition regression
+        run: node --experimental-strip-types scripts/systemic-toll-composition-test.ts
+      - name: Existing M-12 recovery regression
+        run: node scripts/segment5a1-m12-recovery-replay.mjs
+      - name: Existing external-provider fail-closed regression
+        run: node scripts/segment9-regression.mjs
+      - name: Lint
+        run: pnpm lint
+      - name: Production build
+        run: pnpm build
