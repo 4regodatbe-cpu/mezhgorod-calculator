@@ -9,6 +9,7 @@ on:
       - scripts/segment6a3b2d-m11-osm-toll-inventory.mjs
       - scripts/segment6a3b2d-m11-osm-parent-context.mjs
       - scripts/segment6a3b2d-m11-osm-api-unresolved-context.mjs
+      - scripts/segment6a3b2d-m11-p593-link-connectivity.mjs
       - .github/workflows/segment6a3b2d-m11-osm-toll-inventory.yml
   workflow_dispatch:
 
@@ -16,7 +17,7 @@ permissions:
   contents: read
 
 jobs:
-  unresolved-context:
+  p593-connectivity:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -28,22 +29,22 @@ jobs:
         with:
           node-version: '22.13.0'
 
-      - name: Query direct OSM API context for unresolved M11 candidates
-        run: node scripts/segment6a3b2d-m11-osm-api-unresolved-context.mjs
+      - name: Query direct OSM graph connectivity for PVP593 link ways
+        run: node scripts/segment6a3b2d-m11-p593-link-connectivity.mjs
 
       - name: Assert diagnostic-only scope
         run: |
           set -euo pipefail
-          test -s m11-osm-api-unresolved-context.json
-          if grep -R "segment6a3b2d\|m11-osm-api-unresolved-context" app/api/v2/calculate lib/toll-engine/m11-current-tariffs.ts 2>/dev/null; then
-            echo "Diagnostic OSM context must not be imported into production calculation"
+          test -s m11-p593-link-connectivity.json
+          if grep -R "segment6a3b2d\|m11-p593-link-connectivity" app/api/v2/calculate lib/toll-engine/m11-current-tariffs.ts 2>/dev/null; then
+            echo "Diagnostic PVP593 connectivity must not be imported into production calculation"
             exit 1
           fi
 
-      - name: Upload OSM unresolved context evidence
+      - name: Upload PVP593 connectivity evidence
         uses: actions/upload-artifact@v4
         with:
-          name: m11-osm-api-unresolved-context
-          path: m11-osm-api-unresolved-context.json
+          name: m11-p593-link-connectivity
+          path: m11-p593-link-connectivity.json
           if-no-files-found: error
           retention-days: 7
