@@ -1,0 +1,41 @@
+name: Segment 5B2B-3B M12 direction-aware RVP
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - data/tolls/m12-rvp-evidence-2026-09-30.json
+      - data/tolls/m12-2026-03-02-category1.json
+      - scripts/segment5b2b3b-m12-direction-aware.mjs
+      - .github/workflows/segment5b2b3b-m12-direction-aware.yml
+      - checkpoints/M12_SEGMENT_5B2B3B_PLAN.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify direction-aware RVP detector
+        run: node scripts/segment5b2b3b-m12-direction-aware.mjs
+
+      - name: Upload direction-aware evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5b2b3b-m12-direction-aware
+          path: segment5b2b3b-m12-direction-aware.json
+          if-no-files-found: warn
+          retention-days: 7

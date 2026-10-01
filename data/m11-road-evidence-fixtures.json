@@ -1,0 +1,138 @@
+{
+  "valhalla": [
+    {
+      "id": "moscow-spb-continuous",
+      "legs": [
+        {
+          "coordinates": [
+            [37.467541, 55.883302],
+            [37.476352, 55.885173],
+            [37.292433, 56.003543],
+            [37.078302, 56.140517],
+            [36.915161, 56.156176],
+            [36.239921, 56.733082],
+            [30.337801, 59.802372],
+            [30.283506, 59.832743]
+          ],
+          "maneuvers": [
+            { "street_names": ["М-11"], "begin_shape_index": 0, "end_shape_index": 1 },
+            { "street_names": ["М-11", "«Нева»"], "begin_shape_index": 1, "end_shape_index": 2 },
+            { "street_names": ["М-11", "«Нева»"], "begin_shape_index": 2, "end_shape_index": 3 },
+            { "street_names": ["М-11", "«Нева»"], "begin_shape_index": 3, "end_shape_index": 4 },
+            { "street_names": ["М-11", "«Нева»"], "begin_shape_index": 4, "end_shape_index": 5 },
+            { "street_names": ["М-11", "«Нева»"], "begin_shape_index": 5, "end_shape_index": 6 },
+            { "street_names": ["М-11", "«Нева»"], "begin_shape_index": 6, "end_shape_index": 7 }
+          ]
+        }
+      ],
+      "expected": {
+        "strictBlocks": 1,
+        "malformedStrictCount": 0,
+        "firstSourceIndex": 0,
+        "lastSourceIndex": 6,
+        "candidateClues": 0
+      }
+    },
+    {
+      "id": "malformed-index-break",
+      "legs": [
+        {
+          "coordinates": [[37.4, 55.8], [37.3, 55.9], [37.2, 56.0]],
+          "maneuvers": [
+            { "street_names": ["М-11"], "begin_shape_index": 0, "end_shape_index": 1 },
+            { "street_names": ["М-11"], "begin_shape_index": 1, "end_shape_index": 99 },
+            { "street_names": ["М-11"], "begin_shape_index": 1, "end_shape_index": 2 }
+          ]
+        }
+      ],
+      "expected": {
+        "strictBlocks": 2,
+        "malformedStrictCount": 1,
+        "firstSourceIndex": 0,
+        "lastSourceIndex": 2,
+        "candidateClues": 0
+      }
+    }
+  ],
+  "osrm": [
+    {
+      "id": "northbound-two-blocks-with-gap",
+      "legs": [
+        {
+          "steps": [
+            { "distance": 17647, "name": "Северо-Восточная хорда", "geometry": { "coordinates": [[37.57084, 55.837522], [37.488657, 55.878154]] } },
+            { "distance": 666757, "ref": "М-11", "geometry": { "coordinates": [[37.488657, 55.878154], [30.361203, 59.773923]] } },
+            { "distance": 301, "geometry": { "coordinates": [[30.361203, 59.773923], [30.358981, 59.776376]] } },
+            { "distance": 3145, "name": "«Нева»", "ref": "М-11", "geometry": { "coordinates": [[30.358981, 59.776376], [30.337801, 59.802372]] } },
+            { "distance": 2182, "name": "«Нева»", "ref": "М-11", "destinations": "А-118: КАД, ЗСД", "geometry": { "coordinates": [[30.337801, 59.802372], [30.312274, 59.81611]] } },
+            { "distance": 2473, "name": "КАД", "ref": "А-118", "geometry": { "coordinates": [[30.312274, 59.81611], [30.283506, 59.832743]] } }
+          ]
+        }
+      ],
+      "expected": {
+        "strictBlocks": 2,
+        "malformedStrictCount": 0,
+        "candidateClues": 0,
+        "blockSourceRanges": [[1, 1], [3, 4]],
+        "blockBeginKm": [17.647, 684.705],
+        "blockEndKm": [684.404, 690.032]
+      }
+    },
+    {
+      "id": "southbound-destination-clue-not-strict",
+      "legs": [
+        {
+          "steps": [
+            { "distance": 17614, "name": "КАД", "ref": "А-118", "geometry": { "coordinates": [[30.278881, 59.834047], [30.310918, 59.816499]] } },
+            { "distance": 1959, "destinations": "М-11: Москва", "geometry": { "coordinates": [[30.310918, 59.816499], [30.334068, 59.805509]] } },
+            { "distance": 586687, "name": "«Нева»", "ref": "М-11", "destinations": "М-11: Москва", "geometry": { "coordinates": [[30.334068, 59.805509], [36.610019, 56.357065]] } },
+            { "distance": 82523, "name": "«Нева»", "ref": "М-11", "geometry": { "coordinates": [[36.610019, 56.357065], [37.483494, 55.88938]] } },
+            { "distance": 745, "ref": "М-11", "destinations": "Е 105, М-10: Ленинградское шоссе, МКАД-Запад", "geometry": { "coordinates": [[37.483494, 55.88938], [37.47448, 55.885193]] } }
+          ]
+        }
+      ],
+      "expected": {
+        "strictBlocks": 1,
+        "malformedStrictCount": 0,
+        "candidateClues": 1,
+        "candidateSourceIndex": 1,
+        "candidateReason": "destination_m11",
+        "blockSourceRanges": [[2, 4]],
+        "blockBeginKm": [19.573],
+        "blockEndKm": [689.528]
+      }
+    },
+    {
+      "id": "neva-without-m11-ref-is-clue",
+      "legs": [
+        {
+          "steps": [
+            { "distance": 1000, "name": "«Нева»", "geometry": { "coordinates": [[30.4, 59.7], [30.39, 59.71]] } }
+          ]
+        }
+      ],
+      "expected": {
+        "strictBlocks": 0,
+        "malformedStrictCount": 0,
+        "candidateClues": 1,
+        "candidateSourceIndex": 0,
+        "candidateReason": "neva_without_strict_ref"
+      }
+    },
+    {
+      "id": "non-m11-control",
+      "legs": [
+        {
+          "steps": [
+            { "distance": 1000, "name": "Ленинградское шоссе", "ref": "М-10", "geometry": { "coordinates": [[37.5, 55.8], [37.49, 55.81]] } }
+          ]
+        }
+      ],
+      "expected": {
+        "strictBlocks": 0,
+        "malformedStrictCount": 0,
+        "candidateClues": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+name: Segment 6A2 M11 maneuver evidence probe
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment6a2-m11-maneuver-probe.mjs
+      - .github/workflows/segment6a2-m11-maneuver-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [a, b]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+
+      - name: Probe existing Valhalla M11 maneuver evidence
+        env:
+          M11_PROBE_GROUP: ${{ matrix.group }}
+        run: node scripts/segment6a2-m11-maneuver-probe.mjs

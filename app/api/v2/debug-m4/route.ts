@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Coordinate } from "@/lib/tolls";
 import { safeRoutePositions, type RoutePoint } from "@/lib/safe-route";
-import { validateKnownM4Plazas } from "@/lib/toll-engine/m4-route-validator";
-import { priceM4RoutePlazaValidation } from "@/lib/toll-engine/m4-local-pricing";
+import { calculateM4Core } from "@/lib/toll-engine/m4-core";
 
 export const maxDuration = 50;
 
@@ -121,8 +120,7 @@ export async function GET(request: NextRequest) {
   try {
     const [from, to] = await Promise.all([geocode(fromText), geocode(toText)]);
     const route = await fastRoute(from, to);
-    const validation = await validateKnownM4Plazas(route.coordinates);
-    const pricing = priceM4RoutePlazaValidation(validation, departureAt);
+    const core = await calculateM4Core(route.coordinates, departureAt);
 
     return NextResponse.json({
       from: from.label,
@@ -130,8 +128,8 @@ export async function GET(request: NextRequest) {
       fastKm: Math.round(route.meters / 100) / 10,
       fastMinutes: Math.round(route.seconds / 60),
       geometryPoints: route.coordinates.length,
-      validation,
-      pricing,
+      validation: core.validation,
+      pricing: core.pricing,
       totalElapsedMs: Date.now() - startedAt,
     });
   } catch (error) {

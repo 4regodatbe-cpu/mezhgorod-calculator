@@ -1,0 +1,71 @@
+name: Segment 6A1 M11 user API baseline
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment6a1-m11-user-baseline.mjs
+      - .github/workflows/segment6a1-m11-user-baseline.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  baseline:
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [a, b]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build unchanged branch
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          pnpm start > /tmp/mezhgorod-segment6a1-${{ matrix.group }}.log 2>&1 &
+          echo $! > /tmp/mezhgorod-segment6a1-${{ matrix.group }}.pid
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3000/ >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/mezhgorod-segment6a1-${{ matrix.group }}.log
+          exit 1
+
+      - name: Capture M11 user API baseline
+        env:
+          M11_BASELINE_GROUP: ${{ matrix.group }}
+        run: node scripts/segment6a1-m11-user-baseline.mjs
+
+      - name: Show server log on failure
+        if: failure()
+        run: tail -n 300 /tmp/mezhgorod-segment6a1-${{ matrix.group }}.log || true
+
+      - name: Stop local server
+        if: always()
+        run: |
+          if [ -f /tmp/mezhgorod-segment6a1-${{ matrix.group }}.pid ]; then
+            kill "$(cat /tmp/mezhgorod-segment6a1-${{ matrix.group }}.pid)" || true
+          fi

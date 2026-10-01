@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "road": "M-11 Neva",
+  "systemId": "m11-15-58-ossp",
+  "sectionKm": { "from": 15, "to": 58 },
+  "operator": "ООО «ОССП»",
+  "concessionaireContext": "Секция 15-58",
+  "vehicleCategory": {
+    "id": "group1",
+    "description": "Мотоциклы; легковые автомобили; фургоны и микроавтобусы до 11 мест согласно действующему документу"
+  },
+  "paymentModel": "without_transponder",
+  "currency": "RUB",
+  "effectiveFrom": "2026-04-24T01:00:00+03:00",
+  "effectiveTo": null,
+  "announcedSeasonalWindow": {
+    "fromDate": "2026-04-24",
+    "throughDate": "2026-11-01",
+    "note": "Оператор отдельно объявил сезонные тарифы с 24 апреля по 1 ноября 2026; сам тарифный PDF задает только effective-from, поэтому exclusive end не выдумывается."
+  },
+  "source": {
+    "kind": "official_operator_pdf",
+    "url": "https://m11-neva.ru/upload/iblock/c7f/dqr24p9c4pctph5s4897if1r05agru30.pdf",
+    "documentTitle": "Приложение 3 к Договору организации проезда — Действующие тарифы (с 24 апреля 2026 года)",
+    "documentCode": "UTS-M11-S00-CRM-APP-U1785.01-03-2026-04-24-PZO",
+    "approvedOrder": "Приказ № 0108.01 от 18.04.2026",
+    "seasonalAnnouncementUrl": "https://m11-neva.ru/blog/s-24-aprelya-po-1-noyabrya-vvodyatsya-sezonnye-tarify-na-dachnye-napravleniya/"
+  },
+  "extraction": {
+    "completeForCategory": true,
+    "directional": true,
+    "routePairCount": 42,
+    "usage": "data_only_not_wired"
+  },
+  "timeProfiles": {
+    "night": { "days": "all", "from": "01:00", "to": "06:00" },
+    "monThu": { "days": ["MON", "TUE", "WED", "THU"], "from": "06:00", "to": "01:00+1" },
+    "fri": { "days": ["FRI"], "from": "06:00", "to": "01:00+1" },
+    "sat": { "days": ["SAT"], "from": "06:00", "to": "01:00+1" },
+    "sun": { "days": ["SUN"], "from": "06:00", "to": "01:00+1" }
+  },
+  "holidayProfileOverrides2026": {
+    "2026-04-30": "fri",
+    "2026-06-11": "fri",
+    "2026-11-03": "fri",
+    "2026-12-30": "fri",
+    "2026-05-01": "sat",
+    "2026-05-10": "sat",
+    "2026-06-12": "sat",
+    "2026-11-04": "sat",
+    "2026-12-31": "sat",
+    "2026-05-11": "sun"
+  },
+  "points": {
+    "moscow": "Москва",
+    "sheremetyevo2": "Шереметьево-2",
+    "sheremetyevo1": "Шереметьево-1",
+    "zelenograd": "Зеленоград",
+    "tskad": "ЦКАД",
+    "mmk_a107": "ММК (А107)",
+    "solnechnogorsk": "Солнечногорск"
+  },
+  "tariffs": {
+    "moscow": {
+      "sheremetyevo2": { "night": 110, "monThu": 500, "fri": 500, "sat": 500, "sun": 500 },
+      "sheremetyevo1": { "night": 230, "monThu": 680, "fri": 680, "sat": 680, "sun": 680 },
+      "zelenograd": { "night": 230, "monThu": 620, "fri": 820, "sat": 820, "sun": 620 },
+      "tskad": { "night": 110, "monThu": 880, "fri": 1320, "sat": 1320, "sun": 940 },
+      "mmk_a107": { "night": 350, "monThu": 880, "fri": 1320, "sat": 1320, "sun": 940 },
+      "solnechnogorsk": { "night": 880, "monThu": 1130, "fri": 1650, "sat": 1650, "sun": 1260 }
+    },
+    "sheremetyevo2": {
+      "moscow": { "night": 110, "monThu": 490, "fri": 490, "sat": 490, "sun": 490 },
+      "sheremetyevo1": { "night": 20, "monThu": 110, "fri": 110, "sat": 20, "sun": 20 },
+      "zelenograd": { "night": 50, "monThu": 280, "fri": 290, "sat": 180, "sun": 170 },
+      "tskad": { "night": 50, "monThu": 230, "fri": 410, "sat": 340, "sun": 50 },
+      "mmk_a107": { "night": 50, "monThu": 230, "fri": 410, "sat": 340, "sun": 110 },
+      "solnechnogorsk": { "night": 110, "monThu": 490, "fri": 750, "sat": 750, "sun": 500 }
+    },
+    "sheremetyevo1": {
+      "moscow": { "night": 230, "monThu": 680, "fri": 680, "sat": 680, "sun": 680 },
+      "sheremetyevo2": { "night": 20, "monThu": 20, "fri": 20, "sat": 20, "sun": 20 },
+      "zelenograd": { "night": 50, "monThu": 230, "fri": 290, "sat": 180, "sun": 170 },
+      "tskad": { "night": 50, "monThu": 280, "fri": 590, "sat": 410, "sun": 200 },
+      "mmk_a107": { "night": 50, "monThu": 280, "fri": 590, "sat": 490, "sun": 200 },
+      "solnechnogorsk": { "night": 350, "monThu": 560, "fri": 1050, "sat": 1050, "sun": 490 }
+    },
+    "zelenograd": {
+      "moscow": { "night": 230, "monThu": 620, "fri": 620, "sat": 620, "sun": 820 },
+      "sheremetyevo2": { "night": 50, "monThu": 280, "fri": 280, "sat": 280, "sun": 290 },
+      "sheremetyevo1": { "night": 50, "monThu": 280, "fri": 200, "sat": 200, "sun": 290 },
+      "tskad": { "night": 50, "monThu": 200, "fri": 320, "sat": 320, "sun": 140 },
+      "mmk_a107": { "night": 50, "monThu": 200, "fri": 320, "sat": 320, "sun": 110 },
+      "solnechnogorsk": { "night": 110, "monThu": 450, "fri": 780, "sat": 780, "sun": 300 }
+    },
+    "tskad": {
+      "moscow": { "night": 110, "monThu": 880, "fri": 940, "sat": 1100, "sun": 1320 },
+      "sheremetyevo2": { "night": 50, "monThu": 230, "fri": 230, "sat": 270, "sun": 410 },
+      "sheremetyevo1": { "night": 50, "monThu": 280, "fri": 290, "sat": 340, "sun": 500 },
+      "zelenograd": { "night": 50, "monThu": 280, "fri": 280, "sat": 310, "sun": 320 },
+      "mmk_a107": { "night": 20, "monThu": 20, "fri": 20, "sat": 20, "sun": 20 },
+      "solnechnogorsk": { "night": 110, "monThu": 280, "fri": 320, "sat": 320, "sun": 310 }
+    },
+    "mmk_a107": {
+      "moscow": { "night": 350, "monThu": 880, "fri": 940, "sat": 1100, "sun": 1320 },
+      "sheremetyevo2": { "night": 50, "monThu": 230, "fri": 230, "sat": 270, "sun": 410 },
+      "sheremetyevo1": { "night": 50, "monThu": 290, "fri": 290, "sat": 340, "sun": 500 },
+      "zelenograd": { "night": 50, "monThu": 290, "fri": 290, "sat": 320, "sun": 410 },
+      "tskad": { "night": 20, "monThu": 20, "fri": 20, "sat": 20, "sun": 20 },
+      "solnechnogorsk": { "night": 50, "monThu": 280, "fri": 320, "sat": 320, "sun": 170 }
+    },
+    "solnechnogorsk": {
+      "moscow": { "night": 880, "monThu": 1130, "fri": 1260, "sat": 1500, "sun": 1650 },
+      "sheremetyevo2": { "night": 110, "monThu": 490, "fri": 490, "sat": 590, "sun": 740 },
+      "sheremetyevo1": { "night": 350, "monThu": 560, "fri": 560, "sat": 660, "sun": 900 },
+      "zelenograd": { "night": 110, "monThu": 360, "fri": 360, "sat": 400, "sun": 780 },
+      "tskad": { "night": 50, "monThu": 200, "fri": 220, "sat": 240, "sun": 320 },
+      "mmk_a107": { "night": 50, "monThu": 200, "fri": 200, "sat": 240, "sun": 320 }
+    }
+  },
+  "boundaryNote": "Стоимость проезда через границу Секции 15-58 и Секции 1 приравнена к стоимости проезда через ПВП «Солнечногорск»."
+}

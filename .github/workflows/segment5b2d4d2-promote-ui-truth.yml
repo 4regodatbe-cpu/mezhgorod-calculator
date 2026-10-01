@@ -1,0 +1,82 @@
+name: Segment 5B2D-4D2 promote UI truth
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment5b2d4d2-promote-ui-truth.py
+      - .github/workflows/segment5b2d4d2-promote-ui-truth.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: optimize-calculator-2
+          fetch-depth: 1
+
+      - name: Patch V2 UI and analytics truth semantics
+        run: |
+          python3 scripts/segment5b2d4d2-promote-ui-truth.py
+          git diff --check
+          git diff -- app/v2/page.tsx app/api/collect/route.ts
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build branch
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          pnpm start > /tmp/mezhgorod-segment5b2d4d2.log 2>&1 &
+          echo $! > /tmp/mezhgorod-segment5b2d4d2.pid
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3000/ >/dev/null 2>&1; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/mezhgorod-segment5b2d4d2.log
+          exit 1
+
+      - name: Reassert unknown API pricing truth
+        run: node scripts/segment5b2d4c-m12-unknown-adapter.mjs
+
+      - name: Commit only after green gate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/v2/page.tsx app/api/collect/route.ts
+          git commit -m "Segment 5B2D-4D2: preserve pricing truth in UI and analytics"
+          git push origin HEAD:optimize-calculator-2
+
+      - name: Show server log on failure
+        if: failure()
+        run: tail -n 300 /tmp/mezhgorod-segment5b2d4d2.log || true
+
+      - name: Stop local server
+        if: always()
+        run: |
+          if [ -f /tmp/mezhgorod-segment5b2d4d2.pid ]; then
+            kill "$(cat /tmp/mezhgorod-segment5b2d4d2.pid)" || true
+          fi
+
+# retrigger after the YAML block-scalar fix

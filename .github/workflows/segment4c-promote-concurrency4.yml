@@ -1,0 +1,94 @@
+name: Segment 4C promote concurrency 4
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - ".github/workflows/segment4c-promote-concurrency4.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: segment4c-promote-concurrency4-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+
+      - name: Apply candidate change
+        run: |
+          grep -q 'const CONCURRENCY = 3;' lib/toll-engine/m4-route-validator.ts
+          sed -i 's/const CONCURRENCY = 3;/const CONCURRENCY = 4;/' lib/toll-engine/m4-route-validator.ts
+          grep 'const CONCURRENCY' lib/toll-engine/m4-route-validator.ts
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build candidate
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          PORT=3000 pnpm start > /tmp/mezhgorod-next.log 2>&1 &
+          echo $! > /tmp/mezhgorod-next.pid
+          for i in {1..45}; do
+            if curl --fail --silent http://127.0.0.1:3000/api/version >/dev/null; then
+              exit 0
+            fi
+            if ! kill -0 "$(cat /tmp/mezhgorod-next.pid)" 2>/dev/null; then
+              cat /tmp/mezhgorod-next.log
+              exit 1
+            fi
+            sleep 2
+          done
+          cat /tmp/mezhgorod-next.log
+          exit 1
+
+      - name: Run full user API regression
+        env:
+          CALCULATOR_URL: http://127.0.0.1:3000
+        run: node scripts/segment1-user-regression.mjs
+
+      - name: Commit only proven source change
+        run: |
+          git diff --check
+          git diff --exit-code -- . ':!lib/toll-engine/m4-route-validator.ts' || {
+            echo 'Unexpected files changed during promotion'
+            git status --short
+            exit 1
+          }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add lib/toll-engine/m4-route-validator.ts
+          git commit -m 'Optimize M4 local validation concurrency to 4'
+          git push origin HEAD:optimize-calculator-2
+
+      - name: Show server log on failure
+        if: failure()
+        run: cat /tmp/mezhgorod-next.log || true
+
+      - name: Upload regression report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment4c-promotion-regression
+          path: segment1-user-regression.json
+          retention-days: 30
+          if-no-files-found: warn

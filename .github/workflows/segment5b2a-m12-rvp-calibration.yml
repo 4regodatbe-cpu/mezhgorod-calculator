@@ -1,0 +1,61 @@
+name: Segment 5B2A M12 RVP calibration
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - data/tolls/m12-2026-03-02-category1.json
+      - data/fixtures/m12-osm-5a2-limited.json
+      - scripts/segment5a2c-m12-parity-fixture.mjs
+      - scripts/segment5a3-m12-physical-events.mjs
+      - scripts/segment5b1-m12-tariff-assertions.mjs
+      - scripts/segment5b2a-m12-rvp-calibration.mjs
+      - lib/toll-engine/m12-tariffs.ts
+      - .github/workflows/segment5b2a-m12-rvp-calibration.yml
+      - checkpoints/M12_SEGMENT_5B2A_PLAN.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Enable pnpm
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Recheck official M12 tariff core
+        run: node --experimental-strip-types scripts/segment5b1-m12-tariff-assertions.mjs
+
+      - name: Calibrate physical events to official RVP markers
+        run: node scripts/segment5b2a-m12-rvp-calibration.mjs
+
+      - name: Build application
+        run: pnpm build
+
+      - name: Upload calibration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5b2a-m12-rvp-calibration
+          path: |
+            segment5a2c-m12-parity-fixture.json
+            segment5a3-m12-physical-events.json
+            segment5b1-m12-tariff-assertions.json
+            segment5b2a-m12-rvp-calibration.json
+          if-no-files-found: warn
+          retention-days: 7

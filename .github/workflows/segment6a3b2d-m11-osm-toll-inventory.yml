@@ -1,0 +1,50 @@
+name: Segment 6A3B2D M11 OSM toll object inventory
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - checkpoints/SEGMENT_6A3B2D_M11_OSM_OBJECT_INVENTORY_PLAN.md
+      - scripts/segment6a3b2d-m11-osm-toll-inventory.mjs
+      - scripts/segment6a3b2d-m11-osm-parent-context.mjs
+      - scripts/segment6a3b2d-m11-osm-api-unresolved-context.mjs
+      - scripts/segment6a3b2d-m11-p593-link-connectivity.mjs
+      - .github/workflows/segment6a3b2d-m11-osm-toll-inventory.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p593-connectivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+
+      - name: Query direct OSM graph connectivity for PVP593 link ways
+        run: node scripts/segment6a3b2d-m11-p593-link-connectivity.mjs
+
+      - name: Assert diagnostic-only scope
+        run: |
+          set -euo pipefail
+          test -s m11-p593-link-connectivity.json
+          if grep -R "segment6a3b2d\|m11-p593-link-connectivity" app/api/v2/calculate lib/toll-engine/m11-current-tariffs.ts 2>/dev/null; then
+            echo "Diagnostic PVP593 connectivity must not be imported into production calculation"
+            exit 1
+          fi
+
+      - name: Upload PVP593 connectivity evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: m11-p593-link-connectivity
+          path: m11-p593-link-connectivity.json
+          if-no-files-found: error
+          retention-days: 7

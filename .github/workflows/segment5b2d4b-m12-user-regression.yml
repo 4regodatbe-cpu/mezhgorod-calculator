@@ -1,0 +1,65 @@
+name: Segment 5B2D-4B M12 user API regression
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment5b2d4b-m12-user-regression.mjs
+      - .github/workflows/segment5b2d4b-m12-user-regression.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build branch
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          pnpm start > /tmp/mezhgorod-segment5b2d4b.log 2>&1 &
+          echo $! > /tmp/mezhgorod-segment5b2d4b.pid
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3000/ >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/mezhgorod-segment5b2d4b.log
+          exit 1
+
+      - name: Run M12 user API regression group B
+        run: node scripts/segment5b2d4b-m12-user-regression.mjs
+
+      - name: Show server log on failure
+        if: failure()
+        run: tail -n 300 /tmp/mezhgorod-segment5b2d4b.log || true
+
+      - name: Stop local server
+        if: always()
+        run: |
+          if [ -f /tmp/mezhgorod-segment5b2d4b.pid ]; then
+            kill "$(cat /tmp/mezhgorod-segment5b2d4b.pid)" || true
+          fi

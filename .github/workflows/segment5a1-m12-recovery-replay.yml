@@ -1,0 +1,38 @@
+name: Segment 5A1 M12 recovery replay
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment5a1-m12-recovery-replay.mjs
+      - .github/workflows/segment5a1-m12-recovery-replay.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Replay legacy M12 recovery
+        run: node scripts/segment5a1-m12-recovery-replay.mjs
+
+      - name: Upload diagnostic JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5a1-m12-recovery-replay
+          path: segment5a1-m12-recovery-replay.json
+          if-no-files-found: warn
+          retention-days: 7

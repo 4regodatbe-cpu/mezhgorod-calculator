@@ -1,0 +1,57 @@
+name: A289 OSM toll inventory
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - ".github/workflows/a289-osm-inventory.yml"
+  workflow_dispatch:
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Query A289 toll gantries
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p inventory
+          bbox='44.95,37.20,45.40,38.85'
+          query="[out:json][timeout:30];(node[\"highway\"=\"toll_gantry\"](${bbox});node[\"barrier\"=\"toll_booth\"](${bbox}););out body;"
+          endpoints=(
+            'https://maps.mail.ru/osm/tools/overpass/api/interpreter'
+            'https://overpass.private.coffee/api/interpreter'
+            'https://overpass-api.de/api/interpreter'
+          )
+          ok=0
+          for endpoint in "${endpoints[@]}"; do
+            echo "Trying ${endpoint}"
+            if curl --fail --show-error --silent --max-time 45 \
+              -A 'MezhgorodA289Audit/1.0 (GitHub Actions)' \
+              -H 'Content-Type: application/x-www-form-urlencoded' \
+              --data-urlencode "data=${query}" \
+              "$endpoint" -o inventory/a289-toll-nodes.json; then
+              if jq -e '.elements | type == "array"' inventory/a289-toll-nodes.json >/dev/null; then
+                ok=1
+                break
+              fi
+            fi
+          done
+          if [ "$ok" -ne 1 ]; then
+            echo 'All Overpass endpoints failed' >&2
+            exit 1
+          fi
+          jq '[.elements[] | {id,type,lat,lon,tags}]' inventory/a289-toll-nodes.json > inventory/a289-toll-nodes-compact.json
+          echo '--- A289 toll nodes ---'
+          jq -r '.elements[] | [.id,.lat,.lon,(.tags.highway // ""),(.tags.barrier // ""),(.tags.name // ""),(.tags.ref // ""),(.tags.operator // ""),(.tags.direction // "")] | @tsv' inventory/a289-toll-nodes.json
+
+      - name: Upload inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a289-osm-toll-inventory
+          path: inventory/*.json
+          retention-days: 30
+          if-no-files-found: warn

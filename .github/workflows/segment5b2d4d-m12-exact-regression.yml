@@ -1,0 +1,67 @@
+name: Segment 5B2D-4D1A exact M12 regression
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - .github/workflows/segment5b2d4d-m12-exact-regression.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: optimize-calculator-2
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build branch
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          pnpm start > /tmp/mezhgorod-segment5b2d4d-m12.log 2>&1 &
+          echo $! > /tmp/mezhgorod-segment5b2d4d-m12.pid
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3000/ >/dev/null 2>&1; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/mezhgorod-segment5b2d4d-m12.log
+          exit 1
+
+      - name: Run exact M12 regression group A
+        run: node scripts/segment5b2d4a-m12-user-regression.mjs
+
+      - name: Run exact M12 regression group B
+        run: node scripts/segment5b2d4b-m12-user-regression.mjs
+
+      - name: Show server log on failure
+        if: failure()
+        run: tail -n 300 /tmp/mezhgorod-segment5b2d4d-m12.log || true
+
+      - name: Stop local server
+        if: always()
+        run: |
+          if [ -f /tmp/mezhgorod-segment5b2d4d-m12.pid ]; then
+            kill "$(cat /tmp/mezhgorod-segment5b2d4d-m12.pid)" || true
+          fi

@@ -1,0 +1,40 @@
+name: Segment 5A2c M12 parity fixture
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - data/fixtures/m12-osm-5a2-limited.json
+      - scripts/segment5a2c-m12-parity-fixture.mjs
+      - .github/workflows/segment5a2c-m12-parity-fixture.yml
+      - checkpoints/M12_SEGMENT_5A2C_PLAN.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run production-parity M12 fixture diagnostic
+        run: node scripts/segment5a2c-m12-parity-fixture.mjs
+
+      - name: Upload diagnostic JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5a2c-m12-parity-fixture
+          path: segment5a2c-m12-parity-fixture.json
+          if-no-files-found: warn
+          retention-days: 7

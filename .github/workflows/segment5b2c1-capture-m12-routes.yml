@@ -1,0 +1,38 @@
+name: Segment 5B2C-1 capture M12 routes
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment5b2c1-capture-m12-routes.mjs
+      - .github/workflows/segment5b2c1-capture-m12-routes.yml
+      - checkpoints/M12_SEGMENT_5B2C_PLAN.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Capture deterministic M12 route controls
+        run: node scripts/segment5b2c1-capture-m12-routes.mjs
+
+      - name: Upload route fixture
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5b2c1-m12-route-fixture
+          path: segment5b2c1-m12-route-fixture.json
+          if-no-files-found: error
+          retention-days: 7

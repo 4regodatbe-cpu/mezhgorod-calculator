@@ -8,7 +8,7 @@ const MAX_WINDOW_POINTS = 120;
 const REQUEST_TIMEOUT_MS = 4_500;
 const RETRY_DELAY_MS = 300;
 const VALIDATION_BUDGET_MS = 24_000;
-const CONCURRENCY = 3;
+const CONCURRENCY = 4;
 
 export type M4LocalPlazaCheck = {
   km: number;

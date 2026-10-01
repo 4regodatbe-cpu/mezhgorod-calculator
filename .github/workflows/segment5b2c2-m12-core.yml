@@ -1,0 +1,62 @@
+name: Segment 5B2C-2 M12 pure core
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - data/tolls/m12-2026-03-02-category1.json
+      - data/tolls/m12-rvp-evidence-2026-09-30.json
+      - data/fixtures/m12-route-projections-2026-09-30.json
+      - lib/toll-engine/m12-tariffs.ts
+      - lib/toll-engine/m12-route-core.ts
+      - scripts/segment5b1-m12-tariff-assertions.mjs
+      - scripts/segment5b2c2-m12-core-assertions.mjs
+      - .github/workflows/segment5b2c2-m12-core.yml
+      - checkpoints/M12_SEGMENT_5B2C_PLAN.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Enable pnpm
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Recheck official M12 tariff core
+        run: node --experimental-strip-types scripts/segment5b1-m12-tariff-assertions.mjs
+
+      - name: Typecheck M12 route core
+        run: pnpm exec tsc --noEmit --skipLibCheck --target ES2022 --module esnext --moduleResolution bundler --resolveJsonModule --allowSyntheticDefaultImports lib/toll-engine/m12-route-core.ts
+
+      - name: Run deterministic M12 route-core assertions
+        run: node --experimental-strip-types scripts/segment5b2c2-m12-core-assertions.mjs
+
+      - name: Build application
+        run: pnpm build
+
+      - name: Upload core assertion evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5b2c2-m12-core
+          path: |
+            segment5b1-m12-tariff-assertions.json
+            segment5b2c2-m12-core-assertions.json
+          if-no-files-found: warn
+          retention-days: 7

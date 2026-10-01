@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 type RouteEvent = { type: "route"; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; rate: number; total: number };
-type RouteV2Event = { type: "route_v2"; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; routeType: string; totals: { standard: number; comfort: number; comfortPlus: number; minivan: number }; tollWeekday: number; tollWeekend: number };
+type RouteV2Event = { type: "route_v2"; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; routeType: string; totals: { standard: number; comfort: number; comfortPlus: number; minivan: number }; tollWeekday: number | null; tollWeekend: number | null; tollPricingStatus?: "priced" | "free" | "unknown" };
 type FeedbackEvent = { type: "feedback"; category: string; message: string; website?: string };
 type VisitEvent = { type: "visit"; visitorId: string; version?: string };
 
@@ -19,8 +19,15 @@ export async function POST(request: NextRequest) {
       const numbers = [body.distanceKm, body.durationMin, body.rate, body.total];
       if (!clean(body.fromRegion, 120) || !clean(body.toRegion, 120) || numbers.some((n) => !Number.isFinite(n) || n < 0)) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
     } else if (body.type === "route_v2") {
-      const numbers = [body.distanceKm, body.durationMin, body.tollWeekday, body.tollWeekend, ...Object.values(body.totals ?? {})];
-      if (!clean(body.fromRegion, 120) || !clean(body.toRegion, 120) || !clean(body.routeType, 30) || numbers.length !== 8 || numbers.some((n) => !Number.isFinite(n) || n < 0)) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
+      const baseNumbers = [body.distanceKm, body.durationMin, ...Object.values(body.totals ?? {})];
+      const tollValues = [body.tollWeekday, body.tollWeekend];
+      const pricingStatus = body.tollPricingStatus;
+      const invalidStatus = pricingStatus !== undefined && !["priced", "free", "unknown"].includes(pricingStatus);
+      const invalidTolls = pricingStatus === "unknown"
+        ? tollValues.some((value) => value !== null)
+        : tollValues.some((value) => typeof value !== "number" || !Number.isFinite(value) || value < 0);
+      const invalidFree = pricingStatus === "free" && tollValues.some((value) => value !== 0);
+      if (!clean(body.fromRegion, 120) || !clean(body.toRegion, 120) || !clean(body.routeType, 30) || baseNumbers.length !== 6 || baseNumbers.some((n) => !Number.isFinite(n) || n < 0) || invalidStatus || invalidTolls || invalidFree) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
     } else if (body.type === "visit") {
       if (!/^[a-zA-Z0-9-]{16,64}$/.test(clean(body.visitorId, 64))) return NextResponse.json({ error: "Некорректный идентификатор" }, { status: 400 });
     } else return NextResponse.json({ error: "Неизвестный тип данных" }, { status: 400 });

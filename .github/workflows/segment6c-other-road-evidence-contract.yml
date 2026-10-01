@@ -1,0 +1,28 @@
+name: Segment 6C remaining road evidence contract
+on:
+  push:
+    branches: [optimize-calculator-2]
+    paths:
+      - lib/toll-engine/other-road-current-tariffs.ts
+      - scripts/segment6c-other-road-evidence-contract-test.ts
+      - data/tolls/2026-10-01-avtodor-other-roads-category1.json
+      - .github/workflows/segment6c-other-road-evidence-contract.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 11.25.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22.13.0', cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: node --experimental-strip-types scripts/segment6c-other-road-evidence-contract-test.ts
+      - name: Assert not wired into user API
+        run: |
+          if grep -q "other-road-current-tariffs" app/api/v2/calculate/route.ts; then exit 1; fi
+      - run: pnpm build

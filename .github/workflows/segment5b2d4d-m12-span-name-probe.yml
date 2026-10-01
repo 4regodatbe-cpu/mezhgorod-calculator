@@ -1,0 +1,38 @@
+name: Segment 5B2D-4D M12 span-name probe
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - scripts/segment5b2d4d-m12-span-name-probe.mjs
+      - .github/workflows/segment5b2d4d-m12-span-name-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+
+      - name: Inspect production-parity M12 maneuver names
+        run: node scripts/segment5b2d4d-m12-span-name-probe.mjs
+
+      - name: Upload probe JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment5b2d4d-m12-span-name-probe
+          path: segment5b2d4d-m12-span-name-probe.json
+          if-no-files-found: warn
+          retention-days: 7

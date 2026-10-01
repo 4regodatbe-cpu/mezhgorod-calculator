@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "systemId": "m11-58-679-avtodor",
+  "evidenceKind": "official_tariff_matrix_pvp_inventory",
+  "effectiveFrom": "2026-03-02",
+  "source": {
+    "kind": "official_operator_pdf",
+    "url": "https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf",
+    "approvedBy": "Государственная компания «Российские автомобильные дороги»",
+    "order": "Приказ от 27.02.2026 № 35",
+    "evidence": "Заголовки официальной тарифной матрицы прямо задают точки вида км маршрута / ПВП км; координаты документ не публикует"
+  },
+  "facilities": [
+    { "facilityId": "pvp58", "tariffPointId": "p58", "officialNumber": "58", "officialLabel": "ПВП км 58", "facilityKind": "pvp_unspecified", "routeKm": 58, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp67", "tariffPointId": "p67", "officialNumber": "67", "officialLabel": "ПВП км 67", "facilityKind": "pvp_unspecified", "routeKm": 67, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp89", "tariffPointId": "p89", "officialNumber": "89", "officialLabel": "ПВП км 89", "facilityKind": "pvp_unspecified", "routeKm": 89, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp97", "tariffPointId": "p97", "officialNumber": "97", "officialLabel": "ПВП км 97", "facilityKind": "pvp_unspecified", "routeKm": 97, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp124", "tariffPointId": "p124", "officialNumber": "124", "officialLabel": "ПВП км 124", "facilityKind": "pvp_unspecified", "routeKm": 124, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp147", "tariffPointId": "p147", "officialNumber": "147", "officialLabel": "ПВП км 147", "facilityKind": "pvp_unspecified", "routeKm": 149, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved", "note": "Официальная матрица: км 149 / ПВП км 147" },
+    { "facilityId": "pvp159", "tariffPointId": "p159", "officialNumber": "159", "officialLabel": "ПВП км 159", "facilityKind": "pvp_unspecified", "routeKm": 159, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp177", "tariffPointId": "p177", "officialNumber": "177", "officialLabel": "ПВП км 177", "facilityKind": "pvp_unspecified", "routeKm": 177, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp209", "tariffPointId": "p209", "officialNumber": "209", "officialLabel": "ПВП км 209", "facilityKind": "pvp_unspecified", "routeKm": 208, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved", "note": "Официальная матрица: км 208 / ПВП км 209" },
+    { "facilityId": "pvp214", "tariffPointId": "p214", "officialNumber": "214", "officialLabel": "ПВП км 214", "facilityKind": "pvp_unspecified", "routeKm": 214, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp258", "tariffPointId": "p258", "officialNumber": "258", "officialLabel": "ПВП км 258", "facilityKind": "pvp_unspecified", "routeKm": 258, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp330", "tariffPointId": "p330", "officialNumber": "330", "officialLabel": "ПВП км 330", "facilityKind": "pvp_unspecified", "routeKm": 334, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved", "note": "Официальная матрица: км 334 / ПВП км 330" },
+    { "facilityId": "pvp348", "tariffPointId": "p348", "officialNumber": "348", "officialLabel": "ПВП км 348", "facilityKind": "pvp_unspecified", "routeKm": 348, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp385", "tariffPointId": "p385", "officialNumber": "385", "officialLabel": "ПВП км 385", "facilityKind": "pvp_unspecified", "routeKm": 385, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp402", "tariffPointId": "p402", "officialNumber": "402", "officialLabel": "ПВП км 402", "facilityKind": "pvp_unspecified", "routeKm": 402, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp444", "tariffPointId": "p444", "officialNumber": "444", "officialLabel": "ПВП км 444", "facilityKind": "pvp_unspecified", "routeKm": 444, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp524", "tariffPointId": "p524", "officialNumber": "524", "officialLabel": "ПВП км 524", "facilityKind": "pvp_unspecified", "routeKm": 524, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp545", "tariffPointId": "p545", "officialNumber": "545", "officialLabel": "ПВП км 545", "facilityKind": "pvp_unspecified", "routeKm": 543, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved", "note": "Официальная матрица: км 543 / ПВП км 545" },
+    { "facilityId": "pvp647", "tariffPointId": "p647", "officialNumber": "647", "officialLabel": "ПВП км 647", "facilityKind": "pvp_unspecified", "routeKm": 646, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved", "note": "Официальная матрица: км 646 / ПВП км 647" },
+    { "facilityId": "pvp668", "tariffPointId": "p668", "officialNumber": "668", "officialLabel": "ПВП км 668", "facilityKind": "pvp_unspecified", "routeKm": 668, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" },
+    { "facilityId": "pvp679", "tariffPointId": "p679", "officialNumber": "679", "officialLabel": "ПВП км 679", "facilityKind": "pvp_unspecified", "routeKm": 679, "accessRoadKm": null, "directionText": null, "coordinate": null, "spatialStatus": "unresolved" }
+  ]
+}

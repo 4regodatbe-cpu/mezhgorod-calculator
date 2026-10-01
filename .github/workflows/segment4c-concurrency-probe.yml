@@ -1,0 +1,91 @@
+name: Segment 4C M4 concurrency probe
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - ".github/workflows/segment4c-concurrency-probe.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: segment4c-concurrency-probe-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+
+      - name: Apply concurrency 4 only inside runner
+        run: |
+          grep -q 'const CONCURRENCY = 3;' lib/toll-engine/m4-route-validator.ts
+          sed -i 's/const CONCURRENCY = 3;/const CONCURRENCY = 4;/' lib/toll-engine/m4-route-validator.ts
+          grep 'const CONCURRENCY' lib/toll-engine/m4-route-validator.ts
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build branch with experimental concurrency
+        run: pnpm build
+
+      - name: Start local production server
+        run: |
+          PORT=3000 pnpm start > /tmp/mezhgorod-next.log 2>&1 &
+          echo $! > /tmp/mezhgorod-next.pid
+          for i in {1..45}; do
+            if curl --fail --silent http://127.0.0.1:3000/api/version >/dev/null; then
+              exit 0
+            fi
+            if ! kill -0 "$(cat /tmp/mezhgorod-next.pid)" 2>/dev/null; then
+              cat /tmp/mezhgorod-next.log
+              exit 1
+            fi
+            sleep 2
+          done
+          cat /tmp/mezhgorod-next.log
+          exit 1
+
+      - name: Run 10-direction M4 probe
+        env:
+          CALCULATOR_URL: http://127.0.0.1:3000
+        run: node scripts/segment4-m4-geometry-probe.mjs
+
+      - name: Assert safety and useful latency gain
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const report = JSON.parse(fs.readFileSync('segment4-m4-geometry-probe.json', 'utf8'));
+          const s = report.stats;
+          console.log(JSON.stringify({complete:s.completeRoutes,labelled:s.labelledCandidateCount,confirmed:s.confirmedCandidateCount,rejected:s.rejectedCandidateCount,avg:s.validatorElapsedMs.average,max:s.validatorElapsedMs.max}, null, 2));
+          if (s.completeRoutes !== 10) throw new Error(`Expected 10 complete routes, got ${s.completeRoutes}`);
+          if (s.labelledCandidateCount !== 192 || s.confirmedCandidateCount !== 162 || s.rejectedCandidateCount !== 30) {
+            throw new Error('Candidate classification changed from Segment 4A baseline');
+          }
+          if (!Number.isFinite(s.validatorElapsedMs.average) || s.validatorElapsedMs.average > 15000) {
+            throw new Error(`Concurrency 4 did not produce a useful gain: avg=${s.validatorElapsedMs.average}ms`);
+          }
+          NODE
+
+      - name: Show server log on failure
+        if: failure()
+        run: cat /tmp/mezhgorod-next.log || true
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment4c-concurrency4-probe
+          path: segment4-m4-geometry-probe.json
+          retention-days: 30
+          if-no-files-found: warn

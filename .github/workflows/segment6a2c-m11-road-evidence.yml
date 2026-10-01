@@ -1,0 +1,43 @@
+name: Segment 6A2C M11 road evidence parser
+
+on:
+  push:
+    branches:
+      - optimize-calculator-2
+    paths:
+      - lib/toll-engine/m11-road-evidence.ts
+      - data/m11-road-evidence-fixtures.json
+      - scripts/segment6a2c-m11-road-evidence-test.ts
+      - .github/workflows/segment6a2c-m11-road-evidence.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run deterministic M11 evidence fixtures
+        run: node --experimental-strip-types scripts/segment6a2c-m11-road-evidence-test.ts
+
+      - name: Production build
+        run: pnpm build

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "systemId": "m11-15-58-ossp",
+  "evidenceKind": "official_operator_facility_inventory",
+  "effectiveFrom": "2026-02-24",
+  "source": {
+    "kind": "official_operator_rules_pdf",
+    "operatorSite": "https://m11-neva.ru/documentation/",
+    "url": "https://m11-neva.ru/upload/iblock/311/4hw1aeccglhdprdbt6f5opqhpj1vxoua.pdf",
+    "documentTitle": "Правила организации проезда и сбора платы за проезд транспортных средств Секции 15-58",
+    "evidence": "Официальный перечень ПВП и их километровое положение; координаты в документе не приведены"
+  },
+  "facilities": [
+    {
+      "facilityId": "pvp21-moscow",
+      "tariffPointId": "moscow",
+      "officialNumber": "1",
+      "officialLabel": "МОСКВА",
+      "facilityKind": "mainline_pvp",
+      "routeKm": 21,
+      "accessRoadKm": null,
+      "directionText": "С-Пб -> Москва",
+      "coordinate": null,
+      "spatialStatus": "unresolved"
+    },
+    {
+      "facilityId": "pvp24-sheremetyevo2",
+      "tariffPointId": "sheremetyevo2",
+      "officialNumber": "3",
+      "officialLabel": "ШЕРЕМЕТЬЕВО-2",
+      "facilityKind": "interchange_pvp",
+      "routeKm": 24,
+      "accessRoadKm": null,
+      "directionText": "Москва -> Международное шоссе",
+      "coordinate": null,
+      "spatialStatus": "unresolved"
+    },
+    {
+      "facilityId": "pvp28-sheremetyevo1",
+      "tariffPointId": "sheremetyevo1",
+      "officialNumber": "4",
+      "officialLabel": "ШЕРЕМЕТЬЕВО-1",
+      "facilityKind": "interchange_pvp",
+      "routeKm": 28,
+      "accessRoadKm": null,
+      "directionText": "Москва -> Шереметьевское шоссе",
+      "coordinate": null,
+      "spatialStatus": "unresolved"
+    },
+    {
+      "facilityId": "pvp36-zelenograd",
+      "tariffPointId": "zelenograd",
+      "officialNumber": "5",
+      "officialLabel": "ЗЕЛЕНОГРАД",
+      "facilityKind": "interchange_pvp",
+      "routeKm": 36,
+      "accessRoadKm": 3,
+      "directionText": "Москва -> Зеленоград; ПВП на 3-м км подъездной дороги от М10 к М11",
+      "coordinate": null,
+      "spatialStatus": "unresolved"
+    },
+    {
+      "facilityId": "pvp47-tskad",
+      "tariffPointId": "tskad",
+      "officialNumber": "18",
+      "officialLabel": "ЦКАД",
+      "facilityKind": "interchange_pvp",
+      "routeKm": 47,
+      "accessRoadKm": null,
+      "directionText": "Москва -> транспортная развязка №18 / ЦКАД",
+      "coordinate": null,
+      "spatialStatus": "unresolved",
+      "facilityOwnerOperatorNote": "Владелец: ГК Автодор; оператор: ООО Автодор Платные Дороги"
+    },
+    {
+      "facilityId": "pvp48-mmk-south",
+      "tariffPointId": "mmk_a107",
+      "officialNumber": "6B1",
+      "officialLabel": "ММК | ЮГ",
+      "facilityKind": "interchange_pvp",
+      "routeKm": 48,
+      "accessRoadKm": null,
+      "directionText": "Москва -> ММК",
+      "coordinate": null,
+      "spatialStatus": "unresolved"
+    },
+    {
+      "facilityId": "pvp50-mmk-north",
+      "tariffPointId": "mmk_a107",
+      "officialNumber": "6B2",
+      "officialLabel": "ММК | СЕВЕР",
+      "facilityKind": "interchange_pvp",
+      "routeKm": 50,
+      "accessRoadKm": null,
+      "directionText": "С-Пб -> ММК",
+      "coordinate": null,
+      "spatialStatus": "unresolved"
+    },
+    {
+      "facilityId": "pvp58-solnechnogorsk",
+      "tariffPointId": "solnechnogorsk",
+      "officialNumber": "7",
+      "officialLabel": "СОЛНЕЧНОГОРСК",
+      "facilityKind": "mainline_pvp",
+      "routeKm": 58,
+      "accessRoadKm": null,
+      "directionText": "Москва -> С-Пб",
+      "coordinate": null,
+      "spatialStatus": "unresolved"
+    },
+    {
+      "facilityId": "virtual-boundary-after-pvp58",
+      "tariffPointId": "solnechnogorsk",
+      "officialNumber": null,
+      "officialLabel": "Виртуальный Пункт Взимания Платы между Секцией 15-58 и Секцией 1",
+      "facilityKind": "virtual_boundary",
+      "routeKm": null,
+      "accessRoadKm": null,
+      "directionText": null,
+      "coordinate": null,
+      "spatialStatus": "unresolved",
+      "note": "Официальные правила указывают, что после ПВП Солнечногорск Секция 15-58 соединена с Секцией 1 посредством Виртуального Пункта Взимания Платы; точная координата не опубликована в документе"
+    }
+  ]
+}
