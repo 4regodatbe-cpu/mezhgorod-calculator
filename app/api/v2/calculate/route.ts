@@ -4,7 +4,7 @@ import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { safeRoutePositions } from "@/lib/safe-route";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { findVerifiedRoute, goldenRouteReference, tollPeriodsForRoute } from "@/lib/verified-routes";
-import { selectLiveRoute, type GoldenRouteReference, type RouteQuality } from "@/lib/route-quality";
+import { MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, selectLiveRoute, type GoldenRouteReference, type RouteQuality } from "@/lib/route-quality";
 import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
 import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
 import { deriveStrictM12Span, type M12StrictRouteSpan, type M12ValhallaManeuver } from "@/lib/toll-engine/m12-valhalla-span";
@@ -157,7 +157,7 @@ async function selectFreeRoute(
   }
 
   if (second && secondValidation) {
-    const selected = spreadPercent(first.route, second.route) > MAX_VERIFIED_SPREAD_PERCENT
+    const selected = spreadPercent(first.route, second.route) > MAX_PROVIDER_DISTANCE_SPREAD_PERCENT
       ? (first.route.meters <= second.route.meters ? first : second)
       : first;
     const validation = selected === first ? firstValidation : secondValidation;
