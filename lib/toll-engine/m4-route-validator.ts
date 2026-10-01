@@ -249,6 +249,29 @@ function unavailableResult(candidate: Candidate, remoteMessage: string): { check
     };
   }
 
+  // The 1.5-km candidate radius is deliberately wider than the strict
+  // physical crossing radius. If remote map matching is unavailable and the
+  // route itself stays outside the strict 200-metre radius of every saved
+  // toll-booth anchor, this is positive evidence of a near miss, not an
+  // unresolved traversal. Keeping these as unknown makes long M-4 routes fail
+  // closed merely because they pass near an alternative plaza or ramp.
+  if (candidate.traversal.reason === "outside_strict_traversal_radius") {
+    return {
+      check: {
+        km: candidate.plaza.km,
+        model: candidate.plaza.model,
+        status: "rejected",
+        evidence: "route_traversal",
+        nearestDistanceKm,
+        matchedNodeIds: [],
+        expectedNodeIds: [...candidate.plaza.nodeIds],
+        windowPointCount: candidate.window.length,
+        message: `Удалённый map matching недоступен (${remoteMessage}); кандидат отклонён геометрией: маршрут проходит в ${Math.round(candidate.traversal.nearestDistanceKm * 1000)} м от ближайшего сохранённого OSM-якоря ПВП, то есть вне строгого радиуса пересечения.`,
+      },
+      events: [],
+    };
+  }
+
   return {
     check: {
       km: candidate.plaza.km,
