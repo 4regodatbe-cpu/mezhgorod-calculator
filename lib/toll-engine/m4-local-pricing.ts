@@ -95,11 +95,13 @@ function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
     resolved401to464 = true;
   }
 
-  const hasConfirmed672 = validation.checks.some((item) => item.km === 672 && item.status === "confirmed");
-  const through633to741 = !hasConfirmed672 && (
-    containsOrdered(sequence, [803, 636, 620])
-    || containsOrdered(sequence, [620, 636, 803])
-  );
+  // A route flanked by PVP 620 on the north and PVP 803 on the south has
+  // traversed the complete official 633-741 km mixed section. Crossing the
+  // auxiliary 672-km gate on that same through route does not create a second
+  // charge: Avtodor's current rules zero-rate the exit when the section has
+  // already been paid within the allowed transit window.
+  const through633to741 = containsOrdered(sequence, [803, 636, 620])
+    || containsOrdered(sequence, [620, 636, 803]);
   const zone633to741 = mixedZone(633, 741);
   if (through633to741 && zone633to741) {
     resolved.push({
