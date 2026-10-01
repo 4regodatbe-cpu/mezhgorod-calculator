@@ -305,7 +305,7 @@ export function priceM4RoutePlazaValidation(
     message: status === "priced"
       ? `М-4 рассчитана по ${pricedPlazas.length} подтверждённым ПВП/участкам с учётом route-context mixed-зон.`
       : status === "partial"
-        ? `Оценено ${pricedPlazas.length} ПВП/участков, но ${unresolved.length} контекстный случай остаётся нерешённым; итоговая сумма не выдаётся.`
+        ? `Оценено ${pricedPlazas.length} ПВП/участков, но ${unresolved.length} контекстный случай остаётся нерешённым: ${unresolved.map((item) => `${item.code}[${item.kms.join(",")}]`).join("; ")}; итоговая сумма не выдаётся.`
         : status === "unresolved"
           ? "Платные события М-4 обнаружены, но их контекста недостаточно для безопасного итогового расчёта."
           : "Подтверждённые платные ПВП М-4 не обнаружены.",
