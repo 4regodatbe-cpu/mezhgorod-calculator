@@ -1,0 +1,23 @@
+name: Segment 9 external toll benchmark
+on:
+  push:
+    branches: [segment9-external-toll-benchmark]
+  pull_request:
+    branches: [optimize-calculator-2]
+jobs:
+  benchmark-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.17.1 }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Segment 9 deterministic corpus
+        run: node scripts/segment9-regression.mjs
+      - name: Production build
+        run: pnpm build
