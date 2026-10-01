@@ -217,12 +217,27 @@ Current observed control behavior:
 Production `main` remains intentionally unchanged.
 
 ### Segment 6 — other paid road families
-Status: STARTING WITH M-11 DIAGNOSTIC
+Status: IN PROGRESS — M-11 Segment 6A3B1 complete.
 Order after M-4 and M-12 stabilization:
 1. M-11;
 2. ЦКАД;
 3. finish standalone/general A-289 integration;
 4. M-3 / M-1 and other common operator systems.
+
+M-11 progress:
+- `6A1` current user-API baseline — DONE;
+- `6A2A` Valhalla strict M-11 road-span evidence — DONE with provider distance limit documented;
+- `6A2B` OSRM step evidence for long/mixed routes — DONE / GREEN;
+- `6A2C` provider-neutral strict-road parser and deterministic fixtures — DONE / GREEN, workflow `36786170033`;
+- `6A3A` official tariff snapshots — 15–58 complete Category-I data plus 58–679 A1 ordered-point/control snapshot; the latter remains intentionally incomplete for arbitrary-pair monetary pricing;
+- `6A3B1` anchor inventory — DONE, checkpoint `checkpoints/SEGMENT_6A3B1_M11_ANCHOR_INVENTORY_RESULT.md`.
+
+6A3B1 finding:
+- current official snapshots contain official tariff-point identities/order/km metadata but no trusted spatial coordinates;
+- there are zero persisted `official-coordinate-backed` M-11 anchors;
+- legacy M-11 coordinates remain legacy-only;
+- Valhalla/OSRM coordinates remain route-provider-derived road evidence;
+- missing coordinates must remain unresolved rather than being inferred from route km, city centres or old five-chunk geometry.
 
 Each system gets an explicit tariff model, evidence model and regression corpus. No road-family pricing is promoted from a legacy heuristic until a diagnostic checkpoint documents current behavior and proves the replacement rules.
 
@@ -262,4 +277,4 @@ Required before claiming optimization complete:
 
 ## Current next action
 
-Start Segment 6A as diagnostic-only M-11 work. First inventory the existing M-11 logic and current user-API controls, identify exactly what evidence currently determines M-11 traversal and pricing, and document the official tariff model needed for exact calculation. Do not change M-11 user pricing until the diagnostic plan and baseline regression evidence are persisted.
+Proceed with Segment 6A3B2: create a pure M-11 tariff-boundary data model with stable official point IDs/order/km metadata and optional trusted coordinates. Keep all unresolved coordinates empty, preserve explicit evidence classification, calculate no money, and do not import the model into `/api/v2/calculate`. Before any later resolver can emit exact tariff-point IDs from route geometry, run a dedicated spatial-anchor acquisition/validation subsegment; unresolved evidence must stay unresolved rather than being guessed.
