@@ -153,8 +153,16 @@ export function calculateM11MoscowToPetersburg(
     p679DistanceKm: Number.isFinite(p679.distanceKm) ? Math.round(p679.distanceKm * 1000) / 1000 : null,
   };
 
-  const candidate = entry.distanceKm <= 10 || p58.distanceKm <= 10 || p593.distanceKm <= 10 || p679.distanceKm <= 10;
-  if (entry.distanceKm > ENTRY_MAX_DISTANCE_KM) return { candidate, exact: false, tolls: null, reason: "moscow_m11_entry_not_proven", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
+  // Do not mark M-11 merely because a route passes within 10 km of one
+  // facility (notably around Tver/M-10). That created a false paid-system
+  // candidate and blocked otherwise complete M-4 routes. Geometry-only
+  // detection requires the actual Moscow entry or at least two independent
+  // M-11 tariff facilities at strict crossing distance.
+  const strictFacilityHits = facilities.filter((facility) =>
+    nearestSegment(route, facility.anchors.map((anchor) => [anchor.lon, anchor.lat] as Coordinate)).distanceKm <= FACILITY_MAX_DISTANCE_KM
+  ).length;
+  const candidate = entry.distanceKm <= ENTRY_MAX_DISTANCE_KM || strictFacilityHits >= 2;
+  if (entry.distanceKm > ENTRY_MAX_DISTANCE_KM) return { candidate, exact: false, tolls: null, reason: candidate ? "moscow_m11_entry_not_proven" : "m11_geometry_not_proven", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
   if ([p58, p593, p679].some((item) => item.distanceKm > FACILITY_MAX_DISTANCE_KM)) {
     return { candidate: true, exact: false, tolls: null, reason: "m11_58_679_facility_sequence_incomplete", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
   }
