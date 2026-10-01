@@ -20,19 +20,74 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install PDF tools
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y poppler-utils
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
 
-      - name: Download official current M11 tariff PDF
+      - name: Install extraction tools
         run: |
           set -euo pipefail
-          url='https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf'
-          curl --fail --location --silent --show-error --connect-timeout 15 --max-time 60 \
-            --retry 1 --retry-delay 2 \
-            -A 'Mozilla/5.0 (compatible; MezhgorodCalc/2.0; +https://github.com/4regodatbe-cpu/mezhgorod-calculator)' \
-            "$url" -o /tmp/m11-current.pdf
+          sudo apt-get update -y
+          sudo apt-get install -y poppler-utils
+          mkdir -p /tmp/m11-browser
+          npm --prefix /tmp/m11-browser init -y >/dev/null 2>&1
+          npm --prefix /tmp/m11-browser install --no-audit --no-fund playwright-core@1.55.0
+          command -v google-chrome || command -v chromium || command -v chromium-browser
+
+      - name: Acquire official PDF through real browser session
+        run: |
+          set -euo pipefail
+          cat > /tmp/m11-browser/acquire.cjs <<'NODE'
+          const fs = require('node:fs');
+          const { chromium } = require('/tmp/m11-browser/node_modules/playwright-core');
+
+          const candidates = ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser'];
+          const executablePath = candidates.find((candidate) => fs.existsSync(candidate));
+          if (!executablePath) throw new Error('CHROME_NOT_FOUND');
+
+          const landing = 'https://avtodor-tr.ru/road/tariffs/';
+          const pdfUrl = 'https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf';
+
+          const browser = await chromium.launch({
+            executablePath,
+            headless: true,
+            args: ['--no-sandbox', '--disable-dev-shm-usage'],
+          });
+          const context = await browser.newContext({
+            userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36',
+            locale: 'ru-RU',
+          });
+          const page = await context.newPage();
+
+          try {
+            const landingResponse = await page.goto(landing, { waitUntil: 'domcontentloaded', timeout: 45_000 });
+            console.log(`LANDING_STATUS=${landingResponse?.status() ?? 'none'}`);
+            await page.waitForTimeout(3_000);
+
+            let response;
+            try {
+              response = await page.goto(pdfUrl, { waitUntil: 'commit', timeout: 60_000 });
+            } catch (error) {
+              console.log(`PDF_NAVIGATION_ERROR=${error instanceof Error ? error.message : String(error)}`);
+            }
+
+            if (!response) throw new Error('PDF_RESPONSE_MISSING');
+            console.log(`PDF_STATUS=${response.status()}`);
+            console.log(`PDF_CONTENT_TYPE=${response.headers()['content-type'] ?? ''}`);
+            if (response.status() !== 200) throw new Error(`PDF_HTTP_${response.status()}`);
+
+            const body = await response.body();
+            if (body.length < 1000 || body.subarray(0, 4).toString('ascii') !== '%PDF') {
+              throw new Error(`PDF_BODY_INVALID:${body.length}`);
+            }
+            fs.writeFileSync('/tmp/m11-current.pdf', body);
+            console.log(`PDF_BYTES=${body.length}`);
+          } finally {
+            await browser.close();
+          }
+          NODE
+          node /tmp/m11-browser/acquire.cjs
           test -s /tmp/m11-current.pdf
           file /tmp/m11-current.pdf
           sha256sum /tmp/m11-current.pdf | tee /tmp/m11-current.sha256
@@ -45,11 +100,11 @@ jobs:
           test -s /tmp/m11-current.txt
           wc -l /tmp/m11-current.txt
           printf '\n=== 593 matches ===\n'
-          grep -n -C 2 '593' /tmp/m11-current.txt | head -120 || true
+          grep -n -C 2 '593' /tmp/m11-current.txt | head -160 || true
           printf '\n=== 679 matches ===\n'
-          grep -n -C 2 '679' /tmp/m11-current.txt | head -120 || true
+          grep -n -C 2 '679' /tmp/m11-current.txt | head -160 || true
           printf '\n=== order / category / profiles ===\n'
-          grep -n -E -C 2 '274|03.*сентябр|I категория|понедельник|пятниц|воскрес' /tmp/m11-current.txt | head -240 || true
+          grep -n -E -C 2 '274|03.*сентябр|I категория|понедельник|пятниц|воскрес' /tmp/m11-current.txt | head -300 || true
           grep -q '593' /tmp/m11-current.txt
           grep -q '679' /tmp/m11-current.txt
 
