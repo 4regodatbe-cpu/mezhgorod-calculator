@@ -79,3 +79,17 @@ if (pricedWithoutM11.length) throw new Error(`Long SPB total exposed without M11
 
 const falseCkad = longSpb.filter((row) => (row.tollSegments ?? []).some((segment) => String(segment).includes("ЦКАД")));
 if (falseCkad.length) throw new Error(`False CKAD component detected on M4→Moscow→M11 control routes: ${falseCkad.map((row) => row.id).join(", ")}`);
+
+const dailyFailureIds = new Set(["moscow-kazan", "eysk-moscow", "maykop-moscow"]);
+const dailyFailures = output.filter((row) => dailyFailureIds.has(row.id));
+const unresolvedDaily = dailyFailures.filter((row) => row.pricingStatus !== "priced" || !(Number(row.tollAmount) > 0));
+if (unresolvedDaily.length) throw new Error(`Previously failing daily toll route is not positively priced: ${unresolvedDaily.map((row) => row.id).join(", ")}`);
+
+const moscowKazan = dailyFailures.find((row) => row.id === "moscow-kazan");
+if (!moscowKazan || !(moscowKazan.tollSegments ?? []).some((segment) => String(segment).includes("М-12"))) {
+  throw new Error("Moscow→Kazan must be priced by the actual M-12 span, not a zero/legacy fallback");
+}
+const southToMoscow = dailyFailures.filter((row) => row.id === "eysk-moscow" || row.id === "maykop-moscow");
+if (southToMoscow.some((row) => !(row.tollSegments ?? []).some((segment) => String(segment).includes("М-4")))) {
+  throw new Error("Eysk/Maykop→Moscow must retain an M-4 toll component");
+}
