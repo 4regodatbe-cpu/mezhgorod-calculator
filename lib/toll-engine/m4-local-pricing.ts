@@ -81,14 +81,16 @@ function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
   }
 
   const through401to464 = containsOrdered(sequence, [515, 460, 416, 339])
-    || containsOrdered(sequence, [339, 416, 460, 515]);
+    || containsOrdered(sequence, [339, 416, 460, 515])
+    || containsOrdered(sequence, [515, 460, 416, 355])
+    || containsOrdered(sequence, [355, 416, 460, 515]);
   const zone401to464 = mixedZone(401, 464);
   if (through401to464 && zone401to464) {
     resolved.push({
       km: 416,
       weekday: zone401to464.fullSectionTariff.weekday,
       weekend: zone401to464.fullSectionTariff.weekend,
-      verification: contextVerification(validation, [515, 460, 416, 339]),
+      verification: contextVerification(validation, [515, 460, 416, 339, 355]),
       matchedNodeIds: nodeIdsFor(validation, [416, 460]),
       source: "Avtodor mixed zone 401–464 + ordered PVP traversal",
     });
@@ -111,6 +113,28 @@ function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
       verification: contextVerification(validation, [803, 636, 620]),
       matchedNodeIds: nodeIdsFor(validation, [636]),
       source: "Avtodor mixed zone 633–741 + mainline route context",
+    });
+    resolved633to741 = true;
+  }
+
+  // If only the 672 gate of the 633-741 mixed system is traversed and the
+  // route continues to the southern flank (PVP 803), price the official
+  // 633-672 partial section instead of blocking the whole M-4 component.
+  const has636 = validation.checks.some((item) => item.km === 636 && item.status === "confirmed");
+  const has672 = validation.checks.some((item) => item.km === 672 && item.status === "confirmed");
+  const partial672 = zone633to741?.partialGateTariffs?.find((item) => item.km === 672);
+  const throughPartial672 = !resolved633to741 && !has636 && has672 && (
+    containsOrdered(sequence, [803, 672])
+    || containsOrdered(sequence, [672, 803])
+  );
+  if (throughPartial672 && partial672) {
+    resolved.push({
+      km: 672,
+      weekday: partial672.tariff.weekday,
+      weekend: partial672.tariff.weekend,
+      verification: contextVerification(validation, [672, 803]),
+      matchedNodeIds: nodeIdsFor(validation, [672]),
+      source: "Avtodor official M-4 633-672 partial mixed-zone tariff + ordered route context",
     });
     resolved633to741 = true;
   }
