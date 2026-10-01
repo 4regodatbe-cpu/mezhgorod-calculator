@@ -49,8 +49,27 @@ console.log(JSON.stringify(output, null, 2));
 
 const longSpbIds = new Set(["krasnodar-spb", "golubitskaya-spb", "vityazevo-spb"]);
 const longSpb = output.filter((row) => longSpbIds.has(row.id));
-const grossUnderprices = longSpb.filter((row) => row.pricingStatus === "priced" && Number(row.tollAmount) < 8000);
+const unresolvedLongSpb = longSpb.filter((row) => row.pricingStatus !== "priced" || !(Number(row.tollAmount) > 0));
+if (unresolvedLongSpb.length) throw new Error(`Long SPB route is not fully priced: ${unresolvedLongSpb.map((row) => row.id).join(", ")}`);
+
+const grossUnderprices = longSpb.filter((row) => Number(row.tollAmount) < 8000);
 if (grossUnderprices.length) throw new Error(`Gross partial toll total still exposed: ${grossUnderprices.map((row) => `${row.id}=${row.tollAmount}`).join(", ")}`);
+
+const expectedBands = new Map([
+  ["krasnodar-spb", [10000, 13000]],
+  ["golubitskaya-spb", [12000, 14500]],
+  ["vityazevo-spb", [12000, 15000]],
+]);
+const outOfBand = longSpb.filter((row) => {
+  const band = expectedBands.get(row.id);
+  return band && (Number(row.tollAmount) < band[0] || Number(row.tollAmount) > band[1]);
+});
+if (outOfBand.length) throw new Error(`Long SPB toll total outside regression band: ${outOfBand.map((row) => `${row.id}=${row.tollAmount}`).join(", ")}`);
+
+const golubitskaya = longSpb.find((row) => row.id === "golubitskaya-spb");
+if (!golubitskaya || Math.abs(Number(golubitskaya.tollAmount) - 13350) > 1500) {
+  throw new Error(`Golubitskaya→SPB drifted too far from the external Yandex QA control (~13350 RUB): ${golubitskaya?.tollAmount ?? "missing"}`);
+}
 
 const pricedWithoutM11 = longSpb.filter((row) => row.pricingStatus === "priced" && !(row.tollSegments ?? []).some((segment) => String(segment).includes("М-11")));
 if (pricedWithoutM11.length) throw new Error(`Long SPB total exposed without M11 component: ${pricedWithoutM11.map((row) => row.id).join(", ")}`);
