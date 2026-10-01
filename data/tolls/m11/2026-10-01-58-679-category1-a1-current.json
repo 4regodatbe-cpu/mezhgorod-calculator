@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "road": "M-11 Neva",
+  "systemId": "m11-58-679-avtodor",
+  "snapshotKind": "current_diagnostic_a1",
+  "observedCurrentAt": "2026-10-01",
+  "sectionKm": { "from": 58, "to": 679 },
+  "operator": "ГК «Автодор» / оператор платного участка",
+  "vehicleCategory": {
+    "id": "I",
+    "description": "I категория ТС по действующим правилам оператора"
+  },
+  "currency": "RUB",
+  "sourceDocumentEffectiveFrom": "2026-01-12T01:00:00+03:00",
+  "source": {
+    "kind": "official_operator_current_detailed_tariff",
+    "url": "https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf",
+    "officialTariffPage": "https://avtodor-tr.ru/road/tariffs/",
+    "capturedAt": "2026-10-01",
+    "note": "Текущий детальный источник оператора, наблюдавшийся 01.10.2026. Дата начала действия, указанная в документе, не используется как доказательство физической доступности ПВП 593 до его открытия 18.09.2026."
+  },
+  "paymentModel": "official_matrix_cash_card_and_listed_interoperable_transponders",
+  "dayProfiles": {
+    "monThu": "Понедельник–четверг, кроме выходных, нерабочих праздничных и предпраздничных дней",
+    "friSun": "Пятница–воскресенье, выходные, нерабочие праздничные и предпраздничные дни"
+  },
+  "extraction": {
+    "completeMatrix": false,
+    "usage": "diagnostic_controls_only_not_for_arbitrary_pair_pricing",
+    "orderedPointCount": 22,
+    "verifiedControlCount": 2,
+    "note": "A1 фиксирует текущий порядок тарифных точек и только напрямую наблюдавшиеся контрольные пары. Непроверенные суммы не переносятся из мартовского snapshot и не вычисляются разностью."
+  },
+  "points": [
+    { "id": "p58", "routeKm": 58, "pvpKm": 58, "label": "км 58 / ПВП км 58", "corridorLabel": "д. Пешки" },
+    { "id": "p67", "routeKm": 67, "pvpKm": 67, "label": "км 67 / ПВП км 67", "corridorLabel": "д. Обухово" },
+    { "id": "p89", "routeKm": 89, "pvpKm": 89, "label": "км 89 / ПВП км 89", "corridorLabel": "г.о. Клин" },
+    { "id": "p97", "routeKm": 97, "pvpKm": 97, "label": "км 97 / ПВП км 97", "corridorLabel": "д. Ямуга" },
+    { "id": "p124", "routeKm": 124, "pvpKm": 124, "label": "км 124 / ПВП км 124", "corridorLabel": "д. Мирный" },
+    { "id": "p147", "routeKm": 149, "pvpKm": 147, "label": "км 149 / ПВП км 147", "corridorLabel": "г. Тверь" },
+    { "id": "p159", "routeKm": 159, "pvpKm": 159, "label": "км 159 / ПВП км 159", "corridorLabel": "д. Каблуково" },
+    { "id": "p177", "routeKm": 177, "pvpKm": 177, "label": "км 177 / ПВП км 177", "corridorLabel": "Р-132 Бежецкое ш." },
+    { "id": "p209", "routeKm": 208, "pvpKm": 209, "label": "км 208 / ПВП км 209", "corridorLabel": "д. Романово" },
+    { "id": "p214", "routeKm": 214, "pvpKm": 214, "label": "км 214 / ПВП км 214", "corridorLabel": "д. Букарево" },
+    { "id": "p258", "routeKm": 258, "pvpKm": 258, "label": "км 258 / ПВП км 258", "corridorLabel": "д. Будово" },
+    { "id": "p330", "routeKm": 334, "pvpKm": 330, "label": "км 334 / ПВП км 330", "corridorLabel": "д. Коломно" },
+    { "id": "p348", "routeKm": 348, "pvpKm": 348, "label": "км 348 / ПВП км 348", "corridorLabel": "г. Бологое" },
+    { "id": "p385", "routeKm": 385, "pvpKm": 385, "label": "км 385 / ПВП км 385", "corridorLabel": "г. Валдай" },
+    { "id": "p402", "routeKm": 402, "pvpKm": 402, "label": "км 402 / ПВП км 402", "corridorLabel": "р.п. Угловка" },
+    { "id": "p444", "routeKm": 444, "pvpKm": 444, "label": "км 444 / ПВП км 444", "corridorLabel": "д. Малый Борок" },
+    { "id": "p524", "routeKm": 524, "pvpKm": 524, "label": "км 524 / ПВП км 524", "corridorLabel": "д. Посад" },
+    { "id": "p545", "routeKm": 543, "pvpKm": 545, "label": "км 543 / ПВП км 545", "corridorLabel": "г. Великий Новгород" },
+    { "id": "p593", "routeKm": 593, "pvpKm": 593, "label": "км 593 / ПВП км 593", "corridorLabel": "Любань", "physicalFacilityOpenedAt": "2026-09-18", "facilityEvidenceId": "pvp593" },
+    { "id": "p647", "routeKm": 646, "pvpKm": 647, "label": "км 646 / ПВП км 647", "corridorLabel": "г. Тосно" },
+    { "id": "p668", "routeKm": 668, "pvpKm": 668, "label": "км 668 / ПВП км 668", "corridorLabel": "г. Пушкин" },
+    { "id": "p679", "routeKm": 679, "pvpKm": 679, "label": "км 679 / ПВП км 679", "corridorLabel": "г. Санкт-Петербург" }
+  ],
+  "verifiedControlsFromP58": {
+    "p593": { "monThu": 3600, "friSun": 4390 },
+    "p679": { "monThu": 4200, "friSun": 4940 }
+  },
+  "nonDerivationRules": [
+    "Не вычислять 593→679 как разность 58→679 и 58→593.",
+    "Не переносить непроверенные денежные ячейки из мартовского snapshot в текущий A1.",
+    "Не использовать A1 для произвольных entry/exit пар до полного A2."
+  ]
+}
