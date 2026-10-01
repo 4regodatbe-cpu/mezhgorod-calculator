@@ -3,6 +3,7 @@ import fs from "node:fs";
 const base = process.env.CALCULATOR_BASE_URL || "http://127.0.0.1:3000";
 const routes = [
   { id: "krasnodar-moscow", from: { label: "Краснодар", position: { lat: 45.0355, lng: 38.9753 } }, to: { label: "Москва", position: { lat: 55.7558, lng: 37.6173 } } },
+  { id: "tver-adler", from: { label: "Тверь", position: { lat: 56.8587, lng: 35.9176 } }, to: { label: "Адлер", position: { lat: 43.4382, lng: 39.9180 } } },
   { id: "krasnodar-spb", from: { label: "Краснодар", position: { lat: 45.0355, lng: 38.9753 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
   { id: "golubitskaya-spb", from: { label: "Голубицкая", position: { lat: 45.3258, lng: 37.2761 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
   { id: "vityazevo-spb", from: { label: "Витязево", position: { lat: 45.0019, lng: 37.2821 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
@@ -92,4 +93,19 @@ if (!moscowKazan || !(moscowKazan.tollSegments ?? []).some((segment) => String(s
 const southToMoscow = dailyFailures.filter((row) => row.id === "eysk-moscow" || row.id === "maykop-moscow");
 if (southToMoscow.some((row) => !(row.tollSegments ?? []).some((segment) => String(segment).includes("М-4")))) {
   throw new Error("Eysk/Maykop→Moscow must retain an M-4 toll component");
+}
+
+
+const tverAdler = output.find((row) => row.id === "tver-adler");
+if (!tverAdler || tverAdler.pricingStatus !== "priced" || !(Number(tverAdler.tollAmount) > 0)) {
+  throw new Error(`Tver→Adler must have a complete positive toll price: ${tverAdler?.tollAmount ?? "missing"}`);
+}
+if (!(tverAdler.tollSegments ?? []).some((segment) => String(segment).includes("М-4"))) {
+  throw new Error("Tver→Adler must retain the M-4 component");
+}
+if (Number(tverAdler.tollAmount) < 5000) {
+  throw new Error(`Tver→Adler exposed a grossly partial M-4 total: ${tverAdler.tollAmount}`);
+}
+if (Math.abs(Number(tverAdler.tollWeekend) - 7830) > 1800) {
+  throw new Error(`Tver→Adler weekend toll drifted too far from the external Yandex QA control (~7830 RUB): ${tverAdler.tollWeekend}`);
 }
