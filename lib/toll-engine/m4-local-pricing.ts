@@ -80,10 +80,15 @@ function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
     }
   }
 
-  const through401to464 = containsOrdered(sequence, [515, 460, 416, 339])
-    || containsOrdered(sequence, [339, 416, 460, 515])
-    || containsOrdered(sequence, [515, 460, 416, 355])
-    || containsOrdered(sequence, [355, 416, 460, 515]);
+  // Full traversal of the 401-464 mixed section is established by both
+  // section gates plus confirmed M-4 plazas on opposite sides of the zone.
+  // Do not depend on one specific northern plaza: live routes can legitimately
+  // use different alignments in the 322-401 corridor while still traversing
+  // the complete 401-464 section.
+  const northFlanks401 = sequence.filter((km) => km < 401);
+  const through401to464 = northFlanks401.some((northKm) =>
+    containsOrdered(sequence, [515, 460, 416, northKm])
+    || containsOrdered(sequence, [northKm, 416, 460, 515]));
   const zone401to464 = mixedZone(401, 464);
   if (through401to464 && zone401to464) {
     resolved.push({
