@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "systemId": "m11-58-679-avtodor",
+  "evidenceKind": "official_operator_facility_delta",
+  "effectiveFrom": "2026-09-18",
+  "source": {
+    "kind": "official_operator_news",
+    "url": "https://unitoll.ru/about/press/news/na-593-km-dorogi-m-11-neva-otkrylas-transportnaya-razvyazka/",
+    "crossReference": "https://mintrans.gov.ru/eye/press-center/news/12987",
+    "evidence": "18.09.2026 на новой развязке км 593 открыт новый ПВП; опубликованная мартовская тарифная матрица этой точки не содержит"
+  },
+  "facilities": [
+    {
+      "facilityId": "pvp593",
+      "tariffPointId": null,
+      "officialNumber": "593",
+      "officialLabel": "ПВП на 593 км М-11 «Нева»",
+      "facilityKind": "interchange_pvp",
+      "routeKm": 593,
+      "accessRoadKm": null,
+      "directionText": null,
+      "coordinate": null,
+      "spatialStatus": "unresolved",
+      "note": "Авторитетно подтверждено существование физического ПВП, но до получения актуальной официальной тарифной матрицы точка не привязывается к tariffPointId и не является priceable"
+    }
+  ]
+}
