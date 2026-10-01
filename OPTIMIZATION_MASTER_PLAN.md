@@ -217,7 +217,7 @@ Current observed control behavior:
 Production `main` remains intentionally unchanged.
 
 ### Segment 6 — other paid road families
-Status: IN PROGRESS — M-11 Segment 6A3B1 complete.
+Status: IN PROGRESS — M-11 evidence/tariff refresh before resolver.
 Order after M-4 and M-12 stabilization:
 1. M-11;
 2. ЦКАД;
@@ -229,15 +229,19 @@ M-11 progress:
 - `6A2A` Valhalla strict M-11 road-span evidence — DONE with provider distance limit documented;
 - `6A2B` OSRM step evidence for long/mixed routes — DONE / GREEN;
 - `6A2C` provider-neutral strict-road parser and deterministic fixtures — DONE / GREEN, workflow `36786170033`;
-- `6A3A` official tariff snapshots — 15–58 complete Category-I data plus 58–679 A1 ordered-point/control snapshot; the latter remains intentionally incomplete for arbitrary-pair monetary pricing;
-- `6A3B1` anchor inventory — DONE, checkpoint `checkpoints/SEGMENT_6A3B1_M11_ANCHOR_INVENTORY_RESULT.md`.
+- `6A3A` official tariff snapshots — 15–58 complete Category-I data plus a March 58–679 A1 ordered-point/control snapshot; the latter is incomplete and no longer current enough for arbitrary-pair October pricing;
+- `6A3B1` anchor inventory — DONE, checkpoint `checkpoints/SEGMENT_6A3B1_M11_ANCHOR_INVENTORY_RESULT.md`;
+- `6A3B2` pure tariff-boundary model — DONE / GREEN;
+- `6A3B2A` 15–58 facility identity/chainage model — DONE / GREEN, including one tariff point mapping to multiple directional PVP facilities;
+- `6A3B2B` 58–679 facility inventory + infrastructure drift guard — DONE / GREEN, checkpoint `checkpoints/SEGMENT_6A3B2B_M11_58_679_FACILITY_INVENTORY_RESULT.md`, workflow `36802971309`.
 
-6A3B1 finding:
-- current official snapshots contain official tariff-point identities/order/km metadata but no trusted spatial coordinates;
-- there are zero persisted `official-coordinate-backed` M-11 anchors;
-- legacy M-11 coordinates remain legacy-only;
-- Valhalla/OSRM coordinates remain route-provider-derived road evidence;
-- missing coordinates must remain unresolved rather than being inferred from route km, city centres or old five-chunk geometry.
+Current M-11 evidence state:
+- trusted coordinates remain unresolved unless independently proved; no legacy/provider coordinate is relabelled official;
+- the March 58–679 matrix contributes 21 bound physical PVP identities/chainages;
+- a new official PVP at M-11 km 593 opened on 18.09.2026 and is not present in that March matrix;
+- PVP 593 is therefore stored as an authoritative `unboundFacility`, not fabricated into a March tariff point and not priceable;
+- the operator also published a 04.09.2026 M-11 tariff-change notice, so a post-September current tariff refresh is mandatory before arbitrary-pair 58–679 pricing;
+- the new M-11 boundary model is still not imported into `/api/v2/calculate`.
 
 Each system gets an explicit tariff model, evidence model and regression corpus. No road-family pricing is promoted from a legacy heuristic until a diagnostic checkpoint documents current behavior and proves the replacement rules.
 
@@ -277,4 +281,4 @@ Required before claiming optimization complete:
 
 ## Current next action
 
-Proceed with Segment 6A3B2: create a pure M-11 tariff-boundary data model with stable official point IDs/order/km metadata and optional trusted coordinates. Keep all unresolved coordinates empty, preserve explicit evidence classification, calculate no money, and do not import the model into `/api/v2/calculate`. Before any later resolver can emit exact tariff-point IDs from route geometry, run a dedicated spatial-anchor acquisition/validation subsegment; unresolved evidence must stay unresolved rather than being guessed.
+Refresh Segment 6A3A2 against the current post-September official M-11 tariff source before any exact 6A3B3 resolver is allowed. Recover and validate the current 58–679 tariff-point inventory and complete Category-I matrices, prove how the newly opened PVP 593 participates in the closed toll system, preserve the March snapshot as historical evidence only, keep unresolved current coverage as `unknown`, and do not change production M-11 user pricing during this refresh.
