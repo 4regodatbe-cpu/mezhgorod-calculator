@@ -7,6 +7,9 @@ const routes = [
   { id: "golubitskaya-spb", from: { label: "Голубицкая", position: { lat: 45.3258, lng: 37.2761 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
   { id: "vityazevo-spb", from: { label: "Витязево", position: { lat: 45.0019, lng: 37.2821 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
   { id: "kazan-yalta", from: { label: "Казань", position: { lat: 55.7961, lng: 49.1064 } }, to: { label: "Ялта", position: { lat: 44.4952, lng: 34.1663 } } },
+  { id: "moscow-kazan", from: { label: "Москва", position: { lat: 55.7558, lng: 37.6173 } }, to: { label: "Казань", position: { lat: 55.7961, lng: 49.1064 } } },
+  { id: "eysk-moscow", from: { label: "Ейск", position: { lat: 46.7115, lng: 38.2765 } }, to: { label: "Москва", position: { lat: 55.7558, lng: 37.6173 } } },
+  { id: "maykop-moscow", from: { label: "Майкоп", position: { lat: 44.6098, lng: 40.1007 } }, to: { label: "Москва", position: { lat: 55.7558, lng: 37.6173 } } },
 ];
 
 const output = [];
