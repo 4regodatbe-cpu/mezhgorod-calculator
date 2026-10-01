@@ -51,9 +51,34 @@ function contextVerification(validation: M4RoutePlazaValidation, kms: number[]):
 function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
   const sequence = confirmedKms(validation);
   const resolved: M4PricedPlaza[] = [];
+  let resolved322to401 = false;
   let resolved401to464 = false;
   let resolved633to741 = false;
   let resolved545 = false;
+
+  // The 355-km plaza is an entry PVP for traffic towards Moscow. Official
+  // Avtodor rules require the receipt issued at km 355 to be presented at
+  // km 339 to avoid double payment. Therefore a route that geometrically
+  // crosses both physical plaza anchors must be charged exactly once:
+  // 355 -> 339 (towards Moscow) uses the 355 tariff; the reverse traversal
+  // uses the 339 tariff.
+  const index339 = sequence.indexOf(339);
+  const index355 = sequence.indexOf(355);
+  if (index339 >= 0 && index355 >= 0 && index339 !== index355) {
+    const chargedKm = index355 < index339 ? 355 : 339;
+    const row = M4_DATA.plazas.find((plaza) => plaza.km === chargedKm && plaza.model === "open" && plaza.tariff);
+    if (row?.tariff) {
+      resolved.push({
+        km: chargedKm,
+        weekday: row.tariff.weekday,
+        weekend: row.tariff.weekend,
+        verification: contextVerification(validation, [339, 355]),
+        matchedNodeIds: nodeIdsFor(validation, [chargedKm]),
+        source: "Avtodor km 355→339 receipt rule + ordered route traversal",
+      });
+      resolved322to401 = true;
+    }
+  }
 
   const through401to464 = containsOrdered(sequence, [515, 460, 416, 339])
     || containsOrdered(sequence, [339, 416, 460, 515]);
@@ -103,7 +128,7 @@ function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
     resolved545 = true;
   }
 
-  return { resolved, resolved401to464, resolved633to741, resolved545 };
+  return { resolved, resolved322to401, resolved401to464, resolved633to741, resolved545 };
 }
 
 function traversalPricedPlazas(validation: M4RoutePlazaValidation) {
@@ -213,14 +238,18 @@ export function priceM4RoutePlazaValidation(
       return !context.resolved633to741;
     }
     if (item.code === "ambiguous_545") return !context.resolved545;
+    if (item.code === "alternative_corridor" && item.kms.includes(339) && item.kms.includes(355)) {
+      return !context.resolved322to401;
+    }
     return true;
   });
 
   const confirmed = new Set(confirmedKms(validation));
   const alternativeConflict = confirmed.has(339) && confirmed.has(355);
-  const pricedPlazas = [...result.pricedPlazas, ...traversalPricedPlazas(validation), ...context.resolved]
+  const directPricedPlazas = [...result.pricedPlazas, ...traversalPricedPlazas(validation)]
+    .filter((item) => !alternativeConflict || (item.km !== 339 && item.km !== 355));
+  const pricedPlazas = [...directPricedPlazas, ...context.resolved]
     .filter((item, index, all) => all.findIndex((candidate) => candidate.km === item.km) === index)
-    .filter((item) => !alternativeConflict || (item.km !== 339 && item.km !== 355))
     .sort((a, b) => a.km - b.km);
   const weekdayAmount = pricedPlazas.reduce((sum, item) => sum + item.weekday, 0);
   const weekendAmount = pricedPlazas.reduce((sum, item) => sum + item.weekend, 0);
