@@ -3,6 +3,7 @@ on:
   push:
     branches: [optimize-calculator-2]
     paths:
+      - app/api/v2/calculate/route.ts
       - lib/route-quality.ts
       - lib/verified-routes.ts
       - data/verified-routes.json
@@ -27,5 +28,10 @@ jobs:
         run: node --experimental-strip-types scripts/segment8-route-quality-test.ts
       - name: Golden route corpus integrity
         run: node scripts/segment8-golden-corpus-test.ts
+      - name: No hidden stored-route substitution
+        run: |
+          ! grep -q 'KNOWN_FAST_ROUTES\|KNOWN_FREE_ROUTES\|return.*route: known' app/api/v2/calculate/route.ts
+          grep -q 'selectLiveRoute' app/api/v2/calculate/route.ts
+          grep -q 'goldenRouteReference' app/api/v2/calculate/route.ts
       - name: Production build
         run: pnpm build
