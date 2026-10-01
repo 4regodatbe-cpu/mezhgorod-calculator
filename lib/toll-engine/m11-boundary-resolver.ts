@@ -67,14 +67,7 @@ export function resolveM11Boundaries(args: {
       const anchorCoordinate: M11Coordinate = [anchor.coordinate.lon, anchor.coordinate.lat];
       const nearest = nearestVertex(args.routeGeometry, anchorCoordinate);
       if (nearest.distanceMeters > maxDistance || !insideAny(nearest.index, intervals)) continue;
-      const hit: M11ResolvedCrossing = {
-        tariffPointId: facility.tariffPointId,
-        facilityId: facility.facilityId,
-        routeIndex: nearest.index,
-        distanceMeters: Math.round(nearest.distanceMeters * 10) / 10,
-        anchorId: anchor.anchorId,
-        anchorCoordinate,
-      };
+      const hit: M11ResolvedCrossing = { tariffPointId: facility.tariffPointId, facilityId: facility.facilityId, routeIndex: nearest.index, distanceMeters: Math.round(nearest.distanceMeters * 10) / 10, anchorId: anchor.anchorId, anchorCoordinate };
       if (!best || hit.routeIndex < best.routeIndex || (hit.routeIndex === best.routeIndex && hit.distanceMeters < best.distanceMeters)) best = hit;
     }
     if (best) hits.push(best);
@@ -86,6 +79,11 @@ export function resolveM11Boundaries(args: {
   const crossings = [...byPoint.values()].sort((a, b) => a.routeIndex - b.routeIndex || a.distanceMeters - b.distanceMeters);
 
   if (crossings.length < 2) return { status: "unresolved", entryPointId: null, exitPointId: null, crossings, confidence: "insufficient", unresolvedReasons: [crossings.length === 0 ? "no_verified_boundary_crossing" : "only_one_verified_boundary_crossing"] };
+  for (let index = 1; index < crossings.length; index += 1) {
+    if (crossings[index - 1].routeIndex === crossings[index].routeIndex && crossings[index - 1].tariffPointId !== crossings[index].tariffPointId) {
+      return { status: "unresolved", entryPointId: null, exitPointId: null, crossings, confidence: "insufficient", unresolvedReasons: ["ambiguous_boundary_crossing"] };
+    }
+  }
 
   const firstBlock = args.evidence.strictBlocks[0];
   const lastBlock = args.evidence.strictBlocks.at(-1)!;
@@ -95,7 +93,6 @@ export function resolveM11Boundaries(args: {
   if (haversineMeters(firstBlock.beginCoordinate, entry.anchorCoordinate) > maxEndpointDistance) endpointReasons.push("entry_not_proven_at_strict_m11_start");
   if (haversineMeters(lastBlock.endCoordinate, exit.anchorCoordinate) > maxEndpointDistance) endpointReasons.push("exit_not_proven_at_strict_m11_end");
   if (endpointReasons.length > 0) return { status: "unresolved", entryPointId: null, exitPointId: null, crossings, confidence: "insufficient", unresolvedReasons: endpointReasons };
-
   if (entry.tariffPointId === exit.tariffPointId) return { status: "unresolved", entryPointId: null, exitPointId: null, crossings, confidence: "insufficient", unresolvedReasons: ["same_boundary_only"] };
 
   return { status: "resolved", entryPointId: entry.tariffPointId, exitPointId: exit.tariffPointId, crossings, confidence: "independently_verified_spatial", unresolvedReasons: [] };
