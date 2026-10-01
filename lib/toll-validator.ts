@@ -12,7 +12,7 @@ export type TollBoothEvent = {
 
 export type TollValidation = {
   status: "toll" | "free" | "unknown";
-  source: "Valhalla map matching" | "M-12 local RVP core";
+  source: "Valhalla map matching" | "M-12 local RVP core" | "M-11 current boundary + tariff core" | "Route toll composition";
   tollEdgeCount: number;
   checkedEdgeCount: number;
   wayIds: string[];
@@ -20,9 +20,6 @@ export type TollValidation = {
   message: string;
   tollBoothCount?: number;
   tollBooths?: TollBoothEvent[];
-  // New validators always fill these fields. They remain optional at the type
-  // boundary so older fallback constructors can coexist during the staged
-  // migration. Missing coverage metadata must never be treated as complete.
   chunkCount?: number;
   checkedChunkCount?: number;
   failedChunkCount?: number;
@@ -78,8 +75,7 @@ function splitRoute(route: Coordinate[]) {
     const gap = distanceKm(previous, point);
 
     if (accumulated + gap > MAX_TRACE_CHUNK_KM && current.length >= 2) {
-      if (current[current.length - 1] !== previous) current.push(previous);
-      chunks.push(current);
+      chunks.push(sampleRoute(current));
       current = [previous, point];
       accumulated = gap;
     } else {
@@ -88,66 +84,44 @@ function splitRoute(route: Coordinate[]) {
     }
   }
 
-  if (current.length >= 2) chunks.push(current);
+  if (current.length >= 2) chunks.push(sampleRoute(current));
   return chunks;
 }
 
-function dedupe<T>(values: T[]) {
-  return [...new Set(values)];
-}
-
-function edgeWayId(edge: TraceEdge) {
-  return edge.way_id === undefined || edge.way_id === null ? null : String(edge.way_id);
-}
-
-function edgeNodeId(edge: TraceEdge) {
-  const value = edge.end_node?.node_id ?? edge.node_id;
-  return value === undefined || value === null ? null : String(value);
-}
-
-function isTollBooth(edge: TraceEdge) {
-  return edge.end_node?.type === "toll_booth";
-}
-
-async function traceChunk(route: Coordinate[]) {
-  const url = new URL("https://valhalla1.openstreetmap.de/trace_attributes");
-  url.searchParams.set("json", JSON.stringify({
-    shape: route.map(([lon, lat]) => ({ lat, lon })),
-    costing: "auto",
-    shape_match: "walk_or_snap",
-    filters: {
-      action: "include",
-      attributes: [
-        "edge.toll",
-        "edge.way_id",
-        "edge.names",
-        "edge.begin_shape_index",
-        "edge.end_shape_index",
-        "node.type",
-        "node.osm_id",
-      ],
-    },
-  }));
-  const response = await fetch(url, {
-    headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
-    cache: "no-store",
-    signal: AbortSignal.timeout(18_000),
-  });
-  if (!response.ok) throw new Error(`TRACE_${response.status}`);
-  return (await response.json()) as { edges?: TraceEdge[] };
-}
-
-async function mapConcurrent<T, R>(values: T[], limit: number, fn: (value: T, index: number) => Promise<R>) {
-  const result = new Array<R>(values.length);
-  let cursor = 0;
-  async function worker() {
-    while (cursor < values.length) {
-      const index = cursor++;
-      result[index] = await fn(values[index], index);
-    }
+async function validateChunk(route: Coordinate[], chunkIndex: number) {
+  try {
+    const response = await fetch("https://valhalla1.openstreetmap.de/trace_attributes", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "User-Agent": "MezhgorodCalc/2.0",
+      },
+      body: JSON.stringify({
+        shape: route.map(([lon, lat]) => ({ lat, lon })),
+        costing: "auto",
+        shape_match: "walk_or_snap",
+        filters: {
+          action: "include",
+          attributes: [
+            "edge.toll",
+            "edge.way_id",
+            "edge.names",
+            "edge.begin_shape_index",
+            "edge.end_shape_index",
+            "edge.end_osm_node_id",
+            "node.type",
+          ],
+        },
+      }),
+      signal: AbortSignal.timeout(8_000),
+    });
+    if (!response.ok) return { ok: false as const, chunkIndex, edges: [] as TraceEdge[] };
+    const data = (await response.json()) as { edges?: TraceEdge[] };
+    return { ok: true as const, chunkIndex, edges: data.edges ?? [] };
+  } catch {
+    return { ok: false as const, chunkIndex, edges: [] as TraceEdge[] };
   }
-  await Promise.all(Array.from({ length: Math.min(limit, values.length) }, () => worker()));
-  return result;
 }
 
 export async function validateTollEdges(route: Coordinate[]): Promise<TollValidation> {
@@ -159,7 +133,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       checkedEdgeCount: 0,
       wayIds: [],
       roadNames: [],
-      message: "Недостаточно точек маршрута для независимой проверки платных дорог",
+      message: "Недостаточно геометрии маршрута для независимой проверки платности",
       chunkCount: 0,
       checkedChunkCount: 0,
       failedChunkCount: 0,
@@ -168,71 +142,66 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     };
   }
 
-  const chunks = splitRoute(route).map(sampleRoute);
-  const chunkResults = await mapConcurrent(chunks, CHUNK_CONCURRENCY, async (chunk) => {
-    try {
-      const response = await traceChunk(chunk);
-      return { ok: true as const, edges: response.edges ?? [] };
-    } catch (error) {
-      return { ok: false as const, error: error instanceof Error ? error.message : "TRACE_ERROR" };
-    }
-  });
-
-  const successful = chunkResults.filter((item): item is Extract<typeof item, { ok: true }> => item.ok);
-  const failed = chunkResults.filter((item): item is Extract<typeof item, { ok: false }> => !item.ok);
-  const tollEdges = successful.flatMap((item) => item.edges).filter((edge) => edge.toll === true);
-  const boothEdges = successful.flatMap((item) => item.edges).filter(isTollBooth);
-  const complete = failed.length === 0 && successful.length === chunks.length;
-  const checkedEdgeCount = successful.reduce((sum, item) => sum + item.edges.length, 0);
-  const roadNames = dedupe(tollEdges.flatMap((edge) => edge.names ?? []).filter(Boolean));
-  const wayIds = dedupe(tollEdges.map(edgeWayId).filter((value): value is string => Boolean(value)));
-  const tollBooths: TollBoothEvent[] = boothEdges.map((edge, edgeIndex) => ({
-    osmNodeId: edgeNodeId(edge),
-    wayId: edgeWayId(edge),
-    roadNames: edge.names ?? [],
-    edgeIndex,
-    edgeToll: edge.toll === true,
-    beginShapeIndex: edge.begin_shape_index,
-    endShapeIndex: edge.end_shape_index,
-  }));
-
-  if (!complete) {
-    return {
-      status: tollEdges.length > 0 ? "toll" : "unknown",
-      source: "Valhalla map matching",
-      tollEdgeCount: tollEdges.length,
-      checkedEdgeCount,
-      wayIds,
-      roadNames,
-      message: tollEdges.length > 0
-        ? `Платные дорожные рёбра подтверждены, но проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`
-        : `Проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`,
-      tollBoothCount: tollBooths.length,
-      tollBooths,
-      chunkCount: chunks.length,
-      checkedChunkCount: successful.length,
-      failedChunkCount: failed.length,
-      complete: false,
-      boothEventCoverage: successful.length > 0 ? "partial" : "none",
-    };
+  const chunks = splitRoute(route);
+  const results: Awaited<ReturnType<typeof validateChunk>>[] = [];
+  for (let index = 0; index < chunks.length; index += CHUNK_CONCURRENCY) {
+    results.push(...await Promise.all(chunks.slice(index, index + CHUNK_CONCURRENCY).map((chunk, offset) => validateChunk(chunk, index + offset))));
   }
 
+  const successful = results.filter((result) => result.ok);
+  const complete = successful.length === chunks.length;
+  const tollEdges: TraceEdge[] = [];
+  const checkedEdges: TraceEdge[] = [];
+  const wayIds = new Set<string>();
+  const roadNames = new Set<string>();
+  const tollBooths: TollBoothEvent[] = [];
+
+  for (const result of successful) {
+    for (const [edgeIndex, edge] of result.edges.entries()) {
+      checkedEdges.push(edge);
+      if (edge.toll === true) {
+        tollEdges.push(edge);
+        if (edge.way_id !== undefined) wayIds.add(String(edge.way_id));
+        for (const name of edge.names ?? []) if (name.trim()) roadNames.add(name.trim());
+      }
+      if (edge.end_node?.type === "toll_booth") {
+        tollBooths.push({
+          osmNodeId: edge.end_node.node_id === undefined ? null : String(edge.end_node.node_id),
+          wayId: edge.way_id === undefined ? null : String(edge.way_id),
+          roadNames: edge.names ?? [],
+          edgeIndex,
+          edgeToll: edge.toll === true,
+          beginShapeIndex: edge.begin_shape_index,
+          endShapeIndex: edge.end_shape_index,
+        });
+      }
+    }
+  }
+
+  const status: TollValidation["status"] = tollEdges.length > 0
+    ? "toll"
+    : complete && checkedEdges.length > 0
+      ? "free"
+      : "unknown";
+
   return {
-    status: tollEdges.length > 0 ? "toll" : "free",
+    status,
     source: "Valhalla map matching",
     tollEdgeCount: tollEdges.length,
-    checkedEdgeCount,
-    wayIds,
-    roadNames,
+    checkedEdgeCount: checkedEdges.length,
+    wayIds: [...wayIds],
+    roadNames: [...roadNames],
     message: tollEdges.length > 0
       ? `Подтверждены платные дорожные рёбра: ${tollEdges.length}`
-      : "Платные дорожные рёбра не обнаружены во всём проверенном маршруте",
+      : complete
+        ? "Независимая проверка не обнаружила платных дорожных рёбер"
+        : `Проверка выполнена частично: ${successful.length} из ${chunks.length} фрагментов`,
     tollBoothCount: tollBooths.length,
     tollBooths,
     chunkCount: chunks.length,
     checkedChunkCount: successful.length,
-    failedChunkCount: 0,
-    complete: true,
-    boothEventCoverage: "complete",
+    failedChunkCount: chunks.length - successful.length,
+    complete,
+    boothEventCoverage: complete ? "complete" : successful.length > 0 ? "partial" : "none",
   };
 }
