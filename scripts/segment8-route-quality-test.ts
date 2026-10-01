@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
 import { selectLiveRoute, percentSpread, type GoldenRouteReference } from "../lib/route-quality.ts";
 
+// Final Segment 8 deterministic contract after live API integration.
 const route = (km: number, min: number) => ({ meters: km * 1000, seconds: min * 60 });
 const golden: GoldenRouteReference = { meters: 1000_000, seconds: 600 * 60, distanceTolerancePercent: 3, source: "fixture", verifiedAt: "2026-10-01" };
-
 assert.equal(percentSpread(1_000_000, 1_020_000), 2);
 const agree = selectLiveRoute({ name: "A", route: route(1005, 600) }, { name: "B", route: route(1015, 630) }, golden);
 assert.equal(agree.provider, "A");
@@ -11,22 +11,19 @@ assert.equal(agree.route.meters, 1_005_000, "golden reference must never replace
 assert.equal(agree.quality.status, "verified");
 assert.equal(agree.quality.distanceSpreadPercent, 1);
 assert.equal(agree.quality.timeSpreadPercent, 4.9);
-
 const disagree = selectLiveRoute({ name: "A", route: route(1120, 600) }, { name: "B", route: route(1010, 650) }, golden);
 assert.equal(disagree.provider, "B");
 assert.equal(disagree.route.meters, 1_010_000);
 assert.notEqual(disagree.route.meters, golden.meters);
 assert.equal(disagree.quality.status, "verified");
-
 const badTogether = selectLiveRoute({ name: "A", route: route(1100, 600) }, { name: "B", route: route(1110, 620) }, golden);
 assert.equal(badTogether.provider, "A");
-assert.equal(badTogether.quality.status, "warning", "provider agreement must not override a golden-band failure");
-
+assert.equal(badTogether.quality.status, "warning");
 const singleGood = selectLiveRoute({ name: "A", route: route(1020, 600) }, undefined, golden);
 assert.equal(singleGood.quality.status, "verified");
 assert.equal(singleGood.route.meters, 1_020_000);
 const singleBad = selectLiveRoute({ name: "A", route: route(1100, 600) }, undefined, golden);
-assert.equal(singleBad.quality.status, "single", "a bad single provider must not be upgraded by a control");
+assert.equal(singleBad.quality.status, "single");
 const singleNoGolden = selectLiveRoute(undefined, { name: "B", route: route(900, 500) });
 assert.equal(singleNoGolden.quality.status, "single");
 assert.equal(singleNoGolden.provider, "B");
