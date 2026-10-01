@@ -207,7 +207,7 @@ export function calculateM11MoscowToPetersburg(
   }
 
   if ([p58, p593, p679].some((item) => item.distanceKm > FACILITY_MAX_DISTANCE_KM)) {
-    return { candidate: true, exact: false, tolls: null, reason: "m11_58_679_facility_sequence_incomplete", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
+    return { candidate: true, exact: false, tolls: null, reason: `m11_58_679_facility_sequence_incomplete_p147_${Math.round(p147.distanceKm * 1000)}m`, evidence: { ...evidenceBase, entryAt: null, p58At: null } };
   }
   if (!(entry.index < p58.index && p58.index < p593.index && p593.index < p679.index)) {
     return { candidate: true, exact: false, tolls: null, reason: "m11_northbound_sequence_not_proven", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
