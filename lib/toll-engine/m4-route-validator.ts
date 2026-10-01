@@ -1,6 +1,7 @@
 import type { Coordinate } from "@/lib/tolls";
 import type { TollBoothEvent } from "@/lib/toll-validator";
 import { M4_PLAZA_NODES, type M4PlazaNodeGroup } from "@/lib/toll-engine/m4-plaza-nodes";
+import { evaluateM4RouteTraversal, type M4RouteTraversalEvidence } from "@/lib/toll-engine/m4-route-traversal";
 
 const CANDIDATE_RADIUS_KM = 1.5;
 const WINDOW_HALF_KM = 4;
@@ -14,6 +15,7 @@ export type M4LocalPlazaCheck = {
   km: number;
   model: M4PlazaNodeGroup["model"];
   status: "confirmed" | "rejected" | "unknown";
+  evidence: "map_matching" | "route_traversal" | "none";
   nearestDistanceKm: number;
   matchedNodeIds: string[];
   expectedNodeIds: string[];
@@ -22,7 +24,7 @@ export type M4LocalPlazaCheck = {
 };
 
 export type M4RoutePlazaValidation = {
-  source: "Valhalla local PVP map matching";
+  source: "Valhalla local PVP map matching + strict route traversal fallback";
   candidateRadiusKm: number;
   windowHalfKm: number;
   candidateCount: number;
@@ -42,6 +44,7 @@ type Candidate = {
   nearestDistanceKm: number;
   segmentIndex: number;
   window: Coordinate[];
+  traversal: M4RouteTraversalEvidence;
 };
 
 type TraceEdge = {
@@ -142,6 +145,7 @@ function candidatesForRoute(route: Coordinate[]): Candidate[] {
       nearestDistanceKm: nearest.nearestDistanceKm,
       segmentIndex: nearest.segmentIndex,
       window: localWindow(route, nearest.segmentIndex),
+      traversal: evaluateM4RouteTraversal(route, plaza),
     });
   }
 
@@ -226,25 +230,46 @@ async function localTrace(window: Coordinate[], deadlineAt: number): Promise<Loc
   return { ok: false, message: lastMessage };
 }
 
-async function validateCandidate(candidate: Candidate, deadlineAt: number): Promise<{ check: M4LocalPlazaCheck; events: TollBoothEvent[] }> {
-  const expectedNodeIds = new Set(candidate.plaza.nodeIds);
-  const traced = await localTrace(candidate.window, deadlineAt);
-
-  if (!traced.ok) {
+function unavailableResult(candidate: Candidate, remoteMessage: string): { check: M4LocalPlazaCheck; events: TollBoothEvent[] } {
+  const nearestDistanceKm = Math.round(candidate.nearestDistanceKm * 1000) / 1000;
+  if (candidate.traversal.confirmed) {
     return {
       check: {
         km: candidate.plaza.km,
         model: candidate.plaza.model,
-        status: "unknown",
-        nearestDistanceKm: Math.round(candidate.nearestDistanceKm * 1000) / 1000,
+        status: "confirmed",
+        evidence: "route_traversal",
+        nearestDistanceKm,
         matchedNodeIds: [],
-        expectedNodeIds: [...expectedNodeIds],
+        expectedNodeIds: [...candidate.plaza.nodeIds],
         windowPointCount: candidate.window.length,
-        message: traced.message,
+        message: `Удалённый map matching недоступен (${remoteMessage}); ПВП подтверждён строгим пересечением сохранённого OSM-якоря маршрутом на ${Math.round(candidate.traversal.nearestDistanceKm * 1000)} м с продолжением трассы по обе стороны.`,
       },
       events: [],
     };
   }
+
+  return {
+    check: {
+      km: candidate.plaza.km,
+      model: candidate.plaza.model,
+      status: "unknown",
+      evidence: "none",
+      nearestDistanceKm,
+      matchedNodeIds: [],
+      expectedNodeIds: [...candidate.plaza.nodeIds],
+      windowPointCount: candidate.window.length,
+      message: `${remoteMessage}; строгий route-traversal fallback не подтверждён (${candidate.traversal.reason}).`,
+    },
+    events: [],
+  };
+}
+
+async function validateCandidate(candidate: Candidate, deadlineAt: number): Promise<{ check: M4LocalPlazaCheck; events: TollBoothEvent[] }> {
+  const expectedNodeIds = new Set(candidate.plaza.nodeIds);
+  const traced = await localTrace(candidate.window, deadlineAt);
+
+  if (!traced.ok) return unavailableResult(candidate, traced.message);
 
   const events: TollBoothEvent[] = [];
   const seen = new Set<string>();
@@ -273,13 +298,14 @@ async function validateCandidate(candidate: Candidate, deadlineAt: number): Prom
       km: candidate.plaza.km,
       model: candidate.plaza.model,
       status: confirmed ? "confirmed" : "rejected",
+      evidence: "map_matching",
       nearestDistanceKm: Math.round(candidate.nearestDistanceKm * 1000) / 1000,
       matchedNodeIds,
       expectedNodeIds: [...expectedNodeIds],
       windowPointCount: candidate.window.length,
       message: confirmed
         ? `Подтверждён конкретный OSM toll-booth node: ${matchedNodeIds.join(", ")}`
-        : "Маршрут приблизился к зоне ПВП, но локальный map matching не подтвердил ни один ожидаемый OSM node",
+        : "Маршрут приблизился к зоне ПВП, но успешный локальный map matching не подтвердил ни один ожидаемый OSM node",
     },
     events,
   };
@@ -295,42 +321,16 @@ export async function validateKnownM4Plazas(route: Coordinate[]): Promise<M4Rout
     const batch = candidates.slice(index, index + CONCURRENCY);
     if (Date.now() >= deadlineAt) {
       for (const candidate of batch) {
-        results.push({
-          check: {
-            km: candidate.plaza.km,
-            model: candidate.plaza.model,
-            status: "unknown",
-            nearestDistanceKm: Math.round(candidate.nearestDistanceKm * 1000) / 1000,
-            matchedNodeIds: [],
-            expectedNodeIds: [...candidate.plaza.nodeIds],
-            windowPointCount: candidate.window.length,
-            message: "Исчерпан общий бюджет локальной проверки",
-          },
-          events: [],
-        });
+        results.push(unavailableResult(candidate, "Исчерпан общий бюджет локальной проверки"));
       }
       continue;
     }
     results.push(...await Promise.all(batch.map((candidate) => validateCandidate(candidate, deadlineAt))));
   }
 
-  // Candidates omitted because the global budget expired before their batch
-  // still need explicit unknown records so completeness can never be overstated.
   if (results.length < candidates.length) {
     for (const candidate of candidates.slice(results.length)) {
-      results.push({
-        check: {
-          km: candidate.plaza.km,
-          model: candidate.plaza.model,
-          status: "unknown",
-          nearestDistanceKm: Math.round(candidate.nearestDistanceKm * 1000) / 1000,
-          matchedNodeIds: [],
-          expectedNodeIds: [...candidate.plaza.nodeIds],
-          windowPointCount: candidate.window.length,
-          message: "Кандидат не проверен из-за общего лимита времени",
-        },
-        events: [],
-      });
+      results.push(unavailableResult(candidate, "Кандидат не проверен из-за общего лимита времени"));
     }
   }
 
@@ -345,12 +345,13 @@ export async function validateKnownM4Plazas(route: Coordinate[]): Promise<M4Rout
   const confirmedCount = checks.filter((item) => item.status === "confirmed").length;
   const rejectedCount = checks.filter((item) => item.status === "rejected").length;
   const unknownCount = checks.filter((item) => item.status === "unknown").length;
+  const traversalCount = checks.filter((item) => item.status === "confirmed" && item.evidence === "route_traversal").length;
   const checkedCandidateCount = confirmedCount + rejectedCount;
   const complete = route.length >= 2 && unknownCount === 0 && checks.length === candidates.length;
   const elapsedMs = Date.now() - startedAt;
 
   return {
-    source: "Valhalla local PVP map matching",
+    source: "Valhalla local PVP map matching + strict route traversal fallback",
     candidateRadiusKm: CANDIDATE_RADIUS_KM,
     windowHalfKm: WINDOW_HALF_KM,
     candidateCount: candidates.length,
@@ -365,7 +366,7 @@ export async function validateKnownM4Plazas(route: Coordinate[]): Promise<M4Rout
     message: candidates.length === 0
       ? "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
       : complete
-        ? `Проверено ${checkedCandidateCount} локальных кандидатов М-4: подтверждено ${confirmedCount}, отклонено ${rejectedCount}.`
-        : `Локальная проверка неполна: подтверждено ${confirmedCount}, отклонено ${rejectedCount}, не проверено ${unknownCount} из ${candidates.length}.`,
+        ? `Проверено ${checkedCandidateCount} локальных кандидатов М-4: подтверждено ${confirmedCount} (из них route-traversal fallback ${traversalCount}), отклонено ${rejectedCount}.`
+        : `Локальная проверка неполна: подтверждено ${confirmedCount} (route-traversal fallback ${traversalCount}), отклонено ${rejectedCount}, не проверено ${unknownCount} из ${candidates.length}.`,
   };
 }
