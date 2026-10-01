@@ -20,6 +20,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Pure composition regression
         run: node --experimental-strip-types scripts/systemic-toll-composition-test.ts
+      - name: CKAD production regression
+        run: node --experimental-strip-types scripts/ckad-production-test.ts
+      - name: Three-provider route quality regression
+        run: node --experimental-strip-types scripts/route-quality-majority-test.ts
       - name: Existing M-12 recovery regression
         run: node scripts/segment5a1-m12-recovery-replay.mjs
       - name: Existing external-provider fail-closed regression
