@@ -1,7 +1,7 @@
 import section15Snapshot from "../../data/tolls/m11/2026-04-24-section15-58-category1-no-transponder.json" with { type: "json" };
 import spatialSnapshot from "../../data/tolls/m11/2026-10-01-58-679-spatial-anchors.json" with { type: "json" };
-import type { Coordinate } from "@/lib/tolls";
-import { priceM11CurrentPartialCategory1 } from "@/lib/toll-engine/m11-current-tariffs";
+import type { Coordinate } from "../tolls";
+import { priceM11CurrentPartialCategory1 } from "./m11-current-tariffs";
 
 export type M11MoscowProductionTolls = {
   amount: number;
