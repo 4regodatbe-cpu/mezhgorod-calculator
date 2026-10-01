@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "systemId": "m11-58-679-avtodor",
+  "observedAt": "2026-10-01",
+  "source": {
+    "kind": "openstreetmap_api_0_6",
+    "url": "https://api.openstreetmap.org/api/0.6/",
+    "workflowRun": 36850096015,
+    "connectivityWorkflowRun": 36850264904,
+    "classification": "independently_verified_infrastructure",
+    "note": "Coordinates are direct OSM node coordinates. Official operator/state sources independently establish the existence/opening of PVP km 593; OSM supplies spatial infrastructure evidence only and is not a monetary tariff source."
+  },
+  "facilities": [
+    {
+      "facilityId": "pvp593",
+      "tariffPointId": "p593",
+      "officialIdentitySource": "https://unitoll.ru/about/press/news/na-593-km-dorogi-m-11-neva-otkrylas-transportnaya-razvyazka/",
+      "anchors": [
+        {
+          "anchorId": "osm-node-13249401006",
+          "osmNodeId": 13249401006,
+          "lat": 59.1976987,
+          "lon": 31.2534812,
+          "tags": { "barrier": "toll_booth" },
+          "parentWayId": 1443881665,
+          "parentWayHighway": "secondary_link"
+        },
+        {
+          "anchorId": "osm-node-14162143275",
+          "osmNodeId": 14162143275,
+          "lat": 59.20392,
+          "lon": 31.2595577,
+          "tags": { "barrier": "toll_booth" },
+          "parentWayId": 1443881666,
+          "parentWayHighway": "secondary_link"
+        }
+      ]
+    }
+  ]
+}
