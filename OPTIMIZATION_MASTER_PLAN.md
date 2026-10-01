@@ -217,7 +217,7 @@ Current observed control behavior:
 Production `main` remains intentionally unchanged.
 
 ### Segment 6 — other paid road families
-Status: IN PROGRESS — M-11 evidence/tariff refresh before resolver.
+Status: IN PROGRESS — M-11 evidence/tariff/spatial work before production resolver.
 Order after M-4 and M-12 stabilization:
 1. M-11;
 2. ЦКАД;
@@ -229,7 +229,10 @@ M-11 progress:
 - `6A2A` Valhalla strict M-11 road-span evidence — DONE with provider distance limit documented;
 - `6A2B` OSRM step evidence for long/mixed routes — DONE / GREEN;
 - `6A2C` provider-neutral strict-road parser and deterministic fixtures — DONE / GREEN, workflow `36786170033`;
-- `6A3A` official tariff snapshots — 15–58 complete Category-I data plus a March 58–679 A1 ordered-point/control snapshot; the latter is incomplete and no longer current enough for arbitrary-pair October pricing;
+- `6A3A` official tariff snapshots — 15–58 complete Category-I data plus historical March 58–679 evidence;
+- `6A3A2` current 58–679 A1 refresh — DONE / GREEN: current order No. 274 dated 03.09.2026, 22 ordered points including `p593`, two directly verified directed controls, complete matrix deliberately false;
+- `6A3A2B` complete current A2 acquisition — BLOCKED BY SOURCE ACCESS / SAFE STOP, checkpoint `checkpoints/SEGMENT_6A3A2B_M11_CURRENT_MATRIX_ACQUISITION_RESULT.md`; operator/CDN blocks deterministic automated PDF acquisition and no stable public tariff API was found;
+- `6A3A2C` strict partial current tariff core — DONE / GREEN, checkpoint `checkpoints/SEGMENT_6A3A2C_M11_PARTIAL_TARIFF_CORE_RESULT.md`, workflow `36844756652`;
 - `6A3B1` anchor inventory — DONE, checkpoint `checkpoints/SEGMENT_6A3B1_M11_ANCHOR_INVENTORY_RESULT.md`;
 - `6A3B2` pure tariff-boundary model — DONE / GREEN;
 - `6A3B2A` 15–58 facility identity/chainage model — DONE / GREEN, including one tariff point mapping to multiple directional PVP facilities;
@@ -237,11 +240,12 @@ M-11 progress:
 
 Current M-11 evidence state:
 - trusted coordinates remain unresolved unless independently proved; no legacy/provider coordinate is relabelled official;
-- the March 58–679 matrix contributes 21 bound physical PVP identities/chainages;
-- a new official PVP at M-11 km 593 opened on 18.09.2026 and is not present in that March matrix;
-- PVP 593 is therefore stored as an authoritative `unboundFacility`, not fabricated into a March tariff point and not priceable;
-- the operator also published a 04.09.2026 M-11 tariff-change notice, so a post-September current tariff refresh is mandatory before arbitrary-pair 58–679 pricing;
-- the new M-11 boundary model is still not imported into `/api/v2/calculate`.
+- the historical March boundary model contains 21 bound physical PVP identities/chainages plus authoritative `pvp593` as an unbound September infrastructure delta;
+- the current A1 tariff inventory separately contains 22 current tariff points including `p593` but is intentionally not a complete matrix;
+- the partial current tariff core prices only `p58 -> p593` and `p58 -> p679` for the two directly verified profiles; reverse directions, interior pairs, same-point lookups and unsupported profiles return `unknown/null`;
+- no March monetary amount is silently promoted to an October current result;
+- the complete current A2 matrix remains unavailable because the authoritative source is protected against deterministic automated extraction; this limitation is documented rather than guessed around;
+- the new M-11 boundary and partial-tariff models are still not imported into `/api/v2/calculate`.
 
 Each system gets an explicit tariff model, evidence model and regression corpus. No road-family pricing is promoted from a legacy heuristic until a diagnostic checkpoint documents current behavior and proves the replacement rules.
 
@@ -281,4 +285,4 @@ Required before claiming optimization complete:
 
 ## Current next action
 
-Refresh Segment 6A3A2 against the current post-September official M-11 tariff source before any exact 6A3B3 resolver is allowed. Recover and validate the current 58–679 tariff-point inventory and complete Category-I matrices, prove how the newly opened PVP 593 participates in the closed toll system, preserve the March snapshot as historical evidence only, keep unresolved current coverage as `unknown`, and do not change production M-11 user pricing during this refresh.
+Continue M-11 spatial-anchor acquisition independently of the blocked current A2 monetary source. Search authoritative infrastructure sources first, then independently verifiable road-infrastructure evidence with explicit provenance. Do not derive coordinates from kilometre labels, city centres, or provider route spans alone. A future exact 6A3B3 arbitrary-pair resolver remains gated on both sufficient spatial boundary evidence and complete current tariff coverage; production M-11 user pricing remains unchanged meanwhile.
