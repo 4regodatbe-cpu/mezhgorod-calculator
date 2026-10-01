@@ -11,13 +11,15 @@
     "description": "I категория ТС по действующим правилам оператора"
   },
   "currency": "RUB",
-  "sourceDocumentEffectiveFrom": "2026-01-12T01:00:00+03:00",
+  "sourceDocumentOrder": "№ 274",
+  "sourceDocumentDate": "2026-09-03",
+  "tariffEffectiveFrom": null,
   "source": {
     "kind": "official_operator_current_detailed_tariff",
     "url": "https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf",
     "officialTariffPage": "https://avtodor-tr.ru/road/tariffs/",
     "capturedAt": "2026-10-01",
-    "note": "Текущий детальный источник оператора, наблюдавшийся 01.10.2026. Дата начала действия, указанная в документе, не используется как доказательство физической доступности ПВП 593 до его открытия 18.09.2026."
+    "note": "Текущий детальный источник оператора подтверждён как приказ № 274 от 03.09.2026. Точная дата/время начала действия тарифов отдельно не извлечены с достаточной надёжностью и поэтому оставлены null. Это также не используется как доказательство физической доступности ПВП 593 до его открытия 18.09.2026."
   },
   "paymentModel": "official_matrix_cash_card_and_listed_interoperable_transponders",
   "dayProfiles": {
