@@ -1,0 +1,25 @@
+name: Segment 10 production readiness
+on:
+  push:
+    branches: [segment10-production-readiness]
+  pull_request:
+    branches: [optimize-calculator-2]
+jobs:
+  final-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 11.25.0 }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: node scripts/segment10-production-readiness.mjs
+      - run: node scripts/segment3-free-truth.mjs
+      - run: node scripts/segment5a1-m12-recovery-replay.mjs
+      - run: node scripts/segment9-regression.mjs
+      - run: pnpm lint
+      - run: pnpm build
