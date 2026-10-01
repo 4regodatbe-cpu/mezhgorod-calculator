@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-01",
+  "source": "https://avtodor-tr.ru/road/tariffs/",
+  "category": 1,
+  "note": "Visible official tariff-page values. Transponder and no-transponder columns are preserved separately; this snapshot alone is not route-crossing evidence.",
+  "roads": {
+    "m1-33-66": [
+      { "id": "m1-33-66", "from": "33 km", "to": "66 km", "allDays": { "transponder": 230, "noTransponder": 250 } }
+    ],
+    "m3": [
+      { "id": "m3-65-86", "from": "65 km", "to": "86 km", "monThu": { "transponder": 100, "noTransponder": 100 }, "friSun": { "transponder": 150, "noTransponder": 200 } },
+      { "id": "m3-112-150", "from": "112 km", "to": "150 km", "monThu": { "transponder": 190, "noTransponder": 190 }, "friSun": { "transponder": 270, "noTransponder": 320 } },
+      { "id": "m3-150-194", "from": "150 km", "to": "194 km", "monThu": { "transponder": 190, "noTransponder": 230 }, "friSun": { "transponder": 260, "noTransponder": 280 } }
+    ],
+    "ckad": [
+      { "id": "ckad-m10-m11", "from": "М-10", "to": "М-11", "allDays": { "transponder": 42, "noTransponder": 60 } },
+      { "id": "ckad-m11-a107", "from": "М-11", "to": "Никольское-Горки (А-107)", "allDays": { "transponder": 119, "noTransponder": 167 } },
+      { "id": "ckad-a107-a104", "from": "Никольское-Горки (А-107)", "to": "Дмитровское шоссе", "allDays": { "transponder": 120, "noTransponder": 168 } },
+      { "id": "ckad-a104-m8", "from": "Дмитровское шоссе", "to": "М-8", "allDays": { "transponder": 241, "noTransponder": 335 } },
+      { "id": "ckad-m8-m7", "from": "М-8", "to": "М-7", "allDays": { "transponder": 461, "noTransponder": 643 } },
+      { "id": "ckad-m7-m12", "from": "М-7", "to": "М-12", "allDays": { "transponder": 40, "noTransponder": 56 } },
+      { "id": "ckad-m12-nosov", "from": "М-12", "to": "Носовихинское ш.", "allDays": { "transponder": 156, "noTransponder": 219 } },
+      { "id": "ckad-nosov-egor", "from": "Носовихинское ш.", "to": "Егорьевское ш.", "allDays": { "transponder": 81, "noTransponder": 114 } },
+      { "id": "ckad-egor-m5", "from": "Егорьевское ш.", "to": "М-5", "allDays": { "transponder": 271, "noTransponder": 380 } },
+      { "id": "ckad-m5-dom", "from": "М-5", "to": "Домодедово", "allDays": { "transponder": 248, "noTransponder": 347 } },
+      { "id": "ckad-dom-m4", "from": "Домодедово", "to": "М-4", "allDays": { "transponder": 63, "noTransponder": 88 } },
+      { "id": "ckad-m4-m2", "from": "М-4", "to": "М-2", "allDays": { "transponder": 140, "noTransponder": 195 } },
+      { "id": "ckad-m2-kaluga", "from": "М-2", "to": "Калужское ш.", "allDays": { "transponder": 204, "noTransponder": 286 } },
+      { "id": "ckad-kaluga-pk5", "from": "Калужское ш.", "to": "ПК-5", "allDays": { "transponder": 92, "noTransponder": 131 } },
+      { "id": "ckad-pk5-m10", "from": "ПК-5", "to": "М-10", "allDays": { "transponder": 2278, "noTransponder": 3189 } },
+      { "id": "ckad-m1-zvenigorod", "from": "М-1", "to": "Звенигород", "allDays": { "transponder": 103, "noTransponder": 154 } }
+    ],
+    "a289": [
+      { "id": "a289-maryanskaya-slavyansk", "from": "Марьянская", "to": "Славянск-на-Кубани", "allDays": { "transponder": 415, "noTransponder": 555 } },
+      { "id": "a289-slavyansk-varenikovskaya", "from": "Славянск-на-Кубани", "to": "Варениковская", "allDays": { "transponder": 205, "noTransponder": 278 } },
+      { "id": "a289-maryanskaya-varenikovskaya", "from": "Марьянская", "to": "Варениковская", "allDays": { "transponder": 620, "noTransponder": 833 } },
+      { "id": "a289-varenikovskaya-temryuk", "from": "Варениковская", "to": "Темрюк", "allDays": { "transponder": 180, "noTransponder": 270 } },
+      { "id": "a289-maryanskaya-temryuk", "from": "Марьянская", "to": "Темрюк", "allDays": { "transponder": 800, "noTransponder": 1103 } },
+      { "id": "a289-slavyansk-temryuk", "from": "Славянск-на-Кубани", "to": "Темрюк", "allDays": { "transponder": 385, "noTransponder": 548 } }
+    ]
+  }
+}
