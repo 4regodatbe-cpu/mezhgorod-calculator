@@ -5,6 +5,7 @@ import { safeRoutePositions } from "@/lib/safe-route";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { findVerifiedRoute, goldenRouteReference, tollPeriodsForRoute } from "@/lib/verified-routes";
 import { MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, selectLiveRoute, selectLiveRouteCandidates, type GoldenRouteReference, type RouteQuality } from "@/lib/route-quality";
+import { calculateProductionCkadM4M11 } from "@/lib/toll-engine/ckad-production";
 import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
 import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { deriveM11EvidenceFromValhalla, type M11RoadEvidence, type M11ValhallaManeuver } from "@/lib/toll-engine/m11-road-evidence";
@@ -468,17 +469,21 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
         departureAt,
       )
     : null;
+  const productionCkad = selectedFast.provider === "Valhalla" && valhallaEvidence?.m11RoadEvidence
+    ? calculateProductionCkadM4M11(valhallaEvidence.coordinates, valhallaEvidence.m11RoadEvidence)
+    : null;
 
   const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289");
   const m11Detected = legacyFamilies.has("m11") || Boolean(valhallaEvidence?.m11RoadEvidence?.strictBlocks.length);
   const m12Detected = legacyFamilies.has("m12") || Boolean(valhallaEvidence?.m12StrictSpan);
-  const connectorUnknown = m4Detected && m11Detected && !legacyFamilies.has("ckad");
+  const m4M11ConnectorDetected = m4Detected && m11Detected;
+  const ckadDetected = legacyFamilies.has("ckad") || Boolean(productionCkad?.candidate) || m4M11ConnectorDetected;
 
   const components: RouteTollComponent[] = [
     { id: "m4_a289", detected: m4Detected, tolls: productionM4.tolls, reason: productionM4.reason },
     { id: "m11", detected: m11Detected, tolls: productionM11?.tolls ?? null, reason: productionM11?.reason ?? "m11_not_priced" },
     { id: "m12", detected: m12Detected, tolls: productionM12?.tolls ?? null, reason: productionM12?.core.reason ?? "m12_not_priced" },
-    { id: "ckad", detected: legacyFamilies.has("ckad") || connectorUnknown, tolls: null, reason: legacyFamilies.has("ckad") ? "ckad_engine_not_yet_composed" : "m4_to_m11_connector_unverified" },
+    { id: "ckad", detected: ckadDetected, tolls: productionCkad?.tolls ?? null, reason: productionCkad?.reason ?? (m4M11ConnectorDetected ? "m4_to_m11_connector_unverified" : "ckad_not_priced") },
     { id: "m1", detected: legacyFamilies.has("m1"), tolls: null, reason: "m1_engine_not_yet_composed" },
     { id: "m3", detected: legacyFamilies.has("m3"), tolls: null, reason: "m3_engine_not_yet_composed" },
     { id: "regional", detected: legacyFamilies.has("regional"), tolls: null, reason: "regional_engine_not_yet_composed" },
