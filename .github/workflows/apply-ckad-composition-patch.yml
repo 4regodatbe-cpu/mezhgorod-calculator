@@ -1,0 +1,30 @@
+name: Apply CKAD composition patch
+on:
+  push:
+    branches: [fix-systemic-toll-composition]
+    paths:
+      - scripts/apply-ckad-composition-patch.mjs
+      - .github/workflows/apply-ckad-composition-patch.yml
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix-systemic-toll-composition
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+      - run: node scripts/apply-ckad-composition-patch.mjs
+      - name: Commit patch
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add app/api/v2/calculate/route.ts
+          git diff --cached --quiet && exit 0
+          git commit -m "Compose evidence-gated CKAD into route toll total"
+          git push origin HEAD:fix-systemic-toll-composition
