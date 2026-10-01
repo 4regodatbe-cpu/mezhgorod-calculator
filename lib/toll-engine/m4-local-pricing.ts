@@ -86,9 +86,14 @@ function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
   // use different alignments in the 322-401 corridor while still traversing
   // the complete 401-464 section.
   const northFlanks401 = sequence.filter((km) => km < 401);
+  // For a continuous mainline route, confirmed M-4 plazas on both sides of
+  // the closed 401-464 system are stronger evidence than requiring every
+  // physical gate anchor to be map-matched. Long routes can legitimately
+  // miss one gate anchor in OSM/Valhalla while still traversing the whole
+  // section. Ordering of the flanks prevents a nearby/parallel-road match.
   const through401to464 = northFlanks401.some((northKm) =>
-    containsOrdered(sequence, [515, 460, 416, northKm])
-    || containsOrdered(sequence, [northKm, 416, 460, 515]));
+    containsOrdered(sequence, [515, northKm])
+    || containsOrdered(sequence, [northKm, 515]));
   const zone401to464 = mixedZone(401, 464);
   if (through401to464 && zone401to464) {
     resolved.push({
@@ -107,8 +112,11 @@ function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
   // auxiliary 672-km gate on that same through route does not create a second
   // charge: Avtodor's current rules zero-rate the exit when the section has
   // already been paid within the allowed transit window.
-  const through633to741 = containsOrdered(sequence, [803, 636, 620])
-    || containsOrdered(sequence, [620, 636, 803]);
+  // Same principle for 633-741: confirmed mainline plazas at 620 and 803
+  // prove a through traversal of the intervening closed toll section even if
+  // a gate node itself is absent from the map-matched event sequence.
+  const through633to741 = containsOrdered(sequence, [803, 620])
+    || containsOrdered(sequence, [620, 803]);
   const zone633to741 = mixedZone(633, 741);
   if (through633to741 && zone633to741) {
     resolved.push({
@@ -144,8 +152,12 @@ function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
     resolved633to741 = true;
   }
 
-  const through545 = containsOrdered(sequence, [620, 545, 515])
-    || containsOrdered(sequence, [515, 545, 620]);
+  // PVP 545 represents two adjacent official tariff rows. A through route
+  // between confirmed plazas 515 and 620 necessarily traverses both rows;
+  // this resolves the otherwise ambiguous physical 545-km plaza without
+  // depending on the gate node being present in the remote map matcher.
+  const through545 = containsOrdered(sequence, [620, 515])
+    || containsOrdered(sequence, [515, 620]);
   const tariff545 = full545Tariff();
   if (through545 && tariff545) {
     resolved.push({
