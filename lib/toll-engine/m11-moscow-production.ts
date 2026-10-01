@@ -170,7 +170,7 @@ export function calculateM11MoscowToPetersburg(
   // The official category-I matrix (order 53, 22.02.2026) directly verifies
   // p58↔p147 as 610 RUB Mon-Thu and 750 RUB Fri-Sun. This is an explicit
   // matrix cell, not a subtraction/derived tariff.
-  const southboundTver = p147.distanceKm <= FACILITY_MAX_DISTANCE_KM
+  const southboundTver = p147.distanceKm <= ENTRY_MAX_DISTANCE_KM
     && p58.distanceKm <= FACILITY_MAX_DISTANCE_KM
     && entry.distanceKm <= ENTRY_MAX_DISTANCE_KM
     && p147.index < p58.index
