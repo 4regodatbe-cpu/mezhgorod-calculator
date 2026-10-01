@@ -12,12 +12,15 @@ const spatialSnapshot = JSON.parse(await readFile(
 ));
 
 const evidence = buildM11FacilitySpatialEvidence(currentPoints, spatialSnapshot);
-assert.equal(evidence.length, 1);
-const p593 = evidence[0];
-assert.equal(p593.facilityId, "pvp593");
-assert.equal(p593.tariffPointId, "p593");
-assert.equal(currentPoints.points.some((point: { id: string }) => point.id === "p593"), true, "current point inventory must explicitly contain p593");
+assert.equal(evidence.length, 3);
+const byPoint = new Map(evidence.map((item) => [item.tariffPointId, item]));
+const p58 = byPoint.get("p58");
+const p593 = byPoint.get("p593");
+const p679 = byPoint.get("p679");
+assert.ok(p58 && p593 && p679);
+assert.equal(p58.anchors.length, 4, "PVP58 must preserve two observed physical anchor groups without centroid synthesis");
 assert.equal(p593.anchors.length, 2, "PVP593 must preserve both observed booth anchors");
+assert.equal(p679.anchors.length, 1, "PVP679 control retains the directly M11-bound booth anchor");
 assert.deepEqual(
   p593.anchors.map((anchor) => [anchor.anchorId, anchor.coordinate.lat, anchor.coordinate.lon]),
   [
@@ -25,12 +28,15 @@ assert.deepEqual(
     ["osm-node-14162143275", 59.20392, 31.2595577],
   ],
 );
-assert.equal(p593.anchors.every((anchor) => anchor.status === "independently_verified_infrastructure"), true);
-assert.equal(p593.anchors.every((anchor) => anchor.source.includes("openstreetmap.org")), true);
+for (const item of evidence) {
+  assert.equal(currentPoints.points.some((point: { id: string }) => point.id === item.tariffPointId), true);
+  assert.equal(item.anchors.every((anchor) => anchor.status === "independently_verified_infrastructure"), true);
+  assert.equal(item.anchors.every((anchor) => anchor.source.includes("openstreetmap.org")), true);
+}
 assert.equal(p593.officialIdentitySource.includes("unitoll.ru"), true);
 
 const duplicate = structuredClone(spatialSnapshot);
-duplicate.facilities[0].anchors[1].anchorId = duplicate.facilities[0].anchors[0].anchorId;
+duplicate.facilities[1].anchors[0].anchorId = duplicate.facilities[0].anchors[0].anchorId;
 assert.throws(() => buildM11FacilitySpatialEvidence(currentPoints, duplicate), /M11_DUPLICATE_SPATIAL_ANCHOR/);
 
 const unknownPoint = structuredClone(spatialSnapshot);
@@ -50,4 +56,4 @@ for (const forbidden of ["monThu", "friSun", "amountRub", "currency", "tariffs"]
   assert.equal(serialized.includes(forbidden), false, `spatial evidence must remain money-free: ${forbidden}`);
 }
 
-console.log(`M11_MULTI_ANCHOR_SPATIAL_GREEN facilities=${evidence.length} anchors=${p593.anchors.length} syntheticCoordinates=0`);
+console.log(`M11_MULTI_ANCHOR_SPATIAL_GREEN facilities=${evidence.length} anchors=${evidence.reduce((sum, item) => sum + item.anchors.length, 0)} syntheticCoordinates=0`);
