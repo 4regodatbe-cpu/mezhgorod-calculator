@@ -144,7 +144,6 @@ export function calculateM11MoscowToPetersburg(
 
   const entry = nearestSegment(route, [MOSCOW_M11_ENTRY]);
   const p58 = nearestSegment(route, facilityAnchors("p58"));
-  const p147 = nearestSegment(route, facilityAnchors("p147"));
   const p593 = nearestSegment(route, facilityAnchors("p593"));
   const p679 = nearestSegment(route, facilityAnchors("p679"));
   const evidenceBase = {
@@ -170,10 +169,11 @@ export function calculateM11MoscowToPetersburg(
   // The official category-I matrix (order 53, 22.02.2026) directly verifies
   // p58↔p147 as 610 RUB Mon-Thu and 750 RUB Fri-Sun. This is an explicit
   // matrix cell, not a subtraction/derived tariff.
-  const southboundTver = p147.distanceKm <= ENTRY_MAX_DISTANCE_KM
+  const tverCenter: Coordinate = [35.9176, 56.8587];
+  const startsInTverAccessArea = haversineKm(route[0], tverCenter) <= 20;
+  const southboundTver = startsInTverAccessArea
     && p58.distanceKm <= FACILITY_MAX_DISTANCE_KM
     && entry.distanceKm <= ENTRY_MAX_DISTANCE_KM
-    && p147.index < p58.index
     && p58.index < entry.index;
   if (southboundTver) {
     const start = startDate(departureAt);
@@ -207,7 +207,7 @@ export function calculateM11MoscowToPetersburg(
   }
 
   if ([p58, p593, p679].some((item) => item.distanceKm > FACILITY_MAX_DISTANCE_KM)) {
-    return { candidate: true, exact: false, tolls: null, reason: `m11_58_679_facility_sequence_incomplete_p147_${Math.round(p147.distanceKm * 1000)}m`, evidence: { ...evidenceBase, entryAt: null, p58At: null } };
+    return { candidate: true, exact: false, tolls: null, reason: "m11_58_679_facility_sequence_incomplete", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
   }
   if (!(entry.index < p58.index && p58.index < p593.index && p593.index < p679.index)) {
     return { candidate: true, exact: false, tolls: null, reason: "m11_northbound_sequence_not_proven", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
