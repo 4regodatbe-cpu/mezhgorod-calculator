@@ -34,4 +34,17 @@ jobs:
           grep -q 'selectLiveRoute' app/api/v2/calculate/route.ts
           grep -q 'goldenRouteReference' app/api/v2/calculate/route.ts
       - name: Production build
-        run: pnpm build
+        shell: bash
+        run: |
+          set +e
+          pnpm build > segment8-build.log 2>&1
+          code=$?
+          cat segment8-build.log
+          exit $code
+      - name: Upload build diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: segment8-build-log
+          path: segment8-build.log
+          if-no-files-found: ignore
