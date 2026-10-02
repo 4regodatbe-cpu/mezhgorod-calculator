@@ -13,6 +13,7 @@ import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
 import { calculateProductionCkadM4M11 } from "@/lib/toll-engine/ckad-production";
 import { deriveStrictM12Span, type M12StrictRouteSpan } from "@/lib/toll-engine/m12-valhalla-span";
 import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent, type RouteTollComponentId } from "@/lib/toll-engine/route-toll-composition";
+import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-integration";
 
 type Point = { label: string; position?: { lat: number; lng: number } };
 type Located = { label: string; position: { lat: number; lng: number } };
@@ -562,15 +563,26 @@ export const maxDuration = 60;
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as { from?: Point; via?: Point; to?: Point; mode?: "standard" | "dual"; departureAt?: string; diagnostics?: boolean };
+    const body = (await request.json()) as { from?: Point; via?: Point; to?: Point; mode?: "standard" | "dual"; departureAt?: string; diagnostics?: boolean; vehicle?: PricingVehicle };
     if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return NextResponse.json({ error: "Некорректный режим расчёта" }, { status: 400 });
     if (body.departureAt !== undefined && (typeof body.departureAt !== "string" || Number.isNaN(new Date(body.departureAt).getTime()))) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
+    if (body.vehicle !== undefined && !["standard", "comfort", "comfort_plus", "minivan"].includes(body.vehicle)) return NextResponse.json({ error: "Некорректный класс автомобиля" }, { status: 400 });
     if (!validPoint(body.from) || !validPoint(body.to) || (body.mode === "dual" && !validPoint(body.via))) return NextResponse.json({ error: "Проверьте точки маршрута" }, { status: 400 });
     const located = await Promise.all([geocode(body.from), ...(body.mode === "dual" && body.via ? [geocode(body.via)] : []), geocode(body.to)]);
     const legs = body.mode === "dual"
       ? await Promise.all([leg(located[0], located[1], body.departureAt, body.diagnostics === true), leg(located[1], located[2], body.departureAt, body.diagnostics === true)])
       : [await leg(located[0], located[1], body.departureAt, body.diagnostics === true)];
-    return NextResponse.json({ legs });
+    const pricing = calculateRoutePricing({
+      from: located[0].label,
+      to: located[located.length - 1].label,
+      vehicle: body.vehicle,
+      legs: legs.map((route, index) => ({
+        from: located[index].label,
+        to: located[index + 1].label,
+        distanceKm: route.fast.meters / 1000,
+      })),
+    });
+    return NextResponse.json({ legs, ...pricing });
   } catch (error) {
     const code = error instanceof Error ? error.message : "UNKNOWN";
     const messages: Record<string, string> = { ADDRESS_NOT_FOUND: "Адрес не найден. Уточните город или населённый пункт.", GEOCODE_UNAVAILABLE: "Поиск адресов временно недоступен.", ROUTE_NOT_FOUND: "Не удалось построить автомобильный маршрут.", ROUTE_UNAVAILABLE: "Сервис маршрутов временно недоступен. Попробуйте позже." };
