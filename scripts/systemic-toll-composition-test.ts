@@ -28,6 +28,15 @@ assert.equal(missingConnector.status, "unknown");
 assert.equal(missingConnector.tolls, null, "partial 8750 must never be returned as whole-route total");
 assert.deepEqual(missingConnector.missing, ["ckad"]);
 
+const partialM4 = composeRouteTolls([
+  { id: "m4_a289", detected: true, tolls: { ...toll(3220), confidence: "partial" } },
+  { id: "m11", detected: true, tolls: toll(4940) },
+]);
+assert.equal(partialM4.status, "unknown");
+assert.equal(partialM4.tolls, null, "partial M-4 must never be added to an exact route total");
+assert.deepEqual(partialM4.missing, ["m4_a289"]);
+assert.deepEqual(partialM4.priced, ["m11"]);
+
 const missingM11 = composeRouteTolls([
   { id: "m4_a289", detected: true, tolls: toll(3810) },
   { id: "m11", detected: true, tolls: null },
