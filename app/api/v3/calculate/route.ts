@@ -47,6 +47,9 @@ export async function POST(request: NextRequest) {
     if (!from || !to || (body.mode === "dual" && !via)) {
       return NextResponse.json({ error: "Заполните все точки маршрута" }, { status: 400 });
     }
+    if ([from, to, ...(body.mode === "dual" ? [via] : [])].some((label) => label.length > 240)) {
+      return NextResponse.json({ error: "Слишком длинное название точки маршрута" }, { status: 400 });
+    }
     const legs = body.mode === "dual" && via
       ? [calculateLeg(from, via), calculateLeg(via, to)]
       : [calculateLeg(from, to)];
