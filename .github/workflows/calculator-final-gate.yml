@@ -3,14 +3,18 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - app/page.tsx
       - app/api/v2/calculate/**
       - app/api/v3/calculate/**
       - app/api/collect/**
       - app/api/suggest/**
       - app/v2/**
+      - android-app-v2/**
+      - google-apps-script/**
       - lib/**
       - data/**
       - scripts/**
+      - .github/workflows/android-apk.yml
       - .github/workflows/calculator-final-gate.yml
   workflow_dispatch:
 permissions:
@@ -63,6 +67,10 @@ jobs:
           for i in $(seq 1 30); do curl -fsS http://127.0.0.1:3000/v2 >/dev/null && exit 0; sleep 1; done
           cat /tmp/mezhgorod-next.log
           exit 1
+      - name: Canonical root redirects to V2
+        run: |
+          test "$(curl -sS -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/)" = "307"
+          curl -sSI http://127.0.0.1:3000/ | grep -qi '^location: /v2'
       - name: Free-route truth live regression
         run: node scripts/segment3-free-truth.mjs
       - name: Full live user-route audit
