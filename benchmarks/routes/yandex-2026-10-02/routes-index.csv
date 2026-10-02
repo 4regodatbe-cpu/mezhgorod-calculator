@@ -1,0 +1,62 @@
+id,package,from,to,source,verifiedAt,accuracyPercent
+YR-001,routes-001-016.json,anapa,voronezh,Яндекс Карты,2026-09-23,0
+YR-002,routes-001-016.json,krasnodar,moscow,Яндекс Карты,2026-09-28,0
+YR-003,routes-001-016.json,sochi,moscow,Яндекс Карты,2026-09-28,0
+YR-004,routes-001-016.json,sochi,saint-petersburg,Контрольная база,2026-09-23,3
+YR-005,routes-001-016.json,krasnodar,sochi,Яндекс Карты,2026-09-28,0
+YR-006,routes-001-016.json,krasnodar,anapa,Яндекс Карты,2026-09-28,0
+YR-007,routes-001-016.json,krasnodar,gelendzhik,Яндекс Карты,2026-09-28,0
+YR-008,routes-001-016.json,krasnodar,novorossiysk,Яндекс Карты,2026-09-28,0
+YR-009,routes-001-016.json,krasnodar,rostov,Яндекс Карты,2026-09-28,0
+YR-010,routes-001-016.json,krasnodar,stavropol,Яндекс Карты,2026-09-28,0
+YR-011,routes-001-016.json,krasnodar,maykop,Яндекс Карты,2026-09-28,0
+YR-012,routes-001-016.json,krasnodar,goryachiy-klyuch,Яндекс Карты,2026-09-28,0
+YR-013,routes-001-016.json,krasnodar,simferopol,Яндекс Карты,2026-09-28,0
+YR-014,routes-001-016.json,krasnodar,yalta,Яндекс Карты,2026-09-28,0
+YR-015,routes-001-016.json,krasnodar,sevastopol,Яндекс Карты,2026-09-28,0
+YR-016,routes-001-016.json,krasnodar,kerch,Яндекс Карты,2026-09-28,0
+YR-017,routes-017-032.json,anapa,moscow,Яндекс Карты,2026-09-28,0
+YR-018,routes-017-032.json,gelendzhik,moscow,Яндекс Карты,2026-09-28,0
+YR-019,routes-017-032.json,novorossiysk,moscow,Яндекс Карты,2026-09-28,0
+YR-020,routes-017-032.json,rostov,moscow,Яндекс Карты,2026-09-28,0
+YR-021,routes-017-032.json,moscow,saint-petersburg,Яндекс Карты,2026-09-28,0
+YR-022,routes-017-032.json,moscow,voronezh,Яндекс Карты,2026-09-28,0
+YR-023,routes-017-032.json,krasnodar,tuapse,Яндекс Карты,2026-09-28,3
+YR-024,routes-017-032.json,krasnodar,adler,Яндекс Карты,2026-09-28,3
+YR-025,routes-017-032.json,krasnodar,mineralnye-vody,Яндекс Карты,2026-09-28,3
+YR-026,routes-017-032.json,krasnodar,pyatigorsk,Яндекс Карты,2026-09-29,1
+YR-027,routes-017-032.json,krasnodar,kislovodsk,Яндекс Карты,2026-09-29,1
+YR-028,routes-017-032.json,krasnodar,astrakhan,Яндекс Карты,2026-09-29,1
+YR-029,routes-017-032.json,krasnodar,yeisk,Яндекс Карты,2026-09-29,1
+YR-030,routes-017-032.json,krasnodar,armavir,Яндекс Карты,2026-09-29,1
+YR-031,routes-017-032.json,krasnodar,nalchik,Яндекс Карты,2026-09-29,1
+YR-032,routes-017-032.json,krasnodar,volgograd,Яндекс Карты,2026-09-29,2
+YR-033,routes-033-048.json,krasnodar,vladikavkaz,Яндекс Карты,2026-09-29,2
+YR-034,routes-033-048.json,rostov,sochi,Яндекс Карты,2026-09-29,2
+YR-035,routes-033-048.json,rostov,anapa,Яндекс Карты,2026-09-29,2
+YR-036,routes-033-048.json,rostov,gelendzhik,Яндекс Карты,2026-09-29,2
+YR-037,routes-033-048.json,rostov,novorossiysk,Яндекс Карты,2026-09-29,2
+YR-038,routes-033-048.json,rostov,simferopol,Яндекс Карты — через Краснодар,2026-09-29,2
+YR-039,routes-033-048.json,rostov,sevastopol,Яндекс Карты — через Краснодар,2026-09-29,2
+YR-040,routes-033-048.json,moscow,simferopol,Яндекс Карты — через Краснодар,2026-09-29,2
+YR-041,routes-033-048.json,moscow,sevastopol,Яндекс Карты — через Краснодар,2026-09-29,2
+YR-042,routes-033-048.json,moscow,yalta,Яндекс Карты — через Краснодар,2026-09-29,2
+YR-043,routes-033-048.json,moscow,kerch,Яндекс Карты — через Краснодар,2026-09-29,2
+YR-044,routes-033-048.json,moscow,stavropol,Яндекс Карты,2026-09-29,2
+YR-045,routes-033-048.json,moscow,mineralnye-vody,Яндекс Карты,2026-09-29,2
+YR-046,routes-033-048.json,saint-petersburg,krasnodar,Яндекс Карты,2026-09-29,2
+YR-047,routes-033-048.json,saint-petersburg,rostov,Яндекс Карты,2026-09-29,2
+YR-048,routes-033-048.json,saint-petersburg,anapa,Яндекс Карты,2026-09-29,2
+YR-049,routes-049-061.json,saint-petersburg,simferopol,Яндекс Карты — через Краснодар,2026-09-29,2
+YR-050,routes-049-061.json,sochi,anapa,Яндекс Карты,2026-09-29,2
+YR-051,routes-049-061.json,sochi,gelendzhik,Яндекс Карты,2026-09-29,2
+YR-052,routes-049-061.json,sochi,novorossiysk,Яндекс Карты,2026-09-29,2
+YR-053,routes-049-061.json,rostov,tuapse,Яндекс Карты,2026-09-29,2
+YR-054,routes-049-061.json,rostov,adler,Яндекс Карты,2026-09-29,2
+YR-055,routes-049-061.json,rostov,stavropol,Яндекс Карты,2026-09-29,2
+YR-056,routes-049-061.json,rostov,mineralnye-vody,Яндекс Карты,2026-09-29,2
+YR-057,routes-049-061.json,rostov,pyatigorsk,Яндекс Карты,2026-09-29,2
+YR-058,routes-049-061.json,rostov,kislovodsk,Яндекс Карты,2026-09-29,2
+YR-059,routes-049-061.json,rostov,nalchik,Яндекс Карты,2026-09-29,2
+YR-060,routes-049-061.json,rostov,vladikavkaz,Яндекс Карты,2026-09-29,2
+YR-061,routes-049-061.json,rostov,volgograd,Яндекс Карты,2026-09-29,2
