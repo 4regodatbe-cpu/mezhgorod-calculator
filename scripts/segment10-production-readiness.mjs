@@ -14,6 +14,9 @@ assert(ui.includes('tollUnknown ? "Быстрый маршрут" : "По пла
 assert(ui.includes("Платность не подтверждена"),"unverified alternative warning missing");
 assert(ui.includes("Стоимость не определена"),"unknown toll price label missing");
 assert(!ui.includes("toll.amount ?? 0) > 0 ? String(toll.amount) : \"0\""),"unknown toll coerced to zero in UI");
+assert(ui.includes("clampNumber(Number(e.target.value), 1, 10000, 1)"),"fare inputs must be clamped to supported bounds");
+assert(ui.includes("clampNumber(Number(e.target.value), 0, 500, 0)"),"urgency markup must be clamped to supported bounds");
+assert(ui.includes("clampNumber(Number(parsed[key]), 1, 10000, defaults[key])"),"stored fare values must be sanitized before use");
 assert(!root.includes("это сделает расстояния и расчёт платных дорог максимально точными"),"obsolete Yandex exact-toll copy remains");
 assert(!root.includes("маршруты: OSRM</footer>"),"obsolete single-provider attribution remains");
 const segment9=read("scripts/segment9-regression.mjs");
