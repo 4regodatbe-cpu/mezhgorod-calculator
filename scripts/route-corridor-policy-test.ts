@@ -1,4 +1,4 @@
-import { resolveCorridor, SPECIAL_TARIFF_RATES } from "../lib/route-corridors";
+import { resolveCorridor, SPECIAL_TARIFF_RATES } from "../lib/route-corridors.ts";
 
 function assert(value: unknown, message: string): asserts value {
   if (!value) throw new Error(`Corridor policy regression failed: ${message}`);
