@@ -8,6 +8,9 @@ assert(api.includes('pricingStatus: "priced" | "free" | "unknown"'),"API pricing
 assert(api.includes('amount: null')&&api.includes('pricingStatus: "unknown"'),"unknown toll must remain null");
 assert(api.includes('truth: "confirmed_free" | "candidate_unverified"'),"free-route truth enum missing");
 assert(ui.includes('pricingStatus === "unknown"'),"UI does not render unknown toll state");
+assert(ui.includes("Платность / стоимость не подтверждена"),"unknown route card must not claim a confirmed paid road");
+assert(ui.includes("Платность / стоимость дороги не подтверждена"),"copied unknown result must not claim a confirmed paid road");
+assert(ui.includes('tollUnknown ? "Быстрый маршрут" : "По платной дороге"'),"dual unknown route must not be titled as confirmed paid");
 assert(ui.includes("Платность не подтверждена"),"unverified alternative warning missing");
 assert(ui.includes("Стоимость не определена"),"unknown toll price label missing");
 assert(!ui.includes("toll.amount ?? 0) > 0 ? String(toll.amount) : \"0\""),"unknown toll coerced to zero in UI");
