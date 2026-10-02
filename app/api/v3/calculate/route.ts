@@ -41,9 +41,9 @@ export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as { mode?: "standard" | "dual"; from?: Point; via?: Point; to?: Point };
     if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return NextResponse.json({ error: "Некорректный режим расчёта" }, { status: 400 });
-    const from = body.from?.label?.trim();
-    const via = body.via?.label?.trim();
-    const to = body.to?.label?.trim();
+    const from = typeof body.from?.label === "string" ? body.from.label.trim() : "";
+    const via = typeof body.via?.label === "string" ? body.via.label.trim() : "";
+    const to = typeof body.to?.label === "string" ? body.to.label.trim() : "";
     if (!from || !to || (body.mode === "dual" && !via)) {
       return NextResponse.json({ error: "Заполните все точки маршрута" }, { status: 400 });
     }
@@ -51,7 +51,8 @@ export async function POST(request: NextRequest) {
       ? [calculateLeg(from, via), calculateLeg(via, to)]
       : [calculateLeg(from, to)];
     return NextResponse.json({ legs, verifiedRouteCount: verifiedRouteCount(), tolerancePercent: 3 });
-  } catch {
+  } catch (error) {
+    if (error instanceof SyntaxError) return NextResponse.json({ error: "Некорректный JSON" }, { status: 400 });
     return NextResponse.json({ error: "Не удалось проверить маршрут по базе" }, { status: 500 });
   }
 }
