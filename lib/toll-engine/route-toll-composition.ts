@@ -6,13 +6,17 @@ export type RouteTollValue = {
   weekendAmount: number;
   period: string;
   segments: string[];
+  confidence: "matched";
+};
+
+export type RouteTollComponentValue = Omit<RouteTollValue, "confidence"> & {
   confidence: "matched" | "partial";
 };
 
 export type RouteTollComponent = {
   id: RouteTollComponentId;
   detected: boolean;
-  tolls: RouteTollValue | null;
+  tolls: RouteTollComponentValue | null;
   reason?: string | null;
 };
 
