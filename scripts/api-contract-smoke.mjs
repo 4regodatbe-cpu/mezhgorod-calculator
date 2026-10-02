@@ -18,7 +18,7 @@ async function expectStatus(name, path, options, expected) {
   }
 }
 
-const jsonHeaders = { "content-type": "application/json", "user-agent": "MezhgorodApiContract/1.0" };
+const jsonHeaders = { "content-type": "application/json", "user-agent": "MezhgorodApiContract/1.1" };
 const from = { label: "Москва", position: { lat: 55.755819, lng: 37.617644 } };
 const to = { label: "Казань", position: { lat: 55.796127, lng: 49.106405 } };
 
@@ -37,8 +37,20 @@ await expectStatus("dual mode requires midpoint", "/api/v2/calculate", {
 await expectStatus("malformed calculation JSON", "/api/v2/calculate", {
   method: "POST", headers: jsonHeaders, body: "{",
 }, 400);
+await expectStatus("invalid verified calculation mode", "/api/v3/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "broken", from, to }),
+}, 400);
+await expectStatus("verified dual mode requires midpoint", "/api/v3/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "dual", from, to }),
+}, 400);
+await expectStatus("oversized verified route label", "/api/v3/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from: { label: "A".repeat(241) }, to: { label: "Москва" } }),
+}, 400);
+await expectStatus("malformed verified calculation JSON", "/api/v3/calculate", {
+  method: "POST", headers: jsonHeaders, body: "{",
+}, 400);
 await expectStatus("oversized suggestion query", `/api/suggest?q=${encodeURIComponent("a".repeat(201))}`, {
-  method: "GET", headers: { "user-agent": "MezhgorodApiContract/1.0" },
+  method: "GET", headers: { "user-agent": "MezhgorodApiContract/1.1" },
 }, 400);
 await expectStatus("unknown toll telemetry cannot claim zero", "/api/collect", {
   method: "POST", headers: jsonHeaders, body: JSON.stringify({
