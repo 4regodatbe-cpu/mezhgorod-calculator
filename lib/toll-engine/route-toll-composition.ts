@@ -6,7 +6,7 @@ export type RouteTollValue = {
   weekendAmount: number;
   period: string;
   segments: string[];
-  confidence: "matched";
+  confidence: "matched" | "partial";
 };
 
 export type RouteTollComponent = {
@@ -41,11 +41,14 @@ export function composeRouteTolls(components: readonly RouteTollComponent[]): Ro
   const detected = components.filter((item) => item.detected);
   if (detected.length === 0) return { status: "none", tolls: null, missing: [], priced: [] };
 
-  const missing = detected.filter((item) => !item.tolls).map((item) => item.id);
-  const priced = detected.filter((item) => item.tolls).map((item) => item.id);
+  // A partial component is useful diagnostic evidence, but it cannot make the
+  // route-level total exact. Treat it as missing for final composition while
+  // preserving the component payload for diagnostics upstream.
+  const missing = detected.filter((item) => !item.tolls || item.tolls.confidence !== "matched").map((item) => item.id);
+  const priced = detected.filter((item) => item.tolls?.confidence === "matched").map((item) => item.id);
   if (missing.length > 0) return { status: "unknown", tolls: null, missing, priced };
 
-  const values = detected.map((item) => item.tolls!);
+  const values = detected.map((item) => item.tolls!).filter((item) => item.confidence === "matched");
   return {
     status: "priced",
     tolls: {
