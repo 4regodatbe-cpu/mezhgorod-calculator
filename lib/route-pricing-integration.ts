@@ -4,6 +4,7 @@ import { resolveCorridor, type CorridorDecision } from "@/lib/route-corridors";
 export type PricingVehicle = "standard" | "comfort" | "comfort_plus" | "minivan";
 
 export type PricedSegment = PricingSegment & {
+  type: PricingSegment["tariffType"];
   from: string;
   to: string;
   ratePerKm: number;
@@ -44,7 +45,7 @@ export function calculateRoutePricing(input: {
   const pricingSegments: PricedSegment[] = [];
 
   for (const leg of input.legs) {
-    const distanceKm = Math.max(0, leg.distanceKm);
+    const distanceKm = Math.max(0, Math.round(leg.distanceKm * 10) / 10);
     if (distanceKm === 0) continue;
 
     const decision = resolveCorridor(leg.from, leg.to);
@@ -63,6 +64,7 @@ export function calculateRoutePricing(input: {
         : normalRate(vehicle, descriptor.distanceKm);
       pricingSegments.push({
         ...descriptor,
+        type: descriptor.tariffType,
         from: leg.from,
         to: leg.to,
         ratePerKm,
