@@ -1,11 +1,13 @@
 name: Systemic toll composition fix
 on:
-  push:
-    branches: [fix-systemic-toll-composition]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: systemic-toll-composition-${{ github.event.pull_request.number || github.ref_name }}
+  cancel-in-progress: true
 jobs:
   toll-composition:
     runs-on: ubuntu-latest
