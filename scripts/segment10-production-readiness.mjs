@@ -45,6 +45,9 @@ assert(!ui.includes("toll.amount ?? 0) > 0 ? String(toll.amount) : \"0\""),"unkn
 assert(ui.includes("clampNumber(Number(e.target.value), 1, 10000, 1)"),"fare inputs must be clamped to supported bounds");
 assert(ui.includes("clampNumber(Number(e.target.value), 0, 500, 0)"),"urgency markup must be clamped to supported bounds");
 assert(ui.includes("clampNumber(Number(parsed[key]), 1, 10000, defaults[key])"),"stored fare values must be sanitized before use");
+assert(ui.includes('const saved = localStorage.getItem(key); return saved === null ? fallback'),"empty local storage must preserve configured dual-rate and urgency defaults");
+assert(ui.includes('storedNumber("mezhgorod-v2-rate1", 1, 10000, 25)')&&ui.includes('storedNumber("mezhgorod-v2-rate2", 1, 10000, 35)')&&ui.includes('storedNumber("mezhgorod-v2-urgent-percent", 0, 500, 20)'),"V2 default persisted inputs must use null-safe storage reads");
+assert(ui.includes("maxLength={200}"),"V2 address inputs must respect the suggestion-query bound");
 assert(ui.includes("clampNumber(Number(manualToll), 0, 100000, 0)"),"manual toll override must be bounded");
 assert(ui.includes('e.target.value === "" ? "" : String(clampNumber(Number(e.target.value), 0, 100000, 0))'),"manual toll override must be clearable back to automatic pricing");
 assert(!ui.includes("это сделает расстояния и расчёт платных дорог максимально точными"),"donation copy must not promise exact toll pricing from map API alone");
@@ -72,6 +75,14 @@ assert(suggest.includes("q.length > 200"),"address suggestion queries must be bo
 assert(suggest.includes("coordinates[1] < -90")&&suggest.includes("coordinates[0] < -180"),"geocoder suggestions must reject invalid coordinates");
 assert(root.includes('redirect("/v2")'),"root must route users to the hardened V2 calculator");
 assert(!root.includes('/api/calculate'),"legacy V1 calculator must not remain the public root entry point");
+for (const obsolete of [
+  ".github/workflows/apply-ckad-composition-patch.yml",
+  ".github/workflows/apply-fast-router-fallback-patch.yml",
+  ".github/workflows/apply-m11-moscow-composition-patch.yml",
+  "scripts/apply-ckad-composition-patch.mjs",
+  "scripts/apply-fast-router-fallback-patch.mjs",
+  "scripts/apply-m11-moscow-composition-patch.mjs",
+]) assert(!fs.existsSync(obsolete),`obsolete self-patching hook must be removed: ${obsolete}`);
 const segment9=read("scripts/segment9-regression.mjs");
 assert(segment9.includes("must not coerce to zero"),"Segment 9 fail-closed gate missing");
 console.log("Segment 10 static truthfulness gates GREEN");
