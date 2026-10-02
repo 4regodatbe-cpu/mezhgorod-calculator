@@ -46,6 +46,8 @@ jobs:
         run: node --experimental-strip-types scripts/segment8-golden-corpus-test.ts
       - name: Verified route database integrity
         run: node scripts/v3-verified-route-integrity.mjs
+      - name: Verified route freshness contract
+        run: node scripts/v3-freshness-contract.mjs
       - name: Tariff freshness
         env:
           TARIFF_AS_OF: '2026-10-02'
