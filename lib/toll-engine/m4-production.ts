@@ -30,9 +30,10 @@ function hasOtherLegacyTollSystems(segmentNames: string[]) {
 
 function partialTolls(core: Awaited<ReturnType<typeof calculateM4Core>>): ProductionM4Tolls | null {
   const { pricing } = core;
-  if (pricing.amount === null) return null;
+  if (pricing.pricedPlazas.length === 0 || (pricing.weekdayAmount <= 0 && pricing.weekendAmount <= 0)) return null;
+  const amount = pricing.period === "пятница–воскресенье" ? pricing.weekendAmount : pricing.weekdayAmount;
   return {
-    amount: pricing.amount,
+    amount,
     weekdayAmount: pricing.weekdayAmount,
     weekendAmount: pricing.weekendAmount,
     period: pricing.period,
