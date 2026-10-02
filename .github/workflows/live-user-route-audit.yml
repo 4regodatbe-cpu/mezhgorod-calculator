@@ -1,13 +1,5 @@
 name: Live user-route toll audit
 on:
-  push:
-    branches: [fix-systemic-toll-composition]
-    paths:
-      - app/api/v2/calculate/route.ts
-      - lib/route-quality.ts
-      - lib/toll-engine/**
-      - scripts/live-user-route-audit.mjs
-      - .github/workflows/live-user-route-audit.yml
   workflow_dispatch:
 permissions:
   contents: read
