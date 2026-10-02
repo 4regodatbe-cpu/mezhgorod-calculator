@@ -22,12 +22,13 @@ export async function POST(request: NextRequest) {
       const baseNumbers = [body.distanceKm, body.durationMin, ...Object.values(body.totals ?? {})];
       const tollValues = [body.tollWeekday, body.tollWeekend];
       const pricingStatus = body.tollPricingStatus;
-      const invalidStatus = pricingStatus !== undefined && !["priced", "free", "unknown"].includes(pricingStatus);
+      const validTotalKeys = body.totals && typeof body.totals === "object" && Object.keys(body.totals).length === 4 && ["standard", "comfort", "comfortPlus", "minivan"].every((key) => Object.prototype.hasOwnProperty.call(body.totals, key));
+      const invalidStatus = !["priced", "free", "unknown"].includes(pricingStatus ?? "");
       const invalidTolls = pricingStatus === "unknown"
         ? tollValues.some((value) => value !== null)
         : tollValues.some((value) => typeof value !== "number" || !Number.isFinite(value) || value < 0);
       const invalidFree = pricingStatus === "free" && tollValues.some((value) => value !== 0);
-      if (!clean(body.fromRegion, 120) || !clean(body.toRegion, 120) || !clean(body.routeType, 30) || baseNumbers.length !== 6 || baseNumbers.some((n) => !Number.isFinite(n) || n < 0) || invalidStatus || invalidTolls || invalidFree) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
+      if (!clean(body.fromRegion, 120) || !clean(body.toRegion, 120) || !clean(body.routeType, 30) || !validTotalKeys || baseNumbers.length !== 6 || baseNumbers.some((n) => !Number.isFinite(n) || n < 0) || invalidStatus || invalidTolls || invalidFree) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
     } else if (body.type === "visit") {
       if (!/^[a-zA-Z0-9-]{16,64}$/.test(clean(body.visitorId, 64))) return NextResponse.json({ error: "Некорректный идентификатор" }, { status: 400 });
     } else return NextResponse.json({ error: "Неизвестный тип данных" }, { status: 400 });
