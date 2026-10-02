@@ -16,6 +16,7 @@ import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollCo
 
 type Point = { label: string; position?: { lat: number; lng: number } };
 type Located = { label: string; position: { lat: number; lng: number } };
+function validPoint(point: Point | undefined) { if (!point || typeof point.label !== "string" || !point.label.trim()) return false; if (!point.position) return true; const { lat, lng } = point.position; return Number.isFinite(lat) && Number.isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180; }
 type RouteSummary = { meters: number; seconds: number };
 type RouteWithGeometry = RouteSummary & {
   coordinates: Coordinate[];
@@ -564,7 +565,7 @@ export async function POST(request: NextRequest) {
     const body = (await request.json()) as { from?: Point; via?: Point; to?: Point; mode?: "standard" | "dual"; departureAt?: string; diagnostics?: boolean };
     if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return NextResponse.json({ error: "Некорректный режим расчёта" }, { status: 400 });
     if (body.departureAt !== undefined && (typeof body.departureAt !== "string" || Number.isNaN(new Date(body.departureAt).getTime()))) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
-    if (!body.from?.label.trim() || !body.to?.label.trim() || (body.mode === "dual" && !body.via?.label.trim())) return NextResponse.json({ error: "Заполните все точки маршрута" }, { status: 400 });
+    if (!validPoint(body.from) || !validPoint(body.to) || (body.mode === "dual" && !validPoint(body.via))) return NextResponse.json({ error: "Проверьте точки маршрута" }, { status: 400 });
     const located = await Promise.all([geocode(body.from), ...(body.mode === "dual" && body.via ? [geocode(body.via)] : []), geocode(body.to)]);
     const legs = body.mode === "dual"
       ? await Promise.all([leg(located[0], located[1], body.departureAt, body.diagnostics === true), leg(located[1], located[2], body.departureAt, body.diagnostics === true)])
