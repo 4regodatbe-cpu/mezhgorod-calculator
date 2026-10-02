@@ -1,4 +1,4 @@
-import { corridorAnchor, resolveCorridor } from "@/lib/route-corridors";
+import { corridorAnchor, resolveCorridor, territoryClass } from "@/lib/route-corridors";
 
 export type RoutePosition = { lat: number; lng: number };
 export type RoutePoint = { label: string; region?: string; position: RoutePosition };
@@ -31,14 +31,20 @@ export function safeRoutePositions(from: RoutePoint, to: RoutePoint) {
   const decision = resolveCorridor(from.label, to.label);
   const fromCrimea = isCrimea(from);
   const toCrimea = isCrimea(to);
+  const fromClass = territoryClass(from.label);
+  const toClass = territoryClass(to.label);
   const positions: RoutePosition[] = [from.position];
 
   const usesCrimeaCorridor = decision.corridor === "crimea_dzhankoy" || decision.corridor === "crimea_armyansk";
   const usesEasternCorridor = decision.corridor === "m4_dnr" || decision.corridor === "m4_lnr";
+  const southToSpecial = usesCrimeaCorridor && (fromClass === "south_coast" || toClass === "south_coast");
+  const ordinaryCrimeaMainland = decision.corridor === "normal" && fromCrimea !== toCrimea;
+  const crimeaToEastern = usesEasternCorridor && (fromCrimea || toCrimea);
 
-  // Any route that enters/leaves Crimea, plus an explicitly selected Crimea
-  // corridor from the southern zone, must use the Crimean Bridge gateway.
-  if (fromCrimea !== toCrimea || usesCrimeaCorridor || (usesEasternCorridor && (fromCrimea || toCrimea))) {
+  // South-coast -> southwest-special routes enter Crimea over the Crimean Bridge.
+  // Crimea -> southwest-special routes already start north/west of that bridge and
+  // must not be sent backwards over it.
+  if (southToSpecial || ordinaryCrimeaMainland || crimeaToEastern) {
     pushUnique(positions, CRIMEA_SAFE_GATEWAY);
   }
 
