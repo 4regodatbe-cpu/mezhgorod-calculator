@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "dataset": "yandex-route-benchmark",
+  "snapshotDate": "2026-10-02",
+  "purpose": "Immutable read-only offline regression fixtures; never use for runtime route serving or customer price calculation.",
+  "source": {
+    "repository": "4regodatbe-cpu/mezhgorod-calculator",
+    "ref": "main",
+    "commit": "636e6801bdd2a3db6ce4714830dc8a05fc73b7c9",
+    "file": "data/verified-routes.json",
+    "gitBlobSha": "3a35a74cab47f45d184a2a54c8b953593f58afe7",
+    "csvFile": "data/verified-routes.csv",
+    "csvGitBlobSha": "4f2acff539eeab6abe0743519e64ba2bfbb03b81"
+  },
+  "counts": {
+    "total": 61,
+    "yandexSourced": 60,
+    "byOriginalSource": {
+      "Яндекс Карты": 53,
+      "Контрольная база": 1,
+      "Яндекс Карты — через Краснодар": 7
+    }
+  },
+  "verifiedDateRange": [
+    "2026-09-23",
+    "2026-09-29"
+  ],
+  "fields": [
+    "from",
+    "to",
+    "fastKm",
+    "fastMinutes",
+    "freeKm",
+    "freeMinutes",
+    "tollRub",
+    "verifiedAt",
+    "source",
+    "accuracyPercent"
+  ],
+  "geometry": {
+    "included": false,
+    "note": "No route geometry was present in the current published JSON/CSV source."
+  },
+  "packages": [
+    {
+      "file": "routes-001-016.json",
+      "count": 16,
+      "firstId": "YR-001",
+      "lastId": "YR-016"
+    },
+    {
+      "file": "routes-017-032.json",
+      "count": 16,
+      "firstId": "YR-017",
+      "lastId": "YR-032"
+    },
+    {
+      "file": "routes-033-048.json",
+      "count": 16,
+      "firstId": "YR-033",
+      "lastId": "YR-048"
+    },
+    {
+      "file": "routes-049-061.json",
+      "count": 13,
+      "firstId": "YR-049",
+      "lastId": "YR-061"
+    }
+  ],
+  "indexFile": "routes-index.csv",
+  "tollPeriodsFile": "toll-periods.json",
+  "preservationNotes": [
+    "All 61 records in the current published source are preserved, including the 'Контрольная база' row with its original provenance.",
+    "Only Yandex-sourced rows count as Yandex references; the control-base row is archived but not classified as Yandex-verified.",
+    "The historical local 71-record dataset is not included; the user directed us to preserve the data currently available.",
+    "Add future route records as a new dated snapshot instead of overwriting this snapshot."
+  ]
+}

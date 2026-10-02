@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "sourceRepo": "4regodatbe-cpu/mezhgorod-calculator",
+    "sourceRef": "main",
+    "sourceCommit": "636e6801bdd2a3db6ce4714830dc8a05fc73b7c9",
+    "sourceFile": "lib/verified-routes.ts",
+    "note": "Captured legacy weekday/weekend toll-period table; this is route data metadata, not an executable runtime helper."
+  },
+  "records": [
+    {
+      "routeKey": "anapa|voronezh",
+      "weekdayRub": 4090,
+      "weekendRub": 4930
+    },
+    {
+      "routeKey": "krasnodar|moscow",
+      "weekdayRub": 5040,
+      "weekendRub": 6090
+    },
+    {
+      "routeKey": "moscow|sochi",
+      "weekdayRub": 5040,
+      "weekendRub": 6090
+    },
+    {
+      "routeKey": "moscow|saint-petersburg",
+      "weekdayRub": 4580,
+      "weekendRub": 4780
+    },
+    {
+      "routeKey": "saint-petersburg|sochi",
+      "weekdayRub": 9620,
+      "weekendRub": 10870
+    },
+    {
+      "routeKey": "moscow|simferopol",
+      "weekdayRub": 5840,
+      "weekendRub": 6890
+    },
+    {
+      "routeKey": "moscow|sevastopol",
+      "weekdayRub": 5840,
+      "weekendRub": 6890
+    },
+    {
+      "routeKey": "moscow|yalta",
+      "weekdayRub": 5840,
+      "weekendRub": 6890
+    },
+    {
+      "routeKey": "kerch|moscow",
+      "weekdayRub": 5840,
+      "weekendRub": 6890
+    }
+  ]
+}
