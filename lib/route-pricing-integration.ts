@@ -1,5 +1,5 @@
-import { buildPricingSegments, type PricingSegment } from "@/lib/route-pricing-segments";
-import { resolveCorridor, type CorridorDecision } from "@/lib/route-corridors";
+import { buildPricingSegments, type PricingSegment } from "./route-pricing-segments.ts";
+import { resolveCorridor, type CorridorDecision } from "./route-corridors.ts";
 
 export type PricingVehicle = "standard" | "comfort" | "comfort_plus" | "minivan";
 
