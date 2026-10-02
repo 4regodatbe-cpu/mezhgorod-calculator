@@ -6,10 +6,11 @@ on:
       - .env.example
       - app/page.tsx
       - app/api/v2/**
-      - app/api/v3/calculate/**
+      - app/api/v3/**
       - app/api/collect/**
       - app/api/suggest/**
       - app/v2/**
+      - app/v3/**
       - android-app-v2/**
       - google-apps-script/**
       - lib/**
@@ -43,6 +44,8 @@ jobs:
         run: node --experimental-strip-types scripts/segment8-route-quality-test.ts
       - name: Golden route corpus integrity
         run: node --experimental-strip-types scripts/segment8-golden-corpus-test.ts
+      - name: Verified route database integrity
+        run: node scripts/v3-verified-route-integrity.mjs
       - name: Tariff freshness
         env:
           TARIFF_AS_OF: '2026-10-02'
