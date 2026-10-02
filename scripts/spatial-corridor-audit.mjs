@@ -9,7 +9,6 @@ const cases = [
 ];
 const ckadAnchors = [[37.75,55.32],[37.80,55.35],[38.05,55.39],[38.34,55.53],[38.35,55.65],[38.46,55.72],[38.50,55.90],[37.92,56.13],[37.55,56.18]];
 const rad=Math.PI/180;
-function distance(a,b){const dLat=(b[1]-a[1])*rad,dLon=(b[0]-a[0])*rad;const h=Math.sin(dLat/2)**2+Math.cos(a[1]*rad)*Math.cos(b[1]*rad)*Math.sin(dLon/2)**2;return 6371*2*Math.atan2(Math.sqrt(h),Math.sqrt(1-h));}
 function pointSeg(p,a,b){const latScale=110.574,lonScale=111.320*Math.cos(p[1]*rad);const ax=(a[0]-p[0])*lonScale,ay=(a[1]-p[1])*latScale,bx=(b[0]-p[0])*lonScale,by=(b[1]-p[1])*latScale,dx=bx-ax,dy=by-ay,l2=dx*dx+dy*dy;if(l2<1e-12)return Math.hypot(ax,ay);const t=Math.max(0,Math.min(1,-(ax*dx+ay*dy)/l2));return Math.hypot(ax+t*dx,ay+t*dy);}
 function nearest(route,p){let d=Infinity,idx=-1;for(let i=0;i<route.length-1;i++){const x=pointSeg(p,route[i],route[i+1]);if(x<d){d=x;idx=i;}}return {km:Math.round(d*1000)/1000,index:idx};}
 for(const [id,from,to] of cases){
