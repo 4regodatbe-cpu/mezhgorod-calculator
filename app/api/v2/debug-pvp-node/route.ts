@@ -226,7 +226,7 @@ export async function GET(request: NextRequest) {
   const toText = request.nextUrl.searchParams.get("to")?.trim();
   const lat = Number(request.nextUrl.searchParams.get("lat"));
   const lon = Number(request.nextUrl.searchParams.get("lon"));
-  if (!fromText || !toText || !Number.isFinite(lat) || !Number.isFinite(lon)) {
+  if (!fromText || !toText || !Number.isFinite(lat) || !Number.isFinite(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) {
     return NextResponse.json({ error: "Use ?from=...&to=...&lat=...&lon=..." }, { status: 400 });
   }
 
