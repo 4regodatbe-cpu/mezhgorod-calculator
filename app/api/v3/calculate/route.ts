@@ -40,6 +40,7 @@ function calculateLeg(fromLabel: string, toLabel: string) {
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as { mode?: "standard" | "dual"; from?: Point; via?: Point; to?: Point };
+    if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return NextResponse.json({ error: "Некорректный режим расчёта" }, { status: 400 });
     const from = body.from?.label?.trim();
     const via = body.via?.label?.trim();
     const to = body.to?.label?.trim();
