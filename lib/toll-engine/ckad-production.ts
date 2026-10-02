@@ -1,7 +1,7 @@
-import type { Coordinate } from "@/lib/tolls";
-import type { M11RoadEvidence } from "@/lib/toll-engine/m11-road-evidence";
-import { resolveCkadEastArcEvidence } from "@/lib/toll-engine/ckad-evidence";
-import { priceOtherRoadVerifiedSections } from "@/lib/toll-engine/other-road-current-tariffs";
+import type { Coordinate } from "../tolls.ts";
+import type { M11RoadEvidence } from "./m11-road-evidence.ts";
+import { resolveCkadEastArcEvidence } from "./ckad-evidence.ts";
+import { priceOtherRoadVerifiedSections } from "./other-road-current-tariffs.ts";
 
 export type CkadProductionResult = {
   candidate: boolean;
