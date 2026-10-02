@@ -106,6 +106,11 @@ if (!(tverAdler.tollSegments ?? []).some((segment) => String(segment).includes("
 if (Number(tverAdler.tollAmount) < 5000) {
   throw new Error(`Tver→Adler exposed a grossly partial M-4 total: ${tverAdler.tollAmount}`);
 }
-if (Math.abs(Number(tverAdler.tollWeekend) - 7830) > 1800) {
-  throw new Error(`Tver→Adler weekend toll drifted too far from the external Yandex QA control (~7830 RUB): ${tverAdler.tollWeekend}`);
+// The external Yandex screenshot is a point-in-time trip estimate, so compare it
+// with the audit's active departure-time amount, not the synthetic max weekend band.
+if (Math.abs(Number(tverAdler.tollAmount) - 7830) > 1800) {
+  throw new Error(`Tver→Adler active toll drifted too far from the external Yandex QA control (~7830 RUB): ${tverAdler.tollAmount}`);
+}
+if (Number(tverAdler.tollWeekend) < Number(tverAdler.tollWeekday)) {
+  throw new Error(`Tver→Adler weekend band must not be below weekday: ${tverAdler.tollWeekend} < ${tverAdler.tollWeekday}`);
 }
