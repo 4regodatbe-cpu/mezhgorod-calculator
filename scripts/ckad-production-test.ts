@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { resolveCkadEastArcEvidence, type CkadM11Evidence } from "../lib/toll-engine/ckad-evidence.ts";
 import { priceOtherRoadVerifiedSections } from "../lib/toll-engine/other-road-current-tariffs.ts";
+import { calculateProductionCkadM4M11 } from "../lib/toll-engine/ckad-production.ts";
 
 type C = [number, number];
 const arc: C[] = [
@@ -38,5 +39,17 @@ const ids = [
 const priced = priceOtherRoadVerifiedSections({ status: "verified", roadId: "ckad", sectionIds: ids }, "noTransponder", "allDays");
 assert.equal(priced.status, "priced");
 if (priced.status === "priced") assert.equal(priced.amountRub, 2517);
+
+const production = calculateProductionCkadM4M11(arc, evidence);
+assert.equal(production.candidate, true);
+assert.equal(production.exact, true);
+assert.equal(production.tolls?.amount, 2517);
+assert.equal(production.tolls?.weekdayAmount, 2517);
+assert.equal(production.tolls?.weekendAmount, 2517);
+
+const unresolvedProduction = calculateProductionCkadM4M11(arc, null);
+assert.equal(unresolvedProduction.candidate, true);
+assert.equal(unresolvedProduction.exact, false);
+assert.equal(unresolvedProduction.tolls, null);
 
 console.log("CKAD production regression: GREEN; east-arc no-transponder total=2517 RUB");
