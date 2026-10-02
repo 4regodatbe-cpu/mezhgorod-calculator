@@ -43,8 +43,8 @@ assert(collect.includes("fromRegion: coarseRegion(body.fromRegion)")&&collect.in
 assert(collect.includes('error instanceof SyntaxError')&&collect.includes('"Некорректный JSON"'),"malformed telemetry JSON must return a client error");
 assert(suggest.includes("q.length > 200"),"address suggestion queries must be bounded");
 assert(suggest.includes("coordinates[1] < -90")&&suggest.includes("coordinates[0] < -180"),"geocoder suggestions must reject invalid coordinates");
-assert(!root.includes("это сделает расстояния и расчёт платных дорог максимально точными"),"obsolete Yandex exact-toll copy remains");
-assert(!root.includes("маршруты: OSRM</footer>"),"obsolete single-provider attribution remains");
+assert(root.includes('redirect("/v2")'),"root must route users to the hardened V2 calculator");
+assert(!root.includes('/api/calculate'),"legacy V1 calculator must not remain the public root entry point");
 const segment9=read("scripts/segment9-regression.mjs");
 assert(segment9.includes("must not coerce to zero"),"Segment 9 fail-closed gate missing");
 console.log("Segment 10 static truthfulness gates GREEN");
