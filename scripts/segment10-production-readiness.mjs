@@ -8,6 +8,7 @@ const collect=read("app/api/collect/route.ts");
 const sheets=read("google-apps-script/Code.gs");
 const androidV2=read("android-app-v2/app/src/main/java/ru/mezhgorod/calculator/v2/MainActivity.kt");
 const androidWorkflow=read(".github/workflows/android-apk.yml");
+const vercel=JSON.parse(read("vercel.json"));
 const apiV3=read("app/api/v3/calculate/route.ts");
 const debugRoute=read("app/api/v2/debug-route/route.ts");
 const debugM4=read("app/api/v2/debug-m4/route.ts");
@@ -60,6 +61,7 @@ assert(sheets.includes('["Город / регион A", "Город / регио
 assert(sheets.includes("routes.appendRow([data.fromRegion, data.toRegion, data.distanceKm, data.rate, data.total])"),"Sheets route rows must follow minimized statistics schema");
 assert(androidV2.includes('private val home = "https://mezhgorod-calculator.vercel.app/v2"'),"Android 2.0 must open the hardened V2 calculator");
 assert(androidWorkflow.includes('working-directory: android-app-v2')&&!androidWorkflow.includes('working-directory: android-app\n'),"APK workflow must build the canonical Android 2.0 project only");
+assert(vercel?.git?.deploymentEnabled?.["fix-systemic-toll-composition"] === false,"active hardening branch must not consume Vercel preview deployments");
 assert(suggest.includes("q.length > 200"),"address suggestion queries must be bounded");
 assert(suggest.includes("coordinates[1] < -90")&&suggest.includes("coordinates[0] < -180"),"geocoder suggestions must reject invalid coordinates");
 assert(root.includes('redirect("/v2")'),"root must route users to the hardened V2 calculator");
