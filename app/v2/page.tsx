@@ -6,7 +6,6 @@ import { Calculator, Car, Check, Clipboard, Download, LoaderCircle, Percent, Rou
 import { AddressField, TariffInputs, QualityNote, RouteCard, UnverifiedRouteCard, FeedbackForm, DonationCard, RouteUnavailable, DualUnverifiedNotice } from "./components";
 
 type Place = { label: string; position?: { lat: number; lng: number } };
-type Suggestion = Place & { id: string; title: string; region: string };
 type RouteQuality = { status: "verified" | "single" | "warning"; providers: string[]; distanceSpreadPercent: number | null; message: string };
 type TollValidationView = { status: "toll" | "free" | "unknown"; message?: string };
 type Trip = { meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView };
