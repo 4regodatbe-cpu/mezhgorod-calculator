@@ -36,6 +36,10 @@ assert(ui.includes("clampNumber(Number(e.target.value), 1, 10000, 1)"),"fare inp
 assert(ui.includes("clampNumber(Number(e.target.value), 0, 500, 0)"),"urgency markup must be clamped to supported bounds");
 assert(ui.includes("clampNumber(Number(parsed[key]), 1, 10000, defaults[key])"),"stored fare values must be sanitized before use");
 assert(ui.includes("clampNumber(Number(manualToll), 0, 100000, 0)"),"manual toll override must be bounded");
+assert(ui.includes('e.target.value === "" ? "" : String(clampNumber(Number(e.target.value), 0, 100000, 0))'),"manual toll override must be clearable back to automatic pricing");
+assert(!ui.includes("это сделает расстояния и расчёт платных дорог максимально точными"),"donation copy must not promise exact toll pricing from map API alone");
+assert(ui.includes("Стоимость платных дорог по-прежнему требует проверки"),"donation copy must explain toll tariff verification");
+assert(ui.includes('navigator.userAgent.includes("MezhgorodAndroid")'),"V2 must recognize both current and legacy Android wrappers");
 assert(ui.includes('localStorage.setItem("mezhgorod-v2-rate1"')&&ui.includes('localStorage.setItem("mezhgorod-v2-rate2"'),"dual fare rates must persist");
 assert(ui.includes('localStorage.setItem("mezhgorod-v2-urgent-percent"'),"urgency markup must persist");
 assert(ui.includes('tolls?.pricingStatus === "unknown" ? null'),"unknown toll telemetry must preserve null instead of zero");
