@@ -7,6 +7,7 @@ const root=read("app/page.tsx");
 const collect=read("app/api/collect/route.ts");
 const apiV3=read("app/api/v3/calculate/route.ts");
 const debugPvp=read("app/api/v2/debug-pvp-node/route.ts");
+const suggest=read("app/api/suggest/route.ts");
 assert(api.includes('pricingStatus: "priced" | "free" | "unknown"'),"API pricing truth enum missing");
 assert(api.includes('amount: null')&&api.includes('pricingStatus: "unknown"'),"unknown toll must remain null");
 assert(api.includes('truth: "confirmed_free" | "candidate_unverified"'),"free-route truth enum missing");
@@ -37,6 +38,10 @@ assert(ui.includes('localStorage.setItem("mezhgorod-v2-urgent-percent"'),"urgenc
 assert(ui.includes('tolls?.pricingStatus === "unknown" ? null'),"unknown toll telemetry must preserve null instead of zero");
 assert(collect.includes('const invalidStatus = !["priced", "free", "unknown"].includes(pricingStatus ?? "")'),"V2 telemetry must require explicit toll truth status");
 assert(collect.includes("validTotalKeys"),"V2 telemetry totals schema must be exact");
+assert(collect.includes("fromRegion: clean(body.fromRegion, 120)")&&collect.includes("message: clean(body.message, 1000)"),"validated telemetry must also be sanitized before forwarding");
+assert(collect.includes('error instanceof SyntaxError')&&collect.includes('"Некорректный JSON"'),"malformed telemetry JSON must return a client error");
+assert(suggest.includes("q.length > 200"),"address suggestion queries must be bounded");
+assert(suggest.includes("coordinates[1] < -90")&&suggest.includes("coordinates[0] < -180"),"geocoder suggestions must reject invalid coordinates");
 assert(!root.includes("это сделает расстояния и расчёт платных дорог максимально точными"),"obsolete Yandex exact-toll copy remains");
 assert(!root.includes("маршруты: OSRM</footer>"),"obsolete single-provider attribution remains");
 const segment9=read("scripts/segment9-regression.mjs");
