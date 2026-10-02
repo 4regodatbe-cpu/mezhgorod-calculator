@@ -25,13 +25,15 @@ export const SPECIAL_TARIFF_RATES: SpecialTariffRates = {
   minivan: 110,
 };
 
+export type CorridorAnchor = RouteCoordinate & { label: string };
+
 // Public civilian routing anchors. They are deliberately coarse route-control
 // points; the calculator must not derive routes from tactical/front-line data.
-export const CORRIDOR_ANCHORS: Record<Exclude<CorridorId, "normal" | "special_internal" | "manual_review">, RouteCoordinate> = {
-  crimea_dzhankoy: { lat: 45.9769, lng: 34.5714 },
-  crimea_armyansk: { lat: 46.13663, lng: 33.64587 },
-  m4_dnr: { lat: 47.6985, lng: 38.6825 },
-  m4_lnr: { lat: 47.84591, lng: 39.7611 },
+export const CORRIDOR_ANCHORS: Record<Exclude<CorridorId, "normal" | "special_internal" | "manual_review">, CorridorAnchor> = {
+  crimea_dzhankoy: { label: "Джанкой", lat: 45.9769, lng: 34.5714 },
+  crimea_armyansk: { label: "Армянск", lat: 46.13663, lng: 33.64587 },
+  m4_dnr: { label: "Матвеев Курган", lat: 47.6985, lng: 38.6825 },
+  m4_lnr: { label: "Новошахтинск", lat: 47.84591, lng: 39.7611 },
 };
 
 const CRIMEA_MARKERS = [
@@ -143,7 +145,7 @@ export function resolveCorridor(fromLabel: string, toLabel: string): CorridorDec
   };
 }
 
-export function corridorAnchor(decision: CorridorDecision): RouteCoordinate | null {
+export function corridorAnchor(decision: CorridorDecision): CorridorAnchor | null {
   if (decision.corridor === "normal" || decision.corridor === "special_internal" || decision.corridor === "manual_review") return null;
   return CORRIDOR_ANCHORS[decision.corridor];
 }
