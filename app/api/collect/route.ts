@@ -37,7 +37,13 @@ export async function POST(request: NextRequest) {
     const token = process.env.GOOGLE_SHEETS_TOKEN;
     if (!endpoint || !token) return NextResponse.json({ error: "Сбор данных ещё настраивается" }, { status: 503 });
 
-    const webhookBody = body.type === "route_v2" ? { ...body, type: "route", version: "2.0", rate: 0, total: body.totals.standard } : body;
+    const webhookBody = body.type === "route_v2"
+      ? { ...body, fromRegion: clean(body.fromRegion, 120), toRegion: clean(body.toRegion, 120), routeType: clean(body.routeType, 30), type: "route", version: "2.0", rate: 0, total: body.totals.standard }
+      : body.type === "route"
+        ? { ...body, fromRegion: clean(body.fromRegion, 120), toRegion: clean(body.toRegion, 120) }
+        : body.type === "feedback"
+          ? { type: "feedback", category: clean(body.category, 40), message: clean(body.message, 1000) }
+          : { ...body, visitorId: clean(body.visitorId, 64), version: clean(body.version, 20) };
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
@@ -47,7 +53,8 @@ export async function POST(request: NextRequest) {
     const result = await response.json().catch(() => ({ ok: false }));
     if (!response.ok || !result.ok) throw new Error("WEBHOOK_FAILED");
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    if (error instanceof SyntaxError) return NextResponse.json({ error: "Некорректный JSON" }, { status: 400 });
     return NextResponse.json({ error: "Не удалось сохранить данные. Попробуйте позже." }, { status: 502 });
   }
 }
