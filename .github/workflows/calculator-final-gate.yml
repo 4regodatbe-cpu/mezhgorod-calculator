@@ -1,17 +1,5 @@
 name: Calculator final gate
 on:
-  push:
-    branches: [fix-systemic-toll-composition]
-    paths:
-      - app/api/v2/calculate/**
-      - app/api/v3/calculate/**
-      - app/api/collect/**
-      - app/api/suggest/**
-      - app/v2/**
-      - lib/**
-      - data/**
-      - scripts/**
-      - .github/workflows/calculator-final-gate.yml
   pull_request:
     branches: [main]
     paths:
@@ -27,6 +15,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: calculator-final-gate-${{ github.event.pull_request.number || github.ref_name }}
+  cancel-in-progress: true
 jobs:
   final-gate:
     runs-on: ubuntu-latest
