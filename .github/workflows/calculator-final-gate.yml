@@ -3,6 +3,7 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - .env.example
       - app/page.tsx
       - app/api/v2/**
       - app/api/v3/calculate/**
@@ -72,6 +73,10 @@ jobs:
         run: |
           test "$(curl -sS -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/)" = "307"
           curl -sSI http://127.0.0.1:3000/ | grep -qi '^location: /v2'
+      - name: API contract smoke
+        env:
+          CALCULATOR_URL: http://127.0.0.1:3000
+        run: node scripts/api-contract-smoke.mjs
       - name: Free-route truth live regression
         run: node scripts/segment3-free-truth.mjs
       - name: Full live user-route audit
