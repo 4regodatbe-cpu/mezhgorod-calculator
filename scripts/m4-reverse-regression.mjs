@@ -12,10 +12,14 @@ function point(label, [lat, lng]) {
   return { label, position: { lat, lng } };
 }
 
+function assert(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
 for (const [name, from, to] of routes) {
   const response = await fetch(`${baseUrl}/api/v2/calculate`, {
     method: "POST",
-    headers: { "content-type": "application/json", "user-agent": "M4ReverseRegression/1.0" },
+    headers: { "content-type": "application/json", "user-agent": "M4ReverseRegression/2.0" },
     body: JSON.stringify({
       mode: "standard",
       from: point(name.split(" — ")[0], from),
@@ -24,23 +28,27 @@ for (const [name, from, to] of routes) {
     }),
   });
 
-  if (!response.ok) {
-    throw new Error(`${name}: HTTP ${response.status}`);
-  }
+  assert(response.ok, `${name}: HTTP ${response.status}`);
 
   const data = await response.json();
   const leg = data.legs?.[0];
   const validation = leg?.fast?.tollValidation;
+  const tolls = leg?.fast?.tolls;
 
-  if (!leg?.fast || validation?.status === "unknown") {
-    throw new Error(`${name}: incomplete toll validation`);
-  }
+  assert(leg?.fast, `${name}: fast route missing`);
+  assert(validation, `${name}: toll validation missing`);
+  assert(validation.complete === true, `${name}: validation incomplete`);
+  assert(validation.unknownCount === 0, `${name}: unknown toll candidates remain`);
+  assert(Array.isArray(validation.unresolved) && validation.unresolved.length === 0, `${name}: unresolved toll data`);
+  assert(validation.status === "priced", `${name}: toll status is ${validation.status}`);
+  assert(typeof tolls?.amount === "number", `${name}: toll amount missing`);
 
   console.log(JSON.stringify({
     route: name,
-    tollStatus: validation.status,
-    tollAmount: leg.fast.tolls?.amount ?? null,
+    status: validation.status,
+    amount: tolls.amount,
+    checked: validation.checkedCandidateCount ?? null,
   }));
 }
 
-console.log("M4 reverse regression passed");
+console.log("M4 reverse regression passed with strict assertions");
