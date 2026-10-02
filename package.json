@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ignore-pattern .next",
-    "routes:import": "node scripts/import-routes.mjs"
+    "routes:import": "node scripts/import-routes.mjs",
+    "test:route-benchmark": "node scripts/yandex-route-benchmark-integrity.mjs"
   },
   "dependencies": {
     "class-variance-authority": "0.7.1",
