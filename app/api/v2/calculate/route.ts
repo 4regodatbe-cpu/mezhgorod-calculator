@@ -16,7 +16,7 @@ import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollCo
 
 type Point = { label: string; position?: { lat: number; lng: number } };
 type Located = { label: string; position: { lat: number; lng: number } };
-function validPoint(point: Point | undefined) { if (!point || typeof point.label !== "string" || !point.label.trim()) return false; if (!point.position) return true; const { lat, lng } = point.position; return Number.isFinite(lat) && Number.isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180; }
+function validPoint(point: Point | undefined): point is Point { if (!point || typeof point.label !== "string" || !point.label.trim()) return false; if (!point.position) return true; const { lat, lng } = point.position; return Number.isFinite(lat) && Number.isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180; }
 type RouteSummary = { meters: number; seconds: number };
 type RouteWithGeometry = RouteSummary & {
   coordinates: Coordinate[];
