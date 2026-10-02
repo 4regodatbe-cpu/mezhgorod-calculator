@@ -15,6 +15,7 @@ const debugRoute=read("app/api/v2/debug-route/route.ts");
 const debugM4=read("app/api/v2/debug-m4/route.ts");
 const debugPvp=read("app/api/v2/debug-pvp-node/route.ts");
 const suggest=read("app/api/suggest/route.ts");
+const routeMonitor=read("scripts/route-monitor.mjs");
 assert(api.includes('pricingStatus: "priced" | "free" | "unknown"'),"API pricing truth enum missing");
 assert(api.includes('amount: null')&&api.includes('pricingStatus: "unknown"'),"unknown toll must remain null");
 assert(api.includes('truth: "confirmed_free" | "candidate_unverified"'),"free-route truth enum missing");
@@ -65,6 +66,8 @@ assert(androidV2.includes('private val home = "https://mezhgorod-calculator.verc
 assert(androidWorkflow.includes('working-directory: android-app-v2')&&!androidWorkflow.includes('working-directory: android-app\n'),"APK workflow must build the canonical Android 2.0 project only");
 assert(androidWorkflow.includes("pull_request:")&&androidWorkflow.includes("if: github.event_name == 'push' && github.ref == 'refs/heads/main'"),"APK must be compiled on PR without publishing a release");
 assert(vercel?.git?.deploymentEnabled?.["fix-systemic-toll-composition"] === false,"active hardening branch must not consume Vercel preview deployments");
+assert(routeMonitor.includes("allowUnknownToll: true")&&routeMonitor.includes('pricingStatus === "unknown" && toll === null && weekdayToll === null && weekendToll === null'),"daily monitor must accept unknown only as fail-closed null pricing on explicitly allowed routes");
+assert(routeMonitor.includes("weekdayAmount")&&routeMonitor.includes("weekendAmount")&&routeMonitor.includes("pricedValuesValid"),"daily monitor must validate weekday and weekend toll values instead of depending on run day");
 assert(suggest.includes("q.length > 200"),"address suggestion queries must be bounded");
 assert(suggest.includes("coordinates[1] < -90")&&suggest.includes("coordinates[0] < -180"),"geocoder suggestions must reject invalid coordinates");
 assert(root.includes('redirect("/v2")'),"root must route users to the hardened V2 calculator");
