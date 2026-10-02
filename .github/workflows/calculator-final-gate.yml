@@ -14,6 +14,7 @@ on:
       - lib/**
       - data/**
       - scripts/**
+      - vercel.json
       - .github/workflows/android-apk.yml
       - .github/workflows/calculator-final-gate.yml
   workflow_dispatch:
