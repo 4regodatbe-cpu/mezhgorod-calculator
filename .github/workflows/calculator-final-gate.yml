@@ -1,0 +1,68 @@
+name: Calculator final gate
+on:
+  push:
+    branches: [fix-systemic-toll-composition]
+    paths:
+      - app/api/v2/calculate/**
+      - app/v2/**
+      - lib/**
+      - data/**
+      - scripts/**
+      - .github/workflows/calculator-final-gate.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  final-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 11.25.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22.13.0', cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - name: Static production-readiness truth gates
+        run: node scripts/segment10-production-readiness.mjs
+      - name: External toll benchmark corpus
+        run: node scripts/segment9-regression.mjs
+      - name: Route-quality corpus
+        run: node --experimental-strip-types scripts/segment8-route-quality-test.ts
+      - name: Golden route corpus integrity
+        run: node --experimental-strip-types scripts/segment8-golden-corpus-test.ts
+      - name: Tariff freshness
+        env:
+          TARIFF_AS_OF: '2026-10-02'
+          TARIFF_STALE_STRICT: '1'
+        run: node scripts/check-tariff-freshness.mjs
+      - name: M12 recovery replay
+        run: node scripts/segment5a1-m12-recovery-replay.mjs
+      - name: Systemic composition regression
+        run: node --experimental-strip-types scripts/systemic-toll-composition-test.ts
+      - name: CKAD production regression
+        run: node --experimental-strip-types scripts/ckad-production-test.ts
+      - name: M4 strict traversal regression
+        run: node --experimental-strip-types scripts/m4-route-traversal-test.ts
+      - name: M11 Moscow regression
+        run: node --experimental-strip-types scripts/m11-moscow-production-test.ts
+      - name: Majority route selection regression
+        run: node --experimental-strip-types scripts/route-quality-majority-test.ts
+      - run: pnpm lint
+      - run: pnpm build
+      - name: Start production server
+        run: |
+          pnpm start > /tmp/mezhgorod-next.log 2>&1 &
+          echo $! > /tmp/mezhgorod-next.pid
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:3000/v2 >/dev/null && exit 0; sleep 1; done
+          cat /tmp/mezhgorod-next.log
+          exit 1
+      - name: Free-route truth live regression
+        run: node scripts/segment3-free-truth.mjs
+      - name: Full live user-route audit
+        env:
+          CALCULATOR_URL: http://127.0.0.1:3000
+        run: node scripts/live-user-route-audit.mjs
+      - name: Stop server
+        if: always()
+        run: test ! -f /tmp/mezhgorod-next.pid || kill $(cat /tmp/mezhgorod-next.pid) || true
