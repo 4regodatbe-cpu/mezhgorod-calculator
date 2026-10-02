@@ -40,6 +40,8 @@ jobs:
         run: node scripts/segment10-production-readiness.mjs
       - name: Static civilian corridor policy
         run: node --experimental-strip-types scripts/route-corridor-policy-test.ts
+      - name: Route pricing integration regressions
+        run: node --experimental-strip-types scripts/route-pricing-integration-test.ts
       - name: External toll benchmark corpus
         run: node scripts/segment9-regression.mjs
       - name: Route-quality corpus
