@@ -16,6 +16,8 @@ assert(api.includes('Number.isNaN(new Date(body.departureAt).getTime())'),"V2 de
 assert(api.includes("lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180"),"route point coordinates must be range-validated");
 assert(api.includes('typeof point.label !== "string"'),"route point labels must be type-validated");
 assert(apiV3.includes('body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual"'),"V3 calculator mode must be validated");
+assert(apiV3.includes('typeof body.from?.label === "string"')&&apiV3.includes('typeof body.to?.label === "string"'),"V3 point labels must be type-validated");
+assert(apiV3.includes('error instanceof SyntaxError')&&apiV3.includes('"Некорректный JSON"'),"V3 malformed JSON must return a client error");
 assert(debugPvp.includes("lat < -90 || lat > 90 || lon < -180 || lon > 180"),"debug anchor coordinates must be range-validated");
 assert(!api.includes('compositionValidation(["m4_a289"], "Локальный расчёт существенно расходился'),"verified control must not hardcode M4 family for non-M4 routes");
 assert(api.includes("composition.priced.length > 0 ? composition.priced : [...legacyFamilies]"),"verified control must preserve detected toll families");
