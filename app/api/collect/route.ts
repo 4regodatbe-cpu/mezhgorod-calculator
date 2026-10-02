@@ -12,6 +12,10 @@ function coarseRegion(value: unknown) {
   const safe = parts.filter((part) => !ADDRESS_PART.test(part) && !/^\d{5,6}$/.test(part));
   return safe.slice(-3).join(", ").slice(0, 120);
 }
+function effectiveRate(distanceKm: number, total: number) {
+  if (!Number.isFinite(distanceKm) || distanceKm <= 0 || !Number.isFinite(total) || total < 0) return 0;
+  return Math.round((total / distanceKm) * 100) / 100;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -44,7 +48,7 @@ export async function POST(request: NextRequest) {
     if (!endpoint || !token) return NextResponse.json({ error: "Сбор данных ещё настраивается" }, { status: 503 });
 
     const webhookBody = body.type === "route_v2"
-      ? { type: "route", version: "2.0", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: 0, total: body.totals.standard }
+      ? { type: "route", version: "2.0", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: effectiveRate(body.distanceKm, body.totals.standard), total: body.totals.standard }
       : body.type === "route"
         ? { type: "route", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: body.rate, total: body.total }
         : body.type === "feedback"
