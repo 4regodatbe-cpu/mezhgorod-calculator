@@ -447,7 +447,7 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
   const legacyFamilies = detectedFamiliesFromLegacySegments(geometricTolls.segments);
-  const valhallaEvidence = fastResult.status === "fulfilled" ? fastResult.value : null;
+  const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
 
   const productionM4 = await calculateProductionM4(
     routeGeometry,
