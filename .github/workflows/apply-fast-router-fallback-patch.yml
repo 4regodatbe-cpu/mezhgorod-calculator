@@ -1,15 +1,10 @@
 name: Apply fast-router fallback patch
 on:
-  push:
-    branches: [fix-systemic-toll-composition]
-    paths:
-      - scripts/apply-fast-router-fallback-patch.mjs
-      - .github/workflows/apply-fast-router-fallback-patch.yml
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
   patch:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
