@@ -38,7 +38,8 @@ assert(ui.includes('localStorage.setItem("mezhgorod-v2-urgent-percent"'),"urgenc
 assert(ui.includes('tolls?.pricingStatus === "unknown" ? null'),"unknown toll telemetry must preserve null instead of zero");
 assert(collect.includes('const invalidStatus = !["priced", "free", "unknown"].includes(pricingStatus ?? "")'),"V2 telemetry must require explicit toll truth status");
 assert(collect.includes("validTotalKeys"),"V2 telemetry totals schema must be exact");
-assert(collect.includes("fromRegion: clean(body.fromRegion, 120)")&&collect.includes("message: clean(body.message, 1000)"),"validated telemetry must also be sanitized before forwarding");
+assert(collect.includes("function coarseRegion")&&collect.includes("parts.slice(-3)"),"route telemetry locations must be reduced to coarse region-level labels");
+assert(collect.includes("fromRegion: coarseRegion(body.fromRegion)")&&collect.includes("message: clean(body.message, 1000)"),"validated telemetry must be sanitized before forwarding");
 assert(collect.includes('error instanceof SyntaxError')&&collect.includes('"Некорректный JSON"'),"malformed telemetry JSON must return a client error");
 assert(suggest.includes("q.length > 200"),"address suggestion queries must be bounded");
 assert(suggest.includes("coordinates[1] < -90")&&suggest.includes("coordinates[0] < -180"),"geocoder suggestions must reject invalid coordinates");
