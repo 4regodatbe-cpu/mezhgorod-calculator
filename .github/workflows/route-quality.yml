@@ -7,9 +7,8 @@ on:
     paths:
       - "app/api/v2/**"
       - "app/api/version/**"
-      - "lib/toll*.ts"
-      - "lib/verified-routes.ts"
-      - "data/verified-routes.json"
+      - "lib/**"
+      - "data/**"
       - "scripts/route-monitor.mjs"
       - ".github/workflows/route-quality.yml"
   schedule:
@@ -23,17 +22,29 @@ permissions:
 jobs:
   check-routes:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.13.0
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: Запустить локальную production-сборку
+        run: |
+          pnpm start > /tmp/route-monitor-next.log 2>&1 &
+          echo $! > /tmp/route-monitor-next.pid
+          for i in $(seq 1 40); do curl -fsS http://127.0.0.1:3000/v2 >/dev/null && exit 0; sleep 1; done
+          cat /tmp/route-monitor-next.log
+          exit 1
       - id: monitor
         continue-on-error: true
         env:
-          CALCULATOR_URL: https://mezhgorod-calculator.vercel.app
-          EXPECTED_COMMIT: ${{ github.sha }}
+          CALCULATOR_URL: http://127.0.0.1:3000
         run: node scripts/route-monitor.mjs
       - name: Сохранить отчёт
         if: always()
@@ -74,6 +85,9 @@ jobs:
                 body,
               });
             }
+      - name: Остановить локальный сервер
+        if: always()
+        run: test ! -f /tmp/route-monitor-next.pid || kill $(cat /tmp/route-monitor-next.pid) || true
       - name: Завершить с ошибкой при отклонениях
         if: steps.monitor.outcome == 'failure'
         run: exit 1
