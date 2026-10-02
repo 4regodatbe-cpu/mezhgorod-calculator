@@ -18,7 +18,9 @@ function calculateLeg(fromLabel: string, toLabel: string) {
       status: "missing" as const,
       from: result.from.name,
       to: result.to.name,
-      reason: "Эта пара городов ещё не сверена с Яндекс Картами.",
+      reason: result.staleRoute
+        ? `Проверка маршрута от ${result.staleRoute.verifiedAt} устарела и не используется в расчёте.`
+        : "Эта пара городов ещё не сверена с Яндекс Картами.",
     };
   }
   const tollPeriods = tollPeriodsForRoute(result.route);
