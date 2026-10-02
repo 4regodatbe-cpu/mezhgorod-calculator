@@ -6,9 +6,11 @@ type FeedbackEvent = { type: "feedback"; category: string; message: string; webs
 type VisitEvent = { type: "visit"; visitorId: string; version?: string };
 
 const clean = (value: unknown, max: number) => typeof value === "string" ? value.trim().slice(0, max) : "";
+const ADDRESS_PART = /(?:\b\d{1,6}[а-яa-z]?\b|\b(?:ул(?:ица)?|просп(?:ект)?|пр-т|пер(?:еулок)?|шоссе|наб(?:ережная)?|бульвар|бул\.?|проезд|дом|д\.|корп(?:ус)?|кв\.)\b)/i;
 function coarseRegion(value: unknown) {
-  const parts = clean(value, 200).split(",").map((part) => part.trim()).filter(Boolean);
-  return parts.slice(-3).join(", ").slice(0, 120);
+  const parts = clean(value, 240).split(",").map((part) => part.trim()).filter(Boolean);
+  const safe = parts.filter((part) => !ADDRESS_PART.test(part) && !/^\d{5,6}$/.test(part));
+  return safe.slice(-3).join(", ").slice(0, 120);
 }
 
 export async function POST(request: NextRequest) {
@@ -42,12 +44,12 @@ export async function POST(request: NextRequest) {
     if (!endpoint || !token) return NextResponse.json({ error: "Сбор данных ещё настраивается" }, { status: 503 });
 
     const webhookBody = body.type === "route_v2"
-      ? { ...body, fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), routeType: clean(body.routeType, 30), type: "route", version: "2.0", rate: 0, total: body.totals.standard }
+      ? { type: "route", version: "2.0", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: 0, total: body.totals.standard }
       : body.type === "route"
-        ? { ...body, fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion) }
+        ? { type: "route", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: body.rate, total: body.total }
         : body.type === "feedback"
           ? { type: "feedback", category: clean(body.category, 40), message: clean(body.message, 1000) }
-          : { ...body, visitorId: clean(body.visitorId, 64), version: clean(body.version, 20) };
+          : { type: "visit", visitorId: clean(body.visitorId, 64), version: clean(body.version, 20) };
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
