@@ -2,6 +2,11 @@ name: Android APK 2.0
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "android-app-v2/**"
+      - ".github/workflows/android-apk.yml"
   push:
     branches: [main]
     paths:
@@ -10,6 +15,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: android-apk-${{ github.event.pull_request.number || github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -33,6 +42,7 @@ jobs:
           name: Mezhgorod-Calc-2-APK
           path: Mezhgorod-Calc-2.apk
       - uses: softprops/action-gh-release@v2
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           tag_name: android-latest
           name: Межгород Calc 2.0 — Android APK
