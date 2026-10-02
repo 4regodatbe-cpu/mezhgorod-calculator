@@ -9,6 +9,8 @@ const sheets=read("google-apps-script/Code.gs");
 const androidV2=read("android-app-v2/app/src/main/java/ru/mezhgorod/calculator/v2/MainActivity.kt");
 const androidWorkflow=read(".github/workflows/android-apk.yml");
 const apiV3=read("app/api/v3/calculate/route.ts");
+const debugRoute=read("app/api/v2/debug-route/route.ts");
+const debugM4=read("app/api/v2/debug-m4/route.ts");
 const debugPvp=read("app/api/v2/debug-pvp-node/route.ts");
 const suggest=read("app/api/suggest/route.ts");
 assert(api.includes('pricingStatus: "priced" | "free" | "unknown"'),"API pricing truth enum missing");
@@ -22,6 +24,10 @@ assert(api.includes('typeof point.label !== "string"'),"route point labels must 
 assert(apiV3.includes('body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual"'),"V3 calculator mode must be validated");
 assert(apiV3.includes('typeof body.from?.label === "string"')&&apiV3.includes('typeof body.to?.label === "string"'),"V3 point labels must be type-validated");
 assert(apiV3.includes('error instanceof SyntaxError')&&apiV3.includes('"Некорректный JSON"'),"V3 malformed JSON must return a client error");
+for (const [name, source] of [["route", debugRoute], ["M4", debugM4], ["PVP", debugPvp]]) {
+  assert(source.includes('process.env.VERCEL !== "1"')&&source.includes('CALCULATOR_DEBUG_TOKEN')&&source.includes('x-calculator-debug-token'),`${name} diagnostics must be protected on Vercel`);
+}
+assert(debugM4.includes("fromText.length > 120")&&debugPvp.includes("fromText.length > 120"),"diagnostic geocode inputs must be bounded");
 assert(debugPvp.includes("lat < -90 || lat > 90 || lon < -180 || lon > 180"),"debug anchor coordinates must be range-validated");
 assert(!api.includes('compositionValidation(["m4_a289"], "Локальный расчёт существенно расходился'),"verified control must not hardcode M4 family for non-M4 routes");
 assert(api.includes("composition.priced.length > 0 ? composition.priced : [...legacyFamilies]"),"verified control must preserve detected toll families");
