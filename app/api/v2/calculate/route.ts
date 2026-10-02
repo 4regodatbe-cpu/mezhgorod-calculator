@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { geocode, valhalla, brouterFree, brouterFast, osrmRoute, type Point, type Located, type RouteSummary, type RouteWithGeometry } from "@/lib/route-providers";
 
-function validPoint(point: Point | undefined): point is Point { if (!point || typeof point.label !== "string" || !point.label.trim()) return false; if (!point.position) return true; const { lat, lng } = point.position; return Number.isFinite(lat) && Number.isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180; }
-import { estimateTolls } from "@/lib/tolls";
+import { estimateTolls, type Coordinate } from "@/lib/tolls";
 import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
-import { findVerifiedRoute, goldenRouteReference, tollPeriodsForRoute } from "@/lib/verified-routes";
-import { MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, selectLiveRoute, selectLiveRouteCandidates, type GoldenRouteReference, type RouteQuality } from "@/lib/route-quality";
+import { MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, selectLiveRoute, selectLiveRouteCandidates, type RouteQuality } from "@/lib/route-quality";
 import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
 import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
@@ -14,6 +12,8 @@ import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
 import { calculateProductionCkadM4M11 } from "@/lib/toll-engine/ckad-production";
 import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent, type RouteTollComponentId } from "@/lib/toll-engine/route-toll-composition";
 import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-integration";
+
+function validPoint(point: Point | undefined): point is Point { if (!point || typeof point.label !== "string" || !point.label.trim()) return false; if (!point.position) return true; const { lat, lng } = point.position; return Number.isFinite(lat) && Number.isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180; }
 
 type FreeCandidate = { name: string; route: RouteWithGeometry };
 type SelectedFree = {
@@ -30,8 +30,6 @@ type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount">
   pricingStatus: "priced" | "free" | "unknown";
 };
 
-const VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT = 5;
-const VERIFIED_TOLL_CONTROL_DEVIATION_PERCENT = 12;
 const MIN_TOLL_VARIANT_DISTANCE_KM = 10;
 const MIN_TOLL_VARIANT_DISTANCE_PERCENT = 1;
 const MIN_TOLL_VARIANT_TIME_MINUTES = 15;
@@ -136,25 +134,12 @@ async function validateFreeCandidate(candidate: FreeCandidate, ordinal: "Пер�
 async function selectFreeRoute(
   valhallaFreeResult: PromiseSettledResult<RouteWithGeometry>,
   brouterResult: PromiseSettledResult<RouteWithGeometry>,
-  known?: GoldenRouteReference,
 ): Promise<SelectedFree | null> {
   const candidates: FreeCandidate[] = [];
   if (valhallaFreeResult.status === "fulfilled") candidates.push({ name: "Valhalla", route: valhallaFreeResult.value });
   if (brouterResult.status === "fulfilled") candidates.push({ name: "BRouter", route: brouterResult.value });
   if (candidates.length === 0) return null;
 
-  if (known) {
-    const selected = selectLiveRoute(
-      candidates[0] ? { name: candidates[0].name, route: candidates[0].route } : undefined,
-      candidates[1] ? { name: candidates[1].name, route: candidates[1].route } : undefined,
-      known,
-    );
-    return {
-      ...selected,
-      validation: unknownValidation("Контрольная база подтверждает длину/время альтернативы, но не отсутствие платных дорог"),
-      truth: "candidate_unverified",
-    };
-  }
 
   const first = candidates[0];
   const second = candidates[1];
@@ -195,43 +180,6 @@ async function selectFreeRoute(
   return selectedCandidate(first, undefined, firstValidation, "candidate_unverified");
 }
 
-function verifiedTollControl(from: Located, to: Located, fast: RouteSummary, departureAt?: string): TollEstimate | null {
-  const verified = findVerifiedRoute(from.label, to.label).route;
-  if (!verified || verified.tollRub <= 0 || verified.fastKm <= 0) return null;
-
-  const actualKm = fast.meters / 1000;
-  const deviationPercent = Math.abs(actualKm - verified.fastKm) / verified.fastKm * 100;
-  const tolerancePercent = Math.max(VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT, verified.accuracyPercent || 0);
-  if (deviationPercent > tolerancePercent) return null;
-
-  const periods = tollPeriodsForRoute(verified);
-  const date = departureAt ? new Date(departureAt) : new Date();
-  const validDate = Number.isNaN(date.getTime()) ? new Date() : date;
-  const day = validDate.getDay();
-  const weekend = day === 0 || day === 5 || day === 6;
-
-  return {
-    amount: weekend ? periods.weekend : periods.weekday,
-    weekdayAmount: periods.weekday,
-    weekendAmount: periods.weekend,
-    period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
-    segments: [`Проверенная контрольная база: ${verified.source}`],
-    confidence: "matched",
-  };
-}
-
-function verifiedTollFallback(from: Located, to: Located, fast: RouteSummary, current: TollEstimate, departureAt?: string): TollEstimate {
-  if (current.amount > 0) return current;
-  return verifiedTollControl(from, to, fast, departureAt) ?? current;
-}
-
-function shouldUseVerifiedControl(current: TollEstimate, verified: TollEstimate | null) {
-  if (!verified || verified.amount <= 0) return false;
-  if (current.amount <= 0) return true;
-  const deviation = Math.abs(current.amount - verified.amount) / verified.amount * 100;
-  return deviation > VERIFIED_TOLL_CONTROL_DEVIATION_PERCENT;
-}
-
 function mapMatchedTollFallback(current: TollEstimate, validation: TollValidation): TollEstimate {
   if (current.amount > 0 || validation.status !== "toll") return current;
   return {
@@ -270,7 +218,7 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
     ...(fastResult.status === "fulfilled" ? [{ name: "Valhalla", route: fastResult.value }] : []),
     ...(osrmResult.status === "fulfilled" ? [{ name: "OSRM", route: osrmResult.value }] : []),
     ...(brouterFastResult.status === "fulfilled" ? [{ name: "BRouter", route: brouterFastResult.value }] : []),
-  ], goldenRouteReference(from.label, to.label, "fast"));
+  ]);
 
   const routeGeometry = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
     ? fastResult.value.coordinates
@@ -286,7 +234,7 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
               ? brouterFastResult.value.coordinates
               : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
-  const selectedFreePromise = selectFreeRoute(valhallaFreeResult, brouterResult, goldenRouteReference(from.label, to.label, "free"));
+  const selectedFreePromise = selectFreeRoute(valhallaFreeResult, brouterResult);
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
@@ -339,7 +287,6 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
     { id: "regional", detected: legacyFamilies.has("regional"), tolls: null, reason: "regional_engine_not_yet_composed" },
   ];
   const composition = composeRouteTolls(components);
-  const verifiedControl = verifiedTollControl(from, to, selectedFast.route, departureAt);
 
   let pricedTolls: TollEstimate;
   let fastValidation: TollValidation;
@@ -364,17 +311,13 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
       `Нельзя показывать частичную сумму как итог маршрута. Не оценены: ${missingReasons.join("; ")}`,
     );
   } else {
-    pricedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
+    pricedTolls = geometricTolls;
     fastValidation = diagnosticFastValidation
       ?? unknownValidation(pricedTolls.amount > 0
-        ? "Стоимость получена из проверенного или геометрического источника"
+        ? "Стоимость получена из расчёта дорожных систем или геометрии маршрута"
         : "Map matching быстрого маршрута ещё не выполнялся");
   }
 
-  if (!routeCompositionBlocked && shouldUseVerifiedControl(pricedTolls, verifiedControl)) {
-    pricedTolls = verifiedControl!;
-    fastValidation = compositionValidation(composition.priced.length > 0 ? composition.priced : [...legacyFamilies], "Локальный расчёт существенно расходился с недавно проверенным контрольным маршрутом; использован контрольный итог вместо заведомо неполной суммы.");
-  }
 
   if (!routeCompositionBlocked && pricedTolls.amount <= 0) {
     const conservativeValidation = unknownValidation("Локальный коридорный fallback без доверия к удалённому map matching");

@@ -18,10 +18,10 @@ Updated: 2026-10-02. This note records the current boundary between the standalo
 
 ## Implementation status
 
-- The work branch removes `app/v3`, `app/api/v3/calculate`, and the obsolete V3 runtime integrity checks.
+- The work branch removes `app/v3`, `app/api/v3/calculate`, the obsolete V3 runtime integrity checks, and the old runtime route-table helper/data copies.
 - `scripts/yandex-route-benchmark-integrity.mjs` checks the archived benchmark. Run it with `pnpm test:route-benchmark`.
 - V2 UI was split into `app/v2/page.tsx` and `app/v2/components.tsx`. Routing provider adapters were moved from the API handler to `lib/route-providers.ts`.
-- V2 still uses `lib/verified-routes.ts` for its own live toll control and candidate selection. Audit and replace those dependencies before removing the runtime route table; retain V2's independent behavior.
+- V2 no longer imports the archived route table for live route selection or toll fallback. Its live results come from routing providers and toll engines; benchmark data is accessed only by offline integrity checks.
 - The work branch is not merged. PR #6 `fix-systemic-toll-composition` remains open and should not be merged until its status and the updated boundary are reconciled.
 
 ## Internal pricing
