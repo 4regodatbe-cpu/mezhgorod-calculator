@@ -9,7 +9,7 @@ export type ProductionM4Tolls = {
   weekendAmount: number;
   period: "понедельник–четверг" | "пятница–воскресенье";
   segments: string[];
-  confidence: "matched";
+  confidence: "matched" | "partial";
 };
 
 export type ProductionM4Result = {
@@ -21,13 +21,28 @@ export type ProductionM4Result = {
 };
 
 function isSupportedLegacyComponent(name: string) {
-  // Deliberately require the colon immediately after the road id. Composite
-  // legacy labels such as "М-4 + М-11: ..." must NOT be mistaken for M-4-only.
   return name.startsWith("М-4:") || name.startsWith("А-289:");
 }
 
 function hasOtherLegacyTollSystems(segmentNames: string[]) {
   return segmentNames.some((name) => !isSupportedLegacyComponent(name));
+}
+
+function partialTolls(core: Awaited<ReturnType<typeof calculateM4Core>>): ProductionM4Tolls | null {
+  const { pricing } = core;
+  if (pricing.pricedPlazas.length === 0 || (pricing.weekdayAmount <= 0 && pricing.weekendAmount <= 0)) return null;
+  const amount = pricing.period === "пятница–воскресенье" ? pricing.weekendAmount : pricing.weekdayAmount;
+  return {
+    amount,
+    weekdayAmount: pricing.weekdayAmount,
+    weekendAmount: pricing.weekendAmount,
+    period: pricing.period,
+    segments: [
+      "М-4 Дон: частично подтверждённый расчёт",
+      ...pricing.pricedPlazas.map((item) => `М-4: ПВП/участок ${item.km} км`),
+    ],
+    confidence: "partial",
+  };
 }
 
 export async function calculateProductionM4(
@@ -36,33 +51,21 @@ export async function calculateProductionM4(
   legacySegmentNames: string[] = [],
 ): Promise<ProductionM4Result> {
   if (route.length < 2) {
-    return {
-      candidate: false,
-      exact: false,
-      tolls: null,
-      validation: null,
-      reason: "Недостаточно геометрии для M-4 validator",
-    };
+    return { candidate: false, exact: false, tolls: null, validation: null, reason: "Недостаточно геометрии для M-4 validator" };
   }
 
   const core = await calculateM4Core(route, departureAt);
   const { validation, pricing, tollValidation: responseValidation, exact } = core;
 
   if (validation.candidateCount === 0) {
-    return {
-      candidate: false,
-      exact: false,
-      tolls: null,
-      validation: null,
-      reason: "Маршрут не пересекает зоны известных ПВП М-4",
-    };
+    return { candidate: false, exact: false, tolls: null, validation: null, reason: "Маршрут не пересекает зоны известных ПВП М-4" };
   }
 
   if (!exact || pricing.amount === null) {
     return {
       candidate: true,
       exact: false,
-      tolls: null,
+      tolls: partialTolls(core),
       validation: responseValidation,
       reason: pricing.message,
     };
@@ -74,7 +77,7 @@ export async function calculateProductionM4(
       exact: false,
       tolls: null,
       validation: responseValidation,
-      reason: "Legacy-геометрия обнаружила платную систему вне M-4/A-289; точный составной итог заблокирован до отдельного road-specific engine.",
+      reason: "Legacy-геометрия обнаружила платную систему вне M-4/A-289; точный составной итог заблокирован.",
     };
   }
 

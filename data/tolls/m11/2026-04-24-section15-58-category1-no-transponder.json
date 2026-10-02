@@ -1,0 +1,31 @@
+{
+  "systemId": "m11-section15-58-m11-neva",
+  "effectiveFrom": "2026-04-24T01:00:00+03:00",
+  "observedAt": "2026-10-01",
+  "currency": "RUB",
+  "vehicleCategory": "I",
+  "paymentMode": "noTransponder",
+  "route": "Moscow-Solnechnogorsk",
+  "source": "https://m11-neva.ru/upload/iblock/c7f/dqr24p9c4pctph5s4897if1r05agru30.pdf",
+  "sourceTitle": "Тарифы за проезд по участку от МКАД до Солнечногорска, действительны с 01:00 24 апреля 2026 года",
+  "tariffs": {
+    "night0100to0600": 880,
+    "monThuDay0600to0100": 1130,
+    "fridayDay0600to0100": 1650,
+    "saturdayDay0600to0100": 1650,
+    "sundayDay0600to0100": 1260
+  },
+  "specialDayProfiles2026": {
+    "2026-04-30": "friday",
+    "2026-06-11": "friday",
+    "2026-11-03": "friday",
+    "2026-12-30": "friday",
+    "2026-05-01": "saturday",
+    "2026-05-10": "saturday",
+    "2026-06-12": "saturday",
+    "2026-11-04": "saturday",
+    "2026-12-31": "saturday",
+    "2026-05-11": "sunday"
+  },
+  "notes": "Official category-I tariff without transponder. Boundary between Sections 15-58 and Section 1 is charged as Solnechnogorsk toll point."
+}

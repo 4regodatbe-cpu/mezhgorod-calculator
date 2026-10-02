@@ -11,6 +11,12 @@ type RouteWithGeometry = {
   coordinates: Coordinate[];
 };
 
+function debugAllowed(request: NextRequest) {
+  if (process.env.VERCEL !== "1") return true;
+  const token = process.env.CALCULATOR_DEBUG_TOKEN;
+  return Boolean(token) && request.headers.get("x-calculator-debug-token") === token;
+}
+
 function decodePolyline(encoded: string, precision = 6): Coordinate[] {
   const coordinates: Coordinate[] = [];
   const factor = 10 ** precision;
@@ -109,11 +115,15 @@ async function fastRoute(from: RoutePoint, to: RoutePoint): Promise<RouteWithGeo
 }
 
 export async function GET(request: NextRequest) {
+  if (!debugAllowed(request)) return NextResponse.json({ error: "Not found" }, { status: 404 });
   const fromText = request.nextUrl.searchParams.get("from")?.trim();
   const toText = request.nextUrl.searchParams.get("to")?.trim();
   const departureAt = request.nextUrl.searchParams.get("departureAt")?.trim() || undefined;
-  if (!fromText || !toText) {
+  if (!fromText || !toText || fromText.length > 120 || toText.length > 120) {
     return NextResponse.json({ error: "Use ?from=...&to=..." }, { status: 400 });
+  }
+  if (departureAt && Number.isNaN(new Date(departureAt).getTime())) {
+    return NextResponse.json({ error: "Invalid departureAt" }, { status: 400 });
   }
 
   const startedAt = Date.now();

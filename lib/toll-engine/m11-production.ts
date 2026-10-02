@@ -1,11 +1,11 @@
 import currentPoints from "../../data/tolls/m11/2026-10-01-58-679-category1-a1-current.json" with { type: "json" };
 import spatialSnapshot from "../../data/tolls/m11/2026-10-01-58-679-spatial-anchors.json" with { type: "json" };
-import type { Coordinate } from "../tolls.ts";
-import type { TollValidation } from "../toll-validator.ts";
-import type { M11RoadEvidence } from "./m11-road-evidence.ts";
-import { buildM11FacilitySpatialEvidence } from "./m11-spatial-anchors.ts";
-import { resolveM11Boundaries } from "./m11-boundary-resolver.ts";
-import { selectM11CurrentCategory1Tariff } from "./m11-current-selection.ts";
+import type { Coordinate } from "../tolls";
+import type { TollValidation } from "../toll-validator";
+import type { M11RoadEvidence } from "./m11-road-evidence";
+import { buildM11FacilitySpatialEvidence } from "./m11-spatial-anchors";
+import { resolveM11Boundaries } from "./m11-boundary-resolver";
+import { selectM11CurrentCategory1Tariff } from "./m11-current-selection";
 
 export type M11ProductionTolls = {
   amount: number;
@@ -38,6 +38,10 @@ function profileFor(departureAt?: string) {
   return day === 0 || day === 5 || day === 6 ? "friSun" : "monThu";
 }
 
+function selectionReason(value: ReturnType<typeof selectM11CurrentCategory1Tariff>) {
+  return value.status === "unknown" ? value.reason : null;
+}
+
 export function calculateProductionM11(
   route: Coordinate[],
   roadEvidence: M11RoadEvidence | null | undefined,
@@ -53,7 +57,14 @@ export function calculateProductionM11(
   const weekend = selectM11CurrentCategory1Tariff(resolution, "friSun");
   const selected = selectM11CurrentCategory1Tariff(resolution, profileFor(departureAt));
   if (blockedByMixedRoadEvidence || weekday.status !== "priced" || weekend.status !== "priced" || selected.status !== "priced" || weekday.amountRub == null || weekend.amountRub == null || selected.amountRub == null) {
-    return { tolls: null, validation: null, boundaryStatus: "resolved", pricingStatus: "unknown", blockedByMixedRoadEvidence, reason: blockedByMixedRoadEvidence ? "mixed_paid_road_evidence" : selected.reason ?? "current_tariff_not_verified" };
+    return {
+      tolls: null,
+      validation: null,
+      boundaryStatus: "resolved",
+      pricingStatus: "unknown",
+      blockedByMixedRoadEvidence,
+      reason: blockedByMixedRoadEvidence ? "mixed_paid_road_evidence" : selectionReason(selected) ?? "current_tariff_not_verified",
+    };
   }
 
   const pair = `${resolution.entryPointId}→${resolution.exitPointId}`;

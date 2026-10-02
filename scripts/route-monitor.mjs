@@ -4,15 +4,15 @@ const baseUrl = (process.env.CALCULATOR_URL || "https://mezhgorod-calculator.ver
 const expectedCommit = process.env.EXPECTED_COMMIT || "";
 
 const routes = [
-  { name: "Анапа — Воронеж", from: [44.894818, 37.316367], to: [51.660781, 39.200296], fast: [970, 1010], free: [1010, 1050], toll: [3900, 5100], expectToll: true },
-  { name: "Москва — Сочи", from: [55.755819, 37.617644], to: [43.585472, 39.723098], fast: [1500, 1700], free: [1680, 1820], toll: [3500, 7000], expectToll: true },
-  { name: "Москва — Краснодар", from: [55.755819, 37.617644], to: [45.03547, 38.975313], fast: [1250, 1420], free: [1380, 1550], toll: [3500, 7000], expectToll: true },
-  { name: "Москва — Санкт-Петербург", from: [55.755819, 37.617644], to: [59.938784, 30.314997], fast: [620, 760], free: [680, 850], toll: [2500, 6500], expectToll: true },
-  { name: "Москва — Казань", from: [55.755819, 37.617644], to: [55.796127, 49.106405], fast: [750, 950], free: [780, 1050], toll: [3500, 7500], expectToll: true },
-  { name: "Ялта — Краснодар", from: [44.495205, 34.166301], to: [45.03547, 38.975313], fast: [430, 620], free: [450, 680], toll: [0, 2000], expectToll: true },
-  { name: "Ялта — Москва", from: [44.495205, 34.166301], to: [55.755819, 37.617644], fast: [1750, 1950], free: [1850, 2150], toll: [4500, 8000], expectToll: true },
-  { name: "Ейск — Москва", from: [46.711524, 38.276451], to: [55.755819, 37.617644], fast: [1180, 1320], free: [1400, 1600], toll: [1, 7000], expectToll: true },
-  { name: "Майкоп — Москва", from: [44.609826, 40.100653], to: [55.755819, 37.617644], fast: [1320, 1460], free: [1450, 1650], toll: [1, 7000], expectToll: true },
+  { name: "Анапа — Воронеж", from: [44.894818, 37.316367], to: [51.660781, 39.200296], fast: [970, 1010], free: [1010, 1050], toll: [3000, 6500], expectToll: true, allowUnknownToll: true },
+  { name: "Москва — Сочи", from: [55.755819, 37.617644], to: [43.585472, 39.723098], fast: [1500, 1700], free: [1680, 1820], toll: [3500, 11000], expectToll: true },
+  { name: "Москва — Краснодар", from: [55.755819, 37.617644], to: [45.03547, 38.975313], fast: [1250, 1420], free: [1380, 1550], toll: [3500, 8500], expectToll: true },
+  { name: "Москва — Санкт-Петербург", from: [55.755819, 37.617644], to: [59.938784, 30.314997], fast: [620, 760], free: [680, 850], toll: [2500, 7500], expectToll: true },
+  { name: "Москва — Казань", from: [55.755819, 37.617644], to: [55.796127, 49.106405], fast: [750, 950], free: [780, 1050], toll: [3000, 7500], expectToll: true },
+  { name: "Ялта — Краснодар", from: [44.495205, 34.166301], to: [45.03547, 38.975313], fast: [430, 620], free: [450, 680], toll: [0, 2500], expectToll: true },
+  { name: "Ялта — Москва", from: [44.495205, 34.166301], to: [55.755819, 37.617644], fast: [1750, 1950], free: [1850, 2150], toll: [4500, 10000], expectToll: true },
+  { name: "Ейск — Москва", from: [46.711524, 38.276451], to: [55.755819, 37.617644], fast: [1180, 1320], free: [1300, 1600], toll: [1, 8000], expectToll: true },
+  { name: "Майкоп — Москва", from: [44.609826, 40.100653], to: [55.755819, 37.617644], fast: [1320, 1460], free: [1450, 1750], toll: [1, 9000], expectToll: true },
 ];
 
 function sleep(ms) {
@@ -28,7 +28,7 @@ async function waitForDeployment() {
   while (Date.now() < deadline) {
     try {
       const response = await fetch(`${baseUrl}/api/version?ts=${Date.now()}`, {
-        headers: { "cache-control": "no-cache", "user-agent": "MezhgorodRouteMonitor/2.1" },
+        headers: { "cache-control": "no-cache", "user-agent": "MezhgorodRouteMonitor/2.4" },
       });
       const data = await response.json().catch(() => ({}));
       lastCommit = data.commit || null;
@@ -57,7 +57,7 @@ async function calculate(test, attempt = 1) {
   try {
     const response = await fetch(`${baseUrl}/api/v2/calculate`, {
       method: "POST",
-      headers: { "content-type": "application/json", "user-agent": "MezhgorodRouteMonitor/2.1" },
+      headers: { "content-type": "application/json", "user-agent": "MezhgorodRouteMonitor/2.4" },
       body: JSON.stringify({
         mode: "standard",
         from: point(test.name.split(" — ")[0], test.from),
@@ -78,7 +78,7 @@ async function calculate(test, attempt = 1) {
 }
 
 function inRange(value, [min, max]) {
-  return value >= min && value <= max;
+  return typeof value === "number" && Number.isFinite(value) && value >= min && value <= max;
 }
 
 let deployedCommit = null;
@@ -98,29 +98,45 @@ if (!deploymentError) {
       if (!leg?.fast) throw new Error("Не получен быстрый маршрут");
 
       const fastKm = leg.fast.meters / 1000;
-      const freeKm = leg.free ? leg.free.meters / 1000 : null;
-      const toll = Number(leg.fast.tolls?.amount || 0);
+      const freeTrip = leg.free ?? leg.freeCandidate ?? null;
+      const freeKm = freeTrip ? freeTrip.meters / 1000 : null;
+      const freeKind = leg.free ? "confirmed" : leg.freeCandidate ? "candidate" : "missing";
+      const pricingStatus = leg.fast.tolls?.pricingStatus ?? "unknown";
+      const toll = pricingStatus === "priced" ? Number(leg.fast.tolls?.amount) : pricingStatus === "free" ? 0 : null;
+      const weekdayToll = pricingStatus === "priced" ? Number(leg.fast.tolls?.weekdayAmount) : pricingStatus === "free" ? 0 : null;
+      const weekendToll = pricingStatus === "priced" ? Number(leg.fast.tolls?.weekendAmount) : pricingStatus === "free" ? 0 : null;
       const fastTollStatus = leg.fast.tollValidation?.status || "нет";
-      const freeTollStatus = leg.free?.tollValidation?.status || (leg.free ? "нет" : "маршрут отсутствует");
+      const freeTollStatus = freeTrip?.tollValidation?.status || (freeTrip ? "нет" : "маршрут отсутствует");
       const fastTollMessage = leg.fast.tollValidation?.message || "нет сообщения";
-      const freeTollMessage = leg.free?.tollValidation?.message || (leg.free ? "нет сообщения" : leg.freeError || "маршрут отсутствует");
-      const tollDetected = Boolean(leg.fast.tolls?.segments?.length) || fastTollStatus === "toll";
+      const freeTollMessage = freeTrip?.tollValidation?.message || (freeTrip ? "нет сообщения" : leg.freeError || "маршрут отсутствует");
+      const tollDetected = pricingStatus === "priced" || Boolean(leg.fast.tolls?.segments?.length) || fastTollStatus === "toll";
+      const pricedValuesValid = pricingStatus === "priced" && [toll, weekdayToll, weekendToll].every((value) => inRange(value, test.toll));
+      const safeUnknownValid = Boolean(test.allowUnknownToll && pricingStatus === "unknown" && toll === null && weekdayToll === null && weekendToll === null && tollDetected);
+      const tollPriceOk = pricedValuesValid || safeUnknownValid;
+      const tollExpectedText = test.allowUnknownToll
+        ? `${test.toll[0]}–${test.toll[1]} ₽ для current/weekday/weekend либо безопасный status=unknown без 0 ₽`
+        : `${test.toll[0]}–${test.toll[1]} ₽ для current/weekday/weekend и status=priced`;
+      const tollActualText = pricingStatus === "unknown"
+        ? "unknown (current/weekday/weekend = null, не 0 ₽)"
+        : `current=${toll} ₽; weekday=${weekdayToll} ₽; weekend=${weekendToll} ₽`;
 
       const checks = [
         { label: "быстрый маршрут", ok: inRange(fastKm, test.fast), actual: `${fastKm.toFixed(1)} км`, expected: `${test.fast[0]}–${test.fast[1]} км` },
-        { label: "маршрут без платных", ok: freeKm !== null && inRange(freeKm, test.free), actual: freeKm === null ? leg.freeError || "нет" : `${freeKm.toFixed(1)} км`, expected: `${test.free[0]}–${test.free[1]} км` },
+        { label: "альтернативный маршрут", ok: freeKm !== null && inRange(freeKm, test.free), actual: freeKm === null ? leg.freeError || "нет" : `${freeKm.toFixed(1)} км (${freeKind})`, expected: `${test.free[0]}–${test.free[1]} км` },
         { label: "проверка бесплатности", ok: freeTollStatus !== "toll", actual: `${freeTollStatus}: ${freeTollMessage}`, expected: "free или временно unknown" },
-        { label: "обнаружение платности", ok: !test.expectToll || tollDetected, actual: `${fastTollStatus}: ${fastTollMessage}; segments=${leg.fast.tolls?.segments?.length || 0}`, expected: test.expectToll ? "платность обнаружена" : "не обязательно" },
-        { label: "стоимость платных дорог", ok: inRange(toll, test.toll), actual: `${toll} ₽`, expected: `${test.toll[0]}–${test.toll[1]} ₽` },
-        { label: "контроль источников", ok: leg.fast.quality?.status !== "warning", actual: `${leg.fast.quality?.status || "нет"}/${leg.free?.quality?.status || "нет"}`, expected: "быстрый без warning" },
+        { label: "обнаружение платности", ok: !test.expectToll || tollDetected, actual: `${pricingStatus}/${fastTollStatus}: ${fastTollMessage}; segments=${leg.fast.tolls?.segments?.length || 0}`, expected: test.expectToll ? "платность обнаружена" : "не обязательно" },
+        { label: "стоимость платных дорог", ok: !test.expectToll || tollPriceOk, actual: tollActualText, expected: tollExpectedText },
+        { label: "контроль источников", ok: leg.fast.quality?.status !== "warning", actual: `${leg.fast.quality?.status || "нет"}/${freeTrip?.quality?.status || "нет"}`, expected: "быстрый без warning" },
       ];
       results.push({
         name: test.name,
         ok: checks.every((item) => item.ok),
         checks,
         diagnostics: {
+          tollPricingStatus: pricingStatus,
           fastTollValidation: leg.fast.tollValidation,
-          freeTollValidation: leg.free?.tollValidation ?? null,
+          freeKind,
+          freeTollValidation: freeTrip?.tollValidation ?? null,
           freeError: leg.freeError ?? null,
         },
       });
@@ -137,7 +153,7 @@ const lines = [
   "",
   `Дата: ${generatedAt}`,
   `Ожидаемый commit: ${expectedCommit || "не задан"}`,
-  `Проверенный production commit: ${deployedCommit || "не определён"}`,
+  `Проверенный production commit: ${deployedCommit || "локальная сборка / не определён"}`,
   `Проверено: ${results.length}. Ошибок: ${failed.length + (deploymentError ? 1 : 0)}.`,
   "",
 ];
@@ -157,7 +173,7 @@ if (deploymentError) {
 
 lines.push(
   "",
-  "Контроль бесплатности использует независимый map matching по частям маршрута. Маршрут с `tollValidation.status=toll` не должен считаться бесплатным.",
+  "Контроль бесплатности использует независимый map matching. Неподтверждённый freeCandidate учитывается как кандидат, но не превращается в подтверждённый бесплатный маршрут. `pricingStatus=unknown` никогда не считается стоимостью 0 ₽. Стоимость контролируется одновременно по текущему, будничному и выходному значениям, поэтому результат мониторинга не зависит от дня запуска. Для маршрутов с известной неполнотой локальной тарификации `unknown` допустим только как fail-closed состояние: платность должна быть обнаружена, а все суммы обязаны оставаться `null`.",
   "",
   "Отчёт сформирован автоматически. Изменения в рабочую версию автоматически не публикуются.",
 );

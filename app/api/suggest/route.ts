@@ -18,6 +18,7 @@ function getRegion(feature: PhotonFeature) {
 export async function GET(request: NextRequest) {
   const q = request.nextUrl.searchParams.get("q")?.trim() ?? "";
   if (q.length < 3) return NextResponse.json({ items: [] });
+  if (q.length > 200) return NextResponse.json({ error: "Слишком длинный поисковый запрос" }, { status: 400 });
   const url = new URL("https://photon.komoot.io/api/");
   url.searchParams.set("q", q); url.searchParams.set("limit", "6");
   try {
@@ -27,7 +28,7 @@ export async function GET(request: NextRequest) {
     const seen = new Set<string>();
     const items = (data.features ?? []).flatMap((feature, index) => {
       const coordinates = feature.geometry?.coordinates, label = getLabel(feature);
-      if (!coordinates || !label || seen.has(label)) return [];
+      if (!coordinates || coordinates.length !== 2 || !coordinates.every(Number.isFinite) || coordinates[1] < -90 || coordinates[1] > 90 || coordinates[0] < -180 || coordinates[0] > 180 || !label || seen.has(label)) return [];
       seen.add(label);
       return [{ id: `${feature.properties?.osm_type ?? "place"}-${feature.properties?.osm_id ?? index}`, title: String(feature.properties?.name ?? feature.properties?.city ?? label), label, region: getRegion(feature), position: { lat: coordinates[1], lng: coordinates[0] } }];
     });

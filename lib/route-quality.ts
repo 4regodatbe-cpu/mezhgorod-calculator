@@ -33,23 +33,38 @@ function closestToGolden(candidates: readonly RouteCandidate[], golden: GoldenRo
     Math.abs(a.route.meters - golden.meters) - Math.abs(b.route.meters - golden.meters))[0];
 }
 
-export function selectLiveRoute(
-  primary: RouteCandidate | undefined,
-  secondary: RouteCandidate | undefined,
+function peerAgreementCount(candidate: RouteCandidate, candidates: readonly RouteCandidate[]) {
+  return candidates.filter((other) => other !== candidate && (percentSpread(candidate.route.meters, other.route.meters) ?? Number.POSITIVE_INFINITY) <= MAX_PROVIDER_DISTANCE_SPREAD_PERCENT).length;
+}
+
+function bestAgreementPeer(candidate: RouteCandidate, candidates: readonly RouteCandidate[]) {
+  return candidates
+    .filter((other) => other !== candidate)
+    .map((other) => ({ other, spread: percentSpread(candidate.route.meters, other.route.meters) }))
+    .filter((item): item is { other: RouteCandidate; spread: number } => item.spread != null)
+    .sort((a, b) => a.spread - b.spread)[0] ?? null;
+}
+
+export function selectLiveRouteCandidates(
+  candidates: readonly RouteCandidate[],
   golden?: GoldenRouteReference,
 ): { route: RouteSummary; provider: string; quality: RouteQuality } {
-  const candidates = [primary, secondary].filter(Boolean) as RouteCandidate[];
   if (candidates.length === 0) throw new Error("ROUTE_UNAVAILABLE");
-
-  const distanceSpread = primary && secondary ? percentSpread(primary.route.meters, secondary.route.meters) : null;
-  const timeSpread = primary && secondary ? percentSpread(primary.route.seconds, secondary.route.seconds) : null;
   const providers = candidates.map((item) => item.name);
 
-  let selected = primary ?? secondary!;
-  if (golden && candidates.length > 1 && distanceSpread != null && distanceSpread > MAX_PROVIDER_DISTANCE_SPREAD_PERCENT) {
-    selected = closestToGolden(candidates, golden);
+  let selected = candidates[0];
+  if (candidates.length > 1) {
+    const ranked = candidates
+      .map((candidate, index) => ({ candidate, index, peers: peerAgreementCount(candidate, candidates) }))
+      .sort((a, b) => b.peers - a.peers || a.index - b.index);
+    const bestPeerCount = ranked[0].peers;
+    if (bestPeerCount > 0) selected = ranked[0].candidate;
+    else if (golden) selected = closestToGolden(candidates, golden);
   }
 
+  const agreement = bestAgreementPeer(selected, candidates);
+  const distanceSpread = agreement?.spread ?? (candidates.length > 1 ? percentSpread(candidates[0].route.meters, candidates[1].route.meters) : null);
+  const timeSpread = agreement ? percentSpread(selected.route.seconds, agreement.other.route.seconds) : null;
   const goldenDeviation = golden ? percentDeviation(selected.route.meters, golden.meters) : null;
   const withinGolden = golden && goldenDeviation != null && goldenDeviation <= golden.distanceTolerancePercent;
 
@@ -70,19 +85,22 @@ export function selectLiveRoute(
     };
   }
 
-  if (distanceSpread != null && distanceSpread <= MAX_PROVIDER_DISTANCE_SPREAD_PERCENT) {
+  if (agreement && agreement.spread <= MAX_PROVIDER_DISTANCE_SPREAD_PERCENT) {
+    const outliers = candidates.length - 2;
     return {
       route: selected.route,
       provider: selected.name,
       quality: {
         status: golden && !withinGolden ? "warning" : "verified",
         providers,
-        distanceSpreadPercent: distanceSpread,
+        distanceSpreadPercent: agreement.spread,
         timeSpreadPercent: timeSpread,
         goldenDistanceDeviationPercent: goldenDeviation,
         message: golden && !withinGolden
-          ? `Сервисы согласны между собой, но live-маршрут вне контрольного диапазона ${golden.distanceTolerancePercent}%`
-          : "Расстояние подтверждено двумя сервисами",
+          ? `Согласованные live-источники вне контрольного диапазона ${golden.distanceTolerancePercent}%`
+          : outliers > 0
+            ? `Расстояние подтверждено большинством live-сервисов; ${outliers} источник расходится`
+            : "Расстояние подтверждено двумя сервисами",
       },
     };
   }
@@ -98,7 +116,15 @@ export function selectLiveRoute(
       goldenDistanceDeviationPercent: goldenDeviation,
       message: golden && withinGolden
         ? `Источники расходятся; выбран live-провайдер, попадающий в контрольный диапазон (${golden.source})`
-        : `Источники расходятся по расстоянию на ${distanceSpread}%. Проверьте маршрут перед поездкой`,
+        : `Live-источники существенно расходятся. Проверьте маршрут перед поездкой`,
     },
   };
+}
+
+export function selectLiveRoute(
+  primary: RouteCandidate | undefined,
+  secondary: RouteCandidate | undefined,
+  golden?: GoldenRouteReference,
+) {
+  return selectLiveRouteCandidates([primary, secondary].filter(Boolean) as RouteCandidate[], golden);
 }

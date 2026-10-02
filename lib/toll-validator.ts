@@ -12,7 +12,7 @@ export type TollBoothEvent = {
 
 export type TollValidation = {
   status: "toll" | "free" | "unknown";
-  source: "Valhalla map matching" | "M-12 local RVP core";
+  source: "Valhalla map matching" | "M-12 local RVP core" | "M-11 current boundary + tariff core" | "Route toll composition";
   tollEdgeCount: number;
   checkedEdgeCount: number;
   wayIds: string[];

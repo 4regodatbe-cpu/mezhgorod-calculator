@@ -7,24 +7,22 @@ function doPost(e) {
     if (!expectedToken || data.token !== expectedToken) return json({ ok: false, error: "unauthorized" });
 
     const book = SpreadsheetApp.openById(SPREADSHEET_ID);
-    const now = new Date().toISOString();
-    const routes = ensureSheet(book, "Маршруты", ["Дата и время (UTC)", "Город / регион A", "Город / регион B", "Расстояние, км", "Время, мин", "Тариф, ₽/км", "Стоимость, ₽", "Версия", "Вариант маршрута", "Стандарт, ₽", "Комфорт, ₽", "Комфорт+, ₽", "Минивэн, ₽", "Платная дорога Пн–Чт, ₽", "Платная дорога Пт–Вс, ₽"]);
+    const routes = ensureSheet(book, "Маршруты", ["Город / регион A", "Город / регион B", "Расстояние, км", "Тариф, ₽/км", "Стоимость, ₽"]);
     const feedback = ensureSheet(book, "Предложения", ["Дата и время (UTC)", "Категория", "Предложение", "Статус"]);
     const visits = ensureVisitsSheet(book);
     if (data.type === "route") {
-      if (data.version === "2.0" && data.totals) routes.appendRow([now, data.fromRegion, data.toRegion, data.distanceKm, data.durationMin, "", "", "2.0", data.routeType, data.totals.standard, data.totals.comfort, data.totals.comfortPlus, data.totals.minivan, data.tollWeekday, data.tollWeekend]);
-      else routes.appendRow([now, data.fromRegion, data.toRegion, data.distanceKm, data.durationMin, data.rate, data.total, "1.0"]);
+      routes.appendRow([data.fromRegion, data.toRegion, data.distanceKm, data.rate, data.total]);
     } else if (data.type === "feedback") {
-      feedback.appendRow([now, data.category, data.message, "Новое"]);
+      feedback.appendRow([new Date().toISOString(), data.category, data.message, "Новое"]);
     } else if (data.type === "visit") {
       const visitorId = String(data.visitorId || "").slice(0, 64);
       if (!visitorId) return json({ ok: false, error: "missing_visitor_id" });
       const lastRow = visits.getLastRow();
-      if (lastRow > 1) {
-        const existing = visits.getRange(2, 2, lastRow - 1, 1).getValues().flat();
+      if (lastRow > 3) {
+        const existing = visits.getRange(4, 2, lastRow - 3, 1).getValues().flat();
         if (existing.indexOf(visitorId) !== -1) return json({ ok: true, duplicate: true });
       }
-      visits.appendRow([now, visitorId, String(data.version || "").slice(0, 10)]);
+      visits.appendRow([new Date().toISOString(), visitorId, String(data.version || "").slice(0, 10)]);
     } else return json({ ok: false, error: "unknown_type" });
     return json({ ok: true });
   } catch (error) {
@@ -36,7 +34,7 @@ function ensureSheet(book, name, headers) {
   let sheet = book.getSheetByName(name);
   if (!sheet) sheet = book.insertSheet(name);
   if (sheet.getLastRow() === 0) sheet.appendRow(headers);
-  else if (sheet.getLastColumn() < headers.length) sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  else sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
   sheet.setFrozenRows(1);
   return sheet;
 }
@@ -48,10 +46,8 @@ function ensureVisitsSheet(book) {
     sheet.getRange("A1").setValue("Уникальные входы (браузеры)");
     sheet.getRange("B1").setFormula("=MAX(0;COUNTA(A4:A))");
     sheet.getRange("A2").setValue("Один браузер учитывается один раз. Очистка данных или другое устройство создают новый вход.");
-    sheet.getRange("A3:C3").setValues([["Дата и время первого входа (UTC)", "Анонимный ID браузера", "Версия"]]);
-  } else {
-    sheet.getRange("A3:C3").setValues([["Дата и время первого входа (UTC)", "Анонимный ID браузера", "Версия"]]);
   }
+  sheet.getRange("A3:C3").setValues([["Дата и время первого входа (UTC)", "Анонимный ID браузера", "Версия"]]);
   sheet.setFrozenRows(3);
   return sheet;
 }

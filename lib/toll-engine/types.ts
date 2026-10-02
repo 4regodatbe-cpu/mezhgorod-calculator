@@ -26,6 +26,13 @@ export type MixedTollZone = {
   model: "mixed_entry_exit";
   plazaKms: number[];
   fullSectionTariff: PassengerCarTariff;
+  partialGateTariffs?: Array<{
+    km: number;
+    sectionFromKm: number;
+    sectionToKm: number;
+    tariff: PassengerCarTariff;
+    notes?: string;
+  }>;
   maxTransitMinutes?: number;
   notes?: string;
 };

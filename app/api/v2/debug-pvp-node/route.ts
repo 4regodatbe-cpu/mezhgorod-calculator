@@ -22,6 +22,12 @@ type TraceEdge = {
   };
 };
 
+function debugAllowed(request: NextRequest) {
+  if (process.env.VERCEL !== "1") return true;
+  const token = process.env.CALCULATOR_DEBUG_TOKEN;
+  return Boolean(token) && request.headers.get("x-calculator-debug-token") === token;
+}
+
 function decodePolyline(encoded: string, precision = 6): Coordinate[] {
   const coordinates: Coordinate[] = [];
   const factor = 10 ** precision;
@@ -222,11 +228,12 @@ async function trace(window: Coordinate[]) {
 }
 
 export async function GET(request: NextRequest) {
+  if (!debugAllowed(request)) return NextResponse.json({ error: "Not found" }, { status: 404 });
   const fromText = request.nextUrl.searchParams.get("from")?.trim();
   const toText = request.nextUrl.searchParams.get("to")?.trim();
   const lat = Number(request.nextUrl.searchParams.get("lat"));
   const lon = Number(request.nextUrl.searchParams.get("lon"));
-  if (!fromText || !toText || !Number.isFinite(lat) || !Number.isFinite(lon)) {
+  if (!fromText || !toText || fromText.length > 120 || toText.length > 120 || !Number.isFinite(lat) || !Number.isFinite(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) {
     return NextResponse.json({ error: "Use ?from=...&to=...&lat=...&lon=..." }, { status: 400 });
   }
 

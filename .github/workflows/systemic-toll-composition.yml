@@ -1,0 +1,38 @@
+name: Systemic toll composition fix
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: systemic-toll-composition-${{ github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  toll-composition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 11.25.0 }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+      - run: pnpm install --frozen-lockfile
+      - name: Pure composition regression
+        run: node --experimental-strip-types scripts/systemic-toll-composition-test.ts
+      - name: CKAD production regression
+        run: node --experimental-strip-types scripts/ckad-production-test.ts
+      - name: M4 strict route traversal regression
+        run: node --experimental-strip-types scripts/m4-route-traversal-test.ts
+      - name: M11 Moscow production regression
+        run: node --experimental-strip-types scripts/m11-moscow-production-test.ts
+      - name: Three-provider route quality regression
+        run: node --experimental-strip-types scripts/route-quality-majority-test.ts
+      - name: Existing M-12 recovery regression
+        run: node scripts/segment5a1-m12-recovery-replay.mjs
+      - name: Existing external-provider fail-closed regression
+        run: node scripts/segment9-regression.mjs
+      - name: Lint
+        run: pnpm lint
+      - name: Production build
+        run: pnpm build

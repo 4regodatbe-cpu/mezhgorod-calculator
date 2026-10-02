@@ -4,15 +4,25 @@ import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { safeRoutePositions } from "@/lib/safe-route";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { findVerifiedRoute, goldenRouteReference, tollPeriodsForRoute } from "@/lib/verified-routes";
-import { MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, selectLiveRoute, type GoldenRouteReference, type RouteQuality } from "@/lib/route-quality";
+import { MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, selectLiveRoute, selectLiveRouteCandidates, type GoldenRouteReference, type RouteQuality } from "@/lib/route-quality";
 import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
+import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
+import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
+import { deriveM11EvidenceFromValhalla, type M11RoadEvidence, type M11ValhallaManeuver } from "@/lib/toll-engine/m11-road-evidence";
 import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
-import { deriveStrictM12Span, type M12StrictRouteSpan, type M12ValhallaManeuver } from "@/lib/toll-engine/m12-valhalla-span";
+import { calculateProductionCkadM4M11 } from "@/lib/toll-engine/ckad-production";
+import { deriveStrictM12Span, type M12StrictRouteSpan } from "@/lib/toll-engine/m12-valhalla-span";
+import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent, type RouteTollComponentId } from "@/lib/toll-engine/route-toll-composition";
 
 type Point = { label: string; position?: { lat: number; lng: number } };
 type Located = { label: string; position: { lat: number; lng: number } };
+function validPoint(point: Point | undefined): point is Point { if (!point || typeof point.label !== "string" || !point.label.trim()) return false; if (!point.position) return true; const { lat, lng } = point.position; return Number.isFinite(lat) && Number.isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180; }
 type RouteSummary = { meters: number; seconds: number };
-type RouteWithGeometry = RouteSummary & { coordinates: Coordinate[]; m12StrictSpan?: M12StrictRouteSpan | null };
+type RouteWithGeometry = RouteSummary & {
+  coordinates: Coordinate[];
+  m12StrictSpan?: M12StrictRouteSpan | null;
+  m11RoadEvidence?: M11RoadEvidence | null;
+};
 type FreeCandidate = { name: string; route: RouteWithGeometry };
 type SelectedFree = {
   route: RouteSummary;
@@ -29,6 +39,7 @@ type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount">
 };
 
 const VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT = 5;
+const VERIFIED_TOLL_CONTROL_DEVIATION_PERCENT = 12;
 const MIN_TOLL_VARIANT_DISTANCE_KM = 10;
 const MIN_TOLL_VARIANT_DISTANCE_PERCENT = 1;
 const MIN_TOLL_VARIANT_TIME_MINUTES = 15;
@@ -46,6 +57,19 @@ function unknownValidation(message: string): TollValidation {
   };
 }
 
+function compositionValidation(priced: RouteTollComponentId[], message: string): TollValidation {
+  return {
+    status: "toll",
+    source: "Route toll composition",
+    tollEdgeCount: priced.length,
+    checkedEdgeCount: priced.length,
+    wayIds: [],
+    roadNames: priced,
+    message,
+    complete: true,
+  };
+}
+
 function tollsForApi(tolls: TollEstimate, validation: TollValidation): ApiTolls {
   const hasPositivePrice = tolls.amount > 0 || tolls.weekdayAmount > 0 || tolls.weekendAmount > 0;
   if (hasPositivePrice) return { ...tolls, pricingStatus: "priced" };
@@ -56,6 +80,17 @@ function tollsForApi(tolls: TollEstimate, validation: TollValidation): ApiTolls 
     weekdayAmount: null,
     weekendAmount: null,
     pricingStatus: "unknown",
+  };
+}
+
+function zeroUnknownTolls(base: TollEstimate, segments: string[]): TollEstimate {
+  return {
+    ...base,
+    amount: 0,
+    weekdayAmount: 0,
+    weekendAmount: 0,
+    segments,
+    confidence: "none",
   };
 }
 
@@ -236,7 +271,7 @@ async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Promise<Ro
   const data = (await response.json()) as {
     trip?: {
       summary?: { length?: number; time?: number };
-      legs?: Array<{ shape?: string; maneuvers?: M12ValhallaManeuver[] }>;
+      legs?: Array<{ shape?: string; maneuvers?: M11ValhallaManeuver[] }>;
     };
   };
   const summary = data.trip?.summary;
@@ -247,25 +282,27 @@ async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Promise<Ro
   }));
   const coordinates = decodedLegs.flatMap((item) => item.coordinates);
   const m12StrictSpan = useTolls === 1 ? deriveStrictM12Span(decodedLegs) : null;
+  const m11RoadEvidence = useTolls === 1 ? deriveM11EvidenceFromValhalla(decodedLegs) : null;
   return {
     meters: Math.round(summary.length * 1000),
     seconds: Math.round(summary.time),
     coordinates,
     m12StrictSpan,
+    m11RoadEvidence,
   };
 }
 
-async function brouterFree(from: Located, to: Located): Promise<RouteWithGeometry> {
+async function brouterRoute(from: Located, to: Located, avoidTolls: boolean): Promise<RouteWithGeometry> {
   const url = new URL("https://brouter.de/brouter");
   url.searchParams.set("lonlats", safeRoutePositions(from, to).map((point) => `${point.lng},${point.lat}`).join("|"));
   url.searchParams.set("profile", "car-vario");
-  url.searchParams.set("profile:avoid_toll", "1");
+  if (avoidTolls) url.searchParams.set("profile:avoid_toll", "1");
   url.searchParams.set("alternativeidx", "0");
   url.searchParams.set("format", "geojson");
   const response = await fetch(url, {
     headers: { Accept: "application/geo+json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
-    next: { revalidate: 86_400 },
+    next: { revalidate: 21_600 },
     signal: AbortSignal.timeout(25_000),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
@@ -281,6 +318,14 @@ async function brouterFree(from: Located, to: Located): Promise<RouteWithGeometr
   const seconds = Number(properties?.["total-time"]);
   if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new Error("ROUTE_NOT_FOUND");
   return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates: feature?.geometry?.coordinates ?? [] };
+}
+
+function brouterFree(from: Located, to: Located) {
+  return brouterRoute(from, to, true);
+}
+
+function brouterFast(from: Located, to: Located) {
+  return brouterRoute(from, to, false);
 }
 
 async function osrmRoute(from: Located, to: Located): Promise<RouteWithGeometry> {
@@ -301,16 +346,14 @@ async function osrmRoute(from: Located, to: Located): Promise<RouteWithGeometry>
   return { meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[] };
 }
 
-function verifiedTollFallback(from: Located, to: Located, fast: RouteSummary, current: TollEstimate, departureAt?: string): TollEstimate {
-  if (current.amount > 0) return current;
-
+function verifiedTollControl(from: Located, to: Located, fast: RouteSummary, departureAt?: string): TollEstimate | null {
   const verified = findVerifiedRoute(from.label, to.label).route;
-  if (!verified || verified.tollRub <= 0 || verified.fastKm <= 0) return current;
+  if (!verified || verified.tollRub <= 0 || verified.fastKm <= 0) return null;
 
   const actualKm = fast.meters / 1000;
   const deviationPercent = Math.abs(actualKm - verified.fastKm) / verified.fastKm * 100;
   const tolerancePercent = Math.max(VERIFIED_TOLL_FALLBACK_TOLERANCE_PERCENT, verified.accuracyPercent || 0);
-  if (deviationPercent > tolerancePercent) return current;
+  if (deviationPercent > tolerancePercent) return null;
 
   const periods = tollPeriodsForRoute(verified);
   const date = departureAt ? new Date(departureAt) : new Date();
@@ -323,9 +366,21 @@ function verifiedTollFallback(from: Located, to: Located, fast: RouteSummary, cu
     weekdayAmount: periods.weekday,
     weekendAmount: periods.weekend,
     period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
-    segments: [`Проверенная база: ${verified.source}`],
+    segments: [`Проверенная контрольная база: ${verified.source}`],
     confidence: "matched",
   };
+}
+
+function verifiedTollFallback(from: Located, to: Located, fast: RouteSummary, current: TollEstimate, departureAt?: string): TollEstimate {
+  if (current.amount > 0) return current;
+  return verifiedTollControl(from, to, fast, departureAt) ?? current;
+}
+
+function shouldUseVerifiedControl(current: TollEstimate, verified: TollEstimate | null) {
+  if (!verified || verified.amount <= 0) return false;
+  if (current.amount <= 0) return true;
+  const deviation = Math.abs(current.amount - verified.amount) / verified.amount * 100;
+  return deviation > VERIFIED_TOLL_CONTROL_DEVIATION_PERCENT;
 }
 
 function mapMatchedTollFallback(current: TollEstimate, validation: TollValidation): TollEstimate {
@@ -349,29 +404,38 @@ function routingDifferenceTollFallback(fast: RouteSummary, free: RouteSummary, c
   };
 }
 
+function familySegments(segments: string[], family: RouteTollComponentId) {
+  return segments.filter((segment) => detectedFamiliesFromLegacySegments([segment]).has(family));
+}
+
 async function leg(from: Located, to: Located, departureAt?: string, diagnostics = false) {
-  const [fastResult, valhallaFreeResult, brouterResult, osrmResult] = await Promise.allSettled([
+  const [fastResult, valhallaFreeResult, brouterResult, osrmResult, brouterFastResult] = await Promise.allSettled([
     valhalla(from, to, 1),
     valhalla(from, to, 0),
     brouterFree(from, to),
     osrmRoute(from, to),
+    brouterFast(from, to),
   ]);
 
-  const selectedFast = selectLiveRoute(
-    fastResult.status === "fulfilled" ? { name: "Valhalla", route: fastResult.value } : undefined,
-    osrmResult.status === "fulfilled" ? { name: "OSRM", route: osrmResult.value } : undefined,
-    goldenRouteReference(from.label, to.label, "fast"),
-  );
+  const selectedFast = selectLiveRouteCandidates([
+    ...(fastResult.status === "fulfilled" ? [{ name: "Valhalla", route: fastResult.value }] : []),
+    ...(osrmResult.status === "fulfilled" ? [{ name: "OSRM", route: osrmResult.value }] : []),
+    ...(brouterFastResult.status === "fulfilled" ? [{ name: "BRouter", route: brouterFastResult.value }] : []),
+  ], goldenRouteReference(from.label, to.label, "fast"));
 
   const routeGeometry = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
     ? fastResult.value.coordinates
     : selectedFast.provider === "OSRM" && osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
       ? osrmResult.value.coordinates
-      : fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
-        ? fastResult.value.coordinates
-        : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
-          ? osrmResult.value.coordinates
-          : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
+      : selectedFast.provider === "BRouter" && brouterFastResult.status === "fulfilled" && brouterFastResult.value.coordinates.length > 0
+        ? brouterFastResult.value.coordinates
+        : fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
+          ? fastResult.value.coordinates
+          : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
+            ? osrmResult.value.coordinates
+            : brouterFastResult.status === "fulfilled" && brouterFastResult.value.coordinates.length > 0
+              ? brouterFastResult.value.coordinates
+              : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
   const selectedFreePromise = selectFreeRoute(valhallaFreeResult, brouterResult, goldenRouteReference(from.label, to.label, "free"));
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
@@ -383,43 +447,100 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFast.route, confirmedFree.route) : false;
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
-  const productionM12 = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled"
-    ? calculateProductionM12(
-        fastResult.value.coordinates,
-        fastResult.value.m12StrictSpan,
-        geometricTolls.segments,
+  const legacyFamilies = detectedFamiliesFromLegacySegments(geometricTolls.segments);
+  const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
+
+  const productionM4 = await calculateProductionM4(
+    routeGeometry,
+    departureAt,
+    familySegments(geometricTolls.segments, "m4_a289"),
+  );
+  const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, selectedFast.route.seconds, departureAt);
+  const productionM11 = selectedFast.provider === "Valhalla" && valhallaEvidence?.m11RoadEvidence
+    ? calculateProductionM11(
+        valhallaEvidence.coordinates,
+        valhallaEvidence.m11RoadEvidence,
+        familySegments(geometricTolls.segments, "m11"),
         departureAt,
       )
     : null;
-  const productionM4 = await calculateProductionM4(routeGeometry, departureAt, geometricTolls.segments);
-  const verifiedTolls = productionM4.tolls
-    ?? productionM12?.tolls
-    ?? verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
-  let fastValidation = productionM4.validation
-    ?? productionM12?.validation
-    ?? diagnosticFastValidation
-    ?? unknownValidation(verifiedTolls.amount > 0
-      ? "Стоимость уже подтверждена локальным или проверенным источником; полный map matching быстрого маршрута не требуется"
-      : "Map matching быстрого маршрута ещё не выполнялся");
+  const productionM12 = selectedFast.provider === "Valhalla" && valhallaEvidence
+    ? calculateProductionM12(
+        valhallaEvidence.coordinates,
+        valhallaEvidence.m12StrictSpan,
+        familySegments(geometricTolls.segments, "m12"),
+        departureAt,
+      )
+    : null;
+  const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289");
+  const m11Detected = productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(valhallaEvidence?.m11RoadEvidence?.strictBlocks.length);
+  const m12Detected = legacyFamilies.has("m12") || Boolean(valhallaEvidence?.m12StrictSpan);
+  const productionCkad = calculateProductionCkadM4M11(routeGeometry, valhallaEvidence?.m11RoadEvidence);
+  // CKAD is a paid component only when legacy evidence names it or the strict
+  // route-level CKAD engine proves a candidate/verified east-arc traversal.
+  const ckadDetected = legacyFamilies.has("ckad") || productionCkad.candidate;
 
-  let pricedTolls: TollEstimate = verifiedTolls;
-  if (pricedTolls.amount <= 0) {
+  const components: RouteTollComponent[] = [
+    { id: "m4_a289", detected: m4Detected, tolls: productionM4.tolls, reason: productionM4.reason },
+    { id: "m11", detected: m11Detected, tolls: productionM11Geometry.tolls ?? productionM11?.tolls ?? null, reason: productionM11Geometry.exact ? productionM11Geometry.reason : productionM11?.reason ?? productionM11Geometry.reason },
+    { id: "m12", detected: m12Detected, tolls: productionM12?.tolls ?? null, reason: productionM12?.core.reason ?? "m12_not_priced" },
+    { id: "ckad", detected: ckadDetected, tolls: productionCkad.tolls, reason: productionCkad.reason },
+    { id: "m1", detected: legacyFamilies.has("m1"), tolls: null, reason: "m1_engine_not_yet_composed" },
+    { id: "m3", detected: legacyFamilies.has("m3"), tolls: null, reason: "m3_engine_not_yet_composed" },
+    { id: "regional", detected: legacyFamilies.has("regional"), tolls: null, reason: "regional_engine_not_yet_composed" },
+  ];
+  const composition = composeRouteTolls(components);
+  const verifiedControl = verifiedTollControl(from, to, selectedFast.route, departureAt);
+
+  let pricedTolls: TollEstimate;
+  let fastValidation: TollValidation;
+  let routeCompositionBlocked = false;
+
+  if (composition.status === "priced" && composition.tolls) {
+    pricedTolls = composition.tolls;
+    fastValidation = compositionValidation(composition.priced, `Полный итог составлен из дорожных систем: ${composition.priced.join(", ")}`);
+  } else if (composition.status === "unknown") {
+    routeCompositionBlocked = true;
+    const missingReasons = components
+      .filter((component) => composition.missing.includes(component.id))
+      .map((component) => `${component.id}: ${component.reason ?? "причина не указана"}`);
+    pricedTolls = zeroUnknownTolls(
+      geometricTolls,
+      [
+        `Обнаружены, но не полностью оценены платные системы: ${composition.missing.join(", ")}`,
+        ...missingReasons,
+      ],
+    );
+    fastValidation = unknownValidation(
+      `Нельзя показывать частичную сумму как итог маршрута. Не оценены: ${missingReasons.join("; ")}`,
+    );
+  } else {
+    pricedTolls = verifiedTollFallback(from, to, selectedFast.route, geometricTolls, departureAt);
+    fastValidation = diagnosticFastValidation
+      ?? unknownValidation(pricedTolls.amount > 0
+        ? "Стоимость получена из проверенного или геометрического источника"
+        : "Map matching быстрого маршрута ещё не выполнялся");
+  }
+
+  if (!routeCompositionBlocked && shouldUseVerifiedControl(pricedTolls, verifiedControl)) {
+    pricedTolls = verifiedControl!;
+    fastValidation = compositionValidation(composition.priced.length > 0 ? composition.priced : [...legacyFamilies], "Локальный расчёт существенно расходился с недавно проверенным контрольным маршрутом; использован контрольный итог вместо заведомо неполной суммы.");
+  }
+
+  if (!routeCompositionBlocked && pricedTolls.amount <= 0) {
     const conservativeValidation = unknownValidation("Локальный коридорный fallback без доверия к удалённому map matching");
     const localRecovery = recoverCorridorTolls(routeGeometry, conservativeValidation, departureAt, differenceEvidence);
     if (localRecovery) pricedTolls = localRecovery;
   }
 
-  // Normal user requests only pay the cost of fast-route map matching when all
-  // local price sources failed. Diagnostics can request it eagerly to collect
-  // PVP evidence without slowing down every calculation.
-  if (pricedTolls.amount <= 0 && routeGeometry.length > 2) {
+  if (!routeCompositionBlocked && pricedTolls.amount <= 0 && routeGeometry.length > 2) {
     if (!diagnosticFastValidation) fastValidation = await validateTollEdges(routeGeometry);
     const matchedTolls = mapMatchedTollFallback(pricedTolls, fastValidation);
     const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
     pricedTolls = remoteRecovery ?? matchedTolls;
   }
 
-  const tolls = confirmedFree
+  const tolls = confirmedFree && !routeCompositionBlocked
     ? routingDifferenceTollFallback(selectedFast.route, confirmedFree.route, pricedTolls)
     : pricedTolls;
 
@@ -442,7 +563,9 @@ export const maxDuration = 60;
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as { from?: Point; via?: Point; to?: Point; mode?: "standard" | "dual"; departureAt?: string; diagnostics?: boolean };
-    if (!body.from?.label.trim() || !body.to?.label.trim() || (body.mode === "dual" && !body.via?.label.trim())) return NextResponse.json({ error: "Заполните все точки маршрута" }, { status: 400 });
+    if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return NextResponse.json({ error: "Некорректный режим расчёта" }, { status: 400 });
+    if (body.departureAt !== undefined && (typeof body.departureAt !== "string" || Number.isNaN(new Date(body.departureAt).getTime()))) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
+    if (!validPoint(body.from) || !validPoint(body.to) || (body.mode === "dual" && !validPoint(body.via))) return NextResponse.json({ error: "Проверьте точки маршрута" }, { status: 400 });
     const located = await Promise.all([geocode(body.from), ...(body.mode === "dual" && body.via ? [geocode(body.via)] : []), geocode(body.to)]);
     const legs = body.mode === "dual"
       ? await Promise.all([leg(located[0], located[1], body.departureAt, body.diagnostics === true), leg(located[1], located[2], body.departureAt, body.diagnostics === true)])

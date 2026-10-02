@@ -1,16 +1,24 @@
-name: Android APK
+name: Android APK 2.0
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "android-app-v2/**"
+      - ".github/workflows/android-apk.yml"
   push:
     branches: [main]
     paths:
-      - "android-app/**"
       - "android-app-v2/**"
       - ".github/workflows/android-apk.yml"
 
 permissions:
   contents: write
+
+concurrency:
+  group: android-apk-${{ github.event.pull_request.number || github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -24,28 +32,20 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.9"
-      - name: Build APK
-        working-directory: android-app
-        run: gradle assembleDebug --no-daemon
       - name: Build APK 2.0
         working-directory: android-app-v2
         run: gradle assembleDebug --no-daemon
       - name: Prepare APK
-        run: |
-          cp android-app/app/build/outputs/apk/debug/app-debug.apk Mezhgorod-Calc.apk
-          cp android-app-v2/app/build/outputs/apk/debug/app-debug.apk Mezhgorod-Calc-2.apk
+        run: cp android-app-v2/app/build/outputs/apk/debug/app-debug.apk Mezhgorod-Calc-2.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: Mezhgorod-Calc-APK
-          path: |
-            Mezhgorod-Calc.apk
-            Mezhgorod-Calc-2.apk
+          name: Mezhgorod-Calc-2-APK
+          path: Mezhgorod-Calc-2.apk
       - uses: softprops/action-gh-release@v2
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           tag_name: android-latest
-          name: Межгород Calc — Android APK
-          body: Установочные APK калькуляторов Межгород Calc 1.0 и 2.0.
-          files: |
-            Mezhgorod-Calc.apk
-            Mezhgorod-Calc-2.apk
+          name: Межгород Calc 2.0 — Android APK
+          body: Актуальная Android-версия калькулятора Межгород Calc 2.0.
+          files: Mezhgorod-Calc-2.apk
           make_latest: true
