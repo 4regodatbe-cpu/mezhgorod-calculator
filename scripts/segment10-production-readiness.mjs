@@ -13,6 +13,8 @@ assert(api.includes('truth: "confirmed_free" | "candidate_unverified"'),"free-ro
 assert(api.includes('body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual"'),"V2 calculator mode must be validated");
 assert(api.includes('const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;'),"road evidence must stay bound to the selected live route provider");
 assert(api.includes('Number.isNaN(new Date(body.departureAt).getTime())'),"V2 departure timestamp must be validated");
+assert(api.includes("lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180"),"route point coordinates must be range-validated");
+assert(api.includes('typeof point.label !== "string"'),"route point labels must be type-validated");
 assert(apiV3.includes('body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual"'),"V3 calculator mode must be validated");
 assert(debugPvp.includes("lat < -90 || lat > 90 || lon < -180 || lon > 180"),"debug anchor coordinates must be range-validated");
 assert(!api.includes('compositionValidation(["m4_a289"], "Локальный расчёт существенно расходился'),"verified control must not hardcode M4 family for non-M4 routes");
