@@ -3,8 +3,8 @@ import type { TariffSnapshotMetadata } from "./tariff-versioning";
 export const TARIFF_SNAPSHOT_REGISTRY: readonly TariffSnapshotMetadata[] = [
   {
     id: "m12-2026-03-02-category1", systemId: "m12-east-avtodor",
-    source: "Avtodor order 57 dated 2026-02-27; official tariff page",
-    observedAt: "2026-03-02", publishedAt: "2026-02-27", effectiveFrom: "2026-03-02", effectiveTo: null,
+    source: "Avtodor order 57 dated 2026-02-27; official tariff page re-verified 2026-10-02 (tariff still published as current)",
+    observedAt: "2026-10-02", publishedAt: "2026-02-27", effectiveFrom: "2026-03-02", effectiveTo: null,
     tariffMode: "operator_default", vehicleCategory: "I", currency: "RUB", staleAfterDays: 45,
   },
   {
