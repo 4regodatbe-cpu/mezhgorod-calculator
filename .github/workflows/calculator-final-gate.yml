@@ -30,7 +30,7 @@ permissions:
 jobs:
   final-gate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -78,6 +78,10 @@ jobs:
         env:
           CALCULATOR_URL: http://127.0.0.1:3000
         run: node scripts/live-user-route-audit.mjs
+      - name: Daily route monitor contract
+        env:
+          CALCULATOR_URL: http://127.0.0.1:3000
+        run: node scripts/route-monitor.mjs
       - name: Stop server
         if: always()
         run: test ! -f /tmp/mezhgorod-next.pid || kill $(cat /tmp/mezhgorod-next.pid) || true
