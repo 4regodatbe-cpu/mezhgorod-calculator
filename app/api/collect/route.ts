@@ -6,6 +6,10 @@ type FeedbackEvent = { type: "feedback"; category: string; message: string; webs
 type VisitEvent = { type: "visit"; visitorId: string; version?: string };
 
 const clean = (value: unknown, max: number) => typeof value === "string" ? value.trim().slice(0, max) : "";
+function coarseRegion(value: unknown) {
+  const parts = clean(value, 200).split(",").map((part) => part.trim()).filter(Boolean);
+  return parts.slice(-3).join(", ").slice(0, 120);
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,7 +21,7 @@ export async function POST(request: NextRequest) {
       if (message.length < 10 || !category) return NextResponse.json({ error: "Напишите предложение не короче 10 символов" }, { status: 400 });
     } else if (body.type === "route") {
       const numbers = [body.distanceKm, body.durationMin, body.rate, body.total];
-      if (!clean(body.fromRegion, 120) || !clean(body.toRegion, 120) || numbers.some((n) => !Number.isFinite(n) || n < 0)) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
+      if (!coarseRegion(body.fromRegion) || !coarseRegion(body.toRegion) || numbers.some((n) => !Number.isFinite(n) || n < 0)) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
     } else if (body.type === "route_v2") {
       const baseNumbers = [body.distanceKm, body.durationMin, ...Object.values(body.totals ?? {})];
       const tollValues = [body.tollWeekday, body.tollWeekend];
@@ -28,7 +32,7 @@ export async function POST(request: NextRequest) {
         ? tollValues.some((value) => value !== null)
         : tollValues.some((value) => typeof value !== "number" || !Number.isFinite(value) || value < 0);
       const invalidFree = pricingStatus === "free" && tollValues.some((value) => value !== 0);
-      if (!clean(body.fromRegion, 120) || !clean(body.toRegion, 120) || !clean(body.routeType, 30) || !validTotalKeys || baseNumbers.length !== 6 || baseNumbers.some((n) => !Number.isFinite(n) || n < 0) || invalidStatus || invalidTolls || invalidFree) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
+      if (!coarseRegion(body.fromRegion) || !coarseRegion(body.toRegion) || !clean(body.routeType, 30) || !validTotalKeys || baseNumbers.length !== 6 || baseNumbers.some((n) => !Number.isFinite(n) || n < 0) || invalidStatus || invalidTolls || invalidFree) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
     } else if (body.type === "visit") {
       if (!/^[a-zA-Z0-9-]{16,64}$/.test(clean(body.visitorId, 64))) return NextResponse.json({ error: "Некорректный идентификатор" }, { status: 400 });
     } else return NextResponse.json({ error: "Неизвестный тип данных" }, { status: 400 });
@@ -38,9 +42,9 @@ export async function POST(request: NextRequest) {
     if (!endpoint || !token) return NextResponse.json({ error: "Сбор данных ещё настраивается" }, { status: 503 });
 
     const webhookBody = body.type === "route_v2"
-      ? { ...body, fromRegion: clean(body.fromRegion, 120), toRegion: clean(body.toRegion, 120), routeType: clean(body.routeType, 30), type: "route", version: "2.0", rate: 0, total: body.totals.standard }
+      ? { ...body, fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), routeType: clean(body.routeType, 30), type: "route", version: "2.0", rate: 0, total: body.totals.standard }
       : body.type === "route"
-        ? { ...body, fromRegion: clean(body.fromRegion, 120), toRegion: clean(body.toRegion, 120) }
+        ? { ...body, fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion) }
         : body.type === "feedback"
           ? { type: "feedback", category: clean(body.category, 40), message: clean(body.message, 1000) }
           : { ...body, visitorId: clean(body.visitorId, 64), version: clean(body.version, 20) };
