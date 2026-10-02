@@ -6,6 +6,8 @@ export type VerifiedRoute = {
   tollRub: number; tollWeekdayRub?: number; tollWeekendRub?: number; verifiedAt: string; source: string; accuracyPercent: number;
 };
 
+export const VERIFIED_ROUTE_MAX_AGE_DAYS = 45;
+
 const CITIES: Record<string, { name: string; aliases: string[] }> = {
   anapa: { name: "Анапа", aliases: ["анапа", "анапск"] }, voronezh: { name: "Воронеж", aliases: ["воронеж"] },
   krasnodar: { name: "Краснодар", aliases: ["краснодар"] }, moscow: { name: "Москва", aliases: ["москва", "московск"] },
@@ -46,10 +48,16 @@ export function resolveCity(label: string) {
   const firstPart = label.split(",")[0] ?? label; const primary = findCityInText(firstPart, true); const fallback = primary ?? findCityInText(label);
   return fallback ? { key: fallback[0], name: fallback[1].name } : null;
 }
+export function verifiedRouteIsFresh(route: VerifiedRoute, nowMs = Date.now()) {
+  const verifiedAtMs = Date.parse(`${route.verifiedAt}T00:00:00Z`);
+  if (!Number.isFinite(verifiedAtMs) || verifiedAtMs > nowMs) return false;
+  return nowMs - verifiedAtMs <= VERIFIED_ROUTE_MAX_AGE_DAYS * 86_400_000;
+}
 export function findVerifiedRoute(fromLabel: string, toLabel: string) {
-  const from = resolveCity(fromLabel); const to = resolveCity(toLabel); if (!from || !to) return { from, to, route: null };
-  const route = (routes as VerifiedRoute[]).find((item) => (item.from === from.key && item.to === to.key) || (item.from === to.key && item.to === from.key)) ?? null;
-  return { from, to, route };
+  const from = resolveCity(fromLabel); const to = resolveCity(toLabel); if (!from || !to) return { from, to, route: null, staleRoute: null };
+  const matched = (routes as VerifiedRoute[]).find((item) => (item.from === from.key && item.to === to.key) || (item.from === to.key && item.to === from.key)) ?? null;
+  const fresh = matched && verifiedRouteIsFresh(matched) ? matched : null;
+  return { from, to, route: fresh, staleRoute: matched && !fresh ? matched : null };
 }
 export function goldenRouteReference(fromLabel: string, toLabel: string, variant: "fast" | "free"): GoldenRouteReference | undefined {
   const route = findVerifiedRoute(fromLabel, toLabel).route; if (!route) return undefined;
@@ -62,4 +70,4 @@ export function goldenRouteReference(fromLabel: string, toLabel: string, variant
     verifiedAt: route.verifiedAt,
   };
 }
-export function verifiedRouteCount() { return (routes as VerifiedRoute[]).length; }
+export function verifiedRouteCount() { return (routes as VerifiedRoute[]).filter((route) => verifiedRouteIsFresh(route)).length; }
