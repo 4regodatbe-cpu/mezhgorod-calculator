@@ -4,7 +4,7 @@ on:
     branches: [main]
     paths:
       - app/page.tsx
-      - app/api/v2/calculate/**
+      - app/api/v2/**
       - app/api/v3/calculate/**
       - app/api/collect/**
       - app/api/suggest/**
