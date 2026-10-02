@@ -523,7 +523,7 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
 
   if (!routeCompositionBlocked && shouldUseVerifiedControl(pricedTolls, verifiedControl)) {
     pricedTolls = verifiedControl!;
-    fastValidation = compositionValidation(["m4_a289"], "Локальный расчёт существенно расходился с недавно проверенным контрольным маршрутом; использован контрольный итог вместо заведомо неполной суммы.");
+    fastValidation = compositionValidation(composition.priced.length > 0 ? composition.priced : [...legacyFamilies], "Локальный расчёт существенно расходился с недавно проверенным контрольным маршрутом; использован контрольный итог вместо заведомо неполной суммы.");
   }
 
   if (!routeCompositionBlocked && pricedTolls.amount <= 0) {
