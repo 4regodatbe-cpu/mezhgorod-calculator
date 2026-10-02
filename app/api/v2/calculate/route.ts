@@ -10,6 +10,7 @@ import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
 import { deriveM11EvidenceFromValhalla, type M11RoadEvidence, type M11ValhallaManeuver } from "@/lib/toll-engine/m11-road-evidence";
 import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
+import { calculateProductionCkadM4M11 } from "@/lib/toll-engine/ckad-production";
 import { deriveStrictM12Span, type M12StrictRouteSpan } from "@/lib/toll-engine/m12-valhalla-span";
 import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent, type RouteTollComponentId } from "@/lib/toll-engine/route-toll-composition";
 
@@ -473,15 +474,16 @@ async function leg(from: Located, to: Located, departureAt?: string, diagnostics
   const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289");
   const m11Detected = productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(valhallaEvidence?.m11RoadEvidence?.strictBlocks.length);
   const m12Detected = legacyFamilies.has("m12") || Boolean(valhallaEvidence?.m12StrictSpan);
-  // M-4 → M-11 is not evidence of CKAD: real south→SPB routes use MKAD 28→76 km.
-  // CKAD is a paid component only when route evidence explicitly identifies CKAD.
-  const ckadDetected = legacyFamilies.has("ckad");
+  const productionCkad = calculateProductionCkadM4M11(routeGeometry, valhallaEvidence?.m11RoadEvidence);
+  // CKAD is a paid component only when legacy evidence names it or the strict
+  // route-level CKAD engine proves a candidate/verified east-arc traversal.
+  const ckadDetected = legacyFamilies.has("ckad") || productionCkad.candidate;
 
   const components: RouteTollComponent[] = [
     { id: "m4_a289", detected: m4Detected, tolls: productionM4.tolls, reason: productionM4.reason },
     { id: "m11", detected: m11Detected, tolls: productionM11Geometry.tolls ?? productionM11?.tolls ?? null, reason: productionM11Geometry.exact ? productionM11Geometry.reason : productionM11?.reason ?? productionM11Geometry.reason },
     { id: "m12", detected: m12Detected, tolls: productionM12?.tolls ?? null, reason: productionM12?.core.reason ?? "m12_not_priced" },
-    { id: "ckad", detected: ckadDetected, tolls: null, reason: "ckad_explicit_route_evidence_not_priced" },
+    { id: "ckad", detected: ckadDetected, tolls: productionCkad.tolls, reason: productionCkad.reason },
     { id: "m1", detected: legacyFamilies.has("m1"), tolls: null, reason: "m1_engine_not_yet_composed" },
     { id: "m3", detected: legacyFamilies.has("m3"), tolls: null, reason: "m3_engine_not_yet_composed" },
     { id: "regional", detected: legacyFamilies.has("regional"), tolls: null, reason: "regional_engine_not_yet_composed" },
