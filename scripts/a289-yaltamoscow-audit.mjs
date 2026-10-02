@@ -64,14 +64,6 @@ function decodePolyline(encoded, precision = 6) {
   return coordinates;
 }
 
-function distanceKm(a, b) {
-  const rad = Math.PI / 180;
-  const dLat = (b[1] - a[1]) * rad;
-  const dLon = (b[0] - a[0]) * rad;
-  const value = Math.sin(dLat / 2) ** 2 + Math.cos(a[1] * rad) * Math.cos(b[1] * rad) * Math.sin(dLon / 2) ** 2;
-  return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
-}
-
 function pointToSegmentKm(anchor, a, b) {
   const latScale = 110.574;
   const lonScale = 111.320 * Math.cos(anchor.lat * Math.PI / 180);
