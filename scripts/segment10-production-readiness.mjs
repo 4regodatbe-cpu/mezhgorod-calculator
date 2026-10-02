@@ -7,6 +7,8 @@ const root=read("app/page.tsx");
 assert(api.includes('pricingStatus: "priced" | "free" | "unknown"'),"API pricing truth enum missing");
 assert(api.includes('amount: null')&&api.includes('pricingStatus: "unknown"'),"unknown toll must remain null");
 assert(api.includes('truth: "confirmed_free" | "candidate_unverified"'),"free-route truth enum missing");
+assert(!api.includes('compositionValidation(["m4_a289"], "Локальный расчёт существенно расходился'),"verified control must not hardcode M4 family for non-M4 routes");
+assert(api.includes("composition.priced.length > 0 ? composition.priced : [...legacyFamilies]"),"verified control must preserve detected toll families");
 assert(ui.includes('pricingStatus === "unknown"'),"UI does not render unknown toll state");
 assert(ui.includes("Платность / стоимость не подтверждена"),"unknown route card must not claim a confirmed paid road");
 assert(ui.includes("Платность / стоимость дороги не подтверждена"),"copied unknown result must not claim a confirmed paid road");
