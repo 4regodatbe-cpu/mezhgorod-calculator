@@ -11,6 +11,7 @@ on:
       - "lib/verified-routes.ts"
       - "data/verified-routes.json"
       - "scripts/route-monitor.mjs"
+      - "scripts/m4-reverse-regression.mjs"
       - ".github/workflows/route-quality.yml"
   schedule:
     - cron: "17 2 * * *"
@@ -35,6 +36,11 @@ jobs:
           CALCULATOR_URL: https://mezhgorod-calculator.vercel.app
           EXPECTED_COMMIT: ${{ github.sha }}
         run: node scripts/route-monitor.mjs
+      - id: m4_reverse
+        continue-on-error: true
+        env:
+          CALCULATOR_URL: https://mezhgorod-calculator.vercel.app
+        run: node scripts/m4-reverse-regression.mjs
       - name: Сохранить отчёт
         if: always()
         uses: actions/upload-artifact@v4
@@ -45,13 +51,16 @@ jobs:
             route-report.json
           retention-days: 30
       - name: Сообщить об ошибках
-        if: steps.monitor.outcome == 'failure'
+        if: steps.monitor.outcome == 'failure' || steps.m4_reverse.outcome == 'failure'
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const title = 'Автопроверка обнаружила ошибку маршрута';
-            const body = fs.readFileSync('route-report.md', 'utf8').slice(0, 60000);
+            const parts = [];
+            if (fs.existsSync('route-report.md')) parts.push(fs.readFileSync('route-report.md', 'utf8'));
+            parts.push(`M4 reverse regression: ${context.payload.workflow_run ? 'workflow' : 'push'}\nStatus: ${process.env.M4_STATUS || 'failed'}`);
+            const body = parts.join('\n\n').slice(0, 60000);
             const { data } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -75,5 +84,5 @@ jobs:
               });
             }
       - name: Завершить с ошибкой при отклонениях
-        if: steps.monitor.outcome == 'failure'
+        if: steps.monitor.outcome == 'failure' || steps.m4_reverse.outcome == 'failure'
         run: exit 1
