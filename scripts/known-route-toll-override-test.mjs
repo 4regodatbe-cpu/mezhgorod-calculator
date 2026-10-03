@@ -13,8 +13,9 @@ assert.match(tollData, /\{ prefix: "М-4:", min: 1 \}, \{ prefix: "А-289:", min
 assert.match(tollData, /pricingAuthority: "official_operator_aggregate"/);
 assert.match(estimator, /if \(item\.strictExpectedKm\) \{/);
 assert.match(estimator, /export function isAuthoritativeFullRouteEstimate/);
+assert.match(estimator, /export function estimateAuthoritativeFullRouteOverride/);
 assert.ok(
-  integration.indexOf("isAuthoritativeFullRouteEstimate(geometricTolls)")
+  integration.indexOf("estimateAuthoritativeFullRouteOverride(")
     < integration.indexOf('composition.status === "priced"'),
   "authoritative whole-route tariffs must take precedence over additive PVP composition",
 );
