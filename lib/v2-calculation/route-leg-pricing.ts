@@ -7,7 +7,7 @@ import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-pro
 import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
 import { calculateProductionCkadM4M11 } from "@/lib/toll-engine/ckad-production";
 import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent } from "@/lib/toll-engine/route-toll-composition";
-import { compositionValidation, unknownValidation, zeroUnknownTolls, type TollEstimate } from "./free-route-selection";
+import { compositionValidation, routeDifferenceEvidence, unknownValidation, zeroUnknownTolls, type TollEstimate } from "./free-route-selection";
 import type { RouteSummary, RouteWithGeometry } from "@/lib/route-providers";
 import { familySegments, mapMatchedTollFallback, routingDifferenceTollFallback } from "./route-leg-pricing-helpers";
 
