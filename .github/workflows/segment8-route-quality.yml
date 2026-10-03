@@ -6,6 +6,8 @@ on:
     paths:
       - "app/api/v2/calculate/route.ts"
       - "lib/v2-calculation/**"
+      - "lib/tolls.ts"
+      - "lib/toll-data/**"
       - "app/v2/**"
       - "lib/route-quality.ts"
       - "lib/route-providers.ts"
