@@ -125,6 +125,7 @@ function matchesFullRoute(route: Coordinate[], matchedSegments: TollSegment[], i
     const tolerance = item.distanceTolerancePercent ?? 6;
     const deviation = Math.abs(actualKm - item.expectedKm) / item.expectedKm * 100;
     if (deviation <= tolerance) return true;
+    if (item.strictExpectedKm) return false;
   }
 
   return item.requirements.every((requirement) =>
@@ -172,4 +173,17 @@ export function estimateTolls(route: Coordinate[], departureAt?: string) {
     segments: completeRoute ? [completeRoute.name] : segments.map((segment) => segment.name),
     confidence: completeRoute || segments.length > 0 ? "matched" as const : "none" as const,
   };
+}
+
+
+/**
+ * Complete route totals assembled from current operator tariffs are authoritative
+ * for that exact corridor. They take precedence over adding local plaza rows,
+ * which can overlap at entry/exit systems.
+ */
+export function isAuthoritativeFullRouteEstimate(estimate: ReturnType<typeof estimateTolls>) {
+  if (estimate.confidence !== "matched" || estimate.segments.length !== 1) return false;
+  return FULL_ROUTES.some((item) =>
+    item.pricingAuthority === "official_operator_aggregate" && item.name === estimate.segments[0],
+  );
 }
