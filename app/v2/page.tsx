@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Calculator, Car, Download, LoaderCircle, Percent, Settings2, ShieldCheck } from "lucide-react";
-import { AddressField, TariffInputs, FeedbackForm, DonationCard } from "./components/index";
+import { Car, Download, ShieldCheck } from "lucide-react";
+import { FeedbackForm, DonationCard } from "./components/index";
+import { CalculatorForm } from "./components/calculator-form";
 import { ResultPanels } from "./components/result-panels";
 import { defaults, tariffNames } from "./components/pricing-data";
 import { clampNumber, distance, duration, money } from "./components/format";
@@ -41,14 +42,30 @@ export default function V2Page() {
   return <main className="calculator-modern min-h-screen bg-slate-100 text-slate-950 dark:bg-[#070b14] dark:text-slate-100">
     <div className="mx-auto max-w-5xl px-3 py-4 sm:px-6 sm:py-8">
       <header className="mb-4 flex items-center justify-between gap-2"><div className="flex min-w-0 items-center gap-2"><div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-700 shadow-lg shadow-blue-900/30"><Car className="h-5 w-5"/></div><h1 className="text-base font-black leading-tight sm:text-2xl">Калькулятор межгород</h1></div><div className="flex shrink-0 items-center gap-1.5"><ThemeToggle />{!isAndroidApp && <a href="https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/download/android-latest/Mezhgorod-Calc-2.apk" download="Mezhgorod-Calc-2.apk" aria-label="Скачать для Android" className="flex h-10 items-center gap-1 rounded-xl bg-blue-600 px-2 text-[11px] font-bold text-white shadow-md transition hover:bg-blue-700 sm:px-3 sm:text-xs"><Download className="h-4 w-4 shrink-0"/>Скачать для Android</a>}</div></header>
-      <section className="rounded-[1.5rem] border border-slate-800 bg-slate-900/70 p-3 shadow-2xl backdrop-blur sm:p-5">
-        <div className="mb-4 grid grid-cols-2 rounded-xl bg-slate-950 p-1"><button onClick={() => { setMode("standard"); setResult(null); }} className={`min-h-11 rounded-lg px-3 text-sm font-bold transition ${mode === "standard" ? "bg-blue-600 text-white" : "text-slate-400"}`}>Обычный расчёт</button><button onClick={() => { setMode("dual"); setResult(null); }} className={`min-h-11 rounded-lg px-3 text-sm font-bold transition ${mode === "dual" ? "bg-blue-600 text-white" : "text-slate-400"}`}>Двойная тарификация</button></div>
-        <div className={`grid gap-3 ${mode === "dual" ? "lg:grid-cols-3" : "sm:grid-cols-2"}`}><AddressField label="Точка A" value={from} onChange={setFrom} placeholder="Откуда"/>{mode === "dual" && <AddressField label="Промежуточная точка" value={via} onChange={setVia} placeholder="Граница тарифа"/>}<AddressField label="Точка B" value={to} onChange={setTo} placeholder="Куда"/></div>
-        <div className="mt-4 border-t border-slate-800 pt-4"><div className="mb-2 flex items-center gap-2 text-sm font-bold"><Settings2 className="h-4 w-4 text-blue-400"/>{mode === "standard" ? "Тарифы" : "Тарифы участков"}</div>{mode === "standard" ? <TariffInputs rates={rates} setRates={setRates}/> : <div className="grid grid-cols-2 gap-2"><label className="rounded-xl border border-slate-700 bg-slate-950/55 p-2.5"><span className="text-xs text-slate-400">A → промежуточная</span><span className="mt-1 flex"><input type="number" value={rate1} onChange={(e) => setRate1(clampNumber(Number(e.target.value), 1, 10000, 1))} className="w-full bg-transparent text-lg font-black outline-none"/><small>₽/км</small></span></label><label className="rounded-xl border border-slate-700 bg-slate-950/55 p-2.5"><span className="text-xs text-slate-400">Промежуточная → B</span><span className="mt-1 flex"><input type="number" value={rate2} onChange={(e) => setRate2(clampNumber(Number(e.target.value), 1, 10000, 1))} className="w-full bg-transparent text-lg font-black outline-none"/><small>₽/км</small></span></label></div>}</div>
-        <div className="mt-3 flex flex-wrap items-center gap-3 rounded-xl bg-slate-950/65 p-3"><button type="button" role="switch" aria-checked={urgent} onClick={() => setUrgent(!urgent)} className={`relative h-7 w-12 rounded-full transition ${urgent ? "bg-orange-500" : "bg-slate-700"}`}><span className={`absolute top-1 h-5 w-5 rounded-full bg-white transition ${urgent ? "left-6" : "left-1"}`}/></button><span className="text-sm font-bold">Срочная поездка</span>{urgent && <label className="ml-auto flex items-center gap-1 rounded-lg border border-slate-700 bg-slate-900 px-2"><Percent className="h-4 w-4 text-orange-400"/><input aria-label="Наценка за срочность" type="number" min="0" max="500" value={urgentPercent} onChange={(e) => setUrgentPercent(clampNumber(Number(e.target.value), 0, 500, 0))} className="h-9 w-14 bg-transparent text-right font-bold outline-none"/><span className="text-sm text-slate-400">%</span></label>}</div>
-        <button onClick={calculate} disabled={loading} className="mt-3 flex min-h-13 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 font-black text-white shadow-lg shadow-blue-950/30 transition hover:brightness-110 disabled:opacity-60">{loading ? <LoaderCircle className="h-5 w-5 animate-spin"/> : <Calculator className="h-5 w-5"/>}{loading ? "Строим два маршрута…" : "Рассчитать поездку"}</button>
-        {error && <p role="alert" className="mt-3 rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}
-      </section>
+      <CalculatorForm
+        mode={mode}
+        onModeChange={setMode}
+        onResetResult={() => setResult(null)}
+        from={from}
+        onFromChange={setFrom}
+        via={via}
+        onViaChange={setVia}
+        to={to}
+        onToChange={setTo}
+        rates={rates}
+        onRatesChange={setRates}
+        rate1={rate1}
+        onRate1Change={setRate1}
+        rate2={rate2}
+        onRate2Change={setRate2}
+        urgent={urgent}
+        onUrgentChange={setUrgent}
+        urgentPercent={urgentPercent}
+        onUrgentPercentChange={setUrgentPercent}
+        loading={loading}
+        error={error}
+        onCalculate={calculate}
+      />
 
 
 
