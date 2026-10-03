@@ -8,6 +8,7 @@ const integration = fs.readFileSync("lib/v2-calculation/route-leg-pricing.ts", "
 assert.match(tollData, /М-4 \+ А-289 \+ М-11: Ялта — Санкт-Петербург/);
 assert.match(tollData, /weekday: 11170,\s*weekend: 13480/);
 assert.match(tollData, /expectedKm: 2555,\s*distanceTolerancePercent: 2,\s*strictExpectedKm: true/);
+assert.match(tollData, /endpointToleranceKm: 20/);
 assert.match(tollData, /pricingAuthority: "official_operator_aggregate"/);
 assert.match(estimator, /if \(item\.strictExpectedKm\) \{/);
 assert.match(estimator, /export function isAuthoritativeFullRouteEstimate/);
