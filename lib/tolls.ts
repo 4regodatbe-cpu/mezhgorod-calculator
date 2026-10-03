@@ -124,8 +124,12 @@ function matchesFullRoute(route: Coordinate[], matchedSegments: TollSegment[], i
     const actualKm = routeLengthKm(route);
     const tolerance = item.distanceTolerancePercent ?? 6;
     const deviation = Math.abs(actualKm - item.expectedKm) / item.expectedKm * 100;
+    if (item.strictExpectedKm) {
+      if (deviation > tolerance) return false;
+      return item.requirements.every((requirement) =>
+        matchedSegments.filter((segment) => segment.name.startsWith(requirement.prefix)).length >= requirement.min);
+    }
     if (deviation <= tolerance) return true;
-    if (item.strictExpectedKm) return false;
   }
 
   return item.requirements.every((requirement) =>
