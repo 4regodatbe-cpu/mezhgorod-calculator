@@ -16,7 +16,7 @@ function getRegion(feature: PhotonFeature) {
 }
 
 export async function GET(request: NextRequest) {
-  const q = request.nextUrl.searchParams.get("q")?.trim() ?? "";
+  const q = (request.nextUrl.searchParams.get("q") ?? request.nextUrl.searchParams.get("term") ?? "").trim();
   if (q.length < 3) return NextResponse.json({ items: [] });
   if (q.length > 200) return NextResponse.json({ error: "Слишком длинный поисковый запрос" }, { status: 400 });
   const url = new URL("https://photon.komoot.io/api/");

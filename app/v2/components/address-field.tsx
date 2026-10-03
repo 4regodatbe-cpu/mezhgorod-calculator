@@ -11,7 +11,7 @@ export function AddressField({ label, value, onChange, placeholder }: { label: s
   useEffect(() => {
     if (value.position || value.label.trim().length < 3) return;
     const timer = setTimeout(async () => {
-      try { const response = await fetch(`/api/suggest?q=${encodeURIComponent(value.label)}`); const data = await response.json(); setItems(data.items ?? []); setOpen(true); } catch { setItems([]); }
+      try { const response = await fetch("/r", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ query: value.label }) }); const data = await response.json(); setItems(data.items ?? []); setOpen(true); } catch { setItems([]); }
     }, 350);
     return () => clearTimeout(timer);
   }, [value]);
