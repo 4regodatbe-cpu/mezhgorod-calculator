@@ -84,7 +84,7 @@ function localWindow(route: Coordinate[], segmentIndex: number) {
   return sampleWindow(route.slice(start, end + 1));
 }
 
-function candidatesForRoute(route: Coordinate[]): Candidate[] {
+export function candidatesForRoute(route: Coordinate[]): Candidate[] {
   if (route.length < 2) return [];
   const candidates: Candidate[] = [];
 
