@@ -5,3 +5,4 @@ export { UnverifiedRouteCard } from "./unverified-route-card";
 export { FeedbackForm } from "./feedback-form";
 export { DonationCard } from "./donation-card";
 export { RouteUnavailable, DualUnverifiedNotice } from "./route-notices";
+export { ResultPanels } from "./result-panels";
