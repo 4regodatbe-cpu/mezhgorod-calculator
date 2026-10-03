@@ -35,6 +35,7 @@ export function useV2Calculation({ mode, from, via, to, rates, rate1, rate2, mul
         ]
         : [{ type: "Оптимальный", trip: pickOptimal(leg.fast, leg.free), tolls: null }];
       variants.forEach(({ type, trip, tolls }) => {
+        if (trip.pricingByVehicle?.standard.requiresSplit) return;
         const totals = mode === "standard"
           ? {
             standard: trip.pricingByVehicle?.standard.totalPrice ?? 0,
@@ -101,7 +102,7 @@ export function useV2Calculation({ mode, from, via, to, rates, rate1, rate2, mul
     for (const rate of Object.keys(defaults) as Array<keyof typeof defaults>) {
       const vehicle = vehicleForRate[rate];
       const amount = trip.pricingByVehicle?.[vehicle]?.totalPrice;
-      lines.push(`${tariffNames[rate]}: ${amount === undefined ? "цена не рассчитана" : money(amount)}`);
+      lines.push(`${tariffNames[rate]}: ${amount == null ? "цена не рассчитана" : money(amount)}`);
     }
     const segments = trip.pricingByVehicle?.comfort.pricingSegments ?? [];
     segments.forEach((segment) => lines.push(`${segment.from} → ${segment.to}: ${segment.distanceKm} км × ${money(segment.ratePerKm)}/км = ${money(segment.amount)}`));
@@ -110,6 +111,7 @@ export function useV2Calculation({ mode, from, via, to, rates, rate1, rate2, mul
       else if (toll.weekdayAmount !== toll.weekendAmount) lines.push(`Платная дорога: Пн–Чт ${money(toll.weekdayAmount ?? 0)}, Пт–Вс ${money(toll.weekendAmount ?? 0)}`);
       else if (toll.pricingStatus === "priced") lines.push(`Платная дорога: ${money(toll.amount ?? 0)}`);
     }
+    if (trip.pricingByVehicle?.standard.requiresSplit) lines.push("Укажите промежуточную точку в режиме двойной тарификации, чтобы рассчитать цену.");
     if (warning) lines.push(`Важно: ${warning}`);
     await navigator.clipboard.writeText(lines.join("\n"));
     setCopiedKey(key);

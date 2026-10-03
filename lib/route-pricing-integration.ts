@@ -45,6 +45,21 @@ export function calculateRoutePricing(input: {
 }) {
   const vehicle = input.vehicle ?? "comfort";
   const corridor = resolveCorridor(input.from, input.to);
+  const requiresSplit = input.legs.length === 1
+    && corridor.autoDual
+    && corridor.specialLegIndex !== null
+    && input.manualRateByLeg === undefined;
+  if (requiresSplit) {
+    return {
+      corridor: { id: corridor.corridor },
+      dualTariff: false,
+      pricingSegments: [],
+      totalPrice: null,
+      reviewRequired: true,
+      requiresSplit: true,
+      multiplier: input.multiplier ?? 1,
+    };
+  }
   const pricingSegments: PricedSegment[] = [];
 
   const multiplier = Number.isFinite(input.multiplier) && (input.multiplier ?? 0) >= 1 && (input.multiplier ?? 0) <= 6
@@ -98,6 +113,7 @@ export function calculateRoutePricing(input: {
     pricingSegments,
     totalPrice: pricingSegments.reduce((sum, segment) => sum + segment.amount, 0),
     reviewRequired: pricingSegments.some((segment) => segment.reviewRequired),
+    requiresSplit: false,
     multiplier,
   };
 }

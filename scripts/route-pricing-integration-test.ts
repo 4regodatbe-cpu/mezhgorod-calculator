@@ -74,4 +74,13 @@ equal(manualSegments.pricingSegments[0].ratePerKm, 20, "first manually priced le
 equal(manualSegments.pricingSegments[1].ratePerKm, 70, "verified special corridor keeps its tariff");
 equal(manualSegments.totalPrice, 25_000, "manual and special segments compose into one total");
 
+const unresolved = calculateRoutePricing({
+  from: "Краснодар",
+  to: "Мариуполь",
+  vehicle: "comfort",
+  legs: [{ from: "Краснодар", to: "Мариуполь", distanceKm: 500 }],
+});
+equal(unresolved.requiresSplit, true, "automatic corridor without a known route boundary must require a split point");
+equal(unresolved.totalPrice, null, "do not publish a misleading whole-route special price");
+
 console.log("Route pricing integration GREEN");

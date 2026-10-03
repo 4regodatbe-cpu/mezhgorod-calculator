@@ -18,8 +18,9 @@ export type PricingView = {
   corridor: { id: string };
   dualTariff: boolean;
   pricingSegments: PricedSegmentView[];
-  totalPrice: number;
+  totalPrice: number | null;
   reviewRequired: boolean;
+  requiresSplit: boolean;
   multiplier: number;
 };
 export type Trip = { meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };

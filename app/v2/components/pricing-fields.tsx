@@ -16,11 +16,13 @@ const vehicleKeys = [
 ] as const;
 
 export function PriceRows({ trip }: { trip: Trip }) {
-  return <div className="mt-3 grid grid-cols-2 gap-2">{vehicleKeys.map(([key, vehicle]) => <div key={key} className="rounded-xl bg-slate-950/60 px-3 py-2"><span className="block text-xs text-slate-400">{tariffNames[key]}</span><strong className="text-base text-white">{trip.pricingByVehicle ? money(trip.pricingByVehicle[vehicle].totalPrice) : "Цена не рассчитана"}</strong></div>)}</div>;
+  return <div className="mt-3 grid grid-cols-2 gap-2">{vehicleKeys.map(([key, vehicle]) => <div key={key} className="rounded-xl bg-slate-950/60 px-3 py-2"><span className="block text-xs text-slate-400">{tariffNames[key]}</span><strong className="text-base text-white">{trip.pricingByVehicle ? trip.pricingByVehicle[vehicle].requiresSplit ? "Укажите границу тарифа" : trip.pricingByVehicle[vehicle].totalPrice === null ? "Цена не рассчитана" : money(trip.pricingByVehicle[vehicle].totalPrice) : "Цена не рассчитана"}</strong></div>)}</div>;
 }
 
 export function PricingBreakdown({ trip }: { trip: Trip }) {
-  const segments = trip.pricingByVehicle?.comfort.pricingSegments;
+  const pricing = trip.pricingByVehicle?.comfort;
+  if (pricing?.requiresSplit) return <p className="mt-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-xs leading-relaxed text-amber-200">Тарифный коридор меняется по пути. Укажите промежуточную точку в режиме «Двойная тарификация», чтобы получить итоговую цену.</p>;
+  const segments = pricing?.pricingSegments;
   if (!segments?.length) return null;
   return <div className="mt-3 rounded-xl border border-slate-700/70 bg-slate-950/45 p-3">
     <p className="mb-2 text-xs font-bold text-slate-300">Расчёт по сегментам · Комфорт</p>
