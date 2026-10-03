@@ -100,9 +100,9 @@ function matchesSegment(route: Coordinate[], segment: TollSegment) {
   return true;
 }
 
-function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinate, radius: number) {
+function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinate, radius: number, endpointToleranceKm?: number) {
   if (route.length < 3) return false;
-  const effectiveRadius = Math.min(radius, COMPLETE_ROUTE_ENDPOINT_RADIUS_KM);
+  const effectiveRadius = Math.min(radius, endpointToleranceKm ?? COMPLETE_ROUTE_ENDPOINT_RADIUS_KM);
   const first = route[0];
   const last = route[route.length - 1];
   return (distanceKm(first, start) <= effectiveRadius && distanceKm(last, end) <= effectiveRadius)
@@ -114,7 +114,7 @@ function routeLengthKm(route: Coordinate[]) {
 }
 
 function matchesFullRoute(route: Coordinate[], matchedSegments: TollSegment[], item: FullRoute) {
-  if (!matchesRouteEnds(route, item.start, item.end, item.radius)) return false;
+  if (!matchesRouteEnds(route, item.start, item.end, item.radius, item.endpointToleranceKm)) return false;
 
   // For routes that have been checked against the control base, endpoint +
   // total-length agreement is a safer fallback than approximate kilometre
