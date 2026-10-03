@@ -121,7 +121,7 @@ export function useV2Calculation({ mode, from, via, to, rates, rate1, rate2, mul
   async function copyDual(key: string, title: string, trips: Trip[], total: number, tollWeekday: number, tollWeekend: number, tollUnknown: boolean) {
     const lines = ["Калькулятор межгород", title, ...result!.legs.map((leg, index) => {
       const amount = trips[index].pricingByVehicle?.standard.totalPrice;
-      return `Участок ${index + 1}: ${leg.from} → ${leg.to} · ${distance(trips[index].meters)} · ${duration(trips[index].seconds)} · ${amount === undefined ? "цена не рассчитана" : money(amount)}`;
+      return `Участок ${index + 1}: ${leg.from} → ${leg.to} · ${distance(trips[index].meters)} · ${duration(trips[index].seconds)} · ${amount == null ? "цена не рассчитана" : money(amount)}`;
     }), `Итого: ${money(total)}`];
     if (tollUnknown) lines.push("Платность / стоимость дороги не подтверждена");
     else if (tollWeekday > 0) lines.push(tollWeekday !== tollWeekend ? `Платная дорога: Пн–Чт ${money(tollWeekday)}, Пт–Вс ${money(tollWeekend)}` : `Платная дорога: ${money(tollWeekday)}`);

@@ -56,9 +56,10 @@ export function ResultPanels({ result, mode, standardLeg, standardHasTolls, stan
             {result.legs.map((leg, index) => {
               const trip = trips[index];
               const pricing = trip.pricingByVehicle?.standard.pricingSegments[0];
+              const tripPrice = trip.pricingByVehicle?.standard.totalPrice;
               return <div key={index} className="mt-3 rounded-xl bg-slate-950/60 p-3">
                 <p className="truncate text-xs text-slate-400">Участок {index + 1}: {leg.from} → {leg.to}</p>
-                <div className="mt-1 flex items-end justify-between gap-3"><span className="text-sm">{distance(trip.meters)} · {duration(trip.seconds)}{pricing ? <span className="block text-xs text-slate-500">{pricing.type === "special" ? "Специальный" : "Обычный"} тариф · {money(pricing.ratePerKm)}/км</span> : null}</span><strong>{trip.pricingByVehicle ? money(trip.pricingByVehicle.standard.totalPrice) : "Цена не рассчитана"}</strong></div>
+                <div className="mt-1 flex items-end justify-between gap-3"><span className="text-sm">{distance(trip.meters)} · {duration(trip.seconds)}{pricing ? <span className="block text-xs text-slate-500">{pricing.type === "special" ? "Специальный" : "Обычный"} тариф · {money(pricing.ratePerKm)}/км</span> : null}</span><strong>{tripPrice == null ? "Укажите границу тарифа" : money(tripPrice)}</strong></div>
                 <QualityNote quality={trip.quality}/>
               </div>;
             })}
