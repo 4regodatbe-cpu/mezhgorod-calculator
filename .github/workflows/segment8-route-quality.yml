@@ -42,8 +42,8 @@ jobs:
         run: pnpm test:route-benchmark
       - name: Keep benchmark data out of runtime routing
         run: |
-          ! grep -Eq 'findVerifiedRoute|goldenRouteReference|tollPeriodsForRoute|verifiedTollControl' app/api/v2/calculate/route.ts
-          grep -q 'selectLiveRouteCandidates' app/api/v2/calculate/route.ts
-          ! grep -R -E 'data/verified-routes.json|lib/verified-routes' app/api/v2 app/v2
+          ! grep -REq 'findVerifiedRoute|goldenRouteReference|tollPeriodsForRoute|verifiedTollControl' app/api/v2/calculate/route.ts lib/v2-calculation
+          grep -q 'selectLiveRouteCandidates' lib/v2-calculation/route-leg.ts
+          ! grep -R -E 'data/verified-routes.json|lib/verified-routes' app/api/v2 app/v2 lib/v2-calculation
       - name: Production build
         run: pnpm build
