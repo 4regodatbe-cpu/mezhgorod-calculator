@@ -68,3 +68,14 @@ jobs:
           ! grep -R -E 'data/verified-routes.json|lib/verified-routes' app/api/v2 app/v2 lib/v2-calculation
       - name: Production build
         run: pnpm build
+      - name: V2 API request validation smoke
+        run: |
+          pnpm start > /tmp/mezhgorod-v2-smoke.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:3000/v2 >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:3000/v2 >/dev/null
+          CALCULATOR_URL=http://127.0.0.1:3000 node scripts/api-contract-smoke.mjs
