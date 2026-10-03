@@ -9,14 +9,16 @@ assert.match(tollData, /М-4 \+ А-289 \+ М-11: Ялта — Санкт-Пет�
 assert.match(tollData, /weekday: 11170,\s*weekend: 13480/);
 assert.match(tollData, /expectedKm: 2555,\s*distanceTolerancePercent: 2,\s*strictExpectedKm: true/);
 assert.match(tollData, /endpointToleranceKm: 20/);
-assert.match(tollData, /\{ prefix: "М-4:", min: 1 \}, \{ prefix: "А-289:", min: 1 \}, \{ prefix: "М-11:", min: 1 \}/);
+assert.match(tollData, /\{ prefix: "М-4:", min: 1 \}, \{ prefix: "А-289:", min: 1 \}, \{ prefix: "М-11", min: 1 \}/);
 assert.match(tollData, /pricingAuthority: "official_operator_aggregate"/);
 assert.match(estimator, /if \(item\.strictExpectedKm\) \{/);
 assert.match(estimator, /export function isAuthoritativeFullRouteEstimate/);
 assert.match(estimator, /export function estimateAuthoritativeFullRouteOverride/);
+const overrideCall = integration.indexOf("const authoritativeRouteTolls = estimateAuthoritativeFullRouteOverride(");
+const overrideBranch = integration.indexOf("if (authoritativeRouteTolls || isAuthoritativeFullRouteEstimate(geometricTolls))");
+const additiveBranch = integration.indexOf('} else if (composition.status === "priced"');
 assert.ok(
-  integration.indexOf("estimateAuthoritativeFullRouteOverride(")
-    < integration.indexOf('composition.status === "priced"'),
+  overrideCall >= 0 && overrideCall < overrideBranch && overrideBranch < additiveBranch,
   "authoritative whole-route tariffs must take precedence over additive PVP composition",
 );
 
