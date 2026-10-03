@@ -1,4 +1,4 @@
-import { corridorAnchor, resolveCorridor, territoryClass } from "@/lib/route-corridors";
+import { resolveCorridor } from "@/lib/route-corridors";
 
 export type RoutePosition = { lat: number; lng: number };
 export type RoutePoint = { label: string; region?: string; position: RoutePosition };
@@ -8,13 +8,13 @@ export type RoutePoint = { label: string; region?: string; position: RoutePositi
 // между Крымом и материком через другие сухопутные направления.
 export const CRIMEA_SAFE_GATEWAY: RoutePosition = { lat: 45.2117, lng: 36.7161 };
 
-const CRIMEA_MARKERS = [
+const SOUTH_COAST_MARKERS = [\n  "адлер", "сочи", "туапсе", "джубг", "архипо-осипов", "геленджик", "кабардинк",\n  "новороссийск", "анап", "витязев", "темрюк", "голубицк", "славянск-на-кубани",\n  "славянск на кубани", "крымск", "горячий ключ", "краснодар",\n];\n\nconst CRIMEA_MARKERS = [
   "крым", "севастопол", "симферопол", "ялта", "керч", "евпатори",
   "феодоси", "судак", "алушт", "джанко", "бахчисарай", "саки",
   "армянск", "красноперекопск",
 ];
 
-export function isCrimea(point: RoutePoint) {
+function isSouthCoast(point: RoutePoint) {\n  const text = `${point.label} ${point.region ?? ""}`.toLocaleLowerCase("ru-RU");\n  return SOUTH_COAST_MARKERS.some((marker) => text.includes(marker));\n}\n\nexport function isCrimea(point: RoutePoint) {
   const text = `${point.label} ${point.region ?? ""}`.toLocaleLowerCase("ru-RU");
   return CRIMEA_MARKERS.some((marker) => text.includes(marker));
 }
@@ -37,7 +37,7 @@ export function safeRoutePositions(from: RoutePoint, to: RoutePoint) {
 
   const usesCrimeaCorridor = decision.corridor === "crimea_dzhankoy" || decision.corridor === "crimea_armyansk";
   const usesEasternCorridor = decision.corridor === "m4_dnr" || decision.corridor === "m4_lnr";
-  const southToSpecial = usesCrimeaCorridor && (fromClass === "south_coast" || toClass === "south_coast");
+  const southToSpecial = usesCrimeaCorridor && (isSouthCoast(from) || isSouthCoast(to));
   const ordinaryCrimeaMainland = decision.corridor === "normal" && fromCrimea !== toCrimea;
   const crimeaToEastern = usesEasternCorridor && (fromCrimea || toCrimea);
 
