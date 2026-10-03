@@ -1,7 +1,7 @@
 import type { TollSegment } from "./types";
 
 // M-4 Don, category I, no transponder. Prices current from 02.03.2026.
-const M4: TollSegment[] = [
+export const M4: TollSegment[] = [
   { name: "М-4: Дальний западный обход Краснодара", start: [38.98, 45.24], end: [38.68, 45.0], weekday: 410, weekend: 410, radius: 13 },
   { name: "М-4: 21–93 км", start: [37.72, 55.55], end: [38.08, 54.99], weekday: 210, weekend: 270 },
   { name: "М-4: 93–211 км", start: [38.08, 54.99], end: [38.16, 53.98], weekday: 320, weekend: 410 },
@@ -24,7 +24,7 @@ const M4: TollSegment[] = [
 
 // A-289 Krasnodar — Slavyansk-na-Kubani — Temryuk, category I.
 // The whole paid direction costs 800 rubles from 02.03.2026.
-const A289: TollSegment[] = [
+export const A289: TollSegment[] = [
   { name: "А-289: Марьянская — Славянск-на-Кубани", start: [38.62, 45.09], end: [38.14, 45.24], weekday: 415, weekend: 415, radius: 16 },
   { name: "А-289: Славянск-на-Кубани — Варениковская", start: [38.14, 45.24], end: [37.64, 45.14], weekday: 205, weekend: 205, radius: 16 },
   { name: "А-289: Варениковская — Темрюк", start: [37.64, 45.14], end: [37.42, 45.25], weekday: 180, weekend: 180, radius: 16 },

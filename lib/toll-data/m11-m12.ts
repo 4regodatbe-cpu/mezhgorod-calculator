@@ -2,7 +2,7 @@ import type { TollSegment } from "./types";
 
 // The first concession section has a time-dependent tariff. The values below
 // are conservative daytime estimates for a category I car without a pass.
-const M11: TollSegment[] = [
+export const M11: TollSegment[] = [
   { name: "М-11: Москва — Солнечногорск", start: [37.41, 55.94], end: [36.98, 56.18], weekday: 1000, weekend: 1100, radius: 15 },
   { name: "М-11: Солнечногорск — Тверь", start: [36.98, 56.18], end: [35.89, 56.77], weekday: 620, weekend: 660, radius: 18 },
   { name: "М-11: Тверь — Вышний Волочёк", start: [35.89, 56.77], end: [34.56, 57.58], weekday: 760, weekend: 800, radius: 20 },
@@ -11,7 +11,7 @@ const M11: TollSegment[] = [
 ];
 
 // M-12 current official consecutive-route tariffs, category I, 02.03.2026.
-const M12: TollSegment[] = [
+export const M12: TollSegment[] = [
   { name: "М-12: Москва — Электроугли", start: [37.87, 55.75], end: [38.22, 55.72], weekday: 176, weekend: 176, radius: 18 },
   { name: "М-12: Электроугли — ЦКАД", start: [38.22, 55.72], end: [38.46, 55.72], weekday: 322, weekend: 322, radius: 18 },
   { name: "М-12: ЦКАД — Орехово-Зуево", start: [38.46, 55.72], end: [38.94, 55.8], weekday: 244, weekend: 244, radius: 20 },

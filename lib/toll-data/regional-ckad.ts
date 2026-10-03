@@ -1,11 +1,11 @@
 import type { TollSegment } from "./types";
 
-const REGIONAL: TollSegment[] = [
+export const REGIONAL: TollSegment[] = [
   { name: "Восточный выезд Уфы", start: [56.07, 54.75], end: [56.3, 54.75], weekday: 150, weekend: 150, radius: 13 },
   { name: "Обход Тольятти", start: [49.09, 53.56], end: [49.48, 53.45], weekday: 650, weekend: 650, radius: 18 },
 ];
 
-const CKAD: TollSegment[] = [
+export const CKAD: TollSegment[] = [
   { name: "ЦКАД: М-10 — Дмитровское шоссе", start: [37.3, 56.13], via: [37.42, 56.17], end: [37.55, 56.18], weekday: 120, weekend: 120, radius: 9 },
   { name: "ЦКАД: Дмитровское шоссе — М-8", start: [37.55, 56.18], via: [37.73, 56.17], end: [37.92, 56.13], weekday: 241, weekend: 241, radius: 9 },
   { name: "ЦКАД: М-8 — М-7", start: [37.92, 56.13], via: [38.23, 56.03], end: [38.5, 55.9], weekday: 461, weekend: 461, radius: 10 },
