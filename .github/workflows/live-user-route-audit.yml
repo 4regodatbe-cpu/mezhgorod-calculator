@@ -24,6 +24,8 @@ jobs:
         with:
           node-version: 22.13.0
       - run: pnpm install --frozen-lockfile
+      - name: Проверить полный маршрутный тариф и порядок композиции
+        run: node scripts/known-route-toll-override-test.mjs
       - run: pnpm build
       - name: Start local production server
         run: |
