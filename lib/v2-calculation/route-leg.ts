@@ -41,6 +41,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   const [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
   const confirmedFree = selectedFree?.truth === "confirmed_free" ? selectedFree : null;
   const freeCandidate = selectedFree?.truth === "candidate_unverified" ? selectedFree : null;
+  const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
   const pricing = await calculateLegTolls({
     routeGeometry,
     routeSeconds: selectedFast.route.seconds,
