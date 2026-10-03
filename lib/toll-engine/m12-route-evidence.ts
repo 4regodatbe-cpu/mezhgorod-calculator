@@ -7,6 +7,11 @@ export const CALIBRATION_MARGIN_KM = 2.5;
 export const MAX_ABSOLUTE_CONTINUITY_ERROR_KM = 3;
 export const MAX_RELATIVE_CONTINUITY_ERROR = 0.025;
 
+function round(value: number, digits = 6) {
+  const factor = 10 ** digits;
+  return Math.round(value * factor) / factor;
+}
+
 const officialMarkers = tariffSnapshot.sections.map((section) => section.rvpKm).sort((a, b) => a - b);
 const amountByMarker = new Map(tariffSnapshot.sections.map((section) => [section.rvpKm, section.category1Rub]));
 
