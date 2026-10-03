@@ -1,4 +1,4 @@
-import { estimateTolls, isAuthoritativeFullRouteEstimate, type Coordinate } from "@/lib/tolls";
+import { estimateAuthoritativeFullRouteOverride, estimateTolls, isAuthoritativeFullRouteEstimate, type Coordinate } from "@/lib/tolls";
 import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
@@ -78,16 +78,27 @@ export async function calculateLegTolls({
     { id: "regional", detected: legacyFamilies.has("regional"), tolls: null, reason: "regional_engine_not_yet_composed" },
   ];
   const composition = composeRouteTolls(components);
+  const authoritativeRouteTolls = estimateAuthoritativeFullRouteOverride(
+    routeGeometry,
+    selectedFastRoute.meters / 1000,
+    [
+      ...geometricTolls.segments,
+      ...(productionM4.tolls?.segments ?? []),
+      ...(productionM11Geometry.tolls?.segments ?? []),
+      ...(productionM11?.tolls?.segments ?? []),
+    ],
+    departureAt,
+  );
 
   let pricedTolls: TollEstimate;
   let fastValidation: TollValidation;
   let routeCompositionBlocked = false;
 
-  if (isAuthoritativeFullRouteEstimate(geometricTolls)) {
-    pricedTolls = geometricTolls;
+  if (authoritativeRouteTolls || isAuthoritativeFullRouteEstimate(geometricTolls)) {
+    pricedTolls = authoritativeRouteTolls ?? geometricTolls;
     fastValidation = compositionValidation(
       [...legacyFamilies],
-      `Использован текущий тарифный итог для проверенного полного маршрута: ${geometricTolls.segments[0]}`,
+      `Использован текущий тарифный итог для проверенного полного маршрута: ${pricedTolls.segments[0]}`,
     );
   } else if (composition.status === "priced" && composition.tolls) {
     pricedTolls = composition.tolls;
