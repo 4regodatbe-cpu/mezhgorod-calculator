@@ -1,5 +1,14 @@
 name: Live user-route toll audit
 on:
+  pull_request:
+    branches: [work/remove-v3-runtime-2026-10-02]
+    paths:
+      - "lib/toll-data/**"
+      - "lib/tolls.ts"
+      - "lib/v2-calculation/route-leg-pricing.ts"
+      - "scripts/live-user-route-audit.mjs"
+      - "scripts/known-route-toll-override-test.mjs"
+      - ".github/workflows/live-user-route-audit.yml"
   workflow_dispatch:
 permissions:
   contents: read
@@ -15,6 +24,8 @@ jobs:
         with:
           node-version: 22.13.0
       - run: pnpm install --frozen-lockfile
+      - name: Проверить полный маршрутный тариф и порядок композиции
+        run: node scripts/known-route-toll-override-test.mjs
       - run: pnpm build
       - name: Start local production server
         run: |

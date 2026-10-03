@@ -20,4 +20,7 @@ export type FullRoute = {
   requirements: Array<{ prefix: string; min: number }>;
   expectedKm?: number;
   distanceTolerancePercent?: number;
+  strictExpectedKm?: boolean;
+  endpointToleranceKm?: number;
+  pricingAuthority?: "official_operator_aggregate";
 };

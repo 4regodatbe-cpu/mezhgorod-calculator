@@ -100,9 +100,9 @@ function matchesSegment(route: Coordinate[], segment: TollSegment) {
   return true;
 }
 
-function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinate, radius: number) {
+function matchesRouteEnds(route: Coordinate[], start: Coordinate, end: Coordinate, radius: number, endpointToleranceKm?: number) {
   if (route.length < 3) return false;
-  const effectiveRadius = Math.min(radius, COMPLETE_ROUTE_ENDPOINT_RADIUS_KM);
+  const effectiveRadius = Math.min(radius, endpointToleranceKm ?? COMPLETE_ROUTE_ENDPOINT_RADIUS_KM);
   const first = route[0];
   const last = route[route.length - 1];
   return (distanceKm(first, start) <= effectiveRadius && distanceKm(last, end) <= effectiveRadius)
@@ -114,7 +114,7 @@ function routeLengthKm(route: Coordinate[]) {
 }
 
 function matchesFullRoute(route: Coordinate[], matchedSegments: TollSegment[], item: FullRoute) {
-  if (!matchesRouteEnds(route, item.start, item.end, item.radius)) return false;
+  if (!matchesRouteEnds(route, item.start, item.end, item.radius, item.endpointToleranceKm)) return false;
 
   // For routes that have been checked against the control base, endpoint +
   // total-length agreement is a safer fallback than approximate kilometre
@@ -124,6 +124,11 @@ function matchesFullRoute(route: Coordinate[], matchedSegments: TollSegment[], i
     const actualKm = routeLengthKm(route);
     const tolerance = item.distanceTolerancePercent ?? 6;
     const deviation = Math.abs(actualKm - item.expectedKm) / item.expectedKm * 100;
+    if (item.strictExpectedKm) {
+      if (deviation > tolerance) return false;
+      return item.requirements.every((requirement) =>
+        matchedSegments.filter((segment) => segment.name.startsWith(requirement.prefix)).length >= requirement.min);
+    }
     if (deviation <= tolerance) return true;
   }
 
@@ -172,4 +177,52 @@ export function estimateTolls(route: Coordinate[], departureAt?: string) {
     segments: completeRoute ? [completeRoute.name] : segments.map((segment) => segment.name),
     confidence: completeRoute || segments.length > 0 ? "matched" as const : "none" as const,
   };
+}
+
+
+/**
+ * Match an operator-verified whole-route tariff using the selected provider's
+ * measured route length and toll-family evidence from both geometry and the
+ * production corridor engines.
+ */
+export function estimateAuthoritativeFullRouteOverride(
+  route: Coordinate[],
+  actualKm: number,
+  matchedSegmentNames: string[],
+  departureAt?: string,
+) {
+  const item = FULL_ROUTES.find((candidate) => {
+    if (candidate.pricingAuthority !== "official_operator_aggregate" || !candidate.strictExpectedKm || !candidate.expectedKm) return false;
+    if (!matchesRouteEnds(route, candidate.start, candidate.end, candidate.radius, candidate.endpointToleranceKm)) return false;
+    const tolerance = candidate.distanceTolerancePercent ?? 6;
+    if (Math.abs(actualKm - candidate.expectedKm) / candidate.expectedKm * 100 > tolerance) return false;
+    return candidate.requirements.every((requirement) =>
+      matchedSegmentNames.filter((name) => name.startsWith(requirement.prefix)).length >= requirement.min);
+  });
+  if (!item) return null;
+
+  const date = departureAt ? new Date(departureAt) : new Date();
+  const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
+  const weekend = day === 0 || day === 5 || day === 6;
+  return {
+    amount: weekend ? item.weekend : item.weekday,
+    weekdayAmount: item.weekday,
+    weekendAmount: item.weekend,
+    period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
+    segments: [item.name],
+    confidence: "matched" as const,
+  };
+}
+
+
+/**
+ * Complete route totals assembled from current operator tariffs are authoritative
+ * for that exact corridor. They take precedence over adding local plaza rows,
+ * which can overlap at entry/exit systems.
+ */
+export function isAuthoritativeFullRouteEstimate(estimate: ReturnType<typeof estimateTolls>) {
+  if (estimate.confidence !== "matched" || estimate.segments.length !== 1) return false;
+  return FULL_ROUTES.some((item) =>
+    item.pricingAuthority === "official_operator_aggregate" && item.name === estimate.segments[0],
+  );
 }
