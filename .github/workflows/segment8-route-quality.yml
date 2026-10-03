@@ -9,6 +9,7 @@ on:
       - "lib/tolls.ts"
       - "lib/toll-data/**"
       - "lib/toll-engine/m4-*.ts"
+      - "lib/toll-engine/m11-*.ts"
       - "lib/toll-engine/m12-route-*.ts"
       - "app/v2/**"
       - "lib/route-quality.ts"

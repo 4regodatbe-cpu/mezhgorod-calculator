@@ -1,8 +1,7 @@
 import section15Snapshot from "../../data/tolls/m11/2026-04-24-section15-58-category1-no-transponder.json" with { type: "json" };
-import spatialSnapshot from "../../data/tolls/m11/2026-10-01-58-679-spatial-anchors.json" with { type: "json" };
 import { priceM11CurrentPartialCategory1 } from "./m11-current-tariffs.ts";
-
-type Coordinate = [number, number];
+import { countStrictFacilityHits, facilityAnchors, haversineKm, nearestSegment, crossingAt, MOSCOW_M11_ENTRY, ENTRY_MAX_DISTANCE_KM, FACILITY_MAX_DISTANCE_KM } from "./m11-moscow-geometry.ts";
+import type { Coordinate } from "./m11-moscow-geometry.ts";
 
 export type M11MoscowProductionTolls = {
   amount: number;
@@ -28,66 +27,7 @@ export type M11MoscowProductionResult = {
   };
 };
 
-type Facility = { tariffPointId: string; anchors: Array<{ lat: number; lon: number }> };
 type Section15Profile = "monThu" | "friday" | "saturday" | "sunday";
-
-const MOSCOW_M11_ENTRY: Coordinate = [37.472, 55.8842];
-const ENTRY_MAX_DISTANCE_KM = 1.5;
-const FACILITY_MAX_DISTANCE_KM = 0.8;
-const facilities = spatialSnapshot.facilities as Facility[];
-
-function haversineKm(a: Coordinate, b: Coordinate) {
-  const rad = Math.PI / 180;
-  const dLat = (b[1] - a[1]) * rad;
-  const dLon = (b[0] - a[0]) * rad;
-  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a[1] * rad) * Math.cos(b[1] * rad) * Math.sin(dLon / 2) ** 2;
-  return 6371 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
-}
-
-function pointToSegmentKm(point: Coordinate, a: Coordinate, b: Coordinate) {
-  const latScale = 110.574;
-  const lonScale = 111.320 * Math.cos(point[1] * Math.PI / 180);
-  const ax = (a[0] - point[0]) * lonScale;
-  const ay = (a[1] - point[1]) * latScale;
-  const bx = (b[0] - point[0]) * lonScale;
-  const by = (b[1] - point[1]) * latScale;
-  const dx = bx - ax;
-  const dy = by - ay;
-  const lengthSquared = dx * dx + dy * dy;
-  if (lengthSquared <= 1e-12) return Math.hypot(ax, ay);
-  const t = Math.max(0, Math.min(1, -(ax * dx + ay * dy) / lengthSquared));
-  return Math.hypot(ax + t * dx, ay + t * dy);
-}
-
-function nearestSegment(route: readonly Coordinate[], anchors: readonly Coordinate[]) {
-  let index = -1;
-  let distanceKm = Number.POSITIVE_INFINITY;
-  for (const anchor of anchors) {
-    for (let current = 0; current < route.length - 1; current += 1) {
-      const distance = pointToSegmentKm(anchor, route[current], route[current + 1]);
-      if (distance < distanceKm) { distanceKm = distance; index = current; }
-    }
-  }
-  return { index, distanceKm };
-}
-
-function facilityAnchors(pointId: string): Coordinate[] {
-  const facility = facilities.find((item) => item.tariffPointId === pointId);
-  return facility?.anchors.map((anchor) => [anchor.lon, anchor.lat] as Coordinate) ?? [];
-}
-
-function cumulativeDistance(route: readonly Coordinate[]) {
-  const result = [0];
-  for (let index = 1; index < route.length; index += 1) result.push(result[index - 1] + haversineKm(route[index - 1], route[index]));
-  return result;
-}
-
-function crossingAt(start: Date, route: readonly Coordinate[], segmentIndex: number, routeSeconds: number) {
-  const cumulative = cumulativeDistance(route);
-  const total = cumulative.at(-1) ?? 0;
-  const ratio = total > 0 ? Math.max(0, Math.min(1, cumulative[Math.max(0, segmentIndex)] / total)) : 0;
-  return new Date(start.getTime() + routeSeconds * ratio * 1000);
-}
 
 function moscowParts(date: Date) {
   const formatter = new Intl.DateTimeFormat("en-CA", {
@@ -158,9 +98,7 @@ export function calculateM11MoscowToPetersburg(
   // candidate and blocked otherwise complete M-4 routes. Geometry-only
   // detection requires the actual Moscow entry or at least two independent
   // M-11 tariff facilities at strict crossing distance.
-  const strictFacilityHits = facilities.filter((facility) =>
-    nearestSegment(route, facility.anchors.map((anchor) => [anchor.lon, anchor.lat] as Coordinate)).distanceKm <= FACILITY_MAX_DISTANCE_KM
-  ).length;
+  const strictFacilityHits = countStrictFacilityHits(route);
   const candidate = entry.distanceKm <= ENTRY_MAX_DISTANCE_KM || strictFacilityHits >= 2;
   if (entry.distanceKm > ENTRY_MAX_DISTANCE_KM) return { candidate, exact: false, tolls: null, reason: candidate ? "moscow_m11_entry_not_proven" : "m11_geometry_not_proven", evidence: { ...evidenceBase, entryAt: null, p58At: null } };
 
