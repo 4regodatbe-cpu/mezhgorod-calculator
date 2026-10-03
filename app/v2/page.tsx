@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Calculator, Car, Check, Clipboard, Download, LoaderCircle, Percent, Route, Settings2, ShieldCheck } from "lucide-react";
-import { AddressField, TariffInputs, QualityNote, RouteCard, UnverifiedRouteCard, FeedbackForm, DonationCard, RouteUnavailable, DualUnverifiedNotice } from "./components";
+import { AddressField, TariffInputs, QualityNote, RouteCard, UnverifiedRouteCard, FeedbackForm, DonationCard, RouteUnavailable, DualUnverifiedNotice } from "./components/index";
 
 type Place = { label: string; position?: { lat: number; lng: number } };
 type RouteQuality = { status: "verified" | "single" | "warning"; providers: string[]; distanceSpreadPercent: number | null; message: string };
