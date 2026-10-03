@@ -9,6 +9,7 @@ import {
   type SpecialTerritoryId,
   type VerifiedTerritory,
 } from "../lib/special-territory-geometry.ts";
+import { SPECIAL_TERRITORY_BOUNDARIES } from "../lib/special-territory-boundaries.ts";
 
 const ids: SpecialTerritoryId[] = ["dnr", "lnr", "zaporizhzhia", "kherson"];
 const zones: VerifiedTerritory[] = ids.map((id, index) => {
@@ -27,6 +28,20 @@ test("requires verified, sourced boundaries for all four special territories", (
   assert.throws(() => validateTerritories(zones.map((zone, index) => index ? zone : { ...zone, verified: false })), /verified=true/);
   assert.equal(classifyTerritory({ lat: 0, lng: 0 }, zones), "dnr");
   assert.equal(classifyTerritory({ lat: 5, lng: 5 }, zones), null);
+});
+
+test("loads the four OCHA ADM1 boundary features and classifies representative points", () => {
+  assert.equal(SPECIAL_TERRITORY_BOUNDARIES.length, 4);
+  assert.doesNotThrow(() => validateTerritories(SPECIAL_TERRITORY_BOUNDARIES));
+  assert.deepEqual(
+    [
+      classifyTerritory({ lat: 48.0156, lng: 37.8029 }, SPECIAL_TERRITORY_BOUNDARIES),
+      classifyTerritory({ lat: 48.574, lng: 39.3078 }, SPECIAL_TERRITORY_BOUNDARIES),
+      classifyTerritory({ lat: 47.8388, lng: 35.1396 }, SPECIAL_TERRITORY_BOUNDARIES),
+      classifyTerritory({ lat: 46.6354, lng: 32.6169 }, SPECIAL_TERRITORY_BOUNDARIES),
+    ],
+    ["dnr", "lnr", "zaporizhzhia", "kherson"],
+  );
 });
 
 test("splits actual route geometry across every crossed special region", () => {
