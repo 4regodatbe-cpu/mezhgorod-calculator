@@ -5,6 +5,7 @@ on:
     branches: ["**"]
     paths:
       - "app/api/v2/calculate/route.ts"
+      - "lib/v2-calculation/**"
       - "app/v2/**"
       - "lib/route-quality.ts"
       - "lib/route-providers.ts"
