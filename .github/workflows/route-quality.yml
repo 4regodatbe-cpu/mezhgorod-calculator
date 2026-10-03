@@ -33,6 +33,8 @@ jobs:
           node-version: 22.13.0
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Проверить полные тарифы эталонных маршрутов
+        run: node scripts/known-route-toll-override-test.mjs
       - run: pnpm build
       - name: Запустить локальную production-сборку
         run: |
