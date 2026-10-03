@@ -6,34 +6,10 @@ import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
 import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
 import { calculateProductionCkadM4M11 } from "@/lib/toll-engine/ckad-production";
-import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent, type RouteTollComponentId } from "@/lib/toll-engine/route-toll-composition";
-import { compositionValidation, routeDifferenceEvidence, unknownValidation, zeroUnknownTolls, type TollEstimate } from "./free-route-selection";
+import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent } from "@/lib/toll-engine/route-toll-composition";
+import { compositionValidation, unknownValidation, zeroUnknownTolls, type TollEstimate } from "./free-route-selection";
 import type { RouteSummary, RouteWithGeometry } from "@/lib/route-providers";
-
-function mapMatchedTollFallback(current: TollEstimate, validation: TollValidation): TollEstimate {
-  if (current.amount > 0 || validation.status !== "toll") return current;
-  return {
-    ...current,
-    segments: [validation.roadNames.length > 0
-      ? `Map matching: ${validation.roadNames.slice(0, 3).join(", ")}`
-      : "Map matching: подтверждены платные дорожные рёбра"],
-    confidence: "matched",
-  };
-}
-
-function routingDifferenceTollFallback(fast: RouteSummary, free: RouteSummary, current: TollEstimate): TollEstimate {
-  if (current.segments.length > 0) return current;
-  if (!routeDifferenceEvidence(fast, free)) return current;
-  return {
-    ...current,
-    segments: ["Подтверждённый бесплатный маршрут существенно отличается от быстрого варианта"],
-    confidence: "none",
-  };
-}
-
-function familySegments(segments: string[], family: RouteTollComponentId) {
-  return segments.filter((segment) => detectedFamiliesFromLegacySegments([segment]).has(family));
-}
+import { familySegments, mapMatchedTollFallback, routingDifferenceTollFallback } from "./route-leg-pricing-helpers";
 
 type LegTollInput = {
   routeGeometry: Coordinate[];

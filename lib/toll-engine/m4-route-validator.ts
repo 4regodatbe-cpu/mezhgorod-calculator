@@ -1,6 +1,5 @@
 import type { Coordinate } from "@/lib/tolls";
 import type { TollBoothEvent } from "@/lib/toll-validator";
-import type { M4PlazaNodeGroup } from "@/lib/toll-engine/m4-plaza-nodes";
 import { localTrace } from "@/lib/toll-engine/m4-local-trace";
 import { candidatesForRoute, CANDIDATE_RADIUS_KM, WINDOW_HALF_KM, type Candidate } from "@/lib/toll-engine/m4-route-candidates";
 
