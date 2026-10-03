@@ -1,4 +1,4 @@
-import { resolveCorridor } from "@/lib/route-corridors";
+import { resolveCorridor } from "./route-corridors";
 
 export type RoutePosition = { lat: number; lng: number };
 export type RoutePoint = { label: string; region?: string; position: RoutePosition };
