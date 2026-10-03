@@ -8,9 +8,9 @@ import {
   inferInternalMarkers,
   projectM12Evidence,
   proveBoundaries,
-} from "./m12-route-evidence";
+} from "./m12-route-evidence.ts";
 import type { M12BoundaryCheck, M12ContinuityInterval, M12Coordinate, M12EvaluationInput, M12Projection, M12RouteResult, M12StrictSpan } from "./m12-route-types";
-export { projectM12Evidence } from "./m12-route-evidence";
+export { projectM12Evidence } from "./m12-route-evidence.ts";
 export type { M12BoundaryCheck, M12ContinuityInterval, M12Coordinate, M12EvaluationInput, M12Projection, M12RouteResult, M12StrictSpan } from "./m12-route-types";
 
 const amountByMarker = new Map(tariffSnapshot.sections.map((section) => [section.rvpKm, section.category1Rub]));
