@@ -181,6 +181,41 @@ export function estimateTolls(route: Coordinate[], departureAt?: string) {
 
 
 /**
+ * Match an operator-verified whole-route tariff using the selected provider's
+ * measured route length and toll-family evidence from both geometry and the
+ * production corridor engines.
+ */
+export function estimateAuthoritativeFullRouteOverride(
+  route: Coordinate[],
+  actualKm: number,
+  matchedSegmentNames: string[],
+  departureAt?: string,
+) {
+  const item = FULL_ROUTES.find((candidate) => {
+    if (candidate.pricingAuthority !== "official_operator_aggregate" || !candidate.strictExpectedKm || !candidate.expectedKm) return false;
+    if (!matchesRouteEnds(route, candidate.start, candidate.end, candidate.radius, candidate.endpointToleranceKm)) return false;
+    const tolerance = candidate.distanceTolerancePercent ?? 6;
+    if (Math.abs(actualKm - candidate.expectedKm) / candidate.expectedKm * 100 > tolerance) return false;
+    return candidate.requirements.every((requirement) =>
+      matchedSegmentNames.filter((name) => name.startsWith(requirement.prefix)).length >= requirement.min);
+  });
+  if (!item) return null;
+
+  const date = departureAt ? new Date(departureAt) : new Date();
+  const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
+  const weekend = day === 0 || day === 5 || day === 6;
+  return {
+    amount: weekend ? item.weekend : item.weekday,
+    weekdayAmount: item.weekday,
+    weekendAmount: item.weekend,
+    period: weekend ? "пятница–воскресенье" : "понедельник–четверг",
+    segments: [item.name],
+    confidence: "matched" as const,
+  };
+}
+
+
+/**
  * Complete route totals assembled from current operator tariffs are authoritative
  * for that exact corridor. They take precedence over adding local plaza rows,
  * which can overlap at entry/exit systems.
