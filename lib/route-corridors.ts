@@ -62,11 +62,12 @@ export function resolveCorridor(fromLabel: string, toLabel: string): CorridorDec
     return { corridor: "normal", autoDual: false, specialLegIndex: null, specialRates: null, reason: "ordinary_route" };
   }
 
+  const needsReview = policy.corridor === "manual_review";
   return {
     corridor: policy.corridor,
-    autoDual: true,
-    specialLegIndex: from ? 0 : 1,
-    specialRates: SPECIAL_TARIFF_RATES,
-    reason: policy.group === "borderline" ? "benchmark_required" : `static_policy:${policy.group}`,
+    autoDual: !needsReview,
+    specialLegIndex: needsReview ? null : from ? 0 : 1,
+    specialRates: needsReview ? null : SPECIAL_TARIFF_RATES,
+    reason: needsReview ? "benchmark_required" : `static_policy:${policy.group}`,
   };
 }
