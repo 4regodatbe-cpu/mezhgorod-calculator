@@ -56,13 +56,11 @@ export async function calculateLegTolls({
   confirmedFreeRoute,
   diagnosticFastValidation,
 }: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation }> {
-  const selectedFast = { provider: selectedFastProvider, route: selectedFastRoute };
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
   const legacyFamilies = detectedFamiliesFromLegacySegments(geometricTolls.segments);
-  const valhallaEvidence = selectedFastProvider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
 
   const productionM4 = await calculateProductionM4(
     routeGeometry,
