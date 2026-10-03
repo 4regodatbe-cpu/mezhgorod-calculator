@@ -1,6 +1,5 @@
 "use client";
 
-import { QualityNote } from "./route-card";
 import { distance, duration } from "./format";
 import type { Result } from "./types";
 
