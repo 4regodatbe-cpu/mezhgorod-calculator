@@ -67,7 +67,7 @@ export default function V2Page() {
 
 
 
-      <ResultPanels result={result} mode={mode} standardLeg={standardLeg} standardHasTolls={standardHasTolls} standardOptimal={standardOptimal} dualHasTolls={dualHasTolls} dualVariants={dualVariants} rates={rates} multiplier={multiplier} manualToll={manualToll} onManualToll={setManualToll} copiedKey={copiedKey} rate1={rate1} rate2={rate2} copyStandard={copyStandard} copyDual={copyDual}/>
+      <ResultPanels result={result} mode={mode} standardLeg={standardLeg} standardHasTolls={standardHasTolls} standardOptimal={standardOptimal} dualHasTolls={dualHasTolls} dualVariants={dualVariants} manualToll={manualToll} onManualToll={setManualToll} copiedKey={copiedKey} copyStandard={copyStandard} copyDual={copyDual}/>
       <div className="mt-4 grid gap-3 md:grid-cols-2"><FeedbackForm/><DonationCard/></div>
       <footer className="mx-auto mt-6 max-w-3xl pb-5 text-center text-xs leading-relaxed text-slate-500"><p className="flex items-center justify-center gap-1.5"><ShieldCheck className="h-4 w-4"/>Расчёт справочный. Фактический маршрут и тарифы операторов дорог могут измениться.</p></footer>
     </div>

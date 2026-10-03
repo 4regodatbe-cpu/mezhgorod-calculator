@@ -49,4 +49,29 @@ equal(review.reviewRequired, true, "borderline corridor must request review");
 equal(review.pricingSegments[0].type, "normal", "borderline route must use normal tariff");
 equal(review.totalPrice, 10_500, "borderline route uses normal total");
 
+const customized = calculateRoutePricing({
+  from: "Краснодар",
+  to: "Москва",
+  vehicle: "comfort",
+  normalRateOverrides: { comfort: 30 },
+  multiplier: 1.2,
+  legs: [{ from: "Краснодар", to: "Москва", distanceKm: 600 }],
+});
+equal(customized.pricingSegments[0].ratePerKm, 30, "user tariff override must reach the normal segment");
+equal(customized.totalPrice, 21_600, "urgent multiplier must apply after segment pricing");
+
+const manualSegments = calculateRoutePricing({
+  from: "Краснодар",
+  to: "Мариуполь",
+  vehicle: "standard",
+  manualRateByLeg: [20, 40],
+  legs: [
+    { from: "Краснодар", to: "Ростов-на-Дону", distanceKm: 200 },
+    { from: "Ростов-на-Дону", to: "Мариуполь", distanceKm: 300 },
+  ],
+});
+equal(manualSegments.pricingSegments[0].ratePerKm, 20, "first manually priced leg");
+equal(manualSegments.pricingSegments[1].ratePerKm, 70, "verified special corridor keeps its tariff");
+equal(manualSegments.totalPrice, 25_000, "manual and special segments compose into one total");
+
 console.log("Route pricing integration GREEN");

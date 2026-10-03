@@ -37,6 +37,14 @@ await expectStatus("dual mode requires midpoint", "/api/v2/calculate", {
 await expectStatus("malformed calculation JSON", "/api/v2/calculate", {
   method: "POST", headers: jsonHeaders, body: "{",
 }, 400);
+await expectStatus("invalid user tariff override", "/api/v2/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({
+    mode: "standard", from, to, rates: { standard: 25, comfort: -1, comfortPlus: 35, minivan: 50 },
+  }),
+}, 400);
+await expectStatus("invalid urgency multiplier", "/api/v2/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from, to, multiplier: 7 }),
+}, 400);
 await expectStatus("invalid verified calculation mode", "/api/v3/calculate", {
   method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "broken", from, to }),
 }, 400);

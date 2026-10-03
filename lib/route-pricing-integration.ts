@@ -39,12 +39,19 @@ export function calculateRoutePricing(input: {
   from: string;
   to: string;
   vehicle?: PricingVehicle;
+  normalRateOverrides?: Partial<Record<PricingVehicle, number>>;
+  manualRateByLeg?: Array<number | null | undefined>;
+  multiplier?: number;
 }) {
   const vehicle = input.vehicle ?? "comfort";
   const corridor = resolveCorridor(input.from, input.to);
   const pricingSegments: PricedSegment[] = [];
 
-  for (const leg of input.legs) {
+  const multiplier = Number.isFinite(input.multiplier) && (input.multiplier ?? 0) >= 1 && (input.multiplier ?? 0) <= 6
+    ? input.multiplier!
+    : 1;
+
+  for (const [legIndex, leg] of input.legs.entries()) {
     const distanceKm = Math.max(0, Math.round(leg.distanceKm * 10) / 10);
     if (distanceKm === 0) continue;
 
@@ -59,16 +66,22 @@ export function calculateRoutePricing(input: {
     );
 
     for (const descriptor of descriptors.segments) {
+      const manualRate = input.manualRateByLeg?.[legIndex];
+      const normalRateOverride = input.normalRateOverrides?.[vehicle];
       const ratePerKm = descriptor.tariffType === "special"
         ? decision.specialRates![VEHICLE_RATE_KEY[vehicle]]
-        : normalRate(vehicle, descriptor.distanceKm);
+        : Number.isFinite(manualRate) && manualRate! > 0
+          ? manualRate!
+          : Number.isFinite(normalRateOverride) && normalRateOverride! > 0
+            ? normalRateOverride!
+            : normalRate(vehicle, descriptor.distanceKm);
       pricingSegments.push({
         ...descriptor,
         type: descriptor.tariffType,
         from: leg.from,
         to: leg.to,
         ratePerKm,
-        amount: Math.round(descriptor.distanceKm * ratePerKm),
+        amount: Math.round(descriptor.distanceKm * ratePerKm * multiplier),
         reason: descriptor.tariffType === "special"
           ? decision.reason
           : decision.corridor === "manual_review"
@@ -85,5 +98,6 @@ export function calculateRoutePricing(input: {
     pricingSegments,
     totalPrice: pricingSegments.reduce((sum, segment) => sum + segment.amount, 0),
     reviewRequired: pricingSegments.some((segment) => segment.reviewRequired),
+    multiplier,
   };
 }

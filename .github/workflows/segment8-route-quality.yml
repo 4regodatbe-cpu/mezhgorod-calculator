@@ -18,6 +18,11 @@ on:
       - "lib/route-providers.ts"
       - "lib/safe-route.ts"
       - "lib/route-corridors.ts"
+      - "lib/route-pricing-segments.ts"
+      - "lib/route-pricing-integration.ts"
+      - "scripts/route-corridor-policy-test.ts"
+      - "scripts/route-pricing-integration-test.ts"
+      - "scripts/api-contract-smoke.mjs"
       - "scripts/safe-route-position-test.ts"
       - "scripts/segment5b2c2-m12-core-assertions.mjs"
       - "data/fixtures/m12-route-projections-2026-09-30.json"
@@ -50,6 +55,10 @@ jobs:
           node --experimental-strip-types scripts/route-quality-majority-test.ts
           node --experimental-strip-types scripts/safe-route-position-test.ts
           node --experimental-strip-types scripts/segment5b2c2-m12-core-assertions.mjs
+      - name: Corridor and segment tariff regressions
+        run: |
+          node --experimental-strip-types scripts/route-corridor-policy-test.ts
+          node --experimental-strip-types scripts/route-pricing-integration-test.ts
       - name: Offline route benchmark integrity
         run: pnpm test:route-benchmark
       - name: Keep benchmark data out of runtime routing
