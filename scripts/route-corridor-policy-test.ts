@@ -4,13 +4,17 @@ function assert(value: unknown, message: string): asserts value {
   if (!value) throw new Error(`Corridor policy regression failed: ${message}`);
 }
 
-const melitopol = resolveCorridor("Краснодар", "Мелитополь");
-assert(melitopol.corridor === "crimea_dzhankoy", "Krasnodar -> Melitopol must use Dzhankoy Crimea corridor");
-assert(melitopol.autoDual && melitopol.specialLegIndex === 1, "Melitopol route must auto-enable special second tariff leg");
+const genichesk = resolveCorridor("Краснодар", "Геническ");
+assert(genichesk.corridor === "crimea_dzhankoy", "Krasnodar -> Genichesk must use the Dzhankoy Crimea corridor");
+assert(genichesk.autoDual && genichesk.specialLegIndex === 1, "Crimea route must auto-enable its special second tariff leg");
 
-const reverseMelitopol = resolveCorridor("Мелитополь", "Анапа");
-assert(reverseMelitopol.corridor === "crimea_dzhankoy", "Melitopol -> Anapa must keep the same corridor");
-assert(reverseMelitopol.specialLegIndex === 0, "reverse special route must mark the first leg as special");
+const reverseGenichesk = resolveCorridor("Геническ", "Анапа");
+assert(reverseGenichesk.corridor === "crimea_dzhankoy", "Genichesk -> Anapa must keep the same corridor");
+assert(reverseGenichesk.specialLegIndex === 0, "reverse special route must mark the first leg as special");
+
+const melitopol = resolveCorridor("Краснодар", "Мелитополь");
+assert(melitopol.corridor === "manual_review", "Melitopol must stay out of the automatic Crimea corridor");
+assert(!melitopol.autoDual, "unverified Melitopol corridor must not auto-enable special pricing");
 
 const mariupol = resolveCorridor("Керчь", "Мариуполь");
 assert(mariupol.corridor === "m4_dnr", "Crimea -> Mariupol must use the M4/DNR corridor");
