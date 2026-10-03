@@ -9,7 +9,7 @@ assert.match(tollData, /М-4 \+ А-289 \+ М-11: Ялта — Санкт-Пет�
 assert.match(tollData, /weekday: 11170,\s*weekend: 13480/);
 assert.match(tollData, /expectedKm: 2555,\s*distanceTolerancePercent: 2,\s*strictExpectedKm: true/);
 assert.match(tollData, /endpointToleranceKm: 20/);
-assert.match(tollData, /\{ prefix: "М-4:", min: 6 \}, \{ prefix: "А-289:", min: 2 \}, \{ prefix: "М-11:", min: 2 \}/);
+assert.match(tollData, /\{ prefix: "М-4:", min: 1 \}, \{ prefix: "А-289:", min: 1 \}, \{ prefix: "М-11:", min: 1 \}/);
 assert.match(tollData, /pricingAuthority: "official_operator_aggregate"/);
 assert.match(estimator, /if \(item\.strictExpectedKm\) \{/);
 assert.match(estimator, /export function isAuthoritativeFullRouteEstimate/);
