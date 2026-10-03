@@ -14,6 +14,8 @@ import type { Place, Result, Leg, Trip, TollView } from "./components/types";
 
 
 
+function storedNumber(key: string, min: number, max: number, fallback: number) { if (typeof window === "undefined") return fallback; const saved = localStorage.getItem(key); return saved === null ? fallback : clampNumber(Number(saved), min, max, fallback); }
+
 export default function V2Page() {
   const [mode, setMode] = useState<"standard" | "dual">("standard");
   const [from, setFrom] = useState<Place>({ label: "" }); const [via, setVia] = useState<Place>({ label: "" }); const [to, setTo] = useState<Place>({ label: "" });
