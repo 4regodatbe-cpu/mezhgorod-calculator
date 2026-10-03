@@ -9,12 +9,17 @@ on:
       - "lib/tolls.ts"
       - "lib/toll-data/**"
       - "lib/toll-engine/m4-*.ts"
+      - "lib/toll-engine/m12-route-*.ts"
       - "app/v2/**"
       - "lib/route-quality.ts"
       - "lib/route-providers.ts"
       - "lib/safe-route.ts"
       - "lib/route-corridors.ts"
       - "scripts/safe-route-position-test.ts"
+      - "scripts/segment5b2c2-m12-core-assertions.mjs"
+      - "data/fixtures/m12-route-projections-2026-09-30.json"
+      - "data/tolls/m12-2026-03-02-category1.json"
+      - "data/tolls/m12-rvp-evidence-2026-09-30.json"
       - "benchmarks/routes/yandex-2026-10-02/**"
       - "scripts/segment8-route-quality-test.ts"
       - "scripts/route-quality-majority-test.ts"
@@ -41,6 +46,7 @@ jobs:
           node --experimental-strip-types scripts/segment8-route-quality-test.ts
           node --experimental-strip-types scripts/route-quality-majority-test.ts
           node --experimental-strip-types scripts/safe-route-position-test.ts
+          node --experimental-strip-types scripts/segment5b2c2-m12-core-assertions.mjs
       - name: Offline route benchmark integrity
         run: pnpm test:route-benchmark
       - name: Keep benchmark data out of runtime routing
