@@ -1,3 +1,5 @@
+import type { Coordinate } from "@/lib/tolls";
+
 export type RecoverySegment = {
   name: string;
   start: Coordinate;
