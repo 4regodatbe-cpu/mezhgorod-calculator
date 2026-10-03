@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Car, Download, ShieldCheck } from "lucide-react";
-import { FeedbackForm, DonationCard } from "./components/index";
+import { FeedbackForm } from "./components/feedback-form";
+import { DonationCard } from "./components/donation-card";
 import { CalculatorForm } from "./components/calculator-form";
 import { ResultPanels } from "./components/result-panels";
 import { defaults, tariffNames } from "./components/pricing-data";
