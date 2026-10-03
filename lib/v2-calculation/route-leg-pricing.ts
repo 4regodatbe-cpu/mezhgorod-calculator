@@ -1,4 +1,4 @@
-import { estimateTolls, type Coordinate } from "@/lib/tolls";
+import { estimateTolls, isAuthoritativeFullRouteEstimate, type Coordinate } from "@/lib/tolls";
 import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
@@ -83,7 +83,13 @@ export async function calculateLegTolls({
   let fastValidation: TollValidation;
   let routeCompositionBlocked = false;
 
-  if (composition.status === "priced" && composition.tolls) {
+  if (isAuthoritativeFullRouteEstimate(geometricTolls)) {
+    pricedTolls = geometricTolls;
+    fastValidation = compositionValidation(
+      [...legacyFamilies],
+      `Использован текущий тарифный итог для проверенного полного маршрута: ${geometricTolls.segments[0]}`,
+    );
+  } else if (composition.status === "priced" && composition.tolls) {
     pricedTolls = composition.tolls;
     fastValidation = compositionValidation(composition.priced, `Полный итог составлен из дорожных систем: ${composition.priced.join(", ")}`);
   } else if (composition.status === "unknown") {
