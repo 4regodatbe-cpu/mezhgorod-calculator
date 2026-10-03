@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Clipboard, Route, ShieldCheck } from "lucide-react";
+import { Check, Clipboard, Clock3, Route, ShieldCheck } from "lucide-react";
 import { PriceRows } from "./pricing-fields";
 import { defaults } from "./pricing-data";
 import { duration, distance } from "./format";
