@@ -6,9 +6,9 @@ import {
   MAX_ABSOLUTE_CONTINUITY_ERROR_KM,
   MAX_RELATIVE_CONTINUITY_ERROR,
   inferInternalMarkers,
-  projectM12Evidence,
   proveBoundaries,
 } from "./m12-route-evidence.ts";
+import { projectM12Evidence } from "./m12-route-projection.ts";
 import type { M12BoundaryCheck, M12ContinuityInterval, M12Coordinate, M12EvaluationInput, M12Projection, M12RouteResult, M12StrictSpan } from "./m12-route-types";
 export { projectM12Evidence } from "./m12-route-projection.ts";
 export type { M12BoundaryCheck, M12ContinuityInterval, M12Coordinate, M12EvaluationInput, M12Projection, M12RouteResult, M12StrictSpan } from "./m12-route-types";
