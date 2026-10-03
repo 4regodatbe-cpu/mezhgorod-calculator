@@ -7,6 +7,7 @@ const routes = [
   { id: "krasnodar-spb", from: { label: "Краснодар", position: { lat: 45.0355, lng: 38.9753 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
   { id: "golubitskaya-spb", from: { label: "Голубицкая", position: { lat: 45.3258, lng: 37.2761 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
   { id: "vityazevo-spb", from: { label: "Витязево", position: { lat: 45.0019, lng: 37.2821 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
+  { id: "yalta-spb", from: { label: "Ялта", position: { lat: 44.4952, lng: 34.1663 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
   { id: "kazan-yalta", from: { label: "Казань", position: { lat: 55.7961, lng: 49.1064 } }, to: { label: "Ялта", position: { lat: 44.4952, lng: 34.1663 } } },
   { id: "moscow-kazan", from: { label: "Москва", position: { lat: 55.7558, lng: 37.6173 } }, to: { label: "Казань", position: { lat: 55.7961, lng: 49.1064 } } },
   { id: "eysk-moscow", from: { label: "Ейск", position: { lat: 46.7115, lng: 38.2765 } }, to: { label: "Москва", position: { lat: 55.7558, lng: 37.6173 } } },
@@ -20,7 +21,7 @@ for (const item of routes) {
     const response = await fetch(`${base}/api/v2/calculate`, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ from: item.from, to: item.to, mode: "standard", departureAt: "2026-10-01T12:00:00+03:00", diagnostics: false }),
+      body: JSON.stringify({ from: item.from, to: item.to, mode: "standard", departureAt: "2026-10-03T14:00:00+03:00", diagnostics: false }),
       signal: AbortSignal.timeout(58_000),
     });
     const data = await response.json();
@@ -51,7 +52,7 @@ fs.mkdirSync("artifacts", { recursive: true });
 fs.writeFileSync("artifacts/live-user-route-audit.json", JSON.stringify(output, null, 2));
 console.log(JSON.stringify(output, null, 2));
 
-const longSpbIds = new Set(["krasnodar-spb", "golubitskaya-spb", "vityazevo-spb"]);
+const longSpbIds = new Set(["krasnodar-spb", "golubitskaya-spb", "vityazevo-spb", "yalta-spb"]);
 const longSpb = output.filter((row) => longSpbIds.has(row.id));
 const unresolvedLongSpb = longSpb.filter((row) => row.pricingStatus !== "priced" || !(Number(row.tollAmount) > 0));
 if (unresolvedLongSpb.length) throw new Error(`Long SPB route is not fully priced: ${unresolvedLongSpb.map((row) => row.id).join(", ")}`);
@@ -63,6 +64,7 @@ const expectedBands = new Map([
   ["krasnodar-spb", [10000, 13000]],
   ["golubitskaya-spb", [12000, 14500]],
   ["vityazevo-spb", [12000, 15000]],
+  ["yalta-spb", [12959, 13761]],
 ]);
 const outOfBand = longSpb.filter((row) => {
   const band = expectedBands.get(row.id);
@@ -77,6 +79,14 @@ if (!golubitskaya || Math.abs(Number(golubitskaya.tollAmount) - 13350) > 1500) {
 
 const pricedWithoutM11 = longSpb.filter((row) => row.pricingStatus === "priced" && !(row.tollSegments ?? []).some((segment) => String(segment).includes("М-11")));
 if (pricedWithoutM11.length) throw new Error(`Long SPB total exposed without M11 component: ${pricedWithoutM11.map((row) => row.id).join(", ")}`);
+
+const yalta = longSpb.find((row) => row.id === "yalta-spb");
+if (!yalta || !(yalta.tollSegments ?? []).includes("М-4 + А-289 + М-11: Ялта — Санкт-Петербург")) {
+  throw new Error(`Yalta→SPB must use the verified whole-route tariff override: ${yalta?.tollSegments?.join(", ") ?? "missing"}`);
+}
+if (Number(yalta.tollWeekend) !== 13480 || Number(yalta.tollWeekday) !== 11170) {
+  throw new Error(`Yalta→SPB operator tariff mismatch: ${yalta.tollWeekday}/${yalta.tollWeekend}`);
+}
 
 const falseCkad = longSpb.filter((row) => (row.tollSegments ?? []).some((segment) => String(segment).includes("ЦКАД")));
 if (falseCkad.length) throw new Error(`False CKAD component detected on M4→Moscow→M11 control routes: ${falseCkad.map((row) => row.id).join(", ")}`);
