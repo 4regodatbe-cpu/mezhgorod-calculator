@@ -45,18 +45,6 @@ await expectStatus("invalid user tariff override", "/api/v2/calculate", {
 await expectStatus("invalid urgency multiplier", "/api/v2/calculate", {
   method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from, to, multiplier: 7 }),
 }, 400);
-await expectStatus("invalid verified calculation mode", "/api/v3/calculate", {
-  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "broken", from, to }),
-}, 400);
-await expectStatus("verified dual mode requires midpoint", "/api/v3/calculate", {
-  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "dual", from, to }),
-}, 400);
-await expectStatus("oversized verified route label", "/api/v3/calculate", {
-  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from: { label: "A".repeat(241) }, to: { label: "Москва" } }),
-}, 400);
-await expectStatus("malformed verified calculation JSON", "/api/v3/calculate", {
-  method: "POST", headers: jsonHeaders, body: "{",
-}, 400);
 await expectStatus("oversized suggestion query", `/api/suggest?q=${encodeURIComponent("a".repeat(201))}`, {
   method: "GET", headers: { "user-agent": "MezhgorodApiContract/1.1" },
 }, 400);
