@@ -4,11 +4,6 @@ import { selectLiveRoute, MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, type RouteQualit
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import type { RouteTollComponentId } from "@/lib/toll-engine/route-toll-composition";
 
-const MIN_TOLL_VARIANT_DISTANCE_KM = 10;
-const MIN_TOLL_VARIANT_DISTANCE_PERCENT = 1;
-const MIN_TOLL_VARIANT_TIME_MINUTES = 15;
-const MIN_TOLL_VARIANT_TIME_PERCENT = 5;
-
 type FreeCandidate = { name: string; route: RouteWithGeometry };
 type SelectedFree = {
   route: RouteSummary;
