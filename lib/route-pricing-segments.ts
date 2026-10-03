@@ -1,4 +1,4 @@
-import { SPECIAL_TARIFF_RATES, type SpecialTariffRates } from "./route-corridors";
+import { SPECIAL_TARIFF_RATES, type SpecialTariffRates } from "./route-corridors.ts";
 
 export type PricingSegment = {
   distanceKm: number;
