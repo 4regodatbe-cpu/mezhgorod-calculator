@@ -1,5 +1,14 @@
 name: Live user-route toll audit
 on:
+  pull_request:
+    branches: [work/remove-v3-runtime-2026-10-02]
+    paths:
+      - "lib/toll-data/**"
+      - "lib/tolls.ts"
+      - "lib/v2-calculation/route-leg-pricing.ts"
+      - "scripts/live-user-route-audit.mjs"
+      - "scripts/known-route-toll-override-test.mjs"
+      - ".github/workflows/live-user-route-audit.yml"
   workflow_dispatch:
 permissions:
   contents: read
