@@ -25,7 +25,7 @@ export const FULL_ROUTES: FullRoute[] = [
     weekend: 13480,
     radius: 20,
     endpointToleranceKm: 20,
-    requirements: [{ prefix: "М-4:", min: 6 }, { prefix: "А-289:", min: 2 }, { prefix: "М-11:", min: 3 }],
+    requirements: [{ prefix: "М-4:", min: 6 }, { prefix: "А-289:", min: 2 }, { prefix: "М-11:", min: 2 }],
     expectedKm: 2555,
     distanceTolerancePercent: 2,
     strictExpectedKm: true,
