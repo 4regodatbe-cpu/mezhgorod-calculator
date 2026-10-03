@@ -2,10 +2,10 @@ import tariffSnapshot from "../../data/tolls/m12-2026-03-02-category1.json" with
 import evidenceSnapshot from "../../data/tolls/m12-rvp-evidence-2026-09-30.json" with { type: "json" };
 import type { M12BoundaryCheck, M12ContinuityInterval, M12Coordinate, M12Projection, M12StrictSpan } from "./m12-route-types";
 
-const DIRECT_CROSSING_RADIUS_KM = evidenceSnapshot.directCrossingRadiusKm;
-const CALIBRATION_MARGIN_KM = 2.5;
-const MAX_ABSOLUTE_CONTINUITY_ERROR_KM = 3;
-const MAX_RELATIVE_CONTINUITY_ERROR = 0.025;
+export const DIRECT_CROSSING_RADIUS_KM = evidenceSnapshot.directCrossingRadiusKm;
+export const CALIBRATION_MARGIN_KM = 2.5;
+export const MAX_ABSOLUTE_CONTINUITY_ERROR_KM = 3;
+export const MAX_RELATIVE_CONTINUITY_ERROR = 0.025;
 
 const officialMarkers = tariffSnapshot.sections.map((section) => section.rvpKm).sort((a, b) => a - b);
 const amountByMarker = new Map(tariffSnapshot.sections.map((section) => [section.rvpKm, section.category1Rub]));

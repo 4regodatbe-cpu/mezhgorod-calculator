@@ -1,6 +1,5 @@
 import tariffSnapshot from "../../data/tolls/m12-2026-03-02-category1.json" with { type: "json" };
 import evidenceSnapshot from "../../data/tolls/m12-rvp-evidence-2026-09-30.json" with { type: "json" };
-import { amountByMarker } from "@/lib/toll-engine/m12-tariffs";
 import {
   CALIBRATION_MARGIN_KM,
   DIRECT_CROSSING_RADIUS_KM,
@@ -13,6 +12,8 @@ import {
 import type { M12BoundaryCheck, M12ContinuityInterval, M12Coordinate, M12EvaluationInput, M12Projection, M12RouteResult, M12StrictSpan } from "./m12-route-types";
 export { projectM12Evidence } from "./m12-route-evidence";
 export type { M12BoundaryCheck, M12ContinuityInterval, M12Coordinate, M12EvaluationInput, M12Projection, M12RouteResult, M12StrictSpan } from "./m12-route-types";
+
+const amountByMarker = new Map(tariffSnapshot.sections.map((section) => [section.rvpKm, section.category1Rub]));
 
 function unknownResult(
   direct: Array<M12Projection & { crossed: true }>,
