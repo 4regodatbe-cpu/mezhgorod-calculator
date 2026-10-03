@@ -7,7 +7,7 @@ const routes = [
   { id: "krasnodar-spb", from: { label: "Краснодар", position: { lat: 45.0355, lng: 38.9753 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
   { id: "golubitskaya-spb", from: { label: "Голубицкая", position: { lat: 45.3258, lng: 37.2761 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
   { id: "vityazevo-spb", from: { label: "Витязево", position: { lat: 45.0019, lng: 37.2821 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
-  { id: "yalta-spb", from: { label: "Ялта", position: { lat: 44.4952, lng: 34.1663 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } } },
+  { id: "yalta-spb", from: { label: "Ялта", position: { lat: 44.4952, lng: 34.1663 } }, to: { label: "Санкт-Петербург", position: { lat: 59.9343, lng: 30.3351 } }, departureAt: "2026-10-03T14:00:00+03:00" },
   { id: "kazan-yalta", from: { label: "Казань", position: { lat: 55.7961, lng: 49.1064 } }, to: { label: "Ялта", position: { lat: 44.4952, lng: 34.1663 } } },
   { id: "moscow-kazan", from: { label: "Москва", position: { lat: 55.7558, lng: 37.6173 } }, to: { label: "Казань", position: { lat: 55.7961, lng: 49.1064 } } },
   { id: "eysk-moscow", from: { label: "Ейск", position: { lat: 46.7115, lng: 38.2765 } }, to: { label: "Москва", position: { lat: 55.7558, lng: 37.6173 } } },
@@ -21,7 +21,7 @@ for (const item of routes) {
     const response = await fetch(`${base}/api/v2/calculate`, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ from: item.from, to: item.to, mode: "standard", departureAt: "2026-10-03T14:00:00+03:00", diagnostics: false }),
+      body: JSON.stringify({ from: item.from, to: item.to, mode: "standard", departureAt: item.departureAt ?? "2026-10-01T12:00:00+03:00", diagnostics: false }),
       signal: AbortSignal.timeout(58_000),
     });
     const data = await response.json();
