@@ -6,7 +6,10 @@ on:
     paths:
       - "app/api/v2/calculate/route.ts"
       - "lib/route-quality.ts"
-      - "lib/route-providers.ts"\n      - "lib/safe-route.ts"\n      - "lib/route-corridors.ts"\n      - "scripts/safe-route-position-test.ts"
+      - "lib/route-providers.ts"
+      - "lib/safe-route.ts"
+      - "lib/route-corridors.ts"
+      - "scripts/safe-route-position-test.ts"
       - "benchmarks/routes/yandex-2026-10-02/**"
       - "scripts/segment8-route-quality-test.ts"
       - "scripts/route-quality-majority-test.ts"
@@ -31,7 +34,8 @@ jobs:
       - name: Pure live-provider selection tests
         run: |
           node --experimental-strip-types scripts/segment8-route-quality-test.ts
-          node --experimental-strip-types scripts/route-quality-majority-test.ts\n          node --experimental-strip-types scripts/safe-route-position-test.ts
+          node --experimental-strip-types scripts/route-quality-majority-test.ts
+          node --experimental-strip-types scripts/safe-route-position-test.ts
       - name: Offline route benchmark integrity
         run: pnpm test:route-benchmark
       - name: Keep benchmark data out of runtime routing
