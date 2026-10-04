@@ -185,3 +185,13 @@ PROJECT_PROGRESS.md датирован 2026-09-29, OPTIMIZATION_MASTER_PLAN.md �
 - **UI status:** the Ready Vercel Preview redirects to Vercel login. Preview interaction could not be tested in this session; no authentication bypass was attempted.
 - **Release state:** PR #10 remains open and draft. No merge or production publication occurred. The routing contour remains an approximate hand trace accepted by the user for this release; later city/zone adjustments remain possible.
 - **Next step:** obtain an authorized way to exercise the protected Preview UI, then review any remaining release gate without changing the contour unless explicitly requested.
+
+
+### 2026-10-04 — Production release attempt for V2
+
+- **User authorization:** the user explicitly requested publishing the current result to the working V2 so users can test it. This supersedes the earlier “do not publish without a separate request” hold for this release.
+- **V2 target verified:** the public V2 route is `https://mezhgorod-calculator.vercel.app/v2`; it opened without login and displayed the current calculator. Vercel project: `mezhgorod-calculator` (`prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie`). Current production deployment is `dpl_C7ee5VpPpYBsfNrxTGVr63AMA1hx` from `main` SHA `636e6801bdd2a3db6ce4714830dc8a05fc73b7c9`.
+- **Release artifact prepared:** ready Git preview `dpl_HDLbQ4Py6oZujosd1XEyB5HVZ6uq` is built from branch `feat/special-territory-geometry-policy-2026-10-03`, SHA `781e36e23d48051479a873fcc5a1ee22ca312f9c`; run #47 passed on this exact SHA (41 tests, TypeScript, Next build, live probe). It is the artifact intended for V2 production promotion.
+- **Attempt and blocker:** `vercel_request_promote` first returned 422 without a deployment scope. Supplying the project team scope `team_UFuw0UGXjMqBV2hJBxsWGAMS` and then its slug returned 403: the connected Vercel token is not authorized under scope `4regodatbe-5310` and must re-authenticate to that scope or use a token with access. The promotion did not occur; current production remains on SHA `636e6801...`. No GitHub branch or production setting was changed to work around this access block.
+- **PR state:** PR #10 remains open and draft; it is not merged. The branch is still ready for the next attempt after the Vercel connection is re-authorized.
+- **Resume action:** after Vercel access to scope `4regodatbe-5310` is restored, re-check latest branch/PR head, verify the matching preview deployment is READY and run #47 (or newer) is green, promote that exact deployment to production, then test `/v2` and a route calculation. Do not substitute the current `main` deployment.
