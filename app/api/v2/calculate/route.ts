@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     const code = error instanceof Error ? error.message : "UNKNOWN";
     const messages: Record<string, string> = {
-      MAINLAND_UNAVAILABLE: "Не удалось подтвердить материковый маршрут. Попробуйте позже.",
+      PREFERRED_ROUTE_UNAVAILABLE: "Не удалось построить маршрут выбранного направления. Попробуйте позже.",
       SPECIAL_TRANSIT_EXCLUDED: "Маршрут проходит через особую тарифную зону и исключён.",
       ADDRESS_NOT_FOUND: "Адрес не найден. Уточните город или населённый пункт.",
       GEOCODE_UNAVAILABLE: "Поиск адресов временно недоступен.",

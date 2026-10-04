@@ -158,3 +158,5 @@ PROJECT_PROGRESS.md датирован 2026-09-29, OPTIMIZATION_MASTER_PLAN.md �
 - **Код:** особая точка выбирается по координатам: B, если B — особый endpoint, иначе A; если оба особые, используется B. Код генерирует только один кандидат по геозоне и не переключается на другой при неудаче. Из вызовов выбора удалён запрос повторных per-leg времён; тарифное время не влияет на выбор направления. Выбор платной карточки и неизвестный toll остаются прежними по смыслу.
 - **Проверки:** локальные тесты/TypeScript/Next build здесь недоступны из-за отсутствия checkout и зависимостей; CI на новом commit должен проверить тесты направления, сборку и live probe.
 - **Ограничение:** точность полигона ограничена качеством картинки и ручной оцифровкой. Перед production его нужно заменить или сверить по точному векторному контуру. PR оставить черновым; merge и production не выполнять.
+
+- **Follow-up after first CI start:** removed a duplicate route geometry analysis and made the no-route error direction-neutral, since the preferred candidate can now be either Crimea or mainland. The API message no longer incorrectly calls every failure a mainland failure.
