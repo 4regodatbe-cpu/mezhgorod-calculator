@@ -198,3 +198,11 @@ PROJECT_PROGRESS.md датирован 2026-09-29, OPTIMIZATION_MASTER_PLAN.md �
 
 
 - **Authorization retry after user reconnect (2026-10-04):** verified PR/branch head `3c8c62fbc6969ae7f279b92653eb5e3202917180`, ready Preview `dpl_5t9PzydornM27fRSbCSSVmgRQHFb`, and green CI run #48 (`37199757895`: verify + live_probe success). Retrying promotion with both team ID and slug still returns HTTP 403 for scope `4regodatbe-5310`. Production is unchanged. The Vercel connection in this execution still lacks promotion permission despite the user’s reconnect; next available route is manual promotion from Vercel Dashboard by an account with that permission, or another Vercel connection/token with deployment promotion access. Do not ask the user to share a token in chat.
+
+### 2026-10-04 — повторная проверка доступа Vercel и публикации
+
+- **Сверка GitHub:** PR #10 остаётся open/draft/unmerged; актуальный head ветки — `e52de2889eef9db74c9c86eb9baeed28aa1593b8`. GitHub Actions run #49 (`37199988094`) завершился success. Vercel check на этом коммите тоже success.
+- **Готовый Preview:** Vercel API без явного scope прочитал deployment `dpl_GACo8fXJX1g3E2H5F85Zg2o9jM47`, READY, branch указан верно, SHA совпадает с head PR.
+- **Попытка Promote:** вызов без team scope вернул HTTP 422 `Resource cannot be processed`; повтор с team ID `team_UFuw0UGXjMqBV2hJBxsWGAMS` вернул HTTP 403, Vercel сообщает, что соединение не авторизовано для scope `4regodatbe-5310`. Следовательно, чтение доступно, но promotion этим подключением не разрешён.
+- **Проверка production после неуспешной попытки:** alias `mezhgorod-calculator.vercel.app` всё ещё указывает на READY deployment `dpl_C7ee5VpPpYBsfNrxTGVr63AMA1hx`, ветка `main`, SHA `636e6801bdd2a3db6ce4714830dc8a05fc73b7c9`. Новая версия не опубликована.
+- **Возобновление:** в Vercel Dashboard выберите проект `mezhgorod-calculator` в команде `4regodatbe-5310`, найдите deployment `GACo8fXJX1g3E2H5F85Zg2o9jM47` (SHA `e52de288...`) и нажмите **Promote to Production** аккаунтом с правом управления deployments. После этого проверить production alias и `/v2`. Токены и пароли не отправлять в чат.
