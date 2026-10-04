@@ -78,7 +78,8 @@ for (const sample of cases) for (const provider of providers) {
   const crimea = group.find(x => x.corridor === "crimea" && x.status === "verified");
   console.log(JSON.stringify({ comparison: sample.name, provider: provider.name,
     verified: Boolean(mainland && crimea), mainlandSpecialSeconds: mainland?.specialSeconds ?? null,
-    crimeaSpecialSeconds: crimea?.specialSeconds ?? null,
-    crimeaWithin50Percent: Boolean(mainland && crimea && mainland.specialSeconds > 0 && crimea.specialSeconds <= mainland.specialSeconds * 0.5) }));
+    mainlandRouteSeconds: mainland?.finalRouteSeconds ?? null, crimeaSpecialSeconds: crimea?.specialSeconds ?? null,
+    mainlandHalfTimeThresholdSeconds: mainland?.finalRouteSeconds ? mainland.finalRouteSeconds * 0.5 : null,
+    crimeaWithin50Percent: Boolean(mainland && crimea && mainland.finalRouteSeconds > 0 && crimea.specialSeconds <= mainland.finalRouteSeconds * 0.5) }));
 }
 await writeFile("special-territory-live-probe.json", JSON.stringify(reports, null, 2) + "\n");
