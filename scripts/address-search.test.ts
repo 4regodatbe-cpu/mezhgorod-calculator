@@ -191,7 +191,10 @@ test("Ukrainian locality spelling matches a Russian query and omits community su
   makeyevka.properties!.city = "Макіївська міська рада";
   const donetskResult = rankPhotonFeatures([donetsk], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
   const makeyevkaResults = rankPhotonFeatures([makeyevka], SPECIAL_TERRITORY_BOUNDARIES, "Макеевка");
-  assert.equal(donetskResult[0].label, "Донецьк — ДНР");
+  assert.equal(donetskResult[0].label, "Донецк — ДНР");
   assert.equal(makeyevkaResults[0].label, "Макеевка — ДНР");
   assert.equal(makeyevkaResults[0].id, "N-71");
+  const luhansk = feature("Луганськ", 39.3078, 48.574, 73, "city");
+  const luhanskResult = rankPhotonFeatures([luhansk], SPECIAL_TERRITORY_BOUNDARIES, "Луганск");
+  assert.equal(luhanskResult[0].label, "Луганск — ЛНР");
 });

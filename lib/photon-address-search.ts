@@ -113,7 +113,14 @@ const placeSearchAliases: Record<string, string[]> = {
   макеевка: ["Макіївка"],
 };
 const russianLocalityNames: Record<string, string> = {
+  донецк: "Донецк",
+  луганск: "Луганск",
   макиивка: "Макеевка",
+  мелитополь: "Мелитополь",
+  мариуполь: "Мариуполь",
+  запорижжя: "Запорожье",
+  бердянск: "Бердянск",
+  енергодар: "Энергодар",
 };
 
 function regionAliases(query: string): string[] {

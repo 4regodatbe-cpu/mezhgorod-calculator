@@ -17,6 +17,9 @@ for (const query of queries) {
   }));
   const features = outcomes.flatMap((outcome) => outcome.status === "fulfilled" ? outcome.value : []);
   const items = rankPhotonFeatures(features, zones, query);
+  if (query === "Донецк") {
+    assert.equal(items[0]?.label, "Донецк — ДНР", "the DNR locality should use its Russian product label");
+  }
   if (query === "Москва") {
     assert.equal(items[0]?.label, "Москва, Россия", "the Moscow city must outrank unrelated same-name objects in priority territories");
   }
