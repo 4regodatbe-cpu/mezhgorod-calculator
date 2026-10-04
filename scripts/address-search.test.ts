@@ -19,12 +19,20 @@ test("searches globally and separately within Ukraine without unsupported langua
 });
 
 
-test("oblast queries search provider aliases in Ukraine's state layer", () => {
-  const urls = photonSearchUrls("Донецкая область").map((value) => new URL(value));
-  assert.equal(urls.length, 4);
-  assert.deepEqual(urls.slice(2).map((url) => url.searchParams.get("q")), ["Донецька область", "Donetsk Oblast"]);
-  assert.ok(urls.slice(2).every((url) => url.searchParams.get("countrycode") === "UA"));
-  assert.ok(urls.slice(2).every((url) => url.searchParams.get("layer") === "state"));
+test("all special-oblast queries search provider aliases in Ukraine's state layer", () => {
+  const cases = [
+    ["Донецкая область", ["Донецька область", "Donetsk Oblast"]],
+    ["Луганская область", ["Луганська область", "Luhansk Oblast"]],
+    ["Запорожская область", ["Запорізька область", "Zaporizhzhia Oblast"]],
+    ["Херсонская область", ["Херсонська область", "Kherson Oblast"]],
+  ] as const;
+  for (const [query, aliases] of cases) {
+    const urls = photonSearchUrls(query).map((value) => new URL(value));
+    assert.equal(urls.length, 4, query);
+    assert.deepEqual(urls.slice(2).map((url) => url.searchParams.get("q")), aliases, query);
+    assert.ok(urls.slice(2).every((url) => url.searchParams.get("countrycode") === "UA"), query);
+    assert.ok(urls.slice(2).every((url) => url.searchParams.get("layer") === "state"), query);
+  }
 });
 \ntest("same-name city inside a special ADM1 polygon ranks above its Russian namesake by coordinates", () => {
   const rostovDonetsk = feature("Донецк", 39.7, 47.23, 1);
