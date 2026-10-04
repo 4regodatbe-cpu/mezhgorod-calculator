@@ -113,7 +113,7 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const zoneRank = exactName ? (territory ? 100 : crimea ? 80 : 0) : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
-      score: zoneRank + placeRank,
+      score: zoneRank + (exactName ? 10 : 0) + placeRank,
       index,
       key: id,
       item: {
