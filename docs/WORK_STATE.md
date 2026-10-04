@@ -3,7 +3,7 @@
 **Обновлено:** 2026-10-04  
 **Ветка:** feat/special-territory-geometry-policy-2026-10-03  
 **PR #10:** открыт, draft; base work/remove-v3-runtime-2026-10-02.  
-**Актуальный head на момент записи:** 6d0148b15361653de054fe4766b1f851e601b9fc (последние code changes и tests; полный CI run #23 success). Перед продолжением сверить head в GitHub.
+**Последний проверенный code/test head:** 6d0148b15361653de054fe4766b1f851e601b9fc (CI run #23 success). Журнал обновлён после этого commit; актуальный PR head всегда сверять в GitHub.
 
 > В новом чате сначала сверить настоящий PR head и удалённую ветку. SHA выше — контрольная запись, не замена проверке GitHub.
 
