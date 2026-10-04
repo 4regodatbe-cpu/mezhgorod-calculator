@@ -1,4 +1,5 @@
 import { classifyTerritory, type VerifiedTerritory } from "./special-territory-geometry.ts";
+import { inCrimea } from "./special-territory-policy.ts";
 import type { Suggestion } from "../app/v2/components/types.ts";
 
 export type PhotonFeature = {
@@ -25,25 +26,43 @@ function uniqueParts(parts: unknown[]): string[] {
   });
 }
 
-function labelOf(feature: PhotonFeature): string {
+const specialLabels = {
+  dnr: "ДНР",
+  lnr: "ЛНР",
+  zaporizhzhia: "Запорожская область",
+  kherson: "Херсонская область",
+} as const;
+
+function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean): { title: string; label: string; region: string } {
   const p = feature.properties ?? {};
   const street = [p.street, p.housenumber].map(text).filter(Boolean).join(", ");
-  const primary = text(p.name) || street || text(p.city);
-  return uniqueParts([primary, p.city, p.district, p.county, p.state, p.country]).join(", ");
-}
+  const name = text(p.name) || street || text(p.city);
+  const areaName = territory ? specialLabels[territory] : crimea ? "Крым" : null;
+  const providerRegion = uniqueParts([p.city, p.district, p.county, p.state]);
 
-function regionOf(feature: PhotonFeature): string {
-  const p = feature.properties ?? {};
-  return uniqueParts([p.city, p.district, p.county, p.state, p.country]).join(", ");
-}
-
-function isInsideSpecialTerritory(lng: number, lat: number, zones: VerifiedTerritory[]): boolean {
-  try {
-    return classifyTerritory({ lng, lat }, zones) !== null;
-  } catch {
-    // A point exactly on an ambiguous boundary stays selectable but receives no ranking boost.
-    return false;
+  // Keep oblast-name results as oblast names; city/locality results use the requested compact display names.
+  if (territory && /область$/iu.test(name)) {
+    return { title: name, label: name, region: name };
   }
+  if (areaName) {
+    const locality = uniqueParts([name, p.city]).join(", ");
+    const label = locality ? `${locality} — ${areaName}` : areaName;
+    return { title: label, label, region: areaName };
+  }
+
+  const label = uniqueParts([name, ...providerRegion, p.country]).join(", ");
+  return { title: name, label, region: uniqueParts([...providerRegion, p.country]).join(", ") };
+}
+
+function classifyForDisplay(lng: number, lat: number, zones: VerifiedTerritory[]) {
+  try {
+    const territory = classifyTerritory({ lng, lat }, zones);
+    if (territory) return { territory, crimea: false };
+  } catch {
+    // Boundary-ambiguous suggestions remain selectable without a political display override or ranking boost.
+    return { territory: null, crimea: false };
+  }
+  return { territory: null, crimea: inCrimea({ lng, lat }) };
 }
 
 /** Query globally and in Ukraine separately so global top-result ranking cannot hide places in the special ADM1 polygons. */
@@ -58,28 +77,30 @@ export function photonSearchUrls(query: string): string[] {
   return [makeUrl(), makeUrl("UA")];
 }
 
-/** Keep Photon relevance order for ties, while lifting geocoded points inside the four tariff polygons. */
+/** Order suggestions and display regional names exclusively from each valid geocoded coordinate. */
 export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTerritory[], maxItems = 10): Suggestion[] {
   const candidates = features.flatMap((feature, index) => {
     const coordinates = feature.geometry?.coordinates;
     const p = feature.properties ?? {};
-    const label = labelOf(feature);
     if (!coordinates || coordinates.length !== 2 || !coordinates.every(Number.isFinite) ||
-        coordinates[1] < -90 || coordinates[1] > 90 || coordinates[0] < -180 || coordinates[0] > 180 || !label) return [];
-    const name = text(p.name) || text(p.city) || label;
+        coordinates[1] < -90 || coordinates[1] > 90 || coordinates[0] < -180 || coordinates[0] > 180) return [];
+    const { territory, crimea } = classifyForDisplay(coordinates[0], coordinates[1], zones);
+    const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
+    if (!fallbackLabel) return [];
+    const { title, label, region } = displayName(feature, territory, crimea);
     const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
     const placeRank = ["city", "town", "village", "hamlet", "locality", "municipality"].includes(placeType) ? 1 : 0;
-    const specialRank = isInsideSpecialTerritory(coordinates[0], coordinates[1], zones) ? 1 : 0;
+    const zoneRank = territory || crimea ? 1 : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
-      score: specialRank * 4 + placeRank,
+      score: zoneRank * 4 + placeRank,
       index,
       key: id,
       item: {
         id,
-        title: name,
+        title,
         label,
-        region: regionOf(feature),
+        region,
         position: { lat: coordinates[1], lng: coordinates[0] },
       } satisfies Suggestion,
     }];
