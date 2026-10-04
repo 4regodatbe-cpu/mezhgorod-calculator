@@ -34,7 +34,8 @@ test("all special-oblast queries search provider aliases in Ukraine's state laye
     assert.ok(urls.slice(2).every((url) => url.searchParams.get("layer") === "state"), query);
   }
 });
-\ntest("same-name city inside a special ADM1 polygon ranks above its Russian namesake by coordinates", () => {
+
+test("same-name city inside a special ADM1 polygon ranks above its Russian namesake by coordinates", () => {
   const rostovDonetsk = feature("Донецк", 39.7, 47.23, 1);
   const specialDonetsk = feature("Донецк", 37.8029, 48.0156, 2);
   specialDonetsk.properties!.country = "Россия";
