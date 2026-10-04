@@ -34,6 +34,24 @@ test("uses real leg seconds, never proportional route duration",()=>{
   assert.equal(measureTerritoryLegTimes(route,[null,null,null],synthetic).verified,false);
   assert.equal(measureTerritoryLegTimes({...route,coordinates:[[-1,0],[3,0]]},[null,"dnr",null],synthetic).verified,false);
 });
+test("timing plan merges adjacent special administrative polygons as one tariff class",()=>{
+  const touching=synthetic.map(zone=>zone.id==="lnr"?{...zone,geometry:{type:"Polygon" as const,coordinates:[[[2,-1],[4,-1],[4,1],[2,1],[2,-1]] as GeoPoint[]]}}:zone);
+  const timedLeg={meters:200000,seconds:700,coordinates:[[1,0],[3,0]] as GeoPoint[]};
+  const timedRoute={...timedLeg,legs:[timedLeg]};
+  const plan=territoryTimingPlan(timedRoute,touching);
+  assert.equal(plan.expected.length,1);
+  assert.equal(plan.expected[0]!==null,true);
+  assert.deepEqual(measureTerritoryLegTimes(timedRoute,plan.expected,touching),{verified:true,specialSeconds:700});
+});
+test("sub-meter boundary fragment creates no zero-length leg and counts whole leg conservatively",()=>{
+  const sliver=synthetic.map(zone=>zone.id==="dnr"?{...zone,geometry:{type:"Polygon" as const,coordinates:[[[2,-1],[2.000005,-1],[2.000005,1],[2,1],[2,-1]] as GeoPoint[]]}}:zone);
+  const timedLeg={meters:600,seconds:900,coordinates:[[1.995,0],[2.00001,0]] as GeoPoint[]};
+  const timedRoute={...timedLeg,legs:[timedLeg]};
+  const plan=territoryTimingPlan(timedRoute,sliver);
+  assert.equal(plan.positions.length,2);
+  assert.deepEqual(plan.expected,[null]);
+  assert.deepEqual(measureTerritoryLegTimes(timedRoute,plan.expected,sliver),{verified:true,specialSeconds:900});
+});
 test("manual override survives calculations/activity, expires only after idle/new session",()=>{
   const session={override:"standard" as const,lastActivity:1000};
   assert.equal(activeOverride(session,2000),"standard");
