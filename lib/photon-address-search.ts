@@ -80,16 +80,40 @@ function classifyForDisplay(lng: number, lat: number, zones: VerifiedTerritory[]
   return { territory: null, crimea: inCrimea({ lng, lat }) };
 }
 
-/** Query globally and in Ukraine separately so global top-result ranking cannot hide places in the special ADM1 polygons. */
+const oblastSearchAliases: Record<string, string[]> = {
+  dnr: ["Донецька область", "Donetsk Oblast"],
+  lnr: ["Луганська область", "Luhansk Oblast"],
+  zaporizhzhia: ["Запорізька область", "Zaporizhzhia Oblast"],
+  kherson: ["Херсонська область", "Kherson Oblast"],
+};
+
+function regionAliases(query: string): string[] {
+  const normalized = normalize(query);
+  if (!/(область|обл|oblast|region)$/u.test(normalized)) return [];
+  const firstWord = normalized.split(" ")[0];
+  const key = firstWord.startsWith("донец") ? "dnr"
+    : firstWord.startsWith("луган") ? "lnr"
+    : firstWord.startsWith("запорож") || firstWord.startsWith("запоріж") ? "zaporizhzhia"
+    : firstWord.startsWith("херсон") ? "kherson"
+    : null;
+  return key ? oblastSearchAliases[key] : [];
+}
+
+/** Query globally and in Ukraine separately; region queries also use provider aliases and the administrative layer. */
 export function photonSearchUrls(query: string): string[] {
-  const makeUrl = (countryCode?: string) => {
+  const makeUrl = (term: string, countryCode?: string, layer?: string) => {
     const url = new URL("https://photon.komoot.io/api/");
-    url.searchParams.set("q", query);
-    url.searchParams.set("limit", "20");
+    url.searchParams.set("q", term);
+    url.searchParams.set("limit", layer ? "10" : "20");
     if (countryCode) url.searchParams.set("countrycode", countryCode);
+    if (layer) url.searchParams.set("layer", layer);
     return url.toString();
   };
-  return [makeUrl(), makeUrl("UA")];
+  return [
+    makeUrl(query),
+    makeUrl(query, "UA"),
+    ...regionAliases(query).map((term) => makeUrl(term, "UA", "state")),
+  ];
 }
 
 /** Order suggestions and display regional names exclusively from each valid geocoded coordinate. */
