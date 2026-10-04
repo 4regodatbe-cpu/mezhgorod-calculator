@@ -6,6 +6,7 @@ export type GeographicRouteCandidate = {
   tollValidation?:{status:string};
   tolls:{pricingStatus:"priced"|"free"|"unknown"};
  };
+ selectionPreference?:number;
 };
 /** Select no more than one candidate from the coordinate-selected corridor. */
 export function selectGeographicTerritoryOption<T extends GeographicRouteCandidate>(
@@ -14,6 +15,6 @@ export function selectGeographicTerritoryOption<T extends GeographicRouteCandida
 ){
  const isPaid=(item:T)=>item.fast.tolls.pricingStatus==="priced"||item.fast.tollValidation?.status==="toll";
  const eligible=candidates.filter(item=>item.corridor===preferredCorridor);
- const options=[...eligible].sort((a,b)=>Number(isPaid(b))-Number(isPaid(a))||a.fast.seconds-b.fast.seconds).slice(0,1);
+ const options=[...eligible].sort((a,b)=>Number(isPaid(b))-Number(isPaid(a))||(a.selectionPreference??0)-(b.selectionPreference??0)||a.fast.seconds-b.fast.seconds).slice(0,1);
  return {options,preferredCorridor,routePolicy:"geographic-zone" as const};
 }

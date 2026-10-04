@@ -31,7 +31,8 @@ test("geographic route zone selects one corridor without forcing a mainland deto
  assert.deepEqual(candidatePlans(moscow,d,zones)[0].positions,[moscow,d],"mainland destination does not force M-4/EAST waypoints");
  assert.deepEqual(candidatePlans(d,moscow,zones)[0].positions,[d,moscow],"reverse mainland route uses the same direct controls");
  const ordinary=candidatePlans(c,k,zones);assert.equal(ordinary.length,1);assert.ok(ordinary[0].positions.some(p=>p.lng===36.7161));
- assert.equal(followsPlan([[k.lng,k.lat],[d.lng,d.lat]],donetskPlans[0].positions,"mainland",true),false);
+ assert.equal(followsPlan([[k.lng,k.lat],[d.lng,d.lat]],donetskPlans[0].positions,"mainland",true),true,"direct mainland route is accepted");
+ assert.equal(followsPlan([[k.lng,k.lat],[34.1689,44.4988],[d.lng,d.lat]],donetskPlans[0].positions,"mainland",true),false,"mainland route crossing Crimea is still rejected");
  const kherson={lat:46.6354,lng:32.6169};
  assert.equal(candidatePlans(kherson,d,zones)[0].corridor,"mainland","special destination outside the routing zone selects mainland");
  assert.equal(candidatePlans(d,kherson,zones)[0].corridor,"crimea","reversed trip uses its special destination inside the routing zone");
@@ -79,6 +80,16 @@ test("manual override survives calculations/activity, expires only after idle/ne
   assert.equal(activeOverride({override:null,lastActivity:0},1000),null);
 });
 
+test("geographic selector prefers route-quality selection before faster outliers",()=>{
+ const candidate=(preference:number,seconds:number,pricingStatus:"priced"|"unknown"="priced")=>({
+  corridor:"mainland" as const,
+  provider:preference===0?"Valhalla":"OSRM",
+  selectionPreference:preference,
+  fast:{seconds,tolls:{pricingStatus}},
+ });
+ const selected=selectGeographicTerritoryOption([candidate(1,58000),candidate(0,59000)],"mainland");
+ assert.equal(selected.options[0].provider,"Valhalla");
+});
 test("geographic selector ignores elapsed-time evidence and preserves toll uncertainty",()=>{
  const candidate=(corridor:"mainland"|"crimea",pricingStatus:"priced"|"free"|"unknown",seconds=20000,provider="OSRM")=>({corridor,provider,fast:{seconds,tolls:{pricingStatus}}});
  const mainland=candidate("mainland","priced"),crimea=candidate("crimea","unknown",100);

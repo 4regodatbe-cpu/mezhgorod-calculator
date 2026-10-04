@@ -50,9 +50,12 @@ test('server geocoding automatically enables special rates; manual ordinary rema
   const body=await r.json();assert.equal(r.status,200,JSON.stringify(body));assert.equal(body.mode,'dual');assert.equal(body.options.length,1);
   const segments=body.options[0].fast.pricingByVehicle.comfort.pricingSegments;
   assert.ok(segments.some((s:{type:string;ratePerKm:number})=>s.type==='special'&&s.ratePerKm===81));
-  assert.ok(requestedPaths.some(p=>p.some(([lng])=>lng===39.86)),'mainland candidate selected by destination coordinates');
+  assert.ok(requestedPaths.some(p=>p.length===2&&p[0][0]===from.position.lng&&p[1][0]===37.8029),'mainland candidate routes directly to the special endpoint');
+  assert.equal(requestedPaths.some(p=>p.some(([lng])=>lng===39.86)),false,'mainland route does not force an M-4 waypoint');
   assert.equal(requestedPaths.some(p=>p.some(([lng])=>lng===36.7161)),false,'outside-zone destination does not request Crimea');
   assert.ok(body.options.every((o:{free:unknown;freeCandidate:unknown})=>o.free===null&&o.freeCandidate===null));
+  assert.equal(body.options[0].fast.quality.status,'warning','provider distance disagreement is surfaced on special routes');
+  assert.ok(body.options[0].fast.quality.providers.includes('Valhalla')&&body.options[0].fast.quality.providers.includes('OSRM'));
   const manual=await POST(req({from,to:point(37.8029,48.0156),mode:'standard',modeOverride:true}));const m=await manual.json();assert.equal(manual.status,200);assert.equal(m.mode,'standard');assert.equal(m.automaticMode,'dual');assert.ok(m.options[0].fast.pricingByVehicle.comfort.pricingSegments.every((s:{type:string})=>s.type==='normal'));
 });
 test('transit is removed even in manual ordinary mode, not returned as zero price',async()=>{
