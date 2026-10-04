@@ -19,6 +19,14 @@ test("searches globally and separately within Ukraine without unsupported langua
 });
 
 
+test("Russian Makeyevka query also searches Photon using the Ukrainian locality spelling", () => {
+  const urls = photonSearchUrls("Макеевка").map((value) => new URL(value));
+  assert.equal(urls.length, 3);
+  assert.equal(urls[2].searchParams.get("q"), "Макіївка");
+  assert.equal(urls[2].searchParams.get("countrycode"), "UA");
+  assert.equal(urls[2].searchParams.get("layer"), null);
+});
+
 test("all special-oblast queries search provider aliases in Ukraine's state layer", () => {
   const cases = [
     ["Донецкая область", ["Донецька область", "Donetsk Oblast"]],
@@ -70,6 +78,13 @@ test("same-name city inside a special ADM1 polygon ranks above its Russian names
   assert.equal(results[0].title, "Донецк — ДНР");
   assert.doesNotMatch(results[0].label, /Украина|Россия/);
   assert.match(results[1].label, /Ростовская область/);
+});
+
+test("Ukrainian Makeyevka spelling is matched and displayed in Russian for a Russian query", () => {
+  const makeyevka = feature("Макіївка", 37.9028, 48.0171, 72, "town");
+  const results = rankPhotonFeatures([makeyevka], SPECIAL_TERRITORY_BOUNDARIES, "Макеевка");
+  assert.equal(results[0].label, "Макеевка — ДНР");
+  assert.equal(results[0].title, "Макеевка — ДНР");
 });
 
 test("special place remains first when merged from the country-filtered query after global results", () => {

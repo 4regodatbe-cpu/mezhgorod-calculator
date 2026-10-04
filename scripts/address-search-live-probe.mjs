@@ -20,6 +20,9 @@ for (const query of queries) {
   if (query === "Москва") {
     assert.equal(items[0]?.label, "Москва, Россия", "the Moscow city must outrank unrelated same-name objects in priority territories");
   }
+  if (query === "Макеевка") {
+    assert.equal(items[0]?.label, "Макеевка — ДНР", "the DNR namesake must be found through the Ukrainian provider spelling");
+  }
   const rendered = items.slice(0, 8).map((item) => ({
     title: item.title,
     label: item.label,
