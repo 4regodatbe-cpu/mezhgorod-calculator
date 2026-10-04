@@ -6,6 +6,7 @@ import { splitRouteByTerritory } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
 import { calculateLegTolls } from "../lib/v2-calculation/route-leg-pricing.ts";
 import { tollsForApi } from "../lib/v2-calculation/free-route-selection.ts";
+import { calculateM4Core } from "../lib/toll-engine/m4-core.ts";
 
 const krasnodar = { label: "Krasnodar", position: { lat: 45.04, lng: 38.98 } };
 const donetsk = { label: "Donetsk", position: { lat: 48.0158753, lng: 37.8013407 } };
@@ -99,7 +100,11 @@ for (const sample of cases) {
             diagnosticFastValidation: null,
           });
           const tolls = tollsForApi(priced.tolls, priced.fastValidation);
+          const m4 = await calculateM4Core(route.coordinates);
           row.tollProbe = {
+            m4Plazas: m4.pricing.pricedPlazas.map((item) => ({ km: item.km, weekday: item.weekday, weekend: item.weekend, verification: item.verification })),
+            m4Unresolved: m4.pricing.unresolved.map((item) => ({ code: item.code, kms: item.kms, message: item.message })),
+            m4ConfirmedChecks: m4.validation.checks.filter((item) => item.status === "confirmed").map((item) => ({ km: item.km, evidence: item.evidence })),
             pricingStatus: tolls.pricingStatus,
             amount: tolls.amount,
             weekdayAmount: tolls.weekdayAmount,
