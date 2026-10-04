@@ -42,14 +42,33 @@ const oblastLabels = {
   kherson: "Херсонская область",
 } as const;
 
+const localityRanks: Record<string, number> = {
+  city: 6,
+  town: 5,
+  municipality: 4,
+  locality: 4,
+  village: 3,
+  hamlet: 2,
+};
+
+function localityRank(feature: PhotonFeature, exactName: boolean): number {
+  const p = feature.properties ?? {};
+  const key = text(p.osm_key).toLocaleLowerCase("en-US");
+  const value = text(p.osm_value).toLocaleLowerCase("en-US");
+  const rank = localityRanks[value];
+  if (rank && (!key || key === "place")) return rank;
+  if (exactName && value === "administrative" && (!key || key === "boundary") &&
+      !/(област|oblast)$/iu.test(text(p.name))) return 4;
+  return 0;
+}
+
 function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean, exactName: boolean): { title: string; label: string; region: string } {
   const p = feature.properties ?? {};
   const street = [p.street, p.housenumber].map(text).filter(Boolean).join(", ");
   const name = text(p.name) || street || text(p.city);
   const areaName = territory ? specialLabels[territory] : crimea ? "Крым" : null;
   const providerRegion = uniqueParts([p.city, p.district, p.county, p.state]);
-  const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
-  const isLocality = ["city", "town", "village", "hamlet", "locality", "municipality"].includes(placeType);
+  const isLocality = localityRank(feature, exactName) > 0;
 
   // Region-level search results stay oblast names; city/locality results use compact product labels.
   if (territory && /(область|oblast)$/iu.test(name)) {
@@ -60,9 +79,12 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
     if (crimea && /^(республика крым|крым|crimea)$/iu.test(name)) {
       return { title: "Крым", label: "Крым", region: "Крым" };
     }
-    const locality = uniqueParts([name, isLocality || exactName ? "" : p.city]).join(", ");
-    const label = locality ? `${locality} — ${areaName}` : areaName;
-    return { title: label, label, region: areaName };
+    if (isLocality) {
+      const label = `${name} — ${areaName}`;
+      return { title: label, label, region: areaName };
+    }
+    const label = uniqueParts([name, ...providerRegion, areaName]).join(", ");
+    return { title: name || areaName, label: label || areaName, region: areaName };
   }
 
   const label = uniqueParts([name, ...providerRegion, p.country]).join(", ");
@@ -134,18 +156,23 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
         (queryName.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(queryName))));
     const { title, label, region } = displayName(feature, territory, crimea, exactName);
     const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
-    const placeRank = ["city", "town", "village", "hamlet", "locality", "municipality"].includes(placeType) ? 1 : 0;
+    const regionQuery = /(област|обл|oblast|region)$/u.test(queryName);
+    const locality = localityRank(feature, exactName);
+    const administrativeRegion = regionQuery && placeType === "administrative" && exactName ? 4 : 0;
+    const placeRank = Math.max(locality, administrativeRegion);
     const normalizedState = normalize(text(p.state));
     // Keep exact matches in the five high-demand areas ahead of ordinary namesakes.
     // For Донецк specifically, place Ростовская область second as requested.
     const rostovDonetsk = exactName && queryName === "донецк" && normalizedName === "донецк" &&
       /^(ростов|rostov)/u.test(normalizedState);
-    const zoneRank = exactName
-      ? territory ? 500 : rostovDonetsk ? 400 : crimea ? 300 : 100
+    // Territory priority applies to named settlements and exact oblast results,
+    // never to POIs/street names that happen to share a place name.
+    const territoryRank = exactName && placeRank > 0
+      ? territory ? 150 : rostovDonetsk ? 135 : crimea ? 120 : 0
       : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
-      score: zoneRank + (exactName ? 10 : 0) + placeRank,
+      score: (exactName ? 10_000 : 0) + placeRank * 100 + territoryRank + (exactName ? 10 : 0),
       index,
       key: id,
       item: {

@@ -1,10 +1,11 @@
+import assert from "node:assert/strict";
 import { writeFile } from "node:fs/promises";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
 import { photonSearchUrls, rankPhotonFeatures } from "../lib/photon-address-search.ts";
 import { classifyTerritory } from "../lib/special-territory-geometry.ts";
 import { inCrimea } from "../lib/special-territory-policy.ts";
 
-const queries = ["Донецк", "Донецкая область", "Макеевка", "Луганск", "Ялта", "Севастополь", "Краснодар"];
+const queries = ["Донецк", "Донецкая область", "Макеевка", "Луганск", "Ялта", "Севастополь", "Краснодар", "Москва"];
 const reports = [];
 for (const query of queries) {
   const outcomes = await Promise.allSettled(photonSearchUrls(query).map(async (url) => {
@@ -16,6 +17,9 @@ for (const query of queries) {
   }));
   const features = outcomes.flatMap((outcome) => outcome.status === "fulfilled" ? outcome.value : []);
   const items = rankPhotonFeatures(features, zones, query);
+  if (query === "Москва") {
+    assert.equal(items[0]?.label, "Москва, Россия", "the Moscow city must outrank unrelated same-name objects in priority territories");
+  }
   const rendered = items.slice(0, 8).map((item) => ({
     title: item.title,
     label: item.label,

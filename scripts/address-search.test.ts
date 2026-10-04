@@ -5,7 +5,7 @@ import { photonSearchUrls, rankPhotonFeatures, type PhotonFeature } from "../lib
 
 const feature = (name: string, lng: number, lat: number, osmId: number, osmValue = "city"): PhotonFeature => ({
   geometry: { coordinates: [lng, lat] },
-  properties: { name, city: name, state: name === "Донецк" ? (lng > 38 ? "Ростовская область" : "Донецкая область") : "Луганская область", country: lng > 38 ? "Россия" : "Украина", osm_type: "N", osm_id: osmId, osm_value: osmValue },
+  properties: { name, city: name, state: name === "Донецк" ? (lng > 38 ? "Ростовская область" : "Донецкая область") : "Луганская область", country: lng > 38 ? "Россия" : "Украина", osm_key: ["city", "town", "village", "hamlet", "locality", "municipality"].includes(osmValue) ? "place" : osmValue === "administrative" ? "boundary" : "highway", osm_type: "N", osm_id: osmId, osm_value: osmValue },
 });
 
 test("searches globally and separately within Ukraine without unsupported language parameter", () => {
@@ -81,6 +81,28 @@ test("special place remains first when merged from the country-filtered query af
   assert.equal(results[0].id, "N-11");
   assert.equal(results[0].title, "Макеевка — ДНР");
   assert.equal(results[0].label, "Макеевка — ДНР");
+});
+
+test("Moscow city stays ahead of unrelated Moscow namesakes inside priority territories", () => {
+  const dnrVillage = feature("Москва", 37.8055, 47.9954, 80, "village");
+  dnrVillage.properties!.city = "Донецк";
+  dnrVillage.properties!.state = "Донецкая область";
+  const crimeaPoi = feature("Москва", 33.5187, 44.5788, 81, "shop");
+  crimeaPoi.properties!.osm_key = "shop";
+  crimeaPoi.properties!.city = "Севастополь";
+  crimeaPoi.properties!.state = "Республика Крым";
+  const moscowCity = feature("Москва", 37.6173, 55.7558, 82, "city");
+  moscowCity.properties!.osm_type = "R";
+  moscowCity.properties!.country = "Россия";
+  moscowCity.properties!.state = "Москва";
+  const results = rankPhotonFeatures([dnrVillage, crimeaPoi, moscowCity], SPECIAL_TERRITORY_BOUNDARIES, "Москва");
+  assert.equal(results[0].id, "R-82");
+  assert.equal(results[0].label, "Москва, Россия");
+  assert.equal(results.find((item) => item.id === "N-80")?.label, "Москва — ДНР");
+  const crimeaItem = results.find((item) => item.id === "N-81");
+  assert.ok(crimeaItem);
+  assert.match(crimeaItem.label, /Севастополь/u);
+  assert.doesNotMatch(crimeaItem.label, / — Крым$/u);
 });
 
 test("invalid provider coordinates are not exposed as selectable results", () => {
