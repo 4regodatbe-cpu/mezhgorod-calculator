@@ -42,7 +42,7 @@ const oblastLabels = {
   kherson: "Херсонская область",
 } as const;
 
-function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean): { title: string; label: string; region: string } {
+function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean, exactName: boolean): { title: string; label: string; region: string } {
   const p = feature.properties ?? {};
   const street = [p.street, p.housenumber].map(text).filter(Boolean).join(", ");
   const name = text(p.name) || street || text(p.city);
@@ -60,7 +60,7 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
     if (crimea && /^(республика крым|крым|crimea)$/iu.test(name)) {
       return { title: "Крым", label: "Крым", region: "Крым" };
     }
-    const locality = uniqueParts([name, isLocality ? "" : p.city]).join(", ");
+    const locality = uniqueParts([name, isLocality || exactName ? "" : p.city]).join(", ");
     const label = locality ? `${locality} — ${areaName}` : areaName;
     return { title: label, label, region: areaName };
   }
@@ -102,14 +102,15 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const { territory, crimea } = classifyForDisplay(coordinates[0], coordinates[1], zones);
     const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
     if (!fallbackLabel) return [];
-    const { title, label, region } = displayName(feature, territory, crimea);
-    const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
-    const placeRank = ["city", "town", "village", "hamlet", "locality", "municipality"].includes(placeType) ? 1 : 0;
     const queryName = normalize(query.split(/[;,—–-]/u)[0]);
-    const normalizedName = normalize(text(p.name) || text(p.city));
+    const featureName = text(p.name) || text(p.city);
+    const normalizedName = normalize(featureName);
     const exactName = Boolean(queryName && normalizedName &&
       (queryName === normalizedName ||
         (queryName.startsWith(`${normalizedName} `) && /(область|обл|region|oblast)$/u.test(queryName))));
+    const { title, label, region } = displayName(feature, territory, crimea, exactName);
+    const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
+    const placeRank = ["city", "town", "village", "hamlet", "locality", "municipality"].includes(placeType) ? 1 : 0;
     const zoneRank = exactName ? (territory ? 100 : crimea ? 80 : 0) : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
