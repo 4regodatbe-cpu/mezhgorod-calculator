@@ -27,7 +27,7 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
         } catch { /* No proportional-duration fallback is allowed. */ }
         const split=analyzeRoute(route.coordinates,route.meters,route.seconds,from.position,to.position,zones);
         const priced=await calculateLegTolls({routeGeometry:route.coordinates,routeSeconds:route.seconds,departureAt,selectedFastProvider:index===0?"Valhalla":"OSRM",selectedFastRoute:route,valhallaEvidence:index===0?route:null,confirmedFreeRoute:null,diagnosticFastValidation:null});
-        return {corridor:plan.corridor,time,split,from:from.label,to:to.label,fast:{...route,tolls:tollsForApi(priced.tolls,priced.fastValidation),tollValidation:priced.fastValidation},free:null,freeCandidate:null};
+        return {corridor:plan.corridor,provider:index===0?"Valhalla":"OSRM",time,split,from:from.label,to:to.label,fast:{...route,tolls:tollsForApi(priced.tolls,priced.fastValidation),tollValidation:priced.fastValidation},free:null,freeCandidate:null};
       } catch {return null;}
     }));
     return priced.filter(item=>item!==null);
