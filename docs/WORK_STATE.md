@@ -64,3 +64,5 @@ undefined
 - **Проверки:** Run #91 до этой правки прошёл. Новый run после alias/diagnostic изменений ожидает выполнения; не объявлять live alias или component breakdown подтверждёнными до его артефакта.
 - **Ссылки на первичный тариф:** https://avtodor-tr.ru/road/tariffs/ ; snapshot: data/tolls/2026-10-01-avtodor-other-roads-category1.json.
 - **Статус:** PR #10 открыт как draft. Production не менялся.
+
+- **Unit-test correction (run #92):** tests revealed the alias keys must use normalized Russian forms without soft signs (`запороже`, `харков`), because `normalize()` strips `ь`. Corrected the dictionary keys; rerunning CI on the follow-up commit. Run #92 verify failed before TypeScript/build because of these new alias tests. The live job was still in progress at the time of this entry.

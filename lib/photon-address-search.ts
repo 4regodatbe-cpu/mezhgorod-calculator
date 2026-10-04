@@ -111,8 +111,8 @@ const oblastSearchAliases: Record<string, string[]> = {
 };
 const placeSearchAliases: Record<string, string[]> = {
   макеевка: ["Макіївка"],
-  запорожье: ["Запоріжжя"],
-  харьков: ["Харків"],
+  запороже: ["Запоріжжя"],
+  харков: ["Харків"],
 };
 const russianLocalityNames: Record<string, string> = {
   донецк: "Донецк",
