@@ -1,5 +1,5 @@
 import { writeFile } from "node:fs/promises";
-import { valhalla, osrmRoute } from "../lib/route-providers.ts";
+import { geocode, valhalla, osrmRoute } from "../lib/route-providers.ts";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
 import { analyzeRoute, candidatePlans, followsPlan } from "../lib/special-territory-policy.ts";
 import { splitRouteByTerritory } from "../lib/special-territory-geometry.ts";
@@ -8,7 +8,14 @@ import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-te
 const krasnodar = { label: "Krasnodar", position: { lat: 45.04, lng: 38.98 } };
 const donetsk = { label: "Donetsk", position: { lat: 48.0156, lng: 37.8029 } };
 const simferopol = { label: "Simferopol", position: { lat: 44.9521, lng: 34.1024 } };
+// Resolve the requested cities through the same geocoder used by the calculation API.
+const [feodosia, mariupol, yalta, liveDonetsk] = await Promise.all(
+  ["Феодосия, Республика Крым", "Мариуполь, Донецкая область", "Ялта, Республика Крым", "Донецк, Донецкая область"]
+    .map(label => geocode({ label })),
+);
 const cases = [
+  { name: "Feodosia-Mariupol", from: feodosia, to: mariupol },
+  { name: "Yalta-Donetsk", from: yalta, to: liveDonetsk },
   { name: "Krasnodar-Donetsk", from: krasnodar, to: donetsk },
   { name: "Donetsk-Krasnodar", from: donetsk, to: krasnodar },
   { name: "Simferopol-Donetsk", from: simferopol, to: donetsk },
@@ -36,7 +43,7 @@ const reports = [];
 for (const sample of cases) {
   for (const plan of candidatePlans(sample.from.position, sample.to.position, zones)) {
     for (const provider of providers) {
-      const row = { sample: sample.name, corridor: plan.corridor, provider: provider.name, status: "unverified" };
+      const row = { sample: sample.name, from: sample.from.label, to: sample.to.label, fromPosition: sample.from.position, toPosition: sample.to.position, corridor: plan.corridor, provider: provider.name, status: "unverified" };
       try {
         let route = await provider.get(sample.from, sample.to, plan.positions);
         if (!followsPlan(route.coordinates, plan.positions, plan.corridor, true)) throw new Error("INITIAL_PLAN_MISMATCH");
