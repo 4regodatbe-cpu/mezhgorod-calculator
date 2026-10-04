@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "engines": {
-    "node": ">=22.13.0"
+    "node": "24.x"
   },
   "scripts": {
     "install:ci": "pnpm install --frozen-lockfile",
@@ -35,11 +35,5 @@
     "typescript": "5.9.3"
   },
   "type": "module",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp",
-      "unrs-resolver"
-    ]
-  },
   "packageManager": "pnpm@11.25.0"
 }
