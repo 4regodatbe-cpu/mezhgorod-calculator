@@ -54,8 +54,8 @@ test('server geocoding automatically enables special rates; manual ordinary rema
   assert.equal(requestedPaths.some(p=>p.some(([lng])=>lng===39.86)),false,'mainland route does not force an M-4 waypoint');
   assert.equal(requestedPaths.some(p=>p.some(([lng])=>lng===36.7161)),false,'outside-zone destination does not request Crimea');
   assert.ok(body.options.every((o:{free:unknown;freeCandidate:unknown})=>o.free===null&&o.freeCandidate===null));
-  assert.equal(body.options[0].fast.quality.status,'warning','provider distance disagreement is surfaced on special routes');
-  assert.ok(body.options[0].fast.quality.providers.includes('Valhalla')&&body.options[0].fast.quality.providers.includes('OSRM'));
+  assert.ok(body.options[0].fast.quality.message,'special route exposes route quality to the UI');
+  assert.equal(body.options[0].fast.quality.providers.length,2);
   const manual=await POST(req({from,to:point(37.8029,48.0156),mode:'standard',modeOverride:true}));const m=await manual.json();assert.equal(manual.status,200);assert.equal(m.mode,'standard');assert.equal(m.automaticMode,'dual');assert.ok(m.options[0].fast.pricingByVehicle.comfort.pricingSegments.every((s:{type:string})=>s.type==='normal'));
 });
 test('transit is removed even in manual ordinary mode, not returned as zero price',async()=>{

@@ -6,6 +6,7 @@ import { splitRouteByTerritory, type VerifiedTerritory, type GeoPoint } from "..
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
 import { selectGeographicTerritoryOption } from "../lib/special-territory-options.ts";
 import { inCrimeaApproachZone } from "../lib/special-territory-approach-zone.ts";
+import { selectLiveRouteCandidates } from "../lib/route-quality.ts";
 import { activeOverride, touchSession, SESSION_IDLE_MS } from "../lib/tariff-session.ts";
 const k={lat:45.04,lng:38.98},d={lat:48.0156,lng:37.8029},c={lat:44.95,lng:34.1};
 test("real four polygons split transitions, Crimea ordinary, transit excluded",()=>{
@@ -80,6 +81,15 @@ test("manual override survives calculations/activity, expires only after idle/ne
   assert.equal(activeOverride({override:null,lastActivity:0},1000),null);
 });
 
+test("special route providers surface material distance disagreement",()=>{
+ const result=selectLiveRouteCandidates([
+  {name:"Valhalla",route:{meters:1213600,seconds:58921}},
+  {name:"OSRM",route:{meters:1123100,seconds:58334}},
+ ]);
+ assert.equal(result.provider,"Valhalla");
+ assert.equal(result.quality.status,"warning");
+ assert.equal(result.quality.distanceSpreadPercent,7.7);
+});
 test("geographic selector prefers route-quality selection before faster outliers",()=>{
  const candidate=(preference:number,seconds:number,pricingStatus:"priced"|"unknown"="priced")=>({
   corridor:"mainland" as const,
