@@ -5,9 +5,16 @@ import { analyzeRoute, candidatePlans, followsPlan } from "../lib/special-territ
 import { splitRouteByTerritory } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
 
+const krasnodar = { label: "Krasnodar", position: { lat: 45.04, lng: 38.98 } };
+const donetsk = { label: "Donetsk", position: { lat: 48.0156, lng: 37.8029 } };
+const simferopol = { label: "Simferopol", position: { lat: 44.9521, lng: 34.1024 } };
 const cases = [
-  { name: "Krasnodar-Donetsk", from: { label: "Krasnodar", position: { lat: 45.04, lng: 38.98 } }, to: { label: "Donetsk", position: { lat: 48.0156, lng: 37.8029 } } },
-  { name: "Simferopol-Donetsk", from: { label: "Simferopol", position: { lat: 44.9521, lng: 34.1024 } }, to: { label: "Donetsk", position: { lat: 48.0156, lng: 37.8029 } } },
+  { name: "Krasnodar-Donetsk", from: krasnodar, to: donetsk },
+  { name: "Donetsk-Krasnodar", from: donetsk, to: krasnodar },
+  { name: "Simferopol-Donetsk", from: simferopol, to: donetsk },
+  { name: "Donetsk-Simferopol", from: donetsk, to: simferopol },
+  { name: "Simferopol-Krasnodar", from: simferopol, to: krasnodar },
+  { name: "Krasnodar-Simferopol", from: krasnodar, to: simferopol },
 ];
 const providers = [
   { name: "Valhalla", get: (from, to, positions) => valhalla(from, to, 1, positions) },
