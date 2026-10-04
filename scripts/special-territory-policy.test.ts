@@ -65,14 +65,13 @@ test("manual override survives calculations/activity, expires only after idle/ne
   assert.equal(activeOverride({override:null,lastActivity:0},1000),null);
 });
 
-test("geographic selector ignores elapsed-time evidence and preserves toll uncertainty",async()=>{
- const {selectTimedTerritoryOptions}=await import("../lib/special-territory-time.ts");
+test("geographic selector ignores elapsed-time evidence and preserves toll uncertainty",()=>{
  const candidate=(corridor:"mainland"|"crimea",pricingStatus:"priced"|"free"|"unknown",seconds=20000,provider="OSRM")=>({corridor,provider,fast:{seconds,tolls:{pricingStatus}}});
  const mainland=candidate("mainland","priced"),crimea=candidate("crimea","unknown",100);
  const selectedCrimea=selectGeographicTerritoryOption([mainland,crimea],"crimea");
  assert.equal(selectedCrimea.options.length,1);assert.equal(selectedCrimea.options[0].corridor,"crimea");assert.equal(selectedCrimea.routePolicy,"geographic-zone");
- const selectedMainland=selectTimedTerritoryOptions([mainland,crimea],"mainland");assert.equal(selectedMainland.options.length,1);assert.equal(selectedMainland.options[0].corridor,"mainland");
- assert.equal(selectTimedTerritoryOptions([crimea],"mainland").options.length,0);
- assert.equal(selectTimedTerritoryOptions([candidate("crimea","free"),candidate("crimea","priced",25000)],"crimea").options[0].fast.tolls.pricingStatus,"priced");
- assert.equal(selectTimedTerritoryOptions([candidate("crimea","unknown")],"crimea").options[0].fast.tolls.pricingStatus,"unknown");
+ const selectedMainland=selectGeographicTerritoryOption([mainland,crimea],"mainland");assert.equal(selectedMainland.options.length,1);assert.equal(selectedMainland.options[0].corridor,"mainland");
+ assert.equal(selectGeographicTerritoryOption([crimea],"mainland").options.length,0);
+ assert.equal(selectGeographicTerritoryOption([candidate("crimea","free"),candidate("crimea","priced",25000)],"crimea").options[0].fast.tolls.pricingStatus,"priced");
+ assert.equal(selectGeographicTerritoryOption([candidate("crimea","unknown")],"crimea").options[0].fast.tolls.pricingStatus,"unknown");
 });
