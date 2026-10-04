@@ -22,7 +22,7 @@ test("same-name city inside a special ADM1 polygon ranks above its Russian names
   const rostovDonetsk = feature("Донецк", 39.7, 47.23, 1);
   const specialDonetsk = feature("Донецк", 37.8029, 48.0156, 2);
   specialDonetsk.properties!.country = "Россия";
-  const results = rankPhotonFeatures([rostovDonetsk, specialDonetsk], SPECIAL_TERRITORY_BOUNDARIES);
+  const results = rankPhotonFeatures([rostovDonetsk, specialDonetsk], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
   assert.deepEqual(results.map((item) => item.id), ["N-2", "N-1"]);
   assert.equal(results[0].position.lng, 37.8029);
   assert.equal(results[0].label, "Донецк — ДНР");
@@ -36,7 +36,7 @@ test("special place remains first when merged from the country-filtered query af
     feature("Макеевка", 39.0, 47.2, 10),
     feature("Макеевка", 37.99, 48.05, 11, "town"),
     feature("улица Макеевская", 38.0, 48.0, 12, "residential"),
-  ], SPECIAL_TERRITORY_BOUNDARIES);
+  ], SPECIAL_TERRITORY_BOUNDARIES, "Макеевка");
   assert.equal(results[0].id, "N-11");
   assert.equal(results[0].title, "Макеевка — ДНР");
   assert.equal(results[0].label, "Макеевка — ДНР");
@@ -47,7 +47,7 @@ test("invalid provider coordinates are not exposed as selectable results", () =>
     feature("Москва", 37.6173, 55.7558, 1),
     { geometry: { coordinates: [999, 999] }, properties: { name: "invalid", osm_id: 2 } },
     { properties: { name: "missing coordinates", osm_id: 3 } },
-  ], SPECIAL_TERRITORY_BOUNDARIES);
+  ], SPECIAL_TERRITORY_BOUNDARIES, "Москва");
   assert.deepEqual(results.map((item) => item.id), ["N-1"]);
 });
 
@@ -58,7 +58,7 @@ test("special-region cities use DNR/LNR or the requested oblast display name bas
     feature("Мелитополь", 35.365, 46.848, 22),
     feature("Херсон", 32.6169, 46.6354, 23),
   ];
-  const results = rankPhotonFeatures(places, SPECIAL_TERRITORY_BOUNDARIES);
+  const results = rankPhotonFeatures(places, SPECIAL_TERRITORY_BOUNDARIES, "Луганск");
   assert.equal(results.find((item) => item.id === "N-20")?.label, "Донецк — ДНР");
   assert.equal(results.find((item) => item.id === "N-21")?.label, "Луганск — ЛНР");
   assert.equal(results.find((item) => item.id === "N-22")?.label, "Мелитополь — Запорожская область");
@@ -70,7 +70,7 @@ test("Crimea localities omit provider country and show the compact Crimea suffix
   const sevastopol = feature("Севастополь", 33.5254, 44.6167, 31);
   yalta.properties!.country = "Украина";
   sevastopol.properties!.country = "Украина";
-  const results = rankPhotonFeatures([yalta, sevastopol], SPECIAL_TERRITORY_BOUNDARIES);
+  const results = rankPhotonFeatures([yalta, sevastopol], SPECIAL_TERRITORY_BOUNDARIES, "Ялта Севастополь");
   assert.equal(results.find((item) => item.id === "N-30")?.label, "Ялта — Крым");
   assert.equal(results.find((item) => item.id === "N-31")?.label, "Севастополь — Крым");
   assert.ok(results.every((item) => !/Украина/.test(item.label)));
@@ -79,7 +79,29 @@ test("Crimea localities omit provider country and show the compact Crimea suffix
 test("oblast-level results get Russian region labels rather than a country suffix", () => {
   const oblast = feature("Donetsk Oblast", 37.8029, 48.0156, 40, "administrative");
   oblast.properties!.country = "Ukraine";
-  const results = rankPhotonFeatures([oblast], SPECIAL_TERRITORY_BOUNDARIES);
+  const results = rankPhotonFeatures([oblast], SPECIAL_TERRITORY_BOUNDARIES, "Донецкая область");
   assert.equal(results[0].label, "Донецкая область");
   assert.equal(results[0].title, "Донецкая область");
+});
+
+test("boosts exact namesake cities in special polygons while keeping unrelated partial matches lower", () => {
+  const ordinaryKrasnodar = feature("Краснодар", 38.98, 45.04, 50);
+  const specialStreet = feature("Краснодарская улица", 37.931, 47.947, 51, "residential");
+  const similarLnrVillage = feature("Краснодарський", 39.99, 48.316, 52, "village");
+  const krasnodar = rankPhotonFeatures([ordinaryKrasnodar, specialStreet, similarLnrVillage], SPECIAL_TERRITORY_BOUNDARIES, "Краснодар");
+  assert.equal(krasnodar[0].id, "N-50");
+  const yaltaCrimea = feature("Ялта", 34.1689, 44.4988, 53);
+  const yaltaDnr = feature("Ялта", 37.2776, 46.9589, 54);
+  const yalts = rankPhotonFeatures([yaltaCrimea, yaltaDnr], SPECIAL_TERRITORY_BOUNDARIES, "Ялта");
+  assert.equal(yalts[0].id, "N-54");
+  assert.equal(yalts[0].label, "Ялта — ДНР");
+  assert.equal(yalts[1].label, "Ялта — Крым");
+});
+
+test("region query boosts exact oblast result and not a similarly named street", () => {
+  const street = feature("Донецкая улица", 39.1126, 48.1258, 60, "residential");
+  const oblast = feature("Донецкая область", 37.8029, 48.0156, 61, "administrative");
+  const results = rankPhotonFeatures([street, oblast], SPECIAL_TERRITORY_BOUNDARIES, "Донецкая область");
+  assert.equal(results[0].id, "N-61");
+  assert.equal(results[0].label, "Донецкая область");
 });
