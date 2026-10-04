@@ -89,7 +89,7 @@ const oblastSearchAliases: Record<string, string[]> = {
 
 function regionAliases(query: string): string[] {
   const normalized = normalize(query);
-  if (!/(область|обл|oblast|region)$/u.test(normalized)) return [];
+  if (!/(област|обл|oblast|region)$/u.test(normalized)) return [];
   const firstWord = normalized.split(" ")[0];
   const key = firstWord.startsWith("донец") ? "dnr"
     : firstWord.startsWith("луган") ? "lnr"
@@ -131,7 +131,7 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const normalizedName = normalize(featureName);
     const exactName = Boolean(queryName && normalizedName &&
       (queryName === normalizedName ||
-        (queryName.startsWith(`${normalizedName} `) && /(область|обл|region|oblast)$/u.test(queryName))));
+        (queryName.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(queryName))));
     const { title, label, region } = displayName(feature, territory, crimea, exactName);
     const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
     const placeRank = ["city", "town", "village", "hamlet", "locality", "municipality"].includes(placeType) ? 1 : 0;
