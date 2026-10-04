@@ -1,4 +1,5 @@
 import type { Coordinate } from "@/lib/tolls";
+import { highwayTariffPeriod } from "@/lib/toll-engine/tariff-period";
 
 export type A289Frame = {
   id: "23" | "82" | "103";
@@ -92,10 +93,7 @@ function nearestSegment(route: Coordinate[], frame: A289Frame) {
 }
 
 function tariffPeriod(departureAt?: string): A289PricingResult["period"] {
-  const date = departureAt ? new Date(departureAt) : new Date();
-  const valid = Number.isNaN(date.getTime()) ? new Date() : date;
-  const day = valid.getDay();
-  return day === 0 || day === 5 || day === 6 ? "пятница–воскресенье" : "понедельник–четверг";
+  return highwayTariffPeriod(departureAt).period;
 }
 
 export function priceA289Route(route: Coordinate[], departureAt?: string): A289PricingResult {

@@ -1,5 +1,6 @@
 import type { TollBoothEvent, TollValidation } from "@/lib/toll-validator";
 import { M4_DATA } from "@/lib/toll-engine/m4-data";
+import { highwayTariffPeriod } from "@/lib/toll-engine/tariff-period";
 import { M4_NODE_TO_PLAZA, type M4PlazaNodeGroup, type PlazaNodeVerification } from "@/lib/toll-engine/m4-plaza-nodes";
 
 import type { PricingConfidence, PricingStatus, M4PricedPlaza, M4UnresolvedItem, M4PricingResult } from "./m4-engine-types.ts";
@@ -11,14 +12,7 @@ type MatchedGroup = {
 };
 
 function currentPeriod(departureAt?: string) {
-  const parsed = departureAt ? new Date(departureAt) : new Date();
-  const date = Number.isNaN(parsed.getTime()) ? new Date() : parsed;
-  const day = date.getDay();
-  const weekend = day === 0 || day === 5 || day === 6;
-  return {
-    weekend,
-    period: weekend ? "пятница–воскресенье" as const : "понедельник–четверг" as const,
-  };
+  return highwayTariffPeriod(departureAt);
 }
 
 function verificationRank(value: PlazaNodeVerification) {

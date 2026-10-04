@@ -76,3 +76,12 @@ undefined
 - **Next diagnostic:** a separate OSRM route via the official A-146/A-290 approach through Novorossiysk, Anapa, and Temryuk was added for Tomsk—Черноморское. It is marked diagnostic-only and cannot enter the UI route candidate list. Compare its distance/time/tolls with Yandex cards to see whether the A-289 difference is caused by route choice.
 - **Code changes:** alias map keys now use normalized forms without soft signs; unit tests and live queries cover Russian Zaporizhzhia/Kharkiv. Benchmark report now carries exact M-4/A-289 component detail and a controlled A-146 route experiment. No tariff runtime formula changed.
 - **Status:** PR #10 remains draft; run #93 passed. Run #94 with the diagnostic A-146 route is pending; production was not changed.
+
+### 2026-10-05 — Run #94 route experiment and tariff timezone fix
+
+- **Run #94** passed tests, TypeScript, Next.js build, route/provider probes, live Photon probes, and the extended Yandex audit.
+- **Diagnostic alternate:** controlled route via M-4 → Krasnodar → A-146 (Novorossiysk) → A-290 (Anapa/Temryuk) → bridge returned 4 854 km / 69 h 24 min and 2 200 ₽ tolls (M-4 only; no A-289 frame crossings). It is 154 km longer than the 4 700 km Yandex candidate and 1 h 46 min slower than the slowest visible Yandex candidate. It does not prove the Yandex route uses A-146; it only demonstrates how avoiding A-289 changes toll total.
+- **Confirmed pricing defect:** run #94 occurred at 2026-10-04 21:35 UTC = 2026-10-05 00:35 in Moscow. The route audit still selected the Friday–Sunday M-4 amount 3 303 ₽, because M-4 and A-289 used host-local getDay() in the UTC Vercel host. M-4 and A-289 lie in the Moscow timezone; tariff weekday/weekend selection must use Europe/Moscow. M-11 schedule logic already uses Europe/Moscow.
+- **Fix:** added a shared Moscow-time tariff-period helper and regression tests around the UTC/Moscow midnight boundary. This corrects departure-day selection for M-4/A-289. It does not yet estimate each toll-booth crossing time for multi-day routes; pricing still applies departure period to all toll components.
+- **Toll discrepancy remains open:** A-146 experiment does not match Yandex route distance/time closely enough to explain the screenshot. Do not remove A-289 charges from the selected route without its geometry. The official A-289 page and category-I snapshot support the three frame amounts.
+- **Status:** follow-up CI run #95 pending. PR #10 remains draft and production is unchanged.
