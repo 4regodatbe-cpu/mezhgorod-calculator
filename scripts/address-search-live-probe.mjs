@@ -5,7 +5,7 @@ import { photonSearchUrls, rankPhotonFeatures } from "../lib/photon-address-sear
 import { classifyTerritory } from "../lib/special-territory-geometry.ts";
 import { inCrimea } from "../lib/special-territory-policy.ts";
 
-const queries = ["Донецк", "Донецкая область", "Макеевка", "Луганск", "Ялта", "Севастополь", "Краснодар", "Москва"];
+const queries = ["Донецк", "Донецкая область", "Макеевка", "Луганск", "Ялта", "Севастополь", "Краснодар", "Москва", "Запорожье", "Харьков, Украина"];
 const reports = [];
 for (const query of queries) {
   const outcomes = await Promise.allSettled(photonSearchUrls(query).map(async (url) => {

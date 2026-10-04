@@ -6,6 +6,8 @@ import { territoryTimingPlan, measureTerritoryLegTimes } from "../lib/special-te
 import { selectLiveRouteCandidates } from "../lib/route-quality.ts";
 import { calculateLegTolls } from "../lib/v2-calculation/route-leg-pricing.ts";
 import { tollsForApi } from "../lib/v2-calculation/free-route-selection.ts";
+import { calculateM4Core } from "../lib/toll-engine/m4-core.ts";
+import { priceA289Route } from "../lib/toll-engine/a289-engine.ts";
 
 const snapshot = JSON.parse(await readFile(new URL("../benchmarks/routes/yandex-2026-10-04/screenshot-observations.json", import.meta.url), "utf8"));
 const providers = [
@@ -82,6 +84,26 @@ for (const sample of snapshot.routes) {
           diagnosticFastValidation: null,
         });
         const tolls = tollsForApi(priced.tolls, priced.fastValidation);
+        let componentBreakdown = null;
+        if (sample.id === "tomsk-chernomorskoe") {
+          const m4 = await calculateM4Core(selected.route.coordinates);
+          const a289 = priceA289Route(selected.route.coordinates);
+          componentBreakdown = {
+            m4: {
+              status: m4.pricing.status,
+              weekdayAmount: m4.pricing.weekdayAmount,
+              weekendAmount: m4.pricing.weekendAmount,
+              pricedPlazas: m4.pricing.pricedPlazas.map(({ km, weekday, weekend, verification }) => ({ km, weekday, weekend, verification })),
+              unresolved: m4.pricing.unresolved,
+            },
+            a289: {
+              weekdayAmount: a289.weekdayAmount,
+              weekendAmount: a289.weekendAmount,
+              crossedFrames: a289.crossedFrames,
+              segments: a289.segments,
+            },
+          };
+        }
         tollProbe = {
           selectedProvider: selected.name,
           pricingStatus: tolls.pricingStatus,
@@ -89,6 +111,7 @@ for (const sample of snapshot.routes) {
           weekdayAmount: tolls.weekdayAmount,
           weekendAmount: tolls.weekendAmount,
           confidence: tolls.confidence,
+          componentBreakdown,
           segments: tolls.segments,
           validation: { status: priced.fastValidation.status, message: priced.fastValidation.message },
         };

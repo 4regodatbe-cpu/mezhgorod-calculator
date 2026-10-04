@@ -198,3 +198,28 @@ test("Ukrainian locality spelling matches a Russian query and omits community su
   const luhanskResult = rankPhotonFeatures([luhansk], SPECIAL_TERRITORY_BOUNDARIES, "Луганск");
   assert.equal(luhanskResult[0].label, "Луганск — ЛНР");
 });
+
+test("Russian Zaporizhzhia query searches and ranks Ukrainian city spelling", () => {
+  const urls = photonSearchUrls("Запорожье").map((value) => new URL(value));
+  assert.equal(urls.length, 3);
+  assert.equal(urls[2].searchParams.get("q"), "Запоріжжя");
+  assert.equal(urls[2].searchParams.get("countrycode"), "UA");
+  const results = rankPhotonFeatures([
+    feature("Запоріжжя", 35.1182867, 47.8507859, 201, "city"),
+    feature("Запорожье", 34.0, 44.5, 202, "village"),
+  ], SPECIAL_TERRITORY_BOUNDARIES, "Запорожье");
+  assert.equal(results[0].position.lat, 47.8507859);
+  assert.equal(results[0].label, "Запорожье — Запорожская область");
+});
+
+test("Russian Kharkiv query with country qualifier searches Ukrainian spelling and ranks the city first", () => {
+  const urls = photonSearchUrls("Харьков, Украина").map((value) => new URL(value));
+  assert.equal(urls.length, 3);
+  assert.equal(urls[2].searchParams.get("q"), "Харків");
+  assert.equal(urls[2].searchParams.get("countrycode"), "UA");
+  const results = rankPhotonFeatures([
+    feature("Харьков", 34.1689, 44.4988, 203, "village"),
+    feature("Харків", 36.2310146, 49.9923181, 204, "city"),
+  ], SPECIAL_TERRITORY_BOUNDARIES, "Харьков, Украина");
+  assert.equal(results[0].position.lat, 49.9923181);
+});

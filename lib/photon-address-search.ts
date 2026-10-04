@@ -111,6 +111,8 @@ const oblastSearchAliases: Record<string, string[]> = {
 };
 const placeSearchAliases: Record<string, string[]> = {
   макеевка: ["Макіївка"],
+  запорожье: ["Запоріжжя"],
+  харьков: ["Харків"],
 };
 const russianLocalityNames: Record<string, string> = {
   донецк: "Донецк",
@@ -119,9 +121,18 @@ const russianLocalityNames: Record<string, string> = {
   мелитополь: "Мелитополь",
   мариуполь: "Мариуполь",
   запорижжя: "Запорожье",
+  харкив: "Харьков",
   бердянск: "Бердянск",
   енергодар: "Энергодар",
 };
+
+function primaryQueryName(query: string): string {
+  return normalize(query.split(/[;,—–-]/u)[0]);
+}
+
+function placeAliases(query: string): string[] {
+  return placeSearchAliases[primaryQueryName(query)] ?? [];
+}
 
 function regionAliases(query: string): string[] {
   const normalized = normalize(query);
@@ -148,7 +159,7 @@ export function photonSearchUrls(query: string): string[] {
   return [
     makeUrl(query),
     makeUrl(query, "UA"),
-    ...(placeSearchAliases[normalize(query)] ?? []).map((term) => makeUrl(term, "UA")),
+    ...placeAliases(query).map((term) => makeUrl(term, "UA")),
     ...regionAliases(query).map((term) => makeUrl(term, "UA", "state")),
   ];
 }
@@ -163,10 +174,10 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const { territory, crimea } = classifyForDisplay(coordinates[0], coordinates[1], zones);
     const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
     if (!fallbackLabel) return [];
-    const queryName = normalize(query.split(/[;,—–-]/u)[0]);
+    const queryName = primaryQueryName(query);
     const featureName = text(p.name) || text(p.city);
     const normalizedName = normalize(featureName);
-    const queryNames = [queryName, ...(placeSearchAliases[queryName] ?? []).map(normalize)];
+    const queryNames = [queryName, ...placeAliases(query).map(normalize)];
     const exactName = Boolean(queryNames.some((candidate) => candidate && normalizedName &&
       (candidate === normalizedName ||
         (candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
