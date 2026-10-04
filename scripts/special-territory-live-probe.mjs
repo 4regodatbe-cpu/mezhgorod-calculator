@@ -22,7 +22,7 @@ const metersBetween = (a, b) => {
 const legBreakdown = (route) => route.legs?.map((leg, index) => {
   try {
     const split = splitRouteByTerritory({ coordinates: leg.coordinates, routedDistanceMeters: leg.meters, routedDurationSeconds: leg.seconds, zones });
-    return { index, seconds: leg.seconds, meters: Math.round(leg.meters), territories: [...new Set(split.pieces.map(piece => piece.territory ?? "ordinary"))], pieces: split.pieces.map(piece => ({ territory: piece.territory ?? "ordinary", meters: Math.round(piece.meters) })) };
+    return { index, seconds: leg.seconds, meters: Math.round(leg.meters), territories: [...new Set(split.pieces.map(piece => piece.territory ?? "ordinary"))], pieces: split.pieces.map(piece => ({ territory: piece.territory ?? "ordinary", meters: Math.round(piece.meters * 1000) / 1000 })) };
   } catch (error) { return { index, seconds: leg.seconds, meters: Math.round(leg.meters), error: error instanceof Error ? error.message : String(error) }; }
 }) ?? null;
 const reports = [];
@@ -43,25 +43,23 @@ for (const sample of cases) {
         row.initialSpecialKm = Math.round(split.specialKm * 10) / 10;
         row.initialRouteSeconds = route.seconds;
         if (!time.verified) {
-          row.rescanRounds = [];
-          for (let attempt = 0; attempt < 3 && !time.verified; attempt++) {
-            route = await provider.get(sample.from, sample.to, timing.positions);
-            if (!followsPlan(route.coordinates, plan.positions, plan.corridor, true)) throw new Error("RESCAN_PLAN_MISMATCH");
-            analyzeRoute(route.coordinates, route.meters, route.seconds, sample.from.position, sample.to.position, zones);
-            time = measureTerritoryLegTimes(route, timing.expected, zones);
-            row.rescanRounds.push({ attempt: attempt + 1, legCount: route.legs?.length ?? 0, timing: time, distanceKm: Math.round(route.meters / 100) / 10, routeSeconds: route.seconds, legBreakdown: legBreakdown(route) });
-            row.rescanLegCount = route.legs?.length ?? 0;
-            row.rescanLegBreakdown = legBreakdown(route);
-            row.rescanTiming = time;
-            row.rescanDistanceKm = Math.round(route.meters / 100) / 10;
-            row.rescanRouteSeconds = route.seconds;
-            row.rescanEndpointOffsetsMeters = route.legs?.map((leg, i) => {
-              const start = leg.coordinates[0], end = leg.coordinates.at(-1);
-              const fromPoint = timing.positions[i], toPoint = timing.positions[i + 1];
-              return { start: Math.round(metersBetween(start, [fromPoint.lng, fromPoint.lat])), end: Math.round(metersBetween(end, [toPoint.lng, toPoint.lat])) };
-            }) ?? null;
-            if (!time.verified && attempt < 2) timing = territoryTimingPlan(route, zones);
-          }
+          route = await provider.get(sample.from, sample.to, timing.positions);
+          if (!followsPlan(route.coordinates, plan.positions, plan.corridor, true)) throw new Error("RESCAN_PLAN_MISMATCH");
+          analyzeRoute(route.coordinates, route.meters, route.seconds, sample.from.position, sample.to.position, zones);
+          time = measureTerritoryLegTimes(route, timing.expected, zones);
+          row.rescanLegCount = route.legs?.length ?? 0;
+          row.rescanLegBreakdown = legBreakdown(route);
+          row.rescanTiming = time;
+          row.rescanDistanceKm = Math.round(route.meters / 100) / 10;
+          row.rescanRouteSeconds = route.seconds;
+          row.rescanEndpointOffsetsMeters = route.legs?.map((leg, i) => {
+            const start = leg.coordinates[0], end = leg.coordinates.at(-1);
+            const fromPoint = timing.positions[i], toPoint = timing.positions[i + 1];
+            return { start: Math.round(metersBetween(start, [fromPoint.lng, fromPoint.lat])), end: Math.round(metersBetween(end, [toPoint.lng, toPoint.lat])) };
+          }) ?? null;
+          const refined = territoryTimingPlan(route, zones);
+          const refinedLegMeters = refined.positions.slice(1).map((point, i) => metersBetween([refined.positions[i].lng, refined.positions[i].lat], [point.lng, point.lat]));
+          row.refinedPlan = { expectedLegCount: refined.expected.length, positions: refined.positions.length, minimumControlSpacingMeters: refinedLegMeters.length ? Math.round(Math.min(...refinedLegMeters) * 1000) / 1000 : null, zeroOrNearZeroLegCount: refinedLegMeters.filter(meters => meters < 1).length };
         }
         row.status = time.verified ? "verified" : "unverified";
         row.specialSeconds = time.specialSeconds;
