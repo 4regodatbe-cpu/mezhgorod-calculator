@@ -4,6 +4,8 @@ import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-
 import { analyzeRoute, candidatePlans, followsPlan } from "../lib/special-territory-policy.ts";
 import { splitRouteByTerritory } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
+import { calculateLegTolls } from "../lib/v2-calculation/route-leg-pricing.ts";
+import { tollsForApi } from "../lib/v2-calculation/free-route-selection.ts";
 
 const krasnodar = { label: "Krasnodar", position: { lat: 45.04, lng: 38.98 } };
 const donetsk = { label: "Donetsk", position: { lat: 48.0158753, lng: 37.8013407 } };
@@ -86,6 +88,27 @@ for (const sample of cases) {
         row.specialShare = time.verified && route.seconds > 0 ? Math.round((time.specialSeconds / route.seconds) * 1000) / 1000 : null;
         row.finalDistanceKm = Math.round(route.meters / 100) / 10;
         row.finalRouteSeconds = route.seconds;
+        if (sample.name === "Donetsk-Moscow") {
+          const priced = await calculateLegTolls({
+            routeGeometry: route.coordinates,
+            routeSeconds: route.seconds,
+            selectedFastProvider: provider.name,
+            selectedFastRoute: route,
+            valhallaEvidence: provider.name === "Valhalla" ? route : null,
+            confirmedFreeRoute: null,
+            diagnosticFastValidation: null,
+          });
+          const tolls = tollsForApi(priced.tolls, priced.fastValidation);
+          row.tollProbe = {
+            pricingStatus: tolls.pricingStatus,
+            amount: tolls.amount,
+            weekdayAmount: tolls.weekdayAmount,
+            weekendAmount: tolls.weekendAmount,
+            confidence: tolls.confidence,
+            segments: tolls.segments,
+            validation: { status: priced.fastValidation.status, message: priced.fastValidation.message },
+          };
+        }
         row.referenceDistanceDeviationPercent = sample.referenceDistanceKm
           ? Math.round((route.meters / 1000 - sample.referenceDistanceKm) / sample.referenceDistanceKm * 1000) / 10
           : null;

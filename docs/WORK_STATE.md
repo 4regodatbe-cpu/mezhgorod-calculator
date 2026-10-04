@@ -21,3 +21,6 @@ undefined
 
 
 - **Дополнение к run #85:** verify job снова завершился с ошибкой только в новом API-тесте: mock adapters не давали гарантированного расхождения, поэтому статус качества оказался `verified`, а тест жёстко ждал `warning`. Исправление переносит точную проверку 7,7% расхождения в модульный тест реальных метрик Valhalla/OSRM и оставляет API-тесту проверку наличия quality-информации. Live probe run #85 завершился success: Donetsk–Moscow Valhalla 1 213,6 км / 16 ч 22 мин (−0,5% к скриншоту Яндекса), OSRM 1 123,1 км / 16 ч 12 мин (−7,9%); оба маршрута прошли повторную проверку геометрии/времени, но расхождение провайдеров требует quality warning. Run #85 не проверяет live сумму платных дорог, поэтому отличие ~3 810 ₽ на скриншоте Яндекса от калькулятора пока открыто.
+
+
+- **Toll follow-up:** run #86 verify job completed successfully (tests, TypeScript and Next build). The live-probe script now sends the final Donetsk—Moscow geometry from each routing provider through the same `calculateLegTolls` pricing pipeline as the API, and records weekday/weekend amounts, confidence, segments, and validation status. This is diagnostic output only; it does not assert toll status as free or priced. New run #87 will establish whether the changed route fixes the screenshot's toll discrepancy.
