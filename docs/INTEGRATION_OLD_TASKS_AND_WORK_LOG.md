@@ -135,3 +135,10 @@
 - `lib/route-pricing-integration.ts`, `lib/route-pricing-segments.ts`, `lib/route-corridors.ts` — сегментная цена и коридоры, если присутствуют в выбранном commit.
 - `lib/v2-calculation/route-leg-pricing.ts` и `lib/toll-engine/` — сборка toll evidence и композиция ПВП.
 - `.github/workflows/` и package scripts — источник истины для доступных regression/full gates.
+
+### Проверка записи — 2026-10-04
+
+- Документ создан в commit `b74f4ad5f2228f53c35ecb343fc5b80e20b1b595` и повторно прочитан из GitHub; размер текста 11 285 символов, раздел журнала присутствует.
+- После записи PR #10 остался `open`, `draft=true`, `merged=false`; новый head соответствует docs-коммиту.
+- На момент проверки GitHub Actions `Special territory geometry and pricing` run #2 (`37182677971`) выполнялся; Vercel status был `pending`. Это не считается завершённым gate.
+- Так как изменение документационное, код не менялся. Локальные typecheck/build не выполнялись; результаты run #2 записать отдельно после завершения.
