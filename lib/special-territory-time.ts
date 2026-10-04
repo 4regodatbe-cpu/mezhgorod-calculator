@@ -75,8 +75,8 @@ export function selectTimedTerritoryOptions<T extends TimedCandidate>(candidates
   const mainland=choose("mainland"),crimea=choose("crimea");
   if(!mainland)return {options:[] as T[],crimeaComparisonVerified:false,crimeaAccepted:false};
   const verified=!!crimea&&mainland.time.verified&&crimea.time.verified;
-  const a=mainland.time.specialSeconds,b=crimea?.time.specialSeconds;
-  const accepted=verified&&Number.isFinite(a)&&Number.isFinite(b)&&a!>0&&b!>=0&&b!<=a!*0.5;
+  const mainlandSeconds=mainland.fast.seconds,crimeaSpecialSeconds=crimea?.time.specialSeconds;
+  const accepted=verified&&Number.isFinite(mainlandSeconds)&&Number.isFinite(crimeaSpecialSeconds)&&mainlandSeconds>0&&crimeaSpecialSeconds!>=0&&crimeaSpecialSeconds!<=mainlandSeconds*0.5;
   const options=accepted?[mainland,crimea!]:[mainland];
   const paid=options.some(isPaid);
   return {options:options.filter(item=>!paid||item.fast.tolls.pricingStatus!=="free"),crimeaComparisonVerified:verified,crimeaAccepted:accepted};
