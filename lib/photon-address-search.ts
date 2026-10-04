@@ -135,7 +135,14 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const { title, label, region } = displayName(feature, territory, crimea, exactName);
     const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
     const placeRank = ["city", "town", "village", "hamlet", "locality", "municipality"].includes(placeType) ? 1 : 0;
-    const zoneRank = exactName ? (territory ? 100 : crimea ? 80 : 0) : 0;
+    const normalizedState = normalize(text(p.state));
+    // Keep exact matches in the five high-demand areas ahead of ordinary namesakes.
+    // For Донецк specifically, place Ростовская область second as requested.
+    const rostovDonetsk = exactName && queryName === "донецк" && normalizedName === "донецк" &&
+      /^(ростов|rostov)/u.test(normalizedState);
+    const zoneRank = exactName
+      ? territory ? 500 : rostovDonetsk ? 400 : crimea ? 300 : 100
+      : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
       score: zoneRank + (exactName ? 10 : 0) + placeRank,

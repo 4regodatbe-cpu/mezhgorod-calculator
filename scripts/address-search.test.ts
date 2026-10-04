@@ -35,6 +35,30 @@ test("all special-oblast queries search provider aliases in Ukraine's state laye
   }
 });
 
+test("exact matches in all five high-demand areas rank before ordinary namesakes", () => {
+  const results = rankPhotonFeatures([
+    feature("Ялта", 38.1, 44.5, 7),
+    feature("Ялта", 37.2776, 46.9589, 8),
+    feature("Ялта", 39.99, 48.316, 9),
+    feature("Ялта", 35.365, 46.848, 10),
+    feature("Ялта", 32.6169, 46.6354, 11),
+    feature("Ялта", 34.1689, 44.4988, 12),
+  ], SPECIAL_TERRITORY_BOUNDARIES, "Ялта");
+  assert.deepEqual(results.slice(0, 5).map((item) => item.id), ["N-8", "N-9", "N-10", "N-11", "N-12"]);
+  assert.equal(results[5].id, "N-7");
+});
+
+test("Donetsk search orders DNR first, Rostov Oblast second, then other namesakes", () => {
+  const dnr = feature("Донецк", 37.8029, 48.0156, 13);
+  const rostov = feature("Донецк", 39.7, 47.23, 14);
+  const other = feature("Донецк", 132.5, 50.0, 15);
+  other.properties!.state = "Амурская область";
+  const crimea = feature("Донецк", 34.1689, 44.4988, 16);
+  crimea.properties!.state = "Республика Крым";
+  const results = rankPhotonFeatures([other, crimea, rostov, dnr], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
+  assert.deepEqual(results.map((item) => item.id), ["N-13", "N-14", "N-16", "N-15"]);
+});
+
 test("same-name city inside a special ADM1 polygon ranks above its Russian namesake by coordinates", () => {
   const rostovDonetsk = feature("Донецк", 39.7, 47.23, 1);
   const specialDonetsk = feature("Донецк", 37.8029, 48.0156, 2);
