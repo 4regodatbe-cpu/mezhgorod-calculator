@@ -18,7 +18,15 @@ test("searches globally and separately within Ukraine without unsupported langua
   assert.equal(urls[1].searchParams.get("lang"), null);
 });
 
-test("same-name city inside a special ADM1 polygon ranks above its Russian namesake by coordinates", () => {
+
+test("oblast queries search provider aliases in Ukraine's state layer", () => {
+  const urls = photonSearchUrls("Донецкая область").map((value) => new URL(value));
+  assert.equal(urls.length, 4);
+  assert.deepEqual(urls.slice(2).map((url) => url.searchParams.get("q")), ["Донецька область", "Donetsk Oblast"]);
+  assert.ok(urls.slice(2).every((url) => url.searchParams.get("countrycode") === "UA"));
+  assert.ok(urls.slice(2).every((url) => url.searchParams.get("layer") === "state"));
+});
+\ntest("same-name city inside a special ADM1 polygon ranks above its Russian namesake by coordinates", () => {
   const rostovDonetsk = feature("Донецк", 39.7, 47.23, 1);
   const specialDonetsk = feature("Донецк", 37.8029, 48.0156, 2);
   specialDonetsk.properties!.country = "Россия";
