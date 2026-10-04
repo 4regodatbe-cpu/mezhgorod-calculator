@@ -221,23 +221,10 @@ export function splitRouteByTerritory(input: {
   };
 }
 
-export function qualifiesCrimeaAlternative(mainlandSpecialSeconds: number, crimeaSpecialSeconds: number, threshold = 0.5, timeComparisonVerified = false) {
-  if (!timeComparisonVerified || ![mainlandSpecialSeconds, crimeaSpecialSeconds, threshold].every(Number.isFinite) || mainlandSpecialSeconds <= 0 || crimeaSpecialSeconds < 0 || threshold <= 0 || threshold >= 1) return false;
-  return crimeaSpecialSeconds <= mainlandSpecialSeconds * threshold;
-}
-
 export type CorridorRoute = { id: string; corridor: "mainland" | "crimea"; tollStatus: "paid" | "free" | "unknown"; meters: number; seconds: number };
 
 export function chooseCorridorRoute(routes: CorridorRoute[], corridor: CorridorRoute["corridor"]): CorridorRoute | null {
   const available = routes.filter((route) => route.corridor === corridor && Number.isFinite(route.meters) && route.meters > 0 && Number.isFinite(route.seconds) && route.seconds > 0);
   return available.find((route) => route.tollStatus === "paid") ?? available.find((route) => route.tollStatus === "free") ??
     [...available].sort((a, b) => a.seconds - b.seconds)[0] ?? null;
-}
-
-export function selectSpecialTerritoryOptions(routes: CorridorRoute[], mainlandSpecialSeconds: number, crimeaSpecialSeconds: number, timeComparisonVerified = false) {
-  const mainland = chooseCorridorRoute(routes, "mainland");
-  const crimea = chooseCorridorRoute(routes, "crimea");
-  if (!mainland) return [];
-  if (!crimea || !qualifiesCrimeaAlternative(mainlandSpecialSeconds, crimeaSpecialSeconds, 0.5, timeComparisonVerified)) return [mainland];
-  return [mainland, crimea];
 }

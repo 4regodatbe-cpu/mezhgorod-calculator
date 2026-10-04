@@ -1,7 +1,7 @@
 import { valhalla, osrmRoute, type Located, type RouteWithGeometry } from "../route-providers";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../special-territory-boundaries";
 import { analyzeRoute, candidatePlans, followsPlan } from "../special-territory-policy";
-import { selectTimedTerritoryOptions } from "../special-territory-time";
+import { selectGeographicTerritoryOption } from "../special-territory-options";
 import { calculateLegTolls } from "./route-leg-pricing";
 import { tollsForApi } from "./free-route-selection";
 
@@ -22,7 +22,7 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     }));
     return priced.filter(item=>item!==null);
   }));
-  const selection=selectTimedTerritoryOptions(candidates.flat(),preferredCorridor);
+  const selection=selectGeographicTerritoryOption(candidates.flat(),preferredCorridor);
   if(!selection.options.length)throw new Error("PREFERRED_ROUTE_UNAVAILABLE");
   return selection;
 }

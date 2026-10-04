@@ -4,6 +4,7 @@ import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-
 import { analyzeRoute, candidatePlans, endpointPolicy, followsPlan, inCrimea } from "../lib/special-territory-policy.ts";
 import { splitRouteByTerritory, type VerifiedTerritory, type GeoPoint } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
+import { selectGeographicTerritoryOption } from "../lib/special-territory-options.ts";
 import { inCrimeaApproachZone } from "../lib/special-territory-approach-zone.ts";
 import { activeOverride, touchSession, SESSION_IDLE_MS } from "../lib/tariff-session.ts";
 const k={lat:45.04,lng:38.98},d={lat:48.0156,lng:37.8029},c={lat:44.95,lng:34.1};
@@ -68,7 +69,7 @@ test("geographic selector ignores elapsed-time evidence and preserves toll uncer
  const {selectTimedTerritoryOptions}=await import("../lib/special-territory-time.ts");
  const candidate=(corridor:"mainland"|"crimea",pricingStatus:"priced"|"free"|"unknown",seconds=20000,provider="OSRM")=>({corridor,provider,fast:{seconds,tolls:{pricingStatus}}});
  const mainland=candidate("mainland","priced"),crimea=candidate("crimea","unknown",100);
- const selectedCrimea=selectTimedTerritoryOptions([mainland,crimea],"crimea");
+ const selectedCrimea=selectGeographicTerritoryOption([mainland,crimea],"crimea");
  assert.equal(selectedCrimea.options.length,1);assert.equal(selectedCrimea.options[0].corridor,"crimea");assert.equal(selectedCrimea.routePolicy,"geographic-zone");
  const selectedMainland=selectTimedTerritoryOptions([mainland,crimea],"mainland");assert.equal(selectedMainland.options.length,1);assert.equal(selectedMainland.options[0].corridor,"mainland");
  assert.equal(selectTimedTerritoryOptions([crimea],"mainland").options.length,0);

@@ -64,11 +64,3 @@ export function territoryTimingPlan(route: TimedRoute, zones: VerifiedTerritory[
   if (!expected.length || positions.length > 48) throw new Error("TIMING_WAYPOINT_LIMIT");
   return { positions, expected };
 }
-
-export type TimedCandidate = { corridor:"mainland"|"crimea"; provider:string; fast:{seconds:number;tollValidation?:{status:string};tolls:{pricingStatus:"priced"|"free"|"unknown"}} };
-export function selectTimedTerritoryOptions<T extends TimedCandidate>(candidates:T[],preferredCorridor:"mainland"|"crimea"="mainland"){
- const isPaid=(item:T)=>item.fast.tolls.pricingStatus==="priced"||item.fast.tollValidation?.status==="toll";
- const eligible=candidates.filter(item=>item.corridor===preferredCorridor);
- const options=[...eligible].sort((a,b)=>Number(isPaid(b))-Number(isPaid(a))||a.fast.seconds-b.fast.seconds).slice(0,1);
- return {options,preferredCorridor,routePolicy:"geographic-zone" as const};
-}
