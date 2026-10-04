@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
     const outcomes = await Promise.allSettled(photonSearchUrls(q).map(fetchPhoton));
     const features = outcomes.flatMap((outcome) => outcome.status === "fulfilled" ? outcome.value : []);
     if (outcomes.every((outcome) => outcome.status === "rejected")) throw new Error("Photon unavailable");
-    return NextResponse.json({ items: rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES) });
+    return NextResponse.json({ items: rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, q) });
   } catch {
     return NextResponse.json({ error: "Подсказки адресов временно недоступны" }, { status: 502 });
   }
