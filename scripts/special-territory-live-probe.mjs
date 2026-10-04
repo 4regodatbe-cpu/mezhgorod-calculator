@@ -6,7 +6,8 @@ import { splitRouteByTerritory } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
 
 const krasnodar = { label: "Krasnodar", position: { lat: 45.04, lng: 38.98 } };
-const donetsk = { label: "Donetsk", position: { lat: 48.0156, lng: 37.8029 } };
+const donetsk = { label: "Donetsk", position: { lat: 48.0158753, lng: 37.8013407 } };
+const moscow = { label: "Москва", position: { lat: 55.7505412, lng: 37.6174782 } };
 const simferopol = { label: "Simferopol", position: { lat: 44.9521, lng: 34.1024 } };
 // Representative city-centre coordinates. Explicit points avoid ambiguous homonyms in free-text geocoding.
 const feodosia = { label: "Феодосия", position: { lat: 45.033669, lng: 35.3753628 } };
@@ -17,6 +18,8 @@ const cases = [
   { name: "Yalta-Donetsk", from: yalta, to: donetsk },
   { name: "Krasnodar-Donetsk", from: krasnodar, to: donetsk },
   { name: "Donetsk-Krasnodar", from: donetsk, to: krasnodar },
+  // User-provided Yandex screenshot (2026-10-04): 1,220 km fast route, 1,230 km alternative.
+  { name: "Donetsk-Moscow", from: donetsk, to: moscow, referenceDistanceKm: 1220 },
   { name: "Simferopol-Donetsk", from: simferopol, to: donetsk },
   { name: "Donetsk-Simferopol", from: donetsk, to: simferopol },
   { name: "Simferopol-Krasnodar", from: simferopol, to: krasnodar },
@@ -42,7 +45,7 @@ const reports = [];
 for (const sample of cases) {
   for (const plan of candidatePlans(sample.from.position, sample.to.position, zones)) {
     for (const provider of providers) {
-      const row = { sample: sample.name, from: sample.from.label, to: sample.to.label, fromPosition: sample.from.position, toPosition: sample.to.position, corridor: plan.corridor, provider: provider.name, status: "unverified" };
+      const row = { sample: sample.name, from: sample.from.label, to: sample.to.label, fromPosition: sample.from.position, toPosition: sample.to.position, corridor: plan.corridor, provider: provider.name, referenceDistanceKm: sample.referenceDistanceKm ?? null, status: "unverified" };
       try {
         let route = await provider.get(sample.from, sample.to, plan.positions);
         if (!followsPlan(route.coordinates, plan.positions, plan.corridor, true)) {
@@ -83,6 +86,9 @@ for (const sample of cases) {
         row.specialShare = time.verified && route.seconds > 0 ? Math.round((time.specialSeconds / route.seconds) * 1000) / 1000 : null;
         row.finalDistanceKm = Math.round(route.meters / 100) / 10;
         row.finalRouteSeconds = route.seconds;
+        row.referenceDistanceDeviationPercent = sample.referenceDistanceKm
+          ? Math.round((route.meters / 1000 - sample.referenceDistanceKm) / sample.referenceDistanceKm * 1000) / 10
+          : null;
       } catch (error) { row.error = error instanceof Error ? error.message : String(error); }
       reports.push(row);
       console.log(JSON.stringify(row));

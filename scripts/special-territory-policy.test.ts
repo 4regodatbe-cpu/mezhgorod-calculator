@@ -18,12 +18,18 @@ test("real four polygons split transitions, Crimea ordinary, transit excluded",(
   const all=splitRouteByTerritory({coordinates:[[32.6169,46.6354],[35.1396,47.8388],[37.8029,48.0156],[39.3078,48.574]],routedDistanceMeters:800000,routedDurationSeconds:40000,zones});
   for(const id of ["dnr","lnr","zaporizhzhia","kherson"] as const)assert.ok(all.territoryKm[id]>0);
 });
-test("geographic route zone chooses exactly one corridor and keeps controls ordered",()=>{
+test("geographic route zone selects one corridor without forcing a mainland detour",()=>{
  const melitopol={lat:46.848,lng:35.365},plans=candidatePlans(k,melitopol,zones);
  assert.equal(plans.length,1);assert.equal(plans[0].corridor,"crimea");assert.equal(inCrimeaApproachZone(melitopol),true);
  const donetskPlans=candidatePlans(k,d,zones);assert.equal(donetskPlans.length,1);assert.equal(donetskPlans[0].corridor,"mainland");assert.equal(inCrimeaApproachZone(d),false);
  const reverse=candidatePlans(melitopol,k,zones);assert.equal(reverse.length,1);assert.equal(reverse[0].corridor,"crimea");assert.deepEqual(reverse[0].positions,[...plans[0].positions].reverse());
- const yalta={lat:44.4987874,lng:34.1689358};assert.equal(inCrimea(yalta),true);assert.equal(candidatePlans(yalta,d,zones)[0].corridor,"mainland");
+ const yalta={lat:44.4987874,lng:34.1689358};assert.equal(inCrimea(yalta),true);
+ const yaltaToDonetsk=candidatePlans(yalta,d,zones)[0];
+ assert.deepEqual(yaltaToDonetsk.positions,[yalta,{lat:45.2117,lng:36.7161},{lat:45.045,lng:39.15},{lat:47.12,lng:39.86},d]);
+ assert.deepEqual(candidatePlans(d,yalta,zones)[0].positions,[...yaltaToDonetsk.positions].reverse());
+ const moscow={lat:55.7505412,lng:37.6174782};
+ assert.deepEqual(candidatePlans(moscow,d,zones)[0].positions,[moscow,d],"mainland destination does not force M-4/EAST waypoints");
+ assert.deepEqual(candidatePlans(d,moscow,zones)[0].positions,[d,moscow],"reverse mainland route uses the same direct controls");
  const ordinary=candidatePlans(c,k,zones);assert.equal(ordinary.length,1);assert.ok(ordinary[0].positions.some(p=>p.lng===36.7161));
  assert.equal(followsPlan([[k.lng,k.lat],[d.lng,d.lat]],donetskPlans[0].positions,"mainland",true),false);
  const kherson={lat:46.6354,lng:32.6169};
@@ -33,7 +39,7 @@ test("geographic route zone chooses exactly one corridor and keeps controls orde
  const edgeMidpoint={lng:31.16,lat:46.39};
  assert.equal(inCrimeaApproachZone(edgeMidpoint),true,"a point exactly on the screenshot-traced contour is included");
  assert.equal(inCrimeaApproachZone({lng:31.16,lat:46.389}),false,"a point just outside the contour remains outside");
- assert.equal(inCrimeaApproachZone({lng:31.16,lat:46.391}),true,"a point just inside the contour is included");
+ assert.equal(inCrimeaApproachZone({lng:31.16,lat:46.391}),true,"a point just inside the contour remains inside");
 });
 const synthetic:VerifiedTerritory[]=(["dnr","lnr","zaporizhzhia","kherson"] as const).map((id,i)=>({id,verified:true,source:{url:"https://example.org",title:"test",checkedAt:"2026-10-03"},geometry:{type:"Polygon",coordinates:[[[i*10,-1],[i*10+2,-1],[i*10+2,1],[i*10,1],[i*10,-1]]]}}));
 const legs=[{meters:100000,seconds:900,coordinates:[[-1,0],[0,0]] as GeoPoint[]},{meters:200000,seconds:8000,coordinates:[[0,0],[1,0],[2,0]] as GeoPoint[]},{meters:100000,seconds:1100,coordinates:[[2,0],[3,0]] as GeoPoint[]}];

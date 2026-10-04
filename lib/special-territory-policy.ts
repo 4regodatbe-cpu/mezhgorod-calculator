@@ -3,8 +3,6 @@ import { inCrimeaApproachZone } from "./special-territory-approach-zone.ts";
 export const BRIDGE: Position = { lat:45.2117, lng:36.7161 };
 const KRASNODAR: Position = { lat:45.045, lng:39.15 };
 const M4: Position = { lat:47.12, lng:39.86 };
-const EAST: Position = { lat:47.28, lng:38.94 };
-const NORTH_EAST: Position = { lat:48.32, lng:40.26 };
 const CRIMEA_INTERIOR: Position = { lat:45.708, lng:34.395 };
 // Routing controls only, not declarations of road access or border crossing status.
 export function inCrimea(p: Position) {
@@ -26,9 +24,12 @@ export function candidatePlans(from: Position,to: Position,zones: VerifiedTerrit
   // Orient the controls toward the special endpoint, including reverse trips.
   const reverse = endpoints.fromTerritory!==null && endpoints.toTerritory===null;
   const start=reverse?to:from,end=reverse?from:to;
-  const endZone=reverse?endpoints.fromTerritory:endpoints.toTerritory;
-  const approach=endZone==="lnr"?NORTH_EAST:EAST;
-  const mainland=endpoints.fromTerritory && endpoints.toTerritory ? [from,to] : [start,...(inCrimea(start)?[BRIDGE,KRASNODAR]:[]),...(endZone==="lnr"?[]:[M4]),approach,end];
+  // On the mainland, these are routing constraints, not a prescribed road:
+  // let the router choose the road between endpoints and reject Crimea transit below.
+  // Keep Bridge → Krasnodar → M-4 controls only when one endpoint is in Crimea.
+  const mainland=endpoints.fromTerritory && endpoints.toTerritory
+    ? [from,to]
+    : [start,...(inCrimea(start)?[BRIDGE,KRASNODAR,M4]:[]),end];
   const crimea=endpoints.fromTerritory && endpoints.toTerritory ? [from,CRIMEA_INTERIOR,to] : [start,...(inCrimea(start)?[]:[KRASNODAR,BRIDGE]),CRIMEA_INTERIOR,end];
   // Geographic policy selects one corridor; the former timing threshold no longer applies.
   // If both endpoints are special, endpoint B determines the approach.
