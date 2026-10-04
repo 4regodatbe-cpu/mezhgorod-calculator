@@ -12,7 +12,10 @@ function text(value: unknown): string {
 }
 
 function normalize(value: string): string {
-  return value.toLocaleLowerCase("ru-RU").replace(/ё/g, "е").replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
+  return value.toLocaleLowerCase("ru-RU")
+    .replace(/ё/g, "е").replace(/і/g, "и").replace(/ї/g, "и").replace(/є/g, "е").replace(/ґ/g, "г")
+    .replace(/[ьъ]/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
 }
 
 function uniqueParts(parts: unknown[]): string[] {
@@ -45,6 +48,8 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
   const name = text(p.name) || street || text(p.city);
   const areaName = territory ? specialLabels[territory] : crimea ? "Крым" : null;
   const providerRegion = uniqueParts([p.city, p.district, p.county, p.state]);
+  const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
+  const isLocality = ["city", "town", "village", "hamlet", "locality", "municipality"].includes(placeType);
 
   // Region-level search results stay oblast names; city/locality results use compact product labels.
   if (territory && /(область|oblast)$/iu.test(name)) {
@@ -55,7 +60,7 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
     if (crimea && /^(республика крым|крым|crimea)$/iu.test(name)) {
       return { title: "Крым", label: "Крым", region: "Крым" };
     }
-    const locality = uniqueParts([name, p.city]).join(", ");
+    const locality = uniqueParts([name, isLocality ? "" : p.city]).join(", ");
     const label = locality ? `${locality} — ${areaName}` : areaName;
     return { title: label, label, region: areaName };
   }
@@ -88,7 +93,7 @@ export function photonSearchUrls(query: string): string[] {
 }
 
 /** Order suggestions and display regional names exclusively from each valid geocoded coordinate. */
-export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTerritory[], maxItems = 10): Suggestion[] {
+export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTerritory[], query: string, maxItems = 10): Suggestion[] {
   const candidates = features.flatMap((feature, index) => {
     const coordinates = feature.geometry?.coordinates;
     const p = feature.properties ?? {};
@@ -100,10 +105,15 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const { title, label, region } = displayName(feature, territory, crimea);
     const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
     const placeRank = ["city", "town", "village", "hamlet", "locality", "municipality"].includes(placeType) ? 1 : 0;
-    const zoneRank = territory || crimea ? 1 : 0;
+    const queryName = normalize(query.split(/[;,—–-]/u)[0]);
+    const normalizedName = normalize(text(p.name) || text(p.city));
+    const exactName = Boolean(queryName && normalizedName &&
+      (queryName === normalizedName ||
+        (queryName.startsWith(`${normalizedName} `) && /(область|обл|region|oblast)$/u.test(queryName))));
+    const zoneRank = exactName ? (territory ? 100 : crimea ? 80 : 0) : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
-      score: zoneRank * 4 + placeRank,
+      score: zoneRank + placeRank,
       index,
       key: id,
       item: {
