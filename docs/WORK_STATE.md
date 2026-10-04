@@ -215,3 +215,11 @@ PROJECT_PROGRESS.md датирован 2026-09-29, OPTIMIZATION_MASTER_PLAN.md �
 - **Проверки:** run #52 (`37211244851`) success: pnpm frozen install, тестовый набор, TypeScript, Next build и live probe. Vercel Preview для SHA `ef4b2a75...` READY (`dpl_6FE2nVQ4yeT4CAii8pDhMoQ3RxZw`), check success.
 - **Исправление прежней записи о production:** после предыдущего зафиксированного отказа Vercel production alias был обновлён. Повторная проверка показала `mezhgorod-calculator.vercel.app` на READY deployment `dpl_7GMGhK9uxqYBbKgNwnRmQgSKxS1N`, target `production`, branch PR #10, SHA `e38b86c0f2910e4e9d646ed809b80428adde1d61`. Историческая запись о неизменившемся production описывает состояние до этого обновления.
 - **Ограничение:** Vercel API подтверждает READY deployment и alias; fetch самой `/v2` страницы по-прежнему возвращает 403 для защищённого чтения, поэтому браузерная проверка интерфейса не подтверждена.
+
+### 2026-10-04 — повторная попытка публикации исправлений pnpm/Node
+
+- **Разрешение пользователя:** пользователь повторно прямо разрешил продвижение исправлений конфигурации в production.
+- **Артефакт:** Preview `dpl_86CtcbWwsTCELXDC5jLbDRQQ4HPm` READY для head `e0899074c587dd9c3b58436ea08168d302515843`; CI run #53 (`37211403059`) success.
+- **Неуспешное Promote через Vercel API:** без team scope — HTTP 422 `Resource cannot be processed`; с team ID `team_UFuw0UGXjMqBV2hJBxsWGAMS` — HTTP 403: подключение не авторизовано для scope `4regodatbe-5310`.
+- **Dashboard fallback:** deployment inspector перенаправил на страницу входа Vercel. В текущем удалённом браузере нет авторизованной сессии; вход и ввод учетных данных самостоятельно не выполнялись.
+- **Production не обновлён этим действием:** domain `mezhgorod-calculator.vercel.app` остаётся на READY production deployment `dpl_7GMGhK9uxqYBbKgNwnRmQgSKxS1N`, SHA `e38b86c0f2910e4e9d646ed809b80428adde1d61`. Исправления Node/pnpm доступны только в Preview, пока аккаунт с правом deployment promotion не продвинет его из Vercel Dashboard либо подключение Vercel не получит write access.
