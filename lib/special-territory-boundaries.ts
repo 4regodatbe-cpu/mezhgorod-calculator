@@ -26,7 +26,7 @@ const idByPcode: Record<string, SpecialTerritoryId> = {
   UA65: "kherson",
 };
 
-const features = (boundaryCollection as BoundaryCollection).features;
+const features = (boundaryCollection as unknown as BoundaryCollection).features;
 export const SPECIAL_TERRITORY_BOUNDARIES: VerifiedTerritory[] = features.map((feature) => ({
   id: idByPcode[feature.properties.adm1_pcode],
   verified: true,

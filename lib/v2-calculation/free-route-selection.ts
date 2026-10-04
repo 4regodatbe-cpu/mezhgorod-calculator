@@ -6,7 +6,7 @@ import type { RouteTollComponentId } from "@/lib/toll-engine/route-toll-composit
 
 type FreeCandidate = { name: string; route: RouteWithGeometry };
 type SelectedFree = {
-  route: RouteSummary;
+  route: RouteWithGeometry;
   quality: RouteQuality;
   validation: TollValidation;
   truth: "confirmed_free" | "candidate_unverified";

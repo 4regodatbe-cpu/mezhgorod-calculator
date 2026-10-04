@@ -1,7 +1,7 @@
 export const SPECIAL_TERRITORY_IDS = ["dnr", "lnr", "zaporizhzhia", "kherson"] as const;
 export type SpecialTerritoryId = typeof SPECIAL_TERRITORY_IDS[number];
 export type Position = { lat: number; lng: number };
-type GeoPoint = [number, number];
+export type GeoPoint = [number, number];
 type PolygonGeometry = { type: "Polygon"; coordinates: GeoPoint[][] } | { type: "MultiPolygon"; coordinates: GeoPoint[][][] };
 
 export type VerifiedTerritory = {
@@ -19,7 +19,35 @@ export type TerritorySplit = {
   specialSeconds: number;
   territorySeconds: Record<SpecialTerritoryId, number>;
   timeIsEstimated: true;
+  pieces: TerritoryPiece[];
 };
+
+export type TerritoryPiece = { territory: SpecialTerritoryId | null; coordinates: GeoPoint[]; meters: number };
+type Edge = { a: GeoPoint; b: GeoPoint; minX: number; maxX: number; minY: number; maxY: number };
+const prepared = new WeakMap<VerifiedTerritory[], { edges: Map<string, Edge[]>; bounds: Map<VerifiedTerritory, number[]> }>();
+function prepare(zones: VerifiedTerritory[]) {
+  const cached = prepared.get(zones);
+  if (cached) return cached;
+  validateTerritories(zones);
+  const edges = new Map<string, Edge[]>();
+  const bounds = new Map<VerifiedTerritory, number[]>();
+  for (const zone of zones) {
+    const box = [Infinity, Infinity, -Infinity, -Infinity];
+    for (const polygon of polygons(zone.geometry)) for (const ring of polygon) {
+      for (let i = 1; i < ring.length; i++) {
+        const a = ring[i - 1], b = ring[i];
+        const edge = { a, b, minX: Math.min(a[0], b[0]), maxX: Math.max(a[0], b[0]), minY: Math.min(a[1], b[1]), maxY: Math.max(a[1], b[1]) };
+        box[0] = Math.min(box[0], edge.minX); box[1] = Math.min(box[1], edge.minY);
+        box[2] = Math.max(box[2], edge.maxX); box[3] = Math.max(box[3], edge.maxY);
+        for (let x = Math.floor(edge.minX); x <= Math.floor(edge.maxX); x++) for (let y = Math.floor(edge.minY); y <= Math.floor(edge.maxY); y++) {
+          const key = `${x}:${y}`; const bucket = edges.get(key) ?? []; bucket.push(edge); edges.set(key, bucket);
+        }
+      }
+    }
+    bounds.set(zone, box);
+  }
+  const result = { edges, bounds }; prepared.set(zones, result); return result;
+}
 
 const EPSILON = 1e-10;
 const EARTH_RADIUS_METERS = 6_371_008.8;
@@ -86,12 +114,15 @@ function inPolygon(point: GeoPoint, polygon: GeoPoint[][]) {
 }
 
 export function classifyTerritory(position: Position, zones: VerifiedTerritory[]): SpecialTerritoryId | null {
-  validateTerritories(zones);
+  const index = prepare(zones);
   if (!Number.isFinite(position.lat) || !Number.isFinite(position.lng) || position.lat < -90 || position.lat > 90 || position.lng < -180 || position.lng > 180) {
     throw new TypeError("A valid geocoded coordinate is required");
   }
   const point: GeoPoint = [position.lng, position.lat];
-  const matches = zones.filter((zone) => polygons(zone.geometry).some((polygon) => inPolygon(point, polygon)));
+  const matches = zones.filter((zone) => {
+    const [minX, minY, maxX, maxY] = index.bounds.get(zone)!;
+    return point[0] >= minX && point[0] <= maxX && point[1] >= minY && point[1] <= maxY && polygons(zone.geometry).some((polygon) => inPolygon(point, polygon));
+  });
   if (matches.length > 1) throw new Error("TERRITORY_BOUNDARIES_OVERLAP");
   return matches[0]?.id ?? null;
 }
@@ -134,25 +165,29 @@ export function splitRouteByTerritory(input: {
   routedDurationSeconds: number;
   zones: VerifiedTerritory[];
 }): TerritorySplit {
-  validateTerritories(input.zones);
+  const preparedZones = prepare(input.zones);
   if (!Array.isArray(input.coordinates) || input.coordinates.length < 2 || !input.coordinates.every(validPoint) ||
       !Number.isFinite(input.routedDistanceMeters) || input.routedDistanceMeters <= 0 ||
       !Number.isFinite(input.routedDurationSeconds) || input.routedDurationSeconds <= 0) {
     throw new TypeError("Route geometry, distance and duration are required");
   }
   const lengthByTerritory = Object.fromEntries(SPECIAL_TERRITORY_IDS.map((id) => [id, 0])) as Record<SpecialTerritoryId, number>;
+  const pieces: TerritoryPiece[] = [];
   let geometryMeters = 0; let specialGeometryMeters = 0;
   for (let index = 1; index < input.coordinates.length; index += 1) {
     const a = input.coordinates[index - 1]; const b = input.coordinates[index];
     const segmentMeters = distanceMeters(a, b);
     if (segmentMeters === 0) continue;
     const cuts = [0, 1];
-    for (const zone of input.zones) for (const polygon of polygons(zone.geometry)) for (const ring of polygon) {
-      for (let edge = 1; edge < ring.length; edge += 1) {
-        const crossing = segmentCrossing(a, b, ring[edge - 1], ring[edge]);
-        if (crossing === "overlap") throw new Error("TERRITORY_BORDER_OVERLAP");
-        if (crossing !== null) cuts.push(crossing);
-      }
+    const edges = new Set<Edge>();
+    for (let x = Math.floor(Math.min(a[0], b[0])); x <= Math.floor(Math.max(a[0], b[0])); x++)
+      for (let y = Math.floor(Math.min(a[1], b[1])); y <= Math.floor(Math.max(a[1], b[1])); y++)
+        for (const edge of preparedZones.edges.get(`${x}:${y}`) ?? []) edges.add(edge);
+    for (const edge of edges) {
+      if (edge.maxX < Math.min(a[0], b[0]) || edge.minX > Math.max(a[0], b[0]) || edge.maxY < Math.min(a[1], b[1]) || edge.minY > Math.max(a[1], b[1])) continue;
+      const crossing = segmentCrossing(a, b, edge.a, edge.b);
+      if (crossing === "overlap") throw new Error("TERRITORY_BORDER_OVERLAP");
+      if (crossing !== null) cuts.push(crossing);
     }
     cuts.sort((x, y) => x - y);
     const unique = cuts.filter((value, cutIndex) => cutIndex === 0 || value - cuts[cutIndex - 1] > EPSILON);
@@ -161,6 +196,10 @@ export function splitRouteByTerritory(input: {
       const middle = interpolate(a, b, (start + end) / 2);
       const pointTerritory = classifyTerritory({ lat: middle[1], lng: middle[0] }, input.zones);
       const meters = segmentMeters * (end - start);
+      const startPoint = interpolate(a, b, start), endPoint = interpolate(a, b, end);
+      const last = pieces.at(-1);
+      if (last && last.territory === pointTerritory) { last.coordinates.push(endPoint); last.meters += meters; }
+      else pieces.push({ territory: pointTerritory, coordinates: [startPoint, endPoint], meters });
       geometryMeters += meters;
       if (pointTerritory) { lengthByTerritory[pointTerritory] += meters; specialGeometryMeters += meters; }
     }
@@ -178,6 +217,7 @@ export function splitRouteByTerritory(input: {
     specialSeconds: Object.values(territorySeconds).reduce((sum, seconds) => sum + seconds, 0),
     territorySeconds,
     timeIsEstimated: true,
+    pieces,
   };
 }
 

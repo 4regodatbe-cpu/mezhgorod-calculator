@@ -8,6 +8,7 @@ export type Located = { label: string; position: { lat: number; lng: number } };
 export type RouteSummary = { meters: number; seconds: number };
 export type RouteWithGeometry = RouteSummary & {
   coordinates: Coordinate[];
+  legs?: Array<RouteSummary & { coordinates: Coordinate[] }>;
   m12StrictSpan?: M12StrictRouteSpan | null;
   m11RoadEvidence?: M11RoadEvidence | null;
 };
@@ -57,10 +58,10 @@ function decodePolyline(encoded: string, precision = 6): Coordinate[] {
   return coordinates;
 }
 
-export async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Promise<RouteWithGeometry> {
+export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, positions = safeRoutePositions(from, to)): Promise<RouteWithGeometry> {
   const url = new URL("https://valhalla1.openstreetmap.de/route");
   const query = {
-    locations: safeRoutePositions(from, to).map((point) => ({ lat: point.lat, lon: point.lng })),
+    locations: positions.map((point) => ({ lat: point.lat, lon: point.lng, type: "break" })),
     costing: "auto",
     costing_options: { auto: { use_tolls: useTolls } },
     units: "kilometers",
@@ -80,7 +81,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Pro
   const data = (await response.json()) as {
     trip?: {
       summary?: { length?: number; time?: number };
-      legs?: Array<{ shape?: string; maneuvers?: M11ValhallaManeuver[] }>;
+      legs?: Array<{ summary?: { length?: number; time?: number }; shape?: string; maneuvers?: M11ValhallaManeuver[] }>;
     };
   };
   const summary = data.trip?.summary;
@@ -88,6 +89,8 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Pro
   const decodedLegs = (data.trip?.legs ?? []).map((item) => ({
     coordinates: item.shape ? decodePolyline(item.shape) : [],
     maneuvers: item.maneuvers,
+    meters: Number(item.summary?.length) * 1000,
+    seconds: Number(item.summary?.time),
   }));
   const coordinates = decodedLegs.flatMap((item) => item.coordinates);
   const m12StrictSpan = useTolls === 1 ? deriveStrictM12Span(decodedLegs) : null;
@@ -96,14 +99,15 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1): Pro
     meters: Math.round(summary.length * 1000),
     seconds: Math.round(summary.time),
     coordinates,
+    legs: decodedLegs,
     m12StrictSpan,
     m11RoadEvidence,
   };
 }
 
-async function brouterRoute(from: Located, to: Located, avoidTolls: boolean): Promise<RouteWithGeometry> {
+async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, positions = safeRoutePositions(from, to)): Promise<RouteWithGeometry> {
   const url = new URL("https://brouter.de/brouter");
-  url.searchParams.set("lonlats", safeRoutePositions(from, to).map((point) => `${point.lng},${point.lat}`).join("|"));
+  url.searchParams.set("lonlats", positions.map((point) => `${point.lng},${point.lat}`).join("|"));
   url.searchParams.set("profile", "car-vario");
   if (avoidTolls) url.searchParams.set("profile:avoid_toll", "1");
   url.searchParams.set("alternativeidx", "0");
@@ -129,18 +133,19 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean): Pr
   return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates: feature?.geometry?.coordinates ?? [] };
 }
 
-export function brouterFree(from: Located, to: Located) {
-  return brouterRoute(from, to, true);
+export function brouterFree(from: Located, to: Located, positions = safeRoutePositions(from, to)) {
+  return brouterRoute(from, to, true, positions);
 }
 
-export function brouterFast(from: Located, to: Located) {
-  return brouterRoute(from, to, false);
+export function brouterFast(from: Located, to: Located, positions = safeRoutePositions(from, to)) {
+  return brouterRoute(from, to, false, positions);
 }
 
-export async function osrmRoute(from: Located, to: Located): Promise<RouteWithGeometry> {
-  const path = safeRoutePositions(from, to).map((point) => `${point.lng},${point.lat}`).join(";");
+export async function osrmRoute(from: Located, to: Located, positions = safeRoutePositions(from, to)): Promise<RouteWithGeometry> {
+  const path = positions.map((point) => `${point.lng},${point.lat}`).join(";");
   const url = new URL(`https://router.project-osrm.org/route/v1/driving/${path}`);
   url.searchParams.set("overview", "full");
+  url.searchParams.set("steps", "true");
   url.searchParams.set("geometries", "geojson");
   const response = await fetch(url, {
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
@@ -149,8 +154,8 @@ export async function osrmRoute(from: Located, to: Located): Promise<RouteWithGe
     signal: AbortSignal.timeout(25_000),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as { routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] } }> };
+  const data = (await response.json()) as { routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: Array<{ geometry?: { coordinates?: Coordinate[] } }> }> }> };
   const route = data.routes?.[0];
   if (!route?.distance || !route.duration) throw new Error("ROUTE_NOT_FOUND");
-  return { meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[] };
+  return { meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[], legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
 }
