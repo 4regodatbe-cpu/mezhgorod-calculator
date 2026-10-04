@@ -34,7 +34,7 @@ for (const sample of cases) {
         let route = await provider.get(sample.from, sample.to, plan.positions);
         if (!followsPlan(route.coordinates, plan.positions, plan.corridor, true)) throw new Error("INITIAL_PLAN_MISMATCH");
         const split = analyzeRoute(route.coordinates, route.meters, route.seconds, sample.from.position, sample.to.position, zones);
-        const timing = territoryTimingPlan(route, zones);
+        let timing = territoryTimingPlan(route, zones);
         let time = measureTerritoryLegTimes(route, timing.expected, zones);
         row.initialLegCount = route.legs?.length ?? 0;
         row.expectedTerritoryLegs = timing.expected.length;
