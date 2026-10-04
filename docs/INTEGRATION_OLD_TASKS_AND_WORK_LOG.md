@@ -142,3 +142,10 @@
 - После записи PR #10 остался `open`, `draft=true`, `merged=false`; новый head соответствует docs-коммиту.
 - На момент проверки GitHub Actions `Special territory geometry and pricing` run #2 (`37182677971`) выполнялся; Vercel status был `pending`. Это не считается завершённым gate.
 - Так как изменение документационное, код не менялся. Локальные typecheck/build не выполнялись; результаты run #2 записать отдельно после завершения.
+
+### Завершение проверки — 2026-10-04
+
+- GitHub Actions run #3 (`37182695123`) для коммита `268241719edf0810ff4e109d9e7677a4ffc24032` завершился `success`: установка зависимостей, 39+ актуальных тестовых команд workflow, `tsc --noEmit` и `next build` выполнены job `verify`.
+- Vercel check для того же коммита завершился `success` (preview/check status; не production deploy).
+- PR #10 по-прежнему открыт черновиком; слияния не было.
+- Вывод: handoff добавлен и прошёл репозиторный CI; продуктовый код этим docs-коммитом не изменялся.
