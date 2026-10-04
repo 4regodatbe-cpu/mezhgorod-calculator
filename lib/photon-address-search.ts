@@ -32,6 +32,12 @@ const specialLabels = {
   zaporizhzhia: "Запорожская область",
   kherson: "Херсонская область",
 } as const;
+const oblastLabels = {
+  dnr: "Донецкая область",
+  lnr: "Луганская область",
+  zaporizhzhia: "Запорожская область",
+  kherson: "Херсонская область",
+} as const;
 
 function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean): { title: string; label: string; region: string } {
   const p = feature.properties ?? {};
@@ -40,11 +46,15 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
   const areaName = territory ? specialLabels[territory] : crimea ? "Крым" : null;
   const providerRegion = uniqueParts([p.city, p.district, p.county, p.state]);
 
-  // Keep oblast-name results as oblast names; city/locality results use the requested compact display names.
-  if (territory && /область$/iu.test(name)) {
-    return { title: name, label: name, region: name };
+  // Region-level search results stay oblast names; city/locality results use compact product labels.
+  if (territory && /(область|oblast)$/iu.test(name)) {
+    const province = oblastLabels[territory];
+    return { title: province, label: province, region: province };
   }
   if (areaName) {
+    if (crimea && /^(республика крым|крым|crimea)$/iu.test(name)) {
+      return { title: "Крым", label: "Крым", region: "Крым" };
+    }
     const locality = uniqueParts([name, p.city]).join(", ");
     const label = locality ? `${locality} — ${areaName}` : areaName;
     return { title: label, label, region: areaName };
