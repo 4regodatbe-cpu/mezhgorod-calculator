@@ -105,3 +105,14 @@ test("region query boosts exact oblast result and not a similarly named street",
   assert.equal(results[0].id, "N-61");
   assert.equal(results[0].label, "Донецкая область");
 });
+
+test("Ukrainian locality spelling matches a Russian query and omits community suffix", () => {
+  const donetsk = feature("Донецьк", 37.80134, 48.01587, 70, "administrative");
+  donetsk.properties!.city = "Донецька міська громада";
+  const makeyevka = feature("Макеевка", 37.9028, 48.0171, 71, "administrative");
+  makeyevka.properties!.city = "Макіївська міська рада";
+  const results = rankPhotonFeatures([donetsk, makeyevka], SPECIAL_TERRITORY_BOUNDARIES, "Макеевка");
+  assert.equal(results.find((item) => item.id === "N-70")?.label, "Донецьк — ДНР");
+  assert.equal(results.find((item) => item.id === "N-71")?.label, "Макеевка — ДНР");
+  assert.equal(results[0].id, "N-71");
+});
