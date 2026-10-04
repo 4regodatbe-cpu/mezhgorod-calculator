@@ -47,10 +47,11 @@ test('ordinary calculation preserves unknown toll price, prices all classes and 
 });
 test('server geocoding automatically enables special rates; manual ordinary remains ordinary',async()=>{
   const r=await POST(req({from,to:{label:'Без координат'},mode:'standard',specialRates:{standard:71,comfort:81,comfortPlus:91,minivan:111}}));
-  const body=await r.json();assert.equal(r.status,200,JSON.stringify(body));assert.equal(body.mode,'dual');assert.ok(body.options.length>=1&&body.options.length<=2);
+  const body=await r.json();assert.equal(r.status,200,JSON.stringify(body));assert.equal(body.mode,'dual');assert.equal(body.options.length,1);
   const segments=body.options[0].fast.pricingByVehicle.comfort.pricingSegments;
   assert.ok(segments.some((s:{type:string;ratePerKm:number})=>s.type==='special'&&s.ratePerKm===81));
-  assert.ok(requestedPaths.some(p=>p.some(([lng])=>lng===36.7161)),'Crimea candidate really requested');
+  assert.ok(requestedPaths.some(p=>p.some(([lng])=>lng===39.86)),'mainland candidate selected by destination coordinates');
+  assert.equal(requestedPaths.some(p=>p.some(([lng])=>lng===36.7161)),false,'outside-zone destination does not request Crimea');
   assert.ok(body.options.every((o:{free:unknown;freeCandidate:unknown})=>o.free===null&&o.freeCandidate===null));
   const manual=await POST(req({from,to:point(37.8029,48.0156),mode:'standard',modeOverride:true}));const m=await manual.json();assert.equal(manual.status,200);assert.equal(m.mode,'standard');assert.equal(m.automaticMode,'dual');assert.ok(m.options[0].fast.pricingByVehicle.comfort.pricingSegments.every((s:{type:string})=>s.type==='normal'));
 });

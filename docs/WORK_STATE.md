@@ -160,3 +160,5 @@ PROJECT_PROGRESS.md датирован 2026-09-29, OPTIMIZATION_MASTER_PLAN.md �
 - **Ограничение:** точность полигона ограничена качеством картинки и ручной оцифровкой. Перед production его нужно заменить или сверить по точному векторному контуру. PR оставить черновым; merge и production не выполнять.
 
 - **Follow-up after first CI start:** removed a duplicate route geometry analysis and made the no-route error direction-neutral, since the preferred candidate can now be either Crimea or mainland. The API message no longer incorrectly calls every failure a mainland failure.
+
+- **CI regression fix:** initial run #38 (`37194754058`) correctly exposed an outdated API test that still expected the removed dual-candidate policy for a Donetsk destination. Updated the test to require exactly one mainland option and verify no bridge waypoint request. 40/41 tests had passed before this fixture was corrected; TypeScript/build were skipped by the failing test gate.
