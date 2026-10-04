@@ -63,7 +63,7 @@ test("manual override survives calculations/activity, expires only after idle/ne
 
 test("selects no more than two directions, binds comparison to the paid candidate and preserves unknown",async()=>{
   const {selectTimedTerritoryOptions}=await import("../lib/special-territory-time.ts");
-  const candidate=(corridor:"mainland"|"crimea",specialSeconds:number,pricingStatus:"priced"|"free"|"unknown",verified=true)=>({corridor,time:{specialSeconds,verified},fast:{seconds:20000,tolls:{pricingStatus}}});
+  const candidate=(corridor:"mainland"|"crimea",specialSeconds:number,pricingStatus:"priced"|"free"|"unknown",verified=true,provider:"Valhalla"|"OSRM"="OSRM")=>({corridor,provider,time:{specialSeconds,verified},fast:{seconds:20000,tolls:{pricingStatus}}});
   const main=candidate("mainland",10000,"priced"), crimea=candidate("crimea",5000,"priced");
   assert.equal(selectTimedTerritoryOptions([main,crimea]).options.length,2);
   const lowSpecialMain={...candidate("mainland",1000,"priced"),fast:{seconds:20000,tolls:{pricingStatus:"priced" as const}}};
@@ -76,4 +76,15 @@ test("selects no more than two directions, binds comparison to the paid candidat
   assert.equal(selectTimedTerritoryOptions([free,main,candidate("crimea",6000,"priced")]).options.length,2);
   assert.equal(selectTimedTerritoryOptions([main,candidate("crimea",4000,"free")]).options.length,1);
   assert.equal(selectTimedTerritoryOptions([main,candidate("crimea",4000,"unknown")]).options[1].fast.tolls.pricingStatus,"unknown");
+  const mainValhalla=candidate("mainland",500,"priced",true,"Valhalla");
+  const badCrimeaValhalla=candidate("crimea",100,"priced",false,"Valhalla");
+  const mainOsrm={...candidate("mainland",1000,"priced",true,"OSRM"),fast:{seconds:20000,tolls:{pricingStatus:"priced" as const}}};
+  const validCrimeaOsrm={...candidate("crimea",9000,"priced",true,"OSRM"),fast:{seconds:18000,tolls:{pricingStatus:"priced" as const}}};
+  const paired=selectTimedTerritoryOptions([mainValhalla,badCrimeaValhalla,mainOsrm,validCrimeaOsrm]);
+  assert.equal(paired.crimeaAccepted,true);
+  assert.deepEqual(paired.options.map(option=>option.provider),["OSRM","OSRM"]);
+  const mixedProviders=selectTimedTerritoryOptions([candidate("mainland",1000,"priced",true,"Valhalla"),candidate("crimea",4000,"priced",true,"OSRM")]);
+  assert.equal(mixedProviders.crimeaAccepted,false);
+  assert.equal(mixedProviders.crimeaComparisonVerified,false);
+  assert.equal(mixedProviders.options.length,1);
 });
