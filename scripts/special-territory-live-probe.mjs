@@ -1,5 +1,5 @@
 import { writeFile } from "node:fs/promises";
-import { geocode, valhalla, osrmRoute } from "../lib/route-providers.ts";
+import { valhalla, osrmRoute } from "../lib/route-providers.ts";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
 import { analyzeRoute, candidatePlans, followsPlan } from "../lib/special-territory-policy.ts";
 import { splitRouteByTerritory } from "../lib/special-territory-geometry.ts";
@@ -8,14 +8,13 @@ import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-te
 const krasnodar = { label: "Krasnodar", position: { lat: 45.04, lng: 38.98 } };
 const donetsk = { label: "Donetsk", position: { lat: 48.0156, lng: 37.8029 } };
 const simferopol = { label: "Simferopol", position: { lat: 44.9521, lng: 34.1024 } };
-// Resolve the requested cities through the same geocoder used by the calculation API.
-const [feodosia, mariupol, yalta, liveDonetsk] = await Promise.all(
-  ["Феодосия, Республика Крым", "Мариуполь, Донецкая область", "Ялта, Республика Крым", "Донецк, Донецкая область"]
-    .map(label => geocode({ label })),
-);
+// Representative city-centre coordinates. Explicit points avoid ambiguous homonyms in free-text geocoding.
+const feodosia = { label: "Феодосия", position: { lat: 45.033669, lng: 35.3753628 } };
+const mariupol = { label: "Мариуполь", position: { lat: 47.1, lng: 37.55 } };
+const yalta = { label: "Ялта", position: { lat: 44.4987874, lng: 34.1689358 } };
 const cases = [
   { name: "Feodosia-Mariupol", from: feodosia, to: mariupol },
-  { name: "Yalta-Donetsk", from: yalta, to: liveDonetsk },
+  { name: "Yalta-Donetsk", from: yalta, to: donetsk },
   { name: "Krasnodar-Donetsk", from: krasnodar, to: donetsk },
   { name: "Donetsk-Krasnodar", from: donetsk, to: krasnodar },
   { name: "Simferopol-Donetsk", from: simferopol, to: donetsk },
