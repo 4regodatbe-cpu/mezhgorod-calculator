@@ -53,7 +53,6 @@ export function territoryTimingPlan(route: TimedRoute, zones: VerifiedTerritory[
         neighbor.first = tiny.first;
       }
       neighbor.meters += tiny.meters;
-      neighbor.territory ??= tiny.territory;
       groups.splice(i, 1);
       if (target < i) i = Math.max(0, i - 1);
     }
