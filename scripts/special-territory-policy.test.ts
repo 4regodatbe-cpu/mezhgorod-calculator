@@ -66,6 +66,9 @@ test("selects no more than two directions, binds comparison to the paid candidat
   const candidate=(corridor:"mainland"|"crimea",specialSeconds:number,pricingStatus:"priced"|"free"|"unknown",verified=true)=>({corridor,time:{specialSeconds,verified},fast:{seconds:20000,tolls:{pricingStatus}}});
   const main=candidate("mainland",10000,"priced"), crimea=candidate("crimea",5000,"priced");
   assert.equal(selectTimedTerritoryOptions([main,crimea]).options.length,2);
+  const lowSpecialMain={...candidate("mainland",1000,"priced"),fast:{seconds:20000,tolls:{pricingStatus:"priced" as const}}};
+  assert.equal(selectTimedTerritoryOptions([lowSpecialMain,candidate("crimea",9000,"priced")]).options.length,2);
+  assert.equal(selectTimedTerritoryOptions([lowSpecialMain,candidate("crimea",10001,"priced")]).options.length,1);
   assert.equal(selectTimedTerritoryOptions([main,{...crimea,time:{verified:true,specialSeconds:5001}}]).options.length,1);
   assert.equal(selectTimedTerritoryOptions([main,candidate("crimea",100,"priced",false)]).options.length,1);
   assert.equal(selectTimedTerritoryOptions([crimea]).options.length,0);
