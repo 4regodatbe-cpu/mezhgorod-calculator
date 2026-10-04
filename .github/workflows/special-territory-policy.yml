@@ -37,9 +37,13 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Probe live provider geometry and per-leg times
         run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
+      - name: Probe live Photon address suggestions
+        run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-live-probe.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: special-territory-live-probe-${{ github.run_id }}
-          path: special-territory-live-probe.json
+          path: |
+            special-territory-live-probe.json
+            address-search-live-probe.json
           if-no-files-found: ignore
