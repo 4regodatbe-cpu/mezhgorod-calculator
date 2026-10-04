@@ -15,7 +15,7 @@ for (const query of queries) {
     return payload.features;
   }));
   const features = outcomes.flatMap((outcome) => outcome.status === "fulfilled" ? outcome.value : []);
-  const items = rankPhotonFeatures(features, zones);
+  const items = rankPhotonFeatures(features, zones, query);
   const rendered = items.slice(0, 8).map((item) => ({
     title: item.title,
     label: item.label,
