@@ -66,3 +66,13 @@ undefined
 - **Статус:** PR #10 открыт как draft. Production не менялся.
 
 - **Unit-test correction (run #92):** tests revealed the alias keys must use normalized Russian forms without soft signs (`запороже`, `харков`), because `normalize()` strips `ь`. Corrected the dictionary keys; rerunning CI on the follow-up commit. Run #92 verify failed before TypeScript/build because of these new alias tests. The live job was still in progress at the time of this entry.
+
+### 2026-10-05 — confirmed toll composition and alias live checks
+
+- **Run #92:** full live job succeeded and attached artifact, while verify failed only in the two new alias tests. The live result is retained as a record of the test's defect before correction.
+- **Run #93:** tests, TypeScript, Next.js build, live route/provider probe, Photon probe and six-route toll audit all succeeded. Russian query «Запорожье» now returns the intended city first at 47.8507859, 35.1182867; «Харьков, Украина» returns Kharkiv city first at 49.9923181, 36.2310146. This validates the alias key normalization fix against live Photon.
+- **Томск—Черноморское breakdown from run #93:** M-4 charges four confirmed plazas: 1 450 ₽ weekdays / 2 200 ₽ weekend; A-289 crosses all three frames and adds 1 103 ₽ on either schedule. Aggregate 2 553 ₽ weekday / 3 303 ₽ weekend. The screenshot ~2 180 ₽ is close to M-4 weekend alone, so the observed difference maps to the A-289 component (1 103 ₽), but the screenshot cannot establish whether Yandex's route uses A-289 or an alternative.
+- **Primary source checked:** Автодор's tariff page confirms the A-289 charge rows and documents two routes to A-290: via A-289 or via Krasnodar street network/A-146. This supports, but does not prove, that the screenshot's route may use the latter. Avoid removing a route-crossed official frame from the calculator based only on a screenshot price.
+- **Next diagnostic:** a separate OSRM route via the official A-146/A-290 approach through Novorossiysk, Anapa, and Temryuk was added for Tomsk—Черноморское. It is marked diagnostic-only and cannot enter the UI route candidate list. Compare its distance/time/tolls with Yandex cards to see whether the A-289 difference is caused by route choice.
+- **Code changes:** alias map keys now use normalized forms without soft signs; unit tests and live queries cover Russian Zaporizhzhia/Kharkiv. Benchmark report now carries exact M-4/A-289 component detail and a controlled A-146 route experiment. No tariff runtime formula changed.
+- **Status:** PR #10 remains draft; run #93 passed. Run #94 with the diagnostic A-146 route is pending; production was not changed.

@@ -120,7 +120,52 @@ for (const sample of snapshot.routes) {
       }
     }
   }
+  let a146ApproachComparison = null;
+  if (sample.id === "tomsk-chernomorskoe" && plan.positions.length >= 5) {
+    try {
+      const novorossiysk = { lat: 44.7238, lng: 37.7682 };
+      const anapa = { lat: 44.8948, lng: 37.3169 };
+      const temryuk = { lat: 45.2731, lng: 37.3872 };
+      const positions = [plan.positions[0], plan.positions[1], plan.positions[2], novorossiysk, anapa, temryuk, plan.positions[3], plan.positions[4]];
+      const route = await osrmRoute(from, to, positions);
+      if (!followsPlan(route.coordinates, positions, plan.corridor, false)) throw new Error("A146_CONTROL_MISMATCH");
+      const split = analyzeRoute(route.coordinates, route.meters, route.seconds, from.position, to.position, zones);
+      const priced = await calculateLegTolls({
+        routeGeometry: route.coordinates,
+        routeSeconds: route.seconds,
+        selectedFastProvider: "OSRM",
+        selectedFastRoute: route,
+        valhallaEvidence: null,
+        confirmedFreeRoute: null,
+        diagnosticFastValidation: null,
+      });
+      const tolls = tollsForApi(priced.tolls, priced.fastValidation);
+      const m4 = await calculateM4Core(route.coordinates);
+      const a289 = priceA289Route(route.coordinates);
+      a146ApproachComparison = {
+        purpose: "diagnostic-only; official A-146/A-290 approach alternative, not an offered calculator route",
+        distanceKm: Math.round(route.meters / 100) / 10,
+        durationMinutes: Math.round(route.seconds / 60),
+        ordinaryKm: Math.round(split.ordinaryKm * 10) / 10,
+        specialKm: Math.round(split.specialKm * 10) / 10,
+        pricingStatus: tolls.pricingStatus,
+        amount: tolls.amount,
+        weekdayAmount: tolls.weekdayAmount,
+        weekendAmount: tolls.weekendAmount,
+        m4: {
+          weekdayAmount: m4.pricing.weekdayAmount,
+          weekendAmount: m4.pricing.weekendAmount,
+          pricedPlazas: m4.pricing.pricedPlazas.map(({ km, weekday, weekend }) => ({ km, weekday, weekend })),
+        },
+        a289: { amount: a289.amount, crossedFrames: a289.crossedFrames },
+        validation: { status: priced.fastValidation.status, message: priced.fastValidation.message },
+      };
+    } catch (error) {
+      a146ApproachComparison = { error: error instanceof Error ? error.message : String(error) };
+    }
+  }
   const result = {
+
     id: sample.id,
     from: from.label,
     to: to.label,
@@ -132,6 +177,7 @@ for (const sample of snapshot.routes) {
     selectedProvider: quality?.provider ?? null,
     providerRoutes: records,
     selectedRouteTolls: tollProbe,
+    a146ApproachComparison,
   };
   results.push(result);
   console.log(JSON.stringify(result));
