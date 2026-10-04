@@ -73,7 +73,7 @@ test("selects no more than two directions, binds comparison to the paid candidat
   assert.equal(selectTimedTerritoryOptions([main,candidate("crimea",100,"priced",false)]).options.length,1);
   assert.equal(selectTimedTerritoryOptions([crimea]).options.length,0);
   const free=candidate("mainland",20000,"free");
-  assert.equal(selectTimedTerritoryOptions([free,main,candidate("crimea",6000,"priced")]).options.length,1);
+  assert.equal(selectTimedTerritoryOptions([free,main,candidate("crimea",6000,"priced")]).options.length,2);
   assert.equal(selectTimedTerritoryOptions([main,candidate("crimea",4000,"free")]).options.length,1);
   assert.equal(selectTimedTerritoryOptions([main,candidate("crimea",4000,"unknown")]).options[1].fast.tolls.pricingStatus,"unknown");
 });
