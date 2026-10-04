@@ -24,3 +24,22 @@ jobs:
       - run: node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts
       - run: node node_modules/typescript/bin/tsc --noEmit
       - run: node node_modules/next/dist/bin/next build
+  live_probe:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --global pnpm@11.25.0
+      - run: pnpm install --frozen-lockfile
+      - name: Probe live provider geometry and per-leg times
+        run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: special-territory-live-probe-${{ github.run_id }}
+          path: special-territory-live-probe.json
+          if-no-files-found: ignore
