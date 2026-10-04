@@ -2,6 +2,7 @@ import { writeFile } from "node:fs/promises";
 import { valhalla, osrmRoute } from "../lib/route-providers.ts";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
 import { analyzeRoute, candidatePlans, followsPlan } from "../lib/special-territory-policy.ts";
+import { splitRouteByTerritory } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
 
 const cases = [
@@ -18,6 +19,12 @@ const metersBetween = (a, b) => {
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
   return 6371008.8 * 2 * Math.asin(Math.sqrt(h));
 };
+const legBreakdown = (route) => route.legs?.map((leg, index) => {
+  try {
+    const split = splitRouteByTerritory({ coordinates: leg.coordinates, routedDistanceMeters: leg.meters, routedDurationSeconds: leg.seconds, zones });
+    return { index, seconds: leg.seconds, meters: Math.round(leg.meters), territories: [...new Set(split.pieces.map(piece => piece.territory ?? "ordinary"))], pieces: split.pieces.map(piece => ({ territory: piece.territory ?? "ordinary", meters: Math.round(piece.meters) })) };
+  } catch (error) { return { index, seconds: leg.seconds, meters: Math.round(leg.meters), error: error instanceof Error ? error.message : String(error) }; }
+}) ?? null;
 const reports = [];
 for (const sample of cases) {
   for (const plan of candidatePlans(sample.from.position, sample.to.position, zones)) {
@@ -41,6 +48,7 @@ for (const sample of cases) {
           analyzeRoute(route.coordinates, route.meters, route.seconds, sample.from.position, sample.to.position, zones);
           time = measureTerritoryLegTimes(route, timing.expected, zones);
           row.rescanLegCount = route.legs?.length ?? 0;
+          row.rescanLegBreakdown = legBreakdown(route);
           row.rescanTiming = time;
           row.rescanDistanceKm = Math.round(route.meters / 100) / 10;
           row.rescanRouteSeconds = route.seconds;
