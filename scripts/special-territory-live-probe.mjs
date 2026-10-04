@@ -45,7 +45,11 @@ for (const sample of cases) {
       const row = { sample: sample.name, from: sample.from.label, to: sample.to.label, fromPosition: sample.from.position, toPosition: sample.to.position, corridor: plan.corridor, provider: provider.name, status: "unverified" };
       try {
         let route = await provider.get(sample.from, sample.to, plan.positions);
-        if (!followsPlan(route.coordinates, plan.positions, plan.corridor, true)) throw new Error("INITIAL_PLAN_MISMATCH");
+        if (!followsPlan(route.coordinates, plan.positions, plan.corridor, true)) {
+          row.planPositions = plan.positions;
+          row.planPositionOffsetsMeters = plan.positions.map(point => Math.round(Math.min(...route.coordinates.map(coordinate => metersBetween(coordinate, [point.lng, point.lat])))));
+          throw new Error("INITIAL_PLAN_MISMATCH");
+        }
         const split = analyzeRoute(route.coordinates, route.meters, route.seconds, sample.from.position, sample.to.position, zones);
         let timing = territoryTimingPlan(route, zones);
         let time = measureTerritoryLegTimes(route, timing.expected, zones);
