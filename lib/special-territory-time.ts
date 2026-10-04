@@ -65,19 +65,24 @@ export function territoryTimingPlan(route: TimedRoute, zones: VerifiedTerritory[
   return { positions, expected };
 }
 
-export type TimedCandidate = { corridor:"mainland"|"crimea"; time:TerritoryTime; fast:{seconds:number;tollValidation?:{status:string};tolls:{pricingStatus:"priced"|"free"|"unknown"}} };
+export type TimedCandidate = { corridor:"mainland"|"crimea"; provider:string; time:TerritoryTime; fast:{seconds:number;tollValidation?:{status:string};tolls:{pricingStatus:"priced"|"free"|"unknown"}} };
 export function selectTimedTerritoryOptions<T extends TimedCandidate>(candidates:T[]) {
   const isPaid=(item:T)=>item.fast.tolls.pricingStatus==="priced"||item.fast.tollValidation?.status==="toll";
-  const choose=(direction:T["corridor"])=>{
-    const routes=candidates.filter(item=>item.corridor===direction).sort((a,b)=>a.fast.seconds-b.fast.seconds);
-    return routes.find(isPaid)??routes[0];
-  };
-  const mainland=choose("mainland"),crimea=choose("crimea");
-  if(!mainland)return {options:[] as T[],crimeaComparisonVerified:false,crimeaAccepted:false};
-  const verified=!!crimea&&mainland.time.verified&&crimea.time.verified;
-  const mainlandSeconds=mainland.fast.seconds,crimeaSpecialSeconds=crimea?.time.specialSeconds;
-  const accepted=verified&&Number.isFinite(mainlandSeconds)&&Number.isFinite(crimeaSpecialSeconds)&&mainlandSeconds>0&&crimeaSpecialSeconds!>=0&&crimeaSpecialSeconds!<=mainlandSeconds*0.5;
-  const options=accepted?[mainland,crimea!]:[mainland];
+  const best=(routes:T[])=>[...routes].sort((a,b)=>Number(isPaid(b))-Number(isPaid(a))||a.fast.seconds-b.fast.seconds)[0];
+  const mainlandRoutes=candidates.filter(item=>item.corridor==="mainland");
+  const crimeaRoutes=candidates.filter(item=>item.corridor==="crimea");
+  const defaultMainland=best(mainlandRoutes);
+  if(!defaultMainland)return {options:[] as T[],crimeaComparisonVerified:false,crimeaAccepted:false};
+  const providers=[...new Set(mainlandRoutes.map(item=>item.provider).filter(provider=>crimeaRoutes.some(item=>item.provider===provider)))];
+  const pairs=providers.map(provider=>({mainland:best(mainlandRoutes.filter(item=>item.provider===provider)),crimea:best(crimeaRoutes.filter(item=>item.provider===provider))}))
+    .filter((pair):pair is {mainland:T;crimea:T}=>Boolean(pair.mainland&&pair.crimea));
+  const verifiedPairs=pairs.filter(pair=>pair.mainland.time.verified&&pair.crimea.time.verified);
+  const acceptedPairs=verifiedPairs.filter(pair=>{
+    const mainlandSeconds=pair.mainland.fast.seconds,crimeaSpecialSeconds=pair.crimea.time.specialSeconds;
+    return Number.isFinite(mainlandSeconds)&&Number.isFinite(crimeaSpecialSeconds)&&mainlandSeconds>0&&crimeaSpecialSeconds!>=0&&crimeaSpecialSeconds!<=mainlandSeconds*0.5;
+  }).sort((a,b)=>(Number(isPaid(b.mainland))+Number(isPaid(b.crimea)))-(Number(isPaid(a.mainland))+Number(isPaid(a.crimea)))||a.mainland.fast.seconds+a.crimea.fast.seconds-b.mainland.fast.seconds-b.crimea.fast.seconds);
+  const chosen=acceptedPairs[0];
+  const options=chosen?[chosen.mainland,chosen.crimea]:[defaultMainland];
   const paid=options.some(isPaid);
-  return {options:options.filter(item=>!paid||item.fast.tolls.pricingStatus!=="free"),crimeaComparisonVerified:verified,crimeaAccepted:accepted};
+  return {options:options.filter(item=>!paid||item.fast.tolls.pricingStatus!=="free"),crimeaComparisonVerified:verifiedPairs.length>0,crimeaAccepted:Boolean(chosen)};
 }
