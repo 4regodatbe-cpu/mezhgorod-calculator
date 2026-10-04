@@ -14,9 +14,12 @@ export function measureTerritoryLegTimes(route: TimedRoute, expected: Array<Spec
       if (!(Number.isFinite(leg.seconds) && leg.seconds > 0 && Number.isFinite(leg.meters) && leg.meters > 0)) throw new Error("LEG_SUMMARY");
       if (i && !close(route.legs[i-1].coordinates.at(-1)!, leg.coordinates[0])) throw new Error("LEG_DISCONTINUITY");
       const split = splitRouteByTerritory({ coordinates: leg.coordinates, routedDistanceMeters: leg.meters, routedDurationSeconds: leg.seconds, zones });
-      if (split.pieces.some(piece => piece.territory !== expected[i])) throw new Error("LEG_CROSSES_ZONE");
+      const expectedSpecial = expected[i] !== null;
+      const opposingMeters = split.pieces.filter(piece => (piece.territory !== null) !== expectedSpecial).reduce((sum, piece) => sum + piece.meters, 0);
+      if (opposingMeters > 1) throw new Error("LEG_CROSSES_ZONE");
       seconds += leg.seconds; meters += leg.meters;
-      if (expected[i] !== null) specialSeconds += leg.seconds;
+      // Count a boundary-jitter leg wholly as special: this is an upper bound, never a proportional estimate.
+      if (expectedSpecial || split.pieces.some(piece => piece.territory !== null)) specialSeconds += leg.seconds;
     }
     if (Math.abs(seconds-route.seconds) > 2 || Math.abs(meters-route.meters) > 2) throw new Error("LEG_TOTAL_MISMATCH");
     if (!close(route.coordinates[0],route.legs[0].coordinates[0]) || !close(route.coordinates.at(-1)!,route.legs.at(-1)!.coordinates.at(-1)!)) throw new Error("ENDPOINT_MISMATCH");
@@ -28,10 +31,35 @@ export function territoryTimingPlan(route: TimedRoute, zones: VerifiedTerritory[
   // Keep existing routing controls: splitting the full shape alone could discard the bridge.
   for (const leg of route.legs?.length ? route.legs : [route]) {
     const split = splitRouteByTerritory({ coordinates:leg.coordinates, routedDistanceMeters:leg.meters, routedDurationSeconds:leg.seconds, zones });
+    const groups: Array<{ first: GeoPoint; last: GeoPoint; meters: number; territory: SpecialTerritoryId | null }> = [];
     for (const piece of split.pieces) {
       const first = piece.coordinates[0], last = piece.coordinates.at(-1)!;
-      if (!positions.length) positions.push({ lng:first[0], lat:first[1] });
-      positions.push({ lng:last[0], lat:last[1] }); expected.push(piece.territory);
+      const previous = groups.at(-1);
+      if (previous && Boolean(previous.territory) === Boolean(piece.territory)) {
+        previous.last = last;
+        previous.meters += piece.meters;
+        previous.territory ??= piece.territory;
+      } else groups.push({ first, last, meters: piece.meters, territory: piece.territory });
+    }
+    // Boundary coordinates can create sub-meter fragments. Fold them into a neighboring request
+    // leg and classify the whole leg as special if either side is special, yielding a safe time upper bound.
+    for (let i = 0; i < groups.length;) {
+      if (groups[i].meters >= 1 || groups.length === 1) { i += 1; continue; }
+      const target = i > 0 ? i - 1 : 1;
+      const tiny = groups[i], neighbor = groups[target];
+      if (target < i) {
+        neighbor.last = tiny.last;
+      } else {
+        neighbor.first = tiny.first;
+      }
+      neighbor.meters += tiny.meters;
+      neighbor.territory ??= tiny.territory;
+      groups.splice(i, 1);
+      if (target < i) i = Math.max(0, i - 1);
+    }
+    for (const group of groups) {
+      if (!positions.length) positions.push({ lng:group.first[0], lat:group.first[1] });
+      positions.push({ lng:group.last[0], lat:group.last[1] }); expected.push(group.territory);
     }
   }
   if (!expected.length || positions.length > 48) throw new Error("TIMING_WAYPOINT_LIMIT");
