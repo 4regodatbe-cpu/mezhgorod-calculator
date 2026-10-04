@@ -284,3 +284,11 @@ PROJECT_PROGRESS.md датирован 2026-09-29, OPTIMIZATION_MASTER_PLAN.md �
 - **Проверки:** CI run #81 [37227189376](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/37227189376) завершился success: unit-тесты, `tsc --noEmit`, `next build`, live route-provider probe и live Photon probe. Preview commit `6b6975fce0642a00024910afc4f812a7dbdbb6c4` вернул «Донецк — ДНР» первым, ростовский Донецк вторым; «Луганск — ЛНР» и «Макеевка — ДНР» первыми в своих запросах; «Москва, Россия» первой для запроса «москва».
 - **Решение:** в рамках ранжирования эти четыре live-запроса подтверждены. Доступность областей как самостоятельного адресного результата остаётся ограничением Photon; реальные пользовательские проверки V2 нужны для подтверждения UI autocomplete.
 - **Статус:** Production пока не обновлён; PR #10 остаётся draft.
+
+
+### 2026-10-04 — проверка публикации исправленного поиска
+
+- **Проверка текущего PR:** ветка обновлена до `0521623c23d7f041bca1e8a6bb735e883380963b`; PR #10 остаётся draft. CI run #82 на этом head завершился success (unit-тесты, TypeScript, Next build, live route-provider и Photon probes).
+- **Проверка Preview:** Vercel deployment `dpl_3Gjja5KCWo2o5wFw4tUix1RXix2F` READY; branch Preview alias отвечает. Повторный запрос «Донецк» подтверждает «Донецк — ДНР» первым и Донецк Ростовской области вторым.
+- **Попытка production-публикации:** запрос promote этого проверенного Preview через подключённый Vercel API завершился HTTP 422 `Resource cannot be processed`. Production alias не менялся. Ручное назначение production-домена через alias tool не применялось, поскольку это обошло бы штатное promote и могло бы не переключить среду переменных.
+- **Следующий шаг:** повторить promote через панель Deployments проекта Vercel (или подключить рабочий механизм promote) после явного разрешения на переход к браузерному fallback; затем проверить production hostname и логи.
