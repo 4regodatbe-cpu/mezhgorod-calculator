@@ -39,6 +39,8 @@ jobs:
         run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
       - name: Probe live Photon address suggestions
         run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-live-probe.mjs
+      - name: Compare six Yandex screenshot routes with live providers
+        run: node --import ./scripts/register-ts-paths.mjs scripts/yandex-route-reference-audit.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -46,4 +48,5 @@ jobs:
           path: |
             special-territory-live-probe.json
             address-search-live-probe.json
+            yandex-route-reference-audit.json
           if-no-files-found: ignore

@@ -37,3 +37,11 @@ undefined
 - **Selection/UI:** route-quality warning is propagated to `fast.quality`; `RouteCard` renders the warning. The quality selector picks Valhalla when distance spread is 7.7%; the geographic selector still prioritizes a confirmed priced route before unknown toll routes, matching policy.
 - **Open:** The live Valhalla toll amount (4 640/6 200 ₽) does not match the user's Yandex screenshot estimate (~3 810 ₽). Plaza-level composition is known, but we have not established whether the difference is a route geometry mismatch, toll-section selection, or external estimate behavior. Do not claim the toll amount is resolved or publish this version to Production pending reconciliation.
 - PR #10 remains open/draft; no merge or production alias change. This log is carried forward for the next chat.
+
+### 2026-10-04 — Yandex route screenshot audit
+
+- **Задача:** проверить шесть пользовательских снимков Яндекс.Карт и сохранить наблюдаемые расстояния, длительности и читаемые оценки платы как отдельный benchmark; не переносить их в runtime и не считать пустую/нечитаемую сумму подтверждением бесплатного маршрута.
+- **Источник и ограничения:** снимки показывают карточки маршрутов, но не содержат пригодной для сравнения геометрии. Для живого прогона используются приблизительные центры городов из V2 autocomplete на дату проверки; это сравнение коридора и порядка величин, а не совпадения адресов или трасс.
+- **Обнаруженный риск адресного поиска:** Russian query «Запорожье» не возвращал город Запорожье; «Харьков, Украина» ставил выше одноимённый пункт в Крыму. В benchmark заданы корректные украинские варианты «Запоріжжя» и «Харків»; это не скрывает проблему русскоязычного пользовательского ввода.
+- **Проверки:** добавлен scripts/yandex-route-reference-audit.mjs, который запрашивает Valhalla и OSRM, проверяет предусмотренный routing corridor, фиксирует расхождение расстояния/времени и качество согласия провайдеров, затем вычисляет текущий статус toll-оценки. CI прикладывает неизменяемый отчёт как artifact; результат нужно оценивать только после workflow run.
+- **Статус:** PR #10 остаётся draft и не слит; production не менялся.
