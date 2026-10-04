@@ -1,0 +1,227 @@
+import { classifyTerritory, type VerifiedTerritory } from "./special-territory-geometry.ts";
+import { inCrimea } from "./special-territory-policy.ts";
+import type { Suggestion } from "../app/v2/components/types.ts";
+
+export type PhotonFeature = {
+  geometry?: { coordinates?: [number, number] };
+  properties?: Record<string, string | number | undefined>;
+};
+
+function text(value: unknown): string {
+  return typeof value === "string" || typeof value === "number" ? String(value).trim() : "";
+}
+
+function normalize(value: string): string {
+  return value.toLocaleLowerCase("ru-RU")
+    .replace(/ё/g, "е").replace(/і/g, "и").replace(/ї/g, "и").replace(/є/g, "е").replace(/ґ/g, "г")
+    .replace(/[ьъ]/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
+}
+
+function uniqueParts(parts: unknown[]): string[] {
+  const seen = new Set<string>();
+  return parts.map(text).filter((part) => {
+    if (!part) return false;
+    const key = normalize(part);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+const specialLabels = {
+  dnr: "ДНР",
+  lnr: "ЛНР",
+  zaporizhzhia: "Запорожская область",
+  kherson: "Херсонская область",
+} as const;
+const oblastLabels = {
+  dnr: "Донецкая область",
+  lnr: "Луганская область",
+  zaporizhzhia: "Запорожская область",
+  kherson: "Херсонская область",
+} as const;
+
+const localityRanks: Record<string, number> = {
+  city: 6,
+  town: 5,
+  municipality: 4,
+  locality: 4,
+  village: 3,
+  hamlet: 2,
+};
+
+function localityRank(feature: PhotonFeature, exactName: boolean): number {
+  const p = feature.properties ?? {};
+  const key = text(p.osm_key).toLocaleLowerCase("en-US");
+  const value = text(p.osm_value).toLocaleLowerCase("en-US");
+  const rank = localityRanks[value];
+  if (rank && (!key || key === "place")) return rank;
+  if (exactName && value === "administrative" && (!key || key === "boundary") &&
+      !/(област|oblast)$/iu.test(text(p.name))) return 4;
+  return 0;
+}
+
+function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean, exactName: boolean): { title: string; label: string; region: string } {
+  const p = feature.properties ?? {};
+  const street = [p.street, p.housenumber].map(text).filter(Boolean).join(", ");
+  const name = text(p.name) || street || text(p.city);
+  const areaName = territory ? specialLabels[territory] : crimea ? "Крым" : null;
+  const providerRegion = uniqueParts([p.city, p.district, p.county, p.state]);
+  const isLocality = localityRank(feature, exactName) > 0;
+
+  // Region-level search results stay oblast names; city/locality results use compact product labels.
+  if (territory && /(область|oblast)$/iu.test(name)) {
+    const province = oblastLabels[territory];
+    return { title: province, label: province, region: province };
+  }
+  if (areaName) {
+    if (crimea && /^(республика крым|крым|crimea)$/iu.test(name)) {
+      return { title: "Крым", label: "Крым", region: "Крым" };
+    }
+    if (isLocality) {
+      const localityName = russianLocalityNames[normalize(name)] ?? name;
+      const label = `${localityName} — ${areaName}`;
+      return { title: label, label, region: areaName };
+    }
+    const label = uniqueParts([name, ...providerRegion, areaName]).join(", ");
+    return { title: name || areaName, label: label || areaName, region: areaName };
+  }
+
+  const label = uniqueParts([name, ...providerRegion, p.country]).join(", ");
+  return { title: name, label, region: uniqueParts([...providerRegion, p.country]).join(", ") };
+}
+
+function classifyForDisplay(lng: number, lat: number, zones: VerifiedTerritory[]) {
+  try {
+    const territory = classifyTerritory({ lng, lat }, zones);
+    if (territory) return { territory, crimea: false };
+  } catch {
+    // Boundary-ambiguous suggestions remain selectable without a political display override or ranking boost.
+    return { territory: null, crimea: false };
+  }
+  return { territory: null, crimea: inCrimea({ lng, lat }) };
+}
+
+const oblastSearchAliases: Record<string, string[]> = {
+  dnr: ["Донецька область", "Donetsk Oblast"],
+  lnr: ["Луганська область", "Luhansk Oblast"],
+  zaporizhzhia: ["Запорізька область", "Zaporizhzhia Oblast"],
+  kherson: ["Херсонська область", "Kherson Oblast"],
+};
+const placeSearchAliases: Record<string, string[]> = {
+  макеевка: ["Макіївка"],
+  запороже: ["Запоріжжя"],
+  харков: ["Харків"],
+};
+const russianLocalityNames: Record<string, string> = {
+  донецк: "Донецк",
+  луганск: "Луганск",
+  макиивка: "Макеевка",
+  мелитополь: "Мелитополь",
+  мариуполь: "Мариуполь",
+  запорижжя: "Запорожье",
+  харкив: "Харьков",
+  бердянск: "Бердянск",
+  енергодар: "Энергодар",
+};
+
+function primaryQueryName(query: string): string {
+  return normalize(query.split(/[;,—–-]/u)[0]);
+}
+
+function placeAliases(query: string): string[] {
+  return placeSearchAliases[primaryQueryName(query)] ?? [];
+}
+
+function regionAliases(query: string): string[] {
+  const normalized = normalize(query);
+  if (!/(област|обл|oblast|region)$/u.test(normalized)) return [];
+  const firstWord = normalized.split(" ")[0];
+  const key = firstWord.startsWith("донец") ? "dnr"
+    : firstWord.startsWith("луган") ? "lnr"
+    : firstWord.startsWith("запорож") || firstWord.startsWith("запоріж") ? "zaporizhzhia"
+    : firstWord.startsWith("херсон") ? "kherson"
+    : null;
+  return key ? oblastSearchAliases[key] : [];
+}
+
+/** Query globally and in Ukraine separately; region queries also use provider aliases and the administrative layer. */
+export function photonSearchUrls(query: string): string[] {
+  const makeUrl = (term: string, countryCode?: string, layer?: string) => {
+    const url = new URL("https://photon.komoot.io/api/");
+    url.searchParams.set("q", term);
+    url.searchParams.set("limit", layer ? "10" : "20");
+    if (countryCode) url.searchParams.set("countrycode", countryCode);
+    if (layer) url.searchParams.set("layer", layer);
+    return url.toString();
+  };
+  return [
+    makeUrl(query),
+    makeUrl(query, "UA"),
+    ...placeAliases(query).map((term) => makeUrl(term, "UA")),
+    ...regionAliases(query).map((term) => makeUrl(term, "UA", "state")),
+  ];
+}
+
+/** Order suggestions and display regional names exclusively from each valid geocoded coordinate. */
+export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTerritory[], query: string, maxItems = 10): Suggestion[] {
+  const candidates = features.flatMap((feature, index) => {
+    const coordinates = feature.geometry?.coordinates;
+    const p = feature.properties ?? {};
+    if (!coordinates || coordinates.length !== 2 || !coordinates.every(Number.isFinite) ||
+        coordinates[1] < -90 || coordinates[1] > 90 || coordinates[0] < -180 || coordinates[0] > 180) return [];
+    const { territory, crimea } = classifyForDisplay(coordinates[0], coordinates[1], zones);
+    const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
+    if (!fallbackLabel) return [];
+    const queryName = primaryQueryName(query);
+    const featureName = text(p.name) || text(p.city);
+    const normalizedName = normalize(featureName);
+    const queryNames = [queryName, ...placeAliases(query).map(normalize)];
+    const exactName = Boolean(queryNames.some((candidate) => candidate && normalizedName &&
+      (candidate === normalizedName ||
+        (candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
+    const { title, label, region } = displayName(feature, territory, crimea, exactName);
+    const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
+    const regionQuery = /(област|обл|oblast|region)$/u.test(queryName);
+    const locality = localityRank(feature, exactName);
+    const administrativeRegion = regionQuery && placeType === "administrative" && exactName ? 4 : 0;
+    const placeRank = Math.max(locality, administrativeRegion);
+    const normalizedState = normalize(text(p.state));
+    // Keep exact matches in the five high-demand areas ahead of ordinary namesakes.
+    // For Донецк specifically, place Ростовская область second as requested.
+    const rostovDonetsk = exactName && queryName === "донецк" && normalizedName === "донецк" &&
+      /^(ростов|rostov)/u.test(normalizedState);
+    // Territory priority applies to named settlements and exact oblast results,
+    // never to POIs/street names that happen to share a place name.
+    const territoryRank = exactName && placeRank > 0
+      ? territory ? 150 : rostovDonetsk ? 135 : crimea ? 120 : 0
+      : 0;
+    const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
+    return [{
+      score: (exactName ? 10_000 : 0) + placeRank * 100 + territoryRank + (exactName ? 10 : 0),
+      index,
+      key: id,
+      item: {
+        id,
+        title,
+        label,
+        region,
+        position: { lat: coordinates[1], lng: coordinates[0] },
+      } satisfies Suggestion,
+    }];
+  });
+
+  const seen = new Set<string>();
+  return candidates
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .filter(({ key, item }) => {
+      const coordinateKey = `${normalize(item.label)}@${item.position.lat.toFixed(5)},${item.position.lng.toFixed(5)}`;
+      const dedupeKey = key.startsWith("place-") ? coordinateKey : key;
+      if (seen.has(dedupeKey)) return false;
+      seen.add(dedupeKey);
+      return true;
+    })
+    .slice(0, maxItems)
+    .map(({ item }) => item);
+}

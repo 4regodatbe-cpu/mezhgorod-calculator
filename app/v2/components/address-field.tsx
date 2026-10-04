@@ -10,10 +10,23 @@ export function AddressField({ label, value, onChange, placeholder }: { label: s
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     if (value.position || value.label.trim().length < 3) return;
+    const controller = new AbortController();
     const timer = setTimeout(async () => {
-      try { const response = await fetch("/r", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ query: value.label }) }); const data = await response.json(); setItems(data.items ?? []); setOpen(true); } catch { setItems([]); }
+      try {
+        const response = await fetch("/r", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: value.label }),
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error(`Address search failed: ${response.status}`);
+        const data = await response.json();
+        if (!controller.signal.aborted) { setItems(data.items ?? []); setOpen(true); }
+      } catch {
+        if (!controller.signal.aborted) setItems([]);
+      }
     }, 350);
-    return () => clearTimeout(timer);
+    return () => { clearTimeout(timer); controller.abort(); };
   }, [value]);
   return <label className="relative block min-w-0">
     <span className="mb-1.5 block text-xs font-bold uppercase tracking-[.14em] text-slate-400">{label}</span>

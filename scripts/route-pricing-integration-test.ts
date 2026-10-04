@@ -1,86 +1,28 @@
-import { calculateRoutePricing } from "../lib/route-pricing-integration.ts";
-
-function assert(condition: unknown, message: string): asserts condition {
-  if (!condition) throw new Error(`Route pricing integration regression failed: ${message}`);
-}
-
-function equal(actual: unknown, expected: unknown, message: string) {
-  assert(actual === expected, `${message}; got ${String(actual)}, expected ${String(expected)}`);
-}
-
-const ordinary = calculateRoutePricing({
-  from: "Краснодар",
-  to: "Москва",
-  vehicle: "comfort",
-  legs: [{ from: "Краснодар", to: "Москва", distanceKm: 600 }],
+import test from "node:test";
+import assert from "node:assert/strict";
+import { calculateRoutePricing, SPECIAL_RATES } from "../lib/route-pricing-integration.ts";
+import { splitRouteByTerritory, type VerifiedTerritory } from "../lib/special-territory-geometry.ts";
+const zones:VerifiedTerritory[] = (["dnr","lnr","zaporizhzhia","kherson"] as const).map((id,i)=>({id,verified:true,source:{url:"https://example.org",title:"test",checkedAt:"2026-10-03"},geometry:{type:"Polygon",coordinates:[[[i*10,-1],[i*10+2,-1],[i*10+2,1],[i*10,1],[i*10,-1]]]}}));
+const split=splitRouteByTerritory({coordinates:[[-2,0],[2,0]],routedDistanceMeters:400000,routedDurationSeconds:20000,zones});
+const input={from:"Любой текст",to:"Москва",legs:[{from:"A",to:"B",distanceKm:400,territorySplit:split}]};
+test("geometric segments compose normal and special mileage for all four rates",()=>{
+  for(const vehicle of Object.keys(SPECIAL_RATES) as Array<keyof typeof SPECIAL_RATES>) {
+    const p=calculateRoutePricing({...input,vehicle,normalRateOverrides:{[vehicle]:40}});
+    assert.equal(p.dualTariff,true);assert.equal(p.pricingSegments.length,2);
+    assert.equal(p.pricingSegments[1].ratePerKm,SPECIAL_RATES[vehicle]);
+    assert.equal(p.totalPrice,200*40+200*SPECIAL_RATES[vehicle]);
+    assert.equal(p.pricingSegments.reduce((s,p)=>s+p.distanceKm,0),400);
+  }
 });
-equal(ordinary.corridor.id, "normal", "ordinary route corridor");
-equal(ordinary.dualTariff, false, "ordinary route must not enable dual tariff");
-equal(ordinary.pricingSegments[0].type, "normal", "ordinary segment type");
-equal(ordinary.pricingSegments[0].ratePerKm, 32.5, "comfort long distance rate");
-equal(ordinary.totalPrice, 19_500, "ordinary route total");
-
-const split = calculateRoutePricing({
-  from: "Краснодар",
-  to: "Мариуполь",
-  vehicle: "comfort",
-  legs: [
-    { from: "Краснодар", to: "Ростов-на-Дону", distanceKm: 200 },
-    { from: "Ростов-на-Дону", to: "Мариуполь", distanceKm: 300 },
-  ],
+test("custom rates and urgency apply after geometric splitting",()=>{
+  assert.equal(calculateRoutePricing({...input,vehicle:"comfort",normalRateOverrides:{comfort:30},specialRateOverrides:{comfort:100},multiplier:1.2}).totalPrice,31200);
 });
-equal(split.corridor.id, "m4_dnr", "DNR route corridor");
-equal(split.dualTariff, true, "DNR route must enable dual tariff");
-equal(split.pricingSegments.length, 2, "split route segment count");
-equal(split.pricingSegments[0].type, "normal", "first route segment type");
-equal(split.pricingSegments[0].ratePerKm, 40, "first route segment rate");
-equal(split.pricingSegments[1].type, "special", "special route segment type");
-equal(split.pricingSegments[1].ratePerKm, 80, "special comfort rate");
-equal(split.totalPrice, 32_000, "split route total");
-
-const review = calculateRoutePricing({
-  from: "Краснодар",
-  to: "Бердянск",
-  vehicle: "comfort",
-  legs: [{ from: "Краснодар", to: "Бердянск", distanceKm: 300 }],
+test("manual ordinary mode changes rates without modifying geography",()=>{
+  const p=calculateRoutePricing({...input,mode:"standard",normalRateOverrides:{comfort:30}});
+  assert.equal(p.totalPrice,12000);assert.equal(p.dualTariff,false);assert.equal(split.specialKm,200);
 });
-equal(review.dualTariff, false, "unverified borderline corridor must fail closed");
-equal(review.reviewRequired, true, "borderline corridor must request review");
-equal(review.pricingSegments[0].type, "normal", "borderline route must use normal tariff");
-equal(review.totalPrice, 10_500, "borderline route uses normal total");
-
-const customized = calculateRoutePricing({
-  from: "Краснодар",
-  to: "Москва",
-  vehicle: "comfort",
-  normalRateOverrides: { comfort: 30 },
-  multiplier: 1.2,
-  legs: [{ from: "Краснодар", to: "Москва", distanceKm: 600 }],
+test("address labels cannot classify endpoints or substitute for missing geometry",()=>{
+  const a=calculateRoutePricing(input),b=calculateRoutePricing({...input,from:"Донецк",to:"Херсон"});
+  assert.equal(a.totalPrice,b.totalPrice);
+  assert.equal(calculateRoutePricing({...input,legs:[{from:"Краснодар",to:"Москва",distanceKm:400}]}).totalPrice,null);
 });
-equal(customized.pricingSegments[0].ratePerKm, 30, "user tariff override must reach the normal segment");
-equal(customized.totalPrice, 21_600, "urgent multiplier must apply after segment pricing");
-
-const manualSegments = calculateRoutePricing({
-  from: "Краснодар",
-  to: "Мариуполь",
-  vehicle: "standard",
-  manualRateByLeg: [20, 40],
-  legs: [
-    { from: "Краснодар", to: "Ростов-на-Дону", distanceKm: 200 },
-    { from: "Ростов-на-Дону", to: "Мариуполь", distanceKm: 300 },
-  ],
-});
-equal(manualSegments.pricingSegments[0].ratePerKm, 20, "first manually priced leg");
-equal(manualSegments.pricingSegments[1].ratePerKm, 70, "verified special corridor keeps its tariff");
-equal(manualSegments.totalPrice, 25_000, "manual and special segments compose into one total");
-
-const unresolved = calculateRoutePricing({
-  from: "Краснодар",
-  to: "Мариуполь",
-  vehicle: "comfort",
-  legs: [{ from: "Краснодар", to: "Мариуполь", distanceKm: 500 }],
-});
-equal(unresolved.requiresSplit, true, "automatic corridor without a known route boundary must require a split point");
-equal(unresolved.totalPrice, null, "do not publish a misleading whole-route special price");
-
-console.log("Route pricing integration GREEN");

@@ -51,7 +51,7 @@ assert.deepEqual(
 assert.ok(detectedFamiliesFromLegacySegments(["М-4 + М-11: составной маршрут"]).has("m11"));
 assert.ok(detectedFamiliesFromLegacySegments(["М-4 + М-11: составной маршрут"]).has("m4_a289"));
 
-const apiRoute = fs.readFileSync("app/api/v2/calculate/route.ts", "utf8");
+const apiRoute = fs.readFileSync("lib/v2-calculation/route-leg-pricing.ts", "utf8");
 assert.ok(apiRoute.includes('calculateProductionCkadM4M11(routeGeometry, valhallaEvidence?.m11RoadEvidence)'), "CKAD production engine must be wired into live route composition");
 assert.ok(apiRoute.includes('tolls: productionCkad.tolls'), "CKAD exact tolls must feed the route-level component");
 assert.ok(apiRoute.includes('legacyFamilies.has("ckad") || productionCkad.candidate'), "CKAD detection must include strict production evidence");

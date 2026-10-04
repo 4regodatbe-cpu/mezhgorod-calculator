@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "dataset": "yandex-route-screenshot-observations",
+  "snapshotDate": "2026-10-04",
+  "source": {
+    "type": "user-provided Yandex Maps screenshots",
+    "files": [
+      "image(20261004-202713).png",
+      "image(20261004-202854).png",
+      "image(20261004-203116).png",
+      "image(20261004-203325).png",
+      "image(20261004-203848).png",
+      "image(20261004-204051).png"
+    ],
+    "geometryIncluded": false,
+    "warning": "These are route-card metrics only. They do not include route geometry; toll text not visible in some cards is not evidence of a free route."
+  },
+  "coordinateNote": "Coordinates are approximate center points taken from the calculator V2 autocomplete on 2026-10-04. For Zaporizhzhia and Kharkiv the correct Ukrainian query spelling was used where Russian autocomplete did not return the intended city. They are route-probe inputs, not exact Yandex route endpoints.",
+  "routes": [
+    {
+      "id": "zaporizhzhia-omsk",
+      "from": {
+        "label": "Запорожье",
+        "routingLabel": "Запоріжжя",
+        "position": {
+          "lat": 47.8507859,
+          "lng": 35.1182867
+        }
+      },
+      "to": {
+        "label": "Омск",
+        "position": {
+          "lat": 54.991375,
+          "lng": 73.371529
+        }
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "distanceKm": 3500,
+          "durationMinutes": 3053,
+          "tollAmountRubApprox": 2940,
+          "tollObservation": "approximate shown"
+        },
+        {
+          "rank": 2,
+          "distanceKm": 3500,
+          "durationMinutes": 3053,
+          "tollAmountRubApprox": null,
+          "tollObservation": "no amount shown"
+        }
+      ]
+    },
+    {
+      "id": "belgorod-arkhangelsk",
+      "from": {
+        "label": "Белгород",
+        "position": {
+          "lat": 50.5955595,
+          "lng": 36.5873394
+        }
+      },
+      "to": {
+        "label": "Архангельск",
+        "position": {
+          "lat": 64.5410251,
+          "lng": 40.5286774
+        }
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "distanceKm": 1890,
+          "durationMinutes": 1472,
+          "tollAmountRubApprox": null,
+          "tollObservation": "no amount shown"
+        },
+        {
+          "rank": 2,
+          "distanceKm": 1890,
+          "durationMinutes": 1480,
+          "tollAmountRubApprox": null,
+          "tollObservation": "no amount shown"
+        },
+        {
+          "rank": 3,
+          "distanceKm": 2260,
+          "durationMinutes": 1792,
+          "tollAmountRubApprox": 1775,
+          "tollObservation": "approximate shown"
+        }
+      ]
+    },
+    {
+      "id": "murmansk-astrakhan",
+      "from": {
+        "label": "Мурманск",
+        "position": {
+          "lat": 68.970665,
+          "lng": 33.07497
+        }
+      },
+      "to": {
+        "label": "Астрахань",
+        "position": {
+          "lat": 46.3498308,
+          "lng": 48.0326203
+        }
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "distanceKm": 3400,
+          "durationMinutes": 2445,
+          "tollAmountRubApprox": 5040,
+          "tollObservation": "approximate shown"
+        },
+        {
+          "rank": 2,
+          "distanceKm": 3300,
+          "durationMinutes": 2554,
+          "tollAmountRubApprox": null,
+          "tollObservation": "no amount shown"
+        },
+        {
+          "rank": 3,
+          "distanceKm": 3300,
+          "durationMinutes": 2476,
+          "tollAmountRubApprox": 4600,
+          "tollObservation": "approximate shown"
+        }
+      ]
+    },
+    {
+      "id": "surgut-kharkiv",
+      "from": {
+        "label": "Сургут",
+        "position": {
+          "lat": 61.2419217,
+          "lng": 73.3952717
+        }
+      },
+      "to": {
+        "label": "Харьков",
+        "routingLabel": "Харків",
+        "position": {
+          "lat": 49.9923181,
+          "lng": 36.2310146
+        }
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "distanceKm": 3600,
+          "durationMinutes": 3183,
+          "tollAmountRubApprox": null,
+          "tollObservation": "no amount shown"
+        },
+        {
+          "rank": 2,
+          "distanceKm": 3600,
+          "durationMinutes": 3630,
+          "tollAmountRubApprox": null,
+          "tollObservation": "orange toll marker visible; amount unreadable"
+        }
+      ]
+    },
+    {
+      "id": "perm-makhachkala",
+      "from": {
+        "label": "Пермь",
+        "position": {
+          "lat": 58.0108531,
+          "lng": 56.2318528
+        }
+      },
+      "to": {
+        "label": "Махачкала",
+        "position": {
+          "lat": 42.9830241,
+          "lng": 47.5048717
+        }
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "distanceKm": 2790,
+          "durationMinutes": 2248,
+          "tollAmountRubApprox": 1720,
+          "tollObservation": "approximate shown"
+        },
+        {
+          "rank": 2,
+          "distanceKm": 2540,
+          "durationMinutes": 2050,
+          "tollAmountRubApprox": 1720,
+          "tollObservation": "approximate shown"
+        },
+        {
+          "rank": 3,
+          "distanceKm": 2490,
+          "durationMinutes": 2143,
+          "tollAmountRubApprox": null,
+          "tollObservation": "orange toll marker visible; amount unreadable"
+        }
+      ]
+    },
+    {
+      "id": "tomsk-chernomorskoe",
+      "from": {
+        "label": "Томск",
+        "position": {
+          "lat": 56.4887526,
+          "lng": 84.9523434
+        }
+      },
+      "to": {
+        "label": "посёлок городского типа Черноморское",
+        "position": {
+          "lat": 45.5061138,
+          "lng": 32.6830804
+        }
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "distanceKm": 4700,
+          "durationMinutes": 3929,
+          "tollAmountRubApprox": 2180,
+          "tollObservation": "approximate shown"
+        },
+        {
+          "rank": 2,
+          "distanceKm": 4600,
+          "durationMinutes": 4042,
+          "tollAmountRubApprox": null,
+          "tollObservation": "no amount shown"
+        },
+        {
+          "rank": 3,
+          "distanceKm": 4700,
+          "durationMinutes": 4058,
+          "tollAmountRubApprox": null,
+          "tollObservation": "no amount shown"
+        }
+      ]
+    }
+  ]
+}

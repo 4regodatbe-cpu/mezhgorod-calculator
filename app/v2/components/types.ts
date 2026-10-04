@@ -33,4 +33,4 @@ export type Leg = {
   freeCandidate?: Trip | null;
   freeError?: string;
 };
-export type Result = { legs: Leg[] };
+export type Result = { legs: Leg[]; options?: Leg[]; mode?: "standard"|"dual"; specialEndpoint?:boolean; crimeaComparisonVerified?:boolean; crimeaAccepted?:boolean };

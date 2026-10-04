@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { pickOptimal } from "./route-utils";
 import { distance, duration, money } from "./format";
 import { defaults, tariffNames } from "./pricing-data";
@@ -8,18 +8,18 @@ import type { Place, Result, Leg, Trip, TollView } from "./types";
 
 type CalculatorMode = "standard" | "dual";
 type CalculationInput = {
-  mode: CalculatorMode;
   from: Place;
-  via: Place;
   to: Place;
   rates: { standard: number; comfort: number; comfortPlus: number; minivan: number };
-  rate1: number;
-  rate2: number;
+  specialRates: typeof defaults;
+  requestMode: () => {mode:CalculatorMode;modeOverride:boolean};
+  onServerMode:(mode:CalculatorMode)=>void;
   multiplier: number;
 };
 const vehicleForRate = { standard: "standard", comfort: "comfort", comfortPlus: "comfort_plus", minivan: "minivan" } as const;
 
-export function useV2Calculation({ mode, from, via, to, rates, rate1, rate2, multiplier }: CalculationInput) {
+export function useV2Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier }: CalculationInput) {
+  const pending=useRef<AbortController|null>(null);
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -36,14 +36,12 @@ export function useV2Calculation({ mode, from, via, to, rates, rate1, rate2, mul
         : [{ type: "Оптимальный", trip: pickOptimal(leg.fast, leg.free), tolls: null }];
       variants.forEach(({ type, trip, tolls }) => {
         if (trip.pricingByVehicle?.standard.requiresSplit) return;
-        const totals = mode === "standard"
-          ? {
+        const totals = {
             standard: trip.pricingByVehicle?.standard.totalPrice ?? 0,
             comfort: trip.pricingByVehicle?.comfort.totalPrice ?? 0,
             comfortPlus: trip.pricingByVehicle?.comfort_plus.totalPrice ?? 0,
             minivan: trip.pricingByVehicle?.minivan.totalPrice ?? 0,
-          }
-          : { standard: trip.pricingByVehicle?.standard.totalPrice ?? 0, comfort: 0, comfortPlus: 0, minivan: 0 };
+          };
         void fetch("/api/collect", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -66,6 +64,9 @@ export function useV2Calculation({ mode, from, via, to, rates, rate1, rate2, mul
   }
 
   async function calculate() {
+    pending.current?.abort();
+    const controller=new AbortController();
+    pending.current=controller;
     setError("");
     setResult(null);
     setLoading(true);
@@ -73,27 +74,30 @@ export function useV2Calculation({ mode, from, via, to, rates, rate1, rate2, mul
     setCopiedKey("");
     try {
       const response = await fetch("/api/v2/calculate", {
+        signal:controller.signal,
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          mode,
+          ...requestMode(),
           from,
-          via,
           to,
           departureAt: new Date().toISOString(),
           rates,
-          manualRates: mode === "dual" ? [rate1, rate2] : undefined,
+          specialRates,
           multiplier,
         }),
       });
       const data = await response.json();
+      if(controller.signal.aborted)return;
       if (!response.ok) throw new Error(data.error);
+      onServerMode(data.automaticMode);
       setResult(data);
       recordRoutes(data);
     } catch (e) {
+      if(controller.signal.aborted)return;
       setError(e instanceof Error ? e.message : "Не удалось выполнить расчёт");
     } finally {
-      setLoading(false);
+      if(pending.current===controller)setLoading(false);
     }
   }
 
@@ -105,31 +109,19 @@ export function useV2Calculation({ mode, from, via, to, rates, rate1, rate2, mul
       lines.push(`${tariffNames[rate]}: ${amount == null ? "цена не рассчитана" : money(amount)}`);
     }
     const segments = trip.pricingByVehicle?.comfort.pricingSegments ?? [];
-    segments.forEach((segment) => lines.push(`${segment.from} → ${segment.to}: ${segment.distanceKm} км × ${money(segment.ratePerKm)}/км = ${money(segment.amount)}`));
+    segments.forEach((segment) => lines.push(`${segment.from} → ${segment.to}: ${Math.round(segment.distanceKm * 10) / 10} км × ${money(segment.ratePerKm)}/км = ${money(segment.amount)}`));
     if (toll) {
       if (toll.pricingStatus === "unknown") lines.push("Платность / стоимость дороги не подтверждена");
       else if (toll.weekdayAmount !== toll.weekendAmount) lines.push(`Платная дорога: Пн–Чт ${money(toll.weekdayAmount ?? 0)}, Пт–Вс ${money(toll.weekendAmount ?? 0)}`);
       else if (toll.pricingStatus === "priced") lines.push(`Платная дорога: ${money(toll.amount ?? 0)}`);
     }
-    if (trip.pricingByVehicle?.standard.requiresSplit) lines.push("Укажите промежуточную точку в режиме двойной тарификации, чтобы рассчитать цену.");
+    if (trip.pricingByVehicle?.standard.requiresSplit) lines.push("Геометрия тарифных участков не подтверждена; цена не рассчитана.");
     if (warning) lines.push(`Важно: ${warning}`);
     await navigator.clipboard.writeText(lines.join("\n"));
     setCopiedKey(key);
     setTimeout(() => setCopiedKey(""), 1800);
   }
 
-  async function copyDual(key: string, title: string, trips: Trip[], total: number, tollWeekday: number, tollWeekend: number, tollUnknown: boolean) {
-    const lines = ["Калькулятор межгород", title, ...result!.legs.map((leg, index) => {
-      const amount = trips[index].pricingByVehicle?.standard.totalPrice;
-      return `Участок ${index + 1}: ${leg.from} → ${leg.to} · ${distance(trips[index].meters)} · ${duration(trips[index].seconds)} · ${amount == null ? "цена не рассчитана" : money(amount)}`;
-    }), `Итого: ${money(total)}`];
-    if (tollUnknown) lines.push("Платность / стоимость дороги не подтверждена");
-    else if (tollWeekday > 0) lines.push(tollWeekday !== tollWeekend ? `Платная дорога: Пн–Чт ${money(tollWeekday)}, Пт–Вс ${money(tollWeekend)}` : `Платная дорога: ${money(tollWeekday)}`);
-    await navigator.clipboard.writeText(lines.join("\n"));
-    setCopiedKey(key);
-    setTimeout(() => setCopiedKey(""), 1800);
-  }
-
-  const clearResult = () => setResult(null);
-  return { result, error, loading, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard, copyDual };
+  const clearResult = () => { pending.current?.abort(); pending.current=null; setLoading(false); setResult(null); };
+  return { result, error, loading, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard };
 }

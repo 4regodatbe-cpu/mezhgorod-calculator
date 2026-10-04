@@ -1,3 +1,5 @@
+import { analyzeRoute, followsPlan } from "../special-territory-policy.ts";
+import { SPECIAL_TERRITORY_BOUNDARIES } from "../special-territory-boundaries.ts";
 import { valhalla, brouterFree, brouterFast, osrmRoute, type Located } from "@/lib/route-providers";
 import type { Coordinate } from "@/lib/tolls";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
@@ -5,14 +7,18 @@ import { selectLiveRouteCandidates } from "@/lib/route-quality";
 import { selectFreeRoute, tollsForApi } from "./free-route-selection";
 import { calculateLegTolls } from "./route-leg-pricing";
 
-export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false) {
-  const [fastResult, valhallaFreeResult, brouterResult, osrmResult, brouterFastResult] = await Promise.allSettled([
-    valhalla(from, to, 1),
-    valhalla(from, to, 0),
-    brouterFree(from, to),
-    osrmRoute(from, to),
-    brouterFast(from, to),
+export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>) {
+  const rawResults = await Promise.allSettled([
+    valhalla(from, to, 1, positions), valhalla(from, to, 0, positions), brouterFree(from, to, positions), osrmRoute(from, to, positions), brouterFast(from, to, positions),
   ]);
+  const [fastResult, valhallaFreeResult, brouterResult, osrmResult, brouterFastResult] = rawResults.map(result => {
+    if (result.status === "rejected") return result;
+    try {
+      if(positions && !followsPlan(result.value.coordinates,positions,"mainland",false)) throw new Error("ROUTE_CONTROLS_MISSED");
+      analyzeRoute(result.value.coordinates,result.value.meters,result.value.seconds,from.position,to.position,SPECIAL_TERRITORY_BOUNDARIES);
+      return result;
+    } catch(reason) { return {status:"rejected" as const,reason}; }
+  });
 
   const selectedFast = selectLiveRouteCandidates([
     ...(fastResult.status === "fulfilled" ? [{ name: "Valhalla", route: fastResult.value }] : []),
@@ -57,7 +63,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   return {
     from: from.label,
     to: to.label,
-    fast: { ...selectedFast.route, quality: selectedFast.quality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation },
+    fast: { ...selectedFast.route, coordinates: routeGeometry, quality: selectedFast.quality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation },
     free: confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
     freeCandidate: freeCandidate ? { ...freeCandidate.route, quality: freeCandidate.quality, tollValidation: freeCandidate.validation } : null,
     freeError: confirmedFree
