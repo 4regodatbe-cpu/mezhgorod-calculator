@@ -27,7 +27,7 @@ for (const sample of snapshot.routes) {
   for (const provider of providers) {
     const row = {
       id: sample.id, from: from.label, to: to.label, corridor: plan.corridor,
-      provider: provider.name, yandexReference: sample.candidates[0], status: "unverified",
+      provider: provider.name, yandexReference: sample.candidates[0], routeStatus: "requested",
     };
     try {
       let route = await provider.get(from, to, plan.positions);
@@ -45,7 +45,8 @@ for (const sample of snapshot.routes) {
         row.rescanTiming = timing;
         row.rescanLegCount = route.legs?.length ?? 0;
       }
-      row.status = timing.verified ? "verified" : "unverified";
+      row.routeStatus = "returned";
+      row.timingVerification = timing.verified ? "verified" : "unverified";
       row.distanceKm = Math.round(route.meters / 100) / 10;
       row.durationMinutes = Math.round(route.seconds / 60);
       row.distanceDeltaKm = Math.round((route.meters / 1000 - sample.candidates[0].distanceKm) * 10) / 10;
@@ -58,6 +59,7 @@ for (const sample of snapshot.routes) {
       candidates.push({ name: provider.name, route });
       records.push(row);
     } catch (error) {
+      row.routeStatus = "error";
       row.error = error instanceof Error ? error.message : String(error);
       records.push(row);
     }
@@ -102,6 +104,7 @@ for (const sample of snapshot.routes) {
     preferredCorridor: plan.corridor,
     controls: plan.positions.length,
     yandexCandidates: sample.candidates,
+    identityComparison: "not-verifiable-from-screenshot-without-Yandex-route-geometry",
     providerQuality: quality?.quality ?? null,
     selectedProvider: quality?.provider ?? null,
     providerRoutes: records,
