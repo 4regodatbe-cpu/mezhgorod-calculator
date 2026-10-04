@@ -4,6 +4,7 @@ import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-
 import { analyzeRoute, candidatePlans, endpointPolicy, followsPlan, inCrimea } from "../lib/special-territory-policy.ts";
 import { splitRouteByTerritory, type VerifiedTerritory, type GeoPoint } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
+import { inCrimeaApproachZone } from "../lib/special-territory-approach-zone.ts";
 import { activeOverride, touchSession, SESSION_IDLE_MS } from "../lib/tariff-session.ts";
 const k={lat:45.04,lng:38.98},d={lat:48.0156,lng:37.8029},c={lat:44.95,lng:34.1};
 test("real four polygons split transitions, Crimea ordinary, transit excluded",()=>{
@@ -16,21 +17,14 @@ test("real four polygons split transitions, Crimea ordinary, transit excluded",(
   const all=splitRouteByTerritory({coordinates:[[32.6169,46.6354],[35.1396,47.8388],[37.8029,48.0156],[39.3078,48.574]],routedDistanceMeters:800000,routedDurationSeconds:40000,zones});
   for(const id of ["dnr","lnr","zaporizhzhia","kherson"] as const)assert.ok(all.territoryKm[id]>0);
 });
-test("creates distinct mainland and Crimea requests, reverses controls for reverse travel",()=>{
-  const plans=candidatePlans(k,d,zones);assert.equal(plans.length,2);assert.notDeepEqual(plans[0].positions,plans[1].positions);
-  assert.deepEqual(candidatePlans(d,k,zones)[0].positions,[...plans[0].positions].reverse());
-  assert.equal(inCrimea(c),true);
-  const yalta={lat:44.4987874,lng:34.1689358};
-  assert.equal(inCrimea(yalta),true);
-  const yaltaMainland=candidatePlans(yalta,d,zones)[0];
-  assert.deepEqual(yaltaMainland.positions.slice(1,-1),[
-    {lat:45.2117,lng:36.7161},
-    {lat:45.045,lng:39.15},
-    {lat:47.12,lng:39.86},
-    {lat:47.28,lng:38.94},
-  ]);
-  const ordinary=candidatePlans(c,k,zones);assert.equal(ordinary.length,1);assert.ok(ordinary[0].positions.some(p=>p.lng===36.7161));
-  assert.equal(followsPlan([[k.lng,k.lat],[d.lng,d.lat]],plans[0].positions,"mainland",true),false);
+test("geographic route zone chooses exactly one corridor and keeps controls ordered",()=>{
+ const melitopol={lat:46.848,lng:35.365},plans=candidatePlans(k,melitopol,zones);
+ assert.equal(plans.length,1);assert.equal(plans[0].corridor,"crimea");assert.equal(inCrimeaApproachZone(melitopol),true);
+ const donetskPlans=candidatePlans(k,d,zones);assert.equal(donetskPlans.length,1);assert.equal(donetskPlans[0].corridor,"mainland");assert.equal(inCrimeaApproachZone(d),false);
+ const reverse=candidatePlans(melitopol,k,zones);assert.equal(reverse.length,1);assert.equal(reverse[0].corridor,"crimea");assert.deepEqual(reverse[0].positions,[...plans[0].positions].reverse());
+ const yalta={lat:44.4987874,lng:34.1689358};assert.equal(inCrimea(yalta),true);assert.equal(candidatePlans(yalta,d,zones)[0].corridor,"mainland");
+ const ordinary=candidatePlans(c,k,zones);assert.equal(ordinary.length,1);assert.ok(ordinary[0].positions.some(p=>p.lng===36.7161));
+ assert.equal(followsPlan([[k.lng,k.lat],[d.lng,d.lat]],donetskPlans[0].positions,"mainland",true),false);
 });
 const synthetic:VerifiedTerritory[]=(["dnr","lnr","zaporizhzhia","kherson"] as const).map((id,i)=>({id,verified:true,source:{url:"https://example.org",title:"test",checkedAt:"2026-10-03"},geometry:{type:"Polygon",coordinates:[[[i*10,-1],[i*10+2,-1],[i*10+2,1],[i*10,1],[i*10,-1]]]}}));
 const legs=[{meters:100000,seconds:900,coordinates:[[-1,0],[0,0]] as GeoPoint[]},{meters:200000,seconds:8000,coordinates:[[0,0],[1,0],[2,0]] as GeoPoint[]},{meters:100000,seconds:1100,coordinates:[[2,0],[3,0]] as GeoPoint[]}];
@@ -70,30 +64,14 @@ test("manual override survives calculations/activity, expires only after idle/ne
   assert.equal(activeOverride({override:null,lastActivity:0},1000),null);
 });
 
-test("selects no more than two directions, binds comparison to the paid candidate and preserves unknown",async()=>{
-  const {selectTimedTerritoryOptions}=await import("../lib/special-territory-time.ts");
-  const candidate=(corridor:"mainland"|"crimea",specialSeconds:number,pricingStatus:"priced"|"free"|"unknown",verified=true,provider:"Valhalla"|"OSRM"="OSRM")=>({corridor,provider,time:{specialSeconds,verified},fast:{seconds:20000,tolls:{pricingStatus}}});
-  const main=candidate("mainland",10000,"priced"), crimea=candidate("crimea",5000,"priced");
-  assert.equal(selectTimedTerritoryOptions([main,crimea]).options.length,2);
-  const lowSpecialMain={...candidate("mainland",1000,"priced"),fast:{seconds:20000,tolls:{pricingStatus:"priced" as const}}};
-  assert.equal(selectTimedTerritoryOptions([lowSpecialMain,candidate("crimea",9000,"priced")]).options.length,2);
-  assert.equal(selectTimedTerritoryOptions([lowSpecialMain,candidate("crimea",10001,"priced")]).options.length,1);
-  assert.equal(selectTimedTerritoryOptions([main,{...crimea,time:{verified:true,specialSeconds:10001}}]).options.length,1);
-  assert.equal(selectTimedTerritoryOptions([main,candidate("crimea",100,"priced",false)]).options.length,1);
-  assert.equal(selectTimedTerritoryOptions([crimea]).options.length,0);
-  const free=candidate("mainland",20000,"free");
-  assert.equal(selectTimedTerritoryOptions([free,main,candidate("crimea",6000,"priced")]).options.length,2);
-  assert.equal(selectTimedTerritoryOptions([main,candidate("crimea",4000,"free")]).options.length,1);
-  assert.equal(selectTimedTerritoryOptions([main,candidate("crimea",4000,"unknown")]).options[1].fast.tolls.pricingStatus,"unknown");
-  const mainValhalla=candidate("mainland",500,"priced",true,"Valhalla");
-  const badCrimeaValhalla=candidate("crimea",100,"priced",false,"Valhalla");
-  const mainOsrm={...candidate("mainland",1000,"priced",true,"OSRM"),fast:{seconds:20000,tolls:{pricingStatus:"priced" as const}}};
-  const validCrimeaOsrm={...candidate("crimea",9000,"priced",true,"OSRM"),fast:{seconds:18000,tolls:{pricingStatus:"priced" as const}}};
-  const paired=selectTimedTerritoryOptions([mainValhalla,badCrimeaValhalla,mainOsrm,validCrimeaOsrm]);
-  assert.equal(paired.crimeaAccepted,true);
-  assert.deepEqual(paired.options.map(option=>option.provider),["OSRM","OSRM"]);
-  const mixedProviders=selectTimedTerritoryOptions([candidate("mainland",1000,"priced",true,"Valhalla"),candidate("crimea",4000,"priced",true,"OSRM")]);
-  assert.equal(mixedProviders.crimeaAccepted,false);
-  assert.equal(mixedProviders.crimeaComparisonVerified,false);
-  assert.equal(mixedProviders.options.length,1);
+test("geographic selector ignores elapsed-time evidence and preserves toll uncertainty",async()=>{
+ const {selectTimedTerritoryOptions}=await import("../lib/special-territory-time.ts");
+ const candidate=(corridor:"mainland"|"crimea",pricingStatus:"priced"|"free"|"unknown",seconds=20000,provider="OSRM")=>({corridor,provider,fast:{seconds,tolls:{pricingStatus}}});
+ const mainland=candidate("mainland","priced"),crimea=candidate("crimea","unknown",100);
+ const selectedCrimea=selectTimedTerritoryOptions([mainland,crimea],"crimea");
+ assert.equal(selectedCrimea.options.length,1);assert.equal(selectedCrimea.options[0].corridor,"crimea");assert.equal(selectedCrimea.routePolicy,"geographic-zone");
+ const selectedMainland=selectTimedTerritoryOptions([mainland,crimea],"mainland");assert.equal(selectedMainland.options.length,1);assert.equal(selectedMainland.options[0].corridor,"mainland");
+ assert.equal(selectTimedTerritoryOptions([crimea],"mainland").options.length,0);
+ assert.equal(selectTimedTerritoryOptions([candidate("crimea","free"),candidate("crimea","priced",25000)],"crimea").options[0].fast.tolls.pricingStatus,"priced");
+ assert.equal(selectTimedTerritoryOptions([candidate("crimea","unknown")],"crimea").options[0].fast.tolls.pricingStatus,"unknown");
 });

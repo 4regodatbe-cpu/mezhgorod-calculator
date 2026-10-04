@@ -1,4 +1,5 @@
 import { classifyTerritory, splitRouteByTerritory, type Position, type VerifiedTerritory, type GeoPoint } from "./special-territory-geometry.ts";
+import { inCrimeaApproachZone } from "./special-territory-approach-zone.ts";
 export const BRIDGE: Position = { lat:45.2117, lng:36.7161 };
 const KRASNODAR: Position = { lat:45.045, lng:39.15 };
 const M4: Position = { lat:47.12, lng:39.86 };
@@ -29,7 +30,12 @@ export function candidatePlans(from: Position,to: Position,zones: VerifiedTerrit
   const approach=endZone==="lnr"?NORTH_EAST:EAST;
   const mainland=endpoints.fromTerritory && endpoints.toTerritory ? [from,to] : [start,...(inCrimea(start)?[BRIDGE,KRASNODAR]:[]),...(endZone==="lnr"?[]:[M4]),approach,end];
   const crimea=endpoints.fromTerritory && endpoints.toTerritory ? [from,CRIMEA_INTERIOR,to] : [start,...(inCrimea(start)?[]:[KRASNODAR,BRIDGE]),CRIMEA_INTERIOR,end];
-  return [{ corridor:"mainland" as const,positions:reverse?mainland.reverse():mainland },{ corridor:"crimea" as const,positions:reverse?crimea.reverse():crimea }];
+  // Geographic policy selects one corridor; the former timing threshold no longer applies.
+  // If both endpoints are special, endpoint B determines the approach.
+  const specialPoint=endpoints.toTerritory?to:from;
+  const corridor=inCrimeaApproachZone(specialPoint)?"crimea" as const:"mainland" as const;
+  const positions=corridor==="crimea"?crimea:mainland;
+  return [{corridor,positions:reverse?[...positions].reverse():positions}];
 }
 export function analyzeRoute(coordinates: GeoPoint[], meters:number,seconds:number,from:Position,to:Position,zones:VerifiedTerritory[]) {
   const split=splitRouteByTerritory({coordinates,routedDistanceMeters:meters,routedDurationSeconds:seconds,zones});

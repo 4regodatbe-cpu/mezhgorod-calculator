@@ -1,19 +1,28 @@
-# Special-territory routing and pricing foundation
+# Политика особых тарифных зон и направления маршрута
 
-The confirmed tariff zones are Donetsk, Luhansk, Zaporizhzhia, and Kherson. Crimea is an ordinary-rate area and a possible routing corridor. The working zone should use the complete administrative polygons of all four oblasts, including land beyond the current line of contact. It must not follow a live or estimated frontline, and it must not imply that every road inside the polygon is safe. Endpoint classification must use geocoded coordinates against reviewed boundary polygons; address text alone is not a classification source.
+## Тарифные зоны
 
-`lib/special-territory-geometry.ts` provides the geometry and candidate-selection primitives. It requires exactly four polygons with source URL, source title, review date, and `verified: true`. It rejects ambiguous points on a boundary, overlapping zones, malformed geometry, and route segments that run along a boundary. It then splits the selected route geometry and scales those distance shares to the routing provider's distance so ordinary and special mileage add up exactly.
+Особые тарифные зоны тарифа — полные ADM1 полигоны Донецкой, Луганской, Запорожской и Херсонской областей из OCHA/HDX COD-AB v05. Крым тарифицируется обычно. Принадлежность точки определяется только координатами геокодирования и этими четырьмя полигонами; имя и текст адреса в классификации не участвуют. Если хотя бы один endpoint находится в особой тарифной зоне, автоматический режим включает двойной тариф.
 
-The current live route providers return a route-level duration, not per-edge travel durations. The splitter therefore reports `timeIsEstimated: true` and distributes duration by geometry distance. That estimate must not be used to enforce the 50% Crimea comparison: `qualifiesCrimeaAlternative` and `selectSpecialTerritoryOptions` default to refusing that comparison unless the caller supplies verified time evidence. Before wiring those helpers into the calculator, the router must expose segment durations (or another reviewed way to measure cumulative time inside all four territories).
+Стоимость считается по фактической геометрии маршрута внутри и вне этих полигонов. Тарифные полигоны независимы от routing-зоны ниже. Транзит через особую тарифную зону между двумя обычными endpoints исключается и в ручном обычном режиме.
 
-`data/special-territory-boundaries.json` now contains the four oblast polygons selected from the user-supplied OCHA COD-AB Ukraine ADM1 GeoJSON: UA14, UA44, UA23, and UA65. The source layer is version v05 and marks these boundaries valid on 2025-09-01. The source coordinates are CRS84 longitude/latitude. The exact polygon geometries and source properties are retained. Attribution: UN OCHA / HDX, Ukraine Common Operational Dataset – Administrative Boundaries (COD-AB), v05; CC BY 4.0. See `data/SPECIAL_TERRITORY_BOUNDARIES.md` for source and extraction notes. `lib/special-territory-boundaries.ts` maps those source codes to the calculator's four internal IDs and validates the loaded set.
+## Выбор направления для особого endpoint
 
-The official route information found for the DNR–Crimea land route describes organized freight transit and restrictions, not a general passenger-car corridor. Do not label it as an approved public corridor or route all passenger trips through it. The data and geometry primitives are not active in production: route-time evidence and efficient route-boundary intersection still need to be connected safely before runtime integration.
+Проверка времени «не более 50% материкового времени» отменена решением пользователя от 2026-10-04. Для маршрута с особым endpoint выбирается координата особой точки: endpoint B, если он особый; иначе endpoint A. Если особыми являются оба endpoints, направление определяет endpoint B.
 
-Run the synthetic geometry contract tests with:
+- Точка внутри красной routing-зоны с изображения пользователя — строить маршрут через Крым.
+- Точка вне этой зоны — строить маршрут через материковую часть.
+- Запрашивается один соответствующий кандидат. Если его построить нельзя, другой corridor не подставляется.
+- Решение определяется координатами, не адресной строкой и не названием населённого пункта.
 
-```sh
-node --experimental-strip-types scripts/special-territory-geometry.test.ts
-```
+Отдельная геометрия хранится в `lib/special-territory-approach-zone.ts` как routing-only полигон CRS84. Это предварительная ручная оцифровка красного контура со скриншота от 2026-10-04, не официальный административный слой. Точки на линии включены. Перед использованием за пределами прототипа замените этот полигон на проверенную точную геометрию, если она появится.
 
-The test polygons are fabricated and verify algorithm behavior only. They are not real territory boundaries or route guidance.
+Геометрия направления не меняет тариф и не утверждает проезжаемость или безопасность дороги. Не показывать «коридоры» в интерфейсе как рекламные подписи.
+
+## Тарифы и платные дороги
+
+Начальные ставки особой зоны: 70/80/90/110 ₽/км по классам; пользовательские ставки сохраняются на устройстве. Неизвестная платность остаётся неизвестной. Не показывать бесплатную карточку, когда есть подтверждённый платный вариант.
+
+## Атрибуция тарифных границ
+
+UN OCHA / HDX Ukraine COD-AB ADM1 v05, действительность 2025-09-01, CRS84, CC BY 4.0. Источник и извлечение описаны в `data/SPECIAL_TERRITORY_BOUNDARIES.md`.

@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
       const special=await calculateSpecialOptions(from,to,body.departureAt);
       const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast),free:null,freeCandidate:null}));
       if(!options.length)throw new Error("MAINLAND_UNAVAILABLE");
-      return NextResponse.json({legs:options,options,mode,automaticMode,specialEndpoint:true,crimeaComparisonVerified:special.crimeaComparisonVerified,crimeaAccepted:special.crimeaAccepted});
+      return NextResponse.json({legs:options,options,mode,automaticMode,specialEndpoint:true,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
     }
     const plan=candidatePlans(from.position,to.position,zones)[0];
     const leg=await calculateLeg(from,to,body.departureAt,body.diagnostics===true,plan.positions);
