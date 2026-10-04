@@ -145,7 +145,7 @@
 
 ### Завершение проверки — 2026-10-04
 
-- GitHub Actions run #3 (`37182695123`) для коммита `268241719edf0810ff4e109d9e7677a4ffc24032` завершился `success`: установка зависимостей, 39+ актуальных тестовых команд workflow, `tsc --noEmit` и `next build` выполнены job `verify`.
+- GitHub Actions run #3 (`37182695123`) для коммита `268241719edf0810ff4e109d9e7677a4ffc24032` завершился `success`: установка зависимостей, тестовый шаг `node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts`, `tsc --noEmit` и `next build` выполнены job `verify`; отдельный счётчик тестов в этом журнале не снимался.
 - Vercel check для того же коммита завершился `success` (preview/check status; не production deploy).
 - PR #10 по-прежнему открыт черновиком; слияния не было.
 - Вывод: handoff добавлен и прошёл репозиторный CI; продуктовый код этим docs-коммитом не изменялся.
