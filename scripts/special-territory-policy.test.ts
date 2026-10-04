@@ -20,6 +20,15 @@ test("creates distinct mainland and Crimea requests, reverses controls for rever
   const plans=candidatePlans(k,d,zones);assert.equal(plans.length,2);assert.notDeepEqual(plans[0].positions,plans[1].positions);
   assert.deepEqual(candidatePlans(d,k,zones)[0].positions,[...plans[0].positions].reverse());
   assert.equal(inCrimea(c),true);
+  const yalta={lat:44.4987874,lng:34.1689358};
+  assert.equal(inCrimea(yalta),true);
+  const yaltaMainland=candidatePlans(yalta,d,zones)[0];
+  assert.deepEqual(yaltaMainland.positions.slice(1,-1),[
+    {lat:45.2117,lng:36.7161},
+    {lat:45.045,lng:39.15},
+    {lat:47.12,lng:39.86},
+    {lat:47.28,lng:38.94},
+  ]);
   const ordinary=candidatePlans(c,k,zones);assert.equal(ordinary.length,1);assert.ok(ordinary[0].positions.some(p=>p.lng===36.7161));
   assert.equal(followsPlan([[k.lng,k.lat],[d.lng,d.lat]],plans[0].positions,"mainland",true),false);
 });
