@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body className="antialiased">
-        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("mezhgorod-theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.classList.add(t);document.documentElement.style.colorScheme=t}catch(e){}` }} />
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("mezhgorod-theme");if(t!=="light"&&t!=="dark")t="light";document.documentElement.classList.add(t);document.documentElement.style.colorScheme=t}catch(e){}` }} />
         {children}
       </body>
     </html>

@@ -3,9 +3,10 @@
 import { RouteCard } from "./route-card";
 import { UnverifiedRouteCard } from "./unverified-route-card";
 import { RouteUnavailable } from "./route-notices";
+import { confirmedFreeToll, unverifiedToll, type TollPeriod } from "./quote-presentation";
 import type { Leg, Result, TollView, Trip } from "./types";
 
-type CopyStandard = (key: string, title: string, leg: Leg, trip: Trip, toll?: TollView, warning?: string) => Promise<void>;
+type CopyStandard = (key: string, title: string, leg: Leg, trip: Trip, toll?: TollView, warning?: string, period?: TollPeriod, manualToll?: string) => Promise<void>;
 type Props = {
   result: Result | null;
   standardLeg?: Leg;
@@ -15,22 +16,53 @@ type Props = {
   onManualToll: (value: string) => void;
   copiedKey: string;
   copyStandard: CopyStandard;
+  tollPeriod: TollPeriod;
+  onTollPeriodChange: (period: TollPeriod) => void;
 };
 
-export function ResultPanels({ result, standardLeg, standardHasTolls, standardOptimal, manualToll, onManualToll, copiedKey, copyStandard }: Props) {
-  if(result?.specialEndpoint) return <section className="mt-4 grid gap-3 md:grid-cols-2">
-    {(result.options ?? []).map((leg,index)=><RouteCard key={index} title={index===0?"Основной маршрут":"Альтернативный маршрут"} accent="blue" trip={leg.fast} toll={leg.fast.tolls} onCopy={()=>copyStandard(`option-${index}`,index===0?"Основной маршрут":"Альтернативный маршрут",leg,leg.fast,leg.fast.tolls)} copied={copiedKey===`option-${index}`}/>)}
-  </section>;
-  return <>
-    {result && standardLeg && standardOptimal && <section className={`mt-4 grid gap-3 ${standardHasTolls ? "md:grid-cols-2" : "grid-cols-1"}`}>
-      {standardHasTolls ? <>
-        <RouteCard title={standardLeg.fast.tolls.pricingStatus === "unknown" ? "Быстрый маршрут" : "По платной дороге"} accent="blue" trip={standardLeg.fast} toll={standardLeg.fast.tolls} manualToll={manualToll} onManualToll={onManualToll} onCopy={() => copyStandard("standard-fast", standardLeg.fast.tolls.pricingStatus === "unknown" ? "Быстрый маршрут" : "По платной дороге", standardLeg, standardLeg.fast, standardLeg.fast.tolls)} copied={copiedKey === "standard-fast"}/>
-        {standardLeg.free
-          ? <RouteCard title="Без платных дорог" accent="emerald" trip={standardLeg.free} onCopy={() => copyStandard("standard-free", "Без платных дорог", standardLeg, standardLeg.free!)} copied={copiedKey === "standard-free"}/>
-          : standardLeg.freeCandidate
-            ? <UnverifiedRouteCard trip={standardLeg.freeCandidate} onCopy={() => copyStandard("standard-candidate", "Альтернативный маршрут", standardLeg, standardLeg.freeCandidate!, undefined, "Платность маршрута не подтверждена. Возможная стоимость платных дорог не включена.")} copied={copiedKey === "standard-candidate"}/>
-            : <RouteUnavailable message={standardLeg.freeError}/>}
-      </> : <RouteCard title="Оптимальный маршрут" accent="blue" trip={standardOptimal} onCopy={() => copyStandard("standard-optimal", "Оптимальный маршрут", standardLeg, standardOptimal)} copied={copiedKey === "standard-optimal"}/>}
-    </section>}
-  </>;
+export function ResultPanels({
+  result, standardLeg, standardHasTolls, standardOptimal, manualToll,
+  onManualToll, copiedKey, copyStandard, tollPeriod, onTollPeriodChange,
+}: Props) {
+  if (result?.specialEndpoint) return (
+    <section className="mt-4 grid min-w-0 grid-cols-1 gap-3">
+      {(result.options ?? []).map((leg, index) => <RouteCard
+        key={index}
+        title={index === 0 ? "Основной маршрут" : "Альтернативный маршрут"}
+        accent="blue"
+        trip={leg.fast}
+        toll={leg.fast.tolls}
+        tollPeriod={tollPeriod}
+        onTollPeriodChange={onTollPeriodChange}
+        onCopy={() => copyStandard(`option-${index}`, index === 0 ? "Основной маршрут" : "Альтернативный маршрут", leg, leg.fast, leg.fast.tolls, undefined, tollPeriod)}
+        copied={copiedKey === `option-${index}`}
+      />)}
+    </section>
+  );
+
+  return (
+    <>
+      {result && standardLeg && standardOptimal && <section className={"mt-4 grid min-w-0 grid-cols-1 gap-3 " + (standardHasTolls ? "lg:grid-cols-2" : "")}>
+        {standardHasTolls ? <>
+          <RouteCard
+            title="Основной маршрут"
+            accent="blue"
+            trip={standardLeg.fast}
+            toll={standardLeg.fast.tolls}
+            tollPeriod={tollPeriod}
+            onTollPeriodChange={onTollPeriodChange}
+            manualToll={manualToll}
+            onManualToll={onManualToll}
+            onCopy={() => copyStandard("standard-fast", "Основной маршрут", standardLeg, standardLeg.fast, standardLeg.fast.tolls, undefined, tollPeriod, manualToll)}
+            copied={copiedKey === "standard-fast"}
+          />
+          {standardLeg.free
+            ? <RouteCard title="Без платных дорог" accent="emerald" trip={standardLeg.free} toll={confirmedFreeToll} tollPeriod={tollPeriod} onTollPeriodChange={onTollPeriodChange} onCopy={() => copyStandard("standard-free", "Без платных дорог", standardLeg, standardLeg.free!, confirmedFreeToll, undefined, tollPeriod)} copied={copiedKey === "standard-free"} />
+            : standardLeg.freeCandidate
+              ? <UnverifiedRouteCard trip={standardLeg.freeCandidate} tollPeriod={tollPeriod} onCopy={() => copyStandard("standard-candidate", "Альтернативный маршрут", standardLeg, standardLeg.freeCandidate!, unverifiedToll, "Платность маршрута не подтверждена. Стоимость дорог не включена в итог.", tollPeriod)} copied={copiedKey === "standard-candidate"} />
+              : <RouteUnavailable message={standardLeg.freeError} />}
+        </> : <RouteCard title="Оптимальный маршрут" accent="blue" trip={standardOptimal} toll={confirmedFreeToll} tollPeriod={tollPeriod} onTollPeriodChange={onTollPeriodChange} onCopy={() => copyStandard("standard-optimal", "Оптимальный маршрут", standardLeg, standardOptimal, confirmedFreeToll, undefined, tollPeriod)} copied={copiedKey === "standard-optimal"} />}
+      </section>}
+    </>
+  );
 }
