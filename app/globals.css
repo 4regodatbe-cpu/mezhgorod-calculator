@@ -55,18 +55,21 @@ html.dark .support-icon { background:rgb(6 78 59 / 55%); color:#a7f3d0; }
   --brand-border:#102A43;
 }
 html.dark {
-  --brand-page:#111B24;
-  --brand-surface:#1C2B33;
-  --brand-subtle:#293D45;
-  --brand-text:#F7F4EE;
-  --brand-muted:#C0CDD2;
-  --brand-action:#62C6B6;
-  --brand-action-foreground:#102A2D;
-  --brand-accent:#FF9A6F;
-  --brand-accent-foreground:#102A2D;
-  --brand-route:#FF956D;
-  --brand-focus:#94DDD2;
-  --brand-border:#78919A;
+  --brand-page:#151619;
+  --brand-surface:#202225;
+  --brand-subtle:#2A2D31;
+  --brand-text:#F5F2EB;
+  --brand-muted:#B9B8B4;
+  --brand-action:#72B8AE;
+  --brand-action-foreground:#172322;
+  --brand-accent:#E9A080;
+  --brand-accent-foreground:#2B201B;
+  --brand-route:#E99576;
+  --brand-focus:#A1D2CA;
+  --brand-border:#5B6065;
+}
+html.dark .calculator-modern {
+  background-image:radial-gradient(circle at 50% -24%,color-mix(in srgb,var(--brand-subtle) 14%,transparent),transparent 48%);
 }
 @theme inline {
   --color-brand-page:var(--brand-page);
