@@ -123,12 +123,11 @@ async function validateFreeCandidate(candidate: FreeCandidate, ordinal: "Пер�
 // Legacy API field names say “free”; the candidate now avoids payment points while retaining tolled road sections where useful.
 export async function selectFreeRoute(
   mainRoute: RouteSummary,
-  valhallaAlternativeResult: PromiseSettledResult<RouteWithGeometry>,
-  brouterAlternativeResult: PromiseSettledResult<RouteWithGeometry>,
+  alternativeResults: Array<{ name: string; result: PromiseSettledResult<RouteWithGeometry> }>,
 ): Promise<SelectedFree | null> {
-  const candidates: FreeCandidate[] = [];
-  if (valhallaAlternativeResult.status === "fulfilled") candidates.push({ name: "Valhalla", route: valhallaAlternativeResult.value });
-  if (brouterAlternativeResult.status === "fulfilled") candidates.push({ name: "BRouter", route: brouterAlternativeResult.value });
+  const candidates: FreeCandidate[] = alternativeResults.flatMap(({ name, result }) =>
+    result.status === "fulfilled" ? [{ name, route: result.value }] : [],
+  );
   if (candidates.length === 0) return null;
 
   const validations: TollValidation[] = [];
