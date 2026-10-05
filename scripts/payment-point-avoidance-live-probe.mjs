@@ -11,8 +11,12 @@ const to = {
   position: { lat: 45.0355, lng: 38.9753 },
 };
 
-const route = await valhalla(from, to, 1, undefined, 43_200);
+const [route, mainRoute] = await Promise.all([
+  valhalla(from, to, 1, undefined, 43_200),
+  valhalla(from, to, 1),
+]);
 const selected = await selectFreeRoute(
+  mainRoute,
   { status: "fulfilled", value: route },
   { status: "rejected", reason: new Error("BRouter fallback not part of this focused probe") },
 );
@@ -22,8 +26,8 @@ const report = {
   to: to.label,
   provider: "Valhalla",
   request: { use_tolls: 1, toll_booth_penalty: 43_200 },
-  distanceKm: Math.round(route.meters / 100) / 10,
-  durationMinutes: Math.round(route.seconds / 60),
+  mainDistanceKm: Math.round(mainRoute.meters / 100) / 10,\n  distanceKm: Math.round(route.meters / 100) / 10,
+  mainDurationMinutes: Math.round(mainRoute.seconds / 60),\n  durationMinutes: Math.round(route.seconds / 60),
   geometryPointCount: route.coordinates.length,
   candidateSelected: selected !== null,
   admission: selected?.truth ?? "rejected",
