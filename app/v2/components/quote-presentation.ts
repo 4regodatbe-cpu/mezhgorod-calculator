@@ -90,3 +90,24 @@ export function totalWithToll(baseFare: number | null | undefined, toll: TollAmo
   // so the printed equation remains arithmetically consistent.
   return Math.round(baseFare) + Math.round(toll.amount);
 }
+
+
+export type DisplayQuote =
+  | { kind: "complete"; label: "Итого за поездку"; amount: number }
+  | { kind: "base-only"; label: "Итого без дорог"; amount: number }
+  | { kind: "unavailable"; label: "Цена тарифа не рассчитана"; amount: null };
+
+/** Shows a base fare without claiming an unknown toll amount is zero. */
+export function displayQuote(baseFare: number | null | undefined, toll: TollAmount): DisplayQuote {
+  if (typeof baseFare !== "number" || !Number.isFinite(baseFare)) {
+    return { kind: "unavailable", label: "Цена тарифа не рассчитана", amount: null };
+  }
+  if (toll.status === "unknown" || toll.amount === null) {
+    return { kind: "base-only", label: "Итого без дорог", amount: Math.round(baseFare) };
+  }
+  const total = totalWithToll(baseFare, toll);
+  if (total === null) {
+    return { kind: "base-only", label: "Итого без дорог", amount: Math.round(baseFare) };
+  }
+  return { kind: "complete", label: "Итого за поездку", amount: total };
+}
