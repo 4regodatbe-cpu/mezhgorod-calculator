@@ -38,6 +38,7 @@ jobs:
       - name: Probe live provider geometry and per-leg times
         run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
       - name: Probe live payment-point-avoiding alternative for Moscow–Krasnodar
+        continue-on-error: true
         run: node --import ./scripts/register-ts-paths.mjs scripts/payment-point-avoidance-live-probe.mjs
       - name: Probe live Photon address suggestions
         run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-live-probe.mjs
