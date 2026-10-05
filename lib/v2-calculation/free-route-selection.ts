@@ -153,7 +153,7 @@ export async function selectFreeRoute(
   // it has not observed a payment point. A fully checked route with a booth is
   // never offered as the payment-avoiding alternative.
   const fallbackIndex = validations.findIndex(
-    (validation) => validation.complete !== true && (validation.tollBoothCount ?? 0) === 0,
+    (validation, index) => candidates[index].route.coordinates.length > 2 && validation.complete !== true && (validation.tollBoothCount ?? 0) === 0,
   );
   if (fallbackIndex < 0) return null;
 
