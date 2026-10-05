@@ -74,8 +74,10 @@ html.dark {
   --color-brand-subtle:var(--brand-subtle);
   --color-brand-text:var(--brand-text);
   --color-brand-muted:var(--brand-muted);
-  --color-brand-action:var(--brand-action);\n  --color-brand-action-foreground:var(--brand-action-foreground);
-  --color-brand-accent:var(--brand-accent);\n  --color-brand-accent-foreground:var(--brand-accent-foreground);
+  --color-brand-action:var(--brand-action);
+  --color-brand-action-foreground:var(--brand-action-foreground);
+  --color-brand-accent:var(--brand-accent);
+  --color-brand-accent-foreground:var(--brand-accent-foreground);
   --color-brand-route:var(--brand-route);
   --color-brand-focus:var(--brand-focus);
   --color-brand-border:var(--brand-border);
