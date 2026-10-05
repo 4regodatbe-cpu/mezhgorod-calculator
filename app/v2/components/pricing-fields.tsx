@@ -1,11 +1,73 @@
 "use client";
 
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { defaults, tariffNames } from "./pricing-data";
 import { clampNumber, money } from "./format";
-import type { Trip } from "./types";
+import { resolveTollAmount, totalWithToll, type TollPeriod } from "./quote-presentation";
+import type { TollView, Trip } from "./types";
 
-export function TariffInputs({ rates, setRates }: { rates: typeof defaults; setRates: (rates: typeof defaults) => void }) {
-  return <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">{(Object.keys(rates) as Array<keyof typeof rates>).map((key) => <label key={key} className="rounded-xl border border-slate-700 bg-slate-950/55 p-2.5"><span className="block text-xs font-semibold text-slate-300">{tariffNames[key]}</span><span className="mt-1 flex items-center gap-1"><input aria-label={`Цена ${tariffNames[key]}`} type="number" min="1" max="10000" value={rates[key]} onChange={(e) => setRates({ ...rates, [key]: clampNumber(Number(e.target.value), 1, 10000, 1) })} className="w-full bg-transparent text-lg font-black text-white outline-none"/><span className="text-xs text-slate-500">₽/км</span></span></label>)}</div>;
+export function TariffInputs({
+  rates,
+  setRates,
+}: {
+  rates: typeof defaults;
+  setRates: (rates: typeof defaults) => void;
+}) {
+  return (
+    <div className="grid min-w-0 grid-cols-2 gap-2 sm:grid-cols-4">
+      {(Object.keys(rates) as Array<keyof typeof rates>).map((key) => {
+        const name = tariffNames[key];
+        const updateRate = (delta: number) => {
+          const next = Math.round((rates[key] + delta) * 2) / 2;
+          setRates({ ...rates, [key]: clampNumber(next, 1, 10000, 1) });
+        };
+        return (
+          <div key={key} className="min-w-0 rounded-[20px] border border-brand-border/15 bg-brand-surface p-2.5 shadow-sm">
+            <label htmlFor={"rate-" + key} className="block truncate text-xs font-bold text-brand-text">{name}</label>
+            <div className="mt-2 grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-1">
+              <div className="flex min-w-0 items-baseline gap-1">
+                <input
+                  id={"rate-" + key}
+                  aria-label={"Цена за км: " + name}
+                  type="number"
+                  min="1"
+                  max="10000"
+                  step="0.5"
+                  value={rates[key]}
+                  onChange={(event) =>
+                    setRates({
+                      ...rates,
+                      [key]: clampNumber(Number(event.target.value), 1, 10000, 1),
+                    })
+                  }
+                  className="rate-stepper-input min-w-0 w-full bg-transparent text-lg font-black leading-none text-brand-text outline-none focus-visible:ring-2 focus-visible:ring-brand-focus"
+                />
+                <span className="shrink-0 whitespace-nowrap text-[11px] font-bold text-brand-action">₽/км</span>
+              </div>
+              <div className="flex flex-col -my-2">
+                <button
+                  type="button"
+                  aria-label={"Увеличить тариф " + name + " на 0,50 ₽/км"}
+                  onClick={() => updateRate(0.5)}
+                  className="grid h-11 w-11 place-items-center rounded-lg text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/30 focus-visible:outline-2 focus-visible:outline-brand-focus"
+                >
+                  <ChevronUp className="h-4 w-4" aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  aria-label={"Уменьшить тариф " + name + " на 0,50 ₽/км"}
+                  onClick={() => updateRate(-0.5)}
+                  className="grid h-11 w-11 place-items-center rounded-lg text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/30 focus-visible:outline-2 focus-visible:outline-brand-focus"
+                >
+                  <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 const vehicleKeys = [
@@ -15,21 +77,51 @@ const vehicleKeys = [
   ["minivan", "minivan"],
 ] as const;
 
-export function PriceRows({ trip }: { trip: Trip }) {
-  return <div className="mt-3 grid grid-cols-2 gap-2">{vehicleKeys.map(([key, vehicle]) => <div key={key} className="rounded-xl bg-slate-950/60 px-3 py-2"><span className="block text-xs text-slate-400">{tariffNames[key]}</span><strong className="text-base text-white">{trip.pricingByVehicle ? trip.pricingByVehicle[vehicle].requiresSplit ? "Цена не рассчитана" : trip.pricingByVehicle[vehicle].totalPrice === null ? "Цена не рассчитана" : money(trip.pricingByVehicle[vehicle].totalPrice) : "Цена не рассчитана"}</strong></div>)}</div>;
-}
-
-export function PricingBreakdown({ trip }: { trip: Trip }) {
-  const pricing = trip.pricingByVehicle?.comfort;
-  if (pricing?.requiresSplit) return <p className="mt-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-xs leading-relaxed text-amber-200">Геометрия тарифных участков не подтверждена. Повторите расчёт.</p>;
-  const segments = pricing?.pricingSegments;
-  if (!segments?.length) return null;
-  return <div className="mt-3 rounded-xl border border-slate-700/70 bg-slate-950/45 p-3">
-    <p className="mb-2 text-xs font-bold text-slate-300">Расчёт по сегментам · Комфорт</p>
-    <div className="space-y-1.5">{segments.map((segment, index) => <div key={`${segment.from}-${segment.to}-${index}`} className="flex items-start justify-between gap-2 text-xs">
-      <span className="min-w-0 text-slate-400"><span className="block truncate">{segment.from} → {segment.to}</span><span>{segment.type === "special" ? "Специальный тариф" : "Обычный тариф"} · {Math.round(segment.distanceKm * 10) / 10} км × {money(segment.ratePerKm)}/км</span></span>
-      <strong className="shrink-0 text-slate-200">{money(segment.amount)}</strong>
-    </div>)}</div>
-    {segments.some((segment) => segment.reviewRequired) && <p className="mt-2 text-xs text-amber-300">Тариф требует дополнительной проверки.</p>}
-  </div>;
+export function PriceRows({
+  trip,
+  toll,
+  period,
+  manualToll,
+}: {
+  trip: Trip;
+  toll?: TollView;
+  period: TollPeriod;
+  manualToll?: string;
+}) {
+  const tollPrice = resolveTollAmount(toll, period, manualToll);
+  return (
+    <div className="mt-3 grid min-w-0 grid-cols-1 gap-2">
+      {vehicleKeys.map(([key, vehicle]) => {
+        const price = trip.pricingByVehicle?.[vehicle];
+        const baseFare = price && !price.requiresSplit ? price.totalPrice : null;
+        const total = totalWithToll(baseFare, tollPrice);
+        return (
+          <div key={key} className="min-w-0 rounded-[18px] border border-brand-border/15 bg-brand-surface px-3 py-2.5">
+            <div className="flex min-w-0 items-center justify-between gap-2">
+              <span className="truncate text-sm font-bold text-brand-text">{tariffNames[key]}</span>
+            </div>
+            <div className="mt-1 flex min-w-0 flex-wrap items-baseline gap-x-1.5 gap-y-0.5 text-sm">
+              {baseFare === null ? (
+                <span className="text-brand-text/70">Цена тарифа не рассчитана</span>
+              ) : (
+                <>
+                  <span className="font-semibold text-brand-text">{money(baseFare)}</span>
+                  <span aria-hidden="true" className="font-bold text-brand-text/60">+</span>
+                  {tollPrice.amount === null ? (
+                    <span className="font-bold text-amber-800">стоимость платных дорог не подтверждена</span>
+                  ) : (
+                    <span className="font-bold text-brand-route">{money(tollPrice.amount)} {tollPrice.status === "manual" ? "дороги (вручную)" : "платные дороги"}</span>
+                  )}
+                  <span aria-hidden="true" className="font-bold text-brand-text/60">=</span>
+                  <strong className="font-black text-brand-action">
+                    {total === null ? "итого не рассчитано" : money(total)}
+                  </strong>
+                </>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }

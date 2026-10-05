@@ -149,3 +149,60 @@
 - Vercel check для того же коммита завершился `success` (preview/check status; не production deploy).
 - PR #10 по-прежнему открыт черновиком; слияния не было.
 - Вывод: handoff добавлен и прошёл репозиторный CI; продуктовый код этим docs-коммитом не изменялся.
+
+
+## 7. Продолжение: брендовый UI V2 и тарифные строки — 2026-10-05
+
+### Задача пользователя
+Подогнать V2 под утверждённый брендбук «из А в Б», убрать горизонтальное переполнение поиска, показать редактирование ставок с шагом 0,50 ₽/км, подчеркнуть загрузку на долгом расчёте, уплотнить карточки дорог, дать выбрать будний/выходной период, убрать сегментную разбивку, показывать итог по каждому тарифу и сделать компактный текст копирования.
+
+### Что изменено
+- Применены утверждённые семантические цвета из design tokens: тёплый ivory #F7F4EE, navy #102A43, teal #0D5C63, mist #DDECF2, signal/deep orange #FF6B35 / #C94C20. Начальная тема светлая; сохранённый dark выбор остаётся рабочим. Логотип не выдумывался: V2 repository logo asset не содержал, использованы существующий знак машины и текстовое написание «из А в Б». Неутверждённый выбор шрифта не менялся.
+- Для suggest popover зафиксированы left/right/w-full/max-w-full, горизонтальный overflow закрыт, длинные строки truncation; родительские формы имеют min-w-0.
+- Ставки показывают ₽/км рядом с числом и получили ↑/↓ кнопки, каждая прибавляет/вычитает ровно 0,50 ₽/км. Добавлена ясная оговорка, что тарифы меняются; ручной ввод и сохранение настроек оставлены.
+- Добавлен общий для формы и результатов period selector Пн–Чт / Пт–Вс. Автоначальное значение выбирается по московскому дню через Europe/Moscow.
+- Кнопка расчёта меняет цвет, показывает анимацию полосы/индикатор и live status; уважает reduced-motion. После успешного ответа страница прокручивается к началу карточек результатов.
+- Рабочая ширина V2 ограничена max-w-3xl. Card grid/children используют min-width safeguards. «По платной дороге» переименовано в «Основной маршрут», декоративная отдельная toll-разбивка удалена из экранного результата.
+- Четыре строки цены строятся из базы тарифа и toll amount выбранного периода. quote-presentation.ts различает priced, подтверждённый free, unknown и manual; unknown не превращается в 0 и не получает ложный total, confirmed-free становится явными 0 ₽. Существующее поле ручной корректировки основного маршрута сохраняется и попадает и в UI, и в clipboard.
+- Clipboard включает только «из А в Б», короткие названия мест, километры, время, выбранный период и четыре строки «тариф + дороги = итого». Для неизвестной платы итог явно остаётся нерассчитанным. Компоненты формулы округляются так же, как отображаются, чтобы видимое равенство сходилось.
+- Обновлены токены и стили темы/feedback/donation/notices; urgent switch, API и route selection не переписывались.
+
+### Проверки и ограничения
+- Добавлен unit test на period/timezone, сокращённые названия, ручной toll override, unknown/free separation и round-to-visible-total.
+- node scripts/v2-quote-presentation.test.ts: 6/6 passed.
+- Полный suite, tsc, Next build пока не подтверждены: workspace не является git checkout, node_modules/tsc отсутствуют. Исходники получены из актуальной GitHub ветки и правки проверены локально выбранными тестами/ручным просмотром.
+- Preview в интерактивном браузере пока не проверен. После создания draft PR посмотреть узкую ширину попапа, мобильное расположение 4 тарифов, day selector, loaded-state и авто-scroll, а также priced/free/unknown карточки.
+- Платёжные данные и routing backend не изменены; toll totals остаются справочными и могут меняться.
+- **Рабочая база на момент старта:** work/remove-v3-runtime-2026-10-02 / e1ca92e302cf7bfbe188717a91da916abbf8e77c; PR #10 merged в commit ba23668... Новый UI PR должен оставаться draft. Production deployment этой правкой не запускать.
+
+
+### UI verification update — 2026-10-05
+
+- Created draft PR #11: https://github.com/4regodatbe-cpu/mezhgorod-calculator/pull/11 (head 4add192d4ed5fe32c56ad2e52a0899f20e8bbd77; base work/remove-v3-runtime-2026-10-02). PR #10 is already merged; this work is separate.
+- GitHub Actions run #97 (37259520781) passed both jobs: all scripts tests, TypeScript no-emit, Next.js production build, live route/provider, Photon and six-route Yandex audit probes.
+- Vercel Preview READY at https://mezhgorod-calculator-bp9rlxgmq-4regodatbe-5310.vercel.app/v2. Protected URL smoke-fetch returned HTTP 200 and server-rendered HTML with the «из А в Б» header and new rate/period controls.
+- No interactive browser/chromium is installed in this execution workspace. The Preview has not had mobile visual/E2E verification; the HTTP SSR check does not prove layout sizing, live loader appearance, selection/clipboard interaction, or auto-scroll.
+- Production remains unchanged and PR remains draft. Do not merge until a visual browser check and a manual check of known/unknown toll totals are done.
+
+
+### Ручная плата дорог: уточнение подписи — 2026-10-05
+
+При повторной сверке интерфейса замечено, что введённая вручную сумма позволяла вывести итог для маршрута с unknown toll status, но верхнее предупреждение по-прежнему сообщало, что итог не рассчитан. Исправление явно маркирует добавку и clipboard как ручной ввод, не подтверждённый провайдером. Пустое поле оставляет итог unknown; серверный статус маршрута не меняется.
+
+Это follow-up после полного run #97; docs-only run #98 в момент записи ещё выполнялся. Текущая code-ветка PR #11 остаётся draft, Production не менялся.
+
+
+### CI syntax regression and correction — 2026-10-05
+
+The follow-up that clarified manually entered tolls accidentally wrote the two literal characters backslash+n into use-v2-calculation.ts instead of an actual newline. GitHub run #87 failed at Next production build; run #99 failed TypeScript parsing at the same source line. Route-quality tests and benchmark integrity steps before the build passed. The source has been corrected to contain a real line break; verify on the next CI head. The matching Vercel Preview was ERROR due to this parse failure, and will be checked again after rebuild.
+
+
+### Завершение UI-проверок и исправление API smoke — 2026-10-05
+
+- **Цель:** закрыть CI-сигналы после UI-изменений и сохранить причины расхождений для следующего разработчика.
+- **Проверка актуального UI-кода:** run #100 (37262493974) на коммите dd051c9f9c24b9db1e533c4fad360d14e8fa9b4b завершился успешно. Тесты, tsc --noEmit, Next.js production build и live probes (геометрия/время провайдеров, Photon, шесть benchmark-маршрутов) прошли.
+- **Диагноз независимого smoke failure:** workflow #88 обнаружил, что scripts/api-contract-smoke.mjs ожидал HTTP 400 для запроса mode=dual без via, тогда как endpoint отвечает 200. В app/api/v2/calculate/route.ts нет проверки обязательной via; интерфейс и действующее требование также не делают промежуточную точку обязательной. Значит проверка закрепляла устаревший контракт.
+- **Исправление:** коммит 47eadabb6837ed3af608fa24d96edec004fca2bf переименовал smoke case в «dual mode accepts omitted midpoint» и ожидает HTTP 200. Runtime/API расчёт не менялся. Нужно сверить workflow нового head после обновления PR description; до этого новый smoke не считать подтверждённым.
+- **Запись в checkpoint:** после изменения smoke обновлён docs/WORK_STATE.md, чтобы новый чат сразу видел успешный run #100, причину run #88, остаток по browser E2E и запрет на production.
+- **Остаток проверки UI:** Vercel Preview для UI-кода dd051c9 READY, SSR /v2 вернул 200. Интерактивная проверка мобильного viewport не выполнялась: браузерный runner отсутствует. Поэтому размеры dropdown, анимация загрузки и фактическая авто-прокрутка после запроса ещё нуждаются в проверке в настоящем браузере.
+- **Статус PR:** #11 оставить open/draft. Никаких merge/production операций не выполнялось.

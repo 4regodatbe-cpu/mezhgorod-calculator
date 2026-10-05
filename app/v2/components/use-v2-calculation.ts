@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { pickOptimal } from "./route-utils";
 import { distance, duration, money } from "./format";
 import { defaults, tariffNames } from "./pricing-data";
+import { resolveTollAmount, shortPlaceName, totalWithToll, type TollPeriod } from "./quote-presentation";
 import type { Place, Result, Leg, Trip, TollView } from "./types";
 
 type CalculatorMode = "standard" | "dual";
@@ -101,21 +102,20 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
     }
   }
 
-  async function copyStandard(key: string, title: string, leg: Leg, trip: Trip, toll?: TollView, warning?: string) {
-    const lines = ["Калькулятор межгород", `${title}: ${leg.from} → ${leg.to}`, `${distance(trip.meters)} · ${duration(trip.seconds)}`];
+  async function copyStandard(key: string, title: string, leg: Leg, trip: Trip, toll?: TollView, warning?: string, tollPeriod: TollPeriod = "weekday", manualTollOverride?: string) {
+    void title;
+    const tollPrice = resolveTollAmount(toll, tollPeriod, manualTollOverride);
+    const periodLabel = tollPeriod === "weekday" ? "будни, Пн–Чт" : "выходные, Пт–Вс";
+    const lines = ["из А в Б", `${shortPlaceName(leg.from)} → ${shortPlaceName(leg.to)}`, `${distance(trip.meters)} · ${duration(trip.seconds)}`, `День поездки: ${periodLabel}`];
+    if (manualTollOverride?.trim()) lines.push("Сумма платных дорог введена вручную и не подтверждена провайдером.");
+    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог не подтверждена.");
     for (const rate of Object.keys(defaults) as Array<keyof typeof defaults>) {
       const vehicle = vehicleForRate[rate];
-      const amount = trip.pricingByVehicle?.[vehicle]?.totalPrice;
-      lines.push(`${tariffNames[rate]}: ${amount == null ? "цена не рассчитана" : money(amount)}`);
+      const baseFare = trip.pricingByVehicle?.[vehicle]?.requiresSplit ? null : trip.pricingByVehicle?.[vehicle]?.totalPrice;
+      const total = totalWithToll(baseFare, tollPrice);
+      const addition = tollPrice.amount === null ? "платные дороги: сумма неизвестна" : `+ ${money(tollPrice.amount)} ${tollPrice.status === "manual" ? "дороги вручную" : "платные дороги"}`;
+      lines.push(`${tariffNames[rate]}: ${baseFare == null ? "тариф не рассчитан" : money(baseFare)} ${addition} = ${total === null ? "итого не рассчитано" : money(total)}`);
     }
-    const segments = trip.pricingByVehicle?.comfort.pricingSegments ?? [];
-    segments.forEach((segment) => lines.push(`${segment.from} → ${segment.to}: ${Math.round(segment.distanceKm * 10) / 10} км × ${money(segment.ratePerKm)}/км = ${money(segment.amount)}`));
-    if (toll) {
-      if (toll.pricingStatus === "unknown") lines.push("Платность / стоимость дороги не подтверждена");
-      else if (toll.weekdayAmount !== toll.weekendAmount) lines.push(`Платная дорога: Пн–Чт ${money(toll.weekdayAmount ?? 0)}, Пт–Вс ${money(toll.weekendAmount ?? 0)}`);
-      else if (toll.pricingStatus === "priced") lines.push(`Платная дорога: ${money(toll.amount ?? 0)}`);
-    }
-    if (trip.pricingByVehicle?.standard.requiresSplit) lines.push("Геометрия тарифных участков не подтверждена; цена не рассчитана.");
     if (warning) lines.push(`Важно: ${warning}`);
     await navigator.clipboard.writeText(lines.join("\n"));
     setCopiedKey(key);

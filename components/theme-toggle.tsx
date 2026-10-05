@@ -13,13 +13,11 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
     const saved = localStorage.getItem("mezhgorod-theme") as Theme | null;
-    const next = saved === "light" || saved === "dark"
-      ? saved
-      : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const next = saved === "light" || saved === "dark" ? saved : "light";
     setTheme(next);
     applyTheme(next);
   }, []);
@@ -37,7 +35,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему"}
       title={theme === "dark" ? "Светлая тема" : "Тёмная тема"}
-      className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-slate-300 bg-white/90 text-slate-700 shadow-sm transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+      className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-brand-border/15 bg-brand-surface text-brand-text shadow-sm transition hover:bg-brand-subtle"
     >
       {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </button>
