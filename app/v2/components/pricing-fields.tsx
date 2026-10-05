@@ -9,22 +9,27 @@ import type { TollView, Trip } from "./types";
 export function TariffInputs({
   rates,
   setRates,
+  compact = false,
+  idPrefix = "rate",
 }: {
   rates: typeof defaults;
   setRates: (rates: typeof defaults) => void;
+  compact?: boolean;
+  idPrefix?: string;
 }) {
   return (
-    <div className="grid min-w-0 grid-cols-2 gap-2 sm:grid-cols-4">
+    <div className="grid min-w-0 grid-cols-2 gap-1.5 sm:grid-cols-4 sm:gap-2">
       {(Object.keys(rates) as Array<keyof typeof rates>).map((key) => {
         const name = tariffNames[key];
+        const inputId = idPrefix + "-" + key;
         const updateRate = (delta: number) => {
           const next = Math.round((rates[key] + delta) * 2) / 2;
           setRates({ ...rates, [key]: clampNumber(next, 1, 10000, 1) });
         };
         return (
-          <div key={key} className="min-w-0 rounded-[18px] border border-brand-border/25 bg-brand-surface p-2 shadow-sm">
+          <div key={key} className={"min-w-0 rounded-[18px] border border-brand-border/25 bg-brand-surface shadow-sm " + (compact ? "p-1.5" : "p-2")}>
             <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_2.75rem] grid-rows-[2.75rem_2.75rem] items-center gap-x-1">
-              <label htmlFor={"rate-" + key} className="row-start-1 min-w-0 translate-y-px truncate text-[16.5px] leading-5 font-extrabold text-brand-text">{name}</label>
+              <label htmlFor={inputId} className="row-start-1 min-w-0 translate-y-px truncate text-[16.5px] leading-5 font-extrabold text-brand-text">{name}</label>
               <button
                 type="button"
                 aria-label={"Увеличить тариф " + name + " на 0,50 ₽/км"}
@@ -35,7 +40,7 @@ export function TariffInputs({
               </button>
               <div className="col-start-1 row-start-2 flex min-w-0 items-baseline gap-0.5">
                 <input
-                  id={"rate-" + key}
+                  id={inputId}
                   aria-label={"Цена за км: " + name}
                   type="number"
                   min="1"

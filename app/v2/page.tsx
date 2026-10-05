@@ -55,7 +55,7 @@ export default function V2Page() {
   const standardLeg = result?.legs[0];
   const standardHasTolls = standardLeg ? standardLeg.fast.tolls.pricingStatus !== "free" : false;
   const standardOptimal = standardLeg ? pickOptimal(standardLeg.fast, standardLeg.free) : null;
-  return <main className="calculator-modern min-h-screen bg-brand-page text-brand-text">
+  return <main className="calculator-modern min-h-screen bg-brand-page pb-[env(safe-area-inset-bottom)] text-brand-text">
     <div className="v2-page-inset mx-auto w-full max-w-3xl px-3 sm:px-6">
       <header className="mb-4 flex items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2.5">
@@ -81,6 +81,7 @@ export default function V2Page() {
         urgentPercent={urgentPercent}
         onUrgentPercentChange={setUrgentPercent}
         loading={loading}
+        hasResult={Boolean(result)}
         error={error}
         onCalculate={calculate}
       />

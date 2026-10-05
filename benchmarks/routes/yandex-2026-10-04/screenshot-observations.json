@@ -245,5 +245,55 @@
         }
       ]
     }
+  ],
+  "followUpObservations": [
+    {
+      "id": "donetsk-moscow-toll-gap-2026-10-05",
+      "capturedAt": "2026-10-05",
+      "source": "user-provided Yandex Maps and calculator screenshots",
+      "geometryIncluded": false,
+      "from": {
+        "label": "Донецк — ДНР",
+        "position": {
+          "lat": 48.0159,
+          "lng": 37.80285
+        }
+      },
+      "to": {
+        "label": "Москва, Россия",
+        "position": {
+          "lat": 55.755819,
+          "lng": 37.617644
+        }
+      },
+      "yandexCandidates": [
+        {
+          "rank": 1,
+          "distanceKm": 1210,
+          "durationMinutes": 900,
+          "tollAmountRubApprox": 3810,
+          "tollObservation": "approximate shown on selected route"
+        },
+        {
+          "rank": 2,
+          "distanceKm": 1237,
+          "durationMinutes": 1140,
+          "tollAmountRubApprox": null,
+          "tollObservation": "alternative shown; toll amount not readable"
+        }
+      ],
+      "calculatorObservation": {
+        "distanceKm": 1213.6,
+        "durationMinutes": 982,
+        "weekdayTollRub": 4680,
+        "weekendTollRub": 6270
+      },
+      "userReportedComparison": {
+        "weekdayTollRubApprox": 4600,
+        "weekendTollRubApprox": 6200,
+        "yandexSelectedTollRubApprox": 3810
+      },
+      "caveat": "Endpoints are approximate city-centre routing coordinates, not the exact selected Yandex endpoints. Yandex route geometry and exact departure date/payment conditions are unavailable; do not use this record to hardcode a fare."
+    }
   ]
 }
