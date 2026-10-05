@@ -1,4 +1,6 @@
-import type { TollView } from "./types";
+import { distance, duration, money } from "./format";
+import { tariffNames } from "./pricing-data";
+import type { TollView, Trip } from "./types";
 
 export type TollPeriod = "weekday" | "weekend";
 export type TollAmount = {
@@ -110,4 +112,23 @@ export function displayQuote(baseFare: number | null | undefined, toll: TollAmou
     return { kind: "base-only", label: "Итого без дорог", amount: Math.round(baseFare) };
   }
   return { kind: "complete", label: "Итого за поездку", amount: total };
+}
+
+/** Compact clipboard text for the alternative route: city names, route facts and base fares only. */
+export function buildAlternativeFareCopy(fromLabel: string, toLabel: string, trip: Trip): string {
+  const rows = [
+    ["standard", "standard"],
+    ["comfort", "comfort"],
+    ["comfortPlus", "comfort_plus"],
+    ["minivan", "minivan"],
+  ] as const;
+  return [
+    `${shortPlaceName(fromLabel)} → ${shortPlaceName(toLabel)}`,
+    `${distance(trip.meters)} · ${duration(trip.seconds)}`,
+    ...rows.map(([rate, vehicle]) => {
+      const price = trip.pricingByVehicle?.[vehicle];
+      const amount = price && !price.requiresSplit ? price.totalPrice : null;
+      return `${tariffNames[rate]}: ${amount == null ? "Не рассчитано" : money(amount)}`;
+    }),
+  ].join("\n");
 }
