@@ -9,7 +9,7 @@ type SelectedFree = {
   route: RouteWithGeometry;
   quality: RouteQuality;
   validation: TollValidation;
-  truth: "confirmed_free" | "candidate_unverified";
+  truth: "confirmed_no_toll_booths" | "candidate_unverified";
 };
 export type TollEstimate = ReturnType<typeof estimateTolls>;
 type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount"> & {
@@ -92,11 +92,11 @@ function qualityForCandidate(selected: FreeCandidate, other: FreeCandidate | und
     { name: selected.name, route: selected.route },
     other ? { name: other.name, route: other.route } : undefined,
   ).quality;
-  if (validation.status === "free") return base;
+  if (validation.complete && (validation.tollBoothCount ?? 0) === 0) return base;
   return {
     ...base,
     status: "warning",
-    message: validation.message || "Независимая проверка бесплатности не завершена",
+    message: validation.tollBoothCount ? "На маршруте обнаружены пункты оплаты" : "Проверка пунктов оплаты не завершена",
   };
 }
 
@@ -120,51 +120,49 @@ async function validateFreeCandidate(candidate: FreeCandidate, ordinal: "Пер�
     : unknownValidation(`${ordinal} источник не вернул геометрию`);
 }
 
+// Legacy API field names say “free”; the candidate now avoids payment points while retaining tolled road sections where useful.
 export async function selectFreeRoute(
-  valhallaFreeResult: PromiseSettledResult<RouteWithGeometry>,
-  brouterResult: PromiseSettledResult<RouteWithGeometry>,
+  valhallaAlternativeResult: PromiseSettledResult<RouteWithGeometry>,
+  brouterAlternativeResult: PromiseSettledResult<RouteWithGeometry>,
 ): Promise<SelectedFree | null> {
   const candidates: FreeCandidate[] = [];
-  if (valhallaFreeResult.status === "fulfilled") candidates.push({ name: "Valhalla", route: valhallaFreeResult.value });
-  if (brouterResult.status === "fulfilled") candidates.push({ name: "BRouter", route: brouterResult.value });
+  if (valhallaAlternativeResult.status === "fulfilled") candidates.push({ name: "Valhalla", route: valhallaAlternativeResult.value });
+  if (brouterAlternativeResult.status === "fulfilled") candidates.push({ name: "BRouter", route: brouterAlternativeResult.value });
   if (candidates.length === 0) return null;
 
-
-  const first = candidates[0];
-  const second = candidates[1];
-  const firstValidation = await validateFreeCandidate(first, "Первый");
-
-  if (firstValidation.status === "free") {
-    return selectedCandidate(first, second, firstValidation, "confirmed_free");
+  const validations: TollValidation[] = [];
+  for (const [index, candidate] of candidates.entries()) {
+    validations.push(await validateFreeCandidate(candidate, index === 0 ? "Первый" : "Второй"));
   }
 
-  let secondValidation: TollValidation | null = null;
-  if (second) {
-    secondValidation = await validateFreeCandidate(second, "Второй");
-    if (secondValidation.status === "free") {
-      return selectedCandidate(second, first, secondValidation, "confirmed_free");
-    }
+  const acceptedIndex = validations.findIndex(
+    (validation) => validation.complete === true && (validation.tollBoothCount ?? 0) === 0,
+  );
+  if (acceptedIndex >= 0) {
+    const selected = candidates[acceptedIndex];
+    const otherIndex = acceptedIndex === 0 ? 1 : 0;
+    return selectedCandidate(
+      selected,
+      candidates[otherIndex],
+      validations[acceptedIndex],
+      "confirmed_no_toll_booths",
+    );
   }
 
-  const firstUnknown = firstValidation.status === "unknown";
-  const secondUnknown = second && secondValidation?.status === "unknown";
-  if (!firstUnknown && !secondUnknown) return null;
+  // If map matching is incomplete, retain a provider-requested detour only when
+  // it has not observed a payment point. A fully checked route with a booth is
+  // never offered as the payment-avoiding alternative.
+  const fallbackIndex = validations.findIndex(
+    (validation) => validation.complete !== true && (validation.tollBoothCount ?? 0) === 0,
+  );
+  if (fallbackIndex < 0) return null;
 
-  if (firstUnknown && !secondUnknown) {
-    return selectedCandidate(first, second, firstValidation, "candidate_unverified");
-  }
-  if (second && secondUnknown && !firstUnknown) {
-    return selectedCandidate(second, first, secondValidation!, "candidate_unverified");
-  }
-
-  if (second && secondValidation) {
-    const selected = spreadPercent(first.route, second.route) > MAX_PROVIDER_DISTANCE_SPREAD_PERCENT
-      ? (first.route.meters <= second.route.meters ? first : second)
-      : first;
-    const validation = selected === first ? firstValidation : secondValidation;
-    const other = selected === first ? second : first;
-    return selectedCandidate(selected, other, validation, "candidate_unverified");
-  }
-
-  return selectedCandidate(first, undefined, firstValidation, "candidate_unverified");
+  const selected = candidates[fallbackIndex];
+  const otherIndex = fallbackIndex === 0 ? 1 : 0;
+  return selectedCandidate(
+    selected,
+    candidates[otherIndex],
+    validations[fallbackIndex],
+    "candidate_unverified",
+  );
 }
