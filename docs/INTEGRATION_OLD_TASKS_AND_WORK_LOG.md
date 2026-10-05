@@ -257,3 +257,11 @@ The supplied Android screenshots showed the brand header and theme control being
 - Добавлены unit assertions: unknown toll display is base-only and cannot claim final total; confirmed-free and priced still produce complete totals.
 - CI и Preview для этого нового head ожидают результата. Интерактивная проверка на телефоне остаётся нужна; скриншот фиксирует проблему, но не заменяет проверку после исправления.
 - PR #12 остаётся открытым черновиком; production не меняется. Геометрическая непроверенность альтернативы остаётся явно показанной и не закрыта изменением интерфейса.
+
+
+#### Follow-up verification — run #107
+
+- Run #107 on head `e69c726800c33619f4ae26c9e98ff40ead61e992` passed both jobs: scripts tests, TypeScript no-emit, Next build, live provider geometry/timing, Photon and six-route Yandex audit.
+- Matching Vercel Preview deployment `dpl_4gcLtuTsuZsaqeaqKeomGDieRbQp` reached READY. Protected Vercel fetch of `/v2` returned HTTP 200. Its stylesheet includes the new graphite tokens and no former dark-green surface token.
+- Interactive mobile browser verification was attempted, but the Preview opened a Vercel sign-in gate. No credentials were entered; the available protected Preview fetch was used for SSR/CSS checks instead. Actual mobile safe-area, wrapping, and scroll behavior remain unverified.
+- PR #12 is still open/draft; no production deployment or alias change occurred.
