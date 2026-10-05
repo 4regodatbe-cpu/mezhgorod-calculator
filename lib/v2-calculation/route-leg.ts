@@ -1,6 +1,6 @@
 import { analyzeRoute, followsPlan } from "../special-territory-policy.ts";
 import { SPECIAL_TERRITORY_BOUNDARIES } from "../special-territory-boundaries.ts";
-import { valhalla, brouterFree, brouterFast, osrmRoute, type Located } from "@/lib/route-providers";
+import { valhalla, brouterFast, osrmRoute, type Located } from "@/lib/route-providers";
 import type { Coordinate } from "@/lib/tolls";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { selectLiveRouteCandidates } from "@/lib/route-quality";
@@ -9,9 +9,12 @@ import { calculateLegTolls } from "./route-leg-pricing";
 
 export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>) {
   const rawResults = await Promise.allSettled([
-    valhalla(from, to, 1, positions), valhalla(from, to, 0, positions), brouterFree(from, to, positions), osrmRoute(from, to, positions), brouterFast(from, to, positions),
+    valhalla(from, to, 1, positions),
+    valhalla(from, to, 1, positions, 43_200), // Keep toll roads eligible; strongly penalize crossing a toll booth.
+    osrmRoute(from, to, positions),
+    brouterFast(from, to, positions),
   ]);
-  const [fastResult, valhallaFreeResult, brouterResult, osrmResult, brouterFastResult] = rawResults.map(result => {
+  const [fastResult, valhallaBoothAvoidResult, osrmResult, brouterFastResult] = rawResults.map(result => {
     if (result.status === "rejected") return result;
     try {
       if(positions && !followsPlan(result.value.coordinates,positions,"mainland",false)) throw new Error("ROUTE_CONTROLS_MISSED");
@@ -40,12 +43,12 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
               ? brouterFastResult.value.coordinates
               : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
-  const selectedFreePromise = selectFreeRoute(valhallaFreeResult, brouterResult);
+  const selectedFreePromise = selectFreeRoute(valhallaBoothAvoidResult, brouterFastResult);
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
   const [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
-  const confirmedFree = selectedFree?.truth === "confirmed_free" ? selectedFree : null;
+  const confirmedFree = selectedFree?.truth === "confirmed_no_toll_booths" ? selectedFree : null;
   const freeCandidate = selectedFree?.truth === "candidate_unverified" ? selectedFree : null;
   const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
   const pricing = await calculateLegTolls({
@@ -60,6 +63,9 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   });
   const { tolls, fastValidation } = pricing;
 
+  // `free` is the legacy response key for the payment-point-avoiding alternative;
+  // the route may still use tolled road segments when it avoids their booths.
+
   return {
     from: from.label,
     to: to.label,
@@ -69,7 +75,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     freeError: confirmedFree
       ? undefined
       : freeCandidate
-        ? "Найден альтернативный маршрут, но независимая проверка не подтвердила отсутствие платных участков."
-        : "Маршрутизаторы не смогли подтвердить полностью бесплатный вариант. Показан только быстрый маршрут.",
+        ? "Найден альтернативный маршрут, но проверка пунктов оплаты не завершена."
+        : "Не удалось построить вариант с объездом пунктов оплаты.",
   };
 }
