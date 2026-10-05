@@ -52,7 +52,7 @@ export function CalculatorForm({
       <div className="mt-4 border-t border-brand-border/15 pt-4">
         <div className="mb-2 flex items-center gap-2 text-sm font-extrabold text-brand-text"><Settings2 className="h-4 w-4 text-brand-action" />{mode === "standard" ? "Тарифы" : "Обычные тарифы"}</div>
         <TariffInputs rates={rates} setRates={onRatesChange} />
-                {mode === "dual" && <div className="mt-3"><p className="mb-2 text-sm font-extrabold text-brand-text">Внутри особых тарифных зон</p><TariffInputs rates={specialRates} setRates={onSpecialRatesChange} /><p className="mt-2 text-xs text-brand-muted">Пробег внутри и вне зон определяется по маршруту автоматически.</p></div>}
+        {mode === "dual" && <div className="mt-3"><p className="mb-2 text-sm font-extrabold text-brand-text">Внутри особых тарифных зон</p><TariffInputs rates={specialRates} setRates={onSpecialRatesChange} /><p className="mt-2 text-xs text-brand-muted">Пробег внутри и вне зон определяется по маршруту автоматически.</p></div>}
       </div>
       <div className="mt-3 flex min-w-0 flex-wrap items-center gap-3 rounded-2xl bg-brand-subtle p-3">
         <button type="button" role="switch" aria-label="Срочная поездка" aria-checked={urgent} onClick={() => onUrgentChange(!urgent)} className={"relative h-7 w-12 shrink-0 rounded-full transition " + (urgent ? "bg-brand-accent" : "bg-brand-border/50")}><span className={"absolute top-1 h-5 w-5 rounded-full bg-brand-surface transition " + (urgent ? "left-6" : "left-1")} /></button>
