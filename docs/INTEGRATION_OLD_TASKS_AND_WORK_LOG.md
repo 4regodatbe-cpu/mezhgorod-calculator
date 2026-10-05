@@ -219,3 +219,28 @@ The follow-up that clarified manually entered tolls accidentally wrote the two l
 - **Ограничения:** это подтверждает загрузку страницы и SSR разметку, но не фактические тапы/сценарий поиска, live loading и автопрокрутку на мобильном экране. Не считать отсутствие интерактивного прогона доказательством проблем или полного отсутствия ошибок; пользовательская проверка на телефоне остаётся полезна.
 - **Остаток по продукту:** CI live probe подтверждает актуальные тестовые прогоны провайдеров, но не закрывает расхождение toll-сумм относительно всех пользовательских скриншотов. Порог/маршруты крымской альтернативы были вне UI-публикации и не объявляются подтверждёнными этим релизом.
 - **Дальнейшее действие:** пользователь может проверить production `/v2` на телефоне. Любые найденные дефекты фиксировать с конкретным маршрутом/экраном; исправления делать отдельными коммитами/PR и прогонять CI. Публикация была выполнена только после нового прямого запроса пользователя.
+
+
+### 2026-10-05 — mobile layout and pricing hierarchy follow-up
+
+#### User observations
+
+The supplied Android screenshots showed the brand header and theme control being cut by the device status area; the rate cards occupied too much vertical space; ₽/km felt detached from its value; stepper arrows were too small; the rate-change notice and trip-day selector were duplicated between the form and result; and the result tariff names, toll addition and final total did not read as a clear formula. The user asked to keep the trip-day selector beside the toll result, remove the passenger-car wording, and make result pricing more compact and legible.
+
+#### Implementation and reasons
+
+- Added `viewport-fit=cover` and CSS safe-area padding to the V2 page wrapper. This gives the layout room to avoid device cutouts/status/navigation bars on supported mobile browsers.
+- Removed the duplicate notice and day selector from the input form. The trip period remains in the result card because that is where it changes the shown toll amount.
+- Tightened rate fields, brought the unit label closer to the input, and made the increment/decrement controls at least 44×44 CSS px with larger, higher-contrast icons. This improves visibility and mobile hit area while preserving the existing 0.50 ₽ tariff step.
+- Reworked result price rows so the tariff name is stronger, the base fare and toll remain separate components, and a new line explicitly labels the result «Итого за поездку». Unknown toll stays unknown and does not gain a fabricated total; manually entered toll remains identified as manual.
+- Reduced spacing in toll details/manual entry; removed the passenger-car-without-transponder sentence and kept a short rate-change notice.
+- Refined dark theme surface levels and foreground tokens for actions and toll accents. Kept the approved light palette. Color is used with labels and structure rather than carrying meaning alone.
+- Design review consulted Material 3 color roles and typography, WCAG 2.2 minimum contrast and target size, and MDN safe-area insets: https://m3.material.io/styles/color/the-color-system ; https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html ; https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum ; https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/env . These references informed concrete usability checks; no broad psychological claims about color were encoded as product facts.
+
+#### Verification and remaining boundary
+
+- GitHub Actions run #104 succeeded for tests, `tsc --noEmit`, `next build`, and the workflow's live provider/address/route probes.
+- Vercel Preview for the branch is READY. Protected SSR fetch of `/v2` returned the calculator markup with the safe-area viewport declaration and updated form/results markup. The provider fetch includes Next's serialized not-found boundary template, so verification inspected the actual rendered body markup; calculator UI was present.
+- No interactive Android/browser session was available in this task. SSR cannot confirm visible pixel offsets, line wrapping, real tap targets, loading animation, or scroll position. Treat those as awaiting manual mobile verification.
+- PR #12 is open and draft on `fix/v2-mobile-layout-2026-10-05`; production is unchanged. Keep it draft pending user review; do not merge/deploy without a separate request.
+- This UI work does not reconcile the outstanding toll estimate differences or validate real Crimea-route alternatives. Those remain separate product/runtime limitations.
