@@ -37,6 +37,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Probe live provider geometry and per-leg times
         run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
+      - name: Probe live payment-point-avoiding alternative for Moscow–Krasnodar
+        run: node --import ./scripts/register-ts-paths.mjs scripts/payment-point-avoidance-live-probe.mjs
       - name: Probe live Photon address suggestions
         run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-live-probe.mjs
       - name: Compare six Yandex screenshot routes with live providers
@@ -47,6 +49,7 @@ jobs:
           name: special-territory-live-probe-${{ github.run_id }}
           path: |
             special-territory-live-probe.json
+            payment-point-avoidance-live-probe.json
             address-search-live-probe.json
             yandex-route-reference-audit.json
           if-no-files-found: ignore
