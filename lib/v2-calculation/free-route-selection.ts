@@ -78,10 +78,10 @@ function spreadPercent(a: RouteSummary, b: RouteSummary) {
 }
 
 export function routeDifferenceEvidence(fast: RouteSummary, free: RouteSummary) {
-  const distanceDeltaKm = (free.meters - fast.meters) / 1000;
-  const distancePercent = fast.meters > 0 ? (free.meters - fast.meters) / fast.meters * 100 : 0;
-  const timeDeltaMinutes = (free.seconds - fast.seconds) / 60;
-  const timePercent = fast.seconds > 0 ? (free.seconds - fast.seconds) / fast.seconds * 100 : 0;
+  const distanceDeltaKm = Math.abs(free.meters - fast.meters) / 1000;
+  const distancePercent = fast.meters > 0 ? Math.abs(free.meters - fast.meters) / fast.meters * 100 : 0;
+  const timeDeltaMinutes = Math.abs(free.seconds - fast.seconds) / 60;
+  const timePercent = fast.seconds > 0 ? Math.abs(free.seconds - fast.seconds) / fast.seconds * 100 : 0;
   const distanceDiffers = distanceDeltaKm >= MIN_TOLL_VARIANT_DISTANCE_KM && distancePercent >= MIN_TOLL_VARIANT_DISTANCE_PERCENT;
   const timeDiffers = timeDeltaMinutes >= MIN_TOLL_VARIANT_TIME_MINUTES && timePercent >= MIN_TOLL_VARIANT_TIME_PERCENT;
   return distanceDiffers || timeDiffers;
@@ -122,6 +122,7 @@ async function validateFreeCandidate(candidate: FreeCandidate, ordinal: "Пер�
 
 // Legacy API field names say “free”; the candidate now avoids payment points while retaining tolled road sections where useful.
 export async function selectFreeRoute(
+  mainRoute: RouteSummary,
   valhallaAlternativeResult: PromiseSettledResult<RouteWithGeometry>,
   brouterAlternativeResult: PromiseSettledResult<RouteWithGeometry>,
 ): Promise<SelectedFree | null> {
@@ -136,7 +137,10 @@ export async function selectFreeRoute(
   }
 
   const acceptedIndex = validations.findIndex(
-    (validation) => validation.complete === true && (validation.tollBoothCount ?? 0) === 0,
+    (validation, index) =>
+      validation.complete === true &&
+      (validation.tollBoothCount ?? 0) === 0 &&
+      routeDifferenceEvidence(mainRoute, candidates[index].route),
   );
   if (acceptedIndex >= 0) {
     const selected = candidates[acceptedIndex];
