@@ -195,3 +195,14 @@
 ### CI syntax regression and correction — 2026-10-05
 
 The follow-up that clarified manually entered tolls accidentally wrote the two literal characters backslash+n into use-v2-calculation.ts instead of an actual newline. GitHub run #87 failed at Next production build; run #99 failed TypeScript parsing at the same source line. Route-quality tests and benchmark integrity steps before the build passed. The source has been corrected to contain a real line break; verify on the next CI head. The matching Vercel Preview was ERROR due to this parse failure, and will be checked again after rebuild.
+
+
+### Завершение UI-проверок и исправление API smoke — 2026-10-05
+
+- **Цель:** закрыть CI-сигналы после UI-изменений и сохранить причины расхождений для следующего разработчика.
+- **Проверка актуального UI-кода:** run #100 (37262493974) на коммите dd051c9f9c24b9db1e533c4fad360d14e8fa9b4b завершился успешно. Тесты, tsc --noEmit, Next.js production build и live probes (геометрия/время провайдеров, Photon, шесть benchmark-маршрутов) прошли.
+- **Диагноз независимого smoke failure:** workflow #88 обнаружил, что scripts/api-contract-smoke.mjs ожидал HTTP 400 для запроса mode=dual без via, тогда как endpoint отвечает 200. В app/api/v2/calculate/route.ts нет проверки обязательной via; интерфейс и действующее требование также не делают промежуточную точку обязательной. Значит проверка закрепляла устаревший контракт.
+- **Исправление:** коммит 47eadabb6837ed3af608fa24d96edec004fca2bf переименовал smoke case в «dual mode accepts omitted midpoint» и ожидает HTTP 200. Runtime/API расчёт не менялся. Нужно сверить workflow нового head после обновления PR description; до этого новый smoke не считать подтверждённым.
+- **Запись в checkpoint:** после изменения smoke обновлён docs/WORK_STATE.md, чтобы новый чат сразу видел успешный run #100, причину run #88, остаток по browser E2E и запрет на production.
+- **Остаток проверки UI:** Vercel Preview для UI-кода dd051c9 READY, SSR /v2 вернул 200. Интерактивная проверка мобильного viewport не выполнялась: браузерный runner отсутствует. Поэтому размеры dropdown, анимация загрузки и фактическая авто-прокрутка после запроса ещё нуждаются в проверке в настоящем браузере.
+- **Статус PR:** #11 оставить open/draft. Никаких merge/production операций не выполнялось.
