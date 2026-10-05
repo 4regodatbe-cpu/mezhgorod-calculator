@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   confirmedFreeToll,
   currentTollPeriod,
+  displayQuote,
   resolveTollAmount,
   shortPlaceName,
   totalWithToll,
@@ -56,4 +57,31 @@ test("manual toll override is applied to totals without treating it as provider 
 
 test("displayed whole-ruble components add up to the displayed total", () => {
   assert.equal(totalWithToll(100.6, { status: "priced", amount: 0.6 }), 102);
+});
+
+
+test("unknown toll shows a base-only amount and never a complete trip total", () => {
+  assert.deepEqual(displayQuote(44946, resolveTollAmount(unverifiedToll, "weekday")), {
+    kind: "base-only",
+    label: "Итого без дорог",
+    amount: 44946,
+  });
+  assert.deepEqual(displayQuote(44946, { status: "unknown", amount: 0 }), {
+    kind: "base-only",
+    label: "Итого без дорог",
+    amount: 44946,
+  });
+});
+
+test("confirmed-free and priced tolls show a complete trip total", () => {
+  assert.deepEqual(displayQuote(44946, resolveTollAmount(confirmedFreeToll, "weekday")), {
+    kind: "complete",
+    label: "Итого за поездку",
+    amount: 44946,
+  });
+  assert.deepEqual(displayQuote(44946, resolveTollAmount(changingToll, "weekday")), {
+    kind: "complete",
+    label: "Итого за поездку",
+    amount: 51036,
+  });
 });
