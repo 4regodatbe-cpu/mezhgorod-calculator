@@ -244,3 +244,16 @@ The supplied Android screenshots showed the brand header and theme control being
 - No interactive Android/browser session was available in this task. SSR cannot confirm visible pixel offsets, line wrapping, real tap targets, loading animation, or scroll position. Treat those as awaiting manual mobile verification.
 - PR #12 is open and draft on `fix/v2-mobile-layout-2026-10-05`; production is unchanged. Keep it draft pending user review; do not merge/deploy without a separate request.
 - This UI work does not reconcile the outstanding toll estimate differences or validate real Crimea-route alternatives. Those remain separate product/runtime limitations.
+
+
+### 2026-10-05 — unknown платность в альтернативном результате и нейтральная dark palette
+
+- Пользовательская проверка скриншота выявила, что неопределённая платность альтернативного кандидата занимала четыре повторяющиеся длинные строки: базовый тариф, неизвестная плата и «итого не рассчитано» для каждой категории. Также пользователь счёл тёмную сине-зелёную поверхность раздражающей.
+- Не меняя данные и backend-статус, введён display quote kind: полный итог, известная базовая сумма без дорог, либо ненайденная базовая цена. Для unknown status UI показывает базовый тариф как «Итого без дорог»; компактная общая строка предупреждает, что возможные дороги не включены. Неизвестная плата никогда не преобразуется в ноль или подтверждённо бесплатную, даже если ошибочно пришёл unknown объект с нулём.
+- Для unknown status убраны неинформативные переключатели буднего/выходного дня, техническое сообщение проверки «13/13» из карточки альтернативы и повторяющийся текст из каждой строки. Остаются compact badge о неизвестной платности и общая оговорка под четырьмя суммами. Копирование сохраняет предупреждение.
+- Подтверждённо бесплатные карточки показывают тарифный итог без шумной добавки «+ 0 ₽». Платная и ручная суммы сохраняют сложение и подписи. Карточка основного маршрута и ручное уточнение платной суммы сохраняются.
+- Тёмный брендовый ряд теперь графитовый (#151619/#202225/#2A2D31) вместо сине-зелёного (#111B24/#1C2B33/#293D45); приглушённый бирюзовый используется для действий, коралловый для дорожной цены. Уменьшен radial halo.
+- Результаты немного уплотнены (padding/gap); тарифные имена на вводе увеличены с 14 до 15 CSS px со сдвигом вниз на 1 px.
+- Добавлены unit assertions: unknown toll display is base-only and cannot claim final total; confirmed-free and priced still produce complete totals.
+- CI и Preview для этого нового head ожидают результата. Интерактивная проверка на телефоне остаётся нужна; скриншот фиксирует проблему, но не заменяет проверку после исправления.
+- PR #12 остаётся открытым черновиком; production не меняется. Геометрическая непроверенность альтернативы остаётся явно показанной и не закрыта изменением интерфейса.
