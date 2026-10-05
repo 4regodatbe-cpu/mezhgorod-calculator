@@ -108,7 +108,8 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
     const periodLabel = tollPeriod === "weekday" ? "будни, Пн–Чт" : "выходные, Пт–Вс";
     const lines = ["из А в Б", `${shortPlaceName(leg.from)} → ${shortPlaceName(leg.to)}`, `${distance(trip.meters)} · ${duration(trip.seconds)}`, `День поездки: ${periodLabel}`];
     if (manualTollOverride?.trim()) lines.push("Сумма платных дорог введена вручную и не подтверждена провайдером.");
-    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог не подтверждена.");\n    for (const rate of Object.keys(defaults) as Array<keyof typeof defaults>) {
+    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог не подтверждена.");
+    for (const rate of Object.keys(defaults) as Array<keyof typeof defaults>) {
       const vehicle = vehicleForRate[rate];
       const baseFare = trip.pricingByVehicle?.[vehicle]?.requiresSplit ? null : trip.pricingByVehicle?.[vehicle]?.totalPrice;
       const total = totalWithToll(baseFare, tollPrice);

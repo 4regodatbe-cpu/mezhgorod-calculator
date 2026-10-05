@@ -190,3 +190,8 @@
 При повторной сверке интерфейса замечено, что введённая вручную сумма позволяла вывести итог для маршрута с unknown toll status, но верхнее предупреждение по-прежнему сообщало, что итог не рассчитан. Исправление явно маркирует добавку и clipboard как ручной ввод, не подтверждённый провайдером. Пустое поле оставляет итог unknown; серверный статус маршрута не меняется.
 
 Это follow-up после полного run #97; docs-only run #98 в момент записи ещё выполнялся. Текущая code-ветка PR #11 остаётся draft, Production не менялся.
+
+
+### CI syntax regression and correction — 2026-10-05
+
+The follow-up that clarified manually entered tolls accidentally wrote the two literal characters backslash+n into use-v2-calculation.ts instead of an actual newline. GitHub run #87 failed at Next production build; run #99 failed TypeScript parsing at the same source line. Route-quality tests and benchmark integrity steps before the build passed. The source has been corrected to contain a real line break; verify on the next CI head. The matching Vercel Preview was ERROR due to this parse failure, and will be checked again after rebuild.
