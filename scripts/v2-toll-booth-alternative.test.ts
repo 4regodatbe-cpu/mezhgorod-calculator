@@ -44,7 +44,7 @@ test("payment-point alternative may retain tolled road edges when no toll booth 
 test("a route with a toll booth is rejected as the payment-point alternative", async () => {
   const selected = await withTraceEdges(
     [{ toll: true, way_id: 41, names: ["М-4"], end_node: { type: "toll_booth", node_id: 99 } }],
-    () => selectFreeRoute({ status: "fulfilled", value: candidate }, { status: "rejected", reason: new Error("not used") }),
+    () => selectFreeRoute({ meters: 100_000, seconds: 3_600 }, { status: "fulfilled", value: candidate }, { status: "rejected", reason: new Error("not used") }),
   );
   assert.equal(selected, null);
 });
@@ -60,6 +60,7 @@ test("an incomplete booth trace is rejected because payment-point avoidance is u
 test("a candidate without route geometry is never offered as an unverified detour", async () => {
   const noGeometry = { ...candidate, coordinates: [[37, 55], [37.1, 55.1]] };
   const selected = await selectFreeRoute(
+    { meters: 100_000, seconds: 3_600 },
     { status: "fulfilled", value: noGeometry },
     { status: "rejected", reason: new Error("not used") },
   );
