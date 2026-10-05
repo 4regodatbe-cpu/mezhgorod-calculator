@@ -174,3 +174,12 @@
 - Preview в интерактивном браузере пока не проверен. После создания draft PR посмотреть узкую ширину попапа, мобильное расположение 4 тарифов, day selector, loaded-state и авто-scroll, а также priced/free/unknown карточки.
 - Платёжные данные и routing backend не изменены; toll totals остаются справочными и могут меняться.
 - **Рабочая база на момент старта:** work/remove-v3-runtime-2026-10-02 / e1ca92e302cf7bfbe188717a91da916abbf8e77c; PR #10 merged в commit ba23668... Новый UI PR должен оставаться draft. Production deployment этой правкой не запускать.
+
+
+### UI verification update — 2026-10-05
+
+- Created draft PR #11: https://github.com/4regodatbe-cpu/mezhgorod-calculator/pull/11 (head 4add192d4ed5fe32c56ad2e52a0899f20e8bbd77; base work/remove-v3-runtime-2026-10-02). PR #10 is already merged; this work is separate.
+- GitHub Actions run #97 (37259520781) passed both jobs: all scripts tests, TypeScript no-emit, Next.js production build, live route/provider, Photon and six-route Yandex audit probes.
+- Vercel Preview READY at https://mezhgorod-calculator-bp9rlxgmq-4regodatbe-5310.vercel.app/v2. Protected URL smoke-fetch returned HTTP 200 and server-rendered HTML with the «из А в Б» header and new rate/period controls.
+- No interactive browser/chromium is installed in this execution workspace. The Preview has not had mobile visual/E2E verification; the HTTP SSR check does not prove layout sizing, live loader appearance, selection/clipboard interaction, or auto-scroll.
+- Production remains unchanged and PR remains draft. Do not merge until a visual browser check and a manual check of known/unknown toll totals are done.

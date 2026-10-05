@@ -115,3 +115,12 @@ undefined
 - **Копирование:** только короткие названия A/B, расстояние, время, выбранный период и четыре формулы тариф + дороги = итог; длинное описание плеч не копируется. Сумма итого рассчитывается из округлённых до рубля компонентов, чтобы сумма на экране сходилась с видимым уравнением.
 - **Проверка:** добавлен scripts/v2-quote-presentation.test.ts; прямой запуск node scripts/v2-quote-presentation.test.ts — 6/6 passed (период МСК, сокращение подписей, будний/выходной расчёт, free/unknown, ручная сумма, видимое округлённое равенство). Полные тесты/TypeScript/Next build локально не выполнены: в текущем workspace нет clone/.git/node_modules. GitHub CI этого UI-коммита нужно проверить после открытия draft PR; браузерный Preview ещё не проверен.
 - **Статус публикации:** изменения отправляются отдельной веткой и draft PR в интеграционную ветку. PR #10 не переоткрывается. Production не менялся.
+
+
+### Проверка UI-ветки — 2026-10-05, CI и Preview
+
+- PR #11: https://github.com/4regodatbe-cpu/mezhgorod-calculator/pull/11; открыт draft, head 4add192d4ed5fe32c56ad2e52a0899f20e8bbd77, base work/remove-v3-runtime-2026-10-02. Merge не выполнялся.
+- GitHub Actions run #97 (37259520781) на этом code head завершился success: тестовый набор, tsc --noEmit, next build, live route-provider/Photon/Yandex-audit job — все шаги успешны.
+- Vercel Preview deployment READY: https://mezhgorod-calculator-bp9rlxgmq-4regodatbe-5310.vercel.app/v2. Vercel protected URL fetch вернул HTTP 200; SSR markup содержит brand label «из А в Б», tariff stepper aria-labels и updated period selectors. Это server-rendered smoke-check, не интерактивный/визуальный прогон.
+- Интерактивный браузерный runner в текущем workspace отсутствует; agent-browser/chromium бинарей нет. Не проверены визуально точные размеры на мобильном устройстве, выбор подсказки реальным жестом, загрузка/автопрокрутка во время live запроса.
+- Production не затронут. До merge остаётся провести интерактивную проверку Preview в мобильном браузере и просмотреть итоговые суммы на маршрутах с priced/free/unknown статусами.
