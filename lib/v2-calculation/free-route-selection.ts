@@ -130,26 +130,15 @@ export async function selectFreeRoute(
   );
   if (candidates.length === 0) return null;
 
-  const validations: TollValidation[] = [];
+  // Try candidates in preference order. Stop at the first complete route that
+  // avoids every payment point; do not spend extra requests validating fallbacks.
   for (const [index, candidate] of candidates.entries()) {
-    validations.push(await validateFreeCandidate(candidate, index === 0 ? "Первый" : "Второй"));
-  }
+    if (!routeDifferenceEvidence(mainRoute, candidate.route)) continue;
+    const validation = await validateFreeCandidate(candidate, index === 0 ? "Первый" : "Второй");
+    if (validation.complete !== true || (validation.tollBoothCount ?? 0) !== 0) continue;
 
-  const acceptedIndex = validations.findIndex(
-    (validation, index) =>
-      validation.complete === true &&
-      (validation.tollBoothCount ?? 0) === 0 &&
-      routeDifferenceEvidence(mainRoute, candidates[index].route),
-  );
-  if (acceptedIndex >= 0) {
-    const selected = candidates[acceptedIndex];
-    const otherIndex = acceptedIndex === 0 ? 1 : 0;
-    return selectedCandidate(
-      selected,
-      candidates[otherIndex],
-      validations[acceptedIndex],
-      "confirmed_no_toll_booths",
-    );
+    const other = candidates[index + 1] ?? candidates[index - 1];
+    return selectedCandidate(candidate, other, validation, "confirmed_no_toll_booths");
   }
 
   // Fail closed: an incomplete trace cannot prove that the route avoids every payment point.
