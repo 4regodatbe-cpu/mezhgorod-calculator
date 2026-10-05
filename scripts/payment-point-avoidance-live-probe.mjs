@@ -5,7 +5,7 @@ import { routeDifferenceEvidence } from "../lib/v2-calculation/free-route-select
 
 const from = { label: "Москва", position: { lat: 55.7558, lng: 37.6173 } };
 const to = { label: "Краснодар", position: { lat: 45.0355, lng: 38.9753 } };
-const penalties = [900, 3_600, 10_800, 21_600, 43_200];
+const penalties = [900, 1_200, 1_800, 2_400, 3_000, 3_600];
 const mainRoute = await valhalla(from, to, 1);
 const candidates = [];
 
