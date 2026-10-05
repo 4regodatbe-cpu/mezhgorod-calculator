@@ -11,7 +11,13 @@ const candidate: RouteWithGeometry = {
 
 async function withTraceEdges<T>(edges: unknown[] | Error, action: () => Promise<T>): Promise<T> {
   const originalFetch = globalThis.fetch;
-  globalThis.fetch = async () => {
+  globalThis.fetch = async (_input, init) => {
+    assert.equal(init?.method, "POST");
+    assert.equal(new Headers(init?.headers).get("Content-Type"), "application/json");
+    const request = JSON.parse(String(init?.body));
+    assert.equal(request.costing, "auto");
+    assert.equal(request.shape_match, "walk_or_snap");
+    assert.ok(Array.isArray(request.shape) && request.shape.length >= 2);
     if (edges instanceof Error) throw edges;
     return new Response(JSON.stringify({ edges }), {
       status: 200,
