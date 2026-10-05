@@ -33,42 +33,44 @@ export function RouteCard({
   manualToll, onManualToll, onCopy, copied,
 }: RouteCardProps) {
   const isUnknown = toll?.pricingStatus === "unknown";
+  const isPriced = toll?.pricingStatus === "priced";
   const hasManualToll = manualToll != null && manualToll.trim() !== "";
+  const showTollPanel = Boolean(toll && toll.pricingStatus !== "free" && (isPriced || onManualToll || hasManualToll));
   const selectedAmount = resolveTollAmount(toll, tollPeriod, manualToll);
   const weekdayAmount = resolveTollAmount(toll, "weekday");
   const weekendAmount = resolveTollAmount(toll, "weekend");
   const tollLabel = (amount: typeof weekdayAmount) => amount.amount === null ? "сумма неизвестна" : "+ " + money(amount.amount);
   return (
-    <article className={"min-w-0 w-full rounded-[24px] border border-brand-border/25 border-s-4 bg-brand-surface p-3 shadow-[0_12px_32px_rgba(16,42,67,.07)] " + (accent === "blue" ? "border-brand-action/35 border-s-brand-action" : "border-brand-route/40 border-s-brand-route")}>
+    <article className={"min-w-0 w-full rounded-[24px] border border-brand-border/25 border-s-4 bg-brand-surface p-2.5 shadow-[0_12px_32px_rgba(16,42,67,.07)] " + (accent === "blue" ? "border-brand-action/35 border-s-brand-action" : "border-brand-route/40 border-s-brand-route")}>
       <div className="flex min-w-0 items-center justify-between gap-2">
         <h3 className="min-w-0 truncate text-lg font-black text-brand-text sm:text-xl">{title}</h3>
         <span className={"shrink-0 rounded-full px-2.5 py-1 text-xs font-extrabold " + (accent === "blue" ? "bg-brand-subtle text-brand-action" : "bg-brand-route/15 text-brand-text")}>{accent === "blue" ? "Маршрут" : "Без оплаты дорог"}</span>
       </div>
-      <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+      <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Route className="h-4 w-4 text-brand-action" />{distance(trip.meters)}</span>
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Clock3 className="h-4 w-4 text-brand-action" />{duration(trip.seconds)}</span>
       </div>
       <QualityNote quality={trip.quality} />
       <PriceRows trip={trip} toll={toll} period={tollPeriod} manualToll={manualToll} />
-      {toll && toll.pricingStatus !== "free" && (
-        <div className="mt-2.5 rounded-2xl border border-brand-route/45 bg-brand-route/10 p-2.5 sm:p-3">
+      {showTollPanel && toll && (
+        <div className="mt-2 rounded-2xl border border-brand-route/35 bg-brand-route/10 p-2">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span className="text-sm font-extrabold text-brand-text">День поездки</span>
-            {hasManualToll && <span className="text-xs font-bold text-brand-action">В расчёте учтена ручная сумма</span>}
+            <span className="text-sm font-extrabold text-brand-text">{isPriced ? "День поездки" : "Сумма дорог"}</span>
+            {hasManualToll && <span className="text-xs font-bold text-brand-action">Указана вручную</span>}
           </div>
-          <div className="mt-2 grid grid-cols-2 gap-2">
+          {isPriced && <div className="mt-1.5 grid grid-cols-2 gap-1.5">
             <button type="button" aria-pressed={tollPeriod === "weekday"} onClick={() => onTollPeriodChange("weekday")} className={"min-h-11 rounded-xl border px-2 py-1 text-left transition focus-visible:outline-2 focus-visible:outline-brand-focus " + (tollPeriod === "weekday" ? "border-brand-action bg-brand-action text-brand-action-foreground" : "border-brand-border/20 bg-brand-surface text-brand-text hover:bg-brand-subtle")}>
               <span className="block text-xs font-bold">Пн–Чт</span><strong className="block text-sm">{tollLabel(weekdayAmount)}</strong>
             </button>
             <button type="button" aria-pressed={tollPeriod === "weekend"} onClick={() => onTollPeriodChange("weekend")} className={"min-h-11 rounded-xl border px-2 py-1 text-left transition focus-visible:outline-2 focus-visible:outline-brand-focus " + (tollPeriod === "weekend" ? "border-brand-action bg-brand-action text-brand-action-foreground" : "border-brand-border/20 bg-brand-surface text-brand-text hover:bg-brand-subtle")}>
               <span className="block text-xs font-bold">Пт–Вс</span><strong className="block text-sm">{tollLabel(weekendAmount)}</strong>
             </button>
-          </div>
-          <p className="mt-2 text-xs leading-relaxed text-brand-muted">{hasManualToll ? "Сумма введена вручную и не подтверждена провайдером. Тарифы могут измениться." : isUnknown ? "Платность или полная стоимость маршрута не подтверждена. Итог с дорогами не рассчитан." : "Стоимость платных дорог может измениться — уточняйте её перед поездкой."}</p>
-          {onManualToll && <label className="mt-2 flex flex-wrap items-center gap-2 text-xs font-semibold text-brand-text">Уточнить сумму:<input aria-label="Стоимость платных дорог вручную" type="number" min="0" step="1" value={manualToll ?? ""} placeholder={selectedAmount.amount === null ? "" : String(selectedAmount.amount)} onChange={(event) => onManualToll(event.target.value === "" ? "" : String(clampNumber(Number(event.target.value), 0, 100000, 0)))} className="h-9 w-24 rounded-xl border border-brand-border/20 bg-brand-surface px-2 text-brand-text outline-none focus-visible:ring-2 focus-visible:ring-brand-focus" /> ₽</label>}
+          </div>}
+          <p className="mt-1.5 text-xs leading-snug text-brand-muted">{hasManualToll ? "Сумма введена вручную и не подтверждена оператором." : isUnknown ? "Платность или полная стоимость не подтверждена." : "Стоимость платных дорог может измениться — уточняйте её перед поездкой."}</p>
+          {onManualToll && <label className="mt-1.5 flex flex-wrap items-center gap-2 text-xs font-semibold text-brand-text">Уточнить сумму:<input aria-label="Стоимость платных дорог вручную" type="number" min="0" step="1" value={manualToll ?? ""} placeholder={selectedAmount.amount === null ? "" : String(selectedAmount.amount)} onChange={(event) => onManualToll(event.target.value === "" ? "" : String(clampNumber(Number(event.target.value), 0, 100000, 0)))} className="h-9 w-24 rounded-xl border border-brand-border/20 bg-brand-surface px-2 text-brand-text outline-none focus-visible:ring-2 focus-visible:ring-brand-focus" /> ₽</label>}
         </div>
       )}
-      <button type="button" onClick={onCopy} className="mt-3 flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-brand-border/20 bg-brand-page text-sm font-extrabold text-brand-text transition hover:border-brand-action/50 hover:bg-brand-subtle">{copied ? <><Check className="h-4 w-4" />Скопировано</> : <><Clipboard className="h-4 w-4" />Скопировать результат</>}</button>
+      <button type="button" onClick={onCopy} className="mt-2.5 flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-brand-border/20 bg-brand-page text-sm font-extrabold text-brand-text transition hover:border-brand-action/50 hover:bg-brand-subtle">{copied ? <><Check className="h-4 w-4" />Скопировано</> : <><Clipboard className="h-4 w-4" />Скопировать результат</>}</button>
     </article>
   );
 }
