@@ -23,9 +23,17 @@ export function TariffInputs({
         };
         return (
           <div key={key} className="min-w-0 rounded-[18px] border border-brand-border/25 bg-brand-surface p-2 shadow-sm">
-            <label htmlFor={"rate-" + key} className="block translate-y-px truncate text-[15px] leading-5 font-extrabold text-brand-text">{name}</label>
-            <div className="mt-1.5 grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-1">
-              <div className="flex min-w-0 items-baseline gap-0.5">
+            <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_2.75rem] grid-rows-[2.75rem_2.75rem] items-center gap-x-1">
+              <label htmlFor={"rate-" + key} className="row-start-1 min-w-0 translate-y-px truncate text-[16.5px] leading-5 font-extrabold text-brand-text">{name}</label>
+              <button
+                type="button"
+                aria-label={"Увеличить тариф " + name + " на 0,50 ₽/км"}
+                onClick={() => updateRate(0.5)}
+                className="col-start-2 row-start-1 grid h-11 w-11 min-h-11 min-w-11 place-items-center rounded-xl border border-brand-border/25 bg-brand-subtle/65 text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/20 focus-visible:outline-2 focus-visible:outline-brand-focus"
+              >
+                <ChevronUp className="h-5 w-5" aria-hidden="true" />
+              </button>
+              <div className="col-start-1 row-start-2 flex min-w-0 items-baseline gap-0.5">
                 <input
                   id={"rate-" + key}
                   aria-label={"Цена за км: " + name}
@@ -40,28 +48,18 @@ export function TariffInputs({
                       [key]: clampNumber(Number(event.target.value), 1, 10000, 1),
                     })
                   }
-                  className="rate-stepper-input w-[6ch] max-w-full shrink bg-transparent text-lg font-black leading-none text-brand-text outline-none focus-visible:ring-2 focus-visible:ring-brand-focus"
+                  className="rate-stepper-input w-[6ch] max-w-full shrink bg-transparent text-[19.5px] leading-none font-black text-brand-text outline-none focus-visible:ring-2 focus-visible:ring-brand-focus"
                 />
-                <span className="shrink-0 whitespace-nowrap text-[11px] font-bold text-brand-action">₽/км</span>
+                <span className="shrink-0 whitespace-nowrap text-[12.5px] font-bold text-brand-action">₽/км</span>
               </div>
-              <div className="flex flex-col -my-2">
-                <button
-                  type="button"
-                  aria-label={"Увеличить тариф " + name + " на 0,50 ₽/км"}
-                  onClick={() => updateRate(0.5)}
-                  className="grid h-11 w-11 min-h-11 min-w-11 place-items-center rounded-xl border border-brand-border/25 bg-brand-subtle/65 text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/20 focus-visible:outline-2 focus-visible:outline-brand-focus"
-                >
-                  <ChevronUp className="h-5 w-5" aria-hidden="true" />
-                </button>
-                <button
-                  type="button"
-                  aria-label={"Уменьшить тариф " + name + " на 0,50 ₽/км"}
-                  onClick={() => updateRate(-0.5)}
-                  className="grid h-11 w-11 place-items-center rounded-lg text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/30 focus-visible:outline-2 focus-visible:outline-brand-focus"
-                >
-                  <ChevronDown className="h-5 w-5" aria-hidden="true" />
-                </button>
-              </div>
+              <button
+                type="button"
+                aria-label={"Уменьшить тариф " + name + " на 0,50 ₽/км"}
+                onClick={() => updateRate(-0.5)}
+                className="col-start-2 row-start-2 grid h-11 w-11 min-h-11 min-w-11 place-items-center rounded-xl text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/30 focus-visible:outline-2 focus-visible:outline-brand-focus"
+              >
+                <ChevronDown className="h-5 w-5" aria-hidden="true" />
+              </button>
             </div>
           </div>
         );
@@ -82,12 +80,31 @@ export function PriceRows({
   toll,
   period,
   manualToll,
+  fareOnly = false,
 }: {
   trip: Trip;
   toll?: TollView;
   period: TollPeriod;
   manualToll?: string;
+  fareOnly?: boolean;
 }) {
+  if (fareOnly) {
+    return (
+      <div className="mt-2 grid min-w-0 grid-cols-1 gap-1">
+        {vehicleKeys.map(([key, vehicle]) => {
+          const price = trip.pricingByVehicle?.[vehicle];
+          const baseFare = price && !price.requiresSplit ? price.totalPrice : null;
+          return (
+            <div key={key} className="flex min-w-0 items-center justify-between gap-3 border-b border-brand-border/15 py-1 last:border-b-0">
+              <span className="text-sm font-bold text-brand-text">{tariffNames[key]}</span>
+              <strong className="shrink-0 text-sm font-black text-brand-action">{baseFare == null ? "Не рассчитано" : money(baseFare)}</strong>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
   const tollPrice = resolveTollAmount(toll, period, manualToll);
   return (
     <div className="mt-2.5 grid min-w-0 grid-cols-1 gap-1.5">
