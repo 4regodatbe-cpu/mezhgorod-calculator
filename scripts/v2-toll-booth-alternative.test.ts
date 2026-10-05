@@ -34,7 +34,7 @@ async function withTraceEdges<T>(edges: unknown[] | Error, action: () => Promise
 test("payment-point alternative may retain tolled road edges when no toll booth is found", async () => {
   const selected = await withTraceEdges(
     [{ toll: true, way_id: 41, names: ["М-4"], end_node: { type: "intersection", node_id: 9 } }],
-    () => selectFreeRoute({ meters: 100_000, seconds: 3_600 }, { status: "fulfilled", value: candidate }, { status: "rejected", reason: new Error("not used") }),
+    () => selectFreeRoute({ meters: 100_000, seconds: 3_600 }, [{ name: "candidate", result: { status: "fulfilled", value: candidate } }, { name: "unused", result: { status: "rejected", reason: new Error("not used") } }]),
   );
   assert.equal(selected?.truth, "confirmed_no_toll_booths");
   assert.equal(selected?.validation.status, "toll");
@@ -44,7 +44,7 @@ test("payment-point alternative may retain tolled road edges when no toll booth 
 test("a route with a toll booth is rejected as the payment-point alternative", async () => {
   const selected = await withTraceEdges(
     [{ toll: true, way_id: 41, names: ["М-4"], end_node: { type: "toll_booth", node_id: 99 } }],
-    () => selectFreeRoute({ meters: 100_000, seconds: 3_600 }, { status: "fulfilled", value: candidate }, { status: "rejected", reason: new Error("not used") }),
+    () => selectFreeRoute({ meters: 100_000, seconds: 3_600 }, [{ name: "candidate", result: { status: "fulfilled", value: candidate } }, { name: "unused", result: { status: "rejected", reason: new Error("not used") } }]),
   );
   assert.equal(selected, null);
 });
@@ -52,7 +52,7 @@ test("a route with a toll booth is rejected as the payment-point alternative", a
 test("an incomplete booth trace is rejected because payment-point avoidance is unproven", async () => {
   const selected = await withTraceEdges(
     new Error("trace unavailable"),
-    () => selectFreeRoute({ meters: 100_000, seconds: 3_600 }, { status: "fulfilled", value: candidate }, { status: "rejected", reason: new Error("not used") }),
+    () => selectFreeRoute({ meters: 100_000, seconds: 3_600 }, [{ name: "candidate", result: { status: "fulfilled", value: candidate } }, { name: "unused", result: { status: "rejected", reason: new Error("not used") } }]),
   );
   assert.equal(selected, null);
 });
@@ -61,8 +61,7 @@ test("a candidate without route geometry is never offered as an unverified detou
   const noGeometry = { ...candidate, coordinates: [[37, 55], [37.1, 55.1]] };
   const selected = await selectFreeRoute(
     { meters: 100_000, seconds: 3_600 },
-    { status: "fulfilled", value: noGeometry },
-    { status: "rejected", reason: new Error("not used") },
+    [{ name: "candidate", result: { status: "fulfilled", value: noGeometry } }],
   );
   assert.equal(selected, null);
 });
@@ -70,7 +69,7 @@ test("a candidate without route geometry is never offered as an unverified detou
 test("a route without a meaningful difference from the main route is not shown as an alternative", async () => {
   const selected = await withTraceEdges(
     [{ toll: false, way_id: 41, names: ["М-4"], end_node: { type: "intersection", node_id: 9 } }],
-    () => selectFreeRoute(candidate, { status: "fulfilled", value: candidate }, { status: "rejected", reason: new Error("not used") }),
+    () => selectFreeRoute(candidate, [{ name: "candidate", result: { status: "fulfilled", value: candidate } }, { name: "unused", result: { status: "rejected", reason: new Error("not used") } }]),
   );
   assert.equal(selected, null);
 });
