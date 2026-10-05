@@ -9,7 +9,7 @@ type SelectedFree = {
   route: RouteWithGeometry;
   quality: RouteQuality;
   validation: TollValidation;
-  truth: "confirmed_no_toll_booths" | "candidate_unverified";
+  truth: "confirmed_no_toll_booths";
 };
 export type TollEstimate = ReturnType<typeof estimateTolls>;
 type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount"> & {
@@ -149,20 +149,6 @@ export async function selectFreeRoute(
     );
   }
 
-  // If map matching is incomplete, retain a provider-requested detour only when
-  // it has not observed a payment point. A fully checked route with a booth is
-  // never offered as the payment-avoiding alternative.
-  const fallbackIndex = validations.findIndex(
-    (validation, index) => candidates[index].route.coordinates.length > 2 && validation.complete !== true && (validation.tollBoothCount ?? 0) === 0,
-  );
-  if (fallbackIndex < 0) return null;
-
-  const selected = candidates[fallbackIndex];
-  const otherIndex = fallbackIndex === 0 ? 1 : 0;
-  return selectedCandidate(
-    selected,
-    candidates[otherIndex],
-    validations[fallbackIndex],
-    "candidate_unverified",
-  );
+  // Fail closed: an incomplete trace cannot prove that the route avoids every payment point.
+  return null;
 }
