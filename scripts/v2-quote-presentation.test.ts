@@ -31,6 +31,8 @@ test("short copy labels retain the city and remove longer address details", () =
   assert.equal(shortPlaceName("Краснодар, городской округ Краснодар, Краснодарский край, Россия"), "Краснодар");
   assert.equal(shortPlaceName("г. Москва, Россия"), "Москва");
   assert.equal(shortPlaceName("город Москва, Россия"), "Москва");
+  assert.equal(shortPlaceName("Феодосия — Крым, Россия"), "Феодосия");
+  assert.equal(shortPlaceName("Донецк — ДНР"), "Донецк");
 });
 
 test("weekday and weekend toll selection drives every fare total", () => {
