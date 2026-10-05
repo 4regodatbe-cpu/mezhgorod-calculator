@@ -73,3 +73,31 @@ test("a route without a meaningful difference from the main route is not shown a
   );
   assert.equal(selected, null);
 });
+
+test("candidate search falls back from a route with booths to a verified partial M-4 bypass", async () => {
+  const originalFetch = globalThis.fetch;
+  let traceCount = 0;
+  globalThis.fetch = async (_input, init) => {
+    assert.equal(init?.method, "POST");
+    const edges = traceCount++ === 0
+      ? [{ toll: true, way_id: 41, names: ["М-4"], end_node: { type: "toll_booth", node_id: 99 } }]
+      : [{ toll: true, way_id: 42, names: ["М-4"], end_node: { type: "intersection", node_id: 10 } }];
+    return new Response(JSON.stringify({ edges }), { status: 200, headers: { "Content-Type": "application/json" } });
+  };
+  try {
+    const partialM4 = { ...candidate, meters: 15_000, seconds: 1_080 };
+    const selected = await selectFreeRoute(
+      { meters: 100_000, seconds: 3_600 },
+      [
+        { name: "900-second candidate", result: { status: "fulfilled", value: candidate } },
+        { name: "1,200-second partial M-4 candidate", result: { status: "fulfilled", value: partialM4 } },
+      ],
+    );
+    assert.equal(selected?.route, partialM4);
+    assert.equal(selected?.validation.tollEdgeCount, 1);
+    assert.equal(selected?.validation.tollBoothCount, 0);
+    assert.equal(traceCount, 2);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
