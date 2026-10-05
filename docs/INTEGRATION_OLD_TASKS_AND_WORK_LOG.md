@@ -183,3 +183,10 @@
 - Vercel Preview READY at https://mezhgorod-calculator-bp9rlxgmq-4regodatbe-5310.vercel.app/v2. Protected URL smoke-fetch returned HTTP 200 and server-rendered HTML with the «из А в Б» header and new rate/period controls.
 - No interactive browser/chromium is installed in this execution workspace. The Preview has not had mobile visual/E2E verification; the HTTP SSR check does not prove layout sizing, live loader appearance, selection/clipboard interaction, or auto-scroll.
 - Production remains unchanged and PR remains draft. Do not merge until a visual browser check and a manual check of known/unknown toll totals are done.
+
+
+### Ручная плата дорог: уточнение подписи — 2026-10-05
+
+При повторной сверке интерфейса замечено, что введённая вручную сумма позволяла вывести итог для маршрута с unknown toll status, но верхнее предупреждение по-прежнему сообщало, что итог не рассчитан. Исправление явно маркирует добавку и clipboard как ручной ввод, не подтверждённый провайдером. Пустое поле оставляет итог unknown; серверный статус маршрута не меняется.
+
+Это follow-up после полного run #97; docs-only run #98 в момент записи ещё выполнялся. Текущая code-ветка PR #11 остаётся draft, Production не менялся.

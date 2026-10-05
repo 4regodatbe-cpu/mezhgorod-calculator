@@ -110,7 +110,7 @@ export function PriceRows({
                   {tollPrice.amount === null ? (
                     <span className="font-bold text-amber-800">стоимость платных дорог не подтверждена</span>
                   ) : (
-                    <span className="font-bold text-brand-route">{money(tollPrice.amount)} платные дороги</span>
+                    <span className="font-bold text-brand-route">{money(tollPrice.amount)} {tollPrice.status === "manual" ? "дороги (вручную)" : "платные дороги"}</span>
                   )}
                   <span aria-hidden="true" className="font-bold text-brand-text/60">=</span>
                   <strong className="font-black text-brand-action">

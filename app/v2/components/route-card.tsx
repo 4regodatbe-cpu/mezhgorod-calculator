@@ -64,7 +64,7 @@ export function RouteCard({
               <span className="block text-xs font-bold">Пт–Вс</span><strong className="block text-sm">{tollLabel(weekendAmount)}</strong>
             </button>
           </div>
-          <p className="mt-2 text-xs leading-relaxed text-brand-muted">{isUnknown ? "Платность или полная стоимость маршрута не подтверждена. Итог с дорогами не рассчитан." : "Оценка для легкового автомобиля без транспондера. Тарифы могут измениться, уточняйте перед поездкой."}</p>
+          <p className="mt-2 text-xs leading-relaxed text-brand-muted">{hasManualToll ? "Используется введённая вручную сумма; она не подтверждена провайдером. Тарифы могут измениться." : isUnknown ? "Платность или полная стоимость маршрута не подтверждена. Итог с дорогами не рассчитан." : "Оценка для легкового автомобиля без транспондера. Тарифы могут измениться, уточняйте перед поездкой."}</p>
           {onManualToll && <label className="mt-2 flex flex-wrap items-center gap-2 text-xs font-semibold text-brand-text">Уточнить сумму дорог для этого маршрута:<input aria-label="Стоимость платных дорог вручную" type="number" min="0" step="1" value={manualToll ?? ""} placeholder={selectedAmount.amount === null ? "" : String(selectedAmount.amount)} onChange={(event) => onManualToll(event.target.value === "" ? "" : String(clampNumber(Number(event.target.value), 0, 100000, 0)))} className="h-10 w-32 rounded-xl border border-brand-border/20 bg-brand-surface px-2 text-brand-text outline-none focus-visible:ring-2 focus-visible:ring-brand-focus" /> ₽</label>}
         </div>
       )}
