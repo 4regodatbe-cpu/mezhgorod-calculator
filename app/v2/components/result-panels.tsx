@@ -59,7 +59,7 @@ export function ResultPanels({
           {standardLeg.free
             ? <RouteCard title="Без платных дорог" accent="emerald" trip={standardLeg.free} toll={confirmedFreeToll} tollPeriod={tollPeriod} onTollPeriodChange={onTollPeriodChange} onCopy={() => copyStandard("standard-free", "Без платных дорог", standardLeg, standardLeg.free!, confirmedFreeToll, undefined, tollPeriod)} copied={copiedKey === "standard-free"} />
             : standardLeg.freeCandidate
-              ? <UnverifiedRouteCard trip={standardLeg.freeCandidate} tollPeriod={tollPeriod} onCopy={() => copyStandard("standard-candidate", "Альтернативный маршрут", standardLeg, standardLeg.freeCandidate!, unverifiedToll, "Платность маршрута не подтверждена. Стоимость дорог не включена в итог.", tollPeriod)} copied={copiedKey === "standard-candidate"} />
+              ? <UnverifiedRouteCard trip={standardLeg.freeCandidate} onCopy={() => copyStandard("standard-candidate", "Альтернативный маршрут", standardLeg, standardLeg.freeCandidate!, unverifiedToll, "Платность маршрута не подтверждена. Стоимость дорог не включена в итог.", tollPeriod)} copied={copiedKey === "standard-candidate"} />
               : <RouteUnavailable message={standardLeg.freeError} />}
         </> : <RouteCard title="Оптимальный маршрут" accent="blue" trip={standardOptimal} toll={confirmedFreeToll} tollPeriod={tollPeriod} onTollPeriodChange={onTollPeriodChange} onCopy={() => copyStandard("standard-optimal", "Оптимальный маршрут", standardLeg, standardOptimal, confirmedFreeToll, undefined, tollPeriod)} copied={copiedKey === "standard-optimal"} />}
       </section>}
