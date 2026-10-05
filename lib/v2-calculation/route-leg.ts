@@ -43,7 +43,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
               ? brouterFastResult.value.coordinates
               : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
-  const selectedFreePromise = selectFreeRoute(valhallaBoothAvoidResult, brouterFastResult);
+  const selectedFreePromise = selectFreeRoute(selectedFast.route, valhallaBoothAvoidResult, brouterFastResult);
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
