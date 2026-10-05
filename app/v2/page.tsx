@@ -56,7 +56,7 @@ export default function V2Page() {
   const standardHasTolls = standardLeg ? standardLeg.fast.tolls.pricingStatus !== "free" : false;
   const standardOptimal = standardLeg ? pickOptimal(standardLeg.fast, standardLeg.free) : null;
   return <main className="calculator-modern min-h-screen bg-brand-page text-brand-text">
-    <div className="mx-auto w-full max-w-3xl px-3 py-4 sm:px-6 sm:py-8">
+    <div className="v2-page-inset mx-auto w-full max-w-3xl px-3 sm:px-6">
       <header className="mb-4 flex items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2.5">
           <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-action text-white shadow-md"><Car className="h-5 w-5" /></div>
@@ -80,8 +80,6 @@ export default function V2Page() {
         onUrgentChange={setUrgent}
         urgentPercent={urgentPercent}
         onUrgentPercentChange={setUrgentPercent}
-        tollPeriod={tollPeriod}
-        onTollPeriodChange={setTollPeriod}
         loading={loading}
         error={error}
         onCalculate={calculate}
