@@ -3,13 +3,14 @@ import assert from "node:assert/strict";
 import {
   confirmedFreeToll,
   currentTollPeriod,
+  buildAlternativeFareCopy,
   displayQuote,
   resolveTollAmount,
   shortPlaceName,
   totalWithToll,
   unverifiedToll,
 } from "../app/v2/components/quote-presentation.ts";
-import type { TollView } from "../app/v2/components/types.ts";
+import type { TollView, Trip } from "../app/v2/components/types.ts";
 
 const changingToll: TollView = {
   amount: 6090,
@@ -84,4 +85,31 @@ test("confirmed-free and priced tolls show a complete trip total", () => {
     label: "Итого за поездку",
     amount: 51036,
   });
+});
+
+test("alternative clipboard contains short endpoints, route facts and only four base fares", () => {
+  const trip = {
+    meters: 1_780_600,
+    seconds: 92_640,
+    pricingByVehicle: {
+      standard: { totalPrice: 44_516, requiresSplit: false },
+      comfort: { totalPrice: 53_419, requiresSplit: false },
+      comfort_plus: { totalPrice: 62_322, requiresSplit: false },
+      minivan: { totalPrice: 89_032, requiresSplit: false },
+    },
+  } as Trip;
+  const copy = buildAlternativeFareCopy(
+    "Геленджик, городской округ Геленджик, Краснодарский край, Россия",
+    "Москва, Россия",
+    trip,
+  );
+  const lines = copy.split("\n");
+  assert.equal(lines.length, 6);
+  assert.equal(lines[0], "Геленджик → Москва");
+  assert.match(lines[1], /1[\u00a0\u202f]780,6 км · 25 ч 44 мин/);
+  assert.match(lines[2], /^Стандарт: 44[\u00a0\u202f]516 ₽$/);
+  assert.match(lines[3], /^Комфорт: 53[\u00a0\u202f]419 ₽$/);
+  assert.match(lines[4], /^Комфорт\+: 62[\u00a0\u202f]322 ₽$/);
+  assert.match(lines[5], /^Минивэн: 89[\u00a0\u202f]032 ₽$/);
+  assert.doesNotMatch(copy, /дорог|итого|подтвержден|Геленджик, городской округ/iu);
 });
