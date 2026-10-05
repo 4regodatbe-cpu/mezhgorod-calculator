@@ -111,7 +111,7 @@ function isTollBooth(edge: TraceEdge) {
 
 async function traceChunk(route: Coordinate[]) {
   const url = new URL("https://valhalla1.openstreetmap.de/trace_attributes");
-  url.searchParams.set("json", JSON.stringify({
+  const request = {
     shape: route.map(([lon, lat]) => ({ lat, lon })),
     costing: "auto",
     shape_match: "walk_or_snap",
@@ -127,15 +127,20 @@ async function traceChunk(route: Coordinate[]) {
         "node.osm_id",
       ],
     },
-  }));
+  };
   const response = await fetch(url, {
-    headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "User-Agent": "MezhgorodCalc/2.0",
+    },
+    body: JSON.stringify(request),
     cache: "no-store",
     signal: AbortSignal.timeout(18_000),
   });
   if (!response.ok) throw new Error(`TRACE_${response.status}`);
   return (await response.json()) as { edges?: TraceEdge[] };
-}
 
 async function mapConcurrent<T, R>(values: T[], limit: number, fn: (value: T, index: number) => Promise<R>) {
   const result = new Array<R>(values.length);
