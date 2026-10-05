@@ -10,12 +10,21 @@ import { calculateM4Core } from "../lib/toll-engine/m4-core.ts";
 import { priceA289Route } from "../lib/toll-engine/a289-engine.ts";
 
 const snapshot = JSON.parse(await readFile(new URL("../benchmarks/routes/yandex-2026-10-04/screenshot-observations.json", import.meta.url), "utf8"));
+const observations = [
+  ...snapshot.routes,
+  ...(snapshot.followUpObservations ?? []).map((item) => ({
+    id: item.id,
+    from: item.from,
+    to: item.to,
+    candidates: item.yandexCandidates,
+  })),
+];
 const providers = [
   { name: "Valhalla", get: (from, to, positions) => valhalla(from, to, 1, positions) },
   { name: "OSRM", get: (from, to, positions) => osrmRoute(from, to, positions) },
 ];
 const results = [];
-for (const sample of snapshot.routes) {
+for (const sample of observations) {
   const from = { label: sample.from.label, position: sample.from.position };
   const to = { label: sample.to.label, position: sample.to.position };
   const plans = candidatePlans(from.position, to.position, zones);
