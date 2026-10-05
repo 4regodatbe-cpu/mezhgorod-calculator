@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { pickOptimal } from "./route-utils";
 import { distance, duration, money } from "./format";
 import { defaults, tariffNames } from "./pricing-data";
-import { resolveTollAmount, shortPlaceName, totalWithToll, type TollPeriod } from "./quote-presentation";
+import { buildAlternativeFareCopy, resolveTollAmount, shortPlaceName, totalWithToll, type TollPeriod } from "./quote-presentation";
 import type { Place, Result, Leg, Trip, TollView } from "./types";
 
 type CalculatorMode = "standard" | "dual";
@@ -32,7 +32,7 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
       const variants: Array<{ type: string; trip: Trip; tolls: TollView | null }> = leg.fast.tolls.pricingStatus !== "free"
         ? [
           { type: leg.fast.tolls.pricingStatus === "unknown" ? "Быстрый, цена дороги не подтверждена" : "Платный", trip: leg.fast, tolls: leg.fast.tolls },
-          ...(leg.free ? [{ type: "Бесплатный", trip: leg.free, tolls: null }] : []),
+          ...(leg.free ? [{ type: "Альтернатива без пунктов оплаты", trip: leg.free, tolls: null }] : []),
         ]
         : [{ type: "Оптимальный", trip: pickOptimal(leg.fast, leg.free), tolls: null }];
       variants.forEach(({ type, trip, tolls }) => {
@@ -102,8 +102,14 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
     }
   }
 
-  async function copyStandard(key: string, title: string, leg: Leg, trip: Trip, toll?: TollView, warning?: string, tollPeriod: TollPeriod = "weekday", manualTollOverride?: string) {
+  async function copyStandard(key: string, title: string, leg: Leg, trip: Trip, toll?: TollView, warning?: string, tollPeriod: TollPeriod = "weekday", manualTollOverride?: string, fareOnly = false) {
     void title;
+    if (fareOnly) {
+      await navigator.clipboard.writeText(buildAlternativeFareCopy(leg.from, leg.to, trip));
+      setCopiedKey(key);
+      setTimeout(() => setCopiedKey(""), 1800);
+      return;
+    }
     const tollPrice = resolveTollAmount(toll, tollPeriod, manualTollOverride);
     const periodLabel = tollPeriod === "weekday" ? "будни, Пн–Чт" : "выходные, Пт–Вс";
     const lines = ["из А в Б", `${shortPlaceName(leg.from)} → ${shortPlaceName(leg.to)}`, `${distance(trip.meters)} · ${duration(trip.seconds)}`, `День поездки: ${periodLabel}`];
