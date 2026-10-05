@@ -43,14 +43,12 @@ test("a route with a toll booth is rejected as the payment-point alternative", a
   assert.equal(selected, null);
 });
 
-test("incomplete booth evidence stays internal and marks the candidate unverified", async () => {
+test("an incomplete booth trace is rejected because payment-point avoidance is unproven", async () => {
   const selected = await withTraceEdges(
     new Error("trace unavailable"),
     () => selectFreeRoute({ status: "fulfilled", value: candidate }, { status: "rejected", reason: new Error("not used") }),
   );
-  assert.equal(selected?.truth, "candidate_unverified");
-  assert.equal(selected?.validation.status, "unknown");
-  assert.equal(selected?.validation.complete, false);
+  assert.equal(selected, null);
 });
 
 test("a candidate without route geometry is never offered as an unverified detour", async () => {
