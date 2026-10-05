@@ -38,7 +38,8 @@ export function currentTollPeriod(at: Date = new Date()): TollPeriod {
 
 export function shortPlaceName(label: string): string {
   const first = label.split(",")[0].trim();
-  const city = first.replace(/^г[.]?\s+/i, "").replace(/^город\s+/i, "").trim();
+  const locality = first.split(/\\s+[—–]\\s+/)[0].trim();
+  const city = locality.replace(/^г[.]?\\s+/i, "").replace(/^город\\s+/i, "").trim();
   return city || first || label.trim();
 }
 
