@@ -63,7 +63,7 @@ export function CalculatorForm({
         {loading && <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1/3 animate-[route-progress_1.2s_ease-in-out_infinite] rounded-full bg-white/25 blur-md motion-reduce:animate-none" />}
         <span className="relative flex items-center gap-2">{loading ? <LoaderCircle className="h-5 w-5 animate-spin motion-reduce:animate-none" /> : <Calculator className="h-5 w-5" />}{loading ? "Считаем маршрут…" : "Рассчитать поездку"}</span>
       </button>
-      {loading && <div role="status" aria-live="polite" className="mt-3 flex items-center gap-3 rounded-2xl border border-brand-accent/50 bg-brand-accent/10 p-3 text-sm font-bold text-brand-text"><span aria-hidden="true" className="h-3 w-3 shrink-0 animate-pulse rounded-full bg-brand-accent motion-reduce:animate-none" /><span>Проверяем варианты маршрута и тарифы. Обычно расчёт занимает несколько секунд.</span></div>}
+      {loading && <div role="status" aria-live="polite" className="mt-2 flex items-center gap-2 rounded-2xl border border-brand-accent/50 bg-brand-accent/10 p-2 text-xs font-bold text-brand-text"><span aria-hidden="true" className="h-3 w-3 shrink-0 animate-pulse rounded-full bg-brand-accent motion-reduce:animate-none" /><span>Подождите пару минут, пока загружается маршрут.</span></div>}
       {error && <p role="alert" className="mt-3 rounded-xl border border-red-500/30 bg-red-50 p-3 text-sm font-semibold text-red-800">{error}</p>}
     </section>
   );
