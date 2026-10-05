@@ -60,7 +60,7 @@ export function RouteCard({
             <button type="button" aria-pressed={tollPeriod === "weekday"} onClick={() => onTollPeriodChange("weekday")} className={"min-h-11 rounded-xl border px-2 py-1 text-left transition focus-visible:outline-2 focus-visible:outline-brand-focus " + (tollPeriod === "weekday" ? "border-brand-action bg-brand-action text-brand-action-foreground" : "border-brand-border/20 bg-brand-surface text-brand-text hover:bg-brand-subtle")}>
               <span className="block text-xs font-bold">Пн–Чт</span><strong className="block text-sm">{tollLabel(weekdayAmount)}</strong>
             </button>
-            <button type="button" aria-pressed={tollPeriod === "weekend"} onClick={() => onTollPeriodChange("weekend")} className={"min-h-12 rounded-xl border px-2 py-1.5 text-left transition focus-visible:outline-2 focus-visible:outline-brand-focus " + (tollPeriod === "weekend" ? "border-brand-action bg-brand-action text-white" : "border-brand-border/20 bg-brand-surface text-brand-text hover:bg-brand-subtle")}>
+            <button type="button" aria-pressed={tollPeriod === "weekend"} onClick={() => onTollPeriodChange("weekend")} className={"min-h-11 rounded-xl border px-2 py-1 text-left transition focus-visible:outline-2 focus-visible:outline-brand-focus " + (tollPeriod === "weekend" ? "border-brand-action bg-brand-action text-brand-action-foreground" : "border-brand-border/20 bg-brand-surface text-brand-text hover:bg-brand-subtle")}>
               <span className="block text-xs font-bold">Пт–Вс</span><strong className="block text-sm">{tollLabel(weekendAmount)}</strong>
             </button>
           </div>
