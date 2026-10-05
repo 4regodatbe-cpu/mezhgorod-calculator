@@ -31,9 +31,9 @@ await expectStatus("invalid departure timestamp", "/api/v2/calculate", {
 await expectStatus("out-of-range route coordinates", "/api/v2/calculate", {
   method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from: { label: "A", position: { lat: 95, lng: 37 } }, to }),
 }, 400);
-await expectStatus("dual mode requires midpoint", "/api/v2/calculate", {
+await expectStatus("dual mode accepts omitted midpoint", "/api/v2/calculate", {
   method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "dual", from, to }),
-}, 400);
+}, 200);
 await expectStatus("malformed calculation JSON", "/api/v2/calculate", {
   method: "POST", headers: jsonHeaders, body: "{",
 }, 400);
