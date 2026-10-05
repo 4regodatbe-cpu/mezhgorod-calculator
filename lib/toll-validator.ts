@@ -141,6 +141,7 @@ async function traceChunk(route: Coordinate[]) {
   });
   if (!response.ok) throw new Error(`TRACE_${response.status}`);
   return (await response.json()) as { edges?: TraceEdge[] };
+}
 
 async function mapConcurrent<T, R>(values: T[], limit: number, fn: (value: T, index: number) => Promise<R>) {
   const result = new Array<R>(values.length);
