@@ -49,7 +49,6 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     : Promise.resolve(null);
   const [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
   const confirmedFree = selectedFree?.truth === "confirmed_no_toll_booths" ? selectedFree : null;
-  const freeCandidate = selectedFree?.truth === "candidate_unverified" ? selectedFree : null;
   const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
   const pricing = await calculateLegTolls({
     routeGeometry,
@@ -71,11 +70,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     to: to.label,
     fast: { ...selectedFast.route, coordinates: routeGeometry, quality: selectedFast.quality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation },
     free: confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
-    freeCandidate: freeCandidate ? { ...freeCandidate.route, quality: freeCandidate.quality, tollValidation: freeCandidate.validation } : null,
-    freeError: confirmedFree
-      ? undefined
-      : freeCandidate
-        ? "Найден альтернативный маршрут, но проверка пунктов оплаты не завершена."
-        : "Не удалось построить вариант с объездом пунктов оплаты.",
+    freeCandidate: null,
+    freeError: confirmedFree ? undefined : "Не удалось подтвердить вариант с объездом пунктов оплаты.",
   };
 }
