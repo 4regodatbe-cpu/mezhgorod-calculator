@@ -11,11 +11,12 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   const rawResults = await Promise.allSettled([
     valhalla(from, to, 1, positions),
     valhalla(from, to, 1, positions, 900), // Prefer short local bypasses without making every booth overwhelmingly expensive.
+    valhalla(from, to, 1, positions, 1_200), // Allow partial M-4 use where a verified plaza bypass exists.
     valhalla(from, to, 1, positions, 43_200), // Keep a full-detour candidate as a fallback.
     osrmRoute(from, to, positions),
     brouterFast(from, to, positions),
   ]);
-  const [fastResult, valhallaModerateAvoidResult, valhallaHighAvoidResult, osrmResult, brouterFastResult] = rawResults.map(result => {
+  const [fastResult, valhallaModerateAvoidResult, valhallaPartialTollResult, valhallaHighAvoidResult, osrmResult, brouterFastResult] = rawResults.map(result => {
     if (result.status === "rejected") return result;
     try {
       if(positions && !followsPlan(result.value.coordinates,positions,"mainland",false)) throw new Error("ROUTE_CONTROLS_MISSED");
@@ -46,6 +47,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
 
   const selectedFreePromise = selectFreeRoute(selectedFast.route, [
     { name: "Valhalla local bypass", result: valhallaModerateAvoidResult },
+    { name: "Valhalla partial M-4 bypass", result: valhallaPartialTollResult },
     { name: "BRouter", result: brouterFastResult },
     { name: "Valhalla full bypass", result: valhallaHighAvoidResult },
   ]);
