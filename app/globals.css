@@ -47,22 +47,26 @@ html.dark .support-icon { background:rgb(6 78 59 / 55%); color:#a7f3d0; }
   --brand-text:#102A43;
   --brand-muted:#526777;
   --brand-action:#0D5C63;
+  --brand-action-foreground:#FFFFFF;
   --brand-accent:#FF6B35;
+  --brand-accent-foreground:#102A43;
   --brand-route:#C94C20;
   --brand-focus:#0D5C63;
   --brand-border:#102A43;
 }
 html.dark {
-  --brand-page:#101D2A;
-  --brand-surface:#17293A;
-  --brand-subtle:#20394A;
+  --brand-page:#111B24;
+  --brand-surface:#1C2B33;
+  --brand-subtle:#293D45;
   --brand-text:#F7F4EE;
-  --brand-muted:#B8C8D2;
-  --brand-action:#53A6A4;
+  --brand-muted:#C0CDD2;
+  --brand-action:#62C6B6;
+  --brand-action-foreground:#102A2D;
   --brand-accent:#FF9A6F;
-  --brand-route:#FF9A6F;
-  --brand-focus:#80C7C0;
-  --brand-border:#A8BEC9;
+  --brand-accent-foreground:#102A2D;
+  --brand-route:#FF956D;
+  --brand-focus:#94DDD2;
+  --brand-border:#78919A;
 }
 @theme inline {
   --color-brand-page:var(--brand-page);
@@ -70,8 +74,8 @@ html.dark {
   --color-brand-subtle:var(--brand-subtle);
   --color-brand-text:var(--brand-text);
   --color-brand-muted:var(--brand-muted);
-  --color-brand-action:var(--brand-action);
-  --color-brand-accent:var(--brand-accent);
+  --color-brand-action:var(--brand-action);\n  --color-brand-action-foreground:var(--brand-action-foreground);
+  --color-brand-accent:var(--brand-accent);\n  --color-brand-accent-foreground:var(--brand-accent-foreground);
   --color-brand-route:var(--brand-route);
   --color-brand-focus:var(--brand-focus);
   --color-brand-border:var(--brand-border);
@@ -106,3 +110,16 @@ html.light .calculator-modern h3[class*="text-white"],
 html.light .calculator-modern strong[class*="text-white"] { color:#0f172a; }
 html.light .calculator-modern [class*="text-slate-300"] { color:#475569; }
 html.light .calculator-modern [class*="text-slate-400"] { color:#64748b; }
+
+
+/* Leave room for system status/navigation bars in Android WebView and edge-to-edge browsers. */
+.v2-page-inset {
+  padding-block-start:calc(1rem + env(safe-area-inset-top, 0px));
+  padding-block-end:calc(1.25rem + env(safe-area-inset-bottom, 0px));
+}
+@media (min-width:640px) {
+  .v2-page-inset {
+    padding-block-start:calc(2rem + env(safe-area-inset-top, 0px));
+    padding-block-end:calc(2rem + env(safe-area-inset-bottom, 0px));
+  }
+}
