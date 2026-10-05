@@ -52,3 +52,12 @@ test("incomplete booth evidence stays internal and marks the candidate unverifie
   assert.equal(selected?.validation.status, "unknown");
   assert.equal(selected?.validation.complete, false);
 });
+
+test("a candidate without route geometry is never offered as an unverified detour", async () => {
+  const noGeometry = { ...candidate, coordinates: [[37, 55], [37.1, 55.1]] };
+  const selected = await selectFreeRoute(
+    { status: "fulfilled", value: noGeometry },
+    { status: "rejected", reason: new Error("not used") },
+  );
+  assert.equal(selected, null);
+});
