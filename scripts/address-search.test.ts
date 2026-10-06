@@ -185,6 +185,14 @@ test("region query boosts exact oblast result and not a similarly named street",
   assert.equal(results[0].label, "Донецкая область");
 });
 
+test("localized Ukrainian oblast result matches a Russian region query by its explicit alias", () => {
+  const ukrOblast = feature("Донецька область", 37.8029, 48.0156, 62, "administrative");
+  ukrOblast.properties!.country = "Ukraine";
+  const results = rankPhotonFeatures([ukrOblast], SPECIAL_TERRITORY_BOUNDARIES, "Донецкая область");
+  assert.equal(results[0].label, "Донецкая область");
+  assert.equal(results[0].title, "Донецкая область");
+});
+
 test("Ukrainian locality spelling matches a Russian query and omits community suffix", () => {
   const donetsk = feature("Донецьк", 37.80134, 48.01587, 70, "administrative");
   donetsk.properties!.city = "Донецька міська громада";
