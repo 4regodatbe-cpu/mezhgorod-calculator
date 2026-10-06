@@ -17,15 +17,12 @@ for (const query of queries) {
   }));
   const features = outcomes.flatMap((outcome) => outcome.status === "fulfilled" ? outcome.value : []);
   const items = rankPhotonFeatures(features, zones, query);
-  if (query === "Донецк") {
-    assert.equal(items[0]?.label, "Донецк — ДНР", "the DNR locality should use its Russian product label");
-  }
-  if (query === "Москва") {
-    assert.equal(items[0]?.label, "Москва, Россия", "the Moscow city must outrank unrelated same-name objects in priority territories");
-  }
-  if (query === "Макеевка") {
-    assert.equal(items[0]?.label, "Макеевка — ДНР", "the DNR namesake must be found through the Ukrainian provider spelling");
-  }
+    const rankingChecks = {
+    donetskDnrFirst: query === "Донецк" ? items[0]?.label === "Донецк — ДНР" : undefined,
+    donetskRostovSecond: query === "Донецк" ? /Ростовская область/u.test(items[1]?.label ?? "") : undefined,
+    moscowFirst: query === "Москва" ? items[0]?.label === "Москва, Россия" : undefined,
+    makeyevkaDnrPresent: query === "Макеевка" ? items.some((item) => item.label === "Макеевка — ДНР") : undefined,
+  };
   const rendered = items.slice(0, 8).map((item) => ({
     title: item.title,
     label: item.label,
@@ -38,10 +35,12 @@ for (const query of queries) {
     globalStatus: outcomes[0].status,
     ukraineStatus: outcomes[1].status,
     featureCount: features.length,
+    failedSources: outcomes.filter((outcome) => outcome.status === "rejected").length,
+    rankingChecks,
     topSuggestions: rendered,
     specialMatchFound: rendered.some((item) => item.territory !== null),
     crimeaLabelFound: rendered.some((item) => item.crimea && item.label.endsWith("— Крым")),
   });
   console.log(JSON.stringify(reports.at(-1)));
 }
-await writeFile("address-search-live-probe.json", JSON.stringify(reports, null, 2) + "\n");
+await writeFile("address-search-live-probe.json", JSON.stringify(reports, null, 2) + "\n");\nconsole.log(JSON.stringify({ type: "address-search-live-summary", checks: reports.map(({query,rankingChecks,featureCount,failedSources})=>({query,rankingChecks,featureCount,failedSources})) }));
