@@ -32,6 +32,20 @@ const russianPool = [
   {name:"Волгоград",position:{lat:48.708, lng:44.5133}},
 ];
 const placeValues = new Set(["city","town","village","hamlet","locality","isolated_dwelling","farm"]);
+const providerNameAliases = {
+  "Гранитное":["Гранітне"],"Широкино":["Широкине"],"Новоазовск":["Новоазовськ"],"Горловка":["Горлівка"],
+  "Талаковка":["Талаківка"],"Харцызск":["Харцизьк"],"Ясиноватая":["Ясинувата"],
+  "Довжанск":["Довжанськ"],"Рубежное":["Рубіжне"],"Сорокино":["Сорокине"],"Старобельск":["Старобільськ"],"Марковка":["Марківка"],
+  "Мелитополь":["Мелітополь"],"Молочанск":["Молочанськ"],"Розовка":["Розівка"],"Днепрорудное":["Дніпрорудне"],"Васильевка":["Василівка"],
+  "Старая Збурьевка":["Стара Збур’ївка"],"Новая Збурьевка":["Нова Збур’ївка"],"Чулаковка":["Чулаківка"],"Геническ":["Генічеськ"],
+  "Таврийск":["Таврійськ"],"Рыково":["Рикове"],"Новая Каховка":["Нова Каховка"],
+};
+function matchesRequestedPlace(requested, properties) {
+  const requestedName=normalize(requested);
+  const acceptedNames=new Set([requestedName,...(providerNameAliases[requested]??[]).map(normalize)]);
+  const providerNames=[properties["name:ru"],properties.name_ru,properties.name].map(normalize).filter(Boolean);
+  return providerNames.some((providerName)=>acceptedNames.has(providerName));
+}
 let randomState = seed >>> 0;
 function random() {
   randomState += 0x6D2B79F5;
@@ -92,9 +106,9 @@ async function resolve(name, area) {
       const namedAdministrativeLocality=key==="boundary" && value==="administrative";
       if(place) diagnostics.placeFeatures++;
       if(namedAdministrativeLocality) diagnostics.administrativeFeatures++;
-      // The random route matrix must contain inhabited place=* features, not
-      // municipal/community relations returned as loose Photon search matches.
-      if(!place) continue;
+      // Only count an actual named settlement returned for this query. Photon also
+      // returns nearby place features; accepting those produced false sample pairs.
+      if(!place || !matchesRequestedPlace(name,p)) continue;
       const suggestion=rankPhotonFeatures([feature],zones,name,1)[0];
       if(!suggestion) continue;
       const {lat,lng}=suggestion.position;
@@ -104,7 +118,7 @@ async function resolve(name, area) {
       if(!inArea) continue;
       diagnostics.insideTargetPolygon++;
       diagnostics.accepted++;
-      return {requested:name,label:suggestion.label,position:suggestion.position,osmType:place?value:"administrative",osmId:p.osm_id ?? null,group:place&&["village","hamlet","isolated_dwelling","farm"].includes(value)?"rural":"urban"};
+      return {requested:name,sourceName:String(p["name:ru"] ?? p.name_ru ?? p.name ?? ""),label:suggestion.label,position:suggestion.position,osmType:value,osmId:p.osm_id ?? null,group:["village","hamlet","isolated_dwelling","farm"].includes(value)?"rural":"urban"};
     }
     if(sourceIndex<sources.length-1) await delay(250);
   }
@@ -176,7 +190,7 @@ const routeResults=await mapLimit(samples,3,async(sample,index)=>{
 });
 const providerDisagreements=routeResults.filter((row)=>row.providerDistanceDifferenceKm!==null && (row.providerDistanceDifferenceKm>30 || (row.providerDistanceDifferencePercent??0)>5)).map((row)=>({area:row.area,settlement:row.settlement,differenceKm:row.providerDistanceDifferenceKm,differencePercent:row.providerDistanceDifferencePercent}));
 const providerFailures=routeResults.flatMap((row)=>Object.entries(row.providers).filter(([,result])=>result.status!=="ok").map(([provider,result])=>({area:row.area,settlement:row.settlement,provider,error:result.error})));
-const summary={seed,generatedAt:new Date().toISOString(),searchDiagnostics,providerDistanceDisagreementThreshold:{absoluteKm:30,relativePercent:5},providerDisagreements,providerFailures,selectionMethod:"Seeded shuffle of live-geocoded city/town/village/hamlet/locality/isolated_dwelling/farm place=* features only; administrative and municipality features are excluded. Up to 3 rural settlements are selected first. Every selected coordinate is checked against its target polygon.",russianEndpoint:russian,areas:Object.fromEntries(Object.entries(resolvedByArea).map(([area,result])=>[area,{availableCount:result.availableCount,ruralAvailable:result.ruralAvailable,urbanAvailable:result.urbanAvailable,selectedCount:result.selected.length}])),resolutionErrors,routeCount:routeResults.length,providerSuccesses:Object.fromEntries(providers.map((provider)=>[provider.name,routeResults.filter((row)=>row.providers[provider.name]?.status==="ok").length])),routeResults};
+const summary={seed,generatedAt:new Date().toISOString(),nameMatching:"Selected Photon place features must exactly match the requested query or a curated Russian/Ukrainian spelling alias; raw provider name is included per sample.",searchDiagnostics,providerDistanceDisagreementThreshold:{absoluteKm:30,relativePercent:5},providerDisagreements,providerFailures,selectionMethod:"Seeded shuffle of live-geocoded city/town/village/hamlet/locality/isolated_dwelling/farm place=* features only; administrative and municipality features are excluded. Up to 3 rural settlements are selected first. Every selected coordinate is checked against its target polygon.",russianEndpoint:russian,areas:Object.fromEntries(Object.entries(resolvedByArea).map(([area,result])=>[area,{availableCount:result.availableCount,ruralAvailable:result.ruralAvailable,urbanAvailable:result.urbanAvailable,selectedCount:result.selected.length}])),resolutionErrors,routeCount:routeResults.length,providerSuccesses:Object.fromEntries(providers.map((provider)=>[provider.name,routeResults.filter((row)=>row.providers[provider.name]?.status==="ok").length])),routeResults};
 await writeFile("settlement-random-route-audit.json",JSON.stringify(summary,null,2)+"\n");
 console.log(JSON.stringify({seed,areas:summary.areas,russianEndpoint:russian.name,routeCount:summary.routeCount,providerSuccesses:summary.providerSuccesses}));
 for(const [area,result] of Object.entries(resolvedByArea)) assert.equal(result.selected.length,10,`Need 10 resolved settlements in ${area}; found ${result.selected.length}`);
