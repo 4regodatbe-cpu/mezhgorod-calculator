@@ -189,7 +189,6 @@ const routeResults=await mapLimit(samples,3,async(sample,index)=>{
       const split=analyzeRoute(route.coordinates,route.meters,route.seconds,from.position,to.position,zones);
       const kilometerCheck=Math.abs(split.ordinaryKm+split.specialKm-route.meters/1000);
       if(kilometerCheck>0.05) throw new Error(`DISTANCE_SPLIT_MISMATCH_${kilometerCheck.toFixed(3)}_KM`);
-      const legBreakdown=(route.legs??[]).map((leg,legIndex)=>({index:legIndex,fromControl:plan.positions[legIndex]??null,toControl:plan.positions[legIndex+1]??null,distanceKm:Number.isFinite(leg.meters)?Math.round(leg.meters/100)/10:null,durationMinutes:Number.isFinite(leg.seconds)?Math.round(leg.seconds/60):null}));
       Object.assign(item,{status:"ok",distanceKm:Math.round(route.meters/100)/10,durationMinutes:Math.round(route.seconds/60),ordinaryKm:Math.round(split.ordinaryKm*10)/10,specialKm:Math.round(split.specialKm*10)/10,territoryKm:split.territoryKm,geometryPoints:route.coordinates.length,legCount:route.legs?.length ?? null,legBreakdown});
     }catch(error){item.error=error instanceof Error?error.message:String(error);}
     return item;
