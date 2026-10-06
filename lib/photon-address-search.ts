@@ -1,4 +1,5 @@
 import { classifyTerritory, type VerifiedTerritory } from "./special-territory-geometry.ts";
+import { SPECIAL_TERRITORY_BOUNDARIES } from "./special-territory-boundaries.ts";
 import { inCrimea } from "./special-territory-policy.ts";
 import type { Suggestion } from "../app/v2/components/types.ts";
 
@@ -130,6 +131,47 @@ const russianLocalityNames: Record<string, string> = {
   енергодар: "Энергодар",
 };
 
+function geometryBounds(value: unknown): [number, number, number, number] | null {
+  let minLon=Number.POSITIVE_INFINITY, minLat=Number.POSITIVE_INFINITY;
+  let maxLon=Number.NEGATIVE_INFINITY, maxLat=Number.NEGATIVE_INFINITY;
+  const visit=(part: unknown): void => {
+    if(!Array.isArray(part)) return;
+    if(part.length===2 && typeof part[0]==="number" && typeof part[1]==="number") {
+      const [lon,lat]=part;
+      if(Number.isFinite(lon)&&Number.isFinite(lat)) {
+        minLon=Math.min(minLon,lon); minLat=Math.min(minLat,lat);
+        maxLon=Math.max(maxLon,lon); maxLat=Math.max(maxLat,lat);
+      }
+      return;
+    }
+    for(const child of part) visit(child);
+  };
+  visit(value);
+  return Number.isFinite(minLon) ? [minLon,minLat,maxLon,maxLat] : null;
+}
+
+const priorityTerritoryBounds = SPECIAL_TERRITORY_BOUNDARIES.flatMap((zone) => {
+  const bounds=geometryBounds(zone.geometry.coordinates);
+  return bounds ? [{id:zone.id,bounds}] : [];
+});
+
+function countryCode(feature: PhotonFeature): string {
+  return text(feature.properties?.countrycode ?? feature.properties?.country_code).toUpperCase();
+}
+
+function isCountry(feature: PhotonFeature, codes: string[], names: RegExp): boolean {
+  const p=feature.properties ?? {};
+  return codes.includes(countryCode(feature)) || names.test(normalize(text(p.country)));
+}
+
+function isRussianFeature(feature: PhotonFeature, crimea: boolean): boolean {
+  return crimea || isCountry(feature,["RU"],/^(россия|российская федерация|russia|russian federation)$/u);
+}
+
+function isUkrainianFeature(feature: PhotonFeature): boolean {
+  return isCountry(feature,["UA"],/^(украина|ukraine)$/u);
+}
+
 function requestedArea(query: string): keyof typeof specialLabels | "crimea" | null {
   const normalized = normalize(query);
   const aliases: Array<[keyof typeof specialLabels | "crimea", string[]]> = [
@@ -213,24 +255,35 @@ function regionAliases(query: string): string[] {
 
 /** Query globally and in Ukraine separately; region queries also use provider aliases and the administrative layer. */
 export function photonSearchUrls(query: string): string[] {
-  const makeUrl = (term: string, countryCode?: string, layer?: string) => {
+  const makeUrl = (term: string, countryCode?: string, layer?: string, bbox?: [number,number,number,number]) => {
     const url = new URL("https://photon.komoot.io/api/");
     url.searchParams.set("q", term);
     url.searchParams.set("limit", layer ? "10" : "20");
     if (countryCode) url.searchParams.set("countrycode", countryCode);
     if (layer) url.searchParams.set("layer", layer);
+    if (bbox) url.searchParams.set("bbox", bbox.map((value)=>Number(value.toFixed(5))).join(","));
     return url.toString();
   };
-  return [
-    makeUrl(providerSearchTerm(query)),
-    makeUrl(providerSearchTerm(query), "UA"),
-    ...placeAliases(query).map((term) => makeUrl(term, "UA")),
-    ...regionAliases(query).map((term) => makeUrl(term, "UA", "state")),
+  const term=providerSearchTerm(query);
+  const isLocalityQuery=query.length>=3 && !/[0-9,;]/u.test(query);
+  const urls=[
+    makeUrl(term),
+    makeUrl(term,"UA"),
+    makeUrl(term,"RU"),
+    ...placeAliases(query).map((alias)=>makeUrl(alias,"UA")),
+    ...regionAliases(query).map((alias)=>makeUrl(alias,"UA","state")),
   ];
+  // The generic Photon result window can be filled by faraway homonyms.
+  // Bounding-box searches guarantee a separate candidate window for each
+  // priority territory; exact polygon membership is still checked below.
+  if(isLocalityQuery) {
+    urls.push(...priorityTerritoryBounds.map(({bounds})=>makeUrl(term,undefined,undefined,bounds)));
+  }
+  return [...new Set(urls)];
 }
 
 /** Order suggestions and display regional names exclusively from each valid geocoded coordinate. */
-export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTerritory[], query: string, maxItems = 10): Suggestion[] {
+export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTerritory[], query: string, maxItems = 20): Suggestion[] {
   const candidates = features.flatMap((feature, index) => {
     const coordinates = feature.geometry?.coordinates;
     const p = feature.properties ?? {};
@@ -257,17 +310,18 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const placeRank = Math.max(locality, administrativeRegion);
     // Keep exact matches in the five high-demand areas ahead of ordinary namesakes.
     // For Донецк specifically, place Ростовская область second as requested.
-    const rostovDonetsk = exactName && queryName === "донецк" &&
-      normalizedNames.includes("донецк") &&
-      [p.state, p.county].map((value) => normalize(text(value))).some((value) => /^(ростов|rostov)/u.test(value));
     // Territory priority applies to named settlements and exact oblast results,
     // never to POIs/street names that happen to share a place name.
-    const territoryRank = exactName && placeRank > 0
-      ? queryArea
-        ? (territory === queryArea || (queryArea === "crimea" && crimea)) ? 500_000 : territory || crimea ? 100_000 : 0
-        : queryName === "донецк"
-          ? territory === "dnr" ? 500_000 : rostovDonetsk ? 400_000 : territory ? 300_000 : crimea ? 200_000 : 0
-          : territory || crimea ? 300_000 : 0
+    const matchesRequestedArea=Boolean(queryArea &&
+      (territory===queryArea || (queryArea==="crimea" && crimea)));
+    // Default priority: four new territories, all Russian regions (including
+    // Crimea), Ukraine, then other countries. An explicit qualifier wins.
+    const territoryRank=exactName && placeRank>0
+      ? matchesRequestedArea ? 5_000_000
+        : territory ? 4_000_000
+        : isRussianFeature(feature,crimea) ? 3_000_000
+        : isUkrainianFeature(feature) ? 2_000_000
+        : 1_000_000
       : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
