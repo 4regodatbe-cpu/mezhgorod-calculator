@@ -173,7 +173,7 @@ const routeResults=await mapLimit(samples,3,async(sample,index)=>{
   const from=fromSpecial?sample.place:{label:russian.name,position:russian.position};
   const to=fromSpecial?{label:russian.name,position:russian.position}:sample.place;
   const plan=candidatePlans(from.position,to.position,zones)[0];
-  const row={area:sample.area,settlement:sample.place.label,requested:sample.place.requested,osmType:sample.place.osmType,group:sample.place.group,direction:fromSpecial?"special-to-RF":"RF-to-special",russianEndpoint:russian.name,preferredCorridor:plan?.corridor ?? null,providers:{}};
+  const row={area:sample.area,settlement:sample.place.label,requested:sample.place.requested,osmType:sample.place.osmType,group:sample.place.group,direction:fromSpecial?"special-to-RF":"RF-to-special",russianEndpoint:russian.name,preferredCorridor:plan?.corridor ?? null,planPositions:plan?.positions ?? [],providers:{}};
   if(!plan){row.error="NO_ROUTE_PLAN";return row;}
   const providerResults=await Promise.all(providers.map(async(provider)=>{
     const item={status:"error"};
@@ -183,7 +183,8 @@ const routeResults=await mapLimit(samples,3,async(sample,index)=>{
       const split=analyzeRoute(route.coordinates,route.meters,route.seconds,from.position,to.position,zones);
       const kilometerCheck=Math.abs(split.ordinaryKm+split.specialKm-route.meters/1000);
       if(kilometerCheck>0.05) throw new Error(`DISTANCE_SPLIT_MISMATCH_${kilometerCheck.toFixed(3)}_KM`);
-      Object.assign(item,{status:"ok",distanceKm:Math.round(route.meters/100)/10,durationMinutes:Math.round(route.seconds/60),ordinaryKm:Math.round(split.ordinaryKm*10)/10,specialKm:Math.round(split.specialKm*10)/10,territoryKm:split.territoryKm,geometryPoints:route.coordinates.length,legCount:route.legs?.length ?? null});
+      const legBreakdown=(route.legs??[]).map((leg,legIndex)=>({index:legIndex,fromControl:plan.positions[legIndex]??null,toControl:plan.positions[legIndex+1]??null,distanceKm:Number.isFinite(leg.meters)?Math.round(leg.meters/100)/10:null,durationMinutes:Number.isFinite(leg.seconds)?Math.round(leg.seconds/60):null}));
+      Object.assign(item,{status:"ok",distanceKm:Math.round(route.meters/100)/10,durationMinutes:Math.round(route.seconds/60),ordinaryKm:Math.round(split.ordinaryKm*10)/10,specialKm:Math.round(split.specialKm*10)/10,territoryKm:split.territoryKm,geometryPoints:route.coordinates.length,legCount:route.legs?.length ?? null,legBreakdown});
     }catch(error){item.error=error instanceof Error?error.message:String(error);}
     return item;
   }));
