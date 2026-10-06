@@ -405,3 +405,13 @@ Run #148's verification job passed, but the live job stopped at a syntax error: 
 - Branch/SHA/PR: `fix/v2-mobile-layout-2026-10-05` / `49c10fcef0ebadeca0e2e97f564a435a36679fcc` / PR #12 open draft.
 - Ограничения: локально нельзя запускать браузер/пакетные тесты; Photon полнота, route outliers, toll accuracy требуют дальнейшей проверки.
 - Следующий шаг: открыть новый workflow run на текущем документном SHA, дождаться/сохранить audit artifact; затем A1/A2 triage по крупным provider outliers.
+
+
+## 2026-10-06 — live audit follow-up, A1/A5
+
+- Runs #154 (`37443721189`) and #155 (`37445722866`) failed the live audit step; run #156 (`37445845048`) repeated on the longer 60-minute timeout and also failed the audit. Verify jobs passed on all three (87 tests, TypeScript no-emit, Next build). #156 did not fail from timeout.
+- Artifact #156: Photon returned HTTP 400 for all 325 requests across five target areas; zero features, zero accepted settlements, zero routes. Artifact #154's fixed probe similarly returned no features for all 10 queries. The audit's assertion expected 10 settlements and failed; Yandex screenshot comparison did not run. No routing quality conclusion is possible from this artifact. Exact 400 response body is not currently collected.
+- Implemented A5 secondary-route card correction in commit `df80430e570f9b82de7d2304dbe0469881647a5d`: special-area primary route remains a full RouteCard; alternatives render AlternativeRouteCard fare-only; clipboard behavior also marks fare-only. Run #155 verify passed.
+- Extended live job timeout from 25 to 60 minutes in commit `fd28837faaf6a48024a975c19801d5046a6ece85`; latest audit still failed at geocoder resolution, not timeout.
+- Updated WORK_STATE and this log in follow-up commits. Browser QA of Vercel preview remains unconfirmed because preview access hit a credential prompt and the user declined password entry. No visual QA success claimed.
+- Next: instrument Photon failures with response body and minimal request metadata, diagnose HTTP 400, select a proven fallback if needed, rerun the deterministic 50-place matrix, and continue unresolved distance/toll benchmarks before release review. No merge or production deployment.
