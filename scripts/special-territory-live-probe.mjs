@@ -16,9 +16,12 @@ const simferopol = { label: "Simferopol", position: { lat: 44.9521, lng: 34.1024
 const feodosia = { label: "Феодосия", position: { lat: 45.033669, lng: 35.3753628 } };
 const mariupol = { label: "Мариуполь", position: { lat: 47.1, lng: 37.55 } };
 const yalta = { label: "Ялта", position: { lat: 44.4987874, lng: 34.1689358 } };
+const volnovakha = { label: "Волноваха — ДНР", position: { lat: 47.6014517, lng: 37.4934079 } };
 const cases = [
   { name: "Feodosia-Mariupol", from: feodosia, to: mariupol },
   { name: "Yalta-Donetsk", from: yalta, to: donetsk },
+  // User screenshot reference: Yandex 991 km / about 2,060 ₽ toll (weekday), route via Crimea bridge, Krasnodar, Rostov and Mariupol.
+  { name: "Yalta-Volnovakha", from: yalta, to: volnovakha, referenceDistanceKm: 991, referenceTollRub: 2060 },
   { name: "Krasnodar-Donetsk", from: krasnodar, to: donetsk },
   { name: "Donetsk-Krasnodar", from: donetsk, to: krasnodar },
   // User-provided Yandex screenshot (2026-10-04): 1,220 km fast route, 1,230 km alternative.
@@ -89,7 +92,7 @@ for (const sample of cases) {
         row.specialShare = time.verified && route.seconds > 0 ? Math.round((time.specialSeconds / route.seconds) * 1000) / 1000 : null;
         row.finalDistanceKm = Math.round(route.meters / 100) / 10;
         row.finalRouteSeconds = route.seconds;
-        if (sample.name === "Donetsk-Moscow") {
+        if (sample.name === "Donetsk-Moscow" || sample.name === "Yalta-Volnovakha") {
           const priced = await calculateLegTolls({
             routeGeometry: route.coordinates,
             routeSeconds: route.seconds,
@@ -100,11 +103,13 @@ for (const sample of cases) {
             diagnosticFastValidation: null,
           });
           const tolls = tollsForApi(priced.tolls, priced.fastValidation);
-          const m4 = await calculateM4Core(route.coordinates);
+          const m4 = sample.name === "Donetsk-Moscow" ? await calculateM4Core(route.coordinates) : null;
           row.tollProbe = {
-            m4Plazas: m4.pricing.pricedPlazas.map((item) => ({ km: item.km, weekday: item.weekday, weekend: item.weekend, verification: item.verification })),
-            m4Unresolved: m4.pricing.unresolved.map((item) => ({ code: item.code, kms: item.kms, message: item.message })),
-            m4ConfirmedChecks: m4.validation.checks.filter((item) => item.status === "confirmed").map((item) => ({ km: item.km, evidence: item.evidence })),
+            m4Plazas: m4?.pricing.pricedPlazas.map((item) => ({ km: item.km, weekday: item.weekday, weekend: item.weekend, verification: item.verification })) ?? null,
+            m4Unresolved: m4?.pricing.unresolved.map((item) => ({ code: item.code, kms: item.kms, message: item.message })) ?? null,
+            m4ConfirmedChecks: m4?.validation.checks.filter((item) => item.status === "confirmed").map((item) => ({ km: item.km, evidence: item.evidence })) ?? null,
+            referenceWeekdayTollRub: sample.referenceTollRub ?? null,
+            weekdayTollDeviationRub: tolls.weekdayAmount == null || sample.referenceTollRub == null ? null : tolls.weekdayAmount - sample.referenceTollRub,
             pricingStatus: tolls.pricingStatus,
             amount: tolls.amount,
             weekdayAmount: tolls.weekdayAmount,
