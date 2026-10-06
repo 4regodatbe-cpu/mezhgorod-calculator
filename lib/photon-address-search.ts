@@ -230,7 +230,7 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     if (!fallbackLabel) return [];
     const queryName = primaryQueryName(query);
     const normalizedNames = localityNames(feature).map(normalize);
-    const queryNames = [queryName, ...placeAliases(query).map(normalize)];
+    const queryNames = [queryName, ...placeAliases(query).map(normalize), ...regionAliases(query).map(normalize)];
     const exactName = Boolean(queryNames.some((candidate) => candidate && normalizedNames.some((normalizedName) =>
       candidate === normalizedName ||
       (candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
