@@ -45,7 +45,6 @@ const oblastLabels = {
 const localityRanks: Record<string, number> = {
   city: 6,
   town: 5,
-  municipality: 4,
   locality: 4,
   village: 3,
   hamlet: 2,
@@ -220,7 +219,10 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
   const candidates = features.flatMap((feature, index) => {
     const coordinates = feature.geometry?.coordinates;
     const p = feature.properties ?? {};
-    if (isTransitStation(feature) || !coordinates || coordinates.length !== 2 || !coordinates.every(Number.isFinite) ||
+    const osmKey = text(p.osm_key).toLocaleLowerCase("en-US");
+    const osmValue = text(p.osm_value).toLocaleLowerCase("en-US");
+    if (isTransitStation(feature) || (osmKey === "place" && osmValue === "municipality") ||
+        !coordinates || coordinates.length !== 2 || !coordinates.every(Number.isFinite) ||
         coordinates[1] < -90 || coordinates[1] > 90 || coordinates[0] < -180 || coordinates[0] > 180) return [];
     const { territory, crimea } = classifyForDisplay(coordinates[0], coordinates[1], zones);
     const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
@@ -270,8 +272,9 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
   return candidates
     .sort((a, b) => b.score - a.score || a.index - b.index)
     .filter(({ key, item }) => {
-      const coordinateKey = `${normalize(item.label)}@${item.position.lat.toFixed(5)},${item.position.lng.toFixed(5)}`;
-      const dedupeKey = key.startsWith("place-") ? coordinateKey : key;
+      // Photon can return several OSM nodes for one named settlement. Keep one card per
+      // rendered locality; coordinates still determine its suffix and route endpoint.
+      const dedupeKey = normalize(item.label);
       if (seen.has(dedupeKey)) return false;
       seen.add(dedupeKey);
       return true;
