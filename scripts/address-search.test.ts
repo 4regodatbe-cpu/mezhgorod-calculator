@@ -8,7 +8,7 @@ const feature = (name: string, lng: number, lat: number, osmId: number, osmValue
   properties: { name, city: name, state: name === "Донецк" ? (lng > 38 ? "Ростовская область" : "Донецкая область") : "Луганская область", country: lng > 38 ? "Россия" : "Украина", osm_key: ["city", "town", "village", "hamlet", "locality", "municipality", "isolated_dwelling", "farm"].includes(osmValue) ? "place" : osmValue === "administrative" ? "boundary" : "highway", osm_type: "N", osm_id: osmId, osm_value: osmValue },
 });
 
-test("searches globally and separately within Ukraine without unsupported language parameter", () => {
+test("searches globally and separately within Ukraine and requests Russian result names", () => {
   const urls = photonSearchUrls("Донецк").map((value) => new URL(value));
   assert.equal(urls.length, 2);
   assert.equal(urls[0].searchParams.get("q"), "Донецк");
