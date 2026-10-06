@@ -26,15 +26,30 @@ export function ResultPanels({
 }: Props) {
   if (result?.specialEndpoint) return (
     <section className="mt-4 grid min-w-0 grid-cols-1 gap-3">
-      {(result.options ?? []).map((leg, index) => <RouteCard
+      {(result.options ?? []).map((leg, index) => index === 0 ? <RouteCard
         key={index}
-        title={index === 0 ? "Основной маршрут" : "Альтернативный маршрут"}
+        title="Основной маршрут"
         accent="blue"
         trip={leg.fast}
         toll={leg.fast.tolls}
         tollPeriod={tollPeriod}
         onTollPeriodChange={onTollPeriodChange}
-        onCopy={() => copyStandard(`option-${index}`, index === 0 ? "Основной маршрут" : "Альтернативный маршрут", leg, leg.fast, leg.fast.tolls, undefined, tollPeriod)}
+        onCopy={() => copyStandard("option-0", "Основной маршрут", leg, leg.fast, leg.fast.tolls, undefined, tollPeriod)}
+        copied={copiedKey === "option-0"}
+      /> : <AlternativeRouteCard
+        key={index}
+        trip={leg.fast}
+        onCopy={() => copyStandard(
+          `option-${index}`,
+          "Альтернативный маршрут",
+          leg,
+          leg.fast,
+          confirmedFreeToll,
+          undefined,
+          tollPeriod,
+          undefined,
+          true,
+        )}
         copied={copiedKey === `option-${index}`}
       />)}
     </section>
