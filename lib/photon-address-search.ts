@@ -49,6 +49,8 @@ const localityRanks: Record<string, number> = {
   locality: 4,
   village: 3,
   hamlet: 2,
+  isolated_dwelling: 2,
+  farm: 2,
 };
 
 function localityRank(feature: PhotonFeature, exactName: boolean): number {
@@ -65,7 +67,7 @@ function localityRank(feature: PhotonFeature, exactName: boolean): number {
 function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean, exactName: boolean): { title: string; label: string; region: string } {
   const p = feature.properties ?? {};
   const street = [p.street, p.housenumber].map(text).filter(Boolean).join(", ");
-  const name = text(p.name) || street || text(p.city);
+  const name = text(p["name:ru"]) || text(p.name_ru) || text(p.name) || street || text(p.city);
   const areaName = territory ? specialLabels[territory] : crimea ? "Крым" : null;
   const providerRegion = uniqueParts([p.city, p.district, p.county, p.state]);
   const isLocality = localityRank(feature, exactName) > 0;
@@ -116,6 +118,9 @@ const placeSearchAliases: Record<string, string[]> = {
 };
 const russianLocalityNames: Record<string, string> = {
   донецк: "Донецк",
+  донецьк: "Донецк",
+  луганськ: "Луганск",
+  запоріжжя: "Запорожье",
   луганск: "Луганск",
   макиивка: "Макеевка",
   мелитополь: "Мелитополь",
@@ -127,7 +132,53 @@ const russianLocalityNames: Record<string, string> = {
 };
 
 function primaryQueryName(query: string): string {
-  return normalize(query.split(/[;,—–-]/u)[0]);
+  const normalized = normalize(query.split(/[;,—–-]/u)[0]);
+  const qualifiers = [
+    "днр", "лнр", "крым", "республика крым", "россия", "рф", "украина",
+    "донецкая область", "донецкая обл", "луганская область", "луганская обл",
+    "запорожская область", "запорожская обл", "херсонская область", "херсонская обл",
+    "donetsk oblast", "luhansk oblast", "zaporizhzhia oblast", "kherson oblast",
+  ];
+  for (const qualifier of qualifiers.sort((a, b) => b.length - a.length)) {
+    const normalizedQualifier = normalize(qualifier);
+    if (normalized.endsWith(` ${normalizedQualifier}`)) {
+      return normalized.slice(0, -normalizedQualifier.length).trim();
+    }
+  }
+  return normalized;
+}
+
+function isTransitStation(feature: PhotonFeature): boolean {
+  const p = feature.properties ?? {};
+  const key = text(p.osm_key).toLocaleLowerCase("en-US");
+  const value = text(p.osm_value).toLocaleLowerCase("en-US");
+  const type = text(p.type).toLocaleLowerCase("en-US");
+  const stationValues = new Set([
+    "station", "halt", "tram_stop", "bus_station", "bus_stop", "platform",
+    "stop_position", "subway_entrance", "ferry_terminal", "taxi", "stop",
+  ]);
+  return (["railway", "public_transport", "highway", "aeroway", "amenity"].includes(key) &&
+      stationValues.has(value)) ||
+    /^(station|halt|platform|stop_position|bus_stop|tram_stop)$/u.test(type) ||
+    stationValues.has(text(p.station).toLocaleLowerCase("en-US"));
+}
+
+function localityNames(feature: PhotonFeature): string[] {
+  const p = feature.properties ?? {};
+  return [p["name:ru"], p.name_ru, p.name, p.city].map(text).filter(Boolean);
+}
+
+function providerSearchTerm(query: string): string {
+  const normalized = normalize(query);
+  const regionQualifiers = [
+    "днр", "лнр", "крым", "республика крым", "россия", "рф", "украина",
+    "донецкая область", "донецкая обл", "луганская область", "луганская обл",
+    "запорожская область", "запорожская обл", "херсонская область", "херсонская обл",
+    "donetsk oblast", "luhansk oblast", "zaporizhzhia oblast", "kherson oblast",
+  ].map(normalize);
+  return regionQualifiers.some((qualifier) => normalized.endsWith(` ${qualifier}`))
+    ? primaryQueryName(query)
+    : query;
 }
 
 function placeAliases(query: string): string[] {
@@ -157,8 +208,8 @@ export function photonSearchUrls(query: string): string[] {
     return url.toString();
   };
   return [
-    makeUrl(query),
-    makeUrl(query, "UA"),
+    makeUrl(providerSearchTerm(query)),
+    makeUrl(providerSearchTerm(query), "UA"),
     ...placeAliases(query).map((term) => makeUrl(term, "UA")),
     ...regionAliases(query).map((term) => makeUrl(term, "UA", "state")),
   ];
@@ -169,37 +220,40 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
   const candidates = features.flatMap((feature, index) => {
     const coordinates = feature.geometry?.coordinates;
     const p = feature.properties ?? {};
-    if (!coordinates || coordinates.length !== 2 || !coordinates.every(Number.isFinite) ||
+    if (isTransitStation(feature) || !coordinates || coordinates.length !== 2 || !coordinates.every(Number.isFinite) ||
         coordinates[1] < -90 || coordinates[1] > 90 || coordinates[0] < -180 || coordinates[0] > 180) return [];
     const { territory, crimea } = classifyForDisplay(coordinates[0], coordinates[1], zones);
     const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
     if (!fallbackLabel) return [];
     const queryName = primaryQueryName(query);
-    const featureName = text(p.name) || text(p.city);
-    const normalizedName = normalize(featureName);
+    const normalizedNames = localityNames(feature).map(normalize);
     const queryNames = [queryName, ...placeAliases(query).map(normalize)];
-    const exactName = Boolean(queryNames.some((candidate) => candidate && normalizedName &&
-      (candidate === normalizedName ||
-        (candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
+    const exactName = Boolean(queryNames.some((candidate) => candidate && normalizedNames.some((normalizedName) =>
+      candidate === normalizedName ||
+      (candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
     const { title, label, region } = displayName(feature, territory, crimea, exactName);
     const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
     const regionQuery = /(област|обл|oblast|region)$/u.test(queryName);
     const locality = localityRank(feature, exactName);
     const administrativeRegion = regionQuery && placeType === "administrative" && exactName ? 4 : 0;
     const placeRank = Math.max(locality, administrativeRegion);
-    const normalizedState = normalize(text(p.state));
     // Keep exact matches in the five high-demand areas ahead of ordinary namesakes.
     // For Донецк specifically, place Ростовская область second as requested.
-    const rostovDonetsk = exactName && queryName === "донецк" && normalizedName === "донецк" &&
-      /^(ростов|rostov)/u.test(normalizedState);
+    const rostovDonetsk = exactName && queryName === "донецк" &&
+      normalizedNames.includes("донецк") &&
+      [p.state, p.county].map((value) => normalize(text(value))).some((value) => /^(ростов|rostov)/u.test(value));
     // Territory priority applies to named settlements and exact oblast results,
     // never to POIs/street names that happen to share a place name.
     const territoryRank = exactName && placeRank > 0
-      ? territory ? 150 : rostovDonetsk ? 135 : crimea ? 120 : 0
+      ? queryName === "донецк"
+        ? territory === "dnr" ? 500_000 : rostovDonetsk ? 400_000 : territory ? 300_000 : crimea ? 200_000 : 0
+        : territory || crimea ? 300_000 : 0
       : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
-      score: (exactName ? 10_000 : 0) + placeRank * 100 + territoryRank + (exactName ? 10 : 0),
+      // Territory tiers dominate OSM place granularity so a local hamlet beats a Russian city.
+      score: (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
+        (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank + (exactName ? 10 : 0),
       index,
       key: id,
       item: {

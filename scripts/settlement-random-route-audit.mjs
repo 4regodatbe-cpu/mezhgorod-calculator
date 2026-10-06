@@ -1,0 +1,135 @@
+import assert from "node:assert/strict";
+import { writeFile } from "node:fs/promises";
+import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
+import { classifyTerritory } from "../lib/special-territory-geometry.ts";
+import { inCrimea, candidatePlans, followsPlan, analyzeRoute } from "../lib/special-territory-policy.ts";
+import { valhalla, osrmRoute } from "../lib/route-providers.ts";
+import { rankPhotonFeatures } from "../lib/photon-address-search.ts";
+
+const seed = Number(process.env.ADDRESS_ROUTE_AUDIT_SEED ?? "20261006");
+const pools = {
+  dnr:["Донецк","Мариуполь","Макеевка","Горловка","Енакиево","Покровск","Краматорск","Славянск","Бахмут","Волноваха","Дружковка","Торез","Снежное","Харцызск","Амвросиевка","Новоазовск","Ясиноватая","Докучаевск","Моспино","Иловайск"],
+  lnr:["Луганск","Алчевск","Северодонецк","Лисичанск","Рубежное","Старобельск","Сорокино","Ровеньки","Антрацит","Довжанск","Кадиевка","Брянка","Первомайск","Сватово","Кременная","Счастье","Новопсков","Троицкое","Белокуракино","Марковка"],
+  zaporizhzhia:["Запорожье","Мелитополь","Бердянск","Энергодар","Токмак","Васильевка","Пологи","Орехов","Гуляйполе","Днепрорудное","Молочанск","Приморск","Каменка-Днепровская","Акимовка","Кирилловка","Вольнянск","Черниговка","Розовка","Пришиб","Терпенье"],
+  kherson:["Херсон","Новая Каховка","Каховка","Алешки","Геническ","Скадовск","Голая Пристань","Берислав","Таврийск","Каланчак","Чаплинка","Ивановка","Великая Лепетиха","Нижние Серогозы","Новотроицкое","Аскания-Нова","Счастливцево","Лазурное","Белозерка","Высокополье"],
+  crimea:["Симферополь","Севастополь","Ялта","Феодосия","Керчь","Евпатория","Джанкой","Алушта","Судак","Бахчисарай","Саки","Армянск","Красноперекопск","Белогорск","Черноморское","Ленино","Советский","Щёлкино","Гурзуф","Форос"],
+};
+const russianPool = [
+  {name:"Ростов-на-Дону",position:{lat:47.2357,lng:39.7015}},
+  {name:"Краснодар",position:{lat:45.0355,lng:38.9753}},
+  {name:"Москва",position:{lat:55.7558,lng:37.6173}},
+  {name:"Воронеж",position:{lat:51.6608,lng:39.2003}},
+  {name:"Ставрополь",position:{lat:45.0445,lng:41.9691}},
+  {name:"Таганрог",position:{lat:47.2095,lng:38.9353}},
+  {name:"Азов",position:{lat:47.1122,lng:39.4234}},
+  {name:"Шахты",position:{lat:47.7085,lng:40.2159}},
+  {name:"Новочеркасск",position:{lat:47.4221,lng:40.0937}},
+  {name:"Кропоткин",position:{lat:45.4336,lng:40.5728}},
+  {name:"Тихорецк",position:{lat:45.8547,lng:40.1259}},
+  {name:"Ейск",position:{lat:46.7116,lng:38.2764}},
+  {name:"Белгород",position:{lat:50.5957,lng:36.5872}},
+  {name:"Липецк",position:{lat:52.6102,lng:39.5947}},
+  {name:"Волгоград",position:{lat:48.708, lng:44.5133}},
+];
+const placeValues = new Set(["city","town","village","hamlet","locality","municipality","isolated_dwelling","farm"]);
+let randomState = seed >>> 0;
+function random() {
+  randomState += 0x6D2B79F5;
+  let t = randomState;
+  t = Math.imul(t ^ (t >>> 15), t | 1);
+  t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+}
+function shuffled(items) {
+  const result = [...items];
+  for (let i=result.length-1;i>0;i--) { const j=Math.floor(random()*(i+1)); [result[i],result[j]]=[result[j],result[i]]; }
+  return result;
+}
+function normalize(value) {
+  return String(value ?? "").toLocaleLowerCase("ru-RU").replace(/ё/g,"е").replace(/і/g,"и").replace(/ї/g,"и").replace(/є/g,"е").replace(/ґ/g,"г").replace(/[ьъ]/g,"").replace(/[^\p{L}\p{N}]+/gu," ").trim().replace(/\s+/g," ");
+}
+async function photon(query, countryCode) {
+  const url = new URL("https://photon.komoot.io/api/");
+  url.searchParams.set("q",query); url.searchParams.set("limit","15");
+  if(countryCode) url.searchParams.set("countrycode",countryCode);
+  const response = await fetch(url,{headers:{Accept:"application/json","User-Agent":"MezhgorodCalculator/2.0"},signal:AbortSignal.timeout(15000)});
+  if(!response.ok) throw new Error(`PHOTON_HTTP_${response.status}`);
+  const payload = await response.json();
+  return Array.isArray(payload.features)?payload.features:[];
+}
+async function resolve(name, area) {
+  const outcomes = await Promise.allSettled([photon(name),photon(name,"UA")]);
+  const features = outcomes.flatMap((result)=>result.status==="fulfilled"?result.value:[]);
+  const ranked = rankPhotonFeatures(features,zones,name,20);
+  for(const item of ranked) {
+    const p=features.find((feature)=>String(feature.properties?.osm_id ?? "")===String(item.id).split("-").at(-1));
+    if(!p) continue;
+    const value=String(p.properties?.osm_value ?? "").toLowerCase();
+    const key=String(p.properties?.osm_key ?? "").toLowerCase();
+    if(key!=="place" || !placeValues.has(value)) continue;
+    const {lat,lng}=item.position;
+    const territory=classifyTerritory({lat,lng},zones);
+    const inArea=area==="crimea"?!territory&&inCrimea({lat,lng}):territory===area;
+    if(!inArea) continue;
+    return {requested:name,label:item.label,position:item.position,osmType:value,osmId:p.properties?.osm_id ?? null,group:["village","hamlet","isolated_dwelling","farm"].includes(value)?"rural":"urban"};
+  }
+  return null;
+}
+async function mapLimit(values,limit,fn) {
+  const output=new Array(values.length); let cursor=0;
+  await Promise.all(Array.from({length:Math.min(limit,values.length)},async()=>{
+    while(true){const index=cursor++;if(index>=values.length)return;output[index]=await fn(values[index],index);}
+  }));
+  return output;
+}
+const resolvedByArea={};
+const resolutionErrors=[];
+for(const [area,names] of Object.entries(pools)) {
+  const outcomes=await mapLimit(names,4,async(name)=>{
+    try{return await resolve(name,area)}catch(error){resolutionErrors.push({area,name,error:error instanceof Error?error.message:String(error)});return null;}
+  });
+  const unique=new Map();
+  for(const item of outcomes.filter(Boolean)) unique.set(item.osmId ?? `${item.position.lng},${item.position.lat}`,item);
+  const all=[...unique.values()];
+  const rural=shuffled(all.filter((item)=>item.group==="rural"));
+  const urban=shuffled(all.filter((item)=>item.group==="urban"));
+  const selected=[...rural.slice(0,Math.min(3,rural.length)),...urban].slice(0,10);
+  if(selected.length<10) selected.push(...shuffled(all.filter((item)=>!selected.some((selectedItem)=>selectedItem.osmId===item.osmId))).slice(0,10-selected.length));
+  resolvedByArea[area]={availableCount:all.length,ruralAvailable:rural.length,urbanAvailable:urban.length,selected};
+}
+const russian=russianPool[Math.floor(random()*russianPool.length)];
+assert.ok(!classifyTerritory(russian.position,zones) && !inCrimea(russian.position),"Russian endpoint must be outside special zones and Crimea");
+const providers=[
+  {name:"Valhalla",get:(from,to,positions)=>valhalla(from,to,1,positions)},
+  {name:"OSRM",get:(from,to,positions)=>osrmRoute(from,to,positions)},
+];
+const samples=Object.entries(resolvedByArea).flatMap(([area,result])=>result.selected.map((place)=>({area,place})));
+const routeResults=await mapLimit(samples,3,async(sample,index)=>{
+  const fromSpecial=index%2===0;
+  const from=fromSpecial?sample.place:{label:russian.name,position:russian.position};
+  const to=fromSpecial?{label:russian.name,position:russian.position}:sample.place;
+  const plan=candidatePlans(from.position,to.position,zones)[0];
+  const row={area:sample.area,settlement:sample.place.label,requested:sample.place.requested,osmType:sample.place.osmType,group:sample.place.group,direction:fromSpecial?"special-to-RF":"RF-to-special",russianEndpoint:russian.name,preferredCorridor:plan?.corridor ?? null,providers:{}};
+  if(!plan){row.error="NO_ROUTE_PLAN";return row;}
+  const providerResults=await Promise.all(providers.map(async(provider)=>{
+    const item={status:"error"};
+    try{
+      const route=await provider.get(from,to,plan.positions);
+      if(!followsPlan(route.coordinates,plan.positions,plan.corridor,true)) throw new Error("ROUTING_PLAN_MISMATCH");
+      const split=analyzeRoute(route.coordinates,route.meters,route.seconds,from.position,to.position,zones);
+      const kilometerCheck=Math.abs(split.ordinaryKm+split.specialKm-route.meters/1000);
+      if(kilometerCheck>0.05) throw new Error(`DISTANCE_SPLIT_MISMATCH_${kilometerCheck.toFixed(3)}_KM`);
+      Object.assign(item,{status:"ok",distanceKm:Math.round(route.meters/100)/10,durationMinutes:Math.round(route.seconds/60),ordinaryKm:Math.round(split.ordinaryKm*10)/10,specialKm:Math.round(split.specialKm*10)/10,territoryKm:split.territoryKm,geometryPoints:route.coordinates.length,legCount:route.legs?.length ?? null});
+    }catch(error){item.error=error instanceof Error?error.message:String(error);}
+    return item;
+  }));
+  providers.forEach((provider,i)=>row.providers[provider.name]=providerResults[i]);
+  const distances=providerResults.filter((item)=>item.status==="ok").map((item)=>item.distanceKm);
+  row.providerDistanceDifferenceKm=distances.length===2?Math.round(Math.abs(distances[0]-distances[1])*10)/10:null;
+  return row;
+});
+const summary={seed,generatedAt:new Date().toISOString(),selectionMethod:"Seeded shuffle of live-geocoded place=* features; up to 3 rural settlements are selected first, then remaining slots are filled from the pool. Every selected coordinate is checked against its named polygon.",russianEndpoint:russian,areas:Object.fromEntries(Object.entries(resolvedByArea).map(([area,result])=>[area,{availableCount:result.availableCount,ruralAvailable:result.ruralAvailable,urbanAvailable:result.urbanAvailable,selectedCount:result.selected.length}])),resolutionErrors,routeCount:routeResults.length,providerSuccesses:Object.fromEntries(providers.map((provider)=>[provider.name,routeResults.filter((row)=>row.providers[provider.name]?.status==="ok").length])),routeResults};
+await writeFile("settlement-random-route-audit.json",JSON.stringify(summary,null,2)+"\n");
+console.log(JSON.stringify({seed,areas:summary.areas,russianEndpoint:russian.name,routeCount:summary.routeCount,providerSuccesses:summary.providerSuccesses}));
+for(const [area,result] of Object.entries(resolvedByArea)) assert.equal(result.selected.length,10,`Need 10 resolved settlements in ${area}; found ${result.selected.length}`);
+assert.equal(routeResults.length,50,"Expected ten sampled settlements in each of five areas");

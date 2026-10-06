@@ -5,7 +5,7 @@ import { photonSearchUrls, rankPhotonFeatures, type PhotonFeature } from "../lib
 
 const feature = (name: string, lng: number, lat: number, osmId: number, osmValue = "city"): PhotonFeature => ({
   geometry: { coordinates: [lng, lat] },
-  properties: { name, city: name, state: name === "Донецк" ? (lng > 38 ? "Ростовская область" : "Донецкая область") : "Луганская область", country: lng > 38 ? "Россия" : "Украина", osm_key: ["city", "town", "village", "hamlet", "locality", "municipality"].includes(osmValue) ? "place" : osmValue === "administrative" ? "boundary" : "highway", osm_type: "N", osm_id: osmId, osm_value: osmValue },
+  properties: { name, city: name, state: name === "Донецк" ? (lng > 38 ? "Ростовская область" : "Донецкая область") : "Луганская область", country: lng > 38 ? "Россия" : "Украина", osm_key: ["city", "town", "village", "hamlet", "locality", "municipality", "isolated_dwelling", "farm"].includes(osmValue) ? "place" : osmValue === "administrative" ? "boundary" : "highway", osm_type: "N", osm_id: osmId, osm_value: osmValue },
 });
 
 test("searches globally and separately within Ukraine without unsupported language parameter", () => {
@@ -98,7 +98,7 @@ test("special place remains first when merged from the country-filtered query af
   assert.equal(results[0].label, "Макеевка — ДНР");
 });
 
-test("Moscow city stays ahead of unrelated Moscow namesakes inside priority territories", () => {
+test("priority-territory settlement named Moscow outranks the Russian city, while unrelated POIs stay secondary", () => {
   const dnrVillage = feature("Москва", 37.8055, 47.9954, 80, "village");
   dnrVillage.properties!.city = "Донецк";
   dnrVillage.properties!.state = "Донецкая область";
@@ -111,9 +111,10 @@ test("Moscow city stays ahead of unrelated Moscow namesakes inside priority terr
   moscowCity.properties!.country = "Россия";
   moscowCity.properties!.state = "Москва";
   const results = rankPhotonFeatures([dnrVillage, crimeaPoi, moscowCity], SPECIAL_TERRITORY_BOUNDARIES, "Москва");
-  assert.equal(results[0].id, "R-82");
-  assert.equal(results[0].label, "Москва, Россия");
-  assert.equal(results.find((item) => item.id === "N-80")?.label, "Москва — ДНР");
+  assert.equal(results[0].id, "N-80");
+  assert.equal(results[0].label, "Москва — ДНР");
+  assert.equal(results[1].id, "R-82");
+  assert.equal(results[1].label, "Москва, Россия");
   const crimeaItem = results.find((item) => item.id === "N-81");
   assert.ok(crimeaItem);
   assert.match(crimeaItem.label, /Севастополь/u);
@@ -222,4 +223,71 @@ test("Russian Kharkiv query with country qualifier searches Ukrainian spelling a
     feature("Харків", 36.2310146, 49.9923181, 204, "city"),
   ], SPECIAL_TERRITORY_BOUNDARIES, "Харьков, Украина");
   assert.equal(results[0].position.lat, 49.9923181);
+});
+
+
+test("special-region hamlet outranks Russian city with the same exact name", () => {
+  const russianCity = feature("Приморск", 40.1, 47.2, 301, "city");
+  russianCity.properties!.state = "Ростовская область";
+  const specialHamlet = feature("Приморск", 37.9, 47.1, 302, "hamlet");
+  specialHamlet.properties!.state = "Донецкая область";
+  const results = rankPhotonFeatures([russianCity, specialHamlet], SPECIAL_TERRITORY_BOUNDARIES, "Приморск");
+  assert.deepEqual(results.map((item) => item.id), ["N-302", "N-301"]);
+  assert.equal(results[0].label, "Приморск — ДНР");
+});
+
+test("Donetsk DNR result remains first and Rostov Oblast namesake second across settlement sizes", () => {
+  const rostov = feature("Донецк", 39.7, 47.23, 311, "town");
+  rostov.properties!.state = "Ростовская область";
+  const dnrHamlet = feature("Донецк", 37.8029, 48.0156, 312, "hamlet");
+  const otherSpecial = feature("Донецк", 35.365, 46.848, 313, "village");
+  const crimea = feature("Донецк", 34.1689, 44.4988, 314, "city");
+  const results = rankPhotonFeatures([otherSpecial, crimea, rostov, dnrHamlet], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
+  assert.deepEqual(results.map((item) => item.id), ["N-312", "N-311", "N-313", "N-314"]);
+});
+
+test("transit stations and platforms are excluded while actual settlements remain selectable", () => {
+  const city = feature("Донецк", 37.8029, 48.0156, 321, "city");
+  const station = feature("Донецк", 37.8028, 48.0155, 322, "station");
+  station.properties!.osm_key = "railway";
+  const platform = feature("Донецк", 37.8027, 48.0154, 323, "platform");
+  platform.properties!.osm_key = "public_transport";
+  const busStop = feature("Автостанция Донецк", 37.8026, 48.0153, 324, "bus_stop");
+  busStop.properties!.osm_key = "highway";
+  const results = rankPhotonFeatures([station, platform, busStop, city], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
+  assert.deepEqual(results.map((item) => item.id), ["N-321"]);
+});
+
+test("city query with DNR, LNR or Crimea qualifier still matches exact settlement", () => {
+  const donetsk = feature("Донецк", 37.8029, 48.0156, 331);
+  const yalta = feature("Ялта", 34.1615, 44.4952, 332);
+  const donetskResults = rankPhotonFeatures([donetsk], SPECIAL_TERRITORY_BOUNDARIES, "Донецк ДНР");
+  const yaltaResults = rankPhotonFeatures([yalta], SPECIAL_TERRITORY_BOUNDARIES, "Ялта Крым");
+  assert.equal(donetskResults[0]?.label, "Донецк — ДНР");
+  assert.equal(yaltaResults[0]?.label, "Ялта — Крым");
+});
+
+test("isolated dwellings and farms are included as inhabited locality types", () => {
+  const farm = feature("Ферма", 37.8029, 48.0156, 341, "farm");
+  const isolated = feature("Хутор", 37.8028, 48.0155, 342, "isolated_dwelling");
+  const results = rankPhotonFeatures([farm, isolated], SPECIAL_TERRITORY_BOUNDARIES, "Хутор");
+  assert.equal(results.find((item) => item.id === "N-341")?.label, "Ферма — ДНР");
+  assert.equal(results.find((item) => item.id === "N-342")?.label, "Хутор — ДНР");
+});
+
+test("Russian localized provider name is preferred for a Ukrainian OSM settlement name", () => {
+  const featureWithLocalizedName: PhotonFeature = {
+    geometry: { coordinates: [39.3078, 48.574] },
+    properties: { name: "Луганськ", "name:ru": "Луганск", osm_key: "place", osm_value: "city", osm_type: "N", osm_id: 351 },
+  };
+  const results = rankPhotonFeatures([featureWithLocalizedName], SPECIAL_TERRITORY_BOUNDARIES, "Луганск");
+  assert.equal(results[0]?.label, "Луганск — ЛНР");
+});
+
+
+test("regional qualifier is removed from Photon query without changing full address searches", () => {
+  const qualified = photonSearchUrls("Донецк ДНР").map((value) => new URL(value));
+  assert.deepEqual(qualified.map((url) => url.searchParams.get("q")), ["донецк", "донецк"]);
+  const fullAddress = photonSearchUrls("Москва, Тверская улица, 1").map((value) => new URL(value));
+  assert.equal(fullAddress[0].searchParams.get("q"), "Москва, Тверская улица, 1");
 });
