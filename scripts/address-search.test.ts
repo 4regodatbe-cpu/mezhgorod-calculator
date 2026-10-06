@@ -238,9 +238,11 @@ test("Russian Zaporizhzhia query searches and ranks Ukrainian city spelling", ()
 
 test("Russian Kharkiv query with country qualifier searches Ukrainian spelling and ranks the city first", () => {
   const urls = photonSearchUrls("Харьков, Украина").map((value) => new URL(value));
-  assert.equal(urls.length, 4);
-  assert.equal(urls[3].searchParams.get("q"), "Харків");
-  assert.equal(urls[3].searchParams.get("countrycode"), "UA");
+  assert.equal(urls.length, 8);
+  const alias = urls.find((url) => url.searchParams.get("q") === "Харків");
+  assert.ok(alias);
+  assert.equal(alias.searchParams.get("countrycode"), "UA");
+  assert.ok(urls.slice(-4).every((url) => url.searchParams.has("bbox")));
   const results = rankPhotonFeatures([
     feature("Харьков", 34.1689, 44.4988, 203, "village"),
     feature("Харків", 36.2310146, 49.9923181, 204, "city"),
