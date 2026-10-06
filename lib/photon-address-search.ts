@@ -202,7 +202,6 @@ export function photonSearchUrls(query: string): string[] {
     const url = new URL("https://photon.komoot.io/api/");
     url.searchParams.set("q", term);
     url.searchParams.set("limit", layer ? "10" : "20");
-    url.searchParams.set("lang", "ru");
     if (countryCode) url.searchParams.set("countrycode", countryCode);
     if (layer) url.searchParams.set("layer", layer);
     return url.toString();
