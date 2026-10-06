@@ -287,3 +287,15 @@
 - Доступный рабочий каталог в этой сессии не содержит checkout проекта; сверка и правки выполнены GitHub-интеграцией непосредственно в PR-ветке.
 - **Следующий шаг:** повторно запустить полный workflow после документационных правок и изучить live artifacts/причины отмены. Затем начать A1 — покрытие поселений, ранжирование и провайдеры; отдельно зафиксировать измеримые лимиты Photon.
 - **Подтверждённые оставшиеся риски:** Photon не доказывает полноту каталога; межпровайдерские расхождения велики; toll pricing и геометрия для отдельных benchmark маршрутов открыты. Run #153 не закрывает A6 матрицу.
+
+
+### 2026-10-06 — follow-up A0/A1/A5: live artifact diagnosis and alternative cards
+
+- Current head before this documentation update: `fd28837faaf6a48024a975c19801d5046a6ece85`; PR #12 remains draft/open and no production deploy or merge was made.
+- Runs #154 (`37443721189`), #155 (`37445722866`) and #156 (`37445845048`) all passed `verify` (tests, TypeScript, Next build). Their live audit step failed after collecting diagnostics; this is not a full successful release gate. Run #156 used the increased 60-minute timeout.
+- Artifacts #154 and #156 report Photon HTTP 400 for all provider requests: #156 made 325 attempts (66 DNR, 40 LNR, 50 Zaporizhzhia, 64 Kherson, 105 Crimea), returned 0 features, resolved 0/50 settlements, and consequently produced 0 route comparisons. The Yandex comparison was skipped. This isolates A1/A6 as blocked at provider response, not empty search results or a confirmed zero-coverage dataset. The provider response body is not currently preserved, so exact HTTP 400 cause remains unknown.
+- In run #154 artifact, the independent fixed address probe likewise had 0 results for all 10 city/region queries; both global and country-filtered searches rejected. Earlier statement that the alias ordering was live-confirmed must be treated as historical to its earlier artifact, not re-confirmed by these runs.
+- A5 change in commit `df80430e570f9b82de7d2304dbe0469881647a5d`: on special-territory results, primary route retains the detailed `RouteCard`; secondary options use `AlternativeRouteCard` and fare-only clipboard copy, omitting unsupported toll detail. Run #155 verify passed.
+- CI live job repeatedly used to exceed/cancel at the old 25-minute timeout; changed it to 60 minutes in `fd28837faaf6a48024a975c19801d5046a6ece85`. The latest run still ended with audit failure from the Photon responses, rather than timeout.
+- Browser visual QA remains unconfirmed: Vercel preview authentication led to a Google credential prompt; user declined password entry, so no authenticated preview was opened. No visual/mobile pass is claimed.
+- Next: preserve Photon HTTP response status/body in diagnostics, verify whether request construction or upstream policy causes 400 with a minimal query, then choose a working geocoder/fallback based on evidence before rerunning the seeded 50-place audit. Keep release blocked until geocoding, routes, unresolved toll comparisons and preview QA are addressed.
