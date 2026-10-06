@@ -31,7 +31,7 @@ const russianPool = [
   {name:"Липецк",position:{lat:52.6102,lng:39.5947}},
   {name:"Волгоград",position:{lat:48.708, lng:44.5133}},
 ];
-const placeValues = new Set(["city","town","village","hamlet","locality","municipality","isolated_dwelling","farm"]);
+const placeValues = new Set(["city","town","village","hamlet","locality","isolated_dwelling","farm"]);
 let randomState = seed >>> 0;
 function random() {
   randomState += 0x6D2B79F5;
@@ -92,7 +92,9 @@ async function resolve(name, area) {
       const namedAdministrativeLocality=key==="boundary" && value==="administrative";
       if(place) diagnostics.placeFeatures++;
       if(namedAdministrativeLocality) diagnostics.administrativeFeatures++;
-      if(!place && !namedAdministrativeLocality) continue;
+      // The random route matrix must contain inhabited place=* features, not
+      // municipal/community relations returned as loose Photon search matches.
+      if(!place) continue;
       const suggestion=rankPhotonFeatures([feature],zones,name,1)[0];
       if(!suggestion) continue;
       const {lat,lng}=suggestion.position;
@@ -168,9 +170,13 @@ const routeResults=await mapLimit(samples,3,async(sample,index)=>{
   providers.forEach((provider,i)=>row.providers[provider.name]=providerResults[i]);
   const distances=providerResults.filter((item)=>item.status==="ok").map((item)=>item.distanceKm);
   row.providerDistanceDifferenceKm=distances.length===2?Math.round(Math.abs(distances[0]-distances[1])*10)/10:null;
+  row.providerDistanceDifferencePercent=distances.length===2 && Math.max(...distances)>0
+    ? Math.round((Math.abs(distances[0]-distances[1])/Math.max(...distances))*1000)/10 : null;
   return row;
 });
-const summary={seed,generatedAt:new Date().toISOString(),searchDiagnostics,selectionMethod:"Seeded shuffle of live-geocoded place=* features; up to 3 rural settlements are selected first, then remaining slots are filled from the pool. Every selected coordinate is checked against its named polygon.",russianEndpoint:russian,areas:Object.fromEntries(Object.entries(resolvedByArea).map(([area,result])=>[area,{availableCount:result.availableCount,ruralAvailable:result.ruralAvailable,urbanAvailable:result.urbanAvailable,selectedCount:result.selected.length}])),resolutionErrors,routeCount:routeResults.length,providerSuccesses:Object.fromEntries(providers.map((provider)=>[provider.name,routeResults.filter((row)=>row.providers[provider.name]?.status==="ok").length])),routeResults};
+const providerDisagreements=routeResults.filter((row)=>row.providerDistanceDifferenceKm!==null && (row.providerDistanceDifferenceKm>30 || (row.providerDistanceDifferencePercent??0)>5)).map((row)=>({area:row.area,settlement:row.settlement,differenceKm:row.providerDistanceDifferenceKm,differencePercent:row.providerDistanceDifferencePercent}));
+const providerFailures=routeResults.flatMap((row)=>Object.entries(row.providers).filter(([,result])=>result.status!=="ok").map(([provider,result])=>({area:row.area,settlement:row.settlement,provider,error:result.error})));
+const summary={seed,generatedAt:new Date().toISOString(),searchDiagnostics,providerDistanceDisagreementThreshold:{absoluteKm:30,relativePercent:5},providerDisagreements,providerFailures,selectionMethod:"Seeded shuffle of live-geocoded city/town/village/hamlet/locality/isolated_dwelling/farm place=* features only; administrative and municipality features are excluded. Up to 3 rural settlements are selected first. Every selected coordinate is checked against its target polygon.",russianEndpoint:russian,areas:Object.fromEntries(Object.entries(resolvedByArea).map(([area,result])=>[area,{availableCount:result.availableCount,ruralAvailable:result.ruralAvailable,urbanAvailable:result.urbanAvailable,selectedCount:result.selected.length}])),resolutionErrors,routeCount:routeResults.length,providerSuccesses:Object.fromEntries(providers.map((provider)=>[provider.name,routeResults.filter((row)=>row.providers[provider.name]?.status==="ok").length])),routeResults};
 await writeFile("settlement-random-route-audit.json",JSON.stringify(summary,null,2)+"\n");
 console.log(JSON.stringify({seed,areas:summary.areas,russianEndpoint:russian.name,routeCount:summary.routeCount,providerSuccesses:summary.providerSuccesses}));
 for(const [area,result] of Object.entries(resolvedByArea)) assert.equal(result.selected.length,10,`Need 10 resolved settlements in ${area}; found ${result.selected.length}`);
