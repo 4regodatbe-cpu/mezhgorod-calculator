@@ -505,3 +505,18 @@ HEAD при записи: `8dbe01a47377ad757e8a42d5653ce57eff9d184c`. PR #12 ope
 - **Conclusion boundary:** a smaller distance is not inherently more correct; do not switch provider, average lengths, or alter toll rates from this evidence. Use these geometries to identify concrete invalid routing (wrong control, forbidden passage, stretched leg) and otherwise keep a warning when providers genuinely disagree.
 - **Preview:** route-code head 90c1bab9e48d51882a9ddd5895eee7562add2bbb is READY at https://mezhgorod-calculator-9ju3i4978-4regodatbe-5310.vercel.app (normal SSO). PR #12 remains open/draft; no merge or Production publish.
 - **Next:** review route shape/corridor policy for Donetsk–Tikhoretsk; compare exact leg metrics for Kerch/Tokmak; then measure the lazy full-detour optimization against the fixed corpus with stage-level latency.
+
+
+### 2026-10-06 — Wikipedia settlement lists and Yalta–Volnovakha audit
+
+User supplied the Russian Wikipedia list of Kherson settlements and proposed the same source for each priority region, with checks for Ukrainian spelling. Reviewed all four list articles. They report 1,118 rural places in Donetsk, 787 in Luhansk, 918 in Zaporizhzhia, 658 in Kherson; lists are organized by raion. The articles are useful as a broad names corpus, but not authoritative coordinate data: census numbers are stated as 2001, there are repeated locality names, and listed articles were last updated at different times. Sources: https://ru.wikipedia.org/wiki/Населённые_пункты_Донецкой_области ; https://ru.wikipedia.org/wiki/Населённые_пункты_Луганской_области ; https://ru.wikipedia.org/wiki/Населённые_пункты_Запорожской_области ; https://ru.wikipedia.org/wiki/Населённые_пункты_Херсонской_области .
+
+CI #199 (`37505598437`) at head `259fb7a1bba7868a59afae243fec5b114d30fd1c` passed verify: 93 tests, TypeScript no-emit, Next build; full live workflow passed, including Photon and fixed 50-settlement audit. Artifact `special-territory-live-probe-37505598437`.
+
+The new live route case Yalta–Volnovakha used representative city-centre coordinates (Volnovakha: 47.6014517, 37.4934079) and screenshot references 991 km, ~2,060 ₽ weekday, 2,533 ₽ weekend. Both provider routes verified on the same mainland corridor and five tariff-time controls. Valhalla: 1,067.7 km; OSRM: 1,053.1 km. Deviations are +7.7% and +6.3%. The route probe validates corridor/control requirements, but did not compute geometry-to-Yandex overlap; exact distance cause is open.
+
+Both Valhalla and OSRM toll probe results: 2,103 ₽ weekday, 2,533 ₽ weekend. Weekend equals screenshot; weekday is +43 ₽. The priced components include M-4 checkpoints plus A-289 ramps 103 km (270 ₽), 82 km (278 ₽), 23 km (555 ₽); need identify which M-4 interval/checkpoint creates weekday delta before updating a rate. Do not hardcode total.
+
+Live Photon: unqualified Yalta now passes new rule (DNR result precedes Crimea; explicit Crimea qualifier still returns Crimea). For Izyum, the Ukrainian city in Kharkiv oblast is found, but no in-polygon priority-territory result was geocoded, so Kazakhstan and other homonyms remain in the first eight. Bbox requests by themselves do not provide a complete gazetteer. Next step is to import the complete four Wikipedia locality tables as a versioned search vocabulary, verify Ukrainian forms as counterpart aliases, query candidates with exact region context, and accept coordinates/priority labels only after point-in-polygon validation. Add data count/duplicates/source revision checks and regressions; don't fabricate coordinates for unmatched names.
+
+Current PR #12 is open/draft; no merge/production action.
