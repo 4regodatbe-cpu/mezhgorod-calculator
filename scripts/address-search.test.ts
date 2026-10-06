@@ -246,6 +246,14 @@ test("Donetsk DNR result remains first and Rostov Oblast namesake second across 
   assert.deepEqual(results.map((item) => item.id), ["N-312", "N-311", "N-313", "N-314"]);
 });
 
+test("municipality relations are excluded and duplicate locality cards collapse", () => {
+  const municipality = feature("Новопсковська селищна громада", 39.05, 49.55, 320, "municipality");
+  const firstDonetsk = feature("Донецк", 37.8029, 48.0156, 318, "city");
+  const duplicateDonetsk = feature("Донецк", 37.8031, 48.0157, 319, "city");
+  const results = rankPhotonFeatures([municipality, firstDonetsk, duplicateDonetsk], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
+  assert.deepEqual(results.map((item) => item.label), ["Донецк — ДНР"]);
+});
+
 test("transit stations and platforms are excluded while actual settlements remain selectable", () => {
   const city = feature("Донецк", 37.8029, 48.0156, 321, "city");
   const station = feature("Донецк", 37.8028, 48.0155, 322, "station");
