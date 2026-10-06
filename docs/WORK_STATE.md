@@ -265,3 +265,14 @@
 - Live search still не разрешил «Донецкая область» как запрос региона; «Ялта — ДНР» остаётся выше «Ялта — Крым» из-за общего приоритета населённых пунктов в пяти целевых территориях. Оба пункта остаются на проверку/решение ранжирования. Coordinate-derived suffixes сами по себе не подменяются.
 - Run #142 (37432068925) на новом source head 3fb9601 queued; он должен проверить новый exact-name gate, тесты и сборку. После завершения добавить итог и проверить artifact: по 10 реальных совпадающих имён в каждой зоне, без административных районов и ложных результатов.
 - PR #12 по-прежнему open/draft; production/merge не менялись.
+
+
+### 2026-10-06 — regional search aliases and audited sample results
+
+- Follow-up run #142 resolved exactly 50 named settlements (10 each in DNR, LNR, Zaporizhzhia, Kherson and Crimea), all checked against their polygons. The shared Russian endpoint was randomly selected as Tikhoretsk. Valhalla succeeded for 49/50 pairs and OSRM for 49/50; 20 pairs exceeded the diagnostic difference threshold (>30 km or >5%). The largest spread was 3,502.2 km for Kushugum. Two other provider calls failed. LNR's selected sample contained no rural places because only ten exact-name candidates were available.
+- Those figures show provider disagreement, not route correctness. Do not treat the resulting route/price as confirmed until the route choice is independently checked. This matrix is a reproducible seeded sample, not proof that every settlement is searchable or routable.
+- Photon live output in the earlier artifact confirmed “Донецк — ДНР” first and “Донецк, Ростовская область, Россия” second. However “Донецкая область” had no matching region card: the provider returned Ukrainian “Донецька область,” which did not match the Russian query after normalization.
+- Added the existing explicit Ukrainian/Russian region aliases to the feature exact-name matcher. Added a regression for the Ukrainian “Донецька область” feature returned by a Russian query; the same matcher covers all four configured region aliases. Request URLs continue to ask Photon for Russian-language names.
+- Run #148 verify passed but its live job failed because a literal \\n had accidentally been written between JavaScript statements in the live-search probe. Repaired the script and pushed it; it now records ranking diagnostics instead of aborting when a live provider result differs.
+- Current code head `2983dea6f5b5c257ab87422e20c2e61f1c5e138d`: run #151 verify passed (87 tests, TypeScript, Next build). Its live probes are still in progress. Await that artifact before claiming regional alias behavior or refreshed route counts as live-confirmed.
+- PR #12 remains open and draft. No merge or production deployment.
