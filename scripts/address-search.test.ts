@@ -172,9 +172,9 @@ test("boosts exact namesake cities in special polygons while keeping unrelated p
   const yaltaCrimea = feature("Ялта", 34.1689, 44.4988, 53);
   const yaltaDnr = feature("Ялта", 37.2776, 46.9589, 54);
   const yalts = rankPhotonFeatures([yaltaCrimea, yaltaDnr], SPECIAL_TERRITORY_BOUNDARIES, "Ялта");
-  assert.equal(yalts[0].id, "N-54");
-  assert.equal(yalts[0].label, "Ялта — ДНР");
-  assert.equal(yalts[1].label, "Ялта — Крым");
+  assert.equal(yalts[0].id, "N-53");
+  assert.equal(yalts[0].label, "Ялта — Крым");
+  assert.equal(yalts[1].label, "Ялта — ДНР");
 });
 
 test("region query boosts exact oblast result and not a similarly named street", () => {
@@ -315,4 +315,14 @@ test("regional qualifier is removed from Photon query without changing full addr
   assert.deepEqual(qualified.map((url) => url.searchParams.get("q")), ["донецк", "донецк"]);
   const fullAddress = photonSearchUrls("Москва, Тверская улица, 1").map((value) => new URL(value));
   assert.equal(fullAddress[0].searchParams.get("q"), "Москва, Тверская улица, 1");
+});
+
+
+test("unqualified Yalta prefers Crimea's canonical city; an explicit region qualifier wins", () => {
+  const yaltaCrimea = feature("Ялта", 34.1689, 44.4988, 353, "city");
+  const yaltaDnr = feature("Ялта", 37.2776, 46.9589, 354, "village");
+  const features = [yaltaDnr, yaltaCrimea];
+  assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта").map((item) => item.id), ["N-353", "N-354"]);
+  assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта ДНР").map((item) => item.id), ["N-354", "N-353"]);
+  assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта Крым").map((item) => item.id), ["N-353", "N-354"]);
 });
