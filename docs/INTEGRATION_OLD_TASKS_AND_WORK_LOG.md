@@ -392,3 +392,16 @@ Run #148's verification job passed, but the live job stopped at a syntax error: 
 - Inter-provider route differences are large enough to alter mileage splits and prices. A route-provider consensus or independent route reference is still needed for those pairs.
 - The random matrix validates sampled endpoints, not all towns and villages or every possible Russian destination.
 - PR #12 remains open/draft; merge and production release were not performed.
+
+
+## 2026-10-06 — A0 сверка PR #12 и исправление run-status handoff
+
+- По GitHub API заново прочитаны PR #12, его head/base и workflow run #153. Фактические значения: open/draft; head `fix/v2-mobile-layout-2026-10-05` @ `49c10fcef0ebadeca0e2e97f564a435a36679fcc`; base `work/remove-v3-runtime-2026-10-02`; run #153 завершён `cancelled`.
+- Проверены jobs/steps run #153: verify — success (unit tests, TypeScript, Next build); live_probe — cancelled. Успели provider geometry/time, payment-point avoidance, Photon. Шаг случайной матрицы на 50 поселений cancelled; Yandex route comparison skipped. Preview deployment Ready, production status не менялся.
+- Исправлен PR body: удалено неверное утверждение, что live job выполняет матрицу и что run #153 дал итог матрицы. Зафиксирована отмена и отсутствие подтверждённого артефакта; результаты run #142 отделены как диагностика другого SHA.
+- Обновлены `docs/WORK_STATE.md` и этот журнал в рабочей PR-ветке.
+- Команды: `git rev-parse`/локальные файлы недоступны, поскольку рабочий каталог не содержит repository checkout; использованы GitHub read APIs для PR, commit checks, workflow run jobs и версионированных документов.
+- Проверки: GitHub verify job #153 success; 87 tests + TypeScript + Next build. Live run #153 incomplete/cancelled.
+- Branch/SHA/PR: `fix/v2-mobile-layout-2026-10-05` / `49c10fcef0ebadeca0e2e97f564a435a36679fcc` / PR #12 open draft.
+- Ограничения: локально нельзя запускать браузер/пакетные тесты; Photon полнота, route outliers, toll accuracy требуют дальнейшей проверки.
+- Следующий шаг: открыть новый workflow run на текущем документном SHA, дождаться/сохранить audit artifact; затем A1/A2 triage по крупным provider outliers.
