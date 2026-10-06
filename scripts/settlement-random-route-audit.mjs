@@ -65,7 +65,7 @@ function normalize(value) {
 const delay=(ms)=>new Promise((resolve)=>setTimeout(resolve,ms));
 async function photon(query, countryCode) {
   const url = new URL("https://photon.komoot.io/api/");
-  url.searchParams.set("q",query); url.searchParams.set("limit","15");
+  url.searchParams.set("q",query); url.searchParams.set("limit","15"); url.searchParams.set("lang","ru");
   if(countryCode) url.searchParams.set("countrycode",countryCode);
   let lastError;
   for(let attempt=0;attempt<3;attempt++) {
