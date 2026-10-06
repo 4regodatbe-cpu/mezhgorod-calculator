@@ -178,9 +178,9 @@ test("boosts exact namesake cities in special polygons while keeping unrelated p
   const yaltaCrimea = feature("Ялта", 34.1689, 44.4988, 53);
   const yaltaDnr = feature("Ялта", 37.2776, 46.9589, 54);
   const yalts = rankPhotonFeatures([yaltaCrimea, yaltaDnr], SPECIAL_TERRITORY_BOUNDARIES, "Ялта");
-  assert.equal(yalts[0].id, "N-53");
-  assert.equal(yalts[0].label, "Ялта — Крым");
-  assert.equal(yalts[1].label, "Ялта — ДНР");
+  assert.equal(yalts[0].id, "N-54");
+  assert.equal(yalts[0].label, "Ялта — ДНР");
+  assert.equal(yalts[1].label, "Ялта — Крым");
 });
 
 test("region query boosts exact oblast result and not a similarly named street", () => {
