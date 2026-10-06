@@ -276,3 +276,14 @@
 - Run #148 verify passed but its live job failed because a literal \\n had accidentally been written between JavaScript statements in the live-search probe. Repaired the script and pushed it; it now records ranking diagnostics instead of aborting when a live provider result differs.
 - Current code head `2983dea6f5b5c257ab87422e20c2e61f1c5e138d`: run #151 verify passed (87 tests, TypeScript, Next build). Its live probes are still in progress. Await that artifact before claiming regional alias behavior or refreshed route counts as live-confirmed.
 - PR #12 remains open and draft. No merge or production deployment.
+
+
+### 2026-10-06 — A0: повторная сверка GitHub, PR и live CI
+
+- Проверен открытый [PR #12](https://github.com/4regodatbe-cpu/mezhgorod-calculator/pull/12): draft, head branch `fix/v2-mobile-layout-2026-10-05`, head SHA `49c10fcef0ebadeca0e2e97f564a435a36679fcc`; base `work/remove-v3-runtime-2026-10-02`. PR не слит; production deployment не выполнялся.
+- Workflow run #153 (run ID `37435505636`) завершён `cancelled` в 08:46 UTC. Job `verify` прошёл: 87 тестов, TypeScript no-emit и Next build. Live job: provider geometry/time, payment-point avoidance и Photon search завершились успешно; seeded audit 50 населённых пунктов был отменён на шаге 9, Yandex route comparison пропущен. Артефакт и итог матрицы от этого run не подтверждены.
+- Preview Vercel для SHA #153 отмечен Ready; это preview, не production.
+- Исправлено устаревшее описание PR, которое ошибочно представляло матрицу как всё ещё выполняющуюся и приписывало run #153 завершённые результаты run #142. Исторические результаты #142 остаются диагностикой предыдущего SHA.
+- Доступный рабочий каталог в этой сессии не содержит checkout проекта; сверка и правки выполнены GitHub-интеграцией непосредственно в PR-ветке.
+- **Следующий шаг:** повторно запустить полный workflow после документационных правок и изучить live artifacts/причины отмены. Затем начать A1 — покрытие поселений, ранжирование и провайдеры; отдельно зафиксировать измеримые лимиты Photon.
+- **Подтверждённые оставшиеся риски:** Photon не доказывает полноту каталога; межпровайдерские расхождения велики; toll pricing и геометрия для отдельных benchmark маршрутов открыты. Run #153 не закрывает A6 матрицу.
