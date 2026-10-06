@@ -404,3 +404,6 @@
 - The exports provide parenthesized alternatives inconsistently; they do not provide a complete Ukrainian-spelling column for all settlements. The search code uses only listed alternatives and does not invent coordinates or transliterations.
 - The earlier historical work-log entry describing a Wikipedia-source plan is superseded for the address-search dataset. No entries from that work were copied into the RuWiki index.
 - Added address-search regression coverage for alias expansion, territorial bounding-box targeting, and display of the listed name. Verify and live search CI are pending on this commit. PR #12 remains open/draft; no merge or Production deployment was performed.
+
+
+- **CI correction:** verify run #37517080978 on the first RuWiki-index commit failed at module loading because Node 24 requires JSON import attributes. No address-search assertion ran in that file; 63 other tests passed. Added `with { type: "json" }` to the index import and pushed a follow-up commit; the rerun is the validation gate.

@@ -2,7 +2,7 @@ import { classifyTerritory, type VerifiedTerritory } from "./special-territory-g
 import { SPECIAL_TERRITORY_BOUNDARIES } from "./special-territory-boundaries.ts";
 import { inCrimea } from "./special-territory-policy.ts";
 import type { Suggestion } from "../app/v2/components/types.ts";
-import ruwikiSettlementIndex from "../data/ruwiki-settlement-index.json";
+import ruwikiSettlementIndex from "../data/ruwiki-settlement-index.json" with { type: "json" };
 
 export type PhotonFeature = {
   geometry?: { coordinates?: [number, number] };
