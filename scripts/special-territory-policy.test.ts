@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
-import { analyzeRoute, candidatePlans, endpointPolicy, followsPlan, inCrimea } from "../lib/special-territory-policy.ts";
+import { analyzeRoute, candidatePlans, endpointPolicy, findPlanLegStretchAnomaly, followsPlan, inCrimea } from "../lib/special-territory-policy.ts";
 import { splitRouteByTerritory, type VerifiedTerritory, type GeoPoint } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
 import { selectGeographicTerritoryOption } from "../lib/special-territory-options.ts";
@@ -18,6 +18,15 @@ test("real four polygons split transitions, Crimea ordinary, transit excluded",(
   assert.throws(()=>analyzeRoute([[38.98,45.04],[37.8029,48.0156],[40,50]],900000,50000,k,{lng:40,lat:50},zones),/SPECIAL_TRANSIT_EXCLUDED/);
   const all=splitRouteByTerritory({coordinates:[[32.6169,46.6354],[35.1396,47.8388],[37.8029,48.0156],[39.3078,48.574]],routedDistanceMeters:800000,routedDurationSeconds:40000,zones});
   for(const id of ["dnr","lnr","zaporizhzhia","kherson"] as const)assert.ok(all.territoryKm[id]>0);
+});
+test("rejects an anomalously long leg between required route controls",()=>{
+ const start={lat:47.71671,lng:35.20981},interior={lat:45.708,lng:34.395};
+ const detour:GeoPoint[]=[[start.lng,start.lat],[40,56],[50,60],[60,55],[50,45],[interior.lng,interior.lat]];
+ const anomaly=findPlanLegStretchAnomaly(detour,[start,interior]);
+ assert.ok(anomaly);assert.equal(anomaly.legIndex,0);assert.ok(anomaly.stretchRatio>10);
+ assert.equal(followsPlan(detour,[start,interior],"crimea",true),false);
+ const plausible:GeoPoint[]=[[start.lng,start.lat],[36,47],[interior.lng,interior.lat]];
+ assert.equal(findPlanLegStretchAnomaly(plausible,[start,interior]),null);
 });
 test("geographic route zone selects one corridor without forcing a mainland detour",()=>{
  const melitopol={lat:46.848,lng:35.365},plans=candidatePlans(k,melitopol,zones);

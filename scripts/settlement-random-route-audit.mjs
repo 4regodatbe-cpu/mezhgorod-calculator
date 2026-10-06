@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { writeFile } from "node:fs/promises";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
 import { classifyTerritory } from "../lib/special-territory-geometry.ts";
-import { inCrimea, candidatePlans, followsPlan, analyzeRoute } from "../lib/special-territory-policy.ts";
+import { inCrimea, candidatePlans, findPlanLegStretchAnomaly, followsPlan, analyzeRoute } from "../lib/special-territory-policy.ts";
 import { valhalla, osrmRoute } from "../lib/route-providers.ts";
 import { rankPhotonFeatures } from "../lib/photon-address-search.ts";
 
@@ -179,6 +179,12 @@ const routeResults=await mapLimit(samples,3,async(sample,index)=>{
     const item={status:"error"};
     try{
       const route=await provider.get(from,to,plan.positions);
+      const legBreakdown=(route.legs??[]).map((leg,legIndex)=>({index:legIndex,fromControl:plan.positions[legIndex]??null,toControl:plan.positions[legIndex+1]??null,distanceKm:Number.isFinite(leg.meters)?Math.round(leg.meters/100)/10:null,durationMinutes:Number.isFinite(leg.seconds)?Math.round(leg.seconds/60):null}));
+      const stretch=findPlanLegStretchAnomaly(route.coordinates,plan.positions);
+      if(stretch){
+        Object.assign(item,{error:`ROUTING_PLAN_LEG_STRETCH_${stretch.legIndex+1}_${stretch.stretchRatio.toFixed(1)}X`,distanceKm:Math.round(route.meters/100)/10,durationMinutes:Math.round(route.seconds/60),legBreakdown});
+        return item;
+      }
       if(!followsPlan(route.coordinates,plan.positions,plan.corridor,true)) throw new Error("ROUTING_PLAN_MISMATCH");
       const split=analyzeRoute(route.coordinates,route.meters,route.seconds,from.position,to.position,zones);
       const kilometerCheck=Math.abs(split.ordinaryKm+split.specialKm-route.meters/1000);

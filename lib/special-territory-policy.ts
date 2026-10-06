@@ -43,14 +43,43 @@ export function analyzeRoute(coordinates: GeoPoint[], meters:number,seconds:numb
   if(!endpointPolicy(from,to,zones).specialEndpoint && split.specialKm>0) throw new Error("SPECIAL_TRANSIT_EXCLUDED");
   return split;
 }
-export function followsPlan(coordinates: GeoPoint[], positions:Position[], corridor:"mainland"|"crimea", specialEndpoint:boolean) {
-  // Verify ordered passage near each hidden control; rejected router responses cannot inherit a direction label.
-  let index=0;
+const MAX_PLAN_LEG_STRETCH=10;
+export type PlanLegStretchAnomaly={legIndex:number;routeKm:number;directKm:number;stretchRatio:number};
+function coordinateDistanceKm(a:GeoPoint,b:GeoPoint) {
+  const radians=Math.PI/180,lat1=a[1]*radians,lat2=b[1]*radians,dLat=(b[1]-a[1])*radians,dLng=(b[0]-a[0])*radians;
+  const h=Math.sin(dLat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLng/2)**2;
+  return 6371*2*Math.asin(Math.sqrt(h));
+}
+function orderedPlanControlIndexes(coordinates:GeoPoint[],positions:Position[]) {
+  const indexes:number[]=[];let index=0;
   for(const p of positions) {
     let found=false;
-    for(;index<coordinates.length;index++) if(Math.hypot((coordinates[index][0]-p.lng)*Math.cos(p.lat*Math.PI/180),coordinates[index][1]-p.lat)<0.025) {found=true;break;}
-    if(!found)return false;
+    for(;index<coordinates.length;index++) if(Math.hypot((coordinates[index][0]-p.lng)*Math.cos(p.lat*Math.PI/180),coordinates[index][1]-p.lat)<0.025) {indexes.push(index);found=true;break;}
+    if(!found)return null;
   }
+  return indexes;
+}
+function stretchAnomalyFromIndexes(coordinates:GeoPoint[],positions:Position[],indexes:number[]):PlanLegStretchAnomaly|null {
+  for(let legIndex=0;legIndex<positions.length-1;legIndex++) {
+    const directKm=coordinateDistanceKm([positions[legIndex].lng,positions[legIndex].lat],[positions[legIndex+1].lng,positions[legIndex+1].lat]);
+    if(directKm<20)continue;
+    let routeKm=0;
+    for(let i=indexes[legIndex]+1;i<=indexes[legIndex+1];i++)routeKm+=coordinateDistanceKm(coordinates[i-1],coordinates[i]);
+    const stretchRatio=routeKm/directKm;
+    if(stretchRatio>MAX_PLAN_LEG_STRETCH)return {legIndex,routeKm,directKm,stretchRatio};
+  }
+  return null;
+}
+/** Detect a routed control leg over ten times its straight-line lower bound. */
+export function findPlanLegStretchAnomaly(coordinates:GeoPoint[],positions:Position[]):PlanLegStretchAnomaly|null {
+  const indexes=orderedPlanControlIndexes(coordinates,positions);
+  return indexes?stretchAnomalyFromIndexes(coordinates,positions,indexes):null;
+}
+export function followsPlan(coordinates: GeoPoint[], positions:Position[], corridor:"mainland"|"crimea", specialEndpoint:boolean) {
+  // Verify ordered passage near each hidden control; rejected router responses cannot inherit a direction label.
+  const indexes=orderedPlanControlIndexes(coordinates,positions);
+  if(!indexes)return false;
+  if(stretchAnomalyFromIndexes(coordinates,positions,indexes))return false;
   if(specialEndpoint && corridor==="mainland" && !inCrimea(positions[0]) && !inCrimea(positions.at(-1)!)) {
     if(coordinates.some(([lng,lat])=>inCrimea({lng,lat})))return false;
   }

@@ -5,6 +5,7 @@ import { POST } from "../app/api/v2/calculate/route.ts";
 import { POST as classify } from "../app/api/v2/classify/route.ts";
 import { osrmRoute, valhalla } from "../lib/route-providers.ts";
 let transit=false;
+let overlongValhalla=false;
 const requestedPaths:number[][][]=[];
 const originalFetch=globalThis.fetch;
 const point=(lng:number,lat:number)=>({label:"Название не определяет зону",position:{lng,lat}});
@@ -18,7 +19,10 @@ globalThis.fetch=async(input)=>{
     const q=JSON.parse(url.searchParams.get('json')!);const points=q.locations.map((p:{lon:number;lat:number})=>[p.lon,p.lat]);
     requestedPaths.push(points);
     if(transit)return response({},503);
-    const legs=points.slice(1).map((p:number[],i:number)=>({shape:polyline([points[i],p]),summary:{length:100,time:(i+1)*1000},maneuvers:[]}));
+    const legs=points.slice(1).map((p:number[],i:number)=>{
+      const shapePoints=overlongValhalla&&i===0?[points[i],[40,56],[50,60],[60,55],[50,45],p]:[points[i],p];
+      return {shape:polyline(shapePoints),summary:{length:100,time:(i+1)*1000},maneuvers:[]};
+    });
     return response({trip:{summary:{length:legs.length*100,time:legs.reduce((s:number,l:{summary:{time:number}})=>s+l.summary.time,0)},legs}});
   }
   if(url.hostname==='router.project-osrm.org') {
@@ -57,6 +61,17 @@ test('server geocoding automatically enables special rates; manual ordinary rema
   assert.ok(body.options[0].fast.quality.message,'special route exposes route quality to the UI');
   assert.equal(body.options[0].fast.quality.providers.length,2);
   const manual=await POST(req({from,to:point(37.8029,48.0156),mode:'standard',modeOverride:true}));const m=await manual.json();assert.equal(manual.status,200);assert.equal(m.mode,'standard');assert.equal(m.automaticMode,'dual');assert.ok(m.options[0].fast.pricingByVehicle.comfort.pricingSegments.every((s:{type:string})=>s.type==='normal'));
+});
+test('rejects extreme control-leg detours and warns on the surviving provider',async()=>{
+  overlongValhalla=true;
+  try{
+    const closeFrom=point(37.8029,48.0156),closeTo=point(37.81,48.02);
+    const r=await POST(req({from:closeFrom,to:closeTo,mode:'dual',modeOverride:true}));
+    const body=await r.json();assert.equal(r.status,200,JSON.stringify(body));
+    assert.equal(body.options.length,1);assert.equal(body.options[0].provider,'OSRM');
+    assert.equal(body.options[0].fast.quality.status,'warning');
+    assert.match(body.options[0].fast.quality.message,/аномальной длиной контрольного сегмента/u);
+  }finally{overlongValhalla=false;}
 });
 test('transit is removed even in manual ordinary mode, not returned as zero price',async()=>{
   transit=true;
