@@ -48,40 +48,65 @@ function shuffled(items) {
 function normalize(value) {
   return String(value ?? "").toLocaleLowerCase("ru-RU").replace(/ё/g,"е").replace(/і/g,"и").replace(/ї/g,"и").replace(/є/g,"е").replace(/ґ/g,"г").replace(/[ьъ]/g,"").replace(/[^\p{L}\p{N}]+/gu," ").trim().replace(/\s+/g," ");
 }
+const delay=(ms)=>new Promise((resolve)=>setTimeout(resolve,ms));
 async function photon(query, countryCode) {
   const url = new URL("https://photon.komoot.io/api/");
   url.searchParams.set("q",query); url.searchParams.set("limit","15");
   if(countryCode) url.searchParams.set("countrycode",countryCode);
-  const response = await fetch(url,{headers:{Accept:"application/json","User-Agent":"MezhgorodCalculator/2.0"},signal:AbortSignal.timeout(15000)});
-  if(!response.ok) throw new Error(`PHOTON_HTTP_${response.status}`);
-  const payload = await response.json();
-  return Array.isArray(payload.features)?payload.features:[];
+  let lastError;
+  for(let attempt=0;attempt<3;attempt++) {
+    try {
+      const response = await fetch(url,{headers:{Accept:"application/json","User-Agent":"MezhgorodCalculator/2.0"},signal:AbortSignal.timeout(15000)});
+      if((response.status===429||response.status===503)&&attempt<2){await delay(1000*(attempt+1));continue;}
+      if(!response.ok) throw new Error(`PHOTON_HTTP_${response.status}`);
+      const payload = await response.json();
+      return Array.isArray(payload.features)?payload.features:[];
+    } catch(error) {
+      lastError=error;
+      if(attempt<2) await delay(500*(attempt+1));
+    }
+  }
+  throw lastError instanceof Error?lastError:new Error("PHOTON_UNAVAILABLE");
 }
 async function resolve(name, area) {
-  const outcomes = await Promise.allSettled([photon(name),photon(name,"UA"),...(area==="crimea"?[photon(name,"RU")]:[])]);
-  const features = outcomes.flatMap((result)=>result.status==="fulfilled"?result.value:[]);
+  const sources=[{id:"global",countryCode:null},{id:"UA",countryCode:"UA"},...(area==="crimea"?[{id:"RU",countryCode:"RU"}]:[])];
   const diagnostics=searchDiagnostics[area];
-  diagnostics.features+=features.length;
-  for(const feature of features) {
-    const p=feature.properties ?? {};
-    const value=String(p.osm_value ?? "").toLowerCase();
-    const key=String(p.osm_key ?? "").toLowerCase();
-    const place=key==="place" && placeValues.has(value);
-    const namedAdministrativeLocality=key==="boundary" && value==="administrative";
-    if(place) diagnostics.placeFeatures++;
-    if(namedAdministrativeLocality) diagnostics.administrativeFeatures++;
-    if(!place && !namedAdministrativeLocality) continue;
-    const suggestion=rankPhotonFeatures([feature],zones,name,1)[0];
-    if(!suggestion) continue;
-    const {lat,lng}=suggestion.position;
-    let territory;
-    try { territory=classifyTerritory({lat,lng},zones); } catch { continue; }
-    const inArea=area==="crimea"?!territory&&inCrimea({lat,lng}):territory===area;
-    if(!inArea) continue;
-    diagnostics.insideTargetPolygon++;
-    diagnostics.accepted++;
-    return {requested:name,label:suggestion.label,position:suggestion.position,osmType:place?value:"administrative",osmId:p.osm_id ?? null,group:place&&["village","hamlet","isolated_dwelling","farm"].includes(value)?"rural":"urban"};
+  const errors=[];
+  for(let sourceIndex=0;sourceIndex<sources.length;sourceIndex++) {
+    const source=sources[sourceIndex];
+    diagnostics.queriesAttempted++;
+    let features;
+    try { features=await photon(name,source.countryCode); }
+    catch(error) {
+      errors.push(error instanceof Error?error.message:String(error));
+      diagnostics.providerErrors++;
+      continue;
+    }
+    diagnostics.features+=features.length;
+    diagnostics[`${source.id}Features`]=(diagnostics[`${source.id}Features`]??0)+features.length;
+    for(const feature of features) {
+      const p=feature.properties ?? {};
+      const value=String(p.osm_value ?? "").toLowerCase();
+      const key=String(p.osm_key ?? "").toLowerCase();
+      const place=key==="place" && placeValues.has(value);
+      const namedAdministrativeLocality=key==="boundary" && value==="administrative";
+      if(place) diagnostics.placeFeatures++;
+      if(namedAdministrativeLocality) diagnostics.administrativeFeatures++;
+      if(!place && !namedAdministrativeLocality) continue;
+      const suggestion=rankPhotonFeatures([feature],zones,name,1)[0];
+      if(!suggestion) continue;
+      const {lat,lng}=suggestion.position;
+      let territory;
+      try { territory=classifyTerritory({lat,lng},zones); } catch { continue; }
+      const inArea=area==="crimea"?!territory&&inCrimea({lat,lng}):territory===area;
+      if(!inArea) continue;
+      diagnostics.insideTargetPolygon++;
+      diagnostics.accepted++;
+      return {requested:name,label:suggestion.label,position:suggestion.position,osmType:place?value:"administrative",osmId:p.osm_id ?? null,group:place&&["village","hamlet","isolated_dwelling","farm"].includes(value)?"rural":"urban"};
+    }
+    if(sourceIndex<sources.length-1) await delay(250);
   }
+  if(errors.length===sources.length) throw new Error(errors.join(" | "));
   return null;
 }
 async function mapLimit(values,limit,fn) {
@@ -95,12 +120,18 @@ const resolvedByArea={};
 const resolutionErrors=[];
 const searchDiagnostics={};
 for(const [area,names] of Object.entries(pools)) {
-  searchDiagnostics[area]={queries:names.length,features:0,placeFeatures:0,administrativeFeatures:0,insideTargetPolygon:0,accepted:0};
-  const outcomes=await mapLimit(names,4,async(name)=>{
-    try{return await resolve(name,area)}catch(error){resolutionErrors.push({area,name,error:error instanceof Error?error.message:String(error)});return null;}
-  });
+  searchDiagnostics[area]={queries:names.length,queriesAttempted:0,providerErrors:0,features:0,globalFeatures:0,UAFeatures:0,RUFeatures:0,placeFeatures:0,administrativeFeatures:0,insideTargetPolygon:0,accepted:0};
   const unique=new Map();
-  for(const item of outcomes.filter(Boolean)) unique.set(item.osmId ?? `${item.position.lng},${item.position.lat}`,item);
+  const queryOrder=shuffled(names);
+  for(const name of queryOrder) {
+    let item;
+    try { item=await resolve(name,area); }
+    catch(error) { resolutionErrors.push({area,name,error:error instanceof Error?error.message:String(error)}); continue; }
+    if(item) unique.set(item.osmId ?? `${item.position.lng},${item.position.lat}`,item);
+    const available=[...unique.values()];
+    const ruralCount=available.filter((candidate)=>candidate.group==="rural").length;
+    if(available.length>=10 && ruralCount>=3) break;
+  }
   const all=[...unique.values()];
   const rural=shuffled(all.filter((item)=>item.group==="rural"));
   const urban=shuffled(all.filter((item)=>item.group==="urban"));
