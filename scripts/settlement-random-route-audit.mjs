@@ -8,11 +8,11 @@ import { rankPhotonFeatures } from "../lib/photon-address-search.ts";
 
 const seed = Number(process.env.ADDRESS_ROUTE_AUDIT_SEED ?? "20261006");
 const pools = {
-  dnr:["Донецк","Мариуполь","Макеевка","Горловка","Енакиево","Покровск","Краматорск","Славянск","Бахмут","Волноваха","Дружковка","Торез","Снежное","Харцызск","Амвросиевка","Новоазовск","Ясиноватая","Докучаевск","Моспино","Иловайск"],
+  dnr:["Донецк","Мариуполь","Макеевка","Горловка","Енакиево","Покровск","Краматорск","Славянск","Бахмут","Волноваха","Дружковка","Торез","Снежное","Харцызск","Амвросиевка","Новоазовск","Ясиноватая","Докучаевск","Моспино","Мангуш","Никольское","Сартана","Талаковка","Широкино","Гранитное","Старомлиновка","Бойковское","Тельманово","Урзуф","Володарское","Старобешево","Комсомольское","Иловайск"],
   lnr:["Луганск","Алчевск","Северодонецк","Лисичанск","Рубежное","Старобельск","Сорокино","Ровеньки","Антрацит","Довжанск","Кадиевка","Брянка","Первомайск","Сватово","Кременная","Счастье","Новопсков","Троицкое","Белокуракино","Марковка"],
-  zaporizhzhia:["Запорожье","Мелитополь","Бердянск","Энергодар","Токмак","Васильевка","Пологи","Орехов","Гуляйполе","Днепрорудное","Молочанск","Приморск","Каменка-Днепровская","Акимовка","Кирилловка","Вольнянск","Черниговка","Розовка","Пришиб","Терпенье"],
-  kherson:["Херсон","Новая Каховка","Каховка","Алешки","Геническ","Скадовск","Голая Пристань","Берислав","Таврийск","Каланчак","Чаплинка","Ивановка","Великая Лепетиха","Нижние Серогозы","Новотроицкое","Аскания-Нова","Счастливцево","Лазурное","Белозерка","Высокополье"],
-  crimea:["Симферополь","Севастополь","Ялта","Феодосия","Керчь","Евпатория","Джанкой","Алушта","Судак","Бахчисарай","Саки","Армянск","Красноперекопск","Белогорск","Черноморское","Ленино","Советский","Щёлкино","Гурзуф","Форос"],
+  zaporizhzhia:["Запорожье","Мелитополь","Бердянск","Энергодар","Токмак","Васильевка","Пологи","Орехов","Гуляйполе","Днепрорудное","Молочанск","Приморск","Каменка-Днепровская","Акимовка","Кирилловка","Вольнянск","Черниговка","Розовка","Пришиб","Терпенье","Балабино","Кушугум","Новониколаевка","Комсомольское","Верхний Токмак"],
+  kherson:["Херсон","Новая Каховка","Каховка","Алешки","Геническ","Скадовск","Голая Пристань","Берислав","Таврийск","Каланчак","Чаплинка","Ивановка","Великая Лепетиха","Нижние Серогозы","Новотроицкое","Аскания-Нова","Счастливцево","Лазурное","Белозерка","Высокополье","Олешки","Цюрупинск","Казачьи Лагеря","Раденск","Чулаковка","Старая Збурьевка","Новая Збурьевка","Горностаевка","Любимовка","Малая Лепетиха","Верхний Рогачик","Рыково"],
+  crimea:["Симферополь","Севастополь","Ялта","Феодосия","Керчь","Евпатория","Джанкой","Алушта","Судак","Бахчисарай","Саки","Армянск","Красноперекопск","Белогорск","Черноморское","Ленино","Советский","Щёлкино","Гурзуф","Форос","Партенит","Коктебель","Гаспра","Кореиз","Алупка","Массандра","Новый Свет","Орджоникидзе","Нижнегорский","Раздольное","Почтовое","Песчаное","Молодёжное","Мазанка","Кировское"],
 };
 const russianPool = [
   {name:"Ростов-на-Дону",position:{lat:47.2357,lng:39.7015}},
@@ -58,20 +58,29 @@ async function photon(query, countryCode) {
   return Array.isArray(payload.features)?payload.features:[];
 }
 async function resolve(name, area) {
-  const outcomes = await Promise.allSettled([photon(name),photon(name,"UA")]);
+  const outcomes = await Promise.allSettled([photon(name),photon(name,"UA"),...(area==="crimea"?[photon(name,"RU")]:[])]);
   const features = outcomes.flatMap((result)=>result.status==="fulfilled"?result.value:[]);
-  const ranked = rankPhotonFeatures(features,zones,name,20);
-  for(const item of ranked) {
-    const p=features.find((feature)=>String(feature.properties?.osm_id ?? "")===String(item.id).split("-").at(-1));
-    if(!p) continue;
-    const value=String(p.properties?.osm_value ?? "").toLowerCase();
-    const key=String(p.properties?.osm_key ?? "").toLowerCase();
-    if(key!=="place" || !placeValues.has(value)) continue;
-    const {lat,lng}=item.position;
-    const territory=classifyTerritory({lat,lng},zones);
+  const diagnostics=searchDiagnostics[area];
+  diagnostics.features+=features.length;
+  for(const feature of features) {
+    const p=feature.properties ?? {};
+    const value=String(p.osm_value ?? "").toLowerCase();
+    const key=String(p.osm_key ?? "").toLowerCase();
+    const place=key==="place" && placeValues.has(value);
+    const namedAdministrativeLocality=key==="boundary" && value==="administrative";
+    if(place) diagnostics.placeFeatures++;
+    if(namedAdministrativeLocality) diagnostics.administrativeFeatures++;
+    if(!place && !namedAdministrativeLocality) continue;
+    const suggestion=rankPhotonFeatures([feature],zones,name,1)[0];
+    if(!suggestion) continue;
+    const {lat,lng}=suggestion.position;
+    let territory;
+    try { territory=classifyTerritory({lat,lng},zones); } catch { continue; }
     const inArea=area==="crimea"?!territory&&inCrimea({lat,lng}):territory===area;
     if(!inArea) continue;
-    return {requested:name,label:item.label,position:item.position,osmType:value,osmId:p.properties?.osm_id ?? null,group:["village","hamlet","isolated_dwelling","farm"].includes(value)?"rural":"urban"};
+    diagnostics.insideTargetPolygon++;
+    diagnostics.accepted++;
+    return {requested:name,label:suggestion.label,position:suggestion.position,osmType:place?value:"administrative",osmId:p.osm_id ?? null,group:place&&["village","hamlet","isolated_dwelling","farm"].includes(value)?"rural":"urban"};
   }
   return null;
 }
@@ -84,7 +93,9 @@ async function mapLimit(values,limit,fn) {
 }
 const resolvedByArea={};
 const resolutionErrors=[];
+const searchDiagnostics={};
 for(const [area,names] of Object.entries(pools)) {
+  searchDiagnostics[area]={queries:names.length,features:0,placeFeatures:0,administrativeFeatures:0,insideTargetPolygon:0,accepted:0};
   const outcomes=await mapLimit(names,4,async(name)=>{
     try{return await resolve(name,area)}catch(error){resolutionErrors.push({area,name,error:error instanceof Error?error.message:String(error)});return null;}
   });
@@ -128,7 +139,7 @@ const routeResults=await mapLimit(samples,3,async(sample,index)=>{
   row.providerDistanceDifferenceKm=distances.length===2?Math.round(Math.abs(distances[0]-distances[1])*10)/10:null;
   return row;
 });
-const summary={seed,generatedAt:new Date().toISOString(),selectionMethod:"Seeded shuffle of live-geocoded place=* features; up to 3 rural settlements are selected first, then remaining slots are filled from the pool. Every selected coordinate is checked against its named polygon.",russianEndpoint:russian,areas:Object.fromEntries(Object.entries(resolvedByArea).map(([area,result])=>[area,{availableCount:result.availableCount,ruralAvailable:result.ruralAvailable,urbanAvailable:result.urbanAvailable,selectedCount:result.selected.length}])),resolutionErrors,routeCount:routeResults.length,providerSuccesses:Object.fromEntries(providers.map((provider)=>[provider.name,routeResults.filter((row)=>row.providers[provider.name]?.status==="ok").length])),routeResults};
+const summary={seed,generatedAt:new Date().toISOString(),searchDiagnostics,selectionMethod:"Seeded shuffle of live-geocoded place=* features; up to 3 rural settlements are selected first, then remaining slots are filled from the pool. Every selected coordinate is checked against its named polygon.",russianEndpoint:russian,areas:Object.fromEntries(Object.entries(resolvedByArea).map(([area,result])=>[area,{availableCount:result.availableCount,ruralAvailable:result.ruralAvailable,urbanAvailable:result.urbanAvailable,selectedCount:result.selected.length}])),resolutionErrors,routeCount:routeResults.length,providerSuccesses:Object.fromEntries(providers.map((provider)=>[provider.name,routeResults.filter((row)=>row.providers[provider.name]?.status==="ok").length])),routeResults};
 await writeFile("settlement-random-route-audit.json",JSON.stringify(summary,null,2)+"\n");
 console.log(JSON.stringify({seed,areas:summary.areas,russianEndpoint:russian.name,routeCount:summary.routeCount,providerSuccesses:summary.providerSuccesses}));
 for(const [area,result] of Object.entries(resolvedByArea)) assert.equal(result.selected.length,10,`Need 10 resolved settlements in ${area}; found ${result.selected.length}`);
