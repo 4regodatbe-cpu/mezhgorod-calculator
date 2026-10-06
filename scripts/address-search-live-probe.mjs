@@ -1,4 +1,3 @@
-import assert from "node:assert/strict";
 import { writeFile } from "node:fs/promises";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
 import { photonSearchUrls, rankPhotonFeatures } from "../lib/photon-address-search.ts";
