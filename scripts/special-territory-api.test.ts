@@ -68,8 +68,8 @@ test('rejects extreme control-leg detours and warns on the surviving provider',a
     const closeFrom=point(37.8029,48.0156),closeTo=point(37.81,48.02);
     const r=await POST(req({from:closeFrom,to:closeTo,mode:'dual',modeOverride:true}));
     const body=await r.json();assert.equal(r.status,200,JSON.stringify(body));
-    assert.equal(body.options.length,1);assert.equal(body.options[0].provider,'OSRM');
-    assert.equal(body.options[0].fast.quality.status,'warning');
+    assert.equal(body.options.length,1);assert.deepEqual(body.options[0].fast.quality.providers,['OSRM','Valhalla']);
+    assert.equal(body.options[0].fast.quality.status,'warning');assert.match(body.options[0].fast.quality.message,/Valhalla/u);
     assert.match(body.options[0].fast.quality.message,/аномальной длиной контрольного сегмента/u);
   }finally{overlongValhalla=false;}
 });
