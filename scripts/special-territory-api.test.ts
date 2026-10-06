@@ -65,7 +65,7 @@ test('server geocoding automatically enables special rates; manual ordinary rema
 test('rejects extreme control-leg detours and warns on the surviving provider',async()=>{
   overlongValhalla=true;
   try{
-    const closeFrom=point(37.8029,48.0156),closeTo=point(37.81,48.02);
+    const closeFrom=point(37.8029,48.0156),closeTo=point(37,47.5);
     const r=await POST(req({from:closeFrom,to:closeTo,mode:'dual',modeOverride:true}));
     const body=await r.json();assert.equal(r.status,200,JSON.stringify(body));
     assert.equal(body.options.length,1);assert.deepEqual([...body.options[0].fast.quality.providers].sort(),['OSRM','Valhalla']);
