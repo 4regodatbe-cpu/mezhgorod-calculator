@@ -73,7 +73,7 @@ async function photon(query, countryCode) {
       const response = await fetch(url,{headers:{Accept:"application/json","User-Agent":"MezhgorodCalculator/2.0"},signal:AbortSignal.timeout(15000)});
       if((response.status===429||response.status===503)&&attempt<2){await delay(1000*(attempt+1));continue;}
       if(!response.ok) {
-        const body=(await response.text()).replace(/\\s+/g," ").slice(0,240);
+        const body=(await response.text()).replace(/\s+/g," ").slice(0,240);
         throw new Error(`PHOTON_HTTP_${response.status}: ${body}`);
       }
       const payload = await response.json();
@@ -82,7 +82,7 @@ async function photon(query, countryCode) {
       lastError=error;
       // A 4xx is a deterministic request/provider rejection; repeating the same
       // query only burns the live-audit budget and cannot recover it.
-      if(error instanceof Error && /^PHOTON_HTTP_4\\d\\d:/u.test(error.message)) throw error;
+      if(error instanceof Error && /^PHOTON_HTTP_4\d\d:/u.test(error.message)) throw error;
       if(attempt<2) await delay(500*(attempt+1));
     }
   }
