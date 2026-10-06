@@ -4,7 +4,7 @@ import { photonSearchUrls, rankPhotonFeatures } from "../lib/photon-address-sear
 import { classifyTerritory } from "../lib/special-territory-geometry.ts";
 import { inCrimea } from "../lib/special-territory-policy.ts";
 
-const queries = ["Донецк", "Донецкая область", "Макеевка", "Луганск", "Ялта", "Севастополь", "Краснодар", "Москва", "Запорожье", "Харьков, Украина"];
+const queries = ["Донецк", "Донецкая область", "Макеевка", "Луганск", "Ялта", "Ялта ДНР", "Ялта Крым", "Севастополь", "Краснодар", "Москва", "Запорожье", "Харьков, Украина"];
 const reports = [];
 for (const query of queries) {
   const outcomes = await Promise.allSettled(photonSearchUrls(query).map(async (url) => {
@@ -21,6 +21,9 @@ for (const query of queries) {
     donetskRostovSecond: query === "Донецк" ? /Ростовская область/u.test(items[1]?.label ?? "") : undefined,
     moscowFirst: query === "Москва" ? items[0]?.label === "Москва, Россия" : undefined,
     makeyevkaDnrPresent: query === "Макеевка" ? items.some((item) => item.label === "Макеевка — ДНР") : undefined,
+    yaltaCrimeaFirst: query === "Ялта" ? items[0]?.label === "Ялта — Крым" : undefined,
+    yaltaDnrFirst: query === "Ялта ДНР" ? items[0]?.label === "Ялта — ДНР" : undefined,
+    yaltaCrimeaQualifiedFirst: query === "Ялта Крым" ? items[0]?.label === "Ялта — Крым" : undefined,
   };
   const rendered = items.slice(0, 8).map((item) => ({
     title: item.title,
