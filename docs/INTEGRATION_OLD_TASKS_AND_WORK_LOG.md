@@ -374,3 +374,21 @@ The supplied Android screenshots showed the brand header and theme control being
 - Новый run #142 (37432068925) запущен для проверки точного совпадения и повторного живого random matrix. Внести реальные результаты ниже.
 - Региональный запрос «Донецкая область» по-прежнему не имеет целевого результата в первых восьми подсказках Photon. Для «Ялта» первым результатом является одноимённый объект ДНР, второй — Крымский; региональный priority policy пока намеренно оставляет оба целевых совпадения перед внешними регионами. Это отдельное решение релевантности выдачи, не ошибка координатного суффикса.
 - PR #12 оставлен open/draft; merge/deploy не выполнялись.
+
+
+### 2026-10-06 — Russian region aliases and route-matrix interpretation
+
+#### What the live audit established
+The seeded settlement audit (run #142, seed 20261006) sampled ten polygon-validated, exact-name place features per area: DNR, LNR, Zaporizhzhia Oblast, Kherson Oblast and Crimea. A random Russian endpoint was Tikhoretsk. The test issued routes for all 50 pairs through Valhalla and OSRM. Valhalla returned 49/50 and OSRM 49/50; there were 20 pairwise distance warnings above 30 km or 5%, including a 3,502.2 km spread for Kushugum. One OSRM fetch and one Valhalla routing-plan mismatch failed. Thus, matching geocoding points to polygons and obtaining plausible geometry splits do not establish that the chosen route is correct. Keep these results diagnostic and do not claim that the route matrix confirms pricing accuracy. Only ten exact Photon candidates were available in LNR; the selected ten contained no rural locality.
+
+#### Address search correction
+The run #142 Photon artifact showed the explicit Donetsk ordering worked: the DNR city first, Rostov Oblast namesake second, without duplicate cards. It also showed the region query was incomplete: Photon supplied “Донецька область” for the Russian query “Донецкая область”; the matcher only considered the Russian query and locality aliases, so the relevant administrative feature was not marked exact. Updated `rankPhotonFeatures` to include the same explicit aliases used to query Photon in its exact-name matching. Added a test using the Ukrainian administrative name and Russian request. Coordinate polygons still decide the suffix and territory; name aliases only associate a response with the requested region and cannot assign a territory by text.
+
+#### Live-probe repair and verification
+Run #148's verification job passed, but the live job stopped at a syntax error: the source had a literal backslash-n between the final write and console logging statements. Rewrote the script ending with a real line break and kept live ranking checks diagnostic so an unexpected provider result is captured in the artifact rather than hiding the whole search report. The fix was run through CI again. On source head `2983dea6f5b5c257ab87422e20c2e61f1c5e138d`, run #151 completed verification successfully: 87 tests passed, `tsc --noEmit` passed and `next build` compiled successfully. Live address and routing probes are still running; their artifact is required before considering the search correction live-confirmed.
+
+#### Remaining limitations
+- Photon may not contain every settlement, and live results vary with its data and language handling. The supported area label is derived from coordinates only after a feature is returned.
+- Inter-provider route differences are large enough to alter mileage splits and prices. A route-provider consensus or independent route reference is still needed for those pairs.
+- The random matrix validates sampled endpoints, not all towns and villages or every possible Russian destination.
+- PR #12 remains open/draft; merge and production release were not performed.
