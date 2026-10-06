@@ -15,7 +15,7 @@ test("searches globally and separately within Ukraine and requests Russian resul
   assert.equal(urls[0].searchParams.get("countrycode"), null);
   assert.equal(urls[0].searchParams.get("limit"), "20");
   assert.equal(urls[1].searchParams.get("countrycode"), "UA");
-  assert.equal(urls[1].searchParams.get("lang"), null);
+  assert.ok(urls.every((url) => url.searchParams.get("lang") === "ru"));
 });
 
 
