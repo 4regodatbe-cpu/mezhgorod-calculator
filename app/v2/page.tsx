@@ -77,9 +77,9 @@ export default function V2Page() {
         specialRates={specialRates}
         onSpecialRatesChange={(value)=>{setSpecialRates(value);clearResult();}}
         urgent={urgent}
-        onUrgentChange={setUrgent}
+        onUrgentChange={(enabled)=>{setUrgent(enabled);clearResult();}}
         urgentPercent={urgentPercent}
-        onUrgentPercentChange={setUrgentPercent}
+        onUrgentPercentChange={(percent)=>{setUrgentPercent(percent);clearResult();}}
         loading={loading}
         hasResult={Boolean(result)}
         error={error}
