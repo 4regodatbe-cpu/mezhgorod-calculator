@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "workflowRun": 181,
+    "runId": 37477264095,
+    "artifact": "special-territory-live-probe-37477264095",
+    "seed": 20261006,
+    "generatedAt": "2026-10-06T14:39:27.445Z"
+  },
+  "russianEndpoint": {
+    "name": "Тихорецк",
+    "position": {
+      "lat": 45.8547,
+      "lng": 40.1259
+    }
+  },
+  "areas": {
+    "dnr": {
+      "availableCount": 10,
+      "ruralAvailable": 3,
+      "urbanAvailable": 7,
+      "selectedCount": 10,
+      "selected": [
+        {
+          "requested": "Гранитное",
+          "label": "Гранітне — ДНР",
+          "position": {
+            "lat": 47.4593941,
+            "lng": 37.866983
+          },
+          "osmType": "village",
+          "group": "rural"
+        },
+        {
+          "requested": "Широкино",
+          "label": "Широкине — ДНР",
+          "position": {
+            "lat": 47.09822,
+            "lng": 37.81769
+          },
+          "osmType": "village",
+          "group": "rural"
+        },
+        {
+          "requested": "Урзуф",
+          "label": "Урзуф — ДНР",
+          "position": {
+            "lat": 46.9153594,
+            "lng": 37.0984904
+          },
+          "osmType": "village",
+          "group": "rural"
+        },
+        {
+          "requested": "Волноваха",
+          "label": "Волноваха — ДНР",
+          "position": {
+            "lat": 47.6014517,
+            "lng": 37.4934079
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Талаковка",
+          "label": "Талаківка — ДНР",
+          "position": {
+            "lat": 47.1929562,
+            "lng": 37.7253016
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Краматорск",
+          "label": "Краматорськ — ДНР",
+          "position": {
+            "lat": 48.7389415,
+            "lng": 37.5843812
+          },
+          "osmType": "city",
+          "group": "urban"
+        },
+        {
+          "requested": "Харцызск",
+          "label": "Харцизьк — ДНР",
+          "position": {
+            "lat": 48.0339524,
+            "lng": 38.149804
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Новоазовск",
+          "label": "Новоазовськ — ДНР",
+          "position": {
+            "lat": 47.1138718,
+            "lng": 38.0830911
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Донецк",
+          "label": "Донецк — ДНР",
+          "position": {
+            "lat": 48.0158753,
+            "lng": 37.8013407
+          },
+          "osmType": "city",
+          "group": "urban"
+        },
+        {
+          "requested": "Бахмут",
+          "label": "Бахмут — ДНР",
+          "position": {
+            "lat": 48.5894123,
+            "lng": 38.0020994
+          },
+          "osmType": "town",
+          "group": "urban"
+        }
+      ]
+    },
+    "lnr": {
+      "availableCount": 10,
+      "ruralAvailable": 0,
+      "urbanAvailable": 10,
+      "selectedCount": 10,
+      "selected": [
+        {
+          "requested": "Брянка",
+          "label": "Брянка — ЛНР",
+          "position": {
+            "lat": 48.50361,
+            "lng": 38.66432
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Лисичанск",
+          "label": "Лисичанськ — ЛНР",
+          "position": {
+            "lat": 48.917267,
+            "lng": 38.4285981
+          },
+          "osmType": "city",
+          "group": "urban"
+        },
+        {
+          "requested": "Рубежное",
+          "label": "Рубіжне — ЛНР",
+          "position": {
+            "lat": 49.0329045,
+            "lng": 38.3725819
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Довжанск",
+          "label": "Довжанськ — ЛНР",
+          "position": {
+            "lat": 48.0811324,
+            "lng": 39.642561
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Алчевск",
+          "label": "Алчевськ — ЛНР",
+          "position": {
+            "lat": 48.4701987,
+            "lng": 38.8010178
+          },
+          "osmType": "city",
+          "group": "urban"
+        },
+        {
+          "requested": "Марковка",
+          "label": "Марківка — ЛНР",
+          "position": {
+            "lat": 49.5239233,
+            "lng": 39.5682107
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Старобельск",
+          "label": "Старобільськ — ЛНР",
+          "position": {
+            "lat": 49.2822424,
+            "lng": 38.897386
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Антрацит",
+          "label": "Антрацит — ЛНР",
+          "position": {
+            "lat": 48.1164285,
+            "lng": 39.0886375
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Сорокино",
+          "label": "Сорокине — ЛНР",
+          "position": {
+            "lat": 48.2951425,
+            "lng": 39.7296737
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Ровеньки",
+          "label": "Ровеньки — ЛНР",
+          "position": {
+            "lat": 48.0897987,
+            "lng": 39.368029
+          },
+          "osmType": "town",
+          "group": "urban"
+        }
+      ]
+    },
+    "zaporizhzhia": {
+      "availableCount": 10,
+      "ruralAvailable": 1,
+      "urbanAvailable": 9,
+      "selectedCount": 10,
+      "selected": [
+        {
+          "requested": "Пришиб",
+          "label": "Пришиб — Запорожская область",
+          "position": {
+            "lat": 47.249451,
+            "lng": 35.328251
+          },
+          "osmType": "village",
+          "group": "rural"
+        },
+        {
+          "requested": "Молочанск",
+          "label": "Молочанськ — Запорожская область",
+          "position": {
+            "lat": 47.20653,
+            "lng": 35.59742
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Гуляйполе",
+          "label": "Гуляйполе — Запорожская область",
+          "position": {
+            "lat": 47.6655382,
+            "lng": 36.2656849
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Васильевка",
+          "label": "Василівка — Запорожская область",
+          "position": {
+            "lat": 47.4431859,
+            "lng": 35.2803026
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Кушугум",
+          "label": "Кушугум — Запорожская область",
+          "position": {
+            "lat": 47.71671,
+            "lng": 35.20981
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Бердянск",
+          "label": "Бердянск — Запорожская область",
+          "position": {
+            "lat": 46.755678,
+            "lng": 36.7887623
+          },
+          "osmType": "city",
+          "group": "urban"
+        },
+        {
+          "requested": "Розовка",
+          "label": "Розівка — Запорожская область",
+          "position": {
+            "lat": 47.3866992,
+            "lng": 37.0675861
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Токмак",
+          "label": "Токмак — Запорожская область",
+          "position": {
+            "lat": 47.2550191,
+            "lng": 35.7092206
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Пологи",
+          "label": "Пологи — Запорожская область",
+          "position": {
+            "lat": 47.4784803,
+            "lng": 36.2531412
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Мелитополь",
+          "label": "Мелітополь — Запорожская область",
+          "position": {
+            "lat": 46.8467267,
+            "lng": 35.3827281
+          },
+          "osmType": "city",
+          "group": "urban"
+        }
+      ]
+    },
+    "kherson": {
+      "availableCount": 10,
+      "ruralAvailable": 4,
+      "urbanAvailable": 6,
+      "selectedCount": 10,
+      "selected": [
+        {
+          "requested": "Раденск",
+          "label": "Раденськ — Херсонская область",
+          "position": {
+            "lat": 46.551144,
+            "lng": 32.925629
+          },
+          "osmType": "village",
+          "group": "rural"
+        },
+        {
+          "requested": "Чулаковка",
+          "label": "Чулаківка — Херсонская область",
+          "position": {
+            "lat": 46.361961,
+            "lng": 32.358509
+          },
+          "osmType": "village",
+          "group": "rural"
+        },
+        {
+          "requested": "Старая Збурьевка",
+          "label": "Стара Збур’ївка — Херсонская область",
+          "position": {
+            "lat": 46.4727289,
+            "lng": 32.420034
+          },
+          "osmType": "village",
+          "group": "rural"
+        },
+        {
+          "requested": "Таврийск",
+          "label": "Таврійськ — Херсонская область",
+          "position": {
+            "lat": 46.7550442,
+            "lng": 33.4248309
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Херсон",
+          "label": "Херсон — Херсонская область",
+          "position": {
+            "lat": 46.6401295,
+            "lng": 32.6143922
+          },
+          "osmType": "city",
+          "group": "urban"
+        },
+        {
+          "requested": "Скадовск",
+          "label": "Скадовськ — Херсонская область",
+          "position": {
+            "lat": 46.1203932,
+            "lng": 32.910339
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Каховка",
+          "label": "Каховка — Херсонская область",
+          "position": {
+            "lat": 46.8054626,
+            "lng": 33.4817825
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Аскания-Нова",
+          "label": "Асканія-Нова — Херсонская область",
+          "position": {
+            "lat": 46.4511096,
+            "lng": 33.8685565
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Геническ",
+          "label": "Генічеськ — Херсонская область",
+          "position": {
+            "lat": 46.1661695,
+            "lng": 34.8088828
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Новая Збурьевка",
+          "label": "Нова Збур’ївка — Херсонская область",
+          "position": {
+            "lat": 46.4553259,
+            "lng": 32.4524074
+          },
+          "osmType": "village",
+          "group": "rural"
+        }
+      ]
+    },
+    "crimea": {
+      "availableCount": 10,
+      "ruralAvailable": 2,
+      "urbanAvailable": 8,
+      "selectedCount": 10,
+      "selected": [
+        {
+          "requested": "Мазанка",
+          "label": "Мазанка — Крым",
+          "position": {
+            "lat": 45.0055555,
+            "lng": 34.2568626
+          },
+          "osmType": "village",
+          "group": "rural"
+        },
+        {
+          "requested": "Песчаное",
+          "label": "Песчаное — Крым",
+          "position": {
+            "lat": 44.843294,
+            "lng": 33.6128756
+          },
+          "osmType": "village",
+          "group": "rural"
+        },
+        {
+          "requested": "Раздольное",
+          "label": "Раздольное — Крым",
+          "position": {
+            "lat": 45.7683327,
+            "lng": 33.489566
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Евпатория",
+          "label": "Евпатория — Крым",
+          "position": {
+            "lat": 45.1996929,
+            "lng": 33.3691291
+          },
+          "osmType": "city",
+          "group": "urban"
+        },
+        {
+          "requested": "Джанкой",
+          "label": "Джанкой — Крым",
+          "position": {
+            "lat": 45.7119746,
+            "lng": 34.3927394
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Гурзуф",
+          "label": "Гурзуф — Крым",
+          "position": {
+            "lat": 44.5479215,
+            "lng": 34.2736976
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Алупка",
+          "label": "Алупка — Крым",
+          "position": {
+            "lat": 44.4203817,
+            "lng": 34.0484042
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Гаспра",
+          "label": "Гаспра — Крым",
+          "position": {
+            "lat": 44.4306924,
+            "lng": 34.1051589
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Почтовое",
+          "label": "Почтовое — Крым",
+          "position": {
+            "lat": 44.8347618,
+            "lng": 33.9622556
+          },
+          "osmType": "town",
+          "group": "urban"
+        },
+        {
+          "requested": "Керчь",
+          "label": "Керчь — Крым",
+          "position": {
+            "lat": 45.3563405,
+            "lng": 36.467061
+          },
+          "osmType": "city",
+          "group": "urban"
+        }
+      ]
+    }
+  }
+}
