@@ -130,6 +130,21 @@ const russianLocalityNames: Record<string, string> = {
   енергодар: "Энергодар",
 };
 
+function requestedArea(query: string): keyof typeof specialLabels | "crimea" | null {
+  const normalized = normalize(query);
+  const aliases: Array<[keyof typeof specialLabels | "crimea", string[]]> = [
+    ["dnr", ["днр", "донецкая область", "донецкая обл", "donetsk oblast"]],
+    ["lnr", ["лнр", "луганская область", "луганская обл", "luhansk oblast"]],
+    ["zaporizhzhia", ["запорожская область", "запорожская обл", "zaporizhzhia oblast"]],
+    ["kherson", ["херсонская область", "херсонская обл", "kherson oblast"]],
+    ["crimea", ["республика крым", "крым", "crimea"]],
+  ];
+  for (const [area, names] of aliases) {
+    if (names.some((name) => normalized.endsWith(` ${normalize(name)}`))) return area;
+  }
+  return null;
+}
+
 function primaryQueryName(query: string): string {
   const normalized = normalize(query.split(/[;,—–-]/u)[0]);
   const qualifiers = [
@@ -228,6 +243,7 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
     if (!fallbackLabel) return [];
     const queryName = primaryQueryName(query);
+    const queryArea = requestedArea(query);
     const normalizedNames = localityNames(feature).map(normalize);
     const queryNames = [queryName, ...placeAliases(query).map(normalize), ...regionAliases(query).map(normalize)];
     const regionQuery = /(област|обл|oblast|region)$/u.test(queryName);
@@ -247,9 +263,11 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     // Territory priority applies to named settlements and exact oblast results,
     // never to POIs/street names that happen to share a place name.
     const territoryRank = exactName && placeRank > 0
-      ? queryName === "донецк"
-        ? territory === "dnr" ? 500_000 : rostovDonetsk ? 400_000 : territory ? 300_000 : crimea ? 200_000 : 0
-        : territory ? 320_000 : crimea ? 300_000 : 0
+      ? queryArea
+        ? (territory === queryArea || (queryArea === "crimea" && crimea)) ? 500_000 : territory || crimea ? 100_000 : 0
+        : queryName === "донецк"
+          ? territory === "dnr" ? 500_000 : rostovDonetsk ? 400_000 : territory ? 300_000 : crimea ? 200_000 : 0
+          : territory || crimea ? 300_000 : 0
       : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
