@@ -18,6 +18,13 @@ for (const [area,result] of Object.entries(resolvedByArea)) {
     assert.ok(matches,`Fixture coordinate for ${place.label} is outside ${area}`);
   }
 }
+async function mapLimit(values,limit,fn) {
+  const output=new Array(values.length); let cursor=0;
+  await Promise.all(Array.from({length:Math.min(limit,values.length)},async()=>{
+    while(true){const index=cursor++;if(index>=values.length)return;output[index]=await fn(values[index],index);}
+  }));
+  return output;
+}
 const providers=[
   {name:"Valhalla",get:(from,to,positions)=>valhalla(from,to,1,positions)},
   {name:"OSRM",get:(from,to,positions)=>osrmRoute(from,to,positions)},
