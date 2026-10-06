@@ -21,7 +21,7 @@ const cases = [
   { name: "Feodosia-Mariupol", from: feodosia, to: mariupol },
   { name: "Yalta-Donetsk", from: yalta, to: donetsk },
   // User screenshot reference: Yandex 991 km / about 2,060 ₽ toll (weekday), route via Crimea bridge, Krasnodar, Rostov and Mariupol.
-  { name: "Yalta-Volnovakha", from: yalta, to: volnovakha, referenceDistanceKm: 991, referenceTollRub: 2060 },
+  { name: "Yalta-Volnovakha", from: yalta, to: volnovakha, referenceDistanceKm: 991, referenceTollRub: 2060, referenceWeekendTollRub: 2533 },
   { name: "Krasnodar-Donetsk", from: krasnodar, to: donetsk },
   { name: "Donetsk-Krasnodar", from: donetsk, to: krasnodar },
   // User-provided Yandex screenshot (2026-10-04): 1,220 km fast route, 1,230 km alternative.
@@ -109,6 +109,8 @@ for (const sample of cases) {
             m4Unresolved: m4?.pricing.unresolved.map((item) => ({ code: item.code, kms: item.kms, message: item.message })) ?? null,
             m4ConfirmedChecks: m4?.validation.checks.filter((item) => item.status === "confirmed").map((item) => ({ km: item.km, evidence: item.evidence })) ?? null,
             referenceWeekdayTollRub: sample.referenceTollRub ?? null,
+            referenceWeekendTollRub: sample.referenceWeekendTollRub ?? null,
+            weekendTollDeviationRub: tolls.weekendAmount == null || sample.referenceWeekendTollRub == null ? null : tolls.weekendAmount - sample.referenceWeekendTollRub,
             weekdayTollDeviationRub: tolls.weekdayAmount == null || sample.referenceTollRub == null ? null : tolls.weekdayAmount - sample.referenceTollRub,
             pricingStatus: tolls.pricingStatus,
             amount: tolls.amount,
