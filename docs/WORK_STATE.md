@@ -393,3 +393,14 @@
 - Live Photon checks: Yalta now correctly puts “Ялта — ДНР” before “Ялта — Крым”; explicit “Ялта Крым” remains available. “Изюм” returns Izyum in Kharkiv oblast first among candidates, but no result in target polygons was found; Kazakhstan homonyms still appear in top 8. This confirms regional bbox searches alone do not ensure every small/poorly indexed locality will be geocoded.
 - Next: import/normalize complete ru-wiki tables for the four oblasts as versioned search vocabulary, add Ukrainian-name counterpart checks where present, and probe exact name + region phrase against Photon. Still require coordinate match inside the target polygon before assigning special area label/ranking. If a name isn't geocoded, leave unresolved instead of fabricating coordinates. Then rerun tests/live search and inspect Yalta toll plaza details.
 - PR #12 remains open/draft; no merge or Production deploy.
+
+
+### 2026-10-06 — RuWiki-only locality search vocabulary
+
+- The user specified that the calculator's new settlement-name data must come only from RuWiki; no Wikipedia data is used in this index.
+- Added `data/ruwiki-settlement-index.json`, built from the four RuWiki PDF exports supplied in chat. It contains 2,110 deduplicated area/name groups and source-page URLs. Parenthesized alternatives are separated and retained as search aliases.
+- Photon search now expands an entered RuWiki alias to its listed counterpart and sends a bounded search to that counterpart's matching priority-area polygon. Existing live geocoder coordinates and the verified boundary geometry remain the only sources for route endpoints and territory classification; the index contains no coordinates.
+- Coverage is explicitly partial where the PDFs do not expose all rows: the Luhansk export has 818 extracted rows against the article's 933 urban-plus-rural summary; Kherson has 755 extracted rows against 757; Zaporizhzhia has 947 rows across legacy district groupings whose scope does not reconcile with the article's current summary; the Donetsk export has the 52 city rows, while its 131 urban-type rows are collapsed and rural settlements are absent. These discrepancies are stored in the index metadata and no completeness claim is made.
+- The exports provide parenthesized alternatives inconsistently; they do not provide a complete Ukrainian-spelling column for all settlements. The search code uses only listed alternatives and does not invent coordinates or transliterations.
+- The earlier historical work-log entry describing a Wikipedia-source plan is superseded for the address-search dataset. No entries from that work were copied into the RuWiki index.
+- Added address-search regression coverage for alias expansion, territorial bounding-box targeting, and display of the listed name. Verify and live search CI are pending on this commit. PR #12 remains open/draft; no merge or Production deployment was performed.

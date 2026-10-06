@@ -2,6 +2,7 @@ import { classifyTerritory, type VerifiedTerritory } from "./special-territory-g
 import { SPECIAL_TERRITORY_BOUNDARIES } from "./special-territory-boundaries.ts";
 import { inCrimea } from "./special-territory-policy.ts";
 import type { Suggestion } from "../app/v2/components/types.ts";
+import ruwikiSettlementIndex from "../data/ruwiki-settlement-index.json";
 
 export type PhotonFeature = {
   geometry?: { coordinates?: [number, number] };
@@ -28,6 +29,39 @@ function uniqueParts(parts: unknown[]): string[] {
     seen.add(key);
     return true;
   });
+}
+
+type RuWikiSettlementRow = (typeof ruwikiSettlementIndex.entries)[number];
+const ruwikiNames = new Map<string, RuWikiSettlementRow[]>();
+for (const row of ruwikiSettlementIndex.entries) {
+  for (const name of row.names) {
+    const key = normalize(name);
+    const matches = ruwikiNames.get(key) ?? [];
+    if (!matches.some((match) => match.area === row.area && match.names.join("\u0000") === row.names.join("\u0000"))) {
+      matches.push(row);
+      ruwikiNames.set(key, matches);
+    }
+  }
+}
+
+function ruwikiRowsForQuery(query: string): RuWikiSettlementRow[] {
+  return ruwikiNames.get(normalize(primaryQueryName(query))) ?? [];
+}
+
+function ruwikiNameAliases(query: string): string[] {
+  const queryName = normalize(primaryQueryName(query));
+  return uniqueParts(ruwikiRowsForQuery(query).flatMap((row) => row.names).filter((name) => normalize(name) !== queryName)).slice(0, 8);
+}
+
+function ruwikiAliasSearches(query: string): Array<{ area: string; alias: string }> {
+  const queryName = normalize(primaryQueryName(query));
+  const searches = new Map<string, { area: string; alias: string }>();
+  for (const row of ruwikiRowsForQuery(query)) {
+    for (const alias of row.names.filter((name) => normalize(name) !== queryName)) {
+      searches.set(`${row.area}:${normalize(alias)}`, { area: row.area, alias });
+    }
+  }
+  return [...searches.values()].slice(0, 4);
 }
 
 const specialLabels = {
@@ -82,7 +116,8 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
       return { title: "Крым", label: "Крым", region: "Крым" };
     }
     if (isLocality) {
-      const localityName = russianLocalityNames[normalize(name)] ?? name;
+      const knownRuwikiName = ruwikiNames.get(normalize(name))?.find((row) => row.area === territory)?.names[0];
+      const localityName = knownRuwikiName || russianLocalityNames[normalize(name)] || name;
       const label = `${localityName} — ${areaName}`;
       return { title: label, label, region: areaName };
     }
@@ -239,7 +274,7 @@ function providerSearchTerm(query: string): string {
 }
 
 function placeAliases(query: string): string[] {
-  return placeSearchAliases[primaryQueryName(query)] ?? [];
+  return uniqueParts([...(placeSearchAliases[primaryQueryName(query)] ?? []), ...ruwikiNameAliases(query)]);
 }
 
 function regionAliases(query: string): string[] {
@@ -272,7 +307,9 @@ export function photonSearchUrls(query: string): string[] {
     makeUrl(term),
     makeUrl(term,"UA"),
     makeUrl(term,"RU"),
-    ...placeAliases(query).map((alias)=>makeUrl(alias,"UA")),
+    ...(placeSearchAliases[primaryQueryName(query)] ?? []).map((alias)=>makeUrl(alias,"UA")),
+    ...ruwikiAliasSearches(query).flatMap(({alias,area})=>
+      priorityTerritoryBounds.filter(({id})=>id===area).map(({bounds})=>makeUrl(alias,undefined,undefined,bounds))),
     ...regionAliases(query).map((alias)=>makeUrl(alias,"UA","state")),
   ];
   // The generic Photon result window can be filled by faraway homonyms.

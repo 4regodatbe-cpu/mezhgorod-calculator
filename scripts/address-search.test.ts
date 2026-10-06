@@ -30,6 +30,21 @@ test("Russian Makeyevka query also searches Photon using the Ukrainian locality 
   assert.ok(urls.slice(4).every((url)=>url.searchParams.has("bbox")));
 });
 
+test("RuWiki alternate settlement names trigger a search inside the matching priority territory", () => {
+  const urls = photonSearchUrls("Кировск").map((value) => new URL(value));
+  const aliasSearch = urls.find((url) => url.searchParams.get("q") === "Голубовка" && url.searchParams.has("bbox"));
+  assert.ok(aliasSearch);
+  assert.equal(aliasSearch.searchParams.get("countrycode"), null);
+});
+
+test("RuWiki alias results are matched and labeled using the settlement's listed name", () => {
+  const lnrSettlement = feature("Голубовка", 39.3078, 48.574, 73, "town");
+  const russianHomonym = feature("Кировск", 39.7, 47.23, 74, "city");
+  const results = rankPhotonFeatures([russianHomonym, lnrSettlement], SPECIAL_TERRITORY_BOUNDARIES, "Кировск");
+  assert.equal(results[0]?.label, "Голубовка — ЛНР");
+  assert.equal(results[0]?.position.lng, 39.3078);
+});
+
 test("all special-oblast queries search provider aliases in Ukraine's state layer", () => {
   const cases = [
     ["Донецкая область", ["Донецька область", "Donetsk Oblast"]],
