@@ -112,6 +112,7 @@ const oblastSearchAliases: Record<string, string[]> = {
   kherson: ["Херсонська область", "Kherson Oblast"],
 };
 const placeSearchAliases: Record<string, string[]> = {
+  изюм: ["Ізюм"],
   макеевка: ["Макіївка"],
   запороже: ["Запоріжжя"],
   харков: ["Харків"],
@@ -314,6 +315,9 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     // never to POIs/street names that happen to share a place name.
     const matchesRequestedArea=Boolean(queryArea &&
       (territory===queryArea || (queryArea==="crimea" && crimea)));
+    const rostovDonetsk=exactName && queryName==="донецк" &&
+      normalizedNames.includes("донецк") &&
+      [p.state,p.county].map((value)=>normalize(text(value))).some((value)=>/^(ростов|rostov)/u.test(value));
     // Default priority: four new territories, all Russian regions (including
     // Crimea), Ukraine, then other countries. An explicit qualifier wins.
     const territoryRank=exactName && placeRank>0
@@ -327,7 +331,8 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     return [{
       // Territory tiers dominate OSM place granularity so a local hamlet beats a Russian city.
       score: (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
-        (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank + (exactName ? 10 : 0),
+        (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank +
+        (rostovDonetsk && isRussianFeature(feature,crimea) ? 100_000 : 0) + (exactName ? 10 : 0),
       index,
       key: id,
       item: {
