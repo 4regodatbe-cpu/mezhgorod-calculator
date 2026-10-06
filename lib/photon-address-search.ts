@@ -230,12 +230,12 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const queryName = primaryQueryName(query);
     const normalizedNames = localityNames(feature).map(normalize);
     const queryNames = [queryName, ...placeAliases(query).map(normalize), ...regionAliases(query).map(normalize)];
+    const regionQuery = /(област|обл|oblast|region)$/u.test(queryName);
     const exactName = Boolean(queryNames.some((candidate) => candidate && normalizedNames.some((normalizedName) =>
       candidate === normalizedName ||
-      (candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
+      (!regionQuery && candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
     const { title, label, region } = displayName(feature, territory, crimea, exactName);
     const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
-    const regionQuery = /(област|обл|oblast|region)$/u.test(queryName);
     const locality = localityRank(feature, exactName);
     const administrativeRegion = regionQuery && placeType === "administrative" && exactName ? 4 : 0;
     const placeRank = Math.max(locality, administrativeRegion);
