@@ -247,7 +247,7 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const territoryRank = exactName && placeRank > 0
       ? queryName === "донецк"
         ? territory === "dnr" ? 500_000 : rostovDonetsk ? 400_000 : territory ? 300_000 : crimea ? 200_000 : 0
-        : territory || crimea ? 300_000 : 0
+        : territory ? 320_000 : crimea ? 300_000 : 0
       : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
