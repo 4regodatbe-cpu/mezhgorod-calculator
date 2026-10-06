@@ -13,12 +13,11 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     valhalla(from, to, 1, positions),
     valhalla(from, to, 1, positions, 900), // Prefer short local bypasses without making every booth overwhelmingly expensive.
     valhalla(from, to, 1, positions, 1_200), // Allow partial M-4 use where a verified plaza bypass exists.
-    valhalla(from, to, 1, positions, 43_200), // Keep a full-detour candidate as a fallback.
     osrmRoute(from, to, positions),
     brouterFast(from, to, positions),
   ]);
-  const resultNames = ["Valhalla", "Valhalla 900s bypass", "Valhalla 1,200s bypass", "Valhalla full bypass", "OSRM", "BRouter"];
-  const [fastResult, valhallaModerateAvoidResult, valhallaPartialTollResult, valhallaHighAvoidResult, osrmResult, brouterFastResult] = rawResults.map((result, index) => {
+  const resultNames = ["Valhalla", "Valhalla 900s bypass", "Valhalla 1,200s bypass", "OSRM", "BRouter"];
+  const [fastResult, valhallaModerateAvoidResult, valhallaPartialTollResult, osrmResult, brouterFastResult] = rawResults.map((result, index) => {
     if (result.status === "rejected") return result;
     try {
       if (positions) {
@@ -65,12 +64,32 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     { name: "Valhalla local bypass", result: valhallaModerateAvoidResult },
     { name: "Valhalla partial M-4 bypass", result: valhallaPartialTollResult },
     { name: "BRouter", result: brouterFastResult },
-    { name: "Valhalla full bypass", result: valhallaHighAvoidResult },
   ]);
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
-  const [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
+  let [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
+  // The expensive full-detour search is a genuine fallback; keep it off the
+  // critical path when a faster candidate already passes the complete booth trace.
+  if (!selectedFree) {
+    try {
+      const route = await valhalla(from, to, 1, positions, 43_200);
+      if (positions) {
+        const stretch = findPlanLegStretchAnomaly(route.coordinates, positions);
+        if (stretch) {
+          rejectedStretchProviders.set("Valhalla full bypass", stretch.stretchRatio);
+          throw new Error("ROUTING_PLAN_LEG_STRETCH");
+        }
+        if (!followsPlan(route.coordinates, positions, "mainland", false)) throw new Error("ROUTE_CONTROLS_MISSED");
+      }
+      analyzeRoute(route.coordinates, route.meters, route.seconds, from.position, to.position, SPECIAL_TERRITORY_BOUNDARIES);
+      selectedFree = await selectFreeRoute(selectedFast.route, [
+        { name: "Valhalla full bypass", result: { status: "fulfilled", value: route } },
+      ]);
+    } catch {
+      // A failed fallback only means no confirmed payment-point-avoiding option.
+    }
+  }
   const confirmedFree = selectedFree?.truth === "confirmed_no_toll_booths" ? selectedFree : null;
   const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
   const pricing = await calculateLegTolls({
