@@ -51,7 +51,7 @@ const routeResults=await mapLimit(samples,3,async(sample,index)=>{
       const split=analyzeRoute(route.coordinates,route.meters,route.seconds,from.position,to.position,zones);
       const kilometerCheck=Math.abs(split.ordinaryKm+split.specialKm-route.meters/1000);
       if(kilometerCheck>0.05) throw new Error(`DISTANCE_SPLIT_MISMATCH_${kilometerCheck.toFixed(3)}_KM`);
-      Object.assign(item,{status:"ok",distanceKm:Math.round(route.meters/100)/10,durationMinutes:Math.round(route.seconds/60),ordinaryKm:Math.round(split.ordinaryKm*10)/10,specialKm:Math.round(split.specialKm*10)/10,territoryKm:split.territoryKm,geometryPoints:route.coordinates.length,legCount:route.legs?.length ?? null,legBreakdown});
+      Object.assign(item,{status:"ok",distanceKm:Math.round(route.meters/100)/10,durationMinutes:Math.round(route.seconds/60),ordinaryKm:Math.round(split.ordinaryKm*10)/10,specialKm:Math.round(split.specialKm*10)/10,territoryKm:split.territoryKm,geometryPoints:route.coordinates.length,legCount:route.legs?.length ?? null,legBreakdown,geometryCoordinates:route.coordinates});
     }catch(error){item.error=error instanceof Error?error.message:String(error);}
     return item;
   }));
@@ -63,8 +63,24 @@ const routeResults=await mapLimit(samples,3,async(sample,index)=>{
   return row;
 });
 const providerDisagreements=routeResults.filter((row)=>row.providerDistanceDifferenceKm!==null && (row.providerDistanceDifferenceKm>30 || (row.providerDistanceDifferencePercent??0)>5)).map((row)=>({area:row.area,settlement:row.settlement,differenceKm:row.providerDistanceDifferenceKm,differencePercent:row.providerDistanceDifferencePercent}));
+const topGeometryRows=routeResults
+  .filter((row)=>row.providerDistanceDifferenceKm!==null && (row.providerDistanceDifferenceKm>30 || (row.providerDistanceDifferencePercent??0)>5))
+  .sort((a,b)=>(b.providerDistanceDifferencePercent??0)-(a.providerDistanceDifferencePercent??0))
+  .slice(0,5);
+const geometryDiagnostics=topGeometryRows.map((row)=>({
+  area:row.area,settlement:row.settlement,direction:row.direction,russianEndpoint:row.russianEndpoint,
+  preferredCorridor:row.preferredCorridor,planPositions:row.planPositions,
+  providerDistanceDifferenceKm:row.providerDistanceDifferenceKm,
+  providerDistanceDifferencePercent:row.providerDistanceDifferencePercent,
+  providers:Object.fromEntries(Object.entries(row.providers).map(([name,result])=>[name,{
+    distanceKm:result.distanceKm??null,
+    geometryPoints:result.geometryPoints??null,
+    coordinates:result.geometryCoordinates??null
+  }]))
+}));
+for(const row of routeResults) for(const result of Object.values(row.providers)) delete result.geometryCoordinates;
 const providerFailures=routeResults.flatMap((row)=>Object.entries(row.providers).filter(([,result])=>result.status!=="ok").map(([provider,result])=>({area:row.area,settlement:row.settlement,provider,error:result.error})));
-const summary={seed,generatedAt:new Date().toISOString(),source:fixture.source,nameMatching:"Fixed coordinate snapshot resolved through Photon in the recorded source run; this route audit does not depend on live geocoding.",providerDistanceDisagreementThreshold:{absoluteKm:30,relativePercent:5},providerDisagreements,providerFailures,selectionMethod:"Fixed date-stamped coordinate corpus; the same 50 endpoints and one Russian endpoint are reused on every run. This is an offline regression fixture, not a runtime routing cache.",russianEndpoint:russian,areas:Object.fromEntries(Object.entries(resolvedByArea).map(([area,result])=>[area,{availableCount:result.availableCount,ruralAvailable:result.ruralAvailable,urbanAvailable:result.urbanAvailable,selectedCount:result.selected.length}])),routeCount:routeResults.length,providerSuccesses:Object.fromEntries(providers.map((provider)=>[provider.name,routeResults.filter((row)=>row.providers[provider.name]?.status==="ok").length])),routeResults};
+const summary={seed,generatedAt:new Date().toISOString(),source:fixture.source,nameMatching:"Fixed coordinate snapshot resolved through Photon in the recorded source run; this route audit does not depend on live geocoding.",providerDistanceDisagreementThreshold:{absoluteKm:30,relativePercent:5},providerDisagreements,geometryDiagnostics,providerFailures,selectionMethod:"Fixed date-stamped coordinate corpus; the same 50 endpoints and one Russian endpoint are reused on every run. This is an offline regression fixture, not a runtime routing cache.",russianEndpoint:russian,areas:Object.fromEntries(Object.entries(resolvedByArea).map(([area,result])=>[area,{availableCount:result.availableCount,ruralAvailable:result.ruralAvailable,urbanAvailable:result.urbanAvailable,selectedCount:result.selected.length}])),routeCount:routeResults.length,providerSuccesses:Object.fromEntries(providers.map((provider)=>[provider.name,routeResults.filter((row)=>row.providers[provider.name]?.status==="ok").length])),routeResults};
 await writeFile("settlement-random-route-audit.json",JSON.stringify(summary,null,2)+"\n");
 console.log(JSON.stringify({seed,areas:summary.areas,russianEndpoint:russian.name,routeCount:summary.routeCount,providerSuccesses:summary.providerSuccesses}));
 for(const [area,result] of Object.entries(resolvedByArea)) assert.equal(result.selected.length,10,`Need 10 resolved settlements in ${area}; found ${result.selected.length}`);
