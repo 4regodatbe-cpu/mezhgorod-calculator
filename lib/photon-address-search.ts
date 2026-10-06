@@ -266,7 +266,8 @@ export function photonSearchUrls(query: string): string[] {
     return url.toString();
   };
   const term=providerSearchTerm(query);
-  const isLocalityQuery=query.length>=3 && !/[0-9,;]/u.test(query);
+  const localityTerm=primaryQueryName(query);
+  const isLocalityQuery=localityTerm.length>=3 && !/[0-9,;]/u.test(localityTerm);
   const urls=[
     makeUrl(term),
     makeUrl(term,"UA"),
