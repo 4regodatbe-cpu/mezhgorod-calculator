@@ -16,7 +16,7 @@ for (const query of queries) {
   }));
   const features = outcomes.flatMap((outcome) => outcome.status === "fulfilled" ? outcome.value : []);
   const items = rankPhotonFeatures(features, zones, query);
-    const rankingChecks = {
+  const rankingChecks = {
     donetskDnrFirst: query === "Донецк" ? items[0]?.label === "Донецк — ДНР" : undefined,
     donetskRostovSecond: query === "Донецк" ? /Ростовская область/u.test(items[1]?.label ?? "") : undefined,
     moscowFirst: query === "Москва" ? items[0]?.label === "Москва, Россия" : undefined,
@@ -42,4 +42,5 @@ for (const query of queries) {
   });
   console.log(JSON.stringify(reports.at(-1)));
 }
-await writeFile("address-search-live-probe.json", JSON.stringify(reports, null, 2) + "\n");\nconsole.log(JSON.stringify({ type: "address-search-live-summary", checks: reports.map(({query,rankingChecks,featureCount,failedSources})=>({query,rankingChecks,featureCount,failedSources})) }));
+await writeFile("address-search-live-probe.json", JSON.stringify(reports, null, 2) + "\n");
+console.log(JSON.stringify({ type: "address-search-live-summary", checks: reports.map(({query,rankingChecks,featureCount,failedSources})=>({query,rankingChecks,featureCount,failedSources})) }));
