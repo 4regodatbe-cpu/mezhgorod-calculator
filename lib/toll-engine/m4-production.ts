@@ -39,7 +39,7 @@ function partialTolls(core: Awaited<ReturnType<typeof calculateM4Core>>): Produc
     period: pricing.period,
     segments: [
       "М-4 Дон: частично подтверждённый расчёт",
-      ...pricing.pricedPlazas.map((item) => `М-4: ПВП/участок ${item.km} км`),
+      ...pricing.pricedPlazas.map((item) => `${item.id} [${item.direction}${item.entryKm != null ? ` ${item.entryKm}→${item.exitKm}` : ""}]: ${item.selectedAmount} ₽ (будни ${item.weekday} ₽, выходные ${item.weekend} ₽)`),
     ],
     confidence: "partial",
   };
@@ -96,7 +96,7 @@ export async function calculateProductionM4(
       period: pricing.period,
       segments: [
         "М-4 Дон: точный расчёт по локально подтверждённым ПВП",
-        ...pricing.pricedPlazas.map((item) => `М-4: ПВП/участок ${item.km} км`),
+        ...pricing.pricedPlazas.map((item) => `${item.id} [${item.direction}${item.entryKm != null ? ` ${item.entryKm}→${item.exitKm}` : ""}]: ${item.selectedAmount} ₽ (будни ${item.weekday} ₽, выходные ${item.weekend} ₽)`),
         ...a289.segments,
       ],
       confidence: "matched",

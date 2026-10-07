@@ -366,3 +366,12 @@ test("unqualified Yalta prefers a new-territory namesake; explicit qualifiers wi
   assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта ДНР").map((item) => item.id), ["N-354", "N-353"]);
   assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта Крым").map((item) => item.id), ["N-353", "N-354"]);
 });
+
+test("RuWiki index uses only its four configured RuWiki source pages and records no fabricated coordinates", async () => {
+  const { default: index } = await import("../data/ruwiki-settlement-index.json", { with: { type: "json" } });
+  assert.match(index.source, /^RuWiki settlement lists only; generated from the four user-provided RuWiki PDF exports\./);
+  assert.deepEqual(Object.keys(index.sources).sort(), ["dnr", "kherson", "lnr", "zaporizhzhia"]);
+  assert.ok(Object.values(index.sources).every((url) => url.startsWith("https://ru.ruwiki.ru/wiki/")));
+  assert.ok(index.entries.length > 2_000);
+  assert.ok(index.entries.every((row) => ["dnr", "lnr", "zaporizhzhia", "kherson"].includes(row.area) && row.names.length > 0 && !("coordinates" in row)));
+});

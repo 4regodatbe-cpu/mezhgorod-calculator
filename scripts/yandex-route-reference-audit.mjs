@@ -102,7 +102,7 @@ for (const sample of observations) {
               status: m4.pricing.status,
               weekdayAmount: m4.pricing.weekdayAmount,
               weekendAmount: m4.pricing.weekendAmount,
-              pricedPlazas: m4.pricing.pricedPlazas.map(({ km, weekday, weekend, verification }) => ({ km, weekday, weekend, verification })),
+              pricedPlazas: m4.pricing.pricedPlazas.map(({ id, km, direction, entryKm, exitKm, weekday, weekend, selectedAmount, verification }) => ({ id, km, direction, entryKm: entryKm ?? null, exitKm: exitKm ?? null, weekday, weekend, selectedAmount, verification })),
               unresolved: m4.pricing.unresolved,
             },
             a289: {
@@ -164,7 +164,7 @@ for (const sample of observations) {
         m4: {
           weekdayAmount: m4.pricing.weekdayAmount,
           weekendAmount: m4.pricing.weekendAmount,
-          pricedPlazas: m4.pricing.pricedPlazas.map(({ km, weekday, weekend }) => ({ km, weekday, weekend })),
+          pricedPlazas: m4.pricing.pricedPlazas.map(({ id, km, direction, entryKm, exitKm, weekday, weekend, selectedAmount }) => ({ id, km, direction, entryKm: entryKm ?? null, exitKm: exitKm ?? null, weekday, weekend, selectedAmount })),
         },
         a289: { amount: a289.amount, crossedFrames: a289.crossedFrames },
         validation: { status: priced.fastValidation.status, message: priced.fastValidation.message },

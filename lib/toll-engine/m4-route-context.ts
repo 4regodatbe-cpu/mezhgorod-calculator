@@ -69,9 +69,14 @@ export function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
     const row = M4_DATA.plazas.find((plaza) => plaza.km === chargedKm && plaza.model === "open" && plaza.tariff);
     if (row?.tariff) {
       resolved.push({
+        id: `m4-${chargedKm}`,
         km: chargedKm,
+        direction: index355 < index339 ? "forward" : "reverse",
+        entryKm: chargedKm,
+        exitKm: chargedKm === 355 ? 339 : 355,
         weekday: row.tariff.weekday,
         weekend: row.tariff.weekend,
+        selectedAmount: row.tariff.weekday,
         verification: contextVerification(validation, [339, 355]),
         matchedNodeIds: nodeIdsFor(validation, [chargedKm]),
         source: "Avtodor km 355→339 receipt rule + ordered route traversal",
@@ -98,9 +103,14 @@ export function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
   const zone401to464 = mixedZone(401, 464);
   if (through401to464 && zone401to464) {
     resolved.push({
+      id: "m4-401-464-full",
       km: 416,
+      direction: "unknown",
+      entryKm: 401,
+      exitKm: 464,
       weekday: zone401to464.fullSectionTariff.weekday,
       weekend: zone401to464.fullSectionTariff.weekend,
+      selectedAmount: zone401to464.fullSectionTariff.weekday,
       verification: contextVerification(validation, [515, 460, 416, 339, 355]),
       matchedNodeIds: nodeIdsFor(validation, [416, 460]),
       source: "Avtodor mixed zone 401–464 + ordered PVP traversal",
@@ -122,9 +132,14 @@ export function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
   const zone633to741 = mixedZone(633, 741);
   if (through633to741 && zone633to741) {
     resolved.push({
+      id: "m4-633-741-full",
       km: 636,
+      direction: "unknown",
+      entryKm: 633,
+      exitKm: 741,
       weekday: zone633to741.fullSectionTariff.weekday,
       weekend: zone633to741.fullSectionTariff.weekend,
+      selectedAmount: zone633to741.fullSectionTariff.weekday,
       verification: contextVerification(validation, [803, 636, 620]),
       matchedNodeIds: nodeIdsFor(validation, [636]),
       source: "Avtodor mixed zone 633–741 + mainline route context",
@@ -144,9 +159,14 @@ export function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
   );
   if (throughPartial672 && partial672) {
     resolved.push({
+      id: "m4-672-partial",
       km: 672,
+      direction: "unknown",
+      entryKm: 633,
+      exitKm: 672,
       weekday: partial672.tariff.weekday,
       weekend: partial672.tariff.weekend,
+      selectedAmount: partial672.tariff.weekday,
       verification: contextVerification(validation, [672, 803]),
       matchedNodeIds: nodeIdsFor(validation, [672]),
       source: "Avtodor official M-4 633-672 partial mixed-zone tariff + ordered route context",
@@ -166,9 +186,14 @@ export function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
   const tariff545 = full545Tariff();
   if (through545 && tariff545) {
     resolved.push({
+      id: "m4-545-full",
       km: 545,
+      direction: "unknown",
+      entryKm: 517,
+      exitKm: 589,
       weekday: tariff545.weekday,
       weekend: tariff545.weekend,
+      selectedAmount: tariff545.weekday,
       verification: contextVerification(validation, [620, 545, 515]),
       matchedNodeIds: nodeIdsFor(validation, [545]),
       source: "Avtodor sections 517–544 + 545–589 + ordered flanking PVPs",

@@ -9,7 +9,7 @@ type SelectedFree = {
   route: RouteWithGeometry;
   quality: RouteQuality;
   validation: TollValidation;
-  truth: "confirmed_no_toll_booths";
+  truth: "confirmed_payment_point_avoiding";
 };
 export type TollEstimate = ReturnType<typeof estimateTolls>;
 type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount"> & {
@@ -19,10 +19,6 @@ type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount">
   pricingStatus: "priced" | "free" | "unknown";
 };
 
-const MIN_TOLL_VARIANT_DISTANCE_KM = 10;
-const MIN_TOLL_VARIANT_DISTANCE_PERCENT = 1;
-const MIN_TOLL_VARIANT_TIME_MINUTES = 15;
-const MIN_TOLL_VARIANT_TIME_PERCENT = 5;
 
 export function unknownValidation(message: string): TollValidation {
   return {
@@ -77,14 +73,18 @@ function spreadPercent(a: RouteSummary, b: RouteSummary) {
   return Math.round((Math.abs(a.meters - b.meters) / ((a.meters + b.meters) / 2)) * 1000) / 10;
 }
 
+/** Avoid offering a detour with a disproportionate distance or time cost. */
+export function withinDetourLimits(main: RouteSummary, candidate: RouteSummary) {
+  if (main.meters <= 0 || main.seconds <= 0 || candidate.meters <= 0 || candidate.seconds <= 0) return false;
+  const distanceRatio = candidate.meters / main.meters;
+  const durationRatio = candidate.seconds / main.seconds;
+  return distanceRatio <= 1.25 && durationRatio <= 1.5;
+}
+
 export function routeDifferenceEvidence(fast: RouteSummary, free: RouteSummary) {
-  const distanceDeltaKm = Math.abs(free.meters - fast.meters) / 1000;
-  const distancePercent = fast.meters > 0 ? Math.abs(free.meters - fast.meters) / fast.meters * 100 : 0;
-  const timeDeltaMinutes = Math.abs(free.seconds - fast.seconds) / 60;
-  const timePercent = fast.seconds > 0 ? Math.abs(free.seconds - fast.seconds) / fast.seconds * 100 : 0;
-  const distanceDiffers = distanceDeltaKm >= MIN_TOLL_VARIANT_DISTANCE_KM && distancePercent >= MIN_TOLL_VARIANT_DISTANCE_PERCENT;
-  const timeDiffers = timeDeltaMinutes >= MIN_TOLL_VARIANT_TIME_MINUTES && timePercent >= MIN_TOLL_VARIANT_TIME_PERCENT;
-  return distanceDiffers || timeDiffers;
+  // Keep as compatibility helper; practical bounds are asymmetric because a
+  // payment-point bypass can legitimately cost more distance and time.
+  return withinDetourLimits(fast, free);
 }
 
 function qualityForCandidate(selected: FreeCandidate, other: FreeCandidate | undefined, validation: TollValidation): RouteQuality {
@@ -92,7 +92,14 @@ function qualityForCandidate(selected: FreeCandidate, other: FreeCandidate | und
     { name: selected.name, route: selected.route },
     other ? { name: other.name, route: other.route } : undefined,
   ).quality;
-  if (validation.complete && (validation.tollBoothCount ?? 0) === 0) return base;
+  if (validation.complete && (validation.tollBoothCount ?? 0) === 0) {
+    if (validation.tollEdgeCount === 0) return base;
+    return {
+      ...base,
+      status: "warning",
+      message: "Пункты оплаты объезжены, но маршрут проходит по платным участкам; стоимость требует отдельной проверки",
+    };
+  }
   return {
     ...base,
     status: "warning",
@@ -120,7 +127,7 @@ async function validateFreeCandidate(candidate: FreeCandidate, ordinal: "Пер�
     : unknownValidation(`${ordinal} источник не вернул геометрию`);
 }
 
-// Legacy API field names say “free”; the candidate now avoids payment points while retaining tolled road sections where useful.
+// Legacy API field names say “free”; this route avoids payment points, but may contain tolled road sections.
 export async function selectFreeRoute(
   mainRoute: RouteSummary,
   alternativeResults: Array<{ name: string; result: PromiseSettledResult<RouteWithGeometry> }>,
@@ -131,14 +138,15 @@ export async function selectFreeRoute(
   if (candidates.length === 0) return null;
 
   // Try candidates in preference order. Stop at the first complete route that
-  // avoids every payment point; do not spend extra requests validating fallbacks.
+  // avoids every payment point and stays within the detour limits; do not
+  // spend extra requests validating candidates with disproportionate detours.
   for (const [index, candidate] of candidates.entries()) {
-    if (!routeDifferenceEvidence(mainRoute, candidate.route)) continue;
+    if (!withinDetourLimits(mainRoute, candidate.route)) continue;
     const validation = await validateFreeCandidate(candidate, index === 0 ? "Первый" : "Второй");
     if (validation.complete !== true || (validation.tollBoothCount ?? 0) !== 0) continue;
 
     const other = candidates[index + 1] ?? candidates[index - 1];
-    return selectedCandidate(candidate, other, validation, "confirmed_no_toll_booths");
+    return selectedCandidate(candidate, other, validation, "confirmed_payment_point_avoiding");
   }
 
   // Fail closed: an incomplete trace cannot prove that the route avoids every payment point.

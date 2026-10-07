@@ -90,7 +90,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
       // A failed fallback only means no confirmed payment-point-avoiding option.
     }
   }
-  const confirmedFree = selectedFree?.truth === "confirmed_no_toll_booths" ? selectedFree : null;
+  const confirmedFree = selectedFree?.truth === "confirmed_payment_point_avoiding" ? selectedFree : null;
   const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
   const pricing = await calculateLegTolls({
     routeGeometry,

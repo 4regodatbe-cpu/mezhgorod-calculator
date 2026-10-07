@@ -105,7 +105,7 @@ for (const sample of cases) {
           const tolls = tollsForApi(priced.tolls, priced.fastValidation);
           const m4 = sample.name === "Donetsk-Moscow" ? await calculateM4Core(route.coordinates) : null;
           row.tollProbe = {
-            m4Plazas: m4?.pricing.pricedPlazas.map((item) => ({ km: item.km, weekday: item.weekday, weekend: item.weekend, verification: item.verification })) ?? null,
+            m4Plazas: m4?.pricing.pricedPlazas.map((item) => ({ id: item.id, km: item.km, direction: item.direction, entryKm: item.entryKm ?? null, exitKm: item.exitKm ?? null, weekday: item.weekday, weekend: item.weekend, selectedAmount: item.selectedAmount, verification: item.verification })) ?? null,
             m4Unresolved: m4?.pricing.unresolved.map((item) => ({ code: item.code, kms: item.kms, message: item.message })) ?? null,
             m4ConfirmedChecks: m4?.validation.checks.filter((item) => item.status === "confirmed").map((item) => ({ km: item.km, evidence: item.evidence })) ?? null,
             referenceWeekdayTollRub: sample.referenceTollRub ?? null,

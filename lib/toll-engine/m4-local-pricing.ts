@@ -2,8 +2,10 @@ import { priceM4TollEvents, type M4PricedPlaza, type M4PricingResult, type M4Unr
 import { M4_DATA } from "@/lib/toll-engine/m4-data";
 import type { M4RoutePlazaValidation } from "@/lib/toll-engine/m4-route-validator";
 import { confirmedKms, resolvedContextPlazas } from "@/lib/toll-engine/m4-route-context";
+import { highwayTariffPeriod } from "@/lib/toll-engine/tariff-period";
 
-function traversalPricedPlazas(validation: M4RoutePlazaValidation) {
+function traversalPricedPlazas(validation: M4RoutePlazaValidation, departureAt?: string) {
+  const weekend = highwayTariffPeriod(departureAt).weekend;
   const confirmed = validation.checks.filter((item) => item.status === "confirmed");
   const has339 = confirmed.some((item) => item.km === 339);
   const has355 = confirmed.some((item) => item.km === 355);
@@ -15,9 +17,12 @@ function traversalPricedPlazas(validation: M4RoutePlazaValidation) {
     const rows = M4_DATA.plazas.filter((plaza) => plaza.km === check.km && plaza.model === "open" && plaza.tariff);
     if (rows.length !== 1 || !rows[0].tariff) continue;
     priced.push({
+      id: rows[0].id,
       km: check.km,
+      direction: "unknown",
       weekday: rows[0].tariff.weekday,
       weekend: rows[0].tariff.weekend,
+      selectedAmount: weekend ? rows[0].tariff.weekend : rows[0].tariff.weekday,
       verification: "route_traversal",
       matchedNodeIds: [],
       source: `${M4_DATA.source} + strict saved-anchor route traversal`,
@@ -100,6 +105,7 @@ export function priceM4RoutePlazaValidation(
 ): M4PricingResult {
   const result = priceM4TollEvents(validation.events, departureAt);
   const context = resolvedContextPlazas(validation);
+  const weekend = highwayTariffPeriod(departureAt).weekend;
   const syntheticUnresolved = traversalUnresolved(validation);
 
   const unresolved = mergeUnresolved([...result.unresolved, ...syntheticUnresolved]).filter((item) => {
@@ -118,11 +124,12 @@ export function priceM4RoutePlazaValidation(
 
   const confirmed = new Set(confirmedKms(validation));
   const alternativeConflict = confirmed.has(339) && confirmed.has(355);
-  const directPricedPlazas = [...result.pricedPlazas, ...traversalPricedPlazas(validation)]
+  const directPricedPlazas = [...result.pricedPlazas, ...traversalPricedPlazas(validation, departureAt)]
     .filter((item) => !alternativeConflict || (item.km !== 339 && item.km !== 355));
   const pricedPlazas = [...directPricedPlazas, ...context.resolved]
     .filter((item, index, all) => all.findIndex((candidate) => candidate.km === item.km) === index)
     .sort((a, b) => a.km - b.km);
+  for (const item of pricedPlazas) item.selectedAmount = weekend ? item.weekend : item.weekday;
   const weekdayAmount = pricedPlazas.reduce((sum, item) => sum + item.weekday, 0);
   const weekendAmount = pricedPlazas.reduce((sum, item) => sum + item.weekend, 0);
 

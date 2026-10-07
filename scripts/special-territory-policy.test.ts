@@ -37,6 +37,22 @@ test("geographic route zone selects one corridor without forcing a mainland deto
  const yaltaToDonetsk=candidatePlans(yalta,d,zones)[0];
  assert.deepEqual(yaltaToDonetsk.positions,[yalta,{lat:45.2117,lng:36.7161},{lat:45.045,lng:39.15},{lat:47.12,lng:39.86},d]);
  assert.deepEqual(candidatePlans(d,yalta,zones)[0].positions,[...yaltaToDonetsk.positions].reverse());
+ const volnovakha={lat:47.6019,lng:37.4968};
+ const yaltaToVolnovakha=candidatePlans(yalta,volnovakha,zones)[0];
+ assert.equal(yaltaToVolnovakha.corridor,"mainland","Yalta–Volnovakha stays on the agreed bridge/Krasnodar/M-4 mainland corridor");
+ assert.deepEqual(yaltaToVolnovakha.positions,[yalta,{lat:45.2117,lng:36.7161},{lat:45.045,lng:39.15},{lat:47.12,lng:39.86},volnovakha]);
+ assert.deepEqual(candidatePlans(volnovakha,yalta,zones)[0].positions,[...yaltaToVolnovakha.positions].reverse());
+ const namedPairs=[
+  {name:"Волноваха",position:volnovakha,corridor:"mainland" as const},
+  {name:"Токмак",position:{lat:47.255,lng:35.706},corridor:"crimea" as const},
+  {name:"Бердянск",position:{lat:46.755,lng:36.788},corridor:"crimea" as const},
+  {name:"Херсон",position:{lat:46.6354,lng:32.6169},corridor:"crimea" as const},
+ ];
+ for(const pair of namedPairs){
+  const forward=candidatePlans(yalta,pair.position,zones)[0];
+  assert.equal(forward.corridor,pair.corridor,`Yalta–${pair.name} follows the current approach-zone policy`);
+  assert.deepEqual(candidatePlans(pair.position,yalta,zones)[0].positions,[...forward.positions].reverse(),`${pair.name}–Yalta reverses controls`);
+ }
  const moscow={lat:55.7505412,lng:37.6174782};
  assert.deepEqual(candidatePlans(moscow,d,zones)[0].positions,[moscow,d],"mainland destination does not force M-4/EAST waypoints");
  assert.deepEqual(candidatePlans(d,moscow,zones)[0].positions,[d,moscow],"reverse mainland route uses the same direct controls");

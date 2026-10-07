@@ -31,6 +31,8 @@ test("requires verified, sourced boundaries for all four special territories", (
 
 test("loads the four OCHA ADM1 boundary features and classifies representative points", () => {
   assert.equal(SPECIAL_TERRITORY_BOUNDARIES.length, 4);
+  assert.deepEqual(SPECIAL_TERRITORY_BOUNDARIES.map((zone) => zone.id).sort(), [...ids].sort());
+  assert.ok(SPECIAL_TERRITORY_BOUNDARIES.every((zone) => zone.source.url.startsWith("https://") && zone.geometry.coordinates.length > 0));
   assert.doesNotThrow(() => validateTerritories(SPECIAL_TERRITORY_BOUNDARIES));
   assert.deepEqual(
     [

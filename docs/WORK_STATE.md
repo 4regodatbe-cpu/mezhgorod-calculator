@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 29762)
+Total output lines: 430
+
 ### 2026-10-04 — разбор расхождения Донецк—Москва по пользовательским скриншотам
 
 - **Подтверждённое наблюдение:** калькулятор показывает 1 341,2 км и 18 ч 40 мин. На скриншоте Яндекс Карт показаны варианты 1 220 км / 14 ч 7 мин и 1 230 км / 17 ч 20 мин. Разница основного расстояния около 9,9%; по времени — около 32%. Калькулятор также показывает платную дорогу 5 130 ₽ в Пн–Чт и 7 040 ₽ Пт–Вс; Яндекс на скриншоте — около 3 810 ₽ на основном маршруте. Сравнение тарифов дорог предварительное, так как геометрии двух маршрутов могут различаться.
@@ -153,137 +156,7 @@
 ### 2026-10-05 — публикация брендового интерфейса V2
 
 - PR #11 (feat/v2-brand-ui-2026-10-05) слит squash; merge commit: d47076d24ca2faad57f8e5d5c3512e470e2e0d35. Ветка назначения: work/remove-v3-runtime-2026-10-02.
-- CI run #103 (37262843595) для head перед merge завершился успешно: тесты, TypeScript, Next production build, live provider geometry/time, Photon и сравнение шести контрольных маршрутов.
-- Vercel Preview commit 806a79032f2f079e873302b8bfa30debe7e17d70 READY: dpl_CCdsnJKsiEUp69XxS5SPEje4d5pi. SSR /v2 вернул HTTP 200 и содержал брендовый интерфейс, селектор периода и кнопки изменения тарифа.
-- Стандартный Vercel Promote API ответил HTTP 422 Resource cannot be processed. Использован прямой alias API: production alias mezhgorod-calculator.vercel.app назначен deployment dpl_CCdsnJKsiEUp69XxS5SPEje4d5pi; ответ указал прежний deployment dpl_7ddWRHNaQhJKDDhLgKnbgCbSwg3p.
-- После назначения production /v2 ответил HTTP 200 с новой страницей; в SSR подтверждены заголовок «из А в Б», 4 ставки со степперами, выбор Пн–Чт/Пт–Вс и обновлённая форма.
-- Ограничение: runner для интерактивного мобильного браузера недоступен; production проверен серверным ответом и содержимым HTML, но жесты, live loading и реальная автопрокрутка не прогонялись end-to-end.
-- В интерфейсе и тарифном движке не менялись расчётные ставки ради контрольных скриншотов. Разница toll-оценок по ранее зафиксированным маршрутам и проверка крымской альтернативы остаются отдельными продуктовыми ограничениями.
-- Текущее состояние: PR #11 merged; production опубликован; пользователь должен проверить реальный мобильный интерфейс/маршрут. Следующее действие при найденной ошибке — зафиксировать конкретный экран/маршрут и исправить на рабочей ветке с новым PR; не переназначать production без запроса.
-
-
-### 2026-10-05 — мобильная иерархия V2 по новым скриншотам
-
-- PR #12, ветка `fix/v2-mobile-layout-2026-10-05`, head `fc5554d72134b70d862913496454c764824ca390`, остаётся открытым черновиком; production не менялся.
-- По скриншотам исправлена зона верхней safe-area, удалены повторный верхний текст о меняющихся тарифах и верхний селектор дня. Выбор периода остаётся у карточки результата.
-- Поля тарифа уплотнены; ₽/км стоит ближе к числу; стрелки увеличены, контрастнее и имеют сенсорную область 44×44 CSS px.
-- В строках результата название тарифа выделено, «=» перенесено к отдельной строке «Итого за поездку». Карточка платных дорог стала компактнее; убрана фраза про легковой автомобиль, оставлена краткая оговорка о возможном изменении стоимости.
-- Темная палитра получила более ясное разделение поверхностей и контрастные роли действий/предупреждений; измеренные пары текста/фона выше порога WCAG AA. Светлая палитра сохранена.
-- **Проверки:** GitHub Actions run #104 прошёл: scripts tests, TypeScript no-emit, Next production build и live probes. Vercel Preview доступен; SSR /v2 содержит текущую шапку/форму/тарифы и изменения результата. Проверка HTML не доказывает реальную мобильную геометрию или интерактивность.
-- Интерактивный браузерный прогон на телефоне не выполнялся. PR #12 оставить draft; следующий этап — визуально проверить на мобильном устройстве шапку под системной строкой, выбранные темы, степперы, wrapping итога и поведение карточек после расчёта. Не вливать и не переназначать production без отдельной просьбы.
-
-
-### 2026-10-05 — корректировка тёмной темы и альтернативного маршрута
-
-- **Проблема со скриншота:** тёмные поверхности выглядели как сплошной зелёно-синий фон; альтернативная карточка повторяла по каждой категории «платные дороги: сумма не подтверждена» и «не рассчитано», хотя базовая тарифная сумма известна.
-- **Важное продуктовое ограничение:** отсутствие платных дорог нельзя считать подтверждённым по непроверенной геометрии. Сохраняем статус неизвестного и не выдаём расчёт по базовому тарифу за полный конечный итог.
-- **UI-решение:** при неизвестной платности по каждой категории показывается короткая сумма «Итого без дорог», а под списком один раз написано, что возможная плата не включена. Убираются повторяющиеся технические сообщения, бессмысленный для неизвестной платности переключатель Пн–Чт/Пт–Вс и лишнее предупреждение о неполной проверке сегментов. Для подтверждённо бесплатного маршрута отображается итог без строки «+ 0 ₽»; платный маршрут сохраняет формулу и переключатель.
-- **Компоновка:** сокращены отступы и padding результатов/карточки платных дорог, чтобы ниже было заметнее начало альтернативного маршрута. Вводные тарифы немного уплотнены, названия категорий чуть крупнее и с лёгким смещением вниз.
-- **Цвет:** тёмные поверхности заменены нейтральным графитовым рядом, бирюзовый и коралловый остались небольшими акцентами для действия и дорог; ослаблен цветовой halo фона. Цель — убрать навязчивый зелёный оттенок, сохранив различие состояний и брендовые акценты.
-- Добавлены unit-проверки отображения неизвестной, подтверждённо бесплатной и платной суммы. Прогон CI после commit запишет текущий результат; мобильный визуальный прогон остаётся нужен.
-- PR #12 остаётся draft, production не меняется.
-
-
-- **Результат follow-up (#107):** 2026-10-05 run #107 завершился success обоими jobs: scripts tests, TypeScript, Next build, live provider/Photon/six-route audit. Preview latest head `e69c726800c33619f4ae26c9e98ff40ead61e992` READY; protected SSR `/v2` вернул 200, stylesheet содержит новые графитовые токены и больше не содержит прежний зелёно-синий `#1C2B33`. В интерактивном браузере Vercel показал sign-in gate, поэтому mobile visual/E2E не выполнен. Production не менялся; PR #12 draft.
-
-
-### 2026-10-05 — тарифные поля, загрузка и объезд пунктов оплаты
-
-- **Новые требования со скриншотов:** компактнее карточки ставок; названия выровнять по верхней кнопке-стрелке, число и ₽/км — по нижней; текст увеличить на 1,5 px. Во время расчёта одновременно оставить заметными кнопку процесса и короткое сообщение о загрузке.
-- **Уточнение правила альтернативы:** это не маршрут «только по бесплатным дорогам». Он должен по возможности использовать удобные платные магистрали и объезжать именно пункты взимания платы; например, оставаться на бесплатных отрезках М‑4 между пунктами. Это уточнение заменяет прежнее пользовательское упрощение «альтернативный маршрут всегда по бесплатной дороге».
-- **Маршрутизация:** быстрый вариант Valhalla оставлен с `use_tolls=1`. Второй запрос тоже оставляет платные рёбра доступными, но задаёт высокий `toll_booth_penalty=43200`, чтобы поиск предпочитал объезды пунктов. Результат проверяется по `node.type=toll_booth`; наличие платного дорожного ребра само по себе альтернативу больше не дисквалифицирует. При полной проверке с найденным пунктом маршрут отбрасывается; при неполной проверке кандидат с ненаблюдавшимся пунктом может сохраниться как внутренне неподтверждённый.
-- **Результат/копирование:** карточка альтернативы показывает короткое название, километры/время и четыре пары «тариф — сумма», без статуса платности, повторного «итого без дорог» и дорожных пояснений. Копирование включает короткие города, расстояние, время и четыре суммы. Вводные тарифы перестроены в две строки; степперы остались с мобильной областью нажатия 44 px; добавлено компактное сообщение «Подождите пару минут, пока загружается маршрут».
-- **Проверки:** добавлены тесты для копирования краткого расчёта и для допустимого платного дорожного ребра без пункта, отбрасывания обнаруженного пункта и неполных данных. Полный CI, live probe и Preview после отправки изменений ожидают результата.
-- **Ограничение:** штраф Valhalla — предпочтение, а не жёсткий запрет. Документация описывает его как средство создавать маршруты, которые стремятся избегать пунктов оплаты; сам факт нужно подтверждать по геометрии/map matching. При неполной проверке UI по решению пользователя не показывает техническую метку неопределённости.
-- **Ветка:** PR #12 `fix/v2-mobile-layout-2026-10-05`, оставить открытым черновиком. Production не менять; публикацию пользователь не запрашивал.
-
-
-### 2026-10-05 — подтверждённый объезд пунктов оплаты с участками М‑4
-
-- **Уточнение пользователя:** альтернатива не обязана избегать всех платных дорожных рёбер. Она должна объезжать пункты оплаты; участок платной магистрали между пунктами допустим, если фактическая геометрия не проходит ни через один пункт.
-- **Почему предыдущая проверка давала 12/12 отказов:** адаптер отправлял trace_attributes как GET с длинным query. Valhalla описывает trace_attributes как POST с JSON body. Переведено на POST; это восстановило map matching длинных геометрий. Официальная схема Valhalla показывает POST request body для /trace_attributes: https://github.com/valhalla/valhalla-docs/blob/master/map-matching/api-reference.md .
-- **Защита от ложной карточки:** неподтверждённые кандидаты больше не сохраняются как candidate_unverified и не отправляются в API. Кандидат выдаётся только если trace завершил все части и не нашёл toll_booth узлов. Также кандидат должен отличаться от главного по порогам существующей политики, иначе дубликат скрывается. Это важно, потому что UI по решению пользователя не показывает технический статус неопределённости.
-- **Генерация кандидатов:** маршрутизатор разрешает use_tolls=1. Кандидаты запрашиваются в порядке штрафов 900 сек., 1 200 сек., затем BRouter и резервный Valhalla 43 200 сек. Они проверяются по очереди; поиск останавливается на первом маршруте с полной проверкой без пунктов. Поэтому приоритет получает короткий объезд, а длинный остаётся резервом. Платное ребро само по себе маршрут не отбрасывает.
-- **Live sweep Москва—Краснодар:** основной Valhalla 1 347,3 км / 1 071 мин. Штраф 900 сек. дал 1 524,5 км / 1 289 мин, но map match нашёл 407 toll edges и 4 пункта оплаты — кандидат отклонён. Штраф 1 200 сек. дал 1 631,2 км / 1 416 мин; полная проверка нашла 7 платных рёбер М‑4, 0 пунктов — кандидат принят. От 1 800 до 43 200 сек. маршрутизатор выдавал 1 649,1 км / 1 441 мин без платных рёбер и без пунктов. Это подтверждает на одном live route разрешённое сочетание платных участков и объезда пунктов; результат не обобщается на все маршруты.
-- **Тесты:** проверены POST/JSON контракт, разрешение платного ребра без пункта, отклонение найденного пункта и неполного trace, запрет маршрута-дубликата и переход от кандидата с пунктом к подтверждённому кандидату с платным ребром. Основная платная оценка, суммы будни/выходные и тарифная формула не менялись.
-- **CI:** run #129 (37356502753) на кодовом head 384c0691fcdb9e3c14ed4c77e313be854a098510 завершился успешно: тесты, TypeScript, next build, live provider geometry/timing, toll-point sweep, Photon и аудит шести скриншотных маршрутов.
-- **Preview:** Vercel deployment dpl_3BUxQU4HDZpLDHxv2LAA6ah2Lmpg READY. Защищённый SSR fetch /v2 вернул HTTP 200 с калькулятором и обновлённым описанием альтернативы. Интерактивный мобильный браузерный тест остаётся недоступен за Vercel login gate.
-- **Статус выпуска:** PR #12 остаётся open/draft; merge и production deployment/alias не выполнялись. Внешняя публикация не запрашивалась.
-
-### 2026-10-05 — первый мобильный тест: форма двойного тарифа и Донецк—Москва
-
-- **Проверка исходника:** PR #12 остаётся open/draft, ветка `fix/v2-mobile-layout-2026-10-05`, исходный head `dbd41783759807550a67d541db1c3fe662dbd456`. Production не менялся.
-- **Наблюдения со скриншотов пользователя:** для Донецк—Москва калькулятор показывает 1 213,6 км / 16 ч 22 мин, платная дорога 4 680 ₽ Пн–Чт и 6 270 ₽ Пт–Вс. Яндекс показывает выбранный вариант около 1 210 км / 15 ч / 3 810 ₽ и альтернативу 1 237 км / 19 ч. Геометрии и точные условия оплаты Яндекса не предоставлены, поэтому нельзя считать 3 810 ₽ подтверждённой правильной суммой. Эти данные занесены отдельным follow-up наблюдением в `benchmarks/routes/yandex-2026-10-04/screenshot-observations.json`; CI route audit должен выдавать живую геометрию, провайдера и разложение платных систем для приблизительных координат Донецка и Москвы.
-- **Отдельный тарифный риск, обнаруженный при сверке:** live-route regression по Москве—Краснодару всё ещё ожидает 6 090 ₽ будни / 8 400 ₽ выходные. Официальная новость «Автодора» об индексации с 02.03.2026 указывает для М‑4 Москва—Краснодар цену 5 040 ₽ Пн–Чт (https://avtodor-tr.ru/press-center/news/na-m-12-vostok-vvodyatsya-novye-abonementy-/). Это означает, что набор контрольных данных или состав маршрута/тарифа требует пересмотра; из одной общей цены пока нельзя корректно переписать постовые ставки либо установить причину расхождения. Проверять состав участка и тарификацию по первичным таблицам Автодора до изменения сумм.
-- **UI-исправление в этом изменении:** обе группы двойных ставок обведены раздельными приглушёнными контурами; dual cards получили меньшие внутренние поля, а область кнопок 44×44 px сохранена. На узких экранах кнопка расчёта теперь закреплена внизу над системной safe-area, вместе с ней при загрузке отображается «Подождите пару минут…». В форме после результата панель скрывается, чтобы не перекрывать карточки. Идентификаторы полей двух групп тарифов разделены для корректных label/input связей.
-- **Проверки:** CI, typecheck, build и live probe на новом commit ожидаются; ниже добавить конкретный workflow run и итог. Интерактивная браузерная проверка мобильного safe-area/scroll остаётся отдельной ручной проверкой.
-- **Статус:** PR #12 остаётся черновиком; публикация/merge/production deployment не выполнялись.
-
-
-### 2026-10-06 — приоритет названий поселений и выборочный аудит маршрутов
-
-- Текущая ветка PR #12 проверена на head `d49e74ace2f6d46948c8c1b04496ffae9627dbe9`; PR открыт и остаётся draft. Workflow run #132 был отменён (оба job cancelled), поэтому это не кодовая ошибка и не успешная проверка; нужен новый прогон.
-- Название региона не зашивается по списку населённых пунктов: для любого результата OSM place-поиска суффикс выбирается из координаты и геометрии ADM1/Крыма. Так новые малые поселения получают ту же маркировку без ручного обновления каталога. Если Photon не возвращает населённый пункт, интерфейс сам его создать не может — это остаётся ограничением внешнего геокодера.
-- Исправляется порядок exact-совпадений: локалитеты пяти целевых территорий получают приоритет над российскими одноимёнными городами независимо от OSM-класса (село/хутор больше не проигрывает городу только из-за типа). Для Донецка закреплён порядок: координаты ДНР, затем Донецк Ростовской области, затем остальные совпадения.
-- В подписи используется доступное имя `name:ru/name_ru`, если поставщик его отдаёт; добавлены типы place=`farm` и `isolated_dwelling`. Из выдачи удаляются теги станций, платформ, остановок и терминалов; обычные адреса и улицы не фильтруются.
-- Запросы с приписками ДНР/ЛНР/Крым/названия области нормализуются для точного поиска. Классификация тарифа остаётся исключительно координатной.
-- Добавлена live-проверка на 50 реальных geocoder-resolved локалитетах: seed `20261006`, по 10 из каждой зоны, по возможности 3 сельских/малых поселения в страте; один случайно выбранный пункт РФ; направление пары чередуется; Valhalla и OSRM сохраняют километры, время, разделение км по полигонам, тип поселения и расхождение провайдеров. JSON прикладывается к workflow artifact. Выборка строится из пула запросов и фильтруется по полигону; это не каталог всех поселений и не доказательство качества каждой записи OSM.
-- Добавлены unit-регрессии на приоритет малых поселений, порядок Донецков, региональные квалификаторы, станции, фермы/изолированные dwellings и локализованное русское имя.
-- Workflow #133 на первом head дал 82/85 tests; три address-search assertions падали: два старых ожидания ставили обычный/крымский namesake выше специального региона, а одна новая фикстура точки «Приморск» лежала вне полигона. Исправлено: области выше Крыма при совпадениях (ДНР/Ростовский Донецк имеют отдельный строгий порядок), тест Kharkiv проверяет возврат украинского alias без навязывания порядка против Крымского тезки, точку хуторной фикстуры перенёс в проверенную координату Донецка. Перезапустить весь CI/live audit на следующем head. PR оставить open/draft; merge и production не выполнять.
-
-### 2026-10-06 — результат первого случайного геокодированного аудита
-
-- Run #134: unit-тесты **85/85 passed**, TypeScript no-emit passed, Next build passed. Live geometry/alternative probes completed before the random test.
-- Первый seeded audit (20261006) correctly refused to call itself complete: only **39** route pairs were resolved (DNR 10, LNR 10, Zaporizhzhia 10, Kherson 9, Crimea 0); job failed at the 10-per-area gate and uploaded its JSON artifact. Provider outcomes for attempted pairs: Valhalla **37** successful, OSRM **32**; one pair failed both provider checks. For shared successful routes some distances differed materially (e.g. 44.9 km); these are route-source differences recorded for review, not treated as geometry-split failure.
-- Причина низкой выборки: resolver associated ranked suggestions back to raw Photon features using OSM IDs, and accepted only place=*; this was too brittle for area data that Photon returns as administrative locality features. It also queried Crimea through global/UA only. Переписано на прямую проверку каждой raw feature, принято точное administrative locality, добавлен RU query для Crimea, расширены candidate pools с малыми населёнными пунктами и diagnostics counters (features/place/admin/inside-area/accepted).
-- Повторный random audit обязателен; до его результата нельзя утверждать, что получено 50 маршрутов. В артефакте первого запуска сохранены 39 маршрутов и счётчики доступности. Следующий CI/live результат добавить ниже.
-
-### 2026-10-06 — второй live audit и снижение нагрузки на Photon
-
-- Run #135 verify снова зелёный: **85/85 tests, TypeScript, Next build**.
-- Расширенный resolver всё ещё не дал требуемые 50 пар: **28** доступны (ДНР 10, ЛНР 10, Запорожская область 8, Херсон 0, Крым 0). На этих парах OSRM вернул 28 маршрутов, Valhalla — 21. Artifact counters показывают, что Photon вернул 0 features для всех запросов Херсонской области и Крыма в этой части workflow, хотя отдельный Photon query smoke ранее успешно возвращал Yalta/Sevastopol. Результат не считается выполненным тестом.
-- Диагноз изменён: прежний resolver отправлял 8–12 запросов одновременно и выполнял глобальный/UA/RU поиски для всех 145 candidate names; ошибки allSettled могли быть незаметны. Новый resolver делает последовательный fallback global → UA → RU, повторяет временные 429/503/сетевые ошибки, логирует request failures, а candidate names проверяет в seeded случайном порядке с ранней остановкой после 10 (с 3 сельскими, если доступны). Полные source counters идут в JSON.
-- Повторить live audit обязательно: нужно получить реальные 10 точек в каждой из пяти зон и 50 маршрутов. Если Photon продолжит отдавать ноль по нескольким зонам, следующий шаг — сменить источник геокодирования в тесте либо использовать проверенную settlement dataset; нельзя подделывать точки и выдавать неполный пул за покрытие.
-
-
-### 2026-10-06 — address-search and randomized route audit follow-up
-
-- PR #12 was rechecked as open/draft; run #136 was green for verification (85 tests, TypeScript, Next build) and live probes. Its seeded route matrix resolved exactly 50 settlements: 10 each in DNR, LNR, Zaporizhzhia Oblast, Kherson Oblast, and Crimea. The random Russian endpoint was Azov. Photon produced 16/15/16/11/35 candidate place features respectively; only this live sample is covered, not every locality in the provider index.
-- Route provider outcome: Valhalla 50/50, OSRM 47/50; three OSRM calls ended in fetch failed. Route distance partition checks passed for returned geometry (ordinary km + special km equals route length within 0.05 km). However, 24 pairs exceeded the audit warning threshold (>30 km or >5% inter-provider spread); extreme differences included 3603.1 km for Gulyaypilske and 2227.8 km for Kherson. These are not validated interchangeable routes, and the 50-pair run is a sample/diagnostic rather than evidence that all route options are correct.
-- Live Photon search returned Donetsk DNR first and Rostov Oblast Donetsk second, but repeated the same Rostov locality in multiple cards. Query Донецкая область had no relevant oblast/special-region result in its first suggestions. Query Ялта also surfaced same-name localities inside DNR before Crimea; each suffix reflected its own coordinates, but ranking still deserves review.
-- Updated photon-address-search to exclude place=municipality from selectable locality suggestions and collapse repeated rendered labels. Added a regression test. Tightened the random route audit to select only inhabited place=* classes, excluding administrative/community relations, and to include per-route provider distance deltas, a warning list and provider call failures in the artifact.
-- Live payment-point avoidance probe confirmed the implementation can route partly on toll-tagged M-4 while avoiding mapped toll points: a fully traced candidate with 7 paid road edges and 0 toll booths passed; a separate route with 4 toll booths was rejected. This only confirms that one live Moscow–Krasnodar case follows that routing policy; real toll price accuracy remains a separate unresolved limitation.
-- Source modifications were committed on the PR branch; a fresh workflow is required for the final source head. Keep PR open/draft and do not merge or deploy production.
-
-
-### 2026-10-06 — результаты follow-up run #141 и ужесточение выборки
-
-- Run #141 на head c52c96d подтвердил verify: 86 tests, TypeScript и Next build прошли. Исправленные выдача и random audit прошли live job.
-- Дубли названия «Донецк, Ростовская область» исчезли: live выдача теперь ставит одну карточку «Донецк — ДНР» первой и одну карточку Ростовской области второй. Шумные повторные результаты больше не занимают слоты подсказок.
-- Live выборка по прежнему seed содержит 50 поселений — по 10 из каждой зоны — и ни одной municipality/admin feature. Valhalla вернул 50 маршрутов; OSRM — 44. 25 межпровайдерских пар превысили 30 км или 5%; крупный выброс для Гуляйпильского остался 3 603,1 км. Из-за этого эти маршруты остаются диагностикой и не считаются подтверждёнными как правильные направления.
-- Дополнительно найден дефект самого тестового resolver: Photon мог вернуть населённый объект, который не совпадает с запрошенным именем (например, для «Комсомольское» принял «Гуляйпільське»). Аудит теперь требует точного совпадения поля имени либо явного alias для русского/украинского написания; raw имя поставщика добавляется в артефакт. Отвергнутые геокодерные подсказки не считаются населёнными пунктами маршрута.
-- Live search still не разрешил «Донецкая область» как запрос региона; «Ялта — ДНР» остаётся выше «Ялта — Крым» из-за общего приоритета населённых пунктов в пяти целевых территориях. Оба пункта остаются на проверку/решение ранжирования. Coordinate-derived suffixes сами по себе не подменяются.
-- Run #142 (37432068925) на новом source head 3fb9601 queued; он должен проверить новый exact-name gate, тесты и сборку. После завершения добавить итог и проверить artifact: по 10 реальных совпадающих имён в каждой зоне, без административных районов и ложных результатов.
-- PR #12 по-прежнему open/draft; production/merge не менялись.
-
-
-### 2026-10-06 — regional search aliases and audited sample results
-
-- Follow-up run #142 resolved exactly 50 named settlements (10 each in DNR, LNR, Zaporizhzhia, Kherson and Crimea), all checked against their polygons. The shared Russian endpoint was randomly selected as Tikhoretsk. Valhalla succeeded for 49/50 pairs and OSRM for 49/50; 20 pairs exceeded the diagnostic difference threshold (>30 km or >5%). The largest spread was 3,502.2 km for Kushugum. Two other provider calls failed. LNR's selected sample contained no rural places because only ten exact-name candidates were available.
-- Those figures show provider disagreement, not route correctness. Do not treat the resulting route/price as confirmed until the route choice is independently checked. This matrix is a reproducible seeded sample, not proof that every settlement is searchable or routable.
-- Photon live output in the earlier artifact confirmed “Донецк — ДНР” first and “Донецк, Ростовская область, Россия” second. However “Донецкая область” had no matching region card: the provider returned Ukrainian “Донецька область,” which did not match the Russian query after normalization.
-- Added the existing explicit Ukrainian/Russian region aliases to the feature exact-name matcher. Added a regression for the Ukrainian “Донецька область” feature returned by a Russian query; the same matcher covers all four configured region aliases. Request URLs continue to ask Photon for Russian-language names.
-- Run #148 verify passed but its live job failed because a literal \\n had accidentally been written between JavaScript statements in the live-search probe. Repaired the script and pushed it; it now records ranking diagnostics instead of aborting when a live provider result differs.
-- Current code head `2983dea6f5b5c257ab87422e20c2e61f1c5e138d`: run #151 verify passed (87 tests, TypeScript, Next build). Its live probes are still in progress. Await that artifact before claiming regional alias behavior or refreshed route counts as live-confirmed.
-- PR #12 remains open and draft. No merge or production deployment.
-
-
-### 2026-10-06 — A0: повторная сверка GitHub, PR и live CI
-
-- Проверен открытый [PR #12](https://github.com/4regodatbe-cpu/mezhgorod-calculator/pull/12): draft, head branch `fix/v2-mobile-layout-2026-10-05`, head SHA `49c10fcef0ebadeca0e2e97f564a435a36679fcc`; base `work/remove-v3-runtime-2026-10-02`. PR не слит; production deployment не выполнялся.
-- Workflow run #153 (run ID `37435505636`) завершён `cancelled` в 08:46 UTC. Job `verify` прошёл: 87 тестов, TypeScript no-emit и Next build. Live job: provider geometry/time, payment-point avoidance и Photon search завершились успешно; seeded audit 50 населённых пунктов был отменён на шаге 9, Yandex route comparison пропущен. Артефакт и итог матрицы от этого run не подтверждены.
-- Preview Vercel для SHA #153 отмечен Ready; это preview, не production.
-- Исправлено устаревшее описание PR, которое ошибочно представляло матрицу как всё ещё выполняющуюся и приписывало run #153 завершённые результаты run #142. Исторические результаты #142 остаются диагностикой предыдущего SHA.
+- CI run #103 (37262843595) для head перед merge завершился успешно: тесты, TypeScript, Next production build, …9762 tokens truncated…льтаты run #142. Исторические результаты #142 остаются диагностикой предыдущего SHA.
 - Доступный рабочий каталог в этой сессии не содержит checkout проекта; сверка и правки выполнены GitHub-интеграцией непосредственно в PR-ветке.
 - **Следующий шаг:** повторно запустить полный workflow после документационных правок и изучить live artifacts/причины отмены. Затем начать A1 — покрытие поселений, ранжирование и провайдеры; отдельно зафиксировать измеримые лимиты Photon.
 - **Подтверждённые оставшиеся риски:** Photon не доказывает полноту каталога; межпровайдерские расхождения велики; toll pricing и геометрия для отдельных benchmark маршрутов открыты. Run #153 не закрывает A6 матрицу.
@@ -407,3 +280,24 @@
 
 
 - **CI correction:** verify run #37517080978 on the first RuWiki-index commit failed at module loading because Node 24 requires JSON import attributes. No address-search assertion ran in that file; 63 other tests passed. Added `with { type: "json" }` to the index import and pushed a follow-up commit; the rerun is the validation gate.
+
+
+### 2026-10-07 — Payment-point alternative and six-point hardening
+
+- Updated `routeDifferenceEvidence`: the payment-point-avoiding option now needs at least 10 km/1% distance savings or 15 minutes/5% time savings. A route that is longer and slower is no longer misclassified as a useful alternative. This also corrects toll fallback evidence, which shared the same helper.
+- Kept the user-confirmed payment-point rule: toll-tagged road edges remain allowed only when a complete geometry trace confirms zero toll-booth nodes. Regression tests cover an allowed toll edge with a verified booth bypass, a booth, an incomplete trace, and a candidate with no benefit (which skips map matching).
+- Added Yalta–Volnovakha corridor assertions in both directions. Existing policy continues to route via the bridge/Krasnodar/M-4 control sequence; no corridor selector behavior was changed.
+- Strengthened production boundary checks for exact four-area IDs, sourced URLs, nonempty geometry, and representative coordinates. Added RuWiki index guardrails: its four source URLs must all be ru.ruwiki.ru, the index must remain a 2,000+ row name-only list, and entries must not contain fabricated coordinates. The existing Ukrainian spellings and priority tiers remain covered by address-search tests.
+- Targeted local checks passed: 33 address search, 9 payment-point/toll fallback, 5 boundary, 10 route policy, 4 route-pricing integration tests; systemic toll composition and route-corridor policy scripts also passed. `git diff --check` passed.
+- At the subsequent full-suite run, 28/29 test files passed; the remaining API test could not load `next` because dependencies are absent. `pnpm install --frozen-lockfile` could not download packages because network access is denied; the offline attempt lacked the required package metadata. TypeScript/build and live provider checks are therefore not claimed as run.
+- Toll amount discrepancy on Yalta–Volnovakha remains for route-geometry reconciliation: screenshot is ~2,060 ₽ weekday / 2,533 ₽ weekend; app estimate is 2,103/2,533 ₽. No amount was hardcoded or changed without matching Yandex geometry/plaza evidence. RuWiki list completeness and missing Ukrainian counterpart spellings also remain bounded by the supplied exports; no additional RuWiki fetch was available in this run.
+- Changes are local on PR branch `fix/v2-mobile-layout-2026-10-05`; no production deploy or merge.
+
+### 2026-10-07 — Further no-new-data improvements
+
+- Review found the prior detour filter conflated “better” with “useful”: a payment-point bypass can legitimately be longer/slower yet remain within a reasonable guardrail. Replaced the savings-only gate with explicit upper bounds of 25% extra distance and 50% extra time; candidates outside either bound are rejected before map matching. The thresholds are implementation guardrails, not values calibrated against route ground truth. The 43,200-second full-detour fallback remains enabled when quick candidates fail, since evidence does not justify skipping it.
+- Renamed the internal truth state to `confirmed_payment_point_avoiding` so a route with paid-tagged edges but no payment booths is not represented internally as toll-free. Such candidates now carry a quality warning if tagged edges exist; the user’s booth-bypass rule remains intact.
+- Added M-4 component breakdown fields: stable item ID, km marker, direction (`unknown` unless route context proves it), entry/exit markers for mixed sections, weekday/weekend tariff and selected amount. Audit/live-probe JSON now records these fields. This makes same-plaza deduplication and the Donetsk–Moscow sum auditable without changing route prices.
+- Added corridor regressions for Yalta paired with Volnovakha, Tokmak, Berdyansk and Kherson, in both directions, using the current geographic-zone rule. This locks current policy; it does not establish that every corridor preference is the user’s final intended one.
+- Tests passed after these changes: full route-settlement-specific suites (address search 33, toll alternative 10, boundaries 5, policy 10, M-4 breakdown 1), plus pricing integration, systemic composition, strict M-4 traversal and other-road tariff/evidence checks. Full test runner still has one unavailable `next` package import. No tsc executable or local dependency installation is available; build/typecheck/live providers not run.
+- Current branch `fix/v2-mobile-layout-2026-10-05`, based on prior local commit `8350649`; this block is uncommitted until final review. PR #12 push remains blocked by missing GitHub credentials in the environment; no production actions.

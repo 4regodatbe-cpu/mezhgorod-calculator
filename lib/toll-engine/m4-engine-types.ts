@@ -4,9 +4,14 @@ export type PricingStatus = "priced" | "partial" | "unresolved" | "none";
 export type PricingConfidence = "high" | "medium" | "low" | "none";
 
 export type M4PricedPlaza = {
+  id: string;
   km: number;
+  direction: "forward" | "reverse" | "unknown";
   weekday: number;
   weekend: number;
+  selectedAmount: number;
+  entryKm?: number;
+  exitKm?: number;
   verification: PlazaNodeVerification;
   matchedNodeIds: string[];
   source: string;
