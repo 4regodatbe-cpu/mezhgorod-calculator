@@ -311,3 +311,13 @@ Total output lines: 430
 - Added corridor regressions for Yalta paired with Volnovakha, Tokmak, Berdyansk and Kherson, in both directions, using the current geographic-zone rule. This locks current policy; it does not establish that every corridor preference is the user’s final intended one.
 - Tests passed after these changes: full route-settlement-specific suites (address search 33, toll alternative 10, boundaries 5, policy 10, M-4 breakdown 1), plus pricing integration, systemic composition, strict M-4 traversal and other-road tariff/evidence checks. Full test runner still has one unavailable `next` package import. No tsc executable or local dependency installation is available; build/typecheck/live providers not run.
 - Current branch `fix/v2-mobile-layout-2026-10-05`, based on prior local commit `8350649`; this block is uncommitted until final review. PR #12 push remains blocked by missing GitHub credentials in the environment; no production actions.
+
+
+### 2026-10-07 — M-4 Москва—Краснодар: исправление полной цены
+
+- Пользовательское правило выпуска: каждое завершённое изменение сразу публиковать в production после проверок; обновлять ветку PR и журнал состояния в том же блоке. Это решение действует для следующих изменений тоже.
+- Причина завышения: production суммировал цены отдельных ПВП и mixed-зон по всему коридору, хотя для полного маршрута Москва—Краснодар опубликована единая контрольная стоимость 5 040 ₽ Пн–Чт / 6 090 ₽ Пт–Вс. Старый пользовательский regression ошибочно закреплял 6 090 / 8 400 ₽.
+- Исправление: если полная проверка M-4 подтвердила маршрут от северного пункта 62/71 км до 1223 км и не менее восьми ПВП по пути, применять полный маршрутный тариф из `lib/toll-data/full-routes.ts`; локальную разбивку оставить в диагностике. Частичные маршруты этот override не получают.
+- Источник суммы: сообщение Госкомпании «Российские автомобильные дороги» от 02.03.2026; страница указывает обе цены для М-4 Москва—Краснодар: https://russianhighways.ru/press/news/141463/ .
+- Добавлены проверки для обоих направлений, буднего и выходного периода, а также защита от применения полного тарифа к частичному маршруту. Пользовательский live regression обновлён для Краснодар—Москва.
+- Фокусные и полный локальный тесты: 30/30 прошли; `tsc --noEmit --incremental false` и `git diff --check` прошли. Remote production build/deploy и post-publish regression ожидают текущий коммит.
