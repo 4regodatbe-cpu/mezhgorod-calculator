@@ -14,6 +14,7 @@ If essential context is missing from the repository, search the named earlier ch
 
 ## Safety and verification
 - Do not merge PRs, modify main, or publish production without explicit user authorization.
+- Standing user authorization (2026-10-07): after implementing and verifying each requested product change, publish it immediately to the current Production app without waiting for a separate publish request. This authorization applies to this calculator and does not authorize merging PRs or changing `main`. If a required verification/build fails, do not publish that change; report the blocker.
 - Preserve toll fail-closed rules: unknown is not free, partial toll sums are not complete, and only independently confirmed routes may be labeled free.
 - Keep offline benchmark snapshots out of live route selection and pricing.
 - After code changes, run focused tests plus the required full gate/build. For docs-only changes, verify links/content and accurately report CI status.
