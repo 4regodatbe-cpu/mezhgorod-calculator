@@ -2,6 +2,7 @@ import type { Coordinate } from "@/lib/tolls";
 import type { TollValidation } from "@/lib/toll-validator";
 import { priceA289Route } from "@/lib/toll-engine/a289-engine";
 import { calculateM4Core } from "@/lib/toll-engine/m4-core";
+import { fullM4RouteTariff } from "@/lib/toll-engine/m4-full-route-tariff";
 
 export type ProductionM4Tolls = {
   amount: number;
@@ -82,9 +83,10 @@ export async function calculateProductionM4(
   }
 
   const a289 = priceA289Route(route, departureAt);
-  const weekdayAmount = pricing.weekdayAmount + a289.weekdayAmount;
-  const weekendAmount = pricing.weekendAmount + a289.weekendAmount;
-  const amount = pricing.period === "пятница–воскресенье" ? weekendAmount : weekdayAmount;
+  const fullRouteTariff = fullM4RouteTariff(validation, departureAt);
+  const weekdayAmount = fullRouteTariff?.weekdayAmount ?? pricing.weekdayAmount + a289.weekdayAmount;
+  const weekendAmount = fullRouteTariff?.weekendAmount ?? pricing.weekendAmount + a289.weekendAmount;
+  const amount = fullRouteTariff?.amount ?? (pricing.period === "пятница–воскресенье" ? weekendAmount : weekdayAmount);
 
   return {
     candidate: true,
@@ -95,7 +97,9 @@ export async function calculateProductionM4(
       weekendAmount,
       period: pricing.period,
       segments: [
-        "М-4 Дон: точный расчёт по локально подтверждённым ПВП",
+        fullRouteTariff
+          ? "М-4 Дон: полный коридор Москва—Краснодар, применён опубликованный тариф Автодора категории I без транспондера (5 040 ₽ Пн–Чт / 6 090 ₽ Пт–Вс); сумма ПВП оставлена как диагностическая разбивка"
+          : "М-4 Дон: точный расчёт по локально подтверждённым ПВП",
         ...pricing.pricedPlazas.map((item) => `${item.id} [${item.direction}${item.entryKm != null ? ` ${item.entryKm}→${item.exitKm}` : ""}]: ${item.selectedAmount} ₽ (будни ${item.weekday} ₽, выходные ${item.weekend} ₽)`),
         ...a289.segments,
       ],
