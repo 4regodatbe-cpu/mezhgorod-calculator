@@ -436,3 +436,9 @@ Current PR #12 is open/draft; no merge/production action.
 - PR #12 branch updated to `aad7d328c05c7ff36a870e43350f09e6634933ce`; Vercel Preview `dpl_Gu8fS3TcWwaoZGxAU19myBDVKbx7` reached READY. SSR `/v2`, CSS, and address suggestions for Izyum/Krasnodar returned HTTP 200.
 - Live Izyum results showed the Russian-country tier could be bypassed by exact matches where Photon omitted the place subtype. Tightened ranking so any exact Russia namesake remains above other countries, while special-territory boosts still require settlement/administrative classification. Added regression for Russian non-place subtype versus Kazakhstan city.
 - Local verification of this ranking fix: address-search suite 35/35, TypeScript no-emit, and diff check passed. Latest ranking fix is not yet on the remote branch; production was not promoted. Next run remote Vercel build and repeat preview search checks before production promotion.
+
+
+### 2026-10-07 — production release completed
+
+- After the preview regression fix passed 35/35 address-search tests and remote Vercel build, deployed source commit `cd08bc7e79d0507e0d77d3d58212e1e253a79795` to Production as `dpl_4kVEexEXd13aTWhRoUPfLAiRvrcR` (`READY`, target `production`). Direct promotion of the preview was rejected by Vercel with 422, so the same verified Git source was built with production target.
+- Live Production smoke checks: `/v2` returned HTTP 200; `/api/suggest?q=Изюм` returned HTTP 200 with Russian namesakes first; `/api/suggest?q=Краснодар` returned HTTP 200 with Краснодар (Краснодарский край) first. PR #12 remains open/draft; not merged.

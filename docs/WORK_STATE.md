@@ -1,10 +1,10 @@
 ## Current handoff — 2026-10-07 13:36 MSK
 
-- Repo: `/workspace/scratch/a4ecb4a8e44f/repo`, branch `fix/v2-mobile-layout-2026-10-05`. PR #12 remains open/draft; no merge performed. Its remote head is `aad7d328c05c7ff36a870e43350f09e6634933ce`; Production remains on `8857f475ce92aee547b33073165ec3ad1b155aa7`.
+- Repo: `/workspace/scratch/a4ecb4a8e44f/repo`, branch `fix/v2-mobile-layout-2026-10-05`. PR #12 remains open/draft; no merge performed. Its remote head is `cd08bc7e79d0507e0d77d3d58212e1e253a79795`; Production deployment `dpl_4kVEexEXd13aTWhRoUPfLAiRvrcR` is READY at the same source commit.
 - Published-to-preview code at `aad7d32` includes the committed route/search/UI fixes. Vercel Preview `dpl_Gu8fS3TcWwaoZGxAU19myBDVKbx7` reached READY; `/v2`, `/api/suggest?q=Изюм`, `/api/suggest?q=Краснодар`, and the stylesheet returned HTTP 200. The live Izyum suggestions exposed that country tiering did not reliably push Russia ahead of Kazakhstan when Photon omitted the place subtype.
 - New local fix in progress: apply Russia-vs-other-country priority to every exact namesake; keep the four special-territory boost limited to settlements/administrative results to avoid boosting unrelated POIs. Regression covers a subtype-missing Russian match vs a Kazakhstan city. Address search suite passes 35/35; TypeScript no-emit and `git diff --check` pass.
 - Combined state before the latest two-file ranking adjustment: all 29 test files passed and targeted ESLint passed with one existing unused-variable warning at `lib/photon-address-search.ts:416`. Local Next production build is blocked by sandbox `EPERM` when it starts subprocesses; Vercel remote build is available and will be the build gate.
-- No Production deployment has been promoted. Next: commit and update PR branch with the ranking regression fix, wait for READY Preview, re-run the Izyum/Krasnodar search checks, then promote that verified deployment to Production. Do not merge PR #12.
+- Production was published directly from the verified Git source with target `production`; the separate preview promotion endpoint returned 422, so a production-target build was created instead. Live production `/v2` and both suggestion endpoints returned HTTP 200; Izyum results now start with Russian namesakes and Krasnodar is first. Do not merge PR #12.
 
 ---
 
