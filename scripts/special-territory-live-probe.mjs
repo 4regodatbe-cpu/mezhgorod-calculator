@@ -105,11 +105,13 @@ for (const sample of cases) {
             diagnosticFastValidation: null,
           });
           const tolls = tollsForApi(priced.tolls, priced.fastValidation);
-          const m4 = sample.name.endsWith("-Moscow") ? await calculateM4Core(route.coordinates, "2026-10-08T10:00:00+03:00") : null;
+          const m4 = sample.name.endsWith("-Moscow") ? await calculateM4Core(route.coordinates, "2026-10-08T10:00:00+03:00", route.seconds) : null;
           row.tollProbe = {
+            m4RouteDistanceMeters: m4?.validation.routeDistanceMeters ?? null,
+            m4RouteDurationSeconds: m4?.validation.routeDurationSeconds ?? null,
             m4Plazas: m4?.pricing.pricedPlazas.map((item) => ({ id: item.id, km: item.km, direction: item.direction, entryKm: item.entryKm ?? null, exitKm: item.exitKm ?? null, weekday: item.weekday, weekend: item.weekend, selectedAmount: item.selectedAmount, verification: item.verification })) ?? null,
             m4Unresolved: m4?.pricing.unresolved.map((item) => ({ code: item.code, kms: item.kms, message: item.message })) ?? null,
-            m4Checks: m4?.validation.checks.map((item) => ({ km: item.km, status: item.status, evidence: item.evidence, matchedNodeIds: item.matchedNodeIds, message: item.message })) ?? null,
+            m4Checks: m4?.validation.checks.map((item) => ({ km: item.km, routeProgressMeters: item.routeProgressMeters ?? null, status: item.status, evidence: item.evidence, matchedNodeIds: item.matchedNodeIds, message: item.message })) ?? null,
             m4EdgeEvents: m4?.validation.events.map((item) => ({ osmNodeId: item.osmNodeId, edgeToll: item.edgeToll, wayId: item.wayId, roadNames: item.roadNames })) ?? null,
             referenceWeekdayTollRub: sample.referenceTollRub ?? null,
             referenceWeekendTollRub: sample.referenceWeekendTollRub ?? null,

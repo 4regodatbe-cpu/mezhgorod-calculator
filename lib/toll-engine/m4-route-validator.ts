@@ -10,6 +10,7 @@ const CONCURRENCY = 4;
 
 export type M4LocalPlazaCheck = {
   km: number;
+  routeProgressMeters?: number;
   model: M4PlazaNodeGroup["model"];
   status: "confirmed" | "rejected" | "unknown";
   evidence: "map_matching" | "route_traversal" | "none";
@@ -25,6 +26,8 @@ export type M4RoutePlazaValidation = {
   candidateRadiusKm: number;
   windowHalfKm: number;
   candidateCount: number;
+  routeDistanceMeters: number;
+  routeDurationSeconds?: number;
   checkedCandidateCount: number;
   confirmedCount: number;
   rejectedCount: number;
@@ -128,7 +131,17 @@ async function validateCandidate(candidate: Candidate, deadlineAt: number): Prom
   };
 }
 
-export async function validateKnownM4Plazas(route: Coordinate[]): Promise<M4RoutePlazaValidation> {
+function distanceMeters(a: Coordinate, b: Coordinate) {
+  const toRad = Math.PI / 180;
+  const dLat = (b[1] - a[1]) * toRad;
+  const dLon = (b[0] - a[0]) * toRad;
+  const lat1 = a[1] * toRad;
+  const lat2 = b[1] * toRad;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
+  return 6_371_008.8 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
+}
+
+export async function validateKnownM4Plazas(route: Coordinate[], routeDurationSeconds?: number): Promise<M4RoutePlazaValidation> {
   const startedAt = Date.now();
   const deadlineAt = startedAt + VALIDATION_BUDGET_MS;
   const candidates = candidatesForRoute(route);
@@ -151,7 +164,15 @@ export async function validateKnownM4Plazas(route: Coordinate[]): Promise<M4Rout
     }
   }
 
-  const checks = results.map((item) => item.check);
+  const routeProgressMeters = new Array<number>(route.length).fill(0);
+  for (let index = 1; index < route.length; index += 1) {
+    routeProgressMeters[index] = routeProgressMeters[index - 1] + distanceMeters(route[index - 1], route[index]);
+  }
+  const routeDistanceMeters = routeProgressMeters.at(-1) ?? 0;
+  const checks = results.map((item, index) => ({
+    ...item.check,
+    routeProgressMeters: routeProgressMeters[candidates[index]?.segmentIndex ?? 0],
+  }));
   const eventsByNode = new Map<string, TollBoothEvent>();
   for (const item of results) {
     for (const event of item.events) {
@@ -172,6 +193,8 @@ export async function validateKnownM4Plazas(route: Coordinate[]): Promise<M4Rout
     candidateRadiusKm: CANDIDATE_RADIUS_KM,
     windowHalfKm: WINDOW_HALF_KM,
     candidateCount: candidates.length,
+    routeDistanceMeters,
+    ...(Number.isFinite(routeDurationSeconds) && routeDurationSeconds! > 0 ? { routeDurationSeconds } : {}),
     checkedCandidateCount,
     confirmedCount,
     rejectedCount,

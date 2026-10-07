@@ -43,8 +43,8 @@ export function isExactM4Result(validation: M4RoutePlazaValidation, pricing: M4P
     && (pricing.confidence === "medium" || pricing.confidence === "high");
 }
 
-export async function calculateM4Core(route: Coordinate[], departureAt?: string): Promise<M4CoreResult> {
-  const validation = await validateKnownM4Plazas(route);
+export async function calculateM4Core(route: Coordinate[], departureAt?: string, routeDurationSeconds?: number): Promise<M4CoreResult> {
+  const validation = await validateKnownM4Plazas(route, routeDurationSeconds);
   const pricing = priceM4RoutePlazaValidation(validation, departureAt);
   return {
     validation,

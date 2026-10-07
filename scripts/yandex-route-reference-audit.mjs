@@ -95,7 +95,7 @@ for (const sample of observations) {
         const tolls = tollsForApi(priced.tolls, priced.fastValidation);
         let componentBreakdown = null;
         if (sample.id === "tomsk-chernomorskoe") {
-          const m4 = await calculateM4Core(selected.route.coordinates);
+          const m4 = await calculateM4Core(selected.route.coordinates, undefined, selected.route.seconds);
           const a289 = priceA289Route(selected.route.coordinates);
           componentBreakdown = {
             m4: {
@@ -149,7 +149,7 @@ for (const sample of observations) {
         diagnosticFastValidation: null,
       });
       const tolls = tollsForApi(priced.tolls, priced.fastValidation);
-      const m4 = await calculateM4Core(route.coordinates);
+      const m4 = await calculateM4Core(route.coordinates, undefined, route.seconds);
       const a289 = priceA289Route(route.coordinates);
       a146ApproachComparison = {
         purpose: "diagnostic-only; official A-146/A-290 approach alternative, not an offered calculator route",

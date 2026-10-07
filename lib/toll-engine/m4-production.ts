@@ -50,12 +50,13 @@ export async function calculateProductionM4(
   route: Coordinate[],
   departureAt?: string,
   legacySegmentNames: string[] = [],
+  routeDurationSeconds?: number,
 ): Promise<ProductionM4Result> {
   if (route.length < 2) {
     return { candidate: false, exact: false, tolls: null, validation: null, reason: "Недостаточно геометрии для M-4 validator" };
   }
 
-  const core = await calculateM4Core(route, departureAt);
+  const core = await calculateM4Core(route, departureAt, routeDurationSeconds);
   const { validation, pricing, tollValidation: responseValidation, exact } = core;
 
   if (validation.candidateCount === 0) {

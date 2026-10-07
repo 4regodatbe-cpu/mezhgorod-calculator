@@ -20,6 +20,7 @@ function validation(kms: number[]): M4RoutePlazaValidation {
     candidateRadiusKm: 1.5,
     windowHalfKm: 4,
     candidateCount: kms.length,
+    routeDistanceMeters: 1_300_000,
     checkedCandidateCount: kms.length,
     confirmedCount: kms.length,
     rejectedCount: 0,
