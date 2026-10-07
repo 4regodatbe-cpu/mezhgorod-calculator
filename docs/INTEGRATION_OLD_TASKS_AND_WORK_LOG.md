@@ -442,3 +442,13 @@ Current PR #12 is open/draft; no merge/production action.
 
 - After the preview regression fix passed 35/35 address-search tests and remote Vercel build, deployed source commit `cd08bc7e79d0507e0d77d3d58212e1e253a79795` to Production as `dpl_4kVEexEXd13aTWhRoUPfLAiRvrcR` (`READY`, target `production`). Direct promotion of the preview was rejected by Vercel with 422, so the same verified Git source was built with production target.
 - Live Production smoke checks: `/v2` returned HTTP 200; `/api/suggest?q=Изюм` returned HTTP 200 with Russian namesakes first; `/api/suggest?q=Краснодар` returned HTTP 200 with Краснодар (Краснодарский край) first. PR #12 remains open/draft; not merged.
+
+
+### 2026-10-07 — M-4 full Moscow—Krasnodar overcharge
+
+- User reported that Krasnodar—Moscow showed 6,130 ₽ weekdays / 8,470 ₽ weekends. Reproduced the systemic cause in code: production M-4 summed prices of individual plaza and mixed-section records for a full-corridor route, while its existing calibrated full-route record was only used by the legacy estimate path.
+- The State Company Russian Highways' announcement effective 02.03.2026 gives the full M-4 Moscow—Krasnodar category-I price as 5,040 ₽ Mon–Thu and 6,090 ₽ Fri–Sun: https://russianhighways.ru/press/news/141463/ (table lines 112–124).
+- Added a conservative full-route override: use the shared `FULL_ROUTES` tariff only when complete M-4 validation confirms the northern 62/71-km gate, southern 1223-km gate, and at least eight confirmed PVPs spanning the corridor. Works both directions; individual PVP breakdown remains diagnostic. Partial routes retain component pricing.
+- Updated the live regression for Krasnodar—Moscow and reverse. Added tests for both directions, weekday/weekend, and rejection of partial routes.
+- Local release checks passed: 30/30 test files, TypeScript no-emit, and `git diff --check`. Remote build, live API regression, and Production smoke checks are the remaining release gates.
+- User's standing release decision: publish each completed change immediately after verification. PR #12 remains open and unmerged.
