@@ -52,6 +52,7 @@ jobs:
           name: special-territory-live-probe-${{ github.run_id }}
           path: |
             special-territory-live-probe.json
+            special-territory-full-flow-probe.json
             payment-point-avoidance-live-probe.json
             address-search-live-probe.json
             settlement-random-route-audit.json

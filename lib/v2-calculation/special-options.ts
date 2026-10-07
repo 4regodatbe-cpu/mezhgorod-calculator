@@ -7,13 +7,29 @@ import { calculateLegTolls } from "./route-leg-pricing";
 import { hasPracticalSavings, tollsForApi, withinDetourLimits } from "./free-route-selection";
 import { validateTollEdges } from "../toll-validator";
 
+type PricedCandidate = {
+  corridor:"mainland"|"crimea";
+  provider:string;
+  split:ReturnType<typeof analyzeRoute>;
+  from:string;
+  to:string;
+  selectionPreference:number;
+  fast:RouteWithGeometry & {
+    tolls:ReturnType<typeof tollsForApi>;
+    tollValidation:Awaited<ReturnType<typeof calculateLegTolls>>["fastValidation"];
+    quality:ReturnType<typeof selectLiveRouteCandidates>["quality"];
+  };
+  free:null;
+  freeCandidate:null;
+};
+
 export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string) {
   const plans=candidatePlans(from.position,to.position,zones);
   const preferredCorridor=plans[0]?.corridor??"mainland";
   const candidates = await Promise.all(plans.map(async plan => {
     const rejectedStretchProviders=new Map<string,number>();
     const responses=await Promise.allSettled([valhalla(from,to,1,plan.positions),osrmRoute(from,to,plan.positions)]);
-    const priced=await Promise.all(responses.map(async (response,index) => {
+    const routed=responses.map((response,index) => {
       if(response.status!=="fulfilled")return null;
       try {
         const route:RouteWithGeometry=response.value;
@@ -22,24 +38,34 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
         if(stretch){rejectedStretchProviders.set(providerName,stretch.stretchRatio);return null;}
         if(!followsPlan(route.coordinates,plan.positions,plan.corridor,true))return null;
         const split=analyzeRoute(route.coordinates,route.meters,route.seconds,from.position,to.position,zones);
-        const pricing=await calculateLegTolls({routeGeometry:route.coordinates,routeSeconds:route.seconds,departureAt,selectedFastProvider:index===0?"Valhalla":"OSRM",selectedFastRoute:route,valhallaEvidence:index===0?route:null,confirmedFreeRoute:null,diagnosticFastValidation:null});
-        return {corridor:plan.corridor,provider:index===0?"Valhalla":"OSRM",split,from:from.label,to:to.label,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation},free:null,freeCandidate:null};
+        return {corridor:plan.corridor,provider:index===0?"Valhalla":"OSRM",split,from:from.label,to:to.label,route,index,fast:{...route,tolls:{pricingStatus:"unknown" as const},tollValidation:undefined},free:null,freeCandidate:null};
       } catch {return null;}
-    }));
-    const valid=priced.filter((item):item is NonNullable<typeof item>=>item!==null);
-    if(!valid.length)return [];
-    const routeChoice=selectLiveRouteCandidates(valid.map(item=>({name:item.provider,route:item.fast})));
+    });
+    const validRoutes=routed.filter((item):item is NonNullable<typeof item>=>item!==null);
+    if(!validRoutes.length)return [];
+    // Choose geometry before pricing. Each M-4 candidate can launch several
+    // Valhalla map-match requests; pricing both provider routes in parallel
+    // doubled pressure on that service and made complete toll results
+    // intermittently degrade to unknown. Keep the existing route ranking and
+    // price provider candidates one at a time so toll evidence is complete
+    // before the final paid-route preference is applied.
+    const routeChoice=selectLiveRouteCandidates(validRoutes.map(item=>({name:item.provider,route:item.fast})));
     const quality=rejectedStretchProviders.size?{
       ...routeChoice.quality,
       status:"warning" as const,
       providers:[...new Set([...routeChoice.quality.providers,...rejectedStretchProviders.keys()])],
       message:`Отклонён маршрут с аномальной длиной контрольного сегмента: ${[...rejectedStretchProviders].map(([name,ratio])=>`${name} (${ratio.toFixed(1)}×)`).join(", ")}. Проверьте оставшийся маршрут перед поездкой`,
     }:routeChoice.quality;
-    const selected=valid.map(item=>({
-      ...item,
-      selectionPreference:item.provider===routeChoice.provider?0:1,
-      fast:{...item.fast,quality},
-    }));
+    const rankedRoutes=validRoutes.map(item=>({...item,selectionPreference:item.provider===routeChoice.provider?0:1}))
+      .sort((a,b)=>a.selectionPreference-b.selectionPreference||a.fast.seconds-b.fast.seconds);
+    const selected:PricedCandidate[]=[];
+    for(const item of rankedRoutes){
+      const pricing=await calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:null});
+      const {route,index,...candidate}=item;
+      selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality}});
+    }
+    const valid=selected;
+    if(!valid.length)return [];
     // If independent providers returned only one usable path, ask Valhalla for
     // a payment-point-avoiding path through the exact same geographic controls.
     // Keep it only after geometry, corridor and detour checks pass.
