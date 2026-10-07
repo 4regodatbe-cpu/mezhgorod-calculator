@@ -20,8 +20,8 @@ const exactM4 = [
   ["moscow-yeisk", points.moscow, points.yeisk, 5240, 7240],
   ["maykop-moscow", points.maykop, points.moscow, 6090, 8400],
   ["moscow-maykop", points.moscow, points.maykop, 6090, 8400],
-  ["krasnodar-moscow", points.krasnodar, points.moscow, 6090, 8400],
-  ["moscow-krasnodar", points.moscow, points.krasnodar, 6090, 8400],
+  ["krasnodar-moscow", points.krasnodar, points.moscow, 5040, 6090],
+  ["moscow-krasnodar", points.moscow, points.krasnodar, 5040, 6090],
   ["sochi-moscow", points.sochi, points.moscow, 6090, 8400],
   ["moscow-sochi", points.moscow, points.sochi, 6090, 8400],
 ];
@@ -104,7 +104,8 @@ for (const [name, from, to, weekday, weekend] of exactM4) {
     const checks = [
       { label: "weekday M4 amount", ok: tolls?.weekdayAmount === weekday, actual: String(tolls?.weekdayAmount) },
       { label: "weekend M4 amount", ok: tolls?.weekendAmount === weekend, actual: String(tolls?.weekendAmount) },
-      { label: "exact M4 adapter used", ok: tolls?.segments?.[0]?.includes("точный расчёт по локально подтверждённым ПВП") === true, actual: tolls?.segments?.[0] || "missing" },
+      { label: "exact M4 tariff path used", ok: tolls?.segments?.[0]?.includes("М-4 Дон") === true, actual: tolls?.segments?.[0] || "missing" },
+      ...(name === "krasnodar-moscow" || name === "moscow-krasnodar" ? [{ label: "published full-route tariff used", ok: tolls?.segments?.[0]?.includes("5 040 ₽ Пн–Чт / 6 090 ₽ Пт–Вс") === true, actual: tolls?.segments?.[0] || "missing" }] : []),
       { label: "no A289 frame charged", ok: !(tolls?.segments ?? []).some((segment) => segment.startsWith("А-289:")), actual: (tolls?.segments ?? []).filter((segment) => segment.startsWith("А-289:")).join(" | ") || "none" },
       { label: "toll crossing confirmed", ok: fast?.tollValidation?.status === "toll", actual: fast?.tollValidation?.status || "missing" },
     ];
