@@ -364,6 +364,16 @@ test("Izyum searches Ukrainian spelling and ranks priority territories, Russia, 
   assert.deepEqual(results.map((item)=>item.id),["N-901","N-902","N-904","N-903"]);
 });
 
+test("exact Russian namesakes stay ahead of Kazakhstan even when Photon omits their place subtype", () => {
+  const russianLocality = feature("Изюм", 53.29, 56.85, 905, "attraction");
+  russianLocality.properties!.osm_key = "tourism";
+  const kazakhstan = feature("Изюм", 57.4, 50.2, 906, "city");
+  kazakhstan.properties!.country = "Казахстан";
+  kazakhstan.properties!.countrycode = "KZ";
+  const results = rankPhotonFeatures([kazakhstan, russianLocality], SPECIAL_TERRITORY_BOUNDARIES, "Изюм");
+  assert.deepEqual(results.map((item) => item.id), ["N-905", "N-906"]);
+});
+
 test("regional qualifier is removed from Photon query without changing full address searches", () => {
   const qualified = photonSearchUrls("Донецк ДНР").map((value) => new URL(value));
   assert.deepEqual(qualified.slice(0,3).map((url) => url.searchParams.get("q")), ["донецк", "донецк", "донецк"]);

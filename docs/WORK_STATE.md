@@ -1,10 +1,10 @@
-## Current handoff — 2026-10-07 13:30 MSK
+## Current handoff — 2026-10-07 13:36 MSK
 
-- Repo: `/workspace/scratch/a4ecb4a8e44f/repo`, branch `fix/v2-mobile-layout-2026-10-05`. PR #12 remains open/draft; no merge performed. Current remote PR head `8857f475ce92aee547b33073165ec3ad1b155aa7` was fetched and merged locally (same base `bc6d540`), preserving the two local commits and working-tree changes.
-- Current uncommitted fixes: useful-savings gate for payment-point bypasses; bounded detour route; address search loading/error/retry and special-area/UA aliases; UI presentation and related tests. Toll unknown remains fail-closed.
-- Verification on combined local state: 29/29 script test files pass; TypeScript `--noEmit` passes; targeted ESLint passes with one existing unused-variable warning in `lib/photon-address-search.ts:416`; `git diff --check` passes.
-- Production build was attempted in a clean project copy. It is blocked by execution-environment `EPERM` when Next/Turbopack starts subprocesses for CSS processing; webpack mode also cannot run TypeScript CLI subprocess. This is an environment limitation, not a confirmed source build failure. No production deployment was created or promoted. Current production remains on commit `8857f475ce92aee547b33073165ec3ad1b155aa7`.
-- Next: push the merged branch to GitHub to trigger a Vercel preview build; inspect that remote build and `/v2` smoke checks, then promote its READY deployment to Production. Do not merge PR #12 without a separate direct request.
+- Repo: `/workspace/scratch/a4ecb4a8e44f/repo`, branch `fix/v2-mobile-layout-2026-10-05`. PR #12 remains open/draft; no merge performed. Its remote head is `aad7d328c05c7ff36a870e43350f09e6634933ce`; Production remains on `8857f475ce92aee547b33073165ec3ad1b155aa7`.
+- Published-to-preview code at `aad7d32` includes the committed route/search/UI fixes. Vercel Preview `dpl_Gu8fS3TcWwaoZGxAU19myBDVKbx7` reached READY; `/v2`, `/api/suggest?q=Изюм`, `/api/suggest?q=Краснодар`, and the stylesheet returned HTTP 200. The live Izyum suggestions exposed that country tiering did not reliably push Russia ahead of Kazakhstan when Photon omitted the place subtype.
+- New local fix in progress: apply Russia-vs-other-country priority to every exact namesake; keep the four special-territory boost limited to settlements/administrative results to avoid boosting unrelated POIs. Regression covers a subtype-missing Russian match vs a Kazakhstan city. Address search suite passes 35/35; TypeScript no-emit and `git diff --check` pass.
+- Combined state before the latest two-file ranking adjustment: all 29 test files passed and targeted ESLint passed with one existing unused-variable warning at `lib/photon-address-search.ts:416`. Local Next production build is blocked by sandbox `EPERM` when it starts subprocesses; Vercel remote build is available and will be the build gate.
+- No Production deployment has been promoted. Next: commit and update PR branch with the ranking regression fix, wait for READY Preview, re-run the Izyum/Krasnodar search checks, then promote that verified deployment to Production. Do not merge PR #12.
 
 ---
 
