@@ -1,6 +1,6 @@
 import { estimateTolls } from "@/lib/tolls";
 import type { RouteSummary, RouteWithGeometry } from "@/lib/route-providers";
-import { selectLiveRoute, MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, type RouteQuality } from "@/lib/route-quality";
+import { selectLiveRoute, type RouteQuality } from "@/lib/route-quality";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import type { RouteTollComponentId } from "@/lib/toll-engine/route-toll-composition";
 
@@ -69,10 +69,6 @@ export function zeroUnknownTolls(base: TollEstimate, segments: string[]): TollEs
   };
 }
 
-function spreadPercent(a: RouteSummary, b: RouteSummary) {
-  return Math.round((Math.abs(a.meters - b.meters) / ((a.meters + b.meters) / 2)) * 1000) / 10;
-}
-
 /** Avoid offering a detour with a disproportionate distance or time cost. */
 export function withinDetourLimits(main: RouteSummary, candidate: RouteSummary) {
   if (main.meters <= 0 || main.seconds <= 0 || candidate.meters <= 0 || candidate.seconds <= 0) return false;
@@ -81,10 +77,20 @@ export function withinDetourLimits(main: RouteSummary, candidate: RouteSummary) 
   return distanceRatio <= 1.25 && durationRatio <= 1.5;
 }
 
+/** A payment-point bypass is worth calculating only when it materially saves time or distance. */
+export function hasPracticalSavings(main: RouteSummary, candidate: RouteSummary) {
+  if (main.meters <= 0 || main.seconds <= 0 || candidate.meters <= 0 || candidate.seconds <= 0) return false;
+  const distanceSavingsMeters = main.meters - candidate.meters;
+  const distanceSavingsPercent = distanceSavingsMeters / main.meters * 100;
+  const timeSavingsSeconds = main.seconds - candidate.seconds;
+  const timeSavingsPercent = timeSavingsSeconds / main.seconds * 100;
+  const savesDistance = distanceSavingsMeters >= 10_000 && distanceSavingsPercent >= 1;
+  const savesTime = timeSavingsSeconds >= 15 * 60 && timeSavingsPercent >= 5;
+  return savesDistance || savesTime;
+}
+
 export function routeDifferenceEvidence(fast: RouteSummary, free: RouteSummary) {
-  // Keep as compatibility helper; practical bounds are asymmetric because a
-  // payment-point bypass can legitimately cost more distance and time.
-  return withinDetourLimits(fast, free);
+  return hasPracticalSavings(fast, free);
 }
 
 function qualityForCandidate(selected: FreeCandidate, other: FreeCandidate | undefined, validation: TollValidation): RouteQuality {
@@ -141,7 +147,7 @@ export async function selectFreeRoute(
   // avoids every payment point and stays within the detour limits; do not
   // spend extra requests validating candidates with disproportionate detours.
   for (const [index, candidate] of candidates.entries()) {
-    if (!withinDetourLimits(mainRoute, candidate.route)) continue;
+    if (!withinDetourLimits(mainRoute, candidate.route) || !hasPracticalSavings(mainRoute, candidate.route)) continue;
     const validation = await validateFreeCandidate(candidate, index === 0 ? "Первый" : "Второй");
     if (validation.complete !== true || (validation.tollBoothCount ?? 0) !== 0) continue;
 

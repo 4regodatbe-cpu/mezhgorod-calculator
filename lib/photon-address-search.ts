@@ -151,6 +151,7 @@ const placeSearchAliases: Record<string, string[]> = {
   макеевка: ["Макіївка"],
   запороже: ["Запоріжжя"],
   харков: ["Харків"],
+  тарасовка: ["Тарасівка"],
 };
 const russianLocalityNames: Record<string, string> = {
   донецк: "Донецк",
@@ -204,8 +205,9 @@ function isRussianFeature(feature: PhotonFeature, crimea: boolean): boolean {
   return crimea || isCountry(feature,["RU"],/^(россия|российская федерация|russia|russian federation)$/u);
 }
 
-function isUkrainianFeature(feature: PhotonFeature): boolean {
-  return isCountry(feature,["UA"],/^(украина|ukraine)$/u);
+function outsidePriorityCountryRank(feature: PhotonFeature, crimea: boolean): number {
+  if(isRussianFeature(feature,crimea))return 3;
+  return 1;
 }
 
 function requestedArea(query: string): keyof typeof specialLabels | "crimea" | null {
@@ -277,6 +279,28 @@ function placeAliases(query: string): string[] {
   return uniqueParts([...(placeSearchAliases[primaryQueryName(query)] ?? []), ...ruwikiNameAliases(query)]);
 }
 
+function transliterateUkrainian(value: string): string {
+  const map: Record<string, string> = { а:"a",б:"b",в:"v",г:"h",ґ:"g",д:"d",е:"e",є:"ye",ж:"zh",з:"z",и:"y",і:"i",ї:"yi",й:"y",к:"k",л:"l",м:"m",н:"n",о:"o",п:"p",р:"r",с:"s",т:"t",у:"u",ф:"f",х:"kh",ц:"ts",ч:"ch",ш:"sh",щ:"shch",ь:"",ю:"yu",я:"ya",э:"e",ы:"y",ё:"yo",ъ:"" };
+  return [...value.toLocaleLowerCase("uk-UA")].map((char)=>map[char]??char).join("");
+}
+
+function variantKey(value: string): string {
+  return value.toLocaleLowerCase("uk-UA").replace(/[ьъ]/gu,"").replace(/[^\p{L}\p{N}]+/gu," ").trim().replace(/\s+/gu," ");
+}
+
+function localitySearchTerms(query: string): string[] {
+  const primary=primaryQueryName(query);
+  const aliases=placeSearchAliases[primary] ?? [];
+  // Keep RU/UA spellings distinct even when normalize() treats И and І alike.
+  const seen=new Set<string>();
+  const terms=[primary,...aliases].filter((term)=>{
+    const key=variantKey(term);
+    if(seen.has(key))return false;
+    seen.add(key);return true;
+  });
+  return terms.filter((term)=>normalize(term).length>=3 && !/[0-9,;]/u.test(term)).slice(0,12);
+}
+
 function regionAliases(query: string): string[] {
   const normalized = normalize(query);
   if (!/(област|обл|oblast|region)$/u.test(normalized)) return [];
@@ -302,21 +326,25 @@ export function photonSearchUrls(query: string): string[] {
   };
   const term=providerSearchTerm(query);
   const localityTerm=primaryQueryName(query);
+  const searchTerms=localitySearchTerms(query);
   const isLocalityQuery=localityTerm.length>=3 && !/[0-9,;]/u.test(localityTerm);
   const urls=[
     makeUrl(term),
     makeUrl(term,"UA"),
     makeUrl(term,"RU"),
-    ...(placeSearchAliases[primaryQueryName(query)] ?? []).map((alias)=>makeUrl(alias,"UA")),
+    ...regionAliases(query).map((alias)=>makeUrl(alias,"UA","state")),
+    ...(placeSearchAliases[primaryQueryName(query)] ?? []).filter((alias)=>variantKey(alias)!==variantKey(term)).map((alias)=>makeUrl(alias,"UA")),
     ...ruwikiAliasSearches(query).flatMap(({alias,area})=>
       priorityTerritoryBounds.filter(({id})=>id===area).map(({bounds})=>makeUrl(alias,undefined,undefined,bounds))),
-    ...regionAliases(query).map((alias)=>makeUrl(alias,"UA","state")),
   ];
   // The generic Photon result window can be filled by faraway homonyms.
   // Bounding-box searches guarantee a separate candidate window for each
   // priority territory; exact polygon membership is still checked below.
   if(isLocalityQuery) {
-    urls.push(...priorityTerritoryBounds.map(({bounds})=>makeUrl(term,undefined,undefined,bounds)));
+    // Search all known spellings inside every priority polygon. This catches
+    // localities omitted from incomplete RuWiki extracts and transliterated
+    // Ukrainian OSM names without inventing or assigning coordinates.
+    urls.push(...searchTerms.flatMap((searchTerm)=>priorityTerritoryBounds.map(({bounds})=>makeUrl(searchTerm,undefined,undefined,bounds))));
   }
   return [...new Set(urls)];
 }
@@ -338,8 +366,9 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const queryArea = requestedArea(query);
     const normalizedNames = localityNames(feature).map(normalize);
     const queryNames = [queryName, ...placeAliases(query).map(normalize), ...regionAliases(query).map(normalize)];
+    const queryTransliterations=placeAliases(query).map(transliterateUkrainian).map(normalize);
     const regionQuery = /(област|обл|oblast|region)$/u.test(queryName);
-    const exactName = Boolean(queryNames.some((candidate) => candidate && normalizedNames.some((normalizedName) =>
+    const exactName = Boolean([...queryNames,...queryTransliterations].some((candidate) => candidate && normalizedNames.some((normalizedName) =>
       candidate === normalizedName ||
       (!regionQuery && candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
     const { title, label, region } = displayName(feature, territory, crimea, exactName);
@@ -361,9 +390,7 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const territoryRank=exactName && placeRank>0
       ? matchesRequestedArea ? 5_000_000
         : territory ? 4_000_000
-        : isRussianFeature(feature,crimea) ? 3_000_000
-        : isUkrainianFeature(feature) ? 2_000_000
-        : 1_000_000
+        : outsidePriorityCountryRank(feature,crimea) * 1_000_000
       : 0;
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{

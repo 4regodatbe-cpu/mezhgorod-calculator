@@ -135,3 +135,11 @@ test("geographic selector ignores elapsed-time evidence and preserves toll uncer
  assert.equal(selectGeographicTerritoryOption([candidate("crimea","free"),candidate("crimea","priced",25000)],"crimea").options[0].fast.tolls.pricingStatus,"priced");
  assert.equal(selectGeographicTerritoryOption([candidate("crimea","unknown")],"crimea").options[0].fast.tolls.pricingStatus,"unknown");
 });
+
+test("geographic selector returns main and distinct alternative only from preferred corridor",()=>{
+ const candidate=(corridor:"mainland"|"crimea",provider:string,seconds:number)=>({corridor,provider,fast:{seconds,tolls:{pricingStatus:"unknown" as const}}});
+ const main=candidate("mainland","Valhalla",50000),alt=candidate("mainland","OSRM",52000),wrong=candidate("crimea","Other",30000);
+ const selected=selectGeographicTerritoryOption([main,alt,wrong],"mainland");
+ assert.deepEqual(selected.options.map(item=>item.provider),["Valhalla","OSRM"]);
+ assert.deepEqual(selectGeographicTerritoryOption([main,candidate("mainland","Duplicate",50030)],"mainland").options.map(item=>item.provider),["Valhalla"]);
+});

@@ -69,12 +69,25 @@ test("a candidate without route geometry is never offered as an unverified detou
   assert.equal(selected, null);
 });
 
-test("a route within detour bounds can be shown even if it is not faster or shorter", async () => {
-  const selected = await withTraceEdges(
-    [{ toll: false, way_id: 41, names: ["М-4"], end_node: { type: "intersection", node_id: 9 } }],
-    () => selectFreeRoute(candidate, [{ name: "candidate", result: { status: "fulfilled", value: candidate } }, { name: "unused", result: { status: "rejected", reason: new Error("not used") } }]),
-  );
-  assert.equal(selected?.route, candidate);
+test("a route without meaningful time or distance savings is rejected before map matching", async () => {
+  const main = { meters: 100_000, seconds: 3_600 };
+  const nearDuplicate = { ...candidate, meters: 99_500, seconds: 3_570 };
+  let traceCount = 0;
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => {
+    traceCount++;
+    return new Response(JSON.stringify({ edges: [] }), { status: 200, headers: { "Content-Type": "application/json" } });
+  };
+  try {
+    const selected = await selectFreeRoute(
+      main,
+      [{ name: "near-duplicate", result: { status: "fulfilled", value: nearDuplicate } }],
+    );
+    assert.equal(selected, null);
+    assert.equal(traceCount, 0, "skip expensive map matching without practical savings");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
 
 test("a payment-point-avoiding route beyond the distance or time detour limit is not offered", async () => {
@@ -118,14 +131,17 @@ test("a route that saves time may be longer, and a route that saves distance may
   }
 });
 
-test("toll fallback evidence uses real savings, not a larger regression", () => {
+test("toll fallback evidence requires real savings and rejects regression-only differences", () => {
   const main = { meters: 100_000, seconds: 3_600 };
-  const withinLimit = { meters: 120_000, seconds: 4_000 };
+  const savesTime = { meters: 120_000, seconds: 2_400 };
+  const noSavings = { meters: 120_000, seconds: 4_000 };
   const excessive = { meters: 130_000, seconds: 4_000 };
-  assert.equal(routeDifferenceEvidence(main, withinLimit), true);
+  assert.equal(routeDifferenceEvidence(main, savesTime), true);
+  assert.equal(routeDifferenceEvidence(main, noSavings), false);
   assert.equal(routeDifferenceEvidence(main, excessive), false);
   const current: TollEstimate = { amount: 0, weekdayAmount: 0, weekendAmount: 0, period: "пн-чт", segments: [], confidence: "none" };
-  assert.notDeepEqual(routingDifferenceTollFallback(main, withinLimit, current), current);
+  assert.notDeepEqual(routingDifferenceTollFallback(main, savesTime, current), current);
+  assert.deepEqual(routingDifferenceTollFallback(main, noSavings, current), current);
   assert.deepEqual(routingDifferenceTollFallback(main, excessive, current), current);
 });
 

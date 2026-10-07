@@ -36,20 +36,15 @@ export function ResultPanels({
         onTollPeriodChange={onTollPeriodChange}
         onCopy={() => copyStandard("option-0", "Основной маршрут", leg, leg.fast, leg.fast.tolls, undefined, tollPeriod)}
         copied={copiedKey === "option-0"}
-      /> : <AlternativeRouteCard
+      /> : <RouteCard
         key={index}
+        title="Альтернативный маршрут"
+        accent="emerald"
         trip={leg.fast}
-        onCopy={() => copyStandard(
-          `option-${index}`,
-          "Альтернативный маршрут",
-          leg,
-          leg.fast,
-          confirmedFreeToll,
-          undefined,
-          tollPeriod,
-          undefined,
-          true,
-        )}
+        toll={leg.fast.tolls}
+        tollPeriod={tollPeriod}
+        onTollPeriodChange={onTollPeriodChange}
+        onCopy={() => copyStandard(`option-${index}`, "Альтернативный маршрут", leg, leg.fast, leg.fast.tolls, undefined, tollPeriod)}
         copied={copiedKey === `option-${index}`}
       />)}
     </section>

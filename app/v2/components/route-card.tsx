@@ -35,7 +35,7 @@ export function RouteCard({
   const isUnknown = toll?.pricingStatus === "unknown";
   const isPriced = toll?.pricingStatus === "priced";
   const hasManualToll = manualToll != null && manualToll.trim() !== "";
-  const showTollPanel = Boolean(toll && toll.pricingStatus !== "free" && (isPriced || onManualToll || hasManualToll));
+  const showTollPanel = Boolean(toll && toll.pricingStatus !== "free");
   const selectedAmount = resolveTollAmount(toll, tollPeriod, manualToll);
   const weekdayAmount = resolveTollAmount(toll, "weekday");
   const weekendAmount = resolveTollAmount(toll, "weekend");
@@ -44,7 +44,7 @@ export function RouteCard({
     <article className={"min-w-0 w-full rounded-[24px] border border-brand-border/25 border-s-4 bg-brand-surface p-2.5 shadow-[0_12px_32px_rgba(16,42,67,.07)] " + (accent === "blue" ? "border-brand-action/35 border-s-brand-action" : "border-brand-route/40 border-s-brand-route")}>
       <div className="flex min-w-0 items-center justify-between gap-2">
         <h3 className="min-w-0 truncate text-lg font-black text-brand-text sm:text-xl">{title}</h3>
-        <span className={"shrink-0 rounded-full px-2.5 py-1 text-xs font-extrabold " + (accent === "blue" ? "bg-brand-subtle text-brand-action" : "bg-brand-route/15 text-brand-text")}>{accent === "blue" ? "Маршрут" : "Без оплаты дорог"}</span>
+        <span className={"shrink-0 rounded-full px-2.5 py-1 text-xs font-extrabold " + (accent === "blue" ? "bg-brand-subtle text-brand-action" : "bg-brand-route/15 text-brand-text")}>{accent === "blue" ? "Маршрут" : "Вариант проезда"}</span>
       </div>
       <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Route className="h-4 w-4 text-brand-action" />{distance(trip.meters)}</span>
@@ -58,6 +58,7 @@ export function RouteCard({
             <span className="text-sm font-extrabold text-brand-text">{isPriced ? "День поездки" : "Сумма дорог"}</span>
             {hasManualToll && <span className="text-xs font-bold text-brand-action">Указана вручную</span>}
           </div>
+          {isUnknown && <p className="mt-1.5 text-sm font-bold text-brand-route">Стоимость платных дорог пока не подтверждена</p>}
           {isPriced && <div className="mt-1.5 grid grid-cols-2 gap-1.5">
             <button type="button" aria-pressed={tollPeriod === "weekday"} onClick={() => onTollPeriodChange("weekday")} className={"min-h-11 rounded-xl border px-2 py-1 text-left transition focus-visible:outline-2 focus-visible:outline-brand-focus " + (tollPeriod === "weekday" ? "border-brand-action bg-brand-action text-brand-action-foreground" : "border-brand-border/20 bg-brand-surface text-brand-text hover:bg-brand-subtle")}>
               <span className="block text-xs font-bold">Пн–Чт</span><strong className="block text-sm">{tollLabel(weekdayAmount)}</strong>

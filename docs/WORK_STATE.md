@@ -1,3 +1,13 @@
+## Current handoff — 2026-10-07 13:30 MSK
+
+- Repo: `/workspace/scratch/a4ecb4a8e44f/repo`, branch `fix/v2-mobile-layout-2026-10-05`. PR #12 remains open/draft; no merge performed. Current remote PR head `8857f475ce92aee547b33073165ec3ad1b155aa7` was fetched and merged locally (same base `bc6d540`), preserving the two local commits and working-tree changes.
+- Current uncommitted fixes: useful-savings gate for payment-point bypasses; bounded detour route; address search loading/error/retry and special-area/UA aliases; UI presentation and related tests. Toll unknown remains fail-closed.
+- Verification on combined local state: 29/29 script test files pass; TypeScript `--noEmit` passes; targeted ESLint passes with one existing unused-variable warning in `lib/photon-address-search.ts:416`; `git diff --check` passes.
+- Production build was attempted in a clean project copy. It is blocked by execution-environment `EPERM` when Next/Turbopack starts subprocesses for CSS processing; webpack mode also cannot run TypeScript CLI subprocess. This is an environment limitation, not a confirmed source build failure. No production deployment was created or promoted. Current production remains on commit `8857f475ce92aee547b33073165ec3ad1b155aa7`.
+- Next: push the merged branch to GitHub to trigger a Vercel preview build; inspect that remote build and `/v2` smoke checks, then promote its READY deployment to Production. Do not merge PR #12 without a separate direct request.
+
+---
+
 Warning: truncated output (original token count: 29762)
 Total output lines: 430
 

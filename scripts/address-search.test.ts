@@ -23,7 +23,7 @@ test("searches globally, within Ukraine and Russia, and in each priority territo
 
 test("Russian Makeyevka query also searches Photon using the Ukrainian locality spelling", () => {
   const urls = photonSearchUrls("Макеевка").map((value) => new URL(value));
-  assert.equal(urls.length, 8);
+  assert.equal(urls.length, 12);
   assert.equal(urls[3].searchParams.get("q"), "Макіївка");
   assert.equal(urls[3].searchParams.get("countrycode"), "UA");
   assert.equal(urls[3].searchParams.get("layer"), null);
@@ -58,7 +58,7 @@ test("all special-oblast queries search provider aliases in Ukraine's state laye
     assert.deepEqual(urls.slice(3,5).map((url) => url.searchParams.get("q")), aliases, query);
     assert.ok(urls.slice(3,5).every((url) => url.searchParams.get("countrycode") === "UA"), query);
     assert.ok(urls.slice(3,5).every((url) => url.searchParams.get("layer") === "state"), query);
-    assert.ok(urls.slice(5).every((url)=>url.searchParams.has("bbox")),query);
+    assert.ok(urls.slice(3).every((url)=>url.searchParams.has("layer")||url.searchParams.has("bbox")),query);
   }
 });
 
@@ -240,7 +240,7 @@ test("Ukrainian locality spelling matches a Russian query and omits community su
 
 test("Russian Zaporizhzhia query searches and ranks Ukrainian city spelling", () => {
   const urls = photonSearchUrls("Запорожье").map((value) => new URL(value));
-  assert.equal(urls.length, 8);
+  assert.equal(urls.length, 12);
   assert.equal(urls[3].searchParams.get("q"), "Запоріжжя");
   assert.equal(urls[3].searchParams.get("countrycode"), "UA");
   const results = rankPhotonFeatures([
@@ -253,7 +253,7 @@ test("Russian Zaporizhzhia query searches and ranks Ukrainian city spelling", ()
 
 test("Russian Kharkiv query with country qualifier searches Ukrainian spelling and ranks the city first", () => {
   const urls = photonSearchUrls("Харьков, Украина").map((value) => new URL(value));
-  assert.equal(urls.length, 8);
+  assert.equal(urls.length, 12);
   const alias = urls.find((url) => url.searchParams.get("q") === "Харків");
   assert.ok(alias);
   assert.equal(alias.searchParams.get("countrycode"), "UA");
@@ -284,6 +284,21 @@ test("all new-territory settlements rank before Russian namesakes regardless of 
   const crimea = feature("Донецк", 34.1689, 44.4988, 314, "city");
   const results = rankPhotonFeatures([otherSpecial, crimea, rostov, dnrHamlet], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
   assert.deepEqual(results.map((item) => item.id), ["N-313", "N-312", "N-311", "N-314"]);
+});
+
+test("Tarasovka DNR ranks first, Kyiv region Tarasovka stays visible, and Russia precedes other countries", () => {
+  const dnr=feature("Тарасовка",37.8029,48.0156,401,"village");
+  const russian=feature("Тарасовка",39.7,47.23,402,"village");
+  russian.properties!.state="Ростовская область";
+  const kyiv=feature("Тарасівка",30.18,50.25,403,"village");
+  kyiv.properties!.country="Украина"; kyiv.properties!.countrycode="UA"; kyiv.properties!.state="Киевская область";
+  const kazakhstan=feature("Тарасовка",70,50,404,"village");
+  kazakhstan.properties!.country="Казахстан"; kazakhstan.properties!.countrycode="KZ";
+  const results=rankPhotonFeatures([kazakhstan,kyiv,russian,dnr],SPECIAL_TERRITORY_BOUNDARIES,"Тарасовка");
+  assert.deepEqual(results.map(item=>item.id),["N-401","N-402","N-404","N-403"]);
+  const urls=photonSearchUrls("Тарасовка").map(value=>new URL(value));
+  assert.ok(urls.some(url=>url.searchParams.get("q")==="Тарасівка"&&url.searchParams.get("countrycode")==="UA"));
+  assert.equal(urls.filter(url=>url.searchParams.get("q")==="Тарасівка"&&url.searchParams.has("bbox")).length,4);
 });
 
 test("municipality relations are excluded and duplicate locality cards collapse", () => {
@@ -334,7 +349,7 @@ test("Russian localized provider name is preferred for a Ukrainian OSM settlemen
 
 
 
-test("Izyum searches Ukrainian spelling and ranks priority territories, Russia, Ukraine, then other countries", () => {
+test("Izyum searches Ukrainian spelling and ranks priority territories, Russia, then all other countries", () => {
   const urls=photonSearchUrls("Изюм").map((value)=>new URL(value));
   const alias=urls.find((url)=>url.searchParams.get("q")==="Ізюм");
   assert.ok(alias);
@@ -346,7 +361,7 @@ test("Izyum searches Ukrainian spelling and ranks priority territories, Russia, 
   kazakhstan.properties!.country="Казахстан";
   kazakhstan.properties!.countrycode="KZ";
   const results=rankPhotonFeatures([kazakhstan,ukraine,russian,priority],SPECIAL_TERRITORY_BOUNDARIES,"Изюм");
-  assert.deepEqual(results.map((item)=>item.id),["N-901","N-902","N-903","N-904"]);
+  assert.deepEqual(results.map((item)=>item.id),["N-901","N-902","N-904","N-903"]);
 });
 
 test("regional qualifier is removed from Photon query without changing full address searches", () => {
