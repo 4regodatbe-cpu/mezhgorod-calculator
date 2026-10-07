@@ -452,3 +452,4 @@ Current PR #12 is open/draft; no merge/production action.
 - Updated the live regression for Krasnodar—Moscow and reverse. Added tests for both directions, weekday/weekend, and rejection of partial routes.
 - Local release checks passed: 30/30 test files, TypeScript no-emit, and `git diff --check`. Remote build, live API regression, and Production smoke checks are the remaining release gates.
 - User's standing release decision: publish each completed change immediately after verification. PR #12 remains open and unmerged.
+- Release completed: PR branch head `b6220a3a52c23df2f566bb3526a03deb703211ef`; GitHub run #212 verify passed full tests, TypeScript, and Next production build. Vercel Production deployment `dpl_GSnRXDXUF7QyXArkEZHHbFrbV9fS` reached READY; `/v2` and `/api/version` returned HTTP 200 and the latter reported the expected commit. The live-probe job was still running at the time of this entry; no claim is made that its route API regression completed.
