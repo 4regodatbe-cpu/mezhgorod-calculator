@@ -25,7 +25,8 @@ const cases = [
   { name: "Krasnodar-Donetsk", from: krasnodar, to: donetsk },
   { name: "Donetsk-Krasnodar", from: donetsk, to: krasnodar },
   // User-provided Yandex screenshot (2026-10-04): 1,220 km fast route, 1,230 km alternative.
-  { name: "Donetsk-Moscow", from: donetsk, to: moscow, referenceDistanceKm: 1220 },
+  { name: "Donetsk-Moscow", from: donetsk, to: moscow, referenceDistanceKm: 1220, referenceTollRub: 3810 },
+  { name: "Volnovakha-Moscow", from: volnovakha, to: moscow },
   { name: "Simferopol-Donetsk", from: simferopol, to: donetsk },
   { name: "Donetsk-Simferopol", from: donetsk, to: simferopol },
   { name: "Simferopol-Krasnodar", from: simferopol, to: krasnodar },
@@ -92,10 +93,11 @@ for (const sample of cases) {
         row.specialShare = time.verified && route.seconds > 0 ? Math.round((time.specialSeconds / route.seconds) * 1000) / 1000 : null;
         row.finalDistanceKm = Math.round(route.meters / 100) / 10;
         row.finalRouteSeconds = route.seconds;
-        if (sample.name === "Donetsk-Moscow" || sample.name === "Yalta-Volnovakha") {
+        if (sample.name === "Donetsk-Moscow" || sample.name === "Volnovakha-Moscow" || sample.name === "Yalta-Volnovakha") {
           const priced = await calculateLegTolls({
             routeGeometry: route.coordinates,
             routeSeconds: route.seconds,
+            departureAt: "2026-10-08T10:00:00+03:00",
             selectedFastProvider: provider.name,
             selectedFastRoute: route,
             valhallaEvidence: provider.name === "Valhalla" ? route : null,
@@ -103,11 +105,12 @@ for (const sample of cases) {
             diagnosticFastValidation: null,
           });
           const tolls = tollsForApi(priced.tolls, priced.fastValidation);
-          const m4 = sample.name === "Donetsk-Moscow" ? await calculateM4Core(route.coordinates) : null;
+          const m4 = sample.name.endsWith("-Moscow") ? await calculateM4Core(route.coordinates, "2026-10-08T10:00:00+03:00") : null;
           row.tollProbe = {
             m4Plazas: m4?.pricing.pricedPlazas.map((item) => ({ id: item.id, km: item.km, direction: item.direction, entryKm: item.entryKm ?? null, exitKm: item.exitKm ?? null, weekday: item.weekday, weekend: item.weekend, selectedAmount: item.selectedAmount, verification: item.verification })) ?? null,
             m4Unresolved: m4?.pricing.unresolved.map((item) => ({ code: item.code, kms: item.kms, message: item.message })) ?? null,
-            m4ConfirmedChecks: m4?.validation.checks.filter((item) => item.status === "confirmed").map((item) => ({ km: item.km, evidence: item.evidence })) ?? null,
+            m4Checks: m4?.validation.checks.map((item) => ({ km: item.km, status: item.status, evidence: item.evidence, matchedNodeIds: item.matchedNodeIds, message: item.message })) ?? null,
+            m4EdgeEvents: m4?.validation.events.map((item) => ({ osmNodeId: item.osmNodeId, edgeToll: item.edgeToll, wayId: item.wayId, roadNames: item.roadNames })) ?? null,
             referenceWeekdayTollRub: sample.referenceTollRub ?? null,
             referenceWeekendTollRub: sample.referenceWeekendTollRub ?? null,
             weekendTollDeviationRub: tolls.weekendAmount == null || sample.referenceWeekendTollRub == null ? null : tolls.weekendAmount - sample.referenceWeekendTollRub,

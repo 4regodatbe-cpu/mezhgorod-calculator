@@ -3,6 +3,7 @@ import type { TollBoothEvent } from "@/lib/toll-validator";
 import type { M4PlazaNodeGroup } from "@/lib/toll-engine/m4-plaza-nodes";
 import { localTrace } from "@/lib/toll-engine/m4-local-trace";
 import { candidatesForRoute, CANDIDATE_RADIUS_KM, WINDOW_HALF_KM, type Candidate } from "@/lib/toll-engine/m4-route-candidates";
+import { classifyM4TraversalWithoutTollEdge, matchM4TollBoothEdges, type M4TraceEdge } from "@/lib/toll-engine/m4-toll-booth-evidence";
 
 const VALIDATION_BUDGET_MS = 24_000;
 const CONCURRENCY = 4;
@@ -39,18 +40,19 @@ export type M4RoutePlazaValidation = {
 
 function unavailableResult(candidate: Candidate, remoteMessage: string): { check: M4LocalPlazaCheck; events: TollBoothEvent[] } {
   const nearestDistanceKm = Math.round(candidate.nearestDistanceKm * 1000) / 1000;
+  const traversalFallbackStatus = classifyM4TraversalWithoutTollEdge(candidate.traversal.reason);
   if (candidate.traversal.confirmed) {
     return {
       check: {
         km: candidate.plaza.km,
         model: candidate.plaza.model,
-        status: "confirmed",
+        status: "unknown",
         evidence: "route_traversal",
         nearestDistanceKm,
         matchedNodeIds: [],
         expectedNodeIds: [...candidate.plaza.nodeIds],
         windowPointCount: candidate.window.length,
-        message: `Удалённый map matching недоступен (${remoteMessage}); ПВП подтверждён строгим пересечением сохранённого OSM-якоря маршрутом на ${Math.round(candidate.traversal.nearestDistanceKm * 1000)} м с продолжением трассы по обе стороны.`,
+        message: `Удалённый map matching недоступен (${remoteMessage}); маршрут проходит рядом с OSM-якорем ПВП на ${Math.round(candidate.traversal.nearestDistanceKm * 1000)} м, но геометрия не доказывает пересечение платного ребра (возможен бесплатный съезд/объезд). Тариф не начислен.`,
       },
       events: [],
     };
@@ -62,7 +64,7 @@ function unavailableResult(candidate: Candidate, remoteMessage: string): { check
   // toll-booth anchor, this is positive evidence of a near miss, not an
   // unresolved traversal. Keeping these as unknown makes long M-4 routes fail
   // closed merely because they pass near an alternative plaza or ramp.
-  if (candidate.traversal.reason === "outside_strict_traversal_radius") {
+  if (traversalFallbackStatus === "rejected") {
     return {
       check: {
         km: candidate.plaza.km,
@@ -101,33 +103,14 @@ async function validateCandidate(candidate: Candidate, deadlineAt: number): Prom
 
   if (!traced.ok) return unavailableResult(candidate, traced.message);
 
-  const events: TollBoothEvent[] = [];
-  const seen = new Set<string>();
-  traced.edges.forEach((edge, edgeIndex) => {
-    if (edge.end_node?.type !== "toll_booth") return;
-    const rawNodeId = edge.end_node.node_id;
-    if (rawNodeId === undefined) return;
-    const osmNodeId = String(rawNodeId);
-    if (!expectedNodeIds.has(osmNodeId) || seen.has(osmNodeId)) return;
-    seen.add(osmNodeId);
-    events.push({
-      osmNodeId,
-      wayId: edge.way_id === undefined ? null : String(edge.way_id),
-      roadNames: edge.names ?? [],
-      edgeIndex,
-      edgeToll: edge.toll === true,
-      beginShapeIndex: edge.begin_shape_index,
-      endShapeIndex: edge.end_shape_index,
-    });
-  });
-
-  const matchedNodeIds = events.map((event) => event.osmNodeId).filter((value): value is string => Boolean(value));
-  const confirmed = matchedNodeIds.length > 0;
+  const match = matchM4TollBoothEdges(expectedNodeIds, traced.edges as M4TraceEdge[]);
+  const { events, matchedNodeIds } = match;
+  const confirmed = match.status === "confirmed";
   return {
     check: {
       km: candidate.plaza.km,
       model: candidate.plaza.model,
-      status: confirmed ? "confirmed" : "rejected",
+      status: match.status,
       evidence: "map_matching",
       nearestDistanceKm: Math.round(candidate.nearestDistanceKm * 1000) / 1000,
       matchedNodeIds,
@@ -135,7 +118,9 @@ async function validateCandidate(candidate: Candidate, deadlineAt: number): Prom
       windowPointCount: candidate.window.length,
       message: confirmed
         ? `Подтверждён конкретный OSM toll-booth node: ${matchedNodeIds.join(", ")}`
-        : "Маршрут приблизился к зоне ПВП, но успешный локальный map matching не подтвердил ни один ожидаемый OSM node",
+        : match.status === "rejected"
+          ? `OSM toll-booth node найден (${matchedNodeIds.join(", ")}), но Valhalla подтверждает бесплатное ребро; проезд по съезду/объезду не тарифицируется.`
+          : "Маршрут приблизился к зоне ПВП, но map matching не подтвердил платное ребро ожидаемого OSM node",
     },
     events,
   };

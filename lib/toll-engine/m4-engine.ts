@@ -27,6 +27,9 @@ function groupEvents(events: TollBoothEvent[]) {
   let unrecognizedEventCount = 0;
 
   for (const event of events) {
+    // Toll-booth nodes also exist on free bypass/slip-road edges. Charge only
+    // the edge Valhalla marked as toll, even if a caller supplied a booth node.
+    if (event.edgeToll !== true) continue;
     if (!event.osmNodeId) {
       unrecognizedEventCount += 1;
       continue;
