@@ -39,6 +39,10 @@ test("missing edge toll evidence remains unknown instead of inventing a charge",
   assert.deepEqual(match.events, []);
 });
 
+test("a successful trace with no expected booth node is a verified near miss", () => {
+  assert.equal(matchM4TollBoothEdges(expected, []).status, "rejected");
+});
+
 test("geometric proximity alone cannot prove a paid toll crossing", () => {
   assert.equal(classifyM4TraversalWithoutTollEdge("strict_anchor_crossing_with_bidirectional_route_flanks"), "unknown");
   assert.equal(classifyM4TraversalWithoutTollEdge("outside_strict_traversal_radius"), "rejected");

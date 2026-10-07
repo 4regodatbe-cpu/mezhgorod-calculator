@@ -43,6 +43,7 @@ export function matchM4TollBoothEdges(expectedNodeIds: ReadonlySet<string>, edge
   }));
 
   if (events.length > 0) return { status: "confirmed", events, matchedNodeIds };
+  if (matching.length === 0) return { status: "rejected", events: [], matchedNodeIds };
   if (matching.length > 0 && matching.every(({ edge }) => edge.toll === false)) {
     return { status: "rejected", events: [], matchedNodeIds };
   }

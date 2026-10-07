@@ -118,8 +118,10 @@ async function validateCandidate(candidate: Candidate, deadlineAt: number): Prom
       windowPointCount: candidate.window.length,
       message: confirmed
         ? `Подтверждён конкретный OSM toll-booth node: ${matchedNodeIds.join(", ")}`
-        : match.status === "rejected"
+        : match.status === "rejected" && matchedNodeIds.length > 0
           ? `OSM toll-booth node найден (${matchedNodeIds.join(", ")}), но Valhalla подтверждает бесплатное ребро; проезд по съезду/объезду не тарифицируется.`
+          : match.status === "rejected"
+            ? "Успешный map matching не обнаружил ожидаемый OSM toll-booth node; тариф не начислен."
           : "Маршрут приблизился к зоне ПВП, но map matching не подтвердил платное ребро ожидаемого OSM node",
     },
     events,
