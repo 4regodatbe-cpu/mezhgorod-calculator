@@ -1,12 +1,13 @@
-## Current handoff — 2026-10-08 14:20 MSK
+## Current handoff — 2026-10-08 15:05 MSK
 
-- Repo: `4regodatbe-cpu/mezhgorod-calculator`, branch `fix/v2-mobile-layout-2026-10-05`; PR #12 remains open/draft and unmerged. Code commit: `82fdbf14096a25bb0c4a7251094b317db5cb1e80`.
-- **Published:** fastest valid route is now first in the results. Special-territory options are still restricted to the geographically preferred corridor, then sorted by duration; toll certainty/provider preference are tie-breakers only. Standard-route cards (main route and payment-point-avoiding alternative) are also ordered by duration. Route validation and toll fail-closed rules are unchanged.
-- **Verification:** focused route-policy test passed locally. Run #221 exposed a TypeScript error in the UI ordering data; fixed in the following commit. Run #222 passed all 123 tests, TypeScript, and Next production build. Route-quality run #144 also passed its production build. The separate live diagnostic job in run #222 later completed successfully; it is configured continue-on-error and does not provide an interactive UI test.
-- **Production:** Vercel deployment `dpl_4N96Q6nYKGKYVv5XyTNLE2MWxvfD` is READY on code commit `82fdbf14096a25bb0c4a7251094b317db5cb1e80`. Production `/api/version` and `/v2` returned HTTP 200; API version reports that exact commit. Alias: `https://mezhgorod-calculator.vercel.app/v2`.
-- No interactive browser calculation was performed; sorting is covered by regression tests. Next: finish/record the in-flight diagnostic live probe if useful, then continue user route feedback. Do not merge PR #12.
+- Repo: `4regodatbe-cpu/mezhgorod-calculator`, branch `fix/v2-mobile-layout-2026-10-05`; PR #12 remains open/draft and unmerged. Theme fix source commit: `c0a89efd80d9b08b4d7321fbe5ed80dc35136d57`.
+- **Published:** fixed the light/dark theme toggle so it changes the document theme before attempting localStorage persistence. Storage reads/writes are guarded, and the toggle determines its current state from the applied root class to avoid stale React state during hydration.
+- **Verification:** focused theme regressions passed (toggle both ways, blocked storage read fallback, and theme application with blocked storage write). CI run #227 passed all 123 tests, TypeScript no-emit, and Next production build. `git diff --check` passed.
+- **Production:** deployment `dpl_2Gw1PPa45qm7xmvzG3cfp5vduq9J` is READY, target production. Production `/api/version` returns HTTP 200 and reports source commit `c0a89efd80d9b08b4d7321fbe5ed80dc35136d57`. Alias: `https://mezhgorod-calculator.vercel.app/v2`.
+- **Interactive verification:** reloaded the Production app, toggled dark and back to light; button labels changed to “Включить светлую тему” and then “Включить тёмную тему”, confirming the applied mode. Do not merge PR #12.
 
 ---
+
 ---
 
 ## Prior handoff — 2026-10-07 13:36 MSK
