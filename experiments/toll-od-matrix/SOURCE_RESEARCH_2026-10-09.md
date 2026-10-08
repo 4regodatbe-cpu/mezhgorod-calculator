@@ -43,3 +43,5 @@ This is a **real provenance conflict**, not a reason to decide one value by intu
 **Historical context:** https://avtodor-tr.ru/press-center/news/rezhim-platnosti-vveden-na-uchastke-avtomobilnoy-dorogi-m-4-don-v-obkhod-sela-novaya-usman-i-sela-ro/ (2016) explains that **physical PVP 545** historically collects for two segments based on the actual route. Never use the 2016 prices as current 2026 fares; evidence of two row possible is not permission to charge both on every 545 crossing.
 
 **Open needs:** operator 2026 M4 detailed tariff PDF/document with effective date and exact rate rows; independent same-route PVP sequence; verified timing. No full tariff cell imported.
+
+**Later retrieval attempt, 2026-10-09:** the page https://avtodor-tr.ru/road/tariffs/ again returned HTTP 403 through an independent HTML link-extraction connector. A discoverable historical detailed M-4 PDF is dated **13 February 2025, order #59**; it must not be treated as current October 2026 tariff. Therefore no verified 2026 PDF rate rows or complete corridor signatures were imported.
