@@ -7,6 +7,7 @@ import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-te
 import { selectGeographicTerritoryOption } from "../lib/special-territory-options.ts";
 import { inCrimeaApproachZone } from "../lib/special-territory-approach-zone.ts";
 import { selectLiveRouteCandidates } from "../lib/route-quality.ts";
+import { orderRoutesByTravelTime } from "../app/v2/components/route-utils.ts";
 import { activeOverride, touchSession, SESSION_IDLE_MS } from "../lib/tariff-session.ts";
 const k={lat:45.04,lng:38.98},d={lat:48.0156,lng:37.8029},c={lat:44.95,lng:34.1};
 test("real four polygons split transitions, Crimea ordinary, transit excluded",()=>{
@@ -115,7 +116,7 @@ test("special route providers surface material distance disagreement",()=>{
  assert.equal(result.quality.status,"warning");
  assert.equal(result.quality.distanceSpreadPercent,7.7);
 });
-test("geographic selector prefers route-quality selection before faster outliers",()=>{
+test("geographic selector puts the fastest valid route first",()=>{
  const candidate=(preference:number,seconds:number,pricingStatus:"priced"|"unknown"="priced")=>({
   corridor:"mainland" as const,
   provider:preference===0?"Valhalla":"OSRM",
@@ -123,7 +124,7 @@ test("geographic selector prefers route-quality selection before faster outliers
   fast:{seconds,tolls:{pricingStatus}},
  });
  const selected=selectGeographicTerritoryOption([candidate(1,58000),candidate(0,59000)],"mainland");
- assert.equal(selected.options[0].provider,"Valhalla");
+ assert.equal(selected.options[0].provider,"OSRM");
 });
 test("geographic selector ignores elapsed-time evidence and preserves toll uncertainty",()=>{
  const candidate=(corridor:"mainland"|"crimea",pricingStatus:"priced"|"free"|"unknown",seconds=20000,provider="OSRM")=>({corridor,provider,fast:{seconds,tolls:{pricingStatus}}});
@@ -132,7 +133,7 @@ test("geographic selector ignores elapsed-time evidence and preserves toll uncer
  assert.equal(selectedCrimea.options.length,1);assert.equal(selectedCrimea.options[0].corridor,"crimea");assert.equal(selectedCrimea.routePolicy,"geographic-zone");
  const selectedMainland=selectGeographicTerritoryOption([mainland,crimea],"mainland");assert.equal(selectedMainland.options.length,1);assert.equal(selectedMainland.options[0].corridor,"mainland");
  assert.equal(selectGeographicTerritoryOption([crimea],"mainland").options.length,0);
- assert.equal(selectGeographicTerritoryOption([candidate("crimea","free"),candidate("crimea","priced",25000)],"crimea").options[0].fast.tolls.pricingStatus,"priced");
+ assert.equal(selectGeographicTerritoryOption([candidate("crimea","free",19000),candidate("crimea","priced",25000)],"crimea").options[0].fast.tolls.pricingStatus,"free");
  assert.equal(selectGeographicTerritoryOption([candidate("crimea","unknown")],"crimea").options[0].fast.tolls.pricingStatus,"unknown");
 });
 
@@ -142,4 +143,18 @@ test("geographic selector returns main and distinct alternative only from prefer
  const selected=selectGeographicTerritoryOption([main,alt,wrong],"mainland");
  assert.deepEqual(selected.options.map(item=>item.provider),["Valhalla","OSRM"]);
  assert.deepEqual(selectGeographicTerritoryOption([main,candidate("mainland","Duplicate",50030)],"mainland").options.map(item=>item.provider),["Valhalla"]);
+});
+
+test("geographic selector skips invalid durations and keeps toll/provider preference only for ties",()=>{
+ const candidate=(provider:string,seconds:number,status:"priced"|"unknown")=>({corridor:"mainland" as const,provider,selectionPreference:provider==="Valhalla"?0:1,fast:{seconds,tolls:{pricingStatus:status}}});
+ const selected=selectGeographicTerritoryOption([candidate("Valhalla",59000,"priced"),candidate("OSRM",58000,"unknown"),candidate("broken",Number.NaN,"priced")],"mainland");
+ assert.deepEqual(selected.options.map(item=>item.provider),["OSRM","Valhalla"]);
+ const tied=selectGeographicTerritoryOption([candidate("OSRM",58000,"unknown"),candidate("Valhalla",58000,"priced")],"mainland");
+ assert.equal(tied.options[0].provider,"Valhalla");
+});
+
+test("route cards are ordered fastest to slowest without mutating the source list",()=>{
+ const routes=[{id:"main",seconds:5000},{id:"alternative",seconds:3600},{id:"other",seconds:4200}];
+ assert.deepEqual(orderRoutesByTravelTime(routes).map(route=>route.id),["alternative","other","main"]);
+ assert.deepEqual(routes.map(route=>route.id),["main","alternative","other"]);
 });
