@@ -1,3 +1,11 @@
+## Current project documentation rule — 2026-10-09
+
+- **Repo-first handoff is mandatory.** Full append-only history in `experiments/toll-od-matrix/WORK_LOG.md`, current decisions in `DECISIONS.md`, executable backlog in `NEXT_STEPS.md`, quick-start and architecture in `README.md`. Project-wide rule added to `AGENTS.md` in this sandbox branch.
+- Historical decisions, implementation details, failures, unverified tariffs, exact paths and tests must be retained. When a new chat starts, rely on these committed files rather than previous-chat context.
+- Active branch: `experiment/toll-od-matrix-2026-10-08`. **No** edits to live calculator or Production. Next work: offline verified tariff compiler and valid-date versioning; details in `NEXT_STEPS.md`.
+
+---
+
 ## Current handoff — 2026-10-09 / PVP-first M-4 experiment
 
 - User policy: for the primary calculator route on M-4 assume **one continuous mainline corridor**; do not develop standard re-entry permutations. A proven detour/re-entry invalidates the single-pass shortcut rather than being priced wrongly.
