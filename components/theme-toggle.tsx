@@ -2,8 +2,7 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
-
-type Theme = "light" | "dark";
+import { applyAndPersistTheme, nextTheme, readTheme, type Theme } from "@/lib/theme-toggle";
 
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
@@ -16,17 +15,16 @@ export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    const saved = localStorage.getItem("mezhgorod-theme") as Theme | null;
-    const next = saved === "light" || saved === "dark" ? saved : "light";
+    const next = readTheme(() => localStorage.getItem("mezhgorod-theme"));
     setTheme(next);
     applyTheme(next);
   }, []);
 
   function toggle() {
-    const next = theme === "dark" ? "light" : "dark";
+    const current = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    const next = nextTheme(current);
+    applyAndPersistTheme(next, applyTheme, (value) => localStorage.setItem("mezhgorod-theme", value));
     setTheme(next);
-    localStorage.setItem("mezhgorod-theme", next);
-    applyTheme(next);
   }
 
   return (
