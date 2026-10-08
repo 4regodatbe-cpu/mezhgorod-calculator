@@ -1,11 +1,12 @@
-## Current handoff — 2026-10-08 00:23 MSK
+## Current handoff — 2026-10-08 14:20 MSK
 
-- Repo: `/workspace/scratch/a4ecb4a8e44f/repo`, branch `fix/v2-mobile-layout-2026-10-05`. PR #12 stays open/draft and unmerged. Production was observed through the UI returning 1,182.6 km / 17 h 09 min for Волноваха—Москва while hiding tolls as unconfirmed.
-- **Confirmed direct-vs-app discrepancy:** GitHub live artifact for run #217 on production source `28562ef` calculates the direct OSRM Волноваха—Москва geometry at 1,182.6 km / 17 h 09 min and prices it 3,050 ₽ weekdays / 3,890 ₽ weekends. The same production UI route displayed no toll price. Direct-provider runs therefore do not explain the missing total by themselves; the discrepancy is in the full special-route composition path or its live provider pressure.
-- **Current fix in progress:** `calculateSpecialOptions` used to run M-4 map matching for Valhalla and OSRM provider routes simultaneously. Each validation can launch four concurrent trace requests. It now ranks route geometry first, then prices provider candidates sequentially, preserving both route options and the existing paid-route preference while limiting the per-request trace burst. Added a deterministic regression that builds a DNR—Moscow M-4 geometry, checks both main/alternative totals remain priced, and asserts peak trace concurrency stays at four.
-- The live workflow now also records full `/api/v2/calculate` special-route results for Волноваха—Москва, Скадовск—Москва and Мариуполь—Москва. This will verify whether the concurrency change resolves the user's exact set. The test is intentionally diagnostic rather than an exact fare assertion because there is no matching route receipt/geometry reference.
-- Local checks: the new serial-pricing regression passes; 31 other test files passed, while the standalone all-tests command is blocked only because `next` is absent locally. TypeScript/build and full live flow still require GitHub CI. Do not publish until the required remote verify/build succeeds; then publish under the standing user instruction. Do not merge PR #12.
+- Repo: `4regodatbe-cpu/mezhgorod-calculator`, branch `fix/v2-mobile-layout-2026-10-05`; PR #12 remains open/draft and unmerged. Code commit: `82fdbf14096a25bb0c4a7251094b317db5cb1e80`.
+- **Published:** fastest valid route is now first in the results. Special-territory options are still restricted to the geographically preferred corridor, then sorted by duration; toll certainty/provider preference are tie-breakers only. Standard-route cards (main route and payment-point-avoiding alternative) are also ordered by duration. Route validation and toll fail-closed rules are unchanged.
+- **Verification:** focused route-policy test passed locally. Run #221 exposed a TypeScript error in the UI ordering data; fixed in the following commit. Run #222 passed all 123 tests, TypeScript, and Next production build. Route-quality run #144 also passed its production build. The separate live diagnostics in #222 were still at Yandex-route comparison when recorded; that job is diagnostic and configured continue-on-error.
+- **Production:** Vercel deployment `dpl_4N96Q6nYKGKYVv5XyTNLE2MWxvfD` is READY on code commit `82fdbf14096a25bb0c4a7251094b317db5cb1e80`. Production `/api/version` and `/v2` returned HTTP 200; API version reports that exact commit. Alias: `https://mezhgorod-calculator.vercel.app/v2`.
+- No interactive browser calculation was performed; sorting is covered by regression tests. Next: finish/record the in-flight diagnostic live probe if useful, then continue user route feedback. Do not merge PR #12.
 
+---
 ---
 
 ## Prior handoff — 2026-10-07 13:36 MSK
