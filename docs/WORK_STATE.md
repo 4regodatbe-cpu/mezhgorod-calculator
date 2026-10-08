@@ -1,3 +1,12 @@
+## Current handoff — experiment / 2026-10-08
+
+- Отдельная ветка `experiment/toll-od-matrix-2026-10-08` создана на базе `64631d23dc7ca44febafb9ebf1136162c7af9e82`; в этой ветке скопированы 11 исходников М-4/М-11, создана диагностическая OD-матрица из двух подтверждённых прямых пар М-11 и fail-closed модуль `experiments/toll-od-matrix/engine.mjs`. Runtime V2, PR #12, main и Production не тронуты.
+- Подтверждённое выполнение: 16/16 JS assertions на исходных функциях; `node --test`, lint, tsc, build и live проверки не запускались.
+- Текущие ограничения и следующий шаг: см. `experiments/toll-od-matrix/README.md` и `WORK_LOG.md`. Сначала официальные направленные тарифные пары и географический детектор въездов М-4, потом интеграция.
+- **Не публиковать эту ветку**: эксперимент пока не является готовым рабочим расчётом.
+
+---
+
 ## Current handoff — 2026-10-08
 
 - Repo: `4regodatbe-cpu/mezhgorod-calculator`, branch `fix/v2-mobile-layout-2026-10-05`; PR #12 remains open/draft and unmerged. Current branch source commit: `01cfe20f71879c9360e427d2d7aab8aecba0bccb`.
