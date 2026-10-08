@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-08",
+  "road": "М-4 Дон",
+  "classification": "source_inventory_not_od_entry_exit_map",
+  "odPairsVerified": 0,
+  "runtimeEnabled": false,
+  "sourceFiles": [
+    "sources/m4-data.ts",
+    "sources/m4-plaza-nodes.ts",
+    "sources/m4-route-context.ts",
+    "sources/m4-route-validator.ts"
+  ],
+  "sourceOpenPlazaRows": [
+    {
+      "rowId": "m4-62",
+      "plazaKm": 62,
+      "sourceSection": {
+        "fromKm": 21,
+        "toKm": 62
+      },
+      "sourceTariff": {
+        "monThu": 220,
+        "friSun": 260
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-71",
+      "plazaKm": 71,
+      "sourceSection": {
+        "fromKm": 21,
+        "toKm": 93
+      },
+      "sourceTariff": {
+        "monThu": 400,
+        "friSun": 500
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-133",
+      "plazaKm": 133,
+      "sourceSection": {
+        "fromKm": 93,
+        "toKm": 211
+      },
+      "sourceTariff": {
+        "monThu": 500,
+        "friSun": 600
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-228",
+      "plazaKm": 228,
+      "sourceSection": {
+        "fromKm": 211,
+        "toKm": 266
+      },
+      "sourceTariff": {
+        "monThu": 320,
+        "friSun": 470
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-322",
+      "plazaKm": 322,
+      "sourceSection": {
+        "fromKm": 266,
+        "toKm": 322
+      },
+      "sourceTariff": {
+        "monThu": 320,
+        "friSun": 470
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-339",
+      "plazaKm": 339,
+      "sourceSection": {
+        "fromKm": 322,
+        "toKm": 401
+      },
+      "sourceTariff": {
+        "monThu": 400,
+        "friSun": 540
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-355",
+      "plazaKm": 355,
+      "sourceSection": {
+        "fromKm": 322,
+        "toKm": 401
+      },
+      "sourceTariff": {
+        "monThu": 220,
+        "friSun": 350
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-515",
+      "plazaKm": 515,
+      "sourceSection": {
+        "fromKm": 492,
+        "toKm": 517
+      },
+      "sourceTariff": {
+        "monThu": 170,
+        "friSun": 250
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-545-a",
+      "plazaKm": 545,
+      "sourceSection": {
+        "fromKm": 517,
+        "toKm": 544
+      },
+      "sourceTariff": {
+        "monThu": 160,
+        "friSun": 220
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-545-b",
+      "plazaKm": 545,
+      "sourceSection": {
+        "fromKm": 545,
+        "toKm": 589
+      },
+      "sourceTariff": {
+        "monThu": 250,
+        "friSun": 300
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-620",
+      "plazaKm": 620,
+      "sourceSection": {
+        "fromKm": 589,
+        "toKm": 633
+      },
+      "sourceTariff": {
+        "monThu": 250,
+        "friSun": 300
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-803",
+      "plazaKm": 803,
+      "sourceSection": {
+        "fromKm": 741,
+        "toKm": 893
+      },
+      "sourceTariff": {
+        "monThu": 620,
+        "friSun": 950
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-911",
+      "plazaKm": 911,
+      "sourceSection": {
+        "fromKm": 893,
+        "toKm": 933
+      },
+      "sourceTariff": {
+        "monThu": 250,
+        "friSun": 350
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-1046",
+      "plazaKm": 1046,
+      "sourceSection": {
+        "fromKm": 1024,
+        "toKm": 1091
+      },
+      "sourceTariff": {
+        "monThu": 450,
+        "friSun": 770
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-1093",
+      "plazaKm": 1093,
+      "sourceSection": {
+        "fromKm": 1091,
+        "toKm": 1119
+      },
+      "sourceTariff": {
+        "monThu": 150,
+        "friSun": 270
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-1184",
+      "plazaKm": 1184,
+      "sourceSection": {
+        "fromKm": 1119,
+        "toKm": 1195
+      },
+      "sourceTariff": {
+        "monThu": 350,
+        "friSun": 470
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    },
+    {
+      "rowId": "m4-1223",
+      "plazaKm": 1223,
+      "sourceSection": {
+        "fromKm": 1195,
+        "toKm": 1319
+      },
+      "sourceTariff": {
+        "monThu": 500,
+        "friSun": 690
+      },
+      "role": "payment_facility_not_proven_entry_exit"
+    }
+  ],
+  "sourceMixedSystems": [
+    {
+      "zoneId": "m4-401-464",
+      "fromKm": 401,
+      "toKm": 464,
+      "paymentPointsKm": [
+        416,
+        460
+      ],
+      "sourceFullSectionTariff": {
+        "monThu": 360,
+        "friSun": 480
+      },
+      "status": "payment_system_context_only_not_verified_od"
+    },
+    {
+      "zoneId": "m4-633-741",
+      "fromKm": 633,
+      "toKm": 741,
+      "paymentPointsKm": [
+        636,
+        672
+      ],
+      "sourceFullSectionTariff": {
+        "monThu": 640,
+        "friSun": 770
+      },
+      "status": "payment_system_context_only_not_verified_od"
+    }
+  ],
+  "candidatePaymentFacilityKms": [
+    62,
+    71,
+    133,
+    228,
+    322,
+    339,
+    355,
+    416,
+    460,
+    515,
+    545,
+    620,
+    636,
+    672,
+    803,
+    911,
+    1046,
+    1093,
+    1184,
+    1223
+  ],
+  "physicalEvidenceAnchorsPresent": [
+    62,
+    71,
+    133,
+    228,
+    322,
+    339,
+    355,
+    416,
+    460,
+    515,
+    545,
+    620,
+    636,
+    672,
+    803,
+    911,
+    1046,
+    1093,
+    1184,
+    1223
+  ],
+  "anchorMissingInCopiedNodes": [],
+  "requirements": [
+    "Toll plazas are not interchangeable with on/off ramps.",
+    "No directed OD prices established from source PVP rows.",
+    "M4 zone 339/355 cannot be billed twice.",
+    "M4 545 has two source rows for one physical PVP.",
+    "Two mixed zones need verified entry/exit and duration semantics.",
+    "No geometry matched to specific on/off ramps yet."
+  ]
+}
