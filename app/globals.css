@@ -68,6 +68,9 @@ html.dark {
   --brand-focus:#A1D2CA;
   --brand-border:#5B6065;
 }
+/* Manual app themes; avoid a second Android/Chrome auto-dark transformation. */
+html.light { color-scheme:only light; }
+html.dark { color-scheme:dark; }
 html.dark .calculator-modern {
   background-image:radial-gradient(circle at 50% -24%,color-mix(in srgb,var(--brand-subtle) 14%,transparent),transparent 48%);
 }
