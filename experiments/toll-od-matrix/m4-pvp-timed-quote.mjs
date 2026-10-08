@@ -1,5 +1,6 @@
 import {m4TariffPeriodAt} from "./m4-fare-calendar-2026.mjs";
 import {quoteM4ByPvp} from "./m4-pvp-corridor.mjs";
+import {deriveM4MixedStatus} from "./m4-mixed-time-policy.mjs";
 
 // An M4 single corridor may span midnight. A static single calendar period is unsafe
 // if any verified PVP crossing belongs to another tariff profile or tariff version.
@@ -17,9 +18,14 @@ function quoteM4TimedCorridor(matrix,request,quoteFunction){
  }
  if(observedProfiles.size!==1)return unknown("mixed_tariff_profiles_across_overnight_trip");
  const profile=[...observedProfiles][0],firstDate=days[0];
- const r=quoteFunction(matrix,{...request,profile,tariffDate:firstDate});
+ const computed=deriveM4MixedStatus(request.confirmedPvps,request.pvpPassageTimes,request.routeId,request.direction);
+ if(computed.status!=="resolved")return unknown("mixed_zone:"+computed.reason);
+ const ctx=computed.mixedContext;
+ // If a caller also supplied a mixed-state assertion it must agree with crossed times.
+ if(request.mixedContext && (request.mixedContext.routeId!==request.routeId || request.mixedContext.mixed401!==ctx.mixed401 || request.mixedContext.mixed633!==ctx.mixed633))return unknown("provided_mixed_zone_status_disagrees_with_event_times");
+ const r=quoteFunction(matrix,{...request,mixedContext:ctx,profile,tariffDate:firstDate});
  if(!r||r.status!=="diagnostic_priced"||!Number.isSafeInteger(r.amountRub))return r??unknown("quote_failed");
- const matching=(matrix?.priceCells??[]).filter(c=>c.direction===request.direction && Array.isArray(c.sequence) && c.sequence.join(">")===r.verifiedSequence.join(">") && c.context?.mixed401===request.mixedContext?.mixed401 && c.context?.mixed633===request.mixedContext?.mixed633 && c.source?.effectiveFrom<=firstDate && (c.source.effectiveTo===null||c.source.effectiveTo>=firstDate));
+ const matching=(matrix?.priceCells??[]).filter(c=>c.direction===request.direction && Array.isArray(c.sequence) && c.sequence.join(">")===r.verifiedSequence.join(">") && c.context?.mixed401===ctx.mixed401 && c.context?.mixed633===ctx.mixed633 && c.source?.effectiveFrom<=firstDate && (c.source.effectiveTo===null||c.source.effectiveTo>=firstDate));
  if(matching.length!==1)return unknown("no_unique_tariff_version_for_trip");
  const source=matching[0].source;
  if(days.some(d=>d<source.effectiveFrom||(source.effectiveTo!==null&&d>source.effectiveTo)))return unknown("tariff_version_changes_during_trip");
