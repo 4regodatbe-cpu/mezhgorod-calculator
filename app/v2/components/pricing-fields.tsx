@@ -1,10 +1,11 @@
 "use client";
 
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useId, useState } from "react";
 import { defaults, tariffNames } from "./pricing-data";
 import { clampNumber, money } from "./format";
 import { displayQuote, resolveTollAmount, type TollPeriod } from "./quote-presentation";
-import type { TollView, Trip } from "./types";
+import type { PricingVehicle, TollView, Trip } from "./types";
 
 export function TariffInputs({
   rates,
@@ -93,6 +94,11 @@ export function PriceRows({
   manualToll?: string;
   fareOnly?: boolean;
 }) {
+  const hasDualTariff = vehicleKeys.some(([, vehicle]) => trip.pricingByVehicle?.[vehicle]?.dualTariff);
+  if (hasDualTariff) {
+    return <DualTariffPriceRows trip={trip} toll={toll} period={period} manualToll={manualToll} fareOnly={fareOnly} />;
+  }
+
   if (fareOnly) {
     return (
       <div className="mt-2 grid min-w-0 grid-cols-1 gap-1">
@@ -148,6 +154,79 @@ export function PriceRows({
         );
       })}
       {tollPrice.amount === null && <p className="px-1 text-xs leading-snug text-brand-muted">Плата за дороги не подтверждена; суммы указаны без неё.</p>}
+    </div>
+  );
+}
+
+function DualTariffPriceRows({
+  trip,
+  toll,
+  period,
+  manualToll,
+  fareOnly,
+}: {
+  trip: Trip;
+  toll?: TollView;
+  period: TollPeriod;
+  manualToll?: string;
+  fareOnly: boolean;
+}) {
+  const [expandedVehicle, setExpandedVehicle] = useState<PricingVehicle | null>("comfort");
+  const listId = useId();
+  const tollPrice = resolveTollAmount(toll, period, manualToll);
+
+  return (
+    <div className="mt-2.5 grid min-w-0 grid-cols-1 gap-1.5">
+      {vehicleKeys.map(([key, vehicle]) => {
+        const price = trip.pricingByVehicle?.[vehicle];
+        const baseFare = price && !price.requiresSplit ? price.totalPrice : null;
+        const quote = displayQuote(baseFare, fareOnly ? { status: "unknown", amount: null } : tollPrice);
+        const expanded = expandedVehicle === vehicle;
+        const panelId = `${listId}-${vehicle}`;
+        const normalAmount = price?.pricingSegments
+          .filter((segment) => segment.tariffType === "normal")
+          .reduce((sum, segment) => sum + segment.amount, 0) ?? 0;
+        const specialAmount = price?.pricingSegments
+          .filter((segment) => segment.tariffType === "special")
+          .reduce((sum, segment) => sum + segment.amount, 0) ?? 0;
+
+        return (
+          <article key={vehicle} className="min-w-0 overflow-hidden rounded-2xl border border-brand-border/25 bg-brand-surface shadow-sm">
+            <button
+              type="button"
+              aria-expanded={expanded}
+              aria-controls={panelId}
+              onClick={() => setExpandedVehicle(expanded ? null : vehicle)}
+              className="flex min-h-12 w-full items-center justify-between gap-3 px-2.5 py-2 text-left transition hover:bg-brand-subtle/55 focus-visible:outline-2 focus-visible:outline-brand-focus"
+            >
+              <span className="text-sm font-black text-brand-text">{tariffNames[key]}</span>
+              <span className="flex shrink-0 items-center gap-2">
+                {baseFare == null ? <span className="text-xs font-bold text-brand-muted">Не рассчитано</span> : <strong className="text-sm font-black text-brand-action">{money(baseFare)}</strong>}
+                {expanded ? <ChevronUp aria-hidden="true" className="h-5 w-5 text-brand-action" /> : <ChevronDown aria-hidden="true" className="h-5 w-5 text-brand-action" />}
+              </span>
+            </button>
+            <div id={panelId} hidden={!expanded} className="border-t border-brand-border/20 px-2.5 py-2">
+              {quote.kind === "unavailable" ? <p className="text-sm text-brand-muted">{quote.label}</p> : <>
+                <div className="grid gap-1 text-sm">
+                  <div className="flex items-baseline justify-between gap-3"><span className="text-brand-muted">Обычный тариф</span><strong className="text-brand-text">{money(normalAmount)}</strong></div>
+                  <div className="flex items-baseline justify-between gap-3"><span className="text-brand-muted">Особые тарифные зоны</span><strong className="text-brand-text">{money(specialAmount)}</strong></div>
+                </div>
+                <div className="mt-1.5 flex items-baseline justify-between gap-3 border-t border-brand-border/20 pt-1.5">
+                  <span className="text-xs font-extrabold text-brand-text">Стоимость по тарифу</span>
+                  <strong className="text-sm font-black text-brand-action">{money(baseFare!)}</strong>
+                </div>
+                {!fareOnly && tollPrice.amount !== null && tollPrice.status !== "free" && <div className="mt-1 flex items-baseline justify-between gap-3 text-xs">
+                  <span className="text-brand-muted">Платные дороги</span><strong className="text-brand-route">{money(tollPrice.amount)}</strong>
+                </div>}
+                {!fareOnly && quote.kind === "complete" && <div className="mt-1 flex items-baseline justify-between gap-3 border-t border-brand-border/20 pt-1.5">
+                  <span className="text-xs font-extrabold text-brand-text">Итого за поездку</span><strong className="text-base font-black text-brand-action">{money(quote.amount)}</strong>
+                </div>}
+                {!fareOnly && quote.kind === "base-only" && <p className="mt-1 border-t border-brand-border/20 pt-1.5 text-xs font-extrabold text-brand-text">Итого без дорог: {money(quote.amount)}</p>}
+              </>}
+            </div>
+          </article>
+        );
+      })}
     </div>
   );
 }
