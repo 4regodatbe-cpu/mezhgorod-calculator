@@ -500,3 +500,12 @@ Current PR #12 is open/draft; no merge/production action.
 - Production deployment `dpl_2Gw1PPa45qm7xmvzG3cfp5vduq9J` READY на коммите `c0a89efd80d9b08b4d7321fbe5ed80dc35136d57`; `/api/version` вернул HTTP 200 и ожидаемый коммит.
 - Интерактивно проверено в Production: переключение в тёмный режим, затем обратно в дневной; доступные подписи кнопки сменились ожидаемо.
 - PR #12 остаётся open/draft, не слит.
+
+
+### 2026-10-08 — Светлая тема и Android/Chrome Auto Dark
+
+- Пользователь сообщил, что опубликованное оформление не соответствует актуальному дизайну. На приложенном мобильном кадре кнопка темы показывала действие «включить тёмную тему» (то есть была выбрана светлая тема), но фон и поля выглядели затемнёнными, а акцент оставался цветом светлой палитры.
+- Причина: браузер/Android WebView мог повторно алгоритмически затемнять страницу поверх вручную выбранной светлой темы приложения. Так смешивались тёмные поверхности системы и светлые бирюзовые контролы.
+- Изменения в PR #12: `app/layout.tsx` объявляет поддержку light/dark и устанавливает `color-scheme: only light` до гидратации для светлой темы; `components/theme-toggle.tsx` применяет тот же режим при переключении; `app/globals.css` явно задаёт цветовую схему для обеих тем; `lib/theme-toggle.ts` содержит соответствующее преобразование с регрессией в `scripts/theme-toggle.test.ts`.
+- Проверки: `node --import ./scripts/register-ts-paths.mjs --test scripts/theme-toggle.test.ts` прошёл; `git diff --check` прошёл. Локальный полный TypeScript/build не запускался: зависимости в checkout отсутствуют. Vercel Preview `dpl_EG928Y6FfCEr4L2CEXPfb8jq4g2p` READY на source `01cfe20f71879c9360e427d2d7aab8aecba0bccb`; API version и SSR `/v2` ответили 200, в HTML присутствуют `meta color-scheme=light dark` и pre-hydration `only light` для светлого режима. GitHub Actions run для последнего коммита не обнаружен.
+- Production не обновлялся; интерактивный preview защищён Vercel sign-in. Текущая инструкция пользователя: не публиковать на Production без прямого запроса. PR #12 остаётся открытым/draft.
