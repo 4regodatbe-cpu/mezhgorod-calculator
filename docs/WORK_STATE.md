@@ -2,7 +2,8 @@
 
 - Отдельная ветка `experiment/toll-od-matrix-2026-10-08` создана на базе `64631d23dc7ca44febafb9ebf1136162c7af9e82`; в этой ветке скопированы 11 исходников М-4/М-11, создана диагностическая OD-матрица из двух подтверждённых прямых пар М-11 и fail-closed модуль `experiments/toll-od-matrix/engine.mjs`. Runtime V2, PR #12, main и Production не тронуты.
 - Подтверждённое выполнение: 16/16 JS assertions на исходных функциях; `node --test`, lint, tsc, build и live проверки не запускались.
-- Текущие ограничения и следующий шаг: см. `experiments/toll-od-matrix/README.md` и `WORK_LOG.md`. Сначала официальные направленные тарифные пары и географический детектор въездов М-4, потом интеграция.
+- Дополнительный M-4 inventory: `experiments/toll-od-matrix/inventory/m4-payment-facilities.json` — 17 source tariff rows / 16 unique open PVP / 2 mixed systems / 20 total distinct payment points (anchors present for all); это НЕ карта реальных съездов и не направленные OD-тарифы, подтверждённых M-4 OD пар пока 0. Подробности `inventory/M4_READINESS.md`.
+- Текущие ограничения и следующий шаг: см. `experiments/toll-od-matrix/README.md`, `WORK_LOG.md` и `inventory/M4_READINESS.md`. Сначала официальные направленные тарифные пары и географический детектор въездов М-4, потом интеграция.
 - **Не публиковать эту ветку**: эксперимент пока не является готовым рабочим расчётом.
 
 ---
