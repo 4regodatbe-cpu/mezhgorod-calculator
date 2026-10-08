@@ -2,6 +2,14 @@
 
 **As of 2026-10-09** | Repo `4regodatbe-cpu/mezhgorod-calculator` | sandbox branch `experiment/toll-od-matrix-2026-10-08`.
 
+## Latest 2026-10-09 findings
+
+- The repository now includes `m4-fare-calendar-2026.mjs`, `m4-pvp-timed-quote.mjs`, and `m4-mixed-time-policy.mjs` with corresponding Node test source files.
+- 2026 calendar exceptions are taken from the operator's own tariff page. Per-PVP Moscow-local time avoids erroneously applying Thursday prices to Friday gate crossings. Changing profile mid-trip returns unknown.
+- **Critical unresolved conflict:** two official operator pages disagree whether 633–672 km mixed-zone receipt grace is **60 minutes** or **120 minutes**. The experimental algorithm safely marks 60–120 minutes unknown, until official valid rule/effective date can be established.
+- Latest V8 exact-source tests: **145/145 equivalent synchronous test cases pass** across unchanged baseline and new temporal modules. These did **not** run via native Node.js `node --test`; CI and full calculator build remain unverified. No actual signed tariff source imported: `priceCells=[]`.
+- See `WORK_LOG.md` block 7, `DECISIONS.md` latest decision, and `SOURCE_RESEARCH_2026-10-09.md`.
+
 ## Immediate resume checklist
 
 1. Fetch the **current remote branch head**. Do not trust this document's commit if it has since moved. Never overwrite remote work without a lease / branch comparison.

@@ -1,3 +1,15 @@
+## Current handoff — 2026-10-09 / toll PVP experiment temporal safety
+
+- **Mandatory repository-first documentation** continues: `AGENTS.md` requires full append-only history `experiments/toll-od-matrix/WORK_LOG.md`, latest decisions `DECISIONS.md`, backlog `NEXT_STEPS.md` and `START_HERE.md`; updated together with each substantial block.
+- **Latest implemented**: `m4-fare-calendar-2026.mjs` (Moscow-local official 2026 holiday/preholiday tariff profiles), `m4-pvp-timed-quote.mjs` (each PVP passage timestamp; refuses mixed profile or changing tariff version), `m4-mixed-time-policy.mjs` (12 h for 401–464, conservative 60/120 official conflict for 633–672). Relevant unit files added. Original fail-closed PVP-sequence lookup, validator, offline compiler remain sandbox only.
+- **Key operator contradiction:** https://avtodor-tr.ru/info/legal-info/pravila-proezda/ says 60 min for 633–672; https://avtodor-tr.ru/company/docs/proezd/ says 120 min. When elapsed in (60,120] min, the model returns `unknown/null` until the actual rule revision is confirmed. Exact sources in `SOURCE_RESEARCH_2026-10-09.md`.
+- **Tests:** initial exact GitHub-source JS shim run found one faulty infinite-date fixture (102/103), fixed commit `95e971b`; 103/103 original tests plus 42/42 current temporal/mixed tests = **145/145 V8 equivalent synchronous cases**. The new 42 includes 14 calendar, 13 mixed, and 15 timed. **Native Node `node --test`, CI, Next build, live geometry and any Production publish have NOT run.**
+- **Data:** known 20 PVP positions but approved M-4 `matrix/m4-pvp-corridors.json` priceCells **0** and official input `matrix/m4-verified-source-intake.json` records **0**. No fabricated source amounts.
+- **Isolation:** branch `experiment/toll-od-matrix-2026-10-08`; no live `app/`, `lib/`, `data/`, PR #12 or main changes.
+- **Next action:** run actual complete Node test suite in synchronized checkout; independently reconcile current 60/120-minute policy and dated operator tariff source against chosen real PVP trace. Detailed planned steps in `NEXT_STEPS.md`.
+
+---
+
 ## Current handoff — 2026-10-09 (after mandatory documentation rule + offline compiler)
 
 - **Durable repository history policy** added in `AGENTS.md` (commit `891c53bb`): full append-only `experiments/toll-od-matrix/WORK_LOG.md`, approved/superseded decisions in `DECISIONS.md`, next actions in `NEXT_STEPS.md`, current state at top of this file. New chats begin with `experiments/toll-od-matrix/START_HERE.md`.

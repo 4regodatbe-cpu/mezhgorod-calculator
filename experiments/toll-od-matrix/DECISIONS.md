@@ -34,3 +34,12 @@ Updated: 2026-10-09. New decisions MUST be appended with a date; preserve supers
 - Automatically deriving arbitrary M-4 PVP-pair prices from city prices, total route sums, adjacent PVP charges, unverified OSM proximity, or screenshots of different routes.
 - Treating a single initial or final PVP as a unique full-corridor fingerprint when intermediate gates differ.
 - Publishing the research into the user-facing calculator.
+
+## 2026-10-09 — tariff calendar and contradictory mixed-grace rules (ACCEPTED IMPLEMENTATION IN EXPERIMENT)
+
+- Actual PVP time is more precise than booking date: different physical PVPs may cross the Mon–Thu / Fri–Sun calendar boundary or a tariff version midnight. This case **must not reuse one whole-corridor price without proof**. Until mixed temporal pricing is independently verified, it returns `unknown/null`.
+- Use Europe/Moscow civil date and explicit-tz ISO timestamps. Official posted 2026 holiday/preholiday exceptions override usual Monday–Thursday pricing. 2027+ schedule is unverified and must fail closed.
+- The 401/414–464 km mixed toll system's 12-hour period is corroborated by both operator legal pages.
+- **The 633–672 km limit conflicts on current operator pages**: `info/legal-info/pravila-proezda/` says 60 min; `company/docs/proezd/` says 120 min. Do not arbitrarily select 60 or 120. Until dated policy is clarified, accept only unambiguous classifications (≤60 within, >120 exceeded), otherwise return unknown.
+- Do not trust a caller-supplied `mixedContext` if it differs from the state derived from two validated PVP timestamps on that same selected route.
+- These are sandbox-only safety restrictions, not proof that the new engine is calibrated for commercial use.
