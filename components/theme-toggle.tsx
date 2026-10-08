@@ -2,13 +2,13 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
-import { applyAndPersistTheme, nextTheme, readTheme, type Theme } from "@/lib/theme-toggle";
+import { applyAndPersistTheme, browserColorScheme, nextTheme, readTheme, type Theme } from "@/lib/theme-toggle";
 
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
   root.classList.toggle("dark", theme === "dark");
   root.classList.toggle("light", theme === "light");
-  root.style.colorScheme = theme;
+  root.style.colorScheme = browserColorScheme(theme);
 }
 
 export function ThemeToggle() {
