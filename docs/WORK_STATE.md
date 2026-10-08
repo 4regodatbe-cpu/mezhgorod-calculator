@@ -1,3 +1,13 @@
+## Current handoff — 2026-10-09 / PVP-first M-4 experiment
+
+- User policy: for the primary calculator route on M-4 assume **one continuous mainline corridor**; do not develop standard re-entry permutations. A proven detour/re-entry invalidates the single-pass shortcut rather than being priced wrongly.
+- New experimental M-4 engine: `experiments/toll-od-matrix/m4-pvp-corridor.mjs` + `m4-pvp-evidence-adapter.mjs`; lookup by **exact directed matched PVP signature**, checked first/last PVP, calendar period, mixed-zone status and effective-date provenance. No runtime segment summation. The older ramp-based `od-geometry.mjs` is retained as historical/other-road experiment, **not** the new M4 approach.
+- `matrix/m4-pvp-corridors.json`: 20 known physical PVP km points, **zero verified complete tariff rows** (`priceCells=[]`). No live price or production status asserted. 28/28 + 13/13 synchronous V8 assertions passed on the exact authoring functions; 30 standalone Node tests authored but **not executed**. No GitHub CI, Next build, nor live geometries for this new block.
+- Live V2, `main`, PR #12, Vercel production and all `app/`, `lib/`, `data/` unchanged. Exact decision, known limitations and next work in `experiments/toll-od-matrix/README.md` and `WORK_LOG.md`.
+- Next step: offline tariff compilation / source verification for actual directed PVP corridors with special handling of 339/355, 545, 401–464 and 633–741; then identical-geometry regression and Node tests before any integration.
+
+---
+
 ## Песочница OD — состояние 2026-10-08 (дополнительный блок)
 
 - Ветка `experiment/toll-od-matrix-2026-10-08` не подключена к рабочему калькулятору. Новые `od-geometry.mjs`, `od-sandbox-quote.mjs`, тесты и каталог кандидатов живут внутри `experiments/toll-od-matrix/`. M4 directed matrix `matrix/m4.json` **пустая** (0 доказанных пар), а 53 внешних ориентира развязок остаются unverified (первый живой запрос Overpass к bbox у ПВП 515 вернул через текстовый экстрактор HTTP 406 без данных).
