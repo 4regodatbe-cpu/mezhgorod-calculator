@@ -35,5 +35,29 @@ test("out-of-window tariff date rejected",()=>assert.equal(quoteM4ByPvp(syntheti
 test("unsupported route continuity rejected",()=>{const r=request("to_moscow",south);r.routeProof.reentryStatus="observed";assert.equal(quoteM4ByPvp(synthetic,r).amountRub,null)});
 test("cross-route event rejected",()=>{const r=request("to_moscow",south);r.confirmedPvps[0].routeId="another";assert.equal(quoteM4ByPvp(synthetic,r).amountRub,null)});
 test("partial PVP coverage rejected",()=>{const r=request("to_moscow",south);r.routeProof.unknownCandidateCount=1;assert.equal(quoteM4ByPvp(synthetic,r).amountRub,null)});
-test("duplicate price key cannot be silently selected",()=>{const r=clone(synthetic);r.priceCells.push(clone(r.priceCells[0]));assert.throws(()=>validateM4PvpMatrix(r),/duplicate_cell/);});
+test("duplicate price key cannot be silently selected",()=>{const r=clone(synthetic);r.priceCells.push(clone(r.priceCells[0]));assert.throws(()=>validateM4PvpMatrix(r),/overlapping_cell_version/);});
 test("unverified price source rejected",()=>{const r=clone(synthetic);r.priceCells[0].source.kind="estimated";assert.throws(()=>validateM4PvpMatrix(r),/invalid_cell_provenance/);});
+
+test("nonoverlapping successor tariff versions accepted",()=>{
+  const c=clone(synthetic);
+  const old=c.priceCells[0];
+  c.priceCells.push({...clone(old),prices:{monThu:1729,friSun:2830},source:{...old.source,effectiveFrom:"2026-11-01",effectiveTo:"2026-12-31"}});
+  assert.equal(validateM4PvpMatrix(c),true);
+  assert.equal(quoteM4ByPvp(c,request("to_moscow",south,contexts,"monThu","2026-10-09")).amountRub,1357);
+  assert.equal(quoteM4ByPvp(c,request("to_moscow",south,contexts,"monThu","2026-11-15")).amountRub,1729);
+});
+test("overlapping tariff versions rejected",()=>{
+  const c=clone(synthetic),old=c.priceCells[0];
+  c.priceCells.push({...clone(old),source:{...old.source,effectiveFrom:"2026-10-31",effectiveTo:null}});
+  assert.throws(()=>validateM4PvpMatrix(c),/overlapping_cell_version/);
+});
+test("same corridor with gap in versions is unknown during gap",()=>{
+  const c=clone(synthetic),old=c.priceCells[0];
+  c.priceCells.push({...clone(old),source:{...old.source,effectiveFrom:"2026-11-15",effectiveTo:"2026-12-31"}});
+  assert.equal(quoteM4ByPvp(c,request("to_moscow",south,contexts,"monThu","2026-11-10")).amountRub,null);
+});
+test("one endless tariff version prohibits a successor",()=>{
+  const c=clone(synthetic),old=c.priceCells[1];
+  c.priceCells.push({...clone(old),source:{...old.source,effectiveFrom:"2026-11-01",effectiveTo:"2026-12-31"}});
+  assert.throws(()=>validateM4PvpMatrix(c),/overlapping_cell_version/);
+});

@@ -6,7 +6,7 @@ function validateM4PvpMatrix(matrix){
   if(!matrix || matrix.schemaVersion!==1 || matrix.runtimeEnabled!==false || matrix.systemId!=="m4-don" || matrix.vehicleProfile!=="category-I-no-transponder" || !Array.isArray(matrix.knownPvps) || !Array.isArray(matrix.priceCells)) throw Error("invalid_m4_matrix");
   const known=new Set(matrix.knownPvps);
   if(known.size!==matrix.knownPvps.length || [...known].some(id=>!/^m4-\d+$/.test(id)))throw Error("invalid_known_pvps");
-  const keys=new Set();
+  const versionedKeys=new Map();
   for(const cell of matrix.priceCells){
     if(!cell || !["to_moscow","to_krasnodar"].includes(cell.direction) || !Array.isArray(cell.sequence) || !cell.sequence.length || new Set(cell.sequence).size!==cell.sequence.length || cell.sequence.some(id=>!known.has(id)))throw Error("invalid_cell_sequence");
     const kms=cell.sequence.map(id=>Number(id.slice(3)));
@@ -16,9 +16,15 @@ function validateM4PvpMatrix(matrix){
     if(a===(cell.context.mixed401==="not_used") || b===(cell.context.mixed633==="not_used"))throw Error("inconsistent_mixed_context");
     if(!cell.prices || !Number.isSafeInteger(cell.prices.monThu) || !Number.isSafeInteger(cell.prices.friSun) || cell.prices.monThu<0 || cell.prices.friSun<0)throw Error("invalid_cell_prices");
     const src=cell.source;
-    if(!src || src.kind!=="official_verified_corridor" || typeof src.url!=="string" || !src.url.startsWith("https://") || !/^\d{4}-\d\d-\d\d$/.test(src.effectiveFrom||"") || (src.effectiveTo!==null && !/^\d{4}-\d\d-\d\d$/.test(src.effectiveTo||"")) || (src.effectiveTo && src.effectiveTo<src.effectiveFrom))throw Error("invalid_cell_provenance");
+    if(!src || src.kind!=="official_verified_corridor" || typeof src.url!=="string" || !src.url.startsWith("https://") || !/^\\d{4}-\\d\\d-\\d\\d$/.test(src.effectiveFrom||"") || (src.effectiveTo!==null && !/^\\d{4}-\\d\\d-\\d\\d$/.test(src.effectiveTo||"")) || (src.effectiveTo && src.effectiveTo<src.effectiveFrom))throw Error("invalid_cell_provenance");
     const key=[cell.direction,cell.sequence.join(">"),cell.context.mixed401,cell.context.mixed633].join("|");
-    if(keys.has(key))throw Error("duplicate_cell");keys.add(key);
+    const ranges=versionedKeys.get(key)||[];
+    for(const range of ranges){
+      const noOverlap=(range.to!==null && range.to<src.effectiveFrom) || (src.effectiveTo!==null && src.effectiveTo<range.from);
+      if(!noOverlap)throw Error("overlapping_cell_version");
+    }
+    ranges.push({from:src.effectiveFrom,to:src.effectiveTo});
+    versionedKeys.set(key,ranges);
   }
   return true;
 }
@@ -45,10 +51,11 @@ function quoteM4ByPvp(matrix,request){
   const used401=sequence.some(id=>id==="m4-416"||id==="m4-460"),used633=sequence.some(id=>id==="m4-636"||id==="m4-672");
   if(used401===(ctx.mixed401==="not_used") || used633===(ctx.mixed633==="not_used"))return unknown("mixed_zone_context_inconsistent_with_events");
   const key=sequence.join(">");
-  const candidates=matrix.priceCells.filter(c=>c.direction===request.direction && c.sequence.join(">")===key && c.context.mixed401===ctx.mixed401 && c.context.mixed633===ctx.mixed633);
-  if(candidates.length!==1)return unknown("no_verified_exact_pvp_corridor_tariff");
-  const cell=candidates[0];
-  if(request.tariffDate<cell.source.effectiveFrom || (cell.source.effectiveTo && request.tariffDate>cell.source.effectiveTo))return unknown("tariff_not_effective_for_date");
+  const matching=matrix.priceCells.filter(c=>c.direction===request.direction && c.sequence.join(">")===key && c.context.mixed401===ctx.mixed401 && c.context.mixed633===ctx.mixed633);
+  if(matching.length===0)return unknown("no_verified_exact_pvp_corridor_tariff");
+  const active=matching.filter(c=>request.tariffDate>=c.source.effectiveFrom && (!c.source.effectiveTo || request.tariffDate<=c.source.effectiveTo));
+  if(active.length!==1)return unknown("tariff_not_effective_or_ambiguous_for_date");
+  const cell=active[0];
   return {status:"diagnostic_priced",amountRub:cell.prices[request.profile],reason:null,direction:request.direction,
     firstPvp:sequence[0],lastPvp:sequence.at(-1),verifiedSequence:sequence,source:cell.source.url,diagnosticOnly:true};
 }
