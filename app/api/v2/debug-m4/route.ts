@@ -130,7 +130,7 @@ export async function GET(request: NextRequest) {
   try {
     const [from, to] = await Promise.all([geocode(fromText), geocode(toText)]);
     const route = await fastRoute(from, to);
-    const core = await calculateM4Core(route.coordinates, departureAt);
+    const core = await calculateM4Core(route.coordinates, departureAt, route.seconds);
 
     return NextResponse.json({
       from: from.label,

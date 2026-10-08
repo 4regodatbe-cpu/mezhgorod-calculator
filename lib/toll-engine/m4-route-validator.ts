@@ -3,12 +3,14 @@ import type { TollBoothEvent } from "@/lib/toll-validator";
 import type { M4PlazaNodeGroup } from "@/lib/toll-engine/m4-plaza-nodes";
 import { localTrace } from "@/lib/toll-engine/m4-local-trace";
 import { candidatesForRoute, CANDIDATE_RADIUS_KM, WINDOW_HALF_KM, type Candidate } from "@/lib/toll-engine/m4-route-candidates";
+import { classifyM4TraversalWithoutTollEdge, matchM4TollBoothEdges, type M4TraceEdge } from "@/lib/toll-engine/m4-toll-booth-evidence";
 
 const VALIDATION_BUDGET_MS = 24_000;
 const CONCURRENCY = 4;
 
 export type M4LocalPlazaCheck = {
   km: number;
+  routeProgressMeters?: number;
   model: M4PlazaNodeGroup["model"];
   status: "confirmed" | "rejected" | "unknown";
   evidence: "map_matching" | "route_traversal" | "none";
@@ -24,6 +26,8 @@ export type M4RoutePlazaValidation = {
   candidateRadiusKm: number;
   windowHalfKm: number;
   candidateCount: number;
+  routeDistanceMeters: number;
+  routeDurationSeconds?: number;
   checkedCandidateCount: number;
   confirmedCount: number;
   rejectedCount: number;
@@ -39,18 +43,19 @@ export type M4RoutePlazaValidation = {
 
 function unavailableResult(candidate: Candidate, remoteMessage: string): { check: M4LocalPlazaCheck; events: TollBoothEvent[] } {
   const nearestDistanceKm = Math.round(candidate.nearestDistanceKm * 1000) / 1000;
+  const traversalFallbackStatus = classifyM4TraversalWithoutTollEdge(candidate.traversal.reason);
   if (candidate.traversal.confirmed) {
     return {
       check: {
         km: candidate.plaza.km,
         model: candidate.plaza.model,
-        status: "confirmed",
+        status: "unknown",
         evidence: "route_traversal",
         nearestDistanceKm,
         matchedNodeIds: [],
         expectedNodeIds: [...candidate.plaza.nodeIds],
         windowPointCount: candidate.window.length,
-        message: `Удалённый map matching недоступен (${remoteMessage}); ПВП подтверждён строгим пересечением сохранённого OSM-якоря маршрутом на ${Math.round(candidate.traversal.nearestDistanceKm * 1000)} м с продолжением трассы по обе стороны.`,
+        message: `Удалённый map matching недоступен (${remoteMessage}); маршрут проходит рядом с OSM-якорем ПВП на ${Math.round(candidate.traversal.nearestDistanceKm * 1000)} м, но геометрия не доказывает пересечение платного ребра (возможен бесплатный съезд/объезд). Тариф не начислен.`,
       },
       events: [],
     };
@@ -62,7 +67,7 @@ function unavailableResult(candidate: Candidate, remoteMessage: string): { check
   // toll-booth anchor, this is positive evidence of a near miss, not an
   // unresolved traversal. Keeping these as unknown makes long M-4 routes fail
   // closed merely because they pass near an alternative plaza or ramp.
-  if (candidate.traversal.reason === "outside_strict_traversal_radius") {
+  if (traversalFallbackStatus === "rejected") {
     return {
       check: {
         km: candidate.plaza.km,
@@ -101,33 +106,14 @@ async function validateCandidate(candidate: Candidate, deadlineAt: number): Prom
 
   if (!traced.ok) return unavailableResult(candidate, traced.message);
 
-  const events: TollBoothEvent[] = [];
-  const seen = new Set<string>();
-  traced.edges.forEach((edge, edgeIndex) => {
-    if (edge.end_node?.type !== "toll_booth") return;
-    const rawNodeId = edge.end_node.node_id;
-    if (rawNodeId === undefined) return;
-    const osmNodeId = String(rawNodeId);
-    if (!expectedNodeIds.has(osmNodeId) || seen.has(osmNodeId)) return;
-    seen.add(osmNodeId);
-    events.push({
-      osmNodeId,
-      wayId: edge.way_id === undefined ? null : String(edge.way_id),
-      roadNames: edge.names ?? [],
-      edgeIndex,
-      edgeToll: edge.toll === true,
-      beginShapeIndex: edge.begin_shape_index,
-      endShapeIndex: edge.end_shape_index,
-    });
-  });
-
-  const matchedNodeIds = events.map((event) => event.osmNodeId).filter((value): value is string => Boolean(value));
-  const confirmed = matchedNodeIds.length > 0;
+  const match = matchM4TollBoothEdges(expectedNodeIds, traced.edges as M4TraceEdge[]);
+  const { events, matchedNodeIds } = match;
+  const confirmed = match.status === "confirmed";
   return {
     check: {
       km: candidate.plaza.km,
       model: candidate.plaza.model,
-      status: confirmed ? "confirmed" : "rejected",
+      status: match.status,
       evidence: "map_matching",
       nearestDistanceKm: Math.round(candidate.nearestDistanceKm * 1000) / 1000,
       matchedNodeIds,
@@ -135,13 +121,27 @@ async function validateCandidate(candidate: Candidate, deadlineAt: number): Prom
       windowPointCount: candidate.window.length,
       message: confirmed
         ? `Подтверждён конкретный OSM toll-booth node: ${matchedNodeIds.join(", ")}`
-        : "Маршрут приблизился к зоне ПВП, но успешный локальный map matching не подтвердил ни один ожидаемый OSM node",
+        : match.status === "rejected" && matchedNodeIds.length > 0
+          ? `OSM toll-booth node найден (${matchedNodeIds.join(", ")}), но Valhalla подтверждает бесплатное ребро; проезд по съезду/объезду не тарифицируется.`
+          : match.status === "rejected"
+            ? "Успешный map matching не обнаружил ожидаемый OSM toll-booth node; тариф не начислен."
+          : "Маршрут приблизился к зоне ПВП, но map matching не подтвердил платное ребро ожидаемого OSM node",
     },
     events,
   };
 }
 
-export async function validateKnownM4Plazas(route: Coordinate[]): Promise<M4RoutePlazaValidation> {
+function distanceMeters(a: Coordinate, b: Coordinate) {
+  const toRad = Math.PI / 180;
+  const dLat = (b[1] - a[1]) * toRad;
+  const dLon = (b[0] - a[0]) * toRad;
+  const lat1 = a[1] * toRad;
+  const lat2 = b[1] * toRad;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
+  return 6_371_008.8 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
+}
+
+export async function validateKnownM4Plazas(route: Coordinate[], routeDurationSeconds?: number): Promise<M4RoutePlazaValidation> {
   const startedAt = Date.now();
   const deadlineAt = startedAt + VALIDATION_BUDGET_MS;
   const candidates = candidatesForRoute(route);
@@ -164,7 +164,15 @@ export async function validateKnownM4Plazas(route: Coordinate[]): Promise<M4Rout
     }
   }
 
-  const checks = results.map((item) => item.check);
+  const routeProgressMeters = new Array<number>(route.length).fill(0);
+  for (let index = 1; index < route.length; index += 1) {
+    routeProgressMeters[index] = routeProgressMeters[index - 1] + distanceMeters(route[index - 1], route[index]);
+  }
+  const routeDistanceMeters = routeProgressMeters.at(-1) ?? 0;
+  const checks = results.map((item, index) => ({
+    ...item.check,
+    routeProgressMeters: routeProgressMeters[candidates[index]?.segmentIndex ?? 0],
+  }));
   const eventsByNode = new Map<string, TollBoothEvent>();
   for (const item of results) {
     for (const event of item.events) {
@@ -185,6 +193,8 @@ export async function validateKnownM4Plazas(route: Coordinate[]): Promise<M4Rout
     candidateRadiusKm: CANDIDATE_RADIUS_KM,
     windowHalfKm: WINDOW_HALF_KM,
     candidateCount: candidates.length,
+    routeDistanceMeters,
+    ...(Number.isFinite(routeDurationSeconds) && routeDurationSeconds! > 0 ? { routeDurationSeconds } : {}),
     checkedCandidateCount,
     confirmedCount,
     rejectedCount,

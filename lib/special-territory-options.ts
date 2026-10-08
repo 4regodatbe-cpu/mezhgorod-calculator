@@ -8,13 +8,18 @@ export type GeographicRouteCandidate = {
  };
  selectionPreference?:number;
 };
-/** Select no more than one candidate from the coordinate-selected corridor. */
+/** Keep the best main route and one distinct alternative in the selected corridor. */
 export function selectGeographicTerritoryOption<T extends GeographicRouteCandidate>(
  candidates:T[],
  preferredCorridor:"mainland"|"crimea",
 ){
  const isPaid=(item:T)=>item.fast.tolls.pricingStatus==="priced"||item.fast.tollValidation?.status==="toll";
- const eligible=candidates.filter(item=>item.corridor===preferredCorridor);
- const options=[...eligible].sort((a,b)=>Number(isPaid(b))-Number(isPaid(a))||(a.selectionPreference??0)-(b.selectionPreference??0)||a.fast.seconds-b.fast.seconds).slice(0,1);
+ const eligible=candidates.filter(item=>item.corridor===preferredCorridor&&Number.isFinite(item.fast.seconds)&&item.fast.seconds>0);
+ // The first result must be the quickest valid route. Toll certainty and
+ // provider quality only break ties; neither should push a slower route up.
+ const ranked=[...eligible].sort((a,b)=>a.fast.seconds-b.fast.seconds||Number(isPaid(b))-Number(isPaid(a))||(a.selectionPreference??0)-(b.selectionPreference??0));
+ const main=ranked[0];
+ const alternative=ranked.find(item=>item!==main && Math.abs(item.fast.seconds-main.fast.seconds)>60);
+ const options=main?[main,...(alternative?[alternative]:[])]:[];
  return {options,preferredCorridor,routePolicy:"geographic-zone" as const};
 }

@@ -1,6 +1,6 @@
 import { estimateTolls } from "@/lib/tolls";
 import type { RouteSummary, RouteWithGeometry } from "@/lib/route-providers";
-import { selectLiveRoute, MAX_PROVIDER_DISTANCE_SPREAD_PERCENT, type RouteQuality } from "@/lib/route-quality";
+import { selectLiveRoute, type RouteQuality } from "@/lib/route-quality";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import type { RouteTollComponentId } from "@/lib/toll-engine/route-toll-composition";
 
@@ -9,7 +9,7 @@ type SelectedFree = {
   route: RouteWithGeometry;
   quality: RouteQuality;
   validation: TollValidation;
-  truth: "confirmed_free" | "candidate_unverified";
+  truth: "confirmed_payment_point_avoiding";
 };
 export type TollEstimate = ReturnType<typeof estimateTolls>;
 type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount"> & {
@@ -19,10 +19,6 @@ type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount">
   pricingStatus: "priced" | "free" | "unknown";
 };
 
-const MIN_TOLL_VARIANT_DISTANCE_KM = 10;
-const MIN_TOLL_VARIANT_DISTANCE_PERCENT = 1;
-const MIN_TOLL_VARIANT_TIME_MINUTES = 15;
-const MIN_TOLL_VARIANT_TIME_PERCENT = 5;
 
 export function unknownValidation(message: string): TollValidation {
   return {
@@ -73,18 +69,28 @@ export function zeroUnknownTolls(base: TollEstimate, segments: string[]): TollEs
   };
 }
 
-function spreadPercent(a: RouteSummary, b: RouteSummary) {
-  return Math.round((Math.abs(a.meters - b.meters) / ((a.meters + b.meters) / 2)) * 1000) / 10;
+/** Avoid offering a detour with a disproportionate distance or time cost. */
+export function withinDetourLimits(main: RouteSummary, candidate: RouteSummary) {
+  if (main.meters <= 0 || main.seconds <= 0 || candidate.meters <= 0 || candidate.seconds <= 0) return false;
+  const distanceRatio = candidate.meters / main.meters;
+  const durationRatio = candidate.seconds / main.seconds;
+  return distanceRatio <= 1.25 && durationRatio <= 1.5;
+}
+
+/** A payment-point bypass is worth calculating only when it materially saves time or distance. */
+export function hasPracticalSavings(main: RouteSummary, candidate: RouteSummary) {
+  if (main.meters <= 0 || main.seconds <= 0 || candidate.meters <= 0 || candidate.seconds <= 0) return false;
+  const distanceSavingsMeters = main.meters - candidate.meters;
+  const distanceSavingsPercent = distanceSavingsMeters / main.meters * 100;
+  const timeSavingsSeconds = main.seconds - candidate.seconds;
+  const timeSavingsPercent = timeSavingsSeconds / main.seconds * 100;
+  const savesDistance = distanceSavingsMeters >= 10_000 && distanceSavingsPercent >= 1;
+  const savesTime = timeSavingsSeconds >= 15 * 60 && timeSavingsPercent >= 5;
+  return savesDistance || savesTime;
 }
 
 export function routeDifferenceEvidence(fast: RouteSummary, free: RouteSummary) {
-  const distanceDeltaKm = (free.meters - fast.meters) / 1000;
-  const distancePercent = fast.meters > 0 ? (free.meters - fast.meters) / fast.meters * 100 : 0;
-  const timeDeltaMinutes = (free.seconds - fast.seconds) / 60;
-  const timePercent = fast.seconds > 0 ? (free.seconds - fast.seconds) / fast.seconds * 100 : 0;
-  const distanceDiffers = distanceDeltaKm >= MIN_TOLL_VARIANT_DISTANCE_KM && distancePercent >= MIN_TOLL_VARIANT_DISTANCE_PERCENT;
-  const timeDiffers = timeDeltaMinutes >= MIN_TOLL_VARIANT_TIME_MINUTES && timePercent >= MIN_TOLL_VARIANT_TIME_PERCENT;
-  return distanceDiffers || timeDiffers;
+  return hasPracticalSavings(fast, free);
 }
 
 function qualityForCandidate(selected: FreeCandidate, other: FreeCandidate | undefined, validation: TollValidation): RouteQuality {
@@ -92,11 +98,18 @@ function qualityForCandidate(selected: FreeCandidate, other: FreeCandidate | und
     { name: selected.name, route: selected.route },
     other ? { name: other.name, route: other.route } : undefined,
   ).quality;
-  if (validation.status === "free") return base;
+  if (validation.complete && (validation.tollBoothCount ?? 0) === 0) {
+    if (validation.tollEdgeCount === 0) return base;
+    return {
+      ...base,
+      status: "warning",
+      message: "Пункты оплаты объезжены, но маршрут проходит по платным участкам; стоимость требует отдельной проверки",
+    };
+  }
   return {
     ...base,
     status: "warning",
-    message: validation.message || "Независимая проверка бесплатности не завершена",
+    message: validation.tollBoothCount ? "На маршруте обнаружены пункты оплаты" : "Проверка пунктов оплаты не завершена",
   };
 }
 
@@ -120,51 +133,28 @@ async function validateFreeCandidate(candidate: FreeCandidate, ordinal: "Пер�
     : unknownValidation(`${ordinal} источник не вернул геометрию`);
 }
 
+// Legacy API field names say “free”; this route avoids payment points, but may contain tolled road sections.
 export async function selectFreeRoute(
-  valhallaFreeResult: PromiseSettledResult<RouteWithGeometry>,
-  brouterResult: PromiseSettledResult<RouteWithGeometry>,
+  mainRoute: RouteSummary,
+  alternativeResults: Array<{ name: string; result: PromiseSettledResult<RouteWithGeometry> }>,
 ): Promise<SelectedFree | null> {
-  const candidates: FreeCandidate[] = [];
-  if (valhallaFreeResult.status === "fulfilled") candidates.push({ name: "Valhalla", route: valhallaFreeResult.value });
-  if (brouterResult.status === "fulfilled") candidates.push({ name: "BRouter", route: brouterResult.value });
+  const candidates: FreeCandidate[] = alternativeResults.flatMap(({ name, result }) =>
+    result.status === "fulfilled" ? [{ name, route: result.value }] : [],
+  );
   if (candidates.length === 0) return null;
 
+  // Try candidates in preference order. Stop at the first complete route that
+  // avoids every payment point and stays within the detour limits; do not
+  // spend extra requests validating candidates with disproportionate detours.
+  for (const [index, candidate] of candidates.entries()) {
+    if (!withinDetourLimits(mainRoute, candidate.route) || !hasPracticalSavings(mainRoute, candidate.route)) continue;
+    const validation = await validateFreeCandidate(candidate, index === 0 ? "Первый" : "Второй");
+    if (validation.complete !== true || (validation.tollBoothCount ?? 0) !== 0) continue;
 
-  const first = candidates[0];
-  const second = candidates[1];
-  const firstValidation = await validateFreeCandidate(first, "Первый");
-
-  if (firstValidation.status === "free") {
-    return selectedCandidate(first, second, firstValidation, "confirmed_free");
+    const other = candidates[index + 1] ?? candidates[index - 1];
+    return selectedCandidate(candidate, other, validation, "confirmed_payment_point_avoiding");
   }
 
-  let secondValidation: TollValidation | null = null;
-  if (second) {
-    secondValidation = await validateFreeCandidate(second, "Второй");
-    if (secondValidation.status === "free") {
-      return selectedCandidate(second, first, secondValidation, "confirmed_free");
-    }
-  }
-
-  const firstUnknown = firstValidation.status === "unknown";
-  const secondUnknown = second && secondValidation?.status === "unknown";
-  if (!firstUnknown && !secondUnknown) return null;
-
-  if (firstUnknown && !secondUnknown) {
-    return selectedCandidate(first, second, firstValidation, "candidate_unverified");
-  }
-  if (second && secondUnknown && !firstUnknown) {
-    return selectedCandidate(second, first, secondValidation!, "candidate_unverified");
-  }
-
-  if (second && secondValidation) {
-    const selected = spreadPercent(first.route, second.route) > MAX_PROVIDER_DISTANCE_SPREAD_PERCENT
-      ? (first.route.meters <= second.route.meters ? first : second)
-      : first;
-    const validation = selected === first ? firstValidation : secondValidation;
-    const other = selected === first ? second : first;
-    return selectedCandidate(selected, other, validation, "candidate_unverified");
-  }
-
-  return selectedCandidate(first, undefined, firstValidation, "candidate_unverified");
+  // Fail closed: an incomplete trace cannot prove that the route avoids every payment point.
+  return null;
 }

@@ -55,14 +55,14 @@ export default function V2Page() {
   const standardLeg = result?.legs[0];
   const standardHasTolls = standardLeg ? standardLeg.fast.tolls.pricingStatus !== "free" : false;
   const standardOptimal = standardLeg ? pickOptimal(standardLeg.fast, standardLeg.free) : null;
-  return <main className="calculator-modern min-h-screen bg-brand-page text-brand-text">
-    <div className="mx-auto w-full max-w-3xl px-3 py-4 sm:px-6 sm:py-8">
+  return <main className="calculator-modern min-h-screen bg-brand-page pb-[env(safe-area-inset-bottom)] text-brand-text">
+    <div className="v2-page-inset mx-auto w-full max-w-3xl px-3 sm:px-6">
       <header className="mb-4 flex items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2.5">
-          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-action text-white shadow-md"><Car className="h-5 w-5" /></div>
+          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-action text-brand-action-foreground shadow-md"><Car className="h-5 w-5" /></div>
           <div className="min-w-0"><h1 className="text-xl font-black leading-tight tracking-tight text-brand-text sm:text-2xl">из А в Б</h1><p className="text-xs font-semibold text-brand-muted">Калькулятор поездок</p></div>
         </div>
-        <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle />{!isAndroidApp && <a href="https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/download/android-latest/Mezhgorod-Calc-2.apk" download="Mezhgorod-Calc-2.apk" aria-label="Скачать для Android" className="flex h-10 items-center gap-1 rounded-xl bg-brand-action px-2 text-[11px] font-bold text-white transition hover:brightness-110 sm:px-3 sm:text-xs"><Download className="h-4 w-4 shrink-0"/>Скачать для Android</a>}</div>
+        <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle />{!isAndroidApp && <a href="https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/download/android-latest/Mezhgorod-Calc-2.apk" download="Mezhgorod-Calc-2.apk" aria-label="Скачать для Android" className="flex h-10 items-center gap-1 rounded-xl bg-brand-action px-2 text-[11px] font-bold text-brand-action-foreground transition hover:brightness-110 sm:px-3 sm:text-xs"><Download className="h-4 w-4 shrink-0"/>Скачать для Android</a>}</div>
       </header>
       <CalculatorForm
         mode={mode}
@@ -77,12 +77,11 @@ export default function V2Page() {
         specialRates={specialRates}
         onSpecialRatesChange={(value)=>{setSpecialRates(value);clearResult();}}
         urgent={urgent}
-        onUrgentChange={setUrgent}
+        onUrgentChange={(enabled)=>{setUrgent(enabled);clearResult();}}
         urgentPercent={urgentPercent}
-        onUrgentPercentChange={setUrgentPercent}
-        tollPeriod={tollPeriod}
-        onTollPeriodChange={setTollPeriod}
+        onUrgentPercentChange={(percent)=>{setUrgentPercent(percent);clearResult();}}
         loading={loading}
+        hasResult={Boolean(result)}
         error={error}
         onCalculate={calculate}
       />

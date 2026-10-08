@@ -1,5 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: "Расчёт межгорода — маршрут и стоимость поездки",
@@ -8,6 +14,7 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
+  other: { "color-scheme": "light dark" },
 };
 
 export default function RootLayout({
@@ -18,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body className="antialiased">
-        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("mezhgorod-theme");if(t!=="light"&&t!=="dark")t="light";document.documentElement.classList.add(t);document.documentElement.style.colorScheme=t}catch(e){}` }} />
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("mezhgorod-theme");if(t!=="light"&&t!=="dark")t="light";document.documentElement.classList.add(t);document.documentElement.style.colorScheme=t==="light"?"only light":"dark"}catch(e){}` }} />
         {children}
       </body>
     </html>

@@ -7,6 +7,7 @@ import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-te
 import { calculateLegTolls } from "../lib/v2-calculation/route-leg-pricing.ts";
 import { tollsForApi } from "../lib/v2-calculation/free-route-selection.ts";
 import { calculateM4Core } from "../lib/toll-engine/m4-core.ts";
+import { calculateSpecialOptions } from "../lib/v2-calculation/special-options.ts";
 
 const krasnodar = { label: "Krasnodar", position: { lat: 45.04, lng: 38.98 } };
 const donetsk = { label: "Donetsk", position: { lat: 48.0158753, lng: 37.8013407 } };
@@ -16,13 +17,17 @@ const simferopol = { label: "Simferopol", position: { lat: 44.9521, lng: 34.1024
 const feodosia = { label: "Феодосия", position: { lat: 45.033669, lng: 35.3753628 } };
 const mariupol = { label: "Мариуполь", position: { lat: 47.1, lng: 37.55 } };
 const yalta = { label: "Ялта", position: { lat: 44.4987874, lng: 34.1689358 } };
+const volnovakha = { label: "Волноваха — ДНР", position: { lat: 47.6014517, lng: 37.4934079 } };
 const cases = [
   { name: "Feodosia-Mariupol", from: feodosia, to: mariupol },
   { name: "Yalta-Donetsk", from: yalta, to: donetsk },
+  // User screenshot reference: Yandex 991 km / about 2,060 ₽ toll (weekday), route via Crimea bridge, Krasnodar, Rostov and Mariupol.
+  { name: "Yalta-Volnovakha", from: yalta, to: volnovakha, referenceDistanceKm: 991, referenceTollRub: 2060, referenceWeekendTollRub: 2533 },
   { name: "Krasnodar-Donetsk", from: krasnodar, to: donetsk },
   { name: "Donetsk-Krasnodar", from: donetsk, to: krasnodar },
   // User-provided Yandex screenshot (2026-10-04): 1,220 km fast route, 1,230 km alternative.
-  { name: "Donetsk-Moscow", from: donetsk, to: moscow, referenceDistanceKm: 1220 },
+  { name: "Donetsk-Moscow", from: donetsk, to: moscow, referenceDistanceKm: 1220, referenceTollRub: 3810 },
+  { name: "Volnovakha-Moscow", from: volnovakha, to: moscow },
   { name: "Simferopol-Donetsk", from: simferopol, to: donetsk },
   { name: "Donetsk-Simferopol", from: donetsk, to: simferopol },
   { name: "Simferopol-Krasnodar", from: simferopol, to: krasnodar },
@@ -89,10 +94,11 @@ for (const sample of cases) {
         row.specialShare = time.verified && route.seconds > 0 ? Math.round((time.specialSeconds / route.seconds) * 1000) / 1000 : null;
         row.finalDistanceKm = Math.round(route.meters / 100) / 10;
         row.finalRouteSeconds = route.seconds;
-        if (sample.name === "Donetsk-Moscow") {
+        if (sample.name === "Donetsk-Moscow" || sample.name === "Volnovakha-Moscow" || sample.name === "Yalta-Volnovakha") {
           const priced = await calculateLegTolls({
             routeGeometry: route.coordinates,
             routeSeconds: route.seconds,
+            departureAt: "2026-10-08T10:00:00+03:00",
             selectedFastProvider: provider.name,
             selectedFastRoute: route,
             valhallaEvidence: provider.name === "Valhalla" ? route : null,
@@ -100,11 +106,18 @@ for (const sample of cases) {
             diagnosticFastValidation: null,
           });
           const tolls = tollsForApi(priced.tolls, priced.fastValidation);
-          const m4 = await calculateM4Core(route.coordinates);
+          const m4 = sample.name.endsWith("-Moscow") ? await calculateM4Core(route.coordinates, "2026-10-08T10:00:00+03:00", route.seconds) : null;
           row.tollProbe = {
-            m4Plazas: m4.pricing.pricedPlazas.map((item) => ({ km: item.km, weekday: item.weekday, weekend: item.weekend, verification: item.verification })),
-            m4Unresolved: m4.pricing.unresolved.map((item) => ({ code: item.code, kms: item.kms, message: item.message })),
-            m4ConfirmedChecks: m4.validation.checks.filter((item) => item.status === "confirmed").map((item) => ({ km: item.km, evidence: item.evidence })),
+            m4RouteDistanceMeters: m4?.validation.routeDistanceMeters ?? null,
+            m4RouteDurationSeconds: m4?.validation.routeDurationSeconds ?? null,
+            m4Plazas: m4?.pricing.pricedPlazas.map((item) => ({ id: item.id, km: item.km, direction: item.direction, entryKm: item.entryKm ?? null, exitKm: item.exitKm ?? null, weekday: item.weekday, weekend: item.weekend, selectedAmount: item.selectedAmount, verification: item.verification })) ?? null,
+            m4Unresolved: m4?.pricing.unresolved.map((item) => ({ code: item.code, kms: item.kms, message: item.message })) ?? null,
+            m4Checks: m4?.validation.checks.map((item) => ({ km: item.km, routeProgressMeters: item.routeProgressMeters ?? null, status: item.status, evidence: item.evidence, matchedNodeIds: item.matchedNodeIds, message: item.message })) ?? null,
+            m4EdgeEvents: m4?.validation.events.map((item) => ({ osmNodeId: item.osmNodeId, edgeToll: item.edgeToll, wayId: item.wayId, roadNames: item.roadNames })) ?? null,
+            referenceWeekdayTollRub: sample.referenceTollRub ?? null,
+            referenceWeekendTollRub: sample.referenceWeekendTollRub ?? null,
+            weekendTollDeviationRub: tolls.weekendAmount == null || sample.referenceWeekendTollRub == null ? null : tolls.weekendAmount - sample.referenceWeekendTollRub,
+            weekdayTollDeviationRub: tolls.weekdayAmount == null || sample.referenceTollRub == null ? null : tolls.weekdayAmount - sample.referenceTollRub,
             pricingStatus: tolls.pricingStatus,
             amount: tolls.amount,
             weekdayAmount: tolls.weekdayAmount,
@@ -128,3 +141,50 @@ for(const sample of cases){
  console.log(JSON.stringify({selection:sample.name,from:sample.from.label,to:sample.to.label,preferredCorridor:plan?.corridor??null,waypointCount:plan?.positions.length??0}));
 }
 await writeFile("special-territory-live-probe.json",JSON.stringify(reports,null,2)+"\n");
+
+// Reproduce the same orchestration used by /api/v2/calculate. The direct
+// provider probe above prices routes one by one; this flow checks that route
+// composition does not lose M-4 prices when both route providers are queried.
+const fullFlowSamples = [
+  { name: "Volnovakha-Moscow", from: volnovakha, to: moscow },
+  { name: "Skadovsk-Moscow", from: { label: "Скадовск — Херсонская область", position: { lat: 46.1165, lng: 32.9115 } }, to: moscow },
+  { name: "Mariupol-Moscow", from: mariupol, to: moscow },
+];
+const fullFlowReports = [];
+for (const sample of fullFlowSamples) {
+  const startedAt = Date.now();
+  try {
+    const result = await calculateSpecialOptions(sample.from, sample.to, "2026-10-08T10:00:00+03:00");
+    const options = result.options.map((option) => ({
+      provider: option.provider,
+      corridor: option.corridor,
+      distanceKm: Math.round(option.fast.meters / 100) / 10,
+      durationMinutes: Math.round(option.fast.seconds / 60),
+      pricingStatus: option.fast.tolls.pricingStatus,
+      weekdayAmount: option.fast.tolls.weekdayAmount,
+      weekendAmount: option.fast.tolls.weekendAmount,
+      confidence: option.fast.tolls.confidence,
+      segments: option.fast.tolls.segments,
+      validation: option.fast.tollValidation && {
+        status: option.fast.tollValidation.status,
+        complete: option.fast.tollValidation.complete,
+        message: option.fast.tollValidation.message,
+      },
+    }));
+    const report = {
+      sample: sample.name,
+      preferredCorridor: result.preferredCorridor,
+      routePolicy: result.routePolicy,
+      options,
+      hasPaidCost: options.some((option) => option.pricingStatus === "priced" && (option.weekdayAmount ?? 0) > 0),
+      elapsedMs: Date.now() - startedAt,
+    };
+    fullFlowReports.push(report);
+    console.log(JSON.stringify({ fullFlow: report }));
+  } catch (error) {
+    const report = { sample: sample.name, error: error instanceof Error ? error.message : String(error), elapsedMs: Date.now() - startedAt };
+    fullFlowReports.push(report);
+    console.log(JSON.stringify({ fullFlow: report }));
+  }
+}
+await writeFile("special-territory-full-flow-probe.json",JSON.stringify(fullFlowReports,null,2)+"\n");

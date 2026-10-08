@@ -10,12 +10,21 @@ import { calculateM4Core } from "../lib/toll-engine/m4-core.ts";
 import { priceA289Route } from "../lib/toll-engine/a289-engine.ts";
 
 const snapshot = JSON.parse(await readFile(new URL("../benchmarks/routes/yandex-2026-10-04/screenshot-observations.json", import.meta.url), "utf8"));
+const observations = [
+  ...snapshot.routes,
+  ...(snapshot.followUpObservations ?? []).map((item) => ({
+    id: item.id,
+    from: item.from,
+    to: item.to,
+    candidates: item.yandexCandidates,
+  })),
+];
 const providers = [
   { name: "Valhalla", get: (from, to, positions) => valhalla(from, to, 1, positions) },
   { name: "OSRM", get: (from, to, positions) => osrmRoute(from, to, positions) },
 ];
 const results = [];
-for (const sample of snapshot.routes) {
+for (const sample of observations) {
   const from = { label: sample.from.label, position: sample.from.position };
   const to = { label: sample.to.label, position: sample.to.position };
   const plans = candidatePlans(from.position, to.position, zones);
@@ -86,14 +95,14 @@ for (const sample of snapshot.routes) {
         const tolls = tollsForApi(priced.tolls, priced.fastValidation);
         let componentBreakdown = null;
         if (sample.id === "tomsk-chernomorskoe") {
-          const m4 = await calculateM4Core(selected.route.coordinates);
+          const m4 = await calculateM4Core(selected.route.coordinates, undefined, selected.route.seconds);
           const a289 = priceA289Route(selected.route.coordinates);
           componentBreakdown = {
             m4: {
               status: m4.pricing.status,
               weekdayAmount: m4.pricing.weekdayAmount,
               weekendAmount: m4.pricing.weekendAmount,
-              pricedPlazas: m4.pricing.pricedPlazas.map(({ km, weekday, weekend, verification }) => ({ km, weekday, weekend, verification })),
+              pricedPlazas: m4.pricing.pricedPlazas.map(({ id, km, direction, entryKm, exitKm, weekday, weekend, selectedAmount, verification }) => ({ id, km, direction, entryKm: entryKm ?? null, exitKm: exitKm ?? null, weekday, weekend, selectedAmount, verification })),
               unresolved: m4.pricing.unresolved,
             },
             a289: {
@@ -140,7 +149,7 @@ for (const sample of snapshot.routes) {
         diagnosticFastValidation: null,
       });
       const tolls = tollsForApi(priced.tolls, priced.fastValidation);
-      const m4 = await calculateM4Core(route.coordinates);
+      const m4 = await calculateM4Core(route.coordinates, undefined, route.seconds);
       const a289 = priceA289Route(route.coordinates);
       a146ApproachComparison = {
         purpose: "diagnostic-only; official A-146/A-290 approach alternative, not an offered calculator route",
@@ -155,7 +164,7 @@ for (const sample of snapshot.routes) {
         m4: {
           weekdayAmount: m4.pricing.weekdayAmount,
           weekendAmount: m4.pricing.weekendAmount,
-          pricedPlazas: m4.pricing.pricedPlazas.map(({ km, weekday, weekend }) => ({ km, weekday, weekend })),
+          pricedPlazas: m4.pricing.pricedPlazas.map(({ id, km, direction, entryKm, exitKm, weekday, weekend, selectedAmount }) => ({ id, km, direction, entryKm: entryKm ?? null, exitKm: exitKm ?? null, weekday, weekend, selectedAmount })),
         },
         a289: { amount: a289.amount, crossedFrames: a289.crossedFrames },
         validation: { status: priced.fastValidation.status, message: priced.fastValidation.message },

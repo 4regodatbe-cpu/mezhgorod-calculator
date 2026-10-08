@@ -1,6 +1,6 @@
-import { analyzeRoute, followsPlan } from "../special-territory-policy.ts";
+import { analyzeRoute, findPlanLegStretchAnomaly, followsPlan } from "../special-territory-policy.ts";
 import { SPECIAL_TERRITORY_BOUNDARIES } from "../special-territory-boundaries.ts";
-import { valhalla, brouterFree, brouterFast, osrmRoute, type Located } from "@/lib/route-providers";
+import { valhalla, brouterFast, osrmRoute, type Located } from "@/lib/route-providers";
 import type { Coordinate } from "@/lib/tolls";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { selectLiveRouteCandidates } from "@/lib/route-quality";
@@ -8,14 +8,27 @@ import { selectFreeRoute, tollsForApi } from "./free-route-selection";
 import { calculateLegTolls } from "./route-leg-pricing";
 
 export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>) {
+  const rejectedStretchProviders = new Map<string, number>();
   const rawResults = await Promise.allSettled([
-    valhalla(from, to, 1, positions), valhalla(from, to, 0, positions), brouterFree(from, to, positions), osrmRoute(from, to, positions), brouterFast(from, to, positions),
+    valhalla(from, to, 1, positions),
+    valhalla(from, to, 1, positions, 900), // Prefer short local bypasses without making every booth overwhelmingly expensive.
+    valhalla(from, to, 1, positions, 1_200), // Allow partial M-4 use where a verified plaza bypass exists.
+    osrmRoute(from, to, positions),
+    brouterFast(from, to, positions),
   ]);
-  const [fastResult, valhallaFreeResult, brouterResult, osrmResult, brouterFastResult] = rawResults.map(result => {
+  const resultNames = ["Valhalla", "Valhalla 900s bypass", "Valhalla 1,200s bypass", "OSRM", "BRouter"];
+  const [fastResult, valhallaModerateAvoidResult, valhallaPartialTollResult, osrmResult, brouterFastResult] = rawResults.map((result, index) => {
     if (result.status === "rejected") return result;
     try {
-      if(positions && !followsPlan(result.value.coordinates,positions,"mainland",false)) throw new Error("ROUTE_CONTROLS_MISSED");
-      analyzeRoute(result.value.coordinates,result.value.meters,result.value.seconds,from.position,to.position,SPECIAL_TERRITORY_BOUNDARIES);
+      if (positions) {
+        const stretch = findPlanLegStretchAnomaly(result.value.coordinates, positions);
+        if (stretch) {
+          rejectedStretchProviders.set(resultNames[index], stretch.stretchRatio);
+          throw new Error("ROUTING_PLAN_LEG_STRETCH");
+        }
+        if (!followsPlan(result.value.coordinates, positions, "mainland", false)) throw new Error("ROUTE_CONTROLS_MISSED");
+      }
+      analyzeRoute(result.value.coordinates, result.value.meters, result.value.seconds, from.position, to.position, SPECIAL_TERRITORY_BOUNDARIES);
       return result;
     } catch(reason) { return {status:"rejected" as const,reason}; }
   });
@@ -25,6 +38,13 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     ...(osrmResult.status === "fulfilled" ? [{ name: "OSRM", route: osrmResult.value }] : []),
     ...(brouterFastResult.status === "fulfilled" ? [{ name: "BRouter", route: brouterFastResult.value }] : []),
   ]);
+
+  const fastQuality = rejectedStretchProviders.size ? {
+    ...selectedFast.quality,
+    status: "warning" as const,
+    providers: [...new Set([...selectedFast.quality.providers, ...rejectedStretchProviders.keys()])],
+    message: `Отклонены чрезмерно длинные контрольные плечи: ${[...rejectedStretchProviders].map(([name, ratio]) => `${name} (${ratio.toFixed(1)}×)`).join(", ")}. Проверьте выбранный маршрут перед поездкой`,
+  } : selectedFast.quality;
 
   const routeGeometry = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
     ? fastResult.value.coordinates
@@ -40,13 +60,37 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
               ? brouterFastResult.value.coordinates
               : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
-  const selectedFreePromise = selectFreeRoute(valhallaFreeResult, brouterResult);
+  const selectedFreePromise = selectFreeRoute(selectedFast.route, [
+    { name: "Valhalla local bypass", result: valhallaModerateAvoidResult },
+    { name: "Valhalla partial M-4 bypass", result: valhallaPartialTollResult },
+    { name: "BRouter", result: brouterFastResult },
+  ]);
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
-  const [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
-  const confirmedFree = selectedFree?.truth === "confirmed_free" ? selectedFree : null;
-  const freeCandidate = selectedFree?.truth === "candidate_unverified" ? selectedFree : null;
+  let [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
+  // The expensive full-detour search is a genuine fallback; keep it off the
+  // critical path when a faster candidate already passes the complete booth trace.
+  if (!selectedFree) {
+    try {
+      const route = await valhalla(from, to, 1, positions, 43_200);
+      if (positions) {
+        const stretch = findPlanLegStretchAnomaly(route.coordinates, positions);
+        if (stretch) {
+          rejectedStretchProviders.set("Valhalla full bypass", stretch.stretchRatio);
+          throw new Error("ROUTING_PLAN_LEG_STRETCH");
+        }
+        if (!followsPlan(route.coordinates, positions, "mainland", false)) throw new Error("ROUTE_CONTROLS_MISSED");
+      }
+      analyzeRoute(route.coordinates, route.meters, route.seconds, from.position, to.position, SPECIAL_TERRITORY_BOUNDARIES);
+      selectedFree = await selectFreeRoute(selectedFast.route, [
+        { name: "Valhalla full bypass", result: { status: "fulfilled", value: route } },
+      ]);
+    } catch {
+      // A failed fallback only means no confirmed payment-point-avoiding option.
+    }
+  }
+  const confirmedFree = selectedFree?.truth === "confirmed_payment_point_avoiding" ? selectedFree : null;
   const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
   const pricing = await calculateLegTolls({
     routeGeometry,
@@ -60,16 +104,15 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   });
   const { tolls, fastValidation } = pricing;
 
+  // `free` is the legacy response key for the payment-point-avoiding alternative;
+  // the route may still use tolled road segments when it avoids their booths.
+
   return {
     from: from.label,
     to: to.label,
-    fast: { ...selectedFast.route, coordinates: routeGeometry, quality: selectedFast.quality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation },
+    fast: { ...selectedFast.route, coordinates: routeGeometry, quality: fastQuality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation },
     free: confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
-    freeCandidate: freeCandidate ? { ...freeCandidate.route, quality: freeCandidate.quality, tollValidation: freeCandidate.validation } : null,
-    freeError: confirmedFree
-      ? undefined
-      : freeCandidate
-        ? "Найден альтернативный маршрут, но независимая проверка не подтвердила отсутствие платных участков."
-        : "Маршрутизаторы не смогли подтвердить полностью бесплатный вариант. Показан только быстрый маршрут.",
+    freeCandidate: null,
+    freeError: confirmedFree ? undefined : "Не удалось подтвердить вариант с объездом пунктов оплаты.",
   };
 }

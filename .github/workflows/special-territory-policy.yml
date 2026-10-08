@@ -27,7 +27,7 @@ jobs:
   live_probe:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 12
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -37,8 +37,13 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Probe live provider geometry and per-leg times
         run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
+      - name: Probe live payment-point-avoiding alternative for Moscow–Krasnodar
+        continue-on-error: true
+        run: node --import ./scripts/register-ts-paths.mjs scripts/payment-point-avoidance-live-probe.mjs
       - name: Probe live Photon address suggestions
         run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-live-probe.mjs
+      - name: Audit the fixed 50-settlement route corpus
+        run: node --import ./scripts/register-ts-paths.mjs scripts/settlement-random-route-audit.mjs
       - name: Compare six Yandex screenshot routes with live providers
         run: node --import ./scripts/register-ts-paths.mjs scripts/yandex-route-reference-audit.mjs
       - uses: actions/upload-artifact@v4
@@ -47,6 +52,9 @@ jobs:
           name: special-territory-live-probe-${{ github.run_id }}
           path: |
             special-territory-live-probe.json
+            special-territory-full-flow-probe.json
+            payment-point-avoidance-live-probe.json
             address-search-live-probe.json
+            settlement-random-route-audit.json
             yandex-route-reference-audit.json
           if-no-files-found: ignore

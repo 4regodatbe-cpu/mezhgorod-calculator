@@ -27,6 +27,9 @@ function groupEvents(events: TollBoothEvent[]) {
   let unrecognizedEventCount = 0;
 
   for (const event of events) {
+    // Toll-booth nodes also exist on free bypass/slip-road edges. Charge only
+    // the edge Valhalla marked as toll, even if a caller supplied a booth node.
+    if (event.edgeToll !== true) continue;
     if (!event.osmNodeId) {
       unrecognizedEventCount += 1;
       continue;
@@ -49,15 +52,18 @@ function tariffForKm(km: number) {
   return M4_DATA.plazas.filter((plaza) => plaza.km === km && plaza.model === "open" && plaza.tariff);
 }
 
-function pricedPlaza(group: MatchedGroup): M4PricedPlaza | null {
+function pricedPlaza(group: MatchedGroup, departureAt?: string): M4PricedPlaza | null {
   const tariffs = tariffForKm(group.plaza.km);
   if (tariffs.length !== 1) return null;
   const tariff = tariffs[0].tariff;
   if (!tariff) return null;
   return {
+    id: tariffs[0].id,
     km: group.plaza.km,
+    direction: "unknown",
     weekday: tariff.weekday,
     weekend: tariff.weekend,
+    selectedAmount: currentPeriod(departureAt).weekend ? tariff.weekend : tariff.weekday,
     verification: group.plaza.verification,
     matchedNodeIds: [...new Set(group.events.map((event) => event.osmNodeId).filter((value): value is string => Boolean(value)))],
     source: group.plaza.source,
@@ -121,7 +127,7 @@ export function priceM4TollEvents(events: TollBoothEvent[], departureAt?: string
     if (km === 545) continue;
     if ((km === 339 || km === 355) && has339 && has355) continue;
 
-    const item = pricedPlaza(group);
+    const item = pricedPlaza(group, departureAt);
     if (!item) {
       unresolved.push({
         code: "missing_tariff",

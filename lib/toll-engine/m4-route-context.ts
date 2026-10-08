@@ -32,6 +32,24 @@ function mixedZone(fromKm: number, toKm: number) {
   return M4_DATA.mixedZones.find((zone) => zone.sectionFromKm === fromKm && zone.sectionToKm === toKm);
 }
 
+function estimatedGateTransitMinutes(validation: M4RoutePlazaValidation, firstKm: number, secondKm: number) {
+  const first = validation.checks.find((item) => item.km === firstKm && item.status === "confirmed");
+  const second = validation.checks.find((item) => item.km === secondKm && item.status === "confirmed");
+  if (!first || !second || first.routeProgressMeters === undefined || second.routeProgressMeters === undefined
+    || !validation.routeDurationSeconds || validation.routeDistanceMeters <= 0) return null;
+  const distanceRatio = Math.abs(first.routeProgressMeters - second.routeProgressMeters) / validation.routeDistanceMeters;
+  return validation.routeDurationSeconds * distanceRatio / 60;
+}
+
+function mixedZoneCharge(validation: M4RoutePlazaValidation, gates: number[], maxTransitMinutes: number) {
+  if (gates.length === 0) return { entryKm: null, exitKm: null, addExitCharge: false };
+  const [entryKm, exitKm] = gates;
+  if (exitKm === undefined) return { entryKm, exitKm: null, addExitCharge: false };
+  const transitMinutes = estimatedGateTransitMinutes(validation, entryKm, exitKm);
+  if (transitMinutes === null) return { entryKm: null, exitKm: null, addExitCharge: false };
+  return { entryKm, exitKm, addExitCharge: transitMinutes > maxTransitMinutes };
+}
+
 function full545Tariff() {
   const rows = M4_DATA.plazas.filter((plaza) => plaza.km === 545 && plaza.tariff);
   if (rows.length !== 2 || rows.some((row) => !row.tariff)) return null;
@@ -69,9 +87,14 @@ export function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
     const row = M4_DATA.plazas.find((plaza) => plaza.km === chargedKm && plaza.model === "open" && plaza.tariff);
     if (row?.tariff) {
       resolved.push({
+        id: `m4-${chargedKm}`,
         km: chargedKm,
+        direction: index355 < index339 ? "forward" : "reverse",
+        entryKm: chargedKm,
+        exitKm: chargedKm === 355 ? 339 : 355,
         weekday: row.tariff.weekday,
         weekend: row.tariff.weekend,
+        selectedAmount: row.tariff.weekday,
         verification: contextVerification(validation, [339, 355]),
         matchedNodeIds: nodeIdsFor(validation, [chargedKm]),
         source: "Avtodor km 355→339 receipt rule + ordered route traversal",
@@ -80,77 +103,94 @@ export function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
     }
   }
 
-  // Full traversal of the 401-464 mixed section is established by both
-  // section gates plus confirmed M-4 plazas on opposite sides of the zone.
-  // Do not depend on one specific northern plaza: live routes can legitimately
-  // use different alignments in the 322-401 corridor while still traversing
-  // the complete 401-464 section.
-  const northFlanks401 = sequence.filter((km) => km < 401);
-  const southFlanks401 = sequence.filter((km) => km > 464);
-  // A continuous sequence of independently confirmed M-4 plazas on opposite
-  // sides of the closed section proves through-traversal. Do not require a
-  // particular neighbouring plaza: routing geometries can miss one physical
-  // anchor while still remaining on the M-4 mainline.
-  const through401to464 = northFlanks401.some((northKm) =>
-    southFlanks401.some((southKm) =>
-      containsOrdered(sequence, [southKm, northKm])
-      || containsOrdered(sequence, [northKm, southKm])));
+  // PVPs 416 and 460 are the entry/exit gates for one mixed section. Apply the
+  // entry tariff once inside the operator's 12-hour transit window; add the
+  // exit tariff when the route ETA between gates exceeds that window.
+  const gates401 = sequence.filter((km) => km === 416 || km === 460);
   const zone401to464 = mixedZone(401, 464);
-  if (through401to464 && zone401to464) {
+  const charge401 = mixedZoneCharge(validation, gates401, zone401to464?.maxTransitMinutes ?? 0);
+  if (charge401.entryKm !== null && zone401to464) {
+    const tariff = zone401to464.fullSectionTariff;
+    const verification = contextVerification(validation, [515, 460, 416, 339, 355]);
     resolved.push({
-      km: 416,
-      weekday: zone401to464.fullSectionTariff.weekday,
-      weekend: zone401to464.fullSectionTariff.weekend,
-      verification: contextVerification(validation, [515, 460, 416, 339, 355]),
-      matchedNodeIds: nodeIdsFor(validation, [416, 460]),
-      source: "Avtodor mixed zone 401–464 + ordered PVP traversal",
+      id: "m4-401-464-entry",
+      km: charge401.entryKm,
+      direction: "unknown",
+      entryKm: charge401.entryKm,
+      ...(charge401.exitKm === null ? {} : { exitKm: charge401.exitKm }),
+      weekday: tariff.weekday,
+      weekend: tariff.weekend,
+      selectedAmount: tariff.weekday,
+      verification,
+      matchedNodeIds: nodeIdsFor(validation, [charge401.entryKm]),
+      source: "Avtodor M-4 401–464 entry tariff",
     });
+    if (charge401.addExitCharge && charge401.exitKm !== null) {
+      resolved.push({
+        id: "m4-401-464-exit",
+        km: charge401.exitKm,
+        direction: "unknown",
+        entryKm: charge401.entryKm,
+        exitKm: charge401.exitKm,
+        weekday: tariff.weekday,
+        weekend: tariff.weekend,
+        selectedAmount: tariff.weekday,
+        verification,
+        matchedNodeIds: nodeIdsFor(validation, [charge401.exitKm]),
+        source: "Avtodor M-4 401–464 exit tariff: estimated transit exceeds 12 hours",
+      });
+    }
     resolved401to464 = true;
   }
 
-  // A route flanked by PVP 620 on the north and PVP 803 on the south has
-  // traversed the complete official 633-741 km mixed section. Crossing the
-  // auxiliary 672-km gate on that same through route does not create a second
-  // charge: Avtodor's current rules zero-rate the exit when the section has
-  // already been paid within the allowed transit window.
-  const northFlanks633 = sequence.filter((km) => km < 633);
-  const southFlanks633 = sequence.filter((km) => km > 741);
-  const through633to741 = northFlanks633.some((northKm) =>
-    southFlanks633.some((southKm) =>
-      containsOrdered(sequence, [southKm, northKm])
-      || containsOrdered(sequence, [northKm, southKm])));
+  // Mixed-section charges are created only from an actually confirmed paid
+  // entry/exit gate. Flanking open-system plazas alone do not prove a charge:
+  // a route can stay on the motorway and bypass a booth using a free ramp.
   const zone633to741 = mixedZone(633, 741);
-  if (through633to741 && zone633to741) {
-    resolved.push({
-      km: 636,
-      weekday: zone633to741.fullSectionTariff.weekday,
-      weekend: zone633to741.fullSectionTariff.weekend,
-      verification: contextVerification(validation, [803, 636, 620]),
-      matchedNodeIds: nodeIdsFor(validation, [636]),
-      source: "Avtodor mixed zone 633–741 + mainline route context",
-    });
-    resolved633to741 = true;
-  }
-
-  // If only the 672 gate of the 633-741 mixed system is traversed and the
-  // route continues to the southern flank (PVP 803), price the official
-  // 633-672 partial section instead of blocking the whole M-4 component.
-  const has636 = validation.checks.some((item) => item.km === 636 && item.status === "confirmed");
-  const has672 = validation.checks.some((item) => item.km === 672 && item.status === "confirmed");
+  const gates633 = sequence.filter((km) => km === 636 || km === 672);
+  const charge633 = mixedZoneCharge(validation, gates633, zone633to741?.maxTransitMinutes ?? 0);
   const partial672 = zone633to741?.partialGateTariffs?.find((item) => item.km === 672);
-  const throughPartial672 = !resolved633to741 && !has636 && has672 && (
-    containsOrdered(sequence, [803, 672])
-    || containsOrdered(sequence, [672, 803])
-  );
-  if (throughPartial672 && partial672) {
+  const entryKm = charge633.entryKm;
+  const exitKm = charge633.exitKm;
+  const entryTariff = entryKm === 636
+    ? zone633to741?.fullSectionTariff
+    : entryKm === 672 ? partial672?.tariff : null;
+  if (entryKm !== null && entryTariff) {
     resolved.push({
-      km: 672,
-      weekday: partial672.tariff.weekday,
-      weekend: partial672.tariff.weekend,
-      verification: contextVerification(validation, [672, 803]),
-      matchedNodeIds: nodeIdsFor(validation, [672]),
-      source: "Avtodor official M-4 633-672 partial mixed-zone tariff + ordered route context",
+      id: `m4-633-741-entry-${entryKm}`,
+      km: entryKm,
+      direction: "unknown",
+      entryKm,
+      ...(exitKm === null ? {} : { exitKm }),
+      weekday: entryTariff.weekday,
+      weekend: entryTariff.weekend,
+      selectedAmount: entryTariff.weekday,
+      verification: contextVerification(validation, [636, 672]),
+      matchedNodeIds: nodeIdsFor(validation, [entryKm]),
+      source: entryKm === 636
+        ? "Avtodor published PVP 636 tariff for M-4 633–741 mixed section; entry charge"
+        : "Avtodor published PVP 672 tariff for M-4 633–672 partial section; entry charge",
     });
+    if (charge633.addExitCharge && exitKm !== null) {
+      const exitTariff = exitKm === 636
+        ? zone633to741?.fullSectionTariff
+        : partial672?.tariff;
+      if (exitTariff) {
+        resolved.push({
+          id: `m4-633-741-exit-${exitKm}`,
+          km: exitKm,
+          direction: "unknown",
+          entryKm,
+          exitKm,
+          weekday: exitTariff.weekday,
+          weekend: exitTariff.weekend,
+          selectedAmount: exitTariff.weekday,
+          verification: contextVerification(validation, [636, 672]),
+          matchedNodeIds: nodeIdsFor(validation, [exitKm]),
+          source: "Avtodor M-4 633–741 exit tariff: estimated transit exceeds 120 minutes",
+        });
+      }
+    }
     resolved633to741 = true;
   }
 
@@ -166,9 +206,14 @@ export function resolvedContextPlazas(validation: M4RoutePlazaValidation) {
   const tariff545 = full545Tariff();
   if (through545 && tariff545) {
     resolved.push({
+      id: "m4-545-full",
       km: 545,
+      direction: "unknown",
+      entryKm: 517,
+      exitKm: 589,
       weekday: tariff545.weekday,
       weekend: tariff545.weekend,
+      selectedAmount: tariff545.weekday,
       verification: contextVerification(validation, [620, 545, 515]),
       matchedNodeIds: nodeIdsFor(validation, [545]),
       source: "Avtodor sections 517–544 + 545–589 + ordered flanking PVPs",

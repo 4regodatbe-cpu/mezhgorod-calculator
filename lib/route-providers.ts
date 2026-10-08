@@ -58,12 +58,12 @@ function decodePolyline(encoded: string, precision = 6): Coordinate[] {
   return coordinates;
 }
 
-export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, positions = safeRoutePositions(from, to)): Promise<RouteWithGeometry> {
+export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, positions = safeRoutePositions(from, to), tollBoothPenalty = 0): Promise<RouteWithGeometry> {
   const url = new URL("https://valhalla1.openstreetmap.de/route");
   const query = {
     locations: positions.map((point) => ({ lat: point.lat, lon: point.lng, type: "break" })),
     costing: "auto",
-    costing_options: { auto: { use_tolls: useTolls } },
+    costing_options: { auto: { use_tolls: useTolls, ...(tollBoothPenalty > 0 ? { toll_booth_penalty: tollBoothPenalty } : {}) } },
     units: "kilometers",
     shape_format: "polyline6",
     ...(useTolls === 1

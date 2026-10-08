@@ -1,4 +1,6 @@
-import type { TollView } from "./types";
+import { distance, duration, money } from "./format";
+import { tariffNames } from "./pricing-data";
+import type { TollView, Trip } from "./types";
 
 export type TollPeriod = "weekday" | "weekend";
 export type TollAmount = {
@@ -36,7 +38,8 @@ export function currentTollPeriod(at: Date = new Date()): TollPeriod {
 
 export function shortPlaceName(label: string): string {
   const first = label.split(",")[0].trim();
-  const city = first.replace(/^г[.]?\s+/i, "").replace(/^город\s+/i, "").trim();
+  const locality = first.split(/\s+[—–]\s+/)[0].trim();
+  const city = locality.replace(/^г[.]?\s+/i, "").replace(/^город\s+/i, "").trim();
   return city || first || label.trim();
 }
 
@@ -89,4 +92,44 @@ export function totalWithToll(baseFare: number | null | undefined, toll: TollAmo
   // The UI and copied quote display whole rubles. Sum those visible components
   // so the printed equation remains arithmetically consistent.
   return Math.round(baseFare) + Math.round(toll.amount);
+}
+
+
+export type DisplayQuote =
+  | { kind: "complete"; label: "Итого за поездку"; amount: number }
+  | { kind: "base-only"; label: "Итого без дорог"; amount: number }
+  | { kind: "unavailable"; label: "Цена тарифа не рассчитана"; amount: null };
+
+/** Shows a base fare without claiming an unknown toll amount is zero. */
+export function displayQuote(baseFare: number | null | undefined, toll: TollAmount): DisplayQuote {
+  if (typeof baseFare !== "number" || !Number.isFinite(baseFare)) {
+    return { kind: "unavailable", label: "Цена тарифа не рассчитана", amount: null };
+  }
+  if (toll.status === "unknown" || toll.amount === null) {
+    return { kind: "base-only", label: "Итого без дорог", amount: Math.round(baseFare) };
+  }
+  const total = totalWithToll(baseFare, toll);
+  if (total === null) {
+    return { kind: "base-only", label: "Итого без дорог", amount: Math.round(baseFare) };
+  }
+  return { kind: "complete", label: "Итого за поездку", amount: total };
+}
+
+/** Compact clipboard text for the alternative route: city names, route facts and base fares only. */
+export function buildAlternativeFareCopy(fromLabel: string, toLabel: string, trip: Trip): string {
+  const rows = [
+    ["standard", "standard"],
+    ["comfort", "comfort"],
+    ["comfortPlus", "comfort_plus"],
+    ["minivan", "minivan"],
+  ] as const;
+  return [
+    `${shortPlaceName(fromLabel)} → ${shortPlaceName(toLabel)}`,
+    `${distance(trip.meters)} · ${duration(trip.seconds)}`,
+    ...rows.map(([rate, vehicle]) => {
+      const price = trip.pricingByVehicle?.[vehicle];
+      const amount = price && !price.requiresSplit ? price.totalPrice : null;
+      return `${tariffNames[rate]}: ${amount == null ? "Не рассчитано" : money(amount)}`;
+    }),
+  ].join("\n");
 }

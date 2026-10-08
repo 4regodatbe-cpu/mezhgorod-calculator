@@ -1,12 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
-import { analyzeRoute, candidatePlans, endpointPolicy, followsPlan, inCrimea } from "../lib/special-territory-policy.ts";
+import { analyzeRoute, candidatePlans, endpointPolicy, findPlanLegStretchAnomaly, followsPlan, inCrimea } from "../lib/special-territory-policy.ts";
 import { splitRouteByTerritory, type VerifiedTerritory, type GeoPoint } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
 import { selectGeographicTerritoryOption } from "../lib/special-territory-options.ts";
 import { inCrimeaApproachZone } from "../lib/special-territory-approach-zone.ts";
 import { selectLiveRouteCandidates } from "../lib/route-quality.ts";
+import { orderRoutesByTravelTime } from "../app/v2/components/route-utils.ts";
 import { activeOverride, touchSession, SESSION_IDLE_MS } from "../lib/tariff-session.ts";
 const k={lat:45.04,lng:38.98},d={lat:48.0156,lng:37.8029},c={lat:44.95,lng:34.1};
 test("real four polygons split transitions, Crimea ordinary, transit excluded",()=>{
@@ -19,6 +20,15 @@ test("real four polygons split transitions, Crimea ordinary, transit excluded",(
   const all=splitRouteByTerritory({coordinates:[[32.6169,46.6354],[35.1396,47.8388],[37.8029,48.0156],[39.3078,48.574]],routedDistanceMeters:800000,routedDurationSeconds:40000,zones});
   for(const id of ["dnr","lnr","zaporizhzhia","kherson"] as const)assert.ok(all.territoryKm[id]>0);
 });
+test("rejects an anomalously long leg between required route controls",()=>{
+ const start={lat:47.71671,lng:35.20981},interior={lat:45.708,lng:34.395};
+ const detour:GeoPoint[]=[[start.lng,start.lat],[40,56],[50,60],[60,55],[50,45],[interior.lng,interior.lat]];
+ const anomaly=findPlanLegStretchAnomaly(detour,[start,interior]);
+ assert.ok(anomaly);assert.equal(anomaly.legIndex,0);assert.ok(anomaly.stretchRatio>10);
+ assert.equal(followsPlan(detour,[start,interior],"crimea",true),false);
+ const plausible:GeoPoint[]=[[start.lng,start.lat],[36,47],[interior.lng,interior.lat]];
+ assert.equal(findPlanLegStretchAnomaly(plausible,[start,interior]),null);
+});
 test("geographic route zone selects one corridor without forcing a mainland detour",()=>{
  const melitopol={lat:46.848,lng:35.365},plans=candidatePlans(k,melitopol,zones);
  assert.equal(plans.length,1);assert.equal(plans[0].corridor,"crimea");assert.equal(inCrimeaApproachZone(melitopol),true);
@@ -28,6 +38,22 @@ test("geographic route zone selects one corridor without forcing a mainland deto
  const yaltaToDonetsk=candidatePlans(yalta,d,zones)[0];
  assert.deepEqual(yaltaToDonetsk.positions,[yalta,{lat:45.2117,lng:36.7161},{lat:45.045,lng:39.15},{lat:47.12,lng:39.86},d]);
  assert.deepEqual(candidatePlans(d,yalta,zones)[0].positions,[...yaltaToDonetsk.positions].reverse());
+ const volnovakha={lat:47.6019,lng:37.4968};
+ const yaltaToVolnovakha=candidatePlans(yalta,volnovakha,zones)[0];
+ assert.equal(yaltaToVolnovakha.corridor,"mainland","Yalta–Volnovakha stays on the agreed bridge/Krasnodar/M-4 mainland corridor");
+ assert.deepEqual(yaltaToVolnovakha.positions,[yalta,{lat:45.2117,lng:36.7161},{lat:45.045,lng:39.15},{lat:47.12,lng:39.86},volnovakha]);
+ assert.deepEqual(candidatePlans(volnovakha,yalta,zones)[0].positions,[...yaltaToVolnovakha.positions].reverse());
+ const namedPairs=[
+  {name:"Волноваха",position:volnovakha,corridor:"mainland" as const},
+  {name:"Токмак",position:{lat:47.255,lng:35.706},corridor:"crimea" as const},
+  {name:"Бердянск",position:{lat:46.755,lng:36.788},corridor:"crimea" as const},
+  {name:"Херсон",position:{lat:46.6354,lng:32.6169},corridor:"crimea" as const},
+ ];
+ for(const pair of namedPairs){
+  const forward=candidatePlans(yalta,pair.position,zones)[0];
+  assert.equal(forward.corridor,pair.corridor,`Yalta–${pair.name} follows the current approach-zone policy`);
+  assert.deepEqual(candidatePlans(pair.position,yalta,zones)[0].positions,[...forward.positions].reverse(),`${pair.name}–Yalta reverses controls`);
+ }
  const moscow={lat:55.7505412,lng:37.6174782};
  assert.deepEqual(candidatePlans(moscow,d,zones)[0].positions,[moscow,d],"mainland destination does not force M-4/EAST waypoints");
  assert.deepEqual(candidatePlans(d,moscow,zones)[0].positions,[d,moscow],"reverse mainland route uses the same direct controls");
@@ -90,7 +116,7 @@ test("special route providers surface material distance disagreement",()=>{
  assert.equal(result.quality.status,"warning");
  assert.equal(result.quality.distanceSpreadPercent,7.7);
 });
-test("geographic selector prefers route-quality selection before faster outliers",()=>{
+test("geographic selector puts the fastest valid route first",()=>{
  const candidate=(preference:number,seconds:number,pricingStatus:"priced"|"unknown"="priced")=>({
   corridor:"mainland" as const,
   provider:preference===0?"Valhalla":"OSRM",
@@ -98,7 +124,7 @@ test("geographic selector prefers route-quality selection before faster outliers
   fast:{seconds,tolls:{pricingStatus}},
  });
  const selected=selectGeographicTerritoryOption([candidate(1,58000),candidate(0,59000)],"mainland");
- assert.equal(selected.options[0].provider,"Valhalla");
+ assert.equal(selected.options[0].provider,"OSRM");
 });
 test("geographic selector ignores elapsed-time evidence and preserves toll uncertainty",()=>{
  const candidate=(corridor:"mainland"|"crimea",pricingStatus:"priced"|"free"|"unknown",seconds=20000,provider="OSRM")=>({corridor,provider,fast:{seconds,tolls:{pricingStatus}}});
@@ -107,6 +133,28 @@ test("geographic selector ignores elapsed-time evidence and preserves toll uncer
  assert.equal(selectedCrimea.options.length,1);assert.equal(selectedCrimea.options[0].corridor,"crimea");assert.equal(selectedCrimea.routePolicy,"geographic-zone");
  const selectedMainland=selectGeographicTerritoryOption([mainland,crimea],"mainland");assert.equal(selectedMainland.options.length,1);assert.equal(selectedMainland.options[0].corridor,"mainland");
  assert.equal(selectGeographicTerritoryOption([crimea],"mainland").options.length,0);
- assert.equal(selectGeographicTerritoryOption([candidate("crimea","free"),candidate("crimea","priced",25000)],"crimea").options[0].fast.tolls.pricingStatus,"priced");
+ assert.equal(selectGeographicTerritoryOption([candidate("crimea","free",19000),candidate("crimea","priced",25000)],"crimea").options[0].fast.tolls.pricingStatus,"free");
  assert.equal(selectGeographicTerritoryOption([candidate("crimea","unknown")],"crimea").options[0].fast.tolls.pricingStatus,"unknown");
+});
+
+test("geographic selector returns main and distinct alternative only from preferred corridor",()=>{
+ const candidate=(corridor:"mainland"|"crimea",provider:string,seconds:number)=>({corridor,provider,fast:{seconds,tolls:{pricingStatus:"unknown" as const}}});
+ const main=candidate("mainland","Valhalla",50000),alt=candidate("mainland","OSRM",52000),wrong=candidate("crimea","Other",30000);
+ const selected=selectGeographicTerritoryOption([main,alt,wrong],"mainland");
+ assert.deepEqual(selected.options.map(item=>item.provider),["Valhalla","OSRM"]);
+ assert.deepEqual(selectGeographicTerritoryOption([main,candidate("mainland","Duplicate",50030)],"mainland").options.map(item=>item.provider),["Valhalla"]);
+});
+
+test("geographic selector skips invalid durations and keeps toll/provider preference only for ties",()=>{
+ const candidate=(provider:string,seconds:number,status:"priced"|"unknown")=>({corridor:"mainland" as const,provider,selectionPreference:provider==="Valhalla"?0:1,fast:{seconds,tolls:{pricingStatus:status}}});
+ const selected=selectGeographicTerritoryOption([candidate("Valhalla",59000,"priced"),candidate("OSRM",58000,"unknown"),candidate("broken",Number.NaN,"priced")],"mainland");
+ assert.deepEqual(selected.options.map(item=>item.provider),["OSRM","Valhalla"]);
+ const tied=selectGeographicTerritoryOption([candidate("OSRM",58000,"unknown"),candidate("Valhalla",58000,"priced")],"mainland");
+ assert.equal(tied.options[0].provider,"Valhalla");
+});
+
+test("route cards are ordered fastest to slowest without mutating the source list",()=>{
+ const routes=[{id:"main",seconds:5000},{id:"alternative",seconds:3600},{id:"other",seconds:4200}];
+ assert.deepEqual(orderRoutesByTravelTime(routes).map(route=>route.id),["alternative","other","main"]);
+ assert.deepEqual(routes.map(route=>route.id),["main","alternative","other"]);
 });

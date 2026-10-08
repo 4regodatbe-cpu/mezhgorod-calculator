@@ -42,6 +42,7 @@ export async function calculateLegTolls({
     routeGeometry,
     departureAt,
     familySegments(geometricTolls.segments, "m4_a289"),
+    routeSeconds,
   );
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
   const productionM11 = selectedFastProvider === "Valhalla" && valhallaEvidence?.m11RoadEvidence
