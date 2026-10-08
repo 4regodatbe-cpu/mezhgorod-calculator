@@ -4,6 +4,7 @@ import { RouteCard } from "./route-card";
 import { AlternativeRouteCard } from "./unverified-route-card";
 import { RouteUnavailable } from "./route-notices";
 import { confirmedFreeToll, type TollPeriod } from "./quote-presentation";
+import { orderRoutesByTravelTime } from "./route-utils";
 import type { Leg, Result, TollView, Trip } from "./types";
 
 type CopyStandard = (key: string, title: string, leg: Leg, trip: Trip, toll?: TollView, warning?: string, period?: TollPeriod, manualToll?: string, fareOnly?: boolean) => Promise<void>;
@@ -54,10 +55,16 @@ export function ResultPanels({
     <>
       {result && standardLeg && standardOptimal && <section className={"mt-4 grid min-w-0 grid-cols-1 gap-3 " + (standardHasTolls ? "lg:grid-cols-2" : "")}>
         {standardHasTolls ? <>
-          <RouteCard
+          {orderRoutesByTravelTime([
+            { kind: "main" as const, trip: standardLeg.fast },
+            ...((standardLeg.free ?? standardLeg.freeCandidate)
+              ? [{ kind: "alternative" as const, trip: (standardLeg.free ?? standardLeg.freeCandidate)! }]
+              : []),
+          ]).map((route) => route.kind === "main" ? <RouteCard
+            key="standard-fast"
             title="Основной маршрут"
             accent="blue"
-            trip={standardLeg.fast}
+            trip={route.trip}
             toll={standardLeg.fast.tolls}
             tollPeriod={tollPeriod}
             onTollPeriodChange={onTollPeriodChange}
@@ -65,14 +72,13 @@ export function ResultPanels({
             onManualToll={onManualToll}
             onCopy={() => copyStandard("standard-fast", "Основной маршрут", standardLeg, standardLeg.fast, standardLeg.fast.tolls, undefined, tollPeriod, manualToll)}
             copied={copiedKey === "standard-fast"}
-          />
-          {(standardLeg.free ?? standardLeg.freeCandidate)
-            ? <AlternativeRouteCard
-                trip={(standardLeg.free ?? standardLeg.freeCandidate)!}
+          /> : <AlternativeRouteCard
+                key="standard-alternative"
+                trip={route.trip}
                 onCopy={() => copyStandard("standard-alternative", "Альтернативный маршрут", standardLeg, (standardLeg.free ?? standardLeg.freeCandidate)!, confirmedFreeToll, undefined, tollPeriod, undefined, true)}
                 copied={copiedKey === "standard-alternative"}
-              />
-            : <RouteUnavailable message={standardLeg.freeError} />}
+              />)}
+          {!(standardLeg.free ?? standardLeg.freeCandidate) && <RouteUnavailable message={standardLeg.freeError} />}
         </> : <RouteCard title="Оптимальный маршрут" accent="blue" trip={standardOptimal} toll={confirmedFreeToll} tollPeriod={tollPeriod} onTollPeriodChange={onTollPeriodChange} onCopy={() => copyStandard("standard-optimal", "Оптимальный маршрут", standardLeg, standardOptimal, confirmedFreeToll, undefined, tollPeriod)} copied={copiedKey === "standard-optimal"} />}
       </section>}
     </>
