@@ -58,6 +58,7 @@ test("same corridor with gap in versions is unknown during gap",()=>{
 });
 test("one endless tariff version prohibits a successor",()=>{
   const c=clone(synthetic),old=c.priceCells[1];
+  old.source.effectiveTo=null;
   c.priceCells.push({...clone(old),source:{...old.source,effectiveFrom:"2026-11-01",effectiveTo:"2026-12-31"}});
   assert.throws(()=>validateM4PvpMatrix(c),/overlapping_cell_version/);
 });
