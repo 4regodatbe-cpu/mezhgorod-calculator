@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "systemId": "m11-58-679-avtodor",
+  "observedAt": "2026-10-01",
+  "source": {
+    "kind": "openstreetmap_object_evidence",
+    "url": "https://www.openstreetmap.org/",
+    "inventoryWorkflowRun": 36848648128,
+    "directApiWorkflowRun": 36850096015,
+    "connectivityWorkflowRun": 36850264904,
+    "classification": "independently_verified_infrastructure",
+    "note": "Coordinates are exact observed OSM object coordinates retained from accepted diagnostic artifacts. Official/operator evidence independently establishes tariff-facility identity; OSM supplies spatial infrastructure evidence only and is not a monetary tariff source."
+  },
+  "facilities": [
+    {
+      "facilityId": "pvp58-spatial-control",
+      "tariffPointId": "p58",
+      "officialIdentitySource": "checkpoints/SEGMENT_6A3B2D_M11_OSM_OBJECT_INVENTORY_RESULT.md",
+      "anchors": [
+        { "anchorId": "osm-node-3243217926", "osmNodeId": 3243217926, "lat": 56.1391684, "lon": 37.0712818 },
+        { "anchorId": "osm-node-3243217928", "osmNodeId": 3243217928, "lat": 56.1400608, "lon": 37.0709533 },
+        { "anchorId": "osm-node-4215723024", "osmNodeId": 4215723024, "lat": 56.138384, "lon": 37.0472685 },
+        { "anchorId": "osm-node-4215723029", "osmNodeId": 4215723029, "lat": 56.1399248, "lon": 37.047551 }
+      ]
+    },
+    {
+      "facilityId": "pvp593",
+      "tariffPointId": "p593",
+      "officialIdentitySource": "https://unitoll.ru/about/press/news/na-593-km-dorogi-m-11-neva-otkrylas-transportnaya-razvyazka/",
+      "anchors": [
+        { "anchorId": "osm-node-13249401006", "osmNodeId": 13249401006, "lat": 59.1976987, "lon": 31.2534812 },
+        { "anchorId": "osm-node-14162143275", "osmNodeId": 14162143275, "lat": 59.20392, "lon": 31.2595577 }
+      ]
+    },
+    {
+      "facilityId": "pvp679-spatial-control",
+      "tariffPointId": "p679",
+      "officialIdentitySource": "checkpoints/SEGMENT_6A3B2D_M11_OSM_OBJECT_INVENTORY_RESULT.md",
+      "anchors": [
+        { "anchorId": "osm-node-2492861243", "osmNodeId": 2492861243, "lat": 59.7750977, "lon": 30.3598352 }
+      ]
+    }
+  ]
+}
