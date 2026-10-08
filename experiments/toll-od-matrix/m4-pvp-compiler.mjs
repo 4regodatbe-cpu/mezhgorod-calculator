@@ -1,3 +1,5 @@
+import {validateM4PvpMatrix} from "./m4-pvp-corridor.mjs";
+
 // OFFLINE ONLY. A valid operator URL and an asserted review do not independently authenticate data.
 // Actual corpus is empty until human-verifiable signed/source-backed route totals exist.
 function compileVerifiedM4Tariffs(template,input){
@@ -49,6 +51,9 @@ function compileVerifiedM4Tariffs(template,input){
     if(!rec.operatorTotal||rec.operatorTotal.monThu!==monThu||rec.operatorTotal.friSun!==friSun)error("independent_total_mismatch");
     cells.push({direction:rec.direction,sequence:[...sq],context:{...ctx},prices:{monThu,friSun},source:{kind:"official_verified_corridor",url:src.url,effectiveFrom:src.effectiveFrom,effectiveTo:src.effectiveTo,documentId:src.documentId,reviewedAt:proof.reviewedAt}});
   }
-  return {...template,priceCells:cells,readiness:cells.length?"offline_source_compiled_not_live":"no_confirmed_end_to_end_m4_tariff_cells"};
+  const result={...template,priceCells:cells,readiness:cells.length?"offline_source_compiled_not_live":"no_confirmed_end_to_end_m4_tariff_cells"};
+  // Shared validator guards duplicate price signatures and overlapping tariff periods.
+  try { validateM4PvpMatrix(result); } catch (e) { error("compiled_matrix_conflict:"+String(e)); }
+  return result;
 }
 export {compileVerifiedM4Tariffs};
