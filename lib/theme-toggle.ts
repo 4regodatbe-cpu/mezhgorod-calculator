@@ -1,4 +1,9 @@
 export type Theme = "light" | "dark";
+export type BrowserColorScheme = "only light" | "dark";
+
+export function browserColorScheme(theme: Theme): BrowserColorScheme {
+  return theme === "light" ? "only light" : "dark";
+}
 
 export function readTheme(readStoredValue: () => string | null): Theme {
   try {
