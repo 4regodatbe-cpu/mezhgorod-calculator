@@ -1,0 +1,17 @@
+import assert from "node:assert/strict";
+import {test} from "node:test";
+import {m4TariffPeriodAt as at} from "./m4-fare-calendar-2026.mjs";
+test("ordinary Thursday weekday tariff",()=>assert.equal(at("2026-10-08T14:00:00+03:00").profile,"monThu"));
+test("ordinary Friday weekend tariff",()=>assert.equal(at("2026-10-09T14:00:00+03:00").profile,"friSun"));
+test("Sunday weekend tariff",()=>assert.equal(at("2026-10-11T14:00:00+03:00").profile,"friSun"));
+test("Monday before Nov holidays weekday",()=>assert.equal(at("2026-11-02T14:00:00+03:00").profile,"monThu"));
+test("03 November is official preholiday surcharge",()=>assert.equal(at("2026-11-03T14:00:00+03:00").profile,"friSun"));
+test("04 November is national holiday",()=>assert.equal(at("2026-11-04T14:00:00+03:00").profile,"friSun"));
+test("30 April is official special day",()=>assert.equal(at("2026-04-30T14:00:00+03:00").profile,"friSun"));
+test("11 June is preholiday",()=>assert.equal(at("2026-06-11T14:00:00+03:00").profile,"friSun"));
+test("30-31 December are operator special days",()=>{assert.equal(at("2026-12-30T14:00:00+03:00").profile,"friSun");assert.equal(at("2026-12-31T14:00:00+03:00").profile,"friSun");});
+test("UTC midnight is transformed to Moscow civil date",()=>assert.equal(at("2026-04-29T22:10:00Z").date,"2026-04-30"));
+test("unverified 2027 schedule returns unknown",()=>assert.equal(at("2027-06-01T14:00:00+03:00").status,"unknown"));
+test("timezone-naive timestamp rejected",()=>assert.equal(at("2026-10-09T14:00:00").status,"unknown"));
+test("date-only timestamp rejected",()=>assert.equal(at("2026-10-09").status,"unknown"));
+test("invalid offset timestamp rejected",()=>assert.equal(at("not a timestamp").status,"unknown"));
