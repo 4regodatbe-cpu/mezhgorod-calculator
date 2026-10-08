@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-08",
+  "environment": "sandbox",
+  "runtimeEnabled": false,
+  "source": {
+    "systemId": "m11-58-679-avtodor",
+    "observedAt": "2026-10-01",
+    "document": "№ 274",
+    "effectiveFrom": null,
+    "matrixComplete": false
+  },
+  "profiles": [
+    "monThu",
+    "friSun"
+  ],
+  "points": [
+    "p58",
+    "p67",
+    "p89",
+    "p97",
+    "p124",
+    "p147",
+    "p159",
+    "p177",
+    "p209",
+    "p214",
+    "p258",
+    "p330",
+    "p348",
+    "p385",
+    "p402",
+    "p444",
+    "p524",
+    "p545",
+    "p593",
+    "p647",
+    "p668",
+    "p679"
+  ],
+  "pairs": [
+    {
+      "systemId": "m11-58-679-avtodor",
+      "entry": "p58",
+      "exit": "p593",
+      "category": "I",
+      "currency": "RUB",
+      "prices": {
+        "monThu": 3600,
+        "friSun": 4390
+      },
+      "evidence": "official_direct_pair"
+    },
+    {
+      "systemId": "m11-58-679-avtodor",
+      "entry": "p58",
+      "exit": "p679",
+      "category": "I",
+      "currency": "RUB",
+      "prices": {
+        "monThu": 4200,
+        "friSun": 4940
+      },
+      "evidence": "official_direct_pair"
+    }
+  ],
+  "notes": [
+    "Diagnostics only. Source contains two verified directed pairs and 22 points.",
+    "Do not derive unlisted directions or distances from adjacent pairs.",
+    "M4 originals copied as reference; no conversion to arbitrary OD prices.",
+    "Effective-from date and entire M11 A2 matrix remain unverified."
+  ]
+}
