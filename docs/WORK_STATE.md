@@ -1,3 +1,14 @@
+## Current handoff — 2026-10-09 (after mandatory documentation rule + offline compiler)
+
+- **Durable repository history policy** added in `AGENTS.md` (commit `891c53bb`): full append-only `experiments/toll-od-matrix/WORK_LOG.md`, approved/superseded decisions in `DECISIONS.md`, next actions in `NEXT_STEPS.md`, current state at top of this file. New chats begin with `experiments/toll-od-matrix/START_HERE.md`.
+- **Latest code:** `m4-pvp-corridor.mjs` supports nonoverlapping effective-date versions; date regex escape corrected `7ae532c`. `m4-pvp-compiler.mjs` compiles manually verified official PVP/event ledgers only after matching independent operator total, including 339/355, 545 and mixed-zone guards. Read `SOURCE_INTAKE_PROTOCOL.md` for exact input criteria.
+- **Status:** real accepted M-4 tariff `priceCells=[]` and source `records=[]`. Operator's 27 Feb 2026 bulletin gives full Moscow–Krasnodar weekday control **5040 ₽ from 2 March 2026**, but exact matched full PVP sequence and both-direction fare controls are NOT verified; do not import that amount as a tariff cell. See `SOURCE_RESEARCH_2026-10-09.md`.
+- **Verification truth:** 14/14 synchronous isolated JS assertions on new compiler; 41/41 historical direct-function checks on PVP lookup/adapter; 18 new compiler Node tests and 4 version tests **authored but not executed**, Node/CI/Next build/live route **not run for this block**. Initial failed compiler experiment due to unavailable `URL` and double-escaped date regex are documented in `WORK_LOG.md`.
+- **Isolation:** only sandbox branch `experiment/toll-od-matrix-2026-10-08`. No change to live `app/`, `lib/`, `data/`, PR #12, `main` or Production.
+- **Next one action:** run actual Node test suite and independently verify a real route's entire PVP signature against dated operator source, or keep cells empty. Follow `NEXT_STEPS.md`.
+
+---
+
 ## Current project documentation rule — 2026-10-09
 
 - **Repo-first handoff is mandatory.** Full append-only history in `experiments/toll-od-matrix/WORK_LOG.md`, current decisions in `DECISIONS.md`, executable backlog in `NEXT_STEPS.md`, quick-start and architecture in `README.md`. Project-wide rule added to `AGENTS.md` in this sandbox branch.

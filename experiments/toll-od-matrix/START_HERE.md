@@ -45,6 +45,12 @@ Originally tried full ramp-to-ramp OD pricing, but on **2026-10-09** the user cl
 
 **Known blocker:** a text extractor request to Overpass for real interchange OSM access IDs returned HTTP 406 (not a proof of missing nodes). The project was subsequently rescoped to PVP-first, so exhaustive ramp inventory is no longer required.
 
+## Latest source compilation (2026-10-09)
+
+- `m4-pvp-compiler.mjs` now validates complete operator charge-ledger records and compiles a full-corridor price only if the independently documented whole-corridor total matches both stored profiles; the official intake is still empty.
+- `m4-pvp-corridor.mjs` now supports nonoverlapping consecutive tariff effective-date versions; there was a date regex escaping error in an initial commit and it was fixed in `7ae532c`.
+- Additional 18 compiler Node test cases + 4 version tests authored (not run). 14 isolated JS function assertions passed on compiler logic. Read `SOURCE_INTAKE_PROTOCOL.md` and `SOURCE_RESEARCH_2026-10-09.md`.
+
 ## Next safe task
 
 Implement and verify source intake from **official actual** M-4 operator documents together with proof of corresponding *same-route* PVP sequence; populate at least one *real* independently cross-checked corridor, then bidirectional regression on actual chosen route and its fare category/date. If documentary evidence is incomplete, leave `priceCells=[]` and record the obstacle. Execute Node tests, record outputs honestly.
