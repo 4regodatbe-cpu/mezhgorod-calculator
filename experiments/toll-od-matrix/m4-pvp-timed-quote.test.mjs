@@ -26,3 +26,30 @@ test("missing passage times is unknown",()=>{const r=req();delete r.pvpPassageTi
 test("wrong PVP time identity is unknown",()=>{const r=req();r.pvpPassageTimes[1].pvpId="m4-1093";assert.equal(quote(m,r).amountRub,null)});
 test("cross-route time evidence is unknown",()=>{const r=req();r.pvpPassageTimes[0].routeId="other";assert.equal(quote(m,r).amountRub,null)});
 test("actual empty trusted matrix remains unknown",()=>assert.equal(quote(template,req()).amountRub,null));
+
+test("auto derives 401 mixed-state instead of trusting caller",()=>{
+ const v=clone(template);
+ v.priceCells=[{direction:"to_moscow",sequence:["m4-460","m4-416"],context:{mixed401:"within_limit",mixed633:"not_used"},prices:{monThu:360,friSun:480},source:{kind:"official_verified_corridor",url:"https://avtodor-tr.ru/",effectiveFrom:"2026-01-01",effectiveTo:"2026-12-31"}}];
+ const q=req("2026-10-08T10:00:00+03:00","2026-10-08T11:00:00+03:00");
+ q.confirmedPvps.forEach((x,i)=>{x.pvpId=["m4-460","m4-416"][i]});
+ q.pvpPassageTimes.forEach((x,i)=>{x.pvpId=["m4-460","m4-416"][i]});
+ delete q.mixedContext;
+ assert.equal(quote(v,q).amountRub,360);
+});
+test("caller-forced wrong mixed state is rejected",()=>{
+ const v=clone(template);
+ v.priceCells=[{direction:"to_moscow",sequence:["m4-460","m4-416"],context:{mixed401:"within_limit",mixed633:"not_used"},prices:{monThu:360,friSun:480},source:{kind:"official_verified_corridor",url:"https://avtodor-tr.ru/",effectiveFrom:"2026-01-01",effectiveTo:"2026-12-31"}}];
+ const q=req("2026-10-08T10:00:00+03:00","2026-10-08T11:00:00+03:00");
+ q.confirmedPvps.forEach((x,i)=>{x.pvpId=["m4-460","m4-416"][i]});
+ q.pvpPassageTimes.forEach((x,i)=>{x.pvpId=["m4-460","m4-416"][i]});
+ assert.equal(quote(v,q).status,"unknown");
+});
+test("uncertain 90-minute 633 grace period always returns unknown",()=>{
+ const v=clone(template);
+ v.priceCells=[{direction:"to_moscow",sequence:["m4-672","m4-636"],context:{mixed401:"not_used",mixed633:"within_limit"},prices:{monThu:640,friSun:770},source:{kind:"official_verified_corridor",url:"https://avtodor-tr.ru/",effectiveFrom:"2026-01-01",effectiveTo:"2026-12-31"}}];
+ const q=req("2026-10-08T10:00:00+03:00","2026-10-08T11:30:00+03:00");
+ q.confirmedPvps.forEach((x,i)=>{x.pvpId=["m4-672","m4-636"][i]});
+ q.pvpPassageTimes.forEach((x,i)=>{x.pvpId=["m4-672","m4-636"][i]});
+ delete q.mixedContext;
+ assert.equal(quote(v,q).amountRub,null);
+});
