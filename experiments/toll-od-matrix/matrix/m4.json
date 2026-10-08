@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-08",
+  "environment": "sandbox",
+  "runtimeEnabled": false,
+  "source": {
+    "systemId": "m4-don",
+    "observedAt": "2026-09-29",
+    "document": "M4 category I official PVP snapshot; NOT OD price matrix",
+    "effectiveFrom": null,
+    "matrixComplete": false
+  },
+  "profiles": [
+    "monThu",
+    "friSun"
+  ],
+  "points": [],
+  "pairs": [],
+  "notes": [
+    "No verified real entry/exit directed pairs are currently available.",
+    "Payment plaza rows in sources/m4-data.ts are NOT OD tariff rows.",
+    "The partial candidate list has no verified OSM access node identity, directions or topology.",
+    "The current operator's open/mixed charging rules require payment event proof; runtime pricing is forbidden until every needed OD cell is verified."
+  ]
+}

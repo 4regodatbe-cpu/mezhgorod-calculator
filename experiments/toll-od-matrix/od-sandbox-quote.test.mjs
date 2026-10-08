@@ -23,3 +23,6 @@ test('independently validated free route gives zero',()=>{const r=route([null,nu
 test('free evidence from other route cannot be used',()=>{const r=route([null,null,null,null]);assert.equal(calc({route:r,freeValidation:{status:'independently_confirmed_free',routeId:'other',coverage:'all_edges',method:'separate_toll_booth_validator'}}).amountRub,null)});
 test('no tariff profile matches unknown',()=>assert.equal(calc({profile:'bad'}).amountRub,null));
 test('unverified M4 pair never priced',()=>{const r=route([null,'m4','m4',null]);const b=boundaries.map(x=>({...x,systemId:'m4'}));assert.equal(calc({route:r,boundaries:b}).amountRub,null)});
+
+test('bad tariff matrix fails closed without crashing',()=>{const invalid={source:{systemId:sys},pairs:null};assert.equal(calc({matrices:[invalid]}).amountRub,null);});
+test('duplicate road system matrix fails closed',()=>assert.equal(calc({matrices:[matrix,matrix]}).amountRub,null));

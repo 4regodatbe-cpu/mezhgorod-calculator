@@ -17,7 +17,9 @@ function quoteRouteOD({route,boundaries,matrices,profile,freeValidation}) {
   for(const crossing of detection.traversals){
     const matches=matrices.filter(m=>m?.source?.systemId===crossing.systemId);
     if(matches.length!==1) return unknown('missing_or_duplicate_system_tariff_matrix');
-    const tariff=calculateOD(matches[0],{routeId:route.routeId,profile,traversals:[crossing]});
+    let tariff;
+    try { tariff=calculateOD(matches[0],{routeId:route.routeId,profile,traversals:[crossing]}); }
+    catch { return unknown('invalid_system_tariff_matrix'); }
     if(tariff.status!=='priced' || !Number.isSafeInteger(tariff.amountRub))return unknown('missing_or_unverified_directed_pair',parts);
     amount+=tariff.amountRub;
     if(!Number.isSafeInteger(amount))return unknown('route_amount_overflow');
