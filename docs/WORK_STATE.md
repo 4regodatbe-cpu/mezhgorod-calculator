@@ -1,13 +1,12 @@
-## Current handoff — 2026-10-08 15:05 MSK
+## Current handoff — 2026-10-08
 
-- Repo: `4regodatbe-cpu/mezhgorod-calculator`, branch `fix/v2-mobile-layout-2026-10-05`; PR #12 remains open/draft and unmerged. Theme fix source commit: `c0a89efd80d9b08b4d7321fbe5ed80dc35136d57`.
-- **Published:** fixed the light/dark theme toggle so it changes the document theme before attempting localStorage persistence. Storage reads/writes are guarded, and the toggle determines its current state from the applied root class to avoid stale React state during hydration.
-- **Verification:** focused theme regressions passed (toggle both ways, blocked storage read fallback, and theme application with blocked storage write). CI run #227 passed all 123 tests, TypeScript no-emit, and Next production build. `git diff --check` passed.
-- **Production:** deployment `dpl_2Gw1PPa45qm7xmvzG3cfp5vduq9J` is READY, target production. Production `/api/version` returns HTTP 200 and reports source commit `c0a89efd80d9b08b4d7321fbe5ed80dc35136d57`. Alias: `https://mezhgorod-calculator.vercel.app/v2`.
-- **Interactive verification:** reloaded the Production app, toggled dark and back to light; button labels changed to “Включить светлую тему” and then “Включить тёмную тему”, confirming the applied mode. Do not merge PR #12.
+- Repo: `4regodatbe-cpu/mezhgorod-calculator`, branch `fix/v2-mobile-layout-2026-10-05`; PR #12 remains open/draft and unmerged. Current branch source commit: `01cfe20f71879c9360e427d2d7aab8aecba0bccb`.
+- **Design fix in PR preview:** Android/Chrome could algorithmically darken the manually selected light palette, producing dark surfaces with light-mode teal controls. The page now declares support for authored light/dark themes, opts out of Auto Dark while light is selected (`color-scheme: only light`), and keeps browser dark controls in the app's authored dark mode. Initial theme setup and the toggle use the same scheme.
+- **Verification:** focused theme tests pass (including light-mode Auto Dark opt-out); `git diff --check` passes. Vercel Preview deployment `dpl_EG928Y6FfCEr4L2CEXPfb8jq4g2p` is READY; `/api/version` and `/v2` returned 200 for the exact source commit, and rendered HTML includes the expected metadata and pre-hydration theme scheme. GitHub Actions workflow run was not available for this commit; local full TypeScript/test/build commands are unavailable because dependencies are absent.
+- **Release:** Production was not changed. Preview interactive UI is behind Vercel sign-in; only HTML/API response and remote build were verified. Current user instruction requires an explicit request before Production publication.
+- **Workspace caution:** local checkout HEAD is stale and has unrelated dirty route/pricing edits. Do not reset or stage unrelated files. Continue from the remote branch head above.
 
 ---
-
 ---
 
 ## Prior handoff — 2026-10-07 13:36 MSK
