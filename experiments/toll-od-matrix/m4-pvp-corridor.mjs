@@ -16,7 +16,7 @@ function validateM4PvpMatrix(matrix){
     if(a===(cell.context.mixed401==="not_used") || b===(cell.context.mixed633==="not_used"))throw Error("inconsistent_mixed_context");
     if(!cell.prices || !Number.isSafeInteger(cell.prices.monThu) || !Number.isSafeInteger(cell.prices.friSun) || cell.prices.monThu<0 || cell.prices.friSun<0)throw Error("invalid_cell_prices");
     const src=cell.source;
-    if(!src || src.kind!=="official_verified_corridor" || typeof src.url!=="string" || !src.url.startsWith("https://") || !/^\\d{4}-\\d\\d-\\d\\d$/.test(src.effectiveFrom||"") || (src.effectiveTo!==null && !/^\\d{4}-\\d\\d-\\d\\d$/.test(src.effectiveTo||"")) || (src.effectiveTo && src.effectiveTo<src.effectiveFrom))throw Error("invalid_cell_provenance");
+    if(!src || src.kind!=="official_verified_corridor" || typeof src.url!=="string" || !src.url.startsWith("https://") || !/^\d{4}-\d\d-\d\d$/.test(src.effectiveFrom||"") || (src.effectiveTo!==null && !/^\d{4}-\d\d-\d\d$/.test(src.effectiveTo||"")) || (src.effectiveTo && src.effectiveTo<src.effectiveFrom))throw Error("invalid_cell_provenance");
     const key=[cell.direction,cell.sequence.join(">"),cell.context.mixed401,cell.context.mixed633].join("|");
     const ranges=versionedKeys.get(key)||[];
     for(const range of ranges){
