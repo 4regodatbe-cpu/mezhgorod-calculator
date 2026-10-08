@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-09",
+  "systemId": "m4-don",
+  "runtimeEnabled": false,
+  "vehicleProfile": "category-I-no-transponder",
+  "knownPvps": [
+    "m4-62",
+    "m4-71",
+    "m4-133",
+    "m4-228",
+    "m4-322",
+    "m4-339",
+    "m4-355",
+    "m4-416",
+    "m4-460",
+    "m4-515",
+    "m4-545",
+    "m4-620",
+    "m4-636",
+    "m4-672",
+    "m4-803",
+    "m4-911",
+    "m4-1046",
+    "m4-1093",
+    "m4-1184",
+    "m4-1223"
+  ],
+  "priceCells": [],
+  "readiness": "no_confirmed_end_to_end_m4_tariff_cells",
+  "notes": [
+    "PVP-first matrix. All road gates are candidates only until confirmed crossings on selected geometry.",
+    "A single continuous M4 corridor is product scope, not universal physical truth.",
+    "Same extreme PVPs with different intermediate sequences never share a price.",
+    "Mixed zones 401-464 and 633-741 need verified charging/time context.",
+    "No entry or exit ramp matrix; the old OD geometry module remains as a separate research branch.",
+    "No publication or live runtime import."
+  ]
+}
