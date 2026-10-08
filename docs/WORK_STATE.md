@@ -1,6 +1,6 @@
 ## Песочница OD — состояние 2026-10-08 (дополнительный блок)
 
-- Ветка `experiment/toll-od-matrix-2026-10-08` не подключена к рабочему калькулятору. Новые `od-geometry.mjs`, `od-sandbox-quote.mjs`, тесты и каталог кандидатов живут внутри `experiments/toll-od-matrix/`. M4 directed matrix `matrix/m4.json` **пустая** (0 доказанных пар), а 53 внешних ориентира развязок остаются unverified.
+- Ветка `experiment/toll-od-matrix-2026-10-08` не подключена к рабочему калькулятору. Новые `od-geometry.mjs`, `od-sandbox-quote.mjs`, тесты и каталог кандидатов живут внутри `experiments/toll-od-matrix/`. M4 directed matrix `matrix/m4.json` **пустая** (0 доказанных пар), а 53 внешних ориентира развязок остаются unverified (первый живой запрос Overpass к bbox у ПВП 515 вернул через текстовый экстрактор HTTP 406 без данных).
 - Экспериментальные модули: strict full-edge graph / OSM node ID / direction evidence → exact boundary pair → direct tariff lookup → route-level unknown/null при отсутствии любого обязательного доказательства.
 - Локально протестировано на синтетических фигурах / эквивалентных M11 fixture: Node test runner 51/51 success; **не** E2E, не live OSM, не CI и не Next build. Добавление GitHub workflow было заблокировано системами безопасности, workflow не добавлен.
 - Следующий шаг: реальные OSM access-node IDs, направленная топология, официальные OD-цены М-4; затем полноценная двунаправленная маршрутная сверка. Детали: `experiments/toll-od-matrix/WORK_LOG.md`, `README.md`, `inventory/M4_INTERCHANGES.md`.
