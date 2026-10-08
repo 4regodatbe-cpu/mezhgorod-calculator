@@ -56,9 +56,9 @@ export function ResultPanels({
       {result && standardLeg && standardOptimal && <section className={"mt-4 grid min-w-0 grid-cols-1 gap-3 " + (standardHasTolls ? "lg:grid-cols-2" : "")}>
         {standardHasTolls ? <>
           {orderRoutesByTravelTime([
-            { kind: "main" as const, trip: standardLeg.fast },
+            { kind: "main" as const, trip: standardLeg.fast, seconds: standardLeg.fast.seconds },
             ...((standardLeg.free ?? standardLeg.freeCandidate)
-              ? [{ kind: "alternative" as const, trip: (standardLeg.free ?? standardLeg.freeCandidate)! }]
+              ? [{ kind: "alternative" as const, trip: (standardLeg.free ?? standardLeg.freeCandidate)!, seconds: (standardLeg.free ?? standardLeg.freeCandidate)!.seconds }]
               : []),
           ]).map((route) => route.kind === "main" ? <RouteCard
             key="standard-fast"
