@@ -93,6 +93,7 @@ export function ResultPanels({
             <p>Это предварительные геометрические признаки, а не доказанные пересечения пунктов оплаты.
               Новые справочные цены не включены в итог без независимой проверки.</p>
             {standardLeg.fast.nationalTollCoverage.m1m3GateAudit && (
+              <>
               <p>М-1/М-3 · физические ПВП: {standardLeg.fast.nationalTollCoverage.m1m3GateAudit.status === "unknown"
                 ? "строгая проверка узлов на этой поездке ещё недоступна"
                 : `подтверждённых OSM-узлов: ${standardLeg.fast.nationalTollCoverage.m1m3GateAudit.verifiedGates.length}, неопознанных платных событий: ${standardLeg.fast.nationalTollCoverage.m1m3GateAudit.unmappedPaidNodes.length}`}.
@@ -102,6 +103,7 @@ export function ResultPanels({
                   {standardLeg.fast.nationalTollCoverage.m1m3GateAudit.unmappedPaidNodes.map(node => ` ${node.roadId}: ${node.osmNodeId ?? "ID отсутствует"}`).join("; ")}
                 </p>
               )}
+              </>
             )}
             <a href="/v2/toll-roads" className="inline-block font-semibold underline underline-offset-4">Каталог платных дорог и статус расчёта</a>
           </div>
