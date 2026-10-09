@@ -56,7 +56,7 @@ function quoteNationalRoad(catalog,request){
    if(s.msdMode==="city"){
      // Paid only when entry AND exit occur in rush hour; potentially exempt
      // taxis must be verified by the operator. Northern sections had changes in 2026.
-     if(s.exemptionVerified!=="not_exempt"||s.currentScheduleVerified!==true||s.allSegmentsMatched!==true)return fail("msd_exemption_or_schedule_unverified");
+     if(s.exemptionVerified!=="not_exempt"||s.currentScheduleVerified!==true||s.allSegmentsMatched!==true||!["verified_workday","verified_weekend_or_holiday"].includes(s.dayClass))return fail("msd_exemption_or_schedule_unverified");
      if(proof.passageIds.length>fare.maxCitySections || proof.passageIds.some(id=>!/^msd-section-[1-9]$/.test(id)))return fail("msd_sections_unverified");
      if(!Array.isArray(s.sectionTimes)||s.sectionTimes.length!==proof.passageIds.length)return fail("msd_entry_exit_times_missing");
      // Caller cannot assume a section is free without exact entry/exit times.
@@ -66,8 +66,8 @@ function quoteNationalRoad(catalog,request){
      for(let i=0;i<proof.passageIds.length;i++){
        const x=s.sectionTimes[i];if(x?.sectionId!==proof.passageIds[i]||x?.source!=="same_route_operator_verified"||x?.holidayVerified!==true)return fail("msd_section_identity_or_calendar_unknown");
        const a=paidWindow(x.entryLocal),b=paidWindow(x.exitLocal);
-       if(a===null||b===null)return fail("msd_passage_time_unknown");
-       if(a&&b)paid+=1;
+       if(a===null||b===null||x.entryLocal.slice(0,10)!==request.tariffDate||x.exitLocal.slice(0,10)!==request.tariffDate||x.entryLocal>x.exitLocal)return fail("msd_passage_time_unknown");
+       if(s.dayClass==="verified_workday"&&a&&b)paid+=1;
      }
      // A truly free set of *observed* passes is valid only with all checks.
      amount=paid*fare.citySectionRub;

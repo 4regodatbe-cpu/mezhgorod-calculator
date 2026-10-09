@@ -29,7 +29,7 @@ test("route mismatch cannot be priced",()=>{const x=req("bagration",["bagration-
 test("repeated gate or billing event rejected",()=>assert.equal(q(registry,req("m1",["m1-33-66","m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"})).status,"unknown"));
 test("missing tariff date rejected",()=>{const x=req("bagration",["bagration-camera-6.6"]);x.tariffDate="";assert.equal(q(registry,x).amountRub,null)});
 test("unsupported vehicle class rejected",()=>{const x=req("bagration",["bagration-camera-6.6"]);x.vehicleCategory="II";assert.equal(q(registry,x).amountRub,null)});
-const msd={msdMode:"city",exemptionVerified:"not_exempt",currentScheduleVerified:true,allSegmentsMatched:true,sectionTimes:[{sectionId:"msd-section-1",entryLocal:"2026-10-09T08:00",exitLocal:"2026-10-09T08:05",source:"same_route_operator_verified",holidayVerified:true}]};
+const msd={msdMode:"city",dayClass:"verified_workday",exemptionVerified:"not_exempt",currentScheduleVerified:true,allSegmentsMatched:true,sectionTimes:[{sectionId:"msd-section-1",entryLocal:"2026-10-09T08:00",exitLocal:"2026-10-09T08:05",source:"same_route_operator_verified",holidayVerified:true}]};
 test("MSD city one operator-proven peak zone costs 19",()=>assert.equal(q(registry,req("msd",["msd-section-1"],msd)).amountRub,19));
 test("MSD city off peak with complete official evidence really free",()=>{const s=structuredClone(msd);s.sectionTimes[0].entryLocal="2026-10-09T12:00";s.sectionTimes[0].exitLocal="2026-10-09T12:10";assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,0)});
 test("MSD city boundary entry in peak and exit outside is free",()=>{const s=structuredClone(msd);s.sectionTimes[0].entryLocal="2026-10-09T10:55";s.sectionTimes[0].exitLocal="2026-10-09T11:05";assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,0)});
@@ -45,3 +45,7 @@ test("Tolyatti 17–60 km single operator fare",()=>assert.equal(q(registry,req(
 test("Tolyatti 60–97 km single operator fare",()=>assert.equal(q(registry,req("tolyatti",["tolyatti-zelenovka"])).amountRub,140));
 test("Tolyatti 17–97 km full official corridor fare 320 (not 210+140)",()=>assert.equal(q(registry,req("tolyatti",["troitskoe-zelenovka"])).amountRub,320));
 test("Tolyatti cannot add exclusive operator tariff zones",()=>assert.equal(q(registry,req("tolyatti",["troitskoe-tolyatti","tolyatti-zelenovka"])).amountRub,null));
+
+test("MSD peak hours are free on verified holiday or weekend",()=>{const s=structuredClone(msd);s.dayClass="verified_weekend_or_holiday";assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,0)});
+test("MSD date mismatch with selected trip is unknown",()=>{const s=structuredClone(msd);s.sectionTimes[0].entryLocal="2026-10-08T08:00";assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,null)});
+test("MSD reversed entry/exit time returns unknown",()=>{const s=structuredClone(msd);s.sectionTimes[0].entryLocal="2026-10-09T09:00";s.sectionTimes[0].exitLocal="2026-10-09T08:30";assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,null)});
