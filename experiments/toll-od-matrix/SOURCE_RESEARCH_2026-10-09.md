@@ -45,3 +45,16 @@ This is a **real provenance conflict**, not a reason to decide one value by intu
 **Open needs:** operator 2026 M4 detailed tariff PDF/document with effective date and exact rate rows; independent same-route PVP sequence; verified timing. No full tariff cell imported.
 
 **Later retrieval attempt, 2026-10-09:** the page https://avtodor-tr.ru/road/tariffs/ again returned HTTP 403 through an independent HTML link-extraction connector. A discoverable historical detailed M-4 PDF is dated **13 February 2025, order #59**; it must not be treated as current October 2026 tariff. Therefore no verified 2026 PDF rate rows or complete corridor signatures were imported.
+
+## 2026-10-09 — discovered live operator PDF URL (body inaccessible)
+
+**Live operator page visited through browser interaction:** https://avtodor-tr.ru/road/tariffs/
+
+In the section «Тарифы М-4 „Дон“» the button «Подробные тарифы на проезд по М-4 „Дон“» points to the PDF:
+
+https://avtodor-tr.ru/upload/iblock/a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf
+
+- Browser: exact PDF URL extracted after clicking the M-4 detail link; reader displayed a technical/system page, **not actual PDF text**.
+- Independent `web.open` request: **HTTP 403**; container download failed. No bytes, text, scanned pages or PDF metadata available for verification. No PDF screenshots could be analyzed.
+- Community Roads.ru discussion (March 2026) repeats this exact PDF URL and labels it «тариф с 02.03.2026», but the document's *own* effective date has not been inspected, and there is no guarantee it remained unchanged since March.
+- **No tariff table imported**, and nothing in this document establishes a real route's exact complete PVP sequence. See `inventory/m4-operator-source-discovery.json` for machine-readable acquisition status.

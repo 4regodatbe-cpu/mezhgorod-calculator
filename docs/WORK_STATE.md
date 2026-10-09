@@ -1,3 +1,14 @@
+## Current handoff — 2026-10-09 / native Node smoke, 420 PVP hypothesis keys, exact operator PDF discovered
+
+- **Current experiment:** `experiment/toll-od-matrix-2026-10-08`, still completely isolated from V2/`app`/`lib`/`data`/`main`/PR #12/Production. Full append-only details: `experiments/toll-od-matrix/WORK_LOG.md`, `DECISIONS.md`, `NEXT_STEPS.md`, transfer start `START_HERE.md`.
+- **First actual Node.js evidence**: exact SHA-verified copies of 3 GitHub experimental modules + their tests and M4 catalog; `node v22.16.0 --test` ran **38/38 PASS** (11 PVP inventory, 14 calendar, 13 mixed policy). SHA table and TAP summary in `TEST_EVIDENCE_2026-10-09.md`. All other `.test.mjs` remain *not run in native Node*, despite earlier 145/145 V8-shim checks. Full suite/CI/build unavailable.
+- **New corridor enumerator** `m4-pvp-corridor-inventory.mjs`: 20 known PVP km points, 420 **hypothetical** monotonic contiguous directed signatures (210 per direction), all `priceRub:null`, no actual route or official tariff confirmation. Risk flags for directional 339/355, 545 double tariff rows, both mixed zones. `inventory/m4-corridor-signature-summary.json`.
+- **Official detailed M4 PDF URL found by browsing operator page**: https://avtodor-tr.ru/upload/iblock/a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf . Document body blocked/HTTP403 and **not verified**; March 2 2026 date only additionally suggested by Roads.ru, not independently established from PDF. `inventory/m4-operator-source-discovery.json`, `SOURCE_RESEARCH_2026-10-09.md`.
+- **Current approved data:** `matrix/m4-pvp-corridors.json` remains `priceCells=[]`; `matrix/m4-verified-source-intake.json` remains `records=[]`. No production toll data changed or price fabricated.
+- **Next one action:** obtain and inspect actual official PDF contents or authoritative equivalent, verify with same-route exact PVP fingerprint; then complete remaining native Node suite. Reconcile 60/120-min official rule conflict before live release.
+
+---
+
 ## Current handoff — 2026-10-09 / toll PVP experiment temporal safety
 
 - **Mandatory repository-first documentation** continues: `AGENTS.md` requires full append-only history `experiments/toll-od-matrix/WORK_LOG.md`, latest decisions `DECISIONS.md`, backlog `NEXT_STEPS.md` and `START_HERE.md`; updated together with each substantial block.
