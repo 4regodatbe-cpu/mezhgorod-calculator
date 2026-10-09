@@ -3,6 +3,8 @@ import type { TollValidation } from "@/lib/toll-validator";
 import { priceA289Route } from "@/lib/toll-engine/a289-engine";
 import { calculateM4Core } from "@/lib/toll-engine/m4-core";
 import { fullM4RouteTariff } from "@/lib/toll-engine/m4-full-route-tariff";
+import { inspectM4PvpPreview } from "@/experiments/toll-od-matrix/m4-pvp-preview.mjs";
+import m4PvpMatrix from "@/experiments/toll-od-matrix/matrix/m4-pvp-corridors.json";
 
 export type ProductionM4Tolls = {
   amount: number;
@@ -19,6 +21,11 @@ export type ProductionM4Result = {
   tolls: ProductionM4Tolls | null;
   validation: TollValidation | null;
   reason: string;
+  m4PvpPreview?: {
+    status: string; reason: string | null; priceRub: number | null;
+    verifiedPriceCells: number; candidateCount: number; confirmedPvps: string[];
+    direction?: string; diagnosticOnly: boolean;
+  };
 };
 
 function isSupportedLegacyComponent(name: string) {
@@ -58,9 +65,10 @@ export async function calculateProductionM4(
 
   const core = await calculateM4Core(route, departureAt, routeDurationSeconds);
   const { validation, pricing, tollValidation: responseValidation, exact } = core;
+  const m4PvpPreview = inspectM4PvpPreview(m4PvpMatrix, validation);
 
   if (validation.candidateCount === 0) {
-    return { candidate: false, exact: false, tolls: null, validation: null, reason: "Маршрут не пересекает зоны известных ПВП М-4" };
+    return { candidate: false, exact: false, tolls: null, validation: null, reason: "Маршрут не пересекает зоны известных ПВП М-4", m4PvpPreview };
   }
 
   if (!exact || pricing.amount === null) {
@@ -70,6 +78,7 @@ export async function calculateProductionM4(
       tolls: partialTolls(core),
       validation: responseValidation,
       reason: pricing.message,
+      m4PvpPreview,
     };
   }
 
@@ -80,6 +89,7 @@ export async function calculateProductionM4(
       tolls: null,
       validation: responseValidation,
       reason: "Legacy-геометрия обнаружила платную систему вне M-4/A-289; точный составной итог заблокирован.",
+      m4PvpPreview,
     };
   }
 
@@ -92,6 +102,7 @@ export async function calculateProductionM4(
   return {
     candidate: true,
     exact: true,
+    m4PvpPreview,
     tolls: {
       amount,
       weekdayAmount,

@@ -127,5 +127,5 @@ export async function calculateLegTolls({
   const tolls = confirmedFree && !routeCompositionBlocked
     ? routingDifferenceTollFallback(selectedFastRoute, confirmedFree.route, pricedTolls)
     : pricedTolls;
-  return { tolls, fastValidation };
+  return { tolls, fastValidation, m4PvpPreview: productionM4.m4PvpPreview };
 }

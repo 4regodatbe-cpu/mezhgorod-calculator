@@ -23,7 +23,17 @@ export type PricingView = {
   requiresSplit: boolean;
   multiplier: number;
 };
-export type Trip = { meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };
+export type M4PvpPreview = {
+  status: string;
+  reason: string | null;
+  priceRub: number | null;
+  verifiedPriceCells: number;
+  candidateCount: number;
+  confirmedPvps: string[];
+  direction?: string;
+  diagnosticOnly: boolean;
+};
+export type Trip = { m4PvpPreview?: M4PvpPreview; meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };
 export type TollView = { amount: number | null; weekdayAmount: number | null; weekendAmount: number | null; period: string; segments: string[]; confidence: "matched" | "none"; pricingStatus: "priced" | "free" | "unknown" };
 export type Leg = {
   from: string;

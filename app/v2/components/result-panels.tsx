@@ -81,6 +81,21 @@ export function ResultPanels({
           {!(standardLeg.free ?? standardLeg.freeCandidate) && <RouteUnavailable message={standardLeg.freeError} />}
         </> : <RouteCard title="Оптимальный маршрут" accent="blue" trip={standardOptimal} toll={confirmedFreeToll} tollPeriod={tollPeriod} onTollPeriodChange={onTollPeriodChange} onCopy={() => copyStandard("standard-optimal", "Оптимальный маршрут", standardLeg, standardOptimal, confirmedFreeToll, undefined, tollPeriod)} copied={copiedKey === "standard-optimal"} />}
       </section>}
+      {result && standardLeg?.fast.m4PvpPreview && standardLeg.fast.m4PvpPreview.candidateCount > 0 && (
+        <details className="mt-3 rounded-2xl border border-brand-border bg-brand-card p-3 text-sm text-brand-text">
+          <summary className="cursor-pointer font-semibold">М-4 · экспериментальная проверка пунктов оплаты</summary>
+          <div className="mt-3 space-y-2 text-xs leading-relaxed text-brand-muted">
+            <p>Найдено пунктов для проверки: {standardLeg.fast.m4PvpPreview.candidateCount}.
+            Подтверждено строгим сопоставлением: {standardLeg.fast.m4PvpPreview.confirmedPvps.length}.</p>
+            <p>Последовательность ПВП: {standardLeg.fast.m4PvpPreview.confirmedPvps.join(" → ") || "не подтверждена"}.</p>
+            <p>Подтверждённых полных тарифов в новой базе: {standardLeg.fast.m4PvpPreview.verifiedPriceCells}.</p>
+            <p>Состояние: {standardLeg.fast.m4PvpPreview.priceRub === null
+              ? "точная стоимость по новой матрице пока не подтверждена; основной расчёт использует прежний алгоритм."
+              : "проверенный тариф по новой матрице найден (диагностика)."}</p>
+            <p className="break-all opacity-70">Код проверки: {standardLeg.fast.m4PvpPreview.reason ?? "priced"}</p>
+          </div>
+        </details>
+      )}
     </>
   );
 }
