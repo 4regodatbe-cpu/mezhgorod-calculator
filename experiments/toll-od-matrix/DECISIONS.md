@@ -50,3 +50,8 @@ Updated: 2026-10-09. New decisions MUST be appended with a date; preserve supers
 - Because M4 directed PVP corridor priceCells = 0 and mainline continuity proof remains unavailable, **diagnostic-only integration** is the only currently defensible cutover stage. Retain legacy M4/other families' existing monetary behavior and expose verified PVP sequence and fail-closed reasons for testing.
 - Preview build must run all standalone experiment Node tests before Next.js compilation. The first failure must block the preview. Any future fare cutover requires official verified complete-corridor total with matching geometry, date and sequence.
 - Never store a temporary Vercel preview share-token in public repository documentation.
+
+## 2026-10-09 — client DOM stability on Russian-language V2 Preview (engineering fix)
+- React browser error `insertBefore` observed repeatedly after route calculation; exact exception recovered through test-only V2 error boundary.
+- To mitigate potential DOM rewriting from browser auto-translation and avoid React text-node reconciliation, the V2 Preview opts out of translation (`translate="no"`, `notranslate`, route metadata `google=notranslate`) and keeps button/loading labels mounted as stable sibling spans. Browser E2E reverse succeeded on latest Preview.
+- Browser translator as direct cause is a hypothesis, **not proven**; no credentials, persistent tracking, third-party scripts, or Production changes introduced. Preserve test-only debug transparency until user acceptance.

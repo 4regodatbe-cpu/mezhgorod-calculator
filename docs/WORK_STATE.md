@@ -1,3 +1,11 @@
+## 2026-10-09 latest handoff: successful Vercel Preview both directions / 172 native tests
+
+- Preview commit **`18005ba3cd22f16f8ceb028fccc36fb2c70b5e2e`** is READY at `https://mezhgorod-calculator-y77o4ba5m-4regodatbe-5310.vercel.app/v2` (auth-gated). **172/172 native Node tests PASS** plus Next/TS build. Browser E2E `Москва→Воронеж` on earlier preview passed 515.9km/3060₽ legacy toll/7 confirmed PVP; `Воронеж→Москва` on current preview passes 519.6km/2590₽ legacy toll/6 confirmed PVP. No real source fare reconciliation.
+- Critical browser bug history: reverse route initially failed with React `insertBefore` DOM exception. First error boundary + translation opt-out insufficient; adding `app/v2/layout.tsx` Google no-translate metadata and stable mounted button/loading text enabled successful repeat E2E. This suggests but does **not prove** automatic translation as cause. See full append-only `experiments/toll-od-matrix/WORK_LOG.md` block 10 for exact commits, failed runs, evidence, and source links.
+- Financial integrity: experimental M-4 PVP matrix still **0** official verified complete route prices. Preview integrates PVP strict evidence diagnostics into actual route responses and UI; **old M4 engine continues actual fare pricing**. Not yet a real monetary cutover. Main, UI PR #12 and Production untouched. Next: user-device regression, independently confirmed official exact PVP sequence/total/timing/continuity, then feature-gated price cutover.
+
+---
+
 ## Current work state — 2026-10-09 / Vercel Preview integrated, full Node gate PASS
 
 - **User requested V2 integration and a Vercel Preview for testing**. Deployed selected branch experiment commit `2b644617c0c93a3fc823a0aefb13f4d7c1181074` via existing project `prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie`; Preview `https://mezhgorod-calculator-p1k0ywj71-4regodatbe-5310.vercel.app/v2`, deployment `dpl_4xj5wm9mLPY3QkYtkd4FAyVeZAxx` READY, GET /v2 200.

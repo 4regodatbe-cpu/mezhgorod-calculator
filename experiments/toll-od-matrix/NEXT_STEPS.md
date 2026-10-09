@@ -27,9 +27,13 @@ Old M-11 and ramp-based experiments remain untouched. No M4 full-price tariff en
 
 - [x] **P1 — wire safe PVP-first diagnostics into V2 API/UI (DONE, not fare cutover)**: selected live route M-4 strict map-matching proof goes to `m4-pvp-preview.mjs` and user-visible result details. Matrix is still empty; legacy M4 money kept intact.
 - [x] **P1 — Vercel Preview deployment (DONE)**: deployment `dpl_4xj5wm9mLPY3QkYtkd4FAyVeZAxx` at `https://mezhgorod-calculator-p1k0ywj71-4regodatbe-5310.vercel.app/v2` READY, GET /v2 HTTP 200. Guest access share URLs expire and must be reissued, never commit tokens.
-- [ ] **P0 — verify real-world end-to-end M4 route diagnostics (NOT DONE)**: submit at least 2 representative live routes in both directions, inspect returned M4 `confirmedPvps`, map-matching and diagnostic error reason, compare against identical Valhalla route and actual operator receipts. No invented pricing.
+- [x] **P0 — browser E2E both directions (DONE ON PREVIEW; detailed in WORK_LOG block 10)**: Москва→Воронеж: 7 exact PVPs, toll 3060 ₽ legacy; Воронеж→Москва: 6 exact PVPs, toll 2590 ₽ legacy. **Not** cross-checked with independent operator receipts or Valhalla full continuous geometry. Browser DOM error mitigated and re-tested, but user device tests outstanding.
 - [ ] **P1 — independently prove uninterrupted M4 corridor (NOT DONE)**: current audit deliberately does not invent full `continuityEvidence`. Design strict full-road graph/OSM proof and attach only when obtained from selected geometry.
 - [ ] **P1 — first officially verified whole-corridor price cell + runtime fare cutover (BLOCKED BY SOURCE/GEOMETRY)**: do not replace legacy amount until complete exact PVP fingerprint + current price + date/mixed rules; then add feature gate and run side-by-side same-route regressions.
+
+- [x] **P0 — V2 browser DOM recovery (DONE FOR TESTED CHROMIUM REVERSE ROUTE)**: `app/v2/layout.tsx` google notranslate, `page.tsx` translation disabled, stable loading messages and button DOM; error boundary. Native Node 172/172 pass. Latest browser E2E reverse succeeded after multiple failed intermediate deployments.
+- [ ] **P0 — confirm across user mobile/browser settings**: check Russian language/auto-translation in Chrome and Android WebView on both directions plus double tariffs; a single browser E2E cannot establish all clients.
+- [ ] **P1 — verify direct official PVP prices/true paid-edge continuity and input timings** before replacing the legacy monetary M4 engine.
 
 ## Development checkpoints
 - Create a dated entry in `WORK_LOG.md` for the completed implementation, failing attempts and tests.

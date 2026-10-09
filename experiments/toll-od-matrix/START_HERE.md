@@ -1,3 +1,10 @@
+## Published V2 Preview after browser DOM recovery — 2026-10-09
+
+- **Latest proven-code deployment:** `dpl_72t2hXBtd7ducjCX5hJpatSSQMzH`, commit `18005ba3cd22f16f8ceb028fccc36fb2c70b5e2e`, URL `https://mezhgorod-calculator-y77o4ba5m-4regodatbe-5310.vercel.app/v2` (SSO-protected; ask for new temporary Vercel share link as needed).
+- Vercel full native suite **172/172 PASS** and TypeScript/Next build successful. Browser E2E **Москва→Воронеж** prior deployment succeeded; **Воронеж→Москва** on latest deployment succeeded **519.6km/6h45, legacy toll 2590 RUB, nine PVP candidates and six exact confirmed gates**, detailed `WORK_LOG.md` block 10.
+- Intermediate failures were important: first 165-pass preview lacked route-pricing TS type; fixed. Reverse route then suffered repeated React `insertBefore` DOM error, mitigated only after no-translate metadata + stable loading markup. Hypothesis about translation is NOT proven, but post-fix actual browser E2E passed.
+- Still **0 verified complete M4 PVP tariff cells**. Real toll fare cutover **not done**; currently new route-matched diagnostic shadow and legacy fare money. See `NEXT_STEPS.md` for required operator/geometry controls.
+
 ## Preview integration published — 2026-10-09
 
 The experimental M-4 PVP algorithm is now **attached to the actual V2 calculation pipeline as a diagnostic shadow module**, not yet a replacement of the fare engine. The user can inspect the strict PVP candidates in a collapsible section beneath the route cards.
