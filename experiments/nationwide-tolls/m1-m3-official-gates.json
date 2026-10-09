@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-09",
-  "role": "physical_operator_gate_inventory_not_verified_osm_nodes",
+  "role": "operator_four_gate_inventory_with_three_independently_named_m3_osm_nodes_no_live_fare_cutover",
   "operatorTariffs": "https://avtodor-tr.ru/road/tariffs/",
   "sources": [
     "https://avtodor-tr.ru/road/m-1/",
     "https://avtodor-tr.ru/road/m-3/",
     "https://avtodor-tr.ru/transponder/cpio/"
   ],
-  "disclaimer": "Operator PVP km/name is source-verified; zero exact OSM toll-booth lane-node IDs collected. Physical passage/cost cannot be approved from approximate kilometrage or an OSM way name.",
+  "disclaimer": "M3 three selected-route Valhalla billable crossings match independently fetched OSM API nodes bearing exact plaza names and barrier=toll_booth. Other travel direction's lanes and route-wide complete tariff version still unverified, so no live money.",
   "gates": [
     {
       "id": "m1-pvp-46",
@@ -27,10 +27,25 @@
       "km": 86,
       "officialSection": "65–86",
       "fareRowId": "m3-65-86",
-      "verifiedOsmNodeIds": [],
-      "coordinateAnchor": null,
-      "locationConfidence": "operator_km_only",
-      "versionVerifiedForPricing": false
+      "verifiedOsmNodeIds": [
+        "13294157951"
+      ],
+      "coordinateAnchor": {
+        "lat": 55.2637577,
+        "lon": 36.6911818
+      },
+      "locationConfidence": "osm_named_exact_operator",
+      "versionVerifiedForPricing": false,
+      "osmEvidence": {
+        "source": "https://www.openstreetmap.org/api/0.6/node/13294157951",
+        "tagBarrier": "toll_booth",
+        "osmName": "ПВП 86км",
+        "osmVersion": 2,
+        "lastModified": "2025-11-17",
+        "independentOperatorKmDocumented": true,
+        "observedAt": "2026-10-09",
+        "proofScope": "physical_node_identity_not_full_fare_or_all_lane_coverage"
+      }
     },
     {
       "id": "m3-pvp-136",
@@ -38,10 +53,25 @@
       "km": 136,
       "officialSection": "112–150",
       "fareRowId": "m3-112-150",
-      "verifiedOsmNodeIds": [],
-      "coordinateAnchor": null,
-      "locationConfidence": "operator_km_only",
-      "versionVerifiedForPricing": false
+      "verifiedOsmNodeIds": [
+        "4780909558"
+      ],
+      "coordinateAnchor": {
+        "lat": 54.8672189,
+        "lon": 36.3479223
+      },
+      "locationConfidence": "osm_named_exact_operator",
+      "versionVerifiedForPricing": false,
+      "osmEvidence": {
+        "source": "https://www.openstreetmap.org/api/0.6/node/4780909558",
+        "tagBarrier": "toll_booth",
+        "osmName": "ПВП 136 км",
+        "osmVersion": 4,
+        "lastModified": "2022-05-31",
+        "independentOperatorKmDocumented": true,
+        "observedAt": "2026-10-09",
+        "proofScope": "physical_node_identity_not_full_fare_or_all_lane_coverage"
+      }
     },
     {
       "id": "m3-pvp-168",
@@ -49,10 +79,25 @@
       "km": 168,
       "officialSection": "150–194",
       "fareRowId": "m3-150-194",
-      "verifiedOsmNodeIds": [],
-      "coordinateAnchor": null,
-      "locationConfidence": "operator_km_only",
-      "versionVerifiedForPricing": false
+      "verifiedOsmNodeIds": [
+        "4780909555"
+      ],
+      "coordinateAnchor": {
+        "lat": 54.6178104,
+        "lon": 36.1150443
+      },
+      "locationConfidence": "osm_named_exact_operator",
+      "versionVerifiedForPricing": false,
+      "osmEvidence": {
+        "source": "https://www.openstreetmap.org/api/0.6/node/4780909555",
+        "tagBarrier": "toll_booth",
+        "osmName": "ПВП 168 км",
+        "osmVersion": 5,
+        "lastModified": "2022-06-02",
+        "independentOperatorKmDocumented": true,
+        "observedAt": "2026-10-09",
+        "proofScope": "physical_node_identity_not_full_fare_or_all_lane_coverage"
+      }
     }
   ]
 }

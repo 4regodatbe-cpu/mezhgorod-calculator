@@ -9,7 +9,7 @@ function trace(booths=[],overrides={}) { return {source:"Valhalla map matching",
  tollBooths:booths,...overrides};}
 const booth=(osmNodeId,roadNames,edgeToll=true)=>({osmNodeId,roadNames,edgeToll});
 test("physical operator inventory contains exact four M1/M3 kilometre gates",()=>assert.deepEqual(original.gates.map(g=>g.id),["m1-pvp-46","m3-pvp-86","m3-pvp-136","m3-pvp-168"]));
-test("no unverified OSM ID published as known",()=>assert.equal(original.gates.every(g=>g.verifiedOsmNodeIds.length===0),true));
+test("M1 physical PVP still lacks independently verified OSM nodes",()=>assert.equal(original.gates.find(g=>g.roadId==="m1").verifiedOsmNodeIds.length,0));
 test("inventory validator accepts complete four gates",()=>assert.equal(validateM1M3Inventory(original),true));
 test("missing inventory gate is rejected",()=>{const x=clone(original);x.gates.pop();assert.throws(()=>validateM1M3Inventory(x))});
 test("duplicate OSM node across plazas is rejected",()=>{const x=clone(original);x.gates[0].verifiedOsmNodeIds=["100"];x.gates[1].verifiedOsmNodeIds=["100"];assert.throws(()=>validateM1M3Inventory(x),/duplicate_osm_node/)});
@@ -28,3 +28,27 @@ test("wrong non-M1 road name can't claim pinned M3 if still no road continuity f
 test("unknown M1 and M3 booths are both surfaced without false pricing",()=>{const y=audit(original,trace([booth("12",["М-1"]),booth("34",["М-3"])]),"r");assert.deepEqual(y.candidateRoads,["m1","m3"]);assert.equal(y.unmappedPaidNodes.length,2)});
 test("duplicate same physical gate is rejected in pinned test fixture",()=>{const x=clone(original);x.gates[0].verifiedOsmNodeIds=["123","124"];const y=audit(x,trace([booth("123",["М-1"]),booth("124",["М-1"])]),"r");assert.equal(y.status,"unknown");assert.equal(y.reason,"duplicate_same_gate_in_selected_route")});
 test("a complete trace with no M1/M3 gate is not certified free",()=>{const y=audit(original,trace(),"r");assert.equal(y.strictPriceAllowed,false);assert.equal(y.reason,"no_verifiable_m1_m3_booths")});
+
+test("live M3 OSM IDs independently resolved to named 86,136,168km operator gates",()=>{
+ assert.deepEqual(original.gates.filter(g=>g.roadId==="m3").map(g=>g.verifiedOsmNodeIds[0]),["13294157951","4780909558","4780909555"]);
+ assert.equal(original.gates.filter(g=>g.roadId==="m3").every(g=>g.osmEvidence?.tagBarrier==="toll_booth"&&g.locationConfidence==="osm_named_exact_operator"),true);
+});
+test("same-route exactly mapped live M3 paid crossings produce three physical gate identities, but not an approved fare",()=>{
+ const b=[booth("13294157951",["М-3 Украина"]),booth("4780909558",["М-3 Украина"]),booth("4780909555",["М-3 Украина"])];
+ const y=audit(original,trace(b),"real-route-moscow-kaluga");
+ assert.equal(y.status,"physical_gate_nodes_matched");
+ assert.deepEqual(y.verifiedGates.map(g=>g.id),["m3-pvp-86","m3-pvp-136","m3-pvp-168"]);
+ assert.equal(y.unmappedPaidNodes.length,0);
+ assert.equal(y.strictPriceAllowed,false);
+});
+test("reverse direction synthetic matching still cannot price without other lane proof",()=>{
+ const y=audit(original,trace([booth("4780909555",["М-3"]),booth("4780909558",["М-3"]),booth("13294157951",["М-3"])]),"reverse-route");
+ assert.deepEqual(y.verifiedGates.map(g=>g.km),[168,136,86]);
+ assert.equal(y.strictPriceAllowed,false);
+});
+test("future editorial placeholder IDs cannot automatically become verified",()=>{
+ const copy=clone(original);copy.gates.find(g=>g.roadId==="m3"&&g.km===136).verifiedOsmNodeIds=[];
+ const y=audit(copy,trace([booth("4780909558",["М-3 Украина"])]),"route");
+ assert.equal(y.verifiedGates.length,0);
+ assert.equal(y.unmappedPaidNodes.length,1);
+});
