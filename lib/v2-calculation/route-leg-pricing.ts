@@ -1,7 +1,7 @@
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
 import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
-import { calculateProductionM4 } from "@/lib/toll-engine/m4-production";
+import { calculateProductionM4, type ProductionM4Result } from "@/lib/toll-engine/m4-production";
 import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
 import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
@@ -31,7 +31,7 @@ export async function calculateLegTolls({
   valhallaEvidence,
   confirmedFreeRoute,
   diagnosticFastValidation,
-}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation }> {
+}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"] }> {
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
