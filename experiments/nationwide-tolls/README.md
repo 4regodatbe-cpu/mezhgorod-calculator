@@ -1,3 +1,7 @@
+## Latest nationwide result: 2026-10-09
+
+Vercel **READY** at commit `6917191f`, `https://mezhgorod-calculator-pjfvyy2kq-4regodatbe-5310.vercel.app/v2`: **235/235 native Node tests PASS**, Next/TypeScript PASS, and real Moscow→Voronezh browser calculation shows national M4 candidate and **no new money charged**. Review `WORK_LOG.md` phase B and `START_HERE.md` for the exact distinction between 22 inventory networks / 8 partial operator-fare groups and 0 nationwide new live prices.
+
 # Toll roads of Russia — implementation handoff
 **Branch:** `experiment/toll-od-matrix-2026-10-08`. **Requested by user:** extend the calculator to all paid highways and regional toll roads of Russia, not only M-4. Full work journal is append-only.
 

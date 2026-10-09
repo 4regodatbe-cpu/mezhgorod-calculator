@@ -1,3 +1,7 @@
+## Scope update — 2026-10-09: nationwide toll roads expansion now active
+
+The user extended work beyond M4 to **other Russian paid highways and regional toll roads**. Read **`experiments/nationwide-tolls/START_HERE.md`** first for all-Russia scope, 22-system registry and the national tested Preview at `6917191f`. The former instructions below saying “only work in experiments/toll-od-matrix” describe **historical M4-only experimental scope**, superseded by the nationwide work authorization. Preserve M4 strict-price integrity: **0 complete verified PVP fare rows**, do not claim M4 monetary cutover. National fares are **shadow/offline only**. Main and Production untouched.
+
 ## Published V2 Preview after browser DOM recovery — 2026-10-09
 
 - **Latest proven-code deployment:** `dpl_72t2hXBtd7ducjCX5hJpatSSQMzH`, commit `18005ba3cd22f16f8ceb028fccc36fb2c70b5e2e`, URL `https://mezhgorod-calculator-y77o4ba5m-4regodatbe-5310.vercel.app/v2` (SSO-protected; ask for new temporary Vercel share link as needed).

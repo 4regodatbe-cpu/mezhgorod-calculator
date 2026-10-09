@@ -1,3 +1,15 @@
+## CURRENT 2026-10-09 — National Russian toll-road expansion: registry + strict shadow pricing, READY Preview
+
+- **User scope:** extend "из А в Б" calculator beyond M4 to **all other Russian toll roads**. Started substantive national expansion in branch `experiment/toll-od-matrix-2026-10-08`; the Git repo is authoritative for any future chat.
+- **DONE — 22-group scoped national inventory** in `experiments/nationwide-tolls/national-registry.json`, covering federal and regional/urban/international road systems and links to operator sites. It is *not an exhaustive proven national toll-station count*. **8 groups** include limited publicly published category-I fare rows in **offline** `national-price.mjs`; `quoteNationwideTrip` returns unknown on any missing verified paid facility. This is **not** 8 production enabled networks.
+- **DONE — V2 Preview API/UI and route evidence diagnostics:** `lib/v2-calculation/route-leg-pricing.ts`, `route-leg.ts`, `app/v2/components/result-panels.tsx`, `/v2/toll-roads`, linked from `/v2`. It cross-checks actual strict M4 event signals because old approximate segment labels sometimes report zero M4 candidates. **Customer money remains entirely legacy; new national numbers not injected**.
+- **VERIFIED — last code commit `6917191f6be70561872a971cd904c9f665e4dda7`, Vercel deployment `dpl_DEWDeg7fWdkM8Lcr8fK88eycsDb4` READY**: https://mezhgorod-calculator-pjfvyy2kq-4regodatbe-5310.vercel.app/v2 ; **235/235 native Node tests PASS; Next build, TypeScript, 14/14 static pages PASS**. `/v2/toll-roads` HTTP 200.
+- **VERIFIED browser E2E** `4227d920-4a18-4992-940b-d520ca07cbcd`: Moscow→Voronezh route 515.9 km, 6h45, M4 legacy toll 3,060 RUB, strict M4 confirmed 7 PVPs, national diagnosis correctly says "M-4 Don" among candidate systems and 22/8 catalog/reference statistics. **Zero new toll money**.
+- **OPEN/BLOCKED — automatic all-Russia correct monetary fares**: current national engine has **no complete real paid-edge/entry-exit verification adapter** across those roads and no complete current operator tariff matrix for remaining networks. M4 new PVP full-price cells still **0**. Do NOT claim every road is calculated. Next engineering priority: actual same-route toll passages, current official source tariffs with date/time/operator product, paired E2E receipts for M1/M3 and regional roads, gated per-road cutover. No `main`, Production or PR #12 edits.
+- **Handoff:** `experiments/nationwide-tolls/START_HERE.md` → `README.md`, `WORK_LOG.md`, `SOURCE_AUDIT_2026-10-09.md`, `DECISIONS.md`, `NEXT_STEPS.md`. Full past M4 history in `experiments/toll-od-matrix/`.
+
+---
+
 ## 2026-10-09 latest handoff: successful Vercel Preview both directions / 172 native tests
 
 - Preview commit **`18005ba3cd22f16f8ceb028fccc36fb2c70b5e2e`** is READY at `https://mezhgorod-calculator-y77o4ba5m-4regodatbe-5310.vercel.app/v2` (auth-gated). **172/172 native Node tests PASS** plus Next/TS build. Browser E2E `Москва→Воронеж` on earlier preview passed 515.9km/3060₽ legacy toll/7 confirmed PVP; `Воронеж→Москва` on current preview passes 519.6km/2590₽ legacy toll/6 confirmed PVP. No real source fare reconciliation.
