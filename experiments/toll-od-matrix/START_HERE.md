@@ -5,7 +5,7 @@
 ## Latest 2026-10-09 checkpoint: exact source URL + native tests
 
 - `m4-pvp-corridor-inventory.mjs` enumerates **420 hypothesis-only signatures** (20 PVP positions × 2 directions, contiguous windows only); all price fields null. 11 native Node tests passed, hashes identical to GitHub.
-- `m4-fare-calendar-2026.mjs` / `m4-mixed-time-policy.mjs`: further **27 native Node tests passed**, hashes identical. **Total native 38/38 PASS** on 3 exact module/test pairs, see `TEST_EVIDENCE_2026-10-09.md`. Prior V8 145/145 checks are separate, not Node CI.
+- `m4-fare-calendar-2026.mjs` / `m4-mixed-time-policy.mjs`: further **27 native Node tests passed**, hashes identical. **Total native 54/54 PASS** on 4 exact module/test pairs including M11 OD engine, see `TEST_EVIDENCE_2026-10-09.md`. Prior V8 145/145 checks are separate, not Node CI.
 - Operator PDF link found: https://avtodor-tr.ru/upload/iblock/a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf . Browser sees the link on official `/road/tariffs/` page; PDF reader cannot access body (HTTP403). Do not infer fares/effective date; manifest `inventory/m4-operator-source-discovery.json`.
 - No approved price cells, no real geometry, full native test suite/CI/build still pending.
 

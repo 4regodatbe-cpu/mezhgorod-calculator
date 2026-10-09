@@ -1,3 +1,11 @@
+## Current handoff — 2026-10-09 / 54 native Node tests passed
+
+- Expanded exact-hash verified native Node suite to four experimental test files: `engine.test.mjs` (16), `m4-pvp-corridor-inventory.test.mjs` (11), `m4-fare-calendar-2026.test.mjs` (14), `m4-mixed-time-policy.test.mjs` (13). **54/54 pass, 0 fail, Node v22.16.0**. Exact SHA and commands in `experiments/toll-od-matrix/TEST_EVIDENCE_2026-10-09.md`.
+- Remaining native `.test.mjs` are not run; the former 145/145 V8 test shim does not replace real Node execution. M4 approved full fare cells stay **0**. Official M4 PDF URL discovered, body HTTP 403.
+- Continue only in sandbox branch; append logs. See prior handoff below.
+
+---
+
 ## Current handoff — 2026-10-09 / native Node smoke, 420 PVP hypothesis keys, exact operator PDF discovered
 
 - **Current experiment:** `experiment/toll-od-matrix-2026-10-08`, still completely isolated from V2/`app`/`lib`/`data`/`main`/PR #12/Production. Full append-only details: `experiments/toll-od-matrix/WORK_LOG.md`, `DECISIONS.md`, `NEXT_STEPS.md`, transfer start `START_HERE.md`.

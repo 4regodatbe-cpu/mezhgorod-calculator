@@ -145,3 +145,13 @@
 **Финансовый результат:** число подтверждённых готовых M4 PVP priceCells по-прежнему **0**, `matrix/m4-verified-source-intake.json` по-прежнему `records=[]`. Поисковые числа не записаны в платёжную матрицу.
 
 **Следующая самостоятельная работа:** получить PDF в читаемом виде или официальный подробный HTML тарифов М-4 с подписью/датой документа, извлечь по категории I, направлениям и периоду точные тарифные правила; затем создать первый реальный подписанный source record, связав его с подтверждённой реальной геометрией и all-PVP fingerprint. Запустить оставшиеся native Node suites и записать результат. Пока это не проверено — не подключать к V2.
+
+## 2026-10-09 — дополнительная проверка native Node: M-11 OD lookup
+
+- В тот же локальный контейнер побайтно перенесены из GitHub и сверены через `git hash-object` с GitHub SHA:
+  - `engine.mjs` — `ac1e9c09ead8c1b57334c8ae7d59d8db8119059e`
+  - `engine.test.mjs` — `44f805eff5e23b1b34d1f4ba784271ac0a725c1b`
+  - `matrix/m11.json` — `e2bcd3defd6e93b8ea63b163b76c967e9bd51df6`
+- Native Node v22.16.0 `node --test experiments/toll-od-matrix/engine.test.mjs`: **16 tests / 16 pass / 0 fail**.
+- Нативный объединённый прогон четырёх реальных тестовых файлов `engine.test.mjs`, `m4-pvp-corridor-inventory.test.mjs`, `m4-fare-calendar-2026.test.mjs`, `m4-mixed-time-policy.test.mjs`: **54 tests / 54 pass / 0 fail**.
+- Путь к протоколу: `TEST_EVIDENCE_2026-10-09.md`. Остальные `.test.mjs` по-прежнему не пройдены через native Node — не выдавать 54 за всю регрессию.

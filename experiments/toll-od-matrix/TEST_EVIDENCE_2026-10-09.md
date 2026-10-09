@@ -39,7 +39,7 @@ Observed final TAP summary:
 # todo 0
 ```
 
-Component counts: 11 inventory, 14 calendar, 13 mixed-zone tests. All used **exact** GitHub blob copies. These are offline deterministic tests, **not** a route/geography operator-price match or a Next.js release build.
+Original 3-suite component counts: 11 inventory, 14 calendar, 13 mixed-zone tests. All used **exact** GitHub blob copies. These are offline deterministic tests, **not** a route/geography operator-price match or a Next.js release build.
 
 ## What was NOT executed
 
@@ -48,3 +48,25 @@ The remaining `engine.test.mjs`, `od-geometry.test.mjs`, `od-sandbox-quote.test.
 ## Further audit
 
 Whenever a future agent gets working Git checkout, run the entire native suite on the **actual remote branch SHA**, log exact results/failing tests, then run prescribed app gates before any release. The isolated browser successfully found an official M-4 tariff PDF link but the document body could not be retrieved; no source-backed price rows have been approved.
+
+## Added native M-11 lookup tests — same verified Git blob files
+
+Additional exact source files transferred from the GitHub branch and independently SHA checked:
+
+| File | SHA |
+|---|---|
+| `engine.mjs` | `ac1e9c09ead8c1b57334c8ae7d59d8db8119059e` |
+| `engine.test.mjs` | `44f805eff5e23b1b34d1f4ba784271ac0a725c1b` |
+| `matrix/m11.json` | `e2bcd3defd6e93b8ea63b163b76c967e9bd51df6` |
+
+Actually executed `node --test experiments/toll-od-matrix/engine.test.mjs` → 16/16 pass. A subsequent combined **four-file** native run gave **54/54 pass**:
+
+```bash
+node --test \
+  experiments/toll-od-matrix/engine.test.mjs \
+  experiments/toll-od-matrix/m4-pvp-corridor-inventory.test.mjs \
+  experiments/toll-od-matrix/m4-fare-calendar-2026.test.mjs \
+  experiments/toll-od-matrix/m4-mixed-time-policy.test.mjs
+```
+
+TAP: `# tests 54`; `# pass 54`; `# fail 0`. No full Node suite or CI/Next build ran. These are all synthetic/offline tests, not verified real-route pricing.
