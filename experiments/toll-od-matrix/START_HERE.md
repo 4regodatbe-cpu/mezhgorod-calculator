@@ -1,3 +1,13 @@
+## Preview integration published — 2026-10-09
+
+The experimental M-4 PVP algorithm is now **attached to the actual V2 calculation pipeline as a diagnostic shadow module**, not yet a replacement of the fare engine. The user can inspect the strict PVP candidates in a collapsible section beneath the route cards.
+
+- Branch `experiment/toll-od-matrix-2026-10-08` integration commit `2b644617c0c93a3fc823a0aefb13f4d7c1181074`.
+- **Vercel Preview READY:** https://mezhgorod-calculator-p1k0ywj71-4regodatbe-5310.vercel.app/v2 (may require Vercel authentication; share URL issued separately, expiring).
+- **Build verified:** Vercel full native `node --test experiments/toll-od-matrix/*.test.mjs` → **165 PASS**, 0 fail; Next compilation and TypeScript passed; `/v2` HTTP 200.
+- Historical failure: first build stopped on TypeScript missing `m4PvpPreview` in route-pricing return type; fixed `2b64461` and verified with fresh READY deployment. See latest `WORK_LOG.md`.
+- **Not done:** real-road E2E and official PVP tariff data. `priceCells=[]`; do not represent experimental calculation as new accurate toll money. Old toll calculation still supplies customer prices.
+
 # START HERE — transfer the M-4 PVP research to another developer/chat
 
 **As of 2026-10-09** | Repo `4regodatbe-cpu/mezhgorod-calculator` | sandbox branch `experiment/toll-od-matrix-2026-10-08`.

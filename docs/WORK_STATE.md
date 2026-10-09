@@ -1,3 +1,13 @@
+## Current work state — 2026-10-09 / Vercel Preview integrated, full Node gate PASS
+
+- **User requested V2 integration and a Vercel Preview for testing**. Deployed selected branch experiment commit `2b644617c0c93a3fc823a0aefb13f4d7c1181074` via existing project `prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie`; Preview `https://mezhgorod-calculator-p1k0ywj71-4regodatbe-5310.vercel.app/v2`, deployment `dpl_4xj5wm9mLPY3QkYtkd4FAyVeZAxx` READY, GET /v2 200.
+- **Complete Node gate:** `node --test experiments/toll-od-matrix/*.test.mjs` = **165/165 PASS** in Vercel, Next 16.3.4 compile, TypeScript and 13/13 static generation PASS. Initial `367b47f` build failed TypeScript due to missing `m4PvpPreview` in return contract; fixed `2b64461`, rerun passes.
+- **Integration actual scope:** `m4-pvp-preview.mjs` strict validated PVP fingerprint shadow, `lib/toll-engine/m4-production.ts` integration, `route-leg-pricing.ts` and `route-leg.ts` JSON handoff, `app/v2/components/result-panels.tsx` collapsible diagnostic in UI. No extra external route requests.
+- **Important limitation:** M4 verified full price `priceCells=[]`, independent full M4 continuity proof unavailable, so NO new fare algorithm active. Existing old M4 fare engine is still used for money; experiment stays diagnostic-only and never generates fake tolls. Real routing E2E NOT performed; HTTP 200 only confirms served preview.
+- No main/PR #12/Production deployment or merge. **Next:** real M4 route E2E and official date/corridor proof before switching prices. Detailed complete log at `experiments/toll-od-matrix/WORK_LOG.md`.
+
+---
+
 ## Current handoff — 2026-10-09 / 54 native Node tests passed
 
 - Expanded exact-hash verified native Node suite to four experimental test files: `engine.test.mjs` (16), `m4-pvp-corridor-inventory.test.mjs` (11), `m4-fare-calendar-2026.test.mjs` (14), `m4-mixed-time-policy.test.mjs` (13). **54/54 pass, 0 fail, Node v22.16.0**. Exact SHA and commands in `experiments/toll-od-matrix/TEST_EVIDENCE_2026-10-09.md`.

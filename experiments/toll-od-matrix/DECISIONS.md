@@ -43,3 +43,10 @@ Updated: 2026-10-09. New decisions MUST be appended with a date; preserve supers
 - **The 633–672 km limit conflicts on current operator pages**: `info/legal-info/pravila-proezda/` says 60 min; `company/docs/proezd/` says 120 min. Do not arbitrarily select 60 or 120. Until dated policy is clarified, accept only unambiguous classifications (≤60 within, >120 exceeded), otherwise return unknown.
 - Do not trust a caller-supplied `mixedContext` if it differs from the state derived from two validated PVP timestamps on that same selected route.
 - These are sandbox-only safety restrictions, not proof that the new engine is calibrated for commercial use.
+
+## 2026-10-09 — authorized preview integration (USER-REQUESTED SCOPE)
+
+- User explicitly requested integration with the calculator and a Vercel link **for testing**. This authorizes editing app/lib source in an isolated preview branch, not silently releasing Production/main.
+- Because M4 directed PVP corridor priceCells = 0 and mainline continuity proof remains unavailable, **diagnostic-only integration** is the only currently defensible cutover stage. Retain legacy M4/other families' existing monetary behavior and expose verified PVP sequence and fail-closed reasons for testing.
+- Preview build must run all standalone experiment Node tests before Next.js compilation. The first failure must block the preview. Any future fare cutover requires official verified complete-corridor total with matching geometry, date and sequence.
+- Never store a temporary Vercel preview share-token in public repository documentation.

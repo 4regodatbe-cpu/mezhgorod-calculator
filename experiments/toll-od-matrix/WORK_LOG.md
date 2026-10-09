@@ -155,3 +155,36 @@
 - Native Node v22.16.0 `node --test experiments/toll-od-matrix/engine.test.mjs`: **16 tests / 16 pass / 0 fail**.
 - Нативный объединённый прогон четырёх реальных тестовых файлов `engine.test.mjs`, `m4-pvp-corridor-inventory.test.mjs`, `m4-fare-calendar-2026.test.mjs`, `m4-mixed-time-policy.test.mjs`: **54 tests / 54 pass / 0 fail**.
 - Путь к протоколу: `TEST_EVIDENCE_2026-10-09.md`. Остальные `.test.mjs` по-прежнему не пройдены через native Node — не выдавать 54 за всю регрессию.
+
+## 2026-10-09 — блок 9. Интеграция диагностики ПВП М-4 с V2 и запуск Vercel Preview
+
+**Новое прямое поручение пользователя:** закончить необходимые тесты, интегрировать новый алгоритм с калькулятором, выдать ссылку на опубликованную версию Vercel для самостоятельной проверки. Авторизован именно Preview, не замена Production.
+
+### Уточнённый фактический объём внедрения
+
+Существующая экспериментальная матрица `matrix/m4-pvp-corridors.json` содержит `priceCells=[]` и **не содержит ни одной проверенной полной цены**, независимо от того, что отдельные суммы ПВП из источников известны. Также нет независимого same-route continuity proof на всей главной линии М-4. Следовательно, **переключать денежный расчёт на новую матрицу небезопасно**. Внедрён отдельный **shadow/diagnostic layer** поверх рабочего калькулятора, без подмены цены и без подставления нулевых тарифов. Это первая интеграционная стадия, не завершённая замена алгоритма расчёта.
+
+### Конкретный код
+
+**Коммит `367b47fb0e0f8987beb7b1c537dba635f60d2f29`:**
+- `experiments/toll-od-matrix/m4-pvp-preview.mjs` — связывает реальный локальный `M4RoutePlazaValidation` с новым модулем точных направленных последовательностей ПВП; принимает только строгий `map_matching`, исключает слабое `route_traversal`, проверяет полноту и направление, явно помечает `no_verified_complete_m4_pvp_tariffs`. Никакой суммы без доверенной полной строки и независимого `continuityEvidence`.
+- `m4-pvp-preview.test.mjs` — 9 доп. сценариев неготовности матрицы, слабых доказательств, отложенной проверки непрерывности.
+- `lib/toll-engine/m4-production.ts` — после штатного `calculateM4Core` вызывает диагностический слой на **том же** выбранном маршруте. Денежные значения продолжают использовать прежний проверенный путь `fullM4RouteTariff` / `priceM4RoutePlazaValidation` / композицию А-289.
+- `lib/v2-calculation/route-leg-pricing.ts`, `route-leg.ts` — передаётся новое структурированное `m4PvpPreview` из подсистемы М-4 до JSON-ответа `/api/v2/calculate`.
+- `app/v2/components/types.ts` и `result-panels.tsx` — раскрывающаяся видимая пользователю диагностика М-4 при наличии кандидатов ПВП: их число, распознанный строго последовательный список, количество доказанных полных тарифов, точная причина `unknown`. Нельзя приравнивать сумму по старому движку к утверждённой новой матрице.
+- `package.json` preview build gate: `node --test experiments/toll-od-matrix/*.test.mjs && next build`. Область действия — только экспериментальная ветка и её Preview, `main` не менялся.
+
+### Верификация и проблема, выявленная сборкой
+
+- Первая Vercel Preview сборка коммита `367b47f`, deployment `dpl_GVMENZf9Hi73FiCiAZSU8vMy2tCa`: все **165/165 Node native tests PASS**, но **Next TypeScript FAIL**: return type `calculateLegTolls` не содержал добавленный `m4PvpPreview`.
+- Исправлено коммитом **`2b644617c0c93a3fc823a0aefb13f4d7c1181074`**: уточнён `Promise<... m4PvpPreview?:ProductionM4Result["m4PvpPreview"]>` и импортирован тип результата.
+- Повторный deployment **`dpl_4xj5wm9mLPY3QkYtkd4FAyVeZAxx`** успешно завершён: **165 Node тестов PASS, 0 FAIL; Next compile PASS; TypeScript PASS; prerender 13/13; readyState READY**.
+- Сервис проверен на `/v2` через авторизованный Vercel fetch: **HTTP 200**, HTML калькулятора «из А в Б» отдан.
+- URL постоянного кодового Preview: `https://mezhgorod-calculator-p1k0ywj71-4regodatbe-5310.vercel.app/v2`. Ссылка с гостевым обходом Vercel SSO создана на срок примерно 23 ч. **Не сохранять гостевой токен в репозитории**.
+- Full browser-level реальное внешнее маршрутное E2E (например Москва→Воронеж), качество выдачи ПВП и независимое точное сопоставление официальной стоимости **пока не проведены**. HTTP 200 — smoke-test страницы, не доказательство точного дорожного расчёта.
+
+### Граница безопасности / следующие действия
+
+- **0 подтверждённых полных денежных ячеек новой М-4**. Отсутствует independently verified uninterrupted mainline graph, matching complete official corridor OD total and timestamps. Это делает preview diagnostic, а не новое товарное тарифицирование.
+- Для полноценного переключения: получить реальный matching route trace, проверенный continuity evidence и timestamp каждой ПВП, подтвердить хотя бы одну официальную полную ячейку с directional signature, провести реальное E2E; реализовать типизированный cutover toggle только после этих gate. Нельзя включать «автоматическое» применение приблизительных 420 PVP окон или устаревших PDF.
+- Никаких merge, изменений `main`, PR #12 и доменов Production не производилось.

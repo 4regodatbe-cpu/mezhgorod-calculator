@@ -1,3 +1,7 @@
+## 2026-10-09: V2 Preview integration / 165 passing native Node tests
+
+**Test URL:** https://mezhgorod-calculator-p1k0ywj71-4regodatbe-5310.vercel.app/v2 (protected preview; obtain a fresh Vercel share link if needed). Build commit `2b64461` is READY, `node --test *.test.mjs` under experiment returned **165/165 PASS**; TypeScript and Next build succeeded. API/UI integration added M-4 **diagnostic PVP sequence** to actual route results; no verified monetary matrix rows yet, so old M-4 calculation remains primary. Full details in `WORK_LOG.md` block 9; outstanding real E2E and operator tariff proof in `NEXT_STEPS.md`.
+
 # Эксперимент: стоимость платной дороги по паре «въезд → съезд»
 
 ## Обновление: реальные Node-проверки и тарифный PDF (9 октября 2026)
