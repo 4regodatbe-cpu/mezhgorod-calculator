@@ -1,8 +1,12 @@
+import type { ReactNode } from "react";
 import type { Metadata } from "next";
 
+// Guard Russian interface text against automatic browser-page translation.
+// A translation extension rewriting a child Text node can break React DOM diffing.
 export const metadata: Metadata = {
-  title: "Калькулятор межгород",
-  description: "Расчёт междугородней поездки по четырём тарифам с основным маршрутом и альтернативой, объезжающей пункты оплаты.",
+  other: { google: "notranslate" },
 };
 
-export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) { return children; }
+export default function CalculatorV2Layout({ children }: { children: ReactNode }) {
+  return children;
+}
