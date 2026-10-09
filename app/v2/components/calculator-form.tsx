@@ -29,6 +29,8 @@ type CalculatorFormProps = {
   hasResult: boolean;
   error: string;
   onCalculate: () => void;
+  deepTollDiagnostics: boolean;
+  onDeepTollDiagnosticsChange: (value: boolean) => void;
 };
 
 export function CalculatorForm({
@@ -37,6 +39,7 @@ export function CalculatorForm({
   rates, onRatesChange, specialRates, onSpecialRatesChange,
   urgent, onUrgentChange, urgentPercent, onUrgentPercentChange,
   loading, hasResult, error, onCalculate,
+  deepTollDiagnostics, onDeepTollDiagnosticsChange,
 }: CalculatorFormProps) {
   const selectedTab = "min-h-11 rounded-xl bg-brand-action px-2 text-sm font-extrabold text-brand-action-foreground shadow-sm";
   const idleTab = "min-h-11 rounded-xl px-2 text-sm font-extrabold text-brand-muted transition hover:text-brand-text";
@@ -63,6 +66,10 @@ export function CalculatorForm({
         <span className="text-sm font-extrabold text-brand-text">Срочная поездка</span>
         {urgent && <label className="ml-auto flex items-center gap-1 rounded-xl border border-brand-border/20 bg-brand-surface px-2"><Percent className="h-4 w-4 text-brand-accent" /><input aria-label="Наценка за срочность" type="number" min="0" max="500" value={urgentPercent} onChange={(event) => onUrgentPercentChange(clampNumber(Number(event.target.value), 0, 500, 0))} className="h-9 w-14 bg-transparent text-right font-bold text-brand-text outline-none" /><span className="text-sm text-brand-muted">%</span></label>}
       </div>
+      <label className="mt-3 flex cursor-pointer items-center gap-3 rounded-2xl border border-brand-border/20 bg-brand-subtle/40 px-3 py-2">
+        <input aria-label="Углублённая проверка пунктов оплаты" type="checkbox" checked={deepTollDiagnostics} onChange={event => onDeepTollDiagnosticsChange(event.target.checked)} className="h-4 w-4 accent-brand-action" />
+        <span className="text-xs leading-relaxed text-brand-muted">Углублённая проверка ПВП (тестовая): может увеличить время расчёта. Только диагностика, без изменения стоимости.</span>
+      </label>
       <div className="hidden md:block"><button type="button" onClick={onCalculate} disabled={loading} className={"relative mt-3 flex min-h-14 w-full items-center justify-center gap-2 overflow-hidden rounded-2xl px-5 font-black shadow-lg transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-focus " + (loading ? "bg-brand-accent text-brand-accent-foreground shadow-orange-900/20" : "bg-brand-action text-brand-action-foreground hover:brightness-110")}>
         <span aria-hidden="true" className={(loading ? "absolute" : "hidden") + " inset-y-0 left-0 w-1/3 animate-[route-progress_1.2s_ease-in-out_infinite] rounded-full bg-white/25 blur-md motion-reduce:animate-none"} />
         <span translate="no" className="notranslate relative flex items-center gap-2"><span aria-hidden="true" className="inline-flex h-5 w-5 items-center justify-center"><LoaderCircle className={(loading ? "h-5 w-5 animate-spin" : "hidden") + " motion-reduce:animate-none"} /><Calculator className={loading ? "hidden" : "h-5 w-5"} /></span><span className={loading ? "hidden" : "inline-block"}>Рассчитать поездку</span><span className={loading ? "inline-block" : "hidden"}>Считаем маршрут…</span></span>

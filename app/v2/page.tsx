@@ -43,7 +43,7 @@ export default function V2Page() {
   useEffect(() => { setTollPeriod(currentTollPeriod()); }, []);
   useEffect(() => { let visitorId = localStorage.getItem("mezhgorod-anonymous-visitor-id"); if (!visitorId) { visitorId = crypto.randomUUID(); localStorage.setItem("mezhgorod-anonymous-visitor-id", visitorId); } if (sessionStorage.getItem("mezhgorod-visit-sent")) return; void fetch("/api/collect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type: "visit", visitorId, version: "2.0" }) }).then((response) => { if (response.ok) sessionStorage.setItem("mezhgorod-visit-sent", "1"); }).catch(() => undefined); }, []);
   const multiplier = urgent ? 1 + Math.max(0, urgentPercent) / 100 : 1;
-  const { result, error, loading, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard } = useV2Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier });
+  const { result, error, loading, deepTollDiagnostics, setDeepTollDiagnostics, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard } = useV2Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier });
   useEffect(() => {
     if (!result) return;
     const frame = requestAnimationFrame(() => resultRef.current?.scrollIntoView({
@@ -83,6 +83,8 @@ export default function V2Page() {
         loading={loading}
         hasResult={Boolean(result)}
         error={error}
+        deepTollDiagnostics={deepTollDiagnostics}
+        onDeepTollDiagnosticsChange={(enabled) => { setDeepTollDiagnostics(enabled); clearResult(); }}
         onCalculate={calculate}
       />
       <div ref={resultRef} className="scroll-mt-3">
