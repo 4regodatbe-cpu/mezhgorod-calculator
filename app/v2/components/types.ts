@@ -39,6 +39,15 @@ export type NationalTollCoverage = {
   exactCrossingVerified: boolean;
   newFareApplied: boolean;
   reason: string;
+  m3Shadow?: {
+    status: string;
+    amountRub: number | null;
+    reason: string | null;
+    roadId: string;
+    diagnosticOnly: boolean;
+    operatorProfile?: string;
+    tariffDate?: string;
+  };
   m1m3GateAudit?: {
     status: string;
     reason: string;

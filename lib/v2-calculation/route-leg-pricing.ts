@@ -3,6 +3,7 @@ import nationalCatalog from "@/experiments/nationwide-tolls/national-registry.js
 import { inspectNationwideCandidates } from "@/experiments/nationwide-tolls/national-preview.mjs";
 import { auditM1M3SelectedRoute } from "@/experiments/nationwide-tolls/m1-m3-gate-evidence.mjs";
 import m1m3OfficialGates from "@/experiments/nationwide-tolls/m1-m3-official-gates.json";
+import { quoteM3ThreeGateShadow } from "@/experiments/nationwide-tolls/m1-m3-shadow-quote.mjs";
 import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { calculateProductionM4, type ProductionM4Result } from "@/lib/toll-engine/m4-production";
@@ -35,7 +36,7 @@ export async function calculateLegTolls({
   valhallaEvidence,
   confirmedFreeRoute,
   diagnosticFastValidation,
-}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute> } }> {
+}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow> } }> {
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
@@ -82,6 +83,7 @@ export async function calculateLegTolls({
     // evidence is reusable for another route, and nothing here authorizes fares.
     "selected-fast-route",
   );
+  const m3Shadow = quoteM3ThreeGateShadow(nationalCatalog, m1m3GateAudit, departureAt, routeSeconds);
   const nationalTollCoverage = inspectNationwideCandidates(nationalCatalog, geometricTolls.segments, {
     m4StrictPvpCount: productionM4.m4PvpPreview?.confirmedPvps?.length ?? 0,
     m11Candidate: productionM11Geometry.candidate,
@@ -148,5 +150,5 @@ export async function calculateLegTolls({
   const tolls = confirmedFree && !routeCompositionBlocked
     ? routingDifferenceTollFallback(selectedFastRoute, confirmedFree.route, pricedTolls)
     : pricedTolls;
-  return { tolls, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit} };
+  return { tolls, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow} };
 }

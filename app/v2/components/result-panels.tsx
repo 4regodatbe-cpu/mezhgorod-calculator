@@ -105,6 +105,10 @@ export function ResultPanels({
               )}
               </>
             )}
+            {standardLeg.fast.nationalTollCoverage.m3Shadow?.amountRub != null && (
+              <p className="font-semibold text-brand-text">М-3: {standardLeg.fast.nationalTollCoverage.m3Shadow.amountRub.toLocaleString("ru-RU")} ₽ за три подтверждённых ПВП
+                (проверочное значение по источнику, НЕ добавлено в итог). Действует только для проверенной даты расчёта.</p>
+            )}
             <a href="/v2/toll-roads" className="inline-block font-semibold underline underline-offset-4">Каталог платных дорог и статус расчёта</a>
           </div>
         </details>
