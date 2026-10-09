@@ -1,3 +1,12 @@
+## CURRENT handoff — 2026-10-09 / M3 physical gates verified both directions, 289 Node tests
+
+- Latest **tested code** `04c253d23ade176a49b236032aebaa6c0d1a6498` on isolated Preview branch `experiment/toll-od-matrix-2026-10-08`: Vercel `dpl_AyBUbHjyX1mZFh6rA2wftV2Fv5ja` **READY**, `https://mezhgorod-calculator-r6x9ndg7j-4regodatbe-5310.vercel.app/v2`. Vercel native **289/289 tests PASS**, Next+TypeScript build PASS.
+- **DONE M3 selected-route physical PVP proof BOTH directions**: Москва→Калуга (189.1 km) and Калуга→Москва (187.8 km) confirmed each 3/3 M3 physical gates 86/136/168km with **six distinct OSM toll_booth node ids**, verified independently via official OSM API. Exact IDs/source URLs/coords and browser run IDs in `experiments/nationwide-tolls/M1_M3_EVIDENCE_2026-10-09.md`.
+- Important actual failure chain: first extended V2 diagnostics lacked OSM node IDs because `lib/toll-validator.ts` requested wrong Valhalla filter `node.osm_id`; fixed `edge.end_osm_node_id`. First JSX preview failed, fixed; first TS contract preview failed, fixed. All committed, full chronology in `experiments/nationwide-tolls/WORK_LOG.md` phase C.
+- M3 **800 RUB Friday 2026-10-09** for published category-I/no-transponder sample three-PVP corridor is **SHADOW ONLY** in V2 UI, NOT included in customer toll/fare. Customer route toll remains UNKNOWN until independent operator whole-trip price, effective tariff version and all other systems match. M1 PVP46 km official operator physical gate known, but **exact OSM IDs not verified**.
+- Other national roadmap: current catalog 22 grouped systems, 8 partial operator fare sets, **nationwide complete automatic billing NOT achieved**. No `main`, PR #12 or Production modification. NEXT M1 actual gate mapping, verified M3 operator real receipt and additional network source+geometry. Transfer guide `experiments/nationwide-tolls/START_HERE.md`, evidence doc, backlog.
+---
+
 ## CURRENT 2026-10-09 — National Russian toll-road expansion: registry + strict shadow pricing, READY Preview
 
 - **User scope:** extend "из А в Б" calculator beyond M4 to **all other Russian toll roads**. Started substantive national expansion in branch `experiment/toll-od-matrix-2026-10-08`; the Git repo is authoritative for any future chat.

@@ -1,3 +1,11 @@
+## CURRENT 2026-10-09 — M3 bidirectional real physical toll nodes resolved and browser-verified
+
+- Code at `04c253d23ade176a49b236032aebaa6c0d1a6498`; **289/289 native Node tests PASS, Next + TypeScript PASS** on Vercel deployment `dpl_AyBUbHjyX1mZFh6rA2wftV2Fv5ja` READY. Preview `https://mezhgorod-calculator-r6x9ndg7j-4regodatbe-5310.vercel.app/v2` (temporary Vercel guest token issued separately, NEVER commit).
+- LIVE E2E Москва→Калуга and Калуга→Москва with deep gate diagnostics: **all three exact M3 PVP 86/136/168 recognized both directions** from six independently checked OSM toll_booth nodes. **800 ₽ source-day component reference** is visible but NOT added to customer fare, which remains UNKNOWN. `M1_M3_EVIDENCE_2026-10-09.md` has all OSM source URLs, raw IDs, coordinates and exact run IDs.
+- Critical recent fix: selected-route `lib/toll-validator.ts` Valhalla filter changed to `edge.end_osm_node_id` from unsupported `node.osm_id`. Before fix IDs all null despite 3 real booth events. After fix + OSM cross-check, both directions proven. **M1 46km exact gate OSM IDs remain UNVERIFIED**.
+- IMPORTANT: the project goal is **nationwide complete toll pricing**, not satisfied. Most networks lack full paid entry/exit/receipt/calendars. `national-price.mjs` remains research-only; new M3 number is shadow diagnostic, no new customer toll cutover.
+- NEXT: work M1 46km physical OSM evidence via actual selected route; independently verify full M3 operator OD receipt/effective tariff date, then address remaining nationwide roads. Read all committed work files before continuing.
+
 # Начните здесь — общероссийские платные дороги («из А в Б»)
 
 **Состояние на 9 октября 2026 года:** новая общероссийская ветка расширения начата после просьбы пользователя рассчитать остальные платные дороги России. Основная ветка **`experiment/toll-od-matrix-2026-10-08`**, проверенный код **`6917191f6be70561872a971cd904c9f665e4dda7`**, Vercel Preview **READY**: https://mezhgorod-calculator-pjfvyy2kq-4regodatbe-5310.vercel.app/v2 (может требовать авторизацию Vercel; временный гостевой токен в публичном репозитории не хранить).

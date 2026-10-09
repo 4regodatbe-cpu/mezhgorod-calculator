@@ -1,3 +1,9 @@
+## Latest verified M3 evidence — 9 October 2026
+
+- M3 86,136,168km each has two **independently OSM-verified directional `barrier=toll_booth` nodes**. Exact map matching on both real test routes Москва→Калуга (189.1km) and Калуга→Москва (187.8km) yields **3 matched physical gates, 0 unmapped**. Six OSM ids + coordinates, source URLs and browser run IDs in [M1_M3_EVIDENCE_2026-10-09.md](M1_M3_EVIDENCE_2026-10-09.md).
+- Operator 2026-10-09 Fri no-transponder category-I three PVP section example **800 ₽** shown in V2 as **SHADOW reference only**. Customer toll stays **unknown**, no price added, because official complete operator corridor receipt/date proof and complete route coverage remain outstanding. M1 PVP46 official kilometer confirmed but **OSM lane identity unknown**.
+- Latest code `04c253d23ade176a49b236032aebaa6c0d1a6498` deployed READY Preview `https://mezhgorod-calculator-r6x9ndg7j-4regodatbe-5310.vercel.app/v2`, Vercel native Node **289/289 PASS**, TypeScript and Next build PASS. Read `WORK_LOG.md` phase C and `NEXT_STEPS.md`.
+
 ## Latest nationwide result: 2026-10-09
 
 Vercel **READY** at commit `6917191f`, `https://mezhgorod-calculator-pjfvyy2kq-4regodatbe-5310.vercel.app/v2`: **235/235 native Node tests PASS**, Next/TypeScript PASS, and real Moscow→Voronezh browser calculation shows national M4 candidate and **no new money charged**. Review `WORK_LOG.md` phase B and `START_HERE.md` for the exact distinction between 22 inventory networks / 8 partial operator-fare groups and 0 nationwide new live prices.
