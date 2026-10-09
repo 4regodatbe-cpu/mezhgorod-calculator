@@ -40,7 +40,7 @@ export async function calculateLegTolls({
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
   // National research is a route-scoped shadow diagnostic: zero new charges.
   // Operator fare data alone cannot prove that a physical paid gate was crossed.
-  const nationalTollCoverage = inspectNationwideCandidates(nationalCatalog, geometricTolls.segments);
+
   const legacyFamilies = detectedFamiliesFromLegacySegments(geometricTolls.segments);
 
   const productionM4 = await calculateProductionM4(
@@ -73,6 +73,12 @@ export async function calculateLegTolls({
   // CKAD is a paid component only when legacy evidence names it or the strict
   // route-level CKAD engine proves a candidate/verified east-arc traversal.
   const ckadDetected = legacyFamilies.has("ckad") || productionCkad.candidate;
+  const nationalTollCoverage = inspectNationwideCandidates(nationalCatalog, geometricTolls.segments, {
+    m4StrictPvpCount: productionM4.m4PvpPreview?.confirmedPvps?.length ?? 0,
+    m11Candidate: productionM11Geometry.candidate,
+    m12Candidate: Boolean(valhallaEvidence?.m12StrictSpan),
+    ckadCandidate: productionCkad.candidate,
+  });
 
   const components: RouteTollComponent[] = [
     { id: "m4_a289", detected: m4Detected, tolls: productionM4.tolls, reason: productionM4.reason },

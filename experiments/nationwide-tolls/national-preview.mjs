@@ -12,12 +12,16 @@ const candidates=[
  [/вознесенский тракт/iu,"voznesensky"],[/обход хабаровска/iu,"khabarovsk"],
  [/зсд/iu,"zsd"],[/шмсд/iu,"shmsd"],[/московский скоростной диаметр/iu,"msd"]
 ];
-function inspectNationwideCandidates(catalog,segments){
+function inspectNationwideCandidates(catalog,segments,signals={}){
  const names=Array.isArray(segments)?segments.filter(n=>typeof n==="string"):[];
  const found=new Set();
  for(const raw of names){for(const [pattern,id] of candidates)if(pattern.test(raw))found.add(id);}
+ // Prefer actual same-route engine evidence when legacy checkpoint-based
+ // segment estimates miss a physically crossed toll road altogether.
+ const keys=[["m4","m4StrictPvpCount"],["m11","m11Candidate"],["m12","m12Candidate"],["ckad","ckadCandidate"]];
+ for(const [id,key] of keys)if(key==="m4StrictPvpCount" ? Number.isSafeInteger(signals[key])&&signals[key]>0 : signals[key]===true)found.add(id);
  const matched=catalog.networks.filter(n=>found.has(n.id)).map(n=>({
-  id:n.id,name:n.name,status:"candidate_unverified",
+  id:n.id,name:n.name,status:n.id==="m4"&&signals.m4StrictPvpCount>0?"strict_pvp_found_full_price_unverified":"candidate_unverified",
   hasReferenceFare:Object.prototype.hasOwnProperty.call(catalog.operatorFares,n.id),
   operator:n.operator
  }));
