@@ -8,7 +8,7 @@ export default function V2Error({ error, reset }: { error: Error & { digest?: st
     console.error("v2_route_render_error", error);
   }, [error]);
   return (
-    <main className="calculator-modern min-h-screen bg-brand-page p-4 text-brand-text">
+    <main translate="no" className="notranslate calculator-modern min-h-screen bg-brand-page p-4 text-brand-text">
       <div className="mx-auto mt-16 max-w-md rounded-2xl border border-brand-border bg-brand-surface p-6 text-center">
         <h1 className="text-xl font-bold">Не удалось отобразить расчёт</h1>
         <p className="mt-3 text-sm text-brand-muted">Произошёл временный сбой при загрузке результата. Попробуйте повторить или вернитесь к форме.</p>
