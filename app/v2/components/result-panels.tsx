@@ -97,7 +97,7 @@ export function ResultPanels({
               <p>М-1/М-3 · физические ПВП: {standardLeg.fast.nationalTollCoverage.m1m3GateAudit.status === "unknown"
                 ? "строгая проверка узлов на этой поездке ещё недоступна"
                 : `подтверждённых OSM-узлов: ${standardLeg.fast.nationalTollCoverage.m1m3GateAudit.verifiedGates.length}, неопознанных платных событий: ${standardLeg.fast.nationalTollCoverage.m1m3GateAudit.unmappedPaidNodes.length}`}.
-                Операторские ПВП известны (М-1: 46 км; М-3: 86, 136, 168 км), но точные OSM-идентификаторы полос ещё требуют сверки.</p>
+                М-3: ПВП 86, 136, 168 км сопоставлены с OSM toll_booth-узлами в обоих направлениях. М-1: ПВП 46 км ещё требует сверки OSM-узлов. Это не подтверждает полноту стоимости всего маршрута.</p>
               {standardLeg.fast.nationalTollCoverage.m1m3GateAudit.unmappedPaidNodes.length > 0 && (
                 <p className="break-all">OSM-кандидаты (не утверждены как ПВП):
                   {standardLeg.fast.nationalTollCoverage.m1m3GateAudit.unmappedPaidNodes.map(node => ` ${node.roadId}: ${node.osmNodeId ?? "ID отсутствует"}`).join("; ")}
