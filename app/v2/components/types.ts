@@ -33,7 +33,15 @@ export type M4PvpPreview = {
   direction?: string;
   diagnosticOnly: boolean;
 };
-export type Trip = { m4PvpPreview?: M4PvpPreview; meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };
+export type NationalTollCoverage = {
+  catalogNetworkCount: number;
+  catalogWithReferenceFares: number;
+  exactCrossingVerified: boolean;
+  newFareApplied: boolean;
+  reason: string;
+  candidateNetworks: Array<{ id: string; name: string; operator: string; status: string; hasReferenceFare: boolean }>;
+};
+export type Trip = { nationalTollCoverage?: NationalTollCoverage; m4PvpPreview?: M4PvpPreview; meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };
 export type TollView = { amount: number | null; weekdayAmount: number | null; weekendAmount: number | null; period: string; segments: string[]; confidence: "matched" | "none"; pricingStatus: "priced" | "free" | "unknown" };
 export type Leg = {
   from: string;

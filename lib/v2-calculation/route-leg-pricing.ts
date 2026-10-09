@@ -1,4 +1,6 @@
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
+import nationalCatalog from "@/experiments/nationwide-tolls/national-registry.json";
+import { inspectNationwideCandidates } from "@/experiments/nationwide-tolls/national-preview.mjs";
 import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { calculateProductionM4, type ProductionM4Result } from "@/lib/toll-engine/m4-production";
@@ -31,11 +33,14 @@ export async function calculateLegTolls({
   valhallaEvidence,
   confirmedFreeRoute,
   diagnosticFastValidation,
-}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"] }> {
+}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> }> {
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
   const geometricTolls = estimateTolls(routeGeometry, departureAt);
+  // National research is a route-scoped shadow diagnostic: zero new charges.
+  // Operator fare data alone cannot prove that a physical paid gate was crossed.
+  const nationalTollCoverage = inspectNationwideCandidates(nationalCatalog, geometricTolls.segments);
   const legacyFamilies = detectedFamiliesFromLegacySegments(geometricTolls.segments);
 
   const productionM4 = await calculateProductionM4(
@@ -127,5 +132,5 @@ export async function calculateLegTolls({
   const tolls = confirmedFree && !routeCompositionBlocked
     ? routingDifferenceTollFallback(selectedFastRoute, confirmedFree.route, pricedTolls)
     : pricedTolls;
-  return { tolls, fastValidation, m4PvpPreview: productionM4.m4PvpPreview };
+  return { tolls, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage };
 }

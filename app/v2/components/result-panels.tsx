@@ -81,6 +81,21 @@ export function ResultPanels({
           {!(standardLeg.free ?? standardLeg.freeCandidate) && <RouteUnavailable message={standardLeg.freeError} />}
         </> : <RouteCard title="Оптимальный маршрут" accent="blue" trip={standardOptimal} toll={confirmedFreeToll} tollPeriod={tollPeriod} onTollPeriodChange={onTollPeriodChange} onCopy={() => copyStandard("standard-optimal", "Оптимальный маршрут", standardLeg, standardOptimal, confirmedFreeToll, undefined, tollPeriod)} copied={copiedKey === "standard-optimal"} />}
       </section>}
+      {result && standardLeg?.fast.nationalTollCoverage && (
+        <details className="mt-3 rounded-2xl border border-brand-border/25 bg-brand-surface p-3 text-sm text-brand-text">
+          <summary className="cursor-pointer font-semibold">Платные дороги России · проверка покрытия</summary>
+          <div className="mt-3 space-y-2 text-xs leading-relaxed text-brand-muted">
+            <p>В справочнике {standardLeg.fast.nationalTollCoverage.catalogNetworkCount} дорожные системы;
+              для {standardLeg.fast.nationalTollCoverage.catalogWithReferenceFares} есть часть операторских тарифов.</p>
+            <p>Возможные системы на выбранной геометрии: {standardLeg.fast.nationalTollCoverage.candidateNetworks.length
+               ? standardLeg.fast.nationalTollCoverage.candidateNetworks.map(x => x.name).join("; ")
+               : "геометрические признаки не найдены — это не доказывает бесплатный проезд"}.</p>
+            <p>Это предварительные геометрические признаки, а не доказанные пересечения пунктов оплаты.
+              Новые справочные цены не включены в итог без независимой проверки.</p>
+            <a href="/v2/toll-roads" className="inline-block font-semibold underline underline-offset-4">Каталог платных дорог и статус расчёта</a>
+          </div>
+        </details>
+      )}
       {result && standardLeg?.fast.m4PvpPreview && standardLeg.fast.m4PvpPreview.candidateCount > 0 && (
         <details className="mt-3 rounded-2xl border border-brand-border bg-brand-card p-3 text-sm text-brand-text">
           <summary className="cursor-pointer font-semibold">М-4 · экспериментальная проверка пунктов оплаты</summary>

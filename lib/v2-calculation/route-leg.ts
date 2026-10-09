@@ -102,7 +102,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     confirmedFreeRoute: confirmedFree?.route ?? null,
     diagnosticFastValidation,
   });
-  const { tolls, fastValidation, m4PvpPreview } = pricing;
+  const { tolls, fastValidation, m4PvpPreview, nationalTollCoverage } = pricing;
 
   // `free` is the legacy response key for the payment-point-avoiding alternative;
   // the route may still use tolled road segments when it avoids their booths.
@@ -110,7 +110,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   return {
     from: from.label,
     to: to.label,
-    fast: { ...selectedFast.route, coordinates: routeGeometry, quality: fastQuality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation, m4PvpPreview },
+    fast: { ...selectedFast.route, coordinates: routeGeometry, quality: fastQuality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation, m4PvpPreview, nationalTollCoverage },
     free: confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
     freeCandidate: null,
     freeError: confirmedFree ? undefined : "Не удалось подтвердить вариант с объездом пунктов оплаты.",
