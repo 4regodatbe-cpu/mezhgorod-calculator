@@ -52,3 +52,29 @@ test("future editorial placeholder IDs cannot automatically become verified",()=
  assert.equal(y.verifiedGates.length,0);
  assert.equal(y.unmappedPaidNodes.length,1);
 });
+
+test("M3 physical PVPs have each two independent officially named OSM lane nodes",()=>{
+ const gateNodes=original.gates.filter(x=>x.roadId==="m3").map(x=>({km:x.km,ids:x.verifiedOsmNodeIds}));
+ assert.deepEqual(gateNodes,[{km:86,ids:["13294157951","13310936104"]},{km:136,ids:["4780909558","4780909557"]},{km:168,ids:["4780909555","4780909556"]}]);
+ assert.equal(original.gates.filter(x=>x.roadId==="m3").every(x=>x.osmEvidence?.reverseLane?.tagBarrier==="toll_booth"),true);
+});
+test("independently verified reverse direction real Valhalla nodes match 168→136→86",()=>{
+ const reverse=[
+   booth("4780909556",["М-3 Украина"]),
+   booth("4780909557",["М-3 Украина"]),
+   booth("13310936104",["М-3 Украина"])
+ ];
+ const x=audit(original,trace(reverse),"caluga-to-moscow-selected");
+ assert.equal(x.status,"physical_gate_nodes_matched");
+ assert.deepEqual(x.verifiedGates.map(g=>g.id),["m3-pvp-168","m3-pvp-136","m3-pvp-86"]);
+ assert.equal(x.unmappedPaidNodes.length,0);
+ assert.equal(x.strictPriceAllowed,false);
+});
+test("a repeat crossing of a same plaza in opposite lanes invalidates one continuous M3 fare",()=>{
+ const x=audit(original,trace([
+ booth("4780909558",["М-3 Украина"]),
+ booth("4780909557",["М-3 Украина"])
+ ]),"unsafe-u-turn");
+ assert.equal(x.status,"unknown");
+ assert.equal(x.reason,"duplicate_same_gate_in_selected_route");
+});

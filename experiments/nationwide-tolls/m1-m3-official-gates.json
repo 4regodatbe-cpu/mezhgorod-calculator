@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "asOf": "2026-10-09",
-  "role": "operator_four_gate_inventory_with_three_independently_named_m3_osm_nodes_no_live_fare_cutover",
+  "role": "official_4_gate_inventory_with_bidirectionally_named_exact_m3_lane_nodes",
   "operatorTariffs": "https://avtodor-tr.ru/road/tariffs/",
   "sources": [
     "https://avtodor-tr.ru/road/m-1/",
     "https://avtodor-tr.ru/road/m-3/",
     "https://avtodor-tr.ru/transponder/cpio/"
   ],
-  "disclaimer": "M3 three selected-route Valhalla billable crossings match independently fetched OSM API nodes bearing exact plaza names and barrier=toll_booth. Other travel direction's lanes and route-wide complete tariff version still unverified, so no live money.",
+  "disclaimer": "Two independent directions physically map-matched on selected Moscow-Kaluga and Kaluga-Moscow routes, six independently verified OSM toll_booth nodes with matched operator PVP kilometers (86,136,168). M1 km46 still unmapped. This is exact physical gate identity, NOT complete certified whole-route fare and not operator-version-verified across dates.",
   "gates": [
     {
       "id": "m1-pvp-46",
@@ -28,7 +28,8 @@
       "officialSection": "65–86",
       "fareRowId": "m3-65-86",
       "verifiedOsmNodeIds": [
-        "13294157951"
+        "13294157951",
+        "13310936104"
       ],
       "coordinateAnchor": {
         "lat": 55.2637577,
@@ -44,7 +45,18 @@
         "lastModified": "2025-11-17",
         "independentOperatorKmDocumented": true,
         "observedAt": "2026-10-09",
-        "proofScope": "physical_node_identity_not_full_fare_or_all_lane_coverage"
+        "proofScope": "physical_node_identity_not_full_fare_or_all_lane_coverage",
+        "reverseLane": {
+          "source": "https://www.openstreetmap.org/api/0.6/node/13310936104",
+          "tagBarrier": "toll_booth",
+          "osmName": "ПВП 86км",
+          "lat": 55.2638329,
+          "lon": 36.691621,
+          "osmVersion": 2,
+          "lastModified": "2026-08-03",
+          "observedAt": "2026-10-09",
+          "proofScope": "independently_verified_reverse_named_physical_gate_same_selected_route_not_corridor_fare_version"
+        }
       }
     },
     {
@@ -54,7 +66,8 @@
       "officialSection": "112–150",
       "fareRowId": "m3-112-150",
       "verifiedOsmNodeIds": [
-        "4780909558"
+        "4780909558",
+        "4780909557"
       ],
       "coordinateAnchor": {
         "lat": 54.8672189,
@@ -70,7 +83,18 @@
         "lastModified": "2022-05-31",
         "independentOperatorKmDocumented": true,
         "observedAt": "2026-10-09",
-        "proofScope": "physical_node_identity_not_full_fare_or_all_lane_coverage"
+        "proofScope": "physical_node_identity_not_full_fare_or_all_lane_coverage",
+        "reverseLane": {
+          "source": "https://www.openstreetmap.org/api/0.6/node/4780909557",
+          "tagBarrier": "toll_booth",
+          "osmName": "ПВП 136 км",
+          "lat": 54.8671911,
+          "lon": 36.348108,
+          "osmVersion": 4,
+          "lastModified": "2022-05-31",
+          "observedAt": "2026-10-09",
+          "proofScope": "independently_verified_reverse_named_physical_gate_same_selected_route_not_corridor_fare_version"
+        }
       }
     },
     {
@@ -80,7 +104,8 @@
       "officialSection": "150–194",
       "fareRowId": "m3-150-194",
       "verifiedOsmNodeIds": [
-        "4780909555"
+        "4780909555",
+        "4780909556"
       ],
       "coordinateAnchor": {
         "lat": 54.6178104,
@@ -96,7 +121,18 @@
         "lastModified": "2022-06-02",
         "independentOperatorKmDocumented": true,
         "observedAt": "2026-10-09",
-        "proofScope": "physical_node_identity_not_full_fare_or_all_lane_coverage"
+        "proofScope": "physical_node_identity_not_full_fare_or_all_lane_coverage",
+        "reverseLane": {
+          "source": "https://www.openstreetmap.org/api/0.6/node/4780909556",
+          "tagBarrier": "toll_booth",
+          "osmName": "ПВП 168 км",
+          "lat": 54.6176857,
+          "lon": 36.11533,
+          "osmVersion": 5,
+          "lastModified": "2022-06-02",
+          "observedAt": "2026-10-09",
+          "proofScope": "independently_verified_reverse_named_physical_gate_same_selected_route_not_corridor_fare_version"
+        }
       }
     }
   ]
