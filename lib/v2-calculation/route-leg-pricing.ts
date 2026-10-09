@@ -35,7 +35,7 @@ export async function calculateLegTolls({
   valhallaEvidence,
   confirmedFreeRoute,
   diagnosticFastValidation,
-}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> }> {
+}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute> } }> {
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
