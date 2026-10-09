@@ -105,6 +105,10 @@ export function ResultPanels({
               )}
               </>
             )}
+            {standardLeg.fast.nationalTollCoverage.m1Shadow?.amountRub != null && (
+              <p className="font-semibold text-brand-text">М-1: {standardLeg.fast.nationalTollCoverage.m1Shadow.amountRub.toLocaleString("ru-RU")} ₽
+                за строго подтверждённый ПВП 46 км (проверочное значение по приказу №54, НЕ добавлено в итог).</p>
+            )}
             {standardLeg.fast.nationalTollCoverage.m3Shadow?.amountRub != null && (
               <p className="font-semibold text-brand-text">М-3: {standardLeg.fast.nationalTollCoverage.m3Shadow.amountRub.toLocaleString("ru-RU")} ₽ за три подтверждённых ПВП
                 (проверочное значение по источнику, НЕ добавлено в итог). Действует только для проверенной даты расчёта.</p>

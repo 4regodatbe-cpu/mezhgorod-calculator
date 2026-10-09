@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {test} from "node:test";
 import {readFileSync} from "node:fs";
-import {quoteM3ThreeGateShadow as quote} from "./m1-m3-shadow-quote.mjs";
+import {quoteM3ThreeGateShadow as quote,quoteM1SingleGateShadow as m1} from "./m1-m3-shadow-quote.mjs";
 const catalog=JSON.parse(readFileSync(new URL("./national-registry.json",import.meta.url),"utf8"));
 const gate=(km,nodeId)=>({id:`m3-pvp-${km}`,km,roadId:"m3",edgeToll:true,osmNodeId:nodeId,fareRowId:km===86?"m3-65-86":km===136?"m3-112-150":"m3-150-194"});
 const expected=[gate(86,"13294157951"),gate(136,"4780909558"),gate(168,"4780909555")];
@@ -30,4 +30,34 @@ test("test fixture isolation: a deliberately malicious event from a previous tes
  const bad=audit();bad.verifiedGates[0].roadId="m1";
  assert.equal(audit().verifiedGates[0].roadId,"m3");
  assert.equal(quote(catalog,audit(),"2026-10-10T10:00:00+03:00",8000).amountRub,520);
+});
+
+test("M1 no OSM mapping means UNKNOWN, never add 230 in live pricing",()=>{
+ const x=audit([]);assert.equal(m1(catalog,x,"2026-10-10T10:00:00+03:00",6000).amountRub,null);
+});
+test("M1 verified physical gate contract yields dated 230 rub component only",()=>{
+ const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123456789",fareRowId:"m1-33-66"}]);
+ const y=m1(catalog,x,"2026-10-10T10:00:00+03:00",5400);
+ assert.equal(y.amountRub,230);assert.equal(y.diagnosticOnly,true);assert.equal(y.kind,"m1_exact_one_gate_component_only");
+});
+test("M1 false nearby node cannot be billed",()=>{
+ const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:false,osmNodeId:"123456789",fareRowId:"m1-33-66"}]);
+ assert.equal(m1(catalog,x,"2026-10-10T10:00:00+03:00",6000).amountRub,null);
+});
+test("M1 wrong PVP identity cannot be billed",()=>{
+ const x=audit([{id:"m3-pvp-86",km:86,roadId:"m1",edgeToll:true,osmNodeId:"123",fareRowId:"m1-33-66"}]);
+ assert.equal(m1(catalog,x,"2026-10-10T10:00:00+03:00",6000).amountRub,null);
+});
+test("M1 unrecognized other M1 paid booth blocks full M1 price",()=>{
+ const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123",fareRowId:"m1-33-66"}]);
+ x.unmappedPaidNodes.push({osmNodeId:"456",roadId:"m1"});
+ assert.equal(m1(catalog,x,"2026-10-10T10:00:00+03:00",6000).amountRub,null);
+});
+test("M1 Oct11 cannot inherit Oct10 operator snapshot without re-audit",()=>{
+ const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123",fareRowId:"m1-33-66"}]);
+ assert.equal(m1(catalog,x,"2026-10-11T10:00:00+03:00",5400).amountRub,null);
+});
+test("M1 operator Order 54 not applicable before 2026-03-02",()=>{
+ const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123",fareRowId:"m1-33-66"}]);
+ assert.equal(m1(catalog,x,"2026-03-01T10:00:00+03:00",5400).amountRub,null);
 });
