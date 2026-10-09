@@ -34,6 +34,7 @@ type TraceEdge = {
   toll?: boolean;
   way_id?: string | number;
   node_id?: string | number;
+  end_osm_node_id?: string | number;
   names?: string[];
   begin_shape_index?: number;
   end_shape_index?: number;
@@ -101,7 +102,7 @@ function edgeWayId(edge: TraceEdge) {
 }
 
 function edgeNodeId(edge: TraceEdge) {
-  const value = edge.end_node?.node_id ?? edge.node_id;
+  const value = edge.end_node?.node_id ?? edge.end_osm_node_id ?? edge.node_id;
   return value === undefined || value === null ? null : String(value);
 }
 
@@ -124,7 +125,7 @@ async function traceChunk(route: Coordinate[]) {
         "edge.begin_shape_index",
         "edge.end_shape_index",
         "node.type",
-        "node.osm_id",
+        "edge.end_osm_node_id",
       ],
     },
   };
