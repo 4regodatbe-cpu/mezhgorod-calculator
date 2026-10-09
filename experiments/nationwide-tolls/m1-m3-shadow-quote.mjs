@@ -20,7 +20,9 @@ function quoteM3ThreeGateShadow(catalog,gateAudit,departureAt,routeSeconds){
  const end=new Date(start+Math.ceil(routeSeconds)*1000).toISOString();
  const a=m4TariffPeriodAt(departureAt),b=m4TariffPeriodAt(end);
  if(a.status!=="resolved"||b.status!=="resolved"||a.date!==b.date||a.profile!==b.profile)return unknown("m3_gate_tariff_date_changes_during_trip");
- if(a.date!==catalog?.asOf)return unknown("m3_source_effective_day_not_verified");
+ const m3Source=catalog?.operatorFares?.m3;
+ if(!m3Source?.effectiveFrom || !m3Source?.verifiedThrough || a.date<m3Source.effectiveFrom || a.date>m3Source.verifiedThrough)
+   return unknown("m3_source_effective_day_not_verified");
  const quote=quoteNationalRoad(catalog,{
   roadId:"m3",vehicleCategory:"I",payment:"noTransponder",routeId:gateAudit.routeId,tariffDate:a.date,
   proof:{status:"verified",source:"independent_paid_edge_or_operator_camera",routeId:gateAudit.routeId,

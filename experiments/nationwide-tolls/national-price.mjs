@@ -29,7 +29,11 @@ function quoteNationalRoad(catalog,request){
  proof.edgeToll!==true||!Array.isArray(proof.passageIds)||proof.passageIds.length===0||
  proof.passageIds.some(id=>typeof id!=="string"||!id)||new Set(proof.passageIds).size!==proof.passageIds.length)return fail("incomplete_or_nonmatching_passage_proof");
  const fare=catalog.operatorFares[request.roadId];if(!fare)return fail("official_tariff_not_imported");
- if(!fare.effectiveFrom&&request.tariffDate!==catalog.asOf)return fail("tariff_effective_date_unverified");
+ // Version windows are PER OPERATOR. Updating M1/M3 cannot extend unrelated
+ // Ufa/MSD/etc price snapshots that were only checked on 2026-10-09.
+ const sourceThrough=fare.verifiedThrough??catalog.asOf;
+ if(request.tariffDate>sourceThrough)return fail("operator_source_audit_expired");
+ if(!fare.effectiveFrom&&request.tariffDate!==sourceThrough)return fail("tariff_effective_date_unverified");
  if(fare.effectiveFrom && request.tariffDate<fare.effectiveFrom)return fail("tariff_not_effective");
  if(fare.effectiveTo && request.tariffDate>fare.effectiveTo)return fail("tariff_expired");
  const s=request.scenario??{};

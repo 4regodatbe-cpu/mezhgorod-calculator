@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-09",
+  "asOf": "2026-10-10",
   "vehicleCategory": "I",
   "defaultPayment": "noTransponder",
   "purpose": "National scope inventory and strictly evidence-gated prices; registry membership never establishes route crossing.",
@@ -189,7 +189,8 @@
       "source": "https://m-road.ru/tariffs/",
       "kind": "flat",
       "verifiedFor": "category-I-base-no-transponder",
-      "amountRub": 790
+      "amountRub": 790,
+      "verifiedThrough": "2026-10-09"
     },
     "udmurt-bridges": {
       "effectiveFrom": "2026-02-01",
@@ -201,7 +202,8 @@
         "kama": 400,
         "bui": 300,
         "both": 700
-      }
+      },
+      "verifiedThrough": "2026-10-09"
     },
     "voznesensky": {
       "effectiveFrom": null,
@@ -210,7 +212,8 @@
       "kind": "weekday_peak",
       "verifiedFor": "category-I-standard",
       "offPeakRub": 90,
-      "workdayPeakRub": 150
+      "workdayPeakRub": 150,
+      "verifiedThrough": "2026-10-09"
     },
     "msd": {
       "effectiveFrom": "2026-04-10",
@@ -220,40 +223,45 @@
       "verifiedFor": "category-I-conditional",
       "citySectionRub": 19,
       "transitTripRub": 950,
-      "maxCitySections": 9
+      "maxCitySections": 9,
+      "verifiedThrough": "2026-10-09"
     },
     "m1": {
-      "effectiveFrom": null,
+      "effectiveFrom": "2026-03-02",
       "effectiveTo": null,
-      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "source": "https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf",
       "kind": "section_matrix",
       "verifiedFor": "category-I-no-transponder",
       "rows": {
         "m1-33-66": {
-          "all": 250
+          "all": 230
         }
-      }
+      },
+      "verifiedThrough": "2026-10-10",
+      "operatorOrder": "2026-02-27 №54"
     },
     "m3": {
-      "effectiveFrom": null,
+      "effectiveFrom": "2026-03-02",
       "effectiveTo": null,
-      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "source": "https://avtodor-tr.ru/upload/iblock/cb5/9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf",
       "kind": "section_matrix",
       "verifiedFor": "category-I-no-transponder",
       "rows": {
         "m3-65-86": {
           "monThu": 100,
-          "friSun": 200
+          "friSun": 100
         },
         "m3-112-150": {
           "monThu": 190,
-          "friSun": 320
+          "friSun": 190
         },
         "m3-150-194": {
-          "monThu": 230,
-          "friSun": 280
+          "monThu": 190,
+          "friSun": 230
         }
-      }
+      },
+      "verifiedThrough": "2026-10-10",
+      "operatorOrder": "2026-02-27 №53"
     },
     "ufa-east": {
       "effectiveFrom": null,
@@ -261,7 +269,8 @@
       "source": "https://avtodor-tr.ru/business/road/tariffs/",
       "kind": "flat",
       "verifiedFor": "category-I-base-no-transponder",
-      "amountRub": 150
+      "amountRub": 150,
+      "verifiedThrough": "2026-10-09"
     },
     "tolyatti": {
       "effectiveFrom": null,
@@ -273,7 +282,8 @@
         "troitskoe-tolyatti": 210,
         "tolyatti-zelenovka": 140,
         "troitskoe-zelenovka": 320
-      }
+      },
+      "verifiedThrough": "2026-10-09"
     }
   }
 }

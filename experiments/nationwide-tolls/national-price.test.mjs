@@ -19,9 +19,9 @@ test("Kazan peak starts 06:30",()=>assert.equal(q(registry,req("voznesensky",["v
 test("Kazan peak ends at 19:30",()=>assert.equal(q(registry,req("voznesensky",["voznesensky-rvp"],{dayClass:"verified_workday",moscowPassageTime:"19:30",timeSource:"same_route_estimated_passage"})).amountRub,90));
 test("Kazan weekend peak remains 90",()=>assert.equal(q(registry,req("voznesensky",["voznesensky-rvp"],{dayClass:"verified_weekend_or_holiday",moscowPassageTime:"08:30",timeSource:"same_route_estimated_passage"})).amountRub,90));
 test("Kazan unknown holiday state returns unknown",()=>assert.equal(q(registry,req("voznesensky",["voznesensky-rvp"],{moscowPassageTime:"08:30",timeSource:"same_route_estimated_passage"})).amountRub,null));
-test("M1 current source no-transponder requires current schedule proof",()=>assert.equal(q(registry,req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"})).amountRub,250));
+test("M1 official order 54 category-I costs 230 not class-II 250",()=>assert.equal(q(registry,req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"})).amountRub,230));
 test("M3 verified monThu two-section fare",()=>assert.equal(q(registry,req("m3",["m3-65-86","m3-112-150"],{operatorProfile:"monThu",calendarSource:"verified_operator_schedule"})).amountRub,290));
-test("M3 verified friSun two-section fare",()=>assert.equal(q(registry,req("m3",["m3-65-86","m3-112-150"],{operatorProfile:"friSun",calendarSource:"verified_operator_schedule"})).amountRub,520));
+test("M3 FriSun category-I PVP86+136 is 290; earlier 520 mixed vehicle class rates",()=>assert.equal(q(registry,req("m3",["m3-65-86","m3-112-150"],{operatorProfile:"friSun",calendarSource:"verified_operator_schedule"})).amountRub,290));
 test("M3 no period proof unknown",()=>assert.equal(q(registry,req("m3",["m3-65-86"])).amountRub,null));
 test("M3 no half known crossing sum",()=>assert.equal(q(registry,req("m3",["m3-65-86","invalid"],{operatorProfile:"monThu",calendarSource:"verified_operator_schedule"})).amountRub,null));
 test("Road name only, without map-matching proof, cannot price",()=>{const x=req("bagration",["bagration-camera-6.6"]);delete x.proof;assert.equal(q(registry,x).status,"unknown");});
@@ -63,3 +63,25 @@ test("national route missing full coverage fails closed",()=>{const x=allTrip([{
 test("national route with unregistered paid road fails closed",()=>{const x=allTrip([{...req("bagration",["bagration-camera-6.6"]),traversalId:"a"}]);x.hasUnregisteredPaidSystem=true;assert.equal(total(registry,x).amountRub,null)});
 test("national route rejects repeated billable traversal identities",()=>{const x=allTrip([{...req("bagration",["bagration-camera-6.6"]),traversalId:"a"},{...req("ufa-east",["ufa-east-pvp"]),traversalId:"a"}]);assert.equal(total(registry,x).amountRub,null)});
 test("national route cannot reuse proof from another selected route",()=>{const x=allTrip([{...req("bagration",["bagration-camera-6.6"]),traversalId:"a",proof:{...req("bagration",["bagration-camera-6.6"]).proof,routeId:"another"}}]);assert.equal(total(registry,x).amountRub,null)});
+
+test("M1 operator order 54 valid Oct10 2026 category-I 230 Rub",()=>{
+ const x=req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"});
+ x.tariffDate="2026-10-10";assert.equal(q(registry,x).amountRub,230);
+});
+test("M1 dated order began March 2 2026; March 1 rejected",()=>{
+ const x=req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"});
+ x.tariffDate="2026-03-01";assert.equal(q(registry,x).amountRub,null);
+});
+test("M3 operator order 53 FriSun 100+190+230 = 520 Rub Oct10",()=>{
+ const x=req("m3",["m3-65-86","m3-112-150","m3-150-194"],{operatorProfile:"friSun",calendarSource:"verified_operator_schedule"});
+ x.tariffDate="2026-10-10";assert.equal(q(registry,x).amountRub,520);
+});
+test("M3 operator order 53 MonThu 100+190+190 = 480 Rub",()=>assert.equal(q(registry,req("m3",["m3-65-86","m3-112-150","m3-150-194"],{operatorProfile:"monThu",calendarSource:"verified_operator_schedule"})).amountRub,480));
+test("updating M1/M3 operator does not falsely extend Bagration undated Oct9 snapshot",()=>{
+ const x=req("bagration",["bagration-camera-6.6"]);x.tariffDate="2026-10-10";
+ assert.equal(q(registry,x).amountRub,null);assert.equal(q(registry,x).reason,"operator_source_audit_expired");
+});
+test("updating M1/M3 operator does not extend other dated Udmurt Oct9 evidence",()=>{
+ const x=req("udmurt-bridges",["kama"]);x.tariffDate="2026-10-10";
+ assert.equal(q(registry,x).amountRub,null);assert.equal(q(registry,x).reason,"operator_source_audit_expired");
+});

@@ -7,12 +7,12 @@ const gate=(km,nodeId)=>({id:`m3-pvp-${km}`,km,roadId:"m3",edgeToll:true,osmNode
 const expected=[gate(86,"13294157951"),gate(136,"4780909558"),gate(168,"4780909555")];
 function audit(gates=expected){return{routeId:"same-map-matched-selected",status:"physical_gate_nodes_matched",verifiedGates:gates,unmappedPaidNodes:[],strictPriceAllowed:false}};
 const fri="2026-10-09T10:00:00+03:00";
-test("operator Friday profile: M3 3 independently matched PVPs => 800 RUB SHADOW only",()=>{const q=quote(catalog,audit(),fri,11340);assert.equal(q.amountRub,800);assert.equal(q.operatorProfile,"friSun");assert.equal(q.diagnosticOnly,true)});
-test("reverse selected physical M3 gate sequence yields same 800 RUB component",()=>assert.equal(quote(catalog,audit([...expected].reverse()),fri,11340).amountRub,800));
+test("operator Friday profile: M3 3 independently matched PVPs => 520 RUB SHADOW only",()=>{const q=quote(catalog,audit(),fri,11340);assert.equal(q.amountRub,520);assert.equal(q.operatorProfile,"friSun");assert.equal(q.diagnosticOnly,true)});
+test("reverse selected physical M3 gate sequence yields same 520 RUB component",()=>assert.equal(quote(catalog,audit([...expected].reverse()),fri,11340).amountRub,520));
 test("value is M3 component only, not customer-facing full route price",()=>assert.equal(quote(catalog,audit(),fri,11340).kind,"m3_full_three_gate_component_only"));
 test("two verified gates is not a valid whole M3 example",()=>assert.equal(quote(catalog,audit(expected.slice(0,2)),fri,11340).amountRub,null));
-test("the day before catalog observation must not inherit undated operator prices",()=>assert.equal(quote(catalog,audit(),"2026-10-08T12:00:00+03:00",7200).amountRub,null));
-test("tomorrow does not automatically inherit yesterday official snapshot",()=>assert.equal(quote(catalog,audit(),"2026-10-10T10:00:00+03:00",7200).amountRub,null));
+test("dated order 53 permits Oct8 2026 source rate before Oct10 audit",()=>assert.equal(quote(catalog,audit(),"2026-10-08T12:00:00+03:00",7200).amountRub,480));
+test("future Oct11 not automatically covered by Oct10 operator audit",()=>assert.equal(quote(catalog,audit(),"2026-10-11T10:00:00+03:00",7200).amountRub,null));
 test("crossing Moscow midnight refuses single timestamp fare",()=>assert.equal(quote(catalog,audit(),"2026-10-09T23:00:00+03:00",3601).amountRub,null));
 test("partial route audit is unknown",()=>{const x=audit();x.status="candidate_needs_osm_operator_node_mapping";assert.equal(quote(catalog,x,fri,6000).amountRub,null)});
 test("unmapped physical booth invalidates three-gate quote",()=>{const x=audit();x.unmappedPaidNodes.push({roadId:"m3",osmNodeId:"junk"});assert.equal(quote(catalog,x,fri,6000).amountRub,null)});
@@ -22,3 +22,6 @@ test("foreign paid road cannot be combined into exact M3 physical invoice",()=>{
 test("invalid departure timestamps fail closed",()=>assert.equal(quote(catalog,audit(),"2026-10-09T10:00",6000).amountRub,null));
 test("duration >24h not in verified same-day fare scope",()=>assert.equal(quote(catalog,audit(),fri,90000).amountRub,null));
 test("unknown date format also returns null",()=>assert.equal(quote(catalog,audit(),"nonsense",300).amountRub,null));
+
+test("M3 Saturday Oct10 2026 three actual gates yields 520 Rub, not deprecated 800",()=>assert.equal(quote(catalog,audit(),"2026-10-10T10:00:00+03:00",8000).amountRub,520));
+test("M3 2026-03-01 operator order not in force yet",()=>assert.equal(quote(catalog,audit(),"2026-03-01T10:00:00+03:00",7000).amountRub,null));
