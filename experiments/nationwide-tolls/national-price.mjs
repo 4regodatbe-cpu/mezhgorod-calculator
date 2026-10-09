@@ -29,11 +29,12 @@ function quoteNationalRoad(catalog,request){
  const s=request.scenario??{};
  let amount=null;
  if(fare.kind==="flat"){
-   if(proof.passageIds.length!==1||proof.passageIds[0]!=="bagration-camera-6.6")return fail("wrong_bagration_camera_or_reentry");
+   const knownCamera=request.roadId==="ufa-east"?"ufa-east-pvp":"bagration-camera-6.6";
+   if(proof.passageIds.length!==1||proof.passageIds[0]!==knownCamera)return fail("wrong_operator_camera_or_reentry");
    amount=fare.amountRub;
  }else if(fare.kind==="exclusive_zone"){
    // Exclusive official zone prices, do not charge "both" PLUS each bridge.
-   if(proof.passageIds.length!==1 || !["kama","bui","both"].includes(proof.passageIds[0]))return fail("bridge_travel_zone_unverified");
+   if(proof.passageIds.length!==1 || !Object.prototype.hasOwnProperty.call(fare.prices,proof.passageIds[0]))return fail("exclusive_travel_zone_unverified");
    amount=fare.prices[proof.passageIds[0]];
  }else if(fare.kind==="weekday_peak"){
    if(proof.passageIds.length!==1||proof.passageIds[0]!=="voznesensky-rvp")return fail("kazan_gate_unverified");

@@ -38,3 +38,10 @@ test("MSD schedule without active verification unknown",()=>{const s={...msd,cur
 test("MSD transit 950 with both CKAD and regional proof",()=>{const s={msdMode:"transit",twoCkadCrossingsVerified:true,tripMinutes:95,plateRegion:"non_moscow",exemptionVerified:"not_exempt"};assert.equal(q(registry,req("msd",["msd-transit-ckad-ckad"],s)).amountRub,950)});
 test("MSD transit 950 denied to unknown region",()=>{const s={msdMode:"transit",twoCkadCrossingsVerified:true,tripMinutes:95,plateRegion:"unknown",exemptionVerified:"not_exempt"};assert.equal(q(registry,req("msd",["msd-transit-ckad-ckad"],s)).amountRub,null)});
 test("MSD transit >2 hours denied",()=>{const s={msdMode:"transit",twoCkadCrossingsVerified:true,tripMinutes:121,plateRegion:"non_moscow",exemptionVerified:"not_exempt"};assert.equal(q(registry,req("msd",["msd-transit-ckad-ckad"],s)).amountRub,null)});
+
+test("Ufa eastern exit fixed official category-I no-transponder fare",()=>assert.equal(q(registry,req("ufa-east",["ufa-east-pvp"])).amountRub,150));
+test("Ufa arbitrary camera cannot be billed",()=>assert.equal(q(registry,req("ufa-east",["unknown"])).amountRub,null));
+test("Tolyatti 17–60 km single operator fare",()=>assert.equal(q(registry,req("tolyatti",["troitskoe-tolyatti"])).amountRub,210));
+test("Tolyatti 60–97 km single operator fare",()=>assert.equal(q(registry,req("tolyatti",["tolyatti-zelenovka"])).amountRub,140));
+test("Tolyatti 17–97 km full official corridor fare 320 (not 210+140)",()=>assert.equal(q(registry,req("tolyatti",["troitskoe-zelenovka"])).amountRub,320));
+test("Tolyatti cannot add exclusive operator tariff zones",()=>assert.equal(q(registry,req("tolyatti",["troitskoe-tolyatti","tolyatti-zelenovka"])).amountRub,null));

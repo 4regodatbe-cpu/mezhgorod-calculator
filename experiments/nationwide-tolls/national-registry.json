@@ -73,16 +73,16 @@
       "id": "ufa-east",
       "name": "Восточный выезд Уфы",
       "operator": "Региональный концессионер/Автодор",
-      "source": "https://avtodor-tr.ru/road/",
-      "readiness": "legacy_unpriced",
+      "source": "https://avtodor-tr.ru/business/road/tariffs/",
+      "readiness": "verified_fare_unwired",
       "chargeModel": "ufa-complex"
     },
     {
       "id": "tolyatti",
       "name": "Обход Тольятти",
       "operator": "Региональный концессионер/Автодор",
-      "source": "https://avtodor-tr.ru/road/",
-      "readiness": "legacy_unpriced",
+      "source": "https://avtodor-tr.ru/business/road/tariffs/",
+      "readiness": "verified_fare_unwired",
       "chargeModel": "tolyatti"
     },
     {
@@ -184,7 +184,7 @@
   ],
   "operatorFares": {
     "bagration": {
-      "effectiveFrom": "2026-10-09",
+      "effectiveFrom": null,
       "effectiveTo": null,
       "source": "https://m-road.ru/tariffs/",
       "kind": "flat",
@@ -253,6 +253,26 @@
           "monThu": 230,
           "friSun": 280
         }
+      }
+    },
+    "ufa-east": {
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "source": "https://avtodor-tr.ru/business/road/tariffs/",
+      "kind": "flat",
+      "verifiedFor": "category-I-base-no-transponder",
+      "amountRub": 150
+    },
+    "tolyatti": {
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "source": "https://avtodor-tr.ru/business/road/tariffs/",
+      "kind": "exclusive_zone",
+      "verifiedFor": "category-I-no-transponder",
+      "prices": {
+        "troitskoe-tolyatti": 210,
+        "tolyatti-zelenovka": 140,
+        "troitskoe-zelenovka": 320
       }
     }
   }
