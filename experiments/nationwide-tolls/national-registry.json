@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-09",
+  "vehicleCategory": "I",
+  "defaultPayment": "noTransponder",
+  "purpose": "National scope inventory and strictly evidence-gated prices; registry membership never establishes route crossing.",
+  "networks": [
+    {
+      "id": "m1",
+      "name": "М-1 «Беларусь» (33–66 км)",
+      "operator": "Автодор",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "readiness": "existing_data_unwired",
+      "chargeModel": "m1-33-66"
+    },
+    {
+      "id": "m3",
+      "name": "М-3 «Украина»",
+      "operator": "Автодор",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "readiness": "existing_data_unwired",
+      "chargeModel": "m3-official"
+    },
+    {
+      "id": "m4",
+      "name": "М-4 «Дон»",
+      "operator": "Автодор",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "readiness": "legacy_plus_shadow",
+      "chargeModel": "m4-empty-matrix"
+    },
+    {
+      "id": "m11",
+      "name": "М-11 «Нева» (участки 58–679 км)",
+      "operator": "Автодор",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "readiness": "existing_runtime",
+      "chargeModel": "m11-current"
+    },
+    {
+      "id": "m11-15-58",
+      "name": "М-11 «Нева» (15–58 км)",
+      "operator": "СЗКК",
+      "source": "https://www.mos-spb.ru/tariffs/",
+      "readiness": "existing_runtime",
+      "chargeModel": "m11-concession-time"
+    },
+    {
+      "id": "m12",
+      "name": "М-12 «Восток»",
+      "operator": "Автодор",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "readiness": "existing_runtime",
+      "chargeModel": "m12-current"
+    },
+    {
+      "id": "ckad",
+      "name": "А-113 ЦКАД",
+      "operator": "Автодор",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "readiness": "existing_runtime_partial",
+      "chargeModel": "ckad-directional"
+    },
+    {
+      "id": "a289",
+      "name": "А-289 Краснодар — Темрюк",
+      "operator": "Автодор",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "readiness": "existing_runtime_partial",
+      "chargeModel": "a289"
+    },
+    {
+      "id": "ufa-east",
+      "name": "Восточный выезд Уфы",
+      "operator": "Региональный концессионер/Автодор",
+      "source": "https://avtodor-tr.ru/road/",
+      "readiness": "legacy_unpriced",
+      "chargeModel": "ufa-complex"
+    },
+    {
+      "id": "tolyatti",
+      "name": "Обход Тольятти",
+      "operator": "Региональный концессионер/Автодор",
+      "source": "https://avtodor-tr.ru/road/",
+      "readiness": "legacy_unpriced",
+      "chargeModel": "tolyatti"
+    },
+    {
+      "id": "odintsovo",
+      "name": "Северный обход Одинцова",
+      "operator": "Новое качество дорог",
+      "source": "https://m-road.ru/tariffs/",
+      "readiness": "unwired",
+      "chargeModel": "time_direction_gate"
+    },
+    {
+      "id": "bagration",
+      "name": "Проспект Багратиона",
+      "operator": "Новое качество дорог",
+      "source": "https://m-road.ru/tariffs/",
+      "readiness": "verified_fare_unwired",
+      "chargeModel": "flat"
+    },
+    {
+      "id": "msd",
+      "name": "Московский скоростной диаметр",
+      "operator": "Дептранс Москвы",
+      "source": "https://msd.mos.ru/info",
+      "readiness": "verified_conditional_unwired",
+      "chargeModel": "transit_and_city"
+    },
+    {
+      "id": "zsd",
+      "name": "Западный скоростной диаметр",
+      "operator": "Магистраль северной столицы",
+      "source": "https://nch-spb.com/",
+      "readiness": "unwired",
+      "chargeModel": "ramp_od_dynamic"
+    },
+    {
+      "id": "shmsd",
+      "name": "ШМСД / Витебская развязка",
+      "operator": "Магистраль северной столицы",
+      "source": "https://www.gov.spb.ru/gov/otrasl/kio/news/315898/",
+      "readiness": "unwired",
+      "chargeModel": "connected_to_zsd"
+    },
+    {
+      "id": "voznesensky",
+      "name": "Вознесенский тракт (Казань)",
+      "operator": "Оптима-Технологии",
+      "source": "https://vtkazan.ru/",
+      "readiness": "verified_conditional_unwired",
+      "chargeModel": "weekday_time"
+    },
+    {
+      "id": "udmurt-bridges",
+      "name": "Мосты через Каму и Буй",
+      "operator": "Региональная инвестиционная компания",
+      "source": "https://osa-kama.ru/tarify/",
+      "readiness": "verified_fare_unwired",
+      "chargeModel": "exclusive_travel_zones"
+    },
+    {
+      "id": "khabarovsk",
+      "name": "Обход Хабаровска",
+      "operator": "Транстолл",
+      "source": "https://vis-transtoll.ru/",
+      "readiness": "unwired",
+      "chargeModel": "route_tariff"
+    },
+    {
+      "id": "mytishchi",
+      "name": "Мытищинская хорда",
+      "operator": "Транстолл",
+      "source": "https://vis-transtoll.ru/",
+      "readiness": "unwired",
+      "chargeModel": "route_tariff"
+    },
+    {
+      "id": "pskov",
+      "name": "Платные дороги Псковской области (4 участка)",
+      "operator": "Региональный оператор Псковской области",
+      "source": "https://www.pskov.ru/",
+      "readiness": "unwired",
+      "chargeModel": "four_separate_sections"
+    },
+    {
+      "id": "ryazan",
+      "name": "Платный путепровод в Рязани",
+      "operator": "Региональные платные дороги — Рязань",
+      "source": "https://m-road62.ru/",
+      "readiness": "unwired",
+      "chargeModel": "fixed_gate_new_tariff_2026_10"
+    },
+    {
+      "id": "amur-bridge",
+      "name": "Мост Благовещенск — Хэйхэ",
+      "operator": "Трансграничный оператор",
+      "source": "https://mintrans.gov.ru/",
+      "readiness": "unwired",
+      "chargeModel": "cross_border_vehicle_restrictions"
+    }
+  ],
+  "operatorFares": {
+    "bagration": {
+      "effectiveFrom": "2026-10-09",
+      "effectiveTo": null,
+      "source": "https://m-road.ru/tariffs/",
+      "kind": "flat",
+      "verifiedFor": "category-I-base-no-transponder",
+      "amountRub": 790
+    },
+    "udmurt-bridges": {
+      "effectiveFrom": "2026-02-01",
+      "effectiveTo": null,
+      "source": "https://osa-kama.ru/tarify/",
+      "kind": "exclusive_zone",
+      "verifiedFor": "category-I-standard",
+      "prices": {
+        "kama": 400,
+        "bui": 300,
+        "both": 700
+      }
+    },
+    "voznesensky": {
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "source": "https://vtkazan.ru/",
+      "kind": "weekday_peak",
+      "verifiedFor": "category-I-standard",
+      "offPeakRub": 90,
+      "workdayPeakRub": 150
+    },
+    "msd": {
+      "effectiveFrom": "2026-04-10",
+      "effectiveTo": null,
+      "source": "https://msd.mos.ru/info",
+      "kind": "time_and_transit",
+      "verifiedFor": "category-I-conditional",
+      "citySectionRub": 19,
+      "transitTripRub": 950,
+      "maxCitySections": 9
+    },
+    "m1": {
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "kind": "section_matrix",
+      "verifiedFor": "category-I-no-transponder",
+      "rows": {
+        "m1-33-66": {
+          "all": 250
+        }
+      }
+    },
+    "m3": {
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "kind": "section_matrix",
+      "verifiedFor": "category-I-no-transponder",
+      "rows": {
+        "m3-65-86": {
+          "monThu": 100,
+          "friSun": 200
+        },
+        "m3-112-150": {
+          "monThu": 190,
+          "friSun": 320
+        },
+        "m3-150-194": {
+          "monThu": 230,
+          "friSun": 280
+        }
+      }
+    }
+  }
+}
