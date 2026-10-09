@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-09",
+  "role": "physical_operator_gate_inventory_not_verified_osm_nodes",
+  "operatorTariffs": "https://avtodor-tr.ru/road/tariffs/",
+  "sources": [
+    "https://avtodor-tr.ru/road/m-1/",
+    "https://avtodor-tr.ru/road/m-3/",
+    "https://avtodor-tr.ru/transponder/cpio/"
+  ],
+  "disclaimer": "Operator PVP km/name is source-verified; zero exact OSM toll-booth lane-node IDs collected. Physical passage/cost cannot be approved from approximate kilometrage or an OSM way name.",
+  "gates": [
+    {
+      "id": "m1-pvp-46",
+      "roadId": "m1",
+      "km": 46,
+      "officialSection": "33–66",
+      "fareRowId": "m1-33-66",
+      "verifiedOsmNodeIds": [],
+      "coordinateAnchor": null,
+      "locationConfidence": "operator_km_only",
+      "versionVerifiedForPricing": false
+    },
+    {
+      "id": "m3-pvp-86",
+      "roadId": "m3",
+      "km": 86,
+      "officialSection": "65–86",
+      "fareRowId": "m3-65-86",
+      "verifiedOsmNodeIds": [],
+      "coordinateAnchor": null,
+      "locationConfidence": "operator_km_only",
+      "versionVerifiedForPricing": false
+    },
+    {
+      "id": "m3-pvp-136",
+      "roadId": "m3",
+      "km": 136,
+      "officialSection": "112–150",
+      "fareRowId": "m3-112-150",
+      "verifiedOsmNodeIds": [],
+      "coordinateAnchor": null,
+      "locationConfidence": "operator_km_only",
+      "versionVerifiedForPricing": false
+    },
+    {
+      "id": "m3-pvp-168",
+      "roadId": "m3",
+      "km": 168,
+      "officialSection": "150–194",
+      "fareRowId": "m3-150-194",
+      "verifiedOsmNodeIds": [],
+      "coordinateAnchor": null,
+      "locationConfidence": "operator_km_only",
+      "versionVerifiedForPricing": false
+    }
+  ]
+}
