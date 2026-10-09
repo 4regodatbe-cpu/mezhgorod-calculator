@@ -1,0 +1,11 @@
+{
+  "generatedOn": "2026-10-09",
+  "basis": "20 PVP positions copied from current repository snapshot",
+  "status": "candidate_keys_only_no_tariff_or_route_proof",
+  "inputPvpCount": 20,
+  "candidateDirectionalContiguousWindows": 420,
+  "approvedPriceCells": 0,
+  "operatorDocumentPdf": "https://avtodor-tr.ru/upload/iblock/a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf",
+  "operatorPdfDownloadStatus": "HTTP403_no_date_or_rates_inspected",
+  "note": "Potential contiguous PVP windows are not exhaustive actual paths and cannot determine toll charges. Never use them for runtime V2 pricing."
+}

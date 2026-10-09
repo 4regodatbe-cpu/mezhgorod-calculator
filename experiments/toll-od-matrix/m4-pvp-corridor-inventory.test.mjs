@@ -1,0 +1,17 @@
+import assert from "node:assert/strict";
+import {test} from "node:test";
+import {readFileSync} from "node:fs";
+import {enumerateM4PvpSignatures} from "./m4-pvp-corridor-inventory.mjs";
+const data=JSON.parse(readFileSync(new URL("./matrix/m4-pvp-corridors.json",import.meta.url),"utf8"));
+const rows=enumerateM4PvpSignatures(data.knownPvps);
+test("20 PVPs yield 420 hypothetical directional sequences",()=>assert.equal(rows.length,420));
+test("none of the sequences have actual validated prices",()=>assert.equal(rows.every(r=>r.priceRub===null),true));
+test("each direction yields 210 hypothetical windows",()=>assert.equal(rows.filter(r=>r.direction==="to_moscow").length,210));
+test("single-gate windows appear once per direction",()=>assert.equal(rows.filter(r=>r.sequence.length===1).length,40));
+test("two full known-list windows",()=>assert.equal(rows.filter(r=>r.sequence.length===20).length,2));
+test("all directional keys are unique",()=>assert.equal(new Set(rows.map(r=>r.key)).size,420));
+test("339/355 require directional ticket review",()=>assert.equal(rows.some(r=>r.flags.includes("receipt339355_directional")),true));
+test("545 is counted once in each sequence",()=>assert.equal(rows.filter(r=>r.flags.includes("545_two_possible_tariff_rows_one_physical_gate")).every(r=>r.sequence.filter(p=>p==="m4-545").length===1),true));
+test("mixed401 gated",()=>assert.equal(rows.some(r=>r.flags.includes("mixed401_unverified_time_state")),true));
+test("mixed633 rule discrepancy gated",()=>assert.equal(rows.some(r=>r.flags.includes("mixed633_conflicting_60_120_min_rule")),true));
+test("duplicates rejected",()=>assert.throws(()=>enumerateM4PvpSignatures(["m4-62","m4-62"]),/duplicate_pvp/));
