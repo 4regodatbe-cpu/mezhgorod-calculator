@@ -39,6 +39,15 @@ export type NationalTollCoverage = {
   exactCrossingVerified: boolean;
   newFareApplied: boolean;
   reason: string;
+  m1m3GateAudit?: {
+    status: string;
+    reason: string;
+    routeId: string | null;
+    candidateRoads: string[];
+    verifiedGates: Array<{id: string; roadId: string; km: number; osmNodeId: string; fareRowId: string}>;
+    unmappedPaidNodes: Array<{osmNodeId: string | null; roadId: string; reason: string}>;
+    strictPriceAllowed: boolean;
+  };
   candidateNetworks: Array<{ id: string; name: string; operator: string; status: string; hasReferenceFare: boolean }>;
 };
 export type Trip = { nationalTollCoverage?: NationalTollCoverage; m4PvpPreview?: M4PvpPreview; meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };

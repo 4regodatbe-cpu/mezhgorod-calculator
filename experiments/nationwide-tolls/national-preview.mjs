@@ -20,6 +20,7 @@ function inspectNationwideCandidates(catalog,segments,signals={}){
  // segment estimates miss a physically crossed toll road altogether.
  const keys=[["m4","m4StrictPvpCount"],["m11","m11Candidate"],["m12","m12Candidate"],["ckad","ckadCandidate"]];
  for(const [id,key] of keys)if(key==="m4StrictPvpCount" ? Number.isSafeInteger(signals[key])&&signals[key]>0 : signals[key]===true)found.add(id);
+ if(Array.isArray(signals.m1m3Candidates))for(const road of signals.m1m3Candidates)if(road==="m1"||road==="m3")found.add(road);
  const matched=catalog.networks.filter(n=>found.has(n.id)).map(n=>({
   id:n.id,name:n.name,status:n.id==="m4"&&signals.m4StrictPvpCount>0?"strict_pvp_found_full_price_unverified":"candidate_unverified",
   hasReferenceFare:Object.prototype.hasOwnProperty.call(catalog.operatorFares,n.id),

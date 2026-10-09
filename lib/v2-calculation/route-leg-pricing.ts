@@ -1,6 +1,8 @@
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
 import nationalCatalog from "@/experiments/nationwide-tolls/national-registry.json";
 import { inspectNationwideCandidates } from "@/experiments/nationwide-tolls/national-preview.mjs";
+import { auditM1M3SelectedRoute } from "@/experiments/nationwide-tolls/m1-m3-gate-evidence.mjs";
+import m1m3OfficialGates from "@/experiments/nationwide-tolls/m1-m3-official-gates.json";
 import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { calculateProductionM4, type ProductionM4Result } from "@/lib/toll-engine/m4-production";
@@ -73,11 +75,19 @@ export async function calculateLegTolls({
   // CKAD is a paid component only when legacy evidence names it or the strict
   // route-level CKAD engine proves a candidate/verified east-arc traversal.
   const ckadDetected = legacyFamilies.has("ckad") || productionCkad.candidate;
+  const m1m3GateAudit = auditM1M3SelectedRoute(
+    m1m3OfficialGates,
+    diagnosticFastValidation,
+    // The diagnostic match uses *this same selected route geometry*. No
+    // evidence is reusable for another route, and nothing here authorizes fares.
+    "selected-fast-route",
+  );
   const nationalTollCoverage = inspectNationwideCandidates(nationalCatalog, geometricTolls.segments, {
     m4StrictPvpCount: productionM4.m4PvpPreview?.confirmedPvps?.length ?? 0,
     m11Candidate: productionM11Geometry.candidate,
     m12Candidate: Boolean(valhallaEvidence?.m12StrictSpan),
     ckadCandidate: productionCkad.candidate,
+    m1m3Candidates: m1m3GateAudit.candidateRoads,
   });
 
   const components: RouteTollComponent[] = [
@@ -138,5 +148,5 @@ export async function calculateLegTolls({
   const tolls = confirmedFree && !routeCompositionBlocked
     ? routingDifferenceTollFallback(selectedFastRoute, confirmedFree.route, pricedTolls)
     : pricedTolls;
-  return { tolls, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage };
+  return { tolls, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit} };
 }

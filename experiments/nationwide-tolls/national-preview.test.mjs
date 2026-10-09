@@ -18,3 +18,18 @@ test("strict M4 PVP signal is reported even when legacy checkpoint heuristics mi
 });
 test("mere M4 candidacy without any verified paid gate is NOT enough",()=>assert.deepEqual(inspect(catalog,[],{m4StrictPvpCount:0}).candidateNetworks,[]));
 test("M11,M12 and CKAD system evidence creates three preliminary candidates",()=>assert.deepEqual(inspect(catalog,[],{m11Candidate:true,m12Candidate:true,ckadCandidate:true}).candidateNetworks.map(x=>x.id),["m11","m12","ckad"]));
+
+test("strict Valhalla M1 booth candidate appears without old nearby road label",()=>{
+ const x=inspect(catalog,[],{m1m3Candidates:["m1"]});
+ assert.deepEqual(x.candidateNetworks.map(n=>n.id),["m1"]);
+ assert.equal(x.newFareApplied,false);
+});
+test("strict Valhalla M3 booth candidate appears without old estimated section",()=>{
+ const x=inspect(catalog,[],{m1m3Candidates:["m3"]});
+ assert.deepEqual(x.candidateNetworks.map(n=>n.id),["m3"]);
+ assert.equal(x.exactCrossingVerified,false);
+});
+test("m1m3 candidate injection ignores unknown or forged road family ids",()=>{
+ const x=inspect(catalog,[],{m1m3Candidates:["m1","m2","foo","m3"]});
+ assert.deepEqual(x.candidateNetworks.map(n=>n.id),["m1","m3"]);
+});
