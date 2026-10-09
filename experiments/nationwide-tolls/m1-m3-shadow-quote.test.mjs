@@ -5,7 +5,7 @@ import {quoteM3ThreeGateShadow as quote} from "./m1-m3-shadow-quote.mjs";
 const catalog=JSON.parse(readFileSync(new URL("./national-registry.json",import.meta.url),"utf8"));
 const gate=(km,nodeId)=>({id:`m3-pvp-${km}`,km,roadId:"m3",edgeToll:true,osmNodeId:nodeId,fareRowId:km===86?"m3-65-86":km===136?"m3-112-150":"m3-150-194"});
 const expected=[gate(86,"13294157951"),gate(136,"4780909558"),gate(168,"4780909555")];
-function audit(gates=expected){return{routeId:"same-map-matched-selected",status:"physical_gate_nodes_matched",verifiedGates:gates,unmappedPaidNodes:[],strictPriceAllowed:false}};
+function audit(gates=expected){return{routeId:"same-map-matched-selected",status:"physical_gate_nodes_matched",verifiedGates:structuredClone(gates),unmappedPaidNodes:[],strictPriceAllowed:false}};
 const fri="2026-10-09T10:00:00+03:00";
 test("operator Friday profile: M3 3 independently matched PVPs => 520 RUB SHADOW only",()=>{const q=quote(catalog,audit(),fri,11340);assert.equal(q.amountRub,520);assert.equal(q.operatorProfile,"friSun");assert.equal(q.diagnosticOnly,true)});
 test("reverse selected physical M3 gate sequence yields same 520 RUB component",()=>assert.equal(quote(catalog,audit([...expected].reverse()),fri,11340).amountRub,520));
@@ -25,3 +25,9 @@ test("unknown date format also returns null",()=>assert.equal(quote(catalog,audi
 
 test("M3 Saturday Oct10 2026 three actual gates yields 520 Rub, not deprecated 800",()=>assert.equal(quote(catalog,audit(),"2026-10-10T10:00:00+03:00",8000).amountRub,520));
 test("M3 2026-03-01 operator order not in force yet",()=>assert.equal(quote(catalog,audit(),"2026-03-01T10:00:00+03:00",7000).amountRub,null));
+
+test("test fixture isolation: a deliberately malicious event from a previous test never mutates later physical gate evidence",()=>{
+ const bad=audit();bad.verifiedGates[0].roadId="m1";
+ assert.equal(audit().verifiedGates[0].roadId,"m3");
+ assert.equal(quote(catalog,audit(),"2026-10-10T10:00:00+03:00",8000).amountRub,520);
+});
