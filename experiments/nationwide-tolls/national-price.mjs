@@ -16,7 +16,12 @@ function quoteNationalRoad(catalog,request){
  try{validateCatalog(catalog)}catch{return fail("invalid_catalog")}
  if(!request||!catalog.networks.some(n=>n.id===request.roadId))return fail("road_not_in_registry");
  if(request.vehicleCategory!=="I"||request.payment!=="noTransponder")return fail("unverified_vehicle_or_payment_class");
- if(typeof request.tariffDate!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(request.tariffDate)||!Number.isFinite(Date.parse(request.tariffDate+"T12:00:00Z")))return fail("tariff_date_missing_or_invalid");
+ if(typeof request.tariffDate!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(request.tariffDate))return fail("tariff_date_missing_or_invalid");
+ const parsedDate=new Date(request.tariffDate+"T12:00:00Z");
+ if(!Number.isFinite(parsedDate.getTime())||parsedDate.toISOString().slice(0,10)!==request.tariffDate)return fail("tariff_date_missing_or_invalid");
+ // An undated current public tariff page cannot prove prices for arbitrary
+ // historical or future departure days. Use only the observed audit date.
+ if(request.tariffDate>catalog.asOf)return fail("future_tariff_unverified");
  const proof=request.proof;
  // Exact matched PVP/camera identification is required; a road label alone is forbidden.
  if(!proof||proof.status!=="verified"||proof.routeId!==request.routeId||typeof proof.routeId!=="string"||!proof.routeId||
@@ -24,6 +29,7 @@ function quoteNationalRoad(catalog,request){
  proof.edgeToll!==true||!Array.isArray(proof.passageIds)||proof.passageIds.length===0||
  proof.passageIds.some(id=>typeof id!=="string"||!id)||new Set(proof.passageIds).size!==proof.passageIds.length)return fail("incomplete_or_nonmatching_passage_proof");
  const fare=catalog.operatorFares[request.roadId];if(!fare)return fail("official_tariff_not_imported");
+ if(!fare.effectiveFrom&&request.tariffDate!==catalog.asOf)return fail("tariff_effective_date_unverified");
  if(fare.effectiveFrom && request.tariffDate<fare.effectiveFrom)return fail("tariff_not_effective");
  if(fare.effectiveTo && request.tariffDate>fare.effectiveTo)return fail("tariff_expired");
  const s=request.scenario??{};
@@ -72,7 +78,7 @@ function quoteNationalRoad(catalog,request){
      // A truly free set of *observed* passes is valid only with all checks.
      amount=paid*fare.citySectionRub;
    }else if(s.msdMode==="transit"){
-     if(proof.passageIds.length!==1||proof.passageIds[0]!=="msd-transit-ckad-ckad" || s.twoCkadCrossingsVerified!==true || s.tripMinutes>120||!Number.isFinite(s.tripMinutes)||s.tripMinutes<0||s.plateRegion!=="non_moscow"||s.exemptionVerified!=="not_exempt")return fail("msd_transit_conditions_unverified");
+     if(proof.passageIds.length!==1||proof.passageIds[0]!=="msd-transit-ckad-ckad" || s.twoCkadCrossingsVerified!==true || s.ckadCrossingTimeProof!==true || !Number.isFinite(s.ckadBoundaryMinutes)||s.ckadBoundaryMinutes<0||s.ckadBoundaryMinutes>1440 || s.tripMinutes>120||!Number.isFinite(s.tripMinutes)||s.tripMinutes<0||s.plateRegion!=="non_moscow"||s.exemptionVerified!=="not_exempt")return fail("msd_transit_conditions_unverified");
      amount=fare.transitTripRub;
    }else return fail("msd_charging_model_missing");
  }else return fail("unsupported_fare_model");
@@ -80,3 +86,34 @@ function quoteNationalRoad(catalog,request){
  return {status:"diagnostic_priced",amountRub:amount,reason:null,roadId:request.roadId,source:fare.source,diagnosticOnly:true};
 }
 export {validateCatalog,quoteNationalRoad};
+
+/**
+ * Compose nationwide charges for a fully checked selected trip.
+ * This layer is offline until independent end-to-end facility extraction can
+ * certify **every** paid facility, including roads outside our 22 networks.
+ * Null always wins over a partial known amount.
+ */
+function quoteNationwideTrip(catalog,trip){
+ const fail=(reason,components=[])=>({status:"unknown",amountRub:null,reason,components,diagnosticOnly:true});
+ try{validateCatalog(catalog)}catch{return fail("invalid_catalog")}
+ if(!trip || typeof trip.routeId!=="string" || !trip.routeId||
+ trip.allPaidFacilitiesInspected!==true || trip.sameSelectedGeometry!==true ||
+ trip.hasUnregisteredPaidSystem!==false || trip.evidenceSource!=="complete_independent_route_matching"||
+ !Array.isArray(trip.events))return fail("national_route_coverage_incomplete");
+ if(trip.events.length===0){
+   // No detected paid gates is not evidence of a truly free entire route:
+   // require a second independent no-toll edge proof.
+   if(trip.independentlyVerifiedNoTollEdges!==true)return fail("empty_paid_events_not_proof_of_free");
+   return {status:"verified_free",amountRub:0,reason:null,components:[],diagnosticOnly:true};
+ }
+ const seen=new Set(),results=[];
+ for(const [index,event]of trip.events.entries()){
+   if(!event || !event.traversalId || seen.has(event.traversalId))return fail("repeated_or_missing_traversal_identity",results);
+   seen.add(event.traversalId);
+   const item=quoteNationalRoad(catalog,{...event,routeId:trip.routeId});
+   results.push({...item,traversalId:event.traversalId,sequenceIndex:index});
+   if(item.status!=="diagnostic_priced")return fail("national_component_unpriced:"+item.roadId+":"+item.reason,results);
+ }
+ return {status:"diagnostic_priced",amountRub:results.reduce((sum,item)=>sum+item.amountRub,0),reason:null,components:results,diagnosticOnly:true};
+}
+export {quoteNationwideTrip};

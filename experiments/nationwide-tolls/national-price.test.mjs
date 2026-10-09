@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {test} from "node:test";
 import {readFileSync} from "node:fs";
-import {quoteNationalRoad as q,validateCatalog} from "./national-price.mjs";
+import {quoteNationalRoad as q,quoteNationwideTrip as total,validateCatalog} from "./national-price.mjs";
 const registry=JSON.parse(readFileSync(new URL("./national-registry.json",import.meta.url),"utf8"));
 function req(roadId, passageIds, scenario={}){return {roadId,routeId:"selected-route-1",vehicleCategory:"I",payment:"noTransponder",tariffDate:"2026-10-09",proof:{status:"verified",source:"independent_paid_edge_or_operator_camera",routeId:"selected-route-1",complete:true,edgeToll:true,passageIds},scenario}};
 test("national manifest has unique entries and valid fee provenance",()=>{assert.equal(validateCatalog(registry),true);assert.ok(registry.networks.length>=20);});
@@ -35,9 +35,9 @@ test("MSD city off peak with complete official evidence really free",()=>{const 
 test("MSD city boundary entry in peak and exit outside is free",()=>{const s=structuredClone(msd);s.sectionTimes[0].entryLocal="2026-10-09T10:55";s.sectionTimes[0].exitLocal="2026-10-09T11:05";assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,0)});
 test("MSD exempt taxi without exemption proof unknown",()=>{const s={...msd,exemptionVerified:"unknown"};assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,null)});
 test("MSD schedule without active verification unknown",()=>{const s={...msd,currentScheduleVerified:false};assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,null)});
-test("MSD transit 950 with both CKAD and regional proof",()=>{const s={msdMode:"transit",twoCkadCrossingsVerified:true,tripMinutes:95,plateRegion:"non_moscow",exemptionVerified:"not_exempt"};assert.equal(q(registry,req("msd",["msd-transit-ckad-ckad"],s)).amountRub,950)});
+test("MSD transit 950 with both CKAD and regional proof",()=>{const s={msdMode:"transit",twoCkadCrossingsVerified:true,ckadCrossingTimeProof:true,ckadBoundaryMinutes:145,tripMinutes:95,plateRegion:"non_moscow",exemptionVerified:"not_exempt"};assert.equal(q(registry,req("msd",["msd-transit-ckad-ckad"],s)).amountRub,950)});
 test("MSD transit 950 denied to unknown region",()=>{const s={msdMode:"transit",twoCkadCrossingsVerified:true,tripMinutes:95,plateRegion:"unknown",exemptionVerified:"not_exempt"};assert.equal(q(registry,req("msd",["msd-transit-ckad-ckad"],s)).amountRub,null)});
-test("MSD transit >2 hours denied",()=>{const s={msdMode:"transit",twoCkadCrossingsVerified:true,tripMinutes:121,plateRegion:"non_moscow",exemptionVerified:"not_exempt"};assert.equal(q(registry,req("msd",["msd-transit-ckad-ckad"],s)).amountRub,null)});
+test("MSD transit >2 hours denied",()=>{const s={msdMode:"transit",twoCkadCrossingsVerified:true,ckadCrossingTimeProof:true,ckadBoundaryMinutes:145,tripMinutes:121,plateRegion:"non_moscow",exemptionVerified:"not_exempt"};assert.equal(q(registry,req("msd",["msd-transit-ckad-ckad"],s)).amountRub,null)});
 
 test("Ufa eastern exit fixed official category-I no-transponder fare",()=>assert.equal(q(registry,req("ufa-east",["ufa-east-pvp"])).amountRub,150));
 test("Ufa arbitrary camera cannot be billed",()=>assert.equal(q(registry,req("ufa-east",["unknown"])).amountRub,null));
@@ -49,3 +49,17 @@ test("Tolyatti cannot add exclusive operator tariff zones",()=>assert.equal(q(re
 test("MSD peak hours are free on verified holiday or weekend",()=>{const s=structuredClone(msd);s.dayClass="verified_weekend_or_holiday";assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,0)});
 test("MSD date mismatch with selected trip is unknown",()=>{const s=structuredClone(msd);s.sectionTimes[0].entryLocal="2026-10-08T08:00";assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,null)});
 test("MSD reversed entry/exit time returns unknown",()=>{const s=structuredClone(msd);s.sectionTimes[0].entryLocal="2026-10-09T09:00";s.sectionTimes[0].exitLocal="2026-10-09T08:30";assert.equal(q(registry,req("msd",["msd-section-1"],s)).amountRub,null)});
+
+test("reject nonexistent Gregorian civil dates, not just a shape",()=>{const x=req("bagration",["bagration-camera-6.6"]);x.tariffDate="2026-02-30";assert.equal(q(registry,x).amountRub,null)});
+test("a future tariff cannot be proven by Oct 2026 operator snapshot",()=>{const x=req("udmurt-bridges",["kama"]);x.tariffDate="2027-01-01";assert.equal(q(registry,x).reason,"future_tariff_unverified")});
+test("undated official snapshot cannot prove historical prices",()=>{const x=req("bagration",["bagration-camera-6.6"]);x.tariffDate="2026-08-01";assert.equal(q(registry,x).reason,"tariff_effective_date_unverified")});
+test("MSD transit requires proof that both CKAD crossings occur within 24 hours",()=>{const x=req("msd",["msd-transit-ckad-ckad"],{msdMode:"transit",twoCkadCrossingsVerified:true,ckadCrossingTimeProof:true,ckadBoundaryMinutes:1441,tripMinutes:95,plateRegion:"non_moscow",exemptionVerified:"not_exempt"});assert.equal(q(registry,x).amountRub,null)});
+function allTrip(events){return {routeId:"selected-route-1",allPaidFacilitiesInspected:true,sameSelectedGeometry:true,hasUnregisteredPaidSystem:false,evidenceSource:"complete_independent_route_matching",events};}
+test("national multi-network total is sum only if every component is verified",()=>{const a={...req("bagration",["bagration-camera-6.6"]),traversalId:"a"};const b={...req("ufa-east",["ufa-east-pvp"]),traversalId:"b"};const x=total(registry,allTrip([a,b]));assert.equal(x.status,"diagnostic_priced");assert.equal(x.amountRub,940)});
+test("one unpriced road invalidates full national trip total",()=>{const a={...req("bagration",["bagration-camera-6.6"]),traversalId:"a"};const b={...req("zsd",["gate"]),traversalId:"b"};const x=total(registry,allTrip([a,b]));assert.equal(x.status,"unknown");assert.equal(x.amountRub,null)});
+test("empty national events cannot be assumed free",()=>assert.equal(total(registry,allTrip([])).amountRub,null));
+test("verified free national route must prove no toll edges independently",()=>{const trip=allTrip([]);trip.independentlyVerifiedNoTollEdges=true;assert.equal(total(registry,trip).status,"verified_free");assert.equal(total(registry,trip).amountRub,0)});
+test("national route missing full coverage fails closed",()=>{const x=allTrip([{...req("bagration",["bagration-camera-6.6"]),traversalId:"a"}]);x.allPaidFacilitiesInspected=false;assert.equal(total(registry,x).amountRub,null)});
+test("national route with unregistered paid road fails closed",()=>{const x=allTrip([{...req("bagration",["bagration-camera-6.6"]),traversalId:"a"}]);x.hasUnregisteredPaidSystem=true;assert.equal(total(registry,x).amountRub,null)});
+test("national route rejects repeated billable traversal identities",()=>{const x=allTrip([{...req("bagration",["bagration-camera-6.6"]),traversalId:"a"},{...req("ufa-east",["ufa-east-pvp"]),traversalId:"a"}]);assert.equal(total(registry,x).amountRub,null)});
+test("national route cannot reuse proof from another selected route",()=>{const x=allTrip([{...req("bagration",["bagration-camera-6.6"]),traversalId:"a",proof:{...req("bagration",["bagration-camera-6.6"]).proof,routeId:"another"}}]);assert.equal(total(registry,x).amountRub,null)});
