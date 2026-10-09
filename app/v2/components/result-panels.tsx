@@ -97,6 +97,11 @@ export function ResultPanels({
                 ? "строгая проверка узлов на этой поездке ещё недоступна"
                 : `подтверждённых OSM-узлов: ${standardLeg.fast.nationalTollCoverage.m1m3GateAudit.verifiedGates.length}, неопознанных платных событий: ${standardLeg.fast.nationalTollCoverage.m1m3GateAudit.unmappedPaidNodes.length}`}.
                 Операторские ПВП известны (М-1: 46 км; М-3: 86, 136, 168 км), но точные OSM-идентификаторы полос ещё требуют сверки.</p>
+              {standardLeg.fast.nationalTollCoverage.m1m3GateAudit.unmappedPaidNodes.length > 0 && (
+                <p className="break-all">OSM-кандидаты (не утверждены как ПВП):
+                  {standardLeg.fast.nationalTollCoverage.m1m3GateAudit.unmappedPaidNodes.map(node => ` ${node.roadId}: ${node.osmNodeId ?? "ID отсутствует"}`).join("; ")}
+                </p>
+              )}
             )}
             <a href="/v2/toll-roads" className="inline-block font-semibold underline underline-offset-4">Каталог платных дорог и статус расчёта</a>
           </div>
