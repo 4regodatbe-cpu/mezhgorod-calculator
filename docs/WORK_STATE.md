@@ -1,3 +1,10 @@
+## CURRENT 2026-10-11 — tariff snapshot conflict identified (research, no cutover)
+
+- Docs commits `42b2527` and `56ecae5`: mainline M1 PVP46 separated from Odintsovo bypass PVP4.6; M3 Friday shadow 800 RUB in prior E2E evidence conflicts with current registry Friday component sum 520 RUB. Exact primary tariff applicability remains unverified; do not charge either.
+- No Node tests/build/browser E2E/deploy run in this block. M1 directional OSM proof and official receipt still open. Detailed research: `experiments/nationwide-tolls/M1_OPERATOR_SCOPE_AUDIT_2026-10-11.md`, `RECONCILIATION_2026-10-11.md`.
+
+---
+
 ## CURRENT handoff — 2026-10-09 / M3 physical gates verified both directions, 289 Node tests
 
 - Latest **tested code** `04c253d23ade176a49b236032aebaa6c0d1a6498` on isolated Preview branch `experiment/toll-od-matrix-2026-10-08`: Vercel `dpl_AyBUbHjyX1mZFh6rA2wftV2Fv5ja` **READY**, `https://mezhgorod-calculator-r6x9ndg7j-4regodatbe-5310.vercel.app/v2`. Vercel native **289/289 tests PASS**, Next+TypeScript build PASS.
