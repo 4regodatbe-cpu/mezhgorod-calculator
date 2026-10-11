@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Car, Download, ShieldCheck } from "lucide-react";
+import { Car, ShieldCheck } from "lucide-react";
 import { FeedbackForm } from "../v2/components/feedback-form";
 import { DonationCard } from "../v2/components/donation-card";
 import { CalculatorForm } from "../v2/components/calculator-form";
@@ -60,9 +60,9 @@ export default function V3Page() {
       <header className="mb-4 flex items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2.5">
           <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-action text-brand-action-foreground shadow-md"><Car className="h-5 w-5" /></div>
-          <div className="min-w-0"><h1 className="text-xl font-black leading-tight tracking-tight text-brand-text sm:text-2xl">из А в Б</h1><p className="text-xs font-semibold text-brand-muted">Калькулятор поездок · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">Версия 2</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
+          <div className="min-w-0"><h1 className="text-xl font-black leading-tight tracking-tight text-brand-text sm:text-2xl">из А в Б</h1><p className="text-xs font-semibold text-brand-muted">Калькулятор поездок · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">Версия 2</a><a href="/v3" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">V3 · один самый быстрый</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
         </div>
-        <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle />{!isAndroidApp && <a href="https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/download/android-latest/Mezhgorod-Calc-2.apk" download="Mezhgorod-Calc-2.apk" aria-label="Скачать для Android" className="flex h-10 items-center gap-1 rounded-xl bg-brand-action px-2 text-[11px] font-bold text-brand-action-foreground transition hover:brightness-110 sm:px-3 sm:text-xs"><Download className="h-4 w-4 shrink-0"/>Скачать для Android</a>}</div>
+        <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle /></div>
       </header>
       <CalculatorForm
         mode={mode}
