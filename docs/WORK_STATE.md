@@ -1,3 +1,13 @@
+## CURRENT 2026-10-11 — reassessment: M-4 vector prices, sandbox only
+
+- **DONE — design audit saved:** `experiments/toll-od-matrix/REASSESSMENT_2026-10-11.md`. The experimental exact ordered-PVP lookup and offline sum compiler align with the original concept, but the price matrix is empty and V3 still gets its displayed M-4 amount from the per-PVP additive path. Thus the algorithm exists as a partial isolated prototype, not a complete working tariff route.
+- **CONFLICT TO RESOLVE:** saved rows yield `[1223,1184]` 850/1,160 ₽ and `[1223,1184,1093]` 1,000/1,430 ₽, while user-reported Yandex controls are 700/850 ₽ and 850/1,000 ₽. Do not seed either as a verified fare until same-date/profile/vector source is reconciled. Extra PVP 1046 requires its own geometry-confirmed vector and price.
+- **SCOPE:** user says develop in separate sandbox and leave V2 untouched. This branch has a historic V2 diagnostic-shadow UI/API integration; review/remove or isolate it before reuse. No V2/Main/Production change was made in this review block.
+- **Docs commits:** concept clarification `ab5533a1903a5bb4b5fe38c2be315ef4e8449935`; reassessment `4a38407cba54061aef3f8e071948167ac773f3ad`; reprioritized backlog `183f67633642285b770c13e09713e412856db370`; work-log audit `b0f142d2e59843bc30bb560de6e48c83b2eb7d36`. No tests/build/route recalculation/operator audit were run for these doc-only changes; earlier 165/165 does not cover them.
+- **NEXT:** prove exact fastest-route PVP vectors for Sochi→Rostov, Sochi→Volnovakha, and longer control; reconcile official rows vs user/Yandex profile; populate vector cells, test unknown/extra-gate behavior, then replace V3 per-PVP money with vector lookup inside the sandbox. See `experiments/toll-od-matrix/NEXT_STEPS.md`.
+
+---
+
 ## CURRENT 2026-10-11 — clarified M-4 PVP-vector tariffs
 
 - **DONE — decision persisted:** fare for one continuous selected M-4 route is looked up by its complete ordered, geometry-confirmed PVP vector + calendar period; no general entry/exit interchange table or runtime sum of individual PVP amounts is needed for this product case. Decision in `experiments/toll-od-matrix/DECISIONS.md`; append-only record in `experiments/toll-od-matrix/WORK_LOG.md`.
