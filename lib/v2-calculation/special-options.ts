@@ -6,6 +6,7 @@ import { selectLiveRouteCandidates } from "../route-quality";
 import { calculateLegTolls } from "./route-leg-pricing";
 import { hasPracticalSavings, tollsForApi, withinDetourLimits } from "./free-route-selection";
 import { validateTollEdges } from "../toll-validator";
+import { selectFastestRoute } from "@/experiments/nationwide-tolls/fastest-route-policy.mjs";
 
 type PricedCandidate = {
   corridor:"mainland"|"crimea";
@@ -23,7 +24,7 @@ type PricedCandidate = {
   freeCandidate:null;
 };
 
-export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string) {
+export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string,fastestOnly=false) {
   const plans=candidatePlans(from.position,to.position,zones);
   const preferredCorridor=plans[0]?.corridor??"mainland";
   const candidates = await Promise.all(plans.map(async plan => {
@@ -49,7 +50,12 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     // intermittently degrade to unknown. Keep the existing route ranking and
     // price provider candidates one at a time so toll evidence is complete
     // before the final paid-route preference is applied.
-    const routeChoice=selectLiveRouteCandidates(validRoutes.map(item=>({name:item.provider,route:item.fast})));
+    const routeChoice=fastestOnly
+      ? (() => {
+          const winner=selectFastestRoute(validRoutes.map(item=>({id:`${item.corridor}:${item.provider}`,seconds:item.fast.seconds,tollStatus:"unknown",item})));
+          return {provider:winner.route.item.provider, route:winner.route.item.fast, quality:{status:"single" as const,providers:[winner.route.item.provider],distanceSpreadPercent:null,timeSpreadPercent:null,goldenDistanceDeviationPercent:null,message:"Выбран маршрут с минимальным временем"}};
+        })()
+      : selectLiveRouteCandidates(validRoutes.map(item=>({name:item.provider,route:item.fast})));
     const quality=rejectedStretchProviders.size?{
       ...routeChoice.quality,
       status:"warning" as const,
@@ -57,9 +63,10 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
       message:`Отклонён маршрут с аномальной длиной контрольного сегмента: ${[...rejectedStretchProviders].map(([name,ratio])=>`${name} (${ratio.toFixed(1)}×)`).join(", ")}. Проверьте оставшийся маршрут перед поездкой`,
     }:routeChoice.quality;
     const rankedRoutes=validRoutes.map(item=>({...item,selectionPreference:item.provider===routeChoice.provider?0:1}))
-      .sort((a,b)=>a.selectionPreference-b.selectionPreference||a.fast.seconds-b.fast.seconds);
+      .sort((a,b)=>fastestOnly?a.fast.seconds-b.fast.seconds:a.selectionPreference-b.selectionPreference||a.fast.seconds-b.fast.seconds);
+    const routesToPrice=fastestOnly?rankedRoutes.slice(0,1):rankedRoutes;
     const selected:PricedCandidate[]=[];
-    for(const item of rankedRoutes){
+    for(const item of routesToPrice){
       const pricing=await calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:null});
       const {route,index,...candidate}=item;
       selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality}});
@@ -70,7 +77,7 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     // a payment-point-avoiding path through the exact same geographic controls.
     // Keep it only after geometry, corridor and detour checks pass.
     const main=selected.find(item=>item.selectionPreference===0)??selected[0];
-    if(selected.length<2){
+    if(!fastestOnly && selected.length<2){
       for(const penalty of [900,1800]){
         try{
           const route=await valhalla(from,to,1,plan.positions,penalty);
