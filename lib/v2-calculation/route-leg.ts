@@ -6,8 +6,9 @@ import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { selectLiveRouteCandidates } from "@/lib/route-quality";
 import { selectFreeRoute, tollsForApi } from "./free-route-selection";
 import { calculateLegTolls } from "./route-leg-pricing";
+import { selectFastestRoute } from "@/experiments/nationwide-tolls/fastest-route-policy.mjs";
 
-export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>) {
+export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>, fastestOnly = false) {
   const rejectedStretchProviders = new Map<string, number>();
   const rawResults = await Promise.allSettled([
     valhalla(from, to, 1, positions),
@@ -33,11 +34,36 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     } catch(reason) { return {status:"rejected" as const,reason}; }
   });
 
-  const selectedFast = selectLiveRouteCandidates([
+  const routeCandidates = [
     ...(fastResult.status === "fulfilled" ? [{ name: "Valhalla", route: fastResult.value }] : []),
+    ...(valhallaModerateAvoidResult.status === "fulfilled" ? [{ name: "Valhalla local routing candidate", route: valhallaModerateAvoidResult.value }] : []),
+    ...(valhallaPartialTollResult.status === "fulfilled" ? [{ name: "Valhalla partial toll candidate", route: valhallaPartialTollResult.value }] : []),
     ...(osrmResult.status === "fulfilled" ? [{ name: "OSRM", route: osrmResult.value }] : []),
     ...(brouterFastResult.status === "fulfilled" ? [{ name: "BRouter", route: brouterFastResult.value }] : []),
-  ]);
+  ];
+  const selectedFast = fastestOnly
+    ? (() => {
+        const winner = selectFastestRoute(routeCandidates.map((candidate) => ({
+          id: candidate.name,
+          seconds: candidate.route.seconds,
+          tollStatus: "unknown",
+          route: candidate.route,
+          provider: candidate.name,
+        })));
+        return {
+          route: winner.route.route,
+          provider: winner.route.provider,
+          quality: {
+            status: "single" as const,
+            providers: [winner.route.provider],
+            distanceSpreadPercent: null,
+            timeSpreadPercent: null,
+            goldenDistanceDeviationPercent: null,
+            message: "Выбран единственный допустимый маршрут с минимальным временем",
+          },
+        };
+      })()
+    : selectLiveRouteCandidates(routeCandidates);
 
   const fastQuality = rejectedStretchProviders.size ? {
     ...selectedFast.quality,
@@ -99,7 +125,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     selectedFastProvider: selectedFast.provider,
     selectedFastRoute: selectedFast.route,
     valhallaEvidence,
-    confirmedFreeRoute: confirmedFree?.route ?? null,
+    confirmedFreeRoute: fastestOnly ? null : confirmedFree?.route ?? null,
     diagnosticFastValidation,
   });
   const { tolls, fastValidation, m4PvpPreview, nationalTollCoverage } = pricing;
@@ -111,7 +137,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     from: from.label,
     to: to.label,
     fast: { ...selectedFast.route, coordinates: routeGeometry, quality: fastQuality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation, m4PvpPreview, nationalTollCoverage },
-    free: confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
+    free: !fastestOnly && confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
     freeCandidate: null,
     freeError: confirmedFree ? undefined : "Не удалось подтвердить вариант с объездом пунктов оплаты.",
   };
