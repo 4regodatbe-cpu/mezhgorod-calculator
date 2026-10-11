@@ -26,9 +26,11 @@ export function selectFastestRoute(candidates) {
     route: selected,
     shownRouteCount: 1,
     tollStatus: selected.tollStatus,
-    tollAmountRub: selected.tollStatus === "priced" &&
-      Number.isSafeInteger(selected.tollAmountRub) && selected.tollAmountRub >= 0
-      ? selected.tollAmountRub
-      : null,
+    tollAmountRub: selected.tollStatus === "free"
+      ? 0
+      : selected.tollStatus === "priced" &&
+        Number.isSafeInteger(selected.tollAmountRub) && selected.tollAmountRub >= 0
+        ? selected.tollAmountRub
+        : null,
   };
 }
