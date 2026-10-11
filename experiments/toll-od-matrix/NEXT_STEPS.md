@@ -1,3 +1,18 @@
+## 2026-10-11 — vector-model reassessment supersedes older M-4 ramp/whole-total blockers
+
+Read `REASSESSMENT_2026-10-11.md` before taking an older unchecked item. The M-4 deliverable is a selected-route ordered PVP vector with one stored Mon–Thu aggregate and one Fri–Sun aggregate. Per-PVP fee aggregation occurs once during catalogue preparation; runtime must only perform exact vector lookup. Do not build an M-4 ramp/entry-exit OD matrix.
+
+1. **P0 — reconcile tariff data:** determine why current saved per-PVP rows produce [1223,1184] = 850/1,160 ₽ and [1223,1184,1093] = 1,000/1,430 ₽, while user-provided Yandex controls are 700/850 ₽ and 850/1,000 ₽ respectively. Fix source period/vehicle/payment/road-vector mismatch only with evidence. Preserve all four values and provenance in audit; do not silently substitute.
+2. **P0 — prove selected-route sequence:** obtain the fastest route geometry and confirmed ordered PVP events for Sochi→Rostov, Sochi→Volnovakha, plus a longer control that could cross PVP 1046. Do not infer 1046 from destination or route length.
+3. **P1 — simplify price cell contract:** vector key + two precomputed period totals (with source/version metadata); exact sequence mismatch or missing price remains unknown. Independent route-total/Yandex controls are validation evidence, not ramp matrix entries. Ensure the compiler's requirement for a separate whole-corridor official total is a cross-check rather than an accidental requirement for an OD/ramp catalog.
+4. **P1 — isolated route integration:** V3 must display only the exact vector lookup result and never the current per-PVP runtime sum as the new algorithm. If exact vector cell is unavailable, show unknown. Keep V2 unchanged; current branch's V2 diagnostic-shadow integration needs scope review before reuse.
+5. **P1 — add regression examples:** exact reported two-PVP and three-PVP reference amounts; four-PVP vector cannot reuse three-PVP prices; missing/skipped PVP evidence and unknown vector stay unknown. Keep user-reported source labels until official/date/profile verification completes.
+6. **P2 — execute full verification:** native Node suite, Vercel preview build, then browser checks with same route/time/profile; compare selected geometry/PVP sequence and period cell. No Production release without later explicit authorization.
+
+The prior queue below contains historical M-4 full-corridor-source and V2-shadow items. Follow them only where consistent with this vector-specific order. In particular, exhaustive interchange enumeration is superseded, and no per-request PVP sum is an acceptable V3 final amount.
+
+---
+
 # Toll OD/PVP experiment — execution backlog and resume instructions
 
 Updated 2026-10-09. This file is the **actionable queue**, not a list of completed claims.
