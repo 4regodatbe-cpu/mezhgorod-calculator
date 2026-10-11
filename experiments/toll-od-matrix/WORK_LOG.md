@@ -229,3 +229,18 @@
 **Проверки:** прочитаны M-4 node inventory, candidate selector, validator, current production pricing path, experimental matrix/schema decisions; ранее сохранённая матрица сообщает 0 подтверждённых priceCells. В этом блоке тесты, build, live route calculation, deployment и операторская сверка не запускались. Изменение документации не утверждает прохождение этих проверок.
 
 **Следующий шаг:** реализовать lookup по полному упорядоченному PVP vector + calendar period в изолированной experiments/toll-od-matrix/ матрице/engine; добавить regression tests: двух-, трёх- и четырёх+ gate vector; отсутствующий gate evidence, неизвестный vector/cell, alternate exit, direction, calendar mismatch должны оставаться unknown. После этого верифицировать user-reported prices по официальному датированному источнику и exact fastest route before any live integration.
+
+
+## 2026-10-11 — audit entire M-4 sandbox against original vector concept
+
+**User request:** Reassess all M-4 sandbox work against the design: one fastest selected route → ordered PVP vector → two prepared values (weekday/weekend); do not disturb V2 while developing in the separate sandbox.
+
+**Review outcome:** The isolated vector lookup already uses exact ordered PVP events and returns a precomputed period price; the offline compiler aggregates PVP charge-ledger components into the two stored amounts. However `matrix/m4-pvp-corridors.json` remains empty, so there is no applicable vector fare. The current route-pricing path still supplies legacy/runtime additive per-PVP totals to its UI; the vector lookup is diagnostic only. The saved tariff rows imply 850/1,160 RUB for [1223,1184] and 1,000/1,430 RUB for [1223,1184,1093], while user's route controls are 700/850 and 850/1,000 respectively. This source/date/profile/route mismatch is unresolved. Adding PVP 1046 must require same-geometry evidence and a distinct vector cell.
+
+**Scope finding:** branch docs say ramps are deferred, but prior diagnostic-shadow V2 integration exists in the branch; user restated that V2 should stay untouched. Do not expand/reuse that integration before scope cleanup. Main/Production were not changed in this review.
+
+**Changed:** added `REASSESSMENT_2026-10-11.md` (audit details), added a vector-specific superseding execution order atop `NEXT_STEPS.md`. Previous commit for exact concept clarification remains `ab5533a...`; this audit report commit `4a38407cba54061aef3f8e071948167ac773f3ad`; backlog commit `183f67633642285b770c13e09713e412856db370`.
+
+**Checks:** read START_HERE, DECISIONS, m4-pvp-corridor implementation and tests, evidence adapter and tests, compiler and tests, empty matrix, NEXT_STEPS, plus live/preview route-pricing implementation. No tests/build/browser recalculation/operator source receipt run in this review block. Prior Vercel log claim 165/165 applies only to earlier commit, not these documentation commits.
+
+**Next:** first determine the exact fastest-route gate vectors for Sochi→Rostov, Sochi→Volnovakha and a longer route; reconcile both saved per-PVP tariffs and user/Yandex figures for same profile/date. Then update the offline source intake/compiler only where needed, seed exact vector cells, test them, and replace V3's additive amount with exact lookup in isolated preview; do not change V2 or Production.
