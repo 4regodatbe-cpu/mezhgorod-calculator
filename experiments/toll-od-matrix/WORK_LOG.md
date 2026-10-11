@@ -216,3 +216,16 @@
 Новый исправленный Preview `https://mezhgorod-calculator-y77o4ba5m-4regodatbe-5310.vercel.app/v2`, deployment `dpl_72t2hXBtd7ducjCX5hJpatSSQMzH`, commit `18005ba3cd22f16f8ceb028fccc36fb2c70b5e2e` READY. Гостевая Share-ссылка передана пользователю отдельно, живёт около 23 часов; **никогда не сохранять `_vercel_share` токен в публичном репозитории**. `main`, PR #12 и Production не изменены. Все изменённые live-paths существуют только на Preview-ветке.
 
 **Next:** 1) user regression Android/desktop both directions (now no React crash in TinyFish Chromium reverse scenario); 2) source proof for actual official full PVP tariff and OSM continuity; 3) only then a gated real price cutover; 4) regression route variants and holiday/mixed time windows.
+
+
+## 2026-10-11 — пользователь уточнил M-4 векторную цену
+
+**Запрос/решение:** цена непрерывного выбранного маршрута М-4 определяется точным упорядоченным вектором фактически пересечённых ПВП и календарным периодом. Общую таблицу съездов/заездов собирать для этого сценария не требуется; runtime не складывает цены отдельных ПВП, а читает готовую цену вектора. Геометрия нужна для подтверждения последовательности и непрерывности выбранного fastest-route коридора.
+
+**Примеры, сообщённые пользователем (не операторская верификация):** [1223,1184] — 700 ₽ Пн–Чт / 850 ₽ Пт–Вс; [1223,1184,1093] — 850 ₽ / 1 000 ₽. Продолжение через 1046 км — отдельный вектор с отдельной ценовой ячейкой; включать ПВП 1046 только после подтверждения пересечения выбранной геометрией. Эти суммы записаны с происхождением user-reported calibration, не как официальные подтверждённые тарифы.
+
+**Изменено:** experiments/toll-od-matrix/DECISIONS.md дополняет решение M-4 PVP-first: вектор ПВП — ключ тарифа, entry/exit inventory не нужен; точной ячейки нет => unknown/null, не partial sum. Runtime/live M4 pricing, V2 и Production не менялись. Коммит решения: ab5533a1903a5bb4b5fe38c2be315ef4e8449935.
+
+**Проверки:** прочитаны M-4 node inventory, candidate selector, validator, current production pricing path, experimental matrix/schema decisions; ранее сохранённая матрица сообщает 0 подтверждённых priceCells. В этом блоке тесты, build, live route calculation, deployment и операторская сверка не запускались. Изменение документации не утверждает прохождение этих проверок.
+
+**Следующий шаг:** реализовать lookup по полному упорядоченному PVP vector + calendar period в изолированной experiments/toll-od-matrix/ матрице/engine; добавить regression tests: двух-, трёх- и четырёх+ gate vector; отсутствующий gate evidence, неизвестный vector/cell, alternate exit, direction, calendar mismatch должны оставаться unknown. После этого верифицировать user-reported prices по официальному датированному источнику и exact fastest route before any live integration.
