@@ -67,3 +67,19 @@ User-provided reference examples for future matrix seeding (reported 2026-10-11;
 - A vector containing the additional PVP 1046 must include its separately validated fare and cannot reuse the three-PVP price.
 
 These two amounts are **user-reported calibration references**, not independently verified operator tariff cells. Preserve provenance as user-provided and do not relabel them as official/fully verified until reconciled against the applicable dated operator tariff. Current live M4 additive pricing is not changed by this experiment decision. A route whose PVP sequence/continuity is incomplete or lacks an exact vector-and-period cell remains unknown/null; never present a partial sum as a complete fare.
+
+
+## 2026-10-11 — authoritative M-4 segment-vector tariff model (supersedes earlier directed-vector lookup)
+
+The user restated the final M-4 model. Treat this as authoritative over earlier experiment notes that made direction, first/last event sequence or mixed-context state part of separate fare keys.
+
+- Divide M-4 into the finite ordered paid segments/PVP boundaries used by the verified route model (illustrative labels: M4-1 ... M4-10). A continuous selected route traverses one contiguous span between its first and last confirmed PVP boundaries, such as M4-4↔M4-7. It does not leave M-4 and re-enter later; never model re-entry as normal behavior for this product flow.
+- Fare is stored once for that span. The lookup key is the canonical unordered endpoint pair, e.g. (M4-4,M4-7); the reverse (M4-7,M4-4) uses the same cell and same fare. Route direction does not change the price for the same span.
+- Each span cell contains exactly the two customer fare values: Mon–Thu and Fri–Sun. Their totals are prepared offline by verifying the PVP/segment charges along that span against the accepted operator/Yandex route controls. Runtime only identifies the span and retrieves its stored period value. It does not sum individual PVP prices.
+- Which span applies comes from the single selected fastest-route geometry and the first/last PVP boundaries actually crossed. The intervening PVP chain must match the canonical continuous span. No ramp/entry-exit OD map is needed; no alternative or partial span price can substitute.
+- The full finite set of valid continuous spans can be checked and stored in the tariff table, in both period columns. A longer span has its own cell; adding a PVP cannot keep using a shorter span's price. If boundary evidence, intermediate chain, period price or verified span cell is missing, return unknown/null rather than a partial calculation.
+- Product vehicle/payment profile remains passenger car/category I as applicable, no transponder, no special discount. Use the user's already-set date/day selection rules for choosing the applicable Mon–Thu or Fri–Sun column.
+
+**Superseded design details:** do not require separate prices for opposite directions; do not use direction as an independent fare key when the canonical span is the same; do not require an OD ramp inventory; do not expose sums computed per PVP at request time. Earlier sequence-based work remains useful for detecting and validating which PVPs are traversed and for proving the span. Special/ambiguous physical PVP groupings must be resolved into the finite segment model during source preparation; if the boundaries cannot be represented unambiguously, leave that span unknown until corrected.
+
+**Status:** this is a product decision, not completed implementation. Current experiment matrix/compiler/route integration must be revised to match it and tested. V2 and Production remain outside the sandbox work.
