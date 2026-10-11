@@ -12,8 +12,8 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   const rejectedStretchProviders = new Map<string, number>();
   const rawResults = await Promise.allSettled([
     valhalla(from, to, 1, positions),
-    valhalla(from, to, 1, positions, 900), // Prefer short local bypasses without making every booth overwhelmingly expensive.
-    valhalla(from, to, 1, positions, 1_200), // Allow partial M-4 use where a verified plaza bypass exists.
+    fastestOnly ? Promise.reject(new Error("FASTEST_ONLY_SKIP_BYPASS")) : valhalla(from, to, 1, positions, 900), // V2-only payment-point bypass candidate.
+    fastestOnly ? Promise.reject(new Error("FASTEST_ONLY_SKIP_BYPASS")) : valhalla(from, to, 1, positions, 1_200), // V2-only partial M-4 bypass candidate.
     osrmRoute(from, to, positions),
     brouterFast(from, to, positions),
   ]);
