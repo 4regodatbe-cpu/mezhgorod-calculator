@@ -55,3 +55,15 @@ Updated: 2026-10-09. New decisions MUST be appended with a date; preserve supers
 - React browser error `insertBefore` observed repeatedly after route calculation; exact exception recovered through test-only V2 error boundary.
 - To mitigate potential DOM rewriting from browser auto-translation and avoid React text-node reconciliation, the V2 Preview opts out of translation (`translate="no"`, `notranslate`, route metadata `google=notranslate`) and keeps button/loading labels mounted as stable sibling spans. Browser E2E reverse succeeded on latest Preview.
 - Browser translator as direct cause is a hypothesis, **not proven**; no credentials, persistent tracking, third-party scripts, or Production changes introduced. Preserve test-only debug transparency until user acceptance.
+
+
+## 2026-10-11 — M-4 price is keyed by the selected route's PVP vector (clarification)
+
+The user clarified the M-4 pricing unit: for the supported continuous M-4 corridor, identify the ordered PVPs that the **single selected fastest route actually crosses** and look up one prevalidated price for that exact vector and calendar period. Do not require a general interchange/entry-exit OD inventory or sum individual PVP amounts at runtime. The PVP sequence is route evidence / matrix key; the stored vector cell is the fare. Different exit points naturally produce different vector keys (for example, [1223,1184] versus [1223,1184,1093]); farther travel adds the next PVP(s) and requires its own vector cell. If a route continues north of PVP 1093, include PVP 1046 only when the selected geometry confirms crossing it; never infer an extra gate merely from destination labels or omit it because an expected cell is absent.
+
+User-provided reference examples for future matrix seeding (reported 2026-10-11; category I passenger car, no transponder, ordinary weekday/weekend schedule as discussed):
+- Vector [1223,1184]: 700 RUB Mon–Thu; 850 RUB Fri–Sun.
+- Vector [1223,1184,1093]: 850 RUB Mon–Thu; 1,000 RUB Fri–Sun.
+- A vector containing the additional PVP 1046 must include its separately validated fare and cannot reuse the three-PVP price.
+
+These two amounts are **user-reported calibration references**, not independently verified operator tariff cells. Preserve provenance as user-provided and do not relabel them as official/fully verified until reconciled against the applicable dated operator tariff. Current live M4 additive pricing is not changed by this experiment decision. A route whose PVP sequence/continuity is incomplete or lacks an exact vector-and-period cell remains unknown/null; never present a partial sum as a complete fare.
