@@ -244,3 +244,16 @@
 **Checks:** read START_HERE, DECISIONS, m4-pvp-corridor implementation and tests, evidence adapter and tests, compiler and tests, empty matrix, NEXT_STEPS, plus live/preview route-pricing implementation. No tests/build/browser recalculation/operator source receipt run in this review block. Prior Vercel log claim 165/165 applies only to earlier commit, not these documentation commits.
 
 **Next:** first determine the exact fastest-route gate vectors for Sochi→Rostov, Sochi→Volnovakha and a longer route; reconcile both saved per-PVP tariffs and user/Yandex figures for same profile/date. Then update the offline source intake/compiler only where needed, seed exact vector cells, test them, and replace V3's additive amount with exact lookup in isolated preview; do not change V2 or Production.
+
+
+## 2026-10-11 — user finalized symmetric M-4 segment-span lookup
+
+**Product decision:** M-4 price is keyed by the continuous segment span bounded by the first and last route-confirmed PVPs (canonical unordered endpoint pair). The reverse direction for that same span uses the same fare. Each span stores just weekday Mon–Thu and weekend Fri–Sun prices. Precompute both values in the table; runtime identifies the route's span and retrieves one value. It must not sum per-PVP amounts, calculate direction-specific duplicate prices, or simulate leaving/re-entering M-4. Exact intervening PVP sequence remains geometry evidence to verify that the route traverses the span. Longer span => another tariff row.
+
+**Supersedes:** previous experiment decision/report language that treated direction as an independent fare key with separate directed price cells. The old PVP event adapter remains useful as evidence but its output contract and matrix/compiler/tests need to be revised to symmetric span endpoint pairs. This clarification is in `DECISIONS.md`; ordered tasks are at the top of `NEXT_STEPS.md`; audit addendum is in `REASSESSMENT_2026-10-11.md`.
+
+**Commits:** decision `7110f3520075d617635473a0b9193d2fa061f0c5`; backlog `b14783625d859825a7fae68ebbbd93e3ea7e0185`; reassessment `f4964154bf53d624fe54c78fa0b387767107d70e`.
+
+**Verification:** documentation only. No tests/build, Yandex or operator tariff verification, route smoke, V2 edit or deployment occurred.
+
+**Next:** redesign experimental M4 matrix/compiler/tests for symmetric canonical span pairs; reconcile the two Yandex/user sample span amounts with stored source tariff rows; populate and validate the finite span table; replace V3 additive result with exact span lookup in the sandbox while leaving V2/Production untouched.
