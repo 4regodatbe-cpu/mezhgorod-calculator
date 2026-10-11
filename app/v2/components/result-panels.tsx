@@ -19,12 +19,31 @@ type Props = {
   copyStandard: CopyStandard;
   tollPeriod: TollPeriod;
   onTollPeriodChange: (period: TollPeriod) => void;
+  fastestOnly?: boolean;
 };
 
 export function ResultPanels({
   result, standardLeg, standardHasTolls, standardOptimal, manualToll,
-  onManualToll, copiedKey, copyStandard, tollPeriod, onTollPeriodChange,
+  onManualToll, copiedKey, copyStandard, tollPeriod, onTollPeriodChange, fastestOnly = false,
 }: Props) {
+  if (fastestOnly && result) {
+    const leg = result.options?.[0] ?? result.legs[0];
+    if (!leg) return null;
+    return <section className="mt-4 grid min-w-0 grid-cols-1 gap-3">
+      <RouteCard
+        title="Самый быстрый маршрут"
+        accent="blue"
+        trip={leg.fast}
+        toll={leg.fast.tolls}
+        tollPeriod={tollPeriod}
+        onTollPeriodChange={onTollPeriodChange}
+        manualToll={manualToll}
+        onManualToll={onManualToll}
+        onCopy={() => copyStandard("fastest-only", "Самый быстрый маршрут", leg, leg.fast, leg.fast.tolls, undefined, tollPeriod, manualToll)}
+        copied={copiedKey === "fastest-only"}
+      />
+    </section>;
+  }
   if (result?.specialEndpoint) return (
     <section className="mt-4 grid min-w-0 grid-cols-1 gap-3">
       {(result.options ?? []).map((leg, index) => index === 0 ? <RouteCard
