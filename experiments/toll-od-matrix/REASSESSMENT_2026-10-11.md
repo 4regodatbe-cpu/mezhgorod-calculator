@@ -41,3 +41,12 @@ No exhaustive ramp/entry/exit OD table is needed for this M-4 use case. Route ge
 ## Verification record
 
 This was a repository/code review based on branch files: `START_HERE.md`, `DECISIONS.md`, `m4-pvp-corridor.mjs`, its tests, `m4-pvp-evidence-adapter.mjs`, the offline compiler/tests, the empty matrix and `NEXT_STEPS.md`, plus the V3 route-pricing path previously inspected. The branch already records 165/165 native experiment checks in an earlier Vercel build. This review did not run tests/build, recalculate Yandex routes or fetch new operator tariff receipts. No claim is made that the amounts are independently verified or that code behavior changed.
+
+
+## Final clarification from user — symmetric endpoint-span table
+
+The model is not keyed by directed PVP event sequences as a separate price in each direction. For M-4's supported continuous-road assumption, map actual route PVP evidence to canonical segment boundaries, then look up the span between the first and last boundary. Store one row for the unordered boundary pair and only two fares (Mon–Thu, Fri–Sun). Reverse travel through the identical span reuses the same row and price. The intervening PVP chain is a proof that the route traverses that span; it is not a runtime list of amounts to sum or a distinct price dimension when the span is otherwise unambiguous. A longer span has its own price row. The vehicle cannot leave and later re-enter in this product model.
+
+This supersedes the earlier report shorthand that direction-specific ordered PVP sequences should each have separate fare cells. The previous sequence-evidence implementation remains useful, but matrix schema, compiler inputs and quote tests must be reshaped around canonical symmetric span endpoints. See the latest entry in `DECISIONS.md` and the new top section of `NEXT_STEPS.md`.
+
+No code, tests, build, route recalculation or publication was performed for this clarification-only block. Latest decision commit `7110f3520075d617635473a0b9193d2fa061f0c5`; latest backlog commit `b14783625d859825a7fae68ebbbd93e3ea7e0185`.
