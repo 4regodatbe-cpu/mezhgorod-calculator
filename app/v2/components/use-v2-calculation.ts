@@ -16,10 +16,12 @@ type CalculationInput = {
   requestMode: () => {mode:CalculatorMode;modeOverride:boolean};
   onServerMode:(mode:CalculatorMode)=>void;
   multiplier: number;
+  apiEndpoint?: string;
+  analyticsVersion?: string;
 };
 const vehicleForRate = { standard: "standard", comfort: "comfort", comfortPlus: "comfort_plus", minivan: "minivan" } as const;
 
-export function useV2Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier }: CalculationInput) {
+export function useV2Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint = "/api/v2/calculate", analyticsVersion = "2.0" }: CalculationInput) {
   const pending=useRef<AbortController|null>(null);
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
@@ -75,7 +77,7 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
     setManualToll("");
     setCopiedKey("");
     try {
-      const response = await fetch("/api/v2/calculate", {
+      const response = await fetch(apiEndpoint, {
         signal:controller.signal,
         method: "POST",
         headers: { "Content-Type": "application/json" },
