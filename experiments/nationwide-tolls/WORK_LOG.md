@@ -57,3 +57,15 @@
 ## 2026-10-11 — M1 scope and M3 tariff consistency desk audit
 
 User requested autonomous large work blocks and report afterward. Added `M1_OPERATOR_SCOPE_AUDIT_2026-10-11.md` (commit 42b2527) and `RECONCILIATION_2026-10-11.md` (commit 56ecae5). Found source snapshot discrepancy: M3 shadow evidence Friday 800 RUB vs national-registry Friday components 100+190+230=520 RUB. Both unfit for customer billing until official version, full corridor operator receipt, and same-route proof. M1 mainline PVP46 is not Odintsovo bypass local PVP4.6. Updated handoff docs/WORK_STATE.md (commit 42efc7b). Checks: file/source review only; no Node test, TypeScript, Next build, browser E2E, Valhalla trace or deployment. Next: M1 directional physical OSM proof and authoritative tariff reconciliation.
+
+
+## 2026-10-11 — Preview publication rechecked after M1/M3 audit
+
+**User request:** finish the current authorized work through a test Preview publication in one block. The local scratch directory supplied to this Codex turn was not a Git checkout, so repository inspection and durable updates used the connected GitHub tools against the existing isolated branch; no local code edits were made.
+
+- Verified branch `experiment/toll-od-matrix-2026-10-08` points to `3d86e02fedbd171286b26ede2d3072b07918fccc`. Open PR #12 remains a draft and is not part of this release path. No merge, main or Production change.
+- Vercel deployment `dpl_F6X5FmYLNM9HNTWUHx6r7faTcfmY` is **READY** on the same branch/SHA. Build logs show the experiment test command (`node --test experiments/toll-od-matrix/*.test.mjs experiments/nationwide-tolls/*.test.mjs && next build`), successful checks, static output for `/v2` and `/v2/toll-roads`, and deployment completion. The event response is truncated and does not expose the final aggregate test count; do not infer or claim that count here.
+- Direct deployment fetches returned **HTTP 200** for both `/v2` and `/v2/toll-roads`. The calculator links to the nationwide catalog; that catalog displays 22 grouped systems and explicitly states that 8 partial published tariff groups are not full route pricing. This was an HTTP smoke check, not a browser route-calculation E2E.
+- The resulting test link is `https://mezhgorod-calculator-ch4vpj2qn-4regodatbe-5310.vercel.app/v2`. This is a branch Preview only. New toll pricing remains shadow/diagnostic and does not enter passenger totals.
+- Known blockers remain: M1 exact directional physical node mapping; M3 tariff source conflict (800 RUB shadow evidence vs 520 RUB current component sum); official full-route fare confirmation; missing complete paid-facility/tariff coverage for the remaining systems. No customer-price cutover was justified or performed.
+- **Next executable block:** resolve M1 PVP46 selected-route OSM IDs in both directions and reconcile the M3 dated official tariff/whole-trip quote; then expand the same selected-route proof/tariff matrix to other operators.
