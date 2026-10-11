@@ -86,18 +86,20 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
               ? brouterFastResult.value.coordinates
               : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
-  const selectedFreePromise = selectFreeRoute(selectedFast.route, [
-    { name: "Valhalla local bypass", result: valhallaModerateAvoidResult },
-    { name: "Valhalla partial M-4 bypass", result: valhallaPartialTollResult },
-    { name: "BRouter", result: brouterFastResult },
-  ]);
+  const selectedFreePromise = fastestOnly
+    ? Promise.resolve(null)
+    : selectFreeRoute(selectedFast.route, [
+        { name: "Valhalla local bypass", result: valhallaModerateAvoidResult },
+        { name: "Valhalla partial M-4 bypass", result: valhallaPartialTollResult },
+        { name: "BRouter", result: brouterFastResult },
+      ]);
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
   let [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
   // The expensive full-detour search is a genuine fallback; keep it off the
   // critical path when a faster candidate already passes the complete booth trace.
-  if (!selectedFree) {
+  if (!fastestOnly && !selectedFree) {
     try {
       const route = await valhalla(from, to, 1, positions, 43_200);
       if (positions) {
