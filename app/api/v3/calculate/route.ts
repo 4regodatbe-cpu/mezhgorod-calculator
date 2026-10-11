@@ -28,7 +28,8 @@ function validUserRates(value: unknown): value is UserRates {
 
 export const maxDuration = 120;
 
-export async function POST(request: NextRequest) {\n  // V3 contract: one fastest route; no slower free-route substitution.
+export async function POST(request: NextRequest) {
+  // V3 contract: one fastest route; no slower free-route substitution.
   try {
     const body = (await request.json()) as {
       from?: Point;
