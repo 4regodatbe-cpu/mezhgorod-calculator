@@ -18,3 +18,18 @@ User instructed: cover **all other Russian toll roads**, not M-4 only. Existing 
 - Map matching selected-route Valhalla `edge.toll=true` with a concrete OSM toll booth node is admissible **physical passage proof** only if separately cross-checked against OSM API `barrier=toll_booth`, exact official operator kilometer/name, and same-route consistency. Six M3 names/IDs pass, M1 remains unverified.
 - A **three-gate M3 sample amount** derived from time-limited 2026-10-09 published category-I/no-transponder source rows can appear **only as shadow**; it is **not** automatically included in actual transfer pricing. Real current operator tariff effective date, full corridor bill, mixed multi-road total and any extra ramps require stronger proof.
 - Keep cost unknown instead of adopting an unverified 800RUB live value, even when 3/3 physical booths found. Source-proven gate identity and validated complete operator fare are distinct.
+
+
+## 2026-10-11 — новый калькулятор показывает только самый быстрый маршрут
+
+Пользовательское продуктовое правило для новой версии калькулятора:
+
+1. Маршрутизатор выбирает **ровно один маршрут с минимальным временем в пути** среди найденных допустимых автомобильных маршрутов.
+2. Калькулятор показывает пользователю только этот маршрут; альтернативные варианты маршрута не показываются.
+3. Платность проверяется на выбранной геометрии: если на самом быстром маршруте нет платных участков, показываем его как бесплатный; если платные участки есть, учитываем платный маршрут и его плату. Бесплатная альтернатива не подменяет более быстрый платный маршрут.
+4. Тарифная проверка относится к выбранным въездам/съездам и направлению этого единственного маршрута. Нельзя суммировать цены альтернатив или переносить цену другого маршрута.
+5. Если платность, состав участка или сумма выбранного маршрута не подтверждены, сохраняется fail-closed состояние (unknown по действующим правилам), а не бесплатная метка и не частичный итог.
+
+**Область действия:** решение задаёт поведение новой версии/нового route pipeline. Само по себе оно не переключает и не меняет текущий production алгоритм, route selector, тарифные таблицы или UI. Наблюдавшиеся в Яндекс Картах альтернативы (~90/278 ₽ для Казань—Набережные Челны; ~600/300 ₽ для СПб—Кронштадт) теперь следует использовать только как диагностические свидетельства для проверки того, что калькулятор выбирает самый быстрый маршрут и оценивает именно его; пользователю альтернативы не выводить.
+
+**Проверка перед внедрением:** регрессия выбора минимального времени (в том числе, когда кратчайший по времени вариант платный, а медленный бесплатный); проверка тарифа строго по геометрии выбранного варианта; равное время/детерминированный tie-break; недоступные/неполные тарифные сведения не превращаются в «бесплатно». Источник — прямое продуктовое указание пользователя от 2026-10-11.
