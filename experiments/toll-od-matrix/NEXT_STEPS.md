@@ -1,3 +1,19 @@
+## 2026-10-11 — final symmetric M-4 span model (supersedes direction-specific lookup steps)
+
+The user clarified that a continuous span has the same stored fare in either direction. The price key is its canonical unordered first/last PVP boundary pair, with two stored values only: Mon–Thu and Fri–Sun. Identify the selected route's actual PVP span; validate its intervening chain; then exact lookup. No per-PVP runtime sum, no re-entry flow, no directional duplicate price cell, no ramp OD table. Full details: `DECISIONS.md` dated 2026-10-11 and `REASSESSMENT_2026-10-11.md`.
+
+1. **P0 — redesign matrix/compiler around canonical span endpoints:** one row per supported continuous span, same cell both directions, two price columns and source/version metadata. Exact intermediate PVP chain proves the span, not a separate fare dimension. Missing/unresolved chain => unknown.
+2. **P0 — audit physical PVP/segment boundaries:** map each route-confirmed PVP to the finite canonical M4 segment boundary labels. Resolve parallel/alternative physical plazas (e.g. 339/355) during catalogue preparation or mark affected span unknown.
+3. **P0 — reconcile amounts:** compare the accepted user/Yandex controls with stored segment tariff rows for the exact date/profile. Establish why old runtime sum is 1,000/1,430 vs supplied span values. Do not enter conflicting values as verified.
+4. **P1 — precompute finite span tariff table:** verify both Mon–Thu and Fri–Sun totals for every supported span from the accepted sources; each span owns its cell. A longer span has a distinct amount.
+5. **P1 — integrate only in sandbox V3:** remove per-PVP additive result as the new algorithm's displayed M4 price; perform symmetric span lookup using selected fastest geometry. Keep V2/Main/Production untouched.
+6. **P1 — regression tests:** forward/reverse same span returns identical values; distinct spans do not share cells; missing/extra boundary or inconsistent intermediate chain returns unknown; missing period column returns unknown; no runtime add operation.
+7. **P2 — run tests/build and route controls:** same fast geometry in both directions where available; Sochi→Rostov three-PVP sample, Sochi→Volnovakha, and a longer route crossing an additional boundary. Record actual outputs; do not publish Production without later authorization.
+
+The earlier vector-specific list immediately below predates the symmetric endpoint-pair clarification; retain it as history but follow this latest order.
+
+---
+
 ## 2026-10-11 — vector-model reassessment supersedes older M-4 ramp/whole-total blockers
 
 Read `REASSESSMENT_2026-10-11.md` before taking an older unchecked item. The M-4 deliverable is a selected-route ordered PVP vector with one stored Mon–Thu aggregate and one Fri–Sun aggregate. Per-PVP fee aggregation occurs once during catalogue preparation; runtime must only perform exact vector lookup. Do not build an M-4 ramp/entry-exit OD matrix.
