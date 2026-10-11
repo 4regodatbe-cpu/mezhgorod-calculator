@@ -1,3 +1,12 @@
+## CURRENT 2026-10-11 — закреплено правило единственного самого быстрого маршрута
+
+- **DONE — решение пользователя записано** в `experiments/nationwide-tolls/DECISIONS.md`: новая версия показывает только маршрут с минимальным временем; анализирует платность и тариф только на его геометрии. Без toll участка — бесплатный маршрут; при неполных/неподтверждённых данных остаётся unknown, а не 0. Более медленная бесплатная альтернатива не заменяет быстрый платный маршрут.
+- **IN PROGRESS — реализация ещё не выполнена.** Пока изменена только документация; текущий production selector/UI и тарифы не менялись. Приёмочные сценарии внесены в `experiments/nationwide-tolls/NEXT_STEPS.md`: быстрый платный против медленного бесплатного, единственный результат, tie-break, fail-closed тарификация.
+- Полная запись: `experiments/nationwide-tolls/WORK_LOG.md`; тарифные Yandex controls остаются в `RECONCILIATION_2026-10-11.md` как диагностика выбранных путей, не как альтернативная выдача. Docs commits: decision `ad4ccb1`, log `4e719f6`, next steps `e608a84`. Тесты/build/deploy не запускались; production и preview не менялись.
+- **NEXT:** реализовать и проверить этот selector contract в новом route pipeline; по-прежнему не выводить неподтверждённый платный тариф как ноль.
+
+---
+
 ## CURRENT 2026-10-11 — Yandex route checks expanded
 
 - **DONE — read-only route controls:** Yandex checks now include disputed alternatives Казань—Набережные Челны (~90/278 ₽) and СПб—Кронштадт (~600/300 ₽), plus long controls СПб—Москва (~6 150 ₽), Москва—Казань (~5 250 ₽), Москва↔Краснодар (~5 530/~5 260 ₽). Older M1/M3 checks remain documented. Exact observations, limitations and failed A-289 endpoint resolution are in `experiments/nationwide-tolls/RECONCILIATION_2026-10-11.md`.
