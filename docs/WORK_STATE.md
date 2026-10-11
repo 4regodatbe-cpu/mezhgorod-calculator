@@ -1,3 +1,12 @@
+## CURRENT 2026-10-11 — Yandex Maps fare controls observed
+
+- New read-only route checks recorded in `experiments/nationwide-tolls/RECONCILIATION_2026-10-11.md`: M3 selected alternatives Калуга↔Москва estimate ~290 RUB both directions; M1 Одинцово→Голицыно estimate ~50 RUB on a selected route including M-1. Yandex labels amounts approximate for car under 2 m without transponder. These are route-level benchmarks, not gate-isolated full-road tariffs.
+- Official indexed Avtodor tariff snapshot shows M1 full paid section 33–66 km / PVP46 = 250 RUB no transponder, but direct tariff page returned 403; effective date remains unverified. M3 800 vs 520 component conflict remains open. No fare cutover; unknown remains unknown.
+- Preview release status above remains READY for source SHA `3d86e02`; later commits only update experiment documentation. See `WORK_LOG.md` dated 2026-10-11 for verified Preview and Yandex checks. No unit tests/build deployed for this research-only addition.
+- **NEXT:** match exact paid gates/entry-exits for control routes; obtain applicable dated official tariff or same-time operator calculator quote; then extend validation to remaining systems. No production change.
+
+---
+
 ## CURRENT 2026-10-11 — Preview publication verified on latest experiment head
 
 - **DONE — Preview:** branch `experiment/toll-od-matrix-2026-10-08`, source commit `3d86e02fedbd171286b26ede2d3072b07918fccc`, deployment `dpl_F6X5FmYLNM9HNTWUHx6r7faTcfmY` **READY** at https://mezhgorod-calculator-ch4vpj2qn-4regodatbe-5310.vercel.app/v2. Build logs show tests + Next build completed; final aggregate test count is not available in returned logs. Direct smoke fetch: `/v2` and `/v2/toll-roads` both HTTP 200.
