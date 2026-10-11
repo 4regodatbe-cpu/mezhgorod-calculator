@@ -1,3 +1,13 @@
+## CURRENT 2026-10-11 — Preview publication verified on latest experiment head
+
+- **DONE — Preview:** branch `experiment/toll-od-matrix-2026-10-08`, source commit `3d86e02fedbd171286b26ede2d3072b07918fccc`, deployment `dpl_F6X5FmYLNM9HNTWUHx6r7faTcfmY` **READY** at https://mezhgorod-calculator-ch4vpj2qn-4regodatbe-5310.vercel.app/v2. Build logs show tests + Next build completed; final aggregate test count is not available in returned logs. Direct smoke fetch: `/v2` and `/v2/toll-roads` both HTTP 200.
+- **DONE — scope disclosure:** UI exposes the nationwide road catalog (22 grouped systems; 8 groups with partial published rows) and explicitly says this does not mean complete trip-money coverage. New national amounts remain shadow/diagnostic; passenger totals unchanged.
+- **OPEN — nationwide correct billing:** no complete nationwide paid-facility geometry/tariff matrix. M1 exact directional physical IDs unresolved; M3 shadow quote conflicts (800 RUB prior evidence vs 520 RUB current component sum); no authoritative complete trip receipt verified. Never charge either disputed amount.
+- **Release scope:** Preview only. No merge, main, PR #12 state change, or Production publication. Details appended in `experiments/nationwide-tolls/WORK_LOG.md`; prior tariff audit in `M1_OPERATOR_SCOPE_AUDIT_2026-10-11.md` and `RECONCILIATION_2026-10-11.md`.
+- **NEXT:** prove selected-route M1 PVP46 OSM identities in both directions; reconcile dated M3 operator tariff and complete route quote; continue remaining operator matrices, then per-road tests before any monetary cutover.
+
+---
+
 ## CURRENT 2026-10-11 — tariff snapshot conflict identified (research, no cutover)
 
 - Docs commits `42b2527` and `56ecae5`: mainline M1 PVP46 separated from Odintsovo bypass PVP4.6; M3 Friday shadow 800 RUB in prior E2E evidence conflicts with current registry Friday component sum 520 RUB. Exact primary tariff applicability remains unverified; do not charge either.
