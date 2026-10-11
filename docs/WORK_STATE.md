@@ -1,3 +1,12 @@
+## CURRENT 2026-10-11 — clarified M-4 PVP-vector tariffs
+
+- **DONE — decision persisted:** fare for one continuous selected M-4 route is looked up by its complete ordered, geometry-confirmed PVP vector + calendar period; no general entry/exit interchange table or runtime sum of individual PVP amounts is needed for this product case. Decision in `experiments/toll-od-matrix/DECISIONS.md`; append-only record in `experiments/toll-od-matrix/WORK_LOG.md`.
+- **USER-REPORTED references only (not independently tariff-verified):** `[1223,1184]` = 700 RUB Mon–Thu / 850 RUB Fri–Sun; `[1223,1184,1093]` = 850 / 1,000 RUB. If selected geometry continues across PVP 1046, use a separate exact vector and price cell. Missing or incomplete vector/cell => unknown/null, never a partial sum.
+- **Scope/status:** docs only on `experiment/toll-od-matrix-2026-10-08`. Decision commit `ab5533a1903a5bb4b5fe38c2be315ef4e8449935`; work-log commit `d455da32027b9239c7190efbcd09a731287df525`. No runtime code/tariffs changed, no tests/build/route smoke/deployment run, Production untouched. Experimental M4 price matrix still has zero independently verified price cells.
+- **NEXT:** implement vector-key lookup in the isolated experiment engine with two-/three-/four+ PVP, direction, period and unknown-cell regression cases; reconcile every user-provided vector price with a dated official tariff and same fastest-route geometry before any runtime cutover.
+
+---
+
 ## CURRENT 2026-10-11 — профиль Яндекс-проверки и V3 fast-only Preview
 
 - **ПРАВИЛО ПРОФИЛЯ ЗАКРЕПЛЕНО:** день недели/дата и ожидаемое время проезда; легковой автомобиль (категория I там, где совпадает с правилами оператора); основной тариф без транспондера и льгот; только заезд/съезд/направление выбранной быстрой геометрии Яндекса. Пользователю — единственный самый быстрый маршрут, без альтернатив. Подробности: `experiments/nationwide-tolls/DECISIONS.md`, журнал: `WORK_LOG.md`.
