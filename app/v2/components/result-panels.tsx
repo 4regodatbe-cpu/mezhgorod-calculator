@@ -37,9 +37,7 @@ export function ResultPanels({
         toll={leg.fast.tolls}
         tollPeriod={tollPeriod}
         onTollPeriodChange={onTollPeriodChange}
-        manualToll={manualToll}
-        onManualToll={onManualToll}
-        onCopy={() => copyStandard("fastest-only", "Самый быстрый маршрут", leg, leg.fast, leg.fast.tolls, undefined, tollPeriod, manualToll)}
+        onCopy={() => copyStandard("fastest-only", "Самый быстрый маршрут", leg, leg.fast, leg.fast.tolls, undefined, tollPeriod)}
         copied={copiedKey === "fastest-only"}
       />
     </section>;
