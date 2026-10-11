@@ -4,16 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Car, Download, ShieldCheck } from "lucide-react";
 import { FeedbackForm } from "../v2/components/feedback-form";
-import { DonationCard } from "./components/donation-card";
-import { CalculatorForm } from "./components/calculator-form";
-import { ResultPanels } from "./components/result-panels";
-import { useV2Calculation } from "./components/use-v2-calculation";
-import { useTariffMode } from "./components/use-tariff-mode";
-import { defaults } from "./components/pricing-data";
-import { clampNumber } from "./components/format";
-import { pickOptimal } from "./components/route-utils";
-import { currentTollPeriod, type TollPeriod } from "./components/quote-presentation";
-import type { Place } from "./components/types";
+import { DonationCard } from "../v2/components/donation-card";
+import { CalculatorForm } from "../v2/components/calculator-form";
+import { ResultPanels } from "../v2/components/result-panels";
+import { useV2Calculation } from "../v2/components/use-v2-calculation";
+import { useTariffMode } from "../v2/components/use-tariff-mode";
+import { defaults } from "../v2/components/pricing-data";
+import { clampNumber } from "../v2/components/format";
+import { pickOptimal } from "../v2/components/route-utils";
+import { currentTollPeriod, type TollPeriod } from "../v2/components/quote-presentation";
+import type { Place } from "../v2/components/types";
 
 
 
