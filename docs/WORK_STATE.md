@@ -1,3 +1,13 @@
+## CURRENT 2026-10-11 — M-4 symmetric span tariff table clarified
+
+- **LATEST PRODUCT RULE:** Map the selected fastest route's confirmed PVP chain to a continuous M-4 span bounded by first/last PVP. Price key is the canonical unordered endpoint pair; reverse direction reuses the same cell. Each span stores only Mon–Thu and Fri–Sun prices. Runtime picks one cell; no per-PVP sum and no exit/re-entry flow. Intermediate PVP chain verifies span. See latest decision in `experiments/toll-od-matrix/DECISIONS.md`.
+- **SUPERSEDES:** earlier notes treating direction-specific ordered PVP sequences as separate fare keys. Evidence adapter remains useful, but matrix/compiler/quote tests must change to symmetric endpoint spans. Backlog order is updated in `experiments/toll-od-matrix/NEXT_STEPS.md`; audit addendum in `REASSESSMENT_2026-10-11.md`.
+- **STATUS:** clarification/docs only; no runtime code, tests/build, route checks or deployment. The branch's matrix has zero price cells and its current V3 result still uses additive per-PVP money. Keep V2/Main/Production untouched.
+- **Latest commits:** product decision `7110f3520075d617635473a0b9193d2fa061f0c5`; backlog `b14783625d859825a7fae68ebbbd93e3ea7e0185`; audit `f4964154bf53d624fe54c78fa0b387767107d70e`; log `f4f2f297afff360df684e306e1ce934b5feda6aa`.
+- **NEXT:** redesign isolated matrix/compiler/tests around symmetric span endpoints; resolve reported fare/source differences; populate finite table; wire V3 sandbox exact lookup; verify both directions and gate span on same fastest geometry.
+
+---
+
 ## CURRENT 2026-10-11 — reassessment: M-4 vector prices, sandbox only
 
 - **DONE — design audit saved:** `experiments/toll-od-matrix/REASSESSMENT_2026-10-11.md`. The experimental exact ordered-PVP lookup and offline sum compiler align with the original concept, but the price matrix is empty and V3 still gets its displayed M-4 amount from the per-PVP additive path. Thus the algorithm exists as a partial isolated prototype, not a complete working tariff route.
