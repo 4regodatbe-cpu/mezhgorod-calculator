@@ -72,19 +72,12 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     message: `Отклонены чрезмерно длинные контрольные плечи: ${[...rejectedStretchProviders].map(([name, ratio]) => `${name} (${ratio.toFixed(1)}×)`).join(", ")}. Проверьте выбранный маршрут перед поездкой`,
   } : selectedFast.quality;
 
-  const routeGeometry = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
-    ? fastResult.value.coordinates
-    : selectedFast.provider === "OSRM" && osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
-      ? osrmResult.value.coordinates
-      : selectedFast.provider === "BRouter" && brouterFastResult.status === "fulfilled" && brouterFastResult.value.coordinates.length > 0
-        ? brouterFastResult.value.coordinates
-        : fastResult.status === "fulfilled" && fastResult.value.coordinates.length > 0
-          ? fastResult.value.coordinates
-          : osrmResult.status === "fulfilled" && osrmResult.value.coordinates.length > 0
-            ? osrmResult.value.coordinates
-            : brouterFastResult.status === "fulfilled" && brouterFastResult.value.coordinates.length > 0
-              ? brouterFastResult.value.coordinates
-              : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
+  // Keep pricing evidence attached to the exact candidate chosen by the fastest-only selector.
+  // Provider labels alone are insufficient: there are multiple Valhalla candidates with different geometry.
+  const selectedFastRoute = routeCandidates.find((candidate) => candidate.name === selectedFast.provider)?.route ?? selectedFast.route;
+  const routeGeometry = selectedFastRoute.coordinates.length > 0
+    ? selectedFastRoute.coordinates
+    : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
 
   const selectedFreePromise = fastestOnly
     ? Promise.resolve(null)
@@ -119,13 +112,15 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     }
   }
   const confirmedFree = selectedFree?.truth === "confirmed_payment_point_avoiding" ? selectedFree : null;
-  const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;
+  const selectedFastIsValhalla = selectedFast.provider.startsWith("Valhalla");
+  const valhallaEvidence = selectedFastIsValhalla ? selectedFastRoute : null;
+  const selectedFastPricingProvider = selectedFastIsValhalla ? "Valhalla" : selectedFast.provider;
   const pricing = await calculateLegTolls({
     routeGeometry,
     routeSeconds: selectedFast.route.seconds,
     departureAt,
-    selectedFastProvider: selectedFast.provider,
-    selectedFastRoute: selectedFast.route,
+    selectedFastProvider: selectedFastPricingProvider,
+    selectedFastRoute: selectedFastRoute,
     valhallaEvidence,
     confirmedFreeRoute: fastestOnly ? null : confirmedFree?.route ?? null,
     diagnosticFastValidation,
