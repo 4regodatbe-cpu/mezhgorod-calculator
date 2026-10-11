@@ -35,11 +35,9 @@ export default function V3Page() {
     setRates(read("mezhgorod-v2-rates",defaults));setSpecialRates(read("mezhgorod-v2-special-rates",{standard:70,comfort:80,comfortPlus:90,minivan:110}));setRatesLoaded(true);
   },[]);
   const [urgent, setUrgent] = useState(false); const [urgentPercent, setUrgentPercent] = useState(() => storedNumber("mezhgorod-v2-urgent-percent", 0, 500, 20));
-  const [isAndroidApp, setIsAndroidApp] = useState(false);
   useEffect(() => { if(ratesLoaded)try {localStorage.setItem("mezhgorod-v2-rates",JSON.stringify(rates));localStorage.setItem("mezhgorod-v2-special-rates",JSON.stringify(specialRates));}catch{} }, [rates,specialRates,ratesLoaded]);
 
   useEffect(() => { localStorage.setItem("mezhgorod-v2-urgent-percent", String(urgentPercent)); }, [urgentPercent]);
-  useEffect(() => { setIsAndroidApp(navigator.userAgent.includes("MezhgorodAndroid")); }, []);
   useEffect(() => { setTollPeriod(currentTollPeriod()); }, []);
   useEffect(() => { let visitorId = localStorage.getItem("mezhgorod-anonymous-visitor-id"); if (!visitorId) { visitorId = crypto.randomUUID(); localStorage.setItem("mezhgorod-anonymous-visitor-id", visitorId); } if (sessionStorage.getItem("mezhgorod-visit-sent")) return; void fetch("/api/collect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type: "visit", visitorId, version: "3.0" }) }).then((response) => { if (response.ok) sessionStorage.setItem("mezhgorod-visit-sent", "1"); }).catch(() => undefined); }, []);
   const multiplier = urgent ? 1 + Math.max(0, urgentPercent) / 100 : 1;
