@@ -96,9 +96,13 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     }
     return selected;
   }));
-  const selection=selectGeographicTerritoryOption(candidates.flat(),preferredCorridor);
+  const allCandidates=candidates.flat();
+  const selection=selectGeographicTerritoryOption(allCandidates,preferredCorridor);
   if(!selection.options.length)throw new Error("PREFERRED_ROUTE_UNAVAILABLE");
-  const options=selection.options.map((option)=>{
+  const chosenOptions=fastestOnly && allCandidates.length
+    ? [allCandidates.reduce((best,item)=>item.fast.seconds<best.fast.seconds?item:best)]
+    : selection.options;
+  const options=chosenOptions.map((option)=>{
     const publicOption={...option};
     Reflect.deleteProperty(publicOption,"selectionPreference");
     return publicOption;
