@@ -399,7 +399,8 @@
     "Неизвестные цены остаются null; partial/per-PVP суммы не показываются как полная цена в калькуляторе.",
     "Yandex cross-check added: candidate official M4 schedule sums for [1223,1184,1093] and [1223,1184,1093,1046] reproduce the two existing Yandex accepted controls exactly (850/1000; 1230/1450). This supports the candidate interpretation but does not resolve tariff document effective date. 416/460 combined-row candidate similarly matches Lipetsk–Voronezh Yandex control, while exact route chain remains unexposed.",
     "Added two directly dated official PDF records found in Avtodor tariff search snippets: M-12 I category 325 RUB for the 1148-1211 km bypass package, and M-11 St Petersburg 679-684 km I category 56 RUB, both effective 2026-03-02. The M-12 PDF explicitly groups cash, bank card and interoperable transponders in the fare scope; M-12 row is usable as fixed base-car candidate without transponder. Neither closes the full operator matrix.",
-    "Bulk transcription added from official Avtodor tariff page search index: M-1 one row, M-3 three rows, M-12 25 mainline rows, CKAD 16 toll points/full-loop row, A-289 six ramp pairs, and Togliatti bypass three origin-destination fares. Values are preserved as raw ordered arrays; tariff class/payment-column mapping and effective dates remain pending until PDFs are opened. No raw sequence is silently converted into a category-I fare except individually cross-checked PDF entries."
+    "Bulk transcription added from official Avtodor tariff page search index: M-1 one row, M-3 three rows, M-12 25 mainline rows, CKAD 16 toll points/full-loop row, A-289 six ramp pairs, and Togliatti bypass three origin-destination fares. Values are preserved as raw ordered arrays; tariff class/payment-column mapping and effective dates remain pending until PDFs are opened. No raw sequence is silently converted into a category-I fare except individually cross-checked PDF entries.",
+    "Added complete directed 7-point M-11 15–58 km category/group-1 cash/card/no-section-transponder tariff table (42 cells), with five time/day bands and effective date 2026-01-12 01:00 local. Kept native time-banded schema; do not flatten into generic weekday/weekend rates without passage-time policy."
   ],
   "runtimeEnabled": false,
   "next": [
@@ -1122,5 +1123,495 @@
         }
       ]
     }
-  ]
+  ],
+  "m11Section15_58": {
+    "section": "М-11 «Нева», км 15–58 (МКАД—Солнечногорск)",
+    "operator": "ООО «ОССП»",
+    "source": "https://m11-neva.ru/upload/iblock/efd/jchklu42unx7iu0avbw123k314l3w6dk.pdf",
+    "sourcePage": "https://m11-neva.ru/documentation/",
+    "documentTitle": "Приложение 3 к договору организации проезда — действующие тарифы",
+    "effectiveFromLocal": "2026-01-12T01:00:00",
+    "currency": "RUB",
+    "payment": "without_section_transponder",
+    "vehicleGroup": "1; passenger car with/without trailer, vans/minibuses up to 11 seats, height <=2m",
+    "tariffTimeZone": "Moscow local time (operator timetable; confirm source timezone if needed)",
+    "periods": [
+      "allDays 01:00–06:00",
+      "Mon–Thu 06:00–01:00 next day",
+      "Friday 06:00–01:00 next day",
+      "Saturday 06:00–01:00 next day",
+      "Sunday 06:00–01:00 next day"
+    ],
+    "directedRouteCells": [
+      {
+        "from": "Москва",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 500,
+          "fri0601": 500,
+          "sat0601": 500,
+          "sun0601": 500
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 230,
+          "monThu0601": 680,
+          "fri0601": 680,
+          "sat0601": 680,
+          "sun0601": 680
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 230,
+          "monThu0601": 620,
+          "fri0601": 820,
+          "sat0601": 820,
+          "sun0601": 620
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 880,
+          "fri0601": 1200,
+          "sat0601": 1200,
+          "sun0601": 940
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 350,
+          "monThu0601": 880,
+          "fri0601": 1200,
+          "sat0601": 1200,
+          "sun0601": 940
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 800,
+          "monThu0601": 1130,
+          "fri0601": 1500,
+          "sat0601": 1500,
+          "sun0601": 1260
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 490,
+          "fri0601": 490,
+          "sat0601": 490,
+          "sun0601": 490
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 20,
+          "monThu0601": 110,
+          "fri0601": 110,
+          "sat0601": 20,
+          "sun0601": 20
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 290,
+          "sat0601": 180,
+          "sun0601": 170
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 370,
+          "sat0601": 310,
+          "sun0601": 50
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 370,
+          "sat0601": 310,
+          "sun0601": 110
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 490,
+          "fri0601": 670,
+          "sat0601": 670,
+          "sun0601": 500
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 230,
+          "monThu0601": 680,
+          "fri0601": 680,
+          "sat0601": 680,
+          "sun0601": 680
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 20,
+          "monThu0601": 20,
+          "fri0601": 20,
+          "sat0601": 20,
+          "sun0601": 20
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 290,
+          "sat0601": 180,
+          "sun0601": 170
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 530,
+          "sat0601": 370,
+          "sun0601": 200
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 530,
+          "sat0601": 440,
+          "sun0601": 200
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 350,
+          "monThu0601": 560,
+          "fri0601": 940,
+          "sat0601": 940,
+          "sun0601": 490
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 230,
+          "monThu0601": 620,
+          "fri0601": 620,
+          "sat0601": 620,
+          "sun0601": 820
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 280,
+          "sat0601": 280,
+          "sun0601": 290
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 200,
+          "sat0601": 200,
+          "sun0601": 290
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 200,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 140
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 200,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 110
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 450,
+          "fri0601": 700,
+          "sat0601": 700,
+          "sun0601": 300
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 880,
+          "fri0601": 940,
+          "sat0601": 1000,
+          "sun0601": 1200
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 230,
+          "sat0601": 240,
+          "sun0601": 370
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 290,
+          "sat0601": 310,
+          "sun0601": 450
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 280,
+          "sat0601": 280,
+          "sun0601": 290
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 20,
+          "monThu0601": 20,
+          "fri0601": 20,
+          "sat0601": 20,
+          "sun0601": 20
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 280,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 280
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 350,
+          "monThu0601": 880,
+          "fri0601": 940,
+          "sat0601": 1000,
+          "sun0601": 1200
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 230,
+          "sat0601": 240,
+          "sun0601": 370
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 290,
+          "fri0601": 290,
+          "sat0601": 310,
+          "sun0601": 450
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 290,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 370
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 20,
+          "monThu0601": 20,
+          "fri0601": 20,
+          "sat0601": 20,
+          "sun0601": 20
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 170
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 800,
+          "monThu0601": 1130,
+          "fri0601": 1260,
+          "sat0601": 1370,
+          "sun0601": 1500
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 490,
+          "fri0601": 490,
+          "sat0601": 530,
+          "sun0601": 660
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 350,
+          "monThu0601": 560,
+          "fri0601": 560,
+          "sat0601": 590,
+          "sun0601": 800
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 360,
+          "fri0601": 360,
+          "sat0601": 360,
+          "sun0601": 700
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 200,
+          "fri0601": 200,
+          "sat0601": 220,
+          "sun0601": 290
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 200,
+          "fri0601": 200,
+          "sat0601": 220,
+          "sun0601": 290
+        }
+      }
+    ],
+    "status": "official_dated_full_route_matrix_transcribed",
+    "notes": [
+      "42 directed origin/destination cells transcribed from page 1 of a three-page operator PDF.",
+      "The prices are specifically stated for travel without the 15–58 section transponder. Group 1 includes cars at height <=2m.",
+      "Tariff has different Friday/Saturday/Sunday daytime values and overnight pricing; do not flatten to Mon–Thu vs Fri–Sun.",
+      "The schedule assigns tariff period by event/time; customer route may cross a period boundary, policy for entry-vs-exit time must be checked against operator rules before engine integration."
+    ]
+  }
 }
