@@ -250,3 +250,13 @@ User proposed using Yandex Maps to check actual toll estimates for chosen origin
 - **Источники:** M-12 https://avtodor-tr.ru/upload/iblock/fe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf ; M-11 St Petersburg https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf . Поиск также выдал ЦКАД full node rates, но payment-column meanings still require full official PDF and thus not yet transcribed into accepted cells.
 - **Статус:** source-dated exact product rates; does not close whole M-12 or whole M-11 tariff matrix and is not yet wired into route engine.
 - **Коммит данных:** `ab915c42e4ef420aea086af7963ad1c755770643`. Tests/build not run; data-only update. Next: capture full dated M-12 national rows and full operator PDFs for M-1/M-3/M-11/ЦКАД/A-289 and regional roads.
+
+
+## 2026-10-12 — bulk capture of remaining Avtodor indexed schedules
+
+- **Что сделано:** в `TARIFF_CANDIDATES_2026-10-12.json` сохранены raw tariff rows с официальной страницы Автодора для М-1 (1 строка), М-3 (3), М-12 mainline (25), ЦКАД (16, включая полный круг), А-289 (6 ramp pairs), обхода Тольятти (3 OD тарифы). Числа сохранены ordered arrays ровно в порядке выдачи источника; период/класс/payment columns не переинтерпретируются без PDF.
+- **Почему:** по запросу нужно максимально быстро закрывать матрицу, а не ждать уточнений. Сначала сохраняем весь найденный официальный числовой материал; после этого превращаем его в профильные fare cells по PDF и Yandex controls.
+- **Основание:** официальная страница `https://avtodor-tr.ru/road/tariffs/`, результат indexed content от 2026-10-12. Поиск показал для М-12 mainline все listed sections 33–1430 км; для ЦКАД все 16 rows; для А-289 6 ramps. В строке 1205 (Исаметово—Асяново) 325 ₽ I category additionally matched dated official Appendix 3 (effective 2026-03-02). Other raw rows stay candidate pending PDF headers/date.
+- **Не делалось:** raw schedule arrays НЕ преобразованы в `national-registry` prices, M-4 span matrix или route-runtime fare. Это не молчаливое утверждение о точном тарифном профиле.
+- **Commit data:** `5559ee2012f3dd7f55c7d557878658f6dd3f257a`; docs/data only, no tests/build.
+- **Следующее:** скачать/прочесть тарифные PDFs, задать точные profile mappings and effective intervals; затем сгруппировать M-4 continuous spans и complete operator-specific matrices; выполнить validators and coverage checks.
