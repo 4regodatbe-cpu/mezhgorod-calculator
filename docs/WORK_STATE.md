@@ -1,3 +1,15 @@
+## CURRENT 2026-10-12 — M-4 tariff candidate intake and Yandex reconciliation
+
+- **DONE:** saved 21 official Avtodor M-4 tariff table rows, original displayed amounts, candidate class-I/no-transponder Mon–Thu/Fri–Sun interpretation, source provenance and caveats in `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json`.
+- **DONE:** appended detailed why/source/status/next-step entry to `experiments/nationwide-tolls/WORK_LOG.md`. Candidate route-span cross-checks now include [1223,1184,1093] = 850/1000 ₽ and [1223,1184,1093,1046] = 1230/1450 ₽; each exactly matches its existing Yandex route control. [416,460] = 230/360 ₽ matches official combined row and Lipetsk—Voronezh Yandex route amount, while its exact route chain is not displayed.
+- **IN PROGRESS:** rapidly transcribe official candidate tariff tables for the remaining operators, preserving raw values and candidate status; then build matrix rows and route-vector evidence.
+- **OPEN:** confirm effective dates and tariff-column meanings from detailed official PDFs; identify exact PVP chain for each Yandex OD; resolve the PVP 62/71 and 339/355 parallel/overlap semantics. Do not treat candidate rows as verified production fares.
+- **Latest commits:** data intake `11f63bdf2f59ca4fbc545461960c14665f7c5db0`; Yandex reconciliation `3363fcdbb0829e9a79e99979b8315a5183bff389`; work log `11d874478b0b7a2eb82cb8af722ecebd9e2df78f`. Branch `experiment/toll-od-matrix-2026-10-08`.
+- **Status:** actual sandbox M-4 matrix still has only 2 accepted Yandex cells; candidate dataset is separate. `runtimeEnabled=false`; no V2/main/Production edits; data/docs only, no tests/build run.
+- Product decisions: `experiments/nationwide-tolls/ALGORITHM_SPEC_2026-10-12.md`, `experiments/toll-od-matrix/DECISIONS.md`; complete dated entries in `experiments/nationwide-tolls/WORK_LOG.md`.
+
+---
+
 ## CURRENT 2026-10-12 — M-4 tariff candidate intake persisted
 
 - **DONE (candidate capture):** official Avtodor M-4 tariff page transcribed into `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json` (21 tariff rows, raw displayed amounts, candidate Category-I/no-transponder weekday/weekend interpretation, per-row readiness, source, Yandex control links). Values intentionally remain candidates pending official PDF/header/effective-date confirmation and route-to-PVP proof.
