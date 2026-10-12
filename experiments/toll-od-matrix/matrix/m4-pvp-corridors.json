@@ -13,7 +13,7 @@
   "readiness": "no_verified_m4_span_prices",
   "notes": [
     "Each fare cell is keyed by a canonical unordered pair of endpoint PVPs.",
-    "Both travel directions reuse the same two prices: Mon–Thu and Fri–Sun.",
+    "Both travel directions reuse the same two prices: Mon-Thu and Fri-Sun.",
     "Accepted PVP chains are evidence that the selected route traverses the span; runtime never sums PVP fares.",
     "Different spans require different cells; a longer span cannot reuse a shorter span's price.",
     "Cells remain empty until route sequence and both period prices are checked and recorded."
