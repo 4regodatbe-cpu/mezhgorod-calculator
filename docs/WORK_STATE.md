@@ -1,3 +1,13 @@
+## CURRENT 2026-10-13 — published V3 matrix-estimate checkpoint
+
+DONE: code10276acf786c9ceb60ae19b8f85f7938bd84a9f0 persisted in experiment/toll-od-matrix-2026-10-08. Preview dpl_8rCSYEHPBRZ3DYVzsst2kqstoE1j READY at exact code SHA, target=null. URL https://mezhgorod-calculator-a3d3ijrcm-4regodatbe-5310.vercel.app/v3 .
+
+V3 ordinary/special routes use M4/M12 finished matrix vectors when route evidence resolves. Current candidates permitted with visible «Стоимость не подтверждена» in result/copy. Expired Shali cannot reuse stale money. Native305/305, adapter10/10, TS/build16/16 and React/localHTTP checks PASS.
+
+BLOCKED verification: cloud-browser Preview navigation redirected to Vercel login even with temporary share; no live route/browser E2E completed. Authenticated connector can check page availability. IN PROGRESS: remaining M11/CKAD/regional matrix adapters and full route/CI verification. Next: extend those adapters from current source; use caller-authenticated Preview for driving-route E2E. Logs: experiments/nationwide-tolls/WORK_LOG.md. No merge/Production.
+
+---
+
 ## CURRENT 2026-10-13 — V3 API/UI wiring complete for M4/M12
 
 DONE: V3 ordinary and special-zone routes both use isolated V3 pricing modules; exact M4/M12 vectors use matrix estimates, stale Shali is blocked. Numeric V3 totals carry visible «Стоимость не подтверждена» in result/copy. Native305/305 and adapters10/10, TypeScript/build16/16 PASS; React warning render and local HTTP contracts PASS.

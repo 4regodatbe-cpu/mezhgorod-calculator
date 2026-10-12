@@ -622,3 +622,11 @@ Added M12 adapter to V3: native resolved continuous final RVP vector matches a d
 Remote M12 commit8d00f0a433df005bfc73a258be1c9a1c9ebca880 persisted successfully; Preview dpl_BSAkHN4rvU8yLgDGBTsKYMuQ7tqY became READY, exact source8d00f0a. Protected Vercel fetch /v3 returned200; build logs say Build Completed23s. No driving-browser E2E claimed.
 
 Final review found specialEndpoint V3 still called shared V2 special-options. Copied the current module to lib/v3-calculation/special-options.ts with V3 pricing import and changed V3 API import. This ensures M4/M12 dated pricing and expired-Shali rejection also apply to special-zone routes. TypeScript PASS, Next --webpack build16/16 PASS after change. V2 files unchanged. This final follow-up needs its own exact-commit Preview.
+
+## 2026-10-13 — final remote checkpoint and Preview verification
+
+Final code10276acf786c9ceb60ae19b8f85f7938bd84a9f0 persisted in experiment/toll-od-matrix-2026-10-08; includes V3 special-options isolation. Vercel Preview dpl_8rCSYEHPBRZ3DYVzsst2kqstoE1j READY, target=null, exact source10276ac. URL https://mezhgorod-calculator-a3d3ijrcm-4regodatbe-5310.vercel.app/v3 . Authenticated connector HTTP check completed on this page.
+
+Cloud browser navigation with temporary share link redirected to Vercel login, so driving-route browser E2E was blocked at deployment authentication. No CAPTCHA/bot claim, no login attempted, test tab closed. Authenticated connector page availability is not a live route calculation. Temporary share tokens are not stored in Git.
+
+Done this block: matrix lookup for resolved M4/M12 in ordinary and special-zone V3, API warning, V3 result note/copy, expired Shali guard, source/state restored remotely,305native+10adapter tests, TS/build, local HTTP contracts and Vercel READY. Remaining: M11/CKAD/regional matrix-to-route adapters and complete live route verification/full CI gate; do not claim100% national tariff verification or all matrix engines connected. No merge/Production change.
