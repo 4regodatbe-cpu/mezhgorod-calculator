@@ -3,7 +3,7 @@
 - [x] In V3, add the full A-289 bridge vector to the complete M-4 corridor and add the west bypass only when its selected-route geometry matches. Incomplete A-289 evidence must produce unknown, not a partial 5,040 ₽ trip total. See `lib/v3-calculation/crimea-m4-total.ts` and dated `WORK_LOG.md`.
 - [ ] Verify the actual fastest Ялта — Крым → Москва and reverse V3 API response on Preview, including coordinates, three A-289 frames, bypass crossing, and price/label. The protected Preview browser was previously redirected to login; do not claim a live route test from build alone.
 - [ ] Check the current west-bypass tariff and route scope against operator/Yandex evidence: 410 ₽ is inherited from `lib/toll-data/m4.ts`, while the user recalled roughly 300+ ₽. Reconcile before treating 6,250 ₽ as validated.
-- [ ] Persist this fix on the actual experimental GitHub branch and create an exact-commit Preview; no merge or Production release.
+- [x] Persist fix as experimental remote commit `8b8442c` and create exact-code READY Preview `dpl_EMmxvx7w6ZELCuKag9upow8Kh2Q4`; authenticated page GET 200. No merge or Production release.
 
 ---
 

@@ -2,6 +2,8 @@
 
 DONE locally: V3 composes full Moscow–Krasnodar M-4 (5,040/6,090), full A-289 bridge-approach vector (800), and the Krasnodar west bypass tariff (410) only when its selected-route segment is detected. For a proven weekday crossing of all three, the estimate is 6,250 ₽; without west-bypass evidence, 5,840 ₽. If only part of A-289 is detected, the route toll remains unknown instead of showing the incomplete 5,040 ₽. The number 410 comes from the existing local segment table and still needs route/operator verification. The different Donetsk-area Yalta is a real locality; its search result is explicitly labeled «Ялта — ДНР» and remains separate from «Ялта — Крым».
 
+PERSISTED: remote experimental code commit `8b8442ceb2efe9e18382efc08d1d91e274952459` (parent010cf2d), Preview `dpl_EMmxvx7w6ZELCuKag9upow8Kh2Q4` READY, target=null, exact source SHA. Protected URL https://mezhgorod-calculator-7k62l9tcq-4regodatbe-5310.vercel.app/v3 fetched via authenticated connector HTTP200. No live route POST/browser E2E established.
+
 Checks: focused combination tests 2/2, TypeScript noEmit PASS, experiment native tests 21 files PASS, Next webpack build16/16 PASS after switching the build's TypeScript check to its compiler API (the inherited CLI runner produced empty --showConfig output in this environment). Live chosen route/API and Preview deployment remain unverified for this fix. Current experimental Git branch; remote head at start010cf2d. No main/Production change. Details in `experiments/nationwide-tolls/WORK_LOG.md`.
 
 ---
