@@ -398,7 +398,8 @@
     "Сумма Яндекса принимается пользователем как истина только для конкретного OD/date/time; перенос в span-ячейку требует доказанного PVP-вектора.",
     "Неизвестные цены остаются null; partial/per-PVP суммы не показываются как полная цена в калькуляторе.",
     "Yandex cross-check added: candidate official M4 schedule sums for [1223,1184,1093] and [1223,1184,1093,1046] reproduce the two existing Yandex accepted controls exactly (850/1000; 1230/1450). This supports the candidate interpretation but does not resolve tariff document effective date. 416/460 combined-row candidate similarly matches Lipetsk–Voronezh Yandex control, while exact route chain remains unexposed.",
-    "Added two directly dated official PDF records found in Avtodor tariff search snippets: M-12 I category 325 RUB for the 1148-1211 km bypass package, and M-11 St Petersburg 679-684 km I category 56 RUB, both effective 2026-03-02. The M-12 PDF explicitly groups cash, bank card and interoperable transponders in the fare scope; M-12 row is usable as fixed base-car candidate without transponder. Neither closes the full operator matrix."
+    "Added two directly dated official PDF records found in Avtodor tariff search snippets: M-12 I category 325 RUB for the 1148-1211 km bypass package, and M-11 St Petersburg 679-684 km I category 56 RUB, both effective 2026-03-02. The M-12 PDF explicitly groups cash, bank card and interoperable transponders in the fare scope; M-12 row is usable as fixed base-car candidate without transponder. Neither closes the full operator matrix.",
+    "Bulk transcription added from official Avtodor tariff page search index: M-1 one row, M-3 three rows, M-12 25 mainline rows, CKAD 16 toll points/full-loop row, A-289 six ramp pairs, and Togliatti bypass three origin-destination fares. Values are preserved as raw ordered arrays; tariff class/payment-column mapping and effective dates remain pending until PDFs are opened. No raw sequence is silently converted into a category-I fare except individually cross-checked PDF entries."
   ],
   "runtimeEnabled": false,
   "next": [
@@ -513,6 +514,613 @@
       "source": "https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf",
       "status": "official_dated_rate_captured",
       "limitation": "Local M-11 city access tariff; not the main M-11 58-679 km operator matrix."
+    }
+  ],
+  "rawPublishedSchedules": [
+    {
+      "network": "m1",
+      "section": "М-1 Беларусь 33-66 км",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "pvpKm": 46,
+          "amountsAsDisplayed": [
+            230,
+            250,
+            320,
+            500
+          ]
+        }
+      ]
+    },
+    {
+      "network": "m3",
+      "section": "М-3 Украина",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "pvpKm": 86,
+          "kmRange": "65-86",
+          "amountsAsDisplayed": [
+            100,
+            100,
+            150,
+            200,
+            300
+          ]
+        },
+        {
+          "pvpKm": 136,
+          "kmRange": "112-150",
+          "amountsAsDisplayed": [
+            190,
+            190,
+            270,
+            320,
+            530
+          ]
+        },
+        {
+          "pvpKm": 168,
+          "kmRange": "150-194",
+          "amountsAsDisplayed": [
+            190,
+            230,
+            260,
+            280,
+            570
+          ]
+        }
+      ]
+    },
+    {
+      "network": "m12",
+      "section": "М-12 Восток mainline",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "km": 33,
+          "section": "Москва—Электроугли",
+          "amountsAsDisplayed": [
+            176,
+            210,
+            245,
+            349,
+            349
+          ]
+        },
+        {
+          "km": 65,
+          "section": "Электроугли—ЦКАД",
+          "amountsAsDisplayed": [
+            322,
+            419,
+            489,
+            560,
+            560
+          ]
+        },
+        {
+          "km": 81,
+          "section": "ЦКАД—Орехово-Зуево",
+          "amountsAsDisplayed": [
+            244,
+            318,
+            371,
+            476,
+            476
+          ]
+        },
+        {
+          "km": 118,
+          "section": "Орехово-Зуево—Петушки",
+          "amountsAsDisplayed": [
+            359,
+            477,
+            556,
+            600,
+            600
+          ]
+        },
+        {
+          "km": 174,
+          "section": "Петушки—Владимир",
+          "amountsAsDisplayed": [
+            636,
+            838,
+            978,
+            1049,
+            1049
+          ]
+        },
+        {
+          "km": 184,
+          "section": "Владимир—Гусь-Хрустальный",
+          "amountsAsDisplayed": [
+            165,
+            271,
+            346,
+            425,
+            425
+          ]
+        },
+        {
+          "km": 281,
+          "section": "Гусь-Хрустальный—Меленки",
+          "amountsAsDisplayed": [
+            522,
+            856,
+            1094,
+            1320,
+            1320
+          ]
+        },
+        {
+          "km": 314,
+          "section": "Меленки—Муром",
+          "amountsAsDisplayed": [
+            205,
+            336,
+            429,
+            512,
+            512
+          ]
+        },
+        {
+          "km": 392,
+          "section": "Муром—Дивеево",
+          "amountsAsDisplayed": [
+            510,
+            834,
+            1066,
+            1270,
+            1270
+          ]
+        },
+        {
+          "km": 420,
+          "section": "Дивеево—Арзамас",
+          "amountsAsDisplayed": [
+            311,
+            509,
+            651,
+            780,
+            780
+          ]
+        },
+        {
+          "km": 485,
+          "section": "Арзамас—Сергач",
+          "amountsAsDisplayed": [
+            602,
+            1060,
+            1372,
+            1510,
+            1510
+          ]
+        },
+        {
+          "km": 591,
+          "section": "Сергач—Шумерля",
+          "amountsAsDisplayed": [
+            348,
+            613,
+            793,
+            881,
+            881
+          ]
+        },
+        {
+          "km": 635,
+          "section": "Шумерля—Канаш",
+          "amountsAsDisplayed": [
+            392,
+            690,
+            894,
+            978,
+            978
+          ]
+        },
+        {
+          "km": 722,
+          "section": "Канаш—Большие Кайбицы",
+          "amountsAsDisplayed": [
+            215,
+            379,
+            491,
+            500,
+            500
+          ]
+        },
+        {
+          "km": 764,
+          "section": "Большие Кайбицы—Иннополис",
+          "amountsAsDisplayed": [
+            243,
+            428,
+            554,
+            573,
+            573
+          ]
+        },
+        {
+          "km": 769,
+          "section": "Иннополис—Тетюши",
+          "amountsAsDisplayed": [
+            155,
+            168,
+            185,
+            236,
+            236
+          ]
+        },
+        {
+          "km": 782,
+          "section": "Тетюши—аэропорт Казань",
+          "amountsAsDisplayed": [
+            280,
+            289,
+            318,
+            404,
+            404
+          ]
+        },
+        {
+          "km": 806,
+          "section": "аэропорт Казань—Казань",
+          "amountsAsDisplayed": [
+            162,
+            184,
+            238,
+            252,
+            252
+          ]
+        },
+        {
+          "km": 832,
+          "section": "Казань—Шали",
+          "amountsAsDisplayed": [
+            62,
+            130,
+            169,
+            179,
+            179
+          ]
+        },
+        {
+          "km": 979,
+          "section": "Нижнекамск—аэропорт Бегишево",
+          "amountsAsDisplayed": [
+            278,
+            408,
+            547,
+            695,
+            695
+          ]
+        },
+        {
+          "km": 1048,
+          "section": "аэропорт Бегишево—Набережные Челны",
+          "amountsAsDisplayed": [
+            208,
+            306,
+            410,
+            521,
+            521
+          ]
+        },
+        {
+          "km": 1205,
+          "section": "Исаметово—Асяново",
+          "amountsAsDisplayed": [
+            325,
+            456,
+            586,
+            846
+          ],
+          "pdfCrossReference": "Appendix 3 direct row confirms Category I 325 ₽, effective 2026-03-02"
+        },
+        {
+          "km": 1270,
+          "section": "Дюртюли—Бураево",
+          "amountsAsDisplayed": [
+            440,
+            750,
+            970,
+            1250,
+            1250
+          ]
+        },
+        {
+          "km": 1372,
+          "section": "Бураево—Октябрьский",
+          "amountsAsDisplayed": [
+            960,
+            1280,
+            1440,
+            1900,
+            1900
+          ]
+        },
+        {
+          "km": 1430,
+          "section": "Октябрьский—Ачит",
+          "amountsAsDisplayed": [
+            460,
+            660,
+            850,
+            1280,
+            1280
+          ]
+        }
+      ]
+    },
+    {
+      "network": "ckad",
+      "section": "А-113 ЦКАД",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "node": "337 км, М-10—М-11",
+          "amountsAsDisplayed": [
+            42,
+            60,
+            81,
+            124
+          ]
+        },
+        {
+          "node": "11 км, М-11—Никольское-Горки (А-107)",
+          "amountsAsDisplayed": [
+            119,
+            167,
+            223,
+            343
+          ]
+        },
+        {
+          "node": "29 км, Никольское-Горки—Дмитровское ш.",
+          "amountsAsDisplayed": [
+            120,
+            168,
+            223,
+            340
+          ]
+        },
+        {
+          "node": "49 км, Дмитровское ш.—М-8",
+          "amountsAsDisplayed": [
+            241,
+            335,
+            450,
+            683
+          ]
+        },
+        {
+          "node": "81 км, М-8—М-7",
+          "amountsAsDisplayed": [
+            461,
+            643,
+            859,
+            1306
+          ]
+        },
+        {
+          "node": "107 км, М-7—М-12",
+          "amountsAsDisplayed": [
+            40,
+            56,
+            75,
+            118
+          ]
+        },
+        {
+          "node": "111 км, М-12—Носовихинское ш.",
+          "amountsAsDisplayed": [
+            156,
+            219,
+            292,
+            449
+          ]
+        },
+        {
+          "node": "133 км, Носовихинское—Егорьевское ш.",
+          "amountsAsDisplayed": [
+            81,
+            114,
+            152,
+            235
+          ]
+        },
+        {
+          "node": "150 км, Егорьевское ш.—М-5",
+          "amountsAsDisplayed": [
+            271,
+            380,
+            507,
+            773
+          ]
+        },
+        {
+          "node": "193 км, М-5—Домодедово",
+          "amountsAsDisplayed": [
+            248,
+            347,
+            464,
+            707
+          ]
+        },
+        {
+          "node": "196 км, Домодедово—М-4",
+          "amountsAsDisplayed": [
+            63,
+            88,
+            119,
+            185
+          ]
+        },
+        {
+          "node": "205 км, М-4—М-2",
+          "amountsAsDisplayed": [
+            140,
+            195,
+            261,
+            399
+          ]
+        },
+        {
+          "node": "239 км, М-2—Калужское ш.",
+          "amountsAsDisplayed": [
+            204,
+            286,
+            382,
+            581
+          ]
+        },
+        {
+          "node": "252 км, Калужское ш.—ПК-5",
+          "amountsAsDisplayed": [
+            92,
+            131,
+            174,
+            270
+          ]
+        },
+        {
+          "node": "ПК-5—М-10, full loop",
+          "amountsAsDisplayed": [
+            2278,
+            3189,
+            4262,
+            6513
+          ]
+        },
+        {
+          "node": "275 км, М-1—Звенигород",
+          "amountsAsDisplayed": [
+            103,
+            154,
+            206,
+            323
+          ]
+        }
+      ]
+    },
+    {
+      "network": "a289",
+      "section": "А-289",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "ramp": "Марьянская—Славянск-на-Кубани",
+          "km": 24,
+          "amountsAsDisplayed": [
+            415,
+            555,
+            747,
+            1183
+          ]
+        },
+        {
+          "ramp": "Славянск-на-Кубани—Варениковская",
+          "km": 83,
+          "amountsAsDisplayed": [
+            205,
+            278,
+            373,
+            591
+          ]
+        },
+        {
+          "ramp": "Марьянская—Варениковская",
+          "km": 83,
+          "amountsAsDisplayed": [
+            620,
+            833,
+            1120,
+            1774
+          ]
+        },
+        {
+          "ramp": "Варениковская—Темрюк",
+          "km": 103,
+          "amountsAsDisplayed": [
+            180,
+            270,
+            362,
+            574
+          ]
+        },
+        {
+          "ramp": "Марьянская—Темрюк",
+          "km": 103,
+          "amountsAsDisplayed": [
+            800,
+            1103,
+            1482,
+            2348
+          ]
+        },
+        {
+          "ramp": "Славянск-на-Кубани—Темрюк",
+          "km": 103,
+          "amountsAsDisplayed": [
+            385,
+            548,
+            735,
+            1165
+          ]
+        }
+      ]
+    },
+    {
+      "network": "togliatti-bypass",
+      "section": "Региональный обход г. Тольятти",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "km": "17-60",
+          "section": "с. Троицкое—г. Тольятти",
+          "amountsAsDisplayed": [
+            210,
+            420,
+            840,
+            1260
+          ]
+        },
+        {
+          "km": "60-97",
+          "section": "г. Тольятти—г. Зеленовка",
+          "amountsAsDisplayed": [
+            140,
+            280,
+            570,
+            860
+          ]
+        },
+        {
+          "km": "17-97",
+          "section": "с. Троицкое—г. Зеленовка",
+          "amountsAsDisplayed": [
+            320,
+            650,
+            1300,
+            1960
+          ]
+        }
+      ]
     }
   ]
 }
