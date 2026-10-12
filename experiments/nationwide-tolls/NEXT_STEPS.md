@@ -1,3 +1,9 @@
+## CURRENT 2026-10-12 — phased completion plan
+
+See `IMPLEMENTATION_PLAN_2026-10-12.md` for the nine-block execution plan and per-block acceptance criteria. Current first large block: reconcile the canonical algorithm/specification and establish a current complete paid-road registry and dated operator tariff tables. Immediate specific conflict: re-fetch the primary Avtodor M3 category-I no-transponder table and compare it with the archived Oct 1 snapshot before updating any price data. Then proceed to selected-route evidence, per-system adapters, Yandex/operator route benchmarks, full build and Preview E2E. No Production publication without explicit release decision.
+
+---
+
 # Nationwide paid-road calculator — next engineering blocks
 **As of:** 2026-10-11. Product decision: show only the minimum-time route and price only that selected geometry; see `DECISIONS.md` 2026-10-11. No alternative-route UI. Preview remains verified on source head `3d86e02`; latest docs-only Yandex controls are recorded in `RECONCILIATION_2026-10-11.md` and `WORK_LOG.md` (commits `015a9f9`, `2b378c9`, `812628d`). Preview only; no production release. **Safety:** experiments and preview only. The requirement is not fulfilled merely by a register or reference fare list.
 
