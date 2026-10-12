@@ -24,8 +24,9 @@ function compileVerifiedM4Tariffs(template,input){
   for(const item of rec.chains){
    const sequence=item?.sequence;
    if(!Array.isArray(sequence)||sequence.length<2||sequence.some(id=>!known.has(id))||new Set(sequence).size!==sequence.length)error("chain");
-   const sorted=[...sequence].sort((a,b)=>Number(a.slice(3))-Number(b.slice(3)));
-   if(sequence[0]!==endpoints[0]||sequence.at(-1)!==endpoints[1]||sorted.join("|")!==sequence.join("|"))error("chain_order_or_endpoints");
+   const sorted=[...known].sort((a,b)=>Number(a.slice(3))-Number(b.slice(3)));
+   const completeSpan=sorted.filter(id=>Number(id.slice(3))>=Number(endpoints[0].slice(3))&&Number(id.slice(3))<=Number(endpoints[1].slice(3)));
+   if(sequence[0]!==endpoints[0]||sequence.at(-1)!==endpoints[1]||sequence.join("|")!==completeSpan.join("|"))error("chain_order_or_endpoints_or_missing_intermediate_pvp");
    const chainKey=sequence.join(">");
    if(seenChains.has(chainKey))error("duplicate_chain");seenChains.add(chainKey);
    if(!Array.isArray(item.charges)||item.charges.length!==sequence.length||item.charges.some((c,i)=>c?.pvpId!==sequence[i]||!Array.isArray(c.parts)||!c.parts.length))error("charge_chain_mismatch");
