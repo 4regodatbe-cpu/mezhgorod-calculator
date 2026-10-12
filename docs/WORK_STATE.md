@@ -1,3 +1,14 @@
+## CURRENT 2026-10-12 — phased nationwide toll algorithm plan
+
+- **Plan persisted:** [`experiments/nationwide-tolls/IMPLEMENTATION_PLAN_2026-10-12.md`](../experiments/nationwide-tolls/IMPLEMENTATION_PLAN_2026-10-12.md), commit `d1c996b1d779979f79449fdfd3ac327f469d8aaa`. Nine substantial blocks cover spec, legal/road inventory, dated operator tariffs, selected-route paid-edge evidence, adapters, Yandex/operator benchmarks, full build, Preview E2E and announcement acceptance.
+- **Current product rule:** exactly one fastest-time route is displayed and priced only against its own geometry; base comparison is category I passenger car without transponder; unknown toll/price is not treated as free. M-4 uses a pre-priced symmetric span cell, with full PVP chain proof and two periods only.
+- **DONE:** start catalogue of 22 tariff groups, limited offline fare samples and strict composer, some M3 PVP physical checks, saved Yandex controls, M-4 span lookup/compiler with empty real-price matrix, and 2026-10-12 tariff-model nomenclature.
+- **IN PROGRESS / NOT COMPLETE:** legal completeness of the Russian toll-road list; current complete operator tables (notably conflicting M3 snapshots); nationwide selected-route toll-geometry coverage; per-operator adapters and current fare rows; same-route operator quote/receipt controls; latest-code E2E and green full build. A Vercel M-4 build at prior SHA failed in old timed-quote tests. Some V3 geometry fixes have not had a full user route E2E.
+- **NEXT LARGE BLOCK:** reconcile the spec/handoff and assemble primary dated tariff sources, starting with the M3 conflict, then execute route evidence and tariff adapters system-by-system. Full priorities and accept criteria: nationwide `NEXT_STEPS.md` and plan.
+- **Release boundary:** no Production or default-branch change in this work. A tested Preview is a gate; merge/Production/public announcement require a later explicit user decision after all claimed-scope checks pass.
+
+---
+
 ## CURRENT 2026-10-11 — M-4 symmetric span tariff table clarified
 
 - **LATEST PRODUCT RULE:** Map the selected fastest route's confirmed PVP chain to a continuous M-4 span bounded by first/last PVP. Price key is the canonical unordered endpoint pair; reverse direction reuses the same cell. Each span stores only Mon–Thu and Fri–Sun prices. Runtime picks one cell; no per-PVP sum and no exit/re-entry flow. Intermediate PVP chain verifies span. See latest decision in `experiments/toll-od-matrix/DECISIONS.md`.
