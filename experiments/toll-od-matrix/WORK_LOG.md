@@ -257,3 +257,12 @@
 **Verification:** documentation only. No tests/build, Yandex or operator tariff verification, route smoke, V2 edit or deployment occurred.
 
 **Next:** redesign experimental M4 matrix/compiler/tests for symmetric canonical span pairs; reconcile the two Yandex/user sample span amounts with stored source tariff rows; populate and validate the finite span table; replace V3 additive result with exact span lookup in the sandbox while leaving V2/Production untouched.
+
+
+## 2026-10-12 — symmetric endpoint-span runtime/compiler implementation
+
+- Reaffirmed the latest user model: one fastest route; continuous M-4 passage through each PVP between canonical endpoint boundaries; same stored price in either direction; only Mon–Thu and Fri–Sun fare fields; category I, no transponder. No runtime PVP summation or M-4 re-entry logic.
+- Strengthened `m4-pvp-compiler.mjs`: an accepted tariff span must contain every known PVP between its endpoint kilometer marks in canonical order. Skipped known intermediate gates now fail closed. Test added.
+- Commits: `032c6cca9ca6124a9abd88147c28837afa7bc2bb`, `3e12d7ede4299d7aeb4441a0b6f1372cea32759a`.
+- Verification: local Node run passed the four focused new-schema test files; compiler 15/15. No full branch build pass. Vercel build at prior HEAD `739b586973827d744c48583f9299e2d8785c1640` failed in old timed-quote cases coupled to the superseded directed `priceCells` contract. Must migrate/remove that legacy path/test expectation and rerun the full Vercel build.
+- Tariff matrix and real intake remain empty. User supplied sample values remain control examples, not official price rows. No live tariff claim, V2 mutation, or Production publication.
