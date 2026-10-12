@@ -1,3 +1,12 @@
+## CURRENT 2026-10-12 — встроенный браузер восстановил работу Yandex benchmark
+
+- Исправлено предыдущее предположение: встроенный Cloud Chrome доступен в текущей сессии с мобильного клиента. Яндекс Карты открыты внутри; пользователь может видеть вкладку.
+- Датированные UI проверки (легковое авто, дата/время отправления 12:14, «избегать платных дорог» выключено): Sochi→Rostov, Tue 2026-10-13 = 8h08 / ~850 RUB, Sat 2026-10-17 = 7h53 / ~1,000 RUB; Sochi→Shakhty = 9h21 / ~1,230 RUB и 9h13 / ~1,450 RUB. Москва→Краснодар показывает платную дорогу без суммы.
+- По пользовательскому указанию суммы карточек Яндекса принимаются как подтверждённые values для точного OD/vector/date/time контрольного прогона. M4 matrix получила 2 sandbox cells: [1223,1184,1093] 850/1,000; [1223,1184,1093,1046] 1,230/1,450. Обе ссылки/метаданные и лимит snapshot до 2026-10-17 находятся в cells. Matrix по-прежнему `runtimeEnabled=false`; Production не затронут.
+- Артефакты: `YANDEX_DATE_TEST_RESULTS_2026-10-12.md`, обновлённая `YANDEX_DATE_TEST_MATRIX_2026-10-12.md`, `experiments/toll-od-matrix/matrix/m4-pvp-corridors.json`. Решение и журнал обновлены.
+- Проверка после записи: JSON корректен; две ячейки проходят структурные инварианты (known PVP, canonical endpoint chain, safe integer amounts, valid dates, HTTPS source). Unit tests/CI/build/API E2E не запускались. Статус остальных тарифных продуктов и маршрутов — TBD/unknown.
+- Commits: benchmark results `09469fc`; M4 span cells `1681ea5`; decision `a7d2bee`; matrix `2d020fc`; plan `fabe69a`; nationwide log `ac34ce3`.
+
 ## CURRENT 2026-10-12 — phased nationwide toll algorithm plan
 
 - **Plan persisted:** [`experiments/nationwide-tolls/IMPLEMENTATION_PLAN_2026-10-12.md`](../experiments/nationwide-tolls/IMPLEMENTATION_PLAN_2026-10-12.md), commit `d1c996b1d779979f79449fdfd3ac327f469d8aaa`. Nine substantial blocks cover spec, legal/road inventory, dated operator tariffs, selected-route paid-edge evidence, adapters, Yandex/operator benchmarks, full build, Preview E2E and announcement acceptance.
@@ -96,11 +105,3 @@
 - Work log entry in `experiments/nationwide-tolls/WORK_LOG.md` dated 2026-10-12; matrix commit `a2bfaf4`, work log `67efc22`. Production unchanged.
 
 
-## CURRENT 2026-10-12 — встроенный браузер восстановил работу Yandex benchmark
-
-- Исправлено предыдущее предположение: встроенный Cloud Chrome доступен в текущей сессии с мобильного клиента. Яндекс Карты открыты внутри; пользователь может видеть вкладку.
-- Датированные UI проверки (легковое авто, дата/время отправления 12:14, «избегать платных дорог» выключено): Sochi→Rostov, Tue 2026-10-13 = 8h08 / ~850 RUB, Sat 2026-10-17 = 7h53 / ~1,000 RUB; Sochi→Shakhty = 9h21 / ~1,230 RUB и 9h13 / ~1,450 RUB. Москва→Краснодар показывает платную дорогу без суммы.
-- По пользовательскому указанию суммы карточек Яндекса принимаются как подтверждённые values для точного OD/vector/date/time контрольного прогона. M4 matrix получила 2 sandbox cells: [1223,1184,1093] 850/1,000; [1223,1184,1093,1046] 1,230/1,450. Обе ссылки/метаданные и лимит snapshot до 2026-10-17 находятся в cells. Matrix по-прежнему `runtimeEnabled=false`; Production не затронут.
-- Артефакты: `YANDEX_DATE_TEST_RESULTS_2026-10-12.md`, обновлённая `YANDEX_DATE_TEST_MATRIX_2026-10-12.md`, `experiments/toll-od-matrix/matrix/m4-pvp-corridors.json`. Решение и журнал обновлены.
-- Проверка после записи: JSON корректен; две ячейки проходят структурные инварианты (known PVP, canonical endpoint chain, safe integer amounts, valid dates, HTTPS source). Unit tests/CI/build/API E2E не запускались. Статус остальных тарифных продуктов и маршрутов — TBD/unknown.
-- Commits: benchmark results `09469fc`; M4 span cells `1681ea5`; decision `a7d2bee`; matrix `2d020fc`; plan `fabe69a`; nationwide log `ac34ce3`.
