@@ -1,3 +1,11 @@
+## CURRENT 2026-10-13 — M4/M12 V3 matrix adapters
+
+DONE: remote base integration bd77b6f on experiment/toll-od-matrix-2026-10-08. Follow-up M12 dated vector adapter blocks expired Shali prices and permits current candidates with visible warning. Local TypeScript/build PASS, adapter10/10 PASS, native305/305 PASS. V3 UI/copy warn on numeric estimates.
+
+IN PROGRESS: persist M12 follow-up and create Preview at its exact commit; first Preview dpl_6pdqTza1rSL8Cce7MJWAdN7bUBFy belongs to superseded bd77b6f. Live route/browser E2E and remaining road matrix adapters not complete. Full detailed log: experiments/nationwide-tolls/WORK_LOG.md.
+
+---
+
 ## CURRENT 2026-10-13 — V3 candidate-price integration
 
 DONE locally on recovered remote source440ce6b2: V3 API uses its own route-pricing module, exact M4 vectors read finished candidate/known table; numeric V3 tolls carry «Стоимость не подтверждена» in UI and copy. Tests305/305 + adapter6/6, TypeScript and Next build16/16 PASS; local page200 / invalid API400 PASS. Logs: experiments/nationwide-tolls/WORK_LOG.md.

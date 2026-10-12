@@ -1,3 +1,4 @@
+import { matrixM12Component } from "@/experiments/nationwide-tolls/engine/m12-route-adapter.mjs";
 import { matrixM4Component } from "@/experiments/nationwide-tolls/engine/m4-route-adapter.mjs";
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
 import nationalCatalog from "@/experiments/nationwide-tolls/national-registry.json";
@@ -71,6 +72,7 @@ export async function calculateLegTolls({
         departureAt,
       )
     : null;
+  const matrixM12 = matrixM12Component(productionM12, departureAt);
   const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289");
   const m11Detected = productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(valhallaEvidence?.m11RoadEvidence?.strictBlocks.length);
   const m12Detected = legacyFamilies.has("m12") || Boolean(valhallaEvidence?.m12StrictSpan);
@@ -98,7 +100,7 @@ export async function calculateLegTolls({
   const components: RouteTollComponent[] = [
     { id: "m4_a289", detected: m4Detected, tolls: (matrixM4?.tolls as ProductionM4Result["tolls"]) ?? productionM4.tolls, reason: matrixM4?.reason ?? productionM4.reason },
     { id: "m11", detected: m11Detected, tolls: productionM11Geometry.tolls ?? productionM11?.tolls ?? null, reason: productionM11Geometry.exact ? productionM11Geometry.reason : productionM11?.reason ?? productionM11Geometry.reason },
-    { id: "m12", detected: m12Detected, tolls: productionM12?.tolls ?? null, reason: productionM12?.core.reason ?? "m12_not_priced" },
+    { id: "m12", detected: m12Detected, tolls: matrixM12 ? matrixM12.tolls as NonNullable<typeof productionM12>["tolls"] : productionM12?.tolls ?? null, reason: matrixM12?.reason ?? productionM12?.core.reason ?? "m12_not_priced" },
     { id: "ckad", detected: ckadDetected, tolls: productionCkad.tolls, reason: productionCkad.reason },
     { id: "m1", detected: legacyFamilies.has("m1"), tolls: null, reason: "m1_engine_not_yet_composed" },
     { id: "m3", detected: legacyFamilies.has("m3"), tolls: null, reason: "m3_engine_not_yet_composed" },
