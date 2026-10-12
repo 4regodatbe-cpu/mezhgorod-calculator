@@ -56,3 +56,12 @@
 - Local Node test result: 4 focused new-schema suites pass (corridor, preview, inventory, compiler; compiler 15/15). This is not a full repository build.
 - Vercel branch build at prior HEAD `739b586973827d744c48583f9299e2d8785c1640` failed in legacy timed-quote tests expecting the superseded `priceCells` and mixed-zone contract. This build issue remains open and must be fixed before calling the branch build green.
 - V2/Main/Production were not modified or published. Real Yandex/official tariff verification and route-control E2E remain outstanding.
+
+
+## Nationwide tariff-nomenclature checkpoint — 2026-10-12
+
+- Added [`experiments/nationwide-tolls/TARIFF_NOMENCLATURE_2026-10-12.md`](../experiments/nationwide-tolls/TARIFF_NOMENCLATURE_2026-10-12.md), commit `9789fdfaa051eaf51cfcc0ccafdc91aa42afe596`. It maps the current 22 registry groups to tariff models, required exact-route inputs, official sources, and what can/cannot be considered a confirmed price. This is not yet a complete legal census or complete priced tariff database.
+- Current official Avtodor tariff-page search excerpt surfaced newer M3 numbers than the archived snapshot: PVP 86 100/200 ₽, PVP 136 190/320 ₽, PVP 168 230/280 ₽ (Mon–Thu/Fri–Sun, category I no transponder as interpreted from table labels). Do not update runtime rows until primary document, column labels, effective date and Yandex same-route controls are reconciled.
+- Nationwide operator sources expose materially different price structures: exact OD (ZSD, M11), per-section/free-flow (Mytishchi, Bagration), barrier PVP sequence (Khabarovsk), date/time windows (Kazan/MSD), exclusive corridors (Tolyatti/Udmurt) and cross-border eligibility (Amur). See nomenclature for all entries.
+- No code pricing changes, tests, full build or deployment performed in this research/documentation block. Existing Yandex controls remain approximate route-level observations. No Production publication.
+- Next concrete block: extract complete dated primary tariff files and reconcile the M3 conflict; then enter only supported per-operator rows and verify representative fastest-route controls in Yandex Maps. Full list and priorities in nationwide `NEXT_STEPS.md`.
