@@ -1,3 +1,14 @@
+## CURRENT 2026-10-12 — tariff candidate intake expanded
+
+- **DONE:** candidate catalog `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json` now contains 21 Avtodor M-4 row transcriptions plus three M-4 span candidates reconciled with saved Yandex controls; additionally captured two directly dated official tariff records: M-12 I-category 325 ₽ for km 1148–1211 bypass package and M-11 St Petersburg km 679–684 I-category 56 ₽, both effective 2026-03-02.
+- **DONE:** provenance/decisions/next steps appended to `experiments/nationwide-tolls/WORK_LOG.md` (latest log commit `53712074c1a64c07e3e1c400c42c5d61f5450123`). Data commits: `11f63bdf2f59ca4fbc545461960c14665f7c5db0`, `3363fcdbb0829e9a79e99979b8315a5183bff389`, `ab915c42e4ef420aea086af7963ad1c755770643`.
+- **IN PROGRESS:** candidate-first expansion of tariff inputs for remaining toll products; capture full official PDFs and raw schedule values operator by operator.
+- **OPEN:** M-4 candidate row column interpretation and current effective date need PDF confirmation for every row; route-to-PVP chains remain unproven for most OD controls. M-12 and M-11 entries cover only named sections, not their entire operator matrix.
+- **Status:** actual isolated M-4 span matrix still has 2 accepted Yandex cells; other candidate rows are kept separate from runtime. `runtimeEnabled=false`; V2/main/Production untouched. No tests/build were run because changes are data/log only.
+- **Next:** extract M-12 main route toll schedule and date; then transcribe dated full M-1/M-3/M-11/ЦКАД/A-289 and regional operator tables into the same candidate catalog, keeping source date and payment/category evidence.
+
+---
+
 ## CURRENT 2026-10-12 — M-4 tariff candidate intake and Yandex reconciliation
 
 - **DONE:** saved 21 official Avtodor M-4 tariff table rows, original displayed amounts, candidate class-I/no-transponder Mon–Thu/Fri–Sun interpretation, source provenance and caveats in `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json`.
