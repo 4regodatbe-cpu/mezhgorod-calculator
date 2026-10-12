@@ -1,5 +1,9 @@
 # Nationwide toll-road calculation decisions
 
+## 2026-10-13 — Crimea full trip has separate toll roads
+
+User's observed Ялта (Крым) → Москва result 5,040 ₽ is incomplete: it covers the M-4 Moscow–Krasnodar corridor alone. On the fastest selected route, add the separately crossed full A-289 bridge-approach vector 800 ₽ and any independently detected Krasnodar bypass toll. The west-bypass amount in the local table is 410 ₽ and remains an unconfirmed estimate pending route/operator comparison; do not infer its traversal from endpoints alone. If A-289 traversal evidence is incomplete, the trip total is unknown rather than the M-4 subtotal. Keep the Donetsk-area Yalta a distinct labeled settlement.
+
 ## 2026-10-09 — user mandate
 User instructed: cover **all other Russian toll roads**, not M-4 only. Existing M11/M12/CKAD/A289 engines remain authoritative as currently implemented; national coverage extension must not regress them or claim completion when only catalogued.
 

@@ -1,4 +1,13 @@
-## CURRENT 2026-10-12 — phased completion plan
+## CURRENT 2026-10-13 — Crimea Yalta route regression
+
+- [x] In V3, add the full A-289 bridge vector to the complete M-4 corridor and add the west bypass only when its selected-route geometry matches. Incomplete A-289 evidence must produce unknown, not a partial 5,040 ₽ trip total. See `lib/v3-calculation/crimea-m4-total.ts` and dated `WORK_LOG.md`.
+- [ ] Verify the actual fastest Ялта — Крым → Москва and reverse V3 API response on Preview, including coordinates, three A-289 frames, bypass crossing, and price/label. The protected Preview browser was previously redirected to login; do not claim a live route test from build alone.
+- [ ] Check the current west-bypass tariff and route scope against operator/Yandex evidence: 410 ₽ is inherited from `lib/toll-data/m4.ts`, while the user recalled roughly 300+ ₽. Reconcile before treating 6,250 ₽ as validated.
+- [ ] Persist this fix on the actual experimental GitHub branch and create an exact-commit Preview; no merge or Production release.
+
+---
+
+## 2026-10-12 — phased completion plan
 
 See `IMPLEMENTATION_PLAN_2026-10-12.md` for the nine-block execution plan and per-block acceptance criteria. Current first large block: reconcile the canonical algorithm/specification and establish a current complete paid-road registry and dated operator tariff tables. Immediate specific conflict: re-fetch the primary Avtodor M3 category-I no-transponder table and compare it with the archived Oct 1 snapshot before updating any price data. Then proceed to selected-route evidence, per-system adapters, Yandex/operator route benchmarks, full build and Preview E2E. No Production publication without explicit release decision.
 

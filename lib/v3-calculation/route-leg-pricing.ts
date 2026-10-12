@@ -1,5 +1,6 @@
 import { matrixM12Component } from "@/experiments/nationwide-tolls/engine/m12-route-adapter.mjs";
 import { matrixM4Component } from "@/experiments/nationwide-tolls/engine/m4-route-adapter.mjs";
+import { crimeaM4Total } from "./crimea-m4-total";
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
 import nationalCatalog from "@/experiments/nationwide-tolls/national-registry.json";
 import { inspectNationwideCandidates } from "@/experiments/nationwide-tolls/national-preview.mjs";
@@ -55,6 +56,7 @@ export async function calculateLegTolls({
     routeSeconds,
   );
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
+  const crimeaM4 = crimeaM4Total(routeGeometry, productionM4, geometricTolls.segments, departureAt);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
   const productionM11 = selectedFastProvider === "Valhalla" && valhallaEvidence?.m11RoadEvidence
     ? calculateProductionM11(
@@ -98,7 +100,7 @@ export async function calculateLegTolls({
   });
 
   const components: RouteTollComponent[] = [
-    { id: "m4_a289", detected: m4Detected, tolls: (matrixM4?.tolls as ProductionM4Result["tolls"]) ?? productionM4.tolls, reason: matrixM4?.reason ?? productionM4.reason },
+    { id: "m4_a289", detected: m4Detected, tolls: crimeaM4 ? crimeaM4.tolls : (matrixM4?.tolls as ProductionM4Result["tolls"]) ?? productionM4.tolls, reason: crimeaM4?.reason ?? matrixM4?.reason ?? productionM4.reason },
     { id: "m11", detected: m11Detected, tolls: productionM11Geometry.tolls ?? productionM11?.tolls ?? null, reason: productionM11Geometry.exact ? productionM11Geometry.reason : productionM11?.reason ?? productionM11Geometry.reason },
     { id: "m12", detected: m12Detected, tolls: matrixM12 ? matrixM12.tolls as NonNullable<typeof productionM12>["tolls"] : productionM12?.tolls ?? null, reason: matrixM12?.reason ?? productionM12?.core.reason ?? "m12_not_priced" },
     { id: "ckad", detected: ckadDetected, tolls: productionCkad.tolls, reason: productionCkad.reason },

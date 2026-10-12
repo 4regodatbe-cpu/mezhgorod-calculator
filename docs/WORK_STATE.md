@@ -1,4 +1,12 @@
-## CURRENT 2026-10-13 — published V3 matrix-estimate checkpoint
+## CURRENT 2026-10-13 — Crimea → Moscow missing A-289 price fix
+
+DONE locally: V3 composes full Moscow–Krasnodar M-4 (5,040/6,090), full A-289 bridge-approach vector (800), and the Krasnodar west bypass tariff (410) only when its selected-route segment is detected. For a proven weekday crossing of all three, the estimate is 6,250 ₽; without west-bypass evidence, 5,840 ₽. If only part of A-289 is detected, the route toll remains unknown instead of showing the incomplete 5,040 ₽. The number 410 comes from the existing local segment table and still needs route/operator verification. The different Donetsk-area Yalta is a real locality; its search result is explicitly labeled «Ялта — ДНР» and remains separate from «Ялта — Крым».
+
+Checks: focused combination tests 2/2, TypeScript noEmit PASS, experiment native tests 21 files PASS, Next webpack build16/16 PASS after switching the build's TypeScript check to its compiler API (the inherited CLI runner produced empty --showConfig output in this environment). Live chosen route/API and Preview deployment remain unverified for this fix. Current experimental Git branch; remote head at start010cf2d. No main/Production change. Details in `experiments/nationwide-tolls/WORK_LOG.md`.
+
+---
+
+## 2026-10-13 — published V3 matrix-estimate checkpoint
 
 DONE: code10276acf786c9ceb60ae19b8f85f7938bd84a9f0 persisted in experiment/toll-od-matrix-2026-10-08. Preview dpl_8rCSYEHPBRZ3DYVzsst2kqstoE1j READY at exact code SHA, target=null. URL https://mezhgorod-calculator-a3d3ijrcm-4regodatbe-5310.vercel.app/v3 .
 
