@@ -214,3 +214,10 @@ User proposed using Yandex Maps to check actual toll estimates for chosen origin
 - Яндекс разрешил адреса ул. Каширское шоссе, 32 → Советская улица: fastest будни 1:04/50 mi/~310 ₽; выходные 1:15/50 mi/~400 ₽; отправление 12:14. Выходная подробная карточка подтверждает авто <2 м без транспондера и сумму на момент выезда.
 - Route detail включает съезд с E115 на Каширское шоссе. Номера ПВП не выводятся; сумма добавлена только в OD/date benchmarks, не в M4 exact span table.
 - Results commit `b24c728`; matrix commit `350e9b1`. Tests/build not run; runtime unchanged.
+
+
+## 2026-10-12 — сводка Yandex-control пакета и уточнение числа пар
+
+- Block 6 плана синхронизирован с фактом: **8** маршрутных OD пар имеют оба датированных прогона (M4: Sochi—Rostov, Sochi—Shakhty, Moscow—Krasnodar, Lipetsk—Voronezh, Domodedovo—Kashira; mixed M11 Moscow—SPb; спорные Kazan—Naberezhnye Chelny и SPb—Kronstadt). Москва—Казань — отдельный не засчитанный контроль из-за паромного маршрута/непоказанной суммы.
+- Из 8 пар лишь часть имеет показанный fastest-fare; две exact PVP-chain пары seeded как M4 span values. Остальные Yandex fares держим OD benchmark only до установления PVP sequence.
+- План commit `b4a9961`; состояние проекта commit `d21aa1e`. Runtime остается выключенным; 100% покрытия тарифной базы не достигнуто.
