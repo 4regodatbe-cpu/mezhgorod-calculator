@@ -48,3 +48,11 @@
 ---
 
 ## CURRENT 2026-10-11 — Yandex Maps fare controls observed
+
+## M-4 symmetric span implementation checkpoint — 2026-10-12
+
+- Sandbox branch: `experiment/toll-od-matrix-2026-10-08`; latest implementation commits: `032c6cca9ca6124a9abd88147c28837afa7bc2bb` (compiler now rejects any missing intermediate known PVP) and `3e12d7ede4299d7aeb4441a0b6f1372cea32759a` (regression test).
+- New runtime span lookup/compiler/inventory/preview code uses one direction-independent endpoint pair and exactly two fare values (Mon–Thu, Fri–Sun). Runtime does not sum PVP rows. Matrix remains empty; no real tariff rows were inserted.
+- Local Node test result: 4 focused new-schema suites pass (corridor, preview, inventory, compiler; compiler 15/15). This is not a full repository build.
+- Vercel branch build at prior HEAD `739b586973827d744c48583f9299e2d8785c1640` failed in legacy timed-quote tests expecting the superseded `priceCells` and mixed-zone contract. This build issue remains open and must be fixed before calling the branch build green.
+- V2/Main/Production were not modified or published. Real Yandex/official tariff verification and route-control E2E remain outstanding.
