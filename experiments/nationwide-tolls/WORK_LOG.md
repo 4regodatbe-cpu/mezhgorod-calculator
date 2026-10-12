@@ -241,3 +241,12 @@ User proposed using Yandex Maps to check actual toll estimates for chosen origin
 - **Коммиты:** первичный тарифный снимок `11f63bdf2f59ca4fbc545461960c14665f7c5db0`; этот cross-check `3363fcdbb0829e9a79e99979b8315a5183bff389`.
 - **Проверки:** проверена арифметика сумм и равенство опубликованным Яндекс-контролям; тесты и сборка не запускались (данные/документы только).
 - **Следующее:** расширить candidate capture остальными официальными тарифными таблицами. Для М-4 не снимать candidate-флаги, пока не получены даты действия PDF и карта точек ПВП; затем одним data commit сгенерировать все нужные span cells.
+
+
+## 2026-10-12 — M-12 and M-11 dated official tariff rows captured
+
+- **Что сделано:** в `TARIFF_CANDIDATES_2026-10-12.json` добавлены два тарифа из индексированных официальных PDF Автодора: М-12 bypass km 1148–1211, категория I — 325 ₽ Пн–Вс; М-11 Санкт-Петербург km 679–681 / 681–684, категория I — 56 ₽ Пн–Вс. Оба документа указывают вступление в силу 02.03.2026 00:00 МСК. M-12 document identifies cash, card and interoperable transponders under same rate, satisfying base no-transponder scope for that section.
+- **Почему:** ускоряем заполнение всех tariff candidates и фиксируем датированные operator values сразу; полные matrices затем будут собраны по каждому оператору/вектору.
+- **Источники:** M-12 https://avtodor-tr.ru/upload/iblock/fe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf ; M-11 St Petersburg https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf . Поиск также выдал ЦКАД full node rates, но payment-column meanings still require full official PDF and thus not yet transcribed into accepted cells.
+- **Статус:** source-dated exact product rates; does not close whole M-12 or whole M-11 tariff matrix and is not yet wired into route engine.
+- **Коммит данных:** `ab915c42e4ef420aea086af7963ad1c755770643`. Tests/build not run; data-only update. Next: capture full dated M-12 national rows and full operator PDFs for M-1/M-3/M-11/ЦКАД/A-289 and regional roads.
