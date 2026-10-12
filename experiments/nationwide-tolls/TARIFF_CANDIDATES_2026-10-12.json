@@ -396,7 +396,8 @@
     "Срочное заполнение: сохранять тарифные числа сразу как кандидаты и не терять provenance.",
     "Официальная таблица — основной источник строк; отображённые значения не подменяют отдельную проверку периода действия и колонки профиля.",
     "Сумма Яндекса принимается пользователем как истина только для конкретного OD/date/time; перенос в span-ячейку требует доказанного PVP-вектора.",
-    "Неизвестные цены остаются null; partial/per-PVP суммы не показываются как полная цена в калькуляторе."
+    "Неизвестные цены остаются null; partial/per-PVP суммы не показываются как полная цена в калькуляторе.",
+    "Yandex cross-check added: candidate official M4 schedule sums for [1223,1184,1093] and [1223,1184,1093,1046] reproduce the two existing Yandex accepted controls exactly (850/1000; 1230/1450). This supports the candidate interpretation but does not resolve tariff document effective date. 416/460 combined-row candidate similarly matches Lipetsk–Voronezh Yandex control, while exact route chain remains unexposed."
   ],
   "runtimeEnabled": false,
   "next": [
@@ -404,5 +405,85 @@
     "Сопоставить весь перечень тарифных строк с точными PVP IDs и геометрией.",
     "Заполнить симметричные span-ячейки М-4 для поддерживаемых непрерывных векторов.",
     "Собрать аналогичные candidate tables для М-1, М-3, М-11, М-12, ЦКАД, А-289 и региональных дорог."
+  ],
+  "derivedSpanCandidates": [
+    {
+      "endpoints": [
+        "m4-1093",
+        "m4-1223"
+      ],
+      "acceptedChain": [
+        "m4-1223",
+        "m4-1184",
+        "m4-1093"
+      ],
+      "prices": {
+        "monThu": 850,
+        "friSun": 1000
+      },
+      "derivation": "400/500 (PVP 1223) + 300/350 (PVP 1184) + 150/150 (PVP 1093)",
+      "yandexControl": {
+        "observed": {
+          "monThu": 850,
+          "friSun": 1000
+        },
+        "route": "Сочи—Ростов-на-Дону",
+        "source": "experiments/toll-od-matrix/m4-pvp-corridors.json"
+      },
+      "status": "candidate_operator_rows_sum_matches_yandex_control",
+      "caveat": "Official tariff document effective date and profile columns still need PDF confirmation."
+    },
+    {
+      "endpoints": [
+        "m4-1046",
+        "m4-1223"
+      ],
+      "acceptedChain": [
+        "m4-1223",
+        "m4-1184",
+        "m4-1093",
+        "m4-1046"
+      ],
+      "prices": {
+        "monThu": 1230,
+        "friSun": 1450
+      },
+      "derivation": "380/450 (PVP 1046) + 400/500 (PVP 1223) + 300/350 (PVP 1184) + 150/150 (PVP 1093)",
+      "yandexControl": {
+        "observed": {
+          "monThu": 1230,
+          "friSun": 1450
+        },
+        "route": "Сочи—Шахты",
+        "source": "experiments/toll-od-matrix/m4-pvp-corridors.json"
+      },
+      "status": "candidate_operator_rows_sum_matches_yandex_control",
+      "caveat": "Official tariff document effective date and profile columns still need PDF confirmation."
+    },
+    {
+      "endpoints": [
+        "m4-416",
+        "m4-460"
+      ],
+      "acceptedChain": [
+        "m4-416",
+        "m4-460"
+      ],
+      "prices": {
+        "monThu": 230,
+        "friSun": 360
+      },
+      "derivation": "Single official tariff row lists PVP 416, 460 together for 401–464 km; amounts transcribed as 230/360.",
+      "yandexControl": {
+        "observed": {
+          "monThu": 230,
+          "friSun": 360
+        },
+        "route": "Липецк—Воронеж",
+        "source": "experiments/nationwide-tolls/YANDEX_DATE_TEST_RESULTS_2026-10-12.md"
+      },
+      "status": "candidate_yandex_amount_matches_official_combined_row",
+      "caveat": "Route card names bypass Zadonsk/Khlevnoy but does not expose exact PVP passage chain."
+    }
   ]
 }
