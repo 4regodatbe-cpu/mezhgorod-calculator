@@ -199,3 +199,11 @@ User proposed using Yandex Maps to check actual toll estimates for chosen origin
 - Москва (Красная площадь, 1) → Краснодар (Главная городская площадь), fastest: вторник 13.10 15:34/840 mi/~5,040 ₽; суббота 17.10 15:52/840 mi/~6,090 ₽. Сохранено как whole-route M4 estimate; не распределять по каждому span/PVP. Значения расходятся с ранее записанными контролями с иными endpoints/time snapshot; требуется отдельная сверка.
 - Москва → Казань, ул. Баумана: вторник 8:48/510 mi, суббота 8:37/510 mi; обе активные карточки отмечают паром и платную дорогу, но суммы не показывают. Не считать это валидным чистым M12 прайс-контролем; unknown.
 - Подробности в `YANDEX_DATE_TEST_RESULTS_2026-10-12.md`, индекс — `YANDEX_DATE_TEST_MATRIX_2026-10-12.md`. Коммиты results `13d2ea5`, matrix `82000fd`. Runtime/tariffs не изменялись; operator-source checks/build/tests не запускались.
+
+
+## 2026-10-12 — локальный M4 Yandex control: Липецк—Воронеж
+
+- Проверены обе даты на маршруте площадь Ленина-Соборная (Липецк) → площадь Ленина (Воронеж): вторник fastest 2:01/78 mi/~230 ₽; суббота 2:01/78 mi/~360 ₽. Карточка называет платный обход Задонска и Хлевного.
+- В открытых деталях Яндекс прямо указывает расчет для легковой машины высотой <2 м, без транспондера, на момент выезда с платного участка, и говорит, что тарифные сведения поступают от операторов. Это подтверждает цену whole selected OD как Yandex output.
+- Exact PVP vector не показан в UI; поэтому сумма НЕ попала в `experiments/toll-od-matrix/matrix/m4-pvp-corridors.json`. Нужна трассировка geometry к крайним ПВП прежде, чем seed exact span.
+- Подробности: `YANDEX_DATE_TEST_RESULTS_2026-10-12.md`; matrix append commit `af7c4ed`, result commit `cb43927`. Runtime, build and tests not changed/run.
