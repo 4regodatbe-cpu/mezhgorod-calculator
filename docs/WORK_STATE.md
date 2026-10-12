@@ -86,3 +86,11 @@
 - **Status:** block 1 specification complete (equal-ETA tie-break still needs code rule/tests); block 2 partial; block 3 partial/source audit only. Details: `IMPLEMENTATION_PLAN_2026-10-12.md`, `TARIFF_NOMENCLATURE_2026-10-12.md`, `WORK_LOG.md`, `NEXT_STEPS.md`.
 - **Commits in this step:** `801750e` spec, `47ae694` registry, `2cec76e` decisions, `33f7c85` tariff nomenclature, `ad090b6` plan, `63789d2` work log, `4e2ba6b` next steps. Production/default branch untouched. Docs/registry-only work; JSON parsed before write; no tests, build or route E2E run.
 - **Next:** obtain readable current primary tariff artifacts (starting M3), split Pskov into four separately sourced products, finish operator and legal object census. Proceed to blocks 4–6 after tariff/source coverage advances. Do not publish prices with unresolved sources.
+
+
+## CURRENT 2026-10-12 — Yandex dated route tests blocked
+
+- Prepared `experiments/nationwide-tolls/YANDEX_DATE_TEST_MATRIX_2026-10-12.md` for weekday Tue 2026-10-13 and weekend Sat 2026-10-17, with both dates/one local departure time, fastest-only, passenger car and route geometry/ETA/amount evidence capture. Matrix covers 16 detailed Avtodor products and selected route controls.
+- No fresh Yandex route was calculated: Opera connector reports Browser not connected; TinyFish did not start due wallet balance -0.221166 USD (`wallet_out_of_funds`). No new UI observations, dates, sums, geometry or screenshots exist. Existing route estimates remain historic controls only; not marked as newly re-confirmed. No fare data/runtime changed.
+- Next action: resume matrix via connected Opera Yandex Maps UI or TinyFish after wallet access is restored; record real output verbatim before marking any test. Do not claim the tests complete or seed fare cells until evidence is captured.
+- Work log entry in `experiments/nationwide-tolls/WORK_LOG.md` dated 2026-10-12; matrix commit `a2bfaf4`, work log `67efc22`. Production unchanged.
