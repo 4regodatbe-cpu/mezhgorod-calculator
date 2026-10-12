@@ -9,7 +9,7 @@ function inspectM4PvpPreview(matrix,validation,options={}){
  if(!validation||validation.candidateCount===0)return fail("m4_no_toll_gate_candidates",base);
  if(!Array.isArray(validation.checks))return fail("missing_pvp_checks",base);
  const strict=validation.checks.filter(c=>c.status==="confirmed"&&c.evidence==="map_matching"&&Array.isArray(c.matchedNodeIds)&&c.matchedNodeIds.length>0);
- const view={...base,confirmedByMapMatching:strict.length,legacyConfirmedCount:validation.confirmedCount??0};
+ const view={...base,confirmedByMapMatching:strict.length,legacyConfirmedCount:validation.confirmedCount??0,confirmedPvps:strict.sort((a,b)=>a.routeProgressMeters-b.routeProgressMeters).map(c=>"m4-"+c.km)};
  if(validation.complete!==true||validation.unknownCount!==0||validation.candidateCount!==validation.checkedCandidateCount)return fail("incomplete_pvp_validation",view);
  if(validation.confirmedCount!==strict.length)return fail("weak_or_unmatched_gate_evidence",view);
  if(strict.length<2)return fail("span_requires_two_confirmed_boundaries",view);
