@@ -1,3 +1,14 @@
+## CURRENT 2026-10-12 — M-4 tariff candidate intake persisted
+
+- **DONE (candidate capture):** official Avtodor M-4 tariff page transcribed into `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json` (21 tariff rows, raw displayed amounts, candidate Category-I/no-transponder weekday/weekend interpretation, per-row readiness, source, Yandex control links). Values intentionally remain candidates pending official PDF/header/effective-date confirmation and route-to-PVP proof.
+- **DONE:** append-only reasoned entry added to `experiments/nationwide-tolls/WORK_LOG.md`. Data commit `11f63bdf2f59ca4fbc545461960c14665f7c5db0`; log commit `545508b2f5f88382b4746e0868d63dd8ba6cca48`.
+- **IN PROGRESS:** aggressively collect operator tariff candidate tables and fill each operator-specific data matrix; begin with downloadable Avtodor tariff PDF and other indexed official tables. Then map M-4 rates into complete symmetric PVP spans.
+- **UNVERIFIED:** page-level effective date and exact column mapping were not established for every M-4 row; Yandex totals for Lipetsk—Voronezh and Domodedovo—Kashira match candidate rows but do not reveal exact PVP chain. Candidate capture is not final verified coverage.
+- **Safety/status:** M-4 experiment matrix still has 2 Yandex cells; this candidate intake has not altered it. `runtimeEnabled=false`; V2, main and Production unchanged. Data-only change; no tests/build run.
+- Detailed append-only provenance and decisions: `experiments/nationwide-tolls/WORK_LOG.md`; product rules: `experiments/nationwide-tolls/ALGORITHM_SPEC_2026-10-12.md` and `experiments/toll-od-matrix/DECISIONS.md`.
+
+---
+
 ## CURRENT 2026-10-12 — benchmark plan updated
 
 - Block 6 in `experiments/nationwide-tolls/IMPLEMENTATION_PLAN_2026-10-12.md` now records the seven dated OD pairs, fare/no-fare results, slow-alternative exclusion for Kronstadt, mixed M11 and ferry caveats, and fact that only two M4 chain cells are currently seeded. Plan update commit `92f748f`.
