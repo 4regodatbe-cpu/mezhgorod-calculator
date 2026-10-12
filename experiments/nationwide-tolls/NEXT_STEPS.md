@@ -19,3 +19,12 @@
 - [ ] **P1 — activated payment cutover**: only where all above verified, feature flag per road with previous legacy fallback only if independently justified; don't silently substitute old geometry estimate for unknown.
 - [ ] **P1 — field E2E Android/desktop & Vercel Preview**: real routes in many regions; confirm no React DOM crashes, alt routes and minimum travel time sort, unknown displayed without invented zero.
 - [ ] **P2 — continuous operator data maintenance**: dated snapshots, sources, change alerts and audit acceptance protocol. Deactivate stale rows instead of silently assuming valid.
+
+
+## 2026-10-12 — tariff nomenclature and source refresh
+
+- [x] Created `TARIFF_NOMENCLATURE_2026-10-12.md`: current 22-group registry mapped to tariff products/models, required route/class/payment/time inputs, known source signals and evidence state. It explicitly does not claim that 22 groups are an exhaustive national legal inventory.
+- [ ] **P0 — reconcile current Avtodor M3 matrix:** compare official current tariff page/PDF with the saved 2026-10-01 snapshot. Search-indexed current page appears to show PVP 86: 100/200; 136: 190/320; 168: 230/280 ₽ (Mon–Thu/Fri–Sun) without transponder. Verify exact headings and effective date from the primary table and preserve a dated snapshot before editing runtime/reference data.
+- [ ] **P0 — finish exact current fare tables across all 22 groups:** prioritize multi-OD/conditional operators and newly changed schedules (Odintsovo from 2026-01-15; Mytishchi 1 February notice; Ryazan from 2026-10-01; ZSD; Pskov's four independent roads; Khabarovsk route matrix). Store source dates, category I and base/no-transponder profile.
+- [ ] **P0 — route controls:** for each proposed live row, use only one fastest Yandex route with fixed endpoints/date/time and passenger car under 2 m/no transponder; retain full geometry and estimate as a control, then reconcile to operator's exact entrance/exit/section tariff or receipt.
+- No price row is accepted from a search snippet, legal maximum, ambiguous image/table column or route-level estimate alone.
