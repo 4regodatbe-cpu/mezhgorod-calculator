@@ -397,7 +397,8 @@
     "Официальная таблица — основной источник строк; отображённые значения не подменяют отдельную проверку периода действия и колонки профиля.",
     "Сумма Яндекса принимается пользователем как истина только для конкретного OD/date/time; перенос в span-ячейку требует доказанного PVP-вектора.",
     "Неизвестные цены остаются null; partial/per-PVP суммы не показываются как полная цена в калькуляторе.",
-    "Yandex cross-check added: candidate official M4 schedule sums for [1223,1184,1093] and [1223,1184,1093,1046] reproduce the two existing Yandex accepted controls exactly (850/1000; 1230/1450). This supports the candidate interpretation but does not resolve tariff document effective date. 416/460 combined-row candidate similarly matches Lipetsk–Voronezh Yandex control, while exact route chain remains unexposed."
+    "Yandex cross-check added: candidate official M4 schedule sums for [1223,1184,1093] and [1223,1184,1093,1046] reproduce the two existing Yandex accepted controls exactly (850/1000; 1230/1450). This supports the candidate interpretation but does not resolve tariff document effective date. 416/460 combined-row candidate similarly matches Lipetsk–Voronezh Yandex control, while exact route chain remains unexposed.",
+    "Added two directly dated official PDF records found in Avtodor tariff search snippets: M-12 I category 325 RUB for the 1148-1211 km bypass package, and M-11 St Petersburg 679-684 km I category 56 RUB, both effective 2026-03-02. The M-12 PDF explicitly groups cash, bank card and interoperable transponders in the fare scope; M-12 row is usable as fixed base-car candidate without transponder. Neither closes the full operator matrix."
   ],
   "runtimeEnabled": false,
   "next": [
@@ -484,6 +485,34 @@
       },
       "status": "candidate_yandex_amount_matches_official_combined_row",
       "caveat": "Route card names bypass Zadonsk/Khlevnoy but does not expose exact PVP passage chain."
+    }
+  ],
+  "otherOperatorRows": [
+    {
+      "network": "m12",
+      "section": "Обходы Исаметово—Верхнеяркеево—Лаяшты—Ишкарово—Асяново",
+      "kmRange": "1148-1211",
+      "categoryI": {
+        "monSun": 325
+      },
+      "paymentScope": "cash, bank card, Autodor/OSSP/MSS/NKD transponders stated in same tariff",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "source": "https://avtodor-tr.ru/upload/iblock/fe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf",
+      "sourceDocument": "Appendix 3, approved by Avtodor order 2026-09-27 No.57",
+      "status": "official_dated_rate_captured",
+      "limitation": "This is one M-12 bypass package only, not the full M-12 national span tariff matrix."
+    },
+    {
+      "network": "m11-spb",
+      "section": "Санкт-Петербург km 679-681 / km 681-684",
+      "categoryI": {
+        "monSun": 56
+      },
+      "paymentScope": "cash, bank card and listed interoperable transponders in tariff document",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "source": "https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf",
+      "status": "official_dated_rate_captured",
+      "limitation": "Local M-11 city access tariff; not the main M-11 58-679 km operator matrix."
     }
   ]
 }
