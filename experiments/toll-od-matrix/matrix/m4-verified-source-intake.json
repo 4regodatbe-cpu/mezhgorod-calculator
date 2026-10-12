@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "systemId": "m4-don",
   "records": [],
-  "note": "Only independently checked official full-corridor controls, matched event signature, and tariff effective dates. Synthetic values exist solely in unit tests."
+  "note": "Offline input: confirmed continuous PVP span, exact accepted PVP chain(s), and source-backed per-PVP tariff rows for both periods. The compiler aggregates them once into one symmetric span cell. Optional full-route/Yandex totals are consistency controls, not mandatory runtime or OD inputs."
 }
