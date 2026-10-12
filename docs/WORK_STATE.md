@@ -1,3 +1,14 @@
+## CURRENT 2026-10-12 — Avtodor raw tariff schedules bulk-captured
+
+- **DONE:** `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json` now preserves official tariff-page raw rows: M-4 21, M-1 1, M-3 3, M-12 25 mainline, ЦКАД 16 nodes/full-loop, А-289 6 OD/ramp fares, Togliatti bypass 3 OD fares. Amount sequences kept exactly as displayed; candidate profile/date interpretation remains explicit.
+- **DONE:** directly dated official PDF rates captured for M-12 km 1148–1211 (Cat I 325 ₽; effective 2026-03-02) and M-11 St Petersburg km 679–684 (Cat I 56 ₽; effective 2026-03-02). Three M-4 vectors match saved Yandex totals but remain candidate pending PDF date/header confirmation and route-chain proof.
+- **Latest data commit:** `5559ee2012f3dd7f55c7d557878658f6dd3f257a`; bulk-capture log `cb7262ddbe61415794fa4f9726b11abe0158231f`. Full provenance and next steps in `experiments/nationwide-tolls/WORK_LOG.md`.
+- **IN PROGRESS:** obtain/read detailed tariff PDFs; map raw arrays to category-I/no-transponder and effective periods; continue sourcing toll operators outside the Avtodor schedule.
+- **OPEN:** raw capture is broad but not yet a normalized/complete route-span fare matrix; exact mapping, effective dates, PVP vectors and most non-Avtodor operators remain unverified. M-4 accepted matrix still 2 cells.
+- **Safety/status:** `runtimeEnabled=false`; V2/main/Production untouched; no tests/build run (data-only commits).
+
+---
+
 ## CURRENT 2026-10-12 — tariff candidate intake expanded
 
 - **DONE:** candidate catalog `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json` now contains 21 Avtodor M-4 row transcriptions plus three M-4 span candidates reconciled with saved Yandex controls; additionally captured two directly dated official tariff records: M-12 I-category 325 ₽ for km 1148–1211 bypass package and M-11 St Petersburg km 679–684 I-category 56 ₽, both effective 2026-03-02.
