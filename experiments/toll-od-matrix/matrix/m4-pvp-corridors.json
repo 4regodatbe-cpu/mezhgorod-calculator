@@ -5,17 +5,104 @@
   "runtimeEnabled": false,
   "vehicleProfile": "category-I-no-transponder",
   "knownPvps": [
-    "m4-62","m4-71","m4-133","m4-228","m4-322","m4-339","m4-355",
-    "m4-416","m4-460","m4-515","m4-545","m4-620","m4-636","m4-672",
-    "m4-803","m4-911","m4-1046","m4-1093","m4-1184","m4-1223"
+    "m4-62",
+    "m4-71",
+    "m4-133",
+    "m4-228",
+    "m4-322",
+    "m4-339",
+    "m4-355",
+    "m4-416",
+    "m4-460",
+    "m4-515",
+    "m4-545",
+    "m4-620",
+    "m4-636",
+    "m4-672",
+    "m4-803",
+    "m4-911",
+    "m4-1046",
+    "m4-1093",
+    "m4-1184",
+    "m4-1223"
   ],
-  "spanCells": [],
-  "readiness": "no_verified_m4_span_prices",
+  "spanCells": [
+    {
+      "endpoints": [
+        "m4-1093",
+        "m4-1223"
+      ],
+      "acceptedChains": [
+        [
+          "m4-1223",
+          "m4-1184",
+          "m4-1093"
+        ]
+      ],
+      "prices": {
+        "monThu": 850,
+        "friSun": 1000
+      },
+      "source": {
+        "url": "https://yandex.com/maps/?ll=39.281603%2C45.432809&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T12%3A14%3A00&rtext=43.585472%2C39.723098~47.222109%2C39.718813&rtt=auto&ruri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE2NjU2NhI70KDQvtGB0YHQuNGPLCDQmtGA0LDRgdC90L7QtNCw0YDRgdC60LjQuSDQutGA0LDQuSwg0KHQvtGH0LgiCg1z5B5CFYdXLkI%2C~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE2NjAzNRIo0KDQvtGB0YHQuNGPLCDQoNC-0YHRgtC-0LIt0L3QsC3QlNC-0L3RgyIKDRHgHkIVcOM8Qg%2C%2C&z=7",
+        "effectiveFrom": "2026-10-12",
+        "effectiveTo": "2026-10-17",
+        "sourceKind": "yandex_fastest_route_card_estimate_user_accepted",
+        "observedAt": "2026-10-12",
+        "testDates": [
+          "2026-10-13",
+          "2026-10-17"
+        ],
+        "observedDepartureTime": "12:14",
+        "observedRoute": "Сочи → Ростов-на-Дону",
+        "acceptedByUserRule": true,
+        "paymentMode": "Yandex default; no transponder selector was exposed in the route UI",
+        "notes": "Yandex showed ~850 RUB on Tue 2026-10-13 and ~1,000 RUB on Sat 2026-10-17. Values are adopted as confirmed Yandex route estimates for this vector and snapshot period only; not an operator tariff document."
+      }
+    },
+    {
+      "endpoints": [
+        "m4-1046",
+        "m4-1223"
+      ],
+      "acceptedChains": [
+        [
+          "m4-1223",
+          "m4-1184",
+          "m4-1093",
+          "m4-1046"
+        ]
+      ],
+      "prices": {
+        "monThu": 1230,
+        "friSun": 1450
+      },
+      "source": {
+        "url": "https://yandex.com/maps/?ll=39.455897%2C45.686572&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T12%3A14%3A00&rtext=43.585472%2C39.723098~47.709237%2C40.215401&rtt=auto&ruri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE2NjU2NhI70KDQvtGB0YHQuNGPLCDQmtGA0LDRgdC90L7QtNCw0YDRgdC60LjQuSDQutGA0LDQuSwg0KHQvtGH0LgiCg1z5B5CFYdXLkI%2C~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE2NjM1NxI90KDQvtGB0YHQuNGPLCDQoNC-0YHRgtC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwg0KjQsNGF0YLRiyIKDZPcIEIVQtY-Qg%2C%2C&z=7",
+        "effectiveFrom": "2026-10-12",
+        "effectiveTo": "2026-10-17",
+        "sourceKind": "yandex_fastest_route_card_estimate_user_accepted",
+        "observedAt": "2026-10-12",
+        "testDates": [
+          "2026-10-13",
+          "2026-10-17"
+        ],
+        "observedDepartureTime": "12:14",
+        "observedRoute": "Сочи → Шахты",
+        "acceptedByUserRule": true,
+        "paymentMode": "Yandex default; no transponder selector was exposed in the route UI",
+        "notes": "Yandex showed ~1,230 RUB on Tue 2026-10-13 and ~1,450 RUB on Sat 2026-10-17. User identifies this longer selected M-4 vector as including PVP 1046. Values are adopted as confirmed Yandex route estimates for this vector and snapshot period only; not an operator tariff document."
+      }
+    }
+  ],
+  "readiness": "two_user_accepted_yandex_span_cells_snapshot_valid_through_2026-10-17",
   "notes": [
     "Each fare cell is keyed by a canonical unordered pair of endpoint PVPs.",
     "Both travel directions reuse the same two prices: Mon-Thu and Fri-Sun.",
     "Accepted PVP chains are evidence that the selected route traverses the span; runtime never sums PVP fares.",
     "Different spans require different cells; a longer span cannot reuse a shorter span's price.",
-    "Cells remain empty until route sequence and both period prices are checked and recorded."
+    "Two cells are seeded from Yandex fastest-route card amounts accepted by user, with selected PVP chains supplied by the user's route model. These are Yandex-confirmed route estimates, not official operator documents.",
+    "Snapshot source applicability is limited through 2026-10-17. Refresh/reconfirm before extending beyond this date.",
+    "runtimeEnabled remains false; values are for isolated sandbox diagnostics only and do not activate production pricing."
   ]
 }
