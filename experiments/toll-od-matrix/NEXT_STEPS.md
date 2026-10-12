@@ -71,3 +71,12 @@ Old M-11 and ramp-based experiments remain untouched. No M4 full-price tariff en
 - In the same branch refresh the top of `docs/WORK_STATE.md` and this checklist.
 - Record actual `git`/GitHub commit SHA and observed test evidence. Distinguish authored tests from executed tests.
 - Before editing check branch head for concurrent changes; do not force-update or clobber an unrelated developer.
+
+
+## 2026-10-12 — implementation follow-up
+
+1. **P0:** migrate the legacy timed quote module/tests off `priceCells`, direction keys and mixed-zone fare dimensions so the branch build validates only the selected-route symmetric span tariff contract. Do not hide failing tests; preserve useful calendar/evidence checks where still applicable.
+2. **P0:** run the full Node suite and Vercel build on current branch HEAD; inspect logs and record exact results.
+3. **P1:** populate real span rows only after date/profile-specific operator tariff evidence and user/Yandex route controls agree; current matrix is intentionally empty.
+4. **P1:** rerun forward/reverse, Sochi–Rostov (three-PVP example), and longer control routes against the one fastest selected route, confirm complete PVP chains and expected precomputed fare pair.
+5. Keep all work in the sandbox branch. No V2/Main/Production publication without a later explicit request.
