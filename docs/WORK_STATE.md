@@ -1,3 +1,14 @@
+## CURRENT 2026-10-12 — M-11 15–58 km full tariff matrix captured
+
+- **DONE:** official operator PDF transcribed into `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json`: 42 directed origin/destination cells across 7 toll nodes; exact no-section-transponder Group 1 passenger-car scope; five time/day bands; effective 2026-01-12 01:00. Raw values are retained without flattening Friday/Saturday/Sunday and overnight periods.
+- **DONE:** JSON was read back and checked: 42 cells, seven origin nodes, five bands, all tariff amounts integral/non-null. Data commit `c6e544edf501937410c2e04ba083632ccba7d8cb`; log commit `9704effe53c146f38a5d0166743dc9fb69bab19f`.
+- **IN PROGRESS:** convert all official tariff schedules into per-operator native matrices and enumerate full M-4 span cells; expand beyond Avtodor and M-11.
+- **OPEN:** M-11 transition-time tariff selection (route crossing tariff time boundaries) requires operator rules before engine integration. Candidate tables from Avtodor still need PDF profile/date mapping. Main 58–679 M-11 and non-Avtodor toll systems remain open.
+- Detailed source/decision history: `experiments/nationwide-tolls/WORK_LOG.md`; consolidated raw tariff intake: `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json`.
+- `runtimeEnabled=false`; V2/main/Production unchanged; no tests/build run (data-only).
+
+---
+
 ## CURRENT 2026-10-12 — Avtodor raw tariff schedules bulk-captured
 
 - **DONE:** `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json` now preserves official tariff-page raw rows: M-4 21, M-1 1, M-3 3, M-12 25 mainline, ЦКАД 16 nodes/full-loop, А-289 6 OD/ramp fares, Togliatti bypass 3 OD fares. Amount sequences kept exactly as displayed; candidate profile/date interpretation remains explicit.
