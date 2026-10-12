@@ -23,7 +23,7 @@ test("an optional route-level control is checked when supplied",()=>{const r=rec
 test("a route-level control is not required to compile verified row sums",()=>assert.equal(go([record()]).spanCells.length,1));
 test("a conflicting optional control is rejected",()=>{const r=record();r.routeControl={monThu:601,friSun:750};assert.throws(()=>go([r]),/route_control_mismatch/)});
 test("same endpoints may list multiple verified chains only at equal totals",()=>{const r=record();const alt=["m4-1093","m4-1223"];r.chains.push({sequence:alt,charges:alt.map((pvpId,i)=>({pvpId,parts:[{sourceRowId:"alt-"+i,monThu:300,friSun:375}]}))});assert.equal(go([r]).spanCells[0].acceptedChains.length,2)});
-test("different totals for same endpoint span rejected",()=>{const r=record();r.chains[0].charges[0].parts[0].monThu=201;assert.throws(()=>go([r]),/different_chain_cost_for_same_span/)});
+test("different totals for same endpoint span rejected",()=>{const r=record();const seq=["m4-1093","m4-1223"];r.chains.push({sequence:seq,charges:seq.map((pvpId,i)=>({pvpId,parts:[{sourceRowId:"different-"+i,monThu:300,friSun:375}]}))});assert.throws(()=>go([r]),/different_chain_cost_for_same_span/)});
 test("missing PVP fee row is rejected",()=>{const r=record();r.chains[0].charges.pop();assert.throws(()=>go([r]),/charge_chain_mismatch/)});
 test("wrong chain endpoints rejected",()=>{const r=record();r.endpoints=["m4-1184","m4-1223"];assert.throws(()=>go([r]),/chain_order_or_endpoints/)});
 test("wrong source payment profile rejected",()=>{const r=record();r.source.payment="transponder";assert.throws(()=>go([r]),/official_tariff_source/)});
