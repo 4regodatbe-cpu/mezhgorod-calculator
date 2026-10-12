@@ -34,3 +34,13 @@ See `IMPLEMENTATION_PLAN_2026-10-12.md` for the nine-block execution plan and pe
 - [ ] **P0 — finish exact current fare tables across all 22 groups:** prioritize multi-OD/conditional operators and newly changed schedules (Odintsovo from 2026-01-15; Mytishchi 1 February notice; Ryazan from 2026-10-01; ZSD; Pskov's four independent roads; Khabarovsk route matrix). Store source dates, category I and base/no-transponder profile.
 - [ ] **P0 — route controls:** for each proposed live row, use only one fastest Yandex route with fixed endpoints/date/time and passenger car under 2 m/no transponder; retain full geometry and estimate as a control, then reconcile to operator's exact entrance/exit/section tariff or receipt.
 - No price row is accepted from a search snippet, legal maximum, ambiguous image/table column or route-level estimate alone.
+
+
+## CURRENT 2026-10-12 — blocks 1–3 progress
+
+Completed in isolated branch:
+1. Canonical algorithm contract: `ALGORITHM_SPEC_2026-10-12.md`. Open: tie-break for equal ETA and code-level conformance.
+2. Scope expansion: registry now retains 22 parent networks and includes 16 individual Avtodor products (M4/M11/M3). This remains partial; split Pskov into four IDs and continue official census of regional/concession roads.
+3. Tariff source audit: M3 current official page is indexed but returned HTTP 403 to direct fetch; conflicting published snapshot rows remain unresolved. Do not change stored fares or call them verified until the live dated class-I no-transponder row can be read. Most operator tariff products still lack dated complete tables.
+
+Next execution: get primary artifacts for Avtodor current M3 and all section tariffs; identify four Pskov road contracts/decision rows; capture operator tariff versions for Odintsovo, Bagration, ZSD/SHMSD, Khabarovsk, Mytishchi, Ryazan and remaining groups. For every amount preserve category, payment mode, effective date, periods, directions/OD and source artifact. Only after block 3 expands materially, proceed with blocks 4–6 on geometry evidence and route benchmarks.
