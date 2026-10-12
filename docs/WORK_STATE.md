@@ -1,3 +1,11 @@
+## CURRENT 2026-10-13 — V3 API/UI wiring complete for M4/M12
+
+DONE: V3 ordinary and special-zone routes both use isolated V3 pricing modules; exact M4/M12 vectors use matrix estimates, stale Shali is blocked. Numeric V3 totals carry visible «Стоимость не подтверждена» in result/copy. Native305/305 and adapters10/10, TypeScript/build16/16 PASS; React warning render and local HTTP contracts PASS.
+
+Remote last persisted code8d00f0a (before final special-options import). Its Preview dpl_BSAkHN4rvU8yLgDGBTsKYMuQ7tqY READY; protected /v3HTTP200. Final special-route follow-up locally verified; persist and build exact follow-up Preview next. Other road matrix adapters/live routes/browser/full CI gate remain incomplete. No Production/merge. Logs: experiments/nationwide-tolls/WORK_LOG.md.
+
+---
+
 ## CURRENT 2026-10-13 — M4/M12 V3 matrix adapters
 
 DONE: remote base integration bd77b6f on experiment/toll-od-matrix-2026-10-08. Follow-up M12 dated vector adapter blocks expired Shali prices and permits current candidates with visible warning. Local TypeScript/build PASS, adapter10/10 PASS, native305/305 PASS. V3 UI/copy warn on numeric estimates.

@@ -5,7 +5,7 @@ import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-
 
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "@/lib/special-territory-boundaries";
 import { analyzeRoute, candidatePlans, endpointPolicy } from "@/lib/special-territory-policy";
-import { calculateSpecialOptions } from "@/lib/v2-calculation/special-options";
+import { calculateSpecialOptions } from "@/lib/v3-calculation/special-options";
 import type { Coordinate } from "@/lib/tolls";
 
 type UserRates = { standard: number; comfort: number; comfortPlus: number; minivan: number };

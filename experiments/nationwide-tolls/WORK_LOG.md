@@ -616,3 +616,9 @@ NOT RUN: live geographic route APIs/Yandex/browser driving E2E, the full calcula
 Uploaded44 changed blobs to GitHub with every SHA equal to local content; atomic commit bd77b6f125de9e2062a66cb4849661ec80ff62cb persisted on experiment/toll-od-matrix-2026-10-08 with parent440ce6b2 (lease checked). Vercel Preview dpl_6pdqTza1rSL8Cce7MJWAdN7bUBFy was started at exactly bd77b6f, target=null; observed BUILDING, not yet considered tested/ready. Initial API request target=preview was rejected400; retry omitting optional target created Preview, no production target.
 
 Added M12 adapter to V3: native resolved continuous final RVP vector matches a dated current candidate matrix key; known prices rendered as unconfirmed estimates. Missing dated vectors or expired832/Shali block the entire component instead of using stale native money. Tests4 M12 +6 M4 =10/10 PASS; TypeScript PASS and Next build16/16 PASS after this change. Other-road matrix adapters remain the next block. This follow-up changes code after bd77b6f, so that first deployment is superseded for final code verification.
+
+## 2026-10-13 — final special-route wiring
+
+Remote M12 commit8d00f0a433df005bfc73a258be1c9a1c9ebca880 persisted successfully; Preview dpl_BSAkHN4rvU8yLgDGBTsKYMuQ7tqY became READY, exact source8d00f0a. Protected Vercel fetch /v3 returned200; build logs say Build Completed23s. No driving-browser E2E claimed.
+
+Final review found specialEndpoint V3 still called shared V2 special-options. Copied the current module to lib/v3-calculation/special-options.ts with V3 pricing import and changed V3 API import. This ensures M4/M12 dated pricing and expired-Shali rejection also apply to special-zone routes. TypeScript PASS, Next --webpack build16/16 PASS after change. V2 files unchanged. This final follow-up needs its own exact-commit Preview.
