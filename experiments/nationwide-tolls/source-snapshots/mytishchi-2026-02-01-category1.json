@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "source": "https://vis-transtoll.ru/vbt",
+  "observedAt": "2026-10-12",
+  "effectiveFrom": "2026-02-01",
+  "vehicleCategory": "1",
+  "heightLimitMeters": 2,
+  "payment": "plate billing / no transponder",
+  "method": "Browser tariff tabs individually selected; selected Category 1 and numeric value read in each tab",
+  "nodes": [
+    "Афанасовское ш.",
+    "Осташковское ш.",
+    "Подъезд к п. Мебельной фабрики",
+    "Пироговское ш.",
+    "Подъезд к п. Черкизово",
+    "М-8 Холмогоры"
+  ],
+  "sections": [
+    {
+      "from": "Афанасовское ш.",
+      "to": "Осташковское ш.",
+      "rub": 73
+    },
+    {
+      "from": "Осташковское ш.",
+      "to": "Подъезд к п. Мебельной фабрики",
+      "rub": 57
+    },
+    {
+      "from": "Подъезд к п. Мебельной фабрики",
+      "to": "Пироговское ш.",
+      "rub": 44
+    },
+    {
+      "from": "Пироговское ш.",
+      "to": "Подъезд к п. Черкизово",
+      "rub": 51
+    },
+    {
+      "from": "Подъезд к п. Черкизово",
+      "to": "М-8 Холмогоры",
+      "rub": 34
+    }
+  ],
+  "fullRoadRub": 259,
+  "operatorCalculatorControl": {
+    "from": "Афанасовское ш.",
+    "to": "М-8 Холмогоры",
+    "rub": 259
+  },
+  "reversePriceBasis": "User-defined direction-invariant vector model; reverse endpoint not selectable as origin in this operator calculator UI; no reverse control claimed"
+}

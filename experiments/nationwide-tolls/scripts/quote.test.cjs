@@ -1,0 +1,21 @@
+const assert=require('node:assert/strict');const {quote,formatCopy}=require('../engine/quote.cjs');
+const component=(road,from,to,profile,date='2026-10-13')=>({routeId:'r1',traversalId:road,exactTraversal:true,profileResolved:true,road,from,to,profile,localDate:date});
+const request=components=>({routeId:'r1',evidenceComplete:true,components});
+const known=component('m4-south','1046','1223','monThu');
+assert.equal(quote(request([known])).rub,1230);
+const candidate=component('m4-candidate','m4-71','m4-71','monThu');
+let result=quote(request([candidate]));assert.equal(result.rub,310);assert.equal(result.displayLabel,'Стоимость не подтверждена');assert.match(formatCopy(result),/Стоимость не подтверждена/);
+assert.equal(quote(request([known,candidate])).rub,null);
+result=quote(request([candidate,component('ufa','full-road-A','full-road-B','allDays')]));assert.equal(result.rub,460);assert.equal(result.priceConfirmation,'unconfirmed');
+assert.equal(quote(request([known,{...candidate,to:'missing'}])).rub,null);
+assert.equal(quote(request([{...known,routeId:'other'}])).rub,null);
+assert.equal(quote(request([known,known])).rub,null);
+assert.equal(quote(request([{...known,profileResolved:false}])).rub,null);
+assert.equal(quote(request([])).rub,null);assert.equal(quote({...request([]),confirmedNoPaidCrossing:true}).rub,0);
+const mask=component('msd','charged-mask-511','ordinary','2026-04-10','2026-10-15');assert.equal(quote(request([mask])).rub,171);assert.equal(quote(request([{...mask,localDate:'2026-10-16'}])).rub,null);
+assert.equal(quote(request([component('msd','charged-mask-511','ordinary','2026-10-16','2026-10-16')])).rub,225);
+const old=component('m12-candidate','rvp832','rvp832','allDays');assert.equal(quote(request([old])).rub,null);
+console.log('PASS quote: known, provisional, warning propagation/copy, unknown completeness, duplicate/route guards, MSD version boundary, expired Shali');
+
+const {priceRouteResult,copyRouteResult}=require('../engine/api-adapter.cjs');
+const trip={meters:10000,seconds:900};const api=priceRouteResult(trip,request([candidate]));const wire=JSON.parse(JSON.stringify(api));assert.equal(wire.tolls.amount,310);assert.equal(wire.tolls.displayLabel,'Стоимость не подтверждена');assert.match(copyRouteResult(wire),/Стоимость не подтверждена/);assert.equal(priceRouteResult(trip,request([known,{...candidate,to:'missing'}])).tolls.amount,null);console.log('PASS API adapter: JSON numeric estimate and warning survive; copy warning; incomplete/null');

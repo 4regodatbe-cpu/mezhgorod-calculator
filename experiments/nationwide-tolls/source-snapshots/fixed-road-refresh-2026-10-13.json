@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-13",
+  "method": "public primary-source search retrieval; not Yandex route checks",
+  "evidence": [
+    {
+      "road": "bagration",
+      "rub": 790,
+      "source": "https://m-road.ru/tariffs/",
+      "scope": "base category1 all directions 00–24",
+      "crossing": "gantry km6.6",
+      "crossingSource": "https://m-road.ru/bagration/"
+    },
+    {
+      "road": "ufa",
+      "rub": 150,
+      "source": "https://easternexit.ru/tariff/",
+      "scope": "category1 vehicles height <=2m"
+    },
+    {
+      "road": "udmurtia",
+      "rub": [
+        400,
+        300,
+        700
+      ],
+      "source": "https://osa-kama.ru/tarify/",
+      "scope": "tariff group1; vehicle category binding requires attention to operator group2 conditions"
+    },
+    {
+      "road": "tolyatti",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "status": "indexed values available; direct page returned403; no new complete table extracted"
+    }
+  ],
+  "failedRetrievals": [
+    {
+      "url": "https://avtodor-tr.ru/road/tariffs/",
+      "result": "403"
+    },
+    {
+      "url": "https://www.russianhighways.com/press/news/154667/",
+      "result": "timeout"
+    }
+  ]
+}

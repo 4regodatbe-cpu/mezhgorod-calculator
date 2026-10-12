@@ -4,6 +4,7 @@ import {readFileSync} from "node:fs";
 import {compileVerifiedM4Tariffs} from "./m4-pvp-compiler.mjs";
 import {quoteM4BySpan} from "./m4-pvp-corridor.mjs";
 const matrix=JSON.parse(readFileSync(new URL("./matrix/m4-pvp-corridors.json",import.meta.url),"utf8"));
+matrix.spanCells=[]; // Compiler tests require an empty synthetic template, not the seeded runtime snapshot.
 const empty=JSON.parse(readFileSync(new URL("./matrix/m4-verified-source-intake.json",import.meta.url),"utf8"));
 const clone=x=>JSON.parse(JSON.stringify(x));
 const chain=["m4-1093","m4-1184","m4-1223"];

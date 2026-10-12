@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "observedAt": "2026-10-12",
+  "road": "М-4 Дон",
+  "routeModel": "Persist completed contiguous PVP-vector prices as lookup cells. Do not calculate route price by summing PVP increments at runtime.",
+  "officialSources": [
+    {
+      "operator": "ООО «Объединённый оператор»",
+      "sourceUrls": [
+        "https://uoperator.ru/pvp-1093/",
+        "https://uoperator.ru/pvp-1184/",
+        "https://uoperator.ru/pvp-1223/",
+        "https://uoperator.ru/about/"
+      ],
+      "retrievedAt": "2026-10-12",
+      "publishedCategory": "I",
+      "paymentBasis": "Operator tariff shown for Category I; no transponder-specific discount is listed in these PVP tariff cells.",
+      "pvpFareCells": {
+        "1093": {
+          "roadRangeKm": "1091.6-1119.5",
+          "monThuRub": 150,
+          "friSunRub": 150,
+          "source": "https://uoperator.ru/pvp-1093/"
+        },
+        "1184": {
+          "roadRangeKm": "1119.5-1195",
+          "monThuRub": 300,
+          "friSunRub": 350,
+          "source": "https://uoperator.ru/pvp-1184/"
+        },
+        "1223": {
+          "roadRangeKm": "1195-1319",
+          "monThuRub": 400,
+          "friSunRub": 500,
+          "source": "https://uoperator.ru/pvp-1223/"
+        }
+      },
+      "operatorTopology": "Operator says it collects tolls at PVP 1093, 1184 and 1223 for the three successive sections of its M4 segment."
+    },
+    {
+      "operator": "ГК «Автодор» / M4 south segment PVP1046",
+      "sourceUrl": "https://avtodor-tr.ru/road/tariffs/",
+      "retrievedAt": "2026-10-12",
+      "publishedCategory": "I",
+      "paymentBasis": "Base tariff without transponder.",
+      "pvpFareCells": {
+        "1046": {
+          "roadRangeKm": "1024-1091",
+          "monThuRub": 380,
+          "friSunRub": 450,
+          "source": "https://avtodor-tr.ru/road/tariffs/",
+          "effectiveFrom": "2026-03-02",
+          "crossCheck": "Published 2026-03-03 report quotes updated PVP1046 price as 380 RUB Monday-Friday and 450 RUB Saturday-Sunday; see https://www.kommersant.ru/doc/8479038"
+        }
+      },
+      "correction": "Withdraw previous 450/770 no-transponder attribution. Those values came from a flattened multi-class/multi-payment page extraction and do not represent the current Category-I base fare."
+    }
+  ],
+  "precomputedVectors": [
+    {
+      "pvpVector": [1093, 1184, 1223],
+      "directionInvariantAsPublished": true,
+      "monThuRub": 850,
+      "friSunRub": 1000,
+      "basis": "Completed vector fare recorded from the three operator PVP charge cells as an offline, one-time construction; application runtime must use this direct vector cell, never sum components.",
+      "evidence": "Each constituent PVP tariff page and the operator's three-PVP topology page are linked above."
+    },
+    {
+      "pvpVector": [1046, 1093, 1184, 1223],
+      "directionInvariantAsPublished": true,
+      "monThuRub": 1230,
+      "friSunRub": 1450,
+      "basis": "Completed four-PVP vector persisted as direct lookup cells. PVP1046 is 380/450 from the current Avtodor Cat-I base schedule; successive PVP1093/1184/1223 cells are 150/150, 300/350, 400/500. This offline transcription/normalization is performed once; runtime must not sum PVP components.",
+      "independentRouteControl": "Date-selected Yandex fastest route from M4 km1025 to Krasnodar displays approximately 1230/1450 RUB for no-transponder car <2m.",
+      "status": "candidate; tariff totals match route controls; the entire direct date-effective Avtodor PVP1046 appendix page has not been preserved as a local source snapshot."
+    },
+    {
+      "pvpVector": [416, 460],
+      "monThuRub": 230,
+      "friSunRub": 360,
+      "status": "historical candidate retained; needs current date/effective tariff verification"
+    }
+  ],
+  "yandexRouteChecks": [
+    {
+      "route": "PVP1093 vicinity (47.024358,39.737587) → Главная городская площадь, Краснодар (45.035300,38.975300)",
+      "departureLocal": "2026-10-13T10:00:00",
+      "routePreference": "fastest driving route (Yandex auto routing)",
+      "vehicle": "car under 2 m; without transponder (as explicitly stated by Yandex)",
+      "displayedTollEstimateRub": 850,
+      "displayedAsApproximate": true,
+      "routeDuration": "3 h 28 min",
+      "visibleRouteRoads": ["E115", "A-136", "Краснодар"],
+      "likelyPvpVector": [1093, 1184, 1223],
+      "exactPvpSequence": "Consistent with the operator topology and the endpoints, but toll-by-toll inclusion was not individually exposed in the Yandex route card.",
+      "source": "https://yandex.com/maps/?mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-13T10%3A00%3A00&rtd=0&rtext=47.024358%2C39.737587~45.035300%2C38.975300&rtt=auto"
+    },
+    {
+      "route": "PVP1093 vicinity (47.024358,39.737587) → Главная городская площадь, Краснодар (45.035300,38.975300)",
+      "departureLocal": "2026-10-17T10:00:00",
+      "routePreference": "fastest driving route (Yandex auto routing)",
+      "vehicle": "car under 2 m; without transponder (as explicitly stated by Yandex)",
+      "displayedTollEstimateRub": 1000,
+      "displayedAsApproximate": true,
+      "routeDuration": "3 h 21 min",
+      "visibleRouteRoads": ["E115", "A-136", "Краснодар"],
+      "likelyPvpVector": [1093, 1184, 1223],
+      "exactPvpSequence": "Consistent with the operator topology and the endpoints, but toll-by-toll inclusion was not individually exposed in the Yandex route card.",
+      "source": "https://yandex.com/maps/?mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10%3A00%3A00&rtd=0&rtext=47.024358%2C39.737587~45.035300%2C38.975300&rtt=auto"
+    },
+    {
+      "route": "М-4 Дон, 1025-й км (47.529524,39.969712) → Главная городская площадь, Краснодар",
+      "departureLocal": "2026-10-13T10:00:00",
+      "routePreference": "fastest driving route (Yandex auto routing)",
+      "vehicle": "car under 2 m; without transponder (as explicitly stated by Yandex)",
+      "displayedTollEstimateRub": 1230,
+      "displayedAsApproximate": true,
+      "routeDuration": "4 h 05 min",
+      "routeTrace": ["М-4 Дон", "E115 обход Ростова-на-Дону", "E115", "A-136", "Краснодар"],
+      "likelyPvpVector": [1046, 1093, 1184, 1223],
+      "exactPvpSequence": "Route starts north of PVP1046 and follows M4 south to Krasnodar; individual toll-point inclusion is not itemized in the card.",
+      "source": "https://yandex.com/maps/?mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-13T10%3A00%3A00&rtd=0&rtext=47.529524%2C39.969712~45.035300%2C38.975300&rtt=auto"
+    },
+    {
+      "route": "М-4 Дон, 1025-й км (47.529524,39.969712) → Главная городская площадь, Краснодар",
+      "departureLocal": "2026-10-17T10:00:00",
+      "routePreference": "fastest driving route (Yandex auto routing)",
+      "vehicle": "car under 2 m; without transponder (as explicitly stated by Yandex)",
+      "displayedTollEstimateRub": 1450,
+      "displayedAsApproximate": true,
+      "routeDuration": "3 h 58 min",
+      "routeTrace": ["М-4 Дон, 1025-й км", "E115 обход Ростова-на-Дону", "E115", "A-136", "Краснодар"],
+      "likelyPvpVector": [1046, 1093, 1184, 1223],
+      "exactPvpSequence": "Route starts north of PVP1046 and follows M4 south to Krasnodar; individual toll-point inclusion is not itemized in the card.",
+      "source": "https://yandex.com/maps/?ll=39.475351%2C46.296213&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10%3A00%3A00&rtd=0&rtext=47.529524%2C39.969712~45.035300%2C38.975300&rtt=auto&ruri=~&z=8"
+    }
+  ],
+  "adjudication": {
+    "retracted": "The earlier M4 notes that attributed 850/1000 to a transponder/day-column mix-up and reported the three-PVP no-transponder vector as 1000/1430 are withdrawn. They resulted from flattening a summary table's class/payment columns. The standalone PVP1046 base tariff is 380/450, not 450/770.",
+    "confirmed": "Direct current operator pages for PVP1093, PVP1184 and PVP1223 give 150/150, 300/350 and 400/500 RUB respectively for Category I on Mon–Thu / Fri–Sun. Their full three-PVP vector therefore corresponds to the user's 850/1000 RUB vector; date-selected Yandex checks from the PVP1093 vicinity to Krasnodar display the same approximate totals for a car under 2 m without a transponder.",
+    "remaining": "PVP1046 base cells and the four-PVP southbound vector are now normalized and match the route-specific Yandex controls. Complete M4 vector coverage, direct local preservation of the detailed tariff appendix for PVP1046, and other M4 payment-road groups remain. Yandex route estimates are approximate route-specific controls; exact map route cards do not list each toll point.",
+    "runtimeApproved": false
+  }
+}

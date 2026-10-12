@@ -1,8 +1,11 @@
 import assert from "node:assert/strict";
 import {test} from "node:test";
 import {readFileSync} from "node:fs";
-import {quoteM4WithEventTimes as quote} from "./m4-pvp-timed-quote.mjs";
+import {quoteM4WithEventTimes as nativeQuote} from "./m4-pvp-timed-quote.mjs";
 const template=JSON.parse(readFileSync(new URL("./matrix/m4-pvp-corridors.json",import.meta.url),"utf8"));
+template.spanCells=[];
+// Test inputs converted to the current symmetric-span schema; prices remain synthetic.
+const quote=(matrix,request)=>nativeQuote({...matrix,spanCells:(matrix.priceCells??[]).map(c=>({endpoints:[c.sequence[0],c.sequence.at(-1)].sort((a,b)=>Number(a.slice(3))-Number(b.slice(3))),acceptedChains:[c.sequence],prices:c.prices,source:c.source}))},request);
 const clone=x=>JSON.parse(JSON.stringify(x));
 const m=clone(template);
 m.priceCells=[{direction:"to_moscow",sequence:["m4-1223","m4-1184"],context:{mixed401:"not_used",mixed633:"not_used"},prices:{monThu:1100,friSun:2200},source:{kind:"official_verified_corridor",url:"https://avtodor-tr.ru/road/tariffs/",effectiveFrom:"2026-01-01",effectiveTo:"2026-12-31"}}];

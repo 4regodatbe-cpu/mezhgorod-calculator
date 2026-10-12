@@ -66,3 +66,16 @@ User instructed: cover **all other Russian toll roads**, not M-4 only. Existing 
 - `[1223,1184,1093,1046]`: Mon–Thu 1,230 RUB; Fri–Sun 1,450 RUB.
 
 Источник проверки — fastest route card Яндекс Карт на 2026-10-13 (вторник) и 2026-10-17 (суббота), 12:14, Sochi→Rostov-na-Donu и Sochi→Shakhty. Реестр отдельно указывает, что UI не отображает перечень ПВП: последовательности заданы согласованной пользовательской моделью участка. Применение в коде пока только sandbox; `runtimeEnabled=false`, срок снимка до 2026-10-17. Москва→Краснодар показал наличие платного участка без цены и остаётся unknown.
+
+
+# Local recovery updates through 13.10.2026
+
+# Действующие решения
+
+13.10.2026: пользователь разрешил текущие кандидатные цены с обязательной пометкой «Стоимость не подтверждена». Это заменяет исключение1820. При наличии кандидата в составе маршрута весь итог и копируемый текст помечаются.
+
+Истёкшие версии вне даты не применяются. Если точного действующего тарифа нет — unknown/null. Произвольная неполная сумма не считается итогом.
+
+Один fastest маршрут, точное доказательство проезда и временного профиля передаются адаптером. Изолированный обработчик не строит маршрут.
+
+13.10.2026: V3 interim numeric toll totals visibly unconfirmed; M4 exact route vectors use the new table, other native components retain their engine while per-road matrix adapters are incomplete. This is an experimental release boundary.

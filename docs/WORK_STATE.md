@@ -1,3 +1,11 @@
+## CURRENT 2026-10-13 — V3 candidate-price integration
+
+DONE locally on recovered remote source440ce6b2: V3 API uses its own route-pricing module, exact M4 vectors read finished candidate/known table; numeric V3 tolls carry «Стоимость не подтверждена» in UI and copy. Tests305/305 + adapter6/6, TypeScript and Next build16/16 PASS; local page200 / invalid API400 PASS. Logs: experiments/nationwide-tolls/WORK_LOG.md.
+
+IN PROGRESS: persist reviewed changes to experimental branch and inspect Preview; live route/browser E2E not run. Other-road full matrix adapters not yet connected. No Production or merge.
+
+---
+
 ## CURRENT 2026-10-12 — M-11 15–58 km full tariff matrix captured
 
 - **DONE:** official operator PDF transcribed into `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json`: 42 directed origin/destination cells across 7 toll nodes; exact no-section-transponder Group 1 passenger-car scope; five time/day bands; effective 2026-01-12 01:00. Raw values are retained without flattening Friday/Saturday/Sunday and overnight periods.

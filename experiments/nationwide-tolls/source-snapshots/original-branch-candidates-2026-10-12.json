@@ -1,0 +1,1617 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-12",
+  "status": "candidate_official_table_transcription_not_runtime_ready",
+  "source": {
+    "operator": "Автодор",
+    "title": "Тарифы на проезд по платным дорогам",
+    "url": "https://avtodor-tr.ru/road/tariffs/",
+    "retrievedBy": "indexed official page search result",
+    "note": "Официальная страница сообщает, что тариф действует с даты в документе с подробными тарифами; дата вступления для текущего снимка не извлечена. Числовые значения ниже переписаны из строки таблицы. Раскладка по категории/периоду трактуется как I категория без транспондера: первые два тарифа строки (Пн–Чт, Пт–Вс); нужно сверить с доступным PDF перед runtime."
+  },
+  "vehicleProfile": {
+    "category": "I",
+    "payment": "no_transponder",
+    "periods": [
+      "monThu",
+      "friSun"
+    ],
+    "interpretationStatus": "candidate_needs_pdf_header_confirmation"
+  },
+  "rows": [
+    {
+      "pvpOrId": "m4-62",
+      "kmRange": "21-62",
+      "section": "не указано",
+      "rawDisplayedAmounts": [
+        220,
+        220,
+        240,
+        260,
+        480
+      ],
+      "candidateClassINoTransponder": null,
+      "readiness": "column_mapping_unresolved"
+    },
+    {
+      "pvpOrId": "m4-71",
+      "kmRange": "21-93",
+      "section": "МКАД — с. Ситне-Щелканово",
+      "rawDisplayedAmounts": [
+        310,
+        400,
+        450,
+        500,
+        820
+      ],
+      "candidateClassINoTransponder": [
+        310,
+        400
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-133",
+      "kmRange": "93-211",
+      "section": "с. Ситне-Щелканово — д. Быковка",
+      "rawDisplayedAmounts": [
+        400,
+        500,
+        550,
+        600,
+        1140
+      ],
+      "candidateClassINoTransponder": [
+        400,
+        500
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-228",
+      "kmRange": "211-266",
+      "section": "д. Быковка — пос. Волово",
+      "rawDisplayedAmounts": [
+        260,
+        320,
+        360,
+        470,
+        680
+      ],
+      "candidateClassINoTransponder": [
+        260,
+        320
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-322",
+      "kmRange": "266-322",
+      "section": "пос. Волово — г. Ефремов",
+      "rawDisplayedAmounts": [
+        260,
+        320,
+        360,
+        470,
+        680
+      ],
+      "candidateClassINoTransponder": [
+        260,
+        320
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-339",
+      "kmRange": "322-401",
+      "section": "г. Ефремов — с. Большие Извалы",
+      "rawDisplayedAmounts": [
+        370,
+        400,
+        470,
+        540,
+        810
+      ],
+      "candidateClassINoTransponder": [
+        370,
+        400
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-355",
+      "kmRange": "322-401",
+      "section": "не указано",
+      "rawDisplayedAmounts": [
+        220,
+        220,
+        250,
+        350,
+        600
+      ],
+      "candidateClassINoTransponder": [
+        220,
+        220
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-416+m4-460",
+      "kmRange": "401-464",
+      "section": "с. Большие Извалы — с. Конь-Колодезь",
+      "rawDisplayedAmounts": [
+        230,
+        360,
+        380,
+        480,
+        880
+      ],
+      "candidateClassINoTransponder": [
+        230,
+        360
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-515",
+      "kmRange": "492-517",
+      "section": "с. Новоживотенное — пос. Отрадное",
+      "rawDisplayedAmounts": [
+        150,
+        170,
+        200,
+        250,
+        440
+      ],
+      "candidateClassINoTransponder": [
+        150,
+        170
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-545-a",
+      "kmRange": "517-544",
+      "section": "пос. Отрадное — с. Рогачевка",
+      "rawDisplayedAmounts": [
+        140,
+        160,
+        200,
+        220,
+        350
+      ],
+      "candidateClassINoTransponder": [
+        140,
+        160
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-545-b",
+      "kmRange": "545-589",
+      "section": "с. Рогачевка — с. Средний Икорец",
+      "rawDisplayedAmounts": [
+        180,
+        250,
+        270,
+        300,
+        640
+      ],
+      "candidateClassINoTransponder": [
+        180,
+        250
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-620",
+      "kmRange": "589-633",
+      "section": "с. Средний Икорец — с. Шестаково",
+      "rawDisplayedAmounts": [
+        180,
+        250,
+        270,
+        300,
+        640
+      ],
+      "candidateClassINoTransponder": [
+        180,
+        250
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-636",
+      "kmRange": "633-741",
+      "section": "с. Шестаково — г. Богучар",
+      "rawDisplayedAmounts": [
+        570,
+        640,
+        700,
+        770,
+        1310
+      ],
+      "candidateClassINoTransponder": [
+        570,
+        640
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-672",
+      "kmRange": "633-741",
+      "section": "не указано",
+      "rawDisplayedAmounts": [
+        350,
+        440,
+        470,
+        500,
+        880
+      ],
+      "candidateClassINoTransponder": [
+        350,
+        440
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-803",
+      "kmRange": "741-893",
+      "section": "г. Богучар — Алексеево-Лозовское",
+      "rawDisplayedAmounts": [
+        560,
+        620,
+        780,
+        950,
+        1520
+      ],
+      "candidateClassINoTransponder": [
+        560,
+        620
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-911",
+      "kmRange": "893-933",
+      "section": "слобода Дёгтево — г. Каменск-Шахтинский",
+      "rawDisplayedAmounts": [
+        200,
+        250,
+        300,
+        350,
+        620
+      ],
+      "candidateClassINoTransponder": [
+        200,
+        250
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-1046",
+      "kmRange": "1024-1091",
+      "section": "Обход Аксай",
+      "rawDisplayedAmounts": [
+        380,
+        450,
+        600,
+        770,
+        1090
+      ],
+      "candidateClassINoTransponder": [
+        380,
+        450
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-1093",
+      "kmRange": "1091-1119",
+      "section": "г. Ростов-на-Дону — х. Цукерова Балка",
+      "rawDisplayedAmounts": [
+        150,
+        150,
+        210,
+        270,
+        410
+      ],
+      "candidateClassINoTransponder": [
+        150,
+        150
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-1184",
+      "kmRange": "1119-1195",
+      "section": "х. Цукерова Балка — с. Павловская",
+      "rawDisplayedAmounts": [
+        300,
+        350,
+        380,
+        470,
+        930
+      ],
+      "candidateClassINoTransponder": [
+        300,
+        350
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-1223",
+      "kmRange": "1195-1319",
+      "section": "с. Павловская — г. Краснодар",
+      "rawDisplayedAmounts": [
+        400,
+        500,
+        530,
+        690,
+        1240
+      ],
+      "candidateClassINoTransponder": [
+        400,
+        500
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-dzok-46",
+      "kmRange": "0-51",
+      "section": "Дальний западный обход Краснодара",
+      "rawDisplayedAmounts": [
+        410,
+        410,
+        600,
+        770,
+        1090
+      ],
+      "candidateClassINoTransponder": [
+        410,
+        410
+      ],
+      "readiness": "candidate"
+    }
+  ],
+  "routeControls": [
+    {
+      "route": "Липецк—Воронеж",
+      "yandexMonThu": 230,
+      "yandexFriSun": 360,
+      "candidateRelatedSpan": "m4-416+m4-460",
+      "match": "amount_and_named_bypass_match; exact route gate sequence not exposed by Yandex",
+      "url": "https://yandex.com/maps/?mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T12%3A14%3A00&rtext=52.608800%2C39.599200~51.660800%2C39.200300&rtt=auto"
+    },
+    {
+      "route": "Домодедово—Кашира",
+      "yandexMonThu": 310,
+      "yandexFriSun": 400,
+      "candidateRelatedSpan": "m4-71",
+      "match": "amount match; exact route gate sequence not exposed by Yandex",
+      "url": "https://yandex.com/maps/?mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T12%3A14%3A00&rtext=55.442200%2C37.765200~54.839800%2C38.150800&rtt=auto"
+    }
+  ],
+  "decisions": [
+    "Срочное заполнение: сохранять тарифные числа сразу как кандидаты и не терять provenance.",
+    "Официальная таблица — основной источник строк; отображённые значения не подменяют отдельную проверку периода действия и колонки профиля.",
+    "Сумма Яндекса принимается пользователем как истина только для конкретного OD/date/time; перенос в span-ячейку требует доказанного PVP-вектора.",
+    "Неизвестные цены остаются null; partial/per-PVP суммы не показываются как полная цена в калькуляторе.",
+    "Yandex cross-check added: candidate official M4 schedule sums for [1223,1184,1093] and [1223,1184,1093,1046] reproduce the two existing Yandex accepted controls exactly (850/1000; 1230/1450). This supports the candidate interpretation but does not resolve tariff document effective date. 416/460 combined-row candidate similarly matches Lipetsk–Voronezh Yandex control, while exact route chain remains unexposed.",
+    "Added two directly dated official PDF records found in Avtodor tariff search snippets: M-12 I category 325 RUB for the 1148-1211 km bypass package, and M-11 St Petersburg 679-684 km I category 56 RUB, both effective 2026-03-02. The M-12 PDF explicitly groups cash, bank card and interoperable transponders in the fare scope; M-12 row is usable as fixed base-car candidate without transponder. Neither closes the full operator matrix.",
+    "Bulk transcription added from official Avtodor tariff page search index: M-1 one row, M-3 three rows, M-12 25 mainline rows, CKAD 16 toll points/full-loop row, A-289 six ramp pairs, and Togliatti bypass three origin-destination fares. Values are preserved as raw ordered arrays; tariff class/payment-column mapping and effective dates remain pending until PDFs are opened. No raw sequence is silently converted into a category-I fare except individually cross-checked PDF entries.",
+    "Added complete directed 7-point M-11 15–58 km category/group-1 cash/card/no-section-transponder tariff table (42 cells), with five time/day bands and effective date 2026-01-12 01:00 local. Kept native time-banded schema; do not flatten into generic weekday/weekend rates without passage-time policy."
+  ],
+  "runtimeEnabled": false,
+  "next": [
+    "Извлечь приложенный официальный PDF с датой действия и заголовками колонок.",
+    "Сопоставить весь перечень тарифных строк с точными PVP IDs и геометрией.",
+    "Заполнить симметричные span-ячейки М-4 для поддерживаемых непрерывных векторов.",
+    "Собрать аналогичные candidate tables для М-1, М-3, М-11, М-12, ЦКАД, А-289 и региональных дорог."
+  ],
+  "derivedSpanCandidates": [
+    {
+      "endpoints": [
+        "m4-1093",
+        "m4-1223"
+      ],
+      "acceptedChain": [
+        "m4-1223",
+        "m4-1184",
+        "m4-1093"
+      ],
+      "prices": {
+        "monThu": 850,
+        "friSun": 1000
+      },
+      "derivation": "400/500 (PVP 1223) + 300/350 (PVP 1184) + 150/150 (PVP 1093)",
+      "yandexControl": {
+        "observed": {
+          "monThu": 850,
+          "friSun": 1000
+        },
+        "route": "Сочи—Ростов-на-Дону",
+        "source": "experiments/toll-od-matrix/m4-pvp-corridors.json"
+      },
+      "status": "candidate_operator_rows_sum_matches_yandex_control",
+      "caveat": "Official tariff document effective date and profile columns still need PDF confirmation."
+    },
+    {
+      "endpoints": [
+        "m4-1046",
+        "m4-1223"
+      ],
+      "acceptedChain": [
+        "m4-1223",
+        "m4-1184",
+        "m4-1093",
+        "m4-1046"
+      ],
+      "prices": {
+        "monThu": 1230,
+        "friSun": 1450
+      },
+      "derivation": "380/450 (PVP 1046) + 400/500 (PVP 1223) + 300/350 (PVP 1184) + 150/150 (PVP 1093)",
+      "yandexControl": {
+        "observed": {
+          "monThu": 1230,
+          "friSun": 1450
+        },
+        "route": "Сочи—Шахты",
+        "source": "experiments/toll-od-matrix/m4-pvp-corridors.json"
+      },
+      "status": "candidate_operator_rows_sum_matches_yandex_control",
+      "caveat": "Official tariff document effective date and profile columns still need PDF confirmation."
+    },
+    {
+      "endpoints": [
+        "m4-416",
+        "m4-460"
+      ],
+      "acceptedChain": [
+        "m4-416",
+        "m4-460"
+      ],
+      "prices": {
+        "monThu": 230,
+        "friSun": 360
+      },
+      "derivation": "Single official tariff row lists PVP 416, 460 together for 401–464 km; amounts transcribed as 230/360.",
+      "yandexControl": {
+        "observed": {
+          "monThu": 230,
+          "friSun": 360
+        },
+        "route": "Липецк—Воронеж",
+        "source": "experiments/nationwide-tolls/YANDEX_DATE_TEST_RESULTS_2026-10-12.md"
+      },
+      "status": "candidate_yandex_amount_matches_official_combined_row",
+      "caveat": "Route card names bypass Zadonsk/Khlevnoy but does not expose exact PVP passage chain."
+    }
+  ],
+  "otherOperatorRows": [
+    {
+      "network": "m12",
+      "section": "Обходы Исаметово—Верхнеяркеево—Лаяшты—Ишкарово—Асяново",
+      "kmRange": "1148-1211",
+      "categoryI": {
+        "monSun": 325
+      },
+      "paymentScope": "cash, bank card, Autodor/OSSP/MSS/NKD transponders stated in same tariff",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "source": "https://avtodor-tr.ru/upload/iblock/fe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf",
+      "sourceDocument": "Appendix 3, approved by Avtodor order 2026-09-27 No.57",
+      "status": "official_dated_rate_captured",
+      "limitation": "This is one M-12 bypass package only, not the full M-12 national span tariff matrix."
+    },
+    {
+      "network": "m11-spb",
+      "section": "Санкт-Петербург km 679-681 / km 681-684",
+      "categoryI": {
+        "monSun": 56
+      },
+      "paymentScope": "cash, bank card and listed interoperable transponders in tariff document",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "source": "https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf",
+      "status": "official_dated_rate_captured",
+      "limitation": "Local M-11 city access tariff; not the main M-11 58-679 km operator matrix."
+    }
+  ],
+  "rawPublishedSchedules": [
+    {
+      "network": "m1",
+      "section": "М-1 Беларусь 33-66 км",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "pvpKm": 46,
+          "amountsAsDisplayed": [
+            230,
+            250,
+            320,
+            500
+          ]
+        }
+      ]
+    },
+    {
+      "network": "m3",
+      "section": "М-3 Украина",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "pvpKm": 86,
+          "kmRange": "65-86",
+          "amountsAsDisplayed": [
+            100,
+            100,
+            150,
+            200,
+            300
+          ]
+        },
+        {
+          "pvpKm": 136,
+          "kmRange": "112-150",
+          "amountsAsDisplayed": [
+            190,
+            190,
+            270,
+            320,
+            530
+          ]
+        },
+        {
+          "pvpKm": 168,
+          "kmRange": "150-194",
+          "amountsAsDisplayed": [
+            190,
+            230,
+            260,
+            280,
+            570
+          ]
+        }
+      ]
+    },
+    {
+      "network": "m12",
+      "section": "М-12 Восток mainline",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "km": 33,
+          "section": "Москва—Электроугли",
+          "amountsAsDisplayed": [
+            176,
+            210,
+            245,
+            349,
+            349
+          ]
+        },
+        {
+          "km": 65,
+          "section": "Электроугли—ЦКАД",
+          "amountsAsDisplayed": [
+            322,
+            419,
+            489,
+            560,
+            560
+          ]
+        },
+        {
+          "km": 81,
+          "section": "ЦКАД—Орехово-Зуево",
+          "amountsAsDisplayed": [
+            244,
+            318,
+            371,
+            476,
+            476
+          ]
+        },
+        {
+          "km": 118,
+          "section": "Орехово-Зуево—Петушки",
+          "amountsAsDisplayed": [
+            359,
+            477,
+            556,
+            600,
+            600
+          ]
+        },
+        {
+          "km": 174,
+          "section": "Петушки—Владимир",
+          "amountsAsDisplayed": [
+            636,
+            838,
+            978,
+            1049,
+            1049
+          ]
+        },
+        {
+          "km": 184,
+          "section": "Владимир—Гусь-Хрустальный",
+          "amountsAsDisplayed": [
+            165,
+            271,
+            346,
+            425,
+            425
+          ]
+        },
+        {
+          "km": 281,
+          "section": "Гусь-Хрустальный—Меленки",
+          "amountsAsDisplayed": [
+            522,
+            856,
+            1094,
+            1320,
+            1320
+          ]
+        },
+        {
+          "km": 314,
+          "section": "Меленки—Муром",
+          "amountsAsDisplayed": [
+            205,
+            336,
+            429,
+            512,
+            512
+          ]
+        },
+        {
+          "km": 392,
+          "section": "Муром—Дивеево",
+          "amountsAsDisplayed": [
+            510,
+            834,
+            1066,
+            1270,
+            1270
+          ]
+        },
+        {
+          "km": 420,
+          "section": "Дивеево—Арзамас",
+          "amountsAsDisplayed": [
+            311,
+            509,
+            651,
+            780,
+            780
+          ]
+        },
+        {
+          "km": 485,
+          "section": "Арзамас—Сергач",
+          "amountsAsDisplayed": [
+            602,
+            1060,
+            1372,
+            1510,
+            1510
+          ]
+        },
+        {
+          "km": 591,
+          "section": "Сергач—Шумерля",
+          "amountsAsDisplayed": [
+            348,
+            613,
+            793,
+            881,
+            881
+          ]
+        },
+        {
+          "km": 635,
+          "section": "Шумерля—Канаш",
+          "amountsAsDisplayed": [
+            392,
+            690,
+            894,
+            978,
+            978
+          ]
+        },
+        {
+          "km": 722,
+          "section": "Канаш—Большие Кайбицы",
+          "amountsAsDisplayed": [
+            215,
+            379,
+            491,
+            500,
+            500
+          ]
+        },
+        {
+          "km": 764,
+          "section": "Большие Кайбицы—Иннополис",
+          "amountsAsDisplayed": [
+            243,
+            428,
+            554,
+            573,
+            573
+          ]
+        },
+        {
+          "km": 769,
+          "section": "Иннополис—Тетюши",
+          "amountsAsDisplayed": [
+            155,
+            168,
+            185,
+            236,
+            236
+          ]
+        },
+        {
+          "km": 782,
+          "section": "Тетюши—аэропорт Казань",
+          "amountsAsDisplayed": [
+            280,
+            289,
+            318,
+            404,
+            404
+          ]
+        },
+        {
+          "km": 806,
+          "section": "аэропорт Казань—Казань",
+          "amountsAsDisplayed": [
+            162,
+            184,
+            238,
+            252,
+            252
+          ]
+        },
+        {
+          "km": 832,
+          "section": "Казань—Шали",
+          "amountsAsDisplayed": [
+            62,
+            130,
+            169,
+            179,
+            179
+          ]
+        },
+        {
+          "km": 979,
+          "section": "Нижнекамск—аэропорт Бегишево",
+          "amountsAsDisplayed": [
+            278,
+            408,
+            547,
+            695,
+            695
+          ]
+        },
+        {
+          "km": 1048,
+          "section": "аэропорт Бегишево—Набережные Челны",
+          "amountsAsDisplayed": [
+            208,
+            306,
+            410,
+            521,
+            521
+          ]
+        },
+        {
+          "km": 1205,
+          "section": "Исаметово—Асяново",
+          "amountsAsDisplayed": [
+            325,
+            456,
+            586,
+            846
+          ],
+          "pdfCrossReference": "Appendix 3 direct row confirms Category I 325 ₽, effective 2026-03-02"
+        },
+        {
+          "km": 1270,
+          "section": "Дюртюли—Бураево",
+          "amountsAsDisplayed": [
+            440,
+            750,
+            970,
+            1250,
+            1250
+          ]
+        },
+        {
+          "km": 1372,
+          "section": "Бураево—Октябрьский",
+          "amountsAsDisplayed": [
+            960,
+            1280,
+            1440,
+            1900,
+            1900
+          ]
+        },
+        {
+          "km": 1430,
+          "section": "Октябрьский—Ачит",
+          "amountsAsDisplayed": [
+            460,
+            660,
+            850,
+            1280,
+            1280
+          ]
+        }
+      ]
+    },
+    {
+      "network": "ckad",
+      "section": "А-113 ЦКАД",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "node": "337 км, М-10—М-11",
+          "amountsAsDisplayed": [
+            42,
+            60,
+            81,
+            124
+          ]
+        },
+        {
+          "node": "11 км, М-11—Никольское-Горки (А-107)",
+          "amountsAsDisplayed": [
+            119,
+            167,
+            223,
+            343
+          ]
+        },
+        {
+          "node": "29 км, Никольское-Горки—Дмитровское ш.",
+          "amountsAsDisplayed": [
+            120,
+            168,
+            223,
+            340
+          ]
+        },
+        {
+          "node": "49 км, Дмитровское ш.—М-8",
+          "amountsAsDisplayed": [
+            241,
+            335,
+            450,
+            683
+          ]
+        },
+        {
+          "node": "81 км, М-8—М-7",
+          "amountsAsDisplayed": [
+            461,
+            643,
+            859,
+            1306
+          ]
+        },
+        {
+          "node": "107 км, М-7—М-12",
+          "amountsAsDisplayed": [
+            40,
+            56,
+            75,
+            118
+          ]
+        },
+        {
+          "node": "111 км, М-12—Носовихинское ш.",
+          "amountsAsDisplayed": [
+            156,
+            219,
+            292,
+            449
+          ]
+        },
+        {
+          "node": "133 км, Носовихинское—Егорьевское ш.",
+          "amountsAsDisplayed": [
+            81,
+            114,
+            152,
+            235
+          ]
+        },
+        {
+          "node": "150 км, Егорьевское ш.—М-5",
+          "amountsAsDisplayed": [
+            271,
+            380,
+            507,
+            773
+          ]
+        },
+        {
+          "node": "193 км, М-5—Домодедово",
+          "amountsAsDisplayed": [
+            248,
+            347,
+            464,
+            707
+          ]
+        },
+        {
+          "node": "196 км, Домодедово—М-4",
+          "amountsAsDisplayed": [
+            63,
+            88,
+            119,
+            185
+          ]
+        },
+        {
+          "node": "205 км, М-4—М-2",
+          "amountsAsDisplayed": [
+            140,
+            195,
+            261,
+            399
+          ]
+        },
+        {
+          "node": "239 км, М-2—Калужское ш.",
+          "amountsAsDisplayed": [
+            204,
+            286,
+            382,
+            581
+          ]
+        },
+        {
+          "node": "252 км, Калужское ш.—ПК-5",
+          "amountsAsDisplayed": [
+            92,
+            131,
+            174,
+            270
+          ]
+        },
+        {
+          "node": "ПК-5—М-10, full loop",
+          "amountsAsDisplayed": [
+            2278,
+            3189,
+            4262,
+            6513
+          ]
+        },
+        {
+          "node": "275 км, М-1—Звенигород",
+          "amountsAsDisplayed": [
+            103,
+            154,
+            206,
+            323
+          ]
+        }
+      ]
+    },
+    {
+      "network": "a289",
+      "section": "А-289",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "ramp": "Марьянская—Славянск-на-Кубани",
+          "km": 24,
+          "amountsAsDisplayed": [
+            415,
+            555,
+            747,
+            1183
+          ]
+        },
+        {
+          "ramp": "Славянск-на-Кубани—Варениковская",
+          "km": 83,
+          "amountsAsDisplayed": [
+            205,
+            278,
+            373,
+            591
+          ]
+        },
+        {
+          "ramp": "Марьянская—Варениковская",
+          "km": 83,
+          "amountsAsDisplayed": [
+            620,
+            833,
+            1120,
+            1774
+          ]
+        },
+        {
+          "ramp": "Варениковская—Темрюк",
+          "km": 103,
+          "amountsAsDisplayed": [
+            180,
+            270,
+            362,
+            574
+          ]
+        },
+        {
+          "ramp": "Марьянская—Темрюк",
+          "km": 103,
+          "amountsAsDisplayed": [
+            800,
+            1103,
+            1482,
+            2348
+          ]
+        },
+        {
+          "ramp": "Славянск-на-Кубани—Темрюк",
+          "km": 103,
+          "amountsAsDisplayed": [
+            385,
+            548,
+            735,
+            1165
+          ]
+        }
+      ]
+    },
+    {
+      "network": "togliatti-bypass",
+      "section": "Региональный обход г. Тольятти",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "capturedAt": "2026-10-12",
+      "status": "raw_official_indexed_table_transcription",
+      "rows": [
+        {
+          "km": "17-60",
+          "section": "с. Троицкое—г. Тольятти",
+          "amountsAsDisplayed": [
+            210,
+            420,
+            840,
+            1260
+          ]
+        },
+        {
+          "km": "60-97",
+          "section": "г. Тольятти—г. Зеленовка",
+          "amountsAsDisplayed": [
+            140,
+            280,
+            570,
+            860
+          ]
+        },
+        {
+          "km": "17-97",
+          "section": "с. Троицкое—г. Зеленовка",
+          "amountsAsDisplayed": [
+            320,
+            650,
+            1300,
+            1960
+          ]
+        }
+      ]
+    }
+  ],
+  "m11Section15_58": {
+    "section": "М-11 «Нева», км 15–58 (МКАД—Солнечногорск)",
+    "operator": "ООО «ОССП»",
+    "source": "https://m11-neva.ru/upload/iblock/efd/jchklu42unx7iu0avbw123k314l3w6dk.pdf",
+    "sourcePage": "https://m11-neva.ru/documentation/",
+    "documentTitle": "Приложение 3 к договору организации проезда — действующие тарифы",
+    "effectiveFromLocal": "2026-01-12T01:00:00",
+    "currency": "RUB",
+    "payment": "without_section_transponder",
+    "vehicleGroup": "1; passenger car with/without trailer, vans/minibuses up to 11 seats, height <=2m",
+    "tariffTimeZone": "Moscow local time (operator timetable; confirm source timezone if needed)",
+    "periods": [
+      "allDays 01:00–06:00",
+      "Mon–Thu 06:00–01:00 next day",
+      "Friday 06:00–01:00 next day",
+      "Saturday 06:00–01:00 next day",
+      "Sunday 06:00–01:00 next day"
+    ],
+    "directedRouteCells": [
+      {
+        "from": "Москва",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 500,
+          "fri0601": 500,
+          "sat0601": 500,
+          "sun0601": 500
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 230,
+          "monThu0601": 680,
+          "fri0601": 680,
+          "sat0601": 680,
+          "sun0601": 680
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 230,
+          "monThu0601": 620,
+          "fri0601": 820,
+          "sat0601": 820,
+          "sun0601": 620
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 880,
+          "fri0601": 1200,
+          "sat0601": 1200,
+          "sun0601": 940
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 350,
+          "monThu0601": 880,
+          "fri0601": 1200,
+          "sat0601": 1200,
+          "sun0601": 940
+        }
+      },
+      {
+        "from": "Москва",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 800,
+          "monThu0601": 1130,
+          "fri0601": 1500,
+          "sat0601": 1500,
+          "sun0601": 1260
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 490,
+          "fri0601": 490,
+          "sat0601": 490,
+          "sun0601": 490
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 20,
+          "monThu0601": 110,
+          "fri0601": 110,
+          "sat0601": 20,
+          "sun0601": 20
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 290,
+          "sat0601": 180,
+          "sun0601": 170
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 370,
+          "sat0601": 310,
+          "sun0601": 50
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 370,
+          "sat0601": 310,
+          "sun0601": 110
+        }
+      },
+      {
+        "from": "Шереметьево-2",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 490,
+          "fri0601": 670,
+          "sat0601": 670,
+          "sun0601": 500
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 230,
+          "monThu0601": 680,
+          "fri0601": 680,
+          "sat0601": 680,
+          "sun0601": 680
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 20,
+          "monThu0601": 20,
+          "fri0601": 20,
+          "sat0601": 20,
+          "sun0601": 20
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 290,
+          "sat0601": 180,
+          "sun0601": 170
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 530,
+          "sat0601": 370,
+          "sun0601": 200
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 530,
+          "sat0601": 440,
+          "sun0601": 200
+        }
+      },
+      {
+        "from": "Шереметьево-1",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 350,
+          "monThu0601": 560,
+          "fri0601": 940,
+          "sat0601": 940,
+          "sun0601": 490
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 230,
+          "monThu0601": 620,
+          "fri0601": 620,
+          "sat0601": 620,
+          "sun0601": 820
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 280,
+          "sat0601": 280,
+          "sun0601": 290
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 200,
+          "sat0601": 200,
+          "sun0601": 290
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 200,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 140
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 200,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 110
+        }
+      },
+      {
+        "from": "Зеленоград",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 450,
+          "fri0601": 700,
+          "sat0601": 700,
+          "sun0601": 300
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 880,
+          "fri0601": 940,
+          "sat0601": 1000,
+          "sun0601": 1200
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 230,
+          "sat0601": 240,
+          "sun0601": 370
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 290,
+          "sat0601": 310,
+          "sun0601": 450
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 280,
+          "sat0601": 280,
+          "sun0601": 290
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 20,
+          "monThu0601": 20,
+          "fri0601": 20,
+          "sat0601": 20,
+          "sun0601": 20
+        }
+      },
+      {
+        "from": "ЦКАД",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 280,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 280
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 350,
+          "monThu0601": 880,
+          "fri0601": 940,
+          "sat0601": 1000,
+          "sun0601": 1200
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 230,
+          "fri0601": 230,
+          "sat0601": 240,
+          "sun0601": 370
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 290,
+          "fri0601": 290,
+          "sat0601": 310,
+          "sun0601": 450
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 290,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 370
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 20,
+          "monThu0601": 20,
+          "fri0601": 20,
+          "sat0601": 20,
+          "sun0601": 20
+        }
+      },
+      {
+        "from": "ММК (А-107)",
+        "to": "Солнечногорск",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 280,
+          "fri0601": 290,
+          "sat0601": 290,
+          "sun0601": 170
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "Москва",
+        "tariffs": {
+          "night0106": 800,
+          "monThu0601": 1130,
+          "fri0601": 1260,
+          "sat0601": 1370,
+          "sun0601": 1500
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "Шереметьево-2",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 490,
+          "fri0601": 490,
+          "sat0601": 530,
+          "sun0601": 660
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "Шереметьево-1",
+        "tariffs": {
+          "night0106": 350,
+          "monThu0601": 560,
+          "fri0601": 560,
+          "sat0601": 590,
+          "sun0601": 800
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "Зеленоград",
+        "tariffs": {
+          "night0106": 110,
+          "monThu0601": 360,
+          "fri0601": 360,
+          "sat0601": 360,
+          "sun0601": 700
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "ЦКАД",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 200,
+          "fri0601": 200,
+          "sat0601": 220,
+          "sun0601": 290
+        }
+      },
+      {
+        "from": "Солнечногорск",
+        "to": "ММК (А-107)",
+        "tariffs": {
+          "night0106": 50,
+          "monThu0601": 200,
+          "fri0601": 200,
+          "sat0601": 220,
+          "sun0601": 290
+        }
+      }
+    ],
+    "status": "official_dated_full_route_matrix_transcribed",
+    "notes": [
+      "42 directed origin/destination cells transcribed from page 1 of a three-page operator PDF.",
+      "The prices are specifically stated for travel without the 15–58 section transponder. Group 1 includes cars at height <=2m.",
+      "Tariff has different Friday/Saturday/Sunday daytime values and overnight pricing; do not flatten to Mon–Thu vs Fri–Sun.",
+      "The schedule assigns tariff period by event/time; customer route may cross a period boundary, policy for entry-vs-exit time must be checked against operator rules before engine integration."
+    ]
+  }
+}

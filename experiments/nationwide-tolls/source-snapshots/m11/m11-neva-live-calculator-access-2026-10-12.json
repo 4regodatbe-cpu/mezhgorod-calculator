@@ -1,0 +1,59 @@
+{
+  "observedAt": "2026-10-12",
+  "operator": "ООО «Северо-Западная концессионная компания» / М-11 «Нева»",
+  "homeCalculator": "https://m11-neva.ru/",
+  "operatorRatePage": "https://m11-neva.ru/rate/",
+  "accessStatus": "opened in browser; route controls were interactive",
+  "routeControlsObserved": [
+    "origin and destination selections included points from Moscow (22 km) through Saint Petersburg (KAD, 679 km)",
+    "weekday selection Monday through Sunday",
+    "vehicle categories 1-4",
+    "payment choice with or without M11 transponder",
+    "arrival-time interval choice"
+  ],
+  "operatorScope": "The operator rate page explicitly labels its tariffs as M-11 Moscow–Solnechnogorsk and says the section is 15–58 km. This calculator is authoritative for that concessioned section only; do not use its fare output as the Avtodor tariff for km58–679.",
+  "validControl": {
+    "from": "Москва (22 км)",
+    "to": "Солнечногорск, пересечение с М10 (58 км)",
+    "vehicleCategory": "I",
+    "payment": "without transponder",
+    "timeInterval": "00:00-01:00 arrival interval selected in operator UI",
+    "weekday": {
+      "day": "Tuesday",
+      "rub": 1130
+    },
+    "weekend": {
+      "day": "Saturday",
+      "rub": 1650
+    },
+    "comparison": "Matches the existing official operator table for the 15–58 km section: Mon–Thu 06:00–01:00 = 1,130 RUB and Saturday 06:00–01:00 = 1,650 RUB. The calculator's 00:00–01:00 selection is within this daytime tariff window.",
+    "status": "direct operator-calculator confirmation of the 15–58 km tariff cell"
+  },
+  "outOfScopeDiagnostic": {
+    "selectedRoute": "Клин (А108), km89 → Тосно (А120), km646",
+    "vehicleCategory": "I",
+    "payment": "without transponder",
+    "selectedTimeInterval": "00:00-01:00",
+    "observedRub": {
+      "Tuesday": 1130,
+      "Saturday": 1650
+    },
+    "controlRoutes": [
+      {
+        "route": "Солнечногорск/M10, km58 → Тосно/A120, km646",
+        "weekdayRub": 1130
+      },
+      {
+        "route": "Москва, km22 → Солнечногорск/M10, km58",
+        "weekdayRub": 1130
+      }
+    ],
+    "interpretation": "The km89→646 UI result repeats the 15–58 km operator-cell amounts exactly, despite the selected endpoints lying beyond that concessioned tariff section. Treat these results as scope/UI diagnostics only; they are not approved as any 58–679 or 89–646 fare.",
+    "status": "excluded from M11 km58–679 tariff matrix pending the current Avtodor OD matrix"
+  },
+  "evidence": {
+    "operatorRatePageClaim": "Official rate page heading specifies M-11 Moscow–Solnechnogorsk; supporting page text specifies the 15–58 km section.",
+    "browserObservation": "Interactive controls and displayed results were read directly in the Yandex-equipped cloud Chrome browser on 2026-10-12.",
+    "limitation": "Calculator itself warns that calculated prices are for reference and can differ from actual charge."
+  }
+}

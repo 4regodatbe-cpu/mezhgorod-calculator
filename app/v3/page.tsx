@@ -7,7 +7,8 @@ import { FeedbackForm } from "../v2/components/feedback-form";
 import { DonationCard } from "../v2/components/donation-card";
 import { CalculatorForm } from "../v2/components/calculator-form";
 import { ResultPanels } from "../v2/components/result-panels";
-import { useV2Calculation } from "../v2/components/use-v2-calculation";
+import { useV3Calculation } from "./components/use-v3-calculation";
+import { TollConfirmationNote } from "./components/toll-confirmation-note";
 import { useTariffMode } from "../v2/components/use-tariff-mode";
 import { defaults } from "../v2/components/pricing-data";
 import { clampNumber } from "../v2/components/format";
@@ -41,7 +42,7 @@ export default function V3Page() {
   useEffect(() => { setTollPeriod(currentTollPeriod()); }, []);
   useEffect(() => { let visitorId = localStorage.getItem("mezhgorod-anonymous-visitor-id"); if (!visitorId) { visitorId = crypto.randomUUID(); localStorage.setItem("mezhgorod-anonymous-visitor-id", visitorId); } if (sessionStorage.getItem("mezhgorod-visit-sent")) return; void fetch("/api/collect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type: "visit", visitorId, version: "3.0" }) }).then((response) => { if (response.ok) sessionStorage.setItem("mezhgorod-visit-sent", "1"); }).catch(() => undefined); }, []);
   const multiplier = urgent ? 1 + Math.max(0, urgentPercent) / 100 : 1;
-  const { result, error, loading, deepTollDiagnostics, setDeepTollDiagnostics, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard } = useV2Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint: "/api/v3/calculate", analyticsVersion: "3.0" });
+  const { result, error, loading, deepTollDiagnostics, setDeepTollDiagnostics, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard } = useV3Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint: "/api/v3/calculate", analyticsVersion: "3.0" });
   useEffect(() => {
     if (!result) return;
     const frame = requestAnimationFrame(() => resultRef.current?.scrollIntoView({
@@ -86,6 +87,7 @@ export default function V3Page() {
         onCalculate={calculate}
       />
       <div ref={resultRef} className="scroll-mt-3">
+        {standardLeg && <TollConfirmationNote tolls={{amount:standardLeg.fast.tolls.amount, priceConfirmation:(standardLeg.fast.tolls as typeof standardLeg.fast.tolls & {priceConfirmation?:string}).priceConfirmation}}/>}
         <ResultPanels result={result} standardLeg={standardLeg} standardHasTolls={standardHasTolls} standardOptimal={standardOptimal} manualToll={manualToll} onManualToll={setManualToll} copiedKey={copiedKey} copyStandard={copyStandard} tollPeriod={tollPeriod} onTollPeriodChange={setTollPeriod} fastestOnly/>
       </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2"><FeedbackForm/><DonationCard/></div>

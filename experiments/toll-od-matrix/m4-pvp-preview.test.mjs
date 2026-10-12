@@ -3,6 +3,7 @@ import {test} from "node:test";
 import {inspectM4PvpPreview as inspect} from "./m4-pvp-preview.mjs";
 import {readFileSync} from "node:fs";
 const matrix=JSON.parse(readFileSync(new URL("./matrix/m4-pvp-corridors.json",import.meta.url),"utf8"));
+matrix.spanCells=[]; // Empty-catalog regression fixture is separate from the seeded source snapshot.
 const clone=o=>JSON.parse(JSON.stringify(o));
 function validation(kms=[1093,1184,1223]){
  const checks=kms.map((km,i)=>({km,status:"confirmed",evidence:"map_matching",matchedNodeIds:["osm-"+km],expectedNodeIds:["osm-"+km],routeProgressMeters:10000*i}));

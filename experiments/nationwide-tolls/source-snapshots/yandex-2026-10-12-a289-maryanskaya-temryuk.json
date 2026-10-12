@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "yandex-a289-maryanskaya-temryuk-2026-10-12-17",
+  "capturedAt": "2026-10-12",
+  "source": "Yandex Maps route planner; fare line says data provided by toll-road operators",
+  "sourceUrl": "https://yandex.com/maps/?ll=38.001008%2C45.190451&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-12T19%3A44%3A00&rtd=0&rtext=45.098996%2C38.636217~45.282044%2C37.365388&rtt=auto&ruri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE2MTA0MBKWAdCg0L7RgdGB0LjRjywg0JrRgNCw0YHQvdC-0LDRgNC80LXQudGB0LrQuNC5INGA0LDQudC-0L0sINCc0LDRgNGM0Y_QvdGB0LrQvtC1INGB0LXQu9GM0YHQutC-0LUg0L_QvtGB0LXQu9C10L3QuNC1LCDRgdGC0LDQvdC40YbQsCDQnNCw0YDRjNGP0L3RgdC60LDRjyIKDXuLGkIVX2U0Qg%2C%2C~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE2MDkwNRI_0KDQvtGB0YHQuNGPLCDQmtGA0LDRgdC90L7QtNCw0YDRgdC60LjQuSDQutGA0LDQuSwg0KLQtdC80YDRjtC6IgoNKHYVQhXRIDVC&z=9",
+  "route": {
+    "from": "станица Марьянская",
+    "to": "Темрюк",
+    "routeRoad": "А-289",
+    "fastestOnly": true,
+    "routePointsEvidence": [
+      "А-289, 28.5 mi",
+      "А-289, 22.8 mi"
+    ],
+    "vehicleCategory": "I passenger car, vehicle height under 2 m",
+    "payment": "without transponder"
+  },
+  "weekday": {
+    "date": "2026-10-12",
+    "day": "Monday",
+    "departureLocal": "19:44",
+    "fastestTravelTime": "1 h 28 min",
+    "distanceMi": 73,
+    "tollFareRub": 620,
+    "fareDisplay": "~620 RUB"
+  },
+  "weekend": {
+    "date": "2026-10-17",
+    "day": "Saturday",
+    "departureLocal": "19:44",
+    "fastestTravelTime": "1 h 27 min",
+    "distanceMi": 73,
+    "tollFareRub": 620,
+    "fareDisplay": "~620 RUB"
+  },
+  "fareBasisText": "Price calculated for a vehicle under 2 m without a transponder at the moment of departure from the toll section. Yandex states tariff data is provided by toll-road operators.",
+  "policy": "Per the user-approved source rule, accept Yandex Maps fare for this exact fastest-route test as the route-check control. Preserve the displayed approximation marker and do not generalize this city-center route fare into arbitrary tariff cells.",
+  "comparisonNote": "The quickest route is paid on both selected dates. A slower alternative was shown on the route planner; alternate routes are excluded from this product rule and from this fastest-route control.",
+  "saturdayRouteInspection": {
+    "departure": "2026-10-17T19:44:00",
+    "visibleYandexDirections": [
+      "улица Ленина → Красная улица → Краснодарская улица → Октябрьская улица",
+      "съезд на А-289",
+      "А-289 for 28.5 mi",
+      "А-289 for 22.8 mi",
+      "exit to 03К-010 for 2.26 mi",
+      "return to А-289 for final 3.9 mi and 6 mi legs to Temryuk"
+    ],
+    "tollCard": "~620 RUB; category-I car under 2 m without transponder",
+    "observation": "Fastest route uses A-289 but leaves it for 03К-010 after two long A-289 legs, then rejoins. The displayed 620 RUB exactly matches the official full-vector transponder fare, while Yandex explicitly labels the amount as no-transponder. This suggests unresolved toll-scope or tariff-basis mismatch; neither value is silently substituted for the other."
+  },
+  "userConfirmedInterpretation": {
+    "MarianskaiaToTemryukRub": 620,
+    "fullTollRoadThroughToCrimeanBridgeRub": 800,
+    "basis": "User clarification on 2026-10-12: Yandex's 620 RUB is correct for Maryanskaya→Temryuk; 800 RUB is the whole toll-road route up to Crimean Bridge. The 1,103-RUB amount is not applicable to this whole-road scope.",
+    "disposition": "Use 620 RUB as the city-route control and 800 RUB as the user-confirmed full-road vector. Quarantine the previously captured 1,103-RUB operator interpretation; do not use it for this route."
+  },
+  "runtimeApproval": "User confirmed 620 RUB for Maryanskaya→Temryuk and 800 RUB for the full toll-road route through to the Crimean Bridge. The 1,103-RUB reading is superseded for this scope."
+}

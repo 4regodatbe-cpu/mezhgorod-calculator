@@ -24,8 +24,9 @@ function quoteM4TimedCorridor(matrix,request,quoteFunction){
  // If a caller also supplied a mixed-state assertion it must agree with crossed times.
  if(request.mixedContext && (request.mixedContext.routeId!==request.routeId || request.mixedContext.mixed401!==ctx.mixed401 || request.mixedContext.mixed633!==ctx.mixed633))return unknown("provided_mixed_zone_status_disagrees_with_event_times");
  const r=quoteFunction(matrix,{...request,mixedContext:ctx,profile,tariffDate:firstDate});
- if(!r||r.status!=="diagnostic_priced"||!Number.isSafeInteger(r.amountRub))return r??unknown("quote_failed");
- const matching=(matrix?.priceCells??[]).filter(c=>c.direction===request.direction && Array.isArray(c.sequence) && c.sequence.join(">")===r.verifiedSequence.join(">") && c.context?.mixed401===ctx.mixed401 && c.context?.mixed633===ctx.mixed633 && c.source?.effectiveFrom<=firstDate && (c.source.effectiveTo===null||c.source.effectiveTo>=firstDate));
+ if(!r||r.status!=="span_priced"||!Number.isSafeInteger(r.amountRub))return r??unknown("quote_failed");
+ const canonical=sequence=>Number(sequence[0].slice(3))<Number(sequence.at(-1).slice(3))?sequence:[...sequence].reverse();
+ const matching=(matrix?.spanCells??[]).filter(c=>c.acceptedChains?.some(chain=>canonical(chain).join(">")===canonical(r.verifiedChain).join(">")) && c.source?.effectiveFrom<=firstDate && (c.source.effectiveTo===null||c.source.effectiveTo>=firstDate));
  if(matching.length!==1)return unknown("no_unique_tariff_version_for_trip");
  const source=matching[0].source;
  if(days.some(d=>d<source.effectiveFrom||(source.effectiveTo!==null&&d>source.effectiveTo)))return unknown("tariff_version_changes_during_trip");

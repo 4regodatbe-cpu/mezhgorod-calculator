@@ -65,7 +65,8 @@ export async function calculateProductionM4(
 
   const core = await calculateM4Core(route, departureAt, routeDurationSeconds);
   const { validation, pricing, tollValidation: responseValidation, exact } = core;
-  const m4PvpPreview = inspectM4PvpPreview(m4PvpMatrix, validation);
+  const rawPreview = inspectM4PvpPreview(m4PvpMatrix, validation);
+  const m4PvpPreview = { ...rawPreview, verifiedPriceCells: rawPreview.verifiedSpanCells ?? 0, candidateCount: validation.candidateCount };
 
   if (validation.candidateCount === 0) {
     return { candidate: false, exact: false, tolls: null, validation: null, reason: "Маршрут не пересекает зоны известных ПВП М-4", m4PvpPreview };

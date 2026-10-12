@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { geocode, type Point } from "@/lib/route-providers";
-import { calculateLeg } from "@/lib/v2-calculation/route-leg";
+import { calculateLeg } from "@/lib/v3-calculation/route-leg";
 import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-integration";
 
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "@/lib/special-territory-boundaries";
@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
       const territorySplit = analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
       const {coordinates, legs, ...summary} = trip;
       void coordinates; void legs;
-      return {...summary, pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
+      return {...summary, ...("tolls" in trip ? {tolls:{...trip.tolls as object, priceConfirmation:"unconfirmed", displayLabel:"Стоимость не подтверждена"}} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
         from:from.label,to:to.label,vehicle,mode,normalRateOverrides,specialRateOverrides,multiplier:body.multiplier,
         legs:[{from:from.label,to:to.label,distanceKm:trip.meters/1000,territorySplit}],
       })]))};

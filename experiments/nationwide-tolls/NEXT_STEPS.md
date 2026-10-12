@@ -44,3 +44,16 @@ Completed in isolated branch:
 3. Tariff source audit: M3 current official page is indexed but returned HTTP 403 to direct fetch; conflicting published snapshot rows remain unresolved. Do not change stored fares or call them verified until the live dated class-I no-transponder row can be read. Most operator tariff products still lack dated complete tables.
 
 Next execution: get primary artifacts for Avtodor current M3 and all section tariffs; identify four Pskov road contracts/decision rows; capture operator tariff versions for Odintsovo, Bagration, ZSD/SHMSD, Khabarovsk, Mytishchi, Ryazan and remaining groups. For every amount preserve category, payment mode, effective date, periods, directions/OD and source artifact. Only after block 3 expands materially, proceed with blocks 4–6 on geometry evidence and route benchmarks.
+
+
+# Local recovery updates through 13.10.2026
+
+# Следующие действия
+
+1. Получить актуальный head/source tree experiment/toll-od-matrix-2026-10-08; чтение AGENTS/docsWORK_STATE уже выполнено connector. Прямая git-сеть не авторизована; локальная audit-ветка не равна актуальной экспериментальной.
+2. Прочитать текущие V3 route/API/result types и экспериментальные адаптеры; подключить engine/quote.cjs через точные routeId, traversalId, локальные passage date и тарифный профиль.
+3. Отобразить displayLabel в UI/API/деталях/копировании. Не позволять нескольким перекрывающимся представлениям одной платной группы начисляться одновременно.
+4. Запустить quote.test.cjs, матричный валидатор, требуемый full gate/build актуальной ветки и API/browser проверки.
+5. Сохранить изменения и handoff в целевую ветку; выпуск тестового preview после проверок.
+
+Current: V3 API/UI/copy wired, native305/305 + M4adapter6/6 + TS/build/local HTTP PASS. Next: remote persistence/Preview, live route verification; extend other-road matrix adapters. Do not call full nationwide matrix-to-route integration complete.

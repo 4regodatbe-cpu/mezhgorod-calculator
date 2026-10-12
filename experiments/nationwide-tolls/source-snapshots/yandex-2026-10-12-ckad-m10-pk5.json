@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "yandex-ckad-m10-45km-to-pk5-2026-10-12",
+  "capturedAtLocal": "2026-10-12T23:13:45+03:00",
+  "source": "Yandex Maps interactive route planner, driving mode, fastest route selected by default",
+  "routeAnchors": {
+    "from": {
+      "name": "М-10 Россия, 45-й километр",
+      "coordinates": [37.158776, 56.043170],
+      "relationship": "on M-10 shortly before the CKAD junction; not exactly the operator matrix node"
+    },
+    "to": {
+      "name": "Пункт взимания платы Калужское шоссе — ПК5",
+      "address": "Москва, Троицкий административный округ, Краснопахорский район, ЦКАД, 250-й километр",
+      "yandexOrganizationId": "177034871537",
+      "relationship": "selected Yandex plaza; likely related to PK-5 matrix node but node-to-node equivalence is not proven"
+    }
+  },
+  "weekdayObserved": {
+    "date": "2026-10-12",
+    "direction": "М-10 45-й км → ПВП Калужское шоссе—ПК5",
+    "fastestRoute": {
+      "duration": "1 ч 26 мин",
+      "distanceMi": 71,
+      "tollFareRub": 972,
+      "fareDisplay": "~972 ₽",
+      "toll": true
+    }
+  },
+  "reverseDirection": {
+    "date": "2026-10-12",
+    "direction": "ПВП Калужское шоссе—ПК5 → М-10 45-й км",
+    "fastestRoute": {
+      "duration": "1 ч 17 мин",
+      "distanceMi": 63,
+      "tollFareRub": null,
+      "toll": false,
+      "fareDisplay": "no toll amount shown"
+    },
+    "scopeNote": "The fastest route is the only product-relevant result; slower options visible in Yandex were recorded only to diagnose endpoint/route choice and are not accepted as alternatives for runtime."
+  },
+  "interpretation": {
+    "officialMatrixCell": "M-10→ПК-5 = 3,189 RUB, effective 2026-03-02 per operator matrix; separate 2,381-RUB historical whole-road benchmark exists.",
+    "status": "not directly comparable",
+    "reason": "The selected origin is 45-km marker on M-10 before the interchange, and the destination is a named toll-plaza point, not proven to match the tariff matrix's exact entry/exit boundary nodes. Yandex route selection is also direction-dependent; fastest reverse route is free while forward fastest route displays a toll. Do not replace either official direct matrix cell or user fastest-route rule with these route controls until the endpoint mapping is exact.",
+    "runtimeApproved": false
+  },
+  "sourceUrl": "https://yandex.com/maps/",
+  "observedInBrowser": true
+}

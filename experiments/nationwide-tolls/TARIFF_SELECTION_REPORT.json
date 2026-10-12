@@ -1,0 +1,58 @@
+{
+  "asOf": "2026-10-13",
+  "generatedAt": "2026-10-12T21:45:47.548Z",
+  "status": "current candidates authorized for visibly unconfirmed estimates; integration pending",
+  "runtimeApproved": false,
+  "counts": {
+    "input": 4683,
+    "selected": 2086,
+    "history": 777,
+    "excluded": 0,
+    "provisional": 1820,
+    "pendingCandidates": 0
+  },
+  "selectedByRoad": {
+    "m11-58-679": 924,
+    "m11-15-58": 210,
+    "m1": 2,
+    "m3": 24,
+    "ckad": 210,
+    "m4-south": 32,
+    "mytishchi": 30,
+    "odintsovo": 96,
+    "bagration": 2,
+    "ufa": 2,
+    "heihe": 2,
+    "udmurtia": 6,
+    "tolyatti": 6,
+    "pskov": 8,
+    "a289": 4,
+    "ryazan": 4,
+    "kazan": 4,
+    "msd": 513,
+    "m12": 7
+  },
+  "excludedByRoad": {},
+  "excludedRoads": [
+    "SHMSD",
+    "ZSD",
+    "Khabarovsk"
+  ],
+  "unknownIsNotZero": true,
+  "unresolved": [
+    {
+      "road": "m12",
+      "scope": "post-2026-10-08 vectors crossing extended Shali boundary except Sokury–Shali direct99",
+      "action": "no current candidate price for changed boundary: unknown unless a dated direct price exists"
+    },
+    {
+      "road": "m4",
+      "scope": "candidate and mixed/alternative sections",
+      "action": "current candidates permitted as estimates with visible unconfirmed label; exact vector binding required"
+    },
+    {
+      "scope": "all roads",
+      "action": "selected fares are not geometry-validated route mappings"
+    }
+  ]
+}

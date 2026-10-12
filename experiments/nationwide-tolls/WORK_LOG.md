@@ -269,3 +269,344 @@ User proposed using Yandex Maps to check actual toll estimates for chosen origin
 - **Источник:** официальный PDF М-11 https://m11-neva.ru/upload/iblock/efd/jchklu42unx7iu0avbw123k314l3w6dk.pdf (стр. 1–2), список действующих документов https://m11-neva.ru/documentation/ . Данные переведены по таблице из PDF, не из Яндекс-карточек.
 - **Проверка:** JSON повторно прочитан из ветки и распарсен; проверено 42 клетки, 7 origins, 5 bands, все значения целые числа, null отсутствуют. Commit data `c6e544edf501937410c2e04ba083632ccba7d8cb`. Tests/build not run (data-only).
 - **Открытый вопрос:** правило выбора времени в операторской таблице на маршруте, пересекающем временную границу, не кодировали; проверить по правилам ОССП до route engine integration. Далее — добавить pricing table для М-11 58–679, М-4/M-12 others and external operators.
+
+
+# Local recovery updates through 13.10.2026
+
+# Toll tariff matrix work log
+
+## 2026-10-12 — user triage decisions, route controls, and audit cleanup
+
+- **User decisions captured:** A-289 fastest route Maryanskaya→Temryuk is 620 RUB; full paid-road vector through to the Crimean Bridge is 800 RUB; the previous 1,103-RUB interpretation is wrong scope and excluded. Heihe is 1,320 RUB in both directions. SHMSD, ZSD and Khabarovsk are excluded. For fixed-price candidates, use Yandex's fastest route between points before/after the toll crossing, repeat with endpoints reversed, and exclude fares unavailable in Yandex and open sources. Keep Odintsovo and MSD on official published schedules, with Yandex route controls still needed.
+- **CKAD control:** saved a live Yandex Maps route check in both directions between M-10 Russia 45th km and the selected Kaluzhskoe highway—PK5 toll-plaza point. The forward fastest route displayed approximately 972 RUB; the reversed fastest route displayed no toll estimate. Neither endpoint pair is proven equivalent to the operator's exact matrix junction nodes. This is diagnostic evidence only; do not replace the official 3,189-RUB M-10→PK5 matrix cell with it.
+- **Current open-work ledger:** 13 active groups: #1 M-11 closed, #11 Heihe closed; #2 CKAD/A-289 partial, #3 M4 partial, #4 M12 partial, #5 Odintsovo partial, #6 Pskov partial, #9 MSD partial, #12 Mytishchi open, #13 fixed-price-road/Yandex checks partial, #14 traversal model and #15 completeness percentage deferred to final review, #16 intended branch persistence blocked. #7 SHMSD, #8 ZSD and #10 Khabarovsk are excluded. This is 2 closed, 7 partial, 3 open/deferred and 1 blocked; it is not a tariff-completeness percentage.
+- **State correction:** updated `WORK_STATE.md` to remove stale A-289-conflict and excluded-road blockers, and revised the next action list. Historical entries in this log that reported 1,103 RUB as the no-transponder whole-road fare or 441 M-11 cells remaining are earlier observations; they are superseded by the user's scope decision and later complete Order 274 transcription.
+- **Validation:** source snapshot files and tariff candidate JSON parse. CKAD endpoint mismatch, Yandex estimate and reversed direction are explicitly marked non-authoritative for matrix pricing. No runtime integration, V1/V2 edits, build, publication or production change.
+
+## 2026-10-12 — M12 extension and Pskov legal-currentness review
+
+- **M12 confirmed:** reopened the official holding-company notice about the 2026-10-08 M-12 toll-boundary extension. It states that the direct Sokury exit→Shali (M-7 junction) Category-I fare is 99 RUB all day and that Shali–Bavly is free when the trip does not enter the M-12 mainline or cross the toll boundary. Added the review/source-failure note to the M12 snapshot and candidate record.
+- **M12 limitation:** the legacy `kazan_p239` node has not been proven identical to the new Sokury toll boundary. The linked live Avtodor tariff page returned HTTP 403 to web retrieval. No post-extension Moscow/Kazan→Shali direct fare was inferred; the March Moscow→Shali fare remains explicitly superseded.
+- **Pskov review:** found the official regional transport department's current “Платные автодороги” inventory and official legal portal search. The inventory confirms all four roads remain listed. Amounts (Ostrov–Vyshgorodok 300; Estonia–Pechory–Izborsk 150; Opochka–Dubrovka 220; Olsha–Velizh–Usvyaty–Nevel 200 RUB) are supported by the 2025 regional resolution and current secondary coverage, but the current official tariff annex/latest amendment was not retrievable. Issue #6 advanced Open→Partial; mark tariff values date-sourced but do not assert a newly verified amendment status.
+- **Sources:** official holding-company announcement https://ruhw.ru/press/news/154667/; Avtodor linked tariff page https://avtodor-tr.ru/road/tariffs/ (HTTP 403); Pskov official road inventory https://transport.pskov.ru/perechen-avtodorog-oblasti/platnye-avtodorogi (fetch timeout); legal text https://base.garant.ru/411968606/ (403); official publication search index surfaced https://publication.pravo.gov.ru/.
+- **Files:** updated M12 snapshot, candidate record, audit and recovery state. Audit remains 1 closed / 8 partial / 7 open-or-blocked (Pskov swapped into Partial; M12 remains Partial).
+- **Verification:** M12 and candidate JSON parse; audit count remains 1 closed / 8 partial / 7 open-or-blocked. No runtime, V1/V2, build, deployment, or publication changes.
+
+## 2026-10-12 — recovery checkpoint and two operator tariffs
+
+- **What:** created `TARIFF_MATRIX_CANDIDATES_2026-10-12.json` with official tariff records for the Ryazan paid overpass and Kazan Voznesensky tract; created this recovery log and `WORK_STATE.md`.
+- **Why:** continue filling the new algorithm's matrix while keeping the existing V1/V2 calculators untouched and preserving source/effective-date evidence for future reconciliation.
+- **Decisions:** passenger-car class; base fare without transponder discount; operator-defined clock windows retained; Ryazan night exemption remains conditional on direction/timing; Kazan amount selected at gantry passage time. Entries remain outside runtime pending route-anchor verification.
+- **Evidence:** Ryazan operator notice, published 2026-09-21 and effective 2026-10-01: https://m-road62.ru/izmenenie-tarifov-na-platnom-puteprovode-s-1-oktyabrya-2026-goda/ . Kazan official tariff page and its referenced order: https://vtkazan.ru/road/tarifs/ (Order No. 07/ПД-ВТ dated 2025-03-06).
+- **Verification:** source pages reviewed. JSON syntax and semantic checks are recorded after local validation. No app tests/build run because this is data-only and the project Git checkout is not writable/available in this workspace.
+- **Branch/commit/PR:** not committed; the only writable workspace directory has no usable Git metadata. Existing discovered calculator checkout is `fix/v2-mobile-layout-2026-10-05` with 22 modified and 6 untracked files; it was not touched. Second checkout is a separate special-territory branch. Git fetch is blocked by read-only `.git` metadata.
+- **Remaining:** recover the intended working experiment branch, restore its earlier matrix dataset, add this checkpoint there and commit; then continue all-operator capture and verify Odintsovo/Bagration image tariffs.
+
+## 2026-10-12 — expand candidate matrix to 50% asset presence
+
+- **What:** expanded the candidate file to include Bagration (790 RUB class 1 base fare) and the four-plaza Odintsovo current base tariff schedule; preserved six existing official-source snapshots for Avtodor M1/M3/CKAD/A-289, M12, M11 km15–58 and M11 km58–679 evidence. Added three previously recorded M4 user/Yandex span amounts as explicitly provisional candidates. Updated coverage and handoff state.
+- **Why:** make rapid progress toward broad nationwide tariff coverage while retaining operator-native matrices/schedules and keeping the new data isolated from V1/V2 runtime.
+- **Coverage decision:** use the 20-road/asset inventory in T—Ж's 2026 overview as a coarse scope denominator; 10 assets have at least some tariff record, so asset presence is 50%. This does not claim half of all tariff cells, route pairs or entry/exit combinations are complete. M4 candidates are not counted as independently confirmed asset coverage.
+- **Source and mapping decisions:** copied existing date-stamped JSON evidence without rewriting its tariff contents; snapshots retain their own official-source URLs/effective dates. Bagration uses operator base fare (790 RUB), excluding 750 registered-plate prepayment and 550 operator transponder fare. Odintsovo preserves published four-PVP order and the page's day/direction/time rows as raw candidate data; no derived route sum is calculated until route traversal is verified. M4 values (850/1000, 1230/1450, 230/360) are marked provisional because the old dated Yandex cards are unavailable here.
+- **Verification:** validated top-level JSON and entry keys; audited source snapshot cardinalities: M1 1, M3 3, CKAD 16, A-289 6, M12 19 adjacent rows, M11 km15–58 42 directed cells over five time profiles; current M11 km58–679 explicitly says incomplete and records two verified controls. No app tests/build were run; no runtime files changed.
+- **Branch/commit/PR:** not committed. The writable folder still has no usable Git metadata; discovered V2 checkout has a modified worktree and read-only `.git`, so it was not edited. Six snapshots were copied from its existing source-controlled data files into the portable checkpoint.
+- **Remaining:** restore the intended experiment branch before project commit; complete remaining ten assets from inventory; fill M11 km58–679 and exact span mapping; recheck Odintsovo time/day labels and M4 dated evidence. Next operator intake: Pskov regional roads and remaining regional/concessionary roads.
+
+## 2026-10-12 — expand coarse asset coverage to 75%
+
+- **What:** added current published tariff records for Udmurtia's Kama/Buy bridges (400/300/700 RUB, category group 1), Ufa Eastern Exit (150 RUB without transponder), Togliatti bypass three route spans (210/140/320 RUB without transponder), four Pskov regional roads (150/300/220/200 RUB, class 1 schedule), and the opened first SHMSD section (300 RUB category I). Added source URLs, effective dates where established, and mapping/completeness limits. Updated coverage inventory to 15/20.
+- **Why:** meet the requested next milestone by broadening road-system representation while capturing operator-native whole-road and OD-span rates.
+- **Evidence/decisions:** Udmurtia and Ufa rates were taken from official operator tariff pages; Togliatti values from Avtodor's current table; Pskov values from the 2025 regional tariff resolution as indexed by the legal-document source and remain provisional pending current-amendment confirmation; SHMSD amount from the concessionaire tariff-plan PDF, only for the first open stage. Base/no-transponder fare remains the default. For Togliatti, retain the published full 17–97 km tariff (320 RUB), not a sum inferred from partial spans.
+- **Coverage metric:** the 20 assets in the 2026 T—Ж national overview remain the denominator. 15 assets are now represented, giving 75% coarse asset presence. This must not be reported as 75% of all route pairs/tariff cells; M11 58–679 is still incomplete, Odintsovo route interpretation is pending, and some newly added regional rows need date/scope validation.
+- **Verification:** checked JSON parsing, record count, the 15/20 inventory count, key tariff amounts and source/scope fields. No application tests/build or runtime changes.
+- **Branch/commit/PR:** not committed because the writable workspace lacks usable Git metadata; no other calculator checkout was touched.
+- **Remaining:** finish five unrepresented assets; reconcile matrix with recoverable earlier candidate records; confirm Pskov current legal schedule, SHMSD open-section current status, effective date of Togliatti current tariff source, and the exact no-transponder profile for Odintsovo; then resolve all directed span/entry/exit gaps.
+
+## 2026-10-12 — expand inventory presence to 100% and correct MSD tariff versioning
+
+- **What:** added source/topology records for MSD, ZSD, the Blagoveshchensk–Heihe bridge, Khabarovsk bypass, and Mytishchi Speed Chord. Inventory presence is now 20/20 objects (100%), explicitly not fare-cell completeness.
+- **Why:** continue the user's instruction to close the nationwide asset inventory quickly while keeping unknown tariff cells visible instead of inventing prices.
+- **MSD rule:** official MSD FAQ says there are nine sections and 19 RUB per section from 2026-04-10, weekday peak charging 07:00–11:00 and 16:00–20:00, while weekends/holidays and other weekday periods are free apart from transit trips. The same currently indexed site announces 25 RUB per section from 2026-10-16; as of this checkpoint date (2026-10-12), that is future-effective and must not be applied yet. Charging depends on entry and exit timing. No transponder payment is available. A complete dated segment-pair/transit table remains missing.
+- **ZSD:** operator-annex search extraction provides one Category-I base-tariff pair, zone 1–2: 70 RUB day / 30 RUB night, dated 2025-09-10. Full PDF retrieval returned HTTP 403 in the research interface; no other pairs were invented.
+- **Khabarovsk:** official operator page states four named tariff sections and five toll plazas (two mainline, three ramps) and exposes an OD calculator, but the static text view exposes an isolated 20 RUB without selection context. No exact route fare cell was added. 160 RUB full-route secondary-source reference remains clearly segregated from operator-confirmed fares.
+- **Blagoveshchensk–Heihe:** added official regional toll-rule source. No current passenger-car toll was found; bus passenger ticket prices, customs charges and historical vehicle-category amounts were excluded.
+- **Mytishchi Speed Chord:** Avtodor confirms the toll road and operator-holding information identifies five chargeable tariff segments or a whole-road trip; current category-I price cells were not exposed in retrieved pages, so they remain null.
+- **Coverage semantics:** 20/20 = 100% topology/source presence only. Tariff-cell completeness remains uncomputed because expected directed cell counts are not yet fully enumerated. Null entries mean unknown, not free.
+- **Evidence:** MSD official FAQ https://msd.mos.ru/faq and documents https://msd.mos.ru/docs; operator ZSD tariff annex https://nch-spb.com/upload/iblock/4c0/Prilozhenie-2.pdf and rules https://nch-spb.com/upload/iblock/8f4/b6g07qyzz91fvhx46txlz5m2ldp5unk1/Pravila-s-10.09.2025.pdf; Khabarovsk operator https://vis-transtoll.ru/khabarovsk; Amur Region Government Resolution 725 https://www.amur-gov.ru/doc/101326; Mytishchi official Avtodor note https://avtodor-tr.ru/press-center/news/skorostnaya-mytishchinskaya-khorda-kak-oplatit-proezd/ and operator https://vis-transtoll.ru/.
+- **Verification:** JSON parse/count check; 15 unique candidate rows; all 20 named assets represented and no unrepresented assets. Confirmed four newly added tariff objects contain null price cells. No application runtime changes or app tests.
+- **Branch/commit:** still not committed; current working checkpoint is the writable portable folder, while project Git metadata remains unavailable/read-only.
+- **Remaining:** enumerate and fill tariff cells; obtain current MSD future-effective order, complete ZSD matrix, Heihe car price, and Khabarovsk/Mytishchi exact OD tariff tables.
+
+## 2026-10-12 — audit of incomplete operator tariff images
+
+- **What:** checked the apparent 73 RUB value exposed in the Mytishchi operator page and opened the linked image. The value has no origin/destination labels in the static extract, and the linked image rendered a general road layout, not a legible tariff table. Removed any implication that 73 RUB is the full-road fare; kept the five tariff-segment topology only.
+- **Why:** prevent a selected UI cell or unrelated dynamic value from becoming a false confirmed fare.
+- **Decision:** Mytishchi current tariff schedule is acknowledged but numeric matrix cells remain null pending a direct tariff table or route calculator result with selected endpoints visible.
+- **Verification:** re-parsed JSON; checked 15 unique record IDs, coverage 20/20, and that Mytishchi whole-road and numeric tariff fields are null.
+
+## 2026-10-12 — continue unresolved issue audit and operator controls
+
+- **What:** verified that the latest JSON edits parsed and contained eight explicit official/diagnostic controls; created `AUDIT_ISSUES_2026-10-12.md` with status and precise blocker for each of the 16 remaining questions.
+- **Why:** continue through the issue list without overstating coarse asset presence as tariff completeness, and leave a resumable record of what is confirmed versus still unresolved.
+- **New evidence captured:** Khabarovsk official tariff tabs expose category-I section rates 20/45/90/40 RUB and a separate full-route fare of 160 RUB; sum of section fares is 195 RUB, so the whole-route fare is operator-defined and non-additive. The operator OD calculator returned 175 RUB for Gorky–Vostochnoye, conflicting with its displayed 45 RUB section tariff; preserved only as a diagnostic conflict. Odintsovo operator mapping for representative exit vectors was added to the data. MSD transit flat fare 950 RUB and future 25 RUB rate effective 2026-10-16 are recorded with separate temporal status. A 2025 Heihe fare comparator (1,320 RUB) is retained as historical, not current. Official controls added for M4, M1, M3, CKAD, A-289 and the newly paid M12 Sokury–Shali 7 km span at 99 RUB effective 2026-10-08.
+- **Reconciliation flags:** A-289 saved whole-route span 1,103 RUB conflicts with official 2026-03-02 800 RUB benchmark; M1 saved no-transponder 250 RUB conflicts with official benchmark 230 RUB; these may reflect route/payment/date differences and are not silently overwritten. M12 March snapshot predates the new paid span. Khabarovsk calculator route anchors need operator clarification.
+- **Coverage decision:** 20/20 refers only to coarse asset inventory presence. No percentage is assigned to fare-cell coverage because expected directed cell counts are not yet enumerated.
+- **Verification:** `python -m json.tool` passed for the candidate dataset; checked 15 candidate records and eight validation controls. No runtime code was changed and no application tests/build or publication were run. Research browser checks were read-only.
+- **Branch/persistence:** checkpoint, audit and log are saved in the writable workspace. The intended experiment branch remains inaccessible from this workspace's Git metadata, so no commit was made and unrelated calculator worktrees were not changed.
+
+## 2026-10-12 — correct SHMSD/WHSD tariff classification
+
+- **What:** reclassified the 300 RUB Vitebsk/Blagodatnaya tariff finding from an independent SHMSD price to a candidate ZSD tariff-zone-6 amount. Kept standalone SHMSD fare null and added the zone-6 candidate to the ZSD record with explicit interpretation caveat.
+- **Why:** the official operator annex search extract names zone 6 as the Southern ZSD span from Blagodatnaya Street to Vitebsky Prospekt, while the official city source describes the Vitebsk interchange as stage 1 of SHMSD connected to ZSD. The evidence does not establish an independent SHMSD charge.
+- **Evidence:** official tariff annex https://nch-spb.com/upload/iblock/c89/9w3aehlsbrrr4ys27479u925nkbtno11/Prilozhenie-_1-k-Prikazu-_32-ot-22.04.2025_Bazovye-tarify.pdf (search-indexed excerpt; direct retrieval returned 403); official city statement https://www.gov.spb.ru/press/governor/291314/ . The annex extract shows 300 RUB among columns, but exact category/payment column and trip cell remain unverified.
+- **Verification:** re-parsed candidate JSON. No unsupported fare promoted to confirmed status; runtime remains unchanged.
+
+## 2026-10-12 — M11 tariff-table discovery and Yandex point test
+
+- **What:** followed the proposed point method in Yandex Maps for the 88 km→90 km M-11 points near PVP 89. The map returned an 8-minute / 4.2-mile route labelled “Платная дорога,” but displayed no tariff amount. The geocoded kilometer pins route via local access roads, so this attempt does not verify a single adjacent-PVP fare and is excluded from tariff data.
+- **Official-source correction:** found that Avtodor does publish M-11 tariff tables. Its official tariff page exposes the 58–679 km tariff table and current category-I rates from the km58 origin to listed exits. An official matrix PDF approved under Order 53 dated 2026-02-22 includes directed PVP-to-PVP rows (e.g. km89 to km97), proving the previous claim that the operator material had only two tariff cells was incorrect. The current detailed PDF, recorded in the existing snapshot as Order 274 dated 2026-09-03, is identified at https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf; direct web retrieval returned 403 and the cloud browser showed DDoS-Guard, so its full current matrix was not extracted in this pass. Do not carry forward Order 53 rates as current without reconciliation.
+- **Decision:** use the latest official route matrix as the primary tariff source; use Yandex points for geometry/route validation only when Maps exposes no tariff amount. Keep route-cell prices null until Order 274 is transcribed and reconciled, especially for the PVP km593 opened 2026-09-18.
+- **Evidence:** official tariff page https://avtodor-tr.ru/road/tariffs/ (search-indexed extraction, including current no-transponder category-I rates from km58); Order 53 matrix PDF https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf; current Order 274 file above. Research refs: `turn117search0`, `turn117search1`, `turn116search5`. Yandex Maps observation on 2026-10-12: route 88→90 km, paid-road label, no fare shown.
+- **Verification:** confirmed the current snapshot metadata already identifies Order 274 and records 22 PVPs but only two cells had been transcribed. No tariff was inferred from the Yandex route or by differencing PVP prices. No runtime code changed.
+
+
+## 2026-10-12 — establish current M-11 km58-origin tariff cells
+
+- **What:** expanded the current M-11 snapshot with all 20 category-I, no-transponder PVP58→published-exit fares exposed by the official Avtodor tariff page, for Mon–Thu and Fri–Sun. Captured the tariff table URL, source access limitation, and route/PVP kilometer mapping.
+- **Why:** the user asked for a deep method to resolve tariff cells and specifically proposed 88→648 km as a check. On M-11 the route markers map to PVP km89 and PVP km647 (published road km 646), respectively. The official table can directly supply PVP58-origin fares; Yandex provides route geometry but did not show an amount on the earlier point test.
+- **Method decision:** treat each official row/cell as an operator-native tariff vector. Do not derive 89→647 by subtracting PVP58-origin amounts. Keep weekday and weekend prices in separate cells. When the exact OD cell is inaccessible, retain null and use Yandex only as an independent route/path check, then reconcile with operator fare result.
+- **Evidence:** official tariff page https://avtodor-tr.ru/road/tariffs/ (search-index extraction ref `turn161search0` / `turn155search2`); current detailed tariff PDF/order 274 https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf (direct access returns 403 in this research interface); official OССП tariff-change notice from 2026-09-04 is recorded in prior research refs `turn125view0`/`turn126view1`. Official page defines Mon–Thu vs Fri–Sun and lists its current validity document.
+- **Limit:** tariff page exposes the km58-origin row in the retrieved text, but not the requested arbitrary pair row PVP89→PVP647; do not label that exact cell verified yet. The order PDF's effective-date clause and the complete OD matrix remain to be captured. PVP593 is not included as a published exit in the extracted km58 row and remains a distinct unresolved mapping.
+- **Verification:** JSON parses; all 20 mapped destination IDs exist in the 22-point list; values were copied from the four category-I columns [with transponder Mon–Thu, no transponder Mon–Thu, with transponder Fri–Sun, no transponder Fri–Sun], selecting only the no-transponder values. Existing 58→593 and 58→679 controls remain separate. No runtime code changed.
+
+## 2026-10-12 — MDS direct tariff cell for M-11 89–646 km
+
+- **What:** captured a Category-I tariff table cell shown on the MDS operator website for route 89–646 km: 3,120 RUB on workdays and 3,310 RUB on weekends/holidays. Added it to the M11 snapshot as the user's Yandex point pair 88→648 km, mapped to PVP89→PVP647 (operator route km646).
+- **Why:** the user requested a way to obtain exact M-11 tariffs through operator-defined spans and emphasized storing a complete vector price instead of summing individual PVP charges. This is a directly published route cell; it is not inferred from the PVP58 origin fare or synthesized by subtraction.
+- **Evidence:** official MDS tariffs https://www.mos-spb.ru/tariffs/main/main-ru, Category I (<2 m, 2+ axles), row “89-646 км”; the opened page was crawled 2026-10-12. The row shows 3,120/3,120 across workday time columns and 3,310/3,310 across weekend/holiday time columns. At initial capture this was treated as current; the follow-up source comparison below reclassifies it as disputed and likely stale. Yandex route geometry for 88→648 km previously showed an M-11 route, 5h09, and no price.
+- **Limitations:** captured MDS tariff page does not state the exact effective-from date. The Avtodor current detailed Order 274 PDF remains inaccessible behind DDoS-Guard, so reconcile this direct operator cell against the current Avtodor full matrix when it can be read. Do not generalize one cell to other endpoints.
+- **Verification:** updated M11 JSON snapshot, candidate source index, state, and issue #1. JSON parse and semantic checks follow. No V1/V2/runtime edits.
+- **Source conflict found during follow-up:** the MDS table also publishes 58–646 km at 3,290/3,520 RUB, while the current Avtodor tariff page publishes the corresponding PVP58→PVP647 cell at 3,890/4,580 RUB. MDS says full M-11 tariff information/calculation is on Avtodor's website. This suggests the MDS page may be stale or reflect a different tariff scope; exact cause is not established. Therefore the captured MDS 89–646 cell is marked disputed and excluded from runtime approval until reconciled against current Order 274 / Avtodor calculator. Do not extrapolate either amount to other pairs.
+
+## 2026-10-12 — date/scope analysis of the MDS discrepancy
+
+- **What:** checked the official OССП M-11 announcement after finding conflicting MDS and Avtodor 58–646 values. OССП says M-11 tariffs on km 58–543 change effective 2026-09-04. The current Avtodor detailed tariff PDF is identified as published 2026-09-04 (Order 274 dated 2026-09-03), while the MDS page does not show a tariff effective date and points users to Avtodor for complete tariff information/calculation.
+- **Why:** determine whether the MDS route-cell observation is applicable to the current price matrix and whether the change is in the component containing the requested 89→646 trip.
+- **Decision:** interpret MDS 58–646 and 89–646 numbers as likely stale/historical observations because those trips include the repriced km58–543 span, but label this cause as an inference, not proven. Keep 3,120/3,310 as disputed source data; do not subtract old/current fares to synthesize a new value. Current Avtodor PVP58-origin cells are the active sourced values for that origin and dated 2026-09-04 where the updated official tariff page supports them.
+- **Blocker:** current Avtodor PDF direct open returned 403; the official site’s browser page served a DDoS-Guard human-verification page. No challenge was solved or bypassed. The full row 89/current 89→646 fare remains untranscribed; no exact Yandex price was shown.
+- **Evidence:** official OССП notice https://unitoll.ru/about/press/news/izmenyayutsya-tarify-na-proezd-po-doroge-m-11-neva-/ ; official MDS table https://www.mos-spb.ru/tariffs/main/main-ru ; Avtodor tariff page https://avtodor-tr.ru/road/tariffs/ and detailed PDF https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf .
+- **Verification:** JSON parse and assertions on source conflict / 20 PVP58 origin cells / null complete-matrix status passed. No app or runtime changes.
+
+## 2026-10-12 — Yandex weekday/weekend route control for A-289
+
+- **What:** built the Yandex Maps car route from станица Марьянская to Темрюк. Tested Monday 2026-10-12 and Saturday 2026-10-17, both at 19:44 local time. The fastest route on each date follows A-289. Weekday: 1 h 28 min, 73 mi, toll display ~620 RUB. Saturday: 1 h 27 min, 73 mi, toll display ~620 RUB. Yandex details say this fare is for a vehicle under 2 m without a transponder and that toll data is supplied by road operators.
+- **Why:** user authorized Yandex route-price checks as a truth source and instructed that the product selects only the fastest route. This is a controlled weekday/weekend test for a disputed A-289 route.
+- **Decision:** preserve this as a user-approved Yandex route control with the displayed approximation marker intact. Do not substitute it for an operator tariff cell with toll-plaza endpoints and do not propagate it to other A-289 routes. Slower options are excluded by the fastest-only rule.
+- **Evidence:** Yandex Maps browser observation on 2026-10-12; selected path detail shows A-289 segments (28.5 mi and 22.8 mi); weekday screenshot/DOM date 2026-10-12 19:44; Saturday DOM date 2026-10-17 19:44. Separate snapshot: `source-snapshots/yandex-2026-10-12-a289-maryanskaya-temryuk.json`.
+- **Verification:** JSON parse and semantic assertions passed; control indexed in candidate file. No runtime code changes.
+
+## 2026-10-12 — M-12 Sokury–Shali post-extension tariff addendum
+
+- **What:** added the direct Sокуры exit→Шали Category-I passenger-car fare of 99 RUB, effective 2026-10-08 00:00 local, all day. Stored both in the M-12 source snapshot as a later operator tariff addendum and linked from the candidate control index. Updated audit/state notes to invalidate the older March Moscow→Шали assertion for routes crossing the newly paid span.
+- **Why:** prevent a stale pre-extension whole-vector result from being used after the toll boundary moved; obey the matrix rule to capture complete operator-defined route vectors directly and never append a component price to unrelated adjacent prices.
+- **Evidence:** Russian Highways official announcement https://ruhw.ru/press/news/154667/ (lines 109–112 states date, exact endpoints, Category I 99 RUB, 24-hour applicability, and references Avtodor tariffs). Interfax separately confirms the 7.045 km scope and toll-boundary endpoints: https://www.interfax-russia.ru/volga/news/proezd-po-7-kilometrovomu-otrezku-m-12-pod-kazanyu-s-8-oktyabrya-stanet-platnym (lines 26–32).
+- **Limits:** this proves only the Sокуры-exit→Шали vector. It does not refresh other M-12 entries/exits or validate the legacy Moscow→Шали price after the boundary extension. Avtodor tariff page direct fetch returned 403 in search; no browser challenge was attempted.
+- **Verification:** JSON parsing and semantic checks for the exact route, 99 RUB, start date, all-day period, and addendum linkage passed. No runtime files changed.
+
+## 2026-10-12 — matrix readiness and issue-count definition
+
+- **What:** recalculated state from the 16 tracked audit groups and candidate index: coarse road-asset presence is 20/20 (100%); issue-group status is 0 closed, 8 partial, 8 open/blocked. Added these counts to the recovery state and clarified the audit header. The consistency check also found that the Ryazan paid overpass was represented by a tariff entry but missing from the explicit 20-name asset list; added it so the listed count, declared count and inventory agree. Explicitly quarantined the M-12 March 2026 Moscow→Shali 5,909 RUB assertion as historical and non-runtime-approved, while retaining the direct post-extension Sokury-exit→Shali 99 RUB addendum.
+- **Why:** answer readiness questions without conflating presence of a road/source with completeness of its tariff cells or directed endpoint vectors.
+- **Method:** counted the 16 issue rows in `AUDIT_ISSUES_2026-10-12.md`; only rows explicitly marked Partial qualify as partial. The other 11 are Open, Reclassified unresolved, or Blocked; none meets the full closure standard.
+- **Verification:** parsed candidate matrix and M-12 snapshot; asserted 20 represented assets, 16 unique audit issue numbers, 0 Closed, 8 Partial, 8 Open/blocked; asserted March 5,909 RUB vector is quarantined and current direct 99 RUB vector remains present. No runtime changes. Git status unavailable because this writable work folder has no Git repository metadata.
+
+## 2026-10-12 — accessed and tested the official M-11 «Нева» tariff calculator
+
+- **What:** opened `https://m11-neva.ru/`; confirmed the route form is interactive and exposes origin/destination points, weekday, arrival-time interval, vehicle category and transponder/no-transponder. Verified direct Category-I no-transponder tariff for Moscow km22→Solnechnogorsk/M10 km58: 1,130 RUB Tuesday and 1,650 RUB Saturday for the selected 00:00–01:00 interval. These match the existing official 15–58 km table for Mon–Thu and Saturday daytime periods.
+- **Critical scope finding:** the operator tariff page heading says M-11 Moscow–Solnechnogorsk and identifies the 15–58 km concession. Homepage route selectors list points farther north, but km89→km646 also returned the same 15–58 values (1,130 weekday / 1,650 Saturday); a control from km58→km646 likewise displayed the weekday 15–58 amount. Do not ingest those outputs as prices for km58–679 or PVP89→PVP647. Store them only as a calculator scope/UI diagnostic.
+- **Why:** user specifically directed checking direct combinations on this operator site. Direct access was successful, but the scope boundary matters: this site validates the previously captured 15–58 matrix, not the Avtodor-operated km58–679 matrix.
+- **Evidence:** operator tariff page https://m11-neva.ru/rate/ explicitly labels the tariffs “Москва—Солнечногорск”; text search extract states km15–58. Direct browser UI observation saved in `source-snapshots/m11/m11-neva-live-calculator-access-2026-10-12.json`. The page warns its calculations are reference values and may differ from actual charges.
+- **Verification:** snapshot JSON parsed; compared observed 1,130/1,650 values to existing operator PDF snapshot `2026-04-24-section15-58-category1-no-transponder.json`; confirmed selected endpoints/payment/class/day are written. No runtime edits. No Git metadata available in this workspace.
+
+## 2026-10-12 — resolve interpretation of the M-11 58–679 full-span row
+
+- **What:** confirmed that PVP58→PVP679 (full km58–679 vector) already exists as an official current row. Clarified all four Category-I cells in the audit record: Mon–Thu 3,900 RUB with transponder / 4,200 RUB without; Fri–Sun 4,690 RUB with / 4,940 RUB without. Under the calculator's default no-transponder rule, use 4,200 and 4,940 RUB for the published day profiles.
+- **Why:** user correctly pointed out that a direct full-span route cell can be counted as one vector; the prior response blurred that specific complete row with the still-incomplete all-origin M11 matrix. The issue is only the mapping of 3,900/4,200 to day groups: in the official table those are payment-method columns within Mon–Thu, not Tue–Fri and Sat–Mon prices.
+- **Evidence:** current official Avtodor tariff page `https://avtodor-tr.ru/road/tariffs/` labels the span 58–679 km and, under Category I, lists columns Mon–Thu (with / without transponder), Fri–Sun (with / without transponder), with row values 3,900 / 4,200 / 4,690 / 4,940. The same page defines Mon–Thu and Fri–Sun treatment, including holidays and pre-holiday days. Search extraction ref `turn203search0`; direct page open is unavailable in this research interface.
+- **Decision:** the PVP58→PVP679 full-span cell is counted and runtime-eligible as source data with no transponder: 4,200/4,940 RUB, subject to the official effective-date scope recorded in the snapshot. User-reported 3,900 Tue–Fri / 4,200 Sat–Mon is preserved as a discrepancy note, not silently remapped. This does not complete arbitrary origin rows in the M11 58–679 matrix.
+- **Verification:** snapshot and candidate JSON parse; assertions confirm PVP58→679 current no-transponder values are 4,200/4,940, with-transponder values are 3,900/4,690, and the day profiles match the operator's published definitions. No runtime code changed.
+
+## 2026-10-12 — retract premature M-11 closure and log operator-calculator discrepancy
+
+- **What:** reverted issue #1 from Closed to Partial and restored the aggregate count to 0 closed / 8 partial / 8 open or blocked. Updated `AUDIT_ISSUES_2026-10-12.md` and `WORK_STATE.md`.
+- **Why:** user clarified that the prior message about closure was a question, and reported the m11-neva.ru UI showing 3,900 RUB Tuesday–Friday and 4,200 RUB Monday/Saturday/Sunday, with identical amounts regardless of transponder. This is not what the current Avtodor km58→679 table publishes.
+- **Evidence:** Avtodor official tariff page search result `turn205search0` displays 3,900/4,200 RUB Mon–Thu with/without transponder and 4,690/4,940 RUB Fri–Sun with/without. m11-neva.ru `/rate/` page itself labels the tariff scope Moscow–Solnechnogorsk; prior homepage UI test selected beyond-scope exits and returned the 15–58 section fare. No new 58→679 live selection was made in this turn; the user's current output remains a reported observation pending capture with exact controls.
+- **Decision:** retain Avtodor values as current published-source candidates; do not silently replace with the unexplained reported UI output. Ask no clarification now; continue next by reproducing the precise UI controls on m11-neva.ru, if possible, and establish whether it returns a genuine Avtodor fare or a calculator scope artifact. If direct output still differs, contact/source clarification is needed before choosing runtime values.
+- **Verification:** checked the official table's four cells and day/payment headings, the m11-neva.ru rate page scope, and consistency of 16 issue rows / 0 closed / 8 partial / 8 open-or-blocked. No runtime code changed.
+
+## 2026-10-12 — set Avtodor as authoritative source for M-11 km58–679
+
+- **What:** preserved the official Avtodor tariff cells as the adopted M-11 values, reclassified the reported m11-neva.ru figures as a UI diagnostic only, and recorded the user's source-priority decision in the M-11 snapshot, audit and state files.
+- **Why:** the user said official Avtodor data should be retained where available. The direct published PVP58→PVP679 Cat-I cells are 3,900/4,200 RUB Mon–Thu with/without transponder and 4,690/4,940 RUB Fri–Sun with/without. The m11-neva.ru page's stated rate scope is Moscow–Solnechnogorsk; previous higher-kilometer controls repeated the 15–58 section fare.
+- **Coverage limit:** this settles which source wins for the overlapping PVP58-origin vector cells; it does not establish that every entry/exit pair for km58–679 is already in our files. The current snapshot contains 20 direct PVP58-origin vectors, not the complete origin/destination matrix. Keep issue #1 Partial until the remaining applicable vectors are transcribed or the defined product vector set is explicitly bounded.
+- **Verification:** parsed the edited JSON snapshot and candidate matrix; asserted audit row count 16 with 0 closed, 8 partial and 8 open/blocked; confirmed all 20 PVP58-origin rows remain intact and the direct no-transponder PVP58→PVP679 values remain 4,200/4,940 RUB. No runtime code changed.
+
+## 2026-10-12 — clarify that Avtodor publishes direct prices for PVP pairs
+
+- **What:** updated the M-11 audit and recovery state to describe the official source correctly: detailed tariff appendices are PVP-origin × PVP-destination matrices, where each cell is a direct route-vector fare. Set the next task to transcribe all current cells from Order 274, not to infer them by summing per-PVP increments.
+- **Why:** the user's proposed vector model corresponds directly to the operator's matrix format. The previous summary understated the existence of other combinations. A prior official Avtodor matrix exposes rows and columns for many PVPs and direct values for every pair (e.g., km67→km89); these historic numbers demonstrate structure only and are not current fare inputs.
+- **Evidence:** official historical Appendix 1 search result `turn208search2` / `turn212search0` includes the full PVP-pair matrix. Current Avtodor Order 274 PDF dated 2026-09-04 is identified at `https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf` (search result `turn210search0`); direct open returns 403, and the current local snapshot contains 20 PVP58-origin cells only.
+- **Verification:** no prices copied from the historical matrix into current data. JSON parse and audit row-count check; runtime unchanged. Next task: obtain/transcribe the current Order 274 matrix cells while preserving category, payment basis, direction and day profile.
+
+## 2026-10-12 — user supplied Avtodor Order 274 PDF; inspected current M-11 matrices
+
+- **What:** copied the supplied 10-page Order 274 PDF into `source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf`; visually inspected the document and transcribed the Category-I PVP58-origin row for both day profiles into `currentOrder274Matrix` in the M-11 snapshot. Updated audit, state and candidate source index.
+- **Why:** user supplied the exact current operator document needed to resolve M-11 directed vector prices. The PDF contains complete origin-PVP × destination-PVP matrices; each cell is a direct fare, so do not compose prices from increments.
+- **Document facts:** Appendix 1, page 1 is Mon–Thu; page 5 is Fri–Sun; category I; 22 tariff points (462 ordered non-self cells/profile); Order 274 signed 2026-09-03 and tariffs effective 2026-09-04. The matrix header lists cash, bank card, and transponders APD/OSSP/MCC/NKD in one common table. Day definitions include holidays and pre-holidays as printed.
+- **Transcribed control:** PVP58→PVP679 is 3,900 RUB Mon–Thu / 4,200 RUB Fri–Sun; PVP67→PVP89 is 130/160 RUB. The first PVP58-origin row includes PVP58→PVP593 3,440/3,600 and PVP58→PVP647 3,600/3,890. These values are copied from the attached Order 274 matrices, not inferred.
+- **Conflict:** the current Avtodor tariff overview separately exposes a four-cell schedule for PVP58→PVP679 (3,900/4,200 Mon–Thu and 4,690/4,940 Fri–Sun with/without transponder). The detailed Order 274 matrix shows one common payment table at 3,900/4,200 by day profile. Both source records are retained separately; use Order 274 direct cells for this route-vector matrix and hold runtime integration until the source scope/payment distinction is reconciled.
+- **Coverage:** only the PVP58-origin row (21 destinations per profile) has been transcribed; the remaining 21 origin rows (441 ordered non-self cells/profile) are still outstanding. Matrix completion remains partial.
+- **Verification:** PDF has 10 pages and is unencrypted; visual inspection confirmed the two Cat-I tables and effective date; JSON parses; 22 PVP points and both 22-value row arrays asserted; PVP58→PVP679 and PVP67→PVP89 controls asserted. No runtime code changed.
+
+
+## 2026-10-12 — user confirmed M-11 tariff source priority
+
+- **Decision:** User explicitly designated Avtodor Order No. 274 dated 2026-09-03 as the basis for all M-11 km58–679 tariff data. Its direct Category-I origin-PVP × destination-PVP cells prevail over conflicting Avtodor overview-page values or calculator observations.
+- **Payment/day interpretation:** preserve the order's two profiles exactly (Mon–Thu excluding weekends, non-working holidays and pre-holiday days; Fri–Sun including weekends, non-working holidays and pre-holiday days). It prints one common matrix for cash, bank card and listed transponders; the calculator's base fare remains the no-transponder choice, with no extra adjustment where the order provides none.
+- **Scope:** copy each published direct vector cell from pages 1 and 5; do not calculate vectors by summing increments or subtracting origin totals. Retain conflicting lower-priority source observations in audit notes, but they no longer block Order 274 transcription.
+- **Progress:** PVP58-origin row is present (21 non-self cells per profile); the other 21 origin rows per profile are still outstanding. No runtime or V1/V2 edits.
+- **Verification:** JSON parse passed; PDF pages 1 and 5 rendered and reviewed. Full row-by-row transcription and matrix consistency check remain pending.
+
+- **Transcription aid:** rendered Order 274 pages 1 and 5 at 300 dpi and saved a raw Tesseract OCR transcript to `source-snapshots/m11/2026-10-12-order274-pages1-5-ocr-raw.txt`. It is explicitly labeled unverified/non-canonical; legible original page cells remain the only tariff authority. This captures all OCR candidate rows for subsequent correction without feeding OCR guesses to runtime.
+
+
+## 2026-10-12 — Order 274 cell extraction attempt
+
+- **What:** rendered Appendix 1 pages 1 and 5 at 300 dpi; isolated the Category-I tables; saved raw page OCR. Tested per-cell Tesseract extraction with grid coordinates.
+- **Result:** OCR is not accurate enough to promote automatically: digits are dropped/changed and the first-page parsing has unresolved cell alignment/missing cells. No newly OCR-read fares were inserted into the canonical matrix. Existing verified PVP58 row remains the only transcribed Order 274 row.
+- **Decision:** keep issue #1 partial; do not infer/fill the other 21 rows from noisy OCR or add/subtract route totals. Resume from original page images and verify each value directly; then run bidirectional/symmetry and full-cell-count checks.
+- **Environment:** the scratch workspace has no usable project Git branch; candidate state and raw OCR artifacts are local only. No runtime, publication or V1/V2 changes.
+
+
+## 2026-10-12 — manually transcribed next Order 274 M-11 rows
+
+- **What:** added direct Category-I origin rows PVP67, PVP89 and PVP97 for both Mon–Thu and Fri–Sun to the existing PVP58 row in the current snapshot. Prices were copied directly from the original page images (Appendix 1, pp.1 and 5); OCR was used only as a locator/check aid, not as the value source.
+- **Verification:** each row has 22 columns including an explicit null diagonal; JSON validation passed. Reciprocal cells among the four transcribed rows match where both sides are available. Per profile: 4/22 origin rows and 84/462 ordered non-self cells are transcribed; 18 rows / 378 cells remain.
+- **Decision:** matrix remains Partial and not runtime complete. Continue direct cell transcription; do not derive fare values.
+
+
+- **Follow-up transcription:** added four more direct Order 274 rows: PVP124, PVP147, PVP159 and PVP177, for both day profiles. Paired reciprocal values were checked against already transcribed rows; the checks agree. Current coverage is 8/22 rows (168/462 cells per profile); 14 rows / 294 cells per profile remain. JSON parse and semantic length/diagonal checks passed.
+
+
+## 2026-10-12 — completed M-11 km58–679 Order 274 matrix transcription
+
+- **What:** transcribed the remaining eight rows (PVP402, PVP444, PVP524, PVP545, PVP593, PVP647, PVP668, PVP679) for both profiles from original PDF page images. Combined with previously transcribed rows, both 22×22 Category-I matrices are now complete in the snapshot.
+- **Why:** user directed completion of this matrix before moving to other roads and confirmed Order No. 274 (signed 2026-09-03, effective 2026-09-04) as the source of truth. Each cell remains a direct PVP-to-PVP price; no increments or differences were used.
+- **Validation:** each profile has 22 rows, 22 columns/row, 22 null diagonal cells and 462 non-self fares. Automated reciprocal equality check passed across all 462 pairs in each profile; JSON parse and row-shape checks passed. PVP58→PVP679 in the Order is 3,900 RUB Mon–Thu / 4,200 RUB Fri–Sun.
+- **Disposition:** audit issue #1 moved Partial→Closed for source-matrix collection; overall issues are now 1 closed / 7 partial / 8 open. No runtime integration, build/test, publication or production change. Next road issue is M4 route-vector confirmation, then continue through the remaining audit list.
+- **Repository:** no usable Git working branch in this workspace; updated portable checkpoint files only.
+
+## 2026-10-12 — M-4 south-region tariff and Yandex controls
+
+- **What:** captured current Avtodor Category-I payment/day cells for PVP1046, 1093, 1184 and 1223; stored them with two precomputed audit vectors and preserved the prior Yandex candidate numbers. Ran live Yandex fastest-route checks for street-level Rostov-on-Don→central Krasnodar at 10:00 Tue 2026-10-13 and Sat 2026-10-17, with car <2 m/no transponder.
+- **Observed:** Yandex displays approximate toll totals of ~850 RUB Tuesday (3 h 46 min) and ~1,000 RUB Saturday (3 h 42 min). It does not expose the exact PVP sequence on the route card. Official Avtodor table extraction lists for PVP1093 transponder/no-transponder 150/150 Mon–Thu and 210/270 Fri–Sun; PVP1184 300/350 and 380/470; PVP1223 400/500 and 530/690; PVP1046 380/450 and 600/770. The official current page heading orders the columns by weekday/profile and payment type.
+- **Vector precomputations:** PVP sequence 1223→1184→1093: 1,000/1,430 RUB no transponder and 850/1,120 with transponder (Mon–Thu/Fri–Sun); adding PVP1046: 1,450/2,200 no transponder and 1,230/1,720 with transponder. These were precomputed offline from the published PVP cells and stored as audit vectors; no runtime sums are permitted.
+- **Why partial:** old 850/1,000 values plausibly mix the weekday transponder total (850) and weekday no-transponder total (1,000), but the newly tested Yandex street-level route independently displays those same numbers as weekday/weekend no-transponder estimates. Exact route-to-PVP equivalence is unproven, and the effective date printed inside the official detailed PDF was not independently extracted. Preserve both observations; do not silently reconcile them or approve a runtime cell.
+- **Files:** added `source-snapshots/m4-2026-10-12-avtodor-and-yandex-checks.json`; updated M4 record, audit issue #3, and recovery state.
+- **Verification:** JSON parse passed; asserted all four PVP rows and both Yandex controls exist with no-transponder metadata; verified vector arithmetic only as a one-time audit consistency check. No application runtime changes, tests, build or publication.
+
+## 2026-10-12 — corrected A-289 payment-basis label; CKAD/A-289 audit advanced
+
+- **Finding:** the Avtodor current tariff table for A-289's direct Марьянская→Темрюк vector lists Category-I amounts 800 RUB with a transponder and 1,103 RUB without. The existing whole-road control had stored “800 RUB” without a payment-method label, which could be mistaken for the calculator's base/no-transponder fare. Corrected the control to preserve both prices and clearly label 800 as the transponder rate.
+- **Yandex comparison:** existing date-selected fastest city route cards for Марьянская→Темрюк show ~620 RUB without a transponder on Mon 2026-10-12 and Sat 2026-10-17. This is retained as a user-authorized route-specific Yandex control; it conflicts with the direct operator vector and is not generalized. The endpoint/PVP mapping discrepancy remains open.
+- **CKAD:** its 16 current tariff rows and 2,381-RUB whole-ring benchmark remain; complete directed RVP-pair matrix is not yet present.
+- **State maintenance:** audit counts are now 1 closed / 8 partial / 7 open or blocked because M4 has moved from Open to Partial after capturing official and Yandex controls. Updated candidate control, audit, and recovery state.
+- **Verification:** both dataset/snapshot JSON parse; asserted A-289 payment basis 800-with / 1,103-without and count/status consistency. No runtime code/build/tests/publication.
+
+
+## 2026-10-12 — corrected M4 tariff-column interpretation and verified south vector
+
+- **Correction:** retract the earlier M4 interpretation that mapped 850/1,000 RUB to mixed transponder/day cells and the derived no-transponder vector 1,000/1,430 RUB. That conclusion came from flattening the overview table columns and is not supported by the direct operator tariff pages.
+- **Operator evidence:** direct pages for PVP1093, PVP1184 and PVP1223 show Category-I weekday/weekend tariffs of 150/150, 300/350 and 400/500 RUB. The operator identifies these as its three successive toll points on km1091.6–1319. The complete vector is recorded as 850/1,000 RUB Mon–Thu/Fri–Sun; runtime should look up this finished vector and never sum its PVP components.
+- **Yandex controls:** date-selected fastest routes from the PVP1093 vicinity to central Krasnodar displayed ~850 RUB Tuesday 2026-10-13 and ~1,000 RUB Saturday 2026-10-17; Yandex details specified car <2 m without transponder. A separate route from M4 km1025 (north of PVP1046) to central Krasnodar displayed ~1,230/~1,450 RUB on the same weekday/weekend dates and traced M4/E115/A-136. Treat these as approximate route controls, not standalone 1046 cells: Yandex route cards do not itemize each toll crossing.
+- **Files changed:** corrected the M4 source snapshot, candidate row, audit issue #3 and recovery state. The old flattened overview readings are not used as normalized tariff cells. PVP1046 remains unverified from a dated operator tariff document; M4 remains Partial.
+- **Verification:** source and candidate JSON parse; asserted southern PVP fare values, vector 850/1,000, Yandex controls and null unresolved cells; checked audit issue counts remain 1 closed / 8 partial / 7 open or blocked. No runtime changes, application tests, build or publication.
+
+
+## 2026-10-12 — normalized M4 PVP1046 and four-point vector
+
+- **New source finding:** the current Avtodor tariff page and its March 2026 tariff data give the Category-I base fare at PVP1046 (km1024–1091) as 380 RUB Mon–Thu and 450 RUB Fri–Sun, effective 2026-03-02. A dated report reproducing Avtodor's update confirms 380 RUB Monday–Friday / 450 RUB Saturday–Sunday (https://www.kommersant.ru/doc/8479038). This corrects the earlier flattened extraction that recorded 450/770 as a no-transponder fare.
+- **Completed vector:** added the direct lookup cell [1046,1093,1184,1223] = 1,230/1,450 RUB Mon–Thu/Fri–Sun, from the current PVP1046 base fare and the three downstream operator PVP fares. This is a one-time matrix transcription/normalization, not a runtime component sum. It matches date-selected Yandex fastest route estimates from M4 km1025 to central Krasnodar on 2026-10-13/17; Yandex explicitly says no transponder and car below 2 m.
+- **Coverage status:** M4 rows 1093→1184→1223 and 1046→1093→1184→1223 now have candidate complete vector prices, supported by direct PVP pages/current Avtodor schedule and route controls. Other contiguous vectors/road groups remain open, so issue #3 stays Partial.
+- **Verification:** recalculated the offline vector cells against the stored current PVP fares; JSON source/candidate files parse; route controls and day profiles match; audit counts remain 1 closed / 8 partial / 7 open or blocked. No runtime code or deployment changed.
+
+
+## 2026-10-12 — inspected A-289 fastest-route toll trace
+
+- **What:** reopened the saved date-selected Yandex route for Марьянская→Темрюк and inspected the complete Saturday directions and fare card.
+- **Observed:** fastest route is ~620 RUB, car <2 m, no transponder. Directions take two long A-289 legs (28.5 and 22.8 mi), leave the toll road via 03К-010, then rejoin A-289 for the final legs. The map's ~620 RUB equals the official A-289 direct full-vector transponder amount; the no-transponder table cell is 1,103 RUB.
+- **Disposition:** preserve Yandex ~620 as the route-specific control per user rule and preserve Avtodor 1,103 as the operator matrix vector. The route includes an exit/re-entry/bypass that may alter which toll facilities are traversed, but the observed amount matches the transponder cell; exact toll-point accounting and/or Yandex fare basis remains unresolved. Do not overwrite one with the other or infer arbitrary A-289 fare cells.
+- **Files:** amended A-289 Yandex source snapshot, audit issue #2 and recovery state.
+- **Verification:** displayed Yandex card explicitly labels no-transponder and lists A-289/03К-010 directions; JSON parses. No runtime changes.
+
+
+## 2026-10-12 — transcribed the current CKAD direct fare matrix
+
+- **Source:** official CKAD operator tariff page, https://tskad.ru/stoimost-proezda/tarifs-ckad/, identifies Order No. 56 dated 2026-02-27 and tariff validity from 2026-03-02. The current indexed operator page exposes the complete Category-I entry/exit matrix. The live operator page timed out in the browser, so the search-indexed primary-source table was transcribed, with this retrieval limitation recorded.
+- **What:** saved 15 entry/exit nodes and 210 direct ordered non-self fares (null diagonal) as Category-I base/post-payment prices in source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json. This is a direct vector matrix, not component increments.
+- **Validation:** every reciprocal origin/destination fare is equal, all 15 diagonals are null, and there are 210 non-self cells. Representative direct cell M-10→M-11 is 60 RUB; M-10→PK-5 is 3,189 RUB.
+- **Remaining conflict:** the holding-company release says “whole CKAD” is 2,381 RUB (2,023.85 after maximum T-pass discount), while the operator pair table has longer direct origin/destination cells up to 3,189 RUB. Preserve both with distinct scopes; do not overwrite the direct matrix or treat a max pair as the full-road cell until route endpoints are reconciled.
+- **Status:** CKAD matrix capture is complete for published nodes, but combined issue #2 remains Partial due to this whole-road scope conflict and the A-289 Yandex-vs-operator discrepancy.
+
+
+## 2026-10-12 — full recovered catalogue and vector construction
+
+User requested finishing the matrix without reopening agreed questions. Recovered correct GitHub branch and prior 21 M4 / 25 M12 raw rows, built 4,683 tariff records and 374 canonical M4 candidate spans, captured live Mytishchi 73/57/44/51/34 and whole259, fixed Heihe and excluded-road JSON, added Odintsovo time combinations and MSD dated masks. Corrected M1/M3 class-column mistakes using the current indexed official page. `node scripts/build-vector-matrix.cjs` and `node scripts/validate-vector-matrix.cjs` both passed; exact assertions and limitations are in `MATRIX_VALIDATION_2026-10-12.json`. Complete narrative: `MATRIX_HANDOFF_2026-10-12.md`. This is data construction, not proof that every route was independently checked in Yandex. Old M12 Shali cells expire Oct8; new99 is a separate direct span and is not blindly added to old whole-route fares. No V1/V2/Production changes. Starting remote head440ce6b2; correct experiment branch restored via connector, atomic data/docs commit prepared next.
+
+## 2026-10-13 — этап 1: восстановление и сверка
+
+Создана отдельная writable копия репозитория и локальная audit-ветка. Перенесены исходные данные без изменения тарифных чисел. Старый противоречивый аудит сохранён как AUDIT_HISTORY; создан актуальный аудит и краткое состояние. Отозван ошибочный вывод предыдущего прохода о неверных южных ценах в действующем сводном JSON.
+
+Проверка: node experiments/nationwide-tolls/scripts/validate-vector-matrix.cjs — PASS 4683. Предыдущий EROFS устранён использованием writable копии. Shell git ls-remote завершился сетевой ошибкой; GitHub connector подтвердил существование целевой ветки, но её head и PR не проверены. Нет удалённого коммита/публикации. Следующий шаг: этап 2 по текущему аудиту.
+
+## 2026-10-13 — этап 2: отбор актуальных тарифов
+
+Создан воспроизводимый build-release-register.cjs: 2086 записей с опубликованной/согласованной ценой на дату 13 октября, 777 истёкших или будущих версий отдельно, 1820 candidate-записей отдельно. Ни одна selected-строка не одобрена для runtime без привязки маршрута. Проверки partition-count, запрета candidate и текущих дат — PASS. Тарифные значения не подменялись. Публичные источники повторно подтверждают Багратион790, Уфа150, тарифную группу1 Удмуртии400/300/700; особые условия классификации ТС не отменены. Автодор403; сообщение М12 timeout. Новые arbitrary OD-пары не извлечены, массовый Яндекс-контроль не проводился.
+
+Сбор реестра выполнен. Этап2 по маршрутной привязке остаётся частично выполненным: М4 candidate, новые М12 пары, контроль ЦКАД/фиксированных проездов. Следующий шаг — маршрутная проверка этих групп либо явное ограничение покрываемых векторов перед финальной моделью.
+
+## 2026-10-13 — закрытие статуса кандидатов
+
+По прямому запросу пользователя и ранее согласованному правилу исключения недоказанных тарифов: 1456 М4 candidate +4 ДЗОК +360 М12 candidate исключены из текущего покрытия. Генератор теперь сохраняет причины/условия повторного включения; pendingCandidates=0. Это не подтверждение всех проездов; остаётся ограниченное покрытие и неизвестный итог при пересечении исключения. Проверка численности, непересечения групп, отсутствия runtime-повышения, сохранения М4юг и М12direct99 — PASS. Следующий шаг: модель маршрута/времени и интеграция; удалённого обновления не выполнялось.
+
+## 2026-10-13 — пользователь разрешил оценки
+
+Прямое решение пользователя заменило исключение1820: разрешено применять с пометкой «Стоимость не подтверждена». Изменён генератор: provisional, authorizedForEstimate, обязательная видимая метка. История/будущие версии сохранены вне текущего расчёта. Проверки1820, обязательных меток, дат и суммы4683 — PASS. Записан контракт следующего этапа ROUTE_PRICE_POLICY.md; интерфейс/API ещё не подключены. Следующий шаг: интеграция в актуальную экспериментальную ветку.
+
+## 2026-10-13 — реализация изолированного обработчика тарифов
+
+engine/quote.cjs реализует точный ключ дорожной группы/from/to/profile, проверку действующей даты, согласованность routeId и exactTraversal, полноту платных доказательств, уникальность traversalId. selected/provisional/history используются с датами; кандидат выдаёт числовую оценку и метку, которая распространяется на общий результат и formatCopy. Неизвестный компонент делает итог null; ноль только при confirmedNoPaidCrossing.
+
+scripts/quote.test.cjs — PASS: confirmed югМ4, candidate310, смешанный итог с предупреждением, копирование, отсутствующая цена, другая геометрия, дубликат, unresolved profile, бесплатность, граница МСД15/16 октября, старый Шали. Это изолированные unit-тесты, не API/браузер E2E или полный build. Адаптер геометрии/таймзон должен обеспечивать правдивые exactTraversal/profileResolved; они не выводятся обработчиком самостоятельно.
+
+GitHub connector прочитал актуальные AGENTS и docs/WORK_STATE экспериментальной ветки: продолжать изолированно, сохранять журнал/решения/next steps. Прямой git mirror не авторизован. API/UI действующего экспериментального приложения ещё не подключены, удалённого коммита/публикации нет. Следующий шаг: восстановить актуальные исходники V3/эксперимента и вставить этот контракт в его adapter/API/UI, проверить сборку и браузер.
+
+## 2026-10-13 — API adapter и защита повторного начисления
+
+Прочитаны актуальные GitHub файлы V3 API/page, route-leg/route-leg-pricing, shared result types/copy/result-panels и README/backlog. Источники показывают диагностическое national coverage; actual native API/UI ещё не используют новый обработчик.
+
+Добавлен engine/api-adapter.cjs: перевод результата quote в tolls.amount/pricingStatus/priceConfirmation/displayLabel и matrixQuote; copyRouteResult сохраняет предупреждение. quote запрещает двойное представление одной дорожной группы (m4-south+m4-candidate, аналогично М12). Раздельные дорожные группы суммируются с распространением unconfirmed. Подготовлен app/v3/components/toll-confirmation-note.tsx для UI, пока не импортирован текущей страницей.
+
+Проверки: scripts/quote.test.cjs PASS (включая API JSON roundtrip, копирование, null, двойной М4, М4+Уфа); validate-vector-matrix.cjs PASS4683. React-компонент не отрендерен, TypeScript/fullbuild/HTTP/browser E2E не запускались. Remote source tree прочитан частично; head SHA не установлен и новая работа только в локальной audit-ветке. Следующий шаг: восстановить полный актуальный checkout, интегрировать API adapter через реальные route evidence и вывести компонент рядом с суммой, затем полный build/E2E.
+
+## 2026-10-13 — V3 integration of estimates (current block)
+
+User policy: current candidate prices may be used with a visible «Стоимость не подтверждена» label. Restored every remote blob of experimental head440ce6b2 via connector; all source hashes matched. Local recovery history differs from remote Git history; remote integration must use440ce6b2 as parent, not the special-territory base.
+
+Implemented V3-only route-leg/pricing modules and changed V3 API to use them. M4 adapter selects a finished exact confirmed-PVP vector from selected/provisional tables, keeps direction prices equal, rejects missing dates, duplicate Pvps, partial evidence, day/profile boundary and A289 composition replacement. Existing other-road engines still provide their prices; all V3 numeric results are labeled unconfirmed while nationwide integration remains partial. Dedicated V3 copy hook appends the label. UI note is imported beside V3 results. V2 pricing files/UI unchanged; shared m4-production only normalizes diagnostic renamed field for TypeScript compatibility.
+
+Found pre-existing experimental regression failures22/305: compiler tests used seeded source as an empty template, preview tests assumed zero rather than two seeded cells, timed wrapper used obsolete priceCells schema. Fixed synthetic fixture separation and migrated timed source selection to spanCells without changing seeded tariffs.
+
+Actually run: TypeScript noEmit PASS after fixing the original renamed preview field plus new adapter typing; native experiment tests305/305 PASS; M4 route adapter6/6 PASS; quote/JSON/copy assertions PASS; React server render warning visible/unconfirmed and hidden/confirmed PASS; Next production build --webpack PASS with16/16 static pages; real local HTTP /v3=200 and invalid /api/v3/calculate=400 PASS. Initial default-host server encountered uv_interface_addresses; explicit127.0.0.1 resolves start, same-process HTTP verified.
+
+NOT RUN: live geographic route APIs/Yandex/browser driving E2E, the full calculator-final-gate workflow, new Preview deployment. Per-road integrations beyond M4 remain partial; marked estimates are not national independently verified coverage. Next: persist this tested code against actual experimental head, inspect branch CI/Preview, then verify real routes and extend other-road matrix adapters.

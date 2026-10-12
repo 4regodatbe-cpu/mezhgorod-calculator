@@ -15,7 +15,7 @@ function request(sequence,period="monThu",date="2026-10-09"){
   routeProof:{routeId:"synthetic-r1",status:"complete",sameSelectedGeometry:true,mainlineContinuity:"verified",reentryStatus:"not_observed",unknownCandidateCount:0,candidateCount:sequence.length,checkedCandidateCount:sequence.length},
   confirmedPvps:sequence.map((pvpId,i)=>({pvpId,status:"confirmed",routeId:"synthetic-r1",routeIndex:i+1,osmNodeId:"synthetic-node-"+i}))};
 }
-test("current matrix has the new span schema and no invented price cells",()=>{assert.equal(validateM4PvpMatrix(actual),true);assert.equal(actual.spanCells.length,0);});
+test("current matrix preserves the two user-accepted dated estimates",()=>{assert.equal(validateM4PvpMatrix(actual),true);assert.equal(actual.spanCells.length,2);assert(actual.spanCells.every(c=>c.source.acceptedByUserRule));});
 test("unknown span has no price",()=>assert.equal(quoteM4BySpan(actual,request(["m4-1223","m4-1184"])).amountRub,null));
 test("two-PVP span returns its precomputed weekday value",()=>assert.equal(quoteM4BySpan(synthetic,request(["m4-1184","m4-1223"])).amountRub,700));
 test("two-PVP span returns its precomputed weekend value",()=>assert.equal(quoteM4BySpan(synthetic,request(["m4-1184","m4-1223"],"friSun")).amountRub,850));
