@@ -260,3 +260,12 @@ User proposed using Yandex Maps to check actual toll estimates for chosen origin
 - **Не делалось:** raw schedule arrays НЕ преобразованы в `national-registry` prices, M-4 span matrix или route-runtime fare. Это не молчаливое утверждение о точном тарифном профиле.
 - **Commit data:** `5559ee2012f3dd7f55c7d557878658f6dd3f257a`; docs/data only, no tests/build.
 - **Следующее:** скачать/прочесть тарифные PDFs, задать точные profile mappings and effective intervals; затем сгруппировать M-4 continuous spans и complete operator-specific matrices; выполнить validators and coverage checks.
+
+
+## 2026-10-12 — complete M-11 15–58 km no-section-transponder matrix captured
+
+- **Что сделано:** добавлены все 42 направленных тарифных пары между семью узлами участка М-11 15–58 км в `TARIFF_CANDIDATES_2026-10-12.json`. Сохранены пять ценовых окон: каждый день 01:00–06:00; Пн–Чт 06:00–01:00; Пт; Сб; Вс (дневные окна до 01:00 следующего дня). Профиль PDF: группа 1, включая легковые машины высотой ≤2 м; прямо указано отсутствие транспондера секции 15–58. Действие с 12.01.2026 01:00.
+- **Почему:** это полноценная тарифная матрица независимого оператора; native time/day bands должны сохраниться, поскольку общая M-4 модель Пн–Чт/Пт–Вс сюда не подходит.
+- **Источник:** официальный PDF М-11 https://m11-neva.ru/upload/iblock/efd/jchklu42unx7iu0avbw123k314l3w6dk.pdf (стр. 1–2), список действующих документов https://m11-neva.ru/documentation/ . Данные переведены по таблице из PDF, не из Яндекс-карточек.
+- **Проверка:** JSON повторно прочитан из ветки и распарсен; проверено 42 клетки, 7 origins, 5 bands, все значения целые числа, null отсутствуют. Commit data `c6e544edf501937410c2e04ba083632ccba7d8cb`. Tests/build not run (data-only).
+- **Открытый вопрос:** правило выбора времени в операторской таблице на маршруте, пересекающем временную границу, не кодировали; проверить по правилам ОССП до route engine integration. Далее — добавить pricing table для М-11 58–679, М-4/M-12 others and external operators.
