@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-12",
+  "status": "candidate_official_table_transcription_not_runtime_ready",
+  "source": {
+    "operator": "Автодор",
+    "title": "Тарифы на проезд по платным дорогам",
+    "url": "https://avtodor-tr.ru/road/tariffs/",
+    "retrievedBy": "indexed official page search result",
+    "note": "Официальная страница сообщает, что тариф действует с даты в документе с подробными тарифами; дата вступления для текущего снимка не извлечена. Числовые значения ниже переписаны из строки таблицы. Раскладка по категории/периоду трактуется как I категория без транспондера: первые два тарифа строки (Пн–Чт, Пт–Вс); нужно сверить с доступным PDF перед runtime."
+  },
+  "vehicleProfile": {
+    "category": "I",
+    "payment": "no_transponder",
+    "periods": [
+      "monThu",
+      "friSun"
+    ],
+    "interpretationStatus": "candidate_needs_pdf_header_confirmation"
+  },
+  "rows": [
+    {
+      "pvpOrId": "m4-62",
+      "kmRange": "21-62",
+      "section": "не указано",
+      "rawDisplayedAmounts": [
+        220,
+        220,
+        240,
+        260,
+        480
+      ],
+      "candidateClassINoTransponder": null,
+      "readiness": "column_mapping_unresolved"
+    },
+    {
+      "pvpOrId": "m4-71",
+      "kmRange": "21-93",
+      "section": "МКАД — с. Ситне-Щелканово",
+      "rawDisplayedAmounts": [
+        310,
+        400,
+        450,
+        500,
+        820
+      ],
+      "candidateClassINoTransponder": [
+        310,
+        400
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-133",
+      "kmRange": "93-211",
+      "section": "с. Ситне-Щелканово — д. Быковка",
+      "rawDisplayedAmounts": [
+        400,
+        500,
+        550,
+        600,
+        1140
+      ],
+      "candidateClassINoTransponder": [
+        400,
+        500
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-228",
+      "kmRange": "211-266",
+      "section": "д. Быковка — пос. Волово",
+      "rawDisplayedAmounts": [
+        260,
+        320,
+        360,
+        470,
+        680
+      ],
+      "candidateClassINoTransponder": [
+        260,
+        320
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-322",
+      "kmRange": "266-322",
+      "section": "пос. Волово — г. Ефремов",
+      "rawDisplayedAmounts": [
+        260,
+        320,
+        360,
+        470,
+        680
+      ],
+      "candidateClassINoTransponder": [
+        260,
+        320
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-339",
+      "kmRange": "322-401",
+      "section": "г. Ефремов — с. Большие Извалы",
+      "rawDisplayedAmounts": [
+        370,
+        400,
+        470,
+        540,
+        810
+      ],
+      "candidateClassINoTransponder": [
+        370,
+        400
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-355",
+      "kmRange": "322-401",
+      "section": "не указано",
+      "rawDisplayedAmounts": [
+        220,
+        220,
+        250,
+        350,
+        600
+      ],
+      "candidateClassINoTransponder": [
+        220,
+        220
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-416+m4-460",
+      "kmRange": "401-464",
+      "section": "с. Большие Извалы — с. Конь-Колодезь",
+      "rawDisplayedAmounts": [
+        230,
+        360,
+        380,
+        480,
+        880
+      ],
+      "candidateClassINoTransponder": [
+        230,
+        360
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-515",
+      "kmRange": "492-517",
+      "section": "с. Новоживотенное — пос. Отрадное",
+      "rawDisplayedAmounts": [
+        150,
+        170,
+        200,
+        250,
+        440
+      ],
+      "candidateClassINoTransponder": [
+        150,
+        170
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-545-a",
+      "kmRange": "517-544",
+      "section": "пос. Отрадное — с. Рогачевка",
+      "rawDisplayedAmounts": [
+        140,
+        160,
+        200,
+        220,
+        350
+      ],
+      "candidateClassINoTransponder": [
+        140,
+        160
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-545-b",
+      "kmRange": "545-589",
+      "section": "с. Рогачевка — с. Средний Икорец",
+      "rawDisplayedAmounts": [
+        180,
+        250,
+        270,
+        300,
+        640
+      ],
+      "candidateClassINoTransponder": [
+        180,
+        250
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-620",
+      "kmRange": "589-633",
+      "section": "с. Средний Икорец — с. Шестаково",
+      "rawDisplayedAmounts": [
+        180,
+        250,
+        270,
+        300,
+        640
+      ],
+      "candidateClassINoTransponder": [
+        180,
+        250
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-636",
+      "kmRange": "633-741",
+      "section": "с. Шестаково — г. Богучар",
+      "rawDisplayedAmounts": [
+        570,
+        640,
+        700,
+        770,
+        1310
+      ],
+      "candidateClassINoTransponder": [
+        570,
+        640
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-672",
+      "kmRange": "633-741",
+      "section": "не указано",
+      "rawDisplayedAmounts": [
+        350,
+        440,
+        470,
+        500,
+        880
+      ],
+      "candidateClassINoTransponder": [
+        350,
+        440
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-803",
+      "kmRange": "741-893",
+      "section": "г. Богучар — Алексеево-Лозовское",
+      "rawDisplayedAmounts": [
+        560,
+        620,
+        780,
+        950,
+        1520
+      ],
+      "candidateClassINoTransponder": [
+        560,
+        620
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-911",
+      "kmRange": "893-933",
+      "section": "слобода Дёгтево — г. Каменск-Шахтинский",
+      "rawDisplayedAmounts": [
+        200,
+        250,
+        300,
+        350,
+        620
+      ],
+      "candidateClassINoTransponder": [
+        200,
+        250
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-1046",
+      "kmRange": "1024-1091",
+      "section": "Обход Аксай",
+      "rawDisplayedAmounts": [
+        380,
+        450,
+        600,
+        770,
+        1090
+      ],
+      "candidateClassINoTransponder": [
+        380,
+        450
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-1093",
+      "kmRange": "1091-1119",
+      "section": "г. Ростов-на-Дону — х. Цукерова Балка",
+      "rawDisplayedAmounts": [
+        150,
+        150,
+        210,
+        270,
+        410
+      ],
+      "candidateClassINoTransponder": [
+        150,
+        150
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-1184",
+      "kmRange": "1119-1195",
+      "section": "х. Цукерова Балка — с. Павловская",
+      "rawDisplayedAmounts": [
+        300,
+        350,
+        380,
+        470,
+        930
+      ],
+      "candidateClassINoTransponder": [
+        300,
+        350
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-1223",
+      "kmRange": "1195-1319",
+      "section": "с. Павловская — г. Краснодар",
+      "rawDisplayedAmounts": [
+        400,
+        500,
+        530,
+        690,
+        1240
+      ],
+      "candidateClassINoTransponder": [
+        400,
+        500
+      ],
+      "readiness": "candidate"
+    },
+    {
+      "pvpOrId": "m4-dzok-46",
+      "kmRange": "0-51",
+      "section": "Дальний западный обход Краснодара",
+      "rawDisplayedAmounts": [
+        410,
+        410,
+        600,
+        770,
+        1090
+      ],
+      "candidateClassINoTransponder": [
+        410,
+        410
+      ],
+      "readiness": "candidate"
+    }
+  ],
+  "routeControls": [
+    {
+      "route": "Липецк—Воронеж",
+      "yandexMonThu": 230,
+      "yandexFriSun": 360,
+      "candidateRelatedSpan": "m4-416+m4-460",
+      "match": "amount_and_named_bypass_match; exact route gate sequence not exposed by Yandex",
+      "url": "https://yandex.com/maps/?mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T12%3A14%3A00&rtext=52.608800%2C39.599200~51.660800%2C39.200300&rtt=auto"
+    },
+    {
+      "route": "Домодедово—Кашира",
+      "yandexMonThu": 310,
+      "yandexFriSun": 400,
+      "candidateRelatedSpan": "m4-71",
+      "match": "amount match; exact route gate sequence not exposed by Yandex",
+      "url": "https://yandex.com/maps/?mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T12%3A14%3A00&rtext=55.442200%2C37.765200~54.839800%2C38.150800&rtt=auto"
+    }
+  ],
+  "decisions": [
+    "Срочное заполнение: сохранять тарифные числа сразу как кандидаты и не терять provenance.",
+    "Официальная таблица — основной источник строк; отображённые значения не подменяют отдельную проверку периода действия и колонки профиля.",
+    "Сумма Яндекса принимается пользователем как истина только для конкретного OD/date/time; перенос в span-ячейку требует доказанного PVP-вектора.",
+    "Неизвестные цены остаются null; partial/per-PVP суммы не показываются как полная цена в калькуляторе."
+  ],
+  "runtimeEnabled": false,
+  "next": [
+    "Извлечь приложенный официальный PDF с датой действия и заголовками колонок.",
+    "Сопоставить весь перечень тарифных строк с точными PVP IDs и геометрией.",
+    "Заполнить симметричные span-ячейки М-4 для поддерживаемых непрерывных векторов.",
+    "Собрать аналогичные candidate tables для М-1, М-3, М-11, М-12, ЦКАД, А-289 и региональных дорог."
+  ]
+}
