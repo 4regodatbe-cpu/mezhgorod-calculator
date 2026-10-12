@@ -1,3 +1,11 @@
+## CURRENT 2026-10-12 — benchmark plan updated
+
+- Block 6 in `experiments/nationwide-tolls/IMPLEMENTATION_PLAN_2026-10-12.md` now records the seven dated OD pairs, fare/no-fare results, slow-alternative exclusion for Kronstadt, mixed M11 and ferry caveats, and fact that only two M4 chain cells are currently seeded. Plan update commit `92f748f`.
+- Current-route observations and links remain in `YANDEX_DATE_TEST_RESULTS_2026-10-12.md`; control index in `YANDEX_DATE_TEST_MATRIX_2026-10-12.md`; append-only logs in `WORK_LOG.md`.
+- Not 100%: majority of Russian toll groups, M4 PVP spans and all operator-specific full tariff evidence/receipts remain unverified. All new routes are diagnostic-only; no new amounts activated in runtime. Branch: `experiment/toll-od-matrix-2026-10-08`; no tests/build run because this batch changed documentation only.
+
+---
+
 ## CURRENT 2026-10-12 — ранний М‑4 OD контроль добавлен
 
 - Домодедово (ул. Каширское шоссе, 32) → Кашира (Советская ул.): Яндекс fastest ~310 ₽ / 1:04 / 50 mi во вторник и ~400 ₽ / 1:15 / 50 mi в субботу, выезд 12:14. Подробная карточка выходного: легковое авто <2 м, без транспондера; route details показывают E115 → Каширское шоссе.
