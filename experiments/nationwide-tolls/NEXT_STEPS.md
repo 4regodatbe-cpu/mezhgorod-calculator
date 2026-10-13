@@ -1,7 +1,7 @@
 ## 2026-10-13 — stage5 checkpoint
 
 - [x] Existing M11/M12/CKAD code/calculation audit: selected OSRM M11 metadata, direct M11/CKAD matrix adapters, separated M11 head, physical p147/fractional positions, disjoint/repeat guards, missing679–684 blocks full price.491 tests/build PASS.
-- [ ] Publish verified experiment checkpoint and inspect exact Preview source/logs; publication pending at checkpoint creation.
+- [x] Saved experiment1506a862;21 hashes match. Preview oy89ta0xy READY exact source,491 remote tests/build PASS.
 - [ ] Stage6: M1/M3/regional composition and source coverage.
 - [ ] Stage7: independent per-road holiday/profile/crossing-time/seasonal calendars.
 - [ ] Stage10: physical M11 partial/head/reverse/679–684 and CKAD gates; OSRM M12 strict metadata and Sokury–Shali; Slavyansk–Rostov fastest-route gap. Final live Moscow→Petersburg and Tver→Moscow remain unknown, not certified prices.

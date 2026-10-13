@@ -38,3 +38,10 @@ Final raw records: `live-controls/2026-10-13-stage5-moscow-petersburg.json`, `li
 Stage6 M1/M3/regional matrix composition. Stage7 per-road holidays, direction-specific entry dates, midnight/head seasonal dates. Stage10 physical M11 partial/head/reverse/679–684 and CKAD exact gates, OSRM M12 span, Sokury–Shali exit, full provider/Yandex equivalence including Slavyansk→Rostov. Full reverse Moscow-head traversal currently unknown; never price only mainline as entire trip.
 
 Publication: pending at report creation; exact GitHub code SHA, hash comparison and Preview status must be appended after actual completion.
+
+
+## Verified persistence / Preview — stage5
+
+Local implementation538c8ac maps to remote code6f68c9574f8eab5e4a6d795764949d53b9a99f49 (parent839784e5), followed by1506a8623cd9780930de75a346fb96133dc5f93c for large work-log/live-control blobs. Final tree dd4c509fb9de22ce16a335475496ffaaae7e5824 matches all21 changed local blobs,0 mismatches; unrelated tree preserved, ref fast-forward with expected_sha and force=false. First post-upload verification caught3 omitted large files because the upload orchestration updated a transient loaded array rather than persisted entries; corrected immediately in the follow-up commit and all21 verified. No lost local work or different source code deployed.
+
+Vercel dpl_BCRWYuDsaxfZMvL72C66EyMbfHWe READY, target=null, exact source1506a862. URL https://mezhgorod-calculator-oy89ta0xy-4regodatbe-5310.vercel.app/v3 . Remote build logs491 tests/pass491/fail0; quote/API contracts PASS; TypeScript/Next16/16 PASS; Build Completed37s. Authenticated connector GET /v3 HTTP200. This establishes page availability, not hosted browser/route POST, which still have not run. No merge/main/Production. Nextstage6.

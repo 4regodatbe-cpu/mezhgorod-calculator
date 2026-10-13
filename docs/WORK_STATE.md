@@ -4,7 +4,7 @@ DONE code/calculation audit of existing integration: OSRM M11 metadata retained 
 
 LIVE actual local API handler with external providers: Moscow→Petersburg710.317km/24636s Valhalla unknown due separate679–684; Tver→Moscow179.202km/8889s OSRM unknown incomplete physical OD. An intermediate5030 subset caught and blocked before publication. No hosted Preview POST/browser/Yandex/CKAD/M12 live validation. Existing A289620/415 fix stands; Slavyansk→Rostov provider mismatch remains open.
 
-IN PROGRESS persistence: local baselineac6fefb, remote experiment head839784e5 reconfirmed, pending new commit/Preview. No main/merge/Production. NEXT stage6 M1/M3/regional; stage7 calendar; stage10 physical gates/provider alignment.
+PERSISTED implementation538c8ac → remote1506a8623cd9780930de75a346fb96133dc5f93c (via6f68c957);21 changed hashes match,0 mismatches. Preview dpl_BCRWYuDsaxfZMvL72C66EyMbfHWe READY exact source1506a862, target=null; https://mezhgorod-calculator-oy89ta0xy-4regodatbe-5310.vercel.app/v3 . Remote491/pass491/fail0, contracts/TypeScript/Next16/16 PASS; authenticated GET /v3 HTTP200 (availability only). No main/merge/Production. NEXT stage6 M1/M3/regional; stage7 calendar; stage10 physical gates/provider alignment.
 
 ---
 
