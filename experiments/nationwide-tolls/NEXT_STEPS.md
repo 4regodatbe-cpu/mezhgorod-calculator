@@ -185,3 +185,7 @@ Yalta/Anapa → Krasnodar short-route fix: experimental commit ed34c4c, Preview 
 Publish/test exact UI+recovery Preview. Then implement full directed M11 southbound head/mainline/tail and complete M12 selected-route coverage for Ufa with authoritative versions; screenshot amounts only comparisons. Run browser when Chromium available, same-route Yandex duration/fare controls, consolidated final audit. See STAGE10_UI_USER_ROUTES_AUDIT_2026-10-13.md. Full three numeric fees OPEN.
 
 Preview UI/recovery published and verified: a38c50e3, dpl_DyQNDZRP7MEn6F1L1ryATYhhc7rZ READY,530 tests/build/GET200. Publication task complete; next full directed M11/M12 and working browser. Three screenshot fares still OPEN.
+
+
+## CURRENT BLOCKER 2026-10-13
+Restore runtime connection; recover existing local tested changes/archives OR apply recovery/road-availability-patch.json with safe driver, regenerate/recover fixture, full gate/build/hash proof, implementation Git/Preview. See ROAD_AVAILABILITY_RECOVERY_2026-10-13.md. Local536 PASS, Volnovakha3050/Voronezh2300 observed; not published. Ufa/Petersburg full totals remain OPEN. No Production.

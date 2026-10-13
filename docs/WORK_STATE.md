@@ -1,3 +1,13 @@
+## CURRENT 2026-10-13 — BLOCKED: runtime disconnected during fare-fix persistence
+
+Locally implemented and VERIFIED536/pass536/fail0 + contracts/TS/Next16/16, scopedlint/diffcheck: M4 proof starvation worker/budget fix, M4/M11 unchanged-profile overnight handling, selected OSRM M12 evidence/completeness, selected special diagnostics. Fresh API+external traces restored Volnovakha→Moscow3050 RUB and Moscow→Voronezh2300 RUB (both unconfirmed). Ufa→Petersburg full price still OPEN (disjoint M12, M11/tail, CKAD M7→M11).
+
+Execution environment disconnected409 environment_offline during docs/git save; local final commit/save not confirmed. Runtime source NOT published: remote runtime still baselinead9a8b06, latest prior verified UI Previewir6hc5hpg/sourcea38c50e3/530 tests. This checkpoint stores recovery artifacts only, not applied code.
+
+[Complete recovery/verified results](../experiments/nationwide-tolls/ROAD_AVAILABILITY_RECOVERY_2026-10-13.md); recovery/road-availability-patch.json contains15 reconstructed target sources; safe apply driver checks base Git blobs/skips exact targets/aborts conflicts. Prefer recover original local working tree and gzip live evidence, then gates/hash verification/persist exact implementation/Preview. No main/merge/Production. Stage10 IN PROGRESS, not all-road audit completed.
+
+---
+
 ## CURRENT 2026-10-13 — stage10 UI/user-route block, IN PROGRESS
 
 DONE requested V3 logo from approved portal SVG, A/B swap preserving positions/reset, larger centred rate units, circular stepper controls, blank-label CTA gating, shorter fastest note, prominent unknown full-total note. Fixed proven V3 partial corridor recovery995→null instead of false complete fare. Speculative A289 changes removed; existing620/415 intact.
