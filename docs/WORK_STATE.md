@@ -1,10 +1,10 @@
-## CURRENT 2026-10-13 — аудит: части 1–3 завершены локально
+## CURRENT 2026-10-13 — аудит: части1–3 в GitHub и Preview
 
-DONE: часть1 ef0da4c (календарь API); часть2 57543aa (валидность provider route, exact fastest geometry/evidence); часть3 (А-289 промежуточные OD, порядок внутри сегмента, unknown вместо fallback, повторные проезды). Общий gate472/472 + quote/API contracts, TS, Next webpack16/16, scoped ESLint PASS. План/подробности: [AUDIT_PLAN_10_PARTS_2026-10-13.md](../experiments/nationwide-tolls/AUDIT_PLAN_10_PARTS_2026-10-13.md). Baseline8556e57 включает прежний ещё не опубликованный аудит; не путать с newly run changes.
+DONE: часть1 ef0da4c (календарь API), часть2 57543aa (валидность/геометрия fastest), часть3 373fefd (A289 intermediate OD, frame order, unresolved/repeat guard), плюс сохранён прежний audit baseline8556e57. GitHub code SHA **93c0c5d2848202824f5a0e3f2afb1f782080c7d6**, parent d0dc2227; branch experiment/toll-od-matrix-2026-10-08. Переданные35 файлов проверены по Git blob SHA, несовпадений0.
 
-IN PROGRESS: сохранить проверенные части1–3 и baseline audit в remote experiment. Head d0dc2227 и tree0ed91222 получены GitHub API; все изменённые tracked исходники baseline9b30d57 совпадают с remote по Git blob SHA. Локальная integration/matrix-estimates-2026-10-13, remote experiment/toll-od-matrix-2026-10-08. До завершения записи Preview остаётся старым.
+VERIFIED: локально и в Vercel **472/472 tests + quote/API contracts PASS**, TypeScript и Next16/16 PASS. Deployment **dpl_7yF5xLbKL6bHP4NBqKUwQ9bTodVv**, exact code SHA93c0c5d, **READY**, target=null, https://mezhgorod-calculator-5xqtongc3-4regodatbe-5310.vercel.app/v3 . Authenticated connector GET /v3 **200**. Это доступность страницы, не live расчёт поездки/браузер.
 
-NEXT: часть4, M4 partial/full and A289 composition. Части4–10 не завершены. Live маршруты/браузер не наблюдались, Anapa alias и bypass410 предварительные. Не выпускать Production/не merge.
+NEXT: **часть4** — M4 partial/full + A289 composition, без потери компонентов/двойного счёта; затем части5–10 по [плану](../experiments/nationwide-tolls/AUDIT_PLAN_10_PARTS_2026-10-13.md). Не начинать заново части1–3. Anapa alias и bypass410 предварительные; реальная геометрия/браузерные прогоны остаются открытыми. Production/main/merge не выполнялись. Локальная ветка integration/matrix-estimates-2026-10-13; локальные SHA отличаются от connector-created remote, соответствие записано выше.
 
 ---
 

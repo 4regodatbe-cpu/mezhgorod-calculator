@@ -44,3 +44,9 @@
 Focused20/20 PASS; полный npm run test:audit472/472 + quote/API contracts PASS; tsc noEmit PASS; Next webpack16/16 PASS; scoped ESLint после исправления старого имени module в mock-тесте PASS; diff-check PASS. Mock short-route теперь использует настоящий OD-adapter/реестр. Проверки используют синтетическую выбранную геометрию и настоящий API/детектор/матрицу; реальные поездки не наблюдались.
 
 NEXT: часть4 — М-4, частичные/полные векторы, стыковка отдельной цены А-289 с неполным М-4 без потерь/двойного начисления; точная привязка bypass410 и Anapa alias остаётся ограничением живой проверки.
+
+## Сохранение и Preview частей1–3
+
+GitHub experiment/toll-od-matrix-2026-10-08 code93c0c5d2848202824f5a0e3f2afb1f782080c7d6 (parent d0dc2227), tree5419073db1028042710f803cd5cea72bf6bb3f57. Сохранены прежний audit8556e57 и части1–3. Переданные35 файлов полностью совпадают с local373fefd по blob SHA. Ref обновлён fast-forward с expected_sha, без force.
+
+Vercel deployment dpl_7yF5xLbKL6bHP4NBqKUwQ9bTodVv READY, target=null, exact source93c0c5d; https://mezhgorod-calculator-5xqtongc3-4regodatbe-5310.vercel.app/v3 . Удалённый build log подтверждает472/472, fail0, quote/API contracts PASS, Next16/16, Build Completed27s. Protected authenticated connector GET /v3 status200 и title калькулятора. Live POST/router/browser не выполнен этим блоком.

@@ -1,7 +1,7 @@
 ## 2026-10-13 — аудит: части1–3 завершены
 
 - [x] Части1–3: календарный вход API, fastest provider geometry, промежуточные A289 OD/frame ordering/unknown/repeat guard. Gate472 и build PASS.
-- [ ] Сохранить проверенный локальный audit baseline и части1–3 в experiment; lease head d0dc2227, base tree0ed91222. Baseline SHA сравнение изменяемых файлов PASS.
+- [x] Audit baseline и части1–3 сохранены в experiment code93c0c5d,35 files SHA match; Preview READY exact code SHA,472 tests/build PASS; GET /v3 200.
 - [ ] Часть4: M4 partial/full plus A289, no dropped/double charged components.
 - [ ] Части5–10 по AUDIT_PLAN_10_PARTS_2026-10-13.md; live bindings/browser остаются открытыми.
 
