@@ -53,17 +53,21 @@ export function deriveStrictM12Span(legs: M12ValhallaLeg[]): M12StrictRouteSpan 
   let routeOffsetKm = 0;
   const segments: Array<{ beginKm: number; endKm: number }> = [];
 
+  let previousEnd: M12SpanCoordinate | undefined;
   for (const leg of legs) {
     const shape = leg.coordinates;
-    if (shape.length < 2) continue;
+    if (shape.length < 2 || shape.some((point) => point.length !== 2 || !point.every(Number.isFinite))) return null;
+    // Offsets describe one connected route, not a concatenation of unrelated legs.
+    if (previousEnd && haversineKm(previousEnd, shape[0]) > 0.001) return null;
+    previousEnd = shape.at(-1);
     const chain = cumulativeKm(shape);
 
     for (const maneuver of leg.maneuvers ?? []) {
       if (!isStrictM12Maneuver(maneuver)) continue;
       const begin = maneuver.begin_shape_index;
       const end = maneuver.end_shape_index;
-      if (!Number.isInteger(begin) || !Number.isInteger(end)) continue;
-      if ((begin as number) < 0 || (end as number) < (begin as number) || (end as number) >= shape.length) continue;
+      if (!Number.isInteger(begin) || !Number.isInteger(end)) return null;
+      if ((begin as number) < 0 || (end as number) <= (begin as number) || (end as number) >= shape.length) return null;
       segments.push({
         beginKm: routeOffsetKm + chain[begin as number],
         endKm: routeOffsetKm + chain[end as number],
@@ -74,8 +78,12 @@ export function deriveStrictM12Span(legs: M12ValhallaLeg[]): M12StrictRouteSpan 
   }
 
   if (segments.length === 0) return null;
-  return {
-    beginKm: round(Math.min(...segments.map((segment) => segment.beginKm))),
-    endKm: round(Math.max(...segments.map((segment) => segment.endKm))),
-  };
+  segments.sort((a, b) => a.beginKm - b.beginKm);
+  let endKm = segments[0].endKm;
+  for (const segment of segments.slice(1)) {
+    // A single-span tariff model cannot price leaving and re-entering M-12.
+    if (segment.beginKm > endKm + 0.000001) return null;
+    endKm = Math.max(endKm, segment.endKm);
+  }
+  return { beginKm: round(segments[0].beginKm), endKm: round(endKm) };
 }

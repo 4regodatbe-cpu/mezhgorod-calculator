@@ -26,9 +26,9 @@ function pointToSegmentKm(point: Coordinate, a: Coordinate, b: Coordinate) {
   const dx = bx - ax;
   const dy = by - ay;
   const lengthSquared = dx * dx + dy * dy;
-  if (lengthSquared <= 1e-12) return Math.hypot(ax, ay);
+  if (lengthSquared <= 1e-12) return { distanceKm: Math.hypot(ax, ay), fraction: 0 };
   const t = Math.max(0, Math.min(1, -(ax * dx + ay * dy) / lengthSquared));
-  return Math.hypot(ax + t * dx, ay + t * dy);
+  return { distanceKm: Math.hypot(ax + t * dx, ay + t * dy), fraction: t };
 }
 
 export function nearestSegment(route: readonly Coordinate[], anchors: readonly Coordinate[]) {
@@ -36,8 +36,8 @@ export function nearestSegment(route: readonly Coordinate[], anchors: readonly C
   let distanceKm = Number.POSITIVE_INFINITY;
   for (const anchor of anchors) {
     for (let current = 0; current < route.length - 1; current += 1) {
-      const distance = pointToSegmentKm(anchor, route[current], route[current + 1]);
-      if (distance < distanceKm) { distanceKm = distance; index = current; }
+      const match = pointToSegmentKm(anchor, route[current], route[current + 1]);
+      if (match.distanceKm < distanceKm) { distanceKm = match.distanceKm; index = current + match.fraction; }
     }
   }
   return { index, distanceKm };
@@ -57,7 +57,12 @@ function cumulativeDistance(route: readonly Coordinate[]) {
 export function crossingAt(start: Date, route: readonly Coordinate[], segmentIndex: number, routeSeconds: number) {
   const cumulative = cumulativeDistance(route);
   const total = cumulative.at(-1) ?? 0;
-  const ratio = total > 0 ? Math.max(0, Math.min(1, cumulative[Math.max(0, segmentIndex)] / total)) : 0;
+  const position = Math.max(0, Math.min(route.length - 1, segmentIndex));
+  const beginIndex = Math.floor(position);
+  const beginKm = cumulative[beginIndex] ?? 0;
+  const endKm = cumulative[Math.min(beginIndex + 1, route.length - 1)] ?? beginKm;
+  const distanceKm = beginKm + (endKm - beginKm) * (position - beginIndex);
+  const ratio = total > 0 ? distanceKm / total : 0;
   return new Date(start.getTime() + routeSeconds * ratio * 1000);
 }
 

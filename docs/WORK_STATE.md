@@ -1,3 +1,13 @@
+## CURRENT 2026-10-13 — stage5 M11/M12/CKAD
+
+DONE code/calculation audit of existing integration: OSRM M11 metadata retained on selected route; V3 uses Order274 directed mainline pairs and separate Moscow head, CKAD dated direct M4↔M11 pair; p147 passage/fractional boundary ordering, malformed/disjoint/repeated-anchor guards and M12 single-span continuity fixed. Unknown matrix/null preserved. Tests491/491 + quote/API contracts, scoped ESLint, TS/Next webpack16/16 PASS. Detailed report: [STAGE5_M11_M12_CKAD_AUDIT_2026-10-13.md](../experiments/nationwide-tolls/STAGE5_M11_M12_CKAD_AUDIT_2026-10-13.md).
+
+LIVE actual local API handler with external providers: Moscow→Petersburg710.317km/24636s Valhalla unknown due separate679–684; Tver→Moscow179.202km/8889s OSRM unknown incomplete physical OD. An intermediate5030 subset caught and blocked before publication. No hosted Preview POST/browser/Yandex/CKAD/M12 live validation. Existing A289620/415 fix stands; Slavyansk→Rostov provider mismatch remains open.
+
+IN PROGRESS persistence: local baselineac6fefb, remote experiment head839784e5 reconfirmed, pending new commit/Preview. No main/merge/Production. NEXT stage6 M1/M3/regional; stage7 calendar; stage10 physical gates/provider alignment.
+
+---
+
 ## CURRENT 2026-10-13 — А289 category fix + этап4 композиции
 
 DONE locally: user rejected Anapa833 vs whole800. Primary operator indexed table proves class-I/II columns were misread as transponder/noTransponder. Corrected A289 to415/205/620/180/800/385, preserved mistaken rows in correction metadata, rebuilt4699 matrix rows and class1 guard. Real external API + cloud Yandex UI agree Anapa→Krasnodar620 and Slavyansk→Krasnodar415.

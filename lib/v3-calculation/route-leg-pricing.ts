@@ -1,3 +1,6 @@
+import { m11TraversalSafety } from "./m11-traversal-safety";
+import { matrixM11Component, matrixM11GeometryComponent } from "@/experiments/nationwide-tolls/engine/m11-route-adapter.mjs";
+import { matrixCkadComponent } from "@/experiments/nationwide-tolls/engine/ckad-route-adapter.mjs";
 import { matrixM12Component } from "@/experiments/nationwide-tolls/engine/m12-route-adapter.mjs";
 import { matrixM4Component } from "@/experiments/nationwide-tolls/engine/m4-route-adapter.mjs";
 import { composeSelectedM4A289 } from "./m4-a289-composition";
@@ -11,6 +14,7 @@ import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { calculateProductionM4, type ProductionM4Result } from "@/lib/toll-engine/m4-production";
 import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
+import { ENTRY_MAX_DISTANCE_KM, facilityAnchors, haversineKm } from "@/lib/toll-engine/m11-moscow-geometry";
 import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
 import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
 import { calculateProductionCkadM4M11 } from "@/lib/toll-engine/ckad-production";
@@ -24,7 +28,7 @@ type LegTollInput = {
   routeSeconds: number;
   departureAt?: string;
   selectedFastProvider: string;
-  selectedFastRoute: RouteSummary;
+  selectedFastRoute: RouteWithGeometry;
   valhallaEvidence: RouteWithGeometry | null;
   confirmedFreeRoute: RouteSummary | null;
   diagnosticFastValidation: TollValidation | null;
@@ -34,9 +38,7 @@ export async function calculateLegTolls({
   routeGeometry,
   routeSeconds,
   departureAt = new Date().toISOString(),
-  selectedFastProvider,
   selectedFastRoute,
-  valhallaEvidence,
   confirmedFreeRoute,
   diagnosticFastValidation,
 }: LegTollInput): Promise<{ tolls: TollEstimate & {priceConfirmation:string;displayLabel:string}; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
@@ -59,27 +61,41 @@ export async function calculateLegTolls({
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
   const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as NonNullable<ProductionM4Result["tolls"]>} : null, geometricTolls.segments, departureAt);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
-  const productionM11 = selectedFastProvider === "Valhalla" && valhallaEvidence?.m11RoadEvidence
+  const matrixM11Geometry = matrixM11GeometryComponent(productionM11Geometry);
+  const productionM11 = selectedFastRoute.m11RoadEvidence
     ? calculateProductionM11(
-        valhallaEvidence.coordinates,
-        valhallaEvidence.m11RoadEvidence,
+        routeGeometry,
+        selectedFastRoute.m11RoadEvidence,
         familySegments(geometricTolls.segments, "m11"),
         departureAt,
       )
     : null;
-  const productionM12 = selectedFastProvider === "Valhalla" && valhallaEvidence
+  const m11SafetyReason = m11TraversalSafety(routeGeometry, selectedFastRoute.m11RoadEvidence);
+  const blocks = selectedFastRoute.m11RoadEvidence?.strictBlocks ?? [];
+  const lastM11Block = blocks.at(-1);
+  // The separate 679–684 product is not included in the 58–679 matrix.
+  // A route continuing beyond p679 must remain unknown until that product's
+  // physical exit is independently bound; do not publish a known subset.
+  const m11TailUnresolved = productionM11Geometry.parts?.to === "p679" && (
+    !lastM11Block || !facilityAnchors("p679").some(anchor =>
+      haversineKm(anchor, lastM11Block.endCoordinate) <= 0.5)
+  );
+  const matrixM11 = m11SafetyReason ? {tolls:null,reason:m11SafetyReason}
+    : matrixM11Component(productionM11, departureAt, routeSeconds);
+  const productionM12 = selectedFastRoute.m12StrictSpan
     ? calculateProductionM12(
-        valhallaEvidence.coordinates,
-        valhallaEvidence.m12StrictSpan,
+        routeGeometry,
+        selectedFastRoute.m12StrictSpan,
         familySegments(geometricTolls.segments, "m12"),
         departureAt,
       )
     : null;
   const matrixM12 = matrixM12Component(productionM12, departureAt);
   const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289") || Boolean(m4A289);
-  const m11Detected = productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(valhallaEvidence?.m11RoadEvidence?.strictBlocks.length);
-  const m12Detected = legacyFamilies.has("m12") || Boolean(valhallaEvidence?.m12StrictSpan);
-  const productionCkad = calculateProductionCkadM4M11(routeGeometry, valhallaEvidence?.m11RoadEvidence);
+  const m11Detected = productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(selectedFastRoute.m11RoadEvidence?.strictBlocks.length);
+  const m12Detected = legacyFamilies.has("m12") || Boolean(selectedFastRoute.m12StrictSpan);
+  const productionCkad = calculateProductionCkadM4M11(routeGeometry, selectedFastRoute.m11RoadEvidence);
+  const matrixCkad = matrixCkadComponent(productionCkad, departureAt);
   // CKAD is a paid component only when legacy evidence names it or the strict
   // route-level CKAD engine proves a candidate/verified east-arc traversal.
   const ckadDetected = legacyFamilies.has("ckad") || productionCkad.candidate;
@@ -95,16 +111,29 @@ export async function calculateLegTolls({
   const nationalTollCoverage = inspectNationwideCandidates(nationalCatalog, geometricTolls.segments, {
     m4StrictPvpCount: productionM4.m4PvpPreview?.confirmedPvps?.length ?? 0,
     m11Candidate: productionM11Geometry.candidate,
-    m12Candidate: Boolean(valhallaEvidence?.m12StrictSpan),
+    m12Candidate: Boolean(selectedFastRoute.m12StrictSpan),
     ckadCandidate: productionCkad.candidate,
     m1m3Candidates: m1m3GateAudit.candidateRoads,
   });
 
+  const m11HeadDetected = productionM11Geometry.evidence.entryDistanceKm !== null
+    && productionM11Geometry.evidence.entryDistanceKm <= ENTRY_MAX_DISTANCE_KM;
+  // Do not replace a route containing the separately charged Moscow head
+  // with only a known mainline subset. An explicit null matrix also stays null.
+  const m11Tolls = m11SafetyReason || m11TailUnresolved ? null
+    : matrixM11Geometry ? matrixM11Geometry.tolls
+    : m11HeadDetected ? null
+    : matrixM11 ? matrixM11.tolls : productionM11?.tolls ?? null;
+  const m11Reason = m11TailUnresolved ? "m11_679_684_continuation_not_priced"
+    : m11SafetyReason ? m11SafetyReason
+    : matrixM11Geometry?.reason ?? (m11HeadDetected ? productionM11Geometry.reason
+    : matrixM11?.reason ?? productionM11?.reason ?? productionM11Geometry.reason);
+
   const components: RouteTollComponent[] = [
     { id: "m4_a289", detected: m4Detected, tolls: m4A289 ? m4A289.tolls : (matrixM4?.tolls as ProductionM4Result["tolls"]) ?? productionM4.tolls, reason: m4A289?.reason ?? matrixM4?.reason ?? productionM4.reason },
-    { id: "m11", detected: m11Detected, tolls: productionM11Geometry.tolls ?? productionM11?.tolls ?? null, reason: productionM11Geometry.exact ? productionM11Geometry.reason : productionM11?.reason ?? productionM11Geometry.reason },
+    { id: "m11", detected: m11Detected, tolls: m11Tolls as NonNullable<typeof productionM11>["tolls"], reason: m11Reason },
     { id: "m12", detected: m12Detected, tolls: matrixM12 ? matrixM12.tolls as NonNullable<typeof productionM12>["tolls"] : productionM12?.tolls ?? null, reason: matrixM12?.reason ?? productionM12?.core.reason ?? "m12_not_priced" },
-    { id: "ckad", detected: ckadDetected, tolls: productionCkad.tolls, reason: productionCkad.reason },
+    { id: "ckad", detected: ckadDetected, tolls: matrixCkad ? matrixCkad.tolls as typeof productionCkad.tolls : productionCkad.tolls, reason: matrixCkad?.reason ?? productionCkad.reason },
     { id: "m1", detected: legacyFamilies.has("m1"), tolls: null, reason: "m1_engine_not_yet_composed" },
     { id: "m3", detected: legacyFamilies.has("m3"), tolls: null, reason: "m3_engine_not_yet_composed" },
     { id: "regional", detected: legacyFamilies.has("regional"), tolls: null, reason: "regional_engine_not_yet_composed" },

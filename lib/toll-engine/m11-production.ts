@@ -17,6 +17,7 @@ export type M11ProductionTolls = {
 };
 
 export type M11ProductionResult = {
+  traversal?: { entryPointId: string; exitPointId: string };
   tolls: M11ProductionTolls | null;
   validation: TollValidation | null;
   boundaryStatus: "resolved" | "unresolved";
@@ -53,6 +54,7 @@ export function calculateProductionM11(
   const resolution = resolveM11Boundaries({ evidence: roadEvidence, routeGeometry: route, spatialFacilities: facilities });
   if (resolution.status !== "resolved") return { tolls: null, validation: null, boundaryStatus: "unresolved", pricingStatus: "unknown", blockedByMixedRoadEvidence, reason: resolution.unresolvedReasons.join(",") || "boundary_unresolved" };
 
+  const traversal = { entryPointId: resolution.entryPointId, exitPointId: resolution.exitPointId };
   const weekday = selectM11CurrentCategory1Tariff(resolution, "monThu");
   const weekend = selectM11CurrentCategory1Tariff(resolution, "friSun");
   const selected = selectM11CurrentCategory1Tariff(resolution, profileFor(departureAt));
@@ -60,6 +62,7 @@ export function calculateProductionM11(
     return {
       tolls: null,
       validation: null,
+      traversal,
       boundaryStatus: "resolved",
       pricingStatus: "unknown",
       blockedByMixedRoadEvidence,
@@ -87,6 +90,7 @@ export function calculateProductionM11(
       confidence: "matched",
     },
     validation,
+    traversal,
     boundaryStatus: "resolved",
     pricingStatus: "priced",
     blockedByMixedRoadEvidence: false,

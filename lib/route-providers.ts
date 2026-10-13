@@ -1,6 +1,6 @@
 import { safeRoutePositions } from "@/lib/safe-route";
 import type { Coordinate } from "@/lib/tolls";
-import { deriveM11EvidenceFromValhalla, type M11RoadEvidence, type M11ValhallaManeuver } from "@/lib/toll-engine/m11-road-evidence";
+import { deriveM11EvidenceFromValhalla, deriveM11EvidenceFromOsrm, type M11OsrmStep, type M11RoadEvidence, type M11ValhallaManeuver } from "@/lib/toll-engine/m11-road-evidence";
 import { deriveStrictM12Span, type M12StrictRouteSpan } from "@/lib/toll-engine/m12-valhalla-span";
 
 export type Point = { label: string; position?: { lat: number; lng: number } };
@@ -154,8 +154,8 @@ export async function osrmRoute(from: Located, to: Located, positions = safeRout
     signal: AbortSignal.timeout(25_000),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as { routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: Array<{ geometry?: { coordinates?: Coordinate[] } }> }> }> };
+  const data = (await response.json()) as { routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> };
   const route = data.routes?.[0];
   if (!route?.distance || !route.duration) throw new Error("ROUTE_NOT_FOUND");
-  return { meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[], legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
+  return { m11RoadEvidence: deriveM11EvidenceFromOsrm(route.legs ?? []), meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[], legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
 }

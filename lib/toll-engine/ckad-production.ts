@@ -4,6 +4,7 @@ import { resolveCkadEastArcEvidence } from "./ckad-evidence.ts";
 import { priceOtherRoadVerifiedSections } from "./other-road-current-tariffs.ts";
 
 export type CkadProductionResult = {
+  traversal?: { from: string; to: string };
   candidate: boolean;
   exact: boolean;
   tolls: {
@@ -47,6 +48,9 @@ export function calculateProductionCkadM4M11(
   if (priced.status !== "priced") return { candidate: true, exact: false, tolls: null, reason: priced.reason };
 
   return {
+    traversal: evidence.direction === "m4_to_m11"
+      ? { from: "М-4 Дон", to: "М-11 Нева" }
+      : { from: "М-11 Нева", to: "М-4 Дон" },
     candidate: true,
     exact: true,
     tolls: {

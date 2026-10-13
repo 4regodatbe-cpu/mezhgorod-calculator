@@ -14,6 +14,7 @@ export type M11MoscowProductionTolls = {
 };
 
 export type M11MoscowProductionResult = {
+  parts?: { headAmount: number; headWeekday: number; headWeekend: number; from: string; to: string; mainlineAt: string };
   candidate: boolean;
   exact: boolean;
   tolls: M11MoscowProductionTolls | null;
@@ -38,6 +39,7 @@ export function calculateM11MoscowToPetersburg(
 
   const entry = nearestSegment(route, [MOSCOW_M11_ENTRY]);
   const p58 = nearestSegment(route, facilityAnchors("p58"));
+  const p147 = nearestSegment(route, facilityAnchors("p147"));
   const p593 = nearestSegment(route, facilityAnchors("p593"));
   const p679 = nearestSegment(route, facilityAnchors("p679"));
   const evidenceBase = {
@@ -64,6 +66,8 @@ export function calculateM11MoscowToPetersburg(
   const tverCenter: Coordinate = [35.9176, 56.8587];
   const startsInTverAccessArea = haversineKm(route[0], tverCenter) <= 20;
   const southboundTver = startsInTverAccessArea
+    && p147.distanceKm <= FACILITY_MAX_DISTANCE_KM
+    && p147.index < p58.index
     && p58.distanceKm <= FACILITY_MAX_DISTANCE_KM
     && entry.distanceKm <= ENTRY_MAX_DISTANCE_KM
     && p58.index < entry.index;
@@ -80,6 +84,9 @@ export function calculateM11MoscowToPetersburg(
       section15Snapshot.tariffs.sundayDay0600to0100,
     );
     return {
+      parts: { headAmount: section15.amount, headWeekday: section15Snapshot.tariffs.monThuDay0600to0100,
+        headWeekend: Math.max(section15Snapshot.tariffs.fridayDay0600to0100, section15Snapshot.tariffs.saturdayDay0600to0100, section15Snapshot.tariffs.sundayDay0600to0100),
+        from: "p147", to: "p58", mainlineAt: p58At.toISOString() },
       candidate: true,
       exact: true,
       tolls: {
@@ -119,6 +126,9 @@ export function calculateM11MoscowToPetersburg(
   const weekdayAmount = section15Snapshot.tariffs.monThuDay0600to0100 + weekday58.amountRub;
   const weekendAmount = Math.max(section15Snapshot.tariffs.fridayDay0600to0100, section15Snapshot.tariffs.saturdayDay0600to0100, section15Snapshot.tariffs.sundayDay0600to0100) + weekend58.amountRub;
   return {
+    parts: { headAmount: entryTariff.amount, headWeekday: section15Snapshot.tariffs.monThuDay0600to0100,
+      headWeekend: Math.max(section15Snapshot.tariffs.fridayDay0600to0100, section15Snapshot.tariffs.saturdayDay0600to0100, section15Snapshot.tariffs.sundayDay0600to0100),
+      from: "p58", to: "p679", mainlineAt: p58At.toISOString() },
     candidate: true,
     exact: true,
     tolls: {

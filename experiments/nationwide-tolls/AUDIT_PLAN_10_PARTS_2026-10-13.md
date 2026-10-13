@@ -54,3 +54,8 @@ Vercel deployment dpl_7yF5xLbKL6bHP4NBqKUwQ9bTodVv READY, target=null, exact sou
 ## User correction + part4 — 2026-10-13
 
 Part3 tariff expectations were wrong-category data: replace833 with classI620,555→415,278→205,270→180,548→385; whole800 unchanged. Real API + live Yandex controls now agree on Anapa620 and Slavyansk415. Rebuilt matrix4699 rows with class guard. Part4 composition code now handles partial/full M4 + separate A289/bypass without replacement/double charge; focused17 and full478 tests/build PASS. Detailed source/negative evidence/live cases: A289_CLASS1_AND_M4_COMPOSITION_AUDIT_2026-10-13.md. Part4 code/calculation audit complete; Slavyansk–Rostov same-route live discrepancy remains explicitly open for stage10, not declared verified. Stages5–10 pending.
+
+
+## Stage5 — 2026-10-13
+
+Existing M11/M12/CKAD code/calculation audit DONE: exact selected-provider evidence, Order274/directed CKAD adapters, explicit head, fractional boundaries, disconnected/repeated physical crossing protection and null for unbound679–684.491 tests/full build PASS; actual local external-provider controls Moscow→Petersburg and Tver→Moscow preserve unknown. Details/coverage deferred: STAGE5_M11_M12_CKAD_AUDIT_2026-10-13.md. Stage6 next; physical/calendar/live equivalence tracked under7/10, no claim of full new-road coverage.

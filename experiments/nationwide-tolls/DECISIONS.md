@@ -99,3 +99,8 @@ Existing authorization to display provisional prices remains. A Temryuk city nam
 ## 2026-10-13 — category-column correction, not a new user tariff policy
 
 User again confirmed whole A289800 and rejected partial Anapa833. Primary indexed operator table shows classI415/205/620/180/800/385; classII555/278/833/270/1103/548 were misread as no-transponder rates. Correct active prices and retain original mistaken raw interpretation in correction metadata. This supersedes assistant explanations about a transponder/scope conflict1103, without changing accepted user800/full and620/two-frame city controls. Operator terminal Temryuk800 and user city-route TemryukCity620 are separate vectors. No payment discount inferred from vehicle category. All interim API estimates continue carrying the approved unconfirmed label.
+
+
+## 2026-10-13 — stage5 implementation invariants
+
+No new product policy. Apply existing selected-route/direct-versioned-matrix/unknown rules to M11 and CKAD. M11 head/mainline are explicit separate parts; unbound679–684 must block a full-route number. Distinct physical p58 plazas sharing one tariff ID are not a repeated journey; repeat proof attaches to an actual anchor. Native tariff extraction does not authorize unknown route exits. M12 single-span tariff cannot bridge leaving/re-entering the road. Published direct tables alone do not resolve new physical gate coverage.
