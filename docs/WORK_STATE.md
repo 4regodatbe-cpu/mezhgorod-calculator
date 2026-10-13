@@ -4,7 +4,7 @@ DONE requested V3 logo from approved portal SVG, A/B swap preserving positions/r
 
 VERIFIED full530/pass530/fail0, quote/API contracts/TS/Next16/16, scopedlint/diffcheck PASS. Fresh actual external-provider API-handler checks for Ufa→Moscow, Petersburg→Moscow/Sevastopol; final Ufa unknown retained. [Report](../experiments/nationwide-tolls/STAGE10_UI_USER_ROUTES_AUDIT_2026-10-13.md). Browser blocked: installed Playwright lacks Chromium; no visual/E2E claim. Three requested full road fees still OPEN, not recovered; M11 southbound/full679–684 and M12 exact coverage required. Durations not equivalent to Yandex.
 
-Baseline local1a02b81 / remote3ce874f checked unchanged; PRs12/9/6 unchanged. Publication pending verified experimental source only. No main/merge/Production. NEXT exact Preview checkpoint then full M11/M12 bindings/browser/stage10 coverage.
+PERSISTED localfeafa14 → remotea38c50e3fb19dbbb461104f5483a400ca1da986d;16 changed blobs match,0 mismatches. Preview dpl_DyQNDZRP7MEn6F1L1ryATYhhc7rZ READY exact sourcea38c50e3, target=null; https://mezhgorod-calculator-ir6hc5hpg-4regodatbe-5310.vercel.app/v3 . Remote530/pass530/fail0, contracts/TS/Next16/16 PASS. Protected page/logo GET200, availability only. PRs12/9/6 unchanged. No main/merge/Production. NEXT full M11/M12 bindings/browser/stage10 coverage.
 
 ---
 

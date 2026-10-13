@@ -846,3 +846,13 @@ Local Next startup default hostname failed `uv_interface_addresses`; explicit127
 1. Publish/check exact experimental Preview source; persist SHA/logs/availability checkpoint.
 2. Complete directed M11 southbound head/mainline +679–684 physical/source model before numeric Petersburg fares; extend actual M12 complete selected-route boundaries/current versions for Ufa. Do not copy screenshot amounts to other geometry or revive subsets.
 3. Obtain a working browser runtime for real desktop/mobile layout and client→API verification; compare same endpoint/date/profile selected Yandex route, then complete stage10 performance/coverage report. Stage10 remains IN PROGRESS; nationwide audit not complete.
+
+## Verified experimental publication — 2026-10-13
+
+Local implementationfeafa14 maps to remotea38c50e3fb19dbbb461104f5483a400ca1da986d (parent3ce874f), tree43b42df8f17f8da1010ca1da021d36f98371394d. All16 changed blobs matched tested local source; remote tree691+new entries not truncated,0 mismatches. Expected-head/nonforce ref update. PRs12/9/6 unchanged.
+
+Preview dpl_DyQNDZRP7MEn6F1L1ryATYhhc7rZ READY, exact sourcea38c50e3, target=null. https://mezhgorod-calculator-ir6hc5hpg-4regodatbe-5310.vercel.app/v3 . Vercel530/pass530/fail0, quote/API contracts PASS, TypeScript/Next16/16, Build Completed30s. Protected authenticated GET /v3 and logo asset200; page references new asset. This proves hosted page/asset availability only, not visual/mobile/hosted trip verification.
+
+Built static HTML contains new logo and swap label. Logo byte-identical to approved portal source, SHA256b5e594ad67f6a7b6ab9eb968df02671b186a30562d117508a1d3f29bc1015957. Local server initially reported Ready on127.0.0.1 but later GET refused connection; no local HTTP availability claim. Browser unable to launch due absentChromium. No installation, auth/protection changes, main/merge/Production.
+
+Next action: complete M11 full southbound/head/tail and M12 full selected vector; repeat exact-route Yandex and working browser checks. User-requested three complete road prices still OPEN; stage10 IN PROGRESS, not10/10 audit finished.
