@@ -4,7 +4,7 @@ DONE existing code/calculation audit: selected-route M1/M3 and regional candidat
 
 LIVE actual local V3 POST/external providers/trace: Moscow→Kaluga OSRM184.817km/10636s unknown, only physical M3 86/136; Moscow→Odintsovo OSRM26.172km/1937s free0 on exact complete trace269edges/0paid/0booths. No hosted POST/browser/Yandex/all-network verification. M1/M3 tariff series/date and regional exact exits remain unresolved; no new numeric fees invented. Existing A289 correction and Rostov discrepancy retained.
 
-IN PROGRESS persistence: local baseline0714614, remoteexperimentacefcefe confirmed; new GitHub/Preview pending. Open unrelated PRs12/9/6 inspected, unchanged. NEXT stage7 calendar; stage8 dated M1/M3/source conflicts; stage10 full physical/provider coverage. No main/merge/Production.
+PERSISTED local0260915 → remote8df6745822c6e521a1009b6aecb4645a0c3aca1a (via6a230c9d);16 changed files hashmatch,0 mismatches. Preview dpl_87VMJRdHd9ToEbjV8QMURTrjwAjB READY exact source8df67458, target=null; https://mezhgorod-calculator-2hq1o2uiy-4regodatbe-5310.vercel.app/v3 . Vercel502/pass502/fail0, contracts/TS/Next16/16 PASS; authenticated GET200, availability only. Open unrelated PRs12/9/6 inspected, unchanged. NEXT stage7 calendar; stage8 dated M1/M3/source conflicts; stage10 full physical/provider coverage. No main/merge/Production.
 
 ---
 

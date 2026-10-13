@@ -41,3 +41,12 @@ NEXT stage7 per-road dates, timezone, holidays, midnight/crossing time; stage8 r
 While checking live free-route proof, found HTTP200 with missing/empty/null/nonboolean-toll/nonarray-names edges could certify zero edges as a complete free trace. `lib/toll-validator.ts` now rejects these malformed/no-evidence traces; failed coverage stays unknown. A physical toll booth without toll=true now makes a completed trace unknown, not free. V3 missing-system detection uses physical booth presence even if its edge flag is contradictory; it does not invent the booth fare. Existing alternative-payment-point policy already rejects any physical booth and remains unchanged. Added2 regression cases, final502 tests/TypeScript/Next16/16/lint PASS. Live controls rerun on hardened code confirmed the same routes and results (Kaluga18919ms, Odintsovo16040ms; external/API200); final raw files replaced with this completed run.
 
 First saved localab191c8 → remote6a230c9d60040c5569a460a8a23d4cd258414fec (parentacefcefe), treea68e5bd1ff07014bdba8e4599c2c708cc29aea1e;15 changed files hash-matched,0 mismatches. First create_tree response supplied no usable SHA; retry succeeded, tree verified before ref update. First500-test Preview dpl_wVWix16XsKBywxoN1zoMzkEzWQau READY at code6a230c9d; final hardened502 checkpoint still pending at this entry. No production/merge.
+
+
+## Stage6 verified final publication
+
+Local implementation0260915 maps to remote8df6745822c6e521a1009b6aecb4645a0c3aca1a (parent6a230c9d), final tree5a0f37d73d6bbe460bf0035cb9da24b3a0fffd29. All16 total changed file blobs match tested local code,0 mismatches; base tree preserved; ref expected_sha/force=false. Final live records replayed on hardened validator and saved. First list-deployments immediately after update was empty; no readiness inferred until the deployment appeared.
+
+Preview dpl_87VMJRdHd9ToEbjV8QMURTrjwAjB READY, target=null, exact source8df67458; https://mezhgorod-calculator-2hq1o2uiy-4regodatbe-5310.vercel.app/v3 . Remote logs tests502/pass502/fail0; quote/API contracts PASS; TypeScript/Next16/16 PASS; Build Completed2m (dependency installation delay observed, not a failed check). Authenticated GET /v3 HTTP200 confirms page availability only; no hosted POST/browser/Yandex validation.
+
+Stage6 code/calculation audit complete with explicitly deferred M1/M3 tariff-source/physical integration and regional OD coverage. Nextstage7 road-specific calendar/time. No main/merge/Production.

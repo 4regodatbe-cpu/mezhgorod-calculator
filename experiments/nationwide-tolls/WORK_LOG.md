@@ -752,3 +752,12 @@ Final build webpack:500/500 tests, fail0, quote/API contracts PASS; Next TypeScr
 ### Stage6 final validator hardening / publication progress
 
 After the initial500 gate and live controls, code review exposed two false-free paths: missing/empty/malformed trace edges accepted as complete0; physical booth without toll=true accepted as free. Hardened traceChunk schema/coverage, complete free status now requires0booths, and V3 unpriced detection retains even contradictory physical booth events. Added2 regressions; final502/502 + contracts/TypeScript/webpack16pages PASS; scopedlint PASS. No invented payment or booth identity. Final actual live replay confirmed unchanged routes/results on hardened code, external/API200 (Kaluga18919ms, Odintsovo16040ms); stored raw files from final replay. Initialab191c8 persisted remote6a230c9d (parentacefcefe),15 hashesmatch. Initial create_tree result had no usableSHA, successful retry and tree verification before ref write; no branch loss. Preview first500 version READY dpl_wVWix16XsKBywxoN1zoMzkEzWQau. Final502 source/Preview pending and will supersede that interim version.
+
+
+## Stage6 verified final publication
+
+Local implementation0260915 maps to remote8df6745822c6e521a1009b6aecb4645a0c3aca1a (parent6a230c9d), final tree5a0f37d73d6bbe460bf0035cb9da24b3a0fffd29. All16 total changed file blobs match tested local code,0 mismatches; base tree preserved; ref expected_sha/force=false. Final live records replayed on hardened validator and saved. First list-deployments immediately after update was empty; no readiness inferred until the deployment appeared.
+
+Preview dpl_87VMJRdHd9ToEbjV8QMURTrjwAjB READY, target=null, exact source8df67458; https://mezhgorod-calculator-2hq1o2uiy-4regodatbe-5310.vercel.app/v3 . Remote logs tests502/pass502/fail0; quote/API contracts PASS; TypeScript/Next16/16 PASS; Build Completed2m (dependency installation delay observed, not a failed check). Authenticated GET /v3 HTTP200 confirms page availability only; no hosted POST/browser/Yandex validation.
+
+Stage6 code/calculation audit complete with explicitly deferred M1/M3 tariff-source/physical integration and regional OD coverage. Nextstage7 road-specific calendar/time. No main/merge/Production.
