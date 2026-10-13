@@ -183,7 +183,10 @@ export async function calculateLegTolls({
   if (!routeCompositionBlocked && pricedTolls.amount <= 0) {
     const conservativeValidation = unknownValidation("Локальный коридорный fallback без доверия к удалённому map matching");
     const localRecovery = recoverCorridorTolls(routeGeometry, conservativeValidation, departureAt, differenceEvidence);
-    if (localRecovery) pricedTolls = localRecovery;
+    // Legacy recovery finds a subset of approximate segments. It cannot
+    // certify a complete selected-route charge, even when the subset has money.
+    if (localRecovery) pricedTolls = zeroUnknownTolls(localRecovery,
+      ["Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика", ...localRecovery.segments]);
   }
 
   if (!routeCompositionBlocked && pricedTolls.amount <= 0 && routeGeometry.length > 2) {
@@ -200,7 +203,11 @@ export async function calculateLegTolls({
     } else {
       const matchedTolls = mapMatchedTollFallback(pricedTolls, fastValidation);
       const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
-      pricedTolls = remoteRecovery ?? matchedTolls;
+      if (remoteRecovery) {
+        pricedTolls = zeroUnknownTolls(remoteRecovery,
+          ["Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика", ...remoteRecovery.segments]);
+        fastValidation = unknownValidation("Резервный расчёт нашёл только часть отрезков; полный тариф выбранного маршрута неизвестен");
+      } else pricedTolls = matchedTolls;
     }
   }
 

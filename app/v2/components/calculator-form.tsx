@@ -1,6 +1,6 @@
 "use client";
 
-import { Calculator, LoaderCircle, Percent, Settings2 } from "lucide-react";
+import { ArrowLeftRight, Calculator, LoaderCircle, Percent, Settings2 } from "lucide-react";
 import { AddressField } from "./address-field";
 import { TariffInputs } from "./pricing-fields";
 import { clampNumber } from "./format";
@@ -17,6 +17,7 @@ type CalculatorFormProps = {
   onFromChange: (place: Place) => void;
   to: Place;
   onToChange: (place: Place) => void;
+  onSwap?: () => void;
   rates: typeof defaults;
   onRatesChange: (rates: typeof defaults) => void;
   specialRates: typeof defaults;
@@ -35,7 +36,7 @@ type CalculatorFormProps = {
 
 export function CalculatorForm({
   mode, onModeChange, onResetResult,
-  from, onFromChange, to, onToChange,
+  from, onFromChange, to, onToChange, onSwap,
   rates, onRatesChange, specialRates, onSpecialRatesChange,
   urgent, onUrgentChange, urgentPercent, onUrgentPercentChange,
   loading, hasResult, error, onCalculate,
@@ -49,8 +50,9 @@ export function CalculatorForm({
         <button type="button" onClick={() => { onModeChange("standard"); onResetResult(); }} className={mode === "standard" ? selectedTab : idleTab}>Обычный расчёт</button>
         <button type="button" onClick={() => { onModeChange("dual"); onResetResult(); }} className={mode === "dual" ? selectedTab : idleTab}>Двойная тарификация</button>
       </div>
-      <div className="grid min-w-0 gap-3 sm:grid-cols-2">
+      <div className={"grid min-w-0 items-end gap-2 " + (onSwap ? "sm:grid-cols-[minmax(0,1fr)_2.5rem_minmax(0,1fr)]" : "sm:grid-cols-2")}>
         <AddressField label="Точка A" value={from} onChange={onFromChange} placeholder="Откуда" />
+        {onSwap && <button type="button" aria-label="Поменять точки A и B местами" onClick={onSwap} className="mx-auto grid h-10 w-10 sm:mb-1 place-items-center rounded-full bg-brand-action text-brand-action-foreground shadow-sm transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-focus"><ArrowLeftRight className="h-5 w-5 rotate-90 sm:rotate-0" aria-hidden="true" /></button>}
         <AddressField label="Точка B" value={to} onChange={onToChange} placeholder="Куда" />
       </div>
       <div className="mt-4 border-t border-brand-border/15 pt-4">
@@ -70,14 +72,14 @@ export function CalculatorForm({
         <input aria-label="Углублённая проверка пунктов оплаты" type="checkbox" checked={deepTollDiagnostics} onChange={event => onDeepTollDiagnosticsChange(event.target.checked)} className="h-4 w-4 accent-brand-action" />
         <span className="text-xs leading-relaxed text-brand-muted">Углублённая проверка ПВП (тестовая): может увеличить время расчёта. Только диагностика, без изменения стоимости.</span>
       </label>
-      <div className="hidden md:block"><button type="button" onClick={onCalculate} disabled={loading} className={"relative mt-3 flex min-h-14 w-full items-center justify-center gap-2 overflow-hidden rounded-2xl px-5 font-black shadow-lg transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-focus " + (loading ? "bg-brand-accent text-brand-accent-foreground shadow-orange-900/20" : "bg-brand-action text-brand-action-foreground hover:brightness-110")}>
+      <div className="hidden md:block"><button type="button" onClick={onCalculate} disabled={loading || !from.label.trim() || !to.label.trim()} className={"relative mt-3 flex min-h-14 w-full items-center justify-center gap-2 overflow-hidden rounded-2xl px-5 font-black shadow-lg transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-focus disabled:cursor-not-allowed disabled:opacity-45 " + (loading ? "bg-brand-accent text-brand-accent-foreground shadow-orange-900/20" : "bg-brand-action text-brand-action-foreground hover:brightness-110")}>
         <span aria-hidden="true" className={(loading ? "absolute" : "hidden") + " inset-y-0 left-0 w-1/3 animate-[route-progress_1.2s_ease-in-out_infinite] rounded-full bg-white/25 blur-md motion-reduce:animate-none"} />
         <span translate="no" className="notranslate relative flex items-center gap-2"><span aria-hidden="true" className="inline-flex h-5 w-5 items-center justify-center"><LoaderCircle className={(loading ? "h-5 w-5 animate-spin" : "hidden") + " motion-reduce:animate-none"} /><Calculator className={loading ? "hidden" : "h-5 w-5"} /></span><span className={loading ? "hidden" : "inline-block"}>Рассчитать поездку</span><span className={loading ? "inline-block" : "hidden"}>Считаем маршрут…</span></span>
       </button>
       <div role="status" aria-live="polite" className={(loading ? "mt-2 flex" : "hidden") + " items-center gap-2 rounded-2xl border border-brand-accent/50 bg-brand-accent/10 p-2 text-xs font-bold text-brand-text"}><span aria-hidden="true" className="h-3 w-3 shrink-0 animate-pulse rounded-full bg-brand-accent motion-reduce:animate-none" /><span>Подождите пару минут, пока загружается маршрут.</span></div></div>
       {!hasResult && <div className="fixed inset-x-0 bottom-0 z-40 border-t border-brand-border/30 bg-brand-page/95 px-3 pt-2 backdrop-blur-xl md:hidden" style={{ paddingBottom: "max(env(safe-area-inset-bottom), 0.75rem)" }}>
         <div role="status" aria-live="polite" className={(loading ? "mx-auto mb-2 flex" : "hidden") + " max-w-3xl items-center justify-center gap-2 rounded-xl border border-brand-accent/50 bg-brand-accent/10 px-3 py-2 text-xs font-bold text-brand-text shadow-lg"}><span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 animate-pulse rounded-full bg-brand-accent motion-reduce:animate-none" /><span>Подождите пару минут, пока загружается маршрут.</span></div>
-        <button type="button" onClick={onCalculate} disabled={loading} className={"relative mx-auto flex min-h-14 w-full max-w-3xl items-center justify-center gap-2 overflow-hidden rounded-2xl px-5 font-black shadow-xl transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-focus " + (loading ? "bg-brand-accent text-brand-accent-foreground" : "bg-brand-action text-brand-action-foreground")}>
+        <button type="button" onClick={onCalculate} disabled={loading || !from.label.trim() || !to.label.trim()} className={"relative mx-auto flex min-h-14 w-full max-w-3xl items-center justify-center gap-2 overflow-hidden rounded-2xl px-5 font-black shadow-xl transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-focus disabled:cursor-not-allowed disabled:opacity-45 " + (loading ? "bg-brand-accent text-brand-accent-foreground" : "bg-brand-action text-brand-action-foreground")}>
           <span aria-hidden="true" className={(loading ? "absolute" : "hidden") + " inset-y-0 left-0 w-1/3 animate-[route-progress_1.2s_ease-in-out_infinite] rounded-full bg-white/25 blur-md motion-reduce:animate-none"} />
           <span translate="no" className="notranslate relative flex items-center gap-2"><span aria-hidden="true" className="inline-flex h-5 w-5 items-center justify-center"><LoaderCircle className={(loading ? "h-5 w-5 animate-spin" : "hidden") + " motion-reduce:animate-none"} /><Calculator className={loading ? "hidden" : "h-5 w-5"} /></span><span className={loading ? "hidden" : "inline-block"}>Рассчитать поездку</span><span className={loading ? "inline-block" : "hidden"}>Считаем маршрут…</span></span>
         </button>

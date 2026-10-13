@@ -179,3 +179,7 @@ Current: V3 API/UI/copy wired, native305/305 + M4adapter6/6 + TS/build/local HTT
 M12 dated-vector adapter now implemented; expired Shali blocks stale native fallback. Next: exact follow-up Preview, then remaining M11/CKAD/other-road adapters and live route/browser verification.
 
 Yalta/Anapa → Krasnodar short-route fix: experimental commit ed34c4c, Preview dpl_CUGKzMqTn6D8H4cjoDTDpkNtD3z5 READY/GET200. Next verify actual selected route POST and exact Anapa exit; no main/Production.
+
+
+## 2026-10-13 stage10 current priority
+Publish/test exact UI+recovery Preview. Then implement full directed M11 southbound head/mainline/tail and complete M12 selected-route coverage for Ufa with authoritative versions; screenshot amounts only comparisons. Run browser when Chromium available, same-route Yandex duration/fare controls, consolidated final audit. See STAGE10_UI_USER_ROUTES_AUDIT_2026-10-13.md. Full three numeric fees OPEN.

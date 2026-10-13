@@ -60,7 +60,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
             distanceSpreadPercent: null,
             timeSpreadPercent: null,
             goldenDistanceDeviationPercent: null,
-            message: "Выбран единственный допустимый маршрут с минимальным временем",
+            message: "Выбран маршрут с минимальным временем",
           },
         };
       })()

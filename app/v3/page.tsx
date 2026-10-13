@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Car, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
+import Image from "next/image";
 import { FeedbackForm } from "../v2/components/feedback-form";
 import { DonationCard } from "../v2/components/donation-card";
 import { CalculatorForm } from "../v2/components/calculator-form";
@@ -58,8 +59,8 @@ export default function V3Page() {
     <div className="v2-page-inset mx-auto w-full max-w-3xl px-3 sm:px-6">
       <header className="mb-4 flex items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2.5">
-          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-action text-brand-action-foreground shadow-md"><Car className="h-5 w-5" /></div>
-          <div className="min-w-0"><h1 className="text-xl font-black leading-tight tracking-tight text-brand-text sm:text-2xl">из А в Б</h1><p className="text-xs font-semibold text-brand-muted">Калькулятор поездок · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">Версия 2</a><a href="/v3" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">V3 · один самый быстрый</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
+          <a href="/v3" aria-label="из А в Б — калькулятор" className="shrink-0 rounded-xl bg-[#F7F4EE] p-1"><Image src="/izavb-approved-logo.svg" alt="из А в Б" width={136} height={60} priority /></a>
+          <div className="min-w-0"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><p className="text-xs font-semibold text-brand-muted">Калькулятор поездок · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">Версия 2</a><a href="/v3" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">V3 · один самый быстрый</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
         </div>
         <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle /></div>
       </header>
@@ -71,6 +72,7 @@ export default function V3Page() {
         onFromChange={(value)=>{setFrom(value);clearResult();}}
         to={to}
         onToChange={(value)=>{setTo(value);clearResult();}}
+        onSwap={() => { setFrom(to); setTo(from); clearResult(); }}
         rates={rates}
         onRatesChange={(value)=>{setRates(value);clearResult();}}
         specialRates={specialRates}

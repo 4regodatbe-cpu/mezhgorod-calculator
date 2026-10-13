@@ -76,3 +76,24 @@ test('a physical booth without toll=true cannot certify a free route',async()=>{
  assert.equal(coverage({...input,validation:result}).m3,true);
  }finally{globalThis.fetch=original;}
 });
+
+
+test('approximate M12 corridor recovery cannot publish a numeric subset as a complete fare',async()=>{
+ const {calculateLegTolls}=await import('../lib/v3-calculation/route-leg-pricing.ts');
+ const {recoverCorridorTolls}=await import('../lib/toll-recovery.ts');
+ const {tollsForApi}=await import('../lib/v2-calculation/free-route-selection.ts');
+ // Offset geometry misses strict gates/legacy 2-km checkpoints but triggers
+ // the recovery's 10-km radius for exactly two adjacent tariff sections.
+ const coordinates:[number,number][]=[[38.94,55.85],[39.46,55.98],[40.41,56.13]];
+ const validation:TollValidation={status:'toll',source:'Valhalla map matching',tollEdgeCount:1,checkedEdgeCount:1,wayIds:[],roadNames:['М-12'],complete:true};
+ assert.equal(recoverCorridorTolls(coordinates,validation,'2026-10-13T12:00:00+03:00')?.amount,995);
+ const original=globalThis.fetch;
+ globalThis.fetch=async()=>Response.json({edges:[{toll:true,names:['М-12']}]});
+ try {
+ const result=await calculateLegTolls({routeGeometry:coordinates,routeSeconds:3600,departureAt:'2026-10-13T12:00:00+03:00',selectedFastProvider:'OSRM',selectedFastRoute:{coordinates,meters:100000,seconds:3600},valhallaEvidence:null,confirmedFreeRoute:null,diagnosticFastValidation:validation});
+ assert.equal(result.tolls.amount,0);
+ assert.equal(tollsForApi(result.tolls,result.fastValidation).amount,null);
+ assert.equal(tollsForApi(result.tolls,result.fastValidation).pricingStatus,'unknown');
+ assert.ok(result.tolls.segments.some(s=>s.includes('диагностика')));
+ } finally {globalThis.fetch=original;}
+});

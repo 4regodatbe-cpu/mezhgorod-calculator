@@ -124,3 +124,7 @@ Existing numeric-candidate permission retained; missing effective date cannot me
 ## 2026-10-13 — stage9 display binding
 
 Existing selected-route/candidate policy applied: V3 fastest card and copy consume API actual toll amount/period, not day-reference summaries. Unconfirmed note belongs to the displayed route; unknown remains null, free explicit0. V2 reference-period selection retained. Optional analytics/storage/clipboard cannot invalidate a successful quote or revive a cleared result. No new provider-cache TTL or fee policy.
+
+
+## 2026-10-13 — user UI and pricing integrity
+Approved existing portal variant2 SVG reused; no replacement design. User asked swaps, larger centre ₽/км, circular filled up/outline down, blank-address CTA gating, fastest note without единственный. Complete fees for three screenshot routes remain work, not unknown-as-zero. V3 approximate corridor subsets are diagnostics only; cannot become full fare. No Production authorization.

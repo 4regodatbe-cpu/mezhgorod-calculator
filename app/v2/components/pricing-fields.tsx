@@ -35,11 +35,11 @@ export function TariffInputs({
                 type="button"
                 aria-label={"Увеличить тариф " + name + " на 0,50 ₽/км"}
                 onClick={() => updateRate(0.5)}
-                className="col-start-2 row-start-1 grid h-11 w-11 min-h-11 min-w-11 place-items-center rounded-xl border border-brand-border/25 bg-brand-subtle/65 text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/20 focus-visible:outline-2 focus-visible:outline-brand-focus"
+                className="col-start-2 row-start-1 grid h-11 w-11 min-h-11 min-w-11 place-items-center rounded-full border border-brand-border/25 bg-brand-subtle/65 text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/20 focus-visible:outline-2 focus-visible:outline-brand-focus"
               >
                 <ChevronUp className="h-5 w-5" aria-hidden="true" />
               </button>
-              <div className="col-start-1 row-start-2 flex min-w-0 items-baseline gap-0.5">
+              <div className="col-start-1 row-start-2 flex min-w-0 items-baseline justify-center gap-1">
                 <input
                   id={inputId}
                   aria-label={"Цена за км: " + name}
@@ -54,15 +54,15 @@ export function TariffInputs({
                       [key]: clampNumber(Number(event.target.value), 1, 10000, 1),
                     })
                   }
-                  className="rate-stepper-input w-[6ch] max-w-full shrink bg-transparent text-[19.5px] leading-none font-black text-brand-text outline-none focus-visible:ring-2 focus-visible:ring-brand-focus"
+                  className="rate-stepper-input w-[3.5ch] max-w-full shrink bg-transparent text-[22px] leading-none font-black text-brand-text outline-none focus-visible:ring-2 focus-visible:ring-brand-focus"
                 />
-                <span className="shrink-0 whitespace-nowrap text-[12.5px] font-bold text-brand-action">₽/км</span>
+                <span className="shrink-0 whitespace-nowrap text-[17px] font-extrabold text-brand-action">₽/км</span>
               </div>
               <button
                 type="button"
                 aria-label={"Уменьшить тариф " + name + " на 0,50 ₽/км"}
                 onClick={() => updateRate(-0.5)}
-                className="col-start-2 row-start-2 grid h-11 w-11 min-h-11 min-w-11 place-items-center rounded-xl text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/30 focus-visible:outline-2 focus-visible:outline-brand-focus"
+                className="col-start-2 row-start-2 grid h-11 w-11 min-h-11 min-w-11 place-items-center rounded-full border border-brand-border/25 text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/30 focus-visible:outline-2 focus-visible:outline-brand-focus"
               >
                 <ChevronDown className="h-5 w-5" aria-hidden="true" />
               </button>

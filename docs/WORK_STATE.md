@@ -1,3 +1,13 @@
+## CURRENT 2026-10-13 — stage10 UI/user-route block, IN PROGRESS
+
+DONE requested V3 logo from approved portal SVG, A/B swap preserving positions/reset, larger centred rate units, circular stepper controls, blank-label CTA gating, shorter fastest note, prominent unknown full-total note. Fixed proven V3 partial corridor recovery995→null instead of false complete fare. Speculative A289 changes removed; existing620/415 intact.
+
+VERIFIED full530/pass530/fail0, quote/API contracts/TS/Next16/16, scopedlint/diffcheck PASS. Fresh actual external-provider API-handler checks for Ufa→Moscow, Petersburg→Moscow/Sevastopol; final Ufa unknown retained. [Report](../experiments/nationwide-tolls/STAGE10_UI_USER_ROUTES_AUDIT_2026-10-13.md). Browser blocked: installed Playwright lacks Chromium; no visual/E2E claim. Three requested full road fees still OPEN, not recovered; M11 southbound/full679–684 and M12 exact coverage required. Durations not equivalent to Yandex.
+
+Baseline local1a02b81 / remote3ce874f checked unchanged; PRs12/9/6 unchanged. Publication pending verified experimental source only. No main/merge/Production. NEXT exact Preview checkpoint then full M11/M12 bindings/browser/stage10 coverage.
+
+---
+
 ## CURRENT 2026-10-13 — stage9 UI/copy/state
 
 DONE existing client code/render audit: V3 actual API toll amount/period on card and copy, card-bound unconfirmed note, nested payload/money guard, stale/reset/unmount/clipboard handling, optional storage/SSR/analytics and presentation sum bounds.527/pass527/fail0 + contracts, TS/Next16/16, scopedlint/diff-check PASS. Actual React static render + controlled real-hook lifecycle tests; [report](../experiments/nationwide-tolls/STAGE9_UI_COPY_FAILURE_AUDIT_2026-10-13.md).

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 150" role="img" aria-labelledby="title desc">
+  <title id="title">из А в Б</title>
+  <desc id="desc">Логотип междугородних поездок с маршрутом от А до Б</desc>
+  <g fill="#102A43" font-family="Inter, Arial, sans-serif" font-weight="800" letter-spacing="-3">
+    <text x="4" y="75" font-size="65">из А в Б</text>
+  </g>
+  <path d="M115 96 C151 128 211 128 247 96" fill="none" stroke="#FF6B35" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="115" cy="96" r="8" fill="#F7F4EE" stroke="#FF6B35" stroke-width="6"/>
+  <circle cx="247" cy="96" r="8" fill="#F7F4EE" stroke="#FF6B35" stroke-width="6"/>
+  <text x="7" y="143" fill="#5B6C79" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing=".2">Междугородние поездки</text>
+</svg>

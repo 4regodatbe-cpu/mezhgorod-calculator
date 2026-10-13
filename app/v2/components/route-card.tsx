@@ -52,6 +52,7 @@ export function RouteCard({
       </div>
       <QualityNote quality={trip.quality} />
       {toll?.priceConfirmation === "unconfirmed" && <p role="note" className="mt-2 text-sm font-semibold text-amber-700">Стоимость не подтверждена</p>}
+      {isUnknown && <p role="note" className="mt-2 text-sm font-semibold text-amber-700">Стоимость платных дорог не подтверждена — полная сумма поездки неизвестна.</p>}
       <PriceRows trip={trip} toll={toll} period={tollPeriod} manualToll={manualToll} />
       {showTollPanel && toll && (
         <div className="mt-2 rounded-2xl border border-brand-route/35 bg-brand-route/10 p-2">

@@ -1,0 +1,267 @@
+{
+  "capturedAt": "2026-10-13T15:20:56.215Z",
+  "externalRoutingSimulated": false,
+  "from": {
+    "label": "Уфа",
+    "position": {
+      "lng": 55.9721,
+      "lat": 54.7388
+    }
+  },
+  "to": {
+    "label": "Москва",
+    "position": {
+      "lng": 37.6173,
+      "lat": 55.7558
+    }
+  },
+  "departureAt": "2026-10-13T15:20:17.053Z",
+  "endpointScope": "Representative city coordinates; exact user screenshot addresses not provided",
+  "recordScope": "API body and provider summaries; raw geometry not archived",
+  "body": {
+    "legs": [
+      {
+        "from": "Уфа",
+        "to": "Москва",
+        "fast": {
+          "meters": 1315853,
+          "seconds": 63893,
+          "m12StrictSpan": null,
+          "m11RoadEvidence": {
+            "provider": "valhalla",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "Valhalla"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика",
+              "Коридорный расчёт M12: map matching + геометрия",
+              "М-12: Орехово-Зуево — Петушки",
+              "М-12: Петушки — Владимир"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unknown",
+            "displayLabel": "Стоимость платных дорог неизвестна",
+            "pricingStatus": "unknown"
+          },
+          "tollValidation": {
+            "status": "unknown",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 0,
+            "wayIds": [],
+            "roadNames": [],
+            "message": "Резервный расчёт нашёл только часть отрезков; полный тариф выбранного маршрута неизвестен"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "m4_no_toll_gate_candidates",
+            "priceRub": null,
+            "source": "pvp-span-preview",
+            "diagnosticOnly": true,
+            "verifiedSpanCells": 2,
+            "confirmedPvps": [],
+            "candidateCount": 0,
+            "checkedCandidateCount": 0,
+            "unknownCandidateCount": 0,
+            "verifiedPriceCells": 2
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "unknown",
+              "reason": "same_selected_route_trace_incomplete",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 1315.853,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Уфа",
+                  "to": "Москва",
+                  "ratePerKm": 30,
+                  "amount": 39476,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 39476,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 1315.853,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Уфа",
+                  "to": "Москва",
+                  "ratePerKm": 32.5,
+                  "amount": 42765,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 42765,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 1315.853,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Уфа",
+                  "to": "Москва",
+                  "ratePerKm": 35,
+                  "amount": 46055,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 46055,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 1315.853,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Уфа",
+                  "to": "Москва",
+                  "ratePerKm": 45,
+                  "amount": 59213,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 59213,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  },
+  "name": "ufa-moscow",
+  "status": 200,
+  "elapsedMs": 39162,
+  "meters": 1315853,
+  "seconds": 63893,
+  "quality": {
+    "status": "single",
+    "providers": [
+      "Valhalla"
+    ],
+    "distanceSpreadPercent": null,
+    "timeSpreadPercent": null,
+    "goldenDistanceDeviationPercent": null,
+    "message": "Выбран маршрут с минимальным временем"
+  },
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика",
+      "Коридорный расчёт M12: map matching + геометрия",
+      "М-12: Орехово-Зуево — Петушки",
+      "М-12: Петушки — Владимир"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unknown",
+    "displayLabel": "Стоимость платных дорог неизвестна",
+    "pricingStatus": "unknown"
+  },
+  "providerResults": [
+    {
+      "url": "https://valhalla1.openstreetmap.de/route",
+      "status": 200,
+      "distance": 1315.853,
+      "seconds": 63893.179
+    },
+    {
+      "url": "https://router.project-osrm.org/route/v1/driving/55.9721,54.7388;37.6173,55.7558",
+      "status": 200,
+      "distance": 1330535.4,
+      "seconds": 66724
+    },
+    {
+      "url": "https://brouter.de/brouter",
+      "status": 200
+    }
+  ]
+}
