@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-13T17:16:44.702Z",
+  "capturedAt": "2026-10-13T17:36:41.192Z",
   "externalRoutingSimulated": false,
   "from": {
     "label": "Волноваха — ДНР",
@@ -15,7 +15,7 @@
       "lat": 55.7558
     }
   },
-  "departureAt": "2026-10-13T17:16:14.317Z",
+  "departureAt": "2026-10-13T17:36:07.216Z",
   "endpointScope": "Representative city coordinates; exact user screenshot addresses not provided",
   "recordScope": "API body/provider summaries plus compressed chosen provider response",
   "body": {
@@ -37,27 +37,29 @@
           "meters": 1182425,
           "seconds": 61701,
           "tolls": {
-            "amount": null,
-            "weekdayAmount": null,
-            "weekendAmount": null,
+            "amount": 3050,
+            "weekdayAmount": 3050,
+            "weekendAmount": 3370,
             "period": "понедельник–четверг",
             "segments": [
-              "Обнаружены, но не полностью оценены платные системы: m4_a289",
-              "m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+              "М-4: m4-636 → m4-71 · Стоимость не подтверждена"
             ],
-            "confidence": "none",
-            "priceConfirmation": "unknown",
-            "displayLabel": "Стоимость платных дорог неизвестна",
-            "pricingStatus": "unknown"
+            "confidence": "matched",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": "Стоимость не подтверждена",
+            "pricingStatus": "priced"
           },
           "tollValidation": {
-            "status": "unknown",
-            "source": "Valhalla map matching",
-            "tollEdgeCount": 0,
-            "checkedEdgeCount": 0,
+            "status": "toll",
+            "source": "Route toll composition",
+            "tollEdgeCount": 1,
+            "checkedEdgeCount": 1,
             "wayIds": [],
-            "roadNames": [],
-            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+            "roadNames": [
+              "m4_a289"
+            ],
+            "message": "Полный итог составлен из дорожных систем: m4_a289",
+            "complete": true
           },
           "quality": {
             "status": "single",
@@ -281,27 +283,29 @@
           "meters": 1182425,
           "seconds": 61701,
           "tolls": {
-            "amount": null,
-            "weekdayAmount": null,
-            "weekendAmount": null,
+            "amount": 3050,
+            "weekdayAmount": 3050,
+            "weekendAmount": 3370,
             "period": "понедельник–четверг",
             "segments": [
-              "Обнаружены, но не полностью оценены платные системы: m4_a289",
-              "m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+              "М-4: m4-636 → m4-71 · Стоимость не подтверждена"
             ],
-            "confidence": "none",
-            "priceConfirmation": "unknown",
-            "displayLabel": "Стоимость платных дорог неизвестна",
-            "pricingStatus": "unknown"
+            "confidence": "matched",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": "Стоимость не подтверждена",
+            "pricingStatus": "priced"
           },
           "tollValidation": {
-            "status": "unknown",
-            "source": "Valhalla map matching",
-            "tollEdgeCount": 0,
-            "checkedEdgeCount": 0,
+            "status": "toll",
+            "source": "Route toll composition",
+            "tollEdgeCount": 1,
+            "checkedEdgeCount": 1,
             "wayIds": [],
-            "roadNames": [],
-            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+            "roadNames": [
+              "m4_a289"
+            ],
+            "message": "Полный итог составлен из дорожных систем: m4_a289",
+            "complete": true
           },
           "quality": {
             "status": "single",
@@ -515,7 +519,7 @@
   },
   "name": "volnovakha-moscow",
   "status": 200,
-  "elapsedMs": 30356,
+  "elapsedMs": 33949,
   "meters": 1182425,
   "seconds": 61701,
   "quality": {
@@ -529,18 +533,17 @@
     "message": "Выбран маршрут с минимальным временем"
   },
   "tolls": {
-    "amount": null,
-    "weekdayAmount": null,
-    "weekendAmount": null,
+    "amount": 3050,
+    "weekdayAmount": 3050,
+    "weekendAmount": 3370,
     "period": "понедельник–четверг",
     "segments": [
-      "Обнаружены, но не полностью оценены платные системы: m4_a289",
-      "m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+      "М-4: m4-636 → m4-71 · Стоимость не подтверждена"
     ],
-    "confidence": "none",
-    "priceConfirmation": "unknown",
-    "displayLabel": "Стоимость платных дорог неизвестна",
-    "pricingStatus": "unknown"
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": "Стоимость не подтверждена",
+    "pricingStatus": "priced"
   },
   "providerResults": [
     {

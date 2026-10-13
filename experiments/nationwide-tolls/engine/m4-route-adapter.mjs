@@ -1,5 +1,6 @@
 import core from './quote.cjs';
 import register from '../TARIFF_SELECTION_REGISTER.json' with {type:'json'};
+import reviewed from '../M4_REVIEWED_ENDPOINT_CELLS_2026-10-13.json' with {type:'json'};
 
 // Re-index already stored finished prices by outer boundaries. Never add fees
 // here. Conflicting endpoint cells remain ambiguous rather than choosing one.
@@ -18,6 +19,14 @@ function endpointRegister(input){
    }
   }
  }
+ const reviewedKeys=new Set();
+ for(const cell of reviewed.rows){
+  const key=JSON.stringify([cell.road,cell.from,cell.to,cell.profile]);
+  if(cell.road!=='m4-candidate'||!['monThu','friSun'].includes(cell.profile)||!Number.isSafeInteger(cell.rub)||cell.rub<0||!cell.source||!cell.observationId||reviewedKeys.has(key))throw Error('invalid_reviewed_m4_endpoint_cell');
+  reviewedKeys.add(key);
+ }
+ for(const group of Object.keys(out))out[group]=out[group].filter(cell=>!reviewedKeys.has(JSON.stringify([cell.road,cell.from,cell.to,cell.profile])));
+ out.provisional.push(...reviewed.rows);
  return out;
 }
 const endpointCore=core.createQuoteEngine(endpointRegister(register));

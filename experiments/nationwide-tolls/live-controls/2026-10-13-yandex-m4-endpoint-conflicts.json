@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-13T20:34:00+03:00",
+  "method": "actual Yandex Maps cloud browser UI; no simulated routing",
+  "vehicle": "car below 2 metres, without transponder",
+  "priceMeaning": "approximate operator-supplied route estimate at exit, not receipt",
+  "scope": "two northbound endpoint pairs only; no reverse/global propagation",
+  "observations": [
+    {
+      "id": "620-71-monThu",
+      "from": "m4-620",
+      "to": "m4-71",
+      "profile": "monThu",
+      "rub": 2480,
+      "departureAt": "2026-10-13T20:33:00+03:00",
+      "durationMinutes": 388,
+      "displayDistance": "350 mi",
+      "points": [
+        [
+          39.986473,
+          50.850863
+        ],
+        [
+          37.919248,
+          55.168275
+        ],
+        [
+          37.880817,
+          55.210694
+        ]
+      ],
+      "url": "https://yandex.com/maps/?ll=38.933613%2C53.086203&mode=routes&rtd=0&rtext=50.850863%2C39.986473~55.168275%2C37.919248~55.210694%2C37.880817&rtt=auto&ruri=~~&z=7"
+    },
+    {
+      "id": "620-71-friSun",
+      "from": "m4-620",
+      "to": "m4-71",
+      "profile": "friSun",
+      "rub": 2730,
+      "departureAt": "2026-10-17T20:33:00+03:00",
+      "durationMinutes": 376,
+      "displayDistance": "350 mi",
+      "points": [
+        [
+          39.986473,
+          50.850863
+        ],
+        [
+          37.919248,
+          55.168275
+        ],
+        [
+          37.880817,
+          55.210694
+        ]
+      ],
+      "url": "https://yandex.com/maps/?ll=38.933613%2C53.086203&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T20%3A33%3A00&rtd=0&rtext=50.850863%2C39.986473~55.168275%2C37.919248~55.210694%2C37.880817&rtt=auto&ruri=~~&z=7"
+    },
+    {
+      "id": "636-71-monThu",
+      "from": "m4-636",
+      "to": "m4-71",
+      "profile": "monThu",
+      "rub": 3050,
+      "departureAt": "2026-10-13T20:34:00+03:00",
+      "durationMinutes": 395,
+      "displayDistance": "360 mi",
+      "points": [
+        [
+          40.09115,
+          50.724759
+        ],
+        [
+          37.919248,
+          55.168275
+        ],
+        [
+          37.880817,
+          55.210694
+        ]
+      ],
+      "url": "https://yandex.com/maps/?ll=38.985998%2C53.026289&mode=routes&rtd=0&rtext=50.724759%2C40.091150~55.168275%2C37.919248~55.210694%2C37.880817&rtt=auto&ruri=~~&z=7"
+    },
+    {
+      "id": "636-71-friSun",
+      "from": "m4-636",
+      "to": "m4-71",
+      "profile": "friSun",
+      "rub": 3370,
+      "departureAt": "2026-10-17T20:33:00+03:00",
+      "durationMinutes": 388,
+      "displayDistance": "360 mi",
+      "points": [
+        [
+          40.09115,
+          50.724759
+        ],
+        [
+          37.919248,
+          55.168275
+        ],
+        [
+          37.880817,
+          55.210694
+        ]
+      ],
+      "url": "https://yandex.com/maps/?ll=38.985998%2C53.026289&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T20%3A33%3A00&rtd=0&rtext=50.724759%2C40.091150~55.168275%2C37.919248~55.210694%2C37.880817&rtt=auto&ruri=~~&z=7"
+    }
+  ],
+  "negativeControls": [
+    {
+      "route": "Volnovakha–Moscow",
+      "rub": 3810,
+      "durationMinutes": 1009,
+      "displayDistance": "800 mi",
+      "decision": "different whole route; not copied to OSRM1182km"
+    },
+    {
+      "route": "66km–623km without PVP71 waypoint",
+      "monThuRub": 2170,
+      "friSunRub": 2730,
+      "decision": "reverse control takes Kashirskoye bypass before PVP71; not used for reverse71–620"
+    },
+    {
+      "route": "623km–66km after a future route recalculation",
+      "rub": null,
+      "decision": "toll road icon without amount is not zero or proof of a cell"
+    }
+  ]
+}

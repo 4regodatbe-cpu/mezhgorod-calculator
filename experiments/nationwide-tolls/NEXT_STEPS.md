@@ -1,3 +1,12 @@
+## 2026-10-13 — Yandex endpoint conflict cleanup
+
+- [x] North620→71 and636→71: actual UI weekdays/weekend controls, four unique active reviewed cells;542tests/build PASS.
+- [ ] Repeat real endpoint controls for remaining conflict pairs, both periods/directions. Do not mirror reverse until its actual paid boundaries are established; controls may bypass a boundary.
+- [ ] Resolve source conflicts where Yandex agrees with neither old candidate. Preserve observation URL/vehicle/date/profile/amount, no min/max selection.
+- [ ] Finish M11/M12/CKAD missing product bindings. Stage10/full nationwide still IN PROGRESS.
+
+---
+
 ## PRIORITY 2026-10-13 20:05 MSK — границы вместо полного обхода ПВП
 
 - [ ] Переработать новый M4/M11 pricing согласно последней записи DECISIONS.md: первый/последний тарифные участки → готовая ячейка. Не проверять промежуточные съезды/reentry и не требовать сетевого подтверждения всех промежуточных ПВП. Убрать старое суммирование ПВП из пути нового алгоритма.

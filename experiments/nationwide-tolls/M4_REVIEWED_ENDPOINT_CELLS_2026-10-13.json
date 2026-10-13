@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "rows": [
+    {
+      "road": "m4-candidate",
+      "from": "m4-620",
+      "to": "m4-71",
+      "profile": "monThu",
+      "rub": 2480,
+      "source": "live-controls/2026-10-13-yandex-m4-endpoint-conflicts.json",
+      "observationId": "620-71-monThu",
+      "verification": "candidate Yandex actual UI endpoint control; approximate, not operator receipt",
+      "effectiveFrom": null,
+      "priceConfirmation": "unconfirmed"
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-620",
+      "to": "m4-71",
+      "profile": "friSun",
+      "rub": 2730,
+      "source": "live-controls/2026-10-13-yandex-m4-endpoint-conflicts.json",
+      "observationId": "620-71-friSun",
+      "verification": "candidate Yandex actual UI endpoint control; approximate, not operator receipt",
+      "effectiveFrom": null,
+      "priceConfirmation": "unconfirmed"
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-636",
+      "to": "m4-71",
+      "profile": "monThu",
+      "rub": 3050,
+      "source": "live-controls/2026-10-13-yandex-m4-endpoint-conflicts.json",
+      "observationId": "636-71-monThu",
+      "verification": "candidate Yandex actual UI endpoint control; approximate, not operator receipt",
+      "effectiveFrom": null,
+      "priceConfirmation": "unconfirmed"
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-636",
+      "to": "m4-71",
+      "profile": "friSun",
+      "rub": 3370,
+      "source": "live-controls/2026-10-13-yandex-m4-endpoint-conflicts.json",
+      "observationId": "636-71-friSun",
+      "verification": "candidate Yandex actual UI endpoint control; approximate, not operator receipt",
+      "effectiveFrom": null,
+      "priceConfirmation": "unconfirmed"
+    }
+  ]
+}

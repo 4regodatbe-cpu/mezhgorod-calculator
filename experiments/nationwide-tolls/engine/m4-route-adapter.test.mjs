@@ -32,3 +32,16 @@ test('conflicting ready matrix prices for the same boundaries cannot choose an a
  const q=matrixM4Component(boundaries(['m4-62','m4-460']),t,3600);
  assert.equal(q?.tolls,null);assert.match(q.reason,/ambiguous-fare-version/);
 });
+
+test('Yandex reviewed northbound cells replace all conflicting variants with one price per profile',()=>{
+ for(const [from,weekday,weekend] of [['m4-620',2480,2730],['m4-636',3050,3370]]){
+  const p=boundaries([from,'m4-71']);
+  assert.equal(matrixM4Component(p,t,3600)?.tolls.amount,weekday);
+  assert.equal(matrixM4Component(p,'2026-10-17T20:33:00+03:00',3600)?.tolls.amount,weekend);
+  assert.equal(matrixM4Component(p,t,3600)?.priceConfirmation,'unconfirmed');
+ }
+});
+test('northbound Yandex controls cannot silently approve reverse or other unreviewed endpoints',()=>{
+ assert.equal(matrixM4Component(boundaries(['m4-71','m4-636']),t,3600)?.tolls,null);
+ assert.equal(matrixM4Component(boundaries(['m4-62','m4-460']),t,3600)?.tolls,null);
+});

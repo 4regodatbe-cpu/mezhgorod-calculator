@@ -1,3 +1,11 @@
+## CURRENT 2026-10-13 — Яндекс endpoint selection, IN PROGRESS
+
+DONE actual Yandex UI checks: north620→71=2480/2730 and636→71=3050/3370 (MonThu/FriSun), four unique active reviewed cells; conflicting legacy variants excluded for these exact keys. Approved unconfirmed label retained. [Report](../experiments/nationwide-tolls/YANDEX_ENDPOINT_SELECTION_2026-10-13.md).
+
+VERIFIED542/pass542/fail0, contracts/TS/Next16/16, scopedlint/diffcheck PASS. Reverse unchecked pairs remain open; Yandex reverse control bypassed71 and cannot authorize mirroring. Whole Yandex Volnovakha route3810 is different from selectedOSRM and not reused. Full geometry equivalence not claimed. Actual fresh local V3 handler Volnovakha→Moscow3050/unconfirmed, weekday3050/weekend3370,1182425m/61701s/33949ms. NEXT continue remaining endpoint conflicts and full M11/M12/CKAD. Full cleanup/stage10 NOT finished. Local750fa58 baseline; remote34b9a0ca verified. No main/merge/Production.
+
+---
+
 ## CURRENT 2026-10-13 — endpoint-only code implemented, tariff coverage IN PROGRESS
 
 DONE V3 M4 boundary-only search + ready endpoint matrix, no native per-PVP sum; M11 intermediate gap/reentry checks removed; M12 endpoint span used by V3. Prior offline recovery runtime restored. [Detailed report](../experiments/nationwide-tolls/ENDPOINT_ONLY_IMPLEMENTATION_2026-10-13.md).
