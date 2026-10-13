@@ -2,10 +2,13 @@
 // Operator km labels are NOT exact OSM node IDs; never price by proximity/label.
 function validateM1M3Inventory(inventory) {
  if(!inventory || inventory.schemaVersion!==1 || !Array.isArray(inventory.gates)||inventory.gates.length!==4)throw Error("bad_gate_inventory");
+ const expectedGates = {"m1-pvp-46":["m1",46,"m1-33-66"],"m3-pvp-86":["m3",86,"m3-65-86"],"m3-pvp-136":["m3",136,"m3-112-150"],"m3-pvp-168":["m3",168,"m3-150-194"]};
  const ids=new Set(),nodes=new Set();
  for(const g of inventory.gates){
    if(!g||!["m1","m3"].includes(g.roadId)||!/^m[13]-pvp-\d+$/.test(g.id)||ids.has(g.id)||
      !Number.isSafeInteger(g.km)||g.km<=0||!Array.isArray(g.verifiedOsmNodeIds))throw Error("invalid_gate");
+   const expected=expectedGates[g.id];
+   if(!expected || g.roadId!==expected[0] || g.km!==expected[1] || g.fareRowId!==expected[2])throw Error("operator_gate_identity_mismatch");
    ids.add(g.id);
    for(const node of g.verifiedOsmNodeIds){
      if(typeof node!=="string"||!/^[1-9][0-9]*$/.test(node)||nodes.has(node))throw Error("invalid_or_duplicate_osm_node");
@@ -30,7 +33,8 @@ function auditM1M3SelectedRoute(inventory,validation,routeId) {
  if(typeof routeId!=="string"||!routeId)return fail("route_identity_missing");
  if(!validation || validation.source!=="Valhalla map matching" ||
     validation.complete!==true || validation.boothEventCoverage!=="complete" ||
-    validation.chunkCount<=0 || validation.checkedChunkCount!==validation.chunkCount ||
+    !Number.isSafeInteger(validation.chunkCount) || validation.chunkCount<=0 ||
+    !Number.isSafeInteger(validation.checkedChunkCount) || !Number.isSafeInteger(validation.failedChunkCount) || validation.checkedChunkCount!==validation.chunkCount ||
     validation.failedChunkCount!==0 || !Array.isArray(validation.tollBooths))
    return fail("same_selected_route_trace_incomplete");
  // This audit is called only on selected geometry; caller guarantees the

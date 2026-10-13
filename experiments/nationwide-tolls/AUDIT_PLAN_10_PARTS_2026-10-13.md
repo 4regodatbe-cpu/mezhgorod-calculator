@@ -59,3 +59,8 @@ Part3 tariff expectations were wrong-category data: replace833 with classI620,55
 ## Stage5 — 2026-10-13
 
 Existing M11/M12/CKAD code/calculation audit DONE: exact selected-provider evidence, Order274/directed CKAD adapters, explicit head, fractional boundaries, disconnected/repeated physical crossing protection and null for unbound679–684.491 tests/full build PASS; actual local external-provider controls Moscow→Petersburg and Tver→Moscow preserve unknown. Details/coverage deferred: STAGE5_M11_M12_CKAD_AUDIT_2026-10-13.md. Stage6 next; physical/calendar/live equivalence tracked under7/10, no claim of full new-road coverage.
+
+
+## Stage6 — 2026-10-13
+
+DONE existing M1/M3/regional code audit: selected-route missing-system coverage cannot be dropped from totals or late fallback; numeric ref/CKAD endpoint identity and gate/trace contracts fixed.500 tests/build PASS; actual Kaluga2 gates unknown and Odintsovo exact-route0 complete trace. No new numeric M1/M3/regional pricing; dated tariff/source/physical completion deferred7/8/10. Details STAGE6_M1_M3_REGIONAL_AUDIT_2026-10-13.md. Stage7 next.

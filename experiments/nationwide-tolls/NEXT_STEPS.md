@@ -1,3 +1,13 @@
+## 2026-10-13 — stage6
+
+- [x] Audit existing M1/M3/regional composition: lost candidate/trace coverage, late recovery, road ref boundaries/CKAD endpoints, gate identity and trace count contracts fixed.500 tests/build PASS; live local Kaluga2 M3 booths unknown, Odintsovo exact route0 confirmed.
+- [ ] Persist/check exact experimental Preview.
+- [ ] Stage7: per-road dates, timezone, holidays, midnight/crossing-time.
+- [ ] Stage8: generated M1/M3 missing effective-from vs dated source series; current M3 snapshot conflict and partial OD. Do not activate undated/wrong traversal money.
+- [ ] Stage10: M1/region physical nodes, full provider step/coverage and Yandex equality, existing M11/CKAD/M12 and Slavyansk→Rostov gaps.
+
+---
+
 ## 2026-10-13 — stage5 checkpoint
 
 - [x] Existing M11/M12/CKAD code/calculation audit: selected OSRM M11 metadata, direct M11/CKAD matrix adapters, separated M11 head, physical p147/fractional positions, disjoint/repeat guards, missing679–684 blocks full price.491 tests/build PASS.

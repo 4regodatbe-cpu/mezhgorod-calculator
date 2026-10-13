@@ -78,3 +78,16 @@ test("a repeat crossing of a same plaza in opposite lanes invalidates one contin
  assert.equal(x.status,"unknown");
  assert.equal(x.reason,"duplicate_same_gate_in_selected_route");
 });
+
+test('operator gate ID cannot bind a wrong road, kilometer or fare row',()=>{
+ for(const patch of [{roadId:'m1'},{km:137},{fareRowId:'m3-150-194'}]) {
+  const x=clone(original);Object.assign(x.gates[2],patch);
+  assert.throws(()=>validateM1M3Inventory(x),/identity_mismatch/);
+  assert.equal(audit(x,trace(),'r').reason,'gate_inventory_invalid');
+ }
+});
+test('fractional or missing trace chunk counts cannot prove complete coverage',()=>{
+ for(const overrides of [{chunkCount:0.5,checkedChunkCount:0.5},{chunkCount:Infinity,checkedChunkCount:Infinity},{chunkCount:1,checkedChunkCount:undefined},{failedChunkCount:undefined}]) {
+  assert.equal(audit(original,trace([booth('4780909558',['М-3'])],overrides),'r').status,'unknown');
+ }
+});

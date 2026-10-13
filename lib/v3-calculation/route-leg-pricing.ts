@@ -1,3 +1,4 @@
+import { unpricedRoadCoverage } from "./unpriced-road-coverage";
 import { m11TraversalSafety } from "./m11-traversal-safety";
 import { matrixM11Component, matrixM11GeometryComponent } from "@/experiments/nationwide-tolls/engine/m11-route-adapter.mjs";
 import { matrixCkadComponent } from "@/experiments/nationwide-tolls/engine/ckad-route-adapter.mjs";
@@ -116,6 +117,12 @@ export async function calculateLegTolls({
     m1m3Candidates: m1m3GateAudit.candidateRoads,
   });
 
+  const unpricedCoverage = unpricedRoadCoverage({
+    segments: geometricTolls.segments,
+    validation: diagnosticFastValidation,
+    candidateNetworks: nationalTollCoverage.candidateNetworks,
+    m1m3Candidates: m1m3GateAudit.candidateRoads,
+  });
   const m11HeadDetected = productionM11Geometry.evidence.entryDistanceKm !== null
     && productionM11Geometry.evidence.entryDistanceKm <= ENTRY_MAX_DISTANCE_KM;
   // Do not replace a route containing the separately charged Moscow head
@@ -134,9 +141,9 @@ export async function calculateLegTolls({
     { id: "m11", detected: m11Detected, tolls: m11Tolls as NonNullable<typeof productionM11>["tolls"], reason: m11Reason },
     { id: "m12", detected: m12Detected, tolls: matrixM12 ? matrixM12.tolls as NonNullable<typeof productionM12>["tolls"] : productionM12?.tolls ?? null, reason: matrixM12?.reason ?? productionM12?.core.reason ?? "m12_not_priced" },
     { id: "ckad", detected: ckadDetected, tolls: matrixCkad ? matrixCkad.tolls as typeof productionCkad.tolls : productionCkad.tolls, reason: matrixCkad?.reason ?? productionCkad.reason },
-    { id: "m1", detected: legacyFamilies.has("m1"), tolls: null, reason: "m1_engine_not_yet_composed" },
-    { id: "m3", detected: legacyFamilies.has("m3"), tolls: null, reason: "m3_engine_not_yet_composed" },
-    { id: "regional", detected: legacyFamilies.has("regional"), tolls: null, reason: "regional_engine_not_yet_composed" },
+    { id: "m1", detected: unpricedCoverage.m1, tolls: null, reason: "m1_engine_not_yet_composed" },
+    { id: "m3", detected: unpricedCoverage.m3, tolls: null, reason: "m3_engine_not_yet_composed" },
+    { id: "regional", detected: unpricedCoverage.regional, tolls: null, reason: unpricedCoverage.regionalReason },
   ];
   const composition = composeRouteTolls(components);
 
@@ -179,9 +186,20 @@ export async function calculateLegTolls({
 
   if (!routeCompositionBlocked && pricedTolls.amount <= 0 && routeGeometry.length > 2) {
     if (!diagnosticFastValidation) fastValidation = await validateTollEdges(routeGeometry);
-    const matchedTolls = mapMatchedTollFallback(pricedTolls, fastValidation);
-    const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
-    pricedTolls = remoteRecovery ?? matchedTolls;
+    const lateCoverage = unpricedRoadCoverage({segments: geometricTolls.segments,
+      validation: fastValidation, candidateNetworks: nationalTollCoverage.candidateNetworks,
+      m1m3Candidates: auditM1M3SelectedRoute(m1m3OfficialGates, fastValidation, "selected-fast-route").candidateRoads});
+    if (lateCoverage.m1 || lateCoverage.m3 || lateCoverage.regional) {
+      routeCompositionBlocked = true;
+      const missing = [lateCoverage.m1 ? "m1" : null, lateCoverage.m3 ? "m3" : null,
+        lateCoverage.regional ? "regional" : null].filter(Boolean).join(", ");
+      pricedTolls = zeroUnknownTolls(geometricTolls, [`Обнаружены, но не полностью оценены платные системы: ${missing}`]);
+      fastValidation = unknownValidation(`Поздняя проверка выбранного маршрута обнаружила неоценённые системы: ${missing}`);
+    } else {
+      const matchedTolls = mapMatchedTollFallback(pricedTolls, fastValidation);
+      const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
+      pricedTolls = remoteRecovery ?? matchedTolls;
+    }
   }
 
   const tolls = confirmedFree && !routeCompositionBlocked

@@ -25,17 +25,23 @@ export type RouteTollComposition =
   | { status: "unknown"; tolls: null; missing: RouteTollComponentId[]; priced: RouteTollComponentId[] }
   | { status: "priced"; tolls: RouteTollValue; missing: []; priced: RouteTollComponentId[] };
 
+const roadRefPatterns: readonly [RegExp, RouteTollComponentId][] = [
+  [/(?:^|[^а-яa-z0-9])[мm]\s*[-‐‑–—]?\s*4(?=$|[^а-яa-z0-9])/u, "m4_a289"],
+  [/(?:^|[^а-яa-z0-9])[аa]\s*[-‐‑–—]?\s*289(?=$|[^а-яa-z0-9])/u, "m4_a289"],
+  [/(?:^|[^а-яa-z0-9])[мm]\s*[-‐‑–—]?\s*11(?=$|[^а-яa-z0-9])/u, "m11"],
+  [/(?:^|[^а-яa-z0-9])[мm]\s*[-‐‑–—]?\s*12(?=$|[^а-яa-z0-9])/u, "m12"],
+  [/(?:^|[^а-яa-z0-9])[мm]\s*[-‐‑–—]?\s*1(?=$|[^а-яa-z0-9])/u, "m1"],
+  [/(?:^|[^а-яa-z0-9])[мm]\s*[-‐‑–—]?\s*3(?=$|[^а-яa-z0-9])/u, "m3"],
+];
+
 export function detectedFamiliesFromLegacySegments(segments: readonly string[]) {
   const families = new Set<RouteTollComponentId>();
   for (const raw of segments) {
     const value = raw.toLocaleLowerCase("ru-RU");
-    if (/м\s*[-–—]?\s*4|m\s*[-–—]?\s*4/u.test(value)) families.add("m4_a289");
-    if (/а\s*[-–—]?\s*289|a\s*[-–—]?\s*289/u.test(value)) families.add("m4_a289");
-    if (/м\s*[-–—]?\s*11|m\s*[-–—]?\s*11/u.test(value)) families.add("m11");
-    if (/м\s*[-–—]?\s*12|m\s*[-–—]?\s*12/u.test(value)) families.add("m12");
+    // Intersecting road names are CKAD endpoints, not extra traversals.
+    if (/^цкад\s*:/u.test(value)) { families.add("ckad"); continue; }
+    for (const [pattern, family] of roadRefPatterns) if (pattern.test(value)) families.add(family);
     if (value.includes("цкад")) families.add("ckad");
-    if (/м\s*[-–—]?\s*1(?::|\s|$)|m\s*[-–—]?\s*1(?::|\s|$)/u.test(value)) families.add("m1");
-    if (/м\s*[-–—]?\s*3(?::|\s|$)|m\s*[-–—]?\s*3(?::|\s|$)/u.test(value)) families.add("m3");
     if (value.includes("восточный выезд") || value.includes("обход тольятти")) families.add("regional");
   }
   return families;

@@ -104,3 +104,8 @@ User again confirmed whole A289800 and rejected partial Anapa833. Primary indexe
 ## 2026-10-13 — stage5 implementation invariants
 
 No new product policy. Apply existing selected-route/direct-versioned-matrix/unknown rules to M11 and CKAD. M11 head/mainline are explicit separate parts; unbound679–684 must block a full-route number. Distinct physical p58 plazas sharing one tariff ID are not a repeated journey; repeat proof attaches to an actual anchor. Native tariff extraction does not authorize unknown route exits. M12 single-span tariff cannot bridge leaving/re-entering the road. Published direct tables alone do not resolve new physical gate coverage.
+
+
+## 2026-10-13 — stage6 completeness implementation
+
+Existing policy applied, no new user tariff decision: unpriced M1/M3/regional detection from this selected route blocks the full trip sum even if another road has known money. Late trace/recovery cannot discard that missing component. CKAD intersection names do not prove driving on intersecting highways. Provisional price permission does not invent physical road/exit binding or missing tariff version dates.
