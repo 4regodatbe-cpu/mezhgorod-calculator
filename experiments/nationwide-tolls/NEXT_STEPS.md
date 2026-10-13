@@ -2,7 +2,7 @@
 
 - [x] Correct A289 vehicle-category import; Anapa620 / Slavyansk415 confirmed by actual API and live Yandex representative controls.
 - [x] Stage4 calculation: separate M4-only + A289 OD + bypass, no lost/double components;478 tests/build PASS.
-- [ ] Persist correction/large regenerated matrices to experiment with lease8cc29824; verify exact Preview.
+- [x] Persisted code4b27032,39 hash matches; Preview4ncn2cwjo READY at exact SHA,478 Vercel tests/build PASS; /v3 GET200.
 - [ ] Stage5: M11/M12/CKAD adapter composition.
 - [ ] Stage10 live gap: Slavyansk–Rostov OSRM vs Yandex different route/ETA; no Yandex total, do not declare same-route price check complete. Preserve exact bypass binding / source/holiday limitations.
 

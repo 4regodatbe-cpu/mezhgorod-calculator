@@ -3,7 +3,7 @@
   "observedAt": "2026-10-01",
   "source": "https://avtodor-tr.ru/road/tariffs/",
   "category": 1,
-  "note": "Visible official tariff-page values. Transponder and no-transponder columns are preserved separately; this snapshot alone is not route-crossing evidence. User clarification on 2026-10-12 overrides A-289 row a289-maryanskaya-temryuk no-transponder fare for the whole-road scope: use 620 RUB Maryanskaya→Temryuk as Yandex city-route control, and 800 RUB through to Crimean Bridge; quarantine 1,103 RUB for this scope. User clarification on 2026-10-12 overrides the A-289 1,103-RUB reading for the whole-road scope: 620 RUB Maryanskaya→Temryuk Yandex route control; 800 RUB through to Crimean Bridge.",
+  "note": "A289 reading corrected on 2026-10-13: columns are vehicle categories, not transponder/no-transponder modes. Active A289 rows contain category-I base fares415/205/620/180/800/385 in both undiscounted payment modes. The original mistaken rows/note are retained under a289CategoryCorrection. Other roads keep their separately documented corrections and payment models. This snapshot alone does not prove selected-route crossing.",
   "roads": {
     "m1-33-66": [
       {
@@ -332,6 +332,7 @@
         }
       }
     ],
-    "transponderPolicy": "Both base modes now use category I; no loyalty discount is inferred or applied."
+    "transponderPolicy": "Both base modes now use category I; no loyalty discount is inferred or applied.",
+    "previousNote": "Visible official tariff-page values. Transponder and no-transponder columns are preserved separately; this snapshot alone is not route-crossing evidence. User clarification on 2026-10-12 overrides A-289 row a289-maryanskaya-temryuk no-transponder fare for the whole-road scope: use 620 RUB Maryanskaya→Temryuk as Yandex city-route control, and 800 RUB through to Crimean Bridge; quarantine 1,103 RUB for this scope. User clarification on 2026-10-12 overrides the A-289 1,103-RUB reading for the whole-road scope: 620 RUB Maryanskaya→Temryuk Yandex route control; 800 RUB through to Crimean Bridge."
   }
 }

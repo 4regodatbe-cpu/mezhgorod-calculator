@@ -6,7 +6,7 @@ DONE part4 code/calculation: V3 consumes M4-only production, separately adds A28
 
 OPEN: Slavyansk→Rostov same-date routes differ: OSRM316.724km/4h43/noA289/M4-1093 gives150; Yandex218mi/4h viaA289+M4, no amount shown. Do not certify150 as Yandex route price or force415 onto noncrossing OSRM geometry. Diagnostic approximate western control yields360.335km/5h18/1265 and is not promoted. Live provider/geometry records in live-controls/2026-10-13-*.json. Exact bypass physical gate and full fastest-route agreement remain open.
 
-REMOTE at start: experiment/toll-od-matrix-2026-10-08 head8cc2982424e78c32d696b79bc857be05310ce94e; previous code93c0c5d/Preview5xqtongc3. IN PROGRESS: publish this checked correction, then inspect exact Preview. Local integration/matrix-estimates-2026-10-13 base801aa3a. NEXT: stage5 M11/M12/CKAD, retain live-routing discrepancy for stage10; stage7 holidays/midnight. No merge/main/Production.
+PERSISTED: experiment/toll-od-matrix-2026-10-08 code4b27032ff430308b46163c876f35b8cf9dcc12b2, parent8cc29824;39 changed file hashes verified,0 mismatches. Preview dpl_CAK7URaKJrP8oNhs6ZhY2svN1VCy READY, exact code4b27032, target=null; https://mezhgorod-calculator-4ncn2cwjo-4regodatbe-5310.vercel.app/v3 . Vercel log478/pass478/fail0, contracts/Next16/16 PASS; authenticated GET /v3 HTTP200. This is page availability, not a Preview browser trip. Actual live API function/provider controls described above. Local implementation b9a4983; subsequent checkpoint edits clarify source notes only, fees unchanged. NEXT: stage5 M11/M12/CKAD, retain live-routing discrepancy for stage10; stage7 holidays/midnight. No merge/main/Production.
 
 ---
 
