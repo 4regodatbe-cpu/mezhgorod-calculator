@@ -61,7 +61,7 @@ export type NationalTollCoverage = {
   candidateNetworks: Array<{ id: string; name: string; operator: string; status: string; hasReferenceFare: boolean }>;
 };
 export type Trip = { nationalTollCoverage?: NationalTollCoverage; m4PvpPreview?: M4PvpPreview; meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };
-export type TollView = { amount: number | null; weekdayAmount: number | null; weekendAmount: number | null; period: string; segments: string[]; confidence: "matched" | "none"; pricingStatus: "priced" | "free" | "unknown" };
+export type TollView = { priceConfirmation?: string; displayLabel?: string | null; amount: number | null; weekdayAmount: number | null; weekendAmount: number | null; period: string; segments: string[]; confidence: "matched" | "none"; pricingStatus: "priced" | "free" | "unknown" };
 export type Leg = {
   from: string;
   to: string;
@@ -70,4 +70,4 @@ export type Leg = {
   freeCandidate?: Trip | null;
   freeError?: string;
 };
-export type Result = { legs: Leg[]; options?: Leg[]; mode?: "standard"|"dual"; specialEndpoint?:boolean; crimeaComparisonVerified?:boolean; crimeaAccepted?:boolean };
+export type Result = { automaticMode?: "standard"|"dual"; legs: Leg[]; options?: Leg[]; mode?: "standard"|"dual"; specialEndpoint?:boolean; crimeaComparisonVerified?:boolean; crimeaAccepted?:boolean };

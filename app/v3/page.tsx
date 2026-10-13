@@ -8,7 +8,6 @@ import { DonationCard } from "../v2/components/donation-card";
 import { CalculatorForm } from "../v2/components/calculator-form";
 import { ResultPanels } from "../v2/components/result-panels";
 import { useV3Calculation } from "./components/use-v3-calculation";
-import { TollConfirmationNote } from "./components/toll-confirmation-note";
 import { useTariffMode } from "../v2/components/use-tariff-mode";
 import { defaults } from "../v2/components/pricing-data";
 import { clampNumber } from "../v2/components/format";
@@ -20,7 +19,7 @@ import type { Place } from "../v2/components/types";
 
 
 
-function storedNumber(key: string, min: number, max: number, fallback: number) { if (typeof window === "undefined") return fallback; const saved = localStorage.getItem(key); return saved === null ? fallback : clampNumber(Number(saved), min, max, fallback); }
+function storedNumber(key: string, min: number, max: number, fallback: number) { if (typeof window === "undefined") return fallback; try {const saved = localStorage.getItem(key); return saved === null ? fallback : clampNumber(Number(saved), min, max, fallback);}catch{return fallback;} }
 
 export default function V3Page() {
   const resultRef = useRef<HTMLDivElement>(null);
@@ -35,12 +34,13 @@ export default function V3Page() {
     const read=(key:string,fallback:typeof defaults)=>{try {const parsed=JSON.parse(localStorage.getItem(key)??"null");if(!parsed)return fallback;return Object.fromEntries(Object.keys(fallback).map(key=>[key,clampNumber(Number(parsed[key]),1,10000,fallback[key as keyof typeof fallback])])) as typeof defaults;}catch{return fallback;}};
     setRates(read("mezhgorod-v2-rates",defaults));setSpecialRates(read("mezhgorod-v2-special-rates",{standard:70,comfort:80,comfortPlus:90,minivan:110}));setRatesLoaded(true);
   },[]);
-  const [urgent, setUrgent] = useState(false); const [urgentPercent, setUrgentPercent] = useState(() => storedNumber("mezhgorod-v2-urgent-percent", 0, 500, 20));
+  const [urgent, setUrgent] = useState(false); const [urgentPercent, setUrgentPercent] = useState(20);
   useEffect(() => { if(ratesLoaded)try {localStorage.setItem("mezhgorod-v2-rates",JSON.stringify(rates));localStorage.setItem("mezhgorod-v2-special-rates",JSON.stringify(specialRates));}catch{} }, [rates,specialRates,ratesLoaded]);
 
-  useEffect(() => { localStorage.setItem("mezhgorod-v2-urgent-percent", String(urgentPercent)); }, [urgentPercent]);
+  useEffect(()=>{setUrgentPercent(storedNumber("mezhgorod-v2-urgent-percent",0,500,20));},[]);
+  useEffect(() => { if(ratesLoaded)try{localStorage.setItem("mezhgorod-v2-urgent-percent", String(urgentPercent));}catch{} }, [urgentPercent,ratesLoaded]);
   useEffect(() => { setTollPeriod(currentTollPeriod()); }, []);
-  useEffect(() => { let visitorId = localStorage.getItem("mezhgorod-anonymous-visitor-id"); if (!visitorId) { visitorId = crypto.randomUUID(); localStorage.setItem("mezhgorod-anonymous-visitor-id", visitorId); } if (sessionStorage.getItem("mezhgorod-visit-sent")) return; void fetch("/api/collect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type: "visit", visitorId, version: "3.0" }) }).then((response) => { if (response.ok) sessionStorage.setItem("mezhgorod-visit-sent", "1"); }).catch(() => undefined); }, []);
+  useEffect(() => { try {let visitorId = localStorage.getItem("mezhgorod-anonymous-visitor-id"); if (!visitorId) { visitorId = crypto.randomUUID(); localStorage.setItem("mezhgorod-anonymous-visitor-id", visitorId); } if (sessionStorage.getItem("mezhgorod-visit-sent")) return; void fetch("/api/collect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type: "visit", visitorId, version: "3.0" }) }).then((response) => { if (response.ok) sessionStorage.setItem("mezhgorod-visit-sent", "1"); }).catch(() => undefined);}catch{} }, []);
   const multiplier = urgent ? 1 + Math.max(0, urgentPercent) / 100 : 1;
   const { result, error, loading, deepTollDiagnostics, setDeepTollDiagnostics, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard } = useV3Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint: "/api/v3/calculate", analyticsVersion: "3.0" });
   useEffect(() => {
@@ -87,7 +87,6 @@ export default function V3Page() {
         onCalculate={calculate}
       />
       <div ref={resultRef} className="scroll-mt-3">
-        {standardLeg && <TollConfirmationNote tolls={{amount:standardLeg.fast.tolls.amount, priceConfirmation:(standardLeg.fast.tolls as typeof standardLeg.fast.tolls & {priceConfirmation?:string}).priceConfirmation}}/>}
         <ResultPanels result={result} standardLeg={standardLeg} standardHasTolls={standardHasTolls} standardOptimal={standardOptimal} manualToll={manualToll} onManualToll={setManualToll} copiedKey={copiedKey} copyStandard={copyStandard} tollPeriod={tollPeriod} onTollPeriodChange={setTollPeriod} fastestOnly/>
       </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2"><FeedbackForm/><DonationCard/></div>

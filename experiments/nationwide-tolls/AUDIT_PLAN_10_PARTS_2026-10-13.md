@@ -76,3 +76,8 @@ DONE existing temporal code audit and safe ambiguity handling: Moscow weekday, M
 ## Stage8 — 2026-10-13
 
 DONE existing version/zone/rounding code audit,516 tests/build PASS. First-day ISO/date bug, alias/intraday/version certainty, consistent integer fare parts and overflow/split checks fixed. M1 source230/250 conflict and other source/calendars remain explicit unverified, no guessed fees. See STAGE8_VERSION_ZONE_ROUNDING_AUDIT_2026-10-13.md. Nextstage9.
+
+
+## Stage9 — 2026-10-13
+
+DONE existing client code/render audit: actual API price and same-card warning/copy; strict payload/lifecycle/storage/money guards.527 tests/build PASS, functional React render and controlled hook tests; no actual hosted browser/clipboard claimed. Provider geometry cache unchanged, no final price cache. Details STAGE9_UI_COPY_FAILURE_AUDIT_2026-10-13.md. Nextstage10.

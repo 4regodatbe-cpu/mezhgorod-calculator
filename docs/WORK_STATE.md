@@ -1,3 +1,13 @@
+## CURRENT 2026-10-13 — stage9 UI/copy/state
+
+DONE existing client code/render audit: V3 actual API toll amount/period on card and copy, card-bound unconfirmed note, nested payload/money guard, stale/reset/unmount/clipboard handling, optional storage/SSR/analytics and presentation sum bounds.527/pass527/fail0 + contracts, TS/Next16/16, scopedlint/diff-check PASS. Actual React static render + controlled real-hook lifecycle tests; [report](../experiments/nationwide-tolls/STAGE9_UI_COPY_FAILURE_AUDIT_2026-10-13.md).
+
+LIMITS: no new live provider/browser/system clipboard/hosted POST; provider21600s geometry cache unchanged, no final price cache. Source/physical/calendar gaps (M1/M3/M11/679–684/Rostov etc) remain explicitly open. V2 reference period selector unchanged; fastest V3 uses actual calculated amount.
+
+IN PROGRESS persistence: local baselineca53a08 / remoteexperiment72fcdbd7 verified, code/Preview pending. Unrelated PRs12/9/6 unchanged. NEXT finalstage10 chosen-route/live/browser/provider/cache/performance and consolidated source/coverage report. No main/merge/Production.
+
+---
+
 ## CURRENT 2026-10-13 — stage8 versions/zones/rounding
 
 DONE existing code audit: date/ISO Moscow boundaries and intraday unknown; aliases/conflicting versions; confirmation belongs to selected row, undated prices unconfirmed; commercial total rounded once with consistent integer parts, split/money/overflow bounds.516/pass516/fail0 + contracts, TS/Next16/16, scopedlint/diff-check PASS. [Detailed report](../experiments/nationwide-tolls/STAGE8_VERSION_ZONE_ROUNDING_AUDIT_2026-10-13.md).

@@ -119,3 +119,8 @@ Existing completeness/version policy applied: explicit null from a recognized ro
 ## 2026-10-13 — stage8 consistency implementation
 
 Existing numeric-candidate permission retained; missing effective date cannot mean confirmed version. Date-only proof cannot resolve a tariff's intraday start/end. Commercial trip fare rounds once and allocates integer rubles deterministically among displayed parts; rates, tiers and geographic zones unchanged. Unresolved M1 payment/category conflict is preserved without source substitution. No new source price/date approved.
+
+
+## 2026-10-13 — stage9 display binding
+
+Existing selected-route/candidate policy applied: V3 fastest card and copy consume API actual toll amount/period, not day-reference summaries. Unconfirmed note belongs to the displayed route; unknown remains null, free explicit0. V2 reference-period selection retained. Optional analytics/storage/clipboard cannot invalidate a successful quote or revive a cleared result. No new provider-cache TTL or fee policy.

@@ -1,3 +1,11 @@
+## 2026-10-13 — stage9
+
+- [x] Client code/render audit: actual API price/card-copy binding, strict response validator, stale/abort/reset/unmount/copy lifecycle, browser storage/SSR/analytics and presentation overflow.527 tests/build PASS.
+- [ ] Persist/check exact experimental Preview.
+- [ ] Stage10: complete chosen-route/provider/Yandex/browser/performance checks and consolidated open source/physical/calendar coverage. Provider geometry cache21600s unchanged; no final price cache. Retain M1/M3/M11/CKAD/M12/Rostov unresolved issues.
+
+---
+
 ## 2026-10-13 — stage8
 
 - [x] Version/zone/rounding code audit: date/ISO boundaries, aliases/intraday ambiguity, exact-row confirmation, undated warnings, single total rounding and consistent parts, split/money bounds.516 tests/build PASS.

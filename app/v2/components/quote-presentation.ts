@@ -2,7 +2,7 @@ import { distance, duration, money } from "./format";
 import { tariffNames } from "./pricing-data";
 import type { TollView, Trip } from "./types";
 
-export type TollPeriod = "weekday" | "weekend";
+export type TollPeriod = "weekday" | "weekend" | "actual";
 export type TollAmount = {
   status: "priced" | "free" | "unknown" | "manual";
   amount: number | null;
@@ -50,7 +50,7 @@ export function resolveTollAmount(
 ): TollAmount {
   if (manualToll !== undefined && manualToll.trim() !== "") {
     const manualAmount = Number(manualToll);
-    if (Number.isFinite(manualAmount) && manualAmount >= 0) {
+    if (Number.isFinite(manualAmount) && manualAmount >= 0 && Number.isSafeInteger(Math.round(manualAmount))) {
       return { status: "manual", amount: manualAmount };
     }
     return { status: "unknown", amount: null };
@@ -59,6 +59,11 @@ export function resolveTollAmount(
   if (!toll) return { status: "unknown", amount: null };
   if (toll.pricingStatus === "free") return { status: "free", amount: 0 };
   if (toll.pricingStatus !== "priced") return { status: "unknown", amount: null };
+
+  if (period === "actual") {
+    return typeof toll.amount === "number" && Number.isSafeInteger(toll.amount) && toll.amount >= 0
+      ? {status:"priced",amount:toll.amount} : {status:"unknown",amount:null};
+  }
 
   const scheduledAmount = period === "weekday" ? toll.weekdayAmount : toll.weekendAmount;
   if (typeof scheduledAmount === "number" && Number.isFinite(scheduledAmount) && scheduledAmount >= 0) {
@@ -88,10 +93,11 @@ export function resolveTollAmount(
 }
 
 export function totalWithToll(baseFare: number | null | undefined, toll: TollAmount): number | null {
-  if (typeof baseFare !== "number" || !Number.isFinite(baseFare) || toll.amount === null) return null;
+  if (typeof baseFare !== "number" || baseFare < 0 || !Number.isSafeInteger(Math.round(baseFare)) || toll.amount === null || toll.amount < 0 || !Number.isSafeInteger(Math.round(toll.amount))) return null;
   // The UI and copied quote display whole rubles. Sum those visible components
   // so the printed equation remains arithmetically consistent.
-  return Math.round(baseFare) + Math.round(toll.amount);
+  const total = Math.round(baseFare) + Math.round(toll.amount);
+  return Number.isSafeInteger(total) ? total : null;
 }
 
 
@@ -102,7 +108,7 @@ export type DisplayQuote =
 
 /** Shows a base fare without claiming an unknown toll amount is zero. */
 export function displayQuote(baseFare: number | null | undefined, toll: TollAmount): DisplayQuote {
-  if (typeof baseFare !== "number" || !Number.isFinite(baseFare)) {
+  if (typeof baseFare !== "number" || baseFare < 0 || !Number.isSafeInteger(Math.round(baseFare))) {
     return { kind: "unavailable", label: "Цена тарифа не рассчитана", amount: null };
   }
   if (toll.status === "unknown" || toll.amount === null) {
