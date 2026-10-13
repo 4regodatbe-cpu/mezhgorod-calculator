@@ -963,3 +963,7 @@ Resolve endpoint table conflicts from actual direct operator tariffs without sel
 Статус: две пары/четыре ячейки обработаны; полная очистка всех конфликтов и nationwidestage10 остаются IN PROGRESS. Следующий шаг — аналогично проверять остальные реальные крайние участки/направления, сохранять суммы и случаи несовпадения, не выбирать min/max произвольно. Production/merge не выполнялись.
 
 Actual fresh local V3 API handler/external-provider control after selection: Volnovakha→Moscow1182425m/61701s, status200, elapsed33949ms; priced3050, weekday3050/weekend3370, unconfirmed, segment m4-636→m4-71. This is live local handler evidence, not hostedPOST/browser calculator E2E.
+
+Persistence: localf93ec71081be48fb541f997b496b7aada0a49179 → remote ca8d317f138a2727f0399de9dd6751c0b6115429, parent34b9a0ca;9 changed blobs verified byte-hash identical before nonforce expected-head ref update. Working tree clean. Preview dpl_D2pZpBEFmaN5JEW94TJymCvujcx5 automatically created target=null, exactca8d317 source; last observed BUILDING, not yet READY/availability-verified. No Production.
+
+Whole index audit after expanding compound boundary IDs and counting directed/profile keys:472 conflicting keys before,468 remain after4 reviewed cells. These are fare keys, not472 physical roads or distinct journeys. This block fixes only two northbound pairs. Other pairs need actual control geometry/paid boundaries; no global339/355 winner inferred.
