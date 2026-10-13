@@ -1,7 +1,7 @@
 ## 2026-10-13 — stage8
 
 - [x] Version/zone/rounding code audit: date/ISO boundaries, aliases/intraday ambiguity, exact-row confirmation, undated warnings, single total rounding and consistent parts, split/money bounds.516 tests/build PASS.
-- [ ] Persist/check exact experimental Preview.
+- [x] Experiment5d222c77 saved;10 hashes match. Previewe7f9g7iwb READY exact source,516 remote tests/TS/build PASS; protected GET200.
 - [ ] Stage9: UI/copy/cache/failures, integer part/total and unknown warnings in actual flows.
 - [ ] Stage10: full physical/provider/Yandex/time performance checks; retain M1 raw250 vs generated230 conflict (official403), M3 series/dates, independent M11 calendar/seasonal succession and existing Rostov/road exits. No new unverified prices.
 

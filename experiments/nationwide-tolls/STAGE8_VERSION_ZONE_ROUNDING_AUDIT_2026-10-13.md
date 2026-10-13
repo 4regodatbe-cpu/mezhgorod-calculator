@@ -26,3 +26,10 @@ Generator hardcoded M1/M3 values and undated source-series rows are documented, 
 Focused8/8 PASS using actual CKAD/head matrix values, injected exact dated/candidate/overlap versions, conflicting aliases, fractional fare sum, loss of zone length and overflow. Final `npm run build -- --webpack`:516/pass516/fail0 + quote/API contracts PASS; TypeScript/Next16/16 pages PASS. Scoped ESLint/diff-check PASS. First lint invocation reported CJS require-import rule on existing/added require lines; declared the .cjs entrypoint's intentional CommonJS style, reran lint clean. No failed calculation/test hidden. No new live provider/browser/hosted POST. Primary-source retrieval failed as above; no current source price confirmation claimed.
 
 NEXT stage9 UI/copy/cache/failures; stage10 exact routes/performance/live equivalence and remaining source/physical/calendars. Source conflicts remain explicit deferred, not a completed nationwide fare audit. Publication pending at report creation; append verified code/Preview evidence afterwards.
+
+
+## Stage8 verified publication
+
+Local8993d81 maps to remote5d222c7727b9e911800c985e15f8c5f4f7016277 (parent6eeb8bde), tree22a00de6f518f038b43d88414446bf12ae234116. All10 changed file blob hashes matched tested local source,0 mismatches; base tree preserved, update_ref expected_sha/force=false. No source price dataset regenerated.
+
+Preview dpl_EXRpmoF43j4Y43XAS9aq1seZVtN9 READY exact source5d222c77, target=null; https://mezhgorod-calculator-e7f9g7iwb-4regodatbe-5310.vercel.app/v3 . Remote logs516/pass516/fail0, quote/API contracts PASS, TypeScript/Next16/16 PASS, Build Completed31s. Authenticated protected GET /v3 HTTP200 confirms page availability only, no hosted trip POST/browser/new live source certification. Nextstage9. No main/merge/Production.

@@ -4,7 +4,7 @@ DONE existing code audit: date/ISO Moscow boundaries and intraday unknown; alias
 
 OPEN source data: M1 matrix230 vs raw noTransponder250, official queryempty/page403; M3 source/dates, mainline M11 independent calendar/seasonal succession. No source values or4699 rows altered, no new M1/M3/regional customer fee enabled. No new live provider/browser/hosted POST; existing A289 corrections and Rostov/physical gaps retained.
 
-IN PROGRESS persistence: baseline67644e5 / remoteexperiment6eeb8bde confirmed, code/Preview pending. Unrelated PRs12/9/6 rechecked unchanged. NEXT stage9UI/copy/cache/failures, stage10E2E/performance/source/physical completion. No main/merge/Production.
+PERSISTED local8993d81 → remote5d222c7727b9e911800c985e15f8c5f4f7016277 (parent6eeb8bde);10 changed file hashes match,0 mismatches. Preview dpl_EXRpmoF43j4Y43XAS9aq1seZVtN9 READY exact source5d222c77, target=null; https://mezhgorod-calculator-e7f9g7iwb-4regodatbe-5310.vercel.app/v3 . Remote516/pass516/fail0, contracts/TS/Next16/16 PASS; protected GET200, availability only. Unrelated PRs12/9/6 rechecked unchanged. NEXT stage9UI/copy/cache/failures, stage10E2E/performance/source/physical completion. No main/merge/Production.
 
 ---
 
