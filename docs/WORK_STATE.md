@@ -2,7 +2,9 @@
 
 DONE locally: `experiments/nationwide-tolls/A289_OD_MATRIX_2026-10-13.json` distinguishes three physical charging frames (23/82/103), operator endpoints Maryanskaya/Slavyansk/Varenikovskaya/Temryuk, the unbound Anapa exit, and the full Taman/Crimean-Bridge continuation. Seven distinct priced OD pairs are stored bidirectionally (14 rows): five saved operator direct no-transponder rates, user route controls Maryanskaya→Temryuk620 and full bridge800. Eight undirected remaining pairs are explicitly unresolved with no invented fare. The full Crimea route V3 now reads the 800 vector via the same exact OD registry and selected-route frame order; partial vectors remain unknown. Other OD quotes require exact exit binding; the 620 city bypass requires its specific route control. Generator was missing `TARIFF_MATRIX_CANDIDATES_2026-10-12.json` from the recovered remote snapshot; copied the previous experiment's source to make rebuilding reproducible.
 
-Verification: generator4693, register2086 selected/1830 provisional/777 history; validator PASS, quote/API contract PASS, focused A289 2/2 and Crimea helper2/2 PASS, native 21 test files PASS, TypeScript/Next webpack build16/16 PASS. No live selected-route API/Preview test or exact Anapa junction binding. Local experimental branch; remote publication for this new block pending. Details: `experiments/nationwide-tolls/WORK_LOG.md`.
+Verification: generator4693, register2086 selected/1830 provisional/777 history; validator PASS, quote/API contract PASS, focused A289 2/2 and Crimea helper2/2 PASS, native 21 test files PASS, TypeScript/Next webpack build16/16 PASS. No live selected-route API test or exact Anapa junction binding. Details: `experiments/nationwide-tolls/WORK_LOG.md`.
+
+PERSISTED: remote code `f9c092a0a492cf15c472b488ff71c64ef2c2d1e6` on experiment/toll-od-matrix-2026-10-08 (parent7afb510), Preview `dpl_7CfgeSqL2jfpziGSYFDcFM8nhzPN` READY, target=null. Authenticated GET https://mezhgorod-calculator-bussghy8p-4regodatbe-5310.vercel.app/v3 returned HTTP200/title. This is deployment availability, not a real A-289 route calculation. No main/Production.
 
 ---
 

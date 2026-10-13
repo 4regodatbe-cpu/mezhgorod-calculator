@@ -3,6 +3,7 @@
 - [x] Preserve three physical frames and seven directly sourced/user-approved OD pairs (14 directions); persist explicit unknown Anapa/Taman partial pairs in `A289_OD_MATRIX_2026-10-13.json`; rebuild/validate complete matrix and quote adapter.
 - [ ] Bind Anapa exit and Taman continuation to precise route geometry/maneuver evidence. Then test the remaining Slavyansk→Taman, Varenikovskaya→Taman, Temryuk→Taman, and every Anapa pair with a current direct operator/Yandex fastest control; fill only actual observed OD fares. The 620 city route requires its exit/re-entry control.
 - [ ] Drive representative real routes in both directions through V3: Krasnodar↔Slavyansk, Temryuk, Anapa and Crimea, plus Slavyansk↔Temryuk/Taman. Inspect selected geometry, frames, exit node, fare and warning, then create exact-commit Preview.
+- [x] Persisted as code `f9c092a`, exact Preview `dpl_7CfgeSqL2jfpziGSYFDcFM8nhzPN` READY; authenticated `/v3` GET200. Real route POST remains open.
 
 ---
 
