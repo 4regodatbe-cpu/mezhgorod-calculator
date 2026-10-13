@@ -60,7 +60,7 @@ export async function calculateLegTolls({
     false, // V3 prices A-289 separately using the same selected-route OD matrix.
   );
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
-  const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as NonNullable<ProductionM4Result["tolls"]>} : null, geometricTolls.segments, departureAt);
+  const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as ProductionM4Result["tolls"]} : null, geometricTolls.segments, departureAt);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
   const matrixM11Geometry = matrixM11GeometryComponent(productionM11Geometry);
   const productionM11 = selectedFastRoute.m11RoadEvidence
@@ -127,17 +127,19 @@ export async function calculateLegTolls({
     && productionM11Geometry.evidence.entryDistanceKm <= ENTRY_MAX_DISTANCE_KM;
   // Do not replace a route containing the separately charged Moscow head
   // with only a known mainline subset. An explicit null matrix also stays null.
-  const m11Tolls = m11SafetyReason || m11TailUnresolved ? null
+  const m11TimeMissing = m11HeadDetected && !/(?:Z|[+-]\d\d:\d\d)$/.test(departureAt);
+  const m11Tolls = m11TimeMissing || m11SafetyReason || m11TailUnresolved ? null
     : matrixM11Geometry ? matrixM11Geometry.tolls
     : m11HeadDetected ? null
     : matrixM11 ? matrixM11.tolls : productionM11?.tolls ?? null;
-  const m11Reason = m11TailUnresolved ? "m11_679_684_continuation_not_priced"
+  const m11Reason = m11TimeMissing ? "m11_hourly_entry_time_missing"
+    : m11TailUnresolved ? "m11_679_684_continuation_not_priced"
     : m11SafetyReason ? m11SafetyReason
     : matrixM11Geometry?.reason ?? (m11HeadDetected ? productionM11Geometry.reason
     : matrixM11?.reason ?? productionM11?.reason ?? productionM11Geometry.reason);
 
   const components: RouteTollComponent[] = [
-    { id: "m4_a289", detected: m4Detected, tolls: m4A289 ? m4A289.tolls : (matrixM4?.tolls as ProductionM4Result["tolls"]) ?? productionM4.tolls, reason: m4A289?.reason ?? matrixM4?.reason ?? productionM4.reason },
+    { id: "m4_a289", detected: m4Detected, tolls: m4A289 ? m4A289.tolls : matrixM4 ? matrixM4.tolls as ProductionM4Result["tolls"] : productionM4.tolls, reason: m4A289?.reason ?? matrixM4?.reason ?? productionM4.reason },
     { id: "m11", detected: m11Detected, tolls: m11Tolls as NonNullable<typeof productionM11>["tolls"], reason: m11Reason },
     { id: "m12", detected: m12Detected, tolls: matrixM12 ? matrixM12.tolls as NonNullable<typeof productionM12>["tolls"] : productionM12?.tolls ?? null, reason: matrixM12?.reason ?? productionM12?.core.reason ?? "m12_not_priced" },
     { id: "ckad", detected: ckadDetected, tolls: matrixCkad ? matrixCkad.tolls as typeof productionCkad.tolls : productionCkad.tolls, reason: matrixCkad?.reason ?? productionCkad.reason },

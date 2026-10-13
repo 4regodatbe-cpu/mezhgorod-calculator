@@ -6,7 +6,7 @@ import { M4 } from "../toll-data/m4";
 import { a289Endpoint, a289ShortRoute } from "./a289-short-route";
 
 const BYPASS = "М-4: Дальний западный обход Краснодара";
-type MatrixM4 = {tolls: ProductionM4Tolls; reason: string} | null;
+type MatrixM4 = {tolls: ProductionM4Tolls | null; reason: string} | null;
 
 /** V3 consumes M4-only production data. A289 and the bypass are independently
  * priced on the same selected geometry and added exactly once. */
@@ -25,7 +25,7 @@ export function composeSelectedM4A289(route: Coordinate[], production: Productio
   const bypass = legacySegments.includes(BYPASS) ? M4.find(row => row.name === BYPASS) : null;
   if (!m4Detected && !a289Detected && !bypass) return null;
   const unknown = (reason: string) => ({tolls: null, reason});
-  const m4 = matrix?.tolls ?? production.tolls;
+  const m4 = matrix ? matrix.tolls : production.tolls;
   if (m4Detected && (!m4 || m4.confidence !== "matched" || (!matrix && !production.exact))) {
     return unknown("M-4 selected traversal is not completely priced; A-289 cannot replace it");
   }

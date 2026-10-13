@@ -109,3 +109,8 @@ No new product policy. Apply existing selected-route/direct-versioned-matrix/unk
 ## 2026-10-13 — stage6 completeness implementation
 
 Existing policy applied, no new user tariff decision: unpriced M1/M3/regional detection from this selected route blocks the full trip sum even if another road has known money. Late trace/recovery cannot discard that missing component. CKAD intersection names do not prove driving on intersecting highways. Provisional price permission does not invent physical road/exit binding or missing tariff version dates.
+
+
+## 2026-10-13 — stage7 temporal implementation
+
+Existing completeness/version policy applied: explicit null from a recognized road's calendar adapter must not fall through to native money. Operator calendars stay road-specific; potential special-day flags may block an unresolved fee but cannot authorize another road's tariff profile. A date alone cannot establish a timezone/hour-sensitive entry fee. Geometry-derived arrival time is calculated, not actual measured timing. No new tariff approval or seasonal end date invented.

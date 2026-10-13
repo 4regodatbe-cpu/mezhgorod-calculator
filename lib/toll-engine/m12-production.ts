@@ -18,14 +18,6 @@ export type M12ProductionResult = {
   blockedByMixedRoadEvidence: boolean;
 };
 
-function periodFor(departureAt?: string) {
-  const parsed = departureAt ? new Date(departureAt) : new Date();
-  const date = Number.isNaN(parsed.getTime()) ? new Date() : parsed;
-  const day = date.getDay();
-  return day === 0 || day === 5 || day === 6
-    ? "пятница–воскресенье"
-    : "понедельник–четверг";
-}
 
 function isLegacyM12Segment(segment: string) {
   return segment.startsWith("М-12:") || segment.startsWith("M-12:");
@@ -49,6 +41,7 @@ export function calculateProductionM12(
   geometricSegments: string[],
   departureAt?: string,
 ): M12ProductionResult {
+  void departureAt; // Compatibility parameter; the supported M12 tariff is all-days.
   const core = calculateM12FromRoute(route, strictM12Span ?? null);
   const blockedByMixedRoadEvidence = geometricSegments.some((segment) => !isLegacyM12Segment(segment));
 
@@ -68,7 +61,7 @@ export function calculateProductionM12(
       amount,
       weekdayAmount: amount,
       weekendAmount: amount,
-      period: periodFor(departureAt),
+      period: "все дни",
       segments: [`М-12: подтверждённые РВП ${core.finalMarkers.join("–")} км`],
       confidence: "matched",
     },

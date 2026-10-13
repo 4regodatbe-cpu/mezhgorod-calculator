@@ -4,6 +4,9 @@
 function m4TariffPeriodAt(instant){
   const unknown=reason=>({status:"unknown",reason,date:null,profile:null,timezone:"Europe/Moscow"});
   if(typeof instant!=="string"||!/^\d{4}-\d\d-\d\dT\d\d:\d\d(?::\d\d(?:\.\d{1,3})?)?(?:Z|[+-]\d\d:\d\d)$/.test(instant))return unknown("timestamp_missing_explicit_utc_offset");
+  const datePrefix=instant.slice(0,10);
+  const calendar=new Date(datePrefix+"T00:00:00Z");
+  if(!Number.isFinite(calendar.getTime())||calendar.toISOString().slice(0,10)!==datePrefix)return unknown("invalid_calendar_date");
   const parsed=new Date(instant);
   if(!Number.isFinite(parsed.getTime()))return unknown("invalid_timestamp");
   const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Moscow",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(parsed);

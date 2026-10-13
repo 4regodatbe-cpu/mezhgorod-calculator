@@ -6,9 +6,12 @@ export function matrixM4Component(production, departureAt, routeSeconds){
  if(production.tolls.segments?.some(s=>s.startsWith('А-289:')))return null;
  const ids=production.m4PvpPreview?.confirmedPvps;
  if(!Array.isArray(ids)||ids.length<1||new Set(ids).size!==ids.length)return null;
- if(!Number.isFinite(routeSeconds)||routeSeconds<0||!Number.isFinite(new Date(departureAt).getTime()))return null;
- const start=m4TariffPeriodAt(departureAt),end=m4TariffPeriodAt(new Date(new Date(departureAt).getTime()+routeSeconds*1000).toISOString());
- if(start.status!=='resolved'||end.status!=='resolved'||start.profile!==end.profile||start.date!==end.date)return null;
+ const unknown=reason=>({tolls:null,reason,priceConfirmation:'unknown'});
+ if(!Number.isFinite(routeSeconds)||routeSeconds<0||!Number.isFinite(new Date(departureAt).getTime()))return unknown('m4_crossing_date_missing');
+ const finish=new Date(new Date(departureAt).getTime()+routeSeconds*1000);
+ if(!Number.isFinite(finish.getTime()))return unknown('m4_crossing_date_invalid');
+ const start=m4TariffPeriodAt(departureAt),end=m4TariffPeriodAt(finish.toISOString());
+ if(start.status!=='resolved'||end.status!=='resolved'||start.profile!==end.profile||start.date!==end.date)return unknown('m4_crossing_calendar_or_profile_ambiguous');
  const south=['m4-1046','m4-1093','m4-1184','m4-1223'];
  const positions=ids.map(id=>south.indexOf(id));
  const isSouth=positions.length>1&&positions.every(x=>x>=0)&&positions.every((p,i)=>!i||Math.abs(p-positions[i-1])===1);

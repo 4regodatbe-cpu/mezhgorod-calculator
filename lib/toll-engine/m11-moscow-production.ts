@@ -93,7 +93,7 @@ export function calculateM11MoscowToPetersburg(
         amount: p58to147 + section15.amount,
         weekdayAmount,
         weekendAmount,
-        period: `по времени фактического проезда М-11 (${section15.profile})`,
+        period: `по расчётному времени проезда М-11 (${section15.profile})`,
         segments: [
           `М-11 147–58: Тверь→Солнечногорск ${p58to147} ₽`,
           `М-11 58–15: Солнечногорск→Москва ${section15.amount} ₽`,
@@ -135,7 +135,7 @@ export function calculateM11MoscowToPetersburg(
       amount: entryTariff.amount + p58Tariff.amountRub,
       weekdayAmount,
       weekendAmount,
-      period: `по времени фактического въезда на М-11 (${entryTariff.profile})`,
+      period: `по расчётному времени въезда на М-11 (${entryTariff.profile})`,
       segments: [
         `М-11 15–58: Москва→Солнечногорск ${entryTariff.amount} ₽`,
         `М-11 58–679: p58→p679 ${p58Tariff.amountRub} ₽`,

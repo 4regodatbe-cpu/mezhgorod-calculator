@@ -1,3 +1,13 @@
+## CURRENT 2026-10-13 — stage7 temporal/calendar
+
+DONE existing temporal code audit: Moscow timezone in legacy/native M11, M12 allDays label, M4 midnight/calendar null retained through native/composition fallback, impossible original dates, M11 missing hour/unknown year/special-day ambiguity guard. Calculated crossing time labelled accurately.508/pass508/fail0 + contracts, scopedlint, TS/Next webpack16/16 PASS. [Detailed report](../experiments/nationwide-tolls/STAGE7_TIME_CALENDAR_AUDIT_2026-10-13.md).
+
+OPEN source/physical coverage: mainline M11 special/transferred-day calendar, seasonal head succession, exact pay/entry/exit policy and per-gate ETA/version timing. Potential special-day flags block unknown, never borrow another road's fee. No new live routing/browser/hosted POST or tariff research in stage7. Existing A289 correction, stage6 live controls and Rostov/physical gaps retained.
+
+IN PROGRESS persistence: baseline4e6a1a4 / remoteexperimentc48b18e confirmed, new commit/Preview pending. NEXT stage8 fares/version/zones/rounding and remaining independent calendar source; stage9UI/cache; stage10E2E. No main/merge/Production.
+
+---
+
 ## CURRENT 2026-10-13 — stage6 M1/M3/regional
 
 DONE existing code/calculation audit: selected-route M1/M3 and regional candidate/paid-event coverage now blocks partial totals, including late trace fallback. Malformed/empty HTTP200 trace and booth-without-toll false-free cases rejected. Exact road refs/CKAD intersection identity and gate road/km/fare + integer trace-count validation fixed.502/502 tests + quote/API contracts, Next TS/webpack16/16, scoped ESLint/diff-check PASS. [Detailed report](../experiments/nationwide-tolls/STAGE6_M1_M3_REGIONAL_AUDIT_2026-10-13.md).

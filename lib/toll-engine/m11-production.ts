@@ -1,3 +1,4 @@
+import { highwayTariffPeriod } from "./tariff-period";
 import currentPoints from "../../data/tolls/m11/2026-10-01-58-679-category1-a1-current.json" with { type: "json" };
 import spatialSnapshot from "../../data/tolls/m11/2026-10-01-58-679-spatial-anchors.json" with { type: "json" };
 import type { Coordinate } from "../tolls";
@@ -33,10 +34,7 @@ function isLegacyM11Segment(segment: string) {
 }
 
 function profileFor(departureAt?: string) {
-  const parsed = departureAt ? new Date(departureAt) : new Date();
-  const date = Number.isNaN(parsed.getTime()) ? new Date() : parsed;
-  const day = date.getDay();
-  return day === 0 || day === 5 || day === 6 ? "friSun" : "monThu";
+  return highwayTariffPeriod(departureAt).weekend ? "friSun" : "monThu";
 }
 
 function selectionReason(value: ReturnType<typeof selectM11CurrentCategory1Tariff>) {

@@ -1,3 +1,12 @@
+## 2026-10-13 — stage7
+
+- [x] Existing temporal code audit: Moscow timezone, M12 allDays, M4 midnight/unverified-calendar null preserved, invalid date normalization, M11 missing hour/independent calendar ambiguity and wording fixed.508 tests/build PASS.
+- [ ] Persist/check exact experimental Preview.
+- [ ] Stage8: fares/version intervals/zones/rounding; dated M1/M3/source conflict; independently sourced M11 mainline special/transferred days and head seasonal succession; no invented payment-time policy.
+- [ ] Stage9 UI/cache/failures; stage10 full physical/time/provider/Yandex integration, existing regional/M11/M12/Rostov gaps.
+
+---
+
 ## 2026-10-13 — stage6
 
 - [x] Audit existing M1/M3/regional composition: lost candidate/trace coverage, late recovery, road ref boundaries/CKAD endpoints, gate identity and trace count contracts fixed.502 tests/build PASS; live local Kaluga2 M3 booths unknown, Odintsovo exact route0 confirmed.

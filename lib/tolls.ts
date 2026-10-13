@@ -1,3 +1,4 @@
+import { highwayTariffPeriod } from "./toll-engine/tariff-period";
 import { A289, CKAD, FULL_ROUTES, M1, M3, M4, M11, M12, REGIONAL } from "./toll-data";
 import type { Coordinate, FullRoute, TollSegment } from "./toll-data";
 
@@ -132,8 +133,7 @@ function matchesFullRoute(route: Coordinate[], matchedSegments: TollSegment[], i
 }
 
 function emptyTolls(date: Date) {
-  const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
-  const weekend = day === 0 || day === 5 || day === 6;
+  const weekend = highwayTariffPeriod(undefined, Number.isNaN(date.getTime()) ? new Date() : date).weekend;
   return {
     amount: 0,
     weekdayAmount: 0,
@@ -152,8 +152,7 @@ export function estimateTolls(route: Coordinate[], departureAt?: string) {
   // origin/destination. Never infer toll roads from that straight line.
   if (route.length < 3) return emptyTolls(date);
 
-  const day = Number.isNaN(date.getTime()) ? new Date().getDay() : date.getDay();
-  const weekend = day === 0 || day === 5 || day === 6;
+  const weekend = highwayTariffPeriod(undefined, Number.isNaN(date.getTime()) ? new Date() : date).weekend;
   const denseRoute = densifyRoute(route);
   const segments = [...M1, ...M3, ...M4, ...M11, ...M12, ...CKAD, ...A289, ...REGIONAL]
     .filter((segment) => matchesSegment(denseRoute, segment));
