@@ -23,3 +23,10 @@ Focused11 tests total (5 response/presentation,5 hook lifecycle/copy,1 actual Re
 Final npm run build -- --webpack527/pass527/fail0 + quote/API contracts PASS, Next TypeScript and16/16 pages PASS; scoped ESLint/diff-check PASS. Initial build failed TS because strict validator narrowed Result and exposed its missing automaticMode field; corrected the actual shared API view model, no any suppression. React Best Practices skill reviewed multiple TSX changes: hook lifecycle/deps, card-owned data, aria/role semantics, SSR initialization, async independence, no new package or blocking analytics. No visual screenshot QA claimed; final complete browser flow remains stage10.
 
 NEXT stage10 full chosen-route/live/provider/Yandex/performance audit, consolidated remaining source/physical/calendar list. Existing M1 raw250/generated230, M3 source/dates, M11 schedule/seasonal/679–684 and Slavyansk→Rostov discrepancies remain open. Stage9 changes do not certify their prices. Publication pending at report creation; append exact code/Preview after verification. No merge/Production.
+
+
+## Stage9 verified publication
+
+Locald0fcdfa maps to remote402a1b2a15dbbde22fa20ac7d328a9329ebd45c4 (parent72fcdbd7), treeec52233f826b853c59fafaed065fc4eb33086ae2. All16 changed blobs matched tested local source,0 mismatches; base tree preserved, expected_sha/force=false ref update. Strict response validator also replayed7 saved actual API responses (Anapa/Slavyansk/Krasnodar/Rostov, Moscow–Petersburg/Tver/Kaluga/Odintsovo), all valid; this is saved-payload compatibility, not a new live route run.
+
+Preview dpl_4uHeVRXK2J3GcKENFYrqddQ6BNKw READY exact source402a1b2a, target=null; https://mezhgorod-calculator-7u2o9rrzb-4regodatbe-5310.vercel.app/v3 . Remote527/pass527/fail0, quote/API contracts PASS, TypeScript/Next16/16 PASS, Build Completed52s. Authenticated protected GET /v3 HTTP200 establishes availability only, no hosted trip/browser/system clipboard verification. Next finalstage10. No main/merge/Production.

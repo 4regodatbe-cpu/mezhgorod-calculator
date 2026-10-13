@@ -4,7 +4,7 @@ DONE existing client code/render audit: V3 actual API toll amount/period on card
 
 LIMITS: no new live provider/browser/system clipboard/hosted POST; provider21600s geometry cache unchanged, no final price cache. Source/physical/calendar gaps (M1/M3/M11/679–684/Rostov etc) remain explicitly open. V2 reference period selector unchanged; fastest V3 uses actual calculated amount.
 
-IN PROGRESS persistence: local baselineca53a08 / remoteexperiment72fcdbd7 verified, code/Preview pending. Unrelated PRs12/9/6 unchanged. NEXT finalstage10 chosen-route/live/browser/provider/cache/performance and consolidated source/coverage report. No main/merge/Production.
+PERSISTED locald0fcdfa → remote402a1b2a15dbbde22fa20ac7d328a9329ebd45c4 (parent72fcdbd7);16 changed files hashmatch,0 mismatches. Preview dpl_4uHeVRXK2J3GcKENFYrqddQ6BNKw READY exact source402a1b2a, target=null; https://mezhgorod-calculator-7u2o9rrzb-4regodatbe-5310.vercel.app/v3 . Remote527/pass527/fail0, contracts/TS/Next16/16 PASS; protected GET200, availability only.7 saved real API payloads pass new validator, not new live route runs. Unrelated PRs12/9/6 unchanged. NEXT finalstage10 chosen-route/live/browser/provider/cache/performance and consolidated source/coverage report. No main/merge/Production.
 
 ---
 
