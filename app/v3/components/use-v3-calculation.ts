@@ -21,7 +21,7 @@ type CalculationInput = {
 };
 const vehicleForRate = { standard: "standard", comfort: "comfort", comfortPlus: "comfort_plus", minivan: "minivan" } as const;
 
-export function useV3Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint = "/api/v2/calculate", analyticsVersion = "2.0" }: CalculationInput) {
+export function useV3Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint = "/api/v3/calculate", analyticsVersion = "3.0" }: CalculationInput) {
   const pending=useRef<AbortController|null>(null);
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
@@ -51,6 +51,7 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             type: "route_v2",
+            version: analyticsVersion,
             fromRegion: leg.from,
             toRegion: leg.to,
             distanceKm: Math.round(trip.meters / 100) / 10,

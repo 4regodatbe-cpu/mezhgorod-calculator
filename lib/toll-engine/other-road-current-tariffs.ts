@@ -15,6 +15,7 @@ export function priceOtherRoadVerifiedSections(evidence: OtherRoadSectionEvidenc
   const base = { roadId: evidence.roadId, tariffMode, observedAt: snapshot.observedAt, source: snapshot.source } as const;
   if (evidence.status !== "verified") return { status: "unknown", amountRub: null, ...base, reason: evidence.reason };
   if (evidence.sectionIds.length === 0) return { status: "unknown", amountRub: null, ...base, reason: "no_verified_sections" };
+  if (new Set(evidence.sectionIds).size !== evidence.sectionIds.length) return { status: "unknown", amountRub: null, ...base, reason: "duplicate_sections" };
   const rows = snapshot.roads[evidence.roadId] as Array<Record<string, unknown>>;
   let amount = 0;
   for (const sectionId of evidence.sectionIds) {

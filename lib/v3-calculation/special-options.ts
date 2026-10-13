@@ -1,3 +1,4 @@
+import { isUsableRoute } from "./route-candidate";
 import { valhalla, osrmRoute, type Located, type RouteWithGeometry } from "../route-providers";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../special-territory-boundaries";
 import { analyzeRoute, candidatePlans, findPlanLegStretchAnomaly, followsPlan } from "../special-territory-policy";
@@ -34,6 +35,7 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
       if(response.status!=="fulfilled")return null;
       try {
         const route:RouteWithGeometry=response.value;
+        if(!isUsableRoute(route,from,to))return null;
         const providerName=index===0?"Valhalla":"OSRM";
         const stretch=findPlanLegStretchAnomaly(route.coordinates,plan.positions);
         if(stretch){rejectedStretchProviders.set(providerName,stretch.stretchRatio);return null;}
@@ -44,12 +46,8 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     });
     const validRoutes=routed.filter((item):item is NonNullable<typeof item>=>item!==null);
     if(!validRoutes.length)return [];
-    // Choose geometry before pricing. Each M-4 candidate can launch several
-    // Valhalla map-match requests; pricing both provider routes in parallel
-    // doubled pressure on that service and made complete toll results
-    // intermittently degrade to unknown. Keep the existing route ranking and
-    // price provider candidates one at a time so toll evidence is complete
-    // before the final paid-route preference is applied.
+    // Select geometry before pricing. Fastest-only prices exactly the winner;
+    // unavailable toll evidence must never promote a slower candidate.
     const routeChoice=fastestOnly
       ? (() => {
           const winner=selectFastestRoute(validRoutes.map(item=>({id:`${item.corridor}:${item.provider}`,seconds:item.fast.seconds,tollStatus:"unknown",item})));
@@ -64,11 +62,12 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     }:routeChoice.quality;
     const rankedRoutes=validRoutes.map(item=>({...item,selectionPreference:item.provider===routeChoice.provider?0:1}))
       .sort((a,b)=>fastestOnly?a.fast.seconds-b.fast.seconds:a.selectionPreference-b.selectionPreference||a.fast.seconds-b.fast.seconds);
-    const routesToPrice=fastestOnly?rankedRoutes.slice(0,1):rankedRoutes;
+    const routesToPrice=fastestOnly?rankedRoutes.filter(item=>item.provider===routeChoice.provider):rankedRoutes;
     const selected:PricedCandidate[]=[];
     for(const item of routesToPrice){
       const pricing=await calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:null});
       const {route,index,...candidate}=item;
+      void index;
       selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality}});
     }
     const valid=selected;
@@ -99,8 +98,9 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
   const allCandidates=candidates.flat();
   const selection=selectGeographicTerritoryOption(allCandidates,preferredCorridor);
   if(!selection.options.length)throw new Error("PREFERRED_ROUTE_UNAVAILABLE");
-  const chosenOptions=fastestOnly && allCandidates.length
-    ? [allCandidates.reduce((best,item)=>item.fast.seconds<best.fast.seconds?item:best)]
+  const eligibleCandidates=allCandidates.filter(item=>item.corridor===preferredCorridor);
+  const chosenOptions=fastestOnly && eligibleCandidates.length
+    ? [selectFastestRoute(eligibleCandidates.map(item=>({id:`${item.corridor}:${item.provider}`,seconds:item.fast.seconds,tollStatus:"unknown",item}))).route.item]
     : selection.options;
   const options=chosenOptions.map((option)=>{
     const publicOption={...option};

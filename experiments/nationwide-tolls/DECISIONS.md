@@ -91,3 +91,7 @@ User instructed: cover **all other Russian toll roads**, not M-4 only. Existing 
 Один fastest маршрут, точное доказательство проезда и временного профиля передаются адаптером. Изолированный обработчик не строит маршрут.
 
 13.10.2026: V3 interim numeric toll totals visibly unconfirmed; M4 exact route vectors use the new table, other native components retain their engine while per-road matrix adapters are incomplete. This is an experimental release boundary.
+
+## 2026-10-13 — audit implementation boundary
+
+Existing authorization to display provisional prices remains. A Temryuk city name is not verified bypass evidence: a two-frame estimate uses an explicit provisional permission and unconfirmed output. Complete M4 fares and separately evidenced A289/bypass are composed once for all supported western endpoints. Build runs the expanded audit gate. These are bug fixes under the existing user policy, not new tariff approvals. Open holiday/calendar and missing-network coverage are recorded in AUDIT_2026-10-13.md.

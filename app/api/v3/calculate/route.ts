@@ -26,6 +26,18 @@ function validUserRates(value: unknown): value is UserRates {
   return validRate(rates.standard) && validRate(rates.comfort) && validRate(rates.comfortPlus) && validRate(rates.minivan);
 }
 
+// Validate the calendar before Date can normalize February 30 into March.
+// Timezone is required for timestamps so server timezone cannot select a tariff.
+function validDepartureAt(value: unknown): value is string {
+  if (typeof value !== "string") return false;
+  const match = /^(\d{4})-(\d{2})-(\d{2})(?:T(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d{1,3})?)?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d))?$/.exec(value);
+  if (!match) return false;
+  const calendar = new Date(`${match[1]}-${match[2]}-${match[3]}T00:00:00Z`);
+  return Number.isFinite(calendar.getTime())
+    && calendar.toISOString().slice(0, 10) === value.slice(0, 10)
+    && Number.isFinite(new Date(value).getTime());
+}
+
 export const maxDuration = 120;
 
 export async function POST(request: NextRequest) {
@@ -46,7 +58,7 @@ export async function POST(request: NextRequest) {
       multiplier?: number;
     };
     if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return NextResponse.json({ error: "Некорректный режим расчёта" }, { status: 400 });
-    if (body.departureAt !== undefined && (typeof body.departureAt !== "string" || Number.isNaN(new Date(body.departureAt).getTime()))) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
+    if (body.departureAt !== undefined && !validDepartureAt(body.departureAt)) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
     if (body.vehicle !== undefined && !VEHICLES.includes(body.vehicle)) return NextResponse.json({ error: "Некорректный класс автомобиля" }, { status: 400 });
     if (body.modeOverride !== undefined && typeof body.modeOverride !== "boolean") return NextResponse.json({error:"Некорректный режим"},{status:400});
     if (body.specialRates !== undefined && !validUserRates(body.specialRates)) return NextResponse.json({error:"Некорректные особые тарифы"},{status:400});
@@ -54,6 +66,7 @@ export async function POST(request: NextRequest) {
     if (body.manualRates !== undefined && (!Array.isArray(body.manualRates) || body.manualRates.length !== 2 || !body.manualRates.every(validRate))) return NextResponse.json({ error: "Некорректные тарифы участков" }, { status: 400 });
     if (body.multiplier !== undefined && (typeof body.multiplier !== "number" || !Number.isFinite(body.multiplier) || body.multiplier < 1 || body.multiplier > 6)) return NextResponse.json({ error: "Некорректная наценка" }, { status: 400 });
     if (!validPoint(body.from) || !validPoint(body.to)) return NextResponse.json({ error: "Проверьте точки маршрута" }, { status: 400 });
+    const departureAt = body.departureAt ?? new Date().toISOString();
 
     const [from,to] = await Promise.all([geocode(body.from),geocode(body.to)]);
     const policy = endpointPolicy(from.position,to.position,zones);
@@ -66,19 +79,25 @@ export async function POST(request: NextRequest) {
       const territorySplit = analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
       const {coordinates, legs, ...summary} = trip;
       void coordinates; void legs;
-      return {...summary, ...("tolls" in trip ? {tolls:{...trip.tolls as object, priceConfirmation:"unconfirmed", displayLabel:"Стоимость не подтверждена"}} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
+      const tolls = "tolls" in trip ? trip.tolls as { pricingStatus?: string } : null;
+      const confirmation = tolls?.pricingStatus === "priced"
+        ? {priceConfirmation:"unconfirmed",displayLabel:"Стоимость не подтверждена"}
+        : tolls?.pricingStatus === "free"
+          ? {priceConfirmation:"confirmed",displayLabel:null}
+          : {priceConfirmation:"unknown",displayLabel:"Стоимость платных дорог неизвестна"};
+      return {...summary, ...(tolls ? {tolls:{...tolls, ...confirmation}} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
         from:from.label,to:to.label,vehicle,mode,normalRateOverrides,specialRateOverrides,multiplier:body.multiplier,
         legs:[{from:from.label,to:to.label,distanceKm:trip.meters/1000,territorySplit}],
       })]))};
     };
     if(policy.specialEndpoint) {
-      const special=await calculateSpecialOptions(from,to,body.departureAt,true);
+      const special=await calculateSpecialOptions(from,to,departureAt,true);
       const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast),free:null,freeCandidate:null}));
       if(!options.length)throw new Error("MAINLAND_UNAVAILABLE");
       return NextResponse.json({legs:options,options,mode,automaticMode,specialEndpoint:true,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
     }
     const plan=candidatePlans(from.position,to.position,zones)[0];
-    const leg=await calculateLeg(from,to,body.departureAt,body.diagnostics===true,plan.positions,true);
+    const leg=await calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true);
     const attachAlternative = <T extends { meters:number;seconds:number;coordinates:Coordinate[] }>(trip:T|null) => {
       if(!trip)return null;
       try { return attachPricing(trip); } catch {return null;}

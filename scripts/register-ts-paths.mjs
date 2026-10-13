@@ -4,7 +4,10 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
 const root=fileURLToPath(new URL('../',import.meta.url));
-registerHooks({resolve(specifier,context,nextResolve){
+registerHooks({load(url,context,nextLoad){
+  // Match the JSON imports supported by the application's Next bundler.
+  return nextLoad(url,url.endsWith('.json')?{...context,importAttributes:{...context.importAttributes,type:'json'}}:context);
+},resolve(specifier,context,nextResolve){
   if(specifier.startsWith('@/'))specifier=pathToFileURL(path.join(root,specifier.slice(2))).href;
   try{return nextResolve(specifier,context);}catch(error){
     if(specifier.startsWith('.')||specifier.startsWith('file:')){

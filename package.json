@@ -8,10 +8,11 @@
   "scripts": {
     "install:ci": "pnpm install --frozen-lockfile",
     "dev": "next dev",
-    "build": "node --test experiments/toll-od-matrix/*.test.mjs experiments/nationwide-tolls/*.test.mjs && next build",
+    "build": "npm run test:audit && next build",
     "start": "next start",
     "lint": "eslint . --ignore-pattern .next",
-    "test:route-benchmark": "node scripts/yandex-route-benchmark-integrity.mjs"
+    "test:route-benchmark": "node scripts/yandex-route-benchmark-integrity.mjs",
+    "test:audit": "node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts scripts/*.test.mjs experiments/toll-od-matrix/*.test.mjs experiments/nationwide-tolls/*.test.mjs experiments/nationwide-tolls/engine/*.test.mjs && node experiments/nationwide-tolls/scripts/quote.test.cjs"
   },
   "dependencies": {
     "class-variance-authority": "0.7.1",

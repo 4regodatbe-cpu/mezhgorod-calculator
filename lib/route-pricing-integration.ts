@@ -15,7 +15,13 @@ export function calculateRoutePricing(input: {
   const vehicle = input.vehicle ?? "comfort";
   const multiplier = Number.isFinite(input.multiplier) && input.multiplier! >= 1 && input.multiplier! <= 6 ? input.multiplier! : 1;
   // Text labels never establish a tariff zone. Missing geometry is not a normal-zone result.
-  const incomplete = input.legs.some(leg => !leg.territorySplit || !Number.isFinite(leg.distanceKm) || leg.distanceKm <= 0 || Math.abs(leg.territorySplit.ordinaryKm + leg.territorySplit.specialKm - leg.distanceKm) > 0.001);
+  const incomplete = input.legs.length === 0 || input.legs.some(leg => {
+    const split = leg.territorySplit;
+    return !split || !Number.isFinite(leg.distanceKm) || leg.distanceKm <= 0 ||
+      !Number.isFinite(split.ordinaryKm) || !Number.isFinite(split.specialKm) ||
+      split.ordinaryKm < 0 || split.specialKm < 0 ||
+      Math.abs(split.ordinaryKm + split.specialKm - leg.distanceKm) > 0.001;
+  });
   const pricingSegments: PricedSegment[] = [];
   if (!incomplete) for (const [i, leg] of input.legs.entries()) {
     const split = leg.territorySplit!;

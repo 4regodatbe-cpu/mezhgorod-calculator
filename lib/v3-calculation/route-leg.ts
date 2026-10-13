@@ -1,7 +1,7 @@
+import { isUsableRoute } from "./route-candidate";
 import { analyzeRoute, findPlanLegStretchAnomaly, followsPlan } from "../special-territory-policy.ts";
 import { SPECIAL_TERRITORY_BOUNDARIES } from "../special-territory-boundaries.ts";
 import { valhalla, brouterFast, osrmRoute, type Located } from "@/lib/route-providers";
-import type { Coordinate } from "@/lib/tolls";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { selectLiveRouteCandidates } from "@/lib/route-quality";
 import { selectFreeRoute, tollsForApi } from "../v2-calculation/free-route-selection";
@@ -21,6 +21,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   const [fastResult, valhallaModerateAvoidResult, valhallaPartialTollResult, osrmResult, brouterFastResult] = rawResults.map((result, index) => {
     if (result.status === "rejected") return result;
     try {
+      if (!isUsableRoute(result.value, from, to)) throw new Error("INVALID_ROUTE_CANDIDATE");
       if (positions) {
         const stretch = findPlanLegStretchAnomaly(result.value.coordinates, positions);
         if (stretch) {
@@ -75,9 +76,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   // Keep pricing evidence attached to the exact candidate chosen by the fastest-only selector.
   // Provider labels alone are insufficient: there are multiple Valhalla candidates with different geometry.
   const selectedFastRoute = routeCandidates.find((candidate) => candidate.name === selectedFast.provider)?.route ?? selectedFast.route;
-  const routeGeometry = selectedFastRoute.coordinates.length > 0
-    ? selectedFastRoute.coordinates
-    : [[from.position.lng, from.position.lat], [to.position.lng, to.position.lat]] as Coordinate[];
+  const routeGeometry = selectedFastRoute.coordinates;
 
   const selectedFreePromise = fastestOnly
     ? Promise.resolve(null)
@@ -89,7 +88,8 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
-  let [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
+  const [initialFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
+  let selectedFree = initialFree;
   // The expensive full-detour search is a genuine fallback; keep it off the
   // critical path when a faster candidate already passes the complete booth trace.
   if (!fastestOnly && !selectedFree) {
@@ -136,6 +136,6 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     fast: { ...selectedFast.route, coordinates: routeGeometry, quality: fastQuality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation, m4PvpPreview, nationalTollCoverage },
     free: !fastestOnly && confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
     freeCandidate: null,
-    freeError: confirmedFree ? undefined : "Не удалось подтвердить вариант с объездом пунктов оплаты.",
+    freeError: fastestOnly || confirmedFree ? undefined : "Не удалось подтвердить вариант с объездом пунктов оплаты.",
   };
 }

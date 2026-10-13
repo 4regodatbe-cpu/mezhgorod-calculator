@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 type RouteEvent = { type: "route"; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; rate: number; total: number };
-type RouteV2Event = { type: "route_v2"; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; routeType: string; totals: { standard: number; comfort: number; comfortPlus: number; minivan: number }; tollWeekday: number | null; tollWeekend: number | null; tollPricingStatus?: "priced" | "free" | "unknown" };
+type RouteV2Event = { type: "route_v2"; version?: string; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; routeType: string; totals: { standard: number; comfort: number; comfortPlus: number; minivan: number }; tollWeekday: number | null; tollWeekend: number | null; tollPricingStatus?: "priced" | "free" | "unknown" };
 type FeedbackEvent = { type: "feedback"; category: string; message: string; website?: string };
 type VisitEvent = { type: "visit"; visitorId: string; version?: string };
 
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     if (!endpoint || !token) return NextResponse.json({ error: "Сбор данных ещё настраивается" }, { status: 503 });
 
     const webhookBody = body.type === "route_v2"
-      ? { type: "route", version: "2.0", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: effectiveRate(body.distanceKm, body.totals.standard), total: body.totals.standard }
+      ? { type: "route", version: clean(body.version, 20) || "2.0", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: effectiveRate(body.distanceKm, body.totals.standard), total: body.totals.standard }
       : body.type === "route"
         ? { type: "route", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: body.rate, total: body.total }
         : body.type === "feedback"

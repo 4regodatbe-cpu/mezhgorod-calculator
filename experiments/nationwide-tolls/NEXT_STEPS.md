@@ -1,3 +1,39 @@
+## 2026-10-13 — аудит: части1–3 завершены
+
+- [x] Части1–3: календарный вход API, fastest provider geometry, промежуточные A289 OD/frame ordering/unknown/repeat guard. Gate472 и build PASS.
+- [ ] Сохранить проверенный локальный audit baseline и части1–3 в experiment; lease head d0dc2227, base tree0ed91222. Baseline SHA сравнение изменяемых файлов PASS.
+- [ ] Часть4: M4 partial/full plus A289, no dropped/double charged components.
+- [ ] Части5–10 по AUDIT_PLAN_10_PARTS_2026-10-13.md; live bindings/browser остаются открытыми.
+
+---
+
+## 2026-10-13 — аудит: часть 2 завершена
+
+- [x] Часть2: V3 fastest candidate validity/geometry/provider identity, equal ETA, no fake freeError; 466 tests/full build PASS.
+- [ ] Часть3: A289 intermediate OD pairs and physical frame ordering; resolved/unknown boundary.
+- [ ] Сохранить локальные части1–3 и исходный аудит8556e57 в удалённой экспериментальной ветке после проверки текущего head.
+
+---
+
+## 2026-10-13 — текущий порядок аудита
+
+- [x] Часть 1: исходное состояние, общий gate, календарная валидация API.
+- [ ] Часть 2: fastest selector / equal ETA / provider geometry-evidence.
+- [ ] Части 3–10 по [плану](AUDIT_PLAN_10_PARTS_2026-10-13.md).
+- [ ] Перенести локальный аудит после `d0dc2227` в экспериментальную удалённую ветку с повторной сверкой head; текущий Preview старее исправлений. Не смешивать с V2 PR #12.
+
+---
+
+## Audit follow-up — 2026-10-13
+
+- [x] Code/calculation audit fixes and62-file regression gate; see AUDIT_2026-10-13.md.
+- [ ] Persist audit + exact Preview and record SHA/availability.
+- [ ] Live V3 selected-route controls Yalta/Anapa/Taman/Temryuk↔Krasnodar/Moscow; inspect frame sequence and bypass, not just page HTTP200.
+- [ ] Unify holiday/midnight tariff handling across M4 native/matrix/API/UI without applying one road's calendar to all roads.
+- [ ] Resolve exact local exit/bypass geometry and complete M1/M3/regional matrix-to-route composition.
+
+---
+
 ## CURRENT 2026-10-13 — Yalta and Anapa short-route regression
 
 - [x] Wire V3 short A-289 selected route to finished OD lookup and conditional bypass, with synthetic Yalta/Anapa↔Krasnodar direction checks; a provisional two-frame Anapa exit estimate is visible as unconfirmed.

@@ -15,6 +15,7 @@ export type A289PricingResult = {
   weekendAmount: number;
   period: "понедельник–четверг" | "пятница–воскресенье";
   crossedFrames: string[];
+  repeatedFrames: string[];
   segments: string[];
   confidence: "matched" | "none";
 };
@@ -68,28 +69,39 @@ function pointToSegmentKm(anchor: { lat: number; lon: number }, a: Coordinate, b
   const dx = bx - ax;
   const dy = by - ay;
   const lengthSquared = dx * dx + dy * dy;
-  if (lengthSquared <= 1e-12) return Math.hypot(ax, ay);
+  if (lengthSquared <= 1e-12) return { distanceKm: Math.hypot(ax, ay), fraction: 0 };
   const t = Math.max(0, Math.min(1, -(ax * dx + ay * dy) / lengthSquared));
-  return Math.hypot(ax + t * dx, ay + t * dy);
+  return { distanceKm: Math.hypot(ax + t * dx, ay + t * dy), fraction: t };
 }
 
-function nearestSegment(route: Coordinate[], frame: A289Frame) {
+function nearestSegment(route: Coordinate[], frame: A289Frame, distances: number[]) {
   let distanceKm = Number.POSITIVE_INFINITY;
   let segmentIndex = -1;
   let matchedNodeId: string | null = null;
+  let passagePosition = Number.POSITIVE_INFINITY;
+  let repeated = false;
 
   for (const anchor of frame.anchors) {
+    let previousPassage: number | null = null;
     for (let index = 0; index < route.length - 1; index += 1) {
       const candidate = pointToSegmentKm(anchor, route[index], route[index + 1]);
-      if (candidate < distanceKm) {
-        distanceKm = candidate;
+      if (candidate.distanceKm < distanceKm) {
+        distanceKm = candidate.distanceKm;
         segmentIndex = index;
         matchedNodeId = anchor.osmNodeId;
+      }
+      if (candidate.distanceKm <= CROSSING_RADIUS_KM) {
+        const station = distances[index] + candidate.fraction * (distances[index + 1] - distances[index]);
+        // Adjacent shape segments may touch the same camera. A return after
+        // leaving its vicinity is a second passage, not a duplicate OSM node.
+        if (previousPassage !== null && station - previousPassage > 0.5) repeated = true;
+        previousPassage = station;
+        passagePosition = Math.min(passagePosition, index + candidate.fraction);
       }
     }
   }
 
-  return { distanceKm, segmentIndex, matchedNodeId };
+  return { distanceKm, segmentIndex, matchedNodeId, passagePosition, repeated };
 }
 
 function tariffPeriod(departureAt?: string): A289PricingResult["period"] {
@@ -106,15 +118,22 @@ export function priceA289Route(route: Coordinate[], departureAt?: string): A289P
       weekendAmount: 0,
       period,
       crossedFrames: [],
+      repeatedFrames: [],
       segments: [],
       confidence: "none",
     };
   }
 
+  const distances = [0];
+  for (let i = 1; i < route.length; i++) {
+    const a = route[i - 1], b = route[i];
+    const km = Math.hypot((b[0] - a[0]) * 111.320 * Math.cos((a[1] + b[1]) * Math.PI / 360), (b[1] - a[1]) * 110.574);
+    distances.push(distances[i - 1] + km);
+  }
   const crossed = A289_FRAMES
-    .map((frame) => ({ frame, ...nearestSegment(route, frame) }))
+    .map((frame) => ({ frame, ...nearestSegment(route, frame, distances) }))
     .filter((item) => item.segmentIndex >= 0 && item.distanceKm <= CROSSING_RADIUS_KM)
-    .sort((a, b) => a.segmentIndex - b.segmentIndex);
+    .sort((a, b) => a.passagePosition - b.passagePosition);
 
   if (crossed.length === 0) {
     return {
@@ -124,6 +143,7 @@ export function priceA289Route(route: Coordinate[], departureAt?: string): A289P
       weekendAmount: 0,
       period,
       crossedFrames: [],
+      repeatedFrames: [],
       segments: [],
       confidence: "none",
     };
@@ -137,6 +157,7 @@ export function priceA289Route(route: Coordinate[], departureAt?: string): A289P
     weekendAmount: amount,
     period,
     crossedFrames: crossed.map((item) => item.frame.id),
+    repeatedFrames: crossed.filter((item) => item.repeated).map((item) => item.frame.id),
     segments: crossed.map((item) => `А-289: ${item.frame.label} — ${item.frame.tariff} ₽ без транспондера`),
     confidence: "matched",
   };

@@ -57,3 +57,9 @@ assert.ok(apiRoute.includes('tolls: productionCkad.tolls'), "CKAD exact tolls mu
 assert.ok(apiRoute.includes('legacyFamilies.has("ckad") || productionCkad.candidate'), "CKAD detection must include strict production evidence");
 
 console.log("Systemic toll composition test: GREEN");
+
+// Audit guards: neither repeated road components nor invalid money can make a total.
+assert.equal(composeRouteTolls([complete[0], complete[0]]).status, "unknown");
+for (const amount of [NaN, Infinity, -1]) {
+  assert.equal(composeRouteTolls([{ id: "m4_a289", detected: true, tolls: toll(amount) }]).status, "unknown");
+}

@@ -17,7 +17,9 @@ export function quoteA289SelectedRoute(evidence){
   const {from,to,frames}=evidence;
   if(!pairs.has([from,to].sort().join('>')))return null;
   if(from==='Maryanskaya'&&to==='Temryuk'||from==='Temryuk'&&to==='Maryanskaya'){
-    if(evidence.temryukFastestControlMatched!==true)return null;
+    const expected=from==='Maryanskaya'?['23','82']:['82','23'];
+    const provisional=evidence.allowTemryukCityEstimate===true&&Array.isArray(frames)&&frames.join('>')===expected.join('>');
+    if(evidence.temryukFastestControlMatched!==true&&!provisional)return null;
   } else {
     const ordered=expectedFrames.get(`${from}>${to}`)??expectedFrames.get(`${to}>${from}`)?.toReversed();
     if(!ordered||!Array.isArray(frames)||frames.join('>')!==ordered.join('>'))return null;
@@ -26,5 +28,9 @@ export function quoteA289SelectedRoute(evidence){
     routeId:evidence.routeId,traversalId:'a289',exactTraversal:true,profileResolved:true,
     road:'a289',from,to,profile:'allDays',localDate:evidence.localDate,
   }]});
-  return q.pricingStatus==='priced'?q:null;
+  if(q.pricingStatus!=='priced')return null;
+  if(evidence.allowTemryukCityEstimate===true&&evidence.temryukFastestControlMatched!==true){
+    return {...q,priceConfirmation:'unconfirmed',displayLabel:'Стоимость не подтверждена'};
+  }
+  return q;
 }

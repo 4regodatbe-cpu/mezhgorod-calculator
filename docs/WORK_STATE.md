@@ -1,3 +1,41 @@
+## CURRENT 2026-10-13 — аудит: части 1–3 завершены локально
+
+DONE: часть1 ef0da4c (календарь API); часть2 57543aa (валидность provider route, exact fastest geometry/evidence); часть3 (А-289 промежуточные OD, порядок внутри сегмента, unknown вместо fallback, повторные проезды). Общий gate472/472 + quote/API contracts, TS, Next webpack16/16, scoped ESLint PASS. План/подробности: [AUDIT_PLAN_10_PARTS_2026-10-13.md](../experiments/nationwide-tolls/AUDIT_PLAN_10_PARTS_2026-10-13.md). Baseline8556e57 включает прежний ещё не опубликованный аудит; не путать с newly run changes.
+
+IN PROGRESS: сохранить проверенные части1–3 и baseline audit в remote experiment. Head d0dc2227 и tree0ed91222 получены GitHub API; все изменённые tracked исходники baseline9b30d57 совпадают с remote по Git blob SHA. Локальная integration/matrix-estimates-2026-10-13, remote experiment/toll-od-matrix-2026-10-08. До завершения записи Preview остаётся старым.
+
+NEXT: часть4, M4 partial/full and A289 composition. Части4–10 не завершены. Live маршруты/браузер не наблюдались, Anapa alias и bypass410 предварительные. Не выпускать Production/не merge.
+
+---
+
+## CURRENT 2026-10-13 — аудит: части 1–2 завершены локально
+
+DONE: часть 2 добавила проверку длины/времени/координат/конечных точек V3, выбор точного победителя special-options и устранение ложного freeError. Focused 6/6, gate 466/466 + quote/API contracts, TypeScript, scoped ESLint и Next webpack16/16 PASS. Подробности/10 частей: [AUDIT_PLAN_10_PARTS_2026-10-13.md](../experiments/nationwide-tolls/AUDIT_PLAN_10_PARTS_2026-10-13.md). Часть1 commit ef0da4c, baseline8556e57.
+
+IN PROGRESS: часть 3, А-289. Выявлены неподключённые промежуточные пары и риск неверного порядка двух рамок на одном сегменте геометрии. Исправления части3 ещё не выполнены.
+
+REMOTE: experiment/toll-od-matrix-2026-10-08 повторно подтверждён d0dc2227; локальная integration/matrix-estimates-2026-10-13. Изменения ещё не отправлены, Preview старее. Реальные маршрутные/браузерные тесты не выполнялись. NEXT: часть3, затем сохранение проверенного задела в экспериментальную удалённую ветку.
+
+---
+
+## CURRENT 2026-10-13 — аудит по 10 частям, часть 1
+
+DONE locally: восстановлен задел `8556e57`, повторён gate 458/458; исправлена нормализация невозможных дат на входе V3 API, регрессия 460/460 + quote/API contracts PASS. План и критерии: [AUDIT_PLAN_10_PARTS_2026-10-13.md](../experiments/nationwide-tolls/AUDIT_PLAN_10_PARTS_2026-10-13.md).
+
+REMOTE: `experiment/toll-od-matrix-2026-10-08` проверена через GitHub API: `d0dc2227d75862c58b1fc880c96a9440049ceef7`. Локальная ветка `integration/matrix-estimates-2026-10-13`; предыдущий аудит и новые правки ещё не отправлены. Preview/Production не обновлялись.
+
+NEXT: часть 2 — fastest selector, равный ETA, геометрия/evidence одного выбранного провайдера и special-options. Части 2–10 остаются планом, live-контроли не пройдены.
+
+---
+
+## CURRENT 2026-10-13 — V3 code/calculation audit
+
+DONE locally: audited all4693 matrix rows, V3 API/composition and trip pricing; fixed omitted A289 on Anapa/Taman full-M4 trips, stale hardcoded totals, weekend bypass amount, falsely confirmed Temryuk control, single-PVP exclusion, absent departure date, invalid calendar/components/money, duplicate charges, invalid distance totals, response labels and V3 defaults/analytics. Build now includes62 test files plus quote/API contracts. TS, webpack16 pages and scoped ESLint PASS. Detailed findings, tests and open issues: [AUDIT_2026-10-13.md](../experiments/nationwide-tolls/AUDIT_2026-10-13.md).
+
+IN PROGRESS: persist audit and deploy exact experimental Preview. Still open: live router/browser controls, exact Anapa/Temryuk/bypass bindings, holiday/midnight calendar consistency and incomplete M1/M3/regional integration. Do not claim full nationwide live validation.
+
+---
+
 ## CURRENT 2026-10-13 — Yalta/Anapa → Krasnodar short A-289 V3 pricing
 
 DONE: the previous V3 adapter priced A-289 only with a complete Moscow–Krasnodar M-4 corridor, so short trips could remain unknown despite crossing its physical frames. `lib/v3-calculation/a289-short-route.ts` now recognizes a selected Crimea/Yalta↔Krasnodar three-frame vector as 800 ₽ and an Anapa↔Krasnodar two-frame vector as the 833 ₽ Maryanskaya–Varenikovskaya operator candidate estimate; a geometrically matched western bypass adds its separate 410 ₽. Also handles reverse directions and Slavyansk/Temryuk endpoints with exact matrix lookup. Anapa's exit alias is provisional and all numeric V3 fares retain «Стоимость не подтверждена». No gate evidence returns unknown. The short OD quote takes priority for a matching local route even if the native M-4 plaza detector has a partial candidate; a complete Crimea–Moscow composite retains its own priority.
