@@ -1,0 +1,54 @@
+{
+  "executedAt": "2026-10-13T04:55:17.153Z",
+  "status": "passed",
+  "fareRows": 4693,
+  "counts": {
+    "m11-58-679": 924,
+    "m11-15-58": 210,
+    "m1": 2,
+    "m3": 24,
+    "ckad": 210,
+    "m4-south": 32,
+    "mytishchi": 30,
+    "odintsovo": 96,
+    "bagration": 2,
+    "ufa": 2,
+    "heihe": 2,
+    "udmurtia": 6,
+    "tolyatti": 6,
+    "pskov": 8,
+    "a289": 14,
+    "ryazan": 4,
+    "kazan": 4,
+    "msd": 1025,
+    "m12": 7,
+    "m4-dzok": 4,
+    "m4-candidate": 1456,
+    "m12-candidate": 625
+  },
+  "uniqueKeys": 4693,
+  "checks": [
+    "non-negative numeric price and source per row",
+    "M11/CKAD reciprocal equality",
+    "M4 user two/three/four-PVP prices",
+    "M4 mainline 5040/6090 equals saved Yandex controls",
+    "overlapping M4 options never double-charged",
+    "Mytishchi full259; Togliatti direct320; Heihe1320",
+    "MSD dated versions19/25 separate",
+    "superseded M12 Shali rows expire before Oct8"
+  ],
+  "limitations": {
+    "excludedByUser": [
+      "SHMSD",
+      "ZSD",
+      "Khabarovsk"
+    ],
+    "incompleteRoads": [
+      "M4 outside four south PVPs",
+      "M12 missing direct pairs after extension",
+      "A289 Anapa/Taman partial OD pairs and exact exit bindings"
+    ],
+    "yandexChecksNotCompletedForEveryRow": true,
+    "unknownPriceIsNotZero": true
+  }
+}

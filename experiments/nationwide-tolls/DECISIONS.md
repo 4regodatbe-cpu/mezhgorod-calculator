@@ -1,5 +1,9 @@
 # Nationwide toll-road calculation decisions
 
+## 2026-10-13 — A-289 exits and OD pairs
+
+User requires A-289 as three charged sections plus direct entrance/exit pairs toward Temryuk, Anapa exit, Slavyansk, Krasnodar side and Taman/Crimean-Bridge continuation, in both directions. Preserve direct OD fares; do not derive an unknown Slavyansk→Taman price by subtracting 800 and 620, and do not treat the Anapa exit as Varenikovskaya without junction evidence. The accepted fastest Maryanskaya→Temryuk city trip is 620 ₽, while a full paid traversal toward the bridge is 800 ₽; neither means the archived operator 1,103 ₽ continuous no-transponder row should be charged for these user-defined route scopes. V3 may use a price only after binding the selected route to exact entry/exit and physical frame order, with the city's 620 ₽ bypass requiring its specific route control.
+
 ## 2026-10-13 — Crimea full trip has separate toll roads
 
 User's observed Ялта (Крым) → Москва result 5,040 ₽ is incomplete: it covers the M-4 Moscow–Krasnodar corridor alone. On the fastest selected route, add the separately crossed full A-289 bridge-approach vector 800 ₽ and any independently detected Krasnodar bypass toll. The west-bypass amount in the local table is 410 ₽ and remains an unconfirmed estimate pending route/operator comparison; do not infer its traversal from endpoints alone. If A-289 traversal evidence is incomplete, the trip total is unknown rather than the M-4 subtotal. Keep the Donetsk-area Yalta a distinct labeled settlement.

@@ -7,4 +7,10 @@ const main=d.rows.filter(r=>r.road==='m4-candidate'&&r.sectionVector.length===17
 assert.equal(main.find(r=>r.profile==='monThu').rub,5040);assert.equal(main.find(r=>r.profile==='friSun').rub,6090);
 for(const r of d.rows.filter(r=>r.road==='m4-candidate'))for(const[a,b]of [['m4-62','m4-71'],['m4-339','m4-355'],['m4-636','m4-672']])assert(!(r.sectionVector.includes(a)&&r.sectionVector.includes(b)));
 for(const r of d.rows.filter(r=>r.includesSupersededShaliBoundary))assert.equal(r.validUntil,'2026-10-08');
+for(const[from,to,rub]of [['Maryanskaya','Slavyansk',555],['Slavyansk','Varenikovskaya',278],['Maryanskaya','Varenikovskaya',833],['Varenikovskaya','Temryuk',270],['Slavyansk','Temryuk',548],['Maryanskaya','Temryuk',620],['Maryanskaya','TamanBridge',800]]){
+ assert.equal(fare('a289',from,to,'allDays'),rub);
+ assert.equal(fare('a289',to,from,'allDays'),rub);
+}
+assert.equal(fare('a289','Slavyansk','TamanBridge','allDays'),undefined);
+assert.equal(fare('a289','Maryanskaya','AnapaExit','allDays'),undefined);
 const report={executedAt:new Date().toISOString(),status:'passed',fareRows:d.rows.length,counts:d.counts.byRoad,uniqueKeys:keys.size,checks:['non-negative numeric price and source per row','M11/CKAD reciprocal equality','M4 user two/three/four-PVP prices','M4 mainline 5040/6090 equals saved Yandex controls','overlapping M4 options never double-charged','Mytishchi full259; Togliatti direct320; Heihe1320','MSD dated versions19/25 separate','superseded M12 Shali rows expire before Oct8'],limitations:d.scope};fs.writeFileSync(path.join(root,'MATRIX_VALIDATION_2026-10-12.json'),JSON.stringify(report,null,2)+'\n');console.log('PASS '+d.rows.length+' fare rows; no duplicate keys; controls and historical date guards pass');

@@ -1,4 +1,12 @@
-## CURRENT 2026-10-13 — Crimea → Moscow missing A-289 price fix
+## CURRENT 2026-10-13 — A-289 directed OD matrix expanded
+
+DONE locally: `experiments/nationwide-tolls/A289_OD_MATRIX_2026-10-13.json` distinguishes three physical charging frames (23/82/103), operator endpoints Maryanskaya/Slavyansk/Varenikovskaya/Temryuk, the unbound Anapa exit, and the full Taman/Crimean-Bridge continuation. Seven distinct priced OD pairs are stored bidirectionally (14 rows): five saved operator direct no-transponder rates, user route controls Maryanskaya→Temryuk620 and full bridge800. Eight undirected remaining pairs are explicitly unresolved with no invented fare. The full Crimea route V3 now reads the 800 vector via the same exact OD registry and selected-route frame order; partial vectors remain unknown. Other OD quotes require exact exit binding; the 620 city bypass requires its specific route control. Generator was missing `TARIFF_MATRIX_CANDIDATES_2026-10-12.json` from the recovered remote snapshot; copied the previous experiment's source to make rebuilding reproducible.
+
+Verification: generator4693, register2086 selected/1830 provisional/777 history; validator PASS, quote/API contract PASS, focused A289 2/2 and Crimea helper2/2 PASS, native 21 test files PASS, TypeScript/Next webpack build16/16 PASS. No live selected-route API/Preview test or exact Anapa junction binding. Local experimental branch; remote publication for this new block pending. Details: `experiments/nationwide-tolls/WORK_LOG.md`.
+
+---
+
+## 2026-10-13 — Crimea → Moscow missing A-289 price fix
 
 DONE locally: V3 composes full Moscow–Krasnodar M-4 (5,040/6,090), full A-289 bridge-approach vector (800), and the Krasnodar west bypass tariff (410) only when its selected-route segment is detected. For a proven weekday crossing of all three, the estimate is 6,250 ₽; without west-bypass evidence, 5,840 ₽. If only part of A-289 is detected, the route toll remains unknown instead of showing the incomplete 5,040 ₽. The number 410 comes from the existing local segment table and still needs route/operator verification. The different Donetsk-area Yalta is a real locality; its search result is explicitly labeled «Ялта — ДНР» and remains separate from «Ялта — Крым».
 

@@ -1,4 +1,12 @@
-## CURRENT 2026-10-13 — Crimea Yalta route regression
+## CURRENT 2026-10-13 — A-289 exit pairs
+
+- [x] Preserve three physical frames and seven directly sourced/user-approved OD pairs (14 directions); persist explicit unknown Anapa/Taman partial pairs in `A289_OD_MATRIX_2026-10-13.json`; rebuild/validate complete matrix and quote adapter.
+- [ ] Bind Anapa exit and Taman continuation to precise route geometry/maneuver evidence. Then test the remaining Slavyansk→Taman, Varenikovskaya→Taman, Temryuk→Taman, and every Anapa pair with a current direct operator/Yandex fastest control; fill only actual observed OD fares. The 620 city route requires its exit/re-entry control.
+- [ ] Drive representative real routes in both directions through V3: Krasnodar↔Slavyansk, Temryuk, Anapa and Crimea, plus Slavyansk↔Temryuk/Taman. Inspect selected geometry, frames, exit node, fare and warning, then create exact-commit Preview.
+
+---
+
+## 2026-10-13 — Crimea Yalta route regression
 
 - [x] In V3, add the full A-289 bridge vector to the complete M-4 corridor and add the west bypass only when its selected-route geometry matches. Incomplete A-289 evidence must produce unknown, not a partial 5,040 ₽ trip total. See `lib/v3-calculation/crimea-m4-total.ts` and dated `WORK_LOG.md`.
 - [ ] Verify the actual fastest Ялта — Крым → Москва and reverse V3 API response on Preview, including coordinates, three A-289 frames, bypass crossing, and price/label. The protected Preview browser was previously redirected to login; do not claim a live route test from build alone.

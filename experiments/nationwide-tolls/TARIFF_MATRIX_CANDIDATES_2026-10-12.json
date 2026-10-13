@@ -1,0 +1,1028 @@
+{
+  "schemaVersion": 1,
+  "dataset": "Russian toll road tariff matrix candidates",
+  "capturedAt": "2026-10-12",
+  "policy": {
+    "vehicle": "passenger car / operator category I where published",
+    "payment": "base fare without transponder discount",
+    "routeModel": "Store completed route-vector tariff cells for the exact PVP sequence. Where an operator publishes only per-PVP charges, derive and persist the allowed contiguous vector prices offline from verified cells; runtime must select one complete vector and must never sum components. Do not infer traversal or treat unknown mapping as free.",
+    "statusMeaning": "official-current means the operator source explicitly states the amount and current validity; candidate means captured pending independent route/span mapping; unknown values remain null",
+    "routeSelection": "Only the single fastest route. No toll crossing on that route means free. Unknown mapping/price is unknown, never zero."
+  },
+  "entries": [
+    {
+      "id": "ryazan-m5-overpass-category1",
+      "road": "Рязанский платный путепровод / М5 Урал",
+      "operator": "ЗАО ИК Региональные платные дороги — Рязань",
+      "scope": "one passage through the toll overpass; operator describes free night passage for specified directions and lanes",
+      "vehicleClass": "Category 1, passenger vehicles up to 2.1 m",
+      "paymentMethod": "cash or bank card; no RFID discount",
+      "tariffs": {
+        "standardRub": 45,
+        "freeWindows": [
+          {
+            "direction": "from city",
+            "fromLocal": "22:00",
+            "toLocal": "06:00",
+            "amountRub": 0,
+            "lane": "1"
+          },
+          {
+            "direction": "toward city",
+            "fromLocal": "22:00",
+            "toLocal": "06:30",
+            "amountRub": 0,
+            "lane": "6"
+          }
+        ]
+      },
+      "effectiveFrom": "2026-10-01",
+      "source": "https://m-road62.ru/izmenenie-tarifov-na-platnom-puteprovode-s-1-oktyabrya-2026-goda/",
+      "sourcePublishedAt": "2026-09-21",
+      "sourceClaims": [
+        "Class 1 cash/card fare is 45 RUB",
+        "night free passage windows and direction-specific lanes are stated"
+      ],
+      "matrixStatus": "official fare captured; route geometry and direction/lane trigger mapping not independently checked",
+      "transponderTariffRub": 29,
+      "notes": "Keep RFID amount for provenance only; calculator default is no transponder. Do not assume the night exemption applies unless direction and passage timing are known."
+    },
+    {
+      "id": "kazan-voznesensky-tract-category1",
+      "road": "Вознесенский тракт",
+      "operator": "ООО Единый оператор",
+      "scope": "full 8 km free-flow toll road, one camera gantry passage according to operator tariff rules",
+      "vehicleClass": "Category I, passenger vehicle; published height limit up to 2 m",
+      "paymentMethod": "base tariff; operator states transponder payment matches registration-plate payment",
+      "tariffs": {
+        "weekdayPeakRub": 150,
+        "weekdayPeakWindowsLocal": [
+          "06:30-09:00",
+          "17:00-19:30"
+        ],
+        "allOtherTimesRub": 90,
+        "weekendsAndHolidaysRub": 90,
+        "timeDetermination": "at passage under camera gantry, not entry or exit"
+      },
+      "effectiveFrom": "2025-03-06",
+      "source": "https://vtkazan.ru/road/tarifs/",
+      "sourceDocument": "Приказ №07/ПД-ВТ от 06.03.2025",
+      "sourceClaims": [
+        "Category I fare is 150 RUB on weekdays in peak windows",
+        "90 RUB at other times and on weekends/holidays",
+        "fare determined at camera gantry",
+        "transponder fare equals plate-payment fare"
+      ],
+      "matrixStatus": "official tariff captured; exact toll-system route anchor and current order amendment history not independently checked",
+      "notes": "Tariff is based on the time of crossing the camera gantry. For a route-level quote, resolve crossing time; departure weekday alone is insufficient when the estimated arrival at the gantry differs."
+    },
+    {
+      "id": "bagration-category1-base",
+      "road": "Проспект Багратиона (СДКП)",
+      "operator": "АО «Новое качество дорог»",
+      "scope": "all directions, one passage through operator toll registration point at km 6.6",
+      "vehicleClass": "Class 1, passenger vehicles and motorcycles",
+      "paymentMethod": "base tariff / no transponder; post-payment by vehicle plate",
+      "tariffs": {
+        "allDirectionsAllDayRub": 790,
+        "registeredPlatePrepaymentRub": 750,
+        "operatorTransponderRub": 550
+      },
+      "effectiveFrom": "2026-05-07",
+      "source": "https://m-road.ru/tariffs/",
+      "sourceChangeNotice": "https://m-road.ru/news/izmenenie-stoimosti-proezda-na-prospekte-bagrationa-s-07-maya-2026-goda/",
+      "sourceClaims": [
+        "Class 1 base fare 790 RUB all directions 00:00-24:00",
+        "registered plate prepayment 750 RUB",
+        "operator transponder 550 RUB",
+        "passage recorded at km 6.6"
+      ],
+      "matrixStatus": "official current base fare captured; flat one-direction-independent tariff",
+      "notes": "For calculator default no-transponder value use the base tariff 790 RUB. Other payment values are retained only as source context."
+    },
+    {
+      "id": "odintsovo-bypass-category1-base",
+      "road": "Северный обход Одинцова (СОО)",
+      "operator": "АО «Новое качество дорог»",
+      "scope": "four toll plazas; base no-transponder tariffs by plaza, direction and time profile",
+      "vehicleClass": "Class 1, passenger vehicles and motorcycles",
+      "paymentMethod": "base tariff: cash, bank card, or other issuer transponder; excludes operator transponder discount",
+      "tariffs": {
+        "plazaOrder": [
+          "ПВП 6.9 km (route 1.0–10.5 km)",
+          "ПВП 13.4 km (route 10.5–13.4 km)",
+          "ПВП 17.7 km (route 10.5–19.5 km)",
+          "ПВП 4.6 km (route 1.0–4.6 km)"
+        ],
+        "weekdayTowardMoscow": {
+          "05:00-07:00_and_13:00-01:00": [
+            400,
+            100,
+            250,
+            100
+          ],
+          "07:00-13:00": [
+            400,
+            100,
+            300,
+            150
+          ]
+        },
+        "weekdayAwayFromMoscow": {
+          "05:00-16:00_and_22:00-01:00": [
+            400,
+            50,
+            250,
+            100
+          ],
+          "16:00-22:00": [
+            400,
+            100,
+            300,
+            150
+          ]
+        },
+        "weekendHolidayDayTowardMoscow_05:00-01:00": [
+          400,
+          100,
+          250,
+          100
+        ],
+        "weekendHolidayDayAwayFromMoscow_05:00-01:00": [
+          400,
+          50,
+          250,
+          100
+        ],
+        "nightAllDirections_01:00-05:00": [
+          10,
+          10,
+          10,
+          10
+        ],
+        "operatorConfirmedTraversalExamples": {
+          "fromMoscow": [
+            {
+              "to": "Рублевский проезд",
+              "sections": [
+                "4"
+              ],
+              "pvpVector": [
+                "4.6 A"
+              ],
+              "sourceRoute": "МКАД → Рублевский проезд"
+            },
+            {
+              "to": "Подушкинское / Красногорское / отвод 1-го Успенского",
+              "sections": [
+                "1"
+              ],
+              "pvpVector": [
+                "6.9"
+              ],
+              "sourceRoute": "МКАД → one of these exits"
+            },
+            {
+              "to": "Можайское шоссе",
+              "sections": [
+                "1",
+                "3"
+              ],
+              "pvpVector": [
+                "6.9",
+                "13.4"
+              ],
+              "sourceRoute": "МКАД → Можайское"
+            },
+            {
+              "to": "Минское шоссе",
+              "sections": [
+                "1",
+                "2"
+              ],
+              "pvpVector": [
+                "6.9",
+                "17.7"
+              ],
+              "sourceRoute": "МКАД → Минское"
+            },
+            {
+              "to": "Можайское шоссе",
+              "sections": [
+                "3"
+              ],
+              "pvpVector": [
+                "13.4"
+              ],
+              "sourceRoute": "Подушкинское → Можайское"
+            },
+            {
+              "to": "Минское шоссе",
+              "sections": [
+                "2"
+              ],
+              "pvpVector": [
+                "17.7"
+              ],
+              "sourceRoute": "Подушкинское → Минское"
+            }
+          ],
+          "towardMoscow": [
+            {
+              "from": "Минское шоссе",
+              "sections": [
+                "2"
+              ],
+              "pvpVector": [
+                "17.7"
+              ],
+              "to": "Можайское / Подушкинское"
+            },
+            {
+              "from": "Минское шоссе",
+              "sections": [
+                "2",
+                "1"
+              ],
+              "pvpVector": [
+                "17.7",
+                "6.9"
+              ],
+              "to": "Рублевский проезд / МКАД"
+            },
+            {
+              "from": "Можайское шоссе",
+              "sections": [
+                "3"
+              ],
+              "pvpVector": [
+                "13.4"
+              ],
+              "to": "Подушкинское"
+            },
+            {
+              "from": "Можайское шоссе",
+              "sections": [
+                "3",
+                "1"
+              ],
+              "pvpVector": [
+                "13.4",
+                "6.9"
+              ],
+              "to": "Рублевский проезд / МКАД"
+            },
+            {
+              "from": "отвод 1-го Успенского / Красногорское / Подушкинское",
+              "sections": [
+                "1"
+              ],
+              "pvpVector": [
+                "6.9"
+              ],
+              "to": "Рублевский проезд / МКАД"
+            },
+            {
+              "from": "Рублевский проезд",
+              "sections": [
+                "4"
+              ],
+              "pvpVector": [
+                "4.6 B"
+              ],
+              "to": "МКАД"
+            }
+          ],
+          "source": "https://m-road.ru/payment-systems/"
+        }
+      },
+      "effectiveFrom": "2026-01-15",
+      "source": "https://m-road.ru/tariffs/",
+      "sourceChangeNotice": "https://m-road.ru/news/izmenenie-stoimosti-proezda-s-15-yanvarya-2026/",
+      "sourceClaims": [
+        "Official M-Road page lists Cat-I base tariffs by four PVPs, direction and time; current Jan 15, 2026 tariff notice.",
+        "Operator FAQ defines four independently usable paid spans, open-system payment at PVP crossings, and route-to-PVP examples."
+      ],
+      "matrixStatus": "Current official operator base (no-transponder) fare table transcribed for all four PVPs and day/direction/time profiles; official FAQ confirms four independent paid spans, PVP placements, open toll system and representative route→PVP vectors. Exact output vectors crossing a time-band boundary still need route-time handling/control.",
+      "notes": "Direct current tariff page extraction checked 2026-10-12. Column order is [PVP 6.9 (1.0–10.5 km), PVP 13.4 (10.5–13.4 km), PVP 17.7 (10.5–19.5 km), PVP 4.6 (1.0–4.6 km)]. Base rates without operator transponder discount: weekdays toward Moscow 05:00–07:00/13:00–01:00 = [400,100,250,100], 07:00–13:00=[400,100,300,150]; weekdays away 05:00–16:00/22:00–01:00=[400,50,250,100], 16:00–22:00=[400,100,300,150]; weekend/holiday daytime toward Moscow=[400,100,250,100], away=[400,50,250,100]; all directions 01:00–05:00=[10,10,10,10]. Table value is selected when passing each PVP, so routes whose PVP crossings straddle a time boundary require per-crossing time evaluation; do not combine them using departure time alone.",
+      "sourceReviewedAt": "2026-10-12"
+    },
+    {
+      "id": "m4-yandex-span-candidates-from-session",
+      "road": "М-4 Дон",
+      "operator": "ГК «Автодор» / operators by section",
+      "scope": "user-identified toll-point vectors, direction-independent as stated by user",
+      "vehicleClass": "Passenger car, category I; no transponder",
+      "paymentMethod": "base fare without transponder",
+      "tariffs": {
+        "precomputed_span_1223_1184_1093_noTransponder": {
+          "monThuRub": 850,
+          "friSunRub": 1000
+        },
+        "precomputed_span_1223_1184_1093_transponder": {
+          "monThuRub": null,
+          "friSunRub": null
+        },
+        "precomputed_span_1223_1184_1093_1046_noTransponder": {
+          "monThuRub": 1230,
+          "friSunRub": 1450
+        },
+        "precomputed_span_1223_1184_1093_1046_transponder": {
+          "monThuRub": null,
+          "friSunRub": null
+        },
+        "reported_cityRouteYandex_RostovKrasnodar_noTransponder": {
+          "monThuApproxRub": 850,
+          "friSunApproxRub": 1000
+        },
+        "yandexControl_km1025_to_Krasnodar_noTransponder": {
+          "monThuApproxRub": 1230,
+          "friSunApproxRub": 1450
+        },
+        "span_416_460": {
+          "monThuRub": 230,
+          "friSunRub": 360
+        }
+      },
+      "effectiveFrom": null,
+      "source": "Operator tariff pages for PVP1093, PVP1184 and PVP1223 (https://uoperator.ru/pvp-1093/, https://uoperator.ru/pvp-1184/, https://uoperator.ru/pvp-1223/) plus date-selected Yandex fastest-route cards; see source-snapshots/m4-2026-10-12-avtodor-and-yandex-checks.json.",
+      "matrixStatus": "The completed three-PVP vector 1093→1184→1223 is 850/1,000 RUB and the four-PVP vector 1046→1093→1184→1223 is 1,230/1,450 RUB Mon–Thu/Fri–Sun. Both match date-selected Yandex fastest-route controls; M4 remains partial because other PVP vectors/road groups and local preservation of the dated PVP1046 tariff appendix are incomplete.",
+      "notes": "Three southern operator PVP cells are 150/150, 300/350 and 400/500 RUB. PVP1046 base fare is 380/450 RUB effective 2026-03-02, independently reported from Avtodor's update. Persist both finished vector prices as lookup cells; runtime must never sum PVP rows. Earlier values 1,000/1,430 and 1,450/2,200 were caused by a flattened multi-class/payment column extraction and are withdrawn. Yandex controls from km1025 to Krasnodar display ~1,230/~1,450 without transponder, agreeing with the completed four-PVP cell.",
+      "reportedYandexCandidatesFromPriorSession": {
+        "span_1223_1184_1093": {
+          "monThuRub": 850,
+          "friSunRub": 1000
+        },
+        "span_1223_1184_1093_1046": {
+          "monThuRub": 1230,
+          "friSunRub": 1450
+        },
+        "span_416_460": {
+          "monThuRub": 230,
+          "friSunRub": 360
+        },
+        "status": "historical candidate values 850/1000 and 1230/1450 are now normalized as three- and four-PVP vector cells and match direct operator fare evidence plus date-selected Yandex controls"
+      }
+    },
+    {
+      "id": "udmurtia-kama-buy-bridges-category1",
+      "road": "Платные секции мостовых переходов через реки Кама и Буй",
+      "operator": "ООО «Региональная Инвестиционная Компания»",
+      "scope": "three operator tariff zones: Kama bridge, Buy bridge, or both bridges in one trip",
+      "vehicleClass": "Tariff group 1: passenger cars/motorcycles; height <=2 m, 2+ axles",
+      "paymentMethod": "base operator fare; no transponder discount shown in published zone tariff",
+      "tariffs": {
+        "kamaBridgeRub": 400,
+        "buyBridgeRub": 300,
+        "bothBridgesRub": 700,
+        "currency": "RUB per one trip"
+      },
+      "effectiveFrom": "2026-02-01",
+      "source": "https://osa-kama.ru/tarify/",
+      "sourceClaims": [
+        "2026 tariff group 1 rates: Kama 400 RUB, Buy 300 RUB, both 700 RUB",
+        "price is for one trip"
+      ],
+      "matrixStatus": "official current zone fares captured",
+      "notes": "Route zones are tariff objects; exact ramp/access mapping still must identify whether route crosses one or both toll zones."
+    },
+    {
+      "id": "ufa-eastern-exit-category1",
+      "road": "Восточный выезд из Уфы",
+      "operator": "ООО «Башкирская концессионная компания» / operator tariff page",
+      "scope": "one full toll road trip; one toll plaza",
+      "vehicleClass": "Class 1, passenger vehicles including trailers up to 2 m and motorcycles",
+      "paymentMethod": "no transponder",
+      "tariffs": {
+        "baseRub": 150,
+        "withTransponderRub": 130,
+        "weekdayWeekendTimeIndependent": true
+      },
+      "effectiveFrom": "2025-01-06",
+      "source": "https://easternexit.ru/tariff/",
+      "sourceChangeNotice": "https://easternexit.ru/news/",
+      "sourceClaims": [
+        "Class 1 without transponder is 150 RUB",
+        "same rate day/night and does not vary by weekday/weekend"
+      ],
+      "matrixStatus": "official current page fare captured; simple full-road tariff",
+      "notes": "Transponder amount is retained only as reference; calculator base value is 150 RUB."
+    },
+    {
+      "id": "tolyatti-bypass-category1",
+      "road": "Обход города Тольятти",
+      "operator": "ГК «Автодор» / оператор участка",
+      "scope": "three operator-defined route spans",
+      "vehicleClass": "Category I passenger car",
+      "paymentMethod": "base fare without transponder",
+      "tariffs": {
+        "troitskoe_togliatti": {
+          "fromKm": 17,
+          "toKm": 60,
+          "noTransponderRub": 210
+        },
+        "togliatti_zelenovka": {
+          "fromKm": 60,
+          "toKm": 97,
+          "noTransponderRub": 140
+        },
+        "troitskoe_zelenovka": {
+          "fromKm": 17,
+          "toKm": 97,
+          "noTransponderRub": 320
+        },
+        "days": "Mon-Sun"
+      },
+      "effectiveFrom": "2026-03-01",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "sourceChangeNotice": "https://avtodor-tr.ru/company/docs/",
+      "sourceClaims": [
+        "official tariff table lists category I no-transponder prices 210/140/320 RUB for three spans",
+        "Mon-Sun profile"
+      ],
+      "matrixStatus": "official current route-span schedule captured; access/ramp matching pending",
+      "notes": "Keep the full span 17-97 route at its published 320 RUB instead of deriving a sum from shorter spans."
+    },
+    {
+      "id": "pskov-regional-paid-roads-category1",
+      "road": "Четыре платные дороги Псковской области",
+      "operator": "Правительство Псковской области / regional road operator",
+      "scope": "four separately tolled regional roads; open toll collection at checkpoint",
+      "vehicleClass": "Category 1, two or more axles, vehicle height <=2 m",
+      "paymentMethod": "cash/card at checkpoint; no transponder",
+      "tariffs": {
+        "pechory_old_izborskRub": 150,
+        "ostrov_vyshgorodokRub": 300,
+        "opochka_dubrovkaRub": 220,
+        "olsha_velizh_usvyaty_nevelRub": 200,
+        "currency": "RUB per road"
+      },
+      "effectiveFrom": null,
+      "source": "https://base.garant.ru/411968606/",
+      "sourceLegalBasis": "Pskov Region Government Resolution No. 162 of 2025-04-25; route rates published as class-1 schedule",
+      "sourceOverview": "https://t-j.ru/platnie-dorogi/",
+      "sourceClaims": [
+        "four class-1 route rates 150/300/220/200 RUB",
+        "each road uses one open-system toll checkpoint",
+        "local residents/vehicles may qualify for free passage"
+      ],
+      "matrixStatus": "candidate route fares from 2025 regulatory schedule; revalidate current legal amendment and eligibility before runtime",
+      "notes": "Rates are attached to whole regional road objects; local-resident free-travel eligibility must be handled separately from the ordinary passenger-car base tariff."
+    },
+    {
+      "id": "shmsd-opened-section-category1",
+      "road": "Витебская развязка ШМСД (тарифицируется в системе ЗСД; отдельный тариф ШМСД не подтверждён)",
+      "operator": "АО «Магистраль Северной столицы» — оператор ЗСД; самостоятельный тарифный оператор ШМСД не подтверждён",
+      "scope": "Витебская развязка от Благодатной до Витебского проспекта; опубликована как тарифная зона 6 ЗСД",
+      "vehicleClass": "Passenger vehicle category I",
+      "paymentMethod": "standard base tariff; payment-mode distinction not established by the captured schedule excerpt",
+      "tariffs": {
+        "standaloneShmsdFareRub": null,
+        "zsdZone6CandidateRub": 300,
+        "candidateStatus": "amount appears in operator tariff-annex extraction; category/payment-column mapping requires direct annex verification"
+      },
+      "effectiveFrom": "2025-04-22",
+      "source": "https://nch-spb.com/upload/iblock/c89/9w3aehlsbrrr4ys27479u925nkbtno11/Prilozhenie-_1-k-Prikazu-_32-ot-22.04.2025_Bazovye-tarify.pdf",
+      "sourceOverview": "https://t-j.ru/platnie-dorogi/",
+      "sourceClaims": [
+        "Official city source states the Vitebsk interchange opened as stage 1 of SHMSD and connects from WHSD near Blagodatnaya to Vitebsky Prospekt",
+        "Official operator tariff-annex search extract labels zone 6 as the Southern WHSD segment from Blagodatnaya Street to Vitebsky Prospekt and shows 300 RUB among the tariff columns",
+        "The captured evidence supports treating the 300 RUB object as a WHSD zone tariff candidate, not as a confirmed standalone SHMSD toll"
+      ],
+      "matrixStatus": "reclassified: no independent SHMSD toll fare established; 300 RUB belongs to an apparent WHSD tariff zone 6 object, but category/payment column must be checked against the full annex before using it",
+      "notes": "Do not count the Vitebsk interchange as an independently priced SHMSD road segment based on this evidence. It is integrated with the WHSD connection and appears in the operator tariff annex as WHSD zone 6. Keep 300 RUB as a candidate only; source PDF could not be fetched directly (403), so do not deploy.",
+      "sourceCurrentScope": "https://www.gov.spb.ru/gov/otrasl/kio/news/315898/",
+      "included": false,
+      "exclusionReason": "User instruction 2026-10-12, audit items 7/8/10"
+    },
+    {
+      "id": "msd-current-segment-tariff-model",
+      "road": "Московский скоростной диаметр (МСД)",
+      "operator": "Правительство Москвы / оператор МСД",
+      "scope": "9 named toll segments; charge depends on segment traversal, local entry/exit time, weekday peak windows, transit status, exemptions and applicable dated tariff",
+      "vehicleClass": "Passenger car",
+      "paymentMethod": "Automatic plate-based billing; transponder payment is unavailable",
+      "tariffs": {
+        "segmentCount": 9,
+        "ordinaryWeekdayPeakRubPerSegment": 19,
+        "peakWindowsLocal": [
+          "07:00-11:00",
+          "16:00-20:00"
+        ],
+        "weekendsHolidaysAndOtherWeekdayTimesRub": 0,
+        "transitCkadMsdCkad": {
+          "status": "separate tariff rule",
+          "priceRub": 950
+        },
+        "latestObservedChange": {
+          "effectiveFrom": "2026-10-16",
+          "publishedAmountRubPerSegment": 25,
+          "source": "https://msd.mos.ru/faq"
+        }
+      },
+      "effectiveFrom": "2026-04-10",
+      "source": "https://msd.mos.ru/faq",
+      "sourcePolicy": "https://msd.mos.ru/docs",
+      "sourceClaims": [
+        "Official FAQ states 9 segments and 19 RUB per segment from 2026-04-10",
+        "weekday charging applies only during 07:00-11:00 and 16:00-20:00; weekends, holidays, and other times are free except transit trips",
+        "segment is chargeable only when both entry and exit occur in paid time",
+        "transponder payment is unavailable",
+        "official homepage/FAQ lists a new 25 RUB per-segment amount from 2026-10-16",
+        "Official information page states the transit fare is 950 RUB when crossing the CKAD boundary twice within 24 hours and remaining on MSD for no more than two hours",
+        "Official page publishes all nine section boundaries, captured in source notes"
+      ],
+      "matrixStatus": "official regular segment rule and transit flat fare captured; exact traversal-cell matrix, entry/exit timing model and post-2026-10-16 amendment still require structured transcription",
+      "notes": "As of the checkpoint date 2026-10-12, the 25 RUB rate is future-effective and must not replace the 19 RUB currently stated as effective 2026-04-10. Obtain the 2026-10-16 order and transit table before deploying after that date. Transit fare is 950 RUB. Nine section names are listed in https://msd.mos.ru/info. The 25 RUB amount is not effective until 2026-10-16."
+    },
+    {
+      "id": "zsd-official-zones-category1-base",
+      "road": "Западный скоростной диаметр (ЗСД)",
+      "operator": "АО «Магистраль Северной столицы»",
+      "scope": "Operator zone-based tariff; full matrix of zone-to-zone trips is defined in official dated tariff annexes",
+      "vehicleClass": "Category I (passenger vehicle, two axles, height at front axle <=1.3 m)",
+      "paymentMethod": "Base tariff, excluding transponder tariff/options",
+      "tariffs": {
+        "zonePairMatrixRub": null,
+        "knownZonePairCandidates": [
+          {
+            "fromZone": 1,
+            "toZone": 2,
+            "dayRub": 70,
+            "nightRub": 30,
+            "asOf": "2025-09-10",
+            "source": "https://nch-spb.com/upload/iblock/4c0/Prilozhenie-2.pdf"
+          },
+          {
+            "fromZone": "6 entry / Vitebsk interchange connection",
+            "toZone": "6 segment / Blagodatnaya–Vitebsky",
+            "publishedAmountCandidateRub": 300,
+            "asOf": "2025-04-22",
+            "source": "https://nch-spb.com/upload/iblock/c89/9w3aehlsbrrr4ys27479u925nkbtno11/Prilozhenie-_1-k-Prikazu-_32-ot-22.04.2025_Bazovye-tarify.pdf",
+            "status": "candidate only; official indexed annex names zone 6 and shows 300 RUB, but exact matrix cell/category/payment column not confirmed from full PDF"
+          }
+        ]
+      },
+      "effectiveFrom": "2025-09-10",
+      "source": "https://nch-spb.com/upload/iblock/4c0/Prilozhenie-2.pdf",
+      "sourceRules": "https://nch-spb.com/upload/iblock/8f4/b6g07qyzz91fvhx46txlz5m2ldp5unk1/Pravila-s-10.09.2025.pdf",
+      "sourceClaims": [
+        "Operator publishes base fare by tariff zone and daytime/nighttime period",
+        "Official search-indexed annex gives zone 1 to zone 2 category-I base fare 70 RUB day / 30 RUB night",
+        "The full official PDF could not be fetched by the research interface; only this extracted tariff pair is safely recorded",
+        "Official indexed 2025-04-22 annex identifies WHSD tariff zone 6 as Blagodatnaya–Vitebsky and exposes 300 RUB among amounts; retained as unverified candidate only"
+      ],
+      "matrixStatus": "official source identified; one zone 1→2 day/night pair extracted and a zone-6 300-RUB candidate found; full directed zone matrix and interpretation of zone-6 amount remain incomplete",
+      "notes": "Do not substitute whole-network secondary-source price for zone-pair cells. Direct PDF fetch returns 403. Zone 6 appears to include the Vitebsk interchange connection; its 300-RUB amount is only a candidate because the exact tariff column and trip cell are not confirmed.",
+      "included": false,
+      "exclusionReason": "User instruction 2026-10-12, audit items 7/8/10"
+    },
+    {
+      "id": "khabarovsk-bypass-four-section-matrix",
+      "road": "Обход Хабаровска",
+      "operator": "ООО «Транстолл» / Группа «ВИС»",
+      "scope": "Four operator tariff sections and full route; five barrier toll plazas, including two on mainline and three on ramps",
+      "vehicleClass": "Category 1, passenger/light vehicles and motorcycles, total height <=2 m",
+      "paymentMethod": "Base fare without transponder discount",
+      "tariffs": {
+        "sectionFaresCategory1Rub": {
+          "topolevo_gorkogo": 20,
+          "gorkogo_vostochnoye": 45,
+          "vostochnoye_sidorenko": 90,
+          "sidorenko_ilinka": 40
+        },
+        "fullRouteTopolevoIlinkaCategory1Rub": 160,
+        "directedSectionPairMatrixRub": null,
+        "operatorCalculatorAvailable": true,
+        "calculatorObservedOdControl": {
+          "from": "ул. Горького",
+          "to": "с. Восточное",
+          "rub": 175,
+          "observedAt": "2026-10-12",
+          "status": "conflicts with separately displayed category-1 section-2 fare 45 RUB; not accepted as fare cell"
+        }
+      },
+      "effectiveFrom": null,
+      "source": "https://vis-transtoll.ru/khabarovsk",
+      "sourceClaims": [
+        "Official operator identifies four tariff sections: Topolevo–Gorkogo, Gorkogo–Vostochnoye, Vostochnoye–Sidorenko, Sidorenko–Ilyinka, and full route Topolevo–Ilyinka",
+        "Official page states five toll plazas, two on the mainline and three on ramps",
+        "Operator page offers origin/destination/category calculator, but static extract did not expose complete fare cells",
+        "Official tariff tabs show category-1 section fares: Topolevo–Gorkogo 20 RUB; Gorkogo–Vostochnoye 45 RUB; Vostochnoye–Sidorenko 90 RUB; Sidorenko–Ilinka 40 RUB",
+        "Official whole-route tab shows Topolevo–Ilinka category-1 price 160 RUB",
+        "Sum of four separately displayed section prices is 195 RUB, not the full-route fare 160 RUB; this proves route vector must be stored separately",
+        "Operator OD calculator for Gorkogo–Vostochnoye showed 175 RUB, conflicting with section-2 fare 45 RUB; exact endpoints/model need clarification"
+      ],
+      "sourceSecondaryFullFare": "https://t-j.ru/platnie-dorogi/",
+      "matrixStatus": "four official category-1 section values and one independent full-route vector now captured; OD calculator sample conflicts with section fare, so arbitrary directed pairs remain blocked pending reconciliation",
+      "notes": "Do not sum section values to price full route (20+45+90+40=195, while operator full-route tariff is 160). Preserve every published vector as its own cell; resolve the operator calculator sample mismatch before using partial OD pairs.",
+      "observedAt": "2026-10-12",
+      "included": false,
+      "exclusionReason": "User instruction 2026-10-12, audit items 7/8/10"
+    },
+    {
+      "id": "blagoveshchensk-heihe-bridge-passenger-car",
+      "road": "Пограничный мост Благовещенск — Хэйхэ",
+      "operator": "ООО «Компания по развитию и строительству моста Амур (Хэйлунцзян)»",
+      "scope": "One bridge passage in either direction",
+      "vehicleClass": "Passenger car",
+      "paymentMethod": "base fare without transponder",
+      "tariffs": {
+        "passengerCarOneWayRub": 1320,
+        "forwardRub": 1320,
+        "reverseRub": 1320
+      },
+      "effectiveFrom": null,
+      "source": "https://www.amur-gov.ru/doc/101326",
+      "sourceClaims": [
+        "Amur Region Government Resolution No. 725 establishes passage and toll collection rules for the paid border bridge section",
+        "Search did not locate a current authoritative passenger-car fare schedule",
+        "Available news prices concern passenger bus tickets or older vehicle-category charges and cannot be used as a passenger-car toll",
+        "Older 2025 published passenger-car fare is 1320 RUB for a vehicle under 2 m; no verified 2026 update was found",
+        "Regional rule/search excerpt states payment is charged on exit from Russia but not when entering Russia"
+      ],
+      "matrixStatus": "confirmed by user: 1320 RUB in both directions",
+      "notes": "User decision 2026-10-12 controls this record; old null/historical-only interpretation is superseded.",
+      "userConfirmedAt": "2026-10-12"
+    },
+    {
+      "id": "mytishchi-speed-chord-tariff-matrix",
+      "road": "Мытищинская скоростная хорда (Виноградово — Болтино — Тарасовка)",
+      "operator": "ООО «Транстолл» / Группа «ВИС»",
+      "scope": "Five operator-defined toll segments or full-road trip; free-flow toll collection",
+      "vehicleClass": "Passenger vehicle category 1; exact dimensions/classification from current operator tariff must be transcribed",
+      "paymentMethod": "Plate billing / base fare without transponder discount",
+      "tariffs": {
+        "segmentCount": 5,
+        "adjacentCategory1Rub": [
+          73,
+          57,
+          44,
+          51,
+          34
+        ],
+        "fullRoadRub": 259,
+        "nodes": [
+          "Афанасовское ш.",
+          "Осташковское ш.",
+          "Подъезд к п. Мебельной фабрики",
+          "Пироговское ш.",
+          "Подъезд к п. Черкизово",
+          "М-8 Холмогоры"
+        ]
+      },
+      "effectiveFrom": "2026-02-01",
+      "source": "https://avtodor-tr.ru/press-center/news/skorostnaya-mytishchinskaya-khorda-kak-oplatit-proezd/",
+      "sourceOperator": "https://vis-transtoll.ru/vbt",
+      "sourceClaims": [
+        "Section prices 73/57/44/51/34 RUB; full-route 259 RUB; category 1 selected in each tariff tab"
+      ],
+      "matrixStatus": "all five named segment prices and full-route price captured in official live tariff tabs; generate contiguous vectors offline",
+      "notes": "User-defined direction-invariant vector model; reverse endpoint not selectable as origin in this operator calculator UI; no reverse control claimed"
+    }
+  ],
+  "notIncluded": [
+    "No entries from the previous separate experimental matrix were present in the currently accessible writable checkout; historical rows were not reconstructed or represented as committed.",
+    "This candidate file is not wired into calculator runtime and does not change V1, V2, or production."
+  ],
+  "coverageSnapshot": {
+    "inventorySource": "https://t-j.ru/platnie-dorogi/",
+    "inventoryObservedAt": "2026-10-12",
+    "reportedPaidRoadsOrObjects": 20,
+    "representedAssets": [
+      "М1 Беларусь",
+      "М3 Украина",
+      "М4 Дон",
+      "М11 Нева",
+      "М12 Восток",
+      "ЦКАД",
+      "А‑289",
+      "Вознесенский тракт Казань",
+      "Рязанский платный путепровод",
+      "МСД",
+      "Проспект Багратиона",
+      "Северный обход Одинцова",
+      "ЗСД",
+      "Платные мосты через Каму и Буй (Удмуртия)",
+      "Восточный выезд Уфы",
+      "Обход Тольятти",
+      "Четыре платные дороги Псковской области",
+      "ШМСД — открытый участок Благодатная—Витебский проспект",
+      "Пограничный мост Благовещенск—Хэйхэ",
+      "Обход Хабаровска"
+    ],
+    "representedCount": 20,
+    "assetPresencePercent": 100,
+    "asOfUpdated": "2026-10-12",
+    "presenceDefinition": "An asset is represented if this dataset identifies the operator's tariff topology or source; the row may contain no confirmed price cells.",
+    "unrepresentedAssets": [],
+    "importantLimit": "20/20 means every inventory asset is identified at least by tariff source or topology; it is not fare-cell completeness or runtime readiness. M-11 km58–679 has a complete direct Category-I PVP-pair matrix under Order 274, effective 2026-09-04, 462 vectors/profile. M-4 currently has two southern candidate vector cells (850/1,000 and 1,230/1,450 RUB) matching date-selected Yandex controls; the remaining route-vector set is incomplete. A-289 user-confirmed values: Yandex fastest route Maryanskaya→Temryuk 620 RUB; entire paid-road vector through to Crimean Bridge 800 RUB; prior 1,103-RUB interpretation is excluded as wrong scope. CKAD has a current direct Category-I pair matrix (15 nodes, 210 ordered cells) and a separate 2,381-RUB full-road benchmark with unresolved scope. Other unresolved groups are listed in AUDIT_ISSUES_2026-10-12.md. Never put a route candidate with unresolved mapping into runtime."
+  },
+  "sourceSnapshots": [
+    {
+      "path": "source-snapshots/2026-10-01-avtodor-other-roads-category1.json",
+      "coverage": "M1 (1 row), M3 (3 rows), CKAD (16 toll-node rows), A-289 (6 toll-node rows)",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "observedAt": "2026-10-01",
+      "status": "official visible tariff-page snapshot; rows preserved verbatim"
+    },
+    {
+      "path": "source-snapshots/m12-2026-03-02-category1.json",
+      "coverage": "M12 Moscow–Kazan, 19 adjacent segments / 20 stops as of 2026-03-02; plus direct Sokury-exit→Shali 99 RUB operator addendum effective 2026-10-08",
+      "source": "https://avtodor-tr.ru/upload/iblock/fe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf",
+      "effectiveFrom": "2026-03-02",
+      "status": "March order snapshot retained for its original scope; subsequent extension is recorded as dated direct-span addendum, not synthesized into the old matrix"
+    },
+    {
+      "path": "source-snapshots/2026-04-24-15-58-category1.json",
+      "coverage": "M11 section km15–58, 42 directed OD cells over 7 tariff points and 5 time/day profiles",
+      "source": "https://m11-neva.ru/upload/iblock/c7f/dqr24p9c4pctph5s4897if1r05agru30.pdf",
+      "effectiveFrom": "2026-04-24T01:00:00+03:00",
+      "status": "official operator PDF; complete category-I no-transponder matrix"
+    },
+    {
+      "path": "source-snapshots/m11/2026-04-24-section15-58-category1-no-transponder.json",
+      "coverage": "M11 section km15–58 date/time bands and full-route tariff summary",
+      "source": "https://m11-neva.ru/upload/iblock/c7f/dqr24p9c4pctph5s4897if1r05agru30.pdf",
+      "effectiveFrom": "2026-04-24T01:00:00+03:00",
+      "status": "supporting operator tariff metadata"
+    },
+    {
+      "path": "source-snapshots/m11/2026-10-12-58-679-category1-a1-current.json",
+      "coverage": "M11 58–679 snapshot: 20 current Avtodor PVP58-origin fare pairs, 2 separate controls, plus disputed direct MDS operator Category-I PVP89→PVP647 observation (89–646 route km), 3,120 RUB Mon–Thu / 3,310 RUB Fri–Sun; all-origin matrix incomplete",
+      "source": "https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf",
+      "observedAt": "2026-10-12",
+      "status": "partial current data; Avtodor PVP58 origin cells current after 2026-09-04 update; MDS PVP89→PVP647 observation disputed and excluded from runtime; current order 274 full matrix not transcribed",
+      "additionalSource": "https://unitoll.ru/about/press/news/izmenyayutsya-tarify-na-proezd-po-doroge-m-11-neva-/",
+      "sourceConflict": "MDS lists 58–646 at 3290/3520 RUB; Avtodor current page lists PVP58→PVP647 at 3890/4580 RUB",
+      "effectiveFrom": "2026-09-04 for Avtodor current 58-origin tariff page cells (current tariff PDF dated 2026-09-04); exact current MDS 89-origin row unresolved"
+    },
+    {
+      "path": "source-snapshots/m11/2026-03-02-58-679-category1-a1-controls.json",
+      "coverage": "M11 section km58–679 prior official controls and tariff-point order",
+      "source": "https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf",
+      "effectiveFrom": "2026-03-02",
+      "status": "incomplete controls; not arbitrary OD matrix"
+    },
+    {
+      "path": "https://osa-kama.ru/tarify/",
+      "coverage": "Udmurtia two bridge zones and combined zone; Category tariff group 1 400/300/700 RUB",
+      "effectiveFrom": "2026-02-01",
+      "status": "operator current tariff page"
+    },
+    {
+      "path": "https://easternexit.ru/tariff/",
+      "coverage": "Ufa Eastern Exit full-road category 1 no-transponder fare 150 RUB",
+      "effectiveFrom": "2025-01-06",
+      "status": "operator current tariff page"
+    },
+    {
+      "path": "https://avtodor-tr.ru/road/tariffs/",
+      "coverage": "Togliatti bypass category-I 3 published spans: 210/140/320 RUB without transponder",
+      "effectiveFrom": "2026-03-01",
+      "status": "Avtodor current tariff page"
+    },
+    {
+      "path": "https://base.garant.ru/411968606/",
+      "coverage": "Pskov region four roads; class 1 prices 150/300/220/200 RUB",
+      "effectiveFrom": null,
+      "status": "regional resolution 162/2025 text; source is legal-document publisher, recheck direct official publication/current amendments"
+    },
+    {
+      "path": "https://nch-spb.com/upload/iblock/c89/9w3aehlsbrrr4ys27479u925nkbtno11/Prilozhenie-_1-k-Prikazu-_32-ot-22.04.2025_Bazovye-tarify.pdf",
+      "coverage": "SHMSD opened first stage Благодатная—Витебский проспект; category-I base tariff 300 RUB",
+      "effectiveFrom": "2025-04-22",
+      "status": "operator tariff-plan PDF; only first stage captured"
+    },
+    {
+      "path": "source-snapshots/m11/m11-neva-live-calculator-access-2026-10-12.json",
+      "coverage": "Direct operator UI control for M11 km15–58 (Moscow22→Solnechnogorsk58) plus out-of-scope km89→646 diagnostic",
+      "source": "https://m11-neva.ru/",
+      "observedAt": "2026-10-12",
+      "status": "operator calculator accessible; verified no-transponder Category-I 15–58 prices 1,130 RUB Tue and 1,650 RUB Sat; km89→646 output excluded because tariff source explicitly covers only km15–58 and repeats these local-section amounts"
+    },
+    {
+      "path": "source-snapshots/m4-2026-10-12-avtodor-and-yandex-checks.json",
+      "coverage": "Current official Category-I tariff cells at M-4 PVP1046/1093/1184/1223, precomputed 3- and 4-PVP vectors, plus date-selected Yandex fastest-route checks",
+      "source": "https://avtodor-tr.ru/road/tariffs/, https://uoperator.ru/pvp-1093/, https://uoperator.ru/pvp-1184/, https://uoperator.ru/pvp-1223/ and https://yandex.com/maps/",
+      "observedAt": "2026-10-12",
+      "status": "three- and four-PVP south vectors match current operator cells and Yandex controls; full M4 vector coverage remains incomplete"
+    },
+    {
+      "path": "source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+      "coverage": "Current direct Category-I fares for all 15 CKAD tariff nodes; 210 ordered origin/destination cells",
+      "source": "https://tskad.ru/stoimost-proezda/tarifs-ckad/",
+      "sourceDocument": "Приказ №56 от 27.02.2026",
+      "effectiveFrom": "2026-03-02",
+      "observedAt": "2026-10-12",
+      "status": "Official 15-node pair matrix transcribed and reciprocal checks pass; separate 2,381-RUB whole-road benchmark vs direct M-10→PK-5 3,189-RUB cell remains unresolved. Yandex km45→PK5-plaza route control captured but is not endpoint-identical."
+    },
+    {
+      "path": "source-snapshots/yandex-2026-10-12-ckad-m10-pk5.json",
+      "coverage": "Yandex fastest route control in both directions between M-10 km45 and the Kaluzhskoe/PK5 toll plaza; forward approximate fare 972 RUB, reverse fastest route free",
+      "source": "https://yandex.com/maps/",
+      "observedAt": "2026-10-12T23:13:45+03:00",
+      "status": "endpoint-mismatch diagnostic only; not runtime approved"
+    },
+    {
+      "path": "source-snapshots/mytishchi-2026-02-01-category1.json",
+      "road": "Мытищинская скоростная хорда",
+      "observedAt": "2026-10-12"
+    }
+  ],
+  "officialValidationControls": [
+    {
+      "id": "m4-moscow-krasnodar-2026-03-02",
+      "road": "М-4 Дон",
+      "route": "Москва — Краснодар",
+      "vehicleCategory": "I, passenger car",
+      "baseFareWithoutTransponderRub": {
+        "monThu": 5040,
+        "friSun": 6090
+      },
+      "effectiveFrom": "2026-03-02",
+      "source": "https://www.russianhighways.ru/press/news/154667/",
+      "status": "official whole-route benchmark only; not the M4 toll-point vectors in candidate row"
+    },
+    {
+      "id": "m1-33-66-2026-03-02",
+      "road": "М-1 Беларусь",
+      "route": "km 33–66 / PVP km 46",
+      "vehicleCategory": "I",
+      "publishedRub": 230,
+      "effectiveFrom": "2026-03-02",
+      "source": "https://www.russianhighways.ru/press/news/141463/",
+      "status": "official route benchmark; conflicts with candidate snapshot no-transponder 250 RUB, payment-column interpretation and later changes must be reconciled"
+    },
+    {
+      "id": "m3-full-2026-03-02",
+      "road": "М-3 Украина",
+      "route": "whole toll road",
+      "vehicleCategory": "I",
+      "baseFareWithoutTransponderRub": {
+        "monThu": 480,
+        "friSun": 520
+      },
+      "effectiveFrom": "2026-03-02",
+      "source": "https://www.russianhighways.ru/press/news/141463/",
+      "status": "whole-road benchmark; not complete pair matrix"
+    },
+    {
+      "id": "ckad-full-2026-03-02",
+      "road": "ЦКАД",
+      "route": "whole ring",
+      "vehicleCategory": "I",
+      "publishedRub": 2381,
+      "effectiveFrom": "2026-03-02",
+      "source": "https://www.russianhighways.ru/press/news/141463/",
+      "status": "whole-road benchmark; route endpoint/scope conflict with direct pair table remains",
+      "matrixSourceSnapshot": "source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json"
+    },
+    {
+      "id": "ckad-category1-direct-pair-matrix-2026-03-02",
+      "road": "А-113 ЦКАД",
+      "vehicleCategory": "I; passenger car; height <=2 m",
+      "paymentBasis": "base post-payment fare without transponder",
+      "effectiveFrom": "2026-03-02",
+      "source": "https://tskad.ru/stoimost-proezda/tarifs-ckad/",
+      "sourceDocument": "Приказ №56 от 27.02.2026",
+      "coverage": "15 entry/exit nodes; 210 ordered non-self direct fare cells",
+      "matrixSnapshot": "source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+      "matrixStatus": "Official 15-node direct matrix transcribed and symmetry validated. Yandex route control M-10 km45↔Kaluzhskoe/PK5 plaza displays ~972 RUB for fastest forward route and free fastest reverse route, but endpoints are not equivalent to exact M-10↔PK-5 tariff nodes. Whole-road 2,381-RUB benchmark vs direct 3,189-RUB cell remains unresolved; runtime disabled for unresolved mapping."
+    },
+    {
+      "id": "a289-full-2026-03-02",
+      "road": "А-289",
+      "route": "whole road",
+      "vehicleCategory": "I",
+      "publishedRub": 800,
+      "effectiveFrom": "2026-03-02",
+      "source": "https://avtodor-tr.ru/road/tariffs/ (current detailed A-289 Category-I tariff row); prior benchmark notice https://www.russianhighways.ru/press/news/141463/",
+      "status": "User-confirmed route scope: 620 RUB Maryanskaya→Temryuk (Yandex control), 800 RUB for full vector through to Crimean Bridge. Exclude 1,103 RUB for this scope.",
+      "baseFareWithoutTransponderRub": 800,
+      "fareScope": "whole paid road vector up to Crimean Bridge, as user-confirmed 2026-10-12",
+      "userConfirmedAt": "2026-10-12",
+      "yandexRouteFareRub": 620,
+      "transponderFareRub": null,
+      "supersededInterpretation": {
+        "rub": 1103,
+        "reason": "Wrong endpoint/road-scope reading; not applicable to the user-defined full vector"
+      },
+      "yandexMaryanskayaTemryukRub": 620
+    },
+    {
+      "id": "m12-sokury-shali-2026-10-08",
+      "road": "М-12 Восток",
+      "route": "съезд на с. Сокуры — с. Шали",
+      "vehicleCategory": "I, passenger car",
+      "baseFareWithoutTransponderRub": 99,
+      "effectiveFrom": "2026-10-08T00:00:00+03:00",
+      "source": "https://ruhw.ru/press/news/154667/",
+      "status": "official holding-company notice quoting Avtodor; direct route-specific whole-vector fare, class I; applies from 2026-10-08 at all times; not a segment increment; March snapshot must not be used for routes crossing the added paid span",
+      "additionalSource": "https://avtodor-tr.ru/road/tariffs/",
+      "reviewedAt": "2026-10-12",
+      "endpointMappingStatus": "not mapped to legacy kazan_p239 stop; exact toll-boundary equivalence unproven",
+      "followUp": "Do not infer Moscow/Kazan→Shali direct fares by adding 99 RUB to March matrix cells; retrieve exact post-extension origin/destination cell from operator tariff matrix/calculator. Live tariff page returned HTTP 403 to automated retrieval."
+    },
+    {
+      "id": "heihe-category1-2025",
+      "road": "Пограничный мост Благовещенск — Хэйхэ",
+      "route": "Russia → China, passenger car height <2 m",
+      "vehicleCategory": "Category 1",
+      "publishedRub": 1320,
+      "effectiveFrom": "2025-01-01",
+      "source": "https://www.interfax-russia.ru/far-east/news/proezd-po-mostu-mezhdu-priamurem-i-knr-s-yanvarya-podorozhaet-pochti-na-11",
+      "status": "User confirms passenger-car fare is 1,320 RUB in both directions; retain dated 2025 publication as corroboration, current operator notice not independently retrieved.",
+      "bidirectionalFareRub": {
+        "russiaToChina": 1320,
+        "chinaToRussia": 1320
+      },
+      "userConfirmedAt": "2026-10-12"
+    },
+    {
+      "id": "khabarovsk-calculator-control-2026-10-12",
+      "road": "Обход Хабаровска",
+      "route": "ул. Горького — с. Восточное (operator calculator default Yandex route)",
+      "vehicleCategory": "Category 1",
+      "publishedRub": 175,
+      "observedAt": "2026-10-12",
+      "source": "https://vis-transtoll.ru/khabarovsk",
+      "status": "operator calculator output; conflicts with separately displayed section-2 tariff 45 RUB; route anchors/calculator model require operator reconciliation; excluded from matrix"
+    },
+    {
+      "id": "yandex-a289-maryanskaya-temryuk-weekday-weekend-2026-10-12",
+      "road": "A-289",
+      "route": "станица Марьянская → Темрюк, fastest route via A-289",
+      "vehicleCategory": "I passenger car, height under 2 m",
+      "payment": "without transponder",
+      "departureLocal": "19:44",
+      "weekday": {
+        "date": "2026-10-12",
+        "fastestTravelTime": "1 h 28 min",
+        "fareRub": 620,
+        "displayedAs": "~620 RUB"
+      },
+      "weekend": {
+        "date": "2026-10-17",
+        "fastestTravelTime": "1 h 27 min",
+        "fareRub": 620,
+        "displayedAs": "~620 RUB"
+      },
+      "source": "https://yandex.com/maps/",
+      "sourceSnapshot": "source-snapshots/yandex-2026-10-12-a289-maryanskaya-temryuk.json",
+      "sourceScope": "Yandex fastest city-to-city route fare control; exact route follows A-289. Operator-defined endpoints are place centers, not toll-plaza coordinates.",
+      "status": "accepted as a route-specific Yandex control per user rule; not generalized as the A-289 whole-road tariff or any other OD pair. Displayed amount is approximate."
+    },
+    {
+      "id": "m4-yandex-rostov-krasnodar-monThu",
+      "road": "М-4 Дон",
+      "route": "улица Козлова, Ростов-на-Дону → Главная городская площадь, Краснодар",
+      "vehicleCategory": "I, passenger car under 2 m, no transponder (Yandex route card)",
+      "departureLocal": "2026-10-13T10:00:00",
+      "routeMode": "fastest driving route",
+      "displayedTollEstimateRub": 850,
+      "displayedAsApproximate": true,
+      "routeDuration": "3 h 46 min",
+      "source": "source-snapshots/m4-2026-10-12-avtodor-and-yandex-checks.json",
+      "status": "Yandex route-only control captured; exact PVP sequence is not exposed by route card, so not an endpoint-identical PVP-pair cell"
+    },
+    {
+      "id": "m4-yandex-rostov-krasnodar-friSun",
+      "road": "М-4 Дон",
+      "route": "улица Козлова, Ростов-на-Дону → Главная городская площадь, Краснодар",
+      "vehicleCategory": "I, passenger car under 2 m, no transponder (Yandex route card)",
+      "departureLocal": "2026-10-17T10:00:00",
+      "routeMode": "fastest driving route",
+      "displayedTollEstimateRub": 1000,
+      "displayedAsApproximate": true,
+      "routeDuration": "3 h 42 min",
+      "source": "source-snapshots/m4-2026-10-12-avtodor-and-yandex-checks.json",
+      "status": "Yandex route-only control captured; exact PVP sequence is not exposed by route card, so not an endpoint-identical PVP-pair cell"
+    },
+    {
+      "id": "yandex-ckad-m10km45-pk5-2026-10-12",
+      "road": "А-113 ЦКАД / M-10",
+      "vehicleCategory": "passenger car; Yandex default car route settings",
+      "date": "2026-10-12",
+      "departureLocal": "23:13",
+      "routeMode": "fastest route only",
+      "forward": {
+        "from": "M-10 Russia, km45",
+        "to": "Toll plaza Kaluzhskoe highway—PK5 (CKAD km250)",
+        "time": "1 h 26 min",
+        "distanceMi": 71,
+        "approxTollRub": 972
+      },
+      "reverse": {
+        "from": "Toll plaza Kaluzhskoe highway—PK5",
+        "to": "M-10 Russia, km45",
+        "time": "1 h 17 min",
+        "approxTollRub": null,
+        "tollShown": false
+      },
+      "source": "https://yandex.com/maps/",
+      "snapshot": "source-snapshots/yandex-2026-10-12-ckad-m10-pk5.json",
+      "status": "Route-specific Yandex control only. This pair does not prove the direct operator M-10→PK-5 matrix cell because M-10 km45 is before the official junction and the plaza point is not proven to match the matrix node. Reverse fastest route is free. Do not overwrite official matrix cell."
+    }
+  ]
+}

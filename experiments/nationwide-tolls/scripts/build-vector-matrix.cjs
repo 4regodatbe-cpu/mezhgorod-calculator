@@ -44,7 +44,8 @@ fixed('blagoveshchensk-heihe-bridge-passenger-car','heihe','bridge','passengerCa
 const ud=entries.find(e=>e.id==='udmurtia-kama-buy-bridges-category1');for(const k of ['kamaBridgeRub','buyBridgeRub','bothBridgesRub'])both('udmurtia',k+'-A',k+'-B','allDays',ud.tariffs[k],ud.source,{basis:'operator direct zone price'});
 const to=entries.find(e=>e.id==='tolyatti-bypass-category1');for(const s of Object.values(to.tariffs))if(s&&typeof s==='object')both('tolyatti',String(s.fromKm),String(s.toKm),'allDays',s.noTransponderRub,to.source,{basis:'published direct vector; full span is 320, not 350'});
 const ps=entries.find(e=>e.id==='pskov-regional-paid-roads-category1');for(const [k,rub]of Object.entries(ps.tariffs))if(typeof rub==='number')both('pskov',k+'-A',k+'-B','allDays',rub,ps.sourceLegalBasis||ps.source,{basis:'retained by user; 2025 published schedule, amendment check not newly completed'});
-both('a289','Maryanskaya','Temryuk','allDays',620,'user decision 2026-10-12 + saved Yandex control',{basis:'user-confirmed fastest-route amount'});both('a289','full-paid-road-start','Crimean-Bridge-approach','allDays',800,'user decision 2026-10-12',{basis:'user-confirmed full-road vector'});
+const a289=read('A289_OD_MATRIX_2026-10-13.json');
+for(const row of a289.pricedUndirectedPairs)both('a289',row.from,row.to,'allDays',row.rub,row.source,{basis:row.basis,verification:row.verification,requiresExactExitBinding:true});
 const ry=entries.find(e=>e.id==='ryazan-m5-overpass-category1');both('ryazan','before-overpass','after-overpass','standard',45,ry.source);for(const w of ry.tariffs.freeWindows)add('ryazan',w.direction==='from city'?'city':'outside',w.direction==='from city'?'outside':'city',`night:${w.fromLocal}-${w.toLocal}:lane${w.lane}`,0,ry.source,{requiresLane:w.lane});
 const ka=entries.find(e=>e.id==='kazan-voznesensky-tract-category1');both('kazan','before-gantry','after-gantry','weekdayPeak',150,ka.source);both('kazan','before-gantry','after-gantry','otherTimes',90,ka.source);
 // Prepared mask table: runtime classifies each section by entry+exit timestamps,
@@ -76,7 +77,7 @@ for(let i=0;i<raw12.length;i++)for(let j=i;j<raw12.length;j++){
  add('m12-candidate',key.join('>'),key.join('>'),'allDays',rub,original.source.url,extra);
  if(seq.length>1){const rev=[...key].reverse();add('m12-candidate',rev.join('>'),rev.join('>'),'allDays',rub,original.source.url,{...extra,sectionVector:rev});}
 }
-const out={schemaVersion:1,generatedAt:'2026-10-12',vehicle:'passenger car',payment:'base without transponder',routeSelection:'single fastest route only',runtimeOperation:'lookup finished vector; no component sum',rows:vectors,scope:{excludedByUser:['SHMSD','ZSD','Khabarovsk'],incompleteRoads:['M4 outside four south PVPs','M12 missing direct pairs after extension'],yandexChecksNotCompletedForEveryRow:true,unknownPriceIsNotZero:true}};
+const out={schemaVersion:1,generatedAt:'2026-10-13',vehicle:'passenger car',payment:'base without transponder',routeSelection:'single fastest route only',runtimeOperation:'lookup finished vector; no component sum',rows:vectors,scope:{excludedByUser:['SHMSD','ZSD','Khabarovsk'],incompleteRoads:['M4 outside four south PVPs','M12 missing direct pairs after extension','A289 Anapa/Taman partial OD pairs and exact exit bindings'],yandexChecksNotCompletedForEveryRow:true,unknownPriceIsNotZero:true}};
 const spanMap=new Map();
 for(const r of vectors.filter(r=>r.road==='m4-candidate')){
  const seq=r.sectionVector,rev=[...seq].reverse(),key=[seq.join('>'),rev.join('>')].sort()[0];

@@ -14,6 +14,7 @@ vm.runInNewContext(compiled,{module,exports:module.exports,require:(name)=>{
   if(name==='@/lib/toll-engine/a289-engine')return {priceA289Route:()=>({crossedFrames:frames})};
   if(name==='@/lib/special-territory-policy')return {inCrimea:({lng})=>lng<35};
   if(name==='@/lib/toll-data/m4')return {M4:[{name:'М-4: Дальний западный обход Краснодара',weekday:410,weekend:410}]};
+  if(name==='@/experiments/nationwide-tolls/engine/a289-route-adapter.mjs')return {quoteA289SelectedRoute:()=>({rub:800})};
   throw new Error(`Unexpected import: ${name}`);
 }});
 const {crimeaM4Total}=module.exports;
