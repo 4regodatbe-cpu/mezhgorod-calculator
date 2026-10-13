@@ -58,6 +58,7 @@ export async function calculateProductionM4(
   departureAt?: string,
   legacySegmentNames: string[] = [],
   routeDurationSeconds?: number,
+  includeA289 = true,
 ): Promise<ProductionM4Result> {
   if (route.length < 2) {
     return { candidate: false, exact: false, tolls: null, validation: null, reason: "Недостаточно геометрии для M-4 validator" };
@@ -94,10 +95,10 @@ export async function calculateProductionM4(
     };
   }
 
-  const a289 = priceA289Route(route, departureAt);
+  const a289 = includeA289 ? priceA289Route(route, departureAt) : null;
   const fullRouteTariff = fullM4RouteTariff(validation, departureAt);
-  const weekdayAmount = fullRouteTariff?.weekdayAmount ?? pricing.weekdayAmount + a289.weekdayAmount;
-  const weekendAmount = fullRouteTariff?.weekendAmount ?? pricing.weekendAmount + a289.weekendAmount;
+  const weekdayAmount = fullRouteTariff?.weekdayAmount ?? pricing.weekdayAmount + (a289?.weekdayAmount ?? 0);
+  const weekendAmount = fullRouteTariff?.weekendAmount ?? pricing.weekendAmount + (a289?.weekendAmount ?? 0);
   const amount = fullRouteTariff?.amount ?? (pricing.period === "пятница–воскресенье" ? weekendAmount : weekdayAmount);
 
   return {
@@ -114,12 +115,12 @@ export async function calculateProductionM4(
           ? "М-4 Дон: полный коридор Москва—Краснодар, применён опубликованный тариф Автодора категории I без транспондера (5 040 ₽ Пн–Чт / 6 090 ₽ Пт–Вс); сумма ПВП оставлена как диагностическая разбивка"
           : "М-4 Дон: точный расчёт по локально подтверждённым ПВП",
         ...pricing.pricedPlazas.map((item) => `${item.id} [${item.direction}${item.entryKm != null ? ` ${item.entryKm}→${item.exitKm}` : ""}]: ${item.selectedAmount} ₽ (будни ${item.weekday} ₽, выходные ${item.weekend} ₽)`),
-        ...a289.segments,
+        ...(a289?.segments ?? []),
       ],
       confidence: "matched",
     },
     validation: responseValidation,
-    reason: a289.status === "priced"
+    reason: a289?.status === "priced"
       ? `${pricing.message} Дополнительно подтверждены рамки A-289: ${a289.crossedFrames.join(", ")}.`
       : pricing.message,
   };

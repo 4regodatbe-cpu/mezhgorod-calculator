@@ -24,7 +24,7 @@ globalThis.fetch=async(input)=>{
 };
 const req=(body:unknown)=>new NextRequest('http://localhost/api/v3/calculate',{method:'POST',body:JSON.stringify(body)});
 test('V3 Anapa and Yalta requests expose numeric A289 estimate with warning',async()=>{
- for(const [from,minPrice] of [[anapa,833],[yalta,800]] as const){
+ for(const [from,minPrice] of [[anapa,620],[yalta,800]] as const){
   const result=await POST(req({from,to:krasnodar,departureAt:'2026-10-13T09:00:00+03:00'}));
   const body=await result.json();
   assert.equal(result.status,200,JSON.stringify(body));

@@ -1,0 +1,77 @@
+{
+  "capturedAt": "2026-10-13",
+  "source": "Yandex Maps cloud browser live UI, not search and not a synthetic routing response",
+  "dateMode": "departure now, displayed local13:35–13:36; snapshot only",
+  "vehicle": "first two fare cards explicitly say car <2m without transponder; third no fare-specific vehicle text exposed",
+  "endpointScope": "representative public city coordinates as used in V3 API controls, not a claim every address yields the same route",
+  "cases": [
+    {
+      "from": "Анапа",
+      "to": "Краснодар",
+      "fromPosition": [
+        37.32,
+        44.9
+      ],
+      "toPosition": [
+        38.98,
+        45.04
+      ],
+      "duration": "2 h17min",
+      "distanceDisplayed": "102 mi",
+      "displayedFareRub": 620,
+      "fareDisplay": "~620 ₽",
+      "directions": [
+        "A-28922.5mi",
+        "A-28945mi",
+        "then Krasnodar city streets"
+      ],
+      "verifiedUrl": "https://yandex.com/maps/?ll=38.150420%2C45.058718&mode=routes&rtd=0&rtext=44.900000%2C37.320000~45.040000%2C38.980000&rtt=auto&ruri=~&z=9"
+    },
+    {
+      "from": "Славянск-на-Кубани",
+      "to": "Краснодар",
+      "fromPosition": [
+        38.13,
+        45.25
+      ],
+      "toPosition": [
+        38.98,
+        45.04
+      ],
+      "duration": "1 h22min",
+      "distanceDisplayed": "52 mi",
+      "displayedFareRub": 415,
+      "fareDisplay": "~415 ₽",
+      "directions": [
+        "03Н-4372.7mi",
+        "A-28941mi",
+        "then Krasnodar city streets"
+      ],
+      "verifiedUrl": "https://yandex.com/maps/?ll=38.554951%2C45.144580&mode=routes&rtd=0&rtext=45.250000%2C38.130000~45.040000%2C38.980000&rtt=auto&ruri=~&z=10"
+    },
+    {
+      "from": "Славянск-на-Кубани",
+      "to": "Ростов-на-Дону",
+      "fromPosition": [
+        38.13,
+        45.25
+      ],
+      "toPosition": [
+        39.7015,
+        47.2357
+      ],
+      "duration": "4 h",
+      "distanceDisplayed": "218 mi",
+      "displayedFareRub": null,
+      "fareDisplay": "paid road label, no amount shown",
+      "directions": [
+        "03Н-4372.7mi",
+        "A-28928.1mi",
+        "M-449mi",
+        "Rostovskoye shosse121mi",
+        "Rostov city streets"
+      ],
+      "verifiedUrl": "https://yandex.com/maps/?ll=38.998537%2C46.175599&mode=routes&rtd=0&rtext=45.250000%2C38.130000~47.235700%2C39.701500&rtt=auto&ruri=~&z=8"
+    }
+  ]
+}

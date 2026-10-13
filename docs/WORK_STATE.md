@@ -1,10 +1,12 @@
-## CURRENT 2026-10-13 — аудит: части1–3 в GitHub и Preview
+## CURRENT 2026-10-13 — А289 category fix + этап4 композиции
 
-DONE: часть1 ef0da4c (календарь API), часть2 57543aa (валидность/геометрия fastest), часть3 373fefd (A289 intermediate OD, frame order, unresolved/repeat guard), плюс сохранён прежний audit baseline8556e57. GitHub code SHA **93c0c5d2848202824f5a0e3f2afb1f782080c7d6**, parent d0dc2227; branch experiment/toll-od-matrix-2026-10-08. Переданные35 файлов проверены по Git blob SHA, несовпадений0.
+DONE locally: user rejected Anapa833 vs whole800. Primary operator indexed table proves class-I/II columns were misread as transponder/noTransponder. Corrected A289 to415/205/620/180/800/385, preserved mistaken rows in correction metadata, rebuilt4699 matrix rows and class1 guard. Real external API + cloud Yandex UI agree Anapa→Krasnodar620 and Slavyansk→Krasnodar415.
 
-VERIFIED: локально и в Vercel **472/472 tests + quote/API contracts PASS**, TypeScript и Next16/16 PASS. Deployment **dpl_7yF5xLbKL6bHP4NBqKUwQ9bTodVv**, exact code SHA93c0c5d, **READY**, target=null, https://mezhgorod-calculator-5xqtongc3-4regodatbe-5310.vercel.app/v3 . Authenticated connector GET /v3 **200**. Это доступность страницы, не live расчёт поездки/браузер.
+DONE part4 code/calculation: V3 consumes M4-only production, separately adds A289 exact OD and bypass once; applies to full and partial M4. Unknown/partial component blocks complete price. Tests478/478 + quote/API contracts, TS, scoped ESLint, Next16/16 PASS. Details: [A289_CLASS1_AND_M4_COMPOSITION_AUDIT_2026-10-13.md](../experiments/nationwide-tolls/A289_CLASS1_AND_M4_COMPOSITION_AUDIT_2026-10-13.md). All numeric API estimates visibly unconfirmed.
 
-NEXT: **часть4** — M4 partial/full + A289 composition, без потери компонентов/двойного счёта; затем части5–10 по [плану](../experiments/nationwide-tolls/AUDIT_PLAN_10_PARTS_2026-10-13.md). Не начинать заново части1–3. Anapa alias и bypass410 предварительные; реальная геометрия/браузерные прогоны остаются открытыми. Production/main/merge не выполнялись. Локальная ветка integration/matrix-estimates-2026-10-13; локальные SHA отличаются от connector-created remote, соответствие записано выше.
+OPEN: Slavyansk→Rostov same-date routes differ: OSRM316.724km/4h43/noA289/M4-1093 gives150; Yandex218mi/4h viaA289+M4, no amount shown. Do not certify150 as Yandex route price or force415 onto noncrossing OSRM geometry. Diagnostic approximate western control yields360.335km/5h18/1265 and is not promoted. Live provider/geometry records in live-controls/2026-10-13-*.json. Exact bypass physical gate and full fastest-route agreement remain open.
+
+REMOTE at start: experiment/toll-od-matrix-2026-10-08 head8cc2982424e78c32d696b79bc857be05310ce94e; previous code93c0c5d/Preview5xqtongc3. IN PROGRESS: publish this checked correction, then inspect exact Preview. Local integration/matrix-estimates-2026-10-13 base801aa3a. NEXT: stage5 M11/M12/CKAD, retain live-routing discrepancy for stage10; stage7 holidays/midnight. No merge/main/Production.
 
 ---
 

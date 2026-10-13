@@ -23,9 +23,9 @@ test('Yalta and Anapa to Krasnodar return selected A-289 estimates in both direc
   frames=['23','82','103'];
   assert.equal(quote([krasnodar,yalta],[],date).tolls.amount,800);
   frames=['82','23'];
-  assert.equal(quote([anapa,krasnodar],[],date).tolls.amount,833);
+  assert.equal(quote([anapa,krasnodar],[],date).tolls.amount,620);
   frames=['23','82'];
-  assert.equal(quote([krasnodar,anapa],[],date).tolls.amount,833);
+  assert.equal(quote([krasnodar,anapa],[],date).tolls.amount,620);
 });
 test('bypass is added once; missing or different exit evidence does not invent fare',()=>{
   frames=['103','82','23'];

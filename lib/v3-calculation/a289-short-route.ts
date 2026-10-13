@@ -19,11 +19,11 @@ export function a289Endpoint(point:Coordinate) {
 }
 
 /** V3 estimate for a selected short A-289 route without a complete M-4 corridor. */
-export function a289ShortRoute(route:Coordinate[],legacySegments:string[],departureAt?:string, fullM4 = false) {
+export function a289ShortRoute(route:Coordinate[],legacySegments:string[],departureAt?:string, easternM4Traversal = false, includeBypass = true) {
   if(route.length<2)return null;
   let start=a289Endpoint(route[0]),end=a289Endpoint(route.at(-1)!);
-  // A separately established full M-4 corridor supplies the eastern A-289 side.
-  if(fullM4){
+  // A separately evidenced M-4 traversal supplies the eastern A-289 side.
+  if(easternM4Traversal){
     if(start && start!=="Maryanskaya" && !end)end="Maryanskaya";
     if(end && end!=="Maryanskaya" && !start)start="Maryanskaya";
   }
@@ -33,18 +33,22 @@ export function a289ShortRoute(route:Coordinate[],legacySegments:string[],depart
   const unresolved = (reason: string) => ({tolls: null, reason});
   if(physical.repeatedFrames?.length)return unresolved("A-289 repeated passage is outside the finished OD vector");
   if(!start||!end||start===end)return unresolved("A-289 frames detected but selected-route exits are unresolved");
-  const from=start==="AnapaExit"?"Varenikovskaya":start;
-  const to=end==="AnapaExit"?"Varenikovskaya":end;
+  let from=start==="AnapaExit"?"Varenikovskaya":start;
+  let to=end==="AnapaExit"?"Varenikovskaya":end;
   // Anapa is a provisional exit alias. The exact vector is still checked by
   // the OD adapter, including single-frame trips from intermediate exits.
   const anapa=[start,end].includes("AnapaExit");
-  const cityTemryuk=[start,end].includes("Temryuk") && [start,end].includes("Maryanskaya");
+  const cityTemryuk=[start,end].includes("Temryuk") && [start,end].includes("Maryanskaya") && frames.length===2;
+  if(cityTemryuk){
+    if(from==="Temryuk")from="TemryukCity";
+    if(to==="Temryuk")to="TemryukCity";
+  }
   const localDate=departureAt&&!Number.isNaN(new Date(departureAt).getTime())
     ? new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Moscow",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date(departureAt)):null;
   const quote=quoteA289SelectedRoute({routeId:"selected-fast-route",selectedRouteId:"selected-fast-route",
     from,to,frames,exitBindingComplete:true,allowTemryukCityEstimate:cityTemryuk,localDate});
   if(quote?.rub==null)return unresolved("A-289 selected frame vector has no applicable finished OD price");
-  const bypass=legacySegments.includes(BYPASS)?M4.find(x=>x.name===BYPASS):null;
+  const bypass=includeBypass&&legacySegments.includes(BYPASS)?M4.find(x=>x.name===BYPASS):null;
   const weekdayAmount=quote.rub+(bypass?.weekday??0);
   const weekendAmount=quote.rub+(bypass?.weekend??0);
   const amount=physical.period==="пятница–воскресенье"?weekendAmount:weekdayAmount;

@@ -19,7 +19,7 @@ test('incomplete A289 cannot expose an incomplete full-trip price',()=>{
  assert.equal(crimeaM4Total([[38.98,45.04],[37.62,55.76]],production,[],date),null);
 });
 test('Anapa and Taman full M4 routes keep their A289 charge in both directions',()=>{
- for(const [route,expected] of [[[[37.32,44.90],gate82,gate23,[37.62,55.76]],5873],[[[36.72,45.21],gate103,gate82,gate23,[37.62,55.76]],5840]]){
+ for(const [route,expected] of [[[[37.32,44.90],gate82,gate23,[37.62,55.76]],5660],[[[36.72,45.21],gate103,gate82,gate23,[37.62,55.76]],5840]]){
   assert.equal(crimeaM4Total(route,production,[],date)?.tolls.amount,expected);
   assert.equal(crimeaM4Total([...route].reverse(),production,[],date)?.tolls.amount,expected);
  }

@@ -26,7 +26,9 @@ function quote(input){
   if(c.profileResolved!==true)return unknown('unresolved-tariff-profile',components);
   const found=(index.get(key(c))||[]).filter(r=>(!r.validFrom&&!r.effectiveFrom||(r.validFrom||r.effectiveFrom)<=c.localDate)&&(!r.validUntil||c.localDate<r.validUntil));
   if(found.length!==1)return unknown(found.length?'ambiguous-fare-version':'missing-current-exact-fare',components);
-  const r=found[0],isCandidate=provisionalKeys.has(key(r))||String(r.verification||'').includes('candidate')||r.road.endsWith('-candidate');
+  const r=found[0];
+  if(c.road==='a289'&&r.vehicleCategory!==1)return unknown('wrong-or-missing-vehicle-category',components);
+  const isCandidate=provisionalKeys.has(key(r))||String(r.verification||'').includes('candidate')||r.road.endsWith('-candidate');
   if(!Number.isSafeInteger(r.rub)||r.rub<0)return unknown('invalid-fare-amount',components);
   components.push({...c,rub:r.rub,priceConfirmation:isCandidate?'unconfirmed':'confirmed',displayLabel:isCandidate?label:null,source:r.source});
  }

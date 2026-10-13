@@ -5,36 +5,193 @@
   "payment": "base without transponder; user route controls retained separately",
   "profile": "allDays",
   "segments": [
-    {"id":"23","west":"Slavyansk","east":"Maryanskaya","physicalFrameKm":23},
-    {"id":"82","west":"Varenikovskaya","east":"Slavyansk","physicalFrameKm":82},
-    {"id":"103","west":"Temryuk","east":"Varenikovskaya","physicalFrameKm":103}
+    {
+      "id": "23",
+      "west": "Slavyansk",
+      "east": "Maryanskaya",
+      "physicalFrameKm": 23
+    },
+    {
+      "id": "82",
+      "west": "Varenikovskaya",
+      "east": "Slavyansk",
+      "physicalFrameKm": 82
+    },
+    {
+      "id": "103",
+      "west": "Temryuk",
+      "east": "Varenikovskaya",
+      "physicalFrameKm": 103
+    }
   ],
   "exits": [
-    {"id":"Maryanskaya","name":"Марьянская / Краснодарская сторона","binding":"operator named endpoint"},
-    {"id":"Slavyansk","name":"Славянск-на-Кубани","binding":"operator named endpoint"},
-    {"id":"Varenikovskaya","name":"Варениковская","binding":"operator named endpoint; do not silently rename to Anapa exit"},
-    {"id":"Temryuk","name":"Темрюк","binding":"operator named endpoint / user fastest city route"},
-    {"id":"AnapaExit","name":"Съезд на Анапу","binding":"exact junction and price pending"},
-    {"id":"TamanBridge","name":"Продолжение к Тамани и Крымскому мосту","binding":"user confirmed full-road vector; exact departure exit pending"}
+    {
+      "id": "Maryanskaya",
+      "name": "Марьянская / Краснодарская сторона",
+      "binding": "operator named endpoint"
+    },
+    {
+      "id": "Slavyansk",
+      "name": "Славянск-на-Кубани",
+      "binding": "operator named endpoint"
+    },
+    {
+      "id": "Varenikovskaya",
+      "name": "Варениковская",
+      "binding": "operator named endpoint; do not silently rename to Anapa exit"
+    },
+    {
+      "id": "Temryuk",
+      "name": "Темрюк",
+      "binding": "operator named endpoint / user fastest city route"
+    },
+    {
+      "id": "AnapaExit",
+      "name": "Съезд на Анапу",
+      "binding": "exact junction and price pending"
+    },
+    {
+      "id": "TamanBridge",
+      "name": "Продолжение к Тамани и Крымскому мосту",
+      "binding": "user confirmed full-road vector; exact departure exit pending"
+    },
+    {
+      "id": "TemryukCity",
+      "name": "Темрюк — контрольный городской маршрут с выездом до третьей рамки",
+      "binding": "user route control, two frames; distinct from operator terminal"
+    }
   ],
   "pricedUndirectedPairs": [
-    {"from":"Maryanskaya","to":"Slavyansk","rub":555,"basis":"saved operator category-I no-transponder OD","source":"source-snapshots/2026-10-01-avtodor-other-roads-category1.json","verification":"candidate dated snapshot"},
-    {"from":"Slavyansk","to":"Varenikovskaya","rub":278,"basis":"saved operator category-I no-transponder OD","source":"source-snapshots/2026-10-01-avtodor-other-roads-category1.json","verification":"candidate dated snapshot"},
-    {"from":"Maryanskaya","to":"Varenikovskaya","rub":833,"basis":"saved operator direct OD, not addition of runtime segments","source":"source-snapshots/2026-10-01-avtodor-other-roads-category1.json","verification":"candidate dated snapshot"},
-    {"from":"Varenikovskaya","to":"Temryuk","rub":270,"basis":"saved operator category-I no-transponder OD","source":"source-snapshots/2026-10-01-avtodor-other-roads-category1.json","verification":"candidate dated snapshot"},
-    {"from":"Slavyansk","to":"Temryuk","rub":548,"basis":"saved operator direct OD","source":"source-snapshots/2026-10-01-avtodor-other-roads-category1.json","verification":"candidate dated snapshot"},
-    {"from":"Maryanskaya","to":"Temryuk","rub":620,"basis":"user accepted fastest Yandex route to Temryuk city; road exit and re-entry, not operator continuous vector","source":"source-snapshots/yandex-2026-10-12-a289-maryanskaya-temryuk.json","verification":"user route control; route geometry must match"},
-    {"from":"Maryanskaya","to":"TamanBridge","rub":800,"basis":"user accepted full paid-road vector toward bridge","source":"user decision 2026-10-12","verification":"user confirmed route amount; route geometry must match"}
+    {
+      "from": "Maryanskaya",
+      "to": "Slavyansk",
+      "rub": 415,
+      "basis": "primary operator category-I direct OD, base post-payment",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "verification": "published primary table indexed 2026-10-13",
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "from": "Slavyansk",
+      "to": "Varenikovskaya",
+      "rub": 205,
+      "basis": "primary operator category-I direct OD, base post-payment",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "verification": "published primary table indexed 2026-10-13",
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "from": "Maryanskaya",
+      "to": "Varenikovskaya",
+      "rub": 620,
+      "basis": "primary operator category-I direct OD, base post-payment",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "verification": "published primary table indexed 2026-10-13",
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "from": "Varenikovskaya",
+      "to": "Temryuk",
+      "rub": 180,
+      "basis": "primary operator category-I direct OD, base post-payment",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "verification": "published primary table indexed 2026-10-13",
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "from": "Maryanskaya",
+      "to": "Temryuk",
+      "rub": 800,
+      "basis": "primary operator category-I direct OD, base post-payment",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "verification": "published primary table indexed 2026-10-13",
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "from": "Slavyansk",
+      "to": "Temryuk",
+      "rub": 385,
+      "basis": "primary operator category-I direct OD, base post-payment",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "verification": "published primary table indexed 2026-10-13",
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "from": "Maryanskaya",
+      "to": "TamanBridge",
+      "rub": 800,
+      "basis": "user confirmed full vector, same three physical frames as operator terminal",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "verification": "user confirmed full vector; physical frame binding required",
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "from": "Slavyansk",
+      "to": "TamanBridge",
+      "rub": 385,
+      "basis": "operator Slavyansk-Temryuk direct385, terminal continuation toward Taman only with same two frames",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "verification": "candidate terminal continuation alias",
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "from": "Varenikovskaya",
+      "to": "TamanBridge",
+      "rub": 180,
+      "basis": "operator Varenikovskaya-Temryuk direct180, terminal continuation toward Taman only with frame103",
+      "source": "https://avtodor-tr.ru/road/tariffs/",
+      "verification": "candidate terminal continuation alias",
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "from": "Maryanskaya",
+      "to": "TemryukCity",
+      "rub": 620,
+      "basis": "user accepted fastest city route exits before frame103; separate from operator terminal800",
+      "source": "source-snapshots/yandex-2026-10-12-a289-maryanskaya-temryuk.json",
+      "verification": "candidate user city-route geometry binding",
+      "effectiveFrom": "2026-03-02"
+    }
   ],
   "unresolvedUndirectedPairs": [
-    {"from":"Maryanskaya","to":"AnapaExit","reason":"exact Anapa exit is not yet bound to Varenikovskaya tariff node"},
-    {"from":"Slavyansk","to":"AnapaExit","reason":"exact Anapa exit is not yet bound to Varenikovskaya tariff node"},
-    {"from":"Varenikovskaya","to":"AnapaExit","reason":"junction placement and applicable OD fare unavailable"},
-    {"from":"Temryuk","to":"AnapaExit","reason":"junction placement and applicable OD fare unavailable"},
-    {"from":"TamanBridge","to":"AnapaExit","reason":"junction placement and applicable OD fare unavailable"},
-    {"from":"Slavyansk","to":"TamanBridge","reason":"no independently stated finished OD price; do not subtract other tariffs"},
-    {"from":"Varenikovskaya","to":"TamanBridge","reason":"no independently stated finished OD price; do not subtract other tariffs"},
-    {"from":"Temryuk","to":"TamanBridge","reason":"no independently stated finished OD price; do not subtract other tariffs"}
+    {
+      "from": "Maryanskaya",
+      "to": "AnapaExit",
+      "reason": "exact Anapa exit is not yet bound to Varenikovskaya tariff node"
+    },
+    {
+      "from": "Slavyansk",
+      "to": "AnapaExit",
+      "reason": "exact Anapa exit is not yet bound to Varenikovskaya tariff node"
+    },
+    {
+      "from": "Varenikovskaya",
+      "to": "AnapaExit",
+      "reason": "junction placement and applicable OD fare unavailable"
+    },
+    {
+      "from": "Temryuk",
+      "to": "AnapaExit",
+      "reason": "junction placement and applicable OD fare unavailable"
+    },
+    {
+      "from": "TamanBridge",
+      "to": "AnapaExit",
+      "reason": "junction placement and applicable OD fare unavailable"
+    },
+    {
+      "from": "Temryuk",
+      "to": "TamanBridge",
+      "reason": "no independently stated finished OD price; do not subtract other tariffs"
+    }
   ],
-  "supersededOperatorVector":{"from":"Maryanskaya","to":"Temryuk","rub":1103,"reason":"different operator continuous no-transponder scope; user chose 620 fastest city route and 800 full bridge approach"}
+  "supersededOperatorVector": {
+    "from": "Maryanskaya",
+    "to": "Temryuk",
+    "rub": 1103,
+    "reason": "category II mistakenly imported as class-I no-transponder, not a scope/transponder conflict"
+  },
+  "category": 1,
+  "correction": "Category-I and category-II columns were previously mislabeled transponder and noTransponder. 833 is category II, not the passenger-car base price.",
+  "categorySource": "source-snapshots/a289-category-columns-2026-10-13.json"
 }

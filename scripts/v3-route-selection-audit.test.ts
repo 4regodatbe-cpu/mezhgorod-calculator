@@ -44,7 +44,7 @@ test('fastest OSRM geometry owns the A289 quote; slower Valhalla evidence cannot
  assert.equal(fast.seconds,10000);assert.equal(fast.meters,170000);
  assert.deepEqual(fast.quality.providers,['OSRM']);
  assert.equal(fast.tolls.pricingStatus,'priced');
- assert.ok([833,1243].includes(fast.tolls.amount),JSON.stringify(fast.tolls));
+ assert.ok([620,1030].includes(fast.tolls.amount),JSON.stringify(fast.tolls));
  assert.equal(r.body.legs[0].free,null);assert.equal(r.body.legs[0].freeError,undefined);
  assert.equal(r.requests.filter(url=>url.includes('/route?')&&url.includes('toll_booth_penalty')).length,0);
 });

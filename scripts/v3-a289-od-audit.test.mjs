@@ -10,10 +10,10 @@ const gate23=[38.5327744,45.171408],gate82=[37.8330177,45.1961096],gate103=[37.5
 
 test('stored intermediate A289 pairs reach V3 in both directions',()=>{
  for(const [route,amount] of [
-  [[slavyansk,gate23,krasnodar],555],
-  [[slavyansk,gate82,anapa],278],
-  [[slavyansk,gate82,gate103,temryuk],548],
-  [[anapa,gate103,temryuk],270],
+  [[slavyansk,gate23,krasnodar],415],
+  [[slavyansk,gate82,anapa],205],
+  [[slavyansk,gate82,gate103,temryuk],385],
+  [[anapa,gate103,temryuk],180],
  ]){
   for(const geometry of [route,route.toReversed()]){
    const result=a289ShortRoute(geometry,[],date);
@@ -29,13 +29,15 @@ test('physical camera order is independent of shape sampling and reverses with d
   const forward=priceA289Route(geometry,date),reverse=priceA289Route(geometry.toReversed(),date);
   assert.deepEqual(Array.from(forward.crossedFrames),['82','23']);
   assert.deepEqual(Array.from(reverse.crossedFrames),['23','82']);
-  assert.equal(forward.amount,833);assert.equal(reverse.amount,833);
+  assert.equal(forward.amount,620);assert.equal(reverse.amount,620);
  }
 });
 
 test('missing intermediate price blocks fallback rather than subtracting unrelated OD tariffs',()=>{
  const result=a289ShortRoute([slavyansk,gate82,gate103,taman],[],date);
- assert.equal(result?.tolls,null);assert.match(result.reason,/no applicable/);
+ assert.equal(result?.tolls?.amount,385);
+ const unknown=a289ShortRoute([temryuk,gate103,taman],[],date);
+ assert.equal(unknown?.tolls,null);assert.match(unknown.reason,/no applicable/);
 });
 
 test('camera return passage cannot be charged as a single ordinary OD trip',()=>{
@@ -50,5 +52,5 @@ test('neighboring shape points at a single frame are one passage',()=>{
  const near=[gate82[0]+0.00005,gate82[1]];
  const physical=priceA289Route([slavyansk,near,gate82,anapa],date);
  assert.deepEqual(Array.from(physical.repeatedFrames),[]);
- assert.equal(a289ShortRoute([slavyansk,near,gate82,anapa],[],date).tolls.amount,278);
+ assert.equal(a289ShortRoute([slavyansk,near,gate82,anapa],[],date).tolls.amount,205);
 });

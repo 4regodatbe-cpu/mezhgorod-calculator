@@ -4,7 +4,7 @@ import { priceOtherRoadVerifiedSections } from "../lib/toll-engine/other-road-cu
 assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "m1-33-66", sectionIds: ["m1-33-66"] }, "noTransponder", "allDays").amountRub, 230);
 assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "m3", sectionIds: ["m3-65-86","m3-112-150","m3-150-194"] }, "noTransponder", "friSun").amountRub, 520);
 assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "m3", sectionIds: ["m3-65-86","m3-112-150","m3-150-194"] }, "transponder", "friSun").amountRub, 520);
-assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "a289", sectionIds: ["a289-maryanskaya-temryuk"] }, "noTransponder", "allDays").amountRub, 1103);
+assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "a289", sectionIds: ["a289-maryanskaya-temryuk"] }, "noTransponder", "allDays").amountRub, 800);
 assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "a289", sectionIds: ["a289-maryanskaya-temryuk"] }, "transponder", "allDays").amountRub, 800);
 assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "ckad", sectionIds: ["ckad-m10-m11","ckad-m11-a107"] }, "noTransponder", "allDays").amountRub, 227);
 

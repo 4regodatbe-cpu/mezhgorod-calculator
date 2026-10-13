@@ -20,18 +20,16 @@ export type A289PricingResult = {
   confidence: "matched" | "none";
 };
 
-// Official category-I tariffs WITHOUT a transponder, snapshot observed 2026-10-01.
-// Source: data/tolls/2026-10-01-avtodor-other-roads-category1.json
-// A-289 uses free-flow charging. Each physical charging frame is counted once,
-// regardless of how many OSM nodes/anchors represent its carriageways.
-// Current no-transponder section amounts are 555 + 278 + 270 = 1103 RUB for
-// the full Марьянская → Темрюк traversal. This deliberately matches the UI's
-// declared "без транспондера" mode and replaces the older 800 RUB composition.
+// Category-I base rates, no transponder discount; current from 02.03.2026.
+// Corrected 13.10.2026: the old 555/278/270 were vehicle category II,
+// mistakenly interpreted as no-transponder columns. Primary table:
+// https://avtodor-tr.ru/road/tariffs/ ; class-I full vector is 800 RUB.
+// Crossing detection remains independent of vehicle/payment price columns.
 const A289_FRAMES: readonly A289Frame[] = [
   {
     id: "23",
     label: "РВП 23 км — Марьянская / Славянск-на-Кубани",
-    tariff: 555,
+    tariff: 415,
     anchors: [
       { lat: 45.171408, lon: 38.5327744, osmNodeId: "13022464435" },
       { lat: 45.1713281, lon: 38.5326562, osmNodeId: "13022464436" },
@@ -40,7 +38,7 @@ const A289_FRAMES: readonly A289Frame[] = [
   {
     id: "82",
     label: "РВП 82 км — Славянск-на-Кубани / Варениковская",
-    tariff: 278,
+    tariff: 205,
     anchors: [
       { lat: 45.1961096, lon: 37.8330177, osmNodeId: "12439881648" },
       { lat: 45.1955326, lon: 37.8066089, osmNodeId: "12787972033" },
@@ -49,7 +47,7 @@ const A289_FRAMES: readonly A289Frame[] = [
   {
     id: "103",
     label: "РВП 103 км — Варениковская / Темрюк",
-    tariff: 270,
+    tariff: 180,
     anchors: [
       { lat: 45.168457, lon: 37.5878131, osmNodeId: "12439892927" },
       { lat: 45.1683514, lon: 37.5877882, osmNodeId: "12806246303" },

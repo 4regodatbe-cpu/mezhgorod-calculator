@@ -210,6 +210,90 @@
         "to": "Славянск-на-Кубани",
         "allDays": {
           "transponder": 415,
+          "noTransponder": 415
+        },
+        "category": 1,
+        "basis": "category I base tariff; payment device is not vehicle category"
+      },
+      {
+        "id": "a289-slavyansk-varenikovskaya",
+        "from": "Славянск-на-Кубани",
+        "to": "Варениковская",
+        "allDays": {
+          "transponder": 205,
+          "noTransponder": 205
+        },
+        "category": 1,
+        "basis": "category I base tariff; payment device is not vehicle category"
+      },
+      {
+        "id": "a289-maryanskaya-varenikovskaya",
+        "from": "Марьянская",
+        "to": "Варениковская",
+        "allDays": {
+          "transponder": 620,
+          "noTransponder": 620
+        },
+        "category": 1,
+        "basis": "category I base tariff; payment device is not vehicle category"
+      },
+      {
+        "id": "a289-varenikovskaya-temryuk",
+        "from": "Варениковская",
+        "to": "Темрюк",
+        "allDays": {
+          "transponder": 180,
+          "noTransponder": 180
+        },
+        "category": 1,
+        "basis": "category I base tariff; payment device is not vehicle category"
+      },
+      {
+        "id": "a289-maryanskaya-temryuk",
+        "from": "Марьянская",
+        "to": "Темрюк",
+        "allDays": {
+          "transponder": 800,
+          "noTransponder": 800
+        },
+        "category": 1,
+        "basis": "category I base tariff; payment device is not vehicle category"
+      },
+      {
+        "id": "a289-slavyansk-temryuk",
+        "from": "Славянск-на-Кубани",
+        "to": "Темрюк",
+        "allDays": {
+          "transponder": 385,
+          "noTransponder": 385
+        },
+        "category": 1,
+        "basis": "category I base tariff; payment device is not vehicle category"
+      }
+    ]
+  },
+  "correction": {
+    "correctedAt": "2026-10-10",
+    "scope": [
+      "m1-33-66",
+      "m3"
+    ],
+    "orderM1": "https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf",
+    "orderM3": "https://avtodor-tr.ru/upload/iblock/cb5/9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf",
+    "effectiveFrom": "2026-03-02",
+    "changes": "I-class rate rows corrected; prior 250 M1 and M3 FriSun 200+320+280 were category II/III cross-column values, NOT category I. Do not use earlier derived M3 800!"
+  },
+  "a289CategoryCorrection": {
+    "correctedAt": "2026-10-13",
+    "source": "https://avtodor-tr.ru/road/tariffs/",
+    "reason": "Category-I and category-II columns were previously mislabeled transponder and noTransponder. 833 is category II, not the passenger-car base price.",
+    "previousMisinterpretedRows": [
+      {
+        "id": "a289-maryanskaya-slavyansk",
+        "from": "Марьянская",
+        "to": "Славянск-на-Кубани",
+        "allDays": {
+          "transponder": 415,
           "noTransponder": 555
         }
       },
@@ -258,17 +342,7 @@
           "noTransponder": 548
         }
       }
-    ]
-  },
-  "correction": {
-    "correctedAt": "2026-10-10",
-    "scope": [
-      "m1-33-66",
-      "m3"
     ],
-    "orderM1": "https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf",
-    "orderM3": "https://avtodor-tr.ru/upload/iblock/cb5/9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf",
-    "effectiveFrom": "2026-03-02",
-    "changes": "I-class rate rows corrected; prior 250 M1 and M3 FriSun 200+320+280 were category II/III cross-column values, NOT category I. Do not use earlier derived M3 800!"
+    "transponderPolicy": "Both base modes now use category I; no loyalty discount is inferred or applied."
   }
 }

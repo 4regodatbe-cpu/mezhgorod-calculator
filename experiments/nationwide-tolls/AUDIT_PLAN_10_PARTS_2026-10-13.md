@@ -50,3 +50,7 @@ NEXT: часть4 — М-4, частичные/полные векторы, ст
 GitHub experiment/toll-od-matrix-2026-10-08 code93c0c5d2848202824f5a0e3f2afb1f782080c7d6 (parent d0dc2227), tree5419073db1028042710f803cd5cea72bf6bb3f57. Сохранены прежний audit8556e57 и части1–3. Переданные35 файлов полностью совпадают с local373fefd по blob SHA. Ref обновлён fast-forward с expected_sha, без force.
 
 Vercel deployment dpl_7yF5xLbKL6bHP4NBqKUwQ9bTodVv READY, target=null, exact source93c0c5d; https://mezhgorod-calculator-5xqtongc3-4regodatbe-5310.vercel.app/v3 . Удалённый build log подтверждает472/472, fail0, quote/API contracts PASS, Next16/16, Build Completed27s. Protected authenticated connector GET /v3 status200 и title калькулятора. Live POST/router/browser не выполнен этим блоком.
+
+## User correction + part4 — 2026-10-13
+
+Part3 tariff expectations were wrong-category data: replace833 with classI620,555→415,278→205,270→180,548→385; whole800 unchanged. Real API + live Yandex controls now agree on Anapa620 and Slavyansk415. Rebuilt matrix4699 rows with class guard. Part4 composition code now handles partial/full M4 + separate A289/bypass without replacement/double charge; focused17 and full478 tests/build PASS. Detailed source/negative evidence/live cases: A289_CLASS1_AND_M4_COMPOSITION_AUDIT_2026-10-13.md. Part4 code/calculation audit complete; Slavyansk–Rostov same-route live discrepancy remains explicitly open for stage10, not declared verified. Stages5–10 pending.

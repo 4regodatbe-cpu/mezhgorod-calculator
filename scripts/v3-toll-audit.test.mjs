@@ -12,7 +12,7 @@ const date = '2026-10-13T09:00:00+03:00';
 const krasnodar=[38.98,45.04],yalta=[34.16,44.5],anapa=[37.32,44.90],temryuk=[37.38,45.27];
 const gate23=[38.5327744,45.171408],gate82=[37.8330177,45.1961096],gate103=[37.5878131,45.168457];
 test('real physical gates and real matrix price Yalta and Anapa in both directions',()=>{
- for(const [route,amount] of [[[yalta,gate103,gate82,gate23,krasnodar],800],[[anapa,gate82,gate23,krasnodar],833]]){
+ for(const [route,amount] of [[[yalta,gate103,gate82,gate23,krasnodar],800],[[anapa,gate82,gate23,krasnodar],620]]){
   assert.equal(a289ShortRoute(route,[],date)?.tolls.amount,amount);
   assert.equal(a289ShortRoute([...route].reverse(),[],date)?.tolls.amount,amount);
  }
@@ -20,7 +20,7 @@ test('real physical gates and real matrix price Yalta and Anapa in both directio
 });
 test('Temryuk estimate requires ordered two-frame evidence, not merely a city endpoint',()=>{
  assert.equal(a289ShortRoute([krasnodar,gate23,temryuk],[],date).tolls,null);
- assert.equal(a289ShortRoute([krasnodar,gate23,gate82,gate103,temryuk],[],date).tolls,null);
+ assert.equal(a289ShortRoute([krasnodar,gate23,gate82,gate103,temryuk],[],date).tolls.amount,800);
  const result=a289ShortRoute([krasnodar,gate23,gate82,temryuk],[],date);
  assert.equal(result?.tolls.amount,620);
  assert.match(result.reason,/unverified/);

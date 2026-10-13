@@ -1,7 +1,6 @@
 import { matrixM12Component } from "@/experiments/nationwide-tolls/engine/m12-route-adapter.mjs";
 import { matrixM4Component } from "@/experiments/nationwide-tolls/engine/m4-route-adapter.mjs";
-import { crimeaM4Total } from "./crimea-m4-total";
-import { a289ShortRoute } from "./a289-short-route";
+import { composeSelectedM4A289 } from "./m4-a289-composition";
 import { estimateTolls, type Coordinate } from "@/lib/tolls";
 import nationalCatalog from "@/experiments/nationwide-tolls/national-registry.json";
 import { inspectNationwideCandidates } from "@/experiments/nationwide-tolls/national-preview.mjs";
@@ -55,10 +54,10 @@ export async function calculateLegTolls({
     departureAt,
     familySegments(geometricTolls.segments, "m4_a289"),
     routeSeconds,
+    false, // V3 prices A-289 separately using the same selected-route OD matrix.
   );
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
-  const crimeaM4 = crimeaM4Total(routeGeometry, productionM4, geometricTolls.segments, departureAt);
-  const shortA289 = a289ShortRoute(routeGeometry, geometricTolls.segments, departureAt);
+  const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as NonNullable<ProductionM4Result["tolls"]>} : null, geometricTolls.segments, departureAt);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
   const productionM11 = selectedFastProvider === "Valhalla" && valhallaEvidence?.m11RoadEvidence
     ? calculateProductionM11(
@@ -77,7 +76,7 @@ export async function calculateLegTolls({
       )
     : null;
   const matrixM12 = matrixM12Component(productionM12, departureAt);
-  const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289") || Boolean(shortA289);
+  const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289") || Boolean(m4A289);
   const m11Detected = productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(valhallaEvidence?.m11RoadEvidence?.strictBlocks.length);
   const m12Detected = legacyFamilies.has("m12") || Boolean(valhallaEvidence?.m12StrictSpan);
   const productionCkad = calculateProductionCkadM4M11(routeGeometry, valhallaEvidence?.m11RoadEvidence);
@@ -102,7 +101,7 @@ export async function calculateLegTolls({
   });
 
   const components: RouteTollComponent[] = [
-    { id: "m4_a289", detected: m4Detected, tolls: crimeaM4 ? crimeaM4.tolls : shortA289 ? shortA289.tolls : (matrixM4?.tolls as ProductionM4Result["tolls"]) ?? productionM4.tolls, reason: crimeaM4?.reason ?? shortA289?.reason ?? matrixM4?.reason ?? productionM4.reason },
+    { id: "m4_a289", detected: m4Detected, tolls: m4A289 ? m4A289.tolls : (matrixM4?.tolls as ProductionM4Result["tolls"]) ?? productionM4.tolls, reason: m4A289?.reason ?? matrixM4?.reason ?? productionM4.reason },
     { id: "m11", detected: m11Detected, tolls: productionM11Geometry.tolls ?? productionM11?.tolls ?? null, reason: productionM11Geometry.exact ? productionM11Geometry.reason : productionM11?.reason ?? productionM11Geometry.reason },
     { id: "m12", detected: m12Detected, tolls: matrixM12 ? matrixM12.tolls as NonNullable<typeof productionM12>["tolls"] : productionM12?.tolls ?? null, reason: matrixM12?.reason ?? productionM12?.core.reason ?? "m12_not_priced" },
     { id: "ckad", detected: ckadDetected, tolls: productionCkad.tolls, reason: productionCkad.reason },

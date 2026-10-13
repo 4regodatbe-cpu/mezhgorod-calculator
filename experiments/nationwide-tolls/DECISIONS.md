@@ -95,3 +95,7 @@ User instructed: cover **all other Russian toll roads**, not M-4 only. Existing 
 ## 2026-10-13 — audit implementation boundary
 
 Existing authorization to display provisional prices remains. A Temryuk city name is not verified bypass evidence: a two-frame estimate uses an explicit provisional permission and unconfirmed output. Complete M4 fares and separately evidenced A289/bypass are composed once for all supported western endpoints. Build runs the expanded audit gate. These are bug fixes under the existing user policy, not new tariff approvals. Open holiday/calendar and missing-network coverage are recorded in AUDIT_2026-10-13.md.
+
+## 2026-10-13 — category-column correction, not a new user tariff policy
+
+User again confirmed whole A289800 and rejected partial Anapa833. Primary indexed operator table shows classI415/205/620/180/800/385; classII555/278/833/270/1103/548 were misread as no-transponder rates. Correct active prices and retain original mistaken raw interpretation in correction metadata. This supersedes assistant explanations about a transponder/scope conflict1103, without changing accepted user800/full and620/two-frame city controls. Operator terminal Temryuk800 and user city-route TemryukCity620 are separate vectors. No payment discount inferred from vehicle category. All interim API estimates continue carrying the approved unconfirmed label.
