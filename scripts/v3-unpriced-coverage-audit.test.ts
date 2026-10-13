@@ -22,7 +22,7 @@ test('regional names and unmapped paid events block a numeric subset',()=>{
   for(const name of ['ЗСД: paid','Западный скоростной диаметр','Мытищинская хорда','Проспект Багратиона','Северный обход Одинцова']) assert.equal(coverage({...input,segments:[name]}).regional,true,name);
   assert.equal(coverage({...input,validation:trace([])}).regional,true);
   assert.equal(coverage({...input,validation:trace(['М-4 Дон'])}).regional,false);
-  assert.equal(coverage({...input,validation:trace(['местная дорога'],false)}).regional,false);
+  assert.equal(coverage({...input,validation:trace(['местная дорога'],false)}).regional,true);
 });
 test('V3 known A289 price cannot hide another unpriced regional road',async()=>{
  const {calculateLegTolls}=await import('../lib/v3-calculation/route-leg-pricing.ts');
@@ -52,5 +52,27 @@ test('late map matching cannot revive an incomplete toll price',async()=>{
  assert.equal(result.tolls.amount,0);
  assert.equal(result.fastValidation.status,'unknown');
  assert.ok(result.tolls.segments.some(s=>s.includes('m3')));
+ }finally{globalThis.fetch=original;}
+});
+
+test('HTTP200 empty or malformed trace is unknown, never proof of free',async()=>{
+ const {validateTollEdges}=await import('../lib/toll-validator.ts');
+ const original=globalThis.fetch;
+ try{
+ for(const body of [{},{edges:[]},{edges:[null]},{edges:[{toll:'true'}]},{edges:[{names:'М-3'}]}]) {
+  globalThis.fetch=async()=>Response.json(body);
+  const result=await validateTollEdges([[60,60],[60.01,60.01]]);
+  assert.equal(result.status,'unknown');assert.equal(result.complete,false);
+ }
+ }finally{globalThis.fetch=original;}
+});
+test('a physical booth without toll=true cannot certify a free route',async()=>{
+ const {validateTollEdges}=await import('../lib/toll-validator.ts');
+ const original=globalThis.fetch;
+ globalThis.fetch=async()=>Response.json({edges:[{toll:false,names:['М-3'],end_node:{type:'toll_booth',node_id:4780909558}}]});
+ try{
+ const result=await validateTollEdges([[60,60],[60.01,60.01]]);
+ assert.equal(result.complete,true);assert.equal(result.status,'unknown');assert.equal(result.tollBoothCount,1);
+ assert.equal(coverage({...input,validation:result}).m3,true);
  }finally{globalThis.fetch=original;}
 });

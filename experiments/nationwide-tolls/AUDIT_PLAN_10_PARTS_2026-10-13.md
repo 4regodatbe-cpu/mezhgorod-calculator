@@ -64,3 +64,5 @@ Existing M11/M12/CKAD code/calculation audit DONE: exact selected-provider evide
 ## Stage6 — 2026-10-13
 
 DONE existing M1/M3/regional code audit: selected-route missing-system coverage cannot be dropped from totals or late fallback; numeric ref/CKAD endpoint identity and gate/trace contracts fixed.500 tests/build PASS; actual Kaluga2 gates unknown and Odintsovo exact-route0 complete trace. No new numeric M1/M3/regional pricing; dated tariff/source/physical completion deferred7/8/10. Details STAGE6_M1_M3_REGIONAL_AUDIT_2026-10-13.md. Stage7 next.
+
+Stage6 follow-up rejects empty/malformed HTTP200 trace and physical-booth-without-toll false-free; final502 regression/build PASS.

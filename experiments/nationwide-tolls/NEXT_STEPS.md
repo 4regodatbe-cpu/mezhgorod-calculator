@@ -1,6 +1,6 @@
 ## 2026-10-13 — stage6
 
-- [x] Audit existing M1/M3/regional composition: lost candidate/trace coverage, late recovery, road ref boundaries/CKAD endpoints, gate identity and trace count contracts fixed.500 tests/build PASS; live local Kaluga2 M3 booths unknown, Odintsovo exact route0 confirmed.
+- [x] Audit existing M1/M3/regional composition: lost candidate/trace coverage, late recovery, road ref boundaries/CKAD endpoints, gate identity and trace count contracts fixed.502 tests/build PASS; live local Kaluga2 M3 booths unknown, Odintsovo exact route0 confirmed.
 - [ ] Persist/check exact experimental Preview.
 - [ ] Stage7: per-road dates, timezone, holidays, midnight/crossing-time.
 - [ ] Stage8: generated M1/M3 missing effective-from vs dated source series; current M3 snapshot conflict and partial OD. Do not activate undated/wrong traversal money.

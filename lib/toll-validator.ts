@@ -141,7 +141,13 @@ async function traceChunk(route: Coordinate[]) {
     signal: AbortSignal.timeout(18_000),
   });
   if (!response.ok) throw new Error(`TRACE_${response.status}`);
-  return (await response.json()) as { edges?: TraceEdge[] };
+  const data = (await response.json()) as { edges?: TraceEdge[] };
+  // HTTP200 with missing/empty trace is not proof that a route has no tolls.
+  if (!Array.isArray(data.edges) || data.edges.length === 0
+    || data.edges.some(edge => !edge || typeof edge !== "object"
+      || (edge.toll !== undefined && typeof edge.toll !== "boolean")
+      || (edge.names !== undefined && (!Array.isArray(edge.names) || edge.names.some(name => typeof name !== "string"))))) throw new Error("TRACE_EDGES_MISSING_OR_INVALID");
+  return data;
 }
 
 async function mapConcurrent<T, R>(values: T[], limit: number, fn: (value: T, index: number) => Promise<R>) {
@@ -225,7 +231,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
   }
 
   return {
-    status: tollEdges.length > 0 ? "toll" : "free",
+    status: tollEdges.length > 0 ? "toll" : tollBooths.length > 0 ? "unknown" : "free",
     source: "Valhalla map matching",
     tollEdgeCount: tollEdges.length,
     checkedEdgeCount,
@@ -233,7 +239,9 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     roadNames,
     message: tollEdges.length > 0
       ? `Подтверждены платные дорожные рёбра: ${tollEdges.length}`
-      : "Платные дорожные рёбра не обнаружены во всём проверенном маршруте",
+      : tollBooths.length > 0
+        ? "Пункты оплаты обнаружены без однозначной маркировки платного ребра; стоимость неизвестна"
+        : "Платные дорожные рёбра не обнаружены во всём проверенном маршруте",
     tollBoothCount: tollBooths.length,
     tollBooths,
     chunkCount: chunks.length,

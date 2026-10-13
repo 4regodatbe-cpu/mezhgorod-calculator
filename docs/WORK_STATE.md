@@ -1,6 +1,6 @@
 ## CURRENT 2026-10-13 — stage6 M1/M3/regional
 
-DONE existing code/calculation audit: selected-route M1/M3 and regional candidate/paid-event coverage now blocks partial totals, including late trace fallback. Exact road refs/CKAD intersection identity and gate road/km/fare + integer trace-count validation fixed.500/500 tests + quote/API contracts, Next TS/webpack16/16, scoped ESLint/diff-check PASS. [Detailed report](../experiments/nationwide-tolls/STAGE6_M1_M3_REGIONAL_AUDIT_2026-10-13.md).
+DONE existing code/calculation audit: selected-route M1/M3 and regional candidate/paid-event coverage now blocks partial totals, including late trace fallback. Malformed/empty HTTP200 trace and booth-without-toll false-free cases rejected. Exact road refs/CKAD intersection identity and gate road/km/fare + integer trace-count validation fixed.502/502 tests + quote/API contracts, Next TS/webpack16/16, scoped ESLint/diff-check PASS. [Detailed report](../experiments/nationwide-tolls/STAGE6_M1_M3_REGIONAL_AUDIT_2026-10-13.md).
 
 LIVE actual local V3 POST/external providers/trace: Moscow→Kaluga OSRM184.817km/10636s unknown, only physical M3 86/136; Moscow→Odintsovo OSRM26.172km/1937s free0 on exact complete trace269edges/0paid/0booths. No hosted POST/browser/Yandex/all-network verification. M1/M3 tariff series/date and regional exact exits remain unresolved; no new numeric fees invented. Existing A289 correction and Rostov discrepancy retained.
 

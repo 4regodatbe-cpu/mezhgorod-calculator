@@ -36,7 +36,8 @@ export function unpricedRoadCoverage(args: {
   for (const name of args.segments) detectName(name);
   for (const name of args.validation?.roadNames ?? []) detectName(name);
   for (const booth of args.validation?.tollBooths ?? []) {
-    if (booth.edgeToll !== true) continue;
+    // A physical booth with a contradictory/missing toll-edge flag still
+    // prevents assuming that its road is free. Detection does not price it.
     const roadFamilies = detectedFamiliesFromLegacySegments(booth.roadNames);
     for (const name of booth.roadNames) detectName(name);
     // A paid event without an identified supported road cannot disappear from
