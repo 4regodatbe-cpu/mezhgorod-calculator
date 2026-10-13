@@ -4,7 +4,7 @@ DONE existing temporal code audit: Moscow timezone in legacy/native M11, M12 all
 
 OPEN source/physical coverage: mainline M11 special/transferred-day calendar, seasonal head succession, exact pay/entry/exit policy and per-gate ETA/version timing. Potential special-day flags block unknown, never borrow another road's fee. No new live routing/browser/hosted POST or tariff research in stage7. Existing A289 correction, stage6 live controls and Rostov/physical gaps retained.
 
-IN PROGRESS persistence: baseline4e6a1a4 / remoteexperimentc48b18e confirmed, new commit/Preview pending. NEXT stage8 fares/version/zones/rounding and remaining independent calendar source; stage9UI/cache; stage10E2E. No main/merge/Production.
+PERSISTED local99fbcf4 → remote988a2a0b6f20518c368ea1239bbd2f10a3250e57 (parentc48b18e2);17 changed hashes match,0 mismatches. Preview dpl_Fvjo1poQfyvkPkbsVSDiEEP29UDB READY exact source988a2a0b, target=null; https://mezhgorod-calculator-h1hah9yrn-4regodatbe-5310.vercel.app/v3 . Remote508/pass508/fail0, contracts/TS/Next16/16 PASS; protected GET200, availability only. Unrelated PRs12/9/6 rechecked unchanged. NEXT stage8 fares/version/zones/rounding and remaining independent calendar source; stage9UI/cache; stage10E2E. No main/merge/Production.
 
 ---
 

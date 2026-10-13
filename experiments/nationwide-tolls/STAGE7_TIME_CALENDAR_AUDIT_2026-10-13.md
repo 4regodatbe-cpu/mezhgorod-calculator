@@ -25,3 +25,10 @@ Final `npm run build -- --webpack`:508 tests/pass508/fail0; quote/API contracts 
 - Existing M11 partial/reverse/679–684 and Slavyansk→Rostov route gaps unchanged. No nationwide temporal completeness claim.
 
 NEXT stage8 fare/version/zone/rounding audit, including dated M1/M3 rows and independent holiday/seasonal source series. Stage9 failure/cache/UI; stage10 exact chosen-route physical/time/Yandex evidence. Publication pending at report creation; append verified code/Preview after it runs.
+
+
+## Stage7 verified publication
+
+Local99fbcf4 maps to remote988a2a0b6f20518c368ea1239bbd2f10a3250e57 (parentc48b18e2), treeb18a787c48eeada9bdf4eb9ea405cb7ee2febcf7. All17 changed blobs matched local tested source,0 mismatches; remote base protected with expected_sha, force=false. Open unrelated PRs12draft64631d23,9draft63b4c392,6open808394c8 rechecked unchanged; no experiment PR/merge action.
+
+Preview dpl_Fvjo1poQfyvkPkbsVSDiEEP29UDB READY exact source988a2a0b, target=null; https://mezhgorod-calculator-h1hah9yrn-4regodatbe-5310.vercel.app/v3 . Remote logs508/pass508/fail0, quote/API contracts PASS, TypeScript/Next16/16 PASS, Build Completed28s. Protected authenticated GET /v3 HTTP200 establishes availability only, no hosted route POST/browser/current-tariff or live calendar verification. Nextstage8 with explicit source/time limitations above. No main/merge/Production.
