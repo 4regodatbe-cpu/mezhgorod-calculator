@@ -5,8 +5,8 @@ import { localTrace } from "@/lib/toll-engine/m4-local-trace";
 import { candidatesForRoute, CANDIDATE_RADIUS_KM, WINDOW_HALF_KM, type Candidate } from "@/lib/toll-engine/m4-route-candidates";
 import { classifyM4TraversalWithoutTollEdge, matchM4TollBoothEdges, type M4TraceEdge } from "@/lib/toll-engine/m4-toll-booth-evidence";
 
-const VALIDATION_BUDGET_MS = 24_000;
-const CONCURRENCY = 4;
+const VALIDATION_BUDGET_MS = 55_000;
+const CONCURRENCY = 2;
 
 export type M4LocalPlazaCheck = {
   km: number;
@@ -101,6 +101,13 @@ function unavailableResult(candidate: Candidate, remoteMessage: string): { check
 }
 
 async function validateCandidate(candidate: Candidate, deadlineAt: number): Promise<{ check: M4LocalPlazaCheck; events: TollBoothEvent[] }> {
+  // The same strict near-miss proof already used after network failure can
+  // reject off-route alternative booths before spending a remote request.
+  if (!candidate.traversal.confirmed && classifyM4TraversalWithoutTollEdge(candidate.traversal.reason) === "rejected") {
+    const result = unavailableResult(candidate, "Запрос не требуется: строгая геометрия исключает сохранённые якоря");
+    result.check.message = `Кандидат отклонён строгой геометрией: вне радиуса всех сохранённых OSM-якорей (${Math.round(candidate.traversal.nearestDistanceKm * 1000)} м).`;
+    return result;
+  }
   const expectedNodeIds = new Set(candidate.plaza.nodeIds);
   const traced = await localTrace(candidate.window, deadlineAt);
 
@@ -141,27 +148,51 @@ function distanceMeters(a: Coordinate, b: Coordinate) {
   return 6_371_008.8 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
 }
 
-export async function validateKnownM4Plazas(route: Coordinate[], routeDurationSeconds?: number): Promise<M4RoutePlazaValidation> {
+export async function validateKnownM4Plazas(route: Coordinate[], routeDurationSeconds?: number, endpointsOnly = false): Promise<M4RoutePlazaValidation> {
   const startedAt = Date.now();
   const deadlineAt = startedAt + VALIDATION_BUDGET_MS;
-  const candidates = candidatesForRoute(route);
+  const nearby = candidatesForRoute(route);
+  const eligible = endpointsOnly ? nearby.filter(candidate =>
+    classifyM4TraversalWithoutTollEdge(candidate.traversal.reason) !== "rejected") : nearby;
+  // User policy: the selected journey has no intermediate exits/re-entry.
+  // Only its two outer tariff boundaries require remote crossing checks.
+  const candidates: Candidate[] = [];
   const results: Array<{ check: M4LocalPlazaCheck; events: TollBoothEvent[] }> = [];
-
-  for (let index = 0; index < candidates.length; index += CONCURRENCY) {
-    const batch = candidates.slice(index, index + CONCURRENCY);
-    if (Date.now() >= deadlineAt) {
-      for (const candidate of batch) {
-        results.push(unavailableResult(candidate, "Исчерпан общий бюджет локальной проверки"));
+  if (endpointsOnly) {
+    // A nearby free ramp is not a tariff boundary. Search inward only until
+    // the actual first/last paid boundary is found; never inspect the interior.
+    const evaluated = new Map<number, { check: M4LocalPlazaCheck; events: TollBoothEvent[] }>();
+    async function boundary(indices: number[]) {
+      for (const index of indices) {
+        const candidate = eligible[index];
+        let result = evaluated.get(index);
+        if (!result) {
+          result = Date.now() >= deadlineAt ? unavailableResult(candidate, "Исчерпан бюджет определения границы")
+            : await validateCandidate(candidate, deadlineAt);
+          evaluated.set(index, result);
+        }
+        if (result.check.status !== "rejected") break;
       }
-      continue;
     }
-    results.push(...await Promise.all(batch.map((candidate) => validateCandidate(candidate, deadlineAt))));
-  }
-
-  if (results.length < candidates.length) {
-    for (const candidate of candidates.slice(results.length)) {
-      results.push(unavailableResult(candidate, "Кандидат не проверен из-за общего лимита времени"));
+    // Sequential searches avoid duplicate requests for a one-section route.
+    await boundary(eligible.map((_, index) => index));
+    await boundary(eligible.map((_, index) => index).reverse());
+    for (const index of [...evaluated.keys()].sort((a,b)=>a-b)) {
+      candidates.push(eligible[index]);results.push(evaluated.get(index)!);
     }
+  } else {
+    candidates.push(...eligible);
+    let nextIndex = 0;
+    async function worker() {
+      while (nextIndex < candidates.length) {
+        const index = nextIndex++;
+        const candidate = candidates[index];
+        results[index] = Date.now() >= deadlineAt
+          ? unavailableResult(candidate, "Исчерпан общий бюджет локальной проверки")
+          : await validateCandidate(candidate, deadlineAt);
+      }
+    }
+    await Promise.all(Array.from({ length: Math.min(CONCURRENCY, candidates.length) }, worker));
   }
 
   const routeProgressMeters = new Array<number>(route.length).fill(0);

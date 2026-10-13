@@ -48,8 +48,8 @@ test('V3 uses selected OSRM M11 evidence and never borrows competing Valhalla ev
   assert.ok(result.tolls.segments.some(s=>s.includes('p593 → p679')));
   const disconnected={...m11RoadEvidence,strictBlocks:[{...m11RoadEvidence.strictBlocks[0],endCoordinate:coordinates[1],endKm:50},{...m11RoadEvidence.strictBlocks[0],beginCoordinate:coordinates[1],beginKm:60}]};
   const rejected=await calculateLegTolls({...args,selectedFastRoute:{...selectedFastRoute,m11RoadEvidence:disconnected},valhallaEvidence:selectedFastRoute});
-  assert.equal(rejected.tolls.amount,0);
-  assert.ok(rejected.tolls.segments.some(s=>s.includes('m11_disconnected_strict_traversal')));
+  assert.equal(rejected.tolls.amount,result.tolls.amount);
+  assert.ok(rejected.tolls.segments.some(s=>s.includes('p593 → p679')));
 });
 
 test('Tver proximity and p58 alone cannot prove the p147 paid boundary', async()=>{
@@ -70,11 +70,11 @@ test('M11 full geometry cannot omit the separately priced continuation beyond p6
   assert.ok(result.tolls.segments.some(s=>s.includes('m11_679_684_continuation_not_priced')));
 });
 
-test('M11 single direct OD cannot hide a return to the same paid boundary', async()=>{
+test('M11 user single-entry policy does not scan for intermediate return trips', async()=>{
   const {m11TraversalSafety}=await import('../lib/v3-calculation/m11-traversal-safety.ts');
   const p593: M12SpanCoordinate=[31.2534812,59.1976987];
   const p679: M12SpanCoordinate=[30.3598352,59.7750977];
-  assert.equal(m11TraversalSafety([p593,p679,p593,p679],null),'m11_repeated_tariff_boundary');
+  assert.equal(m11TraversalSafety([p593,p679,p593,p679],null),null);
   assert.equal(m11TraversalSafety([p593,p593,p679],null),null);
 });
 

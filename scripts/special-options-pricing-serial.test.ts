@@ -92,7 +92,7 @@ test("special route toll checks are serialized to avoid saturating Valhalla trac
     assert.equal(result.options.length, 2, "main and distinct alternative remain available");
     assert.ok(result.options.every((option) => option.fast.tolls.pricingStatus === "priced"));
     assert.ok(result.options.every((option) => (option.fast.tolls.weekdayAmount ?? 0) > 0));
-    assert.equal(maxActiveTraces, 4, "only one four-request M-4 validator runs at a time");
+    assert.equal(maxActiveTraces, 2, "only one two-slot M-4 validator runs at a time");
   } finally {
     globalThis.fetch = originalFetch;
   }

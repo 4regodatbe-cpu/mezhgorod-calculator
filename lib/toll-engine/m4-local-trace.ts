@@ -1,6 +1,6 @@
 import type { Coordinate } from "@/lib/tolls";
 
-const REQUEST_TIMEOUT_MS = 4_500;
+const REQUEST_TIMEOUT_MS = 8_000;
 const RETRY_DELAY_MS = 300;
 
 type TraceEdge = {
@@ -73,7 +73,7 @@ export async function localTrace(window: Coordinate[], deadlineAt: number): Prom
 
       if (response.ok) {
         const data = (await response.json()) as { edges?: TraceEdge[] };
-        const edges = data.edges ?? [];
+        const edges = Array.isArray(data.edges) ? data.edges : [];
         return edges.length > 0
           ? { ok: true, edges }
           : { ok: false, message: "Valhalla не вернула дорожные рёбра локального окна" };

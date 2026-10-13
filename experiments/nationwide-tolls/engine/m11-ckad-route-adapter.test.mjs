@@ -12,11 +12,12 @@ test('M11 uses directed current OD even where the old native table is unknown',(
   assert.ok(expected.rub>0);assert.equal(actual.tolls.amount,expected.rub);
  }
 });
-test('M11 local Moscow Friday profile, missing/expired/date-transition/mixed are blocked',()=>{
+test('M11 local Moscow Friday profile, missing/expired/profile-transition/mixed are blocked',()=>{
  const p=m11('p58','p593');
  assert.equal(matrixM11Component(p,'2026-10-15T22:00:00Z',600).tolls.period,'пятница–воскресенье');
  assert.equal(matrixM11Component(p,'bad',600).tolls,null);
- assert.equal(matrixM11Component(p,'2026-10-13T23:50:00+03:00',3600).tolls,null);
+ assert.equal(matrixM11Component(p,'2026-10-13T23:50:00+03:00',3600).tolls.amount,matrixM11Component(p,date,0).tolls.amount);
+ assert.equal(matrixM11Component(p,'2026-10-15T23:50:00+03:00',3600).tolls,null);
  assert.equal(matrixM11Component(p,'2026-01-01T12:00:00+03:00',600).tolls,null);
  assert.equal(matrixM11Component({...p,blockedByMixedRoadEvidence:true},date,600).tolls,null);
  assert.equal(matrixM11Component({boundaryStatus:'unresolved'},date,600),null);

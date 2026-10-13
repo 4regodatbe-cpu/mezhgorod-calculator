@@ -1,0 +1,560 @@
+{
+  "capturedAt": "2026-10-13T17:16:44.702Z",
+  "externalRoutingSimulated": false,
+  "from": {
+    "label": "Волноваха — ДНР",
+    "position": {
+      "lng": 37.4934079,
+      "lat": 47.6014517
+    }
+  },
+  "to": {
+    "label": "Москва",
+    "position": {
+      "lng": 37.6173,
+      "lat": 55.7558
+    }
+  },
+  "departureAt": "2026-10-13T17:16:14.317Z",
+  "endpointScope": "Representative city coordinates; exact user screenshot addresses not provided",
+  "recordScope": "API body/provider summaries plus compressed chosen provider response",
+  "body": {
+    "legs": [
+      {
+        "from": "Волноваха — ДНР",
+        "to": "Москва",
+        "fast": {
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 1182425,
+          "seconds": 61701,
+          "tolls": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: m4_a289",
+              "m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unknown",
+            "displayLabel": "Стоимость платных дорог неизвестна",
+            "pricingStatus": "unknown"
+          },
+          "tollValidation": {
+            "status": "unknown",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 0,
+            "wayIds": [],
+            "roadNames": [],
+            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "boundaries_resolved",
+            "reason": null,
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 3,
+            "confirmedPvps": [
+              "m4-636",
+              "m4-71"
+            ],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m4",
+                "name": "М-4 «Дон»",
+                "status": "strict_pvp_found_full_price_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "unknown",
+              "reason": "same_selected_route_trace_incomplete",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2704116316545,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 30,
+                  "amount": 24818,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 355.1545883683454,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 70,
+                  "amount": 24861,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 49679,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2704116316545,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 32.5,
+                  "amount": 26886,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 355.1545883683454,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 80,
+                  "amount": 28413,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 55299,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2704116316545,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 35,
+                  "amount": 28954,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 355.1545883683454,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 90,
+                  "amount": 31964,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 60918,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2704116316545,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 45,
+                  "amount": 37227,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 355.1545883683454,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 110,
+                  "amount": 39067,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 76294,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "options": [
+      {
+        "from": "Волноваха — ДНР",
+        "to": "Москва",
+        "fast": {
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 1182425,
+          "seconds": 61701,
+          "tolls": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: m4_a289",
+              "m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unknown",
+            "displayLabel": "Стоимость платных дорог неизвестна",
+            "pricingStatus": "unknown"
+          },
+          "tollValidation": {
+            "status": "unknown",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 0,
+            "wayIds": [],
+            "roadNames": [],
+            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "boundaries_resolved",
+            "reason": null,
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 3,
+            "confirmedPvps": [
+              "m4-636",
+              "m4-71"
+            ],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m4",
+                "name": "М-4 «Дон»",
+                "status": "strict_pvp_found_full_price_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "unknown",
+              "reason": "same_selected_route_trace_incomplete",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2704116316545,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 30,
+                  "amount": 24818,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 355.1545883683454,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 70,
+                  "amount": 24861,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 49679,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2704116316545,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 32.5,
+                  "amount": 26886,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 355.1545883683454,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 80,
+                  "amount": 28413,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 55299,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2704116316545,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 35,
+                  "amount": 28954,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 355.1545883683454,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 90,
+                  "amount": 31964,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 60918,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2704116316545,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 45,
+                  "amount": 37227,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 355.1545883683454,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха — ДНР",
+                  "to": "Москва",
+                  "ratePerKm": 110,
+                  "amount": 39067,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 76294,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "dual",
+    "automaticMode": "dual",
+    "specialEndpoint": true,
+    "preferredCorridor": "mainland",
+    "routePolicy": "geographic-zone"
+  },
+  "name": "volnovakha-moscow",
+  "status": 200,
+  "elapsedMs": 30356,
+  "meters": 1182425,
+  "seconds": 61701,
+  "quality": {
+    "status": "single",
+    "providers": [
+      "OSRM"
+    ],
+    "distanceSpreadPercent": null,
+    "timeSpreadPercent": null,
+    "goldenDistanceDeviationPercent": null,
+    "message": "Выбран маршрут с минимальным временем"
+  },
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m4_a289",
+      "m4_a289: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_ambiguous-fare-version"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unknown",
+    "displayLabel": "Стоимость платных дорог неизвестна",
+    "pricingStatus": "unknown"
+  },
+  "providerResults": [
+    {
+      "url": "https://router.project-osrm.org/route/v1/driving/37.4934079,47.6014517;37.6173,55.7558",
+      "status": 200,
+      "distance": 1182425.3,
+      "seconds": 61701.2
+    },
+    {
+      "url": "https://valhalla1.openstreetmap.de/route",
+      "status": 200,
+      "distance": 1276.805,
+      "seconds": 63095.773
+    }
+  ],
+  "selectedRawFile": "experiments/nationwide-tolls/live-controls/2026-10-13-stage10-ui-volnovakha-moscow.provider.json.gz"
+}

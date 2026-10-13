@@ -1,0 +1,295 @@
+{
+  "capturedAt": "2026-10-13T16:38:00.876Z",
+  "externalRoutingSimulated": false,
+  "from": {
+    "label": "Москва",
+    "position": {
+      "lng": 37.6173,
+      "lat": 55.7558
+    }
+  },
+  "to": {
+    "label": "Воронеж",
+    "position": {
+      "lng": 39.2003,
+      "lat": 51.6608
+    }
+  },
+  "departureAt": "2026-10-13T16:37:28.256Z",
+  "endpointScope": "Representative city coordinates; exact user screenshot addresses not provided",
+  "recordScope": "API body/provider summaries plus compressed chosen provider response",
+  "body": {
+    "legs": [
+      {
+        "from": "Москва",
+        "to": "Воронеж",
+        "fast": {
+          "meters": 516348,
+          "seconds": 24040,
+          "m12StrictSpan": null,
+          "m11RoadEvidence": {
+            "provider": "valhalla",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "Valhalla"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": 2300,
+            "weekdayAmount": 2300,
+            "weekendAmount": 3060,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-4 Дон: точный расчёт по локально подтверждённым ПВП",
+              "m4-71 [unknown]: 400 ₽ (будни 400 ₽, выходные 500 ₽)",
+              "m4-133 [unknown]: 500 ₽ (будни 500 ₽, выходные 600 ₽)",
+              "m4-228 [unknown]: 320 ₽ (будни 320 ₽, выходные 470 ₽)",
+              "m4-322 [unknown]: 320 ₽ (будни 320 ₽, выходные 470 ₽)",
+              "m4-339 [unknown]: 400 ₽ (будни 400 ₽, выходные 540 ₽)",
+              "m4-401-464-entry [unknown 416→460]: 360 ₽ (будни 360 ₽, выходные 480 ₽)"
+            ],
+            "confidence": "matched",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": "Стоимость не подтверждена",
+            "pricingStatus": "priced"
+          },
+          "tollValidation": {
+            "status": "toll",
+            "source": "Route toll composition",
+            "tollEdgeCount": 1,
+            "checkedEdgeCount": 1,
+            "wayIds": [],
+            "roadNames": [
+              "m4_a289"
+            ],
+            "message": "Полный итог составлен из дорожных систем: m4_a289",
+            "complete": true
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "route_continuity_not_verified",
+            "priceRub": null,
+            "source": "pvp-span-preview",
+            "diagnosticOnly": true,
+            "verifiedSpanCells": 2,
+            "confirmedPvps": [
+              "m4-71",
+              "m4-133",
+              "m4-228",
+              "m4-322",
+              "m4-339",
+              "m4-416",
+              "m4-460"
+            ],
+            "candidateCount": 9,
+            "checkedCandidateCount": 9,
+            "unknownCandidateCount": 0,
+            "confirmedByMapMatching": 7,
+            "legacyConfirmedCount": 7,
+            "verifiedPriceCells": 2
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m4",
+                "name": "М-4 «Дон»",
+                "status": "strict_pvp_found_full_price_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "unknown",
+              "reason": "same_selected_route_trace_incomplete",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 516.348,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Москва",
+                  "to": "Воронеж",
+                  "ratePerKm": 30,
+                  "amount": 15490,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 15490,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 516.348,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Москва",
+                  "to": "Воронеж",
+                  "ratePerKm": 32.5,
+                  "amount": 16781,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 16781,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 516.348,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Москва",
+                  "to": "Воронеж",
+                  "ratePerKm": 35,
+                  "amount": 18072,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 18072,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 516.348,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Москва",
+                  "to": "Воронеж",
+                  "ratePerKm": 45,
+                  "amount": 23236,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 23236,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  },
+  "name": "moscow-voronezh",
+  "status": 200,
+  "elapsedMs": 32618,
+  "meters": 516348,
+  "seconds": 24040,
+  "quality": {
+    "status": "single",
+    "providers": [
+      "Valhalla"
+    ],
+    "distanceSpreadPercent": null,
+    "timeSpreadPercent": null,
+    "goldenDistanceDeviationPercent": null,
+    "message": "Выбран маршрут с минимальным временем"
+  },
+  "tolls": {
+    "amount": 2300,
+    "weekdayAmount": 2300,
+    "weekendAmount": 3060,
+    "period": "понедельник–четверг",
+    "segments": [
+      "М-4 Дон: точный расчёт по локально подтверждённым ПВП",
+      "m4-71 [unknown]: 400 ₽ (будни 400 ₽, выходные 500 ₽)",
+      "m4-133 [unknown]: 500 ₽ (будни 500 ₽, выходные 600 ₽)",
+      "m4-228 [unknown]: 320 ₽ (будни 320 ₽, выходные 470 ₽)",
+      "m4-322 [unknown]: 320 ₽ (будни 320 ₽, выходные 470 ₽)",
+      "m4-339 [unknown]: 400 ₽ (будни 400 ₽, выходные 540 ₽)",
+      "m4-401-464-entry [unknown 416→460]: 360 ₽ (будни 360 ₽, выходные 480 ₽)"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": "Стоимость не подтверждена",
+    "pricingStatus": "priced"
+  },
+  "providerResults": [
+    {
+      "url": "https://brouter.de/brouter",
+      "status": 200
+    },
+    {
+      "url": "https://valhalla1.openstreetmap.de/route",
+      "status": 200,
+      "distance": 516.348,
+      "seconds": 24040.38
+    },
+    {
+      "url": "https://router.project-osrm.org/route/v1/driving/37.6173,55.7558;39.2003,51.6608",
+      "status": 200,
+      "distance": 514741.6,
+      "seconds": 25287.5
+    }
+  ],
+  "selectedRawFile": "experiments/nationwide-tolls/live-controls/2026-10-13-stage10-ui-moscow-voronezh.provider.json.gz"
+}

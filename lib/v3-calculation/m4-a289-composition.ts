@@ -27,7 +27,7 @@ export function composeSelectedM4A289(route: Coordinate[], production: Productio
   const unknown = (reason: string) => ({tolls: null, reason});
   const m4 = matrix ? matrix.tolls : production.tolls;
   if (m4Detected && (!m4 || m4.confidence !== "matched" || (!matrix && !production.exact))) {
-    return unknown("M-4 selected traversal is not completely priced; A-289 cannot replace it");
+    return unknown(`M-4 selected traversal is not completely priced; A-289 cannot replace it: ${matrix?.reason ?? production.reason}`);
   }
   // Reject accidental use of the old mixed production payload instead of
   // subtracting estimated frame prices from an unrelated whole-route tariff.

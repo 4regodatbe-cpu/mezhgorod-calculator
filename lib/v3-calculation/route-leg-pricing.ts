@@ -13,7 +13,7 @@ import m1m3OfficialGates from "@/experiments/nationwide-tolls/m1-m3-official-gat
 import { quoteM3ThreeGateShadow, quoteM1SingleGateShadow } from "@/experiments/nationwide-tolls/m1-m3-shadow-quote.mjs";
 import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
-import { calculateProductionM4, type ProductionM4Result } from "@/lib/toll-engine/m4-production";
+import { resolveSelectedM4Endpoints, type ProductionM4Result } from "@/lib/toll-engine/m4-production";
 import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { ENTRY_MAX_DISTANCE_KM, facilityAnchors, haversineKm } from "@/lib/toll-engine/m11-moscow-geometry";
 import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
@@ -52,13 +52,7 @@ export async function calculateLegTolls({
 
   const legacyFamilies = detectedFamiliesFromLegacySegments(geometricTolls.segments);
 
-  const productionM4 = await calculateProductionM4(
-    routeGeometry,
-    departureAt,
-    familySegments(geometricTolls.segments, "m4_a289"),
-    routeSeconds,
-    false, // V3 prices A-289 separately using the same selected-route OD matrix.
-  );
+  const productionM4 = await resolveSelectedM4Endpoints(routeGeometry, routeSeconds);
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
   const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as ProductionM4Result["tolls"]} : null, geometricTolls.segments, departureAt);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
@@ -83,10 +77,11 @@ export async function calculateLegTolls({
   );
   const matrixM11 = m11SafetyReason ? {tolls:null,reason:m11SafetyReason}
     : matrixM11Component(productionM11, departureAt, routeSeconds);
-  const productionM12 = selectedFastRoute.m12StrictSpan
+  const m12Span = selectedFastRoute.m12EndpointSpan ?? selectedFastRoute.m12StrictSpan;
+  const productionM12 = m12Span
     ? calculateProductionM12(
         routeGeometry,
-        selectedFastRoute.m12StrictSpan,
+        m12Span,
         familySegments(geometricTolls.segments, "m12"),
         departureAt,
       )
@@ -94,7 +89,7 @@ export async function calculateLegTolls({
   const matrixM12 = matrixM12Component(productionM12, departureAt);
   const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289") || Boolean(m4A289);
   const m11Detected = productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(selectedFastRoute.m11RoadEvidence?.strictBlocks.length);
-  const m12Detected = legacyFamilies.has("m12") || Boolean(selectedFastRoute.m12StrictSpan);
+  const m12Detected = legacyFamilies.has("m12") || Boolean(m12Span) || selectedFastRoute.m12Candidate === true;
   const productionCkad = calculateProductionCkadM4M11(routeGeometry, selectedFastRoute.m11RoadEvidence);
   const matrixCkad = matrixCkadComponent(productionCkad, departureAt);
   // CKAD is a paid component only when legacy evidence names it or the strict
@@ -112,7 +107,7 @@ export async function calculateLegTolls({
   const nationalTollCoverage = inspectNationwideCandidates(nationalCatalog, geometricTolls.segments, {
     m4StrictPvpCount: productionM4.m4PvpPreview?.confirmedPvps?.length ?? 0,
     m11Candidate: productionM11Geometry.candidate,
-    m12Candidate: Boolean(selectedFastRoute.m12StrictSpan),
+    m12Candidate: Boolean(m12Span) || selectedFastRoute.m12Candidate === true,
     ckadCandidate: productionCkad.candidate,
     m1m3Candidates: m1m3GateAudit.candidateRoads,
   });
@@ -141,7 +136,7 @@ export async function calculateLegTolls({
   const components: RouteTollComponent[] = [
     { id: "m4_a289", detected: m4Detected, tolls: m4A289 ? m4A289.tolls : matrixM4 ? matrixM4.tolls as ProductionM4Result["tolls"] : productionM4.tolls, reason: m4A289?.reason ?? matrixM4?.reason ?? productionM4.reason },
     { id: "m11", detected: m11Detected, tolls: m11Tolls as NonNullable<typeof productionM11>["tolls"], reason: m11Reason },
-    { id: "m12", detected: m12Detected, tolls: matrixM12 ? matrixM12.tolls as NonNullable<typeof productionM12>["tolls"] : productionM12?.tolls ?? null, reason: matrixM12?.reason ?? productionM12?.core.reason ?? "m12_not_priced" },
+    { id: "m12", detected: m12Detected, tolls: matrixM12 ? matrixM12.tolls as NonNullable<typeof productionM12>["tolls"] : productionM12?.tolls ?? null, reason: matrixM12?.reason ?? productionM12?.core.reason ?? selectedFastRoute.m12SpanReason ?? "m12_not_priced" },
     { id: "ckad", detected: ckadDetected, tolls: matrixCkad ? matrixCkad.tolls as typeof productionCkad.tolls : productionCkad.tolls, reason: matrixCkad?.reason ?? productionCkad.reason },
     { id: "m1", detected: unpricedCoverage.m1, tolls: null, reason: "m1_engine_not_yet_composed" },
     { id: "m3", detected: unpricedCoverage.m3, tolls: null, reason: "m3_engine_not_yet_composed" },

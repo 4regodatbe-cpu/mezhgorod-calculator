@@ -1,3 +1,22 @@
+## CURRENT 2026-10-13 — endpoint-only code implemented, tariff coverage IN PROGRESS
+
+DONE V3 M4 boundary-only search + ready endpoint matrix, no native per-PVP sum; M11 intermediate gap/reentry checks removed; M12 endpoint span used by V3. Prior offline recovery runtime restored. [Detailed report](../experiments/nationwide-tolls/ENDPOINT_ONLY_IMPLEMENTATION_2026-10-13.md).
+
+VERIFIED540/pass540/fail0, contracts/TypeScript/Next16/16, scopedlint/diffcheck PASS. Actual external-provider local handler Volnovakha→Moscow1182425m/61701s: boundary resolution succeeded, fare remains unknown because endpoint matrix has conflicting ready prices. Prior3050 was legacy sum, not evidence of new endpoint price. No browser/hostedPOST/new Preview claim.
+
+NEXT resolve endpoint tariff conflicts from direct source and complete M11/M12/CKAD products. Full algorithm/source coverage and stage10 IN PROGRESS. Local integration branch; remote parent49e1da08 verified. No main/merge/Production. Earlier environment BLOCKED entries below are historical; runtime restored.
+
+---
+
+## CURRENT 2026-10-13 20:05 MSK — пользователь уточнил модель двух границ
+
+DONE: записано обязательное правило в [DECISIONS.md](../experiments/nationwide-tolls/DECISIONS.md): один проезд по платной дороге непрерывен; промежуточные съезды/объезды/reentry не рассматриваются. Первый и последний тарифные участки определяют готовую ячейку матрицы. Полный сетевой обход промежуточных ПВП не является условием расчёта.
+
+IN PROGRESS: код пока не приведён к этому правилу. Ранее предложенная проверка непрерывности/повторных въездов отменена пользовательским уточнением. NEXT: переработать границы/lookup M4/M11 и удалить обязательный промежуточный обход и старое суммирование из нового пути; см. NEXT_STEPS.md. Runtime восстановился, локальный незакоммиченный задел доступности сохранён; эта запись не означает публикацию или новые проверки.
+
+
+---
+
 ## CURRENT 2026-10-13 — BLOCKED: runtime disconnected during fare-fix persistence
 
 Locally implemented and VERIFIED536/pass536/fail0 + contracts/TS/Next16/16, scopedlint/diffcheck: M4 proof starvation worker/budget fix, M4/M11 unchanged-profile overnight handling, selected OSRM M12 evidence/completeness, selected special diagnostics. Fresh API+external traces restored Volnovakha→Moscow3050 RUB and Moscow→Voronezh2300 RUB (both unconfirmed). Ufa→Petersburg full price still OPEN (disjoint M12, M11/tail, CKAD M7→M11).
@@ -374,5 +393,3 @@ IN PROGRESS: persist reviewed changes to experimental branch and inspect Preview
 - No fresh Yandex route was calculated: Opera connector reports Browser not connected; TinyFish did not start due wallet balance -0.221166 USD (`wallet_out_of_funds`). No new UI observations, dates, sums, geometry or screenshots exist. Existing route estimates remain historic controls only; not marked as newly re-confirmed. No fare data/runtime changed.
 - Next action: resume matrix via connected Opera Yandex Maps UI or TinyFish after wallet access is restored; record real output verbatim before marking any test. Do not claim the tests complete or seed fare cells until evidence is captured.
 - Work log entry in `experiments/nationwide-tolls/WORK_LOG.md` dated 2026-10-12; matrix commit `a2bfaf4`, work log `67efc22`. Production unchanged.
-
-

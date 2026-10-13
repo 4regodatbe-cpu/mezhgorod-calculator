@@ -1,3 +1,5 @@
+import { validateKnownM4Plazas } from "./m4-route-validator";
+import { m4AsTollValidation } from "./m4-core";
 import type { Coordinate } from "@/lib/tolls";
 import type { TollValidation } from "@/lib/toll-validator";
 import { priceA289Route } from "@/lib/toll-engine/a289-engine";
@@ -16,6 +18,7 @@ export type ProductionM4Tolls = {
 };
 
 export type ProductionM4Result = {
+  endpointOnly?: boolean;
   candidate: boolean;
   exact: boolean;
   tolls: ProductionM4Tolls | null;
@@ -124,4 +127,17 @@ export async function calculateProductionM4(
       ? `${pricing.message} Дополнительно подтверждены рамки A-289: ${a289.crossedFrames.join(", ")}.`
       : pricing.message,
   };
+}
+
+/** V3 boundary resolver: no native per-plaza price or corridor recovery. */
+export async function resolveSelectedM4Endpoints(route: Coordinate[], routeDurationSeconds?: number): Promise<ProductionM4Result> {
+  const validation = await validateKnownM4Plazas(route, routeDurationSeconds, true);
+  const ids = validation.checks.filter(check => check.status === "confirmed")
+    .map(check => `m4-${check.km}`);
+  const exact = validation.complete && ids.length > 0;
+  return {endpointOnly:true, candidate:validation.candidateCount > 0, exact, tolls:null,
+    validation:m4AsTollValidation(validation),
+    reason:exact ? "Selected M4 first/last tariff boundaries resolved" : validation.message,
+    m4PvpPreview:{status:exact ? "boundaries_resolved" : "unknown",reason:exact ? null : validation.message,
+      priceRub:null,verifiedPriceCells:0,candidateCount:validation.candidateCount,confirmedPvps:ids,diagnosticOnly:true}};
 }

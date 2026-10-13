@@ -1,0 +1,357 @@
+{
+  "capturedAt": "2026-10-13T16:38:17.243Z",
+  "externalRoutingSimulated": false,
+  "from": {
+    "label": "Уфа",
+    "position": {
+      "lng": 55.9721,
+      "lat": 54.7388
+    }
+  },
+  "to": {
+    "label": "Санкт-Петербург",
+    "position": {
+      "lng": 30.3159,
+      "lat": 59.9391
+    }
+  },
+  "departureAt": "2026-10-13T16:38:01.144Z",
+  "endpointScope": "Representative city coordinates; exact user screenshot addresses not provided",
+  "recordScope": "API body/provider summaries plus compressed chosen provider response",
+  "body": {
+    "legs": [
+      {
+        "from": "Уфа",
+        "to": "Санкт-Петербург",
+        "fast": {
+          "m12StrictSpan": null,
+          "m12Candidate": true,
+          "m12SpanReason": "m12_disconnected_or_malformed_strict_span",
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [
+              {
+                "provider": "osrm",
+                "legIndex": 0,
+                "sourceStartIndex": 33,
+                "sourceEndIndex": 33,
+                "beginKm": 1361.427,
+                "endKm": 1995.546,
+                "lengthKm": 634.119,
+                "beginCoordinate": [
+                  37.201645,
+                  56.088873
+                ],
+                "endCoordinate": [
+                  30.361203,
+                  59.773923
+                ],
+                "labels": [
+                  "«Нева»",
+                  "М-11"
+                ]
+              },
+              {
+                "provider": "osrm",
+                "legIndex": 0,
+                "sourceStartIndex": 35,
+                "sourceEndIndex": 36,
+                "beginKm": 1995.847,
+                "endKm": 2001.174,
+                "lengthKm": 5.327,
+                "beginCoordinate": [
+                  30.358981,
+                  59.776376
+                ],
+                "endCoordinate": [
+                  30.312274,
+                  59.81611
+                ],
+                "labels": [
+                  "«Нева»",
+                  "М-11"
+                ]
+              }
+            ],
+            "candidateClues": [
+              {
+                "provider": "osrm",
+                "legIndex": 0,
+                "sourceIndex": 32,
+                "reasons": [
+                  "destination_m11"
+                ],
+                "beginKm": 1360.88,
+                "endKm": 1361.427,
+                "beginCoordinate": [
+                  37.209886,
+                  56.089259
+                ],
+                "endCoordinate": [
+                  37.201645,
+                  56.088873
+                ],
+                "labels": [
+                  "Центральная кольцевая автодорога",
+                  "А-113",
+                  "М-11: Санкт-Петербург"
+                ]
+              }
+            ],
+            "malformedStrictCount": 0
+          },
+          "meters": 2016848,
+          "seconds": 94548,
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: m11, m12, ckad",
+              "m11: m11_disconnected_strict_traversal",
+              "m12: m12_disconnected_or_malformed_strict_span",
+              "ckad: ckad_east_arc_not_proven"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unknown",
+            "displayLabel": "Стоимость платных дорог неизвестна",
+            "pricingStatus": "unknown"
+          },
+          "tollValidation": {
+            "status": "unknown",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 0,
+            "wayIds": [],
+            "roadNames": [],
+            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m11: m11_disconnected_strict_traversal; m12: m12_disconnected_or_malformed_strict_span; ckad: ckad_east_arc_not_proven"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "m4_no_toll_gate_candidates",
+            "priceRub": null,
+            "source": "pvp-span-preview",
+            "diagnosticOnly": true,
+            "verifiedSpanCells": 2,
+            "confirmedPvps": [],
+            "candidateCount": 0,
+            "checkedCandidateCount": 0,
+            "unknownCandidateCount": 0,
+            "verifiedPriceCells": 2
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m11",
+                "name": "М-11 «Нева» (участки 58–679 км)",
+                "status": "candidate_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              },
+              {
+                "id": "m12",
+                "name": "М-12 «Восток»",
+                "status": "candidate_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              },
+              {
+                "id": "ckad",
+                "name": "А-113 ЦКАД",
+                "status": "candidate_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "unknown",
+              "reason": "same_selected_route_trace_incomplete",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2016.848,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Уфа",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 30,
+                  "amount": 60505,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 60505,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2016.848,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Уфа",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 32.5,
+                  "amount": 65548,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 65548,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2016.848,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Уфа",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 35,
+                  "amount": 70590,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 70590,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2016.848,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Уфа",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 45,
+                  "amount": 90758,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 90758,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  },
+  "name": "ufa-petersburg",
+  "status": 200,
+  "elapsedMs": 16068,
+  "meters": 2016848,
+  "seconds": 94548,
+  "quality": {
+    "status": "single",
+    "providers": [
+      "OSRM"
+    ],
+    "distanceSpreadPercent": null,
+    "timeSpreadPercent": null,
+    "goldenDistanceDeviationPercent": null,
+    "message": "Выбран маршрут с минимальным временем"
+  },
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11, m12, ckad",
+      "m11: m11_disconnected_strict_traversal",
+      "m12: m12_disconnected_or_malformed_strict_span",
+      "ckad: ckad_east_arc_not_proven"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unknown",
+    "displayLabel": "Стоимость платных дорог неизвестна",
+    "pricingStatus": "unknown"
+  },
+  "providerResults": [
+    {
+      "url": "https://valhalla1.openstreetmap.de/route",
+      "status": 400
+    },
+    {
+      "url": "https://router.project-osrm.org/route/v1/driving/55.9721,54.7388;30.3159,59.9391",
+      "status": 200,
+      "distance": 2016847.7,
+      "seconds": 94548.1
+    },
+    {
+      "url": "https://brouter.de/brouter",
+      "status": 200
+    }
+  ],
+  "selectedRawFile": "experiments/nationwide-tolls/live-controls/2026-10-13-stage10-ui-ufa-petersburg.provider.json.gz"
+}

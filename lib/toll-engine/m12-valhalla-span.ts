@@ -49,7 +49,7 @@ function isStrictM12Maneuver(maneuver: M12ValhallaManeuver) {
   return names.some((value) => M12_NAME.test(value));
 }
 
-export function deriveStrictM12Span(legs: M12ValhallaLeg[]): M12StrictRouteSpan | null {
+export function deriveStrictM12Span(legs: M12ValhallaLeg[], endpointsOnly = false): M12StrictRouteSpan | null {
   let routeOffsetKm = 0;
   const segments: Array<{ beginKm: number; endKm: number }> = [];
 
@@ -82,7 +82,7 @@ export function deriveStrictM12Span(legs: M12ValhallaLeg[]): M12StrictRouteSpan 
   let endKm = segments[0].endKm;
   for (const segment of segments.slice(1)) {
     // A single-span tariff model cannot price leaving and re-entering M-12.
-    if (segment.beginKm > endKm + 0.000001) return null;
+    if (!endpointsOnly && segment.beginKm > endKm + 0.000001) return null;
     endKm = Math.max(endKm, segment.endKm);
   }
   return { beginKm: round(segments[0].beginKm), endKm: round(endKm) };

@@ -1,0 +1,26 @@
+{
+  "vehicleCategory": 1,
+  "effectiveFrom": "2026-09-04T00:00:00+03:00",
+  "paymentScope": "Cash, bank card and listed interoperable transponders",
+  "issuer": "ГК Автодор",
+  "order": "274 / 2026-09-03",
+  "sourceURL": "https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf",
+  "sourceLocal": "experiments/nationwide-tolls/source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf",
+  "sourceSHA256": "6b52ca130ee7e8a7948c2b39982c00d82174e4e45ec5dcd3983355238c403b91",
+  "pages": [
+    9,
+    10
+  ],
+  "method": "Visually read original scanned PDF pages 9 and 10 on 2026-10-13; text layer empty. Current direct web fetch403; official search index independently identifies same 10-page September document.",
+  "fares": {
+    "mainline_679_681_or_681_684_allDays": 56,
+    "pulkovo_access_allDays": 38,
+    "pulkovo_access_plus_mainline": 94
+  },
+  "notes": [
+    "Combined airport fare is conditional on RVP fixation on the airport access section (footnote2); do not add94 to mainline56.",
+    "Earlier raw March effective-date candidate is superseded for the September document.",
+    "Money source does not independently prove exact selected-route physical RVP identity. No new runtime money enabled by this snapshot."
+  ],
+  "runtimeApproved": false
+}

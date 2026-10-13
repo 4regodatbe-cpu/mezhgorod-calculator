@@ -1,4 +1,5 @@
 import core from './quote.cjs';
+import {stableTariffWindow} from './tariff-window.mjs';
 
 // These dates are flagged by existing 2026 operator/calendar snapshots. They
 // are ambiguity guards, not a borrowed tariff schedule for M11 mainline.
@@ -17,20 +18,25 @@ export function matrixM11Component(production, departureAt, routeSeconds) {
     date:new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Moscow',year:'numeric',month:'2-digit',day:'2-digit'}).format(date),
     day:new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Moscow',weekday:'short'}).format(date),
   });
-  const finish = new Date(start.getTime()+routeSeconds*1000);
-  if (!Number.isFinite(finish.getTime())) return fail("m11_crossing_date_invalid");
-  const begin = local(start), end = local(finish);
-  // Crossing time/holiday refinement belongs to the calendar audit. Do not use
-  // a departure profile for a route spanning different local dates.
-  if (begin.date !== end.date) return fail('m11_crossing_date_ambiguous');
-  if(!begin.date.startsWith('2026-'))return fail('m11_calendar_year_not_verified');
-  const profile = ['Fri','Sat','Sun'].includes(begin.day) ? 'friSun' : 'monThu';
-  if(profile==='monThu'&&potentialSpecialDates.has(begin.date))return fail('m11_mainline_special_day_schedule_not_verified');
+  const resolve = instant => {
+    const p = local(new Date(instant));
+    if(!p.date.startsWith('2026-'))return {status:'unknown'};
+    const profile=['Fri','Sat','Sun'].includes(p.day)?'friSun':'monThu';
+    if(profile==='monThu'&&potentialSpecialDates.has(p.date))return {status:'unknown'};
+    return {status:'resolved',date:p.date,profile};
+  };
+  const window=stableTariffWindow(departureAt,routeSeconds,resolve);
+  if(window.status!=='resolved')return fail('m11_'+window.reason);
+  const begin=window.begin,profile=begin.profile;
   const {entryPointId:from,exitPointId:to} = production.traversal;
   const component = {routeId:'selected-fast-route',traversalId:'m11',exactTraversal:true,profileResolved:true,road:'m11-58-679',from,to,profile,localDate:begin.date};
   const quote = profile => core.quote({routeId:component.routeId,evidenceComplete:true,components:[{...component,profile}]});
   const actual=quote(profile),weekday=quote('monThu'),weekend=quote('friSun');
   if ([actual,weekday,weekend].some(q=>q.rub===null)) return fail('m11_current_exact_pair_missing');
+  for(const date of window.dates){
+    const day=core.quote({routeId:component.routeId,evidenceComplete:true,components:[{...component,localDate:date}]});
+    if(day.rub!==actual.rub||JSON.stringify(day.components.map(c=>c.source))!==JSON.stringify(actual.components.map(c=>c.source)))return fail('m11_crossing_fare_version_changes');
+  }
   return {reason:'matrix dated selected-route M11 direct pair',tolls:{amount:actual.rub,weekdayAmount:weekday.rub,weekendAmount:weekend.rub,period:profile==='monThu'?'понедельник–четверг':'пятница–воскресенье',segments:[`М-11: ${from} → ${to} · Стоимость не подтверждена`],confidence:'matched'}};
 }
 
