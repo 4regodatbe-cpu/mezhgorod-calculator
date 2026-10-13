@@ -1,4 +1,12 @@
-## CURRENT 2026-10-13 — A-289 exit pairs
+## CURRENT 2026-10-13 — Yalta and Anapa short-route regression
+
+- [x] Wire V3 short A-289 selected route to finished OD lookup and conditional bypass, with synthetic Yalta/Anapa↔Krasnodar direction checks; a provisional two-frame Anapa exit estimate is visible as unconfirmed.
+- [ ] Capture real `/api/v3/calculate` responses for the user's exact Yalta/Anapa↔Krasnodar endpoints on Preview. Inspect selected geometry and crossed physical frames; if the router chooses a different road, fix the route classifier instead of forcing the 800/833 estimate.
+- [ ] Verify whether Anapa's exact interchange maps to the saved Varenikovskaya OD and reconcile 833 ₽ with the user's actual no-transponder route card. Keep missing candidate quote unknown until observed.
+
+---
+
+## 2026-10-13 — A-289 exit pairs
 
 - [x] Preserve three physical frames and seven directly sourced/user-approved OD pairs (14 directions); persist explicit unknown Anapa/Taman partial pairs in `A289_OD_MATRIX_2026-10-13.json`; rebuild/validate complete matrix and quote adapter.
 - [ ] Bind Anapa exit and Taman continuation to precise route geometry/maneuver evidence. Then test the remaining Slavyansk→Taman, Varenikovskaya→Taman, Temryuk→Taman, and every Anapa pair with a current direct operator/Yandex fastest control; fill only actual observed OD fares. The 620 city route requires its exit/re-entry control.

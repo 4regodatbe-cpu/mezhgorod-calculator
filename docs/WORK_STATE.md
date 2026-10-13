@@ -1,4 +1,12 @@
-## CURRENT 2026-10-13 — A-289 directed OD matrix expanded
+## CURRENT 2026-10-13 — Yalta/Anapa → Krasnodar short A-289 V3 pricing
+
+DONE locally: the previous V3 adapter priced A-289 only with a complete Moscow–Krasnodar M-4 corridor, so short trips could remain unknown despite crossing its physical frames. `lib/v3-calculation/a289-short-route.ts` now recognizes a selected Crimea/Yalta↔Krasnodar three-frame vector as 800 ₽ and an Anapa↔Krasnodar two-frame vector as the 833 ₽ Maryanskaya–Varenikovskaya operator candidate estimate; a geometrically matched western bypass adds its separate 410 ₽. Also handles reverse directions and Slavyansk/Temryuk endpoints with exact matrix lookup. Anapa's exit alias is provisional and all numeric V3 fares retain «Стоимость не подтверждена». No gate evidence returns unknown. The helper is wired into `route-leg-pricing.ts` when the selected route does not have an M-4 toll-plaza candidate, so it cannot overwrite another M-4 fare.
+
+Focused synthetic selected-frame regression2/2 PASS in both directions, TypeScript PASS, Next webpack build16/16 PASS. Real routed API response for the user's exact addresses is not yet observed, so these expected figures are conditional on the chosen geometry. Remote code/Preview for this block pending. Full history: `experiments/nationwide-tolls/WORK_LOG.md`.
+
+---
+
+## 2026-10-13 — A-289 directed OD matrix expanded
 
 DONE locally: `experiments/nationwide-tolls/A289_OD_MATRIX_2026-10-13.json` distinguishes three physical charging frames (23/82/103), operator endpoints Maryanskaya/Slavyansk/Varenikovskaya/Temryuk, the unbound Anapa exit, and the full Taman/Crimean-Bridge continuation. Seven distinct priced OD pairs are stored bidirectionally (14 rows): five saved operator direct no-transponder rates, user route controls Maryanskaya→Temryuk620 and full bridge800. Eight undirected remaining pairs are explicitly unresolved with no invented fare. The full Crimea route V3 now reads the 800 vector via the same exact OD registry and selected-route frame order; partial vectors remain unknown. Other OD quotes require exact exit binding; the 620 city bypass requires its specific route control. Generator was missing `TARIFF_MATRIX_CANDIDATES_2026-10-12.json` from the recovered remote snapshot; copied the previous experiment's source to make rebuilding reproducible.
 

@@ -1,5 +1,9 @@
 # Nationwide toll-road calculation decisions
 
+## 2026-10-13 — show short A-289 route estimates
+
+User observed no numeric toll estimate on Ялта→Краснодар and Анапа→Краснодар despite stored A-289 prices and requested route estimates to display. V3 may match an actual selected A-289 frame vector to a stored finished OD fare without requiring the unrelated full M-4 corridor: Crimea/Yalta↔Krasnodar all three frames uses accepted 800 ₽; Anapa↔Krasnodar a two-frame vector uses the 833 ₽ Maryanskaya–Varenikovskaya operator candidate as an explicitly unconfirmed Anapa-exit approximation. The full selected route may add a separately matched western bypass once. This provisional junction alias supersedes the earlier rule that Anapa pairs must remain wholly unavailable, but it does not claim an exact Anapa interchange tariff or override other M-4 components. If the crossing vector differs, retain unknown rather than a guessed sum.
+
 ## 2026-10-13 — A-289 exits and OD pairs
 
 User requires A-289 as three charged sections plus direct entrance/exit pairs toward Temryuk, Anapa exit, Slavyansk, Krasnodar side and Taman/Crimean-Bridge continuation, in both directions. Preserve direct OD fares; do not derive an unknown Slavyansk→Taman price by subtracting 800 and 620, and do not treat the Anapa exit as Varenikovskaya without junction evidence. The accepted fastest Maryanskaya→Temryuk city trip is 620 ₽, while a full paid traversal toward the bridge is 800 ₽; neither means the archived operator 1,103 ₽ continuous no-transponder row should be charged for these user-defined route scopes. V3 may use a price only after binding the selected route to exact entry/exit and physical frame order, with the city's 620 ₽ bypass requiring its specific route control.
