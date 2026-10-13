@@ -1,3 +1,13 @@
+## CURRENT 2026-10-13 — stage8 versions/zones/rounding
+
+DONE existing code audit: date/ISO Moscow boundaries and intraday unknown; aliases/conflicting versions; confirmation belongs to selected row, undated prices unconfirmed; commercial total rounded once with consistent integer parts, split/money/overflow bounds.516/pass516/fail0 + contracts, TS/Next16/16, scopedlint/diff-check PASS. [Detailed report](../experiments/nationwide-tolls/STAGE8_VERSION_ZONE_ROUNDING_AUDIT_2026-10-13.md).
+
+OPEN source data: M1 matrix230 vs raw noTransponder250, official queryempty/page403; M3 source/dates, mainline M11 independent calendar/seasonal succession. No source values or4699 rows altered, no new M1/M3/regional customer fee enabled. No new live provider/browser/hosted POST; existing A289 corrections and Rostov/physical gaps retained.
+
+IN PROGRESS persistence: baseline67644e5 / remoteexperiment6eeb8bde confirmed, code/Preview pending. Unrelated PRs12/9/6 rechecked unchanged. NEXT stage9UI/copy/cache/failures, stage10E2E/performance/source/physical completion. No main/merge/Production.
+
+---
+
 ## CURRENT 2026-10-13 — stage7 temporal/calendar
 
 DONE existing temporal code audit: Moscow timezone in legacy/native M11, M12 allDays label, M4 midnight/calendar null retained through native/composition fallback, impossible original dates, M11 missing hour/unknown year/special-day ambiguity guard. Calculated crossing time labelled accurately.508/pass508/fail0 + contracts, scopedlint, TS/Next webpack16/16 PASS. [Detailed report](../experiments/nationwide-tolls/STAGE7_TIME_CALENDAR_AUDIT_2026-10-13.md).

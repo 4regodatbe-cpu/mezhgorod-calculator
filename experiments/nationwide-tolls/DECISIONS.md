@@ -114,3 +114,8 @@ Existing policy applied, no new user tariff decision: unpriced M1/M3/regional de
 ## 2026-10-13 — stage7 temporal implementation
 
 Existing completeness/version policy applied: explicit null from a recognized road's calendar adapter must not fall through to native money. Operator calendars stay road-specific; potential special-day flags may block an unresolved fee but cannot authorize another road's tariff profile. A date alone cannot establish a timezone/hour-sensitive entry fee. Geometry-derived arrival time is calculated, not actual measured timing. No new tariff approval or seasonal end date invented.
+
+
+## 2026-10-13 — stage8 consistency implementation
+
+Existing numeric-candidate permission retained; missing effective date cannot mean confirmed version. Date-only proof cannot resolve a tariff's intraday start/end. Commercial trip fare rounds once and allocates integer rubles deterministically among displayed parts; rates, tiers and geographic zones unchanged. Unresolved M1 payment/category conflict is preserved without source substitution. No new source price/date approved.

@@ -71,3 +71,8 @@ Stage6 follow-up rejects empty/malformed HTTP200 trace and physical-booth-withou
 ## Stage7 — 2026-10-13
 
 DONE existing temporal code audit and safe ambiguity handling: Moscow weekday, M12 allDays, no M4 calendar-null fallback, strict original dates, M11 time/year/special-day uncertainty;508 tests/build PASS. Road-specific unverified calendar/source succession and actual individual plaza timing remain explicit deferred8/10, not replaced with shared profiles. STAGE7_TIME_CALENDAR_AUDIT_2026-10-13.md; nextstage8.
+
+
+## Stage8 — 2026-10-13
+
+DONE existing version/zone/rounding code audit,516 tests/build PASS. First-day ISO/date bug, alias/intraday/version certainty, consistent integer fare parts and overflow/split checks fixed. M1 source230/250 conflict and other source/calendars remain explicit unverified, no guessed fees. See STAGE8_VERSION_ZONE_ROUNDING_AUDIT_2026-10-13.md. Nextstage9.

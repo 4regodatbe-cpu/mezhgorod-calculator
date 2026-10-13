@@ -1,16 +1,14 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- This Node .cjs entrypoint intentionally uses CommonJS. */
+const {validDate,fareValidityOnDate}=require('./fare-validity.cjs');
 const registry=require('../TARIFF_SELECTION_REGISTER.json');
+function createQuoteEngine(registry){
 const label='Стоимость не подтверждена';
 const key=r=>JSON.stringify([r.road,r.from,r.to,r.profile]);
 const rows=[...registry.selected,...registry.provisional,...registry.history];
 const index=new Map();
 for(const row of rows){const k=key(row);if(!index.has(k))index.set(k,[]);index.get(k).push(row);}
-const provisionalKeys=new Set(registry.provisional.map(key));
+const provisionalRows=new Set(registry.provisional);
 function unknown(reason,components=[]){return {pricingStatus:'unknown',rub:null,priceConfirmation:'unknown',displayLabel:'Стоимость платных дорог неизвестна',reason,components};}
-function validDate(value){
- if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;
- const date=new Date(value);
- return Number.isFinite(date.getTime())&&date.toISOString().slice(0,10)===value;
-}
 function quote(input){
  if(!input||!Array.isArray(input.components)||!input.routeId)return unknown('invalid-route-input');
  if(input.evidenceComplete!==true)return unknown('incomplete-paid-road-evidence');
@@ -24,11 +22,13 @@ function quote(input){
   if(!c.traversalId||seen.has(c.traversalId))return unknown('duplicate-or-missing-traversal-id',components);seen.add(c.traversalId);
   if(!validDate(c.localDate))return unknown('missing-local-crossing-date',components);
   if(c.profileResolved!==true)return unknown('unresolved-tariff-profile',components);
-  const found=(index.get(key(c))||[]).filter(r=>(!r.validFrom&&!r.effectiveFrom||(r.validFrom||r.effectiveFrom)<=c.localDate)&&(!r.validUntil||c.localDate<r.validUntil));
+  const versions=(index.get(key(c))||[]).map(row=>({row,status:fareValidityOnDate(row,c.localDate)}));
+  if(versions.some(v=>v.status==='unknown'))return unknown('unresolved-fare-version-boundary',components);
+  const found=versions.filter(v=>v.status==='inside').map(v=>v.row);
   if(found.length!==1)return unknown(found.length?'ambiguous-fare-version':'missing-current-exact-fare',components);
   const r=found[0];
   if(c.road==='a289'&&r.vehicleCategory!==1)return unknown('wrong-or-missing-vehicle-category',components);
-  const isCandidate=provisionalKeys.has(key(r))||String(r.verification||'').includes('candidate')||r.road.endsWith('-candidate');
+  const isCandidate=!r.validFrom&&!r.effectiveFrom||provisionalRows.has(r)||String(r.verification||'').includes('candidate')||r.road.endsWith('-candidate');
   if(!Number.isSafeInteger(r.rub)||r.rub<0)return unknown('invalid-fare-amount',components);
   components.push({...c,rub:r.rub,priceConfirmation:isCandidate?'unconfirmed':'confirmed',displayLabel:isCandidate?label:null,source:r.source});
  }
@@ -37,4 +37,6 @@ function quote(input){
  return {pricingStatus:'priced',rub:components.reduce((sum,c)=>sum+c.rub,0),priceConfirmation:uncertain?'unconfirmed':'confirmed',displayLabel:uncertain?label:null,components};
 }
 function formatCopy(result){return result.rub===null?result.displayLabel:`Платные дороги: ${result.rub} ₽${result.displayLabel?'\n'+result.displayLabel:''}`;}
-module.exports={quote,formatCopy};
+return {quote,formatCopy};
+}
+module.exports={...createQuoteEngine(registry),createQuoteEngine};
