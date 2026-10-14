@@ -1,10 +1,10 @@
-## CURRENT 2026-10-14 — Preview опубликован, CI runtime исправляется
+## CURRENT 2026-10-14 — GitHub/Preview опубликованы, основные CI и живые проверки PASS
 
-DONE: GitHub snapshot 37d55f6 в audit/v3-matrix-provenance-2026-10-14; дерево побайтно совпало с проверенным 3b675df. Draft PR #13 в integration-ветку. Preview dpl_67vpYt2ACFXu3iUhk8hd1x1AAnUG READY, /api/version подтвердил SHA и preview. Vercel 621/621 + quote/API + Next/TypeScript PASS. Живые Анапа 620 и Ялта 800 с предупреждением; diagnostics parity Анапы PASS; браузерный результат Анапы проверен. [Отчёт](../experiments/nationwide-tolls/stages/04-preview-and-live-acceptance-2026-10-14.md).
+DONE: snapshot37d55f6/tree943b7806 точно совпал с проверенным3b675df; CI correction afdc2c4 опубликован. Draft PR13 → integration baseline, без merge. Оба Preview READY/version SHA подтверждён. Vercel621/621+Next/TS PASS. Actions38624425083 build/API smoke PASS; PR verify job116059876836 PASS. Live Анапа620 diagnostics parity, Ялта800 с предупреждением; Москва—СПб unknown/null без частичного полного итога. Desktop UI и фактическое копирование обеих форм результата проверены. [Подробный отчёт](../experiments/nationwide-tolls/stages/04-preview-and-live-acceptance-2026-10-14.md).
 
-IN PROGRESS: CI run 38623167929 упал на Node 22.13/registerHooks. Два основных build workflow приведены к Node 24.x; повторный CI ещё нужен. Длинный API контроль запущен. Локальная рабочая audit/v3-published-checkpoint-2026-10-14 отслеживает опубликованную audit-ветку; исходная история сохранена локально.
+IN PROGRESS: расширенная приёмка; optional PR live_probe ещё выполнялся при наблюдении. Локальная рабочая audit/v3-published-checkpoint-2026-10-14 отслеживает GitHub audit/v3-matrix-provenance-2026-10-14. Исходная локальная Git-история сохранена в archive-ветках, GitHub содержит все source/PDF/журналы итогового дерева.
 
-OPEN/NEXT: проверить CI исправления и длинный маршрут, затем mobile/desktop/unknown/free/clipboard и оставшиеся source/geometry gaps. Main/Production/Android не менялись. Матрица 5076/10 undated, каталог 24; полное покрытие не заявлено.
+OPEN/NEXT: mobile, free/live отказ trace/профильные границы/остальные дороги; source/geometry gaps включая М11tail/ЗСД. Матрица5076/10undated, каталог24 не менялись. Полное покрытие и официальный release не заявлены. Main/Production/Android не изменены.
 
 ---
 

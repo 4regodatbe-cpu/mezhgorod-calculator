@@ -1,9 +1,10 @@
-## CURRENT 2026-10-14 — Preview READY, далее CI и приёмка
+## CURRENT 2026-10-14 — тестовая версия опубликована и доступна для приёмки
 
-- [x] Опубликована точная source snapshot 37d55f6/tree943b7806, draft PR13 в integration baseline, Preview READY/version SHA подтверждён, Vercel621/621 PASS. Live Анапа diagnostics parity/620 и Ялта800, desktop UI Анапы проверены. [Отчёт](stages/04-preview-and-live-acceptance-2026-10-14.md).
-- [ ] Опубликовать два CI workflow Node24.x correction и подтвердить повторный Actions run. Первоначальный run38623167929 FAIL до выполнения tests из-за registerHooks/Node22.13.
-- [ ] Добавить результат длинного Москва—СПб контроля. Продолжить mobile/unknown/free/clipboard/профильные границы и остальные сценарии сводного отчёта; не считать UI toast доказательством текста буфера.
-- [ ] Закрывать source/geometry gaps по предыдущему отчёту. Main/Production/Android — отдельный выпуск после приёмки и прямого запроса.
+- [x] GitHub snapshot37d55f6/source tree match, CI correction afdc2c4; draft PR13 в integration baseline. Preview READY/version SHA; Vercel621/621 PASS; повторный Actions38624425083 build/API smoke PASS, PR verify PASS. [Отчёт](stages/04-preview-and-live-acceptance-2026-10-14.md).
+- [x] Живые Анапа off/on620 parity, Ялта800; длинный Москва—СПб unknown/null. Desktop UI и фактическая вставка скопированного текста для priced/unconfirmed и unknown PASS; screenshots/JSON сохранены.
+- [ ] Проверить завершившийся optional live_probe38624434385; mobile/desktop, free/live отказ trace, профильные границы, остальные сценарии сводного отчёта. Не приравнивать разные городские координаты/маршруты при сверке Яндекса.
+- [ ] Продолжить source/geometry gaps: М11tail/ЗСД, М4/355, новая Шали, ЦКАДcontext/SmallVyazemy, региональные границы/Псков и10дат. Unknown не превращать в0.
+- [ ] Официальный выпуск, main merge и Android только после полной приёмки и прямого запроса пользователя.
 
 ---
 

@@ -1,0 +1,247 @@
+{
+  "commit": "37d55f6203afbb136b573d6d8502182becdb2086",
+  "request": {
+    "from": {
+      "label": "Москва",
+      "position": {
+        "lng": 37.6173,
+        "lat": 55.7558
+      }
+    },
+    "to": {
+      "label": "Санкт-Петербург",
+      "position": {
+        "lng": 30.3158,
+        "lat": 59.9391
+      }
+    },
+    "departureAt": "2026-10-14T22:30:00+03:00",
+    "diagnostics": false
+  },
+  "httpStatus": 200,
+  "elapsedSeconds": 10.394384789000014,
+  "response": {
+    "legs": [
+      {
+        "from": "Москва",
+        "to": "Санкт-Петербург",
+        "fast": {
+          "meters": 710312,
+          "seconds": 24633,
+          "m12StrictSpan": null,
+          "m12EndpointSpan": null,
+          "m11RoadEvidence": {
+            "provider": "valhalla",
+            "strictBlocks": [
+              {
+                "provider": "valhalla",
+                "legIndex": 0,
+                "sourceStartIndex": 9,
+                "sourceEndIndex": 15,
+                "beginKm": 19.828,
+                "endKm": 692.922,
+                "lengthKm": 673.094,
+                "beginCoordinate": [
+                  37.467541,
+                  55.883302
+                ],
+                "endCoordinate": [
+                  30.283506,
+                  59.832743
+                ],
+                "labels": [
+                  "М-11",
+                  "«Нева»"
+                ]
+              }
+            ],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "Valhalla"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: m11-679-684, zsd",
+              "m11-679-684: m11_679_684_continuation_not_priced",
+              "zsd: ЗСД"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unknown",
+            "displayLabel": "Стоимость платных дорог неизвестна",
+            "pricingStatus": "unknown"
+          },
+          "tollValidation": {
+            "status": "unknown",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 0,
+            "wayIds": [],
+            "roadNames": [],
+            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m11-679-684: m11_679_684_continuation_not_priced; zsd: ЗСД"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 0,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m11",
+                "name": "М-11 «Нева» (участки 58–679 км)",
+                "status": "candidate_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 710.312,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Москва",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 30,
+                  "amount": 21309,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 21309,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 710.312,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Москва",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 32.5,
+                  "amount": 23085,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 23085,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 710.312,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Москва",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 35,
+                  "amount": 24861,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 24861,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 710.312,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Москва",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 45,
+                  "amount": 31964,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 31964,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  },
+  "error": null
+}

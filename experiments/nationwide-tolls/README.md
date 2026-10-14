@@ -1,6 +1,6 @@
 ## Актуальное состояние — 14 октября 2026
 
-Источник текущего состояния — [docs/WORK_STATE.md](../../docs/WORK_STATE.md). V3 использует самостоятельные М4/А289/обход,М11 и распознанные региональные продукты; М12/ЦКАДreadyquote безnativemoney prerequisites. Исправлен пропуск дополнительных paid evidence; SmallVyazemy отдельноunknown. [Последний отчёт](stages/03-v3-ckad-regional-identity-and-paid-evidence-2026-10-14.md),full616/616PASS. Веткаaudit/v3-matrix-provenance-2026-10-14,локально,Productionнеобновлён. Историческиеданные ниже не описывают все текущие тарифы; этап3/полноеRussia coverage ещёне завершены.
+Источник состояния — [docs/WORK_STATE.md](../../docs/WORK_STATE.md). V3 audit-ветка опубликована на GitHub, draft PR13 в интеграционную ветку; проверенный Preview37d55f6 и CI correction afdc2c4 READY. Vercel621/621 PASS; повторный Actions build/API smoke PASS. Live Анапа620/Ялта800 с предупреждением; Москва—СПб остаётся unknown из-за хвостаМ11/ЗСД. Desktop UI и копирование проверены. [Текущий отчёт](stages/04-preview-and-live-acceptance-2026-10-14.md). Матрица5076,10недатированных; mobile/source/geometry gaps ещёоткрыты. Официальный Production не обновлён; полное покрытие России не заявлено. История ниже сохранена как история, а не текущая готовность.
 
 ## Latest verified M3 evidence — 9 October 2026
 
