@@ -1,0 +1,304 @@
+{
+  "capturedAt": "2026-10-14T21:22:16.651Z",
+  "scope": "Live external routing/API, representative city coordinates; not exact user addresses",
+  "request": {
+    "from": {
+      "label": "Краснодар",
+      "position": {
+        "lng": 38.9753,
+        "lat": 45.0355
+      }
+    },
+    "to": {
+      "label": "Санкт-Петербург",
+      "position": {
+        "lng": 30.3159,
+        "lat": 59.9391
+      }
+    },
+    "departureAt": "2026-10-15T00:30:00+03:00",
+    "diagnostics": false
+  },
+  "name": "krasnodar-petersburg",
+  "status": 200,
+  "validResponse": true,
+  "elapsedMs": 34255,
+  "meters": 2061458,
+  "seconds": 94845,
+  "comfortFare": 66997,
+  "dualTariff": false,
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m4, m11-679-684, unknown-paid-road, zsd",
+      "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+      "m11-679-684: m11_679_684_continuation_not_priced",
+      "unknown-paid-road: unmapped_selected_route_paid_booth",
+      "zsd: ЗСД"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unknown",
+    "displayLabel": "Стоимость платных дорог неизвестна",
+    "pricingStatus": "unknown"
+  },
+  "body": {
+    "legs": [
+      {
+        "from": "Краснодар",
+        "to": "Санкт-Петербург",
+        "fast": {
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [
+              {
+                "provider": "osrm",
+                "legIndex": 0,
+                "sourceStartIndex": 82,
+                "sourceEndIndex": 83,
+                "beginKm": 1373.441,
+                "endKm": 2040.156,
+                "lengthKm": 666.715,
+                "beginCoordinate": [
+                  37.467541,
+                  55.883302
+                ],
+                "endCoordinate": [
+                  30.361203,
+                  59.773923
+                ],
+                "labels": [
+                  "М-11"
+                ]
+              },
+              {
+                "provider": "osrm",
+                "legIndex": 0,
+                "sourceStartIndex": 85,
+                "sourceEndIndex": 86,
+                "beginKm": 2040.457,
+                "endKm": 2045.784,
+                "lengthKm": 5.327,
+                "beginCoordinate": [
+                  30.358981,
+                  59.776376
+                ],
+                "endCoordinate": [
+                  30.312274,
+                  59.81611
+                ],
+                "labels": [
+                  "«Нева»",
+                  "М-11"
+                ]
+              }
+            ],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 2061458,
+          "seconds": 94845,
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: m4, m11-679-684, unknown-paid-road, zsd",
+              "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+              "m11-679-684: m11_679_684_continuation_not_priced",
+              "unknown-paid-road: unmapped_selected_route_paid_booth",
+              "zsd: ЗСД"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unknown",
+            "displayLabel": "Стоимость платных дорог неизвестна",
+            "pricingStatus": "unknown"
+          },
+          "tollValidation": {
+            "status": "unknown",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 0,
+            "wayIds": [],
+            "roadNames": [],
+            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes; m11-679-684: m11_679_684_continuation_not_priced; unknown-paid-road: unmapped_selected_route_paid_booth; zsd: ЗСД"
+          },
+          "m4PvpPreview": {
+            "status": "boundaries_resolved",
+            "reason": null,
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 3,
+            "confirmedPvps": [
+              "m4-1223",
+              "m4-71"
+            ],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m4",
+                "name": "М-4 «Дон»",
+                "status": "strict_pvp_found_full_price_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              },
+              {
+                "id": "m11",
+                "name": "М-11 «Нева» (участки 58–679 км)",
+                "status": "candidate_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2061.458,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 30,
+                  "amount": 61844,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 61844,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2061.458,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 32.5,
+                  "amount": 66997,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 66997,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2061.458,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 35,
+                  "amount": 72151,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 72151,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2061.458,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар",
+                  "to": "Санкт-Петербург",
+                  "ratePerKm": 45,
+                  "amount": 92766,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 92766,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  }
+}

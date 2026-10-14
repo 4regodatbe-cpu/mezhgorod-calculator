@@ -130,8 +130,8 @@ export async function calculateProductionM4(
 }
 
 /** V3 boundary resolver: no native per-plaza price or corridor recovery. */
-export async function resolveSelectedM4Endpoints(route: Coordinate[], routeDurationSeconds?: number): Promise<ProductionM4Result> {
-  const validation = await validateKnownM4Plazas(route, routeDurationSeconds, true);
+export async function resolveSelectedM4Endpoints(route: Coordinate[], routeDurationSeconds?: number, selectedTrace?: TollValidation | null): Promise<ProductionM4Result> {
+  const validation = await validateKnownM4Plazas(route, routeDurationSeconds, true, selectedTrace);
   const ids = validation.checks.filter(check => check.status === "confirmed")
     .map(check => `m4-${check.km}`);
   const exact = validation.complete && ids.length > 0;

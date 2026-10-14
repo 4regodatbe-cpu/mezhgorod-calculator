@@ -1,0 +1,517 @@
+{
+  "capturedAt": "2026-10-14T21:22:31.722Z",
+  "scope": "Live external routing/API, representative city coordinates; not exact user addresses",
+  "request": {
+    "from": {
+      "label": "Волноваха",
+      "position": {
+        "lng": 37.4934079,
+        "lat": 47.6014517
+      }
+    },
+    "to": {
+      "label": "Краснодар",
+      "position": {
+        "lng": 38.9753,
+        "lat": 45.0355
+      }
+    },
+    "departureAt": "2026-10-15T00:30:00+03:00",
+    "diagnostics": false
+  },
+  "name": "volnovakha-krasnodar",
+  "status": 200,
+  "validResponse": true,
+  "elapsedMs": 49332,
+  "meters": 509239,
+  "seconds": 27910,
+  "comfortFare": 22907,
+  "dualTariff": true,
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m4",
+      "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: Локальная проверка неполна: подтверждено 0 (route-traversal fallback 0), отклонено 0, не проверено 2 из 2."
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unknown",
+    "displayLabel": "Стоимость платных дорог неизвестна",
+    "pricingStatus": "unknown"
+  },
+  "body": {
+    "legs": [
+      {
+        "from": "Волноваха",
+        "to": "Краснодар",
+        "fast": {
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 509239,
+          "seconds": 27910,
+          "tolls": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: m4",
+              "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: Локальная проверка неполна: подтверждено 0 (route-traversal fallback 0), отклонено 0, не проверено 2 из 2."
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unknown",
+            "displayLabel": "Стоимость платных дорог неизвестна",
+            "pricingStatus": "unknown"
+          },
+          "tollValidation": {
+            "status": "unknown",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 0,
+            "wayIds": [],
+            "roadNames": [],
+            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: Локальная проверка неполна: подтверждено 0 (route-traversal fallback 0), отклонено 0, не проверено 2 из 2."
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Локальная проверка неполна: подтверждено 0 (route-traversal fallback 0), отклонено 0, не проверено 2 из 2.",
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 2,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 396.2789970522956,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 32,
+                  "amount": 12681,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 112.96000294770434,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 70,
+                  "amount": 7907,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 20588,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 396.2789970522956,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 35,
+                  "amount": 13870,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 112.96000294770434,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 80,
+                  "amount": 9037,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 22907,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 396.2789970522956,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 37,
+                  "amount": 14662,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 112.96000294770434,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 90,
+                  "amount": 10167,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 24829,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 396.2789970522956,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 50,
+                  "amount": 19814,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 112.96000294770434,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 110,
+                  "amount": 12426,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 32240,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "options": [
+      {
+        "from": "Волноваха",
+        "to": "Краснодар",
+        "fast": {
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 509239,
+          "seconds": 27910,
+          "tolls": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: m4",
+              "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: Локальная проверка неполна: подтверждено 0 (route-traversal fallback 0), отклонено 0, не проверено 2 из 2."
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unknown",
+            "displayLabel": "Стоимость платных дорог неизвестна",
+            "pricingStatus": "unknown"
+          },
+          "tollValidation": {
+            "status": "unknown",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 0,
+            "wayIds": [],
+            "roadNames": [],
+            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: Локальная проверка неполна: подтверждено 0 (route-traversal fallback 0), отклонено 0, не проверено 2 из 2."
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Локальная проверка неполна: подтверждено 0 (route-traversal fallback 0), отклонено 0, не проверено 2 из 2.",
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 2,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 396.2789970522956,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 32,
+                  "amount": 12681,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 112.96000294770434,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 70,
+                  "amount": 7907,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 20588,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 396.2789970522956,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 35,
+                  "amount": 13870,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 112.96000294770434,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 80,
+                  "amount": 9037,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 22907,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 396.2789970522956,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 37,
+                  "amount": 14662,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 112.96000294770434,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 90,
+                  "amount": 10167,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 24829,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 396.2789970522956,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 50,
+                  "amount": 19814,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 112.96000294770434,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Волноваха",
+                  "to": "Краснодар",
+                  "ratePerKm": 110,
+                  "amount": 12426,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 32240,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "dual",
+    "automaticMode": "dual",
+    "specialEndpoint": true,
+    "preferredCorridor": "mainland",
+    "routePolicy": "geographic-zone"
+  }
+}

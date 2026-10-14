@@ -1,4 +1,6 @@
 import type {TollValidation} from '@/lib/toll-validator';
+import {M4_NODE_TO_PLAZA} from '@/lib/toll-engine/m4-plaza-nodes';
+import nodeIdentities from '@/experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/identity-sources/node-identities.json' with {type:'json'};
 import {type RegionalTollProductId,type RouteTollComponentId} from '@/lib/toll-engine/route-toll-composition';
 
 const coreNetworks=new Set(['m1','m3','m4','m11','m11-15-58','m12','ckad','a289']);
@@ -68,7 +70,20 @@ export function unpricedRoadCoverage(args:{segments:readonly string[];validation
  const boothAliases=new Set<string>();
  for(const booth of args.validation?.tollBooths??[]){
   // Names on one event are aliases, not several independent paid roads.
-  const products=detect(booth.roadNames.join(" · "),true);
+  let products=detect(booth.roadNames.join(" · "),true);
+  // Trace often omits names on the short plaza lanes. The exact traversed
+  // OSM node, already bound in the saved M4 inventory, identifies the road;
+  // it does not establish a tariff, entry/exit pair or complete coverage.
+  if(!products.length && booth.osmNodeId && M4_NODE_TO_PLAZA.has(booth.osmNodeId)) {
+   products=['m4'];
+   matchedCoreProducts.add('m4');
+  }
+  if(!products.length && booth.osmNodeId) {
+   const product=nodeIdentities.nodes.find(node=>node.osmNodeId===booth.osmNodeId)?.productId;
+   if(product==='m4') {products=['m4'];matchedCoreProducts.add('m4');}
+   if(product==='m11') {products=['m11'];matchedCoreProducts.add('m11');}
+   if(product==='zsd') {products=['zsd'];addRegional('zsd','saved_selected_route_zsd_booth:'+booth.osmNodeId);}
+  }
   if(!products.length)addRegional('unknown-paid-road','unmapped_selected_route_paid_booth');
   else for(const name of booth.roadNames)boothAliases.add(name);
  }

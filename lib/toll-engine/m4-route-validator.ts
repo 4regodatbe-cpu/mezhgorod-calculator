@@ -1,5 +1,5 @@
 import type { Coordinate } from "@/lib/tolls";
-import type { TollBoothEvent } from "@/lib/toll-validator";
+import type { TollBoothEvent, TollValidation } from "@/lib/toll-validator";
 import type { M4PlazaNodeGroup } from "@/lib/toll-engine/m4-plaza-nodes";
 import { localTrace } from "@/lib/toll-engine/m4-local-trace";
 import { candidatesForRoute, CANDIDATE_RADIUS_KM, WINDOW_HALF_KM, type Candidate } from "@/lib/toll-engine/m4-route-candidates";
@@ -100,7 +100,20 @@ function unavailableResult(candidate: Candidate, remoteMessage: string): { check
   };
 }
 
-async function validateCandidate(candidate: Candidate, deadlineAt: number): Promise<{ check: M4LocalPlazaCheck; events: TollBoothEvent[] }> {
+async function validateCandidate(candidate: Candidate, deadlineAt: number, selectedTrace?: TollValidation | null): Promise<{ check: M4LocalPlazaCheck; events: TollBoothEvent[] }> {
+  // Reuse positive evidence from the complete trace of this same selected
+  // geometry. Missing nodes and non-toll edges never authorize a crossing.
+  const observed = selectedTrace?.complete === true && selectedTrace.boothEventCoverage === "complete"
+    ? (selectedTrace.tollBooths ?? []).filter(event => event.edgeToll === true
+      && event.osmNodeId !== null && candidate.plaza.nodeIds.includes(event.osmNodeId)) : [];
+  if (observed.length) return {
+    check: {km:candidate.plaza.km,model:candidate.plaza.model,status:"confirmed",evidence:"map_matching",
+      nearestDistanceKm:Math.round(candidate.nearestDistanceKm*1000)/1000,
+      matchedNodeIds:[...new Set(observed.map(event=>event.osmNodeId!))],
+      expectedNodeIds:[...candidate.plaza.nodeIds],windowPointCount:candidate.window.length,
+      message:"Конкретный платный OSM node подтверждён полной trace выбранного маршрута"},
+    events:observed,
+  };
   // The same strict near-miss proof already used after network failure can
   // reject off-route alternative booths before spending a remote request.
   if (!candidate.traversal.confirmed && classifyM4TraversalWithoutTollEdge(candidate.traversal.reason) === "rejected") {
@@ -148,7 +161,7 @@ function distanceMeters(a: Coordinate, b: Coordinate) {
   return 6_371_008.8 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
 }
 
-export async function validateKnownM4Plazas(route: Coordinate[], routeDurationSeconds?: number, endpointsOnly = false): Promise<M4RoutePlazaValidation> {
+export async function validateKnownM4Plazas(route: Coordinate[], routeDurationSeconds?: number, endpointsOnly = false, selectedTrace?: TollValidation | null): Promise<M4RoutePlazaValidation> {
   const startedAt = Date.now();
   const deadlineAt = startedAt + VALIDATION_BUDGET_MS;
   const nearby = candidatesForRoute(route);
@@ -168,7 +181,7 @@ export async function validateKnownM4Plazas(route: Coordinate[], routeDurationSe
         let result = evaluated.get(index);
         if (!result) {
           result = Date.now() >= deadlineAt ? unavailableResult(candidate, "Исчерпан бюджет определения границы")
-            : await validateCandidate(candidate, deadlineAt);
+            : await validateCandidate(candidate, deadlineAt, selectedTrace);
           evaluated.set(index, result);
         }
         if (result.check.status !== "rejected") break;
@@ -189,7 +202,7 @@ export async function validateKnownM4Plazas(route: Coordinate[], routeDurationSe
         const candidate = candidates[index];
         results[index] = Date.now() >= deadlineAt
           ? unavailableResult(candidate, "Исчерпан общий бюджет локальной проверки")
-          : await validateCandidate(candidate, deadlineAt);
+          : await validateCandidate(candidate, deadlineAt, selectedTrace);
       }
     }
     await Promise.all(Array.from({ length: Math.min(CONCURRENCY, candidates.length) }, worker));

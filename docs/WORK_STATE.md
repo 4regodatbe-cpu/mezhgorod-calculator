@@ -1,3 +1,35 @@
+## CURRENT 2026-10-15 — длинные цепочки проверены, сбои локализованы
+
+DONE: 8 живых прогонов 7 цепочек Казань/Краснодар↔СПб через Москву, Казань/Краснодар→СПб через ЦКАД;16 offline replays тех же ответов с обычной/переходной датой. Внутренний componentAudit показывает точный блокирующий продукт. Исправлены unnamed М4/М11/ЗСД IDs, независимый mainlineМ11 послеЦКАД и пропуск partialhead, bounded429retry. [Подробный этап](../experiments/nationwide-tolls/stages/06-long-chain-route-audit-2026-10-15.md).
+
+VERIFIED: focused38/38, finalfull635/635+quote/API+Next/TS PASS(exit0),targetedlint/diffcheckPASS. Каждый expectedroad найден. Повтор liveКазань→Москва→СПб tracecomplete; итог всё ещёunknown из-заtail/ЗСД. Source index/captures/logs сохранены в samefixbranch,parent29a7c4d.
+
+OPEN/NEXT: partialheadМ11 ЦКАД/ПВП47, tail679–684/airport, ЗСДoperatorzonefare, generalЦКАД boundaries/context и М12↔ЦКАД pair;profilepaymentclocks. Ни одна partialсумма не выдана full. Все дорогиРоссии/полныйСПб итог не объявленыготовыми. Next: exactsourcebindings этих стыков и fullypricedmulti-roadchain, затемlive/fullgate.
+
+REMOTE BLOCKED: прежнийgitpush отклонёнauto-review; explicitexportauthorization ещёне получена, повторногоpush/обхода нет. Код/evidence сохранены локально. Main/Production/Androidне изменены.
+
+---
+
+## CHECKPOINT 2026-10-15 — LOCAL DONE / REMOTE PUSH BLOCKED
+
+Code/evidence commit972a35a на fix/v3-missing-route-prices-2026-10-15. Full627/focused22/build/targetedlint PASS. [Подробный этап](../experiments/nationwide-tolls/stages/05-missing-route-prices-2026-10-15.md).
+
+BLOCKED: gitpushoriginfixветки автоматически отклонён review: destinationunverifiedGitHubremote и userfixrequest не сочтён явным разрешением экспорта кода/routeevidence. Обход через connector не выполнялся; PR/Preview/CI дляfix не созданы. Требуется явное подтверждение отправки подготовленного коммита в4regodatbe-cpu/mezhgorod-calculator. LocalGit writable, сохранениевпроекте выполнено; remote persistence не заявлена.
+
+NEXT после подтверждения: pushfixbranch/create draft PRagainst audit/v3-matrix-provenance-2026-10-14, verifyHEAD/CI. Дальнейшая sourceработа Петербургtail/ЗСД остаётся INPROGRESS по этапу05. Production/main/Androidнеизменены.
+
+---
+
+## CURRENT 2026-10-15 — ложные блокировки М4 исправлены, Петербург частично открыт
+
+DONE: точные savednodeIDs распознают unnamedМ4 booths; положительная полная trace выбранной геометрии повторно используется для крайнихМ4границ; V3 ручная сумма дорог экран/copy восстановлена, copy сохраняет base при неизвестных дорогах. Live Донецк→Краснодар20995+850, Волноваха→Москва55299+3050, Волноваха→Краснодар22907+850 (comfort; roadsunconfirmed). [Подробный блок](../experiments/nationwide-tolls/stages/05-missing-route-prices-2026-10-15.md).
+
+VERIFIED: focused22/22; finalfull627/627+quote/API+Next/TS PASS(exit0),targetedeslint/diffcheckPASS. Branchfix/v3-missing-route-prices-2026-10-15,parentc1421f8/PR13headverified. Source/evidence/checklog в репозитории. Нового hostedPreview/CI ещёнет.
+
+OPEN/NEXT: полный Петербургский итог unknown: М11tailphysicalscope/ЗСДoperatorPDF+zones; другие unnamedbooths и М4profilechanges. База поездки отображается/копируется; partialдорогнеfull. ИсточникМ11 есть, ЗСДPDF403; ценынеугадывались. Следующийблок — точные готовые пары tail/ZSD и реальная Петербургприёмка. Main/Production/Android не изменены.
+
+---
+
 ## CURRENT 2026-10-14 — GitHub/Preview опубликованы, основные CI и живые проверки PASS
 
 DONE: snapshot37d55f6/tree943b7806 точно совпал с проверенным3b675df; CI correction afdc2c4 опубликован. Draft PR13 → integration baseline, без merge. Оба Preview READY/version SHA подтверждён. Vercel621/621+Next/TS PASS. Actions38624425083 build/API smoke PASS; PR verify job116059876836 PASS. Live Анапа620 diagnostics parity, Ялта800 с предупреждением; Москва—СПб unknown/null без частичного полного итога. Desktop UI и фактическое копирование обеих форм результата проверены. [Подробный отчёт](../experiments/nationwide-tolls/stages/04-preview-and-live-acceptance-2026-10-14.md).

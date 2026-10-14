@@ -138,7 +138,11 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
       const baseFare = trip.pricingByVehicle?.[vehicle]?.requiresSplit ? null : trip.pricingByVehicle?.[vehicle]?.totalPrice;
       const total = totalWithToll(baseFare, tollPrice);
       const addition = tollPrice.amount === null ? "платные дороги: сумма неизвестна" : `+ ${money(tollPrice.amount)} ${tollPrice.status === "manual" ? "дороги вручную" : "платные дороги"}`;
-      lines.push(`${tariffNames[rate]}: ${baseFare == null ? "тариф не рассчитан" : money(baseFare)} ${addition} = ${total === null ? "итого не рассчитано" : money(total)}`);
+      if (baseFare != null && tollPrice.amount === null) {
+        lines.push(`${tariffNames[rate]}: ${money(baseFare)} без платных дорог`);
+      } else {
+        lines.push(`${tariffNames[rate]}: ${baseFare == null ? "тариф не рассчитан" : money(baseFare)} ${addition} = ${total === null ? "итого не рассчитано" : money(total)}`);
+      }
     }
     if (warning) lines.push(`Важно: ${warning}`);
     await navigator.clipboard.writeText(lines.join("\n"));

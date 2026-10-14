@@ -1,3 +1,29 @@
+## CURRENT 2026-10-15 — после аудита цепочек
+
+- [x] 7 цепочек/8 live/16 replay;38 focused/635fullbuild PASS. [Подробный блок](stages/06-long-chain-route-audit-2026-10-15.md), INDEX.json в source-snapshots/long-chain-2026-10-15.
+- [ ] Exactbindings: М11partialhead ЦКАД→58 (ПВП47),tail679–684/airport; ЗСДПВП3/4 no-transponderzonefare; current ЦКАДМ12↔М11/M4↔M11 физические endpoints/context; М12↔ЦКАД operatorpair.
+- [ ] Исправитьpaymentevent profilewindow только после егоproof; нынешниеM4profilechanges не маскировать.
+- [ ] Минимум1 fullypriced multi-roadchain плюс reverse/profile/diagnostics parity, thenfullgate/Preview. Текущий audit ничего не активирует вProduction.
+- [ ] GitHub отправка preparedfix/evidence только после ранее запрошенного explicit разрешения: auto-reviewBLOCKED сохраняется. До этого localGit handoff доступен.
+
+---
+
+## 2026-10-15 — remote сохранение BLOCKED auto-review
+
+- [ ] Получить явное разрешение uploadpreparedcommit972a35a/последующийcheckpoint в4regodatbe-cpu/mezhgorod-calculator; автоматическаяreview отклонилаgitpushкакнеавторизованныйexport. Не обходитьдругимtransport. Послеразрешенияpushfixbranch/draftPR/auditbase/checkexactSHA.
+- [x] Code/source/testжурнал сохранены локальнымGitcommit972a35a. Петербургtail/ZSDещёopen; деталиниже.
+
+---
+
+## CURRENT 2026-10-15 — после исправления М4/отображения
+
+- [x] Savednode unnamedM4 + reusecomplete selectedtrace; V3 manual/copy; focused22/full627/buildPASS. [Этап](stages/05-missing-route-prices-2026-10-15.md).
+- [ ] Сохранить fixветку/черновойPR относительно auditV3; проверить CI точного SHA. Production/main не менять.
+- [ ] Закрыть tailМ11 scope и ЗСД: source PDF no-transponder/даты/category, направленные physical endpoints/рамки/зоны; текущие56/38/94 не включать безproof. ZSDPDF403 сохранён какnegativeevidence.
+- [ ] Повторить живые Петербург/Краснодар/Донецк/Волноваха в обе стороны, diagnostics on/off, profile boundary; затем fullgate/Preview. Другие unnamed IDs классифицировать только exactsavedidentity; неизвестное не0.
+
+---
+
 ## CURRENT 2026-10-14 — тестовая версия опубликована и доступна для приёмки
 
 - [x] GitHub snapshot37d55f6/source tree match, CI correction afdc2c4; draft PR13 в integration baseline. Preview READY/version SHA; Vercel621/621 PASS; повторный Actions38624425083 build/API smoke PASS, PR verify PASS. [Отчёт](stages/04-preview-and-live-acceptance-2026-10-14.md).

@@ -45,7 +45,7 @@ export async function calculateLegTolls({
   selectedFastRoute,
   confirmedFreeRoute,
   diagnosticFastValidation,
-}: LegTollInput): Promise<{ tolls: TollEstimate & {priceConfirmation:string;displayLabel:string}; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
+}: LegTollInput): Promise<{ tolls: TollEstimate & {priceConfirmation:string;displayLabel:string}; fastValidation: TollValidation; componentAudit: {status:string;priced:string[];missing:string[];components:RouteTollComponent[]}; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
@@ -55,12 +55,12 @@ export async function calculateLegTolls({
 
   const legacyFamilies = detectedFamiliesFromLegacySegments(geometricTolls.segments);
 
-  const productionM4 = await resolveSelectedM4Endpoints(routeGeometry, routeSeconds);
+  const productionM4 = await resolveSelectedM4Endpoints(routeGeometry, routeSeconds, diagnosticFastValidation);
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
   const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as ProductionM4Result["tolls"]} : null, geometricTolls.segments, departureAt, routeSeconds);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
   const m11Airport = inspectM11PulkovoAccess(routeGeometry);
-  const m11Boundaries = resolveM11ProductBoundaries(routeGeometry,routeSeconds,departureAt);
+  const m11Boundaries = resolveM11ProductBoundaries(routeGeometry,routeSeconds,departureAt,selectedFastRoute.m11RoadEvidence);
   const matrixM11Geometry = matrixM11GeometryComponent({exact:m11Boundaries.resolved,parts:m11Boundaries.parts});
   const productionM11 = selectedFastRoute.m11RoadEvidence
     ? calculateProductionM11(
@@ -238,5 +238,10 @@ export async function calculateLegTolls({
   }
 
   const tolls = pricedTolls;
-  return { tolls: { ...tolls, priceConfirmation: matrixM4?.tolls && composition.status === "priced" ? matrixM4.priceConfirmation : "unconfirmed", displayLabel: "Стоимость не подтверждена" }, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
+  // Read-only audit of the composition that was actually priced. It never
+  // changes eligibility or the total, and is not added to the public API DTO.
+  const componentAudit = {status:composition.status,priced:[...composition.priced],missing:[...composition.missing],
+    components:components.filter(component=>component.detected).map(component=>({...component,
+      tolls:component.tolls?{...component.tolls,segments:[...component.tolls.segments]}:null}))};
+  return { componentAudit, tolls: { ...tolls, priceConfirmation: matrixM4?.tolls && composition.status === "priced" ? matrixM4.priceConfirmation : "unconfirmed", displayLabel: "Стоимость не подтверждена" }, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
 }

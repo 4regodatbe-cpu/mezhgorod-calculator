@@ -15,3 +15,21 @@ test('actual fastest result render preserves night price and warning, without we
  assert.match(html,/880/);assert.match(html,/980/);assert.match(html,/Стоимость не подтверждена/);assert.match(html,/role="note"/);
  assert.doesNotMatch(html,/1130|1650|Пн–Чт|Пт–Вс/);
 });
+
+
+test('fastest V3 keeps dual fare visible and permits an explicitly manual road total',()=>{
+ const fare={totalPrice:55299,requiresSplit:false,reviewRequired:false,dualTariff:true,pricingSegments:[
+  {tariffType:'normal',amount:26886},{tariffType:'special',amount:28413}]};
+ const toll={amount:null,weekdayAmount:null,weekendAmount:null,period:'unknown',segments:[],pricingStatus:'unknown',confidence:'none'};
+ const fast={meters:1182425,seconds:61701,tolls:toll,pricingByVehicle:Object.fromEntries(['standard','comfort','comfort_plus','minivan'].map(k=>[k,fare]))};
+ const leg={from:'Волноваха',to:'Москва',fast,free:null};
+ const props={result:{legs:[leg]},fastestOnly:true,tollPeriod:'actual',onTollPeriodChange:()=>{},copyStandard:async()=>{},copiedKey:'',manualToll:'',onManualToll:()=>{},standardHasTolls:true,standardOptimal:null};
+ const html=renderToStaticMarkup(React.createElement(ResultPanels,props));
+ assert.match(html,/55[\s\u00a0\u202f]?299/);assert.match(html,/Итого без дорог/);
+ assert.match(html,/Стоимость платных дорог вручную/);assert.doesNotMatch(html,/Не рассчитано/);
+ let args;const manualProps={...props,manualToll:'3050',copyStandard:(...values)=>{args=values;}};
+ const element=ResultPanels(manualProps);element.props.children.props.onCopy();
+ assert.equal(args.at(-1),'3050');
+ const manual=renderToStaticMarkup(React.createElement(ResultPanels,manualProps));
+ assert.match(manual,/58[\s\u00a0\u202f]?349/);assert.match(manual,/Указана вручную/);
+});

@@ -1,0 +1,304 @@
+{
+  "name": "spb-krasnodar-moscow",
+  "mode": "live",
+  "provider": "OSRM",
+  "departureAt": "2026-10-13T09:00:00+03:00",
+  "meters": 2051957,
+  "seconds": 95882,
+  "traceComplete": false,
+  "expected": [
+    "m11",
+    "m4"
+  ],
+  "missingExpected": [],
+  "pricingElapsedMs": 23100,
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-679-684, unknown-paid-road, zsd",
+      "m11-679-684: m11_679_684_continuation_not_priced",
+      "unknown-paid-road: unmapped_selected_route_paid_booth; selected_route_payment_trace_incomplete",
+      "zsd: ЗСД"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": "Стоимость не подтверждена",
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [
+      "m4",
+      "m11-15-58",
+      "m11-58-679"
+    ],
+    "missing": [
+      "m11-679-684",
+      "unknown-paid-road",
+      "zsd"
+    ],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 5040,
+          "weekdayAmount": 5040,
+          "weekendAmount": 6090,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-4: m4-71 → m4-1223 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "detected": true,
+        "tolls": {
+          "amount": 1130,
+          "weekdayAmount": 1130,
+          "weekendAmount": 1650,
+          "period": "по расчётному времени оплаты М-11 15–58 (monThu)",
+          "confidence": "matched",
+          "segments": [
+            "М-11 15–58: solnechnogorsk → moscow: 1130 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "m11_head_ready_direct_pair_at_exit_payment"
+      },
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": {
+          "amount": 3900,
+          "weekdayAmount": 3900,
+          "weekendAmount": 4200,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-11: p679 → p58 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "detected": true,
+        "tolls": null,
+        "reason": "m11_679_684_continuation_not_priced"
+      },
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "unmapped_selected_route_paid_booth; selected_route_payment_trace_incomplete"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "tolls": null,
+        "reason": "ЗСД"
+      }
+    ]
+  },
+  "booths": [
+    {
+      "osmNodeId": "318102347",
+      "wayId": "375574651",
+      "roadNames": [],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 335,
+      "endShapeIndex": 336
+    },
+    {
+      "osmNodeId": "2492861243",
+      "wayId": "1395997595",
+      "roadNames": [
+        "М-11",
+        "«Нева»"
+      ],
+      "edgeIndex": 1,
+      "edgeToll": true,
+      "beginShapeIndex": 548,
+      "endShapeIndex": 551
+    },
+    {
+      "osmNodeId": "7171624764",
+      "wayId": "502872285",
+      "roadNames": [
+        "М-11",
+        "«Нева»"
+      ],
+      "edgeIndex": 2,
+      "edgeToll": true,
+      "beginShapeIndex": 608,
+      "endShapeIndex": 609
+    },
+    {
+      "osmNodeId": "3036681112",
+      "wayId": "523826063",
+      "roadNames": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ],
+      "edgeIndex": 3,
+      "edgeToll": true,
+      "beginShapeIndex": 1248,
+      "endShapeIndex": 1249
+    },
+    {
+      "osmNodeId": "4341143826",
+      "wayId": "669676350",
+      "roadNames": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ],
+      "edgeIndex": 4,
+      "edgeToll": true,
+      "beginShapeIndex": 1658,
+      "endShapeIndex": 1659
+    },
+    {
+      "osmNodeId": "5061777334",
+      "wayId": "519024577",
+      "roadNames": [],
+      "edgeIndex": 5,
+      "edgeToll": true,
+      "beginShapeIndex": 710,
+      "endShapeIndex": 711
+    },
+    {
+      "osmNodeId": "3598837929",
+      "wayId": "1057816213",
+      "roadNames": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ],
+      "edgeIndex": 6,
+      "edgeToll": true,
+      "beginShapeIndex": 449,
+      "endShapeIndex": 450
+    },
+    {
+      "osmNodeId": "2401530844",
+      "wayId": "367864487",
+      "roadNames": [],
+      "edgeIndex": 7,
+      "edgeToll": false,
+      "beginShapeIndex": 7,
+      "endShapeIndex": 8
+    },
+    {
+      "osmNodeId": "1051205779",
+      "wayId": "1059255531",
+      "roadNames": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ],
+      "edgeIndex": 8,
+      "edgeToll": true,
+      "beginShapeIndex": 245,
+      "endShapeIndex": 246
+    },
+    {
+      "osmNodeId": "6257559336",
+      "wayId": "668217934",
+      "roadNames": [],
+      "edgeIndex": 9,
+      "edgeToll": false,
+      "beginShapeIndex": 744,
+      "endShapeIndex": 745
+    },
+    {
+      "osmNodeId": "3842564088",
+      "wayId": "702218806",
+      "roadNames": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ],
+      "edgeIndex": 10,
+      "edgeToll": true,
+      "beginShapeIndex": 1078,
+      "endShapeIndex": 1079
+    },
+    {
+      "osmNodeId": "9620404676",
+      "wayId": "1043412750",
+      "roadNames": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ],
+      "edgeIndex": 11,
+      "edgeToll": true,
+      "beginShapeIndex": 423,
+      "endShapeIndex": 424
+    },
+    {
+      "osmNodeId": "7678126301",
+      "wayId": "1042937793",
+      "roadNames": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ],
+      "edgeIndex": 12,
+      "edgeToll": true,
+      "beginShapeIndex": 537,
+      "endShapeIndex": 538
+    },
+    {
+      "osmNodeId": "11838757138",
+      "wayId": "1299233403",
+      "roadNames": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ],
+      "edgeIndex": 13,
+      "edgeToll": true,
+      "beginShapeIndex": 672,
+      "endShapeIndex": 675
+    },
+    {
+      "osmNodeId": "9620386263",
+      "wayId": "1063257259",
+      "roadNames": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ],
+      "edgeIndex": 14,
+      "edgeToll": true,
+      "beginShapeIndex": 337,
+      "endShapeIndex": 338
+    },
+    {
+      "osmNodeId": "9772717211",
+      "wayId": "1040868052",
+      "roadNames": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ],
+      "edgeIndex": 15,
+      "edgeToll": true,
+      "beginShapeIndex": 516,
+      "endShapeIndex": 517
+    }
+  ]
+}

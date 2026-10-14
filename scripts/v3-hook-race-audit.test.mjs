@@ -41,3 +41,15 @@ test('a late clipboard completion cannot mark a reset quote copied',async()=>{
  await h.hook.calculate();const leg=d.legs[0];const copy=h.hook.copyStandard('old','title',leg,leg.fast,toll,undefined,'actual');
  h.hook.clearResult();pending.resolve();await copy;assert.equal(h.states[5],'');assert.equal(h.states[0],null);h.cleanup();
 });
+
+
+test('unknown road charge preserves a calculated special fare in copied text',async()=>{
+ let copied='';const h=harness(async()=>Response.json({}),{writeText:async text=>{copied=text;}});
+ const d=data('Волноваха'),leg=d.legs[0];
+ const unknown={...toll,amount:null,weekdayAmount:null,weekendAmount:null,pricingStatus:'unknown',priceConfirmation:'unknown'};
+ for(const vehicle of Object.keys(leg.fast.pricingByVehicle))leg.fast.pricingByVehicle[vehicle]={...fare,totalPrice:55299,dualTariff:true};
+ await h.hook.copyStandard('k','title',leg,leg.fast,unknown,undefined,'actual');
+ assert.match(copied,/55[\s\u00a0\u202f]?299 ₽ без платных дорог/);
+ assert.doesNotMatch(copied,/итого не рассчитано|= 0/);
+ assert.match(copied,/Стоимость платных дорог не подтверждена/);h.cleanup();
+});

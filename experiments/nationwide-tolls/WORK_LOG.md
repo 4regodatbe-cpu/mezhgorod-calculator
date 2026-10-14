@@ -1217,3 +1217,85 @@ Focused 27/27, новые 5/5, полный npm run build -- --webpack exit0: 62
 ## 2026-10-14 22:34–22:38 МСК — повторный CI PASS и завершённый Preview acceptance checkpoint
 
 Correction afdc2c4 опубликован через verified tree и ref lease37d55f6, fetch/diff PASS. Actions38624425083/job116059843286 полностьюsuccess включаяbuild/API smoke; PR38624434385 verify116059876836 success, optionallive_probe покаin_progress. Новый Preview dpl_DaGA58ER... READY/versionafdc2c4; runtime идентичен протестированному37d55f6. Длинный живойAPI Москва—СПб200/10,394с/710312м/24633с: unknown/null изМ11tail+ЗСД, частичная сумма не выдана полной. DesktopUI сподсказками711,2км/6ч54мин показываеттолько«Итого без дорог» иunknown. ФактическиеCtrl+V вставкиАнапы/Москвы подтвердилипредупреждение/unknown ичетыресуммы; сообщения неотправлялись, временное полеочищено. ЧетыреJSON, дваscreenshots, clipboardtext иpublication-verification.json сохранены вsource-snapshots/preview-2026-10-14. Focused5/5PASS, workflow/screenshotassertions, parity иdiffcheckPASS. [Отчёт сдобавленной записью](stages/04-preview-and-live-acceptance-2026-10-14.md). Следующийшаг: расширеннаяприёмка/mobile/free/отказtrace/профиль иsourcegaps. Матрица/production/main/Androidнеизменны; полногоRussia coverageнет. Финальныйcheckpointкоммит «docs: preserve verified Preview and live acceptance evidence» публикуетсяповерхafdc2c4; точныйSHAgitlog/remote.
+
+
+# 2026-10-15 — устранение ложных блокировок V3 и приёмка проблемных маршрутов
+
+## Запрос и исходное состояние
+Пользователь: устранить причины отсутствующих расчётов из особых территорий и в Санкт-Петербург. GitHub PR13/head и fresh ls-remote: c1421f8a6b1ead6696fe7c639de372a9c6d85270. Создан новый writable checkout и ветка fix/v3-missing-route-prices-2026-10-15, родитель c1421f8. Production/main/Android не менять.
+
+## Диагноз и выполненные изменения
+1. Живой Волноваха → Москва вернул 1182425м/61701с и корректный особый comfort fare55299, но tollunknown из-за unnamed booth. Полная выбранная trace содержала 5818209495 (ПВП545),3717382721 (416),5061777372 (228): все IDs уже есть в M4_NODE_TO_PLAZA. `lib/v3-calculation/unpriced-road-coverage.ts` теперь связывает безымянное событие с М4 через точный известный nodeID; распознанное другое название не переопределяется. Это road identity, не новый денежный тариф и не доказательство пары границ. Неизвестный ID/incomplete trace всё ещё блокируют итог.
+2. На Волноваха → Краснодар первая проверка вернула base22907, но две локальные проверки М4 не смогли подтвердить границы. `lib/toll-engine/m4-route-validator.ts`/`m4-production.ts`/`lib/v3-calculation/route-leg-pricing.ts` используют положительные toll=true события полной trace той же выбранной геометрии для её крайних М4 границ. Требуются complete=true, boothEventCoverage=complete, exact knownnode. Отсутствие события, partial trace, toll=false и чужой node не заменяют доказательства: тогда остаётся прежняя локальная проверка. V2 не передаёт новую optional trace, его алгоритм не изменён. Геометрический порядок крайних границ и готовая направленная матрица сохранены.
+3. `app/v2/components/result-panels.tsx`: fastestOnly раньше игнорировал manualToll/onManualToll и не передавал manual sum в copy. Теперь ручной ввод доступен для V3, явно помечен, один и тот же amount идёт в экран/копирование. Никакой подстановки0 вместо unknown.
+4. `app/v3/components/use-v3-calculation.ts`: при существующем base и неизвестных дорогах копируется сумма «без платных дорог», а не строка «итого не рассчитано». Полный итог не выдумывается. Проверено, что особая тарификация/раскрывающийся comfort сохраняются при tollunknown.
+
+## Источники и доказательства
+`../source-snapshots/route-fixes-2026-10-15/` содержит API before/after, полную живую trace Волноваха–Москва, mixed-profile replay, primaryOSM node/way и provenance.json с SHA256. Original node5818209495 GET и way615270691/full получены200: ПВП545/Автодор, selected unnamed way contains node and toll=yes/oneway=yes. Идентичности228/416 взяты из существующего именованного инвентаря. Старые исходные live-controls restored; новая история хранится отдельно. Петербургский raw provider snapshot передвинут в новый каталог, путь в record обновлён.
+
+## Проверки, действительно выполненные
+- pnpm install --frozen-lockfile: PASS (29.2s; Node24.19.0).
+- Focused `node --import ./scripts/register-ts-paths.mjs --test scripts/v3-m4-selected-trace-reuse.test.ts scripts/v3-ckad-regional-products.test.ts scripts/v3-hook-race-audit.test.mjs scripts/v3-result-render-audit.test.mjs`:22/22 PASS. Первоначальный render test19/20 FAIL из-за test typo(tolls undefined), исправлен на tolls:toll;20/20 затем22/22 PASS.
+- Первый fullbuild625/625+quote/API+Next/TS PASS; после добавления reuse — финальный `npm run build -- --webpack`:627/627+quote/API+Next/TS PASS, exit0. stdout финального gate сохранён в checks/v3-route-fix-build-2026-10-15.log.
+- Targeted eslint всех изменённых product TS/TSX и runner/test: PASS(exit0). git diff --check PASS.
+- Live API representative city coords, departure2026-10-15T00:30+03:00: Донецк→Краснодар479156м/26633с: comfort20995, roads850(unconfirmed), validResponse=true,39.2s. Волноваха→Москва1182425м/61701с: comfort55299, roads3050(unconfirmed), valid=true,57.9s. После reuse Волноваха→Краснодар509239м/27910с: comfort22907, roads850(unconfirmed), valid=true,26.3s; до reuse roadsunknown/49.3s. Суммы разных городских координат не являются проверкой exact user addresses/Яндекса.
+- Live Санкт-Петербург→Москва и Краснодар→Санкт-Петербург:200/valid DTO, base fare присутствует, tollunknown сохраняется. Краснодар–СПб2061458м/94845с base66997; missing m4(profile switch),M11tail,unnamedbooth,ZSD. Эти записи до finalreuse: это диагностика незакрытых причин, не доказательство финальной API-приёмки всех Петербургских маршрутов.
+- Offline replay Волноваха–Москва c departureThursday12:00 и длинной поездкой пересекает Fridayprofile: m4_crossing_profile_changes всё ещё unknown. Не смешивать этот допустимый отказ с устранённым unnamed-node bug.
+
+## Незакрыто и конкретный следующий блок
+Полный Петербургский итог ещё НЕ исправлен: М11tail679–684/airport needs exact scoped readypair; ЗСД needs no-transponder current operator table and exact crossing zone binding. Original SeptemberM11PDFpages9/10 visually reread;56/38/94 источники есть, физический scope не завершён, ни одна сумма не активирована. Прямые ЗСДbasePDF/Prilozhenie2 curl/search дали403; по snippets цена не импортирована. Другие unnamed paid IDs и смена профиля на длинном М4 также сохраняют unknown. Не удалять платные продукты и не публиковать subset как full.
+Next: получить доступный оригинал ЗСД, закончить binding М11tail/mainline/airport и ЗСД по фактической выбранной геометрии; оформить собственные готовые пары в source register; затем focused/fullgate и повторная приёмка Петербурга в обе стороны, диагностикаon/off. PrimaryPDF повторно от пользователя пока не запрошен. CI/Preview этого нового блока ещё не проверялись. Нет production deploy/merge/Android.
+
+Git: родительc1421f8, новая fixветка; commit этого блока определяется Git history данного файла. PR/remote сохранение записывается в последующем checkpoint после фактического результата.
+
+
+## 2026-10-15 — checkpoint972a35a и отказ remote push
+Код,30files/sourceevidence/logs сохранены localcommit972a35a. `gitpush -uoriginfix/v3-missing-route-prices-2026-10-15` отклонён автоматическойreview (unverifiedGitHubremote; requesttofix не признан explicitexportauthorization для repositorydata/evidencesnapshots). Не обходитьотказ черезGitHubconnector/blobs/другойtransport. Remoteupload/PR/CI/Previewнеподтверждены и не заявлены. Next: явное разрешение пользователя на preparedcommit upload вточный4regodatbe-cpu/mezhgorod-calculator, затем повторpushиverify. Локальное дерево/коммиты доступны в /workspace/scratch/31a127bf701a/mezhgorod-calculator; Gitжурнал содержит точную точкупродолжения. Петербургtail/ZSD ещёнезавершены; Production/main/Androidнет.
+
+
+# 2026-10-15 — аудит длинных цепочек платных дорог
+
+## Запрос и исходное состояние
+Пользователь предложил построить длинные маршруты через несколько платных дорог: Казань–Санкт-Петербург и Краснодар–Санкт-Петербург через Москву и другие дороги, чтобы найти конкретные места отказа. Работа на fix/v3-missing-route-prices-2026-10-15, parent29a7c4d; предыдущий codecommit972a35a. Сохранение GitHub ранее отклонено автоматической review, разрешение экспорта ещё не получено; повторного push/обхода через connector не было. Все результаты этого блока сохранены в локальном Git.
+
+## Метод и реальная выборка
+`scripts/v3-long-chain-audit.mjs` вызывает настоящие Valhalla/OSRM/BRouter, применяет production isUsableRoute/followsPlan/stretch/territory checks и тот же fastest selector. Затем проверяет полную выбранную геометрию через validateTollEdges и вызывает реальный V3 calculateLegTolls. Тестовые routing controls обеспечивают указанную цепочку; это audit harness, а не поддержка пользовательского via в API. Provider/query responses, точная выбранная геометрия, strict spans и trace сохранены gzip; копии ответов не используются в live выборе или ценах.
+
+Выполнены 8 живых прогонов 7 разных цепочек. Все ожидаемые семейства обнаружены. Основная дата2026-10-13T09:00+03:00 выбрана для отдельной проверки географии без немедленного перехода в пятничный профиль. Смена профиля проверена отдельно на той же записанной геометрии2026-10-15T22:30+03:00:16 offline replays (2 на каждый живой снимок), JSON всех16 прочитаны/проверены. Offline replay запрещает внешние запросы без записанного ответа, сохраняет порядок повторных ответов одного requestkey и не подменяет incomplete trace полной.
+
+| Цепочка | Доказанный результат локализации |
+|---|---|
+| Казань–Москва–СПб | М12 готовая пара3513; headМ11 880 и mainline3900; хвост679–684/ЗСД unknown. Первый live trace incomplete из-за429; повторный live complete, неизвестны толькоtail/ЗСД |
+| СПб–Москва–Казань | М11head1130/mainline3900, М12 3513; tail/ЗСД unknown |
+| Краснодар–Москва–СПб | М4 5040, М11head1130/mainline3900; unnamedbooths локализованы; после fix неизвестныtail/ЗСД |
+| СПб–Москва–Краснодар | Те же семейства, готоваяМ4 5040/mainline3900; первичная trace incomplete, так и сохраняется в replay, несмотря на исправленные идентичности |
+| Казань–ЦКАД–СПб | MainlineМ11 после fix3900; partialhead не доказан; ready pairМ12 на въезде/выездеЦКАД не привязана; текущийCKAD adapter поддерживает full eastarcМ4↔М11, не этот северный отрезок |
+| Краснодар–ЦКАД–СПб,11controls | MainlineМ11 после fix3900, М4 5040; CKAD arc_length_out_of_range, partialhead/tail/ЗСД unknown |
+| Краснодар–ЦКАД–СПб,3outercontrols | Независимый контроль routing artifacts от частых остановок; М4/mainlineМ11 готовые, CKAD east_arc_not_proven и partialhead/tail/ЗСД unknown |
+
+Эти суммы — известные отдельные компоненты/оценки, не полный маршрут и не новая сертификация тарифа. Семь цепочек не гарантируют полный аудит всех платных дорог России. Конкретные точки/пары/reasons и источники: `source-snapshots/long-chain-2026-10-15/INDEX.json`,live.json и timestamped replayJSON в каждом каталоге.
+
+## Выполненные исправления
+1. `lib/v3-calculation/route-leg-pricing.ts` возвращает внутренний read-only componentAudit: список реально обнаруженных продуктов, готовые суммы, missing и reasons. Копии объектов/segment arrays отделены; audit не участвует в eligibility/price и не добавлен в public API DTO. Известные части видны исследователю даже при неизвестном полном итоге.
+2. `m11-product-boundaries.ts`/`engine/m11-route-adapter.mjs`: mainline58↔679 определяется независимо от15км московского head. Для нового headless/partialhead пути требуются strictM11 evidence выбранного провайдера, оба физически близких anchor≤120м, порядок/spans и отсутствие malformed. Московский полный путь сохранён. Выявленный partialhead при въезде сЦКАД добавлен отдельным неизвестным продуктом: entry point не выдумывается, Moscow→Solnechnogorsk не назначается вместо него. Основная пара получает собственный платежный clock/window, headless может обходиться без head, partialhead не даёт полный итог. Разделение заново заставляет увидеть хвост679–684 послеЦКАД, ранее скрытый за общим unresolvedmainline.
+3. `unpriced-road-coverage.ts` и source-backed node-identities.json: события7014845616 (М11p679),933974949 (ЗСДПВП4),318102347 (ЗСДПВП3),6257559336 (М4ПВП515) не превращаются в неизвестную «ещё одну дорогу». Все новые идентичности подтверждены primaryOSM object/topology или существующим primary архивом. ЗСД рампы связаны через соседние nodes/ways с namedtollЗСД. Старые OSM fee tags ПВП515 не импортированы как тарифы. Нераспознанные IDs/partialtrace остаютсяunknown.
+4. `lib/toll-validator.ts`: HTTP429 может получить ровно1 повтор с Retry-After в пределах прежнего18s бюджета chunk. Более длинное ожидание>5s не игнорируется: остаётсяincomplete. Стойкая429, malformed response и неполнота не дают0/полную сумму. Общая неоднократная retry policy не добавлялась. Последний повторный liveКазань tracecomplete без429; нельзя приписывать его успех исключительноretry. Retry действительно проверен отдельнымиunit cases429→200/persistent429/RetryAfter60.
+
+## Проверки и исправленные промежуточные ошибки
+- Originalcomponentaudit focused18/18 PASS.
+- После расширения M11 initial34 tests33/34: ошибочный partialhead detect у маршрутаp593→679; причина—сравнение indices безphysicalp58 hit. Исправлено requiringp58/p679≤120м дляpartialhead. Повтор34/34 PASS.
+- Новый realfixture source test36/37: test наследовал unrelatedcapturedroadNamesМ12, очищены только unrelatedfixturealiases; runtime не ослаблен. Финальный focused38/38 PASS.
+- Final command: `node --import ./scripts/register-ts-paths.mjs --test scripts/v3-chain-boundaries.test.ts scripts/v3-m11-products.test.ts scripts/v3-road-evidence-audit.test.ts scripts/v3-ckad-regional-products.test.ts scripts/toll-trace-rate-limit.test.ts`:38/38 PASS.
+- Final `npm run build -- --webpack`:635/635 + quote/API + TypeScript/Next PASS, exit0. Relevant stdout в checks/v3-long-chain-build-2026-10-15.log; focused log рядом.
+- Targeted eslint changedTS/runner/tests PASS(exit0),gitdiffcheckPASS.
+- 16/16 offline replay records inspected; no missingExpected; logs checks/v3-long-chain-replays-2026-10-15.log. All complete-route totals remained unknown when any required product unresolved. This is expected failclosed, not a claim that full trip fares are fixed.
+- Captures and post-fix replays separate; newer replay output timestamped, no completed stage report overwritten.
+
+## Незакрыто и следующий конкретный блок
+1. Привязать partialheadМ11 на въезде/выездеЦКАД к собственным `tskad↔solnechnogorsk` directed tariffs и точнымphysicalPVP47; МосковскийПВП21 тоже не объявлен закрытым. Требуется факт выбранного crossing, а не только название города.
+2. Привязать mainline tail679–684/airport к собственным рамкам и operator rule56/38/94; ЗСДПВП3/4 nowidentified, но base no-transponder/currentzone tariff и связьштмсд/витебскойразвязки ещёне готовы. Не начислять guessed300/56 или aggregate известныхчастей.
+3. General CKAD endpoints:М12↔М11 и реальныеМ4↔М11 физические границы вместо full-arconly heuristic; подтвердить operatorcontext120min/defaultmatrix. На этих двух CKAD сценариях М12 exit/operatorpair остаётся не привязан; проверить exactmarkers/newШали/CKADjunction. М11 mainline patch не закрывает эти независимые gaps.
+4. Проверить profile switches по paymentevent каждого продукта. Повторные воспроизводимые dates/replays уже готовы; entiretrip M4profile switch остаётсяunknown согласно нынешней модели, не удалять guardбез correct scopedclock.
+5. Повторить liveacceptance после sourcebindings и хотя бы1 полностьюpriced multi-roadchain; затем полныйgate. Текущий этап — успешная локализация/кодовые исправления, а не полный выпуск.
+
+Publication: main/Production/Android не изменены, новогоPR/Preview/CI нет. GitHub export остаётсяBLOCKED по предыдущемуauto-review, новыйpush не пытался. Currentfix commit определяется Git history этого отчёта; parent29a7c4d.

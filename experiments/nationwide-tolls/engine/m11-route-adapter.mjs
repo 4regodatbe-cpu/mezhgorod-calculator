@@ -50,15 +50,16 @@ export function matrixM11GeometryComponent(production) {
   const parts = production.parts;
   const mainline = matrixM11Component({boundaryStatus:'resolved',traversal:{entryPointId:parts.from,exitPointId:parts.to}},parts.mainlineAt,parts.mainlineWindowSeconds??0);
   const head = matrixM11HeadComponent({...parts.head,boundaryStatus:parts.head?'resolved':'unknown'});
+  const headDetected=parts.headDetected!==false;
   const components=[
-    {id:/** @type {'m11-15-58'} */('m11-15-58'),detected:true,tolls:head.tolls,reason:head.reason},
+    {id:/** @type {'m11-15-58'} */('m11-15-58'),detected:headDetected,tolls:head.tolls,reason:parts.head?head.reason:'m11_partial_head_entry_boundary_unresolved'},
     {id:/** @type {'m11-58-679'} */('m11-58-679'),detected:true,tolls:mainline?.tolls??null,reason:mainline?.reason??'m11_geometry_pair_missing'},
   ];
-  if (!mainline?.tolls || !head.tolls) return {tolls:null,components,reason:!head.tolls?head.reason:mainline?.reason??'m11_geometry_pair_missing'};
-  const amount=mainline.tolls.amount+head.tolls.amount;
-  const weekdayAmount=mainline.tolls.weekdayAmount+head.tolls.weekdayAmount;
-  const weekendAmount=mainline.tolls.weekendAmount+head.tolls.weekendAmount;
+  if (!mainline?.tolls || headDetected && !head.tolls) return {tolls:null,components,reason:headDetected&&!head.tolls?head.reason:mainline?.reason??'m11_geometry_pair_missing'};
+  const amount=mainline.tolls.amount+(headDetected?head.tolls.amount:0);
+  const weekdayAmount=mainline.tolls.weekdayAmount+(headDetected?head.tolls.weekdayAmount:0);
+  const weekendAmount=mainline.tolls.weekendAmount+(headDetected?head.tolls.weekendAmount:0);
   if (![amount,weekdayAmount,weekendAmount].every(Number.isSafeInteger)) return {tolls:null,components,reason:'m11_total_amount_invalid'};
-  return {components,reason:'matrix M11 distinct head and mainline ready pairs',tolls:{...head.tolls,
-    amount,weekdayAmount,weekendAmount,segments:[...head.tolls.segments,...mainline.tolls.segments]}};
+  return {components,reason:'matrix M11 distinct head and mainline ready pairs',tolls:{...(headDetected?head.tolls:mainline.tolls),
+    amount,weekdayAmount,weekendAmount,segments:[...(headDetected?head.tolls.segments:[]),...mainline.tolls.segments]}};
 }

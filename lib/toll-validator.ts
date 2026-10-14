@@ -129,7 +129,8 @@ async function traceChunk(route: Coordinate[]) {
       ],
     },
   };
-  const response = await fetch(url, {
+  const deadlineAt = Date.now() + 18_000;
+  const send = () => fetch(url, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -138,8 +139,24 @@ async function traceChunk(route: Coordinate[]) {
     },
     body: JSON.stringify(request),
     cache: "no-store",
-    signal: AbortSignal.timeout(18_000),
+    signal: AbortSignal.timeout(Math.max(1, deadlineAt - Date.now())),
   });
+  let response = await send();
+  // A long route sends several chunks. A temporary rate limit must not
+  // discard a chunk without one bounded retry; never exceed its old budget
+  // or ignore an operator's longer Retry-After instruction.
+  if (response.status === 429) {
+    const retryAfter = response.headers.get("retry-after");
+    const seconds = retryAfter === null || retryAfter.trim() === "" ? NaN : Number(retryAfter);
+    const date = retryAfter ? Date.parse(retryAfter) : NaN;
+    const delay = Number.isFinite(seconds) && seconds >= 0 ? seconds * 1000
+      : Number.isFinite(date) ? Math.max(0, date - Date.now()) : 1_000;
+    if (delay <= 5_000 && delay + 1_000 < deadlineAt - Date.now()) {
+      await response.body?.cancel();
+      if (delay > 0) await new Promise(resolve => setTimeout(resolve, delay));
+      response = await send();
+    }
+  }
   if (!response.ok) throw new Error(`TRACE_${response.status}`);
   const data = (await response.json()) as { edges?: TraceEdge[] };
   // HTTP200 with missing/empty trace is not proof that a route has no tolls.
