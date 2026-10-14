@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- This Node .cjs entrypoint intentionally uses CommonJS. */
 const {validDate,fareValidityOnDate}=require('./fare-validity.cjs');
 const registry=require('../TARIFF_SELECTION_REGISTER.json');
+const {matrixProductId}=require('./tariff-product-identity.cjs');
 function createQuoteEngine(registry){
 const label='Стоимость не подтверждена';
 const key=r=>JSON.stringify([r.road,r.from,r.to,r.profile]);
@@ -17,7 +18,10 @@ function quote(input){
  for(const c of input.components){
   if(!c||typeof c!=='object'||typeof c.road!=='string'||!c.road)return unknown('invalid-component',components);
   if(c.routeId!==input.routeId||c.exactTraversal!==true)return unknown('component-not-bound-to-selected-route',components);
-  const family=c.road?.startsWith('m4')?'m4':c.road?.startsWith('m12')?'m12':c.road;
+  // Different matrix representations of one road are exclusive; a separate
+  // tariff product such as the western bypass remains additive.
+  const family=matrixProductId(c.road);
+  if(c.productId!=null&&c.productId!==family)return unknown('component-product-mismatch',components);
   if(families.has(family))return unknown('multiple-representations-of-one-road-group',components);families.add(family);
   if(!c.traversalId||seen.has(c.traversalId))return unknown('duplicate-or-missing-traversal-id',components);seen.add(c.traversalId);
   if(!validDate(c.localDate))return unknown('missing-local-crossing-date',components);
@@ -27,6 +31,9 @@ function quote(input){
   const found=versions.filter(v=>v.status==='inside').map(v=>v.row);
   if(found.length!==1)return unknown(found.length?'ambiguous-fare-version':'missing-current-exact-fare',components);
   const r=found[0];
+  if(r.runtimeEligible===false)return unknown('audit-only-fare-row',components);
+  if(r.requiresTariffContext===true&&c.tariffContextResolved!==true)return unknown('unresolved-operator-tariff-context',components);
+  if(r.requiresLane!=null&&c.verifiedLane!==r.requiresLane)return unknown('unresolved-operator-lane',components);
   if(c.road==='a289'&&r.vehicleCategory!==1)return unknown('wrong-or-missing-vehicle-category',components);
   const isCandidate=!r.validFrom&&!r.effectiveFrom||provisionalRows.has(r)||String(r.verification||'').includes('candidate')||r.road.endsWith('-candidate');
   if(!Number.isSafeInteger(r.rub)||r.rub<0)return unknown('invalid-fare-amount',components);

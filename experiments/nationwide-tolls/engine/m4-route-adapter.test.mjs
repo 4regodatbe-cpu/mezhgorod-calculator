@@ -28,9 +28,9 @@ test('new endpoint-only south lookup needs no intermediate plaza evidence',()=>{
 test('new endpoint-only lookup supports a single tariff section without native sums',()=>{
  assert.equal(matrixM4Component(boundaries(['m4-71']),t,900)?.tolls.amount,310);
 });
-test('conflicting ready matrix prices for the same boundaries cannot choose an arbitrary chain',()=>{
+test('mainline endpoints use the canonical chain excluding intermediate entry tariff',()=>{
  const q=matrixM4Component(boundaries(['m4-62','m4-460']),t,3600);
- assert.equal(q?.tolls,null);assert.match(q.reason,/ambiguous-fare-version/);
+ assert.equal(q?.tolls.amount,1740);assert.equal(q.priceConfirmation,'unconfirmed');
 });
 
 test('Yandex reviewed northbound cells replace all conflicting variants with one price per profile',()=>{
@@ -41,7 +41,22 @@ test('Yandex reviewed northbound cells replace all conflicting variants with one
   assert.equal(matrixM4Component(p,t,3600)?.priceConfirmation,'unconfirmed');
  }
 });
-test('northbound Yandex controls cannot silently approve reverse or other unreviewed endpoints',()=>{
- assert.equal(matrixM4Component(boundaries(['m4-71','m4-636']),t,3600)?.tolls,null);
- assert.equal(matrixM4Component(boundaries(['m4-62','m4-460']),t,3600)?.tolls,null);
+test('reviewed northbound fare does not get mirrored; reverse uses its own canonical estimate',()=>{
+ const reverse=matrixM4Component(boundaries(['m4-71','m4-636']),t,3600);assert.ok(reverse.tolls.amount>0);assert.equal(reverse.priceConfirmation,'unconfirmed');
+ assert.equal(matrixM4Component(boundaries(['m4-62','m4-460']),t,3600)?.tolls.amount,1740);
+});
+test('published355 northbound receipt pair is charged220 once in both profiles',()=>{
+ for(const date of [t,'2026-10-17T10:00:00+03:00']){
+  const q=matrixM4Component(boundaries(['m4-355','m4-339']),date,900);
+  assert.equal(q.tolls.amount,220);assert.equal(q.tolls.weekdayAmount,220);assert.equal(q.tolls.weekendAmount,220);
+ }
+ assert.equal(matrixM4Component(boundaries(['m4-339','m4-355']),t,900).tolls,null);
+});
+test('355 southward artificial fare boundaries stay unknown with a specific reason',()=>{
+ for(const other of ['m4-803','m4-911','m4-1046','m4-1093','m4-1184','m4-1223'])
+ for(const pair of [['m4-355',other],[other,'m4-355']])
+ for(const date of [t,'2026-10-17T10:00:00+03:00']){
+  const q=matrixM4Component(boundaries(pair),date,900);
+  assert.equal(q.tolls,null);assert.equal(q.reason,'m4_unsupported_paid_endpoint_pair');
+ }
 });

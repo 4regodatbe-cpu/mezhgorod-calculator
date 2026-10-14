@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-14",
+  "sourceUrl": "https://avtodor-tr.ru/upload/iblock/a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf",
+  "sourceFile": "source-documents/m4-order58-effective-2026-03-02.pdf",
+  "sourceSha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d",
+  "sourceAccess": "user-uploaded official scannedPDF; all5pages rendered and visually read",
+  "orderNumber": "58",
+  "effectiveFrom": "2026-03-02T00:00:00+03:00",
+  "effectiveDateEvidencePage": 5,
+  "category": 1,
+  "payment": "cash or bank card without transponder; table header also includes named transponders, footnote5 special discounted column excluded",
+  "profileColumns": {
+    "monThu": "Monday–Thursday excluding holidays and preceding special days",
+    "friSun": "Friday–Sunday and holidays/special preceding days"
+  },
+  "cells": {
+    "m4-62": {
+      "sectionKm": "21-62",
+      "monThu": 220,
+      "friSun": 220,
+      "page": 1,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-71": {
+      "sectionKm": "21-93",
+      "monThu": 310,
+      "friSun": 400,
+      "page": 1,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-133": {
+      "sectionKm": "93-211",
+      "monThu": 400,
+      "friSun": 500,
+      "page": 1,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-228": {
+      "sectionKm": "211-266",
+      "monThu": 260,
+      "friSun": 320,
+      "page": 1,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-322": {
+      "sectionKm": "266-322",
+      "monThu": 260,
+      "friSun": 320,
+      "page": 1,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-339": {
+      "sectionKm": "322-401",
+      "monThu": 370,
+      "friSun": 400,
+      "page": 2,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-355": {
+      "sectionKm": "322-401",
+      "monThu": 220,
+      "friSun": 220,
+      "page": 2,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-416+m4-460": {
+      "sectionKm": "401-464",
+      "monThu": 230,
+      "friSun": 360,
+      "page": 2,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-515": {
+      "sectionKm": "492-517",
+      "monThu": 150,
+      "friSun": 170,
+      "page": 2,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-545-a": {
+      "sectionKm": "517-544",
+      "monThu": 140,
+      "friSun": 160,
+      "page": 2,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-545-b": {
+      "sectionKm": "544-589",
+      "monThu": 180,
+      "friSun": 250,
+      "page": 2,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-620": {
+      "sectionKm": "589-633",
+      "monThu": 180,
+      "friSun": 250,
+      "page": 3,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-636": {
+      "sectionKm": "633-741",
+      "monThu": 570,
+      "friSun": 640,
+      "page": 3,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-672": {
+      "sectionKm": "633-741",
+      "monThu": 350,
+      "friSun": 440,
+      "page": 3,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-803": {
+      "sectionKm": "741-893",
+      "monThu": 560,
+      "friSun": 620,
+      "page": 3,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-911": {
+      "sectionKm": "893-933",
+      "monThu": 200,
+      "friSun": 250,
+      "page": 3,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-1046": {
+      "sectionKm": "1024-1091",
+      "monThu": 380,
+      "friSun": 450,
+      "page": 3,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-1093": {
+      "sectionKm": "1091-1119.5",
+      "monThu": 150,
+      "friSun": 150,
+      "page": 3,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-1184": {
+      "sectionKm": "1119.5-1195",
+      "monThu": 300,
+      "friSun": 350,
+      "page": 4,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-1223": {
+      "sectionKm": "1195-1319",
+      "monThu": 400,
+      "friSun": 500,
+      "page": 4,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    },
+    "m4-dzok-46": {
+      "sectionKm": "0-51",
+      "monThu": 410,
+      "friSun": 410,
+      "page": 4,
+      "fareRowStatus": "visually-verified-category-I-without-transponder"
+    }
+  },
+  "constraints": {
+    "m4-355": {
+      "publishedDirection": "towards Moscow",
+      "page": 2
+    },
+    "m4-636/m4-672": {
+      "exitFreeWithinMinutesAfterPaidEntry": 120,
+      "pages": [
+        4,
+        5
+      ],
+      "slashSecondAmounts": {
+        "monThu": 220,
+        "friSun": 270
+      },
+      "slashSecondScope": "633↔672 traversal with APD transponder and exit within120min; not no-transponder tariff"
+    },
+    "m4-416/m4-460": {
+      "exitFreeWithinHoursAfterPaidEntry": 12,
+      "page": 5,
+      "offlineCombinedCell": "230/360 once, not per-plaza double sum"
+    }
+  },
+  "scopeLimitations": [
+    "Confirms document columns, published rows and stated effective start; does not independently certify no newer amendment exists.",
+    "Finished endpoint-chain price and actual directed payment-boundary binding remain separately unconfirmed.",
+    "355 is not a published southbound entry tariff; Yandex route-to-coordinate is not that same paidpair.",
+    "Time-dependent repeated exit charges in footnotes not silently certified by normal once-per-corridor compiler."
+  ]
+}

@@ -18,6 +18,8 @@ assert.equal(thursdayEvening.tolls?.weekendAmount, 6590);
 assert.ok((thursdayEvening.tolls?.amount ?? 0) >= 5330);
 assert.ok(thursdayEvening.evidence.entryAt);
 assert.ok(thursdayEvening.evidence.p58At);
+// Mainline fare is selected at its exit, independently of its entry timestamp.
+assert.ok(new Date(thursdayEvening.parts!.mainlineAt).getTime() > new Date(thursdayEvening.evidence.p58At!).getTime());
 
 const missingP593: C[] = [route[0], route[1], route[2], route[4], route[5]];
 const incomplete = calculateM11MoscowToPetersburg(missingP593, 26 * 3600, "2026-10-01T19:00:00+03:00");

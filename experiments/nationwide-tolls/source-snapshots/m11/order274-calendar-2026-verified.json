@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "order": 274,
+  "effectiveFrom": "2026-09-04T00:00:00+03:00",
+  "sourceFile": "source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf",
+  "sourceSha256": "6b52ca130ee7e8a7948c2b39982c00d82174e4e45ec5dcd3983355238c403b91",
+  "verifiedAt": "2026-10-14",
+  "method": "Visual read of original scanned pages3/4/8 at125dpi",
+  "pages": [
+    3,
+    4,
+    8
+  ],
+  "tariffDayStartsAtMoscow": "01:00",
+  "friSunDates2026": [
+    "2026-01-01",
+    "2026-01-02",
+    "2026-01-03",
+    "2026-01-04",
+    "2026-01-05",
+    "2026-01-06",
+    "2026-01-07",
+    "2026-01-08",
+    "2026-02-23",
+    "2026-03-08",
+    "2026-05-01",
+    "2026-05-09",
+    "2026-06-12",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-12-30",
+    "2026-12-31"
+  ],
+  "notes": [
+    "The applicable Septemberorder precedesNovember/December exceptions; earlier dates cannot activate current fares beforeSeptember4.",
+    "Page3 footnote3 lists November3,December30–31 andFebruary22 2027. 2027calendar not activated without full supporting calendar.",
+    "Page4/8 footnote4 explicitly applies Thursdayfare Friday00:00–00:59:59 and Sundayfare Monday00:00–00:59:59; previous qualifying tariff-day rule also covers holiday transitions.",
+    "Calendar is independent from Moscow15–58 concession schedule.",
+    "This verifies tariff timing, not new physical entry/exit mapping."
+  ]
+}

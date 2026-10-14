@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-14",
+  "ratesUnchanged": true,
+  "sources": {
+    "ryazan": {
+      "effectiveFrom": "2026-10-01",
+      "source": "https://m-road62.ru/tariffs/",
+      "changeNotice": "https://m-road62.ru/izmenenie-tarifov-na-platnom-puteprovode-s-1-oktyabrya-2026-goda/",
+      "evidence": "Operator explicitly states activefromOctober1; category1cash/card45, nightfreewindows remainlane/directiondependent."
+    },
+    "udmurtia": {
+      "effectiveFrom": "2026-02-01",
+      "source": "https://osa-kama.ru/tarify/",
+      "evidence": "Operator states startFebruary1,2026 forgroup1 zones400/300/700; group1 height<=2m and2+axles."
+    },
+    "kazan": {
+      "effectiveFrom": "2025-03-09T23:50:01+03:00",
+      "source": "https://vtkazan.ru/upload/iblock/b9a/tyww9y45ggam86zabfb4kkbav76ymdth.pdf",
+      "sourcePage": "https://vtkazan.ru/road/tarifs/",
+      "order": "07/ПД-ВТ dated2025-03-06",
+      "evidence": "Indexed operator order clauses3/4 explicitly starts09March23:50:01, not the March6 orderdate; currentoperator90/150 matches."
+    },
+    "m1": {
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "source": "https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf",
+      "evidence": "Indexed original operator1-pagePDF states March2 midnight; rates230/250/320/500 match previouscorrectedcategorytable. DirectPDF403; source index dateproof only, no newvisualPDFverification claimed."
+    },
+    "msd-transit": {
+      "effectiveFrom": "2023-01-02",
+      "source": "https://msd.mos.ru/faq",
+      "orderSource": "https://msd.mos.ru/uploads/media/default/0001/07/17acbd6c1556b9544f4736794d25d52cf7055760.pdf",
+      "evidence": "Current officialFAQ states transitpaidfromJanuary2,2023 and retained950; 2022officialorder states950. Transiteligibility must be resolvedseparately."
+    }
+  },
+  "unresolved": [
+    {
+      "road": "pskov",
+      "rows": 8,
+      "reason": "Currentprimary source amendment/effective start not retrieved; do not copy dateApril25 as the start without source."
+    },
+    {
+      "road": "heihe",
+      "rows": 2,
+      "reason": "Useraccepted1320bothdirections remainsestimate, userConfirmedAtOct12 not operator tariffstart."
+    }
+  ],
+  "accessNotes": [
+    "Pskovoperatorprimarypage webretrievalerror; legalsearch did not yield primary effective-date evidence.",
+    "KazanPDF available aswebPDF; date extractedfromindexed primarytext, no localPDFcopy ornewvisualreadclaimed."
+  ]
+}

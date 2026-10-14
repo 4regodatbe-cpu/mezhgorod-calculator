@@ -1,4 +1,5 @@
-export type RouteTollComponentId = "m4_a289" | "m11" | "m12" | "ckad" | "m1" | "m3" | "regional";
+export type RegionalTollProductId = "ufa-east" | "tolyatti" | "odintsovo" | "bagration" | "msd" | "zsd" | "shmsd" | "voznesensky" | "udmurt-bridges" | "khabarovsk" | "mytishchi" | "ryazan" | "amur-bridge" | "pskov-unresolved" | "unknown-paid-road";
+export type RouteTollComponentId = "m4_a289" | "m4" | "a289" | "krasnodar-west-bypass" | "m11" | "m11-15-58" | "m11-58-679" | "m11-679-684" | "m12" | "ckad" | "m1" | "m3" | "ckad-small-vyazemy" | "regional" | RegionalTollProductId;
 
 export type RouteTollValue = {
   amount: number;
@@ -54,20 +55,40 @@ export function composeRouteTolls(components: readonly RouteTollComponent[]): Ro
   // A partial component is useful diagnostic evidence, but it cannot make the
   // route-level total exact. Treat it as missing for final composition while
   // preserving the component payload for diagnostics upstream.
-  const valid = (item: RouteTollComponent) => item.tolls?.confidence === "matched" &&
-    [item.tolls.amount, item.tolls.weekdayAmount, item.tolls.weekendAmount].every(value => Number.isFinite(value) && value >= 0);
+  const valid = (item: RouteTollComponent) => !["unknown-paid-road","pskov-unresolved"].includes(item.id) && item.tolls?.confidence === "matched" &&
+    [item.tolls.amount, item.tolls.weekdayAmount, item.tolls.weekendAmount].every(value => Number.isSafeInteger(value) && value >= 0);
   const duplicateIds = new Set(detected.filter((item, index) => detected.findIndex(other => other.id === item.id) !== index).map(item => item.id));
+  // The old V2 aggregate overlaps all three independent V3 products.
+  // Mixing the two representations cannot charge the same road twice.
+  if (detected.some(item => item.id === "m4_a289") && detected.some(item =>
+    ["m4", "a289", "krasnodar-west-bypass"].includes(item.id))) {
+    return {status:"unknown",tolls:null,missing:detected.map(item=>item.id),priced:[]};
+  }
+  if (detected.some(item => item.id === "m11") && detected.some(item =>
+    ["m11-15-58", "m11-58-679", "m11-679-684"].includes(item.id))) {
+    return {status:"unknown",tolls:null,missing:detected.map(item=>item.id),priced:[]};
+  }
+  const regionalIds = ["ufa-east","tolyatti","odintsovo","bagration","msd","zsd","shmsd","voznesensky","udmurt-bridges","khabarovsk","mytishchi","ryazan","amur-bridge","pskov-unresolved","unknown-paid-road"];
+  if (detected.some(item=>item.id === "regional") && detected.some(item=>regionalIds.includes(item.id))) {
+    return {status:"unknown",tolls:null,missing:detected.map(item=>item.id),priced:[]};
+  }
   const missing = [...new Set(detected.filter((item) => !valid(item) || duplicateIds.has(item.id)).map((item) => item.id))];
   const priced = detected.filter((item) => valid(item) && !duplicateIds.has(item.id)).map((item) => item.id);
   if (missing.length > 0) return { status: "unknown", tolls: null, missing, priced };
 
   const values = detected.map((item) => item.tolls!).filter((item) => item.confidence === "matched");
+  const amount = values.reduce((sum, item) => sum + item.amount, 0);
+  const weekdayAmount = values.reduce((sum, item) => sum + item.weekdayAmount, 0);
+  const weekendAmount = values.reduce((sum, item) => sum + item.weekendAmount, 0);
+  if (![amount, weekdayAmount, weekendAmount].every(Number.isSafeInteger)) {
+    return { status: "unknown", tolls: null, missing: detected.map(item => item.id), priced: [] };
+  }
   return {
     status: "priced",
     tolls: {
-      amount: values.reduce((sum, item) => sum + item.amount, 0),
-      weekdayAmount: values.reduce((sum, item) => sum + item.weekdayAmount, 0),
-      weekendAmount: values.reduce((sum, item) => sum + item.weekendAmount, 0),
+      amount,
+      weekdayAmount,
+      weekendAmount,
       period: values[0]?.period ?? "",
       segments: values.flatMap((item) => item.segments),
       confidence: "matched",

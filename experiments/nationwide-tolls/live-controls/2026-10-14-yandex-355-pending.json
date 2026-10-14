@@ -1,0 +1,278 @@
+{
+  "observedAt": "2026-10-14",
+  "scope": "24 saved conflict cells involving355:12 directed pairs x2profiles",
+  "status": "blocked-before-route-execution",
+  "conditions": "fastest eligible driving route; passenger car<2m; no transponder; preserve exact selected boundaries and direction",
+  "blockers": [
+    {
+      "tool": "Opera",
+      "result": "Browser not connected"
+    },
+    {
+      "tool": "TinyFish",
+      "result": "run not started; wallet_out_of_funds",
+      "balanceUSD": -0.221166
+    }
+  ],
+  "requirements": [
+    "Confirm route crosses the actual355 gate; coordinates may snap to mainline or side road",
+    "Record weekday/weekend and actual direction separately",
+    "Do not infer impossible route or fare from automation failure",
+    "Do not call a toll icon without amount free"
+  ],
+  "pdfs": [
+    {
+      "purpose": "M4 detailed tariffs",
+      "url": "https://avtodor-tr.ru/upload/iblock/a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf",
+      "access": "indexed primaryPDF; direct403; user download requested"
+    },
+    {
+      "purpose": "355 entry/receipt rule",
+      "url": "https://avtodor-tr.ru/upload/iblock/e0b/5kq5uo88zxclelibmubucv607fda7cvv.pdf",
+      "access": "indexed primaryPDF; direct403; current version not certified"
+    }
+  ],
+  "rows": [
+    {
+      "from": "m4-355",
+      "to": "m4-803",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~49.3731618%2C40.6005796&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-803",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~49.3731618%2C40.6005796&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-355",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=49.3731618%2C40.6005796~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-355",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=49.3731618%2C40.6005796~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-911",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~48.4813922%2C40.3408998&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-911",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~48.4813922%2C40.3408998&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-355",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=48.4813922%2C40.3408998~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-355",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=48.4813922%2C40.3408998~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~47.345636%2C39.9501803&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~47.345636%2C39.9501803&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-355",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=47.345636%2C39.9501803~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-355",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=47.345636%2C39.9501803~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~47.0131923%2C39.7339706&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~47.0131923%2C39.7339706&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-355",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=47.0131923%2C39.7339706~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-355",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=47.0131923%2C39.7339706~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~46.2304494%2C39.831531&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~46.2304494%2C39.831531&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-355",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=46.2304494%2C39.831531~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-355",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=46.2304494%2C39.831531~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~45.9156659%2C39.710038&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=52.7980213%2C38.3147948~45.9156659%2C39.710038&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-355",
+      "profile": "monThu",
+      "departureMoscow": "2026-10-15T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=45.9156659%2C39.710038~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-15T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-355",
+      "profile": "friSun",
+      "departureMoscow": "2026-10-17T10:00:00+03:00",
+      "url": "https://yandex.ru/maps/?mode=routes&rtext=45.9156659%2C39.710038~52.7980213%2C38.3147948&rtt=auto&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10:00:00",
+      "status": "not-executed",
+      "fareRub": null,
+      "geometryValidated": false
+    }
+  ],
+  "continuation": "Executed in user-authorized cloud browser; see2026-10-14-yandex-355-results.json. Earlier blockers are historical, not current."
+}

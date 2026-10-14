@@ -6,7 +6,7 @@ assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "m3", 
 assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "m3", sectionIds: ["m3-65-86","m3-112-150","m3-150-194"] }, "transponder", "friSun").amountRub, 520);
 assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "a289", sectionIds: ["a289-maryanskaya-temryuk"] }, "noTransponder", "allDays").amountRub, 800);
 assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "a289", sectionIds: ["a289-maryanskaya-temryuk"] }, "transponder", "allDays").amountRub, 800);
-assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "ckad", sectionIds: ["ckad-m10-m11","ckad-m11-a107"] }, "noTransponder", "allDays").amountRub, 227);
+assert.equal(priceOtherRoadVerifiedSections({ status: "verified", roadId: "ckad", sectionIds: ["ckad-m10-m11","ckad-m11-a107"] }, "noTransponder", "allDays").amountRub, 161);
 
 const unresolved = priceOtherRoadVerifiedSections({ status: "unresolved", roadId: "ckad", reason: "route_rvp_evidence_missing" }, "noTransponder", "allDays");
 assert.equal(unresolved.status, "unknown");

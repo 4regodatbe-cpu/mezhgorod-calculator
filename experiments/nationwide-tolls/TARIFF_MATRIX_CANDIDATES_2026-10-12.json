@@ -64,7 +64,7 @@
         "weekendsAndHolidaysRub": 90,
         "timeDetermination": "at passage under camera gantry, not entry or exit"
       },
-      "effectiveFrom": "2025-03-06",
+      "effectiveFrom": "2025-03-09T23:50:01+03:00",
       "source": "https://vtkazan.ru/road/tarifs/",
       "sourceDocument": "Приказ №07/ПД-ВТ от 06.03.2025",
       "sourceClaims": [
@@ -74,7 +74,9 @@
         "transponder fare equals plate-payment fare"
       ],
       "matrixStatus": "official tariff captured; exact toll-system route anchor and current order amendment history not independently checked",
-      "notes": "Tariff is based on the time of crossing the camera gantry. For a route-level quote, resolve crossing time; departure weekday alone is insufficient when the estimated arrival at the gantry differs."
+      "notes": "Tariff is based on the time of crossing the camera gantry. For a route-level quote, resolve crossing time; departure weekday alone is insufficient when the estimated arrival at the gantry differs.",
+      "previousMistakenEffectiveFrom": "2025-03-06",
+      "sourceOrderPdf": "https://vtkazan.ru/upload/iblock/b9a/tyww9y45ggam86zabfb4kkbav76ymdth.pdf"
     },
     {
       "id": "bagration-category1-base",

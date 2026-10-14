@@ -4,6 +4,10 @@ function validDate(value){
  if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;
  const date=new Date(value);return Number.isFinite(date.getTime())&&date.toISOString().slice(0,10)===value;
 }
+function validInstant(value){
+ if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}T(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?(?:Z|[+-]\d{2}:\d{2})$/.test(value))return false;
+ return validDate(value.slice(0,10))&&Number.isFinite(new Date(value).getTime());
+}
 function boundary(value){
  if(value===undefined||value===null)return null;
  if(validDate(value))return {date:value,midnight:true};
@@ -26,4 +30,4 @@ function fareValidityOnDate(row,date){
  if(a&&!a.midnight&&date===a.date||b&&!b.midnight&&date===b.date)return 'unknown';
  return 'inside';
 }
-module.exports={validDate,fareValidityOnDate};
+module.exports={validDate,validInstant,fareValidityOnDate};

@@ -38,18 +38,18 @@ const ids = [
 ] as const;
 const priced = priceOtherRoadVerifiedSections({ status: "verified", roadId: "ckad", sectionIds: ids }, "noTransponder", "allDays");
 assert.equal(priced.status, "priced");
-if (priced.status === "priced") assert.equal(priced.amountRub, 2517);
+if (priced.status === "priced") assert.equal(priced.amountRub, 1800);
 
 const production = calculateProductionCkadM4M11(arc, evidence);
 assert.equal(production.candidate, true);
 assert.equal(production.exact, true);
-assert.equal(production.tolls?.amount, 2517);
-assert.equal(production.tolls?.weekdayAmount, 2517);
-assert.equal(production.tolls?.weekendAmount, 2517);
+assert.equal(production.tolls?.amount, 1800);
+assert.equal(production.tolls?.weekdayAmount, 1800);
+assert.equal(production.tolls?.weekendAmount, 1800);
 
 const unresolvedProduction = calculateProductionCkadM4M11(arc, null);
 assert.equal(unresolvedProduction.candidate, true);
 assert.equal(unresolvedProduction.exact, false);
 assert.equal(unresolvedProduction.tolls, null);
 
-console.log("CKAD production regression: GREEN; east-arc no-transponder total=2517 RUB");
+console.log("CKAD production regression: GREEN; east-arc no-transponder total=1800 RUB");

@@ -1,0 +1,54 @@
+{
+  "localSourceCommit": "3b675df36364212027fb9fa9aed6c8c13365d1e0",
+  "publishedSourceCommit": "37d55f6203afbb136b573d6d8502182becdb2086",
+  "sourceTree": "943b7806de6f09a3a0870a0074ed7acd1dadb8d6",
+  "changedFiles": 116,
+  "uploadedBlobs": 114,
+  "deletions": 2,
+  "bytes": 26380859,
+  "sourceTreeMatch": true,
+  "ciCorrectionCommit": "afdc2c420107dc7a34d30d64482e98c8697c2132",
+  "previewDeployments": [
+    {
+      "id": "dpl_67vpYt2ACFXu3iUhk8hd1x1AAnUG",
+      "commit": "37d55f6203afbb136b573d6d8502182becdb2086",
+      "url": "https://mezhgorod-calculator-etema75jt-4regodatbe-5310.vercel.app/v3",
+      "state": "READY",
+      "versionVerified": true
+    },
+    {
+      "id": "dpl_DaGA58ERJa6dEUo2yUkXNwzjrxga",
+      "commit": "afdc2c420107dc7a34d30d64482e98c8697c2132",
+      "url": "https://mezhgorod-calculator-kax8ciw9c-4regodatbe-5310.vercel.app/v3",
+      "state": "READY",
+      "versionVerified": true
+    }
+  ],
+  "pullRequest": 13,
+  "pullRequestBase": "integration/v3-product-baseline-2026-10-14",
+  "draft": true,
+  "ci": [
+    {
+      "run": 38623167929,
+      "commit": "37d55f6203afbb136b573d6d8502182becdb2086",
+      "result": "failure",
+      "reason": "Node22.13 registerHooks missing"
+    },
+    {
+      "run": 38624425083,
+      "commit": "afdc2c420107dc7a34d30d64482e98c8697c2132",
+      "result": "success",
+      "job": 116059843286,
+      "includesBuildAndApiSmoke": true
+    },
+    {
+      "run": 38624434385,
+      "commit": "afdc2c420107dc7a34d30d64482e98c8697c2132",
+      "verifyJob": 116059876836,
+      "verifyResult": "success",
+      "liveProbe": "in_progress_at_observation"
+    }
+  ],
+  "productionMainObserved": "636e6801bdd2a3db6ce4714830dc8a05fc73b7c9",
+  "productionChanged": false
+}

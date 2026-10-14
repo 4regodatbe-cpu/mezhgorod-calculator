@@ -67,7 +67,8 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     const routesToPrice=fastestOnly?rankedRoutes.filter(item=>item.provider===routeChoice.provider):rankedRoutes;
     const selected:PricedCandidate[]=[];
     for(const item of routesToPrice){
-      const pricing=await calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:null});
+      const selectedRouteValidation=await validateTollEdges(item.route.coordinates);
+      const pricing=await calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:selectedRouteValidation});
       const {route,index,...candidate}=item;
       void index;
       selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality,m4PvpPreview:pricing.m4PvpPreview,nationalTollCoverage:pricing.nationalTollCoverage}});

@@ -26,12 +26,18 @@ function validLeg(value:unknown):boolean {
  else if(t.pricingStatus==='free'){if(!values.every(x=>x===0))return false;}
  else if(t.pricingStatus==='priced'){if(!values.every(money)||!['confirmed','unconfirmed'].includes(String(t.priceConfirmation)))return false;}
  else return false;
- return value.free==null||validTrip(value.free);
+ return value.free==null && value.freeCandidate==null;
 }
 export function validV3Response(value:unknown):value is Result {
  if(!object(value))return false;
  if(value.automaticMode!==undefined&&!['standard','dual'].includes(String(value.automaticMode)))return false;
- if(!Array.isArray(value.legs)||!value.legs.length||!value.legs.every(validLeg))return false;
- if(value.options!==undefined&&(!Array.isArray(value.options)||!value.options.every(validLeg)))return false;
+ if(!Array.isArray(value.legs)||value.legs.length!==1||!value.legs.every(validLeg))return false;
+ if(value.options!==undefined){
+  if(!Array.isArray(value.options)||value.options.length!==1||!value.options.every(validLeg))return false;
+  const primary=value.legs[0],option=value.options[0];
+  if(primary.from!==option.from||primary.to!==option.to||primary.fast.meters!==option.fast.meters||primary.fast.seconds!==option.fast.seconds)return false;
+  for(const key of ['amount','weekdayAmount','weekendAmount','pricingStatus','period'])if(primary.fast.tolls[key]!==option.fast.tolls[key])return false;
+  for(const vehicle of ['standard','comfort','comfort_plus','minivan'])if(primary.fast.pricingByVehicle[vehicle].totalPrice!==option.fast.pricingByVehicle[vehicle].totalPrice)return false;
+ }
  return true;
 }

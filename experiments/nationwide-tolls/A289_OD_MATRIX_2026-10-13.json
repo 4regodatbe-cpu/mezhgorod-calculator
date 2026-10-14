@@ -67,54 +67,60 @@
       "to": "Slavyansk",
       "rub": 415,
       "basis": "primary operator category-I direct OD, base post-payment",
-      "source": "https://avtodor-tr.ru/road/tariffs/",
-      "verification": "published primary table indexed 2026-10-13",
-      "effectiveFrom": "2026-03-02"
+      "source": "source-documents/a289-order55-effective-2026-03-02.pdf",
+      "verification": "operator categoryI direct cells visually verified onpage1",
+      "effectiveFrom": "2026-03-02",
+      "sourceFareStatus": "verified-operator-category1-direct-cell"
     },
     {
       "from": "Slavyansk",
       "to": "Varenikovskaya",
       "rub": 205,
       "basis": "primary operator category-I direct OD, base post-payment",
-      "source": "https://avtodor-tr.ru/road/tariffs/",
-      "verification": "published primary table indexed 2026-10-13",
-      "effectiveFrom": "2026-03-02"
+      "source": "source-documents/a289-order55-effective-2026-03-02.pdf",
+      "verification": "operator categoryI direct cells visually verified onpage1",
+      "effectiveFrom": "2026-03-02",
+      "sourceFareStatus": "verified-operator-category1-direct-cell"
     },
     {
       "from": "Maryanskaya",
       "to": "Varenikovskaya",
       "rub": 620,
       "basis": "primary operator category-I direct OD, base post-payment",
-      "source": "https://avtodor-tr.ru/road/tariffs/",
-      "verification": "published primary table indexed 2026-10-13",
-      "effectiveFrom": "2026-03-02"
+      "source": "source-documents/a289-order55-effective-2026-03-02.pdf",
+      "verification": "operator categoryI direct cells visually verified onpage1",
+      "effectiveFrom": "2026-03-02",
+      "sourceFareStatus": "verified-operator-category1-direct-cell"
     },
     {
       "from": "Varenikovskaya",
       "to": "Temryuk",
       "rub": 180,
       "basis": "primary operator category-I direct OD, base post-payment",
-      "source": "https://avtodor-tr.ru/road/tariffs/",
-      "verification": "published primary table indexed 2026-10-13",
-      "effectiveFrom": "2026-03-02"
+      "source": "source-documents/a289-order55-effective-2026-03-02.pdf",
+      "verification": "operator categoryI direct cells visually verified onpage1",
+      "effectiveFrom": "2026-03-02",
+      "sourceFareStatus": "verified-operator-category1-direct-cell"
     },
     {
       "from": "Maryanskaya",
       "to": "Temryuk",
       "rub": 800,
       "basis": "primary operator category-I direct OD, base post-payment",
-      "source": "https://avtodor-tr.ru/road/tariffs/",
-      "verification": "published primary table indexed 2026-10-13",
-      "effectiveFrom": "2026-03-02"
+      "source": "source-documents/a289-order55-effective-2026-03-02.pdf",
+      "verification": "operator categoryI direct cells visually verified onpage1",
+      "effectiveFrom": "2026-03-02",
+      "sourceFareStatus": "verified-operator-category1-direct-cell"
     },
     {
       "from": "Slavyansk",
       "to": "Temryuk",
       "rub": 385,
       "basis": "primary operator category-I direct OD, base post-payment",
-      "source": "https://avtodor-tr.ru/road/tariffs/",
-      "verification": "published primary table indexed 2026-10-13",
-      "effectiveFrom": "2026-03-02"
+      "source": "source-documents/a289-order55-effective-2026-03-02.pdf",
+      "verification": "operator categoryI direct cells visually verified onpage1",
+      "effectiveFrom": "2026-03-02",
+      "sourceFareStatus": "verified-operator-category1-direct-cell"
     },
     {
       "from": "Maryanskaya",
@@ -193,5 +199,7 @@
   },
   "category": 1,
   "correction": "Category-I and category-II columns were previously mislabeled transponder and noTransponder. 833 is category II, not the passenger-car base price.",
-  "categorySource": "source-snapshots/a289-category-columns-2026-10-13.json"
+  "categorySource": "source-snapshots/a289-category-columns-2026-10-13.json",
+  "sourceFile": "source-documents/a289-order55-effective-2026-03-02.pdf",
+  "sourceSha256": "da558d538e5a9e2ef8d36d46e0aec69c43b987f81c10d2186733a19aaca933bd"
 }

@@ -43,8 +43,9 @@ test('M11 date-only cannot fabricate an entry hour or a midnight transition',()=
  assert.ok(matrixM11Component(production,'2026-10-13T12:00:00+03:00',3600).tolls);
 });
 
-test('M11 mainline does not borrow the Moscow-head special-day or future-year schedule',()=>{
+test('M11 mainline uses its own verified order274 holiday schedule and rejects unsupported years',()=>{
  const p={boundaryStatus:'resolved',traversal:{entryPointId:'p593',exitPointId:'p679'}};
- for(const date of ['2026-11-03T12:00:00+03:00','2026-11-04T12:00:00+03:00','2027-10-13T12:00:00+03:00'])assert.equal(matrixM11Component(p,date,900).tolls,null);
+ for(const date of ['2026-11-03T12:00:00+03:00','2026-11-04T12:00:00+03:00'])assert.equal(matrixM11Component(p,date,900).tolls.period,'пятница–воскресенье');
+ assert.equal(matrixM11Component(p,'2027-10-13T12:00:00+03:00',900).tolls,null);
  assert.equal(section15Amount(new Date('2026-11-03T12:00:00+03:00')).amount,1650);
 });

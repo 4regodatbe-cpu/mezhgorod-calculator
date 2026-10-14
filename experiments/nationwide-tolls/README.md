@@ -1,3 +1,7 @@
+## Актуальное состояние — 14 октября 2026
+
+Источник состояния — [docs/WORK_STATE.md](../../docs/WORK_STATE.md). V3 audit-ветка опубликована на GitHub, draft PR13 в интеграционную ветку; проверенный Preview37d55f6 и CI correction afdc2c4 READY. Vercel621/621 PASS; повторный Actions build/API smoke PASS. Live Анапа620/Ялта800 с предупреждением; Москва—СПб остаётся unknown из-за хвостаМ11/ЗСД. Desktop UI и копирование проверены. [Текущий отчёт](stages/04-preview-and-live-acceptance-2026-10-14.md). Матрица5076,10недатированных; mobile/source/geometry gaps ещёоткрыты. Официальный Production не обновлён; полное покрытие России не заявлено. История ниже сохранена как история, а не текущая готовность.
+
 ## Latest verified M3 evidence — 9 October 2026
 
 - M3 86,136,168km each has two **independently OSM-verified directional `barrier=toll_booth` nodes**. Exact map matching on both real test routes Москва→Калуга (189.1km) and Калуга→Москва (187.8km) yields **3 matched physical gates, 0 unmapped**. Six OSM ids + coordinates, source URLs and browser run IDs in [M1_M3_EVIDENCE_2026-10-09.md](M1_M3_EVIDENCE_2026-10-09.md).

@@ -19,6 +19,7 @@ async function calculate(from:typeof anapa,to:typeof anapa,providers:{valhalla?:
  const requests:string[]=[];
  globalThis.fetch=async(input)=>{
   const url=new URL(String(input));requests.push(url.href);
+  if(url.pathname==='/trace_attributes')return json({edges:[{toll:true,names:['А-289'],way_id:1,end_node:{type:'toll_booth',node_id:13022464435}}]});
   const provider=url.hostname==='valhalla1.openstreetmap.de'&&url.pathname==='/route'?'valhalla':url.hostname==='router.project-osrm.org'?'osrm':url.hostname==='brouter.de'?'brouter':null;
   if(!provider||!providers[provider])return json({},503);
   const p=providers[provider]!;

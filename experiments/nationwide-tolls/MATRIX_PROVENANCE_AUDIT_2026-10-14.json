@@ -1,0 +1,7505 @@
+{
+  "schemaVersion": 1,
+  "diagnosticOnly": true,
+  "scope": "Saved matrix snapshot; not a fresh operator or Yandex verification",
+  "fareRows": 5076,
+  "conflictCount": 428,
+  "causeGroups": {
+    "m4-339|m4-355": 140,
+    "m4-339|m4-355|m4-636|m4-672": 120,
+    "m4-636|m4-672": 168
+  },
+  "coverageByMatrixRoad": {
+    "a289": {
+      "rows": 20,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "bagration": {
+      "rows": 2,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "ckad": {
+      "rows": 210,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "ckad-small-vyazemy": {
+      "rows": 2,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "heihe": {
+      "rows": 2,
+      "missingSource": 0,
+      "missingStartDate": 2,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "kazan": {
+      "rows": 4,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "m1": {
+      "rows": 2,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "m11-15-58": {
+      "rows": 210,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "m11-58-679": {
+      "rows": 924,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "m12": {
+      "rows": 382,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "m12-candidate": {
+      "rows": 625,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "m3": {
+      "rows": 24,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "m4-candidate": {
+      "rows": 1456,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 1096
+    },
+    "m4-dzok": {
+      "rows": 4,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "m4-south": {
+      "rows": 32,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "msd": {
+      "rows": 1025,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "mytishchi": {
+      "rows": 30,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "odintsovo": {
+      "rows": 96,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "pskov": {
+      "rows": 8,
+      "missingSource": 0,
+      "missingStartDate": 8,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "ryazan": {
+      "rows": 4,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "tolyatti": {
+      "rows": 6,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "udmurtia": {
+      "rows": 6,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    },
+    "ufa": {
+      "rows": 2,
+      "missingSource": 0,
+      "missingStartDate": 0,
+      "invalidStartDate": 0,
+      "quarantined": 0
+    }
+  },
+  "conflicts": [
+    {
+      "from": "m4-1046",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        4310,
+        4490,
+        4510,
+        4690
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        3510,
+        3660,
+        3730,
+        3880
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        3810,
+        3990,
+        4010,
+        4190
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        3110,
+        3260,
+        3330,
+        3480
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        3490,
+        3670,
+        3690,
+        3870
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        2850,
+        3000,
+        3070,
+        3220
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-339",
+      "profile": "friSun",
+      "fares": [
+        3350,
+        3550
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-339",
+      "profile": "monThu",
+      "fares": [
+        2740,
+        2960
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-355",
+      "profile": "friSun",
+      "fares": [
+        3170,
+        3370
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-355",
+      "profile": "monThu",
+      "fares": [
+        2590,
+        2810
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        2950,
+        3150
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        2370,
+        2590
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        2590,
+        2790
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        2140,
+        2360
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        2420,
+        2620
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        1990,
+        2210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        2260,
+        2460
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        1850,
+        2070
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        4530,
+        4710,
+        4730,
+        4910
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        3730,
+        3880,
+        3950,
+        4100
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        2010,
+        2210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        1670,
+        1890
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        4710,
+        4890,
+        4910,
+        5090
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1046",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        3820,
+        3970,
+        4040,
+        4190
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        4460,
+        4640,
+        4660,
+        4840
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        3660,
+        3810,
+        3880,
+        4030
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        3960,
+        4140,
+        4160,
+        4340
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        3260,
+        3410,
+        3480,
+        3630
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        3640,
+        3820,
+        3840,
+        4020
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        3000,
+        3150,
+        3220,
+        3370
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-339",
+      "profile": "friSun",
+      "fares": [
+        3500,
+        3700
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-339",
+      "profile": "monThu",
+      "fares": [
+        2890,
+        3110
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-355",
+      "profile": "friSun",
+      "fares": [
+        3320,
+        3520
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-355",
+      "profile": "monThu",
+      "fares": [
+        2740,
+        2960
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        3100,
+        3300
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        2520,
+        2740
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        2740,
+        2940
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        2290,
+        2510
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        2570,
+        2770
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        2140,
+        2360
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        2410,
+        2610
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        2000,
+        2220
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        4680,
+        4860,
+        4880,
+        5060
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        3880,
+        4030,
+        4100,
+        4250
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        2160,
+        2360
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        1820,
+        2040
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        4860,
+        5040,
+        5060,
+        5240
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1093",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        3970,
+        4120,
+        4190,
+        4340
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        4810,
+        4990,
+        5010,
+        5190
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        3960,
+        4110,
+        4180,
+        4330
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        4310,
+        4490,
+        4510,
+        4690
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        3560,
+        3710,
+        3780,
+        3930
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        3990,
+        4170,
+        4190,
+        4370
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        3300,
+        3450,
+        3520,
+        3670
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-339",
+      "profile": "friSun",
+      "fares": [
+        3850,
+        4050
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-339",
+      "profile": "monThu",
+      "fares": [
+        3190,
+        3410
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-355",
+      "profile": "friSun",
+      "fares": [
+        3670,
+        3870
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-355",
+      "profile": "monThu",
+      "fares": [
+        3040,
+        3260
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        3450,
+        3650
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        2820,
+        3040
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        3090,
+        3290
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        2590,
+        2810
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        2920,
+        3120
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        2440,
+        2660
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        2760,
+        2960
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        2300,
+        2520
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        5030,
+        5210,
+        5230,
+        5410
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        4180,
+        4330,
+        4400,
+        4550
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        2510,
+        2710
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        2120,
+        2340
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        5210,
+        5390,
+        5410,
+        5590
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1184",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        4270,
+        4420,
+        4490,
+        4640
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        5310,
+        5490,
+        5510,
+        5690
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        4360,
+        4510,
+        4580,
+        4730
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        4810,
+        4990,
+        5010,
+        5190
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        3960,
+        4110,
+        4180,
+        4330
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        4490,
+        4670,
+        4690,
+        4870
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        3700,
+        3850,
+        3920,
+        4070
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-339",
+      "profile": "friSun",
+      "fares": [
+        4350,
+        4550
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-339",
+      "profile": "monThu",
+      "fares": [
+        3590,
+        3810
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-355",
+      "profile": "friSun",
+      "fares": [
+        4170,
+        4370
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-355",
+      "profile": "monThu",
+      "fares": [
+        3440,
+        3660
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        3950,
+        4150
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        3220,
+        3440
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        3590,
+        3790
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        2990,
+        3210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        3420,
+        3620
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        2840,
+        3060
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        3260,
+        3460
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        2700,
+        2920
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        5530,
+        5710,
+        5730,
+        5910
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        4580,
+        4730,
+        4800,
+        4950
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        3010,
+        3210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        2520,
+        2740
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        5710,
+        5890,
+        5910,
+        6090
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-1223",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        4670,
+        4820,
+        4890,
+        5040
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        4310,
+        4490,
+        4510,
+        4690
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        3510,
+        3660,
+        3730,
+        3880
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        4460,
+        4640,
+        4660,
+        4840
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        3660,
+        3810,
+        3880,
+        4030
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        4810,
+        4990,
+        5010,
+        5190
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        3960,
+        4110,
+        4180,
+        4330
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        5310,
+        5490,
+        5510,
+        5690
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        4360,
+        4510,
+        4580,
+        4730
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        1720,
+        1900
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        1370,
+        1520
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        1890,
+        2070
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        1520,
+        1670
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        2050,
+        2230
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        1660,
+        1810
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        2300,
+        2480
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        1840,
+        1990
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        2550,
+        2730
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        2020,
+        2170
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-636",
+      "profile": "friSun",
+      "fares": [
+        3190,
+        3370
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-636",
+      "profile": "monThu",
+      "fares": [
+        2590,
+        2740
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-672",
+      "profile": "friSun",
+      "fares": [
+        2990,
+        3170
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-672",
+      "profile": "monThu",
+      "fares": [
+        2370,
+        2520
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        3610,
+        3790,
+        3810,
+        3990
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        2930,
+        3080,
+        3150,
+        3300
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        3860,
+        4040,
+        4060,
+        4240
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-133",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        3130,
+        3280,
+        3350,
+        3500
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        3810,
+        3990,
+        4010,
+        4190
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        3110,
+        3260,
+        3330,
+        3480
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        3960,
+        4140,
+        4160,
+        4340
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        3260,
+        3410,
+        3480,
+        3630
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        4310,
+        4490,
+        4510,
+        4690
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        3560,
+        3710,
+        3780,
+        3930
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        4810,
+        4990,
+        5010,
+        5190
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        3960,
+        4110,
+        4180,
+        4330
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        1220,
+        1400
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        970,
+        1120
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        1390,
+        1570
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        1120,
+        1270
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        1550,
+        1730
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        1260,
+        1410
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        1800,
+        1980
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        1440,
+        1590
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        2050,
+        2230
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        1620,
+        1770
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-636",
+      "profile": "friSun",
+      "fares": [
+        2690,
+        2870
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-636",
+      "profile": "monThu",
+      "fares": [
+        2190,
+        2340
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-672",
+      "profile": "friSun",
+      "fares": [
+        2490,
+        2670
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-672",
+      "profile": "monThu",
+      "fares": [
+        1970,
+        2120
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        3110,
+        3290,
+        3310,
+        3490
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        2530,
+        2680,
+        2750,
+        2900
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        3360,
+        3540,
+        3560,
+        3740
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-228",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        2730,
+        2880,
+        2950,
+        3100
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        3490,
+        3670,
+        3690,
+        3870
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        2850,
+        3000,
+        3070,
+        3220
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        3640,
+        3820,
+        3840,
+        4020
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        3000,
+        3150,
+        3220,
+        3370
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        3990,
+        4170,
+        4190,
+        4370
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        3300,
+        3450,
+        3520,
+        3670
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        4490,
+        4670,
+        4690,
+        4870
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        3700,
+        3850,
+        3920,
+        4070
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        900,
+        1080
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        710,
+        860
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        1070,
+        1250
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        860,
+        1010
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        1230,
+        1410
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        1000,
+        1150
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        1480,
+        1660
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        1180,
+        1330
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        1730,
+        1910
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        1360,
+        1510
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-636",
+      "profile": "friSun",
+      "fares": [
+        2370,
+        2550
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-636",
+      "profile": "monThu",
+      "fares": [
+        1930,
+        2080
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-672",
+      "profile": "friSun",
+      "fares": [
+        2170,
+        2350
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-672",
+      "profile": "monThu",
+      "fares": [
+        1710,
+        1860
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        2790,
+        2970,
+        2990,
+        3170
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        2270,
+        2420,
+        2490,
+        2640
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        3040,
+        3220,
+        3240,
+        3420
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-322",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        2470,
+        2620,
+        2690,
+        2840
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        3350,
+        3550
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        2740,
+        2960
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        3500,
+        3700
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        2890,
+        3110
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        3850,
+        4050
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        3190,
+        3410
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        4350,
+        4550
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        3590,
+        3810
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        2650,
+        2850
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        2160,
+        2380
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        2900,
+        3100
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-339",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        2360,
+        2580
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        3170,
+        3370
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        2590,
+        2810
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        3320,
+        3520
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        2740,
+        2960
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        3670,
+        3870
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        3040,
+        3260
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        4170,
+        4370
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        3440,
+        3660
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        2470,
+        2670
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        2010,
+        2230
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        2720,
+        2920
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-355",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        2210,
+        2430
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        2950,
+        3150
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        2370,
+        2590
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        3100,
+        3300
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        2520,
+        2740
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        3450,
+        3650
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        2820,
+        3040
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        3950,
+        4150
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        3220,
+        3440
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        1720,
+        1900
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        1370,
+        1520
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        1220,
+        1400
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        970,
+        1120
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        900,
+        1080
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        710,
+        860
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        1940,
+        2120
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        1590,
+        1740
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        2120,
+        2300
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        1680,
+        1830
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        2250,
+        2450
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        1790,
+        2010
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        2500,
+        2700
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-416",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        1990,
+        2210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        2590,
+        2790
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        2140,
+        2360
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        2740,
+        2940
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        2290,
+        2510
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        3090,
+        3290
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        2590,
+        2810
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        3590,
+        3790
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        2990,
+        3210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        1890,
+        2070
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        1520,
+        1670
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        1390,
+        1570
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        1120,
+        1270
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        1070,
+        1250
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        860,
+        1010
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        2110,
+        2290
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        1740,
+        1890
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        2290,
+        2470
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        1830,
+        1980
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        1890,
+        2090
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        1560,
+        1780
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        2140,
+        2340
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-515",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        1760,
+        1980
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        2420,
+        2620
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        1990,
+        2210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        2570,
+        2770
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        2140,
+        2360
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        2920,
+        3120
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        2440,
+        2660
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        3420,
+        3620
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        2840,
+        3060
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        2050,
+        2230
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        1660,
+        1810
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        1550,
+        1730
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        1260,
+        1410
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        1230,
+        1410
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        1000,
+        1150
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        2270,
+        2450
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        1880,
+        2030
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        2450,
+        2630
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        1970,
+        2120
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        1720,
+        1920
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        1410,
+        1630
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        1970,
+        2170
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-a",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        1610,
+        1830
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        2260,
+        2460
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        1850,
+        2070
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        2410,
+        2610
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        2000,
+        2220
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        2760,
+        2960
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        2300,
+        2520
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        3260,
+        3460
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        2700,
+        2920
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        2300,
+        2480
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        1840,
+        1990
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        1800,
+        1980
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        1440,
+        1590
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        1480,
+        1660
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        1180,
+        1330
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        2520,
+        2700
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        2060,
+        2210
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        2700,
+        2880
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        2150,
+        2300
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        1560,
+        1760
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        1270,
+        1490
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        1810,
+        2010
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-545-b",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        1470,
+        1690
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        4530,
+        4710,
+        4730,
+        4910
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        3730,
+        3880,
+        3950,
+        4100
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        4680,
+        4860,
+        4880,
+        5060
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        3880,
+        4030,
+        4100,
+        4250
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        5030,
+        5210,
+        5230,
+        5410
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        4180,
+        4330,
+        4400,
+        4550
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        5530,
+        5710,
+        5730,
+        5910
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        4580,
+        4730,
+        4800,
+        4950
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        1940,
+        2120
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        1590,
+        1740
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        2110,
+        2290
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        1740,
+        1890
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        2270,
+        2450
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        1880,
+        2030
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        2520,
+        2700
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        2060,
+        2210
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        2770,
+        2950
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        2240,
+        2390
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-636",
+      "profile": "friSun",
+      "fares": [
+        3410,
+        3590
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-636",
+      "profile": "monThu",
+      "fares": [
+        2810,
+        2960
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-672",
+      "profile": "friSun",
+      "fares": [
+        3210,
+        3390
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-672",
+      "profile": "monThu",
+      "fares": [
+        2590,
+        2740
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        3830,
+        4010,
+        4030,
+        4210
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        3150,
+        3300,
+        3370,
+        3520
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        4080,
+        4260,
+        4280,
+        4460
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-62",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        3350,
+        3500,
+        3570,
+        3720
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        2010,
+        2210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        1670,
+        1890
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        2160,
+        2360
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        1820,
+        2040
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        2510,
+        2710
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        2120,
+        2340
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        3010,
+        3210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        2520,
+        2740
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        2550,
+        2730
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        2020,
+        2170
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        2050,
+        2230
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        1620,
+        1770
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        1730,
+        1910
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        1360,
+        1510
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        2770,
+        2950
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        2240,
+        2390
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        2950,
+        3130
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        2330,
+        2480
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        1310,
+        1510
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        1090,
+        1310
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        1560,
+        1760
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-620",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        1290,
+        1510
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        3190,
+        3370
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        2590,
+        2740
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        2690,
+        2870
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        2190,
+        2340
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        2370,
+        2550
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        1930,
+        2080
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        3410,
+        3590
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        2810,
+        2960
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        3590,
+        3770
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-636",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        2900,
+        3050
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        2990,
+        3170
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        2370,
+        2520
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        2490,
+        2670
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        1970,
+        2120
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        2170,
+        2350
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        1710,
+        1860
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        3210,
+        3390
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        2590,
+        2740
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        3390,
+        3570
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-672",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        2680,
+        2830
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-1046",
+      "profile": "friSun",
+      "fares": [
+        4710,
+        4890,
+        4910,
+        5090
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-1046",
+      "profile": "monThu",
+      "fares": [
+        3820,
+        3970,
+        4040,
+        4190
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-1093",
+      "profile": "friSun",
+      "fares": [
+        4860,
+        5040,
+        5060,
+        5240
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-1093",
+      "profile": "monThu",
+      "fares": [
+        3970,
+        4120,
+        4190,
+        4340
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-1184",
+      "profile": "friSun",
+      "fares": [
+        5210,
+        5390,
+        5410,
+        5590
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-1184",
+      "profile": "monThu",
+      "fares": [
+        4270,
+        4420,
+        4490,
+        4640
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-1223",
+      "profile": "friSun",
+      "fares": [
+        5710,
+        5890,
+        5910,
+        6090
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-1223",
+      "profile": "monThu",
+      "fares": [
+        4670,
+        4820,
+        4890,
+        5040
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        2120,
+        2300
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        1680,
+        1830
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        2290,
+        2470
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        1830,
+        1980
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        2450,
+        2630
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        1970,
+        2120
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        2700,
+        2880
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        2150,
+        2300
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        2950,
+        3130
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        2330,
+        2480
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-636",
+      "profile": "friSun",
+      "fares": [
+        3590,
+        3770
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-636",
+      "profile": "monThu",
+      "fares": [
+        2900,
+        3050
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-672",
+      "profile": "friSun",
+      "fares": [
+        3390,
+        3570
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-672",
+      "profile": "monThu",
+      "fares": [
+        2680,
+        2830
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-803",
+      "profile": "friSun",
+      "fares": [
+        4010,
+        4190,
+        4210,
+        4390
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-803",
+      "profile": "monThu",
+      "fares": [
+        3240,
+        3390,
+        3460,
+        3610
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-911",
+      "profile": "friSun",
+      "fares": [
+        4260,
+        4440,
+        4460,
+        4640
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-71",
+      "to": "m4-911",
+      "profile": "monThu",
+      "fares": [
+        3440,
+        3590,
+        3660,
+        3810
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        3610,
+        3790,
+        3810,
+        3990
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        2930,
+        3080,
+        3150,
+        3300
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        3110,
+        3290,
+        3310,
+        3490
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        2530,
+        2680,
+        2750,
+        2900
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        2790,
+        2970,
+        2990,
+        3170
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        2270,
+        2420,
+        2490,
+        2640
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-339",
+      "profile": "friSun",
+      "fares": [
+        2650,
+        2850
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-339",
+      "profile": "monThu",
+      "fares": [
+        2160,
+        2380
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-355",
+      "profile": "friSun",
+      "fares": [
+        2470,
+        2670
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-355",
+      "profile": "monThu",
+      "fares": [
+        2010,
+        2230
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        2250,
+        2450
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        1790,
+        2010
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        1890,
+        2090
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        1560,
+        1780
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        1720,
+        1920
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        1410,
+        1630
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        1560,
+        1760
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        1270,
+        1490
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        3830,
+        4010,
+        4030,
+        4210
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        3150,
+        3300,
+        3370,
+        3520
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        1310,
+        1510
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        1090,
+        1310
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        4010,
+        4190,
+        4210,
+        4390
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-803",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        3240,
+        3390,
+        3460,
+        3610
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-133",
+      "profile": "friSun",
+      "fares": [
+        3860,
+        4040,
+        4060,
+        4240
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-133",
+      "profile": "monThu",
+      "fares": [
+        3130,
+        3280,
+        3350,
+        3500
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-228",
+      "profile": "friSun",
+      "fares": [
+        3360,
+        3540,
+        3560,
+        3740
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-228",
+      "profile": "monThu",
+      "fares": [
+        2730,
+        2880,
+        2950,
+        3100
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-322",
+      "profile": "friSun",
+      "fares": [
+        3040,
+        3220,
+        3240,
+        3420
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-322",
+      "profile": "monThu",
+      "fares": [
+        2470,
+        2620,
+        2690,
+        2840
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-339",
+      "profile": "friSun",
+      "fares": [
+        2900,
+        3100
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-339",
+      "profile": "monThu",
+      "fares": [
+        2360,
+        2580
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-355",
+      "profile": "friSun",
+      "fares": [
+        2720,
+        2920
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-355",
+      "profile": "monThu",
+      "fares": [
+        2210,
+        2430
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-460",
+      "profile": "friSun",
+      "fares": [
+        2500,
+        2700
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-460",
+      "profile": "monThu",
+      "fares": [
+        1990,
+        2210
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-515",
+      "profile": "friSun",
+      "fares": [
+        2140,
+        2340
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-515",
+      "profile": "monThu",
+      "fares": [
+        1760,
+        1980
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-545-a",
+      "profile": "friSun",
+      "fares": [
+        1970,
+        2170
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-545-a",
+      "profile": "monThu",
+      "fares": [
+        1610,
+        1830
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-545-b",
+      "profile": "friSun",
+      "fares": [
+        1810,
+        2010
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-545-b",
+      "profile": "monThu",
+      "fares": [
+        1470,
+        1690
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-62",
+      "profile": "friSun",
+      "fares": [
+        4080,
+        4260,
+        4280,
+        4460
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-62",
+      "profile": "monThu",
+      "fares": [
+        3350,
+        3500,
+        3570,
+        3720
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-620",
+      "profile": "friSun",
+      "fares": [
+        1560,
+        1760
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-620",
+      "profile": "monThu",
+      "fares": [
+        1290,
+        1510
+      ],
+      "differingSections": [
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 2,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-71",
+      "profile": "friSun",
+      "fares": [
+        4260,
+        4440,
+        4460,
+        4640
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    },
+    {
+      "from": "m4-911",
+      "to": "m4-71",
+      "profile": "monThu",
+      "fares": [
+        3440,
+        3590,
+        3660,
+        3810
+      ],
+      "differingSections": [
+        "m4-339",
+        "m4-355",
+        "m4-636",
+        "m4-672"
+      ],
+      "allQuarantined": true,
+      "sourceRows": 4,
+      "disposition": "unknown-pending-exact-boundary-and-source-evidence"
+    }
+  ]
+}

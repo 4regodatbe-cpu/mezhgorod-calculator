@@ -1,0 +1,23 @@
+{
+  "retrievedAt": "2026-10-14T16:33:01.020018+00:00",
+  "files": [
+    {
+      "path": "source-documents/m11-head-order0108-effective-2026-04-24.pdf",
+      "url": "https://m11-neva.ru/upload/iblock/c7f/dqr24p9c4pctph5s4897if1r05agru30.pdf",
+      "bytes": 819442,
+      "sha256": "514f8853f9b6fecd587466205fa5f6eef52d4d576c8c0fcff3b4480b4ccc9485"
+    },
+    {
+      "path": "source-documents/m11-head-passage-rules-retrieved-2026-10-14.pdf",
+      "url": "https://m11-neva.ru/upload/iblock/311/4hw1aeccglhdprdbt6f5opqhpj1vxoua.pdf",
+      "bytes": 2969094,
+      "sha256": "c4c86c9fd92faddaaa4ab4628542185f48e6ea25ed2dff460960650ab48b9f5a"
+    }
+  ],
+  "tariffPage": 2,
+  "rulesPage": 3,
+  "paymentTimeBasis": "exit payment plaza; for adjacent toll sections without boundary plazas, common final road exit",
+  "earlyMorningRule": "daytime profile until 01:00 next civil day; night 01:00–06:00",
+  "directionalSourceRows": "Moscow-Solnechnogorsk and Solnechnogorsk-Moscow are independent published rows",
+  "spatialLimitation": "Southbound Moscow PVP21 anchor unresolved: payment window from proven p58 to known Moscow 15-km endpoint, not invented exact exit timestamp."
+}

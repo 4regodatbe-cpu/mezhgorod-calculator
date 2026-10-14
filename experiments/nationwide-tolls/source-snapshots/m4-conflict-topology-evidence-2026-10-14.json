@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-14",
+  "purpose": "Topology evidence for matrix conflict investigation; no new tariff amounts or runtime activation",
+  "tariffEffectiveDateConfirmed": false,
+  "sources": [
+    {
+      "id": "avtodor-pavlovsk-topology",
+      "url": "https://www.russianhighways.ru/press/news/67350/",
+      "access": "full page read",
+      "documentContext": "Historical opening of bypass completed June 2020; newer crawl date is not publication or fare effective date",
+      "facts": [
+        "PVP672 is on the exit towards Pavlovsk",
+        "PVP636 is the main-road plaza"
+      ],
+      "limitation": "Historical tariff amounts from this article are not current prices."
+    },
+    {
+      "id": "avtodor-355-receipt-rule",
+      "url": "https://avtodor-tr.ru/upload/iblock/e0b/5kq5uo88zxclelibmubucv607fda7cvv.pdf",
+      "access": "primary PDF indexed text available; direct open403",
+      "facts": [
+        "Entry through PVP355 towards Moscow uses receipt at PVP339 to prevent double payment"
+      ],
+      "limitation": "Current document version/effective date and exact selected-route geometry not confirmed."
+    },
+    {
+      "id": "avtodor-current-tariff-page",
+      "url": "https://avtodor-tr.ru/road/tariffs/",
+      "access": "indexed primary source; direct open403",
+      "facts": [
+        "Rows339 and355 share displayed corridor322–401 but have different amounts",
+        "Rows636 and672 share displayed corridor633–741 but have different amounts"
+      ],
+      "limitation": "Common km range does not establish equivalent OD semantics; row amounts not promoted."
+    }
+  ],
+  "generatorDiagnosis": "Grouping raw rows by kmRange made mainline and entry/exit-specific tariffs interchangeable in intermediate chains. This is an inferred explanation from primary topology evidence and saved generator code.",
+  "nextRequiredEvidence": [
+    "Current operator classification of PVP355 and672 with exact directions and boundaries",
+    "Same-boundary/profile route controls before replacing conflict cells",
+    "Keep existing428 endpoint/profile conflicts and all audit-only rows unknown"
+  ],
+  "runtimeAdoption": {
+    "date": "2026-10-14",
+    "rule": "Under approved continuous-road model, ramp355/672 may be boundaries but not interchangeable intermediate through tariffs. Directed355 endpoints unsupported by entry-towards-Moscow rule remain unknown.",
+    "fareStatus": "Topology-filtered candidate estimate, not independently date-effective official fare",
+    "additionalPrimaryTopologyUrl": "https://unitoll.ru/roads/m-4/objects_m4/traffic_junctions/",
+    "additionalPrimaryAccess": "full page read;672 labelled exit to Pavlovsk"
+  },
+  "uploadedRulesVerification": {
+    "source": "source-snapshots/m4-355-receipt-rule-verified-2026-10-14.json",
+    "readPages": [
+      7,
+      8
+    ],
+    "classification": "24original355southern-conflictkeys excluded as unsupported continuousfarepairs; physical-coordinate routes not called impossible",
+    "operatorExactPair": "355→339charged220once basedon2026tariffandreceipt rule"
+  }
+}

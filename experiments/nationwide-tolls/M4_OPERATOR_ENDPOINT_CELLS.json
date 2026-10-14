@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "scope": "explicit operator endpoint cells; route physical matching remains separately required",
+  "rows": [
+    {
+      "road": "m4-candidate",
+      "from": "m4-355",
+      "to": "m4-339",
+      "profile": "monThu",
+      "rub": 220,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "vehicleCategory": 1,
+      "paymentProfile": "no-transponder",
+      "sourceFareStatus": "verified-operator-exact-pair",
+      "sourcePage": 2,
+      "ruleSource": "source-documents/m4-entry-receipt-rules-uploaded-2026-10-14.pdf",
+      "rulePage": 7,
+      "basis": "Northbound entry355paid220; passage339withreceipt charged once",
+      "sectionVector": [
+        "m4-355",
+        "m4-339"
+      ],
+      "priceConfirmation": "unconfirmed"
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-355",
+      "to": "m4-339",
+      "profile": "friSun",
+      "rub": 220,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "vehicleCategory": 1,
+      "paymentProfile": "no-transponder",
+      "sourceFareStatus": "verified-operator-exact-pair",
+      "sourcePage": 2,
+      "ruleSource": "source-documents/m4-entry-receipt-rules-uploaded-2026-10-14.pdf",
+      "rulePage": 7,
+      "basis": "Northbound entry355paid220; passage339withreceipt charged once",
+      "sectionVector": [
+        "m4-355",
+        "m4-339"
+      ],
+      "priceConfirmation": "unconfirmed"
+    }
+  ]
+}
