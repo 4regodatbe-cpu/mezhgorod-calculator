@@ -1,3 +1,12 @@
+## CURRENT 2026-10-14 — Preview READY, далее CI и приёмка
+
+- [x] Опубликована точная source snapshot 37d55f6/tree943b7806, draft PR13 в integration baseline, Preview READY/version SHA подтверждён, Vercel621/621 PASS. Live Анапа diagnostics parity/620 и Ялта800, desktop UI Анапы проверены. [Отчёт](stages/04-preview-and-live-acceptance-2026-10-14.md).
+- [ ] Опубликовать два CI workflow Node24.x correction и подтвердить повторный Actions run. Первоначальный run38623167929 FAIL до выполнения tests из-за registerHooks/Node22.13.
+- [ ] Добавить результат длинного Москва—СПб контроля. Продолжить mobile/unknown/free/clipboard/профильные границы и остальные сценарии сводного отчёта; не считать UI toast доказательством текста буфера.
+- [ ] Закрывать source/geometry gaps по предыдущему отчёту. Main/Production/Android — отдельный выпуск после приёмки и прямого запроса.
+
+---
+
 ## CURRENT 2026-10-14 — аудит завершён, далее точный Preview и живые проверки
 
 - [x] Проверен активный V3; обязательная trace и неизвестный итог при её неполноте, один согласованный DTO/UI маршрут. Full build 621/621 PASS. [Отчёт](stages/03-consolidated-v3-audit-2026-10-14.md).

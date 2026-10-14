@@ -1,3 +1,13 @@
+## CURRENT 2026-10-14 — Preview опубликован, CI runtime исправляется
+
+DONE: GitHub snapshot 37d55f6 в audit/v3-matrix-provenance-2026-10-14; дерево побайтно совпало с проверенным 3b675df. Draft PR #13 в integration-ветку. Preview dpl_67vpYt2ACFXu3iUhk8hd1x1AAnUG READY, /api/version подтвердил SHA и preview. Vercel 621/621 + quote/API + Next/TypeScript PASS. Живые Анапа 620 и Ялта 800 с предупреждением; diagnostics parity Анапы PASS; браузерный результат Анапы проверен. [Отчёт](../experiments/nationwide-tolls/stages/04-preview-and-live-acceptance-2026-10-14.md).
+
+IN PROGRESS: CI run 38623167929 упал на Node 22.13/registerHooks. Два основных build workflow приведены к Node 24.x; повторный CI ещё нужен. Длинный API контроль запущен. Локальная рабочая audit/v3-published-checkpoint-2026-10-14 отслеживает опубликованную audit-ветку; исходная история сохранена локально.
+
+OPEN/NEXT: проверить CI исправления и длинный маршрут, затем mobile/desktop/unknown/free/clipboard и оставшиеся source/geometry gaps. Main/Production/Android не менялись. Матрица 5076/10 undated, каталог 24; полное покрытие не заявлено.
+
+---
+
 ## CURRENT 2026-10-14 — сводный аудит V3 и обязательная проверка платных событий
 
 DONE: цена больше не зависит от diagnostics. Обычный и специальный V3 проверяют платные события выбранной геометрии; неполная trace блокирует полную сумму (unknown/null). UI принимает один согласованный маршрут. [Подробный отчёт](../experiments/nationwide-tolls/stages/03-consolidated-v3-audit-2026-10-14.md).
