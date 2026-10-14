@@ -34,7 +34,7 @@ test('V3 known A289 price cannot hide another unpriced regional road',async()=>{
  for(const name of ['ЗСД','М-3 Украина','М-1 Беларусь']) {
  const result=await calculateLegTolls({...args,diagnosticFastValidation:trace([name])});
  assert.equal(result.tolls.amount,0);
- assert.ok(result.tolls.segments.some(s=>s.includes(name==='ЗСД'?'regional':name.includes('3')?'m3':'m1')));
+ assert.ok(result.tolls.segments.some(s=>s.includes(name==='ЗСД'?'zsd':name.includes('3')?'m3':'m1')));
  }
 });
 
@@ -94,6 +94,6 @@ test('approximate M12 corridor recovery cannot publish a numeric subset as a com
  assert.equal(result.tolls.amount,0);
  assert.equal(tollsForApi(result.tolls,result.fastValidation).amount,null);
  assert.equal(tollsForApi(result.tolls,result.fastValidation).pricingStatus,'unknown');
- assert.ok(result.tolls.segments.some(s=>s.includes('диагностика')));
+ assert.ok(result.tolls.segments.some(s=>s.includes('m12')), 'paid M12 evidence blocks composition before legacy recovery');
  } finally {globalThis.fetch=original;}
 });

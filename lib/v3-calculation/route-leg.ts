@@ -85,7 +85,9 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
         { name: "Valhalla partial M-4 bypass", result: valhallaPartialTollResult },
         { name: "BRouter", result: brouterFastResult },
       ]);
-  const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
+  // Paid evidence is part of pricing correctness, not an optional diagnostic.
+  void diagnostics; // Compatibility flag; cannot change the selected-route price.
+  const diagnosticFastValidationPromise: Promise<TollValidation | null> = routeGeometry.length >= 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
   const [initialFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);

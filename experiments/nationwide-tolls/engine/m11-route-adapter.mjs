@@ -1,31 +1,35 @@
+import {matrixM11HeadComponent} from './m11-head-route-adapter.mjs';
 import core from './quote.cjs';
 import {stableTariffWindow} from './tariff-window.mjs';
+import validity from './fare-validity.cjs';
+import schedule from '../source-snapshots/m11/order274-calendar-2026-verified.json' with {type:'json'};
 
-// These dates are flagged by existing 2026 operator/calendar snapshots. They
-// are ambiguity guards, not a borrowed tariff schedule for M11 mainline.
-const potentialSpecialDates = new Set(['2026-01-01','2026-01-02','2026-01-03','2026-01-04','2026-01-05','2026-01-06','2026-01-07','2026-01-08','2026-02-23','2026-03-08','2026-03-09','2026-04-30','2026-05-01','2026-05-09','2026-05-10','2026-05-11','2026-06-11','2026-06-12','2026-11-03','2026-11-04','2026-12-30','2026-12-31']);
+// Mainline rules are read from its own order274, independently of the head.
+const specialDates=new Set(schedule.friSunDates2026);
+export function m11MainlineTariffAt(instant){
+ if(!validity.validInstant(instant))return {status:'unknown'};
+ const parsed=new Date(instant);
+ const formatter=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Moscow',year:'numeric',month:'2-digit',day:'2-digit'});
+ const date=formatter.format(parsed);
+ if(!date.startsWith('2026-'))return {status:'unknown'};
+ // Each tariff day starts at01:00 Moscow under order274 footnotes3/4.
+ const tariffDay=formatter.format(new Date(parsed.getTime()-60*60*1000));
+ const day=new Date(tariffDay+'T12:00:00Z').getUTCDay();
+ const profile=[0,5,6].includes(day)||specialDates.has(tariffDay)?'friSun':'monThu';
+ return {status:'resolved',date,profile};
+}
 
 // The native boundary resolver supplies physical directed OD, independently of
 // whether its older partial tariff table contains that cell.
+/** @returns {{reason:string,tolls:import("../../../lib/toll-engine/route-toll-composition").RouteTollValue|null}|null} */
 export function matrixM11Component(production, departureAt, routeSeconds) {
   if (production?.boundaryStatus !== 'resolved' || !production.traversal) return null;
   const fail = reason => ({tolls:null, reason});
   if (production.blockedByMixedRoadEvidence) return fail('m11_mixed_paid_road_evidence');
-  if(typeof departureAt!=='string'||!/(?:Z|[+-]\d\d:\d\d)$/.test(departureAt))return fail('m11_crossing_time_missing');
+  if(!validity.validInstant(departureAt))return fail('m11_crossing_time_missing');
   const start = new Date(departureAt);
   if (!Number.isFinite(start.getTime()) || !Number.isFinite(routeSeconds) || routeSeconds < 0) return fail('m11_crossing_date_missing');
-  const local = date => ({
-    date:new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Moscow',year:'numeric',month:'2-digit',day:'2-digit'}).format(date),
-    day:new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Moscow',weekday:'short'}).format(date),
-  });
-  const resolve = instant => {
-    const p = local(new Date(instant));
-    if(!p.date.startsWith('2026-'))return {status:'unknown'};
-    const profile=['Fri','Sat','Sun'].includes(p.day)?'friSun':'monThu';
-    if(profile==='monThu'&&potentialSpecialDates.has(p.date))return {status:'unknown'};
-    return {status:'resolved',date:p.date,profile};
-  };
-  const window=stableTariffWindow(departureAt,routeSeconds,resolve);
+  const window=stableTariffWindow(departureAt,routeSeconds,m11MainlineTariffAt,[0,60]);
   if(window.status!=='resolved')return fail('m11_'+window.reason);
   const begin=window.begin,profile=begin.profile;
   const {entryPointId:from,exitPointId:to} = production.traversal;
@@ -40,14 +44,21 @@ export function matrixM11Component(production, departureAt, routeSeconds) {
   return {reason:'matrix dated selected-route M11 direct pair',tolls:{amount:actual.rub,weekdayAmount:weekday.rub,weekendAmount:weekend.rub,period:profile==='monThu'?'понедельник–четверг':'пятница–воскресенье',segments:[`М-11: ${from} → ${to} · Стоимость не подтверждена`],confidence:'matched'}};
 }
 
+/** @returns {{reason:string,tolls:import("../../../lib/toll-engine/route-toll-composition").RouteTollValue|null,components:import("../../../lib/toll-engine/route-toll-composition").RouteTollComponent[]}|null} */
 export function matrixM11GeometryComponent(production) {
   if (production?.exact !== true || !production.parts) return null;
   const parts = production.parts;
-  const mainline = matrixM11Component({boundaryStatus:'resolved',traversal:{entryPointId:parts.from,exitPointId:parts.to}},parts.mainlineAt,0);
-  if (!mainline?.tolls) return {tolls:null,reason:mainline?.reason ?? 'm11_geometry_pair_missing'};
-  if (![parts.headAmount,parts.headWeekday,parts.headWeekend].every(x=>Number.isSafeInteger(x)&&x>=0)) return {tolls:null,reason:'m11_head_amount_invalid'};
-  return {reason:'matrix M11 direct mainline pair plus separately proven 15–58 head',tolls:{...mainline.tolls,
-    amount:mainline.tolls.amount+parts.headAmount,weekdayAmount:mainline.tolls.weekdayAmount+parts.headWeekday,
-    weekendAmount:mainline.tolls.weekendAmount+parts.headWeekend,
-    segments:[`М-11 15–58: ${parts.headAmount} ₽ · Стоимость не подтверждена`,...mainline.tolls.segments]}};
+  const mainline = matrixM11Component({boundaryStatus:'resolved',traversal:{entryPointId:parts.from,exitPointId:parts.to}},parts.mainlineAt,parts.mainlineWindowSeconds??0);
+  const head = matrixM11HeadComponent({...parts.head,boundaryStatus:parts.head?'resolved':'unknown'});
+  const components=[
+    {id:/** @type {'m11-15-58'} */('m11-15-58'),detected:true,tolls:head.tolls,reason:head.reason},
+    {id:/** @type {'m11-58-679'} */('m11-58-679'),detected:true,tolls:mainline?.tolls??null,reason:mainline?.reason??'m11_geometry_pair_missing'},
+  ];
+  if (!mainline?.tolls || !head.tolls) return {tolls:null,components,reason:!head.tolls?head.reason:mainline?.reason??'m11_geometry_pair_missing'};
+  const amount=mainline.tolls.amount+head.tolls.amount;
+  const weekdayAmount=mainline.tolls.weekdayAmount+head.tolls.weekdayAmount;
+  const weekendAmount=mainline.tolls.weekendAmount+head.tolls.weekendAmount;
+  if (![amount,weekdayAmount,weekendAmount].every(Number.isSafeInteger)) return {tolls:null,components,reason:'m11_total_amount_invalid'};
+  return {components,reason:'matrix M11 distinct head and mainline ready pairs',tolls:{...head.tolls,
+    amount,weekdayAmount,weekendAmount,segments:[...head.tolls.segments,...mainline.tolls.segments]}};
 }

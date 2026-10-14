@@ -5,7 +5,7 @@ import {createRequire} from 'node:module';
 import {load,root} from './helpers/load-ts.mjs';
 import {matrixM4Component} from '../experiments/nationwide-tolls/engine/m4-route-adapter.mjs';
 const require=createRequire(import.meta.url);
-const {composeSelectedM4A289:compose}=load(resolve(root,'lib/v3-calculation/m4-a289-composition.ts'));
+const {composeSelectedM4A289:compose}=await import('../lib/v3-calculation/m4-a289-composition.ts');
 const {priceA289Route}=load(resolve(root,'lib/toll-engine/a289-engine.ts'));
 const date='2026-10-13T09:00:00+03:00';
 const slavyansk=[38.13,45.25],anapa=[37.32,44.90],krasnodar=[38.98,45.04],rostov=[39.7015,47.2357],yalta=[34.16,44.5],moscow=[37.62,55.76];
@@ -38,15 +38,15 @@ test('Slavyansk Rostov and Anapa Rostov compose the south M4 vector with actual 
   const result=compose(route,p,m,[],date);
   assert.equal(result.tolls.amount,amount);assert.equal(result.tolls.segments.filter(x=>x.startsWith('А-289:')).length,1);
   assert.equal(compose(route.toReversed(),p,m,[],date).tolls.amount,amount);
-  assert.equal(compose(route,p,m,[BYPASS,BYPASS],date).tolls.amount,amount+410);
+  assert.equal(compose(route,p,m,[BYPASS,BYPASS],date).tolls,null, 'a label alone cannot add a bypass price');
  }
 });
 
-test('full Crimea Moscow adds800 rather than replacing the full M4 price',()=>{
+test('full Crimea Moscow consumes the supplied matrix rather than native money',()=>{
  const p={candidate:true,exact:true,tolls:{amount:5040,weekdayAmount:5040,weekendAmount:6090,period:'понедельник–четверг',segments:['М-4 Дон: полный коридор Москва—Краснодар'],confidence:'matched'},m4PvpPreview:{confirmedPvps:['m4-1223','m4-1184','m4-1093']}};
  const route=[yalta,gate103,gate82,gate23,moscow];
- assert.equal(compose(route,p,null,[],date).tolls.amount,5840);
- assert.equal(compose(route,p,null,[BYPASS],date).tolls.amount,6250);
+ assert.equal(compose(route,p,{tolls:p.tolls,reason:"matrix"},[],date).tolls.amount,5840);
+ assert.equal(compose(route,p,{tolls:p.tolls,reason:"matrix"},[BYPASS],date).tolls,null);
 });
 
 test('missing/partial M4 cannot disappear behind a known A289 price',()=>{
@@ -58,7 +58,7 @@ test('missing/partial M4 cannot disappear behind a known A289 price',()=>{
 test('a mixed legacy M4 payload is rejected instead of charging A289 twice',()=>{
  const {p}=production(['m4-1223','m4-1184','m4-1093']);
  p.tolls.segments.push('А-289: old mixed charge');
- const result=compose([slavyansk,gate23,rostov],p,null,[],date);
+ const result=compose([slavyansk,gate23,rostov],p,{tolls:p.tolls,reason:'mixed matrix'},[],date);
  assert.equal(result.tolls,null);assert.match(result.reason,/already contains/);
 });
 
@@ -68,4 +68,17 @@ test('confirmed M4 on a locally named trip is still included, diagnostic neighbo
  assert.equal(compose(local,adjacent,null,[],date).tolls.amount,415);
  const {p,m}=production(['m4-1223']);
  assert.equal(compose(local,p,m,[],date).tolls.amount,415+m.tolls.amount);
+});
+
+
+test('a legacy exact M4 amount cannot replace an absent or rejected matrix',()=>{
+ const {p,m}=production(['m4-1223','m4-1184','m4-1093']);
+ assert.ok(p.tolls.amount>0);
+ for(const matrix of [null,{tolls:null,reason:'tariff expired'}]) {
+  const result=compose([slavyansk,gate23,rostov],p,matrix,[],date);
+  assert.equal(result.tolls,null);
+  assert.match(result.reason,/not completely priced/);
+ }
+ p.tolls={...p.tolls,amount:999999};
+ assert.equal(compose([slavyansk,gate23,rostov],p,m,[],date).tolls.amount,1265);
 });

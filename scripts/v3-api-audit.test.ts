@@ -13,6 +13,7 @@ function response(data:unknown,status=200){return new Response(JSON.stringify(da
 // physical gate detector, matrix, composition and response serializers run.
 globalThis.fetch=async(input)=>{
  const url=new URL(String(input));
+ if(url.pathname==='/trace_attributes')return response({edges:[{toll:true,names:['А-289'],way_id:1,end_node:{type:'toll_booth',node_id:13022464435}}]});
  if(url.hostname==='valhalla1.openstreetmap.de'&&url.pathname==='/route'){
   const q=JSON.parse(url.searchParams.get('json')!);
   const controls=q.locations.map((p:{lon:number;lat:number})=>[p.lon,p.lat]);

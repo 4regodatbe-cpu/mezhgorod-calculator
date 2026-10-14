@@ -8,7 +8,7 @@ const {quote}=require('../experiments/nationwide-tolls/engine/quote.cjs');
 const request=(road:string,from:string,to:string,profile:string,date:string)=>({routeId:'r',evidenceComplete:true,components:[{routeId:'r',traversalId:road,exactTraversal:true,profileResolved:true,road,from,to,profile,localDate:date}]});
 test('CKAD midnight ISO boundary is active on its first Moscow date',()=>{
  assert.equal(quote(request('ckad','М-4 Дон','М-11 Нева','allDays','2026-03-01')).rub,null);
- assert.equal(quote(request('ckad','М-4 Дон','М-11 Нева','allDays','2026-03-02')).rub,2517);
+ assert.equal(quote(request('ckad','М-4 Дон','М-11 Нева','allDays','2026-03-02')).rub,1800);
 });
 test('date-only input cannot choose a price on an intraday change',()=>{
  assert.equal(quote(request('m11-15-58','moscow','sheremetyevo2','night','2026-04-24')).rub,null);
@@ -37,7 +37,7 @@ test('zone loss and monetary overflow cannot produce an apparently complete fare
  const overflow=priced(1e308,0);assert.equal(overflow.totalPrice,null);assert.deepEqual(overflow.pricingSegments,[]);
 });
 test('undated matrix prices retain numeric estimate but cannot become confirmed',()=>{
- const q=quote(request('m1','33 km','66 km','allDays','2026-10-13'));
+ const q=quote(request('heihe','bridge-A','bridge-B','allDays','2026-10-13'));
  assert.equal(q.priceConfirmation,'unconfirmed');assert.equal(q.displayLabel,'Стоимость не подтверждена');
 });
 

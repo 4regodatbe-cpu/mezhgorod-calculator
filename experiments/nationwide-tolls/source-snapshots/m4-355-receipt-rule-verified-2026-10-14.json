@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-14",
+  "sourceUrl": "https://avtodor-tr.ru/upload/iblock/e0b/5kq5uo88zxclelibmubucv607fda7cvv.pdf",
+  "sourceFile": "source-documents/m4-entry-receipt-rules-uploaded-2026-10-14.pdf",
+  "sha256": "a3ed4b13529e0eae7865bfc4192c6944a0b3ece6c371062a97d5b6dc461c57dc",
+  "pages": 13,
+  "sourceAccess": "user-uploadedPDF,text layer read andpages7–8visually inspected",
+  "documentMetadataCreated": "2025-08-13",
+  "effectiveFrom": null,
+  "rule355": {
+    "page": 7,
+    "direction": "towards Moscow",
+    "entry": "m4-355",
+    "nextGate": "m4-339",
+    "chargeAtNextGate": "No second charge when presenting entry receipt",
+    "basis": "section4.2manual cash/card passage"
+  },
+  "otherReceiptRules": {
+    "416/460": {
+      "page": 7,
+      "hours": 12,
+      "printedRangeKm": "414–464",
+      "rangeCurrentnessNote": "2026farePDF uses401–464, so old rule range not substituted into current topology"
+    },
+    "636/672": {
+      "page": 8,
+      "minutes": 120
+    }
+  },
+  "classification355": {
+    "allowedPaidBoundary": "entry towards Moscow",
+    "invalidAsContinuousPaidPair": "355 as southbound entry or artificial exit boundary to/from more southerly toll sections",
+    "limitation": "Exclusion applies to published fare-product model, not assertion that physical travel to/from the coordinate is impossible."
+  },
+  "limitations": [
+    "PDF metadata date is not an established legal effective date.",
+    "Current2026tariffPDF independently confirms355northbound220/220; rule source provides receipt semantics, not numeric prices.",
+    "No new Yandex estimates promoted; no universal true lane/geometry proof claimed."
+  ]
+}

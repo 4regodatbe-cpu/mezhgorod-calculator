@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-10-14",
+  "source": "https://www.openstreetmap.org/api/0.6/map?bbox=30.332,59.768,30.365,59.82",
+  "sourceRawArchive": "source-snapshots/m11/2026-10-14-osm-tail-corridor.osm.gz",
+  "sourceRawSha256": "b5181ef4e570733c8801b851cc5e3e2f7bc21e17d860d568fac7485afa9008e1",
+  "license": "OpenStreetMap contributors / ODbL",
+  "sourceOperatorPdf": "source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf",
+  "sourceOperatorPdfSha256": "6b52ca130ee7e8a7948c2b39982c00d82174e4e45ec5dcd3983355238c403b91",
+  "sourceOperatorPages": [
+    9,
+    10
+  ],
+  "productId": "m11-679-684",
+  "airportAccessGates": [
+    {
+      "id": "13377945035",
+      "lon": 30.3344595,
+      "lat": 59.7902367,
+      "tags": {
+        "highway": "toll_gantry",
+        "name": "М-11 - Аэр. Пулково"
+      },
+      "osmTimestamp": "2025-12-15T10:58:45Z"
+    },
+    {
+      "id": "13377945036",
+      "lon": 30.3344662,
+      "lat": 59.790126,
+      "tags": {
+        "highway": "toll_gantry",
+        "name": "Аэр. Пулково - М-11"
+      },
+      "osmTimestamp": "2025-12-15T10:58:45Z"
+    }
+  ],
+  "operatorAirportAccessFareRub": 38,
+  "operatorCombinedAirportMainlineFareRub": 94,
+  "runtimePolicy": "Detect paid airportaccess as an explicit unresolved product; no numeric total until mainline/airport selection and exact paid endpoint coverage are resolved.",
+  "mainlineMappingStatus": "unresolved; no separately tagged mainline tail gantry identified in this map response",
+  "interestingNodes": [
+    {
+      "id": "15499972",
+      "lon": 30.3702887,
+      "lat": 59.8152076,
+      "tags": {
+        "highway": "motorway_junction"
+      },
+      "osmTimestamp": "2020-02-13T10:00:56Z"
+    },
+    {
+      "id": "187587141",
+      "lon": 30.361476,
+      "lat": 59.8151242,
+      "tags": {
+        "highway": "motorway_junction"
+      },
+      "osmTimestamp": "2019-07-12T14:13:01Z"
+    },
+    {
+      "id": "2490216407",
+      "lon": 30.3378008,
+      "lat": 59.8023721,
+      "tags": {
+        "highway": "motorway_junction"
+      },
+      "osmTimestamp": "2023-08-05T17:27:11Z"
+    },
+    {
+      "id": "2490216849",
+      "lon": 30.3467053,
+      "lat": 59.813211,
+      "tags": {
+        "highway": "motorway_junction"
+      },
+      "osmTimestamp": "2023-08-05T17:27:11Z"
+    },
+    {
+      "id": "2492861243",
+      "lon": 30.3598352,
+      "lat": 59.7750977,
+      "tags": {
+        "barrier": "toll_booth",
+        "fee": "yes"
+      },
+      "osmTimestamp": "2020-05-18T18:59:40Z"
+    },
+    {
+      "id": "2492861246",
+      "lon": 30.3601165,
+      "lat": 59.7751615,
+      "tags": {
+        "barrier": "toll_booth",
+        "fee": "yes"
+      },
+      "osmTimestamp": "2020-05-18T18:59:40Z"
+    },
+    {
+      "id": "7014845614",
+      "lon": 30.3604199,
+      "lat": 59.7752303,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "7014845615",
+      "lon": 30.3603074,
+      "lat": 59.7752048,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "7014845616",
+      "lon": 30.3602159,
+      "lat": 59.7751841,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "7014845619",
+      "lon": 30.359684,
+      "lat": 59.7750634,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "7014845620",
+      "lon": 30.3595836,
+      "lat": 59.7750406,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "7014845621",
+      "lon": 30.3594921,
+      "lat": 59.7750199,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "7014845622",
+      "lon": 30.3593907,
+      "lat": 59.7749969,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "7014845623",
+      "lon": 30.359294,
+      "lat": 59.774975,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "7014845624",
+      "lon": 30.3591969,
+      "lat": 59.7749529,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "7014845625",
+      "lon": 30.359086,
+      "lat": 59.7749278,
+      "tags": {
+        "barrier": "toll_booth"
+      },
+      "osmTimestamp": "2019-11-27T16:27:57Z"
+    },
+    {
+      "id": "13377945035",
+      "lon": 30.3344595,
+      "lat": 59.7902367,
+      "tags": {
+        "highway": "toll_gantry",
+        "name": "М-11 - Аэр. Пулково"
+      },
+      "osmTimestamp": "2025-12-15T10:58:45Z"
+    },
+    {
+      "id": "13377945036",
+      "lon": 30.3344662,
+      "lat": 59.790126,
+      "tags": {
+        "highway": "toll_gantry",
+        "name": "Аэр. Пулково - М-11"
+      },
+      "osmTimestamp": "2025-12-15T10:58:45Z"
+    }
+  ],
+  "retrievalNotes": [
+    "Known M12 node8712957062 GET returned200; Overpass406NotAcceptable did not yielddata.",
+    "Initial largerOSMmap exceeded50000node APIlimit; smaller map200 and finalnarrow corridor200 returnedprimary data. No protection-bypass or networkpathchange.",
+    "Absence of extra toll_gantry tags in this response does not prove absence of physical toll cameras.",
+    "Shali October endpoint mapping stillunresolved; no coordinates synthesized or aliases promoted."
+  ]
+}

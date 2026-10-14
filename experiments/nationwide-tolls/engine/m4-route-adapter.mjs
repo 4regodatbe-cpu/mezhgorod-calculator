@@ -1,50 +1,11 @@
 import core from './quote.cjs';
-import register from '../TARIFF_SELECTION_REGISTER.json' with {type:'json'};
-import reviewed from '../M4_REVIEWED_ENDPOINT_CELLS_2026-10-13.json' with {type:'json'};
-
-const endpointConflictKeys=new Set();
+import endpoints from '../M4_ACTIVE_ENDPOINT_REGISTER.json' with {type:'json'};
 const endpointKey=(from,to,profile)=>JSON.stringify([from,to,profile]);
-
-// Re-index already stored finished prices by outer boundaries. Never add fees
-// here. Conflicting endpoint cells remain ambiguous rather than choosing one.
-function endpointRegister(input){
- const out={selected:[],provisional:[],history:[]};
- for(const group of Object.keys(out)){
-  const seen=new Set();
-  for(const row of input[group]){
-   if(row.road!=='m4-candidate')continue;
-   const vector=row.sectionVector?.flatMap(id=>id.split('+'));
-   if(!vector?.length)continue;
-   // Generated candidate chains with conflicting endpoint fares are retained
-   // for audit but cannot participate in runtime lookup.
-   if(row.runtimeEligible!==true){
-    const [from,to]=[vector[0],vector.at(-1)];
-    endpointConflictKeys.add(endpointKey(from,to,row.profile));
-    continue;
-   }
-   // Directional entries are generated and audited independently. Do not
-   // manufacture the reverse direction from a forward candidate.
-   const [from,to]=[vector[0],vector.at(-1)];
-   const cell={...row,from,to};
-   const key=JSON.stringify([from,to,row.profile,row.rub,row.source,row.effectiveFrom,row.effectiveTo,row.validFrom,row.validUntil]);
-   if(!seen.has(key)){seen.add(key);out[group].push(cell);}
-  }
- }
- const reviewedKeys=new Set();
- for(const cell of reviewed.rows){
-  const key=JSON.stringify([cell.road,cell.from,cell.to,cell.profile]);
-  if(cell.road!=='m4-candidate'||!['monThu','friSun'].includes(cell.profile)||!Number.isSafeInteger(cell.rub)||cell.rub<0||!cell.source||!cell.observationId||reviewedKeys.has(key))throw Error('invalid_reviewed_m4_endpoint_cell');
-  reviewedKeys.add(key);
- }
- for(const key of reviewedKeys){
-  const [,from,to,profile]=JSON.parse(key);
-  endpointConflictKeys.delete(endpointKey(from,to,profile));
- }
- for(const group of Object.keys(out))out[group]=out[group].filter(cell=>!reviewedKeys.has(JSON.stringify([cell.road,cell.from,cell.to,cell.profile])));
- out.provisional.push(...reviewed.rows);
- return out;
-}
-const endpointCore=core.createQuoteEngine(endpointRegister(register));
+const endpointConflictKeys=new Set(endpoints.unknown.filter(row=>row.reason==='remaining-fare-conflict').map(row=>row.key));
+const excludedEndpointKeys=new Set(endpoints.excludedEndpoints.map(row=>row.key));
+// Compiled offline: one directed endpoint/profile row. No runtime sums or
+// selection among historical chains. Unknown ramp directions stay absent.
+const endpointCore=core.createQuoteEngine({selected:[],provisional:endpoints.rows,history:[]});
 import {stableTariffWindow} from './tariff-window.mjs';
 import {m4TariffPeriodAt} from '../../toll-od-matrix/m4-fare-calendar-2026.mjs';
 export function matrixM4Component(production, departureAt, routeSeconds){
@@ -63,6 +24,7 @@ export function matrixM4Component(production, departureAt, routeSeconds){
  const isSouth=production.endpointOnly ? positions.every(x=>x>=0) : positions.length>1&&positions.every(x=>x>=0)&&positions.every((p,i)=>!i||Math.abs(p-positions[i-1])===1);
  const key=ids.join('>');
  const component={routeId:'selected-fast-route',traversalId:'m4',exactTraversal:true,profileResolved:true,road:isSouth?'m4-south':'m4-candidate',from:isSouth?ids[0].slice(3):production.endpointOnly?ids[0]:key,to:isSouth?ids.at(-1).slice(3):production.endpointOnly?ids.at(-1):key,profile:start.profile,localDate:start.date};
+ if(production.endpointOnly&&!isSouth&&excludedEndpointKeys.has(endpointKey(component.from,component.to,component.profile)))return unknown('m4_unsupported_paid_endpoint_pair');
  const request=c=>({routeId:'selected-fast-route',evidenceComplete:true,components:[c]});
  const engine=production.endpointOnly&&!isSouth?endpointCore:core;
  const actual=engine.quote(request(component));

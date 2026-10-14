@@ -1,14 +1,14 @@
 {
   "asOf": "2026-10-13",
-  "generatedAt": "2026-10-13T18:37:28.886Z",
+  "generatedAt": "2026-10-14T15:46:58.070Z",
   "status": "current candidates authorized for visibly unconfirmed estimates; integration pending",
   "runtimeApproved": false,
   "counts": {
-    "input": 4699,
-    "selected": 2096,
+    "input": 5076,
+    "selected": 2477,
     "history": 777,
     "excluded": 0,
-    "provisional": 1826,
+    "provisional": 1822,
     "pendingCandidates": 0
   },
   "selectedByRoad": {
@@ -17,6 +17,7 @@
     "m1": 2,
     "m3": 24,
     "ckad": 210,
+    "ckad-small-vyazemy": 2,
     "m4-south": 32,
     "mytishchi": 30,
     "odintsovo": 96,
@@ -30,7 +31,8 @@
     "ryazan": 4,
     "kazan": 4,
     "msd": 513,
-    "m12": 7
+    "m12": 382,
+    "m4-dzok": 4
   },
   "excludedByRoad": {},
   "excludedRoads": [
@@ -42,8 +44,8 @@
   "unresolved": [
     {
       "road": "m12",
-      "scope": "post-2026-10-08 vectors crossing extended Shali boundary except Sokury–Shali direct99",
-      "action": "no current candidate price for changed boundary: unknown unless a dated direct price exists"
+      "scope": "physical mapping of post-2026-10-08 Shali boundary to operator order302 direct matrix",
+      "action": "380 current direct cells are preserved; old832 candidate stays expired until exact new endpoint mapping"
     },
     {
       "road": "m4",

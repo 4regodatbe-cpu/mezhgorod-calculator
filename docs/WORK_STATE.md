@@ -1,3 +1,175 @@
+## CURRENT 2026-10-14 — сводный аудит V3 и обязательная проверка платных событий
+
+DONE: цена больше не зависит от diagnostics. Обычный и специальный V3 проверяют платные события выбранной геометрии; неполная trace блокирует полную сумму (unknown/null). UI принимает один согласованный маршрут. [Подробный отчёт](../experiments/nationwide-tolls/stages/03-consolidated-v3-audit-2026-10-14.md).
+
+VERIFIED: focused 27/27, новые API tests 5/5; полный build 621/621 + quote/API + TypeScript/Next PASS. Исходный HEAD a662b78, ветка audit/v3-matrix-provenance-2026-10-14. Матрица 5076/10 undated и каталог 24 не менялись. Локальный HTTP smoke не завершён из-за среды; нет нового CI/Preview/Production.
+
+OPEN/NEXT: сохранить audit-ветку на GitHub, проверить Preview SHA и живые API/UI/задержки обязательной trace. Источники/география М4, М11, новая Шали, ЦКАД context/Small Vyazemy, регионы/Псков и 10 дат остаются открытыми. Этап 3 не закрыт; полное покрытие России не заявлено.
+
+---
+
+## CURRENT 2026-10-14 — ЦКАД/региональные продукты и paid completeness guard
+
+DONE:13 распознанных региональных product IDs вместо broad денежногоregional; Псков/неопознанноеpaidсобытие явноunknown. Матched М4/М11/М12/ЦКАД теперь не пропускаются при известнойцене другойдороги (исправленpartial620 bug). Aliasesодногоbooth не создаютдополнительнуюдорогу. SmallVyazemy отдельноunknown. ВерхнийЦКАД geometry-only безnativeденег+readyquote/window;16conditionalcellsнеразблокированы. [Подробный отчёт](../experiments/nationwide-tolls/stages/03-v3-ckad-regional-identity-and-paid-evidence-2026-10-14.md).
+
+VERIFIED: finaltargeted20/20,new10/10,full616/616+quote/API+TypeScript/NextPASS(exit0),diffcheckPASS. PDF56pages2/3scope/hashreview сохранён. Branch audit/v3-matrix-provenance-2026-10-14,parentdf9120a;remoteintegration свежийa5c892e67af4b050f53bf2211b62feac34d6df6c. Матрица5076/10undated,каталог24 unchanged. Нетpush/CI/PR/Preview/Production.
+
+OPEN/NEXT: консолидированныйaudit активногоV3/releasecriteria и blockers, thenstage4 API/UI/реальныемаршруты. 120minоператорскийконтекстЦКАД,Small/region physicalboundaries,4Псковдороги,10dates,новаяШали/М12anchors иМ11ПВП21/p147/localheads/tail ещёopen. Этап3 не закрыт автоматически616тестами; полноепокрытиеРФ не заявлять.
+
+---
+
+## CURRENT 2026-10-14 — М12 outer boundaries и cleanup V3 завершены
+
+DONE: активный V3 М12 получает ready pair по крайним калиброванным границам, без native priced/tolls и промежуточной continuity/inferred суммы. Date/version window проверяется; старый832 не подменяет новуюШали. Dead crimeaM4Total и hidden bypass money А289 удалены; А289 только own price/allDays/strictdate. [Подробный отчёт](../experiments/nationwide-tolls/stages/03-v3-m12-outer-boundaries-and-helper-cleanup-2026-10-14.md).
+
+VERIFIED: focused29/29,new8/8,finalfocused30/30; finalfull606/606+quote/API+TypeScript/NextPASS(exit0),diffcheckPASS. First cleanup reason/TypeScript проблемы исправлены, описаны. Branch audit/v3-matrix-provenance-2026-10-14,parent10bc704; remoteintegration повторно a5c892e67af4b050f53bf2211b62feac34d6df6c. Матрица5076/10undated unchanged. Нет push/CI/PR/Preview/Production.
+
+OPEN/NEXT: ЦКАД conditional context/SmallVyazemy, самостоятельные regional productIds/география; затем finalactiveV3 audit и этап4. М12 geography частична/новаяШали unbound, М11 ПВП21/локальные endpoints/p147/tail scope open. Этап3 не завершён, fullRussia coverage не заявлено.
+
+---
+
+## CURRENT 2026-10-14 — М11: head/mainline/tail разделены в активном V3
+
+DONE: готовый направленный head quote вместо native денег; собственный календарь/01:00/06:00 и время оплаты на выезде. Северный/южный полный московский mainline использует крайние p58/p679 без p593 prerequisite. На юг ПВП21 ещё без координат — стабильное окно оплаты, при смене профиля unknown. Верхний V3 добавляет head/mainline/tail отдельно; неоценённый хвост блокирует итог в обоих направлениях, включая mainline-only поездки. 210 head ячеек заново совпали с official PDF. [Подробный отчёт](../experiments/nationwide-tolls/stages/03-v3-m11-products-and-payment-time-2026-10-14.md).
+
+VERIFIED: final focused25/25, полный build601/601 + quote/API + TypeScript/Next PASS(exit0), PDF210/210, diffcheckPASS. Branch audit/v3-matrix-provenance-2026-10-14,parent7d3427f; remoteintegration повторно a5c892e67af4b050f53bf2211b62feac34d6df6c. Два primaryPDF+SHA сохранены. Нет push/CI/PR/Preview/Production. NativeV2 production не менялся.
+
+OPEN/NEXT: М12 старый priced eligibility/outer geometry, новая Шали; ЦКАД context/SmallVyazemy, региональные product bindings,10 строк без даты. М11 ПВП21 точные координаты, локальные head endpoints,p147/mainline geography,tail/airport scope ещё открыты. Этап3 не завершён; next М12 без денежных/промежуточных native prerequisite.
+
+---
+
+## CURRENT 2026-10-14 — М4, А289 и обход: самостоятельные компоненты V3
+
+DONE: активный верхний V3 передаёт `m4`, `a289`, `krasnodar-west-bypass` вместо денежного `m4_a289`. Обход использует собственную матрицу, направленные OSM ПВП 46 и дату/профиль; старое широкое совпадение без пересечения не даёт цену. Дубли/старый агрегат вместе с новыми продуктами блокируются. Архив и SHA источника сохранены. [Подробный отчёт](../experiments/nationwide-tolls/stages/03-v3-southern-products-2026-10-14.md).
+
+VERIFIED: focused 21/21, новые 7/7, финальный полный build 592/592 + quote/API + TypeScript/Next PASS, exit0. Первые ошибки VM-теста/JS типа исправлены и описаны. Branch audit/v3-matrix-provenance-2026-10-14, parent 1d09027; integration remote повторно проверен a5c892e67af4b050f53bf2211b62feac34d6df6c. Нет push/CI/Preview/Production. Цены обхода остаются оценками с предупреждением.
+
+OPEN/NEXT: отдельный готовый тариф головного М11 вместо native head money, независимые head/mainline/tail. Этап 3 не завершён. Новая Шали, М11 tail/airport scope, ЦКАД context, Small Vyazemy, региональные bindings и 10 строк без даты открыты. Старые совместимые helper-ы не используются в активном денежном пути обхода, но не удалены.
+
+---
+
+## CURRENT 2026-10-14 — V3: удалены прямые денежные подстановки
+
+DONE: верхний расчёт М4/М11/М12/ЦКАД не заменяет отсутствующую матрицу production-суммой; композитор М4/А289 также требует матричный М4. Геометрическая оценка остаётся диагностикой. Неполная бесплатная диагностика не даёт 0; неизвестная цена сериализуется в null. Общий сборщик защищён от дробных/небезопасных сумм и переполнения. [Подробный отчёт](../experiments/nationwide-tolls/stages/03-v3-upper-pricing-fallbacks-2026-10-14.md).
+
+VERIFIED: focused 30/30, новые 4/4, полный build 585/585 + quote/API + TypeScript/Next PASS, exit 0. Branch `audit/v3-matrix-provenance-2026-10-14`, parent `4e7ff40`; remote integration повторно проверен: `a5c892e67af4b050f53bf2211b62feac34d6df6c`. Нет push/CI/Preview/Production.
+
+OPEN/NEXT: этап 3 продолжается. Разделить агрегированные ID М4/А289/обхода; привязать границы обхода и заменить старую цену `M4`. Затем собственная матричная цена головного участка М11 и раздельные mainline/tail. Новая Шали, ЦКАД context, Small Vyazemy, региональные bindings и 10 строк без доказанной даты остаются открытыми. Полное устранение старых денежных зависимостей не заявлено.
+
+---
+
+## CURRENT 2026-10-14 — М12 directpair, независимыепродукты и Пулковоguard
+
+DONE: adapterМ12 получаетготовуюнаправленнуюоператорскуюпару изprovedboundary вместоfullRVPvector и игнорируетnativemoney; старыйgeometryeligibilitygate сохраняется. Общийquote различаетM4 иотдельныйDZOK, не допускаетдвойныепредставленияоднойдороги/несогласованныйproductId. ЦКАДconditionalguard уточнён28→16;12неотносящихсяM12north-sidepairs разблокированы. OSMAPI:2реальныеairportgantries Пулково найдены/архивированы(hash). V3 положительнодетектируетих какнеоценённыйпродукт: APIunknown/null,дажеприproviderfree; числовые38/56/94 не активированы. SmallVyazemy добавлен отдельнымproduct; каталог24. [Подробныйотчёт](../experiments/nationwide-tolls/stages/03-directed-pairs-and-physical-product-guards-2026-10-14.md).
+
+VERIFIED:builders/validator5076PASS; новыеfocused17/17 и9/9; final580/580+quote/API+NextTypeScript16pagesPASS(exit0),diffcheckPASS. Перваягеометрическаяпроверка14/15: testошибочнопроверялinternal0вместоAPIserializer/null, исправлен scopeassertion. Branch audit/v3-matrix-provenance-2026-10-14,parent806e4b8;remoteintegrationa5c892e...свежимlsremote. Нетpush/CI/Preview/Production.
+
+OPEN/NEXT: новаяШали геометрическине связана;М12nativeгеометрияещёсканируетвнутреннююнепрерывность;М11mainlinetail/airportscope,ЦКАДcontext,SmallVyazemybinding иверхнийV3сборщикindependentproducts остаютсяopen. OSMpartialresponseнеполучениевсехкамер.10undatedrowsнеизменны. Не заявлятьполноеэтап3/Russia coverage.
+
+---
+
+## CURRENT 2026-10-14 — даты27→10, календарьМ11 и проверкиусловий исправлены
+
+DONE:17строк получили доказанные даты:М1(2),Рязань(4),Кама/Буй(6),Казань(4),МСДтранзит(1). Казань начинает09.03.2025 23:50:01, а не06.03. М11order274визуально перечитан: переключение01:00 и собственные праздники2026; проверка временного окна больше не использует полдень вне поездки. СеверныйmainlineAt теперь расчётныйвыезд679. Перенесены кодовые исправленияa01:строгийtimezone/dateЦКАД и безопасныйсуммарныйМ11. Рязанскийночной0 требуетполосу;МСД950 требуетконтекст. [Подробныйотчёт](../experiments/nationwide-tolls/stages/02-dates-and-m11-tariff-calendar-2026-10-14.md).
+
+VERIFIED:5076matrixunique/builders/auditPASS,focused30/30,full571/571+quote/API+Next/TypeScript16pagesPASS(exit0),diffcheckPASS. RemoteintegrationHEADсвежимls-remote=a5c892e67af4b050f53bf2211b62feac34d6df6c. Branch audit/v3-matrix-provenance-2026-10-14,parent4d004ac;безpush/CI/Preview/Production.
+
+OPEN/NEXT:10undatedrows=pskov8+heihe2 остаютсяunconfirmed, даты не придуманы. ГеометрическиеbindingsМ11tail/М12newShali/ЦКАДусловий не объявлены закрытыми. Далее самостоятельныеproductId/готоваяпара вV3, unknownне0/partialнеfull. Подробная история сохранена ниже и вWORK_LOG.
+
+---
+
+## CURRENT 2026-10-14 — PDF-блок закрыт; ЦКАД исправлен, текущая матрица М12 сохранена
+
+DONE: обработаны7PDF,5новых сохранены сSHA,2дубликата М4/М11 reused. Исправлены210ЦКАДdirectcells: прежняяCatIIтаблица ошибочно считаласьCatI. М10–ПК5=2278,М4–М11=1800. Добавлены380directcells М12(order302,08.10):Москва–Шали5946,Р239–Шали99.28ЦКАДcells сendpointМ12 требуют отдельно доказанного tariffcontext; безнегоunknown. М3/Тольятти даты добавлены30строкам, undated57→27. А28912operatorcells visuallyverified,amountsunchanged. Raw5076,selected2477/history777/provisional1822;М4active728 unchanged. [Полный отчёт](../experiments/nationwide-tolls/stages/02-uploaded-operator-pdfs-2026-10-14.md).
+
+VERIFIED: builders/validator/auditPASS;focused26/26, дополнительныйстарыйtest1/1; финальныйbuild565/565,quote/API,TypeScript/Next16pagesPASS(exit0). Первоначальныйbuild1FAIL из-заожиданиястаройCatIIцены161≠227, исправлен и повторён. Веткаaudit/v3-matrix-provenance-2026-10-14,parent77ca608; нетpush/CI/Preview/Production.
+
+IN PROGRESS/NEXT: PDFЦКАД/М12 повторноне нужны. ГеометрияактуальныхМ12границ/сноскаЦКАД/М11products и27региональных дат остаются; новаяМ12таблица не оживляет expiredРВП832. Stage2nationwide незавершён, затемstage3 независимыеproductId. Не заявлятьполноеРоссийскоепокрытиеилиподтверждениевсех404М4estimates.
+
+---
+
+## CURRENT 2026-10-14 — прислан повторный M4rules; актуальныеPDFURL не получены
+
+DONE: новый PDF(2) hash совпадает с уже сохранёнными13-page М1/М3/М4rules; новых ЦКАД/M12тарифов нет. Пользовательский screenshot показывает404, полныйURL обрезан — не приписывать404 конкретному файлу. Старые прямыеPDFlinks только индексированы, не подтверждены как рабочие. BLOCKED: liveАвтодор tariffs в cloudbrowser требует manualrobotcheck после1reload; CAPTCHA не решалась. tskad альтернативныйURL502connectionrefused. [Подробности и путь скачивания через сайт](../experiments/nationwide-tolls/MATRIX_OPEN_ITEMS_AND_DOCUMENTS_2026-10-14.md).
+
+NEXT: пользователь может скачать2PDF собственными ссылками страницы тарифов; не просить повторноM4rules. М11/region source work независимо продолжается. Docs-only на parent5fb60cd; никакие цены/код не менялись, новыхtests/build/CI/deploy нет.
+
+---
+
+## CURRENT 2026-10-14 — матрица не закрыта; нужны ЦКАД/М12 PDF
+
+DONE: сверено состояние d66b1d4 и оставшиеся вопросы. М4:428=404canonical unconfirmed+24excluded,728active; документы355 закрыты. IN PROGRESS: ЦКАД210cells требуют category re-audit: индекс официальной страницы показывает42/2278 дляI против60/3189 дляII, сохранённая Cat-I таблица содержит последние; runtimeApproved=false. Никакие цены ещё не исправлены по индексному тексту. М12 MarchPDF+Octoberboundary/OD остаются; М11 PDFmainline уже есть, head/rules доступны, пользователь повторно не нужен;57rawrows без startdate. [Подробный статус и два PDF](../experiments/nationwide-tolls/MATRIX_OPEN_ITEMS_AND_DOCUMENTS_2026-10-14.md).
+
+NEXT: получить ЦКАД/M12 первичныеPDF и проверить категории/даты/OD, затем физические привязки и тесты. Docs/source-status only; tests/build не запускались, предыдущие560/560/buildPASS не выдаются за новый прогон. Нетpush/CI/Preview/Production; parentd66b1d4.
+
+---
+
+## CURRENT2026-10-14 — ПВП355 разбор закрыт,24ключа исключены
+
+DONE: пользователь прислал13-page rulesPDF5kq5uo88zxclelibmubucv607fda7cvv.pdf; текст/визуальнаяпроверкастр7–8 подтверждаетnorthbound entry355→339receipt(no secondcharge). OriginalPDF+SHA/source snapshot сохранены.2026tariffPDFrow355220/220+правило дают2directoperatorcells355→339 в M4_OPERATOR_ENDPOINT_CELLS.json. Невозможнаяfareмодель355as southbound entry/artificialexit исключена:64keys всего,24изисходных428конфликтов. Не заявлено,чтоphysicaljourneyкточке355невозможен.
+
+ACTIVE:728uniqueendpointkeys,404canonicalestimates(originalconflicts),24excluded(originalconflicts),0unresolvedoriginalconflicts;668internalrampchains внеlookup;4reviewedcells preserved. Archivedsource4699rows/428oldconflicts сохраняется. Runtimeexcluded pair=>unknown(m4_unsupported_paid_endpoint_pair),не0;355→339=220once,bothprofiles,reverse not manufactured. Routephysicalconfidence/ODconfirmation still unconfirmed as before.
+
+VERIFIED:focused23/23;fullnpm run build -- --webpack560/560tests,quote/APIcontracts,TypeScript/NextPASS(exit0),diffcheckPASS. Branchaudit/v3-matrix-provenance-2026-10-14,parent3e29988;безpush/CI/Preview/Production. NEXT nationwide stage2M11/M12/CKAD/date57rawgaps,thenruntimeproductsplitstage3.355documentblock closed;no further355PDFrequested. Existing standalonea01e2bfCKAD/M11fixes insecondcheckout stillneedintegrationcheck.
+
+---
+
+## CURRENT2026-10-14 — uploadedM4 PDF source verification applied
+
+DONE: user PDF9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf,5scannedpages rendered/read. Operator order58, stated effective start2026-03-02T00:00:00+03:00(page5). CategoryI cash/card rows match all21 normalized saved entries.355 explicitly towardsMoscow; slash636/672 discount220/270 applies APD-transponder-only partial route, not no-transponder. Original sourcePDF preserved and hash-linked in source-documents/m4-order58-effective-2026-03-02.pdf; transcription source-snapshots/m4-order58-2026-03-02-category1-verified.json.
+
+IMPLEMENTED: generator checks source values against verified transcription;1492 M4 rows(candidates1456,south32,DZOK4) gain verified start/source status. MissingStartDate1549→57 across raw4699. No amounts changed. Compiler/adapters preserve unconfirmed exactOD status and4reviewed overrides;404 priorconflicts restored estimates,24unknown unchanged. BeforeMarch2 fares blocked.
+
+VERIFIED: all builders/matrixvalidator, focused3/3, finalnpm run build -- --webpack557/557+quote/APIcontracts+TypeScript/NextPASS(exit0),diffcheckPASS. Branchaudit/v3-matrix-provenance-2026-10-14,parente106d02. Notpush/CI/Preview/Production. NEXT user may supply rulesPDF e0b/5kq5uo88zxclelibmubucv607fda7cvv.pdf for detailed355 entry/receipt semantics; tariffPDF does not alone certify geometry/wholefare/current no-amendment. ContinueM11/M12/CKADstage2.
+
+---
+
+## CURRENT2026-10-14 —24 Яндекс контроля355 выполнены, импорт цен0
+
+DONE: пользователь явно разрешил cloud browser fallback. Реально построены12 направленных пар355↔803/911/1046/1093/1184/1223 x2даты(15/17окт10:00Москва);24/24 сумм видны. [Отчёт](../experiments/nationwide-tolls/stages/02-yandex-355-controls-2026-10-14.md); compact DOM-derived evidence live-controls/2026-10-14-yandex-355-results.json.
+
+FOUND: карточка ПВП355 имеет адрес357-йкм рядом сrepoanchor; это не ошибочная точка только из-за номера. Маршруты к точке существуют, но около355 есть въезды/выезды/разворот, exact continuous paid355 boundary не доказана.355→8033530/4090,803→3551450/1830 — whole-route approximate observations, не матричные тарифы.24 unknown cells не активированы,0 runtime imports. Не объявлять directions impossible и не зеркалить.
+
+CHECKS: savedJSON24unique/24amounts/0imports, diffcheckPASS; browser actual route/UI dates/vehicle/both directions observed. Docs/evidence-only, новыеtests/build/CI/Preview/Production не запускались. BRANCH audit/v3-matrix-provenance-2026-10-14,parent49a836b. NEXT получитьPDF пользователя, подтвердить точные направленные paidboundaries355 и стороны остальныхПВП, then same-route fare binding; stage2nationwideIN PROGRESS.
+
+---
+
+## CURRENT 2026-10-14 — запрос PDF и24 Яндекс controls: BLOCKED до запуска
+
+DONE prep: найден прямой подробный M4 PDF a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf (direct403) и отдельный355 rulePDF e0b/5kq5uo88zxclelibmubucv607fda7cvv.pdf. Пользователь предложил скачать/передатьPDF. Подготовлены24 exact boundary/profile URLs (355↔803/911/1046/1093/1184/1223,12 directions x2date profiles) в live-controls/2026-10-14-yandex-355-pending.json.
+
+BLOCKED actual UI: Opera list_tabs Browser not connected; TinyFish run did not start(wallet_out_of_funds,-0.221166 USD), no runID/no observations. No retry/no fabricated route/price/no runtime changes. NEXT восстановить авторизованный browser-access, выполнить24 controls с проверкой фактического crossing355/route snapping; получитьPDF от пользователя. Docs/preparation-only, tests/build not rerun. Branch audit/v3-matrix-provenance-2026-10-14 parent3839a0c.
+
+---
+
+## CURRENT 2026-10-14 — М4 endpoint очистка внедрена локально
+
+DONE: отдельный M4_ACTIVE_ENDPOINT_REGISTER.json + offline compiler + rebuild-hook в build-release-register.cjs; V3 endpoint adapter использует726 уникальных готовых estimates.668 ошибочных внутренних ramp-вариантов исключены из активного lookup; source matrix сохранена. Из прежних428 keys404 имеют одну topology-пригодную оценку,24 unsupported355-direction остаются unknown.4 reviewed exact overrides сохранены. Активных конфликтных цен0. Все новые восстановленные цены unconfirmed; официальная дата/источник не сертифицированы.62→460=1740/2120 (candidate), не1590/1940.
+
+VERIFIED: focused17/17; final npm run build -- --webpack554/554, quote/API contracts, TypeScript/Next PASS(exit0); register generator, matrix validator PASS; diffcheck PASS. BRANCH audit/v3-matrix-provenance-2026-10-14 parent e1f465f; без push/CI/Preview/Production. [Полный отчёт этапа2](../experiments/nationwide-tolls/stages/02-matrix-and-provenance.md). Старые428 conflicts в исходной4699-row матрице — архивный источник, не активный runtime.
+
+NEXT: независимые same-boundary/profile operator/Yandex controls для restored estimates и source/date проверка; unsupported355 remains unknown. Далее M11/M12/CKAD по DELIVERY_PLAN. Stage2 nationwide IN PROGRESS, корректность всех тарифов России не заявлена.
+
+---
+
+## CURRENT 2026-10-14 — этап2: audit-only защита общего ядра
+
+DONE: quote.cjs больше не возвращает runtimeEligible:false даже по точному полному ключу цепочки; unknown audit-only-fare-row сохраняется в общем итоге с другими дорогами. Регрессия проверяет все1096 quarantined строк. Первичные topology сведения672(съезд) и355(въезд/чек339) записаны отдельно с ограничениями; актуальный PDF/страница вернули403, новые цены не импортированы. [Отчёт этапа2](../experiments/nationwide-tolls/stages/02-matrix-and-provenance.md).
+
+VERIFIED: focused2/2; npm run build -- --webpack551/551 tests, quote/API contracts, TypeScript/Next PASS(exit0); diffcheck PASS. BRANCH audit/v3-matrix-provenance-2026-10-14, parent ebcea80; локально, без push/CI/Preview/Production. Этап2 IN PROGRESS:428 конфликтов остаются unknown. NEXT: актуальное направленное соответствие строк355/672 и mainline; exact-pair/date/profile проверки до активации; затем M11/M12/CKAD. Не выдавать структурную причину за подтверждение цены.
+
+---
+
+## CURRENT 2026-10-14 — этап 2, структурный аудит матрицы
+
+DONE: воспроизводимый диагностический аудит4699 строк и всех428 конфликтных М4 ключей. Причины по различающимся вариантам:339/355=140,636/672=168,обе=120. Все конфликтные исходные строки quarantined;1549 строк без даты начала. Наличие source не объявляется подтверждением. [Отчёт этапа2](../experiments/nationwide-tolls/stages/02-matrix-and-provenance.md).
+
+BRANCH: audit/v3-matrix-provenance-2026-10-14 от сверенного/fetch GitHub integration head a5c892e67af4b050f53bf2211b62feac34d6df6c. Самостоятельные runtime fixes a01e2bf в другой локальной копии не переносились в этом диагностическом блоке; сверить отдельно при интеграции.
+
+VERIFIED: focused3/3; итоговый npm run build -- --webpack549/549, quote/API contracts, TypeScript/Next PASS(exit0); diffcheck PASS. Тарифы/runtime не менялись. Новая рабочая ветка локальная, не push/Preview/CI/Production. Этап2 IN PROGRESS. NEXT: проверить source/date/profile и exact boundaries для двух групп конфликтов; продолжить M11/M12/CKAD по плану, не выбирать сумму произвольно.
+
+---
+
 ## CURRENT 2026-10-14 — DONE: этап 1, единая рабочая ветка опубликована
 
 DONE: новая GitHub ветка `integration/v3-product-baseline-2026-10-14`, source snapshot `2b756ef73c793d1ee03ad66e4c0587578582b8a2` на базе `1642c76`. Git tree `4f0574609ffe5fb7dec55ddb405b3069352e9688` точно совпадает с проверенным локальным `c6d3843`; `git diff --exit-code` PASS. Ветка fetch получена и выбрана локально с upstream `github/integration/v3-product-baseline-2026-10-14`. Исходная локальная merge-история сохранена в `archive/v3-local-audit-merged-2026-10-14`. Каталог 23 продуктов и явный unresolved Псков: [tariff-products.json](../experiments/nationwide-tolls/tariff-products.json). [Полный отчёт этапа 1](../experiments/nationwide-tolls/stages/01-baseline-and-product-boundaries.md).

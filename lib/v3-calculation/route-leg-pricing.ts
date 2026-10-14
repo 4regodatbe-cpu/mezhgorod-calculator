@@ -1,3 +1,6 @@
+import fareValidity from '@/experiments/nationwide-tolls/engine/fare-validity.cjs';
+import { resolveM12ProductBoundaries } from "./m12-product-boundaries";
+import { resolveM11ProductBoundaries } from "./m11-product-boundaries";
 import { unpricedRoadCoverage } from "./unpriced-road-coverage";
 import { m11TraversalSafety } from "./m11-traversal-safety";
 import { matrixM11Component, matrixM11GeometryComponent } from "@/experiments/nationwide-tolls/engine/m11-route-adapter.mjs";
@@ -15,14 +18,14 @@ import { recoverCorridorTolls } from "@/lib/toll-recovery";
 import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { resolveSelectedM4Endpoints, type ProductionM4Result } from "@/lib/toll-engine/m4-production";
 import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
-import { ENTRY_MAX_DISTANCE_KM, facilityAnchors, haversineKm } from "@/lib/toll-engine/m11-moscow-geometry";
+import { facilityAnchors, haversineKm } from "@/lib/toll-engine/m11-moscow-geometry";
 import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
-import { calculateProductionM12 } from "@/lib/toll-engine/m12-production";
-import { calculateProductionCkadM4M11 } from "@/lib/toll-engine/ckad-production";
+import { inspectM11PulkovoAccess } from "@/lib/toll-engine/m11-pulkovo-evidence";
+import { resolveCkadProductBoundaries } from "./ckad-product-boundaries";
 import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent } from "@/lib/toll-engine/route-toll-composition";
 import { compositionValidation, routeDifferenceEvidence, unknownValidation, zeroUnknownTolls, type TollEstimate } from "../v2-calculation/free-route-selection";
 import type { RouteSummary, RouteWithGeometry } from "@/lib/route-providers";
-import { familySegments, mapMatchedTollFallback, routingDifferenceTollFallback } from "../v2-calculation/route-leg-pricing-helpers";
+import { familySegments } from "../v2-calculation/route-leg-pricing-helpers";
 
 type LegTollInput = {
   routeGeometry: Coordinate[];
@@ -54,9 +57,11 @@ export async function calculateLegTolls({
 
   const productionM4 = await resolveSelectedM4Endpoints(routeGeometry, routeSeconds);
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
-  const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as ProductionM4Result["tolls"]} : null, geometricTolls.segments, departureAt);
+  const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as ProductionM4Result["tolls"]} : null, geometricTolls.segments, departureAt, routeSeconds);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
-  const matrixM11Geometry = matrixM11GeometryComponent(productionM11Geometry);
+  const m11Airport = inspectM11PulkovoAccess(routeGeometry);
+  const m11Boundaries = resolveM11ProductBoundaries(routeGeometry,routeSeconds,departureAt);
+  const matrixM11Geometry = matrixM11GeometryComponent({exact:m11Boundaries.resolved,parts:m11Boundaries.parts});
   const productionM11 = selectedFastRoute.m11RoadEvidence
     ? calculateProductionM11(
         routeGeometry,
@@ -71,27 +76,26 @@ export async function calculateLegTolls({
   // The separate 679–684 product is not included in the 58–679 matrix.
   // A route continuing beyond p679 must remain unknown until that product's
   // physical exit is independently bound; do not publish a known subset.
-  const m11TailUnresolved = productionM11Geometry.parts?.to === "p679" && (
+  const firstM11Block = blocks[0];
+  const m11OuterTo = m11Boundaries.parts?.to ?? productionM11?.traversal?.exitPointId;
+  const m11OuterFrom = m11Boundaries.parts?.from ?? productionM11?.traversal?.entryPointId;
+  const m11TailUnresolved = (m11OuterTo === "p679" && (
     !lastM11Block || !facilityAnchors("p679").some(anchor =>
       haversineKm(anchor, lastM11Block.endCoordinate) <= 0.5)
-  );
+  )) || (m11OuterFrom === "p679" && (
+    !firstM11Block || !facilityAnchors("p679").some(anchor =>
+      haversineKm(anchor, firstM11Block.beginCoordinate) <= 0.5)
+  ));
   const matrixM11 = m11SafetyReason ? {tolls:null,reason:m11SafetyReason}
     : matrixM11Component(productionM11, departureAt, routeSeconds);
   const m12Span = selectedFastRoute.m12EndpointSpan ?? selectedFastRoute.m12StrictSpan;
-  const productionM12 = m12Span
-    ? calculateProductionM12(
-        routeGeometry,
-        m12Span,
-        familySegments(geometricTolls.segments, "m12"),
-        departureAt,
-      )
-    : null;
-  const matrixM12 = matrixM12Component(productionM12, departureAt);
+  const m12Boundaries = resolveM12ProductBoundaries(routeGeometry,m12Span);
+  const matrixM12 = matrixM12Component(m12Boundaries,departureAt,routeSeconds);
   const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289") || Boolean(m4A289);
-  const m11Detected = productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(selectedFastRoute.m11RoadEvidence?.strictBlocks.length);
+  const m11Detected = m11Boundaries.candidate || productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(selectedFastRoute.m11RoadEvidence?.strictBlocks.length);
   const m12Detected = legacyFamilies.has("m12") || Boolean(m12Span) || selectedFastRoute.m12Candidate === true;
-  const productionCkad = calculateProductionCkadM4M11(routeGeometry, selectedFastRoute.m11RoadEvidence);
-  const matrixCkad = matrixCkadComponent(productionCkad, departureAt);
+  const productionCkad = resolveCkadProductBoundaries(routeGeometry, selectedFastRoute.m11RoadEvidence);
+  const matrixCkad = matrixCkadComponent(productionCkad, departureAt, routeSeconds);
   // CKAD is a paid component only when legacy evidence names it or the strict
   // route-level CKAD engine proves a candidate/verified east-arc traversal.
   const ckadDetected = legacyFamilies.has("ckad") || productionCkad.candidate;
@@ -118,29 +122,46 @@ export async function calculateLegTolls({
     candidateNetworks: nationalTollCoverage.candidateNetworks,
     m1m3Candidates: m1m3GateAudit.candidateRoads,
   });
-  const m11HeadDetected = productionM11Geometry.evidence.entryDistanceKm !== null
-    && productionM11Geometry.evidence.entryDistanceKm <= ENTRY_MAX_DISTANCE_KM;
-  // Do not replace a route containing the separately charged Moscow head
-  // with only a known mainline subset. An explicit null matrix also stays null.
-  const m11TimeMissing = m11HeadDetected && !/(?:Z|[+-]\d\d:\d\d)$/.test(departureAt);
-  const m11Tolls = m11TimeMissing || m11SafetyReason || m11TailUnresolved ? null
-    : matrixM11Geometry ? matrixM11Geometry.tolls
-    : m11HeadDetected ? null
-    : matrixM11 ? matrixM11.tolls : productionM11?.tolls ?? null;
-  const m11Reason = m11TimeMissing ? "m11_hourly_entry_time_missing"
-    : m11TailUnresolved ? "m11_679_684_continuation_not_priced"
-    : m11SafetyReason ? m11SafetyReason
-    : matrixM11Geometry?.reason ?? (m11HeadDetected ? productionM11Geometry.reason
-    : matrixM11?.reason ?? productionM11?.reason ?? productionM11Geometry.reason);
+  const m11HeadDetected = m11Boundaries.headDetected;
+  // Independent products: known head/mainline values remain diagnostics when
+  // a tail is unresolved. The upper composer blocks the complete total.
+  const m11TimeMissing = m11HeadDetected && !fareValidity.validInstant(departureAt);
+  const m11BlockReason = m11TimeMissing ? "m11_head_payment_time_missing" : m11SafetyReason;
+  const m11Products: RouteTollComponent[] = matrixM11Geometry?.components ?? [
+    {id:"m11-15-58",detected:m11HeadDetected,tolls:null,
+      reason:productionM11Geometry.reason},
+    {id:"m11-58-679",detected:m11Detected,
+      tolls:matrixM11?.tolls ?? null,
+      reason:matrixM11?.reason ?? productionM11?.reason ?? productionM11Geometry.reason},
+  ];
+  if (m11BlockReason) for (const component of m11Products) {
+    component.tolls = null;
+    component.reason = m11BlockReason;
+  }
+  m11Products.push({id:"m11-679-684",detected:m11Airport.candidate || m11TailUnresolved,
+    tolls:null,reason:m11Airport.candidate ? m11Airport.reason : "m11_679_684_continuation_not_priced"});
 
+  const southernProducts: RouteTollComponent[] = m4A289?.components ?? [{id:"m4",detected:m4Detected,
+    tolls:matrixM4?.tolls as ProductionM4Result["tolls"] ?? null,reason:matrixM4?.reason ?? productionM4.reason}];
+  for (const id of unpricedCoverage.matchedCoreProducts) {
+    if (id === "m11") {
+      const mainline = m11Products.find(c=>c.id === "m11-58-679")!;
+      mainline.detected = true;
+    } else if (["m4","a289","krasnodar-west-bypass"].includes(id)) {
+      const existing = southernProducts.find(c=>c.id === id);
+      if (existing) existing.detected = true;
+      else southernProducts.push({id,detected:true,tolls:null,reason:"matched_paid_product_boundary_not_priced"});
+    }
+  }
   const components: RouteTollComponent[] = [
-    { id: "m4_a289", detected: m4Detected, tolls: m4A289 ? m4A289.tolls : matrixM4 ? matrixM4.tolls as ProductionM4Result["tolls"] : productionM4.tolls, reason: m4A289?.reason ?? matrixM4?.reason ?? productionM4.reason },
-    { id: "m11", detected: m11Detected, tolls: m11Tolls as NonNullable<typeof productionM11>["tolls"], reason: m11Reason },
-    { id: "m12", detected: m12Detected, tolls: matrixM12 ? matrixM12.tolls as NonNullable<typeof productionM12>["tolls"] : productionM12?.tolls ?? null, reason: matrixM12?.reason ?? productionM12?.core.reason ?? selectedFastRoute.m12SpanReason ?? "m12_not_priced" },
-    { id: "ckad", detected: ckadDetected, tolls: matrixCkad ? matrixCkad.tolls as typeof productionCkad.tolls : productionCkad.tolls, reason: matrixCkad?.reason ?? productionCkad.reason },
+    ...southernProducts,
+    ...m11Products,
+    { id: "m12", detected: m12Detected || unpricedCoverage.matchedCoreProducts.includes("m12"), tolls: matrixM12?.tolls ?? null, reason: matrixM12?.reason ?? m12Boundaries.reason ?? selectedFastRoute.m12SpanReason ?? "m12_not_priced" },
+    { id: "ckad", detected: ckadDetected || unpricedCoverage.matchedCoreProducts.includes("ckad"), tolls: matrixCkad?.tolls ?? null, reason: matrixCkad?.reason ?? productionCkad.reason },
     { id: "m1", detected: unpricedCoverage.m1, tolls: null, reason: "m1_engine_not_yet_composed" },
     { id: "m3", detected: unpricedCoverage.m3, tolls: null, reason: "m3_engine_not_yet_composed" },
-    { id: "regional", detected: unpricedCoverage.regional, tolls: null, reason: unpricedCoverage.regionalReason },
+    {id:"ckad-small-vyazemy",detected:unpricedCoverage.smallVyazemy,tolls:null,reason:"small_vyazemy_physical_boundaries_not_priced"},
+    ...unpricedCoverage.regionalProducts.map(product=>({id:product.id,detected:true,tolls:null,reason:product.reason})),
   ];
   const composition = composeRouteTolls(components);
 
@@ -167,11 +188,12 @@ export async function calculateLegTolls({
       `Нельзя показывать частичную сумму как итог маршрута. Не оценены: ${missingReasons.join("; ")}`,
     );
   } else {
-    pricedTolls = geometricTolls;
-    fastValidation = diagnosticFastValidation
-      ?? unknownValidation(pricedTolls.amount > 0
-        ? "Стоимость получена из расчёта дорожных систем или геометрии маршрута"
-        : "Map matching быстрого маршрута ещё не выполнялся");
+    // Geometry is detection evidence, never a substitute tariff. A free
+    // alternative also says nothing about the price of this selected route.
+    pricedTolls = zeroUnknownTolls(geometricTolls, geometricTolls.segments);
+    fastValidation = diagnosticFastValidation && (diagnosticFastValidation.status !== "free" || diagnosticFastValidation.complete === true)
+      ? diagnosticFastValidation
+      : unknownValidation("Готовая цена выбранного маршрута не найдена; геометрическая оценка не является тарифом");
   }
 
 
@@ -180,8 +202,11 @@ export async function calculateLegTolls({
     const localRecovery = recoverCorridorTolls(routeGeometry, conservativeValidation, departureAt, differenceEvidence);
     // Legacy recovery finds a subset of approximate segments. It cannot
     // certify a complete selected-route charge, even when the subset has money.
-    if (localRecovery) pricedTolls = zeroUnknownTolls(localRecovery,
-      ["Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика", ...localRecovery.segments]);
+    if (localRecovery) {
+      pricedTolls = zeroUnknownTolls(localRecovery,
+        ["Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика", ...localRecovery.segments]);
+      fastValidation = unknownValidation("Найдены приблизительные платные отрезки; полного тарифа маршрута нет");
+    }
   }
 
   if (!routeCompositionBlocked && pricedTolls.amount <= 0 && routeGeometry.length > 2) {
@@ -189,25 +214,29 @@ export async function calculateLegTolls({
     const lateCoverage = unpricedRoadCoverage({segments: geometricTolls.segments,
       validation: fastValidation, candidateNetworks: nationalTollCoverage.candidateNetworks,
       m1m3Candidates: auditM1M3SelectedRoute(m1m3OfficialGates, fastValidation, "selected-fast-route").candidateRoads});
-    if (lateCoverage.m1 || lateCoverage.m3 || lateCoverage.regional) {
+    const lateMissing = [...new Set([
+      ...(lateCoverage.m1 ? ["m1"] : []), ...(lateCoverage.m3 ? ["m3"] : []),
+      ...lateCoverage.regionalProducts.map(p=>p.id),
+      ...lateCoverage.matchedCoreProducts,
+      ...(lateCoverage.smallVyazemy ? ["ckad-small-vyazemy"] : []),
+    ])];
+    if (lateMissing.length > 0) {
       routeCompositionBlocked = true;
-      const missing = [lateCoverage.m1 ? "m1" : null, lateCoverage.m3 ? "m3" : null,
-        lateCoverage.regional ? "regional" : null].filter(Boolean).join(", ");
+      const missing = lateMissing.join(", ");
       pricedTolls = zeroUnknownTolls(geometricTolls, [`Обнаружены, но не полностью оценены платные системы: ${missing}`]);
       fastValidation = unknownValidation(`Поздняя проверка выбранного маршрута обнаружила неоценённые системы: ${missing}`);
     } else {
-      const matchedTolls = mapMatchedTollFallback(pricedTolls, fastValidation);
       const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
       if (remoteRecovery) {
         pricedTolls = zeroUnknownTolls(remoteRecovery,
           ["Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика", ...remoteRecovery.segments]);
         fastValidation = unknownValidation("Резервный расчёт нашёл только часть отрезков; полный тариф выбранного маршрута неизвестен");
-      } else pricedTolls = matchedTolls;
+      } else if (fastValidation.status !== "free" || fastValidation.complete !== true) {
+        fastValidation = unknownValidation("Проверка дорожных рёбер не дала готового тарифа или полного подтверждения бесплатного маршрута");
+      }
     }
   }
 
-  const tolls = confirmedFree && !routeCompositionBlocked
-    ? routingDifferenceTollFallback(selectedFastRoute, confirmedFree.route, pricedTolls)
-    : pricedTolls;
+  const tolls = pricedTolls;
   return { tolls: { ...tolls, priceConfirmation: matrixM4?.tolls && composition.status === "priced" ? matrixM4.priceConfirmation : "unconfirmed", displayLabel: "Стоимость не подтверждена" }, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
 }

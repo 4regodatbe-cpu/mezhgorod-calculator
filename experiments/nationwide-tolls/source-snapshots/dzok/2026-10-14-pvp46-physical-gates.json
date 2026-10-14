@@ -1,0 +1,73 @@
+{
+  "retrievedAt": "2026-10-14T16:22:01.065319+00:00",
+  "sourceUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=38.68,45.09,38.74,45.14",
+  "sourceSha256": "6edcda8a6f7fdce57e24cfdbafb5125b52dc23a96da5d6e3d83711165fc852fd",
+  "archiveSha256": "09fe3c5b53592e970764eace049162b6d7a47e37330c6f26d51236ea3b83bac4",
+  "license": "OpenStreetMap contributors, ODbL 1.0",
+  "scope": "Two PVP46 booths on named toll=yes one-way DZOK trunk ways. Direction mapped by southwest/northeast way order to operator 0/51 section labels; estimate, not full road survey.",
+  "fareSource": "source-documents/m4-order58-effective-2026-03-02.pdf",
+  "gates": [
+    {
+      "gate": {
+        "id": "10979205243",
+        "lon": 38.7409074,
+        "lat": 45.1276582
+      },
+      "before": {
+        "id": "12779058776",
+        "lon": 38.7397964,
+        "lat": 45.1269795
+      },
+      "after": {
+        "id": "12779058777",
+        "lon": 38.7417339,
+        "lat": 45.1283098
+      },
+      "wayId": "1380335422",
+      "wayTags": {
+        "highway": "trunk",
+        "lanes": "6",
+        "maxspeed": "30",
+        "name": "Дальний западный обход г. Краснодара",
+        "oneway": "yes",
+        "ref": "М-4",
+        "short_name": "ДЗОК",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "from": "51",
+      "to": "0"
+    },
+    {
+      "gate": {
+        "id": "6761599487",
+        "lon": 38.7405898,
+        "lat": 45.1278631
+      },
+      "before": {
+        "id": "12779058783",
+        "lon": 38.7416466,
+        "lat": 45.1285353
+      },
+      "after": {
+        "id": "12779058758",
+        "lon": 38.7392146,
+        "lat": 45.126824
+      },
+      "wayId": "1380335425",
+      "wayTags": {
+        "highway": "trunk",
+        "lanes": "6",
+        "maxspeed": "30",
+        "name": "Дальний западный обход г. Краснодара",
+        "oneway": "yes",
+        "ref": "М-4",
+        "short_name": "ДЗОК",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "from": "0",
+      "to": "51"
+    }
+  ]
+}

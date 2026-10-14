@@ -5,7 +5,6 @@ import { createRequire } from 'node:module';
 import {load, root} from './helpers/load-ts.mjs';
 const require=createRequire(import.meta.url);
 const { a289ShortRoute } = load(resolve(root, 'lib/v3-calculation/a289-short-route.ts'));
-const { crimeaM4Total } = load(resolve(root, 'lib/v3-calculation/crimea-m4-total.ts'));
 const { quote } = require('../experiments/nationwide-tolls/engine/quote.cjs');
 const { calculateRoutePricing } = load(resolve(root, 'lib/route-pricing-integration.ts'));
 const date = '2026-10-13T09:00:00+03:00';
@@ -25,13 +24,6 @@ test('Temryuk estimate requires ordered two-frame evidence, not merely a city en
  assert.equal(result?.tolls.amount,620);
  assert.match(result.reason,/unverified/);
 });
-test('Crimea composite consumes changed upstream tariff without stale hardcoded totals',()=>{
- const production={exact:true,tolls:{amount:5500,weekdayAmount:5500,weekendAmount:6600,period:'понедельник–четверг',segments:['М-4 Дон: полный коридор Москва—Краснодар'],confidence:'matched'}};
- const route=[yalta,gate103,gate82,gate23,[37.62,55.76]];
- const result=crimeaM4Total(route,production,[],date);
- assert.equal(result?.tolls.amount,6300);
- assert.equal(result?.tolls.weekendAmount,7400);
-});
 test('quote rejects impossible calendar dates and malformed components without throwing',()=>{
  const c={road:'a289',from:'Maryanskaya',to:'Slavyansk',profile:'allDays',routeId:'r',traversalId:'a',exactTraversal:true,profileResolved:true,localDate:'2026-02-30'};
  const request=components=>({routeId:'r',evidenceComplete:true,components});
@@ -46,15 +38,21 @@ test('invalid zone lengths and empty legs cannot silently produce a zero or unde
  }
 });
 
-test('short A289 total preserves different weekday and weekend bypass tariffs',()=>{
+test('A289 product cannot inherit changed legacy bypass money',()=>{
  const {M4}=load(resolve(root,'lib/toll-data/m4.ts'));
  const bypass=M4.find(row=>row.name==='М-4: Дальний западный обход Краснодара');
  const old=bypass.weekend;
  try {
   bypass.weekend=510;
   const result=a289ShortRoute([yalta,gate103,gate82,gate23,krasnodar],[bypass.name],'2026-10-17T09:00:00+03:00');
-  assert.equal(result.tolls.weekdayAmount,1210);
-  assert.equal(result.tolls.weekendAmount,1310);
-  assert.equal(result.tolls.amount,1310);
+  assert.equal(result.tolls.weekdayAmount,800);
+  assert.equal(result.tolls.weekendAmount,800);
+  assert.equal(result.tolls.amount,800);
  } finally {bypass.weekend=old;}
+});
+
+
+test('A289 cannot normalize an impossible date or infer a missing timezone',()=>{
+ const route=[yalta,gate103,gate82,gate23,krasnodar];
+ for(const bad of ['2026-02-30T12:00:00+03:00','2026-10-14T24:00:00+03:00','2026-10-14T12:00:00','2026-10-14'])assert.equal(a289ShortRoute(route,[],bad).tolls,null);
 });

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-14",
+  "files": [
+    {
+      "uploadedName": "wiri43iwx18q7t9xc6izr4qeds5odt3z.pdf",
+      "sourceFile": "source-documents/ckad-order56-effective-2026-03-02.pdf",
+      "sha256": "839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7",
+      "duplicate": false
+    },
+    {
+      "uploadedName": "cavjyj7hszasaiofcodrwxqho0qycllz.pdf",
+      "sourceFile": "source-documents/m12-order302-effective-2026-10-08.pdf",
+      "sha256": "25226467bed5d36691085e03ce706e49bb15b6e67607d0ebd4df420a9b07d213",
+      "duplicate": false
+    },
+    {
+      "uploadedName": "9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf",
+      "sourceFile": "source-documents/m3-order53-effective-2026-03-02.pdf",
+      "sha256": "d5344fd6bb54329466c5236e3d1657a14dd87ca8c3eddf2529276fbe1fa9d3a3",
+      "duplicate": false
+    },
+    {
+      "uploadedName": "3afx0utj44i4ncxlhbprquec3g02b1sw.pdf",
+      "sourceFile": "source-documents/a289-order55-effective-2026-03-02.pdf",
+      "sha256": "da558d538e5a9e2ef8d36d46e0aec69c43b987f81c10d2186733a19aaca933bd",
+      "duplicate": false
+    },
+    {
+      "uploadedName": "5gtepa6ejrnaowtd50d20c04nqmw2edw.pdf",
+      "sourceFile": "source-documents/tolyatti-order85-effective-2026-03-01.pdf",
+      "sha256": "f89df2dbff7b0634e5273c7fd7d1e562d08206e9e638974b9124ac72d08e3999",
+      "duplicate": false
+    },
+    {
+      "uploadedName": "0dbxelqoqelj4yx3ey7yfieo3odimmkn(1).pdf",
+      "sourceFile": "source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf",
+      "sha256": "6b52ca130ee7e8a7948c2b39982c00d82174e4e45ec5dcd3983355238c403b91",
+      "duplicate": true
+    },
+    {
+      "uploadedName": "9ig1ywvudpmvi8i0v2icgc64eqbwzn5x (1).pdf",
+      "sourceFile": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d",
+      "duplicate": true
+    }
+  ],
+  "method": "Poppler140dpi render, visual read/manual numeric transcription; no Russian OCR used",
+  "limitations": [
+    "Source fare verification is separate from physical selected-route binding.",
+    "M12 new Shali boundary has two Shali definitions in appendix5; do not alias to old marker832.",
+    "CKAD appendix1 footnote2 requires payment context for M12 endpoint partial traversals."
+  ]
+}

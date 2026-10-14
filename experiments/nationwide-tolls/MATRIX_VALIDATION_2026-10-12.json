@@ -1,13 +1,14 @@
 {
-  "executedAt": "2026-10-13T18:37:28.986Z",
+  "executedAt": "2026-10-14T15:46:58.277Z",
   "status": "passed",
-  "fareRows": 4699,
+  "fareRows": 5076,
   "counts": {
     "m11-58-679": 924,
     "m11-15-58": 210,
     "m1": 2,
     "m3": 24,
     "ckad": 210,
+    "ckad-small-vyazemy": 2,
     "m4-south": 32,
     "mytishchi": 30,
     "odintsovo": 96,
@@ -21,12 +22,12 @@
     "ryazan": 4,
     "kazan": 4,
     "msd": 1025,
-    "m12": 7,
+    "m12": 382,
     "m4-dzok": 4,
     "m4-candidate": 1456,
     "m12-candidate": 625
   },
-  "uniqueKeys": 4699,
+  "uniqueKeys": 5076,
   "m4EndpointConflicts": 428,
   "m4RuntimeEndpointSpans": 360,
   "checks": [
@@ -48,7 +49,7 @@
     ],
     "incompleteRoads": [
       "M4 outside four south PVPs",
-      "M12 missing direct pairs after extension",
+      "M12 current direct matrix physical endpoint bindings after extension",
       "A289 Anapa/Taman partial OD pairs and exact exit bindings"
     ],
     "yandexChecksNotCompletedForEveryRow": true,

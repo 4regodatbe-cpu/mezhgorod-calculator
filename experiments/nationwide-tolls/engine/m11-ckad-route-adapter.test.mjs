@@ -17,21 +17,21 @@ test('M11 local Moscow Friday profile, missing/expired/profile-transition/mixed 
  assert.equal(matrixM11Component(p,'2026-10-15T22:00:00Z',600).tolls.period,'пятница–воскресенье');
  assert.equal(matrixM11Component(p,'bad',600).tolls,null);
  assert.equal(matrixM11Component(p,'2026-10-13T23:50:00+03:00',3600).tolls.amount,matrixM11Component(p,date,0).tolls.amount);
- assert.equal(matrixM11Component(p,'2026-10-15T23:50:00+03:00',3600).tolls,null);
+ assert.equal(matrixM11Component(p,'2026-10-15T23:50:00+03:00',3600).tolls.amount,matrixM11Component(p,date,0).tolls.amount);
  assert.equal(matrixM11Component(p,'2026-01-01T12:00:00+03:00',600).tolls,null);
  assert.equal(matrixM11Component({...p,blockedByMixedRoadEvidence:true},date,600).tolls,null);
  assert.equal(matrixM11Component({boundaryStatus:'unresolved'},date,600),null);
 });
-test('M11 geometry adapter replaces only separately identified mainline, keeps the head once',()=>{
- const parts={headAmount:100,headWeekday:100,headWeekend:200,from:'p147',to:'p58',mainlineAt:date};
+test('M11 geometry adapter prices both independent products from matrix, ignores native money',()=>{
+ const parts={headAmount:100,headWeekday:100,headWeekend:200,head:{from:'solnechnogorsk',to:'moscow',paymentAt:date,paymentWindowSeconds:0},from:'p147',to:'p58',mainlineAt:date};
  const direct=matrixM11Component(m11('p147','p58'),date,0);
- assert.equal(matrixM11GeometryComponent({exact:true,parts}).tolls.amount,direct.tolls.amount+100);
+ assert.equal(matrixM11GeometryComponent({exact:true,parts}).tolls.amount,direct.tolls.amount+1130);
  assert.equal(matrixM11GeometryComponent({exact:true,parts:{...parts,to:'missing'}}).tolls,null);
 });
 test('CKAD direct matrix uses actual direction and date, no guessed section sum',()=>{
  for(const [from,to] of [['М-4 Дон','М-11 Нева'],['М-11 Нева','М-4 Дон']]) {
   const p={exact:true,traversal:{from,to}};
-  assert.equal(matrixCkadComponent(p,date).tolls.amount,2517);
+  assert.equal(matrixCkadComponent(p,date).tolls.amount,1800);
   assert.equal(matrixCkadComponent(p,'2026-01-01T12:00:00+03:00').tolls,null);
  }
  assert.equal(matrixCkadComponent({exact:false},date),null);

@@ -1,3 +1,7 @@
+## Актуальное состояние — 14 октября 2026
+
+Источник текущего состояния — [docs/WORK_STATE.md](../../docs/WORK_STATE.md). V3 использует самостоятельные М4/А289/обход,М11 и распознанные региональные продукты; М12/ЦКАДreadyquote безnativemoney prerequisites. Исправлен пропуск дополнительных paid evidence; SmallVyazemy отдельноunknown. [Последний отчёт](stages/03-v3-ckad-regional-identity-and-paid-evidence-2026-10-14.md),full616/616PASS. Веткаaudit/v3-matrix-provenance-2026-10-14,локально,Productionнеобновлён. Историческиеданные ниже не описывают все текущие тарифы; этап3/полноеRussia coverage ещёне завершены.
+
 ## Latest verified M3 evidence — 9 October 2026
 
 - M3 86,136,168km each has two **independently OSM-verified directional `barrier=toll_booth` nodes**. Exact map matching on both real test routes Москва→Калуга (189.1km) and Калуга→Москва (187.8km) yields **3 matched physical gates, 0 unmapped**. Six OSM ids + coordinates, source URLs and browser run IDs in [M1_M3_EVIDENCE_2026-10-09.md](M1_M3_EVIDENCE_2026-10-09.md).

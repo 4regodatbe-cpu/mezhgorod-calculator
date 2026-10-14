@@ -9,8 +9,8 @@ assert.equal(snapshot.roads.ckad.length, 16);
 assert.equal(snapshot.roads.a289.length, 6);
 assert.equal(snapshot.roads["m1-33-66"][0].allDays.noTransponder, 250);
 assert.deepEqual(snapshot.roads.m3.map((x) => [x.monThu.noTransponder, x.friSun.noTransponder]), [[100,100],[190,190],[190,230]]);
-assert.equal(snapshot.roads.ckad.find((x) => x.id === "ckad-m10-m11")?.allDays.noTransponder, 60);
-assert.equal(snapshot.roads.ckad.find((x) => x.id === "ckad-pk5-m10")?.allDays.noTransponder, 3189);
+assert.equal(snapshot.roads.ckad.find((x) => x.id === "ckad-m10-m11")?.allDays.noTransponder, 42);
+assert.equal(snapshot.roads.ckad.find((x) => x.id === "ckad-pk5-m10")?.allDays.noTransponder, 2278);
 assert.equal(snapshot.roads.a289.find((x) => x.id === "a289-maryanskaya-temryuk")?.allDays.noTransponder, 800);
 assert.equal(snapshot.roads.a289.find((x) => x.id === "a289-maryanskaya-temryuk")?.allDays.transponder, 800);
 

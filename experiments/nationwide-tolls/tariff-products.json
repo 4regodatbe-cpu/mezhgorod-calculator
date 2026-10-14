@@ -2,34 +2,202 @@
   "schemaVersion": 1,
   "asOf": "2026-10-13",
   "purpose": "Identity and charging boundaries, not a statement that a fare is verified or wired into V3.",
-  "routeComponentKey": ["selectedRouteId", "selectedGeometry", "productId", "firstPaymentBoundary", "lastPaymentBoundary", "departureAt", "vehicleCategory", "paymentProfile"],
+  "routeComponentKey": [
+    "selectedRouteId",
+    "selectedGeometry",
+    "productId",
+    "firstPaymentBoundary",
+    "lastPaymentBoundary",
+    "departureAt",
+    "vehicleCategory",
+    "paymentProfile"
+  ],
   "invariant": "One exact directed matrix fare per detected product and boundary pair. Sum distinct complete products once; any missing, ambiguous or overlapping product makes the whole toll total unknown.",
   "products": [
-    {"id":"m4","registryId":"m4","boundary":"First and last proven M-4 payment points on the selected route","matrix":"M-4 directed endpoint pair","overlap":"Exclude A-289 and western Krasnodar bypass from this fare; reject mixed row."},
-    {"id":"a289","registryId":"a289","boundary":"First and last proven A-289 payment frames on the selected route","matrix":"A-289 directed endpoint pair","overlap":"Charge separately from M-4; one A-289 product despite multiple frames."},
-    {"id":"krasnodar-west-bypass","registryId":"m4","boundary":"Proven traversal of the far western Krasnodar bypass","matrix":"Separate bypass tariff row; exact entry/exit binding still to audit","overlap":"Do not include the bypass in M-4 or A-289 fare; ambiguous geography is unknown."},
-    {"id":"m11-15-58","registryId":"m11-15-58","boundary":"Concession entrance and exit within 15–58 km","matrix":"Concession date/time/direction pair","overlap":"Separate from M-11 58–679; do not include this head in the mainline row."},
-    {"id":"m11-58-679","registryId":"m11","boundary":"Mainline entrance and exit within 58–679 km","matrix":"M-11 directed endpoint pair","overlap":"Exclude concession head and 679–684 tail."},
-    {"id":"m11-679-684","registryId":"m11","boundary":"Proven entrance and exit of 679–684 km continuation","matrix":"Unresolved separate tariff product","overlap":"Never treat a 58–679 amount as complete when this continuation is detected."},
-    {"id":"m12","registryId":"m12","boundary":"First and last proven M-12 payment points","matrix":"M-12 directed endpoint pair","overlap":"Do not silently extend a known row to an unbound continuation."},
-    {"id":"ckad","registryId":"ckad","boundary":"First and last proven A-113 CKAD payment points","matrix":"CKAD directed endpoint pair","overlap":"Intersection road names are junction metadata, not a second traversal."},
-    {"id":"m1","registryId":"m1","boundary":"Proven M-1 33–66 km section endpoints","matrix":"M-1 section pair","overlap":"Independent from connected roads."},
-    {"id":"m3","registryId":"m3","boundary":"First and last proven payment boundaries within an operator-priced M-3 product","matrix":"M-3 directed section pair; product grouping to audit","overlap":"Adjacent operator sections cannot be summed as intermediate gates if one OD row covers them."},
-    {"id":"ufa-east","registryId":"ufa-east","boundary":"Proven eastern Ufa exit entry and exit","matrix":"Operator complex fare pair to audit","overlap":"Separate from M-12; do not infer from nearby route."},
-    {"id":"tolyatti","registryId":"tolyatti","boundary":"Proven bypass/bridge entry and exit","matrix":"Tolyatti directed tariff pair to audit","overlap":"Separate from M-12 and regional road labels."},
-    {"id":"odintsovo","registryId":"odintsovo","boundary":"Proven northern Odintsovo bypass entry and exit","matrix":"Operator direction/time pair to audit","overlap":"Separate from M-1."},
-    {"id":"bagration","registryId":"bagration","boundary":"Proven Bagration passage","matrix":"Operator tariff pair to audit","overlap":"Separate from Odintsovo bypass."},
-    {"id":"msd","registryId":"msd","boundary":"Proven Moscow diameter entry and exit with eligibility context","matrix":"Conditional city/transit tariff to audit","overlap":"Do not apply both city and transit tariff to the same product."},
-    {"id":"zsd","registryId":"zsd","boundary":"Proven ZSD ramp entry and exit","matrix":"ZSD ramp OD to audit","overlap":"Exclude any separate ShMSD entry if operator tariff already includes it."},
-    {"id":"shmsd","registryId":"shmsd","boundary":"Proven ShMSD interchange entry and exit","matrix":"Interchange tariff to audit","overlap":"Overlap with ZSD must be resolved from operator rules before charging both."},
-    {"id":"voznesensky","registryId":"voznesensky","boundary":"Proven Voznesensky tract entry and exit","matrix":"Time/date fare to audit","overlap":"Independent from M-12."},
-    {"id":"udmurt-bridges","registryId":"udmurt-bridges","boundary":"Proven Kama/Bui bridge zone traversal","matrix":"Operator exclusive-zone fare to audit","overlap":"One combined both-zone fare when applicable; never add both zones to combined fare."},
-    {"id":"khabarovsk","registryId":"khabarovsk","boundary":"Proven Khabarovsk bypass entry and exit","matrix":"Route tariff to audit","overlap":"Independent product."},
-    {"id":"mytishchi","registryId":"mytishchi","boundary":"Proven Mytishchi chord entry and exit","matrix":"Route tariff to audit","overlap":"Independent product."},
-    {"id":"ryazan","registryId":"ryazan","boundary":"Proven Ryazan overpass passage","matrix":"Fixed gate tariff to audit","overlap":"Independent product."},
-    {"id":"amur-bridge","registryId":"amur-bridge","boundary":"Proven Blagoveshchensk–Heihe bridge passage and eligibility","matrix":"Cross-border tariff to audit","overlap":"Independent product."}
+    {
+      "id": "m4",
+      "registryId": "m4",
+      "boundary": "First and last proven M-4 payment points on the selected route",
+      "matrix": "M-4 directed endpoint pair",
+      "overlap": "Exclude A-289 and western Krasnodar bypass from this fare; reject mixed row."
+    },
+    {
+      "id": "a289",
+      "registryId": "a289",
+      "boundary": "First and last proven A-289 payment frames on the selected route",
+      "matrix": "A-289 directed endpoint pair",
+      "overlap": "Charge separately from M-4; one A-289 product despite multiple frames."
+    },
+    {
+      "id": "krasnodar-west-bypass",
+      "registryId": "m4",
+      "boundary": "Directional PVP46 crossing on named DZOK one-way toll carriageway; open-system plaza charged once, not an M4 or A289 subtotal",
+      "matrix": "Separate dated m4-dzok 0→51 or 51→0 pair, category I, no transponder; route estimate remains unconfirmed",
+      "overlap": "Do not include the bypass in M-4 or A-289 fare; ambiguous geography is unknown.",
+      "physicalEvidence": "source-snapshots/dzok/2026-10-14-pvp46-physical-gates.json",
+      "runtimeAdapter": "engine/dzok-route-adapter.mjs"
+    },
+    {
+      "id": "m11-15-58",
+      "registryId": "m11-15-58",
+      "boundary": "Concession entrance and exit within 15–58 km",
+      "matrix": "Concession date/time/direction pair",
+      "overlap": "Separate from M-11 58–679; do not include this head in the mainline row.",
+      "runtimeAdapter": "engine/m11-head-route-adapter.mjs",
+      "timeBasis": "Exit payment time under own concession rules; adjacent sections share final exit. Southbound unbound Moscow PVP21 uses a verified-stable payment window.",
+      "sourceProof": "source-snapshots/m11/2026-10-14-head-payment-time-proof.json"
+    },
+    {
+      "id": "m11-58-679",
+      "registryId": "m11",
+      "boundary": "Directed first/last mainline boundaries; full Moscow corridor uses p58 and p679 in both directions without a p593 prerequisite",
+      "matrix": "M-11 directed endpoint pair",
+      "overlap": "Separate from 15–58 and 679–684; unidentified continuation blocks the total in both directions."
+    },
+    {
+      "id": "m11-679-684",
+      "registryId": "m11",
+      "boundary": "Proven entrance and exit of 679–684 km continuation",
+      "matrix": "Order274 appendix2: mainline56, airportaccess38, conditionalcombined94; exact scoped endpoint pairing unresolved",
+      "overlap": "Never treat a 58–679 amount as complete when this continuation is detected.",
+      "physicalEvidence": "source-snapshots/m11/2026-10-14-pulkovo-physical-gates.json"
+    },
+    {
+      "id": "m12",
+      "registryId": "m12",
+      "boundary": "First and last calibrated payment boundaries on selected endpoint span; no native-price or intermediate-continuity prerequisite. October new Shali geography unbound.",
+      "matrix": "M-12 directed endpoint pair",
+      "overlap": "Do not silently extend a known row to an unbound continuation.",
+      "runtimeBoundaryAdapter": "../../lib/v3-calculation/m12-product-boundaries.ts"
+    },
+    {
+      "id": "ckad",
+      "registryId": "ckad",
+      "boundary": "First and last proven A-113 CKAD payment points",
+      "matrix": "CKAD directed endpoint pair",
+      "overlap": "Intersection road names are junction metadata, not a second traversal.",
+      "runtimeBoundaryAdapter": "../../lib/v3-calculation/ckad-product-boundaries.ts",
+      "tariffContext": "16 directed cells whose outer M12 boundary includes the M12–Nosov section require operator gantry registration and a complete following120min event context; not a generic trip duration proof."
+    },
+    {
+      "id": "m1",
+      "registryId": "m1",
+      "boundary": "Proven M-1 33–66 km section endpoints",
+      "matrix": "M-1 section pair",
+      "overlap": "Independent from connected roads."
+    },
+    {
+      "id": "m3",
+      "registryId": "m3",
+      "boundary": "First and last proven payment boundaries within an operator-priced M-3 product",
+      "matrix": "M-3 directed section pair; product grouping to audit",
+      "overlap": "Adjacent operator sections cannot be summed as intermediate gates if one OD row covers them."
+    },
+    {
+      "id": "ufa-east",
+      "registryId": "ufa-east",
+      "boundary": "Proven eastern Ufa exit entry and exit",
+      "matrix": "Operator complex fare pair to audit",
+      "overlap": "Separate from M-12; do not infer from nearby route."
+    },
+    {
+      "id": "tolyatti",
+      "registryId": "tolyatti",
+      "boundary": "Proven bypass/bridge entry and exit",
+      "matrix": "Tolyatti directed tariff pair to audit",
+      "overlap": "Separate from M-12 and regional road labels."
+    },
+    {
+      "id": "odintsovo",
+      "registryId": "odintsovo",
+      "boundary": "Proven northern Odintsovo bypass entry and exit",
+      "matrix": "Operator direction/time pair to audit",
+      "overlap": "Separate from M-1."
+    },
+    {
+      "id": "bagration",
+      "registryId": "bagration",
+      "boundary": "Proven Bagration passage",
+      "matrix": "Operator tariff pair to audit",
+      "overlap": "Separate from Odintsovo bypass."
+    },
+    {
+      "id": "msd",
+      "registryId": "msd",
+      "boundary": "Proven Moscow diameter entry and exit with eligibility context",
+      "matrix": "Conditional city/transit tariff to audit",
+      "overlap": "Do not apply both city and transit tariff to the same product."
+    },
+    {
+      "id": "zsd",
+      "registryId": "zsd",
+      "boundary": "Proven ZSD ramp entry and exit",
+      "matrix": "ZSD ramp OD to audit",
+      "overlap": "Exclude any separate ShMSD entry if operator tariff already includes it."
+    },
+    {
+      "id": "shmsd",
+      "registryId": "shmsd",
+      "boundary": "Proven ShMSD interchange entry and exit",
+      "matrix": "Interchange tariff to audit",
+      "overlap": "Overlap with ZSD must be resolved from operator rules before charging both."
+    },
+    {
+      "id": "voznesensky",
+      "registryId": "voznesensky",
+      "boundary": "Proven Voznesensky tract entry and exit",
+      "matrix": "Time/date fare to audit",
+      "overlap": "Independent from M-12."
+    },
+    {
+      "id": "udmurt-bridges",
+      "registryId": "udmurt-bridges",
+      "boundary": "Proven Kama/Bui bridge zone traversal",
+      "matrix": "Operator exclusive-zone fare to audit",
+      "overlap": "One combined both-zone fare when applicable; never add both zones to combined fare."
+    },
+    {
+      "id": "khabarovsk",
+      "registryId": "khabarovsk",
+      "boundary": "Proven Khabarovsk bypass entry and exit",
+      "matrix": "Route tariff to audit",
+      "overlap": "Independent product."
+    },
+    {
+      "id": "mytishchi",
+      "registryId": "mytishchi",
+      "boundary": "Proven Mytishchi chord entry and exit",
+      "matrix": "Route tariff to audit",
+      "overlap": "Independent product."
+    },
+    {
+      "id": "ryazan",
+      "registryId": "ryazan",
+      "boundary": "Proven Ryazan overpass passage",
+      "matrix": "Fixed gate tariff to audit",
+      "overlap": "Independent product."
+    },
+    {
+      "id": "amur-bridge",
+      "registryId": "amur-bridge",
+      "boundary": "Proven Blagoveshchensk–Heihe bridge passage and eligibility",
+      "matrix": "Cross-border tariff to audit",
+      "overlap": "Independent product."
+    },
+    {
+      "id": "ckad-small-vyazemy",
+      "registryId": "ckad",
+      "boundary": "M1 Belarus–Zvenigorod separately tolled SmallVyazemy bypass,274–281km; physical adapter pending",
+      "matrix": "Order56 appendix2 categoryI direct103, both directions",
+      "overlap": "Never merge into main CKAD OD fare; source103 is separate from mainline2278.",
+      "priceSource": "source-documents/ckad-order56-effective-2026-03-02.pdf",
+      "runtimeDetection": "Recognized same-route Small Vyazemy names produce a separate unknown component; source103 alone never activates money."
+    }
   ],
   "unresolvedAggregates": [
-    {"registryId":"pskov","reason":"Registry groups four sections without individual physical boundaries and product IDs; each detected section remains unknown until split."}
+    {
+      "registryId": "pskov",
+      "reason": "Registry groups four sections without individual physical boundaries and product IDs; each detected section remains unknown until split."
+    }
   ]
 }

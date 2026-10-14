@@ -3,7 +3,7 @@
   "observedAt": "2026-10-01",
   "source": "https://avtodor-tr.ru/road/tariffs/",
   "category": 1,
-  "note": "A289 reading corrected on 2026-10-13: columns are vehicle categories, not transponder/no-transponder modes. Active A289 rows contain category-I base fares415/205/620/180/800/385 in both undiscounted payment modes. M1 no-transponder=250 (transponder=230), as the tariff page explicitly separates payment columns. M3 category-I direct schedule is 100/100, 190/190, 190/230 MonThu/FriSun; the operator's 2026-03-02 whole-road table confirms 480/520. Do not read neighboring higher-category values as M3 payment modes. This snapshot alone does not prove selected-route crossing.",
+  "note": "A289 reading corrected on 2026-10-13: columns are vehicle categories, not transponder/no-transponder modes. Active A289 rows contain category-I base fares415/205/620/180/800/385 in both undiscounted payment modes. M1 no-transponder=250 (transponder=230), as the tariff page explicitly separates payment columns. M3 category-I direct schedule is 100/100, 190/190, 190/230 MonThu/FriSun; the operator's 2026-03-02 whole-road table confirms 480/520. Do not read neighboring higher-category values as M3 payment modes. This snapshot alone does not prove selected-route crossing. CKAD corrected from uploaded order56PDF: both payment-mode fields now carry categoryI; prior classII values archived.",
   "roads": {
     "m1-33-66": [
       {
@@ -64,8 +64,9 @@
         "to": "М-11",
         "allDays": {
           "transponder": 42,
-          "noTransponder": 60
-        }
+          "noTransponder": 42
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-m11-a107",
@@ -73,8 +74,9 @@
         "to": "Никольское-Горки (А-107)",
         "allDays": {
           "transponder": 119,
-          "noTransponder": 167
-        }
+          "noTransponder": 119
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-a107-a104",
@@ -82,8 +84,9 @@
         "to": "Дмитровское шоссе",
         "allDays": {
           "transponder": 120,
-          "noTransponder": 168
-        }
+          "noTransponder": 120
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-a104-m8",
@@ -91,8 +94,9 @@
         "to": "М-8",
         "allDays": {
           "transponder": 241,
-          "noTransponder": 335
-        }
+          "noTransponder": 241
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-m8-m7",
@@ -100,8 +104,9 @@
         "to": "М-7",
         "allDays": {
           "transponder": 461,
-          "noTransponder": 643
-        }
+          "noTransponder": 461
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-m7-m12",
@@ -109,8 +114,9 @@
         "to": "М-12",
         "allDays": {
           "transponder": 40,
-          "noTransponder": 56
-        }
+          "noTransponder": 40
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-m12-nosov",
@@ -118,8 +124,9 @@
         "to": "Носовихинское ш.",
         "allDays": {
           "transponder": 156,
-          "noTransponder": 219
-        }
+          "noTransponder": 156
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-nosov-egor",
@@ -127,8 +134,9 @@
         "to": "Егорьевское ш.",
         "allDays": {
           "transponder": 81,
-          "noTransponder": 114
-        }
+          "noTransponder": 81
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-egor-m5",
@@ -136,8 +144,9 @@
         "to": "М-5",
         "allDays": {
           "transponder": 271,
-          "noTransponder": 380
-        }
+          "noTransponder": 271
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-m5-dom",
@@ -145,8 +154,9 @@
         "to": "Домодедово",
         "allDays": {
           "transponder": 248,
-          "noTransponder": 347
-        }
+          "noTransponder": 248
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-dom-m4",
@@ -154,8 +164,9 @@
         "to": "М-4",
         "allDays": {
           "transponder": 63,
-          "noTransponder": 88
-        }
+          "noTransponder": 63
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-m4-m2",
@@ -163,8 +174,9 @@
         "to": "М-2",
         "allDays": {
           "transponder": 140,
-          "noTransponder": 195
-        }
+          "noTransponder": 140
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-m2-kaluga",
@@ -172,8 +184,9 @@
         "to": "Калужское ш.",
         "allDays": {
           "transponder": 204,
-          "noTransponder": 286
-        }
+          "noTransponder": 204
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-kaluga-pk5",
@@ -181,8 +194,9 @@
         "to": "ПК-5",
         "allDays": {
           "transponder": 92,
-          "noTransponder": 131
-        }
+          "noTransponder": 92
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-pk5-m10",
@@ -190,8 +204,9 @@
         "to": "М-10",
         "allDays": {
           "transponder": 2278,
-          "noTransponder": 3189
-        }
+          "noTransponder": 2278
+        },
+        "vehicleCategory": 1
       },
       {
         "id": "ckad-m1-zvenigorod",
@@ -199,8 +214,9 @@
         "to": "Звенигород",
         "allDays": {
           "transponder": 103,
-          "noTransponder": 154
-        }
+          "noTransponder": 103
+        },
+        "vehicleCategory": 1
       }
     ],
     "a289": [
@@ -345,5 +361,174 @@
     ],
     "transponderPolicy": "Both base modes now use category I; no loyalty discount is inferred or applied.",
     "previousNote": "M1 no-transponder 250 and M3 category-I 480/520 schedule retained. 2026-10-13 re-audit confirms M1 explicit payment columns and M3 order/whole-road schedule; an earlier analysis incorrectly read higher-category M3 prices as payment columns. CKAD/A289 records retain original 2026-10-01 provenance, not independently re-verified here."
-  }
+  },
+  "ckadCategoryCorrection": {
+    "reviewedAt": "2026-10-14",
+    "sourceFile": "experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf",
+    "previousRows": [
+      {
+        "id": "ckad-m10-m11",
+        "from": "М-10",
+        "to": "М-11",
+        "allDays": {
+          "transponder": 42,
+          "noTransponder": 42
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-m11-a107",
+        "from": "М-11",
+        "to": "Никольское-Горки (А-107)",
+        "allDays": {
+          "transponder": 119,
+          "noTransponder": 119
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-a107-a104",
+        "from": "Никольское-Горки (А-107)",
+        "to": "Дмитровское шоссе",
+        "allDays": {
+          "transponder": 120,
+          "noTransponder": 120
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-a104-m8",
+        "from": "Дмитровское шоссе",
+        "to": "М-8",
+        "allDays": {
+          "transponder": 241,
+          "noTransponder": 241
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-m8-m7",
+        "from": "М-8",
+        "to": "М-7",
+        "allDays": {
+          "transponder": 461,
+          "noTransponder": 461
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-m7-m12",
+        "from": "М-7",
+        "to": "М-12",
+        "allDays": {
+          "transponder": 40,
+          "noTransponder": 40
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-m12-nosov",
+        "from": "М-12",
+        "to": "Носовихинское ш.",
+        "allDays": {
+          "transponder": 156,
+          "noTransponder": 156
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-nosov-egor",
+        "from": "Носовихинское ш.",
+        "to": "Егорьевское ш.",
+        "allDays": {
+          "transponder": 81,
+          "noTransponder": 81
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-egor-m5",
+        "from": "Егорьевское ш.",
+        "to": "М-5",
+        "allDays": {
+          "transponder": 271,
+          "noTransponder": 271
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-m5-dom",
+        "from": "М-5",
+        "to": "Домодедово",
+        "allDays": {
+          "transponder": 248,
+          "noTransponder": 248
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-dom-m4",
+        "from": "Домодедово",
+        "to": "М-4",
+        "allDays": {
+          "transponder": 63,
+          "noTransponder": 63
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-m4-m2",
+        "from": "М-4",
+        "to": "М-2",
+        "allDays": {
+          "transponder": 140,
+          "noTransponder": 140
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-m2-kaluga",
+        "from": "М-2",
+        "to": "Калужское ш.",
+        "allDays": {
+          "transponder": 204,
+          "noTransponder": 204
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-kaluga-pk5",
+        "from": "Калужское ш.",
+        "to": "ПК-5",
+        "allDays": {
+          "transponder": 92,
+          "noTransponder": 92
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-pk5-m10",
+        "from": "ПК-5",
+        "to": "М-10",
+        "allDays": {
+          "transponder": 2278,
+          "noTransponder": 2278
+        },
+        "vehicleCategory": 1
+      },
+      {
+        "id": "ckad-m1-zvenigorod",
+        "from": "М-1",
+        "to": "Звенигород",
+        "allDays": {
+          "transponder": 103,
+          "noTransponder": 103
+        },
+        "vehicleCategory": 1
+      }
+    ],
+    "reason": "I andII vehicle classes were mislabeled transponder andnoTransponder."
+  },
+  "ckadEffectiveFrom": "2026-03-02T00:00:00+03:00",
+  "m3EffectiveFrom": "2026-03-02T00:00:00+03:00"
 }

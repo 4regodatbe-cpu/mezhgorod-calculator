@@ -1,3 +1,136 @@
+## CURRENT 2026-10-14 — аудит завершён, далее точный Preview и живые проверки
+
+- [x] Проверен активный V3; обязательная trace и неизвестный итог при её неполноте, один согласованный DTO/UI маршрут. Full build 621/621 PASS. [Отчёт](stages/03-consolidated-v3-audit-2026-10-14.md).
+- [ ] Сохранить полную audit-ветку на GitHub без изменения main; проверить механизм записи и целостность дерева, затем CI и Preview на точном SHA через `/api/version`. Исторический Preview не считать этой версией.
+- [ ] Выполнить приёмочные сценарии из отчёта: реальные API/выбранная геометрия, diagnostics on/off, длинный маршрут/отказ trace/граница профиля, mobile/desktop UI. Сохранить JSON/время/условия/скриншоты. Критерий: нет пропущенной обнаруженной дороги/частичной полной суммы/unknown как 0.
+- [ ] Продолжить source/geometry gaps по таблице отчёта: М4/355, М11 ПВП21/p147/head/tail, М12 новая Шали, 16 conditional ЦКАД/Small Vyazemy, регионы/4 Псковские дороги/10 дат. Новый PDF нужен только для конкретного недоказанного факта; не повторять нерабочие 403/404 ссылки.
+- [ ] Официальный выпуск и Android `/v2` остаются отдельными этапами после приёмки и прямого запроса пользователя.
+
+---
+
+## CURRENT 2026-10-14 — далее сводный audit активного V3
+
+- [x] ЦКАД geometry-only вместо native money; independent regional IDs/SmallVyazemy; paid evidence completeness bug fixed. Full616/616PASS, [отчёт](stages/03-v3-ckad-regional-identity-and-paid-evidence-2026-10-14.md).
+- [ ] Active `route-leg-pricing.ts`/`route-leg.ts`/API/UI audit против ALGORITHM_SPEC: selected geometry,first/last,own ready date/profile,overlap,partial/unknown/free. Составить воспроизводимый список blockers/приёмочных маршрутов; не объявлять готовность по одному тест-count.
+- [ ] Проверить возможность этап4/Preview на точном SHA и сохранение всей audit-ветки на GitHub; CLI read доступ есть, write credential исторически отсутствовал, не повторять зависающие blob загрузки без диагностики. Main/Production только прямым запросом.
+- [ ] Data/geometry work: regional boundaries/SmallVyazemy, 120minCKAD registration context (не простоETA/boolean), отдельные4Псковдороги/10dates; новаяШали/одноРВПdirection/М12anchors;М11ПВП21/p147/localheads/tail scope. Source gaps не превращатьв0/удалённуюдорогу.
+
+---
+
+## CURRENT 2026-10-14 — далее ЦКАД и региональные продукты
+
+- [x] М12 ready pair по outer boundary без native money/continuity. Удалены crimeaM4Total и bypass money в А289helper. Finalbuild606/606PASS; [отчёт](stages/03-v3-m12-outer-boundaries-and-helper-cleanup-2026-10-14.md).
+- [ ] ЦКАД: `engine/ckad-route-adapter.mjs`, `lib/toll-engine/ckad-production.ts`, `route-leg-pricing.ts` — проверить independent ring/SmallVyazemy IDs и operator context. Без proof120мин/defaultoperator condition не разблокировать16cells. Критерий: собственная пара каждого продукта, неизвестная часть блокирует сумму.
+- [ ] `unpriced-road-coverage.ts`/`route-leg-pricing.ts`: заменить broad regional денежный компонент самостоятельными IDs для распознанных продуктов; неоднозначные Псков/неопознанные toll events остаются unknown, не исчезают. Не активировать опубликованный тариф без географических границ.
+- [ ] НоваяШали/неоткалиброванные РВП/одноРВП направление, М11 ПВП21/p147/localheads/tail, regionalbindings/10date rows — сохранять unknown до доказательств.
+- [ ] Консолидированный audit активного V3 против ALGORITHM_SPEC/releasecrit, полныйgate. Затем этап4 реальные маршруты/UI/API и Preview с SHA. Main/Production только прямым запросом.
+
+---
+
+## CURRENT 2026-10-14 — М11 реализован; следующий блок М12
+
+- [x] Активный V3: ready matrix head, own profile/exit payment clock, независимые head/mainline/tail; full Moscow mainline first/last в обе стороны без p593. PDF210/210; финальный build601/601PASS. [Отчёт](stages/03-v3-m11-products-and-payment-time-2026-10-14.md).
+- [ ] М12: `engine/m12-route-adapter.mjs` и `lib/toll-engine/m12-production.ts` / boundary span — убрать обязательное наличие native priced/tolls и внутреннего vector eligibility при доказанных крайних границах. Критерий: готовая направленная пара и unknown при неизвестной границе, включая старый832/newShali; никакой денежной подстановки/суммы промежуточных РВП.
+- [ ] Новая Шали: сохранить первичную географию перед привязкой; старое832 не новыйShali. ЦКАД context/SmallVyazemy и региональные productId/границы — отдельные незавершённые блоки.
+- [ ] М11: точный anchor ПВП21 вместо широкого стабильного окна; локальные head endpoints; p147/другие mainline anchors; tail/airport scoped ready pairs. Не выдумывать цену56/94 для неустановленной пары.
+- [ ] Проверить/убрать неиспользуемые старые helper деньги crimea/a289 includeBypass=true; final stage3 audit, затем этап4/Preview. Main/Production только по прямому запросу.
+
+---
+
+## CURRENT 2026-10-14 — М4/А289/обход разделены; далее М11
+
+- [x] Активный верхний V3: независимые М4/А289/обход, готовая датированная цена обхода и направленные ПВП 46. Финальный build 592/592 PASS; [отчёт](stages/03-v3-southern-products-2026-10-14.md).
+- [ ] В `engine/m11-route-adapter.mjs` заменить native headAmount/headWeekday/headWeekend готовой матричной парой 15–58. Геометрия должна передавать собственные directed endpoints/время головного продукта; не угадывать профиль по mainline времени.
+- [ ] Верхний `route-leg-pricing.ts`: независимые М11 head/mainline/tail. Критерий: одно начисление каждого продукта, неизвестный хвост блокирует полную сумму; готовые directed fares без суммы промежуточных ПВП.
+- [ ] Завершить bindings новой Шали, полного М11 tail/airport, Small Vyazemy, ЦКАД tariff context и регионов. Существующие источники/история — по WORK_STATE.
+- [ ] Отдельно убрать неиспользуемые старые денежные helper-пути `crimeaM4Total` / `a289ShortRoute includeBypass=true` после проверки вызовов и тестов; не заявлять полное удаление заранее.
+- [ ] Focused + полный build, журнал/коммит; затем отдельный Preview-блок. Main/Production — только по прямому запросу.
+
+---
+
+## CURRENT 2026-10-14 — следующий блок этапа 3
+
+- [x] Убрать прямые production-подстановки М4/М11/М12/ЦКАД и геометрическую денежную замену в верхнем V3. Проверено 585/585 и сборкой; [отчёт](stages/03-v3-upper-pricing-fallbacks-2026-10-14.md).
+- [ ] Разделить М4, А289 и `krasnodar-west-bypass` в `lib/v3-calculation/m4-a289-composition.ts` и `route-leg-pricing.ts`. Для обхода нужны собственные направленные границы на выбранной геометрии, дата/профиль и готовая пара `m4-dzok`; не читать деньги из `lib/toll-data/m4.ts`. Критерий: отдельные компоненты, одно начисление, неизвестный обход блокирует полный итог.
+- [ ] Отдельный адаптер головного продукта М11 вместо native head money в `matrixM11GeometryComponent`; далее отдельные mainline/tail, без известной части в качестве полного итога.
+- [ ] Продолжить незавершённые геометрические bindings новой Шали, М11 679–684/Пулково, Small Vyazemy и ЦКАД context. Тарифные таблицы сами по себе не доказывают границы.
+- [ ] После изменений focused tests + `npm run build -- --webpack`, Git handoff. Preview/Production требуют отдельного блока; main/Production не менять по общему «Дальше».
+
+---
+
+## 2026-10-14 — directpairМ12 и физическоеобнаружениеПулково
+
+- [x] М12готоваяdirectpair безnativeденег/fullvectorlookup;mainpriceguard independentM4/DZOK; ЦКАДconditional28→16;PositivePulkovo detection blocks falsefree.24products,580/580/buildPASS. [Отчёт](stages/03-directed-pairs-and-physical-product-guards-2026-10-14.md).
+- [ ] ЗаменитьМ12nativegeometrygate своимouter-boundary/fullpaidspanproof; оперетьсянаselectedgeometry/primaryjunctionevidence, не на citynames. ОктябрьШали остаётсяunbound,832неоживлять.
+- [ ] ЗавершитьexactpaidproductscopeМ11tail/airport:2airportgantries подтвержденыOSM/PDF,mainlineframes/scoped56/94 ещёне связаны. Подключать38/56/94 только послеcompleteproof, не подсумму.
+- [ ] ВерхнийV3сборщик independentproductId (M4/A289/DZOK,M11head/mainline/tail,M12regions,CKADbypass). Дубликаты/priceunknown не позволятьскрытьполныйитог.
+- [ ] ЦКАД120минусловия иSmallVyazemygeometry;10dategapsПсков/Хэйхэ покаunconfirmed. Не повторять запросужеимеющихсяPDF.
+
+## 2026-10-14 — датировка и календарь основного М11 готовы
+
+- [x] 17дат:27→10; Казань actual09.03.2025 23:50:01; свои М11order27401:00/праздники; nativegeometryexit time; а01код перенесён сновойcategoryIbaseline. Полныйgate571/571. [Отчёт](stages/02-dates-and-m11-tariff-calendar-2026-10-14.md).
+- [ ] Физически связатьМ11tail679–684/15–58/mainline, М12newShali и ЦКАДcontext/productbypass, затемstage3independentproduct composition. НовыеPDF уже есть, не спрашиватьповторно.
+- [ ] Псков8 иХэйхэ2 dates остаютсяunknown/unconfirmed до первичного доказательства; не заполнять по дате приказа/подтверждения пользователя. ВRVPsource/price не считатьgapкакfalse0.
+- [ ] При подключении Рязанибесплатнойполосы/МСДtransit передавать только доказанныеverifiedLane/tariffContextResolved. Остальной failclosedсохраняется.
+
+## 2026-10-14 — семь PDF обработаны; запрос документов ЦКАД/М12 закрыт
+
+- [x] Исправить210ЦКАДIcells, сохранить380М12directcells(08.10),30датМ3/Тольятти и5originalPDF; проверитьsourcehashes/матрицу/build565/565. [Отчёт](stages/02-uploaded-operator-pdfs-2026-10-14.md).
+- [ ] Продолжить27строкбезstartdate:heihe2,kazan4,m1_2,msd1,pskov8,ryazan4,udmurtia6 по первичнымисточникам. Не просить повторно уже полученные7PDF.
+- [ ] СвязатьM12newShali сфактическимвыбранныммаршрутом:дваShali определенияPDFнеравныдоказательствуmarker832.380newcellsready,old832expired. Восточныеappendices2–4 сохраненыsource-only, независимыеproducts требуютbindings.
+- [ ] ЦКАДfootnote2:28M12endpointcells требуютtariffContextResolved, иначеunknown; SmallVyazemy103 отдельныйproduct требуетadapter.2381арифметическийbenchmarkнеготоваяruntimeпара.
+- [ ] М11head/mainline/tail и stage3product runtime; integrationchecka01e2bf, затемreleasegates/Previewпо плану. Productionбезпрямогозапросанепубликовать.
+
+## 2026-10-14 — актуальные ссылки PDF не подтверждены
+
+- [ ] ЦКАД/M12: получать PDF через ссылки самой страницы Автодора; старые165/fe5 адреса не выдавать как сейчас рабочие. Сайт в cloudbrowser требует ручной проверки, tskad502. Подробности в MATRIX_OPEN_ITEMS_AND_DOCUMENTS_2026-10-14.md.
+- [x] PDF(2) побайтово повторяетM4rules, новый импорт не нужен. Скриншот404 прочитан, полныйURL скрыт.
+- [ ] Независимо продолжить М11 и региональную датировку; дваPDF остаются требуемыми для визуальногоcategory/ODаудита.
+
+## 2026-10-14 — запрос документов и пересмотр категории ЦКАД
+
+- [ ] Получить [ЦКАД/M12 PDF](MATRIX_OPEN_ITEMS_AND_DOCUMENTS_2026-10-14.md); не запрашивать снова М4/355 и имеющийся М11.
+- [ ] ЦКАД: перепроверить все210directcells по заголовкам категории/оплаты; прежняя трактовка3189 как Cat-I no-transponder подозрительна (официальный индекс показываетII). Сохранить runtimeApproved=false до проверки. Не просто заменить длинную пару или делить ставки.
+- [ ] М12: сверить Marchsource и действующие после08.10 точныеOD/границы; М11 physicalproducts/profile;57undatedrawrows. После изменения данных focused/fullgates.
+
+##2026-10-14 — ПВП355 закрыт по двумPDF
+
+- [x] RulesPDFpages7–8+tariffPDFpage2:355northentry→339receipt; direct220/220compiled,reverse notinvented.
+- [x] Исходные428ключей учтены:404canonicalestimates+24excludedfarepairs,0unresolved.728active/668excludedchains/4reviewed/2operator.560/560tests/buildPASS.
+- [ ] Продолжить nationwide stage2M11/M12/CKAD,remaining57undatedrows andselectedphysicalcoverage; stage3independentproductruntimeahead.
+- [ ] Integrationcheck отдельногоa01e2bf(CKADtimestamp/M11overflow) перед release.
+
+##2026-10-14 — M4PDF columns/start verified
+
+- [x] Preserve/visuallyverify uploaded5-pagePDF, sourcehash,21normalizedI/nontRrows, March2start. Rebuild1492rowsdates;557/557/buildPASS.
+- [ ] Read actual355 detailed entry/receipt rulesPDF(e0b/5kq5uo88zxclelibmubucv607fda7cvv.pdf); mapexact paidboundaries with24Yandex controls. Operator rows/date evidence doesnot make allODconfirmed.
+- [ ] Remaining57rawrowswithoutstart date andM11/M12/CKAD bindings/sources; stage2stillINPROGRESS.
+
+##2026-10-14 —24 Яндекс controls355 наблюдены
+
+- [x] Cloud browser разрешён пользователем;12directions x2dates,24actual sums recorded. Отчёт stages/02-yandex-355-controls-2026-10-14.md.
+- [ ] Подтвердить paidboundary/полосу355 и остальныхПВП поPDF/схеме; whole-Yandex-route estimates с localturns не импортировать как exact355 matrixcells.24unknown остаются.
+- [ ] Получить tariffPDF пользователя и сверить дату/категорию/профиль; затем stage2 остальных продуктов.
+
+## 2026-10-14 — активные дубли М4 устранены
+
+- [x] Компилировать одну topology-пригодную estimate на directed endpoint/profile;404/428 восстановлены,24 unknown;668 лишних chains вне runtime;726 unique cells и4 reviewed overrides.554/554/build PASS.
+- [ ] Подтвердить restored estimates same-route/operator/Yandex и даты; текущие цены unconfirmed. Исправление топологии не объявлять проверкой всех сумм.
+- [ ] Продолжить M11/M12/CKAD coverage и stage2 delivery criteria; runtime product split stage3 впереди.
+
+## 2026-10-14 — этап2: quarantine теперь enforced в общем ядре
+
+- [x] Исключить audit-only строки из общего полного-key quote, а не только endpoint adapter;1096 rows regression,551/551 tests/build PASS.
+- [x] Сохранить primary topology evidence672 exit/355 entry-receipt rule; current PDF403, никаких новых подтверждённых цен.
+- [ ] Проверить актуальные exact OD/направления для339/355 и636/672; не переносить ramp цену в сквозной вектор.428 conflict keys остаются unknown.
+
+## 2026-10-14 — этап2: структурный аудит готов
+
+- [x] Диагностический отчёт4699 строк/428 conflicts:140(339/355),168(636/672),120(оба),1549 без start date; final549/549/build PASS.
+- [ ] Сверить точные directed endpoint/profile/source/date для двух групп вариантов; не выбирать min/max. Продолжить M11 head/mainline/tail, M12 и CKAD.
+- [ ] При интеграции проверить отдельно a01e2bf (CKAD timestamp/M11 overflow) из второй локальной audit-копии; данный блок диагностический.
+- [ ] Этап2 закрыть только по критериям DELIVERY_PLAN; текущий отчёт stages/02-matrix-and-provenance.md отмечен IN PROGRESS.
+
 ## 2026-10-14 — этап 1 завершён, очередь следующей работы
 
 1. [DONE] Единая рабочая ветка `integration/v3-product-baseline-2026-10-14` опубликована, fetch получена и выбрана локально; snapshot `2b756ef`, полный source tree совпал с локальным проверенным заделом. Каталог 23 продуктов, границы, overlap правила и unknown для Пскова сохранены. Отчёт: `stages/01-baseline-and-product-boundaries.md`.

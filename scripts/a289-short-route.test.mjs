@@ -11,7 +11,7 @@ const testModule={exports:{}};
 vm.runInNewContext(compiled,{module:testModule,exports:testModule.exports,require:name=>{
   if(name==='@/lib/toll-engine/a289-engine')return {priceA289Route:()=>({crossedFrames:frames,period:'понедельник–четверг'})};
   if(name==='@/lib/special-territory-policy')return {inCrimea:({lng,lat})=>lng<35&&lat<46};
-  if(name==='@/lib/toll-data/m4')return {M4:[{name:'М-4: Дальний западный обход Краснодара',weekday:410,weekend:410}]};
+  if(name==='@/experiments/nationwide-tolls/engine/fare-validity.cjs')return require('../experiments/nationwide-tolls/engine/fare-validity.cjs');
   if(name==='@/experiments/nationwide-tolls/engine/a289-route-adapter.mjs')return require('../experiments/nationwide-tolls/engine/a289-route-adapter.mjs');
   throw Error(name);
 }});
@@ -27,9 +27,9 @@ test('Yalta and Anapa to Krasnodar return selected A-289 estimates in both direc
   frames=['23','82'];
   assert.equal(quote([krasnodar,anapa],[],date).tolls.amount,620);
 });
-test('bypass is added once; missing or different exit evidence does not invent fare',()=>{
+test('A289 helper never adds a bypass label; missing exits do not invent fare',()=>{
   frames=['103','82','23'];
-  assert.equal(quote([yalta,krasnodar],['М-4: Дальний западный обход Краснодара'],date).tolls.amount,1210);
+  assert.equal(quote([yalta,krasnodar],['М-4: Дальний западный обход Краснодара'],date).tolls.amount,800);
   frames=['82'];
   assert.equal(quote([anapa,krasnodar],[],date).tolls,null);
   frames=[];

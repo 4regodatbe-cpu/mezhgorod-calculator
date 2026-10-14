@@ -115,6 +115,7 @@ export function calculateM11MoscowToPetersburg(
   const start = startDate(departureAt);
   const entryAt = crossingAt(start, route, entry.index, routeSeconds);
   const p58At = crossingAt(start, route, p58.index, routeSeconds);
+  const p679At = crossingAt(start, route, p679.index, routeSeconds);
   const entryTariff = section15Amount(entryAt);
   const p58Tariff = priceM11CurrentPartialCategory1("p58", "p679", p58Profile(p58At));
   const weekday58 = priceM11CurrentPartialCategory1("p58", "p679", "monThu");
@@ -128,7 +129,7 @@ export function calculateM11MoscowToPetersburg(
   return {
     parts: { headAmount: entryTariff.amount, headWeekday: section15Snapshot.tariffs.monThuDay0600to0100,
       headWeekend: Math.max(section15Snapshot.tariffs.fridayDay0600to0100, section15Snapshot.tariffs.saturdayDay0600to0100, section15Snapshot.tariffs.sundayDay0600to0100),
-      from: "p58", to: "p679", mainlineAt: p58At.toISOString() },
+      from: "p58", to: "p679", mainlineAt: p679At.toISOString() },
     candidate: true,
     exact: true,
     tolls: {

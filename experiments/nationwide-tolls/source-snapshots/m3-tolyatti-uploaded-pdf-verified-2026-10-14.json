@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-14",
+  "m3": {
+    "sourceFile": "source-documents/m3-order53-effective-2026-03-02.pdf",
+    "sourceSha256": "d5344fd6bb54329466c5236e3d1657a14dd87ca8c3eddf2529276fbe1fa9d3a3",
+    "order": 53,
+    "orderDate": "2026-02-27",
+    "effectiveFrom": "2026-03-02T00:00:00+03:00",
+    "category": 1,
+    "pages": [
+      1
+    ],
+    "pvpRates": {
+      "86": [
+        100,
+        100
+      ],
+      "136": [
+        190,
+        190
+      ],
+      "168": [
+        190,
+        230
+      ]
+    }
+  },
+  "tolyatti": {
+    "sourceFile": "source-documents/tolyatti-order85-effective-2026-03-01.pdf",
+    "sourceSha256": "f89df2dbff7b0634e5273c7fd7d1e562d08206e9e638974b9124ac72d08e3999",
+    "order": 85,
+    "orderDate": "2026-01-28",
+    "effectiveFrom": "2026-03-01T00:00:00+03:00",
+    "category": 1,
+    "pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "nodes": [
+      "17",
+      "60",
+      "97"
+    ],
+    "directRows": [
+      [
+        null,
+        210,
+        320
+      ],
+      [
+        210,
+        null,
+        140
+      ],
+      [
+        320,
+        140,
+        null
+      ]
+    ]
+  }
+}
