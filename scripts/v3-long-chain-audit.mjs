@@ -8,6 +8,7 @@ import {followsPlan,findPlanLegStretchAnomaly,analyzeRoute} from '../lib/special
 import {SPECIAL_TERRITORY_BOUNDARIES} from '../lib/special-territory-boundaries.ts';
 import {selectFastestRoute} from '../experiments/nationwide-tolls/fastest-route-policy.mjs';
 import {validateTollEdges} from '../lib/toll-validator.ts';
+import {nearestSegment} from '../lib/toll-engine/m11-moscow-geometry.ts';
 import {calculateLegTolls} from '../lib/v3-calculation/route-leg-pricing.ts';
 import {tollsForApi} from '../lib/v2-calculation/free-route-selection.ts';
 const point=(label,lng,lat)=>({label,position:{lng,lat}});
@@ -20,6 +21,7 @@ const cases={
  'spb-kazan-moscow':{endpoints:[spb,kazan],controls:[spb.position,moscow.position,kazan.position],expected:['m11','m12']},
  'krasnodar-spb-moscow':{endpoints:[krasnodar,spb],controls:[krasnodar.position,moscow.position,spb.position],expected:['m4','m11']},
  'spb-krasnodar-moscow':{endpoints:[spb,krasnodar],controls:[spb.position,moscow.position,krasnodar.position],expected:['m11','m4']},
+ 'spb-kazan-ckad':{endpoints:[spb,kazan],controls:[spb.position,...ckad.slice(5).toReversed(),kazan.position],expected:['m11','ckad','m12']},
  'kazan-spb-ckad':{endpoints:[kazan,spb],controls:[kazan.position,...ckad.slice(5),spb.position],expected:['m12','ckad','m11']},
  'krasnodar-spb-ckad-outer':{endpoints:[krasnodar,spb],controls:[krasnodar.position,ckad[0],ckad[6],ckad[10],spb.position],expected:['m4','ckad','m11']},
  'krasnodar-spb-ckad':{endpoints:[krasnodar,spb],controls:[krasnodar.position,...ckad,spb.position],expected:['m4','ckad','m11']},
@@ -56,7 +58,21 @@ if(process.argv[2]==='--replay'){
 }
 try{
  let record;
- if(replay)record=replay;
+ if(replay){
+  record=replay;
+  // Derive the newly exposed way ledger only from captured full-route traces.
+  // Local plaza traces have trace_options and cannot enter this ledger.
+  if(!record.validation.paidRoadEdges){
+   const traces=new Map();
+   for(const call of record.calls){
+    if(!call.url.includes('/trace_attributes')||call.status!==200)continue;
+    const request=JSON.parse(call.body);if(request.trace_options||!request.shape?.length)continue;
+    traces.set(call.key,{request,data:JSON.parse(call.text)});
+   }
+   const ordered=[...traces.values()].sort((a,b)=>nearestSegment(record.route.coordinates,[[a.request.shape[0].lon,a.request.shape[0].lat]]).index-nearestSegment(record.route.coordinates,[[b.request.shape[0].lon,b.request.shape[0].lat]]).index);
+   record.validation={...record.validation,paidRoadEdges:ordered.flatMap(t=>(t.data.edges??[]).filter(e=>e.toll===true).map(e=>({wayId:e.way_id==null?null:String(e.way_id),roadNames:e.names??[]})))};
+  }
+ }
  else{
   const name=process.argv[2],spec=cases[name],[from,to]=spec.endpoints,started=Date.now();
   const responses=await Promise.allSettled([valhalla(from,to,1,spec.controls),osrmRoute(from,to,spec.controls),brouterFast(from,to,spec.controls)]);

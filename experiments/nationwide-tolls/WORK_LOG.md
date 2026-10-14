@@ -1299,3 +1299,24 @@ Git: родительc1421f8, новая fixветка; commit этого бло
 5. Повторить liveacceptance после sourcebindings и хотя бы1 полностьюpriced multi-roadchain; затем полныйgate. Текущий этап — успешная локализация/кодовые исправления, а не полный выпуск.
 
 Publication: main/Production/Android не изменены, новогоPR/Preview/CI нет. GitHub export остаётсяBLOCKED по предыдущемуauto-review, новыйpush не пытался. Currentfix commit определяется Git history этого отчёта; parent29a7c4d.
+
+
+# Этап07 — разрешённая публикация и MMK М11, 2026-10-15
+
+Пользователь явно разрешил GitHub export. Обычный push после разрешения не имел CLI credentials; connected GitHub опубликовал проверенное дерево96319999be776dfa22e7cba59dd4bbbc690939f1, commit16fc7213a4d0d7095b29e049a672768b2089eafd. PR14 draft в audit/v3-matrix-provenance-2026-10-14. Actions38644084416 verify/live_probe success, Vercel status success. Ни merge, ни Production не выполнялись.
+
+Контрольные цепочки ЦКАД фактически входят через MMK north50, не CKAD47. Операторские passage rules page5 и head tariff page2, ранее сохранённые PDF, проверены визуально. Направленные OSM gates3499155981/3499155978, flanks и source SHA сохранены source-snapshots/m11/2026-10-15-mmk-bindings. Новый m11-mmk-head-boundary.ts требует единственный gate, ordered flanks25m/chord≤2km и независимый strict mainline. Source approximate position сохранён; nearby/reverse/long chords unknown. m11-product-boundaries использует собственную MMK↔Solnechnogorsk пару и payment clock; суммы матрицы не изменялись.
+
+Начальное предположение симметричной цены вызвало1 failure: по первичной таблице reverse200, forward280. Исправлены ожидания, focused16/16 и full638/638+quote/API+Next/TS PASS. Новый live spb-kazan-ckad показывает head200/mainline3900, остальные неподтверждённые компоненты unknown. Evidence, replay и checks сохранены. Parent новой работы16fc7213; итоговый commit определяется git history PR14. Следующий блок: scoped ZSD, затем tail.
+
+# Этап08 — первая зона ЗСД, 2026-10-15
+
+Задача: длинные пересекающиеся платные цепочки и точные места обрыва. nch-spb PDF403 не обошли выдуманной ценой: официальный владелец whsd.ru/tarifyi-na-proezd/ и /pravila-ispolzovaniya-zsd доступны200. HTML cash/card таблица effective2025-05-01, category1 zone1 КАД(юг)–Благодатная300; transponder2026 не используется. HTML, SHA, bulk OSM64ways/335nodes и readiness сохранены source-snapshots/zsd/2026-10-15-zone1.
+
+Reviewed conservative subset27 paid way IDs полностью в zone1. Runtime не использует latitude heuristic. zsd-zone1-component.ts требует complete selected trace/booth coverage, ledger всех toll edges, только reviewed ZSD ways, единственный known PVP3/4 gate, ordered flanks25m/chord≤2km; иначе unknown. Quote engine использует scoped cash cell и время фактического crossing; same-zone key не нулевой OD. toll-validator отдаёт paidRoadEdges, route-leg-pricing подключает scoped component; tariff-products описывает partial scope. Общая готовность сети не объявлена.
+
+Новые4 tests проверяют source hashes/HTML, обе стороны300 без nightdiscount, чужую зону/неполноту/повторные booths/reverse/pre-effective отказы и recorded live scope. Focused29/29, full642/642+quote/API+Next/TypeScript PASS, targetedlint и diffcheck PASS. Replay runner восстанавливает ledger только из recorded global responses, без сети и без повышения completeness. Вначале синтаксическая ошибка flatMap остановила runner; исправлена, node --check PASS и10 replay PASS.
+
+Свежий live Краснодар→Москва→СПб: M4/M11 known, ZSD300; единственный blocker tailМ11 679–684. CKAD variants head280/ZSD300, missingtail+CKAD. Kazan и reverseCKAD выходят за reviewedzone1, поэтому ZSD unknown. Волноваха→Краснодар22907+850 regression PASS. Никакой partialtotal не принят. Primary order274 ещё не привязан физически. Яндекс UI northbound probe дал12km detour/no fare label; не является price/free proof, никаких0/250/56/112 не импортировано.
+
+Ветка fix/v3-missing-route-prices-2026-10-15 parent16fc7213, PR14; эта работа публикуется отдельным exact-tree checkpoint. Main/Production/Android не менялись. Следующий шаг: reviewed tail physical endpoints/payment events, другие ZSD zones/CKAD/M12, полностью priced длинная цепочка.

@@ -12,16 +12,16 @@ const root=new URL('../experiments/nationwide-tolls/source-snapshots/long-chain-
 const folder=readdirSync(root).find(name=>name.startsWith('kazan-spb-ckad-2026-'))!;
 const captured=JSON.parse(gunzipSync(readFileSync(new URL(folder+'/capture.json.gz',root))).toString());
 const date='2026-10-13T09:00:00+03:00';
-test('actual M12–CKAD–M11 chain resolves mainline without inventing a Moscow head',()=>{
+test('actual M12–CKAD–M11 chain resolves its own MMK head and mainline pair',()=>{
  const route=captured.route;
  const boundaries=resolveM11ProductBoundaries(route.coordinates,route.seconds,date,route.m11RoadEvidence);
  assert.equal(boundaries.resolved,true);assert.equal(boundaries.headDetected,true);
- assert.equal(boundaries.parts?.head,null,'partial head entry is still physically unbound');
+ assert.equal(boundaries.parts?.head?.from,'mmk_a107');assert.equal(boundaries.parts?.head?.to,'solnechnogorsk');
  assert.equal(boundaries.parts?.from,'p58');assert.equal(boundaries.parts?.to,'p679');
  const quote=matrixM11GeometryComponent({exact:boundaries.resolved,parts:boundaries.parts})!;
  assert.equal(quote.components.find(c=>c.id==='m11-58-679')?.tolls?.amount,3900);
- assert.equal(quote.components.find(c=>c.id==='m11-15-58')?.tolls,null);
- assert.equal(quote.tolls,null,'known mainline must not substitute for complete head+mainline');
+ assert.equal(quote.components.find(c=>c.id==='m11-15-58')?.tolls?.amount,280);
+ assert.equal(quote.tolls?.amount,4180,'only own head and mainline values compose here; tail/ZSD remain separate');
 });
 test('a genuinely headless mainline pair does not manufacture a head charge',()=>{
  const all=captured.route.coordinates as Coordinate[];

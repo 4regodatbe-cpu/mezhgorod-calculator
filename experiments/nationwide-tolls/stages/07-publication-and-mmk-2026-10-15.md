@@ -1,0 +1,7 @@
+# Этап07 — разрешённая публикация и MMK М11, 2026-10-15
+
+Пользователь явно разрешил GitHub export. Обычный push после разрешения не имел CLI credentials; connected GitHub опубликовал проверенное дерево96319999be776dfa22e7cba59dd4bbbc690939f1, commit16fc7213a4d0d7095b29e049a672768b2089eafd. PR14 draft в audit/v3-matrix-provenance-2026-10-14. Actions38644084416 verify/live_probe success, Vercel status success. Ни merge, ни Production не выполнялись.
+
+Контрольные цепочки ЦКАД фактически входят через MMK north50, не CKAD47. Операторские passage rules page5 и head tariff page2, ранее сохранённые PDF, проверены визуально. Направленные OSM gates3499155981/3499155978, flanks и source SHA сохранены source-snapshots/m11/2026-10-15-mmk-bindings. Новый m11-mmk-head-boundary.ts требует единственный gate, ordered flanks25m/chord≤2km и независимый strict mainline. Source approximate position сохранён; nearby/reverse/long chords unknown. m11-product-boundaries использует собственную MMK↔Solnechnogorsk пару и payment clock; суммы матрицы не изменялись.
+
+Начальное предположение симметричной цены вызвало1 failure: по первичной таблице reverse200, forward280. Исправлены ожидания, focused16/16 и full638/638+quote/API+Next/TS PASS. Новый live spb-kazan-ckad показывает head200/mainline3900, остальные неподтверждённые компоненты unknown. Evidence, replay и checks сохранены. Parent новой работы16fc7213; итоговый commit определяется git history PR14. Следующий блок: scoped ZSD, затем tail.

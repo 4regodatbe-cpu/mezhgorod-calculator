@@ -1,3 +1,13 @@
+## CURRENT 2026-10-15 — после MMK/ЗСД zone1
+
+- [x] Export разрешён; PR14 создан, initial16fc7213 CI success. Исторический remote blocker resolved.
+- [x] MMK направленные gatebindings; ZSD zone1 cash300, full642/focused29/lint PASS; 10 offline replays и свежий live Краснодар→Москва→СПб.
+- [ ] M11 tail: сверить order274 с точными physical mainline boundaries; не переносить56/38/94 без scope proof. Яндекс UI дал detour/no fare tag, это не proof free.
+- [ ] Расширить ЗСД только после reviewed way/gate/zone evidence; остальные зоны unknown. Затем CKAD context/endpoints и M12 operatorpair.
+- [ ] Fullypriced long chain в обе стороны + profile/diagnostics parity, required full gate. Production/merge только по прямому запросу.
+
+---
+
 ## CURRENT 2026-10-15 — после аудита цепочек
 
 - [x] 7 цепочек/8 live/16 replay;38 focused/635fullbuild PASS. [Подробный блок](stages/06-long-chain-route-audit-2026-10-15.md), INDEX.json в source-snapshots/long-chain-2026-10-15.

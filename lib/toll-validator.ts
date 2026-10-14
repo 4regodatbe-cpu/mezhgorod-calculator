@@ -18,6 +18,7 @@ export type TollValidation = {
   wayIds: string[];
   roadNames: string[];
   message: string;
+  paidRoadEdges?: Array<{wayId:string|null;roadNames:string[]}>;
   tollBoothCount?: number;
   tollBooths?: TollBoothEvent[];
   // New validators always fill these fields. They remain optional at the type
@@ -215,6 +216,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
   const complete = failed.length === 0 && successful.length === chunks.length;
   const checkedEdgeCount = successful.reduce((sum, item) => sum + item.edges.length, 0);
   const roadNames = dedupe(tollEdges.flatMap((edge) => edge.names ?? []).filter(Boolean));
+  const paidRoadEdges = tollEdges.map(edge => ({wayId:edgeWayId(edge),roadNames:edge.names??[]}));
   const wayIds = dedupe(tollEdges.map(edgeWayId).filter((value): value is string => Boolean(value)));
   const tollBooths: TollBoothEvent[] = boothEdges.map((edge, edgeIndex) => ({
     osmNodeId: edgeNodeId(edge),
@@ -234,6 +236,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       checkedEdgeCount,
       wayIds,
       roadNames,
+      paidRoadEdges,
       message: tollEdges.length > 0
         ? `Платные дорожные рёбра подтверждены, но проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`
         : `Проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`,
@@ -254,6 +257,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     checkedEdgeCount,
     wayIds,
     roadNames,
+    paidRoadEdges,
     message: tollEdges.length > 0
       ? `Подтверждены платные дорожные рёбра: ${tollEdges.length}`
       : tollBooths.length > 0

@@ -2,6 +2,7 @@ import fareValidity from '@/experiments/nationwide-tolls/engine/fare-validity.cj
 import { resolveM12ProductBoundaries } from "./m12-product-boundaries";
 import { resolveM11ProductBoundaries } from "./m11-product-boundaries";
 import { unpricedRoadCoverage } from "./unpriced-road-coverage";
+import { matrixZsdZone1Component } from "./zsd-zone1-component";
 import { m11TraversalSafety } from "./m11-traversal-safety";
 import { matrixM11Component, matrixM11GeometryComponent } from "@/experiments/nationwide-tolls/engine/m11-route-adapter.mjs";
 import { matrixCkadComponent } from "@/experiments/nationwide-tolls/engine/ckad-route-adapter.mjs";
@@ -161,7 +162,9 @@ export async function calculateLegTolls({
     { id: "m1", detected: unpricedCoverage.m1, tolls: null, reason: "m1_engine_not_yet_composed" },
     { id: "m3", detected: unpricedCoverage.m3, tolls: null, reason: "m3_engine_not_yet_composed" },
     {id:"ckad-small-vyazemy",detected:unpricedCoverage.smallVyazemy,tolls:null,reason:"small_vyazemy_physical_boundaries_not_priced"},
-    ...unpricedCoverage.regionalProducts.map(product=>({id:product.id,detected:true,tolls:null,reason:product.reason})),
+    ...unpricedCoverage.regionalProducts.map(product=>product.id==='zsd'
+      ?{id:product.id,detected:true,...matrixZsdZone1Component(routeGeometry,diagnosticFastValidation,departureAt,routeSeconds)}
+      :{id:product.id,detected:true,tolls:null,reason:product.reason}),
   ];
   const composition = composeRouteTolls(components);
 

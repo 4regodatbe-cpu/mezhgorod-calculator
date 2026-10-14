@@ -3,6 +3,7 @@ import {crossingAt,facilityAnchors,nearestSegment,haversineKm,MOSCOW_M11_ENTRY,
  ENTRY_MAX_DISTANCE_KM,FACILITY_MAX_DISTANCE_KM} from '../toll-engine/m11-moscow-geometry';
 import type {M11RoadEvidence} from '../toll-engine/m11-road-evidence';
 import validity from '@/experiments/nationwide-tolls/engine/fare-validity.cjs';
+import {inspectM11MmkHeadBoundary} from './m11-mmk-head-boundary';
 
 /** Each product has its own outer boundaries. A CKAD entry need not cross
  * Moscow's15-km boundary in order to prove the mainline58→679 pair. */
@@ -32,6 +33,10 @@ export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSec
  const strictGeometry=!fullHead && coversMainline && p58.distanceKm<=0.12 && p679.distanceKm<=0.12
   && (north||south);
  const geometryResolved=fullGeometry||strictGeometry;
+ const mmk=inspectM11MmkHeadBoundary(route);
+ const mmkResolved=partialHead && strictGeometry && mmk.boundaryStatus==='resolved' && mmk.gateIndex!==null
+  && (north && mmk.from==='mmk_a107' && mmk.gateIndex<p58.index
+   || south && mmk.to==='mmk_a107' && mmk.gateIndex>p58.index);
  const timeResolved=validity.validInstant(departureAt) && Number.isFinite(routeSeconds) && routeSeconds>0;
  const unresolved={candidate:headDetected||strictGeometry,headDetected,resolved:false as const,parts:null,
   reason:geometryResolved?'m11_exit_payment_time_missing':'m11_outer_boundaries_unresolved'};
@@ -39,15 +44,15 @@ export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSec
  const departure=new Date(departureAt);
  const p58At=crossingAt(departure,route,p58.index,routeSeconds);
  const p679At=crossingAt(departure,route,p679.index,routeSeconds);
- const exitAt=crossingAt(departure,route,fullHead?entry.index:end?.index??p58.index,routeSeconds);
- const paymentAt=north?p679At:p58At;
- const paymentWindowSeconds=north?0:Math.max(0,(exitAt.getTime()-p58At.getTime())/1000);
+ const exitAt=crossingAt(departure,route,fullHead?entry.index:mmkResolved?mmk.gateIndex!:end?.index??p58.index,routeSeconds);
+ const paymentAt=north?p679At:mmkResolved?exitAt:p58At;
+ const paymentWindowSeconds=north||mmkResolved?0:Math.max(0,(exitAt.getTime()-p58At.getTime())/1000);
  return {candidate:true,headDetected,resolved:true as const,
   reason:fullHead?'m11_direct_outer_boundaries_with_final_payment_clock':'m11_mainline_outer_pair_independent_of_head_entry',parts:{
    from:north?'p58':'p679',to:north?'p679':'p58',mainlineAt:paymentAt.toISOString(),
    mainlineWindowSeconds:paymentWindowSeconds,headDetected,
-   head:fullHead?{from:north?'moscow':'solnechnogorsk',to:north?'solnechnogorsk':'moscow',
+   head:fullHead||mmkResolved?{from:fullHead?(north?'moscow':'solnechnogorsk'):mmk.from!,to:fullHead?(north?'solnechnogorsk':'moscow'):mmk.to!,
     paymentAt:paymentAt.toISOString(),paymentWindowSeconds,
-    timeBasis:north?'adjacent_sections_common_final_p679_exit':'moscow_pvp21_exit_within_p58_to_moscow_window'}:null,
+    timeBasis:north?'adjacent_sections_common_final_p679_exit':mmkResolved?'mmk_north_physical_final_payment_plaza':'moscow_pvp21_exit_within_p58_to_moscow_window'}:null,
   }};
 }

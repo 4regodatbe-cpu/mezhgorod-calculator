@@ -1,3 +1,13 @@
+## CURRENT 2026-10-15 — MMK М11 и первая зона ЗСД привязаны
+
+DONE: пользователь явно разрешил отправку кода и evidence («Разрешаю. продолжай»). Предыдущий remote blocker resolved: точный tree опубликован commit16fc7213, draft [PR14](https://github.com/4regodatbe-cpu/mezhgorod-calculator/pull/14), Actions38644084416 success; Vercel status success. Новая работа в той же fix ветке: направленные MMK north gates дают head280 север/200 юг на контрольной дате; первая зона ЗСД даёт300 по официальной таблице владельца, только при полном подтверждённом охвате.
+
+VERIFIED: focused29/29, full642/642 + quote/API + Next/TypeScript PASS; lint/diffcheck PASS. 10 записанных цепочек повторены offline; новый live Краснодар→Москва→СПб блокируется только tailМ11 679–684. Live Волноваха→Краснодар comfort22907/roads850. [Этап07](../experiments/nationwide-tolls/stages/07-publication-and-mmk-2026-10-15.md), [этап08](../experiments/nationwide-tolls/stages/08-zsd-zone1-2026-10-15.md).
+
+OPEN: tail679–684/airport, другие зоны ЗСД, ЦКАД context/endpoints и М12↔ЦКАД. Unknown не0; частичная сумма не полная. NEXT: доказать физические границы tail и оплату, затем fullypriced chain/reverse/parity. Main/Production/Android не менялись. Исторические BLOCKED записи ниже superseded явным разрешением и публикацией.
+
+---
+
 ## CURRENT 2026-10-15 — длинные цепочки проверены, сбои локализованы
 
 DONE: 8 живых прогонов 7 цепочек Казань/Краснодар↔СПб через Москву, Казань/Краснодар→СПб через ЦКАД;16 offline replays тех же ответов с обычной/переходной датой. Внутренний componentAudit показывает точный блокирующий продукт. Исправлены unnamed М4/М11/ЗСД IDs, независимый mainlineМ11 послеЦКАД и пропуск partialhead, bounded429retry. [Подробный этап](../experiments/nationwide-tolls/stages/06-long-chain-route-audit-2026-10-15.md).
