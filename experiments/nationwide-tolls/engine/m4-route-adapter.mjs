@@ -2,6 +2,9 @@ import core from './quote.cjs';
 import register from '../TARIFF_SELECTION_REGISTER.json' with {type:'json'};
 import reviewed from '../M4_REVIEWED_ENDPOINT_CELLS_2026-10-13.json' with {type:'json'};
 
+const endpointConflictKeys=new Set();
+const endpointKey=(from,to,profile)=>JSON.stringify([from,to,profile]);
+
 // Re-index already stored finished prices by outer boundaries. Never add fees
 // here. Conflicting endpoint cells remain ambiguous rather than choosing one.
 function endpointRegister(input){
@@ -12,11 +15,19 @@ function endpointRegister(input){
    if(row.road!=='m4-candidate')continue;
    const vector=row.sectionVector?.flatMap(id=>id.split('+'));
    if(!vector?.length)continue;
-   for(const [from,to] of [[vector[0],vector.at(-1)],[vector.at(-1),vector[0]]]){
-    const cell={...row,from,to};
-    const key=JSON.stringify([from,to,row.profile,row.rub,row.source,row.effectiveFrom,row.effectiveTo,row.validFrom,row.validUntil]);
-    if(!seen.has(key)){seen.add(key);out[group].push(cell);}
+   // Generated candidate chains with conflicting endpoint fares are retained
+   // for audit but cannot participate in runtime lookup.
+   if(row.runtimeEligible!==true){
+    const [from,to]=[vector[0],vector.at(-1)];
+    endpointConflictKeys.add(endpointKey(from,to,row.profile));
+    continue;
    }
+   // Directional entries are generated and audited independently. Do not
+   // manufacture the reverse direction from a forward candidate.
+   const [from,to]=[vector[0],vector.at(-1)];
+   const cell={...row,from,to};
+   const key=JSON.stringify([from,to,row.profile,row.rub,row.source,row.effectiveFrom,row.effectiveTo,row.validFrom,row.validUntil]);
+   if(!seen.has(key)){seen.add(key);out[group].push(cell);}
   }
  }
  const reviewedKeys=new Set();
@@ -24,6 +35,10 @@ function endpointRegister(input){
   const key=JSON.stringify([cell.road,cell.from,cell.to,cell.profile]);
   if(cell.road!=='m4-candidate'||!['monThu','friSun'].includes(cell.profile)||!Number.isSafeInteger(cell.rub)||cell.rub<0||!cell.source||!cell.observationId||reviewedKeys.has(key))throw Error('invalid_reviewed_m4_endpoint_cell');
   reviewedKeys.add(key);
+ }
+ for(const key of reviewedKeys){
+  const [,from,to,profile]=JSON.parse(key);
+  endpointConflictKeys.delete(endpointKey(from,to,profile));
  }
  for(const group of Object.keys(out))out[group]=out[group].filter(cell=>!reviewedKeys.has(JSON.stringify([cell.road,cell.from,cell.to,cell.profile])));
  out.provisional.push(...reviewed.rows);
@@ -59,7 +74,10 @@ export function matrixM4Component(production, departureAt, routeSeconds){
  }
 
  const weekday=engine.quote(request({...component,profile:'monThu'})),weekend=engine.quote(request({...component,profile:'friSun'}));
- if(actual.rub===null||weekday.rub===null||weekend.rub===null)return production.endpointOnly?unknown('m4_endpoint_matrix_'+actual.reason):null;
+ if(actual.rub===null||weekday.rub===null||weekend.rub===null){
+  const reason=endpointConflictKeys.has(endpointKey(component.from,component.to,component.profile))?'ambiguous-fare-version':actual.reason;
+  return production.endpointOnly?unknown('m4_endpoint_matrix_'+reason):null;
+ }
  // Source evidence for the full nationwide trip is still incomplete; present replacement as an estimate.
  return {reason:'matrix exact selected-route M4 vector',priceConfirmation:'unconfirmed',tolls:{amount:actual.rub,weekdayAmount:weekday.rub,weekendAmount:weekend.rub,period:start.profile==='monThu'?'понедельник–четверг':'пятница–воскресенье',segments:[`М-4: ${ids.join(' → ')} · Стоимость не подтверждена`],confidence:'matched'}};
 }

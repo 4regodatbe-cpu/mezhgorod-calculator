@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-10-13T10:36:52.645Z",
+  "executedAt": "2026-10-13T18:37:28.986Z",
   "status": "passed",
   "fareRows": 4699,
   "counts": {
@@ -27,12 +27,15 @@
     "m12-candidate": 625
   },
   "uniqueKeys": 4699,
+  "m4EndpointConflicts": 428,
+  "m4RuntimeEndpointSpans": 360,
   "checks": [
     "non-negative numeric price and source per row",
     "M11/CKAD reciprocal equality",
     "M4 user two/three/four-PVP prices",
     "M4 mainline 5040/6090 equals saved Yandex controls",
     "overlapping M4 options never double-charged",
+    "M4 endpoint-only lookup excludes ambiguous candidate chains",
     "Mytishchi full259; Togliatti direct320; Heihe1320",
     "MSD dated versions19/25 separate",
     "superseded M12 Shali rows expire before Oct8"

@@ -1,6 +1,60 @@
+## 2026-10-14 — блокер публикации этапа 1
+
+1. [BLOCKED] Пользователь явно разрешает отправку `cf18e8677aa53c30f959c93aff8745d57167ab5d` в новую GitHub ветку `integration/v3-product-baseline-2026-10-14`. Предыдущая попытка отклонена auto-review; обход запрещён. После разрешения push и сверка remote ref; затем этап 1 завершён.
+2. [PENDING] Этап 2: тарифные конфликты М-4, версии/источники и валидатор. Ни PR, ни Preview, ни Production в блоке 1 не создано.
+
+## 2026-10-14 — единая интеграционная ветка
+
+1. [IN PROGRESS] Закончить merge `integration/v3-product-baseline-2026-10-14`, отправить новую ветку в GitHub и сверить SHA. Объединённое дерево: `npm run build` PASS (546/546, quote, 16 app routes). Отчёт: `stages/01-baseline-and-product-boundaries.md`.
+2. [PENDING] Этап 2: проверить причины 428 конфликтующих направленных endpoint/profile ключей М-4, сверить матрицы и тарифную provenance по оператору; не применять recovery patch без отдельной проверки. Критерий: валидатор, версия матрицы и `stages/02-matrix-and-provenance.md`.
+3. [PENDING] Этап 3: отдельные компоненты `m4`, `a289`, обход и другие `productId` в V3, точные пары и простое сложение готовых цен; тесты запрета дублей и partial total. Остальные этапы по `DELIVERY_PLAN_TO_OFFICIAL_RELEASE_2026-10-13.md`.
+
+## PRIORITY 2026-10-13 — delivery plan through official release
+
+The [six-stage delivery plan](DELIVERY_PLAN_TO_OFFICIAL_RELEASE_2026-10-13.md) is the current execution order. This entry is a plan, not completed implementation. The historical backlog below remains evidence but must not override the latest accepted product rules.
+
+- [ ] **Stage 1 — baseline/product boundaries:** compare the live GitHub V3 HEAD and the local `audit/matrix-endpoint-conflicts-2026-10-13` commits; create one reproducible working branch and unique toll-product catalog. Deliver `stages/01-baseline-and-product-boundaries.md` and regression examples for separate M4/A289/bypass products.
+- [ ] **Stage 2 — exact matrix/source:** resolve M4 endpoint conflicts by cause, complete operator/Yandex row provenance/date/profile, M11/M12/CKAD and regional coverage; regenerate and validate the matrix. Deliver `stages/02-matrix-and-source-audit.md` with priced/unknown counts and reasons.
+- [ ] **Stage 3 — V3 composition:** route ID/selected geometry → product-specific first/last boundaries → one exact ready fare each → simple sum. Remove money-producing legacy fallback and duplicate grouping, connect uncovered families; regression for one/two/three roads and unknown. Deliver `stages/03-v3-integration.md`.
+- [ ] **Stage 4 — full gate/live/browser:** focused tests, matrix validator, `npm run test:audit`, `pnpm lint`, `pnpm build`, GitHub final gate; update old V2-only release checks in sync with actual V3 cutover; live route/Yandex and mobile/desktop controls. Deliver `stages/04-end-to-end-verification.md`.
+- [ ] **Stage 5 — Preview:** publish reviewed working branch, prepare release PR, verify exact-SHA Vercel Preview via UI/API and user control routes; fix and repeat final gate. Deliver `stages/05-preview-acceptance.md` and a link for user testing.
+- [ ] **Stage 6 — official release:** after a direct release request, switch root/CI on verified SHA, deploy to Production with saved rollback point, test live domain; address Android `/v2` WebView in separate APK gate. Deliver `stages/06-official-release-and-monitoring.md`.
+
+## PRIORITY 2026-10-13 — rule reconciliation before next algorithm stage
+
+- [x] Consolidate rules found in the current project handoff/history and available conversation search extracts; preserve earlier decisions as history instead of deleting them.
+- [x] Record the user's latest rule: per independent toll road, resolve its own entry/exit pair, read one ready matrix fare, and sum the ready fares across separate roads with no additional formula.
+- [x] Record the permanent append-only stage-journal requirement in root `AGENTS.md`.
+- [ ] Review the tariff-product catalog boundary in `RULES_RECONCILIATION_DRAFT_2026-10-13.md`; exact unrepresented route endpoints and truly disjoint passages already fail closed as unknown until a matrix key exists.
+- [x] Set safe operating defaults for equal ETA (stable candidate order), directional rows (use only explicit matrix evidence), intraday/holiday rules (exact applicable matrix schedule or unknown), and conflicting Yandex controls (unresolved key remains unknown).
+- [ ] After resolving the boundaries, update the normative contract/tests once, so the implementation uses one coherent rule set. Do not reopen settled choices: fastest route only, selected geometry only, one endpoint pair per separate road, no intermediate exits/reentry, ready matrix fare per road, add road fares, unknown is not zero/partial.
+- [ ] Continue the outstanding source/currentness audit only after the relevant tariff-product boundaries are clear. Preserve unknown where exact pair or current fare is missing/conflicting.
+
+See `RULES_RECONCILIATION_DRAFT_2026-10-13.md`, `DECISIONS.md`, and root `AGENTS.md`.
+
+## 2026-10-13 — тарифная актуальность M-12/ЦКАД
+
+- [x] Проверить опубликованную цену M-12 Сокуры→Шали 99 ₽ с 08.10.2026 и сохранить точный scope/effective date.
+- [x] Исправить legacy Москва—Казань 5 909→5 847 ₽ по официальной ячейке P239 и покрыть двунаправленным regression; строка Казань—Шали 62 ₽ остаётся только для отдельно открытого старого тарифа.
+- [x] Сопоставить operator CKAD OD М-10→ПК-5 3 189 ₽ и holding-company whole-road 2 381 ₽; зафиксировать конфликт scope, сохранить runtime disabled.
+- [ ] Получить точную новую OD-пару для поездки до/через Шали и физически подтвердить сопоставление входа Сокуры с трассой; не считать 62 ₽ или московский total актуальными после 08.10.
+- [ ] Разрешить CKAD 2 381/3 189 конфликт по точным РВП/калькулятору оператора; не объединять whole-road контроль и OD ячейку без доказательства.
+
+См. `TARIFF_AUDIT_CURRENTNESS_2026-10-13.md`.
+
+## 2026-10-13 — tariff source re-audit
+
+- [x] M1/M3 category and payment-column reconciliation: M1 no-transponder250; M3 category-I 480/520 by operator profile. Withdraw old M3 shadow800, which used higher vehicle classes.
+- [x] Fix M1 no-transponder in active data, national registry, generator; rebuild/validate matrix. Correct legacy Tolyatti full-road tariff650→320 and test both directions.
+- [ ] Continue full audit across M4/M11/M12/CKAD, regional/full-route overrides and source effective dates; preserve unknown when endpoint, vehicle class, date or selected-route coverage is not established.
+- [ ] Re-run matrix/full builds after remaining tariff blocks; no publish/merge/Production without separate explicit authorization.
+
+See `M1_M3_TARIFF_REAUDIT_2026-10-13.md`. The sections below preserve older task history and may describe issues now resolved above.
+
 ## 2026-10-13 — Yandex endpoint conflict cleanup
 
 - [x] North620→71 and636→71: actual UI weekdays/weekend controls, four unique active reviewed cells;542tests/build PASS.
+- [x] Generator/runtime quarantine: classify ordered endpoint/profile candidates; conflicting prices remain audit-only, unique cells are runtime eligible, reverse direction evaluated independently. Rebuilt4699-row matrix;428 conflicts/360 unique endpoint keys; full75-test + Next/TS build PASS. See `M4_ENDPOINT_CONFLICT_AUDIT_2026-10-13.md`.
 - [ ] Repeat real endpoint controls for remaining conflict pairs, both periods/directions. Do not mirror reverse until its actual paid boundaries are established; controls may bypass a boundary.
 - [ ] Resolve source conflicts where Yandex agrees with neither old candidate. Preserve observation URL/vehicle/date/profile/amount, no min/max selection.
 - [ ] Finish M11/M12/CKAD missing product bindings. Stage10/full nationwide still IN PROGRESS.
@@ -9,7 +63,7 @@
 
 ## PRIORITY 2026-10-13 20:05 MSK — границы вместо полного обхода ПВП
 
-- [ ] Переработать новый M4/M11 pricing согласно последней записи DECISIONS.md: первый/последний тарифные участки → готовая ячейка. Не проверять промежуточные съезды/reentry и не требовать сетевого подтверждения всех промежуточных ПВП. Убрать старое суммирование ПВП из пути нового алгоритма.
+- [x] Переработать новый M4/M11 pricing согласно последней записи DECISIONS.md: первый/последний тарифные участки → готовая ячейка. Не проверять промежуточные съезды/reentry и не требовать сетевого подтверждения всех промежуточных ПВП. Убрать старое суммирование ПВП из пути нового алгоритма. Подтверждено отчётом `ENDPOINT_ONLY_IMPLEMENTATION_2026-10-13.md`.
 - [ ] Проверить оба направления, короткий/длинный вектор, один участок, неизвестную ячейку, разные платные продукты. Тест должен подтверждать отсутствие промежуточных сетевых запросов и отсутствие блокировки из-за их таймаутов.
 - [ ] Сохранить отдельный текущий задел исправлений доступности; полный аудит этап10 остаётся IN PROGRESS.
 
@@ -148,9 +202,9 @@ See `IMPLEMENTATION_PLAN_2026-10-12.md` for the nine-block execution plan and pe
 - [x] **Strict national multi-operator composer (CODE IMPLEMENTED)**: `quoteNationwideTrip` requires all paid facilities checked, rejects missing/repeated/cross-route/unregistered, partial sums never returned as totals. No live route data adapter yet.
 - [x] **V2 Preview catalog + candidate coverage UI (IMPLEMENTED)**: `/v2/toll-roads` and route results diagnostics; user can see exactly which road groups require work. No price cutover.
 - [x] **P0 — native combined tests and browser smoke on latest code (VERIFIED)**: Vercel build deployment `dpl_DEWDeg7fWdkM8Lcr8fK88eycsDb4` from code `6917191f`: **235/235 PASS**, Next+TypeScript+14/14 pages; actual browser run `4227d920-4a18-4992-940b-d520ca07cbcd` Moscow→Voronezh shows M4 national candidate, 7 strict PVPs, no new amounts. See `WORK_LOG.md` phase B.
-- [x] **P0 — second-road M3 physical PVP E2E BOTH DIRECTIONS (DONE at selected-route matching + source sample, NOT MONEY CUTOVER)**: Real M3 three-PVP 86/136/168 both directions: all six lane OSM IDs verified via OSM API + actual same-route Valhalla, E2E Москва→Калуга and reverse, 800₽ sample component on 2026-10-09, never included in actual fare. **Not done:** independent official operator whole-trip receipt/calculator cross-check, full current tariff effective date, full fare cutover. See M1_M3_EVIDENCE_2026-10-09.md.
+- [x] **P0 — second-road M3 physical PVP E2E BOTH DIRECTIONS (DONE at selected-route matching + source sample, NOT MONEY CUTOVER)**: Real M3 three-PVP 86/136/168 both directions: all six lane OSM IDs verified via OSM API + actual same-route Valhalla, E2E Москва→Калуга and reverse, corrected 520 ₽ category-I component on the Friday audit date, never included in actual fare. **Not done:** independent operator receipt/calculator for the exact selected route and full fare cutover. See M1_M3_EVIDENCE_2026-10-09.md.
 - [ ] **P0 — implement fastest-route-only selector policy in new route pipeline:** enumerate valid candidates internally, select minimum travel time deterministically, expose exactly one route, and price only its geometry. Add regressions: fastest paid vs slower free, no alternative shown, tie-break determinism, incomplete toll evidence remains unknown. Scope: new version; keep current production untouched until acceptance gates pass.\n- [ ] **P0 — resolve disputed Yandex controls before any tariff change:** exact selected geometries and gates for Kazan—Naberezhnye Chelny (90/278), SPb—Kronstadt (600/300), and directional M4 Moscow—Krasnodar (5530/5260); match date/time, then compare dated operator calculator/receipt. Treat A-289 test as unresolved because Yandex geocoded destination incorrectly. See `RECONCILIATION_2026-10-11.md`.\n- [ ] **P0 — M1 PVP46 exact OSM mapping and reverse E2E (NEXT; still open after 2026-10-11 Preview verification):** Operator marks 33–66 paid km and PVP46, but both direction OSM IDs still unknown. Try full selected-route Valhalla Moscow↔Mozhaysk/Kubinka, collect toll edge end_osm_node_id, independently verify OSM barrier/name/coords; reject bare geographic proximity.
-- [ ] **P0 — M3 tariff validity and full receipt (OPEN)**: Verify current dated operator tariff order and real operator complete road quote, vehicle class/payment method, all possible M3 paid access/exit legs. Shadow 800 RUB only Oct9 does not certify arbitrary trip or "all roads".
+- [ ] **P0 — M3 exact-route full receipt (OPEN)**: Category-I direct rates 480/520 ₽ and their date-bounded operator source are reconciled; verify an operator complete-trip quote/receipt and all other selected-route tolls. A 520 ₽ M3-only component does not certify an arbitrary journey or "all roads".
 - [ ] **P1 — unverified non-M3 paid operator families (OPEN)**: expand true paid-edge graph proof/OD prices in ZSD, SHMSD, Mytishchi, Pskov, Khabarovsk and regional sectors.
 - [ ] **P0 — official complete tariff matrices for remaining 14 groups**: prioritize ZSD, Odintsovo, Khabarovsk, Mytishchi, Ryazan, Pskov 4 sections, SHMSD/Vitebsk, Amur border bridge. Operator source links in SOURCE_AUDIT; record date, direction, all gates, category I/no transponder, historical version and holiday exceptions. Do not mistake concession operator partial table or legal maxima for exact customer fare.
 - [ ] **P0 — automatic same-route nationwide paid-facility verifier**: model strictly matched OSM `toll_booth`/free-flow camera physical IDs for **all networks**, structured entry/exit/timestamp/paid edge and detected unknowns. Map matching must use the *selected* live geometry; candidate corridor proximity is NOT enough.
@@ -166,7 +220,7 @@ See `IMPLEMENTATION_PLAN_2026-10-12.md` for the nine-block execution plan and pe
 ## 2026-10-12 — tariff nomenclature and source refresh
 
 - [x] Created `TARIFF_NOMENCLATURE_2026-10-12.md`: current 22-group registry mapped to tariff products/models, required route/class/payment/time inputs, known source signals and evidence state. It explicitly does not claim that 22 groups are an exhaustive national legal inventory.
-- [ ] **P0 — reconcile current Avtodor M3 matrix:** compare official current tariff page/PDF with the saved 2026-10-01 snapshot. Search-indexed current page appears to show PVP 86: 100/200; 136: 190/320; 168: 230/280 ₽ (Mon–Thu/Fri–Sun) without transponder. Verify exact headings and effective date from the primary table and preserve a dated snapshot before editing runtime/reference data.
+- [x] **P0 — reconcile current Avtodor M3 matrix (category-I rates)**: 100/100, 190/190, 190/230 ₽; full-road example 480/520 ₽. The old 200/320/280 interpretation was higher vehicle classes. See `M1_M3_TARIFF_REAUDIT_2026-10-13.md`. Exact-route receipt and runtime route binding remain open as separate tasks.
 - [ ] **P0 — finish exact current fare tables across all 22 groups:** prioritize multi-OD/conditional operators and newly changed schedules (Odintsovo from 2026-01-15; Mytishchi 1 February notice; Ryazan from 2026-10-01; ZSD; Pskov's four independent roads; Khabarovsk route matrix). Store source dates, category I and base/no-transponder profile.
 - [ ] **P0 — route controls:** for each proposed live row, use only one fastest Yandex route with fixed endpoints/date/time and passenger car under 2 m/no transponder; retain full geometry and estimate as a control, then reconcile to operator's exact entrance/exit/section tariff or receipt.
 - No price row is accepted from a search snippet, legal maximum, ambiguous image/table column or route-level estimate alone.
@@ -205,5 +259,11 @@ Publish/test exact UI+recovery Preview. Then implement full directed M11 southbo
 Preview UI/recovery published and verified: a38c50e3, dpl_DyQNDZRP7MEn6F1L1ryATYhhc7rZ READY,530 tests/build/GET200. Publication task complete; next full directed M11/M12 and working browser. Three screenshot fares still OPEN.
 
 
-## CURRENT BLOCKER 2026-10-13
-Restore runtime connection; recover existing local tested changes/archives OR apply recovery/road-availability-patch.json with safe driver, regenerate/recover fixture, full gate/build/hash proof, implementation Git/Preview. See ROAD_AVAILABILITY_RECOVERY_2026-10-13.md. Local536 PASS, Volnovakha3050/Voronezh2300 observed; not published. Ufa/Petersburg full totals remain OPEN. No Production.
+## Historical blocker note 2026-10-13 — recovery artifacts unavailable in this checkout
+The old checkpoint named `recovery/road-availability-patch.json` and `ROAD_AVAILABILITY_RECOVERY_2026-10-13.md`, but neither path exists in this checkout. Do not assume those artifacts can be applied. For endpoint-only implementation findings use `ENDPOINT_ONLY_IMPLEMENTATION_2026-10-13.md` and the tracked branch source/history. This historical note does not claim the recovery artifacts were reconstructed. Ufa/Petersburg full toll totals remain OPEN; no Production.
+## 2026-10-13 — исполнение шестиступенчатого плана
+
+1. [IN PROGRESS] Этап 1: каталог `tariff-products.json`, отчёт `stages/01-baseline-and-product-boundaries.md`; сверить GitHub HEAD `1642c76` с локальной веткой по дереву/SHA при доступном Git, выбрать единую удалённую ветку. Проверить тест каталога и полный `npm run build` на итоговом SHA.
+2. [PENDING] Этап 2: разложить 428 изолированных М-4 конфликтов по первопричинам, установить операторские точные пары/даты/профили; валидатор матрицы и `stages/02-matrix-and-provenance.md`.
+3. [PENDING] Этап 3: заменить объединённый `m4_a289` и общий `regional` на независимые `productId`, исключить legacy денежный fallback; контроль М-4 + А-289 + обход, unknown и дублей; `stages/03-v3-composition.md`.
+4. [PENDING] Этапы 4–6: полный gate и реальные маршруты, Preview на проверенном SHA, затем только после прямого запроса официальный выпуск. Критерии и пути — `DELIVERY_PLAN_TO_OFFICIAL_RELEASE_2026-10-13.md`.

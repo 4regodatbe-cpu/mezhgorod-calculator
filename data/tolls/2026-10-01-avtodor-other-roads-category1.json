@@ -3,7 +3,7 @@
   "observedAt": "2026-10-01",
   "source": "https://avtodor-tr.ru/road/tariffs/",
   "category": 1,
-  "note": "A289 reading corrected on 2026-10-13: columns are vehicle categories, not transponder/no-transponder modes. Active A289 rows contain category-I base fares415/205/620/180/800/385 in both undiscounted payment modes. The original mistaken rows/note are retained under a289CategoryCorrection. Other roads keep their separately documented corrections and payment models. This snapshot alone does not prove selected-route crossing.",
+  "note": "A289 reading corrected on 2026-10-13: columns are vehicle categories, not transponder/no-transponder modes. Active A289 rows contain category-I base fares415/205/620/180/800/385 in both undiscounted payment modes. M1 no-transponder=250 (transponder=230), as the tariff page explicitly separates payment columns. M3 category-I direct schedule is 100/100, 190/190, 190/230 MonThu/FriSun; the operator's 2026-03-02 whole-road table confirms 480/520. Do not read neighboring higher-category values as M3 payment modes. This snapshot alone does not prove selected-route crossing.",
   "roads": {
     "m1-33-66": [
       {
@@ -12,7 +12,7 @@
         "to": "66 km",
         "allDays": {
           "transponder": 230,
-          "noTransponder": 230
+          "noTransponder": 250
         }
       }
     ],
@@ -273,7 +273,7 @@
     ]
   },
   "correction": {
-    "correctedAt": "2026-10-10",
+    "correctedAt": "2026-10-13",
     "scope": [
       "m1-33-66",
       "m3"
@@ -281,7 +281,7 @@
     "orderM1": "https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf",
     "orderM3": "https://avtodor-tr.ru/upload/iblock/cb5/9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf",
     "effectiveFrom": "2026-03-02",
-    "changes": "I-class rate rows corrected; prior 250 M1 and M3 FriSun 200+320+280 were category II/III cross-column values, NOT category I. Do not use earlier derived M3 800!"
+    "changes": "2026-10-13 tariff audit confirms M1 230/250 payment columns; M3 category-I is an operator weekday/weekend schedule totaling 480/520 for whole-road example. Other M3 category values must not be mistaken for payment-mode rows."
   },
   "a289CategoryCorrection": {
     "correctedAt": "2026-10-13",
@@ -344,6 +344,6 @@
       }
     ],
     "transponderPolicy": "Both base modes now use category I; no loyalty discount is inferred or applied.",
-    "previousNote": "Visible official tariff-page values. Transponder and no-transponder columns are preserved separately; this snapshot alone is not route-crossing evidence. CORRECTION (2026-10-10): M1/M3 prior rows were erroneous class/date column transcription; rechecked against operator's signed Orders 54 and 53 dated 27 Feb 2026 effective 2 Mar 2026. CKAD/A289 records retain original 2026-10-01 provenance, not independently re-verified here."
+    "previousNote": "M1 no-transponder 250 and M3 category-I 480/520 schedule retained. 2026-10-13 re-audit confirms M1 explicit payment columns and M3 order/whole-road schedule; an earlier analysis incorrectly read higher-category M3 prices as payment columns. CKAD/A289 records retain original 2026-10-01 provenance, not independently re-verified here."
   }
 }

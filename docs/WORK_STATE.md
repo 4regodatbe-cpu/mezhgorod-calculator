@@ -1,3 +1,53 @@
+## CURRENT 2026-10-14 — этап 1, разрешение получено; отправка проверенного дерева через GitHub
+
+IN PROGRESS: пользователь ответил «Продолжай» на конкретный запрос публикации новой интеграционной ветки. Повторный CLI push завершился `could not read Username`, поэтому отправка через Git невозможна без учётных данных. Подключённый GitHub используется для новой ветки на базе `1642c76`: переносится точное проверенное дерево локального состояния, после чего SHA дерева будет сверён, ветка fetch получена и выбрана как единая рабочая. Полная локальная merge-история сохраняется отдельной веткой. Сборка ранее PASS 546/546, quote и 16 app routes. Main/Production не менялись.
+
+## CURRENT 2026-10-14 — этап 1, локально готов; GitHub push заблокирован auto-review
+
+DONE local: merge `cf18e8677aa53c30f959c93aff8745d57167ab5d` с двумя родителями: локальный audit `06e072d` и GitHub experimental `1642c76`; создан каталог 23 тарифных продуктов, Псков явно unresolved. `npm run build` PASS: 546/546 tests, quote contracts, Turbopack 16 app routes. Worktree чист после merge. [Подробный отчёт](../experiments/nationwide-tolls/stages/01-baseline-and-product-boundaries.md).
+
+BLOCKED: auto-review отклонил `git push github HEAD:refs/heads/integration/v3-product-baseline-2026-10-14` как потенциальную передачу полного локального коммита без достаточно явного разрешения. GitHub поиск не нашёл новой ветки. Не повторять через обходной канал; требуется явное разрешение пользователя на публикацию этого SHA. Этап 1 нельзя назвать завершённым на 100%, PR/Preview/Production отсутствуют. NEXT после разрешения: push, read-only проверка remote SHA, затем этап 2.
+
+## CURRENT 2026-10-14 — этап 1, интеграция удалённого и локального аудита
+
+IN PROGRESS: удалённый V3 HEAD `1642c76` получен настоящим `git fetch`, общий предок `1a63018`, различие 49/439 коммитов. На ветке `integration/v3-product-baseline-2026-10-14` выполнено разрешение merge: локальный проверенный тарифный аудит, три удалённых recovery файла и оба родителя истории. Подробности: [этап 1](../experiments/nationwide-tolls/stages/01-baseline-and-product-boundaries.md). Обычная сборка и публикация новой экспериментальной ветки проверяются. V3 runtime ещё не подключён к каталогу. Main/Production не менялись.
+
+NEXT: закончить build, merge commit, push и сверить remote SHA; затем этап 2 — тарифная матрица и 428 конфликтующих ключей М-4.
+
+## CURRENT 2026-10-13 23:54 MSK — шестиступенчатый план до официального выпуска
+
+DONE: составлен конкретный [план реализации и публикации V3](../experiments/nationwide-tolls/DELIVERY_PLAN_TO_OFFICIAL_RELEASE_2026-10-13.md): (1) единая ветка/границы тарифных продуктов; (2) матрица и источники; (3) V3 расчёт пары каждой дороги и итоговое сложение; (4) полная/реальная проверка и обновление релизного CI; (5) Preview и приёмка; (6) официальный веб-выпуск, отдельная Android-оболочка и мониторинг. Каждый этап имеет пути, артефакт, проверки и критерий выхода. Это план, код и тарифы в этом блоке не менялись.
+
+EVIDENCE: локальная audit-ветка HEAD `22bffe7` до этого плана, впереди только локального scratch-origin на 4 коммита; GitHub-поиск не нашёл её как опубликованную ветку. Открытые PR №12/9/6 относятся к другим задачам. Последний просмотренный Preview READY на экспериментальной ветке — `1642c76`; последний просмотренный Production READY — V2 commit `64631d23`. Текущий официальный корень/Android WebView и статический final gate направлены на `/v2`. V3 пока смешивает некоторые платные продукты и оставляет часть семейств без полного денежного расчёта. Эти факты записаны в плане, а не выданы за новые тесты.
+
+NEXT: этап 1 — сверить актуальный GitHub V3 HEAD с локальными четырьмя коммитами, составить уникальный каталог тарифных продуктов/границ и одну воспроизводимую рабочую ветку. Прямой запрос потребуется только на финальную публикацию/слияние после проверки релиз-кандидата; текущая просьба касается плана. Подробный блок: `experiments/nationwide-tolls/WORK_LOG.md`.
+
+## CURRENT 2026-10-13 22:26 MSK — свод правил нового алгоритма и матрицы
+
+DONE: просмотрены проектные handoff/решения/журналы и найденные выдержки из связанных чатов 9–13 октября. Новое прямое правило пользователя записано: для каждой самостоятельной платной дороги найти свою пару крайних пунктов оплаты, взять готовую цену из её матрицы, затем просто сложить готовые цены разных дорог. Внесено в `experiments/nationwide-tolls/DECISIONS.md` и алгоритмический контракт; старое runtime-требование полного промежуточного вектора ПВП помечено superseded. Постоянное подробное append-only журналирование каждого существенного этапа добавлено в `AGENTS.md`.
+
+IN PROGRESS: `experiments/nationwide-tolls/RULES_RECONCILIATION_DRAFT_2026-10-13.md` объединяет найденные правила, источники/приоритеты и 7 редких случаев с безопасными defaults. Главная граница для совместного разбора — как каталогом отделять самостоятельные платные тарифные продукты; поездка с endpoint внутри платной сети при отсутствии exact matrix pair остаётся unknown. Поиск чатов вернул выдержки, не полный экспорт всех переписок; сводка не утверждает обратное. Техническая реализация, тарифное покрытие и аудит матрицы продолжаются отдельно; Production/V2 не менялись.
+
+NEXT: совместно закрыть 7 вопросов из сводки, особенно границы самостоятельного тарифного продукта и маршруты, начинающиеся/заканчивающиеся внутри платной дороги; затем сверить приоритетный контракт и определить следующий кодовый этап. Текущее состояние ветки и проверки записаны в последнем блоке `experiments/nationwide-tolls/WORK_LOG.md`.
+
+## CURRENT 2026-10-13 — тарифный аудит продолжается; M-12/ЦКАД имеют открытые границы
+
+DONE: исправлены M1 без транспондера **250 ₽**, M3 категория I **480/520 ₽**, legacy full Tolyatti **320 ₽**. Повторный source/currentness audit сверил М-12, ЦКАД, Багратион и Удмуртию. Подтверждено: Сокуры→Шали **99 ₽** с 08.10.2026; старые P239→Шали 62 ₽ и legacy Moscow→Kazan 5 909 ₽ не имеют доказанного актуального соответствия новой границе; legacy Moscow→Kazan исправлен на прямую матричную ячейку P239 **5 847 ₽** и покрыт двунаправленной геометрической регрессией. Также операторская длинная ячейка ЦКАД М-10→ПК-5 **3 189 ₽** расходится с отдельно опубликованным whole-road тарифом **2 381 ₽**; однозначного соответствия рамок нет. Эти конфликтные значения не исправлены наугад и не разрешены для нового runtime. Подробности: [аудит актуальности М-12/ЦКАД](../experiments/nationwide-tolls/TARIFF_AUDIT_CURRENTNESS_2026-10-13.md) и [M1/M3/Тольятти](../experiments/nationwide-tolls/M1_M3_TARIFF_REAUDIT_2026-10-13.md).
+
+VERIFIED: повторный `npm run build -- --webpack`: после M12-правки **77/77 тестовых файлов**, quote/API contracts, Next.js/TypeScript и 16/16 страниц PASS; focused M12 regression 1/1 PASS. Использованы существующие локальные exact-version dependencies; lock-файл не менялся. Отчёт и исправление сохранены в commit `fb50f8f` ветки `audit/matrix-endpoint-conflicts-2026-10-13` (локально, branch ahead of origin by one); не push/deploy/merge/Production.
+
+IN PROGRESS: полный охват не достигнут. NEXT: добавить новую цену Sokury→Shali только в точную границу после проверки выбранной геометрии; затем разрешить CKAD whole-road vs OD конфликт по точным РВП и продолжить M4/M11/региональные тарифы и датировки.
+
+## CURRENT 2026-10-13 — writable matrix audit copy; endpoint conflicts quarantined
+
+DONE in local branch `audit/matrix-endpoint-conflicts-2026-10-13` (based on `8cc7cf4`): generated M4 candidate rows now get endpoint/profile uniqueness, conflicting cells are audit-only, and V3 endpoint lookup accepts only explicitly eligible rows. Reverse-direction rows are assessed separately; no reverse fee is manufactured. Matrix rebuilt: 4,699 rows, 428 directed/profile conflicts retained for audit, 360 unique runtime endpoint keys; four previously Yandex-reviewed cells remain explicit overrides. [Audit report](../experiments/nationwide-tolls/M4_ENDPOINT_CONFLICT_AUDIT_2026-10-13.md).
+
+VERIFIED: matrix builder, release-register builder, matrix validator, quote contracts PASS; full `npm run build -- --webpack`: 75/75 tests and Next webpack/TypeScript build PASS. Working copy is `/workspace/scratch/806dbc1ef74b/matrix-audit-work`; original mount stays read-only. This work is not pushed, deployed, merged, or in Production. Full nationwide price/Yandex coverage remains IN PROGRESS; conflict quarantine does not certify any fare.
+
+NEXT: inspect remaining conflict pairs against operator/Yandex evidence and preserve unknown where not resolved; complete M11/M12/CKAD bindings. See experiment `NEXT_STEPS.md`.
+
+---
+
 ## CURRENT 2026-10-13 — Яндекс endpoint selection, IN PROGRESS
 
 DONE actual Yandex UI checks: north620→71=2480/2730 and636→71=3050/3370 (MonThu/FriSun), four unique active reviewed cells; conflicting legacy variants excluded for these exact keys. Approved unconfirmed label retained. [Report](../experiments/nationwide-tolls/YANDEX_ENDPOINT_SELECTION_2026-10-13.md).
@@ -31,7 +81,7 @@ Locally implemented and VERIFIED536/pass536/fail0 + contracts/TS/Next16/16, scop
 
 Execution environment disconnected409 environment_offline during docs/git save; local final commit/save not confirmed. Runtime source NOT published: remote runtime still baselinead9a8b06, latest prior verified UI Previewir6hc5hpg/sourcea38c50e3/530 tests. This checkpoint stores recovery artifacts only, not applied code.
 
-[Complete recovery/verified results](../experiments/nationwide-tolls/ROAD_AVAILABILITY_RECOVERY_2026-10-13.md); recovery/road-availability-patch.json contains15 reconstructed target sources; safe apply driver checks base Git blobs/skips exact targets/aborts conflicts. Prefer recover original local working tree and gzip live evidence, then gates/hash verification/persist exact implementation/Preview. No main/merge/Production. Stage10 IN PROGRESS, not all-road audit completed.
+[Historical recovery archive and patch paths mentioned in the original checkpoint are absent from this checkout; do not assume those files are available or apply a missing patch. Current endpoint-only implementation findings are in [the tracked implementation report](../experiments/nationwide-tolls/ENDPOINT_ONLY_IMPLEMENTATION_2026-10-13.md), and current code/history should be recovered from this branch. Stage10 remains IN PROGRESS; nationwide audit is not complete. No main/merge/Production.]
 
 ---
 
@@ -401,3 +451,8 @@ IN PROGRESS: persist reviewed changes to experimental branch and inspect Preview
 - No fresh Yandex route was calculated: Opera connector reports Browser not connected; TinyFish did not start due wallet balance -0.221166 USD (`wallet_out_of_funds`). No new UI observations, dates, sums, geometry or screenshots exist. Existing route estimates remain historic controls only; not marked as newly re-confirmed. No fare data/runtime changed.
 - Next action: resume matrix via connected Opera Yandex Maps UI or TinyFish after wallet access is restored; record real output verbatim before marking any test. Do not claim the tests complete or seed fare cells until evidence is captured.
 - Work log entry in `experiments/nationwide-tolls/WORK_LOG.md` dated 2026-10-12; matrix commit `a2bfaf4`, work log `67efc22`. Production unchanged.
+## CURRENT 2026-10-13 — реализация плана, этап 1 частично
+
+IN PROGRESS: создан [каталог тарифных продуктов](../experiments/nationwide-tolls/tariff-products.json) с отдельными ID М-4, А-289, западного обхода, частей М-11 и других систем; `pskov` явно помечен как неразделённый агрегат. Действующий V3 пока использует общий `m4_a289` и не читает каталог. Подробности и ограничения: [отчёт этапа 1](../experiments/nationwide-tolls/stages/01-baseline-and-product-boundaries.md). GitHub экспериментальная ветка подтверждена API на `1642c76cc479c8790c18351f1496ecc2949eeb52`, но прямой Git fetch недоступен, сравнение и перенос с локальной audit-веткой открыты. Production, main и Preview не менялись. Каталог прошёл отдельную проверку; полный build повторяется с доступными зависимостями, итог в отчёте.
+
+CHECKS: 78/78 audit tests и quote contracts PASS с временным набором зависимостей, `next build --webpack` PASS (16 app routes). Обычный Turbopack build заблокирован внешним симлинком `node_modules`; см. отчёт. NEXT: закончить сравнение GitHub дерева с локальными коммитами, выбрать одну удалённую ветку, затем аудит 428 конфликтов М-4 и тарифных строк этапа 2. Итог маршрута unknown при любом непроверенном компоненте.

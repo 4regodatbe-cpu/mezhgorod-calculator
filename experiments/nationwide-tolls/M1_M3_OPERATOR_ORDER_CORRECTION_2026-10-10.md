@@ -1,9 +1,9 @@
-# Source correction: Avtodor official signed Orders 53 and 54 (27 Feb 2026)
+# M1/M3 operator-order correction — amended 2026-10-13
 
-Date reverified **2026-10-10**. Official operator tariff effective **2026-03-02 00:00 Moscow time**.
-- M1 `https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf` Order **54**: Category I 33–66km PVP46 **230 RUB every day**, cash/bank card/listed interoperable transponders. Previous catalog amount **250 RUB was class II**, wrong.
-- M3 `https://avtodor-tr.ru/upload/iblock/cb5/9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf` Order **53**: Category I 65–86km PVP86 **100/100**, 112–150km PVP136 **190/190**, 150–194km PVP168 **190/230** for Mon–Thu / Fri–Sun (including official special holidays according to operator calendar). Earlier **M3 800 RUB FriSun was WRONG** because some values were class II or III. True three-row **480 RUB Mon–Thu, 520 RUB Fri–Sun**.
-- The source uses same tariff for cash/card and listed interoperable transponders; private T-pass subscription/loyalty discounts not modeled. Always verify actual class/usage profile.
-- Amended incorrectly transcribed `data/tolls/2026-10-01-avtodor-other-roads-category1.json` in place with explicit correction metadata; **no historical price guessing**. Other-road rows CKAD/A289 unchanged.
-- National operator version checking is **per operator**. M1/M3 independently verified through `2026-10-10`; other six operator snapshots stay as-of `2026-10-09`. No using a blanket catalog update to prolong unrelated operator pricing evidence.
-- Physical M3 booth proof is independent from money authorization. Even 520 RUB is an operator sum of the **three example section products only**, **not** proof that all selected-trip toll systems and billing exceptions were captured. Keep actual V2 customer toll UNKNOWN.
+The 2026-10-10 review correctly recorded M3 category-I direct rates but incorrectly used M1's 230 ₽ transponder amount as the no-transponder price in the national registry. The final reconciliation follows the current detailed tariff page and the operator's March 2026 announcement.
+
+- M1 order 54, PVP46, category I: **230 ₽ with transponder; 250 ₽ without transponder**. The detailed page explicitly labels both payment columns.
+- M3 order 53, category I: PVP86 **100/100 ₽**, PVP136 **190/190 ₽**, PVP168 **190/230 ₽** Mon–Thu/Fri–Sun; full-road components **480/520 ₽**.
+- Old M3 values 200/320/280 ₽ are higher vehicle classes, not category-I no-transponder rows. The official tariff notice independently confirms light-car M3 full-road prices of 480/520 ₽.
+
+Sources: [Avtodor tariff page](https://avtodor-tr.ru/road/tariffs/) and [official 2 March 2026 tariff announcement](https://www.russianhighways.ru/press/news/141463/). Direct access to the tariff page and order PDFs returned HTTP 403 in this environment; effective date remains based on saved Orders 53/54 metadata. This validates tariff rows, not complete selected-route billing. See `M1_M3_TARIFF_REAUDIT_2026-10-13.md`.

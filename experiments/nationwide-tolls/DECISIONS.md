@@ -1,5 +1,15 @@
 # Nationwide toll-road calculation decisions
 
+## 2026-10-13 — одна матричная пара на каждую отдельную платную дорогу; итоговое сложение
+
+Пользователь уточнил модель нового алгоритма: если выбранный маршрут проходит по нескольким самостоятельным платным дорогам/тарифным системам, для каждой дороги отдельно определить её пару пунктов оплаты (въезд и конечный съезд), найти готовую ячейку/вектор этой пары в матрице именно этой дороги и взять её готовую сумму. После этого обычным сложением получить общий итог платных дорог. Не выполнять дополнительный пересчёт, не суммировать промежуточные ПВП внутри одной дороги и не выводить тариф из километров. Если любая обнаруженная платная дорога не имеет однозначной пары или готовой цены, полный итог остаётся unknown, не становится нулём или частичным subtotal.
+
+Действует совместно с уточнением 2026-10-13 20:05 MSK: одно непрерывное использование каждой дороги до конечного необходимого съезда; промежуточные съезды и повторные въезды как тарифные события не моделируются. Это правило относится к новому V3/матрице и не меняет V2/Production само по себе. Более раннее требование полного промежуточного списка ПВП для runtime тарификации и запрет суммировать независимые готовые матричные суммы superseded. Нужно лишь исключить двойной учёт, если два названия/компонента на деле описывают один и тот же тарифный продукт.
+
+## 2026-10-13 — постоянное подробное журналирование каждого этапа
+
+Пользователь потребовал вести отдельные подробные записи по каждому существенному этапу, объясняя что было сделано, как, зачем и для чего, чтобы продолжение не зависело от доступности чата или выбранного ИИ. Постоянное правило внесено в корневой `AGENTS.md`: подробные append-only журналы этапов в релевантном workstream, синхронные краткие `WORK_STATE.md`/`NEXT_STEPS.md`, источники, пути, команды/точные результаты, ошибки, ограничения, git/PR/deployment state и конкретный следующий шаг. Не переписывать завершённые отчёты.
+
 ## 2026-10-13 — show short A-289 route estimates
 
 User observed no numeric toll estimate on Ялта→Краснодар and Анапа→Краснодар despite stored A-289 prices and requested route estimates to display. V3 may match an actual selected A-289 frame vector to a stored finished OD fare without requiring the unrelated full M-4 corridor: Crimea/Yalta↔Krasnodar all three frames uses accepted 800 ₽; Anapa↔Krasnodar a two-frame vector uses the 833 ₽ Maryanskaya–Varenikovskaya operator candidate as an explicitly unconfirmed Anapa-exit approximation. The full selected route may add a separately matched western bypass once. This provisional junction alias supersedes the earlier rule that Anapa pairs must remain wholly unavailable, but it does not claim an exact Anapa interchange tariff or override other M-4 components. If the crossing vector differs, retain unknown rather than a guessed sum.
@@ -25,11 +35,11 @@ User instructed: cover **all other Russian toll roads**, not M-4 only. Existing 
 7. M4 PVP first/last + every intermediate + mixed-state rules remain separately experimental, 0 official matched full corridor monetary rows. Do not disturb that branch's work history.
 8. All next changes must be documented in Git according to `AGENTS.md`; Preview only until proved ready and explicitly release-authorized.
 
-## 2026-10-09 — first bidirectional exact physical M3 PVPs; diagnostic 800RUB only
+## 2026-10-09 — first bidirectional exact physical M3 PVPs; category-I diagnostic corrected to 480/520 RUB (2026-10-13)
 
 - Map matching selected-route Valhalla `edge.toll=true` with a concrete OSM toll booth node is admissible **physical passage proof** only if separately cross-checked against OSM API `barrier=toll_booth`, exact official operator kilometer/name, and same-route consistency. Six M3 names/IDs pass, M1 remains unverified.
 - A **three-gate M3 sample amount** derived from time-limited 2026-10-09 published category-I/no-transponder source rows can appear **only as shadow**; it is **not** automatically included in actual transfer pricing. Real current operator tariff effective date, full corridor bill, mixed multi-road total and any extra ramps require stronger proof.
-- Keep cost unknown instead of adopting an unverified 800RUB live value, even when 3/3 physical booths found. Source-proven gate identity and validated complete operator fare are distinct.
+- Keep customer trip cost unknown instead of adopting the M3-only 480/520 RUB component, even when 3/3 physical booths are found. The previous 800 RUB sample was a class-column misread and is withdrawn. Source-proven gate identity and validated complete operator fare are distinct.
 
 
 ## 2026-10-11 — новый калькулятор показывает только самый быстрый маршрут

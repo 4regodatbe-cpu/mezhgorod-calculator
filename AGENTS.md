@@ -14,6 +14,8 @@ Before repository work, read docs/WORK_STATE.md. It is the canonical current-sta
 6. Never claim a test, deployment, pricing verification or data import succeeded unless it ran and the result was inspected. Preserve the precise state of unknown/unverified and record negative evidence. Keep timestamps, SHA and source paths so subsequent developers can audit.
 7. Protect the currently working calculator. Experimental branches and files must never silently be integrated with live `app/` / `lib/`, main or Production. Follow explicit release authorization and all existing safety checks.
 
+8. For every substantial project stage, keep a **separate, detailed, append-only record file** in the relevant workstream. Explain what was done, how it was done, why it was needed, and what result/purpose it serves. Include decisions, changed paths, exact checks and outcomes, evidence/source provenance, limitations, current branch/commit/PR/deployment state, and the next concrete step. Update `docs/WORK_STATE.md` and the relevant `NEXT_STEPS.md` as the short handoff/index. A new chat or a different AI must be able to continue from these files without relying on chat history. Never overwrite a completed stage report; add a dated entry or a new stage file.
+
 ## Resume work
 1. Verify the actual remote branch, PR head, and local working-tree state. Do not trust an old scratch checkout or remembered SHA.
 2. Read only the linked sources needed for the task. Do not search old chats when the handoff contains the answer.
@@ -26,7 +28,7 @@ If essential context is missing from the repository, search the named earlier ch
 
 ## Safety and verification
 - Do not merge PRs, modify main, or publish production without explicit user authorization.
-- Standing user authorization (2026-10-07): after implementing and verifying each requested product change, publish it immediately to the current Production app without waiting for a separate publish request. This authorization applies to this calculator and does not authorize merging PRs or changing `main`. If a required verification/build fails, do not publish that change; report the blocker.
+- Do not publish to Production, merge a PR, or change `main` without a direct request in the current task. Historical publication authorization is superseded by the user's later standing instruction (2026-10-13) requiring a direct request for those actions. A requested release must still pass all required checks first.
 - Preserve toll fail-closed rules: unknown is not free, partial toll sums are not complete, and only independently confirmed routes may be labeled free.
 - Keep offline benchmark snapshots out of live route selection and pricing.
 - After code changes, run focused tests plus the required full gate/build. For docs-only changes, verify links/content and accurately report CI status.

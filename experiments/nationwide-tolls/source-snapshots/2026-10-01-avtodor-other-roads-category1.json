@@ -3,7 +3,7 @@
   "observedAt": "2026-10-01",
   "source": "https://avtodor-tr.ru/road/tariffs/",
   "category": 1,
-  "note": "A289 reading corrected on 2026-10-13: columns are vehicle categories, not transponder/no-transponder modes. Active A289 rows contain category-I base fares415/205/620/180/800/385 in both undiscounted payment modes. The original mistaken rows/note are retained under a289CategoryCorrection. Other roads keep their separately documented corrections and payment models. This snapshot alone does not prove selected-route crossing.",
+  "note": "A289 rows were corrected on 2026-10-13 because category-I and category-II columns had been misread as payment modes. M1 preserves 230 with transponder / 250 without; M3 category-I rates are 100/100, 190/190 and 190/230 MonThu/FriSun, totaling 480/520. The original mistaken A289 rows are retained under a289CategoryCorrection. This snapshot alone does not prove selected-route crossing.",
   "roads": {
     "m1-33-66": [
       {
@@ -26,8 +26,8 @@
           "noTransponder": 100
         },
         "friSun": {
-          "transponder": 150,
-          "noTransponder": 200
+          "transponder": 100,
+          "noTransponder": 100
         }
       },
       {
@@ -39,8 +39,8 @@
           "noTransponder": 190
         },
         "friSun": {
-          "transponder": 270,
-          "noTransponder": 320
+          "transponder": 190,
+          "noTransponder": 190
         }
       },
       {
@@ -49,11 +49,11 @@
         "to": "194 km",
         "monThu": {
           "transponder": 190,
-          "noTransponder": 230
+          "noTransponder": 190
         },
         "friSun": {
-          "transponder": 260,
-          "noTransponder": 280
+          "transponder": 230,
+          "noTransponder": 230
         }
       }
     ],

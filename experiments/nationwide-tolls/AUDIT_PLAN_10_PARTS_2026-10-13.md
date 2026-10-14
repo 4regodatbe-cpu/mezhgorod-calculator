@@ -67,6 +67,10 @@ DONE existing M1/M3/regional code audit: selected-route missing-system coverage 
 
 Stage6 follow-up rejects empty/malformed HTTP200 trace and physical-booth-without-toll false-free; final502 regression/build PASS.
 
+## Stage6 tariff-data follow-up — 2026-10-13
+
+Corrected source/category and legacy-rate errors: M1 no-transponder250 (transponder230); M3 category-I total480/520 (old800 snapshot was other vehicle classes); Tolyatti whole span320 (legacy650 was higher class). Matrix rebuilt/validated:4699 fare rows,428 M4 endpoint/profile conflicts quarantined,360 unique endpoint spans. Focused four groups plus new regional estimate test PASS; full build75/75 and Next/TypeScript PASS. Exact route-level toll totals remain gated. Report `M1_M3_TARIFF_REAUDIT_2026-10-13.md`; continue source/effective-date audit for other roads in parts8/10.
+
 
 ## Stage7 — 2026-10-13
 

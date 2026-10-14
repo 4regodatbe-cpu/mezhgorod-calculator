@@ -1,6 +1,8 @@
 # Nationwide toll roads: operator-source audit
 **Research date:** 2026-10-09. Vehicles: **operator category I** (physical classification), payment **without an operator-specific transponder**. Business driver classes «Стандарт/Комфорт/Комфорт+» are unrelated to toll operator vehicle class.
 
+> **M1/M3 source amendment 2026-10-13:** replace this report's archived M3 row values with category-I 65–86=100/100, 112–150=190/190, 150–194=190/230 ₽ Mon–Thu/Fri–Sun, whole-road 480/520 ₽. The 200/320/280 values below were higher vehicle classes, not class-I payment modes. M1 250 ₽ is the no-transponder column; 230 ₽ is the transponder tariff. See `M1_M3_TARIFF_REAUDIT_2026-10-13.md`.
+
 ## Scope: network ≠ billable section
 The `national-registry.json` enumerates **22 separately maintained / tariff-distinct national and regional road networks**. It is an **inventory**, not proof that all 22 have complete geometry, real paid edge events or pricing. `М-11` has two distinct concession tariff systems, and four Pskov roads are grouped as one network, so network counts must not be used as a national census. Operator and government published pages change and coverage must be re-audited as new roads open. No generated "all-Russia price" from this inventory alone.
 
@@ -9,7 +11,7 @@ The `national-registry.json` enumerates **22 separately maintained / tariff-dist
 | Network | Category-I tariff examples without transponder (RUB) | Verified official origin | Precondition of a quote |
 |---|---|---|---|
 | М-1 33–66 км | 250 (one published section) | https://avtodor-tr.ru/business/road/tariffs/ , stored snapshot `data/tolls/2026-10-01-avtodor-other-roads-category1.json` | Exact physical section and operator calendar |
-| М-3 | 65–86: 100/200; 112–150: 190/320; 150–194: 230/280 (Mon–Thu / Fri–Sun) | https://avtodor-tr.ru/business/road/tariffs/ + same persisted snapshot | Full actual sequence of paid segments and operator holiday profile |
+| М-3 | 65–86: 100/100; 112–150: 190/190; 150–194: 190/230 (Mon–Thu / Fri–Sun) | https://avtodor-tr.ru/road/tariffs/ and 2026-03-02 operator whole-road notice | Full actual sequence of paid segments and operator holiday profile |
 | Восточный выезд Уфы | 150 | https://avtodor-tr.ru/business/road/tariffs/ | Actual Ufa toll paid passage |
 | Обход Тольятти | 17–60: 210, 60–97: 140, full 17–97: **320** | https://avtodor-tr.ru/business/road/tariffs/ | **Mutually exclusive** official corridor fare: full 320, NOT 210+140=350 |
 | Проспект Багратиона | 790 base; 550 proprietary prepaid transponder is NOT interchangeable | https://m-road.ru/tariffs/ ; https://m-road.ru/bagration/ | Confirmed 6.6-km operator camera passage + correct payment product |

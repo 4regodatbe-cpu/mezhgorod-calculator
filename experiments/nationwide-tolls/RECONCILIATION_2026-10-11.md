@@ -1,4 +1,6 @@
-# Toll source consistency audit — 2026-10-11
+# Toll source consistency audit — 2026-10-11; tariff section reconciled 2026-10-13
+
+> **Tariff resolution (2026-10-13):** the 800-vs-520 mismatch was caused by a stale M3 snapshot that read higher vehicle classes as payment modes. Category-I direct rates and the 2026-03-02 operator full-road benchmark agree on 480 ₽ Mon–Thu / 520 ₽ Fri–Sun. M1 detailed tariff distinguishes 230 ₽ with transponder and 250 ₽ without; no-transponder registry is now 250 ₽. See `M1_M3_TARIFF_REAUDIT_2026-10-13.md`. Route-matching and complete-trip limitations below still apply.
 
 ## Findings
 
