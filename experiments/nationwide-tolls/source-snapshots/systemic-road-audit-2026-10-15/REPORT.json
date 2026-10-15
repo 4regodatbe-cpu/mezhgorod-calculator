@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T18:14:10.577Z",
+  "generatedAt": "2026-10-15T18:16:52.604Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
     "distinctCaseAttempts": 40,
-    "recordedLiveAttempts": 46,
-    "liveCaptured": 32,
-    "savedLiveSummaries": 32,
-    "missingOrInvalidReferences": 8,
-    "audited": 32,
-    "traceComplete": 32,
-    "sameDateParity": 32
+    "recordedLiveAttempts": 47,
+    "liveCaptured": 33,
+    "savedLiveSummaries": 33,
+    "missingOrInvalidReferences": 7,
+    "audited": 33,
+    "traceComplete": 33,
+    "sameDateParity": 33
   },
   "regionCounts": {
     "dnr": {
@@ -30,11 +30,11 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 3,
-      "audited": 3,
-      "traceComplete": 3,
+      "liveCaptured": 4,
+      "audited": 4,
+      "traceComplete": 4,
       "pricedWeekday": 0,
-      "pricedWeekend": 0
+      "pricedWeekend": 1
     },
     "kherson": {
       "planned": 40,
@@ -1118,6 +1118,36 @@
       "routeSeconds": 49178
     },
     {
+      "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-16-40-551Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": 4640,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1402530,
+      "routeSeconds": 66940
+    },
+    {
       "caseId": "kherson-старая-збурьевка-moscow-center",
       "historicalStatus": "audited",
       "status": "audited",
@@ -1304,13 +1334,6 @@
       "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json'"
     },
     {
-      "caseId": "zaporizhzhia-гуляйполе-moscow-center",
-      "kind": "live",
-      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-26-622Z.json",
-      "reason": "ENOENT",
-      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-26-622Z.json'"
-    },
-    {
       "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
       "kind": "live",
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json",
@@ -1339,6 +1362,7 @@
         "kherson-чулаковка-saint-petersburg-center",
         "kherson-чулаковка-kazan-center",
         "dnr-урзуф-moscow-center",
+        "zaporizhzhia-гуляйполе-moscow-center",
         "kherson-старая-збурьевка-moscow-center",
         "dnr-урзуф-saint-petersburg-center",
         "lnr-рубежное-saint-petersburg-center",
@@ -1634,6 +1658,24 @@
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-12-22-404Z.json"
         },
         {
+          "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-16-40-551Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T18-16-41-059Z.json"
+        },
+        {
           "caseId": "kherson-старая-збурьевка-moscow-center",
           "detail": {
             "departureAt": "2026-10-15T09:00:00+03:00",
@@ -1706,7 +1748,7 @@
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-17-16-570Z.json"
         }
       ],
-      "caseCount": 20
+      "caseCount": 21
     },
     {
       "code": "a289:unpriced",
@@ -2301,7 +2343,6 @@
         "zaporizhzhia-молочанск-saint-petersburg-center",
         "zaporizhzhia-молочанск-kazan-center",
         "zaporizhzhia-молочанск-kerch-center",
-        "zaporizhzhia-гуляйполе-moscow-center",
         "zaporizhzhia-гуляйполе-saint-petersburg-center"
       ],
       "occurrences": [
@@ -2336,17 +2377,12 @@
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json"
         },
         {
-          "caseId": "zaporizhzhia-гуляйполе-moscow-center",
-          "detail": "Historic execution manifest has no readable live summary",
-          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-26-622Z.json"
-        },
-        {
           "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
           "detail": "Historic execution manifest has no readable live summary",
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json"
         }
       ],
-      "caseCount": 8
+      "caseCount": 7
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."

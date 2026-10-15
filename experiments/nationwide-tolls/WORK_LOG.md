@@ -1643,3 +1643,8 @@ DONE 2026-10-15T21:14:10.665465+03:00, parent e8ab595bc6a92e429533d438e718af9373
 Raw `experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/2026-10-15T18-13-39-642Z-capture.json.gz`, SHA256=783997a9e62578074bff0ea8a1abb58de1db19a7165376fd8eb43df9647795bd, gzip/JSON читается. Два replay и live связаны в batch/corpus. Inventory/report выполнены exit0, stdout `docs/checkpoints/evidence/2026-10-15-prishib-kazan-*.log`. Новых source изменений нет, build не повторялся. Complete=32, rawOD=33; оставшихся первоначально потерянных raw=7.
 
 Этап1:1/155 завершён. Новое сохранение Git connector связано с точным локальным tree; предыдущий e8ab595/tree039351a read-back проверен. NEXT/STARTED `zaporizhzhia-гуляйполе-moscow-center`: один --case --limit1 после сохранения и проверки этого checkpoint. Рабочий сайт/app/lib/матрицы/Production не менялись.
+
+
+## 2026-10-15T21:16:52.624666+03:00 — zaporizhzhia-гуляйполе-moscow-center
+
+DONE; [отдельный checkpoint](../../docs/checkpoints/2026-10-15-211652-route-case.md), этап1 2/155. Parent remote 846fb8b98e03832aed96349ac190a49c2b16401c; batch batch-2026-10-15T18-16-15-835Z.json.

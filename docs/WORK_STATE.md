@@ -1,19 +1,19 @@
 # Текущее состояние калькулятора «Из А в Б»
 
-Обновлено 2026-10-15T21:11:09.420873+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Последний проверенный remote e8ab595bc6a92e429533d438e718af9373c35e1e. Новый consent на публичный GitHub и routing: [checkpoint](checkpoints/2026-10-15-211109-consent-two-stages.md). После записи подтвердить push/read-back до live запуска.
+2026-10-15T21:16:52.624666+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Последний проверенный remote `846fb8b98e03832aed96349ac190a49c2b16401c`; текущий checkpoint необходимо сохранить и read-back до следующего case.
 
 ## DONE
 
-- Восстановлены32полных региональных комплекта из160planned; всего340cases. RawOD33,7изстарых40rawещёутрачены. Лисичанск→Москва имеет offline reconstruction, полноценный новый live открыт.
-- Принят [план двух этапов](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.md): этап1=155cases(65regional+90road),этап2=154(64+90). [Точная очередь](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json).
-- Ранее build656/656+quote/API/Next/types/static16PASS; в текущем docs-only шаге не повторён. Пришиб→СПб уже remote403d7a4.
+Этап1: **2/155** complete. Последний `zaporizhzhia-гуляйполе-moscow-center`: audited, parity=True, traceComplete=True. [Checkpoint](checkpoints/2026-10-15-211652-route-case.md). Всего сохранённых audited=33; rawOD=34.
 
-## IN PROGRESS / NEXT
+[План двух этапов](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.md), [точная очередь](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json):155+154 случая, этап2 ещё не начат.
 
-Этап1:1из155 завершён. Пришиб→Казань live+replays/parity PASS, итог unknown. Следующий `zaporizhzhia-гуляйполе-moscow-center`, один batch --case --limit1. [Последний checkpoint](checkpoints/2026-10-15-211410-prishib-kazan-done.md). После live+2replays обновить availability/report, checkpoint/commit/push/read-back, затем следующий assignedcase. Каждый шаг по [CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md). Не запускать несколько несохранённых случаев.
+## NEXT
+
+`zaporizhzhia-гуляйполе-saint-petersburg-center`, один --case --limit1 после remote сохранения. По [CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md): STARTED→live/raw/summary→same-date/weekend→inventory/report→checkpoint/commit/remote read-back. Каждая дорожная группа должна иметь доказанное прохождение. Не засчитывать failed/missing evidence.
 
 ## Ограничения
 
-Unknown не бесплатный; complete replay не означает правильный тариф. Findings М4/time,А289/exits,ЦКАДscope ещёоткрыты. App/lib/тарифы/Production сейчас не меняются. Не merge/Production/Android без запроса. На границе этапов сохранить self-contained handoff и продолжить в новом чате.
+Unknown не бесплатный; complete replay не означает правильный тариф. М4/time,А289/exits,ЦКАДscope остаются открытыми. Ранее build656/656+quote/API/Next/types/static16PASS; сейчас source не менялся, build не повторялся. Consent routing Valhalla/OSRM/BRouter и publicGitHub подтверждён21:09МСК [здесь](checkpoints/2026-10-15-211109-consent-two-stages.md); не спрашивать повторно. Не merge/Production/Android без запроса.
 
-[Полный предыдущий журнал состояния](WORK_STATE_HISTORY_2026-10-15_2109.md). [Рабочий журнал](../experiments/nationwide-tolls/WORK_LOG.md). [Решения](../experiments/nationwide-tolls/DECISIONS.md). [Дальнейшие действия](../experiments/nationwide-tolls/NEXT_STEPS.md).
+[Прежняя история](WORK_STATE_HISTORY_2026-10-15_2109.md). [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md). [DECISIONS](../experiments/nationwide-tolls/DECISIONS.md). [NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md).
