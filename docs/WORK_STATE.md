@@ -4,9 +4,13 @@ USER REQUEST: подробно объяснить происхождение 10 
 
 FINDINGS: 10 240 ₽ — Yandex Maps approximate total for Krasnodar city center → Saint Petersburg city center (38.975313,45.035470 → 30.314494,59.938676), about 2,060 km / 23 h 57 min. Card lists M‑4, E115, MKAD, M‑11 and ZSD, but no exact paid trace/PVP sequence. 5 424 ₽ was independently summed from saved V3 long-chain components: M‑11 15–58 1,130 + M‑11 58–679 3,900 + M‑11 tail 94 + ZSD zone 1 300. Thus 4 816 ₽ is only arithmetic difference, not a Yandex quote for one road or matrix vector. Assigning it to `m4-1223 → m4-71` was an unsupported inference. Existing M‑4 whole-vector matrix values are 5,040 ₽ weekday / 6,090 ₽ weekend, also inconsistent with that residual.
 
-CORRECTION IN PROGRESS: remove the 4,816 ₽ runtime M‑4 override; retain 10,240 ₽ only as whole-route estimate under exact Yandex route matcher; rewrite stage 14 as an audit trail of the rejected hypothesis. Do not decompose or reuse 4,816 ₽ until same-route paid components and all boundaries are matched.
+CORRECTION COMPLETE: removed the unsupported 4,816 ₽ runtime override from the M‑4 adapter and its regression tests. The 10,240 ₽ Yandex estimate remains scoped to the exact Krasnodar→Saint Petersburg whole route. Stage 14 records the provenance of all three numbers and why the remainder cannot be identified as one road/vector yet.
 
-NEXT: run focused/full checks, publish the correction to PR14, inspect the resulting GitHub Actions run. Other unpriced systems remain tracked in prior stages.
+VERIFIED: focused M‑4 tests 16/16 PASS; full `pnpm build` audit649/649, quote/API, TypeScript/Next and static16/16 PASS; `tsc --noEmit`, targeted ESLint and `git diff --check` PASS.
+
+REMOTE: correction code commit `c0fbe4a` and audit/docs commit `da5a8b2` published to PR14; PR remains open/draft/mergeable. Exact-head GitHub Actions run `38709409072` is in_progress.
+
+NEXT: record exact-head Actions conclusion. Preserve the whole-route Yandex estimate; do not treat the 4,816 ₽ arithmetic remainder as a component fare without a matched trace and complete vector accounting.
 
 ---
 
