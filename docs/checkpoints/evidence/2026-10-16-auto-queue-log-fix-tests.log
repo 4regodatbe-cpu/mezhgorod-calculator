@@ -1,0 +1,23 @@
+✔ forwards progress and heartbeat before completion (152.576566ms)
+✔ terminates a silent child within its deadline (86.446572ms)
+✔ preserves failure code and stderr (55.9513ms)
+✔ unknown numeric price is compatible with complete execution evidence (1.855644ms)
+✔ missing raw and incomplete replay do not count as completed (0.504703ms)
+✔ rejects crossed case IDs, replay money mismatch and damaged raw checksum (1.381307ms)
+✔ queue preserves part/case order and skips only verified cases (0.184228ms)
+✔ completed provider replies and failures invoke durable progress hook (3.272625ms)
+✔ checkpoint log passes whitespace gate with optional case/error absent (0.396699ms)
+✔ recording reserves request order even when repeated requests finish out of order (5.153898ms)
+✔ offline replay preserves retry-after and has no fallback for missing responses (1.104509ms)
+✔ capture includes requests made during pricing, after routing (1.172892ms)
+✔ parity compares the complete toll audit, not just the numeric total (0.195135ms)
+✔ planned roads, incomplete traces and partially traversed pairs never count as proven coverage (0.878768ms)
+✔ compaction preserves every exact gate and road family while bounding duplicate paid-edge samples (9.706657ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 387.362443

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { gzipSync } from 'node:zlib';
-import { verifiedEntry, selectPending } from './scripts/automatic-audit-queue.mjs';
+import { verifiedEntry, selectPending, formatCheckpointLog } from './scripts/automatic-audit-queue.mjs';
 import { recordingFetch } from './scripts/systemic-audit-io.mjs';
 
 function fixture() {
@@ -33,4 +33,13 @@ test('completed provider replies and failures invoke durable progress hook', asy
   await recordingFetch(async () => new Response('route'), calls, values => saved.push(JSON.parse(JSON.stringify(values))))('https://provider.test');
   await assert.rejects(recordingFetch(async () => { throw Error('offline'); }, calls, values => saved.push(JSON.parse(JSON.stringify(values))))('https://provider.test/fail'));
   assert.equal(saved.length, 2); assert.equal(saved[0][0].text, 'route'); assert.match(saved[1][1].error, /offline/);
+});
+
+test('checkpoint log passes whitespace gate with optional case/error absent', () => {
+  for (const extra of [{}, { caseId: 'case' }, { caseId: 'case', error: 'failed' }]) {
+    const line = formatCheckpointLog({ at: '2026-10-16', phase: 'STARTED', stageCounts: [{ done: 27, total: 155 }], ...extra }, 'docs/checkpoints/test.json');
+    assert.doesNotMatch(line, /[ \t]+\n/);
+    assert.match(line, /27\/155/);
+    assert.ok(line.endsWith('\n'));
+  }
 });

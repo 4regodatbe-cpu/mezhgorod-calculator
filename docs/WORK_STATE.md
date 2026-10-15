@@ -15,3 +15,5 @@
 Пользователь16.10 02:12 поручил автоматическипройти все20частей. Сохранятькаждыймалыйшаг до следующего,не ждатькоманды«дальше». Unknownне0, subtotalнеполныйитог; auditedнеподтверждениецены. Тарифвсейпоездкипоотправлению; междорожныевекторыотложены. Неmain/merge/Production/Androidбеззапроса. [Protocol](CHECKPOINT_PROTOCOL.md), [журнал](../experiments/nationwide-tolls/WORK_LOG.md), [решения](../experiments/nationwide-tolls/DECISIONS.md).
 
 16.10.2026: Actions первыйjob failed доcase из-за trailingwhitespaceвновомlogformatter; GitHubgate666PASS. STARTED formatterfix/fullgate/rerun. Hourlycontinuationpausedдоисправления. checkpoints/2026-10-16-automatic-queue-first-job-failed.md.
+
+16.10.2026: checkpointformatter исправлен, focused15/15PASS; fullgate STARTED, затем lint/rerunjob. checkpoints/2026-10-16-automatic-queue-log-fix.md.

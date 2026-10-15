@@ -70,6 +70,11 @@ function persist(expected) {
   return head;
 }
 
+export function formatCheckpointLog(record, checkpointPath) {
+  const line = `${record.at}: automatic queue ${record.phase}; ${record.stageCounts.map(s => `${s.done}/${s.total}`).join(',')}. [Checkpoint](../../${checkpointPath}). ${record.caseId ?? ''} ${record.error ?? ''}`;
+  return `\n${line.trimEnd()}\n`;
+}
+
 function checkpoint(phase, state, extra = {}) {
   const at = new Date().toISOString();
   const stamp = at.replace(/[:.]/g, '-');
@@ -79,7 +84,7 @@ function checkpoint(phase, state, extra = {}) {
   write(`${experiment}/SMALL_PARTS_PLAN.json`, state.plan);
   write(`${experiment}/AUTO_QUEUE_STATE.json`, { ...record, checkpointPath });
   fs.writeFileSync('docs/WORK_STATE.md', `# Калькулятор: автоматическая очередь\n\n${at}. Ветка \`${branch}\`, PR14 draft. Фаза **${phase}**. ${state.stageCounts.map(s => `Stage${s.stage} **${s.done}/${s.total}**`).join('; ')}.\n\nСледующий подшаг: **${state.pending ? `часть${state.pending.part}, ${state.pending.spec.caseId}` : 'часть19 — разбор находок и исправления по одной причине'}**.\n\n[Состояние и точные входы](../${experiment}/AUTO_QUEUE_STATE.json), [checkpoint](${checkpointPath.slice(5)}), [план](../${experiment}/SMALL_PARTS_PLAN.json).\n\nКаждый маршрут: durable STARTED → live/same-date/weekend → report/inventory → DONE/FAILED → commit/push/head readback. Не запускать второго writer, пока workflow активен. GitHub Actions пишет только рабочую ветку. При конфликте/ошибке сохранения остановка безforce. Raw и progress в source-snapshots и artifact.\n\nAudited — воспроизводимость, не независимая проверка цены; unknown не ноль, subtotal не итог. Часть19 не выполнена автоматически одним прогоном, часть20 требует итоговых проверок после исправлений. Fullbuild661PASS — прежняя локальная проверка до автоматического runner; свежий gate см.workflow/checkpoint. No main/merge/Production/Android. Междорожныевекторы отложены, тарификация всей поездки по отправлению. Пользователь16.10 02:12 разрешил автоматическое последовательное продолжение всехчастей.\n\n[Протокол](CHECKPOINT_PROTOCOL.md), [журнал](../${experiment}/WORK_LOG.md), [решения](../${experiment}/DECISIONS.md).\n`);
-  for (const file of ['WORK_LOG.md', 'NEXT_STEPS.md']) fs.appendFileSync(`${experiment}/${file}`, `\n${at}: automatic queue ${phase}; ${state.stageCounts.map(s => `${s.done}/${s.total}`).join(',')}. [Checkpoint](../../${checkpointPath}). ${extra.caseId ?? ''} ${extra.error ?? ''}\n`);
+  for (const file of ['WORK_LOG.md', 'NEXT_STEPS.md']) fs.appendFileSync(`${experiment}/${file}`, formatCheckpointLog(record, checkpointPath));
 }
 
 function runLogged(exe, args, logPath, timeout = 950_000) {
