@@ -64,3 +64,6 @@ JSON snapshot parsing, local-link validation, and `git diff --check` passed. Doc
 
 
 Дополнение: повторный API слой также удаляет суффикс `Стоимость не подтверждена` из всех публичных `tolls.segments`, а не только отдельные поля статуса. Целевой API/pipeline check 9/9 PASS, полный `pnpm build` после этого изменения: 646/646 + quote/API + TypeScript/Next + static16/16 PASS.
+
+
+Публикация comparison и API segment sanitizer: commit `bb355fb7b60a0c48b1629cdf4617dbb0dad2b755` в PR14. Run `38701853395` на предыдущий code SHA `6038bb2` завершился success; run `38703246952` для нового exact SHA `bb355fb` ещё `in_progress`.

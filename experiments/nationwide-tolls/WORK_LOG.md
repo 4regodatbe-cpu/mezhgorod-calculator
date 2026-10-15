@@ -1442,3 +1442,8 @@ JSON snapshot parse, локальные ссылки на evidence, и `git diff
 ## 2026-10-15 — live comparison и полная очистка публичного V3 DTO
 
 Для локального V3 API выполнено live сравнение маршрутов на точках из карты/сопоставленных городских центрах; результаты в `source-snapshots/yandex/2026-10-15-v3-route-comparison.json`. Оно показало, что ZSD endpoint/distance пары близки к картам, но V3 ещё не раскрывает полный ZSD gate trace; Казань→Москва выбирает отличный по длине/времени маршрут; СПб↔Краснодар route IDs/городские map точки не сохранены точно. Поэтому route totals остаются принятыми картографическими control values и не подменяют другую геометрию до route match. Дополнительно публичный V3 API нормализует toll segments и убирает receipt-like суффикс из любого денежного сегмента. Целевой API/pipeline 9/9 PASS; второй полный `pnpm build` после sanitizer: audit646/646, quote/API PASS, TypeScript/Next PASS, static16/16 PASS. `git diff --check` PASS. Изменённый блок не опубликован; предшествующий PR code SHA 6038bb2 и docs SHA 25b918b; run 38701853395 in progress на 6038bb2. Next: publish latest code/evidence, verify exact SHA CI, then exact selected ZSD route trace and route-level 600/900 binding; keep M12/CKAD and long-corridor route differences scoped.
+
+
+## 2026-10-15 — публикация live V3 сравнения и API sanitizer
+
+Изменения и comparison snapshot опубликованы в PR14 commit `bb355fb7b60a0c48b1629cdf4617dbb0dad2b755`; локальная ветка синхронизирована. Actions `38701853395` для предыдущего code SHA 6038bb2 завершился success. Exact-SHA run `38703246952` на bb355fb ещё `in_progress`. PR открыт/draft/mergeable, PR body обновить на итог этого блока. CI exact head пока ожидать.
