@@ -1,3 +1,7 @@
+# CURRENT — этап1: 4/155
+
+Следующий `zaporizhzhia-молочанск-kerch-center` после remote сохранения checkpoint2026-10-15-211949-route-case. Детали в docs/WORK_STATE.md.
+
 # CURRENT — этап1: 3/155
 
 Следующий `zaporizhzhia-молочанск-kazan-center` после remote сохранения checkpoint2026-10-15-211820-route-case. Детали в docs/WORK_STATE.md.
