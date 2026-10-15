@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:44:48.130Z",
+  "generatedAt": "2026-10-15T23:45:04.683Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 68,
-    "recordedLiveAttempts": 81,
-    "liveCaptured": 67,
-    "savedLiveSummaries": 67,
+    "distinctCaseAttempts": 69,
+    "recordedLiveAttempts": 82,
+    "liveCaptured": 68,
+    "savedLiveSummaries": 68,
     "missingOrInvalidReferences": 1,
-    "audited": 67,
-    "traceComplete": 67,
-    "sameDateParity": 67
+    "audited": 68,
+    "traceComplete": 68,
+    "sameDateParity": 68
   },
   "regionCounts": {
     "dnr": {
@@ -38,11 +38,11 @@
     },
     "kherson": {
       "planned": 40,
-      "liveCaptured": 23,
-      "audited": 23,
-      "traceComplete": 23,
-      "pricedWeekday": 5,
-      "pricedWeekend": 5
+      "liveCaptured": 24,
+      "audited": 24,
+      "traceComplete": 24,
+      "pricedWeekday": 6,
+      "pricedWeekend": 6
     }
   },
   "groupCounts": [
@@ -2387,6 +2387,34 @@
       ],
       "routeMeters": 2434368,
       "routeSeconds": 128595
+    },
+    {
+      "caseId": "kherson-новая-збурьевка-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-45-02-663Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 432133,
+      "routeSeconds": 23145
     }
   ],
   "historicalExecutionExceptions": [],
