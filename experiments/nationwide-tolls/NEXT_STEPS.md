@@ -1,3 +1,19 @@
+# CURRENT — этап1 из2
+
+См. TWO_STAGE_AUDIT_PLAN.md/JSON. Этап1=155,этап2=154. Первым Пришиб→Казань. Прямое разрешение routing+publicGitHub получено21:09МСК; сохранить checkpoint/remote, затем live.
+
+## CURRENT — BLOCKED автоматической проверкой разрешений
+
+Пришиб→Казань не выполнен. GitHub push и live routing отклонены automatic approval review. Новые результаты не засчитаны; remote403d7a4, local49d61e6. [Подробный checkpoint](../../docs/checkpoints/2026-10-15-210234-approval-blocked.md). Не повторять запросы до разрешения.
+
+---
+
+## CURRENT — продолжение Пришиб→Казань
+
+STARTED: один live case+два replay; [checkpoint](../../docs/checkpoints/2026-10-15-210500-resume-prishib-kazan.md). Parent403d7a4/PR14 сверены. После результата remote сохранение до следующего case.
+
+---
+
 # CURRENT — Пришиб→Казань STARTED
 
 - [x] Пришиб→СПб completed before interruption;31complete/32rawOD,5из13missingrawповторены.

@@ -1596,3 +1596,41 @@ Single-caseSTART, новыйcapture не подтверждён; automatic revie
 ## 2026-10-15 20:30МСК — Пришиб→СПб после остановки ожидания
 
 Cell103notfound, pendingcase завершён17:07:08Z; raw/live/2replays найдены, не повторялись. OSRM2729956m/tracecomplete/paritytrue, totalsunknownM4/A289.31complete/32rawOD/8missingraw. Подробно: docs/checkpoints/2026-10-15-203000-prishib-spb-resume.md. STARTED следующийПришиб→Казань. Previous4cases remote35028d4проверены.
+
+
+# Возобновление после повторного прерывания
+
+STARTED, 15.10.2026 21:05 МСК. Исходный remote/PR14 head403d7a4448f2c1801f3cf3cd9f397adabd48347e, draft/open. Свежая рабочая копия /workspace/scratch/b6b2dcd2107d/mezhgorod-calculator, ветка fix/v3-missing-route-prices-2026-10-15, clean после fetch/checkout. AGENTS.md, CHECKPOINT_PROTOCOL, WORK_STATE, NEXT_STEPS, README, DECISIONS изучены. Живых audit процессов не обнаружено; причина прерывания не установлена.
+
+DONE: подтверждено, что Пришиб→СПб уже сохранён в remote; повтор не нужен. Пришиб→Казань capture в прежнем checkout отсутствует. NEXT: node --import ./scripts/register-ts-paths.mjs experiments/nationwide-tolls/scripts/run-systemic-route-batch.mjs --case zaporizhzhia-пришиб-kazan-center --limit 1, stdout в docs/checkpoints/evidence/. После одного случая availability/report, checkpoint и проверка remote до следующего. Публичные координаты и routing параметры разрешены ранее для Valhalla/OSRM/BRouter; consent в DECISIONS. Итог unknown не считать бесплатным. App/lib/тарифы/Production без изменений; новых тестов пока нет.
+
+
+# Продолжение остановлено автоматической проверкой разрешений
+
+BLOCKED, 2026-10-15T21:02:34.609844+03:00. Ветка fix/v3-missing-route-prices-2026-10-15, PR14 draft/open, последний проверенный remote403d7a4448f2c1801f3cf3cd9f397adabd48347e. Local STARTED49d61e6 не опубликован.
+
+## Выполнено
+
+Проверены remote/PR и новая рабочая копия. Пришиб→СПб уже сохранён в403d7a4; повтор не запускался. Raw Пришиб→Казань отсутствует в предыдущей копии. Новые app/lib/тарифы/Production изменения отсутствуют.
+
+## Фактические отказы
+
+1. Git push STARTED checkpoint49d61e6 отклонён automatic approval review: сохранение внутреннего журнала/metadata в публичный GitHub признано не имеющим достаточного пользовательского разрешения. Push не засчитан. Запись содержит локальный путь workspace и состояние аудита; это публичный репозиторий.
+2. Прогон `node --import ./scripts/register-ts-paths.mjs experiments/nationwide-tolls/scripts/run-systemic-route-batch.mjs --case zaporizhzhia-пришиб-kazan-center --limit 1` отклонён automatic approval review при передаче routing coordinates/parameters в Valhalla. Ранее согласие19:55:51МСК записано в DECISIONS, однако текущая автоматическая проверка его не приняла. Прогон не засчитан: stdout только START, batch без finishedAt, нового capture нет. Повторов/смены transport для обхода не выполнялось.
+
+## Проверки и границы
+
+Новых успешных тестов/build/live результатов нет. Историческое656/656PASS не повторялось. Availability остаётся ранее подтверждённым31complete/32rawOD/8missingraw. Текущий шаг сохранён локальным commit; durable remote подтверждения нет. Дополнительные маршруты не запускать до сохранения этого шага.
+
+## Следующий шаг
+
+Получить явное подтверждение передачи городских/контрольных координат и параметров маршрута Valhalla, OSRM и BRouter; а также сохранения кода, журналов и маршрутных evidence в публичном GitHub4regodatbe-cpu/mezhgorod-calculator в указанной ветке. Затем проверить actual remote head, сохранить локальные checkpoint без force, подтвердить remote и продолжить один Пришиб→Казань. Не merge/Production.
+
+
+# Разрешение и разделение аудита
+
+DONE, 2026-10-15T21:11:09.420873+03:00. Пользователь ответил «Разрешаю» на конкретный запрос передачи координат Valhalla/OSRM/BRouter и сохранения кода/журналов/маршрутных evidence в публичном GitHub4regodatbe-cpu/mezhgorod-calculator, ветка fix/v3-missing-route-prices-2026-10-15/PR14. Также предложил два равновесных этапа из-за переполнения контекста. Ранее отклонённые49d61e6/97957bb теперь можно сохранить в этой ветке; это новое прямое разрешение, не обход отказа. Секреты/производственный выпуск/merge не разрешены.
+
+Сверены local97957bb/remote403d7a4; remote не изменился. Создан frozen TWO_STAGE_AUDIT_PLAN.json:155и154оставшихся cases,65+90и64+90.31complete уже исключён. Каждый case уникален, общая сумма309; каждый из18roadgroups делится5+5. Пришиб→Казань первый. WORK_STATE сокращён с сохранением полного прежнего текста отдельным историческим файлом. Это уменьшает загрузку контекста в следующем чате.
+
+Проверки: Python asserts155/154/309unique PASS; git diff --check будет выполнен до commit. Новых live результатов и build пока нет. NEXT: push/read-back, затем один Пришиб→Казань и обязательное сохранение до следующего.
