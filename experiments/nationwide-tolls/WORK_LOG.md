@@ -1403,3 +1403,6 @@ Evidence is saved in `source-snapshots/long-chain-2026-10-15/spb-krasnodar-mosco
 ## Stage 11 publication status — 2026-10-15
 
 Code/evidence commit `e87b7b5057984efbdd1688d56e5ee69e93997445` is on PR14 branch; local checkout fetched the exact remote head/tree and is clean. PR remains open, draft and mergeable. Actions run `38683370889`: `verify` job success; `live_probe` still in progress at last poll. Vercel deployment for exact SHA READY; authenticated `/api/version` returned exact commit + preview environment (200), `/v3` returned 200. The completed runtime block is validated and published; wait for live_probe before claiming the hosted workflow fully successful. Next source block is ZSD fare-scope/version reconciliation. No main/Production/Android changes.
+## Коррекция публикации WORK_LOG — 2026-10-15
+
+Обратная проверка показала, что промежуточная GitHub-загрузка docs-коммита `547d541` повредила сериализацию `WORK_LOG.md`. В локальном исходнике сохранены все датированные записи (1405 строк); SHA blob `9111f400236746d4b63b3f955b3de0650a6326ad` совпал с GitHub blob после восстановления. Точное полное дерево восстановлено коммитом `3e86bc600f88955ef6f13b7a3a47a6ecf0986635`; рабочая копия синхронизирована, текущий файл проверен через GitHub `fetch_file` по blob SHA. Не удалять и не переписывать прежние записи журнала.
