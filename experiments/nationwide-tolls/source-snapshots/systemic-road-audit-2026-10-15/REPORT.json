@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T18:19:49.303Z",
+  "generatedAt": "2026-10-15T18:21:04.188Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
     "distinctCaseAttempts": 40,
-    "recordedLiveAttempts": 49,
-    "liveCaptured": 35,
-    "savedLiveSummaries": 35,
-    "missingOrInvalidReferences": 5,
-    "audited": 35,
-    "traceComplete": 35,
-    "sameDateParity": 35
+    "recordedLiveAttempts": 50,
+    "liveCaptured": 36,
+    "savedLiveSummaries": 36,
+    "missingOrInvalidReferences": 4,
+    "audited": 36,
+    "traceComplete": 36,
+    "sameDateParity": 36
   },
   "regionCounts": {
     "dnr": {
@@ -30,11 +30,11 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 6,
-      "audited": 6,
-      "traceComplete": 6,
-      "pricedWeekday": 0,
-      "pricedWeekend": 1
+      "liveCaptured": 7,
+      "audited": 7,
+      "traceComplete": 7,
+      "pricedWeekday": 1,
+      "pricedWeekend": 2
     },
     "kherson": {
       "planned": 40,
@@ -1061,6 +1061,34 @@
       "routeSeconds": 44326
     },
     {
+      "caseId": "zaporizhzhia-молочанск-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-20-59-795Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 423243,
+      "routeSeconds": 22091
+    },
+    {
       "caseId": "kherson-чулаковка-kerch-center",
       "historicalStatus": "audited",
       "status": "audited",
@@ -1386,13 +1414,6 @@
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json",
       "reason": "ENOENT",
       "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json'"
-    },
-    {
-      "caseId": "zaporizhzhia-молочанск-kerch-center",
-      "kind": "live",
-      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json",
-      "reason": "ENOENT",
-      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json'"
     }
   ],
   "stableWeekdayReplay": null,
@@ -2488,8 +2509,7 @@
         "zaporizhzhia-пришиб-kerch-center",
         "lnr-лисичанск-moscow-center",
         "zaporizhzhia-молочанск-moscow-center",
-        "zaporizhzhia-молочанск-saint-petersburg-center",
-        "zaporizhzhia-молочанск-kerch-center"
+        "zaporizhzhia-молочанск-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -2511,14 +2531,9 @@
           "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
           "detail": "Historic execution manifest has no readable live summary",
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json"
-        },
-        {
-          "caseId": "zaporizhzhia-молочанск-kerch-center",
-          "detail": "Historic execution manifest has no readable live summary",
-          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json"
         }
       ],
-      "caseCount": 5
+      "caseCount": 4
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
