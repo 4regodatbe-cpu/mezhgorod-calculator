@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-15T23:50:11.104Z",
-  "phase": "DONE",
+  "at": "2026-10-15T23:50:14.101Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,74 +23,10 @@
       "region": "lnr"
     }
   },
-  "caseId": "lnr-довжанск-moscow-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "lnr-довжанск-moscow-center",
-    "startedAt": "2026-10-15T23:49:53.137Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-49-59-863Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-moscow-center/2026-10-15T23-49-59-788Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-50-00-390Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-50-00-900Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 3810,
-      "weekdayAmount": 3810,
-      "weekendAmount": 4640,
-      "period": "понедельник–четверг",
-      "segments": [
-        "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 4640,
-      "weekdayAmount": 3810,
-      "weekendAmount": 4640,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 3810,
-        "reason": "matrix exact selected-route M4 vector"
-      }
-    ],
-    "finishedAt": "2026-10-15T23:50:00.918Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-49-51-662Z-part5",
-  "parent": "fda120e594055805ef513bce21634eb59c0a6f4c",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-50-11-104Z-done.json"
+  "caseId": "lnr-довжанск-saint-petersburg-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-50-14-101Z-part5",
+  "parent": "f284dca50bde8ac6b7b7ab611aa77df4a0b7eb1e",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-50-14-101Z-started.json"
 }
