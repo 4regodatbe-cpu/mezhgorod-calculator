@@ -1,3 +1,9 @@
+## CURRENT 2026-10-15 — M11 tail evidence audit (stage 09)
+
+DONE: reviewed saved operator tariff snapshot (56/38/94), directed airport gantries and unresolved booth cluster; established that tariff-to-physical-gate binding remains unproven. New [stage 09](../experiments/nationwide-tolls/stages/09-m11-tail-evidence-audit-2026-10-15.md) committed. No runtime pricing change, no new test/build/live run. OPEN: prove directed 679–684 mainline vs airport vs combined scope from archived operator PDF/OSM; then implement guarded resolver and test both directions. PR14 remains draft; main/Production/Android untouched.
+
+---
+
 ## CURRENT 2026-10-15 — MMK М11 и первая зона ЗСД привязаны
 
 DONE: пользователь явно разрешил отправку кода и evidence («Разрешаю. продолжай»). Предыдущий remote blocker resolved: точный tree опубликован commit16fc7213, draft [PR14](https://github.com/4regodatbe-cpu/mezhgorod-calculator/pull/14), Actions38644084416 success; Vercel status success. Новая работа в той же fix ветке: направленные MMK north gates дают head280 север/200 юг на контрольной дате; первая зона ЗСД даёт300 по официальной таблице владельца, только при полном подтверждённом охвате.
