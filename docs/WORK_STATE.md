@@ -4,7 +4,9 @@ DONE: Valhalla toll-trace fanout reduced from 3 to 2; each chunk now retries up 
 
 VERIFIED: focused retry tests 4/4; `pnpm build` audit 646/646 + quote/API PASS + TypeScript/Next PASS + static16/16 PASS; targeted ESLint and `git diff --check` PASS. Fresh SPb→Krasnodar via Moscow validation completed all 15 chunks; audit priced all detected products, tail component =94 ₽, calculated totals 10 464 ₽ weekday / 12 334 ₽ weekend. Provider pricing confirmation remains `unconfirmed` and the user-facing warning remains; do not call the total independently tariff-confirmed. Prior capture had 1/15 chunks fail after HTTP 429 twice. [Stage 11](../experiments/nationwide-tolls/stages/11-valhalla-rate-limit-and-reverse-chain-2026-10-15.md).
 
-NEXT: publish this checked block, then verify exact-SHA Actions/Preview. Afterwards reconcile remaining ZSD scope and its tariff version/effective-date evidence before any runtime extension; keep current unknown behavior outside reviewed zone1.
+REMOTE: implementation/evidence published in PR14 at code commit `e87b7b5057984efbdd1688d56e5ee69e93997445`; PR remains open/draft/mergeable. GitHub verify job succeeded; live_probe run `38683370889` is still in progress. Vercel deployment READY, authenticated `/api/version` confirms exact SHA and Preview environment, `/v3` returns 200. Local branch is synchronized and clean.
+
+NEXT: wait for Actions live_probe conclusion. Afterwards reconcile remaining ZSD scope and fare-source effective dates before any runtime extension; keep current unknown behavior outside reviewed zone1.
 
 ---
 

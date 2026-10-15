@@ -3,7 +3,8 @@
 - [x] Reduce selected-route toll-trace concurrency 3→2; retry HTTP 429 up to two times with bounded 1s/2s fallback, honor `Retry-After`, keep persistent/unserviceable chunks fail-closed. Capture `Retry-After` in live audit evidence.
 - [x] Focused rate-limit tests 4/4; `pnpm build` audit646/646 + quote/API + TS/Next + static16/16 PASS; lint/diffcheck PASS.
 - [x] Fresh SPb→Krasnodar via Moscow: 15/15 chunks complete; all trace calls returned 200 in captured run; M-11 tail94; component audit priced; calculated total 10,464 weekday /12,334 weekend. Display remains explicitly unconfirmed. [Stage 11](stages/11-valhalla-rate-limit-and-reverse-chain-2026-10-15.md).
-- [ ] Publish checked runtime/evidence on fix branch and verify exact-SHA Actions/Preview.
+- [x] Runtime/evidence commit `e87b7b5057984efbdd1688d56e5ee69e93997445` published; verify job success, Preview READY, authenticated `/api/version` exact SHA and `/v3` HTTP 200.
+- [ ] Wait for live_probe in Actions run `38683370889` to conclude; update the handoff only with its actual result.
 - [ ] Audit complete ZSD zone/OD scope and reconcile official fare schedule versions/effective dates before adding further products. Keep unreviewed scope unknown; preserve exclusion history and do not use inferred zone names as money.
 
 ---

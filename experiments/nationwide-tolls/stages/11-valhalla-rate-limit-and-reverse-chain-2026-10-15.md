@@ -23,6 +23,6 @@ Evidence: `source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-1
 
 ## GitHub and next action
 
-Implementation and evidence are being saved to PR14 branch `fix/v3-missing-route-prices-2026-10-15`; use the commit SHA from Git history/PR head after publication as the authoritative runtime checkpoint. Prior tip `1d76774cf068574ccf4be47ed34aeb60e02c082d` has Vercel success and exact `/api/version` SHA; its Actions run was still in progress at last poll. New code still requires fresh exact-SHA Actions and Preview verification.
+Implementation/evidence commit `e87b7b5057984efbdd1688d56e5ee69e93997445` is published in PR14 on `fix/v3-missing-route-prices-2026-10-15`; PR open/draft/mergeable. Its `verify` Actions job completed successfully. Live provider geometry job in run `38683370889` is in progress. Vercel deployment is READY; authenticated `/api/version` returned the exact e87b7b SHA with `environment=preview`, and `/v3` returned HTTP 200. No production deploy or merge occurred.
 
 Next investigate ZSD complete selected-route scope beyond reviewed zone1 and reconcile the official fare source/date rows. The repository records an older user exclusion and a later scoped zone1 adapter; do not broaden beyond already reviewed product scope or select among conflicting official schedule artifacts by guess. No main merge, Production, or Android change.
