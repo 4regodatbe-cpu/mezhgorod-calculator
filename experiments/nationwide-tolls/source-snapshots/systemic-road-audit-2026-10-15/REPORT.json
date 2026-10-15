@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:22:12.594Z",
+  "generatedAt": "2026-10-15T23:25:47.315Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 57,
-    "recordedLiveAttempts": 70,
-    "liveCaptured": 56,
-    "savedLiveSummaries": 56,
+    "distinctCaseAttempts": 58,
+    "recordedLiveAttempts": 71,
+    "liveCaptured": 57,
+    "savedLiveSummaries": 57,
     "missingOrInvalidReferences": 1,
-    "audited": 56,
-    "traceComplete": 56,
-    "sameDateParity": 56
+    "audited": 57,
+    "traceComplete": 57,
+    "sameDateParity": 57
   },
   "regionCounts": {
     "dnr": {
@@ -38,9 +38,9 @@
     },
     "kherson": {
       "planned": 40,
-      "liveCaptured": 12,
-      "audited": 12,
-      "traceComplete": 12,
+      "liveCaptured": 13,
+      "audited": 13,
+      "traceComplete": 13,
       "pricedWeekday": 3,
       "pricedWeekend": 3
     }
@@ -2007,6 +2007,41 @@
       ],
       "routeMeters": 354856,
       "routeSeconds": 18936
+    },
+    {
+      "caseId": "kherson-аскания-нова-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-25-38-597Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1950324,
+      "routeSeconds": 97061
     }
   ],
   "historicalExecutionExceptions": [],
@@ -2523,7 +2558,8 @@
         "kherson-старая-збурьевка-moscow-center",
         "dnr-урзуф-saint-petersburg-center",
         "kherson-старая-збурьевка-saint-petersburg-center",
-        "kherson-аскания-нова-kazan-center"
+        "kherson-аскания-нова-kazan-center",
+        "kherson-аскания-нова-moscow-center"
       ],
       "occurrences": [
         {
@@ -2984,9 +3020,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-18-28-964Z.json"
+        },
+        {
+          "caseId": "kherson-аскания-нова-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-25-38-597Z.json"
+        },
+        {
+          "caseId": "kherson-аскания-нова-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-25-39-189Z.json"
+        },
+        {
+          "caseId": "kherson-аскания-нова-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-25-39-724Z.json"
         }
       ],
-      "caseCount": 17
+      "caseCount": 18
     },
     {
       "code": "zsd:unpriced",

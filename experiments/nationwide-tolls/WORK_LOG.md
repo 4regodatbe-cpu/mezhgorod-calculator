@@ -121,3 +121,5 @@ BLOCKED: автоматическая проверка отклонила обе
 16.10.2026: часть4 Аскания-Нова→Казань audited, stage1=24/155. Итогunknown: A289 exits unresolved; report/inventory exit0. NEXT STARTED Аскания-Нова→Керчь single-case. [Checkpoint](../../docs/checkpoints/2026-10-16-small-parts-04-askania-kazan.md).
 
 2026-10-16T02:22:11.743397+03:00: часть4,case=kherson-аскания-нова-kerch-center,audited,batch exit0,report/inventory[0, 0],stage=[25, 0]. Parenta2363425b89d5b10b004cb38dba99ae891ebc452; [checkpoint](../../docs/checkpoints/2026-10-15T23-21-53-548Z-part4.md). NEXTSTARTED часть4: kherson-аскания-нова-moscow-center. No merge/Production.
+
+2026-10-16T02:25:46.348218+03:00: часть4,case=kherson-аскания-нова-moscow-center,audited,batch exit0,report/inventory[0, 0],stage=[26, 0]. Parent5cbf1fdf9123ac17badb90fd484c6ea82f8ad4fb; [checkpoint](../../docs/checkpoints/2026-10-15T23-24-38-167Z-part4.md). NEXTSTARTED часть4: kherson-аскания-нова-saint-petersburg-center. No merge/Production.
