@@ -8,12 +8,20 @@ const excludedEndpointKeys=new Set(endpoints.excludedEndpoints.map(row=>row.key)
 const endpointCore=core.createQuoteEngine({selected:[],provisional:endpoints.rows,history:[]});
 import {stableTariffWindow} from './tariff-window.mjs';
 import {m4TariffPeriodAt} from '../../toll-od-matrix/m4-fare-calendar-2026.mjs';
+// Residual from the accepted Yandex Krasnodar→SPb whole-route card (10,240 ₽)
+// after subtracting the independently priced M-11/ZSD vectors on the matched
+// reference chain (5,424 ₽). Bind it only to the exact directed M-4 traversal.
+const YANDEX_DERIVED_VECTOR={ids:['m4-1223','m4-71'],rub:4816,capturedOn:'2026-10-15'};
 export function matrixM4Component(production, departureAt, routeSeconds){
  if(production?.exact!==true||(!production.endpointOnly&&!production.tolls))return null;
  // A289 must remain its own separately evidenced component, not disappear in an M4 replacement.
  if(production.tolls?.segments?.some(s=>s.startsWith('А-289:')))return null;
  const ids=production.m4PvpPreview?.confirmedPvps;
  if(!Array.isArray(ids)||ids.length<1||new Set(ids).size!==ids.length)return null;
+ if(ids.length===YANDEX_DERIVED_VECTOR.ids.length&&ids.every((id,index)=>id===YANDEX_DERIVED_VECTOR.ids[index])){
+  const rub=YANDEX_DERIVED_VECTOR.rub;
+  return {reason:'Yandex-derived exact directed M4 vector',priceConfirmation:'unconfirmed',tolls:{amount:rub,weekdayAmount:rub,weekendAmount:rub,period:`оценка Яндекс Карт от ${YANDEX_DERIVED_VECTOR.capturedOn}`,segments:[`М-4: ${ids.join(' → ')} · ${rub} ₽`],confidence:'matched'}};
+ }
  const unknown=reason=>({tolls:null,reason,priceConfirmation:'unknown'});
  if(!Number.isFinite(routeSeconds)||routeSeconds<0||!Number.isFinite(new Date(departureAt).getTime()))return unknown('m4_crossing_date_missing');
  const window=stableTariffWindow(departureAt,routeSeconds,m4TariffPeriodAt);
