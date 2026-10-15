@@ -1,3 +1,11 @@
+## CURRENT 2026-10-15 — обязательный checkpoint каждого маленького шага
+
+USER RULE: после каждого небольшого изменения/теста/маршрута сохранять код, evidence и отдельное описание, фиксировать Git commit и проверять его доступность из рабочей GitHub-ветки **до следующего шага**. Перед длинной операцией сначала сохранять STARTED. Unreferenced blobs/local commit/chat report не являются достаточным сохранением. [Постоянная инструкция](CHECKPOINT_PROTOCOL.md), [отдельная запись шага](checkpoints/2026-10-15-190000-checkpoint-policy.md). Правило обязательно добавлено в AGENTS.md и supersedes прежнее журналирование только крупных блоков.
+
+NEXT: отдельным checkpoint сохранить восстановленный шестой IO test (совпал с исходным SHA, focused6/6 PASS), затем исправить evidence index/дополнительный progress capture. Массовую серию без durable checkpoints между случаями не запускать. Recovery parent `499f2ee`, PR14; app/lib/тарифы/Production не менялись.
+
+---
+
 ## CURRENT 2026-10-15 — восстановление после обрыва сессии
 
 DONE: код checkpoint2255a46 закреплён в ветке PR14. Прежний checkout /workspace/scratch/31a127bf701a/mezhgorod-calculator отсутствует; running exec cell78 недоступен, память transport progress очищена. Новый checkout создан в /workspace/scratch/a31a0edde6c0/repo. Точный механизм удаления старого каталога не установлен; это не тарифная ошибка.

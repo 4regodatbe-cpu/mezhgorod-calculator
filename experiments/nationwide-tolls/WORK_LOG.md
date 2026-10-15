@@ -1502,3 +1502,9 @@ Evidence under `source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гра�
 ### 2026-10-15 — компактные summaries, полные raw captures
 
 Summary evidence дублировал тысячи платных edges поверх уже сохранённого полного сжатого capture. Добавлены per-road3way samples+counters и сохранение всех exact booth/frame proofs; source captures/SHA/money/component audits не изменены.327 summaries уменьшены на28 081 340bytes; старая форма остаётся в localcheckpointc87e20d. Новый meaningful test3000edges подтверждает сохранение evidence families/точных gates, focused6/6 PASS. Окончательный full gate после шестого теста ещё требуется.
+
+## 2026-10-15 19:00 МСК — уточнение пользователя: сохранять каждый небольшой шаг
+
+Пользователь прямо требует отдельного сохранения/описания каждого маленького этапа, чтобы переживать потерю связи и зависания. Старое правило только substantial blocks оказалось недостаточным. В AGENTS.md добавлен приоритетный small-step durable protocol; создан docs/CHECKPOINT_PROTOCOL.md и отдельная запись docs/checkpoints/2026-10-15-190000-checkpoint-policy.md. Каждое изменение/тест/route case получает описание, файлы/evidence, Git commit, remote branch reference и read-back до следующего независимого шага. Перед длинным запуском сохраняется STARTED. Массовые серии без промежуточного remote checkpoint не запускаются; blobs/tree без branch reference не считаются сохранением.
+
+Изменение docs-only, diff check/ссылки проверяются; новый build этим шагом не заявлен. Исходный рабочий remote499f2ee, PR14; app/lib/тарифы/Production не менялись. Следующий отдельный шаг — сохранение восстановленного шестого IO test (его SHA уже совпал с исходным manifest, focused6/6 PASS), затем проверка evidence availability. Подробный протокол и условия долговременного сохранения находятся в указанной инструкции.

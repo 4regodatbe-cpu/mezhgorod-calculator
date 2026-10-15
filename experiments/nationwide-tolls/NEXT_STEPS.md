@@ -1,3 +1,12 @@
+# 2026-10-15 19:00 МСК — обязательные маленькие durable checkpoints
+
+- [x] Уточнение пользователя оформлено в AGENTS.md и docs/CHECKPOINT_PROTOCOL.md, отдельный docs/checkpoints/2026-10-15-190000-checkpoint-policy.md. Для завершения шага требуется проверенный remote branch head.
+- [ ] Следующий отдельный checkpoint: восстановленный шестой IO test, исходный SHA совпал, focused6/6 PASS.
+- [ ] Следующий отдельный checkpoint: evidence availability index и безопасный progress capture; не запускать массовые серии без удалённого сохранения между случаями.
+- [ ] Восстановить summaries из имеющихся27 raw региональных captures; заново получить только13 отсутствующих (3LNR+10Zaporizhzhia), каждый маршрут сохранять отдельно.
+
+---
+
 # 2026-10-15 — продолжение этапа 16
 
 - [x] Исправить полноту audit capture и явный offline missing-response control; pilot same-date parity, Saturday4640. Focused5/5 PASS.

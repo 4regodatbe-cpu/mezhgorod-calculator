@@ -2,6 +2,14 @@
 
 Before repository work, read docs/WORK_STATE.md. It is the canonical current-state handoff and links to the relevant specifications and checkpoints.
 
+## Mandatory small-step durable checkpoints (user clarification, 2026-10-15)
+
+Read and follow `docs/CHECKPOINT_PROTOCOL.md` before any task action. This clarification supersedes older instructions limiting records to substantial blocks or saying not to log tiny operations.
+
+After **each small completed change, test step, recovery operation or route case**, create a separate dated checkpoint record under `docs/checkpoints/`, save the exact changed files and evidence, update the short handoff/index, commit, persist to the authorized GitHub working branch, and read back the branch head to verify the expected commit. Do not start the next independent step until this durable checkpoint is verified. A local commit, uploaded unreferenced blobs/tree, or a chat report alone is not sufficient.
+
+Before a long operation, first persist a STARTED checkpoint with inputs and the recovery action; after it ends, save DONE/FAILED and exact outputs. If durable saving fails, stop expansion, preserve the current work, record the blocker and notify the user. Do not claim unsaved results are safely stored. Keep chat updates compact; detailed small-step records belong in the repository. This rule does not authorize merging, production deployment or destructive actions.
+
 ## Mandatory repository handoff and full work history (user requirement, 2026-10-09)
 
 **The repository, not an individual chat, is the persistent record of the project.** Every developer/agent in every new chat must be able to resume the project from committed files alone, without access to previous chats.
@@ -23,7 +31,7 @@ Before repository work, read docs/WORK_STATE.md. It is the canonical current-sta
 
 ## Keep state recoverable
 For each substantial implementation block, update docs/WORK_STATE.md in the same branch before ending. Record what changed and why, important files, deferred/rejected work, exact tests/builds/workflow runs and verified commit, remaining risks, and one next action.
-Append a dated entry to the relevant detailed work log/checkpoint for large blocks. Keep WORK_STATE concise and link evidence instead of copying it. Do not log every tiny operation. Label items done, in progress, blocked, or deferred; never state a plan as completed.
+Append a dated record for every small completed step according to docs/CHECKPOINT_PROTOCOL.md. Keep WORK_STATE concise and link the checkpoint/evidence instead of copying it. Label items done, in progress, blocked, or deferred; never state a plan as completed.
 If essential context is missing from the repository, search the named earlier chat as a fallback and immediately persist the recovered decision in the repository.
 
 ## Safety and verification
