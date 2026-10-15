@@ -47,3 +47,6 @@ JSON snapshot parsing, local-link validation, and `git diff --check` passed. Doc
 Пользователь отдельно распорядился не показывать отметки о неподтверждении суммы квитанцией. Удалены такие labels из карточек/копирования, API V3 исключает внутренние `priceConfirmation` и `displayLabel`, строки А-289/ЗСД больше не приклеивают предупреждение к числовой цене. У неизвестной/непоказанной карты цены остаётся прямой статус «стоимость неизвестна», и расчёт не подменяет неизвестную сумму нулём или partial subtotal. Суммы Яндекса приняты как оценки точных маршрутов, но не разложены на отдельные тарифные ячейки других геометрий.
 
 Проверки: 27 целевых тестов PASS; `pnpm build` — audit646/646, quote/API PASS, TypeScript/Next PASS, static16/16 PASS; targeted ESLint 0 ошибок/1 warning (`analyticsVersion`, существующая строка в V2 hook); `git diff --check` PASS. Исходные данные Яндекса не изменены.
+
+
+Публикация реализации: `6038bb2b81fd2607b63651b8307fbf290a2beb86` (PR14, draft/open/mergeable); описание PR обновлено. Actions run `38701853395` для этого exact SHA ещё `in_progress`.

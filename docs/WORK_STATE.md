@@ -8,7 +8,7 @@ DONE THIS BLOCK: убраны пользовательские пометки «
 
 LIMIT: Яндекс route totals не распределяются по другим геометриям или отдельным тарифным ячейкам без точного route/gate match. Москва→Казань без показанной суммы остаётся неизвестным. Следующий шаг — сопоставление сохранённых картографических маршрутов и gate scope с V3; затем ЗСД дальше zone1, M-12↔ЦКАД и оставшиеся `unknown-paid-road` события.
 
-VERIFICATION: focused tests 27/27 PASS; `pnpm build` — 646/646 audit, quote/API, TypeScript/Next и static16/16 PASS; targeted ESLint — 0 ошибок, 1 предупреждение `analyticsVersion` в `app/v2/components/use-v2-calculation.ts`; `git diff --check` PASS. PR14 open/draft/mergeable; ветка `fix/v3-missing-route-prices-2026-10-15`; новая hosted Actions проверка будет выполняться на опубликованном коммите. No merge/main/Production/Android changes.
+VERIFICATION: focused tests 27/27 PASS; `pnpm build` — 646/646 audit, quote/API, TypeScript/Next и static16/16 PASS; targeted ESLint — 0 ошибок, 1 предупреждение `analyticsVersion` в `app/v2/components/use-v2-calculation.ts`; `git diff --check` PASS. Код опубликован в PR14: `6038bb2b81fd2607b63651b8307fbf290a2beb86`. PR открыт/draft/mergeable, PR description обновлён. Actions run `38701853395` для exact SHA `6038bb2` в статусе `in_progress`; результата пока нет. Локальная ветка синхронизирована с origin. No merge/main/Production/Android changes.
 
 NEXT: publish this implementation/evidence block, check exact-SHA Actions, then do route/gate matching for accepted Yandex totals. Keep genuinely unknown toll amounts fail-closed without receipt language.
 ---
