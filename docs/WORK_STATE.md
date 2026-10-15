@@ -1,3 +1,11 @@
+## CURRENT — 2026-10-15-200521МСК, live audit продолжается
+
+DONE: `zaporizhzhia-пришиб-moscow-center` — OSRM, 2018186м, traceComplete=True, sameDateParity=True; weekday=None,weekend=None. Это execution/replay, не независимая проверка тарифа. [Checkpoint](checkpoints/2026-10-15-200521-route-case.md), batch `batch-2026-10-15T17-04-46-739Z.json`.
+
+Полных сохранённых комплектов30; rawOD31; утраченныхraw9. STARTED следующийcase `zaporizhzhia-пришиб-saint-petersburg-center`; только после remote сохранения этого шага. User routingconsent действует; app/lib/тарифы/Production без изменений.
+
+---
+
 ## CURRENT — 2026-10-15-200343МСК, live audit продолжается
 
 DONE: `lnr-рубежное-saint-petersburg-center` — Valhalla, 1723866м, traceComplete=True, sameDateParity=True; weekday=None,weekend=None. Это execution/replay, не независимая проверка тарифа. [Checkpoint](checkpoints/2026-10-15-200343-route-case.md), batch `batch-2026-10-15T17-03-08-657Z.json`.
