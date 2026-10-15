@@ -3254,7 +3254,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-55-16-236Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kerch-center/2026-10-15T23-55-16-209Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 445030,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-55-13-641Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-55-16-236Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kerch-center/2026-10-15T23-55-16-209Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-55-16-649Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-55-17-049Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-кушугум-moscow-center",

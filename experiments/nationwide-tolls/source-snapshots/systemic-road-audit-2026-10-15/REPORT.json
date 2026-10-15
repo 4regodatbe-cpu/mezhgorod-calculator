@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:54:58.914Z",
+  "generatedAt": "2026-10-15T23:55:18.551Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 91,
-    "recordedLiveAttempts": 104,
-    "liveCaptured": 90,
-    "savedLiveSummaries": 90,
+    "distinctCaseAttempts": 92,
+    "recordedLiveAttempts": 105,
+    "liveCaptured": 91,
+    "savedLiveSummaries": 91,
     "missingOrInvalidReferences": 1,
-    "audited": 90,
-    "traceComplete": 90,
-    "sameDateParity": 90
+    "audited": 91,
+    "traceComplete": 91,
+    "sameDateParity": 91
   },
   "regionCounts": {
     "dnr": {
@@ -30,11 +30,11 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 15,
-      "audited": 15,
-      "traceComplete": 15,
-      "pricedWeekday": 3,
-      "pricedWeekend": 4
+      "liveCaptured": 16,
+      "audited": 16,
+      "traceComplete": 16,
+      "pricedWeekday": 4,
+      "pricedWeekend": 5
     },
     "kherson": {
       "planned": 40,
@@ -3110,6 +3110,34 @@
       ],
       "routeMeters": 2447265,
       "routeSeconds": 128629
+    },
+    {
+      "caseId": "zaporizhzhia-васильевка-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-55-16-236Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 445030,
+      "routeSeconds": 23179
     }
   ],
   "historicalExecutionExceptions": [],
