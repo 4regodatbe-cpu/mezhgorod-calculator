@@ -1,17 +1,11 @@
-## CURRENT 2026-10-15 — М-11 tail physical evidence
+## CURRENT 2026-10-15 — решение по хвосту М-11 реализовано
 
-- [x] Сверены первичные страницы Автодора: закрытая система 646–684, Пулково начинается на 681, операторские ПВП 668/679 идентифицированы. Архивная OSM topology различает fee=yes motorway lanes и соседний service booth. См. [stage 09](stages/09-m11-tail-evidence-audit-2026-10-15.md) и JSON snapshot `source-snapshots/m11/2026-10-15-official-tail-corridor-source-audit.json`.
-- [ ] Получить event-level доказательство точного entry/exit и lane passage в обе стороны; определить соотношение 56/38/94 с полным operator RVP, включая аэропортовый ответвитель km 681. Приёмка: отдельные однозначные product events, никакого выбора по радиусу/смежной service дороге, не считать 94+56.
-- [ ] Только после этого реализовать resolver + anti-double-charge/completeness tests, затем live Краснодар↔СПб и Казань↔СПб; пока runtime price остаётся unknown/null.
-
-## CURRENT 2026-10-15 — уточнение тарифа хвоста М-11
-
-- [x] Визуально сверить сохранённый order274 PDF, pp.9–10: 56 ₽ tail 679–681/681–684; 38 ₽ airport access; 94 ₽ combined RVP. Не складывать строки.
-- [x] Исправить тест: обе близкие аэропортовые рамки дают `ambiguous_nearby_gates`, без направления/денег; публичный API оставляет неизвестное `null`.
-- [ ] Связать selected-route toll events и OSM directed ways с полной физической границей соответствующего RVP в обе стороны. Текущие 25 м дают совпадение обеих рамок и не разрешают тариф.
-- [x] Повторно пройти Краснодар↔СПб по live fastest-route audit; оба trace complete, полный итог unknown, единственный unresolved — хвост М-11. Прямой passage использует соседнюю service booth, обратный подтверждает p679 fee gate; это не доказывает выход/полный tail product.
-- [ ] После независимого binding реализовать отдельные строки 56/38/94 с anti-double-charge/completeness tests и проверить live Краснодар↔СПб и Казань↔СПб.
-- [x] `pnpm build`: 642/642 + quote/API + Next/TypeScript PASS; targeted lint PASS. Full lint остаётся красным на 19 старых repo-wide lint issues, см. `docs/WORK_STATE.md`.
+- [x] По прямому правилу пользователя применять 94 ₽ к распознанному выбранному проезду М-11 за ПВП 679 в обоих направлениях. Это заменяет 56/38 для этого продукта; не складывать тарифы.
+- [x] Runtime resolver действует только при строгом M-11 tail continuation, проверяет эффективную дату приказа 274 (с 04.09.2026); airport proximity без обнаруженного tail не превращается в charge.
+- [x] Focused tests 28/28, полный gate/build 645/645 + quote/API/Next/TypeScript/static16/16 PASS; Krasnodar↔SPb recorded replays дают tail94 в обе стороны, полный итог 10 464 weekday / 12 334 weekend. Kazan↔SPb replays также подтверждают tail94, но total unknown из-за ZSD beyond zone1.
+- [x] Implementation опубликован в PR14, head `019859828de9aa3edbfcbf76b0be1fe7baebbb4e`; Actions run 38681974174 ещё выполняется, Vercel pending на последней проверке.
+- [ ] Дождаться Actions/Vercel exact-SHA, затем API/Preview smoke; Main/Production/Android не менять.
+- [ ] Продолжить независимые gaps: ZSD zone2+, CKAD physical boundaries/context, M12↔CKAD operator pair. Тариф М-11 повторно не обсуждать, если не изменится исходный приказ или scope route detection.
 
 ## CURRENT 2026-10-15 — после MMK/ЗСД zone1
 
