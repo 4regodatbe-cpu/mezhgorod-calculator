@@ -8,7 +8,9 @@ LIMIT: контрольная сумма Яндекса — оценка выб�
 
 VERIFIED: focused M‑4 adapter tests 18/18; `pnpm build` audit 651/651, quote/API contracts, TypeScript/Next and static16/16 PASS; `pnpm exec tsc --noEmit`, targeted ESLint and `git diff --check` PASS. [Этап 14](../experiments/nationwide-tolls/stages/14-yandex-residual-m4-vector-2026-10-15.md).
 
-NEXT: опубликовать изменение в PR14 и проверить hosted Actions. Затем разбирать остальные неизвестные платные участки с отдельной ценой и сопоставлением маршрута.
+REMOTE: runtime/evidence опубликованы в PR14 (code `0075c15`, checkpoint `f1a2cb8`); PR открыт/draft/mergeable. GitHub Actions runs `38707940577` (runtime SHA) и `38708155235` (latest docs SHA) находятся in_progress.
+
+NEXT: дождаться и записать exact-SHA Actions conclusion. Затем разбирать остальные неизвестные платные участки с отдельной ценой и сопоставлением маршрута.
 
 ---
 
