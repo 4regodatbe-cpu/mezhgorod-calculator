@@ -2300,7 +2300,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-48-51-686Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/2026-10-15T23-48-51-572Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1797532,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-48-34-242Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-48-51-686Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/2026-10-15T23-48-51-572Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-48-52-310Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-48-52-932Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-антрацит-kazan-center",

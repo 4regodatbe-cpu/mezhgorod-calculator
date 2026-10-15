@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:48:21.346Z",
+  "generatedAt": "2026-10-15T23:48:54.253Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 77,
-    "recordedLiveAttempts": 90,
-    "liveCaptured": 76,
-    "savedLiveSummaries": 76,
+    "distinctCaseAttempts": 78,
+    "recordedLiveAttempts": 91,
+    "liveCaptured": 77,
+    "savedLiveSummaries": 77,
     "missingOrInvalidReferences": 1,
-    "audited": 76,
-    "traceComplete": 76,
-    "sameDateParity": 76
+    "audited": 77,
+    "traceComplete": 77,
+    "sameDateParity": 77
   },
   "regionCounts": {
     "dnr": {
@@ -22,9 +22,9 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 16,
-      "audited": 16,
-      "traceComplete": 16,
+      "liveCaptured": 17,
+      "audited": 17,
+      "traceComplete": 17,
       "pricedWeekday": 11,
       "pricedWeekend": 11
     },
@@ -2662,6 +2662,38 @@
       ],
       "routeMeters": 1104638,
       "routeSeconds": 51652
+    },
+    {
+      "caseId": "lnr-антрацит-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-48-51-686Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1797532,
+      "routeSeconds": 74157
     }
   ],
   "historicalExecutionExceptions": [],
@@ -3934,7 +3966,8 @@
         "dnr-бахмут-saint-petersburg-center",
         "dnr-волноваха-saint-petersburg-center",
         "dnr-донецк-saint-petersburg-center",
-        "lnr-алчевск-saint-petersburg-center"
+        "lnr-алчевск-saint-petersburg-center",
+        "lnr-антрацит-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -4179,9 +4212,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-47-11-819Z.json"
+        },
+        {
+          "caseId": "lnr-антрацит-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-48-51-686Z.json"
+        },
+        {
+          "caseId": "lnr-антрацит-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-48-52-310Z.json"
+        },
+        {
+          "caseId": "lnr-антрацит-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-48-52-932Z.json"
         }
       ],
-      "caseCount": 9
+      "caseCount": 10
     },
     {
       "code": "m4:unpriced",
