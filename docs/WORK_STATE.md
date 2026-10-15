@@ -1,3 +1,14 @@
+## CURRENT — 2026-10-15: recovery и проверка завершены
+
+- DONE: инструкция каждого небольшого checkpoint действует в AGENTS.md/CHECKPOINT_PROTOCOL.md; каждый шаг этой сессии закреплён отдельным GitHub commit с проверкой SHA/tree/head. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft.
+- DONE: восстановлен compaction regression; report переживает утраченные файлы и не засчитывает historic audited без evidence. Full `pnpm build` PASS: audit656/656, quote/API, Next/TypeScript/static16/16; targeted ESLint/diffPASS. [Build checkpoint](checkpoints/2026-10-15-resumed-build-pass.md).
+- DONE: [availability](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/EVIDENCE_AVAILABILITY.md):27региональныхODraw,26полных исходных комплектов,13утраченныхraw,55missing original refs. [REPORT](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.md) теперь учитывает только26полных комплектов.
+- DONE: Лисичанск→Москва восстановлен отдельно из raw на четверг/субботу; оба replay complete, tolls совпали с historic batch, unknown M4 exact fare. Это offline reconstruction, оригинальный live summary остаётся утрачен. [Checkpoint](checkpoints/2026-10-15-lisichansk-offline-recovery.md). Не засчитывать как новый live маршрут или27-й полный исходный комплект.
+- NEXT: выбрать первый из13утраченныхraw, сохранить STARTED, выполнить один live+same-date+weekend route case, сохранить code/evidence/checkpoint и проверить remote перед следующим. Затем остальные160regional и дорожные singles/pairs/triples/chains по принятой программе; не запускать batch без покейсного remote сохранения.
+- App/lib/тарифные матрицы/Production этой сессией не менялись. Full build не доказывает правильность всех тарифов.
+
+---
+
 ## CURRENT — восстановленная ветка проверена, build PASS
 
 DONE: `pnpm build` exit0 — audit656/656, quote/API, Next/TypeScript/static16/16 PASS; targeted ESLint/diff check PASS. [Checkpoint](checkpoints/2026-10-15-resumed-build-pass.md). [Availability](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/EVIDENCE_AVAILABILITY.md):27rawOD,26полных комплектов,13утраченныхraw,55missingrefs. NEXT/STARTED: восстановить LNR summary из существующего raw офлайн, явно обозначить реконструкцию. PR14 draft; production не менялся.

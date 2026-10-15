@@ -1,3 +1,11 @@
+# CURRENT — recovery/test блок завершён
+
+- [x] IO regression6/6 и report integration1/1; full build656/656+quote/API/Next/types/static16, ESLint/diffPASS.
+- [x] Availability27rawOD/26originalcomplete; safe report26 вместо historic40.
+- [x] Лисичанск→Москва:2offline replay complete, tolls равны historic batch; original live summary не восстановлен.
+- [ ] Один из13missingraw: STARTED→одинlive+replays→checkpoint→remote read-back до следующего.
+- [ ] Остальные planned regional cases и дорожные группы; source-changing fixes обсуждаются после findings review.
+
 # CURRENT — full gate PASS; recovery LNR summary STARTED
 
 - [x] pnpm build656/656 + quote/API/Next/TypeScript/static16, targeted ESLint/diffPASS.

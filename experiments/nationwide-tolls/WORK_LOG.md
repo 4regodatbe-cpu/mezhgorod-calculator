@@ -1548,3 +1548,8 @@ pnpm install --frozen-lockfile exit0, policy intact. `docs/checkpoints/2026-10-1
 ## 2026-10-15 — resumed full build PASS
 
 pnpm build exit0:656/656 audit, quote/API/Next/types/static16; focused ESLint/diffPASS. Полный stdout сохранён. `docs/checkpoints/2026-10-15-resumed-build-pass.md`. NEXT/STARTED recovery LNR summary из имеющегося raw, без нового live запроса.
+
+
+## 2026-10-15 — Лисичанск→Москва offline recovery DONE
+
+Один routecase:2offline даты, complete/no misses, unknownM4missingexactfare; tolls совпали с historic batch. Original live summary остаётся утрачен; не новый live.2JSON/2stdout/recovery-summarySHA сохранены. `docs/checkpoints/2026-10-15-lisichansk-offline-recovery.md`. Next один из13missingraw по покейсному protocol. Binary/base64 transport corrected CR/LF mismatch, verified remote/tree.
