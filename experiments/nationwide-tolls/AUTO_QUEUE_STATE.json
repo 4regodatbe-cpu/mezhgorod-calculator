@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-15T23:45:12.468Z",
-  "phase": "DONE",
+  "at": "2026-10-15T23:45:15.365Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,62 +23,10 @@
       "region": "kherson"
     }
   },
-  "caseId": "kherson-новая-збурьевка-kerch-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "kherson-новая-збурьевка-kerch-center",
-    "startedAt": "2026-10-15T23:45:00.561Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-45-02-663Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-kerch-center/2026-10-15T23-45-02-634Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-45-03-081Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-45-03-490Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-15T23:45:03.507Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-44-59-258Z-part4",
-  "parent": "25dc2b984bd800d0241942254665873b62e1e59f",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-45-12-468Z-done.json"
+  "caseId": "kherson-новая-збурьевка-moscow-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-45-15-365Z-part4",
+  "parent": "7841348c511ae2bc34e532af746807eff9cb56b4",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-45-15-365Z-started.json"
 }
