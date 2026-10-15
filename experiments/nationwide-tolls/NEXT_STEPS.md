@@ -1,3 +1,7 @@
+# CURRENT — этап1:1/155
+
+Пришиб→Казань сохранён локально; remote проверить перед следующим `zaporizhzhia-гуляйполе-moscow-center`.
+
 # CURRENT — этап1 из2
 
 См. TWO_STAGE_AUDIT_PLAN.md/JSON. Этап1=155,этап2=154. Первым Пришиб→Казань. Прямое разрешение routing+publicGitHub получено21:09МСК; сохранить checkpoint/remote, затем live.
