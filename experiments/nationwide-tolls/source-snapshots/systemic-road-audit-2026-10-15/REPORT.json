@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:50:02.235Z",
+  "generatedAt": "2026-10-15T23:50:34.678Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 81,
-    "recordedLiveAttempts": 94,
-    "liveCaptured": 80,
-    "savedLiveSummaries": 80,
+    "distinctCaseAttempts": 82,
+    "recordedLiveAttempts": 95,
+    "liveCaptured": 81,
+    "savedLiveSummaries": 81,
     "missingOrInvalidReferences": 1,
-    "audited": 80,
-    "traceComplete": 80,
-    "sameDateParity": 80
+    "audited": 81,
+    "traceComplete": 81,
+    "sameDateParity": 81
   },
   "regionCounts": {
     "dnr": {
@@ -22,9 +22,9 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 20,
-      "audited": 20,
-      "traceComplete": 20,
+      "liveCaptured": 21,
+      "audited": 21,
+      "traceComplete": 21,
       "pricedWeekday": 14,
       "pricedWeekend": 14
     },
@@ -2783,6 +2783,38 @@
       ],
       "routeMeters": 1021040,
       "routeSeconds": 48708
+    },
+    {
+      "caseId": "lnr-довжанск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-50-32-120Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1737236,
+      "routeSeconds": 70624
     }
   ],
   "historicalExecutionExceptions": [],
@@ -4056,7 +4088,8 @@
         "dnr-волноваха-saint-petersburg-center",
         "dnr-донецк-saint-petersburg-center",
         "lnr-алчевск-saint-petersburg-center",
-        "lnr-антрацит-saint-petersburg-center"
+        "lnr-антрацит-saint-petersburg-center",
+        "lnr-довжанск-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -4328,9 +4361,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-48-52-932Z.json"
+        },
+        {
+          "caseId": "lnr-довжанск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-50-32-120Z.json"
+        },
+        {
+          "caseId": "lnr-довжанск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-50-32-740Z.json"
+        },
+        {
+          "caseId": "lnr-довжанск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-50-33-335Z.json"
         }
       ],
-      "caseCount": 10
+      "caseCount": 11
     },
     {
       "code": "m4:unpriced",

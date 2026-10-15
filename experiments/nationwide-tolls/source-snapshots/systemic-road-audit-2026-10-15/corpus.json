@@ -1856,7 +1856,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-50-32-120Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-saint-petersburg-center/2026-10-15T23-50-32-019Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1737236,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-50-15-571Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-50-32-120Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-saint-petersburg-center/2026-10-15T23-50-32-019Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-50-32-740Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-50-33-335Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-довжанск-kazan-center",
