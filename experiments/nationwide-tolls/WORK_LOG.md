@@ -97,3 +97,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16T01:36:22.441996+03:00: dnr-краматорск-kazan-center audited, commandexit0,stage1=21/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-013622-dnr-краматорск-kazan-center-audit.md). NEXT dnr-краматорск-kerch-center.
+
+
+2026-10-16T01:37:29.321891+03:00: dnr-краматорск-kerch-center audited, commandexit0,stage1=22/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-013729-dnr-краматорск-kerch-center-audit.md). NEXT dnr-краматорск-moscow-center.

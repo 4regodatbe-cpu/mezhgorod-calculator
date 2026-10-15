@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-10-15T22:36:27.384Z",
+  "generatedAt": "2026-10-15T22:37:34.250Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 53,
-    "recordedLiveAttempts": 66,
-    "liveCaptured": 52,
-    "savedLiveSummaries": 52,
+    "distinctCaseAttempts": 54,
+    "recordedLiveAttempts": 67,
+    "liveCaptured": 53,
+    "savedLiveSummaries": 53,
     "missingOrInvalidReferences": 1,
-    "audited": 52,
-    "traceComplete": 52,
-    "sameDateParity": 52
+    "audited": 53,
+    "traceComplete": 53,
+    "sameDateParity": 53
   },
   "regionCounts": {
     "dnr": {
       "planned": 40,
-      "liveCaptured": 23,
-      "audited": 23,
-      "traceComplete": 23,
-      "pricedWeekday": 11,
-      "pricedWeekend": 14
+      "liveCaptured": 24,
+      "audited": 24,
+      "traceComplete": 24,
+      "pricedWeekday": 12,
+      "pricedWeekend": 15
     },
     "lnr": {
       "planned": 40,
@@ -1882,6 +1882,37 @@
       ],
       "routeMeters": 1463931,
       "routeSeconds": 83356
+    },
+    {
+      "caseId": "dnr-краматорск-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-37-25-354Z.json",
+      "weekdayAmount": 2030,
+      "weekendAmount": 2250,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 864115,
+      "routeSeconds": 45164
     }
   ],
   "historicalExecutionExceptions": [],

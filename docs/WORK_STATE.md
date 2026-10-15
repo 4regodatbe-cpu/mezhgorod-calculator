@@ -1,6 +1,6 @@
 # Текущее состояние калькулятора «Из А в Б»
 
-2026-10-16T01:36:22.441996+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14draft. Parent remote перед этим checkpoint `84ac2ab9bf2ae9d712af8cab63f2d3d93e1f1a3a`.
+2026-10-16T01:37:29.321891+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14draft. Parent remote перед этим checkpoint `7770deebf5aebde867f88684f6580e6ff9091888`.
 
 ## DONE
 
@@ -8,11 +8,11 @@ Fullbuild658/658+quote/API/Next/TypeScript/static16/16 PASS, ESLint18/diffcheck 
 
 Departurepolicy реализована: вся поездка по дате/времени старта; геометрия/направление/даты источника проверяются. Междорожные векторы отложены. OfflineГуляйполе→Москва3810/4640 complete.
 
-Stage1 **21/155** по реально доступным raw/live/replays; stage2 **154** не начат. Последний случай dnr-краматорск-kazan-center: audited. [Checkpoint](checkpoints/2026-10-16-013622-dnr-краматорск-kazan-center-audit.md). [Последние actual результаты и next](checkpoints/evidence/2026-10-15T22-35-50-729Z-dnr-краматорск-kazan-center-batch-verified.json). REPORT/EVIDENCE_AVAILABILITY обновлены. Original Лисичанск→Москва summary утрачен, offline reconstruction не original live. Старые цены до trip-departure-v1 не выдавать за новые повторы.
+Stage1 **22/155** по реально доступным raw/live/replays; stage2 **154** не начат. Последний случай dnr-краматорск-kerch-center: audited. [Checkpoint](checkpoints/2026-10-16-013729-dnr-краматорск-kerch-center-audit.md). [Последние actual результаты и next](checkpoints/evidence/2026-10-15T22-36-57-608Z-dnr-краматорск-kerch-center-batch-verified.json). REPORT/EVIDENCE_AVAILABILITY обновлены. Original Лисичанск→Москва summary утрачен, offline reconstruction не original live. Старые цены до trip-departure-v1 не выдавать за новые повторы.
 
 ## NEXT
 
-dnr-краматорск-kerch-center по [замороженной очереди](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json). Каждый один маршрут: STARTED→single-case batch→report/inventory→checkpoint→localcommit→GitHub→head/tree readback→следующий. Unknown не бесплатно; subtotal не полный итог.
+dnr-краматорск-moscow-center по [замороженной очереди](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json). Каждый один маршрут: STARTED→single-case batch→report/inventory→checkpoint→localcommit→GitHub→head/tree readback→следующий. Unknown не бесплатно; subtotal не полный итог.
 
 Прямые разрешения текущего чата: публичныйGitHub16.10 00:07; координаты/контрольные точки/маршрутные параметры Valhalla/OSRM/BRouter16.10 01:16. Не спрашивать повторно. CLI без credentials, connector с точной проверкой blob/tree/head работает. Не main/merge/Production/Android без запроса.
 
