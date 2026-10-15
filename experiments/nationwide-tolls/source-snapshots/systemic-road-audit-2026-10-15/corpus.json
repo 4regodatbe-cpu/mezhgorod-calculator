@@ -1507,18 +1507,18 @@
       "expectedRoads": [],
       "status": "audited",
       "liveEvidence": {
-        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-05-835Z.json",
-        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/2026-10-15T12-16-05-719Z-capture.json.gz",
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T17-03-35-652Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/2026-10-15T17-03-35-545Z-capture.json.gz",
         "provider": "Valhalla",
         "routeMeters": 1723866,
         "traceComplete": true
       },
       "auditEvidence": {
-        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
-        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-05-835Z.json",
-        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/2026-10-15T12-16-05-719Z-capture.json.gz",
-        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-16-06-407Z.json",
-        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-16-06-901Z.json",
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T17-03-08-657Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T17-03-35-652Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/2026-10-15T17-03-35-545Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T17-03-36-143Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T17-03-36-608Z.json",
         "sameDateParity": true
       }
     },

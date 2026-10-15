@@ -1,3 +1,8 @@
+# CURRENT 2026-10-15-200343 — следующийcase zaporizhzhia-пришиб-moscow-center
+
+- [x] lnr-рубежное-saint-petersburg-center: executionaudited, parityTrue; complete datasets29, missingraw10.
+- [ ] После remotecheckpoint следующийодинcase `zaporizhzhia-пришиб-moscow-center` --limit1.
+
 # CURRENT 2026-10-15-200143 — следующийcase lnr-рубежное-saint-petersburg-center
 
 - [x] lnr-рубежное-moscow-center: executionaudited, parityTrue; complete datasets28, missingraw11.
