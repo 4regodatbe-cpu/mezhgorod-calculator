@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:58:35.775Z",
+  "generatedAt": "2026-10-15T23:59:08.186Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 98,
-    "recordedLiveAttempts": 111,
-    "liveCaptured": 97,
-    "savedLiveSummaries": 97,
+    "distinctCaseAttempts": 99,
+    "recordedLiveAttempts": 112,
+    "liveCaptured": 98,
+    "savedLiveSummaries": 98,
     "missingOrInvalidReferences": 1,
-    "audited": 97,
-    "traceComplete": 97,
-    "sameDateParity": 97
+    "audited": 98,
+    "traceComplete": 98,
+    "sameDateParity": 98
   },
   "regionCounts": {
     "dnr": {
@@ -220,9 +220,9 @@
       "id": "max-chain-m12-ckad-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 1,
-      "audited": 1,
-      "traversalProven": 1,
+      "attempted": 2,
+      "audited": 2,
+      "traversalProven": 2,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     }
@@ -3345,6 +3345,44 @@
       ],
       "routeMeters": 1158570,
       "routeSeconds": 43654
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-15T23-59-05-480Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12",
+          "ckad",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "m12",
+          "m11",
+          "zsd",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1558165,
+      "routeSeconds": 62251
     }
   ],
   "historicalExecutionExceptions": [],
@@ -4817,7 +4855,8 @@
         "lnr-антрацит-saint-petersburg-center",
         "lnr-довжанск-saint-petersburg-center",
         "lnr-марковка-saint-petersburg-center",
-        "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+        "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+        "max-chain-m12-ckad-m11-zsd-kazan-to-sest"
       ],
       "occurrences": [
         {
@@ -5170,9 +5209,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-58-34-166Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-15T23-59-05-480Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-59-06-046Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-59-06-576Z.json"
         }
       ],
-      "caseCount": 13
+      "caseCount": 14
     },
     {
       "code": "m4:unpriced",
@@ -5367,7 +5433,8 @@
     {
       "code": "m11_partial_head_entry_boundary_unresolved",
       "cases": [
-        "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+        "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+        "max-chain-m12-ckad-m11-zsd-kazan-to-sest"
       ],
       "occurrences": [
         {
@@ -5396,14 +5463,42 @@
             "reason": "m11_partial_head_entry_boundary_unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-58-34-166Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_partial_head_entry_boundary_unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-15T23-59-05-480Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_partial_head_entry_boundary_unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-59-06-046Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_partial_head_entry_boundary_unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-59-06-576Z.json"
         }
       ],
-      "caseCount": 1
+      "caseCount": 2
     },
     {
       "code": "arc_not_proven",
       "cases": [
-        "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+        "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+        "max-chain-m12-ckad-m11-zsd-kazan-to-sest"
       ],
       "occurrences": [
         {
@@ -5432,9 +5527,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-58-34-166Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-15T23-59-05-480Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-59-06-046Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-59-06-576Z.json"
         }
       ],
-      "caseCount": 1
+      "caseCount": 2
     },
     {
       "code": "unknown-paid-road:unpriced",

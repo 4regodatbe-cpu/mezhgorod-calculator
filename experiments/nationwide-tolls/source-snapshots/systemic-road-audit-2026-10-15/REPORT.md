@@ -1,10 +1,10 @@
 # Системный аудит маршрутов — текущие результаты
 
-Сформировано: 2026-10-15T23:58:35.775Z.
+Сформировано: 2026-10-15T23:59:08.186Z.
 
-Разных проверенных OD-кейсов: 98; записанных live попыток с учётом повторов: 111; маршруты получены: 97; capture + два offline replay завершены: 97; одинаковый live/offline итог: 97.
+Разных проверенных OD-кейсов: 99; записанных live попыток с учётом повторов: 112; маршруты получены: 98; capture + два offline replay завершены: 98; одинаковый live/offline итог: 98.
 
-Отсутствующих/нечитаемых evidence-ссылок: 1; имеющихся live summaries: 97. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
+Отсутствующих/нечитаемых evidence-ссылок: 1; имеющихся live summaries: 98. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
 
 Audited означает воспроизводимость исполнения. Это не проверка цен по Яндексу/оператору. Неизвестная сумма остаётся неизвестной. Offline replay не считается новым live-маршрутом.
 
@@ -34,17 +34,17 @@ Audited означает воспроизводимость исполнения
 | triple-m4-m11-zsd | 10 | 0 | 0 | 0 | 0 | 0 |
 | triple-m11-ckad-m12 | 10 | 0 | 0 | 0 | 0 | 0 |
 | max-chain-m4-ckad-m11-zsd | 10 | 0 | 0 | 0 | 0 | 0 |
-| max-chain-m12-ckad-m11-zsd | 10 | 1 | 1 | 1 | 0 | 0 |
+| max-chain-m12-ckad-m11-zsd | 10 | 2 | 2 | 2 | 0 | 0 |
 
 | Наблюдение | Разных маршрутов |
 |---|---:|
 | m4_crossing_profile_changes | 25 |
 | a289:unpriced | 34 |
-| zsd:unpriced | 13 |
+| zsd:unpriced | 14 |
 | m4:unpriced | 6 |
 | saved-live-evidence-missing | 1 |
-| m11_partial_head_entry_boundary_unresolved | 1 |
-| arc_not_proven | 1 |
+| m11_partial_head_entry_boundary_unresolved | 2 |
+| arc_not_proven | 2 |
 | unknown-paid-road:unpriced | 1 |
 
 Исторические ошибки исполнения/неполные трассы сохранены отдельно: 0. Успешный повтор не удаляет первоначальный неуспешный capture.
