@@ -21,13 +21,13 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "historicallyAudited": 16,
-      "rawAvailable": 16,
-      "fourArtifactsAvailable": 16
+      "historicallyAudited": 17,
+      "rawAvailable": 17,
+      "fourArtifactsAvailable": 17
     }
   },
-  "rawCaptureCount": 94,
-  "rawCaptureCaseCount": 92,
+  "rawCaptureCount": 95,
+  "rawCaptureCaseCount": 93,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -3190,10 +3190,49 @@
     {
       "caseId": "zaporizhzhia-васильевка-moscow-center",
       "region": "zaporizhzhia",
-      "historicalStatus": "planned",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
-      "artifacts": {}
+      "historicalStatus": "audited",
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-55-47-751Z.json",
+          "exists": true,
+          "bytes": 7235,
+          "sha256": "e58dcd61d19787aceeb2f1d1c83de890f57cf110e9f668d72b29fa846ef4aec0",
+          "gitBlobSha": "065354b7f011a253a34b6db731292e9d749b8da6",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/2026-10-15T23-55-47-612Z-capture.json.gz",
+          "exists": true,
+          "bytes": 797756,
+          "sha256": "6c760d7cebb4bbfdd2fbeadbaa4c8c321aac514fb4e63809677fcba853fbca06",
+          "gitBlobSha": "2923f298a4416f242250bfb23f31839b70ea18a1",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 19
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-55-48-415Z.json",
+          "exists": true,
+          "bytes": 7313,
+          "sha256": "aa1b048a196a3c4e9eb036f0ac0d8145b82cc1384f27d9e86f9417c1ff0d263f",
+          "gitBlobSha": "cf26376baaf04fba821659b3614116a6c8c1847d",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-55-49-081Z.json",
+          "exists": true,
+          "bytes": 7313,
+          "sha256": "b692ae5271531c042a109c428a3d556198e6d0dfd27a611fc4521d44bf20a1c2",
+          "gitBlobSha": "b8a386efdc6f0b79a1388c832dc135ab27689f03",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     },
     {
       "caseId": "zaporizhzhia-васильевка-saint-petersburg-center",
@@ -9377,6 +9416,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-55-32-855Z.json",
+      "caseId": "zaporizhzhia-васильевка-moscow-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-55-47-751Z.json",
+          "exists": true,
+          "bytes": 7235,
+          "sha256": "e58dcd61d19787aceeb2f1d1c83de890f57cf110e9f668d72b29fa846ef4aec0",
+          "gitBlobSha": "065354b7f011a253a34b6db731292e9d749b8da6",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/2026-10-15T23-55-47-612Z-capture.json.gz",
+          "exists": true,
+          "bytes": 797756,
+          "sha256": "6c760d7cebb4bbfdd2fbeadbaa4c8c321aac514fb4e63809677fcba853fbca06",
+          "gitBlobSha": "2923f298a4416f242250bfb23f31839b70ea18a1",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 19
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-55-48-415Z.json",
+          "exists": true,
+          "bytes": 7313,
+          "sha256": "aa1b048a196a3c4e9eb036f0ac0d8145b82cc1384f27d9e86f9417c1ff0d263f",
+          "gitBlobSha": "cf26376baaf04fba821659b3614116a6c8c1847d",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-55-49-081Z.json",
+          "exists": true,
+          "bytes": 7313,
+          "sha256": "b692ae5271531c042a109c428a3d556198e6d0dfd27a611fc4521d44bf20a1c2",
+          "gitBlobSha": "b8a386efdc6f0b79a1388c832dc135ab27689f03",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -10303,6 +10387,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 7
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/2026-10-15T23-55-47-612Z-capture.json.gz",
+      "exists": true,
+      "bytes": 797756,
+      "sha256": "6c760d7cebb4bbfdd2fbeadbaa4c8c321aac514fb4e63809677fcba853fbca06",
+      "gitBlobSha": "2923f298a4416f242250bfb23f31839b70ea18a1",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 19
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/2026-10-15T18-16-40-411Z-capture.json.gz",
