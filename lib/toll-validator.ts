@@ -47,7 +47,10 @@ type TraceEdge = {
 
 const MAX_TRACE_POINTS = 320;
 const MAX_TRACE_CHUNK_KM = 140;
-const CHUNK_CONCURRENCY = 3;
+// The public Valhalla instance rate-limits long multi-chunk traces. Keep the
+// per-route fanout modest; transient 429 responses also receive a bounded
+// exponential retry below. Incomplete chunks must still fail closed.
+const CHUNK_CONCURRENCY = 2;
 
 function distanceKm(a: Coordinate, b: Coordinate) {
   const rad = Math.PI / 180;
@@ -143,19 +146,21 @@ async function traceChunk(route: Coordinate[]) {
     signal: AbortSignal.timeout(Math.max(1, deadlineAt - Date.now())),
   });
   let response = await send();
-  // A long route sends several chunks. A temporary rate limit must not
-  // discard a chunk without one bounded retry; never exceed its old budget
-  // or ignore an operator's longer Retry-After instruction.
-  if (response.status === 429) {
+  // A long route sends several chunks. Retry transient rate limits twice with
+  // bounded backoff. Respect Retry-After when supplied; if it is too long for
+  // this request budget, leave the chunk unresolved instead of retrying early.
+  for (let retry = 0; response.status === 429 && retry < 2; retry += 1) {
     const retryAfter = response.headers.get("retry-after");
     const seconds = retryAfter === null || retryAfter.trim() === "" ? NaN : Number(retryAfter);
     const date = retryAfter ? Date.parse(retryAfter) : NaN;
     const delay = Number.isFinite(seconds) && seconds >= 0 ? seconds * 1000
-      : Number.isFinite(date) ? Math.max(0, date - Date.now()) : 1_000;
+      : Number.isFinite(date) ? Math.max(0, date - Date.now()) : 1_000 * (2 ** retry);
     if (delay <= 5_000 && delay + 1_000 < deadlineAt - Date.now()) {
       await response.body?.cancel();
       if (delay > 0) await new Promise(resolve => setTimeout(resolve, delay));
       response = await send();
+    } else {
+      break;
     }
   }
   if (!response.ok) throw new Error(`TRACE_${response.status}`);

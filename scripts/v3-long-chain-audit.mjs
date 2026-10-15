@@ -51,7 +51,7 @@ if(process.argv[2]==='--replay'){
   try{
    const response=await originalFetch(url,init);
    const text=await response.clone().text();
-   calls.push({...record,status:response.status,text,contentType:response.headers.get('content-type'),elapsedMs:Date.now()-started});
+   calls.push({...record,status:response.status,text,contentType:response.headers.get('content-type'),retryAfter:response.headers.get('retry-after'),elapsedMs:Date.now()-started});
    return response;
   }catch(error){calls.push({...record,error:String(error),elapsedMs:Date.now()-started});throw error;}
  };

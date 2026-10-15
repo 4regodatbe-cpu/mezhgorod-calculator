@@ -1,3 +1,13 @@
+## CURRENT 2026-10-15 — длинная трасса восстановлена после HTTP 429
+
+DONE: Valhalla toll-trace fanout reduced from 3 to 2; each chunk now retries up to twice with bounded exponential fallback (1s/2s), respecting `Retry-After`. Incomplete/persistent failures still remain unknown. Long-chain capture now records the provider's `Retry-After` header.
+
+VERIFIED: focused retry tests 4/4; `pnpm build` audit 646/646 + quote/API PASS + TypeScript/Next PASS + static16/16 PASS; targeted ESLint and `git diff --check` PASS. Fresh SPb→Krasnodar via Moscow validation completed all 15 chunks; audit priced all detected products, tail component =94 ₽, calculated totals 10 464 ₽ weekday / 12 334 ₽ weekend. Provider pricing confirmation remains `unconfirmed` and the user-facing warning remains; do not call the total independently tariff-confirmed. Prior capture had 1/15 chunks fail after HTTP 429 twice. [Stage 11](../experiments/nationwide-tolls/stages/11-valhalla-rate-limit-and-reverse-chain-2026-10-15.md).
+
+NEXT: publish this checked block, then verify exact-SHA Actions/Preview. Afterwards reconcile remaining ZSD scope and its tariff version/effective-date evidence before any runtime extension; keep current unknown behavior outside reviewed zone1.
+
+---
+
 ## CURRENT 2026-10-15 — smoke exact Preview and fresh reverse chain
 
 DONE: latest PR head `b555be97c722b9eadc74780986edb783789e6c41` deploy READY; authenticated Preview `/api/version` returned HTTP 200 with exact head SHA/environment `preview`; `/v3` returned HTTP 200. Fresh OSRM reverse chain SPb→Krasnodar via Moscow confirms `m11-679-684`=94 ₽, while full total correctly stays unknown because ZSD trace is incomplete and `unknown-paid-road` remains. Raw live response/capture hashes and path are retained in [stage 10](../experiments/nationwide-tolls/stages/10-preview-smoke-and-fresh-reverse-chain-2026-10-15.md).

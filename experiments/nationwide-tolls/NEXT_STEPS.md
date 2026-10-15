@@ -1,3 +1,13 @@
+## CURRENT 2026-10-15 — Valhalla throttling fix and fresh reverse chain
+
+- [x] Reduce selected-route toll-trace concurrency 3→2; retry HTTP 429 up to two times with bounded 1s/2s fallback, honor `Retry-After`, keep persistent/unserviceable chunks fail-closed. Capture `Retry-After` in live audit evidence.
+- [x] Focused rate-limit tests 4/4; `pnpm build` audit646/646 + quote/API + TS/Next + static16/16 PASS; lint/diffcheck PASS.
+- [x] Fresh SPb→Krasnodar via Moscow: 15/15 chunks complete; all trace calls returned 200 in captured run; M-11 tail94; component audit priced; calculated total 10,464 weekday /12,334 weekend. Display remains explicitly unconfirmed. [Stage 11](stages/11-valhalla-rate-limit-and-reverse-chain-2026-10-15.md).
+- [ ] Publish checked runtime/evidence on fix branch and verify exact-SHA Actions/Preview.
+- [ ] Audit complete ZSD zone/OD scope and reconcile official fare schedule versions/effective dates before adding further products. Keep unreviewed scope unknown; preserve exclusion history and do not use inferred zone names as money.
+
+---
+
 ## CURRENT 2026-10-15 — Preview smoke done; fresh reverse chain localizes remaining blockers
 
 - [x] Latest PR tip `b555be97c722b9eadc74780986edb783789e6c41` is deployed READY; authenticated `/api/version` returns exact SHA and preview environment (HTTP 200); authenticated `/v3` returns 200. [Stage 10](stages/10-preview-smoke-and-fresh-reverse-chain-2026-10-15.md).
