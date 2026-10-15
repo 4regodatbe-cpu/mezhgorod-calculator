@@ -1904,7 +1904,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-49-37-784Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-kerch-center/2026-10-15T23-49-37-734Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 664690,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-49-34-740Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-49-37-784Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-kerch-center/2026-10-15T23-49-37-734Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-49-38-228Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-49-38-658Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-алчевск-moscow-center",
