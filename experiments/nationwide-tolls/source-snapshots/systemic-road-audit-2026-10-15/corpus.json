@@ -4616,7 +4616,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-42-14-087Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-saint-petersburg-center/2026-10-15T23-42-13-927Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2603999,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-41-50-800Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-42-14-087Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-saint-petersburg-center/2026-10-15T23-42-13-927Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-42-14-833Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-42-15-577Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-геническ-kazan-center",
