@@ -1145,7 +1145,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-21-40-669Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kerch-center/2026-10-15T22-21-40-610Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 802433,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-21-12-616Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-21-40-669Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kerch-center/2026-10-15T22-21-40-610Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-21-41-037Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-21-41-366Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-брянка-moscow-center",

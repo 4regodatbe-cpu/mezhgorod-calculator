@@ -61,3 +61,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16: report/inventory exit0,raw43/41OD/40полных/0повреждений; stage1=9/155. STARTED single-case batch Бахмут→Керчь. [Подробности](../../docs/checkpoints/2026-10-16-report-inventory-bakhmut-kazan.md).
+
+
+2026-10-16T01:22:32.681800+03:00: dnr-бахмут-kerch-center audited, commandexit0,stage1=10/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012232-dnr-бахмут-kerch-center-audit.md). NEXT dnr-бахмут-moscow-center.
