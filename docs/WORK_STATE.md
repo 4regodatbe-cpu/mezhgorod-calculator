@@ -1,3 +1,9 @@
+## CURRENT — восстановлен IO regression, первая проверка FAILED
+
+5/6 PASS; fixture содержит wayId0, helper его не считает. [Checkpoint](checkpoints/2026-10-15-192000-io-reconstruction-failed.md). NEXT: положительные OSM way IDs, повтор focused; далее evidence availability. Parent79fb00d remote проверен.
+
+---
+
 ## CURRENT — продолжение в новой сессии
 
 DONE: remote/PR14/local сверены на `902bdd8`, чистый checkout. STARTED: восстановление шестого IO test; затем evidence availability. [Checkpoint](checkpoints/2026-10-15-191601-resume-and-io-recovery-started.md). Новых тестов/build ещё нет.

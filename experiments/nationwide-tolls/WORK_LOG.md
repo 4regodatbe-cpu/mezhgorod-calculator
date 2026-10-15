@@ -1513,3 +1513,8 @@ Summary evidence дублировал тысячи платных edges пове
 ## 2026-10-15-191601 МСК — возобновление New Chat
 
 Сверены remote/local/PR14 на902bdd8, прочитаны инструкции и recovery handoff; сохранение каждого маленького шага обязательно. STARTED восстановление шестого IO теста; новые проверки пока не запускались. Подробности: `docs/checkpoints/2026-10-15-191601-resume-and-io-recovery-started.md`.
+
+
+## 2026-10-15 — IO regression reconstruction FAILED
+
+Focused5/6; причина fixture wayId0. Raw/test/output сохранены, полный build не запускался. Подробности `docs/checkpoints/2026-10-15-192000-io-reconstruction-failed.md`; следующий шаг исправить fixture на положительные way IDs.

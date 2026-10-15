@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { recordingFetch, replayingFetch, pricingParity, assessRoadCoverage } from './scripts/systemic-audit-io.mjs';
+import { recordingFetch, replayingFetch, pricingParity, assessRoadCoverage, summarizePassageEvidence } from './scripts/systemic-audit-io.mjs';
 
 test('recording reserves request order even when repeated requests finish out of order', async () => {
   const calls = [];
@@ -46,4 +46,35 @@ test('planned roads, incomplete traces and partially traversed pairs never count
   assert.equal(assessRoadCoverage(['m4'], [{ road: 'm4' }], false).status, 'trace-incomplete');
   assert.deepEqual(assessRoadCoverage(['m4', 'a289'], [{ road: 'm4' }], true).missingExpectedRoads, ['a289']);
   assert.equal(assessRoadCoverage(['m4', 'a289'], [{ road: 'm4' }, { road: 'a289' }], true).status, 'traversal-proven');
+});
+
+// Reconstructed from the documented invariant; not claimed byte-identical to the lost blob.
+test('compaction preserves every exact gate and road family while bounding duplicate paid-edge samples', () => {
+  const gates = [
+    { road: 'm4', kind: 'selected-toll-booth', nodeId: 123 },
+    { road: 'm11', kind: 'selected-toll-frame', nodeId: 456 },
+    { road: 'unknown', kind: 'unmapped-toll-booth', nodeId: 789 },
+  ];
+  const edges = Array.from({ length: 3000 }, (_, i) => ({
+    road: i % 2 ? 'm4' : 'm11', kind: 'selected-paid-edge', wayId: i,
+  }));
+  const input = [...edges.slice(0, 10), ...gates, ...edges.slice(10), edges[0]];
+  const before = structuredClone(input);
+  const summary = summarizePassageEvidence(input);
+  assert.deepEqual(input, before, 'raw evidence must remain intact');
+  assert.deepEqual(summary.evidence.filter(item => item.kind !== 'selected-paid-edge'), gates);
+  assert.deepEqual(summary.counts, {
+    m11: { occurrences: 1501, uniqueWays: 1500 },
+    m4: { occurrences: 1500, uniqueWays: 1500 },
+  });
+  assert.deepEqual(assessRoadCoverage(['m4', 'm11', 'unknown'], summary.evidence, true),
+    assessRoadCoverage(['m4', 'm11', 'unknown'], input, true));
+  for (const road of ['m4', 'm11']) {
+    const samples = summary.evidence.filter(item => item.kind === 'selected-paid-edge' && item.road === road);
+    assert.equal(samples.length, 3);
+    assert.equal(new Set(samples.map(item => item.wayId)).size, 3);
+    assert.ok(samples.every(item => input.includes(item)));
+  }
+  assert.equal(summary.evidence.length, 9);
+  assert.deepEqual(summarizePassageEvidence([]), { evidence: [], counts: {} });
 });

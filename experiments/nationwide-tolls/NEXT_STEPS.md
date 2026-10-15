@@ -1,3 +1,7 @@
+# CURRENT — исправить wayId0 fixture, повторить focused IO test
+
+Сохранён failed run5/6; затем evidence availability.
+
 # Возобновление 2026-10-15-191601 МСК
 
 - [ ] Восстановить шестой IO test, затем отдельным шагом выполнить focused test и записать фактический результат.
