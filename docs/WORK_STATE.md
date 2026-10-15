@@ -1,3 +1,9 @@
+## CURRENT — 2026-10-15-194236 МСК, live audit возобновлён
+
+STARTED: `lnr-лисичанск-saint-petersburg-center`, один из13утраченныхraw. [Checkpoint](checkpoints/2026-10-15-194236-lisichansk-spb-live-started.md). Parentb4d6f9e проверен черезPR14. NEXT: live+2offline даты, сохранить результат/ошибку и проверить remote перед следующим case.
+
+---
+
 ## CURRENT — 2026-10-15: recovery и проверка завершены
 
 - DONE: инструкция каждого небольшого checkpoint действует в AGENTS.md/CHECKPOINT_PROTOCOL.md; каждый шаг этой сессии закреплён отдельным GitHub commit с проверкой SHA/tree/head. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft.

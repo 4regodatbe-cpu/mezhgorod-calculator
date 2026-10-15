@@ -1553,3 +1553,8 @@ pnpm build exit0:656/656 audit, quote/API/Next/types/static16; focused ESLint/di
 ## 2026-10-15 — Лисичанск→Москва offline recovery DONE
 
 Один routecase:2offline даты, complete/no misses, unknownM4missingexactfare; tolls совпали с historic batch. Original live summary остаётся утрачен; не новый live.2JSON/2stdout/recovery-summarySHA сохранены. `docs/checkpoints/2026-10-15-lisichansk-offline-recovery.md`. Next один из13missingraw по покейсному protocol. Binary/base64 transport corrected CR/LF mismatch, verified remote/tree.
+
+
+## 2026-10-15-194236 МСК — live audit STARTED
+
+Лисичанск→СПб, восстановление одного утраченногоraw; sourceb4d6f9e/PR14проверены. `docs/checkpoints/2026-10-15-194236-lisichansk-spb-live-started.md`. Новых live результатов пока нет.

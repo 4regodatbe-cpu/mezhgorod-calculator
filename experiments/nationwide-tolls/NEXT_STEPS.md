@@ -1,3 +1,7 @@
+# CURRENT 2026-10-15-194236 — Лисичанск→СПб STARTED
+
+Одинlive+same-date+weekend; durable checkpoint прежде следующего case.
+
 # CURRENT — recovery/test блок завершён
 
 - [x] IO regression6/6 и report integration1/1; full build656/656+quote/API/Next/types/static16, ESLint/diffPASS.
