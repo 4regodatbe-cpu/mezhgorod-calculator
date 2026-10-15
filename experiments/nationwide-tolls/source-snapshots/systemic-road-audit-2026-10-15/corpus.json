@@ -1961,7 +1961,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-45-58-117Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kazan-center/2026-10-15T23-45-58-016Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1429199,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-45-46-135Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-45-58-117Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kazan-center/2026-10-15T23-45-58-016Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-45-58-685Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-45-59-241Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-алчевск-kerch-center",
