@@ -1,0 +1,5298 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-15T11:59:08.825Z",
+  "coordinateScope": "Fixed city-center/control coordinates for comparable audit requests; not geocoded address certificates. Domodedovo means the town, not the airport. No route is credited until complete selected-trace passage evidence proves every expected road. Candidate OD pairs may miss the expected road and must then be replaced, not counted.",
+  "groups": [
+    {
+      "id": "single-m4",
+      "roads": [
+        "m4"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "single-a289",
+      "roads": [
+        "a289"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "single-m3",
+      "roads": [
+        "m3"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "single-m11",
+      "roads": [
+        "m11"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "single-m12",
+      "roads": [
+        "m12"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "single-ckad",
+      "roads": [
+        "ckad"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "single-zsd",
+      "roads": [
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "single-odintsovo",
+      "roads": [
+        "odintsovo"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "single-khabarovsk",
+      "roads": [
+        "khabarovsk"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "pair-m4-a289",
+      "roads": [
+        "m4",
+        "a289"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "pair-m4-m11",
+      "roads": [
+        "m4",
+        "m11"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "pair-m11-zsd",
+      "roads": [
+        "m11",
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "pair-m11-ckad",
+      "roads": [
+        "m11",
+        "ckad"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "pair-m12-ckad",
+      "roads": [
+        "m12",
+        "ckad"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "triple-m4-m11-zsd",
+      "roads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "triple-m11-ckad-m12",
+      "roads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd",
+      "roads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd",
+      "roads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "plannedCases": 10
+    }
+  ],
+  "routes": [
+    {
+      "id": "single-m4-krasnodar-to-domodedovo",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-01-131Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-domodedovo/2026-10-15T12-01-01-054Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1306717,
+        "traceComplete": false
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-01-131Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-domodedovo/2026-10-15T12-01-01-054Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-01-01-922Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-01-02-672Z.json",
+        "sameDateParity": true
+      }
+    },
+    {
+      "id": "single-m4-domodedovo-to-krasnodar",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-domodedovo-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-22-316Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-domodedovo-to-krasnodar/2026-10-15T12-01-22-225Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1305856,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-domodedovo-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-22-316Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-domodedovo-to-krasnodar/2026-10-15T12-01-22-225Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-01-22-797Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-01-23-235Z.json",
+        "sameDateParity": true
+      }
+    },
+    {
+      "id": "single-m4-krasnodar-to-voronezh",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-53-793Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-voronezh/2026-10-15T12-01-53-745Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 836186,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-53-793Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-voronezh/2026-10-15T12-01-53-745Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-01-54-255Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-01-54-675Z.json",
+        "sameDateParity": true
+      }
+    },
+    {
+      "id": "single-m4-voronezh-to-krasnodar",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-21-849Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/2026-10-15T12-02-21-791Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 835029,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-21-849Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/2026-10-15T12-02-21-791Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-22-243Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-22-613Z.json",
+        "sameDateParity": true
+      }
+    },
+    {
+      "id": "single-m4-krasnodar-to-rostov",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-31-804Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-rostov/2026-10-15T12-02-31-786Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 274030,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-31-804Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-rostov/2026-10-15T12-02-31-786Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-32-120Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-32-503Z.json",
+        "sameDateParity": true
+      }
+    },
+    {
+      "id": "single-m4-rostov-to-krasnodar",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-44-421Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/2026-10-15T12-02-44-402Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 273224,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-44-421Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/2026-10-15T12-02-44-402Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-44-866Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-45-222Z.json",
+        "sameDateParity": true
+      }
+    },
+    {
+      "id": "single-m4-rostov-to-voronezh",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-02-406Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/2026-10-15T12-03-02-368Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 567353,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-02-406Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/2026-10-15T12-03-02-368Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-02-782Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-03-108Z.json",
+        "sameDateParity": true
+      }
+    },
+    {
+      "id": "single-m4-voronezh-to-rostov",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-27-526Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-rostov/2026-10-15T12-03-27-489Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 565794,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-27-526Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-rostov/2026-10-15T12-03-27-489Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-27-972Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-28-363Z.json",
+        "sameDateParity": true
+      }
+    },
+    {
+      "id": "single-m4-voronezh-to-moscow",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m4-moscow-to-voronezh",
+      "groups": [
+        "single-m4"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-krasnodar-to-kerch",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-kerch-to-krasnodar",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-krasnodar-to-taman",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тамань, центр",
+        "position": {
+          "lng": 36.716,
+          "lat": 45.211
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-taman-to-krasnodar",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Тамань, центр",
+        "position": {
+          "lng": 36.716,
+          "lat": 45.211
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-krasnodar-to-temryuk",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Темрюк, центр",
+        "position": {
+          "lng": 37.38,
+          "lat": 45.272
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-temryuk-to-krasnodar",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Темрюк, центр",
+        "position": {
+          "lng": 37.38,
+          "lat": 45.272
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-krasnodar-to-anapa",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Анапа, центр",
+        "position": {
+          "lng": 37.3167,
+          "lat": 44.894
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-anapa-to-krasnodar",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Анапа, центр",
+        "position": {
+          "lng": 37.3167,
+          "lat": 44.894
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-slavyansk-to-taman",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Славянск-на-Кубани, центр",
+        "position": {
+          "lng": 38.125,
+          "lat": 45.26
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тамань, центр",
+        "position": {
+          "lng": 36.716,
+          "lat": 45.211
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-a289-taman-to-slavyansk",
+      "groups": [
+        "single-a289"
+      ],
+      "from": {
+        "label": "Тамань, центр",
+        "position": {
+          "lng": 36.716,
+          "lat": 45.211
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Славянск-на-Кубани, центр",
+        "position": {
+          "lng": 38.125,
+          "lat": 45.26
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-moscow-to-kaluga",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Калуга, центр",
+        "position": {
+          "lng": 36.2612,
+          "lat": 54.5138
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-kaluga-to-moscow",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Калуга, центр",
+        "position": {
+          "lng": 36.2612,
+          "lat": 54.5138
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-moscow-to-obninsk",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Обнинск, центр",
+        "position": {
+          "lng": 36.61,
+          "lat": 55.096
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-obninsk-to-moscow",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Обнинск, центр",
+        "position": {
+          "lng": 36.61,
+          "lat": 55.096
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-moscow-to-maloyaroslavets",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Малоярославец, центр",
+        "position": {
+          "lng": 36.463,
+          "lat": 55.013
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-maloyaroslavets-to-moscow",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Малоярославец, центр",
+        "position": {
+          "lng": 36.463,
+          "lat": 55.013
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-balabanovo-to-kaluga",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Балабаново, центр",
+        "position": {
+          "lng": 36.658,
+          "lat": 55.178
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Калуга, центр",
+        "position": {
+          "lng": 36.2612,
+          "lat": 54.5138
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-kaluga-to-balabanovo",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Калуга, центр",
+        "position": {
+          "lng": 36.2612,
+          "lat": 54.5138
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Балабаново, центр",
+        "position": {
+          "lng": 36.658,
+          "lat": 55.178
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-obninsk-to-kaluga",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Обнинск, центр",
+        "position": {
+          "lng": 36.61,
+          "lat": 55.096
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Калуга, центр",
+        "position": {
+          "lng": 36.2612,
+          "lat": 54.5138
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m3-kaluga-to-obninsk",
+      "groups": [
+        "single-m3"
+      ],
+      "from": {
+        "label": "Калуга, центр",
+        "position": {
+          "lng": 36.2612,
+          "lat": 54.5138
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Обнинск, центр",
+        "position": {
+          "lng": 36.61,
+          "lat": 55.096
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m3"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-moscow-to-spb",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-spb-to-moscow",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-moscow-to-tver",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-tver-to-moscow",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-moscow-to-torzhok",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-torzhok-to-moscow",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-tver-to-spb",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-spb-to-tver",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-novgorod-to-moscow",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Великий Новгород, центр",
+        "position": {
+          "lng": 31.2755,
+          "lat": 58.5215
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m11-moscow-to-novgorod",
+      "groups": [
+        "single-m11"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Великий Новгород, центр",
+        "position": {
+          "lng": 31.2755,
+          "lat": 58.5215
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-moscow-to-kazan",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-kazan-to-moscow",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-vladimir-to-kazan",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Владимир, центр",
+        "position": {
+          "lng": 40.4066,
+          "lat": 56.1291
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-kazan-to-vladimir",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Владимир, центр",
+        "position": {
+          "lng": 40.4066,
+          "lat": 56.1291
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-murom-to-kazan",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Муром, центр",
+        "position": {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-kazan-to-murom",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Муром, центр",
+        "position": {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-arzamas-to-moscow",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Арзамас, центр",
+        "position": {
+          "lng": 43.84,
+          "lat": 55.394
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-moscow-to-arzamas",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Арзамас, центр",
+        "position": {
+          "lng": 43.84,
+          "lat": 55.394
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-cheboksary-to-moscow",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Чебоксары, центр",
+        "position": {
+          "lng": 47.2519,
+          "lat": 56.1463
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-m12-moscow-to-cheboksary",
+      "groups": [
+        "single-m12"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Чебоксары, центр",
+        "position": {
+          "lng": 47.2519,
+          "lat": 56.1463
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-domodedovo-to-klin",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Клин, центр",
+        "position": {
+          "lng": 36.727,
+          "lat": 56.333
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-klin-to-domodedovo",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Клин, центр",
+        "position": {
+          "lng": 36.727,
+          "lat": 56.333
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-podolsk-to-noginsk",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Подольск, центр",
+        "position": {
+          "lng": 37.55,
+          "lat": 55.431
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ногинск, центр",
+        "position": {
+          "lng": 38.442,
+          "lat": 55.854
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-noginsk-to-podolsk",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Ногинск, центр",
+        "position": {
+          "lng": 38.442,
+          "lat": 55.854
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Подольск, центр",
+        "position": {
+          "lng": 37.55,
+          "lat": 55.431
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-ramenskoe-to-klin",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Раменское, центр",
+        "position": {
+          "lng": 38.225,
+          "lat": 55.568
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Клин, центр",
+        "position": {
+          "lng": 36.727,
+          "lat": 56.333
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-klin-to-ramenskoe",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Клин, центр",
+        "position": {
+          "lng": 36.727,
+          "lat": 56.333
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Раменское, центр",
+        "position": {
+          "lng": 38.225,
+          "lat": 55.568
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-kazan-to-dmitrov",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Дмитров, центр",
+        "position": {
+          "lng": 37.517,
+          "lat": 56.344
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-dmitrov-to-kazan",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Дмитров, центр",
+        "position": {
+          "lng": 37.517,
+          "lat": 56.344
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-rostov-to-dmitrov",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Дмитров, центр",
+        "position": {
+          "lng": 37.517,
+          "lat": 56.344
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-ckad-dmitrov-to-rostov",
+      "groups": [
+        "single-ckad"
+      ],
+      "from": {
+        "label": "Дмитров, центр",
+        "position": {
+          "lng": 37.517,
+          "lat": 56.344
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-blag-to-prim",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Благодатная улица, контроль",
+        "position": {
+          "lng": 30.304,
+          "lat": 59.875
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-prim-to-blag",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Благодатная улица, контроль",
+        "position": {
+          "lng": 30.304,
+          "lat": 59.875
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-pushkin-to-sest",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Пушкин, центр",
+        "position": {
+          "lng": 30.395,
+          "lat": 59.72
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-sest-to-pushkin",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Пушкин, центр",
+        "position": {
+          "lng": 30.395,
+          "lat": 59.72
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-peterhof-to-sest",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Петергоф, центр",
+        "position": {
+          "lng": 29.906,
+          "lat": 59.883
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-sest-to-peterhof",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Петергоф, центр",
+        "position": {
+          "lng": 29.906,
+          "lat": 59.883
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-blag-to-sest",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Благодатная улица, контроль",
+        "position": {
+          "lng": 30.304,
+          "lat": 59.875
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-sest-to-blag",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Благодатная улица, контроль",
+        "position": {
+          "lng": 30.304,
+          "lat": 59.875
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-peterhof-to-prim",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Петергоф, центр",
+        "position": {
+          "lng": 29.906,
+          "lat": 59.883
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-zsd-prim-to-peterhof",
+      "groups": [
+        "single-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Петергоф, центр",
+        "position": {
+          "lng": 29.906,
+          "lat": 59.883
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-moscow-to-zvenigorod",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Звенигород, центр",
+        "position": {
+          "lng": 36.855,
+          "lat": 55.73
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-zvenigorod-to-moscow",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Звенигород, центр",
+        "position": {
+          "lng": 36.855,
+          "lat": 55.73
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-moscow-to-golitsyno",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Голицыно, центр",
+        "position": {
+          "lng": 36.987,
+          "lat": 55.617
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-golitsyno-to-moscow",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Голицыно, центр",
+        "position": {
+          "lng": 36.987,
+          "lat": 55.617
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-moscow-to-kubinka",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Кубинка, центр",
+        "position": {
+          "lng": 36.689,
+          "lat": 55.577
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-kubinka-to-moscow",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Кубинка, центр",
+        "position": {
+          "lng": 36.689,
+          "lat": 55.577
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-moscow-to-lesnoy",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Лесной Городок, центр",
+        "position": {
+          "lng": 37.208,
+          "lat": 55.634
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-lesnoy-to-moscow",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Лесной Городок, центр",
+        "position": {
+          "lng": 37.208,
+          "lat": 55.634
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-rublevo-to-golitsyno",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Рублёво, центр",
+        "position": {
+          "lng": 37.354,
+          "lat": 55.785
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Голицыно, центр",
+        "position": {
+          "lng": 36.987,
+          "lat": 55.617
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-odintsovo-golitsyno-to-rublevo",
+      "groups": [
+        "single-odintsovo"
+      ],
+      "from": {
+        "label": "Голицыно, центр",
+        "position": {
+          "lng": 36.987,
+          "lat": 55.617
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Рублёво, центр",
+        "position": {
+          "lng": 37.354,
+          "lat": 55.785
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-smidovich-to-vyazemsky",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Смидович, центр",
+        "position": {
+          "lng": 133.808,
+          "lat": 48.596
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Вяземский, центр",
+        "position": {
+          "lng": 134.752,
+          "lat": 47.536
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-vyazemsky-to-smidovich",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Вяземский, центр",
+        "position": {
+          "lng": 134.752,
+          "lat": 47.536
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Смидович, центр",
+        "position": {
+          "lng": 133.808,
+          "lat": 48.596
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-smidovich-to-knyaze",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Смидович, центр",
+        "position": {
+          "lng": 133.808,
+          "lat": 48.596
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Князе-Волконское, центр",
+        "position": {
+          "lng": 135.45,
+          "lat": 48.467
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-knyaze-to-smidovich",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Князе-Волконское, центр",
+        "position": {
+          "lng": 135.45,
+          "lat": 48.467
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Смидович, центр",
+        "position": {
+          "lng": 133.808,
+          "lat": 48.596
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-smidovich-to-nekrasovka",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Смидович, центр",
+        "position": {
+          "lng": 133.808,
+          "lat": 48.596
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Некрасовка, Хабаровский край, центр",
+        "position": {
+          "lng": 135.232,
+          "lat": 48.352
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-nekrasovka-to-smidovich",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Некрасовка, Хабаровский край, центр",
+        "position": {
+          "lng": 135.232,
+          "lat": 48.352
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Смидович, центр",
+        "position": {
+          "lng": 133.808,
+          "lat": 48.596
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-berezovka-to-vyazemsky",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Берёзовка, Хабаровск, центр",
+        "position": {
+          "lng": 135.089,
+          "lat": 48.571
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Вяземский, центр",
+        "position": {
+          "lng": 134.752,
+          "lat": 47.536
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-vyazemsky-to-berezovka",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Вяземский, центр",
+        "position": {
+          "lng": 134.752,
+          "lat": 47.536
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Берёзовка, Хабаровск, центр",
+        "position": {
+          "lng": 135.089,
+          "lat": 48.571
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-khabarovsk-to-vyazemsky",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Хабаровск, центр",
+        "position": {
+          "lng": 135.0726,
+          "lat": 48.4802
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Вяземский, центр",
+        "position": {
+          "lng": 134.752,
+          "lat": 47.536
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "single-khabarovsk-vyazemsky-to-khabarovsk",
+      "groups": [
+        "single-khabarovsk"
+      ],
+      "from": {
+        "label": "Вяземский, центр",
+        "position": {
+          "lng": 134.752,
+          "lat": 47.536
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Хабаровск, центр",
+        "position": {
+          "lng": 135.0726,
+          "lat": 48.4802
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-voronezh-to-taman",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тамань, центр",
+        "position": {
+          "lng": 36.716,
+          "lat": 45.211
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-taman-to-voronezh",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Тамань, центр",
+        "position": {
+          "lng": 36.716,
+          "lat": 45.211
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-rostov-to-kerch",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-kerch-to-rostov",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-moscow-to-taman",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тамань, центр",
+        "position": {
+          "lng": 36.716,
+          "lat": 45.211
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-taman-to-moscow",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Тамань, центр",
+        "position": {
+          "lng": 36.716,
+          "lat": 45.211
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-domodedovo-to-kerch",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-kerch-to-domodedovo",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-voronezh-to-anapa",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Анапа, центр",
+        "position": {
+          "lng": 37.3167,
+          "lat": 44.894
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-a289-anapa-to-voronezh",
+      "groups": [
+        "pair-m4-a289"
+      ],
+      "from": {
+        "label": "Анапа, центр",
+        "position": {
+          "lng": 37.3167,
+          "lat": 44.894
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-krasnodar-to-spb",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-spb-to-krasnodar",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-rostov-to-spb",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-spb-to-rostov",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-voronezh-to-spb",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-spb-to-voronezh",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-krasnodar-to-torzhok",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-torzhok-to-krasnodar",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-rostov-to-tver",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m4-m11-tver-to-rostov",
+      "groups": [
+        "pair-m4-m11"
+      ],
+      "from": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-moscow-to-sest",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-sest-to-moscow",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-moscow-to-prim",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-prim-to-moscow",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-tver-to-sest",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-sest-to-tver",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-torzhok-to-prim",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-prim-to-torzhok",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-novgorod-to-sest",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Великий Новгород, центр",
+        "position": {
+          "lng": 31.2755,
+          "lat": 58.5215
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-zsd-sest-to-novgorod",
+      "groups": [
+        "pair-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Великий Новгород, центр",
+        "position": {
+          "lng": 31.2755,
+          "lat": 58.5215
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-spb-to-domodedovo",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-domodedovo-to-spb",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-spb-to-noginsk",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ногинск, центр",
+        "position": {
+          "lng": 38.442,
+          "lat": 55.854
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-noginsk-to-spb",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Ногинск, центр",
+        "position": {
+          "lng": 38.442,
+          "lat": 55.854
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-torzhok-to-ramenskoe",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Раменское, центр",
+        "position": {
+          "lng": 38.225,
+          "lat": 55.568
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-ramenskoe-to-torzhok",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Раменское, центр",
+        "position": {
+          "lng": 38.225,
+          "lat": 55.568
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-tver-to-noginsk",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ногинск, центр",
+        "position": {
+          "lng": 38.442,
+          "lat": 55.854
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-noginsk-to-tver",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Ногинск, центр",
+        "position": {
+          "lng": 38.442,
+          "lat": 55.854
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-novgorod-to-domodedovo",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Великий Новгород, центр",
+        "position": {
+          "lng": 31.2755,
+          "lat": 58.5215
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m11-ckad-domodedovo-to-novgorod",
+      "groups": [
+        "pair-m11-ckad"
+      ],
+      "from": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Великий Новгород, центр",
+        "position": {
+          "lng": 31.2755,
+          "lat": 58.5215
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-kazan-to-klin",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Клин, центр",
+        "position": {
+          "lng": 36.727,
+          "lat": 56.333
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-klin-to-kazan",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Клин, центр",
+        "position": {
+          "lng": 36.727,
+          "lat": 56.333
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-kazan-to-dmitrov",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Дмитров, центр",
+        "position": {
+          "lng": 37.517,
+          "lat": 56.344
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-dmitrov-to-kazan",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Дмитров, центр",
+        "position": {
+          "lng": 37.517,
+          "lat": 56.344
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-vladimir-to-klin",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Владимир, центр",
+        "position": {
+          "lng": 40.4066,
+          "lat": 56.1291
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Клин, центр",
+        "position": {
+          "lng": 36.727,
+          "lat": 56.333
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-klin-to-vladimir",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Клин, центр",
+        "position": {
+          "lng": 36.727,
+          "lat": 56.333
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Владимир, центр",
+        "position": {
+          "lng": 40.4066,
+          "lat": 56.1291
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-murom-to-dmitrov",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Муром, центр",
+        "position": {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Дмитров, центр",
+        "position": {
+          "lng": 37.517,
+          "lat": 56.344
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-dmitrov-to-murom",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Дмитров, центр",
+        "position": {
+          "lng": 37.517,
+          "lat": 56.344
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Муром, центр",
+        "position": {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-arzamas-to-domodedovo",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Арзамас, центр",
+        "position": {
+          "lng": 43.84,
+          "lat": 55.394
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "pair-m12-ckad-domodedovo-to-arzamas",
+      "groups": [
+        "pair-m12-ckad"
+      ],
+      "from": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Арзамас, центр",
+        "position": {
+          "lng": 43.84,
+          "lat": 55.394
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-krasnodar-to-sest",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-sest-to-krasnodar",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-rostov-to-sest",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-sest-to-rostov",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-voronezh-to-prim",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-prim-to-voronezh",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-krasnodar-to-prim",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-prim-to-krasnodar",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-domodedovo-to-sest",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m4-m11-zsd-sest-to-domodedovo",
+      "groups": [
+        "triple-m4-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Домодедово, центр города",
+        "position": {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-spb-to-kazan",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-kazan-to-spb",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-torzhok-to-kazan",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-kazan-to-torzhok",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Торжок, центр",
+        "position": {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-tver-to-murom",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Муром, центр",
+        "position": {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-murom-to-tver",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Муром, центр",
+        "position": {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Тверь, центр",
+        "position": {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-novgorod-to-vladimir",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Великий Новгород, центр",
+        "position": {
+          "lng": 31.2755,
+          "lat": 58.5215
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Владимир, центр",
+        "position": {
+          "lng": 40.4066,
+          "lat": 56.1291
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-vladimir-to-novgorod",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Владимир, центр",
+        "position": {
+          "lng": 40.4066,
+          "lat": 56.1291
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Великий Новгород, центр",
+        "position": {
+          "lng": 31.2755,
+          "lat": 58.5215
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-spb-to-arzamas",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Арзамас, центр",
+        "position": {
+          "lng": 43.84,
+          "lat": 55.394
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "triple-m11-ckad-m12-arzamas-to-spb",
+      "groups": [
+        "triple-m11-ckad-m12"
+      ],
+      "from": {
+        "label": "Арзамас, центр",
+        "position": {
+          "lng": 43.84,
+          "lat": 55.394
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Воронеж, центр",
+        "position": {
+          "lng": 39.2003,
+          "lat": 51.6608
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-prim-to-krasnodar",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Краснодар, центр",
+        "position": {
+          "lng": 38.975313,
+          "lat": 45.03547
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd-prim-to-rostov",
+      "groups": [
+        "max-chain-m4-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Ростов-на-Дону, центр",
+        "position": {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Муром, центр",
+        "position": {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Муром, центр",
+        "position": {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Арзамас, центр",
+        "position": {
+          "lng": 43.84,
+          "lat": 55.394
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Арзамас, центр",
+        "position": {
+          "lng": 43.84,
+          "lat": 55.394
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Владимир, центр",
+        "position": {
+          "lng": 40.4066,
+          "lat": 56.1291
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Сестрорецк, центр",
+        "position": {
+          "lng": 29.963,
+          "lat": 60.093
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Владимир, центр",
+        "position": {
+          "lng": 40.4066,
+          "lat": 56.1291
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Чебоксары, центр",
+        "position": {
+          "lng": 47.2519,
+          "lat": 56.1463
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "groups": [
+        "max-chain-m12-ckad-m11-zsd"
+      ],
+      "from": {
+        "label": "Санкт-Петербург, Приморский проспект, контроль",
+        "position": {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        "kind": "fixed-city-control"
+      },
+      "to": {
+        "label": "Чебоксары, центр",
+        "position": {
+          "lng": 47.2519,
+          "lat": 56.1463
+        },
+        "kind": "fixed-city-control"
+      },
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "routeMustBeLive": true,
+      "status": "planned"
+    }
+  ]
+}

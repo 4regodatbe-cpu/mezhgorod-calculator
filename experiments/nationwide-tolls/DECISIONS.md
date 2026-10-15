@@ -1,5 +1,9 @@
 # Nationwide toll-road calculation decisions
 
+## 2026-10-15 — systemic route-test acceptance criteria
+
+User approved a route-test campaign that starts with each toll road having at least three physical payment points, includes incomplete price-matrix roads, tests major roads and connected pairs in groups of 10–20 runs (up to 20 on long chains), and progresses from single-road routes to pairs, triples, and the longest feasible linked chains. Test both weekdays and weekends. At least 40 real origin/destination route cases must start in each of DNR, LNR, Zaporizhzhia, and Kherson regions. Use real settlement/city centers by default; airports and other important points are separate supplemental cases. Every test must use a live routing/provider result, preserve the raw response/route trace, and support an offline replay. A route only counts for a road case when its selected live geometry is shown to traverse the expected road. Ordinary-road gaps between paid roads are valid. Gather findings first; discuss fixes with the user after the audit phase. The initial 160-case regional corpus and 16 corridor groups in stage 15 are plans, not executed test results.
+
 ## 2026-10-13 — одна матричная пара на каждую отдельную платную дорогу; итоговое сложение
 
 Пользователь уточнил модель нового алгоритма: если выбранный маршрут проходит по нескольким самостоятельным платным дорогам/тарифным системам, для каждой дороги отдельно определить её пару пунктов оплаты (въезд и конечный съезд), найти готовую ячейку/вектор этой пары в матрице именно этой дороги и взять её готовую сумму. После этого обычным сложением получить общий итог платных дорог. Не выполнять дополнительный пересчёт, не суммировать промежуточные ПВП внутри одной дороги и не выводить тариф из километров. Если любая обнаруженная платная дорога не имеет однозначной пары или готовой цены, полный итог остаётся unknown, не становится нулём или частичным subtotal.

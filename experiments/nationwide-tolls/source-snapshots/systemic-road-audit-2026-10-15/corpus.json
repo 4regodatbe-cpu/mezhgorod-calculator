@@ -1,0 +1,4156 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-15T10:12:09.602Z",
+  "source": "data/settlement-route-benchmark-20261006.json; its 10 fixed geocoded settlements per region are reused as route origins.",
+  "destinationCoordinates": "Fixed city-center coordinates; every run must query live routing providers. Airport/important-point controls are supplemental cases, not included in the 40-per-region city-center minimum.",
+  "requirements": {
+    "liveRouteProviderRuns": true,
+    "saveRawProviderResponsesAndRouteGeometry": true,
+    "replaySavedResponsesOffline": true,
+    "departureWindows": [
+      "weekday",
+      "weekend"
+    ],
+    "requireSelectedRouteToTraverseExpectedRoads": true,
+    "allowOrdinaryRoadGapsBetweenPaidRoads": true,
+    "routeCaseMinimumPerSpecialRegion": 40
+  },
+  "routeCountsBySpecialRegion": {
+    "dnr": 40,
+    "lnr": 40,
+    "zaporizhzhia": 40,
+    "kherson": 40
+  },
+  "routes": [
+    {
+      "id": "dnr-гранитное-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Гранітне — ДНР",
+        "position": {
+          "lat": 47.4593941,
+          "lng": 37.866983
+        },
+        "kind": "village",
+        "sourceRequested": "Гранитное"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "live-captured",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T10-10-35-064Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/2026-10-15T10-10-34-547Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1256591,
+        "traceComplete": true
+      }
+    },
+    {
+      "id": "dnr-гранитное-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Гранітне — ДНР",
+        "position": {
+          "lat": 47.4593941,
+          "lng": 37.866983
+        },
+        "kind": "village",
+        "sourceRequested": "Гранитное"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-гранитное-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Гранітне — ДНР",
+        "position": {
+          "lat": 47.4593941,
+          "lng": 37.866983
+        },
+        "kind": "village",
+        "sourceRequested": "Гранитное"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-гранитное-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Гранітне — ДНР",
+        "position": {
+          "lat": 47.4593941,
+          "lng": 37.866983
+        },
+        "kind": "village",
+        "sourceRequested": "Гранитное"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-широкино-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Широкине — ДНР",
+        "position": {
+          "lat": 47.09822,
+          "lng": 37.81769
+        },
+        "kind": "village",
+        "sourceRequested": "Широкино"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-широкино-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Широкине — ДНР",
+        "position": {
+          "lat": 47.09822,
+          "lng": 37.81769
+        },
+        "kind": "village",
+        "sourceRequested": "Широкино"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-широкино-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Широкине — ДНР",
+        "position": {
+          "lat": 47.09822,
+          "lng": 37.81769
+        },
+        "kind": "village",
+        "sourceRequested": "Широкино"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-широкино-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Широкине — ДНР",
+        "position": {
+          "lat": 47.09822,
+          "lng": 37.81769
+        },
+        "kind": "village",
+        "sourceRequested": "Широкино"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-урзуф-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Урзуф — ДНР",
+        "position": {
+          "lat": 46.9153594,
+          "lng": 37.0984904
+        },
+        "kind": "village",
+        "sourceRequested": "Урзуф"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-урзуф-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Урзуф — ДНР",
+        "position": {
+          "lat": 46.9153594,
+          "lng": 37.0984904
+        },
+        "kind": "village",
+        "sourceRequested": "Урзуф"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-урзуф-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Урзуф — ДНР",
+        "position": {
+          "lat": 46.9153594,
+          "lng": 37.0984904
+        },
+        "kind": "village",
+        "sourceRequested": "Урзуф"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-урзуф-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Урзуф — ДНР",
+        "position": {
+          "lat": 46.9153594,
+          "lng": 37.0984904
+        },
+        "kind": "village",
+        "sourceRequested": "Урзуф"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-волноваха-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Волноваха — ДНР",
+        "position": {
+          "lat": 47.6014517,
+          "lng": 37.4934079
+        },
+        "kind": "town",
+        "sourceRequested": "Волноваха"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-волноваха-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Волноваха — ДНР",
+        "position": {
+          "lat": 47.6014517,
+          "lng": 37.4934079
+        },
+        "kind": "town",
+        "sourceRequested": "Волноваха"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-волноваха-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Волноваха — ДНР",
+        "position": {
+          "lat": 47.6014517,
+          "lng": 37.4934079
+        },
+        "kind": "town",
+        "sourceRequested": "Волноваха"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-волноваха-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Волноваха — ДНР",
+        "position": {
+          "lat": 47.6014517,
+          "lng": 37.4934079
+        },
+        "kind": "town",
+        "sourceRequested": "Волноваха"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-талаковка-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Талаківка — ДНР",
+        "position": {
+          "lat": 47.1929562,
+          "lng": 37.7253016
+        },
+        "kind": "town",
+        "sourceRequested": "Талаковка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-талаковка-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Талаківка — ДНР",
+        "position": {
+          "lat": 47.1929562,
+          "lng": 37.7253016
+        },
+        "kind": "town",
+        "sourceRequested": "Талаковка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-талаковка-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Талаківка — ДНР",
+        "position": {
+          "lat": 47.1929562,
+          "lng": 37.7253016
+        },
+        "kind": "town",
+        "sourceRequested": "Талаковка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-талаковка-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Талаківка — ДНР",
+        "position": {
+          "lat": 47.1929562,
+          "lng": 37.7253016
+        },
+        "kind": "town",
+        "sourceRequested": "Талаковка"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-краматорск-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Краматорськ — ДНР",
+        "position": {
+          "lat": 48.7389415,
+          "lng": 37.5843812
+        },
+        "kind": "city",
+        "sourceRequested": "Краматорск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-краматорск-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Краматорськ — ДНР",
+        "position": {
+          "lat": 48.7389415,
+          "lng": 37.5843812
+        },
+        "kind": "city",
+        "sourceRequested": "Краматорск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-краматорск-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Краматорськ — ДНР",
+        "position": {
+          "lat": 48.7389415,
+          "lng": 37.5843812
+        },
+        "kind": "city",
+        "sourceRequested": "Краматорск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-краматорск-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Краматорськ — ДНР",
+        "position": {
+          "lat": 48.7389415,
+          "lng": 37.5843812
+        },
+        "kind": "city",
+        "sourceRequested": "Краматорск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-харцызск-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Харцизьк — ДНР",
+        "position": {
+          "lat": 48.0339524,
+          "lng": 38.149804
+        },
+        "kind": "town",
+        "sourceRequested": "Харцызск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-харцызск-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Харцизьк — ДНР",
+        "position": {
+          "lat": 48.0339524,
+          "lng": 38.149804
+        },
+        "kind": "town",
+        "sourceRequested": "Харцызск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-харцызск-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Харцизьк — ДНР",
+        "position": {
+          "lat": 48.0339524,
+          "lng": 38.149804
+        },
+        "kind": "town",
+        "sourceRequested": "Харцызск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-харцызск-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Харцизьк — ДНР",
+        "position": {
+          "lat": 48.0339524,
+          "lng": 38.149804
+        },
+        "kind": "town",
+        "sourceRequested": "Харцызск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-новоазовск-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Новоазовськ — ДНР",
+        "position": {
+          "lat": 47.1138718,
+          "lng": 38.0830911
+        },
+        "kind": "town",
+        "sourceRequested": "Новоазовск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-новоазовск-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Новоазовськ — ДНР",
+        "position": {
+          "lat": 47.1138718,
+          "lng": 38.0830911
+        },
+        "kind": "town",
+        "sourceRequested": "Новоазовск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-новоазовск-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Новоазовськ — ДНР",
+        "position": {
+          "lat": 47.1138718,
+          "lng": 38.0830911
+        },
+        "kind": "town",
+        "sourceRequested": "Новоазовск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-новоазовск-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Новоазовськ — ДНР",
+        "position": {
+          "lat": 47.1138718,
+          "lng": 38.0830911
+        },
+        "kind": "town",
+        "sourceRequested": "Новоазовск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-донецк-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Донецк — ДНР",
+        "position": {
+          "lat": 48.0158753,
+          "lng": 37.8013407
+        },
+        "kind": "city",
+        "sourceRequested": "Донецк"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-донецк-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Донецк — ДНР",
+        "position": {
+          "lat": 48.0158753,
+          "lng": 37.8013407
+        },
+        "kind": "city",
+        "sourceRequested": "Донецк"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-донецк-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Донецк — ДНР",
+        "position": {
+          "lat": 48.0158753,
+          "lng": 37.8013407
+        },
+        "kind": "city",
+        "sourceRequested": "Донецк"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-донецк-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Донецк — ДНР",
+        "position": {
+          "lat": 48.0158753,
+          "lng": 37.8013407
+        },
+        "kind": "city",
+        "sourceRequested": "Донецк"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-бахмут-moscow-center",
+      "region": "dnr",
+      "from": {
+        "label": "Бахмут — ДНР",
+        "position": {
+          "lat": 48.5894123,
+          "lng": 38.0020994
+        },
+        "kind": "town",
+        "sourceRequested": "Бахмут"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-бахмут-saint-petersburg-center",
+      "region": "dnr",
+      "from": {
+        "label": "Бахмут — ДНР",
+        "position": {
+          "lat": 48.5894123,
+          "lng": 38.0020994
+        },
+        "kind": "town",
+        "sourceRequested": "Бахмут"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-бахмут-kazan-center",
+      "region": "dnr",
+      "from": {
+        "label": "Бахмут — ДНР",
+        "position": {
+          "lat": 48.5894123,
+          "lng": 38.0020994
+        },
+        "kind": "town",
+        "sourceRequested": "Бахмут"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "dnr-бахмут-kerch-center",
+      "region": "dnr",
+      "from": {
+        "label": "Бахмут — ДНР",
+        "position": {
+          "lat": 48.5894123,
+          "lng": 38.0020994
+        },
+        "kind": "town",
+        "sourceRequested": "Бахмут"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-брянка-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Брянка — ЛНР",
+        "position": {
+          "lat": 48.50361,
+          "lng": 38.66432
+        },
+        "kind": "town",
+        "sourceRequested": "Брянка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-брянка-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Брянка — ЛНР",
+        "position": {
+          "lat": 48.50361,
+          "lng": 38.66432
+        },
+        "kind": "town",
+        "sourceRequested": "Брянка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-брянка-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Брянка — ЛНР",
+        "position": {
+          "lat": 48.50361,
+          "lng": 38.66432
+        },
+        "kind": "town",
+        "sourceRequested": "Брянка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-брянка-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Брянка — ЛНР",
+        "position": {
+          "lat": 48.50361,
+          "lng": 38.66432
+        },
+        "kind": "town",
+        "sourceRequested": "Брянка"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-лисичанск-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Лисичанськ — ЛНР",
+        "position": {
+          "lat": 48.917267,
+          "lng": 38.4285981
+        },
+        "kind": "city",
+        "sourceRequested": "Лисичанск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-лисичанск-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Лисичанськ — ЛНР",
+        "position": {
+          "lat": 48.917267,
+          "lng": 38.4285981
+        },
+        "kind": "city",
+        "sourceRequested": "Лисичанск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-лисичанск-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Лисичанськ — ЛНР",
+        "position": {
+          "lat": 48.917267,
+          "lng": 38.4285981
+        },
+        "kind": "city",
+        "sourceRequested": "Лисичанск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-лисичанск-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Лисичанськ — ЛНР",
+        "position": {
+          "lat": 48.917267,
+          "lng": 38.4285981
+        },
+        "kind": "city",
+        "sourceRequested": "Лисичанск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-рубежное-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Рубіжне — ЛНР",
+        "position": {
+          "lat": 49.0329045,
+          "lng": 38.3725819
+        },
+        "kind": "town",
+        "sourceRequested": "Рубежное"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-рубежное-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Рубіжне — ЛНР",
+        "position": {
+          "lat": 49.0329045,
+          "lng": 38.3725819
+        },
+        "kind": "town",
+        "sourceRequested": "Рубежное"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-рубежное-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Рубіжне — ЛНР",
+        "position": {
+          "lat": 49.0329045,
+          "lng": 38.3725819
+        },
+        "kind": "town",
+        "sourceRequested": "Рубежное"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-рубежное-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Рубіжне — ЛНР",
+        "position": {
+          "lat": 49.0329045,
+          "lng": 38.3725819
+        },
+        "kind": "town",
+        "sourceRequested": "Рубежное"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-довжанск-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Довжанськ — ЛНР",
+        "position": {
+          "lat": 48.0811324,
+          "lng": 39.642561
+        },
+        "kind": "town",
+        "sourceRequested": "Довжанск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-довжанск-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Довжанськ — ЛНР",
+        "position": {
+          "lat": 48.0811324,
+          "lng": 39.642561
+        },
+        "kind": "town",
+        "sourceRequested": "Довжанск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-довжанск-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Довжанськ — ЛНР",
+        "position": {
+          "lat": 48.0811324,
+          "lng": 39.642561
+        },
+        "kind": "town",
+        "sourceRequested": "Довжанск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-довжанск-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Довжанськ — ЛНР",
+        "position": {
+          "lat": 48.0811324,
+          "lng": 39.642561
+        },
+        "kind": "town",
+        "sourceRequested": "Довжанск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-алчевск-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Алчевськ — ЛНР",
+        "position": {
+          "lat": 48.4701987,
+          "lng": 38.8010178
+        },
+        "kind": "city",
+        "sourceRequested": "Алчевск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-алчевск-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Алчевськ — ЛНР",
+        "position": {
+          "lat": 48.4701987,
+          "lng": 38.8010178
+        },
+        "kind": "city",
+        "sourceRequested": "Алчевск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-алчевск-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Алчевськ — ЛНР",
+        "position": {
+          "lat": 48.4701987,
+          "lng": 38.8010178
+        },
+        "kind": "city",
+        "sourceRequested": "Алчевск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-алчевск-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Алчевськ — ЛНР",
+        "position": {
+          "lat": 48.4701987,
+          "lng": 38.8010178
+        },
+        "kind": "city",
+        "sourceRequested": "Алчевск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-марковка-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Марківка — ЛНР",
+        "position": {
+          "lat": 49.5239233,
+          "lng": 39.5682107
+        },
+        "kind": "town",
+        "sourceRequested": "Марковка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-марковка-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Марківка — ЛНР",
+        "position": {
+          "lat": 49.5239233,
+          "lng": 39.5682107
+        },
+        "kind": "town",
+        "sourceRequested": "Марковка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-марковка-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Марківка — ЛНР",
+        "position": {
+          "lat": 49.5239233,
+          "lng": 39.5682107
+        },
+        "kind": "town",
+        "sourceRequested": "Марковка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-марковка-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Марківка — ЛНР",
+        "position": {
+          "lat": 49.5239233,
+          "lng": 39.5682107
+        },
+        "kind": "town",
+        "sourceRequested": "Марковка"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-старобельск-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Старобільськ — ЛНР",
+        "position": {
+          "lat": 49.2822424,
+          "lng": 38.897386
+        },
+        "kind": "town",
+        "sourceRequested": "Старобельск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-старобельск-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Старобільськ — ЛНР",
+        "position": {
+          "lat": 49.2822424,
+          "lng": 38.897386
+        },
+        "kind": "town",
+        "sourceRequested": "Старобельск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-старобельск-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Старобільськ — ЛНР",
+        "position": {
+          "lat": 49.2822424,
+          "lng": 38.897386
+        },
+        "kind": "town",
+        "sourceRequested": "Старобельск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-старобельск-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Старобільськ — ЛНР",
+        "position": {
+          "lat": 49.2822424,
+          "lng": 38.897386
+        },
+        "kind": "town",
+        "sourceRequested": "Старобельск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-антрацит-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Антрацит — ЛНР",
+        "position": {
+          "lat": 48.1164285,
+          "lng": 39.0886375
+        },
+        "kind": "town",
+        "sourceRequested": "Антрацит"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-антрацит-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Антрацит — ЛНР",
+        "position": {
+          "lat": 48.1164285,
+          "lng": 39.0886375
+        },
+        "kind": "town",
+        "sourceRequested": "Антрацит"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-антрацит-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Антрацит — ЛНР",
+        "position": {
+          "lat": 48.1164285,
+          "lng": 39.0886375
+        },
+        "kind": "town",
+        "sourceRequested": "Антрацит"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-антрацит-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Антрацит — ЛНР",
+        "position": {
+          "lat": 48.1164285,
+          "lng": 39.0886375
+        },
+        "kind": "town",
+        "sourceRequested": "Антрацит"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-сорокино-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Сорокине — ЛНР",
+        "position": {
+          "lat": 48.2951425,
+          "lng": 39.7296737
+        },
+        "kind": "town",
+        "sourceRequested": "Сорокино"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-сорокино-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Сорокине — ЛНР",
+        "position": {
+          "lat": 48.2951425,
+          "lng": 39.7296737
+        },
+        "kind": "town",
+        "sourceRequested": "Сорокино"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-сорокино-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Сорокине — ЛНР",
+        "position": {
+          "lat": 48.2951425,
+          "lng": 39.7296737
+        },
+        "kind": "town",
+        "sourceRequested": "Сорокино"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-сорокино-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Сорокине — ЛНР",
+        "position": {
+          "lat": 48.2951425,
+          "lng": 39.7296737
+        },
+        "kind": "town",
+        "sourceRequested": "Сорокино"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-ровеньки-moscow-center",
+      "region": "lnr",
+      "from": {
+        "label": "Ровеньки — ЛНР",
+        "position": {
+          "lat": 48.0897987,
+          "lng": 39.368029
+        },
+        "kind": "town",
+        "sourceRequested": "Ровеньки"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-ровеньки-saint-petersburg-center",
+      "region": "lnr",
+      "from": {
+        "label": "Ровеньки — ЛНР",
+        "position": {
+          "lat": 48.0897987,
+          "lng": 39.368029
+        },
+        "kind": "town",
+        "sourceRequested": "Ровеньки"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-ровеньки-kazan-center",
+      "region": "lnr",
+      "from": {
+        "label": "Ровеньки — ЛНР",
+        "position": {
+          "lat": 48.0897987,
+          "lng": 39.368029
+        },
+        "kind": "town",
+        "sourceRequested": "Ровеньки"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "lnr-ровеньки-kerch-center",
+      "region": "lnr",
+      "from": {
+        "label": "Ровеньки — ЛНР",
+        "position": {
+          "lat": 48.0897987,
+          "lng": 39.368029
+        },
+        "kind": "town",
+        "sourceRequested": "Ровеньки"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-пришиб-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Пришиб — Запорожская область",
+        "position": {
+          "lat": 47.249451,
+          "lng": 35.328251
+        },
+        "kind": "village",
+        "sourceRequested": "Пришиб"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-пришиб-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Пришиб — Запорожская область",
+        "position": {
+          "lat": 47.249451,
+          "lng": 35.328251
+        },
+        "kind": "village",
+        "sourceRequested": "Пришиб"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-пришиб-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Пришиб — Запорожская область",
+        "position": {
+          "lat": 47.249451,
+          "lng": 35.328251
+        },
+        "kind": "village",
+        "sourceRequested": "Пришиб"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-пришиб-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Пришиб — Запорожская область",
+        "position": {
+          "lat": 47.249451,
+          "lng": 35.328251
+        },
+        "kind": "village",
+        "sourceRequested": "Пришиб"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-молочанск-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Молочанськ — Запорожская область",
+        "position": {
+          "lat": 47.20653,
+          "lng": 35.59742
+        },
+        "kind": "town",
+        "sourceRequested": "Молочанск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-молочанск-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Молочанськ — Запорожская область",
+        "position": {
+          "lat": 47.20653,
+          "lng": 35.59742
+        },
+        "kind": "town",
+        "sourceRequested": "Молочанск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-молочанск-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Молочанськ — Запорожская область",
+        "position": {
+          "lat": 47.20653,
+          "lng": 35.59742
+        },
+        "kind": "town",
+        "sourceRequested": "Молочанск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-молочанск-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Молочанськ — Запорожская область",
+        "position": {
+          "lat": 47.20653,
+          "lng": 35.59742
+        },
+        "kind": "town",
+        "sourceRequested": "Молочанск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-гуляйполе-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Гуляйполе — Запорожская область",
+        "position": {
+          "lat": 47.6655382,
+          "lng": 36.2656849
+        },
+        "kind": "town",
+        "sourceRequested": "Гуляйполе"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Гуляйполе — Запорожская область",
+        "position": {
+          "lat": 47.6655382,
+          "lng": 36.2656849
+        },
+        "kind": "town",
+        "sourceRequested": "Гуляйполе"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-гуляйполе-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Гуляйполе — Запорожская область",
+        "position": {
+          "lat": 47.6655382,
+          "lng": 36.2656849
+        },
+        "kind": "town",
+        "sourceRequested": "Гуляйполе"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-гуляйполе-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Гуляйполе — Запорожская область",
+        "position": {
+          "lat": 47.6655382,
+          "lng": 36.2656849
+        },
+        "kind": "town",
+        "sourceRequested": "Гуляйполе"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-васильевка-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Василівка — Запорожская область",
+        "position": {
+          "lat": 47.4431859,
+          "lng": 35.2803026
+        },
+        "kind": "town",
+        "sourceRequested": "Васильевка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-васильевка-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Василівка — Запорожская область",
+        "position": {
+          "lat": 47.4431859,
+          "lng": 35.2803026
+        },
+        "kind": "town",
+        "sourceRequested": "Васильевка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-васильевка-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Василівка — Запорожская область",
+        "position": {
+          "lat": 47.4431859,
+          "lng": 35.2803026
+        },
+        "kind": "town",
+        "sourceRequested": "Васильевка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-васильевка-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Василівка — Запорожская область",
+        "position": {
+          "lat": 47.4431859,
+          "lng": 35.2803026
+        },
+        "kind": "town",
+        "sourceRequested": "Васильевка"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-кушугум-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Кушугум — Запорожская область",
+        "position": {
+          "lat": 47.71671,
+          "lng": 35.20981
+        },
+        "kind": "town",
+        "sourceRequested": "Кушугум"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-кушугум-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Кушугум — Запорожская область",
+        "position": {
+          "lat": 47.71671,
+          "lng": 35.20981
+        },
+        "kind": "town",
+        "sourceRequested": "Кушугум"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-кушугум-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Кушугум — Запорожская область",
+        "position": {
+          "lat": 47.71671,
+          "lng": 35.20981
+        },
+        "kind": "town",
+        "sourceRequested": "Кушугум"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-кушугум-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Кушугум — Запорожская область",
+        "position": {
+          "lat": 47.71671,
+          "lng": 35.20981
+        },
+        "kind": "town",
+        "sourceRequested": "Кушугум"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-бердянск-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Бердянск — Запорожская область",
+        "position": {
+          "lat": 46.755678,
+          "lng": 36.7887623
+        },
+        "kind": "city",
+        "sourceRequested": "Бердянск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-бердянск-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Бердянск — Запорожская область",
+        "position": {
+          "lat": 46.755678,
+          "lng": 36.7887623
+        },
+        "kind": "city",
+        "sourceRequested": "Бердянск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-бердянск-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Бердянск — Запорожская область",
+        "position": {
+          "lat": 46.755678,
+          "lng": 36.7887623
+        },
+        "kind": "city",
+        "sourceRequested": "Бердянск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-бердянск-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Бердянск — Запорожская область",
+        "position": {
+          "lat": 46.755678,
+          "lng": 36.7887623
+        },
+        "kind": "city",
+        "sourceRequested": "Бердянск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-розовка-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Розівка — Запорожская область",
+        "position": {
+          "lat": 47.3866992,
+          "lng": 37.0675861
+        },
+        "kind": "town",
+        "sourceRequested": "Розовка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-розовка-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Розівка — Запорожская область",
+        "position": {
+          "lat": 47.3866992,
+          "lng": 37.0675861
+        },
+        "kind": "town",
+        "sourceRequested": "Розовка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-розовка-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Розівка — Запорожская область",
+        "position": {
+          "lat": 47.3866992,
+          "lng": 37.0675861
+        },
+        "kind": "town",
+        "sourceRequested": "Розовка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-розовка-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Розівка — Запорожская область",
+        "position": {
+          "lat": 47.3866992,
+          "lng": 37.0675861
+        },
+        "kind": "town",
+        "sourceRequested": "Розовка"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-токмак-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Токмак — Запорожская область",
+        "position": {
+          "lat": 47.2550191,
+          "lng": 35.7092206
+        },
+        "kind": "town",
+        "sourceRequested": "Токмак"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-токмак-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Токмак — Запорожская область",
+        "position": {
+          "lat": 47.2550191,
+          "lng": 35.7092206
+        },
+        "kind": "town",
+        "sourceRequested": "Токмак"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-токмак-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Токмак — Запорожская область",
+        "position": {
+          "lat": 47.2550191,
+          "lng": 35.7092206
+        },
+        "kind": "town",
+        "sourceRequested": "Токмак"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-токмак-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Токмак — Запорожская область",
+        "position": {
+          "lat": 47.2550191,
+          "lng": 35.7092206
+        },
+        "kind": "town",
+        "sourceRequested": "Токмак"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-пологи-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Пологи — Запорожская область",
+        "position": {
+          "lat": 47.4784803,
+          "lng": 36.2531412
+        },
+        "kind": "town",
+        "sourceRequested": "Пологи"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-пологи-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Пологи — Запорожская область",
+        "position": {
+          "lat": 47.4784803,
+          "lng": 36.2531412
+        },
+        "kind": "town",
+        "sourceRequested": "Пологи"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-пологи-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Пологи — Запорожская область",
+        "position": {
+          "lat": 47.4784803,
+          "lng": 36.2531412
+        },
+        "kind": "town",
+        "sourceRequested": "Пологи"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-пологи-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Пологи — Запорожская область",
+        "position": {
+          "lat": 47.4784803,
+          "lng": 36.2531412
+        },
+        "kind": "town",
+        "sourceRequested": "Пологи"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-мелитополь-moscow-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Мелітополь — Запорожская область",
+        "position": {
+          "lat": 46.8467267,
+          "lng": 35.3827281
+        },
+        "kind": "city",
+        "sourceRequested": "Мелитополь"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-мелитополь-saint-petersburg-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Мелітополь — Запорожская область",
+        "position": {
+          "lat": 46.8467267,
+          "lng": 35.3827281
+        },
+        "kind": "city",
+        "sourceRequested": "Мелитополь"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-мелитополь-kazan-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Мелітополь — Запорожская область",
+        "position": {
+          "lat": 46.8467267,
+          "lng": 35.3827281
+        },
+        "kind": "city",
+        "sourceRequested": "Мелитополь"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "zaporizhzhia-мелитополь-kerch-center",
+      "region": "zaporizhzhia",
+      "from": {
+        "label": "Мелітополь — Запорожская область",
+        "position": {
+          "lat": 46.8467267,
+          "lng": 35.3827281
+        },
+        "kind": "city",
+        "sourceRequested": "Мелитополь"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-раденск-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Раденськ — Херсонская область",
+        "position": {
+          "lat": 46.551144,
+          "lng": 32.925629
+        },
+        "kind": "village",
+        "sourceRequested": "Раденск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-раденск-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Раденськ — Херсонская область",
+        "position": {
+          "lat": 46.551144,
+          "lng": 32.925629
+        },
+        "kind": "village",
+        "sourceRequested": "Раденск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-раденск-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Раденськ — Херсонская область",
+        "position": {
+          "lat": 46.551144,
+          "lng": 32.925629
+        },
+        "kind": "village",
+        "sourceRequested": "Раденск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-раденск-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Раденськ — Херсонская область",
+        "position": {
+          "lat": 46.551144,
+          "lng": 32.925629
+        },
+        "kind": "village",
+        "sourceRequested": "Раденск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-чулаковка-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Чулаківка — Херсонская область",
+        "position": {
+          "lat": 46.361961,
+          "lng": 32.358509
+        },
+        "kind": "village",
+        "sourceRequested": "Чулаковка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-чулаковка-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Чулаківка — Херсонская область",
+        "position": {
+          "lat": 46.361961,
+          "lng": 32.358509
+        },
+        "kind": "village",
+        "sourceRequested": "Чулаковка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-чулаковка-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Чулаківка — Херсонская область",
+        "position": {
+          "lat": 46.361961,
+          "lng": 32.358509
+        },
+        "kind": "village",
+        "sourceRequested": "Чулаковка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-чулаковка-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Чулаківка — Херсонская область",
+        "position": {
+          "lat": 46.361961,
+          "lng": 32.358509
+        },
+        "kind": "village",
+        "sourceRequested": "Чулаковка"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-старая-збурьевка-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Стара Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4727289,
+          "lng": 32.420034
+        },
+        "kind": "village",
+        "sourceRequested": "Старая Збурьевка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-старая-збурьевка-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Стара Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4727289,
+          "lng": 32.420034
+        },
+        "kind": "village",
+        "sourceRequested": "Старая Збурьевка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-старая-збурьевка-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Стара Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4727289,
+          "lng": 32.420034
+        },
+        "kind": "village",
+        "sourceRequested": "Старая Збурьевка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-старая-збурьевка-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Стара Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4727289,
+          "lng": 32.420034
+        },
+        "kind": "village",
+        "sourceRequested": "Старая Збурьевка"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-таврийск-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Таврійськ — Херсонская область",
+        "position": {
+          "lat": 46.7550442,
+          "lng": 33.4248309
+        },
+        "kind": "town",
+        "sourceRequested": "Таврийск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-таврийск-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Таврійськ — Херсонская область",
+        "position": {
+          "lat": 46.7550442,
+          "lng": 33.4248309
+        },
+        "kind": "town",
+        "sourceRequested": "Таврийск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-таврийск-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Таврійськ — Херсонская область",
+        "position": {
+          "lat": 46.7550442,
+          "lng": 33.4248309
+        },
+        "kind": "town",
+        "sourceRequested": "Таврийск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-таврийск-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Таврійськ — Херсонская область",
+        "position": {
+          "lat": 46.7550442,
+          "lng": 33.4248309
+        },
+        "kind": "town",
+        "sourceRequested": "Таврийск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-херсон-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Херсон — Херсонская область",
+        "position": {
+          "lat": 46.6401295,
+          "lng": 32.6143922
+        },
+        "kind": "city",
+        "sourceRequested": "Херсон"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-херсон-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Херсон — Херсонская область",
+        "position": {
+          "lat": 46.6401295,
+          "lng": 32.6143922
+        },
+        "kind": "city",
+        "sourceRequested": "Херсон"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-херсон-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Херсон — Херсонская область",
+        "position": {
+          "lat": 46.6401295,
+          "lng": 32.6143922
+        },
+        "kind": "city",
+        "sourceRequested": "Херсон"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-херсон-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Херсон — Херсонская область",
+        "position": {
+          "lat": 46.6401295,
+          "lng": 32.6143922
+        },
+        "kind": "city",
+        "sourceRequested": "Херсон"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-скадовск-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Скадовськ — Херсонская область",
+        "position": {
+          "lat": 46.1203932,
+          "lng": 32.910339
+        },
+        "kind": "town",
+        "sourceRequested": "Скадовск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-скадовск-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Скадовськ — Херсонская область",
+        "position": {
+          "lat": 46.1203932,
+          "lng": 32.910339
+        },
+        "kind": "town",
+        "sourceRequested": "Скадовск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-скадовск-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Скадовськ — Херсонская область",
+        "position": {
+          "lat": 46.1203932,
+          "lng": 32.910339
+        },
+        "kind": "town",
+        "sourceRequested": "Скадовск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-скадовск-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Скадовськ — Херсонская область",
+        "position": {
+          "lat": 46.1203932,
+          "lng": 32.910339
+        },
+        "kind": "town",
+        "sourceRequested": "Скадовск"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-каховка-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Каховка — Херсонская область",
+        "position": {
+          "lat": 46.8054626,
+          "lng": 33.4817825
+        },
+        "kind": "town",
+        "sourceRequested": "Каховка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-каховка-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Каховка — Херсонская область",
+        "position": {
+          "lat": 46.8054626,
+          "lng": 33.4817825
+        },
+        "kind": "town",
+        "sourceRequested": "Каховка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-каховка-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Каховка — Херсонская область",
+        "position": {
+          "lat": 46.8054626,
+          "lng": 33.4817825
+        },
+        "kind": "town",
+        "sourceRequested": "Каховка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-каховка-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Каховка — Херсонская область",
+        "position": {
+          "lat": 46.8054626,
+          "lng": 33.4817825
+        },
+        "kind": "town",
+        "sourceRequested": "Каховка"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-аскания-нова-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Асканія-Нова — Херсонская область",
+        "position": {
+          "lat": 46.4511096,
+          "lng": 33.8685565
+        },
+        "kind": "town",
+        "sourceRequested": "Аскания-Нова"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-аскания-нова-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Асканія-Нова — Херсонская область",
+        "position": {
+          "lat": 46.4511096,
+          "lng": 33.8685565
+        },
+        "kind": "town",
+        "sourceRequested": "Аскания-Нова"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-аскания-нова-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Асканія-Нова — Херсонская область",
+        "position": {
+          "lat": 46.4511096,
+          "lng": 33.8685565
+        },
+        "kind": "town",
+        "sourceRequested": "Аскания-Нова"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-аскания-нова-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Асканія-Нова — Херсонская область",
+        "position": {
+          "lat": 46.4511096,
+          "lng": 33.8685565
+        },
+        "kind": "town",
+        "sourceRequested": "Аскания-Нова"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-геническ-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Генічеськ — Херсонская область",
+        "position": {
+          "lat": 46.1661695,
+          "lng": 34.8088828
+        },
+        "kind": "town",
+        "sourceRequested": "Геническ"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-геническ-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Генічеськ — Херсонская область",
+        "position": {
+          "lat": 46.1661695,
+          "lng": 34.8088828
+        },
+        "kind": "town",
+        "sourceRequested": "Геническ"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-геническ-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Генічеськ — Херсонская область",
+        "position": {
+          "lat": 46.1661695,
+          "lng": 34.8088828
+        },
+        "kind": "town",
+        "sourceRequested": "Геническ"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-геническ-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Генічеськ — Херсонская область",
+        "position": {
+          "lat": 46.1661695,
+          "lng": 34.8088828
+        },
+        "kind": "town",
+        "sourceRequested": "Геническ"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-новая-збурьевка-moscow-center",
+      "region": "kherson",
+      "from": {
+        "label": "Нова Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4553259,
+          "lng": 32.4524074
+        },
+        "kind": "village",
+        "sourceRequested": "Новая Збурьевка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-новая-збурьевка-saint-petersburg-center",
+      "region": "kherson",
+      "from": {
+        "label": "Нова Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4553259,
+          "lng": 32.4524074
+        },
+        "kind": "village",
+        "sourceRequested": "Новая Збурьевка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-новая-збурьевка-kazan-center",
+      "region": "kherson",
+      "from": {
+        "label": "Нова Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4553259,
+          "lng": 32.4524074
+        },
+        "kind": "village",
+        "sourceRequested": "Новая Збурьевка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    },
+    {
+      "id": "kherson-новая-збурьевка-kerch-center",
+      "region": "kherson",
+      "from": {
+        "label": "Нова Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4553259,
+          "lng": 32.4524074
+        },
+        "kind": "village",
+        "sourceRequested": "Новая Збурьевка"
+      },
+      "to": {
+        "id": "kerch-center",
+        "label": "Керчь, центр",
+        "position": {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      },
+      "routeMustBeLive": true,
+      "expectedRoads": [],
+      "status": "planned"
+    }
+  ],
+  "corridorPlan": [
+    {
+      "id": "single-m4",
+      "roads": [
+        "m4"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Краснодар",
+          "Домодедово"
+        ],
+        [
+          "Краснодар",
+          "Воронеж"
+        ],
+        [
+          "Краснодар",
+          "Донецк"
+        ],
+        [
+          "Ростов-на-Дону",
+          "Воронеж"
+        ]
+      ]
+    },
+    {
+      "id": "single-a289",
+      "roads": [
+        "a289"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Воронеж",
+          "Тамань"
+        ],
+        [
+          "Краснодар",
+          "Керчь"
+        ],
+        [
+          "Анапа",
+          "Славянск-на-Кубани"
+        ]
+      ]
+    },
+    {
+      "id": "single-m3",
+      "roads": [
+        "m3"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Москва",
+          "Калуга"
+        ],
+        [
+          "Калуга",
+          "Москва"
+        ]
+      ]
+    },
+    {
+      "id": "single-m11",
+      "roads": [
+        "m11"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Москва",
+          "Санкт-Петербург"
+        ],
+        [
+          "Тверь",
+          "Москва"
+        ]
+      ]
+    },
+    {
+      "id": "single-m12",
+      "roads": [
+        "m12"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Казань",
+          "Москва"
+        ],
+        [
+          "Владимир",
+          "Казань"
+        ]
+      ]
+    },
+    {
+      "id": "single-ckad",
+      "roads": [
+        "ckad"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Москва",
+          "Казань"
+        ],
+        [
+          "Домодедово",
+          "Клин"
+        ]
+      ]
+    },
+    {
+      "id": "single-zsd",
+      "roads": [
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Благодатная",
+          "Приморский"
+        ],
+        [
+          "Приморский",
+          "Благодатная"
+        ]
+      ]
+    },
+    {
+      "id": "pair-m4-a289",
+      "roads": [
+        "m4",
+        "a289"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Воронеж",
+          "Тамань"
+        ],
+        [
+          "Краснодар",
+          "Керчь"
+        ]
+      ]
+    },
+    {
+      "id": "pair-m4-m11",
+      "roads": [
+        "m4",
+        "m11"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Краснодар",
+          "Санкт-Петербург"
+        ],
+        [
+          "Санкт-Петербург",
+          "Краснодар"
+        ]
+      ]
+    },
+    {
+      "id": "pair-m11-zsd",
+      "roads": [
+        "m11",
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Москва",
+          "Благодатная"
+        ],
+        [
+          "Благодатная",
+          "Москва"
+        ]
+      ]
+    },
+    {
+      "id": "pair-m11-ckad",
+      "roads": [
+        "m11",
+        "ckad"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Санкт-Петербург",
+          "Казань через ЦКАД"
+        ]
+      ]
+    },
+    {
+      "id": "pair-m12-ckad",
+      "roads": [
+        "m12",
+        "ckad"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Казань",
+          "Санкт-Петербург через ЦКАД"
+        ]
+      ]
+    },
+    {
+      "id": "triple-m4-m11-zsd",
+      "roads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Краснодар",
+          "Санкт-Петербург через ЦКАД"
+        ]
+      ]
+    },
+    {
+      "id": "triple-m11-ckad-m12",
+      "roads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Санкт-Петербург",
+          "Казань через ЦКАД"
+        ]
+      ]
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd",
+      "roads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Краснодар",
+          "Санкт-Петербург через ЦКАД"
+        ]
+      ]
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd",
+      "roads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "minimumRuns": 10,
+      "examples": [
+        [
+          "Казань",
+          "Санкт-Петербург через ЦКАД"
+        ]
+      ]
+    }
+  ],
+  "executionNotes": [
+    "The corridor plan is a test plan, not evidence that each named route traverses the expected toll road.",
+    "Before marking a corridor case passed, inspect the live selected geometry and toll-road edge/gate trace.",
+    "Road inventory must confirm which networks have at least three physical payment points; candidates in corridorPlan remain subject to that inventory check.",
+    "Unknown tariff and incomplete route traces are reported as findings, never converted to zero or a full route price."
+  ]
+}

@@ -1,3 +1,25 @@
+## CURRENT 2026-10-15 — systemic audit replay исправлен, запущены партии
+
+IN PROGRESS: продолжение этапа 15. Исправлен дефект audit harness: архив писался до дополнительных запросов тарификации М-4. Новый schemaVersion2 архив сохраняется после pricing; offline replay отмечает недостающие ответы, сохраняет Retry-After и сверяется с live итогом на той же дате. Pilot Гранитное→Москва: четверг unknown `m4_crossing_profile_changes`, субботний replay теперь priced 4 640 ₽ вместо ложного unknown старого неполного архива.
+
+RUNNING: interleaved batch 40 regional cases + отдельная серия single-m4 10 → single-a289 10. Exact progress/results: [batch manifests and REPORT](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.md). До окончания не считать запланированные строки выполненными. Добавлен дорожный корпус 180 planned OD-контролей /18 групп; inventory проверяет 22 registry rows, 10 lower-bound-qualified rows (включает M11 child), 12 count-unresolved. Census и полный аудит не закрыты.
+
+VERIFIED: pilot same-date/weekend replay complete; focused5/5 и targeted ESLint PASS. Промежуточный full build audit653/653 + quote/API/Next/static16/16 PASS; после добавления пятого теста итоговый full build запущен повторно, результат пока не объявлен.
+
+NEXT: завершить две партии, пересобрать REPORT, записать окончательные проверки/commit/remote state, затем оставшиеся regional cases и одиночные дороги. По принятому решению изменения тарифной логики обсуждаются после аудита. [Подробный этап 16](../experiments/nationwide-tolls/stages/16-systemic-audit-replay-integrity-and-batches-2026-10-15.md). App/lib/матрицы/Production не менялись.
+
+---
+
+## CURRENT 2026-10-15 — системный аудит дорог начат
+
+USER-APPROVED SCOPE: одиночные платные дороги (все системы с ≥3 физическими ПВП, включая incomplete price rows) → пары → тройки → максимально длинные цепочки; будни/выходные; 10–20 прогонов на крупный сегмент/пару; минимум 40 реальных маршрутов с началом в каждом из ДНР, ЛНР, Запорожской и Херсонской областей; live provider response + saved trace + offline replay; ordinary-road gaps допустимы. Ожидаемую дорогу засчитывать только при пересечении выбранной геометрией.
+
+IN PROGRESS: создано 160 региональных OD-пар (40/регион) и 16 групп дорожных коридоров; исполнена 1 из 160 региональных пар, дорожные группы ещё требуют прогонов. Live Донецкая область/Гранитное—Москва: Valhalla 1,256.6 км, toll trace complete; итог unknown из-за M4 passage profile. Weekend offline replay этого же ответа также unknown из-за неполной локальной проверки M4. Для длинного Краснодар—Санкт-Петербург через контрольные точки ЦКАД live OSRM 2,267 км, trace complete, плюс 2 offline replay на четверг/субботу. Там CKAD adapter отклоняет arc по `ckad_arc_length_out_of_range`; четверговый replay дополнительно даёт `m4_crossing_profile_changes`. Это находки для дальнейших серий, не исправленные и не обобщённые. [Этап 15 и captures](../experiments/nationwide-tolls/stages/15-systemic-road-route-audit-2026-10-15.md).
+
+DONE: генератор корпуса проверен: DNR/LNR/Zaporizhzhia/Kherson 40 каждый (160 всего); статус live-кейса сохраняется при регенерации. Long-chain source capture и replay на two date windows плюс региональный capture/replay сохранены под `experiments/nationwide-tolls/source-snapshots/`. Product code не менялся; broad build не запускался. Generator and route-case runner targeted ESLint PASS, corpus count/unique-ID checks and `git diff --check` PASS.
+
+NEXT: (1) инвентаризировать и подтвердить все дороги, у которых ≥3 физических ПВП; (2) дополнить route corpus городскими контролями для 10–20 live runs per qualifying road and adjacent pair; (3) выполнить 160 regional pairs дозированными партиями, затем triples/max chains and supplemental airports/important points; (4) собрать и обсудить findings до исправлений. Подробные критерии/decision — [DECISIONS](../experiments/nationwide-tolls/DECISIONS.md), executable list — [NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md), полный журнал — [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md).
+
 ## CURRENT 2026-10-15 — остаток Яндекс не привязан к М‑4
 
 USER REQUEST: подробно объяснить происхождение 10 240 / 5 424 / 4 816 и не выдавать агрегатный остаток за тариф конкретного участка без установленного состава маршрута.

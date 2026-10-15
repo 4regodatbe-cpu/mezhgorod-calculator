@@ -1,3 +1,25 @@
+# 2026-10-15 — продолжение этапа 16
+
+- [x] Исправить полноту audit capture и явный offline missing-response control; pilot same-date parity, Saturday4640. Focused5/5 PASS.
+- [x] Добавить конкретные дорожные OD-контроли: 180 planned/18 групп; inventory22 rows с явными unresolved count.
+- [ ] Завершить запущенные batch40 regional и single-m4 10 → single-a28910; проверить complete trace, same-date parity, replayIntegrity, factual road traversal, свести REPORT.
+- [ ] Записать финальный full build, stage16 итог, commit/remote/PR status. Затем продолжить оставшиеся regional cases и остальные одиночные дороги; минимум10 засчитывать только при доказанном прохождении.
+- [ ] После одиночных серий — пары/тройки/цепочки; закрыть count-unresolved inventory, не подменять число ПВП количеством развязок/тарифных строк.
+
+---
+
+# Следующий приоритет — systemic live audit всех дорог и цепочек (2026-10-15)
+
+- [x] Зафиксированы критерии тестовой кампании в `DECISIONS.md`: ≥3 физических ПВП, incomplete tariff rows включаются, 10–20 прогонов на дорогу/пару, weekday/weekend, ≥40 пар с началом в каждом из четырёх special regions; live capture/replay; контроль traversal; бесплатные road gaps допустимы.
+- [x] Создан тестовый региональный корпус: `source-snapshots/systemic-road-audit-2026-10-15/corpus.json` — 40 planned OD-пар с началом в каждом регионе, 160 суммарно; 16 planned groups одиночных дорог/пар/троек/цепочек. Все статусы остаются `planned` до фактического live исполнения и проверки геометрии.
+- [x] Начат коридор Краснодар—Санкт-Петербург через ЦКАД. Live capture OSRM trace complete; записаны `live.json`, full `capture.json.gz`; offline replay выполнен для 2026-10-15 и 2026-10-17. Выявлены наблюдения `ckad_arc_length_out_of_range` (обе даты) и `m4_crossing_profile_changes` (четверг); сумма маршрута unknown. [Stage 15](stages/15-systemic-road-route-audit-2026-10-15.md).
+- [x] Исполнен 1/40 DNR regional case: Гранитное→Москва, selected Valhalla 1,256.6km, all 3 route providers HTTP200, toll trace complete; M-4 result remains unknown (`m4_crossing_profile_changes`). Saturday replay of same capture also remains unknown. Output and provider capture are in `source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/`.
+- [ ] Проверить полный физический inventory платных дорог/ПВП и отсечь/добавить candidate road groups в corpus по критерию ≥3 ПВП.
+- [ ] Провести 10–20 свежих live runs на каждую квалифицированную дорогу и каждую смежную пару, с обоими направлениями/weekday/weekend coverage; сохранять raw route/trace и offline replay.
+- [ ] Исполнить четыре пачки по 40 региональных OD-маршрутов из corpus; проверять фактический traversal, route quality, trace completeness, road components и целый итог.
+- [ ] После singles/pairs перейти к тройкам и максимальным физически связным цепям, допуская бесплатные промежутки; отдельно включить аэропорты/важные точки.
+- [ ] До изменения тарифного поведения собрать finding register и обсудить обнаруженные проблемы с пользователем. Unknown remains unknown; не добавлять частичные суммы как полные.
+
 # Следующий приоритет — зафиксированные Яндекс суммы и точное сопоставление геометрии
 
 - [x] Перепроверить в Яндекс Картах точные городские точки СПб↔Краснодар: теперь текущие быстрейшие суммы ~11 325 ₽ / ~10 240 ₽; обратная карточка показывает М-4, E115, МКАД, М-11 и ЗСД. Сохранены [этап 13](stages/13-yandex-route-refresh-2026-10-15.md) и live JSON. Это оценки именно выбранных маршрутов, не компонентные тарифы.
