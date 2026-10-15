@@ -1,11 +1,11 @@
 # Следующие действия
 
-История: [NEXT_STEPS_HISTORY_2026-10-15_2228.md](NEXT_STEPS_HISTORY_2026-10-15_2228.md). Актуальный handoff: [WORK_STATE](../../docs/WORK_STATE.md).
+[Полная история](NEXT_STEPS_HISTORY_2026-10-15_2228.md),[актуальный handoff](../../docs/WORK_STATE.md).
 
-DONE16.10: frozen install; полный build658/658+quote/API/Next/TypeScript/static16/16; ESLint18файлов/diffcheck; offline Гуляйполе→Москва3810/4640 по departure-policy, оба replay complete. Это не новые live маршруты и не независимое подтверждение тарифов.
+DONE16.10: fullbuild658/658+quote/API/Next/TypeScript/static16/16; ESLint18/diffcheck; offline Гуляйполе→Москва3810/4640; live Бахмут→Казань850/850 complete/parity; report/inventory43raw/41OD/40полных/0повреждений. Stage1=9/155.
 
-1. BLOCKED live Бахмут→Казань: получить прямое разрешение текущего чата на передачу координат городов/контрольных точек и маршрутных параметров Valhalla/OSRM/BRouter. [Точный blocker](../../docs/checkpoints/2026-10-16-routing-approval-blocked.md). GitHub разрешение уже получено, не спрашивать заново.
-2. После разрешения запустить один `dnr-бахмут-kazan-center` live через `scripts/run-systemic-route-case.mjs`; сохранить capture/result/checkpoint в GitHub, сверить head/tree. Затем same-date иweekend replay, parity, отдельный checkpoint. Отражать unknown без подмены нулём.
-3. Обновить corpus/batch/report/inventory после полного случая; stage1 пока8/155,stage2=154 не начат. [План](TWO_STAGE_AUDIT_PLAN.json). Каждый case отдельно сохранять до следующего.
+1. Single-case batch Бахмут→Керчь(limit1),затем Бахмут→Москва/СПб; каждый маршрут с raw/live/replays/report/inventory/checkpoint/GitHub/readback до следующего. Статус audited означает воспроизводимость,не подтверждение цены.
+2. Продолжать остальные stage1cases по [замороженному плану](TWO_STAGE_AUDIT_PLAN.json); stage2 не начинать до границы155.
+3. Отдельно исследовать findings А289/ЗСД/ЦКАД; старые time findings не выдавать за актуальные после departurepolicy без нового replay. Лисичанск→Москва original summary утрачен,offline reconstruction не original live.
 
-Все тарифы считают по дате/времени отправления; междорожные векторы отложены. Unknown не бесплатно; subtotal не полный итог. Не main/merge/Production/Android без прямого запроса. Сохранение через GitHub connector, CLI credentials отсутствуют. При переносе stdout сохранять CR/LF без нормализации, все blob/tree SHA сверять.
+Прямые consent GitHub иValhalla/OSRM/BRouter получены в текущем чате16.10,не спрашивать повторно. Unknown не бесплатно. Междорожные векторы отложены. Не main/merge/Production/Android. Connector save с проверкой всех blob/tree/head SHA; CR/LF иUnicodepaths сохранять точно.

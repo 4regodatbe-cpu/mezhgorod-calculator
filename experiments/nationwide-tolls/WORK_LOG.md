@@ -58,3 +58,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16 DONE: Бахмут→Казань audited, same-date parity/оба replay complete,850/850₽; stage1=9/155. STARTED report/inventory. [Checkpoint](../../docs/checkpoints/2026-10-16-bakhmut-kazan-replay-pass.md).
+
+
+2026-10-16: report/inventory exit0,raw43/41OD/40полных/0повреждений; stage1=9/155. STARTED single-case batch Бахмут→Керчь. [Подробности](../../docs/checkpoints/2026-10-16-report-inventory-bakhmut-kazan.md).

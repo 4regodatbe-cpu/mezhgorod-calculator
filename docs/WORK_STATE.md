@@ -1,41 +1,21 @@
 # Текущее состояние калькулятора «Из А в Б»
 
-Обновлено 2026-10-16. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR #14 draft. Последний подтверждённый remote перед этим checkpoint: d7dae8d232a3be3c12fcd103ad2dc7091fa34b29.
+2026-10-16. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14draft. Последний проверенный remote до этого checkpoint `0d35069719a0a54130ef88c24b1bab54d5b1b42e`.
 
 ## DONE
 
-Полный новый `pnpm build` **PASS/exit0**: **658/658** audit tests, quote/API contracts, Next compile/TypeScript, static16/16. [Точный checkpoint](checkpoints/2026-10-16-build-pass.md), [stdout](checkpoints/evidence/2026-10-16-build.log). Frozen install PASS. Прежний focused59/59 сохранён в истории.
+Новый fullbuild exit0:658/658tests,quote/API,Next/TypeScript/static16/16; ESLint18файлов/diffcheck exit0. [Сборка](checkpoints/2026-10-16-build-pass.md).
 
-Правило пользователя21:48МСК: все V3 платные компоненты считают по дате/времени отправления; переход суток/часа оплаты не меняет тариф. Геометрия/направление/валидность источника сохраняются. Междорожные векторы отложены полностью.
+Departure policy реализована: вся поездка по дате/времени отправления, без смены профиля в пути. Offline Гуляйполе→Москва3810/4640,оба complete. Новый live Бахмут→Казань1452.489км OSRM fastest,850/850,trace/parity/replays complete. [Case](checkpoints/2026-10-16-bakhmut-kazan-replay-pass.md).
 
-Пользователь текущего чата16.10 в00:07 прямо разрешил сохранение кода/журналов/evidence в публичную рабочую ветку. CLI credentials отсутствуют, подключённый GitHub connector успешно сохраняет; head/tree проверяются. Исторический approval blocker снят.
+Stage1 **9/155**,stage2 **154** не начат. Availability43raw/41OD/40полных комплектов,0повреждений; original Лисичанск→Москва summary утрачен. REPORT40audited, findings большинства старых случаев относятся к прежней time-policy и не являются новыми проверками. [Сводка](checkpoints/2026-10-16-report-inventory-bakhmut-kazan.md).
 
-## NEXT
+## IN PROGRESS / NEXT
 
-1. DONE: targeted ESLint18файлов + diff check exit0.
-2. DONE: offline Гуляйполе→Москва четверг3810₽/суббота4640₽, оба replay complete.
-3. BLOCKED: live dnr-бахмут-kazan-center — автоматическая проверка требует прямое разрешение на маршрутные координаты/параметры в Valhalla/OSRM/BRouter в текущем чате. [Точная причина и следующий шаг](checkpoints/2026-10-16-routing-approval-blocked.md). После разрешения live→save→same-date/weekend replay→save→batch/report/inventory.
+STARTED single-case batch `dnr-бахмут-kerch-center`,limit1; после одного route+replays report/inventory/checkpoint/commit/GitHub/readback. Далее `dnr-бахмут-moscow-center`,затем СПб; [точная очередь](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json).
 
-Аудит этап1 **8/155**, этап2 **154** не начат. [Точная очередь](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json). 40rawOD/39originalcomplete; Лисичанск→Москва original summary утрачен, offline реконструкция не original live. Старые результаты до departure-policy не объявлены повторно проверенными.
+Прямые разрешения текущего чата действуют: публичныйGitHub(00:07),Valhalla/OSRM/BRouter маршрутные координаты/параметры(01:16). Старые approval blockers сняты. CLI credentials отсутствуют, connector blob/tree/commit/ref с точной SHA-проверкой работает. Не спрашивать повторно.
 
-[CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md): каждый малый шаг→checkpoint→local commit→GitHub→head/tree readback перед следующим. Unknown не бесплатный, subtotal не полный итог. Не main/merge/Production/Android без запроса.
+Каждый небольшой шаг/route сохранять по [CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md). Unknown не бесплатно,subtotal не полный итог. Междорожные векторы отложены. Не main/merge/Production/Android без прямого запроса.
 
-[WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md), [NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md), [DECISIONS](../experiments/nationwide-tolls/DECISIONS.md). История восстановления/блокера16.10 сохранена в отдельных checkpoint0002/0006/0008/0014; старый handoff находится в Git history, подробная история — WORK_LOG.
-
-
-2026-10-16 DONE: targeted ESLint18 файлов и diff check exit0. STARTED offline Гуляйполе→Москва четверг/суббота. [Checkpoint](checkpoints/2026-10-16-eslint-pass-replay-started.md).
-
-
-2026-10-16 DONE: Гуляйполе→Москва offline3810₽(четверг)/4640₽(суббота), оба replay complete/exit0. STARTED live Бахмут→Казань. [Checkpoint](checkpoints/2026-10-16-huliaipole-replay-pass.md).
-
-
-Последний checkpoint: [routing approval blocker](checkpoints/2026-10-16-routing-approval-blocked.md). Тесты/сборка/replay завершены; live Бахмут не получен.
-
-
-2026-10-16 01:17 МСК: прямое разрешение передачи координат/маршрутных параметров Valhalla/OSRM/BRouter получено в текущем чате («Разрешаю доступ»). Approval blocker снят. STARTED live Бахмут→Казань. [Checkpoint](checkpoints/2026-10-16-0117-routing-authorized-started.md).
-
-
-2026-10-16 01:18МСК DONE: live Бахмут→Казань OSRM1452.489км/83339с, traceComplete, М12=850₽. Corpus live-captured; STARTED same-date/weekend replay. [Checkpoint](checkpoints/2026-10-16-bakhmut-kazan-live-pass.md).
-
-
-2026-10-16 DONE: Бахмут→Казань audited, same-date parity/оба replay complete,850/850₽; stage1=9/155. STARTED report/inventory. [Checkpoint](checkpoints/2026-10-16-bakhmut-kazan-replay-pass.md).
+[WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md),[NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md),[DECISIONS](../experiments/nationwide-tolls/DECISIONS.md). Старые handoff статусы superseded этим файлом; history/checkpoints сохраняют все действия.
