@@ -10,7 +10,7 @@
 
 ## IN PROGRESS / NEXT
 
-Восстановитьassert1265вscripts/v3-time-calendar-audit.test.ts+отдельныйmissingM4guard; auditmarkertrip-departure-v1. Повторитьfocused8файлов, затемfullpnpm build/ESLint. Стараяпроверка653/656FAILED, expanded58/59FAILEDсохранены;последняя59PASSнеуспелавremoteинуждаетсявновомзапуске. Послеgate—offlineГуляйполе→Москва(четверг/суббота),затемliveБахмут→Казань.
+Восстановленыassert1265+missingM4guard иtrip-departure-v1marker. Новыйfocused **59/59PASS**. [Checkpoint](checkpoints/2026-10-15-223101-resumed-focused-pass-build-started.md). STARTED pnpm build/targetedESLint; результата полногоbuildпоканет. Послеgate—offlineГуляйполе→Москва(четверг/суббота),затемliveБахмут→Казань.
 
 Аудит: этап1 **8/155**, этап2 **154** не начат; [точнаяочередь](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json).40rawOD/39originalcomplete; originalЛисичанск→Москва summaryутрачен,offlineреконструкциянеоригинальныйlive. Старыеценывычислялисьдоновогоправила;нетутвержденияо39повторныхпроверкахновойсемантики.
 

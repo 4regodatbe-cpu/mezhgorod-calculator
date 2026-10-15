@@ -142,6 +142,7 @@ try {
     region: record.spec.region,
     mode: mode === '--live' ? 'live' : 'offline-recorded-response-replay',
     departureAt,
+    tariffPolicy: { id: 'trip-departure-v1', basisAt: departureAt },
     provider: record.provider,
     providerCandidates: record.providers,
     rejectedProviders: record.rejected,
