@@ -1,3 +1,9 @@
+## CURRENT — восстановление среды, install STARTED
+
+Remote97386e0проверен; последняялокальнаяправка/59PASSнеуспеласохраниться. [Checkpoint](checkpoints/2026-10-15-222912-environment-recovery-started.md). Установитьзависимости, восстановитьassert1265/marker, rerunfocused/fullgate. ИсторияWORK_LOG/NEXT_STEPSперенесенабезизмененияв*_HISTORY,текущиеиндексысокращены.
+
+---
+
 # Текущее состояние калькулятора «Из А в Б»
 
 2026-10-15T21:25:40.813785+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Последний проверенный remote `bd73f38ffe7fb53d4483c010fbd4249bf94ca435`; текущий checkpoint необходимо сохранить и read-back до следующего case.
