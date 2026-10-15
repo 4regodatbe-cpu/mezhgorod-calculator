@@ -1717,3 +1717,12 @@ DONE 2026-10-15T21:52:47.968072+03:00, source remote63a5aa0af75c0754812286a6e645
 Проверка: node --import ./scripts/register-ts-paths.mjs --test experiments/nationwide-tolls/engine/m4-route-adapter.test.mjs experiments/nationwide-tolls/engine/date-calendar-source-regression.test.mjs experiments/nationwide-tolls/engine/m11-ckad-route-adapter.test.mjs scripts/v3-m11-products.test.ts scripts/v3-zsd-zone1.test.ts — exit0,39/39PASS. stdout docs/checkpoints/evidence/2026-10-15-departure-policy-focused-initial.log. Изменённые старые ожиданияunknownнаграницедня заменены ожидаемым тарифомначала по прямому продуктовому решению. Направления/ошибочные даты/неполныеграницы остаютсяпроверенными. Послеэтогозапуска уточнён optionaldefault аргументМ11Geometry длясовместимостиTS; runtimeэквивалентен,полныйgateещёне запускался.
 
 STARTED следующий длительныйшаг: pnpm build (включаетвесьtest:audit/quote/API/Next/TypeScript/static); stdout docs/checkpoints/evidence/2026-10-15-departure-policy-build.log; затем сохранитьфактическийрезультат, не обещатьPASSзаранее. Также targetedESLint/diff. Послеfullgate — regression globalstartvslaterpayment и offline replay старыхtraces дляснятыхtimeblocks, отдельныеcheckpoint. Ниmain/Production/Android/merge не менялись. Auditqueueостаётся8/155.
+
+
+# Полный gate: первоначальная проверка 653/656
+
+FAILED 2026-10-15T21:54:19.172032+03:00, parent remote cb64897ddd2c74a99ad9aff73e9d3f0994e9282c. pnpm build exit1: audit656tests,653PASS/3FAIL; quote/API/Next/TypeScript/static не дошли дозапуска. Сохранён полный stdout docs/checkpoints/evidence/2026-10-15-departure-policy-build.log. TargetedESLint13изменённыхsource/testфайлов exit0, stdout docs/checkpoints/evidence/2026-10-15-departure-policy-eslint.log. ПолныйbuildPASS не заявляется.
+
+ПричинытрёхFAIL: scripts/v3-road-availability-audit.test.ts всёещёожидаетnull припересечениинеделиМ11; scripts/v3-southern-products.test.ts ожидаетnull длячетверг→пятницаДЗОК; scripts/v3-time-calendar-audit.test.ts ожидаетnull длячетверг→пятницаМ4. Эти ожидания superseded прямымновымправилом пользователя. Последний тест также проверяетNumber.MAX_VALUEduration; проверкуневалиднойдлительностинадосохранить независимоотфиксированноготарифа (вновомhelperнетстарогопредохранителяoverflow).
+
+NEXT: обновить эти3группыожиданий согласно правилуотправления, вернутьguardнепредставимойдлительности, добавить regression startdatevsfuturepayment/validity. Затем focused и повторfullgate сдругимлогом, сохранитьрезультатдоreplay. Runtimeматрицы/Production/Androidне менялись. Аудит8/155.
