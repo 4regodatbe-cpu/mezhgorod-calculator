@@ -143,3 +143,5 @@ BLOCKED: автоматическая проверка отклонила обе
 16.10.2026: lint2/diffPASS; full667PASS; STARTED rerunjob116728494584, latestbranch. Послестарта не писатьпараллельно. [Checkpoint](../../docs/checkpoints/2026-10-16-automatic-queue-log-fix-ready.md).
 
 2026-10-15T23:40:33.905Z: automatic queue STARTED; 27/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-40-33-905Z-started.json). kherson-геническ-kazan-center
+
+2026-10-15T23:41:04.596Z: automatic queue DONE; 28/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-04-596Z-done.json). kherson-геническ-kazan-center
