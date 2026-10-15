@@ -40,3 +40,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16 DONE: новый полный pnpm build exit0, 658/658 tests, quote/API/Next/TypeScript/static16/16 PASS. [Checkpoint](../../docs/checkpoints/2026-10-16-build-pass.md). NEXT targeted ESLint/diff, затем offline Гуляйполе.
+
+
+2026-10-16 DONE: targeted ESLint18 файлов и diff check exit0. STARTED offline Гуляйполе→Москва четверг/суббота. [Checkpoint](../../docs/checkpoints/2026-10-16-eslint-pass-replay-started.md).

@@ -21,3 +21,6 @@
 [CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md): каждый малый шаг→checkpoint→local commit→GitHub→head/tree readback перед следующим. Unknown не бесплатный, subtotal не полный итог. Не main/merge/Production/Android без запроса.
 
 [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md), [NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md), [DECISIONS](../experiments/nationwide-tolls/DECISIONS.md). История восстановления/блокера16.10 сохранена в отдельных checkpoint0002/0006/0008/0014; старый handoff находится в Git history, подробная история — WORK_LOG.
+
+
+2026-10-16 DONE: targeted ESLint18 файлов и diff check exit0. STARTED offline Гуляйполе→Москва четверг/суббота. [Checkpoint](checkpoints/2026-10-16-eslint-pass-replay-started.md).
