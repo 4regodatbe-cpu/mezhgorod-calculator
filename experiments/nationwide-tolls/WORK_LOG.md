@@ -1406,3 +1406,14 @@ Code/evidence commit `e87b7b5057984efbdd1688d56e5ee69e93997445` is on PR14 branc
 ## Коррекция публикации WORK_LOG — 2026-10-15
 
 Обратная проверка показала, что промежуточная GitHub-загрузка docs-коммита `547d541` повредила сериализацию `WORK_LOG.md`. В локальном исходнике сохранены все датированные записи (1405 строк); SHA blob `9111f400236746d4b63b3f955b3de0650a6326ad` совпал с GitHub blob после восстановления. Точное полное дерево восстановлено коммитом `3e86bc600f88955ef6f13b7a3a47a6ecf0986635`; рабочая копия синхронизирована, текущий файл проверен через GitHub `fetch_file` по blob SHA. Не удалять и не переписывать прежние записи журнала.
+
+
+## 2026-10-15 — живые оценки платных маршрутов Яндекс Карт
+
+**Запрос/решение пользователя:** проверить оставшиеся участки в Яндекс Картах и принять любую сумму, которую карты показывают. Применять к цене конкретного выбранного маршрута; не угадывать цену там, где поле отсутствует.
+
+**Проверено в live UI:** Санкт-Петербург—Краснодар: fastest route 1,290 mi/23ч35/~11 363 ₽; более длинная альтернатива 1,280 mi/1д50/~10 930 ₽. Краснодар—Санкт-Петербург: fastest 1,290 mi/1д17/~10 910 ₽; более длинный альтернативный путь 1,280 mi/1д26/~10 050 ₽. Казань—Москва: fastest 530 mi/9ч39/~4 400 ₽; подробные шаги включают М-7, далее трассу с обозначением AH9. Москва—Казань: fastest 510 mi/8ч49, карта отмечает платную дорогу, но сумму не выводит; стоимость не принята равной нулю. ЗСД street control Благодатная→Приморский: fastest 14 mi/26 мин/~600 ₽, detailed steps include 10.6mi ZSD. Reverse: fastest 14.6mi/24мин/~900 ₽, route includes ZSD and ~11mi turnaround; geometry differs, so 600 ₽ is not mirrored.
+
+Яндекс поясняет, что сумма рассчитана для машины ниже 2 м без транспондера на момент проезда; на экране все суммы с `~`. По прямой пользовательской политике маршрутные суммы выше **приняты для точных записанных fastest map routes**. Это route-level estimate, не квитанция оператора и не универсальная ZSD zone price. Для ЗСД/длинных коридоров Яндекс не выдал точные toll gate IDs/трассу для присоединения ко второй маршрутизации V3, поэтому runtime tariff cells не менялись и суммы не перенесены на отличную geometry. V3 route remains on its separate selected geometry; no silent whole-route substitution.
+
+Evidence: `source-snapshots/yandex/2026-10-15-live-route-estimates.json`; detailed report `stages/12-yandex-live-route-estimates-2026-10-15.md`. No application code changed; no `pnpm build` run. Before this docs checkpoint: parse the JSON, validate local links, run `git diff --check`; record exact branch/head/PR and publish through authorized fix-branch flow. Next: exact route/gate matching for accepted map estimates; current M-12 reverse no price remains unknown, and other open product contexts stay fail-closed. No merge/main/Production/Android changes.

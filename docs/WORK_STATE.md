@@ -1,3 +1,15 @@
+## CURRENT 2026-10-15 — Яндекс маршрутные суммы приняты для точных картографических маршрутов
+
+USER DECISION: если Яндекс Карты показывают сумму платных дорог, принимать и использовать эту сумму для соответствующего выбранного маршрута. Живые проверки и принятые значения: [этап 12](../experiments/nationwide-tolls/stages/12-yandex-live-route-estimates-2026-10-15.md) и [снимок Яндекс](../experiments/nationwide-tolls/source-snapshots/yandex/2026-10-15-live-route-estimates.json).
+
+OBSERVED: ЗСД Благодатная→Приморский ~600 ₽ (26 мин/14 mi, подробный шаг 10.6 mi ЗСД); обратный маршрут ~900 ₽ (24 мин/14.6 mi, отличная геометрия с разворотом). Казань→Москва ~4 400 ₽ (530 mi/9ч39); Москва→Казань — цена не отображена, поэтому не 0. Быстрейшие Яндекс маршруты Санкт-Петербург→Краснодар ~11 363 ₽ и Краснодар→СПб ~10 910 ₽. Все суммы отображаются приблизительно (`~`) для легкового авто ниже 2 м без транспондера.
+
+LIMIT: приняты как route-level оценки конкретных направлений/точек. Не превращать их в универсальные зонные цены и не зеркалить. V3 сейчас получает геометрию другим маршрутизатором; точная трасса/пара gate IDs Яндекса отсутствует, поэтому суммы не подставлены в другой маршрут или отдельные тарифные ячейки. Runtime warning/status не менялись. Полный `pnpm build` не запускался: исходники приложения не менялись. JSON parse, link validation, diffcheck to run before docs checkpoint.
+
+NEXT: compare captured Yandex route scope with selected live V3 geometry/paid gates; wire accepted amount only when exact route/section matching is established. Then re-check ZSD continuation, M12↔CKAD/conditional context, and unknown paid-road events. PR14 remains open/draft; no merge/main/Production/Android changes.
+
+---
+
 ## CURRENT 2026-10-15 — длинная трасса восстановлена после HTTP 429
 
 DONE: Valhalla toll-trace fanout reduced from 3 to 2; each chunk now retries up to twice with bounded exponential fallback (1s/2s), respecting `Retry-After`. Incomplete/persistent failures still remain unknown. Long-chain capture now records the provider's `Retry-After` header.

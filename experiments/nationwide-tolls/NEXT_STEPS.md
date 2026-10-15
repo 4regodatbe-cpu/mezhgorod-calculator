@@ -1,3 +1,11 @@
+# Следующий приоритет — зафиксированные Яндекс суммы и точное сопоставление геометрии
+
+- [x] По прямому решению пользователя принять и сохранить суммы, которые Яндекс Карты явно показывают для соответствующего быстрейшего маршрута: ЗСД Благодатная→Приморский ~600 ₽, reverse ~900 ₽, Казань→Москва ~4 400 ₽, СПб→Краснодар ~11 363 ₽, Краснодар→СПб ~10 910 ₽. Подробности: `stages/12-yandex-live-route-estimates-2026-10-15.md` и `source-snapshots/yandex/2026-10-15-live-route-estimates.json`.
+- [ ] Сопоставить Yandex route totals с выбранной runtime-геометрией V3 и точными toll gates. Переносить сумму только при exact route/scope match; не распределять общий итог по неуказанным продуктам, не зеркалить reverse. Яндекс показывает цену для Казань→Москва, но не показывает её для Москва→Казань; отсутствие цены не означает free.
+- [ ] После сопоставления проверить ZSD zone/OD scope, CKAD conditional context and M12↔CKAD product pair, затем диагностировать оставшиеся `unknown-paid-road` detections. Сохранять fail-closed full-total rule.
+
+---
+
 ## CURRENT 2026-10-15 — Valhalla throttling fix and fresh reverse chain
 
 - [x] Reduce selected-route toll-trace concurrency 3→2; retry HTTP 429 up to two times with bounded 1s/2s fallback, honor `Retry-After`, keep persistent/unserviceable chunks fail-closed. Capture `Retry-After` in live audit evidence.

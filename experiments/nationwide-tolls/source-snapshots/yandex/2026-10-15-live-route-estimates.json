@@ -1,0 +1,107 @@
+{
+  "capturedAt": "2026-10-15T10:16:00+03:00",
+  "source": "Yandex Maps interactive car route planner",
+  "sourceUrl": "https://yandex.com/maps/",
+  "vehicleProfile": "car under 2 m, no transponder (as stated by Yandex in route details)",
+  "departureContext": "live map query on 2026-10-15; route detail shows departure around 10:14-10:18 MSK",
+  "userPolicy": "When Yandex Maps visibly displays a toll amount, accept and use that amount for the exact selected route. Do not transfer a route total to a different direction or claim it is a universal zone tariff.",
+  "acceptedRouteEstimates": [
+    {
+      "id": "zsd-blagodatnaya-to-primorsky",
+      "from": "Благодатная улица, Санкт-Петербург",
+      "fromCoordinate": [30.324797, 59.876052],
+      "to": "Приморский проспект, Санкт-Петербург",
+      "toCoordinate": [30.244964, 59.983693],
+      "fastestRoute": true,
+      "routeLength": "14 mi (Yandex display)",
+      "duration": "26 min",
+      "displayedTollRub": 600,
+      "displayedAsApproximate": true,
+      "routeEvidence": ["detailed route contains a 10.6 mi ZSD step"],
+      "acceptedByUserPolicy": true,
+      "scope": "Yandex-selected fastest route for this exact direction and endpoints; route-level estimate, not a universal ZSD zone fare"
+    },
+    {
+      "id": "zsd-primorsky-to-blagodatnaya",
+      "from": "Приморский проспект, Санкт-Петербург",
+      "fromCoordinate": [30.244964, 59.983693],
+      "to": "Благодатная улица, Санкт-Петербург",
+      "toCoordinate": [30.324797, 59.876052],
+      "fastestRoute": true,
+      "routeLength": "14.6 mi (Yandex display)",
+      "duration": "24 min",
+      "displayedTollRub": 900,
+      "displayedAsApproximate": true,
+      "routeEvidence": ["detailed route contains ZSD steps and an approximately 11 mi turnaround loop"],
+      "acceptedByUserPolicy": true,
+      "scope": "Yandex-selected fastest route for this exact direction and endpoints; geometry differs from the forward route, so do not mirror the 600 ₽ amount"
+    },
+    {
+      "id": "m12-kazan-to-moscow-city-centres",
+      "from": "Казань",
+      "fromCoordinate": [49.106414, 55.796127],
+      "to": "Москва",
+      "toCoordinate": [37.617644, 55.755819],
+      "fastestRoute": true,
+      "routeLength": "530 mi (Yandex display)",
+      "duration": "9 h 39 min",
+      "displayedTollRub": 4400,
+      "displayedAsApproximate": true,
+      "routeEvidence": ["detailed route starts on M-7 and later follows the AH9 designation to MKAD; map does not expose an exact M-12 entrance/exit pair"],
+      "acceptedByUserPolicy": true,
+      "scope": "Accepted as the Yandex total for the exact Kazan-to-Moscow fastest route; not imported as a direct M-12 tariff cell"
+    },
+    {
+      "id": "m12-moscow-to-kazan-city-centres",
+      "from": "Москва",
+      "fromCoordinate": [37.617644, 55.755819],
+      "to": "Казань",
+      "toCoordinate": [49.106414, 55.796127],
+      "fastestRoute": true,
+      "routeLength": "510 mi (Yandex display)",
+      "duration": "8 h 49 min",
+      "displayedTollRub": null,
+      "displayedAsApproximate": false,
+      "routeEvidence": ["Yandex lists toll road but shows no amount on the fastest route"],
+      "acceptedByUserPolicy": false,
+      "scope": "No amount displayed; unknown from this Yandex check, not zero"
+    },
+    {
+      "id": "spb-to-krasnodar-city-centres",
+      "from": "Санкт-Петербург",
+      "to": "Краснодар",
+      "fastestRoute": true,
+      "routeLength": "1,290 mi (Yandex display)",
+      "duration": "23 h 35 min",
+      "displayedTollRub": 11363,
+      "displayedAsApproximate": true,
+      "routeEvidence": ["detailed route shows ZSD, MSD, MКАД and E115 corridor"],
+      "acceptedByUserPolicy": true,
+      "scope": "Accepted Yandex total for this exact fastest route and current departure context; not componentized by operator"
+    },
+    {
+      "id": "krasnodar-to-spb-city-centres",
+      "from": "Краснодар",
+      "to": "Санкт-Петербург",
+      "fastestRoute": true,
+      "routeLength": "1,290 mi (Yandex display)",
+      "duration": "1 day 17 min",
+      "displayedTollRub": 10910,
+      "displayedAsApproximate": true,
+      "routeEvidence": ["detailed route shows MКАД, MSD, ZSD and M-11/Neva corridor"],
+      "acceptedByUserPolicy": true,
+      "scope": "Accepted Yandex total for this exact fastest route and current departure context; not componentized by operator"
+    }
+  ],
+  "alternativesNotSelected": [
+    {"route": "SPb→Krasnodar", "duration": "1 day 50 min", "displayedTollRub": 10930},
+    {"route": "Krasnodar→SPb", "duration": "1 day 26 min", "displayedTollRub": 10050},
+    {"route": "Kazan→Moscow", "duration": "12 h", "displayedTollRub": null}
+  ],
+  "implementationStatus": {
+    "routeLevelEstimatesAccepted": true,
+    "runtimeAdapterUpdated": false,
+    "reason": "The app's live selected route is produced by a different routing geometry. The Yandex amounts are accepted for their exact map routes, but the current map page does not provide trace geometry or exact toll-gate pairs needed to safely attach each whole-route amount to a different engine route or split it among toll products.",
+    "doNot": ["do not infer a reverse fare", "do not convert map route totals into ZSD zone rates", "do not treat a missing Yandex amount as free", "do not claim operator receipt confirmation"]
+  }
+}
