@@ -1,30 +1,19 @@
-# Текущее состояние калькулятора «Из А в Б»
+# Калькулятор «Из А в Б»: актуальное состояние
 
-2026-10-16T01:58:29.418256+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14draft. Parent remote перед этим checkpoint `0bb3b672b4dac43acdde507da0a999a9099356b6`.
+16.10.2026. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Последний проверенный remote parent020ff944; head этого checkpoint проверяется после сохранения.
 
 ## DONE
 
-Fullbuild658/658+quote/API/Next/TypeScript/static16/16 PASS, ESLint18/diffcheck PASS, исходный код с тех пор не менялся. [Build](checkpoints/2026-10-16-build-pass.md).
+Части1–3 завершены: план20частей; runner default1, PHASE/stream/WAIT15s; focused3/3; fullbuild661/661 + quote/API/Next/TypeScript/static16/16 PASS; ESLint3/diff PASS. [Часть2](checkpoints/2026-10-16-small-parts-02-runner.md), [build](checkpoints/2026-10-16-small-parts-02-build-pass.md).
 
-Departurepolicy реализована: вся поездка по дате/времени старта; геометрия/направление/даты источника проверяются. Междорожные векторы отложены. OfflineГуляйполе→Москва3810/4640 complete.
+[Сверка evidence](checkpoints/evidence/2026-10-16-stage-reconciliation.json): stage1 **23/155**,stage2 **0/154**. Corpus statuses28/4 не подтверждают полноту. Часть3=19/19 ранее проверенных, часть4=4/19. Audited означает воспроизводимость, не подтверждение цены. Старые результаты до trip-departure-v1 не выдавать за новые.
 
-Stage1 **23/155** по реально доступным raw/live/replays; stage2 **154** не начат. Последний случай dnr-краматорск-moscow-center: audited. [Checkpoint](checkpoints/2026-10-16-015829-dnr-краматорск-moscow-center-audit.md). [Последние actual результаты и next](checkpoints/evidence/2026-10-15T22-38-01-683Z-dnr-краматорск-moscow-center-batch-verified.json). REPORT/EVIDENCE_AVAILABILITY обновлены. Original Лисичанск→Москва summary утрачен, offline reconstruction не original live. Старые цены до trip-departure-v1 не выдавать за новые повторы.
+## IN PROGRESS / NEXT
 
-## Автоматическая очередь 20 частей
+Часть4: STARTED **kherson-аскания-нова-kazan-center**, single-case batch --limit1. [Входы/команда/recovery](checkpoints/2026-10-16-small-parts-02-done-04-started.md). Лог checkpoints/evidence/2026-10-16-askania-kazan-batch.log. Сначала результат и durable checkpoint; затем следующий pending ID из [JSON плана](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
 
-Часть1 DONE. Часть2 IN PROGRESS: runner limit1, вывод/WAIT15s, 3/3 focused PASS; evidence-сверка **23/155 и 0/154**, а не corpus28/4. [Checkpoint](checkpoints/2026-10-16-small-parts-02-runner.md). STARTED full build: лог checkpoints/evidence/2026-10-16-small-parts-02-build.log. Затем lint/diff и часть3. Пользователь16.10 02:12 поручил автоматически проходить все части; не ждать команды «дальше», но каждый малый шаг сначала сохранять в GitHub и проверять head/tree. [План](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.md).
+Пользователь16.10 02:12 поручил автоматически пройти все части, без запроса «дальше». Каждый малый шаг отдельно сохранять в GitHub, проверять head/tree перед следующим; STARTED перед долгим запуском. При провале сохранения остановить расширение. [CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md).
 
-## NEXT
+Политика: самый быстрый маршрут; тариф всей поездки по дате отправления; unknown не бесплатно, subtotal не полный итог. Междорожные векторы отложены. Не main/merge/Production/Android без прямого запроса. GitHub/routing разрешения пользователя действуют, не спрашивать повторно.
 
-kherson-аскания-нова-kazan-center по [замороженной очереди](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json). Каждый один маршрут: STARTED→single-case batch→report/inventory→checkpoint→localcommit→GitHub→head/tree readback→следующий. Unknown не бесплатно; subtotal не полный итог.
-
-Прямые разрешения текущего чата: публичныйGitHub16.10 00:07; координаты/контрольные точки/маршрутные параметры Valhalla/OSRM/BRouter16.10 01:16. Не спрашивать повторно. CLI без credentials, connector с точной проверкой blob/tree/head работает. Не main/merge/Production/Android без запроса.
-
-[WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md),[NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md),[DECISIONS](../experiments/nationwide-tolls/DECISIONS.md),[CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md).
-
-
-16.10.2026 02:12 МСК: пользователь поручил автоматическое последовательное выполнение всех частей без ожидания команды «дальше». Часть2 STARTED: [checkpoint](checkpoints/2026-10-16-small-parts-02-started.md). Переходить дальше после проверенного сохранения каждого малого подшага.
-
-16.10.2026: часть2 build FAILED(exit1): Turbopack отверг внешний symlink node_modules. STARTED локальная копия зависимостей и повтор build. checkpoints/2026-10-16-small-parts-02-build-failed.md.
-
-16.10.2026: часть2 full build retry PASS661/661 + quote/API + Next/TypeScript/static16/16. Lint/diff STARTED. checkpoints/2026-10-16-small-parts-02-build-pass.md.
+[WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md), [NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md), [DECISIONS](../experiments/nationwide-tolls/DECISIONS.md), [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.md).

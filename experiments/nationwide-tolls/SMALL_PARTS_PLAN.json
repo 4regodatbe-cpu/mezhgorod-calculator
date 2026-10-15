@@ -12,12 +12,12 @@
     {
       "id": 2,
       "title": "Проверка ожиданий процесса, тайм-аутов и достоверного счётчика",
-      "status": "planned"
+      "status": "done"
     },
     {
       "id": 3,
       "title": "Этап 1: группа 1/8",
-      "status": "planned",
+      "status": "done",
       "cases": [
         {
           "caseId": "zaporizhzhia-пришиб-kazan-center",
@@ -119,7 +119,7 @@
     {
       "id": 4,
       "title": "Этап 1: группа 2/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "dnr-донецк-saint-petersburg-center",
