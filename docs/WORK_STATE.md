@@ -30,3 +30,6 @@
 
 
 Последний checkpoint: [routing approval blocker](checkpoints/2026-10-16-routing-approval-blocked.md). Тесты/сборка/replay завершены; live Бахмут не получен.
+
+
+2026-10-16 01:17 МСК: прямое разрешение передачи координат/маршрутных параметров Valhalla/OSRM/BRouter получено в текущем чате («Разрешаю доступ»). Approval blocker снят. STARTED live Бахмут→Казань. [Checkpoint](checkpoints/2026-10-16-0117-routing-authorized-started.md).
