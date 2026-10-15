@@ -35,6 +35,7 @@ test('V3 Anapa and Yalta requests expose numeric A289 price without confirmation
   assert.ok(tolls.amount===minPrice||tolls.amount===minPrice+410,JSON.stringify(tolls));
   assert.equal('priceConfirmation' in tolls,false);
   assert.equal('displayLabel' in tolls,false);
+  assert.ok(tolls.segments.every((segment:string)=>!segment.includes('Стоимость не подтверждена')));
   assert.ok(body.legs[0].fast.pricingByVehicle.comfort.totalPrice>0);
  }
 });

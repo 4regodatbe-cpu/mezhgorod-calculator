@@ -65,6 +65,7 @@ test('complete paid traces preserve the actual A289 price without confirmation l
   assert.equal(result.body.legs[0].fast.tolls.amount,amount);
   assert.equal('displayLabel' in result.body.legs[0].fast.tolls,false);
   assert.equal('priceConfirmation' in result.body.legs[0].fast.tolls,false);
+  assert.ok(result.body.legs[0].fast.tolls.segments.every((segment:string)=>!segment.includes('Стоимость не подтверждена')));
   assert.equal(result.body.legs.length,1);assert.equal(result.body.legs[0].free,null);
  }
 });

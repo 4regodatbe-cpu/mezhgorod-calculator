@@ -82,7 +82,11 @@ export async function POST(request: NextRequest) {
       const tolls = "tolls" in trip && trip.tolls && typeof trip.tolls === "object"
         ? trip.tolls as Record<string, unknown> : null;
       const publicTolls = tolls
-        ? Object.fromEntries(Object.entries(tolls).filter(([key]) => key !== "priceConfirmation" && key !== "displayLabel"))
+        ? Object.fromEntries(Object.entries(tolls)
+          .filter(([key]) => key !== "priceConfirmation" && key !== "displayLabel")
+          .map(([key, value]) => [key, key === "segments" && Array.isArray(value)
+            ? value.map(segment => typeof segment === "string" ? segment.replace(/(?:\s*[·:—-]\s*)?Стоимость не подтверждена\.?/i, "").trim() : segment).filter(Boolean)
+            : value]))
         : null;
       return {...summary, ...(publicTolls ? {tolls:publicTolls} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
         from:from.label,to:to.label,vehicle,mode,normalRateOverrides,specialRateOverrides,multiplier:body.multiplier,
