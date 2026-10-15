@@ -4,7 +4,7 @@ export function requestKey(url, init) {
   return createHash('sha256').update(JSON.stringify([String(url), init?.method ?? 'GET', init?.body ?? null])).digest('hex');
 }
 
-export function recordingFetch(fetch, calls) {
+export function recordingFetch(fetch, calls, onProgress = () => {}) {
   return async (url, init) => {
     // Reserve the slot before awaiting: retries must replay in request order.
     const item = { key: requestKey(url, init), url: String(url), method: init?.method ?? 'GET', body: init?.body ?? null };
@@ -17,7 +17,7 @@ export function recordingFetch(fetch, calls) {
     } catch (error) {
       item.error = String(error);
       throw error;
-    } finally { item.elapsedMs = Date.now() - started; }
+    } finally { item.elapsedMs = Date.now() - started; onProgress(calls); }
   };
 }
 

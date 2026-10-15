@@ -91,7 +91,13 @@ const departureAt = process.argv[4] ?? '2026-10-15T09:00:00+03:00';
 let dir;
 try {
   if (mode === '--live') {
-    globalThis.fetch = recordingFetch(originalFetch, calls);
+    dir = outputDir(firstArg);
+    const progressPath = path.join(dir, `progress-${stamp()}.json.gz`);
+    globalThis.fetch = recordingFetch(originalFetch, calls, () => {
+      const temp = `${progressPath}.tmp`;
+      fs.writeFileSync(temp, gzipSync(JSON.stringify({ complete: false, departureAt, record: record ?? null, calls })));
+      fs.renameSync(temp, progressPath);
+    });
     record = await live(firstArg);
     dir = outputDir(firstArg);
   } else if (mode === '--replay') {
