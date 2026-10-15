@@ -15,9 +15,9 @@
     },
     "lnr": {
       "planned": 40,
-      "historicallyAudited": 24,
-      "rawAvailable": 24,
-      "fourArtifactsAvailable": 23
+      "historicallyAudited": 25,
+      "rawAvailable": 25,
+      "fourArtifactsAvailable": 24
     },
     "zaporizhzhia": {
       "planned": 40,
@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 10
     }
   },
-  "rawCaptureCount": 86,
-  "rawCaptureCaseCount": 84,
+  "rawCaptureCount": 87,
+  "rawCaptureCaseCount": 85,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -2232,10 +2232,49 @@
     {
       "caseId": "lnr-марковка-moscow-center",
       "region": "lnr",
-      "historicalStatus": "planned",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
-      "artifacts": {}
+      "historicalStatus": "audited",
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-51-38-439Z.json",
+          "exists": true,
+          "bytes": 5174,
+          "sha256": "f30abf7197c782b4c80a0f5a1a50128acc31b183e5ff0ae0359b294e01e5f65c",
+          "gitBlobSha": "714ffe1919efea6dffe5ade0b15924f8e209f58f",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/2026-10-15T23-51-38-368Z-capture.json.gz",
+          "exists": true,
+          "bytes": 404756,
+          "sha256": "8ae0a026aa886ee5040171360ab68c6c9e2c690025d9ad812b68c6854e9af04c",
+          "gitBlobSha": "ba1697e2e3c87f6edf74c5e57a4b40b1c1314729",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 10
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-51-38-940Z.json",
+          "exists": true,
+          "bytes": 5252,
+          "sha256": "878bff6b933134213f4798e6f78f86183d9d1ac7893c897272df826dabd7e049",
+          "gitBlobSha": "b59170fbb374c8873b7e8933c02a248a831b741c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-51-39-432Z.json",
+          "exists": true,
+          "bytes": 5252,
+          "sha256": "37ce2d71b41a295592e2379b3bd34f78bac6066a05840502325b7fc3646961e3",
+          "gitBlobSha": "2081606e7f6b2447d7109787207f131184ab3bc3",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     },
     {
       "caseId": "lnr-марковка-saint-petersburg-center",
@@ -8705,6 +8744,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-51-33-846Z.json",
+      "caseId": "lnr-марковка-moscow-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-51-38-439Z.json",
+          "exists": true,
+          "bytes": 5174,
+          "sha256": "f30abf7197c782b4c80a0f5a1a50128acc31b183e5ff0ae0359b294e01e5f65c",
+          "gitBlobSha": "714ffe1919efea6dffe5ade0b15924f8e209f58f",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/2026-10-15T23-51-38-368Z-capture.json.gz",
+          "exists": true,
+          "bytes": 404756,
+          "sha256": "8ae0a026aa886ee5040171360ab68c6c9e2c690025d9ad812b68c6854e9af04c",
+          "gitBlobSha": "ba1697e2e3c87f6edf74c5e57a4b40b1c1314729",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 10
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-51-38-940Z.json",
+          "exists": true,
+          "bytes": 5252,
+          "sha256": "878bff6b933134213f4798e6f78f86183d9d1ac7893c897272df826dabd7e049",
+          "gitBlobSha": "b59170fbb374c8873b7e8933c02a248a831b741c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-51-39-432Z.json",
+          "exists": true,
+          "bytes": 5252,
+          "sha256": "37ce2d71b41a295592e2379b3bd34f78bac6066a05840502325b7fc3646961e3",
+          "gitBlobSha": "2081606e7f6b2447d7109787207f131184ab3bc3",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -9517,6 +9601,17 @@
       "bytes": 440942,
       "sha256": "5103e73b3e79e86a0334b1af7c0cb346f37177d6d7a3ec7d18907a075159b785",
       "gitBlobSha": "b2a26deb888bb33e71bf7ddfa4ec4f52b77fe20f",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 10
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/2026-10-15T23-51-38-368Z-capture.json.gz",
+      "exists": true,
+      "bytes": 404756,
+      "sha256": "8ae0a026aa886ee5040171360ab68c6c9e2c690025d9ad812b68c6854e9af04c",
+      "gitBlobSha": "ba1697e2e3c87f6edf74c5e57a4b40b1c1314729",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,
