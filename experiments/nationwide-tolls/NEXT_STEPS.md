@@ -23,3 +23,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 16.10.2026: ESLint3/diff PASS; часть2 DONE. Часть3=19/19 по существующему evidence, DONE без повторов. Часть4=4/19, STARTED Аскания-Нова→Казань. [Checkpoint](../../docs/checkpoints/2026-10-16-small-parts-02-done-04-started.md). Автоматически далее по JSON после durable-сохранения.
 
 16.10.2026: часть4 Аскания-Нова→Казань audited, stage1=24/155. Итогunknown: A289 exits unresolved; report/inventory exit0. NEXT STARTED Аскания-Нова→Керчь single-case. [Checkpoint](../../docs/checkpoints/2026-10-16-small-parts-04-askania-kazan.md).
+
+2026-10-16T02:22:11.743397+03:00: часть4,case=kherson-аскания-нова-kerch-center,audited,batch exit0,report/inventory[0, 0],stage=[25, 0]. Parenta2363425b89d5b10b004cb38dba99ae891ebc452; [checkpoint](../../docs/checkpoints/2026-10-15T23-21-53-548Z-part4.md). NEXTSTARTED часть4: kherson-аскания-нова-moscow-center. No merge/Production.

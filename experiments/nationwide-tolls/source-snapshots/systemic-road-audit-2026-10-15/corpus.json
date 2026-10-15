@@ -4508,7 +4508,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-22-07-295Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kerch-center/2026-10-15T23-22-07-273Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 354856,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-21-53-781Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-22-07-295Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kerch-center/2026-10-15T23-22-07-273Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-22-07-641Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-22-08-008Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-геническ-moscow-center",
