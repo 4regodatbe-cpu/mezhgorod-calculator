@@ -782,7 +782,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-36-17-143Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kazan-center/2026-10-15T22-36-17-033Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1463931,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-35-50-959Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-36-17-143Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kazan-center/2026-10-15T22-36-17-033Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-36-17-646Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-36-18-077Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-краматорск-kerch-center",
