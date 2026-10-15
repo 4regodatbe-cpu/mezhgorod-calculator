@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-15T23:57:40.220Z",
-  "phase": "DONE",
+  "at": "2026-10-15T23:57:43.287Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,82 +23,10 @@
       "region": "zaporizhzhia"
     }
   },
-  "caseId": "zaporizhzhia-гуляйполе-kerch-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "zaporizhzhia-гуляйполе-kerch-center",
-    "startedAt": "2026-10-15T23:57:22.953Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-57-27-141Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-kerch-center/2026-10-15T23-57-27-069Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-57-27-623Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-57-28-086Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "m4",
-        "a289"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 1650,
-      "weekdayAmount": 1650,
-      "weekendAmount": 1800,
-      "period": "понедельник–четверг",
-      "segments": [
-        "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
-        "А-289: Maryanskaya → TamanBridge: 800 ₽"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 1800,
-      "weekdayAmount": 1650,
-      "weekendAmount": 1800,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
-        "А-289: Maryanskaya → TamanBridge: 800 ₽"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 850,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "a289",
-        "amount": 800,
-        "reason": "A-289 selected-route OD vector"
-      }
-    ],
-    "finishedAt": "2026-10-15T23:57:28.102Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-57-21-660Z-part6",
-  "parent": "f5ca542987a39c2875f937f6652813a4ebd9471f",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-57-40-220Z-done.json"
+  "caseId": "zaporizhzhia-кушугум-kazan-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-57-43-287Z-part6",
+  "parent": "6a9b8305be8bdef1a77dcd9c824320b987210b3d",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-57-43-287Z-started.json"
 }
