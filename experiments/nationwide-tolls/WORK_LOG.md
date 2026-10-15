@@ -1533,3 +1533,8 @@ Focused5/6; причина fixture wayId0. Raw/test/output сохранены, �
 ## 2026-10-15 — safe report DONE; gate STARTED
 
 Report generated40historic/26complete, missing14live; inventory27rawOD/55missingrefs остаётся полным индексом. Integration1/1 PASS (lost live/raw/corrupt replay), git diff checkPASS. `docs/checkpoints/2026-10-15-193500-safe-report-and-gate-started.md`. Next npm run test:audit, затем восстановить LNR summary из raw.
+
+
+## 2026-10-15 — full audit BLOCKED dependencies
+
+npm run test:audit exit1, missing typescript/next; stdout сохранён. `docs/checkpoints/2026-10-15-full-audit-dependencies-blocked.md`. STARTED pnpm install --frozen-lockfile, без отключения policy.

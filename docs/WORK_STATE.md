@@ -1,3 +1,9 @@
+## CURRENT — full audit BLOCKED зависимостями; install STARTED
+
+`npm run test:audit` exit1: отсутствуют typescript/next в свежем clone. [Checkpoint](checkpoints/2026-10-15-full-audit-dependencies-blocked.md). Полный stdout сохранён; gatePASS не заявляется. STARTED: pnpm install --frozen-lockfile; затем повтор audit/build. Evidence recovery:27rawOD/26полных комплектов/13утраченныхraw.
+
+---
+
 ## CURRENT — безопасный report восстановлен; STARTED audit gate
 
 DONE: [REPORT](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.md) больше не падает на утраченном файле и не считает старый audited без полного evidence.40historical/26полных комплектов; ещё1raw требует восстановления live summary. Focused report1/1 и IO6/6 PASS. [Checkpoint](checkpoints/2026-10-15-193500-safe-report-and-gate-started.md). NEXT: npm run test:audit, полный stdout; затем recovery одного LNR raw без summary.

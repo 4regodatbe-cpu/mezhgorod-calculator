@@ -1,3 +1,7 @@
+# CURRENT — установить зависимости, потом audit/build
+
+Full audit exit1: missing typescript/next. STARTED pnpm install --frozen-lockfile. Сохранить install result прежде следующего gate.
+
 # CURRENT — report восстановлен, audit gate STARTED
 
 - [x] Report handles missing/corrupt evidence; historical40/complete26.
