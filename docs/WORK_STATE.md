@@ -8,7 +8,7 @@ VERIFIED: focused M-11/road suites 28/28; `pnpm build` — audit 645/645, quote/
 
 SCOPE LIMIT: при аэропортовом proximity без доказанного строгого продолжения tail resolver денег не добавляет; маршрут без границы основной М-11 пары не получает полный результат только из-за 94 ₽. Это ограничение детекции пути, не открытый вопрос тарифа. [Этап 09](../experiments/nationwide-tolls/stages/09-m11-tail-evidence-audit-2026-10-15.md).
 
-REMOTE: implementation published in PR14 at head `019859828de9aa3edbfcbf76b0be1fe7baebbb4e`, branch `fix/v3-missing-route-prices-2026-10-15`, PR open/draft/mergeable. Vercel pending; Actions run 38681974174 in progress at last check. No merge/main/Production/Android changes. NEXT: record this block, await exact-SHA checks, then fresh long-chain/API acceptance. Other independent blockers: additional ZSD zones, CKAD endpoints/context and M12↔CKAD pair.
+REMOTE: runtime/evidence commit `019859828de9aa3edbfcbf76b0be1fe7baebbb4e` is published in PR14; the current PR tip also includes the docs-only handoff refresh. PR open/draft/mergeable. Vercel is success for runtime commit 0198598; Vercel is pending for latest docs-only tip; Actions run 38681974174 remains in progress for the runtime commit. Branch `fix/v3-missing-route-prices-2026-10-15`. No merge/main/Production/Android changes. NEXT: await exact runtime Action completion, then fresh long-chain/API acceptance. Other independent blockers: additional ZSD zones, CKAD endpoints/context and M12↔CKAD pair.
 
 ---
 

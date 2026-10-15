@@ -1379,3 +1379,8 @@ Reviewed conservative subset27 paid way IDs полностью в zone1. Runtime
 **Сохранение/публикация.** Runtime/evidence commit local `f9e43406bf4ec1ceb51cbb1fe848bf87d7188463`; его дерево опубликовано в GitHub commit `019859828de9aa3edbfcbf76b0be1fe7baebbb4e`. PR14 head теперь `019859828de9aa3edbfcbf76b0be1fe7baebbb4e`, open/draft/mergeable. На последней проверке Actions run `38681974174` in_progress, Vercel pending. Docs handoff обновлён отдельно в том же branch после итогового мониторинга. Main/Production/Android не менялись.
 
 **Следующий шаг.** Проверить завершение Actions/Vercel на exact head, выполнить API/Preview acceptance по длинной цепочке и затем продолжить отдельные blockers ZSD beyond zone1, CKAD physical context/endpoints, M12↔CKAD. Не переоткрывать выбор 94 ₽ без нового тарифа или нового scope доказательства.
+
+
+### Status refresh after code and documentation publication — 2026-10-15
+
+PR14 was checked after both commits. Runtime/evidence commit `019859828de9aa3edbfcbf76b0be1fe7baebbb4e` remains published; PR is open, draft and mergeable. Vercel is **success** for runtime commit 0198598. The later docs-only handoff checkpoint has its own pending Vercel status; the PR includes that docs-only tip. GitHub Actions run `38681974174` for runtime commit 0198598 is still **in_progress**. Do not report full hosted CI success until it concludes. No code changed after the verified build.

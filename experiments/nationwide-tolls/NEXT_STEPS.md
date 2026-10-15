@@ -3,8 +3,9 @@
 - [x] По прямому правилу пользователя применять 94 ₽ к распознанному выбранному проезду М-11 за ПВП 679 в обоих направлениях. Это заменяет 56/38 для этого продукта; не складывать тарифы.
 - [x] Runtime resolver действует только при строгом M-11 tail continuation, проверяет эффективную дату приказа 274 (с 04.09.2026); airport proximity без обнаруженного tail не превращается в charge.
 - [x] Focused tests 28/28, полный gate/build 645/645 + quote/API/Next/TypeScript/static16/16 PASS; Krasnodar↔SPb recorded replays дают tail94 в обе стороны, полный итог 10 464 weekday / 12 334 weekend. Kazan↔SPb replays также подтверждают tail94, но total unknown из-за ZSD beyond zone1.
-- [x] Implementation опубликован в PR14, head `019859828de9aa3edbfcbf76b0be1fe7baebbb4e`; Actions run 38681974174 ещё выполняется, Vercel pending на последней проверке.
-- [ ] Дождаться Actions/Vercel exact-SHA, затем API/Preview smoke; Main/Production/Android не менять.
+- [x] Runtime checkpoint `019859828de9aa3edbfcbf76b0be1fe7baebbb4e` опубликован в PR14; latest PR tip также содержит docs-only handoff. PR open/draft/mergeable.
+- [x] Vercel success для runtime SHA; Vercel pending для latest docs tip. Actions run 38681974174 на runtime SHA in progress при последней проверке.
+- [ ] Дождаться Actions для runtime SHA, затем API/Preview smoke; Main/Production/Android не менять.
 - [ ] Продолжить независимые gaps: ZSD zone2+, CKAD physical boundaries/context, M12↔CKAD operator pair. Тариф М-11 повторно не обсуждать, если не изменится исходный приказ или scope route detection.
 
 ## CURRENT 2026-10-15 — после MMK/ЗСД zone1
