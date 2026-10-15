@@ -3,6 +3,7 @@
 - [x] Визуально сверить сохранённый order274 PDF, pp.9–10: 56 ₽ tail 679–681/681–684; 38 ₽ airport access; 94 ₽ combined RVP. Не складывать строки.
 - [x] Исправить тест: обе близкие аэропортовые рамки дают `ambiguous_nearby_gates`, без направления/денег; публичный API оставляет неизвестное `null`.
 - [ ] Связать selected-route toll events и OSM directed ways с полной физической границей соответствующего RVP в обе стороны. Текущие 25 м дают совпадение обеих рамок и не разрешают тариф.
+- [x] Повторно пройти Краснодар↔СПб по live fastest-route audit; оба trace complete, полный итог unknown, единственный unresolved — хвост М-11. Прямой passage использует соседнюю service booth, обратный подтверждает p679 fee gate; это не доказывает выход/полный tail product.
 - [ ] После независимого binding реализовать отдельные строки 56/38/94 с anti-double-charge/completeness tests и проверить live Краснодар↔СПб и Казань↔СПб.
 - [x] `pnpm build`: 642/642 + quote/API + Next/TypeScript PASS; targeted lint PASS. Full lint остаётся красным на 19 старых repo-wide lint issues, см. `docs/WORK_STATE.md`.
 
