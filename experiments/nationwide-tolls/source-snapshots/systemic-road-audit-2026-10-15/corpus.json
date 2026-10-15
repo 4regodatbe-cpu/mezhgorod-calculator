@@ -482,7 +482,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-29-26-262Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-moscow-center/2026-10-15T22-29-26-171Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1182425,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-29-02-478Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-29-26-262Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-moscow-center/2026-10-15T22-29-26-171Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-29-26-682Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-29-27-104Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-волноваха-saint-petersburg-center",

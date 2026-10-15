@@ -76,3 +76,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16T01:28:30.254638+03:00: dnr-волноваха-kerch-center audited, commandexit0,stage1=14/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012830-dnr-волноваха-kerch-center-audit.md). NEXT dnr-волноваха-moscow-center.
+
+
+2026-10-16T01:29:28.936436+03:00: dnr-волноваха-moscow-center audited, commandexit0,stage1=15/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012928-dnr-волноваха-moscow-center-audit.md). NEXT dnr-волноваха-saint-petersburg-center.
