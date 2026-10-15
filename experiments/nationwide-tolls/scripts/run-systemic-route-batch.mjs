@@ -1,14 +1,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
+import { runAuditChild } from './audit-child-process.mjs';
 import { pricingParity } from './systemic-audit-io.mjs';
 
-const run = promisify(execFile);
 const root = 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15';
 const args = process.argv.slice(2);
 function option(name, fallback) { const i = args.indexOf(name); return i < 0 ? fallback : args[i + 1]; }
-const limit = Number(option('--limit', 8));
+const limit = Number(option('--limit', 1));
 if (!Number.isSafeInteger(limit) || limit < 1) throw Error('--limit must be a positive integer');
 const region = option('--region', null);
 const group = option('--group', null);
@@ -32,11 +30,10 @@ save();
 let consecutiveFailures = 0;
 
 async function invoke(args) {
-  try {
-    await run(process.execPath, ['--import', './scripts/register-ts-paths.mjs', 'experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs', ...args], { timeout: 300_000, maxBuffer: 2 * 1024 * 1024 });
-    return { ok: true };
-  } catch (error) { return { ok: false, code: error.code, error: error.stderr?.trim() || error.message }; }
+  console.log(`PHASE ${args[0]} ${args[1]} ${args[2]}`);
+  return runAuditChild(['--import', './scripts/register-ts-paths.mjs', 'experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs', ...args]);
 }
+
 function newest(dir, prefix) {
   return fs.readdirSync(dir).filter(name => name.startsWith(prefix) && name.endsWith('.json')).sort().at(-1);
 }
