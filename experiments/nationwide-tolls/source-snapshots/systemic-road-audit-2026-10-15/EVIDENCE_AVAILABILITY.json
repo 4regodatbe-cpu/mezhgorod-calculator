@@ -16,8 +16,8 @@
     "lnr": {
       "planned": 40,
       "historicallyAudited": 10,
-      "rawAvailable": 7,
-      "fourArtifactsAvailable": 6
+      "rawAvailable": 8,
+      "fourArtifactsAvailable": 7
     },
     "zaporizhzhia": {
       "planned": 40,
@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 0
     }
   },
-  "rawCaptureCount": 29,
-  "rawCaptureCaseCount": 27,
+  "rawCaptureCount": 30,
+  "rawCaptureCaseCount": 28,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -1021,24 +1021,46 @@
       "caseId": "lnr-лисичанск-saint-petersburg-center",
       "region": "lnr",
       "historicalStatus": "audited",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
       "artifacts": {
         "live": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T16-58-16-862Z.json",
+          "exists": true,
+          "bytes": 9151,
+          "sha256": "ae2d659cdfaf4cdefcafb6428342d20c19a25d0c32d46f1c520b51466ba4b814",
+          "gitBlobSha": "fcdaadb6d4933bccfa352bdd13a485619138dfb9",
+          "recoveryShaMatches": null,
+          "readableJson": true
         },
         "capture": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/2026-10-15T12-05-23-413Z-capture.json.gz",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/2026-10-15T16-58-16-753Z-capture.json.gz",
+          "exists": true,
+          "bytes": 685979,
+          "sha256": "4e57bf75932979db5bdced425b67dc617fd7107b87824d3ed6299e77186704f8",
+          "gitBlobSha": "567bab4788d09c61f755227feac929b0924fbacd",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 17
         },
         "sameDateReplay": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-05-24-017Z.json",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T16-58-17-414Z.json",
+          "exists": true,
+          "bytes": 9229,
+          "sha256": "19410fbfa280316d55165a2623e33f57dc63b3679851add0ea8fbc9d03110331",
+          "gitBlobSha": "53a2d5466c5a5a728cbe39b0e71cb48543c5c698",
+          "recoveryShaMatches": null,
+          "readableJson": true
         },
         "weekendReplay": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-05-24-545Z.json",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T16-58-17-954Z.json",
+          "exists": true,
+          "bytes": 9304,
+          "sha256": "3770ecd42b535a84f695e3f4d155db9de99efff1ead4b7193909cbddc0afcfb6",
+          "gitBlobSha": "672579a5f6b79628375f5eaa0191c9cabedcce5f",
+          "recoveryShaMatches": null,
+          "readableJson": true
         }
       }
     },
@@ -4126,6 +4148,57 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T16-43-50-233Z.json",
+      "caseId": "lnr-лисичанск-saint-petersburg-center",
+      "historicalStatus": null,
+      "artifacts": {}
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T16-57-48-940Z.json",
+      "caseId": "lnr-лисичанск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T16-58-16-862Z.json",
+          "exists": true,
+          "bytes": 9151,
+          "sha256": "ae2d659cdfaf4cdefcafb6428342d20c19a25d0c32d46f1c520b51466ba4b814",
+          "gitBlobSha": "fcdaadb6d4933bccfa352bdd13a485619138dfb9",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/2026-10-15T16-58-16-753Z-capture.json.gz",
+          "exists": true,
+          "bytes": 685979,
+          "sha256": "4e57bf75932979db5bdced425b67dc617fd7107b87824d3ed6299e77186704f8",
+          "gitBlobSha": "567bab4788d09c61f755227feac929b0924fbacd",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 17
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T16-58-17-414Z.json",
+          "exists": true,
+          "bytes": 9229,
+          "sha256": "19410fbfa280316d55165a2623e33f57dc63b3679851add0ea8fbc9d03110331",
+          "gitBlobSha": "53a2d5466c5a5a728cbe39b0e71cb48543c5c698",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T16-58-17-954Z.json",
+          "exists": true,
+          "bytes": 9304,
+          "sha256": "3770ecd42b535a84f695e3f4d155db9de99efff1ead4b7193909cbddc0afcfb6",
+          "gitBlobSha": "672579a5f6b79628375f5eaa0191c9cabedcce5f",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -4447,6 +4520,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 11
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/2026-10-15T16-58-16-753Z-capture.json.gz",
+      "exists": true,
+      "bytes": 685979,
+      "sha256": "4e57bf75932979db5bdced425b67dc617fd7107b87824d3ed6299e77186704f8",
+      "gitBlobSha": "567bab4788d09c61f755227feac929b0924fbacd",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 17
     }
   ]
 }

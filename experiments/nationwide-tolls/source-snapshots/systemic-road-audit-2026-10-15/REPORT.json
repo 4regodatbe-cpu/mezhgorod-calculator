@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T16:23:04.790Z",
+  "generatedAt": "2026-10-15T16:58:40.001Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
     "distinctCaseAttempts": 40,
-    "recordedLiveAttempts": 40,
-    "liveCaptured": 26,
-    "savedLiveSummaries": 26,
-    "missingOrInvalidReferences": 14,
-    "audited": 26,
-    "traceComplete": 26,
-    "sameDateParity": 26
+    "recordedLiveAttempts": 41,
+    "liveCaptured": 27,
+    "savedLiveSummaries": 27,
+    "missingOrInvalidReferences": 13,
+    "audited": 27,
+    "traceComplete": 27,
+    "sameDateParity": 27
   },
   "regionCounts": {
     "dnr": {
@@ -22,9 +22,9 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 6,
-      "audited": 6,
-      "traceComplete": 6,
+      "liveCaptured": 7,
+      "audited": 7,
+      "traceComplete": 7,
       "pricedWeekday": 5,
       "pricedWeekend": 5
     },
@@ -690,6 +690,38 @@
       "routeSeconds": 88439
     },
     {
+      "caseId": "lnr-лисичанск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T16-58-16-862Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1736132,
+      "routeSeconds": 74082
+    },
+    {
       "caseId": "kherson-чулаковка-saint-petersburg-center",
       "historicalStatus": "audited",
       "status": "audited",
@@ -1102,13 +1134,6 @@
       "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json'"
     },
     {
-      "caseId": "lnr-лисичанск-saint-petersburg-center",
-      "kind": "live",
-      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json",
-      "reason": "ENOENT",
-      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json'"
-    },
-    {
       "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
       "kind": "live",
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json",
@@ -1172,6 +1197,7 @@
         "dnr-широкино-moscow-center",
         "kherson-чулаковка-moscow-center",
         "dnr-широкино-saint-petersburg-center",
+        "lnr-лисичанск-saint-petersburg-center",
         "kherson-чулаковка-saint-petersburg-center",
         "kherson-чулаковка-kazan-center",
         "dnr-урзуф-moscow-center",
@@ -1343,6 +1369,24 @@
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-878Z.json"
         },
         {
+          "caseId": "lnr-лисичанск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T16-58-16-862Z.json"
+        },
+        {
+          "caseId": "lnr-лисичанск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T16-58-17-414Z.json"
+        },
+        {
           "caseId": "kherson-чулаковка-saint-petersburg-center",
           "detail": {
             "departureAt": "2026-10-15T09:00:00+03:00",
@@ -1451,7 +1495,7 @@
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-17-16-570Z.json"
         }
       ],
-      "caseCount": 15
+      "caseCount": 16
     },
     {
       "code": "saved-live-evidence-missing",
@@ -1462,7 +1506,6 @@
         "zaporizhzhia-пришиб-kerch-center",
         "lnr-лисичанск-moscow-center",
         "zaporizhzhia-молочанск-moscow-center",
-        "lnr-лисичанск-saint-petersburg-center",
         "zaporizhzhia-молочанск-saint-petersburg-center",
         "zaporizhzhia-молочанск-kazan-center",
         "zaporizhzhia-молочанск-kerch-center",
@@ -1503,11 +1546,6 @@
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json"
         },
         {
-          "caseId": "lnr-лисичанск-saint-petersburg-center",
-          "detail": "Historic execution manifest has no readable live summary",
-          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json"
-        },
-        {
           "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
           "detail": "Historic execution manifest has no readable live summary",
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json"
@@ -1543,7 +1581,7 @@
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json"
         }
       ],
-      "caseCount": 14
+      "caseCount": 13
     },
     {
       "code": "a289:unpriced",
@@ -1837,7 +1875,8 @@
       "code": "zsd:unpriced",
       "cases": [
         "dnr-гранитное-saint-petersburg-center",
-        "lnr-брянка-saint-petersburg-center"
+        "lnr-брянка-saint-petersburg-center",
+        "lnr-лисичанск-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -1893,9 +1932,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T11-58-00-835Z.json"
+        },
+        {
+          "caseId": "lnr-лисичанск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T16-58-16-862Z.json"
+        },
+        {
+          "caseId": "lnr-лисичанск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T16-58-17-414Z.json"
+        },
+        {
+          "caseId": "lnr-лисичанск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T16-58-17-954Z.json"
         }
       ],
-      "caseCount": 2
+      "caseCount": 3
     },
     {
       "code": "m4:unpriced",

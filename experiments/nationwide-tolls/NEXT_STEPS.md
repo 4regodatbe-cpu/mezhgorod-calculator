@@ -1,3 +1,8 @@
+# CURRENT 2026-10-15-195922 — следующийcase lnr-рубежное-moscow-center
+
+- [x] lnr-лисичанск-saint-petersburg-center: executionaudited, parityTrue; complete datasets27, missingraw12.
+- [ ] После remotecheckpoint следующийодинcase `lnr-рубежное-moscow-center` --limit1.
+
 # CURRENT — user consent получен, live STARTED
 
 - [x] Explicit user authorization Valhalla/OSRM/BRouter coordinates/routing parameters.

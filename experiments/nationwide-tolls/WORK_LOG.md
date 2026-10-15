@@ -1573,3 +1573,8 @@ Single-caseSTART, новыйcapture не подтверждён; automatic revie
 ## 2026-10-15-195634МСК — routing consent получен/live STARTED
 
 Прямое разрешение пользователя на координаты/параметры дляValhalla/OSRM/BRouter сохранено вDECISIONS. `docs/checkpoints/2026-10-15-195634-routing-consent-live-started.md`. Parentd789ae5/PR14headсовпадают. Следующий одинcaseЛисичанск→СПб и remote checkpoint.
+
+
+## 2026-10-15-195922МСК — routecase lnr-лисичанск-saint-petersburg-center
+
+{"caseId": "lnr-лисичанск-saint-petersburg-center", "status": "audited", "provider": "Valhalla", "routeMeters": 1736132, "traceComplete": true, "sameDateParity": true, "weekdayAmount": null, "weekendAmount": null, "components": [{"id": "m4", "amount": null, "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"}, {"id": "m11-15-58", "amount": 880, "reason": "m11_head_ready_direct_pair_at_exit_payment"}, {"id": "m11-58-679", "amount": 4200, "reason": "matrix dated selected-route M11 direct pair"}, {"id": "m11-679-684", "amount": 94, "reason": "user_approved_m11_tail_94_rub_for_both_directions"}, {"id": "zsd", "amount": null, "reason": "zsd_trip_extends_outside_reviewed_zone1"}]}. Checkpoint `docs/checkpoints/2026-10-15-195922-route-case.md` содержитevidenceSHA; availablecomplete27, missingraw12. STARTEDnext `lnr-рубежное-moscow-center`. App/lib/тарифы безизменений, data-only/no newbuild.

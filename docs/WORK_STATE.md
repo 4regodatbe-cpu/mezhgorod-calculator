@@ -1,3 +1,11 @@
+## CURRENT — 2026-10-15-195922МСК, live audit продолжается
+
+DONE: `lnr-лисичанск-saint-petersburg-center` — Valhalla, 1736132м, traceComplete=True, sameDateParity=True; weekday=None,weekend=None. Это execution/replay, не независимая проверка тарифа. [Checkpoint](checkpoints/2026-10-15-195922-route-case.md), batch `batch-2026-10-15T16-57-48-940Z.json`.
+
+Полных сохранённых комплектов27; rawOD28; утраченныхraw12. STARTED следующийcase `lnr-рубежное-moscow-center`; только после remote сохранения этого шага. User routingconsent действует; app/lib/тарифы/Production без изменений.
+
+---
+
 ## CURRENT — live routing явно разрешён пользователем
 
 DONE: 15.10.2026 19:55:51МСК пользователь разрешил передачу routing координат/параметров Valhalla/OSRM/BRouter для аудита. [Checkpoint](checkpoints/2026-10-15-195634-routing-consent-live-started.md). Предыдущая конкретная причина approval block снята явным решением пользователя. STARTED: одинЛисичанск→СПб live+2replays, затем remote checkpoint перед следующим из13утраченныхraw. PR14draft, parentd789ae5 сверён.
