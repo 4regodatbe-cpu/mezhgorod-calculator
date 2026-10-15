@@ -44,3 +44,10 @@ test('recorded complete Krasnodar–Moscow–SPb geometry prices its actual ZSD 
  const result=matrixZsdZone1Component(d.route.coordinates,{...d.validation,paidRoadEdges},'2026-10-13T09:00:00+03:00',d.route.seconds);
  assert.equal(result.tolls?.amount,300);assert.equal(result.reason,'zsd_zone1_complete_directed_base_tariff');
 });
+
+
+test('ZSD fare validity uses departure, never a later gate crossing that could revive a future fare',()=>{
+ const g=snapshot.gates[0];
+ assert.equal(matrixZsdZone1Component(routeFor(g),trace(g),'2025-04-30T23:59:50+03:00',3600).tolls,null);
+ assert.equal(matrixZsdZone1Component(routeFor(g),trace(g),'2025-05-01T00:00:00+03:00',7*86400).tolls?.amount,300);
+});

@@ -23,12 +23,12 @@ test('M11 head respects exact 01:00 and 06:00 Moscow night boundaries and its ow
  assert.equal(section15Amount(new Date('2026-11-03T12:00:00+03:00')).profile,'friday');
  assert.equal(section15Amount(new Date('2026-11-04T12:00:00+03:00')).profile,'saturday');
 });
-test('M4 midnight/unsupported calendar cannot resurrect native M4 plus A289 money',()=>{
+test('M4 retains Thursday departure fare; unsupported dates, durations and unresolved A289 still block',()=>{
  const p={candidate:true,exact:true,tolls:{amount:850,weekdayAmount:850,weekendAmount:1000,period:'понедельник–четверг',confidence:'matched' as const,segments:['М-4: test']},m4PvpPreview:{confirmedPvps:['m4-1223','m4-1184','m4-1093']}};
  const route:[number,number][]=[[38.13,45.25],[38.5327744,45.171408],[39.7015,47.2357]];
  const date='2026-10-15T23:30:00+03:00';
  const m=matrixM4Component(p,date,3600);
- assert.equal(m.tolls,null);
+ assert.equal(m.tolls?.amount,850);
  assert.equal(composeSelectedM4A289(route,p,m,[],date)?.tolls,null);
  assert.equal(matrixM4Component(p,'2027-10-13T12:00:00+03:00',900).tolls,null);
  assert.equal(matrixM4Component(p,'2026-10-13T12:00:00+03:00',Number.MAX_VALUE).tolls,null);

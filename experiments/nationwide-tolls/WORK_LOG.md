@@ -1726,3 +1726,12 @@ FAILED 2026-10-15T21:54:19.172032+03:00, parent remote cb64897ddd2c74a99ad9aff73
 ПричинытрёхFAIL: scripts/v3-road-availability-audit.test.ts всёещёожидаетnull припересечениинеделиМ11; scripts/v3-southern-products.test.ts ожидаетnull длячетверг→пятницаДЗОК; scripts/v3-time-calendar-audit.test.ts ожидаетnull длячетверг→пятницаМ4. Эти ожидания superseded прямымновымправилом пользователя. Последний тест также проверяетNumber.MAX_VALUEduration; проверкуневалиднойдлительностинадосохранить независимоотфиксированноготарифа (вновомhelperнетстарогопредохранителяoverflow).
 
 NEXT: обновить эти3группыожиданий согласно правилуотправления, вернутьguardнепредставимойдлительности, добавить regression startdatevsfuturepayment/validity. Затем focused и повторfullgate сдругимлогом, сохранитьрезультатдоreplay. Runtimeматрицы/Production/Androidне менялись. Аудит8/155.
+
+
+# Расширенная проверка: 58/59, одно старое ожидание суммы
+
+FAILED 2026-10-15T21:55:41.838424+03:00, parent remote8c90e941bd372ece2eaa11e03a3f25ea5a4fa317, PR14draft. Добавлен overflowguard длительности вdepartureTariffContext. Обновлены3старыегруппыожиданий; добавлены2regression: explicitdeparturevsМ11payment(день/ночь/датаисточника) иЗСДdepartureдоначала тарифа сarrivalпосленачала. Расширенныйfocused8файлов exit1,58/59PASS; точнаякоманда/вывод в docs/checkpoints/evidence/2026-10-15-departure-policy-focused-expanded.log.
+
+ОставшийсяFAIL scripts/v3-time-calendar-audit.test.ts:32: составнойМ4+А289маршрут имеет обеизвестныецены и стал1265=850+415 послеустраненияtimeblock; старыйassertnullошибоченподновойполитикой. NEXT: ожидаемая1265,добавитьотдельныйassertпринудительнонеизвестногоМ4длясохраненияполнотыкомпозиции, затемповторfocused/fullgate. ПолныйbuildещёнеPASS.
+
+Отдельно: gitdiff--check предыдущего checkpoint отмечал trailingwhitespace в неизменённом stdout assertion errors. Rawstdout сохранён дословно; source/документы проверять сисключением evidence/*.log. Runtimeтарифныечисла/геометриянерасширялись, Production/Android/mergeнет.

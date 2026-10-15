@@ -116,3 +116,11 @@ test('a route without the Moscow head does not infer the missing mainline from t
   assert.equal(tollsForApi(result.tolls,result.fastValidation).pricingStatus,'unknown');
  }
 });
+
+
+test('explicit departure overrides the later head payment clock, including night and source date',()=>{
+ const later=bound('moscow','solnechnogorsk','2026-10-16T06:00:00+03:00',3600);
+ assert.equal(matrixM11HeadComponent(later,'2026-10-15T22:00:00+03:00').tolls?.amount,1130);
+ assert.equal(matrixM11HeadComponent(later,'2026-10-15T03:00:00+03:00').tolls?.amount,880);
+ assert.equal(matrixM11HeadComponent(later,'2026-04-23T23:59:00+03:00').tolls,null);
+});

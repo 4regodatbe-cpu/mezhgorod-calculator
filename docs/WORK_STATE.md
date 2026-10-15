@@ -18,7 +18,7 @@ IO/report **7/7 PASS**, integrity8captures/155+154PASS. Все40старыхOD �
 
 ## IN PROGRESS — правило тарифа отправления
 
-Прямое решение15.10.2026 21:48МСК: всяпоездка поначальнойдате/времени, без смены тарифа впути. [STARTED checkpoint](checkpoints/2026-10-15-215032-departure-policy-started.md). Реализована общаяполитика иМ11/ЗСД overrides, focused39/39PASS. [Checkpoint](checkpoints/2026-10-15-215247-departure-policy-focused-pass.md). Первый fullgate FAILED:653/656PASS,3старых ожидания перехода дня. ESLintPASS. [Ошибка](checkpoints/2026-10-15-215419-departure-fullgate-initial-failed.md). Обновить ожидания/overflowguard, затемповторитьfullgate.
+Прямое решение15.10.2026 21:48МСК: всяпоездка поначальнойдате/времени, без смены тарифа впути. [STARTED checkpoint](checkpoints/2026-10-15-215032-departure-policy-started.md). Реализована общаяполитика иМ11/ЗСД overrides, focused39/39PASS. [Checkpoint](checkpoints/2026-10-15-215247-departure-policy-focused-pass.md). Первый fullgate FAILED:653/656PASS,3старых ожидания перехода дня. ESLintPASS. [Ошибка](checkpoints/2026-10-15-215419-departure-fullgate-initial-failed.md). Overflowguard восстановлен; expandedfocused58/59, ещёодностароеожидание составной1265 вместоnull. [Checkpoint](checkpoints/2026-10-15-215541-departure-expanded-58-of-59.md). Затемповторитьfocused/fullgate.
 
 ## NEXT
 
