@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-15T23:43:16.487Z",
-  "phase": "STARTED",
+  "at": "2026-10-15T23:43:42.217Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 33,
+      "done": 34,
       "total": 155
     },
     {
@@ -18,15 +18,87 @@
   "next": {
     "part": 4,
     "spec": {
-      "caseId": "kherson-каховка-moscow-center",
+      "caseId": "kherson-каховка-saint-petersburg-center",
       "kind": "regional",
       "region": "kherson"
     }
   },
   "caseId": "kherson-каховка-moscow-center",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "kherson-каховка-moscow-center",
+    "startedAt": "2026-10-15T23:43:17.799Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-каховка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-43-32-355Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-каховка-moscow-center/2026-10-15T23-43-32-225Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-43-33-019Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-43-33-689Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "a289",
+        "m4"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: a289",
+        "a289: A-289 frames detected but selected-route exits are unresolved"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: a289",
+        "a289: A-289 frames detected but selected-route exits are unresolved"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 5040,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "a289",
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      }
+    ],
+    "finishedAt": "2026-10-15T23:43:33.708Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-43-16-487Z-part4",
-  "parent": "7de6c506d57f7b31af9f4906ddade60e86a893bf",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-43-16-487Z-started.json"
+  "parent": "66e8012d2909dab39988836c48fbb0421a3dfa8e",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-43-42-217Z-done.json"
 }
