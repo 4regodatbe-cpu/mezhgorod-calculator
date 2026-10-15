@@ -3215,7 +3215,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-54-56-080Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kazan-center/2026-10-15T23-54-55-920Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2447265,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-54-35-697Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-54-56-080Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kazan-center/2026-10-15T23-54-55-920Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-54-56-760Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-54-57-424Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-васильевка-kerch-center",
