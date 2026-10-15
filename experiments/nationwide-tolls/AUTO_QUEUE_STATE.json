@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-15T23:53:48.804Z",
-  "phase": "DONE",
+  "at": "2026-10-15T23:53:52.239Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,82 +23,10 @@
       "region": "zaporizhzhia"
     }
   },
-  "caseId": "zaporizhzhia-бердянск-moscow-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "zaporizhzhia-бердянск-moscow-center",
-    "startedAt": "2026-10-15T23:53:21.458Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-53-36-260Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-moscow-center/2026-10-15T23-53-36-130Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-53-36-938Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-53-37-611Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "a289",
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: a289",
-        "a289: A-289 frames detected but selected-route exits are unresolved"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: a289",
-        "a289: A-289 frames detected but selected-route exits are unresolved"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 5040,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "a289",
-        "amount": null,
-        "reason": "A-289 frames detected but selected-route exits are unresolved"
-      }
-    ],
-    "finishedAt": "2026-10-15T23:53:37.633Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-53-19-996Z-part5",
-  "parent": "46fb7eaca11724f221bded4c6dd1f687a6050d71",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-53-48-804Z-done.json"
+  "caseId": "zaporizhzhia-бердянск-saint-petersburg-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-53-52-239Z-part5",
+  "parent": "fb763a21dd1f9e3958936dd214508c99eb8089f1",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-53-52-239Z-started.json"
 }
