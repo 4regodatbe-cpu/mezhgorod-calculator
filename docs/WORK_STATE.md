@@ -10,6 +10,10 @@ Departurepolicy реализована: вся поездка по дате/вр
 
 Stage1 **23/155** по реально доступным raw/live/replays; stage2 **154** не начат. Последний случай dnr-краматорск-moscow-center: audited. [Checkpoint](checkpoints/2026-10-16-015829-dnr-краматорск-moscow-center-audit.md). [Последние actual результаты и next](checkpoints/evidence/2026-10-15T22-38-01-683Z-dnr-краматорск-moscow-center-batch-verified.json). REPORT/EVIDENCE_AVAILABILITY обновлены. Original Лисичанск→Москва summary утрачен, offline reconstruction не original live. Старые цены до trip-departure-v1 не выдавать за новые повторы.
 
+## Новый порядок: 20 небольших частей
+
+Часть **1/20 DONE**: [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.md), [точная очередь](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json), [checkpoint](checkpoints/2026-10-16-small-parts-01.md). Один подшаг за запуск; группы не выполнять целиком. Следующая **часть 2**: тайм-ауты/вывод runner и сверка расхождения счётчика (handoff23, corpus28 внутри stage1; не повышать без evidence). Затем один маршрут kherson-аскания-нова-kazan-center. Исторический NEXT ниже подчинён этому порядку.
+
 ## NEXT
 
 kherson-аскания-нова-kazan-center по [замороженной очереди](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json). Каждый один маршрут: STARTED→single-case batch→report/inventory→checkpoint→localcommit→GitHub→head/tree readback→следующий. Unknown не бесплатно; subtotal не полный итог.

@@ -103,3 +103,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16T01:58:29.418256+03:00: dnr-краматорск-moscow-center audited, commandexit0,stage1=23/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-015829-dnr-краматорск-moscow-center-audit.md). NEXT kherson-аскания-нова-kazan-center.
+
+
+2026-10-16T02:09:14.454441+03:00: пользователь изменил порядок на 20 небольших частей с отдельными запусками. Часть1 DONE; часть2 NEXT. [План](SMALL_PARTS_PLAN.md), [checkpoint](../../docs/checkpoints/2026-10-16-small-parts-01.md). Счётчик не повышен, новые маршруты/сборка не запускались.
