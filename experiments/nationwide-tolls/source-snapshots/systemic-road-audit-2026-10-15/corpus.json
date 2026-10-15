@@ -530,7 +530,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-27-21-356Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kazan-center/2026-10-15T22-27-21-244Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1595467,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-26-56-853Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-27-21-356Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kazan-center/2026-10-15T22-27-21-244Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-27-21-862Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-27-22-327Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-волноваха-kerch-center",

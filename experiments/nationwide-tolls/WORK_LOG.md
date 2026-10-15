@@ -70,3 +70,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16T01:26:09.407653+03:00: dnr-бахмут-saint-petersburg-center audited, commandexit0,stage1=12/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012609-dnr-бахмут-saint-petersburg-center-audit.md). NEXT dnr-волноваха-kazan-center.
+
+
+2026-10-16T01:27:23.331643+03:00: dnr-волноваха-kazan-center audited, commandexit0,stage1=13/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012723-dnr-волноваха-kazan-center-audit.md). NEXT dnr-волноваха-kerch-center.
