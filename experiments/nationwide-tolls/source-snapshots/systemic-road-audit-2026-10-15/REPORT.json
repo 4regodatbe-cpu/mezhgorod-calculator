@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-10-15T22:29:33.033Z",
+  "generatedAt": "2026-10-15T22:30:42.909Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 47,
-    "recordedLiveAttempts": 60,
-    "liveCaptured": 46,
-    "savedLiveSummaries": 46,
+    "distinctCaseAttempts": 48,
+    "recordedLiveAttempts": 61,
+    "liveCaptured": 47,
+    "savedLiveSummaries": 47,
     "missingOrInvalidReferences": 1,
-    "audited": 46,
-    "traceComplete": 46,
-    "sameDateParity": 46
+    "audited": 47,
+    "traceComplete": 47,
+    "sameDateParity": 47
   },
   "regionCounts": {
     "dnr": {
       "planned": 40,
-      "liveCaptured": 17,
-      "audited": 17,
-      "traceComplete": 17,
+      "liveCaptured": 18,
+      "audited": 18,
+      "traceComplete": 18,
       "pricedWeekday": 7,
       "pricedWeekend": 10
     },
@@ -1697,6 +1697,38 @@
       ],
       "routeMeters": 1182425,
       "routeSeconds": 61701
+    },
+    {
+      "caseId": "dnr-волноваха-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-30-33-113Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1993000,
+      "routeSeconds": 85011
     }
   ],
   "historicalExecutionExceptions": [],
@@ -2658,7 +2690,8 @@
         "lnr-лисичанск-saint-petersburg-center",
         "lnr-рубежное-saint-petersburg-center",
         "zaporizhzhia-гуляйполе-saint-petersburg-center",
-        "dnr-бахмут-saint-petersburg-center"
+        "dnr-бахмут-saint-petersburg-center",
+        "dnr-волноваха-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -2822,9 +2855,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T22-26-08-354Z.json"
+        },
+        {
+          "caseId": "dnr-волноваха-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-30-33-113Z.json"
+        },
+        {
+          "caseId": "dnr-волноваха-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T22-30-33-643Z.json"
+        },
+        {
+          "caseId": "dnr-волноваха-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T22-30-34-194Z.json"
         }
       ],
-      "caseCount": 6
+      "caseCount": 7
     },
     {
       "code": "m4:unpriced",
