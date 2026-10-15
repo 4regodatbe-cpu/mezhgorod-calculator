@@ -24,3 +24,6 @@
 
 
 2026-10-16 DONE: targeted ESLint18 файлов и diff check exit0. STARTED offline Гуляйполе→Москва четверг/суббота. [Checkpoint](checkpoints/2026-10-16-eslint-pass-replay-started.md).
+
+
+2026-10-16 DONE: Гуляйполе→Москва offline3810₽(четверг)/4640₽(суббота), оба replay complete/exit0. STARTED live Бахмут→Казань. [Checkpoint](checkpoints/2026-10-16-huliaipole-replay-pass.md).
