@@ -35,3 +35,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 16.10.2026: autonomous runner/progress checkpoint implemented, focused14/14PASS. Workflow не включён. Fullbuild STARTED, лог evidence/2026-10-16-auto-queue-build.log. ../../docs/checkpoints/2026-10-16-automatic-queue-focused-pass.md.
 
 16.10.2026: automaticqueue fullbuild666/666+quote/API+Next/TypeScript/static16/16PASS; lint/YAML STARTED. ../../docs/checkpoints/2026-10-16-automatic-queue-build-pass.md.
+
+16.10.2026: automaticqueue workflow enabled after focused14/full666/lint4/YAML/diffPASS. Следующее проверить actualrun черезGitHubAPI, затем не писатьприactivejob. [Checkpoint](../../docs/checkpoints/2026-10-16-automatic-queue-enabled.md). Baseline27/155,0/154; части19–20 не выполнены.

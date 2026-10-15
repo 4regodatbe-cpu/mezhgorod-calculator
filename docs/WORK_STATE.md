@@ -1,17 +1,15 @@
-# Калькулятор «Из А в Б»: текущая передача
+# Калькулятор «Из А в Б»: автоматическое продолжение
 
-2026-10-16T02:27:39.685785+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14draft. Проверенный remote parent `7af4d8eb507ac5cfb8d644dc0642346ff04ac7a8`, следующий head подтверждается readback.
+16.10.2026. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Parent f45cc0c1; опубликованный head проверяется после записи.
 
-DONE: части1–3; runner limit1/PHASE/WAIT15s, fullbuild661/661+quote/API/Next/TypeScript/static16/16PASS, lint3/diffPASS. [Сборка](checkpoints/2026-10-16-small-parts-02-build-pass.md). Расчётные исходники с тех пор не менялись.
+## DONE
 
-Stage1 **27/155**, stage2 **0/154** по читаемымraw/live/same/weekend+parity+replayIntegrity, а не старому status corpus. Последний case **kherson-аскания-нова-saint-petersburg-center**: audited,batch exit0. [Checkpoint](checkpoints/2026-10-15T23-26-39-527Z-part4.md), [exact evidence](checkpoints/evidence/2026-10-15T23-26-39-527Z-part4-verified.json).
+Части1–3; проверено **27/155** stage1 и **0/154** stage2. Runner default1, PHASE/WAIT15s и атомарный progress после каждого ответа. Новая автоматическая очередь: focused14/14, полный build **666/666** + quote/API/Next/TypeScript/static16/16 PASS, lint4/diff/YAML PASS. [Checkpoint](checkpoints/2026-10-16-automatic-queue-enabled.md), [build](checkpoints/2026-10-16-automatic-queue-build-pass.md).
 
-NEXT STARTED: часть4, **kherson-геническ-kazan-center**, один single-case batch --limit1; roadcase добавить --group existingGroup. Даты15/17октября09:00+03. [План JSON](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json). Следующий case запускать только после durable GitHub commit/head/tree readback этого checkpoint. STARTED входы следующего case — в этом checkpoint и frozen плане; raw/progress сохранять по ходу.
+## IN PROGRESS
 
-Пользователь16.10 02:12 поручил автоматически пройти все части, без команды «дальше». При failed save остановить расширение; при ошибках процессов фиксировать причину. Три подряд недоступных live — остановка сетевой серии и диагноз. Не засчитывать неизвестную цену как0, частичную какполную. Междорожныевекторы отложены; цена всей поездки по датеотправления. Не main/merge/Production/Android без запроса. GitHub/routing разрешения действуют. [Protocol](CHECKPOINT_PROTOCOL.md), [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md), [DECISIONS](../experiments/nationwide-tolls/DECISIONS.md).
+Включается GitHubActions [.github/workflows/nationwide-audit-queue.yml](../.github/workflows/nationwide-audit-queue.yml): полныйgate, затем поодномуcase, STARTEDcommit→case→DONEcommit→headreadback→следующий. Фактический runid/status ещё проверить! Не запускатьпараллельныйручнойwriter. Когдаjobначнётработать, его AUTO_QUEUE_STATE.json/этотhandoffстанутактуальными.
 
-16.10.2026 STARTED: автономное последовательное исполнение через GitHubActions, по1case с durable STARTED/DONE. Входы/ограничения: checkpoints/2026-10-16-automatic-queue-started.md. Сначала tests/build/lint; далее возвращение к части4.
+Следующий case часть4 **kherson-геническ-kazan-center**. [Точнаяочередь](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json), [контроллер](../experiments/nationwide-tolls/scripts/automatic-audit-queue.mjs). После всехroutes части19(исправления) и20(финальнаяпроверка) ещёвыполнить, не подменятьих числомпрогонов.
 
-16.10.2026: autonomous runner/progress checkpoint implemented, focused14/14PASS. Workflow не включён. Fullbuild STARTED, лог evidence/2026-10-16-auto-queue-build.log. checkpoints/2026-10-16-automatic-queue-focused-pass.md.
-
-16.10.2026: automaticqueue fullbuild666/666+quote/API+Next/TypeScript/static16/16PASS; lint/YAML STARTED. checkpoints/2026-10-16-automatic-queue-build-pass.md.
+Пользователь16.10 02:12 поручил автоматическипройти все20частей. Сохранятькаждыймалыйшаг до следующего,не ждатькоманды«дальше». Unknownне0, subtotalнеполныйитог; auditedнеподтверждениецены. Тарифвсейпоездкипоотправлению; междорожныевекторыотложены. Неmain/merge/Production/Androidбеззапроса. [Protocol](CHECKPOINT_PROTOCOL.md), [журнал](../experiments/nationwide-tolls/WORK_LOG.md), [решения](../experiments/nationwide-tolls/DECISIONS.md).
