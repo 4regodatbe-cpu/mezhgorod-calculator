@@ -2309,7 +2309,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-38-466Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/2026-10-15T23-47-38-365Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1530007,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-47-26-084Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-38-466Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/2026-10-15T23-47-38-365Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-47-39-078Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-47-39-690Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-антрацит-kerch-center",

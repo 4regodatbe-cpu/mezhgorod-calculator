@@ -15,9 +15,9 @@
     },
     "lnr": {
       "planned": 40,
-      "historicallyAudited": 14,
-      "rawAvailable": 14,
-      "fourArtifactsAvailable": 13
+      "historicallyAudited": 15,
+      "rawAvailable": 15,
+      "fourArtifactsAvailable": 14
     },
     "zaporizhzhia": {
       "planned": 40,
@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 10
     }
   },
-  "rawCaptureCount": 76,
-  "rawCaptureCaseCount": 74,
+  "rawCaptureCount": 77,
+  "rawCaptureCaseCount": 75,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -2156,10 +2156,49 @@
     {
       "caseId": "lnr-антрацит-kazan-center",
       "region": "lnr",
-      "historicalStatus": "planned",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
-      "artifacts": {}
+      "historicalStatus": "audited",
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-38-466Z.json",
+          "exists": true,
+          "bytes": 2409,
+          "sha256": "3b8daffb33c9ae03a2e662f6d5e3e10a623ad47acf0731b7244e51fe1f410e54",
+          "gitBlobSha": "9017bacb0d402df2e3cf6930ce4ed2a26b9b2cf4",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/2026-10-15T23-47-38-365Z-capture.json.gz",
+          "exists": true,
+          "bytes": 674941,
+          "sha256": "d330292b3779fd035f1a12f8969bad602de3fdfe8ea8b61d14725b5d6101769c",
+          "gitBlobSha": "ea268d9ea218f92ad76458b93894a612f935b970",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 14
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-47-39-078Z.json",
+          "exists": true,
+          "bytes": 2487,
+          "sha256": "a49f901f90a2bccfd6ec100ec0b2daa2d4742f49fdb7b0a5db5433ddb059612b",
+          "gitBlobSha": "44e855f4c9f886ab2786819cd896e74ed716fad9",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-47-39-690Z.json",
+          "exists": true,
+          "bytes": 2487,
+          "sha256": "09769f1b62a0a96515b93b505dae593c63f86978d4f14cb5ca012db6050998f1",
+          "gitBlobSha": "a444a78f09c796fc0abd9fa164ba88f4d963c304",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     },
     {
       "caseId": "lnr-антрацит-kerch-center",
@@ -7865,6 +7904,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-47-26-084Z.json",
+      "caseId": "lnr-антрацит-kazan-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-38-466Z.json",
+          "exists": true,
+          "bytes": 2409,
+          "sha256": "3b8daffb33c9ae03a2e662f6d5e3e10a623ad47acf0731b7244e51fe1f410e54",
+          "gitBlobSha": "9017bacb0d402df2e3cf6930ce4ed2a26b9b2cf4",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/2026-10-15T23-47-38-365Z-capture.json.gz",
+          "exists": true,
+          "bytes": 674941,
+          "sha256": "d330292b3779fd035f1a12f8969bad602de3fdfe8ea8b61d14725b5d6101769c",
+          "gitBlobSha": "ea268d9ea218f92ad76458b93894a612f935b970",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 14
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-47-39-078Z.json",
+          "exists": true,
+          "bytes": 2487,
+          "sha256": "a49f901f90a2bccfd6ec100ec0b2daa2d4742f49fdb7b0a5db5433ddb059612b",
+          "gitBlobSha": "44e855f4c9f886ab2786819cd896e74ed716fad9",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-47-39-690Z.json",
+          "exists": true,
+          "bytes": 2487,
+          "sha256": "09769f1b62a0a96515b93b505dae593c63f86978d4f14cb5ca012db6050998f1",
+          "gitBlobSha": "a444a78f09c796fc0abd9fa164ba88f4d963c304",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -8483,6 +8567,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 18
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/2026-10-15T23-47-38-365Z-capture.json.gz",
+      "exists": true,
+      "bytes": 674941,
+      "sha256": "d330292b3779fd035f1a12f8969bad602de3fdfe8ea8b61d14725b5d6101769c",
+      "gitBlobSha": "ea268d9ea218f92ad76458b93894a612f935b970",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 14
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/2026-10-15T12-00-26-371Z-capture.json.gz",
