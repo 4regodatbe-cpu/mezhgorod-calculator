@@ -17,3 +17,16 @@
 [CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md):каждыйнебольшойшаг→отдельныйcheckpoint→commit→GitHub→проверкаhead/tree,толькопотомследующий. ConsentpublicGitHub/routingValhalla/OSRM/BRouterдействует,непереспрашивать. Unknownнебесплатный,subtotalнеполныйитог. Неmerge/main/Production/Androidбеззапроса.
 
 [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md),[NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md),[DECISIONS](../experiments/nationwide-tolls/DECISIONS.md). ИсторическийHANDOFF_TWO_STAGE_AUDIT.md читатьпослеэтогофайла:старыеtimeblockзамечания superseded решением21:48.
+
+
+2026-10-16 00:02 МСК — STARTED: [восстановление и полный gate](checkpoints/2026-10-16-0002-resume-build.md). Исходный remote 87419cc; нового результата сборки ещё нет.
+
+
+## BLOCKED — текущая сессия
+
+Автоматическая проверка дважды отклонила git push; существующее разрешение в DECISIONS признано недостаточным для авторизации. Новый build не запускался. Локальный checkpoint восстановления 8a4cba8 не опубликован. Подробности: [blocker](checkpoints/2026-10-16-0006-github-save-blocked.md). Следующий шаг: прямое разрешение пользователя на сохранение в указанную публичную рабочую ветку, затем push/readback и build.
+
+
+## Возобновление 2026-10-16 00:08 МСК
+
+Прямое разрешение пользователя получено. Approval blocker выше — история. CLI push: exit128 (нет credentials). STARTED сохранение через подключённый GitHub connector, затем установка и полный gate. [Checkpoint](checkpoints/2026-10-16-0008-save-authorized.md).

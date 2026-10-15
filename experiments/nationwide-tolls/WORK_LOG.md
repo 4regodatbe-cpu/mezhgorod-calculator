@@ -25,3 +25,12 @@ NEXT/STARTED: восстановитьнезакреплённыепоследн
 DONE 2026-10-15T22:31:01.629582+03:00, parentremote740156474625283083b4e16f101af2be182a56d4. Восстановлены2потерянныхизменения: составнаяМ4+А289цена1265иотдельныйmissingM4guard вv3-time-calendar-audit.test.ts; tariffPolicy trip-departure-v1/basisAt вновыхauditoutputs. Повторnode --import ./scripts/register-ts-paths.mjs --test8файлов(М4/datecalendar/М11ЦКАД/М11products/ЗСД/timecalendar/southern/availability) exit0,59/59PASS. Новыйточныйstdout docs/checkpoints/evidence/2026-10-15-departure-policy-focused-resumed.log. Этотновыйрезультатсохранён,прежнийутраченныйлогневыдаётсязавосстановленный.
 
 STARTED: pnpm build→docs/checkpoints/evidence/2026-10-15-departure-policy-build-resumed.log; targetedESLintchangedfiles→2026-10-15-departure-policy-eslint-resumed.log. Послефактическогорезультатаотдельныйcheckpoint/remote; затемofflineГуляйполе→Москва,liveБахмут→Казань. Production/Android/mergeнет.
+
+
+2026-10-16 00:02 МСК — STARTED: [восстановление и полный gate](../../docs/checkpoints/2026-10-16-0002-resume-build.md). Исходный remote 87419cc; нового результата сборки ещё нет.
+
+
+BLOCKED: автоматическая проверка отклонила обе попытки push. Существующий remote DECISIONS проверен, но разрешение внутри репозитория не принято проверкой. Подробности: [checkpoint](../../docs/checkpoints/2026-10-16-0006-github-save-blocked.md). Новых тестов/build нет; локальные изменения не опубликованы.
+
+
+2026-10-16 00:08 МСК: прямое разрешение пользователя в текущем чате получено, approval blocker снят. CLI push не имеет credentials (exit128). STARTED connector save/readback, затем frozen install/full build. [Checkpoint](../../docs/checkpoints/2026-10-16-0008-save-authorized.md).
