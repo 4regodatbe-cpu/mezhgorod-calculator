@@ -1,3 +1,7 @@
+# CURRENT — контроль8новыхcases PASS
+
+Этап1:8/155,остаток147; этап2:154. IO/report7/7PASS. Следующий dnr-бахмут-kazan-center. Handoff docs/HANDOFF_TWO_STAGE_AUDIT.md.
+
 # CURRENT — этап1: 8/155
 
 Следующий `dnr-бахмут-kazan-center` после remote сохранения checkpoint2026-10-15-212540-route-case. Детали в docs/WORK_STATE.md.

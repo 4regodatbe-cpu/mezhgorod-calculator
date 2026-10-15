@@ -1,12 +1,16 @@
 # Текущее состояние калькулятора «Из А в Б»
 
-2026-10-15T21:25:40.813785+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Последний проверенный remote `979482ea2c0ce0b0deb8ba2e22e27f198b386002`; текущий checkpoint необходимо сохранить и read-back до следующего case.
+2026-10-15T21:25:40.813785+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Последний проверенный remote `bd73f38ffe7fb53d4483c010fbd4249bf94ca435`; текущий checkpoint необходимо сохранить и read-back до следующего case.
 
 ## DONE
 
 Этап1: **8/155** complete. Последний `zaporizhzhia-пришиб-kerch-center`: audited, parity=True, traceComplete=True. [Checkpoint](checkpoints/2026-10-15-212540-route-case.md). Всего сохранённых audited=39; rawOD=40.
 
 [План двух этапов](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.md), [точная очередь](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json):155+154 случая, этап2 ещё не начат.
+
+## Проверка и перенос
+
+IO/report **7/7 PASS**, integrity8captures/155+154PASS. Все40старыхOD имеют raw;39полныхкомплектов. Остаток — original live summary Лисичанск→Москва, offline reconstruction не подменяет его. [Handoff для нового чата](HANDOFF_TWO_STAGE_AUDIT.md). [Checkpoint проверки](checkpoints/2026-10-15-212718-recovery-integrity-pass.md).
 
 ## NEXT
 
