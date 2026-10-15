@@ -22,12 +22,12 @@
     "zaporizhzhia": {
       "planned": 40,
       "historicallyAudited": 10,
-      "rawAvailable": 4,
-      "fourArtifactsAvailable": 4
+      "rawAvailable": 5,
+      "fourArtifactsAvailable": 5
     }
   },
-  "rawCaptureCount": 36,
-  "rawCaptureCaseCount": 34,
+  "rawCaptureCount": 37,
+  "rawCaptureCaseCount": 35,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -1809,24 +1809,46 @@
       "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
       "region": "zaporizhzhia",
       "historicalStatus": "audited",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
       "artifacts": {
         "live": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-18-15-502Z.json",
+          "exists": true,
+          "bytes": 9222,
+          "sha256": "9e54208ded7b7fa5cd9027f5917aa3229ae71d588a87bed7c75336c213e132d7",
+          "gitBlobSha": "f2151f190be67c888f25151a4800711f906dfd55",
+          "recoveryShaMatches": null,
+          "readableJson": true
         },
         "capture": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/2026-10-15T12-16-40-184Z-capture.json.gz",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/2026-10-15T18-18-15-355Z-capture.json.gz",
+          "exists": true,
+          "bytes": 826944,
+          "sha256": "fc521b0bf71e2b331794cccb9edf58ecfb92f188d45b9631e9bb46849e3b1fd2",
+          "gitBlobSha": "67746564d19448e7af2dfc9abbc95fd3647e19f1",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 20
         },
         "sameDateReplay": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-899Z.json",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T18-18-16-103Z.json",
+          "exists": true,
+          "bytes": 9300,
+          "sha256": "7b53fbefd73255dd823e85164fe101fa6574b99b251ab08ee5d67c0fd3f8b853",
+          "gitBlobSha": "6798bcbce8b9bca762cfa59d72bde9f40f87fbb4",
+          "recoveryShaMatches": null,
+          "readableJson": true
         },
         "weekendReplay": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-16-41-500Z.json",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T18-18-16-726Z.json",
+          "exists": true,
+          "bytes": 9375,
+          "sha256": "621ac314d1d04f869ff6e6dcb69457f8ef650dce6f176632af1f42e6236279ae",
+          "gitBlobSha": "e4ac4f4242b65037b0574dde65dd44632be5086f",
+          "recoveryShaMatches": null,
+          "readableJson": true
         }
       }
     },
@@ -4607,6 +4629,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T18-17-40-335Z.json",
+      "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-18-15-502Z.json",
+          "exists": true,
+          "bytes": 9222,
+          "sha256": "9e54208ded7b7fa5cd9027f5917aa3229ae71d588a87bed7c75336c213e132d7",
+          "gitBlobSha": "f2151f190be67c888f25151a4800711f906dfd55",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/2026-10-15T18-18-15-355Z-capture.json.gz",
+          "exists": true,
+          "bytes": 826944,
+          "sha256": "fc521b0bf71e2b331794cccb9edf58ecfb92f188d45b9631e9bb46849e3b1fd2",
+          "gitBlobSha": "67746564d19448e7af2dfc9abbc95fd3647e19f1",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 20
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T18-18-16-103Z.json",
+          "exists": true,
+          "bytes": 9300,
+          "sha256": "7b53fbefd73255dd823e85164fe101fa6574b99b251ab08ee5d67c0fd3f8b853",
+          "gitBlobSha": "6798bcbce8b9bca762cfa59d72bde9f40f87fbb4",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T18-18-16-726Z.json",
+          "exists": true,
+          "bytes": 9375,
+          "sha256": "621ac314d1d04f869ff6e6dcb69457f8ef650dce6f176632af1f42e6236279ae",
+          "gitBlobSha": "e4ac4f4242b65037b0574dde65dd44632be5086f",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -4972,6 +5039,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 15
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/2026-10-15T18-18-15-355Z-capture.json.gz",
+      "exists": true,
+      "bytes": 826944,
+      "sha256": "fc521b0bf71e2b331794cccb9edf58ecfb92f188d45b9631e9bb46849e3b1fd2",
+      "gitBlobSha": "67746564d19448e7af2dfc9abbc95fd3647e19f1",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 20
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/2026-10-15T18-13-39-642Z-capture.json.gz",

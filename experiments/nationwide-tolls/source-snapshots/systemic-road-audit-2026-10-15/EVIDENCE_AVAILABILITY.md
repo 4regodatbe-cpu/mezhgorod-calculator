@@ -7,9 +7,9 @@ File existence, gzip/JSON readability and recovery SHA only. No live routing, re
 | dnr | 40 | 10 | 10 | 10 |
 | kherson | 40 | 10 | 10 | 10 |
 | lnr | 40 | 10 | 10 | 9 |
-| zaporizhzhia | 40 | 10 | 4 | 4 |
+| zaporizhzhia | 40 | 10 | 5 | 5 |
 
-Raw captures: 36; разных каталогов OD: 34; повреждённых raw: 0; отсутствующих файлов по ссылкам: 55.
+Raw captures: 37; разных каталогов OD: 35; повреждённых raw: 0; отсутствующих файлов по ссылкам: 55.
 
 Наличие четырёх файлов не означает корректность тарифа или проверенный parity. Старые статусы corpus сохранены как история. Повторно запрашивать raw только там, где нужный capture утрачен; при наличии raw восстанавливать summary/replay офлайн.
 

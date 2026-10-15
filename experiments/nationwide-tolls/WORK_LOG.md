@@ -1648,3 +1648,8 @@ Raw `experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-1
 ## 2026-10-15T21:16:52.624666+03:00 — zaporizhzhia-гуляйполе-moscow-center
 
 DONE; [отдельный checkpoint](../../docs/checkpoints/2026-10-15-211652-route-case.md), этап1 2/155. Parent remote 846fb8b98e03832aed96349ac190a49c2b16401c; batch batch-2026-10-15T18-16-15-835Z.json.
+
+
+## 2026-10-15T21:18:20.118697+03:00 — zaporizhzhia-гуляйполе-saint-petersburg-center
+
+DONE; [отдельный checkpoint](../../docs/checkpoints/2026-10-15-211820-route-case.md), этап1 3/155. Parent remote f373a83b7c5d2119f42552172251460ab95a8ba0; batch batch-2026-10-15T18-17-40-335Z.json.
