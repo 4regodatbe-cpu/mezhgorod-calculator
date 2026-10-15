@@ -4469,7 +4469,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-18-27-789Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/2026-10-15T23-18-27-629Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2357091,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-17-58-274Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-18-27-789Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/2026-10-15T23-18-27-629Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-18-28-409Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-18-28-964Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-аскания-нова-kerch-center",
