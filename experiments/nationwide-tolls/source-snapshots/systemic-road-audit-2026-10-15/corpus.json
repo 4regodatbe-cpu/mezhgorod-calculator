@@ -2216,7 +2216,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-51-18-183Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-kerch-center/2026-10-15T23-51-18-116Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 851380,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-51-14-153Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-51-18-183Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-kerch-center/2026-10-15T23-51-18-116Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-51-18-650Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-51-19-116Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-старобельск-moscow-center",
