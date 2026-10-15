@@ -8,7 +8,9 @@ DONE: exact-coordinate V3 API compare Краснодар→СПб заверши
 
 VERIFIED: focused tests 3/3; `pnpm build` audit649/649, quote/API, TypeScript/Next, static16/16 PASS; `tsc --noEmit`, targeted ESLint, JSON parse and `git diff --check` PASS. Exact V3 API reverse response inspected: HTTP200, `tolls.amount=10240`, status `priced`, source segment identifies full Yandex route. [Этап 13](../experiments/nationwide-tolls/stages/13-yandex-route-refresh-2026-10-15.md).
 
-NEXT: commit/publish to PR14 and check Actions for exact SHA. Moscow→Kazan has no displayed Yandex amount; unmatched endpoints/date/length do not receive map fallback.
+REMOTE: code/evidence commit `cac3d72f65e35faa71abf82c955ba798ca7488cf` is published in PR14; PR remains open/draft/mergeable. GitHub Actions run `38705180027` (`Special territory geometry and pricing`) for this exact code SHA is `in_progress`.
+
+NEXT: check run `38705180027` to conclusion and record it. Moscow→Kazan has no displayed Yandex amount; unmatched endpoints/date/length do not receive map fallback.
 
 DONE: предыдущий блок удалил публичные предупреждения о квитанциях; API не раскрывает внутренние `priceConfirmation`/`displayLabel` и очищает такие суффиксы из сегментов. Тесты/build и PR14 состояние описаны ниже.
 
