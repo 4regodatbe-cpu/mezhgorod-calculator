@@ -12,6 +12,10 @@
 
 IO/report **7/7 PASS**, integrity8captures/155+154PASS. Все40старыхOD имеют raw;39полныхкомплектов. Остаток — original live summary Лисичанск→Москва, offline reconstruction не подменяет его. [Handoff для нового чата](HANDOFF_TWO_STAGE_AUDIT.md). [Checkpoint проверки](checkpoints/2026-10-15-212718-recovery-integrity-pass.md).
 
+## Проектный вопрос пользователя
+
+15.10.2026: выполнен [анализ междорожных векторов](../experiments/nationwide-tolls/CROSS_ROAD_VECTOR_ANALYSIS_2026-10-15.md). Предложение — генерируемая таблица связок; архитектура ещё не менялась и решение не принято. [Checkpoint](checkpoints/2026-10-15-213737-cross-road-vector-analysis.md). Аудит остаётся8/155.
+
 ## NEXT
 
 `dnr-бахмут-kazan-center`, один --case --limit1 после remote сохранения. По [CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md): STARTED→live/raw/summary→same-date/weekend→inventory/report→checkpoint/commit/remote read-back. Каждая дорожная группа должна иметь доказанное прохождение. Не засчитывать failed/missing evidence.
