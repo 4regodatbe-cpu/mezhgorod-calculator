@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:47:40.972Z",
+  "generatedAt": "2026-10-15T23:47:59.458Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 75,
-    "recordedLiveAttempts": 88,
-    "liveCaptured": 74,
-    "savedLiveSummaries": 74,
+    "distinctCaseAttempts": 76,
+    "recordedLiveAttempts": 89,
+    "liveCaptured": 75,
+    "savedLiveSummaries": 75,
     "missingOrInvalidReferences": 1,
-    "audited": 74,
-    "traceComplete": 74,
-    "sameDateParity": 74
+    "audited": 75,
+    "traceComplete": 75,
+    "sameDateParity": 75
   },
   "regionCounts": {
     "dnr": {
@@ -22,11 +22,11 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 14,
-      "audited": 14,
-      "traceComplete": 14,
-      "pricedWeekday": 9,
-      "pricedWeekend": 9
+      "liveCaptured": 15,
+      "audited": 15,
+      "traceComplete": 15,
+      "pricedWeekday": 10,
+      "pricedWeekend": 10
     },
     "zaporizhzhia": {
       "planned": 40,
@@ -2601,6 +2601,37 @@
       ],
       "routeMeters": 1530007,
       "routeSeconds": 78133
+    },
+    {
+      "caseId": "lnr-антрацит-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-57-288Z.json",
+      "weekdayAmount": 2030,
+      "weekendAmount": 2250,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 696653,
+      "routeSeconds": 36015
     }
   ],
   "historicalExecutionExceptions": [],
