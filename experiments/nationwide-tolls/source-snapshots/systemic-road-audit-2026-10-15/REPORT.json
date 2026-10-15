@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:46:18.642Z",
+  "generatedAt": "2026-10-15T23:46:39.970Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 72,
-    "recordedLiveAttempts": 85,
-    "liveCaptured": 71,
-    "savedLiveSummaries": 71,
+    "distinctCaseAttempts": 73,
+    "recordedLiveAttempts": 86,
+    "liveCaptured": 72,
+    "savedLiveSummaries": 72,
     "missingOrInvalidReferences": 1,
-    "audited": 71,
-    "traceComplete": 71,
-    "sameDateParity": 71
+    "audited": 72,
+    "traceComplete": 72,
+    "sameDateParity": 72
   },
   "regionCounts": {
     "dnr": {
@@ -22,11 +22,11 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 11,
-      "audited": 11,
-      "traceComplete": 11,
-      "pricedWeekday": 7,
-      "pricedWeekend": 7
+      "liveCaptured": 12,
+      "audited": 12,
+      "traceComplete": 12,
+      "pricedWeekday": 8,
+      "pricedWeekend": 8
     },
     "zaporizhzhia": {
       "planned": 40,
@@ -2511,6 +2511,36 @@
       ],
       "routeMeters": 753500,
       "routeSeconds": 39528
+    },
+    {
+      "caseId": "lnr-алчевск-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-46-37-612Z.json",
+      "weekdayAmount": 3610,
+      "weekendAmount": 4390,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1032729,
+      "routeSeconds": 52196
     }
   ],
   "historicalExecutionExceptions": [],
