@@ -1543,3 +1543,8 @@ npm run test:audit exit1, missing typescript/next; stdout сохранён. `doc
 ## 2026-10-15 — install PASS/build STARTED
 
 pnpm install --frozen-lockfile exit0, policy intact. `docs/checkpoints/2026-10-15-install-pass-build-started.md`. Next pnpm build с полным audit/Next.
+
+
+## 2026-10-15 — resumed full build PASS
+
+pnpm build exit0:656/656 audit, quote/API/Next/types/static16; focused ESLint/diffPASS. Полный stdout сохранён. `docs/checkpoints/2026-10-15-resumed-build-pass.md`. NEXT/STARTED recovery LNR summary из имеющегося raw, без нового live запроса.

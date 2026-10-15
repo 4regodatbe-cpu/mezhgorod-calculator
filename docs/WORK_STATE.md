@@ -1,3 +1,9 @@
+## CURRENT — восстановленная ветка проверена, build PASS
+
+DONE: `pnpm build` exit0 — audit656/656, quote/API, Next/TypeScript/static16/16 PASS; targeted ESLint/diff check PASS. [Checkpoint](checkpoints/2026-10-15-resumed-build-pass.md). [Availability](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/EVIDENCE_AVAILABILITY.md):27rawOD,26полных комплектов,13утраченныхraw,55missingrefs. NEXT/STARTED: восстановить LNR summary из существующего raw офлайн, явно обозначить реконструкцию. PR14 draft; production не менялся.
+
+---
+
 ## CURRENT — install PASS, full build STARTED
 
 `pnpm install --frozen-lockfile` exit0, pnpm11.25.0, lockfile unchanged. [Checkpoint](checkpoints/2026-10-15-install-pass-build-started.md). NEXT: pnpm build, сохранить полный stdout/result. Focused IO6/6/report1/1 PASS.

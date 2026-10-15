@@ -1,3 +1,9 @@
+# CURRENT — full gate PASS; recovery LNR summary STARTED
+
+- [x] pnpm build656/656 + quote/API/Next/TypeScript/static16, targeted ESLint/diffPASS.
+- [ ] Восстановить LNR summary по existing raw, обозначить reconstructed/offline.
+- [ ] Далее13утраченныхraw и остальные planned маршруты, по одному checkpoint перед следующим.
+
 # CURRENT — dependencies installed, pnpm build STARTED
 
 Сохранить полный build result, затем recovery одного LNR summary.
