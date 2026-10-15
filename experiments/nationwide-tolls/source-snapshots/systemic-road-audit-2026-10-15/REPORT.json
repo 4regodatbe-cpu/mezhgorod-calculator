@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:53:07.512Z",
+  "generatedAt": "2026-10-15T23:53:39.088Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 88,
-    "recordedLiveAttempts": 101,
-    "liveCaptured": 87,
-    "savedLiveSummaries": 87,
+    "distinctCaseAttempts": 89,
+    "recordedLiveAttempts": 102,
+    "liveCaptured": 88,
+    "savedLiveSummaries": 88,
     "missingOrInvalidReferences": 1,
-    "audited": 87,
-    "traceComplete": 87,
-    "sameDateParity": 87
+    "audited": 88,
+    "traceComplete": 88,
+    "sameDateParity": 88
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 12,
-      "audited": 12,
-      "traceComplete": 12,
+      "liveCaptured": 13,
+      "audited": 13,
+      "traceComplete": 13,
       "pricedWeekday": 3,
       "pricedWeekend": 4
     },
@@ -3002,6 +3002,41 @@
       ],
       "routeMeters": 491706,
       "routeSeconds": 26085
+    },
+    {
+      "caseId": "zaporizhzhia-бердянск-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-53-36-260Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2087174,
+      "routeSeconds": 104210
     }
   ],
   "historicalExecutionExceptions": [],
@@ -3529,7 +3564,8 @@
         "kherson-каховка-saint-petersburg-center",
         "kherson-новая-збурьевка-kazan-center",
         "kherson-новая-збурьевка-moscow-center",
-        "zaporizhzhia-бердянск-kazan-center"
+        "zaporizhzhia-бердянск-kazan-center",
+        "zaporizhzhia-бердянск-moscow-center"
       ],
       "occurrences": [
         {
@@ -4287,9 +4323,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-52-46-679Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-53-36-260Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-53-36-938Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-53-37-611Z.json"
         }
       ],
-      "caseCount": 28
+      "caseCount": 29
     },
     {
       "code": "zsd:unpriced",
