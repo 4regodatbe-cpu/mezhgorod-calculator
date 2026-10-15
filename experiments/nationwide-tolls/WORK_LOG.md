@@ -34,3 +34,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16 00:08 МСК: прямое разрешение пользователя в текущем чате получено, approval blocker снят. CLI push не имеет credentials (exit128). STARTED connector save/readback, затем frozen install/full build. [Checkpoint](../../docs/checkpoints/2026-10-16-0008-save-authorized.md).
+
+
+2026-10-16: frozen install PASS/exit0; полный build STARTED. [Checkpoint](../../docs/checkpoints/2026-10-16-0014-install-pass-build-started.md).

@@ -30,3 +30,6 @@
 ## Возобновление 2026-10-16 00:08 МСК
 
 Прямое разрешение пользователя получено. Approval blocker выше — история. CLI push: exit128 (нет credentials). STARTED сохранение через подключённый GitHub connector, затем установка и полный gate. [Checkpoint](checkpoints/2026-10-16-0008-save-authorized.md).
+
+
+2026-10-16: frozen install PASS/exit0; полный build STARTED. [Checkpoint](checkpoints/2026-10-16-0014-install-pass-build-started.md).
