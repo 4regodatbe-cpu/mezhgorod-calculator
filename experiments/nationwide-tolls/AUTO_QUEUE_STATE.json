@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-15T23:51:09.610Z",
-  "phase": "DONE",
+  "at": "2026-10-15T23:51:12.775Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,74 +23,10 @@
       "region": "lnr"
     }
   },
-  "caseId": "lnr-марковка-kazan-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "lnr-марковка-kazan-center",
-    "startedAt": "2026-10-15T23:50:48.280Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-50-58-119Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-kazan-center/2026-10-15T23-50-58-026Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-50-58-639Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-50-59-136Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 1220,
-      "weekdayAmount": 1220,
-      "weekendAmount": 1470,
-      "period": "понедельник–четверг",
-      "segments": [
-        "М-4: m4-636 → m4-515 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 1470,
-      "weekdayAmount": 1220,
-      "weekendAmount": 1470,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "М-4: m4-636 → m4-515 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 1220,
-        "reason": "matrix exact selected-route M4 vector"
-      }
-    ],
-    "finishedAt": "2026-10-15T23:50:59.155Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-50-46-902Z-part5",
-  "parent": "13075923fa469dacf7421dcd71f0a7c8a7210a04",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-51-09-610Z-done.json"
+  "caseId": "lnr-марковка-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-51-12-775Z-part5",
+  "parent": "ec99fc3c622929d0fc317a4394c0567f7a90d549",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-51-12-775Z-started.json"
 }
