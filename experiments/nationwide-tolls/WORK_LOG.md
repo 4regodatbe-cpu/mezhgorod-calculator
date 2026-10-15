@@ -52,3 +52,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16 01:17 МСК: прямое разрешение передачи координат/маршрутных параметров Valhalla/OSRM/BRouter получено в текущем чате («Разрешаю доступ»). Approval blocker снят. STARTED live Бахмут→Казань. [Checkpoint](../../docs/checkpoints/2026-10-16-0117-routing-authorized-started.md).
+
+
+2026-10-16 01:18МСК DONE: live Бахмут→Казань OSRM1452.489км/83339с, traceComplete, М12=850₽. Corpus live-captured; STARTED same-date/weekend replay. [Checkpoint](../../docs/checkpoints/2026-10-16-bakhmut-kazan-live-pass.md).
