@@ -2422,18 +2422,18 @@
       "expectedRoads": [],
       "status": "audited",
       "liveEvidence": {
-        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json",
-        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T12-03-45-382Z-capture.json.gz",
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-22-49-330Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T18-22-49-183Z-capture.json.gz",
         "provider": "OSRM",
         "routeMeters": 2018710,
         "traceComplete": true
       },
       "auditEvidence": {
-        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
-        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json",
-        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T12-03-45-382Z-capture.json.gz",
-        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-46-143Z.json",
-        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-46-753Z.json",
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T18-21-50-324Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-22-49-330Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T18-22-49-183Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T18-22-49-968Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T18-22-50-519Z.json",
         "sameDateParity": true
       }
     },
