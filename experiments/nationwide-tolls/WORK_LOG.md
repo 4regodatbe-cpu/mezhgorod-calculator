@@ -1558,3 +1558,8 @@ pnpm build exit0:656/656 audit, quote/API/Next/types/static16; focused ESLint/di
 ## 2026-10-15-194236 МСК — live audit STARTED
 
 Лисичанск→СПб, восстановление одного утраченногоraw; sourceb4d6f9e/PR14проверены. `docs/checkpoints/2026-10-15-194236-lisichansk-spb-live-started.md`. Новых live результатов пока нет.
+
+
+## 2026-10-15 — live approval BLOCKED
+
+Single-caseSTART, новыйcapture не подтверждён; automatic review rejected private coordinates disclosure toValhalla. Процессыaudit не найдены, сетевой retry не выполнялся. `docs/checkpoints/2026-10-15-live-approval-blocked.md`. Next offline diagnosis, затем request explicit destination consent.

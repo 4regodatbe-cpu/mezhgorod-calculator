@@ -1,3 +1,8 @@
+# CURRENT — liveBLOCKED approval, offline diagnosis STARTED
+
+- [ ] Offline findings existing26complete cases, без сетевого запроса.
+- [ ] Explicit user permission coordinate disclosure toValhalla/OSRM/BRouter до live retry; не обходить отказ.
+
 # CURRENT 2026-10-15-194236 — Лисичанск→СПб STARTED
 
 Одинlive+same-date+weekend; durable checkpoint прежде следующего case.

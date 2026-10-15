@@ -1,3 +1,9 @@
+## CURRENT — live audit BLOCKED approval; offline diagnosis STARTED
+
+Новый Лисичанск→СПб не засчитан: automatic approval review rejected coordinate disclosure to Valhalla without explicit permission. [Checkpoint](checkpoints/2026-10-15-live-approval-blocked.md). Не повторять сетевой запрос/не менять transport для обхода. STARTED: offline findings по26сохранённымполным кейсам. Нужен явный consent для routing destinations после unaffected work.
+
+---
+
 ## CURRENT — 2026-10-15-194236 МСК, live audit возобновлён
 
 STARTED: `lnr-лисичанск-saint-petersburg-center`, один из13утраченныхraw. [Checkpoint](checkpoints/2026-10-15-194236-lisichansk-spb-live-started.md). Parentb4d6f9e проверен черезPR14. NEXT: live+2offline даты, сохранить результат/ошибку и проверить remote перед следующим case.
