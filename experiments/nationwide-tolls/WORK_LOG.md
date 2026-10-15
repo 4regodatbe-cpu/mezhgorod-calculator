@@ -1345,3 +1345,20 @@ Reviewed conservative subset27 paid way IDs полностью в zone1. Runtime
 **Evidence:** forward geometry trace has booth `7014845616` on service way `241701006` with `edgeToll:false`; nearest fee=yes plaza node `2492861246` is 6.1m away and is not reported as a toll event. Reverse geometry trace identifies `2492861243` as toll booth on toll=yes way `1395997595` and `edgeToll:true`. Both events occur at the archived p679 plaza, but the forward lane mismatch and absence of proven tail exit prevent a complete directed RVP match. These captures do not cross the airport gantries; they cannot justify 38/94 RUB. No runtime code/tariff change was made; no tests repeated because this evidence-only block uses the existing harness.
 
 **Next:** independently prove the physical exit/toll event for the complete 679–684 product and distinguish tail-only, airport-only and combined passages. Keep all three tariff rows unknown in the runtime until this is established. Main/Production/Android remain unchanged; PR14 draft.
+
+
+## 2026-10-15 — Официальная модель ПВП хвоста М-11 и проверка lane topology
+
+**Запрос/решение.** Продолжить PR14 с последней точки. Сохранять fail-closed: неизвестное не бесплатно; точная или частичная известная сумма не становится полной автоматически. Main/Production/Android не менять.
+
+**Диагностика и источники.** Подтверждены локальная чистая ветка `fix/v3-missing-route-prices-2026-10-15`, HEAD `ffa11c37c608451b31cbd45cf0e583bae76353d1`; PR14 открыт, draft, mergeable; combined Vercel status для SHA success. По официальной странице Автодора `https://avtodor-tr.ru/business/road/m-11/` проверено: участок км 646–684 работает как closed system с оплатой за фактически пройденное расстояние между въездным и выездным ПВП; подъезд к Пулково начинается на км 681 и использует free-flow. Операторская страница `https://avtodor-tpass.ru/page/punkty-vzimaniya-platy-i-tsentry-podderzhki` идентифицирует ПВП 679 (ОССЗ) и ПВП 668 (Автодор-Платные Дороги) на участке 668–684. Попытки открыть HTML истекли/получили 403; зафиксированы поисковые выдачи первичных страниц, а не скриншот/полная сохранённая страница.
+
+**Проверка архивной геометрии.** Из `2026-10-14-osm-tail-corridor.osm.gz`: nodes 2492861243 и 2492861246 — fee=yes toll booths на односторонних motorway М-11 toll=yes ways; 7014845616 — соседний booth на односторонней service way без fee=yes. Новый JSON audit фиксирует топологию и ограничения. Две полные свежие трассы остаются разнонаправленными по plaza lanes: прямой маршрут задевает service booth, обратный — fee=yes node. Официальная схема описывает систему, но не связывает выбранный точный event с конкретной строкой приказа 274.
+
+**Изменения.** Добавлен `source-snapshots/m11/2026-10-15-official-tail-corridor-source-audit.json`; в stage09 дописан append-only результат; `NEXT_STEPS.md` и `docs/WORK_STATE.md` обновлены. Runtime и тарифные данные не менялись. `DECISIONS.md` не менялся: нового ценового правила не выведено.
+
+**Проверки.** Верификация PR/status выполнена коннектором GitHub: PR14 head `ffa11c3…`, open/draft/mergeable; Vercel success. Локально проверена OSM XML topology; `git diff --check` PASS (после правки). Тесты/build не запускались, поскольку изменены только docs/evidence.
+
+**Итог/ограничение.** Подтверждено: модель закрытого участка 646–684, endpoint facilities 668/679 и начало отдельной аэропортовой дороги у km 681. Не доказано: точная lane/entry-exit пара на выбранном live route и её mapping к 56/38/94 при проезде в двух направлениях. Сумма для Санкт-Петербурга остаётся unknown/null; не включать тариф, не начислять combined + tail. PR остаётся draft; main, Production и Android не менялись.
+
+**Следующий шаг.** Получить первичную lane-level схему/операторский log конкретной пары 679↔668 либо 679↔681 и определить airport branch event; затем направленно проверить complete selected-route crossings в обоих направлениях.

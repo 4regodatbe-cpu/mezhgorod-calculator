@@ -1,3 +1,9 @@
+## CURRENT 2026-10-15 — М-11 tail physical evidence
+
+- [x] Сверены первичные страницы Автодора: закрытая система 646–684, Пулково начинается на 681, операторские ПВП 668/679 идентифицированы. Архивная OSM topology различает fee=yes motorway lanes и соседний service booth. См. [stage 09](stages/09-m11-tail-evidence-audit-2026-10-15.md) и JSON snapshot `source-snapshots/m11/2026-10-15-official-tail-corridor-source-audit.json`.
+- [ ] Получить event-level доказательство точного entry/exit и lane passage в обе стороны; определить соотношение 56/38/94 с полным operator RVP, включая аэропортовый ответвитель km 681. Приёмка: отдельные однозначные product events, никакого выбора по радиусу/смежной service дороге, не считать 94+56.
+- [ ] Только после этого реализовать resolver + anti-double-charge/completeness tests, затем live Краснодар↔СПб и Казань↔СПб; пока runtime price остаётся unknown/null.
+
 ## CURRENT 2026-10-15 — уточнение тарифа хвоста М-11
 
 - [x] Визуально сверить сохранённый order274 PDF, pp.9–10: 56 ₽ tail 679–681/681–684; 38 ₽ airport access; 94 ₽ combined RVP. Не складывать строки.
