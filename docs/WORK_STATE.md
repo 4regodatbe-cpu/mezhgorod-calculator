@@ -1,3 +1,9 @@
+## CURRENT — проверено наличие evidence
+
+DONE: [availability index](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/EVIDENCE_AVAILABILITY.md), 27 региональных OD с raw, 13 утраченных raw, 55 отсутствующих referenced files; raw gzip/JSON/SHA проверены, повреждённых0. Все4файла: DNR10,Kherson10,LNR6,Zaporizhzhia0; это availability, не tariff/parity verification. [Checkpoint](checkpoints/2026-10-15-193000-evidence-availability.md). IO6/6 PASS; full build ещё не запускался. NEXT: безопасный report с missing evidence, затем восстановление по одному случаю.
+
+---
+
 ## CURRENT — IO regression 6/6 PASS; STARTED evidence availability
 
 Восстановлен смысл compaction test, fixture исправлен. [Checkpoint](checkpoints/2026-10-15-192500-io-reconstruction-pass.md). Исходный SHA потерянного теста не заявляется. Remote parent b1bfbed проверен. NEXT: availability index raw/summary/replay, не засчитывать manifest без файла. Полный build остаётся открытым.

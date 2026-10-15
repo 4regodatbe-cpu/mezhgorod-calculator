@@ -1523,3 +1523,8 @@ Focused5/6; причина fixture wayId0. Raw/test/output сохранены, �
 ## 2026-10-15 — IO fixture corrected, focused6/6 PASS
 
 Положительные OSM IDs, helper не менялся. Новый stdout сохранён, старый failed не удалён. STARTED availability inspection. `docs/checkpoints/2026-10-15-192500-io-reconstruction-pass.md`. Full build не запускался.
+
+
+## 2026-10-15 — evidence inventory DONE
+
+27ODraw/29rawfiles, invalid0, missing13raw/55referenced files. Все4файла10DNR+10Kherson+6LNR, наличие не заменяет parity. Скрипт read-only; JSON/MD с exact SHA. `docs/checkpoints/2026-10-15-193000-evidence-availability.md`. Next safe report; no new live routes/replay/build.

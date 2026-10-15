@@ -1,3 +1,9 @@
+# CURRENT — evidence availability проверено
+
+- [x] 160corpus/batch refs/raw gzip/JSON/SHA инвентаризированы; см. EVIDENCE_AVAILABILITY.json/.md.
+- [ ] Безопасный report: missing refs не должны падать или засчитываться как complete.
+- [ ] Восстановить недостающие summary/replays по имеющимся raw; live только13утраченных raw и оставшиеся planned cases.
+
 # CURRENT — IO6/6 PASS, evidence availability STARTED
 
 - [x] Восстановить смысл compaction test, проверить focused6/6.
