@@ -1,21 +1,11 @@
-# Калькулятор «Из А в Б»: автоматическое продолжение
+# Калькулятор: повторный запуск автоматической очереди
 
-16.10.2026. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Parent f45cc0c1; опубликованный head проверяется после записи.
+16.10.2026. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14draft. Parent0314a335; новыйheadподтверждаетсяreadback. Текущийaudit **27/155** и **0/154**. Части1–3DONE; часть4INPROGRESS, следующий **kherson-геническ-kazan-center**.
 
-## DONE
+ПервыйGitHubrun38824450386 прошёлgate666, но остановилсянапробелевахжурнала доcase. Причинаисправлена, focused15PASS; новыйfullbuild **667/667** + quote/API/Next/TypeScript/static16/16PASS; lint2/diffPASS. [Ready checkpoint](checkpoints/2026-10-16-automatic-queue-log-fix-ready.md), [полныйjoblog](checkpoints/evidence/2026-10-16-auto-queue-first-job.json).
 
-Части1–3; проверено **27/155** stage1 и **0/154** stage2. Runner default1, PHASE/WAIT15s и атомарный progress после каждого ответа. Новая автоматическая очередь: focused14/14, полный build **666/666** + quote/API/Next/TypeScript/static16/16 PASS, lint4/diff/YAML PASS. [Checkpoint](checkpoints/2026-10-16-automatic-queue-enabled.md), [build](checkpoints/2026-10-16-automatic-queue-build-pass.md).
+**STARTED rerun job116728494584**,actualstatusещёпроверить. [.github/workflows/nationwide-audit-queue.yml](../.github/workflows/nationwide-audit-queue.yml), [runner](../experiments/nationwide-tolls/scripts/automatic-audit-queue.mjs). Послестарта актуальный AUTO_QUEUE_STATE/этотhandoffобновляетworker. Не писатьпараллельно, покаjobactive; каждоеcase STARTED→live/replay→report/inventory→DONE/FAILED→commitpush→headreadback.
 
-## IN PROGRESS
+[План20частей](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json), [продолжение](../experiments/nationwide-tolls/AUTOMATIC_CONTINUATION.md). Задачаавтопродолжениясуществует,temporarilypausedпокаrepair; послеverifiedactive/DONEвозобновить. ПослеAUDIT_QUEUE_DONEчасти19(исправления) и20(финальныепроверки) выполнитьотдельно. Auditedневнешнееподтверждениецены;unknownне0,subtotalнеполныйитог. Правилотарифаотправления;междорожныевекторыотложены. No main/merge/Production/Android. GitHub/routingразрешениядействуют.
 
-Включается GitHubActions [.github/workflows/nationwide-audit-queue.yml](../.github/workflows/nationwide-audit-queue.yml): полныйgate, затем поодномуcase, STARTEDcommit→case→DONEcommit→headreadback→следующий. Фактический runid/status ещё проверить! Не запускатьпараллельныйручнойwriter. Когдаjobначнётработать, его AUTO_QUEUE_STATE.json/этотhandoffстанутактуальными.
-
-Следующий case часть4 **kherson-геническ-kazan-center**. [Точнаяочередь](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json), [контроллер](../experiments/nationwide-tolls/scripts/automatic-audit-queue.mjs). После всехroutes части19(исправления) и20(финальнаяпроверка) ещёвыполнить, не подменятьих числомпрогонов.
-
-Пользователь16.10 02:12 поручил автоматическипройти все20частей. Сохранятькаждыймалыйшаг до следующего,не ждатькоманды«дальше». Unknownне0, subtotalнеполныйитог; auditedнеподтверждениецены. Тарифвсейпоездкипоотправлению; междорожныевекторыотложены. Неmain/merge/Production/Androidбеззапроса. [Protocol](CHECKPOINT_PROTOCOL.md), [журнал](../experiments/nationwide-tolls/WORK_LOG.md), [решения](../experiments/nationwide-tolls/DECISIONS.md).
-
-16.10.2026: Actions первыйjob failed доcase из-за trailingwhitespaceвновомlogformatter; GitHubgate666PASS. STARTED formatterfix/fullgate/rerun. Hourlycontinuationpausedдоисправления. checkpoints/2026-10-16-automatic-queue-first-job-failed.md.
-
-16.10.2026: checkpointformatter исправлен, focused15/15PASS; fullgate STARTED, затем lint/rerunjob. checkpoints/2026-10-16-automatic-queue-log-fix.md.
-
-16.10.2026: formatterfix fullgate667/667PASS; lint2/diff STARTED. checkpoints/2026-10-16-automatic-queue-log-fix-build-pass.md.
+[Protocol](CHECKPOINT_PROTOCOL.md),[WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md),[DECISIONS](../experiments/nationwide-tolls/DECISIONS.md).
