@@ -3,9 +3,9 @@
   "regions": {
     "dnr": {
       "planned": 40,
-      "historicallyAudited": 15,
-      "rawAvailable": 15,
-      "fourArtifactsAvailable": 15
+      "historicallyAudited": 16,
+      "rawAvailable": 16,
+      "fourArtifactsAvailable": 16
     },
     "kherson": {
       "planned": 40,
@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 10
     }
   },
-  "rawCaptureCount": 47,
-  "rawCaptureCaseCount": 45,
+  "rawCaptureCount": 48,
+  "rawCaptureCaseCount": 46,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -639,10 +639,49 @@
     {
       "caseId": "dnr-волноваха-kerch-center",
       "region": "dnr",
-      "historicalStatus": "planned",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
-      "artifacts": {}
+      "historicalStatus": "audited",
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-28-26-608Z.json",
+          "exists": true,
+          "bytes": 5689,
+          "sha256": "66eee636e1a83a44ba9678053893ce69a89a1a7f1db99739e30c7b68fd8c8569",
+          "gitBlobSha": "6e237add093710cdf88d6c30d292bd09708f0a02",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/2026-10-15T22-28-26-541Z-capture.json.gz",
+          "exists": true,
+          "bytes": 415242,
+          "sha256": "075de45bcfd95b5e28ead0686979937bd025eace6e584c0fb42378bf1f78bd38",
+          "gitBlobSha": "333a98248d6f1268ebb69290928567ae5d3a8a3b",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 9
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T22-28-26-965Z.json",
+          "exists": true,
+          "bytes": 5767,
+          "sha256": "0e7335bdc4385d66ea9260d7fd9706252e65ee40a9a9912ac7d1ffe877d2e0f5",
+          "gitBlobSha": "3645418f9a4e305afb5ff7f6a98092ba02001e29",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T22-28-27-326Z.json",
+          "exists": true,
+          "bytes": 5769,
+          "sha256": "0a9456cce7bbc840209bd27e1edba46e4216dd0cc1d80fe5458d381650f35c06",
+          "gitBlobSha": "1f11649d1159ddf3805721322d2bc215d4a5c3d9",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     },
     {
       "caseId": "dnr-талаковка-moscow-center",
@@ -5429,6 +5468,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-27-58-766Z.json",
+      "caseId": "dnr-волноваха-kerch-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-28-26-608Z.json",
+          "exists": true,
+          "bytes": 5689,
+          "sha256": "66eee636e1a83a44ba9678053893ce69a89a1a7f1db99739e30c7b68fd8c8569",
+          "gitBlobSha": "6e237add093710cdf88d6c30d292bd09708f0a02",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/2026-10-15T22-28-26-541Z-capture.json.gz",
+          "exists": true,
+          "bytes": 415242,
+          "sha256": "075de45bcfd95b5e28ead0686979937bd025eace6e584c0fb42378bf1f78bd38",
+          "gitBlobSha": "333a98248d6f1268ebb69290928567ae5d3a8a3b",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 9
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T22-28-26-965Z.json",
+          "exists": true,
+          "bytes": 5767,
+          "sha256": "0e7335bdc4385d66ea9260d7fd9706252e65ee40a9a9912ac7d1ffe877d2e0f5",
+          "gitBlobSha": "3645418f9a4e305afb5ff7f6a98092ba02001e29",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T22-28-27-326Z.json",
+          "exists": true,
+          "bytes": 5769,
+          "sha256": "0a9456cce7bbc840209bd27e1edba46e4216dd0cc1d80fe5458d381650f35c06",
+          "gitBlobSha": "1f11649d1159ddf3805721322d2bc215d4a5c3d9",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -5486,6 +5570,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 15
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/2026-10-15T22-28-26-541Z-capture.json.gz",
+      "exists": true,
+      "bytes": 415242,
+      "sha256": "075de45bcfd95b5e28ead0686979937bd025eace6e584c0fb42378bf1f78bd38",
+      "gitBlobSha": "333a98248d6f1268ebb69290928567ae5d3a8a3b",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 9
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",

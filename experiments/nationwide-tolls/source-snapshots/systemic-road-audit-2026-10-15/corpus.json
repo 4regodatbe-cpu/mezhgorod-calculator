@@ -569,7 +569,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-28-26-608Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/2026-10-15T22-28-26-541Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 793904,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-27-58-766Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-28-26-608Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/2026-10-15T22-28-26-541Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-28-26-965Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-28-27-326Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-талаковка-moscow-center",
