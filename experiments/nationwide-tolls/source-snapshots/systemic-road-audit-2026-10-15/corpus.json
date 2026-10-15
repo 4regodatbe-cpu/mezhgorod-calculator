@@ -2000,7 +2000,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-46-16-476Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kerch-center/2026-10-15T23-46-16-417Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 753500,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-46-12-800Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-46-16-476Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kerch-center/2026-10-15T23-46-16-417Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-46-16-943Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-46-17-401Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-марковка-moscow-center",
