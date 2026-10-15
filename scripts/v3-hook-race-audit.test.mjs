@@ -12,7 +12,7 @@ function harness(fetch,clipboard={writeText:async()=>{}}){
  return {hook,states,cleanup:()=>cleanups.forEach(f=>f())};
 }
 const fare={totalPrice:100,requiresSplit:false,reviewRequired:false,dualTariff:false,pricingSegments:[{distanceKm:10,ratePerKm:10,amount:100,tariffType:'normal',from:'A',to:'B'}]};
-const toll={amount:880,weekdayAmount:1130,weekendAmount:1650,period:'ночной проезд',segments:['М-11'],confidence:'matched',pricingStatus:'priced',priceConfirmation:'unconfirmed'};
+const toll={amount:880,weekdayAmount:1130,weekendAmount:1650,period:'ночной проезд',segments:['М-11'],confidence:'matched',pricingStatus:'priced'};
 const data=name=>({legs:[{from:name,to:'B',fast:{meters:10000,seconds:1000,tolls:toll,pricingByVehicle:Object.fromEntries(['standard','comfort','comfort_plus','minivan'].map(k=>[k,fare]))},free:null}]});
 const deferred=()=>{let resolve;const promise=new Promise(r=>{resolve=r;});return {promise,resolve};};
 test('late response ignoring abort cannot replace a newer calculation',async()=>{
@@ -32,7 +32,7 @@ test('clipboard failure is handled and never reports success',async()=>{
 test('clipboard contains the same actual toll and warning as the displayed quote',async()=>{
  let copied='';const h=harness(async()=>Response.json({}),{writeText:async text=>{copied=text;}});
  const d=data('A'),leg=d.legs[0];await h.hook.copyStandard('k','title',leg,leg.fast,toll,undefined,'actual');
- assert.match(copied,/880/);assert.match(copied,/980/);assert.doesNotMatch(copied,/1130|1650/);assert.match(copied,/Стоимость не подтверждена/);h.cleanup();
+ assert.match(copied,/880/);assert.match(copied,/980/);assert.doesNotMatch(copied,/1130|1650/);assert.doesNotMatch(copied,/Стоимость не подтверждена|квитанц|провайдером/);h.cleanup();
 });
 
 test('a late clipboard completion cannot mark a reset quote copied',async()=>{
@@ -51,5 +51,5 @@ test('unknown road charge preserves a calculated special fare in copied text',as
  await h.hook.copyStandard('k','title',leg,leg.fast,unknown,undefined,'actual');
  assert.match(copied,/55[\s\u00a0\u202f]?299 ₽ без платных дорог/);
  assert.doesNotMatch(copied,/итого не рассчитано|= 0/);
- assert.match(copied,/Стоимость платных дорог не подтверждена/);h.cleanup();
+ assert.match(copied,/Стоимость платных дорог неизвестна/);h.cleanup();
 });

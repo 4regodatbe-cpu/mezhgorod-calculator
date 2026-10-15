@@ -1,13 +1,16 @@
-## CURRENT 2026-10-15 — Яндекс маршрутные суммы приняты для точных картографических маршрутов
+## CURRENT 2026-10-15 — принятие Яндекс сумм и удаление пометок о квитанциях
 
-USER DECISION: если Яндекс Карты показывают сумму платных дорог, принимать и использовать эту сумму для соответствующего выбранного маршрута. Живые проверки и принятые значения: [этап 12](../experiments/nationwide-tolls/stages/12-yandex-live-route-estimates-2026-10-15.md) и [снимок Яндекс](../experiments/nationwide-tolls/source-snapshots/yandex/2026-10-15-live-route-estimates.json).
+USER DECISIONS: принимать сумму, показанную Яндекс Картами, для соответствующего выбранного маршрута; не показывать пользователю формулировки о неподтверждении тарифа квитанцией/оператором/провайдером. Для М-11 679–684 действует выбранная сумма 94 ₽.
 
-OBSERVED: ЗСД Благодатная→Приморский ~600 ₽ (26 мин/14 mi, подробный шаг 10.6 mi ЗСД); обратный маршрут ~900 ₽ (24 мин/14.6 mi, отличная геометрия с разворотом). Казань→Москва ~4 400 ₽ (530 mi/9ч39); Москва→Казань — цена не отображена, поэтому не 0. Быстрейшие Яндекс маршруты Санкт-Петербург→Краснодар ~11 363 ₽ и Краснодар→СПб ~10 910 ₽. Все суммы отображаются приблизительно (`~`) для легкового авто ниже 2 м без транспондера.
+YANDEX EVIDENCE: ЗСД Благодатная→Приморский ~600 ₽ и обратный маршрут ~900 ₽ (геометрия различается); Казань→Москва ~4 400 ₽, Москва→Казань сумма не показана; быстрейшие СПб→Краснодар ~11 363 ₽ и Краснодар→СПб ~10 910 ₽. Все числа сохранены как суммы именно этих картографических маршрутов в [этапе 12](../experiments/nationwide-tolls/stages/12-yandex-live-route-estimates-2026-10-15.md) и [снимке Яндекс](../experiments/nationwide-tolls/source-snapshots/yandex/2026-10-15-live-route-estimates.json).
 
-LIMIT: приняты как route-level оценки конкретных направлений/точек. Не превращать их в универсальные зонные цены и не зеркалить. V3 сейчас получает геометрию другим маршрутизатором; точная трасса/пара gate IDs Яндекса отсутствует, поэтому суммы не подставлены в другой маршрут или отдельные тарифные ячейки. Runtime warning/status не менялись. Полный `pnpm build` не запускался: исходники приложения не менялись. JSON parse, local-link validation, and `git diff --check` passed. Docs-only checkpoint `0769b4cdbdf481e764bf188509ffc98940107561` is published on the PR14 branch and the local checkout is synchronized/clean. PR14 remains open/draft/mergeable. Actions run `38698595685` is still `in_progress`; no result is claimed yet. App source was unchanged, so `pnpm build` was not run.
+DONE THIS BLOCK: убраны пользовательские пометки «Стоимость не подтверждена», «не подтверждена оператором/провайдером» и передача `priceConfirmation`/`displayLabel` в V3 API. Для ручной цены пишется только, что она введена вручную. Если суммы реально нет или карта не показывает цену, интерфейс говорит, что стоимость неизвестна, не выдавая частичную сумму за полную. Внутренний fail-closed расчёт неизвестных участков сохранён.
 
-NEXT: compare captured Yandex route scope with selected live V3 geometry/paid gates; wire accepted amount only when exact route/section matching is established. Then re-check ZSD continuation, M12↔CKAD/conditional context, and unknown paid-road events. PR14 remains open/draft; no merge/main/Production/Android changes.
+LIMIT: Яндекс route totals не распределяются по другим геометриям или отдельным тарифным ячейкам без точного route/gate match. Москва→Казань без показанной суммы остаётся неизвестным. Следующий шаг — сопоставление сохранённых картографических маршрутов и gate scope с V3; затем ЗСД дальше zone1, M-12↔ЦКАД и оставшиеся `unknown-paid-road` события.
 
+VERIFICATION: focused tests 27/27 PASS; `pnpm build` — 646/646 audit, quote/API, TypeScript/Next и static16/16 PASS; targeted ESLint — 0 ошибок, 1 предупреждение `analyticsVersion` в `app/v2/components/use-v2-calculation.ts`; `git diff --check` PASS. PR14 open/draft/mergeable; ветка `fix/v3-missing-route-prices-2026-10-15`; новая hosted Actions проверка будет выполняться на опубликованном коммите. No merge/main/Production/Android changes.
+
+NEXT: publish this implementation/evidence block, check exact-SHA Actions, then do route/gate matching for accepted Yandex totals. Keep genuinely unknown toll amounts fail-closed without receipt language.
 ---
 
 ## CURRENT 2026-10-15 — длинная трасса восстановлена после HTTP 429

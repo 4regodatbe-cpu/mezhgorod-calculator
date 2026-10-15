@@ -47,7 +47,7 @@ export async function calculateLegTolls({
   selectedFastRoute,
   confirmedFreeRoute,
   diagnosticFastValidation,
-}: LegTollInput): Promise<{ tolls: TollEstimate & {priceConfirmation:string;displayLabel:string}; fastValidation: TollValidation; componentAudit: {status:string;priced:string[];missing:string[];components:RouteTollComponent[]}; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
+}: LegTollInput): Promise<{ tolls: TollEstimate & {priceConfirmation:string;displayLabel:string | null}; fastValidation: TollValidation; componentAudit: {status:string;priced:string[];missing:string[];components:RouteTollComponent[]}; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
@@ -210,7 +210,7 @@ export async function calculateLegTolls({
     // certify a complete selected-route charge, even when the subset has money.
     if (localRecovery) {
       pricedTolls = zeroUnknownTolls(localRecovery,
-        ["Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика", ...localRecovery.segments]);
+          ["Полная стоимость коридора неизвестна; найденные отрезки — только диагностика", ...localRecovery.segments]);
       fastValidation = unknownValidation("Найдены приблизительные платные отрезки; полного тарифа маршрута нет");
     }
   }
@@ -235,7 +235,7 @@ export async function calculateLegTolls({
       const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
       if (remoteRecovery) {
         pricedTolls = zeroUnknownTolls(remoteRecovery,
-          ["Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика", ...remoteRecovery.segments]);
+          ["Полная стоимость коридора неизвестна; найденные отрезки — только диагностика", ...remoteRecovery.segments]);
         fastValidation = unknownValidation("Резервный расчёт нашёл только часть отрезков; полный тариф выбранного маршрута неизвестен");
       } else if (fastValidation.status !== "free" || fastValidation.complete !== true) {
         fastValidation = unknownValidation("Проверка дорожных рёбер не дала готового тарифа или полного подтверждения бесплатного маршрута");
@@ -249,5 +249,5 @@ export async function calculateLegTolls({
   const componentAudit = {status:composition.status,priced:[...composition.priced],missing:[...composition.missing],
     components:components.filter(component=>component.detected).map(component=>({...component,
       tolls:component.tolls?{...component.tolls,segments:[...component.tolls.segments]}:null}))};
-  return { componentAudit, tolls: { ...tolls, priceConfirmation: matrixM4?.tolls && composition.status === "priced" ? matrixM4.priceConfirmation : "unconfirmed", displayLabel: "Стоимость не подтверждена" }, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
+  return { componentAudit, tolls: { ...tolls, priceConfirmation: matrixM4?.tolls && composition.status === "priced" ? matrixM4.priceConfirmation : "unconfirmed", displayLabel: null }, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
 }

@@ -24,7 +24,7 @@ globalThis.fetch=async(input)=>{
  return response({},503);
 };
 const req=(body:unknown)=>new NextRequest('http://localhost/api/v3/calculate',{method:'POST',body:JSON.stringify(body)});
-test('V3 Anapa and Yalta requests expose numeric A289 estimate with warning',async()=>{
+test('V3 Anapa and Yalta requests expose numeric A289 price without confirmation labels',async()=>{
  for(const [from,minPrice] of [[anapa,620],[yalta,800]] as const){
   const result=await POST(req({from,to:krasnodar,departureAt:'2026-10-13T09:00:00+03:00'}));
   const body=await result.json();
@@ -33,8 +33,8 @@ test('V3 Anapa and Yalta requests expose numeric A289 estimate with warning',asy
   const tolls=body.legs[0].fast.tolls;
   assert.equal(tolls.pricingStatus,'priced',JSON.stringify(tolls));
   assert.ok(tolls.amount===minPrice||tolls.amount===minPrice+410,JSON.stringify(tolls));
-  assert.equal(tolls.priceConfirmation,'unconfirmed');
-  assert.equal(tolls.displayLabel,'Стоимость не подтверждена');
+  assert.equal('priceConfirmation' in tolls,false);
+  assert.equal('displayLabel' in tolls,false);
   assert.ok(body.legs[0].fast.pricingByVehicle.comfort.totalPrice>0);
  }
 });

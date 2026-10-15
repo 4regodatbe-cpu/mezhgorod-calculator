@@ -79,13 +79,12 @@ export async function POST(request: NextRequest) {
       const territorySplit = analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
       const {coordinates, legs, ...summary} = trip;
       void coordinates; void legs;
-      const tolls = "tolls" in trip ? trip.tolls as { pricingStatus?: string } : null;
-      const confirmation = tolls?.pricingStatus === "priced"
-        ? {priceConfirmation:"unconfirmed",displayLabel:"Стоимость не подтверждена"}
-        : tolls?.pricingStatus === "free"
-          ? {priceConfirmation:"confirmed",displayLabel:null}
-          : {priceConfirmation:"unknown",displayLabel:"Стоимость платных дорог неизвестна"};
-      return {...summary, ...(tolls ? {tolls:{...tolls, ...confirmation}} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
+      const tolls = "tolls" in trip && trip.tolls && typeof trip.tolls === "object"
+        ? trip.tolls as Record<string, unknown> : null;
+      const publicTolls = tolls
+        ? Object.fromEntries(Object.entries(tolls).filter(([key]) => key !== "priceConfirmation" && key !== "displayLabel"))
+        : null;
+      return {...summary, ...(publicTolls ? {tolls:publicTolls} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
         from:from.label,to:to.label,vehicle,mode,normalRateOverrides,specialRateOverrides,multiplier:body.multiplier,
         legs:[{from:from.label,to:to.label,distanceKm:trip.meters/1000,territorySplit}],
       })]))};

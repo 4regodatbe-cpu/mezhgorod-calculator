@@ -227,3 +227,8 @@ Exact selected-route booth node может идентифицировать М4,
 These are map route estimates, not proof of an operator receipt. Existing runtime's `priceConfirmation` and warning retain their existing meaning until an exact geometry binding uses the approved route fare. Do not recast the ZSD sums as universal zone tariff cells.
 
 ---
+
+
+## 2026-10-15 — не показывать оговорки о квитанции для платных цен
+
+Пользователь прямо указал не выводить пометки вида «не подтверждено квитанцией». В пользовательском V2/V3 результате priced сумма показывается без такого предупреждения; в копируемом результате оно также отсутствует. Ручное значение обозначается только как введённое вручную. Публичный V3 DTO не отдаёт внутренние `priceConfirmation`/`displayLabel`. Состояние `unknown` сохраняется только там, где тариф/платная сумма действительно не рассчитаны: интерфейс сообщает «стоимость неизвестна», а неполный subtotal не объявляет полной суммой. Это решение меняет формулировки и публичный DTO, но не ослабляет fail-closed расчёт.

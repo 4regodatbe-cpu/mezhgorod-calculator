@@ -24,7 +24,7 @@ function validLeg(value:unknown):boolean {
  const values=[t.amount,t.weekdayAmount,t.weekendAmount];
  if(t.pricingStatus==='unknown'){if(!values.every(x=>x===null))return false;}
  else if(t.pricingStatus==='free'){if(!values.every(x=>x===0))return false;}
- else if(t.pricingStatus==='priced'){if(!values.every(money)||!['confirmed','unconfirmed'].includes(String(t.priceConfirmation)))return false;}
+ else if(t.pricingStatus==='priced'){if(!values.every(money)||'priceConfirmation' in t||'displayLabel' in t)return false;}
  else return false;
  return value.free==null && value.freeCandidate==null;
 }

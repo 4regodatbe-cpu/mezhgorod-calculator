@@ -53,6 +53,6 @@ export function a289ShortRoute(route:Coordinate[],legacySegments:string[],depart
   const amount=quote.rub;
   return {reason:cityTemryuk?"A-289 Temryuk two-frame city estimate; exit binding unverified":anapa?"A-289 Anapa exit inferred from two selected-route frames; estimate":"A-289 selected-route OD vector",
     tolls:{amount,weekdayAmount,weekendAmount,period:"все дни",
-      segments:[`А-289: ${start} → ${end}: ${quote.rub} ₽ · Стоимость не подтверждена`],
+      segments:[`А-289: ${start} → ${end}: ${quote.rub} ₽`],
       confidence:"matched" as const}};
 }

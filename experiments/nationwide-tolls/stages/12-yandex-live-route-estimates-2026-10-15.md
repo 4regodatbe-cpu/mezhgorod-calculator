@@ -40,3 +40,10 @@
 ## Status update — 2026-10-15
 
 JSON snapshot parsing, local-link validation, and `git diff --check` passed. Docs-only checkpoint `0769b4cdbdf481e764bf188509ffc98940107561` is published and the local branch is synchronized. PR14 is open/draft/mergeable. GitHub Actions run `38698595685` (`Special territory geometry and pricing`) is `in_progress`; no CI conclusion is claimed. No app code changed, so `pnpm build` was not run.
+
+
+## Дополнение — решение пользователя о пометках и реализация
+
+Пользователь отдельно распорядился не показывать отметки о неподтверждении суммы квитанцией. Удалены такие labels из карточек/копирования, API V3 исключает внутренние `priceConfirmation` и `displayLabel`, строки А-289/ЗСД больше не приклеивают предупреждение к числовой цене. У неизвестной/непоказанной карты цены остаётся прямой статус «стоимость неизвестна», и расчёт не подменяет неизвестную сумму нулём или partial subtotal. Суммы Яндекса приняты как оценки точных маршрутов, но не разложены на отдельные тарифные ячейки других геометрий.
+
+Проверки: 27 целевых тестов PASS; `pnpm build` — audit646/646, quote/API PASS, TypeScript/Next PASS, static16/16 PASS; targeted ESLint 0 ошибок/1 warning (`analyticsVersion`, существующая строка в V2 hook); `git diff --check` PASS. Исходные данные Яндекса не изменены.

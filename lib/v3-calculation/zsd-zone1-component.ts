@@ -38,5 +38,5 @@ export function matrixZsdZone1Component(route:readonly Coordinate[],validation:T
   profile:'allDays',localDate,exactTraversal:true,profileResolved:true}]});
  if(result.rub===null)return fail('zsd_zone1_current_base_fare_missing');
  return {reason:'zsd_zone1_complete_directed_base_tariff',tolls:{amount:result.rub,weekdayAmount:result.rub,weekendAmount:result.rub,
-  period:'все дни, без транспондера',confidence:'matched',segments:['ЗСД: тарифная зона 1 · '+result.rub+' ₽ · Стоимость не подтверждена']}};
+  period:'все дни, без транспондера',confidence:'matched',segments:['ЗСД: тарифная зона 1 · '+result.rub+' ₽']}};
 }
