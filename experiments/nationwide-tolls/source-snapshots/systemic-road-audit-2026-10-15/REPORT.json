@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:57:07.777Z",
+  "generatedAt": "2026-10-15T23:57:29.670Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 95,
-    "recordedLiveAttempts": 108,
-    "liveCaptured": 94,
-    "savedLiveSummaries": 94,
+    "distinctCaseAttempts": 96,
+    "recordedLiveAttempts": 109,
+    "liveCaptured": 95,
+    "savedLiveSummaries": 95,
     "missingOrInvalidReferences": 1,
-    "audited": 94,
-    "traceComplete": 94,
-    "sameDateParity": 94
+    "audited": 95,
+    "traceComplete": 95,
+    "sameDateParity": 95
   },
   "regionCounts": {
     "dnr": {
@@ -30,11 +30,11 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 19,
-      "audited": 19,
-      "traceComplete": 19,
-      "pricedWeekday": 4,
-      "pricedWeekend": 5
+      "liveCaptured": 20,
+      "audited": 20,
+      "traceComplete": 20,
+      "pricedWeekday": 5,
+      "pricedWeekend": 6
     },
     "kherson": {
       "planned": 40,
@@ -3240,6 +3240,37 @@
       ],
       "routeMeters": 1842528,
       "routeSeconds": 93752
+    },
+    {
+      "caseId": "zaporizhzhia-гуляйполе-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-57-27-141Z.json",
+      "weekdayAmount": 1650,
+      "weekendAmount": 1800,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 879229,
+      "routeSeconds": 47516
     }
   ],
   "historicalExecutionExceptions": [],
