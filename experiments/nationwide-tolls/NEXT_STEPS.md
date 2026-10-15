@@ -1,3 +1,9 @@
+# CURRENT — user consent получен, live STARTED
+
+- [x] Explicit user authorization Valhalla/OSRM/BRouter coordinates/routing parameters.
+- [ ] Лисичанск→СПб batch --case --limit1; raw+replays+checkpoint до следующегоcase.
+- [ ] Остальные12missingraw, каждый отдельно; затем остальная программа.
+
 # CURRENT — offline findings выполнены; liveapprovalblocked
 
 - [x]17diagnostics/10А289/4temporal candidates/ЦКАД242.4 сохранены: `experiments/nationwide-tolls/stages/18-offline-findings-after-recovery-2026-10-15.md`.

@@ -1568,3 +1568,8 @@ Single-caseSTART, новыйcapture не подтверждён; automatic revie
 ## 2026-10-15 — Offline findings DONE
 
 17diagnostic rows,10А289frameproof/endpointsnull,4M4timewindowcandidates,ЦКАД242.4km. Script fetchforbidden/exit0, JSONevidence+stdout preserved. Detailed `experiments/nationwide-tolls/stages/18-offline-findings-after-recovery-2026-10-15.md`, checkpoint `docs/checkpoints/2026-10-15-offline-diagnosis-done.md`. Live remainsblocked pendingexplicit routing destination consent. No product/tariff/build change.
+
+
+## 2026-10-15-195634МСК — routing consent получен/live STARTED
+
+Прямое разрешение пользователя на координаты/параметры дляValhalla/OSRM/BRouter сохранено вDECISIONS. `docs/checkpoints/2026-10-15-195634-routing-consent-live-started.md`. Parentd789ae5/PR14headсовпадают. Следующий одинcaseЛисичанск→СПб и remote checkpoint.

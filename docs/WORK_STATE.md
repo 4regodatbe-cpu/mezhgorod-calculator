@@ -1,3 +1,9 @@
+## CURRENT — live routing явно разрешён пользователем
+
+DONE: 15.10.2026 19:55:51МСК пользователь разрешил передачу routing координат/параметров Valhalla/OSRM/BRouter для аудита. [Checkpoint](checkpoints/2026-10-15-195634-routing-consent-live-started.md). Предыдущая конкретная причина approval block снята явным решением пользователя. STARTED: одинЛисичанск→СПб live+2replays, затем remote checkpoint перед следующим из13утраченныхraw. PR14draft, parentd789ae5 сверён.
+
+---
+
 ## CURRENT — 2026-10-15, offline findings DONE; live approval BLOCKED
 
 - DONE: [этап18](../experiments/nationwide-tolls/stages/18-offline-findings-after-recovery-2026-10-15.md),17diagnosticrows; А28910casesс3frames/неопознаннымиdistantendpoints;4потенциальноизбыточныхM4timewindowотказа (approximate, не billingproof);ЦКАД242.4kmvs135–230guard. JSON evidence/log сохранены. [Checkpoint](checkpoints/2026-10-15-offline-diagnosis-done.md).
