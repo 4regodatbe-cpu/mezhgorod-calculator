@@ -1,3 +1,8 @@
+# CURRENT 2026-10-15-200143 — следующийcase lnr-рубежное-saint-petersburg-center
+
+- [x] lnr-рубежное-moscow-center: executionaudited, parityTrue; complete datasets28, missingraw11.
+- [ ] После remotecheckpoint следующийодинcase `lnr-рубежное-saint-petersburg-center` --limit1.
+
 # CURRENT 2026-10-15-195922 — следующийcase lnr-рубежное-moscow-center
 
 - [x] lnr-лисичанск-saint-petersburg-center: executionaudited, parityTrue; complete datasets27, missingraw12.

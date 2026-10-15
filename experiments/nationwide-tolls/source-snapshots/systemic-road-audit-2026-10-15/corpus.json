@@ -1468,18 +1468,18 @@
       "expectedRoads": [],
       "status": "audited",
       "liveEvidence": {
-        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-00-615Z.json",
-        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/2026-10-15T12-13-00-527Z-capture.json.gz",
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T17-01-31-825Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/2026-10-15T17-01-31-720Z-capture.json.gz",
         "provider": "OSRM",
         "routeMeters": 914568,
         "traceComplete": true
       },
       "auditEvidence": {
-        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
-        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-00-615Z.json",
-        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/2026-10-15T12-13-00-527Z-capture.json.gz",
-        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-13-01-162Z.json",
-        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-13-01-669Z.json",
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T17-00-55-331Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T17-01-31-825Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/2026-10-15T17-01-31-720Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T17-01-32-393Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T17-01-32-887Z.json",
         "sameDateParity": true
       }
     },
