@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T18:24:30.398Z",
+  "generatedAt": "2026-10-15T18:25:40.789Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
     "distinctCaseAttempts": 40,
-    "recordedLiveAttempts": 52,
-    "liveCaptured": 38,
-    "savedLiveSummaries": 38,
-    "missingOrInvalidReferences": 2,
-    "audited": 38,
-    "traceComplete": 38,
-    "sameDateParity": 38
+    "recordedLiveAttempts": 53,
+    "liveCaptured": 39,
+    "savedLiveSummaries": 39,
+    "missingOrInvalidReferences": 1,
+    "audited": 39,
+    "traceComplete": 39,
+    "sameDateParity": 39
   },
   "regionCounts": {
     "dnr": {
@@ -30,11 +30,11 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 9,
-      "audited": 9,
-      "traceComplete": 9,
-      "pricedWeekday": 1,
-      "pricedWeekend": 2
+      "liveCaptured": 10,
+      "audited": 10,
+      "traceComplete": 10,
+      "pricedWeekday": 2,
+      "pricedWeekend": 3
     },
     "kherson": {
       "planned": 40,
@@ -667,6 +667,34 @@
       ],
       "routeMeters": 764670,
       "routeSeconds": 40089
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-25-35-936Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 422719,
+      "routeSeconds": 21911
     },
     {
       "caseId": "kherson-раденск-kerch-center",
@@ -1459,13 +1487,6 @@
   ],
   "historicalExecutionExceptions": [],
   "evidenceProblems": [
-    {
-      "caseId": "zaporizhzhia-пришиб-kerch-center",
-      "kind": "live",
-      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-182Z.json",
-      "reason": "ENOENT",
-      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-182Z.json'"
-    },
     {
       "caseId": "lnr-лисичанск-moscow-center",
       "kind": "live",
@@ -2658,22 +2679,16 @@
     {
       "code": "saved-live-evidence-missing",
       "cases": [
-        "zaporizhzhia-пришиб-kerch-center",
         "lnr-лисичанск-moscow-center"
       ],
       "occurrences": [
-        {
-          "caseId": "zaporizhzhia-пришиб-kerch-center",
-          "detail": "Historic execution manifest has no readable live summary",
-          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-182Z.json"
-        },
         {
           "caseId": "lnr-лисичанск-moscow-center",
           "detail": "Historic execution manifest has no readable live summary",
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json"
         }
       ],
-      "caseCount": 2
+      "caseCount": 1
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."

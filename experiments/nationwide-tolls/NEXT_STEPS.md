@@ -1,3 +1,7 @@
+# CURRENT — этап1: 8/155
+
+Следующий `dnr-бахмут-kazan-center` после remote сохранения checkpoint2026-10-15-212540-route-case. Детали в docs/WORK_STATE.md.
+
 # CURRENT — этап1: 7/155
 
 Следующий `zaporizhzhia-пришиб-kerch-center` после remote сохранения checkpoint2026-10-15-212430-route-case. Детали в docs/WORK_STATE.md.
