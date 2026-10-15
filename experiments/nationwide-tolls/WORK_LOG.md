@@ -1518,3 +1518,8 @@ Summary evidence дублировал тысячи платных edges пове
 ## 2026-10-15 — IO regression reconstruction FAILED
 
 Focused5/6; причина fixture wayId0. Raw/test/output сохранены, полный build не запускался. Подробности `docs/checkpoints/2026-10-15-192000-io-reconstruction-failed.md`; следующий шаг исправить fixture на положительные way IDs.
+
+
+## 2026-10-15 — IO fixture corrected, focused6/6 PASS
+
+Положительные OSM IDs, helper не менялся. Новый stdout сохранён, старый failed не удалён. STARTED availability inspection. `docs/checkpoints/2026-10-15-192500-io-reconstruction-pass.md`. Full build не запускался.

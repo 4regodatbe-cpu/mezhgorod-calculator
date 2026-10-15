@@ -1,3 +1,9 @@
+# CURRENT — IO6/6 PASS, evidence availability STARTED
+
+- [x] Восстановить смысл compaction test, проверить focused6/6.
+- [ ] Построить availability index и явный missing list; затем исправить сводный report.
+- [ ] Full gate после установки зависимостей.
+
 # CURRENT — исправить wayId0 fixture, повторить focused IO test
 
 Сохранён failed run5/6; затем evidence availability.

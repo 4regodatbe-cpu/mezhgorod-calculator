@@ -1,3 +1,9 @@
+## CURRENT — IO regression 6/6 PASS; STARTED evidence availability
+
+Восстановлен смысл compaction test, fixture исправлен. [Checkpoint](checkpoints/2026-10-15-192500-io-reconstruction-pass.md). Исходный SHA потерянного теста не заявляется. Remote parent b1bfbed проверен. NEXT: availability index raw/summary/replay, не засчитывать manifest без файла. Полный build остаётся открытым.
+
+---
+
 ## CURRENT — восстановлен IO regression, первая проверка FAILED
 
 5/6 PASS; fixture содержит wayId0, helper его не считает. [Checkpoint](checkpoints/2026-10-15-192000-io-reconstruction-failed.md). NEXT: положительные OSM way IDs, повтор focused; далее evidence availability. Parent79fb00d remote проверен.

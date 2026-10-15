@@ -56,7 +56,7 @@ test('compaction preserves every exact gate and road family while bounding dupli
     { road: 'unknown', kind: 'unmapped-toll-booth', nodeId: 789 },
   ];
   const edges = Array.from({ length: 3000 }, (_, i) => ({
-    road: i % 2 ? 'm4' : 'm11', kind: 'selected-paid-edge', wayId: i,
+    road: i % 2 ? 'm4' : 'm11', kind: 'selected-paid-edge', wayId: i + 1,
   }));
   const input = [...edges.slice(0, 10), ...gates, ...edges.slice(10), edges[0]];
   const before = structuredClone(input);
