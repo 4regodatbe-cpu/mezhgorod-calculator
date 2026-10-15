@@ -3401,7 +3401,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-58-06-503Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/2026-10-15T23-58-06-328Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2581067,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-57-44-608Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-58-06-503Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/2026-10-15T23-58-06-328Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-58-07-205Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-58-07-899Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-кушугум-kerch-center",

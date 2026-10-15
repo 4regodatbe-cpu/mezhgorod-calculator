@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:57:29.670Z",
+  "generatedAt": "2026-10-15T23:58:09.488Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 96,
-    "recordedLiveAttempts": 109,
-    "liveCaptured": 95,
-    "savedLiveSummaries": 95,
+    "distinctCaseAttempts": 97,
+    "recordedLiveAttempts": 110,
+    "liveCaptured": 96,
+    "savedLiveSummaries": 96,
     "missingOrInvalidReferences": 1,
-    "audited": 95,
-    "traceComplete": 95,
-    "sameDateParity": 95
+    "audited": 96,
+    "traceComplete": 96,
+    "sameDateParity": 96
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 20,
-      "audited": 20,
-      "traceComplete": 20,
+      "liveCaptured": 21,
+      "audited": 21,
+      "traceComplete": 21,
       "pricedWeekday": 5,
       "pricedWeekend": 6
     },
@@ -3271,6 +3271,42 @@
       ],
       "routeMeters": 879229,
       "routeSeconds": 47516
+    },
+    {
+      "caseId": "zaporizhzhia-кушугум-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-58-06-503Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2581067,
+      "routeSeconds": 137956
     }
   ],
   "historicalExecutionExceptions": [],
@@ -3803,7 +3839,8 @@
         "zaporizhzhia-бердянск-saint-petersburg-center",
         "zaporizhzhia-васильевка-kazan-center",
         "zaporizhzhia-васильевка-moscow-center",
-        "zaporizhzhia-васильевка-saint-petersburg-center"
+        "zaporizhzhia-васильевка-saint-petersburg-center",
+        "zaporizhzhia-кушугум-kazan-center"
       ],
       "occurrences": [
         {
@@ -4696,9 +4733,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-56-31-793Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-58-06-503Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-58-07-205Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-58-07-899Z.json"
         }
       ],
-      "caseCount": 33
+      "caseCount": 34
     },
     {
       "code": "zsd:unpriced",
