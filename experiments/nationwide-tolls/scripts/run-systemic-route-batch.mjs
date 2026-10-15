@@ -12,16 +12,18 @@ const limit = Number(option('--limit', 8));
 if (!Number.isSafeInteger(limit) || limit < 1) throw Error('--limit must be a positive integer');
 const region = option('--region', null);
 const group = option('--group', null);
+const caseId = option('--case', null);
 const corpusPath = path.join(root, group ? 'road-cases.json' : 'corpus.json');
 const departureAt = option('--departure', '2026-10-15T09:00:00+03:00');
 const weekendAt = '2026-10-17T09:00:00+03:00';
 const stamp = () => new Date().toISOString().replace(/[:.]/g, '-');
 const batchPath = path.join(root, `batch-${stamp()}.json`);
-const batch = { startedAt: new Date().toISOString(), scope: { region, group, limit, departureAt, weekendAt }, cases: [] };
+const batch = { startedAt: new Date().toISOString(), scope: { region, group, caseId, limit, departureAt, weekendAt }, cases: [] };
 const save = () => fs.writeFileSync(batchPath, `${JSON.stringify(batch, null, 2)}\n`);
 const initial = JSON.parse(fs.readFileSync(corpusPath));
 // Interleave regions so an interrupted campaign still covers all four.
-const candidates = initial.routes.filter(row => (!region || row.region === region) && (!group || row.groups?.includes(group)) && row.status !== 'audited');
+const candidates = initial.routes.filter(row => (!region || row.region === region) && (!group || row.groups?.includes(group)) && (caseId ? row.id === caseId : row.status !== 'audited'));
+if (caseId && !candidates.length) throw Error(`CASE_NOT_FOUND:${caseId}`);
 const regions = [...new Set(candidates.map(row => row.region ?? 'corridor'))];
 const buckets = regions.map(key => candidates.filter(row => (row.region ?? 'corridor') === key));
 const planned = [];
@@ -77,3 +79,4 @@ for (const spec of planned.slice(0, limit)) {
 batch.finishedAt = new Date().toISOString();
 save();
 console.log(JSON.stringify({ batchPath, attempted: batch.cases.length, audited: batch.cases.filter(row => row.status === 'audited').length, stoppedReason: batch.stoppedReason ?? null }));
+if (batch.stoppedReason) process.exitCode = 1;

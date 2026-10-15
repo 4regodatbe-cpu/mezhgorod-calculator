@@ -1,0 +1,117 @@
+{
+  "caseId": "lnr-брянка-moscow-center",
+  "region": "lnr",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 1039609,
+      "seconds": 52518
+    },
+    {
+      "name": "OSRM",
+      "meters": 1023052,
+      "seconds": 52586
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1039609,
+  "routeSeconds": 52518,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lat": 48.50361,
+          "lng": 38.66432
+        },
+        {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-moscow-center/2026-10-15T11-55-29-381Z-capture.json.gz",
+  "captureSha256": "8f6ec567b5052c7876abb9f301e7692da5708b958fb1de6a9a2ab938f693ee4a",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": 3610,
+      "reason": "matrix exact selected-route M4 vector"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-4",
+    "E 115",
+    "«Дон»",
+    "улица Изыскателей",
+    "Дон",
+    "E 119",
+    "AH8"
+  ],
+  "tollNodeIds": [
+    "11838757138",
+    "75715767",
+    "7678126300",
+    "4315323077",
+    "3504914294",
+    "3257030196",
+    "75724804",
+    "1051218389",
+    "3598837930",
+    "2431427636",
+    "3598939358",
+    "4341143825",
+    "285903913"
+  ],
+  "tolls": {
+    "amount": 3610,
+    "weekdayAmount": 3610,
+    "weekendAmount": 4390,
+    "period": "понедельник–четверг",
+    "segments": [
+      "М-4: m4-803 → m4-71 · Стоимость не подтверждена"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m4"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 3610,
+          "weekdayAmount": 3610,
+          "weekendAmount": 4390,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-4: m4-803 → m4-71 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      }
+    ]
+  }
+}

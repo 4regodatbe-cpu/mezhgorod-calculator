@@ -55,3 +55,17 @@ export function assessRoadCoverage(expectedRoads, evidence, traceComplete) {
   return { expectedRoads, provenRoads: [...proven], missingExpectedRoads: missing,
     status: !expectedRoads.length ? 'not-assigned' : !traceComplete ? 'trace-incomplete' : missing.length ? 'expected-road-not-proven' : 'traversal-proven' };
 }
+
+export function summarizePassageEvidence(evidence) {
+  const counts = new Map();
+  const samples = [];
+  for (const item of evidence) {
+    if (item.kind !== 'selected-paid-edge') { samples.push(item); continue; }
+    if (!counts.has(item.road)) counts.set(item.road, { occurrences: 0, ways: new Set(), sampledWays: new Set() });
+    const row = counts.get(item.road);
+    row.occurrences++;
+    if (item.wayId) row.ways.add(item.wayId);
+    if (row.sampledWays.size < 3 && !row.sampledWays.has(item.wayId)) { samples.push(item); row.sampledWays.add(item.wayId); }
+  }
+  return { evidence: samples, counts: Object.fromEntries([...counts].map(([road, row]) => [road, { occurrences: row.occurrences, uniqueWays: row.ways.size }])) };
+}

@@ -11,7 +11,7 @@ import { selectFastestRoute } from '../fastest-route-policy.mjs';
 import { validateTollEdges } from '../../../lib/toll-validator.ts';
 import { calculateLegTolls } from '../../../lib/v3-calculation/route-leg-pricing.ts';
 import { tollsForApi } from '../../../lib/v2-calculation/free-route-selection.ts';
-import { recordingFetch, replayingFetch, assessRoadCoverage } from './systemic-audit-io.mjs';
+import { recordingFetch, replayingFetch, assessRoadCoverage, summarizePassageEvidence } from './systemic-audit-io.mjs';
 import { paidProductsFromName } from '../../../lib/v3-calculation/unpriced-road-coverage.ts';
 import { M4_NODE_TO_PLAZA } from '../../../lib/toll-engine/m4-plaza-nodes.ts';
 import { priceA289Route } from '../../../lib/toll-engine/a289-engine.ts';
@@ -136,6 +136,7 @@ try {
   }
   const a289 = priceA289Route(route.coordinates, departureAt);
   if (a289.crossedFrames.length) passageEvidence.push({ road: 'a289', kind: 'selected-geometry-exact-frames', frames: a289.crossedFrames });
+  const evidenceSummary = summarizePassageEvidence(passageEvidence);
   const output = {
     caseId: record.spec.id,
     region: record.spec.region,
@@ -149,7 +150,10 @@ try {
     controls: record.routePlan,
     traceComplete: record.validation.complete,
     roadCoverage: assessRoadCoverage(record.spec.expectedRoads ?? [], passageEvidence, record.validation.complete),
-    passageEvidence,
+    passageEvidence: evidenceSummary.evidence,
+    passageEvidenceSummaryVersion: 1,
+    passageEvidenceScope: 'Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.',
+    paidEdgeEvidenceCounts: evidenceSummary.counts,
     replayIntegrity: mode === '--live' ? null : { complete: replayState.misses.length === 0, missingResponses: replayState.misses },
     capture: capturePath,
     captureSha256: createHash('sha256').update(fs.readFileSync(capturePath)).digest('hex'),
@@ -182,7 +186,7 @@ try {
 } catch (error) {
   dir ??= outputDir(firstArg || 'failed');
   const failedAt = stamp();
-  fs.writeFileSync(path.join(dir, `failure-${failedAt}.json.gz`), gzipSync(JSON.stringify({ mode, firstArg, departureAt, error: String(error), calls })));
+  fs.writeFileSync(path.join(dir, `failure-${failedAt}.json.gz`), gzipSync(JSON.stringify({ mode, firstArg, departureAt, error: String(error), record: record ?? null, calls })));
   fs.writeFileSync(path.join(dir, `failure-${failedAt}.json`), `${JSON.stringify({ mode, firstArg, departureAt, error: String(error), capturedProviderCalls: calls.length })}\n`);
   console.error(String(error));
   process.exitCode = 1;

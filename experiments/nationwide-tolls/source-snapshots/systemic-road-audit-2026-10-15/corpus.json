@@ -44,13 +44,21 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "live-captured",
+      "status": "audited",
       "liveEvidence": {
-        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T10-10-35-064Z.json",
-        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/2026-10-15T10-10-34-547Z-capture.json.gz",
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-54-48-347Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/2026-10-15T11-54-48-260Z-capture.json.gz",
         "provider": "Valhalla",
         "routeMeters": 1256591,
         "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-54-48-347Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/2026-10-15T11-54-48-260Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-54-48-815Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-54-49-251Z.json",
+        "sameDateParity": true
       }
     },
     {
@@ -75,7 +83,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-166Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1972786,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-166Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-676Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-56-57-189Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-гранитное-kazan-center",
@@ -99,7 +122,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-00-533Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1696588,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-00-533Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-00-01-050Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-00-01-515Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-гранитное-kerch-center",
@@ -123,7 +161,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-53-490Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kerch-center/2026-10-15T12-01-53-430Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 746354,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-53-490Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kerch-center/2026-10-15T12-01-53-430Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-01-53-950Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-01-54-351Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-широкино-moscow-center",
@@ -147,7 +200,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-07-092Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/2026-10-15T12-03-07-004Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1228358,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-07-092Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/2026-10-15T12-03-07-004Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-07-608Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-08-132Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-широкино-saint-petersburg-center",
@@ -171,7 +239,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-360Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/2026-10-15T12-04-54-252Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1942329,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-360Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/2026-10-15T12-04-54-252Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-878Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-04-55-393Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-широкино-kazan-center",
@@ -195,7 +278,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-35-550Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/2026-10-15T12-08-35-445Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1668355,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-35-550Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/2026-10-15T12-08-35-445Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-08-35-992Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-08-36-448Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-широкино-kerch-center",
@@ -219,7 +317,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-27-024Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kerch-center/2026-10-15T12-10-26-967Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 715463,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-27-024Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kerch-center/2026-10-15T12-10-26-967Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-10-27-411Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-10-27-798Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-урзуф-moscow-center",
@@ -243,7 +356,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-12-21-839Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/2026-10-15T12-12-21-705Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2121555,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-12-21-839Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/2026-10-15T12-12-21-705Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-12-22-404Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-12-22-966Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-урзуф-saint-petersburg-center",
@@ -267,7 +395,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-15-30-684Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/2026-10-15T12-15-30-557Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2833324,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-15-30-684Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/2026-10-15T12-15-30-557Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-15-31-442Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-15-32-276Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-урзуф-kazan-center",
@@ -1011,7 +1154,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-29-456Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-moscow-center/2026-10-15T11-55-29-381Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1039609,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-29-456Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-moscow-center/2026-10-15T11-55-29-381Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-55-29-921Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-55-30-336Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-брянка-saint-petersburg-center",
@@ -1035,7 +1193,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-57-59-745Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/2026-10-15T11-57-59-642Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1827396,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-57-59-745Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/2026-10-15T11-57-59-642Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-58-00-294Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-58-00-835Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-брянка-kazan-center",
@@ -1059,7 +1232,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-26-476Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/2026-10-15T12-00-26-371Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1436094,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-26-476Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/2026-10-15T12-00-26-371Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-00-26-921Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-00-27-371Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-брянка-kerch-center",
@@ -1083,7 +1271,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-15-442Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kerch-center/2026-10-15T12-02-15-379Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 764670,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-15-442Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kerch-center/2026-10-15T12-02-15-379Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-15-866Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-16-291Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-лисичанск-moscow-center",
@@ -1107,7 +1310,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/2026-10-15T12-03-20-913Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 937773,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/2026-10-15T12-03-20-913Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-21-427Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-21-896Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-лисичанск-saint-petersburg-center",
@@ -1131,7 +1349,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/2026-10-15T12-05-23-413Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1736132,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/2026-10-15T12-05-23-413Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-05-24-017Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-05-24-545Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-лисичанск-kazan-center",
@@ -1155,7 +1388,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-59-040Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kazan-center/2026-10-15T12-08-58-924Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1398804,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-59-040Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kazan-center/2026-10-15T12-08-58-924Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-08-59-577Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-09-00-109Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-лисичанск-kerch-center",
@@ -1179,7 +1427,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-39-620Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kerch-center/2026-10-15T12-10-39-555Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 831080,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-39-620Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kerch-center/2026-10-15T12-10-39-555Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-10-40-022Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-10-40-432Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-рубежное-moscow-center",
@@ -1203,7 +1466,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-00-615Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/2026-10-15T12-13-00-527Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 914568,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-00-615Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/2026-10-15T12-13-00-527Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-13-01-162Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-13-01-669Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-рубежное-saint-petersburg-center",
@@ -1227,7 +1505,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-05-835Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/2026-10-15T12-16-05-719Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1723866,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-05-835Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/2026-10-15T12-16-05-719Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-16-06-407Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-16-06-901Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-рубежное-kazan-center",
@@ -1971,7 +2264,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-57-758Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/2026-10-15T11-55-57-645Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2018186,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-57-758Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/2026-10-15T11-55-57-645Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-55-58-348Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-55-58-875Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-пришиб-saint-petersburg-center",
@@ -1995,7 +2303,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-58-33-488Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T11-58-33-357Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2729956,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-58-33-488Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T11-58-33-357Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-58-34-133Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-58-34-722Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-пришиб-kazan-center",
@@ -2019,7 +2342,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-57-490Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/2026-10-15T12-00-57-345Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2424953,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-57-490Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/2026-10-15T12-00-57-345Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-00-58-072Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-00-58-638Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-пришиб-kerch-center",
@@ -2043,7 +2381,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-182Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/2026-10-15T12-02-34-144Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 422719,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-182Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/2026-10-15T12-02-34-144Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-734Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-35-215Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-молочанск-moscow-center",
@@ -2067,7 +2420,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T12-03-45-382Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2018710,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T12-03-45-382Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-46-143Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-46-753Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-молочанск-saint-petersburg-center",
@@ -2091,7 +2459,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T12-05-57-340Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2730480,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T12-05-57-340Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-05-58-124Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-05-58-789Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-молочанск-kazan-center",
@@ -2115,7 +2498,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-28-751Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/2026-10-15T12-09-28-553Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2425477,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-28-751Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/2026-10-15T12-09-28-553Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-09-29-577Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-09-30-280Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-молочанск-kerch-center",
@@ -2139,7 +2537,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/2026-10-15T12-10-58-661Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 423243,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/2026-10-15T12-10-58-661Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-10-59-037Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-10-59-451Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-гуляйполе-moscow-center",
@@ -2163,7 +2576,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-26-622Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/2026-10-15T12-13-26-505Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1402530,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-26-622Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/2026-10-15T12-13-26-505Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-13-27-132Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-13-27-604Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-гуляйполе-saint-petersburg-center",
@@ -2187,7 +2615,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/2026-10-15T12-16-40-184Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 2118725,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/2026-10-15T12-16-40-184Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-899Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-16-41-500Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-гуляйполе-kazan-center",
@@ -2931,7 +3374,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-25-468Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/2026-10-15T11-56-25-327Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1980035,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-25-468Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/2026-10-15T11-56-25-327Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-56-26-023Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-56-26-550Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-раденск-saint-petersburg-center",
@@ -2955,7 +3413,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-59-10-667Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/2026-10-15T11-59-10-514Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2691805,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-59-10-667Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/2026-10-15T11-59-10-514Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-59-11-348Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-59-11-975Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-раденск-kazan-center",
@@ -2979,7 +3452,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-39-761Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/2026-10-15T12-01-39-614Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2386802,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-39-761Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/2026-10-15T12-01-39-614Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-01-40-316Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-01-40-892Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-раденск-kerch-center",
@@ -3003,7 +3491,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-49-131Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kerch-center/2026-10-15T12-02-49-106Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 384567,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-49-131Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kerch-center/2026-10-15T12-02-49-106Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-49-470Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-49-803Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-чулаковка-moscow-center",
@@ -3027,7 +3530,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-248Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/2026-10-15T12-04-20-103Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2028120,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-248Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/2026-10-15T12-04-20-103Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-868Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-04-21-479Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-чулаковка-saint-petersburg-center",
@@ -3051,7 +3569,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-07-35-633Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/2026-10-15T12-07-35-510Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2739890,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-07-35-633Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/2026-10-15T12-07-35-510Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-07-36-306Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-07-36-968Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-чулаковка-kazan-center",
@@ -3075,7 +3608,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-128Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/2026-10-15T12-09-56-015Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2434887,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-128Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/2026-10-15T12-09-56-015Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-755Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-09-57-348Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-чулаковка-kerch-center",
@@ -3099,7 +3647,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-11-17-312Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kerch-center/2026-10-15T12-11-17-292Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 432652,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-11-17-312Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kerch-center/2026-10-15T12-11-17-292Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-11-17-730Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-11-18-052Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-старая-збурьевка-moscow-center",
@@ -3123,7 +3686,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-222Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/2026-10-15T12-14-47-097Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2031289,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-222Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/2026-10-15T12-14-47-097Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-782Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-14-48-330Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-старая-збурьевка-saint-petersburg-center",
@@ -3147,7 +3725,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-17-15-859Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/2026-10-15T12-17-15-705Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2743059,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-17-15-859Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/2026-10-15T12-17-15-705Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-17-16-570Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-17-17-284Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-старая-збурьевка-kazan-center",

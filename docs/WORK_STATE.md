@@ -1,8 +1,20 @@
+## CURRENT 2026-10-15 — восстановление после обрыва сессии
+
+DONE: код checkpoint2255a46 закреплён в ветке PR14. Прежний checkout /workspace/scratch/31a127bf701a/mezhgorod-calculator отсутствует; running exec cell78 недоступен, память transport progress очищена. Новый checkout создан в /workspace/scratch/a31a0edde6c0/repo. Точный механизм удаления старого каталога не установлен; это не тарифная ошибка.
+
+RECOVERED: из215 объектов более нового local checkpoint86702c9 в GitHub найдены144;71 не были перенесены. Создан серверный recovery tree675c28083684221a82acc8f25f2e0beccbc29144. Сохранены полные captures27 разных региональных OD-кейсов плюс дополнительный pilot; не найдены13 regional captures (3LNR+10Zaporizhzhia). Оригинальный batch manifest фиксирует40 исполненных случаев, но наличие manifest не заменяет отсутствующую трассу. Счётчики audited из corpus нельзя считать полным сохранённым покрытием до проверки evidence links.
+
+LIMIT: последние дорожные прогоны и часть региональных данных оставались только в исчезнувшем checkout. Не объявлять их восстановленными или заново проверенными. Предыдущий наблюдавшийся отчёт имел105 разных случаев, но его файл не сохранился; точный итог после обрыва неизвестен. Код app/lib/тарифов и Production не менялся. Полный старый build654 PASS лог сохранился; после восстановления source/tests требуется новая проверка.
+
+NEXT: materialize recovery snapshot, проверить все evidence links, восстановить summaries/replays из27 имеющихся raw captures; заново запросить только13 утраченных regional captures. Затем продолжить дорожные группы, сохраняя каждый завершённый блок в GitHub сразу. Подробности: [этап17](../experiments/nationwide-tolls/stages/17-session-recovery-2026-10-15.md), [availability manifest](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/recovery-manifest.json).
+
+---
+
 ## CURRENT 2026-10-15 — systemic audit replay исправлен, запущены партии
 
 IN PROGRESS: продолжение этапа 15. Исправлен дефект audit harness: архив писался до дополнительных запросов тарификации М-4. Новый schemaVersion2 архив сохраняется после pricing; offline replay отмечает недостающие ответы, сохраняет Retry-After и сверяется с live итогом на той же дате. Pilot Гранитное→Москва: четверг unknown `m4_crossing_profile_changes`, субботний replay теперь priced 4 640 ₽ вместо ложного unknown старого неполного архива.
 
-RUNNING: interleaved batch 40 regional cases + отдельная серия single-m4 10 → single-a289 10. Exact progress/results: [batch manifests and REPORT](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.md). До окончания не считать запланированные строки выполненными. Добавлен дорожный корпус 180 planned OD-контролей /18 групп; inventory проверяет 22 registry rows, 10 lower-bound-qualified rows (включает M11 child), 12 count-unresolved. Census и полный аудит не закрыты.
+DONE: первая interleaved regional партия40/40, по10 каждого региона (40из160), у всех complete trace/same-date parity. RUNNING: одиночные серии расширены до9групп/90planned cases; M4/A289/M3 по10 прохождений, M11 выполнены10attempts, одна trace502 требует повтора. Exact progress/results: [batch manifests and REPORT](../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.md). До окончания не считать запланированные строки выполненными. Добавлен дорожный корпус 180 planned OD-контролей /18 групп; inventory проверяет 22 registry rows, 10 lower-bound-qualified rows (включает M11 child), 12 count-unresolved. Census и полный аудит не закрыты.
 
 VERIFIED: pilot same-date/weekend replay complete; focused5/5 и targeted ESLint PASS. Промежуточный full build audit653/653 + quote/API/Next/static16/16 PASS; после добавления пятого теста итоговый full build запущен повторно, результат пока не объявлен.
 
