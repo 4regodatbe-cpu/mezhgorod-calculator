@@ -1,0 +1,1966 @@
+{
+  "generatedAt": "2026-10-15T16:23:04.790Z",
+  "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
+  "totals": {
+    "distinctCaseAttempts": 40,
+    "recordedLiveAttempts": 40,
+    "liveCaptured": 26,
+    "savedLiveSummaries": 26,
+    "missingOrInvalidReferences": 14,
+    "audited": 26,
+    "traceComplete": 26,
+    "sameDateParity": 26
+  },
+  "regionCounts": {
+    "dnr": {
+      "planned": 40,
+      "liveCaptured": 10,
+      "audited": 10,
+      "traceComplete": 10,
+      "pricedWeekday": 2,
+      "pricedWeekend": 5
+    },
+    "lnr": {
+      "planned": 40,
+      "liveCaptured": 6,
+      "audited": 6,
+      "traceComplete": 6,
+      "pricedWeekday": 5,
+      "pricedWeekend": 5
+    },
+    "zaporizhzhia": {
+      "planned": 40,
+      "liveCaptured": 0,
+      "audited": 0,
+      "traceComplete": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    "kherson": {
+      "planned": 40,
+      "liveCaptured": 10,
+      "audited": 10,
+      "traceComplete": 10,
+      "pricedWeekday": 2,
+      "pricedWeekend": 2
+    }
+  },
+  "groupCounts": [
+    {
+      "id": "single-m4",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "single-a289",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "single-m3",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "single-m11",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "single-m12",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "single-ckad",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "single-zsd",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "single-odintsovo",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "single-khabarovsk",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "pair-m4-a289",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "pair-m4-m11",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "pair-m11-zsd",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "pair-m11-ckad",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "pair-m12-ckad",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "triple-m4-m11-zsd",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "triple-m11-ckad-m12",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "max-chain-m4-ckad-m11-zsd",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    },
+    {
+      "id": "max-chain-m12-ckad-m11-zsd",
+      "minimumRuns": 10,
+      "planned": 10,
+      "attempted": 0,
+      "audited": 0,
+      "traversalProven": 0,
+      "pricedWeekday": 0,
+      "pricedWeekend": 0
+    }
+  ],
+  "results": [
+    {
+      "caseId": "dnr-гранитное-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-54-48-347Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": 4640,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": null,
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1256591,
+      "routeSeconds": 59829
+    },
+    {
+      "caseId": "lnr-брянка-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-29-456Z.json",
+      "weekdayAmount": 3610,
+      "weekendAmount": 4390,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": null,
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1039609,
+      "routeSeconds": 52518
+    },
+    {
+      "caseId": "kherson-раденск-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-25-468Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": null,
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1980035,
+      "routeSeconds": 98637
+    },
+    {
+      "caseId": "dnr-гранитное-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-166Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1972786,
+      "routeSeconds": 81745
+    },
+    {
+      "caseId": "lnr-брянка-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-57-59-745Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        }
+      ],
+      "routeMeters": 1827396,
+      "routeSeconds": 74243
+    },
+    {
+      "caseId": "kherson-раденск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-59-10-667Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2691805,
+      "routeSeconds": 127805
+    },
+    {
+      "caseId": "dnr-гранитное-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-00-533Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        }
+      ],
+      "routeMeters": 1696588,
+      "routeSeconds": 86642
+    },
+    {
+      "caseId": "lnr-брянка-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-26-476Z.json",
+      "weekdayAmount": 850,
+      "weekendAmount": 850,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1436094,
+      "routeSeconds": 79910
+    },
+    {
+      "caseId": "kherson-раденск-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-39-761Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2386802,
+      "routeSeconds": 125962
+    },
+    {
+      "caseId": "dnr-гранитное-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-53-490Z.json",
+      "weekdayAmount": 1650,
+      "weekendAmount": 1800,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 746354,
+      "routeSeconds": 40381
+    },
+    {
+      "caseId": "lnr-брянка-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-15-442Z.json",
+      "weekdayAmount": 2030,
+      "weekendAmount": 2250,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 764670,
+      "routeSeconds": 40089
+    },
+    {
+      "caseId": "kherson-раденск-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-49-131Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 384567,
+      "routeSeconds": 20512
+    },
+    {
+      "caseId": "dnr-широкино-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-07-092Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": 4640,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1228358,
+      "routeSeconds": 56588
+    },
+    {
+      "caseId": "kherson-чулаковка-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-248Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2028120,
+      "routeSeconds": 101886
+    },
+    {
+      "caseId": "dnr-широкино-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-360Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": 10494,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1942329,
+      "routeSeconds": 88439
+    },
+    {
+      "caseId": "kherson-чулаковка-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-07-35-633Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        }
+      ],
+      "routeMeters": 2739890,
+      "routeSeconds": 131053
+    },
+    {
+      "caseId": "dnr-широкино-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-35-550Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1668355,
+      "routeSeconds": 83400
+    },
+    {
+      "caseId": "lnr-лисичанск-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-59-040Z.json",
+      "weekdayAmount": 850,
+      "weekendAmount": 850,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1398804,
+      "routeSeconds": 78117
+    },
+    {
+      "caseId": "kherson-чулаковка-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-128Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        }
+      ],
+      "routeMeters": 2434887,
+      "routeSeconds": 129211
+    },
+    {
+      "caseId": "dnr-широкино-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-27-024Z.json",
+      "weekdayAmount": 1650,
+      "weekendAmount": 1800,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 715463,
+      "routeSeconds": 37932
+    },
+    {
+      "caseId": "lnr-лисичанск-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-39-620Z.json",
+      "weekdayAmount": 2030,
+      "weekendAmount": 2250,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 831080,
+      "routeSeconds": 44326
+    },
+    {
+      "caseId": "kherson-чулаковка-kerch-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-11-17-312Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        }
+      ],
+      "routeMeters": 432652,
+      "routeSeconds": 23761
+    },
+    {
+      "caseId": "dnr-урзуф-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-12-21-839Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2121555,
+      "routeSeconds": 106328
+    },
+    {
+      "caseId": "kherson-старая-збурьевка-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-222Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2031289,
+      "routeSeconds": 101632
+    },
+    {
+      "caseId": "dnr-урзуф-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-15-30-684Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        }
+      ],
+      "routeMeters": 2833324,
+      "routeSeconds": 135495
+    },
+    {
+      "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-17-15-859Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2743059,
+      "routeSeconds": 130799
+    }
+  ],
+  "historicalExecutionExceptions": [],
+  "evidenceProblems": [
+    {
+      "caseId": "zaporizhzhia-пришиб-moscow-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-57-758Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-57-758Z.json'"
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-saint-petersburg-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-58-33-488Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-58-33-488Z.json'"
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-kazan-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-57-490Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-57-490Z.json'"
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-kerch-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-182Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-182Z.json'"
+    },
+    {
+      "caseId": "lnr-лисичанск-moscow-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json'"
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-moscow-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json'"
+    },
+    {
+      "caseId": "lnr-лисичанск-saint-petersburg-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json'"
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json'"
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-kazan-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-28-751Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-28-751Z.json'"
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-kerch-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json'"
+    },
+    {
+      "caseId": "lnr-рубежное-moscow-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-00-615Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-00-615Z.json'"
+    },
+    {
+      "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-26-622Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-26-622Z.json'"
+    },
+    {
+      "caseId": "lnr-рубежное-saint-petersburg-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-05-835Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-05-835Z.json'"
+    },
+    {
+      "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+      "kind": "live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json",
+      "reason": "ENOENT",
+      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json'"
+    }
+  ],
+  "stableWeekdayReplay": null,
+  "findings": [
+    {
+      "code": "m4_crossing_profile_changes",
+      "cases": [
+        "dnr-гранитное-moscow-center",
+        "kherson-раденск-moscow-center",
+        "dnr-гранитное-saint-petersburg-center",
+        "lnr-брянка-saint-petersburg-center",
+        "kherson-раденск-saint-petersburg-center",
+        "kherson-раденск-kazan-center",
+        "dnr-широкино-moscow-center",
+        "kherson-чулаковка-moscow-center",
+        "dnr-широкино-saint-petersburg-center",
+        "kherson-чулаковка-saint-petersburg-center",
+        "kherson-чулаковка-kazan-center",
+        "dnr-урзуф-moscow-center",
+        "kherson-старая-збурьевка-moscow-center",
+        "dnr-урзуф-saint-petersburg-center",
+        "kherson-старая-збурьевка-saint-petersburg-center"
+      ],
+      "occurrences": [
+        {
+          "caseId": "dnr-гранитное-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-54-48-347Z.json"
+        },
+        {
+          "caseId": "dnr-гранитное-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T11-54-48-815Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-25-468Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T11-56-26-023Z.json"
+        },
+        {
+          "caseId": "dnr-гранитное-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-166Z.json"
+        },
+        {
+          "caseId": "dnr-гранитное-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-676Z.json"
+        },
+        {
+          "caseId": "lnr-брянка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-57-59-745Z.json"
+        },
+        {
+          "caseId": "lnr-брянка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T11-58-00-294Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-59-10-667Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T11-59-11-348Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-39-761Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-01-40-316Z.json"
+        },
+        {
+          "caseId": "dnr-широкино-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-07-092Z.json"
+        },
+        {
+          "caseId": "dnr-широкино-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-07-608Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-248Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-868Z.json"
+        },
+        {
+          "caseId": "dnr-широкино-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-360Z.json"
+        },
+        {
+          "caseId": "dnr-широкино-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-878Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-07-35-633Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-07-36-306Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-128Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-755Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-12-21-839Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-12-22-404Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-222Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-782Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-15-30-684Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-15-31-442Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-17-15-859Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-17-16-570Z.json"
+        }
+      ],
+      "caseCount": 15
+    },
+    {
+      "code": "saved-live-evidence-missing",
+      "cases": [
+        "zaporizhzhia-пришиб-moscow-center",
+        "zaporizhzhia-пришиб-saint-petersburg-center",
+        "zaporizhzhia-пришиб-kazan-center",
+        "zaporizhzhia-пришиб-kerch-center",
+        "lnr-лисичанск-moscow-center",
+        "zaporizhzhia-молочанск-moscow-center",
+        "lnr-лисичанск-saint-petersburg-center",
+        "zaporizhzhia-молочанск-saint-petersburg-center",
+        "zaporizhzhia-молочанск-kazan-center",
+        "zaporizhzhia-молочанск-kerch-center",
+        "lnr-рубежное-moscow-center",
+        "zaporizhzhia-гуляйполе-moscow-center",
+        "lnr-рубежное-saint-petersburg-center",
+        "zaporizhzhia-гуляйполе-saint-petersburg-center"
+      ],
+      "occurrences": [
+        {
+          "caseId": "zaporizhzhia-пришиб-moscow-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-57-758Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-пришиб-saint-petersburg-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-58-33-488Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-пришиб-kazan-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-57-490Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-пришиб-kerch-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-182Z.json"
+        },
+        {
+          "caseId": "lnr-лисичанск-moscow-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-молочанск-moscow-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json"
+        },
+        {
+          "caseId": "lnr-лисичанск-saint-petersburg-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-молочанск-kazan-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-28-751Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-молочанск-kerch-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json"
+        },
+        {
+          "caseId": "lnr-рубежное-moscow-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-00-615Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-26-622Z.json"
+        },
+        {
+          "caseId": "lnr-рубежное-saint-petersburg-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-05-835Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+          "detail": "Historic execution manifest has no readable live summary",
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json"
+        }
+      ],
+      "caseCount": 14
+    },
+    {
+      "code": "a289:unpriced",
+      "cases": [
+        "kherson-раденск-moscow-center",
+        "kherson-раденск-saint-petersburg-center",
+        "kherson-раденск-kazan-center",
+        "kherson-чулаковка-moscow-center",
+        "kherson-чулаковка-saint-petersburg-center",
+        "kherson-чулаковка-kazan-center",
+        "dnr-урзуф-moscow-center",
+        "kherson-старая-збурьевка-moscow-center",
+        "dnr-урзуф-saint-petersburg-center",
+        "kherson-старая-збурьевка-saint-petersburg-center"
+      ],
+      "occurrences": [
+        {
+          "caseId": "kherson-раденск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-25-468Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T11-56-26-023Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T11-56-26-550Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-59-10-667Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T11-59-11-348Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T11-59-11-975Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-39-761Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-01-40-316Z.json"
+        },
+        {
+          "caseId": "kherson-раденск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-01-40-892Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-248Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-868Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-04-21-479Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-07-35-633Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-07-36-306Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-07-36-968Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-128Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-755Z.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-09-57-348Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-12-21-839Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-12-22-404Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-12-22-966Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-222Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-782Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-14-48-330Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-15-30-684Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-15-31-442Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-15-32-276Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-17-15-859Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-17-16-570Z.json"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-17-17-284Z.json"
+        }
+      ],
+      "caseCount": 10
+    },
+    {
+      "code": "zsd:unpriced",
+      "cases": [
+        "dnr-гранитное-saint-petersburg-center",
+        "lnr-брянка-saint-petersburg-center"
+      ],
+      "occurrences": [
+        {
+          "caseId": "dnr-гранитное-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-166Z.json"
+        },
+        {
+          "caseId": "dnr-гранитное-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-676Z.json"
+        },
+        {
+          "caseId": "dnr-гранитное-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T11-56-57-189Z.json"
+        },
+        {
+          "caseId": "lnr-брянка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-57-59-745Z.json"
+        },
+        {
+          "caseId": "lnr-брянка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T11-58-00-294Z.json"
+        },
+        {
+          "caseId": "lnr-брянка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T11-58-00-835Z.json"
+        }
+      ],
+      "caseCount": 2
+    },
+    {
+      "code": "m4:unpriced",
+      "cases": [
+        "dnr-гранитное-kazan-center",
+        "dnr-широкино-kazan-center"
+      ],
+      "occurrences": [
+        {
+          "caseId": "dnr-гранитное-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-00-533Z.json"
+        },
+        {
+          "caseId": "dnr-гранитное-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-00-01-050Z.json"
+        },
+        {
+          "caseId": "dnr-гранитное-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-00-01-515Z.json"
+        },
+        {
+          "caseId": "dnr-широкино-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-35-550Z.json"
+        },
+        {
+          "caseId": "dnr-широкино-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-08-35-992Z.json"
+        },
+        {
+          "caseId": "dnr-широкино-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-08-36-448Z.json"
+        }
+      ],
+      "caseCount": 2
+    }
+  ],
+  "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
+}

@@ -1,3 +1,9 @@
+# CURRENT — report восстановлен, audit gate STARTED
+
+- [x] Report handles missing/corrupt evidence; historical40/complete26.
+- [ ] npm run test:audit, сохранить весь stdout/exit.
+- [ ] Восстановить единственный LNR raw без live summary; каждый отдельный маршрут checkpoint.
+
 # CURRENT — evidence availability проверено
 
 - [x] 160corpus/batch refs/raw gzip/JSON/SHA инвентаризированы; см. EVIDENCE_AVAILABILITY.json/.md.

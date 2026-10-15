@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { gunzipSync } from 'node:zlib';
 
 const root = 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15';
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -21,22 +22,36 @@ function finding(code, caseId, detail, evidence) {
   row.occurrences.push({ caseId, detail, evidence });
 }
 const results = [];
+const evidenceProblems = [];
+function readEvidence(file, caseId, kind) {
+  if (!file) { evidenceProblems.push({ caseId, kind, path: null, reason: 'reference-missing' }); return null; }
+  try {
+    const bytes = fs.readFileSync(file);
+    return JSON.parse(file.endsWith('.gz') ? gunzipSync(bytes).toString('utf8') : bytes.toString('utf8'));
+  } catch (error) {
+    evidenceProblems.push({ caseId, kind, path: file, reason: error.code ?? 'invalid-json-or-gzip', error: String(error) });
+    return null;
+  }
+}
 for (const entry of latest.values()) {
   if (!entry.live) { finding('live-routing-failed', entry.caseId, entry.error, entry.batch); continue; }
-  const live = read(entry.live);
+  const live = readEvidence(entry.live, entry.caseId, 'live');
+  if (!live) { finding('saved-live-evidence-missing', entry.caseId, 'Historic execution manifest has no readable live summary', entry.live); continue; }
   const dir = path.dirname(entry.live);
   const samePath = entry.sameDateReplay ? path.join(dir, entry.sameDateReplay) : null;
   const weekendPath = entry.weekendReplay ? path.join(dir, entry.weekendReplay) : null;
-  const same = samePath ? read(samePath) : null;
-  const weekend = weekendPath ? read(weekendPath) : null;
-  const row = { caseId: entry.caseId, status: entry.status, region: live.region ?? null, live: entry.live,
+  const same = readEvidence(samePath, entry.caseId, 'sameDateReplay');
+  const weekend = readEvidence(weekendPath, entry.caseId, 'weekendReplay');
+  const capture = readEvidence(entry.capture, entry.caseId, 'capture');
+  const evidenceComplete = Boolean(capture && same && weekend);
+  const row = { caseId: entry.caseId, historicalStatus: entry.status, status: evidenceComplete ? entry.status : 'evidence-incomplete', evidenceComplete, rawAvailable: Boolean(capture), region: live.region ?? null, live: entry.live,
     weekdayAmount: live.tolls.amount, weekendAmount: weekend?.tolls?.amount ?? null,
-    traceComplete: live.traceComplete, sameDateParity: entry.sameDateParity,
+    traceComplete: Boolean(capture && live.traceComplete), sameDateParity: Boolean(capture && same && entry.sameDateParity),
     roadCoverage: live.roadCoverage ?? same?.roadCoverage ?? null,
     provider: live.provider, rejectedProviders: live.rejectedProviders,
     routeMeters: live.routeMeters, routeSeconds: live.routeSeconds };
   results.push(row);
-  if (!entry.sameDateParity) finding('same-date-replay-differs', entry.caseId, 'Live and offline pricing disagree or replay failed', samePath);
+  if (!row.sameDateParity) finding('same-date-replay-differs', entry.caseId, 'Live and offline pricing disagree or replay failed', samePath);
   for (const [output, evidence] of [[live, entry.live], [same, samePath], [weekend, weekendPath]]) {
     if (!output) continue;
     if (output.replayIntegrity && !output.replayIntegrity.complete) finding('offline-capture-incomplete', entry.caseId, output.replayIntegrity, evidence);
@@ -53,7 +68,7 @@ for (const entry of latest.values()) {
 }
 const regionCounts = Object.fromEntries(['dnr', 'lnr', 'zaporizhzhia', 'kherson'].map(region => {
   const rows = results.filter(row => row.region === region);
-  return [region, { planned: corpus.routes.filter(row => row.region === region).length, liveCaptured: rows.length,
+  return [region, { planned: corpus.routes.filter(row => row.region === region).length, liveCaptured: rows.filter(row => row.rawAvailable).length,
     audited: rows.filter(row => row.status === 'audited').length, traceComplete: rows.filter(row => row.traceComplete).length,
     pricedWeekday: rows.filter(row => row.weekdayAmount !== null).length, pricedWeekend: rows.filter(row => row.weekendAmount !== null).length }];
 }));
@@ -65,9 +80,9 @@ const groupCounts = roads.groups.map(group => {
     pricedWeekday: rows.filter(row => row.weekdayAmount !== null).length, pricedWeekend: rows.filter(row => row.weekendAmount !== null).length };
 });
 const report = { generatedAt: new Date().toISOString(), scope: 'Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.',
-  totals: { distinctCaseAttempts: latest.size, recordedLiveAttempts: batches.reduce((sum, batch) => sum + batch.cases.filter(row => row.status).length, 0), liveCaptured: results.length, audited: results.filter(row => row.status === 'audited').length,
+  totals: { distinctCaseAttempts: latest.size, recordedLiveAttempts: batches.reduce((sum, batch) => sum + batch.cases.filter(row => row.status).length, 0), liveCaptured: results.filter(row => row.rawAvailable).length, savedLiveSummaries: results.length, missingOrInvalidReferences: evidenceProblems.length, audited: results.filter(row => row.status === 'audited').length,
     traceComplete: results.filter(row => row.traceComplete).length, sameDateParity: results.filter(row => row.sameDateParity).length },
-  regionCounts, groupCounts, results, historicalExecutionExceptions,
+  regionCounts, groupCounts, results, historicalExecutionExceptions, evidenceProblems,
   stableWeekdayReplay: supplemental ? { date: supplemental.departureAt, cases: supplemental.cases.length,
     complete: supplemental.cases.filter(row => row.complete).length, numericResults: supplemental.cases.filter(row => row.amount != null).length,
     evidence: supplementalPath, scope: supplemental.scope } : null,
@@ -78,6 +93,7 @@ const lines = [
   '# Системный аудит маршрутов — текущие результаты', '',
   `Сформировано: ${report.generatedAt}.`, '',
   `Разных проверенных OD-кейсов: ${report.totals.distinctCaseAttempts}; записанных live попыток с учётом повторов: ${report.totals.recordedLiveAttempts}; маршруты получены: ${report.totals.liveCaptured}; capture + два offline replay завершены: ${report.totals.audited}; одинаковый live/offline итог: ${report.totals.sameDateParity}.`, '',
+  `Отсутствующих/нечитаемых evidence-ссылок: ${evidenceProblems.length}; имеющихся live summaries: ${results.length}. Исторический status не засчитывается в audited без читаемых raw + обоих replay.`, '',
   'Audited означает воспроизводимость исполнения. Это не проверка цен по Яндексу/оператору. Неизвестная сумма остаётся неизвестной. Offline replay не считается новым live-маршрутом.', '',
   '| Регион | План | Live | Audited | Полная трасса | Числовой итог четверг | Числовой итог суббота |',
   '|---|---:|---:|---:|---:|---:|---:|',
