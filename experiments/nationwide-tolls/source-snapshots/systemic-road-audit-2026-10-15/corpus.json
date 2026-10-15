@@ -2461,18 +2461,18 @@
       "expectedRoads": [],
       "status": "audited",
       "liveEvidence": {
-        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json",
-        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T12-05-57-340Z-capture.json.gz",
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-24-25-267Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T18-24-25-094Z-capture.json.gz",
         "provider": "OSRM",
         "routeMeters": 2730480,
         "traceComplete": true
       },
       "auditEvidence": {
-        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
-        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json",
-        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T12-05-57-340Z-capture.json.gz",
-        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-05-58-124Z.json",
-        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-05-58-789Z.json",
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T18-23-50-255Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-24-25-267Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T18-24-25-094Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T18-24-25-897Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T18-24-26-486Z.json",
         "sameDateParity": true
       }
     },

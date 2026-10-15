@@ -1,16 +1,16 @@
 # Текущее состояние калькулятора «Из А в Б»
 
-2026-10-15T21:22:54.783612+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Последний проверенный remote `bd57403fad9151a55ca3a215c91c1e4667c9beb3`; текущий checkpoint необходимо сохранить и read-back до следующего case.
+2026-10-15T21:24:30.420999+03:00. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Последний проверенный remote `5222f833faa04dffd6f44c7bf3a7ddb9e5e63a8b`; текущий checkpoint необходимо сохранить и read-back до следующего case.
 
 ## DONE
 
-Этап1: **6/155** complete. Последний `zaporizhzhia-молочанск-moscow-center`: audited, parity=True, traceComplete=True. [Checkpoint](checkpoints/2026-10-15-212254-route-case.md). Всего сохранённых audited=37; rawOD=38.
+Этап1: **7/155** complete. Последний `zaporizhzhia-молочанск-saint-petersburg-center`: audited, parity=True, traceComplete=True. [Checkpoint](checkpoints/2026-10-15-212430-route-case.md). Всего сохранённых audited=38; rawOD=39.
 
 [План двух этапов](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.md), [точная очередь](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json):155+154 случая, этап2 ещё не начат.
 
 ## NEXT
 
-`zaporizhzhia-молочанск-saint-petersburg-center`, один --case --limit1 после remote сохранения. По [CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md): STARTED→live/raw/summary→same-date/weekend→inventory/report→checkpoint/commit/remote read-back. Каждая дорожная группа должна иметь доказанное прохождение. Не засчитывать failed/missing evidence.
+`zaporizhzhia-пришиб-kerch-center`, один --case --limit1 после remote сохранения. По [CHECKPOINT_PROTOCOL](CHECKPOINT_PROTOCOL.md): STARTED→live/raw/summary→same-date/weekend→inventory/report→checkpoint/commit/remote read-back. Каждая дорожная группа должна иметь доказанное прохождение. Не засчитывать failed/missing evidence.
 
 ## Ограничения
 

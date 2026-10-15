@@ -22,12 +22,12 @@
     "zaporizhzhia": {
       "planned": 40,
       "historicallyAudited": 10,
-      "rawAvailable": 8,
-      "fourArtifactsAvailable": 8
+      "rawAvailable": 9,
+      "fourArtifactsAvailable": 9
     }
   },
-  "rawCaptureCount": 40,
-  "rawCaptureCaseCount": 38,
+  "rawCaptureCount": 41,
+  "rawCaptureCaseCount": 39,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -1709,24 +1709,46 @@
       "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
       "region": "zaporizhzhia",
       "historicalStatus": "audited",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
       "artifacts": {
         "live": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-24-25-267Z.json",
+          "exists": true,
+          "bytes": 11107,
+          "sha256": "055d3f24e666201d2f428605835a650b20975b259b6e25b5b782489c5a890f82",
+          "gitBlobSha": "040574f49b51f8917a81f8903d2b6b42b3766793",
+          "recoveryShaMatches": null,
+          "readableJson": true
         },
         "capture": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T12-05-57-340Z-capture.json.gz",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T18-24-25-094Z-capture.json.gz",
+          "exists": true,
+          "bytes": 972804,
+          "sha256": "504d3eb43a0126695c2b3693af962b226a0a20212bef66d0d6295133ff26951b",
+          "gitBlobSha": "056fe43543205817f42b9595cf2f288c3c03e38c",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 24
         },
         "sameDateReplay": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T12-05-58-124Z.json",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T18-24-25-897Z.json",
+          "exists": true,
+          "bytes": 11185,
+          "sha256": "02dd8b4241ebcab491de1eb037f8610fc320122d8c92d1e978e899e5f025e0df",
+          "gitBlobSha": "c0498a8ba85a9364dbe6c5c29a3c420f86c6effd",
+          "recoveryShaMatches": null,
+          "readableJson": true
         },
         "weekendReplay": {
-          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-05-58-789Z.json",
-          "exists": false
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T18-24-26-486Z.json",
+          "exists": true,
+          "bytes": 11261,
+          "sha256": "0851167c9e49c5002de11f7717a79a2f58f08b22694c6fc12e7fa2d85b9d9095",
+          "gitBlobSha": "8843a4779ad098cc9ba802f82a49731ad52453ee",
+          "recoveryShaMatches": null,
+          "readableJson": true
         }
       }
     },
@@ -4875,6 +4897,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T18-23-50-255Z.json",
+      "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-24-25-267Z.json",
+          "exists": true,
+          "bytes": 11107,
+          "sha256": "055d3f24e666201d2f428605835a650b20975b259b6e25b5b782489c5a890f82",
+          "gitBlobSha": "040574f49b51f8917a81f8903d2b6b42b3766793",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T18-24-25-094Z-capture.json.gz",
+          "exists": true,
+          "bytes": 972804,
+          "sha256": "504d3eb43a0126695c2b3693af962b226a0a20212bef66d0d6295133ff26951b",
+          "gitBlobSha": "056fe43543205817f42b9595cf2f288c3c03e38c",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 24
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T18-24-25-897Z.json",
+          "exists": true,
+          "bytes": 11185,
+          "sha256": "02dd8b4241ebcab491de1eb037f8610fc320122d8c92d1e978e899e5f025e0df",
+          "gitBlobSha": "c0498a8ba85a9364dbe6c5c29a3c420f86c6effd",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T18-24-26-486Z.json",
+          "exists": true,
+          "bytes": 11261,
+          "sha256": "0851167c9e49c5002de11f7717a79a2f58f08b22694c6fc12e7fa2d85b9d9095",
+          "gitBlobSha": "8843a4779ad098cc9ba802f82a49731ad52453ee",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -5284,6 +5351,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 19
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T18-24-25-094Z-capture.json.gz",
+      "exists": true,
+      "bytes": 972804,
+      "sha256": "504d3eb43a0126695c2b3693af962b226a0a20212bef66d0d6295133ff26951b",
+      "gitBlobSha": "056fe43543205817f42b9595cf2f288c3c03e38c",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 24
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/2026-10-15T18-13-39-642Z-capture.json.gz",

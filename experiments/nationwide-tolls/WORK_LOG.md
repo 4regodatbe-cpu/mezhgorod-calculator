@@ -1668,3 +1668,8 @@ DONE; [отдельный checkpoint](../../docs/checkpoints/2026-10-15-212104-r
 ## 2026-10-15T21:22:54.783612+03:00 — zaporizhzhia-молочанск-moscow-center
 
 DONE; [отдельный checkpoint](../../docs/checkpoints/2026-10-15-212254-route-case.md), этап1 6/155. Parent remote bd57403fad9151a55ca3a215c91c1e4667c9beb3; batch batch-2026-10-15T18-21-50-324Z.json.
+
+
+## 2026-10-15T21:24:30.420999+03:00 — zaporizhzhia-молочанск-saint-petersburg-center
+
+DONE; [отдельный checkpoint](../../docs/checkpoints/2026-10-15-212430-route-case.md), этап1 7/155. Parent remote 5222f833faa04dffd6f44c7bf3a7ddb9e5e63a8b; batch batch-2026-10-15T18-23-50-255Z.json.

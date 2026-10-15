@@ -1,3 +1,7 @@
+# CURRENT — этап1: 7/155
+
+Следующий `zaporizhzhia-пришиб-kerch-center` после remote сохранения checkpoint2026-10-15-212430-route-case. Детали в docs/WORK_STATE.md.
+
 # CURRENT — этап1: 6/155
 
 Следующий `zaporizhzhia-молочанск-saint-petersburg-center` после remote сохранения checkpoint2026-10-15-212254-route-case. Детали в docs/WORK_STATE.md.
