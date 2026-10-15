@@ -1563,3 +1563,8 @@ pnpm build exit0:656/656 audit, quote/API/Next/types/static16; focused ESLint/di
 ## 2026-10-15 — live approval BLOCKED
 
 Single-caseSTART, новыйcapture не подтверждён; automatic review rejected private coordinates disclosure toValhalla. Процессыaudit не найдены, сетевой retry не выполнялся. `docs/checkpoints/2026-10-15-live-approval-blocked.md`. Next offline diagnosis, затем request explicit destination consent.
+
+
+## 2026-10-15 — Offline findings DONE
+
+17diagnostic rows,10А289frameproof/endpointsnull,4M4timewindowcandidates,ЦКАД242.4km. Script fetchforbidden/exit0, JSONevidence+stdout preserved. Detailed `experiments/nationwide-tolls/stages/18-offline-findings-after-recovery-2026-10-15.md`, checkpoint `docs/checkpoints/2026-10-15-offline-diagnosis-done.md`. Live remainsblocked pendingexplicit routing destination consent. No product/tariff/build change.

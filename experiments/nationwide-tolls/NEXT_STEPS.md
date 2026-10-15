@@ -1,3 +1,10 @@
+# CURRENT — offline findings выполнены; liveapprovalblocked
+
+- [x]17diagnostics/10А289/4temporal candidates/ЦКАД242.4 сохранены: `experiments/nationwide-tolls/stages/18-offline-findings-after-recovery-2026-10-15.md`.
+- [ ] Получить explicituserconsent coordinate/routing data disclosure Valhalla/OSRM/BRouter; без обхода auto-review.
+- [ ] Послеconsent одинcaseЛисичанск→СПб/limit1, raw+same-date+weekend, checkpoint+remote before next.
+- [ ] Остальной audit и обсуждение findings доpricefixes.
+
 # CURRENT — liveBLOCKED approval, offline diagnosis STARTED
 
 - [ ] Offline findings existing26complete cases, без сетевого запроса.

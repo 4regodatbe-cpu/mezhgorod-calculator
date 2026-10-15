@@ -1,3 +1,12 @@
+## CURRENT — 2026-10-15, offline findings DONE; live approval BLOCKED
+
+- DONE: [этап18](../experiments/nationwide-tolls/stages/18-offline-findings-after-recovery-2026-10-15.md),17diagnosticrows; А28910casesс3frames/неопознаннымиdistantendpoints;4потенциальноизбыточныхM4timewindowотказа (approximate, не billingproof);ЦКАД242.4kmvs135–230guard. JSON evidence/log сохранены. [Checkpoint](checkpoints/2026-10-15-offline-diagnosis-done.md).
+- BLOCKED: новый Лисичанск→СПб не засчитан. Automatic review rejected private repository coordinate disclosure to Valhalla без explicit destination consent; batchSTART сохранён в2520abb, сетевой retry/обход не выполнялся.
+- NEXT: получить разрешение пользователя на передачу координат городов/контрольных точек и routing parameters Valhalla/OSRM/BRouter для аудита; затем одинlivecase+replays→remotecheckpoint. До этого external calls не повторять. Обсудить findings до runtime price fixes.
+- Предыдущий build656/656+quote/API/Next/types/static16PASS; этот шаг offline data/docs-only, повтор build не выполнялся. App/lib/тарифы/Production не менялись. Каждый completedstep сохранён отдельно.
+
+---
+
 ## CURRENT — live audit BLOCKED approval; offline diagnosis STARTED
 
 Новый Лисичанск→СПб не засчитан: automatic approval review rejected coordinate disclosure to Valhalla without explicit permission. [Checkpoint](checkpoints/2026-10-15-live-approval-blocked.md). Не повторять сетевой запрос/не менять transport для обхода. STARTED: offline findings по26сохранённымполным кейсам. Нужен явный consent для routing destinations после unaffected work.
