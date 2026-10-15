@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-15T23:47:49.399Z",
-  "phase": "DONE",
+  "at": "2026-10-15T23:47:52.449Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,62 +23,10 @@
       "region": "lnr"
     }
   },
-  "caseId": "lnr-антрацит-kazan-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "lnr-антрацит-kazan-center",
-    "startedAt": "2026-10-15T23:47:26.087Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-38-466Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-kazan-center/2026-10-15T23-47-38-365Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-47-39-078Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-47-39-690Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-15T23:47:39.709Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-47-24-743Z-part5",
-  "parent": "043f84ff87dfa06349ec7f7b24799b4eb2d95599",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-47-49-399Z-done.json"
+  "caseId": "lnr-антрацит-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-47-52-448Z-part5",
+  "parent": "5634f7ae89558be577f3a7e33c7f675d1a680b91",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-47-52-449Z-started.json"
 }
