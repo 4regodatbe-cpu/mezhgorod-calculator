@@ -1593,3 +1593,6 @@ Single-caseSTART, новыйcapture не подтверждён; automatic revie
 ## 2026-10-15-200521МСК — routecase zaporizhzhia-пришиб-moscow-center
 
 {"caseId": "zaporizhzhia-пришиб-moscow-center", "status": "audited", "provider": "OSRM", "routeMeters": 2018186, "traceComplete": true, "sameDateParity": true, "weekdayAmount": null, "weekendAmount": null, "components": [{"id": "m4", "amount": null, "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"}, {"id": "a289", "amount": null, "reason": "A-289 frames detected but selected-route exits are unresolved"}]}. Checkpoint `docs/checkpoints/2026-10-15-200521-route-case.md` содержитevidenceSHA; availablecomplete30, missingraw9. STARTEDnext `zaporizhzhia-пришиб-saint-petersburg-center`. App/lib/тарифы безизменений, data-only/no newbuild.
+## 2026-10-15 20:30МСК — Пришиб→СПб после остановки ожидания
+
+Cell103notfound, pendingcase завершён17:07:08Z; raw/live/2replays найдены, не повторялись. OSRM2729956m/tracecomplete/paritytrue, totalsunknownM4/A289.31complete/32rawOD/8missingraw. Подробно: docs/checkpoints/2026-10-15-203000-prishib-spb-resume.md. STARTED следующийПришиб→Казань. Previous4cases remote35028d4проверены.

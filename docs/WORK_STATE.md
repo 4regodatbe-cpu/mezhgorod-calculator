@@ -1,3 +1,9 @@
+## CURRENT — 2026-10-15 20:30МСК: Пришиб→СПб сохранён после прерывания
+
+DONE: case выполнен до остановкиcell103; pendingevidence не потерян.31complete/32rawOD/8currentmissingraw. [Checkpoint](checkpoints/2026-10-15-203000-prishib-spb-resume.md). STARTED: Пришиб→Казань, одинcase иremotecheckpoint. Parent35028d4/PR14сверены. Routingconsent действует, app/lib/тарифы/Production без изменений.
+
+---
+
 ## CURRENT — 2026-10-15-200521МСК, live audit продолжается
 
 DONE: `zaporizhzhia-пришиб-moscow-center` — OSRM, 2018186м, traceComplete=True, sameDateParity=True; weekday=None,weekend=None. Это execution/replay, не независимая проверка тарифа. [Checkpoint](checkpoints/2026-10-15-200521-route-case.md), batch `batch-2026-10-15T17-04-46-739Z.json`.

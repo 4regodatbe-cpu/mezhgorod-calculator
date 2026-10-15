@@ -1,3 +1,8 @@
+# CURRENT — Пришиб→Казань STARTED
+
+- [x] Пришиб→СПб completed before interruption;31complete/32rawOD,5из13missingrawповторены.
+- [ ] Пришиб→Казань, одинcase→checkpoint→remote перед следующим. Осталось8missingraw.
+
 # CURRENT 2026-10-15-200521 — следующийcase zaporizhzhia-пришиб-saint-petersburg-center
 
 - [x] zaporizhzhia-пришиб-moscow-center: executionaudited, parityTrue; complete datasets30, missingraw9.

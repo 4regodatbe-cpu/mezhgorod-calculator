@@ -2305,18 +2305,18 @@
       "expectedRoads": [],
       "status": "audited",
       "liveEvidence": {
-        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-58-33-488Z.json",
-        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T11-58-33-357Z-capture.json.gz",
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T17-07-07-419Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T17-07-07-263Z-capture.json.gz",
         "provider": "OSRM",
         "routeMeters": 2729956,
         "traceComplete": true
       },
       "auditEvidence": {
-        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-54-05-201Z.json",
-        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-58-33-488Z.json",
-        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T11-58-33-357Z-capture.json.gz",
-        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-58-34-133Z.json",
-        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-58-34-722Z.json",
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T17-06-31-211Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T17-07-07-419Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T17-07-07-263Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T17-07-08-111Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T17-07-08-826Z.json",
         "sameDateParity": true
       }
     },
