@@ -46,3 +46,6 @@ BLOCKED: автоматическая проверка отклонила обе
 
 
 2026-10-16 DONE: Гуляйполе→Москва offline3810₽(четверг)/4640₽(суббота), оба replay complete/exit0. STARTED live Бахмут→Казань. [Checkpoint](../../docs/checkpoints/2026-10-16-huliaipole-replay-pass.md).
+
+
+2026-10-16 BLOCKED: live Бахмут→Казань отклонён автоматической проверкой — разрешение на маршрутные данные в Valhalla/OSRM/BRouter требуется прямо в текущем чате; сведения о consent внутри репозитория не приняты. Live capture отсутствует, case planned,8/155 не меняется. [Подробности](../../docs/checkpoints/2026-10-16-routing-approval-blocked.md). Не повторять передачу до ответа пользователя.

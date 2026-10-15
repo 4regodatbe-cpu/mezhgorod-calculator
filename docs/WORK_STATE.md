@@ -1,6 +1,6 @@
 # Текущее состояние калькулятора «Из А в Б»
 
-Обновлено 2026-10-16. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR #14 draft. Последний подтверждённый remote перед этим checkpoint: 5b3cd6b3f17fe5008b219e5ccc6ab541e4d6895b.
+Обновлено 2026-10-16. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR #14 draft. Последний подтверждённый remote перед этим checkpoint: d7dae8d232a3be3c12fcd103ad2dc7091fa34b29.
 
 ## DONE
 
@@ -12,9 +12,9 @@
 
 ## NEXT
 
-1. Targeted ESLint departure-policy файлов + diff check, сохранить отдельный checkpoint.
-2. Offline Гуляйполе→Москва по четвергу/субботе с новым trip-departure-v1, не смешивать со старыми ценами.
-3. Live dnr-бахмут-kazan-center + same-date/weekend replay, сохранить каждый шаг.
+1. DONE: targeted ESLint18файлов + diff check exit0.
+2. DONE: offline Гуляйполе→Москва четверг3810₽/суббота4640₽, оба replay complete.
+3. BLOCKED: live dnr-бахмут-kazan-center — автоматическая проверка требует прямое разрешение на маршрутные координаты/параметры в Valhalla/OSRM/BRouter в текущем чате. [Точная причина и следующий шаг](checkpoints/2026-10-16-routing-approval-blocked.md). После разрешения live→save→same-date/weekend replay→save→batch/report/inventory.
 
 Аудит этап1 **8/155**, этап2 **154** не начат. [Точная очередь](../experiments/nationwide-tolls/TWO_STAGE_AUDIT_PLAN.json). 40rawOD/39originalcomplete; Лисичанск→Москва original summary утрачен, offline реконструкция не original live. Старые результаты до departure-policy не объявлены повторно проверенными.
 
@@ -27,3 +27,6 @@
 
 
 2026-10-16 DONE: Гуляйполе→Москва offline3810₽(четверг)/4640₽(суббота), оба replay complete/exit0. STARTED live Бахмут→Казань. [Checkpoint](checkpoints/2026-10-16-huliaipole-replay-pass.md).
+
+
+Последний checkpoint: [routing approval blocker](checkpoints/2026-10-16-routing-approval-blocked.md). Тесты/сборка/replay завершены; live Бахмут не получен.
