@@ -18,7 +18,7 @@ IO/report **7/7 PASS**, integrity8captures/155+154PASS. Все40старыхOD �
 
 ## IN PROGRESS — правило тарифа отправления
 
-Прямое решение15.10.2026 21:48МСК: всяпоездка поначальнойдате/времени, без смены тарифа впути. [STARTED checkpoint](checkpoints/2026-10-15-215032-departure-policy-started.md). Реализовать общуюполитику иМ11/ЗСД overrides, focused/fullbuild/replay, затемвернутьсякаудиту.
+Прямое решение15.10.2026 21:48МСК: всяпоездка поначальнойдате/времени, без смены тарифа впути. [STARTED checkpoint](checkpoints/2026-10-15-215032-departure-policy-started.md). Реализована общаяполитика иМ11/ЗСД overrides, focused39/39PASS. [Checkpoint](checkpoints/2026-10-15-215247-departure-policy-focused-pass.md). STARTED full pnpm build, затемreplay ивозвраткаудиту.
 
 ## NEXT
 

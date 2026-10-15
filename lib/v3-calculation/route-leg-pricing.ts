@@ -63,7 +63,7 @@ export async function calculateLegTolls({
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
   const m11Airport = inspectM11PulkovoAccess(routeGeometry);
   const m11Boundaries = resolveM11ProductBoundaries(routeGeometry,routeSeconds,departureAt,selectedFastRoute.m11RoadEvidence);
-  const matrixM11Geometry = matrixM11GeometryComponent({exact:m11Boundaries.resolved,parts:m11Boundaries.parts});
+  const matrixM11Geometry = matrixM11GeometryComponent({exact:m11Boundaries.resolved,parts:m11Boundaries.parts},departureAt);
   const productionM11 = selectedFastRoute.m11RoadEvidence
     ? calculateProductionM11(
         routeGeometry,

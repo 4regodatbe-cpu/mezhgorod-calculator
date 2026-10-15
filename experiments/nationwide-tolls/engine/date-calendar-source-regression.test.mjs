@@ -7,7 +7,7 @@ import {matrixCkadComponent} from './ckad-route-adapter.mjs';
 import validity from './fare-validity.cjs';
 const main={boundaryStatus:'resolved',traversal:{entryPointId:'p58',exitPointId:'p593'}};
 const request=(road,from,to,profile,date,extra={})=>({routeId:'r',evidenceComplete:true,components:[{road,from,to,profile,localDate:date,routeId:'r',traversalId:road,exactTraversal:true,profileResolved:true,...extra}]});
-test('M11 current order switches at01:00, including holiday boundaries',()=>{
+test('M11 resolves the departure calendar at01:00; later holidays/profile changes do not reprice',()=>{
  for(const [instant,profile]of [
   ['2026-10-16T00:59:59+03:00','monThu'],['2026-10-16T01:00:00+03:00','friSun'],
   ['2026-10-19T00:59:59+03:00','friSun'],['2026-10-19T01:00:00+03:00','monThu'],
@@ -16,15 +16,15 @@ test('M11 current order switches at01:00, including holiday boundaries',()=>{
   ['2026-12-30T01:00:00+03:00','friSun']])assert.equal(m11MainlineTariffAt(instant).profile,profile,instant);
  const ordinary=matrixM11Component(main,'2026-10-15T12:00:00+03:00',0).tolls.amount;
  assert.equal(matrixM11Component(main,'2026-10-16T00:30:00+03:00',20*60).tolls.amount,ordinary);
- assert.equal(matrixM11Component(main,'2026-10-16T00:30:00+03:00',40*60).tolls,null);
- // Both endpoints can have the same profile while a holiday lies inside.
- assert.equal(matrixM11Component(main,'2026-11-02T12:00:00+03:00',3*86400).tolls,null);
+ assert.equal(matrixM11Component(main,'2026-10-16T00:30:00+03:00',40*60).tolls.amount,ordinary);
+ // The departure profile remains fixed even with a holiday inside the trip.
+ assert.equal(matrixM11Component(main,'2026-11-02T12:00:00+03:00',3*86400).tolls.amount,ordinary);
 });
 test('M11 early Monday interval never uses a noon sample outside the journey',()=>{
  const weekend=matrixM11Component(main,'2026-10-18T12:00:00+03:00',0).tolls.amount;
  assert.equal(matrixM11Component(main,'2026-10-19T00:10:00+03:00',20*60).tolls.amount,weekend);
  assert.equal(matrixM11Component(main,'2026-10-18T23:50:00+03:00',40*60).tolls.amount,weekend);
- assert.equal(matrixM11Component(main,'2026-10-19T00:40:00+03:00',30*60).tolls,null);
+ assert.equal(matrixM11Component(main,'2026-10-19T00:40:00+03:00',30*60).tolls.amount,weekend);
 });
 test('CKAD andM11 reject normalized impossible dates, absent timezone andnon-string times',()=>{
  const ckad={exact:true,traversal:{from:'М-4 Дон',to:'М-11 Нева'}};

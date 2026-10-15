@@ -1,6 +1,6 @@
 import {matrixM11HeadComponent} from './m11-head-route-adapter.mjs';
 import core from './quote.cjs';
-import {stableTariffWindow} from './tariff-window.mjs';
+import {departureTariffContext} from './tariff-window.mjs';
 import validity from './fare-validity.cjs';
 import schedule from '../source-snapshots/m11/order274-calendar-2026-verified.json' with {type:'json'};
 
@@ -29,7 +29,7 @@ export function matrixM11Component(production, departureAt, routeSeconds) {
   if(!validity.validInstant(departureAt))return fail('m11_crossing_time_missing');
   const start = new Date(departureAt);
   if (!Number.isFinite(start.getTime()) || !Number.isFinite(routeSeconds) || routeSeconds < 0) return fail('m11_crossing_date_missing');
-  const window=stableTariffWindow(departureAt,routeSeconds,m11MainlineTariffAt,[0,60]);
+  const window=departureTariffContext(departureAt,routeSeconds,m11MainlineTariffAt);
   if(window.status!=='resolved')return fail('m11_'+window.reason);
   const begin=window.begin,profile=begin.profile;
   const {entryPointId:from,exitPointId:to} = production.traversal;
@@ -37,19 +37,16 @@ export function matrixM11Component(production, departureAt, routeSeconds) {
   const quote = profile => core.quote({routeId:component.routeId,evidenceComplete:true,components:[{...component,profile}]});
   const actual=quote(profile),weekday=quote('monThu'),weekend=quote('friSun');
   if ([actual,weekday,weekend].some(q=>q.rub===null)) return fail('m11_current_exact_pair_missing');
-  for(const date of window.dates){
-    const day=core.quote({routeId:component.routeId,evidenceComplete:true,components:[{...component,localDate:date}]});
-    if(day.rub!==actual.rub||JSON.stringify(day.components.map(c=>c.source))!==JSON.stringify(actual.components.map(c=>c.source)))return fail('m11_crossing_fare_version_changes');
-  }
   return {reason:'matrix dated selected-route M11 direct pair',tolls:{amount:actual.rub,weekdayAmount:weekday.rub,weekendAmount:weekend.rub,period:profile==='monThu'?'понедельник–четверг':'пятница–воскресенье',segments:[`М-11: ${from} → ${to} · Стоимость не подтверждена`],confidence:'matched'}};
 }
 
 /** @returns {{reason:string,tolls:import("../../../lib/toll-engine/route-toll-composition").RouteTollValue|null,components:import("../../../lib/toll-engine/route-toll-composition").RouteTollComponent[]}|null} */
-export function matrixM11GeometryComponent(production) {
+export function matrixM11GeometryComponent(production, departureAt = production?.parts?.departureAt ?? production?.parts?.mainlineAt) {
   if (production?.exact !== true || !production.parts) return null;
   const parts = production.parts;
-  const mainline = matrixM11Component({boundaryStatus:'resolved',traversal:{entryPointId:parts.from,exitPointId:parts.to}},parts.mainlineAt,parts.mainlineWindowSeconds??0);
-  const head = matrixM11HeadComponent({...parts.head,boundaryStatus:parts.head?'resolved':'unknown'});
+  const tariffAt = departureAt;
+  const mainline = matrixM11Component({boundaryStatus:'resolved',traversal:{entryPointId:parts.from,exitPointId:parts.to}},tariffAt,parts.mainlineWindowSeconds??0);
+  const head = matrixM11HeadComponent({...parts.head,boundaryStatus:parts.head?'resolved':'unknown'},tariffAt);
   const headDetected=parts.headDetected!==false;
   const components=[
     {id:/** @type {'m11-15-58'} */('m11-15-58'),detected:headDetected,tolls:head.tolls,reason:parts.head?head.reason:'m11_partial_head_entry_boundary_unresolved'},

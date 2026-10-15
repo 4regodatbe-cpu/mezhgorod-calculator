@@ -6,7 +6,7 @@ const excludedEndpointKeys=new Set(endpoints.excludedEndpoints.map(row=>row.key)
 // Compiled offline: one directed endpoint/profile row. No runtime sums or
 // selection among historical chains. Unknown ramp directions stay absent.
 const endpointCore=core.createQuoteEngine({selected:[],provisional:endpoints.rows,history:[]});
-import {stableTariffWindow} from './tariff-window.mjs';
+import {departureTariffContext} from './tariff-window.mjs';
 import {m4TariffPeriodAt} from '../../toll-od-matrix/m4-fare-calendar-2026.mjs';
 export function matrixM4Component(production, departureAt, routeSeconds){
  if(production?.exact!==true||(!production.endpointOnly&&!production.tolls))return null;
@@ -16,7 +16,7 @@ export function matrixM4Component(production, departureAt, routeSeconds){
  if(!Array.isArray(ids)||ids.length<1||new Set(ids).size!==ids.length)return null;
  const unknown=reason=>({tolls:null,reason,priceConfirmation:'unknown'});
  if(!Number.isFinite(routeSeconds)||routeSeconds<0||!Number.isFinite(new Date(departureAt).getTime()))return unknown('m4_crossing_date_missing');
- const window=stableTariffWindow(departureAt,routeSeconds,m4TariffPeriodAt);
+ const window=departureTariffContext(departureAt,routeSeconds,m4TariffPeriodAt);
  if(window.status!=='resolved')return unknown('m4_'+window.reason);
  const start=window.begin;
  const south=['m4-1046','m4-1093','m4-1184','m4-1223'];
@@ -28,12 +28,6 @@ export function matrixM4Component(production, departureAt, routeSeconds){
  const request=c=>({routeId:'selected-fast-route',evidenceComplete:true,components:[c]});
  const engine=production.endpointOnly&&!isSouth?endpointCore:core;
  const actual=engine.quote(request(component));
- // Every crossed date must select the same applicable fare/source. A version
- // expiry/change cannot revive a native departure-date fallback.
- if(actual.rub!==null)for(const date of window.dates){
-  const day=engine.quote(request({...component,localDate:date}));
-  if(day.rub!==actual.rub||JSON.stringify(day.components.map(c=>c.source))!==JSON.stringify(actual.components.map(c=>c.source)))return unknown('m4_crossing_fare_version_changes');
- }
 
  const weekday=engine.quote(request({...component,profile:'monThu'})),weekend=engine.quote(request({...component,profile:'friSun'}));
  if(actual.rub===null||weekday.rub===null||weekend.rub===null){

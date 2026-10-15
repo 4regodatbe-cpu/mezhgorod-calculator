@@ -49,7 +49,7 @@ export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSec
  const paymentWindowSeconds=north||mmkResolved?0:Math.max(0,(exitAt.getTime()-p58At.getTime())/1000);
  return {candidate:true,headDetected,resolved:true as const,
   reason:fullHead?'m11_direct_outer_boundaries_with_final_payment_clock':'m11_mainline_outer_pair_independent_of_head_entry',parts:{
-   from:north?'p58':'p679',to:north?'p679':'p58',mainlineAt:paymentAt.toISOString(),
+   from:north?'p58':'p679',to:north?'p679':'p58',departureAt,mainlineAt:paymentAt.toISOString(),
    mainlineWindowSeconds:paymentWindowSeconds,headDetected,
    head:fullHead||mmkResolved?{from:fullHead?(north?'moscow':'solnechnogorsk'):mmk.from!,to:fullHead?(north?'solnechnogorsk':'moscow'):mmk.to!,
     paymentAt:paymentAt.toISOString(),paymentWindowSeconds,

@@ -1,3 +1,7 @@
+# CURRENT — departurepolicy focused39/39PASS, fullbuildSTARTED
+
+После remote сохранения pnpm build в docs/checkpoints/evidence/2026-10-15-departure-policy-build.log; затемcheckpoint/remote/replay. Аудит8/155.
+
 # CURRENT — новое продуктовое правило
 
 Междорожныевекторы отложены полностью. Сначала единый тариф отправления при переходе дня/профиля, focused/fullgate/replay; потом dnr-бахмут-kazan-center,аудит8/155.

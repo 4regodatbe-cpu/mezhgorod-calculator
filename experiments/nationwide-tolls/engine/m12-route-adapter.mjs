@@ -1,6 +1,6 @@
 import core from './quote.cjs';
 import validity from './fare-validity.cjs';
-import {stableTariffWindow} from './tariff-window.mjs';
+import {departureTariffContext} from './tariff-window.mjs';
 import original from '../source-snapshots/m12-2026-03-02-category1.json' with {type:'json'};
 const sectionIndex=new Map(original.sections.map((section,i)=>[section.rvpKm,i]));
 export function m12PairFromBoundary(boundary){
@@ -24,16 +24,12 @@ export function matrixM12Component(production, departureAt, routeSeconds=0){
  const unknown=reason=>({tolls:null,reason});
  if(production.blockedByMixedRoadEvidence)return unknown('m12_mixed_paid_road_evidence');
  if(!validity.validInstant(departureAt))return unknown('m12_crossing_date_missing');
- const window=stableTariffWindow(departureAt,routeSeconds,dateAt);
+ const window=departureTariffContext(departureAt,routeSeconds,dateAt);
  if(window.status!=='resolved')return unknown('m12_'+window.reason);
  const pair=m12PairFromBoundary(production.boundary??production.core?.boundary);
  if(!pair)return unknown('m12_current_operator_pair_not_bound');
  const quote=date=>core.quote({routeId:'selected-fast-route',evidenceComplete:true,components:[{routeId:'selected-fast-route',traversalId:'m12',exactTraversal:true,profileResolved:true,road:'m12',...pair,profile:'allDays',localDate:date}]});
  const result=quote(window.begin.date);
  if(result.rub===null)return unknown('m12_missing_current_direct_pair');
- for(const date of window.dates){
-  const day=quote(date);
-  if(day.rub!==result.rub||JSON.stringify(day.components.map(c=>c.source))!==JSON.stringify(result.components.map(c=>c.source)))return unknown('m12_crossing_fare_version_changes');
- }
  return {reason:'matrix dated selected-route M12 directed endpoint pair',tolls:{amount:result.rub,weekdayAmount:result.rub,weekendAmount:result.rub,period:'все дни',segments:[`М-12: ${pair.from} → ${pair.to} · Стоимость не подтверждена`],confidence:'matched'}};
 }

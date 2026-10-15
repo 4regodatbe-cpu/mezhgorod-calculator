@@ -1,7 +1,7 @@
 import snapshot from '@/experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/zone1-readiness.json' with {type:'json'};
 import quoteCore from '@/experiments/nationwide-tolls/engine/quote.cjs';
 import validity from '@/experiments/nationwide-tolls/engine/fare-validity.cjs';
-import {nearestSegment,haversineKm,crossingAt} from '../toll-engine/m11-moscow-geometry';
+import {nearestSegment,haversineKm} from '../toll-engine/m11-moscow-geometry';
 import type {Coordinate} from '../tolls';
 import type {TollValidation} from '../toll-validator';
 import type {RouteTollValue} from '../toll-engine/route-toll-composition';
@@ -31,7 +31,8 @@ export function matrixZsdZone1Component(route:readonly Coordinate[],validation:T
   ||gate.distanceKm>0.025||before.distanceKm>0.025||after.distanceKm>0.025
   ||!(before.index<gate.index&&gate.index<after.index))return fail('zsd_zone1_directional_geometry_unresolved');
  if(!validity.validInstant(date)||!Number.isFinite(seconds)||seconds<=0)return fail('zsd_zone1_payment_time_missing');
- const at=crossingAt(new Date(date),route,gate.index,seconds);
+ // The trip departure date is the tariff date, even when this gate is reached later.
+ const at=new Date(date);
  const localDate=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Moscow',year:'numeric',month:'2-digit',day:'2-digit'}).format(at);
  const result=engine.quote({routeId:'selected-fast-route',evidenceComplete:true,components:[{
   routeId:'selected-fast-route',traversalId:'zsd-zone1',road:'zsd',productId:'zsd',from:'zone-1',to:'zone-1',

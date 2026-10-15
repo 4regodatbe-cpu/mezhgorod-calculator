@@ -32,13 +32,13 @@ test('head uses its own night, next-day 01:00 and holiday calendar',()=>{
   ['2026-11-03T06:00:00+03:00','fri'],['2026-11-04T06:00:00+03:00','sat'],
  ])assert.equal(m11HeadTariffAt(at).profile,profile,at);
  assert.equal(matrixM11HeadComponent(bound('moscow','solnechnogorsk','2026-10-16T00:30:00+03:00',1200)).tolls?.amount,1130);
- assert.equal(matrixM11HeadComponent(bound('moscow','solnechnogorsk','2026-10-16T00:30:00+03:00',2400)).tolls,null);
+ assert.equal(matrixM11HeadComponent(bound('moscow','solnechnogorsk','2026-10-16T00:30:00+03:00',2400)).tolls?.amount,1130);
 });
 
-test('head cannot guess invalid time, missing boundaries or an in-window night transition',()=>{
+test('head rejects invalid departure, missing boundaries and negative duration; later night does not reprice',()=>{
  for(const at of ['2026-10-14','2026-02-30T12:00:00+03:00','2026-10-14T24:00:00+03:00','2027-01-01T12:00:00+03:00','2026-04-23T12:00:00+03:00'])assert.equal(matrixM11HeadComponent(bound('moscow','solnechnogorsk',at)).tolls,null);
  for(const b of [null,{},bound('moscow','moscow'),bound('missing','moscow'),{...bound('moscow','solnechnogorsk'),paymentWindowSeconds:-1}])assert.equal(matrixM11HeadComponent(b).tolls,null);
- assert.equal(matrixM11HeadComponent(bound('moscow','solnechnogorsk',date,86400)).tolls,null);
+ assert.equal(matrixM11HeadComponent(bound('moscow','solnechnogorsk',date,86400)).tolls?.amount,1130);
 });
 
 const north:Coordinate[]=[[37.472,55.8842],[37.0712818,56.1391684],[30.3598352,59.7750977]];
@@ -53,26 +53,27 @@ test('V3 outer boundaries work both directions without intermediate p593 or nati
  }
 });
 
-test('north head fare uses common final exit time and ignores any old numeric fields',()=>{
+test('north head fare uses departure despite the Friday exit and ignores old numeric fields',()=>{
  const resolved=resolveM11ProductBoundaries(north,8*3600,'2026-10-15T22:00:00+03:00');
  assert.equal(resolved.parts?.head.paymentAt,'2026-10-16T03:00:00.000Z');
  const production={exact:true,parts:{...resolved.parts,headAmount:NaN,headWeekday:Number.MAX_SAFE_INTEGER,headWeekend:-1}};
  const result=matrixM11GeometryComponent(production)!;
  const component=result.components.find(c=>c.id==='m11-15-58')!;
- assert.equal(component.tolls?.amount,1650);
+ assert.equal(component.tolls?.amount,1130);
  assert.equal(result.components.length,2);
  assert.equal(composeRouteTolls(result.components).tolls?.amount,result.tolls?.amount);
  assert.equal(composeRouteTolls([...result.components,component]).status,'unknown');
  assert.equal(composeRouteTolls([...result.components,{id:'m11',detected:true,tolls:result.tolls}]).status,'unknown');
 });
 
-test('south payment window stays unknown when unbound Moscow PVP21 could change the profile',()=>{
+test('south head and mainline both retain Thursday departure despite a Friday payment window',()=>{
  const resolved=resolveM11ProductBoundaries(north.toReversed(),8*3600,'2026-10-15T22:00:00+03:00');
  assert.ok(resolved.parts!.head.paymentWindowSeconds>0);
  const parts={...resolved.parts,head:{...resolved.parts!.head,paymentAt:'2026-10-16T00:30:00+03:00',paymentWindowSeconds:3600}};
  const result=matrixM11GeometryComponent({exact:true,parts})!;
- assert.equal(result.tolls,null);
- assert.equal(composeRouteTolls(result.components).status,'unknown');
+ assert.equal(result.components.find(c=>c.id==='m11-15-58')?.tolls?.amount,1130);
+ assert.equal(result.components.find(c=>c.id==='m11-58-679')?.tolls?.period,'понедельник–четверг');
+ assert.equal(composeRouteTolls(result.components).status,'priced');
 });
 
 async function upper(route:Coordinate[],tail=false) {
