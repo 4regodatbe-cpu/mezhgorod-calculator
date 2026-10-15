@@ -6,6 +6,7 @@ import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "@/lib/special-territory-boundaries";
 import { analyzeRoute, candidatePlans, endpointPolicy } from "@/lib/special-territory-policy";
 import { calculateSpecialOptions } from "@/lib/v3-calculation/special-options";
+import { acceptedYandexRouteEstimate, yandexRouteEstimateTolls } from "@/lib/v3-calculation/yandex-route-estimates";
 import type { Coordinate } from "@/lib/tolls";
 
 type UserRates = { standard: number; comfort: number; comfortPlus: number; minivan: number };
@@ -81,7 +82,10 @@ export async function POST(request: NextRequest) {
       void coordinates; void legs;
       const tolls = "tolls" in trip && trip.tolls && typeof trip.tolls === "object"
         ? trip.tolls as Record<string, unknown> : null;
-      const publicTolls = tolls
+      const yandexEstimate = acceptedYandexRouteEstimate({ from: body.from, to: body.to, meters: trip.meters, departureAt });
+      const publicTolls = yandexEstimate
+        ? yandexRouteEstimateTolls(yandexEstimate)
+        : tolls
         ? Object.fromEntries(Object.entries(tolls)
           .filter(([key]) => key !== "priceConfirmation" && key !== "displayLabel")
           .map(([key, value]) => [key, key === "segments" && Array.isArray(value)

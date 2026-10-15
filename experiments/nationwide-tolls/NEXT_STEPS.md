@@ -1,5 +1,9 @@
 # Следующий приоритет — зафиксированные Яндекс суммы и точное сопоставление геометрии
 
+- [x] Перепроверить в Яндекс Картах точные городские точки СПб↔Краснодар: теперь текущие быстрейшие суммы ~11 325 ₽ / ~10 240 ₽; обратная карточка показывает М-4, E115, МКАД, М-11 и ЗСД. Сохранены [этап 13](stages/13-yandex-route-refresh-2026-10-15.md) и live JSON. Это оценки именно выбранных маршрутов, не компонентные тарифы.
+- [x] Exact-coordinate V3 API compare Краснодар→СПб завершился: 2 061,4 км/1 581 мин, M-4 native unknown; API now returns accepted Yandex route estimate 10 240 ₽. Route estimator binds directed coordinates/date/±5% distance and keeps whole-route scope.
+- [x] Verification complete: 3 focused estimate tests PASS; full `pnpm build` 649/649 + quote/API + TypeScript/Next + static16/16 PASS; exact-coordinate API 200/10 240 ₽; targeted ESLint, `tsc --noEmit`, JSON parse, and `git diff --check` PASS.
+
 - [x] По решению пользователя убраны пользовательские пометки о неподтверждении квитанцией/оператором/провайдером для priced сумм; в V3 API такие labels не передаются. Реальная неизвестная цена по-прежнему обозначается как неизвестная, partial total не выдаётся за полный. Полный локальный build PASS; пользовательский API теперь также очищает receipt-like суффиксы из `segments`. Live V3 comparison опубликован в PR14 commit `bb355fb`; Actions run `38701853395` для предыдущего code SHA `6038bb2` прошёл; exact-SHA run `38703246952` для `bb355fb` сейчас `in_progress`.
 
 - [x] По прямому решению пользователя принять и сохранить суммы, которые Яндекс Карты явно показывают для соответствующего быстрейшего маршрута: ЗСД Благодатная→Приморский ~600 ₽, reverse ~900 ₽, Казань→Москва ~4 400 ₽, СПб→Краснодар ~11 363 ₽, Краснодар→СПб ~10 910 ₽. Подробности: `stages/12-yandex-live-route-estimates-2026-10-15.md` и `source-snapshots/yandex/2026-10-15-live-route-estimates.json`.

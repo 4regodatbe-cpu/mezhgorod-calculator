@@ -1,3 +1,19 @@
+## CURRENT 2026-10-15 — обновлены направленные суммы Яндекс для СПб↔Краснодар
+
+USER DECISION: использовать показанную Яндекс Картами сумму для конкретного выбранного маршрута. Не добавлять пользователю пометки о квитанциях.
+
+YANDEX REFRESH: exact city-center route snapshots обновлены live: СПб→Краснодар ~11 325 ₽ (1 290 mi, 1д1ч3м); Краснодар→СПб ~10 240 ₽ (1 280 mi, 23ч57м). Подробности, road steps и сравнение с прошлым снимком — [этап 13](../experiments/nationwide-tolls/stages/13-yandex-route-refresh-2026-10-15.md) и [JSON capture](../experiments/nationwide-tolls/source-snapshots/yandex/2026-10-15-live-route-refresh-1109.json). Это принятие сумм для указанных map routes; распределение по участкам и runtime V3 замена не подтверждены.
+
+DONE: exact-coordinate V3 API compare Краснодар→СПб завершился HTTP 200: 2 061,4 км / 1 581 мин, toll unknown из-за неполной оценки М-4; Яндекс — ~2 060 км / 23ч57 / ~10 240 ₽. Добавлен runtime fallback для пяти принятых направленных оценок Яндекс по координатам, дате снимка и длине (±5%); сумма отображается как оценка всего маршрута, не разбивается на М-4/М-11/ЗСД.
+
+VERIFIED: focused tests 3/3; `pnpm build` audit649/649, quote/API, TypeScript/Next, static16/16 PASS; `tsc --noEmit`, targeted ESLint, JSON parse and `git diff --check` PASS. Exact V3 API reverse response inspected: HTTP200, `tolls.amount=10240`, status `priced`, source segment identifies full Yandex route. [Этап 13](../experiments/nationwide-tolls/stages/13-yandex-route-refresh-2026-10-15.md).
+
+NEXT: commit/publish to PR14 and check Actions for exact SHA. Moscow→Kazan has no displayed Yandex amount; unmatched endpoints/date/length do not receive map fallback.
+
+DONE: предыдущий блок удалил публичные предупреждения о квитанциях; API не раскрывает внутренние `priceConfirmation`/`displayLabel` и очищает такие суффиксы из сегментов. Тесты/build и PR14 состояние описаны ниже.
+
+---
+
 ## CURRENT 2026-10-15 — принятие Яндекс сумм и удаление пометок о квитанциях
 
 USER DECISIONS: принимать сумму, показанную Яндекс Картами, для соответствующего выбранного маршрута; не показывать пользователю формулировки о неподтверждении тарифа квитанцией/оператором/провайдером. Для М-11 679–684 действует выбранная сумма 94 ₽.
