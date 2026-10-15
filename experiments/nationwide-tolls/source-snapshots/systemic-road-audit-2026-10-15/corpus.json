@@ -1070,7 +1070,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-31-38-476Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-kazan-center/2026-10-15T22-31-38-361Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1536014,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-31-12-094Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-31-38-476Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-kazan-center/2026-10-15T22-31-38-361Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-31-38-957Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-31-39-450Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-донецк-kerch-center",
