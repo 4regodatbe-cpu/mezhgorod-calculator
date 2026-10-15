@@ -1,16 +1,12 @@
-## CURRENT 2026-10-15 — остаток Яндекса закреплён за вектором М‑4
+## CURRENT 2026-10-15 — остаток Яндекс не привязан к М‑4
 
-USER DECISION: принятую сумму всего маршрута Яндекс можно разложить вычитанием уже известных векторов, а остаток привязать к неизвестному участку, чтобы он применялся и на других маршрутах через тот же участок. Пометки о квитанциях пользователю не показывать.
+USER REQUEST: подробно объяснить происхождение 10 240 / 5 424 / 4 816 и не выдавать агрегатный остаток за тариф конкретного участка без установленного состава маршрута.
 
-DONE: в обратной цепочке Краснодар→СПб сумма Яндекса 10 240 ₽; известные на контрольной цепочке компоненты вне М‑4 составляют 5 424 ₽ (М‑11/ЗСД). Остаток 4 816 ₽ назначен точному направленному M‑4 вектору `m4-1223 → m4-71`. Теперь адаптер применяет эту цену для того же подтверждённого вектора и на иных маршрутах, срабатывающих на этом участке. Остаток не зеркалируется на `m4-71 → m4-1223`. Реализация — `experiments/nationwide-tolls/engine/m4-route-adapter.mjs`; regression tests покрывают вектор и направление.
+FINDINGS: 10 240 ₽ — Yandex Maps approximate total for Krasnodar city center → Saint Petersburg city center (38.975313,45.035470 → 30.314494,59.938676), about 2,060 km / 23 h 57 min. Card lists M‑4, E115, MKAD, M‑11 and ZSD, but no exact paid trace/PVP sequence. 5 424 ₽ was independently summed from saved V3 long-chain components: M‑11 15–58 1,130 + M‑11 58–679 3,900 + M‑11 tail 94 + ZSD zone 1 300. Thus 4 816 ₽ is only arithmetic difference, not a Yandex quote for one road or matrix vector. Assigning it to `m4-1223 → m4-71` was an unsupported inference. Existing M‑4 whole-vector matrix values are 5,040 ₽ weekday / 6,090 ₽ weekend, also inconsistent with that residual.
 
-LIMIT: контрольная сумма Яндекса — оценка выбранного маршрута от 15.10.2026; для перенесённого вектора weekday/weekend возвращает одну принятую residual-цену 4 816 ₽. Сумма 11 325 ₽ обратным/прямым направлениям не переносилась, так как карта описывает отличающийся набор дорог. Остальные неизвестные компоненты отдельно не закрыты. Детали — [этап 14](../experiments/nationwide-tolls/stages/14-yandex-residual-m4-vector-2026-10-15.md).
+CORRECTION IN PROGRESS: remove the 4,816 ₽ runtime M‑4 override; retain 10,240 ₽ only as whole-route estimate under exact Yandex route matcher; rewrite stage 14 as an audit trail of the rejected hypothesis. Do not decompose or reuse 4,816 ₽ until same-route paid components and all boundaries are matched.
 
-VERIFIED: focused M‑4 adapter tests 18/18; `pnpm build` audit 651/651, quote/API contracts, TypeScript/Next and static16/16 PASS; `pnpm exec tsc --noEmit`, targeted ESLint and `git diff --check` PASS. [Этап 14](../experiments/nationwide-tolls/stages/14-yandex-residual-m4-vector-2026-10-15.md).
-
-REMOTE: runtime/evidence опубликованы в PR14 (code `0075c15`, checkpoint `f1a2cb8`); PR открыт/draft/mergeable. GitHub Actions runs `38707940577` (runtime SHA) и `38708155235` (latest docs SHA) находятся in_progress.
-
-NEXT: дождаться и записать exact-SHA Actions conclusion. Затем разбирать остальные неизвестные платные участки с отдельной ценой и сопоставлением маршрута.
+NEXT: run focused/full checks, publish the correction to PR14, inspect the resulting GitHub Actions run. Other unpriced systems remain tracked in prior stages.
 
 ---
 
