@@ -173,3 +173,5 @@ BLOCKED: автоматическая проверка отклонила обе
 2026-10-15T23:43:45.038Z: automatic queue STARTED; 34/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-45-038Z-started.json). kherson-каховка-saint-petersburg-center
 
 2026-10-15T23:44:20.843Z: automatic queue DONE; 35/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-20-843Z-done.json). kherson-каховка-saint-petersburg-center
+
+2026-10-15T23:44:23.831Z: automatic queue STARTED; 35/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-23-831Z-started.json). kherson-новая-збурьевка-kazan-center
