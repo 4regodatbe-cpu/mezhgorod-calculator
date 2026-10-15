@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-10-15T22:37:34.250Z",
+  "generatedAt": "2026-10-15T22:58:34.930Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 54,
-    "recordedLiveAttempts": 67,
-    "liveCaptured": 53,
-    "savedLiveSummaries": 53,
+    "distinctCaseAttempts": 55,
+    "recordedLiveAttempts": 68,
+    "liveCaptured": 54,
+    "savedLiveSummaries": 54,
     "missingOrInvalidReferences": 1,
-    "audited": 53,
-    "traceComplete": 53,
-    "sameDateParity": 53
+    "audited": 54,
+    "traceComplete": 54,
+    "sameDateParity": 54
   },
   "regionCounts": {
     "dnr": {
       "planned": 40,
-      "liveCaptured": 24,
-      "audited": 24,
-      "traceComplete": 24,
+      "liveCaptured": 25,
+      "audited": 25,
+      "traceComplete": 25,
       "pricedWeekday": 12,
       "pricedWeekend": 15
     },
@@ -1913,6 +1913,36 @@
       ],
       "routeMeters": 864115,
       "routeSeconds": 45164
+    },
+    {
+      "caseId": "dnr-краматорск-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-38-43-177Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 982509,
+      "routeSeconds": 54109
     }
   ],
   "historicalExecutionExceptions": [],
@@ -3104,7 +3134,8 @@
         "dnr-гранитное-kazan-center",
         "dnr-широкино-kazan-center",
         "lnr-рубежное-moscow-center",
-        "dnr-бахмут-moscow-center"
+        "dnr-бахмут-moscow-center",
+        "dnr-краматорск-moscow-center"
       ],
       "occurrences": [
         {
@@ -3214,9 +3245,36 @@
             "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T22-24-32-836Z.json"
+        },
+        {
+          "caseId": "dnr-краматорск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-38-43-177Z.json"
+        },
+        {
+          "caseId": "dnr-краматорск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T22-38-43-590Z.json"
+        },
+        {
+          "caseId": "dnr-краматорск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T22-38-44-028Z.json"
         }
       ],
-      "caseCount": 4
+      "caseCount": 5
     },
     {
       "code": "saved-live-evidence-missing",
