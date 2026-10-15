@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:56:33.342Z",
+  "generatedAt": "2026-10-15T23:57:07.777Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 94,
-    "recordedLiveAttempts": 107,
-    "liveCaptured": 93,
-    "savedLiveSummaries": 93,
+    "distinctCaseAttempts": 95,
+    "recordedLiveAttempts": 108,
+    "liveCaptured": 94,
+    "savedLiveSummaries": 94,
     "missingOrInvalidReferences": 1,
-    "audited": 93,
-    "traceComplete": 93,
-    "sameDateParity": 93
+    "audited": 94,
+    "traceComplete": 94,
+    "sameDateParity": 94
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 18,
-      "audited": 18,
-      "traceComplete": 18,
+      "liveCaptured": 19,
+      "audited": 19,
+      "traceComplete": 19,
       "pricedWeekday": 4,
       "pricedWeekend": 5
     },
@@ -3210,6 +3210,36 @@
       ],
       "routeMeters": 2752267,
       "routeSeconds": 130472
+    },
+    {
+      "caseId": "zaporizhzhia-гуляйполе-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-57-05-091Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1842528,
+      "routeSeconds": 93752
     }
   ],
   "historicalExecutionExceptions": [],
@@ -4990,7 +5020,8 @@
         "dnr-широкино-kazan-center",
         "lnr-рубежное-moscow-center",
         "dnr-бахмут-moscow-center",
-        "dnr-краматорск-moscow-center"
+        "dnr-краматорск-moscow-center",
+        "zaporizhzhia-гуляйполе-kazan-center"
       ],
       "occurrences": [
         {
@@ -5127,9 +5158,36 @@
             "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T22-38-44-028Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-57-05-091Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-57-05-650Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-57-06-213Z.json"
         }
       ],
-      "caseCount": 5
+      "caseCount": 6
     },
     {
       "code": "saved-live-evidence-missing",
