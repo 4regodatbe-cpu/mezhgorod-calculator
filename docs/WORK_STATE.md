@@ -13,3 +13,5 @@
 Следующий case часть4 **kherson-геническ-kazan-center**. [Точнаяочередь](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json), [контроллер](../experiments/nationwide-tolls/scripts/automatic-audit-queue.mjs). После всехroutes части19(исправления) и20(финальнаяпроверка) ещёвыполнить, не подменятьих числомпрогонов.
 
 Пользователь16.10 02:12 поручил автоматическипройти все20частей. Сохранятькаждыймалыйшаг до следующего,не ждатькоманды«дальше». Unknownне0, subtotalнеполныйитог; auditedнеподтверждениецены. Тарифвсейпоездкипоотправлению; междорожныевекторыотложены. Неmain/merge/Production/Androidбеззапроса. [Protocol](CHECKPOINT_PROTOCOL.md), [журнал](../experiments/nationwide-tolls/WORK_LOG.md), [решения](../experiments/nationwide-tolls/DECISIONS.md).
+
+16.10.2026: Actions первыйjob failed доcase из-за trailingwhitespaceвновомlogformatter; GitHubgate666PASS. STARTED formatterfix/fullgate/rerun. Hourlycontinuationpausedдоисправления. checkpoints/2026-10-16-automatic-queue-first-job-failed.md.

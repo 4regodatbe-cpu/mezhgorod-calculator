@@ -133,3 +133,5 @@ BLOCKED: автоматическая проверка отклонила обе
 16.10.2026: automaticqueue fullbuild666/666+quote/API+Next/TypeScript/static16/16PASS; lint/YAML STARTED. ../../docs/checkpoints/2026-10-16-automatic-queue-build-pass.md.
 
 16.10.2026: automaticqueue workflow enabled after focused14/full666/lint4/YAML/diffPASS. Следующее проверить actualrun черезGitHubAPI, затем не писатьприactivejob. [Checkpoint](../../docs/checkpoints/2026-10-16-automatic-queue-enabled.md). Baseline27/155,0/154; части19–20 не выполнены.
+
+16.10.2026: Actions первыйjob failed доcase из-за trailingwhitespaceвновомlogformatter; GitHubgate666PASS. STARTED formatterfix/fullgate/rerun. Hourlycontinuationpausedдоисправления. ../../docs/checkpoints/2026-10-16-automatic-queue-first-job-failed.md.
