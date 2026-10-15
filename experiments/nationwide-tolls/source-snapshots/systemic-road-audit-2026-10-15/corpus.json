@@ -1106,13 +1106,21 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "live-captured",
+      "status": "audited",
       "liveEvidence": {
         "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-18-10-920Z.json",
         "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kazan-center/2026-10-15T22-18-10-825Z-capture.json.gz",
         "provider": "OSRM",
         "routeMeters": 1452489,
         "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-20-00-000Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-18-10-920Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kazan-center/2026-10-15T22-18-10-825Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-19-10-030Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-19-10-442Z.json",
+        "sameDateParity": true
       }
     },
     {
