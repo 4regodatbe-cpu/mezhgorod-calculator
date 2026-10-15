@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:46:39.970Z",
+  "generatedAt": "2026-10-15T23:47:13.103Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 73,
-    "recordedLiveAttempts": 86,
-    "liveCaptured": 72,
-    "savedLiveSummaries": 72,
+    "distinctCaseAttempts": 74,
+    "recordedLiveAttempts": 87,
+    "liveCaptured": 73,
+    "savedLiveSummaries": 73,
     "missingOrInvalidReferences": 1,
-    "audited": 72,
-    "traceComplete": 72,
-    "sameDateParity": 72
+    "audited": 73,
+    "traceComplete": 73,
+    "sameDateParity": 73
   },
   "regionCounts": {
     "dnr": {
@@ -22,9 +22,9 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 12,
-      "audited": 12,
-      "traceComplete": 12,
+      "liveCaptured": 13,
+      "audited": 13,
+      "traceComplete": 13,
       "pricedWeekday": 8,
       "pricedWeekend": 8
     },
@@ -2541,6 +2541,38 @@
       ],
       "routeMeters": 1032729,
       "routeSeconds": 52196
+    },
+    {
+      "caseId": "lnr-алчевск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-10-562Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1820517,
+      "routeSeconds": 73920
     }
   ],
   "historicalExecutionExceptions": [],
@@ -3812,7 +3844,8 @@
         "zaporizhzhia-гуляйполе-saint-petersburg-center",
         "dnr-бахмут-saint-petersburg-center",
         "dnr-волноваха-saint-petersburg-center",
-        "dnr-донецк-saint-petersburg-center"
+        "dnr-донецк-saint-petersburg-center",
+        "lnr-алчевск-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -4030,9 +4063,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T22-35-08-858Z.json"
+        },
+        {
+          "caseId": "lnr-алчевск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-10-562Z.json"
+        },
+        {
+          "caseId": "lnr-алчевск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-47-11-194Z.json"
+        },
+        {
+          "caseId": "lnr-алчевск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-47-11-819Z.json"
         }
       ],
-      "caseCount": 8
+      "caseCount": 9
     },
     {
       "code": "m4:unpriced",

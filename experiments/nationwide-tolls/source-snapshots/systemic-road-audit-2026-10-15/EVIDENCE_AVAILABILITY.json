@@ -15,9 +15,9 @@
     },
     "lnr": {
       "planned": 40,
-      "historicallyAudited": 13,
-      "rawAvailable": 13,
-      "fourArtifactsAvailable": 12
+      "historicallyAudited": 14,
+      "rawAvailable": 14,
+      "fourArtifactsAvailable": 13
     },
     "zaporizhzhia": {
       "planned": 40,
@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 10
     }
   },
-  "rawCaptureCount": 75,
-  "rawCaptureCaseCount": 73,
+  "rawCaptureCount": 76,
+  "rawCaptureCaseCount": 74,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -1935,10 +1935,49 @@
     {
       "caseId": "lnr-алчевск-saint-petersburg-center",
       "region": "lnr",
-      "historicalStatus": "planned",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
-      "artifacts": {}
+      "historicalStatus": "audited",
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-10-562Z.json",
+          "exists": true,
+          "bytes": 9301,
+          "sha256": "ffe4d1d9ea37b694afc17e65b1c021ee7b06bf3fbbd44a8ce7b5cc0f8463e809",
+          "gitBlobSha": "677d259ed691c08062780375f8e0e861e6da8c3f",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/2026-10-15T23-47-10-449Z-capture.json.gz",
+          "exists": true,
+          "bytes": 706987,
+          "sha256": "4bf7f18a46c846c87b005ec60dadd7c2259ed2290fd972aa8457e17d6a6b3523",
+          "gitBlobSha": "ac802f82316f1af7b27d4c5b17e1940150661267",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 18
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-47-11-194Z.json",
+          "exists": true,
+          "bytes": 9379,
+          "sha256": "0d2b372c29f0fab5909e9c61e35f9620cd6313946c8e166bf5307308fb199bc2",
+          "gitBlobSha": "0719200a82641d339b8b4ac8d700782cd0c951cd",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-47-11-819Z.json",
+          "exists": true,
+          "bytes": 9376,
+          "sha256": "ff73a326c8c0d170fdbe4d0e397ab9ea4b6f20feda3cce14f52a4d936e841fc2",
+          "gitBlobSha": "a42a8c06a02747b05f7276638bda1339df8102a6",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     },
     {
       "caseId": "lnr-алчевск-kazan-center",
@@ -7781,6 +7820,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-46-52-634Z.json",
+      "caseId": "lnr-алчевск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-47-10-562Z.json",
+          "exists": true,
+          "bytes": 9301,
+          "sha256": "ffe4d1d9ea37b694afc17e65b1c021ee7b06bf3fbbd44a8ce7b5cc0f8463e809",
+          "gitBlobSha": "677d259ed691c08062780375f8e0e861e6da8c3f",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/2026-10-15T23-47-10-449Z-capture.json.gz",
+          "exists": true,
+          "bytes": 706987,
+          "sha256": "4bf7f18a46c846c87b005ec60dadd7c2259ed2290fd972aa8457e17d6a6b3523",
+          "gitBlobSha": "ac802f82316f1af7b27d4c5b17e1940150661267",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 18
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-47-11-194Z.json",
+          "exists": true,
+          "bytes": 9379,
+          "sha256": "0d2b372c29f0fab5909e9c61e35f9620cd6313946c8e166bf5307308fb199bc2",
+          "gitBlobSha": "0719200a82641d339b8b4ac8d700782cd0c951cd",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-47-11-819Z.json",
+          "exists": true,
+          "bytes": 9376,
+          "sha256": "ff73a326c8c0d170fdbe4d0e397ab9ea4b6f20feda3cce14f52a4d936e841fc2",
+          "gitBlobSha": "a42a8c06a02747b05f7276638bda1339df8102a6",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -8388,6 +8472,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 12
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/2026-10-15T23-47-10-449Z-capture.json.gz",
+      "exists": true,
+      "bytes": 706987,
+      "sha256": "4bf7f18a46c846c87b005ec60dadd7c2259ed2290fd972aa8457e17d6a6b3523",
+      "gitBlobSha": "ac802f82316f1af7b27d4c5b17e1940150661267",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 18
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/2026-10-15T12-00-26-371Z-capture.json.gz",
