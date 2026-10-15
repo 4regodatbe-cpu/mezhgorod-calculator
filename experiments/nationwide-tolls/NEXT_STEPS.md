@@ -1,3 +1,7 @@
+# CURRENT — новое продуктовое правило
+
+Междорожныевекторы отложены полностью. Сначала единый тариф отправления при переходе дня/профиля, focused/fullgate/replay; потом dnr-бахмут-kazan-center,аудит8/155.
+
 # CURRENT — контроль8новыхcases PASS
 
 Этап1:8/155,остаток147; этап2:154. IO/report7/7PASS. Следующий dnr-бахмут-kazan-center. Handoff docs/HANDOFF_TWO_STAGE_AUDIT.md.

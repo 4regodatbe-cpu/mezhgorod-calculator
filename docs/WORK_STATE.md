@@ -14,7 +14,11 @@ IO/report **7/7 PASS**, integrity8captures/155+154PASS. Все40старыхOD �
 
 ## Проектный вопрос пользователя
 
-15.10.2026: выполнен [анализ междорожных векторов](../experiments/nationwide-tolls/CROSS_ROAD_VECTOR_ANALYSIS_2026-10-15.md). Предложение — генерируемая таблица связок; архитектура ещё не менялась и решение не принято. [Checkpoint](checkpoints/2026-10-15-213737-cross-road-vector-analysis.md). Аудит остаётся8/155.
+15.10.2026: выполнен [анализ междорожных векторов](../experiments/nationwide-tolls/CROSS_ROAD_VECTOR_ANALYSIS_2026-10-15.md). Междорожные векторы полностью отложены пользователем21:48МСК; не реализовывать в текущей работе. [Checkpoint](checkpoints/2026-10-15-213737-cross-road-vector-analysis.md). Аудит остаётся8/155.
+
+## IN PROGRESS — правило тарифа отправления
+
+Прямое решение15.10.2026 21:48МСК: всяпоездка поначальнойдате/времени, без смены тарифа впути. [STARTED checkpoint](checkpoints/2026-10-15-215032-departure-policy-started.md). Реализовать общуюполитику иМ11/ЗСД overrides, focused/fullbuild/replay, затемвернутьсякаудиту.
 
 ## NEXT
 
