@@ -4841,7 +4841,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-44-45-576Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-kazan-center/2026-10-15T23-44-45-420Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2434368,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-44-25-151Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-44-45-576Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-kazan-center/2026-10-15T23-44-45-420Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-44-46-252Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-44-46-934Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-новая-збурьевка-kerch-center",
