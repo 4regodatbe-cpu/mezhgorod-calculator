@@ -1,3 +1,13 @@
+## CURRENT 2026-10-15 — smoke exact Preview and fresh reverse chain
+
+DONE: latest PR head `b555be97c722b9eadc74780986edb783789e6c41` deploy READY; authenticated Preview `/api/version` returned HTTP 200 with exact head SHA/environment `preview`; `/v3` returned HTTP 200. Fresh OSRM reverse chain SPb→Krasnodar via Moscow confirms `m11-679-684`=94 ₽, while full total correctly stays unknown because ZSD trace is incomplete and `unknown-paid-road` remains. Raw live response/capture hashes and path are retained in [stage 10](../experiments/nationwide-tolls/stages/10-preview-smoke-and-fresh-reverse-chain-2026-10-15.md).
+
+CI: Actions run `38682163789` for latest docs tip and `38681974174` for runtime SHA were still `in_progress` at last poll; no hosted CI success claimed. The unauthenticated curl attempt hit Vercel protection (302), then authenticated Vercel fetch succeeded; do not treat 302 as API pass.
+
+NEXT: await exact-tip Actions; investigate/resolve missing ZSD zone(s) and unknown paid-road trace without weakening fail-closed total. The 94 ₽ tariff decision is closed. PR14 remains open/draft/mergeable; no main merge, Production, or Android change.
+
+---
+
 ## CURRENT 2026-10-15 — хвост М-11: 94 ₽ утверждены и внедрены
 
 USER DECISION: для участка М-11 679–684 применять категорию I по 94 ₽ во всех направлениях; это выбранная строка вместо 56/38, не сумма и не 94+56. Правило действует для выбранного маршрута, когда существующая строгая M-11 геометрия подтверждает продолжение за ПВП 679. Устаревшая дата до 04.09.2026 и нераспознанная граница остаются unknown. Решение: [DECISIONS.md](../experiments/nationwide-tolls/DECISIONS.md).

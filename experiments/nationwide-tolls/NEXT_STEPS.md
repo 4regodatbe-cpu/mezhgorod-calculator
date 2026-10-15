@@ -1,3 +1,13 @@
+## CURRENT 2026-10-15 — Preview smoke done; fresh reverse chain localizes remaining blockers
+
+- [x] Latest PR tip `b555be97c722b9eadc74780986edb783789e6c41` is deployed READY; authenticated `/api/version` returns exact SHA and preview environment (HTTP 200); authenticated `/v3` returns 200. [Stage 10](stages/10-preview-smoke-and-fresh-reverse-chain-2026-10-15.md).
+- [x] Fresh OSRM SPb→Krasnodar via Moscow confirms M-11 tail = 94 ₽; complete route total correctly remains unknown due to incomplete ZSD trace and `unknown-paid-road` trace. Capture and raw response are hash-recorded.
+- [ ] Poll Actions `38682163789` on exact PR tip `b555be9` and runtime run `38681974174`; record conclusions only after completion.
+- [ ] Next implementation block: map complete ZSD selected-route scope beyond zone1 against operator gates/tariff evidence and trace; separately diagnose `unknown-paid-road`. Preserve unknown whole-total behavior until each detected product has complete coverage and price.
+- [ ] The 94 ₽ M-11 tariff choice is closed; do not reopen without a changed source/order or selected-route scope.
+
+---
+
 ## CURRENT 2026-10-15 — решение по хвосту М-11 реализовано
 
 - [x] По прямому правилу пользователя применять 94 ₽ к распознанному выбранному проезду М-11 за ПВП 679 в обоих направлениях. Это заменяет 56/38 для этого продукта; не складывать тарифы.
