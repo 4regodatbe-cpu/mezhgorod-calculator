@@ -223,7 +223,7 @@
     {
       "id": 5,
       "title": "Этап 1: группа 3/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "lnr-алчевск-kazan-center",
@@ -326,12 +326,12 @@
           "region": "zaporizhzhia"
         }
       ],
-      "completedCases": 19
+      "completedCases": 20
     },
     {
       "id": 6,
       "title": "Этап 1: группа 4/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "zaporizhzhia-васильевка-kazan-center",

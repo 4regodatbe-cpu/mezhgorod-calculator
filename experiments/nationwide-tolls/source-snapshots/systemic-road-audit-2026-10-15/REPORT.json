@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:53:39.088Z",
+  "generatedAt": "2026-10-15T23:54:20.987Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 89,
-    "recordedLiveAttempts": 102,
-    "liveCaptured": 88,
-    "savedLiveSummaries": 88,
+    "distinctCaseAttempts": 90,
+    "recordedLiveAttempts": 103,
+    "liveCaptured": 89,
+    "savedLiveSummaries": 89,
     "missingOrInvalidReferences": 1,
-    "audited": 88,
-    "traceComplete": 88,
-    "sameDateParity": 88
+    "audited": 89,
+    "traceComplete": 89,
+    "sameDateParity": 89
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 13,
-      "audited": 13,
-      "traceComplete": 13,
+      "liveCaptured": 14,
+      "audited": 14,
+      "traceComplete": 14,
       "pricedWeekday": 3,
       "pricedWeekend": 4
     },
@@ -3037,6 +3037,43 @@
       ],
       "routeMeters": 2087174,
       "routeSeconds": 104210
+    },
+    {
+      "caseId": "zaporizhzhia-бердянск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-54-18-028Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2798944,
+      "routeSeconds": 133377
     }
   ],
   "historicalExecutionExceptions": [],
@@ -3565,7 +3602,8 @@
         "kherson-новая-збурьевка-kazan-center",
         "kherson-новая-збурьевка-moscow-center",
         "zaporizhzhia-бердянск-kazan-center",
-        "zaporizhzhia-бердянск-moscow-center"
+        "zaporizhzhia-бердянск-moscow-center",
+        "zaporizhzhia-бердянск-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -4350,9 +4388,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-53-37-611Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-54-18-028Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-54-18-781Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-54-19-522Z.json"
         }
       ],
-      "caseCount": 29
+      "caseCount": 30
     },
     {
       "code": "zsd:unpriced",
