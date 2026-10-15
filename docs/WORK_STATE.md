@@ -1,3 +1,9 @@
+## CURRENT — install PASS, full build STARTED
+
+`pnpm install --frozen-lockfile` exit0, pnpm11.25.0, lockfile unchanged. [Checkpoint](checkpoints/2026-10-15-install-pass-build-started.md). NEXT: pnpm build, сохранить полный stdout/result. Focused IO6/6/report1/1 PASS.
+
+---
+
 ## CURRENT — full audit BLOCKED зависимостями; install STARTED
 
 `npm run test:audit` exit1: отсутствуют typescript/next в свежем clone. [Checkpoint](checkpoints/2026-10-15-full-audit-dependencies-blocked.md). Полный stdout сохранён; gatePASS не заявляется. STARTED: pnpm install --frozen-lockfile; затем повтор audit/build. Evidence recovery:27rawOD/26полных комплектов/13утраченныхraw.

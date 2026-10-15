@@ -1,3 +1,7 @@
+# CURRENT — dependencies installed, pnpm build STARTED
+
+Сохранить полный build result, затем recovery одного LNR summary.
+
 # CURRENT — установить зависимости, потом audit/build
 
 Full audit exit1: missing typescript/next. STARTED pnpm install --frozen-lockfile. Сохранить install result прежде следующего gate.

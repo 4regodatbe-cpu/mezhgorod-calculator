@@ -1538,3 +1538,8 @@ Report generated40historic/26complete, missing14live; inventory27rawOD/55missing
 ## 2026-10-15 — full audit BLOCKED dependencies
 
 npm run test:audit exit1, missing typescript/next; stdout сохранён. `docs/checkpoints/2026-10-15-full-audit-dependencies-blocked.md`. STARTED pnpm install --frozen-lockfile, без отключения policy.
+
+
+## 2026-10-15 — install PASS/build STARTED
+
+pnpm install --frozen-lockfile exit0, policy intact. `docs/checkpoints/2026-10-15-install-pass-build-started.md`. Next pnpm build с полным audit/Next.
