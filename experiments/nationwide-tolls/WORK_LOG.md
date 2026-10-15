@@ -1508,3 +1508,8 @@ Summary evidence дублировал тысячи платных edges пове
 Пользователь прямо требует отдельного сохранения/описания каждого маленького этапа, чтобы переживать потерю связи и зависания. Старое правило только substantial blocks оказалось недостаточным. В AGENTS.md добавлен приоритетный small-step durable protocol; создан docs/CHECKPOINT_PROTOCOL.md и отдельная запись docs/checkpoints/2026-10-15-190000-checkpoint-policy.md. Каждое изменение/тест/route case получает описание, файлы/evidence, Git commit, remote branch reference и read-back до следующего независимого шага. Перед длинным запуском сохраняется STARTED. Массовые серии без промежуточного remote checkpoint не запускаются; blobs/tree без branch reference не считаются сохранением.
 
 Изменение docs-only, diff check/ссылки проверяются; новый build этим шагом не заявлен. Исходный рабочий remote499f2ee, PR14; app/lib/тарифы/Production не менялись. Следующий отдельный шаг — сохранение восстановленного шестого IO test (его SHA уже совпал с исходным manifest, focused6/6 PASS), затем проверка evidence availability. Подробный протокол и условия долговременного сохранения находятся в указанной инструкции.
+
+
+## 2026-10-15-191601 МСК — возобновление New Chat
+
+Сверены remote/local/PR14 на902bdd8, прочитаны инструкции и recovery handoff; сохранение каждого маленького шага обязательно. STARTED восстановление шестого IO теста; новые проверки пока не запускались. Подробности: `docs/checkpoints/2026-10-15-191601-resume-and-io-recovery-started.md`.

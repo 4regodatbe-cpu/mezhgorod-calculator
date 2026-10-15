@@ -1,3 +1,9 @@
+# Возобновление 2026-10-15-191601 МСК
+
+- [ ] Восстановить шестой IO test, затем отдельным шагом выполнить focused test и записать фактический результат.
+- [ ] Проверить availability evidence до новых live маршрутов.
+- Подробности: `docs/checkpoints/2026-10-15-191601-resume-and-io-recovery-started.md`.
+
 # 2026-10-15 19:00 МСК — обязательные маленькие durable checkpoints
 
 - [x] Уточнение пользователя оформлено в AGENTS.md и docs/CHECKPOINT_PROTOCOL.md, отдельный docs/checkpoints/2026-10-15-190000-checkpoint-policy.md. Для завершения шага требуется проверенный remote branch head.

@@ -1,3 +1,9 @@
+## CURRENT — продолжение в новой сессии
+
+DONE: remote/PR14/local сверены на `902bdd8`, чистый checkout. STARTED: восстановление шестого IO test; затем evidence availability. [Checkpoint](checkpoints/2026-10-15-191601-resume-and-io-recovery-started.md). Новых тестов/build ещё нет.
+
+---
+
 ## CURRENT 2026-10-15 — обязательный checkpoint каждого маленького шага
 
 USER RULE: после каждого небольшого изменения/теста/маршрута сохранять код, evidence и отдельное описание, фиксировать Git commit и проверять его доступность из рабочей GitHub-ветки **до следующего шага**. Перед длинной операцией сначала сохранять STARTED. Unreferenced blobs/local commit/chat report не являются достаточным сохранением. [Постоянная инструкция](CHECKPOINT_PROTOCOL.md), [отдельная запись шага](checkpoints/2026-10-15-190000-checkpoint-policy.md). Правило обязательно добавлено в AGENTS.md и supersedes прежнее журналирование только крупных блоков.
