@@ -18,6 +18,6 @@
 
 Для вычисления цены компонента по разности требуется сначала подтвердить одинаковую трассу и составить полный перечень всех остальных платных векторов именно на контрольном маршруте. До этого 4 816 ₽ не распределены.
 
-## Локальная проверка корректировки
+## Проверка и публикация корректировки
 
-Проверить M‑4 adapter tests, полный `pnpm build`, TypeScript, targeted ESLint и `git diff --check`. Результаты и опубликованный SHA записать после исправления.
+M‑4 adapter tests 16/16 PASS; полный `pnpm build` audit 649/649 PASS, quote/API contracts PASS, TypeScript/Next build PASS, static pages 16/16 PASS; `pnpm exec tsc --noEmit`, targeted ESLint и `git diff --check` PASS. Исправление опубликовано в PR14 code commit `c0fbe4a`; checkpoint docs — `da5a8b2`. Exact-head GitHub Actions run `38709409072` был in_progress на момент записи.
