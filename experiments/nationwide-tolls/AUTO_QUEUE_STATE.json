@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-15T23:49:02.941Z",
-  "phase": "DONE",
+  "at": "2026-10-15T23:49:06.684Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,98 +23,10 @@
       "region": "lnr"
     }
   },
-  "caseId": "lnr-антрацит-saint-petersburg-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "lnr-антрацит-saint-petersburg-center",
-    "startedAt": "2026-10-15T23:48:34.245Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-48-51-686Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/2026-10-15T23-48-51-572Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-48-52-310Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-48-52-932Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "m4",
-        "m11",
-        "zsd"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: zsd",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: zsd",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 3810,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "m11-15-58",
-        "amount": 1130,
-        "reason": "m11_head_ready_direct_pair_at_departure"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": 3900,
-        "reason": "matrix dated selected-route M11 direct pair"
-      },
-      {
-        "id": "m11-679-684",
-        "amount": 94,
-        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-      },
-      {
-        "id": "zsd",
-        "amount": null,
-        "reason": "zsd_trip_extends_outside_reviewed_zone1"
-      }
-    ],
-    "finishedAt": "2026-10-15T23:48:52.953Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-48-32-972Z-part5",
-  "parent": "dccb1ebe755c6fbfd0b232c593df8ac690809762",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-49-02-941Z-done.json"
+  "caseId": "lnr-довжанск-kazan-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-49-06-684Z-part5",
+  "parent": "25e1d119176dc1171630eaef1d7ecddc51c556bd",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-15T23-49-06-684Z-started.json"
 }
