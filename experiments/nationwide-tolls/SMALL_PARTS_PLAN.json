@@ -120,7 +120,7 @@
     {
       "id": 4,
       "title": "Этап 1: группа 2/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "dnr-донецк-saint-petersburg-center",
@@ -218,12 +218,12 @@
           "region": "kherson"
         }
       ],
-      "completedCases": 18
+      "completedCases": 19
     },
     {
       "id": 5,
       "title": "Этап 1: группа 3/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "lnr-алчевск-kazan-center",
