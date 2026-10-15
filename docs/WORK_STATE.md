@@ -2,7 +2,7 @@
 
 DONE: визуально проверены страницы 9–10 сохранённого приказа Автодора №274: категория I — 56 ₽ за 679–681/681–684, 38 ₽ за подъезд к Пулково, 94 ₽ за комбинированный RVP; 94 не складывается с 56. Обновлён устаревший regression-тест неоднозначных направленных рамок Пулково. [Этап 09](../experiments/nationwide-tolls/stages/09-m11-tail-evidence-audit-2026-10-15.md).
 
-VERIFIED: focused M11/Pulkovo/road evidence 21/21; `pnpm build` test gate 642/642 + quote/API, Next.js and TypeScript PASS. Targeted ESLint and `git diff --check` PASS. Full `pnpm lint` FAILS on 19 pre-existing repo-wide errors (mostly `.cjs` require rules and `lib/v2-calculation/route-leg.ts` prefer-const); no new-file lint error.
+VERIFIED: focused M11/Pulkovo/road evidence 21/21; `pnpm build` test gate 642/642 + quote/API, Next.js and TypeScript PASS. Targeted ESLint and `git diff --check` PASS. Full `pnpm lint` FAILS on 19 pre-existing repo-wide errors (mostly `.cjs` require rules and `lib/v2-calculation/route-leg.ts` prefer-const); no new-file lint error. Checkpoint опубликован в PR14: `1efe8c8bcc7a18f399c01e216cedb69e4b26866b`; Vercel status на момент проверки pending.
 
 OPEN: price rows still cannot be selected for a live route: archived OSM and selected trace do not prove which exact toll event is the full operator RVP / direction, and the two airport gantries are 12 m apart, both within the existing 25 m candidate radius. No runtime tariff change; unknown/null remains. Branch `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. Main/Production/Android untouched. NEXT: obtain an independently identifiable, directed complete passage chain across the tail (and airport where applicable); only then add resolver and live/reverse acceptance.
 
