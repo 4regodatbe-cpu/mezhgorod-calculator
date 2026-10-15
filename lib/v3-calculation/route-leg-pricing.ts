@@ -22,6 +22,7 @@ import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { facilityAnchors, haversineKm } from "@/lib/toll-engine/m11-moscow-geometry";
 import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
 import { inspectM11PulkovoAccess } from "@/lib/toll-engine/m11-pulkovo-evidence";
+import { matrixM11TailComponent } from "@/lib/toll-engine/m11-tail-component";
 import { resolveCkadProductBoundaries } from "./ckad-product-boundaries";
 import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent } from "@/lib/toll-engine/route-toll-composition";
 import { compositionValidation, routeDifferenceEvidence, unknownValidation, zeroUnknownTolls, type TollEstimate } from "../v2-calculation/free-route-selection";
@@ -87,6 +88,7 @@ export async function calculateLegTolls({
     !firstM11Block || !facilityAnchors("p679").some(anchor =>
       haversineKm(anchor, firstM11Block.beginCoordinate) <= 0.5)
   ));
+  const matrixM11Tail = matrixM11TailComponent(m11TailUnresolved, departureAt);
   const matrixM11 = m11SafetyReason ? {tolls:null,reason:m11SafetyReason}
     : matrixM11Component(productionM11, departureAt, routeSeconds);
   const m12Span = selectedFastRoute.m12EndpointSpan ?? selectedFastRoute.m12StrictSpan;
@@ -140,7 +142,8 @@ export async function calculateLegTolls({
     component.reason = m11BlockReason;
   }
   m11Products.push({id:"m11-679-684",detected:m11Airport.candidate || m11TailUnresolved,
-    tolls:null,reason:m11Airport.candidate ? m11Airport.reason : "m11_679_684_continuation_not_priced"});
+    tolls:matrixM11Tail?.tolls ?? null,
+    reason:matrixM11Tail?.reason ?? (m11Airport.candidate ? m11Airport.reason : "m11_679_684_continuation_not_priced")});
 
   const southernProducts: RouteTollComponent[] = m4A289?.components ?? [{id:"m4",detected:m4Detected,
     tolls:matrixM4?.tolls as ProductionM4Result["tolls"] ?? null,reason:matrixM4?.reason ?? productionM4.reason}];

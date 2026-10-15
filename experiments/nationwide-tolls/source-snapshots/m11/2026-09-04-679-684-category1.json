@@ -20,7 +20,9 @@
   "notes": [
     "Combined airport fare is conditional on RVP fixation on the airport access section (footnote2); do not add94 to mainline56.",
     "Earlier raw March effective-date candidate is superseded for the September document.",
-    "Money source does not independently prove exact selected-route physical RVP identity. No new runtime money enabled by this snapshot."
+    "The source alone does not prove exact selected-route RVP identity. Runtime uses 94 RUB only when strict selected-route evidence detects continuation beyond PVP 679, per explicit user decision documented in experiments/nationwide-tolls/DECISIONS.md (2026-10-15).",
+    "User explicitly selected the combined 94 RUB category-I fare for this tail component in both travel directions. This replaces 56/38; never add those rows to 94."
   ],
-  "runtimeApproved": false
+  "runtimeApproved": true,
+  "runtimeApproval": "Explicit user decision, 2026-10-15; scoped to detected M-11 679–684 selected-route continuation."
 }

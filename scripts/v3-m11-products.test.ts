@@ -95,18 +95,19 @@ test('upper V3 adds head and mainline once in both directions, never the old M11
  }
 });
 
-test('unpriced continuation on either end blocks the whole route even with provider-free',async()=>{
+test('user-approved 94 RUB tail fare prices the continuation in both directions',async()=>{
  const full:Coordinate[]=[...north,[30.3351,59.9343]];
  for(const route of [full,full.toReversed()]){
   const result=await upper(route,true);
   const api=tollsForApi(result.tolls,result.fastValidation);
-  assert.equal(api.pricingStatus,'unknown');assert.equal(api.amount,null);
-  assert.ok(result.tolls.segments.some(s=>s.includes('m11-679-684')));
+  assert.equal(api.pricingStatus,'priced');assert.ok(api.amount!==null&&api.amount>0);
+  assert.equal(result.componentAudit.components.find(c=>c.id==='m11-679-684')?.tolls?.amount,94);
+  assert.equal(result.componentAudit.missing.length,0);
  }
 });
 
 
-test('a route without the Moscow head cannot publish only its known mainline before a tail',async()=>{
+test('a route without the Moscow head does not infer the missing mainline from the 94 RUB tail fare',async()=>{
  const route:Coordinate[]=[[31.2534812,59.1976987],[30.3598352,59.7750977],[30.3351,59.9343]];
  for(const directed of [route,route.toReversed()]) {
   const result=await upper(directed,true);
