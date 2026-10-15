@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-15T23:55:50.621Z",
+  "generatedAt": "2026-10-15T23:56:33.342Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 93,
-    "recordedLiveAttempts": 106,
-    "liveCaptured": 92,
-    "savedLiveSummaries": 92,
+    "distinctCaseAttempts": 94,
+    "recordedLiveAttempts": 107,
+    "liveCaptured": 93,
+    "savedLiveSummaries": 93,
     "missingOrInvalidReferences": 1,
-    "audited": 92,
-    "traceComplete": 92,
-    "sameDateParity": 92
+    "audited": 93,
+    "traceComplete": 93,
+    "sameDateParity": 93
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 17,
-      "audited": 17,
-      "traceComplete": 17,
+      "liveCaptured": 18,
+      "audited": 18,
+      "traceComplete": 18,
       "pricedWeekday": 4,
       "pricedWeekend": 5
     },
@@ -3173,6 +3173,43 @@
       ],
       "routeMeters": 2040498,
       "routeSeconds": 101304
+    },
+    {
+      "caseId": "zaporizhzhia-васильевка-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-56-30-302Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2752267,
+      "routeSeconds": 130472
     }
   ],
   "historicalExecutionExceptions": [],
@@ -3704,7 +3741,8 @@
         "zaporizhzhia-бердянск-moscow-center",
         "zaporizhzhia-бердянск-saint-petersburg-center",
         "zaporizhzhia-васильевка-kazan-center",
-        "zaporizhzhia-васильевка-moscow-center"
+        "zaporizhzhia-васильевка-moscow-center",
+        "zaporizhzhia-васильевка-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -4570,9 +4608,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-55-49-081Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-васильевка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-56-30-302Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-васильевка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-56-31-056Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-васильевка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-56-31-793Z.json"
         }
       ],
-      "caseCount": 32
+      "caseCount": 33
     },
     {
       "code": "zsd:unpriced",
