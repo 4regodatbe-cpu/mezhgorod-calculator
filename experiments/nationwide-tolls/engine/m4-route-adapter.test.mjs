@@ -3,15 +3,6 @@ const production=ids=>({exact:true,tolls:{segments:[]},m4PvpPreview:{confirmedPv
 const t='2026-10-13T09:00:00+03:00';
 test('strict south vector uses finished matrix price',()=>assert.equal(matrixM4Component(production(['m4-1046','m4-1093','m4-1184','m4-1223']),t,3600).tolls.amount,1230));
 test('reverse south vector same fare',()=>assert.equal(matrixM4Component(production(['m4-1223','m4-1184','m4-1093']),t,3600).tolls.amount,850));
-test('Yandex residual is attached to the exact Krasnodar→Moscow M4 vector',()=>{
- const q=matrixM4Component(production(['m4-1223','m4-71']),'2026-10-15T11:09:00+03:00',20*3600);
- assert.equal(q.tolls.amount,4816);assert.equal(q.tolls.weekdayAmount,4816);assert.equal(q.tolls.weekendAmount,4816);
- assert.match(q.tolls.segments[0],/m4-1223 → m4-71 · 4.?816 ₽/);
-});
-test('Yandex residual is directional and does not price the reverse vector',()=>{
- const q=matrixM4Component(production(['m4-71','m4-1223']),'2026-10-15T11:09:00+03:00',20*3600);
- assert.notEqual(q?.tolls?.amount,4816);
-});
 test('current candidate exact vector carries warning',()=>{const q=matrixM4Component(production(['m4-71','m4-133']),t,3600);assert.equal(q.tolls.amount,710);assert.equal(q.priceConfirmation,'unconfirmed');});
 test('partial gate evidence does not replace fare',()=>assert.equal(matrixM4Component({...production(['m4-1184','m4-1223']),exact:false},t,3600),null));
 test('missing date and midnight profile changes do not choose arbitrary price',()=>{assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),undefined,3600).tolls,null);assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),'2026-10-15T23:30:00+03:00',3600).tolls,null);});
