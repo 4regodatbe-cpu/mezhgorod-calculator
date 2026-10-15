@@ -1,11 +1,13 @@
-# Калькулятор: повторный запуск автоматической очереди
+# Калькулятор: автоматическая очередь
 
-16.10.2026. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14draft. Parent0314a335; новыйheadподтверждаетсяreadback. Текущийaudit **27/155** и **0/154**. Части1–3DONE; часть4INPROGRESS, следующий **kherson-геническ-kazan-center**.
+2026-10-15T23:40:33.905Z. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. Фаза **STARTED**. Stage1 **27/155**; Stage2 **0/154**.
 
-ПервыйGitHubrun38824450386 прошёлgate666, но остановилсянапробелевахжурнала доcase. Причинаисправлена, focused15PASS; новыйfullbuild **667/667** + quote/API/Next/TypeScript/static16/16PASS; lint2/diffPASS. [Ready checkpoint](checkpoints/2026-10-16-automatic-queue-log-fix-ready.md), [полныйjoblog](checkpoints/evidence/2026-10-16-auto-queue-first-job.json).
+Следующий подшаг: **часть4, kherson-геническ-kazan-center**.
 
-**STARTED rerun job116728494584**,actualstatusещёпроверить. [.github/workflows/nationwide-audit-queue.yml](../.github/workflows/nationwide-audit-queue.yml), [runner](../experiments/nationwide-tolls/scripts/automatic-audit-queue.mjs). Послестарта актуальный AUTO_QUEUE_STATE/этотhandoffобновляетworker. Не писатьпараллельно, покаjobactive; каждоеcase STARTED→live/replay→report/inventory→DONE/FAILED→commitpush→headreadback.
+[Состояние и точные входы](../experiments/nationwide-tolls/AUTO_QUEUE_STATE.json), [checkpoint](checkpoints/auto-2026-10-15T23-40-33-905Z-started.json), [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
 
-[План20частей](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json), [продолжение](../experiments/nationwide-tolls/AUTOMATIC_CONTINUATION.md). Задачаавтопродолжениясуществует,temporarilypausedпокаrepair; послеverifiedactive/DONEвозобновить. ПослеAUDIT_QUEUE_DONEчасти19(исправления) и20(финальныепроверки) выполнитьотдельно. Auditedневнешнееподтверждениецены;unknownне0,subtotalнеполныйитог. Правилотарифаотправления;междорожныевекторыотложены. No main/merge/Production/Android. GitHub/routingразрешениядействуют.
+Каждый маршрут: durable STARTED → live/same-date/weekend → report/inventory → DONE/FAILED → commit/push/head readback. Не запускать второго writer, пока workflow активен. GitHub Actions пишет только рабочую ветку. При конфликте/ошибке сохранения остановка безforce. Raw и progress в source-snapshots и artifact.
 
-[Protocol](CHECKPOINT_PROTOCOL.md),[WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md),[DECISIONS](../experiments/nationwide-tolls/DECISIONS.md).
+Audited — воспроизводимость, не независимая проверка цены; unknown не ноль, subtotal не итог. Часть19 не выполнена автоматически одним прогоном, часть20 требует итоговых проверок после исправлений. Fullbuild661PASS — прежняя локальная проверка до автоматического runner; свежий gate см.workflow/checkpoint. No main/merge/Production/Android. Междорожныевекторы отложены, тарификация всей поездки по отправлению. Пользователь16.10 02:12 разрешил автоматическое последовательное продолжение всехчастей.
+
+[Протокол](CHECKPOINT_PROTOCOL.md), [журнал](../experiments/nationwide-tolls/WORK_LOG.md), [решения](../experiments/nationwide-tolls/DECISIONS.md).
