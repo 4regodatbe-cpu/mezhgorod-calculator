@@ -35,3 +35,8 @@
 ## Проверки и состояние Git
 
 В этой работе выполнен живой read-only маршрутный поиск Яндекс Карт. Нативный `pnpm build` не запускался, поскольку production-исходники не изменялись. JSON parse, сравнительная сверка, `git diff --check`, ссылки отчёта и Git checkpoint проверяются перед завершением. PR14 остаётся draft; main, Production, merge и Android не затрагивались.
+
+
+## Status update — 2026-10-15
+
+JSON snapshot parsing, local-link validation, and `git diff --check` passed. Docs-only checkpoint `0769b4cdbdf481e764bf188509ffc98940107561` is published and the local branch is synchronized. PR14 is open/draft/mergeable. GitHub Actions run `38698595685` (`Special territory geometry and pricing`) is `in_progress`; no CI conclusion is claimed. No app code changed, so `pnpm build` was not run.
