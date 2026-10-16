@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 268,
-  "rawCaptureCaseCount": 265,
+  "rawCaptureCount": 269,
+  "rawCaptureCaseCount": 266,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -19874,6 +19874,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-31-50-256Z.json",
+      "caseId": "pair-m11-zsd-novgorod-to-sest",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T01-31-53-095Z.json",
+          "exists": true,
+          "bytes": 5122,
+          "sha256": "ac8d48d9555d93f8ec93cfe928cbfb0f421a5b3bc68b7ed5c798137147b0f8fe",
+          "gitBlobSha": "a44edd63e48a20306d1aec5b9dbe3d77a6cc54e0",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/2026-10-16T01-31-53-074Z-capture.json.gz",
+          "exists": true,
+          "bytes": 124943,
+          "sha256": "205d1dd3d2b2fabccdc6400065a1fd56861de1d93bd5166652973f26fc57d779",
+          "gitBlobSha": "635a8c86328c4b5426220bc6c27eaa490a60d1cc",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 5
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-31-53-472Z.json",
+          "exists": true,
+          "bytes": 5200,
+          "sha256": "59c8c58a5aae3b3c643bcd6f7cbff151720eea3ad24d98a83cb9ddf0114f4dc9",
+          "gitBlobSha": "296cde5491a377f8e0125d17e859739c1e08517e",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-31-53-847Z.json",
+          "exists": true,
+          "bytes": 5200,
+          "sha256": "fb551dbbb49d8f53f5234f6c9258bc60a74f7f71d5577d18fa27344e39c5a97f",
+          "gitBlobSha": "8f4a3fc07b0d13addd91ad7cc79a4465d2fc6534",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -21581,6 +21626,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 9
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/2026-10-16T01-31-53-074Z-capture.json.gz",
+      "exists": true,
+      "bytes": 124943,
+      "sha256": "205d1dd3d2b2fabccdc6400065a1fd56861de1d93bd5166652973f26fc57d779",
+      "gitBlobSha": "635a8c86328c4b5426220bc6c27eaa490a60d1cc",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 5
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/2026-10-16T00-06-25-425Z-capture.json.gz",
