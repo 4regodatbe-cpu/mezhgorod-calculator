@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:46:30.123Z",
+  "generatedAt": "2026-10-16T01:47:04.527Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 288,
-    "recordedLiveAttempts": 302,
-    "liveCaptured": 288,
-    "savedLiveSummaries": 288,
+    "distinctCaseAttempts": 289,
+    "recordedLiveAttempts": 303,
+    "liveCaptured": 289,
+    "savedLiveSummaries": 289,
     "missingOrInvalidReferences": 0,
-    "audited": 288,
-    "traceComplete": 288,
-    "sameDateParity": 288
+    "audited": 289,
+    "traceComplete": 289,
+    "sameDateParity": 289
   },
   "regionCounts": {
     "dnr": {
@@ -60,11 +60,11 @@
       "id": "single-a289",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 8,
-      "audited": 8,
-      "traversalProven": 8,
-      "pricedWeekday": 8,
-      "pricedWeekend": 8
+      "attempted": 9,
+      "audited": 9,
+      "traversalProven": 9,
+      "pricedWeekday": 9,
+      "pricedWeekend": 9
     },
     {
       "id": "single-m3",
@@ -9856,6 +9856,38 @@
       ],
       "routeMeters": 131007,
       "routeSeconds": 6495
+    },
+    {
+      "caseId": "single-a289-taman-to-slavyansk",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/live-2026-10-15T09-00-00-03-00-2026-10-16T01-47-00-256Z.json",
+      "weekdayAmount": 385,
+      "weekendAmount": 385,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "a289"
+        ],
+        "provenRoads": [
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 131317,
+      "routeSeconds": 6534
     }
   ],
   "historicalExecutionExceptions": [],

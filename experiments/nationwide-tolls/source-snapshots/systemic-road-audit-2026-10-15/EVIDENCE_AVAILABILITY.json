@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 291,
-  "rawCaptureCaseCount": 288,
+  "rawCaptureCount": 292,
+  "rawCaptureCaseCount": 289,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -20909,6 +20909,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-46-59-030Z.json",
+      "caseId": "single-a289-taman-to-slavyansk",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/live-2026-10-15T09-00-00-03-00-2026-10-16T01-47-00-256Z.json",
+          "exists": true,
+          "bytes": 3648,
+          "sha256": "4fbf55946097facc016734d44bf76da54e775eacde146b56f18dad6ab0238b50",
+          "gitBlobSha": "fc57f3c84c68fb848bbecf79729999e8c7b92a08",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/2026-10-16T01-47-00-245Z-capture.json.gz",
+          "exists": true,
+          "bytes": 60386,
+          "sha256": "3efcc6d370ec2c1620690eaeb19fa801904c730bbc97c87b0ae75ac7568d76df",
+          "gitBlobSha": "00b1513019c8c342834035ce47ac7b788b218cd3",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 4
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-47-00-600Z.json",
+          "exists": true,
+          "bytes": 3726,
+          "sha256": "b60f070b539a0574bcb885af8e30c082c27a77156a6df4797297b676d4680c17",
+          "gitBlobSha": "d600450fa29e35e7d49c418da3ec9fa298d52d87",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-47-00-932Z.json",
+          "exists": true,
+          "bytes": 3726,
+          "sha256": "b7e91d6c8640c4dcb49cf89c4ccb4fdc946741302f0004aed2c898a3e94087f1",
+          "gitBlobSha": "36c2f611520f5e5b39be4eeaaeca67a4da680de5",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -23122,6 +23167,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 5
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/2026-10-16T01-47-00-245Z-capture.json.gz",
+      "exists": true,
+      "bytes": 60386,
+      "sha256": "3efcc6d370ec2c1620690eaeb19fa801904c730bbc97c87b0ae75ac7568d76df",
+      "gitBlobSha": "00b1513019c8c342834035ce47ac7b788b218cd3",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 4
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/2026-10-16T00-16-36-317Z-capture.json.gz",

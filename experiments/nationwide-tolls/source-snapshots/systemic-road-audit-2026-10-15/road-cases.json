@@ -942,7 +942,22 @@
         "a289"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/live-2026-10-15T09-00-00-03-00-2026-10-16T01-47-00-256Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/2026-10-16T01-47-00-245Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 131317,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-46-59-030Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/live-2026-10-15T09-00-00-03-00-2026-10-16T01-47-00-256Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/2026-10-16T01-47-00-245Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-47-00-600Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-47-00-932Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m3-moscow-to-kaluga",
