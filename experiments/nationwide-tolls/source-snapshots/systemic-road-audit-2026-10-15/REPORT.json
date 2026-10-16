@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:04:36.097Z",
+  "generatedAt": "2026-10-16T02:05:13.225Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 317,
-    "recordedLiveAttempts": 331,
-    "liveCaptured": 317,
-    "savedLiveSummaries": 317,
+    "distinctCaseAttempts": 318,
+    "recordedLiveAttempts": 332,
+    "liveCaptured": 318,
+    "savedLiveSummaries": 318,
     "missingOrInvalidReferences": 0,
-    "audited": 317,
-    "traceComplete": 317,
-    "sameDateParity": 317
+    "audited": 318,
+    "traceComplete": 318,
+    "sameDateParity": 318
   },
   "regionCounts": {
     "dnr": {
@@ -50,9 +50,9 @@
       "id": "single-m4",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 7,
-      "audited": 7,
-      "traversalProven": 7,
+      "attempted": 8,
+      "audited": 8,
+      "traversalProven": 8,
       "pricedWeekday": 5,
       "pricedWeekend": 5
     },
@@ -10796,6 +10796,38 @@
       ],
       "routeMeters": 273224,
       "routeSeconds": 14765
+    },
+    {
+      "caseId": "single-m4-rostov-to-voronezh",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T02-05-08-763Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4"
+        ],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 567353,
+      "routeSeconds": 26955
     }
   ],
   "historicalExecutionExceptions": [],
@@ -14850,7 +14882,8 @@
         "dnr-талаковка-kazan-center",
         "zaporizhzhia-розовка-kazan-center",
         "pair-m4-a289-anapa-to-voronezh",
-        "pair-m4-a289-voronezh-to-anapa"
+        "pair-m4-a289-voronezh-to-anapa",
+        "single-m4-rostov-to-voronezh"
       ],
       "occurrences": [
         {
@@ -15365,9 +15398,36 @@
             "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-anapa/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-40-46-648Z.json"
+        },
+        {
+          "caseId": "single-m4-rostov-to-voronezh",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T02-05-08-763Z.json"
+        },
+        {
+          "caseId": "single-m4-rostov-to-voronezh",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-05-09-178Z.json"
+        },
+        {
+          "caseId": "single-m4-rostov-to-voronezh",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-05-09-572Z.json"
         }
       ],
-      "caseCount": 19
+      "caseCount": 20
     },
     {
       "code": "m11_partial_head_entry_boundary_unresolved",

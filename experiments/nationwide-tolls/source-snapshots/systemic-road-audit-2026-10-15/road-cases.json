@@ -443,18 +443,18 @@
       "routeMustBeLive": true,
       "status": "audited",
       "liveEvidence": {
-        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-02-406Z.json",
-        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/2026-10-15T12-03-02-368Z-capture.json.gz",
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T02-05-08-763Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/2026-10-16T02-05-08-728Z-capture.json.gz",
         "provider": "Valhalla",
         "routeMeters": 567353,
         "traceComplete": true
       },
       "auditEvidence": {
-        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
-        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-02-406Z.json",
-        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/2026-10-15T12-03-02-368Z-capture.json.gz",
-        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-02-782Z.json",
-        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-03-108Z.json",
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-05-05-990Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T02-05-08-763Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/2026-10-16T02-05-08-728Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-05-09-178Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-05-09-572Z.json",
         "sameDateParity": true
       }
     },
