@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Review and classify m4:unpriced using 22 saved evaluations; no tariff/zero assumption; Part19 remains in progress",
+  "nextAction": "Diagnose unknown-paid-road:unpriced from saved evidence/current engine (baseline 64; do not assume unique cases or overlap with expected-road-not-proven). Choose one cause outcome; no new live/replay absent material difference or incomplete evidence. Part19 remains in progress.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2097,10 +2097,10 @@
         "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
         "triple-m11-ckad-m12-arzamas-to-spb"
       ],
-      "status": "diagnosis_started",
+      "status": "blocked_by_missing_reliable_data",
       "startedCheckpoint": "../../docs/checkpoints/2026-10-16-part19-m11-head-boundary-started.md",
-      "reviewStatus": "4_of_8_saved_cases_reviewed_case4_checked_no_material_exception_same_source_gated_cause",
-      "currentCasesChecked": 4,
+      "reviewStatus": "8_of_8_saved_cases_reviewed_no_material_exception_same_boundary_source_gated",
+      "currentCasesChecked": 8,
       "reviewedCases": [
         {
           "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
@@ -2129,9 +2129,49 @@
           "profiles": 3,
           "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md",
           "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case4-boundary-review.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+          "profiles": 3,
+          "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case5-boundary-source-gated.md",
+          "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case5-boundary-review.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+          "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+          "profiles": 5,
+          "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case6-boundary-exception.md",
+          "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case6-boundary-exception.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+          "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+          "profiles": 3,
+          "checkpoint": "../../docs/checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md",
+          "evidence": "../../docs/checkpoints/evidence/2026-10-17-m11-case7-boundary-source-gated.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+          "profiles": 3,
+          "checkpoint": "../../docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md",
+          "evidence": "../../docs/checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json"
         }
       ],
-      "note": "Cases1–3 remain source-gated; exact M11 entry boundary is unbound. Preserve unknown until exact directed entry/payment boundary proof exists. Five remaining cases are pending bounded exception checks."
+      "note": "All 8 saved cases have bounded exception reviews. No material exception to the shared M11 head-entry boundary finding. Exact directed entry/payment boundary remains unbound; keep M11 15–58 unknown. M12/CKAD/ZSD route-specific findings remain separate and do not establish a complete toll amount.",
+      "statusHistory": [
+        {
+          "recordedAtUtc": "2026-10-16T23:31:29Z",
+          "previousStatus": "diagnosis_started",
+          "previousReviewStatus": "4_of_8_saved_cases_reviewed_case4_checked_no_material_exception_same_source_gated_cause",
+          "previousCasesChecked": 4,
+          "previousNote": "Cases1–3 remain source-gated; exact M11 entry boundary is unbound. Preserve unknown until exact directed entry/payment boundary proof exists. Five remaining cases are pending bounded exception checks."
+        }
+      ],
+      "causeOutcome": "blocked_by_missing_reliable_data",
+      "lastReviewedAtUtc": "2026-10-16T23:31:29Z",
+      "lastReviewCheckpoint": "../../docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md"
     },
     {
       "code": "arc_not_proven",
@@ -3281,5 +3321,6 @@
       "fullgateCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md",
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
-  }
+  },
+  "lastSynthesisAtUtc": "2026-10-16T23:31:29Z"
 }

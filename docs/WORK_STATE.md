@@ -18,15 +18,13 @@
 
 **Последняя полная проверка 696/696+quote/API+Nextwebpack/TypeScript/static16/16 PASS**, focused8/8/eslintnewtestexit0. [Fullgate](checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md). В audit-only classification код не менялся и новая сборка не запускалась. Не трактовать прежний full gate как тест текущей классификации.
 
-## NEXT — завершённый M11 разбор исключений; затем part19/20 handoff
+## NEXT — Part 19, one unresolved cause at a time
 
-**Общая причина `m11_partial_head_entry_boundary_unresolved` проверена по сохранённым исключениям в cases 1–8 из 8. Во всех случаях надёжная M11 граница не подтверждена; итог причины — BLOCKED: blocked by missing reliable data. Это не исправление и не доказательство тарифа.**
+**M11 shared cause `m11_partial_head_entry_boundary_unresolved`: 8/8 saved cases checked; final outcome BLOCKED by missing reliable data. No material exception was found. The findings queue had stale M11 metadata (4/8); it is now reconciled to the eight individually saved checkpoints.** Full route toll amount remains unknown.
 
-Case8 `triple-m11-ckad-m12-arzamas-to-spb`: 3 уникальных capture-bound профиля live / same-date / weekend; дубли replay с теми же blob SHA не засчитаны отдельно. M11 head остаётся unknown, полный toll amount null. M12 traversal представлен; CKAD east arc и ZSD вне reviewed zone1 остаются отдельно unresolved. Новый live/replay/code/tests не запускались. [Case8 checkpoint](checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json).
+**NEXT finding:** `unknown-paid-road:unpriced` (baseline count 64) — inspect its saved evidence and current classification; compare overlap with `expected-road-not-proven` (also baseline 64) before interpreting the count. The two numbers are not confirmed unique cases. No replay/live unless saved evidence is incomplete or a material difference is identified. [Part19 queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json).
 
-ZSD review **76/76** и M4 finding **22/22** ранее классифицированы source-gated; не перезапускать без отличающегося evidence. [M4 checkpoint](checkpoints/2026-10-16-part19-m4-unpriced-classification.md). Формальный план остаётся **90% (18/20 частей)**; это не tariff coverage / release readiness. Part 19 ещё IN PROGRESS, part 20 PLANNED.
-
-**NEXT:** по актуальной [Part 19 findings queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) выполнить cross-cause synthesis по уже записанным доказательствам (без повтора закрытых case reviews), определить оставшиеся cause outcomes, затем Part 20 обязательные gates и handoff. No main/merge/Production/Android.
+Previously reviewed findings remain bounded to their evidence: M4 crossing-profile change was not reproduced in the current engine (25 checked); A289 component binding was recovered (57 helper-only + 2 whole-engine cases, not 59 confirmed whole-route fares); ZSD 76/76 is source-gated because the operator collection span remains unbound; M4 unpriced 22/22 is source-gated because collection scope remains unbound. These are not overall tariff coverage. Part19 remains IN PROGRESS; Part20 remains PLANNED. Formal plan stays **90% (18/20)**.
 
 
 2026-10-16 23:00 MSK: Case4 reviewed from parent `8819f8175edf616ed2229536cdf8abde5ef40a68` / tree `8b99cebadb42786e8e95e2b24b504bf713dbda2f`; result source-gated with no material exception. 3 saved profiles, 1 exact capture, 0 new live requests; M11 finding 4/8; formal plan90% (18/20), no new tariff confirmation. [Checkpoint](checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-16-m11-case4-boundary-review.json).
@@ -41,3 +39,6 @@ ZSD review **76/76** и M4 finding **22/22** ранее классифициро
 
 
 2026-10-17 01:45:16 MSK: Case8 `triple-m11-ckad-m12-arzamas-to-spb` DONE from saved capture/profile artifacts only. Three unique live/same-date/weekend profile blobs bind capture SHA-256 b47f5207…91ea61b; each preserves Valhalla fastest route 1,149,643m/43,716s. Duplicate replay blobs are not extra profiles. M11 head remains unresolved; M12 traversal represented, CKAD east arc and ZSD zone scope remain unresolved; full amount null. No new live/replay/code/tests or tariff confirmation. Cause exception review complete 8/8; outcome blocked by missing reliable data. Formal plan 18/20=90%. [Checkpoint](checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json).
+
+
+2026-10-17 02:31:29 MSK: Reconciled Part19 findings queue after M11 case8. Corrected stale M11 row from 4/8 to 8/8 and recorded blocked-by-missing-reliable-data outcome; linked all eight case checkpoints/evidence. This is a state-ledger reconciliation, not new route testing or tariff confirmation. Latest CI #38977636786 succeeded at parent head. Next: diagnose `unknown-paid-road:unpriced` from saved evidence/current engine, comparing overlap with expected-road-not-proven; no replay/live without a material distinction.

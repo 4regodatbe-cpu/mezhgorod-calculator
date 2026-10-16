@@ -2,10 +2,10 @@
 
 [Текущий handoff](../../docs/WORK_STATE.md),[подробная история](NEXT_STEPS_HISTORY_2026-10-15_2228.md).
 
-Part 19 M11 exception checks **8/8 DONE**; shared cause `m11_partial_head_entry_boundary_unresolved` is **BLOCKED by missing reliable data**. Case8 used 3 unique saved capture-bound profiles (live/same-date/weekend); no new live/replay/code/tests, no route fare confirmed. Full toll amount remains unknown.
-[Case8 checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md); [evidence](../../docs/checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json).
+M11 boundary cause: **8/8 case reviews DONE; outcome blocked by missing reliable data**. Findings queue reconciled so its counters match individual checkpoints. No M11 tariff/full-route amount confirmed.
+[Reconciliation checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md).
 
-NEXT: inspect the current Part 19 findings queue for cross-cause synthesis using already saved evidence; do not repeat completed reviews without a concrete difference. Then execute Part 20 required gates and final handoff. Formal plan stays18/20=90%; not tariff coverage or release readiness. No main/merge/Production/Android.
+NEXT: diagnose `unknown-paid-road:unpriced` from saved evidence and current engine, checking whether its baseline 64 cases overlap with `expected-road-not-proven` (baseline 64). Counts are not necessarily unique. No full reruns/live requests without a concrete evidence gap or material difference. Then continue Part19 cause outcomes and Part20 required gates/handoff. Formal plan18/20=90%, not tariff or release readiness. No main/merge/Production/Android.
 
 
 
@@ -1654,3 +1654,6 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 
 
 2026-10-17 01:45:16 MSK: Case8 `triple-m11-ckad-m12-arzamas-to-spb` DONE from saved evidence; no material exception to shared M11 head-boundary cause. 3 unique route profiles across live/same-date/weekend bind the same capture; duplicate blobs counted once. M11 head unknown, CKAD east arc and ZSD scope unresolved, whole-route amount null. No new live/replay/code/tests. M11 cause exception checks complete 8/8; outcome blocked by missing reliable data. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md). Formal plan18/20=90%, not tariff coverage. NEXT: Part19 cross-cause synthesis then Part20 required gates/handoff.
+
+
+2026-10-17 02:31:29 MSK: Reconciled Part19 queue: M11 case1–8 checkpoints now represented in the findings ledger; shared cause status blocked by missing reliable data. NEXT single cause: `unknown-paid-road:unpriced`, inspect saved evidence/current engine and compare overlap with `expected-road-not-proven`; do not infer 128 unique cases. No new live/replay/tests in this reconciliation. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md). Plan18/20=90% only.
