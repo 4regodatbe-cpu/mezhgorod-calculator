@@ -856,7 +856,7 @@
     {
       "id": 11,
       "title": "Этап 2: группа 1/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "lnr-лисичанск-moscow-center",
@@ -954,12 +954,12 @@
           "region": "kherson"
         }
       ],
-      "completedCases": 18
+      "completedCases": 19
     },
     {
       "id": 12,
       "title": "Этап 2: группа 2/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "kherson-скадовск-moscow-center",
