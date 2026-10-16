@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:51:51.935Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:52:15.293Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,74 @@
     },
     {
       "stage": 2,
-      "done": 22,
+      "done": 23,
       "total": 154
     }
   ],
   "next": {
     "part": 12,
     "spec": {
-      "caseId": "kherson-старая-збурьевка-kerch-center",
+      "caseId": "kherson-таврийск-kazan-center",
       "kind": "regional",
       "region": "kherson"
     }
   },
   "caseId": "kherson-старая-збурьевка-kerch-center",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "kherson-старая-збурьевка-kerch-center",
+    "startedAt": "2026-10-16T00:51:53.368Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-51-55-700Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kerch-center/2026-10-16T00-51-55-672Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-51-56-117Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-51-56-534Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "weekend": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "пятница–воскресенье",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "components": [],
+    "finishedAt": "2026-10-16T00:51:56.550Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-51-51-935Z-part12",
-  "parent": "bda0bcf9504f742294badf31395cfa0df358fb0d",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-51-51-935Z-started.json"
+  "parent": "4086dc755ad6028b50683ef068ca7c20c48d240c",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-52-15-293Z-done.json"
 }

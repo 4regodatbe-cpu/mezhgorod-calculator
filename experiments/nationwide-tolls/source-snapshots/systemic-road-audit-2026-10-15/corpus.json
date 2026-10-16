@@ -4658,7 +4658,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-51-55-700Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kerch-center/2026-10-16T00-51-55-672Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 435821,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-51-53-365Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-51-55-700Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kerch-center/2026-10-16T00-51-55-672Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-51-56-117Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-51-56-534Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-таврийск-moscow-center",
