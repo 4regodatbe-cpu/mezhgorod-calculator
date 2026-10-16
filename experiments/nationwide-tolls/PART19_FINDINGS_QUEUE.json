@@ -2549,14 +2549,16 @@
       },
       {
         "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
-        "status": "current_unknown_needs_distinct_scope_review",
+        "status": "source_gated_distinct_finished_zsd_scope",
         "sameReviewedScopeCase": null,
         "checkpoint": "../../docs/checkpoints/2026-10-16-142204-zsd-case16.md",
         "evidence": "../../docs/checkpoints/evidence/2026-10-16-142204-zsd-case16.json",
         "missing": [
           "ckad",
           "zsd"
-        ]
+        ],
+        "scopeCheckpoint": "../../docs/checkpoints/2026-10-16-142324-zsd-case16-scope.md",
+        "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-142324-zsd-case16-scope.json"
       }
     ],
     "checked": 16,
