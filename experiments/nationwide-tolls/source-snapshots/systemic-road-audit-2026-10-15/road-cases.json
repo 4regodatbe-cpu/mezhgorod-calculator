@@ -2058,7 +2058,22 @@
         "m12"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-59-36-003Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/2026-10-16T01-59-35-968Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 445102,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-59-31-743Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-59-36-003Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/2026-10-16T01-59-35-968Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-59-36-404Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-59-36-815Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m12-cheboksary-to-moscow",

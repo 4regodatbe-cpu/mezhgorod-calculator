@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 311,
-  "rawCaptureCaseCount": 308,
+  "rawCaptureCount": 312,
+  "rawCaptureCaseCount": 309,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -21809,6 +21809,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-59-31-743Z.json",
+      "caseId": "single-m12-moscow-to-arzamas",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-59-36-003Z.json",
+          "exists": true,
+          "bytes": 3567,
+          "sha256": "41424ebe563faaad247d59704df48e64983f46a4773bbc2a7576dee76d222df0",
+          "gitBlobSha": "a7cf2f5d2797407b2c0ff72c2674a46fa73d2747",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/2026-10-16T01-59-35-968Z-capture.json.gz",
+          "exists": true,
+          "bytes": 213722,
+          "sha256": "5f4671a2236dcd45e4c49a8f6c9ca260e8f9aefaa92c9c33901c2f6535348aec",
+          "gitBlobSha": "dd6875c43c3cd40cfcd0a268d5f1aef86393714f",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 7
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-59-36-404Z.json",
+          "exists": true,
+          "bytes": 3645,
+          "sha256": "1a5d40a2a4141c180551d0dfbd22bc056b1f2bfa4edc5a50206560dd4fd0a94b",
+          "gitBlobSha": "baa7e479fca5c99a90d7d4bbfdbaa4bfec31e620",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-59-36-815Z.json",
+          "exists": true,
+          "bytes": 3645,
+          "sha256": "47299a42c6969e571f861ab27445032dac3dfec1dc95e3be0533b81531631469",
+          "gitBlobSha": "15cca342492203d722a366281e4d54b2f30c18a8",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -24429,6 +24474,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 8
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/2026-10-16T01-59-35-968Z-capture.json.gz",
+      "exists": true,
+      "bytes": 213722,
+      "sha256": "5f4671a2236dcd45e4c49a8f6c9ca260e8f9aefaa92c9c33901c2f6535348aec",
+      "gitBlobSha": "dd6875c43c3cd40cfcd0a268d5f1aef86393714f",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 7
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-kazan/2026-10-16T00-23-10-215Z-capture.json.gz",
