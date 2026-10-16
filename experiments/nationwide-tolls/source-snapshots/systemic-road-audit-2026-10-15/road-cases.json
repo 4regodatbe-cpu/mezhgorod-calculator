@@ -1008,7 +1008,22 @@
         "m3"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-31-334Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/2026-10-16T00-25-31-320Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 108328,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-25-29-027Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-31-334Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/2026-10-16T00-25-31-320Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-25-31-678Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-32-020Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m3-obninsk-to-moscow",

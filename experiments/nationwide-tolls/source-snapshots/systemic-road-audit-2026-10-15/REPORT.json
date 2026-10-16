@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:25:11.381Z",
+  "generatedAt": "2026-10-16T00:25:34.041Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 160,
-    "recordedLiveAttempts": 173,
-    "liveCaptured": 159,
-    "savedLiveSummaries": 159,
+    "distinctCaseAttempts": 161,
+    "recordedLiveAttempts": 174,
+    "liveCaptured": 160,
+    "savedLiveSummaries": 160,
     "missingOrInvalidReferences": 1,
-    "audited": 159,
-    "traceComplete": 159,
-    "sameDateParity": 159
+    "audited": 160,
+    "traceComplete": 160,
+    "sameDateParity": 160
   },
   "regionCounts": {
     "dnr": {
@@ -70,9 +70,9 @@
       "id": "single-m3",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 3,
-      "audited": 3,
-      "traversalProven": 3,
+      "attempted": 4,
+      "audited": 4,
+      "traversalProven": 4,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -5497,6 +5497,38 @@
       ],
       "routeMeters": 121233,
       "routeSeconds": 7471
+    },
+    {
+      "caseId": "single-m3-moscow-to-obninsk",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-31-334Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m3"
+        ],
+        "provenRoads": [
+          "m3"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 108328,
+      "routeSeconds": 6455
     }
   ],
   "historicalExecutionExceptions": [],
@@ -10043,7 +10075,8 @@
       "cases": [
         "single-m3-kaluga-to-moscow",
         "single-m3-moscow-to-kaluga",
-        "single-m3-moscow-to-maloyaroslavets"
+        "single-m3-moscow-to-maloyaroslavets",
+        "single-m3-moscow-to-obninsk"
       ],
       "occurrences": [
         {
@@ -10126,9 +10159,36 @@
             "reason": "m3_engine_not_yet_composed"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-09-362Z.json"
+        },
+        {
+          "caseId": "single-m3-moscow-to-obninsk",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-31-334Z.json"
+        },
+        {
+          "caseId": "single-m3-moscow-to-obninsk",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-25-31-678Z.json"
+        },
+        {
+          "caseId": "single-m3-moscow-to-obninsk",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-32-020Z.json"
         }
       ],
-      "caseCount": 3
+      "caseCount": 4
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
