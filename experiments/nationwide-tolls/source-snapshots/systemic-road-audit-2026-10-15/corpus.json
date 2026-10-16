@@ -2831,7 +2831,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-03-59-319Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/2026-10-16T01-03-59-219Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1714552,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-03-42-407Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-03-59-319Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/2026-10-16T01-03-59-219Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-03-59-964Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-04-00-567Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-сорокино-kazan-center",

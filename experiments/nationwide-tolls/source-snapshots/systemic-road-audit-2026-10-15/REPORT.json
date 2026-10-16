@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:03:18.201Z",
+  "generatedAt": "2026-10-16T01:04:03.410Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 226,
-    "recordedLiveAttempts": 240,
-    "liveCaptured": 226,
-    "savedLiveSummaries": 226,
+    "distinctCaseAttempts": 227,
+    "recordedLiveAttempts": 241,
+    "liveCaptured": 227,
+    "savedLiveSummaries": 227,
     "missingOrInvalidReferences": 0,
-    "audited": 226,
-    "traceComplete": 226,
-    "sameDateParity": 226
+    "audited": 227,
+    "traceComplete": 227,
+    "sameDateParity": 227
   },
   "regionCounts": {
     "dnr": {
@@ -22,9 +22,9 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 35,
-      "audited": 35,
-      "traceComplete": 35,
+      "liveCaptured": 36,
+      "audited": 36,
+      "traceComplete": 36,
       "pricedWeekday": 25,
       "pricedWeekend": 25
     },
@@ -7704,6 +7704,38 @@
       ],
       "routeMeters": 998355,
       "routeSeconds": 45967
+    },
+    {
+      "caseId": "lnr-сорокино-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-03-59-319Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1714552,
+      "routeSeconds": 67883
     }
   ],
   "historicalExecutionExceptions": [],
@@ -9567,7 +9599,8 @@
         "dnr-краматорск-saint-petersburg-center",
         "dnr-талаковка-saint-petersburg-center",
         "dnr-харцызск-saint-petersburg-center",
-        "lnr-ровеньки-saint-petersburg-center"
+        "lnr-ровеньки-saint-petersburg-center",
+        "lnr-сорокино-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -10865,9 +10898,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-00-20-499Z.json"
+        },
+        {
+          "caseId": "lnr-сорокино-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-03-59-319Z.json"
+        },
+        {
+          "caseId": "lnr-сорокино-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-03-59-964Z.json"
+        },
+        {
+          "caseId": "lnr-сорокино-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-04-00-567Z.json"
         }
       ],
-      "caseCount": 48
+      "caseCount": 49
     },
     {
       "code": "m4:unpriced",
