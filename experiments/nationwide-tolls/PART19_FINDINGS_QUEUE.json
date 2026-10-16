@@ -26,7 +26,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "lnr-рубежное-moscow-center",
+  "nextCase": "dnr-бахмут-moscow-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1740,8 +1740,9 @@
     },
     {
       "code": "m4:unpriced",
-      "currentCasesChecked": 3,
+      "currentCasesChecked": 4,
       "currentEvaluations": [
+        {"caseId":"lnr-рубежное-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case4-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case4-replay.json"},
         {"caseId":"dnr-широкино-kazan-center","result":"source_gated_unknown_retained","weekdayAmount":null,"weekendAmount":null,"confirmedPvps":[],"m4CandidateCount":0,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-shirokino-kazan-source-hold.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-shirokino-kazan-scope.json"},
         {
           "caseId": "lnr-лисичанск-moscow-center",
