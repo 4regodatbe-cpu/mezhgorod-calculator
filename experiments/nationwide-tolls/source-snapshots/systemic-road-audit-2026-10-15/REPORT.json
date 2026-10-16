@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:07:05.118Z",
+  "generatedAt": "2026-10-16T02:07:40.797Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 321,
-    "recordedLiveAttempts": 335,
-    "liveCaptured": 321,
-    "savedLiveSummaries": 321,
+    "distinctCaseAttempts": 322,
+    "recordedLiveAttempts": 336,
+    "liveCaptured": 322,
+    "savedLiveSummaries": 322,
     "missingOrInvalidReferences": 0,
-    "audited": 321,
-    "traceComplete": 321,
-    "sameDateParity": 321
+    "audited": 322,
+    "traceComplete": 322,
+    "sameDateParity": 322
   },
   "regionCounts": {
     "dnr": {
@@ -120,8 +120,8 @@
       "id": "single-odintsovo",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
+      "attempted": 7,
+      "audited": 7,
       "traversalProven": 1,
       "pricedWeekday": 4,
       "pricedWeekend": 4
@@ -10924,6 +10924,40 @@
       ],
       "routeMeters": 46386,
       "routeSeconds": 2811
+    },
+    {
+      "caseId": "single-odintsovo-kubinka-to-moscow",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-36-426Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "odintsovo"
+        ],
+        "provenRoads": [
+          "m1"
+        ],
+        "missingExpectedRoads": [
+          "odintsovo"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 68300,
+      "routeSeconds": 4149
     }
   ],
   "historicalExecutionExceptions": [],
@@ -18183,7 +18217,8 @@
         "single-khabarovsk-vyazemsky-to-berezovka",
         "single-khabarovsk-vyazemsky-to-khabarovsk",
         "single-m12-cheboksary-to-moscow",
-        "single-m12-moscow-to-cheboksary"
+        "single-m12-moscow-to-cheboksary",
+        "single-odintsovo-kubinka-to-moscow"
       ],
       "occurrences": [
         {
@@ -19123,9 +19158,25 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-cheboksary/live-2026-10-15T09-00-00-03-00-2026-10-16T02-00-15-730Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-kubinka-to-moscow",
+          "detail": {
+            "expectedRoads": [
+              "odintsovo"
+            ],
+            "provenRoads": [
+              "m1"
+            ],
+            "missingExpectedRoads": [
+              "odintsovo"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-36-426Z.json"
         }
       ],
-      "caseCount": 56
+      "caseCount": 57
     },
     {
       "code": "m11-58-679:unpriced",
@@ -20612,7 +20663,8 @@
         "single-m3-kaluga-to-obninsk",
         "single-m3-maloyaroslavets-to-moscow",
         "single-m3-obninsk-to-kaluga",
-        "single-odintsovo-golitsyno-to-rublevo"
+        "single-odintsovo-golitsyno-to-rublevo",
+        "single-odintsovo-kubinka-to-moscow"
       ],
       "occurrences": [
         {
@@ -20911,9 +20963,36 @@
             "reason": "m1_engine_not_yet_composed"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-07-01-434Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-kubinka-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m1",
+            "reason": "m1_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-36-426Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-kubinka-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m1",
+            "reason": "m1_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-07-36-763Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-kubinka-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m1",
+            "reason": "m1_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-07-37-082Z.json"
         }
       ],
-      "caseCount": 11
+      "caseCount": 12
     },
     {
       "code": "m12_current_operator_pair_not_bound",

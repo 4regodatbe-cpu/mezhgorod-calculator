@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T02:07:33.658Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T02:08:03.929Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,92 @@
     },
     {
       "stage": 2,
-      "done": 135,
+      "done": 136,
       "total": 154
     }
   ],
   "next": {
     "part": 18,
     "spec": {
-      "caseId": "single-odintsovo-kubinka-to-moscow",
+      "caseId": "single-odintsovo-lesnoy-to-moscow",
       "kind": "road",
       "group": "single-odintsovo"
     }
   },
   "caseId": "single-odintsovo-kubinka-to-moscow",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-odintsovo-kubinka-to-moscow",
+    "startedAt": "2026-10-16T02:07:35.123Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-36-426Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/2026-10-16T02-07-36-416Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-07-36-763Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-07-37-082Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "provenRoads": [
+        "m1"
+      ],
+      "missingExpectedRoads": [
+        "odintsovo"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m1",
+        "m1: m1_engine_not_yet_composed"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m1",
+        "m1: m1_engine_not_yet_composed"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m1",
+        "amount": null,
+        "reason": "m1_engine_not_yet_composed"
+      }
+    ],
+    "finishedAt": "2026-10-16T02:07:37.097Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-07-33-658Z-part18",
-  "parent": "0b86410c4577966062c0d738c1e16cfbd7cdcc1c",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-07-33-658Z-started.json"
+  "parent": "ff3978c1d3e563dd4062e0c03094ad1d42239ebd",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-08-03-929Z-done.json"
 }
