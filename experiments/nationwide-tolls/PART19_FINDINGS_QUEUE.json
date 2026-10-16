@@ -1740,6 +1740,9 @@
     },
     {
       "code": "m4:unpriced",
+      "reviewStatus": "all22_replayed_classified_with14_unresolved_source_scopes",
+      "reviewCounts": {"wholeUnconfirmedEstimates":5,"m4PricedOtherProductsUnknown":3,"physical545Unresolved":8,"shortOpenCollectionUnresolved":6},
+      "newEvidenceCandidate": "Preserved operatorrules section2.1 open collection; evaluate exact2way M4scope before any zero/freeclaim",
       "currentCasesChecked": 22,
       "currentEvaluations": [
         {"caseId":"single-m4-voronezh-to-rostov","result":"source_gated_physical545_scope_unresolved","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case22.json"},

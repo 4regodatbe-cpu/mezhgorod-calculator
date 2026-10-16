@@ -17,7 +17,7 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 
 ## NEXT STARTED автоматически
 
-**NEXT STARTED** Next dnr-гранитное-saint-petersburg-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible. [Checkpoint](checkpoints/2026-10-16-124839-part19d-current-case22.md).
+**NEXT STARTED** NEXT narrowstep: evaluate primaryopen-rule applicability and safe exactlyreviewedM4scope guard, then one-causecodechange only ifindependentproofsuffices; focused+fullgate and6separatecasecheckpoints beforeacceptance. Otherwise keep6unknown and continueZSDfirst dnr-гранитное-saint-petersburg-center. Keep8physical545sourcegates; parts19ongoing/20planned. [Checkpoint](checkpoints/2026-10-16-125248-part19d-m4-22-review-and-open-collection-rule.md).
 
 Часть19 IN PROGRESS,20 PLANNED; прочиеfindingclasses неполностьюразобраны. Одинwriter; active/queuedjob→неписатьвветку. TIME_LIMITвозобновляем. Raw/live/baseline/historyсохранять. Replay≠freshlive/подтверждённыйтариф. Unknown≠0,subtotal≠итог, wholetripпоотправлению, междорожныевекторыотложены. No main/merge/Production/Android/messages. Автопродолжение включено, неотключатьпокавсе20незавершены.
 
@@ -27,4 +27,4 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 
 16.10.2026 current checkout refreshed to actuala11dcf46, GitHub jobSUCCESS rechecked. [Fresh-checkout/STARTED](checkpoints/2026-10-16-1222-fresh-checkout-case9-resume.md): samecase9 primaryPDF+selected545geometry. Prior687gate historical; no runtime change. Trace chunk indices are not selectedroute indices.
 
-Latest checkpoint: [part19d-current-case22](checkpoints/2026-10-16-124839-part19d-current-case22.md). Case22/22 single-m4-voronezh-to-rostov DONE: source_gated_physical545_scope_unresolved, providerValhalla/565794m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal.
+Latest checkpoint: [part19d-m4-22-review-and-open-collection-rule](checkpoints/2026-10-16-125248-part19d-m4-22-review-and-open-collection-rule.md). M4 finding review DONE22/22 distinctcases, NOT22confirmedfares:5wholeunconfirmedestimates,3M4componentspriced/wholeunknown,8physical545scopegated,6shortM4scopegated. Currentqueue and per-caseSHA/checkpoints preserve exactoutcomes; unchangedfrozenREPORT. No newruntimechange/fullgate thisturn, prior687historical.
