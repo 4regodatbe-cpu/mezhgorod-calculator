@@ -1453,3 +1453,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 16.10.2026 ZSDcase14 scopeDONE:76ways/two namedPvP/south→northKAD, no newidentitybug, sourcegate retained. Latest691fullgatePASS supersedes stale687template. ../../docs/checkpoints/2026-10-16-zsd-kazan-sestroretsk-scope.md NEXTcase15Murom→Sestroretsk; plan90%.
 
 2026-10-16T14:21:32.369652+03:00: ZSDcase15 max-chain-m12-ckad-m11-zsd-murom-to-sest DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'm11-15-58', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142132-zsd-case15.md. NEXT max-chain-m12-ckad-m11-zsd-sest-to-kazan.
+
+2026-10-16T14:22:04.923099+03:00: ZSDcase16 max-chain-m12-ckad-m11-zsd-sest-to-kazan DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['ckad', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142204-zsd-case16.md. NEXT max-chain-m12-ckad-m11-zsd-sest-to-murom.
