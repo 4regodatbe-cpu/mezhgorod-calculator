@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:57:46.056Z",
+  "generatedAt": "2026-10-16T01:58:24.122Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 306,
-    "recordedLiveAttempts": 320,
-    "liveCaptured": 306,
-    "savedLiveSummaries": 306,
+    "distinctCaseAttempts": 307,
+    "recordedLiveAttempts": 321,
+    "liveCaptured": 307,
+    "savedLiveSummaries": 307,
     "missingOrInvalidReferences": 0,
-    "audited": 306,
-    "traceComplete": 306,
-    "sameDateParity": 306
+    "audited": 307,
+    "traceComplete": 307,
+    "sameDateParity": 307
   },
   "regionCounts": {
     "dnr": {
@@ -90,11 +90,11 @@
       "id": "single-m12",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
+      "attempted": 7,
+      "audited": 7,
       "traversalProven": 5,
-      "pricedWeekday": 5,
-      "pricedWeekend": 5
+      "pricedWeekday": 6,
+      "pricedWeekend": 6
     },
     {
       "id": "single-ckad",
@@ -10444,6 +10444,38 @@
       ],
       "routeMeters": 448858,
       "routeSeconds": 23661
+    },
+    {
+      "caseId": "single-m12-cheboksary-to-moscow",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-cheboksary-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-58-19-543Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "m12"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 672177,
+      "routeSeconds": 34001
     }
   ],
   "historicalExecutionExceptions": [],
@@ -17561,7 +17593,8 @@
         "single-khabarovsk-khabarovsk-to-vyazemsky",
         "single-khabarovsk-nekrasovka-to-smidovich",
         "single-khabarovsk-vyazemsky-to-berezovka",
-        "single-khabarovsk-vyazemsky-to-khabarovsk"
+        "single-khabarovsk-vyazemsky-to-khabarovsk",
+        "single-m12-cheboksary-to-moscow"
       ],
       "occurrences": [
         {
@@ -18473,9 +18506,23 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-khabarovsk/live-2026-10-15T09-00-00-03-00-2026-10-16T01-53-57-669Z.json"
+        },
+        {
+          "caseId": "single-m12-cheboksary-to-moscow",
+          "detail": {
+            "expectedRoads": [
+              "m12"
+            ],
+            "provenRoads": [],
+            "missingExpectedRoads": [
+              "m12"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-cheboksary-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-58-19-543Z.json"
         }
       ],
-      "caseCount": 54
+      "caseCount": 55
     },
     {
       "code": "m11-58-679:unpriced",
