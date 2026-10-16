@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T02:01:19.245Z",
-  "phase": "DONE",
+  "at": "2026-10-16T02:01:24.637Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,78 +23,10 @@
       "group": "single-m3"
     }
   },
-  "caseId": "single-m3-balabanovo-to-kaluga",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-m3-balabanovo-to-kaluga",
-    "startedAt": "2026-10-16T02:00:50.314Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-balabanovo-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T02-00-51-674Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-balabanovo-to-kaluga/2026-10-16T02-00-51-663Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-00-52-015Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-00-52-339Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m3"
-      ],
-      "provenRoads": [
-        "m3"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m3",
-        "m3: m3_engine_not_yet_composed"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m3",
-        "m3: m3_engine_not_yet_composed"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m3",
-        "amount": null,
-        "reason": "m3_engine_not_yet_composed"
-      }
-    ],
-    "finishedAt": "2026-10-16T02:00:52.353Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-00-48-986Z-part17",
-  "parent": "c1ab8d2b5b30558d3a833e64841074d393c74a47",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-01-19-245Z-done.json"
+  "caseId": "single-m3-kaluga-to-balabanovo",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-01-24-637Z-part17",
+  "parent": "a0ce64de5a0fd7a3ab9ae5a403203debe12b5864",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-01-24-637Z-started.json"
 }
