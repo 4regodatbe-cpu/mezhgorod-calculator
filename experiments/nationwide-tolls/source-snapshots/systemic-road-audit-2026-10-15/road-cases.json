@@ -6072,7 +6072,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T01-27-29-382Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/2026-10-16T01-27-29-307Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1271240,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-27-17-586Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T01-27-29-382Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/2026-10-16T01-27-29-307Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-27-29-924Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-27-30-449Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
