@@ -725,7 +725,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-42-15-098Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-kerch-center/2026-10-16T00-42-15-042Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 735279,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-42-11-648Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-42-15-098Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-kerch-center/2026-10-16T00-42-15-042Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-42-15-565Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-42-16-016Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-краматорск-moscow-center",
