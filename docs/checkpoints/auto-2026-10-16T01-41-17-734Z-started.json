@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:41:17.734Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 94,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 15,
+    "spec": {
+      "caseId": "pair-m4-m11-krasnodar-to-torzhok",
+      "kind": "road",
+      "group": "pair-m4-m11"
+    }
+  },
+  "caseId": "pair-m4-m11-krasnodar-to-torzhok",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-41-17-734Z-part15",
+  "parent": "d2d3fef8d16a9cd264a21d8fa1ed86efd176b632"
+}
