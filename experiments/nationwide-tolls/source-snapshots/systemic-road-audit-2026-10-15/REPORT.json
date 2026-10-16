@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:23:00.858Z",
+  "generatedAt": "2026-10-16T01:23:38.112Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 253,
-    "recordedLiveAttempts": 267,
-    "liveCaptured": 253,
-    "savedLiveSummaries": 253,
+    "distinctCaseAttempts": 254,
+    "recordedLiveAttempts": 268,
+    "liveCaptured": 254,
+    "savedLiveSummaries": 254,
     "missingOrInvalidReferences": 0,
-    "audited": 253,
-    "traceComplete": 253,
-    "sameDateParity": 253
+    "audited": 254,
+    "traceComplete": 254,
+    "sameDateParity": 254
   },
   "regionCounts": {
     "dnr": {
@@ -220,8 +220,8 @@
       "id": "max-chain-m12-ckad-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 8,
-      "audited": 8,
+      "attempted": 9,
+      "audited": 9,
       "traversalProven": 6,
       "pricedWeekday": 0,
       "pricedWeekend": 0
@@ -8610,6 +8610,45 @@
       ],
       "routeMeters": 1391846,
       "routeSeconds": 54716
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T01-23-33-974Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12",
+          "ckad",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11",
+          "ckad"
+        ],
+        "missingExpectedRoads": [
+          "m12"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 922107,
+      "routeSeconds": 32014
     }
   ],
   "historicalExecutionExceptions": [],
@@ -10787,7 +10826,8 @@
         "zaporizhzhia-розовка-saint-petersburg-center",
         "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
         "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
-        "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+        "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+        "max-chain-m12-ckad-m11-zsd-sest-to-vladimir"
       ],
       "occurrences": [
         {
@@ -12247,9 +12287,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-22-57-615Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T01-23-33-974Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-23-34-417Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-23-34-844Z.json"
         }
       ],
-      "caseCount": 54
+      "caseCount": 55
     },
     {
       "code": "m4:unpriced",
@@ -12932,7 +12999,8 @@
         "triple-m11-ckad-m12-tver-to-murom",
         "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
         "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
-        "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+        "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+        "max-chain-m12-ckad-m11-zsd-sest-to-vladimir"
       ],
       "occurrences": [
         {
@@ -13447,9 +13515,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-22-57-615Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T01-23-33-974Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-23-34-417Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-23-34-844Z.json"
         }
       ],
-      "caseCount": 19
+      "caseCount": 20
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -14247,7 +14342,8 @@
         "single-zsd-peterhof-to-sest",
         "single-zsd-prim-to-blag",
         "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
-        "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+        "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+        "max-chain-m12-ckad-m11-zsd-sest-to-vladimir"
       ],
       "occurrences": [
         {
@@ -14742,9 +14838,30 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/live-2026-10-15T09-00-00-03-00-2026-10-16T01-22-56-591Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+          "detail": {
+            "expectedRoads": [
+              "m12",
+              "ckad",
+              "m11",
+              "zsd"
+            ],
+            "provenRoads": [
+              "zsd",
+              "m11",
+              "ckad"
+            ],
+            "missingExpectedRoads": [
+              "m12"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T01-23-33-974Z.json"
         }
       ],
-      "caseCount": 30
+      "caseCount": 31
     },
     {
       "code": "m11-58-679:unpriced",
