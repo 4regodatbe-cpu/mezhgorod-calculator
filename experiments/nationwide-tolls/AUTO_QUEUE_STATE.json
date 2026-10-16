@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:58:47.062Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:58:52.609Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,66 +23,10 @@
       "group": "single-m12"
     }
   },
-  "caseId": "single-m12-cheboksary-to-moscow",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-m12-cheboksary-to-moscow",
-    "startedAt": "2026-10-16T01:58:15.637Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-cheboksary-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-58-19-543Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-cheboksary-to-moscow/2026-10-16T01-58-19-492Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-58-20-017Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-58-20-476Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m12"
-      ],
-      "provenRoads": [],
-      "missingExpectedRoads": [
-        "m12"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T01:58:20.492Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-58-14-261Z-part17",
-  "parent": "2dc5375eaa726cd44e166ca1f327059b788549e2",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-58-47-062Z-done.json"
+  "caseId": "single-m12-kazan-to-murom",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-58-52-608Z-part17",
+  "parent": "24580957db11ee0dae9a32e22e70c8533f3430eb",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-58-52-609Z-started.json"
 }
