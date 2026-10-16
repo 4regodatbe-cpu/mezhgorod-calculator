@@ -3626,7 +3626,22 @@
         "a289"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-39-20-705Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/2026-10-16T01-39-20-603Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1579555,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-39-10-174Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-39-20-705Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/2026-10-16T01-39-20-603Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-39-21-338Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-39-21-948Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "pair-m4-a289-voronezh-to-anapa",

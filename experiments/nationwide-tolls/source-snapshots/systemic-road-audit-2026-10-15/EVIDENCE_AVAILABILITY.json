@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 280,
-  "rawCaptureCaseCount": 277,
+  "rawCaptureCount": 281,
+  "rawCaptureCaseCount": 278,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -20414,6 +20414,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-39-10-174Z.json",
+      "caseId": "pair-m4-a289-kerch-to-domodedovo",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-39-20-705Z.json",
+          "exists": true,
+          "bytes": 7351,
+          "sha256": "ecee3fa67ee7793c4ff10d1b27a511f2ece813d18af9071d6ff856c7d81ac808",
+          "gitBlobSha": "9a9085db0a906224f76e382548191bc1d1b7ac4e",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/2026-10-16T01-39-20-603Z-capture.json.gz",
+          "exists": true,
+          "bytes": 679332,
+          "sha256": "e785f2b09e0beae2dedcaa9cd2734b1c7f1dd02ac612de6126aa6580562ba85b",
+          "gitBlobSha": "50337abcb3f4be619468e0690acdf7206f2dfc09",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 16
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-39-21-338Z.json",
+          "exists": true,
+          "bytes": 7429,
+          "sha256": "68ba3b4765a41327c515a6f0195ae8114c7cef6339e34a73247f60b7fbba66fa",
+          "gitBlobSha": "3664dc78ec86642e888a435d9f518c135a603e03",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-39-21-948Z.json",
+          "exists": true,
+          "bytes": 7429,
+          "sha256": "c00c411d520fa3011b44278898843f98c9f0d24a2aaefbd823ab6f4688324a07",
+          "gitBlobSha": "ffde9fc1bda3696e52037de4d4862f69a771c045",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -22337,6 +22382,17 @@
       "bytes": 663700,
       "sha256": "4652c2089a4d83b30dbb38a4bead2970c69b88d2014c8ab8be737b2c314f4d49",
       "gitBlobSha": "d2ce13b3dedb2edc77f10c89bc1be88aba816f06",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 16
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/2026-10-16T01-39-20-603Z-capture.json.gz",
+      "exists": true,
+      "bytes": 679332,
+      "sha256": "e785f2b09e0beae2dedcaa9cd2734b1c7f1dd02ac612de6126aa6580562ba85b",
+      "gitBlobSha": "50337abcb3f4be619468e0690acdf7206f2dfc09",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,
