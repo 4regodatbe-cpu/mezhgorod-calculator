@@ -1,10 +1,10 @@
 # Системный аудит маршрутов — текущие результаты
 
-Сформировано: 2026-10-16T02:13:52.231Z.
+Сформировано: 2026-10-16T02:14:30.668Z.
 
-Разных проверенных OD-кейсов: 332; записанных live попыток с учётом повторов: 346; маршруты получены: 332; capture + два offline replay завершены: 332; одинаковый live/offline итог: 332.
+Разных проверенных OD-кейсов: 333; записанных live попыток с учётом повторов: 347; маршруты получены: 333; capture + два offline replay завершены: 333; одинаковый live/offline итог: 333.
 
-Отсутствующих/нечитаемых evidence-ссылок: 0; имеющихся live summaries: 332. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
+Отсутствующих/нечитаемых evidence-ссылок: 0; имеющихся live summaries: 333. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
 
 Audited означает воспроизводимость исполнения. Это не проверка цен по Яндексу/оператору. Неизвестная сумма остаётся неизвестной. Offline replay не считается новым live-маршрутом.
 
@@ -32,7 +32,7 @@ Audited означает воспроизводимость исполнения
 | pair-m11-ckad | 10 | 10 | 10 | 6 | 0 | 0 |
 | pair-m12-ckad | 10 | 10 | 10 | 2 | 4 | 4 |
 | triple-m4-m11-zsd | 10 | 5 | 5 | 5 | 0 | 0 |
-| triple-m11-ckad-m12 | 10 | 7 | 7 | 7 | 0 | 0 |
+| triple-m11-ckad-m12 | 10 | 8 | 8 | 7 | 0 | 0 |
 | max-chain-m4-ckad-m11-zsd | 10 | 10 | 10 | 0 | 2 | 2 |
 | max-chain-m12-ckad-m11-zsd | 10 | 10 | 10 | 6 | 0 | 0 |
 
@@ -43,10 +43,10 @@ Audited означает воспроизводимость исполнения
 | zsd:unpriced | 71 |
 | m4:unpriced | 22 |
 | m11_partial_head_entry_boundary_unresolved | 8 |
-| arc_not_proven | 31 |
-| unknown-paid-road:unpriced | 59 |
-| expected-road-not-proven | 60 |
-| m11-58-679:unpriced | 38 |
+| arc_not_proven | 32 |
+| unknown-paid-road:unpriced | 60 |
+| expected-road-not-proven | 61 |
+| m11-58-679:unpriced | 39 |
 | m11_58_679_facility_sequence_incomplete | 15 |
 | engine_not_yet_composed | 13 |
 | m12_current_operator_pair_not_bound | 4 |

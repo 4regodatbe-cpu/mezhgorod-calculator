@@ -6750,7 +6750,22 @@
         "m12"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T02-14-26-146Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/2026-10-16T02-14-26-102Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 767243,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-14-22-259Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T02-14-26-146Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/2026-10-16T02-14-26-102Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-14-26-560Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-14-26-949Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "triple-m11-ckad-m12-vladimir-to-novgorod",
