@@ -26,8 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
-  "nextAction": "ZSD next distinct case max-chain-m12-ckad-m11-zsd-arzamas-to-prim: existing capture twoofflineprofiles; compare exact selected scope",
+  "nextCase": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+  "nextAction": "ZSD next distinct case max-chain-m12-ckad-m11-zsd-kazan-to-sest: existing capture twoofflineprofiles; compare exact selected scope",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2502,9 +2502,21 @@
         "missing": [
           "zsd"
         ]
+      },
+      {
+        "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+        "status": "current_unknown_needs_distinct_scope_review",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-141040-zsd-case13.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-141040-zsd-case13.json",
+        "missing": [
+          "ckad",
+          "m11-15-58",
+          "unknown-paid-road",
+          "zsd"
+        ]
       }
     ],
-    "checked": 12,
+    "checked": 13,
     "total": 76
   }
 }
