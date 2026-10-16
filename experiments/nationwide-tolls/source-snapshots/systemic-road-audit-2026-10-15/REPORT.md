@@ -1,10 +1,10 @@
 # Системный аудит маршрутов — текущие результаты
 
-Сформировано: 2026-10-16T01:56:31.197Z.
+Сформировано: 2026-10-16T01:57:08.483Z.
 
-Разных проверенных OD-кейсов: 304; записанных live попыток с учётом повторов: 318; маршруты получены: 304; capture + два offline replay завершены: 304; одинаковый live/offline итог: 304.
+Разных проверенных OD-кейсов: 305; записанных live попыток с учётом повторов: 319; маршруты получены: 305; capture + два offline replay завершены: 305; одинаковый live/offline итог: 305.
 
-Отсутствующих/нечитаемых evidence-ссылок: 0; имеющихся live summaries: 304. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
+Отсутствующих/нечитаемых evidence-ссылок: 0; имеющихся live summaries: 305. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
 
 Audited означает воспроизводимость исполнения. Это не проверка цен по Яндексу/оператору. Неизвестная сумма остаётся неизвестной. Offline replay не считается новым live-маршрутом.
 
@@ -20,7 +20,7 @@ Audited означает воспроизводимость исполнения
 | single-m4 | 10 | 5 | 5 | 5 | 3 | 3 |
 | single-a289 | 10 | 10 | 10 | 10 | 10 | 10 |
 | single-m3 | 10 | 5 | 5 | 5 | 0 | 0 |
-| single-m11 | 10 | 9 | 9 | 9 | 0 | 0 |
+| single-m11 | 10 | 10 | 10 | 10 | 0 | 0 |
 | single-m12 | 10 | 5 | 5 | 4 | 5 | 5 |
 | single-ckad | 10 | 10 | 10 | 0 | 4 | 4 |
 | single-zsd | 10 | 5 | 5 | 3 | 2 | 2 |
@@ -40,13 +40,13 @@ Audited означает воспроизводимость исполнения
 |---|---:|
 | m4_crossing_profile_changes | 25 |
 | a289:unpriced | 59 |
-| zsd:unpriced | 66 |
+| zsd:unpriced | 67 |
 | m4:unpriced | 19 |
 | m11_partial_head_entry_boundary_unresolved | 7 |
 | arc_not_proven | 29 |
-| unknown-paid-road:unpriced | 51 |
+| unknown-paid-road:unpriced | 52 |
 | expected-road-not-proven | 54 |
-| m11-58-679:unpriced | 36 |
+| m11-58-679:unpriced | 37 |
 | m11_58_679_facility_sequence_incomplete | 15 |
 | engine_not_yet_composed | 5 |
 | m12_current_operator_pair_not_bound | 2 |
