@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T07:47:27.711Z",
-  "phase": "PART19_M4_POLICY_DONE",
+  "at": "2026-10-16T07:47:30.151Z",
+  "phase": "PART19_M4_POLICY_STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
   "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
@@ -8,70 +8,14 @@
   "total": 25,
   "next": "dnr-широкино-moscow-center",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "4f193f9089427eded9fcda0e88ab416cc5954f6e",
-  "caseId": "kherson-раденск-kazan-center",
-  "evaluation": {
-    "caseId": "kherson-раденск-kazan-center",
-    "result": "not_reproduced_current_engine",
-    "weekdayAmount": 3640,
-    "weekendAmount": 3970,
-    "m4WeekdayAmount": 1990,
-    "m4WeekendAmount": 2320,
-    "remainingMissing": [],
-    "outputs": [
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-47-26-977Z.json",
-        "sha256": "59200fc393b0bd277b2d15fe9c9862b1ebc68c1af9f5d74e24714d6d86bd87fd"
-      },
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-47-27-663Z.json",
-        "sha256": "03d6fb9d73cff526ccd081effa3392a13327e7784c56c96a7b69164ce1e55852"
-      }
-    ],
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/2026-10-15T12-01-39-614Z-capture.json.gz",
-    "captureSha256": "d6d6fb9c71a8000bbb9edaf5a069c95339828e0936695fccd2ddc6ff3a44b495",
-    "components": [
-      {
-        "departureAt": "2026-10-15T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 1990,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "a289",
-            "amount": 800,
-            "reason": "A-289 complete ordered three-frame traversal"
-          },
-          {
-            "id": "m12",
-            "amount": 850,
-            "reason": "matrix dated selected-route M12 directed endpoint pair"
-          }
-        ]
-      },
-      {
-        "departureAt": "2026-10-17T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 2320,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "a289",
-            "amount": 800,
-            "reason": "A-289 complete ordered three-frame traversal"
-          },
-          {
-            "id": "m12",
-            "amount": 850,
-            "reason": "matrix dated selected-route M12 directed endpoint pair"
-          }
-        ]
-      }
-    ]
-  },
-  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-27-711Z-part19_m4_policy_done.json"
+  "caseId": "dnr-широкино-moscow-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/2026-10-15T12-03-07-004Z-capture.json.gz",
+  "captureSha256": "a4bd488dd0d777371b49f1f41ef225b65af21d71b0b65b2c2fb83e8cdd549bda",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "1e252d802a8a40c459d6e330099256b739067c7b",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-47-30-151Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-30-151Z-part19_m4_policy_started.json"
 }
