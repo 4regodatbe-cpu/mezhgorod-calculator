@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:31:51.487Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:32:10.383Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 144,
+      "done": 145,
       "total": 155
     },
     {
@@ -18,15 +18,83 @@
   "next": {
     "part": 10,
     "spec": {
-      "caseId": "single-zsd-sest-to-pushkin",
+      "caseId": "triple-m11-ckad-m12-kazan-to-spb",
       "kind": "road",
-      "group": "single-zsd"
+      "group": "triple-m11-ckad-m12"
     }
   },
   "caseId": "single-zsd-sest-to-pushkin",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-zsd-sest-to-pushkin",
+    "startedAt": "2026-10-16T00:31:52.934Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-31-54-573Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/2026-10-16T00-31-54-560Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-31-54-919Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-31-55-247Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "zsd"
+      ],
+      "provenRoads": [
+        "zsd"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "zsd",
+        "amount": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:31:55.262Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-31-51-487Z-part10",
-  "parent": "dcd48ac412e3306695a535ad3f58762327f1b346",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-31-51-487Z-started.json"
+  "parent": "240409e46ec28e25d08bf8d8462dc85ed44de9d9",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-32-10-383Z-done.json"
 }

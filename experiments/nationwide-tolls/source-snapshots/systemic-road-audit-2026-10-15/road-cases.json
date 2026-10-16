@@ -2430,7 +2430,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-31-54-573Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/2026-10-16T00-31-54-560Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 64509,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-31-52-932Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-31-54-573Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/2026-10-16T00-31-54-560Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-31-54-919Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-31-55-247Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-zsd-peterhof-to-sest",
