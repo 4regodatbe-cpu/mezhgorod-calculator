@@ -1485,3 +1485,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T14:28:10.896352+03:00: ZSDcase26 pair-m11-ckad-spb-to-noginsk DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142810-zsd-case26.md. NEXT pair-m11-zsd-moscow-to-prim.
 
 2026-10-16T14:30:02.393729+03:00: ZSD26/76 individuallydurable; thisblock13additionalcases, sourcegateskept, no runtimechange/newfullgate. Overallplan90%18/20. Existingauto enabled/readbackconfirmed; promptonlyupdatedwithpercentinstruction/scheduleunchanged. Checkpoint ../../docs/checkpoints/2026-10-16-zsd-26case-handoff-and-auto-reporting.md. NEXTcase27pair-m11-zsd-moscow-to-prim.
+
+16.10.2026 16:54MSK scratch-pruning recovery DONE, exactclonehead/tree verified; no routeprogress lost. NEXT frozen dependencies/repository-owned ZSDsinglecaseutility, then case27. ../../docs/checkpoints/2026-10-16-1654-resume-after-scratch-pruning.md Plan90%.
