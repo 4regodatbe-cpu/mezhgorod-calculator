@@ -1477,3 +1477,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T14:26:54.350882+03:00: ZSDcase23 pair-m11-ckad-domodedovo-to-spb DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142654-zsd-case23.md. NEXT pair-m11-ckad-noginsk-to-spb.
 
 2026-10-16T14:27:12.414460+03:00: ZSDcase24 pair-m11-ckad-noginsk-to-spb DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'm11-15-58', 'zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142712-zsd-case24.md. NEXT pair-m11-ckad-spb-to-domodedovo.
+
+2026-10-16T14:27:33.618941+03:00: ZSDcase25 pair-m11-ckad-spb-to-domodedovo DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['unknown-paid-road', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142733-zsd-case25.md. NEXT pair-m11-ckad-spb-to-noginsk.
