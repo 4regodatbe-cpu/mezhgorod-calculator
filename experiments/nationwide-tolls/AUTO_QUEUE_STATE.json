@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:50:05.934Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:50:11.266Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,78 +23,10 @@
       "group": "single-ckad"
     }
   },
-  "caseId": "single-ckad-kazan-to-dmitrov",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-ckad-kazan-to-dmitrov",
-    "startedAt": "2026-10-16T01:49:34.073Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-kazan-to-dmitrov/live-2026-10-15T09-00-00-03-00-2026-10-16T01-49-38-594Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-kazan-to-dmitrov/2026-10-16T01-49-38-539Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-49-39-052Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-49-39-512Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "ckad"
-      ],
-      "provenRoads": [
-        "m12"
-      ],
-      "missingExpectedRoads": [
-        "ckad"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": 3513,
-      "weekdayAmount": 3513,
-      "weekendAmount": 3513,
-      "period": "все дни",
-      "segments": [
-        "М-12: ivanovskoe_p241 → vladimir · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 3513,
-      "weekdayAmount": 3513,
-      "weekendAmount": 3513,
-      "period": "все дни",
-      "segments": [
-        "М-12: ivanovskoe_p241 → vladimir · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m12",
-        "amount": 3513,
-        "reason": "matrix dated selected-route M12 directed endpoint pair"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:49:39.529Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-49-32-735Z-part16",
-  "parent": "fdfde2e9b39d980b9537a17cda510953dfb57a0a",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-50-05-934Z-done.json"
+  "caseId": "single-ckad-klin-to-ramenskoe",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-50-11-266Z-part16",
+  "parent": "45d0ce5b8323a094d178cf2df60ea04d7b76770b",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-50-11-266Z-started.json"
 }
