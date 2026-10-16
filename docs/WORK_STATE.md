@@ -20,6 +20,8 @@
 
 ## NEXT — один сохраняемый микрошаг
 
+Automatic policy queue **FULL GATE684/684 + quote/API/Next/TypeScript/static16/16PASS**, focused8/lint3/diffPASS. **Activation STARTED**, finalworkflowpush/observedjob still pending. [Recovery](checkpoints/2026-10-16-part19-policy-queue-build-pass.md). Do notclaimjobactiveuntilGitHubobservation.
+
 Automatic policy runner **focused8/8 + scopedlint3/diff PASS**, включая isolated percaseGit/push/failure integration. **Fullgate STARTED, пока не подтверждён**; workflow ещё не включён. [Checkpoint/recovery](checkpoints/2026-10-16-part19-policy-runner-integration-pass.md).
 
 Automatic policy runner implemented, **focused5/5/lint2/diff PASS**, workflow not enabled yet. Next: raw/report guards + isolated per-case persistence integration tests, then fullgate before workflow edit. [Checkpoint](checkpoints/2026-10-16-part19-policy-runner-focused.md).
