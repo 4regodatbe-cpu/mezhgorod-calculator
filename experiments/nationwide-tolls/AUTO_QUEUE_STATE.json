@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:58:08.890Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:58:14.261Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,78 +23,10 @@
       "group": "single-m12"
     }
   },
-  "caseId": "single-m12-arzamas-to-moscow",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-m12-arzamas-to-moscow",
-    "startedAt": "2026-10-16T01:57:38.209Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-57-41-630Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/2026-10-16T01-57-41-594Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-57-42-039Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-57-42-442Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m12"
-      ],
-      "provenRoads": [
-        "m12"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m12",
-        "m12: m12_current_operator_pair_not_bound"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m12",
-        "m12: m12_current_operator_pair_not_bound"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m12",
-        "amount": null,
-        "reason": "m12_current_operator_pair_not_bound"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:57:42.458Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-57-36-825Z-part17",
-  "parent": "e9c4b4735252d020ce9eb5eba8f7497dc4b7f283",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-58-08-890Z-done.json"
+  "caseId": "single-m12-cheboksary-to-moscow",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-58-14-261Z-part17",
+  "parent": "32f0ca8124b8be9492c70321ff1cfbdd07183034",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-58-14-261Z-started.json"
 }
