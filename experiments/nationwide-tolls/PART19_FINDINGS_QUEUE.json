@@ -1740,8 +1740,9 @@
     },
     {
       "code": "m4:unpriced",
-      "currentCasesChecked": 6,
+      "currentCasesChecked": 7,
       "currentEvaluations": [
+        {"caseId":"zaporizhzhia-гуляйполе-kazan-center","result":"current_unknown_needs_diagnosis","weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case7-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case7-replay.json"},
         {"caseId":"dnr-краматорск-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case6-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case6-replay.json"},
         {"caseId":"dnr-бахмут-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case5-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case5-replay.json"},
         {"caseId":"lnr-рубежное-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case4-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case4-replay.json"},
