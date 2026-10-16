@@ -27,7 +27,7 @@
     }
   ],
   "nextCase": "dnr-гранитное-saint-petersburg-center",
-  "nextAction": "Same ZSD Granitnoe→SPB: inspect exact out-of-zone1 paidways and payment gates before runtime changes",
+  "nextAction": "Same ZSD Granitnoe→SPB: bind northbound PVP5 and Ekateringofka exit to owner cash/card collection scope before finished dated traversal",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2396,6 +2396,8 @@
     "wholeResult": "unknown",
     "remainingMissing": [
       "zsd"
-    ]
+    ],
+    "scopeCheckpoint": "../../docs/checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md",
+    "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-granitnoe-exact-scope.json"
   }
 }
