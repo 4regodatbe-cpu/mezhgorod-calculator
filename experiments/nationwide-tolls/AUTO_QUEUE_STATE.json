@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:40:44.163Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:40:48.395Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,74 +23,10 @@
       "region": "dnr"
     }
   },
-  "caseId": "dnr-новоазовск-moscow-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "dnr-новоазовск-moscow-center",
-    "startedAt": "2026-10-16T00:40:17.370Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-40-26-659Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-moscow-center/2026-10-16T00-40-26-579Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-40-27-210Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-40-27-758Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 3810,
-      "weekdayAmount": 3810,
-      "weekendAmount": 4640,
-      "period": "понедельник–четверг",
-      "segments": [
-        "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 4640,
-      "weekdayAmount": 3810,
-      "weekendAmount": 4640,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 3810,
-        "reason": "matrix exact selected-route M4 vector"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:40:27.778Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-40-16-031Z-part11",
-  "parent": "0d2b6b00f1fe1176df7d93fa2b255474d107c484",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-40-44-163Z-done.json"
+  "caseId": "dnr-новоазовск-saint-petersburg-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-40-48-395Z-part11",
+  "parent": "7d292e4c53456ecd78f15afd7ffd90e986e49afd",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-40-48-395Z-started.json"
 }
