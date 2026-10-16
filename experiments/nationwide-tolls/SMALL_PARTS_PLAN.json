@@ -331,7 +331,7 @@
     {
       "id": 6,
       "title": "Этап 1: группа 4/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "zaporizhzhia-васильевка-kazan-center",
@@ -429,12 +429,12 @@
           "group": "pair-m11-ckad"
         }
       ],
-      "completedCases": 18
+      "completedCases": 19
     },
     {
       "id": 7,
       "title": "Этап 1: группа 5/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "pair-m11-ckad-spb-to-domodedovo",
