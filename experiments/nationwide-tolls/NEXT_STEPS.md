@@ -625,3 +625,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 2026-10-16T00:47:32.144Z: automatic queue STARTED; 155/155,16/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-47-32-144Z-started.json). kherson-новая-збурьевка-saint-petersburg-center
 
 2026-10-16T00:48:17.467Z: automatic queue DONE; 155/155,17/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-48-17-467Z-done.json). kherson-новая-збурьевка-saint-petersburg-center
+
+2026-10-16T00:48:21.967Z: automatic queue STARTED; 155/155,17/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-48-21-967Z-started.json). kherson-скадовск-kazan-center
