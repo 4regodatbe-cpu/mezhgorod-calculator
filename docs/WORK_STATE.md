@@ -35,3 +35,5 @@
 16.10.2026 current-chat resume: rules/20parts reread, exact remote tree matched in own checkout. Plan90%. NEXT fullgate then case27. docs/checkpoints/2026-10-16-continue-current-chat.md
 
 16.10.2026 fullgate DONE exit0:695/695, quote/API, webpack/TS/static16/16 PASS. Raw log preserved. NEXT case27 --next. Plan90%. docs/checkpoints/2026-10-16-current-chat-fullgate-pass.md
+
+16.10.2026 runnerpreflight FAILED before replay: untracked dependency symlink, localexclude repaired. No caseprogress. NEXT retrycase27. Plan90%. docs/checkpoints/2026-10-16-zsd-preflight-symlink-recovery.md
