@@ -18,6 +18,8 @@
 
 ## NEXT STARTED
 
+Среда после очистки восстановлена: `pnpm install --frozen-lockfile` exit0; [checkpoint](checkpoints/2026-10-16-1843-dependencies-restored.md). Тарифное покрытие не менялось.
+
 **ZSD nextcase max-chain-m12-ckad-m11-zsd-sest-to-vladimir; --next; savedcapture twoofflineprofiles**
 
 ZSD review **54/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T14-56-23-107Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
