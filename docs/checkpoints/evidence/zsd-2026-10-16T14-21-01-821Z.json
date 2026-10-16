@@ -1,0 +1,345 @@
+{
+  "parent": "f1fac3b64b0658a18db96d31010ba92e3e4567e3",
+  "caseId": "pair-m11-zsd-moscow-to-sest",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-sest/2026-10-16T00-06-02-495Z-capture.json.gz",
+  "captureSha256": "3373138f25f8eba9eeae0544f0c18cac148b5073af4c4fa28481398508d000a9",
+  "provider": "Valhalla",
+  "execution": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-sest/2026-10-16T00-06-02-495Z-capture.json.gz",
+        "2026-10-15T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"pair-m11-zsd-moscow-to-sest\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":746540,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":1130,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-sest/2026-10-16T00-06-02-495Z-capture.json.gz",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"pair-m11-zsd-moscow-to-sest\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":746540,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":1650,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": {
+    "ways": [
+      "1122966004",
+      "1122966005",
+      "1122966006",
+      "119176946",
+      "119176950",
+      "123232666",
+      "123232668",
+      "123303017",
+      "123709500",
+      "123709505",
+      "1257246766",
+      "1257246767",
+      "1257246771",
+      "1257246772",
+      "130062822",
+      "130068396",
+      "139658547",
+      "143207558",
+      "165031083",
+      "165035756",
+      "172999959",
+      "183912267",
+      "183912268",
+      "185060386",
+      "222395955",
+      "222395960",
+      "223744446",
+      "224933656",
+      "224933658",
+      "224933660",
+      "224933662",
+      "224933664",
+      "224933668",
+      "224933669",
+      "224933672",
+      "233006896",
+      "28934684",
+      "31369306",
+      "350477988",
+      "373871040",
+      "381576631",
+      "381576632",
+      "396293737",
+      "397223749",
+      "397223751",
+      "397223752",
+      "400111351",
+      "400111354",
+      "458501097",
+      "458501101",
+      "461676671",
+      "465117517",
+      "493643653",
+      "589047639",
+      "589047642",
+      "589047646",
+      "589047650",
+      "688149995",
+      "721628540",
+      "721628541",
+      "721628543",
+      "721628544",
+      "721839717",
+      "736881673",
+      "776695119",
+      "776695120",
+      "776695121",
+      "776695122",
+      "776695123",
+      "80056716",
+      "80056742",
+      "80056745",
+      "85763340",
+      "86983548",
+      "87072167",
+      "944399839"
+    ],
+    "gates": [
+      "933974870",
+      "1766158812"
+    ]
+  },
+  "sameReviewedScopeCase": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+  "status": "source_gated_same_reviewed_zsd_scope",
+  "missing": [
+    "zsd"
+  ],
+  "uniqueZsdWays": [
+    "1122966004",
+    "1122966005",
+    "1122966006",
+    "119176946",
+    "119176950",
+    "123232666",
+    "123232668",
+    "123303017",
+    "123709500",
+    "123709505",
+    "1257246766",
+    "1257246767",
+    "1257246771",
+    "1257246772",
+    "130062822",
+    "130068396",
+    "139658547",
+    "143207558",
+    "165031083",
+    "165035756",
+    "172999959",
+    "183912267",
+    "183912268",
+    "185060386",
+    "222395955",
+    "222395960",
+    "223744446",
+    "224933656",
+    "224933658",
+    "224933660",
+    "224933662",
+    "224933664",
+    "224933668",
+    "224933669",
+    "224933672",
+    "233006896",
+    "28934684",
+    "31369306",
+    "350477988",
+    "373871040",
+    "381576631",
+    "381576632",
+    "396293737",
+    "397223749",
+    "397223751",
+    "397223752",
+    "400111351",
+    "400111354",
+    "458501097",
+    "458501101",
+    "461676671",
+    "465117517",
+    "493643653",
+    "589047639",
+    "589047642",
+    "589047646",
+    "589047650",
+    "688149995",
+    "721628540",
+    "721628541",
+    "721628543",
+    "721628544",
+    "721839717",
+    "736881673",
+    "776695119",
+    "776695120",
+    "776695121",
+    "776695122",
+    "776695123",
+    "80056716",
+    "80056742",
+    "80056745",
+    "85763340",
+    "86983548",
+    "87072167",
+    "944399839"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 4,
+      "edgeToll": true,
+      "beginShapeIndex": 14,
+      "endShapeIndex": 15
+    },
+    {
+      "osmNodeId": "1766158812",
+      "wayId": "458501101",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 5,
+      "edgeToll": true,
+      "beginShapeIndex": 331,
+      "endShapeIndex": 332
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T14-21-01-239Z.json",
+      "sha256": "30abc66256dba3673ac579b4f810cd092f032fd36cc7fec5c1e9476e8a7af698",
+      "caseId": "pair-m11-zsd-moscow-to-sest",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "3373138f25f8eba9eeae0544f0c18cac148b5073af4c4fa28481398508d000a9",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T14-21-01-560Z.json",
+      "sha256": "0a5082ad443d6cdc84bf48243e6e247c2309e7664c5145a9c2fc9c81661a3585",
+      "caseId": "pair-m11-zsd-moscow-to-sest",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "3373138f25f8eba9eeae0544f0c18cac148b5073af4c4fa28481398508d000a9",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    }
+  ],
+  "note": "Case28: both profiles exit0/complete/SHA/departure verified. Status source_gated_same_reviewed_zsd_scope; whole-route missing zsd. Scope equivalence reuses diagnosis only, never a fare.",
+  "at": "2026-10-16T14:21:01.822Z",
+  "checkpoint": "docs/checkpoints/zsd-2026-10-16T14-21-01-821Z.md",
+  "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-21-01-821Z.json",
+  "overallPlanPercent": 90
+}
