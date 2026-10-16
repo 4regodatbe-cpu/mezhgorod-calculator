@@ -14,13 +14,13 @@ Parts1–18:155/155+154/154, frozenREPORT340/340.19A/B A28957helper-only+2wholec
 
 [22-casequeue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), latestper-caseevidence/checkpoints inqueue/log. Allcases10–22 twoofflineprofiles separatelysaved/readback; raw/live/olderreplays/REPORTuntouched. Fix4811a106 northboundcompound416+460relocated36keys/no newfares. Prior full687/687+quote/API/Next/TS/static16/16/focused26PASS remainshistorical; no runtimecodechange/newgate thisturn. OrdinaryCJS-lint failure andexplicitexception documented, notsilentlypassed.
 
-## NEXT STARTED — ZSD case3 Lisichansk→SPB
+## NEXT STARTED — ZSD case4
 
-ZSD case1 Granitnoe→SPB DONE2/2offline: M4/M11components priced; wholequote unknown onlyZSD. Actualnorthbound PVP5 node933974870 and Ekateringofka exit established,26ZSDways/12outside reviewedzone1; not a simplealiasgap. Cash/card per-zone300 documented but fulltrip collectionscope unbound; case1source-gated, no guessed600. [Replay](checkpoints/2026-10-16-1403-zsd-granitnoe-spb-replay.md) · [Physicalscope](checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md) · [Sourcereview](checkpoints/2026-10-16-1410-zsd-primary-rule-scope-hold.md).
+Overall plan progress **90% (18/20 completed parts)**. This is plan progress, not tariff coverage/release readiness. Part19 inprogress/20planned. User requests this metric in every subsequent report. Formula in SMALL_PARTS_PLAN.json.progressReporting.
 
-ZSD case2 Bryanka DONE2/2 complete, same exact26ways/PVP5; sourcegate reused. [Case2](checkpoints/2026-10-16-1412-zsd-bryanka-spb-replay.md).
+ZSD current-engine savedcapture reviews **3/76**; latest lnr-лисичанск-saint-petersburg-center: twoofflineprofiles complete, status `source_gated_same_exact_way_set`, missing ['zsd']. [Latest checkpoint](checkpoints/2026-10-16-140650-zsd-case3.md) and full per-case queue/evidence preserve exact results. Firstcase PVP5/Ekateringofka sourcegate remains unresolved; no guessed600/zone1subtotal. SixshortM4 andeight545 gates remain as previously documented.
 
-Next ONLY lnr-лисичанск-saint-petersburg-center: exactcapture fromcorpus, offline15/17Oct09:00MSK, comparephysicalZSDscope; durablecheckpointbeforenextcase. No rerun22M4/25policy/309live. SixshortM4unknowns retained [proofreview](checkpoints/2026-10-16-1358-short-m4-proof-review.md). Frozen dependencies restored; no runtimechange/newfullgate; prior687historical. Currentcheckout calculator-resume, local/remoteSHA differ with connector saves but trees verified aftereach.
+Next ONLY lnr-рубежное-saint-petersburg-center; existingcapture, twoofflineprofiles, exactscope comparison, durablecheckpoint before nextcase. No rerun completedM4/policy/309live. Frozen dependencies restored; no newruntimecode/fullgate. Historical687 not rerun. Currentcheckout calculator-resume; connector/local commits can differ, exacttree readback required.
 
 Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. Ifcontextends, startfromthisspecificNEXT, notoldrecovery/309live/25policyqueue. One writer; active/queuedjob→no writes, TIME_LIMITresumable. Unknown≠0,subtotal≠total, wholetripdeparturepricing; cross-roadvectorsdeferred. No main/merge/Production/Android/messages. Autocontinuation remainsenabled untilall20done.
 

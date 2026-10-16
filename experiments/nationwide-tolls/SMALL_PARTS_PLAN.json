@@ -1695,7 +1695,7 @@
         "a289-full-interior-vector",
         "a289-slavyansk-directed-connector"
       ],
-      "nextSubstep": "19D22/22reviewDONEwith14sourcegates; newprimaryopenrule(page4) for6shortM4cases. NEXT positiveexact2wayscope/noPVPproof + APIzero/latefallback guardreview; codeonlyifproofsufficient, focused/fullgate+6durablecases; otherwiseZSDfirst; prior687historical",
+      "nextSubstep": "ZSD next distinct case lnr-рубежное-saint-petersburg-center: existing capture twoofflineprofiles; compare exact selected scope",
       "findingsQueue": "PART19_FINDINGS_QUEUE.json"
     },
     {
@@ -1703,5 +1703,12 @@
       "title": "Итоговая проверка и передача состояния",
       "status": "planned"
     }
-  ]
+  ],
+  "progressReporting": {
+    "completedParts": 18,
+    "totalParts": 20,
+    "method": "100*completedParts/totalParts; unfinished parts earn no partial credit",
+    "meaning": "Completion of the agreed 20-part work plan; NOT percent verified tariff coverage or release readiness",
+    "percent": 90.0
+  }
 }

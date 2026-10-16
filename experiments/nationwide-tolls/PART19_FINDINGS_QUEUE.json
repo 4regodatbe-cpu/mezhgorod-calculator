@@ -26,8 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "lnr-лисичанск-saint-petersburg-center",
-  "nextAction": "ZSD case3 Lisichansk→SPB twoofflineprofiles and compare exactscope",
+  "nextCase": "lnr-рубежное-saint-petersburg-center",
+  "nextAction": "ZSD next distinct case lnr-рубежное-saint-petersburg-center: existing capture twoofflineprofiles; compare exact selected scope",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2412,7 +2412,18 @@
         "status": "source_gated_same_exact_way_set",
         "checkpoint": "../../docs/checkpoints/2026-10-16-1412-zsd-bryanka-spb-replay.md",
         "evidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-bryanka-spb.json"
+      },
+      {
+        "caseId": "lnr-лисичанск-saint-petersburg-center",
+        "status": "source_gated_same_exact_way_set",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-140650-zsd-case3.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-140650-zsd-case3.json",
+        "missing": [
+          "zsd"
+        ]
       }
-    ]
+    ],
+    "checked": 3,
+    "total": 76
   }
 }
