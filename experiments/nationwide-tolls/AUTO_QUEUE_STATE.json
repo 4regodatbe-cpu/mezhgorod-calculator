@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:19:51.451Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:20:10.356Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 114,
+      "done": 115,
       "total": 155
     },
     {
@@ -18,15 +18,71 @@
   "next": {
     "part": 8,
     "spec": {
-      "caseId": "single-khabarovsk-vyazemsky-to-smidovich",
+      "caseId": "single-m11-moscow-to-spb",
       "kind": "road",
-      "group": "single-khabarovsk"
+      "group": "single-m11"
     }
   },
   "caseId": "single-khabarovsk-vyazemsky-to-smidovich",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-khabarovsk-vyazemsky-to-smidovich",
+    "startedAt": "2026-10-16T00:19:52.916Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-smidovich/live-2026-10-15T09-00-00-03-00-2026-10-16T00-19-55-225Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-smidovich/2026-10-16T00-19-55-206Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-19-55-625Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-19-55-998Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "khabarovsk"
+      ],
+      "provenRoads": [],
+      "missingExpectedRoads": [
+        "khabarovsk"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "weekend": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "пятница–воскресенье",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "components": [],
+    "finishedAt": "2026-10-16T00:19:56.015Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-19-51-451Z-part8",
-  "parent": "cae2923aa3e6ae3c964e0800d9c715a98adf071f",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-19-51-451Z-started.json"
+  "parent": "faf599342cce4cad775474a41c4d7434875cce51",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-20-10-356Z-done.json"
 }
