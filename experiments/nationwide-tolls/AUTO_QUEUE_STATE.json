@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:55:40.161Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:55:45.631Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,92 +23,10 @@
       "group": "single-m11"
     }
   },
-  "caseId": "single-m11-novgorod-to-moscow",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-m11-novgorod-to-moscow",
-    "startedAt": "2026-10-16T01:55:10.082Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-55-12-896Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/2026-10-16T01-55-12-861Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-55-13-297Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-55-13-690Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m11"
-      ],
-      "provenRoads": [
-        "m11"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
-        "m11-15-58: m11_58_679_facility_sequence_incomplete",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
-        "m11-15-58: m11_58_679_facility_sequence_incomplete",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m11-15-58",
-        "amount": null,
-        "reason": "m11_58_679_facility_sequence_incomplete"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": null,
-        "reason": "only_one_verified_boundary_crossing"
-      },
-      {
-        "id": "unknown-paid-road",
-        "amount": null,
-        "reason": "unmapped_selected_route_paid_booth"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:55:13.708Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-55-08-565Z-part17",
-  "parent": "6c1d386dec0e9733348ba855f0c36a35cc5eb419",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-55-40-161Z-done.json"
+  "caseId": "single-m11-spb-to-tver",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-55-45-631Z-part17",
+  "parent": "704f2817d616344b3304410527691245c09fda19",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-55-45-631Z-started.json"
 }
