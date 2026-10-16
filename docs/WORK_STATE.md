@@ -2,7 +2,7 @@
 
 2026-10-16T02:20:21.259Z. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. Фаза **AUDIT_QUEUE_DONE**. Stage1 **155/155**; Stage2 **154/154**.
 
-Следующий подшаг: **часть19 — разбор находок и исправления по одной причине**.
+Часть19 **IN PROGRESS**: [checkpoint](checkpoints/2026-10-16-part19-started.md). Первый подшаг — A289 full three-frame traversal на длинных маршрутах; ещё не исправлен. Workflow завершён SUCCESS, другого writer нет. Часть20 не начата.
 
 [Состояние и точные входы](../experiments/nationwide-tolls/AUTO_QUEUE_STATE.json), [checkpoint](checkpoints/auto-2026-10-16T02-20-21-259Z-audit_queue_done.json), [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
 
