@@ -12,6 +12,8 @@
 
 ## NEXT STARTED — 19D
 
+**Первый case уже воспроизведён:** Гранитное→Казань complete2/2, но currenttotalunknown/m4, candidateCount0/confirmedPvps=[] («нетв1,5кмзонахизвестныхПВП»). Это не доказательствобесплатности/ошибкицены. Следующиймикрошагтолькоэтотcase: actualselectedraw paid-edge/booth/wayIDs/shape scope противизвестныхPVP, затемсохранитьдиагнозпередисправлением. [Checkpoint/SHA](checkpoints/2026-10-16-part19d-granitnoe-kazan-unknown-reproduced.md). Новыхцен/правоккодаещёнет.
+
 **m4:unpriced,22случая**, не те же25policycases. Первый только dnr-гранитное-kazan-center: existing corpus.auditEvidence.capture, currentengine offline15/17окт09:00МСК, проверить actualM4reason/vector/trace. Сохранить case/checkpoint/logs/state/queue и commit/push/head/tree до следующего независимого шага. Затем исправлять одну установленную причину с focused/fullgate. Не повторять309livequeue и не подставлятьцены.
 Часть19 IN PROGRESS,20 ещё не начата. Другиенахождения (ЗСД/М11/М12/прочие) ещёнеразобраны.
 

@@ -1733,6 +1733,18 @@
     },
     {
       "code": "m4:unpriced",
+      "currentCasesChecked": 1,
+      "currentEvaluations": [
+        {
+          "caseId": "dnr-гранитное-kazan-center",
+          "result": "current_unknown_reproduced_needs_selected_paid_scope_diagnosis",
+          "weekdayAmount": null,
+          "weekendAmount": null,
+          "m4CandidateCount": 0,
+          "confirmedPvps": [],
+          "checkpoint": "../../docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-unknown-reproduced.md"
+        }
+      ],
       "baselineCaseCount": 22,
       "caseIds": [
         "dnr-гранитное-kazan-center",
