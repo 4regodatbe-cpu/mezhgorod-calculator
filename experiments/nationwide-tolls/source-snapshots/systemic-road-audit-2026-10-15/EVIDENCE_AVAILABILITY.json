@@ -21,13 +21,13 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "historicallyAudited": 34,
-      "rawAvailable": 34,
-      "fourArtifactsAvailable": 34
+      "historicallyAudited": 35,
+      "rawAvailable": 35,
+      "fourArtifactsAvailable": 35
     }
   },
-  "rawCaptureCount": 247,
-  "rawCaptureCaseCount": 244,
+  "rawCaptureCount": 248,
+  "rawCaptureCaseCount": 245,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -4978,10 +4978,49 @@
     {
       "caseId": "zaporizhzhia-розовка-moscow-center",
       "region": "zaporizhzhia",
-      "historicalStatus": "planned",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
-      "artifacts": {}
+      "historicalStatus": "audited",
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-16-46-221Z.json",
+          "exists": true,
+          "bytes": 5495,
+          "sha256": "d386032b16151015ab1a641fa09da2f70306bdb021c37c0325a7a0375c730c3f",
+          "gitBlobSha": "944b5c0ed4da4cb4d9b25bf3dd8e00f3a8b6b689",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/2026-10-16T01-16-46-126Z-capture.json.gz",
+          "exists": true,
+          "bytes": 613569,
+          "sha256": "432820d7ec11ad1b187d9d5d31378ca9fbbf6d23e9e319f8716ec7a075f039c6",
+          "gitBlobSha": "366098606f4c165bc6790cf75de3621bf1ef2ad5",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 14
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-16-46-808Z.json",
+          "exists": true,
+          "bytes": 5573,
+          "sha256": "d7b6f62f3b1a015746a318b2c2b64d83842a53cc359bc42b064b346f95daf8e3",
+          "gitBlobSha": "cc4e87b13ea8e36c39cadb66b3bc1c14ecc10541",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-16-47-387Z.json",
+          "exists": true,
+          "bytes": 5573,
+          "sha256": "83d60dcb2513b40b24f755436552202757d5e5e48c91d71f1217a656e3d14e5a",
+          "gitBlobSha": "9977cfccd8b0ead5b8ff972942007b30ec5a5b33",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     },
     {
       "caseId": "zaporizhzhia-розовка-saint-petersburg-center",
@@ -18695,6 +18734,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-16-35-119Z.json",
+      "caseId": "zaporizhzhia-розовка-moscow-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-16-46-221Z.json",
+          "exists": true,
+          "bytes": 5495,
+          "sha256": "d386032b16151015ab1a641fa09da2f70306bdb021c37c0325a7a0375c730c3f",
+          "gitBlobSha": "944b5c0ed4da4cb4d9b25bf3dd8e00f3a8b6b689",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/2026-10-16T01-16-46-126Z-capture.json.gz",
+          "exists": true,
+          "bytes": 613569,
+          "sha256": "432820d7ec11ad1b187d9d5d31378ca9fbbf6d23e9e319f8716ec7a075f039c6",
+          "gitBlobSha": "366098606f4c165bc6790cf75de3621bf1ef2ad5",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 14
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-16-46-808Z.json",
+          "exists": true,
+          "bytes": 5573,
+          "sha256": "d7b6f62f3b1a015746a318b2c2b64d83842a53cc359bc42b064b346f95daf8e3",
+          "gitBlobSha": "cc4e87b13ea8e36c39cadb66b3bc1c14ecc10541",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-16-47-387Z.json",
+          "exists": true,
+          "bytes": 5573,
+          "sha256": "83d60dcb2513b40b24f755436552202757d5e5e48c91d71f1217a656e3d14e5a",
+          "gitBlobSha": "9977cfccd8b0ead5b8ff972942007b30ec5a5b33",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -21414,6 +21498,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 9
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/2026-10-16T01-16-46-126Z-capture.json.gz",
+      "exists": true,
+      "bytes": 613569,
+      "sha256": "432820d7ec11ad1b187d9d5d31378ca9fbbf6d23e9e319f8716ec7a075f039c6",
+      "gitBlobSha": "366098606f4c165bc6790cf75de3621bf1ef2ad5",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 14
     }
   ]
 }
