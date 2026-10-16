@@ -777,3 +777,5 @@ BLOCKED: автоматическая проверка отклонила обе
 2026-10-16T00:57:17.909Z: automatic queue STARTED; 155/155,30/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-57-17-909Z-started.json). kherson-херсон-saint-petersburg-center
 
 2026-10-16T00:58:11.291Z: automatic queue DONE; 155/155,31/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-11-291Z-done.json). kherson-херсон-saint-petersburg-center
+
+2026-10-16T00:58:16.380Z: automatic queue STARTED; 155/155,31/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-16-380Z-started.json). lnr-ровеньки-kazan-center
