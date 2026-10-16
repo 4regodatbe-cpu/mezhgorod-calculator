@@ -2768,7 +2768,22 @@
         "a289"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T00-10-53-989Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/2026-10-16T00-10-53-930Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1026560,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-10-48-966Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T00-10-53-989Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/2026-10-16T00-10-53-930Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-10-54-469Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-10-54-934Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "pair-m4-a289-rostov-to-kerch",
