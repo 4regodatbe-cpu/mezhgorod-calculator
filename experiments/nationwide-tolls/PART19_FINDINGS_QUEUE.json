@@ -26,7 +26,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "single-m4-voronezh-to-rostov",
+  "nextCase": "dnr-гранитное-saint-petersburg-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1740,8 +1740,9 @@
     },
     {
       "code": "m4:unpriced",
-      "currentCasesChecked": 21,
+      "currentCasesChecked": 22,
       "currentEvaluations": [
+        {"caseId":"single-m4-voronezh-to-rostov","result":"source_gated_physical545_scope_unresolved","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case22.json"},
         {"caseId":"single-m4-voronezh-to-moscow","result":"whole_estimate_present_current_engine","weekdayAmount":1830,"weekendAmount":2300,"m4WeekdayAmount":1830,"m4WeekendAmount":2300,"remainingMissing":[],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case21.json"},
         {"caseId":"single-m4-rostov-to-voronezh","result":"source_gated_physical545_scope_unresolved","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case20.json"},
         {"caseId":"pair-m4-a289-voronezh-to-anapa","result":"source_gated_physical545_scope_unresolved","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case19.json"},
