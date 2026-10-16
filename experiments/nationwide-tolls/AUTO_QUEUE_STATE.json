@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:31:25.258Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:31:29.017Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,66 +23,10 @@
       "group": "single-zsd"
     }
   },
-  "caseId": "single-zsd-prim-to-blag",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-zsd-prim-to-blag",
-    "startedAt": "2026-10-16T00:31:08.007Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-blag/live-2026-10-15T09-00-00-03-00-2026-10-16T00-31-09-455Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-blag/2026-10-16T00-31-09-448Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-31-09-794Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-31-10-124Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "zsd"
-      ],
-      "provenRoads": [],
-      "missingExpectedRoads": [
-        "zsd"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T00:31:10.137Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-31-06-657Z-part10",
-  "parent": "b1423d2af11913dd4fc81a3ff10a0093f82f3a76",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-31-25-258Z-done.json"
+  "caseId": "single-zsd-pushkin-to-sest",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-31-29-016Z-part10",
+  "parent": "1e42e59758f322598b3dee1f659a694ee41e0c0e",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-31-29-017Z-started.json"
 }
