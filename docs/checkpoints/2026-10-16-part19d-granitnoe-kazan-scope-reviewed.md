@@ -1,0 +1,15 @@
+# Part19D Granitnoe→Kazan selected scope reviewed — DONE / source-gated unknown retained
+
+16.10.2026, parentb5561005f5ec6ae5200958ae86a06c71df20b6d1/treeb921e18f6d4b03f37dcdc62b2256974a8d289845, workingbranch/PR14draft. GitHub run38869309675/job116869376746 previously verifiedcompleted/success; nootherwriter. [Exact reproducible inputs/measurements/URLs/SHA](evidence/2026-10-16-granitnoe-kazan-m4-scope.json).
+
+SelectedValhalla raw trace call4, requestkey7c8af973..., HTTP200/236edges: paidway1182567076 edge138, shape737–739; paidway31984600 edge139, shape739–746; both endnode street_intersection, nottollbooth. Filtered response has NOshape. Its indices exceed request320points and must never be applied to requestpoints/selectedfullshape. Initial schema-inspection command mistakenly spread response.text, producing truncated oversized output; corrected all following inspectors to explicitfield whitelist. No raw rewritten.
+
+Downloaded ONLY two primaryOSM fullways from api.openstreetmap.org (publicobjectIDs, no itinerary sent), retained originalJSON/attribution. Versions2/68 lastmodified2026-02-04, both toll=yes/oneway=yes. Exact directed endpointgeometry matches selectedroute vertices1877→1879→1886 to<=0.046m rounding. Paidway lengths approximately0.246+1.720=1.966km (local projection). Both are inside one selected25.395km M4 maneuver. Thus not alternativeprovider/parallelroad evidence.
+
+Complete selectedvalidation has0tollbooths; productioncandidateCount0. Nearest savedPVP1046 approximately8.638km fromnearestselectedvertex, faroutside1.5kmcandidatezone;1046anchor47.345636/39.9501803. This is NOT a missed radius-threshold crossing. Paid-tagged partial M4 use with no known paymentpoint is established, but independent exactcollectionapplicability/freeproof is NOT.
+
+Bounded primary-source research: official indexed subscription page associates1024–1091km withPVP1046, but directopen https://avtodor-tr.ru/transponder/abonementy/ returned403. No attempt to bypass403 or login, no relianceon unrelated/nonprimarysearchhits. Searchsnippet is NOT accepted as proof that this selectedsubsegment costs0 or a substitute tariff. Keep fulltotalunknown/m4. No runtimefare change/guessedprice/freeclaim.
+
+Diagnosis is source-gated rather than an established algorithmbug: place thiscase on hold for independent operatorcollectionscope proof; it must not stall other21cases. Queueevaluation retains originalreplaycheckpoint, addsdiagnostic/evidence refs and thisreason. No fullgate rerun: docs/evidence-only, previous684/CIbuildPASS remainshistory; currentJSON/SHA/links/diff checked.
+
+NEXT STARTED: restore frozen dependencies in current freshcheckout (pnpm install --frozen-lockfile), then ONLY lnr-лисичанск-moscow-center (m4:unpriced2/22), savedcapture fromcorpus, two offlineprofiles15/17Oct09:00MSK; inspect actualcurrentreason and preserveunknown. Separatecasecheckpoint/commit/head/tree beforefix or furthercase. This onecase-source403 is not fulltaskblocker; automaticcontinuation remainsenabled, part19ongoing/20planned. No main/merge/Production/Android/messages.

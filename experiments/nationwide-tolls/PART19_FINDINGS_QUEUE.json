@@ -19,7 +19,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "dnr-гранитное-kazan-center",
+  "nextCase": "lnr-лисичанск-moscow-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1738,6 +1738,10 @@
         {
           "caseId": "dnr-гранитное-kazan-center",
           "result": "current_unknown_reproduced_needs_selected_paid_scope_diagnosis",
+          "diagnosisStatus": "source_gated_unknown_retained",
+          "diagnosis": "Two selected toll-tagged M4 ways cover about1.966km, complete trace has0booths, nearest knownPVP1046 about8.638km away; exact independent collection applicability not established. Operatorpage403; no bypass/fare/free inference.",
+          "diagnosticCheckpoint": "../../docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-scope-reviewed.md",
+          "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-granitnoe-kazan-m4-scope.json",
           "weekdayAmount": null,
           "weekendAmount": null,
           "m4CandidateCount": 0,

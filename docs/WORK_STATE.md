@@ -1,29 +1,28 @@
-# Калькулятор «Из А в Б»: часть19, исправления
+# Калькулятор «Из А в Б»: часть19
 
-16.10.2026. Только fix/v3-missing-route-prices-2026-10-15, PR14 draft. Verified remote parent b90d630fb57c93e043aa754546773364b05bc191/tree1f5465e3. **Workflow38869309675/job116869376746 SUCCESS, активного writer нет.**
+16.10.2026. Только fix/v3-missing-route-prices-2026-10-15, PR14draft. Verified parentb5561005f5ec6ae5200958ae86a06c71df20b6d1/treeb921e18f. Latest workflow38869309675/job116869376746 SUCCESS; активногоwriter нет.
 
 ## DONE
 
-Части1–18:155/155+154/154, frozenREPORT340/340. 19A/19B A289 binding fixes сохранены (57helper-only+2whole-routecases, не59полныхтарифов).
-**19C M4profile policy25/25 DONE**, автоматический переход между всеми оставшимися20cases доказан фактическими STARTED/DONE commits и exacthead/tree readback. Root дополнительно перепроверил20rawSHA+40outputSHA, integrity/basis/M4. Полныеofflinequotes20/25;5СПб остаютсяunknownЗСД. Не25подтверждённыхцен.
-[Итог/источники/NEXT](checkpoints/2026-10-16-part19-policy-25-done-m4-unpriced-started.md), [queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), [run](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38869309675).
+Части1–18:155/155+154/154, frozenREPORT340/340. 19A/19B A289 bindings saved,57helper-only+2whole-routecases (не59полныхтарифов).
+19C policy25/25DONE, автоматический переход и отдельные STARTED/DONE/head/tree доказаны.20wholeofflinequotes/5unknownZSD, не25подтверждённыхцен.
+Последний fullgate684/684+quote/API/Next/TS/static16/16, focused8/lint3, GitHubbuildSUCCESS — предыдущаявалидация, кодрасчётаздесьне менялся.
+[Policyитог](checkpoints/2026-10-16-part19-policy-25-done-m4-unpriced-started.md).
 
-Последний fullgate **684/684 + quote/API/Next/TypeScript/static16/16 PASS**, focused8/lint3/diffPASS; GitHubbuild такжеSUCCESS. Runtimefarelogic после79df66d8 не менялся. [Gate](checkpoints/2026-10-16-part19-policy-queue-build-pass.md).
+## 19D — текущий разбор m4:unpriced22cases
 
-## NEXT STARTED — 19D
+**Case1 Гранитное→Казань рассмотрен, unknown сохранён, source-gated hold.** Selected2toll-taggedways1182567076/31984600 покрывают≈1.966км и совпадаютсвыбраннойValhallaгеометрией;0booths,nearestsavedPVP1046≈8.638км. Это не пропущенныйрадиусомПВП. Но независимое exactcollection/freeproof не установлено, officialpage403 не обходили. Не назначатьцену/0/FREE. [Диагноз/NEXT](checkpoints/2026-10-16-part19d-granitnoe-kazan-scope-reviewed.md), [evidence](checkpoints/evidence/2026-10-16-granitnoe-kazan-m4-scope.json).
+Trace response shape отсутствует: индексы737–746 не применятькrequest320points/полнойгеометрии.
+Этотточечныйsourcegap не блокируетдругие21case.
 
-Fresh session checkout restored from verifiedremote8c3d73ee/tree189a4708, PR14draft/job38869309675SUCCESS. Nootherwriter. [Recovery](checkpoints/2026-10-16-1119-fresh-checkout-recovery.md). Continue samecase two selectedValhalla paidways only; no newtariff/freeclaim.
+## NEXT STARTED — автоматически, без«дальше»
 
-**Точный diagnosticNEXT:** selectedГранитное→Казань raw содержиттолько2paidM4ways **1182567076/31984600**,0tollbooths; matchedCoreProducts=m4 изpaidnames, но0knownPVP. [Evidence/next](checkpoints/2026-10-16-part19d-granitnoe-kazan-paid-ways.md). Извлечь толькоэти2traceedges/shapeокно и ихtollscope, сравнитьсsavedfacilitymap/primaryOSMtagsприпотребности. Пока это legitimateunknown, не доказанныйbug/freeпроезд; sourceнеисправлятьбезследующегодоказательства.
+1. Восстановить frozen dependencies текущегоfreshcheckout (pnpm install --frozen-lockfile).
+2. Только **lnr-лисичанск-moscow-center**, m4:unpriced2/22: existing corpus.auditEvidence.capture, currentengineoffline15/17окт09:00МСК; actualreason/vector/trace, unknown сохранять.
+3. Checkpoint+appendlogs/queue/state, commit/GitHub/head/exacttree **до** исправления/другогоcase. Затем следующиймикрошагавтоматически.
 
-**Первый case уже воспроизведён:** Гранитное→Казань complete2/2, но currenttotalunknown/m4, candidateCount0/confirmedPvps=[] («нетв1,5кмзонахизвестныхПВП»). Это не доказательствобесплатности/ошибкицены. Следующиймикрошагтолькоэтотcase: actualselectedraw paid-edge/booth/wayIDs/shape scope противизвестныхPVP, затемсохранитьдиагнозпередисправлением. [Checkpoint/SHA](checkpoints/2026-10-16-part19d-granitnoe-kazan-unknown-reproduced.md). Новыхцен/правоккодаещёнет.
+Часть19 IN PROGRESS,20 ещёне начата; прочиеfindings неполностьюразобраны. [Очередь](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
+Одинwriter; приactive/queuedGitHubjobнеписатьвветку, TIME_LIMIT возобновляем. Не перезапускатьзавершённые309live/25policycases.
 
-**m4:unpriced,22случая**, не те же25policycases. Первый только dnr-гранитное-kazan-center: existing corpus.auditEvidence.capture, currentengine offline15/17окт09:00МСК, проверить actualM4reason/vector/trace. Сохранить case/checkpoint/logs/state/queue и commit/push/head/tree до следующего независимого шага. Затем исправлять одну установленную причину с focused/fullgate. Не повторять309livequeue и не подставлятьцены.
-Часть19 IN PROGRESS,20 ещё не начата. Другиенахождения (ЗСД/М11/М12/прочие) ещёнеразобраны.
-
-## Порядок
-
-После каждого durable save сразу следующий микрошаг без«дальше», один writer. Перед записью проверить actualremote/PR и отсутствие active/queued jobs. Если AUTOstate.workflowRunnull, найти ветку в GitHubpushruns; приактивномjob **не писать**. TIME_LIMIT — сохранённаявозобновляемаяграница. Runner current-policy class уже25/25, не перезапускать его без новойпричины.
-
-Unknown≠0, subtotal≠итог; поездкапоотправлению, междорожныевекторыотложены. Audited/replay — воспроизводимость, не свежийlive/операторскоеподтверждение. Raw/baseline/history сохранять. No main/merge/Production/Android/messages.
-[Protocol](CHECKPOINT_PROTOCOL.md) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md) · [План](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
+Unknown≠0, subtotal≠итог. Всяпоездкапомоментуотправления, междорожныевекторыотложены. Raw/live/baseline/historyсохранять. Audited/replay≠подтверждённыйтариф/freshlive. No main/merge/Production/Android/messages.
+[Protocol](CHECKPOINT_PROTOCOL.md) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md).
