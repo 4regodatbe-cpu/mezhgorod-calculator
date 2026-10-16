@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
-  "nextAction": "ZSD next distinct case max-chain-m12-ckad-m11-zsd-murom-to-sest: existing capture twoofflineprofiles; compare exact selected scope",
+  "nextAction": "ZSDcase15Murom→Sestroretsk exactsavedcapture/twoprofiles; compare exactsource-gated physicalscope before nextcase",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2524,14 +2524,16 @@
       },
       {
         "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
-        "status": "current_unknown_needs_distinct_scope_review",
+        "status": "source_gated_south_kad_to_north_kad",
         "checkpoint": "../../docs/checkpoints/2026-10-16-141934-zsd-case14.md",
         "evidence": "../../docs/checkpoints/evidence/2026-10-16-141934-zsd-case14.json",
         "missing": [
           "ckad",
           "m11-15-58",
           "zsd"
-        ]
+        ],
+        "scopeCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-kazan-sestroretsk-scope.md",
+        "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-kazan-sestroretsk-scope.json"
       }
     ],
     "checked": 14,

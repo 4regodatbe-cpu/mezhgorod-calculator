@@ -20,7 +20,7 @@ Overall plan progress **90% (18/20 completed parts)**. This is plan progress, no
 
 ZSD current-engine savedcapture reviews **14/76**; latest max-chain-m12-ckad-m11-zsd-kazan-to-sest: twoofflineprofiles complete, status `current_unknown_needs_distinct_scope_review`, missing ['ckad', 'm11-15-58', 'zsd']. [Latest checkpoint](checkpoints/2026-10-16-141934-zsd-case14.md) and full per-case queue/evidence preserve exact results. Firstcase PVP5/Ekateringofka sourcegate remains unresolved; no guessed600/zone1subtotal. SixshortM4 andeight545 gates remain as previously documented.
 
-Next ONLY max-chain-m12-ckad-m11-zsd-murom-to-sest; existingcapture, twoofflineprofiles, exactscope comparison, durablecheckpoint before nextcase. No rerun completedM4/policy/309live. Frozen dependencies restored; no newruntimecode/fullgate. Historical687 not rerun. Currentcheckout calculator-resume; connector/local commits can differ, exacttree readback required.
+Next ONLY max-chain-m12-ckad-m11-zsd-murom-to-sest; existingcapture, twoofflineprofiles, exactscope comparison, durablecheckpoint before nextcase. No rerun completedM4/policy/309live. Frozen dependencies restored; no newruntimecode/fullgate. Latest691fullgatePASS remains priorvalidation; not rerun. Currentcheckout calculator-resume; connector/local commits can differ, exacttree readback required.
 
 Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. Ifcontextends, startfromthisspecificNEXT, notoldrecovery/309live/25policyqueue. One writer; active/queuedjob→no writes, TIME_LIMITresumable. Unknown≠0,subtotal≠total, wholetripdeparturepricing; cross-roadvectorsdeferred. No main/merge/Production/Android/messages. Autocontinuation remainsenabled untilall20done.
 
@@ -37,3 +37,5 @@ Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. If
 16.10.2026 Planernayafocused8/8PASS/eslintnewtestexit0; fullgateSTARTED npm run build -- --webpack. checkpoints/2026-10-16-zsd-planernaya-focused-pass.md Plan90%.
 
 16.10.2026 Planernayafullgate DONE exit0:691/691+quote/API+Nextwebpack/TS/static16/16PASS. NEXT correctedcase13twoofflineprofiles. checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md Overallplan90%18/20.
+
+16.10.2026 ZSDcase14 scopeDONE:76ways/two namedPvP/south→northKAD, no newidentitybug, sourcegate retained. Latest691fullgatePASS supersedes stale687template. checkpoints/2026-10-16-zsd-kazan-sestroretsk-scope.md NEXTcase15Murom→Sestroretsk; plan90%.

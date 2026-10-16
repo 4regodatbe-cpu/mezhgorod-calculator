@@ -1545,3 +1545,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 16.10.2026 ZSD1766158781identityfix validated withcorrectedcase13pair: redundantunknownroadgone, M11head/CKAD/ZSD stillblocknulltotal. 691fullgatePASS/8focusedPASS. Rawfullgatelog CR bytepreservation recovery included; requireexacttree. ../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md NEXT case14Kazan→Sestroretsk; plan90%18/20.
 
 2026-10-16T14:19:34.491002+03:00: ZSDcase14 max-chain-m12-ckad-m11-zsd-kazan-to-sest DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['ckad', 'm11-15-58', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141934-zsd-case14.md. NEXT max-chain-m12-ckad-m11-zsd-murom-to-sest.
+
+16.10.2026 ZSDcase14 scopeDONE:76ways/two namedPvP/south→northKAD, no newidentitybug, sourcegate retained. Latest691fullgatePASS supersedes stale687template. ../../docs/checkpoints/2026-10-16-zsd-kazan-sestroretsk-scope.md NEXTcase15Murom→Sestroretsk; plan90%.
