@@ -5,6 +5,13 @@
   "scope": "Part19 findings, separate from completed309 execution queue; do not count component recovery as full-route price confirmation",
   "completedFixes": [
     {
+      "id": "m4-northbound-compound-boundary",
+      "sourceCommit": "4811a106efc0a844b32e1733f0292f74f2cb7d61",
+      "validationCheckpoint": "../../docs/checkpoints/2026-10-16-part19d-compound-fullgate-pass.md",
+      "wholeRouteCasesReplayed": 1,
+      "scope": "36 keys relocated without newfares; only LisichanskMoscow fullquote pair verified so far, not operatorODconfirmation"
+    },
+    {
       "id": "a289-full-interior-vector",
       "sourceCommit": "7e66a8e9b207fefdbcbc82806dac13ec8c34c962",
       "validationCheckpoint": "../../docs/checkpoints/2026-10-16-part19-a289-impact-done.md",
@@ -19,7 +26,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "lnr-лисичанск-moscow-center",
+  "nextCase": "dnr-широкино-kazan-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1737,9 +1744,12 @@
       "currentEvaluations": [
         {
           "caseId": "lnr-лисичанск-moscow-center",
-          "result": "current_unknown_reproduced_missing_exact_endpoint_fare",
-          "weekdayAmount": null,
-          "weekendAmount": null,
+          "initialReplayResult": "current_unknown_reproduced_missing_exact_endpoint_fare",
+          "result": "recovered_current_engine_unconfirmed_estimate",
+          "weekdayAmount": 1830,
+          "weekendAmount": 2300,
+          "correctionCheckpoint": "../../docs/checkpoints/2026-10-16-part19d-lisichansk-moscow-recovered.md",
+          "correctedOutputs": [{"path":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T08-43-45-977Z.json","sha256":"8be2168e3e7112f0896a10eee6e9c06422604aac907c7cad0e22ad8258bb01f4","departureAt":"2026-10-15T09:00:00+03:00","amount":1830},{"path":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T08-43-46-932Z.json","sha256":"05fa4b906bdf7eb0f31629a3cda9bb3d81e08b159e423f693e4059168d09f31b","departureAt":"2026-10-17T09:00:00+03:00","amount":2300}],
           "m4CandidateCount": 3,
           "confirmedPvps": [
             "m4-460",
