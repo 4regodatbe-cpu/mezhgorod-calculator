@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:10:25.320Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:10:43.932Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 92,
+      "done": 93,
       "total": 155
     },
     {
@@ -18,15 +18,90 @@
   "next": {
     "part": 7,
     "spec": {
-      "caseId": "pair-m4-a289-rostov-to-kerch",
+      "caseId": "pair-m4-a289-taman-to-voronezh",
       "kind": "road",
       "group": "pair-m4-a289"
     }
   },
   "caseId": "pair-m4-a289-rostov-to-kerch",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "pair-m4-a289-rostov-to-kerch",
+    "startedAt": "2026-10-16T00:10:26.696Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-rostov-to-kerch/live-2026-10-15T09-00-00-03-00-2026-10-16T00-10-29-459Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-rostov-to-kerch/2026-10-16T00-10-29-414Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-10-29-886Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-10-30-301Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "provenRoads": [
+        "m4",
+        "a289"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": 1650,
+      "weekdayAmount": 1650,
+      "weekendAmount": 1800,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+        "А-289: Maryanskaya → TamanBridge: 800 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 1800,
+      "weekdayAmount": 1650,
+      "weekendAmount": 1800,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+        "А-289: Maryanskaya → TamanBridge: 800 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 850,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "a289",
+        "amount": 800,
+        "reason": "A-289 selected-route OD vector"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:10:30.316Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-10-25-320Z-part7",
-  "parent": "edce77f7d2b3acf055c99a6b87f229f8d76ca187",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-10-25-320Z-started.json"
+  "parent": "2866ade7d777090cb046477172b54a69663c4b97",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-10-43-932Z-done.json"
 }
