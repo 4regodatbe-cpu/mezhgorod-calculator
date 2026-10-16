@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:12:30.894Z",
+  "generatedAt": "2026-10-16T02:13:13.865Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 330,
-    "recordedLiveAttempts": 344,
-    "liveCaptured": 330,
-    "savedLiveSummaries": 330,
+    "distinctCaseAttempts": 331,
+    "recordedLiveAttempts": 345,
+    "liveCaptured": 331,
+    "savedLiveSummaries": 331,
     "missingOrInvalidReferences": 0,
-    "audited": 330,
-    "traceComplete": 330,
-    "sameDateParity": 330
+    "audited": 331,
+    "traceComplete": 331,
+    "sameDateParity": 331
   },
   "regionCounts": {
     "dnr": {
@@ -200,9 +200,9 @@
       "id": "triple-m11-ckad-m12",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 5,
-      "audited": 5,
-      "traversalProven": 5,
+      "attempted": 6,
+      "audited": 6,
+      "traversalProven": 6,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -11214,6 +11214,43 @@
       ],
       "routeMeters": 52242,
       "routeSeconds": 2721
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T02-13-09-200Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad",
+          "m12"
+        ],
+        "provenRoads": [
+          "m12",
+          "m11",
+          "zsd",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1149643,
+      "routeSeconds": 43716
     }
   ],
   "historicalExecutionExceptions": [],
@@ -13435,7 +13472,8 @@
         "single-m11-tver-to-spb",
         "single-zsd-blag-to-sest",
         "single-zsd-peterhof-to-prim",
-        "single-zsd-sest-to-blag"
+        "single-zsd-sest-to-blag",
+        "triple-m11-ckad-m12-arzamas-to-spb"
       ],
       "occurrences": [
         {
@@ -15327,9 +15365,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-blag/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-11-51-260Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T02-13-09-200Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-13-09-677Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-13-10-146Z.json"
         }
       ],
-      "caseCount": 70
+      "caseCount": 71
     },
     {
       "code": "m4:unpriced",
@@ -15964,7 +16029,8 @@
         "pair-m11-ckad-noginsk-to-spb",
         "triple-m11-ckad-m12-kazan-to-spb",
         "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
-        "max-chain-m12-ckad-m11-zsd-vladimir-to-sest"
+        "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+        "triple-m11-ckad-m12-arzamas-to-spb"
       ],
       "occurrences": [
         {
@@ -16155,9 +16221,36 @@
             "reason": "m11_partial_head_entry_boundary_unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-24-12-180Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_partial_head_entry_boundary_unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T02-13-09-200Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_partial_head_entry_boundary_unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-13-09-677Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_partial_head_entry_boundary_unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-13-10-146Z.json"
         }
       ],
-      "caseCount": 7
+      "caseCount": 8
     },
     {
       "code": "arc_not_proven",
@@ -16190,7 +16283,8 @@
         "pair-m12-ckad-domodedovo-to-arzamas",
         "pair-m12-ckad-klin-to-vladimir",
         "single-ckad-dmitrov-to-rostov",
-        "single-ckad-rostov-to-dmitrov"
+        "single-ckad-rostov-to-dmitrov",
+        "triple-m11-ckad-m12-arzamas-to-spb"
       ],
       "occurrences": [
         {
@@ -16975,9 +17069,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-rostov-to-dmitrov/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-59-822Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T02-13-09-200Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-13-09-677Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-13-10-146Z.json"
         }
       ],
-      "caseCount": 29
+      "caseCount": 30
     },
     {
       "code": "unknown-paid-road:unpriced",
