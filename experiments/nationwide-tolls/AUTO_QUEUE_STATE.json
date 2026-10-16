@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:15:07.518Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:15:12.695Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,104 +23,10 @@
       "region": "zaporizhzhia"
     }
   },
-  "caseId": "zaporizhzhia-пологи-saint-petersburg-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "zaporizhzhia-пологи-saint-petersburg-center",
-    "startedAt": "2026-10-16T01:14:18.292Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-14-42-926Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-saint-petersburg-center/2026-10-16T01-14-42-750Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-14-43-701Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-14-44-459Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "a289",
-        "m4",
-        "m11",
-        "zsd"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: a289",
-        "a289: A-289 frames detected but selected-route exits are unresolved"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: a289",
-        "a289: A-289 frames detected but selected-route exits are unresolved"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 5040,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "a289",
-        "amount": null,
-        "reason": "A-289 frames detected but selected-route exits are unresolved"
-      },
-      {
-        "id": "m11-15-58",
-        "amount": 1130,
-        "reason": "m11_head_ready_direct_pair_at_departure"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": 3900,
-        "reason": "matrix dated selected-route M11 direct pair"
-      },
-      {
-        "id": "m11-679-684",
-        "amount": 94,
-        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-      },
-      {
-        "id": "zsd",
-        "amount": 300,
-        "reason": "zsd_zone1_complete_directed_base_tariff"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:14:44.480Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-14-16-648Z-part13",
-  "parent": "f4ad5f59a23b9194e28d655841babd9a20849590",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-15-07-518Z-done.json"
+  "caseId": "zaporizhzhia-розовка-kazan-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-15-12-695Z-part13",
+  "parent": "ba8a03f9131414d1feac6e3217ff360b2e879800",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-15-12-695Z-started.json"
 }
