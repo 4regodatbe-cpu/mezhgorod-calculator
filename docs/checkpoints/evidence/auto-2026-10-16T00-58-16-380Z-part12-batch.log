@@ -1,0 +1,9 @@
+START 1/1 lnr-ровеньки-kazan-center
+PHASE --live lnr-ровеньки-kazan-center 2026-10-15T09:00:00+03:00
+{"caseId":"lnr-ровеньки-kazan-center","mode":"live","provider":"Valhalla","routeMeters":1487328,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-kazan-center/2026-10-16T00-58-29-954Z-capture.json.gz 2026-10-15T09:00:00+03:00
+{"caseId":"lnr-ровеньки-kazan-center","mode":"offline-recorded-response-replay","provider":"Valhalla","routeMeters":1487328,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-kazan-center/2026-10-16T00-58-29-954Z-capture.json.gz 2026-10-17T09:00:00+03:00
+{"caseId":"lnr-ровеньки-kazan-center","mode":"offline-recorded-response-replay","provider":"Valhalla","routeMeters":1487328,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"пятница–воскресенье","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+DONE lnr-ровеньки-kazan-center audited parity=true
+{"batchPath":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-58-17-824Z.json","attempted":1,"audited":1,"stoppedReason":null}

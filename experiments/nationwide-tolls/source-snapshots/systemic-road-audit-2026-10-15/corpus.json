@@ -2906,7 +2906,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-58-30-050Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-kazan-center/2026-10-16T00-58-29-954Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1487328,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-58-17-824Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-58-30-050Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-kazan-center/2026-10-16T00-58-29-954Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-58-30-661Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-58-31-256Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-ровеньки-kerch-center",

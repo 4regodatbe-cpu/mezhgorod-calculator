@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:58:16.380Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:58:51.318Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,74 @@
     },
     {
       "stage": 2,
-      "done": 31,
+      "done": 32,
       "total": 154
     }
   ],
   "next": {
     "part": 12,
     "spec": {
-      "caseId": "lnr-ровеньки-kazan-center",
+      "caseId": "lnr-ровеньки-kerch-center",
       "kind": "regional",
       "region": "lnr"
     }
   },
   "caseId": "lnr-ровеньки-kazan-center",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "lnr-ровеньки-kazan-center",
+    "startedAt": "2026-10-16T00:58:17.827Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-58-30-050Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-kazan-center/2026-10-16T00-58-29-954Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-58-30-661Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-58-31-256Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "weekend": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "пятница–воскресенье",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "components": [],
+    "finishedAt": "2026-10-16T00:58:31.274Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-58-16-380Z-part12",
-  "parent": "7672c83ca8767bd6544847a10505f78cff2f3c1e",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-58-16-380Z-started.json"
+  "parent": "c18437ec102120111045f47f2dd14dce218e882b",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-58-51-318Z-done.json"
 }

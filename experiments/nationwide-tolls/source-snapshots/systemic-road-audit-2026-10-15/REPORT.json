@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:57:54.082Z",
+  "generatedAt": "2026-10-16T00:58:33.967Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 217,
-    "recordedLiveAttempts": 231,
-    "liveCaptured": 217,
-    "savedLiveSummaries": 217,
+    "distinctCaseAttempts": 218,
+    "recordedLiveAttempts": 232,
+    "liveCaptured": 218,
+    "savedLiveSummaries": 218,
     "missingOrInvalidReferences": 0,
-    "audited": 217,
-    "traceComplete": 217,
-    "sameDateParity": 217
+    "audited": 218,
+    "traceComplete": 218,
+    "sameDateParity": 218
   },
   "regionCounts": {
     "dnr": {
@@ -22,11 +22,11 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 26,
-      "audited": 26,
-      "traceComplete": 26,
-      "pricedWeekday": 17,
-      "pricedWeekend": 17
+      "liveCaptured": 27,
+      "audited": 27,
+      "traceComplete": 27,
+      "pricedWeekday": 18,
+      "pricedWeekend": 18
     },
     "zaporizhzhia": {
       "planned": 40,
@@ -7431,6 +7431,34 @@
       ],
       "routeMeters": 3197320,
       "routeSeconds": 162410
+    },
+    {
+      "caseId": "lnr-ровеньки-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-58-30-050Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1487328,
+      "routeSeconds": 77658
     }
   ],
   "historicalExecutionExceptions": [],
