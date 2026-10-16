@@ -33,8 +33,8 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "triple-m11-ckad-m12-spb-to-arzamas",
-  "nextAction": "ZSD nextcase triple-m11-ckad-m12-spb-to-arzamas; --next; savedcapture twoofflineprofiles",
+  "nextCase": "triple-m4-m11-zsd-domodedovo-to-sest",
+  "nextAction": "ZSD nextcase triple-m4-m11-zsd-domodedovo-to-sest; --next; savedcapture twoofflineprofiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -3169,9 +3169,20 @@
         ],
         "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T17-25-46-940Z.md",
         "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T17-25-46-940Z.json"
+      },
+      {
+        "caseId": "triple-m11-ckad-m12-spb-to-arzamas",
+        "status": "source_gated_same_reviewed_zsd_scope",
+        "sameReviewedScopeCase": "pair-m11-ckad-spb-to-domodedovo",
+        "missing": [
+          "ckad",
+          "zsd"
+        ],
+        "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T17-28-40-814Z.md",
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T17-28-40-814Z.json"
       }
     ],
-    "checked": 71,
+    "checked": 72,
     "total": 76,
     "identityFix": {
       "status": "validated",

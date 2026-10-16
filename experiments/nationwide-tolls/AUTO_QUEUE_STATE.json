@@ -1,14 +1,14 @@
 {
-  "at": "2026-10-16T17:25:46.942Z",
-  "phase": "PART19_ZSD_CASE71_REPLAY_DONE",
+  "at": "2026-10-16T17:28:40.815Z",
+  "phase": "PART19_ZSD_CASE72_REPLAY_DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "ZSD case 71 saved-capture replay under two offline date profiles; already reviewed identical selected ZSD scope, other toll products unresolved",
-  "checked": 71,
+  "scope": "ZSD case 72 saved-capture replay under two offline date profiles; previously reviewed ZSD scope, CKAD remains unresolved",
+  "checked": 72,
   "total": 76,
-  "next": "Case 72 triple-m11-ckad-m12-spb-to-arzamas; replay saved capture under two offline date profiles",
+  "next": "Case 73 triple-m4-m11-zsd-domodedovo-to-sest; replay saved capture under two offline date profiles",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "af4149d0a16eaba5fc289e1d90db1b8781a5e913",
-  "nextFinding": "zsd:triple-m11-ckad-m12-spb-to-arzamas",
-  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-25-46-940Z.md"
+  "parent": "1e0f8c1a49e636e0e243c3ba1e6194fa2dbec7c9",
+  "nextFinding": "zsd:triple-m4-m11-zsd-domodedovo-to-sest",
+  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-28-40-814Z.md"
 }
