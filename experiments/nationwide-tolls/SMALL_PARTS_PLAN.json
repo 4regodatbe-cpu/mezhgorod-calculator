@@ -959,7 +959,7 @@
     {
       "id": 12,
       "title": "Этап 2: группа 2/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "kherson-скадовск-moscow-center",
@@ -1057,12 +1057,12 @@
           "region": "lnr"
         }
       ],
-      "completedCases": 18
+      "completedCases": 19
     },
     {
       "id": 13,
       "title": "Этап 2: группа 3/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "lnr-сорокино-kerch-center",
