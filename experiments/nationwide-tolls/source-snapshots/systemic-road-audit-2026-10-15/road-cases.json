@@ -6794,7 +6794,22 @@
         "m12"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-225Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/2026-10-16T02-15-50-182Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 765721,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-15-45-383Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-225Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/2026-10-16T02-15-50-182Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-638Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-15-51-042Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "triple-m11-ckad-m12-spb-to-arzamas",

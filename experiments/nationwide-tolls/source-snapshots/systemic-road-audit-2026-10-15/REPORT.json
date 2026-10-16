@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:15:14.796Z",
+  "generatedAt": "2026-10-16T02:15:54.791Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 334,
-    "recordedLiveAttempts": 348,
-    "liveCaptured": 334,
-    "savedLiveSummaries": 334,
+    "distinctCaseAttempts": 335,
+    "recordedLiveAttempts": 349,
+    "liveCaptured": 335,
+    "savedLiveSummaries": 335,
     "missingOrInvalidReferences": 0,
-    "audited": 334,
-    "traceComplete": 334,
-    "sameDateParity": 334
+    "audited": 335,
+    "traceComplete": 335,
+    "sameDateParity": 335
   },
   "regionCounts": {
     "dnr": {
@@ -200,8 +200,8 @@
       "id": "triple-m11-ckad-m12",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 9,
-      "audited": 9,
+      "attempted": 10,
+      "audited": 10,
       "traversalProven": 8,
       "pricedWeekday": 0,
       "pricedWeekend": 0
@@ -11361,6 +11361,43 @@
       ],
       "routeMeters": 1155730,
       "routeSeconds": 43916
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-225Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad",
+          "m12"
+        ],
+        "provenRoads": [
+          "m11",
+          "ckad"
+        ],
+        "missingExpectedRoads": [
+          "m12"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 765721,
+      "routeSeconds": 26971
     }
   ],
   "historicalExecutionExceptions": [],
@@ -16425,7 +16462,8 @@
         "triple-m11-ckad-m12-arzamas-to-spb",
         "triple-m11-ckad-m12-murom-to-tver",
         "triple-m11-ckad-m12-novgorod-to-vladimir",
-        "triple-m11-ckad-m12-spb-to-arzamas"
+        "triple-m11-ckad-m12-spb-to-arzamas",
+        "triple-m11-ckad-m12-vladimir-to-novgorod"
       ],
       "occurrences": [
         {
@@ -17318,9 +17356,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-15-11-049Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-225Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-638Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-15-51-042Z.json"
         }
       ],
-      "caseCount": 33
+      "caseCount": 34
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -17384,7 +17449,8 @@
         "single-zsd-peterhof-to-prim",
         "single-zsd-sest-to-blag",
         "triple-m11-ckad-m12-murom-to-tver",
-        "triple-m11-ckad-m12-novgorod-to-vladimir"
+        "triple-m11-ckad-m12-novgorod-to-vladimir",
+        "triple-m11-ckad-m12-vladimir-to-novgorod"
       ],
       "occurrences": [
         {
@@ -19006,9 +19072,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-14-26-949Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-225Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-638Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-15-51-042Z.json"
         }
       ],
-      "caseCount": 60
+      "caseCount": 61
     },
     {
       "code": "expected-road-not-proven",
@@ -19073,7 +19166,8 @@
         "single-odintsovo-lesnoy-to-moscow",
         "single-odintsovo-moscow-to-lesnoy",
         "single-zsd-sest-to-peterhof",
-        "triple-m11-ckad-m12-novgorod-to-vladimir"
+        "triple-m11-ckad-m12-novgorod-to-vladimir",
+        "triple-m11-ckad-m12-vladimir-to-novgorod"
       ],
       "occurrences": [
         {
@@ -20090,9 +20184,28 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T02-14-26-146Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "expectedRoads": [
+              "m11",
+              "ckad",
+              "m12"
+            ],
+            "provenRoads": [
+              "m11",
+              "ckad"
+            ],
+            "missingExpectedRoads": [
+              "m12"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-225Z.json"
         }
       ],
-      "caseCount": 61
+      "caseCount": 62
     },
     {
       "code": "m11-58-679:unpriced",
@@ -20135,7 +20248,8 @@
         "single-m11-torzhok-to-moscow",
         "single-m11-tver-to-spb",
         "triple-m11-ckad-m12-murom-to-tver",
-        "triple-m11-ckad-m12-novgorod-to-vladimir"
+        "triple-m11-ckad-m12-novgorod-to-vladimir",
+        "triple-m11-ckad-m12-vladimir-to-novgorod"
       ],
       "occurrences": [
         {
@@ -21190,9 +21304,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-14-26-949Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-225Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-638Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-15-51-042Z.json"
         }
       ],
-      "caseCount": 39
+      "caseCount": 40
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
