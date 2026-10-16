@@ -2099,6 +2099,17 @@
       ],
       "status": "diagnosis_started",
       "startedCheckpoint": "../../docs/checkpoints/2026-10-16-part19-m11-head-boundary-started.md",
+      "reviewStatus": "1_of_8_saved_cases_reviewed_case1_boundary_source_gated",
+      "currentCasesChecked": 1,
+      "reviewedCases": [
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+          "result": "source_gated_m11_head_entry_boundary_unbound",
+          "profiles": 2,
+          "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case1-boundary-source-gated.md",
+          "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case1-boundary-review.json"
+        }
+      ],
       "note": "Diagnosis started on first saved case only; do not mark fixed/classified until exact M11 entry-boundary evidence and paired profiles are reviewed"
     },
     {

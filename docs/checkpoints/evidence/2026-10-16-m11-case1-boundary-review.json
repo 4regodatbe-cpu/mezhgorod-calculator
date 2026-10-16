@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "finding": "m11_partial_head_entry_boundary_unresolved",
+  "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "caseStatus": "source_gated_m11_head_entry_boundary_unbound",
+  "capture": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+    "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0",
+    "traceComplete": true,
+    "chunksComplete": "9/9",
+    "routeMeters": 1158570,
+    "m11UniqueWays": 538,
+    "m11SelectedTollBoothNodeIds": ["4348128722", "4348128721", "2492861246"]
+  },
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-17-04-593Z.json",
+      "sha256": "afaa79b5aea88dd66060fd118d75b4d970480f92d7acb8bf83a2b51869cf54ef",
+      "complete": true,
+      "audit": "unknown",
+      "m11HeadReason": "m11_partial_head_entry_boundary_unresolved",
+      "missing": ["m11-15-58", "ckad", "zsd"]
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-17-05-004Z.json",
+      "sha256": "5196480c4c9aadb4123699c98ad6f497a1fe61249a5beec46c208f5f01684987",
+      "complete": true,
+      "audit": "unknown",
+      "m11HeadReason": "m11_partial_head_entry_boundary_unresolved",
+      "missing": ["m11-15-58", "ckad", "zsd"]
+    }
+  ],
+  "boundaryCheck": {
+    "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-15-mmk-bindings/directed-mmk-north-gates.json",
+    "sourceSha256": "6639a6800c7dde8fefffda56427f94fa914c17a7a87136d36400b575c4b7a77c",
+    "operatorIdentityPdfSha256": "c4c86c9fd92faddaaa4ab4628542185f48e6ea25ed2dff460960650ab48b9f5a",
+    "gateNodeIds": ["3499155981", "3499155978"],
+    "gateWayIds": ["795569815", "795569816"],
+    "gateWayIdsInSelectedTrace": false,
+    "nearestGateNodeDistanceMeters": [26.5, 41.8],
+    "requiredThresholdMeters": 25,
+    "directionalFlankMatch": false,
+    "moscowPvp21SpatialAnchor": "unresolved"
+  },
+  "knownM11Components": {
+    "m11_58_679": {"weekdayRub": 3900, "weekendRub": 4200, "operatorFareConfirmed": false},
+    "m11_679_684": {"rub": 94, "operatorFareConfirmed": false}
+  },
+  "decision": "Keep M11 15–58 unknown. Complete trace proves traversal but not exact product entry/payment boundary. Do not extend geometry threshold or infer zero/price; full route stays unknown also due CKAD/ZSD.",
+  "testsRun": [],
+  "nextCase": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+  "overallPlanProgress": "90% (18/20 parts); not tariff coverage"
+}

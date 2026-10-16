@@ -1,14 +1,14 @@
 {
-  "at": "2026-10-16T17:55:31.000Z",
-  "phase": "PART19_M11_HEAD_BOUNDARY_DIAGNOSIS_STARTED",
+  "at": "2026-10-16T18:01:25.000Z",
+  "phase": "PART19_M11_HEAD_BOUNDARY_CASE1_DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "Started diagnosis of m11_partial_head_entry_boundary_unresolved; first case is saved Arzamas-to-Prim capture and paired profiles",
-  "checked": 0,
+  "scope": "Case1 of m11_partial_head_entry_boundary_unresolved reviewed; exact selected entry boundary remains unbound and fail-closed unknown preserved",
+  "checked": 1,
   "total": 8,
-  "next": "Inspect first case capture paid-edge entry sequence and 2026-10-15/17 09:00 MSK replay evidence against exact primary M11 payment boundary; keep unknown absent proof",
-  "validation": "STARTED evidence-only review; no new live request, code change, or test/build",
-  "parent": "afd103e6c89a69a66f362edbf1b566ff8b44aabb",
+  "next": "Inspect only max-chain-m12-ckad-m11-zsd-kazan-to-sest saved capture and paired 2026-10-15/17 09:00 MSK profiles against exact M11 boundary",
+  "validation": "Case1 offline evidence review complete; no new live request, code change, or test/build",
+  "parent": "bc600a9eb2ef75dbedd22e7cd8e1ac3ad3e5edce",
   "nextFinding": "m11_partial_head_entry_boundary_unresolved",
-  "checkpointPath": "docs/checkpoints/2026-10-16-part19-m11-head-boundary-started.md"
+  "checkpointPath": "docs/checkpoints/2026-10-16-part19-m11-case1-boundary-source-gated.md"
 }
