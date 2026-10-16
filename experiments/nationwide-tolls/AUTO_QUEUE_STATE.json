@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:26:41.445Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:26:45.237Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,76 +23,10 @@
       "group": "single-m4"
     }
   },
-  "caseId": "single-m4-domodedovo-to-krasnodar",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-m4-domodedovo-to-krasnodar",
-    "startedAt": "2026-10-16T00:26:14.301Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-domodedovo-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-26-25-406Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-domodedovo-to-krasnodar/2026-10-16T00-26-25-324Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-26-25-954Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-26-26-493Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m4"
-      ],
-      "provenRoads": [
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": 5040,
-      "weekdayAmount": 5040,
-      "weekendAmount": 6090,
-      "period": "понедельник–четверг",
-      "segments": [
-        "М-4: m4-71 → m4-1223 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 6090,
-      "weekdayAmount": 5040,
-      "weekendAmount": 6090,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "М-4: m4-71 → m4-1223 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 5040,
-        "reason": "matrix exact selected-route M4 vector"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:26:26.512Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-26-12-808Z-part9",
-  "parent": "14dc6123ecff1a492d470ee6c50703b1605a5136",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-26-41-445Z-done.json"
+  "caseId": "single-m4-krasnodar-to-domodedovo",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-26-45-237Z-part9",
+  "parent": "48524437fcf1fc3b6f3830a53570079cff9b7359",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-26-45-237Z-started.json"
 }
