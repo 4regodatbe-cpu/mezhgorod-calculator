@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 306,
-  "rawCaptureCaseCount": 303,
+  "rawCaptureCount": 307,
+  "rawCaptureCaseCount": 304,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -21584,6 +21584,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-56-24-213Z.json",
+      "caseId": "single-m11-torzhok-to-moscow",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-56-26-802Z.json",
+          "exists": true,
+          "bytes": 4382,
+          "sha256": "72bd8a8c8c29c307e4ee251e61f392b6cafa9d589fea15f3c641760d0a852533",
+          "gitBlobSha": "4abeba1b6c47286ae9312ea4bdc0008571734435",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz",
+          "exists": true,
+          "bytes": 127637,
+          "sha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798",
+          "gitBlobSha": "6e0c73041c3eadf18493ba7ad3c8dabe924bdae5",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 5
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-56-27-172Z.json",
+          "exists": true,
+          "bytes": 4460,
+          "sha256": "bc7ecd1bbd21c69d36f9ed94ad3dec80181da13ab46a0b58f238542cf9c10504",
+          "gitBlobSha": "268f2fb9158d76fbafbdab5a8a8c489eb8695ea8",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-56-27-541Z.json",
+          "exists": true,
+          "bytes": 4460,
+          "sha256": "3bf45247e3b0a8c0795aff40dca28450aace33a9d96d389df9a846350408f500",
+          "gitBlobSha": "e6f10e231a706a6e458bab5f38bfd3e2caa325b9",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -24116,6 +24161,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 7
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz",
+      "exists": true,
+      "bytes": 127637,
+      "sha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798",
+      "gitBlobSha": "6e0c73041c3eadf18493ba7ad3c8dabe924bdae5",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 5
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-moscow/2026-10-16T00-21-53-115Z-capture.json.gz",

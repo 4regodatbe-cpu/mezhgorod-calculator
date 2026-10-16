@@ -1,0 +1,185 @@
+{
+  "caseId": "single-m11-torzhok-to-moscow",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 255092,
+      "seconds": 11228
+    },
+    {
+      "name": "OSRM",
+      "meters": 253533,
+      "seconds": 11849
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 255092,
+  "routeSeconds": 11228,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m11"
+    ],
+    "provenRoads": [
+      "m11"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1205158257",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "596233803",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "598405257",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "7171624764"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m11": {
+      "occurrences": 221,
+      "uniqueWays": 172
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz",
+  "captureSha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798",
+  "detectedRoadComponents": [
+    {
+      "id": "m11-15-58",
+      "amount": null,
+      "reason": "m11_58_679_facility_sequence_incomplete"
+    },
+    {
+      "id": "m11-58-679",
+      "amount": null,
+      "reason": "only_one_verified_boundary_crossing"
+    },
+    {
+      "id": "unknown-paid-road",
+      "amount": null,
+      "reason": "unmapped_selected_route_paid_booth"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-11",
+    "«Нева»"
+  ],
+  "tollNodeIds": [
+    "5286168661",
+    "7171624764"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
+      "m11-15-58: m11_58_679_facility_sequence_incomplete",
+      "m11-58-679: only_one_verified_boundary_crossing",
+      "unknown-paid-road: unmapped_selected_route_paid_booth"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m11-15-58",
+      "m11-58-679",
+      "unknown-paid-road"
+    ],
+    "components": [
+      {
+        "id": "m11-15-58",
+        "detected": true,
+        "tolls": null,
+        "reason": "m11_58_679_facility_sequence_incomplete"
+      },
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ]
+  }
+}
