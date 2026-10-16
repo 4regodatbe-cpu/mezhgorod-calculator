@@ -980,7 +980,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-46-24-510Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-moscow-center/2026-10-16T00-46-24-423Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1104794,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-46-16-684Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-46-24-510Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-moscow-center/2026-10-16T00-46-24-423Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-46-25-061Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-46-25-605Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-харцызск-saint-petersburg-center",
