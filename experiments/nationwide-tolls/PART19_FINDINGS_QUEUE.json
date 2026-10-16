@@ -26,7 +26,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+  "nextCase": "pair-m4-a289-taman-to-voronezh",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1742,7 +1742,7 @@
       "code": "m4:unpriced",
       "currentCasesChecked": 8,
       "currentEvaluations": [
-        {"caseId":"max-chain-m4-ckad-m11-zsd-voronezh-to-prim","result":"current_unknown_needs_diagnosis","weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case8-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case8-replay.json"},
+        {"caseId":"max-chain-m4-ckad-m11-zsd-voronezh-to-prim","result":"m4_recovered_remaining_products_unknown","weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case8-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case8-replay.json","m4WeekdayAmount":1830,"m4WeekendAmount":2300,"remainingMissing":["zsd","unknown-paid-road"],"classificationCheckpoint":"../../docs/checkpoints/2026-10-16-part19d-case8-component-recovered.md"},
         {"caseId":"zaporizhzhia-гуляйполе-kazan-center","result":"source_gated_unknown_retained","weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case7-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case7-replay.json","diagnosticCheckpoint":"../../docs/checkpoints/2026-10-16-part19d-gulyaypole-kazan-source-hold.md","scopeEvidence":"../../docs/checkpoints/evidence/2026-10-16-gulyaypole-kazan-scope.json"},
         {"caseId":"dnr-краматорск-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case6-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case6-replay.json"},
         {"caseId":"dnr-бахмут-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case5-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case5-replay.json"},
