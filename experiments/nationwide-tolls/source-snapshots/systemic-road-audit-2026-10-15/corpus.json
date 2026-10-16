@@ -4139,7 +4139,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-17-40-065Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/2026-10-16T01-17-39-935Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 2018857,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-17-17-532Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-17-40-065Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/2026-10-16T01-17-39-935Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-17-40-714Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-17-41-351Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-розовка-kazan-center",
