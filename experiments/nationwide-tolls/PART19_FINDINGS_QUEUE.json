@@ -33,8 +33,8 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
-  "nextAction": "ZSD next distinct case max-chain-m4-ckad-m11-zsd-krasnodar-to-sest: existing capture twoofflineprofiles; compare exact selected scope",
+  "nextCase": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+  "nextAction": "ZSD next distinct case max-chain-m4-ckad-m11-zsd-rostov-to-sest: existing capture twoofflineprofiles; compare exact selected scope",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2570,9 +2570,19 @@
           "ckad",
           "zsd"
         ]
+      },
+      {
+        "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+        "status": "current_unknown_needs_distinct_scope_review",
+        "sameReviewedScopeCase": null,
+        "checkpoint": "../../docs/checkpoints/2026-10-16-142435-zsd-case18.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-142435-zsd-case18.json",
+        "missing": [
+          "zsd"
+        ]
       }
     ],
-    "checked": 17,
+    "checked": 18,
     "total": 76,
     "identityFix": {
       "status": "validated",
