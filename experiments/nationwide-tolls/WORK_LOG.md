@@ -1561,3 +1561,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 16.10.2026 ZSDcase18 distinctscopeDONE: 76ways/62outside reviewedzone1, actualguardrefusal consistent, no fareguess/runtimefix. ../../docs/checkpoints/2026-10-16-142453-zsd-case18-scope.md NEXTmax-chain-m4-ckad-m11-zsd-rostov-to-sest; plan90%, latest691gatePASS.
 
 2026-10-16T14:25:11.185285+03:00: ZSDcase19 max-chain-m4-ckad-m11-zsd-rostov-to-sest DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142511-zsd-case19.md. NEXT max-chain-m4-ckad-m11-zsd-sest-to-krasnodar.
+
+2026-10-16T14:25:33.114822+03:00: ZSDcase20 max-chain-m4-ckad-m11-zsd-sest-to-krasnodar DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142533-zsd-case20.md. NEXT max-chain-m4-ckad-m11-zsd-sest-to-rostov.
