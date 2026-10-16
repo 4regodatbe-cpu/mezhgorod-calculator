@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:20:10.356Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:20:13.936Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,66 +23,10 @@
       "group": "single-m11"
     }
   },
-  "caseId": "single-khabarovsk-vyazemsky-to-smidovich",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-khabarovsk-vyazemsky-to-smidovich",
-    "startedAt": "2026-10-16T00:19:52.916Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-smidovich/live-2026-10-15T09-00-00-03-00-2026-10-16T00-19-55-225Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-smidovich/2026-10-16T00-19-55-206Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-19-55-625Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-19-55-998Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "khabarovsk"
-      ],
-      "provenRoads": [],
-      "missingExpectedRoads": [
-        "khabarovsk"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T00:19:56.015Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-19-51-451Z-part8",
-  "parent": "faf599342cce4cad775474a41c4d7434875cce51",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-20-10-356Z-done.json"
+  "caseId": "single-m11-moscow-to-spb",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-20-13-936Z-part8",
+  "parent": "36f32173f118476c5e2cdc7af6a8d26ebf3ae6fd",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-20-13-936Z-started.json"
 }
