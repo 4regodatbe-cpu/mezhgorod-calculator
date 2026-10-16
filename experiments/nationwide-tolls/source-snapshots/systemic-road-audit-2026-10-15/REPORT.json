@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:29:34.245Z",
+  "generatedAt": "2026-10-16T01:30:10.276Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 262,
-    "recordedLiveAttempts": 276,
-    "liveCaptured": 262,
-    "savedLiveSummaries": 262,
+    "distinctCaseAttempts": 263,
+    "recordedLiveAttempts": 277,
+    "liveCaptured": 263,
+    "savedLiveSummaries": 263,
     "missingOrInvalidReferences": 0,
-    "audited": 262,
-    "traceComplete": 262,
-    "sameDateParity": 262
+    "audited": 263,
+    "traceComplete": 263,
+    "sameDateParity": 263
   },
   "regionCounts": {
     "dnr": {
@@ -170,8 +170,8 @@
       "id": "pair-m11-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 7,
-      "audited": 7,
+      "attempted": 8,
+      "audited": 8,
       "traversalProven": 4,
       "pricedWeekday": 0,
       "pricedWeekend": 0
@@ -8968,6 +8968,41 @@
       ],
       "routeMeters": 243975,
       "routeSeconds": 9976
+    },
+    {
+      "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-055Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 636266,
+      "routeSeconds": 22420
     }
   ],
   "historicalExecutionExceptions": [],
@@ -14095,7 +14130,8 @@
         "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
         "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
         "pair-m11-ckad-domodedovo-to-novgorod",
-        "pair-m11-ckad-noginsk-to-tver"
+        "pair-m11-ckad-noginsk-to-tver",
+        "pair-m11-ckad-novgorod-to-domodedovo"
       ],
       "occurrences": [
         {
@@ -14961,9 +14997,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-29-30-897Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-055Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-477Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-30-06-875Z.json"
         }
       ],
-      "caseCount": 32
+      "caseCount": 33
     },
     {
       "code": "expected-road-not-proven",
@@ -15005,7 +15068,8 @@
         "max-chain-m4-ckad-m11-zsd-prim-to-rostov",
         "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
         "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
-        "pair-m11-ckad-domodedovo-to-novgorod"
+        "pair-m11-ckad-domodedovo-to-novgorod",
+        "pair-m11-ckad-novgorod-to-domodedovo"
       ],
       "occurrences": [
         {
@@ -15664,9 +15728,26 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T01-28-56-173Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "expectedRoads": [
+              "m11",
+              "ckad"
+            ],
+            "provenRoads": [
+              "m11"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-055Z.json"
         }
       ],
-      "caseCount": 38
+      "caseCount": 39
     },
     {
       "code": "m11-58-679:unpriced",
@@ -15687,7 +15768,8 @@
         "triple-m11-ckad-m12-tver-to-murom",
         "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
         "pair-m11-ckad-domodedovo-to-novgorod",
-        "pair-m11-ckad-noginsk-to-tver"
+        "pair-m11-ckad-noginsk-to-tver",
+        "pair-m11-ckad-novgorod-to-domodedovo"
       ],
       "occurrences": [
         {
@@ -16148,9 +16230,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-29-30-897Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-055Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-477Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-30-06-875Z.json"
         }
       ],
-      "caseCount": 17
+      "caseCount": 18
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
@@ -16160,7 +16269,8 @@
         "single-m11-moscow-to-torzhok",
         "single-m11-moscow-to-tver",
         "single-m11-tver-to-moscow",
-        "pair-m11-ckad-domodedovo-to-novgorod"
+        "pair-m11-ckad-domodedovo-to-novgorod",
+        "pair-m11-ckad-novgorod-to-domodedovo"
       ],
       "occurrences": [
         {
@@ -16324,9 +16434,36 @@
             "reason": "m11_58_679_facility_sequence_incomplete"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-28-56-996Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-055Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-477Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-30-06-875Z.json"
         }
       ],
-      "caseCount": 6
+      "caseCount": 7
     },
     {
       "code": "engine_not_yet_composed",

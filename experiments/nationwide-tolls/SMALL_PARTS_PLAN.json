@@ -1165,7 +1165,7 @@
     {
       "id": 14,
       "title": "Этап 2: группа 4/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "zaporizhzhia-розовка-kerch-center",
@@ -1268,12 +1268,12 @@
           "group": "pair-m11-ckad"
         }
       ],
-      "completedCases": 19
+      "completedCases": 20
     },
     {
       "id": 15,
       "title": "Этап 2: группа 5/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "pair-m11-ckad-ramenskoe-to-torzhok",

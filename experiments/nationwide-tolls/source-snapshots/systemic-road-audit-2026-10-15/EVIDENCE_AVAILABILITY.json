@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 265,
-  "rawCaptureCaseCount": 262,
+  "rawCaptureCount": 266,
+  "rawCaptureCaseCount": 263,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -19739,6 +19739,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-30-02-373Z.json",
+      "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-055Z.json",
+          "exists": true,
+          "bytes": 4679,
+          "sha256": "bd8ea66699deeef263b83663fa48a23fb15e6fb3658600105dccfac209e0c858",
+          "gitBlobSha": "6fc4dab804cec99c79929f52b18dd7933864b7fe",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/2026-10-16T01-30-06-017Z-capture.json.gz",
+          "exists": true,
+          "bytes": 227471,
+          "sha256": "95e85d22d9154096958daa04a7f2fa19c3e0887cd4942436c58717c9d0af1564",
+          "gitBlobSha": "6b111e15f0c2fdb8ed7477e3462e83d26af13cb2",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 8
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-477Z.json",
+          "exists": true,
+          "bytes": 4757,
+          "sha256": "201c1f6e60ef549409746ad79eab04e8153a5b0926b53f5747d786d263072c63",
+          "gitBlobSha": "5a422ae219cd9ff686f2b46c5020d4d13624475c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-30-06-875Z.json",
+          "exists": true,
+          "bytes": 4757,
+          "sha256": "99fb45ebd0f280530f2a5ee3f081175bbd109427fa17689d6f8f564a45260c0e",
+          "gitBlobSha": "37eae7089cae6fe0146fb19d3666e27b66269aca",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -21358,6 +21403,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 5
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/2026-10-16T01-30-06-017Z-capture.json.gz",
+      "exists": true,
+      "bytes": 227471,
+      "sha256": "95e85d22d9154096958daa04a7f2fa19c3e0887cd4942436c58717c9d0af1564",
+      "gitBlobSha": "6b111e15f0c2fdb8ed7477e3462e83d26af13cb2",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 8
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/2026-10-16T00-04-31-865Z-capture.json.gz",
