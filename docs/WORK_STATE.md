@@ -19,7 +19,7 @@ Trace response shape отсутствует: индексы737–746 не при
 
 1. DONE frozen dependencies: pnpm install --frozen-lockfile exit0,18.6s; Node24.19.0/pnpm11.25.0, lockfile unchanged. [Checkpoint](checkpoints/2026-10-16-part19d-dependencies-restored.md). Не новыйfullgate.
 2. DONE **lnr-лисичанск-moscow-center**, m4:unpriced2/22: offline15/17окт complete2/2, endpoints460→71 resolved; exactdatedfaremissing, unknown сохранён. [Checkpoint](checkpoints/2026-10-16-part19d-lisichansk-moscow-replay.md). NEXT STARTED samecase adapter/matrix/primarysource review; не назначатьцену бездоказательств.
-3. Checkpoint+appendlogs/queue/state, commit/GitHub/head/exacttree **до** исправления/другогоcase. Затем следующиймикрошагавтоматически.
+3. ДиагнозDONE: reverse sourcechain416+460→339→…→71 incorrectly flattens to416→71, losing460→71. [Correction STARTED](checkpoints/2026-10-16-part19d-reversed-compound-boundary-diagnosis.md): orient compound IDs in compiler, preserve source/fares/unknown; focused+fullgate before acceptance, durable eachstep.
 
 Часть19 IN PROGRESS,20 ещёне начата; прочиеfindings неполностьюразобраны. [Очередь](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
 Одинwriter; приactive/queuedGitHubjobнеписатьвветку, TIME_LIMIT возобновляем. Не перезапускатьзавершённые309live/25policycases.

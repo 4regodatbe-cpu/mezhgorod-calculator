@@ -1321,3 +1321,5 @@ After persisted connector-focused checkpoint: pnpm build + scoped lint/diff. Do 
 16.10.2026 dependency recovery DONE: frozen install exit0/18.6s, Node24.19.0/pnpm11.25.0, lockfile unchanged. No new fullgate. NEXT STARTED Lisichansk→Moscow m4:unpriced2/22 two offlineprofiles; checkpoint before fix/nextcase. [Recovery](../../docs/checkpoints/2026-10-16-part19d-dependencies-restored.md).
 
 16.10.2026 19D Lisichansk→Moscow2/22 offline2profiles DONE, complete/hash/departure verified; unknown retained:460→71 endpoint exactfaremissing. No runtimechange/newfullgate. [Checkpoint](../../docs/checkpoints/2026-10-16-part19d-lisichansk-moscow-replay.md). NEXT STARTED samecase adapter/matrix/source review before correction/nextcase; continue automatically.
+
+16.10.2026 19D samecase diagnosisDONE: reversed combined416+460 retained forward atomic order, creating wrong416→71 key instead of460→71; existing1830/2300 fare not newprice. [Correction STARTED](../../docs/checkpoints/2026-10-16-part19d-reversed-compound-boundary-diagnosis.md): compiler orientation+regression, focused/fullgate separate durable steps; unknown/unconfirmed preserved.
