@@ -1,0 +1,86 @@
+{
+  "startedAt": "2026-10-16T01:55:10.079Z",
+  "scope": {
+    "region": null,
+    "group": "single-m11",
+    "caseId": "single-m11-novgorod-to-moscow",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-m11-novgorod-to-moscow",
+      "startedAt": "2026-10-16T01:55:10.082Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-55-12-896Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/2026-10-16T01-55-12-861Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-55-13-297Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-55-13-690Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11"
+        ],
+        "provenRoads": [
+          "m11"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
+          "m11-15-58: m11_58_679_facility_sequence_incomplete",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
+          "m11-15-58: m11_58_679_facility_sequence_incomplete",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_58_679_facility_sequence_incomplete"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": null,
+          "reason": "only_one_verified_boundary_crossing"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:55:13.708Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:55:13.712Z"
+}

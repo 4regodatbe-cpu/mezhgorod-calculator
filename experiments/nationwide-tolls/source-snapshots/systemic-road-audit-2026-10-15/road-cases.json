@@ -1635,7 +1635,22 @@
         "m11"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-55-12-896Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/2026-10-16T01-55-12-861Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 589226,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-55-10-079Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-55-12-896Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/2026-10-16T01-55-12-861Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-55-13-297Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-55-13-690Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m11-moscow-to-novgorod",
