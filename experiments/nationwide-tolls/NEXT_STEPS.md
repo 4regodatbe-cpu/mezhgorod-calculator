@@ -1407,3 +1407,5 @@ NEXT STARTED: ZSD first case dnr-гранитное-saint-petersburg-center, loc
 Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 
 16.10.2026 frozen dependencies DONE exit0/24.2s, lock unchanged; ZSD Granitnoe→SPB exact saved-capture two-profile replay STARTED. See ../../docs/checkpoints/2026-10-16-1401-zsd-dependencies-ready.md
+
+16.10.2026 ZSD Granitnoe→SPB replay DONE2/2 complete; M4 now3810/4640, only ZSD missing; component sums are not totals. Samecase exactways/gates scope diagnosis STARTED. ../../docs/checkpoints/2026-10-16-1403-zsd-granitnoe-spb-replay.md

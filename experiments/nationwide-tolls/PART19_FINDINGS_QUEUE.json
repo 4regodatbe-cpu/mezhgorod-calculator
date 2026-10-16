@@ -27,7 +27,7 @@
     }
   ],
   "nextCase": "dnr-гранитное-saint-petersburg-center",
-  "nextAction": "ZSD first case: exact saved capture offline two-profile replay; six short M4 cases remain source-gated pending current independent collection-scope confirmation",
+  "nextAction": "Same ZSD Granitnoe→SPB: inspect exact out-of-zone1 paidways and payment gates before runtime changes",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2387,5 +2387,15 @@
     "status": "source_gated_unknown_retained",
     "checkpoint": "../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md",
     "runtimeChanged": false
+  },
+  "zsdReview": {
+    "status": "in_progress",
+    "firstCase": "dnr-гранитное-saint-petersburg-center",
+    "replayCheckpoint": "../../docs/checkpoints/2026-10-16-1403-zsd-granitnoe-spb-replay.md",
+    "evidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-granitnoe-spb-replay.json",
+    "wholeResult": "unknown",
+    "remainingMissing": [
+      "zsd"
+    ]
   }
 }
