@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:27:33.972Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:27:37.698Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,76 +23,10 @@
       "group": "single-m4"
     }
   },
-  "caseId": "single-m4-krasnodar-to-rostov",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-m4-krasnodar-to-rostov",
-    "startedAt": "2026-10-16T00:27:16.303Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-16T00-27-18-309Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-rostov/2026-10-16T00-27-18-289Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-27-18-673Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-27-19-049Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m4"
-      ],
-      "provenRoads": [
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": 850,
-      "weekdayAmount": 850,
-      "weekendAmount": 1000,
-      "period": "понедельник–четверг",
-      "segments": [
-        "М-4: m4-1223 → m4-1093 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 1000,
-      "weekdayAmount": 850,
-      "weekendAmount": 1000,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "М-4: m4-1223 → m4-1093 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 850,
-        "reason": "matrix exact selected-route M4 vector"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:27:19.065Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-27-14-934Z-part9",
-  "parent": "daf3be498fc880d0f2540276ddddf541120d9419",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-27-33-972Z-done.json"
+  "caseId": "single-m4-krasnodar-to-voronezh",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-27-37-698Z-part9",
+  "parent": "9d197050074dc09705e74074c008f77fb0dbd1c5",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-27-37-698Z-started.json"
 }
