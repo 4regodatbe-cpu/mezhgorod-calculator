@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:16:31.324Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:16:51.432Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 105,
+      "done": 106,
       "total": 155
     },
     {
@@ -18,15 +18,99 @@
   "next": {
     "part": 8,
     "spec": {
-      "caseId": "single-ckad-domodedovo-to-klin",
+      "caseId": "single-ckad-klin-to-domodedovo",
       "kind": "road",
       "group": "single-ckad"
     }
   },
   "caseId": "single-ckad-domodedovo-to-klin",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-ckad-domodedovo-to-klin",
+    "startedAt": "2026-10-16T00:16:33.724Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-334Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/2026-10-16T00-16-36-317Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-692Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-16-37-033Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "ckad"
+      ],
+      "provenRoads": [
+        "m11"
+      ],
+      "missingExpectedRoads": [
+        "ckad"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
+        "m11-15-58: m11_58_679_facility_sequence_incomplete",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
+        "m11-15-58: m11_58_679_facility_sequence_incomplete",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m11-15-58",
+        "amount": null,
+        "reason": "m11_58_679_facility_sequence_incomplete"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "unknown-paid-road",
+        "amount": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:16:37.049Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-16-31-324Z-part8",
-  "parent": "d5d0ae3e11c48885a8b861b7912842fa022ae807",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-16-31-324Z-started.json"
+  "parent": "08a1b562d71105029aee2b21640bda839fc94ab4",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-16-51-432Z-done.json"
 }

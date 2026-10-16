@@ -1734,7 +1734,22 @@
         "ckad"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-334Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/2026-10-16T00-16-36-317Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 151368,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-16-33-722Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-334Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/2026-10-16T00-16-36-317Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-692Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-16-37-033Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-ckad-klin-to-domodedovo",

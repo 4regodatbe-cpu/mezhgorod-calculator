@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:16:15.228Z",
+  "generatedAt": "2026-10-16T00:16:38.960Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 137,
-    "recordedLiveAttempts": 150,
-    "liveCaptured": 136,
-    "savedLiveSummaries": 136,
+    "distinctCaseAttempts": 138,
+    "recordedLiveAttempts": 151,
+    "liveCaptured": 137,
+    "savedLiveSummaries": 137,
     "missingOrInvalidReferences": 1,
-    "audited": 136,
-    "traceComplete": 136,
-    "sameDateParity": 136
+    "audited": 137,
+    "traceComplete": 137,
+    "sameDateParity": 137
   },
   "regionCounts": {
     "dnr": {
@@ -100,8 +100,8 @@
       "id": "single-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 0,
-      "audited": 0,
+      "attempted": 1,
+      "audited": 1,
       "traversalProven": 0,
       "pricedWeekday": 0,
       "pricedWeekend": 0
@@ -4753,6 +4753,40 @@
       ],
       "routeMeters": 200411,
       "routeSeconds": 9660
+    },
+    {
+      "caseId": "single-ckad-domodedovo-to-klin",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-334Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 151368,
+      "routeSeconds": 6933
     }
   ],
   "historicalExecutionExceptions": [],
@@ -7893,7 +7927,8 @@
         "pair-m11-zsd-tver-to-sest",
         "pair-m12-ckad-kazan-to-klin",
         "pair-m12-ckad-klin-to-kazan",
-        "pair-m12-ckad-vladimir-to-klin"
+        "pair-m12-ckad-vladimir-to-klin",
+        "single-ckad-domodedovo-to-klin"
       ],
       "occurrences": [
         {
@@ -8192,9 +8227,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-vladimir-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-09-10-607Z.json"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-334Z.json"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-692Z.json"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-16-37-033Z.json"
         }
       ],
-      "caseCount": 11
+      "caseCount": 12
     },
     {
       "code": "expected-road-not-proven",
@@ -8208,7 +8270,8 @@
         "pair-m11-ckad-spb-to-domodedovo",
         "pair-m12-ckad-dmitrov-to-kazan",
         "pair-m12-ckad-kazan-to-dmitrov",
-        "pair-m12-ckad-vladimir-to-klin"
+        "pair-m12-ckad-vladimir-to-klin",
+        "single-ckad-domodedovo-to-klin"
       ],
       "occurrences": [
         {
@@ -8403,9 +8466,25 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-vladimir-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-09-09-873Z.json"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "expectedRoads": [
+              "ckad"
+            ],
+            "provenRoads": [
+              "m11"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-334Z.json"
         }
       ],
-      "caseCount": 10
+      "caseCount": 11
     },
     {
       "code": "m11-58-679:unpriced",
@@ -8414,7 +8493,8 @@
         "pair-m11-zsd-tver-to-sest",
         "pair-m12-ckad-kazan-to-klin",
         "pair-m12-ckad-klin-to-kazan",
-        "pair-m12-ckad-vladimir-to-klin"
+        "pair-m12-ckad-vladimir-to-klin",
+        "single-ckad-domodedovo-to-klin"
       ],
       "occurrences": [
         {
@@ -8551,9 +8631,72 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-vladimir-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-09-10-607Z.json"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-334Z.json"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-692Z.json"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-16-37-033Z.json"
         }
       ],
-      "caseCount": 5
+      "caseCount": 6
+    },
+    {
+      "code": "m11_58_679_facility_sequence_incomplete",
+      "cases": [
+        "single-ckad-domodedovo-to-klin"
+      ],
+      "occurrences": [
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-334Z.json"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-16-36-692Z.json"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-16-37-033Z.json"
+        }
+      ],
+      "caseCount": 1
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
