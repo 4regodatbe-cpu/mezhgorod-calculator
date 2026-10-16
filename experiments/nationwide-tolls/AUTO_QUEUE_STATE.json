@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:52:38.131Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:52:43.635Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,66 +23,10 @@
       "group": "single-khabarovsk"
     }
   },
-  "caseId": "single-khabarovsk-khabarovsk-to-vyazemsky",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-khabarovsk-khabarovsk-to-vyazemsky",
-    "startedAt": "2026-10-16T01:52:09.410Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T01-52-11-176Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/2026-10-16T01-52-11-167Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-52-11-537Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-52-11-884Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "khabarovsk"
-      ],
-      "provenRoads": [],
-      "missingExpectedRoads": [
-        "khabarovsk"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T01:52:11.898Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-52-08-099Z-part16",
-  "parent": "fa4b35a9ac378d2b593c9819fac98e216e1a5484",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-52-38-131Z-done.json"
+  "caseId": "single-khabarovsk-nekrasovka-to-smidovich",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-52-43-635Z-part16",
+  "parent": "16417667b01762d664b41a56911a0befb9423eb5",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-52-43-635Z-started.json"
 }
