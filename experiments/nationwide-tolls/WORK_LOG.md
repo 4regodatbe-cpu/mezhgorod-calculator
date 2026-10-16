@@ -1691,3 +1691,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T17:02:36.458Z: ZSD case65 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-02-36-457Z.md). NEXT ZSD nextcase single-m11-spb-to-tver; --next; savedcapture twoofflineprofiles.
 
 2026-10-16T17:03:59.021Z: ZSD case66 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-03-59-020Z.md). NEXT ZSD nextcase single-m11-tver-to-spb; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:05:06.763Z: ZSD case67 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-05-06-762Z.md). NEXT ZSD nextcase single-zsd-blag-to-sest; --next; savedcapture twoofflineprofiles.
