@@ -757,3 +757,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 2026-10-16T01:09:57.273Z: automatic queue STARTED; 155/155,49/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-09-57-273Z-started.json). zaporizhzhia-мелитополь-kerch-center
 
 2026-10-16T01:10:23.761Z: automatic queue DONE; 155/155,50/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-10-23-761Z-done.json). zaporizhzhia-мелитополь-kerch-center
+
+2026-10-16T01:10:28.425Z: automatic queue STARTED; 155/155,50/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-10-28-425Z-started.json). zaporizhzhia-мелитополь-moscow-center
