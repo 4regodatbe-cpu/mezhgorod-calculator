@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:21:08.560Z",
+  "generatedAt": "2026-10-16T00:21:33.630Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 150,
-    "recordedLiveAttempts": 163,
-    "liveCaptured": 149,
-    "savedLiveSummaries": 149,
+    "distinctCaseAttempts": 151,
+    "recordedLiveAttempts": 164,
+    "liveCaptured": 150,
+    "savedLiveSummaries": 150,
     "missingOrInvalidReferences": 1,
-    "audited": 149,
-    "traceComplete": 149,
-    "sameDateParity": 149
+    "audited": 150,
+    "traceComplete": 150,
+    "sameDateParity": 150
   },
   "regionCounts": {
     "dnr": {
@@ -80,9 +80,9 @@
       "id": "single-m11",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 3,
-      "audited": 3,
-      "traversalProven": 3,
+      "attempted": 4,
+      "audited": 4,
+      "traversalProven": 4,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -5176,6 +5176,39 @@
       ],
       "routeMeters": 184281,
       "routeSeconds": 8777
+    },
+    {
+      "caseId": "single-m11-spb-to-moscow",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-21-30-842Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 718376,
+      "routeSeconds": 24952
     }
   ],
   "historicalExecutionExceptions": [],
@@ -6696,7 +6729,8 @@
         "pair-m11-zsd-sest-to-moscow",
         "pair-m11-zsd-tver-to-sest",
         "pair-m4-m11-voronezh-to-spb",
-        "single-m11-moscow-to-spb"
+        "single-m11-moscow-to-spb",
+        "single-m11-spb-to-moscow"
       ],
       "occurrences": [
         {
@@ -7589,9 +7623,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-20-20-686Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-21-30-842Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-21-31-252Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-21-31-662Z.json"
         }
       ],
-      "caseCount": 33
+      "caseCount": 34
     },
     {
       "code": "m4:unpriced",
