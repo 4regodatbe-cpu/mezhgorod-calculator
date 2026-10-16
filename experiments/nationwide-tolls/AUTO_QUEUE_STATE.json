@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:35:25.792Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:35:29.786Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,102 +23,10 @@
       "group": "triple-m4-m11-zsd"
     }
   },
-  "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
-    "startedAt": "2026-10-16T00:34:49.246Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-35-08-937Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/2026-10-16T00-35-08-826Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-35-09-592Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-35-10-230Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m4",
-        "m11",
-        "zsd"
-      ],
-      "provenRoads": [
-        "m4",
-        "m11",
-        "zsd"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: zsd",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: zsd",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 5040,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "m11-15-58",
-        "amount": 1130,
-        "reason": "m11_head_ready_direct_pair_at_departure"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": 3900,
-        "reason": "matrix dated selected-route M11 direct pair"
-      },
-      {
-        "id": "m11-679-684",
-        "amount": 94,
-        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-      },
-      {
-        "id": "zsd",
-        "amount": null,
-        "reason": "zsd_trip_extends_outside_reviewed_zone1"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:35:10.251Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-34-47-648Z-part10",
-  "parent": "14f88e3bd124cfd7e288aec96cc4c0874ebc2c04",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-35-25-792Z-done.json"
+  "caseId": "triple-m4-m11-zsd-rostov-to-sest",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-35-29-786Z-part10",
+  "parent": "9964ec5e9de3e60d7e110e4c93c9101eae2ff2cb",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-35-29-786Z-started.json"
 }
