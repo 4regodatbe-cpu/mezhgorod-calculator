@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
+import { gunzipSync } from 'node:zlib';
 
 export const branch = 'fix/v3-missing-route-prices-2026-10-15';
 export const dates = ['2026-10-15T09:00:00+03:00', '2026-10-17T09:00:00+03:00'];
@@ -119,6 +120,7 @@ export function main() {
   const deadline = Date.now() + 25 * 60_000;
   while (Date.now() < deadline) {
     const queue = read(queuePath), finding = queue.findings.find(f => f.code === 'm4_crossing_profile_changes');
+    if (sha(experiment + '/' + queue.baselineReport) !== queue.baselineReportSha256) throw Error('BASELINE_REPORT_CHANGED');
     const caseId = nextPolicyCase(finding);
     if (!caseId) {
       finding.status = 'not_reproduced_current_engine';
@@ -144,7 +146,9 @@ export function main() {
         if (matches.length !== 1) throw Error('EXACTLY_ONE_NEW_OUTPUT_PER_PROFILE_REQUIRED');
         return matches[0];
       });
-      const provider = read(spec.auditEvidence.live).provider;
+      const raw = JSON.parse(gunzipSync(fs.readFileSync(capture)));
+      if (raw.record?.spec?.id !== caseId) throw Error('RAW_CASE_MISMATCH');
+      const provider = raw.record.provider;
       const evaluation = verifyPolicyPair(outputs.map(o => o.value), { caseId, captureSha256, provider });
       if (sha(capture) !== captureSha256) throw Error('RAW_CHANGED');
       evaluation.outputs = outputs.map(o => ({ path: o.p, sha256: sha(o.p) }));

@@ -20,6 +20,8 @@
 
 ## NEXT — один сохраняемый микрошаг
 
+Automatic policy runner **focused8/8 + scopedlint3/diff PASS**, включая isolated percaseGit/push/failure integration. **Fullgate STARTED, пока не подтверждён**; workflow ещё не включён. [Checkpoint/recovery](checkpoints/2026-10-16-part19-policy-runner-integration-pass.md).
+
 Automatic policy runner implemented, **focused5/5/lint2/diff PASS**, workflow not enabled yet. Next: raw/report guards + isolated per-case persistence integration tests, then fullgate before workflow edit. [Checkpoint](checkpoints/2026-10-16-part19-policy-runner-focused.md).
 
 **STARTED автоматическая очередь оставшихся20/25 policy replays** в существующем GitHubworkflow: сначалаrunner/tests/fullgate, потомworkflowpush и наблюдаемыйrun. Case6 пока не запущен. [Recovery](checkpoints/2026-10-16-part19-automatic-policy-queue-started.md). После каждого durable save сразу следующийcase, по прямому уточнению пользователя10:27МСК.
