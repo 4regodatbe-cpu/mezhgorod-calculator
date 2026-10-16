@@ -552,7 +552,22 @@
         "m4"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-moscow-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T02-03-55-265Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-moscow-to-voronezh/2026-10-16T02-03-55-223Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 516380,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-03-50-189Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-moscow-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T02-03-55-265Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-moscow-to-voronezh/2026-10-16T02-03-55-223Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-03-55-704Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-03-56-134Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-a289-krasnodar-to-kerch",
