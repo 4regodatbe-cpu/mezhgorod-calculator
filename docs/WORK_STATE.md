@@ -26,3 +26,5 @@ Trace response shape отсутствует: индексы737–746 не при
 
 Unknown≠0, subtotal≠итог. Всяпоездкапомоментуотправления, междорожныевекторыотложены. Raw/live/baseline/historyсохранять. Audited/replay≠подтверждённыйтариф/freshlive. No main/merge/Production/Android/messages.
 [Protocol](CHECKPOINT_PROTOCOL.md) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md).
+
+Latest [part19d-compound-compiler-change](checkpoints/2026-10-16-part19d-compound-compiler-change.md). Code change DONE, regenerated register; tests NOT yet run, not accepted for completion. NEXT: Run focused endpoint/adapter/source tests and eslint modified compiler/test, record exact PASS/FAIL then fullgate; do not replay another route before validation.
