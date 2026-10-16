@@ -1,14 +1,14 @@
 {
-  "at": "2026-10-16T17:35:07.405Z",
-  "phase": "PART19_ZSD_CASE74_REPLAY_DONE",
+  "at": "2026-10-16T17:36:52.511Z",
+  "phase": "PART19_ZSD_CASE75_REPLAY_DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "ZSD case 74 saved-capture replay under two offline date profiles; same reviewed ZSD scope, whole-route total remains blocked",
-  "checked": 74,
+  "scope": "ZSD case 75 saved-capture replay under two offline date profiles; same reviewed ZSD scope, M11 tail and unknown road gaps remain",
+  "checked": 75,
   "total": 76,
-  "next": "Case 75 triple-m4-m11-zsd-prim-to-voronezh; replay saved capture under two offline date profiles",
+  "next": "Case 76 triple-m4-m11-zsd-sest-to-domodedovo; replay saved capture under two offline date profiles",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "0be61672c9761ab627bc53a11894fe4fe6dd8929",
-  "nextFinding": "zsd:triple-m4-m11-zsd-prim-to-voronezh",
-  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-35-07-404Z.md"
+  "parent": "1b9e70731087949f46be5e454b52878ea827b6c6",
+  "nextFinding": "zsd:triple-m4-m11-zsd-sest-to-domodedovo",
+  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-36-52-510Z.md"
 }
