@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:23:30.500Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:23:50.000Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 123,
+      "done": 124,
       "total": 155
     },
     {
@@ -18,15 +18,81 @@
   "next": {
     "part": 9,
     "spec": {
-      "caseId": "single-m12-murom-to-kazan",
+      "caseId": "single-m12-vladimir-to-kazan",
       "kind": "road",
       "group": "single-m12"
     }
   },
   "caseId": "single-m12-murom-to-kazan",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-m12-murom-to-kazan",
+    "startedAt": "2026-10-16T00:23:32.004Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-murom-to-kazan/live-2026-10-15T09-00-00-03-00-2026-10-16T00-23-34-463Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-murom-to-kazan/2026-10-16T00-23-34-429Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-23-34-859Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-23-35-251Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m12"
+      ],
+      "provenRoads": [
+        "m12"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": 2621,
+      "weekdayAmount": 2621,
+      "weekendAmount": 2621,
+      "period": "все дни",
+      "segments": [
+        "М-12: murom → ivanovskoe_p241 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 2621,
+      "weekdayAmount": 2621,
+      "weekendAmount": 2621,
+      "period": "все дни",
+      "segments": [
+        "М-12: murom → ivanovskoe_p241 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m12",
+        "amount": 2621,
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:23:35.266Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-23-30-500Z-part9",
-  "parent": "dc22dd43742e291e01fdfc517be458581af42311",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-23-30-500Z-started.json"
+  "parent": "b6f40c099b1aab65c9e6455e8478915026cdd2bf",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-23-50-000Z-done.json"
 }
