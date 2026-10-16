@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "ZSD class reviewed; assess remaining finding classes, do not mark part19 complete",
+  "nextAction": "Review and classify m4:unpriced using 22 saved evaluations; no tariff/zero assumption; Part19 remains in progress",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1743,8 +1743,18 @@
         "triple-m4-m11-zsd-prim-to-voronezh",
         "triple-m4-m11-zsd-sest-to-domodedovo"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "source_gated_collection_span_unbound",
+      "reviewStatus": "all76_replayed_classified_scope_source_gated",
+      "reviewCounts": {
+        "sourceGated": 1,
+        "sourceGatedSameExactWaySet": 11,
+        "identityRecoveredOtherProductsUnknown": 1,
+        "sourceGatedSouthToNorthKAD": 1,
+        "sameReviewedZsdScope": 53,
+        "distinctFinishedScope": 9
+      },
+      "evidence": "../../docs/checkpoints/2026-10-16-zsd-classification-76-cases.md",
+      "note": "All 76 saved cases and two departure-date profiles reproduced. Finished operator collection span remains unbound; no tariff, free status or runtime fix claimed. Case counts are not fare coverage."
     },
     {
       "code": "m4:unpriced",

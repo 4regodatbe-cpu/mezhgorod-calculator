@@ -1724,3 +1724,8 @@ Recovery is the only current action: transfer full exact `NEXT_STEPS.md`, `PART1
 2026-10-16T17:36:52.511Z: ZSD case75 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-36-52-510Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-sest-to-domodedovo; --next; savedcapture twoofflineprofiles.
 
 2026-10-16T17:39:01.255Z: ZSD case76 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-39-01-254Z.md). NEXT ZSD class reviewed; assess remaining finding classes, do not mark part19 complete.
+## 2026-10-16 — ZSD queue finding classification
+
+After case76, all 76 ZSD saved-capture cases were replayed in both departure-date profiles with complete integrity. The recorded finding has been reclassified from `needs_diagnosis` to `source_gated_collection_span_unbound`: source evidence does not bind the operator’s finished collection span, so the tool’s fail-closed unknown remains appropriate. This classifies the current evidence; it does not fix runtime code, confirm a toll, or claim a free route. See [checkpoint](../../docs/checkpoints/2026-10-16-zsd-classification-76-cases.md) and exact count evidence `docs/checkpoints/evidence/2026-10-16-zsd-queue-classification.json`.
+
+Audit distribution: 53 same reviewed scope, 9 distinct finished-scope cases, 11 exact-way-set matches, plus three distinct source/identity classes; missing-component case counts are preserved in the evidence JSON. Case counts are reproduction coverage, not fare coverage. No runtime tests/full build were run. Overall 18/20 parts =90%; Part19 remains in progress. NEXT: assess `m4:unpriced` from its 22 saved evaluations, one finding only.

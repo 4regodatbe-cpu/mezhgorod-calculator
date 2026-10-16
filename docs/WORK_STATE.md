@@ -1,6 +1,6 @@
 # Калькулятор «Из А в Б»: текущее состояние
 
-16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Перед case76 проверенный PR head `39dd3f1e6d2f83de903c9f107d823bc4118e0c56`, tree `72dcac5f6178f753b95453c207eee863ffb909fa` совпадал с локальным. Checkout `calculator-run`. Local/connector commit SHA могут различаться; сравнивать точные trees и remote head после каждого сохранения.
+16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Перед классификацией ZSD queue проверенный PR head `29c15aa234ecac2b07049323634a1ea47dc14feb`, tree `182fbba53429602843e1098d6466df6a195d85c4` совпадал с локальным. Checkout `calculator-run`. Local/connector commit SHA могут различаться; сравнивать точные trees и remote head после каждого сохранения.
 
 ## Прогресс
 
@@ -18,8 +18,8 @@
 
 ## NEXT STARTED
 
-**ZSD class reviewed; assess remaining finding classes, do not mark part19 complete**
+**Review finding `m4:unpriced`: classify 22 existing cases and unresolved source scopes; one finding only**
 
-ZSD review **76/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T17-39-01-254Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
+ZSD review **76/76**; classified source-gated because the operator's finished collection span remains unbound. [Latest checkpoint](checkpoints/2026-10-16-zsd-classification-76-cases.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
 Repository-owned utility: `node experiments/nationwide-tolls/scripts/review-zsd-finding-case.mjs --next` (or `--diagnose` after a new scope). One step only; caller commits/publishes/exacthead-tree before continuing. Do not rerun completed M4/policy/live queues. No main/merge/Production. Autocontinuation remains enabled.

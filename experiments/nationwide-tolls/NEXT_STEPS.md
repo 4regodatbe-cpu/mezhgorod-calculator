@@ -1622,3 +1622,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T17:36:52.511Z: ZSD case75 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-36-52-510Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-sest-to-domodedovo; --next; savedcapture twoofflineprofiles.
 
 2026-10-16T17:39:01.255Z: ZSD case76 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-39-01-254Z.md). NEXT ZSD class reviewed; assess remaining finding classes, do not mark part19 complete.
+
+2026-10-16T17:41:54Z: `zsd:unpriced` classified source-gated after 76/76 saved cases were replayed and scoped; operator collection span remains unbound, no tariff/free claim. [Checkpoint](../../docs/checkpoints/2026-10-16-zsd-classification-76-cases.md). NEXT review `m4:unpriced` from its 22 saved evaluations, then continue one finding at a time. Plan90% (18/20); not fare coverage.
