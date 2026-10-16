@@ -1818,7 +1818,22 @@
         "ckad"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-podolsk-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-17-43-324Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-podolsk-to-noginsk/2026-10-16T00-17-43-312Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 90801,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-17-41-205Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-podolsk-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-17-43-324Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-podolsk-to-noginsk/2026-10-16T00-17-43-312Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-17-43-690Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-17-44-034Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-ckad-noginsk-to-podolsk",

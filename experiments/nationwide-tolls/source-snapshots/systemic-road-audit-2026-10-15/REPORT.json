@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:17:23.648Z",
+  "generatedAt": "2026-10-16T00:17:45.991Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 140,
-    "recordedLiveAttempts": 153,
-    "liveCaptured": 139,
-    "savedLiveSummaries": 139,
+    "distinctCaseAttempts": 141,
+    "recordedLiveAttempts": 154,
+    "liveCaptured": 140,
+    "savedLiveSummaries": 140,
     "missingOrInvalidReferences": 1,
-    "audited": 139,
-    "traceComplete": 139,
-    "sameDateParity": 139
+    "audited": 140,
+    "traceComplete": 140,
+    "sameDateParity": 140
   },
   "regionCounts": {
     "dnr": {
@@ -100,11 +100,11 @@
       "id": "single-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 3,
-      "audited": 3,
+      "attempted": 4,
+      "audited": 4,
       "traversalProven": 0,
-      "pricedWeekday": 1,
-      "pricedWeekend": 1
+      "pricedWeekday": 2,
+      "pricedWeekend": 2
     },
     {
       "id": "single-zsd",
@@ -4853,6 +4853,38 @@
       ],
       "routeMeters": 94442,
       "routeSeconds": 5166
+    },
+    {
+      "caseId": "single-ckad-podolsk-to-noginsk",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-podolsk-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-17-43-324Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "ckad"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 90801,
+      "routeSeconds": 5218
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8367,7 +8399,8 @@
         "pair-m12-ckad-vladimir-to-klin",
         "single-ckad-domodedovo-to-klin",
         "single-ckad-klin-to-domodedovo",
-        "single-ckad-noginsk-to-podolsk"
+        "single-ckad-noginsk-to-podolsk",
+        "single-ckad-podolsk-to-noginsk"
       ],
       "occurrences": [
         {
@@ -8608,9 +8641,23 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-noginsk-to-podolsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-17-21-008Z.json"
+        },
+        {
+          "caseId": "single-ckad-podolsk-to-noginsk",
+          "detail": {
+            "expectedRoads": [
+              "ckad"
+            ],
+            "provenRoads": [],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-podolsk-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-17-43-324Z.json"
         }
       ],
-      "caseCount": 13
+      "caseCount": 14
     },
     {
       "code": "m11-58-679:unpriced",
