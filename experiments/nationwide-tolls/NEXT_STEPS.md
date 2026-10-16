@@ -1503,3 +1503,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T14:20:22.672Z: ZSD case27 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-20-22-671Z.md). NEXT ZSD nextcase pair-m11-zsd-moscow-to-sest; --next; savedcapture twoofflineprofiles.
 
 2026-10-16T14:21:01.822Z: ZSD case28 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-21-01-821Z.md). NEXT ZSD nextcase pair-m11-zsd-prim-to-moscow; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:21:34.192Z: ZSD case29 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-21-34-191Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
