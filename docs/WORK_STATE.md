@@ -14,13 +14,13 @@ Parts1–18:155/155+154/154, frozenREPORT340/340.19A/B A28957helper-only+2wholec
 
 [22-casequeue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), latestper-caseevidence/checkpoints inqueue/log. Allcases10–22 twoofflineprofiles separatelysaved/readback; raw/live/olderreplays/REPORTuntouched. Fix4811a106 northboundcompound416+460relocated36keys/no newfares. Prior full687/687+quote/API/Next/TS/static16/16/focused26PASS remainshistorical; no runtimecodechange/newgate thisturn. OrdinaryCJS-lint failure andexplicitexception documented, notsilentlypassed.
 
-## NEXT STARTED — ZSD case24
+## NEXT STARTED — ZSD case25
 
 Overall plan progress **90% (18/20 completed parts)**. This is plan progress, not tariff coverage/release readiness. Part19 inprogress/20planned. User requests this metric in every subsequent report. Formula in SMALL_PARTS_PLAN.json.progressReporting.
 
-ZSD current-engine savedcapture reviews **23/76**; latest pair-m11-ckad-domodedovo-to-spb: twoofflineprofiles complete, status `source_gated_same_reviewed_zsd_scope`, missing ['zsd']. [Latest checkpoint](checkpoints/2026-10-16-142654-zsd-case23.md) and full per-case queue/evidence preserve exact results. Firstcase PVP5/Ekateringofka sourcegate remains unresolved; no guessed600/zone1subtotal. SixshortM4 andeight545 gates remain as previously documented.
+ZSD current-engine savedcapture reviews **24/76**; latest pair-m11-ckad-noginsk-to-spb: twoofflineprofiles complete, status `source_gated_same_reviewed_zsd_scope`, missing ['ckad', 'm11-15-58', 'zsd']. [Latest checkpoint](checkpoints/2026-10-16-142712-zsd-case24.md) and full per-case queue/evidence preserve exact results. Firstcase PVP5/Ekateringofka sourcegate remains unresolved; no guessed600/zone1subtotal. SixshortM4 andeight545 gates remain as previously documented.
 
-Next ONLY pair-m11-ckad-noginsk-to-spb; existingcapture, twoofflineprofiles, exactscope comparison, durablecheckpoint before nextcase. No rerun completedM4/policy/309live. Frozen dependencies restored; no newruntimecode/fullgate. Latest691 not rerun. Currentcheckout calculator-resume; connector/local commits can differ, exacttree readback required.
+Next ONLY pair-m11-ckad-spb-to-domodedovo; existingcapture, twoofflineprofiles, exactscope comparison, durablecheckpoint before nextcase. No rerun completedM4/policy/309live. Frozen dependencies restored; no newruntimecode/fullgate. Latest691 not rerun. Currentcheckout calculator-resume; connector/local commits can differ, exacttree readback required.
 
 Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. Ifcontextends, startfromthisspecificNEXT, notoldrecovery/309live/25policyqueue. One writer; active/queuedjob→no writes, TIME_LIMITresumable. Unknown≠0,subtotal≠total, wholetripdeparturepricing; cross-roadvectorsdeferred. No main/merge/Production/Android/messages. Autocontinuation remainsenabled untilall20done.
 
