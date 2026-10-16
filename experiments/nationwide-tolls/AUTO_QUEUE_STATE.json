@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:30:21.422Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:30:40.480Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 140,
+      "done": 141,
       "total": 155
     },
     {
@@ -18,15 +18,90 @@
   "next": {
     "part": 10,
     "spec": {
-      "caseId": "single-zsd-blag-to-prim",
+      "caseId": "single-zsd-peterhof-to-sest",
       "kind": "road",
       "group": "single-zsd"
     }
   },
   "caseId": "single-zsd-blag-to-prim",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-zsd-blag-to-prim",
+    "startedAt": "2026-10-16T00:30:23.628Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-24-686Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/2026-10-16T00-30-24-682Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-30-25-004Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-30-25-309Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "zsd"
+      ],
+      "provenRoads": [
+        "zsd"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: unknown-paid-road, zsd",
+        "unknown-paid-road: unmapped_selected_route_paid_booth",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: unknown-paid-road, zsd",
+        "unknown-paid-road: unmapped_selected_route_paid_booth",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "unknown-paid-road",
+        "amount": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      },
+      {
+        "id": "zsd",
+        "amount": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:30:25.322Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-30-21-422Z-part10",
-  "parent": "65503de9c121e4e8f9b46f38433573e1f6123d60",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-30-21-422Z-started.json"
+  "parent": "84b53d5443027b02c6119897e5e38a218b09e725",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-30-40-480Z-done.json"
 }

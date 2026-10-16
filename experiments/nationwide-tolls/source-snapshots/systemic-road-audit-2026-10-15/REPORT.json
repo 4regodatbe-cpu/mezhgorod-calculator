@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:30:03.766Z",
+  "generatedAt": "2026-10-16T00:30:27.397Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 172,
-    "recordedLiveAttempts": 185,
-    "liveCaptured": 171,
-    "savedLiveSummaries": 171,
+    "distinctCaseAttempts": 173,
+    "recordedLiveAttempts": 186,
+    "liveCaptured": 172,
+    "savedLiveSummaries": 172,
     "missingOrInvalidReferences": 1,
-    "audited": 171,
-    "traceComplete": 171,
-    "sameDateParity": 171
+    "audited": 172,
+    "traceComplete": 172,
+    "sameDateParity": 172
   },
   "regionCounts": {
     "dnr": {
@@ -110,9 +110,9 @@
       "id": "single-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 0,
-      "audited": 0,
-      "traversalProven": 0,
+      "attempted": 1,
+      "audited": 1,
+      "traversalProven": 1,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -5881,6 +5881,38 @@
       ],
       "routeMeters": 60859,
       "routeSeconds": 3531
+    },
+    {
+      "caseId": "single-zsd-blag-to-prim",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-24-686Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 21889,
+      "routeSeconds": 1382
     }
   ],
   "historicalExecutionExceptions": [],
@@ -7402,7 +7434,8 @@
         "pair-m11-zsd-tver-to-sest",
         "pair-m4-m11-voronezh-to-spb",
         "single-m11-moscow-to-spb",
-        "single-m11-spb-to-moscow"
+        "single-m11-spb-to-moscow",
+        "single-zsd-blag-to-prim"
       ],
       "occurrences": [
         {
@@ -8322,9 +8355,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-21-31-662Z.json"
+        },
+        {
+          "caseId": "single-zsd-blag-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-24-686Z.json"
+        },
+        {
+          "caseId": "single-zsd-blag-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-30-25-004Z.json"
+        },
+        {
+          "caseId": "single-zsd-blag-to-prim",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-30-25-309Z.json"
         }
       ],
-      "caseCount": 34
+      "caseCount": 35
     },
     {
       "code": "m4:unpriced",
@@ -9141,7 +9201,8 @@
         "single-m11-moscow-to-tver",
         "single-m11-tver-to-moscow",
         "single-m3-kaluga-to-moscow",
-        "single-odintsovo-golitsyno-to-moscow"
+        "single-odintsovo-golitsyno-to-moscow",
+        "single-zsd-blag-to-prim"
       ],
       "occurrences": [
         {
@@ -9656,9 +9717,36 @@
             "reason": "unmapped_selected_route_paid_edges"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-28-30-467Z.json"
+        },
+        {
+          "caseId": "single-zsd-blag-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-24-686Z.json"
+        },
+        {
+          "caseId": "single-zsd-blag-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-30-25-004Z.json"
+        },
+        {
+          "caseId": "single-zsd-blag-to-prim",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-30-25-309Z.json"
         }
       ],
-      "caseCount": 19
+      "caseCount": 20
     },
     {
       "code": "expected-road-not-proven",
