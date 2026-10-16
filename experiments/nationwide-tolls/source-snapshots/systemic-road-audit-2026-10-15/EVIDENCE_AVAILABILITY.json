@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 319,
-  "rawCaptureCaseCount": 316,
+  "rawCaptureCount": 320,
+  "rawCaptureCaseCount": 317,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -22169,6 +22169,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-04-29-607Z.json",
+      "caseId": "single-m4-rostov-to-krasnodar",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T02-04-31-654Z.json",
+          "exists": true,
+          "bytes": 4178,
+          "sha256": "6e0f6b6d1108b42a1983185924a87b85d1ec5f363569e177242b4e6605f2c93a",
+          "gitBlobSha": "51583d36afbe8593601a4e5fe99a75fea195ef99",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/2026-10-16T02-04-31-635Z-capture.json.gz",
+          "exists": true,
+          "bytes": 120080,
+          "sha256": "38ddaef1b413a6e7975351d3c49d735d8807acfbaf7e98bddd8edb69655150c0",
+          "gitBlobSha": "bfbe0963ebd987c18e840a954f7c4b39fb181d28",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 5
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-04-32-024Z.json",
+          "exists": true,
+          "bytes": 4256,
+          "sha256": "6bbf3ca009dfbc213f93fa5c0a6fc5e9a6ac495dc8a4332b023f693adae7eec7",
+          "gitBlobSha": "843d1540ad5b2ec9e81f5c5450de3a9d596b210b",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-04-32-387Z.json",
+          "exists": true,
+          "bytes": 4259,
+          "sha256": "33261c9fa6d7e8864be3e2402e3e91436ec1df5ec6b7ae38d0a471047e9924ff",
+          "gitBlobSha": "bfaeef9a83f062547f83d1883787f658a850b953",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -25009,6 +25054,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 8
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/2026-10-16T02-04-31-635Z-capture.json.gz",
+      "exists": true,
+      "bytes": 120080,
+      "sha256": "38ddaef1b413a6e7975351d3c49d735d8807acfbaf7e98bddd8edb69655150c0",
+      "gitBlobSha": "bfbe0963ebd987c18e840a954f7c4b39fb181d28",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 5
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/2026-10-16T00-28-07-330Z-capture.json.gz",
