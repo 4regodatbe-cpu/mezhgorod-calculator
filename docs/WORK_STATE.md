@@ -18,7 +18,7 @@
 
 ## NEXT STARTED
 
-**ZSD nextcase single-zsd-peterhof-to-prim; --next; savedcapture twoofflineprofiles**
+**BLOCKED: restore full oversized ledger blobs and read back exact case 68 diagnosis tree before next case**
 
 ZSD review **68/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T17-07-20-801Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 

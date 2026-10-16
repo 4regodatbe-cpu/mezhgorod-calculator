@@ -1,14 +1,14 @@
 {
   "at": "2026-10-16T07:49:15.074Z",
-  "phase": "PART19_M4_POLICY_CLASS_DONE",
+  "phase": "PART19_ZSD_DIAGNOSIS_DURABILITY_REPAIR",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
-  "checked": 25,
-  "total": 25,
-  "next": "Part19: diagnose next finding class; do not mark part19/20 complete",
+  "scope": "ZSD case 68 diagnosis checkpoint and exact-tree persistence repair; offline scope audit, not tariff confirmation",
+  "checked": 68,
+  "total": 76,
+  "next": "Restore exact complete large-file blobs and verify remote tree/path SHAs; only then begin case 69",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "51f9df6463bab7ac2668be9dc39ac25d5fcc733c",
-  "nextFinding": "m4:unpriced",
-  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-49-15-074Z-part19_m4_policy_class_done.json"
+  "parent": "1a215cc1dbd97f834b1c1c19ce2532d783c38df9",
+  "nextFinding": "zsd:case68-durability-repair",
+  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-12-02-000Z-tree-readback-repair.md"
 }
