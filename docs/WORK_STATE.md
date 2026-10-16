@@ -17,3 +17,5 @@
 [Очередьнаходокчасти19](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), [20частей](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json). Остальныекатегорииещёнеразобраны,25m4_crossing_profile_changesизстарыхcapturesневыдаватьзановыеошибки,нуженcurrent-engineofflineповтор. **Часть19INPROGRESS,20неначата**.
 
 Автоматическипродолжатьпоодномусохраняемомуподшагубез«дальше»; STARTEDпереддолгимшагом,DONE/FAILED+commit/GitHub/head/treeпередследующим. Unknownне0,subtotalнеитог; тарификациявсейпоездкипоотправлению;междорожныевекторыотложены. GitHub/routingconsentдействуют. [Protocol](CHECKPOINT_PROTOCOL.md),[WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md),[NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md),[DECISIONS](../experiments/nationwide-tolls/DECISIONS.md).
+
+16.10.2026:19Bdiagnosed: selectedValhallaвходитA289с03К252между23и82,рамка23>13.5км; восточныйMaryanskayafallbackневерен. STARTED directedconnectorregression/guardedbindingдо385черезсуществующуюматрицу. checkpoints/2026-10-16-part19b-a289-connector-diagnosed.md.
