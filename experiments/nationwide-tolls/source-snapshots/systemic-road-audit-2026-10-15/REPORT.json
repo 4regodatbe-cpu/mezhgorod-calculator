@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:04:57.255Z",
+  "generatedAt": "2026-10-16T00:05:19.022Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 111,
-    "recordedLiveAttempts": 124,
-    "liveCaptured": 110,
-    "savedLiveSummaries": 110,
+    "distinctCaseAttempts": 112,
+    "recordedLiveAttempts": 125,
+    "liveCaptured": 111,
+    "savedLiveSummaries": 111,
     "missingOrInvalidReferences": 1,
-    "audited": 110,
-    "traceComplete": 110,
-    "sameDateParity": 110
+    "audited": 111,
+    "traceComplete": 111,
+    "sameDateParity": 111
   },
   "regionCounts": {
     "dnr": {
@@ -170,9 +170,9 @@
       "id": "pair-m11-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 4,
-      "audited": 4,
-      "traversalProven": 2,
+      "attempted": 5,
+      "audited": 5,
+      "traversalProven": 3,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -3850,6 +3850,40 @@
       ],
       "routeMeters": 781492,
       "routeSeconds": 25675
+    },
+    {
+      "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T00-05-16-537Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 354824,
+      "routeSeconds": 13566
     }
   ],
   "historicalExecutionExceptions": [],
@@ -6390,7 +6424,8 @@
         "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
         "max-chain-m12-ckad-m11-zsd-sest-to-murom",
         "pair-m11-ckad-noginsk-to-spb",
-        "pair-m11-ckad-spb-to-noginsk"
+        "pair-m11-ckad-spb-to-noginsk",
+        "pair-m11-ckad-torzhok-to-ramenskoe"
       ],
       "occurrences": [
         {
@@ -6581,16 +6616,44 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-55-516Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T00-05-16-537Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-05-16-919Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-05-17-287Z.json"
         }
       ],
-      "caseCount": 7
+      "caseCount": 8
     },
     {
       "code": "unknown-paid-road:unpriced",
       "cases": [
         "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
         "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
-        "pair-m11-ckad-spb-to-domodedovo"
+        "pair-m11-ckad-spb-to-domodedovo",
+        "pair-m11-ckad-torzhok-to-ramenskoe"
       ],
       "occurrences": [
         {
@@ -6673,9 +6736,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-32-746Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T00-05-16-537Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-05-16-919Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-05-17-287Z.json"
         }
       ],
-      "caseCount": 3
+      "caseCount": 4
     },
     {
       "code": "expected-road-not-proven",
@@ -6832,6 +6922,42 @@
         }
       ],
       "caseCount": 7
+    },
+    {
+      "code": "m11-58-679:unpriced",
+      "cases": [
+        "pair-m11-ckad-torzhok-to-ramenskoe"
+      ],
+      "occurrences": [
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T00-05-16-537Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-05-16-919Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-05-17-287Z.json"
+        }
+      ],
+      "caseCount": 1
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
