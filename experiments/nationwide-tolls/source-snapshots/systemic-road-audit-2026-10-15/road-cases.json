@@ -1050,7 +1050,22 @@
         "m3"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-53-765Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-moscow/2026-10-16T00-25-53-752Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 109514,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-25-51-731Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-53-765Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-moscow/2026-10-16T00-25-53-752Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-25-54-107Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-54-436Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m3-moscow-to-maloyaroslavets",
