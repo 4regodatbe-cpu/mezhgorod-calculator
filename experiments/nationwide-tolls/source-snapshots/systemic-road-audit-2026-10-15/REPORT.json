@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-10-16T00:42:51.173Z",
+  "generatedAt": "2026-10-16T00:43:37.047Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 195,
-    "recordedLiveAttempts": 209,
-    "liveCaptured": 195,
-    "savedLiveSummaries": 195,
+    "distinctCaseAttempts": 196,
+    "recordedLiveAttempts": 210,
+    "liveCaptured": 196,
+    "savedLiveSummaries": 196,
     "missingOrInvalidReferences": 0,
-    "audited": 195,
-    "traceComplete": 195,
-    "sameDateParity": 195
+    "audited": 196,
+    "traceComplete": 196,
+    "sameDateParity": 196
   },
   "regionCounts": {
     "dnr": {
       "planned": 40,
-      "liveCaptured": 33,
-      "audited": 33,
-      "traceComplete": 33,
+      "liveCaptured": 34,
+      "audited": 34,
+      "traceComplete": 34,
       "pricedWeekday": 17,
       "pricedWeekend": 20
     },
@@ -6699,6 +6699,38 @@
       ],
       "routeMeters": 1248161,
       "routeSeconds": 58199
+    },
+    {
+      "caseId": "dnr-талаковка-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-43-33-415Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1964355,
+      "routeSeconds": 80114
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8223,7 +8255,8 @@
         "triple-m4-m11-zsd-sest-to-krasnodar",
         "triple-m4-m11-zsd-sest-to-rostov",
         "triple-m4-m11-zsd-voronezh-to-prim",
-        "dnr-краматорск-saint-petersburg-center"
+        "dnr-краматорск-saint-petersburg-center",
+        "dnr-талаковка-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -9440,9 +9473,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-38-53-430Z.json"
+        },
+        {
+          "caseId": "dnr-талаковка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-43-33-415Z.json"
+        },
+        {
+          "caseId": "dnr-талаковка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-43-34-060Z.json"
+        },
+        {
+          "caseId": "dnr-талаковка-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-43-34-693Z.json"
         }
       ],
-      "caseCount": 45
+      "caseCount": 46
     },
     {
       "code": "m4:unpriced",
