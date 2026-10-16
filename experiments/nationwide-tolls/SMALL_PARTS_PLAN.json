@@ -434,7 +434,7 @@
     {
       "id": 7,
       "title": "Этап 1: группа 5/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "pair-m11-ckad-spb-to-domodedovo",
@@ -532,12 +532,12 @@
           "group": "pair-m4-m11"
         }
       ],
-      "completedCases": 18
+      "completedCases": 19
     },
     {
       "id": 8,
       "title": "Этап 1: группа 6/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "pair-m4-m11-rostov-to-spb",

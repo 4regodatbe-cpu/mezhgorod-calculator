@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:11:23.341Z",
+  "generatedAt": "2026-10-16T00:12:02.342Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 127,
-    "recordedLiveAttempts": 140,
-    "liveCaptured": 126,
-    "savedLiveSummaries": 126,
+    "distinctCaseAttempts": 128,
+    "recordedLiveAttempts": 141,
+    "liveCaptured": 127,
+    "savedLiveSummaries": 127,
     "missingOrInvalidReferences": 1,
-    "audited": 126,
-    "traceComplete": 126,
-    "sameDateParity": 126
+    "audited": 127,
+    "traceComplete": 127,
+    "sameDateParity": 127
   },
   "regionCounts": {
     "dnr": {
@@ -150,11 +150,11 @@
       "id": "pair-m4-m11",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 0,
-      "audited": 0,
-      "traversalProven": 0,
-      "pricedWeekday": 0,
-      "pricedWeekend": 0
+      "attempted": 1,
+      "audited": 1,
+      "traversalProven": 1,
+      "pricedWeekday": 1,
+      "pricedWeekend": 1
     },
     {
       "id": "pair-m11-zsd",
@@ -4402,6 +4402,45 @@
       ],
       "routeMeters": 1025458,
       "routeSeconds": 49179
+    },
+    {
+      "caseId": "pair-m4-m11-krasnodar-to-spb",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-11-59-192Z.json",
+      "weekdayAmount": 10464,
+      "weekendAmount": 12334,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "m11"
+        ],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2061460,
+      "routeSeconds": 94846
     }
   ],
   "historicalExecutionExceptions": [],
