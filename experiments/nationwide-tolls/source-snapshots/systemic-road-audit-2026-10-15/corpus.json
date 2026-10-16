@@ -2897,7 +2897,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-00-19-266Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/2026-10-16T01-00-19-156Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1763525,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-00-02-297Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-00-19-266Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/2026-10-16T01-00-19-156Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-00-19-886Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-00-20-499Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-ровеньки-kazan-center",

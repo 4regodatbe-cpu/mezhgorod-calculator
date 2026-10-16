@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:59:38.824Z",
+  "generatedAt": "2026-10-16T01:00:23.291Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 220,
-    "recordedLiveAttempts": 234,
-    "liveCaptured": 220,
-    "savedLiveSummaries": 220,
+    "distinctCaseAttempts": 221,
+    "recordedLiveAttempts": 235,
+    "liveCaptured": 221,
+    "savedLiveSummaries": 221,
     "missingOrInvalidReferences": 0,
-    "audited": 220,
-    "traceComplete": 220,
-    "sameDateParity": 220
+    "audited": 221,
+    "traceComplete": 221,
+    "sameDateParity": 221
   },
   "regionCounts": {
     "dnr": {
@@ -22,9 +22,9 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 29,
-      "audited": 29,
-      "traceComplete": 29,
+      "liveCaptured": 30,
+      "audited": 30,
+      "traceComplete": 30,
       "pricedWeekday": 20,
       "pricedWeekend": 20
     },
@@ -7520,6 +7520,38 @@
       ],
       "routeMeters": 1047331,
       "routeSeconds": 50846
+    },
+    {
+      "caseId": "lnr-ровеньки-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-00-19-266Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1763525,
+      "routeSeconds": 72761
     }
   ],
   "historicalExecutionExceptions": [],
@@ -9382,7 +9414,8 @@
         "triple-m4-m11-zsd-voronezh-to-prim",
         "dnr-краматорск-saint-petersburg-center",
         "dnr-талаковка-saint-petersburg-center",
-        "dnr-харцызск-saint-petersburg-center"
+        "dnr-харцызск-saint-petersburg-center",
+        "lnr-ровеньки-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -10653,9 +10686,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-47-09-814Z.json"
+        },
+        {
+          "caseId": "lnr-ровеньки-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-00-19-266Z.json"
+        },
+        {
+          "caseId": "lnr-ровеньки-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-00-19-886Z.json"
+        },
+        {
+          "caseId": "lnr-ровеньки-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-00-20-499Z.json"
         }
       ],
-      "caseCount": 47
+      "caseCount": 48
     },
     {
       "code": "m4:unpriced",
