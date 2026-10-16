@@ -2616,7 +2616,22 @@
         "odintsovo"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-zvenigorod-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-00-960Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-zvenigorod-to-moscow/2026-10-16T00-30-00-949Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 60859,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-29-59-368Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-zvenigorod-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-00-960Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-zvenigorod-to-moscow/2026-10-16T00-30-00-949Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-30-01-320Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-30-01-671Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-odintsovo-moscow-to-golitsyno",

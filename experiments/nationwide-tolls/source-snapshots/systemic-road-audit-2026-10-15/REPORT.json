@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:29:41.099Z",
+  "generatedAt": "2026-10-16T00:30:03.766Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 171,
-    "recordedLiveAttempts": 184,
-    "liveCaptured": 170,
-    "savedLiveSummaries": 170,
+    "distinctCaseAttempts": 172,
+    "recordedLiveAttempts": 185,
+    "liveCaptured": 171,
+    "savedLiveSummaries": 171,
     "missingOrInvalidReferences": 1,
-    "audited": 170,
-    "traceComplete": 170,
-    "sameDateParity": 170
+    "audited": 171,
+    "traceComplete": 171,
+    "sameDateParity": 171
   },
   "regionCounts": {
     "dnr": {
@@ -120,11 +120,11 @@
       "id": "single-odintsovo",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 4,
-      "audited": 4,
+      "attempted": 5,
+      "audited": 5,
       "traversalProven": 0,
-      "pricedWeekday": 3,
-      "pricedWeekend": 3
+      "pricedWeekday": 4,
+      "pricedWeekend": 4
     },
     {
       "id": "single-khabarovsk",
@@ -5849,6 +5849,38 @@
       ],
       "routeMeters": 62125,
       "routeSeconds": 3505
+    },
+    {
+      "caseId": "single-odintsovo-zvenigorod-to-moscow",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-zvenigorod-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-00-960Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "odintsovo"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "odintsovo"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 60859,
+      "routeSeconds": 3531
     }
   ],
   "historicalExecutionExceptions": [],
@@ -9655,7 +9687,8 @@
         "single-odintsovo-golitsyno-to-moscow",
         "single-odintsovo-moscow-to-golitsyno",
         "single-odintsovo-moscow-to-kubinka",
-        "single-odintsovo-moscow-to-zvenigorod"
+        "single-odintsovo-moscow-to-zvenigorod",
+        "single-odintsovo-zvenigorod-to-moscow"
       ],
       "occurrences": [
         {
@@ -10066,9 +10099,23 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/live-2026-10-15T09-00-00-03-00-2026-10-16T00-29-38-339Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-zvenigorod-to-moscow",
+          "detail": {
+            "expectedRoads": [
+              "odintsovo"
+            ],
+            "provenRoads": [],
+            "missingExpectedRoads": [
+              "odintsovo"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-zvenigorod-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-00-960Z.json"
         }
       ],
-      "caseCount": 25
+      "caseCount": 26
     },
     {
       "code": "m11-58-679:unpriced",
