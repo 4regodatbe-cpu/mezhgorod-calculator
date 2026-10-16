@@ -1,0 +1,321 @@
+{
+  "parent": "e89d48cdab976d0ae60c7c9c5bc186725d8a546f",
+  "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+  "captureSha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+  "provider": "Valhalla",
+  "execution": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+        "2026-10-15T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"max-chain-m12-ckad-m11-zsd-cheboksary-to-prim\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1380434,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd\",\"m11-15-58: m11_partial_head_entry_boundary_unresolved\",\"ckad: ckad_east_arc_not_proven\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":null,\"reason\":\"m11_partial_head_entry_boundary_unresolved\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"ckad\",\"amount\":null,\"reason\":\"ckad_east_arc_not_proven\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"max-chain-m12-ckad-m11-zsd-cheboksary-to-prim\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1380434,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd\",\"m11-15-58: m11_partial_head_entry_boundary_unresolved\",\"ckad: ckad_east_arc_not_proven\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":null,\"reason\":\"m11_partial_head_entry_boundary_unresolved\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"ckad\",\"amount\":null,\"reason\":\"ckad_east_arc_not_proven\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": {
+    "ways": [
+      "1122966004",
+      "1122966005",
+      "1122966006",
+      "119176946",
+      "119176950",
+      "123232666",
+      "123232668",
+      "123303017",
+      "123709500",
+      "123709505",
+      "1257246766",
+      "1257246767",
+      "1257246771",
+      "1257246772",
+      "130062822",
+      "130068396",
+      "139658547",
+      "165035756",
+      "172999959",
+      "183912267",
+      "183912268",
+      "185060386",
+      "222395955",
+      "222395960",
+      "223744446",
+      "28934684",
+      "31369306",
+      "350477988",
+      "373871040",
+      "381576631",
+      "381576632",
+      "397223749",
+      "397223751",
+      "397223752",
+      "400111351",
+      "400111354",
+      "461676671",
+      "465117517",
+      "493643653",
+      "589047639",
+      "589047642",
+      "589047646",
+      "589047650",
+      "688149995",
+      "721628540",
+      "721628541",
+      "721628543",
+      "721628544",
+      "721839717",
+      "736881673",
+      "80056716",
+      "80056742",
+      "80056745",
+      "85763340",
+      "944399839"
+    ],
+    "gates": [
+      "933974870",
+      "1766158781"
+    ]
+  },
+  "sameReviewedScopeCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "status": "source_gated_same_reviewed_zsd_scope",
+  "missing": [
+    "ckad",
+    "m11-15-58",
+    "zsd"
+  ],
+  "uniqueZsdWays": [
+    "1122966004",
+    "1122966005",
+    "1122966006",
+    "119176946",
+    "119176950",
+    "123232666",
+    "123232668",
+    "123303017",
+    "123709500",
+    "123709505",
+    "1257246766",
+    "1257246767",
+    "1257246771",
+    "1257246772",
+    "130062822",
+    "130068396",
+    "139658547",
+    "165035756",
+    "172999959",
+    "183912267",
+    "183912268",
+    "185060386",
+    "222395955",
+    "222395960",
+    "223744446",
+    "28934684",
+    "31369306",
+    "350477988",
+    "373871040",
+    "381576631",
+    "381576632",
+    "397223749",
+    "397223751",
+    "397223752",
+    "400111351",
+    "400111354",
+    "461676671",
+    "465117517",
+    "493643653",
+    "589047639",
+    "589047642",
+    "589047646",
+    "589047650",
+    "688149995",
+    "721628540",
+    "721628541",
+    "721628543",
+    "721628544",
+    "721839717",
+    "736881673",
+    "80056716",
+    "80056742",
+    "80056745",
+    "85763340",
+    "944399839"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 2,
+      "edgeToll": true,
+      "beginShapeIndex": 614,
+      "endShapeIndex": 615
+    },
+    {
+      "osmNodeId": "1766158781",
+      "wayId": "355755817",
+      "roadNames": [],
+      "edgeIndex": 3,
+      "edgeToll": true,
+      "beginShapeIndex": 869,
+      "endShapeIndex": 870
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T14-54-09-046Z.json",
+      "sha256": "d81735834c0b2c34e822abaa822f3a1cc154973b5765b7d91310fd2c62091589",
+      "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd",
+          "m11-15-58: m11_partial_head_entry_boundary_unresolved",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "m11-15-58",
+          "ckad",
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T14-54-09-443Z.json",
+      "sha256": "6a59051b7319625a773bda9acef9d1b07f6546c7d815711bedc9b0d764cbb3b6",
+      "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd",
+          "m11-15-58: m11_partial_head_entry_boundary_unresolved",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "m11-15-58",
+          "ckad",
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    }
+  ],
+  "note": "Case52: both profiles exit0/complete/SHA/departure verified. Status source_gated_same_reviewed_zsd_scope; whole-route missing ckad,m11-15-58,zsd. Scope equivalence reuses diagnosis only, never a fare.",
+  "at": "2026-10-16T14:54:09.670Z",
+  "checkpoint": "docs/checkpoints/zsd-2026-10-16T14-54-09-669Z.md",
+  "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-54-09-669Z.json",
+  "overallPlanPercent": 90
+}
