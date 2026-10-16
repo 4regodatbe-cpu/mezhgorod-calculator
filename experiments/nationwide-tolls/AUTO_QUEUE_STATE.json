@@ -1,21 +1,67 @@
 {
-  "at": "2026-10-16T07:47:42.968Z",
-  "phase": "PART19_M4_POLICY_STARTED",
+  "at": "2026-10-16T07:47:47.368Z",
+  "phase": "PART19_M4_POLICY_DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
   "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
-  "checked": 11,
+  "checked": 12,
   "total": 25,
-  "next": "kherson-чулаковка-moscow-center",
+  "next": "dnr-широкино-saint-petersburg-center",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "parent": "fdc904e7fc617369f6f13b60ccfaafcd4bc85c75",
   "caseId": "kherson-чулаковка-moscow-center",
-  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/2026-10-15T12-04-20-103Z-capture.json.gz",
-  "captureSha256": "069070aa159571c38351ea10d7e7cf3ff146203f7830baa834722412973d9b2f",
-  "dates": [
-    "2026-10-15T09:00:00+03:00",
-    "2026-10-17T09:00:00+03:00"
-  ],
-  "parent": "61f12dd52b6930fee0a180d1bbb76c14386cd1e2",
-  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-47-42-968Z",
-  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-42-968Z-part19_m4_policy_started.json"
+  "evaluation": {
+    "caseId": "kherson-чулаковка-moscow-center",
+    "result": "not_reproduced_current_engine",
+    "weekdayAmount": 5840,
+    "weekendAmount": 6890,
+    "m4WeekdayAmount": 5040,
+    "m4WeekendAmount": 6090,
+    "remainingMissing": [],
+    "outputs": [
+      {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-47-46-652Z.json",
+        "sha256": "78b2c4c9d92f2f1a4c620195a8493008183b13ec5a18406472253b0c3eefd71d"
+      },
+      {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-47-47-330Z.json",
+        "sha256": "3d019d631a3ac6fc426dc449512a12d1573d8a681ebe96db96c8cd6a85e0b273"
+      }
+    ],
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/2026-10-15T12-04-20-103Z-capture.json.gz",
+    "captureSha256": "069070aa159571c38351ea10d7e7cf3ff146203f7830baa834722412973d9b2f",
+    "components": [
+      {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "components": [
+          {
+            "id": "m4",
+            "amount": 5040,
+            "reason": "matrix exact selected-route M4 vector"
+          },
+          {
+            "id": "a289",
+            "amount": 800,
+            "reason": "A-289 complete ordered three-frame traversal"
+          }
+        ]
+      },
+      {
+        "departureAt": "2026-10-17T09:00:00+03:00",
+        "components": [
+          {
+            "id": "m4",
+            "amount": 6090,
+            "reason": "matrix exact selected-route M4 vector"
+          },
+          {
+            "id": "a289",
+            "amount": 800,
+            "reason": "A-289 complete ordered three-frame traversal"
+          }
+        ]
+      }
+    ]
+  },
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-47-368Z-part19_m4_policy_done.json"
 }
