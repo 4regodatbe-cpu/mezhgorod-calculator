@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:57:08.483Z",
+  "generatedAt": "2026-10-16T01:57:46.056Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 305,
-    "recordedLiveAttempts": 319,
-    "liveCaptured": 305,
-    "savedLiveSummaries": 305,
+    "distinctCaseAttempts": 306,
+    "recordedLiveAttempts": 320,
+    "liveCaptured": 306,
+    "savedLiveSummaries": 306,
     "missingOrInvalidReferences": 0,
-    "audited": 305,
-    "traceComplete": 305,
-    "sameDateParity": 305
+    "audited": 306,
+    "traceComplete": 306,
+    "sameDateParity": 306
   },
   "regionCounts": {
     "dnr": {
@@ -90,9 +90,9 @@
       "id": "single-m12",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 5,
-      "audited": 5,
-      "traversalProven": 4,
+      "attempted": 6,
+      "audited": 6,
+      "traversalProven": 5,
       "pricedWeekday": 5,
       "pricedWeekend": 5
     },
@@ -10412,6 +10412,38 @@
       ],
       "routeMeters": 540719,
       "routeSeconds": 17697
+    },
+    {
+      "caseId": "single-m12-arzamas-to-moscow",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-57-41-630Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12"
+        ],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 448858,
+      "routeSeconds": 23661
     }
   ],
   "historicalExecutionExceptions": [],
@@ -20069,7 +20101,8 @@
       "code": "m12_current_operator_pair_not_bound",
       "cases": [
         "pair-m12-ckad-arzamas-to-domodedovo",
-        "pair-m12-ckad-domodedovo-to-arzamas"
+        "pair-m12-ckad-domodedovo-to-arzamas",
+        "single-m12-arzamas-to-moscow"
       ],
       "occurrences": [
         {
@@ -20125,9 +20158,36 @@
             "reason": "m12_current_operator_pair_not_bound"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-02-921Z.json"
+        },
+        {
+          "caseId": "single-m12-arzamas-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m12",
+            "reason": "m12_current_operator_pair_not_bound"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-57-41-630Z.json"
+        },
+        {
+          "caseId": "single-m12-arzamas-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m12",
+            "reason": "m12_current_operator_pair_not_bound"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-57-42-039Z.json"
+        },
+        {
+          "caseId": "single-m12-arzamas-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m12",
+            "reason": "m12_current_operator_pair_not_bound"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-57-42-442Z.json"
         }
       ],
-      "caseCount": 2
+      "caseCount": 3
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
