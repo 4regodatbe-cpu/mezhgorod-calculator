@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 137,
-  "rawCaptureCaseCount": 135,
+  "rawCaptureCount": 138,
+  "rawCaptureCaseCount": 136,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -11507,6 +11507,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-15-48-783Z.json",
+      "caseId": "single-a289-krasnodar-to-temryuk",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-15-50-792Z.json",
+          "exists": true,
+          "bytes": 3717,
+          "sha256": "71473b046a24639010cc0829461b4904225f144f7c7d06153bea501ec07c4c99",
+          "gitBlobSha": "4fe5830861bab2afc5a847039532c0759956473e",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/2026-10-16T00-15-50-775Z-capture.json.gz",
+          "exists": true,
+          "bytes": 103681,
+          "sha256": "b20571e70818ed7a711dcc86ee476407ec5496caa8de2d52a59610ff7ff89268",
+          "gitBlobSha": "986bdf1d46ca029ff9a5ea5e9e15412363a90fc9",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 5
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-15-51-155Z.json",
+          "exists": true,
+          "bytes": 3795,
+          "sha256": "ecdbbc8b86cb22b39331f3db66c8f70bb190ed30fe7b71fec1cff8e725f13a9f",
+          "gitBlobSha": "2081cecd3e041746008fcb75fdf304e4fa268d1a",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-15-51-513Z.json",
+          "exists": true,
+          "bytes": 3795,
+          "sha256": "480828678efbc0815b4ac831a5aeb439e2bdcc88c934db97945f8f030b980aa4",
+          "gitBlobSha": "45459e6c506f484bdb090d18dece04221250b3df",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -12781,6 +12826,17 @@
       "bytes": 110691,
       "sha256": "9ef18351418277f4a7d6f19c6129b4b85a8be71aa17ed266cdea0e4161fc9bb7",
       "gitBlobSha": "c7028b06ccd2dc15fb1015aa19cdab76d8295135",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 5
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/2026-10-16T00-15-50-775Z-capture.json.gz",
+      "exists": true,
+      "bytes": 103681,
+      "sha256": "b20571e70818ed7a711dcc86ee476407ec5496caa8de2d52a59610ff7ff89268",
+      "gitBlobSha": "986bdf1d46ca029ff9a5ea5e9e15412363a90fc9",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,
