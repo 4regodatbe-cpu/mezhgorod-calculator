@@ -4379,7 +4379,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-13-03-060Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-kerch-center/2026-10-16T01-13-03-027Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 487751,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-12-59-966Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-13-03-060Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-kerch-center/2026-10-16T01-13-03-027Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-13-03-487Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-13-03-896Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-мелитополь-moscow-center",
