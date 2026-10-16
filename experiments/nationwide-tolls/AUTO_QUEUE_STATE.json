@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:50:10.284Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:50:14.821Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,82 +23,10 @@
       "region": "kherson"
     }
   },
-  "caseId": "kherson-скадовск-moscow-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "kherson-скадовск-moscow-center",
-    "startedAt": "2026-10-16T00:49:36.076Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-49-50-655Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-moscow-center/2026-10-16T00-49-50-522Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-49-51-308Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-49-51-956Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "a289",
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: a289",
-        "a289: A-289 frames detected but selected-route exits are unresolved"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: a289",
-        "a289: A-289 frames detected but selected-route exits are unresolved"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 5040,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "a289",
-        "amount": null,
-        "reason": "A-289 frames detected but selected-route exits are unresolved"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:49:51.976Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-49-34-658Z-part12",
-  "parent": "838a2c73eaf8e230f7f03ae9f59cf8856f16a4b9",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-50-10-284Z-done.json"
+  "caseId": "kherson-скадовск-saint-petersburg-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-50-14-821Z-part12",
+  "parent": "f23c378e4789534f56fa61646928345386d2c725",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-50-14-821Z-started.json"
 }
