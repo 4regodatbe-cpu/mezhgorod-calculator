@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:53:49.431Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:53:54.651Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,66 +23,10 @@
       "group": "single-khabarovsk"
     }
   },
-  "caseId": "single-khabarovsk-vyazemsky-to-berezovka",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-khabarovsk-vyazemsky-to-berezovka",
-    "startedAt": "2026-10-16T01:53:20.714Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-berezovka/live-2026-10-15T09-00-00-03-00-2026-10-16T01-53-22-256Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-berezovka/2026-10-16T01-53-22-245Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-53-22-610Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-53-22-957Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "khabarovsk"
-      ],
-      "provenRoads": [],
-      "missingExpectedRoads": [
-        "khabarovsk"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T01:53:22.972Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-53-19-304Z-part16",
-  "parent": "b1238722147fd96c8816f39e316b53498f6491e3",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-53-49-431Z-done.json"
+  "caseId": "single-khabarovsk-vyazemsky-to-khabarovsk",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-53-54-650Z-part16",
+  "parent": "5755f31707ab9ab6784c6913e54e1eb3d4188201",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-53-54-651Z-started.json"
 }
