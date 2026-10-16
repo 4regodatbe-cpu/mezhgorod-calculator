@@ -33,8 +33,8 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "pair-m11-ckad-spb-to-noginsk",
-  "nextAction": "ZSD next distinct case pair-m11-ckad-spb-to-noginsk: existing capture twoofflineprofiles; compare exact selected scope",
+  "nextCase": "pair-m11-zsd-moscow-to-prim",
+  "nextAction": "ZSD next distinct case pair-m11-zsd-moscow-to-prim: existing capture twoofflineprofiles; compare exact selected scope",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2659,9 +2659,20 @@
         ],
         "scopeCheckpoint": "../../docs/checkpoints/2026-10-16-142752-zsd-case25-scope.md",
         "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-142752-zsd-case25-scope.json"
+      },
+      {
+        "caseId": "pair-m11-ckad-spb-to-noginsk",
+        "status": "source_gated_same_reviewed_zsd_scope",
+        "sameReviewedScopeCase": "pair-m11-ckad-spb-to-domodedovo",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-142810-zsd-case26.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-142810-zsd-case26.json",
+        "missing": [
+          "ckad",
+          "zsd"
+        ]
       }
     ],
-    "checked": 25,
+    "checked": 26,
     "total": 76,
     "identityFix": {
       "status": "validated",
