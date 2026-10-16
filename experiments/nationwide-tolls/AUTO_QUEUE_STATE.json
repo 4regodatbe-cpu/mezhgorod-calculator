@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T02:03:07.910Z",
-  "phase": "DONE",
+  "at": "2026-10-16T02:03:13.269Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,78 +23,10 @@
       "group": "single-m3"
     }
   },
-  "caseId": "single-m3-maloyaroslavets-to-moscow",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-m3-maloyaroslavets-to-moscow",
-    "startedAt": "2026-10-16T02:02:38.503Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-02-40-584Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/2026-10-16T02-02-40-569Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-02-40-925Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-02-41-254Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m3"
-      ],
-      "provenRoads": [
-        "m3"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m3",
-        "m3: m3_engine_not_yet_composed"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m3",
-        "m3: m3_engine_not_yet_composed"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m3",
-        "amount": null,
-        "reason": "m3_engine_not_yet_composed"
-      }
-    ],
-    "finishedAt": "2026-10-16T02:02:41.269Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-02-37-102Z-part17",
-  "parent": "03b14367246a305ed5c03c259d796efdbc9de2d5",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-03-07-910Z-done.json"
+  "caseId": "single-m3-obninsk-to-kaluga",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-03-13-269Z-part17",
+  "parent": "fd03059a138674e575112cc86a32d4e9aa5f56a4",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-03-13-269Z-started.json"
 }
