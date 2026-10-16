@@ -1489,3 +1489,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 16.10.2026 16:54MSK scratch-pruning recovery DONE, exactclonehead/tree verified; no routeprogress lost. NEXT frozen dependencies/repository-owned ZSDsinglecaseutility, then case27. ../../docs/checkpoints/2026-10-16-1654-resume-after-scratch-pruning.md Plan90%.
 
 16.10.2026 frozen dependencies restored exit0/15.7s, lockunchanged; NEXT repository-owned ZSD review utility. ../../docs/checkpoints/2026-10-16-1656-frozen-dependencies-restored.md No newtest/build/route; plan90%.
+
+16.10.2026 ZSD repository-owned singlecase utility CODE DONE, fourintegrity/adversarial tests added; syntaxchecks passed, focused/fullgate NOTyet run. ../../docs/checkpoints/2026-10-16-zsd-repository-runner-code.md NEXT focusedchecks, fullgate, case27. Plan90%.

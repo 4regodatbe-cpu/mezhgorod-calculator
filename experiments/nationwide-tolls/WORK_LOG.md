@@ -1588,3 +1588,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 Первый offline replay `pair-m11-zsd-moscow-to-prim` не запустился: ошибочно указан `./experiments/nationwide-tolls/scripts/register-ts-paths.mjs`, фактический import — `./scripts/register-ts-paths.mjs`. Exit 1 до чтения capture; результаты и тарифная логика не менялись. См. `../../docs/checkpoints/2026-10-16-1654-zsd-case27-replay-failed-import.md`. Следом повторить тот же case с исправленным import. План 90% (18/20), ZSD review 26/76.
 
 16.10.2026 frozen dependencies restored exit0/15.7s, lockunchanged; NEXT repository-owned ZSD review utility. ../../docs/checkpoints/2026-10-16-1656-frozen-dependencies-restored.md No newtest/build/route; plan90%.
+
+16.10.2026 ZSD repository-owned singlecase utility CODE DONE, fourintegrity/adversarial tests added; syntaxchecks passed, focused/fullgate NOTyet run. ../../docs/checkpoints/2026-10-16-zsd-repository-runner-code.md NEXT focusedchecks, fullgate, case27. Plan90%.
