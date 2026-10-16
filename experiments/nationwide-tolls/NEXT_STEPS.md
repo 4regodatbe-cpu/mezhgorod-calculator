@@ -1298,3 +1298,5 @@ After persisted connector-focused checkpoint: pnpm build + scoped lint/diff. Do 
 2026-10-16T07:48:56.134Z: PART19_M4_POLICY_STARTED M4 policy 22/25; lnr-рубежное-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-56-134Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
 
 2026-10-16T07:48:59.820Z: PART19_M4_POLICY_DONE M4 policy 23/25; lnr-рубежное-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-59-820Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:49:02.404Z: PART19_M4_POLICY_STARTED M4 policy 23/25; zaporizhzhia-гуляйполе-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-02-404Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
