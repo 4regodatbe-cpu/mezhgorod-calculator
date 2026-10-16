@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T02:09:15.850Z",
-  "phase": "DONE",
+  "at": "2026-10-16T02:09:21.083Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,66 +23,10 @@
       "group": "single-odintsovo"
     }
   },
-  "caseId": "single-odintsovo-moscow-to-lesnoy",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-odintsovo-moscow-to-lesnoy",
-    "startedAt": "2026-10-16T02:08:46.870Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/live-2026-10-15T09-00-00-03-00-2026-10-16T02-08-48-333Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/2026-10-16T02-08-48-327Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-08-48-664Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-08-48-980Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "odintsovo"
-      ],
-      "provenRoads": [],
-      "missingExpectedRoads": [
-        "odintsovo"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T02:08:48.995Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-08-45-471Z-part18",
-  "parent": "4777ff93aafe24f7b4be78c984103a15e8dcb9be",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-09-15-850Z-done.json"
+  "caseId": "single-odintsovo-rublevo-to-golitsyno",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-09-21-082Z-part18",
+  "parent": "ae7a961636e26a5a35c7939c69519e99ca809196",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-09-21-083Z-started.json"
 }
