@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:34:53.708Z",
+  "generatedAt": "2026-10-16T01:35:29.229Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 271,
-    "recordedLiveAttempts": 285,
-    "liveCaptured": 271,
-    "savedLiveSummaries": 271,
+    "distinctCaseAttempts": 272,
+    "recordedLiveAttempts": 286,
+    "liveCaptured": 272,
+    "savedLiveSummaries": 272,
     "missingOrInvalidReferences": 0,
-    "audited": 271,
-    "traceComplete": 271,
-    "sameDateParity": 271
+    "audited": 272,
+    "traceComplete": 272,
+    "sameDateParity": 272
   },
   "regionCounts": {
     "dnr": {
@@ -180,11 +180,11 @@
       "id": "pair-m12-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
+      "attempted": 7,
+      "audited": 7,
       "traversalProven": 2,
-      "pricedWeekday": 2,
-      "pricedWeekend": 2
+      "pricedWeekday": 3,
+      "pricedWeekend": 3
     },
     {
       "id": "triple-m4-m11-zsd",
@@ -9276,6 +9276,41 @@
       ],
       "routeMeters": 493717,
       "routeSeconds": 23511
+    },
+    {
+      "caseId": "pair-m12-ckad-dmitrov-to-murom",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-murom/live-2026-10-15T09-00-00-03-00-2026-10-16T01-35-24-988Z.json",
+      "weekdayAmount": 892,
+      "weekendAmount": 892,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12",
+          "ckad"
+        ],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 350889,
+      "routeSeconds": 16781
     }
   ],
   "historicalExecutionExceptions": [],
@@ -15763,7 +15798,8 @@
         "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
         "pair-m11-ckad-domodedovo-to-novgorod",
         "pair-m11-ckad-novgorod-to-domodedovo",
-        "pair-m12-ckad-arzamas-to-domodedovo"
+        "pair-m12-ckad-arzamas-to-domodedovo",
+        "pair-m12-ckad-dmitrov-to-murom"
       ],
       "occurrences": [
         {
@@ -16456,9 +16492,26 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-528Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-dmitrov-to-murom",
+          "detail": {
+            "expectedRoads": [
+              "m12",
+              "ckad"
+            ],
+            "provenRoads": [
+              "m12"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-murom/live-2026-10-15T09-00-00-03-00-2026-10-16T01-35-24-988Z.json"
         }
       ],
-      "caseCount": 40
+      "caseCount": 41
     },
     {
       "code": "m11-58-679:unpriced",
