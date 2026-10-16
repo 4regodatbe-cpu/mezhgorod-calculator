@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:37:55.690Z",
+  "generatedAt": "2026-10-16T01:38:41.283Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 276,
-    "recordedLiveAttempts": 290,
-    "liveCaptured": 276,
-    "savedLiveSummaries": 276,
+    "distinctCaseAttempts": 277,
+    "recordedLiveAttempts": 291,
+    "liveCaptured": 277,
+    "savedLiveSummaries": 277,
     "missingOrInvalidReferences": 0,
-    "audited": 276,
-    "traceComplete": 276,
-    "sameDateParity": 276
+    "audited": 277,
+    "traceComplete": 277,
+    "sameDateParity": 277
   },
   "regionCounts": {
     "dnr": {
@@ -140,11 +140,11 @@
       "id": "pair-m4-a289",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
-      "traversalProven": 6,
-      "pricedWeekday": 2,
-      "pricedWeekend": 2
+      "attempted": 7,
+      "audited": 7,
+      "traversalProven": 7,
+      "pricedWeekday": 3,
+      "pricedWeekend": 3
     },
     {
       "id": "pair-m4-m11",
@@ -9452,6 +9452,40 @@
       ],
       "routeMeters": 992359,
       "routeSeconds": 48155
+    },
+    {
+      "caseId": "pair-m4-a289-domodedovo-to-kerch",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-domodedovo-to-kerch/live-2026-10-15T09-00-00-03-00-2026-10-16T01-38-36-623Z.json",
+      "weekdayAmount": 5840,
+      "weekendAmount": 6890,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "a289"
+        ],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1569460,
+      "routeSeconds": 77241
     }
   ],
   "historicalExecutionExceptions": [],
