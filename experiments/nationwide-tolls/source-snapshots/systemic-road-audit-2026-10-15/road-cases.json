@@ -3015,7 +3015,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T02-10-37-055Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/2026-10-16T02-10-37-044Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 53044,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-10-35-238Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T02-10-37-055Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/2026-10-16T02-10-37-044Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-10-37-398Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-10-37-722Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-zsd-prim-to-peterhof",

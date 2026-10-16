@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:10:05.258Z",
+  "generatedAt": "2026-10-16T02:10:41.419Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 326,
-    "recordedLiveAttempts": 340,
-    "liveCaptured": 326,
-    "savedLiveSummaries": 326,
+    "distinctCaseAttempts": 327,
+    "recordedLiveAttempts": 341,
+    "liveCaptured": 327,
+    "savedLiveSummaries": 327,
     "missingOrInvalidReferences": 0,
-    "audited": 326,
-    "traceComplete": 326,
-    "sameDateParity": 326
+    "audited": 327,
+    "traceComplete": 327,
+    "sameDateParity": 327
   },
   "regionCounts": {
     "dnr": {
@@ -110,9 +110,9 @@
       "id": "single-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
-      "traversalProven": 4,
+      "attempted": 7,
+      "audited": 7,
+      "traversalProven": 5,
       "pricedWeekday": 2,
       "pricedWeekend": 2
     },
@@ -11086,6 +11086,38 @@
       ],
       "routeMeters": 44311,
       "routeSeconds": 2404
+    },
+    {
+      "caseId": "single-zsd-peterhof-to-prim",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T02-10-37-055Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 53044,
+      "routeSeconds": 3082
     }
   ],
   "historicalExecutionExceptions": [],
@@ -13305,7 +13337,8 @@
         "pair-m4-m11-spb-to-voronezh",
         "single-m11-spb-to-tver",
         "single-m11-tver-to-spb",
-        "single-zsd-blag-to-sest"
+        "single-zsd-blag-to-sest",
+        "single-zsd-peterhof-to-prim"
       ],
       "occurrences": [
         {
@@ -15143,9 +15176,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-10-01-542Z.json"
+        },
+        {
+          "caseId": "single-zsd-peterhof-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T02-10-37-055Z.json"
+        },
+        {
+          "caseId": "single-zsd-peterhof-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-10-37-398Z.json"
+        },
+        {
+          "caseId": "single-zsd-peterhof-to-prim",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-10-37-722Z.json"
         }
       ],
-      "caseCount": 68
+      "caseCount": 69
     },
     {
       "code": "m4:unpriced",
@@ -16853,7 +16913,8 @@
         "single-m3-kaluga-to-obninsk",
         "single-odintsovo-golitsyno-to-rublevo",
         "single-odintsovo-rublevo-to-golitsyno",
-        "single-zsd-blag-to-sest"
+        "single-zsd-blag-to-sest",
+        "single-zsd-peterhof-to-prim"
       ],
       "occurrences": [
         {
@@ -18367,9 +18428,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-10-01-542Z.json"
+        },
+        {
+          "caseId": "single-zsd-peterhof-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T02-10-37-055Z.json"
+        },
+        {
+          "caseId": "single-zsd-peterhof-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-10-37-398Z.json"
+        },
+        {
+          "caseId": "single-zsd-peterhof-to-prim",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-10-37-722Z.json"
         }
       ],
-      "caseCount": 56
+      "caseCount": 57
     },
     {
       "code": "expected-road-not-proven",
