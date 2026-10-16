@@ -14,7 +14,7 @@
 
 Исправление exactnode1766158781→ZSD валидировано: первичная направленная топология иselectedledger подтвердилиПВППланерная; redundantunknownpaidroad устранён, M11head/CKAD/ZSDблокеры сохранены. [Replay](checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md).
 
-**Последняяполнаяпроверка691/691+quote/API+Nextwebpack/TypeScript/static16/16PASS**, focused8/8/eslintnewtestexit0. [Fullgate](checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md). Втекущемблокекоднеизменялся/новаясборканезапускалась. ОшибкаCRнормализацииодноголога исправлена, rawbytesсохранены/exacttreeподтверждён.
+**Последняя полная проверка 695/695+quote/API+Nextwebpack/TypeScript/static16/16 PASS**, focused8/8/eslintnewtestexit0. [Fullgate](checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md). Втекущемблокекоднеизменялся/новаясборканезапускалась. ОшибкаCRнормализацииодноголога исправлена, rawbytesсохранены/exacttreeподтверждён.
 
 ## NEXT STARTED
 
@@ -33,3 +33,5 @@
 16.10.2026 ZSDdurablerunnerfocused4/4PASS/lint2filesexit0, rulesreread peruser17:11; NEXTfullgate then automaticcase27. checkpoints/2026-10-16-zsd-runner-focused-pass.md Plan90%.
 
 16.10.2026 current-chat resume: rules/20parts reread, exact remote tree matched in own checkout. Plan90%. NEXT fullgate then case27. docs/checkpoints/2026-10-16-continue-current-chat.md
+
+16.10.2026 fullgate DONE exit0:695/695, quote/API, webpack/TS/static16/16 PASS. Raw log preserved. NEXT case27 --next. Plan90%. docs/checkpoints/2026-10-16-current-chat-fullgate-pass.md
