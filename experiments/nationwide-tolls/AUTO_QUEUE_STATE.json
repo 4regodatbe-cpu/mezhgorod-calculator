@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T07:48:20.249Z",
-  "phase": "PART19_M4_POLICY_DONE",
+  "at": "2026-10-16T07:48:22.893Z",
+  "phase": "PART19_M4_POLICY_STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
   "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
@@ -8,70 +8,14 @@
   "total": 25,
   "next": "kherson-чулаковка-kazan-center",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "c9ecca7f99e65421291fae71703df20b13c4fb8b",
-  "caseId": "zaporizhzhia-молочанск-kazan-center",
-  "evaluation": {
-    "caseId": "zaporizhzhia-молочанск-kazan-center",
-    "result": "not_reproduced_current_engine",
-    "weekdayAmount": 3640,
-    "weekendAmount": 3970,
-    "m4WeekdayAmount": 1990,
-    "m4WeekendAmount": 2320,
-    "remainingMissing": [],
-    "outputs": [
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-48-19-496Z.json",
-        "sha256": "8eb0fe5be9567397286c3f90ccb79f3669a3bc23b96e9b1bc982fa24312ad05d"
-      },
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-48-20-204Z.json",
-        "sha256": "e6c58e1bafcf609658ce5a7f1676e9d4b900559120765028b43ae37d624ae8a7"
-      }
-    ],
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/2026-10-15T18-19-44-160Z-capture.json.gz",
-    "captureSha256": "7e70b3852d5cf3d756f31298d6462c5e93dd1e9036b5820b5f507396dc036887",
-    "components": [
-      {
-        "departureAt": "2026-10-15T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 1990,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "a289",
-            "amount": 800,
-            "reason": "A-289 complete ordered three-frame traversal"
-          },
-          {
-            "id": "m12",
-            "amount": 850,
-            "reason": "matrix dated selected-route M12 directed endpoint pair"
-          }
-        ]
-      },
-      {
-        "departureAt": "2026-10-17T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 2320,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "a289",
-            "amount": 800,
-            "reason": "A-289 complete ordered three-frame traversal"
-          },
-          {
-            "id": "m12",
-            "amount": 850,
-            "reason": "matrix dated selected-route M12 directed endpoint pair"
-          }
-        ]
-      }
-    ]
-  },
-  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-20-249Z-part19_m4_policy_done.json"
+  "caseId": "kherson-чулаковка-kazan-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/2026-10-15T12-09-56-015Z-capture.json.gz",
+  "captureSha256": "77a7e9dae5bdeb413c8393220ca8c3911929135161f714fb5f044a67a2e9eed6",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "7b9a6ce14793c7849b1131f2d689e92e4de97bfa",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-48-22-893Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-22-893Z-part19_m4_policy_started.json"
 }
