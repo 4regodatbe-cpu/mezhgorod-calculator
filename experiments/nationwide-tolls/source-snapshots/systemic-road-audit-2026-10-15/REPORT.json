@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:41:38.088Z",
+  "generatedAt": "2026-10-16T01:42:22.455Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 281,
-    "recordedLiveAttempts": 295,
-    "liveCaptured": 281,
-    "savedLiveSummaries": 281,
+    "distinctCaseAttempts": 282,
+    "recordedLiveAttempts": 296,
+    "liveCaptured": 282,
+    "savedLiveSummaries": 282,
     "missingOrInvalidReferences": 0,
-    "audited": 281,
-    "traceComplete": 281,
-    "sameDateParity": 281
+    "audited": 282,
+    "traceComplete": 282,
+    "sameDateParity": 282
   },
   "regionCounts": {
     "dnr": {
@@ -150,9 +150,9 @@
       "id": "pair-m4-m11",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
-      "traversalProven": 6,
+      "attempted": 7,
+      "audited": 7,
+      "traversalProven": 7,
       "pricedWeekday": 4,
       "pricedWeekend": 4
     },
@@ -9623,6 +9623,40 @@
       ],
       "routeMeters": 1608773,
       "routeSeconds": 72880
+    },
+    {
+      "caseId": "pair-m4-m11-rostov-to-tver",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-42-17-801Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "m11"
+        ],
+        "provenRoads": [
+          "m4",
+          "m11"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1265855,
+      "routeSeconds": 56109
     }
   ],
   "historicalExecutionExceptions": [],
@@ -15124,7 +15158,8 @@
         "pair-m11-zsd-sest-to-tver",
         "pair-m11-zsd-torzhok-to-prim",
         "pair-m12-ckad-klin-to-vladimir",
-        "pair-m4-m11-krasnodar-to-torzhok"
+        "pair-m4-m11-krasnodar-to-torzhok",
+        "pair-m4-m11-rostov-to-tver"
       ],
       "occurrences": [
         {
@@ -16260,9 +16295,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-41-34-593Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-42-17-801Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-42-18-366Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-42-18-942Z.json"
         }
       ],
-      "caseCount": 42
+      "caseCount": 43
     },
     {
       "code": "expected-road-not-proven",
@@ -17105,7 +17167,8 @@
         "pair-m11-zsd-sest-to-tver",
         "pair-m11-zsd-torzhok-to-prim",
         "pair-m12-ckad-klin-to-vladimir",
-        "pair-m4-m11-krasnodar-to-torzhok"
+        "pair-m4-m11-krasnodar-to-torzhok",
+        "pair-m4-m11-rostov-to-tver"
       ],
       "occurrences": [
         {
@@ -17836,9 +17899,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-41-34-593Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-42-17-801Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-42-18-366Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-42-18-942Z.json"
         }
       ],
-      "caseCount": 27
+      "caseCount": 28
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
@@ -17850,7 +17940,8 @@
         "single-m11-tver-to-moscow",
         "pair-m11-ckad-domodedovo-to-novgorod",
         "pair-m11-ckad-novgorod-to-domodedovo",
-        "pair-m4-m11-krasnodar-to-torzhok"
+        "pair-m4-m11-krasnodar-to-torzhok",
+        "pair-m4-m11-rostov-to-tver"
       ],
       "occurrences": [
         {
@@ -18068,9 +18159,36 @@
             "reason": "m11_58_679_facility_sequence_incomplete"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-41-34-593Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-42-17-801Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-42-18-366Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-42-18-942Z.json"
         }
       ],
-      "caseCount": 8
+      "caseCount": 9
     },
     {
       "code": "engine_not_yet_composed",

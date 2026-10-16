@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 284,
-  "rawCaptureCaseCount": 281,
+  "rawCaptureCount": 285,
+  "rawCaptureCaseCount": 282,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -20594,6 +20594,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-42-07-535Z.json",
+      "caseId": "pair-m4-m11-rostov-to-tver",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-42-17-801Z.json",
+          "exists": true,
+          "bytes": 7349,
+          "sha256": "0d142d256cd9f0c5615467feab8a1ad0228264bf85371c58fe5bb660aa22d128",
+          "gitBlobSha": "02674022e4ddc195fce6f03b1711b7e806377259",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/2026-10-16T01-42-17-713Z-capture.json.gz",
+          "exists": true,
+          "bytes": 547053,
+          "sha256": "6cccb320f5cc436c33eed7b2731396e427b410c7de519188221b88cda4f7ca82",
+          "gitBlobSha": "42000de9fe92b9992ffbbee1931a66717cff78a0",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 14
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-42-18-366Z.json",
+          "exists": true,
+          "bytes": 7427,
+          "sha256": "141fb43b00d26c6f8055aab38abc34deca84dee9c648c1f6f029311ad26cd5a1",
+          "gitBlobSha": "9db49f3b29283ce1a8e1bdb3203e963448503ff8",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-42-18-942Z.json",
+          "exists": true,
+          "bytes": 7427,
+          "sha256": "45c15ae110a05e1f3b4ca60d9ce7b4342f036f760c1cfb4fa4376ae664667830",
+          "gitBlobSha": "b5151f0cf30bbd31da04d977da19ed6507b8457c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -22642,6 +22687,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 17
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/2026-10-16T01-42-17-713Z-capture.json.gz",
+      "exists": true,
+      "bytes": 547053,
+      "sha256": "6cccb320f5cc436c33eed7b2731396e427b410c7de519188221b88cda4f7ca82",
+      "gitBlobSha": "42000de9fe92b9992ffbbee1931a66717cff78a0",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 14
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-krasnodar/2026-10-16T00-13-15-022Z-capture.json.gz",
