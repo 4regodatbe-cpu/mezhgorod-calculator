@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:37:45.320Z",
+  "generatedAt": "2026-10-16T00:38:13.563Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
     "distinctCaseAttempts": 187,
-    "recordedLiveAttempts": 200,
-    "liveCaptured": 186,
-    "savedLiveSummaries": 186,
-    "missingOrInvalidReferences": 1,
-    "audited": 186,
-    "traceComplete": 186,
-    "sameDateParity": 186
+    "recordedLiveAttempts": 201,
+    "liveCaptured": 187,
+    "savedLiveSummaries": 187,
+    "missingOrInvalidReferences": 0,
+    "audited": 187,
+    "traceComplete": 187,
+    "sameDateParity": 187
   },
   "regionCounts": {
     "dnr": {
@@ -22,9 +22,9 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 25,
-      "audited": 25,
-      "traceComplete": 25,
+      "liveCaptured": 26,
+      "audited": 26,
+      "traceComplete": 26,
       "pricedWeekday": 17,
       "pricedWeekend": 17
     },
@@ -753,6 +753,36 @@
       ],
       "routeMeters": 1228358,
       "routeSeconds": 56588
+    },
+    {
+      "caseId": "lnr-лисичанск-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-38-10-288Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 937773,
+      "routeSeconds": 50247
     },
     {
       "caseId": "zaporizhzhia-молочанск-moscow-center",
@@ -6422,15 +6452,7 @@
     }
   ],
   "historicalExecutionExceptions": [],
-  "evidenceProblems": [
-    {
-      "caseId": "lnr-лисичанск-moscow-center",
-      "kind": "live",
-      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
-      "reason": "ENOENT",
-      "error": "Error: ENOENT: no such file or directory, open 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json'"
-    }
-  ],
+  "evidenceProblems": [],
   "stableWeekdayReplay": null,
   "findings": [
     {
@@ -9148,6 +9170,7 @@
       "code": "m4:unpriced",
       "cases": [
         "dnr-гранитное-kazan-center",
+        "lnr-лисичанск-moscow-center",
         "dnr-широкино-kazan-center",
         "lnr-рубежное-moscow-center",
         "dnr-бахмут-moscow-center",
@@ -9188,6 +9211,33 @@
             "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T12-00-01-515Z.json"
+        },
+        {
+          "caseId": "lnr-лисичанск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-38-10-288Z.json"
+        },
+        {
+          "caseId": "lnr-лисичанск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-38-10-811Z.json"
+        },
+        {
+          "caseId": "lnr-лисичанск-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-38-11-335Z.json"
         },
         {
           "caseId": "dnr-широкино-kazan-center",
@@ -9514,21 +9564,7 @@
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-voronezh-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-37-43-105Z.json"
         }
       ],
-      "caseCount": 13
-    },
-    {
-      "code": "saved-live-evidence-missing",
-      "cases": [
-        "lnr-лисичанск-moscow-center"
-      ],
-      "occurrences": [
-        {
-          "caseId": "lnr-лисичанск-moscow-center",
-          "detail": "Historic execution manifest has no readable live summary",
-          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json"
-        }
-      ],
-      "caseCount": 1
+      "caseCount": 14
     },
     {
       "code": "m11_partial_head_entry_boundary_unresolved",
