@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:13:54.682Z",
+  "generatedAt": "2026-10-16T00:14:24.924Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 131,
-    "recordedLiveAttempts": 144,
-    "liveCaptured": 130,
-    "savedLiveSummaries": 130,
+    "distinctCaseAttempts": 132,
+    "recordedLiveAttempts": 145,
+    "liveCaptured": 131,
+    "savedLiveSummaries": 131,
     "missingOrInvalidReferences": 1,
-    "audited": 130,
-    "traceComplete": 130,
-    "sameDateParity": 130
+    "audited": 131,
+    "traceComplete": 131,
+    "sameDateParity": 131
   },
   "regionCounts": {
     "dnr": {
@@ -150,9 +150,9 @@
       "id": "pair-m4-m11",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 4,
-      "audited": 4,
-      "traversalProven": 4,
+      "attempted": 5,
+      "audited": 5,
+      "traversalProven": 5,
       "pricedWeekday": 4,
       "pricedWeekend": 4
     },
@@ -4558,6 +4558,41 @@
       ],
       "routeMeters": 1790759,
       "routeSeconds": 81138
+    },
+    {
+      "caseId": "pair-m4-m11-voronezh-to-spb",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-14-21-916Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "m11"
+        ],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1236369,
+      "routeSeconds": 46234
     }
   ],
   "historicalExecutionExceptions": [],
@@ -6076,7 +6111,8 @@
         "pair-m11-zsd-moscow-to-sest",
         "pair-m11-zsd-prim-to-moscow",
         "pair-m11-zsd-sest-to-moscow",
-        "pair-m11-zsd-tver-to-sest"
+        "pair-m11-zsd-tver-to-sest",
+        "pair-m4-m11-voronezh-to-spb"
       ],
       "occurrences": [
         {
@@ -6915,9 +6951,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-07-10-360Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-voronezh-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-14-21-916Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-voronezh-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-14-22-478Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-voronezh-to-spb",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-14-23-001Z.json"
         }
       ],
-      "caseCount": 31
+      "caseCount": 32
     },
     {
       "code": "m4:unpriced",
@@ -6930,7 +6993,8 @@
         "zaporizhzhia-гуляйполе-kazan-center",
         "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
         "pair-m4-a289-taman-to-voronezh",
-        "pair-m4-a289-voronezh-to-taman"
+        "pair-m4-a289-voronezh-to-taman",
+        "pair-m4-m11-voronezh-to-spb"
       ],
       "occurrences": [
         {
@@ -7175,9 +7239,36 @@
             "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-11-21-491Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-voronezh-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-14-21-916Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-voronezh-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-14-22-478Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-voronezh-to-spb",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-14-23-001Z.json"
         }
       ],
-      "caseCount": 9
+      "caseCount": 10
     },
     {
       "code": "saved-live-evidence-missing",
