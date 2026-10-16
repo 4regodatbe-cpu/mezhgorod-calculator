@@ -25,3 +25,5 @@
 [AGENTS](../AGENTS.md) · [Protocol](CHECKPOINT_PROTOCOL.md) · [Plan](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json) · [Queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md). Все прежние checkpoints/history сохранены.
 
 16.10.2026 16:54MSK scratch-pruning recovery DONE, exactclonehead/tree verified; no routeprogress lost. NEXT frozen dependencies/repository-owned ZSDsinglecaseutility, then case27. checkpoints/2026-10-16-1654-resume-after-scratch-pruning.md Plan90%.
+
+16.10.2026 frozen dependencies restored exit0/15.7s, lockunchanged; NEXT repository-owned ZSD review utility. checkpoints/2026-10-16-1656-frozen-dependencies-restored.md No newtest/build/route; plan90%.

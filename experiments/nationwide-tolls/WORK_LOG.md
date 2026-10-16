@@ -1583,3 +1583,8 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T14:30:02.393729+03:00: ZSD26/76 individuallydurable; thisblock13additionalcases, sourcegateskept, no runtimechange/newfullgate. Overallplan90%18/20. Existingauto enabled/readbackconfirmed; promptonlyupdatedwithpercentinstruction/scheduleunchanged. Checkpoint ../../docs/checkpoints/2026-10-16-zsd-26case-handoff-and-auto-reporting.md. NEXTcase27pair-m11-zsd-moscow-to-prim.
 
 16.10.2026 16:54MSK scratch-pruning recovery DONE, exactclonehead/tree verified; no routeprogress lost. NEXT frozen dependencies/repository-owned ZSDsinglecaseutility, then case27. ../../docs/checkpoints/2026-10-16-1654-resume-after-scratch-pruning.md Plan90%.
+# 2026-10-16 16:54 МСК — case 27 replay: FAILED import path
+
+Первый offline replay `pair-m11-zsd-moscow-to-prim` не запустился: ошибочно указан `./experiments/nationwide-tolls/scripts/register-ts-paths.mjs`, фактический import — `./scripts/register-ts-paths.mjs`. Exit 1 до чтения capture; результаты и тарифная логика не менялись. См. `../../docs/checkpoints/2026-10-16-1654-zsd-case27-replay-failed-import.md`. Следом повторить тот же case с исправленным import. План 90% (18/20), ZSD review 26/76.
+
+16.10.2026 frozen dependencies restored exit0/15.7s, lockunchanged; NEXT repository-owned ZSD review utility. ../../docs/checkpoints/2026-10-16-1656-frozen-dependencies-restored.md No newtest/build/route; plan90%.
