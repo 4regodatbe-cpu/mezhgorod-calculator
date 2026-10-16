@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:23:37.254Z",
+  "generatedAt": "2026-10-16T00:24:01.167Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 156,
-    "recordedLiveAttempts": 169,
-    "liveCaptured": 155,
-    "savedLiveSummaries": 155,
+    "distinctCaseAttempts": 157,
+    "recordedLiveAttempts": 170,
+    "liveCaptured": 156,
+    "savedLiveSummaries": 156,
     "missingOrInvalidReferences": 1,
-    "audited": 155,
-    "traceComplete": 155,
-    "sameDateParity": 155
+    "audited": 156,
+    "traceComplete": 156,
+    "sameDateParity": 156
   },
   "regionCounts": {
     "dnr": {
@@ -90,11 +90,11 @@
       "id": "single-m12",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 4,
-      "audited": 4,
-      "traversalProven": 3,
-      "pricedWeekday": 4,
-      "pricedWeekend": 4
+      "attempted": 5,
+      "audited": 5,
+      "traversalProven": 4,
+      "pricedWeekday": 5,
+      "pricedWeekend": 5
     },
     {
       "id": "single-ckad",
@@ -5369,6 +5369,38 @@
       ],
       "routeMeters": 524972,
       "routeSeconds": 25899
+    },
+    {
+      "caseId": "single-m12-vladimir-to-kazan",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-vladimir-to-kazan/live-2026-10-15T09-00-00-03-00-2026-10-16T00-23-58-300Z.json",
+      "weekdayAmount": 3348,
+      "weekendAmount": 3348,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12"
+        ],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 643218,
+      "routeSeconds": 31169
     }
   ],
   "historicalExecutionExceptions": [],
