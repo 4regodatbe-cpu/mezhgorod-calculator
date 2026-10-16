@@ -2588,7 +2588,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-04-38-390Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kazan-center/2026-10-16T01-04-38-298Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1445025,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-04-27-573Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-04-38-390Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kazan-center/2026-10-16T01-04-38-298Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-04-38-923Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-04-39-446Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-старобельск-kerch-center",
