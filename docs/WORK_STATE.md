@@ -17,7 +17,7 @@ Trace response shape отсутствует: индексы737–746 не при
 
 ## NEXT STARTED — автоматически, без«дальше»
 
-1. Восстановить frozen dependencies текущегоfreshcheckout (pnpm install --frozen-lockfile).
+1. DONE frozen dependencies: pnpm install --frozen-lockfile exit0,18.6s; Node24.19.0/pnpm11.25.0, lockfile unchanged. [Checkpoint](checkpoints/2026-10-16-part19d-dependencies-restored.md). Не новыйfullgate.
 2. Только **lnr-лисичанск-moscow-center**, m4:unpriced2/22: existing corpus.auditEvidence.capture, currentengineoffline15/17окт09:00МСК; actualreason/vector/trace, unknown сохранять.
 3. Checkpoint+appendlogs/queue/state, commit/GitHub/head/exacttree **до** исправления/другогоcase. Затем следующиймикрошагавтоматически.
 
