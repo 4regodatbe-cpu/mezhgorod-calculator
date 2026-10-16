@@ -1,31 +1,31 @@
-# Калькулятор «Из А в Б»: часть19, исправления
+# Калькулятор «Из А в Б»: актуальное состояние
 
-**CURRENT19C**: historical M4 policy **1/25 checked**, Гранитное→Москва current offline complete2/2,3810/4640₽, trip-departure-v1, no current profile-change finding. No source change. [Checkpoint / NEXT](checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md): nextONLY `zaporizhzhia-пришиб-moscow-center`, two existing-capture profiles then durable save. Parts19ongoing/20planned; A28919A/19B DONE below.
-
-**CURRENT19B DONE**: directed Slavyansk connector fixed, Moscow↔Taman offline priced **4725/5625₽ each direction** for15/17Oct09:00MSK. Both directions complete2/2, no missing responses. **Fullgate676/676**, quote/API/Next/TS/static16/16, focused23/lint5 PASS. Runtime79df66d8. [Reverse/final19B + NEXT STARTED](checkpoints/2026-10-16-part19b-taman-moscow-replay.md), [forward](checkpoints/2026-10-16-part19b-moscow-taman-replay.md). All59 baseline A289 component bindings recovered (57helper-only+2whole-route), NOT59 confirmed total fares. Next single case `dnr-гранитное-moscow-center`: current offline check of historical M4 crossing-policy finding. Other findings pending, **part19 IN PROGRESS /20 planned**. Baseline immutable, trip-departure pricing, unknown≠0. Automatic continuation remains authorized; no main/merge/production/Android.
-
-19B Москва→Тамань whole-engine offline **complete2/2,4725/5625₽** (15/17Oct09:00MSK), A289385 +M44340/5240; unconfirmed tariff, not fresh live. [Replay / reverse STARTED](checkpoints/2026-10-16-part19b-moscow-taman-replay.md). Original baseline preserved.
-
-19B **fullgate676/676 + quote/API/Next/TS/static16/16PASS**, scopedlint5/diffPASS. [Gate checkpoint / STARTED Moscow→Taman offline replay](checkpoints/2026-10-16-part19b-a289-build-pass.md). Runtime source79df66d8; no whole-engine result yet.
-
-16.10.2026:19B connector implementation + focused **23/23PASS** saved; RED reproduced before fix. Narrow directed Slavyansk binding, existing dated385 matrix, no partial fallback. **Full gate STARTED, not yet verified; whole-engine replay pending**. [Checkpoint](checkpoints/2026-10-16-part19b-a289-connector-focused.md). Part19 continues,20 not started.
-
-16.10.2026. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Проверенный parent59ca6ad8; headэтойзаписи проверяетсяпослепубликации. Main/merge/Production/Androidнеизменялись.
+16.10.2026. Только ветка `fix/v3-missing-route-prices-2026-10-15`, PR #14 draft/open. Последний проверенный remote commit перед этой записью: `9561e3f4fd68b1d9999fd48d258187ef15cdfe2b`, tree `e261b502bd989f7393ecc9403e06b42269fbafc0`. Main, merge, Production и Android не трогались.
 
 ## DONE
 
-Части1–18: **155/155 и154/154**, workflow38824450386/job116729992063 SUCCESS. ИсторическийREPORT340/340с31раннимконтролем,0повреждённыхссылок. Это воспроизводимость, не подтверждениевсехцен.
+- Части 1–18: stage1 **155/155**, stage2 **154/154**. Workflow `38824450386`, job `116729992063` — SUCCESS; не запускать завершённую очередь повторно. Frozen REPORT: 340/340 с 31 ранним контролем, 0 повреждённых ссылок. Audited означает воспроизводимость, не подтверждение тарифа.
+- **19A:** полный внутренний вектор А-289 из трёх упорядоченных рамок, без повторов, теперь привязывается независимо от городов начала/конца длинной поездки. Существующая dated-матрица, не выдуманная цена. [Результат и impact 57/59](checkpoints/2026-10-16-part19-a289-impact-done.md).
+- **19B:** оставшиеся Москва ↔ Тамань проходят направленный съезд у Славянска, а не полный восточный участок. Строгие три геометрических контроля, порядок, радиус 25 м, запрет длинных хорд/повторов; только точный partial-вектор с доказательством съезда. Существующая матрица даёт А-289 385 ₽. [Диагноз](checkpoints/2026-10-16-part19b-a289-connector-diagnosed.md), [реализация](checkpoints/2026-10-16-part19b-a289-connector-focused.md).
+- Обе стороны отдельно воспроизведены: **4725 ₽ на 15.10.2026 / 5625 ₽ на 17.10.2026**, отправление 09:00 МСК, complete 2/2 на каждую сторону, missingResponses=[]; priceConfirmation остаётся unconfirmed. [Москва→Тамань](checkpoints/2026-10-16-part19b-moscow-taman-replay.md), [Тамань→Москва](checkpoints/2026-10-16-part19b-taman-moscow-replay.md).
+- Последняя проверка runtime `79df66d86b20cb339c2f96d377fed5a5277a2d01`: **676/676 tests**, quote/API/Next/TypeScript/static 16/16 PASS; focused 23/23, scoped ESLint 5 файлов/diff PASS. После неё расчётный код не менялся. [Gate](checkpoints/2026-10-16-part19b-a289-build-pass.md).
 
-**Часть19A DONE — A289 полныйвнутреннийвектор** на длинныхмаршрутах: трирамки23→82→103/обратно, безповторов, существующаяdatedматрица800. Не нуженлокальныйконечныйгородвсейпоездки. Partial/repeated/date/M4unknownguardsсохранены. Focused20/20, **fullgate673/673** + quote/API/Next/TypeScript/static16/16, lint3/diffPASS. [Итог/checkpoint](checkpoints/2026-10-16-part19-a289-impact-done.md), [build](checkpoints/2026-10-16-part19-a289-build-pass.md).
+Все 59 исторических A289:unpriced имеют доказательство восстановления привязки компонента: 57 — helper-only impact, 2 — whole-engine replay в двух профилях. Это **не 59 полных или подтверждённых цен поездок**. Original raw/live/replays/REPORT не переписывались; новые результаты — offline corrected-engine, не fresh live или независимый операторский эталон.
 
-[Impact](checkpoints/evidence/2026-10-16-part19-a289-impact.json): восстановленA289компоненту57/59затронутыхкейсов;2остаютсяunknown. Не57полныхцен. [Whole-engine replay](checkpoints/evidence/2026-10-16-part19-a289-replay-verified.json): Аскания-Нова→Казань3640/3970(15/17октября09:00МСК), обаcomplete; не новыйlive/внешняяпроверка. OriginalbaselineREPORT/live/replaysнепереписывались.
+## IN PROGRESS — часть 19
 
-## NEXT STARTED19B
+Разобрать остальные категории [PART19_FINDINGS_QUEUE.json](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) по одному случаю; [план 20 частей](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json). Часть 20 ещё не начата.
 
-**pair-m4-a289-moscow-to-taman**, толькоодинcase: frames82→103, восточнаяпривязкаещёнеподтверждена. В обратномcase103→82тожеunknown. Проверитьactualentryнаselectedgeometry/OSRMsteps/localregisterизсуществующегоraw, затемonecausefix+regression+fullgate/replay. Не подставлять385 толькоизотсутствияРВП23. Входы/точныефайлы/recoveryв [checkpoint](checkpoints/2026-10-16-part19-a289-impact-done.md).
+**19C, историческая M4 crossing-policy: проверен 1/25.** Гранитное→Москва: current-engine offline complete 2/2, 3810/4640 ₽; trip-departure-v1, исходная ошибка не воспроизвелась, нового source fix не требовалось. Старый weekday unknown сохранён. [Checkpoint и SHA](checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md).
 
-[Очередьнаходокчасти19](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), [20частей](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json). Остальныекатегорииещёнеразобраны,25m4_crossing_profile_changesизстарыхcapturesневыдаватьзановыеошибки,нуженcurrent-engineofflineповтор. **Часть19INPROGRESS,20неначата**.
+## NEXT — один сохраняемый микрошаг
 
-Автоматическипродолжатьпоодномусохраняемомуподшагубез«дальше»; STARTEDпереддолгимшагом,DONE/FAILED+commit/GitHub/head/treeпередследующим. Unknownне0,subtotalнеитог; тарификациявсейпоездкипоотправлению;междорожныевекторыотложены. GitHub/routingconsentдействуют. [Protocol](CHECKPOINT_PROTOCOL.md),[WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md),[NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md),[DECISIONS](../experiments/nationwide-tolls/DECISIONS.md).
+**Только `zaporizhzhia-пришиб-moscow-center`, историческая M4 policy 2/25.** Получить existing capture из corpus.auditEvidence; existing runner `run-systemic-route-case.mjs --replay` на 15/17 октября 09:00 МСК. Проверить integrity, фактический M4 quote и trip-departure basis; unrelated unknown не скрывать. Сохранить новые timestamped outputs, checkpoint, WORK_LOG/NEXT_STEPS и оценку в queue; commit, GitHub branch head и exact tree readback **до следующего случая**. При кириллице — NUL-safe Git paths.
 
-16.10.2026:19Bdiagnosed: selectedValhallaвходитA289с03К252между23и82,рамка23>13.5км; восточныйMaryanskayafallbackневерен. STARTED directedconnectorregression/guardedbindingдо385черезсуществующуюматрицу. checkpoints/2026-10-16-part19b-a289-connector-diagnosed.md.
+Автоматически продолжать без команды «дальше». Перед записью проверить отсутствие другого writer. STARTED до долгой операции, DONE/FAILED и durable save после каждого микрошaга. Если сохранение не прошло — остановить расширение, сообщить blocker. Не считать старую same-date parity проверкой исправленного кода.
+
+## Постоянные ограничения и журнал
+
+Unknown ≠ 0, subtotal ≠ полный итог; вся поездка тарифицируется по моменту отправления; междорожные векторы отложены. GitHub/routing consent уже дан, повторно не спрашивать. Не merge/main/Production/Android без нового прямого запроса, никому не отправлять сообщения.
+
+[Checkpoint protocol](CHECKPOINT_PROTOCOL.md) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md) · [DECISIONS](../experiments/nationwide-tolls/DECISIONS.md). Исторические записи сохранены в журнале, отдельных checkpoints и Git; эта страница — только текущий короткий handoff.
