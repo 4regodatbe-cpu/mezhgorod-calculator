@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 141,
-  "rawCaptureCaseCount": 139,
+  "rawCaptureCount": 142,
+  "rawCaptureCaseCount": 140,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -11687,6 +11687,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-17-19-158Z.json",
+      "caseId": "single-ckad-noginsk-to-podolsk",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-noginsk-to-podolsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-17-21-008Z.json",
+          "exists": true,
+          "bytes": 2404,
+          "sha256": "d20656afdd66afae5f9ea9c625dfa41df5f6d6c76ef47df111ec4f90b995186d",
+          "gitBlobSha": "941a382fccada7e7c2f6419224681ccf98880e6d",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-noginsk-to-podolsk/2026-10-16T00-17-20-995Z-capture.json.gz",
+          "exists": true,
+          "bytes": 52085,
+          "sha256": "88287ccaa9cb6e70a68083f70fa9f9ea4ae08b84c767565518b16858fe236354",
+          "gitBlobSha": "b0a8631a23304e611158e9f31758ae0302a63147",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 4
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-noginsk-to-podolsk/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-17-21-365Z.json",
+          "exists": true,
+          "bytes": 2482,
+          "sha256": "bd1389fa46c0581e57a88f3e5baf1e20d86fc95bbd17f631b5686dab258e6431",
+          "gitBlobSha": "7469c3a0407e69356bb3f9ddcd31b705b4f4509d",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-noginsk-to-podolsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-17-21-714Z.json",
+          "exists": true,
+          "bytes": 2482,
+          "sha256": "f04cec22e4af9b2b9ae8370e4d8c9be2d6741dffa61a15fb17930fbe39dac77e",
+          "gitBlobSha": "8514fdfa654c214ecb61147c84127b8682dff212",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -13009,6 +13054,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 5
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-noginsk-to-podolsk/2026-10-16T00-17-20-995Z-capture.json.gz",
+      "exists": true,
+      "bytes": 52085,
+      "sha256": "88287ccaa9cb6e70a68083f70fa9f9ea4ae08b84c767565518b16858fe236354",
+      "gitBlobSha": "b0a8631a23304e611158e9f31758ae0302a63147",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 4
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-kazan-center/2026-10-15T23-52-45-140Z-capture.json.gz",
