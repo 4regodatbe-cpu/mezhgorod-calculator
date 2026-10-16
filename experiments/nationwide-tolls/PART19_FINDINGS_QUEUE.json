@@ -26,7 +26,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "zaporizhzhia-розовка-kazan-center",
+  "nextCase": "pair-m4-a289-anapa-to-voronezh",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1740,8 +1740,9 @@
     },
     {
       "code": "m4:unpriced",
-      "currentCasesChecked": 16,
+      "currentCasesChecked": 17,
       "currentEvaluations": [
+        {"caseId":"zaporizhzhia-розовка-kazan-center","result":"source_gated_same_two_way_collection_scope","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case17.json"},
         {"caseId":"dnr-талаковка-kazan-center","result":"source_gated_same_two_way_collection_scope","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case16.json"},
         {"caseId":"dnr-новоазовск-kazan-center","result":"source_gated_same_two_way_collection_scope","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case15.json"},
         {"caseId":"triple-m4-m11-zsd-voronezh-to-prim","result":"m4_component_priced_other_products_unknown","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":1830,"m4WeekendAmount":2300,"remainingMissing":["zsd","unknown-paid-road"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case14.json"},
