@@ -33,8 +33,8 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
-  "nextAction": "ZSD nextcase max-chain-m12-ckad-m11-zsd-sest-to-vladimir; --next; savedcapture twoofflineprofiles",
+  "nextCase": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+  "nextAction": "ZSD nextcase max-chain-m12-ckad-m11-zsd-vladimir-to-sest; --next; savedcapture twoofflineprofiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2968,9 +2968,20 @@
         ],
         "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-56-23-107Z.md",
         "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-56-23-107Z.json"
+      },
+      {
+        "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+        "status": "source_gated_same_reviewed_zsd_scope",
+        "sameReviewedScopeCase": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+        "missing": [
+          "ckad",
+          "zsd"
+        ],
+        "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T15-43-19-348Z.md",
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T15-43-19-348Z.json"
       }
     ],
-    "checked": 54,
+    "checked": 55,
     "total": 76,
     "identityFix": {
       "status": "validated",

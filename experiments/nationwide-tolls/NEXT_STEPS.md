@@ -1568,3 +1568,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 
 2026-10-16T14:56:23.108Z: ZSD case54 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-56-23-107Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-sest-to-vladimir; --next; savedcapture twoofflineprofiles.
 2026-10-16T18:43:00+03:00: среда восстановлена и готова; NEXT выполнить ровно ZSD case55 `max-chain-m12-ckad-m11-zsd-sest-to-vladimir`, затем сохранить и проверить remote head/tree. [Checkpoint](../../docs/checkpoints/2026-10-16-1843-dependencies-restored.md). Plan90% (18/20), ZSD54/76.
+
+2026-10-16T15:43:19.349Z: ZSD case55 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T15-43-19-348Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-vladimir-to-sest; --next; savedcapture twoofflineprofiles.
