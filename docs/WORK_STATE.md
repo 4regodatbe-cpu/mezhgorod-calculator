@@ -17,7 +17,7 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 
 ## NEXT STARTED автоматически
 
-**Case10 pair-m4-a289-voronezh-to-taman STARTED**: exactexisting road-cases.json.auditEvidence.capture, offline15/17Oct09:00MSK, inspectSHA/provider/integrity/departure/M4reason. Durablecheckpoint before diagnosis/case11. Case9 source-gated: primaryPDF+exactOSMlane reviewed, collection-scheme rule stillunresolved; do not alias545-a/b or treat namedM4length as paidproof. [Latest](checkpoints/2026-10-16-122949-case9-545-source-gate.md). Cases10–22 not yetcurrentreplayed; regionalcorpus+road-cases arebothindexes.
+**NEXT STARTED** Case10 pair-m4-a289-voronezh-to-taman capture2026-10-16T00-11-20-485Z-capture.json.gz; run twoofflineprofiles15/17Oct09:00MSK, verifySHA/provider/integrity/departure/M4component; save separately before nextcase. [Checkpoint](checkpoints/2026-10-16-123215-case10-frozen-tools-ready.md).
 
 Часть19 IN PROGRESS,20 PLANNED; прочиеfindingclasses неполностьюразобраны. Одинwriter; active/queuedjob→неписатьвветку. TIME_LIMITвозобновляем. Raw/live/baseline/historyсохранять. Replay≠freshlive/подтверждённыйтариф. Unknown≠0,subtotal≠итог, wholetripпоотправлению, междорожныевекторыотложены. No main/merge/Production/Android/messages. Автопродолжение включено, неотключатьпокавсе20незавершены.
 
@@ -26,3 +26,5 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 2026-10-16 resume: exact-tree ancestry recovery DONE; see checkpoints/2026-10-16-resume-exact-tree-recovery.md. Same case9 next, no runtime change.
 
 16.10.2026 current checkout refreshed to actuala11dcf46, GitHub jobSUCCESS rechecked. [Fresh-checkout/STARTED](checkpoints/2026-10-16-1222-fresh-checkout-case9-resume.md): samecase9 primaryPDF+selected545geometry. Prior687gate historical; no runtime change. Trace chunk indices are not selectedroute indices.
+
+Latest checkpoint: [case10-frozen-tools-ready](checkpoints/2026-10-16-123215-case10-frozen-tools-ready.md). Dependency prerequisite DONE: pnpm install --frozen-lockfile exit0 in1.1s, pnpm11.25.0; tracked worktree remainedclean, lockfileunchanged. No newtest/build claim, previous687gate historical. No sourcepricechange.
