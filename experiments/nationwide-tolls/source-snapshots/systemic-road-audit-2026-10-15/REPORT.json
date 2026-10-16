@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:17:29.533Z",
+  "generatedAt": "2026-10-16T02:18:25.288Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 337,
-    "recordedLiveAttempts": 351,
-    "liveCaptured": 337,
-    "savedLiveSummaries": 337,
+    "distinctCaseAttempts": 338,
+    "recordedLiveAttempts": 352,
+    "liveCaptured": 338,
+    "savedLiveSummaries": 338,
     "missingOrInvalidReferences": 0,
-    "audited": 337,
-    "traceComplete": 337,
-    "sameDateParity": 337
+    "audited": 338,
+    "traceComplete": 338,
+    "sameDateParity": 338
   },
   "regionCounts": {
     "dnr": {
@@ -190,11 +190,11 @@
       "id": "triple-m4-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 7,
-      "audited": 7,
-      "traversalProven": 6,
-      "pricedWeekday": 0,
-      "pricedWeekend": 0
+      "attempted": 8,
+      "audited": 8,
+      "traversalProven": 7,
+      "pricedWeekday": 1,
+      "pricedWeekend": 1
     },
     {
       "id": "triple-m11-ckad-m12",
@@ -11475,6 +11475,46 @@
       ],
       "routeMeters": 2073839,
       "routeSeconds": 95288
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-prim-to-krasnodar",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T02-18-20-167Z.json",
+      "weekdayAmount": 10464,
+      "weekendAmount": 12184,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2069134,
+      "routeSeconds": 95599
     }
   ],
   "historicalExecutionExceptions": [],
