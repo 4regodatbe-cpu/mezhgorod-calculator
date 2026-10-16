@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 300,
-  "rawCaptureCaseCount": 297,
+  "rawCaptureCount": 301,
+  "rawCaptureCaseCount": 298,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -21314,6 +21314,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-52-45-047Z.json",
+      "caseId": "single-khabarovsk-nekrasovka-to-smidovich",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-nekrasovka-to-smidovich/live-2026-10-15T09-00-00-03-00-2026-10-16T01-52-46-869Z.json",
+          "exists": true,
+          "bytes": 2448,
+          "sha256": "e89fd05f411deafe2d184526a7f58770b67f128067159029fe0665273fb80fee",
+          "gitBlobSha": "db1685b3b0c675a1a37c5aad6ab73b505d918fb3",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-nekrasovka-to-smidovich/2026-10-16T01-52-46-856Z-capture.json.gz",
+          "exists": true,
+          "bytes": 88951,
+          "sha256": "cedc08b718071f6f768ec2e789f817803b2b3382fa5a9667ddb517045fcb8a42",
+          "gitBlobSha": "03cadb6ac8ec8701194dd5ca7b1ce9cc90fb9abc",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 4
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-nekrasovka-to-smidovich/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-52-47-246Z.json",
+          "exists": true,
+          "bytes": 2526,
+          "sha256": "6c20877652e9536cd705c90efcdcc3927cbf9f7e46ef1d74f13a51d77534093f",
+          "gitBlobSha": "0d5c8e560cbc9ceacd63c992402ef645acf0db53",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-nekrasovka-to-smidovich/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-52-47-607Z.json",
+          "exists": true,
+          "bytes": 2526,
+          "sha256": "0117b8237458583cb102119f33c0700594a737a0ceadda40e5e83ec7e831bd01",
+          "gitBlobSha": "3d61224b583cdc9682629cbb6bc542d5f246741b",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -23688,6 +23733,17 @@
       "bytes": 63666,
       "sha256": "928532ae6cc75319631608e4008e58ffcf65361e933ba54055187a967c49bcf7",
       "gitBlobSha": "93502eaf8b2e2c24684e3c54dd45d4d1ea000327",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 4
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-nekrasovka-to-smidovich/2026-10-16T01-52-46-856Z-capture.json.gz",
+      "exists": true,
+      "bytes": 88951,
+      "sha256": "cedc08b718071f6f768ec2e789f817803b2b3382fa5a9667ddb517045fcb8a42",
+      "gitBlobSha": "03cadb6ac8ec8701194dd5ca7b1ce9cc90fb9abc",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,
