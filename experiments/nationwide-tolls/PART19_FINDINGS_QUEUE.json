@@ -33,8 +33,8 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "single-zsd-peterhof-to-prim",
-  "nextAction": "ZSD case69 single-zsd-peterhof-to-prim; replay saved capture under two offline date profiles",
+  "nextCase": "single-zsd-sest-to-blag",
+  "nextAction": "Diagnose current ZSD scope using --diagnose before the nextcase",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -3132,9 +3132,19 @@
         "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T17-06-19-283Z.json",
         "scopeCheckpoint": "../../docs/checkpoints/zsd-2026-10-16T17-07-20-801Z.md",
         "scopeEvidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T17-07-20-801Z.json"
+      },
+      {
+        "caseId": "single-zsd-peterhof-to-prim",
+        "status": "current_unknown_needs_distinct_scope_review",
+        "sameReviewedScopeCase": null,
+        "missing": [
+          "zsd"
+        ],
+        "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T17-16-56-120Z.md",
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T17-16-56-120Z.json"
       }
     ],
-    "checked": 68,
+    "checked": 69,
     "total": 76,
     "identityFix": {
       "status": "validated",
