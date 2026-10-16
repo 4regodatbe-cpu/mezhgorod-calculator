@@ -12,6 +12,8 @@
 
 ## NEXT STARTED — 19D
 
+**Точный diagnosticNEXT:** selectedГранитное→Казань raw содержиттолько2paidM4ways **1182567076/31984600**,0tollbooths; matchedCoreProducts=m4 изpaidnames, но0knownPVP. [Evidence/next](checkpoints/2026-10-16-part19d-granitnoe-kazan-paid-ways.md). Извлечь толькоэти2traceedges/shapeокно и ихtollscope, сравнитьсsavedfacilitymap/primaryOSMtagsприпотребности. Пока это legitimateunknown, не доказанныйbug/freeпроезд; sourceнеисправлятьбезследующегодоказательства.
+
 **Первый case уже воспроизведён:** Гранитное→Казань complete2/2, но currenttotalunknown/m4, candidateCount0/confirmedPvps=[] («нетв1,5кмзонахизвестныхПВП»). Это не доказательствобесплатности/ошибкицены. Следующиймикрошагтолькоэтотcase: actualselectedraw paid-edge/booth/wayIDs/shape scope противизвестныхPVP, затемсохранитьдиагнозпередисправлением. [Checkpoint/SHA](checkpoints/2026-10-16-part19d-granitnoe-kazan-unknown-reproduced.md). Новыхцен/правоккодаещёнет.
 
 **m4:unpriced,22случая**, не те же25policycases. Первый только dnr-гранитное-kazan-center: existing corpus.auditEvidence.capture, currentengine offline15/17окт09:00МСК, проверить actualM4reason/vector/trace. Сохранить case/checkpoint/logs/state/queue и commit/push/head/tree до следующего независимого шага. Затем исправлять одну установленную причину с focused/fullgate. Не повторять309livequeue и не подставлятьцены.
