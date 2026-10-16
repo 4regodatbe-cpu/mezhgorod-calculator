@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:25:04.976Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:25:24.167Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 127,
+      "done": 128,
       "total": 155
     },
     {
@@ -18,15 +18,83 @@
   "next": {
     "part": 9,
     "spec": {
-      "caseId": "single-m3-moscow-to-maloyaroslavets",
+      "caseId": "single-m3-moscow-to-obninsk",
       "kind": "road",
       "group": "single-m3"
     }
   },
   "caseId": "single-m3-moscow-to-maloyaroslavets",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-m3-moscow-to-maloyaroslavets",
+    "startedAt": "2026-10-16T00:25:06.381Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-08-656Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/2026-10-16T00-25-08-640Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-25-09-019Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-09-362Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m3"
+      ],
+      "provenRoads": [
+        "m3"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m3",
+        "m3: m3_engine_not_yet_composed"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m3",
+        "m3: m3_engine_not_yet_composed"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m3",
+        "amount": null,
+        "reason": "m3_engine_not_yet_composed"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:25:09.377Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-25-04-975Z-part9",
-  "parent": "6f88fea4cfbdfce8005301c728dafdc15d3c2b84",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-25-04-976Z-started.json"
+  "parent": "a050c82a01151eba61d8a4c272364ea9d6bf8d67",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-25-24-167Z-done.json"
 }

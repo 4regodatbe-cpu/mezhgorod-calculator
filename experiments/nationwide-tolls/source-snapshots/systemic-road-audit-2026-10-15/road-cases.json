@@ -1062,7 +1062,22 @@
         "m3"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-08-656Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/2026-10-16T00-25-08-640Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 121233,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-25-06-379Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-08-656Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/2026-10-16T00-25-08-640Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-25-09-019Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-09-362Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m3-maloyaroslavets-to-moscow",

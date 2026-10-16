@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:24:48.502Z",
+  "generatedAt": "2026-10-16T00:25:11.381Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 159,
-    "recordedLiveAttempts": 172,
-    "liveCaptured": 158,
-    "savedLiveSummaries": 158,
+    "distinctCaseAttempts": 160,
+    "recordedLiveAttempts": 173,
+    "liveCaptured": 159,
+    "savedLiveSummaries": 159,
     "missingOrInvalidReferences": 1,
-    "audited": 158,
-    "traceComplete": 158,
-    "sameDateParity": 158
+    "audited": 159,
+    "traceComplete": 159,
+    "sameDateParity": 159
   },
   "regionCounts": {
     "dnr": {
@@ -70,9 +70,9 @@
       "id": "single-m3",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 2,
-      "audited": 2,
-      "traversalProven": 2,
+      "attempted": 3,
+      "audited": 3,
+      "traversalProven": 3,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -5465,6 +5465,38 @@
       ],
       "routeMeters": 184817,
       "routeSeconds": 10636
+    },
+    {
+      "caseId": "single-m3-moscow-to-maloyaroslavets",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-08-656Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m3"
+        ],
+        "provenRoads": [
+          "m3"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 121233,
+      "routeSeconds": 7471
     }
   ],
   "historicalExecutionExceptions": [],
@@ -10010,7 +10042,8 @@
       "code": "engine_not_yet_composed",
       "cases": [
         "single-m3-kaluga-to-moscow",
-        "single-m3-moscow-to-kaluga"
+        "single-m3-moscow-to-kaluga",
+        "single-m3-moscow-to-maloyaroslavets"
       ],
       "occurrences": [
         {
@@ -10066,9 +10099,36 @@
             "reason": "m3_engine_not_yet_composed"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-46-465Z.json"
+        },
+        {
+          "caseId": "single-m3-moscow-to-maloyaroslavets",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-08-656Z.json"
+        },
+        {
+          "caseId": "single-m3-moscow-to-maloyaroslavets",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-25-09-019Z.json"
+        },
+        {
+          "caseId": "single-m3-moscow-to-maloyaroslavets",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-09-362Z.json"
         }
       ],
-      "caseCount": 2
+      "caseCount": 3
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
