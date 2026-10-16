@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:31:57.338Z",
+  "generatedAt": "2026-10-16T00:32:32.085Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 177,
-    "recordedLiveAttempts": 190,
-    "liveCaptured": 176,
-    "savedLiveSummaries": 176,
+    "distinctCaseAttempts": 178,
+    "recordedLiveAttempts": 191,
+    "liveCaptured": 177,
+    "savedLiveSummaries": 177,
     "missingOrInvalidReferences": 1,
-    "audited": 176,
-    "traceComplete": 176,
-    "sameDateParity": 176
+    "audited": 177,
+    "traceComplete": 177,
+    "sameDateParity": 177
   },
   "regionCounts": {
     "dnr": {
@@ -200,9 +200,9 @@
       "id": "triple-m11-ckad-m12",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 0,
-      "audited": 0,
-      "traversalProven": 0,
+      "attempted": 1,
+      "audited": 1,
+      "traversalProven": 1,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -6041,6 +6041,43 @@
       ],
       "routeMeters": 64509,
       "routeSeconds": 3477
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-28-925Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad",
+          "m12"
+        ],
+        "provenRoads": [
+          "m12",
+          "m11",
+          "zsd",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1524816,
+      "routeSeconds": 61507
     }
   ],
   "historicalExecutionExceptions": [],
@@ -7565,7 +7602,8 @@
         "single-m11-spb-to-moscow",
         "single-zsd-blag-to-prim",
         "single-zsd-pushkin-to-sest",
-        "single-zsd-sest-to-pushkin"
+        "single-zsd-sest-to-pushkin",
+        "triple-m11-ckad-m12-kazan-to-spb"
       ],
       "occurrences": [
         {
@@ -8566,9 +8604,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-31-55-247Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-28-925Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-32-29-467Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-29-989Z.json"
         }
       ],
-      "caseCount": 37
+      "caseCount": 38
     },
     {
       "code": "m4:unpriced",
@@ -8934,7 +8999,8 @@
         "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
         "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
         "max-chain-m12-ckad-m11-zsd-murom-to-sest",
-        "pair-m11-ckad-noginsk-to-spb"
+        "pair-m11-ckad-noginsk-to-spb",
+        "triple-m11-ckad-m12-kazan-to-spb"
       ],
       "occurrences": [
         {
@@ -9044,9 +9110,36 @@
             "reason": "m11_partial_head_entry_boundary_unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-09-543Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_partial_head_entry_boundary_unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-28-925Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_partial_head_entry_boundary_unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-32-29-467Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_partial_head_entry_boundary_unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-29-989Z.json"
         }
       ],
-      "caseCount": 4
+      "caseCount": 5
     },
     {
       "code": "arc_not_proven",
@@ -9061,7 +9154,8 @@
         "pair-m11-ckad-torzhok-to-ramenskoe",
         "pair-m12-ckad-kazan-to-klin",
         "pair-m12-ckad-klin-to-kazan",
-        "pair-m12-ckad-vladimir-to-klin"
+        "pair-m12-ckad-vladimir-to-klin",
+        "triple-m11-ckad-m12-kazan-to-spb"
       ],
       "occurrences": [
         {
@@ -9360,9 +9454,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-vladimir-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-09-10-607Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-28-925Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-32-29-467Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-29-989Z.json"
         }
       ],
-      "caseCount": 11
+      "caseCount": 12
     },
     {
       "code": "unknown-paid-road:unpriced",

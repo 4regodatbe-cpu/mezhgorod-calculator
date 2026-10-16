@@ -5435,7 +5435,22 @@
         "m12"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-28-925Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/2026-10-16T00-32-28-847Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1524816,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-32-15-327Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-28-925Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/2026-10-16T00-32-28-847Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-32-29-467Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-29-989Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "triple-m11-ckad-m12-torzhok-to-kazan",
