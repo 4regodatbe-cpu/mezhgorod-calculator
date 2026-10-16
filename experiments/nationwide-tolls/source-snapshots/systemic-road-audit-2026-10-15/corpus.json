@@ -2627,7 +2627,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-05-10-696Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kerch-center/2026-10-16T01-05-10-632Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 834981,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-05-06-778Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-05-10-696Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kerch-center/2026-10-16T01-05-10-632Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-05-11-192Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-05-11-656Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "lnr-антрацит-moscow-center",
