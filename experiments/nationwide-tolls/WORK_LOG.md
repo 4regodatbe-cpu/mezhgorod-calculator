@@ -1533,3 +1533,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T14:10:21.676416+03:00: ZSDcase12 lnr-марковка-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141021-zsd-case12.md. NEXT max-chain-m12-ckad-m11-zsd-arzamas-to-prim.
 
 2026-10-16T14:10:40.127312+03:00: ZSDcase13 max-chain-m12-ckad-m11-zsd-arzamas-to-prim DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['ckad', 'm11-15-58', 'unknown-paid-road', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141040-zsd-case13.md. NEXT max-chain-m12-ckad-m11-zsd-kazan-to-sest.
+
+16.10.2026 primaryproof DONE: unnamednode1766158781 belongsZSD via4directedways, all in selectedcase13ledger; fixexactidentity STARTED, nofarechange. ../../docs/checkpoints/2026-10-16-zsd-planernaya-identity-proof.md Plan90%18/20. NEXT source/adversarialregression thenfocused/fullgate/samecasereplay.

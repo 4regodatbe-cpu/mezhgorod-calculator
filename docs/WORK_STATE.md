@@ -14,13 +14,13 @@ Parts1–18:155/155+154/154, frozenREPORT340/340.19A/B A28957helper-only+2wholec
 
 [22-casequeue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), latestper-caseevidence/checkpoints inqueue/log. Allcases10–22 twoofflineprofiles separatelysaved/readback; raw/live/olderreplays/REPORTuntouched. Fix4811a106 northboundcompound416+460relocated36keys/no newfares. Prior full687/687+quote/API/Next/TS/static16/16/focused26PASS remainshistorical; no runtimecodechange/newgate thisturn. OrdinaryCJS-lint failure andexplicitexception documented, notsilentlypassed.
 
-## NEXT STARTED — ZSD case14
+## NEXT STARTED — exact ZSD unnamed-booth identity fix
 
-Overall plan progress **90% (18/20 completed parts)**. This is plan progress, not tariff coverage/release readiness. Part19 inprogress/20planned. User requests this metric in every subsequent report. Formula in SMALL_PARTS_PLAN.json.progressReporting.
+Overall plan progress **90% (18/20 fully completed parts)**, not verified tariff coverage. Part19 inprogress/20planned. User requested percentage in every report; formula in SMALL_PARTS_PLAN.json.progressReporting.
 
-ZSD current-engine savedcapture reviews **13/76**; latest max-chain-m12-ckad-m11-zsd-arzamas-to-prim: twoofflineprofiles complete, status `current_unknown_needs_distinct_scope_review`, missing ['ckad', 'm11-15-58', 'unknown-paid-road', 'zsd']. [Latest checkpoint](checkpoints/2026-10-16-141040-zsd-case13.md) and full per-case queue/evidence preserve exact results. Firstcase PVP5/Ekateringofka sourcegate remains unresolved; no guessed600/zone1subtotal. SixshortM4 andeight545 gates remain as previously documented.
+ZSD13/76 savedcapturepairs reviewed individually. First12 same exact26way/PVP5 scope, sourcegate remains. Case13 Arzamas→Prim has55namedways and unnamedgate1766158781. **Independent directed primaryOSM topology plus same-selectedpaidledger proves this gate is ZSD**, without establishing a fare. [Proof/fix STARTED](checkpoints/2026-10-16-zsd-planernaya-identity-proof.md).
 
-Next ONLY max-chain-m12-ckad-m11-zsd-kazan-to-sest; existingcapture, twoofflineprofiles, exactscope comparison, durablecheckpoint before nextcase. No rerun completedM4/policy/309live. Frozen dependencies restored; no newruntimecode/fullgate. Historical687 not rerun. Currentcheckout calculator-resume; connector/local commits can differ, exacttree readback required.
+NextONLY add exactidentity+source/adversarial regression, persist code, focusedtests, fullgate, then samecase replay. CKAD/M11head/ZSD remainunknown; unknownotherbooths/incomplete trace must stayunknown. No benchmark IDs/prices in runtime, no tariff invention. Do not advancecase14 yet. Prior687gate historical until rerun. Currentcheckout calculator-resume, connector/localcommitSHA differ but exacttrees verified.
 
 Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. Ifcontextends, startfromthisspecificNEXT, notoldrecovery/309live/25policyqueue. One writer; active/queuedjob→no writes, TIME_LIMITresumable. Unknown≠0,subtotal≠total, wholetripdeparturepricing; cross-roadvectorsdeferred. No main/merge/Production/Android/messages. Autocontinuation remainsenabled untilall20done.
 

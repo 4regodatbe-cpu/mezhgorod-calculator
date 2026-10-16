@@ -26,8 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
-  "nextAction": "ZSD next distinct case max-chain-m12-ckad-m11-zsd-kazan-to-sest: existing capture twoofflineprofiles; compare exact selected scope",
+  "nextCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "nextAction": "Fix exact independently proven ZSD unnamed Planernaya booth identity1766158781; focused adversarial/source tests then fullgate and samecase replay",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2517,6 +2517,12 @@
       }
     ],
     "checked": 13,
-    "total": 76
+    "total": 76,
+    "identityFix": {
+      "status": "started",
+      "osmNodeId": "1766158781",
+      "checkpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-identity-proof.md",
+      "evidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-planernaya-identity-proof.json"
+    }
   }
 }
