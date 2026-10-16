@@ -1062,7 +1062,7 @@
     {
       "id": 13,
       "title": "Этап 2: группа 3/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "lnr-сорокино-kerch-center",
@@ -1160,12 +1160,12 @@
           "region": "zaporizhzhia"
         }
       ],
-      "completedCases": 18
+      "completedCases": 19
     },
     {
       "id": 14,
       "title": "Этап 2: группа 4/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "zaporizhzhia-розовка-kerch-center",

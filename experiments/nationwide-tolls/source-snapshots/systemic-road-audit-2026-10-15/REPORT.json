@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:14:47.546Z",
+  "generatedAt": "2026-10-16T01:15:33.774Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 242,
-    "recordedLiveAttempts": 256,
-    "liveCaptured": 242,
-    "savedLiveSummaries": 242,
+    "distinctCaseAttempts": 243,
+    "recordedLiveAttempts": 257,
+    "liveCaptured": 243,
+    "savedLiveSummaries": 243,
     "missingOrInvalidReferences": 0,
-    "audited": 242,
-    "traceComplete": 242,
-    "sameDateParity": 242
+    "audited": 243,
+    "traceComplete": 243,
+    "sameDateParity": 243
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 32,
-      "audited": 32,
-      "traceComplete": 32,
+      "liveCaptured": 33,
+      "audited": 33,
+      "traceComplete": 33,
       "pricedWeekday": 8,
       "pricedWeekend": 9
     },
@@ -8235,6 +8235,36 @@
       ],
       "routeMeters": 2794988,
       "routeSeconds": 133336
+    },
+    {
+      "caseId": "zaporizhzhia-розовка-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-15-29-603Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1742659,
+      "routeSeconds": 88793
     }
   ],
   "historicalExecutionExceptions": [],
@@ -11698,7 +11728,8 @@
         "single-m4-voronezh-to-krasnodar",
         "triple-m4-m11-zsd-voronezh-to-prim",
         "dnr-новоазовск-kazan-center",
-        "dnr-талаковка-kazan-center"
+        "dnr-талаковка-kazan-center",
+        "zaporizhzhia-розовка-kazan-center"
       ],
       "occurrences": [
         {
@@ -12132,9 +12163,36 @@
             "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-41-49-452Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-розовка-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-15-29-603Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-розовка-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-15-30-144Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-розовка-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-15-30-667Z.json"
         }
       ],
-      "caseCount": 16
+      "caseCount": 17
     },
     {
       "code": "m11_partial_head_entry_boundary_unresolved",

@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:15:12.695Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T01:15:53.983Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,88 @@
     },
     {
       "stage": 2,
-      "done": 56,
+      "done": 57,
       "total": 154
     }
   ],
   "next": {
-    "part": 13,
+    "part": 14,
     "spec": {
-      "caseId": "zaporizhzhia-розовка-kazan-center",
+      "caseId": "zaporizhzhia-розовка-kerch-center",
       "kind": "regional",
       "region": "zaporizhzhia"
     }
   },
   "caseId": "zaporizhzhia-розовка-kazan-center",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "zaporizhzhia-розовка-kazan-center",
+    "startedAt": "2026-10-16T01:15:14.142Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-15-29-603Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kazan-center/2026-10-16T01-15-29-491Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-15-30-144Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-15-30-667Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "m4"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m4",
+        "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m4",
+        "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": null,
+        "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+      }
+    ],
+    "finishedAt": "2026-10-16T01:15:30.687Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-15-12-695Z-part13",
-  "parent": "ba8a03f9131414d1feac6e3217ff360b2e879800",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-15-12-695Z-started.json"
+  "parent": "13dffcbe1d905e8797834a1d7e0215c7a20bcc10",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-15-53-983Z-done.json"
 }
