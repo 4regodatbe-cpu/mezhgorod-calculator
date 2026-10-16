@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:51:26.089Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:51:31.854Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,85 +23,10 @@
       "group": "single-khabarovsk"
     }
   },
-  "caseId": "single-ckad-rostov-to-dmitrov",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-ckad-rostov-to-dmitrov",
-    "startedAt": "2026-10-16T01:50:49.826Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-rostov-to-dmitrov/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-58-721Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-rostov-to-dmitrov/2026-10-16T01-50-58-641Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-50-59-283Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-59-822Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "ckad"
-      ],
-      "provenRoads": [
-        "m4"
-      ],
-      "missingExpectedRoads": [
-        "ckad"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: ckad",
-        "ckad: ckad_east_arc_not_proven"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: ckad",
-        "ckad: ckad_east_arc_not_proven"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 3810,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "ckad",
-        "amount": null,
-        "reason": "ckad_east_arc_not_proven"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:50:59.842Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-50-48-290Z-part16",
-  "parent": "6c5d72bf7caf6dd0d0b0d01f28da8e0bdf9b3465",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-51-26-089Z-done.json"
+  "caseId": "single-khabarovsk-berezovka-to-vyazemsky",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-51-31-854Z-part16",
+  "parent": "5fece20f9d908ce4952bcf1b10468c6f11f8cf9e",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-51-31-854Z-started.json"
 }
