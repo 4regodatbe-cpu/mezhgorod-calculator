@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T07:48:00.252Z",
-  "phase": "PART19_M4_POLICY_DONE",
+  "at": "2026-10-16T07:48:02.873Z",
+  "phase": "PART19_M4_POLICY_STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
   "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
@@ -8,92 +8,14 @@
   "total": 25,
   "next": "zaporizhzhia-молочанск-saint-petersburg-center",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "ccfd45e846fe7d626c4e085c09dc1a072e469210",
-  "caseId": "lnr-лисичанск-saint-petersburg-center",
-  "evaluation": {
-    "caseId": "lnr-лисичанск-saint-petersburg-center",
-    "result": "not_reproduced_current_engine",
-    "weekdayAmount": null,
-    "weekendAmount": null,
-    "m4WeekdayAmount": 3610,
-    "m4WeekendAmount": 4390,
-    "remainingMissing": [
-      "zsd"
-    ],
-    "outputs": [
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-47-59-581Z.json",
-        "sha256": "907114a826da4d35668583608d1273a5cf7d95efe06892a8c99501f418081c5e"
-      },
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-48-00-210Z.json",
-        "sha256": "a544d1772792abb88b6a248ebe02c46e78e238590ec0b14a2eace6e29aabef8b"
-      }
-    ],
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/2026-10-15T16-58-16-753Z-capture.json.gz",
-    "captureSha256": "4e57bf75932979db5bdced425b67dc617fd7107b87824d3ed6299e77186704f8",
-    "components": [
-      {
-        "departureAt": "2026-10-15T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 3610,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "m11-15-58",
-            "amount": 1130,
-            "reason": "m11_head_ready_direct_pair_at_departure"
-          },
-          {
-            "id": "m11-58-679",
-            "amount": 3900,
-            "reason": "matrix dated selected-route M11 direct pair"
-          },
-          {
-            "id": "m11-679-684",
-            "amount": 94,
-            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-          },
-          {
-            "id": "zsd",
-            "amount": null,
-            "reason": "zsd_trip_extends_outside_reviewed_zone1"
-          }
-        ]
-      },
-      {
-        "departureAt": "2026-10-17T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 4390,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "m11-15-58",
-            "amount": 1650,
-            "reason": "m11_head_ready_direct_pair_at_departure"
-          },
-          {
-            "id": "m11-58-679",
-            "amount": 4200,
-            "reason": "matrix dated selected-route M11 direct pair"
-          },
-          {
-            "id": "m11-679-684",
-            "amount": 94,
-            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-          },
-          {
-            "id": "zsd",
-            "amount": null,
-            "reason": "zsd_trip_extends_outside_reviewed_zone1"
-          }
-        ]
-      }
-    ]
-  },
-  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-00-252Z-part19_m4_policy_done.json"
+  "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T18-24-25-094Z-capture.json.gz",
+  "captureSha256": "504d3eb43a0126695c2b3693af962b226a0a20212bef66d0d6295133ff26951b",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "315bcbe82b313a57671fc767c009226754c9e07c",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-48-02-873Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-02-873Z-part19_m4_policy_started.json"
 }
