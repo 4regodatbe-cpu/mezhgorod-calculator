@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:59:56.300Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:00:00.944Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,74 +23,10 @@
       "region": "lnr"
     }
   },
-  "caseId": "lnr-ровеньки-moscow-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "lnr-ровеньки-moscow-center",
-    "startedAt": "2026-10-16T00:59:28.126Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-59-34-986Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-moscow-center/2026-10-16T00-59-34-907Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-59-35-536Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-59-36-069Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 3810,
-      "weekdayAmount": 3810,
-      "weekendAmount": 4640,
-      "period": "понедельник–четверг",
-      "segments": [
-        "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 4640,
-      "weekdayAmount": 3810,
-      "weekendAmount": 4640,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 3810,
-        "reason": "matrix exact selected-route M4 vector"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:59:36.088Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-59-26-729Z-part12",
-  "parent": "85923431b5cebe488e8387f519e0f27b2fc48636",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-59-56-300Z-done.json"
+  "caseId": "lnr-ровеньки-saint-petersburg-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-00-00-943Z-part12",
+  "parent": "10412b371590c3466bc132021d1e0386048f451a",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-00-00-944Z-started.json"
 }
