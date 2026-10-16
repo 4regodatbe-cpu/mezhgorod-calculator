@@ -2244,7 +2244,22 @@
         "ckad"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-15-691Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/2026-10-16T01-50-15-672Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 160392,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-50-12-634Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-15-691Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/2026-10-16T01-50-15-672Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-50-16-052Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-16-413Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-ckad-kazan-to-dmitrov",

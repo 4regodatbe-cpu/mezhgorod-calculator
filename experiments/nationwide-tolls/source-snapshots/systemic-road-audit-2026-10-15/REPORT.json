@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:49:43.128Z",
+  "generatedAt": "2026-10-16T01:50:20.022Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 293,
-    "recordedLiveAttempts": 307,
-    "liveCaptured": 293,
-    "savedLiveSummaries": 293,
+    "distinctCaseAttempts": 294,
+    "recordedLiveAttempts": 308,
+    "liveCaptured": 294,
+    "savedLiveSummaries": 294,
     "missingOrInvalidReferences": 0,
-    "audited": 293,
-    "traceComplete": 293,
-    "sameDateParity": 293
+    "audited": 294,
+    "traceComplete": 294,
+    "sameDateParity": 294
   },
   "regionCounts": {
     "dnr": {
@@ -100,8 +100,8 @@
       "id": "single-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 8,
-      "audited": 8,
+      "attempted": 9,
+      "audited": 9,
       "traversalProven": 0,
       "pricedWeekday": 4,
       "pricedWeekend": 4
@@ -10022,6 +10022,40 @@
       ],
       "routeMeters": 857502,
       "routeSeconds": 41066
+    },
+    {
+      "caseId": "single-ckad-klin-to-ramenskoe",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-15-691Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 160392,
+      "routeSeconds": 7679
     }
   ],
   "historicalExecutionExceptions": [],
@@ -15583,7 +15617,8 @@
         "pair-m4-m11-rostov-to-tver",
         "pair-m4-m11-spb-to-voronezh",
         "pair-m4-m11-torzhok-to-krasnodar",
-        "pair-m4-m11-tver-to-rostov"
+        "pair-m4-m11-tver-to-rostov",
+        "single-ckad-klin-to-ramenskoe"
       ],
       "occurrences": [
         {
@@ -16827,9 +16862,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-tver-to-rostov/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-44-38-788Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-15-691Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-50-16-052Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-16-413Z.json"
         }
       ],
-      "caseCount": 46
+      "caseCount": 47
     },
     {
       "code": "expected-road-not-proven",
@@ -16880,7 +16942,8 @@
         "pair-m12-ckad-murom-to-dmitrov",
         "single-ckad-dmitrov-to-kazan",
         "single-ckad-dmitrov-to-rostov",
-        "single-ckad-kazan-to-dmitrov"
+        "single-ckad-kazan-to-dmitrov",
+        "single-ckad-klin-to-ramenskoe"
       ],
       "occurrences": [
         {
@@ -17690,9 +17753,25 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-kazan-to-dmitrov/live-2026-10-15T09-00-00-03-00-2026-10-16T01-49-38-594Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "expectedRoads": [
+              "ckad"
+            ],
+            "provenRoads": [
+              "m11"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-15-691Z.json"
         }
       ],
-      "caseCount": 47
+      "caseCount": 48
     },
     {
       "code": "m11-58-679:unpriced",
@@ -17727,7 +17806,8 @@
         "pair-m4-m11-rostov-to-tver",
         "pair-m4-m11-spb-to-voronezh",
         "pair-m4-m11-torzhok-to-krasnodar",
-        "pair-m4-m11-tver-to-rostov"
+        "pair-m4-m11-tver-to-rostov",
+        "single-ckad-klin-to-ramenskoe"
       ],
       "occurrences": [
         {
@@ -18566,9 +18646,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-tver-to-rostov/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-44-38-788Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-15-691Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-50-16-052Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-16-413Z.json"
         }
       ],
-      "caseCount": 31
+      "caseCount": 32
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
@@ -18583,7 +18690,8 @@
         "pair-m4-m11-krasnodar-to-torzhok",
         "pair-m4-m11-rostov-to-tver",
         "pair-m4-m11-torzhok-to-krasnodar",
-        "pair-m4-m11-tver-to-rostov"
+        "pair-m4-m11-tver-to-rostov",
+        "single-ckad-klin-to-ramenskoe"
       ],
       "occurrences": [
         {
@@ -18882,9 +18990,36 @@
             "reason": "m11_58_679_facility_sequence_incomplete"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-tver-to-rostov/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-44-38-788Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-15-691Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-50-16-052Z.json"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-16-413Z.json"
         }
       ],
-      "caseCount": 11
+      "caseCount": 12
     },
     {
       "code": "engine_not_yet_composed",
