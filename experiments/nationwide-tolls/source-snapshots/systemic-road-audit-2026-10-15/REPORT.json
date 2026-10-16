@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:10:04.710Z",
+  "generatedAt": "2026-10-16T01:10:48.634Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 236,
-    "recordedLiveAttempts": 250,
-    "liveCaptured": 236,
-    "savedLiveSummaries": 236,
+    "distinctCaseAttempts": 237,
+    "recordedLiveAttempts": 251,
+    "liveCaptured": 237,
+    "savedLiveSummaries": 237,
     "missingOrInvalidReferences": 0,
-    "audited": 236,
-    "traceComplete": 236,
-    "sameDateParity": 236
+    "audited": 237,
+    "traceComplete": 237,
+    "sameDateParity": 237
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 26,
-      "audited": 26,
-      "traceComplete": 26,
+      "liveCaptured": 27,
+      "audited": 27,
+      "traceComplete": 27,
       "pricedWeekday": 7,
       "pricedWeekend": 8
     },
@@ -8027,6 +8027,41 @@
       ],
       "routeMeters": 374332,
       "routeSeconds": 19379
+    },
+    {
+      "caseId": "zaporizhzhia-мелитополь-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-10-44-352Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1969800,
+      "routeSeconds": 97505
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8568,7 +8603,8 @@
         "kherson-херсон-saint-petersburg-center",
         "zaporizhzhia-кушугум-moscow-center",
         "zaporizhzhia-кушугум-saint-petersburg-center",
-        "zaporizhzhia-мелитополь-kazan-center"
+        "zaporizhzhia-мелитополь-kazan-center",
+        "zaporizhzhia-мелитополь-moscow-center"
       ],
       "occurrences": [
         {
@@ -9920,9 +9956,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-09-30-112Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-10-44-352Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-10-44-992Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-10-45-627Z.json"
         }
       ],
-      "caseCount": 50
+      "caseCount": 51
     },
     {
       "code": "zsd:unpriced",
