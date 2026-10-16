@@ -1695,7 +1695,7 @@
         "a289-full-interior-vector",
         "a289-slavyansk-directed-connector"
       ],
-      "nextSubstep": "19D8/22 replaychecked; latestcasemax-chain-m4-ckad-m11-zsd-voronezh-to-prim unknownneedsdiagnosis; Samecase max-chain-m4-ckad-m11-zsd-voronezh-to-prim: diagnose exact currentmissing reason/selectedscope before nextcase; do not guess price.",
+      "nextSubstep": "19D9/22 replaychecked; latestcasepair-m4-a289-taman-to-voronezh unknownneedsdiagnosis; Samecase pair-m4-a289-taman-to-voronezh: diagnose exact currentmissing reason/selectedscope before nextcase; do not guess price.",
       "findingsQueue": "PART19_FINDINGS_QUEUE.json"
     },
     {

@@ -1740,8 +1740,9 @@
     },
     {
       "code": "m4:unpriced",
-      "currentCasesChecked": 8,
+      "currentCasesChecked": 9,
       "currentEvaluations": [
+        {"caseId":"pair-m4-a289-taman-to-voronezh","result":"current_unknown_needs_diagnosis","m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case9-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case9-replay.json"},
         {"caseId":"max-chain-m4-ckad-m11-zsd-voronezh-to-prim","result":"m4_recovered_remaining_products_unknown","weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case8-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case8-replay.json","m4WeekdayAmount":1830,"m4WeekendAmount":2300,"remainingMissing":["zsd","unknown-paid-road"],"classificationCheckpoint":"../../docs/checkpoints/2026-10-16-part19d-case8-component-recovered.md"},
         {"caseId":"zaporizhzhia-гуляйполе-kazan-center","result":"source_gated_unknown_retained","weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case7-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case7-replay.json","diagnosticCheckpoint":"../../docs/checkpoints/2026-10-16-part19d-gulyaypole-kazan-source-hold.md","scopeEvidence":"../../docs/checkpoints/evidence/2026-10-16-gulyaypole-kazan-scope.json"},
         {"caseId":"dnr-краматорск-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case6-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case6-replay.json"},
