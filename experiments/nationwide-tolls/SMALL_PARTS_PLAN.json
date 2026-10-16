@@ -1696,7 +1696,7 @@
         "a289-slavyansk-directed-connector",
         "zsd-planernaya-exact-booth-identity"
       ],
-      "nextSubstep": "Review m4:unpriced using 22 saved evaluations; classify source-gated scopes, then continue one finding at a time; do not mark part19 complete",
+    "nextSubstep": "Review m11_partial_head_entry_boundary_unresolved using saved evidence; classify only with exact source/route proof, one finding at a time; do not mark part19 complete",
       "findingsQueue": "PART19_FINDINGS_QUEUE.json"
     },
     {

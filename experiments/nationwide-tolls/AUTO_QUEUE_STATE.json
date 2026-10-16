@@ -1,14 +1,14 @@
 {
-  "at": "2026-10-16T17:41:54.000Z",
-  "phase": "PART19_ZSD_FINDING_SOURCE_GATED",
+  "at": "2026-10-16T17:48:58.000Z",
+  "phase": "PART19_M4_FINDING_SOURCE_GATED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "ZSD finding classified source-gated after 76/76 complete saved-capture two-profile replays; collection span remains unbound",
-  "checked": 76,
-  "total": 76,
-  "next": "Part19: review m4:unpriced using 22 saved evaluations; classify source-gated scopes and confirm no unsupported zero/price; then continue findings one at a time",
-  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "29c15aa234ecac2b07049323634a1ea47dc14feb",
-  "nextFinding": "m4:unpriced",
-  "checkpointPath": "docs/checkpoints/2026-10-16-zsd-classification-76-cases.md"
+  "scope": "M4 unpriced finding classified source-gated after all 22 saved evaluations; exact collection scopes remain unbound",
+  "checked": 22,
+  "total": 22,
+  "next": "Part19: review m11_partial_head_entry_boundary_unresolved using its saved evidence; one finding at a time",
+  "validation": "Documentation/evidence-only classification; no runtime logic changed and no tests/build run in this step",
+  "parent": "21977a2c43eb5a9c08c0dd7fbda239b7c4f71758",
+  "nextFinding": "m11_partial_head_entry_boundary_unresolved",
+  "checkpointPath": "docs/checkpoints/2026-10-16-part19-m4-unpriced-classification.md"
 }

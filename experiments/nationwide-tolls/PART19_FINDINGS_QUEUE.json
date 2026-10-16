@@ -1765,6 +1765,8 @@
         "physical545Unresolved": 8,
         "shortOpenCollectionUnresolved": 6
       },
+      "classificationCheckpoint": "../../docs/checkpoints/2026-10-16-part19-m4-unpriced-classification.md",
+      "classificationEvidence": "../../docs/checkpoints/evidence/2026-10-16-m4-22-case-classification.json",
       "newEvidenceCandidate": "Preserved operatorrules section2.1 open collection; evaluate exact2way M4scope before any zero/freeclaim",
       "currentCasesChecked": 22,
       "currentEvaluations": [
@@ -2079,8 +2081,8 @@
         "single-m4-voronezh-to-moscow",
         "single-m4-voronezh-to-rostov"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "source_gated_collection_scope_unbound",
+      "note": "All22 saved evaluations classified. Five whole-route estimates remain operator-unconfirmed; three have known M4 components but another product unknown; eight physical545 and six short-route scopes remain unbound. No unsupported tariff/zero/free claim or runtime bug inferred."
     },
     {
       "code": "m11_partial_head_entry_boundary_unresolved",
