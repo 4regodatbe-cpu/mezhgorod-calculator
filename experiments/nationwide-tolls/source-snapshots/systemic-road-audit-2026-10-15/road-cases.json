@@ -2574,7 +2574,22 @@
         "odintsovo"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/live-2026-10-15T09-00-00-03-00-2026-10-16T00-29-38-339Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/2026-10-16T00-29-38-328Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 62125,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-29-36-496Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/live-2026-10-15T09-00-00-03-00-2026-10-16T00-29-38-339Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/2026-10-16T00-29-38-328Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-29-38-689Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-29-39-026Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-odintsovo-zvenigorod-to-moscow",

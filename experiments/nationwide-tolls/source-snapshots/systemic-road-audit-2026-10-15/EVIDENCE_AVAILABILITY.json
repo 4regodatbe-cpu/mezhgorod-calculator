@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 172,
-  "rawCaptureCaseCount": 170,
+  "rawCaptureCount": 173,
+  "rawCaptureCaseCount": 171,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -13082,6 +13082,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-29-36-496Z.json",
+      "caseId": "single-odintsovo-moscow-to-zvenigorod",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/live-2026-10-15T09-00-00-03-00-2026-10-16T00-29-38-339Z.json",
+          "exists": true,
+          "bytes": 2434,
+          "sha256": "eb2cb2fd9d200ba251faea26500f061091c2083f21be12420fa964dc83496cd6",
+          "gitBlobSha": "15f4f39ce6636efadeff9679ae0e74b4db33b4c3",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/2026-10-16T00-29-38-328Z-capture.json.gz",
+          "exists": true,
+          "bytes": 65290,
+          "sha256": "b3f872bc740351208355cca3da0a05bb0e133175e341c0f5ca24ac8cb3378d74",
+          "gitBlobSha": "8cedb80ffec243fa1d2365ce56efc56af204037a",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 4
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-29-38-689Z.json",
+          "exists": true,
+          "bytes": 2512,
+          "sha256": "e767183881ef18c28743577fc7031676bf77f86ea2f4a0d2eedbb08d03509519",
+          "gitBlobSha": "c24c09b13a07cfe6fc59b444049636d02f0ca228",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-29-39-026Z.json",
+          "exists": true,
+          "bytes": 2512,
+          "sha256": "9b8197391acf27756af71db295d7591d01e7fce2fde09a6f502e3010d0132d57",
+          "gitBlobSha": "59af485019cc7d08e97480a3d2bfc20dc760aee5",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -14741,6 +14786,17 @@
       "bytes": 57218,
       "sha256": "22ba38dce7906b296badface275dc3574b7f6628b0504c460aecaa569b54bf58",
       "gitBlobSha": "2ca1dfc09be0ea73707d37ba5d7dad3637def5c2",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 4
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/2026-10-16T00-29-38-328Z-capture.json.gz",
+      "exists": true,
+      "bytes": 65290,
+      "sha256": "b3f872bc740351208355cca3da0a05bb0e133175e341c0f5ca24ac8cb3378d74",
+      "gitBlobSha": "8cedb80ffec243fa1d2365ce56efc56af204037a",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,
