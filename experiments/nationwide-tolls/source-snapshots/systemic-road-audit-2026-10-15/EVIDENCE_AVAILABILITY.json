@@ -3,9 +3,9 @@
   "regions": {
     "dnr": {
       "planned": 40,
-      "historicallyAudited": 25,
-      "rawAvailable": 25,
-      "fourArtifactsAvailable": 25
+      "historicallyAudited": 26,
+      "rawAvailable": 26,
+      "fourArtifactsAvailable": 26
     },
     "kherson": {
       "planned": 40,
@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 190,
-  "rawCaptureCaseCount": 187,
+  "rawCaptureCount": 191,
+  "rawCaptureCaseCount": 188,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -843,10 +843,49 @@
     {
       "caseId": "dnr-краматорск-saint-petersburg-center",
       "region": "dnr",
-      "historicalStatus": "planned",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
-      "artifacts": {}
+      "historicalStatus": "audited",
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-38-52-198Z.json",
+          "exists": true,
+          "bytes": 9315,
+          "sha256": "9e073582b379d55d11a062cefac705f75901b93ebe86a89ebbf5ebfa10a04088",
+          "gitBlobSha": "431a06b346401c0236128d9e0f3a8fa6bb7c7aa0",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/2026-10-16T00-38-52-089Z-capture.json.gz",
+          "exists": true,
+          "bytes": 710042,
+          "sha256": "84d7fba91dc89ca70022d7458e0d1b8f10dc10b3edb05f724e86226660dd481b",
+          "gitBlobSha": "e1bd04cca4dd51607b753ee619de4766a499717d",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 18
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-38-52-823Z.json",
+          "exists": true,
+          "bytes": 9393,
+          "sha256": "a833520ed0af0d99bc511a18a052d45b42f85a122a4b1b1ca931400fdc415230",
+          "gitBlobSha": "45b523f12e474867b6212bcab905e718a472f8d0",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-38-53-430Z.json",
+          "exists": true,
+          "bytes": 9390,
+          "sha256": "2ff5070492509f4699009f1dee0f527b4f6d757d9c9db79677633a5147c65cf5",
+          "gitBlobSha": "72bd805654556e63c2fb9bd70740e7e6d26fe652",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     },
     {
       "caseId": "dnr-краматорск-kazan-center",
@@ -13907,6 +13946,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-38-32-879Z.json",
+      "caseId": "dnr-краматорск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-38-52-198Z.json",
+          "exists": true,
+          "bytes": 9315,
+          "sha256": "9e073582b379d55d11a062cefac705f75901b93ebe86a89ebbf5ebfa10a04088",
+          "gitBlobSha": "431a06b346401c0236128d9e0f3a8fa6bb7c7aa0",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/2026-10-16T00-38-52-089Z-capture.json.gz",
+          "exists": true,
+          "bytes": 710042,
+          "sha256": "84d7fba91dc89ca70022d7458e0d1b8f10dc10b3edb05f724e86226660dd481b",
+          "gitBlobSha": "e1bd04cca4dd51607b753ee619de4766a499717d",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 18
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-38-52-823Z.json",
+          "exists": true,
+          "bytes": 9393,
+          "sha256": "a833520ed0af0d99bc511a18a052d45b42f85a122a4b1b1ca931400fdc415230",
+          "gitBlobSha": "45b523f12e474867b6212bcab905e718a472f8d0",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-38-53-430Z.json",
+          "exists": true,
+          "bytes": 9390,
+          "sha256": "2ff5070492509f4699009f1dee0f527b4f6d757d9c9db79677633a5147c65cf5",
+          "gitBlobSha": "72bd805654556e63c2fb9bd70740e7e6d26fe652",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -14140,6 +14224,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 12
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/2026-10-16T00-38-52-089Z-capture.json.gz",
+      "exists": true,
+      "bytes": 710042,
+      "sha256": "84d7fba91dc89ca70022d7458e0d1b8f10dc10b3edb05f724e86226660dd481b",
+      "gitBlobSha": "e1bd04cca4dd51607b753ee619de4766a499717d",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 18
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/2026-10-15T12-12-21-705Z-capture.json.gz",
