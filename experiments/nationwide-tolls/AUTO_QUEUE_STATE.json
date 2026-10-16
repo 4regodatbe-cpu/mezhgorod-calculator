@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:45:46.512Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T01:46:16.992Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,88 @@
     },
     {
       "stage": 2,
-      "done": 100,
+      "done": 101,
       "total": 154
     }
   ],
   "next": {
     "part": 16,
     "spec": {
-      "caseId": "single-a289-krasnodar-to-anapa",
+      "caseId": "single-a289-slavyansk-to-taman",
       "kind": "road",
       "group": "single-a289"
     }
   },
   "caseId": "single-a289-krasnodar-to-anapa",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-a289-krasnodar-to-anapa",
+    "startedAt": "2026-10-16T01:45:47.970Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-anapa/live-2026-10-15T09-00-00-03-00-2026-10-16T01-45-49-840Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-anapa/2026-10-16T01-45-49-820Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-45-50-219Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-45-50-581Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "a289"
+      ],
+      "provenRoads": [
+        "a289"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": 620,
+      "weekdayAmount": 620,
+      "weekendAmount": 620,
+      "period": "все дни",
+      "segments": [
+        "А-289: Maryanskaya → AnapaExit: 620 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 620,
+      "weekdayAmount": 620,
+      "weekendAmount": 620,
+      "period": "все дни",
+      "segments": [
+        "А-289: Maryanskaya → AnapaExit: 620 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "a289",
+        "amount": 620,
+        "reason": "A-289 Anapa exit inferred from two selected-route frames; estimate"
+      }
+    ],
+    "finishedAt": "2026-10-16T01:45:50.602Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-45-46-511Z-part16",
-  "parent": "3c74502e56a1fa26e2ccf028515f62446e62efd5",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-45-46-512Z-started.json"
+  "parent": "b994417483f560152e846659f75a9bbfdaf96211",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-46-16-992Z-done.json"
 }
