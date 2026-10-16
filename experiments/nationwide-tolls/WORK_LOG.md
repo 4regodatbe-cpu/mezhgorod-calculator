@@ -1669,3 +1669,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T18:43:00+03:00: восстановлен отдельный checkout и зависимости после очистки временной среды; `pnpm install --frozen-lockfile` exit0, 504 policy entries, 429 packages. Исходники/lockfile без изменений. [Checkpoint](../../docs/checkpoints/2026-10-16-1843-dependencies-restored.md). NEXT ZSD case55. Plan90% (18/20), ZSD54/76.
 
 2026-10-16T15:43:19.349Z: ZSD case55 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T15-43-19-348Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-vladimir-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T15:44:20.992Z: ZSD case56 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T15-44-20-991Z.md). NEXT ZSD nextcase max-chain-m4-ckad-m11-zsd-krasnodar-to-prim; --next; savedcapture twoofflineprofiles.
