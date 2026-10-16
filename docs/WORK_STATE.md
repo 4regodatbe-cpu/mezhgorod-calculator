@@ -1,6 +1,6 @@
 # Калькулятор «Из А в Б»: актуальное состояние
 
-16.10.2026. Только ветка `fix/v3-missing-route-prices-2026-10-15`, PR #14 draft/open. Последний проверенный remote commit перед этой записью: `9565897cd2f718483d86ce3ed2c0ceac5a9b7db4`, tree `14f9dc1d4cec3dfd8421f5c9a03d6e178f06a98c`. Main, merge, Production и Android не трогались.
+16.10.2026. Только ветка `fix/v3-missing-route-prices-2026-10-15`, PR #14 draft/open. Последний проверенный remote commit перед этой записью: `6fa74b45e6d8db6059556b2daadab003b551ccde`, tree `d6f6b901deaf54fa66abd40b2d3e681c73a6929f`. Main, merge, Production и Android не трогались.
 
 ## DONE
 
@@ -16,11 +16,11 @@
 
 Разобрать остальные категории [PART19_FINDINGS_QUEUE.json](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) по одному случаю; [план 20 частей](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json). Часть 20 ещё не начата.
 
-**19C, историческая M4 crossing-policy: проверено 4/25.** У всех4 current-engine offline complete2/2, trip-departure-v1; историческая M4 ошибка не воспроизвелась, нового source fix не требовалось. Гранитное→Москва:3810/4640₽; Пришиб→Москва и Раденск→Москва:5840/6890₽ каждый. **Гранитное→СПб остаётся unknown из-за ЗСД вне reviewed zone1**, хотя М-4=3810/4640 и М-11 компоненты рассчитаны. Не subtotal=итог. [Гранитное→Москва](checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md), [Пришиб](checkpoints/2026-10-16-073825-part19c-prishib-m4-policy-replay.md), [Раденск](checkpoints/2026-10-16-083802-part19c-radensk-m4-policy-replay.md), [Гранитное→СПб/SHA/NEXT](checkpoints/2026-10-16-093623-part19c-granitnoe-spb-m4-policy-replay.md). Старые unknown сохранены, это не fresh live/подтверждение тарифа.
+**19C, историческая M4 crossing-policy: проверено 5/25.** У всех5 current-engine offline complete2/2, trip-departure-v1; историческая M4 ошибка не воспроизвелась, нового source fix не требовалось. Первые3 Москва — полные quotes (Гранитное3810/4640₽, Пришиб/Раденск5840/6890₽ каждый). **Гранитное→СПб и Брянка→СПб остаются unknown из-за ЗСД вне reviewed zone1**, хотя М-4=3810/4640 и М-11 компоненты рассчитаны. Не subtotal=итог. [Первые4/источники](checkpoints/2026-10-16-093623-part19c-granitnoe-spb-m4-policy-replay.md), [Брянка/SHA/NEXT](checkpoints/2026-10-16-102232-part19c-bryanka-spb-m4-policy-replay.md). Полная очередь/evaluations в PART19_FINDINGS_QUEUE. Старые unknown сохранены, это не fresh live/подтверждение тарифа.
 
 ## NEXT — один сохраняемый микрошаг
 
-**Только `lnr-брянка-saint-petersburg-center`, историческая M4 policy 5/25.** Получить existing capture из corpus.auditEvidence; existing runner `run-systemic-route-case.mjs --replay` на 15/17 октября 09:00 МСК. Проверить integrity, фактический M4 quote и trip-departure basis; unrelated unknown не скрывать, subtotal не выдавать за итог. Сохранить новые timestamped outputs, checkpoint, WORK_LOG/NEXT_STEPS и оценку в queue; commit, GitHub branch head и exact tree readback **до следующего случая**. При кириллице — NUL-safe Git paths. Для PR использовать metadata-only get_pr_info: fetch_pr с огромным diff возвращал Transport closed.
+**Только `zaporizhzhia-пришиб-saint-petersburg-center`, историческая M4 policy 6/25.** Получить existing capture из corpus.auditEvidence; existing runner `run-systemic-route-case.mjs --replay` на 15/17 октября 09:00 МСК. Проверить integrity, фактический M4 quote и trip-departure basis; unrelated unknown не скрывать, subtotal не выдавать за итог. Сохранить новые timestamped outputs, checkpoint, WORK_LOG/NEXT_STEPS и оценку в queue; commit, GitHub branch head и exact tree readback **до следующего случая**. При кириллице — NUL-safe Git paths. Для PR использовать metadata-only get_pr_info: fetch_pr с огромным diff возвращал Transport closed.
 
 Автоматически продолжать без команды «дальше». Перед записью проверить отсутствие другого writer. STARTED до долгой операции, DONE/FAILED и durable save после каждого микрошaга. Если сохранение не прошло — остановить расширение, сообщить blocker. Не считать старую same-date parity проверкой исправленного кода.
 
