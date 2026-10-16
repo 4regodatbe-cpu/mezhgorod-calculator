@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:47:40.037Z",
+  "generatedAt": "2026-10-16T01:48:20.557Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 290,
-    "recordedLiveAttempts": 304,
-    "liveCaptured": 290,
-    "savedLiveSummaries": 290,
+    "distinctCaseAttempts": 291,
+    "recordedLiveAttempts": 305,
+    "liveCaptured": 291,
+    "savedLiveSummaries": 291,
     "missingOrInvalidReferences": 0,
-    "audited": 290,
-    "traceComplete": 290,
-    "sameDateParity": 290
+    "audited": 291,
+    "traceComplete": 291,
+    "sameDateParity": 291
   },
   "regionCounts": {
     "dnr": {
@@ -100,11 +100,11 @@
       "id": "single-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 5,
-      "audited": 5,
+      "attempted": 6,
+      "audited": 6,
       "traversalProven": 0,
-      "pricedWeekday": 2,
-      "pricedWeekend": 2
+      "pricedWeekday": 3,
+      "pricedWeekend": 3
     },
     {
       "id": "single-zsd",
@@ -9920,6 +9920,40 @@
       ],
       "routeMeters": 144916,
       "routeSeconds": 7547
+    },
+    {
+      "caseId": "single-ckad-dmitrov-to-kazan",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-dmitrov-to-kazan/live-2026-10-15T09-00-00-03-00-2026-10-16T01-48-16-018Z.json",
+      "weekdayAmount": 3513,
+      "weekendAmount": 3513,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "ckad"
+        ],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 857336,
+      "routeSeconds": 40980
     }
   ],
   "historicalExecutionExceptions": [],
@@ -16747,7 +16781,8 @@
         "pair-m12-ckad-dmitrov-to-murom",
         "pair-m12-ckad-domodedovo-to-arzamas",
         "pair-m12-ckad-klin-to-vladimir",
-        "pair-m12-ckad-murom-to-dmitrov"
+        "pair-m12-ckad-murom-to-dmitrov",
+        "single-ckad-dmitrov-to-kazan"
       ],
       "occurrences": [
         {
@@ -17509,9 +17544,25 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-murom-to-dmitrov/live-2026-10-15T09-00-00-03-00-2026-10-16T01-37-13-808Z.json"
+        },
+        {
+          "caseId": "single-ckad-dmitrov-to-kazan",
+          "detail": {
+            "expectedRoads": [
+              "ckad"
+            ],
+            "provenRoads": [
+              "m12"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-dmitrov-to-kazan/live-2026-10-15T09-00-00-03-00-2026-10-16T01-48-16-018Z.json"
         }
       ],
-      "caseCount": 44
+      "caseCount": 45
     },
     {
       "code": "m11-58-679:unpriced",
