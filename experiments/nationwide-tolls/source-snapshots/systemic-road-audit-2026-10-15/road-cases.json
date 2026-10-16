@@ -5189,7 +5189,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-rostov-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-35-48-737Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-rostov-to-sest/2026-10-16T00-35-48-639Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1826770,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-35-31-183Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-rostov-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-35-48-737Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-rostov-to-sest/2026-10-16T00-35-48-639Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-35-49-354Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-35-49-964Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "triple-m4-m11-zsd-sest-to-rostov",
