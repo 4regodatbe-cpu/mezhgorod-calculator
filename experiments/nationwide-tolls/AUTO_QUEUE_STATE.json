@@ -1,17 +1,18 @@
 {
-  "at": "2026-10-16T18:53:27.000Z",
-  "phase": "PART19_CAUSE_REVIEW_RULES_ADOPTED",
+  "at": "2026-10-16T19:39:58Z",
+  "phase": "PART19_M11_CASE3_SOURCE_GATED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "User-approved cause/impact review policy adopted; M11 detailed reviews remain 2/8 and six exception checks are pending",
-  "checked": 2,
+  "scope": "Part19 M11 case3 bounded exception check complete; no material exception to established boundary cause; five cases remain",
+  "checked": 3,
   "total": 8,
-  "next": "Check only case3 max-chain-m12-ckad-m11-zsd-murom-to-sest for material exceptions to the proven M11 boundary cause using saved capture/profiles; full replay only for a concrete difference or incomplete evidence",
-  "validation": "Rules/docs only; CLI auth dry-run failed exit128; no route/code/tariff/test changes",
-  "parent": "cf97c6e4aaf2220655c17a8978e89c4b0f587e62",
+  "next": "Check only pair-m11-ckad-noginsk-to-spb saved capture/profiles for a material exception; do not full replay absent a difference or incomplete evidence",
+  "validation": "Existing saved capture and live/same-date/weekend profiles are complete and bound to the same capture; gate-way IDs absent and nearest gates 26.5m/41.8m (>25m); no code/price/test/new live changes",
+  "parent": "e197a7a40ec10ae08ea470f50ca61844a1226bfc",
   "nextFinding": "m11_partial_head_entry_boundary_unresolved",
-  "checkpointPath": "docs/checkpoints/2026-10-16-215327-workflow-efficiency-rules.md",
+  "checkpointPath": "docs/checkpoints/2026-10-16-part19-m11-case3-boundary-source-gated.md",
   "reviewRules": "docs/WORKFLOW_RULES.md",
-  "lastObservedVerificationRun": "38947789852",
-  "lastObservedVerificationRunStatus": "completed_success_on_source_head"
+  "lastObservedVerificationRun": "38951539156",
+  "lastObservedVerificationRunStatus": "completed_success",
+  "evidencePath": "docs/checkpoints/evidence/2026-10-16-m11-case3-boundary-review.json"
 }

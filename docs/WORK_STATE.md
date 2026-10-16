@@ -1,8 +1,8 @@
 # Калькулятор «Из А в Б»: текущее состояние
 
-16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Проверенный исходный remote head этого изменения `cf97c6e4aaf2220655c17a8978e89c4b0f587e62`, tree `fb2d2a0e5ad7d18df2cae25d3e17413c8a8a2872`. Из него создан отдельный чистый checkout `calculator-rules`; старый расходящийся `calculator-run` сохранён. Пользователь утвердил [правила разбора по причинам и отчётности](WORKFLOW_RULES.md); они включены в AGENTS и автоматическое продолжение. [Checkpoint правил и Git auth](checkpoints/2026-10-16-215327-workflow-efficiency-rules.md).
+16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Проверенный source head для правил `e197a7a40ec10ae08ea470f50ca61844a1226bfc`, tree `54b899d424b3da1170af5d7e2871ae2801ad49e8`; case3 reviewed from this tree, see latest checkpoint. Из него создан отдельный чистый checkout `calculator-rules`; старый расходящийся `calculator-run` сохранён. Пользователь утвердил [правила разбора по причинам и отчётности](WORKFLOW_RULES.md); они включены в AGENTS и автоматическое продолжение. [Checkpoint правил и Git auth](checkpoints/2026-10-16-215327-workflow-efficiency-rules.md).
 
-Наблюдаемый run `38947789852`: verify/live_probe completed/success на исходном head. CLI Git auth не настроен: безопасный push dry-run exit128; connector сохраняет разрешённую ветку. Новая CI-проверка после публикации требует отдельного наблюдения; старый success не переносить на новый head.
+Наблюдаемый run `38951539156` для `e197a7a…`: completed/success. CLI Git auth не настроен; продолжаем сохранять через GitHub connector. PR14 открыт/draft.
 
 ## Прогресс
 
@@ -24,6 +24,6 @@
 
 ZSD review **76/76** and M4 finding **22/22** classified source-gated because exact collection spans are not independently bound. [M4 checkpoint](checkpoints/2026-10-16-part19-m4-unpriced-classification.md). Overall plan **90% (18/20 completed parts)**; neither case count nor percent is tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
-Подробный разбор M11 выполнен и сохранён для 2/8 случаев; проверка исключений оставшихся шести ещё не выполнена, новых live/replay этим шагом не получено. Case2: [DONE checkpoint](checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md). Тариф M11 15–58 неизвестен; CKAD/ZSD также блокируют полный итог. Общий дедуплицированный список нерешённых причин ещё не сведен, поэтому его количество не объявляется.
+Подробный разбор M11 и ограниченные исключения сохранены для 3/8 случаев; пять оставшихся проверяются по сохранённым данным, новые live/replay в case3 не делались. Case2: [DONE checkpoint](checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md). Тариф M11 15–58 неизвестен; CKAD/ZSD также блокируют полный итог. Общий дедуплицированный список нерешённых причин ещё не сведен, поэтому его количество не объявляется.
 
-NEXT: только для case3 `max-chain-m12-ckad-m11-zsd-murom-to-sest` сравнить полноту capture, пару дат отправления и M11 граничную геометрию с уже доказанной причиной; полный повтор нужен лишь при существенном отличии/неполном evidence. Сохранить фактическую проверку исключения и её SHA до следующего случая. Обе очереди155/154 уже завершены; 90% относится к 20-частному аудиту, полнота исходного широкого аудита матрицы этим не установлена. No main/merge/Production/Android; automation remains enabled.
+NEXT: только для case4 `pair-m11-ckad-noginsk-to-spb` сравнить сохранённую трассу и профили с доказанной M11 граничной причиной; полный повтор только при существенном отличии/неполном evidence. Сохранить проверку до следующего случая. Case3: [checkpoint](checkpoints/2026-10-16-part19-m11-case3-boundary-source-gated.md). Обе очереди155/154 уже завершены; 90% относится к 20-частному аудиту, полнота исходного широкого аудита матрицы этим не установлена. No main/merge/Production/Android; automation remains enabled.

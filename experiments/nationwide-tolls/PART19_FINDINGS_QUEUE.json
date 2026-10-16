@@ -2099,17 +2099,8 @@
       ],
       "status": "diagnosis_started",
       "startedCheckpoint": "../../docs/checkpoints/2026-10-16-part19-m11-head-boundary-started.md",
-      "reviewStatus": "2_of_8_saved_cases_reviewed_both_boundary_source_gated",
-      "currentCasesChecked": 2,
-      "reviewedCases": [
-        {
-          "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
-          "result": "source_gated_m11_head_entry_boundary_unbound",
-          "profiles": 2,
-          "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case1-boundary-source-gated.md",
-          "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case1-boundary-review.json"
-        }
-      ],
+      "reviewStatus": "3_of_8_saved_cases_reviewed_case3_checked_no_material_exception_same_source_gated_cause",
+      "currentCasesChecked": 3,
       "reviewedCases": [
         {
           "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
@@ -2124,9 +2115,16 @@
           "profiles": 2,
           "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md",
           "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case2-boundary-review.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+          "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+          "profiles": 3,
+          "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case3-boundary-source-gated.md",
+          "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case3-boundary-review.json"
         }
       ],
-      "note": "Cases1–2 are source-gated; preserve unknown until exact M11 entry-boundary proof exists. The remaining six cases are not yet reviewed."
+      "note": "Cases1–3 remain source-gated; exact M11 entry boundary is unbound. Preserve unknown until exact directed entry/payment boundary proof exists. Five remaining cases are pending bounded exception checks."
     },
     {
       "code": "arc_not_proven",
