@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:27:33.769Z",
+  "generatedAt": "2026-10-16T01:28:23.281Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 259,
-    "recordedLiveAttempts": 273,
-    "liveCaptured": 259,
-    "savedLiveSummaries": 259,
+    "distinctCaseAttempts": 260,
+    "recordedLiveAttempts": 274,
+    "liveCaptured": 260,
+    "savedLiveSummaries": 260,
     "missingOrInvalidReferences": 0,
-    "audited": 259,
-    "traceComplete": 259,
-    "sameDateParity": 259
+    "audited": 260,
+    "traceComplete": 260,
+    "sameDateParity": 260
   },
   "regionCounts": {
     "dnr": {
@@ -210,8 +210,8 @@
       "id": "max-chain-m4-ckad-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 9,
-      "audited": 9,
+      "attempted": 10,
+      "audited": 10,
       "traversalProven": 0,
       "pricedWeekday": 2,
       "pricedWeekend": 2
@@ -8856,6 +8856,49 @@
       ],
       "routeMeters": 1271240,
       "routeSeconds": 48214
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-28-18-720Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "ckad",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1804348,
+      "routeSeconds": 81656
     }
   ],
   "historicalExecutionExceptions": [],
@@ -11037,7 +11080,8 @@
         "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
         "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
         "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
-        "max-chain-m4-ckad-m11-zsd-prim-to-voronezh"
+        "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+        "max-chain-m4-ckad-m11-zsd-rostov-to-prim"
       ],
       "occurrences": [
         {
@@ -12605,9 +12649,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-27-30-449Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-28-18-720Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-28-19-340Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-28-19-930Z.json"
         }
       ],
-      "caseCount": 58
+      "caseCount": 59
     },
     {
       "code": "m4:unpriced",
@@ -13924,7 +13995,8 @@
         "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
         "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
         "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
-        "max-chain-m4-ckad-m11-zsd-prim-to-voronezh"
+        "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+        "max-chain-m4-ckad-m11-zsd-rostov-to-prim"
       ],
       "occurrences": [
         {
@@ -14709,9 +14781,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-27-30-449Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-28-18-720Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-28-19-340Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-28-19-930Z.json"
         }
       ],
-      "caseCount": 29
+      "caseCount": 30
     },
     {
       "code": "expected-road-not-proven",
@@ -14751,7 +14850,8 @@
         "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
         "max-chain-m4-ckad-m11-zsd-prim-to-krasnodar",
         "max-chain-m4-ckad-m11-zsd-prim-to-rostov",
-        "max-chain-m4-ckad-m11-zsd-prim-to-voronezh"
+        "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+        "max-chain-m4-ckad-m11-zsd-rostov-to-prim"
       ],
       "occurrences": [
         {
@@ -15372,9 +15472,30 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T01-27-29-382Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+          "detail": {
+            "expectedRoads": [
+              "m4",
+              "ckad",
+              "m11",
+              "zsd"
+            ],
+            "provenRoads": [
+              "m4",
+              "m11",
+              "zsd"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-28-18-720Z.json"
         }
       ],
-      "caseCount": 36
+      "caseCount": 37
     },
     {
       "code": "m11-58-679:unpriced",
