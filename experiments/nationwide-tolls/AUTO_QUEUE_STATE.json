@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:28:02.338Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:28:23.339Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 134,
+      "done": 135,
       "total": 155
     },
     {
@@ -16,17 +16,85 @@
     }
   ],
   "next": {
-    "part": 9,
+    "part": 10,
     "spec": {
-      "caseId": "single-m4-voronezh-to-krasnodar",
+      "caseId": "single-odintsovo-golitsyno-to-moscow",
       "kind": "road",
-      "group": "single-m4"
+      "group": "single-odintsovo"
     }
   },
   "caseId": "single-m4-voronezh-to-krasnodar",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-m4-voronezh-to-krasnodar",
+    "startedAt": "2026-10-16T00:28:03.959Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-28-07-377Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/2026-10-16T00-28-07-330Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-28-07-819Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-28-08-231Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m4"
+      ],
+      "provenRoads": [
+        "m4"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m4",
+        "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m4",
+        "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": null,
+        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:28:08.247Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-28-02-337Z-part9",
-  "parent": "c80eaa1a838b5a7f74666c918ff8a21f4e6945c6",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-28-02-338Z-started.json"
+  "parent": "26fdb6f7e1687eda679bfd4d278916137f89b26c",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-28-23-339Z-done.json"
 }

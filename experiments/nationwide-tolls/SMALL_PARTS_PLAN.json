@@ -645,7 +645,7 @@
     {
       "id": 9,
       "title": "Этап 1: группа 7/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "single-m11-moscow-to-torzhok",
@@ -743,12 +743,12 @@
           "group": "single-m4"
         }
       ],
-      "completedCases": 18
+      "completedCases": 19
     },
     {
       "id": 10,
       "title": "Этап 1: группа 8/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "single-odintsovo-golitsyno-to-moscow",

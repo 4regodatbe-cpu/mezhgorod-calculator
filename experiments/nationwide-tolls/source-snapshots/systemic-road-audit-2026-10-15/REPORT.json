@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:27:45.467Z",
+  "generatedAt": "2026-10-16T00:28:10.297Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 166,
-    "recordedLiveAttempts": 179,
-    "liveCaptured": 165,
-    "savedLiveSummaries": 165,
+    "distinctCaseAttempts": 167,
+    "recordedLiveAttempts": 180,
+    "liveCaptured": 166,
+    "savedLiveSummaries": 166,
     "missingOrInvalidReferences": 1,
-    "audited": 165,
-    "traceComplete": 165,
-    "sameDateParity": 165
+    "audited": 166,
+    "traceComplete": 166,
+    "sameDateParity": 166
   },
   "regionCounts": {
     "dnr": {
@@ -50,9 +50,9 @@
       "id": "single-m4",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 4,
-      "audited": 4,
-      "traversalProven": 4,
+      "attempted": 5,
+      "audited": 5,
+      "traversalProven": 5,
       "pricedWeekday": 3,
       "pricedWeekend": 3
     },
@@ -5689,6 +5689,38 @@
       ],
       "routeMeters": 836186,
       "routeSeconds": 41219
+    },
+    {
+      "caseId": "single-m4-voronezh-to-krasnodar",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-28-07-377Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4"
+        ],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 835029,
+      "routeSeconds": 41229
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8147,7 +8179,8 @@
         "pair-m4-a289-taman-to-voronezh",
         "pair-m4-a289-voronezh-to-taman",
         "pair-m4-m11-voronezh-to-spb",
-        "single-m4-krasnodar-to-voronezh"
+        "single-m4-krasnodar-to-voronezh",
+        "single-m4-voronezh-to-krasnodar"
       ],
       "occurrences": [
         {
@@ -8446,9 +8479,36 @@
             "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-27-43-407Z.json"
+        },
+        {
+          "caseId": "single-m4-voronezh-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-28-07-377Z.json"
+        },
+        {
+          "caseId": "single-m4-voronezh-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-28-07-819Z.json"
+        },
+        {
+          "caseId": "single-m4-voronezh-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-28-08-231Z.json"
         }
       ],
-      "caseCount": 11
+      "caseCount": 12
     },
     {
       "code": "saved-live-evidence-missing",

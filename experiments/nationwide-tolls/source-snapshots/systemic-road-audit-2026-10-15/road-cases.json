@@ -317,18 +317,18 @@
       "routeMustBeLive": true,
       "status": "audited",
       "liveEvidence": {
-        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-21-849Z.json",
-        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/2026-10-15T12-02-21-791Z-capture.json.gz",
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-28-07-377Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/2026-10-16T00-28-07-330Z-capture.json.gz",
         "provider": "OSRM",
         "routeMeters": 835029,
         "traceComplete": true
       },
       "auditEvidence": {
-        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T11-59-53-810Z.json",
-        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-21-849Z.json",
-        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/2026-10-15T12-02-21-791Z-capture.json.gz",
-        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-22-243Z.json",
-        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-22-613Z.json",
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-28-03-957Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-28-07-377Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/2026-10-16T00-28-07-330Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-28-07-819Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-28-08-231Z.json",
         "sameDateParity": true
       }
     },
