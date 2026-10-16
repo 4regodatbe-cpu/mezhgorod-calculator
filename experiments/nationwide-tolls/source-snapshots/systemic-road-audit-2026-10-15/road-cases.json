@@ -1317,7 +1317,22 @@
         "m11"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-20-42-854Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/2026-10-16T00-20-42-832Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 254924,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-20-40-021Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-20-42-854Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/2026-10-16T00-20-42-832Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-20-43-226Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-20-43-578Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m11-torzhok-to-moscow",

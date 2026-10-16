@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:20:22.652Z",
+  "generatedAt": "2026-10-16T00:20:45.619Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 148,
-    "recordedLiveAttempts": 161,
-    "liveCaptured": 147,
-    "savedLiveSummaries": 147,
+    "distinctCaseAttempts": 149,
+    "recordedLiveAttempts": 162,
+    "liveCaptured": 148,
+    "savedLiveSummaries": 148,
     "missingOrInvalidReferences": 1,
-    "audited": 147,
-    "traceComplete": 147,
-    "sameDateParity": 147
+    "audited": 148,
+    "traceComplete": 148,
+    "sameDateParity": 148
   },
   "regionCounts": {
     "dnr": {
@@ -80,9 +80,9 @@
       "id": "single-m11",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 1,
-      "audited": 1,
-      "traversalProven": 1,
+      "attempted": 2,
+      "audited": 2,
+      "traversalProven": 2,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -5112,6 +5112,38 @@
       ],
       "routeMeters": 710317,
       "routeSeconds": 24636
+    },
+    {
+      "caseId": "single-m11-moscow-to-torzhok",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-20-42-854Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11"
+        ],
+        "provenRoads": [
+          "m11"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 254924,
+      "routeSeconds": 11013
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8283,7 +8315,8 @@
         "pair-m12-ckad-vladimir-to-klin",
         "single-ckad-domodedovo-to-klin",
         "single-ckad-klin-to-domodedovo",
-        "single-ckad-ramenskoe-to-klin"
+        "single-ckad-ramenskoe-to-klin",
+        "single-m11-moscow-to-torzhok"
       ],
       "occurrences": [
         {
@@ -8663,9 +8696,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-18-06-528Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-20-42-854Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-20-43-226Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-20-43-578Z.json"
         }
       ],
-      "caseCount": 14
+      "caseCount": 15
     },
     {
       "code": "expected-road-not-proven",
@@ -9044,7 +9104,8 @@
         "pair-m12-ckad-vladimir-to-klin",
         "single-ckad-domodedovo-to-klin",
         "single-ckad-klin-to-domodedovo",
-        "single-ckad-ramenskoe-to-klin"
+        "single-ckad-ramenskoe-to-klin",
+        "single-m11-moscow-to-torzhok"
       ],
       "occurrences": [
         {
@@ -9262,15 +9323,43 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-18-06-528Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-20-42-854Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-20-43-226Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-20-43-578Z.json"
         }
       ],
-      "caseCount": 8
+      "caseCount": 9
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
       "cases": [
         "single-ckad-domodedovo-to-klin",
-        "single-ckad-klin-to-domodedovo"
+        "single-ckad-klin-to-domodedovo",
+        "single-m11-moscow-to-torzhok"
       ],
       "occurrences": [
         {
@@ -9326,9 +9415,36 @@
             "reason": "m11_58_679_facility_sequence_incomplete"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-16-59-816Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-20-42-854Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-20-43-226Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-20-43-578Z.json"
         }
       ],
-      "caseCount": 2
+      "caseCount": 3
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
