@@ -537,7 +537,7 @@
     {
       "id": 8,
       "title": "Этап 1: группа 6/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "pair-m4-m11-rostov-to-spb",
@@ -640,12 +640,12 @@
           "group": "single-m11"
         }
       ],
-      "completedCases": 19
+      "completedCases": 20
     },
     {
       "id": 9,
       "title": "Этап 1: группа 7/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "single-m11-moscow-to-torzhok",
