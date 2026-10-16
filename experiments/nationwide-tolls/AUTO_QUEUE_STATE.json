@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:29:30.388Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:29:34.228Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,66 +23,10 @@
       "group": "single-odintsovo"
     }
   },
-  "caseId": "single-odintsovo-moscow-to-kubinka",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-odintsovo-moscow-to-kubinka",
-    "startedAt": "2026-10-16T00:29:13.043Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-kubinka/live-2026-10-15T09-00-00-03-00-2026-10-16T00-29-14-596Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-kubinka/2026-10-16T00-29-14-585Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-29-14-945Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-29-15-273Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "odintsovo"
-      ],
-      "provenRoads": [],
-      "missingExpectedRoads": [
-        "odintsovo"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T00:29:15.287Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-29-11-654Z-part10",
-  "parent": "7f2e1e3c27d321171aa48b8fd815f2214db05e40",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-29-30-388Z-done.json"
+  "caseId": "single-odintsovo-moscow-to-zvenigorod",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-29-34-228Z-part10",
+  "parent": "bb53201206d1d77c43d6ea9db4c673945e731ff5",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-29-34-228Z-started.json"
 }
