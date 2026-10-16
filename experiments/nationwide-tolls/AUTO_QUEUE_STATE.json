@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T07:48:46.959Z",
-  "phase": "PART19_M4_POLICY_DONE",
+  "at": "2026-10-16T07:48:49.596Z",
+  "phase": "PART19_M4_POLICY_STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
   "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
@@ -8,60 +8,14 @@
   "total": 25,
   "next": "dnr-урзуф-saint-petersburg-center",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "2587d5e4277e167d1c1b854855f3b0e14a647a82",
-  "caseId": "kherson-старая-збурьевка-moscow-center",
-  "evaluation": {
-    "caseId": "kherson-старая-збурьевка-moscow-center",
-    "result": "not_reproduced_current_engine",
-    "weekdayAmount": 5840,
-    "weekendAmount": 6890,
-    "m4WeekdayAmount": 5040,
-    "m4WeekendAmount": 6090,
-    "remainingMissing": [],
-    "outputs": [
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-48-46-225Z.json",
-        "sha256": "a444b87f58a5eba7e14e5d9f4d5d6a1c4c946a299385f392225e91860df4e833"
-      },
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-48-46-920Z.json",
-        "sha256": "f6a4444c9eee4fd1098dafc836e741b91c35d73a41457bb98585151aa0fa7b4e"
-      }
-    ],
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/2026-10-15T12-14-47-097Z-capture.json.gz",
-    "captureSha256": "360bde4f11db57e9dd35c3b7d58c03fc5130e77f66b714622ab0ef644596ca08",
-    "components": [
-      {
-        "departureAt": "2026-10-15T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 5040,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "a289",
-            "amount": 800,
-            "reason": "A-289 complete ordered three-frame traversal"
-          }
-        ]
-      },
-      {
-        "departureAt": "2026-10-17T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 6090,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "a289",
-            "amount": 800,
-            "reason": "A-289 complete ordered three-frame traversal"
-          }
-        ]
-      }
-    ]
-  },
-  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-46-959Z-part19_m4_policy_done.json"
+  "caseId": "dnr-урзуф-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/2026-10-15T12-15-30-557Z-capture.json.gz",
+  "captureSha256": "07a4aa99f441c97af0cf4a1e776a5e89e1586c75caa8e96536aee59ba3c952a1",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "e962f24ac8fd1baa2aaeb72be9a86f1fec5fd57f",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-48-49-596Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-49-596Z-part19_m4_policy_started.json"
 }
