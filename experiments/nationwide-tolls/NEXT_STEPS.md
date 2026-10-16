@@ -1639,3 +1639,6 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 
 
 2026-10-16T19:39:58Z: M11 finding case3 DONE/source-gated; no material exception. Review count3/8; formal plan90% (18/20). [Checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-case3-boundary-source-gated.md). NEXT only `pair-m11-ckad-noginsk-to-spb` saved evidence bounded exception check; persist before case5.
+
+
+2026-10-16T20:00:50.463Z: M11 boundary case4 DONE/source-gated, no material exception; 4/8 cases checked. Next only `triple-m11-ckad-m12-kazan-to-spb` saved-evidence exception check; no full replay/new live absent a concrete difference. See checkpoint `../../docs/checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md`. Formal plan remains90% (18/20), not tariff readiness.

@@ -2099,8 +2099,8 @@
       ],
       "status": "diagnosis_started",
       "startedCheckpoint": "../../docs/checkpoints/2026-10-16-part19-m11-head-boundary-started.md",
-      "reviewStatus": "3_of_8_saved_cases_reviewed_case3_checked_no_material_exception_same_source_gated_cause",
-      "currentCasesChecked": 3,
+      "reviewStatus": "4_of_8_saved_cases_reviewed_case4_checked_no_material_exception_same_source_gated_cause",
+      "currentCasesChecked": 4,
       "reviewedCases": [
         {
           "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
@@ -2122,6 +2122,13 @@
           "profiles": 3,
           "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case3-boundary-source-gated.md",
           "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case3-boundary-review.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-spb",
+          "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+          "profiles": 3,
+          "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md",
+          "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case4-boundary-review.json"
         }
       ],
       "note": "Cases1–3 remain source-gated; exact M11 entry boundary is unbound. Preserve unknown until exact directed entry/payment boundary proof exists. Five remaining cases are pending bounded exception checks."
