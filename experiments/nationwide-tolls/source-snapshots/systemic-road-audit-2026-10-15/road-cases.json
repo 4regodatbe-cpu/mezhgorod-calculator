@@ -1209,7 +1209,22 @@
         "m3"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-02-40-584Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/2026-10-16T02-02-40-569Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 119943,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-02-38-500Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-02-40-584Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/2026-10-16T02-02-40-569Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-02-40-925Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-02-41-254Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m3-balabanovo-to-kaluga",
