@@ -1187,3 +1187,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 16.10.2026: A289fullvector fullbuild673/673+quote/API/Next/TypeScript/static16/16PASS; lint3/diffSTARTED. ../../docs/checkpoints/2026-10-16-part19-a289-build-pass.md.
 
 16.10.2026: A289lint3/diffPASS; STARTED correctedengine offlineАскания-Нова→Казань15/17октября, baselineнепереписывать. ../../docs/checkpoints/2026-10-16-part19-a289-lint-pass-replay-started.md.
+
+16.10.2026: correctedofflineАскания-Нова→Казаньcomplete2/2,3640/3970(RUB15/17окт),baselineunknownнеперезаписан. STARTED helperimpactна59A289findings. ../../docs/checkpoints/2026-10-16-part19-a289-replay-pass.md. Не новыйlive/внешнееподтверждение.
