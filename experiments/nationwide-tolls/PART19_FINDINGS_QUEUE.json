@@ -19,7 +19,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "zaporizhzhia-пришиб-saint-petersburg-center",
+  "nextCase": "kherson-раденск-saint-petersburg-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -53,7 +53,7 @@
       ],
       "status": "historical_policy_needs_current_replay",
       "note": "trip-departure-v1 already implemented; preserve original raw/results and replay before any new source fix",
-      "currentCasesChecked": 5,
+      "currentCasesChecked": 6,
       "currentEvaluations": [
         {
           "caseId": "dnr-гранитное-moscow-center",
@@ -107,6 +107,100 @@
           ],
           "remainingReason": "zsd_trip_extends_outside_reviewed_zone1",
           "checkpoint": "../../docs/checkpoints/2026-10-16-102232-part19c-bryanka-spb-m4-policy-replay.md"
+        },
+        {
+          "caseId": "zaporizhzhia-пришиб-saint-petersburg-center",
+          "result": "not_reproduced_current_engine",
+          "weekdayAmount": 11264,
+          "weekendAmount": 13134,
+          "m4WeekdayAmount": 5040,
+          "m4WeekendAmount": 6090,
+          "remainingMissing": [],
+          "outputs": [
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-47-07-730Z.json",
+              "sha256": "3ef196f8901760516df8946f6e2b782a5bc537cc6e3215498598034014895a2e"
+            },
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-47-08-518Z.json",
+              "sha256": "331d6482534958d0805db834b0056df2b6866cacd545f54a466661e762602e16"
+            }
+          ],
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T17-07-07-263Z-capture.json.gz",
+          "captureSha256": "55137f2633cd2a41328a43093654782c4fb77306adc0a663a616a6c997c3258b",
+          "components": [
+            {
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 5040,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "a289",
+                  "amount": 800,
+                  "reason": "A-289 complete ordered three-frame traversal"
+                },
+                {
+                  "id": "m11-15-58",
+                  "amount": 1130,
+                  "reason": "m11_head_ready_direct_pair_at_departure"
+                },
+                {
+                  "id": "m11-58-679",
+                  "amount": 3900,
+                  "reason": "matrix dated selected-route M11 direct pair"
+                },
+                {
+                  "id": "m11-679-684",
+                  "amount": 94,
+                  "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+                },
+                {
+                  "id": "zsd",
+                  "amount": 300,
+                  "reason": "zsd_zone1_complete_directed_base_tariff"
+                }
+              ]
+            },
+            {
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 6090,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "a289",
+                  "amount": 800,
+                  "reason": "A-289 complete ordered three-frame traversal"
+                },
+                {
+                  "id": "m11-15-58",
+                  "amount": 1650,
+                  "reason": "m11_head_ready_direct_pair_at_departure"
+                },
+                {
+                  "id": "m11-58-679",
+                  "amount": 4200,
+                  "reason": "matrix dated selected-route M11 direct pair"
+                },
+                {
+                  "id": "m11-679-684",
+                  "amount": 94,
+                  "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+                },
+                {
+                  "id": "zsd",
+                  "amount": 300,
+                  "reason": "zsd_zone1_complete_directed_base_tariff"
+                }
+              ]
+            }
+          ],
+          "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-47-08-572Z-part19_m4_policy_done.json"
         }
       ]
     },
