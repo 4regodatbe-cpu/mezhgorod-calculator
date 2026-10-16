@@ -1,14 +1,17 @@
 {
-  "at": "2026-10-16T18:08:14.000Z",
-  "phase": "PART19_M11_HEAD_BOUNDARY_CASE2_DONE",
+  "at": "2026-10-16T18:53:27.000Z",
+  "phase": "PART19_CAUSE_REVIEW_RULES_ADOPTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "Case2 of m11_partial_head_entry_boundary_unresolved reviewed; exact M11 entry boundary remains unbound and unknown retained",
+  "scope": "User-approved cause/impact review policy adopted; M11 detailed reviews remain 2/8 and six exception checks are pending",
   "checked": 2,
   "total": 8,
-  "next": "Inspect only max-chain-m12-ckad-m11-zsd-murom-to-sest saved capture and paired 2026-10-15/17 09:00 MSK profiles against exact M11 boundary",
-  "validation": "Case2 offline evidence review complete; no new live request, code change, or test/build",
-  "parent": "574f2c5686ad9b3900cedc7ca18663456b409566",
+  "next": "Check only case3 max-chain-m12-ckad-m11-zsd-murom-to-sest for material exceptions to the proven M11 boundary cause using saved capture/profiles; full replay only for a concrete difference or incomplete evidence",
+  "validation": "Rules/docs only; CLI auth dry-run failed exit128; no route/code/tariff/test changes",
+  "parent": "cf97c6e4aaf2220655c17a8978e89c4b0f587e62",
   "nextFinding": "m11_partial_head_entry_boundary_unresolved",
-  "checkpointPath": "docs/checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md"
+  "checkpointPath": "docs/checkpoints/2026-10-16-215327-workflow-efficiency-rules.md",
+  "reviewRules": "docs/WORKFLOW_RULES.md",
+  "lastObservedVerificationRun": "38947789852",
+  "lastObservedVerificationRunStatus": "completed_success_on_source_head"
 }

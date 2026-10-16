@@ -2,6 +2,16 @@
 
 Before repository work, read docs/WORK_STATE.md. It is the canonical current-state handoff and links to the relevant specifications and checkpoints.
 
+## Scope, repeated findings and honest progress (user decision, 2026-10-16)
+
+Read and follow `docs/WORKFLOW_RULES.md`. Review findings by root cause and user impact. Check repeated cases for material exceptions instead of repeating a complete investigation without a new reason. Give each assessed cause one explicit outcome: fixed and verified; not reproduced; blocked by missing reliable data; deferred. Preserve evidence for the decision and distinguish unfinished assessment from a final outcome.
+
+Do not add stages to increase a counter. Read large JSON/logs by exact fields, paths and ranges; keep full evidence out of the model context. For short local evidence reviews, save one completed-step checkpoint; a separate STARTED commit is required before long operations, not before every read. The durable-save requirements below still apply to each completed unit.
+
+Report `SMALL_PARTS_PLAN.json.progressReporting` only as completion of that formal plan, using its existing formula (currently 18/20 = 90%). Separately state unresolved causes, checks actually completed, and tariff confirmation. The 20-part route-audit plan includes both 155- and 154-case batches; it does not establish completion of the broader calculator/matrix task. Do not invent weighted completion percentages or treat a representative case as all cases checked.
+
+Use the existing authorized GitHub transport. An unauthenticated CLI push is a transport limitation, not absence of repository write permission. Do not repeatedly retry unchanged CLI credentials, extract connector secrets, or report Git authorization as configured without a successful check. A clean checkout must start from the verified remote head; use non-force updates and verify exact tree/path SHAs.
+
 ## Mandatory small-step durable checkpoints (user clarification, 2026-10-15)
 
 Read and follow `docs/CHECKPOINT_PROTOCOL.md` before any task action. This clarification supersedes older instructions limiting records to substantial blocks or saying not to log tiny operations.

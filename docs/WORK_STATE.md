@@ -1,6 +1,8 @@
 # Калькулятор «Из А в Б»: текущее состояние
 
-16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Последний проверенный remote PR head на старте case2 `12259d1b0c25885cd205c1d4622ab0d35794641d`, tree `a9fd4ad781cbba2f5c1af0b65441c6834e5de13a`. M11 cases1–2 reviewed from complete saved captures and paired profiles; both source-gated because exact directed entry/payment boundary is unbound, so M11 15–58 remains unknown. Case2 detail: [checkpoint](checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md); its STARTED record is preserved. Six cases remain. Checkout `calculator-run`; сверять exact tree/path SHA при публикации.
+16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Проверенный исходный remote head этого изменения `cf97c6e4aaf2220655c17a8978e89c4b0f587e62`, tree `fb2d2a0e5ad7d18df2cae25d3e17413c8a8a2872`. Из него создан отдельный чистый checkout `calculator-rules`; старый расходящийся `calculator-run` сохранён. Пользователь утвердил [правила разбора по причинам и отчётности](WORKFLOW_RULES.md); они включены в AGENTS и автоматическое продолжение. [Checkpoint правил и Git auth](checkpoints/2026-10-16-215327-workflow-efficiency-rules.md).
+
+Наблюдаемый run `38947789852`: verify/live_probe completed/success на исходном head. CLI Git auth не настроен: безопасный push dry-run exit128; connector сохраняет разрешённую ветку. Новая CI-проверка после публикации требует отдельного наблюдения; старый success не переносить на новый head.
 
 ## Прогресс
 
@@ -16,10 +18,12 @@
 
 **Последняя полная проверка 696/696+quote/API+Nextwebpack/TypeScript/static16/16 PASS**, focused8/8/eslintnewtestexit0. [Fullgate](checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md). В audit-only classification код не менялся и новая сборка не запускалась. Не трактовать прежний full gate как тест текущей классификации.
 
-## NEXT STARTED
+## NEXT — одна причина и её исключения
 
-**Review finding `m11_partial_head_entry_boundary_unresolved`: cases1–2 source-gated; inspect case3 using saved capture only**
+**Свести M11 `m11_partial_head_entry_boundary_unresolved` к общей причине; cases1–2 имеют подробный source-gated разбор. Для остальных шести сначала проверить исключения по сохранённым данным.**
 
 ZSD review **76/76** and M4 finding **22/22** classified source-gated because exact collection spans are not independently bound. [M4 checkpoint](checkpoints/2026-10-16-part19-m4-unpriced-classification.md). Overall plan **90% (18/20 completed parts)**; neither case count nor percent is tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
-Case2 saved inputs and result are recorded in [STARTED checkpoint](checkpoints/2026-10-16-part19-m11-case2-boundary-started.md), [DONE checkpoint](checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md), and evidence JSON. Trace/profile outputs show detected M11 15–58 still null and separate M11 58–679 / 679–684 / M12 components; CKAD and ZSD also unknown. Do not infer 15–58 toll from adjacent 58–679 component or call a subtotal the whole fare. NEXT case3 `max-chain-m12-ckad-m11-zsd-murom-to-sest`. No main/merge/Production; automation remains enabled.
+Подробный разбор M11 выполнен и сохранён для 2/8 случаев; проверка исключений оставшихся шести ещё не выполнена, новых live/replay этим шагом не получено. Case2: [DONE checkpoint](checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md). Тариф M11 15–58 неизвестен; CKAD/ZSD также блокируют полный итог. Общий дедуплицированный список нерешённых причин ещё не сведен, поэтому его количество не объявляется.
+
+NEXT: только для case3 `max-chain-m12-ckad-m11-zsd-murom-to-sest` сравнить полноту capture, пару дат отправления и M11 граничную геометрию с уже доказанной причиной; полный повтор нужен лишь при существенном отличии/неполном evidence. Сохранить фактическую проверку исключения и её SHA до следующего случая. Обе очереди155/154 уже завершены; 90% относится к 20-частному аудиту, полнота исходного широкого аудита матрицы этим не установлена. No main/merge/Production/Android; automation remains enabled.
