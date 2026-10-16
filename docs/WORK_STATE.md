@@ -1,15 +1,23 @@
-# Калькулятор: часть19, последовательная проверка М-4
+# Калькулятор «Из А в Б»: часть19, исправления
 
-2026-10-16T07:49:15.074Z. Ветка fix/v3-missing-route-prices-2026-10-15, PR14 draft. Фаза **PART19_M4_POLICY_CLASS_DONE**; current-policy **25/25**.
+16.10.2026. Только fix/v3-missing-route-prices-2026-10-15, PR14 draft. Verified remote parent b90d630fb57c93e043aa754546773364b05bc191/tree1f5465e3. **Workflow38869309675/job116869376746 SUCCESS, активного writer нет.**
 
-**NEXT:** Part19: diagnose next finding class; do not mark part19/20 complete. При active/queued workflow не писать в ветку и не запускать второго writer. После завершения читать actual job/checkpoint, затем продолжать часть19, часть20 ещё не начата.
+## DONE
 
-Части1–18 DONE:155/155+154/154, frozenREPORT340/340. 19A/19B A289 binding fixes сохранены,57helper-only+2whole-route cases; это не59полных тарифов. Runtime fare source79df66d8; новый workflow build проверяет актуальные scripts/tests перед очередью.
+Части1–18:155/155+154/154, frozenREPORT340/340. 19A/19B A289 binding fixes сохранены (57helper-only+2whole-routecases, не59полныхтарифов).
+**19C M4profile policy25/25 DONE**, автоматический переход между всеми оставшимися20cases доказан фактическими STARTED/DONE commits и exacthead/tree readback. Root дополнительно перепроверил20rawSHA+40outputSHA, integrity/basis/M4. Полныеofflinequotes20/25;5СПб остаютсяunknownЗСД. Не25подтверждённыхцен.
+[Итог/источники/NEXT](checkpoints/2026-10-16-part19-policy-25-done-m4-unpriced-started.md), [queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), [run](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38869309675).
 
-Каждый case: STARTED→два saved-capture профиля→verify→DONE/FAILED→commit/push/exacthead/tree readback→сразу следующий. TIME_LIMIT возобновляем; не повторять завершённую309livequeue.
+Последний fullgate **684/684 + quote/API/Next/TypeScript/static16/16 PASS**, focused8/lint3/diffPASS; GitHubbuild такжеSUCCESS. Runtimefarelogic после79df66d8 не менялся. [Gate](checkpoints/2026-10-16-part19-policy-queue-build-pass.md).
 
-Полные тарифы могут оставаться unknown из-за ЗСД/других компонентов; не подставлять0 и не выдавать subtotal за итог. Whole trip uses departure instant. Corrected offline replay не является fresh live, parity с историческим buggy live или независимой проверкой цены. Исходные raw/live/replay/REPORT и append-only история сохранены.
+## NEXT STARTED — 19D
 
-[Состояние](../experiments/nationwide-tolls/AUTO_QUEUE_STATE.json) · [Checkpoint](checkpoints/policy-2026-10-16T07-49-15-074Z-part19_m4_policy_class_done.json) · [Findings](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [Журнал](../experiments/nationwide-tolls/WORK_LOG.md) · [Протокол](CHECKPOINT_PROTOCOL.md).
+**m4:unpriced,22случая**, не те же25policycases. Первый только dnr-гранитное-kazan-center: existing corpus.auditEvidence.capture, currentengine offline15/17окт09:00МСК, проверить actualM4reason/vector/trace. Сохранить case/checkpoint/logs/state/queue и commit/push/head/tree до следующего независимого шага. Затем исправлять одну установленную причину с focused/fullgate. Не повторять309livequeue и не подставлятьцены.
+Часть19 IN PROGRESS,20 ещё не начата. Другиенахождения (ЗСД/М11/М12/прочие) ещёнеразобраны.
 
-No main/merge/Production/Android/messages. После всех25 cases проверить остальные категории находок; не считать часть19 законченной. Автоматическое продолжение всех20частей подтверждено пользователем16.10.2026 10:27МСК.
+## Порядок
+
+После каждого durable save сразу следующий микрошаг без«дальше», один writer. Перед записью проверить actualremote/PR и отсутствие active/queued jobs. Если AUTOstate.workflowRunnull, найти ветку в GitHubpushruns; приактивномjob **не писать**. TIME_LIMIT — сохранённаявозобновляемаяграница. Runner current-policy class уже25/25, не перезапускать его без новойпричины.
+
+Unknown≠0, subtotal≠итог; поездкапоотправлению, междорожныевекторыотложены. Audited/replay — воспроизводимость, не свежийlive/операторскоеподтверждение. Raw/baseline/history сохранять. No main/merge/Production/Android/messages.
+[Protocol](CHECKPOINT_PROTOCOL.md) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md) · [План](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
