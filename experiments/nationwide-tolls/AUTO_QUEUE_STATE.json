@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:21:13.437Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:21:18.659Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,104 +23,10 @@
       "group": "max-chain-m12-ckad-m11-zsd"
     }
   },
-  "caseId": "zaporizhzhia-токмак-saint-petersburg-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "zaporizhzhia-токмак-saint-petersburg-center",
-    "startedAt": "2026-10-16T01:20:23.501Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-20-47-870Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-saint-petersburg-center/2026-10-16T01-20-47-701Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-20-48-635Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-20-49-392Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "a289",
-        "m4",
-        "m11",
-        "zsd"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: a289",
-        "a289: A-289 frames detected but selected-route exits are unresolved"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: a289",
-        "a289: A-289 frames detected but selected-route exits are unresolved"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 5040,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "a289",
-        "amount": null,
-        "reason": "A-289 frames detected but selected-route exits are unresolved"
-      },
-      {
-        "id": "m11-15-58",
-        "amount": 1130,
-        "reason": "m11_head_ready_direct_pair_at_departure"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": 3900,
-        "reason": "matrix dated selected-route M11 direct pair"
-      },
-      {
-        "id": "m11-679-684",
-        "amount": 94,
-        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-      },
-      {
-        "id": "zsd",
-        "amount": 300,
-        "reason": "zsd_zone1_complete_directed_base_tariff"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:20:49.412Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-20-22-091Z-part14",
-  "parent": "e04e1008edbcaa509b67facbd15f4f4e6cb5fc12",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-21-13-437Z-done.json"
+  "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-21-18-659Z-part14",
+  "parent": "0e1df7446699b9f6fa427e2fbe07fd3447e3c864",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-21-18-659Z-started.json"
 }
