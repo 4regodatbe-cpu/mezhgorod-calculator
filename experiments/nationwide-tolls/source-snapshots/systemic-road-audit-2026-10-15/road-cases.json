@@ -2712,7 +2712,22 @@
         "odintsovo"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-kubinka/live-2026-10-15T09-00-00-03-00-2026-10-16T00-29-14-596Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-kubinka/2026-10-16T00-29-14-585Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 67211,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-29-13-041Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-kubinka/live-2026-10-15T09-00-00-03-00-2026-10-16T00-29-14-596Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-kubinka/2026-10-16T00-29-14-585Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-29-14-945Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-29-15-273Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-odintsovo-kubinka-to-moscow",
