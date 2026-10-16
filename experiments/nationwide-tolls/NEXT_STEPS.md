@@ -1648,3 +1648,6 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 
 
 2026-10-16 23:39:00 MSK: Case6 M11 saved-evidence exception review DONE. M11 boundary remains blocked; earlier unknown-paid-road classification changed in later same-capture replays with exact ZSD booth node 1766158781; previously validated identity fix resolves label, not tariff. M12 expected road, CKAD east arc and ZSD zone scope remain unknown; no route amount. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-case6-boundary-exception.md). NEXT only after durable readback/no active writer: case7 `max-chain-m12-ckad-m11-zsd-vladimir-to-sest`, saved evidence only. Formal plan18/20=90%, not tariff readiness.
+
+
+2026-10-17 00:16:00 MSK: Case7 DONE from saved profiles; same M11 boundary blocker, no exception; expected M12 traversal unproven, CKAD/ZSD scope unknown and route total null. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md). NEXT after durable readback/no active writer: case8 `triple-m11-ckad-m12-arzamas-to-spb`, saved-evidence check only. Formal plan18/20=90%, not tariff coverage.
