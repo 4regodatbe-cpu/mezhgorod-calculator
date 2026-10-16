@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:50:20.022Z",
+  "generatedAt": "2026-10-16T01:51:03.430Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 294,
-    "recordedLiveAttempts": 308,
-    "liveCaptured": 294,
-    "savedLiveSummaries": 294,
+    "distinctCaseAttempts": 295,
+    "recordedLiveAttempts": 309,
+    "liveCaptured": 295,
+    "savedLiveSummaries": 295,
     "missingOrInvalidReferences": 0,
-    "audited": 294,
-    "traceComplete": 294,
-    "sameDateParity": 294
+    "audited": 295,
+    "traceComplete": 295,
+    "sameDateParity": 295
   },
   "regionCounts": {
     "dnr": {
@@ -100,8 +100,8 @@
       "id": "single-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 9,
-      "audited": 9,
+      "attempted": 10,
+      "audited": 10,
       "traversalProven": 0,
       "pricedWeekday": 4,
       "pricedWeekend": 4
@@ -10056,6 +10056,40 @@
       ],
       "routeMeters": 160392,
       "routeSeconds": 7679
+    },
+    {
+      "caseId": "single-ckad-rostov-to-dmitrov",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-rostov-to-dmitrov/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-58-721Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "ckad"
+        ],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1219805,
+      "routeSeconds": 53258
     }
   ],
   "historicalExecutionExceptions": [],
@@ -14807,7 +14841,8 @@
         "pair-m12-ckad-arzamas-to-domodedovo",
         "pair-m12-ckad-domodedovo-to-arzamas",
         "pair-m12-ckad-klin-to-vladimir",
-        "single-ckad-dmitrov-to-rostov"
+        "single-ckad-dmitrov-to-rostov",
+        "single-ckad-rostov-to-dmitrov"
       ],
       "occurrences": [
         {
@@ -15565,9 +15600,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-dmitrov-to-rostov/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-49-00-782Z.json"
+        },
+        {
+          "caseId": "single-ckad-rostov-to-dmitrov",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-rostov-to-dmitrov/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-58-721Z.json"
+        },
+        {
+          "caseId": "single-ckad-rostov-to-dmitrov",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-rostov-to-dmitrov/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-50-59-283Z.json"
+        },
+        {
+          "caseId": "single-ckad-rostov-to-dmitrov",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-rostov-to-dmitrov/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-59-822Z.json"
         }
       ],
-      "caseCount": 28
+      "caseCount": 29
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -16943,7 +17005,8 @@
         "single-ckad-dmitrov-to-kazan",
         "single-ckad-dmitrov-to-rostov",
         "single-ckad-kazan-to-dmitrov",
-        "single-ckad-klin-to-ramenskoe"
+        "single-ckad-klin-to-ramenskoe",
+        "single-ckad-rostov-to-dmitrov"
       ],
       "occurrences": [
         {
@@ -17769,9 +17832,25 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-15-691Z.json"
+        },
+        {
+          "caseId": "single-ckad-rostov-to-dmitrov",
+          "detail": {
+            "expectedRoads": [
+              "ckad"
+            ],
+            "provenRoads": [
+              "m4"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-rostov-to-dmitrov/live-2026-10-15T09-00-00-03-00-2026-10-16T01-50-58-721Z.json"
         }
       ],
-      "caseCount": 48
+      "caseCount": 49
     },
     {
       "code": "m11-58-679:unpriced",

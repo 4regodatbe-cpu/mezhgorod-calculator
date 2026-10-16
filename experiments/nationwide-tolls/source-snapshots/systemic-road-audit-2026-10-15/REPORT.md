@@ -1,10 +1,10 @@
 # Системный аудит маршрутов — текущие результаты
 
-Сформировано: 2026-10-16T01:50:20.022Z.
+Сформировано: 2026-10-16T01:51:03.430Z.
 
-Разных проверенных OD-кейсов: 294; записанных live попыток с учётом повторов: 308; маршруты получены: 294; capture + два offline replay завершены: 294; одинаковый live/offline итог: 294.
+Разных проверенных OD-кейсов: 295; записанных live попыток с учётом повторов: 309; маршруты получены: 295; capture + два offline replay завершены: 295; одинаковый live/offline итог: 295.
 
-Отсутствующих/нечитаемых evidence-ссылок: 0; имеющихся live summaries: 294. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
+Отсутствующих/нечитаемых evidence-ссылок: 0; имеющихся live summaries: 295. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
 
 Audited означает воспроизводимость исполнения. Это не проверка цен по Яндексу/оператору. Неизвестная сумма остаётся неизвестной. Offline replay не считается новым live-маршрутом.
 
@@ -22,7 +22,7 @@ Audited означает воспроизводимость исполнения
 | single-m3 | 10 | 5 | 5 | 5 | 0 | 0 |
 | single-m11 | 10 | 5 | 5 | 5 | 0 | 0 |
 | single-m12 | 10 | 5 | 5 | 4 | 5 | 5 |
-| single-ckad | 10 | 9 | 9 | 0 | 4 | 4 |
+| single-ckad | 10 | 10 | 10 | 0 | 4 | 4 |
 | single-zsd | 10 | 5 | 5 | 3 | 2 | 2 |
 | single-odintsovo | 10 | 5 | 5 | 0 | 4 | 4 |
 | single-khabarovsk | 10 | 5 | 5 | 0 | 5 | 5 |
@@ -43,9 +43,9 @@ Audited означает воспроизводимость исполнения
 | zsd:unpriced | 65 |
 | m4:unpriced | 19 |
 | m11_partial_head_entry_boundary_unresolved | 7 |
-| arc_not_proven | 28 |
+| arc_not_proven | 29 |
 | unknown-paid-road:unpriced | 47 |
-| expected-road-not-proven | 48 |
+| expected-road-not-proven | 49 |
 | m11-58-679:unpriced | 32 |
 | m11_58_679_facility_sequence_incomplete | 12 |
 | engine_not_yet_composed | 5 |
