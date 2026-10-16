@@ -19,7 +19,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "zaporizhzhia-молочанск-moscow-center",
+  "nextCase": "kherson-чулаковка-moscow-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -53,7 +53,7 @@
       ],
       "status": "historical_policy_needs_current_replay",
       "note": "trip-departure-v1 already implemented; preserve original raw/results and replay before any new source fix",
-      "currentCasesChecked": 10,
+      "currentCasesChecked": 11,
       "currentEvaluations": [
         {
           "caseId": "dnr-гранитное-moscow-center",
@@ -467,6 +467,60 @@
             }
           ],
           "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-47-33-600Z-part19_m4_policy_done.json"
+        },
+        {
+          "caseId": "zaporizhzhia-молочанск-moscow-center",
+          "result": "not_reproduced_current_engine",
+          "weekdayAmount": 5840,
+          "weekendAmount": 6890,
+          "m4WeekdayAmount": 5040,
+          "m4WeekendAmount": 6090,
+          "remainingMissing": [],
+          "outputs": [
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-47-39-688Z.json",
+              "sha256": "e98e72b72a54eb073110d9503a598c292508f2b8fefe26463a284c72ad96aedd"
+            },
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-47-40-338Z.json",
+              "sha256": "f7c27fe6d09781b948e55f81996a10bd20532f9adc523267caa9eda6035b27bb"
+            }
+          ],
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T18-22-49-183Z-capture.json.gz",
+          "captureSha256": "6b0bb9bbb5c3699f83e41f9098d4c44ab3ce1ed03a356fe379707cfc722c7cf2",
+          "components": [
+            {
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 5040,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "a289",
+                  "amount": 800,
+                  "reason": "A-289 complete ordered three-frame traversal"
+                }
+              ]
+            },
+            {
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 6090,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "a289",
+                  "amount": 800,
+                  "reason": "A-289 complete ordered three-frame traversal"
+                }
+              ]
+            }
+          ],
+          "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-47-40-375Z-part19_m4_policy_done.json"
         }
       ]
     },

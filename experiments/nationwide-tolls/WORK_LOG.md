@@ -1344,3 +1344,5 @@ Parent c2d11f9f, working branch/PR14draft only. RED reproduces missing385 on sel
 2026-10-16T07:47:33.600Z: PART19_M4_POLICY_DONE M4 policy 10/25; dnr-широкино-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-33-600Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
 
 2026-10-16T07:47:36.234Z: PART19_M4_POLICY_STARTED M4 policy 10/25; zaporizhzhia-молочанск-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-36-234Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:40.375Z: PART19_M4_POLICY_DONE M4 policy 11/25; zaporizhzhia-молочанск-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-40-375Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
