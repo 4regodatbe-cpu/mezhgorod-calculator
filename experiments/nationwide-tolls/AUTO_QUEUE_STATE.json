@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T07:49:06.131Z",
-  "phase": "PART19_M4_POLICY_DONE",
+  "at": "2026-10-16T07:49:08.576Z",
+  "phase": "PART19_M4_POLICY_STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
   "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
@@ -8,92 +8,14 @@
   "total": 25,
   "next": "kherson-старая-збурьевка-saint-petersburg-center",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "c3cb0bcbec4f752bdfa1709b2ca31eaa2abf9b3a",
-  "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
-  "evaluation": {
-    "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
-    "result": "not_reproduced_current_engine",
-    "weekdayAmount": null,
-    "weekendAmount": null,
-    "m4WeekdayAmount": 3810,
-    "m4WeekendAmount": 4640,
-    "remainingMissing": [
-      "zsd"
-    ],
-    "outputs": [
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-49-05-457Z.json",
-        "sha256": "931f00a51623fc8cba45683065ccdda26d96830f5db3280e6dc9e69289d4765d"
-      },
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-49-06-093Z.json",
-        "sha256": "ea2072522db4238b2e1d8268da3ccd845c97bfd9ed2a0a3d229ba344fb500f34"
-      }
-    ],
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/2026-10-15T18-18-15-355Z-capture.json.gz",
-    "captureSha256": "fc521b0bf71e2b331794cccb9edf58ecfb92f188d45b9631e9bb46849e3b1fd2",
-    "components": [
-      {
-        "departureAt": "2026-10-15T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 3810,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "m11-15-58",
-            "amount": 1130,
-            "reason": "m11_head_ready_direct_pair_at_departure"
-          },
-          {
-            "id": "m11-58-679",
-            "amount": 3900,
-            "reason": "matrix dated selected-route M11 direct pair"
-          },
-          {
-            "id": "m11-679-684",
-            "amount": 94,
-            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-          },
-          {
-            "id": "zsd",
-            "amount": null,
-            "reason": "zsd_trip_extends_outside_reviewed_zone1"
-          }
-        ]
-      },
-      {
-        "departureAt": "2026-10-17T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 4640,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "m11-15-58",
-            "amount": 1650,
-            "reason": "m11_head_ready_direct_pair_at_departure"
-          },
-          {
-            "id": "m11-58-679",
-            "amount": 4200,
-            "reason": "matrix dated selected-route M11 direct pair"
-          },
-          {
-            "id": "m11-679-684",
-            "amount": 94,
-            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-          },
-          {
-            "id": "zsd",
-            "amount": null,
-            "reason": "zsd_trip_extends_outside_reviewed_zone1"
-          }
-        ]
-      }
-    ]
-  },
-  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-49-06-131Z-part19_m4_policy_done.json"
+  "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/2026-10-15T12-17-15-705Z-capture.json.gz",
+  "captureSha256": "7c9fe0f5914bbad394bae3791f30b99efa9783e90442a53fa36e41f9ef0f996b",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "8ab4687b3e81fa30b732d487258e49362a538ef7",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-49-08-576Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-49-08-576Z-part19_m4_policy_started.json"
 }

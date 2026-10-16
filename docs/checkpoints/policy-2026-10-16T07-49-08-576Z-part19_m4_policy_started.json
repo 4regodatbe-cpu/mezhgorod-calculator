@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-16T07:49:08.576Z",
+  "phase": "PART19_M4_POLICY_STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 24,
+  "total": 25,
+  "next": "kherson-старая-збурьевка-saint-petersburg-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/2026-10-15T12-17-15-705Z-capture.json.gz",
+  "captureSha256": "7c9fe0f5914bbad394bae3791f30b99efa9783e90442a53fa36e41f9ef0f996b",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "8ab4687b3e81fa30b732d487258e49362a538ef7",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-49-08-576Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-49-08-576Z-part19_m4_policy_started.json"
+}
