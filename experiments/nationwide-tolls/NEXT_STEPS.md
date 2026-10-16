@@ -1417,3 +1417,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 16.10.2026 ZSDcase2 Bryanka→SPB DONE2/2 exit0/complete, same26ways/PVP5 ascase1, unknownZSDonly. NEXT case3 Lisichansk→SPB exactcapturetwoofflineprofiles. ../../docs/checkpoints/2026-10-16-1412-zsd-bryanka-spb-replay.md
 
 2026-10-16T14:06:50.067788+03:00: ZSDcase3 lnr-лисичанск-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140650-zsd-case3.md. NEXT lnr-рубежное-saint-petersburg-center.
+
+2026-10-16T14:07:37.609727+03:00: ZSDcase4 lnr-рубежное-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140737-zsd-case4.md. NEXT zaporizhzhia-гуляйполе-saint-petersburg-center.

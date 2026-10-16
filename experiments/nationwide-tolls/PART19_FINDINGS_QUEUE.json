@@ -26,8 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "lnr-рубежное-saint-petersburg-center",
-  "nextAction": "ZSD next distinct case lnr-рубежное-saint-petersburg-center: existing capture twoofflineprofiles; compare exact selected scope",
+  "nextCase": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+  "nextAction": "ZSD next distinct case zaporizhzhia-гуляйполе-saint-petersburg-center: existing capture twoofflineprofiles; compare exact selected scope",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2421,9 +2421,18 @@
         "missing": [
           "zsd"
         ]
+      },
+      {
+        "caseId": "lnr-рубежное-saint-petersburg-center",
+        "status": "source_gated_same_exact_way_set",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-140737-zsd-case4.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-140737-zsd-case4.json",
+        "missing": [
+          "zsd"
+        ]
       }
     ],
-    "checked": 3,
+    "checked": 4,
     "total": 76
   }
 }
