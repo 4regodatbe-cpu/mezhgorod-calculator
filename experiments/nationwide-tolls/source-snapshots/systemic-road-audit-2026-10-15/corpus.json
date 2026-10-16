@@ -4940,7 +4940,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-56-05-047Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-kerch-center/2026-10-16T00-56-04-976Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 890083,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-55-59-592Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-56-05-047Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-kerch-center/2026-10-16T00-56-04-976Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-56-05-571Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-56-06-074Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-скадовск-moscow-center",
