@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-16T07:48:56.134Z",
+  "phase": "PART19_M4_POLICY_STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 22,
+  "total": 25,
+  "next": "lnr-рубежное-saint-petersburg-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "caseId": "lnr-рубежное-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/2026-10-15T17-03-35-545Z-capture.json.gz",
+  "captureSha256": "0dec6793237ea0b72e224c90ad797953bb8e7d9461bb36057898a2a0565677a7",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "600fec670cff0684ce05fd01f4e9f0ab7f1b3330",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-48-56-134Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-56-134Z-part19_m4_policy_started.json"
+}
