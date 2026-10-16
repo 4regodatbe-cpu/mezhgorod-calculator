@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:22:37.604Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:22:58.761Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 121,
+      "done": 122,
       "total": 155
     },
     {
@@ -18,15 +18,71 @@
   "next": {
     "part": 9,
     "spec": {
-      "caseId": "single-m12-kazan-to-vladimir",
+      "caseId": "single-m12-moscow-to-kazan",
       "kind": "road",
       "group": "single-m12"
     }
   },
   "caseId": "single-m12-kazan-to-vladimir",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-m12-kazan-to-vladimir",
+    "startedAt": "2026-10-16T00:22:39.602Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T00-22-43-151Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-vladimir/2026-10-16T00-22-43-108Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-22-43-620Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-22-44-076Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m12"
+      ],
+      "provenRoads": [],
+      "missingExpectedRoads": [
+        "m12"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "weekend": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "пятница–воскресенье",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "components": [],
+    "finishedAt": "2026-10-16T00:22:44.092Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-22-37-604Z-part9",
-  "parent": "5a0527e7ed2bac9b6d78aa8fc38763cbcdd110e1",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-22-37-604Z-started.json"
+  "parent": "11bb10ce88db37412abb786b5e4f4838a0afcdd0",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-22-58-761Z-done.json"
 }

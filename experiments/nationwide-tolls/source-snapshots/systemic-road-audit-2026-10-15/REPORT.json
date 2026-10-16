@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:22:21.198Z",
+  "generatedAt": "2026-10-16T00:22:46.078Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 153,
-    "recordedLiveAttempts": 166,
-    "liveCaptured": 152,
-    "savedLiveSummaries": 152,
+    "distinctCaseAttempts": 154,
+    "recordedLiveAttempts": 167,
+    "liveCaptured": 153,
+    "savedLiveSummaries": 153,
     "missingOrInvalidReferences": 1,
-    "audited": 152,
-    "traceComplete": 152,
-    "sameDateParity": 152
+    "audited": 153,
+    "traceComplete": 153,
+    "sameDateParity": 153
   },
   "regionCounts": {
     "dnr": {
@@ -90,11 +90,11 @@
       "id": "single-m12",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 1,
-      "audited": 1,
+      "attempted": 2,
+      "audited": 2,
       "traversalProven": 1,
-      "pricedWeekday": 1,
-      "pricedWeekend": 1
+      "pricedWeekday": 2,
+      "pricedWeekend": 2
     },
     {
       "id": "single-ckad",
@@ -5273,6 +5273,38 @@
       ],
       "routeMeters": 822612,
       "routeSeconds": 41546
+    },
+    {
+      "caseId": "single-m12-kazan-to-vladimir",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T00-22-43-151Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "m12"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 636776,
+      "routeSeconds": 30440
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8962,7 +8994,8 @@
         "single-khabarovsk-smidovich-to-knyaze",
         "single-khabarovsk-smidovich-to-nekrasovka",
         "single-khabarovsk-smidovich-to-vyazemsky",
-        "single-khabarovsk-vyazemsky-to-smidovich"
+        "single-khabarovsk-vyazemsky-to-smidovich",
+        "single-m12-kazan-to-vladimir"
       ],
       "occurrences": [
         {
@@ -9303,9 +9336,23 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-smidovich/live-2026-10-15T09-00-00-03-00-2026-10-16T00-19-55-225Z.json"
+        },
+        {
+          "caseId": "single-m12-kazan-to-vladimir",
+          "detail": {
+            "expectedRoads": [
+              "m12"
+            ],
+            "provenRoads": [],
+            "missingExpectedRoads": [
+              "m12"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T00-22-43-151Z.json"
         }
       ],
-      "caseCount": 20
+      "caseCount": 21
     },
     {
       "code": "m11-58-679:unpriced",
