@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:03:38.150Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:03:41.472Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,114 +23,10 @@
       "group": "pair-m11-ckad"
     }
   },
-  "caseId": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
-    "startedAt": "2026-10-16T00:03:14.720Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T00-03-24-126Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/2026-10-16T00-03-24-052Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-03-24-664Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-03-25-201Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m4",
-        "ckad",
-        "m11",
-        "zsd"
-      ],
-      "provenRoads": [
-        "m4",
-        "m11",
-        "zsd"
-      ],
-      "missingExpectedRoads": [
-        "ckad"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m4, zsd, unknown-paid-road",
-        "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m4, zsd, unknown-paid-road",
-        "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": null,
-        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
-      },
-      {
-        "id": "m11-15-58",
-        "amount": 1130,
-        "reason": "m11_head_ready_direct_pair_at_departure"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": 3900,
-        "reason": "matrix dated selected-route M11 direct pair"
-      },
-      {
-        "id": "m11-679-684",
-        "amount": 94,
-        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-      },
-      {
-        "id": "zsd",
-        "amount": null,
-        "reason": "zsd_trip_extends_outside_reviewed_zone1"
-      },
-      {
-        "id": "unknown-paid-road",
-        "amount": null,
-        "reason": "unmapped_selected_route_paid_booth"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:03:25.220Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-03-13-205Z-part6",
-  "parent": "506137cf2b885ec16206492419def83b726bd35f",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-03-38-150Z-done.json"
+  "caseId": "pair-m11-ckad-domodedovo-to-spb",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-03-41-472Z-part6",
+  "parent": "5ea71ece8b0a614f097c18ba910a2f6ba40f3e8d",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-03-41-472Z-started.json"
 }
