@@ -9,9 +9,9 @@
     },
     "kherson": {
       "planned": 40,
-      "historicallyAudited": 25,
-      "rawAvailable": 25,
-      "fourArtifactsAvailable": 25
+      "historicallyAudited": 26,
+      "rawAvailable": 26,
+      "fourArtifactsAvailable": 26
     },
     "lnr": {
       "planned": 40,
@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 205,
-  "rawCaptureCaseCount": 202,
+  "rawCaptureCount": 206,
+  "rawCaptureCaseCount": 203,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -5636,10 +5636,49 @@
     {
       "caseId": "kherson-новая-збурьевка-saint-petersburg-center",
       "region": "kherson",
-      "historicalStatus": "planned",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
-      "artifacts": {}
+      "historicalStatus": "audited",
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-47-58-136Z.json",
+          "exists": true,
+          "bytes": 11277,
+          "sha256": "b59ff1a7d18c386132f96d350ed317c7bd18fa8cdead76dd8b1460343b141f90",
+          "gitBlobSha": "faccd5cb850d4e7aa70c31aadccd6a0ec3878d4c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/2026-10-16T00-47-57-970Z-capture.json.gz",
+          "exists": true,
+          "bytes": 976856,
+          "sha256": "7ac13a5e02d62f47a70520c788874bf9f30c93909eb5b7f6038f21898ab3b59a",
+          "gitBlobSha": "c702141f5ffc01ea09ecb7dba219c4fb5a3af22f",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 24
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-47-58-889Z.json",
+          "exists": true,
+          "bytes": 11355,
+          "sha256": "b30335c97b49312b3e6adbe9d96f6f3073ecfa152c4a30cad1b841a9e52befa1",
+          "gitBlobSha": "6079e2a603c1d0d0b9c1486af820d257ccc2e9d4",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-47-59-633Z.json",
+          "exists": true,
+          "bytes": 11352,
+          "sha256": "bb3999ad25d4c3856f9044b583dacc49d471ca0f7604e7cbe31a07752cdfe816",
+          "gitBlobSha": "fb6faef69761584ada3917f880d12880906c76d7",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     },
     {
       "caseId": "kherson-новая-збурьевка-kazan-center",
@@ -15167,6 +15206,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-47-33-465Z.json",
+      "caseId": "kherson-новая-збурьевка-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-47-58-136Z.json",
+          "exists": true,
+          "bytes": 11277,
+          "sha256": "b59ff1a7d18c386132f96d350ed317c7bd18fa8cdead76dd8b1460343b141f90",
+          "gitBlobSha": "faccd5cb850d4e7aa70c31aadccd6a0ec3878d4c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/2026-10-16T00-47-57-970Z-capture.json.gz",
+          "exists": true,
+          "bytes": 976856,
+          "sha256": "7ac13a5e02d62f47a70520c788874bf9f30c93909eb5b7f6038f21898ab3b59a",
+          "gitBlobSha": "c702141f5ffc01ea09ecb7dba219c4fb5a3af22f",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 24
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-47-58-889Z.json",
+          "exists": true,
+          "bytes": 11355,
+          "sha256": "b30335c97b49312b3e6adbe9d96f6f3073ecfa152c4a30cad1b841a9e52befa1",
+          "gitBlobSha": "6079e2a603c1d0d0b9c1486af820d257ccc2e9d4",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-47-59-633Z.json",
+          "exists": true,
+          "bytes": 11352,
+          "sha256": "bb3999ad25d4c3856f9044b583dacc49d471ca0f7604e7cbe31a07752cdfe816",
+          "gitBlobSha": "fb6faef69761584ada3917f880d12880906c76d7",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -15796,6 +15880,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 19
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/2026-10-16T00-47-57-970Z-capture.json.gz",
+      "exists": true,
+      "bytes": 976856,
+      "sha256": "7ac13a5e02d62f47a70520c788874bf9f30c93909eb5b7f6038f21898ab3b59a",
+      "gitBlobSha": "c702141f5ffc01ea09ecb7dba219c4fb5a3af22f",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 24
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/2026-10-15T12-01-39-614Z-capture.json.gz",

@@ -5462,7 +5462,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-47-58-136Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/2026-10-16T00-47-57-970Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2739371,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-47-33-465Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-47-58-136Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/2026-10-16T00-47-57-970Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-47-58-889Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-47-59-633Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-новая-збурьевка-kazan-center",
