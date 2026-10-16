@@ -18,8 +18,8 @@
 
 ## NEXT STARTED
 
-**Diagnose current ZSD scope using --diagnose before the nextcase**
+**ZSD nextcase single-zsd-peterhof-to-prim; --next; savedcapture twoofflineprofiles**
 
-ZSD review **68/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T17-06-19-283Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
+ZSD review **68/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T17-07-20-801Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
 Repository-owned utility: `node experiments/nationwide-tolls/scripts/review-zsd-finding-case.mjs --next` (or `--diagnose` after a new scope). One step only; caller commits/publishes/exacthead-tree before continuing. Do not rerun completed M4/policy/live queues. No main/merge/Production. Autocontinuation remains enabled.

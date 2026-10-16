@@ -1,1697 +1,25 @@
-# Ğ¢ĞµĞºÑƒÑ‰Ğ¸Ğ¹ Ñ€Ğ°Ğ±Ğ¾Ñ‡Ğ¸Ğ¹ Ğ¶ÑƒÑ€Ğ½Ğ°Ğ»
-
-ĞŸĞ¾Ğ»Ğ½Ğ°Ñ Ğ¿Ñ€ĞµĞ¶Ğ½ÑÑ Ğ¸ÑÑ‚Ğ¾Ñ€Ğ¸Ñ Ğ±ĞµĞ· Ğ¸Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ñ ÑĞ¾Ğ´ĞµÑ€Ğ¶Ğ°Ğ½Ğ¸Ñ: [WORK_LOG_HISTORY_2026-10-15_2228.md](WORK_LOG_HISTORY_2026-10-15_2228.md). ĞĞ¾Ğ²Ñ‹Ğµ Ğ·Ğ°Ğ¿Ğ¸ÑĞ¸ Ğ´Ğ¾Ğ±Ğ°Ğ²Ğ»ÑÑÑ‚ÑÑ Ğ½Ğ¸Ğ¶Ğµ; Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ğ¾ÑÑ‚Ğ¸ ĞºĞ°Ğ¶Ğ´Ğ¾Ğ³Ğ¾ Ğ¼Ğ°Ğ»Ğ¾Ğ³Ğ¾ ÑˆĞ°Ğ³Ğ° â€” Ğ² docs/checkpoints/.
-
-# Ğ’Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½Ğ¸Ğµ ÑÑ€ĞµĞ´Ñ‹ Ğ¿Ğ¾ÑĞ»Ğµ Ğ¿Ñ€ĞµÑ€Ñ‹Ğ²Ğ°Ğ½Ğ¸Ñ ÑĞ¾Ñ…Ñ€Ğ°Ğ½ĞµĞ½Ğ¸Ñ
-
-STARTED 2026-10-15T22:29:12.186127+03:00. Execcell36Ğ½ĞµĞ´Ğ¾ÑÑ‚ÑƒĞ¿ĞµĞ½, Ğ¿Ñ€ĞµĞ¶Ğ½ÑÑÑ€Ğ°Ğ±Ğ¾Ñ‡Ğ°ÑĞºĞ¾Ğ¿Ğ¸ÑĞ¸ÑÑ‡ĞµĞ·Ğ»Ğ°. Ğ¡Ğ¾Ğ·Ğ´Ğ°Ğ½Ğ½Ğ¾Ğ²Ñ‹Ğ¹clone Ñ€Ğ°Ğ±Ğ¾Ñ‡ĞµĞ¹Ğ²ĞµÑ‚ĞºĞ¸ fix/v3-missing-route-prices-2026-10-15 Ğ¸Ğ·GitHub. Remote/local97386e0ca063792f5c85e44dace2794964ed00f1,tree91d27d96a86735c7668926bb7d9709863142a325 ÑĞ²ĞµÑ€ĞµĞ½Ñ‹. ĞÑĞ½Ğ¾Ğ²Ğ½Ğ¾Ğ¹ĞºĞ¾Ğ´departurepolicy ÑĞ¾Ñ…Ñ€Ğ°Ğ½Ñ‘Ğ½. ĞŸĞ¾ÑĞ»ĞµĞ´Ğ½Ğ¸Ğ¹localc2acfe6/59PASSĞ½Ğµ Ğ´Ğ¾ÑˆÑ‘Ğ»Ğ´Ğ¾remote: Ğ¾ÑÑ‚Ğ°Ğ»Ğ°ÑÑŒÑÑ‚Ğ°Ñ€Ğ°ÑassertnullĞ´Ğ»ÑĞ¸Ğ·Ğ²ĞµÑÑ‚Ğ½Ğ¾Ğ¹Ğœ4+Ğ289ÑÑƒĞ¼Ğ¼Ñ‹1265; Ğ½Ğ¾Ğ²Ñ‹Ğ¹auditmarkerÑ‚Ğ°ĞºĞ¶ĞµĞ½ĞµÑĞ¾Ñ…Ñ€Ğ°Ğ½Ñ‘Ğ½. ĞĞµĞ¾Ğ±ÑŠÑĞ²Ğ»ÑÑ‚ÑŒĞ¿Ñ€ĞµĞ¶Ğ½Ğ¸Ğ¹59PASSĞ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½Ğ½Ñ‹Ğ¼Ğ±ĞµĞ·Ğ½Ğ¾Ğ²Ğ¾Ğ³Ğ¾Ğ·Ğ°Ğ¿ÑƒÑĞºĞ°.
-
-ĞšĞ°Ñ‚Ğ°Ğ»Ğ¾Ğ³Ğ¸node_modules Ğ´Ñ€ÑƒĞ³Ğ¸Ñ…ÑÑ‚Ğ°Ñ€Ñ‹Ñ…ĞºĞ¾Ğ¿Ğ¸Ğ¹ Ğ½Ğµ ÑĞ¾Ğ´ĞµÑ€Ğ¶Ğ°Ñ‚Ğ´Ğ¾ÑÑ‚ÑƒĞ¿Ğ½Ğ¾Ğ³Ğ¾next; Ğ½ÑƒĞ¶Ğ½Ñ‹Ğ·Ğ°Ğ²Ğ¸ÑĞ¸Ğ¼Ğ¾ÑÑ‚Ğ¸. NEXT: pnpm install --frozen-lockfile,stdout docs/checkpoints/evidence/2026-10-15-resume-departure-install.log; Ğ·Ğ°Ñ‚ĞµĞ¼ÑĞ¾Ñ…Ñ€Ğ°Ğ½Ğ¸Ñ‚ÑŒÑ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚. ĞŸĞ¾ÑĞ»Ğµinstall Ğ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ¸Ñ‚ÑŒĞ´Ğ²Ğ°Ğ¸Ğ·Ğ²ĞµÑÑ‚Ğ½Ñ‹Ñ…Ğ¼Ğ°Ğ»Ñ‹Ñ…Ğ¸Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ñ Ğ¸focused59,Ğ¾Ñ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹checkpoint; Ğ¿Ğ¾Ñ‚Ğ¾Ğ¼fullbuild/replay/liveĞ‘Ğ°Ñ…Ğ¼ÑƒÑ‚â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ.
-
-Ğ”Ğ»ÑÑƒĞ¼ĞµĞ½ÑŒÑˆĞµĞ½Ğ¸ÑĞ¾Ğ±ÑŠÑ‘Ğ¼Ğ°ĞºĞ°Ğ¶Ğ´Ğ¾Ğ³Ğ¾ÑĞ¾Ñ…Ñ€Ğ°Ğ½ĞµĞ½Ğ¸Ñ Ğ±Ğ¾Ğ»ÑŒÑˆĞ¾Ğ¹WORK_LOGĞ¸NEXT_STEPSĞ¿ĞµÑ€ĞµĞ½ĞµÑĞµĞ½Ñ‹Ğ±ĞµĞ·Ğ¸Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸ÑĞ±Ğ°Ğ¹Ñ‚Ğ¾Ğ²Ğ²*_HISTORY_2026-10-15_2228.md. ĞĞ¾Ğ²Ñ‹ĞµĞ¸Ğ½Ğ´ĞµĞºÑÑ‹ÑĞ¾Ğ´ĞµÑ€Ğ¶Ğ°Ñ‚Ğ¿Ñ€ÑĞ¼Ñ‹ĞµÑÑÑ‹Ğ»ĞºĞ¸; Ğ¸ÑÑ‚Ğ¾Ñ€Ğ¸ÑĞ½ĞµÑƒĞ´Ğ°Ğ»ĞµĞ½Ğ°/Ğ½ĞµĞ¿ĞµÑ€ĞµĞ¿Ğ¸ÑĞ°Ğ½Ğ°, Ğ´Ğ°Ğ»ÑŒĞ½ĞµĞ¹ÑˆĞ¸ĞµĞ·Ğ°Ğ¿Ğ¸ÑĞ¸appendĞ²ĞºĞ¾Ñ€Ğ¾Ñ‚ĞºĞ¸Ğ¹WORK_LOG. Ğ­Ñ‚Ğ¾ÑƒÑÑ‚Ñ€Ğ°Ğ½ÑĞµÑ‚Ğ¿Ğ¾Ğ²Ñ‚Ğ¾Ñ€Ğ½ÑƒÑĞ¿ĞµÑ€ĞµĞ´Ğ°Ñ‡ÑƒÑĞ¾Ñ‚ĞµĞ½Ñ‚Ñ‹ÑÑÑ‡Ğ±Ğ°Ğ¹Ñ‚Ğ¾Ğ²Ğ¿Ñ€Ğ¸ĞºĞ°Ğ¶Ğ´Ğ¾Ğ¼checkpoint. ĞÑ€Ñ‚ĞµÑ„Ğ°ĞºÑ‚Ñ‹/ĞºĞ¾Ğ´Ğ¿Ñ€ĞµĞ¶Ğ½Ğ¸Ñ…ÑˆĞ°Ğ³Ğ¾Ğ²Ğ¾ÑÑ‚Ğ°ÑÑ‚ÑÑĞ´Ğ¾ÑÑ‚Ğ¸Ğ¶Ğ¸Ğ¼Ñ‹Ğ¼Ğ¸Ğ²GitHub.
-
-ĞĞ¾Ğ²Ñ‹Ñ…Ñ‚ĞµÑÑ‚Ğ¾Ğ²/buildĞµÑ‰Ñ‘Ğ½ĞµÑ‚; Production/Android/mergeĞ½ĞµÑ‚. ĞÑƒĞ´Ğ¸Ñ‚8/155,40rawOD/39originalcomplete, Ñ‚Ğ°Ñ€Ğ¸Ñ„Ñ‹Ğ´Ğ¾ÑĞ¼ĞµĞ½Ñ‹Ğ¿Ğ¾Ğ»Ğ¸Ñ‚Ğ¸ĞºĞ¸Ğ¸ÑÑ‚Ğ¾Ñ€Ğ¸Ñ‡ĞµÑĞºĞ¸Ğµ. ĞœĞµĞ¶Ğ´Ğ¾Ñ€Ğ¾Ğ¶Ğ½Ñ‹ĞµĞ²ĞµĞºÑ‚Ğ¾Ñ€Ñ‹Ğ¾Ñ‚Ğ»Ğ¾Ğ¶ĞµĞ½Ñ‹; Ğ½Ğ¾Ğ²Ğ¾Ğµdeparturepolicy21:48 Ğ´ĞµĞ¹ÑÑ‚Ğ²ÑƒĞµÑ‚.
-
-
-# Ğ—Ğ°Ğ²Ğ¸ÑĞ¸Ğ¼Ğ¾ÑÑ‚Ğ¸ Ğ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½Ñ‹
-
-DONE 2026-10-15T22:30:22.511770+03:00, remote5d2dcf1f0b092231f6d223586842e5eb134ac434/tree4c1437636a4b0ae48488d13d60114ecf6778c94a Ğ¿Ğ¾Ğ´Ñ‚Ğ²ĞµÑ€Ğ¶Ğ´ĞµĞ½Ñ‹. pnpm install --frozen-lockfile exit0; stdout docs/checkpoints/evidence/2026-10-15-resume-departure-install.log. LockfileĞ½ĞµĞ¸Ğ·Ğ¼ĞµĞ½Ñ‘Ğ½, Ğ½Ğ¾Ğ²Ñ‹Ñ…runtimeÑ‚ĞµÑÑ‚Ğ¾Ğ²ĞµÑ‰Ñ‘Ğ½ĞµÑ‚.
-
-NEXT/STARTED: Ğ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ¸Ñ‚ÑŒĞ½ĞµĞ·Ğ°ĞºÑ€ĞµĞ¿Ğ»Ñ‘Ğ½Ğ½Ñ‹ĞµĞ¿Ğ¾ÑĞ»ĞµĞ´Ğ½Ğ¸ĞµĞ¿Ñ€Ğ°Ğ²ĞºĞ¸assert1265+missingM4guardĞ¸auditmarkertrip-departure-v1; Ğ²Ñ‹Ğ¿Ğ¾Ğ»Ğ½Ğ¸Ñ‚ÑŒexpandedfocused8Ñ„Ğ°Ğ¹Ğ»Ğ¾Ğ² Ğ·Ğ°Ğ½Ğ¾Ğ²Ğ¾,ÑĞ¾Ñ…Ñ€Ğ°Ğ½Ğ¸Ñ‚ÑŒĞ»Ğ¾Ğ³/Ñ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚. Ğ—Ğ°Ñ‚ĞµĞ¼fullbuild/ESLint,offlineĞºĞ¾Ğ½Ñ‚Ñ€Ğ¾Ğ»ÑŒ,Ğ¿Ñ€Ğ¾Ğ´Ğ¾Ğ»Ğ¶ĞµĞ½Ğ¸ĞµĞ°ÑƒĞ´Ğ¸Ñ‚Ğ°. Ğ¡Ñ‚Ğ°Ñ€Ñ‹Ğ¹59PASSĞ½ĞµĞ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½Ğ¸Ğ·ÑÑ‹Ñ€Ğ¾Ğ³Ğ¾Ğ»Ğ¾Ğ³Ğ°Ğ¸ Ğ½ĞµĞ·Ğ°ÑÑ‡Ğ¸Ñ‚Ñ‹Ğ²Ğ°ĞµÑ‚ÑÑ Ğ·Ğ°Ğ½Ğ¾Ğ²Ğ¾. ĞœĞ°Ñ‚Ñ€Ğ¸Ñ‡Ğ½Ñ‹ĞµĞ´Ğ°Ğ½Ğ½Ñ‹Ğµ/Production/AndroidĞ±ĞµĞ·Ğ¸Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ğ¹.
-
-
-# Ğ’Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½Ğ½Ğ°Ñ Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞºĞ°59/59PASS, Ğ¿Ğ¾Ğ»Ğ½Ñ‹Ğ¹buildSTARTED
-
-DONE 2026-10-15T22:31:01.629582+03:00, parentremote740156474625283083b4e16f101af2be182a56d4. Ğ’Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½Ñ‹2Ğ¿Ğ¾Ñ‚ĞµÑ€ÑĞ½Ğ½Ñ‹Ñ…Ğ¸Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ñ: ÑĞ¾ÑÑ‚Ğ°Ğ²Ğ½Ğ°ÑĞœ4+Ğ289Ñ†ĞµĞ½Ğ°1265Ğ¸Ğ¾Ñ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹missingM4guard Ğ²v3-time-calendar-audit.test.ts; tariffPolicy trip-departure-v1/basisAt Ğ²Ğ½Ğ¾Ğ²Ñ‹Ñ…auditoutputs. ĞŸĞ¾Ğ²Ñ‚Ğ¾Ñ€node --import ./scripts/register-ts-paths.mjs --test8Ñ„Ğ°Ğ¹Ğ»Ğ¾Ğ²(Ğœ4/datecalendar/Ğœ11Ğ¦ĞšĞĞ”/Ğœ11products/Ğ—Ğ¡Ğ”/timecalendar/southern/availability) exit0,59/59PASS. ĞĞ¾Ğ²Ñ‹Ğ¹Ñ‚Ğ¾Ñ‡Ğ½Ñ‹Ğ¹stdout docs/checkpoints/evidence/2026-10-15-departure-policy-focused-resumed.log. Ğ­Ñ‚Ğ¾Ñ‚Ğ½Ğ¾Ğ²Ñ‹Ğ¹Ñ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚ÑĞ¾Ñ…Ñ€Ğ°Ğ½Ñ‘Ğ½,Ğ¿Ñ€ĞµĞ¶Ğ½Ğ¸Ğ¹ÑƒÑ‚Ñ€Ğ°Ñ‡ĞµĞ½Ğ½Ñ‹Ğ¹Ğ»Ğ¾Ğ³Ğ½ĞµĞ²Ñ‹Ğ´Ğ°Ñ‘Ñ‚ÑÑĞ·Ğ°Ğ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½Ğ½Ñ‹Ğ¹.
-
-STARTED: pnpm buildâ†’docs/checkpoints/evidence/2026-10-15-departure-policy-build-resumed.log; targetedESLintchangedfilesâ†’2026-10-15-departure-policy-eslint-resumed.log. ĞŸĞ¾ÑĞ»ĞµÑ„Ğ°ĞºÑ‚Ğ¸Ñ‡ĞµÑĞºĞ¾Ğ³Ğ¾Ñ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚Ğ°Ğ¾Ñ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹checkpoint/remote; Ğ·Ğ°Ñ‚ĞµĞ¼offlineĞ“ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµâ†’ĞœĞ¾ÑĞºĞ²Ğ°,liveĞ‘Ğ°Ñ…Ğ¼ÑƒÑ‚â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ. Production/Android/mergeĞ½ĞµÑ‚.
-
-
-2026-10-16 00:02 ĞœĞ¡Ğš â€” STARTED: [Ğ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½Ğ¸Ğµ Ğ¸ Ğ¿Ğ¾Ğ»Ğ½Ñ‹Ğ¹ gate](../../docs/checkpoints/2026-10-16-0002-resume-build.md). Ğ˜ÑÑ…Ğ¾Ğ´Ğ½Ñ‹Ğ¹ remote 87419cc; Ğ½Ğ¾Ğ²Ğ¾Ğ³Ğ¾ Ñ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚Ğ° ÑĞ±Ğ¾Ñ€ĞºĞ¸ ĞµÑ‰Ñ‘ Ğ½ĞµÑ‚.
-
-
-BLOCKED: Ğ°Ğ²Ñ‚Ğ¾Ğ¼Ğ°Ñ‚Ğ¸Ñ‡ĞµÑĞºĞ°Ñ Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞºĞ° Ğ¾Ñ‚ĞºĞ»Ğ¾Ğ½Ğ¸Ğ»Ğ° Ğ¾Ğ±Ğµ Ğ¿Ğ¾Ğ¿Ñ‹Ñ‚ĞºĞ¸ push. Ğ¡ÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒÑÑ‰Ğ¸Ğ¹ remote DECISIONS Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞµĞ½, Ğ½Ğ¾ Ñ€Ğ°Ğ·Ñ€ĞµÑˆĞµĞ½Ğ¸Ğµ Ğ²Ğ½ÑƒÑ‚Ñ€Ğ¸ Ñ€ĞµĞ¿Ğ¾Ğ·Ğ¸Ñ‚Ğ¾Ñ€Ğ¸Ñ Ğ½Ğµ Ğ¿Ñ€Ğ¸Ğ½ÑÑ‚Ğ¾ Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞºĞ¾Ğ¹. ĞŸĞ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ğ¾ÑÑ‚Ğ¸: [checkpoint](../../docs/checkpoints/2026-10-16-0006-github-save-blocked.md). ĞĞ¾Ğ²Ñ‹Ñ… Ñ‚ĞµÑÑ‚Ğ¾Ğ²/build Ğ½ĞµÑ‚; Ğ»Ğ¾ĞºĞ°Ğ»ÑŒĞ½Ñ‹Ğµ Ğ¸Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ñ Ğ½Ğµ Ğ¾Ğ¿ÑƒĞ±Ğ»Ğ¸ĞºĞ¾Ğ²Ğ°Ğ½Ñ‹.
-
-
-2026-10-16 00:08 ĞœĞ¡Ğš: Ğ¿Ñ€ÑĞ¼Ğ¾Ğµ Ñ€Ğ°Ğ·Ñ€ĞµÑˆĞµĞ½Ğ¸Ğµ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ Ğ² Ñ‚ĞµĞºÑƒÑ‰ĞµĞ¼ Ñ‡Ğ°Ñ‚Ğµ Ğ¿Ğ¾Ğ»ÑƒÑ‡ĞµĞ½Ğ¾, approval blocker ÑĞ½ÑÑ‚. CLI push Ğ½Ğµ Ğ¸Ğ¼ĞµĞµÑ‚ credentials (exit128). STARTED connector save/readback, Ğ·Ğ°Ñ‚ĞµĞ¼ frozen install/full build. [Checkpoint](../../docs/checkpoints/2026-10-16-0008-save-authorized.md).
-
-
-2026-10-16: frozen install PASS/exit0; Ğ¿Ğ¾Ğ»Ğ½Ñ‹Ğ¹ build STARTED. [Checkpoint](../../docs/checkpoints/2026-10-16-0014-install-pass-build-started.md).
-
-
-2026-10-16 DONE: Ğ½Ğ¾Ğ²Ñ‹Ğ¹ Ğ¿Ğ¾Ğ»Ğ½Ñ‹Ğ¹ pnpm build exit0, 658/658 tests, quote/API/Next/TypeScript/static16/16 PASS. [Checkpoint](../../docs/checkpoints/2026-10-16-build-pass.md). NEXT targeted ESLint/diff, Ğ·Ğ°Ñ‚ĞµĞ¼ offline Ğ“ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ.
-
-
-2026-10-16 DONE: targeted ESLint18 Ñ„Ğ°Ğ¹Ğ»Ğ¾Ğ² Ğ¸ diff check exit0. STARTED offline Ğ“ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµâ†’ĞœĞ¾ÑĞºĞ²Ğ° Ñ‡ĞµÑ‚Ğ²ĞµÑ€Ğ³/ÑÑƒĞ±Ğ±Ğ¾Ñ‚Ğ°. [Checkpoint](../../docs/checkpoints/2026-10-16-eslint-pass-replay-started.md).
-
-
-2026-10-16 DONE: Ğ“ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµâ†’ĞœĞ¾ÑĞºĞ²Ğ° offline3810â‚½(Ñ‡ĞµÑ‚Ğ²ĞµÑ€Ğ³)/4640â‚½(ÑÑƒĞ±Ğ±Ğ¾Ñ‚Ğ°), Ğ¾Ğ±Ğ° replay complete/exit0. STARTED live Ğ‘Ğ°Ñ…Ğ¼ÑƒÑ‚â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ. [Checkpoint](../../docs/checkpoints/2026-10-16-huliaipole-replay-pass.md).
-
-
-2026-10-16 BLOCKED: live Ğ‘Ğ°Ñ…Ğ¼ÑƒÑ‚â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ Ğ¾Ñ‚ĞºĞ»Ğ¾Ğ½Ñ‘Ğ½ Ğ°Ğ²Ñ‚Ğ¾Ğ¼Ğ°Ñ‚Ğ¸Ñ‡ĞµÑĞºĞ¾Ğ¹ Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞºĞ¾Ğ¹ â€” Ñ€Ğ°Ğ·Ñ€ĞµÑˆĞµĞ½Ğ¸Ğµ Ğ½Ğ° Ğ¼Ğ°Ñ€ÑˆÑ€ÑƒÑ‚Ğ½Ñ‹Ğµ Ğ´Ğ°Ğ½Ğ½Ñ‹Ğµ Ğ² Valhalla/OSRM/BRouter Ñ‚Ñ€ĞµĞ±ÑƒĞµÑ‚ÑÑ Ğ¿Ñ€ÑĞ¼Ğ¾ Ğ² Ñ‚ĞµĞºÑƒÑ‰ĞµĞ¼ Ñ‡Ğ°Ñ‚Ğµ; ÑĞ²ĞµĞ´ĞµĞ½Ğ¸Ñ Ğ¾ consent Ğ²Ğ½ÑƒÑ‚Ñ€Ğ¸ Ñ€ĞµĞ¿Ğ¾Ğ·Ğ¸Ñ‚Ğ¾Ñ€Ğ¸Ñ Ğ½Ğµ Ğ¿Ñ€Ğ¸Ğ½ÑÑ‚Ñ‹. Live capture Ğ¾Ñ‚ÑÑƒÑ‚ÑÑ‚Ğ²ÑƒĞµÑ‚, case planned,8/155 Ğ½Ğµ Ğ¼ĞµĞ½ÑĞµÑ‚ÑÑ. [ĞŸĞ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ğ¾ÑÑ‚Ğ¸](../../docs/checkpoints/2026-10-16-routing-approval-blocked.md). ĞĞµ Ğ¿Ğ¾Ğ²Ñ‚Ğ¾Ñ€ÑÑ‚ÑŒ Ğ¿ĞµÑ€ĞµĞ´Ğ°Ñ‡Ñƒ Ğ´Ğ¾ Ğ¾Ñ‚Ğ²ĞµÑ‚Ğ° Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ.
-
-
-2026-10-16 01:17 ĞœĞ¡Ğš: Ğ¿Ñ€ÑĞ¼Ğ¾Ğµ Ñ€Ğ°Ğ·Ñ€ĞµÑˆĞµĞ½Ğ¸Ğµ Ğ¿ĞµÑ€ĞµĞ´Ğ°Ñ‡Ğ¸ ĞºĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚/Ğ¼Ğ°Ñ€ÑˆÑ€ÑƒÑ‚Ğ½Ñ‹Ñ… Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ğ¾Ğ² Valhalla/OSRM/BRouter Ğ¿Ğ¾Ğ»ÑƒÑ‡ĞµĞ½Ğ¾ Ğ² Ñ‚ĞµĞºÑƒÑ‰ĞµĞ¼ Ñ‡Ğ°Ñ‚Ğµ (Â«Ğ Ğ°Ğ·Ñ€ĞµÑˆĞ°Ñ Ğ´Ğ¾ÑÑ‚ÑƒĞ¿Â»). Approval blocker ÑĞ½ÑÑ‚. STARTED live Ğ‘Ğ°Ñ…Ğ¼ÑƒÑ‚â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ. [Checkpoint](../../docs/checkpoints/2026-10-16-0117-routing-authorized-started.md).
-
-
-2026-10-16 01:18ĞœĞ¡Ğš DONE: live Ğ‘Ğ°Ñ…Ğ¼ÑƒÑ‚â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ OSRM1452.489ĞºĞ¼/83339Ñ, traceComplete, Ğœ12=850â‚½. Corpus live-captured; STARTED same-date/weekend replay. [Checkpoint](../../docs/checkpoints/2026-10-16-bakhmut-kazan-live-pass.md).
-
-
-2026-10-16 DONE: Ğ‘Ğ°Ñ…Ğ¼ÑƒÑ‚â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ audited, same-date parity/Ğ¾Ğ±Ğ° replay complete,850/850â‚½; stage1=9/155. STARTED report/inventory. [Checkpoint](../../docs/checkpoints/2026-10-16-bakhmut-kazan-replay-pass.md).
-
-
-2026-10-16: report/inventory exit0,raw43/41OD/40Ğ¿Ğ¾Ğ»Ğ½Ñ‹Ñ…/0Ğ¿Ğ¾Ğ²Ñ€ĞµĞ¶Ğ´ĞµĞ½Ğ¸Ğ¹; stage1=9/155. STARTED single-case batch Ğ‘Ğ°Ñ…Ğ¼ÑƒÑ‚â†’ĞšĞµÑ€Ñ‡ÑŒ. [ĞŸĞ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ğ¾ÑÑ‚Ğ¸](../../docs/checkpoints/2026-10-16-report-inventory-bakhmut-kazan.md).
-
-
-2026-10-16T01:22:32.681800+03:00: dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-kerch-center audited, commandexit0,stage1=10/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-012232-dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-kerch-center-audit.md). NEXT dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-moscow-center.
-
-
-2026-10-16T01:24:52.444807+03:00: dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-moscow-center audited, commandexit0,stage1=11/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-012452-dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-moscow-center-audit.md). NEXT dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-saint-petersburg-center.
-
-
-2026-10-16T01:26:09.407653+03:00: dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-saint-petersburg-center audited, commandexit0,stage1=12/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-012609-dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-saint-petersburg-center-audit.md). NEXT dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-kazan-center.
-
-
-2026-10-16T01:27:23.331643+03:00: dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-kazan-center audited, commandexit0,stage1=13/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-012723-dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-kazan-center-audit.md). NEXT dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-kerch-center.
-
-
-2026-10-16T01:28:30.254638+03:00: dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-kerch-center audited, commandexit0,stage1=14/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-012830-dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-kerch-center-audit.md). NEXT dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-moscow-center.
-
-
-2026-10-16T01:29:28.936436+03:00: dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-moscow-center audited, commandexit0,stage1=15/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-012928-dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-moscow-center-audit.md). NEXT dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-saint-petersburg-center.
-
-
-2026-10-16T01:30:38.557711+03:00: dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-saint-petersburg-center audited, commandexit0,stage1=16/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-013038-dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-saint-petersburg-center-audit.md). NEXT dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-kazan-center.
-
-
-2026-10-16T01:31:43.598269+03:00: dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-kazan-center audited, commandexit0,stage1=17/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-013143-dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-kazan-center-audit.md). NEXT dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-kerch-center.
-
-
-2026-10-16T01:32:48.956437+03:00: dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-kerch-center audited, commandexit0,stage1=18/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-013248-dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-kerch-center-audit.md). NEXT dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-moscow-center.
-
-
-2026-10-16T01:34:07.515381+03:00: dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-moscow-center audited, commandexit0,stage1=19/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-013407-dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-moscow-center-audit.md). NEXT dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-saint-petersburg-center.
-
-
-2026-10-16T01:35:10.037288+03:00: dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-saint-petersburg-center audited, commandexit0,stage1=20/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-013510-dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-saint-petersburg-center-audit.md). NEXT dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-kazan-center.
-
-
-2026-10-16T01:36:22.441996+03:00: dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-kazan-center audited, commandexit0,stage1=21/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-013622-dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-kazan-center-audit.md). NEXT dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-kerch-center.
-
-
-2026-10-16T01:37:29.321891+03:00: dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-kerch-center audited, commandexit0,stage1=22/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-013729-dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-kerch-center-audit.md). NEXT dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-moscow-center.
-
-
-2026-10-16T01:58:29.418256+03:00: dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-moscow-center audited, commandexit0,stage1=23/155. Report/inventory exit0. [ĞÑ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½Ñ‹Ğ¹ checkpoint](../../docs/checkpoints/2026-10-16-015829-dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-moscow-center-audit.md). NEXT kherson-Ğ°ÑĞºĞ°Ğ½Ğ¸Ñ-Ğ½Ğ¾Ğ²Ğ°-kazan-center.
-
-
-2026-10-16T02:09:14.454441+03:00: Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑŒ Ğ¸Ğ·Ğ¼ĞµĞ½Ğ¸Ğ» Ğ¿Ğ¾Ñ€ÑĞ´Ğ¾Ğº Ğ½Ğ° 20 Ğ½ĞµĞ±Ğ¾Ğ»ÑŒÑˆĞ¸Ñ… Ñ‡Ğ°ÑÑ‚ĞµĞ¹ Ñ Ğ¾Ñ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¼Ğ¸ Ğ·Ğ°Ğ¿ÑƒÑĞºĞ°Ğ¼Ğ¸. Ğ§Ğ°ÑÑ‚ÑŒ1 DONE; Ñ‡Ğ°ÑÑ‚ÑŒ2 NEXT. [ĞŸĞ»Ğ°Ğ½](SMALL_PARTS_PLAN.md), [checkpoint](../../docs/checkpoints/2026-10-16-small-parts-01.md). Ğ¡Ñ‡Ñ‘Ñ‚Ñ‡Ğ¸Ğº Ğ½Ğµ Ğ¿Ğ¾Ğ²Ñ‹ÑˆĞµĞ½, Ğ½Ğ¾Ğ²Ñ‹Ğµ Ğ¼Ğ°Ñ€ÑˆÑ€ÑƒÑ‚Ñ‹/ÑĞ±Ğ¾Ñ€ĞºĞ° Ğ½Ğµ Ğ·Ğ°Ğ¿ÑƒÑĞºĞ°Ğ»Ğ¸ÑÑŒ.
-
-
-16.10.2026 02:12 ĞœĞ¡Ğš: Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑŒ Ğ¿Ğ¾Ñ€ÑƒÑ‡Ğ¸Ğ» Ğ°Ğ²Ñ‚Ğ¾Ğ¼Ğ°Ñ‚Ğ¸Ñ‡ĞµÑĞºĞ¾Ğµ Ğ¿Ğ¾ÑĞ»ĞµĞ´Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑŒĞ½Ğ¾Ğµ Ğ²Ñ‹Ğ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ¸Ğµ Ğ²ÑĞµÑ… Ñ‡Ğ°ÑÑ‚ĞµĞ¹ Ğ±ĞµĞ· Ğ¾Ğ¶Ğ¸Ğ´Ğ°Ğ½Ğ¸Ñ ĞºĞ¾Ğ¼Ğ°Ğ½Ğ´Ñ‹ Â«Ğ´Ğ°Ğ»ÑŒÑˆĞµÂ». Ğ§Ğ°ÑÑ‚ÑŒ2 STARTED: [checkpoint](../../docs/checkpoints/2026-10-16-small-parts-02-started.md). ĞŸĞµÑ€ĞµÑ…Ğ¾Ğ´Ğ¸Ñ‚ÑŒ Ğ´Ğ°Ğ»ÑŒÑˆĞµ Ğ¿Ğ¾ÑĞ»Ğµ Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞµĞ½Ğ½Ğ¾Ğ³Ğ¾ ÑĞ¾Ñ…Ñ€Ğ°Ğ½ĞµĞ½Ğ¸Ñ ĞºĞ°Ğ¶Ğ´Ğ¾Ğ³Ğ¾ Ğ¼Ğ°Ğ»Ğ¾Ğ³Ğ¾ Ğ¿Ğ¾Ğ´ÑˆĞ°Ğ³Ğ°.
-
-16.10.2026: Ñ‡Ğ°ÑÑ‚ÑŒ2 runner progress/heartbeat15s, default1; 3/3 tests PASS. Strict evidence stage1=23/155,stage2=0/154. Fullbuild STARTED. [Checkpoint](../../docs/checkpoints/2026-10-16-small-parts-02-runner.md).
-
-16.10.2026: Ñ‡Ğ°ÑÑ‚ÑŒ2 build FAILED(exit1): Turbopack Ğ¾Ñ‚Ğ²ĞµÑ€Ğ³ Ğ²Ğ½ĞµÑˆĞ½Ğ¸Ğ¹ symlink node_modules. STARTED Ğ»Ğ¾ĞºĞ°Ğ»ÑŒĞ½Ğ°Ñ ĞºĞ¾Ğ¿Ğ¸Ñ Ğ·Ğ°Ğ²Ğ¸ÑĞ¸Ğ¼Ğ¾ÑÑ‚ĞµĞ¹ Ğ¸ Ğ¿Ğ¾Ğ²Ñ‚Ğ¾Ñ€ build. ../../docs/checkpoints/2026-10-16-small-parts-02-build-failed.md.
-
-16.10.2026: Ñ‡Ğ°ÑÑ‚ÑŒ2 full build retry PASS661/661 + quote/API + Next/TypeScript/static16/16. Lint/diff STARTED. ../../docs/checkpoints/2026-10-16-small-parts-02-build-pass.md.
-
-16.10.2026: ESLint3/diff PASS; Ñ‡Ğ°ÑÑ‚ÑŒ2 DONE. Ğ§Ğ°ÑÑ‚ÑŒ3=19/19 Ğ¿Ğ¾ ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒÑÑ‰ĞµĞ¼Ñƒ evidence, DONE Ğ±ĞµĞ· Ğ¿Ğ¾Ğ²Ñ‚Ğ¾Ñ€Ğ¾Ğ². Ğ§Ğ°ÑÑ‚ÑŒ4=4/19, STARTED ĞÑĞºĞ°Ğ½Ğ¸Ñ-ĞĞ¾Ğ²Ğ°â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ. [Checkpoint](../../docs/checkpoints/2026-10-16-small-parts-02-done-04-started.md). ĞĞ²Ñ‚Ğ¾Ğ¼Ğ°Ñ‚Ğ¸Ñ‡ĞµÑĞºĞ¸ Ğ´Ğ°Ğ»ĞµĞµ Ğ¿Ğ¾ JSON Ğ¿Ğ¾ÑĞ»Ğµ durable-ÑĞ¾Ñ…Ñ€Ğ°Ğ½ĞµĞ½Ğ¸Ñ.
-
-16.10.2026: Ñ‡Ğ°ÑÑ‚ÑŒ4 ĞÑĞºĞ°Ğ½Ğ¸Ñ-ĞĞ¾Ğ²Ğ°â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ audited, stage1=24/155. Ğ˜Ñ‚Ğ¾Ğ³unknown: A289 exits unresolved; report/inventory exit0. NEXT STARTED ĞÑĞºĞ°Ğ½Ğ¸Ñ-ĞĞ¾Ğ²Ğ°â†’ĞšĞµÑ€Ñ‡ÑŒ single-case. [Checkpoint](../../docs/checkpoints/2026-10-16-small-parts-04-askania-kazan.md).
-
-2026-10-16T02:22:11.743397+03:00: Ñ‡Ğ°ÑÑ‚ÑŒ4,case=kherson-Ğ°ÑĞºĞ°Ğ½Ğ¸Ñ-Ğ½Ğ¾Ğ²Ğ°-kerch-center,audited,batch exit0,report/inventory[0, 0],stage=[25, 0]. Parenta2363425b89d5b10b004cb38dba99ae891ebc452; [checkpoint](../../docs/checkpoints/2026-10-15T23-21-53-548Z-part4.md). NEXTSTARTED Ñ‡Ğ°ÑÑ‚ÑŒ4: kherson-Ğ°ÑĞºĞ°Ğ½Ğ¸Ñ-Ğ½Ğ¾Ğ²Ğ°-moscow-center. No merge/Production.
-
-2026-10-16T02:25:46.348218+03:00: Ñ‡Ğ°ÑÑ‚ÑŒ4,case=kherson-Ğ°ÑĞºĞ°Ğ½Ğ¸Ñ-Ğ½Ğ¾Ğ²Ğ°-moscow-center,audited,batch exit0,report/inventory[0, 0],stage=[26, 0]. Parent5cbf1fdf9123ac17badb90fd484c6ea82f8ad4fb; [checkpoint](../../docs/checkpoints/2026-10-15T23-24-38-167Z-part4.md). NEXTSTARTED Ñ‡Ğ°ÑÑ‚ÑŒ4: kherson-Ğ°ÑĞºĞ°Ğ½Ğ¸Ñ-Ğ½Ğ¾Ğ²Ğ°-saint-petersburg-center. No merge/Production.
-
-2026-10-16T02:27:39.685785+03:00: Ñ‡Ğ°ÑÑ‚ÑŒ4,case=kherson-Ğ°ÑĞºĞ°Ğ½Ğ¸Ñ-Ğ½Ğ¾Ğ²Ğ°-saint-petersburg-center,audited,batch exit0,report/inventory[0, 0],stage=[27, 0]. Parent7af4d8eb507ac5cfb8d644dc0642346ff04ac7a8; [checkpoint](../../docs/checkpoints/2026-10-15T23-26-39-527Z-part4.md). NEXTSTARTED Ñ‡Ğ°ÑÑ‚ÑŒ4: kherson-Ğ³ĞµĞ½Ğ¸Ñ‡ĞµÑĞº-kazan-center. No merge/Production.
-
-16.10.2026 STARTED: Ğ°Ğ²Ñ‚Ğ¾Ğ½Ğ¾Ğ¼Ğ½Ğ¾Ğµ Ğ¿Ğ¾ÑĞ»ĞµĞ´Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑŒĞ½Ğ¾Ğµ Ğ¸ÑĞ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ¸Ğµ Ñ‡ĞµÑ€ĞµĞ· GitHubActions, Ğ¿Ğ¾1case Ñ durable STARTED/DONE. Ğ’Ñ…Ğ¾Ğ´Ñ‹/Ğ¾Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‡ĞµĞ½Ğ¸Ñ: ../../docs/checkpoints/2026-10-16-automatic-queue-started.md. Ğ¡Ğ½Ğ°Ñ‡Ğ°Ğ»Ğ° tests/build/lint; Ğ´Ğ°Ğ»ĞµĞµ Ğ²Ğ¾Ğ·Ğ²Ñ€Ğ°Ñ‰ĞµĞ½Ğ¸Ğµ Ğº Ñ‡Ğ°ÑÑ‚Ğ¸4.
-
-16.10.2026: autonomous runner/progress checkpoint implemented, focused14/14PASS. Workflow Ğ½Ğµ Ğ²ĞºĞ»ÑÑ‡Ñ‘Ğ½. Fullbuild STARTED, Ğ»Ğ¾Ğ³ evidence/2026-10-16-auto-queue-build.log. ../../docs/checkpoints/2026-10-16-automatic-queue-focused-pass.md.
-
-16.10.2026: automaticqueue fullbuild666/666+quote/API+Next/TypeScript/static16/16PASS; lint/YAML STARTED. ../../docs/checkpoints/2026-10-16-automatic-queue-build-pass.md.
-
-16.10.2026: automaticqueue workflow enabled after focused14/full666/lint4/YAML/diffPASS. Ğ¡Ğ»ĞµĞ´ÑƒÑÑ‰ĞµĞµ Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€Ğ¸Ñ‚ÑŒ actualrun Ñ‡ĞµÑ€ĞµĞ·GitHubAPI, Ğ·Ğ°Ñ‚ĞµĞ¼ Ğ½Ğµ Ğ¿Ğ¸ÑĞ°Ñ‚ÑŒĞ¿Ñ€Ğ¸activejob. [Checkpoint](../../docs/checkpoints/2026-10-16-automatic-queue-enabled.md). Baseline27/155,0/154; Ñ‡Ğ°ÑÑ‚Ğ¸19â€“20 Ğ½Ğµ Ğ²Ñ‹Ğ¿Ğ¾Ğ»Ğ½ĞµĞ½Ñ‹.
-
-16.10.2026: Actions Ğ¿ĞµÑ€Ğ²Ñ‹Ğ¹job failed Ğ´Ğ¾case Ğ¸Ğ·-Ğ·Ğ° trailingwhitespaceĞ²Ğ½Ğ¾Ğ²Ğ¾Ğ¼logformatter; GitHubgate666PASS. STARTED formatterfix/fullgate/rerun. HourlycontinuationpausedĞ´Ğ¾Ğ¸ÑĞ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½Ğ¸Ñ. ../../docs/checkpoints/2026-10-16-automatic-queue-first-job-failed.md.
-
-16.10.2026: checkpointformatter Ğ¸ÑĞ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½, focused15/15PASS; fullgate STARTED, Ğ·Ğ°Ñ‚ĞµĞ¼ lint/rerunjob. ../../docs/checkpoints/2026-10-16-automatic-queue-log-fix.md.
-
-16.10.2026: formatterfix fullgate667/667PASS; lint2/diff STARTED. ../../docs/checkpoints/2026-10-16-automatic-queue-log-fix-build-pass.md.
-
-16.10.2026: lint2/diffPASS; full667PASS; STARTED rerunjob116728494584, latestbranch. ĞŸĞ¾ÑĞ»ĞµÑÑ‚Ğ°Ñ€Ñ‚Ğ° Ğ½Ğµ Ğ¿Ğ¸ÑĞ°Ñ‚ÑŒĞ¿Ğ°Ñ€Ğ°Ğ»Ğ»ĞµĞ»ÑŒĞ½Ğ¾. [Checkpoint](../../docs/checkpoints/2026-10-16-automatic-queue-log-fix-ready.md).
-
-2026-10-15T23:40:33.905Z: automatic queue STARTED; 27/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-40-33-905Z-started.json). kherson-Ğ³ĞµĞ½Ğ¸Ñ‡ĞµÑĞº-kazan-center
-
-2026-10-15T23:41:04.596Z: automatic queue DONE; 28/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-04-596Z-done.json). kherson-Ğ³ĞµĞ½Ğ¸Ñ‡ĞµÑĞº-kazan-center
-
-2026-10-15T23:41:07.612Z: automatic queue STARTED; 28/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-07-612Z-started.json). kherson-Ğ³ĞµĞ½Ğ¸Ñ‡ĞµÑĞº-kerch-center
-
-2026-10-15T23:41:19.772Z: automatic queue DONE; 29/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-19-772Z-done.json). kherson-Ğ³ĞµĞ½Ğ¸Ñ‡ĞµÑĞº-kerch-center
-
-2026-10-15T23:41:22.289Z: automatic queue STARTED; 29/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-22-289Z-started.json). kherson-Ğ³ĞµĞ½Ğ¸Ñ‡ĞµÑĞº-moscow-center
-
-2026-10-15T23:41:46.556Z: automatic queue DONE; 30/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-46-556Z-done.json). kherson-Ğ³ĞµĞ½Ğ¸Ñ‡ĞµÑĞº-moscow-center
-
-2026-10-15T23:41:49.369Z: automatic queue STARTED; 30/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-49-369Z-started.json). kherson-Ğ³ĞµĞ½Ğ¸Ñ‡ĞµÑĞº-saint-petersburg-center
-
-2026-10-15T23:42:23.746Z: automatic queue DONE; 31/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-42-23-746Z-done.json). kherson-Ğ³ĞµĞ½Ğ¸Ñ‡ĞµÑĞº-saint-petersburg-center
-
-2026-10-15T23:42:26.758Z: automatic queue STARTED; 31/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-42-26-758Z-started.json). kherson-ĞºĞ°Ñ…Ğ¾Ğ²ĞºĞ°-kazan-center
-
-2026-10-15T23:42:58.137Z: automatic queue DONE; 32/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-42-58-137Z-done.json). kherson-ĞºĞ°Ñ…Ğ¾Ğ²ĞºĞ°-kazan-center
-
-2026-10-15T23:43:01.052Z: automatic queue STARTED; 32/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-01-052Z-started.json). kherson-ĞºĞ°Ñ…Ğ¾Ğ²ĞºĞ°-kerch-center
-
-2026-10-15T23:43:13.981Z: automatic queue DONE; 33/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-13-981Z-done.json). kherson-ĞºĞ°Ñ…Ğ¾Ğ²ĞºĞ°-kerch-center
-
-2026-10-15T23:43:16.487Z: automatic queue STARTED; 33/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-16-487Z-started.json). kherson-ĞºĞ°Ñ…Ğ¾Ğ²ĞºĞ°-moscow-center
-
-2026-10-15T23:43:42.217Z: automatic queue DONE; 34/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-42-217Z-done.json). kherson-ĞºĞ°Ñ…Ğ¾Ğ²ĞºĞ°-moscow-center
-
-2026-10-15T23:43:45.038Z: automatic queue STARTED; 34/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-45-038Z-started.json). kherson-ĞºĞ°Ñ…Ğ¾Ğ²ĞºĞ°-saint-petersburg-center
-
-2026-10-15T23:44:20.843Z: automatic queue DONE; 35/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-20-843Z-done.json). kherson-ĞºĞ°Ñ…Ğ¾Ğ²ĞºĞ°-saint-petersburg-center
-
-2026-10-15T23:44:23.831Z: automatic queue STARTED; 35/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-23-831Z-started.json). kherson-Ğ½Ğ¾Ğ²Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-kazan-center
-
-2026-10-15T23:44:55.819Z: automatic queue DONE; 36/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-55-819Z-done.json). kherson-Ğ½Ğ¾Ğ²Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-kazan-center
-
-2026-10-15T23:44:59.259Z: automatic queue STARTED; 36/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-59-259Z-started.json). kherson-Ğ½Ğ¾Ğ²Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-kerch-center
-
-2026-10-15T23:45:12.468Z: automatic queue DONE; 37/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-45-12-468Z-done.json). kherson-Ğ½Ğ¾Ğ²Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-kerch-center
-
-2026-10-15T23:45:15.365Z: automatic queue STARTED; 37/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-45-15-365Z-started.json). kherson-Ğ½Ğ¾Ğ²Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-moscow-center
-
-2026-10-15T23:45:41.811Z: automatic queue DONE; 38/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-45-41-811Z-done.json). kherson-Ğ½Ğ¾Ğ²Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-moscow-center
-
-2026-10-15T23:45:44.855Z: automatic queue STARTED; 38/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-45-44-855Z-started.json). lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-kazan-center
-
-2026-10-15T23:46:08.515Z: automatic queue DONE; 39/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-08-515Z-done.json). lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-kazan-center
-
-2026-10-15T23:46:11.469Z: automatic queue STARTED; 39/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-11-469Z-started.json). lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-kerch-center
-
-2026-10-15T23:46:26.805Z: automatic queue DONE; 40/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-26-805Z-done.json). lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-kerch-center
-
-2026-10-15T23:46:29.515Z: automatic queue STARTED; 40/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-29-515Z-started.json). lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-moscow-center
-
-2026-10-15T23:46:48.189Z: automatic queue DONE; 41/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-48-189Z-done.json). lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-moscow-center
-
-2026-10-15T23:46:51.166Z: automatic queue STARTED; 41/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-51-166Z-started.json). lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-saint-petersburg-center
-
-2026-10-15T23:47:21.506Z: automatic queue DONE; 42/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-47-21-506Z-done.json). lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-saint-petersburg-center
-
-2026-10-15T23:47:24.743Z: automatic queue STARTED; 42/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-47-24-743Z-started.json). lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-kazan-center
-
-2026-10-15T23:47:49.399Z: automatic queue DONE; 43/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-47-49-399Z-done.json). lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-kazan-center
-
-2026-10-15T23:47:52.449Z: automatic queue STARTED; 43/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-47-52-449Z-started.json). lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-kerch-center
-
-2026-10-15T23:48:07.967Z: automatic queue DONE; 44/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-48-07-967Z-done.json). lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-kerch-center
-
-2026-10-15T23:48:10.725Z: automatic queue STARTED; 44/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-48-10-725Z-started.json). lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-moscow-center
-
-2026-10-15T23:48:29.934Z: automatic queue DONE; 45/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-48-29-934Z-done.json). lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-moscow-center
-
-2026-10-15T23:48:32.972Z: automatic queue STARTED; 45/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-48-32-972Z-started.json). lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-saint-petersburg-center
-
-2026-10-15T23:49:02.941Z: automatic queue DONE; 46/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-02-941Z-done.json). lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-saint-petersburg-center
-
-2026-10-15T23:49:06.684Z: automatic queue STARTED; 46/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-06-684Z-started.json). lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-kazan-center
-
-2026-10-15T23:49:30.303Z: automatic queue DONE; 47/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-30-303Z-done.json). lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-kazan-center
-
-2026-10-15T23:49:33.379Z: automatic queue STARTED; 47/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-33-379Z-started.json). lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-kerch-center
-
-2026-10-15T23:49:48.761Z: automatic queue DONE; 48/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-48-761Z-done.json). lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-kerch-center
-
-2026-10-15T23:49:51.662Z: automatic queue STARTED; 48/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-51-662Z-started.json). lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-moscow-center
-
-2026-10-15T23:50:11.104Z: automatic queue DONE; 49/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-50-11-104Z-done.json). lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-moscow-center
-
-2026-10-15T23:50:14.101Z: automatic queue STARTED; 49/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-50-14-101Z-started.json). lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-saint-petersburg-center
-
-2026-10-15T23:50:43.650Z: automatic queue DONE; 50/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-50-43-650Z-done.json). lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-saint-petersburg-center
-
-2026-10-15T23:50:46.902Z: automatic queue STARTED; 50/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-50-46-902Z-started.json). lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-kazan-center
-
-2026-10-15T23:51:09.610Z: automatic queue DONE; 51/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-09-610Z-done.json). lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-kazan-center
-
-2026-10-15T23:51:12.775Z: automatic queue STARTED; 51/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-12-775Z-started.json). lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-kerch-center
-
-2026-10-15T23:51:29.650Z: automatic queue DONE; 52/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-29-650Z-done.json). lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-kerch-center
-
-2026-10-15T23:51:32.507Z: automatic queue STARTED; 52/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-32-507Z-started.json). lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-moscow-center
-
-2026-10-15T23:51:50.024Z: automatic queue DONE; 53/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-50-024Z-done.json). lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-moscow-center
-
-2026-10-15T23:51:53.065Z: automatic queue STARTED; 53/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-53-065Z-started.json). lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-saint-petersburg-center
-
-2026-10-15T23:52:20.470Z: automatic queue DONE; 54/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-52-20-470Z-done.json). lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-saint-petersburg-center
-
-2026-10-15T23:52:23.549Z: automatic queue STARTED; 54/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-52-23-549Z-started.json). zaporizhzhia-Ğ±ĞµÑ€Ğ´ÑĞ½ÑĞº-kazan-center
-
-2026-10-15T23:52:57.567Z: automatic queue DONE; 55/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-52-57-567Z-done.json). zaporizhzhia-Ğ±ĞµÑ€Ğ´ÑĞ½ÑĞº-kazan-center
-
-2026-10-15T23:53:01.004Z: automatic queue STARTED; 55/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-01-004Z-started.json). zaporizhzhia-Ğ±ĞµÑ€Ğ´ÑĞ½ÑĞº-kerch-center
-
-2026-10-15T23:53:17.071Z: automatic queue DONE; 56/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-17-071Z-done.json). zaporizhzhia-Ğ±ĞµÑ€Ğ´ÑĞ½ÑĞº-kerch-center
-
-2026-10-15T23:53:19.996Z: automatic queue STARTED; 56/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-19-996Z-started.json). zaporizhzhia-Ğ±ĞµÑ€Ğ´ÑĞ½ÑĞº-moscow-center
-
-2026-10-15T23:53:48.804Z: automatic queue DONE; 57/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-48-804Z-done.json). zaporizhzhia-Ğ±ĞµÑ€Ğ´ÑĞ½ÑĞº-moscow-center
-
-2026-10-15T23:53:52.239Z: automatic queue STARTED; 57/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-52-239Z-started.json). zaporizhzhia-Ğ±ĞµÑ€Ğ´ÑĞ½ÑĞº-saint-petersburg-center
-
-2026-10-15T23:54:30.887Z: automatic queue DONE; 58/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-54-30-887Z-done.json). zaporizhzhia-Ğ±ĞµÑ€Ğ´ÑĞ½ÑĞº-saint-petersburg-center
-
-2026-10-15T23:54:34.353Z: automatic queue STARTED; 58/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-54-34-353Z-started.json). zaporizhzhia-Ğ²Ğ°ÑĞ¸Ğ»ÑŒĞµĞ²ĞºĞ°-kazan-center
-
-2026-10-15T23:55:08.986Z: automatic queue DONE; 59/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-55-08-986Z-done.json). zaporizhzhia-Ğ²Ğ°ÑĞ¸Ğ»ÑŒĞµĞ²ĞºĞ°-kazan-center
-
-2026-10-15T23:55:12.345Z: automatic queue STARTED; 59/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-55-12-345Z-started.json). zaporizhzhia-Ğ²Ğ°ÑĞ¸Ğ»ÑŒĞµĞ²ĞºĞ°-kerch-center
-
-2026-10-15T23:55:28.580Z: automatic queue DONE; 60/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-55-28-580Z-done.json). zaporizhzhia-Ğ²Ğ°ÑĞ¸Ğ»ÑŒĞµĞ²ĞºĞ°-kerch-center
-
-2026-10-15T23:55:31.606Z: automatic queue STARTED; 60/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-55-31-606Z-started.json). zaporizhzhia-Ğ²Ğ°ÑĞ¸Ğ»ÑŒĞµĞ²ĞºĞ°-moscow-center
-
-2026-10-15T23:56:00.813Z: automatic queue DONE; 61/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-56-00-813Z-done.json). zaporizhzhia-Ğ²Ğ°ÑĞ¸Ğ»ÑŒĞµĞ²ĞºĞ°-moscow-center
-
-2026-10-15T23:56:04.416Z: automatic queue STARTED; 61/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-56-04-416Z-started.json). zaporizhzhia-Ğ²Ğ°ÑĞ¸Ğ»ÑŒĞµĞ²ĞºĞ°-saint-petersburg-center
-
-2026-10-15T23:56:43.745Z: automatic queue DONE; 62/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-56-43-745Z-done.json). zaporizhzhia-Ğ²Ğ°ÑĞ¸Ğ»ÑŒĞµĞ²ĞºĞ°-saint-petersburg-center
-
-2026-10-15T23:56:47.333Z: automatic queue STARTED; 62/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-56-47-333Z-started.json). zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-kazan-center
-
-2026-10-15T23:57:18.299Z: automatic queue DONE; 63/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-57-18-299Z-done.json). zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-kazan-center
-
-2026-10-15T23:57:21.660Z: automatic queue STARTED; 63/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-57-21-660Z-started.json). zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-kerch-center
-
-2026-10-15T23:57:40.220Z: automatic queue DONE; 64/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-57-40-220Z-done.json). zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-kerch-center
-
-2026-10-15T23:57:43.287Z: automatic queue STARTED; 64/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-57-43-287Z-started.json). zaporizhzhia-ĞºÑƒÑˆÑƒĞ³ÑƒĞ¼-kazan-center
-
-2026-10-15T23:58:20.131Z: automatic queue DONE; 65/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-58-20-131Z-done.json). zaporizhzhia-ĞºÑƒÑˆÑƒĞ³ÑƒĞ¼-kazan-center
-
-2026-10-15T23:58:23.588Z: automatic queue STARTED; 65/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-58-23-588Z-started.json). max-chain-m12-ckad-m11-zsd-arzamas-to-prim
-
-2026-10-15T23:58:46.375Z: automatic queue DONE; 66/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-58-46-375Z-done.json). max-chain-m12-ckad-m11-zsd-arzamas-to-prim
-
-2026-10-15T23:58:49.671Z: automatic queue STARTED; 66/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-58-49-671Z-started.json). max-chain-m12-ckad-m11-zsd-kazan-to-sest
-
-2026-10-15T23:59:18.896Z: automatic queue DONE; 67/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-59-18-896Z-done.json). max-chain-m12-ckad-m11-zsd-kazan-to-sest
-
-2026-10-15T23:59:22.000Z: automatic queue STARTED; 67/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-59-22-000Z-started.json). max-chain-m12-ckad-m11-zsd-murom-to-sest
-
-2026-10-15T23:59:43.943Z: automatic queue DONE; 68/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-59-43-943Z-done.json). max-chain-m12-ckad-m11-zsd-murom-to-sest
-
-2026-10-15T23:59:47.109Z: automatic queue STARTED; 68/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-59-47-109Z-started.json). max-chain-m12-ckad-m11-zsd-sest-to-kazan
-
-2026-10-16T00:00:16.443Z: automatic queue DONE; 69/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-00-16-443Z-done.json). max-chain-m12-ckad-m11-zsd-sest-to-kazan
-
-2026-10-16T00:00:19.716Z: automatic queue STARTED; 69/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-00-19-716Z-started.json). max-chain-m12-ckad-m11-zsd-sest-to-murom
-
-2026-10-16T00:00:41.241Z: automatic queue DONE; 70/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-00-41-241Z-done.json). max-chain-m12-ckad-m11-zsd-sest-to-murom
-
-2026-10-16T00:00:44.484Z: automatic queue STARTED; 70/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-00-44-484Z-started.json). max-chain-m4-ckad-m11-zsd-krasnodar-to-sest
-
-2026-10-16T00:01:18.964Z: automatic queue DONE; 71/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-01-18-964Z-done.json). max-chain-m4-ckad-m11-zsd-krasnodar-to-sest
-
-2026-10-16T00:01:22.469Z: automatic queue STARTED; 71/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-01-22-469Z-started.json). max-chain-m4-ckad-m11-zsd-rostov-to-sest
-
-2026-10-16T00:01:54.934Z: automatic queue DONE; 72/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-01-54-934Z-done.json). max-chain-m4-ckad-m11-zsd-rostov-to-sest
-
-2026-10-16T00:01:58.481Z: automatic queue STARTED; 72/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-01-58-481Z-started.json). max-chain-m4-ckad-m11-zsd-sest-to-krasnodar
-
-2026-10-16T00:02:33.938Z: automatic queue DONE; 73/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-02-33-938Z-done.json). max-chain-m4-ckad-m11-zsd-sest-to-krasnodar
-
-2026-10-16T00:02:37.408Z: automatic queue STARTED; 73/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-02-37-408Z-started.json). max-chain-m4-ckad-m11-zsd-sest-to-rostov
-
-2026-10-16T00:03:09.731Z: automatic queue DONE; 74/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-03-09-731Z-done.json). max-chain-m4-ckad-m11-zsd-sest-to-rostov
-
-2026-10-16T00:03:13.205Z: automatic queue STARTED; 74/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-03-13-205Z-started.json). max-chain-m4-ckad-m11-zsd-voronezh-to-prim
-
-2026-10-16T00:03:38.150Z: automatic queue DONE; 75/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-03-38-150Z-done.json). max-chain-m4-ckad-m11-zsd-voronezh-to-prim
-
-2026-10-16T00:03:41.472Z: automatic queue STARTED; 75/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-03-41-472Z-started.json). pair-m11-ckad-domodedovo-to-spb
-
-2026-10-16T00:04:01.727Z: automatic queue DONE; 76/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-01-727Z-done.json). pair-m11-ckad-domodedovo-to-spb
-
-2026-10-16T00:04:05.018Z: automatic queue STARTED; 76/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-05-018Z-started.json). pair-m11-ckad-noginsk-to-spb
-
-2026-10-16T00:04:22.536Z: automatic queue DONE; 77/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-22-536Z-done.json). pair-m11-ckad-noginsk-to-spb
-
-2026-10-16T00:04:25.897Z: automatic queue STARTED; 77/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-25-897Z-started.json). pair-m11-ckad-spb-to-domodedovo
-
-2026-10-16T00:04:45.763Z: automatic queue DONE; 78/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-45-763Z-done.json). pair-m11-ckad-spb-to-domodedovo
-
-2026-10-16T00:04:48.931Z: automatic queue STARTED; 78/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-48-931Z-started.json). pair-m11-ckad-spb-to-noginsk
-
-2026-10-16T00:05:08.588Z: automatic queue DONE; 79/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-08-588Z-done.json). pair-m11-ckad-spb-to-noginsk
-
-2026-10-16T00:05:11.843Z: automatic queue STARTED; 79/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-11-843Z-started.json). pair-m11-ckad-torzhok-to-ramenskoe
-
-2026-10-16T00:05:30.318Z: automatic queue DONE; 80/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-30-318Z-done.json). pair-m11-ckad-torzhok-to-ramenskoe
-
-2026-10-16T00:05:33.477Z: automatic queue STARTED; 80/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-33-477Z-started.json). pair-m11-zsd-moscow-to-prim
-
-2026-10-16T00:05:53.489Z: automatic queue DONE; 81/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-53-489Z-done.json). pair-m11-zsd-moscow-to-prim
-
-2026-10-16T00:05:56.791Z: automatic queue STARTED; 81/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-56-791Z-started.json). pair-m11-zsd-moscow-to-sest
-
-2026-10-16T00:06:16.585Z: automatic queue DONE; 82/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-06-16-585Z-done.json). pair-m11-zsd-moscow-to-sest
-
-2026-10-16T00:06:19.793Z: automatic queue STARTED; 82/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-06-19-793Z-started.json). pair-m11-zsd-prim-to-moscow
-
-2026-10-16T00:06:39.445Z: automatic queue DONE; 83/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-06-39-445Z-done.json). pair-m11-zsd-prim-to-moscow
-
-2026-10-16T00:06:42.824Z: automatic queue STARTED; 83/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-06-42-824Z-started.json). pair-m11-zsd-sest-to-moscow
-
-2026-10-16T00:07:02.015Z: automatic queue DONE; 84/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-02-015Z-done.json). pair-m11-zsd-sest-to-moscow
-
-2026-10-16T00:07:05.302Z: automatic queue STARTED; 84/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-05-302Z-started.json). pair-m11-zsd-tver-to-sest
-
-2026-10-16T00:07:23.608Z: automatic queue DONE; 85/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-23-608Z-done.json). pair-m11-zsd-tver-to-sest
-
-2026-10-16T00:07:26.937Z: automatic queue STARTED; 85/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-26-937Z-started.json). pair-m12-ckad-dmitrov-to-kazan
-
-2026-10-16T00:07:48.677Z: automatic queue DONE; 86/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-48-677Z-done.json). pair-m12-ckad-dmitrov-to-kazan
-
-2026-10-16T00:07:52.201Z: automatic queue STARTED; 86/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-52-201Z-started.json). pair-m12-ckad-kazan-to-dmitrov
-
-2026-10-16T00:08:12.393Z: automatic queue DONE; 87/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-08-12-393Z-done.json). pair-m12-ckad-kazan-to-dmitrov
-
-2026-10-16T00:08:15.777Z: automatic queue STARTED; 87/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-08-15-777Z-started.json). pair-m12-ckad-kazan-to-klin
-
-2026-10-16T00:08:36.263Z: automatic queue DONE; 88/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-08-36-263Z-done.json). pair-m12-ckad-kazan-to-klin
-
-2026-10-16T00:08:39.658Z: automatic queue STARTED; 88/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-08-39-658Z-started.json). pair-m12-ckad-klin-to-kazan
-
-2026-10-16T00:09:02.707Z: automatic queue DONE; 89/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-02-707Z-done.json). pair-m12-ckad-klin-to-kazan
-
-2026-10-16T00:09:06.105Z: automatic queue STARTED; 89/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-06-105Z-started.json). pair-m12-ckad-vladimir-to-klin
-
-2026-10-16T00:09:24.022Z: automatic queue DONE; 90/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-24-022Z-done.json). pair-m12-ckad-vladimir-to-klin
-
-2026-10-16T00:09:27.508Z: automatic queue STARTED; 90/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-27-508Z-started.json). pair-m4-a289-kerch-to-rostov
-
-2026-10-16T00:09:46.074Z: automatic queue DONE; 91/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-46-074Z-done.json). pair-m4-a289-kerch-to-rostov
-
-2026-10-16T00:09:49.466Z: automatic queue STARTED; 91/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-49-466Z-started.json). pair-m4-a289-moscow-to-taman
-
-2026-10-16T00:10:21.709Z: automatic queue DONE; 92/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-10-21-709Z-done.json). pair-m4-a289-moscow-to-taman
-
-2026-10-16T00:10:25.320Z: automatic queue STARTED; 92/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-10-25-320Z-started.json). pair-m4-a289-rostov-to-kerch
-
-2026-10-16T00:10:43.932Z: automatic queue DONE; 93/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-10-43-932Z-done.json). pair-m4-a289-rostov-to-kerch
-
-2026-10-16T00:10:47.619Z: automatic queue STARTED; 93/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-10-47-619Z-started.json). pair-m4-a289-taman-to-voronezh
-
-2026-10-16T00:11:08.710Z: automatic queue DONE; 94/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-11-08-710Z-done.json). pair-m4-a289-taman-to-voronezh
-
-2026-10-16T00:11:12.322Z: automatic queue STARTED; 94/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-11-12-322Z-started.json). pair-m4-a289-voronezh-to-taman
-
-2026-10-16T00:11:35.219Z: automatic queue DONE; 95/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-11-35-219Z-done.json). pair-m4-a289-voronezh-to-taman
-
-2026-10-16T00:11:38.769Z: automatic queue STARTED; 95/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-11-38-769Z-started.json). pair-m4-m11-krasnodar-to-spb
-
-2026-10-16T00:12:14.266Z: automatic queue DONE; 96/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-12-14-266Z-done.json). pair-m4-m11-krasnodar-to-spb
-
-2026-10-16T00:12:18.025Z: automatic queue STARTED; 96/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-12-18-025Z-started.json). pair-m4-m11-rostov-to-spb
-
-2026-10-16T00:12:50.284Z: automatic queue DONE; 97/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-12-50-284Z-done.json). pair-m4-m11-rostov-to-spb
-
-2026-10-16T00:12:54.045Z: automatic queue STARTED; 97/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-12-54-045Z-started.json). pair-m4-m11-spb-to-krasnodar
-
-2026-10-16T00:13:30.524Z: automatic queue DONE; 98/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-13-30-524Z-done.json). pair-m4-m11-spb-to-krasnodar
-
-2026-10-16T00:13:34.224Z: automatic queue STARTED; 98/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-13-34-224Z-started.json). pair-m4-m11-spb-to-rostov
-
-2026-10-16T00:14:07.012Z: automatic queue DONE; 99/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-07-012Z-done.json). pair-m4-m11-spb-to-rostov
-
-2026-10-16T00:14:10.887Z: automatic queue STARTED; 99/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-10-887Z-started.json). pair-m4-m11-voronezh-to-spb
-
-2026-10-16T00:14:37.228Z: automatic queue DONE; 100/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-37-228Z-done.json). pair-m4-m11-voronezh-to-spb
-
-2026-10-16T00:14:40.938Z: automatic queue STARTED; 100/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-40-938Z-started.json). single-a289-kerch-to-krasnodar
-
-2026-10-16T00:14:59.522Z: automatic queue DONE; 101/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-59-522Z-done.json). single-a289-kerch-to-krasnodar
-
-2026-10-16T00:15:03.210Z: automatic queue STARTED; 101/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-03-210Z-started.json). single-a289-krasnodar-to-kerch
-
-2026-10-16T00:15:22.149Z: automatic queue DONE; 102/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-22-149Z-done.json). single-a289-krasnodar-to-kerch
-
-2026-10-16T00:15:25.700Z: automatic queue STARTED; 102/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-25-700Z-started.json). single-a289-krasnodar-to-taman
-
-2026-10-16T00:15:44.038Z: automatic queue DONE; 103/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-44-038Z-done.json). single-a289-krasnodar-to-taman
-
-2026-10-16T00:15:47.452Z: automatic queue STARTED; 103/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-47-452Z-started.json). single-a289-krasnodar-to-temryuk
-
-2026-10-16T00:16:05.771Z: automatic queue DONE; 104/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-05-771Z-done.json). single-a289-krasnodar-to-temryuk
-
-2026-10-16T00:16:09.361Z: automatic queue STARTED; 104/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-09-361Z-started.json). single-a289-taman-to-krasnodar
-
-2026-10-16T00:16:27.596Z: automatic queue DONE; 105/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-27-596Z-done.json). single-a289-taman-to-krasnodar
-
-2026-10-16T00:16:31.324Z: automatic queue STARTED; 105/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-31-324Z-started.json). single-ckad-domodedovo-to-klin
-
-2026-10-16T00:16:51.432Z: automatic queue DONE; 106/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-51-432Z-done.json). single-ckad-domodedovo-to-klin
-
-2026-10-16T00:16:55.385Z: automatic queue STARTED; 106/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-55-385Z-started.json). single-ckad-klin-to-domodedovo
-
-2026-10-16T00:17:14.091Z: automatic queue DONE; 107/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-14-091Z-done.json). single-ckad-klin-to-domodedovo
-
-2026-10-16T00:17:17.820Z: automatic queue STARTED; 107/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-17-820Z-started.json). single-ckad-noginsk-to-podolsk
-
-2026-10-16T00:17:35.955Z: automatic queue DONE; 108/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-35-955Z-done.json). single-ckad-noginsk-to-podolsk
-
-2026-10-16T00:17:39.817Z: automatic queue STARTED; 108/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-39-817Z-started.json). single-ckad-podolsk-to-noginsk
-
-2026-10-16T00:17:58.422Z: automatic queue DONE; 109/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-58-422Z-done.json). single-ckad-podolsk-to-noginsk
-
-2026-10-16T00:18:01.958Z: automatic queue STARTED; 109/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-01-958Z-started.json). single-ckad-ramenskoe-to-klin
-
-2026-10-16T00:18:20.886Z: automatic queue DONE; 110/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-20-886Z-done.json). single-ckad-ramenskoe-to-klin
-
-2026-10-16T00:18:24.296Z: automatic queue STARTED; 110/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-24-296Z-started.json). single-khabarovsk-knyaze-to-smidovich
-
-2026-10-16T00:18:42.200Z: automatic queue DONE; 111/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-42-200Z-done.json). single-khabarovsk-knyaze-to-smidovich
-
-2026-10-16T00:18:45.575Z: automatic queue STARTED; 111/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-45-575Z-started.json). single-khabarovsk-smidovich-to-knyaze
-
-2026-10-16T00:19:03.441Z: automatic queue DONE; 112/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-03-441Z-done.json). single-khabarovsk-smidovich-to-knyaze
-
-2026-10-16T00:19:06.975Z: automatic queue STARTED; 112/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-06-975Z-started.json). single-khabarovsk-smidovich-to-nekrasovka
-
-2026-10-16T00:19:25.068Z: automatic queue DONE; 113/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-25-068Z-done.json). single-khabarovsk-smidovich-to-nekrasovka
-
-2026-10-16T00:19:29.150Z: automatic queue STARTED; 113/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-29-150Z-started.json). single-khabarovsk-smidovich-to-vyazemsky
-
-2026-10-16T00:19:47.884Z: automatic queue DONE; 114/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-47-884Z-done.json). single-khabarovsk-smidovich-to-vyazemsky
-
-2026-10-16T00:19:51.451Z: automatic queue STARTED; 114/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-51-451Z-started.json). single-khabarovsk-vyazemsky-to-smidovich
-
-2026-10-16T00:20:10.356Z: automatic queue DONE; 115/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-10-356Z-done.json). single-khabarovsk-vyazemsky-to-smidovich
-
-2026-10-16T00:20:13.936Z: automatic queue STARTED; 115/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-13-936Z-started.json). single-m11-moscow-to-spb
-
-2026-10-16T00:20:35.171Z: automatic queue DONE; 116/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-35-171Z-done.json). single-m11-moscow-to-spb
-
-2026-10-16T00:20:38.715Z: automatic queue STARTED; 116/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-38-715Z-started.json). single-m11-moscow-to-torzhok
-
-2026-10-16T00:20:58.104Z: automatic queue DONE; 117/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-58-104Z-done.json). single-m11-moscow-to-torzhok
-
-2026-10-16T00:21:01.556Z: automatic queue STARTED; 117/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-01-556Z-started.json). single-m11-moscow-to-tver
-
-2026-10-16T00:21:21.086Z: automatic queue DONE; 118/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-21-086Z-done.json). single-m11-moscow-to-tver
-
-2026-10-16T00:21:24.687Z: automatic queue STARTED; 118/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-24-687Z-started.json). single-m11-spb-to-moscow
-
-2026-10-16T00:21:46.141Z: automatic queue DONE; 119/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-46-141Z-done.json). single-m11-spb-to-moscow
-
-2026-10-16T00:21:49.792Z: automatic queue STARTED; 119/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-49-792Z-started.json). single-m11-tver-to-moscow
-
-2026-10-16T00:22:08.383Z: automatic queue DONE; 120/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-08-383Z-done.json). single-m11-tver-to-moscow
-
-2026-10-16T00:22:12.268Z: automatic queue STARTED; 120/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-12-268Z-started.json). single-m12-kazan-to-moscow
-
-2026-10-16T00:22:33.807Z: automatic queue DONE; 121/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-33-807Z-done.json). single-m12-kazan-to-moscow
-
-2026-10-16T00:22:37.604Z: automatic queue STARTED; 121/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-37-604Z-started.json). single-m12-kazan-to-vladimir
-
-2026-10-16T00:22:58.761Z: automatic queue DONE; 122/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-58-761Z-done.json). single-m12-kazan-to-vladimir
-
-2026-10-16T00:23:02.634Z: automatic queue STARTED; 122/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-02-634Z-started.json). single-m12-moscow-to-kazan
-
-2026-10-16T00:23:25.875Z: automatic queue DONE; 123/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-25-875Z-done.json). single-m12-moscow-to-kazan
-
-2026-10-16T00:23:30.500Z: automatic queue STARTED; 123/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-30-500Z-started.json). single-m12-murom-to-kazan
-
-2026-10-16T00:23:50.000Z: automatic queue DONE; 124/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-50-000Z-done.json). single-m12-murom-to-kazan
-
-2026-10-16T00:23:53.543Z: automatic queue STARTED; 124/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-53-543Z-started.json). single-m12-vladimir-to-kazan
-
-2026-10-16T00:24:13.972Z: automatic queue DONE; 125/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-24-13-972Z-done.json). single-m12-vladimir-to-kazan
-
-2026-10-16T00:24:17.863Z: automatic queue STARTED; 125/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-24-17-863Z-started.json). single-m3-kaluga-to-moscow
-
-2026-10-16T00:24:37.344Z: automatic queue DONE; 126/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-24-37-344Z-done.json). single-m3-kaluga-to-moscow
-
-2026-10-16T00:24:40.949Z: automatic queue STARTED; 126/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-24-40-949Z-started.json). single-m3-moscow-to-kaluga
-
-2026-10-16T00:25:01.214Z: automatic queue DONE; 127/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-01-214Z-done.json). single-m3-moscow-to-kaluga
-
-2026-10-16T00:25:04.976Z: automatic queue STARTED; 127/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-04-976Z-started.json). single-m3-moscow-to-maloyaroslavets
-
-2026-10-16T00:25:24.167Z: automatic queue DONE; 128/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-24-167Z-done.json). single-m3-moscow-to-maloyaroslavets
-
-2026-10-16T00:25:27.677Z: automatic queue STARTED; 128/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-27-677Z-started.json). single-m3-moscow-to-obninsk
-
-2026-10-16T00:25:46.795Z: automatic queue DONE; 129/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-46-795Z-done.json). single-m3-moscow-to-obninsk
-
-2026-10-16T00:25:50.265Z: automatic queue STARTED; 129/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-50-265Z-started.json). single-m3-obninsk-to-moscow
-
-2026-10-16T00:26:09.291Z: automatic queue DONE; 130/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-26-09-291Z-done.json). single-m3-obninsk-to-moscow
-
-2026-10-16T00:26:12.808Z: automatic queue STARTED; 130/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-26-12-808Z-started.json). single-m4-domodedovo-to-krasnodar
-
-2026-10-16T00:26:41.445Z: automatic queue DONE; 131/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-26-41-445Z-done.json). single-m4-domodedovo-to-krasnodar
-
-2026-10-16T00:26:45.237Z: automatic queue STARTED; 131/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-26-45-237Z-started.json). single-m4-krasnodar-to-domodedovo
-
-2026-10-16T00:27:10.945Z: automatic queue DONE; 132/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-10-945Z-done.json). single-m4-krasnodar-to-domodedovo
-
-2026-10-16T00:27:14.934Z: automatic queue STARTED; 132/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-14-934Z-started.json). single-m4-krasnodar-to-rostov
-
-2026-10-16T00:27:33.972Z: automatic queue DONE; 133/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-33-972Z-done.json). single-m4-krasnodar-to-rostov
-
-2026-10-16T00:27:37.698Z: automatic queue STARTED; 133/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-37-698Z-started.json). single-m4-krasnodar-to-voronezh
-
-2026-10-16T00:27:58.445Z: automatic queue DONE; 134/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-58-445Z-done.json). single-m4-krasnodar-to-voronezh
-
-2026-10-16T00:28:02.338Z: automatic queue STARTED; 134/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-02-338Z-started.json). single-m4-voronezh-to-krasnodar
-
-2026-10-16T00:28:23.339Z: automatic queue DONE; 135/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-23-339Z-done.json). single-m4-voronezh-to-krasnodar
-
-2026-10-16T00:28:26.949Z: automatic queue STARTED; 135/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-26-949Z-started.json). single-odintsovo-golitsyno-to-moscow
-
-2026-10-16T00:28:45.507Z: automatic queue DONE; 136/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-45-507Z-done.json). single-odintsovo-golitsyno-to-moscow
-
-2026-10-16T00:28:49.318Z: automatic queue STARTED; 136/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-49-318Z-started.json). single-odintsovo-moscow-to-golitsyno
-
-2026-10-16T00:29:08.202Z: automatic queue DONE; 137/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-08-202Z-done.json). single-odintsovo-moscow-to-golitsyno
-
-2026-10-16T00:29:11.655Z: automatic queue STARTED; 137/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-11-655Z-started.json). single-odintsovo-moscow-to-kubinka
-
-2026-10-16T00:29:30.388Z: automatic queue DONE; 138/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-30-388Z-done.json). single-odintsovo-moscow-to-kubinka
-
-2026-10-16T00:29:34.228Z: automatic queue STARTED; 138/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-34-228Z-started.json). single-odintsovo-moscow-to-zvenigorod
-
-2026-10-16T00:29:54.103Z: automatic queue DONE; 139/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-54-103Z-done.json). single-odintsovo-moscow-to-zvenigorod
-
-2026-10-16T00:29:57.830Z: automatic queue STARTED; 139/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-57-830Z-started.json). single-odintsovo-zvenigorod-to-moscow
-
-2026-10-16T00:30:16.832Z: automatic queue DONE; 140/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-30-16-832Z-done.json). single-odintsovo-zvenigorod-to-moscow
-
-2026-10-16T00:30:21.422Z: automatic queue STARTED; 140/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-30-21-422Z-started.json). single-zsd-blag-to-prim
-
-2026-10-16T00:30:40.480Z: automatic queue DONE; 141/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-30-40-480Z-done.json). single-zsd-blag-to-prim
-
-2026-10-16T00:30:44.064Z: automatic queue STARTED; 141/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-30-44-064Z-started.json). single-zsd-peterhof-to-sest
-
-2026-10-16T00:31:03.058Z: automatic queue DONE; 142/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-03-058Z-done.json). single-zsd-peterhof-to-sest
-
-2026-10-16T00:31:06.657Z: automatic queue STARTED; 142/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-06-657Z-started.json). single-zsd-prim-to-blag
-
-2026-10-16T00:31:25.258Z: automatic queue DONE; 143/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-25-258Z-done.json). single-zsd-prim-to-blag
-
-2026-10-16T00:31:29.017Z: automatic queue STARTED; 143/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-29-017Z-started.json). single-zsd-pushkin-to-sest
-
-2026-10-16T00:31:47.876Z: automatic queue DONE; 144/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-47-876Z-done.json). single-zsd-pushkin-to-sest
-
-2026-10-16T00:31:51.487Z: automatic queue STARTED; 144/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-51-487Z-started.json). single-zsd-sest-to-pushkin
-
-2026-10-16T00:32:10.383Z: automatic queue DONE; 145/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-32-10-383Z-done.json). single-zsd-sest-to-pushkin
-
-2026-10-16T00:32:14.007Z: automatic queue STARTED; 145/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-32-14-007Z-started.json). triple-m11-ckad-m12-kazan-to-spb
-
-2026-10-16T00:32:45.192Z: automatic queue DONE; 146/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-32-45-192Z-done.json). triple-m11-ckad-m12-kazan-to-spb
-
-2026-10-16T00:32:48.935Z: automatic queue STARTED; 146/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-32-48-935Z-started.json). triple-m11-ckad-m12-kazan-to-torzhok
-
-2026-10-16T00:33:13.222Z: automatic queue DONE; 147/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-33-13-222Z-done.json). triple-m11-ckad-m12-kazan-to-torzhok
-
-2026-10-16T00:33:17.195Z: automatic queue STARTED; 147/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-33-17-195Z-started.json). triple-m11-ckad-m12-spb-to-kazan
-
-2026-10-16T00:33:48.554Z: automatic queue DONE; 148/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-33-48-554Z-done.json). triple-m11-ckad-m12-spb-to-kazan
-
-2026-10-16T00:33:52.340Z: automatic queue STARTED; 148/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-33-52-340Z-started.json). triple-m11-ckad-m12-torzhok-to-kazan
-
-2026-10-16T00:34:17.652Z: automatic queue DONE; 149/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-34-17-652Z-done.json). triple-m11-ckad-m12-torzhok-to-kazan
-
-2026-10-16T00:34:21.592Z: automatic queue STARTED; 149/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-34-21-592Z-started.json). triple-m11-ckad-m12-tver-to-murom
-
-2026-10-16T00:34:43.795Z: automatic queue DONE; 150/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-34-43-795Z-done.json). triple-m11-ckad-m12-tver-to-murom
-
-2026-10-16T00:34:47.648Z: automatic queue STARTED; 150/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-34-47-648Z-started.json). triple-m4-m11-zsd-krasnodar-to-sest
-
-2026-10-16T00:35:25.792Z: automatic queue DONE; 151/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-35-25-792Z-done.json). triple-m4-m11-zsd-krasnodar-to-sest
-
-2026-10-16T00:35:29.786Z: automatic queue STARTED; 151/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-35-29-786Z-started.json). triple-m4-m11-zsd-rostov-to-sest
-
-2026-10-16T00:36:05.569Z: automatic queue DONE; 152/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-36-05-569Z-done.json). triple-m4-m11-zsd-rostov-to-sest
-
-2026-10-16T00:36:09.659Z: automatic queue STARTED; 152/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-36-09-659Z-started.json). triple-m4-m11-zsd-sest-to-krasnodar
-
-2026-10-16T00:36:47.881Z: automatic queue DONE; 153/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-36-47-881Z-done.json). triple-m4-m11-zsd-sest-to-krasnodar
-
-2026-10-16T00:36:52.014Z: automatic queue STARTED; 153/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-36-52-014Z-started.json). triple-m4-m11-zsd-sest-to-rostov
-
-2026-10-16T00:37:27.200Z: automatic queue DONE; 154/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-37-27-200Z-done.json). triple-m4-m11-zsd-sest-to-rostov
-
-2026-10-16T00:37:31.219Z: automatic queue STARTED; 154/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-37-31-219Z-started.json). triple-m4-m11-zsd-voronezh-to-prim
-
-2026-10-16T00:37:59.085Z: automatic queue DONE; 155/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-37-59-085Z-done.json). triple-m4-m11-zsd-voronezh-to-prim
-
-2026-10-16T00:38:03.294Z: automatic queue STARTED; 155/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-38-03-294Z-started.json). lnr-Ğ»Ğ¸ÑĞ¸Ñ‡Ğ°Ğ½ÑĞº-moscow-center
-
-2026-10-16T00:38:27.289Z: automatic queue DONE; 155/155,1/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-38-27-289Z-done.json). lnr-Ğ»Ğ¸ÑĞ¸Ñ‡Ğ°Ğ½ÑĞº-moscow-center
-
-2026-10-16T00:38:31.483Z: automatic queue STARTED; 155/155,1/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-38-31-483Z-started.json). dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-saint-petersburg-center
-
-2026-10-16T00:39:09.609Z: automatic queue DONE; 155/155,2/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-39-09-609Z-done.json). dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-saint-petersburg-center
-
-2026-10-16T00:39:13.891Z: automatic queue STARTED; 155/155,2/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-39-13-891Z-started.json). dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-kazan-center
-
-2026-10-16T00:39:45.880Z: automatic queue DONE; 155/155,3/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-39-45-880Z-done.json). dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-kazan-center
-
-2026-10-16T00:39:50.030Z: automatic queue STARTED; 155/155,3/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-39-50-030Z-started.json). dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-kerch-center
-
-2026-10-16T00:40:12.053Z: automatic queue DONE; 155/155,4/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-40-12-053Z-done.json). dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-kerch-center
-
-2026-10-16T00:40:16.031Z: automatic queue STARTED; 155/155,4/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-40-16-031Z-started.json). dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-moscow-center
-
-2026-10-16T00:40:44.163Z: automatic queue DONE; 155/155,5/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-40-44-163Z-done.json). dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-moscow-center
-
-2026-10-16T00:40:48.395Z: automatic queue STARTED; 155/155,5/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-40-48-395Z-started.json). dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-saint-petersburg-center
-
-2026-10-16T00:41:27.995Z: automatic queue DONE; 155/155,6/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-41-27-995Z-done.json). dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-saint-petersburg-center
-
-2026-10-16T00:41:32.084Z: automatic queue STARTED; 155/155,6/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-41-32-084Z-started.json). dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-kazan-center
-
-2026-10-16T00:42:06.047Z: automatic queue DONE; 155/155,7/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-42-06-047Z-done.json). dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-kazan-center
-
-2026-10-16T00:42:10.359Z: automatic queue STARTED; 155/155,7/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-42-10-359Z-started.json). dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-kerch-center
-
-2026-10-16T00:42:32.667Z: automatic queue DONE; 155/155,8/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-42-32-667Z-done.json). dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-kerch-center
-
-2026-10-16T00:42:36.615Z: automatic queue STARTED; 155/155,8/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-42-36-615Z-started.json). dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-moscow-center
-
-2026-10-16T00:43:05.635Z: automatic queue DONE; 155/155,9/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-05-635Z-done.json). dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-moscow-center
-
-2026-10-16T00:43:09.971Z: automatic queue STARTED; 155/155,9/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-09-971Z-started.json). dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-saint-petersburg-center
-
-2026-10-16T00:43:51.804Z: automatic queue DONE; 155/155,10/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-51-804Z-done.json). dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-saint-petersburg-center
-
-2026-10-16T00:43:55.942Z: automatic queue STARTED; 155/155,10/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-55-942Z-started.json). dnr-ÑƒÑ€Ğ·ÑƒÑ„-kazan-center
-
-2026-10-16T00:44:40.867Z: automatic queue DONE; 155/155,11/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-44-40-867Z-done.json). dnr-ÑƒÑ€Ğ·ÑƒÑ„-kazan-center
-
-2026-10-16T00:44:45.196Z: automatic queue STARTED; 155/155,11/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-44-45-196Z-started.json). dnr-ÑƒÑ€Ğ·ÑƒÑ„-kerch-center
-
-2026-10-16T00:45:06.967Z: automatic queue DONE; 155/155,12/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-45-06-967Z-done.json). dnr-ÑƒÑ€Ğ·ÑƒÑ„-kerch-center
-
-2026-10-16T00:45:10.946Z: automatic queue STARTED; 155/155,12/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-45-10-946Z-started.json). dnr-Ñ…Ğ°Ñ€Ñ†Ñ‹Ğ·ÑĞº-kazan-center
-
-2026-10-16T00:45:43.103Z: automatic queue DONE; 155/155,13/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-45-43-103Z-done.json). dnr-Ñ…Ğ°Ñ€Ñ†Ñ‹Ğ·ÑĞº-kazan-center
-
-2026-10-16T00:45:47.325Z: automatic queue STARTED; 155/155,13/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-45-47-325Z-started.json). dnr-Ñ…Ğ°Ñ€Ñ†Ñ‹Ğ·ÑĞº-kerch-center
-
-2026-10-16T00:46:10.987Z: automatic queue DONE; 155/155,14/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-46-10-987Z-done.json). dnr-Ñ…Ğ°Ñ€Ñ†Ñ‹Ğ·ÑĞº-kerch-center
-
-2026-10-16T00:46:15.177Z: automatic queue STARTED; 155/155,14/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-46-15-177Z-started.json). dnr-Ñ…Ğ°Ñ€Ñ†Ñ‹Ğ·ÑĞº-moscow-center
-
-2026-10-16T00:46:43.075Z: automatic queue DONE; 155/155,15/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-46-43-075Z-done.json). dnr-Ñ…Ğ°Ñ€Ñ†Ñ‹Ğ·ÑĞº-moscow-center
-
-2026-10-16T00:46:47.431Z: automatic queue STARTED; 155/155,15/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-46-47-431Z-started.json). dnr-Ñ…Ğ°Ñ€Ñ†Ñ‹Ğ·ÑĞº-saint-petersburg-center
-
-2026-10-16T00:47:27.732Z: automatic queue DONE; 155/155,16/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-47-27-732Z-done.json). dnr-Ñ…Ğ°Ñ€Ñ†Ñ‹Ğ·ÑĞº-saint-petersburg-center
-
-2026-10-16T00:47:32.144Z: automatic queue STARTED; 155/155,16/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-47-32-144Z-started.json). kherson-Ğ½Ğ¾Ğ²Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-saint-petersburg-center
-
-2026-10-16T00:48:17.467Z: automatic queue DONE; 155/155,17/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-48-17-467Z-done.json). kherson-Ğ½Ğ¾Ğ²Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-saint-petersburg-center
-
-2026-10-16T00:48:21.967Z: automatic queue STARTED; 155/155,17/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-48-21-967Z-started.json). kherson-ÑĞºĞ°Ğ´Ğ¾Ğ²ÑĞº-kazan-center
-
-2026-10-16T00:49:02.902Z: automatic queue DONE; 155/155,18/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-49-02-902Z-done.json). kherson-ÑĞºĞ°Ğ´Ğ¾Ğ²ÑĞº-kazan-center
-
-2026-10-16T00:49:07.296Z: automatic queue STARTED; 155/155,18/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-49-07-296Z-started.json). kherson-ÑĞºĞ°Ğ´Ğ¾Ğ²ÑĞº-kerch-center
-
-2026-10-16T00:49:30.240Z: automatic queue DONE; 155/155,19/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-49-30-240Z-done.json). kherson-ÑĞºĞ°Ğ´Ğ¾Ğ²ÑĞº-kerch-center
-
-2026-10-16T00:49:34.658Z: automatic queue STARTED; 155/155,19/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-49-34-658Z-started.json). kherson-ÑĞºĞ°Ğ´Ğ¾Ğ²ÑĞº-moscow-center
-
-2026-10-16T00:50:10.284Z: automatic queue DONE; 155/155,20/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-50-10-284Z-done.json). kherson-ÑĞºĞ°Ğ´Ğ¾Ğ²ÑĞº-moscow-center
-
-2026-10-16T00:50:14.821Z: automatic queue STARTED; 155/155,20/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-50-14-821Z-started.json). kherson-ÑĞºĞ°Ğ´Ğ¾Ğ²ÑĞº-saint-petersburg-center
-
-2026-10-16T00:51:01.175Z: automatic queue DONE; 155/155,21/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-51-01-175Z-done.json). kherson-ÑĞºĞ°Ğ´Ğ¾Ğ²ÑĞº-saint-petersburg-center
-
-2026-10-16T00:51:05.667Z: automatic queue STARTED; 155/155,21/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-51-05-667Z-started.json). kherson-ÑÑ‚Ğ°Ñ€Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-kazan-center
-
-2026-10-16T00:51:47.319Z: automatic queue DONE; 155/155,22/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-51-47-319Z-done.json). kherson-ÑÑ‚Ğ°Ñ€Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-kazan-center
-
-2026-10-16T00:51:51.935Z: automatic queue STARTED; 155/155,22/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-51-51-935Z-started.json). kherson-ÑÑ‚Ğ°Ñ€Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-kerch-center
-
-2026-10-16T00:52:15.293Z: automatic queue DONE; 155/155,23/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-52-15-293Z-done.json). kherson-ÑÑ‚Ğ°Ñ€Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-kerch-center
-
-2026-10-16T00:52:19.529Z: automatic queue STARTED; 155/155,23/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-52-19-529Z-started.json). kherson-Ñ‚Ğ°Ğ²Ñ€Ğ¸Ğ¹ÑĞº-kazan-center
-
-2026-10-16T00:53:00.314Z: automatic queue DONE; 155/155,24/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-00-314Z-done.json). kherson-Ñ‚Ğ°Ğ²Ñ€Ğ¸Ğ¹ÑĞº-kazan-center
-
-2026-10-16T00:53:05.163Z: automatic queue STARTED; 155/155,24/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-05-163Z-started.json). kherson-Ñ‚Ğ°Ğ²Ñ€Ğ¸Ğ¹ÑĞº-kerch-center
-
-2026-10-16T00:53:28.811Z: automatic queue DONE; 155/155,25/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-28-811Z-done.json). kherson-Ñ‚Ğ°Ğ²Ñ€Ğ¸Ğ¹ÑĞº-kerch-center
-
-2026-10-16T00:53:32.922Z: automatic queue STARTED; 155/155,25/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-32-922Z-started.json). kherson-Ñ‚Ğ°Ğ²Ñ€Ğ¸Ğ¹ÑĞº-moscow-center
-
-2026-10-16T00:54:09.211Z: automatic queue DONE; 155/155,26/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-54-09-211Z-done.json). kherson-Ñ‚Ğ°Ğ²Ñ€Ğ¸Ğ¹ÑĞº-moscow-center
-
-2026-10-16T00:54:13.740Z: automatic queue STARTED; 155/155,26/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-54-13-740Z-started.json). kherson-Ñ‚Ğ°Ğ²Ñ€Ğ¸Ğ¹ÑĞº-saint-petersburg-center
-
-2026-10-16T00:55:00.354Z: automatic queue DONE; 155/155,27/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-55-00-354Z-done.json). kherson-Ñ‚Ğ°Ğ²Ñ€Ğ¸Ğ¹ÑĞº-saint-petersburg-center
-
-2026-10-16T00:55:05.338Z: automatic queue STARTED; 155/155,27/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-55-05-338Z-started.json). kherson-Ñ…ĞµÑ€ÑĞ¾Ğ½-kazan-center
-
-2026-10-16T00:55:53.498Z: automatic queue DONE; 155/155,28/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-55-53-498Z-done.json). kherson-Ñ…ĞµÑ€ÑĞ¾Ğ½-kazan-center
-
-2026-10-16T00:55:58.239Z: automatic queue STARTED; 155/155,28/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-55-58-239Z-started.json). kherson-Ñ…ĞµÑ€ÑĞ¾Ğ½-kerch-center
-
-2026-10-16T00:56:25.678Z: automatic queue DONE; 155/155,29/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-56-25-678Z-done.json). kherson-Ñ…ĞµÑ€ÑĞ¾Ğ½-kerch-center
-
-2026-10-16T00:56:29.988Z: automatic queue STARTED; 155/155,29/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-56-29-988Z-started.json). kherson-Ñ…ĞµÑ€ÑĞ¾Ğ½-moscow-center
-
-2026-10-16T00:57:13.277Z: automatic queue DONE; 155/155,30/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-57-13-277Z-done.json). kherson-Ñ…ĞµÑ€ÑĞ¾Ğ½-moscow-center
-
-2026-10-16T00:57:17.909Z: automatic queue STARTED; 155/155,30/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-57-17-909Z-started.json). kherson-Ñ…ĞµÑ€ÑĞ¾Ğ½-saint-petersburg-center
-
-2026-10-16T00:58:11.291Z: automatic queue DONE; 155/155,31/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-11-291Z-done.json). kherson-Ñ…ĞµÑ€ÑĞ¾Ğ½-saint-petersburg-center
-
-2026-10-16T00:58:16.380Z: automatic queue STARTED; 155/155,31/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-16-380Z-started.json). lnr-Ñ€Ğ¾Ğ²ĞµĞ½ÑŒĞºĞ¸-kazan-center
-
-2026-10-16T00:58:51.318Z: automatic queue DONE; 155/155,32/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-51-318Z-done.json). lnr-Ñ€Ğ¾Ğ²ĞµĞ½ÑŒĞºĞ¸-kazan-center
-
-2026-10-16T00:58:56.015Z: automatic queue STARTED; 155/155,32/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-56-015Z-started.json). lnr-Ñ€Ğ¾Ğ²ĞµĞ½ÑŒĞºĞ¸-kerch-center
-
-2026-10-16T00:59:22.332Z: automatic queue DONE; 155/155,33/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-59-22-332Z-done.json). lnr-Ñ€Ğ¾Ğ²ĞµĞ½ÑŒĞºĞ¸-kerch-center
-
-2026-10-16T00:59:26.729Z: automatic queue STARTED; 155/155,33/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-59-26-729Z-started.json). lnr-Ñ€Ğ¾Ğ²ĞµĞ½ÑŒĞºĞ¸-moscow-center
-
-2026-10-16T00:59:56.300Z: automatic queue DONE; 155/155,34/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-59-56-300Z-done.json). lnr-Ñ€Ğ¾Ğ²ĞµĞ½ÑŒĞºĞ¸-moscow-center
-
-2026-10-16T01:00:00.944Z: automatic queue STARTED; 155/155,34/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-00-00-944Z-started.json). lnr-Ñ€Ğ¾Ğ²ĞµĞ½ÑŒĞºĞ¸-saint-petersburg-center
-
-2026-10-16T01:00:40.950Z: automatic queue DONE; 155/155,35/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-00-40-950Z-done.json). lnr-Ñ€Ğ¾Ğ²ĞµĞ½ÑŒĞºĞ¸-saint-petersburg-center
-
-2026-10-16T01:00:45.754Z: automatic queue STARTED; 155/155,35/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-00-45-754Z-started.json). lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-kazan-center
-
-2026-10-16T01:01:18.976Z: automatic queue DONE; 155/155,36/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-01-18-976Z-done.json). lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-kazan-center
-
-2026-10-16T01:01:23.598Z: automatic queue STARTED; 155/155,36/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-01-23-598Z-started.json). lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-kerch-center
-
-2026-10-16T01:01:50.677Z: automatic queue DONE; 155/155,37/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-01-50-677Z-done.json). lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-kerch-center
-
-2026-10-16T01:01:55.144Z: automatic queue STARTED; 155/155,37/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-01-55-144Z-started.json). lnr-ÑĞ¾Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-kazan-center
-
-2026-10-16T01:02:30.090Z: automatic queue DONE; 155/155,38/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-02-30-090Z-done.json). lnr-ÑĞ¾Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-kazan-center
-
-2026-10-16T01:02:34.831Z: automatic queue STARTED; 155/155,38/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-02-34-831Z-started.json). lnr-ÑĞ¾Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-kerch-center
-
-2026-10-16T01:03:01.485Z: automatic queue DONE; 155/155,39/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-03-01-485Z-done.json). lnr-ÑĞ¾Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-kerch-center
-
-2026-10-16T01:03:06.073Z: automatic queue STARTED; 155/155,39/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-03-06-073Z-started.json). lnr-ÑĞ¾Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-moscow-center
-
-2026-10-16T01:03:36.279Z: automatic queue DONE; 155/155,40/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-03-36-279Z-done.json). lnr-ÑĞ¾Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-moscow-center
-
-2026-10-16T01:03:40.990Z: automatic queue STARTED; 155/155,40/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-03-40-990Z-started.json). lnr-ÑĞ¾Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-saint-petersburg-center
-
-2026-10-16T01:04:21.602Z: automatic queue DONE; 155/155,41/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-04-21-602Z-done.json). lnr-ÑĞ¾Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-saint-petersburg-center
-
-2026-10-16T01:04:26.300Z: automatic queue STARTED; 155/155,41/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-04-26-300Z-started.json). lnr-ÑÑ‚Ğ°Ñ€Ğ¾Ğ±ĞµĞ»ÑŒÑĞº-kazan-center
-
-2026-10-16T01:05:00.601Z: automatic queue DONE; 155/155,42/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-05-00-601Z-done.json). lnr-ÑÑ‚Ğ°Ñ€Ğ¾Ğ±ĞµĞ»ÑŒÑĞº-kazan-center
-
-2026-10-16T01:05:05.345Z: automatic queue STARTED; 155/155,42/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-05-05-345Z-started.json). lnr-ÑÑ‚Ğ°Ñ€Ğ¾Ğ±ĞµĞ»ÑŒÑĞº-kerch-center
-
-2026-10-16T01:05:32.857Z: automatic queue DONE; 155/155,43/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-05-32-857Z-done.json). lnr-ÑÑ‚Ğ°Ñ€Ğ¾Ğ±ĞµĞ»ÑŒÑĞº-kerch-center
-
-2026-10-16T01:05:37.523Z: automatic queue STARTED; 155/155,43/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-05-37-523Z-started.json). lnr-ÑÑ‚Ğ°Ñ€Ğ¾Ğ±ĞµĞ»ÑŒÑĞº-moscow-center
-
-2026-10-16T01:06:06.215Z: automatic queue DONE; 155/155,44/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-06-06-215Z-done.json). lnr-ÑÑ‚Ğ°Ñ€Ğ¾Ğ±ĞµĞ»ÑŒÑĞº-moscow-center
-
-2026-10-16T01:06:10.921Z: automatic queue STARTED; 155/155,44/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-06-10-921Z-started.json). lnr-ÑÑ‚Ğ°Ñ€Ğ¾Ğ±ĞµĞ»ÑŒÑĞº-saint-petersburg-center
-
-2026-10-16T01:06:49.582Z: automatic queue DONE; 155/155,45/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-06-49-582Z-done.json). lnr-ÑÑ‚Ğ°Ñ€Ğ¾Ğ±ĞµĞ»ÑŒÑĞº-saint-petersburg-center
-
-2026-10-16T01:06:54.511Z: automatic queue STARTED; 155/155,45/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-06-54-511Z-started.json). zaporizhzhia-ĞºÑƒÑˆÑƒĞ³ÑƒĞ¼-kerch-center
-
-2026-10-16T01:07:22.083Z: automatic queue DONE; 155/155,46/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-07-22-083Z-done.json). zaporizhzhia-ĞºÑƒÑˆÑƒĞ³ÑƒĞ¼-kerch-center
-
-2026-10-16T01:07:26.625Z: automatic queue STARTED; 155/155,46/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-07-26-625Z-started.json). zaporizhzhia-ĞºÑƒÑˆÑƒĞ³ÑƒĞ¼-moscow-center
-
-2026-10-16T01:08:07.581Z: automatic queue DONE; 155/155,47/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-08-07-581Z-done.json). zaporizhzhia-ĞºÑƒÑˆÑƒĞ³ÑƒĞ¼-moscow-center
-
-2026-10-16T01:08:12.361Z: automatic queue STARTED; 155/155,47/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-08-12-361Z-started.json). zaporizhzhia-ĞºÑƒÑˆÑƒĞ³ÑƒĞ¼-saint-petersburg-center
-
-2026-10-16T01:09:03.397Z: automatic queue DONE; 155/155,48/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-09-03-397Z-done.json). zaporizhzhia-ĞºÑƒÑˆÑƒĞ³ÑƒĞ¼-saint-petersburg-center
-
-2026-10-16T01:09:08.450Z: automatic queue STARTED; 155/155,48/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-09-08-450Z-started.json). zaporizhzhia-Ğ¼ĞµĞ»Ğ¸Ñ‚Ğ¾Ğ¿Ğ¾Ğ»ÑŒ-kazan-center
-
-2026-10-16T01:09:52.276Z: automatic queue DONE; 155/155,49/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-09-52-276Z-done.json). zaporizhzhia-Ğ¼ĞµĞ»Ğ¸Ñ‚Ğ¾Ğ¿Ğ¾Ğ»ÑŒ-kazan-center
-
-2026-10-16T01:09:57.273Z: automatic queue STARTED; 155/155,49/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-09-57-273Z-started.json). zaporizhzhia-Ğ¼ĞµĞ»Ğ¸Ñ‚Ğ¾Ğ¿Ğ¾Ğ»ÑŒ-kerch-center
-
-2026-10-16T01:10:23.761Z: automatic queue DONE; 155/155,50/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-10-23-761Z-done.json). zaporizhzhia-Ğ¼ĞµĞ»Ğ¸Ñ‚Ğ¾Ğ¿Ğ¾Ğ»ÑŒ-kerch-center
-
-2026-10-16T01:10:28.425Z: automatic queue STARTED; 155/155,50/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-10-28-425Z-started.json). zaporizhzhia-Ğ¼ĞµĞ»Ğ¸Ñ‚Ğ¾Ğ¿Ğ¾Ğ»ÑŒ-moscow-center
-
-2026-10-16T01:11:07.941Z: automatic queue DONE; 155/155,51/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-11-07-941Z-done.json). zaporizhzhia-Ğ¼ĞµĞ»Ğ¸Ñ‚Ğ¾Ğ¿Ğ¾Ğ»ÑŒ-moscow-center
-
-2026-10-16T01:11:12.911Z: automatic queue STARTED; 155/155,51/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-11-12-911Z-started.json). zaporizhzhia-Ğ¼ĞµĞ»Ğ¸Ñ‚Ğ¾Ğ¿Ğ¾Ğ»ÑŒ-saint-petersburg-center
-
-2026-10-16T01:12:03.027Z: automatic queue DONE; 155/155,52/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-03-027Z-done.json). zaporizhzhia-Ğ¼ĞµĞ»Ğ¸Ñ‚Ğ¾Ğ¿Ğ¾Ğ»ÑŒ-saint-petersburg-center
-
-2026-10-16T01:12:08.139Z: automatic queue STARTED; 155/155,52/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-08-139Z-started.json). zaporizhzhia-Ğ¿Ğ¾Ğ»Ğ¾Ğ³Ğ¸-kazan-center
-
-2026-10-16T01:12:53.423Z: automatic queue DONE; 155/155,53/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-53-423Z-done.json). zaporizhzhia-Ğ¿Ğ¾Ğ»Ğ¾Ğ³Ğ¸-kazan-center
-
-2026-10-16T01:12:58.448Z: automatic queue STARTED; 155/155,53/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-58-448Z-started.json). zaporizhzhia-Ğ¿Ğ¾Ğ»Ğ¾Ğ³Ğ¸-kerch-center
-
-2026-10-16T01:13:26.650Z: automatic queue DONE; 155/155,54/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-13-26-650Z-done.json). zaporizhzhia-Ğ¿Ğ¾Ğ»Ğ¾Ğ³Ğ¸-kerch-center
-
-2026-10-16T01:13:31.286Z: automatic queue STARTED; 155/155,54/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-13-31-286Z-started.json). zaporizhzhia-Ğ¿Ğ¾Ğ»Ğ¾Ğ³Ğ¸-moscow-center
-
-2026-10-16T01:14:11.480Z: automatic queue DONE; 155/155,55/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-14-11-480Z-done.json). zaporizhzhia-Ğ¿Ğ¾Ğ»Ğ¾Ğ³Ğ¸-moscow-center
-
-2026-10-16T01:14:16.648Z: automatic queue STARTED; 155/155,55/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-14-16-648Z-started.json). zaporizhzhia-Ğ¿Ğ¾Ğ»Ğ¾Ğ³Ğ¸-saint-petersburg-center
-
-2026-10-16T01:15:07.518Z: automatic queue DONE; 155/155,56/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-15-07-518Z-done.json). zaporizhzhia-Ğ¿Ğ¾Ğ»Ğ¾Ğ³Ğ¸-saint-petersburg-center
-
-2026-10-16T01:15:12.695Z: automatic queue STARTED; 155/155,56/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-15-12-695Z-started.json). zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-kazan-center
-
-2026-10-16T01:15:53.983Z: automatic queue DONE; 155/155,57/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-15-53-983Z-done.json). zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-kazan-center
-
-2026-10-16T01:15:59.141Z: automatic queue STARTED; 155/155,57/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-15-59-141Z-started.json). zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-kerch-center
-
-2026-10-16T01:16:28.661Z: automatic queue DONE; 155/155,58/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-16-28-661Z-done.json). zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-kerch-center
-
-2026-10-16T01:16:33.642Z: automatic queue STARTED; 155/155,58/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-16-33-642Z-started.json). zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-moscow-center
-
-2026-10-16T01:17:11.054Z: automatic queue DONE; 155/155,59/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-17-11-054Z-done.json). zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-moscow-center
-
-2026-10-16T01:17:16.187Z: automatic queue STARTED; 155/155,59/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-17-16-187Z-started.json). zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-saint-petersburg-center
-
-2026-10-16T01:18:04.900Z: automatic queue DONE; 155/155,60/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-18-04-900Z-done.json). zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-saint-petersburg-center
-
-2026-10-16T01:18:09.995Z: automatic queue STARTED; 155/155,60/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-18-09-995Z-started.json). zaporizhzhia-Ñ‚Ğ¾ĞºĞ¼Ğ°Ğº-kazan-center
-
-2026-10-16T01:18:56.622Z: automatic queue DONE; 155/155,61/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-18-56-622Z-done.json). zaporizhzhia-Ñ‚Ğ¾ĞºĞ¼Ğ°Ğº-kazan-center
-
-2026-10-16T01:19:01.797Z: automatic queue STARTED; 155/155,61/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-19-01-797Z-started.json). zaporizhzhia-Ñ‚Ğ¾ĞºĞ¼Ğ°Ğº-kerch-center
-
-2026-10-16T01:19:30.471Z: automatic queue DONE; 155/155,62/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-19-30-471Z-done.json). zaporizhzhia-Ñ‚Ğ¾ĞºĞ¼Ğ°Ğº-kerch-center
-
-2026-10-16T01:19:35.388Z: automatic queue STARTED; 155/155,62/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-19-35-388Z-started.json). zaporizhzhia-Ñ‚Ğ¾ĞºĞ¼Ğ°Ğº-moscow-center
-
-2026-10-16T01:20:16.965Z: automatic queue DONE; 155/155,63/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-20-16-965Z-done.json). zaporizhzhia-Ñ‚Ğ¾ĞºĞ¼Ğ°Ğº-moscow-center
-
-2026-10-16T01:20:22.091Z: automatic queue STARTED; 155/155,63/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-20-22-091Z-started.json). zaporizhzhia-Ñ‚Ğ¾ĞºĞ¼Ğ°Ğº-saint-petersburg-center
-
-2026-10-16T01:21:13.437Z: automatic queue DONE; 155/155,64/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-21-13-437Z-done.json). zaporizhzhia-Ñ‚Ğ¾ĞºĞ¼Ğ°Ğº-saint-petersburg-center
-
-2026-10-16T01:21:18.659Z: automatic queue STARTED; 155/155,64/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-21-18-659Z-started.json). max-chain-m12-ckad-m11-zsd-cheboksary-to-prim
-
-2026-10-16T01:21:56.791Z: automatic queue DONE; 155/155,65/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-21-56-791Z-done.json). max-chain-m12-ckad-m11-zsd-cheboksary-to-prim
-
-2026-10-16T01:22:01.888Z: automatic queue STARTED; 155/155,65/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-22-01-888Z-started.json). max-chain-m12-ckad-m11-zsd-prim-to-arzamas
-
-2026-10-16T01:22:38.010Z: automatic queue DONE; 155/155,66/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-22-38-010Z-done.json). max-chain-m12-ckad-m11-zsd-prim-to-arzamas
-
-2026-10-16T01:22:42.958Z: automatic queue STARTED; 155/155,66/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-22-42-958Z-started.json). max-chain-m12-ckad-m11-zsd-prim-to-cheboksary
-
-2026-10-16T01:23:21.954Z: automatic queue DONE; 155/155,67/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-23-21-954Z-done.json). max-chain-m12-ckad-m11-zsd-prim-to-cheboksary
-
-2026-10-16T01:23:27.025Z: automatic queue STARTED; 155/155,67/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-23-27-025Z-started.json). max-chain-m12-ckad-m11-zsd-sest-to-vladimir
-
-2026-10-16T01:23:59.127Z: automatic queue DONE; 155/155,68/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-23-59-127Z-done.json). max-chain-m12-ckad-m11-zsd-sest-to-vladimir
-
-2026-10-16T01:24:04.133Z: automatic queue STARTED; 155/155,68/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-24-04-133Z-started.json). max-chain-m12-ckad-m11-zsd-vladimir-to-sest
-
-2026-10-16T01:24:36.582Z: automatic queue DONE; 155/155,69/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-24-36-582Z-done.json). max-chain-m12-ckad-m11-zsd-vladimir-to-sest
-
-2026-10-16T01:24:41.736Z: automatic queue STARTED; 155/155,69/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-24-41-736Z-started.json). max-chain-m4-ckad-m11-zsd-krasnodar-to-prim
-
-2026-10-16T01:25:28.388Z: automatic queue DONE; 155/155,70/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-25-28-388Z-done.json). max-chain-m4-ckad-m11-zsd-krasnodar-to-prim
-
-2026-10-16T01:25:33.687Z: automatic queue STARTED; 155/155,70/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-25-33-687Z-started.json). max-chain-m4-ckad-m11-zsd-prim-to-krasnodar
-
-2026-10-16T01:26:21.340Z: automatic queue DONE; 155/155,71/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-26-21-340Z-done.json). max-chain-m4-ckad-m11-zsd-prim-to-krasnodar
-
-2026-10-16T01:26:26.717Z: automatic queue STARTED; 155/155,71/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-26-26-717Z-started.json). max-chain-m4-ckad-m11-zsd-prim-to-rostov
-
-2026-10-16T01:27:10.549Z: automatic queue DONE; 155/155,72/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-27-10-549Z-done.json). max-chain-m4-ckad-m11-zsd-prim-to-rostov
-
-2026-10-16T01:27:16.136Z: automatic queue STARTED; 155/155,72/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-27-16-136Z-started.json). max-chain-m4-ckad-m11-zsd-prim-to-voronezh
-
-2026-10-16T01:27:55.153Z: automatic queue DONE; 155/155,73/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-27-55-153Z-done.json). max-chain-m4-ckad-m11-zsd-prim-to-voronezh
-
-2026-10-16T01:28:00.992Z: automatic queue STARTED; 155/155,73/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-28-00-992Z-started.json). max-chain-m4-ckad-m11-zsd-rostov-to-prim
-
-2026-10-16T01:28:44.731Z: automatic queue DONE; 155/155,74/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-28-44-731Z-done.json). max-chain-m4-ckad-m11-zsd-rostov-to-prim
-
-2026-10-16T01:28:50.161Z: automatic queue STARTED; 155/155,74/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-28-50-161Z-started.json). pair-m11-ckad-domodedovo-to-novgorod
-
-2026-10-16T01:29:22.142Z: automatic queue DONE; 155/155,75/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-29-22-142Z-done.json). pair-m11-ckad-domodedovo-to-novgorod
-
-2026-10-16T01:29:27.122Z: automatic queue STARTED; 155/155,75/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-29-27-122Z-started.json). pair-m11-ckad-noginsk-to-tver
-
-2026-10-16T01:29:55.697Z: automatic queue DONE; 155/155,76/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-29-55-697Z-done.json). pair-m11-ckad-noginsk-to-tver
-
-2026-10-16T01:30:00.791Z: automatic queue STARTED; 155/155,76/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-30-00-791Z-started.json). pair-m11-ckad-novgorod-to-domodedovo
-
-2026-10-16T01:30:31.797Z: automatic queue DONE; 155/155,77/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-30-31-797Z-done.json). pair-m11-ckad-novgorod-to-domodedovo
-
-2026-10-16T01:30:37.051Z: automatic queue STARTED; 155/155,77/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-30-37-051Z-started.json). pair-m11-ckad-ramenskoe-to-torzhok
-
-2026-10-16T01:31:08.768Z: automatic queue DONE; 155/155,78/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-31-08-768Z-done.json). pair-m11-ckad-ramenskoe-to-torzhok
-
-2026-10-16T01:31:13.770Z: automatic queue STARTED; 155/155,78/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-31-13-770Z-started.json). pair-m11-ckad-tver-to-noginsk
-
-2026-10-16T01:31:43.803Z: automatic queue DONE; 155/155,79/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-31-43-803Z-done.json). pair-m11-ckad-tver-to-noginsk
-
-2026-10-16T01:31:48.919Z: automatic queue STARTED; 155/155,79/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-31-48-919Z-started.json). pair-m11-zsd-novgorod-to-sest
-
-2026-10-16T01:32:18.681Z: automatic queue DONE; 155/155,80/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-32-18-681Z-done.json). pair-m11-zsd-novgorod-to-sest
-
-2026-10-16T01:32:23.619Z: automatic queue STARTED; 155/155,80/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-32-23-619Z-started.json). pair-m11-zsd-prim-to-torzhok
-
-2026-10-16T01:32:54.132Z: automatic queue DONE; 155/155,81/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-32-54-132Z-done.json). pair-m11-zsd-prim-to-torzhok
-
-2026-10-16T01:32:59.715Z: automatic queue STARTED; 155/155,81/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-32-59-715Z-started.json). pair-m11-zsd-sest-to-novgorod
-
-2026-10-16T01:33:29.687Z: automatic queue DONE; 155/155,82/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-33-29-687Z-done.json). pair-m11-zsd-sest-to-novgorod
-
-2026-10-16T01:33:34.790Z: automatic queue STARTED; 155/155,82/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-33-34-790Z-started.json). pair-m11-zsd-sest-to-tver
-
-2026-10-16T01:34:05.101Z: automatic queue DONE; 155/155,83/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-34-05-101Z-done.json). pair-m11-zsd-sest-to-tver
-
-2026-10-16T01:34:10.149Z: automatic queue STARTED; 155/155,83/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-34-10-149Z-started.json). pair-m11-zsd-torzhok-to-prim
-
-2026-10-16T01:34:40.308Z: automatic queue DONE; 155/155,84/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-34-40-308Z-done.json). pair-m11-zsd-torzhok-to-prim
-
-2026-10-16T01:34:45.501Z: automatic queue STARTED; 155/155,84/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-34-45-501Z-started.json). pair-m12-ckad-arzamas-to-domodedovo
-
-2026-10-16T01:35:15.444Z: automatic queue DONE; 155/155,85/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-35-15-444Z-done.json). pair-m12-ckad-arzamas-to-domodedovo
-
-2026-10-16T01:35:20.507Z: automatic queue STARTED; 155/155,85/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-35-20-507Z-started.json). pair-m12-ckad-dmitrov-to-murom
-
-2026-10-16T01:35:51.073Z: automatic queue DONE; 155/155,86/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-35-51-073Z-done.json). pair-m12-ckad-dmitrov-to-murom
-
-2026-10-16T01:35:56.365Z: automatic queue STARTED; 155/155,86/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-35-56-365Z-started.json). pair-m12-ckad-domodedovo-to-arzamas
-
-2026-10-16T01:36:28.117Z: automatic queue DONE; 155/155,87/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-36-28-117Z-done.json). pair-m12-ckad-domodedovo-to-arzamas
-
-2026-10-16T01:36:33.356Z: automatic queue STARTED; 155/155,87/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-36-33-356Z-started.json). pair-m12-ckad-klin-to-vladimir
-
-2026-10-16T01:37:04.248Z: automatic queue DONE; 155/155,88/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-37-04-248Z-done.json). pair-m12-ckad-klin-to-vladimir
-
-2026-10-16T01:37:09.503Z: automatic queue STARTED; 155/155,88/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-37-09-503Z-started.json). pair-m12-ckad-murom-to-dmitrov
-
-2026-10-16T01:37:39.830Z: automatic queue DONE; 155/155,89/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-37-39-830Z-done.json). pair-m12-ckad-murom-to-dmitrov
-
-2026-10-16T01:37:45.033Z: automatic queue STARTED; 155/155,89/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-37-45-033Z-started.json). pair-m4-a289-anapa-to-voronezh
-
-2026-10-16T01:38:17.612Z: automatic queue DONE; 155/155,90/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-38-17-612Z-done.json). pair-m4-a289-anapa-to-voronezh
-
-2026-10-16T01:38:22.888Z: automatic queue STARTED; 155/155,90/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-38-22-888Z-started.json). pair-m4-a289-domodedovo-to-kerch
-
-2026-10-16T01:39:03.214Z: automatic queue DONE; 155/155,91/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-39-03-214Z-done.json). pair-m4-a289-domodedovo-to-kerch
-
-2026-10-16T01:39:08.713Z: automatic queue STARTED; 155/155,91/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-39-08-713Z-started.json). pair-m4-a289-kerch-to-domodedovo
-
-2026-10-16T01:39:47.578Z: automatic queue DONE; 155/155,92/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-39-47-578Z-done.json). pair-m4-a289-kerch-to-domodedovo
-
-2026-10-16T01:39:53.101Z: automatic queue STARTED; 155/155,92/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-39-53-101Z-started.json). pair-m4-a289-taman-to-moscow
-
-2026-10-16T01:40:32.529Z: automatic queue DONE; 155/155,93/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-40-32-529Z-done.json). pair-m4-a289-taman-to-moscow
-
-2026-10-16T01:40:38.089Z: automatic queue STARTED; 155/155,93/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-40-38-089Z-started.json). pair-m4-a289-voronezh-to-anapa
-
-2026-10-16T01:41:12.284Z: automatic queue DONE; 155/155,94/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-41-12-284Z-done.json). pair-m4-a289-voronezh-to-anapa
-
-2026-10-16T01:41:17.734Z: automatic queue STARTED; 155/155,94/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-41-17-734Z-started.json). pair-m4-m11-krasnodar-to-torzhok
-
-2026-10-16T01:42:00.406Z: automatic queue DONE; 155/155,95/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-42-00-406Z-done.json). pair-m4-m11-krasnodar-to-torzhok
-
-2026-10-16T01:42:06.043Z: automatic queue STARTED; 155/155,95/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-42-06-043Z-started.json). pair-m4-m11-rostov-to-tver
-
-2026-10-16T01:42:44.850Z: automatic queue DONE; 155/155,96/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-42-44-850Z-done.json). pair-m4-m11-rostov-to-tver
-
-2026-10-16T01:42:50.414Z: automatic queue STARTED; 155/155,96/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-42-50-414Z-started.json). pair-m4-m11-spb-to-voronezh
-
-2026-10-16T01:43:30.546Z: automatic queue DONE; 155/155,97/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-43-30-546Z-done.json). pair-m4-m11-spb-to-voronezh
-
-2026-10-16T01:43:35.901Z: automatic queue STARTED; 155/155,97/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-43-35-901Z-started.json). pair-m4-m11-torzhok-to-krasnodar
-
-2026-10-16T01:44:19.101Z: automatic queue DONE; 155/155,98/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-44-19-101Z-done.json). pair-m4-m11-torzhok-to-krasnodar
-
-2026-10-16T01:44:24.563Z: automatic queue STARTED; 155/155,98/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-44-24-563Z-started.json). pair-m4-m11-tver-to-rostov
-
-2026-10-16T01:45:04.917Z: automatic queue DONE; 155/155,99/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-45-04-917Z-done.json). pair-m4-m11-tver-to-rostov
-
-2026-10-16T01:45:10.639Z: automatic queue STARTED; 155/155,99/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-45-10-639Z-started.json). single-a289-anapa-to-krasnodar
-
-2026-10-16T01:45:41.134Z: automatic queue DONE; 155/155,100/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-45-41-134Z-done.json). single-a289-anapa-to-krasnodar
-
-2026-10-16T01:45:46.512Z: automatic queue STARTED; 155/155,100/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-45-46-512Z-started.json). single-a289-krasnodar-to-anapa
-
-2026-10-16T01:46:16.992Z: automatic queue DONE; 155/155,101/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-46-16-992Z-done.json). single-a289-krasnodar-to-anapa
-
-2026-10-16T01:46:22.361Z: automatic queue STARTED; 155/155,101/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-46-22-361Z-started.json). single-a289-slavyansk-to-taman
-
-2026-10-16T01:46:52.647Z: automatic queue DONE; 155/155,102/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-46-52-647Z-done.json). single-a289-slavyansk-to-taman
-
-2026-10-16T01:46:57.753Z: automatic queue STARTED; 155/155,102/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-46-57-753Z-started.json). single-a289-taman-to-slavyansk
-
-2026-10-16T01:47:27.389Z: automatic queue DONE; 155/155,103/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-47-27-389Z-done.json). single-a289-taman-to-slavyansk
-
-2026-10-16T01:47:32.769Z: automatic queue STARTED; 155/155,103/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-47-32-769Z-started.json). single-a289-temryuk-to-krasnodar
-
-2026-10-16T01:48:02.559Z: automatic queue DONE; 155/155,104/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-48-02-559Z-done.json). single-a289-temryuk-to-krasnodar
-
-2026-10-16T01:48:07.880Z: automatic queue STARTED; 155/155,104/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-48-07-880Z-started.json). single-ckad-dmitrov-to-kazan
-
-2026-10-16T01:48:43.251Z: automatic queue DONE; 155/155,105/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-48-43-251Z-done.json). single-ckad-dmitrov-to-kazan
-
-2026-10-16T01:48:48.566Z: automatic queue STARTED; 155/155,105/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-48-48-566Z-started.json). single-ckad-dmitrov-to-rostov
-
-2026-10-16T01:49:27.150Z: automatic queue DONE; 155/155,106/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-49-27-150Z-done.json). single-ckad-dmitrov-to-rostov
-
-2026-10-16T01:49:32.735Z: automatic queue STARTED; 155/155,106/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-49-32-735Z-started.json). single-ckad-kazan-to-dmitrov
-
-2026-10-16T01:50:05.934Z: automatic queue DONE; 155/155,107/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-50-05-934Z-done.json). single-ckad-kazan-to-dmitrov
-
-2026-10-16T01:50:11.266Z: automatic queue STARTED; 155/155,107/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-50-11-266Z-started.json). single-ckad-klin-to-ramenskoe
-
-2026-10-16T01:50:42.712Z: automatic queue DONE; 155/155,108/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-50-42-712Z-done.json). single-ckad-klin-to-ramenskoe
-
-2026-10-16T01:50:48.290Z: automatic queue STARTED; 155/155,108/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-50-48-290Z-started.json). single-ckad-rostov-to-dmitrov
-
-2026-10-16T01:51:26.089Z: automatic queue DONE; 155/155,109/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-51-26-089Z-done.json). single-ckad-rostov-to-dmitrov
-
-2026-10-16T01:51:31.854Z: automatic queue STARTED; 155/155,109/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-51-31-854Z-started.json). single-khabarovsk-berezovka-to-vyazemsky
-
-2026-10-16T01:52:02.835Z: automatic queue DONE; 155/155,110/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-52-02-835Z-done.json). single-khabarovsk-berezovka-to-vyazemsky
-
-2026-10-16T01:52:08.099Z: automatic queue STARTED; 155/155,110/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-52-08-099Z-started.json). single-khabarovsk-khabarovsk-to-vyazemsky
-
-2026-10-16T01:52:38.131Z: automatic queue DONE; 155/155,111/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-52-38-131Z-done.json). single-khabarovsk-khabarovsk-to-vyazemsky
-
-2026-10-16T01:52:43.635Z: automatic queue STARTED; 155/155,111/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-52-43-635Z-started.json). single-khabarovsk-nekrasovka-to-smidovich
-
-2026-10-16T01:53:13.968Z: automatic queue DONE; 155/155,112/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-53-13-968Z-done.json). single-khabarovsk-nekrasovka-to-smidovich
-
-2026-10-16T01:53:19.304Z: automatic queue STARTED; 155/155,112/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-53-19-304Z-started.json). single-khabarovsk-vyazemsky-to-berezovka
-
-2026-10-16T01:53:49.431Z: automatic queue DONE; 155/155,113/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-53-49-431Z-done.json). single-khabarovsk-vyazemsky-to-berezovka
-
-2026-10-16T01:53:54.651Z: automatic queue STARTED; 155/155,113/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-53-54-651Z-started.json). single-khabarovsk-vyazemsky-to-khabarovsk
-
-2026-10-16T01:54:24.878Z: automatic queue DONE; 155/155,114/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-54-24-878Z-done.json). single-khabarovsk-vyazemsky-to-khabarovsk
-
-2026-10-16T01:54:30.073Z: automatic queue STARTED; 155/155,114/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-54-30-073Z-started.json). single-m11-moscow-to-novgorod
-
-2026-10-16T01:55:03.222Z: automatic queue DONE; 155/155,115/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-55-03-222Z-done.json). single-m11-moscow-to-novgorod
-
-2026-10-16T01:55:08.565Z: automatic queue STARTED; 155/155,115/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-55-08-565Z-started.json). single-m11-novgorod-to-moscow
-
-2026-10-16T01:55:40.161Z: automatic queue DONE; 155/155,116/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-55-40-161Z-done.json). single-m11-novgorod-to-moscow
-
-2026-10-16T01:55:45.631Z: automatic queue STARTED; 155/155,116/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-55-45-631Z-started.json). single-m11-spb-to-tver
-
-2026-10-16T01:56:17.278Z: automatic queue DONE; 155/155,117/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-56-17-278Z-done.json). single-m11-spb-to-tver
-
-2026-10-16T01:56:22.715Z: automatic queue STARTED; 155/155,117/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-56-22-715Z-started.json). single-m11-torzhok-to-moscow
-
-2026-10-16T01:56:54.006Z: automatic queue DONE; 155/155,118/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-56-54-006Z-done.json). single-m11-torzhok-to-moscow
-
-2026-10-16T01:56:59.345Z: automatic queue STARTED; 155/155,118/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-56-59-345Z-started.json). single-m11-tver-to-spb
-
-2026-10-16T01:57:31.308Z: automatic queue DONE; 155/155,119/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-57-31-308Z-done.json). single-m11-tver-to-spb
-
-2026-10-16T01:57:36.826Z: automatic queue STARTED; 155/155,119/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-57-36-826Z-started.json). single-m12-arzamas-to-moscow
-
-2026-10-16T01:58:08.890Z: automatic queue DONE; 155/155,120/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-58-08-890Z-done.json). single-m12-arzamas-to-moscow
-
-2026-10-16T01:58:14.261Z: automatic queue STARTED; 155/155,120/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-58-14-261Z-started.json). single-m12-cheboksary-to-moscow
-
-2026-10-16T01:58:47.062Z: automatic queue DONE; 155/155,121/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-58-47-062Z-done.json). single-m12-cheboksary-to-moscow
-
-2026-10-16T01:58:52.609Z: automatic queue STARTED; 155/155,121/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-58-52-609Z-started.json). single-m12-kazan-to-murom
-
-2026-10-16T01:59:24.864Z: automatic queue DONE; 155/155,122/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-59-24-864Z-done.json). single-m12-kazan-to-murom
-
-2026-10-16T01:59:30.304Z: automatic queue STARTED; 155/155,122/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-59-30-304Z-started.json). single-m12-moscow-to-arzamas
-
-2026-10-16T02:00:03.509Z: automatic queue DONE; 155/155,123/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-00-03-509Z-done.json). single-m12-moscow-to-arzamas
-
-2026-10-16T02:00:09.055Z: automatic queue STARTED; 155/155,123/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-00-09-055Z-started.json). single-m12-moscow-to-cheboksary
-
-2026-10-16T02:00:43.415Z: automatic queue DONE; 155/155,124/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-00-43-415Z-done.json). single-m12-moscow-to-cheboksary
-
-2026-10-16T02:00:48.986Z: automatic queue STARTED; 155/155,124/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-00-48-986Z-started.json). single-m3-balabanovo-to-kaluga
-
-2026-10-16T02:01:19.245Z: automatic queue DONE; 155/155,125/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-01-19-245Z-done.json). single-m3-balabanovo-to-kaluga
-
-2026-10-16T02:01:24.637Z: automatic queue STARTED; 155/155,125/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-01-24-637Z-started.json). single-m3-kaluga-to-balabanovo
-
-2026-10-16T02:01:55.465Z: automatic queue DONE; 155/155,126/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-01-55-465Z-done.json). single-m3-kaluga-to-balabanovo
-
-2026-10-16T02:02:00.755Z: automatic queue STARTED; 155/155,126/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-02-00-755Z-started.json). single-m3-kaluga-to-obninsk
-
-2026-10-16T02:02:31.787Z: automatic queue DONE; 155/155,127/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-02-31-787Z-done.json). single-m3-kaluga-to-obninsk
-
-2026-10-16T02:02:37.102Z: automatic queue STARTED; 155/155,127/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-02-37-102Z-started.json). single-m3-maloyaroslavets-to-moscow
-
-2026-10-16T02:03:07.910Z: automatic queue DONE; 155/155,128/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-03-07-910Z-done.json). single-m3-maloyaroslavets-to-moscow
-
-2026-10-16T02:03:13.269Z: automatic queue STARTED; 155/155,128/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-03-13-269Z-started.json). single-m3-obninsk-to-kaluga
-
-2026-10-16T02:03:43.465Z: automatic queue DONE; 155/155,129/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-03-43-465Z-done.json). single-m3-obninsk-to-kaluga
-
-2026-10-16T02:03:48.780Z: automatic queue STARTED; 155/155,129/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-03-48-780Z-started.json). single-m4-moscow-to-voronezh
-
-2026-10-16T02:04:22.776Z: automatic queue DONE; 155/155,130/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-04-22-776Z-done.json). single-m4-moscow-to-voronezh
-
-2026-10-16T02:04:28.174Z: automatic queue STARTED; 155/155,130/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-04-28-174Z-started.json). single-m4-rostov-to-krasnodar
-
-2026-10-16T02:04:59.144Z: automatic queue DONE; 155/155,131/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-04-59-144Z-done.json). single-m4-rostov-to-krasnodar
-
-2026-10-16T02:05:04.575Z: automatic queue STARTED; 155/155,131/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-05-04-575Z-started.json). single-m4-rostov-to-voronezh
-
-2026-10-16T02:05:36.396Z: automatic queue DONE; 155/155,132/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-05-36-396Z-done.json). single-m4-rostov-to-voronezh
-
-2026-10-16T02:05:41.781Z: automatic queue STARTED; 155/155,132/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-05-41-781Z-started.json). single-m4-voronezh-to-moscow
-
-2026-10-16T02:06:14.535Z: automatic queue DONE; 155/155,133/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-06-14-535Z-done.json). single-m4-voronezh-to-moscow
-
-2026-10-16T02:06:19.916Z: automatic queue STARTED; 155/155,133/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-06-19-916Z-started.json). single-m4-voronezh-to-rostov
-
-2026-10-16T02:06:52.176Z: automatic queue DONE; 155/155,134/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-06-52-176Z-done.json). single-m4-voronezh-to-rostov
-
-2026-10-16T02:06:57.761Z: automatic queue STARTED; 155/155,134/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-06-57-761Z-started.json). single-odintsovo-golitsyno-to-rublevo
-
-2026-10-16T02:07:28.191Z: automatic queue DONE; 155/155,135/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-07-28-191Z-done.json). single-odintsovo-golitsyno-to-rublevo
-
-2026-10-16T02:07:33.658Z: automatic queue STARTED; 155/155,135/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-07-33-658Z-started.json). single-odintsovo-kubinka-to-moscow
-
-2026-10-16T02:08:03.929Z: automatic queue DONE; 155/155,136/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-08-03-929Z-done.json). single-odintsovo-kubinka-to-moscow
-
-2026-10-16T02:08:09.338Z: automatic queue STARTED; 155/155,136/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-08-09-338Z-started.json). single-odintsovo-lesnoy-to-moscow
-
-2026-10-16T02:08:40.203Z: automatic queue DONE; 155/155,137/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-08-40-203Z-done.json). single-odintsovo-lesnoy-to-moscow
-
-2026-10-16T02:08:45.471Z: automatic queue STARTED; 155/155,137/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-08-45-471Z-started.json). single-odintsovo-moscow-to-lesnoy
-
-2026-10-16T02:09:15.850Z: automatic queue DONE; 155/155,138/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-09-15-850Z-done.json). single-odintsovo-moscow-to-lesnoy
-
-2026-10-16T02:09:21.083Z: automatic queue STARTED; 155/155,138/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-09-21-083Z-started.json). single-odintsovo-rublevo-to-golitsyno
-
-2026-10-16T02:09:52.140Z: automatic queue DONE; 155/155,139/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-09-52-140Z-done.json). single-odintsovo-rublevo-to-golitsyno
-
-2026-10-16T02:09:57.435Z: automatic queue STARTED; 155/155,139/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-09-57-435Z-started.json). single-zsd-blag-to-sest
-
-2026-10-16T02:10:28.474Z: automatic queue DONE; 155/155,140/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-10-28-474Z-done.json). single-zsd-blag-to-sest
-
-2026-10-16T02:10:33.867Z: automatic queue STARTED; 155/155,140/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-10-33-867Z-started.json). single-zsd-peterhof-to-prim
-
-2026-10-16T02:11:04.634Z: automatic queue DONE; 155/155,141/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-11-04-634Z-done.json). single-zsd-peterhof-to-prim
-
-2026-10-16T02:11:10.152Z: automatic queue STARTED; 155/155,141/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-11-10-152Z-started.json). single-zsd-prim-to-peterhof
-
-2026-10-16T02:11:41.552Z: automatic queue DONE; 155/155,142/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-11-41-552Z-done.json). single-zsd-prim-to-peterhof
-
-2026-10-16T02:11:47.094Z: automatic queue STARTED; 155/155,142/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-11-47-094Z-started.json). single-zsd-sest-to-blag
-
-2026-10-16T02:12:18.130Z: automatic queue DONE; 155/155,143/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-12-18-130Z-done.json). single-zsd-sest-to-blag
-
-2026-10-16T02:12:23.453Z: automatic queue STARTED; 155/155,143/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-12-23-453Z-started.json). single-zsd-sest-to-peterhof
-
-2026-10-16T02:12:54.015Z: automatic queue DONE; 155/155,144/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-12-54-015Z-done.json). single-zsd-sest-to-peterhof
-
-2026-10-16T02:12:59.412Z: automatic queue STARTED; 155/155,144/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-12-59-412Z-started.json). triple-m11-ckad-m12-arzamas-to-spb
-
-2026-10-16T02:13:37.109Z: automatic queue DONE; 155/155,145/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-13-37-109Z-done.json). triple-m11-ckad-m12-arzamas-to-spb
-
-2026-10-16T02:13:42.586Z: automatic queue STARTED; 155/155,145/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-13-42-586Z-started.json). triple-m11-ckad-m12-murom-to-tver
-
-2026-10-16T02:14:15.468Z: automatic queue DONE; 155/155,146/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-14-15-468Z-done.json). triple-m11-ckad-m12-murom-to-tver
-
-2026-10-16T02:14:20.906Z: automatic queue STARTED; 155/155,146/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-14-20-906Z-started.json). triple-m11-ckad-m12-novgorod-to-vladimir
-
-2026-10-16T02:14:53.978Z: automatic queue DONE; 155/155,147/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-14-53-978Z-done.json). triple-m11-ckad-m12-novgorod-to-vladimir
-
-2026-10-16T02:14:59.747Z: automatic queue STARTED; 155/155,147/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-14-59-747Z-started.json). triple-m11-ckad-m12-spb-to-arzamas
-
-2026-10-16T02:15:38.204Z: automatic queue DONE; 155/155,148/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-15-38-204Z-done.json). triple-m11-ckad-m12-spb-to-arzamas
-
-2026-10-16T02:15:43.892Z: automatic queue STARTED; 155/155,148/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-15-43-892Z-started.json). triple-m11-ckad-m12-vladimir-to-novgorod
-
-2026-10-16T02:16:18.230Z: automatic queue DONE; 155/155,149/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-16-18-230Z-done.json). triple-m11-ckad-m12-vladimir-to-novgorod
-
-2026-10-16T02:16:23.688Z: automatic queue STARTED; 155/155,149/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-16-23-688Z-started.json). triple-m4-m11-zsd-domodedovo-to-sest
-
-2026-10-16T02:16:58.645Z: automatic queue DONE; 155/155,150/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-16-58-645Z-done.json). triple-m4-m11-zsd-domodedovo-to-sest
-
-2026-10-16T02:17:04.200Z: automatic queue STARTED; 155/155,150/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-17-04-200Z-started.json). triple-m4-m11-zsd-krasnodar-to-prim
-
-2026-10-16T02:17:52.909Z: automatic queue DONE; 155/155,151/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-17-52-909Z-done.json). triple-m4-m11-zsd-krasnodar-to-prim
-
-2026-10-16T02:17:58.671Z: automatic queue STARTED; 155/155,151/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-17-58-671Z-started.json). triple-m4-m11-zsd-prim-to-krasnodar
-
-2026-10-16T02:18:48.824Z: automatic queue DONE; 155/155,152/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-18-48-824Z-done.json). triple-m4-m11-zsd-prim-to-krasnodar
-
-2026-10-16T02:18:54.677Z: automatic queue STARTED; 155/155,152/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-18-54-677Z-started.json). triple-m4-m11-zsd-prim-to-voronezh
-
-2026-10-16T02:19:35.847Z: automatic queue DONE; 155/155,153/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-19-35-847Z-done.json). triple-m4-m11-zsd-prim-to-voronezh
-
-2026-10-16T02:19:41.412Z: automatic queue STARTED; 155/155,153/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-19-41-412Z-started.json). triple-m4-m11-zsd-sest-to-domodedovo
-
-2026-10-16T02:20:15.618Z: automatic queue DONE; 155/155,154/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-20-15-618Z-done.json). triple-m4-m11-zsd-sest-to-domodedovo
-
-2026-10-16T02:20:21.259Z: automatic queue AUDIT_QUEUE_DONE; 155/155,154/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-20-21-259Z-audit_queue_done.json).
-
-16.10.2026 05:20ĞœĞ¡Ğš: Ñ‡Ğ°ÑÑ‚Ğ¸1â€“18DONE,309/309Ğ¸REPORT340/340; queue jobSUCCESS. Ğ§Ğ°ÑÑ‚ÑŒ19 STARTED: A289 Ğ¿Ğ¾Ğ»Ğ½Ñ‹Ğµ3Ñ€Ğ°Ğ¼ĞºĞ¸ Ğ¿Ñ€Ğ¸ Ğ²Ğ½ĞµÑˆĞ½Ğ¸Ñ… ĞºĞ¾Ğ½Ñ†Ğ°Ñ… Ğ´Ğ»Ğ¸Ğ½Ğ½Ğ¾Ğ¹ Ğ¿Ğ¾ĞµĞ·Ğ´ĞºĞ¸. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-started.md). Parentdb83e758; no merge/Production.
-
-16.10.2026: A289realcapture regression RED,1expectedfail/2PASS; STARTED Ğ¿Ğ¾Ğ»Ğ½Ñ‹Ğ¹3Ğ Ğ’ĞŸĞ²ĞµĞºÑ‚Ğ¾Ñ€ Ğ¿Ñ€Ğ¸ Ğ²Ğ½ĞµÑˆĞ½ĞµĞ¼ĞºĞ¾Ğ½Ñ†Ğµ. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-a289-regression-red.md). Parent3ed0437d; codefix ĞµÑ‰Ñ‘ Ğ½Ğµ Ğ²Ğ½ĞµĞ´Ñ€Ñ‘Ğ½.
-
-16.10.2026: A289fullvector code Ğ²Ğ½ĞµĞ´Ñ€Ñ‘Ğ½, Ğ¿ĞµÑ€Ğ²Ñ‹Ğ¹focused FAILED15PASS/1testfilefailed Ğ½Ğ°VMJSONloader. Ğ¡Ğ»ĞµĞ´ÑƒÑÑ‰ĞµĞµ nativeimport composition Ğ²Ğ½Ğ¾Ğ²Ğ¾Ğ¼Ñ‚ĞµÑÑ‚Ğµ. ../../docs/checkpoints/2026-10-16-part19-a289-focused-loader-failed.md. ĞĞ¾Ğ²Ğ¾ĞµĞ¿Ğ¾Ğ»Ğ½Ğ¾ĞµĞ¸ÑĞ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½Ğ¸Ğµ ĞµÑ‰Ñ‘Ğ½ĞµĞ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞµĞ½Ğ¾.
-
-16.10.2026: A289fullinterior vector focused20/20PASS; fullbuildSTARTED, Ğ·Ğ°Ñ‚ĞµĞ¼lint/replay. ../../docs/checkpoints/2026-10-16-part19-a289-focused-pass.md. Ğ§Ğ°ÑÑ‚ÑŒ19ĞµÑ‰Ñ‘INPROGRESS.
-
-16.10.2026: A289fullvector fullbuild673/673+quote/API/Next/TypeScript/static16/16PASS; lint3/diffSTARTED. ../../docs/checkpoints/2026-10-16-part19-a289-build-pass.md.
-
-16.10.2026: A289lint3/diffPASS; STARTED correctedengine offlineĞÑĞºĞ°Ğ½Ğ¸Ñ-ĞĞ¾Ğ²Ğ°â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒ15/17Ğ¾ĞºÑ‚ÑĞ±Ñ€Ñ, baselineĞ½ĞµĞ¿ĞµÑ€ĞµĞ¿Ğ¸ÑÑ‹Ğ²Ğ°Ñ‚ÑŒ. ../../docs/checkpoints/2026-10-16-part19-a289-lint-pass-replay-started.md.
-
-16.10.2026: correctedofflineĞÑĞºĞ°Ğ½Ğ¸Ñ-ĞĞ¾Ğ²Ğ°â†’ĞšĞ°Ğ·Ğ°Ğ½ÑŒcomplete2/2,3640/3970(RUB15/17Ğ¾ĞºÑ‚),baselineunknownĞ½ĞµĞ¿ĞµÑ€ĞµĞ·Ğ°Ğ¿Ğ¸ÑĞ°Ğ½. STARTED helperimpactĞ½Ğ°59A289findings. ../../docs/checkpoints/2026-10-16-part19-a289-replay-pass.md. ĞĞµ Ğ½Ğ¾Ğ²Ñ‹Ğ¹live/Ğ²Ğ½ĞµÑˆĞ½ĞµĞµĞ¿Ğ¾Ğ´Ñ‚Ğ²ĞµÑ€Ğ¶Ğ´ĞµĞ½Ğ¸Ğµ.
-
-16.10.2026:19AfullinteriorA289 DONE; helperimpact57/59A289ĞºĞ¾Ğ¼Ğ¿Ğ¾Ğ½ĞµĞ½Ñ‚Ğ¾Ğ²Ğ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½Ñ‹,2partialĞœĞ¾ÑĞºĞ²Ğ°â†”Ğ¢Ğ°Ğ¼Ğ°Ğ½ÑŒunknown. Full673/focused20/lint3PASS; wholeofflineAskaniaKazan3640/3970complete. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-a289-impact-done.md). NEXTSTARTED19B: pair-m4-a289-moscow-to-taman, actualentryproofĞ¿ĞµÑ€ĞµĞ´Ğ²Ñ‹Ğ±Ğ¾Ñ€Ğ¾Ğ¼385. ĞÑ‡ĞµÑ€ĞµĞ´ÑŒPART19_FINDINGS_QUEUE.json. Ğ§Ğ°ÑÑ‚ÑŒ19Ğ½Ğµ Ğ·Ğ°Ğ²ĞµÑ€ÑˆĞµĞ½Ğ°,20Ğ½Ğµ Ğ½Ğ°Ñ‡Ğ°Ñ‚Ğ°; baselineREPORTimmutable.
-
-16.10.2026:19Bdiagnosed: selectedValhallaĞ²Ñ…Ğ¾Ğ´Ğ¸Ñ‚A289Ñ03Ğš252Ğ¼ĞµĞ¶Ğ´Ñƒ23Ğ¸82,Ñ€Ğ°Ğ¼ĞºĞ°23>13.5ĞºĞ¼; Ğ²Ğ¾ÑÑ‚Ğ¾Ñ‡Ğ½Ñ‹Ğ¹MaryanskayafallbackĞ½ĞµĞ²ĞµÑ€ĞµĞ½. STARTED directedconnectorregression/guardedbindingĞ´Ğ¾385Ñ‡ĞµÑ€ĞµĞ·ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒÑÑ‰ÑƒÑĞ¼Ğ°Ñ‚Ñ€Ğ¸Ñ†Ñƒ. ../../docs/checkpoints/2026-10-16-part19b-a289-connector-diagnosed.md.
-# 16.10.2026 â€” part19B directed connector focused DONE / full gate STARTED
-
-Parent c2d11f9f, working branch/PR14draft only. RED reproduces missing385 on selected Valhalla Moscow/Taman partial vector; implemented strict three-control directed Slavyansk entry/exit proof before generic M4 fallback. Actual dated matrix supplies fare; missing23 alone never suffices. Focused23/23PASS, full gate and whole-engine replay not yet run. Details/recovery: docs/checkpoints/2026-10-16-part19b-a289-connector-focused.md. No baseline/raw/live rewriting, no production/main/Android.
-
-16.10.2026:19B fullgate676/676+quote/API/Next/TS/static16/16PASS, scopedlint5/diffPASS. Remote79df66d8/tree8dab735a verified. STARTED single Moscowâ†’Taman selected-capture offline replay15/17Oct09:00MSK. Details/rawSHA/recovery: ../../docs/checkpoints/2026-10-16-part19b-a289-build-pass.md. Minor save preflight blankEOF fixed before durable save; no lost data.
-
-16.10.2026: Moscowâ†’Taman offline complete2/2, priced4725/5625 (M44340/5240 +A289385), 15/17Oct09:00MSK; no replay misses, raw preserved, tariffunconfirmed. Parentc1771e4d. Exact outputSHA/checkpoint: ../../docs/checkpoints/2026-10-16-part19b-moscow-taman-replay.md. STARTED reverse single case after durable head/tree verification.
-
-16.10.2026:19B DONE reverse Tamanâ†’Moscow observed same4725/5625,2/2complete/missingResponses=[], direct selectedValhalla exit proof. Parent79abfd50/tree69f28fa5 verified. Raw/baseline preserved, tariffunconfirmed. Exactpaths/SHA in ../../docs/checkpoints/2026-10-16-part19b-taman-moscow-replay.md. A289 remaining2 recovered after57prior component-only; do not call59totalquotes. Findings queue/part19 plan updated. NEXT STARTED one historicalM4-policy case dnr-Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµ-moscow-center, no newsourcefix before replay. Part19ongoing/20planned.
-
-16.10.2026:19C historicalM4policy1/25 checked: dnr-Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµ-moscow-center currentoffline3810/4640, complete2/2, trip-departure-v1 basisAt matchesdeparture, no currentfinding. No sourcefix, originalbaselineweekdaynull preserved. NUL-safe filename inspection recovered from GitCquoted Cyrillic ENOENT. Exacthashes/recovery: ../../docs/checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md. Nextsinglecase zaporizhzhia-Ğ¿Ñ€Ğ¸ÑˆĞ¸Ğ±-moscow-center afterdurablesave.
-
-16.10.2026: current WORK_STATE refreshed, superseded statuses moved out of current index only; all historical records retained. Parent9561e3f4/treee261b502 verified. No source/evidence changes. ../../docs/checkpoints/2026-10-16-part19-handoff-refreshed.md. Next case unchanged, part19ongoing/20planned.
-
-16.10.2026 07:38 ĞœĞ¡Ğš:19C ĞŸÑ€Ğ¸ÑˆĞ¸Ğ±â†’ĞœĞ¾ÑĞºĞ²Ğ° DONE, historical M4 policy2/25 checked. Selected OSRM2018186m; current offline5840/6890 (Ğœ-4 5040/6090+Ğ-289800), complete2/2/missingResponses=[], trip-departure-v1; no new runtime change, baseline unknown preserved, tariff unconfirmed. Source79df66d8/full676 validation from prior step, not rerun. Metadata-only PR14draft/head7aa114ac verified after full fetch_pr Transport closed twice; workflow38824450386/job116729992063 SUCCESS, no relaunch. [Exact evidence/checkpoint](../../docs/checkpoints/2026-10-16-073825-part19c-prishib-m4-policy-replay.md). NEXT STARTED ONLY kherson-Ñ€Ğ°Ğ´ĞµĞ½ÑĞº-moscow-center3/25, existing capture/two profiles then durable commit/head/tree. Part19ongoing/20planned; no main/merge/Production/Android.
-
-16.10.2026 08:38 ĞœĞ¡Ğš:19C Ğ Ğ°Ğ´ĞµĞ½ÑĞºâ†’ĞœĞ¾ÑĞºĞ²Ğ° DONE, historical M4 policy3/25 checked. Selected OSRM1980035m; offline5840/6890=Ğœ-4 5040/6090+Ğ-289800, complete2/2/missingResponses=[], trip-departure-v1. No runtime change, old unknown preserved, tariff unconfirmed; full676 Ğ¾Ñ‚Ğ½Ğ¾ÑĞ¸Ñ‚ÑÑ Ğº Ğ¿Ñ€ĞµĞ´Ñ‹Ğ´ÑƒÑ‰ĞµĞ¼Ñƒ19B Ğ¸ Ğ½Ğµ rerun. PR14draft/head a53bd290/tree f280ac89 Ğ¸ workflow SUCCESS Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞµĞ½Ñ‹. Read-only metadata SyntaxError Ğ¸ÑĞ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½ Ğ´Ğ¾ replay Ğ±ĞµĞ· Ğ¸Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ñ Ğ´Ğ°Ğ½Ğ½Ñ‹Ñ…. [Ğ ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚/SHA/recovery](../../docs/checkpoints/2026-10-16-083802-part19c-radensk-m4-policy-replay.md). NEXT STARTED ONLY dnr-Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµ-saint-petersburg-center4/25: existing capture/two profiles, preserve unrelated unknown, checkpoint+commit+head/tree Ğ´Ğ¾ ÑĞ»ĞµĞ´ÑƒÑÑ‰ĞµĞ³Ğ¾ ÑĞ»ÑƒÑ‡Ğ°Ñ. Part19ongoing/20planned; no main/merge/Production/Android.
-
-16.10.2026 09:36ĞœĞ¡Ğš:19C Ğ“Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµâ†’Ğ¡ĞŸĞ± historicalM4policy4/25 DONE; selectedValhalla1972786m, replay complete2/2/no missingResponses. Ğœ-4 3810/4640 Ğ¿Ğ¾ Ğ¾Ñ‚Ğ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½Ğ¸Ñ, Ğ¾ÑˆĞ¸Ğ±ĞºĞ° Ğ½Ğµ Ğ²Ğ¾ÑĞ¿Ñ€Ğ¾Ğ¸Ğ·Ğ²ĞµĞ»Ğ°ÑÑŒ; **fulltotal unknown**, missing=[zsd], zsd_trip_extends_outside_reviewed_zone1 ÑĞ¾Ñ…Ñ€Ğ°Ğ½Ñ‘Ğ½, subtotal Ğ½Ğµ Ğ¸Ñ‚Ğ¾Ğ³. Code unchanged, prior full676 not rerun, raw/baseline preserved. PR14draft/head9565897c/tree14f9dc1d Ğ¸ job SUCCESS verified. [Ğ¢Ğ¾Ñ‡Ğ½Ñ‹Ğµ outputs/SHA](../../docs/checkpoints/2026-10-16-093623-part19c-granitnoe-spb-m4-policy-replay.md). NEXT STARTED ONLY lnr-Ğ±Ñ€ÑĞ½ĞºĞ°-saint-petersburg-center5/25, existingcapture/two dates then checkpoint/commit/head/tree. Ğ§Ğ°ÑÑ‚ÑŒ19ongoing/20planned, no release/main/merge/Android.
-
-16.10.2026 10:22ĞœĞ¡Ğš:19C Ğ‘Ñ€ÑĞ½ĞºĞ°â†’Ğ¡ĞŸĞ± M4policy5/25checked, selectedValhalla1827396m, complete2/2/no missingResponses. M43810/4640 Ğ¿Ğ¾ Ğ¾Ñ‚Ğ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½Ğ¸Ñ, oldprofileerror Ğ½Ğµ Ğ²Ğ¾ÑĞ¿Ñ€Ğ¾Ğ¸Ğ·Ğ²ĞµĞ»Ğ°ÑÑŒ; **total unknown**, missingzsd/outside reviewedzone1. Existing M11 components retained, subtotal Ğ½Ğµ Ğ¸Ñ‚Ğ¾Ğ³. No runtimechange/full676notrerun; baseline/report/raw ÑĞ¾Ñ…Ñ€Ğ°Ğ½ĞµĞ½Ñ‹. PR14draft/head6fa74b45/treed6f6b901 Ğ¸ jobSUCCESS verified. Ğ’ÑĞ¿Ğ¾Ğ¼Ğ¾Ğ³Ğ°Ñ‚ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ clocktool Ğ½ĞµĞ´Ğ¾ÑÑ‚ÑƒĞ¿ĞµĞ½ Ğ¿Ğ¾ÑĞ»Ğµ successful replay, error Ğ½Ğµ Ğ²Ğ»Ğ¸ÑĞµÑ‚ Ğ½Ğ° Ñ€Ğ°ÑÑ‡Ñ‘Ñ‚. [Evidence/SHA/recovery](../../docs/checkpoints/2026-10-16-102232-part19c-bryanka-spb-m4-policy-replay.md). NEXT STARTED ONLY zaporizhzhia-Ğ¿Ñ€Ğ¸ÑˆĞ¸Ğ±-saint-petersburg-center6/25, two savedcapture profiles then checkpoint+head/tree. Ğ§Ğ°ÑÑ‚ÑŒ19ongoing/20planned, no release/main/merge/Android.
-
-16.10.2026 10:27ĞœĞ¡Ğš Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑŒ Ğ²Ğ½Ğ¾Ğ²ÑŒ Ğ¿Ñ€ÑĞ¼Ğ¾ Ğ¿Ğ¾Ñ€ÑƒÑ‡Ğ¸Ğ» Ğ·Ğ°Ğ¿ÑƒÑĞºĞ°Ñ‚ÑŒ ÑĞ»ĞµĞ´ÑƒÑÑ‰Ğ¸Ğ¹ ÑÑ‚Ğ°Ğ¿ Ğ°Ğ²Ñ‚Ğ¾Ğ¼Ğ°Ñ‚Ğ¸Ñ‡ĞµÑĞºĞ¸. ExecutionUnit ÑƒÑ‚Ğ¾Ñ‡Ğ½Ñ‘Ğ½: Ğ¾Ğ´Ğ¸Ğ½ Ğ¼Ğ°Ñ€ÑˆÑ€ÑƒÑ‚ Ğ½Ğ° Ğ¾Ñ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ durable checkpoint, Ğ·Ğ°Ñ‚ĞµĞ¼ ÑÑ€Ğ°Ğ·Ñƒ ÑĞ»ĞµĞ´ÑƒÑÑ‰Ğ¸Ğ¹ Ğ±ĞµĞ· Ğ½Ğ¾Ğ²Ğ¾Ğ³Ğ¾ Ğ·Ğ°Ñ…Ğ¾Ğ´Ğ°/Â«Ğ´Ğ°Ğ»ÑŒÑˆĞµÂ». Ğ¡Ñ‚Ğ°Ñ€Ñ‹Ğ¹ Ğ»Ğ¸Ğ¼Ğ¸Ñ‚ Ğ¾Ğ´Ğ½Ğ¾Ğ³Ğ¾caseĞ·Ğ° Ğ·Ğ°Ğ¿ÑƒÑĞº ÑĞ½ÑÑ‚, Ğ¿Ğ¾ÑĞ»ĞµĞ´Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑŒĞ½Ğ¾ÑÑ‚ÑŒ/Ğ¾Ğ´Ğ¸Ğ½writer/commit/head/tree Ğ¿Ğ¾ÑĞ»Ğµ ĞºĞ°Ğ¶Ğ´Ğ¾Ğ³Ğ¾ Ğ½Ğµ Ğ¾Ñ‚Ğ¼ĞµĞ½ĞµĞ½Ñ‹. [Ğ ĞµÑˆĞµĞ½Ğ¸Ğµ Ğ¸ NEXT STARTED case6/25](../../docs/checkpoints/2026-10-16-1030-auto-sequential-microsteps.md). ĞĞ²Ñ‚Ğ¾Ğ¼Ğ°Ñ‚Ğ¸Ñ‡ĞµÑĞºĞ¸ Ğ¿Ñ€Ğ¾Ğ´Ğ¾Ğ»Ğ¶Ğ°Ñ‚ÑŒ case7 Ğ¸ Ğ´Ğ°Ğ»ĞµĞµ Ğ¿Ğ¾ÑĞ»Ğµ Ğ¿Ğ¾Ğ´Ñ‚Ğ²ĞµÑ€Ğ¶Ğ´ĞµĞ½Ğ¸Ñ ÑĞ¾Ñ…Ñ€Ğ°Ğ½ĞµĞ½Ğ¸Ñ Ğ¿Ñ€ĞµĞ´Ñ‹Ğ´ÑƒÑ‰ĞµĞ³Ğ¾; part19ongoing/20planned.
-
-16.10.2026 STARTED automatic-policy-replay-queue Ğ´Ğ»ÑĞ¾ÑÑ‚Ğ°Ğ²ÑˆĞ¸Ñ…ÑÑ20historicalM4cases Ğ² ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒÑÑ‰ĞµĞ¼workflow/Ğ¾Ğ´Ğ¸Ğ½writer. ĞŸĞ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑŒ10:27ĞœĞ¡Ğš Ğ¿Ğ¾Ğ´Ñ‚Ğ²ĞµÑ€Ğ´Ğ¸Ğ»ÑÑ€Ğ°Ğ·ÑƒnextĞ¿Ğ¾ÑĞ»ĞµĞºĞ°Ğ¶Ğ´Ğ¾Ğ³Ğ¾durablesave. Runner/focused/fullgate Ğ¿ĞµÑ€ĞµĞ´workflowpush/observedrun. [Recovery](../../docs/checkpoints/2026-10-16-part19-automatic-policy-queue-started.md). No309rerun/no newlive/no guessed fares, part19ongoing/20planned.
-
-16.10.2026 automatic policy runner implemented, focused5/5/scopedlint2/diff PASS; workflow still not enabled. STARTED raw/report guard and isolated per-case persistence integration, then fullgate before workflow finalpush. [Checkpoint/recovery](../../docs/checkpoints/2026-10-16-part19-policy-runner-focused.md). Only existing20remainingM4policycases; no live/fare changes. Transient exec-server transport closed while appending logs retried after actual file/status check, no duplicate entry/data loss.
-
-16.10.2026 policyqueue focused8/8+scopedlint3/diff PASS: actualraw identity/reportSHA guards, isolated STARTED/DONE/FAILED/pushstop integration. Firstfixturelint5require-errors fixed with asyncnativeimports, tests rerunPASS. STARTED pnpm build fullgate, workflow notyet enabled. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-policy-runner-integration-pass.md). No runtimefarechange/no newrouting.
-
-16.10.2026 policyqueue fullgate684/684+quote/API/Next/TS/static16/16 PASS, focused8/lint3/diffPASS, runtimefaresunchanged. STARTED final workflowactivation afterdurablesave; mustobserveactualnewrun/job, then noassistantbranchwriteswhileactive. [Checkpoint/recovery](../../docs/checkpoints/2026-10-16-part19-policy-queue-build-pass.md). Remaining20historicalM4cases only, part19/20notdone.
-
-16.10.2026 automaticpolicyqueue READY: existingworkflow now selects currentpolicy phase after completedparts1â€“18, remaining20/25, fullbuildbeforewriter, sameconcurrency, percaseSTARTED/DONE/head/tree. Full684/focused8/lint3PASS. Finalworkflowpush triggersNEWRUN; AUTOstate.workflowRun deliberatelynull untilobserved/runnerSTARTED. [Activation/recovery](../../docs/checkpoints/2026-10-16-part19-policy-queue-ready.md). Next observebranchpushruns/jobs, no branchwriteswhileactive. No claimrunactive beforeobservation. Part19ongoing/20planned.
-
-2026-10-16T07:47:04.533Z: PART19_M4_POLICY_STARTED M4 policy 5/25; zaporizhzhia-Ğ¿Ñ€Ğ¸ÑˆĞ¸Ğ±-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-04-533Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:08.572Z: PART19_M4_POLICY_DONE M4 policy 6/25; zaporizhzhia-Ğ¿Ñ€Ğ¸ÑˆĞ¸Ğ±-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-08-572Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:11.016Z: PART19_M4_POLICY_STARTED M4 policy 6/25; kherson-Ñ€Ğ°Ğ´ĞµĞ½ÑĞº-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-11-016Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:15.404Z: PART19_M4_POLICY_DONE M4 policy 7/25; kherson-Ñ€Ğ°Ğ´ĞµĞ½ÑĞº-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-15-404Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:17.848Z: PART19_M4_POLICY_STARTED M4 policy 7/25; zaporizhzhia-Ğ¿Ñ€Ğ¸ÑˆĞ¸Ğ±-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-17-848Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:21.626Z: PART19_M4_POLICY_DONE M4 policy 8/25; zaporizhzhia-Ğ¿Ñ€Ğ¸ÑˆĞ¸Ğ±-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-21-626Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:23.977Z: PART19_M4_POLICY_STARTED M4 policy 8/25; kherson-Ñ€Ğ°Ğ´ĞµĞ½ÑĞº-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-23-977Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:27.711Z: PART19_M4_POLICY_DONE M4 policy 9/25; kherson-Ñ€Ğ°Ğ´ĞµĞ½ÑĞº-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-27-711Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:30.151Z: PART19_M4_POLICY_STARTED M4 policy 9/25; dnr-ÑˆĞ¸Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-30-151Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:33.600Z: PART19_M4_POLICY_DONE M4 policy 10/25; dnr-ÑˆĞ¸Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-33-600Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:36.234Z: PART19_M4_POLICY_STARTED M4 policy 10/25; zaporizhzhia-Ğ¼Ğ¾Ğ»Ğ¾Ñ‡Ğ°Ğ½ÑĞº-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-36-234Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:40.375Z: PART19_M4_POLICY_DONE M4 policy 11/25; zaporizhzhia-Ğ¼Ğ¾Ğ»Ğ¾Ñ‡Ğ°Ğ½ÑĞº-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-40-375Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:42.968Z: PART19_M4_POLICY_STARTED M4 policy 11/25; kherson-Ñ‡ÑƒĞ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-42-968Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:47.368Z: PART19_M4_POLICY_DONE M4 policy 12/25; kherson-Ñ‡ÑƒĞ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-47-368Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:49.787Z: PART19_M4_POLICY_STARTED M4 policy 12/25; dnr-ÑˆĞ¸Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-49-787Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:53.722Z: PART19_M4_POLICY_DONE M4 policy 13/25; dnr-ÑˆĞ¸Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-53-722Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:47:56.385Z: PART19_M4_POLICY_STARTED M4 policy 13/25; lnr-Ğ»Ğ¸ÑĞ¸Ñ‡Ğ°Ğ½ÑĞº-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-56-385Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:00.252Z: PART19_M4_POLICY_DONE M4 policy 14/25; lnr-Ğ»Ğ¸ÑĞ¸Ñ‡Ğ°Ğ½ÑĞº-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-00-252Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:02.873Z: PART19_M4_POLICY_STARTED M4 policy 14/25; zaporizhzhia-Ğ¼Ğ¾Ğ»Ğ¾Ñ‡Ğ°Ğ½ÑĞº-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-02-873Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:06.984Z: PART19_M4_POLICY_DONE M4 policy 15/25; zaporizhzhia-Ğ¼Ğ¾Ğ»Ğ¾Ñ‡Ğ°Ğ½ÑĞº-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-06-984Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:09.504Z: PART19_M4_POLICY_STARTED M4 policy 15/25; kherson-Ñ‡ÑƒĞ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-09-504Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:13.558Z: PART19_M4_POLICY_DONE M4 policy 16/25; kherson-Ñ‡ÑƒĞ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-13-558Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:16.287Z: PART19_M4_POLICY_STARTED M4 policy 16/25; zaporizhzhia-Ğ¼Ğ¾Ğ»Ğ¾Ñ‡Ğ°Ğ½ÑĞº-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-16-287Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:20.249Z: PART19_M4_POLICY_DONE M4 policy 17/25; zaporizhzhia-Ğ¼Ğ¾Ğ»Ğ¾Ñ‡Ğ°Ğ½ÑĞº-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-20-249Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:22.893Z: PART19_M4_POLICY_STARTED M4 policy 17/25; kherson-Ñ‡ÑƒĞ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-22-893Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:27.149Z: PART19_M4_POLICY_DONE M4 policy 18/25; kherson-Ñ‡ÑƒĞ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-27-149Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:29.874Z: PART19_M4_POLICY_STARTED M4 policy 18/25; dnr-ÑƒÑ€Ğ·ÑƒÑ„-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-29-874Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:33.733Z: PART19_M4_POLICY_DONE M4 policy 19/25; dnr-ÑƒÑ€Ğ·ÑƒÑ„-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-33-733Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:36.281Z: PART19_M4_POLICY_STARTED M4 policy 19/25; zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-36-281Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:40.342Z: PART19_M4_POLICY_DONE M4 policy 20/25; zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-40-342Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:42.974Z: PART19_M4_POLICY_STARTED M4 policy 20/25; kherson-ÑÑ‚Ğ°Ñ€Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-42-974Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:46.959Z: PART19_M4_POLICY_DONE M4 policy 21/25; kherson-ÑÑ‚Ğ°Ñ€Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-46-959Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:49.596Z: PART19_M4_POLICY_STARTED M4 policy 21/25; dnr-ÑƒÑ€Ğ·ÑƒÑ„-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-49-596Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:53.580Z: PART19_M4_POLICY_DONE M4 policy 22/25; dnr-ÑƒÑ€Ğ·ÑƒÑ„-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-53-580Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:56.134Z: PART19_M4_POLICY_STARTED M4 policy 22/25; lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-56-134Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:48:59.820Z: PART19_M4_POLICY_DONE M4 policy 23/25; lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-59-820Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:49:02.404Z: PART19_M4_POLICY_STARTED M4 policy 23/25; zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-02-404Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:49:06.131Z: PART19_M4_POLICY_DONE M4 policy 24/25; zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-06-131Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:49:08.576Z: PART19_M4_POLICY_STARTED M4 policy 24/25; kherson-ÑÑ‚Ğ°Ñ€Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-08-576Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:49:12.569Z: PART19_M4_POLICY_DONE M4 policy 25/25; kherson-ÑÑ‚Ğ°Ñ€Ğ°Ñ-Ğ·Ğ±ÑƒÑ€ÑŒĞµĞ²ĞºĞ°-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-12-569Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-2026-10-16T07:49:15.074Z: PART19_M4_POLICY_CLASS_DONE M4 policy 25/25; . [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-15-074Z-part19_m4_policy_class_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
-
-16.10.2026 automaticM4policy25/25 DONE, actualrun38869309675/job116869376746 SUCCESS. Rootverified20raw+40replaySHA/integrity/departure/M4, originalREPORTunchanged;20wholeofflinequotes/5unknownZSD, not25confirmedfares. Cleancheckout syncedafterjobcompletion to b90d630f/tree1f5465e3. Full684/focused8/lint3 plusCIbuildPASS. [Verifiedhandoff](../../docs/checkpoints/2026-10-16-part19-policy-25-done-m4-unpriced-started.md). NEXT STARTED19D m4:unpriced1/22 dnr-Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµ-kazan-center savedcapture/two profiles then durablesave before one-causefix. Parts19ongoing/20planned.
-
-16.10.2026 19D Granitnoeâ†’Kazan currentunknown reproduced2/2complete, m4candidateCount0/confirmedPvps=[]; notprooffree/runtimebug. No fare/codechange. [Outputs/SHA/NEXT](../../docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-unknown-reproduced.md). NEXT STARTED samecase selectedraw paid-edge/booth/wayIDs/geometryscope diagnosis before fix; no nextroute yet. Full684+CIbuildPASS remainspriorvalidation, part19ongoing/20planned.
-
-16.10.2026 19D selectedraw diagnosis: exactly2paidM4ways1182567076/31984600 (aliasesĞœ4/E50/E115/Ğ”Ğ¾Ğ½),0booths, complete trace; matchedcore=m4 but0knownPVP. Causeofblockinglocated, correctnessofpaidtag/scope notyet established; no price/freeclaim/sourcechange. [Evidence/NEXT](../../docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-paid-ways.md): samecase only extract2selectedtraceedges/shapewindow+facilitymap/primaryOSMtags; saveproofbeforefix. Full684/CIbuildPASSprior, policy25/25done; part19ongoing/20planned.
-
-16.10.2026 freshcheckout recoveryDONE: actualremote8c3d73ee/tree189a4708, PR14draft, workflow38869309675/jobSUCCESS. Transientexecserverdisconnect and helperJSsyntax recovered before projectchanges, no loss/bypass. [Checkpoint](../../docs/checkpoints/2026-10-16-1119-fresh-checkout-recovery.md). NEXT same19DGranitnoeKazan selected2M4traceedges/shapewindow only; no source/farechange, old684gate notrerun.
-
-16.10.2026 19D GranitnoeKazan selectedscopeDONE:2primaryOSMwaysâ‰ˆ1.966km matchselectedgeometry,0booths,nearestknown1046â‰ˆ8.638km. Traceoutputshapeabsent, indicesnotrequestindices. Exactpaymentapplicability notestablished/operatorpage403; no bypass, unknownretained, no fare/freeclaim/runtimechange. [Evidence/checkpoint](../../docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-scope-reviewed.md). Case1source-gatedhold; NEXT restorefrozentools/currentcheckout then Lisichanskâ†’Moscowcase2 offline2profiles and durablecheckpoint. Other21casesnotblocked; part19ongoing/20planned.
-16.10.2026 dependency recovery DONE: frozen install exit0/18.6s, Node24.19.0/pnpm11.25.0, lockfile unchanged. No new fullgate. NEXT STARTED Lisichanskâ†’Moscow m4:unpriced2/22 two offlineprofiles; checkpoint before fix/nextcase. [Recovery](../../docs/checkpoints/2026-10-16-part19d-dependencies-restored.md).
-
-16.10.2026 19D Lisichanskâ†’Moscow2/22 offline2profiles DONE, complete/hash/departure verified; unknown retained:460â†’71 endpoint exactfaremissing. No runtimechange/newfullgate. [Checkpoint](../../docs/checkpoints/2026-10-16-part19d-lisichansk-moscow-replay.md). NEXT STARTED samecase adapter/matrix/source review before correction/nextcase; continue automatically.
-
-16.10.2026 19D samecase diagnosisDONE: reversed combined416+460 retained forward atomic order, creating wrong416â†’71 key instead of460â†’71; existing1830/2300 fare not newprice. [Correction STARTED](../../docs/checkpoints/2026-10-16-part19d-reversed-compound-boundary-diagnosis.md): compiler orientation+regression, focused/fullgate separate durable steps; unknown/unconfirmed preserved.
-
-16.10.2026 [part19d-compound-compiler-change](../../docs/checkpoints/2026-10-16-part19d-compound-compiler-change.md): Code change DONE, regenerated register; tests NOT yet run, not accepted for completion. NEXT STARTED: Run focused endpoint/adapter/source tests and eslint modified compiler/test, record exact PASS/FAIL then fullgate; do not replay another route before validation.
-
-16.10.2026 [part19d-compound-focused-pass](../../docs/checkpoints/2026-10-16-part19d-compound-focused-pass.md): Focused validation DONE:26/26 PASS, eslint2modifiedfiles exit0. Commands: node --import ./scripts/register-ts-paths.mjs --test experiments/nationwide-tolls/m4-endpoint-register.test.mjs experiments/nationwide-tolls/engine/m4-route-adapter.test.mjs experiments/nationwide-tolls/m4-verified-source.test.mjs; pnpm exec eslint compiler/test. No runtime sums/newprice/reversefare invention; sourcePDF/receipt hashes verified by tests. Fullgate not yet run. NEXT STARTED: Run npm run build -- --webpack with log capture; inspect complete audit/quote/API/Next/TS/static summary and exitstatus; record before route replay.
-
-16.10.2026 [part19d-focused-lint-failed](../../docs/checkpoints/2026-10-16-part19d-focused-lint-failed.md): Correction / FAILED lint:26/26 focusedtestsPASS, but combined command exit1 from2no-require-imports violations at existing CommonJS compilerline1. Previous focused-pass checkpoint incorrectly asserted exit0 before finaloutput was inspected; superseded and visibly annotated, old log preserved. No fullgate launched, no pricing acceptance. Compiler is deliberately.cjs with unchanged native require; no new lintissue introduced by directionpatch. NEXT STARTED: Run eslint test normally and CJS compiler with explicit no-require-imports exception only; document exact command and inspect exit before recording. Then fullgate. Do not change global lint policy.
-
-16.10.2026 [part19d-compound-lint-recovery-done](../../docs/checkpoints/2026-10-16-part19d-compound-lint-recovery-done.md): Lint recovery DONE exit0: pnpm exec eslint experiments/nationwide-tolls/m4-endpoint-register.test.mjs && pnpm exec eslint experiments/nationwide-tolls/scripts/build-m4-endpoint-register.cjs --rule '@typescript-eslint/no-require-imports: off'. Explicit CJS-only exception for existing native require, not ordinary lintPASS/global policy change.26/26 focused tests passed earlier; plain eslint exit1 is retained in prior correction checkpoint. NEXT STARTED: Fullgate STARTED: npm run build -- --webpack, /tmp/part19-compound-fullgate.log. Require actual exit0 and audit/quote/API/Next/TS/static summaries; onfailure record exactfailure beforefix. Do not price/replay nextcase yet.
-
-16.10.2026 [part19d-compound-fullgate-pass](../../docs/checkpoints/2026-10-16-part19d-compound-fullgate-pass.md): Fullgate DONE: npm run build -- --webpack exit0,687/687testsPASS,0fail; quotecontractPASS, APIadapterPASS, Nextwebpackcompiled7.0s, TypeScript6.1s, static16/16. Previously684+3newregressions. Focused26/26PASS; eslint CJS exception documented separately, ordinarylintfailure retained. Worktree clean/diffcheckPASS aftergate. No deployment/merge/livechecks. NEXT STARTED: Replay ONLY Lisichanskâ†’Moscow savedcapture again for15/17October09:00MSK on correctedengine; verify outputs/hash/unknownstatus and record durablecase before nextcase.
-
-16.10.2026 [part19d-lisichansk-moscow-recovered](../../docs/checkpoints/2026-10-16-part19d-lisichansk-moscow-recovered.md): Case2 corrected replay DONE: whole-route offline estimate1830/2300 RUB for15/17Oct09:00MSK; not confirmed operatorfare. Same OSRM937773m/capture9dd9bdfb..., integrity complete2/2/missingResponses=[], departurebasis unchanged, missing=[], auditpriced.36endpoint key relocation is NOT36verifiedwhole-routecases. NEXT STARTED: Next dnr-ÑˆĞ¸Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-kazan-center3/22 only: savedcapture2026-10-15T12-08-35-445Z-capture.json.gz, two currentengineoffline15/17Oct09:00MSK; verify actualresult/evidence, durablecheckpoint before diagnosis/nextcase; automatic continuation.
-
-16.10.2026 [part19d-shirokino-kazan-source-hold](../../docs/checkpoints/2026-10-16-part19d-shirokino-kazan-source-hold.md): Case3/22 DONE review: Valhalla1668355m, offline15/17October09:00MSK complete2/2/hash/departure verified; unknownM4/candidate0/0booths. Selected paidledger contains exactly same2ways1182567076/31984600 as GranitnoeKazan. Independent selectedgeometry endpoint match1719â†’1721â†’1728within0.046m, savedPVP1046 nearestselectedvertexâ‰ˆ8.640km. Reused preserved primaryOSMways, no newfetch or403bypass; no inferredfreefare. Same1.966km source-gatedcollectionscope, no compilerregression. [Evidence/SHA](evidence/2026-10-16-shirokino-kazan-scope.json). Oldraw/live/replays preserved, fullgate687PASS remainslatest. Class3reviewed:1recovered/2sourcegated, not3confirmedfares. NEXT STARTED: Next lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-moscow-center4/22 only, get exactexistingcorpus capture, currentoffline15/17Oct09:00MSK; durablepair/checkpoint before nextcase; no repeat completedpolicyclass.
-
-16.10.2026 [part19d-case4-replay](../../docs/checkpoints/2026-10-16-part19d-case4-replay.md): Case4/22 lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-moscow-center offlinepair DONE: 1830/2300 RUB, whole-route estimate recovered, stillunconfirmed. ProviderOSRM/914568m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case4-replay.json), captureSHA36d0b3bfcf20b6d80eb8bd3baa310c61be3a87a49b5e988e6502f232997ea2b6. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Next dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-moscow-center case5/22 only, exactexistingcorpus capture and15/17Oct09:00MSK offlinepair; durablecheckpoint before nextcase.
-
-16.10.2026 [part19d-case5-replay](../../docs/checkpoints/2026-10-16-part19d-case5-replay.md): Case5/22 dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-moscow-center offlinepair DONE: 1830/2300 RUB, whole-route estimate recovered, stillunconfirmed. ProviderOSRM/991458m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case5-replay.json), captureSHAf2d806e59d7c139ab6d0875757ee76c55abf1b85b9e909e12e4673a40147ea44. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Next dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-moscow-center case6/22 only, exactexistingcorpus capture and15/17Oct09:00MSK offlinepair; durablecheckpoint before nextcase.
-
-16.10.2026 [part19d-case6-replay](../../docs/checkpoints/2026-10-16-part19d-case6-replay.md): Case6/22 dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-moscow-center offlinepair DONE: 1830/2300 RUB, whole-route estimate recovered, stillunconfirmed. ProviderOSRM/982509m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case6-replay.json), captureSHAed4c45197f7a105878675ec0e4021e2c3bc95df216addfcedde0e4c896578d12. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Next zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-kazan-center case7/22 only, exactexistingcorpus capture and15/17Oct09:00MSK offlinepair; durablecheckpoint before nextcase.
-
-16.10.2026 [part19d-case7-replay](../../docs/checkpoints/2026-10-16-part19d-case7-replay.md): Case7/22 zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-kazan-center offlinepair DONE: / RUB, unknown retained. ProviderValhalla/1842528m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case7-replay.json), captureSHA34148e82f69e87b58eadce3e90ec0965d2c25e4b939213c5106c1059cacbafce. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Samecase zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-kazan-center: diagnose exact currentmissing reason/selectedscope before nextcase; do not guess price.
-
-16.10.2026 [part19d-gulyaypole-kazan-source-hold](../../docs/checkpoints/2026-10-16-part19d-gulyaypole-kazan-source-hold.md): Case7 scope diagnosis DONE: complete selectedValhalla1842528m/0booths, exactlysame2paidways1182567076/31984600 as source-gatedGranitnoe/ShirokinoKazan. Reused primaryOSM endpoints independently match selectedvertices3011â†’3013â†’3020 within0.046m, saved1046 nearestvertexâ‰ˆ8.640km. Sameâ‰ˆ1.966kmpaid-taggedscope; exactcollection/freeproof remainsabsent, no newfetch/bypass/fareinvention. [Geometryevidence](evidence/2026-10-16-gulyaypole-kazan-scope.json); two replays/SHA in case7checkpoint.7/22reviewed:4wholeestimates recovered/3sourcegated; not7confirmedfares. Remotehead/PR14draft/jobSUCCESS rechecked atfb137002, noactivewriter. Full687gatePASS remainslatest. NEXT STARTED: Next max-chain-m4-ckad-m11-zsd-voronezh-to-prim8/22 exactexistingcapture/two offlineprofiles; actualcomponentmissing/evidence review before furthercase. Automatic continuation; all20notcomplete.
-
-16.10.2026 [part19d-case8-replay](../../docs/checkpoints/2026-10-16-part19d-case8-replay.md): Case8/22 max-chain-m4-ckad-m11-zsd-voronezh-to-prim offlinepair DONE: / RUB, unknown retained. ProviderValhalla/1245601m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case8-replay.json), captureSHAfa38a093f1ccf7fee9c35e27eec0dff76bf878fcdcf88bb06fda0ea79f17c7c9. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Samecase max-chain-m4-ckad-m11-zsd-voronezh-to-prim: diagnose exact currentmissing reason/selectedscope before nextcase; do not guess price.
-
-16.10.2026 [part19d-case8-component-recovered](../../docs/checkpoints/2026-10-16-part19d-case8-component-recovered.md): Case8 M4 finding classified DONE:1830/2300 M4component restored, wholequote remainsunknown duezsd_trip_extends_outside_reviewed_zone1 andunmapped_selected_route_paid_booth. Do not present knownM4/M11 subtotal asfulltotal. Remaining products are separate existing findingclasses, retained for later diagnosis; no M4fare change needed. Exactoutputs/hashes incase8evidence, complete2/2 samecaptureValhalla1245601m/departurepolicy. Initial capturelookup incorrectly searched regionalcorpus only, failed before replay; recovered exactroad-cases.json.auditEvidence.capture2026-10-16T00-03-24-052Z without guessing filename/provider. No failedroute/rebuiltlive.8/22checked:4wholeestimates+1M4componentrecovered/3sourcegated. Previousfull687gate stilllatest. NEXT STARTED: Next pair-m4-a289-taman-to-voronezh9/22 fromroad-cases.json, exactsavedcapture twoofflineprofiles, verifyeverycomponent; durablebefore nextcase. M4componentdone canadvance thisclass while unrelatedunknownproductsremainqueued.
-
-16.10.2026 [part19d-case9-replay](../../docs/checkpoints/2026-10-16-part19d-case9-replay.md): Case9/22 pair-m4-a289-taman-to-voronezh offlinepair DONE: / RUB, unknown retained. ProviderOSRM/1026560m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case9-replay.json), captureSHAdb7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Samecase pair-m4-a289-taman-to-voronezh: diagnose exact currentmissing reason/selectedscope before nextcase; do not guess price.
-
-16.10.2026 [part19d-case9-545-scope-diagnosis](../../docs/checkpoints/2026-10-16-part19d-case9-545-scope-diagnosis.md): Case9 diagnosis DONE / scope binding still UNRESOLVED, not a proven new runtimebug. OSRM1026560m/complete10booths/784paidedges, exact545node5818209495. Physicalendpoint1223â†’545 cannot directly match semantic tariff IDs545-a/b. Existingdatedmatrix has two different finished variants:1223â†’545-a3060/3620 includesbothrows;1223â†’545-b2920/3460 includesonlyb. Crossing545alone cannot choose these: explicit existing m4-plaza-nodes.ts notes and corridorinventory require independently proven scope/precomputed finishedspan. Primaryverifiedrows517â€“544140/160 and544â€“589180/250 retained; do not rename/fold blindly or selectmin/max. Nativelegacy through545 helper needs flankingplazas<517 and>589; selected endpoint-only preview isnotthatproof and legacyamountmustnotbeimported. NEXT STARTED: Samecase9 first: inspect only selected trace/route paid-edge geometry around545 northbound and actualexit toward Voronezh; locate independent operator collection rule or prove exact545section scope before one-causefix. Keepunknownifnotproven. Persist this microstep before case10. Automatic task remainsenabled; this isnot a fulltaskblocker.
-
-2026-10-16 resume: exact-tree ancestry recovery DONE; see ../../docs/checkpoints/2026-10-16-resume-exact-tree-recovery.md. Same case9 next, no runtime change.
-
-16.10.2026 [Fresh checkout DONE / samecase9 narrowreview STARTED](../../docs/checkpoints/2026-10-16-1222-fresh-checkout-case9-resume.md): actuala11dcf46/PR14draft, workflow38869309675SUCCESS. No newcode/build. Next primaryPDF545tariffrows/footnotes+selectedgeometry, unknown preserved until scopeproof; oldcheckout retained.
-
-2026-10-16-122949 MSK [Case9scopeDONE/source-gated](../../docs/checkpoints/2026-10-16-122949-case9-545-source-gate.md): primaryPDF/4OSMobjects andselected545exactlane reviewed, M4named28km notpaid-scopeproof; collectionrule unresolved/operator403notbypassed, unknownretained. No code/newgate; prior687historical. NEXT STARTED case10 Voronezhâ†’Taman savedcapture/twoofflineprofiles; case9holdnotfulltaskblocker. CLIcredentialfailure recoveredconnector exacttree2ac0d2a; source/historypreserved.
-
-2026-10-16-123215 MSK [case10-frozen-tools-ready](../../docs/checkpoints/2026-10-16-123215-case10-frozen-tools-ready.md): Dependency prerequisite DONE: pnpm install --frozen-lockfile exit0 in1.1s, pnpm11.25.0; tracked worktree remainedclean, lockfileunchanged. No newtest/build claim, previous687gate historical. No sourcepricechange. NEXT: Case10 pair-m4-a289-voronezh-to-taman capture2026-10-16T00-11-20-485Z-capture.json.gz; run twoofflineprofiles15/17Oct09:00MSK, verifySHA/provider/integrity/departure/M4component; save separately before nextcase.
-
-2026-10-16-123435 MSK [part19d-current-case10](../../docs/checkpoints/2026-10-16-123435-part19d-current-case10.md): Case10/22 pair-m4-a289-voronezh-to-taman DONE: source_gated_physical545_scope_unresolved, providerOSRM/1025458m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next pair-m4-m11-voronezh-to-spb, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-123630 MSK [part19d-current-case11](../../docs/checkpoints/2026-10-16-123630-part19d-current-case11.md): Case11/22 pair-m4-m11-voronezh-to-spb DONE: m4_component_priced_other_products_unknown, providerValhalla/1236369m. Wholeamounts[null,null], remaining["zsd"]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-krasnodar-to-voronezh, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-123734 MSK [part19d-current-case12](../../docs/checkpoints/2026-10-16-123734-part19d-current-case12.md): Case12/22 single-m4-krasnodar-to-voronezh DONE: source_gated_physical545_scope_unresolved, providerOSRM/836186m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-voronezh-to-krasnodar, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-123840 MSK [part19d-current-case13](../../docs/checkpoints/2026-10-16-123840-part19d-current-case13.md): Case13/22 single-m4-voronezh-to-krasnodar DONE: source_gated_physical545_scope_unresolved, providerOSRM/835029m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next triple-m4-m11-zsd-voronezh-to-prim, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-123947 MSK [part19d-current-case14](../../docs/checkpoints/2026-10-16-123947-part19d-current-case14.md): Case14/22 triple-m4-m11-zsd-voronezh-to-prim DONE: m4_component_priced_other_products_unknown, providerValhalla/1245601m. Wholeamounts[null,null], remaining["zsd","unknown-paid-road"]; no numeric subtotal presented asfulltotal. NEXT: Next dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-kazan-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-124051 MSK [part19d-current-case15](../../docs/checkpoints/2026-10-16-124051-part19d-current-case15.md): Case15/22 dnr-Ğ½Ğ¾Ğ²Ğ¾Ğ°Ğ·Ğ¾Ğ²ÑĞº-kazan-center DONE: source_gated_same_two_way_collection_scope, providerValhalla/1647414m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-kazan-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-124158 MSK [part19d-current-case16](../../docs/checkpoints/2026-10-16-124158-part19d-current-case16.md): Case16/22 dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-kazan-center DONE: source_gated_same_two_way_collection_scope, providerValhalla/1688157m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-kazan-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-124305 MSK [part19d-current-case17](../../docs/checkpoints/2026-10-16-124305-part19d-current-case17.md): Case17/22 zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-kazan-center DONE: source_gated_same_two_way_collection_scope, providerValhalla/1742659m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next pair-m4-a289-anapa-to-voronezh, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-124417 MSK [part19d-current-case18](../../docs/checkpoints/2026-10-16-124417-part19d-current-case18.md): Case18/22 pair-m4-a289-anapa-to-voronezh DONE: source_gated_physical545_scope_unresolved, providerOSRM/992359m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next pair-m4-a289-voronezh-to-anapa, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-124521 MSK [part19d-current-case19](../../docs/checkpoints/2026-10-16-124521-part19d-current-case19.md): Case19/22 pair-m4-a289-voronezh-to-anapa DONE: source_gated_physical545_scope_unresolved, providerOSRM/991519m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-rostov-to-voronezh, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-124629 MSK [part19d-current-case20](../../docs/checkpoints/2026-10-16-124629-part19d-current-case20.md): Case20/22 single-m4-rostov-to-voronezh DONE: source_gated_physical545_scope_unresolved, providerValhalla/567353m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-voronezh-to-moscow, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-124732 MSK [part19d-current-case21](../../docs/checkpoints/2026-10-16-124732-part19d-current-case21.md): Case21/22 single-m4-voronezh-to-moscow DONE: whole_estimate_present_current_engine, providerValhalla/520174m. Wholeamounts[1830,2300], remaining[]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-voronezh-to-rostov, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-124839 MSK [part19d-current-case22](../../docs/checkpoints/2026-10-16-124839-part19d-current-case22.md): Case22/22 single-m4-voronezh-to-rostov DONE: source_gated_physical545_scope_unresolved, providerValhalla/565794m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next dnr-Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµ-saint-petersburg-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
-
-2026-10-16-125248 MSK [part19d-m4-22-review-and-open-collection-rule](../../docs/checkpoints/2026-10-16-125248-part19d-m4-22-review-and-open-collection-rule.md): M4 finding review DONE22/22 distinctcases, NOT22confirmedfares:5wholeunconfirmedestimates,3M4componentspriced/wholeunknown,8physical545scopegated,6shortM4scopegated. Currentqueue and per-caseSHA/checkpoints preserve exactoutcomes; unchangedfrozenREPORT. No newruntimechange/fullgate thisturn, prior687historical. NEXT: NEXT narrowstep: evaluate primaryopen-rule applicability and safe exactlyreviewedM4scope guard, then one-causecodechange only ifindependentproofsuffices; focused+fullgate and6separatecasecheckpoints beforeacceptance. Otherwise keep6unknown and continueZSDfirst dnr-Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµ-saint-petersburg-center. Keep8physical545sourcegates; parts19ongoing/20planned.
-
-2026-10-16-125719 MSK [m4-open-rule-proof-and-api-review](../../docs/checkpoints/2026-10-16-125719-m4-open-rule-proof-and-api-review.md): Primary-rule verification DONE, implementation NOT started: operator uploaded13pagePDF SHAa3ed4b13529e0eae7865bfc4192c6944a0b3ece6c371062a97d5b6dc461c57dc section2.1 is PAGE4 (visuallyrendered1600px), notpage3; earliercheckpoint visiblyannotated, oldstatementpreserved. Page2matchingheading is tableofcontents. Fulltext containsno545-specificrule, so8physical545gates remainunresolved. NEXT: Revisit exactshortM4scope case1 dnr-Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµ-kazan-center: decide whether primaryfullway-node geometry/facilitymap+operatoropenrule establishes positive no-charge proof. If sufficient, implement reviewedroad-scopeguard (no benchmarkrouteIDs) requiring same-selectedcompleteValhalla/boothcoverage, exact2ways1182567076+31984600/directedgeometry,0booths+0knownM4candidates; wholezero onlywithnoothermissingproducts, preserveauditraw and avoidlatefallback/APIcontradictions. Focused adversarialtests+fullgate and6separatecasecheckpoints before accepting any0/FREE. If proofstillinsufficient, keep6unknown and continueZSDfirstcase dnr-Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµ-saint-petersburg-center. Parts19ongoing/20planned.
-
-2026-10-16 13:58 MSK: # Short M4 positive proof review â€” DONE, source gate retained
-
-16.10.2026 MSK. Parent ecd165c2aefb93f6331129f8a8da34ddcdab3021, working branch fix/v3-missing-route-prices-2026-10-15, draft PR14. Fresh clone calculator-resume matches remote parent; prior checkout no longer exists. Initial exec failed due missing working directory, retry in /tmp succeeded; no permission escalation needed. Latest parent PR workflow38884064919 completed/success; no active writer observed.
-
-Read primary PDF pages3â€“4 with pdftotext -layout, existing fullway geometry evidence and API review. General rule applicability to M4 is explicit (definitions p3); section2.1 p4 states payment is triggered at a PVP and allows travel without crossing one. This supports the intended algorithm, but source record m4-355-receipt-rule-verified-2026-10-14.json explicitly has effectiveFrom:null and notes historical/current topology differences. No independently dated operator physical collection-scope record for these two exact ways is present; association to PVP1046 remains a search snippet previously rejected for scope proof. Valhalla completeness and an OSM map without booth tags are useful corroboration, not independent operator inventory completeness. Endpoint/direct-way matching cannot turn absence of map data into independent no-charge confirmation.
-
-Decision: retain six source-gated unknowns; do not implement a route/way allowlist returning zero on this evidence alone. This is not a rejection of open collection or proof of a charge. Missing proof: current operator applicability/collection boundaries for the exact selected short segment (or equivalent independently confirmed control). Eight physical545 gates remain separate. No code/prices changed; no tests/build executed; historical687 remains historical. Raw/captures/REPORT preserved.
-
-NEXT STARTED: ZSD first case dnr-Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‚Ğ½Ğ¾Ğµ-saint-petersburg-center, locate exact existing capture from corpus.json, restore frozen dependencies, offline replay15/17Oct09:00MSK, preserve raw and inspect missing ZSD scope. Do not rerun completed22 M4 or25 policy cases. Save each replay case before continuing. Parts19 ongoing/20 planned; no main/merge/Production/Android changes.
-
-Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
-
-16.10.2026 frozen dependencies DONE exit0/24.2s, lock unchanged; ZSD Granitnoeâ†’SPB exact saved-capture two-profile replay STARTED. See ../../docs/checkpoints/2026-10-16-1401-zsd-dependencies-ready.md
-
-16.10.2026 ZSD Granitnoeâ†’SPB replay DONE2/2 complete; M4 now3810/4640, only ZSD missing; component sums are not totals. Samecase exactways/gates scope diagnosis STARTED. ../../docs/checkpoints/2026-10-16-1403-zsd-granitnoe-spb-replay.md
-
-16.10.2026 ZSD Granitnoeâ†’SPB physicalscope DONE: actual northbound PVP5 node933974870,26ways/12outside reviewedzone1, exitEkateringofka. Primaryzone prices exist; wholecollectionscope stillrequires binding. ../../docs/checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md NEXT samecase ownercash/cardscope, noalias/guessedtotal.
-
-16.10.2026 ZSD case1 primaryrules review DONE; source-gatedfinishedscope, no600guess. NEXT STARTED case2 Bryankaâ†’SPB twoofflineprofiles. ../../docs/checkpoints/2026-10-16-1410-zsd-primary-rule-scope-hold.md
-
-16.10.2026 ZSDcase2 Bryankaâ†’SPB DONE2/2 exit0/complete, same26ways/PVP5 ascase1, unknownZSDonly. NEXT case3 Lisichanskâ†’SPB exactcapturetwoofflineprofiles. ../../docs/checkpoints/2026-10-16-1412-zsd-bryanka-spb-replay.md
-
-2026-10-16T14:06:50.067788+03:00: ZSDcase3 lnr-Ğ»Ğ¸ÑĞ¸Ñ‡Ğ°Ğ½ÑĞº-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140650-zsd-case3.md. NEXT lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-saint-petersburg-center.
-
-2026-10-16T14:07:37.609727+03:00: ZSDcase4 lnr-Ñ€ÑƒĞ±ĞµĞ¶Ğ½Ğ¾Ğµ-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140737-zsd-case4.md. NEXT zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-saint-petersburg-center.
-
-2026-10-16T14:07:57.816486+03:00: ZSDcase5 zaporizhzhia-Ğ³ÑƒĞ»ÑĞ¹Ğ¿Ğ¾Ğ»Ğµ-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140757-zsd-case5.md. NEXT dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-saint-petersburg-center.
-
-2026-10-16T14:08:18.519398+03:00: ZSDcase6 dnr-Ğ±Ğ°Ñ…Ğ¼ÑƒÑ‚-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140818-zsd-case6.md. NEXT dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-saint-petersburg-center.
-
-2026-10-16T14:08:39.298384+03:00: ZSDcase7 dnr-Ğ²Ğ¾Ğ»Ğ½Ğ¾Ğ²Ğ°Ñ…Ğ°-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140839-zsd-case7.md. NEXT dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-saint-petersburg-center.
-
-2026-10-16T14:08:59.138428+03:00: ZSDcase8 dnr-Ğ´Ğ¾Ğ½ĞµÑ†Ğº-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140859-zsd-case8.md. NEXT lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-saint-petersburg-center.
-
-2026-10-16T14:09:19.598530+03:00: ZSDcase9 lnr-Ğ°Ğ»Ñ‡ĞµĞ²ÑĞº-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140919-zsd-case9.md. NEXT lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-saint-petersburg-center.
-
-2026-10-16T14:09:40.512335+03:00: ZSDcase10 lnr-Ğ°Ğ½Ñ‚Ñ€Ğ°Ñ†Ğ¸Ñ‚-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140940-zsd-case10.md. NEXT lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-saint-petersburg-center.
-
-2026-10-16T14:10:00.457425+03:00: ZSDcase11 lnr-Ğ´Ğ¾Ğ²Ğ¶Ğ°Ğ½ÑĞº-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141000-zsd-case11.md. NEXT lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-saint-petersburg-center.
-
-2026-10-16T14:10:21.676416+03:00: ZSDcase12 lnr-Ğ¼Ğ°Ñ€ĞºĞ¾Ğ²ĞºĞ°-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141021-zsd-case12.md. NEXT max-chain-m12-ckad-m11-zsd-arzamas-to-prim.
-
-2026-10-16T14:10:40.127312+03:00: ZSDcase13 max-chain-m12-ckad-m11-zsd-arzamas-to-prim DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['ckad', 'm11-15-58', 'unknown-paid-road', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141040-zsd-case13.md. NEXT max-chain-m12-ckad-m11-zsd-kazan-to-sest.
-
-16.10.2026 primaryproof DONE: unnamednode1766158781 belongsZSD via4directedways, all in selectedcase13ledger; fixexactidentity STARTED, nofarechange. ../../docs/checkpoints/2026-10-16-zsd-planernaya-identity-proof.md Plan90%18/20. NEXT source/adversarialregression thenfocused/fullgate/samecasereplay.
-
-16.10.2026 Planernayaexactidentity CODE DONE/fourregressionsadded, NOTtested; NEXT focusedtests/lint thenfullgate/samecase. ../../docs/checkpoints/2026-10-16-zsd-planernaya-identity-code.md Plan90%.
-
-16.10.2026 Planernayafocused8/8PASS/eslintnewtestexit0; fullgateSTARTED npm run build -- --webpack. ../../docs/checkpoints/2026-10-16-zsd-planernaya-focused-pass.md Plan90%.
-
-16.10.2026 Planernayafullgate DONE exit0:691/691+quote/API+Nextwebpack/TS/static16/16PASS. NEXT correctedcase13twoofflineprofiles. ../../docs/checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md Overallplan90%18/20.
-
-16.10.2026 ZSD1766158781identityfix validated withcorrectedcase13pair: redundantunknownroadgone, M11head/CKAD/ZSD stillblocknulltotal. 691fullgatePASS/8focusedPASS. Rawfullgatelog CR bytepreservation recovery included; requireexacttree. ../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md NEXT case14Kazanâ†’Sestroretsk; plan90%18/20.
-
-2026-10-16T14:19:34.491002+03:00: ZSDcase14 max-chain-m12-ckad-m11-zsd-kazan-to-sest DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['ckad', 'm11-15-58', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141934-zsd-case14.md. NEXT max-chain-m12-ckad-m11-zsd-murom-to-sest.
-
-16.10.2026 ZSDcase14 scopeDONE:76ways/two namedPvP/southâ†’northKAD, no newidentitybug, sourcegate retained. Latest691fullgatePASS supersedes stale687template. ../../docs/checkpoints/2026-10-16-zsd-kazan-sestroretsk-scope.md NEXTcase15Muromâ†’Sestroretsk; plan90%.
-
-2026-10-16T14:21:32.369652+03:00: ZSDcase15 max-chain-m12-ckad-m11-zsd-murom-to-sest DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'm11-15-58', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142132-zsd-case15.md. NEXT max-chain-m12-ckad-m11-zsd-sest-to-kazan.
-
-2026-10-16T14:22:04.923099+03:00: ZSDcase16 max-chain-m12-ckad-m11-zsd-sest-to-kazan DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['ckad', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142204-zsd-case16.md. NEXT max-chain-m12-ckad-m11-zsd-sest-to-murom.
-
-16.10.2026 ZSDcase16 distinctscopeDONE: 67ways/54outside reviewedzone1, actualguardrefusal consistent, no fareguess/runtimefix. ../../docs/checkpoints/2026-10-16-142324-zsd-case16-scope.md NEXTmax-chain-m12-ckad-m11-zsd-sest-to-murom; plan90%, latest691gatePASS.
-
-2026-10-16T14:24:14.117035+03:00: ZSDcase17 max-chain-m12-ckad-m11-zsd-sest-to-murom DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142414-zsd-case17.md. NEXT max-chain-m4-ckad-m11-zsd-krasnodar-to-sest.
-
-2026-10-16T14:24:35.248947+03:00: ZSDcase18 max-chain-m4-ckad-m11-zsd-krasnodar-to-sest DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142435-zsd-case18.md. NEXT max-chain-m4-ckad-m11-zsd-rostov-to-sest.
-
-16.10.2026 ZSDcase18 distinctscopeDONE: 76ways/62outside reviewedzone1, actualguardrefusal consistent, no fareguess/runtimefix. ../../docs/checkpoints/2026-10-16-142453-zsd-case18-scope.md NEXTmax-chain-m4-ckad-m11-zsd-rostov-to-sest; plan90%, latest691gatePASS.
-
-2026-10-16T14:25:11.185285+03:00: ZSDcase19 max-chain-m4-ckad-m11-zsd-rostov-to-sest DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142511-zsd-case19.md. NEXT max-chain-m4-ckad-m11-zsd-sest-to-krasnodar.
-
-2026-10-16T14:25:33.114822+03:00: ZSDcase20 max-chain-m4-ckad-m11-zsd-sest-to-krasnodar DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142533-zsd-case20.md. NEXT max-chain-m4-ckad-m11-zsd-sest-to-rostov.
-
-16.10.2026 ZSDcase20 distinctscopeDONE: 67ways/54outside reviewedzone1, actualguardrefusal consistent, no fareguess/runtimefix. ../../docs/checkpoints/2026-10-16-142551-zsd-case20-scope.md NEXTmax-chain-m4-ckad-m11-zsd-sest-to-rostov; plan90%, latest691gatePASS.
-
-2026-10-16T14:26:11.986552+03:00: ZSDcase21 max-chain-m4-ckad-m11-zsd-sest-to-rostov DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142611-zsd-case21.md. NEXT max-chain-m4-ckad-m11-zsd-voronezh-to-prim.
-
-2026-10-16T14:26:33.677215+03:00: ZSDcase22 max-chain-m4-ckad-m11-zsd-voronezh-to-prim DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142633-zsd-case22.md. NEXT pair-m11-ckad-domodedovo-to-spb.
-
-2026-10-16T14:26:54.350882+03:00: ZSDcase23 pair-m11-ckad-domodedovo-to-spb DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142654-zsd-case23.md. NEXT pair-m11-ckad-noginsk-to-spb.
-
-2026-10-16T14:27:12.414460+03:00: ZSDcase24 pair-m11-ckad-noginsk-to-spb DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'm11-15-58', 'zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142712-zsd-case24.md. NEXT pair-m11-ckad-spb-to-domodedovo.
-
-2026-10-16T14:27:33.618941+03:00: ZSDcase25 pair-m11-ckad-spb-to-domodedovo DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['unknown-paid-road', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142733-zsd-case25.md. NEXT pair-m11-ckad-spb-to-noginsk.
-
-16.10.2026 ZSDcase25 distinctscopeDONE: 38ways/25outside reviewedzone1, actualguardrefusal consistent, no fareguess/runtimefix. ../../docs/checkpoints/2026-10-16-142752-zsd-case25-scope.md NEXTpair-m11-ckad-spb-to-noginsk; plan90%, latest691gatePASS.
-
-2026-10-16T14:28:10.896352+03:00: ZSDcase26 pair-m11-ckad-spb-to-noginsk DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142810-zsd-case26.md. NEXT pair-m11-zsd-moscow-to-prim.
-
-2026-10-16T14:30:02.393729+03:00: ZSD26/76 individuallydurable; thisblock13additionalcases, sourcegateskept, no runtimechange/newfullgate. Overallplan90%18/20. Existingauto enabled/readbackconfirmed; promptonlyupdatedwithpercentinstruction/scheduleunchanged. Checkpoint ../../docs/checkpoints/2026-10-16-zsd-26case-handoff-and-auto-reporting.md. NEXTcase27pair-m11-zsd-moscow-to-prim.
-
-16.10.2026 16:54MSK scratch-pruning recovery DONE, exactclonehead/tree verified; no routeprogress lost. NEXT frozen dependencies/repository-owned ZSDsinglecaseutility, then case27. ../../docs/checkpoints/2026-10-16-1654-resume-after-scratch-pruning.md Plan90%.
-# 2026-10-16 16:54 ĞœĞ¡Ğš â€” case 27 replay: FAILED import path
-
-ĞŸĞµÑ€Ğ²Ñ‹Ğ¹ offline replay `pair-m11-zsd-moscow-to-prim` Ğ½Ğµ Ğ·Ğ°Ğ¿ÑƒÑÑ‚Ğ¸Ğ»ÑÑ: Ğ¾ÑˆĞ¸Ğ±Ğ¾Ñ‡Ğ½Ğ¾ ÑƒĞºĞ°Ğ·Ğ°Ğ½ `./experiments/nationwide-tolls/scripts/register-ts-paths.mjs`, Ñ„Ğ°ĞºÑ‚Ğ¸Ñ‡ĞµÑĞºĞ¸Ğ¹ import â€” `./scripts/register-ts-paths.mjs`. Exit 1 Ğ´Ğ¾ Ñ‡Ñ‚ĞµĞ½Ğ¸Ñ capture; Ñ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚Ñ‹ Ğ¸ Ñ‚Ğ°Ñ€Ğ¸Ñ„Ğ½Ğ°Ñ Ğ»Ğ¾Ğ³Ğ¸ĞºĞ° Ğ½Ğµ Ğ¼ĞµĞ½ÑĞ»Ğ¸ÑÑŒ. Ğ¡Ğ¼. `../../docs/checkpoints/2026-10-16-1654-zsd-case27-replay-failed-import.md`. Ğ¡Ğ»ĞµĞ´Ğ¾Ğ¼ Ğ¿Ğ¾Ğ²Ñ‚Ğ¾Ñ€Ğ¸Ñ‚ÑŒ Ñ‚Ğ¾Ñ‚ Ğ¶Ğµ case Ñ Ğ¸ÑĞ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½Ğ½Ñ‹Ğ¼ import. ĞŸĞ»Ğ°Ğ½ 90% (18/20), ZSD review 26/76.
-
-16.10.2026 frozen dependencies restored exit0/15.7s, lockunchanged; NEXT repository-owned ZSD review utility. ../../docs/checkpoints/2026-10-16-1656-frozen-dependencies-restored.md No newtest/build/route; plan90%.
-
-16.10.2026 ZSD repository-owned singlecase utility CODE DONE, fourintegrity/adversarial tests added; syntaxchecks passed, focused/fullgate NOTyet run. ../../docs/checkpoints/2026-10-16-zsd-repository-runner-code.md NEXT focusedchecks, fullgate, case27. Plan90%.
-
-16.10.2026 ZSDdurablerunnerfocused4/4PASS/lint2filesexit0, rulesreread peruser17:11; NEXTfullgate then automaticcase27. ../../docs/checkpoints/2026-10-16-zsd-runner-focused-pass.md Plan90%.
-
-16.10.2026 current-chat resume: rules/20parts reread, exact remote tree matched in own checkout. Plan90%. NEXT fullgate then case27. docs/checkpoints/2026-10-16-continue-current-chat.md
-
-16.10.2026 fullgate DONE exit0:695/695, quote/API, webpack/TS/static16/16 PASS. Raw log preserved. NEXT case27 --next. Plan90%. docs/checkpoints/2026-10-16-current-chat-fullgate-pass.md
-
-16.10.2026 runnerpreflight FAILED before replay: untracked dependency symlink, localexclude repaired. No caseprogress. NEXT retrycase27. Plan90%. docs/checkpoints/2026-10-16-zsd-preflight-symlink-recovery.md
-
-2026-10-16T14:20:22.672Z: ZSD case27 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-20-22-671Z.md). NEXT ZSD nextcase pair-m11-zsd-moscow-to-sest; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:21:01.822Z: ZSD case28 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-21-01-821Z.md). NEXT ZSD nextcase pair-m11-zsd-prim-to-moscow; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:21:34.192Z: ZSD case29 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-21-34-191Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
-
-2026-10-16T14:22:03.311Z: ZSD distinct scope diagnosis DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-22-03-311Z.md). NEXT ZSD nextcase pair-m11-zsd-sest-to-moscow; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:22:40.283Z: ZSD case30 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-22-40-282Z.md). NEXT ZSD nextcase pair-m11-zsd-tver-to-sest; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:23:16.596Z: ZSD case31 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-23-16-595Z.md). NEXT ZSD nextcase pair-m4-m11-voronezh-to-spb; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:23:47.962Z: ZSD case32 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-23-47-961Z.md). NEXT ZSD nextcase single-m11-moscow-to-spb; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:24:19.601Z: ZSD case33 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-24-19-601Z.md). NEXT ZSD nextcase single-m11-spb-to-moscow; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:24:53.591Z: ZSD case34 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-24-53-591Z.md). NEXT ZSD nextcase single-zsd-blag-to-prim; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:25:27.773Z: ZSD case35 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-25-27-773Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
-
-16.10.2026 case35 diagnosis FAILED optionalmaneuvers absent; runnerfix+regression CODE DONE, untested. NEXT focused/fullgate then retrydiagnose. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-only-diagnosis-fix.md
-
-16.10.2026 geometry-only focused5/5PASS+eslint exit0. NEXT fullgate then case35diagnosis. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-focused-pass.md
-
-16.10.2026 geometry-only fullgate exit0:696/696+quote/API+webpack/TS/static16/16PASS. NEXT case35 --diagnose. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-fullgate-pass.md
-
-2026-10-16T14:28:34.645Z: ZSD distinct scope diagnosis DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-28-34-645Z.md). NEXT ZSD nextcase single-zsd-pushkin-to-sest; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:29:07.615Z: ZSD case36 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-29-07-614Z.md). NEXT ZSD nextcase single-zsd-sest-to-pushkin; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:29:41.096Z: ZSD case37 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-29-41-095Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-kazan-to-spb; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:30:11.880Z: ZSD case38 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-30-11-879Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-spb-to-kazan; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:30:45.809Z: ZSD case39 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-30-45-808Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-krasnodar-to-sest; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:31:19.288Z: ZSD case40 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-31-19-287Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-rostov-to-sest; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:31:51.979Z: ZSD case41 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-31-51-978Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-sest-to-krasnodar; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:32:29.470Z: ZSD case42 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-32-29-470Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-sest-to-rostov; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:33:00.908Z: ZSD case43 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-33-00-907Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-voronezh-to-prim; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:33:32.505Z: ZSD case44 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-33-32-503Z.md). NEXT ZSD nextcase dnr-ĞºÑ€Ğ°Ğ¼Ğ°Ñ‚Ğ¾Ñ€ÑĞº-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:34:04.922Z: ZSD case45 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-34-04-922Z.md). NEXT ZSD nextcase dnr-Ñ‚Ğ°Ğ»Ğ°ĞºĞ¾Ğ²ĞºĞ°-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
-
-16.10.2026 case45 exacttree durable after Cyrillic path transfer recovery; raw retained/no rerun. NEXTcase46. Plan90%. docs/checkpoints/2026-10-16-zsd-cyrillic-path-persist-recovery.md
-
-2026-10-16T14:35:29.499Z: ZSD case46 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-35-29-498Z.md). NEXT ZSD nextcase dnr-Ñ…Ğ°Ñ€Ñ†Ñ‹Ğ·ÑĞº-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:36:02.345Z: ZSD case47 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-36-02-342Z.md). NEXT ZSD nextcase lnr-Ñ€Ğ¾Ğ²ĞµĞ½ÑŒĞºĞ¸-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:36:42.146Z: ZSD case48 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-36-42-146Z.md). NEXT ZSD nextcase lnr-ÑĞ¾Ñ€Ğ¾ĞºĞ¸Ğ½Ğ¾-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:37:13.168Z: ZSD case49 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-37-13-167Z.md). NEXT ZSD nextcase lnr-ÑÑ‚Ğ°Ñ€Ğ¾Ğ±ĞµĞ»ÑŒÑĞº-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:37:50.457Z: ZSD case50 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-37-50-456Z.md). NEXT ZSD nextcase zaporizhzhia-Ñ€Ğ¾Ğ·Ğ¾Ğ²ĞºĞ°-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:38:28.073Z: ZSD case51 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-38-28-073Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-cheboksary-to-prim; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:54:09.670Z: ZSD case52 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-54-09-669Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-prim-to-arzamas; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:55:21.353Z: ZSD case53 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-55-21-353Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-prim-to-cheboksary; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T14:56:23.108Z: ZSD case54 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-56-23-107Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-sest-to-vladimir; --next; savedcapture twoofflineprofiles.
-2026-10-16T18:43:00+03:00: Ğ²Ğ¾ÑÑÑ‚Ğ°Ğ½Ğ¾Ğ²Ğ»ĞµĞ½ Ğ¾Ñ‚Ğ´ĞµĞ»ÑŒĞ½Ñ‹Ğ¹ checkout Ğ¸ Ğ·Ğ°Ğ²Ğ¸ÑĞ¸Ğ¼Ğ¾ÑÑ‚Ğ¸ Ğ¿Ğ¾ÑĞ»Ğµ Ğ¾Ñ‡Ğ¸ÑÑ‚ĞºĞ¸ Ğ²Ñ€ĞµĞ¼ĞµĞ½Ğ½Ğ¾Ğ¹ ÑÑ€ĞµĞ´Ñ‹; `pnpm install --frozen-lockfile` exit0, 504 policy entries, 429 packages. Ğ˜ÑÑ…Ğ¾Ğ´Ğ½Ğ¸ĞºĞ¸/lockfile Ğ±ĞµĞ· Ğ¸Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ğ¹. [Checkpoint](../../docs/checkpoints/2026-10-16-1843-dependencies-restored.md). NEXT ZSD case55. Plan90% (18/20), ZSD54/76.
-
-2026-10-16T15:43:19.349Z: ZSD case55 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T15-43-19-348Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-vladimir-to-sest; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T15:44:20.992Z: ZSD case56 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T15-44-20-991Z.md). NEXT ZSD nextcase max-chain-m4-ckad-m11-zsd-krasnodar-to-prim; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T16:51:08.178Z: ZSD case57 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-51-08-177Z.md). NEXT ZSD nextcase max-chain-m4-ckad-m11-zsd-prim-to-voronezh; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T16:52:00.109Z: ZSD case58 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-52-00-108Z.md). NEXT ZSD nextcase max-chain-m4-ckad-m11-zsd-rostov-to-prim; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T16:53:50.520Z: ZSD case59 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-53-50-519Z.md). NEXT ZSD nextcase pair-m11-zsd-novgorod-to-sest; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T16:55:29.263Z: ZSD case60 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-55-29-262Z.md). NEXT ZSD nextcase pair-m11-zsd-prim-to-torzhok; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T16:56:47.020Z: ZSD case61 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-56-47-019Z.md). NEXT ZSD nextcase pair-m11-zsd-sest-to-novgorod; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T16:58:56.541Z: ZSD case62 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-58-56-537Z.md). NEXT ZSD nextcase pair-m11-zsd-sest-to-tver; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T17:00:04.181Z: ZSD case63 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-00-04-180Z.md). NEXT ZSD nextcase pair-m11-zsd-torzhok-to-prim; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T17:01:23.089Z: ZSD case64 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-01-23-087Z.md). NEXT ZSD nextcase pair-m4-m11-spb-to-voronezh; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T17:02:36.458Z: ZSD case65 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-02-36-457Z.md). NEXT ZSD nextcase single-m11-spb-to-tver; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T17:03:59.021Z: ZSD case66 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-03-59-020Z.md). NEXT ZSD nextcase single-m11-tver-to-spb; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T17:05:06.763Z: ZSD case67 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-05-06-762Z.md). NEXT ZSD nextcase single-zsd-blag-to-sest; --next; savedcapture twoofflineprofiles.
-
-2026-10-16T17:06:19.284Z: ZSD case68 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-06-19-283Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
+YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíë®uí:-jZ.¶›­–)Ş³R2
+-]­=’í}’m=İ° ­	ıí½İòı]mİıò-íò]r}Í]İ]İòíM]mİó¢µtõ$µôÄôuô„•5Dõ%•ó##bÓÓUó###‚æÖEÒ…tõ$µôÄôuô„•5Dõ%•ó##bÓÓUó###‚æÖB’â	İí-½R}ı‚Mí-½ıí-òİmS²ıíMíİí-‚­mMí=âÍ½í=â=(	B"Fö72ö6†V6·ö–çG2òà ¢2	-í-İí-½]İR]M²ıí½Rı]½-İòí]İ]İğ ¥5D%DTB##bÓÓUC##£#“£"ãƒc#r³3£âW†V66VÆÃ3mİ]Mí-=ı]ÒÂı]mİııí}ı­íıı}]}½â
+í}Mİİí-½–6ÆöæRí}]-]-­‚f—‚÷c2ÖÖ—76–ær×&÷WFR×&–6W2Ó##bÓÓRtv—D‡V"â&VÖ÷FRöÆö6Ã“s3ƒfS6c3s“&cV3ƒVSCFF6S#s“C“cFVCcÇG&VS“C#vC“fƒcs3V3sccƒ“#f&#vC“s“ƒc3C&3#R-]]İ²â	íİí-İí­íFFW'GW&WöÆ–7’í]İÒâ	ıí½]Mİ–Æö6Æ3&6fSbóS•5=İRMí½Mç&VÖ÷FS¢í-½Í-ö76W'FçVÆÍM½ı}-]-İí	ÃB½	#ƒ=ÍÍ³#cS²İí-½–VF—FÖ&¶W--­m]İ]í]İÒâ	İ]í­ı-½ı-Íı]mİ“S•5=-í-İí-½]İİ½Í]}İí-í=í}ı=­à ­	­-½í=†æöFUöÖöGVÆW2M==]-½]­íı’İRíM]m-Mí-=ıİí=ææW‡C²İ=mİ½}-Íí-‚âäU…C¢çÒ–ç7FÆÂÒÖg&÷¦VâÖÆö6¶f–ÆRÇ7FF÷WBFö72ö6†V6·ö–çG2öWf–FVæ6Ró##bÓÓR×&W7VÖRÖFW'GW&RÖ–ç7FÆÂæÆös²}-]Íí]İ-Í]}=½Í-"â	ıí½V–ç7FÆÂ-í-İí--ÍM-}-]-İ½]Í½½]}Í]İ]İò†fö7W6VCS’Íí-M]½Íİ½–6†V6·ö–çC²ıí-íÆgVÆÆ'V–ÆB÷&WÆ’öÆ—f]	]Í=.(i-	­}İÂà ­	M½ı=Í]İÍ]İıí­Í­mMí=íí]İ]İòí½Íí•tõ$µôÄô}„äU…Eõ5DU=ı]]İ]]İ½]}}Í]İ]İı-í-"¥ô„•5Dõ%•ó##bÓÓUó###‚æÖBâ	İí-½]İM]­½íM]m-ııÍ½]½½­ƒ²-íıİ]=M½]İıİ]ı]]ıİÂM½Íİ]]}ı†VæM-­íí-­•tõ$µôÄôrâ
+İ-í=-İı]-ıí--íİ=íı]]M}=í-]İ-½ı}-í-ı­mMíÆ6†V6·ö–çBâ	-]M­-²ı­íMı]mİ]=í-í-í-ıMí-mÍ½Í$v—D‡V"à ­	İí-½]-]-í"ö'V–ÆM]İ]#²&öGV7F–öâôæG&ö–BöÖW&v]İ]"â	=M#‚óSRÃC&tôBó3–÷&–v–æÆ6ö×ÆWFRÂ-M½MíÍ]İ½ıí½-­-í}]­Râ	Í]mMíímİ½]-]­-í½í-½ím]İ³²İí-íVFW'GW&WöÆ–7“#£C‚M]--=]"à  ¢2	}-Íí-‚-í-İí-½]İ° ¤DôäR##bÓÓUC##£3£#"ãSss³3£Â&VÖ÷FSVC&F6cc#“##3cfC##3SƒcƒC&SVV#3F3C3B÷G&VSF3C3sc3fF#SCƒCƒ†C6CcFV6ccss†3“FıíM--]mM]İ²âçÒ–ç7FÆÂÒÖg&÷¦VâÖÆö6¶f–ÆRW†—C²7FF÷WBFö72ö6†V6·ö–çG2öWf–FVæ6Ró##bÓÓR×&W7VÖRÖFW'GW&RÖ–ç7FÆÂæÆörâÆö6¶f–Æ]İ]}Í]İÒÂİí-½W'VçF–Ö]-]-í-]İ]"à ¤äU…Bõ5D%DTC¢-í-İí--Íİ]}­]ı½İİ½]ıí½]Mİ]ı-­†76W'C#cR¶Ö—76–ætÓFwV&M†VF—FÖ&¶W'G&—ÖFW'GW&R×c²-½ıí½İ-ÆW‡æFVFfö7W6VCM½í"}İí-âÍí]İ-Í½í2ı]}=½Í-"â	}-]ÆgVÆÆ'V–ÆBôU4Æ–çBÆöffÆ–æ]­íİ-í½ÂÍıíMí½m]İ]=M-â
+-½“S•5=İ]-í-İí-½]İ}½í=í½í=‚İ]}}-½-]-ò}İí-ââ	Í-}İ½]Mİİ½Rõ&öGV7F–öâôæG&ö–M]}}Í]İ]İ’à  ¢2	-í-İí-½]İİòıí-]­S’óS•52Âıí½İ½–'V–ÆE5D%DT@ ¤DôäR##bÓÓUC##£3£ãc#“Sƒ"³3£Â&VçG&VÖ÷FSsCScCsCc#S#ƒ3ƒ6#FSfcc&&Sƒ&SfCBâ	-í-İí-½]İ³-ıí-]ıİİ½]}Í]İ]İó¢í--İı	ÃB½	#ƒm]İ#c]í-M]½Íİ½–Ö—76–ætÓFwV&B'c2×F–ÖRÖ6ÆVæF"ÖVF—BçFW7BçG3²F&–feöÆ–7’G&—ÖFW'GW&R×cö&6—4B-İí-½VVF—F÷WGWG2â	ıí--íæöFRÒÖ–×÷'Bâ÷67&—G2÷&Vv—7FW"×G2×F‡2æÖ§2Ò×FW7CM½í"	ÃBöFFV6ÆVæF"ı	Ã
+m	­		Bı	Ã&öGV7G2ı	}
+	B÷F–ÖV6ÆVæF"÷6÷WF†W&âöf–Æ&–Æ—G’’W†—CÃS’óS•52â	İí-½-í}İ½—7FF÷WBFö72ö6†V6·ö–çG2öWf–FVæ6Ró##bÓÓRÖFW'GW&R×öÆ–7’Öfö7W6VB×&W7VÖVBæÆörâ
+İ-í-İí-½]}=½Í--í]İÒÍı]mİ=-}]İİ½½í=İ]-½M-ı}-í-İí-½]İİ½’à ¥5D%DTC¢çÒ'V–ÆN(i&Fö72ö6†V6·ö–çG2öWf–FVæ6Ró##bÓÓRÖFW'GW&R×öÆ–7’Ö'V–ÆB×&W7VÖVBæÆös²F&vWFVDU4Æ–çF6†ævVFf–ÆW>(i###bÓÓRÖFW'GW&R×öÆ–7’ÖW6Æ–çB×&W7VÖVBæÆörâ	ıí½]M­-}]­í=í]}=½Í--í-M]½Íİ½–6†V6·ö–çB÷&VÖ÷FS²}-]ÆöffÆ–æ]	==½ııí½^(i-	Íí­-ÆÆ—f]	]Í=.(i-	­}İÂâ&öGV7F–öâôæG&ö–BöÖW&v]İ]"à  £##bÓÓb£"	Í
+	¢(	B5D%DTC¢½-í-İí-½]İR‚ıí½İ½’vFUÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ"×&W7VÖRÖ'V–ÆBæÖB’â	]íMİ½’&VÖ÷FRƒsC–63²İí-í=â]}=½Í--í­‚]İ]"à  ¤$Äô4´TC¢--íÍ-}]­òıí-]­í-­½íİ½íRıíı½-­‚W6‚â
+=]--=í’&VÖ÷FRDT4•4”ôå2ıí-]]ÒÂİâ}]]İR-İ=-‚]ıí}-íòİRıİı-âıí-]­í’â	ıíMíİí-ƒ¢¶6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓbÖv—F‡V"×6fRÖ&Æö6¶VBæÖB’â	İí-½R-]-í"ö'V–ÆBİ]#²½í­½Íİ½R}Í]İ]İòİRíı=½­í-İ²à  £##bÓÓb£‚	Í
+	£¢ııÍíR}]]İRıí½Í}í--]½ò"-]­=]Â}-Rıí½=}]İâÂ&÷fÂ&Æö6¶W"İı"â4Ä’W6‚İRÍ]]"7&VFVçF–Ç2†W†—C#‚’â5D%DTB6öææV7F÷"6fR÷&VF&6²Â}-]Âg&÷¦Vâ–ç7FÆÂögVÆÂ'V–ÆBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ‚×6fRÖWF†÷&—¦VBæÖB’à  £##bÓÓc¢g&÷¦Vâ–ç7FÆÂ52öW†—C²ıí½İ½’'V–ÆB5D%DTBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓBÖ–ç7FÆÂ×72Ö'V–ÆB×7F'FVBæÖB’à  £##bÓÓbDôäS¢İí-½’ıí½İ½’çÒ'V–ÆBW†—CÂcS‚ócS‚FW7G2ÂV÷FRô’ôæW‡BõG—U67&—B÷7FF–3bób52â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖ'V–ÆB×72æÖB’âäU…BF&vWFVBU4Æ–çBöF–fbÂ}-]ÂöffÆ–æR	==½ııí½Rà  £##bÓÓbDôäS¢F&vWFVBU4Æ–çC‚M½í"‚F–fb6†V6²W†—Câ5D%DTBöffÆ–æR	==½ııí½^(i-	Íí­-}]--]2ı=í-â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖW6Æ–çB×72×&WÆ’×7F'FVBæÖB’à  £##bÓÓbDôäS¢	==½ııí½^(i-	Íí­-öffÆ–æS3ƒ(+Ò}]--]2’óCcC(+Ò=í-’Âí&WÆ’6ö×ÆWFRöW†—Câ5D%DTBÆ—fR	]Í=.(i-	­}İÂâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖ‡VÆ–—öÆR×&WÆ’×72æÖB’à  £##bÓÓb$Äô4´TC¢Æ—fR	]Í=.(i-	­}İÂí-­½íİÒ--íÍ-}]­í’ıí-]­í’(	B}]]İRİÍ=-İ½RMİİ½R"fÆ†ÆÆôõ5$Òô%&÷WFW"-]=]-òııÍâ"-]­=]Â}-S²-]M]İòâ6öç6VçB-İ=-‚]ıí}-íòİRıİı-²âÆ—fR6GW&Rí-=---=]"Â66RÆææVBÃ‚óSRİRÍ]İı]-òâ½	ıíMíİí-…Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×&÷WF–ærÖ&÷fÂÖ&Æö6¶VBæÖB’â	İRıí--íı-Âı]]M}2Mâí--]-ıí½Í}í--]½òà  £##bÓÓb£r	Í
+	£¢ııÍíR}]]İRı]]M}‚­ííMİ"ıÍ=-İ½RıÍ]-í"fÆ†ÆÆôõ5$Òô%&÷WFW"ıí½=}]İâ"-]­=]Â}-RŒ*½
+}]âMí-=ü+²’â&÷fÂ&Æö6¶W"İı"â5D%DTBÆ—fR	]Í=.(i-	­}İÂâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓr×&÷WF–ærÖWF†÷&—¦VB×7F'FVBæÖB’à  £##bÓÓb£	Í
+	¢DôäS¢Æ—fR	]Í=.(i-	­}İÂõ5$ÓCS"ãCƒ­Âóƒ333ÂG&6T6ö×ÆWFRÂ	Ã#ÓƒS(+Òâ6÷'W2Æ—fRÖ6GW&VC²5D%DTB6ÖRÖFFR÷vVV¶VæB&WÆ’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖ&¶†×WBÖ¶¦âÖÆ—fR×72æÖB’à  £##bÓÓbDôäS¢	]Í=.(i-	­}İÂVF—FVBÂ6ÖRÖFFR&—G’ıí&WÆ’6ö×ÆWFRÃƒSóƒS(+Ó²7FvSÓ’óSRâ5D%DTB&W÷'Bö–çfVçF÷'’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖ&¶†×WBÖ¶¦â×&WÆ’×72æÖB’à  £##bÓÓc¢&W÷'Bö–çfVçF÷'’W†—CÇ&sC2óCôBóCıí½İ½Róıí-]mM]İ“²7FvSÓ’óSRâ5D%DTB6–ævÆRÖ66R&F6‚	]Í=.(i-	­]}Ââ½	ıíMíİí-…Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×&W÷'BÖ–çfVçF÷'’Ö&¶†×WBÖ¶¦âæÖB’à  £##bÓÓeC£##£3"ãcƒƒ³3£¢Fç"İ]Í="Ö¶W&6‚Ö6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓóSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ##3"ÖFç"İ]Í="Ö¶W&6‚Ö6VçFW"ÖVF—BæÖB’âäU…BFç"İ]Í="ÖÖ÷66÷rÖ6VçFW"à  £##bÓÓeC£#C£S"ãCCCƒr³3£¢Fç"İ]Í="ÖÖ÷66÷rÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓóSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#CS"ÖFç"İ]Í="ÖÖ÷66÷rÖ6VçFW"ÖVF—BæÖB’âäU…BFç"İ]Í="×6–çB×WFW'6'W&rÖ6VçFW"à  £##bÓÓeC£#c£’ãCscS2³3£¢Fç"İ]Í="×6–çB×WFW'6'W&rÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓ"óSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#c’ÖFç"İ]Í="×6–çB×WFW'6'W&rÖ6VçFW"ÖVF—BæÖB’âäU…BFç"İ-í½İí-]Ö¶¦âÖ6VçFW"à  £##bÓÓeC£#s£#2ã33cC2³3£¢Fç"İ-í½İí-]Ö¶¦âÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓ2óSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#s#2ÖFç"İ-í½İí-]Ö¶¦âÖ6VçFW"ÖVF—BæÖB’âäU…BFç"İ-í½İí-]Ö¶W&6‚Ö6VçFW"à  £##bÓÓeC£#ƒ£3ã#SCc3‚³3£¢Fç"İ-í½İí-]Ö¶W&6‚Ö6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓBóSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#ƒ3ÖFç"İ-í½İí-]Ö¶W&6‚Ö6VçFW"ÖVF—BæÖB’âäU…BFç"İ-í½İí-]ÖÖ÷66÷rÖ6VçFW"à  £##bÓÓeC£#“£#‚ã“3cC3b³3£¢Fç"İ-í½İí-]ÖÖ÷66÷rÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓRóSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#“#‚ÖFç"İ-í½İí-]ÖÖ÷66÷rÖ6VçFW"ÖVF—BæÖB’âäU…BFç"İ-í½İí-]×6–çB×WFW'6'W&rÖ6VçFW"à  £##bÓÓeC£3£3‚ãSSss³3£¢Fç"İ-í½İí-]×6–çB×WFW'6'W&rÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓbóSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ33‚ÖFç"İ-í½İí-]×6–çB×WFW'6'W&rÖ6VçFW"ÖVF—BæÖB’âäU…BFç"İMíİ]m¢Ö¶¦âÖ6VçFW"à  £##bÓÓeC£3£C2ãS“ƒ#c’³3£¢Fç"İMíİ]m¢Ö¶¦âÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓróSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ3C2ÖFç"İMíİ]m¢Ö¶¦âÖ6VçFW"ÖVF—BæÖB’âäU…BFç"İMíİ]m¢Ö¶W&6‚Ö6VçFW"à  £##bÓÓeC£3#£C‚ã“ScC3r³3£¢Fç"İMíİ]m¢Ö¶W&6‚Ö6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓ‚óSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ3#C‚ÖFç"İMíİ]m¢Ö¶W&6‚Ö6VçFW"ÖVF—BæÖB’âäU…BFç"İMíİ]m¢ÖÖ÷66÷rÖ6VçFW"à  £##bÓÓeC£3C£rãSS3ƒ³3£¢Fç"İMíİ]m¢ÖÖ÷66÷rÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓ’óSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ3CrÖFç"İMíİ]m¢ÖÖ÷66÷rÖ6VçFW"ÖVF—BæÖB’âäU…BFç"İMíİ]m¢×6–çB×WFW'6'W&rÖ6VçFW"à  £##bÓÓeC£3S£ã3s#ƒ‚³3£¢Fç"İMíİ]m¢×6–çB×WFW'6'W&rÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓ#óSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ3SÖFç"İMíİ]m¢×6–çB×WFW'6'W&rÖ6VçFW"ÖVF—BæÖB’âäU…BFç"İ­Í-í¢Ö¶¦âÖ6VçFW"à  £##bÓÓeC£3c£#"ãCC““b³3£¢Fç"İ­Í-í¢Ö¶¦âÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓ#óSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ3c#"ÖFç"İ­Í-í¢Ö¶¦âÖ6VçFW"ÖVF—BæÖB’âäU…BFç"İ­Í-í¢Ö¶W&6‚Ö6VçFW"à  £##bÓÓeC£3s£#’ã3#ƒ“³3£¢Fç"İ­Í-í¢Ö¶W&6‚Ö6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓ#"óSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ3s#’ÖFç"İ­Í-í¢Ö¶W&6‚Ö6VçFW"ÖVF—BæÖB’âäU…BFç"İ­Í-í¢ÖÖ÷66÷rÖ6VçFW"à  £##bÓÓeC£Sƒ£#’ãCƒ#Sb³3£¢Fç"İ­Í-í¢ÖÖ÷66÷rÖ6VçFW"VF—FVBÂ6öÖÖæFW†—CÇ7FvSÓ#2óSRâ&W÷'Bö–çfVçF÷'’W†—Câ½	í-M]½Íİ½’ıíMíİ½’6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓSƒ#’ÖFç"İ­Í-í¢ÖÖ÷66÷rÖ6VçFW"ÖVF—BæÖB’âäU…B¶†W'6öâİ­İòİİí-Ö¶¦âÖ6VçFW"à  £##bÓÓeC#£“£BãCSCCC³3£¢ıí½Í}í--]½Â}Í]İ²ıíıMí¢İ#İ]í½ÍR}-]’í-M]½Íİ½Í‚}ı=­Í‚â
+}-ÃDôäS²}-Ã"äU…Bâ½	ı½ÕÒ…4ÔÄÅõ%E5õÄâæÖB’Â¶6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×6ÖÆÂ×'G2ÓæÖB’â
+}-}¢İRıí-½]ÒÂİí-½RÍ=-²ıí­İR}ı=­½Âà  £bãã##b#£"	Í
+	£¢ıí½Í}í--]½Âıí=}²--íÍ-}]­íRıí½]Mí--]½ÍİíR-½ıí½İ]İR-]R}-]’]rímMİò­íÍİM²*½M½Í\+²â
+}-Ã"5D%DTC¢¶6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×6ÖÆÂ×'G2Ó"×7F'FVBæÖB’â	ı]]]íM-ÂM½ÍRıí½Rıí-]]İİí=âí]İ]İò­mMí=âÍ½í=âıíM=à £bãã##c¢}-Ã"'VææW"&öw&W72ö†V'F&VCW2ÂFVfVÇC²2ó2FW7G252â7G&–7BWf–FVæ6R7FvSÓ#2óSRÇ7FvS#ÓóSBâgVÆÆ'V–ÆB5D%DTBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×6ÖÆÂ×'G2Ó"×'VææW"æÖB’à £bãã##c¢}-Ã"'V–ÆBd”ÄTB†W†—C“¢GW&&÷6²í--]2-İ]İ’7–ÖÆ–æ²æöFUöÖöGVÆW2â5D%DTB½í­½Íİò­íıò}-Íí-]’‚ıí--í'V–ÆBâââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×6ÖÆÂ×'G2Ó"Ö'V–ÆBÖf–ÆVBæÖBà £bãã##c¢}-Ã"gVÆÂ'V–ÆB&WG'’53ccócc²V÷FRô’²æW‡BõG—U67&—B÷7FF–3bóbâÆ–çBöF–fb5D%DTBâââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×6ÖÆÂ×'G2Ó"Ö'V–ÆB×72æÖBà £bãã##c¢U4Æ–çC2öF–fb53²}-Ã"DôäRâ
+}-Ã3Ó’ó’ıâ=]--=í]Í2Wf–FVæ6RÂDôäR]rıí--íí"â
+}-ÃCÓBó’Â5D%DTB	­İòİ	İí-(i-	­}İÂâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×6ÖÆÂ×'G2Ó"ÖFöæRÓB×7F'FVBæÖB’â	--íÍ-}]­‚M½]Rıâ¥4ôâıí½RGW&&ÆRİí]İ]İòà £bãã##c¢}-ÃB	­İòİ	İí-(i-	­}İÂVF—FVBÂ7FvSÓ#BóSRâ	-í7Væ¶æ÷vã¢#ƒ’W†—G2Vç&W6öÇfVC²&W÷'Bö–çfVçF÷'’W†—CâäU…B5D%DTB	­İòİ	İí-(i-	­]}Â6–ævÆRÖ66Râ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×6ÖÆÂ×'G2ÓBÖ6¶æ–Ö¶¦âæÖB’à £##bÓÓeC#£##£ãsC33“r³3£¢}-ÃBÆ66SÖ¶†W'6öâİ­İòİİí-Ö¶W&6‚Ö6VçFW"ÆVF—FVBÆ&F6‚W†—CÇ&W÷'Bö–çfVçF÷'•³ÂÒÇ7FvSÕ³#RÂÒâ&VçF#3c3C#V#ƒ–CV##F6#3†F&“–Sƒ“V&3CS#²¶6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓUC#2Ó#ÓS2ÓSC…¢×'CBæÖB’âäU…E5D%DTB}-ÃC¢¶†W'6öâİ­İòİİí-ÖÖ÷66÷rÖ6VçFW"âæòÖW&vRõ&öGV7F–öâà £##bÓÓeC#£#S£Cbã3Cƒ#‚³3£¢}-ÃBÆ66SÖ¶†W'6öâİ­İòİİí-ÖÖ÷66÷rÖ6VçFW"ÆVF—FVBÆ&F6‚W†—CÇ&W÷'Bö–çfVçF÷'•³ÂÒÇ7FvSÕ³#bÂÒâ&VçCV6&cfFc“#63v&F#“fCCƒF3fVƒ&c†CFf#²¶6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓUC#2Ó#BÓ3‚Ócu¢×'CBæÖB’âäU…E5D%DTB}-ÃC¢¶†W'6öâİ­İòİİí-×6–çB×WFW'6'W&rÖ6VçFW"âæòÖW&vRõ&öGV7F–öâà £##bÓÓeC#£#s£3’ãcƒSsƒR³3£¢}-ÃBÆ66SÖ¶†W'6öâİ­İòİİí-×6–çB×WFW'6'W&rÖ6VçFW"ÆVF—FVBÆ&F6‚W†—CÇ&W÷'Bö–çfVçF÷'•³ÂÒÇ7FvSÕ³#rÂÒâ&VçCvcFC†V#Sv3V6f#†CcCFF3cC#3CffcF3vƒ²¶6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓUC#2Ó#bÓ3’ÓS#u¢×'CBæÖB’âäU…E5D%DTB}-ÃC¢¶†W'6öâİ=]İ}]¢Ö¶¦âÖ6VçFW"âæòÖW&vRõ&öGV7F–öâà £bãã##b5D%DTC¢--íİíÍİíRıí½]Mí--]½ÍİíRıí½İ]İR}]]rv—D‡V$7F–öç2Âıã66RGW&&ÆR5D%DTBôDôäRâ	-]íM²ıí=İ}]İó¢ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖWFöÖF–2×VWVR×7F'FVBæÖBâ
+İ}½FW7G2ö'V–ÆBöÆ–çC²M½]R-í}-]İR¢}-ƒBà £bãã##c¢WFöæöÖ÷W2'VææW"÷&öw&W726†V6·ö–çB–×ÆVÖVçFVBÂfö7W6VCBóE52âv÷&¶fÆ÷rİR-­½í}ÒâgVÆÆ'V–ÆB5D%DTBÂ½í2Wf–FVæ6Ró##bÓÓbÖWFò×VWVRÖ'V–ÆBæÆörâââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖWFöÖF–2×VWVRÖfö7W6VB×72æÖBà £bãã##c¢WFöÖF–7VWVRgVÆÆ'V–ÆCccbóccb·V÷FRô’´æW‡BõG—U67&—B÷7FF–3bóe53²Æ–çBõ”ÔÂ5D%DTBâââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖWFöÖF–2×VWVRÖ'V–ÆB×72æÖBà £bãã##c¢WFöÖF–7VWVRv÷&¶fÆ÷rVæ&ÆVBgFW"fö7W6VCBögVÆÃccböÆ–çCBõ”ÔÂöF–fe52â
+½]M=í]Rıí-]-Â7GVÇ'Vâ}]]tv—D‡V$’Â}-]ÂİRı-Íı†7F—fV¦ö"â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖWFöÖF–2×VWVRÖVæ&ÆVBæÖB’â&6VÆ–æS#róSRÃóSC²}-ƒ(	3#İR-½ıí½İ]İ²à £bãã##c¢7F–öç2ı]-½–¦ö"f–ÆVBMæ66Rrİ}G&–Æ–æwv†—FW76]-İí-íÆÆövf÷&ÖGFW#²v—D‡V&vFScce52â5D%DTBf÷&ÖGFW&f—‚ögVÆÆvFR÷&W'Vââ†÷W&Ç–6öçF–çVF–öçW6VMMíı-½]İòâââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖWFöÖF–2×VWVRÖf—'7BÖ¦ö"Öf–ÆVBæÖBà £bãã##c¢6†V6·ö–çFf÷&ÖGFW"ı-½]ÒÂfö7W6VCRóU53²gVÆÆvFR5D%DTBÂ}-]ÂÆ–çB÷&W'Væ¦ö"âââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖWFöÖF–2×VWVRÖÆörÖf—‚æÖBà £bãã##c¢f÷&ÖGFW&f—‚gVÆÆvFSccróccu53²Æ–çC"öF–fb5D%DTBâââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖWFöÖF–2×VWVRÖÆörÖf—‚Ö'V–ÆB×72æÖBà £bãã##c¢Æ–çC"öF–fe53²gVÆÃccu53²5D%DTB&W'Væ¦ö#cs#ƒC“CSƒBÂÆFW7F'&æ6‚â	ıí½]--İRı-Íı½½]½Íİââ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÖWFöÖF–2×VWVRÖÆörÖf—‚×&VG’æÖB’à £##bÓÓUC#3£C£32ã“U£¢WFöÖF–2VWVR5D%DTC²#róSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCÓ32Ó“U¢×7F'FVBæ§6öâ’â¶†W'6öâİ=]İ}]¢Ö¶¦âÖ6VçFW  £##bÓÓUC#3£C£BãS“e£¢WFöÖF–2VWVRDôäS²#‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCÓBÓS“e¢ÖFöæRæ§6öâ’â¶†W'6öâİ=]İ}]¢Ö¶¦âÖ6VçFW  £##bÓÓUC#3£C£rãc%£¢WFöÖF–2VWVR5D%DTC²#‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCÓrÓc%¢×7F'FVBæ§6öâ’â¶†W'6öâİ=]İ}]¢Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£C£’ãss%£¢WFöÖF–2VWVRDôäS²#’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCÓ’Óss%¢ÖFöæRæ§6öâ’â¶†W'6öâİ=]İ}]¢Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£C£#"ã#ƒ•£¢WFöÖF–2VWVR5D%DTC²#’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCÓ#"Ó#ƒ•¢×7F'FVBæ§6öâ’â¶†W'6öâİ=]İ}]¢ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£C£CbãSSe£¢WFöÖF–2VWVRDôäS²3óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCÓCbÓSSe¢ÖFöæRæ§6öâ’â¶†W'6öâİ=]İ}]¢ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£C£C’ã3c•£¢WFöÖF–2VWVR5D%DTC²3óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCÓC’Ó3c•¢×7F'FVBæ§6öâ’â¶†W'6öâİ=]İ}]¢×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£C#£#2ãsCe£¢WFöÖF–2VWVRDôäS²3óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC"Ó#2ÓsCe¢ÖFöæRæ§6öâ’â¶†W'6öâİ=]İ}]¢×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£C#£#bãsS…£¢WFöÖF–2VWVR5D%DTC²3óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC"Ó#bÓsS…¢×7F'FVBæ§6öâ’â¶†W'6öâİ­]í-­Ö¶¦âÖ6VçFW  £##bÓÓUC#3£C#£S‚ã3u£¢WFöÖF–2VWVRDôäS²3"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC"ÓS‚Ó3u¢ÖFöæRæ§6öâ’â¶†W'6öâİ­]í-­Ö¶¦âÖ6VçFW  £##bÓÓUC#3£C3£ãS%£¢WFöÖF–2VWVR5D%DTC²3"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC2ÓÓS%¢×7F'FVBæ§6öâ’â¶†W'6öâİ­]í-­Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£C3£2ã“ƒ£¢WFöÖF–2VWVRDôäS²32óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC2Ó2Ó“ƒ¢ÖFöæRæ§6öâ’â¶†W'6öâİ­]í-­Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£C3£bãCƒu£¢WFöÖF–2VWVR5D%DTC²32óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC2ÓbÓCƒu¢×7F'FVBæ§6öâ’â¶†W'6öâİ­]í-­ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£C3£C"ã#u£¢WFöÖF–2VWVRDôäS²3BóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC2ÓC"Ó#u¢ÖFöæRæ§6öâ’â¶†W'6öâİ­]í-­ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£C3£CRã3…£¢WFöÖF–2VWVR5D%DTC²3BóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC2ÓCRÓ3…¢×7F'FVBæ§6öâ’â¶†W'6öâİ­]í-­×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£CC£#ãƒC5£¢WFöÖF–2VWVRDôäS²3RóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCBÓ#ÓƒC5¢ÖFöæRæ§6öâ’â¶†W'6öâİ­]í-­×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£CC£#2ãƒ3£¢WFöÖF–2VWVR5D%DTC²3RóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCBÓ#2Óƒ3¢×7F'FVBæ§6öâ’â¶†W'6öâİİí-òİ}=Í]-­Ö¶¦âÖ6VçFW  £##bÓÓUC#3£CC£SRãƒ•£¢WFöÖF–2VWVRDôäS²3bóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCBÓSRÓƒ•¢ÖFöæRæ§6öâ’â¶†W'6öâİİí-òİ}=Í]-­Ö¶¦âÖ6VçFW  £##bÓÓUC#3£CC£S’ã#S•£¢WFöÖF–2VWVR5D%DTC²3bóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCBÓS’Ó#S•¢×7F'FVBæ§6öâ’â¶†W'6öâİİí-òİ}=Í]-­Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£CS£"ãCc…£¢WFöÖF–2VWVRDôäS²3róSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCRÓ"ÓCc…¢ÖFöæRæ§6öâ’â¶†W'6öâİİí-òİ}=Í]-­Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£CS£Rã3cU£¢WFöÖF–2VWVR5D%DTC²3róSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCRÓRÓ3cU¢×7F'FVBæ§6öâ’â¶†W'6öâİİí-òİ}=Í]-­ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£CS£Cãƒ£¢WFöÖF–2VWVRDôäS²3‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCRÓCÓƒ¢ÖFöæRæ§6öâ’â¶†W'6öâİİí-òİ}=Í]-­ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£CS£CBãƒSU£¢WFöÖF–2VWVR5D%DTC²3‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCRÓCBÓƒSU¢×7F'FVBæ§6öâ’âÆç"İ½}]-¢Ö¶¦âÖ6VçFW  £##bÓÓUC#3£Cc£‚ãSU£¢WFöÖF–2VWVRDôäS²3’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCbÓ‚ÓSU¢ÖFöæRæ§6öâ’âÆç"İ½}]-¢Ö¶¦âÖ6VçFW  £##bÓÓUC#3£Cc£ãCc•£¢WFöÖF–2VWVR5D%DTC²3’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCbÓÓCc•¢×7F'FVBæ§6öâ’âÆç"İ½}]-¢Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£Cc£#bãƒU£¢WFöÖF–2VWVRDôäS²CóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCbÓ#bÓƒU¢ÖFöæRæ§6öâ’âÆç"İ½}]-¢Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£Cc£#’ãSU£¢WFöÖF–2VWVR5D%DTC²CóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCbÓ#’ÓSU¢×7F'FVBæ§6öâ’âÆç"İ½}]-¢ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£Cc£C‚ãƒ•£¢WFöÖF–2VWVRDôäS²CóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCbÓC‚Óƒ•¢ÖFöæRæ§6öâ’âÆç"İ½}]-¢ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£Cc£Sãce£¢WFöÖF–2VWVR5D%DTC²CóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCbÓSÓce¢×7F'FVBæ§6öâ’âÆç"İ½}]-¢×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£Cs£#ãSe£¢WFöÖF–2VWVRDôäS²C"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCrÓ#ÓSe¢ÖFöæRæ§6öâ’âÆç"İ½}]-¢×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£Cs£#BãsC5£¢WFöÖF–2VWVR5D%DTC²C"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCrÓ#BÓsC5¢×7F'FVBæ§6öâ’âÆç"İİ-m"Ö¶¦âÖ6VçFW  £##bÓÓUC#3£Cs£C’ã3“•£¢WFöÖF–2VWVRDôäS²C2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCrÓC’Ó3“•¢ÖFöæRæ§6öâ’âÆç"İİ-m"Ö¶¦âÖ6VçFW  £##bÓÓUC#3£Cs£S"ãCC•£¢WFöÖF–2VWVR5D%DTC²C2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓCrÓS"ÓCC•¢×7F'FVBæ§6öâ’âÆç"İİ-m"Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£Cƒ£rã“cu£¢WFöÖF–2VWVRDôäS²CBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC‚ÓrÓ“cu¢ÖFöæRæ§6öâ’âÆç"İİ-m"Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£Cƒ£ãs#U£¢WFöÖF–2VWVR5D%DTC²CBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC‚ÓÓs#U¢×7F'FVBæ§6öâ’âÆç"İİ-m"ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£Cƒ£#’ã“3E£¢WFöÖF–2VWVRDôäS²CRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC‚Ó#’Ó“3E¢ÖFöæRæ§6öâ’âÆç"İİ-m"ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£Cƒ£3"ã“s%£¢WFöÖF–2VWVR5D%DTC²CRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC‚Ó3"Ó“s%¢×7F'FVBæ§6öâ’âÆç"İİ-m"×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£C“£"ã“C£¢WFöÖF–2VWVRDôäS²CbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC’Ó"Ó“C¢ÖFöæRæ§6öâ’âÆç"İİ-m"×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£C“£bãcƒE£¢WFöÖF–2VWVR5D%DTC²CbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC’ÓbÓcƒE¢×7F'FVBæ§6öâ’âÆç"İMí-mİ¢Ö¶¦âÖ6VçFW  £##bÓÓUC#3£C“£3ã35£¢WFöÖF–2VWVRDôäS²CróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC’Ó3Ó35¢ÖFöæRæ§6öâ’âÆç"İMí-mİ¢Ö¶¦âÖ6VçFW  £##bÓÓUC#3£C“£32ã3s•£¢WFöÖF–2VWVR5D%DTC²CróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC’Ó32Ó3s•¢×7F'FVBæ§6öâ’âÆç"İMí-mİ¢Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£C“£C‚ãsc£¢WFöÖF–2VWVRDôäS²C‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC’ÓC‚Ósc¢ÖFöæRæ§6öâ’âÆç"İMí-mİ¢Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£C“£Sãcc%£¢WFöÖF–2VWVR5D%DTC²C‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓC’ÓSÓcc%¢×7F'FVBæ§6öâ’âÆç"İMí-mİ¢ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£S£ãE£¢WFöÖF–2VWVRDôäS²C’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓÓE¢ÖFöæRæ§6öâ’âÆç"İMí-mİ¢ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£S£Bã£¢WFöÖF–2VWVR5D%DTC²C’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓBÓ¢×7F'FVBæ§6öâ’âÆç"İMí-mİ¢×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£S£C2ãcS£¢WFöÖF–2VWVRDôäS²SóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓC2ÓcS¢ÖFöæRæ§6öâ’âÆç"İMí-mİ¢×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£S£Cbã“%£¢WFöÖF–2VWVR5D%DTC²SóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓCbÓ“%¢×7F'FVBæ§6öâ’âÆç"İÍ­í-­Ö¶¦âÖ6VçFW  £##bÓÓUC#3£S£’ãc£¢WFöÖF–2VWVRDôäS²SóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓ’Óc¢ÖFöæRæ§6öâ’âÆç"İÍ­í-­Ö¶¦âÖ6VçFW  £##bÓÓUC#3£S£"ãssU£¢WFöÖF–2VWVR5D%DTC²SóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓ"ÓssU¢×7F'FVBæ§6öâ’âÆç"İÍ­í-­Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£S£#’ãcS£¢WFöÖF–2VWVRDôäS²S"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓ#’ÓcS¢ÖFöæRæ§6öâ’âÆç"İÍ­í-­Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£S£3"ãSu£¢WFöÖF–2VWVR5D%DTC²S"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓ3"ÓSu¢×7F'FVBæ§6öâ’âÆç"İÍ­í-­ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£S£Sã#E£¢WFöÖF–2VWVRDôäS²S2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓSÓ#E¢ÖFöæRæ§6öâ’âÆç"İÍ­í-­ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£S£S2ãcU£¢WFöÖF–2VWVR5D%DTC²S2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSÓS2ÓcU¢×7F'FVBæ§6öâ’âÆç"İÍ­í-­×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£S#£#ãCs£¢WFöÖF–2VWVRDôäS²SBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS"Ó#ÓCs¢ÖFöæRæ§6öâ’âÆç"İÍ­í-­×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£S#£#2ãSC•£¢WFöÖF–2VWVR5D%DTC²SBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS"Ó#2ÓSC•¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ]Mıİ¢Ö¶¦âÖ6VçFW  £##bÓÓUC#3£S#£SrãScu£¢WFöÖF–2VWVRDôäS²SRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS"ÓSrÓScu¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ]Mıİ¢Ö¶¦âÖ6VçFW  £##bÓÓUC#3£S3£ãE£¢WFöÖF–2VWVR5D%DTC²SRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS2ÓÓE¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ]Mıİ¢Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£S3£rãs£¢WFöÖF–2VWVRDôäS²SbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS2ÓrÓs¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ]Mıİ¢Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£S3£’ã““e£¢WFöÖF–2VWVR5D%DTC²SbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS2Ó’Ó““e¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ]Mıİ¢ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£S3£C‚ãƒE£¢WFöÖF–2VWVRDôäS²SróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS2ÓC‚ÓƒE¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ]Mıİ¢ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£S3£S"ã#3•£¢WFöÖF–2VWVR5D%DTC²SróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS2ÓS"Ó#3•¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ]Mıİ¢×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£SC£3ãƒƒu£¢WFöÖF–2VWVRDôäS²S‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSBÓ3Óƒƒu¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ]Mıİ¢×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£SC£3Bã3S5£¢WFöÖF–2VWVR5D%DTC²S‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSBÓ3BÓ3S5¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ-½Í]-­Ö¶¦âÖ6VçFW  £##bÓÓUC#3£SS£‚ã“ƒe£¢WFöÖF–2VWVRDôäS²S’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSRÓ‚Ó“ƒe¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ-½Í]-­Ö¶¦âÖ6VçFW  £##bÓÓUC#3£SS£"ã3CU£¢WFöÖF–2VWVR5D%DTC²S’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSRÓ"Ó3CU¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ-½Í]-­Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£SS£#‚ãSƒ£¢WFöÖF–2VWVRDôäS²cóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSRÓ#‚ÓSƒ¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ-½Í]-­Ö¶W&6‚Ö6VçFW  £##bÓÓUC#3£SS£3ãce£¢WFöÖF–2VWVR5D%DTC²cóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSRÓ3Óce¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ-½Í]-­ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£Sc£ãƒ5£¢WFöÖF–2VWVRDôäS²cóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSbÓÓƒ5¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ-½Í]-­ÖÖ÷66÷rÖ6VçFW  £##bÓÓUC#3£Sc£BãCe£¢WFöÖF–2VWVR5D%DTC²cóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSbÓBÓCe¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ-½Í]-­×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£Sc£C2ãsCU£¢WFöÖF–2VWVRDôäS²c"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSbÓC2ÓsCU¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ-½Í]-­×6–çB×WFW'6'W&rÖ6VçFW  £##bÓÓUC#3£Sc£Crã335£¢WFöÖF–2VWVR5D%DTC²c"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSbÓCrÓ335¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ==½ııí½RÖ¶¦âÖ6VçFW  £##bÓÓUC#3£Ss£‚ã#“•£¢WFöÖF–2VWVRDôäS²c2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSrÓ‚Ó#“•¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ==½ııí½RÖ¶¦âÖ6VçFW  £##bÓÓUC#3£Ss£#ãcc£¢WFöÖF–2VWVR5D%DTC²c2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSrÓ#Ócc¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ==½ııí½RÖ¶W&6‚Ö6VçFW  £##bÓÓUC#3£Ss£Cã##£¢WFöÖF–2VWVRDôäS²cBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSrÓCÓ##¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ==½ııí½RÖ¶W&6‚Ö6VçFW  £##bÓÓUC#3£Ss£C2ã#ƒu£¢WFöÖF–2VWVR5D%DTC²cBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓSrÓC2Ó#ƒu¢×7F'FVBæ§6öâ’â¦÷&—¦‡¦†–İ­====ÂÖ¶¦âÖ6VçFW  £##bÓÓUC#3£Sƒ£#ã3£¢WFöÖF–2VWVRDôäS²cRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS‚Ó#Ó3¢ÖFöæRæ§6öâ’â¦÷&—¦‡¦†–İ­====ÂÖ¶¦âÖ6VçFW  £##bÓÓUC#3£Sƒ£#2ãSƒ…£¢WFöÖF–2VWVR5D%DTC²cRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS‚Ó#2ÓSƒ…¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ'¦Ö2×Fò×&–Ğ £##bÓÓUC#3£Sƒ£Cbã3sU£¢WFöÖF–2VWVRDôäS²cbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS‚ÓCbÓ3sU¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ'¦Ö2×Fò×&–Ğ £##bÓÓUC#3£Sƒ£C’ãcs£¢WFöÖF–2VWVR5D%DTC²cbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS‚ÓC’Ócs¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ¶¦â×Fò×6W7@ £##bÓÓUC#3£S“£‚ãƒ“e£¢WFöÖF–2VWVRDôäS²cróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS’Ó‚Óƒ“e¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ¶¦â×Fò×6W7@ £##bÓÓUC#3£S“£#"ã£¢WFöÖF–2VWVR5D%DTC²cróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS’Ó#"Ó¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ×W&öÒ×Fò×6W7@ £##bÓÓUC#3£S“£C2ã“C5£¢WFöÖF–2VWVRDôäS²c‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS’ÓC2Ó“C5¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ×W&öÒ×Fò×6W7@ £##bÓÓUC#3£S“£Crã•£¢WFöÖF–2VWVR5D%DTC²c‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓUC#2ÓS’ÓCrÓ•¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×FòÖ¶¦à £##bÓÓeC££bãCC5£¢WFöÖF–2VWVRDôäS²c’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓbÓCC5¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×FòÖ¶¦à £##bÓÓeC££’ãse£¢WFöÖF–2VWVR5D%DTC²c’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓ’Óse¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×FòÖ×W&öĞ £##bÓÓeC££Cã#C£¢WFöÖF–2VWVRDôäS²sóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓCÓ#C¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×FòÖ×W&öĞ £##bÓÓeC££CBãCƒE£¢WFöÖF–2VWVR5D%DTC²sóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓCBÓCƒE¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6BÖ·&6æöF"×Fò×6W7@ £##bÓÓeC££‚ã“cE£¢WFöÖF–2VWVRDôäS²sóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓ‚Ó“cE¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6BÖ·&6æöF"×Fò×6W7@ £##bÓÓeC££#"ãCc•£¢WFöÖF–2VWVR5D%DTC²sóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓ#"ÓCc•¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×&÷7F÷b×Fò×6W7@ £##bÓÓeC££SBã“3E£¢WFöÖF–2VWVRDôäS²s"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓSBÓ“3E¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×&÷7F÷b×Fò×6W7@ £##bÓÓeC££S‚ãCƒ£¢WFöÖF–2VWVR5D%DTC²s"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓS‚ÓCƒ¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×6W7B×FòÖ·&6æöF  £##bÓÓeC£#£32ã“3…£¢WFöÖF–2VWVRDôäS²s2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ"Ó32Ó“3…¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×6W7B×FòÖ·&6æöF  £##bÓÓeC£#£3rãC…£¢WFöÖF–2VWVR5D%DTC²s2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ"Ó3rÓC…¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×6W7B×Fò×&÷7F÷` £##bÓÓeC£3£’ãs3£¢WFöÖF–2VWVRDôäS²sBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ2Ó’Ós3¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×6W7B×Fò×&÷7F÷` £##bÓÓeC£3£2ã#U£¢WFöÖF–2VWVR5D%DTC²sBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ2Ó2Ó#U¢×7F'FVBæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×f÷&öæW¦‚×Fò×&–Ğ £##bÓÓeC£3£3‚ãS£¢WFöÖF–2VWVRDôäS²sRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ2Ó3‚ÓS¢ÖFöæRæ§6öâ’âÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×f÷&öæW¦‚×Fò×&–Ğ £##bÓÓeC£3£CãCs%£¢WFöÖF–2VWVR5D%DTC²sRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ2ÓCÓCs%¢×7F'FVBæ§6öâ’â—"ÖÓÖ6¶BÖFöÖöFVF÷fò×Fò×7  £##bÓÓeC£C£ãs#u£¢WFöÖF–2VWVRDôäS²sbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓÓs#u¢ÖFöæRæ§6öâ’â—"ÖÓÖ6¶BÖFöÖöFVF÷fò×Fò×7  £##bÓÓeC£C£Rã…£¢WFöÖF–2VWVR5D%DTC²sbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓRÓ…¢×7F'FVBæ§6öâ’â—"ÖÓÖ6¶BÖæöv–ç6²×Fò×7  £##bÓÓeC£C£#"ãS3e£¢WFöÖF–2VWVRDôäS²sróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓ#"ÓS3e¢ÖFöæRæ§6öâ’â—"ÖÓÖ6¶BÖæöv–ç6²×Fò×7  £##bÓÓeC£C£#Rãƒ“u£¢WFöÖF–2VWVR5D%DTC²sróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓ#RÓƒ“u¢×7F'FVBæ§6öâ’â—"ÖÓÖ6¶B×7"×FòÖFöÖöFVF÷fğ £##bÓÓeC£C£CRãsc5£¢WFöÖF–2VWVRDôäS²s‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓCRÓsc5¢ÖFöæRæ§6öâ’â—"ÖÓÖ6¶B×7"×FòÖFöÖöFVF÷fğ £##bÓÓeC£C£C‚ã“3£¢WFöÖF–2VWVR5D%DTC²s‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓC‚Ó“3¢×7F'FVBæ§6öâ’â—"ÖÓÖ6¶B×7"×FòÖæöv–ç6° £##bÓÓeC£S£‚ãSƒ…£¢WFöÖF–2VWVRDôäS²s’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓRÓ‚ÓSƒ…¢ÖFöæRæ§6öâ’â—"ÖÓÖ6¶B×7"×FòÖæöv–ç6° £##bÓÓeC£S£ãƒC5£¢WFöÖF–2VWVR5D%DTC²s’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓRÓÓƒC5¢×7F'FVBæ§6öâ’â—"ÖÓÖ6¶B×F÷'¦†ö²×Fò×&ÖVç6¶öP £##bÓÓeC£S£3ã3…£¢WFöÖF–2VWVRDôäS²ƒóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓRÓ3Ó3…¢ÖFöæRæ§6öâ’â—"ÖÓÖ6¶B×F÷'¦†ö²×Fò×&ÖVç6¶öP £##bÓÓeC£S£32ãCsu£¢WFöÖF–2VWVR5D%DTC²ƒóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓRÓ32ÓCsu¢×7F'FVBæ§6öâ’â—"ÖÓ×§6BÖÖ÷66÷r×Fò×&–Ğ £##bÓÓeC£S£S2ãCƒ•£¢WFöÖF–2VWVRDôäS²ƒóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓRÓS2ÓCƒ•¢ÖFöæRæ§6öâ’â—"ÖÓ×§6BÖÖ÷66÷r×Fò×&–Ğ £##bÓÓeC£S£Sbãs“£¢WFöÖF–2VWVR5D%DTC²ƒóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓRÓSbÓs“¢×7F'FVBæ§6öâ’â—"ÖÓ×§6BÖÖ÷66÷r×Fò×6W7@ £##bÓÓeC£c£bãSƒU£¢WFöÖF–2VWVRDôäS²ƒ"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓbÓbÓSƒU¢ÖFöæRæ§6öâ’â—"ÖÓ×§6BÖÖ÷66÷r×Fò×6W7@ £##bÓÓeC£c£’ãs“5£¢WFöÖF–2VWVR5D%DTC²ƒ"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓbÓ’Ós“5¢×7F'FVBæ§6öâ’â—"ÖÓ×§6B×&–Ò×FòÖÖ÷66÷p £##bÓÓeC£c£3’ãCCU£¢WFöÖF–2VWVRDôäS²ƒ2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓbÓ3’ÓCCU¢ÖFöæRæ§6öâ’â—"ÖÓ×§6B×&–Ò×FòÖÖ÷66÷p £##bÓÓeC£c£C"ãƒ#E£¢WFöÖF–2VWVR5D%DTC²ƒ2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓbÓC"Óƒ#E¢×7F'FVBæ§6öâ’â—"ÖÓ×§6B×6W7B×FòÖÖ÷66÷p £##bÓÓeC£s£"ãU£¢WFöÖF–2VWVRDôäS²ƒBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓrÓ"ÓU¢ÖFöæRæ§6öâ’â—"ÖÓ×§6B×6W7B×FòÖÖ÷66÷p £##bÓÓeC£s£Rã3%£¢WFöÖF–2VWVR5D%DTC²ƒBóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓrÓRÓ3%¢×7F'FVBæ§6öâ’â—"ÖÓ×§6B×GfW"×Fò×6W7@ £##bÓÓeC£s£#2ãc…£¢WFöÖF–2VWVRDôäS²ƒRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓrÓ#2Óc…¢ÖFöæRæ§6öâ’â—"ÖÓ×§6B×GfW"×Fò×6W7@ £##bÓÓeC£s£#bã“3u£¢WFöÖF–2VWVR5D%DTC²ƒRóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓrÓ#bÓ“3u¢×7F'FVBæ§6öâ’â—"ÖÓ"Ö6¶BÖFÖ—G&÷b×FòÖ¶¦à £##bÓÓeC£s£C‚ãcsu£¢WFöÖF–2VWVRDôäS²ƒbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓrÓC‚Ócsu¢ÖFöæRæ§6öâ’â—"ÖÓ"Ö6¶BÖFÖ—G&÷b×FòÖ¶¦à £##bÓÓeC£s£S"ã#£¢WFöÖF–2VWVR5D%DTC²ƒbóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓrÓS"Ó#¢×7F'FVBæ§6öâ’â—"ÖÓ"Ö6¶BÖ¶¦â×FòÖFÖ—G&÷` £##bÓÓeC£ƒ£"ã3“5£¢WFöÖF–2VWVRDôäS²ƒróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ‚Ó"Ó3“5¢ÖFöæRæ§6öâ’â—"ÖÓ"Ö6¶BÖ¶¦â×FòÖFÖ—G&÷` £##bÓÓeC£ƒ£Rãssu£¢WFöÖF–2VWVR5D%DTC²ƒróSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ‚ÓRÓssu¢×7F'FVBæ§6öâ’â—"ÖÓ"Ö6¶BÖ¶¦â×FòÖ¶Æ–à £##bÓÓeC£ƒ£3bã#c5£¢WFöÖF–2VWVRDôäS²ƒ‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ‚Ó3bÓ#c5¢ÖFöæRæ§6öâ’â—"ÖÓ"Ö6¶BÖ¶¦â×FòÖ¶Æ–à £##bÓÓeC£ƒ£3’ãcS…£¢WFöÖF–2VWVR5D%DTC²ƒ‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ‚Ó3’ÓcS…¢×7F'FVBæ§6öâ’â—"ÖÓ"Ö6¶BÖ¶Æ–â×FòÖ¶¦à £##bÓÓeC£“£"ãsu£¢WFöÖF–2VWVRDôäS²ƒ’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ’Ó"Ósu¢ÖFöæRæ§6öâ’â—"ÖÓ"Ö6¶BÖ¶Æ–â×FòÖ¶¦à £##bÓÓeC£“£bãU£¢WFöÖF–2VWVR5D%DTC²ƒ’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ’ÓbÓU¢×7F'FVBæ§6öâ’â—"ÖÓ"Ö6¶B×fÆF–Ö—"×FòÖ¶Æ–à £##bÓÓeC£“£#Bã#%£¢WFöÖF–2VWVRDôäS²“óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ’Ó#BÓ#%¢ÖFöæRæ§6öâ’â—"ÖÓ"Ö6¶B×fÆF–Ö—"×FòÖ¶Æ–à £##bÓÓeC£“£#rãS…£¢WFöÖF–2VWVR5D%DTC²“óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ’Ó#rÓS…¢×7F'FVBæ§6öâ’â—"ÖÓBÖ#ƒ’Ö¶W&6‚×Fò×&÷7F÷` £##bÓÓeC£“£CbãsE£¢WFöÖF–2VWVRDôäS²“óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ’ÓCbÓsE¢ÖFöæRæ§6öâ’â—"ÖÓBÖ#ƒ’Ö¶W&6‚×Fò×&÷7F÷` £##bÓÓeC£“£C’ãCce£¢WFöÖF–2VWVR5D%DTC²“óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ’ÓC’ÓCce¢×7F'FVBæ§6öâ’â—"ÖÓBÖ#ƒ’ÖÖ÷66÷r×Fò×FÖà £##bÓÓeC££#ãs•£¢WFöÖF–2VWVRDôäS²“"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓ#Ós•¢ÖFöæRæ§6öâ’â—"ÖÓBÖ#ƒ’ÖÖ÷66÷r×Fò×FÖà £##bÓÓeC££#Rã3#£¢WFöÖF–2VWVR5D%DTC²“"óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓ#RÓ3#¢×7F'FVBæ§6öâ’â—"ÖÓBÖ#ƒ’×&÷7F÷b×FòÖ¶W&6€ £##bÓÓeC££C2ã“3%£¢WFöÖF–2VWVRDôäS²“2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓC2Ó“3%¢ÖFöæRæ§6öâ’â—"ÖÓBÖ#ƒ’×&÷7F÷b×FòÖ¶W&6€ £##bÓÓeC££Crãc•£¢WFöÖF–2VWVR5D%DTC²“2óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓCrÓc•¢×7F'FVBæ§6öâ’â—"ÖÓBÖ#ƒ’×FÖâ×Fò×f÷&öæW¦€ £##bÓÓeC££‚ãs£¢WFöÖF–2VWVRDôäS²“BóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓ‚Ós¢ÖFöæRæ§6öâ’â—"ÖÓBÖ#ƒ’×FÖâ×Fò×f÷&öæW¦€ £##bÓÓeC££"ã3#%£¢WFöÖF–2VWVR5D%DTC²“BóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓ"Ó3#%¢×7F'FVBæ§6öâ’â—"ÖÓBÖ#ƒ’×f÷&öæW¦‚×Fò×FÖà £##bÓÓeC££3Rã#•£¢WFöÖF–2VWVRDôäS²“RóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓ3RÓ#•¢ÖFöæRæ§6öâ’â—"ÖÓBÖ#ƒ’×f÷&öæW¦‚×Fò×FÖà £##bÓÓeC££3‚ãsc•£¢WFöÖF–2VWVR5D%DTC²“RóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓÓ3‚Ósc•¢×7F'FVBæ§6öâ’â—"ÖÓBÖÓÖ·&6æöF"×Fò×7  £##bÓÓeC£#£Bã#ce£¢WFöÖF–2VWVRDôäS²“bóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ"ÓBÓ#ce¢ÖFöæRæ§6öâ’â—"ÖÓBÖÓÖ·&6æöF"×Fò×7  £##bÓÓeC£#£‚ã#U£¢WFöÖF–2VWVR5D%DTC²“bóSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ"Ó‚Ó#U¢×7F'FVBæ§6öâ’â—"ÖÓBÖÓ×&÷7F÷b×Fò×7  £##bÓÓeC£#£Sã#ƒE£¢WFöÖF–2VWVRDôäS²“róSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ"ÓSÓ#ƒE¢ÖFöæRæ§6öâ’â—"ÖÓBÖÓ×&÷7F÷b×Fò×7  £##bÓÓeC£#£SBãCU£¢WFöÖF–2VWVR5D%DTC²“róSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ"ÓSBÓCU¢×7F'FVBæ§6öâ’â—"ÖÓBÖÓ×7"×FòÖ·&6æöF  £##bÓÓeC£3£3ãS#E£¢WFöÖF–2VWVRDôäS²“‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ2Ó3ÓS#E¢ÖFöæRæ§6öâ’â—"ÖÓBÖÓ×7"×FòÖ·&6æöF  £##bÓÓeC£3£3Bã##E£¢WFöÖF–2VWVR5D%DTC²“‚óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓ2Ó3BÓ##E¢×7F'FVBæ§6öâ’â—"ÖÓBÖÓ×7"×Fò×&÷7F÷` £##bÓÓeC£C£rã%£¢WFöÖF–2VWVRDôäS²“’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓrÓ%¢ÖFöæRæ§6öâ’â—"ÖÓBÖÓ×7"×Fò×&÷7F÷` £##bÓÓeC£C£ãƒƒu£¢WFöÖF–2VWVR5D%DTC²“’óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓÓƒƒu¢×7F'FVBæ§6öâ’â—"ÖÓBÖÓ×f÷&öæW¦‚×Fò×7  £##bÓÓeC£C£3rã##…£¢WFöÖF–2VWVRDôäS²óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓ3rÓ##…¢ÖFöæRæ§6öâ’â—"ÖÓBÖÓ×f÷&öæW¦‚×Fò×7  £##bÓÓeC£C£Cã“3…£¢WFöÖF–2VWVR5D%DTC²óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓCÓ“3…¢×7F'FVBæ§6öâ’â6–ævÆRÖ#ƒ’Ö¶W&6‚×FòÖ·&6æöF  £##bÓÓeC£C£S’ãS#%£¢WFöÖF–2VWVRDôäS²óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2öWFòÓ##bÓÓeCÓBÓS’ÓS#%¢ÖFöæRæ§6öâ’â6–ævÆRÖ#ƒ’Ö¶W&6‚×FòÖ·&6æöF  £##bÓÓeC£S£2ã#£¢WFöÖF–2VWVR5D%DTC²óSRÃóSBâ´6†V6·ö–çEÒ‚ââòââıúç^í¢G§²ÚîÆ­yÖçF–ÖV6†ævRâæ÷Bg&W6†Æ—fRö–æFWVæFVçF÷W&F÷&6öæf—&ÖF–öââäU…B5D%DTC¢æW‡B¦÷&—¦‡¦†–İ==½ııí½RÖ¶¦âÖ6VçFW"66Sró#"öæÇ’ÂW†7FW†—7F–æv6÷'W26GW&RæCRótö7C“£Õ4²öffÆ–æW—#²GW&&ÆV6†V6·ö–çB&Vf÷&RæW‡F66Rà £bãã##b·'C–BÖ66Sr×&WÆ•Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×'C–BÖ66Sr×&WÆ’æÖB“¢66Sró#"¦÷&—¦‡¦†–İ==½ııí½RÖ¶¦âÖ6VçFW"öffÆ–æW—"DôäS¢ò%T"ÂVæ¶æ÷vâ&WF–æVBâ&÷f–FW%fÆ†ÆÆóƒC#S#†ÒÂ6ö×ÆWFS"ó"õ4„öFW'GW&WöÆ–7’fW&–f–VC²g&÷¦Vå$Uõ%BVæ6†ævVBâ´W†7FWf–FVæ6UÒ†Wf–FVæ6Ró##bÓÓb×'C–BÖ66Sr×&WÆ’æ§6öâ’Â6GW&U4„3CC†Sƒ&cc–Sƒv#S†VF6S6S“V3“cVC&3#VSF#“3“#63Sf3S–66&f6RâW†—7F–æw&röÆ—fRööÆG&WÆ’&W6W'fVBâgVÆÃcƒvvFRó#ffö7W6VE52&VÖ–ç6ÆFW7C²æòæWw'VçF–ÖV6†ævRâæ÷Bg&W6†Æ—fRö–æFWVæFVçF÷W&F÷&6öæf—&ÖF–öââäU…B5D%DTC¢6ÖV66R¦÷&—¦‡¦†–İ==½ııí½RÖ¶¦âÖ6VçFW#¢F–væ÷6RW†7B7W'&VçFÖ—76–ær&V6öâ÷6VÆV7FVG66÷R&Vf÷&RæW‡F66S²Fòæ÷BwVW72&–6Rà £bãã##b·'C–BÖwVÇ–—öÆRÖ¶¦â×6÷W&6RÖ†öÆEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×'C–BÖwVÇ–—öÆRÖ¶¦â×6÷W&6RÖ†öÆBæÖB“¢66Sr66÷RF–væ÷6—2DôäS¢6ö×ÆWFR6VÆV7FVEfÆ†ÆÆƒC#S#†Òó&ö÷F‡2ÂW†7FÇ—6ÖS'–Gv—3ƒ#Scssbó3“ƒCc26÷W&6RÖvFVDw&æ—FæöRõ6†—&ö¶–æô¶¦ââ&WW6VB&–Ö'”õ4ÒVæGö–çG2–æFWVæFVçFÇ’ÖF6‚6VÆV7FVGfW'F–6W33(i#3>(i#3#v—F†–ããCfÒÂ6fVCCbæV&W7GfW'FW(˜ƒ‚ãcC¶Òâ6Ö^(˜ƒã“cf¶×–B×FvvVG66÷S²W†7F6öÆÆV7F–öâög&VW&ööb&VÖ–ç6'6VçBÂæòæWvfWF6‚ö'—72öf&V–çfVçF–öââ´vVöÖWG'–Wf–FVæ6UÒ†Wf–FVæ6Ró##bÓÓbÖwVÇ–—öÆRÖ¶¦â×66÷Ræ§6öâ“²Gvò&WÆ—2õ4„–â66Sv6†V6·ö–çBãró#'&Wf–WvVC£Gv†öÆVW7F–ÖFW2&V6÷fW&VBó76÷W&6VvFVC²æ÷Cv6öæf—&ÖVFf&W2â&VÖ÷FV†VBõ#FG&gBö¦ö%5T44U52&V6†V6¶VBFf#3s"Âæö7F—fWw&—FW"âgVÆÃcƒvvFU52&VÖ–ç6ÆFW7BâäU…B5D%DTC¢æW‡BÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×f÷&öæW¦‚×Fò×&–Ó‚ó#"W†7FW†—7F–æv6GW&R÷GvòöffÆ–æW&öf–ÆW3²7GVÆ6ö×öæVçFÖ—76–æröWf–FVæ6R&Wf–Wr&Vf÷&RgW'F†W&66RâWFöÖF–26öçF–çVF–öã²ÆÃ#æ÷F6ö×ÆWFRà £bãã##b·'C–BÖ66S‚×&WÆ•Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×'C–BÖ66S‚×&WÆ’æÖB“¢66S‚ó#"Ö‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×f÷&öæW¦‚×Fò×&–ÒöffÆ–æW—"DôäS¢ò%T"ÂVæ¶æ÷vâ&WF–æVBâ&÷f–FW%fÆ†ÆÆó#CScÒÂ6ö×ÆWFS"ó"õ4„öFW'GW&WöÆ–7’fW&–f–VC²g&÷¦Vå$Uõ%BVæ6†ævVBâ´W†7FWf–FVæ6UÒ†Wf–FVæ6Ró##bÓÓb×'C–BÖ66S‚×&WÆ’æ§6öâ’Â6GW&U4„f3†“6c66cvfVS–33VS#vVV3Ffcsf&cƒs†f6F6cƒ†&#ffFVs–cv3v3’âW†—7F–æw&röÆ—fRööÆG&WÆ’&W6W'fVBâgVÆÃcƒvvFRó#ffö7W6VE52&VÖ–ç6ÆFW7C²æòæWw'VçF–ÖV6†ævRâæ÷Bg&W6†Æ—fRö–æFWVæFVçF÷W&F÷&6öæf—&ÖF–öââäU…B5D%DTC¢6ÖV66RÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×f÷&öæW¦‚×Fò×&–Ó¢F–væ÷6RW†7B7W'&VçFÖ—76–ær&V6öâ÷6VÆV7FVG66÷R&Vf÷&RæW‡F66S²Fòæ÷BwVW72&–6Rà £bãã##b·'C–BÖ66S‚Ö6ö×öæVçB×&V6÷fW&VEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×'C–BÖ66S‚Ö6ö×öæVçB×&V6÷fW&VBæÖB“¢66S‚ÓBf–æF–ær6Æ76–f–VBDôäS£ƒ3ó#3ÓF6ö×öæVçB&W7F÷&VBÂv†öÆWV÷FR&VÖ–ç7Væ¶æ÷vâGVW§6E÷G&—öW‡FVæG5ö÷WG6–FU÷&Wf–WvVE÷¦öæSæGVæÖVE÷6VÆV7FVE÷&÷WFU÷–Eö&ö÷F‚âFòæ÷B&W6VçB¶æ÷väÓBôÓ7V'F÷FÂ6gVÆÇF÷FÂâ&VÖ–æ–ær&öGV7G2&R6W&FRW†—7F–ærf–æF–æv6Æ76W2Â&WF–æVBf÷"ÆFW"F–væ÷6—3²æòÓFf&R6†ævRæVVFVBâW†7F÷WGWG2ö†6†W2–æ66S†Wf–FVæ6RÂ6ö×ÆWFS"ó"6ÖV6GW&UfÆ†ÆÆ#CScÒöFW'GW&WöÆ–7’â–æ—F–Â6GW&VÆöö·W–æ6÷'&V7FÇ’6V&6†VB&Vv–öæÆ6÷'W2öæÇ’Âf–ÆVB&Vf÷&R&WÆ“²&V6÷fW&VBW†7G&öBÖ66W2æ§6öâæVF—DWf–FVæ6Ræ6GW&S##bÓÓeCÓ2Ó#BÓS%¢v—F†÷WBwVW76–ærf–ÆVæÖR÷&÷f–FW"âæòf–ÆVG&÷WFR÷&V'V–ÇFÆ—fRã‚ó#&6†V6¶VC£Gv†öÆVW7F–ÖFW2³ÓF6ö×öæVçG&V6÷fW&VBó76÷W&6VvFVBâ&Wf–÷W6gVÆÃcƒvvFR7F–ÆÆÆFW7BâäU…B5D%DTC¢æW‡B—"ÖÓBÖ#ƒ’×FÖâ×Fò×f÷&öæW¦ƒ’ó#"g&ö×&öBÖ66W2æ§6öâÂW†7G6fVF6GW&RGvööffÆ–æW&öf–ÆW2ÂfW&–g–WfW'–6ö×öæVçC²GW&&ÆV&Vf÷&RæW‡F66RâÓF6ö×öæVçFFöæR6æGfæ6RF†—66Æ72v†–ÆRVç&VÆFVGVæ¶æ÷vç&öGV7G7&VÖ–çVWVVBà £bãã##b·'C–BÖ66S’×&WÆ•Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×'C–BÖ66S’×&WÆ’æÖB“¢66S’ó#"—"ÖÓBÖ#ƒ’×FÖâ×Fò×f÷&öæW¦‚öffÆ–æW—"DôäS¢ò%T"ÂVæ¶æ÷vâ&WF–æVBâ&÷f–FW$õ5$Òó#cScÒÂ6ö×ÆWFS"ó"õ4„öFW'GW&WöÆ–7’fW&–f–VC²g&÷¦Vå$Uõ%BVæ6†ævVBâ´W†7FWf–FVæ6UÒ†Wf–FVæ6Ró##bÓÓb×'C–BÖ66S’×&WÆ’æ§6öâ’Â6GW&U4„F#v6S†cC#SfCvS#Sƒ3cCCc36FSS†3S3css3VCfFc“Sƒcv#“CFâW†—7F–æw&röÆ—fRööÆG&WÆ’&W6W'fVBâgVÆÃcƒvvFRó#ffö7W6VE52&VÖ–ç6ÆFW7C²æòæWw'VçF–ÖV6†ævRâæ÷Bg&W6†Æ—fRö–æFWVæFVçF÷W&F÷&6öæf—&ÖF–öââäU…B5D%DTC¢6ÖV66R—"ÖÓBÖ#ƒ’×FÖâ×Fò×f÷&öæW¦ƒ¢F–væ÷6RW†7B7W'&VçFÖ—76–ær&V6öâ÷6VÆV7FVG66÷R&Vf÷&RæW‡F66S²Fòæ÷BwVW72&–6Rà £bãã##b·'C–BÖ66S’ÓSCR×66÷RÖF–væ÷6—5Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×'C–BÖ66S’ÓSCR×66÷RÖF–væ÷6—2æÖB“¢66S’F–væ÷6—2DôäRò66÷R&–æF–ær7F–ÆÂTå$U4ôÅdTBÂæ÷B&÷fVâæWr'VçF–ÖV'Vrâõ5$Ó#cScÒö6ö×ÆWFS&ö÷F‡2ósƒG–FVFvW2ÂW†7CSCVæöFSSƒƒ#“C“Râ‡—6–6ÆVæGö–çC##>(i#SCR6ææ÷BF—&V7FÇ’ÖF6‚6VÖçF–2F&–fb”G3SCRÖö"âW†—7F–ævFFVFÖG&—‚†2GvòF–ffW&VçBf–æ—6†VBf&–çG3£##>(i#SCRÖ3có3c#–æ6ÇVFW6&÷F‡&÷w3³##>(i#SCRÖ##“#ó3Cc–æ6ÇVFW6öæÇ–"â7&÷76–æsSCVÆöæR6ææ÷B6†ö÷6RF†W6S¢W‡Æ–6—BW†—7F–ærÓB×Æ¦ÖæöFW2çG2æ÷FW2æB6÷'&–F÷&–çfVçF÷'’&WV—&R–æFWVæFVçFÇ’&÷fVâ66÷R÷&V6ö×WFVBf–æ—6†VG7ââ&–Ö'—fW&–f–VG&÷w3S~(	3SCCCócæCSCN(	3Sƒ“ƒó#S&WF–æVC²Fòæ÷B&VæÖRöföÆB&Æ–æFÇ’÷"6VÆV7FÖ–âöÖ‚âæF—fVÆVv7’F‡&÷VvƒSCR†VÇW"æVVG2fÆæ¶–æwÆ¦3ÃSræCãSƒ“²6VÆV7FVBVæGö–çBÖöæÇ’&Wf–Wr—6æ÷GF†G&ööbæBÆVv7–Ö÷VçF×W7Fæ÷F&V–×÷'FVBâäU…B5D%DTC¢6ÖV66S’f—'7C¢–ç7V7BöæÇ’6VÆV7FVBG&6R÷&÷WFR–BÖVFvRvVöÖWG'’&÷VæCSCRæ÷'F†&÷VæBæB7GVÆW†—BF÷v&Bf÷&öæW¦ƒ²Æö6FR–æFWVæFVçB÷W&F÷"6öÆÆV7F–öâ'VÆR÷"&÷fRW†7CSCW6V7F–öâ66÷R&Vf÷&RöæRÖ6W6Vf—‚â¶VWVæ¶æ÷væ–fæ÷G&÷fVââW'6—7BF†—2Ö–7&÷7FW&Vf÷&R66SâWFöÖF–2F6²&VÖ–ç6Væ&ÆVC²F†—2—6æ÷BgVÆÇF6¶&Æö6¶W"à £##bÓÓb&W7VÖS¢W†7B×G&VRæ6W7G'’&V6÷fW'’DôäS²6VRââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×&W7VÖRÖW†7B×G&VR×&V6÷fW'’æÖBâ6ÖR66S’æW‡BÂæò'VçF–ÖR6†ævRà £bãã##b´g&W6‚6†V6¶÷WBDôäRò6ÖV66S’æ'&÷w&Wf–Wr5D%DTEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ##"Ög&W6‚Ö6†V6¶÷WBÖ66S’×&W7VÖRæÖB“¢7GVÆF6cCbõ#FG&gBÂv÷&¶fÆ÷s3ƒƒc“3“csU5T44U52âæòæWv6öFRö'V–ÆBâæW‡B&–Ö'•DcSCWF&–fg&÷w2öfö÷Fæ÷FW2·6VÆV7FVFvVöÖWG'’ÂVæ¶æ÷vâ&W6W'fVBVçF–Â66÷W&ööc²öÆF6†V6¶÷WB&WF–æVBà £##bÓÓbÓ##“C’Õ4²´66S—66÷TDôäR÷6÷W&6RÖvFVEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ##“C’Ö66S’ÓSCR×6÷W&6RÖvFRæÖB“¢&–Ö'•DbóDõ4Öö&¦V7G2æG6VÆV7FVCSCVW†7FÆæR&Wf–WvVBÂÓFæÖVC#†¶Òæ÷G–B×66÷W&ööc²6öÆÆV7F–öç'VÆRVç&W6öÇfVBö÷W&F÷#C6æ÷F'—76VBÂVæ¶æ÷vç&WF–æVBâæò6öFRöæWvvFS²&–÷#cƒv†—7F÷&–6ÂâäU…B5D%DTB66Sf÷&öæW¦(i%FÖâ6fVF6GW&R÷GvööffÆ–æW&öf–ÆW3²66S–†öÆFæ÷FgVÆÇF6¶&Æö6¶W"â4Ä–7&VFVçF–Æf–ÇW&R&V6÷fW&VF6öææV7F÷"W†7GG&VS&3C&²6÷W&6Rö†—7F÷'—&W6W'fVBà £##bÓÓbÓ#3#RÕ4²¶66SÖg&÷¦Vâ×FööÇ2×&VG•Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#3#RÖ66SÖg&÷¦Vâ×FööÇ2×&VG’æÖB“¢FWVæFVæ7’&W&WV—6—FRDôäS¢çÒ–ç7FÆÂÒÖg&÷¦VâÖÆö6¶f–ÆRW†—C–ãã2ÂçÓã#Rã²G&6¶VBv÷&·G&VR&VÖ–æVF6ÆVâÂÆö6¶f–ÆWVæ6†ævVBâæòæWwFW7Bö'V–ÆB6Æ–ÒÂ&Wf–÷W3cƒvvFR†—7F÷&–6Ââæò6÷W&6W&–6V6†ævRâäU…C¢66S—"ÖÓBÖ#ƒ’×f÷&öæW¦‚×Fò×FÖâ6GW&S##bÓÓeCÓÓ#ÓCƒU¢Ö6GW&Ræ§6öâæw£²'VâGvööffÆ–æW&öf–ÆW3Rótö7C“£Õ4²ÂfW&–g•4„÷&÷f–FW"ö–çFVw&—G’öFW'GW&RôÓF6ö×öæVçC²6fR6W&FVÇ’&Vf÷&RæW‡F66Rà £##bÓÓbÓ#3C3RÕ4²·'C–BÖ7W'&VçBÖ66SÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#3C3R×'C–BÖ7W'&VçBÖ66SæÖB“¢66Só#"—"ÖÓBÖ#ƒ’×f÷&öæW¦‚×Fò×FÖâDôäS¢6÷W&6UövFVE÷‡—6–6ÃSCU÷66÷U÷Vç&W6öÇfVBÂ&÷f–FW$õ5$Òó#SCS†Òâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡B—"ÖÓBÖÓ×f÷&öæW¦‚×Fò×7"ÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#3c3Õ4²·'C–BÖ7W'&VçBÖ66SÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#3c3×'C–BÖ7W'&VçBÖ66SæÖB“¢66Só#"—"ÖÓBÖÓ×f÷&öæW¦‚×Fò×7"DôäS¢ÓEö6ö×öæVçE÷&–6VEö÷F†W%÷&öGV7G5÷Væ¶æ÷vâÂ&÷f–FW%fÆ†ÆÆó#3c3c–Òâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²'§6B%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡B6–ævÆRÖÓBÖ·&6æöF"×Fò×f÷&öæW¦‚ÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#3s3BÕ4²·'C–BÖ7W'&VçBÖ66S%Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#3s3B×'C–BÖ7W'&VçBÖ66S"æÖB“¢66S"ó#"6–ævÆRÖÓBÖ·&6æöF"×Fò×f÷&öæW¦‚DôäS¢6÷W&6UövFVE÷‡—6–6ÃSCU÷66÷U÷Vç&W6öÇfVBÂ&÷f–FW$õ5$Òóƒ3cƒfÒâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡B6–ævÆRÖÓB×f÷&öæW¦‚×FòÖ·&6æöF"ÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#3ƒCÕ4²·'C–BÖ7W'&VçBÖ66S5Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#3ƒC×'C–BÖ7W'&VçBÖ66S2æÖB“¢66S2ó#"6–ævÆRÖÓB×f÷&öæW¦‚×FòÖ·&6æöF"DôäS¢6÷W&6UövFVE÷‡—6–6ÃSCU÷66÷U÷Vç&W6öÇfVBÂ&÷f–FW$õ5$Òóƒ3S#–Òâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡BG&—ÆRÖÓBÖÓ×§6B×f÷&öæW¦‚×Fò×&–ÒÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#3“CrÕ4²·'C–BÖ7W'&VçBÖ66SEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#3“Cr×'C–BÖ7W'&VçBÖ66SBæÖB“¢66SBó#"G&—ÆRÖÓBÖÓ×§6B×f÷&öæW¦‚×Fò×&–ÒDôäS¢ÓEö6ö×öæVçE÷&–6VEö÷F†W%÷&öGV7G5÷Væ¶æ÷vâÂ&÷f–FW%fÆ†ÆÆó#CScÒâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²'§6B"Â'Væ¶æ÷vâ×–B×&öB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡BFç"İİí-í}í-¢Ö¶¦âÖ6VçFW"ÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#CSÕ4²·'C–BÖ7W'&VçBÖ66SUÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#CS×'C–BÖ7W'&VçBÖ66SRæÖB“¢66SRó#"Fç"İİí-í}í-¢Ö¶¦âÖ6VçFW"DôäS¢6÷W&6UövFVE÷6ÖU÷Gvõ÷v•ö6öÆÆV7F–öå÷66÷RÂ&÷f–FW%fÆ†ÆÆócCsCFÒâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡BFç"İ-½­í-­Ö¶¦âÖ6VçFW"ÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#CS‚Õ4²·'C–BÖ7W'&VçBÖ66SeÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#CS‚×'C–BÖ7W'&VçBÖ66SbæÖB“¢66Sbó#"Fç"İ-½­í-­Ö¶¦âÖ6VçFW"DôäS¢6÷W&6UövFVE÷6ÖU÷Gvõ÷v•ö6öÆÆV7F–öå÷66÷RÂ&÷f–FW%fÆ†ÆÆócƒƒSvÒâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡B¦÷&—¦‡¦†–İí}í-­Ö¶¦âÖ6VçFW"ÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#C3RÕ4²·'C–BÖ7W'&VçBÖ66SuÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#C3R×'C–BÖ7W'&VçBÖ66SræÖB“¢66Sró#"¦÷&—¦‡¦†–İí}í-­Ö¶¦âÖ6VçFW"DôäS¢6÷W&6UövFVE÷6ÖU÷Gvõ÷v•ö6öÆÆV7F–öå÷66÷RÂ&÷f–FW%fÆ†ÆÆósC#cS–Òâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡B—"ÖÓBÖ#ƒ’Öæ×Fò×f÷&öæW¦‚ÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#CCrÕ4²·'C–BÖ7W'&VçBÖ66S…Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#CCr×'C–BÖ7W'&VçBÖ66S‚æÖB“¢66S‚ó#"—"ÖÓBÖ#ƒ’Öæ×Fò×f÷&öæW¦‚DôäS¢6÷W&6UövFVE÷‡—6–6ÃSCU÷66÷U÷Vç&W6öÇfVBÂ&÷f–FW$õ5$Òó““#3S–Òâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡B—"ÖÓBÖ#ƒ’×f÷&öæW¦‚×FòÖæÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#CS#Õ4²·'C–BÖ7W'&VçBÖ66S•Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#CS#×'C–BÖ7W'&VçBÖ66S’æÖB“¢66S’ó#"—"ÖÓBÖ#ƒ’×f÷&öæW¦‚×FòÖæDôäS¢6÷W&6UövFVE÷‡—6–6ÃSCU÷66÷U÷Vç&W6öÇfVBÂ&÷f–FW$õ5$Òó““S–Òâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡B6–ævÆRÖÓB×&÷7F÷b×Fò×f÷&öæW¦‚ÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#Cc#’Õ4²·'C–BÖ7W'&VçBÖ66S#Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#Cc#’×'C–BÖ7W'&VçBÖ66S#æÖB“¢66S#ó#"6–ævÆRÖÓB×&÷7F÷b×Fò×f÷&öæW¦‚DôäS¢6÷W&6UövFVE÷‡—6–6ÃSCU÷66÷U÷Vç&W6öÇfVBÂ&÷f–FW%fÆ†ÆÆóScs3S6Òâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡B6–ævÆRÖÓB×f÷&öæW¦‚×FòÖÖ÷66÷rÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#Cs3"Õ4²·'C–BÖ7W'&VçBÖ66S#Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#Cs3"×'C–BÖ7W'&VçBÖ66S#æÖB“¢66S#ó#"6–ævÆRÖÓB×f÷&öæW¦‚×FòÖÖ÷66÷rDôäS¢v†öÆUöW7F–ÖFU÷&W6VçEö7W'&VçEöVæv–æRÂ&÷f–FW%fÆ†ÆÆóS#sFÒâv†öÆVÖ÷VçG5³ƒ3Ã#3ÒÂ&VÖ–æ–æuµÓ²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡B6–ævÆRÖÓB×f÷&öæW¦‚×Fò×&÷7F÷bÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#Cƒ3’Õ4²·'C–BÖ7W'&VçBÖ66S#%Ò‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#Cƒ3’×'C–BÖ7W'&VçBÖ66S#"æÖB“¢66S#"ó#"6–ævÆRÖÓB×f÷&öæW¦‚×Fò×&÷7F÷bDôäS¢6÷W&6UövFVE÷‡—6–6ÃSCU÷66÷U÷Vç&W6öÇfVBÂ&÷f–FW%fÆ†ÆÆóScSs“FÒâv†öÆVÖ÷VçG5¶çVÆÂÆçVÆÅÒÂ&VÖ–æ–æu²&ÓB%Ó²æòçVÖW&–27V'F÷FÂ&W6VçFVB6gVÆÇF÷FÂâäU…C¢æW‡BFç"İ=İ-İíR×6–çB×WFW'6'W&rÖ6VçFW"ÂW†7FW†—7F–æv6GW&Rg&ö×&Vv–öæÆ6÷'W2÷&öBÖ66W2ÂöffÆ–æSRótö7C“£Õ4³²6W&FV66V6†V6·ö–çB÷&VF&6²&Vf÷&RæW‡Bâ¶VW¶æ÷vç6÷W&6VvFW2÷Vç&VÆFVFÖ—76–æw&öGV7G7f—6–&ÆRà £##bÓÓbÓ#S#C‚Õ4²·'C–BÖÓBÓ#"×&Wf–WrÖæBÖ÷VâÖ6öÆÆV7F–öâ×'VÆUÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#S#C‚×'C–BÖÓBÓ#"×&Wf–WrÖæBÖ÷VâÖ6öÆÆV7F–öâ×'VÆRæÖB“¢ÓBf–æF–ær&Wf–WrDôäS#"ó#"F—7F–æ7F66W2ÂäõC#&6öæf—&ÖVFf&W3£Wv†öÆWVæ6öæf—&ÖVFW7F–ÖFW2Ã4ÓF6ö×öæVçG7&–6VB÷v†öÆWVæ¶æ÷vâÃ‡‡—6–6ÃSCW66÷VvFVBÃg6†÷'DÓG66÷VvFVBâ7W'&VçGVWVRæBW"Ö66U4„ö6†V6·ö–çG2&W6W'fRW†7F÷WF6öÖW3²Væ6†ævVFg&÷¦Vå$Uõ%BâæòæWw'VçF–ÖV6†ævRögVÆÆvFRF†—7GW&âÂ&–÷#cƒv†—7F÷&–6ÂâäU…C¢äU…Bæ'&÷w7FW¢WfÇVFR&–Ö'–÷Vâ×'VÆRÆ–6&–Æ—G’æB6fRW†7FÇ—&Wf–WvVDÓG66÷RwV&BÂF†VâöæRÖ6W6V6öFV6†ævRöæÇ’–f–æFWVæFVçG&öög7Vff–6W3²fö7W6VB¶gVÆÆvFRæCg6W&FV66V6†V6·ö–çG2&Vf÷&V66WFæ6Râ÷F†W'v—6R¶VWgVæ¶æ÷vâæB6öçF–çVU¥4Ff—'7BFç"İ=İ-İíR×6–çB×WFW'6'W&rÖ6VçFW"â¶VW‡‡—6–6ÃSCW6÷W&6VvFW3²'G3–öævö–æró#ÆææVBà £##bÓÓbÓ#Ss’Õ4²¶ÓBÖ÷Vâ×'VÆR×&ööbÖæBÖ’×&Wf–WuÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ#Ss’ÖÓBÖ÷Vâ×'VÆR×&ööbÖæBÖ’×&Wf–WræÖB“¢&–Ö'’×'VÆRfW&–f–6F–öâDôäRÂ–×ÆVÖVçFF–öâäõB7F'FVC¢÷W&F÷"WÆöFVC7vUDb4„6VCF#3S#–SVSsƒcV&f3C“&3c“CF#6V6Sf33sc&“vCV#fF3Cc3SvF26V7F–öã"ã—2tSB‡f—7VÆÇ—&VæFW&VCc‚’Âæ÷GvS3²V&Æ–W&6†V6·ö–çBf—6–&Ç–ææ÷FFVBÂöÆG7FFVÖVçG&W6W'fVBâvS&ÖF6†–æv†VF–ær—2F&ÆVöf6öçFVçG2âgVÆÇFW‡B6öçF–ç6æóSCR×7V6–f–7'VÆRÂ6ó‡‡—6–6ÃSCVvFW2&VÖ–çVç&W6öÇfVBâäU…C¢&Wf—6—BW†7G6†÷'DÓG66÷R66SFç"İ=İ-İíRÖ¶¦âÖ6VçFW#¢FV6–FRv†WF†W"&–Ö'–gVÆÇv’ÖæöFRvVöÖWG'’öf6–Æ—G–Ö¶÷W&F÷&÷Vç'VÆRW7F&Æ—6†W2÷6—F—fRæòÖ6†&vR&ööbâ–b7Vff–6–VçBÂ–×ÆVÖVçB&Wf–WvVG&öB×66÷VwV&B†æò&Væ6†Ö&·&÷WFT”G2’&WV—&–ær6ÖR×6VÆV7FVF6ö×ÆWFUfÆ†ÆÆö&ö÷F†6÷fW&vRÂW†7C'v—3ƒ#Scssb³3“ƒCcöF—&V7FVFvVöÖWG'’Ã&ö÷F‡2³¶æ÷väÓF6æF–FFW3²v†öÆW¦W&òöæÇ—v—F†æö÷F†W&Ö—76–æw&öGV7G2Â&W6W'fVVF—G&ræBfö–FÆFVfÆÆ&6²ô–6öçG&F–7F–öç2âfö7W6VBGfW'6&–ÇFW7G2¶gVÆÆvFRæCg6W&FV66V6†V6·ö–çG2&Vf÷&R66WF–ærç“ôe$TRâ–b&öög7F–ÆÆ–ç7Vff–6–VçBÂ¶VWgVæ¶æ÷vâæB6öçF–çVU¥4Ff—'7F66RFç"İ=İ-İíR×6–çB×WFW'6'W&rÖ6VçFW"â'G3–öævö–æró#ÆææVBà £##bÓÓb3£S‚Õ4³¢26†÷'BÓB÷6—F—fR&ööb&Wf–Wr(	BDôäRÂ6÷W&6RvFR&WF–æV@ £bãã##bÕ4²â&VçBV6CcV3&Vf#“6cc33#–c††F3FFF6F#3#Âv÷&¶–ær'&æ6‚f—‚÷c2ÖÖ—76–ær×&÷WFR×&–6W2Ó##bÓÓRÂG&gB#Bâg&W6‚6ÆöæR6Æ7VÆF÷"×&W7VÖRÖF6†W2&VÖ÷FR&VçC²&–÷"6†V6¶÷WBæòÆöævW"W†—7G2â–æ—F–ÂW†V2f–ÆVBGVRÖ—76–ærv÷&¶–ærF—&V7F÷'’Â&WG'’–â÷F×7V66VVFVC²æòW&Ö—76–öâW66ÆF–öâæVVFVBâÆFW7B&VçB"v÷&¶fÆ÷s3ƒƒƒCcC“’6ö×ÆWFVB÷7V66W73²æò7F—fRw&—FW"ö'6W'fVBà ¥&VB&–Ö'’DbvW3>(	3Bv—F‚FgF÷FW‡BÖÆ–÷WBÂW†—7F–ærgVÆÇv’vVöÖWG'’Wf–FVæ6RæB’&Wf–WrâvVæW&Â'VÆRÆ–6&–Æ—G’FòÓB—2W‡Æ–6—B†FVf–æ—F–öç22“²6V7F–öã"ãB7FFW2–ÖVçB—2G&–vvW&VBBeæBÆÆ÷w2G&fVÂv—F†÷WB7&÷76–æröæRâF†—27W÷'G2F†R–çFVæFVBÆv÷&—F†ÒÂ'WB6÷W&6R&V6÷&BÓBÓ3SR×&V6V—B×'VÆR×fW&–f–VBÓ##bÓÓBæ§6öâW‡Æ–6—FÇ’†2VffV7F—fTg&öÓ¦çVÆÂæBæ÷FW2†—7F÷&–6Âö7W'&VçBF÷öÆöw’F–ffW&Væ6W2âæò–æFWVæFVçFÇ’FFVB÷W&F÷"‡—6–6Â6öÆÆV7F–öâ×66÷R&V6÷&Bf÷"F†W6RGvòW†7Bv—2—2&W6VçC²76ö6–F–öâFòeCb&VÖ–ç26V&6‚6æ—WB&Wf–÷W6Ç’&V¦V7FVBf÷"66÷R&ööbâfÆ†ÆÆ6ö×ÆWFVæW72æBâõ4ÒÖv—F†÷WB&ö÷F‚Fw2&RW6VgVÂ6÷'&ö&÷&F–öâÂæ÷B–æFWVæFVçB÷W&F÷"–çfVçF÷'’6ö×ÆWFVæW72âVæGö–çBöF—&V7B×v’ÖF6†–ær6ææ÷BGW&â'6Væ6RöbÖFF–çFò–æFWVæFVçBæòÖ6†&vR6öæf—&ÖF–öâà ¤FV6—6–öã¢&WF–â6—‚6÷W&6RÖvFVBVæ¶æ÷vç3²Fòæ÷B–×ÆVÖVçB&÷WFR÷v’ÆÆ÷vÆ—7B&WGW&æ–ær¦W&òöâF†—2Wf–FVæ6RÆöæRâF†—2—2æ÷B&V¦V7F–öâöb÷Vâ6öÆÆV7F–öâ÷"&ööböb6†&vRâÖ—76–ær&ööc¢7W'&VçB÷W&F÷"Æ–6&–Æ—G’ö6öÆÆV7F–öâ&÷VæF&–W2f÷"F†RW†7B6VÆV7FVB6†÷'B6VvÖVçB†÷"WV—fÆVçB–æFWVæFVçFÇ’6öæf—&ÖVB6öçG&öÂ’âV–v‡B‡—6–6ÃSCRvFW2&VÖ–â6W&FRâæò6öFR÷&–6W26†ævVC²æòFW7G2ö'V–ÆBW†V7WFVC²†—7F÷&–6Ãcƒr&VÖ–ç2†—7F÷&–6Ââ&rö6GW&W2õ$Uõ%B&W6W'fVBà ¤äU…B5D%DTC¢¥4Bf—'7B66RFç"İ=İ-İíR×6–çB×WFW'6'W&rÖ6VçFW"ÂÆö6FRW†7BW†—7F–ær6GW&Rg&öÒ6÷'W2æ§6öâÂ&W7F÷&Rg&÷¦VâFWVæFVæ6–W2ÂöffÆ–æR&WÆ“Rótö7C“£Õ4²Â&W6W'fR&ræB–ç7V7BÖ—76–ær¥4B66÷RâFòæ÷B&W'Vâ6ö×ÆWFVC#"ÓB÷##RöÆ–7’66W2â6fRV6‚&WÆ’66R&Vf÷&R6öçF–çV–ærâ'G3’öævö–æró#ÆææVC²æòÖ–âöÖW&vRõ&öGV7F–öâôæG&ö–B6†ævW2à ¤6†V6·ö–çC¢ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓ3S‚×6†÷'BÖÓB×&ööb×&Wf–WræÖ@ £bãã##bg&÷¦VâFWVæFVæ6–W2DôäRW†—Có#Bã'2ÂÆö6²Væ6†ævVC²¥4Bw&æ—Fæö^(i%5"W†7B6fVBÖ6GW&RGvò×&öf–ÆR&WÆ’5D%DTBâ6VRââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC×§6BÖFWVæFVæ6–W2×&VG’æÖ@ £bãã##b¥4Bw&æ—Fæö^(i%5"&WÆ’DôäS"ó"6ö×ÆWFS²ÓBæ÷s3ƒóCcCÂöæÇ’¥4BÖ—76–æs²6ö×öæVçB7V×2&Ræ÷BF÷FÇ2â6ÖV66RW†7Gv—2övFW266÷RF–væ÷6—25D%DTBâââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC2×§6BÖw&æ—FæöR×7"×&WÆ’æÖ@ £bãã##b¥4Bw&æ—Fæö^(i%5"‡—6–6Ç66÷RDôäS¢7GVÂæ÷'F†&÷VæBeRæöFS“33“sCƒsÃ#gv—2ó&÷WG6–FR&Wf–WvVG¦öæSÂW†—DV¶FW&–ævöf¶â&–Ö'—¦öæR&–6W2W†—7C²v†öÆV6öÆÆV7F–öç66÷R7F–ÆÇ&WV—&W2&–æF–ærâââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓCb×§6BÖw&æ—FæöRÖW†7B×66÷RæÖBäU…B6ÖV66R÷væW&66‚ö6&G66÷RÂæöÆ–2öwVW76VGF÷FÂà £bãã##b¥4B66S&–Ö'—'VÆW2&Wf–WrDôäS²6÷W&6RÖvFVFf–æ—6†VG66÷RÂæócwVW72âäU…B5D%DTB66S"''–æ¶(i%5"GvööffÆ–æW&öf–ÆW2âââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC×§6B×&–Ö'’×'VÆR×66÷RÖ†öÆBæÖ@ £bãã##b¥4F66S"''–æ¶(i%5"DôäS"ó"W†—Cö6ö×ÆWFRÂ6ÖS#gv—2õeR666SÂVæ¶æ÷vå¥4FöæÇ’âäU…B66S2Æ—6–6†ç6¾(i%5"W†7F6GW&WGvööffÆ–æW&öf–ÆW2âââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC"×§6BÖ''–æ¶×7"×&WÆ’æÖ@ £##bÓÓeCC£c£Sãcssƒ‚³3£¢¥4F66S2Æç"İ½}İ¢×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓCcS×§6BÖ66S2æÖBâäU…BÆç"İ=]mİíR×6–çB×WFW'6'W&rÖ6VçFW"à £##bÓÓeCC£s£3rãc“s#r³3£¢¥4F66SBÆç"İ=]mİíR×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓCs3r×§6BÖ66SBæÖBâäU…B¦÷&—¦‡¦†–İ==½ııí½R×6–çB×WFW'6'W&rÖ6VçFW"à £##bÓÓeCC£s£SrãƒcCƒb³3£¢¥4F66SR¦÷&—¦‡¦†–İ==½ııí½R×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓCsSr×§6BÖ66SRæÖBâäU…BFç"İ]Í="×6–çB×WFW'6'W&rÖ6VçFW"à £##bÓÓeCC£ƒ£‚ãS“3“‚³3£¢¥4F66SbFç"İ]Í="×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓCƒ‚×§6BÖ66SbæÖBâäU…BFç"İ-í½İí-]×6–çB×WFW'6'W&rÖ6VçFW"à £##bÓÓeCC£ƒ£3’ã#“ƒ3ƒB³3£¢¥4F66SrFç"İ-í½İí-]×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓCƒ3’×§6BÖ66SræÖBâäU…BFç"İMíİ]m¢×6–çB×WFW'6'W&rÖ6VçFW"à £##bÓÓeCC£ƒ£S’ã3ƒC#‚³3£¢¥4F66S‚Fç"İMíİ]m¢×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓCƒS’×§6BÖ66S‚æÖBâäU…BÆç"İ½}]-¢×6–çB×WFW'6'W&rÖ6VçFW"à £##bÓÓeCC£“£’ãS“ƒS3³3£¢¥4F66S’Æç"İ½}]-¢×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC“’×§6BÖ66S’æÖBâäU…BÆç"İİ-m"×6–çB×WFW'6'W&rÖ6VçFW"à £##bÓÓeCC£“£CãS#33R³3£¢¥4F66SÆç"İİ-m"×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC“C×§6BÖ66SæÖBâäU…BÆç"İMí-mİ¢×6–çB×WFW'6'W&rÖ6VçFW"à £##bÓÓeCC££ãCSsC#R³3£¢¥4F66SÆç"İMí-mİ¢×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC×§6BÖ66SæÖBâäU…BÆç"İÍ­í-­×6–çB×WFW'6'W&rÖ6VçFW"à £##bÓÓeCC££#ãcscCb³3£¢¥4F66S"Æç"İÍ­í-­×6–çB×WFW'6'W&rÖ6VçFW"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖUöW†7E÷v•÷6WBÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#×§6BÖ66S"æÖBâäU…BÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ'¦Ö2×Fò×&–Òà £##bÓÓeCC££Cã#s3"³3£¢¥4F66S2Ö‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ'¦Ö2×Fò×&–ÒDôäS"ó"W†—Cö6ö×ÆWFRÂ7W'&VçE÷Væ¶æ÷våöæVVG5öF—7F–æ7E÷66÷U÷&Wf–WrÂÖ—76–æu²v6¶BrÂvÓÓRÓS‚rÂwVæ¶æ÷vâ×–B×&öBrÂw§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓCC×§6BÖ66S2æÖBâäU…BÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ¶¦â×Fò×6W7Bà £bãã##b&–Ö'—&ööbDôäS¢VææÖVFæöFSsccSƒsƒ&VÆöæw5¥4Bf–FF—&V7FVGv—2ÂÆÂ–â6VÆV7FVF66S6ÆVFvW#²f—†W†7F–FVçF—G’5D%DTBÂæöf&V6†ævRâââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×§6B×ÆæW&æ–Ö–FVçF—G’×&ööbæÖBÆã“S‚ó#âäU…B6÷W&6RöGfW'6&–Ç&Vw&W76–öâF†Væfö7W6VBögVÆÆvFR÷6ÖV66W&WÆ’à £bãã##bÆæW&æ–W†7F–FVçF—G’4ôDRDôäRöf÷W'&Vw&W76–öç6FFVBÂäõGFW7FVC²äU…Bfö7W6VGFW7G2öÆ–çBF†VægVÆÆvFR÷6ÖV66RâââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×§6B×ÆæW&æ–Ö–FVçF—G’Ö6öFRæÖBÆã“Rà £bãã##bÆæW&æ–fö7W6VC‚ó…52öW6Æ–çFæWwFW7FW†—C²gVÆÆvFU5D%DTBçÒ'Vâ'V–ÆBÒÒÒ×vV'6²âââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×§6B×ÆæW&æ–Öfö7W6VB×72æÖBÆã“Rà £bãã##bÆæW&æ–gVÆÆvFRDôäRW†—C£c“óc“·V÷FRô’´æW‡GvV'6²õE2÷7FF–3bóe52âäU…B6÷'&V7FVF66S7GvööffÆ–æW&öf–ÆW2âââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×§6B×ÆæW&æ–ÖgVÆÆvFR×72æÖB÷fW&ÆÇÆã“S‚ó#à £bãã##b¥4CsccSƒsƒ–FVçF—G–f—‚fÆ–FFVBv—F†6÷'&V7FVF66S7—#¢&VGVæFçGVæ¶æ÷vç&öFvöæRÂÓ†VBô4´Bõ¥4B7F–ÆÆ&Æö6¶çVÆÇF÷FÂâc“gVÆÆvFU52ó†fö7W6VE52â&vgVÆÆvFVÆör5"'—FW&W6W'fF–öâ&V6÷fW'’–æ6ÇVFVC²&WV—&VW†7GG&VRâââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×§6B×ÆæW&æ–Ö6÷'&V7FVB×&WÆ’æÖBäU…B66SD¶¦î(i%6W7G&÷&WG6³²Æã“S‚ó#à £##bÓÓeCC£“£3BãC“"³3£¢¥4F66SBÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ¶¦â×Fò×6W7BDôäS"ó"W†—Cö6ö×ÆWFRÂ7W'&VçE÷Væ¶æ÷våöæVVG5öF—7F–æ7E÷66÷U÷&Wf–WrÂÖ—76–æu²v6¶BrÂvÓÓRÓS‚rÂw§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC“3B×§6BÖ66SBæÖBâäU…BÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ×W&öÒ×Fò×6W7Bà £bãã##b¥4F66SB66÷TDôäS£sgv—2÷GvòæÖVEe÷6÷WF(i&æ÷'F„´BÂæòæWv–FVçF—G–'VrÂ6÷W&6VvFR&WF–æVBâÆFW7Cc“gVÆÆvFU527WW'6VFW27FÆScƒwFV×ÆFRâââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×§6BÖ¶¦â×6W7G&÷&WG6²×66÷RæÖBäU…F66ST×W&öŞ(i%6W7G&÷&WG6³²Æã“Rà £##bÓÓeCC£#£3"ã3c“cS"³3£¢¥4F66SRÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ×W&öÒ×Fò×6W7BDôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖU÷&Wf–WvVE÷§6E÷66÷RÂÖ—76–æu²v6¶BrÂvÓÓRÓS‚rÂw§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#3"×§6BÖ66SRæÖBâäU…BÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×FòÖ¶¦âà £##bÓÓeCC£##£Bã“#3“’³3£¢¥4F66SbÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×FòÖ¶¦âDôäS"ó"W†—Cö6ö×ÆWFRÂ7W'&VçE÷Væ¶æ÷våöæVVG5öF—7F–æ7E÷66÷U÷&Wf–WrÂÖ—76–æu²v6¶BrÂw§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC##B×§6BÖ66SbæÖBâäU…BÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×FòÖ×W&öÒà £bãã##b¥4F66SbF—7F–æ7G66÷TDôäS¢cwv—2óSF÷WG6–FR&Wf–WvVG¦öæSÂ7GVÆwV&G&VgW6Â6öç6—7FVçBÂæòf&VwVW72÷'VçF–ÖVf—‚âââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#3#B×§6BÖ66Sb×66÷RæÖBäU…FÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×FòÖ×W&öÓ²Æã“RÂÆFW7Cc“vFU52à £##bÓÓeCC£#C£Bãs3R³3£¢¥4F66SrÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×FòÖ×W&öÒDôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖU÷&Wf–WvVE÷§6E÷66÷RÂÖ—76–æu²v6¶BrÂw§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#CB×§6BÖ66SræÖBâäU…BÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6BÖ·&6æöF"×Fò×6W7Bà £##bÓÓeCC£#C£3Rã#Cƒ“Cr³3£¢¥4F66S‚Ö‚Ö6†–âÖÓBÖ6¶BÖÓ×§6BÖ·&6æöF"×Fò×6W7BDôäS"ó"W†—Cö6ö×ÆWFRÂ7W'&VçE÷Væ¶æ÷våöæVVG5öF—7F–æ7E÷66÷U÷&Wf–WrÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#C3R×§6BÖ66S‚æÖBâäU…BÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×&÷7F÷b×Fò×6W7Bà £bãã##b¥4F66S‚F—7F–æ7G66÷TDôäS¢sgv—2óc&÷WG6–FR&Wf–WvVG¦öæSÂ7GVÆwV&G&VgW6Â6öç6—7FVçBÂæòf&VwVW72÷'VçF–ÖVf—‚âââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#CS2×§6BÖ66S‚×66÷RæÖBäU…FÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×&÷7F÷b×Fò×6W7C²Æã“RÂÆFW7Cc“vFU52à £##bÓÓeCC£#S£ãƒS#ƒR³3£¢¥4F66S’Ö‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×&÷7F÷b×Fò×6W7BDôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖU÷&Wf–WvVE÷§6E÷66÷RÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#S×§6BÖ66S’æÖBâäU…BÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×6W7B×FòÖ·&6æöF"à £##bÓÓeCC£#S£32ãCƒ#"³3£¢¥4F66S#Ö‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×6W7B×FòÖ·&6æöF"DôäS"ó"W†—Cö6ö×ÆWFRÂ7W'&VçE÷Væ¶æ÷våöæVVG5öF—7F–æ7E÷66÷U÷&Wf–WrÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#S32×§6BÖ66S#æÖBâäU…BÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×6W7B×Fò×&÷7F÷bà £bãã##b¥4F66S#F—7F–æ7G66÷TDôäS¢cwv—2óSF÷WG6–FR&Wf–WvVG¦öæSÂ7GVÆwV&G&VgW6Â6öç6—7FVçBÂæòf&VwVW72÷'VçF–ÖVf—‚âââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#SS×§6BÖ66S#×66÷RæÖBäU…FÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×6W7B×Fò×&÷7F÷c²Æã“RÂÆFW7Cc“vFU52à £##bÓÓeCC£#c£ã“ƒcSS"³3£¢¥4F66S#Ö‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×6W7B×Fò×&÷7F÷bDôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖU÷&Wf–WvVE÷§6E÷66÷RÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#c×§6BÖ66S#æÖBâäU…BÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×f÷&öæW¦‚×Fò×&–Òà £##bÓÓeCC£#c£32ãcss#R³3£¢¥4F66S#"Ö‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×f÷&öæW¦‚×Fò×&–ÒDôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖU÷&Wf–WvVE÷§6E÷66÷RÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#c32×§6BÖ66S#"æÖBâäU…B—"ÖÓÖ6¶BÖFöÖöFVF÷fò×Fò×7"à £##bÓÓeCC£#c£SBã3Sƒƒ"³3£¢¥4F66S#2—"ÖÓÖ6¶BÖFöÖöFVF÷fò×Fò×7"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖU÷&Wf–WvVE÷§6E÷66÷RÂÖ—76–æu²w§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#cSB×§6BÖ66S#2æÖBâäU…B—"ÖÓÖ6¶BÖæöv–ç6²×Fò×7"à £##bÓÓeCC£#s£"ãCCCc³3£¢¥4F66S#B—"ÖÓÖ6¶BÖæöv–ç6²×Fò×7"DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖU÷&Wf–WvVE÷§6E÷66÷RÂÖ—76–æu²v6¶BrÂvÓÓRÓS‚rÂw§6BuÓ²6ÖVW†7G66÷SÕG'VRâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#s"×§6BÖ66S#BæÖBâäU…B—"ÖÓÖ6¶B×7"×FòÖFöÖöFVF÷fòà £##bÓÓeCC£#s£32ãcƒ“C³3£¢¥4F66S#R—"ÖÓÖ6¶B×7"×FòÖFöÖöFVF÷fòDôäS"ó"W†—Cö6ö×ÆWFRÂ7W'&VçE÷Væ¶æ÷våöæVVG5öF—7F–æ7E÷66÷U÷&Wf–WrÂÖ—76–æu²wVæ¶æ÷vâ×–B×&öBrÂw§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#s32×§6BÖ66S#RæÖBâäU…B—"ÖÓÖ6¶B×7"×FòÖæöv–ç6²à £bãã##b¥4F66S#RF—7F–æ7G66÷TDôäS¢3‡v—2ó#V÷WG6–FR&Wf–WvVG¦öæSÂ7GVÆwV&G&VgW6Â6öç6—7FVçBÂæòf&VwVW72÷'VçF–ÖVf—‚âââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#sS"×§6BÖ66S#R×66÷RæÖBäU…G—"ÖÓÖ6¶B×7"×FòÖæöv–ç6³²Æã“RÂÆFW7Cc“vFU52à £##bÓÓeCC£#ƒ£ãƒ“c3S"³3£¢¥4F66S#b—"ÖÓÖ6¶B×7"×FòÖæöv–ç6²DôäS"ó"W†—Cö6ö×ÆWFRÂ6÷W&6UövFVE÷6ÖU÷&Wf–WvVE÷§6E÷66÷RÂÖ—76–æu²v6¶BrÂw§6BuÓ²6ÖVW†7G66÷SÔfÇ6RâÆâ&öw&W73“Rƒ‚ó#Âæ÷Ff&V6÷fW&vR’â6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓC#ƒ×§6BÖ66S#bæÖBâäU…B—"ÖÓ×§6BÖÖ÷66÷r×Fò×&–Òà £##bÓÓeCC£3£"ã3“3s#’³3£¢¥4C#bósb–æF—f–GVÆÇ–GW&&ÆS²F†—6&Æö6³6FF—F–öæÆ66W2Â6÷W&6VvFW6¶WBÂæò'VçF–ÖV6†ævRöæWvgVÆÆvFRâ÷fW&ÆÇÆã“S‚ó#âW†—7F–ævWFòVæ&ÆVB÷&VF&6¶6öæf—&ÖVC²&ö×FöæÇ—WFFVGv—F‡W&6VçF–ç7G'V7F–öâ÷66†VGVÆWVæ6†ævVBâ6†V6·ö–çBââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×§6BÓ#f66RÖ†æFöfbÖæBÖWFò×&W÷'F–æræÖBâäU…F66S#w—"ÖÓ×§6BÖÖ÷66÷r×Fò×&–Òà £bãã##bc£SDÕ4²67&F6‚×'Væ–ær&V6÷fW'’DôäRÂW†7F6ÆöæV†VB÷G&VRfW&–f–VC²æò&÷WFW&öw&W72Æ÷7BâäU…Bg&÷¦VâFWVæFVæ6–W2÷&W÷6—F÷'’Ö÷væVB¥4G6–ævÆV66WWF–Æ—G’ÂF†Vâ66S#râââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓcSB×&W7VÖRÖgFW"×67&F6‚×'Væ–æræÖBÆã“Rà¢2##bÓÓbc£SB	Í
+	¢(	B66R#r&WÆ“¢d”ÄTB–×÷'BF€ ­	ı]-½’öffÆ–æR&WÆ’—"ÖÓ×§6BÖÖ÷66÷r×Fò×&–ÖİR}ı=-½ó¢íí}İâ=­}ÒâöW‡W&–ÖVçG2öæF–öçv–FR×FöÆÇ2÷67&—G2÷&Vv—7FW"×G2×F‡2æÖ§6ÂM­-}]­’–×÷'B(	Bâ÷67&—G2÷&Vv—7FW"×G2×F‡2æÖ§6âW†—BMâ}-]İò6GW&S²]}=½Í--²‚-Mİò½í=­İRÍ]İı½Ââ
+ÂâââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓcSB×§6BÖ66S#r×&WÆ’Öf–ÆVBÖ–×÷'BæÖFâ
+½]MíÂıí--í-Â-í"mR66Rı-½]İİ½Â–×÷'Bâ	ı½Ò“Rƒ‚ó#’Â¥4B&Wf–Wr#bósbà £bãã##bg&÷¦VâFWVæFVæ6–W2&W7F÷&VBW†—CóRãw2ÂÆö6·Væ6†ævVC²äU…B&W÷6—F÷'’Ö÷væVB¥4B&Wf–WrWF–Æ—G’âââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓcSbÖg&÷¦VâÖFWVæFVæ6–W2×&W7F÷&VBæÖBæòæWwFW7Bö'V–ÆB÷&÷WFS²Æã“Rà £bãã##b¥4B&W÷6—F÷'’Ö÷væVB6–ævÆV66RWF–Æ—G’4ôDRDôäRÂf÷W&–çFVw&—G’öGfW'6&–ÂFW7G2FFVC²7–çF†6†V6·276VBÂfö7W6VBögVÆÆvFRäõG–WB'VââââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×§6B×&W÷6—F÷'’×'VææW"Ö6öFRæÖBäU…Bfö7W6VF6†V6·2ÂgVÆÆvFRÂ66S#râÆã“Rà £bãã##b¥4FGW&&ÆW'VææW&fö7W6VCBóE52öÆ–çC&f–ÆW6W†—CÂ'VÆW7&W&VBW'W6W#s£²äU…FgVÆÆvFRF†VâWFöÖF–666S#râââòââöFö72ö6†V6·ö–çG2ó##bÓÓb×§6B×'VææW"Öfö7W6VB×72æÖBÆã“Rà £bãã##b7W'&VçBÖ6†B&W7VÖS¢'VÆW2ó#'G2&W&VBÂW†7B&VÖ÷FRG&VRÖF6†VB–â÷vâ6†V6¶÷WBâÆã“RâäU…BgVÆÆvFRF†Vâ66S#râFö72ö6†V6·ö–çG2ó##bÓÓbÖ6öçF–çVRÖ7W'&VçBÖ6†BæÖ@ £bãã##bgVÆÆvFRDôäRW†—C£c“Róc“RÂV÷FRô’ÂvV'6²õE2÷7FF–3bób52â&rÆör&W6W'fVBâäU…B66S#rÒÖæW‡BâÆã“RâFö72ö6†V6·ö–çG2ó##bÓÓbÖ7W'&VçBÖ6†BÖgVÆÆvFR×72æÖ@ £bãã##b'VææW'&VfÆ–v‡Bd”ÄTB&Vf÷&R&WÆ“¢VçG&6¶VBFWVæFVæ7’7–ÖÆ–æ²ÂÆö6ÆW†6ÇVFR&W—&VBâæò66W&öw&W72âäU…B&WG'–66S#râÆã“RâFö72ö6†V6·ö–çG2ó##bÓÓb×§6B×&VfÆ–v‡B×7–ÖÆ–æ²×&V6÷fW'’æÖ@ £##bÓÓeCC£#£#"ãcs%£¢¥4B66S#r&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#Ó#"Ócs¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓ×§6BÖÖ÷66÷r×Fò×6W7C²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£#£ãƒ#%£¢¥4B66S#‚&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#ÓÓƒ#¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓ×§6B×&–Ò×FòÖÖ÷66÷s²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£#£3Bã“%£¢¥4B66S#’&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#Ó3BÓ“¢æÖB’âäU…BF–væ÷6R7W'&VçB¥4B66÷RW6–ærÒÖF–væ÷6R&Vf÷&RF†RæW‡F66Rà £##bÓÓeCC£##£2ã3£¢¥4BF—7F–æ7B66÷RF–væ÷6—2DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#"Ó2Ó3¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓ×§6B×6W7B×FòÖÖ÷66÷s²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£##£Cã#ƒ5£¢¥4B66S3&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#"ÓCÓ#ƒ%¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓ×§6B×GfW"×Fò×6W7C²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£#3£bãS“e£¢¥4B66S3&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#2ÓbÓS“U¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓBÖÓ×f÷&öæW¦‚×Fò×7#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£#3£Crã“c%£¢¥4B66S3"&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#2ÓCrÓ“c¢æÖB’âäU…B¥4BæW‡F66R6–ævÆRÖÓÖÖ÷66÷r×Fò×7#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£#C£’ãc£¢¥4B66S32&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#BÓ’Óc¢æÖB’âäU…B¥4BæW‡F66R6–ævÆRÖÓ×7"×FòÖÖ÷66÷s²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£#C£S2ãS“£¢¥4B66S3B&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#BÓS2ÓS“¢æÖB’âäU…B¥4BæW‡F66R6–ævÆR×§6BÖ&Ær×Fò×&–Ó²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£#S£#rãss5£¢¥4B66S3R&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#RÓ#rÓss5¢æÖB’âäU…BF–væ÷6R7W'&VçB¥4B66÷RW6–ærÒÖF–væ÷6R&Vf÷&RF†RæW‡F66Rà £bãã##b66S3RF–væ÷6—2d”ÄTB÷F–öæÆÖæWWfW'2'6VçC²'VææW&f—‚·&Vw&W76–öâ4ôDRDôäRÂVçFW7FVBâäU…Bfö7W6VBögVÆÆvFRF†Vâ&WG'–F–væ÷6RâÆã“RâFö72ö6†V6·ö–çG2ó##bÓÓb×§6BÖvVöÖWG'’ÖöæÇ’ÖF–væ÷6—2Öf—‚æÖ@ £bãã##bvVöÖWG'’ÖöæÇ’fö7W6VCRóU52¶W6Æ–çBW†—CâäU…BgVÆÆvFRF†Vâ66S3VF–væ÷6—2âÆã“RâFö72ö6†V6·ö–çG2ó##bÓÓb×§6BÖvVöÖWG'’Öfö7W6VB×72æÖ@ £bãã##bvVöÖWG'’ÖöæÇ’gVÆÆvFRW†—C£c“bóc“b·V÷FRô’·vV'6²õE2÷7FF–3bóe52âäU…B66S3RÒÖF–væ÷6RâÆã“RâFö72ö6†V6·ö–çG2ó##bÓÓb×§6BÖvVöÖWG'’ÖgVÆÆvFR×72æÖ@ £##bÓÓeCC£#ƒ£3BãcCU£¢¥4BF—7F–æ7B66÷RF–væ÷6—2DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#‚Ó3BÓcCU¢æÖB’âäU…B¥4BæW‡F66R6–ævÆR×§6B×W6†¶–â×Fò×6W7C²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£#“£rãcU£¢¥4B66S3b&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#’ÓrÓcE¢æÖB’âäU…B¥4BæW‡F66R6–ævÆR×§6B×6W7B×Fò×W6†¶–ã²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£#“£Cã“e£¢¥4B66S3r&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ#’ÓCÓ“U¢æÖB’âäU…B¥4BæW‡F66RG&—ÆRÖÓÖ6¶BÖÓ"Ö¶¦â×Fò×7#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3£ãƒƒ£¢¥4B66S3‚&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3ÓÓƒs•¢æÖB’âäU…B¥4BæW‡F66RG&—ÆRÖÓÖ6¶BÖÓ"×7"×FòÖ¶¦ã²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3£CRãƒ•£¢¥4B66S3’&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3ÓCRÓƒ…¢æÖB’âäU…B¥4BæW‡F66RG&—ÆRÖÓBÖÓ×§6BÖ·&6æöF"×Fò×6W7C²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3£’ã#ƒ…£¢¥4B66SC&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3Ó’Ó#ƒu¢æÖB’âäU…B¥4BæW‡F66RG&—ÆRÖÓBÖÓ×§6B×&÷7F÷b×Fò×6W7C²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3£Sã“s•£¢¥4B66SC&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3ÓSÓ“s…¢æÖB’âäU…B¥4BæW‡F66RG&—ÆRÖÓBÖÓ×§6B×6W7B×FòÖ·&6æöF#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3#£#’ãCs£¢¥4B66SC"&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3"Ó#’ÓCs¢æÖB’âäU…B¥4BæW‡F66RG&—ÆRÖÓBÖÓ×§6B×6W7B×Fò×&÷7F÷c²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£33£ã“…£¢¥4B66SC2&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ32ÓÓ“u¢æÖB’âäU…B¥4BæW‡F66RG&—ÆRÖÓBÖÓ×§6B×f÷&öæW¦‚×Fò×&–Ó²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£33£3"ãSU£¢¥4B66SCB&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ32Ó3"ÓS5¢æÖB’âäU…B¥4BæW‡F66RFç"İ­Í-í¢×6–çB×WFW'6'W&rÖ6VçFW#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3C£Bã“#%£¢¥4B66SCR&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3BÓBÓ“#%¢æÖB’âäU…B¥4BæW‡F66RFç"İ-½­í-­×6–çB×WFW'6'W&rÖ6VçFW#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £bãã##b66SCRW†7GG&VRGW&&ÆRgFW"7—&–ÆÆ–2F‚G&ç6fW"&V6÷fW'“²&r&WF–æVBöæò&W'VââäU…F66SCbâÆã“RâFö72ö6†V6·ö–çG2ó##bÓÓb×§6BÖ7—&–ÆÆ–2×F‚×W'6—7B×&V6÷fW'’æÖ@ £##bÓÓeCC£3S£#’ãC“•£¢¥4B66SCb&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3RÓ#’ÓC“…¢æÖB’âäU…B¥4BæW‡F66RFç"İ]m½}¢×6–çB×WFW'6'W&rÖ6VçFW#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3c£"ã3CU£¢¥4B66SCr&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3bÓ"Ó3C%¢æÖB’âäU…B¥4BæW‡F66RÆç"İí-]İÍ­‚×6–çB×WFW'6'W&rÖ6VçFW#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3c£C"ãCe£¢¥4B66SC‚&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3bÓC"ÓCe¢æÖB’âäU…B¥4BæW‡F66RÆç"İíí­İâ×6–çB×WFW'6'W&rÖ6VçFW#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3s£2ãc…£¢¥4B66SC’&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3rÓ2Ócu¢æÖB’âäU…B¥4BæW‡F66RÆç"İ-í]½Í¢×6–çB×WFW'6'W&rÖ6VçFW#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3s£SãCSu£¢¥4B66SS&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3rÓSÓCSe¢æÖB’âäU…B¥4BæW‡F66R¦÷&—¦‡¦†–İí}í-­×6–çB×WFW'6'W&rÖ6VçFW#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£3ƒ£#‚ãs5£¢¥4B66SS&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓ3‚Ó#‚Ós5¢æÖB’âäU…B¥4BæW‡F66RÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6BÖ6†V&ö·6'’×Fò×&–Ó²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£SC£’ãcs£¢¥4B66SS"&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓSBÓ’Ócc•¢æÖB’âäU…B¥4BæW‡F66RÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×&–Ò×FòÖ'¦Ö3²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£SS£#ã3S5£¢¥4B66SS2&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓSRÓ#Ó3S5¢æÖB’âäU…B¥4BæW‡F66RÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×&–Ò×FòÖ6†V&ö·6'“²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCC£Sc£#2ã…£¢¥4B66SSB&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCBÓSbÓ#2Óu¢æÖB’âäU…B¥4BæW‡F66RÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×6W7B×Fò×fÆF–Ö—#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à£##bÓÓeCƒ£C3£³3£¢-í-İí-½]Òí-M]½Íİ½’6†V6¶÷WB‚}-Íí-‚ıí½Rí}-­‚-]Í]İİí’]M³²çÒ–ç7FÆÂÒÖg&÷¦VâÖÆö6¶f–ÆVW†—CÂSBöÆ–7’VçG&–W2ÂC#’6¶vW2â	]íMİ­‚öÆö6¶f–ÆR]r}Í]İ]İ’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2ó##bÓÓbÓƒC2ÖFWVæFVæ6–W2×&W7F÷&VBæÖB’âäU…B¥4B66SSRâÆã“Rƒ‚ó#’Â¥4CSBósbà £##bÓÓeCS£C3£’ã3C•£¢¥4B66SSR&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCRÓC2Ó’Ó3C…¢æÖB’âäU…B¥4BæW‡F66RÖ‚Ö6†–âÖÓ"Ö6¶BÖÓ×§6B×fÆF–Ö—"×Fò×6W7C²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCS£CC£#ã““%£¢¥4B66SSb&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCRÓCBÓ#Ó““¢æÖB’âäU…B¥4BæW‡F66RÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6BÖ·&6æöF"×Fò×&–Ó²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCc£S£‚ãs…£¢¥4B66SSr&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCbÓSÓ‚Ósu¢æÖB’âäU…B¥4BæW‡F66RÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×&–Ò×Fò×f÷&öæW¦ƒ²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCc£S#£ã•£¢¥4B66SS‚&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCbÓS"ÓÓ…¢æÖB’âäU…B¥4BæW‡F66RÖ‚Ö6†–âÖÓBÖ6¶BÖÓ×§6B×&÷7F÷b×Fò×&–Ó²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCc£S3£SãS#£¢¥4B66SS’&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCbÓS2ÓSÓS•¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓ×§6BÖæ÷fv÷&öB×Fò×6W7C²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCc£SS£#’ã#c5£¢¥4B66Sc&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCbÓSRÓ#’Ó#c%¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓ×§6B×&–Ò×Fò×F÷'¦†ö³²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCc£Sc£Crã#£¢¥4B66Sc&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCbÓSbÓCrÓ•¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓ×§6B×6W7B×FòÖæ÷fv÷&öC²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCc£Sƒ£SbãSC£¢¥4B66Sc"&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCbÓS‚ÓSbÓS3u¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓ×§6B×6W7B×Fò×GfW#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCs££Bãƒ£¢¥4B66Sc2&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCrÓÓBÓƒ¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓ×§6B×F÷'¦†ö²×Fò×&–Ó²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCs££#2ãƒ•£¢¥4B66ScB&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCrÓÓ#2Óƒu¢æÖB’âäU…B¥4BæW‡F66R—"ÖÓBÖÓ×7"×Fò×f÷&öæW¦ƒ²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCs£#£3bãCS…£¢¥4B66ScR&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCrÓ"Ó3bÓCSu¢æÖB’âäU…B¥4BæW‡F66R6–ævÆRÖÓ×7"×Fò×GfW#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCs£3£S’ã#£¢¥4B66Scb&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCrÓ2ÓS’Ó#¢æÖB’âäU…B¥4BæW‡F66R6–ævÆRÖÓ×GfW"×Fò×7#²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCs£S£bãsc5£¢¥4B66Scr&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCrÓRÓbÓsc%¢æÖB’âäU…B¥4BæW‡F66R6–ævÆR×§6BÖ&Ær×Fò×6W7C²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à £##bÓÓeCs£c£’ã#ƒE£¢¥4B66Sc‚&WÆ’DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCrÓbÓ’Ó#ƒ5¢æÖB’âäU…BF–væ÷6R7W'&VçB¥4B66÷RW6–ærÒÖF–væ÷6R&Vf÷&RF†RæW‡F66Rà £##bÓÓeCs£s£#ãƒ5£¢¥4BF—7F–æ7B66÷RF–væ÷6—2DôäS²Æã“Rƒ‚ó#’â´6†V6·ö–çEÒ‚ââòââöFö72ö6†V6·ö–çG2÷§6BÓ##bÓÓeCrÓrÓ#Óƒ¢æÖB’âäU…B¥4BæW‡F66R6–ævÆR×§6B×WFW&†öb×Fò×&–Ó²ÒÖæW‡C²6fVF6GW&RGvööffÆ–æW&öf–ÆW2à 
