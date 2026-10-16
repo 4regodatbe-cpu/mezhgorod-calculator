@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-16T07:47:17.848Z",
+  "phase": "PART19_M4_POLICY_STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 7,
+  "total": 25,
+  "next": "zaporizhzhia-пришиб-kazan-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "caseId": "zaporizhzhia-пришиб-kazan-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/2026-10-15T18-13-39-642Z-capture.json.gz",
+  "captureSha256": "783997a9e62578074bff0ea8a1abb58de1db19a7165376fd8eb43df9647795bd",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "826f4c586b71e7c0f3d1aedd525e931ee54974ea",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-47-17-848Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-17-848Z-part19_m4_policy_started.json"
+}
