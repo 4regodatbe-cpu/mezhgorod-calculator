@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 116,
-  "rawCaptureCaseCount": 114,
+  "rawCaptureCount": 117,
+  "rawCaptureCaseCount": 115,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -10562,6 +10562,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-06-21-389Z.json",
+      "caseId": "pair-m11-zsd-prim-to-moscow",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-06-25-462Z.json",
+          "exists": true,
+          "bytes": 6740,
+          "sha256": "4999ad0309ff5b061f28ea2624ae59c78eb3619969a7ffa884e1f6442f329f59",
+          "gitBlobSha": "619162fc407d0f61bd3b662c7a88490bcde241bb",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/2026-10-16T00-06-25-425Z-capture.json.gz",
+          "exists": true,
+          "bytes": 238873,
+          "sha256": "24a24fda86b252ba77c3765a24b8ee58f05c742b84af6ed7445540368fd0eb61",
+          "gitBlobSha": "a32f5b0b59e894e7073cd854efa5be3ab0cf74b0",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 9
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-06-25-873Z.json",
+          "exists": true,
+          "bytes": 6818,
+          "sha256": "7fd624b6174ddf1b16ad55fe4f03a3790bdf1d3d47186128371d8403831bf7ed",
+          "gitBlobSha": "826977698300c01eba354a0bed5fe5522f0032b6",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-06-26-286Z.json",
+          "exists": true,
+          "bytes": 6815,
+          "sha256": "c5af6b2582ea2d47149e03951dda76db02e4ca76136c8c0f76cc5fec82d02288",
+          "gitBlobSha": "5e08e141081ac59af4b61cd52b5c3fa630921cff",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -11605,6 +11650,17 @@
       "bytes": 188577,
       "sha256": "3373138f25f8eba9eeae0544f0c18cac148b5073af4c4fa28481398508d000a9",
       "gitBlobSha": "bf3eeea724dcd969db69816cca06c32674291fea",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 9
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/2026-10-16T00-06-25-425Z-capture.json.gz",
+      "exists": true,
+      "bytes": 238873,
+      "sha256": "24a24fda86b252ba77c3765a24b8ee58f05c742b84af6ed7445540368fd0eb61",
+      "gitBlobSha": "a32f5b0b59e894e7073cd854efa5be3ab0cf74b0",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,
