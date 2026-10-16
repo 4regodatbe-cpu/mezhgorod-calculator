@@ -6537,7 +6537,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-21-31-708Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1380434,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-21-19-998Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-21-31-708Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-21-32-206Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-21-32-676Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
