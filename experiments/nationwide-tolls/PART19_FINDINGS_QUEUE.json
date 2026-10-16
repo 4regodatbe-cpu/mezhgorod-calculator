@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": "pair-m11-zsd-sest-to-moscow",
-  "nextAction": "Diagnose current ZSD scope using --diagnose before the nextcase",
+  "nextAction": "ZSD nextcase pair-m11-zsd-sest-to-moscow; --next; savedcapture twoofflineprofiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2693,14 +2693,16 @@
       },
       {
         "caseId": "pair-m11-zsd-prim-to-moscow",
-        "status": "current_unknown_needs_distinct_scope_review",
+        "status": "source_gated_distinct_finished_zsd_scope",
         "sameReviewedScopeCase": null,
         "missing": [
           "unknown-paid-road",
           "zsd"
         ],
         "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-21-34-191Z.md",
-        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-21-34-191Z.json"
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-21-34-191Z.json",
+        "scopeCheckpoint": "../../docs/checkpoints/zsd-2026-10-16T14-22-03-311Z.md",
+        "scopeEvidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-22-03-311Z.json"
       }
     ],
     "checked": 29,
