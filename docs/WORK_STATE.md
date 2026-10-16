@@ -18,15 +18,15 @@
 
 **Последняя полная проверка 696/696+quote/API+Nextwebpack/TypeScript/static16/16 PASS**, focused8/8/eslintnewtestexit0. [Fullgate](checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md). В audit-only classification код не менялся и новая сборка не запускалась. Не трактовать прежний full gate как тест текущей классификации.
 
-## NEXT — одна причина и её исключения
+## NEXT — завершённый M11 разбор исключений; затем part19/20 handoff
 
-**Общая причина `m11_partial_head_entry_boundary_unresolved` проверена по исключениям в cases1–7 из 8. Case7 подтверждает ту же M11 границу; route-specific M12 expected-road, CKAD/ZSD остаются отдельно незакрытыми.**
+**Общая причина `m11_partial_head_entry_boundary_unresolved` проверена по сохранённым исключениям в cases 1–8 из 8. Во всех случаях надёжная M11 граница не подтверждена; итог причины — BLOCKED: blocked by missing reliable data. Это не исправление и не доказательство тарифа.**
 
-ZSD review **76/76** and M4 finding **22/22** classified source-gated because exact collection spans are not independently bound. [M4 checkpoint](checkpoints/2026-10-16-part19-m4-unpriced-classification.md). Overall plan **90% (18/20 completed parts)**; neither case count nor percent is tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
+Case8 `triple-m11-ckad-m12-arzamas-to-spb`: 3 уникальных capture-bound профиля live / same-date / weekend; дубли replay с теми же blob SHA не засчитаны отдельно. M11 head остаётся unknown, полный toll amount null. M12 traversal представлен; CKAD east arc и ZSD вне reviewed zone1 остаются отдельно unresolved. Новый live/replay/code/tests не запускались. [Case8 checkpoint](checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json).
 
-Подробный разбор M11 и исключения сохранены для 7/8 случаев; один случай остаётся. M11 15–58 не подтверждён; case7 не доказывает ожидаемый M12 traversal, CKAD east arc и ZSD zone-1 scope. Полный итог маршрута остаётся unknown.
+ZSD review **76/76** и M4 finding **22/22** ранее классифицированы source-gated; не перезапускать без отличающегося evidence. [M4 checkpoint](checkpoints/2026-10-16-part19-m4-unpriced-classification.md). Формальный план остаётся **90% (18/20 частей)**; это не tariff coverage / release readiness. Part 19 ещё IN PROGRESS, part 20 PLANNED.
 
-NEXT: case7 `max-chain-m12-ckad-m11-zsd-vladimir-to-sest` DONE/source-gated: та же M11 boundary-причина, исключения нет. Live/same-date/weekend profiles совпадают по capture и маршруту; M12 expected traversal не доказан, CKAD east arc и ZSD вне reviewed zone1 остаются unresolved. Следующий только case8 `triple-m11-ckad-m12-arzamas-to-spb`, bounded saved-evidence review. [Case7 checkpoint](checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md). Плановые 90% не означают готовность калькулятора или тарифов. No main/merge/Production/Android; automation remains enabled.
+**NEXT:** по актуальной [Part 19 findings queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) выполнить cross-cause synthesis по уже записанным доказательствам (без повтора закрытых case reviews), определить оставшиеся cause outcomes, затем Part 20 обязательные gates и handoff. No main/merge/Production/Android.
 
 
 2026-10-16 23:00 MSK: Case4 reviewed from parent `8819f8175edf616ed2229536cdf8abde5ef40a68` / tree `8b99cebadb42786e8e95e2b24b504bf713dbda2f`; result source-gated with no material exception. 3 saved profiles, 1 exact capture, 0 new live requests; M11 finding 4/8; formal plan90% (18/20), no new tariff confirmation. [Checkpoint](checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-16-m11-case4-boundary-review.json).
@@ -38,3 +38,6 @@ NEXT: case7 `max-chain-m12-ckad-m11-zsd-vladimir-to-sest` DONE/source-gated: т�
 
 
 2026-10-17 00:16:00 MSK: Case7 `max-chain-m12-ckad-m11-zsd-vladimir-to-sest` reviewed from saved evidence. Complete 7/7 trace (1,690 edges); live + same-date/weekend replay share capture SHA-256 5e895d67…f52eb6f and route 921,380m/31,886s. M11 directed gate ways absent; approximate nearest gate distances 26.47m/41.76m >25m. Fastest saved Valhalla 31,886s vs OSRM 40,158s. No M11 exception; expected M12 traversal unproven, CKAD east arc and ZSD beyond reviewed zone1 unresolved, full amount unknown. No new live/code/tests. Review count7/8; plan18/20=90%. [Checkpoint](checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-17-m11-case7-boundary-source-gated.json).
+
+
+2026-10-17 01:45:16 MSK: Case8 `triple-m11-ckad-m12-arzamas-to-spb` DONE from saved capture/profile artifacts only. Three unique live/same-date/weekend profile blobs bind capture SHA-256 b47f5207…91ea61b; each preserves Valhalla fastest route 1,149,643m/43,716s. Duplicate replay blobs are not extra profiles. M11 head remains unresolved; M12 traversal represented, CKAD east arc and ZSD zone scope remain unresolved; full amount null. No new live/replay/code/tests or tariff confirmation. Cause exception review complete 8/8; outcome blocked by missing reliable data. Formal plan 18/20=90%. [Checkpoint](checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json).

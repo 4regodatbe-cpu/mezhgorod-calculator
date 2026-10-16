@@ -2,11 +2,11 @@
 
 [Текущий handoff](../../docs/WORK_STATE.md),[подробная история](NEXT_STEPS_HISTORY_2026-10-15_2228.md).
 
-Stage1=23/155; stage2 не начат. Следующий **kherson-аскания-нова-kazan-center**. [Замороженная очередь](TWO_STAGE_AUDIT_PLAN.json).
+Part 19 M11 exception checks **8/8 DONE**; shared cause `m11_partial_head_entry_boundary_unresolved` is **BLOCKED by missing reliable data**. Case8 used 3 unique saved capture-bound profiles (live/same-date/weekend); no new live/replay/code/tests, no route fare confirmed. Full toll amount remains unknown.
+[Case8 checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md); [evidence](../../docs/checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json).
 
-Single-case batch→report/inventory→checkpoint/commit/GitHub/readback перед следующим. Audited означает воспроизводимость, не подтверждение цены. Unknown не ноль. Продолжать до границы155, затем отдельный handoff дляstage2. Расчётные исправления/внешняя сверка тарифов отдельно от счётчика прогонов.
+NEXT: inspect the current Part 19 findings queue for cross-cause synthesis using already saved evidence; do not repeat completed reviews without a concrete difference. Then execute Part 20 required gates and final handoff. Formal plan stays18/20=90%; not tariff coverage or release readiness. No main/merge/Production/Android.
 
-Fullbuild658/658 PASS сохранён, без новых source изменений не повторять. Прямые GitHub/routing consent текущего чата действуют. Междорожные векторы отложены. No main/merge/Production/Android. Сохранять байты raw/stdout и проверять SHA.
 
 
 2026-10-16T02:09:14.454441+03:00: пользователь изменил порядок на 20 небольших частей с отдельными запусками. Часть1 DONE; часть2 NEXT. [План](SMALL_PARTS_PLAN.md), [checkpoint](../../docs/checkpoints/2026-10-16-small-parts-01.md). Счётчик не повышен, новые маршруты/сборка не запускались.
@@ -1651,3 +1651,6 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 
 
 2026-10-17 00:16:00 MSK: Case7 DONE from saved profiles; same M11 boundary blocker, no exception; expected M12 traversal unproven, CKAD/ZSD scope unknown and route total null. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md). NEXT after durable readback/no active writer: case8 `triple-m11-ckad-m12-arzamas-to-spb`, saved-evidence check only. Formal plan18/20=90%, not tariff coverage.
+
+
+2026-10-17 01:45:16 MSK: Case8 `triple-m11-ckad-m12-arzamas-to-spb` DONE from saved evidence; no material exception to shared M11 head-boundary cause. 3 unique route profiles across live/same-date/weekend bind the same capture; duplicate blobs counted once. M11 head unknown, CKAD east arc and ZSD scope unresolved, whole-route amount null. No new live/replay/code/tests. M11 cause exception checks complete 8/8; outcome blocked by missing reliable data. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md). Formal plan18/20=90%, not tariff coverage. NEXT: Part19 cross-cause synthesis then Part20 required gates/handoff.
