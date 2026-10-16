@@ -12,6 +12,8 @@
 
 ## NEXT STARTED — 19D
 
+Fresh session checkout restored from verifiedremote8c3d73ee/tree189a4708, PR14draft/job38869309675SUCCESS. Nootherwriter. [Recovery](checkpoints/2026-10-16-1119-fresh-checkout-recovery.md). Continue samecase two selectedValhalla paidways only; no newtariff/freeclaim.
+
 **Точный diagnosticNEXT:** selectedГранитное→Казань raw содержиттолько2paidM4ways **1182567076/31984600**,0tollbooths; matchedCoreProducts=m4 изpaidnames, но0knownPVP. [Evidence/next](checkpoints/2026-10-16-part19d-granitnoe-kazan-paid-ways.md). Извлечь толькоэти2traceedges/shapeокно и ихtollscope, сравнитьсsavedfacilitymap/primaryOSMtagsприпотребности. Пока это legitimateunknown, не доказанныйbug/freeпроезд; sourceнеисправлятьбезследующегодоказательства.
 
 **Первый case уже воспроизведён:** Гранитное→Казань complete2/2, но currenttotalunknown/m4, candidateCount0/confirmedPvps=[] («нетв1,5кмзонахизвестныхПВП»). Это не доказательствобесплатности/ошибкицены. Следующиймикрошагтолькоэтотcase: actualselectedraw paid-edge/booth/wayIDs/shape scope противизвестныхPVP, затемсохранитьдиагнозпередисправлением. [Checkpoint/SHA](checkpoints/2026-10-16-part19d-granitnoe-kazan-unknown-reproduced.md). Новыхцен/правоккодаещёнет.
