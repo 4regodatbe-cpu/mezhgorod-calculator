@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:20:45.619Z",
+  "generatedAt": "2026-10-16T00:21:08.560Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 149,
-    "recordedLiveAttempts": 162,
-    "liveCaptured": 148,
-    "savedLiveSummaries": 148,
+    "distinctCaseAttempts": 150,
+    "recordedLiveAttempts": 163,
+    "liveCaptured": 149,
+    "savedLiveSummaries": 149,
     "missingOrInvalidReferences": 1,
-    "audited": 148,
-    "traceComplete": 148,
-    "sameDateParity": 148
+    "audited": 149,
+    "traceComplete": 149,
+    "sameDateParity": 149
   },
   "regionCounts": {
     "dnr": {
@@ -80,9 +80,9 @@
       "id": "single-m11",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 2,
-      "audited": 2,
-      "traversalProven": 2,
+      "attempted": 3,
+      "audited": 3,
+      "traversalProven": 3,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -5144,6 +5144,38 @@
       ],
       "routeMeters": 254924,
       "routeSeconds": 11013
+    },
+    {
+      "caseId": "single-m11-moscow-to-tver",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T00-21-05-830Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11"
+        ],
+        "provenRoads": [
+          "m11"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 184281,
+      "routeSeconds": 8777
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8316,7 +8348,8 @@
         "single-ckad-domodedovo-to-klin",
         "single-ckad-klin-to-domodedovo",
         "single-ckad-ramenskoe-to-klin",
-        "single-m11-moscow-to-torzhok"
+        "single-m11-moscow-to-torzhok",
+        "single-m11-moscow-to-tver"
       ],
       "occurrences": [
         {
@@ -8723,9 +8756,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-20-43-578Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T00-21-05-830Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-21-06-216Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-21-06-582Z.json"
         }
       ],
-      "caseCount": 15
+      "caseCount": 16
     },
     {
       "code": "expected-road-not-proven",
@@ -9105,7 +9165,8 @@
         "single-ckad-domodedovo-to-klin",
         "single-ckad-klin-to-domodedovo",
         "single-ckad-ramenskoe-to-klin",
-        "single-m11-moscow-to-torzhok"
+        "single-m11-moscow-to-torzhok",
+        "single-m11-moscow-to-tver"
       ],
       "occurrences": [
         {
@@ -9350,16 +9411,44 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-20-43-578Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T00-21-05-830Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-21-06-216Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-21-06-582Z.json"
         }
       ],
-      "caseCount": 9
+      "caseCount": 10
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
       "cases": [
         "single-ckad-domodedovo-to-klin",
         "single-ckad-klin-to-domodedovo",
-        "single-m11-moscow-to-torzhok"
+        "single-m11-moscow-to-torzhok",
+        "single-m11-moscow-to-tver"
       ],
       "occurrences": [
         {
@@ -9442,9 +9531,36 @@
             "reason": "m11_58_679_facility_sequence_incomplete"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-20-43-578Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T00-21-05-830Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-21-06-216Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-21-06-582Z.json"
         }
       ],
-      "caseCount": 3
+      "caseCount": 4
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."

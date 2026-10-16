@@ -1263,7 +1263,22 @@
         "m11"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T00-21-05-830Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/2026-10-16T00-21-05-808Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 184281,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-21-02-918Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T00-21-05-830Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/2026-10-16T00-21-05-808Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-21-06-216Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-21-06-582Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m11-tver-to-moscow",
