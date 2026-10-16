@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:09:06.105Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:09:24.022Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 89,
+      "done": 90,
       "total": 155
     },
     {
@@ -18,15 +18,101 @@
   "next": {
     "part": 7,
     "spec": {
-      "caseId": "pair-m12-ckad-vladimir-to-klin",
+      "caseId": "pair-m4-a289-kerch-to-rostov",
       "kind": "road",
-      "group": "pair-m12-ckad"
+      "group": "pair-m4-a289"
     }
   },
   "caseId": "pair-m12-ckad-vladimir-to-klin",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "pair-m12-ckad-vladimir-to-klin",
+    "startedAt": "2026-10-16T00:09:07.447Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-vladimir-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-09-09-873Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-vladimir-to-klin/2026-10-16T00-09-09-849Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-09-10-242Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-09-10-607Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "provenRoads": [
+        "m11",
+        "ckad"
+      ],
+      "missingExpectedRoads": [
+        "m12"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "ckad: ckad_east_arc_not_proven",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "ckad: ckad_east_arc_not_proven",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m11-58-679",
+        "amount": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "ckad",
+        "amount": null,
+        "reason": "ckad_east_arc_not_proven"
+      },
+      {
+        "id": "unknown-paid-road",
+        "amount": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:09:10.625Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-09-06-105Z-part7",
-  "parent": "91a978f13f8f26a2ccafd68ca6e1af461e72f0f6",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-09-06-105Z-started.json"
+  "parent": "f30922031c9c90f8e9d500a736f2d8a6b9f7af81",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-09-24-022Z-done.json"
 }
