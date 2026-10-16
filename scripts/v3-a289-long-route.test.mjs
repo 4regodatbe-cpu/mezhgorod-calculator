@@ -7,7 +7,7 @@ import { load, root } from './helpers/load-ts.mjs';
 
 const { a289ShortRoute } = load(resolve(root, 'lib/v3-calculation/a289-short-route.ts'));
 const { priceA289Route } = load(resolve(root, 'lib/toll-engine/a289-engine.ts'));
-const { composeSelectedM4A289 } = load(resolve(root, 'lib/v3-calculation/m4-a289-composition.ts'));
+const { composeSelectedM4A289 } = await import('../lib/v3-calculation/m4-a289-composition.ts');
 const capture = JSON.parse(gunzipSync(readFileSync(resolve(root,
   'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/2026-10-15T23-18-27-629Z-capture.json.gz'))));
 const route = capture.record.route.coordinates;
