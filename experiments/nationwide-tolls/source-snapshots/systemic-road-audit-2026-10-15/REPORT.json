@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:54:01.976Z",
+  "generatedAt": "2026-10-16T01:54:40.382Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 300,
-    "recordedLiveAttempts": 314,
-    "liveCaptured": 300,
-    "savedLiveSummaries": 300,
+    "distinctCaseAttempts": 301,
+    "recordedLiveAttempts": 315,
+    "liveCaptured": 301,
+    "savedLiveSummaries": 301,
     "missingOrInvalidReferences": 0,
-    "audited": 300,
-    "traceComplete": 300,
-    "sameDateParity": 300
+    "audited": 301,
+    "traceComplete": 301,
+    "sameDateParity": 301
   },
   "regionCounts": {
     "dnr": {
@@ -80,9 +80,9 @@
       "id": "single-m11",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 5,
-      "audited": 5,
-      "traversalProven": 5,
+      "attempted": 6,
+      "audited": 6,
+      "traversalProven": 6,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -10250,6 +10250,38 @@
       ],
       "routeMeters": 127562,
       "routeSeconds": 5968
+    },
+    {
+      "caseId": "single-m11-moscow-to-novgorod",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T01-54-35-971Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11"
+        ],
+        "provenRoads": [
+          "m11"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 588312,
+      "routeSeconds": 20555
     }
   ],
   "historicalExecutionExceptions": [],
@@ -15840,7 +15872,8 @@
         "pair-m4-m11-spb-to-voronezh",
         "pair-m4-m11-torzhok-to-krasnodar",
         "pair-m4-m11-tver-to-rostov",
-        "single-ckad-klin-to-ramenskoe"
+        "single-ckad-klin-to-ramenskoe",
+        "single-m11-moscow-to-novgorod"
       ],
       "occurrences": [
         {
@@ -17111,9 +17144,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-16-413Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T01-54-35-971Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-54-36-383Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-54-36-771Z.json"
         }
       ],
-      "caseCount": 47
+      "caseCount": 48
     },
     {
       "code": "expected-road-not-proven",
@@ -18121,7 +18181,8 @@
         "pair-m4-m11-spb-to-voronezh",
         "pair-m4-m11-torzhok-to-krasnodar",
         "pair-m4-m11-tver-to-rostov",
-        "single-ckad-klin-to-ramenskoe"
+        "single-ckad-klin-to-ramenskoe",
+        "single-m11-moscow-to-novgorod"
       ],
       "occurrences": [
         {
@@ -18987,9 +19048,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-16-413Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T01-54-35-971Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-54-36-383Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-54-36-771Z.json"
         }
       ],
-      "caseCount": 32
+      "caseCount": 33
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
@@ -19005,7 +19093,8 @@
         "pair-m4-m11-rostov-to-tver",
         "pair-m4-m11-torzhok-to-krasnodar",
         "pair-m4-m11-tver-to-rostov",
-        "single-ckad-klin-to-ramenskoe"
+        "single-ckad-klin-to-ramenskoe",
+        "single-m11-moscow-to-novgorod"
       ],
       "occurrences": [
         {
@@ -19331,9 +19420,36 @@
             "reason": "m11_58_679_facility_sequence_incomplete"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-50-16-413Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T01-54-35-971Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-54-36-383Z.json"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-54-36-771Z.json"
         }
       ],
-      "caseCount": 12
+      "caseCount": 13
     },
     {
       "code": "engine_not_yet_composed",

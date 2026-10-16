@@ -1376,7 +1376,7 @@
     {
       "id": 16,
       "title": "Этап 2: группа 6/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "pair-m4-m11-spb-to-voronezh",
@@ -1474,12 +1474,12 @@
           "group": "single-m11"
         }
       ],
-      "completedCases": 18
+      "completedCases": 19
     },
     {
       "id": 17,
       "title": "Этап 2: группа 7/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "single-m11-novgorod-to-moscow",
