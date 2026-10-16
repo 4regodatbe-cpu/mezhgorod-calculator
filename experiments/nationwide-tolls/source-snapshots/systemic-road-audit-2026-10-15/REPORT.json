@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:36:34.264Z",
+  "generatedAt": "2026-10-16T00:37:13.653Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 185,
-    "recordedLiveAttempts": 198,
-    "liveCaptured": 184,
-    "savedLiveSummaries": 184,
+    "distinctCaseAttempts": 186,
+    "recordedLiveAttempts": 199,
+    "liveCaptured": 185,
+    "savedLiveSummaries": 185,
     "missingOrInvalidReferences": 1,
-    "audited": 184,
-    "traceComplete": 184,
-    "sameDateParity": 184
+    "audited": 185,
+    "traceComplete": 185,
+    "sameDateParity": 185
   },
   "regionCounts": {
     "dnr": {
@@ -190,9 +190,9 @@
       "id": "triple-m4-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 3,
-      "audited": 3,
-      "traversalProven": 3,
+      "attempted": 4,
+      "audited": 4,
+      "traversalProven": 4,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -6343,6 +6343,46 @@
       ],
       "routeMeters": 2093658,
       "routeSeconds": 96229
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-16T00-37-10-240Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1824227,
+      "routeSeconds": 82510
     }
   ],
   "historicalExecutionExceptions": [],
@@ -7872,7 +7912,8 @@
         "triple-m11-ckad-m12-spb-to-kazan",
         "triple-m4-m11-zsd-krasnodar-to-sest",
         "triple-m4-m11-zsd-rostov-to-sest",
-        "triple-m4-m11-zsd-sest-to-krasnodar"
+        "triple-m4-m11-zsd-sest-to-krasnodar",
+        "triple-m4-m11-zsd-sest-to-rostov"
       ],
       "occurrences": [
         {
@@ -9008,9 +9049,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-krasnodar/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-36-32-053Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-16T00-37-10-240Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-rostov/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-37-10-847Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-rostov/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-37-11-452Z.json"
         }
       ],
-      "caseCount": 42
+      "caseCount": 43
     },
     {
       "code": "m4:unpriced",
