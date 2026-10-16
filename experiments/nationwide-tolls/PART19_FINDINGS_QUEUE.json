@@ -2595,13 +2595,15 @@
       },
       {
         "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
-        "status": "current_unknown_needs_distinct_scope_review",
+        "status": "source_gated_distinct_finished_zsd_scope",
         "sameReviewedScopeCase": null,
         "checkpoint": "../../docs/checkpoints/2026-10-16-142533-zsd-case20.md",
         "evidence": "../../docs/checkpoints/evidence/2026-10-16-142533-zsd-case20.json",
         "missing": [
           "zsd"
-        ]
+        ],
+        "scopeCheckpoint": "../../docs/checkpoints/2026-10-16-142551-zsd-case20-scope.md",
+        "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-142551-zsd-case20-scope.json"
       }
     ],
     "checked": 20,
