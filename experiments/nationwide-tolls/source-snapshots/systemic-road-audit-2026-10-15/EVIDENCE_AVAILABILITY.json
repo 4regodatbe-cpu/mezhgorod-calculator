@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 275,
-  "rawCaptureCaseCount": 272,
+  "rawCaptureCount": 276,
+  "rawCaptureCaseCount": 273,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -20189,6 +20189,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-35-57-792Z.json",
+      "caseId": "pair-m12-ckad-domodedovo-to-arzamas",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-122Z.json",
+          "exists": true,
+          "bytes": 3967,
+          "sha256": "91c41bbdb5bf4311a4861b5e1b0c0f5029158cb530dc885abe569affd4727649",
+          "gitBlobSha": "dbd67ead8dcbbc645327b22fee2978ba22ba655b",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/2026-10-16T01-36-02-089Z-capture.json.gz",
+          "exists": true,
+          "bytes": 207943,
+          "sha256": "4a4010becad92e7b9e83530c602678d3b98ef9bb0e540e61c91ded03aa1c21c3",
+          "gitBlobSha": "5bdf8b898a7cf81c89fca12f67c2667b615035d2",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 7
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-529Z.json",
+          "exists": true,
+          "bytes": 4045,
+          "sha256": "c9ca5786c367c8dcd3013d96ff691960faa8d90904b604877dae98150d7af1ee",
+          "gitBlobSha": "f0c4df33c9004a7842f77124722321b125396045",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-02-921Z.json",
+          "exists": true,
+          "bytes": 4045,
+          "sha256": "81d5113e35fb568c7647280879193a1b036b1098d33c3ce694a650bbc9204c62",
+          "gitBlobSha": "5f79aeec4c17a3778f611b24e025ee201efe2dd0",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -22017,6 +22062,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 6
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/2026-10-16T01-36-02-089Z-capture.json.gz",
+      "exists": true,
+      "bytes": 207943,
+      "sha256": "4a4010becad92e7b9e83530c602678d3b98ef9bb0e540e61c91ded03aa1c21c3",
+      "gitBlobSha": "5bdf8b898a7cf81c89fca12f67c2667b615035d2",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 7
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-dmitrov/2026-10-16T00-07-58-138Z-capture.json.gz",

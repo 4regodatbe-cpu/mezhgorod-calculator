@@ -5267,7 +5267,22 @@
         "ckad"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-122Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/2026-10-16T01-36-02-089Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 491116,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-35-57-792Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-122Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/2026-10-16T01-36-02-089Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-529Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-02-921Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "triple-m4-m11-zsd-krasnodar-to-sest",
