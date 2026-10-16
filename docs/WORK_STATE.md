@@ -1,6 +1,6 @@
 # Калькулятор «Из А в Б»: текущее состояние
 
-16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Последний проверенный remote PR head `21977a2c43eb5a9c08c0dd7fbda239b7c4f71758`, tree `21852c6529ddbeaa5f1213621668bf9aa57c1ef9`; ZSD-классификация совпала по дереву и path SHA. Следующий локальный шаг M4 classification ещё не опубликован до checkpoint/readback. Checkout `calculator-run`; при каждой публикации сверять точные tree/path SHA, поскольку local/connector commit SHA могут различаться.
+16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Последний проверенный remote PR head `afd103e6c89a69a66f362edbf1b566ff8b44aabb`, tree `0a09a230558dd88fa280a5ccc6247b53f3def0d4`; M4 classification path SHA прочитаны из этого дерева. M4 finding classified source-gated; текущее действие — STARTED диагностика `m11_partial_head_entry_boundary_unresolved`, первый сохранённый case `max-chain-m12-ckad-m11-zsd-arzamas-to-prim`. Checkout `calculator-run`; сверять точные tree/path SHA при публикации.
 
 ## Прогресс
 
@@ -22,4 +22,4 @@
 
 ZSD review **76/76** and M4 finding **22/22** classified source-gated because exact collection spans are not independently bound. [M4 checkpoint](checkpoints/2026-10-16-part19-m4-unpriced-classification.md). Overall plan **90% (18/20 completed parts)**; neither case count nor percent is tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
-Next: inspect only the saved evidence for `m11_partial_head_entry_boundary_unresolved`; use one finding at a time and do not assert tariff/zero without exact source/route proof. Persist checkpoint, log, handoff, commit/publish/head/tree before any next finding. No main/merge/Production. Autocontinuation remains enabled.
+NEXT STARTED: diagnose only `m11_partial_head_entry_boundary_unresolved`, first saved case `max-chain-m12-ckad-m11-zsd-arzamas-to-prim`; inspect capture plus existing 15/17 Oct profiles and exact primary M11 boundary. [STARTED checkpoint](checkpoints/2026-10-16-part19-m11-head-boundary-started.md). Do not infer 15–58 toll from adjacent 58–679 component. No main/merge/Production; automation remains enabled.

@@ -2097,8 +2097,9 @@
         "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
         "triple-m11-ckad-m12-arzamas-to-spb"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "diagnosis_started",
+      "startedCheckpoint": "../../docs/checkpoints/2026-10-16-part19-m11-head-boundary-started.md",
+      "note": "Diagnosis started on first saved case only; do not mark fixed/classified until exact M11 entry-boundary evidence and paired profiles are reviewed"
     },
     {
       "code": "arc_not_proven",
