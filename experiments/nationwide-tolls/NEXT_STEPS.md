@@ -1413,3 +1413,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 16.10.2026 ZSD Granitnoe→SPB physicalscope DONE: actual northbound PVP5 node933974870,26ways/12outside reviewedzone1, exitEkateringofka. Primaryzone prices exist; wholecollectionscope stillrequires binding. ../../docs/checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md NEXT samecase ownercash/cardscope, noalias/guessedtotal.
 
 16.10.2026 ZSD case1 primaryrules review DONE; source-gatedfinishedscope, no600guess. NEXT STARTED case2 Bryanka→SPB twoofflineprofiles. ../../docs/checkpoints/2026-10-16-1410-zsd-primary-rule-scope-hold.md
+
+16.10.2026 ZSDcase2 Bryanka→SPB DONE2/2 exit0/complete, same26ways/PVP5 ascase1, unknownZSDonly. NEXT case3 Lisichansk→SPB exactcapturetwoofflineprofiles. ../../docs/checkpoints/2026-10-16-1412-zsd-bryanka-spb-replay.md

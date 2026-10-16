@@ -26,8 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "lnr-брянка-saint-petersburg-center",
-  "nextAction": "ZSD case2 Bryanka→SPB exact savedcapture two-profile replay, compare exact physicalscope to first source-gated case",
+  "nextCase": "lnr-лисичанск-saint-petersburg-center",
+  "nextAction": "ZSD case3 Lisichansk→SPB twoofflineprofiles and compare exactscope",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2400,6 +2400,19 @@
     "scopeCheckpoint": "../../docs/checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md",
     "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-granitnoe-exact-scope.json",
     "firstCaseStatus": "source_gated_finished_collection_scope",
-    "sourceReviewCheckpoint": "../../docs/checkpoints/2026-10-16-1410-zsd-primary-rule-scope-hold.md"
+    "sourceReviewCheckpoint": "../../docs/checkpoints/2026-10-16-1410-zsd-primary-rule-scope-hold.md",
+    "evaluatedCases": [
+      {
+        "caseId": "dnr-гранитное-saint-petersburg-center",
+        "status": "source_gated",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-1410-zsd-primary-rule-scope-hold.md"
+      },
+      {
+        "caseId": "lnr-брянка-saint-petersburg-center",
+        "status": "source_gated_same_exact_way_set",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-1412-zsd-bryanka-spb-replay.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-bryanka-spb.json"
+      }
+    ]
   }
 }
