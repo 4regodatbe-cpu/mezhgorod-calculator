@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 317,
-  "rawCaptureCaseCount": 314,
+  "rawCaptureCount": 318,
+  "rawCaptureCaseCount": 315,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -22079,6 +22079,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-03-14-704Z.json",
+      "caseId": "single-m3-obninsk-to-kaluga",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-150Z.json",
+          "exists": true,
+          "bytes": 3427,
+          "sha256": "eaf47567c309eca6f20a3fe8fc50ccc434908629257f895c1b4db13839b0f23b",
+          "gitBlobSha": "ce9dfd0f82ed5a16671fb687fccbc9fd5f768cc3",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/2026-10-16T02-03-16-139Z-capture.json.gz",
+          "exists": true,
+          "bytes": 60063,
+          "sha256": "c4fe5a9a01210d6eb1aad0b167e0c47e35e81d86a5f156593f1642bcf5661615",
+          "gitBlobSha": "fdf45ed6fb251ecf911aaa3d51215e70fd938c57",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 4
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-500Z.json",
+          "exists": true,
+          "bytes": 3505,
+          "sha256": "46f933d1d102fe60ef31f83dfd1226af9b753aafed0ae3e6c7bd831f68e8ac7b",
+          "gitBlobSha": "999466b7096137055cf3e8c19619f51dcd30fb3b",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-03-16-820Z.json",
+          "exists": true,
+          "bytes": 3505,
+          "sha256": "a113db4736148f15382feed0279d710db1f508eb7156bc0b33faab8ed5252620",
+          "gitBlobSha": "b34ac10d40b8f304c0df8c4b34fde18d90283944",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -24838,6 +24883,17 @@
       "bytes": 80984,
       "sha256": "8d517e405e626735647dc1097d6c6c71b4d8a3a75da80c43c141f79f51b8b2b6",
       "gitBlobSha": "9cacf8caae5c389708515fa64e2891514cf8a48b",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 4
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/2026-10-16T02-03-16-139Z-capture.json.gz",
+      "exists": true,
+      "bytes": 60063,
+      "sha256": "c4fe5a9a01210d6eb1aad0b167e0c47e35e81d86a5f156593f1642bcf5661615",
+      "gitBlobSha": "fdf45ed6fb251ecf911aaa3d51215e70fd938c57",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,

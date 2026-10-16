@@ -1335,7 +1335,22 @@
         "m3"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-150Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/2026-10-16T02-03-16-139Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 80827,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-03-14-704Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-150Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/2026-10-16T02-03-16-139Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-500Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-03-16-820Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m3-kaluga-to-obninsk",

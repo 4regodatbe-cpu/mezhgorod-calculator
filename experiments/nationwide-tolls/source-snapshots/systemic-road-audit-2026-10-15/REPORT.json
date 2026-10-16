@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:02:44.943Z",
+  "generatedAt": "2026-10-16T02:03:20.476Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 314,
-    "recordedLiveAttempts": 328,
-    "liveCaptured": 314,
-    "savedLiveSummaries": 314,
+    "distinctCaseAttempts": 315,
+    "recordedLiveAttempts": 329,
+    "liveCaptured": 315,
+    "savedLiveSummaries": 315,
     "missingOrInvalidReferences": 0,
-    "audited": 314,
-    "traceComplete": 314,
-    "sameDateParity": 314
+    "audited": 315,
+    "traceComplete": 315,
+    "sameDateParity": 315
   },
   "regionCounts": {
     "dnr": {
@@ -70,9 +70,9 @@
       "id": "single-m3",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 9,
-      "audited": 9,
-      "traversalProven": 9,
+      "attempted": 10,
+      "audited": 10,
+      "traversalProven": 10,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -10700,6 +10700,38 @@
       ],
       "routeMeters": 119943,
       "routeSeconds": 7045
+    },
+    {
+      "caseId": "single-m3-obninsk-to-kaluga",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-150Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m3"
+        ],
+        "provenRoads": [
+          "m3"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 80827,
+      "routeSeconds": 4428
     }
   ],
   "historicalExecutionExceptions": [],
@@ -20274,7 +20306,8 @@
         "single-m3-balabanovo-to-kaluga",
         "single-m3-kaluga-to-balabanovo",
         "single-m3-kaluga-to-obninsk",
-        "single-m3-maloyaroslavets-to-moscow"
+        "single-m3-maloyaroslavets-to-moscow",
+        "single-m3-obninsk-to-kaluga"
       ],
       "occurrences": [
         {
@@ -20519,9 +20552,36 @@
             "reason": "m3_engine_not_yet_composed"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-02-41-254Z.json"
+        },
+        {
+          "caseId": "single-m3-obninsk-to-kaluga",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-150Z.json"
+        },
+        {
+          "caseId": "single-m3-obninsk-to-kaluga",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-500Z.json"
+        },
+        {
+          "caseId": "single-m3-obninsk-to-kaluga",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-03-16-820Z.json"
         }
       ],
-      "caseCount": 9
+      "caseCount": 10
     },
     {
       "code": "m12_current_operator_pair_not_bound",
