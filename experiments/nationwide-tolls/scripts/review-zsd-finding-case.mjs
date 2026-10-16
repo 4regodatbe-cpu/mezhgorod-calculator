@@ -55,6 +55,10 @@ export function zsdScopeFingerprint(validation,knownNodes=[]){
  };
 }
 
+export function zsdRouteManeuvers(route){
+ return (route.legs??[]).flatMap(l=>l.maneuvers??[]).filter(m=>m&&isZsd(m.street_names));
+}
+
 function preflight(){
  if(git('branch','--show-current')!==branch||git('status','--porcelain'))throw Error('WRONG_BRANCH_OR_UNSAVED_STEP');
  const remote=git('ls-remote','origin','refs/heads/'+branch).split(/\s/)[0];
@@ -141,7 +145,7 @@ export function diagnoseCurrent(){
  const known=new Set(snapshot.ways.map(w=>w.id));
  const outside=evidence.uniqueZsdWays.filter(w=>!known.has(w));
  if(!outside.length||!evidence.outputs.every(o=>o.detectedRoadComponents.find(c=>c.id==='zsd')?.reason==='zsd_trip_extends_outside_reviewed_zone1'))throw Error('NEW_CAUSE_REQUIRES_MANUAL_REVIEW');
- const maneuvers=captured.record.route.legs.flatMap(l=>l.maneuvers).filter(m=>isZsd(m.street_names));
+ const maneuvers=zsdRouteManeuvers(captured.record.route);
  entry.status='source_gated_distinct_finished_zsd_scope';
  const next=queue.nextCase?'ZSD nextcase '+queue.nextCase+'; --next; savedcapture twoofflineprofiles':'ZSD class reviewed; review other finding classes';
  const record=saveStep(queue,{parent,caseId:entry.caseId,capture:evidence.capture,captureSha256:evidence.captureSha256,outsideZone1Ways:outside,maneuvers,

@@ -1618,3 +1618,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T14:24:53.591Z: ZSD case34 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-24-53-591Z.md). NEXT ZSD nextcase single-zsd-blag-to-prim; --next; savedcapture twoofflineprofiles.
 
 2026-10-16T14:25:27.773Z: ZSD case35 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-25-27-773Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
+
+16.10.2026 case35 diagnosis FAILED optionalmaneuvers absent; runnerfix+regression CODE DONE, untested. NEXT focused/fullgate then retrydiagnose. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-only-diagnosis-fix.md

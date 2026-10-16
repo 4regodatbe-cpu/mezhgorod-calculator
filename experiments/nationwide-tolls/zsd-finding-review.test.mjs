@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {nextZsdCase,verifyFindingPair,zsdScopeFingerprint,dates} from './scripts/review-zsd-finding-case.mjs';
+import {nextZsdCase,verifyFindingPair,zsdScopeFingerprint,zsdRouteManeuvers,dates} from './scripts/review-zsd-finding-case.mjs';
 const identity={caseId:'a',captureSha256:'raw',provider:'Valhalla'};
 const pair=()=>dates.map(departureAt=>({...identity,mode:'offline-recorded-response-replay',departureAt,tariffPolicy:{id:'trip-departure-v1',basisAt:departureAt},traceComplete:true,replayIntegrity:{complete:true,missingResponses:[]},audit:{status:'unknown',missing:['zsd']},tolls:{amount:null}}));
 test('ZSD resume rejects duplicates, skipped cases and unresolved scope before advancing',()=>{
@@ -28,4 +28,10 @@ test('scope equivalence retains physical gate order and recognizes exact unnamed
  assert.notDeepEqual(zsdScopeFingerprint({...v,tollBooths:v.tollBooths.toReversed()},['gateA']),original);
  assert.notDeepEqual(zsdScopeFingerprint({...v,paidRoadEdges:[...v.paidRoadEdges,{wayId:'extra',roadNames:['ЗСД']}]},['gateA']),original);
  assert.deepEqual(zsdScopeFingerprint(v,[]).gates,['gateB']);
+});
+
+test('scope diagnosis supports geometry-only recorded routes and keeps named ZSD maneuvers',()=>{
+ const zsd={street_names:['ЗСД']};
+ assert.deepEqual(zsdRouteManeuvers({legs:[{meters:200,seconds:30,coordinates:[[30,59],[30,60]]}]}),[]);
+ assert.deepEqual(zsdRouteManeuvers({legs:[{}, {maneuvers:[null,{street_names:['М11']},zsd]}]}),[zsd]);
 });
