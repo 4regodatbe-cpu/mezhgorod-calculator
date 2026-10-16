@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:34:18.503Z",
+  "generatedAt": "2026-10-16T01:34:53.708Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 270,
-    "recordedLiveAttempts": 284,
-    "liveCaptured": 270,
-    "savedLiveSummaries": 270,
+    "distinctCaseAttempts": 271,
+    "recordedLiveAttempts": 285,
+    "liveCaptured": 271,
+    "savedLiveSummaries": 271,
     "missingOrInvalidReferences": 0,
-    "audited": 270,
-    "traceComplete": 270,
-    "sameDateParity": 270
+    "audited": 271,
+    "traceComplete": 271,
+    "sameDateParity": 271
   },
   "regionCounts": {
     "dnr": {
@@ -180,8 +180,8 @@
       "id": "pair-m12-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 5,
-      "audited": 5,
+      "attempted": 6,
+      "audited": 6,
       "traversalProven": 2,
       "pricedWeekday": 2,
       "pricedWeekend": 2
@@ -9241,6 +9241,41 @@
       ],
       "routeMeters": 486338,
       "routeSeconds": 15832
+    },
+    {
+      "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-528Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12",
+          "ckad"
+        ],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 493717,
+      "routeSeconds": 23511
     }
   ],
   "historicalExecutionExceptions": [],
@@ -13876,7 +13911,8 @@
         "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
         "pair-m11-ckad-noginsk-to-tver",
         "pair-m11-ckad-ramenskoe-to-torzhok",
-        "pair-m11-ckad-tver-to-noginsk"
+        "pair-m11-ckad-tver-to-noginsk",
+        "pair-m12-ckad-arzamas-to-domodedovo"
       ],
       "occurrences": [
         {
@@ -14526,9 +14562,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-tver-to-noginsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-31-18-792Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-528Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-934Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-34-50-333Z.json"
         }
       ],
-      "caseCount": 24
+      "caseCount": 25
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -15699,7 +15762,8 @@
         "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
         "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
         "pair-m11-ckad-domodedovo-to-novgorod",
-        "pair-m11-ckad-novgorod-to-domodedovo"
+        "pair-m11-ckad-novgorod-to-domodedovo",
+        "pair-m12-ckad-arzamas-to-domodedovo"
       ],
       "occurrences": [
         {
@@ -16375,9 +16439,26 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-055Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+          "detail": {
+            "expectedRoads": [
+              "m12",
+              "ckad"
+            ],
+            "provenRoads": [
+              "m12"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-528Z.json"
         }
       ],
-      "caseCount": 39
+      "caseCount": 40
     },
     {
       "code": "m11-58-679:unpriced",
@@ -17438,6 +17519,42 @@
         }
       ],
       "caseCount": 5
+    },
+    {
+      "code": "m12_current_operator_pair_not_bound",
+      "cases": [
+        "pair-m12-ckad-arzamas-to-domodedovo"
+      ],
+      "occurrences": [
+        {
+          "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m12",
+            "reason": "m12_current_operator_pair_not_bound"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-528Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m12",
+            "reason": "m12_current_operator_pair_not_bound"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-934Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m12",
+            "reason": "m12_current_operator_pair_not_bound"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-34-50-333Z.json"
+        }
+      ],
+      "caseCount": 1
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."

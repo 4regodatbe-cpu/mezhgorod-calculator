@@ -5209,7 +5209,22 @@
         "ckad"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-528Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/2026-10-16T01-34-49-494Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 493717,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-34-46-904Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-528Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/2026-10-16T01-34-49-494Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-934Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-34-50-333Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "pair-m12-ckad-domodedovo-to-arzamas",

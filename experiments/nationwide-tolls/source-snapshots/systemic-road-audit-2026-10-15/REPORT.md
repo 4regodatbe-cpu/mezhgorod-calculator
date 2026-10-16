@@ -1,10 +1,10 @@
 # Системный аудит маршрутов — текущие результаты
 
-Сформировано: 2026-10-16T01:34:18.503Z.
+Сформировано: 2026-10-16T01:34:53.708Z.
 
-Разных проверенных OD-кейсов: 270; записанных live попыток с учётом повторов: 284; маршруты получены: 270; capture + два offline replay завершены: 270; одинаковый live/offline итог: 270.
+Разных проверенных OD-кейсов: 271; записанных live попыток с учётом повторов: 285; маршруты получены: 271; capture + два offline replay завершены: 271; одинаковый live/offline итог: 271.
 
-Отсутствующих/нечитаемых evidence-ссылок: 0; имеющихся live summaries: 270. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
+Отсутствующих/нечитаемых evidence-ссылок: 0; имеющихся live summaries: 271. Исторический status не засчитывается в audited без читаемых raw + обоих replay.
 
 Audited означает воспроизводимость исполнения. Это не проверка цен по Яндексу/оператору. Неизвестная сумма остаётся неизвестной. Offline replay не считается новым live-маршрутом.
 
@@ -30,7 +30,7 @@ Audited означает воспроизводимость исполнения
 | pair-m4-m11 | 10 | 5 | 5 | 5 | 4 | 4 |
 | pair-m11-zsd | 10 | 10 | 10 | 10 | 0 | 0 |
 | pair-m11-ckad | 10 | 10 | 10 | 6 | 0 | 0 |
-| pair-m12-ckad | 10 | 5 | 5 | 2 | 2 | 2 |
+| pair-m12-ckad | 10 | 6 | 6 | 2 | 2 | 2 |
 | triple-m4-m11-zsd | 10 | 5 | 5 | 5 | 0 | 0 |
 | triple-m11-ckad-m12 | 10 | 5 | 5 | 5 | 0 | 0 |
 | max-chain-m4-ckad-m11-zsd | 10 | 10 | 10 | 0 | 2 | 2 |
@@ -43,12 +43,13 @@ Audited означает воспроизводимость исполнения
 | zsd:unpriced | 64 |
 | m4:unpriced | 17 |
 | m11_partial_head_entry_boundary_unresolved | 7 |
-| arc_not_proven | 24 |
+| arc_not_proven | 25 |
 | unknown-paid-road:unpriced | 40 |
-| expected-road-not-proven | 39 |
+| expected-road-not-proven | 40 |
 | m11-58-679:unpriced | 25 |
 | m11_58_679_facility_sequence_incomplete | 7 |
 | engine_not_yet_composed | 5 |
+| m12_current_operator_pair_not_bound | 1 |
 
 Исторические ошибки исполнения/неполные трассы сохранены отдельно: 0. Успешный повтор не удаляет первоначальный неуспешный capture.
 
