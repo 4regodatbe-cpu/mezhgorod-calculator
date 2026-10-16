@@ -1,0 +1,72 @@
+{
+  "startedAt": "2026-10-16T01:49:34.070Z",
+  "scope": {
+    "region": null,
+    "group": "single-ckad",
+    "caseId": "single-ckad-kazan-to-dmitrov",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-ckad-kazan-to-dmitrov",
+      "startedAt": "2026-10-16T01:49:34.073Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-kazan-to-dmitrov/live-2026-10-15T09-00-00-03-00-2026-10-16T01-49-38-594Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-kazan-to-dmitrov/2026-10-16T01-49-38-539Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-49-39-052Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-49-39-512Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "ckad"
+        ],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "weekday": {
+        "amount": 3513,
+        "weekdayAmount": 3513,
+        "weekendAmount": 3513,
+        "period": "все дни",
+        "segments": [
+          "М-12: ivanovskoe_p241 → vladimir · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 3513,
+        "weekdayAmount": 3513,
+        "weekendAmount": 3513,
+        "period": "все дни",
+        "segments": [
+          "М-12: ivanovskoe_p241 → vladimir · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m12",
+          "amount": 3513,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:49:39.529Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:49:39.532Z"
+}
