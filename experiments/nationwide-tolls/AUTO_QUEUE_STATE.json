@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:45:43.103Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:45:47.325Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,74 +23,10 @@
       "region": "dnr"
     }
   },
-  "caseId": "dnr-харцызск-kazan-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "dnr-харцызск-kazan-center",
-    "startedAt": "2026-10-16T00:45:12.244Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-45-24-738Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-kazan-center/2026-10-16T00-45-24-630Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-45-25-290Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-45-25-836Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "m12"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 850,
-      "weekdayAmount": 850,
-      "weekendAmount": 850,
-      "period": "все дни",
-      "segments": [
-        "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 850,
-      "weekdayAmount": 850,
-      "weekendAmount": 850,
-      "period": "все дни",
-      "segments": [
-        "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m12",
-        "amount": 850,
-        "reason": "matrix dated selected-route M12 directed endpoint pair"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:45:25.855Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-45-10-945Z-part11",
-  "parent": "48b52130ff75db5a8e1181720d4b2fed1276bd33",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-45-43-103Z-done.json"
+  "caseId": "dnr-харцызск-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-45-47-325Z-part11",
+  "parent": "0ddc108cba8e05a29804ad891a328480e4aaf325",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-45-47-325Z-started.json"
 }
