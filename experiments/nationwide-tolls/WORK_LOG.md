@@ -1632,3 +1632,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T14:29:41.096Z: ZSD case37 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-29-41-095Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-kazan-to-spb; --next; savedcapture twoofflineprofiles.
 
 2026-10-16T14:30:11.880Z: ZSD case38 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-30-11-879Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-spb-to-kazan; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:30:45.809Z: ZSD case39 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-30-45-808Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-krasnodar-to-sest; --next; savedcapture twoofflineprofiles.
