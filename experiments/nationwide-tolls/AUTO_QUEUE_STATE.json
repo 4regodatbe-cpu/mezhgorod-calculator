@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:06:42.824Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:07:02.015Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 83,
+      "done": 84,
       "total": 155
     },
     {
@@ -18,15 +18,107 @@
   "next": {
     "part": 7,
     "spec": {
-      "caseId": "pair-m11-zsd-sest-to-moscow",
+      "caseId": "pair-m11-zsd-tver-to-sest",
       "kind": "road",
       "group": "pair-m11-zsd"
     }
   },
   "caseId": "pair-m11-zsd-sest-to-moscow",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "pair-m11-zsd-sest-to-moscow",
+    "startedAt": "2026-10-16T00:06:44.249Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-06-48-018Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-moscow/2026-10-16T00-06-47-974Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-06-48-450Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-06-48-850Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m11",
+        "zsd"
+      ],
+      "provenRoads": [
+        "zsd",
+        "m11"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m11-15-58",
+        "amount": 1130,
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": 3900,
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "amount": 94,
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "amount": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      },
+      {
+        "id": "unknown-paid-road",
+        "amount": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:06:48.867Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-06-42-824Z-part7",
-  "parent": "581013e6fac6cf07fbcb808d761541e93d5b72e2",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-06-42-824Z-started.json"
+  "parent": "18cfb044e5e347767fa0d2bbfd62a7dd2157c168",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-07-02-015Z-done.json"
 }
