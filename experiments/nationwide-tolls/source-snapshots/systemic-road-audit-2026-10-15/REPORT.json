@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:34:04.377Z",
+  "generatedAt": "2026-10-16T00:34:30.385Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 181,
-    "recordedLiveAttempts": 194,
-    "liveCaptured": 180,
-    "savedLiveSummaries": 180,
+    "distinctCaseAttempts": 182,
+    "recordedLiveAttempts": 195,
+    "liveCaptured": 181,
+    "savedLiveSummaries": 181,
     "missingOrInvalidReferences": 1,
-    "audited": 180,
-    "traceComplete": 180,
-    "sameDateParity": 180
+    "audited": 181,
+    "traceComplete": 181,
+    "sameDateParity": 181
   },
   "regionCounts": {
     "dnr": {
@@ -200,9 +200,9 @@
       "id": "triple-m11-ckad-m12",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 4,
-      "audited": 4,
-      "traversalProven": 4,
+      "attempted": 5,
+      "audited": 5,
+      "traversalProven": 5,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -6187,6 +6187,42 @@
       ],
       "routeMeters": 1068385,
       "routeSeconds": 47841
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-tver-to-murom",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/live-2026-10-15T09-00-00-03-00-2026-10-16T00-34-27-392Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad",
+          "m12"
+        ],
+        "provenRoads": [
+          "m11",
+          "m12",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 487734,
+      "routeSeconds": 21691
     }
   ],
   "historicalExecutionExceptions": [],
@@ -9295,7 +9331,8 @@
         "triple-m11-ckad-m12-kazan-to-spb",
         "triple-m11-ckad-m12-kazan-to-torzhok",
         "triple-m11-ckad-m12-spb-to-kazan",
-        "triple-m11-ckad-m12-torzhok-to-kazan"
+        "triple-m11-ckad-m12-torzhok-to-kazan",
+        "triple-m11-ckad-m12-tver-to-murom"
       ],
       "occurrences": [
         {
@@ -9702,9 +9739,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-34-02-247Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/live-2026-10-15T09-00-00-03-00-2026-10-16T00-34-27-392Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-27-815Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-34-28-233Z.json"
         }
       ],
-      "caseCount": 15
+      "caseCount": 16
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -9730,7 +9794,8 @@
         "single-odintsovo-golitsyno-to-moscow",
         "single-zsd-blag-to-prim",
         "triple-m11-ckad-m12-kazan-to-torzhok",
-        "triple-m11-ckad-m12-torzhok-to-kazan"
+        "triple-m11-ckad-m12-torzhok-to-kazan",
+        "triple-m11-ckad-m12-tver-to-murom"
       ],
       "occurrences": [
         {
@@ -10326,9 +10391,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-34-02-247Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/live-2026-10-15T09-00-00-03-00-2026-10-16T00-34-27-392Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-27-815Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-34-28-233Z.json"
         }
       ],
-      "caseCount": 22
+      "caseCount": 23
     },
     {
       "code": "expected-road-not-proven",
@@ -10832,7 +10924,8 @@
         "single-m11-moscow-to-tver",
         "single-m11-tver-to-moscow",
         "triple-m11-ckad-m12-kazan-to-torzhok",
-        "triple-m11-ckad-m12-torzhok-to-kazan"
+        "triple-m11-ckad-m12-torzhok-to-kazan",
+        "triple-m11-ckad-m12-tver-to-murom"
       ],
       "occurrences": [
         {
@@ -11185,9 +11278,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-34-02-247Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/live-2026-10-15T09-00-00-03-00-2026-10-16T00-34-27-392Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-27-815Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-34-28-233Z.json"
         }
       ],
-      "caseCount": 13
+      "caseCount": 14
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
