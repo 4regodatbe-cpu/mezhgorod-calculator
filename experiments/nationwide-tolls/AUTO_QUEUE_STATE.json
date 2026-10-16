@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:42:06.047Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:42:10.359Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,76 +23,10 @@
       "region": "dnr"
     }
   },
-  "caseId": "dnr-талаковка-kazan-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "dnr-талаковка-kazan-center",
-    "startedAt": "2026-10-16T00:41:33.473Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-41-48-377Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-kazan-center/2026-10-16T00-41-48-274Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-41-48-935Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-41-49-452Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m4",
-        "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m4",
-        "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": null,
-        "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
-      }
-    ],
-    "finishedAt": "2026-10-16T00:41:49.470Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-41-32-084Z-part11",
-  "parent": "a8bdf6352ad6cf149a10624e2e136c1b1bd1bf86",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-42-06-047Z-done.json"
+  "caseId": "dnr-талаковка-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-42-10-359Z-part11",
+  "parent": "7698ef1602164b2205549aff00a61df9a0dbb7da",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-42-10-359Z-started.json"
 }
