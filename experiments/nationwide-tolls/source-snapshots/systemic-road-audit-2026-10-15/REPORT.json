@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:11:54.968Z",
+  "generatedAt": "2026-10-16T02:12:30.894Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 329,
-    "recordedLiveAttempts": 343,
-    "liveCaptured": 329,
-    "savedLiveSummaries": 329,
+    "distinctCaseAttempts": 330,
+    "recordedLiveAttempts": 344,
+    "liveCaptured": 330,
+    "savedLiveSummaries": 330,
     "missingOrInvalidReferences": 0,
-    "audited": 329,
-    "traceComplete": 329,
-    "sameDateParity": 329
+    "audited": 330,
+    "traceComplete": 330,
+    "sameDateParity": 330
   },
   "regionCounts": {
     "dnr": {
@@ -110,11 +110,11 @@
       "id": "single-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 9,
-      "audited": 9,
+      "attempted": 10,
+      "audited": 10,
       "traversalProven": 7,
-      "pricedWeekday": 3,
-      "pricedWeekend": 3
+      "pricedWeekday": 4,
+      "pricedWeekend": 4
     },
     {
       "id": "single-odintsovo",
@@ -11182,6 +11182,38 @@
       ],
       "routeMeters": 44868,
       "routeSeconds": 2339
+    },
+    {
+      "caseId": "single-zsd-sest-to-peterhof",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-peterhof/live-2026-10-15T09-00-00-03-00-2026-10-16T02-12-26-510Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "zsd"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "zsd"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 52242,
+      "routeSeconds": 2721
     }
   ],
   "historicalExecutionExceptions": [],
@@ -18640,7 +18672,8 @@
         "single-m12-moscow-to-cheboksary",
         "single-odintsovo-kubinka-to-moscow",
         "single-odintsovo-lesnoy-to-moscow",
-        "single-odintsovo-moscow-to-lesnoy"
+        "single-odintsovo-moscow-to-lesnoy",
+        "single-zsd-sest-to-peterhof"
       ],
       "occurrences": [
         {
@@ -19624,9 +19657,23 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/live-2026-10-15T09-00-00-03-00-2026-10-16T02-08-48-333Z.json"
+        },
+        {
+          "caseId": "single-zsd-sest-to-peterhof",
+          "detail": {
+            "expectedRoads": [
+              "zsd"
+            ],
+            "provenRoads": [],
+            "missingExpectedRoads": [
+              "zsd"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-peterhof/live-2026-10-15T09-00-00-03-00-2026-10-16T02-12-26-510Z.json"
         }
       ],
-      "caseCount": 59
+      "caseCount": 60
     },
     {
       "code": "m11-58-679:unpriced",
