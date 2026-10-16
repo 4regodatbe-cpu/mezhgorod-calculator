@@ -18,14 +18,8 @@
 
 ## NEXT STARTED
 
-**Diagnose current ZSD scope using --diagnose before the nextcase**
+**ZSD nextcase single-zsd-pushkin-to-sest; --next; savedcapture twoofflineprofiles**
 
-ZSD review **35/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T14-25-27-773Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
+ZSD review **35/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T14-28-34-645Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
 Repository-owned utility: `node experiments/nationwide-tolls/scripts/review-zsd-finding-case.mjs --next` (or `--diagnose` after a new scope). One step only; caller commits/publishes/exacthead-tree before continuing. Do not rerun completed M4/policy/live queues. No main/merge/Production. Autocontinuation remains enabled.
-
-16.10.2026 case35 diagnosis FAILED optionalmaneuvers absent; runnerfix+regression CODE DONE, untested. NEXT focused/fullgate then retrydiagnose. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-only-diagnosis-fix.md
-
-16.10.2026 geometry-only focused5/5PASS+eslint exit0. NEXT fullgate then case35diagnosis. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-focused-pass.md
-
-16.10.2026 geometry-only fullgate exit0:696/696+quote/API+webpack/TS/static16/16PASS. NEXT case35 --diagnose. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-fullgate-pass.md

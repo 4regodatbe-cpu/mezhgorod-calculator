@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": "single-zsd-pushkin-to-sest",
-  "nextAction": "Diagnose current ZSD scope using --diagnose before the nextcase",
+  "nextAction": "ZSD nextcase single-zsd-pushkin-to-sest; --next; savedcapture twoofflineprofiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2759,14 +2759,16 @@
       },
       {
         "caseId": "single-zsd-blag-to-prim",
-        "status": "current_unknown_needs_distinct_scope_review",
+        "status": "source_gated_distinct_finished_zsd_scope",
         "sameReviewedScopeCase": null,
         "missing": [
           "unknown-paid-road",
           "zsd"
         ],
         "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-25-27-773Z.md",
-        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-25-27-773Z.json"
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-25-27-773Z.json",
+        "scopeCheckpoint": "../../docs/checkpoints/zsd-2026-10-16T14-28-34-645Z.md",
+        "scopeEvidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-28-34-645Z.json"
       }
     ],
     "checked": 35,
