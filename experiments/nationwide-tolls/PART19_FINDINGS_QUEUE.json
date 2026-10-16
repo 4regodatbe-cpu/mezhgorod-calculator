@@ -33,8 +33,8 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "triple-m11-ckad-m12-kazan-to-spb",
-  "nextAction": "ZSD nextcase triple-m11-ckad-m12-kazan-to-spb; --next; savedcapture twoofflineprofiles",
+  "nextCase": "triple-m11-ckad-m12-spb-to-kazan",
+  "nextAction": "ZSD nextcase triple-m11-ckad-m12-spb-to-kazan; --next; savedcapture twoofflineprofiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2789,9 +2789,21 @@
         ],
         "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-29-41-095Z.md",
         "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-29-41-095Z.json"
+      },
+      {
+        "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+        "status": "source_gated_same_reviewed_zsd_scope",
+        "sameReviewedScopeCase": "lnr-брянка-saint-petersburg-center",
+        "missing": [
+          "ckad",
+          "m11-15-58",
+          "zsd"
+        ],
+        "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-30-11-879Z.md",
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-30-11-879Z.json"
       }
     ],
-    "checked": 37,
+    "checked": 38,
     "total": 76,
     "identityFix": {
       "status": "validated",
