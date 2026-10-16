@@ -14,15 +14,13 @@ Parts1–18:155/155+154/154, frozenREPORT340/340.19A/B A28957helper-only+2wholec
 
 [22-casequeue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), latestper-caseevidence/checkpoints inqueue/log. Allcases10–22 twoofflineprofiles separatelysaved/readback; raw/live/olderreplays/REPORTuntouched. Fix4811a106 northboundcompound416+460relocated36keys/no newfares. Prior full687/687+quote/API/Next/TS/static16/16/focused26PASS remainshistorical; no runtimecodechange/newgate thisturn. OrdinaryCJS-lint failure andexplicitexception documented, notsilentlypassed.
 
-## NEXT STARTED — ZSD case14 Kazan→Sestroretsk
+## NEXT STARTED — ZSD case15
 
-Overall plan progress **90% (18/20 fully completed parts)**, not verified tariff coverage. Part19 inprogress/20planned; percentage required in reports. Formula in SMALL_PARTS_PLAN.json.progressReporting.
+Overall plan progress **90% (18/20 completed parts)**. This is plan progress, not tariff coverage/release readiness. Part19 inprogress/20planned. User requests this metric in every subsequent report. Formula in SMALL_PARTS_PLAN.json.progressReporting.
 
-ZSD13/76 savedcapturepairs reviewed individually. First12 same26way/PVP5scope remain sourcegated. Case13Arzamas→Prim: exactprimary topology confirmed unnamednode1766158781 isZSD; identityfix e4c1b8b0 **validated**, redundantunknownpaidroad removed, M11head/CKAD/ZSD stillblockfulltotal. [Correctedreplay/recovery](checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md). No newfare activated.
+ZSD current-engine savedcapture reviews **14/76**; latest max-chain-m12-ckad-m11-zsd-kazan-to-sest: twoofflineprofiles complete, status `current_unknown_needs_distinct_scope_review`, missing ['ckad', 'm11-15-58', 'zsd']. [Latest checkpoint](checkpoints/2026-10-16-141934-zsd-case14.md) and full per-case queue/evidence preserve exact results. Firstcase PVP5/Ekateringofka sourcegate remains unresolved; no guessed600/zone1subtotal. SixshortM4 andeight545 gates remain as previously documented.
 
-**Latestfullgate691/691+quote/API+Nextwebpack/TypeScript/static16/16PASS**, focused8/8PASS, eslintnewtestexit0. [Fullgate](checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md). One fullgatelog CR-normalization mismatch corrected with rawbytes retained; exactlocal/remote tree must match before advancing.
-
-NextONLY max-chain-m12-ckad-m11-zsd-kazan-to-sest: exactsavedcapture, twoofflineprofiles15/17Oct09:00MSK, then distinctscope diagnosis before nextcase. No reruncompletedM4/policy/309live. SixshortM4/eight545sourcegates remain. Currentcheckout calculator-resume; local/remotecommitSHA differ, treeverification mandatory.
+Next ONLY max-chain-m12-ckad-m11-zsd-murom-to-sest; existingcapture, twoofflineprofiles, exactscope comparison, durablecheckpoint before nextcase. No rerun completedM4/policy/309live. Frozen dependencies restored; no newruntimecode/fullgate. Historical687 not rerun. Currentcheckout calculator-resume; connector/local commits can differ, exacttree readback required.
 
 Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. Ifcontextends, startfromthisspecificNEXT, notoldrecovery/309live/25policyqueue. One writer; active/queuedjob→no writes, TIME_LIMITresumable. Unknown≠0,subtotal≠total, wholetripdeparturepricing; cross-roadvectorsdeferred. No main/merge/Production/Android/messages. Autocontinuation remainsenabled untilall20done.
 
