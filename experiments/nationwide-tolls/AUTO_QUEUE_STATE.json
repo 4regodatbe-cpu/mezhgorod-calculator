@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:05:00.601Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:05:05.345Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,74 +23,10 @@
       "region": "lnr"
     }
   },
-  "caseId": "lnr-старобельск-kazan-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "lnr-старобельск-kazan-center",
-    "startedAt": "2026-10-16T01:04:27.576Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-04-38-390Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-kazan-center/2026-10-16T01-04-38-298Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-04-38-923Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-04-39-446Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 650,
-      "weekdayAmount": 650,
-      "weekendAmount": 830,
-      "period": "понедельник–четверг",
-      "segments": [
-        "М-4: m4-620 → m4-515 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 830,
-      "weekdayAmount": 650,
-      "weekendAmount": 830,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "М-4: m4-620 → m4-515 · Стоимость не подтверждена"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 650,
-        "reason": "matrix exact selected-route M4 vector"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:04:39.466Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-04-26-299Z-part13",
-  "parent": "826aca91c9ffd6600b83d5036c47581128a65f79",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-05-00-601Z-done.json"
+  "caseId": "lnr-старобельск-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-05-05-345Z-part13",
+  "parent": "03c71976c043abb54adef020a92387bafc3e7d6c",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-05-05-345Z-started.json"
 }
