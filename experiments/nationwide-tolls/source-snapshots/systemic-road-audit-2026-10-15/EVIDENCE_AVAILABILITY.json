@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 138,
-  "rawCaptureCaseCount": 136,
+  "rawCaptureCount": 139,
+  "rawCaptureCaseCount": 137,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -11552,6 +11552,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-16-10-752Z.json",
+      "caseId": "single-a289-taman-to-krasnodar",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-16-12-573Z.json",
+          "exists": true,
+          "bytes": 3685,
+          "sha256": "e2fea5b72b3386c11fcebf17db5941e7ed80d476c6b83c92ef588a1fae54e2db",
+          "gitBlobSha": "c163fcd737f9e596ee6f6ae9f23d60f410f231f0",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-krasnodar/2026-10-16T00-16-12-555Z-capture.json.gz",
+          "exists": true,
+          "bytes": 109443,
+          "sha256": "9720fea78305f3305afa4d1618710daeabf60f31f264be789d0c91ee031c09ad",
+          "gitBlobSha": "4f309af5bcfedcf3c1057bbee91c0f944489b350",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 5
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-krasnodar/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-16-12-930Z.json",
+          "exists": true,
+          "bytes": 3763,
+          "sha256": "3c65e39dad017235b37d63ec28aa0314c963196d87b47da5c3600f579c4105bb",
+          "gitBlobSha": "e383dfe5cb6aaa198141abe35833f96f5d1cad37",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-krasnodar/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-16-13-289Z.json",
+          "exists": true,
+          "bytes": 3763,
+          "sha256": "8ed17d21fef3c3ccb9566aabc9924d5feea8179ca1cb432d5f2f0fe1a3651311",
+          "gitBlobSha": "745e5ba2e35c500eb4907672814548db8721f73e",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -12837,6 +12882,17 @@
       "bytes": 103681,
       "sha256": "b20571e70818ed7a711dcc86ee476407ec5496caa8de2d52a59610ff7ff89268",
       "gitBlobSha": "986bdf1d46ca029ff9a5ea5e9e15412363a90fc9",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 5
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-krasnodar/2026-10-16T00-16-12-555Z-capture.json.gz",
+      "exists": true,
+      "bytes": 109443,
+      "sha256": "9720fea78305f3305afa4d1618710daeabf60f31f264be789d0c91ee031c09ad",
+      "gitBlobSha": "4f309af5bcfedcf3c1057bbee91c0f944489b350",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,
