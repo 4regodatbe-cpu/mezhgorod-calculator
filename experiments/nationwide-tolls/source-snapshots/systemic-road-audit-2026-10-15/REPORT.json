@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:24:24.608Z",
+  "generatedAt": "2026-10-16T00:24:48.502Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 158,
-    "recordedLiveAttempts": 171,
-    "liveCaptured": 157,
-    "savedLiveSummaries": 157,
+    "distinctCaseAttempts": 159,
+    "recordedLiveAttempts": 172,
+    "liveCaptured": 158,
+    "savedLiveSummaries": 158,
     "missingOrInvalidReferences": 1,
-    "audited": 157,
-    "traceComplete": 157,
-    "sameDateParity": 157
+    "audited": 158,
+    "traceComplete": 158,
+    "sameDateParity": 158
   },
   "regionCounts": {
     "dnr": {
@@ -70,9 +70,9 @@
       "id": "single-m3",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 1,
-      "audited": 1,
-      "traversalProven": 1,
+      "attempted": 2,
+      "audited": 2,
+      "traversalProven": 2,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -5433,6 +5433,38 @@
       ],
       "routeMeters": 181489,
       "routeSeconds": 10079
+    },
+    {
+      "caseId": "single-m3-moscow-to-kaluga",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-45-755Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m3"
+        ],
+        "provenRoads": [
+          "m3"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 184817,
+      "routeSeconds": 10636
     }
   ],
   "historicalExecutionExceptions": [],
@@ -9977,7 +10009,8 @@
     {
       "code": "engine_not_yet_composed",
       "cases": [
-        "single-m3-kaluga-to-moscow"
+        "single-m3-kaluga-to-moscow",
+        "single-m3-moscow-to-kaluga"
       ],
       "occurrences": [
         {
@@ -10006,9 +10039,36 @@
             "reason": "m3_engine_not_yet_composed"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-22-592Z.json"
+        },
+        {
+          "caseId": "single-m3-moscow-to-kaluga",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-45-755Z.json"
+        },
+        {
+          "caseId": "single-m3-moscow-to-kaluga",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-24-46-120Z.json"
+        },
+        {
+          "caseId": "single-m3-moscow-to-kaluga",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-46-465Z.json"
         }
       ],
-      "caseCount": 1
+      "caseCount": 2
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."

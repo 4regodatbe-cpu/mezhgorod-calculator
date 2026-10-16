@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 160,
-  "rawCaptureCaseCount": 158,
+  "rawCaptureCount": 161,
+  "rawCaptureCaseCount": 159,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -12542,6 +12542,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-24-42-567Z.json",
+      "caseId": "single-m3-moscow-to-kaluga",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-45-755Z.json",
+          "exists": true,
+          "bytes": 3794,
+          "sha256": "99322a6b84b944cd847203dadc7833e0b790dec78349b524de1b2f7aba0733b0",
+          "gitBlobSha": "028afb6ce4996df73cacbb7fccfb4a2c0c67170b",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/2026-10-16T00-24-45-734Z-capture.json.gz",
+          "exists": true,
+          "bytes": 135399,
+          "sha256": "136e928c0358dcf2667483cbd61d8860a94bea90f38ad88b90c6f10ee42b58ea",
+          "gitBlobSha": "9db67e7a8b7a40ef0e8d291b993b8f7fbe4f83bf",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 5
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-24-46-120Z.json",
+          "exists": true,
+          "bytes": 3872,
+          "sha256": "aefe25cf4005abdf624361480bb9e120ca25f6a26a2964cc7ed8f4d24995fe4f",
+          "gitBlobSha": "7ad9a070b3841ea4346d7b325a322e85151b1e6f",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-46-465Z.json",
+          "exists": true,
+          "bytes": 3872,
+          "sha256": "1d46e5776760178be3f5ee6931c009f8bc0d0984a7919513b3101575b4ba7f80",
+          "gitBlobSha": "7d49a4f10a7eac44c0255ced1dfcd2357f3d8982",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -14069,6 +14114,17 @@
       "bytes": 118633,
       "sha256": "66b497dde94c29ccac7dfe6367bf179083ed51dba6d48ffce8791cc3e185e697",
       "gitBlobSha": "d8c85ca56ae055c6a9283698a32b34b57c79f876",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 5
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/2026-10-16T00-24-45-734Z-capture.json.gz",
+      "exists": true,
+      "bytes": 135399,
+      "sha256": "136e928c0358dcf2667483cbd61d8860a94bea90f38ad88b90c6f10ee42b58ea",
+      "gitBlobSha": "9db67e7a8b7a40ef0e8d291b993b8f7fbe4f83bf",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,
