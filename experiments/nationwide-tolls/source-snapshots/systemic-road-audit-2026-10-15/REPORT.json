@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-10-16T00:43:37.047Z",
+  "generatedAt": "2026-10-16T00:44:25.988Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 196,
-    "recordedLiveAttempts": 210,
-    "liveCaptured": 196,
-    "savedLiveSummaries": 196,
+    "distinctCaseAttempts": 197,
+    "recordedLiveAttempts": 211,
+    "liveCaptured": 197,
+    "savedLiveSummaries": 197,
     "missingOrInvalidReferences": 0,
-    "audited": 196,
-    "traceComplete": 196,
-    "sameDateParity": 196
+    "audited": 197,
+    "traceComplete": 197,
+    "sameDateParity": 197
   },
   "regionCounts": {
     "dnr": {
       "planned": 40,
-      "liveCaptured": 34,
-      "audited": 34,
-      "traceComplete": 34,
+      "liveCaptured": 35,
+      "audited": 35,
+      "traceComplete": 35,
       "pricedWeekday": 17,
       "pricedWeekend": 20
     },
@@ -6731,6 +6731,42 @@
       ],
       "routeMeters": 1964355,
       "routeSeconds": 80114
+    },
+    {
+      "caseId": "dnr-урзуф-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-44-22-264Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2528322,
+      "routeSeconds": 133653
     }
   ],
   "historicalExecutionExceptions": [],
@@ -7257,7 +7293,8 @@
         "zaporizhzhia-васильевка-moscow-center",
         "zaporizhzhia-васильевка-saint-petersburg-center",
         "zaporizhzhia-кушугум-kazan-center",
-        "pair-m4-a289-moscow-to-taman"
+        "pair-m4-a289-moscow-to-taman",
+        "dnr-урзуф-kazan-center"
       ],
       "occurrences": [
         {
@@ -8204,9 +8241,36 @@
             "reason": "A-289 selected frame vector has no applicable finished OD price"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-10-08-101Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-44-22-264Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-44-22-961Z.json"
+        },
+        {
+          "caseId": "dnr-урзуф-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-44-23-633Z.json"
         }
       ],
-      "caseCount": 35
+      "caseCount": 36
     },
     {
       "code": "zsd:unpriced",
