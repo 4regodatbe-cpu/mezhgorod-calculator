@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:43:08.162Z",
+  "generatedAt": "2026-10-16T01:43:56.647Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 283,
-    "recordedLiveAttempts": 297,
-    "liveCaptured": 283,
-    "savedLiveSummaries": 283,
+    "distinctCaseAttempts": 284,
+    "recordedLiveAttempts": 298,
+    "liveCaptured": 284,
+    "savedLiveSummaries": 284,
     "missingOrInvalidReferences": 0,
-    "audited": 283,
-    "traceComplete": 283,
-    "sameDateParity": 283
+    "audited": 284,
+    "traceComplete": 284,
+    "sameDateParity": 284
   },
   "regionCounts": {
     "dnr": {
@@ -150,9 +150,9 @@
       "id": "pair-m4-m11",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 8,
-      "audited": 8,
-      "traversalProven": 8,
+      "attempted": 9,
+      "audited": 9,
+      "traversalProven": 9,
       "pricedWeekday": 4,
       "pricedWeekend": 4
     },
@@ -9692,6 +9692,40 @@
       ],
       "routeMeters": 1265085,
       "routeSeconds": 47695
+    },
+    {
+      "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-43-51-897Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "m11"
+        ],
+        "provenRoads": [
+          "m11",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1608714,
+      "routeSeconds": 72896
     }
   ],
   "historicalExecutionExceptions": [],
@@ -15223,7 +15257,8 @@
         "pair-m12-ckad-klin-to-vladimir",
         "pair-m4-m11-krasnodar-to-torzhok",
         "pair-m4-m11-rostov-to-tver",
-        "pair-m4-m11-spb-to-voronezh"
+        "pair-m4-m11-spb-to-voronezh",
+        "pair-m4-m11-torzhok-to-krasnodar"
       ],
       "occurrences": [
         {
@@ -16413,9 +16448,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-04-574Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-43-51-897Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-43-52-498Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-53-096Z.json"
         }
       ],
-      "caseCount": 44
+      "caseCount": 45
     },
     {
       "code": "expected-road-not-proven",
@@ -17260,7 +17322,8 @@
         "pair-m12-ckad-klin-to-vladimir",
         "pair-m4-m11-krasnodar-to-torzhok",
         "pair-m4-m11-rostov-to-tver",
-        "pair-m4-m11-spb-to-voronezh"
+        "pair-m4-m11-spb-to-voronezh",
+        "pair-m4-m11-torzhok-to-krasnodar"
       ],
       "occurrences": [
         {
@@ -18045,9 +18108,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-04-574Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-43-51-897Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-43-52-498Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-53-096Z.json"
         }
       ],
-      "caseCount": 29
+      "caseCount": 30
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
@@ -18060,7 +18150,8 @@
         "pair-m11-ckad-domodedovo-to-novgorod",
         "pair-m11-ckad-novgorod-to-domodedovo",
         "pair-m4-m11-krasnodar-to-torzhok",
-        "pair-m4-m11-rostov-to-tver"
+        "pair-m4-m11-rostov-to-tver",
+        "pair-m4-m11-torzhok-to-krasnodar"
       ],
       "occurrences": [
         {
@@ -18305,9 +18396,36 @@
             "reason": "m11_58_679_facility_sequence_incomplete"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-42-18-942Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-43-51-897Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-43-52-498Z.json"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-15-58",
+            "reason": "m11_58_679_facility_sequence_incomplete"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-53-096Z.json"
         }
       ],
-      "caseCount": 9
+      "caseCount": 10
     },
     {
       "code": "engine_not_yet_composed",

@@ -1,0 +1,120 @@
+{
+  "at": "2026-10-16T01:44:19.101Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 98,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 16,
+    "spec": {
+      "caseId": "pair-m4-m11-tver-to-rostov",
+      "kind": "road",
+      "group": "pair-m4-m11"
+    }
+  },
+  "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+    "startedAt": "2026-10-16T01:43:37.187Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-43-51-897Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/2026-10-16T01-43-51-795Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-43-52-498Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-53-096Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "provenRoads": [
+        "m11",
+        "m4"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
+        "m11-15-58: m11_58_679_facility_sequence_incomplete",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
+        "m11-15-58: m11_58_679_facility_sequence_incomplete",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 5040,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "amount": null,
+        "reason": "m11_58_679_facility_sequence_incomplete"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "unknown-paid-road",
+        "amount": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ],
+    "finishedAt": "2026-10-16T01:43:53.116Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-43-35-901Z-part16",
+  "parent": "2a558fe234fc122a994ca704867bdb1b7e7b4df7"
+}
