@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:46:47.431Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:47:27.732Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,110 @@
     },
     {
       "stage": 2,
-      "done": 15,
+      "done": 16,
       "total": 154
     }
   ],
   "next": {
     "part": 11,
     "spec": {
-      "caseId": "dnr-харцызск-saint-petersburg-center",
+      "caseId": "kherson-новая-збурьевка-saint-petersburg-center",
       "kind": "regional",
-      "region": "dnr"
+      "region": "kherson"
     }
   },
   "caseId": "dnr-харцызск-saint-petersburg-center",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "dnr-харцызск-saint-petersburg-center",
+    "startedAt": "2026-10-16T00:46:49.011Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-47-08-523Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-saint-petersburg-center/2026-10-16T00-47-08-409Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-47-09-179Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-47-09-814Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 3810,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "amount": 1130,
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": 3900,
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "amount": 94,
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "amount": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:47:09.834Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-46-47-431Z-part11",
-  "parent": "9190d00c4c11c35f03f9a48bdaf0785c14888544",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-46-47-431Z-started.json"
+  "parent": "b75f66efdbe7be7a0432a18c65ebc1e0691154cf",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-47-27-732Z-done.json"
 }

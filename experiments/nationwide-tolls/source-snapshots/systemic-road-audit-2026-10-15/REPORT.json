@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-10-16T00:46:28.008Z",
+  "generatedAt": "2026-10-16T00:47:12.289Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 201,
-    "recordedLiveAttempts": 215,
-    "liveCaptured": 201,
-    "savedLiveSummaries": 201,
+    "distinctCaseAttempts": 202,
+    "recordedLiveAttempts": 216,
+    "liveCaptured": 202,
+    "savedLiveSummaries": 202,
     "missingOrInvalidReferences": 0,
-    "audited": 201,
-    "traceComplete": 201,
-    "sameDateParity": 201
+    "audited": 202,
+    "traceComplete": 202,
+    "sameDateParity": 202
   },
   "regionCounts": {
     "dnr": {
       "planned": 40,
-      "liveCaptured": 39,
-      "audited": 39,
-      "traceComplete": 39,
+      "liveCaptured": 40,
+      "audited": 40,
+      "traceComplete": 40,
       "pricedWeekday": 21,
       "pricedWeekend": 24
     },
@@ -6886,6 +6886,38 @@
       ],
       "routeMeters": 1104794,
       "routeSeconds": 56600
+    },
+    {
+      "caseId": "dnr-харцызск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-47-08-523Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1912030,
+      "routeSeconds": 79759
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8439,7 +8471,8 @@
         "triple-m4-m11-zsd-sest-to-rostov",
         "triple-m4-m11-zsd-voronezh-to-prim",
         "dnr-краматорск-saint-petersburg-center",
-        "dnr-талаковка-saint-petersburg-center"
+        "dnr-талаковка-saint-petersburg-center",
+        "dnr-харцызск-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -9683,9 +9716,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-43-34-693Z.json"
+        },
+        {
+          "caseId": "dnr-харцызск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-47-08-523Z.json"
+        },
+        {
+          "caseId": "dnr-харцызск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-47-09-179Z.json"
+        },
+        {
+          "caseId": "dnr-харцызск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-47-09-814Z.json"
         }
       ],
-      "caseCount": 46
+      "caseCount": 47
     },
     {
       "code": "m4:unpriced",
