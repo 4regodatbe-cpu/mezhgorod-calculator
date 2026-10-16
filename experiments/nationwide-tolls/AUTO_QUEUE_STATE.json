@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:36:28.117Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:36:33.356Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,88 +23,10 @@
       "group": "pair-m12-ckad"
     }
   },
-  "caseId": "pair-m12-ckad-domodedovo-to-arzamas",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "pair-m12-ckad-domodedovo-to-arzamas",
-    "startedAt": "2026-10-16T01:35:57.794Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-122Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/2026-10-16T01-36-02-089Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-529Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-02-921Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m12",
-        "ckad"
-      ],
-      "provenRoads": [
-        "m12"
-      ],
-      "missingExpectedRoads": [
-        "ckad"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m12, ckad",
-        "m12: m12_current_operator_pair_not_bound",
-        "ckad: ckad_east_arc_not_proven"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m12, ckad",
-        "m12: m12_current_operator_pair_not_bound",
-        "ckad: ckad_east_arc_not_proven"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m12",
-        "amount": null,
-        "reason": "m12_current_operator_pair_not_bound"
-      },
-      {
-        "id": "ckad",
-        "amount": null,
-        "reason": "ckad_east_arc_not_proven"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:36:02.936Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-35-56-365Z-part15",
-  "parent": "db5461ca392e0f25605d01c9f86a5ab7ecf72414",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-36-28-117Z-done.json"
+  "caseId": "pair-m12-ckad-klin-to-vladimir",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-36-33-356Z-part15",
+  "parent": "27b17c71bbfbe2f1db8e5396e5857c2cf7daf912",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-36-33-356Z-started.json"
 }

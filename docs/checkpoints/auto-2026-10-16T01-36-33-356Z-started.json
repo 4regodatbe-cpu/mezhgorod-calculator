@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:36:33.356Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 87,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 15,
+    "spec": {
+      "caseId": "pair-m12-ckad-klin-to-vladimir",
+      "kind": "road",
+      "group": "pair-m12-ckad"
+    }
+  },
+  "caseId": "pair-m12-ckad-klin-to-vladimir",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-36-33-356Z-part15",
+  "parent": "27b17c71bbfbe2f1db8e5396e5857c2cf7daf912"
+}
