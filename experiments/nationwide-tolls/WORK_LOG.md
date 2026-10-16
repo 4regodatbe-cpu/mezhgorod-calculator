@@ -549,3 +549,5 @@ BLOCKED: автоматическая проверка отклонила обе
 2026-10-16T00:25:27.677Z: automatic queue STARTED; 128/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-27-677Z-started.json). single-m3-moscow-to-obninsk
 
 2026-10-16T00:25:46.795Z: automatic queue DONE; 129/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-46-795Z-done.json). single-m3-moscow-to-obninsk
+
+2026-10-16T00:25:50.265Z: automatic queue STARTED; 129/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-50-265Z-started.json). single-m3-obninsk-to-moscow
