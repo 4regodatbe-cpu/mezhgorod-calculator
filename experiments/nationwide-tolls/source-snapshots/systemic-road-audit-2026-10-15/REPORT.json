@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:08:00.874Z",
+  "generatedAt": "2026-10-16T00:08:24.677Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 119,
-    "recordedLiveAttempts": 132,
-    "liveCaptured": 118,
-    "savedLiveSummaries": 118,
+    "distinctCaseAttempts": 120,
+    "recordedLiveAttempts": 133,
+    "liveCaptured": 119,
+    "savedLiveSummaries": 119,
     "missingOrInvalidReferences": 1,
-    "audited": 118,
-    "traceComplete": 118,
-    "sameDateParity": 118
+    "audited": 119,
+    "traceComplete": 119,
+    "sameDateParity": 119
   },
   "regionCounts": {
     "dnr": {
@@ -180,9 +180,9 @@
       "id": "pair-m12-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 2,
-      "audited": 2,
-      "traversalProven": 0,
+      "attempted": 3,
+      "audited": 3,
+      "traversalProven": 1,
       "pricedWeekday": 2,
       "pricedWeekend": 2
     },
@@ -4124,6 +4124,41 @@
       ],
       "routeMeters": 857502,
       "routeSeconds": 41066
+    },
+    {
+      "caseId": "pair-m12-ckad-kazan-to-klin",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-08-21-974Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12",
+          "ckad"
+        ],
+        "provenRoads": [
+          "m12",
+          "m11",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 915330,
+      "routeSeconds": 42727
     }
   ],
   "historicalExecutionExceptions": [],
@@ -6805,7 +6840,8 @@
         "max-chain-m12-ckad-m11-zsd-sest-to-murom",
         "pair-m11-ckad-noginsk-to-spb",
         "pair-m11-ckad-spb-to-noginsk",
-        "pair-m11-ckad-torzhok-to-ramenskoe"
+        "pair-m11-ckad-torzhok-to-ramenskoe",
+        "pair-m12-ckad-kazan-to-klin"
       ],
       "occurrences": [
         {
@@ -7023,9 +7059,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-05-17-287Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-08-21-974Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-08-22-440Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-08-22-896Z.json"
         }
       ],
-      "caseCount": 8
+      "caseCount": 9
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -7037,7 +7100,8 @@
         "pair-m11-zsd-moscow-to-prim",
         "pair-m11-zsd-prim-to-moscow",
         "pair-m11-zsd-sest-to-moscow",
-        "pair-m11-zsd-tver-to-sest"
+        "pair-m11-zsd-tver-to-sest",
+        "pair-m12-ckad-kazan-to-klin"
       ],
       "occurrences": [
         {
@@ -7255,9 +7319,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-07-10-360Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-08-21-974Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-08-22-440Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-08-22-896Z.json"
         }
       ],
-      "caseCount": 8
+      "caseCount": 9
     },
     {
       "code": "expected-road-not-proven",
@@ -7455,7 +7546,8 @@
       "code": "m11-58-679:unpriced",
       "cases": [
         "pair-m11-ckad-torzhok-to-ramenskoe",
-        "pair-m11-zsd-tver-to-sest"
+        "pair-m11-zsd-tver-to-sest",
+        "pair-m12-ckad-kazan-to-klin"
       ],
       "occurrences": [
         {
@@ -7511,9 +7603,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-07-10-360Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-08-21-974Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-08-22-440Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-08-22-896Z.json"
         }
       ],
-      "caseCount": 2
+      "caseCount": 3
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."

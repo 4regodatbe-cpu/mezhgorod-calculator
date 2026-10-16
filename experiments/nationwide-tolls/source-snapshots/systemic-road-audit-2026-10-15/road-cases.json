@@ -4010,7 +4010,22 @@
         "ckad"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-08-21-974Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/2026-10-16T00-08-21-918Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 915330,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-08-17-151Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-08-21-974Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/2026-10-16T00-08-21-918Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-08-22-440Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-08-22-896Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "pair-m12-ckad-klin-to-kazan",
