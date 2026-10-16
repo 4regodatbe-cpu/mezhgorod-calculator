@@ -31,3 +31,5 @@ Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. If
 16.10.2026 ZSD Granitnoe→SPB replay DONE2/2 complete; M4 now3810/4640, only ZSD missing; component sums are not totals. Samecase exactways/gates scope diagnosis STARTED. checkpoints/2026-10-16-1403-zsd-granitnoe-spb-replay.md
 
 16.10.2026 ZSD Granitnoe→SPB physicalscope DONE: actual northbound PVP5 node933974870,26ways/12outside reviewedzone1, exitEkateringofka. Primaryzone prices exist; wholecollectionscope stillrequires binding. checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md NEXT samecase ownercash/cardscope, noalias/guessedtotal.
+
+16.10.2026 Planernayaexactidentity CODE DONE/fourregressionsadded, NOTtested; NEXT focusedtests/lint thenfullgate/samecase. checkpoints/2026-10-16-zsd-planernaya-identity-code.md Plan90%.

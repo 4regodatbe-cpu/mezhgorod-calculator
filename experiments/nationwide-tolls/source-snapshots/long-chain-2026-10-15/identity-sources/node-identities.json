@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-10-15",
+  "retrievedAt": "2026-10-16",
   "scope": "Exact road identity only; no new tariff or zone fare activated",
   "nodes": [
     {
@@ -48,6 +48,28 @@
         "https://www.openstreetmap.org/api/0.6/node/6257559336"
       ],
       "reason": "Named Avtodor booth in existing515 plaza; archived OSM fee tags are stale, never imported as tariffs"
+    },
+    {
+      "osmNodeId": "1766158781",
+      "productId": "zsd",
+      "plazaName": "Съезд к Планерной улице / Богатырскому проспекту",
+      "topology": [
+        "721839717:6771351212→1375515657 name=ЗСД toll=yes",
+        "165031082:1375515657→2027026364 toll=yes oneway=yes destination=Богатырский/Планерная",
+        "252148968:2027026364→3612944330 toll=yes oneway=yes",
+        "355755817:3612944330→1766158781 toll=yes oneway=yes",
+        "1766158781 barrier=toll_booth cash/card=yes"
+      ],
+      "sourceURLs": [
+        "https://api.openstreetmap.org/api/0.6/node/1766158781.json",
+        "https://api.openstreetmap.org/api/0.6/way/355755817/full.json",
+        "https://api.openstreetmap.org/api/0.6/node/3612944330/ways.json",
+        "https://api.openstreetmap.org/api/0.6/node/1766158781/ways.json",
+        "https://api.openstreetmap.org/api/0.6/node/2027026364/ways.json",
+        "https://api.openstreetmap.org/api/0.6/node/1375515657/ways.json"
+      ],
+      "sourceEvidence": "docs/checkpoints/evidence/2026-10-16-zsd-planernaya-identity-proof.json",
+      "reason": "Exact directed primary topology and same-selected paid-edge chain establish road identity only; no fare, zone count or finished traversal inferred"
     }
   ],
   "hashes": {
@@ -60,6 +82,12 @@
     "zsd-way375574651.osm": "986f797dd64ff1e571989a80e1b70f7b77b604992ee2e190e638c8fb8547045b",
     "zsd-mainline-ways.osm": "f8feb9fe94fbec7eb98c08b0320e6bb45e04735373247042d67a305a6a59e874",
     "zsd-way381576635.osm": "9051f99621fb5180d0ab18b8cc59812d9122f76c611dd917c5f83854ce9ca62a",
-    "zsd-pvp3-end.osm": "f10f35f46b6d5ffb89b66944dc9746e84c55bcfbb2885bafba1989f872b4a3b9"
+    "zsd-pvp3-end.osm": "f10f35f46b6d5ffb89b66944dc9746e84c55bcfbb2885bafba1989f872b4a3b9",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-1766158781.json": "af1985508ad21348bf07a20b6570e9641db0199221970cee27052dd4f362db37",
+    "docs/checkpoints/evidence/2026-10-16-zsd-way-355755817.json": "600e493444353832eee4cc3d494b54020e9ec10a9a329b20eebf22e628bf49c1",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-3612944330-ways.json": "385671b261932ac7eececf0e2741207ff84148ad5f91682978c2df9d0a7a5677",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-1766158781-ways.json": "a25181911e5e23acc823f2fd144c80d0c86d23581278143611a4c7ad25e7ca8a",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-2027026364-ways.json": "339d429bc7bda8ba3940af8dd3e1f430ad3589fcdfc95386c0b56c4eede7da0c",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-1375515657-ways.json": "8129c144c762df6f38cd1701653b26e83ccae3feee2f80dd59beec20c45f5f4f"
   }
 }
