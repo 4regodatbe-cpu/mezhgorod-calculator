@@ -1289,3 +1289,6 @@ BLOCKED: автоматическая проверка отклонила обе
 16.10.2026:19AfullinteriorA289 DONE; helperimpact57/59A289компонентоввосстановлены,2partialМосква↔Таманьunknown. Full673/focused20/lint3PASS; wholeofflineAskaniaKazan3640/3970complete. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-a289-impact-done.md). NEXTSTARTED19B: pair-m4-a289-moscow-to-taman, actualentryproofпередвыбором385. ОчередьPART19_FINDINGS_QUEUE.json. Часть19не завершена,20не начата; baselineREPORTimmutable.
 
 16.10.2026:19Bdiagnosed: selectedValhallaвходитA289с03К252между23и82,рамка23>13.5км; восточныйMaryanskayafallbackневерен. STARTED directedconnectorregression/guardedbindingдо385черезсуществующуюматрицу. ../../docs/checkpoints/2026-10-16-part19b-a289-connector-diagnosed.md.
+# 16.10.2026 — part19B directed connector focused DONE / full gate STARTED
+
+Parent c2d11f9f, working branch/PR14draft only. RED reproduces missing385 on selected Valhalla Moscow/Taman partial vector; implemented strict three-control directed Slavyansk entry/exit proof before generic M4 fallback. Actual dated matrix supplies fare; missing23 alone never suffices. Focused23/23PASS, full gate and whole-engine replay not yet run. Details/recovery: docs/checkpoints/2026-10-16-part19b-a289-connector-focused.md. No baseline/raw/live rewriting, no production/main/Android.

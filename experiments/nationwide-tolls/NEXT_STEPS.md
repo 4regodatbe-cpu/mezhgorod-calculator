@@ -1193,3 +1193,6 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 16.10.2026:19AfullinteriorA289 DONE; helperimpact57/59A289компонентоввосстановлены,2partialМосква↔Таманьunknown. Full673/focused20/lint3PASS; wholeofflineAskaniaKazan3640/3970complete. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-a289-impact-done.md). NEXTSTARTED19B: pair-m4-a289-moscow-to-taman, actualentryproofпередвыбором385. ОчередьPART19_FINDINGS_QUEUE.json. Часть19не завершена,20не начата; baselineREPORTimmutable.
 
 16.10.2026:19Bdiagnosed: selectedValhallaвходитA289с03К252между23и82,рамка23>13.5км; восточныйMaryanskayafallbackневерен. STARTED directedconnectorregression/guardedbindingдо385черезсуществующуюматрицу. ../../docs/checkpoints/2026-10-16-part19b-a289-connector-diagnosed.md.
+# 16.10.2026 current next: part19B full gate
+
+After persisted connector-focused checkpoint: pnpm build + scoped lint/diff. Do not claim whole-engine totals before per-direction offline replay of selected capture. Each direction separate checkpoint/commit/head/tree. Part19 not complete;20 not started. See docs/checkpoints/2026-10-16-part19b-a289-connector-focused.md.

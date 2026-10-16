@@ -13,6 +13,24 @@ const capture = JSON.parse(gunzipSync(readFileSync(resolve(root,
 const route = capture.record.route.coordinates;
 const date = '2026-10-15T09:00:00+03:00';
 
+test('selected Valhalla Moscow/Taman captures bind the Slavyansk connector, not Maryanskaya', () => {
+  for (const [id, stamp, order] of [
+    ['moscow-to-taman', '00-10-06-845', ['82', '103']],
+    ['taman-to-moscow', '01-40-05-574', ['103', '82']],
+  ]) {
+    const saved = JSON.parse(gunzipSync(readFileSync(resolve(root,
+      `experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-${id}/2026-10-16T${stamp}Z-capture.json.gz`))));
+    assert.equal(saved.record.provider.toLowerCase(), 'valhalla');
+    const geometry = saved.record.route.coordinates;
+    assert.deepEqual(Array.from(priceA289Route(geometry, date).crossedFrames), order);
+    for (const departure of [date, '2026-10-17T09:00:00+03:00']) {
+      const result = a289ShortRoute(geometry, [], departure, true);
+      assert.equal(result?.tolls?.amount, 385, result?.reason);
+      assert.match(result.tolls.segments[0], /Slavyansk/);
+    }
+  }
+});
+
 test('saved long route proves a complete A289 frame vector with both trip ends outside local exits', () => {
   assert.deepEqual(Array.from(priceA289Route(route, date).crossedFrames), ['103', '82', '23']);
   for (const geometry of [route, route.toReversed()]) {
