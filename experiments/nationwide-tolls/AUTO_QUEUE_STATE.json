@@ -1,25 +1,21 @@
 {
-  "at": "2026-10-16T07:44:59.433Z",
-  "phase": "PART19_POLICY_QUEUE_READY",
+  "at": "2026-10-16T07:47:04.533Z",
+  "phase": "PART19_M4_POLICY_STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
-  "workflowRun": null,
-  "stageCounts": [
-    {
-      "stage": 1,
-      "done": 155,
-      "total": 155
-    },
-    {
-      "stage": 2,
-      "done": 154,
-      "total": 154
-    }
-  ],
-  "next": "Observe newly triggered workflow run/jobs before any branch write; runner will persist actual runID after build",
-  "checkpointPath": "docs/checkpoints/2026-10-16-part19-policy-queue-ready.md",
-  "previousCompletedWorkflowRun": "38824450386",
-  "pendingCase": "zaporizhzhia-пришиб-saint-petersburg-center",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
   "checked": 5,
   "total": 25,
-  "workflowRunsUrl": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/runs?branch=fix%2Fv3-missing-route-prices-2026-10-15&event=push&per_page=5"
+  "next": "zaporizhzhia-пришиб-saint-petersburg-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "caseId": "zaporizhzhia-пришиб-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T17-07-07-263Z-capture.json.gz",
+  "captureSha256": "55137f2633cd2a41328a43093654782c4fb77306adc0a663a616a6c997c3258b",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "97cbf808f2efe3a4d7050e29ea6bb58489883297",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-47-04-532Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-04-533Z-part19_m4_policy_started.json"
 }

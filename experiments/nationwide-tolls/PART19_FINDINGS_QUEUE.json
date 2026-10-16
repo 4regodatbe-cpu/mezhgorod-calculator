@@ -89,7 +89,9 @@
           "weekendAmount": null,
           "m4WeekdayAmount": 3810,
           "m4WeekendAmount": 4640,
-          "remainingMissing": ["zsd"],
+          "remainingMissing": [
+            "zsd"
+          ],
           "remainingReason": "zsd_trip_extends_outside_reviewed_zone1",
           "checkpoint": "../../docs/checkpoints/2026-10-16-093623-part19c-granitnoe-spb-m4-policy-replay.md"
         },
@@ -100,7 +102,9 @@
           "weekendAmount": null,
           "m4WeekdayAmount": 3810,
           "m4WeekendAmount": 4640,
-          "remainingMissing": ["zsd"],
+          "remainingMissing": [
+            "zsd"
+          ],
           "remainingReason": "zsd_trip_extends_outside_reviewed_zone1",
           "checkpoint": "../../docs/checkpoints/2026-10-16-102232-part19c-bryanka-spb-m4-policy-replay.md"
         }
