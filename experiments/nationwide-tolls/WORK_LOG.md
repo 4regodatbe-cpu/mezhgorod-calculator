@@ -817,3 +817,5 @@ BLOCKED: автоматическая проверка отклонила обе
 2026-10-16T01:03:40.990Z: automatic queue STARTED; 155/155,40/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-03-40-990Z-started.json). lnr-сорокино-saint-petersburg-center
 
 2026-10-16T01:04:21.602Z: automatic queue DONE; 155/155,41/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-04-21-602Z-done.json). lnr-сорокино-saint-petersburg-center
+
+2026-10-16T01:04:26.300Z: automatic queue STARTED; 155/155,41/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-04-26-300Z-started.json). lnr-старобельск-kazan-center
