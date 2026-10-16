@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:24:01.167Z",
+  "generatedAt": "2026-10-16T00:24:24.608Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 157,
-    "recordedLiveAttempts": 170,
-    "liveCaptured": 156,
-    "savedLiveSummaries": 156,
+    "distinctCaseAttempts": 158,
+    "recordedLiveAttempts": 171,
+    "liveCaptured": 157,
+    "savedLiveSummaries": 157,
     "missingOrInvalidReferences": 1,
-    "audited": 156,
-    "traceComplete": 156,
-    "sameDateParity": 156
+    "audited": 157,
+    "traceComplete": 157,
+    "sameDateParity": 157
   },
   "regionCounts": {
     "dnr": {
@@ -70,9 +70,9 @@
       "id": "single-m3",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 0,
-      "audited": 0,
-      "traversalProven": 0,
+      "attempted": 1,
+      "audited": 1,
+      "traversalProven": 1,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -5401,6 +5401,38 @@
       ],
       "routeMeters": 643218,
       "routeSeconds": 31169
+    },
+    {
+      "caseId": "single-m3-kaluga-to-moscow",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-21-874Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m3"
+        ],
+        "provenRoads": [
+          "m3"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 181489,
+      "routeSeconds": 10079
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8603,7 +8635,8 @@
         "single-ckad-ramenskoe-to-klin",
         "single-m11-moscow-to-torzhok",
         "single-m11-moscow-to-tver",
-        "single-m11-tver-to-moscow"
+        "single-m11-tver-to-moscow",
+        "single-m3-kaluga-to-moscow"
       ],
       "occurrences": [
         {
@@ -9064,9 +9097,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-21-53-871Z.json"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-21-874Z.json"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-24-22-237Z.json"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-22-592Z.json"
         }
       ],
-      "caseCount": 17
+      "caseCount": 18
     },
     {
       "code": "expected-road-not-proven",
@@ -9913,6 +9973,42 @@
         }
       ],
       "caseCount": 5
+    },
+    {
+      "code": "engine_not_yet_composed",
+      "cases": [
+        "single-m3-kaluga-to-moscow"
+      ],
+      "occurrences": [
+        {
+          "caseId": "single-m3-kaluga-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-21-874Z.json"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-24-22-237Z.json"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-22-592Z.json"
+        }
+      ],
+      "caseCount": 1
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
