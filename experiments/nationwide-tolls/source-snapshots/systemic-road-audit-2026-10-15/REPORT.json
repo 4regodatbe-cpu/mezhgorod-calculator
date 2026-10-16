@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:07:40.797Z",
+  "generatedAt": "2026-10-16T02:08:17.054Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 322,
-    "recordedLiveAttempts": 336,
-    "liveCaptured": 322,
-    "savedLiveSummaries": 322,
+    "distinctCaseAttempts": 323,
+    "recordedLiveAttempts": 337,
+    "liveCaptured": 323,
+    "savedLiveSummaries": 323,
     "missingOrInvalidReferences": 0,
-    "audited": 322,
-    "traceComplete": 322,
-    "sameDateParity": 322
+    "audited": 323,
+    "traceComplete": 323,
+    "sameDateParity": 323
   },
   "regionCounts": {
     "dnr": {
@@ -120,11 +120,11 @@
       "id": "single-odintsovo",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 7,
-      "audited": 7,
+      "attempted": 8,
+      "audited": 8,
       "traversalProven": 1,
-      "pricedWeekday": 4,
-      "pricedWeekend": 4
+      "pricedWeekday": 5,
+      "pricedWeekend": 5
     },
     {
       "id": "single-khabarovsk",
@@ -10958,6 +10958,38 @@
       ],
       "routeMeters": 68300,
       "routeSeconds": 4149
+    },
+    {
+      "caseId": "single-odintsovo-lesnoy-to-moscow",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-lesnoy-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-08-12-712Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "odintsovo"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "odintsovo"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 33748,
+      "routeSeconds": 2254
     }
   ],
   "historicalExecutionExceptions": [],
@@ -18218,7 +18250,8 @@
         "single-khabarovsk-vyazemsky-to-khabarovsk",
         "single-m12-cheboksary-to-moscow",
         "single-m12-moscow-to-cheboksary",
-        "single-odintsovo-kubinka-to-moscow"
+        "single-odintsovo-kubinka-to-moscow",
+        "single-odintsovo-lesnoy-to-moscow"
       ],
       "occurrences": [
         {
@@ -19174,9 +19207,23 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-36-426Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-lesnoy-to-moscow",
+          "detail": {
+            "expectedRoads": [
+              "odintsovo"
+            ],
+            "provenRoads": [],
+            "missingExpectedRoads": [
+              "odintsovo"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-lesnoy-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-08-12-712Z.json"
         }
       ],
-      "caseCount": 57
+      "caseCount": 58
     },
     {
       "code": "m11-58-679:unpriced",
