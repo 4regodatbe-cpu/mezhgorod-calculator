@@ -19,7 +19,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "kherson-чулаковка-saint-petersburg-center",
+  "nextCase": "zaporizhzhia-молочанск-kazan-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -53,7 +53,7 @@
       ],
       "status": "historical_policy_needs_current_replay",
       "note": "trip-departure-v1 already implemented; preserve original raw/results and replay before any new source fix",
-      "currentCasesChecked": 15,
+      "currentCasesChecked": 16,
       "currentEvaluations": [
         {
           "caseId": "dnr-гранитное-moscow-center",
@@ -839,6 +839,100 @@
             }
           ],
           "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-48-06-984Z-part19_m4_policy_done.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-saint-petersburg-center",
+          "result": "not_reproduced_current_engine",
+          "weekdayAmount": 11264,
+          "weekendAmount": 13134,
+          "m4WeekdayAmount": 5040,
+          "m4WeekendAmount": 6090,
+          "remainingMissing": [],
+          "outputs": [
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-48-12-744Z.json",
+              "sha256": "f0d4693f7f5ff5903e8bd75fdfa2734b2eb4410d7955e21d02c96eca14bf0540"
+            },
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-48-13-518Z.json",
+              "sha256": "43165245eab3a1d028d6cd42437b28f5e9b2d6a9dc1d57e1b11417ee9b375500"
+            }
+          ],
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/2026-10-15T12-07-35-510Z-capture.json.gz",
+          "captureSha256": "c657c9727c4e68fdea50f6cb766664705dd48d053b438cd69490d89ba41eecec",
+          "components": [
+            {
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 5040,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "a289",
+                  "amount": 800,
+                  "reason": "A-289 complete ordered three-frame traversal"
+                },
+                {
+                  "id": "m11-15-58",
+                  "amount": 1130,
+                  "reason": "m11_head_ready_direct_pair_at_departure"
+                },
+                {
+                  "id": "m11-58-679",
+                  "amount": 3900,
+                  "reason": "matrix dated selected-route M11 direct pair"
+                },
+                {
+                  "id": "m11-679-684",
+                  "amount": 94,
+                  "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+                },
+                {
+                  "id": "zsd",
+                  "amount": 300,
+                  "reason": "zsd_zone1_complete_directed_base_tariff"
+                }
+              ]
+            },
+            {
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 6090,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "a289",
+                  "amount": 800,
+                  "reason": "A-289 complete ordered three-frame traversal"
+                },
+                {
+                  "id": "m11-15-58",
+                  "amount": 1650,
+                  "reason": "m11_head_ready_direct_pair_at_departure"
+                },
+                {
+                  "id": "m11-58-679",
+                  "amount": 4200,
+                  "reason": "matrix dated selected-route M11 direct pair"
+                },
+                {
+                  "id": "m11-679-684",
+                  "amount": 94,
+                  "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+                },
+                {
+                  "id": "zsd",
+                  "amount": 300,
+                  "reason": "zsd_zone1_complete_directed_base_tariff"
+                }
+              ]
+            }
+          ],
+          "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-48-13-558Z-part19_m4_policy_done.json"
         }
       ]
     },
