@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:43:30.546Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:43:35.901Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,100 +23,10 @@
       "group": "pair-m4-m11"
     }
   },
-  "caseId": "pair-m4-m11-spb-to-voronezh",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "pair-m4-m11-spb-to-voronezh",
-    "startedAt": "2026-10-16T01:42:51.838Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T01-43-03-480Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/2026-10-16T01-43-03-406Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-43-04-039Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-04-574Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m4",
-        "m11"
-      ],
-      "provenRoads": [
-        "zsd",
-        "m11",
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-58-679, zsd, unknown-paid-road",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-58-679, zsd, unknown-paid-road",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 1830,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": null,
-        "reason": "only_one_verified_boundary_crossing"
-      },
-      {
-        "id": "zsd",
-        "amount": null,
-        "reason": "zsd_trip_extends_outside_reviewed_zone1"
-      },
-      {
-        "id": "unknown-paid-road",
-        "amount": null,
-        "reason": "unmapped_selected_route_paid_booth"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:43:04.594Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-42-50-414Z-part16",
-  "parent": "3eb6a2a0cf86558577c2a4eb9acc7a52567ac8ec",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-43-30-546Z-done.json"
+  "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-43-35-901Z-part16",
+  "parent": "4041875237ec55062727ba8808590b4b6512cdc0",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-43-35-901Z-started.json"
 }
