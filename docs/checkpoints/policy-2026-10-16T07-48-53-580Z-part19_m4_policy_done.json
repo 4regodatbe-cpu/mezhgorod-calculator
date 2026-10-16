@@ -1,0 +1,107 @@
+{
+  "at": "2026-10-16T07:48:53.580Z",
+  "phase": "PART19_M4_POLICY_DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 22,
+  "total": 25,
+  "next": "lnr-рубежное-saint-petersburg-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "parent": "752440a873ee40b861f0cfff4b3a4351dc3bd966",
+  "caseId": "dnr-урзуф-saint-petersburg-center",
+  "evaluation": {
+    "caseId": "dnr-урзуф-saint-petersburg-center",
+    "result": "not_reproduced_current_engine",
+    "weekdayAmount": 11264,
+    "weekendAmount": 13134,
+    "m4WeekdayAmount": 5040,
+    "m4WeekendAmount": 6090,
+    "remainingMissing": [],
+    "outputs": [
+      {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-48-52-767Z.json",
+        "sha256": "9439093dd12a9c9610b45efcd04305c50c83622660eb81a381f4a7756d44981f"
+      },
+      {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-48-53-540Z.json",
+        "sha256": "9132b3e916b22295aa90454039d6dd17960ead3cbbfe2ecc31d5da166133e367"
+      }
+    ],
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/2026-10-15T12-15-30-557Z-capture.json.gz",
+    "captureSha256": "07a4aa99f441c97af0cf4a1e776a5e89e1586c75caa8e96536aee59ba3c952a1",
+    "components": [
+      {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "components": [
+          {
+            "id": "m4",
+            "amount": 5040,
+            "reason": "matrix exact selected-route M4 vector"
+          },
+          {
+            "id": "a289",
+            "amount": 800,
+            "reason": "A-289 complete ordered three-frame traversal"
+          },
+          {
+            "id": "m11-15-58",
+            "amount": 1130,
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "amount": 3900,
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "m11-679-684",
+            "amount": 94,
+            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+          },
+          {
+            "id": "zsd",
+            "amount": 300,
+            "reason": "zsd_zone1_complete_directed_base_tariff"
+          }
+        ]
+      },
+      {
+        "departureAt": "2026-10-17T09:00:00+03:00",
+        "components": [
+          {
+            "id": "m4",
+            "amount": 6090,
+            "reason": "matrix exact selected-route M4 vector"
+          },
+          {
+            "id": "a289",
+            "amount": 800,
+            "reason": "A-289 complete ordered three-frame traversal"
+          },
+          {
+            "id": "m11-15-58",
+            "amount": 1650,
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "amount": 4200,
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "m11-679-684",
+            "amount": 94,
+            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+          },
+          {
+            "id": "zsd",
+            "amount": 300,
+            "reason": "zsd_zone1_complete_directed_base_tariff"
+          }
+        ]
+      }
+    ]
+  },
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-53-580Z-part19_m4_policy_done.json"
+}

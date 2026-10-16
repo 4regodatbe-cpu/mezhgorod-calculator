@@ -1388,3 +1388,5 @@ Parent c2d11f9f, working branch/PR14draft only. RED reproduces missing385 on sel
 2026-10-16T07:48:46.959Z: PART19_M4_POLICY_DONE M4 policy 21/25; kherson-старая-збурьевка-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-46-959Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
 
 2026-10-16T07:48:49.596Z: PART19_M4_POLICY_STARTED M4 policy 21/25; dnr-урзуф-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-49-596Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:53.580Z: PART19_M4_POLICY_DONE M4 policy 22/25; dnr-урзуф-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-53-580Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
