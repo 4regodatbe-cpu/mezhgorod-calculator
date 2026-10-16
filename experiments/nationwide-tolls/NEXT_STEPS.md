@@ -1202,3 +1202,5 @@ After persisted connector-focused checkpoint: pnpm build + scoped lint/diff. Do 
 16.10.2026 next: forward replay saved4725/5625 complete; reverse Taman→Moscow raw01-40-05-574Z only, same two profiles; inspect then checkpoint. ../../docs/checkpoints/2026-10-16-part19b-moscow-taman-replay.md.
 
 16.10.2026 CURRENT NEXT:19B DONE bothdirections; nextONLY dnr-гранитное-moscow-center, historical m4_crossing_profile_changes. Existingcapture/current-engine offline15/17Oct09:00MSK, inspect trip-departure-v1 and actual M4 quote; checkpoint+commit+head/tree before nextcase. No new live/no full309rerun. ../../docs/checkpoints/2026-10-16-part19b-taman-moscow-replay.md. Part19ongoing,20notstarted.
+
+16.10.2026 CURRENT NEXT: historicalM4policy1/25checked; ONLY zaporizhzhia-пришиб-moscow-center2/25. Corpus.auditEvidence.capture, offline15/17Oct09:00MSK then checkpoint+head/tree. No otherclass expansion before save. Use NUL-safe Gitpaths. ../../docs/checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md.

@@ -1,5 +1,7 @@
 # Калькулятор «Из А в Б»: часть19, исправления
 
+**CURRENT19C**: historical M4 policy **1/25 checked**, Гранитное→Москва current offline complete2/2,3810/4640₽, trip-departure-v1, no current profile-change finding. No source change. [Checkpoint / NEXT](checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md): nextONLY `zaporizhzhia-пришиб-moscow-center`, two existing-capture profiles then durable save. Parts19ongoing/20planned; A28919A/19B DONE below.
+
 **CURRENT19B DONE**: directed Slavyansk connector fixed, Moscow↔Taman offline priced **4725/5625₽ each direction** for15/17Oct09:00MSK. Both directions complete2/2, no missing responses. **Fullgate676/676**, quote/API/Next/TS/static16/16, focused23/lint5 PASS. Runtime79df66d8. [Reverse/final19B + NEXT STARTED](checkpoints/2026-10-16-part19b-taman-moscow-replay.md), [forward](checkpoints/2026-10-16-part19b-moscow-taman-replay.md). All59 baseline A289 component bindings recovered (57helper-only+2whole-route), NOT59 confirmed total fares. Next single case `dnr-гранитное-moscow-center`: current offline check of historical M4 crossing-policy finding. Other findings pending, **part19 IN PROGRESS /20 planned**. Baseline immutable, trip-departure pricing, unknown≠0. Automatic continuation remains authorized; no main/merge/production/Android.
 
 19B Москва→Тамань whole-engine offline **complete2/2,4725/5625₽** (15/17Oct09:00MSK), A289385 +M44340/5240; unconfirmed tariff, not fresh live. [Replay / reverse STARTED](checkpoints/2026-10-16-part19b-moscow-taman-replay.md). Original baseline preserved.

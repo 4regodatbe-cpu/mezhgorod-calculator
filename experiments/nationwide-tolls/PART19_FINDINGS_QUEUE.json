@@ -19,7 +19,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "dnr-гранитное-moscow-center",
+  "nextCase": "zaporizhzhia-пришиб-moscow-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -52,7 +52,17 @@
         "kherson-старая-збурьевка-saint-petersburg-center"
       ],
       "status": "historical_policy_needs_current_replay",
-      "note": "trip-departure-v1 already implemented; preserve original raw/results and replay before any new source fix"
+      "note": "trip-departure-v1 already implemented; preserve original raw/results and replay before any new source fix",
+      "currentCasesChecked": 1,
+      "currentEvaluations": [
+        {
+          "caseId": "dnr-гранитное-moscow-center",
+          "result": "not_reproduced_current_engine",
+          "weekdayAmount": 3810,
+          "weekendAmount": 4640,
+          "checkpoint": "../../docs/checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md"
+        }
+      ]
     },
     {
       "code": "a289:unpriced",
