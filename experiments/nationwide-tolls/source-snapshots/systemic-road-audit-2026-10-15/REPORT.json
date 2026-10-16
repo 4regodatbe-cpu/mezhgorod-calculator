@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:09:34.378Z",
+  "generatedAt": "2026-10-16T00:10:09.939Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 123,
-    "recordedLiveAttempts": 136,
-    "liveCaptured": 122,
-    "savedLiveSummaries": 122,
+    "distinctCaseAttempts": 124,
+    "recordedLiveAttempts": 137,
+    "liveCaptured": 123,
+    "savedLiveSummaries": 123,
     "missingOrInvalidReferences": 1,
-    "audited": 122,
-    "traceComplete": 122,
-    "sameDateParity": 122
+    "audited": 123,
+    "traceComplete": 123,
+    "sameDateParity": 123
   },
   "regionCounts": {
     "dnr": {
@@ -140,9 +140,9 @@
       "id": "pair-m4-a289",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 1,
-      "audited": 1,
-      "traversalProven": 1,
+      "attempted": 2,
+      "audited": 2,
+      "traversalProven": 2,
       "pricedWeekday": 1,
       "pricedWeekend": 1
     },
@@ -4264,6 +4264,40 @@
       ],
       "routeMeters": 558551,
       "routeSeconds": 29825
+    },
+    {
+      "caseId": "pair-m4-a289-moscow-to-taman",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/live-2026-10-15T09-00-00-03-00-2026-10-16T00-10-06-923Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "a289"
+        ],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        }
+      ],
+      "routeMeters": 1518823,
+      "routeSeconds": 73172
     }
   ],
   "historicalExecutionExceptions": [],
@@ -4797,7 +4831,8 @@
         "zaporizhzhia-васильевка-kazan-center",
         "zaporizhzhia-васильевка-moscow-center",
         "zaporizhzhia-васильевка-saint-petersburg-center",
-        "zaporizhzhia-кушугум-kazan-center"
+        "zaporizhzhia-кушугум-kazan-center",
+        "pair-m4-a289-moscow-to-taman"
       ],
       "occurrences": [
         {
@@ -5717,9 +5752,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-58-07-899Z.json"
+        },
+        {
+          "caseId": "pair-m4-a289-moscow-to-taman",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 selected frame vector has no applicable finished OD price"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/live-2026-10-15T09-00-00-03-00-2026-10-16T00-10-06-923Z.json"
+        },
+        {
+          "caseId": "pair-m4-a289-moscow-to-taman",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 selected frame vector has no applicable finished OD price"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-10-07-518Z.json"
+        },
+        {
+          "caseId": "pair-m4-a289-moscow-to-taman",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 selected frame vector has no applicable finished OD price"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-10-08-101Z.json"
         }
       ],
-      "caseCount": 34
+      "caseCount": 35
     },
     {
       "code": "zsd:unpriced",
