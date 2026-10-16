@@ -19,7 +19,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "kherson-чулаковка-kazan-center",
+  "nextCase": "dnr-урзуф-moscow-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -53,7 +53,7 @@
       ],
       "status": "historical_policy_needs_current_replay",
       "note": "trip-departure-v1 already implemented; preserve original raw/results and replay before any new source fix",
-      "currentCasesChecked": 17,
+      "currentCasesChecked": 18,
       "currentEvaluations": [
         {
           "caseId": "dnr-гранитное-moscow-center",
@@ -997,6 +997,70 @@
             }
           ],
           "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-48-20-249Z-part19_m4_policy_done.json"
+        },
+        {
+          "caseId": "kherson-чулаковка-kazan-center",
+          "result": "not_reproduced_current_engine",
+          "weekdayAmount": 3640,
+          "weekendAmount": 3970,
+          "m4WeekdayAmount": 1990,
+          "m4WeekendAmount": 2320,
+          "remainingMissing": [],
+          "outputs": [
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-48-26-402Z.json",
+              "sha256": "aa325ea149d98775b3215dc4b3109a973f83930ea67c586a76083ba9e99fe0d1"
+            },
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-48-27-112Z.json",
+              "sha256": "63172ddb754462b60dfab14c12bc49243cd82ac13e249401657bb03f49bb8ff5"
+            }
+          ],
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/2026-10-15T12-09-56-015Z-capture.json.gz",
+          "captureSha256": "77a7e9dae5bdeb413c8393220ca8c3911929135161f714fb5f044a67a2e9eed6",
+          "components": [
+            {
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 1990,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "a289",
+                  "amount": 800,
+                  "reason": "A-289 complete ordered three-frame traversal"
+                },
+                {
+                  "id": "m12",
+                  "amount": 850,
+                  "reason": "matrix dated selected-route M12 directed endpoint pair"
+                }
+              ]
+            },
+            {
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 2320,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "a289",
+                  "amount": 800,
+                  "reason": "A-289 complete ordered three-frame traversal"
+                },
+                {
+                  "id": "m12",
+                  "amount": 850,
+                  "reason": "matrix dated selected-route M12 directed endpoint pair"
+                }
+              ]
+            }
+          ],
+          "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-48-27-149Z-part19_m4_policy_done.json"
         }
       ]
     },
