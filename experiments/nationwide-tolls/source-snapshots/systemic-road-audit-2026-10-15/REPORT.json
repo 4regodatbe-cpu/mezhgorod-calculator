@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:28:10.297Z",
+  "generatedAt": "2026-10-16T00:28:32.541Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 167,
-    "recordedLiveAttempts": 180,
-    "liveCaptured": 166,
-    "savedLiveSummaries": 166,
+    "distinctCaseAttempts": 168,
+    "recordedLiveAttempts": 181,
+    "liveCaptured": 167,
+    "savedLiveSummaries": 167,
     "missingOrInvalidReferences": 1,
-    "audited": 166,
-    "traceComplete": 166,
-    "sameDateParity": 166
+    "audited": 167,
+    "traceComplete": 167,
+    "sameDateParity": 167
   },
   "regionCounts": {
     "dnr": {
@@ -120,8 +120,8 @@
       "id": "single-odintsovo",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 0,
-      "audited": 0,
+      "attempted": 1,
+      "audited": 1,
       "traversalProven": 0,
       "pricedWeekday": 0,
       "pricedWeekend": 0
@@ -5721,6 +5721,38 @@
       ],
       "routeMeters": 835029,
       "routeSeconds": 41229
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-moscow",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-28-29-794Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "odintsovo"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "odintsovo"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 53740,
+      "routeSeconds": 3454
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8980,7 +9012,8 @@
         "single-m11-moscow-to-torzhok",
         "single-m11-moscow-to-tver",
         "single-m11-tver-to-moscow",
-        "single-m3-kaluga-to-moscow"
+        "single-m3-kaluga-to-moscow",
+        "single-odintsovo-golitsyno-to-moscow"
       ],
       "occurrences": [
         {
@@ -9468,9 +9501,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-22-592Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_edges"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-28-29-794Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_edges"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-28-30-137Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-moscow",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_edges"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-28-30-467Z.json"
         }
       ],
-      "caseCount": 18
+      "caseCount": 19
     },
     {
       "code": "expected-road-not-proven",
@@ -9495,7 +9555,8 @@
         "single-khabarovsk-smidovich-to-nekrasovka",
         "single-khabarovsk-smidovich-to-vyazemsky",
         "single-khabarovsk-vyazemsky-to-smidovich",
-        "single-m12-kazan-to-vladimir"
+        "single-m12-kazan-to-vladimir",
+        "single-odintsovo-golitsyno-to-moscow"
       ],
       "occurrences": [
         {
@@ -9850,9 +9911,23 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T00-22-43-151Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-moscow",
+          "detail": {
+            "expectedRoads": [
+              "odintsovo"
+            ],
+            "provenRoads": [],
+            "missingExpectedRoads": [
+              "odintsovo"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-28-29-794Z.json"
         }
       ],
-      "caseCount": 21
+      "caseCount": 22
     },
     {
       "code": "m11-58-679:unpriced",
