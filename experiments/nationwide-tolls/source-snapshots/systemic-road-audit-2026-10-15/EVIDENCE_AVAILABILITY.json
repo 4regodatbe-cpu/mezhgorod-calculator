@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 124,
-  "rawCaptureCaseCount": 122,
+  "rawCaptureCount": 125,
+  "rawCaptureCaseCount": 123,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -10922,6 +10922,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-09-28-722Z.json",
+      "caseId": "pair-m4-a289-kerch-to-rostov",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-16T00-09-31-722Z.json",
+          "exists": true,
+          "bytes": 5648,
+          "sha256": "1067ead9b3d0af0d8148c5e251b44fcc9c478b91849569336e6c4956845cb05f",
+          "gitBlobSha": "4b023ec69f2ede490ebc99ac3d15865bb927c972",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-rostov/2026-10-16T00-09-31-679Z-capture.json.gz",
+          "exists": true,
+          "bytes": 288033,
+          "sha256": "16dd2abb0d06fa842647b0535697488db7d1a3a1b88cd344adbd0a5e1e5cd6e6",
+          "gitBlobSha": "aa760e92d0d9193f08719ed53947ef3af34070c6",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 7
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-rostov/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-09-32-145Z.json",
+          "exists": true,
+          "bytes": 5726,
+          "sha256": "511e228ea5a3679d53387c39b8997bee23a137b34d494357c68166ce9efae5fe",
+          "gitBlobSha": "8deeca0413415146d9219835ecd16034725f5ac2",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-rostov/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-09-32-569Z.json",
+          "exists": true,
+          "bytes": 5728,
+          "sha256": "ae309731c0599324c95cb6f56db9814fb402ce4c2590eb98c88781f9fb135d2f",
+          "gitBlobSha": "e42e9419d114f9b41f217bdf2a3f6a2b5f84f81a",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -12057,6 +12102,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 5
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-rostov/2026-10-16T00-09-31-679Z-capture.json.gz",
+      "exists": true,
+      "bytes": 288033,
+      "sha256": "16dd2abb0d06fa842647b0535697488db7d1a3a1b88cd344adbd0a5e1e5cd6e6",
+      "gitBlobSha": "aa760e92d0d9193f08719ed53947ef3af34070c6",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 7
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-kazan-center/2026-10-15T23-52-45-140Z-capture.json.gz",
