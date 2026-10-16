@@ -3667,7 +3667,22 @@
         "a289"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T01-37-51-305Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/2026-10-16T01-37-51-243Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 992359,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-37-46-336Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T01-37-51-305Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/2026-10-16T01-37-51-243Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-37-51-788Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-37-52-256Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "pair-m4-m11-krasnodar-to-spb",
