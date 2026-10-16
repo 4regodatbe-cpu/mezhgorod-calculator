@@ -1,14 +1,14 @@
 {
-  "at": "2026-10-16T17:21:33.811Z",
-  "phase": "PART19_ZSD_CASE70_REPLAY_DONE",
+  "at": "2026-10-16T17:23:39.495Z",
+  "phase": "PART19_ZSD_CASE70_SCOPE_DIAGNOSIS_DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "ZSD case 70 saved-capture replay under two offline date profiles; not tariff confirmation",
+  "scope": "ZSD case 70 distinct-scope diagnosis for combined ZSD/unknown-paid-road trace; not tariff confirmation",
   "checked": 70,
   "total": 76,
-  "next": "Diagnose case 70 ZSD scope before starting another route; retain unknown if combined ZSD/unknown-road scope is not established",
+  "next": "Case 71 triple-m11-ckad-m12-arzamas-to-spb; replay saved capture under two offline date profiles",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "19855a5275bddba6684deea3bb9548057cf85088",
-  "nextFinding": "zsd:single-zsd-sest-to-blag",
-  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-21-33-810Z.md"
+  "parent": "f4725437d8caff0150ae64d543633e773b8a0b3c",
+  "nextFinding": "zsd:triple-m11-ckad-m12-arzamas-to-spb",
+  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-23-39-494Z.md"
 }

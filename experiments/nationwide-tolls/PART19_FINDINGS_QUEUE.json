@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": "triple-m11-ckad-m12-arzamas-to-spb",
-  "nextAction": "Diagnose current ZSD scope using --diagnose before the nextcase",
+  "nextAction": "ZSD nextcase triple-m11-ckad-m12-arzamas-to-spb; --next; savedcapture twoofflineprofiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -3147,14 +3147,16 @@
       },
       {
         "caseId": "single-zsd-sest-to-blag",
-        "status": "current_unknown_needs_distinct_scope_review",
+        "status": "source_gated_distinct_finished_zsd_scope",
         "sameReviewedScopeCase": null,
         "missing": [
           "unknown-paid-road",
           "zsd"
         ],
         "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T17-21-33-810Z.md",
-        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T17-21-33-810Z.json"
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T17-21-33-810Z.json",
+        "scopeCheckpoint": "../../docs/checkpoints/zsd-2026-10-16T17-23-39-494Z.md",
+        "scopeEvidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T17-23-39-494Z.json"
       }
     ],
     "checked": 70,
