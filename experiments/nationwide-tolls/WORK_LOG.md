@@ -753,3 +753,5 @@ BLOCKED: автоматическая проверка отклонила обе
 2026-10-16T00:53:05.163Z: automatic queue STARTED; 155/155,24/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-05-163Z-started.json). kherson-таврийск-kerch-center
 
 2026-10-16T00:53:28.811Z: automatic queue DONE; 155/155,25/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-28-811Z-done.json). kherson-таврийск-kerch-center
+
+2026-10-16T00:53:32.922Z: automatic queue STARTED; 155/155,25/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-32-922Z-started.json). kherson-таврийск-moscow-center
