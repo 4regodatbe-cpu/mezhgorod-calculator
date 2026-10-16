@@ -33,8 +33,8 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "triple-m4-m11-zsd-sest-to-rostov",
-  "nextAction": "ZSD nextcase triple-m4-m11-zsd-sest-to-rostov; --next; savedcapture twoofflineprofiles",
+  "nextCase": "triple-m4-m11-zsd-voronezh-to-prim",
+  "nextAction": "ZSD nextcase triple-m4-m11-zsd-voronezh-to-prim; --next; savedcapture twoofflineprofiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2842,9 +2842,19 @@
         ],
         "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-32-29-470Z.md",
         "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-32-29-470Z.json"
+      },
+      {
+        "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+        "status": "source_gated_same_reviewed_zsd_scope",
+        "sameReviewedScopeCase": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+        "missing": [
+          "zsd"
+        ],
+        "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-33-00-907Z.md",
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-33-00-907Z.json"
       }
     ],
-    "checked": 42,
+    "checked": 43,
     "total": 76,
     "identityFix": {
       "status": "validated",
