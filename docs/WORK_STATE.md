@@ -14,11 +14,11 @@ Parts1–18:155/155+154/154, frozenREPORT340/340.19A/B A28957helper-only+2wholec
 
 [22-casequeue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), latestper-caseevidence/checkpoints inqueue/log. Allcases10–22 twoofflineprofiles separatelysaved/readback; raw/live/olderreplays/REPORTuntouched. Fix4811a106 northboundcompound416+460relocated36keys/no newfares. Prior full687/687+quote/API/Next/TS/static16/16/focused26PASS remainshistorical; no runtimecodechange/newgate thisturn. OrdinaryCJS-lint failure andexplicitexception documented, notsilentlypassed.
 
-## NEXT STARTED — positive no-charge proof review
+## NEXT STARTED — ZSD first case
 
-Revisit exactshortM4scope case1 dnr-гранитное-kazan-center: decide whether primaryfullway-node geometry/facilitymap+operatoropenrule establishes positive no-charge proof. If sufficient, implement reviewedroad-scopeguard (no benchmarkrouteIDs) requiring same-selectedcompleteValhalla/boothcoverage, exact2ways1182567076+31984600/directedgeometry,0booths+0knownM4candidates; wholezero onlywithnoothermissingproducts, preserveauditraw and avoidlatefallback/APIcontradictions. Focused adversarialtests+fullgate and6separatecasecheckpoints before accepting any0/FREE. If proofstillinsufficient, keep6unknown and continueZSDfirstcase dnr-гранитное-saint-petersburg-center. Parts19ongoing/20planned.
+Short-M4 positive-proof review DONE; six unknowns retained pending current independent physical collection-scope applicability. General open-system rule confirmed in PDF, but effectiveFrom remains unknown and exact current operator scope not independently bound. No zero/free guard implemented. [Review](checkpoints/2026-10-16-1358-short-m4-proof-review.md).
 
-[Exactprimaryrule/APIreview](checkpoints/2026-10-16-125719-m4-open-rule-proof-and-api-review.md). OperatorPDF receipt-rules SHAa3ed4b13 section2.1 page4 (correctedfrompage3), primarygeneralopenbillingrulefound. This is newevidence, NOT an implementedfreequote. Needjudgepositivephysicalscopeproof before anycodechange. API0 currentlyrequiresfreevalidation andlatefallbackmayreblock; do notskip unrelatedunknownproducts. Eight545gatesareseparate, stillunresolved.
+Next ONLY dnr-гранитное-saint-petersburg-center existing capture from corpus.json: frozen dependencies, offline15/17Oct09:00MSK replay, then ZSD missing-scope diagnosis. Completed22 M4 and25 policy cases must not be rerun. Fresh checkout calculator-resume at ecd165c2; historical687 not rerun.
 
 Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. Ifcontextends, startfromthisspecificNEXT, notoldrecovery/309live/25policyqueue. One writer; active/queuedjob→no writes, TIME_LIMITresumable. Unknown≠0,subtotal≠total, wholetripdeparturepricing; cross-roadvectorsdeferred. No main/merge/Production/Android/messages. Autocontinuation remainsenabled untilall20done.
 
