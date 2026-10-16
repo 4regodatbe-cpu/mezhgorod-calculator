@@ -6,7 +6,7 @@
 
 Части1–18:155/155+154/154, frozenREPORT340/340.19A/19B A289:57helper-only+2whole-routecases, не59полныхтарифов.19Cpolicy25/25DONE:20wholeofflinequotes/5unknownZSD.
 
-19D m4:unpriced9/22 replaychecked:
+19D m4:unpriced10/22 replaychecked:
 - **4wholeofflinequotes recovered**: Лисичанск/Рубежное/Бахмут/Краматорск→Москва, каждый1830/2300₽15/17окт09:00МСК, unconfirmed estimate. [Лисичанск](checkpoints/2026-10-16-part19d-lisichansk-moscow-recovered.md), [case4](checkpoints/2026-10-16-part19d-case4-replay.md), [case5](checkpoints/2026-10-16-part19d-case5-replay.md), [case6](checkpoints/2026-10-16-part19d-case6-replay.md).
 - Fix4811a106: compilercombined416+460 northbound atomicorder;36ключейперенесены/безновыхцен. Не36готовыхмаршрутов. Rawsourcechainsнепереписаны.
 - **1M4component recovered** case8 Воронеж→Приморский:1830/2300, но wholeunknown ZSD+unmappedbooth; не выдаватьsubtotalзаитог. [Разбор](checkpoints/2026-10-16-part19d-case8-component-recovered.md).
@@ -17,7 +17,7 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 
 ## NEXT STARTED автоматически
 
-**NEXT STARTED** Case10 pair-m4-a289-voronezh-to-taman capture2026-10-16T00-11-20-485Z-capture.json.gz; run twoofflineprofiles15/17Oct09:00MSK, verifySHA/provider/integrity/departure/M4component; save separately before nextcase. [Checkpoint](checkpoints/2026-10-16-123215-case10-frozen-tools-ready.md).
+**NEXT STARTED** Next pair-m4-m11-voronezh-to-spb, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible. [Checkpoint](checkpoints/2026-10-16-123435-part19d-current-case10.md).
 
 Часть19 IN PROGRESS,20 PLANNED; прочиеfindingclasses неполностьюразобраны. Одинwriter; active/queuedjob→неписатьвветку. TIME_LIMITвозобновляем. Raw/live/baseline/historyсохранять. Replay≠freshlive/подтверждённыйтариф. Unknown≠0,subtotal≠итог, wholetripпоотправлению, междорожныевекторыотложены. No main/merge/Production/Android/messages. Автопродолжение включено, неотключатьпокавсе20незавершены.
 
@@ -27,4 +27,4 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 
 16.10.2026 current checkout refreshed to actuala11dcf46, GitHub jobSUCCESS rechecked. [Fresh-checkout/STARTED](checkpoints/2026-10-16-1222-fresh-checkout-case9-resume.md): samecase9 primaryPDF+selected545geometry. Prior687gate historical; no runtime change. Trace chunk indices are not selectedroute indices.
 
-Latest checkpoint: [case10-frozen-tools-ready](checkpoints/2026-10-16-123215-case10-frozen-tools-ready.md). Dependency prerequisite DONE: pnpm install --frozen-lockfile exit0 in1.1s, pnpm11.25.0; tracked worktree remainedclean, lockfileunchanged. No newtest/build claim, previous687gate historical. No sourcepricechange.
+Latest checkpoint: [part19d-current-case10](checkpoints/2026-10-16-123435-part19d-current-case10.md). Case10/22 pair-m4-a289-voronezh-to-taman DONE: source_gated_physical545_scope_unresolved, providerOSRM/1025458m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal.
