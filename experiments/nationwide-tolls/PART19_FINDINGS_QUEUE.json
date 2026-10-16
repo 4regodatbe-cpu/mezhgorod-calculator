@@ -26,8 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "lnr-марковка-saint-petersburg-center",
-  "nextAction": "ZSD next distinct case lnr-марковка-saint-petersburg-center: existing capture twoofflineprofiles; compare exact selected scope",
+  "nextCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "nextAction": "ZSD next distinct case max-chain-m12-ckad-m11-zsd-arzamas-to-prim: existing capture twoofflineprofiles; compare exact selected scope",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2493,9 +2493,18 @@
         "missing": [
           "zsd"
         ]
+      },
+      {
+        "caseId": "lnr-марковка-saint-petersburg-center",
+        "status": "source_gated_same_exact_way_set",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-141021-zsd-case12.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-141021-zsd-case12.json",
+        "missing": [
+          "zsd"
+        ]
       }
     ],
-    "checked": 11,
+    "checked": 12,
     "total": 76
   }
 }
