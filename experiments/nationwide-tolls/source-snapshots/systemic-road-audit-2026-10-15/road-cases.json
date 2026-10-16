@@ -3390,7 +3390,22 @@
         "odintsovo"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/live-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-629Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/2026-10-16T02-09-24-620Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 43941,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-09-22-534Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/live-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-629Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/2026-10-16T02-09-24-620Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-973Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-09-25-301Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-odintsovo-golitsyno-to-rublevo",

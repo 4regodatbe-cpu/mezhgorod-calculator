@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 327,
-  "rawCaptureCaseCount": 324,
+  "rawCaptureCount": 328,
+  "rawCaptureCaseCount": 325,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -22529,6 +22529,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-09-22-534Z.json",
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/live-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-629Z.json",
+          "exists": true,
+          "bytes": 4525,
+          "sha256": "12dd51e43b843f1664563389d014d6f46861565e09d08717e5c03af9abdf2195",
+          "gitBlobSha": "c70949de22cd0e47a2e9010044547246e0e73369",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/2026-10-16T02-09-24-620Z-capture.json.gz",
+          "exists": true,
+          "bytes": 44735,
+          "sha256": "14ff3bd2aa0daa55de044e69757be17b2632559411ebad074b8b9a4098981522",
+          "gitBlobSha": "f94151c874da6cb4a01afb48b4ae9daf56590d56",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 4
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-973Z.json",
+          "exists": true,
+          "bytes": 4603,
+          "sha256": "33e91f67c699b20760a35195ef2fe2e686d710f2bd0b00e9b216b2e365722811",
+          "gitBlobSha": "a5bf1cc6500eca903c0e525feb98b698971190b5",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-09-25-301Z.json",
+          "exists": true,
+          "bytes": 4603,
+          "sha256": "a81dfa1eae4d1f1277312dc4b45c3ca966ae320ff9ab983e615f2db3a18d0976",
+          "gitBlobSha": "bbf04b11459402f3883e5e97e6f970d0809843cd",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -25508,6 +25553,17 @@
       "bytes": 65290,
       "sha256": "b3f872bc740351208355cca3da0a05bb0e133175e341c0f5ca24ac8cb3378d74",
       "gitBlobSha": "8cedb80ffec243fa1d2365ce56efc56af204037a",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 4
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/2026-10-16T02-09-24-620Z-capture.json.gz",
+      "exists": true,
+      "bytes": 44735,
+      "sha256": "14ff3bd2aa0daa55de044e69757be17b2632559411ebad074b8b9a4098981522",
+      "gitBlobSha": "f94151c874da6cb4a01afb48b4ae9daf56590d56",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,
