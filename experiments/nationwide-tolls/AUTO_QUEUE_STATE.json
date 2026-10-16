@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T07:48:33.733Z",
-  "phase": "PART19_M4_POLICY_DONE",
+  "at": "2026-10-16T07:48:36.281Z",
+  "phase": "PART19_M4_POLICY_STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
   "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
@@ -8,60 +8,14 @@
   "total": 25,
   "next": "zaporizhzhia-гуляйполе-moscow-center",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "2df24953829878b1b0ec95e98561c792cc1f76fb",
-  "caseId": "dnr-урзуф-moscow-center",
-  "evaluation": {
-    "caseId": "dnr-урзуф-moscow-center",
-    "result": "not_reproduced_current_engine",
-    "weekdayAmount": 5840,
-    "weekendAmount": 6890,
-    "m4WeekdayAmount": 5040,
-    "m4WeekendAmount": 6090,
-    "remainingMissing": [],
-    "outputs": [
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-48-33-008Z.json",
-        "sha256": "48735d1596fcee48b6b7109f2bd07d52fc7673530a4ed9163f572c6df3b3cf98"
-      },
-      {
-        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-48-33-694Z.json",
-        "sha256": "322f18267b82c12bd94ebb159aafcc17342a91c93d9f6dc72ebc5852973a1b44"
-      }
-    ],
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/2026-10-15T12-12-21-705Z-capture.json.gz",
-    "captureSha256": "09883e42fd76c7fe9f90e51c35c18d45ba76d368e0fde1baee9bd12d9e2f91d5",
-    "components": [
-      {
-        "departureAt": "2026-10-15T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 5040,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "a289",
-            "amount": 800,
-            "reason": "A-289 complete ordered three-frame traversal"
-          }
-        ]
-      },
-      {
-        "departureAt": "2026-10-17T09:00:00+03:00",
-        "components": [
-          {
-            "id": "m4",
-            "amount": 6090,
-            "reason": "matrix exact selected-route M4 vector"
-          },
-          {
-            "id": "a289",
-            "amount": 800,
-            "reason": "A-289 complete ordered three-frame traversal"
-          }
-        ]
-      }
-    ]
-  },
-  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-33-733Z-part19_m4_policy_done.json"
+  "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/2026-10-15T18-16-40-411Z-capture.json.gz",
+  "captureSha256": "c76a9a1ade47e032e1a510fcabed7c762b3cabf691fcf539501272acda2a83ed",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "077195d0719944b7616fb07c5c3bc0d39a1421c7",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-48-36-281Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-36-281Z-part19_m4_policy_started.json"
 }
