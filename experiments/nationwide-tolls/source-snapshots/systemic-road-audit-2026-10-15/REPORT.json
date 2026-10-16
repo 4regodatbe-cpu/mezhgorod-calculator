@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:21:35.912Z",
+  "generatedAt": "2026-10-16T01:22:16.788Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 251,
-    "recordedLiveAttempts": 265,
-    "liveCaptured": 251,
-    "savedLiveSummaries": 251,
+    "distinctCaseAttempts": 252,
+    "recordedLiveAttempts": 266,
+    "liveCaptured": 252,
+    "savedLiveSummaries": 252,
     "missingOrInvalidReferences": 0,
-    "audited": 251,
-    "traceComplete": 251,
-    "sameDateParity": 251
+    "audited": 252,
+    "traceComplete": 252,
+    "sameDateParity": 252
   },
   "regionCounts": {
     "dnr": {
@@ -220,9 +220,9 @@
       "id": "max-chain-m12-ckad-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
-      "traversalProven": 5,
+      "attempted": 7,
+      "audited": 7,
+      "traversalProven": 6,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     }
@@ -8533,6 +8533,44 @@
       ],
       "routeMeters": 1380434,
       "routeSeconds": 53656
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-22-12-616Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12",
+          "ckad",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11",
+          "m12",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1161885,
+      "routeSeconds": 44435
     }
   ],
   "historicalExecutionExceptions": [],
@@ -10708,7 +10746,8 @@
         "lnr-сорокино-saint-petersburg-center",
         "lnr-старобельск-saint-petersburg-center",
         "zaporizhzhia-розовка-saint-petersburg-center",
-        "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim"
+        "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+        "max-chain-m12-ckad-m11-zsd-prim-to-arzamas"
       ],
       "occurrences": [
         {
@@ -12114,9 +12153,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-21-32-676Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-22-12-616Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-22-13-099Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-22-13-565Z.json"
         }
       ],
-      "caseCount": 52
+      "caseCount": 53
     },
     {
       "code": "m4:unpriced",
@@ -12797,7 +12863,8 @@
         "triple-m11-ckad-m12-spb-to-kazan",
         "triple-m11-ckad-m12-torzhok-to-kazan",
         "triple-m11-ckad-m12-tver-to-murom",
-        "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim"
+        "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+        "max-chain-m12-ckad-m11-zsd-prim-to-arzamas"
       ],
       "occurrences": [
         {
@@ -13258,9 +13325,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-21-32-676Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-22-12-616Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-22-13-099Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-22-13-565Z.json"
         }
       ],
-      "caseCount": 17
+      "caseCount": 18
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -13289,7 +13383,8 @@
         "triple-m11-ckad-m12-torzhok-to-kazan",
         "triple-m11-ckad-m12-tver-to-murom",
         "triple-m4-m11-zsd-voronezh-to-prim",
-        "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim"
+        "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+        "max-chain-m12-ckad-m11-zsd-prim-to-arzamas"
       ],
       "occurrences": [
         {
@@ -13966,9 +14061,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-21-32-676Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-22-12-616Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-22-13-099Z.json"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-22-13-565Z.json"
         }
       ],
-      "caseCount": 25
+      "caseCount": 26
     },
     {
       "code": "expected-road-not-proven",
