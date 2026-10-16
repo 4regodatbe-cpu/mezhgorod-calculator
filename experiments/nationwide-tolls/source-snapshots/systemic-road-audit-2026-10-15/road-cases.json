@@ -4722,7 +4722,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-01-05-057Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/2026-10-16T00-01-04-945Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2096260,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-00-45-989Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-01-05-057Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/2026-10-16T00-01-04-945Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-01-05-727Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-01-06-382Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
