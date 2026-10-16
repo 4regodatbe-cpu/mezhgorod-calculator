@@ -1405,3 +1405,5 @@ Decision: retain six source-gated unknowns; do not implement a route/way allowli
 NEXT STARTED: ZSD first case dnr-гранитное-saint-petersburg-center, locate exact existing capture from corpus.json, restore frozen dependencies, offline replay15/17Oct09:00MSK, preserve raw and inspect missing ZSD scope. Do not rerun completed22 M4 or25 policy cases. Save each replay case before continuing. Parts19 ongoing/20 planned; no main/merge/Production/Android changes.
 
 Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
+
+16.10.2026 frozen dependencies DONE exit0/24.2s, lock unchanged; ZSD Granitnoe→SPB exact saved-capture two-profile replay STARTED. See ../../docs/checkpoints/2026-10-16-1401-zsd-dependencies-ready.md

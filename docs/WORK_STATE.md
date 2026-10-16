@@ -23,3 +23,5 @@ Next ONLY dnr-гранитное-saint-petersburg-center existing capture from c
 Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. Ifcontextends, startfromthisspecificNEXT, notoldrecovery/309live/25policyqueue. One writer; active/queuedjob→no writes, TIME_LIMITresumable. Unknown≠0,subtotal≠total, wholetripdeparturepricing; cross-roadvectorsdeferred. No main/merge/Production/Android/messages. Autocontinuation remainsenabled untilall20done.
 
 [AGENTS](../AGENTS.md) · [Protocol](CHECKPOINT_PROTOCOL.md) · [Plan](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md).
+
+16.10.2026 frozen dependencies DONE exit0/24.2s, lock unchanged; ZSD Granitnoe→SPB exact saved-capture two-profile replay STARTED. See checkpoints/2026-10-16-1401-zsd-dependencies-ready.md
