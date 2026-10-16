@@ -425,3 +425,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 2026-10-16T00:22:37.604Z: automatic queue STARTED; 121/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-37-604Z-started.json). single-m12-kazan-to-vladimir
 
 2026-10-16T00:22:58.761Z: automatic queue DONE; 122/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-58-761Z-done.json). single-m12-kazan-to-vladimir
+
+2026-10-16T00:23:02.634Z: automatic queue STARTED; 122/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-02-634Z-started.json). single-m12-moscow-to-kazan
