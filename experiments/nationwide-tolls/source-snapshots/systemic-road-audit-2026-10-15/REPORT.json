@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:05:19.022Z",
+  "generatedAt": "2026-10-16T00:05:42.104Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 112,
-    "recordedLiveAttempts": 125,
-    "liveCaptured": 111,
-    "savedLiveSummaries": 111,
+    "distinctCaseAttempts": 113,
+    "recordedLiveAttempts": 126,
+    "liveCaptured": 112,
+    "savedLiveSummaries": 112,
     "missingOrInvalidReferences": 1,
-    "audited": 111,
-    "traceComplete": 111,
-    "sameDateParity": 111
+    "audited": 112,
+    "traceComplete": 112,
+    "sameDateParity": 112
   },
   "regionCounts": {
     "dnr": {
@@ -160,9 +160,9 @@
       "id": "pair-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 0,
-      "audited": 0,
-      "traversalProven": 0,
+      "attempted": 1,
+      "audited": 1,
+      "traversalProven": 1,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -3884,6 +3884,40 @@
       ],
       "routeMeters": 354824,
       "routeSeconds": 13566
+    },
+    {
+      "caseId": "pair-m11-zsd-moscow-to-prim",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T00-05-39-511Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 722118,
+      "routeSeconds": 24816
     }
   ],
   "historicalExecutionExceptions": [],
@@ -5369,7 +5403,8 @@
         "pair-m11-ckad-domodedovo-to-spb",
         "pair-m11-ckad-noginsk-to-spb",
         "pair-m11-ckad-spb-to-domodedovo",
-        "pair-m11-ckad-spb-to-noginsk"
+        "pair-m11-ckad-spb-to-noginsk",
+        "pair-m11-zsd-moscow-to-prim"
       ],
       "occurrences": [
         {
@@ -6073,9 +6108,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-55-516Z.json"
+        },
+        {
+          "caseId": "pair-m11-zsd-moscow-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T00-05-39-511Z.json"
+        },
+        {
+          "caseId": "pair-m11-zsd-moscow-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-05-39-936Z.json"
+        },
+        {
+          "caseId": "pair-m11-zsd-moscow-to-prim",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-05-40-345Z.json"
         }
       ],
-      "caseCount": 26
+      "caseCount": 27
     },
     {
       "code": "m4:unpriced",
@@ -6653,7 +6715,8 @@
         "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
         "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
         "pair-m11-ckad-spb-to-domodedovo",
-        "pair-m11-ckad-torzhok-to-ramenskoe"
+        "pair-m11-ckad-torzhok-to-ramenskoe",
+        "pair-m11-zsd-moscow-to-prim"
       ],
       "occurrences": [
         {
@@ -6763,9 +6826,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-05-17-287Z.json"
+        },
+        {
+          "caseId": "pair-m11-zsd-moscow-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T00-05-39-511Z.json"
+        },
+        {
+          "caseId": "pair-m11-zsd-moscow-to-prim",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-05-39-936Z.json"
+        },
+        {
+          "caseId": "pair-m11-zsd-moscow-to-prim",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-05-40-345Z.json"
         }
       ],
-      "caseCount": 4
+      "caseCount": 5
     },
     {
       "code": "expected-road-not-proven",
