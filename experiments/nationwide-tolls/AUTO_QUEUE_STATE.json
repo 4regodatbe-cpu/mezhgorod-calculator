@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:45:41.134Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:45:46.512Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,76 +23,10 @@
       "group": "single-a289"
     }
   },
-  "caseId": "single-a289-anapa-to-krasnodar",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-a289-anapa-to-krasnodar",
-    "startedAt": "2026-10-16T01:45:12.174Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-anapa-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-45-14-248Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-anapa-to-krasnodar/2026-10-16T01-45-14-228Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-45-14-623Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-45-14-974Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "a289"
-      ],
-      "provenRoads": [
-        "a289"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": 620,
-      "weekdayAmount": 620,
-      "weekendAmount": 620,
-      "period": "все дни",
-      "segments": [
-        "А-289: AnapaExit → Maryanskaya: 620 ₽"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 620,
-      "weekdayAmount": 620,
-      "weekendAmount": 620,
-      "period": "все дни",
-      "segments": [
-        "А-289: AnapaExit → Maryanskaya: 620 ₽"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "a289",
-        "amount": 620,
-        "reason": "A-289 Anapa exit inferred from two selected-route frames; estimate"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:45:14.993Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-45-10-639Z-part16",
-  "parent": "89a747b9c2abd5b073464b41c03a0a50f1a7f8e2",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-45-41-134Z-done.json"
+  "caseId": "single-a289-krasnodar-to-anapa",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-45-46-511Z-part16",
+  "parent": "3c74502e56a1fa26e2ccf028515f62446e62efd5",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-45-46-512Z-started.json"
 }
