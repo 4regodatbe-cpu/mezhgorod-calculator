@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:24:37.344Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:24:40.949Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,85 +23,10 @@
       "group": "single-m3"
     }
   },
-  "caseId": "single-m3-kaluga-to-moscow",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-m3-kaluga-to-moscow",
-    "startedAt": "2026-10-16T00:24:19.370Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-21-874Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/2026-10-16T00-24-21-855Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-24-22-237Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-22-592Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m3"
-      ],
-      "provenRoads": [
-        "m3"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m3, unknown-paid-road",
-        "m3: m3_engine_not_yet_composed",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m3, unknown-paid-road",
-        "m3: m3_engine_not_yet_composed",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m3",
-        "amount": null,
-        "reason": "m3_engine_not_yet_composed"
-      },
-      {
-        "id": "unknown-paid-road",
-        "amount": null,
-        "reason": "unmapped_selected_route_paid_booth"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:24:22.608Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-24-17-863Z-part9",
-  "parent": "3067560e7c540f776eca519c06807ab2a2608a3f",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-24-37-344Z-done.json"
+  "caseId": "single-m3-moscow-to-kaluga",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-24-40-949Z-part9",
+  "parent": "d9147be98cf131701a73e71f9c336a7b9113dc01",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-24-40-949Z-started.json"
 }
