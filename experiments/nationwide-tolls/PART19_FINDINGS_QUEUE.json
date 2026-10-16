@@ -24,10 +24,17 @@
       "componentCasesRecovered": 2,
       "wholeRouteProfilesReplayed": 4,
       "scope": "Existing selected captures, not new live or confirmed operator fares"
+    },
+    {
+      "id": "zsd-planernaya-exact-booth-identity",
+      "sourceCommit": "e4c1b8b02118f7c96b3aa6440df7a0f545df3c88",
+      "scope": "exact primaryconfirmed node1766158781 mapsZSD; no fare activated",
+      "validationCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md",
+      "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
-  "nextAction": "Fix exact independently proven ZSD unnamed Planernaya booth identity1766158781; focused adversarial/source tests then fullgate and samecase replay",
+  "nextCase": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+  "nextAction": "ZSD case14 Kazan→Sestroretsk exact savedcapture twoofflineprofiles and distinct physicalscope diagnosis",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2505,24 +2512,27 @@
       },
       {
         "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
-        "status": "current_unknown_needs_distinct_scope_review",
+        "status": "zsd_identity_recovered_other_products_unknown",
         "checkpoint": "../../docs/checkpoints/2026-10-16-141040-zsd-case13.md",
         "evidence": "../../docs/checkpoints/evidence/2026-10-16-141040-zsd-case13.json",
         "missing": [
           "ckad",
           "m11-15-58",
-          "unknown-paid-road",
           "zsd"
-        ]
+        ],
+        "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
       }
     ],
     "checked": 13,
     "total": 76,
     "identityFix": {
-      "status": "started",
+      "status": "validated",
       "osmNodeId": "1766158781",
       "checkpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-identity-proof.md",
-      "evidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-planernaya-identity-proof.json"
+      "evidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-planernaya-identity-proof.json",
+      "sourceCommit": "e4c1b8b02118f7c96b3aa6440df7a0f545df3c88",
+      "fullgateCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md",
+      "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   }
 }
