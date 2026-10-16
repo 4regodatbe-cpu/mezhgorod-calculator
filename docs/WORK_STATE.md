@@ -1,6 +1,6 @@
 # Калькулятор «Из А в Б»: текущее состояние
 
-16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Последний проверенный remote PR head `bc600a9eb2ef75dbedd22e7cd8e1ac3ad3e5edce`, tree `850f16287a9bdd4cea86fac46c250d11be8ad927`; M11 diagnosis started there. Первый case `max-chain-m12-ckad-m11-zsd-arzamas-to-prim` reviewed from complete saved capture and paired profiles; M11 15–58 entry boundary remains unbound and unknown is retained. Seven cases remain. Checkout `calculator-run`; сверять exact tree/path SHA при публикации.
+16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Последний проверенный remote PR head `574f2c5686ad9b3900cedc7ca18663456b409566`, tree `cafefbb0afc922a4f940fbcda16295f83bfca57b`. M11 case1 `max-chain-m12-ckad-m11-zsd-arzamas-to-prim` source-gated from complete saved capture and paired profiles; M11 15–58 entry boundary remains unbound and unknown is retained. Case2 `max-chain-m12-ckad-m11-zsd-kazan-to-sest` STARTED with saved capture + 15/17 Oct profiles and exact hashes in [checkpoint](checkpoints/2026-10-16-part19-m11-case2-boundary-started.md); seven cases remain after this case is completed. Checkout `calculator-run`; сверять exact tree/path SHA при публикации.
 
 ## Прогресс
 
@@ -18,8 +18,8 @@
 
 ## NEXT STARTED
 
-**Review finding `m11_partial_head_entry_boundary_unresolved`: inspect saved evidence, source-gate unknown unless exact directed entry-boundary evidence closes it**
+**Review finding `m11_partial_head_entry_boundary_unresolved`: case2 evidence review STARTED; source-gate unknown unless exact directed entry-boundary evidence closes it**
 
 ZSD review **76/76** and M4 finding **22/22** classified source-gated because exact collection spans are not independently bound. [M4 checkpoint](checkpoints/2026-10-16-part19-m4-unpriced-classification.md). Overall plan **90% (18/20 completed parts)**; neither case count nor percent is tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
-NEXT: inspect only saved capture and paired profiles for `max-chain-m12-ckad-m11-zsd-kazan-to-sest` (case2/8) against the exact primary M11 boundary. Case1 is source-gated; [checkpoint](checkpoints/2026-10-16-part19-m11-case1-boundary-source-gated.md). Do not infer 15–58 toll from adjacent 58–679 component. No main/merge/Production; automation remains enabled.
+Case2 saved inputs are captured in [STARTED checkpoint](checkpoints/2026-10-16-part19-m11-case2-boundary-started.md) and evidence JSON. Trace/profile outputs show detected M11 15–58 still null and separate M11 58–679 / 679–684 / M12 components; CKAD and ZSD also unknown. Do not infer 15–58 toll from adjacent 58–679 component or call a subtotal the whole fare. No main/merge/Production; automation remains enabled.

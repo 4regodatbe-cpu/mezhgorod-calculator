@@ -2099,7 +2099,7 @@
       ],
       "status": "diagnosis_started",
       "startedCheckpoint": "../../docs/checkpoints/2026-10-16-part19-m11-head-boundary-started.md",
-      "reviewStatus": "1_of_8_saved_cases_reviewed_case1_boundary_source_gated",
+      "reviewStatus": "case2_started_after_1_of_8_saved_cases_reviewed",
       "currentCasesChecked": 1,
       "reviewedCases": [
         {
@@ -2110,7 +2110,22 @@
           "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case1-boundary-review.json"
         }
       ],
-      "note": "Diagnosis started on first saved case only; do not mark fixed/classified until exact M11 entry-boundary evidence and paired profiles are reviewed"
+      "reviewedCases": [
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+          "result": "source_gated_m11_head_entry_boundary_unbound",
+          "profiles": 2,
+          "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case1-boundary-source-gated.md",
+          "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case1-boundary-review.json"
+        }
+      ],
+      "inProgressCase": {
+        "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+        "status": "started_saved_capture_and_paired_profiles",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case2-boundary-started.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case2-boundary-inputs.json"
+      },
+      "note": "Case1 is source-gated; case2 STARTED from saved capture/profiles. Do not mark fixed/classified until exact M11 entry-boundary evidence and paired profiles are reviewed"
     },
     {
       "code": "arc_not_proven",
