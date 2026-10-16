@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:02:34.831Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T01:03:01.485Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,94 @@
     },
     {
       "stage": 2,
-      "done": 38,
+      "done": 39,
       "total": 154
     }
   ],
   "next": {
     "part": 13,
     "spec": {
-      "caseId": "lnr-сорокино-kerch-center",
+      "caseId": "lnr-сорокино-moscow-center",
       "kind": "regional",
       "region": "lnr"
     }
   },
   "caseId": "lnr-сорокино-kerch-center",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "lnr-сорокино-kerch-center",
+    "startedAt": "2026-10-16T01:02:36.166Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-02-39-719Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-kerch-center/2026-10-16T01-02-39-667Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-02-40-190Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-02-40-625Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "m4",
+        "a289"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": 2030,
+      "weekdayAmount": 2030,
+      "weekendAmount": 2250,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-1046 → m4-1223 · Стоимость не подтверждена",
+        "А-289: Maryanskaya → TamanBridge: 800 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 2250,
+      "weekdayAmount": 2030,
+      "weekendAmount": 2250,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "М-4: m4-1046 → m4-1223 · Стоимость не подтверждена",
+        "А-289: Maryanskaya → TamanBridge: 800 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 1230,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "a289",
+        "amount": 800,
+        "reason": "A-289 selected-route OD vector"
+      }
+    ],
+    "finishedAt": "2026-10-16T01:02:40.641Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-02-34-831Z-part13",
-  "parent": "b4641d9b1bfe81383c704f5407498bd41c793c55",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-02-34-831Z-started.json"
+  "parent": "ecb68fbfdb43172b763c9dd42dec738372523652",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-03-01-485Z-done.json"
 }
