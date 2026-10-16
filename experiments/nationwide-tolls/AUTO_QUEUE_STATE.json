@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:22:12.268Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:22:33.807Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 120,
+      "done": 121,
       "total": 155
     },
     {
@@ -18,15 +18,81 @@
   "next": {
     "part": 9,
     "spec": {
-      "caseId": "single-m12-kazan-to-moscow",
+      "caseId": "single-m12-kazan-to-vladimir",
       "kind": "road",
       "group": "single-m12"
     }
   },
   "caseId": "single-m12-kazan-to-moscow",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-m12-kazan-to-moscow",
+    "startedAt": "2026-10-16T00:22:13.685Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-22-18-313Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-moscow/2026-10-16T00-22-18-257Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-22-18-775Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-22-19-218Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m12"
+      ],
+      "provenRoads": [
+        "m12"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": 3513,
+      "weekdayAmount": 3513,
+      "weekendAmount": 3513,
+      "period": "все дни",
+      "segments": [
+        "М-12: ivanovskoe_p241 → vladimir · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 3513,
+      "weekdayAmount": 3513,
+      "weekendAmount": 3513,
+      "period": "все дни",
+      "segments": [
+        "М-12: ivanovskoe_p241 → vladimir · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m12",
+        "amount": 3513,
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:22:19.235Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-22-12-268Z-part9",
-  "parent": "06bed510c8aaf01db3a31ecbb07180da84bafcca",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-22-12-268Z-started.json"
+  "parent": "a034213e06007e0a8033993bcb14f504170cf206",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-22-33-807Z-done.json"
 }
