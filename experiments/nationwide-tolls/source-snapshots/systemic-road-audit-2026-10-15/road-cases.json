@@ -4620,7 +4620,22 @@
         "ckad"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-43-100Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/2026-10-16T01-30-43-073Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 354129,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-30-39-118Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-43-100Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/2026-10-16T01-30-43-073Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-30-43-503Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-30-43-874Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "pair-m11-ckad-tver-to-noginsk",

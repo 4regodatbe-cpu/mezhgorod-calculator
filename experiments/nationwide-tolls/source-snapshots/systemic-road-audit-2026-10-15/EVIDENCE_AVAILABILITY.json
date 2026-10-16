@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 266,
-  "rawCaptureCaseCount": 263,
+  "rawCaptureCount": 267,
+  "rawCaptureCaseCount": 264,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -19784,6 +19784,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-30-39-118Z.json",
+      "caseId": "pair-m11-ckad-ramenskoe-to-torzhok",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-43-100Z.json",
+          "exists": true,
+          "bytes": 4455,
+          "sha256": "3cba892a5d629f37ac2b40cf959d8fb43da0270a2b74879f6689f2f0e2d03f96",
+          "gitBlobSha": "17c63ba51e11375b1f0947d0a1dd38459937ef4b",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/2026-10-16T01-30-43-073Z-capture.json.gz",
+          "exists": true,
+          "bytes": 161138,
+          "sha256": "997d836b516306fa31e9d3849b10586f59e4eeb17e1e1b2299d2a4351a0851b7",
+          "gitBlobSha": "0ae11130bdb60c8dc2604502cc15d2495a94c56b",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 6
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-30-43-503Z.json",
+          "exists": true,
+          "bytes": 4533,
+          "sha256": "43937a571763d9c95132b9ef860b9bdac2990fb0807811fcff08ae5ab435f194",
+          "gitBlobSha": "0d720f2fae995ccaebd8af336e8f681e1ad5290f",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-30-43-874Z.json",
+          "exists": true,
+          "bytes": 4533,
+          "sha256": "e9fb939da25247887547ec45f70926dc0bffb56a1ab1c982d66abde23da7fd0d",
+          "gitBlobSha": "fe44c3105d3a0a7e9e411d4b6752d1f8349e4f3d",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -21414,6 +21459,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 8
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/2026-10-16T01-30-43-073Z-capture.json.gz",
+      "exists": true,
+      "bytes": 161138,
+      "sha256": "997d836b516306fa31e9d3849b10586f59e4eeb17e1e1b2299d2a4351a0851b7",
+      "gitBlobSha": "0ae11130bdb60c8dc2604502cc15d2495a94c56b",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 6
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/2026-10-16T00-04-31-865Z-capture.json.gz",
