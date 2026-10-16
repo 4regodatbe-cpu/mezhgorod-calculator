@@ -5157,7 +5157,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-murom/live-2026-10-15T09-00-00-03-00-2026-10-16T00-00-27-840Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-murom/2026-10-16T00-00-27-781Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1050936,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-00-21-035Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-murom/live-2026-10-15T09-00-00-03-00-2026-10-16T00-00-27-840Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-murom/2026-10-16T00-00-27-781Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-00-28-322Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-00-28-785Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
