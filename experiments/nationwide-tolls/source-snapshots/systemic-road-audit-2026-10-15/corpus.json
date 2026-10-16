@@ -4331,7 +4331,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-14-42-926Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-saint-petersburg-center/2026-10-16T01-14-42-750Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2794988,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-14-18-289Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-14-42-926Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-saint-petersburg-center/2026-10-16T01-14-42-750Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-14-43-701Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-14-44-459Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-пологи-kazan-center",
