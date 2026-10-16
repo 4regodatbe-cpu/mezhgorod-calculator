@@ -9,9 +9,17 @@
       "sourceCommit": "7e66a8e9b207fefdbcbc82806dac13ec8c34c962",
       "validationCheckpoint": "../../docs/checkpoints/2026-10-16-part19-a289-impact-done.md",
       "componentCasesRecovered": 57
+    },
+    {
+      "id": "a289-slavyansk-directed-connector",
+      "sourceCommit": "79df66d86b20cb339c2f96d377fed5a5277a2d01",
+      "validationCheckpoint": "../../docs/checkpoints/2026-10-16-part19b-taman-moscow-replay.md",
+      "componentCasesRecovered": 2,
+      "wholeRouteProfilesReplayed": 4,
+      "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "pair-m4-a289-moscow-to-taman",
+  "nextCase": "dnr-гранитное-moscow-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -110,14 +118,12 @@
         "zaporizhzhia-токмак-saint-petersburg-center",
         "pair-m4-a289-taman-to-moscow"
       ],
-      "status": "partially_resolved",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first",
-      "componentRecovered": 57,
-      "remainingCaseIds": [
-        "pair-m4-a289-moscow-to-taman",
-        "pair-m4-a289-taman-to-moscow"
-      ],
-      "evidence": "../../docs/checkpoints/evidence/2026-10-16-part19-a289-impact.json"
+      "status": "component_binding_resolved",
+      "note": "57 helper-only recoveries plus2 whole-engine cases/two profiles each; not59 confirmed whole-route totals",
+      "componentRecovered": 59,
+      "remainingCaseIds": [],
+      "evidence": "../../docs/checkpoints/evidence/2026-10-16-part19-a289-impact.json",
+      "remainingTwoValidation": "../../docs/checkpoints/2026-10-16-part19b-taman-moscow-replay.md"
     },
     {
       "code": "zsd:unpriced",

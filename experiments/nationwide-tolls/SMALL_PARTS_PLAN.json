@@ -1692,9 +1692,10 @@
       "title": "Разбор находок и исправления по одной ошибке",
       "status": "in_progress",
       "completedFixes": [
-        "a289-full-interior-vector"
+        "a289-full-interior-vector",
+        "a289-slavyansk-directed-connector"
       ],
-      "nextSubstep": "Diagnose A289 partial interior binding: pair-m4-a289-moscow-to-taman",
+      "nextSubstep": "Current-engine offline check of historical M4 profile finding: dnr-гранитное-moscow-center, one case at a time",
       "findingsQueue": "PART19_FINDINGS_QUEUE.json"
     },
     {

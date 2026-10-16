@@ -1200,3 +1200,5 @@ After persisted connector-focused checkpoint: pnpm build + scoped lint/diff. Do 
 16.10.2026 next: fullgate676 PASS; run ONLY Moscow→Taman raw00-10-06-845Z offline replay15/17Oct09:00MSK, inspect complete/missingResponses/tolls, save/checkpoint first; then reverse. ../../docs/checkpoints/2026-10-16-part19b-a289-build-pass.md.
 
 16.10.2026 next: forward replay saved4725/5625 complete; reverse Taman→Moscow raw01-40-05-574Z only, same two profiles; inspect then checkpoint. ../../docs/checkpoints/2026-10-16-part19b-moscow-taman-replay.md.
+
+16.10.2026 CURRENT NEXT:19B DONE bothdirections; nextONLY dnr-гранитное-moscow-center, historical m4_crossing_profile_changes. Existingcapture/current-engine offline15/17Oct09:00MSK, inspect trip-departure-v1 and actual M4 quote; checkpoint+commit+head/tree before nextcase. No new live/no full309rerun. ../../docs/checkpoints/2026-10-16-part19b-taman-moscow-replay.md. Part19ongoing,20notstarted.
