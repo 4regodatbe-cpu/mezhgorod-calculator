@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:15:54.791Z",
+  "generatedAt": "2026-10-16T02:16:35.077Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 335,
-    "recordedLiveAttempts": 349,
-    "liveCaptured": 335,
-    "savedLiveSummaries": 335,
+    "distinctCaseAttempts": 336,
+    "recordedLiveAttempts": 350,
+    "liveCaptured": 336,
+    "savedLiveSummaries": 336,
     "missingOrInvalidReferences": 0,
-    "audited": 335,
-    "traceComplete": 335,
-    "sameDateParity": 335
+    "audited": 336,
+    "traceComplete": 336,
+    "sameDateParity": 336
   },
   "regionCounts": {
     "dnr": {
@@ -190,8 +190,8 @@
       "id": "triple-m4-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 5,
-      "audited": 5,
+      "attempted": 6,
+      "audited": 6,
       "traversalProven": 5,
       "pricedWeekday": 0,
       "pricedWeekend": 0
@@ -11398,6 +11398,43 @@
       ],
       "routeMeters": 765721,
       "routeSeconds": 26971
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-domodedovo-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T02-16-30-428Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [
+          "m4"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 794103,
+      "routeSeconds": 27363
     }
   ],
   "historicalExecutionExceptions": [],
@@ -13621,7 +13658,8 @@
         "single-zsd-peterhof-to-prim",
         "single-zsd-sest-to-blag",
         "triple-m11-ckad-m12-arzamas-to-spb",
-        "triple-m11-ckad-m12-spb-to-arzamas"
+        "triple-m11-ckad-m12-spb-to-arzamas",
+        "triple-m4-m11-zsd-domodedovo-to-sest"
       ],
       "occurrences": [
         {
@@ -15567,9 +15605,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-15-11-049Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-domodedovo-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T02-16-30-428Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-domodedovo-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-16-30-861Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-domodedovo-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-16-31-283Z.json"
         }
       ],
-      "caseCount": 72
+      "caseCount": 73
     },
     {
       "code": "m4:unpriced",
@@ -19167,7 +19232,8 @@
         "single-odintsovo-moscow-to-lesnoy",
         "single-zsd-sest-to-peterhof",
         "triple-m11-ckad-m12-novgorod-to-vladimir",
-        "triple-m11-ckad-m12-vladimir-to-novgorod"
+        "triple-m11-ckad-m12-vladimir-to-novgorod",
+        "triple-m4-m11-zsd-domodedovo-to-sest"
       ],
       "occurrences": [
         {
@@ -20203,9 +20269,28 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/live-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-225Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+          "detail": {
+            "expectedRoads": [
+              "m4",
+              "m11",
+              "zsd"
+            ],
+            "provenRoads": [
+              "m11",
+              "zsd"
+            ],
+            "missingExpectedRoads": [
+              "m4"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-domodedovo-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T02-16-30-428Z.json"
         }
       ],
-      "caseCount": 62
+      "caseCount": 63
     },
     {
       "code": "m11-58-679:unpriced",
