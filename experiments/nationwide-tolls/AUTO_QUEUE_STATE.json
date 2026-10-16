@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:14:40.938Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:14:59.522Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 100,
+      "done": 101,
       "total": 155
     },
     {
@@ -18,15 +18,81 @@
   "next": {
     "part": 8,
     "spec": {
-      "caseId": "single-a289-kerch-to-krasnodar",
+      "caseId": "single-a289-krasnodar-to-kerch",
       "kind": "road",
       "group": "single-a289"
     }
   },
   "caseId": "single-a289-kerch-to-krasnodar",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-a289-kerch-to-krasnodar",
+    "startedAt": "2026-10-16T00:14:42.220Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-kerch-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-14-44-491Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-kerch-to-krasnodar/2026-10-16T00-14-44-459Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-14-44-883Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-14-45-264Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "a289"
+      ],
+      "provenRoads": [
+        "a289"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": 800,
+      "weekdayAmount": 800,
+      "weekendAmount": 800,
+      "period": "все дни",
+      "segments": [
+        "А-289: TamanBridge → Maryanskaya: 800 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 800,
+      "weekdayAmount": 800,
+      "weekendAmount": 800,
+      "period": "все дни",
+      "segments": [
+        "А-289: TamanBridge → Maryanskaya: 800 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "a289",
+        "amount": 800,
+        "reason": "A-289 selected-route OD vector"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:14:45.280Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-14-40-938Z-part8",
-  "parent": "ceaeb10f99210d4acd5ba40b2160471bbdf413e4",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-14-40-938Z-started.json"
+  "parent": "3357011d09d0625eb229a66e5aea19aed5282e50",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-14-59-522Z-done.json"
 }

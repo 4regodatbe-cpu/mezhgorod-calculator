@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 134,
-  "rawCaptureCaseCount": 132,
+  "rawCaptureCount": 135,
+  "rawCaptureCaseCount": 133,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -11372,6 +11372,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-14-42-217Z.json",
+      "caseId": "single-a289-kerch-to-krasnodar",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-kerch-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-14-44-491Z.json",
+          "exists": true,
+          "bytes": 3830,
+          "sha256": "a19359faa03a83b319d2e58e99ff7f43dcf0427f58f3d86cd5e854987e162460",
+          "gitBlobSha": "03d64db490e209985ab1f43d3db73afecaef8dab",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-kerch-to-krasnodar/2026-10-16T00-14-44-459Z-capture.json.gz",
+          "exists": true,
+          "bytes": 195304,
+          "sha256": "a4fba1a788c295dd879668c4adee2f1e07ad18ae404289a5667fe2deaf7d6a9f",
+          "gitBlobSha": "69a2ba4a00d26af02d257bde43f6d42d33d0d205",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 6
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-kerch-to-krasnodar/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-14-44-883Z.json",
+          "exists": true,
+          "bytes": 3908,
+          "sha256": "c9128b68c487521527df13696e936fa961e9b43d9c605a708b4190064972917e",
+          "gitBlobSha": "b90ba330090027c466a71f2c9990e2a95a2ba73c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-kerch-to-krasnodar/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-14-45-264Z.json",
+          "exists": true,
+          "bytes": 3908,
+          "sha256": "f99e9919529dc71e27910ca309e08b1d2a306b24b4c709dcf9f603cee71162da",
+          "gitBlobSha": "d8b7cffdacc8e9aeaf77ffb8361c6e41479cd779",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -12617,6 +12662,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 13
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-kerch-to-krasnodar/2026-10-16T00-14-44-459Z-capture.json.gz",
+      "exists": true,
+      "bytes": 195304,
+      "sha256": "a4fba1a788c295dd879668c4adee2f1e07ad18ae404289a5667fe2deaf7d6a9f",
+      "gitBlobSha": "69a2ba4a00d26af02d257bde43f6d42d33d0d205",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 6
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-kazan-center/2026-10-15T23-52-45-140Z-capture.json.gz",
