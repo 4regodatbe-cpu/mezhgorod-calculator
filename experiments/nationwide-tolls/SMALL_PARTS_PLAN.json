@@ -1479,7 +1479,7 @@
     {
       "id": 17,
       "title": "Этап 2: группа 7/8",
-      "status": "in_progress",
+      "status": "done",
       "cases": [
         {
           "caseId": "single-m11-novgorod-to-moscow",
@@ -1577,12 +1577,12 @@
           "group": "single-m4"
         }
       ],
-      "completedCases": 18
+      "completedCases": 19
     },
     {
       "id": 18,
       "title": "Этап 2: группа 8/8",
-      "status": "planned",
+      "status": "in_progress",
       "cases": [
         {
           "caseId": "single-odintsovo-golitsyno-to-rublevo",
