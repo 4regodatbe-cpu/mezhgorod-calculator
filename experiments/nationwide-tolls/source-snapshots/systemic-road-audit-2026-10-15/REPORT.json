@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:00:56.004Z",
+  "generatedAt": "2026-10-16T02:01:32.308Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 311,
-    "recordedLiveAttempts": 325,
-    "liveCaptured": 311,
-    "savedLiveSummaries": 311,
+    "distinctCaseAttempts": 312,
+    "recordedLiveAttempts": 326,
+    "liveCaptured": 312,
+    "savedLiveSummaries": 312,
     "missingOrInvalidReferences": 0,
-    "audited": 311,
-    "traceComplete": 311,
-    "sameDateParity": 311
+    "audited": 312,
+    "traceComplete": 312,
+    "sameDateParity": 312
   },
   "regionCounts": {
     "dnr": {
@@ -70,9 +70,9 @@
       "id": "single-m3",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
-      "traversalProven": 6,
+      "attempted": 7,
+      "audited": 7,
+      "traversalProven": 7,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -10604,6 +10604,38 @@
       ],
       "routeMeters": 95315,
       "routeSeconds": 4895
+    },
+    {
+      "caseId": "single-m3-kaluga-to-balabanovo",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-balabanovo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-01-27-975Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m3"
+        ],
+        "provenRoads": [
+          "m3"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 86918,
+      "routeSeconds": 4711
     }
   ],
   "historicalExecutionExceptions": [],
@@ -20147,7 +20179,8 @@
         "single-m3-moscow-to-maloyaroslavets",
         "single-m3-moscow-to-obninsk",
         "single-m3-obninsk-to-moscow",
-        "single-m3-balabanovo-to-kaluga"
+        "single-m3-balabanovo-to-kaluga",
+        "single-m3-kaluga-to-balabanovo"
       ],
       "occurrences": [
         {
@@ -20311,9 +20344,36 @@
             "reason": "m3_engine_not_yet_composed"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-balabanovo-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-00-52-339Z.json"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-balabanovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-balabanovo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-01-27-975Z.json"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-balabanovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-balabanovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-01-28-322Z.json"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-balabanovo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m3",
+            "reason": "m3_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-balabanovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-01-28-647Z.json"
         }
       ],
-      "caseCount": 6
+      "caseCount": 7
     },
     {
       "code": "m12_current_operator_pair_not_bound",
