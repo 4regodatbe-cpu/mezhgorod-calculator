@@ -1,0 +1,47 @@
+✔ Yalta and Anapa to Krasnodar return selected A-289 estimates in both directions (2.677421ms)
+✔ A289 helper never adds a bypass label; missing exits do not invent fare (0.455437ms)
+✔ long-trip recovery accepts only the exact complete directed frame vector (0.576504ms)
+/workspace/scratch/aeb682d0bb1b/mezhgorod-calculator/lib/toll-engine/m11-moscow-geometry.ts:13
+const facilities = _2026_10_01_58_679_spatial_anchors_json_1.default.facilities;
+                                                                     ^
+
+TypeError: Cannot read properties of undefined (reading 'facilities')
+    at /workspace/scratch/aeb682d0bb1b/mezhgorod-calculator/lib/toll-engine/m11-moscow-geometry.ts:13:70
+    at Script.runInContext (node:vm:149:12)
+    at Script.runInNewContext (node:vm:154:17)
+    at Object.runInNewContext (node:vm:310:38)
+    at load (file:///workspace/scratch/aeb682d0bb1b/mezhgorod-calculator/scripts/helpers/load-ts.mjs:16:6)
+    at require (file:///workspace/scratch/aeb682d0bb1b/mezhgorod-calculator/scripts/helpers/load-ts.mjs:16:168)
+    at /workspace/scratch/aeb682d0bb1b/mezhgorod-calculator/lib/toll-engine/krasnodar-bypass-evidence.ts:5:31
+    at Script.runInContext (node:vm:149:12)
+    at Script.runInNewContext (node:vm:154:17)
+    at Object.runInNewContext (node:vm:310:38)
+
+Node.js v24.19.0
+✖ scripts/v3-a289-long-route.test.mjs (445.326422ms)
+✔ stored intermediate A289 pairs reach V3 in both directions (5.238981ms)
+✔ physical camera order is independent of shape sampling and reverses with direction (1.134261ms)
+✔ missing intermediate price blocks fallback rather than subtracting unrelated OD tariffs (0.694136ms)
+✔ camera return passage cannot be charged as a single ordinary OD trip (0.431041ms)
+✔ neighboring shape points at a single frame are one passage (0.522916ms)
+✔ Anapa620 and Slavyansk415 use category I, never category-II833/555 (7.160185ms)
+✔ Slavyansk Rostov and Anapa Rostov compose the south M4 vector with actual A289 entry (3.109503ms)
+✔ full Crimea Moscow consumes the supplied matrix rather than native money (0.794052ms)
+✔ missing/partial M4 cannot disappear behind a known A289 price (0.567861ms)
+✔ a mixed legacy M4 payload is rejected instead of charging A289 twice (0.87374ms)
+✔ confirmed M4 on a locally named trip is still included, diagnostic neighbors are not (1.098439ms)
+✔ a legacy exact M4 amount cannot replace an absent or rejected matrix (1.192476ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 15
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 485.223662
+
+✖ failing tests:
+
+test at scripts/v3-a289-long-route.test.mjs:1:1
+✖ scripts/v3-a289-long-route.test.mjs (445.326422ms)
+  'test failed'

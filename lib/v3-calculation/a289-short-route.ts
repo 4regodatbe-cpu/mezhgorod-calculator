@@ -32,6 +32,16 @@ export function a289ShortRoute(route:Coordinate[],legacySegments:string[],depart
   if(!frames.length)return null;
   const unresolved = (reason: string) => ({tolls: null, reason});
   if(physical.repeatedFrames?.length)return unresolved("A-289 repeated passage is outside the finished OD vector");
+  // Trip endpoints need not be A-289 exits: a long journey may contain the
+  // complete road as an interior product. Only all three ordered physical
+  // frames bind this full operator vector independently of endpoint labels.
+  // Partial or repeated passages still require the existing exit bindings.
+  const frameOrder=frames.join(">");
+  const fullTraversal=(!start||!end) && (frameOrder==="23>82>103"||frameOrder==="103>82>23");
+  if(fullTraversal){
+    start=frames[0]==="23"?"Maryanskaya":"Temryuk";
+    end=frames[0]==="23"?"Temryuk":"Maryanskaya";
+  }
   if(!start||!end||start===end)return unresolved("A-289 frames detected but selected-route exits are unresolved");
   let from=start==="AnapaExit"?"Varenikovskaya":start;
   let to=end==="AnapaExit"?"Varenikovskaya":end;
@@ -51,8 +61,9 @@ export function a289ShortRoute(route:Coordinate[],legacySegments:string[],depart
   const weekdayAmount=quote.rub;
   const weekendAmount=quote.rub;
   const amount=quote.rub;
-  return {reason:cityTemryuk?"A-289 Temryuk two-frame city estimate; exit binding unverified":anapa?"A-289 Anapa exit inferred from two selected-route frames; estimate":"A-289 selected-route OD vector",
+  const passage=fullTraversal?frames.map(frame=>`РВП ${frame}`).join(" → "):`${start} → ${end}`;
+  return {reason:fullTraversal?"A-289 complete ordered three-frame traversal":cityTemryuk?"A-289 Temryuk two-frame city estimate; exit binding unverified":anapa?"A-289 Anapa exit inferred from two selected-route frames; estimate":"A-289 selected-route OD vector",
     tolls:{amount,weekdayAmount,weekendAmount,period:"все дни",
-      segments:[`А-289: ${start} → ${end}: ${quote.rub} ₽`],
+      segments:[`А-289: ${passage}: ${quote.rub} ₽`],
       confidence:"matched" as const}};
 }

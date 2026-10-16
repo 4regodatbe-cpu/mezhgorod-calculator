@@ -1179,3 +1179,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 16.10.2026 05:20МСК: части1–18DONE,309/309иREPORT340/340; queue jobSUCCESS. Часть19 STARTED: A289 полные3рамки при внешних концах длинной поездки. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-started.md). Parentdb83e758; no merge/Production.
 
 16.10.2026: A289realcapture regression RED,1expectedfail/2PASS; STARTED полный3РВПвектор при внешнемконце. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-a289-regression-red.md). Parent3ed0437d; codefix ещё не внедрён.
+
+16.10.2026: A289fullvector code внедрён, первыйfocused FAILED15PASS/1testfilefailed наVMJSONloader. Следующее nativeimport composition вновомтесте. ../../docs/checkpoints/2026-10-16-part19-a289-focused-loader-failed.md. Новоеполноеисправление ещёнепроверено.

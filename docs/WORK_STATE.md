@@ -13,3 +13,5 @@ Audited — воспроизводимость, не независимая пр
 [Протокол](CHECKPOINT_PROTOCOL.md), [журнал](../experiments/nationwide-tolls/WORK_LOG.md), [решения](../experiments/nationwide-tolls/DECISIONS.md).
 
 Часть19/A289: realcapture regression RED (1expected fail,2PASS), baseline не менялся. [Checkpoint](checkpoints/2026-10-16-part19-a289-regression-red.md). STARTED minimal full-frame binding через существующий datedadapter.
+
+16.10.2026: A289fullvector code внедрён, первыйfocused FAILED15PASS/1testfilefailed наVMJSONloader. Следующее nativeimport composition вновомтесте. checkpoints/2026-10-16-part19-a289-focused-loader-failed.md. Новоеполноеисправление ещёнепроверено.
