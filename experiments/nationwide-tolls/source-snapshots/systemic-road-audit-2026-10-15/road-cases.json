@@ -3306,7 +3306,22 @@
         "odintsovo"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/live-2026-10-15T09-00-00-03-00-2026-10-16T02-08-48-333Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/2026-10-16T02-08-48-327Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 32597,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-08-46-867Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/live-2026-10-15T09-00-00-03-00-2026-10-16T02-08-48-333Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/2026-10-16T02-08-48-327Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-08-48-664Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-08-48-980Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-odintsovo-lesnoy-to-moscow",
