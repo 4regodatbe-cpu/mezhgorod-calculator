@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:09:57.273Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T01:10:23.761Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,74 @@
     },
     {
       "stage": 2,
-      "done": 49,
+      "done": 50,
       "total": 154
     }
   ],
   "next": {
     "part": 13,
     "spec": {
-      "caseId": "zaporizhzhia-мелитополь-kerch-center",
+      "caseId": "zaporizhzhia-мелитополь-moscow-center",
       "kind": "regional",
       "region": "zaporizhzhia"
     }
   },
   "caseId": "zaporizhzhia-мелитополь-kerch-center",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "zaporizhzhia-мелитополь-kerch-center",
+    "startedAt": "2026-10-16T01:09:58.761Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-10-00-944Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kerch-center/2026-10-16T01-10-00-920Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-10-01-344Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-10-01-736Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "weekend": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "пятница–воскресенье",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "components": [],
+    "finishedAt": "2026-10-16T01:10:01.752Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-09-57-272Z-part13",
-  "parent": "637a29c03b7ca0a5bc1022b6fb4f3bdd7d6c589c",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-09-57-273Z-started.json"
+  "parent": "bcb2d0190ce863c009584095ec18c3ddc6ca053c",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-10-23-761Z-done.json"
 }

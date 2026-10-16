@@ -4475,7 +4475,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-10-00-944Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kerch-center/2026-10-16T01-10-00-920Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 374332,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-09-58-758Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-10-00-944Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kerch-center/2026-10-16T01-10-00-920Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-10-01-344Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-10-01-736Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "kherson-раденск-moscow-center",
