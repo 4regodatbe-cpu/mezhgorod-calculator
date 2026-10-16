@@ -6706,7 +6706,22 @@
         "m12"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-murom-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T02-13-47-711Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-murom-to-tver/2026-10-16T02-13-47-673Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 487193,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-13-44-059Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-murom-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T02-13-47-711Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-murom-to-tver/2026-10-16T02-13-47-673Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-13-48-135Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-13-48-531Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "triple-m11-ckad-m12-novgorod-to-vladimir",
