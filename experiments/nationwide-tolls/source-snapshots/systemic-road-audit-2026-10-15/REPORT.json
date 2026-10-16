@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:19:10.033Z",
+  "generatedAt": "2026-10-16T01:19:56.204Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 248,
-    "recordedLiveAttempts": 262,
-    "liveCaptured": 248,
-    "savedLiveSummaries": 248,
+    "distinctCaseAttempts": 249,
+    "recordedLiveAttempts": 263,
+    "liveCaptured": 249,
+    "savedLiveSummaries": 249,
     "missingOrInvalidReferences": 0,
-    "audited": 248,
-    "traceComplete": 248,
-    "sameDateParity": 248
+    "audited": 249,
+    "traceComplete": 249,
+    "sameDateParity": 249
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 38,
-      "audited": 38,
-      "traceComplete": 38,
+      "liveCaptured": 39,
+      "audited": 39,
+      "traceComplete": 39,
       "pricedWeekday": 11,
       "pricedWeekend": 12
     },
@@ -8422,6 +8422,41 @@
       ],
       "routeMeters": 434411,
       "routeSeconds": 22908
+    },
+    {
+      "caseId": "zaporizhzhia-токмак-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-19-51-657Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2029879,
+      "routeSeconds": 101034
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8969,7 +9004,8 @@
         "zaporizhzhia-пологи-kazan-center",
         "zaporizhzhia-пологи-moscow-center",
         "zaporizhzhia-пологи-saint-petersburg-center",
-        "zaporizhzhia-токмак-kazan-center"
+        "zaporizhzhia-токмак-kazan-center",
+        "zaporizhzhia-токмак-moscow-center"
       ],
       "occurrences": [
         {
@@ -10483,9 +10519,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-18-32-898Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-токмак-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-19-51-657Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-токмак-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-19-52-320Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-токмак-moscow-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-19-52-978Z.json"
         }
       ],
-      "caseCount": 56
+      "caseCount": 57
     },
     {
       "code": "zsd:unpriced",

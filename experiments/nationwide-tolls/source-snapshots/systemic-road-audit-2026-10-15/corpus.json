@@ -4256,7 +4256,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-19-51-657Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/2026-10-16T01-19-51-519Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 2029879,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-19-36-853Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-19-51-657Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/2026-10-16T01-19-51-519Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-19-52-320Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-19-52-978Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-токмак-saint-petersburg-center",
