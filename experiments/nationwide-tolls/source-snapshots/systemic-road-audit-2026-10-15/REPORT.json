@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:31:12.215Z",
+  "generatedAt": "2026-10-16T00:31:34.886Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 175,
-    "recordedLiveAttempts": 188,
-    "liveCaptured": 174,
-    "savedLiveSummaries": 174,
+    "distinctCaseAttempts": 176,
+    "recordedLiveAttempts": 189,
+    "liveCaptured": 175,
+    "savedLiveSummaries": 175,
     "missingOrInvalidReferences": 1,
-    "audited": 174,
-    "traceComplete": 174,
-    "sameDateParity": 174
+    "audited": 175,
+    "traceComplete": 175,
+    "sameDateParity": 175
   },
   "regionCounts": {
     "dnr": {
@@ -110,9 +110,9 @@
       "id": "single-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 3,
-      "audited": 3,
-      "traversalProven": 1,
+      "attempted": 4,
+      "audited": 4,
+      "traversalProven": 2,
       "pricedWeekday": 2,
       "pricedWeekend": 2
     },
@@ -5977,6 +5977,38 @@
       ],
       "routeMeters": 18096,
       "routeSeconds": 1614
+    },
+    {
+      "caseId": "single-zsd-pushkin-to-sest",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-pushkin-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-31-32-123Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 64094,
+      "routeSeconds": 3545
     }
   ],
   "historicalExecutionExceptions": [],
@@ -7499,7 +7531,8 @@
         "pair-m4-m11-voronezh-to-spb",
         "single-m11-moscow-to-spb",
         "single-m11-spb-to-moscow",
-        "single-zsd-blag-to-prim"
+        "single-zsd-blag-to-prim",
+        "single-zsd-pushkin-to-sest"
       ],
       "occurrences": [
         {
@@ -8446,9 +8479,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-30-25-309Z.json"
+        },
+        {
+          "caseId": "single-zsd-pushkin-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-pushkin-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-31-32-123Z.json"
+        },
+        {
+          "caseId": "single-zsd-pushkin-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-pushkin-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-31-32-473Z.json"
+        },
+        {
+          "caseId": "single-zsd-pushkin-to-sest",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-pushkin-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-31-32-806Z.json"
         }
       ],
-      "caseCount": 35
+      "caseCount": 36
     },
     {
       "code": "m4:unpriced",
