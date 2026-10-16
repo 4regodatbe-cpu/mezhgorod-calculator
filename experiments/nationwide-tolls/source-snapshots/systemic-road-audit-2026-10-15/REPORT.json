@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:25:07.192Z",
+  "generatedAt": "2026-10-16T01:26:00.110Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 256,
-    "recordedLiveAttempts": 270,
-    "liveCaptured": 256,
-    "savedLiveSummaries": 256,
+    "distinctCaseAttempts": 257,
+    "recordedLiveAttempts": 271,
+    "liveCaptured": 257,
+    "savedLiveSummaries": 257,
     "missingOrInvalidReferences": 0,
-    "audited": 256,
-    "traceComplete": 256,
-    "sameDateParity": 256
+    "audited": 257,
+    "traceComplete": 257,
+    "sameDateParity": 257
   },
   "regionCounts": {
     "dnr": {
@@ -210,11 +210,11 @@
       "id": "max-chain-m4-ckad-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
+      "attempted": 7,
+      "audited": 7,
       "traversalProven": 0,
-      "pricedWeekday": 0,
-      "pricedWeekend": 0
+      "pricedWeekday": 1,
+      "pricedWeekend": 1
     },
     {
       "id": "max-chain-m12-ckad-m11-zsd",
@@ -8731,6 +8731,49 @@
       ],
       "routeMeters": 2073839,
       "routeSeconds": 95288
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-krasnodar",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-25-55-523Z.json",
+      "weekdayAmount": 10464,
+      "weekendAmount": 12184,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "ckad",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11",
+          "m4"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2069134,
+      "routeSeconds": 95599
     }
   ],
   "historicalExecutionExceptions": [],
@@ -14567,7 +14610,8 @@
         "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
         "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
         "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
-        "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim"
+        "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+        "max-chain-m4-ckad-m11-zsd-prim-to-krasnodar"
       ],
       "occurrences": [
         {
@@ -15125,9 +15169,30 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-25-02-579Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-krasnodar",
+          "detail": {
+            "expectedRoads": [
+              "m4",
+              "ckad",
+              "m11",
+              "zsd"
+            ],
+            "provenRoads": [
+              "zsd",
+              "m11",
+              "m4"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-25-55-523Z.json"
         }
       ],
-      "caseCount": 33
+      "caseCount": 34
     },
     {
       "code": "m11-58-679:unpriced",
