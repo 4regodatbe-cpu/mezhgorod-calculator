@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:04:01.727Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:04:05.018Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,97 +23,10 @@
       "group": "pair-m11-ckad"
     }
   },
-  "caseId": "pair-m11-ckad-domodedovo-to-spb",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "pair-m11-ckad-domodedovo-to-spb",
-    "startedAt": "2026-10-16T00:03:42.895Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-03-47-879Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/2026-10-16T00-03-47-831Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-03-48-307Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-03-48-722Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m11",
-        "ckad"
-      ],
-      "provenRoads": [
-        "m11",
-        "zsd"
-      ],
-      "missingExpectedRoads": [
-        "ckad"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: zsd",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: zsd",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m11-15-58",
-        "amount": 1130,
-        "reason": "m11_head_ready_direct_pair_at_departure"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": 3900,
-        "reason": "matrix dated selected-route M11 direct pair"
-      },
-      {
-        "id": "m11-679-684",
-        "amount": 94,
-        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
-      },
-      {
-        "id": "zsd",
-        "amount": null,
-        "reason": "zsd_trip_extends_outside_reviewed_zone1"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:03:48.739Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-03-41-472Z-part6",
-  "parent": "be6190526eb070e45a9dee0cabcbdb84aed1612f",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-04-01-727Z-done.json"
+  "caseId": "pair-m11-ckad-noginsk-to-spb",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-04-05-017Z-part6",
+  "parent": "8b3b88bf3212cb58807c251b432190ba2401db33",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-04-05-018Z-started.json"
 }
