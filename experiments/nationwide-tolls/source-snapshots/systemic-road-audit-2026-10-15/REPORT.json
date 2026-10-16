@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:17:45.991Z",
+  "generatedAt": "2026-10-16T00:18:08.483Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 141,
-    "recordedLiveAttempts": 154,
-    "liveCaptured": 140,
-    "savedLiveSummaries": 140,
+    "distinctCaseAttempts": 142,
+    "recordedLiveAttempts": 155,
+    "liveCaptured": 141,
+    "savedLiveSummaries": 141,
     "missingOrInvalidReferences": 1,
-    "audited": 140,
-    "traceComplete": 140,
-    "sameDateParity": 140
+    "audited": 141,
+    "traceComplete": 141,
+    "sameDateParity": 141
   },
   "regionCounts": {
     "dnr": {
@@ -100,8 +100,8 @@
       "id": "single-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 4,
-      "audited": 4,
+      "attempted": 5,
+      "audited": 5,
       "traversalProven": 0,
       "pricedWeekday": 2,
       "pricedWeekend": 2
@@ -4885,6 +4885,40 @@
       ],
       "routeMeters": 90801,
       "routeSeconds": 5218
+    },
+    {
+      "caseId": "single-ckad-ramenskoe-to-klin",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-18-05-804Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 156844,
+      "routeSeconds": 7624
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8027,7 +8061,8 @@
         "pair-m12-ckad-klin-to-kazan",
         "pair-m12-ckad-vladimir-to-klin",
         "single-ckad-domodedovo-to-klin",
-        "single-ckad-klin-to-domodedovo"
+        "single-ckad-klin-to-domodedovo",
+        "single-ckad-ramenskoe-to-klin"
       ],
       "occurrences": [
         {
@@ -8380,9 +8415,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-16-59-816Z.json"
+        },
+        {
+          "caseId": "single-ckad-ramenskoe-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-18-05-804Z.json"
+        },
+        {
+          "caseId": "single-ckad-ramenskoe-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-18-06-175Z.json"
+        },
+        {
+          "caseId": "single-ckad-ramenskoe-to-klin",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-18-06-528Z.json"
         }
       ],
-      "caseCount": 13
+      "caseCount": 14
     },
     {
       "code": "expected-road-not-proven",
@@ -8400,7 +8462,8 @@
         "single-ckad-domodedovo-to-klin",
         "single-ckad-klin-to-domodedovo",
         "single-ckad-noginsk-to-podolsk",
-        "single-ckad-podolsk-to-noginsk"
+        "single-ckad-podolsk-to-noginsk",
+        "single-ckad-ramenskoe-to-klin"
       ],
       "occurrences": [
         {
@@ -8655,9 +8718,25 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-podolsk-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-17-43-324Z.json"
+        },
+        {
+          "caseId": "single-ckad-ramenskoe-to-klin",
+          "detail": {
+            "expectedRoads": [
+              "ckad"
+            ],
+            "provenRoads": [
+              "m11"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-18-05-804Z.json"
         }
       ],
-      "caseCount": 14
+      "caseCount": 15
     },
     {
       "code": "m11-58-679:unpriced",
@@ -8668,7 +8747,8 @@
         "pair-m12-ckad-klin-to-kazan",
         "pair-m12-ckad-vladimir-to-klin",
         "single-ckad-domodedovo-to-klin",
-        "single-ckad-klin-to-domodedovo"
+        "single-ckad-klin-to-domodedovo",
+        "single-ckad-ramenskoe-to-klin"
       ],
       "occurrences": [
         {
@@ -8859,9 +8939,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-16-59-816Z.json"
+        },
+        {
+          "caseId": "single-ckad-ramenskoe-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-18-05-804Z.json"
+        },
+        {
+          "caseId": "single-ckad-ramenskoe-to-klin",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-18-06-175Z.json"
+        },
+        {
+          "caseId": "single-ckad-ramenskoe-to-klin",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-18-06-528Z.json"
         }
       ],
-      "caseCount": 7
+      "caseCount": 8
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",

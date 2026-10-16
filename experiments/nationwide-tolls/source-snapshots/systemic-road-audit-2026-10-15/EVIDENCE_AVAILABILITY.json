@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 143,
-  "rawCaptureCaseCount": 141,
+  "rawCaptureCount": 144,
+  "rawCaptureCaseCount": 142,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -11777,6 +11777,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-18-03-319Z.json",
+      "caseId": "single-ckad-ramenskoe-to-klin",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-18-05-804Z.json",
+          "exists": true,
+          "bytes": 4040,
+          "sha256": "68ea8a7b496d72c621cced44bbe03404c072c9e33d366890f9b2f6b7e47890ba",
+          "gitBlobSha": "daff0c4149eab86e4231f73b147a0c3ce59a017a",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/2026-10-16T00-18-05-785Z-capture.json.gz",
+          "exists": true,
+          "bytes": 110473,
+          "sha256": "7e51c29bed351d8f5b24dfd4630802d84a04152e5703d677b8edb1e68c297d14",
+          "gitBlobSha": "92b31b00cd3dcb0215bcda9757994d1c1e7247d1",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 5
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-18-06-175Z.json",
+          "exists": true,
+          "bytes": 4118,
+          "sha256": "5b777c3dfbf34db5a0458fff107aa008b88eaf7b2270a93273cd55075667c76a",
+          "gitBlobSha": "defdbd75d299693840d534d0e33359ec7cabdcc8",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-18-06-528Z.json",
+          "exists": true,
+          "bytes": 4118,
+          "sha256": "3d4c289e465bbbce8bc44903d5824a38255137358446f71a31cfdeb1e4e1e937",
+          "gitBlobSha": "5ef169af9638f87dd923a2e81cc4f26f72938429",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -13121,6 +13166,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 4
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/2026-10-16T00-18-05-785Z-capture.json.gz",
+      "exists": true,
+      "bytes": 110473,
+      "sha256": "7e51c29bed351d8f5b24dfd4630802d84a04152e5703d677b8edb1e68c297d14",
+      "gitBlobSha": "92b31b00cd3dcb0215bcda9757994d1c1e7247d1",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 5
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-kazan-center/2026-10-15T23-52-45-140Z-capture.json.gz",
