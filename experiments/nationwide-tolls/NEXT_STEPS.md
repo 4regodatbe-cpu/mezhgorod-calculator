@@ -1610,3 +1610,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T17:21:33.811Z: ZSD case70 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-21-33-810Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
 
 2026-10-16T17:23:39.495Z: ZSD distinct scope diagnosis DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-23-39-494Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-arzamas-to-spb; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:25:46.942Z: ZSD case71 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-25-46-940Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-spb-to-arzamas; --next; savedcapture twoofflineprofiles.
