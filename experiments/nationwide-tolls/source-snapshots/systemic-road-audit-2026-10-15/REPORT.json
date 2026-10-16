@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:07:48.831Z",
+  "generatedAt": "2026-10-16T01:08:44.482Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 233,
-    "recordedLiveAttempts": 247,
-    "liveCaptured": 233,
-    "savedLiveSummaries": 233,
+    "distinctCaseAttempts": 234,
+    "recordedLiveAttempts": 248,
+    "liveCaptured": 234,
+    "savedLiveSummaries": 234,
     "missingOrInvalidReferences": 0,
-    "audited": 233,
-    "traceComplete": 233,
-    "sameDateParity": 233
+    "audited": 234,
+    "traceComplete": 234,
+    "sameDateParity": 234
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 23,
-      "audited": 23,
-      "traceComplete": 23,
+      "liveCaptured": 24,
+      "audited": 24,
+      "traceComplete": 24,
       "pricedWeekday": 6,
       "pricedWeekend": 7
     },
@@ -7926,6 +7926,43 @@
       ],
       "routeMeters": 2174300,
       "routeSeconds": 110631
+    },
+    {
+      "caseId": "zaporizhzhia-кушугум-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-08-40-021Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2886070,
+      "routeSeconds": 139798
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8465,7 +8502,8 @@
         "kherson-херсон-kazan-center",
         "kherson-херсон-moscow-center",
         "kherson-херсон-saint-petersburg-center",
-        "zaporizhzhia-кушугум-moscow-center"
+        "zaporizhzhia-кушугум-moscow-center",
+        "zaporizhzhia-кушугум-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -9763,9 +9801,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-07-45-910Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-08-40-021Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-08-40-792Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-08-41-549Z.json"
         }
       ],
-      "caseCount": 48
+      "caseCount": 49
     },
     {
       "code": "zsd:unpriced",
