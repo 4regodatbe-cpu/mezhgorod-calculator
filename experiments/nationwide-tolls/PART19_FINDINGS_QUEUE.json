@@ -26,7 +26,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "single-m4-krasnodar-to-voronezh",
+  "nextCase": "single-m4-voronezh-to-krasnodar",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1740,8 +1740,9 @@
     },
     {
       "code": "m4:unpriced",
-      "currentCasesChecked": 11,
+      "currentCasesChecked": 12,
       "currentEvaluations": [
+        {"caseId":"single-m4-krasnodar-to-voronezh","result":"source_gated_physical545_scope_unresolved","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case12.json"},
         {"caseId":"pair-m4-m11-voronezh-to-spb","result":"m4_component_priced_other_products_unknown","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":1830,"m4WeekendAmount":2300,"remainingMissing":["zsd"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case11.json"},
         {"caseId":"pair-m4-a289-voronezh-to-taman","result":"source_gated_physical545_scope_unresolved","weekdayAmount":null,"weekendAmount":null,"m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-current-case10.json"},
         {"caseId":"pair-m4-a289-taman-to-voronezh","result":"current_unknown_needs_diagnosis","m4WeekdayAmount":null,"m4WeekendAmount":null,"remainingMissing":["m4"],"weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case9-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case9-replay.json","diagnosisStatus":"source_gated_physical545_collection_scope_unresolved","diagnosticCheckpoint":"../../docs/checkpoints/2026-10-16-part19d-case9-545-scope-diagnosis.md","scopeEvidence":"../../docs/checkpoints/evidence/2026-10-16-m4-1223-545-scope-gap.json","latestCheckpoint":"../../docs/checkpoints/2026-10-16-122949-case9-545-source-gate.md","selectedScopeEvidence":"../../docs/checkpoints/evidence/2026-10-16-case9-545-selected-scope.json"},
