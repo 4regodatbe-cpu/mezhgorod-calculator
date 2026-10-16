@@ -6517,7 +6517,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-19-47-281Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 791471,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-19-42-724Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-19-47-281Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-19-47-713Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-19-48-126Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "triple-m11-ckad-m12-spb-to-kazan",
