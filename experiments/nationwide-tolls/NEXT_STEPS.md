@@ -1600,3 +1600,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T17:07:20.803Z: ZSD distinct scope diagnosis DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-07-20-801Z.md). NEXT ZSD nextcase single-zsd-peterhof-to-prim; --next; savedcapture twoofflineprofiles.
 
 2026-10-16T17:12:02.000Z: ZSD diagnosis persistence repair DONE; found oversized local `NEXT_STEPS.md`, `PART19_FINDINGS_QUEUE.json` and `WORK_LOG.md` blobs had been truncated during connector upload. [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-12-02-000Z-tree-readback-repair.md). Restore exact complete Git blob contents and verify branch tree/paths before the next case.
+
+2026-10-16T17:14:47.000Z: ZSD diagnosis persistence repair VERIFIED; PR14 head `c2e744d030b9a6f1c3cbc3ed5ac20674458dbb67`, tree `433ea764ea17d4f5cd4b41a37e2b59902a31586a`, all seven changed blob SHAs match. [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-14-47-000Z-tree-readback-repair-done.md). NEXT case69 `single-zsd-peterhof-to-prim`; saved capture, two offline date profiles.

@@ -18,8 +18,8 @@
 
 ## NEXT STARTED
 
-**BLOCKED: restore full oversized ledger blobs and read back exact case 68 diagnosis tree before next case**
+**ZSD case 69 `single-zsd-peterhof-to-prim`; saved capture, two offline date profiles**
 
-ZSD review **68/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T17-07-20-801Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
+ZSD review **68/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T17-14-47-000Z-tree-readback-repair-done.md). PR14 head `c2e744d030b9a6f1c3cbc3ed5ac20674458dbb67`, tree `433ea764ea17d4f5cd4b41a37e2b59902a31586a`; exact local tree/path SHA readback passed. Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
 Repository-owned utility: `node experiments/nationwide-tolls/scripts/review-zsd-finding-case.mjs --next` (or `--diagnose` after a new scope). One step only; caller commits/publishes/exacthead-tree before continuing. Do not rerun completed M4/policy/live queues. No main/merge/Production. Autocontinuation remains enabled.

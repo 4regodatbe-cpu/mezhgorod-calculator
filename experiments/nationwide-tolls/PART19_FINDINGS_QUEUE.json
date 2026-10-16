@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": "single-zsd-peterhof-to-prim",
-  "nextAction": "Repair and verify exact remote tree and all seven case68 diagnosis blobs before next case",
+  "nextAction": "ZSD case69 single-zsd-peterhof-to-prim; replay saved capture under two offline date profiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",

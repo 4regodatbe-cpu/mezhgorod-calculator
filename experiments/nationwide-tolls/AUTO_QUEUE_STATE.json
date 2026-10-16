@@ -1,14 +1,14 @@
 {
   "at": "2026-10-16T07:49:15.074Z",
-  "phase": "PART19_ZSD_DIAGNOSIS_DURABILITY_REPAIR",
+  "phase": "PART19_ZSD_DIAGNOSIS_DURABLE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
   "scope": "ZSD case 68 diagnosis checkpoint and exact-tree persistence repair; offline scope audit, not tariff confirmation",
   "checked": 68,
   "total": 76,
-  "next": "Restore exact complete large-file blobs and verify remote tree/path SHAs; only then begin case 69",
+  "next": "Case 69 single-zsd-peterhof-to-prim; replay saved capture with two offline date profiles",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
   "parent": "1a215cc1dbd97f834b1c1c19ce2532d783c38df9",
-  "nextFinding": "zsd:case68-durability-repair",
-  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-12-02-000Z-tree-readback-repair.md"
+  "nextFinding": "zsd:single-zsd-peterhof-to-prim",
+  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-14-47-000Z-tree-readback-repair-done.md"
 }
