@@ -638,7 +638,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-42-47-705Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-moscow-center/2026-10-16T00-42-47-617Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 1248161,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-42-37-972Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-42-47-705Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-moscow-center/2026-10-16T00-42-47-617Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-42-48-273Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-42-48-839Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "dnr-талаковка-saint-petersburg-center",

@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-10-16T00:42:18.349Z",
+  "generatedAt": "2026-10-16T00:42:51.173Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 194,
-    "recordedLiveAttempts": 208,
-    "liveCaptured": 194,
-    "savedLiveSummaries": 194,
+    "distinctCaseAttempts": 195,
+    "recordedLiveAttempts": 209,
+    "liveCaptured": 195,
+    "savedLiveSummaries": 195,
     "missingOrInvalidReferences": 0,
-    "audited": 194,
-    "traceComplete": 194,
-    "sameDateParity": 194
+    "audited": 195,
+    "traceComplete": 195,
+    "sameDateParity": 195
   },
   "regionCounts": {
     "dnr": {
       "planned": 40,
-      "liveCaptured": 32,
-      "audited": 32,
-      "traceComplete": 32,
-      "pricedWeekday": 16,
-      "pricedWeekend": 19
+      "liveCaptured": 33,
+      "audited": 33,
+      "traceComplete": 33,
+      "pricedWeekday": 17,
+      "pricedWeekend": 20
     },
     "lnr": {
       "planned": 40,
@@ -6669,6 +6669,36 @@
       ],
       "routeMeters": 735279,
       "routeSeconds": 38904
+    },
+    {
+      "caseId": "dnr-талаковка-moscow-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-42-47-705Z.json",
+      "weekdayAmount": 3810,
+      "weekendAmount": 4640,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1248161,
+      "routeSeconds": 58199
     }
   ],
   "historicalExecutionExceptions": [],
