@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:51:40.152Z",
+  "generatedAt": "2026-10-16T01:52:15.482Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 296,
-    "recordedLiveAttempts": 310,
-    "liveCaptured": 296,
-    "savedLiveSummaries": 296,
+    "distinctCaseAttempts": 297,
+    "recordedLiveAttempts": 311,
+    "liveCaptured": 297,
+    "savedLiveSummaries": 297,
     "missingOrInvalidReferences": 0,
-    "audited": 296,
-    "traceComplete": 296,
-    "sameDateParity": 296
+    "audited": 297,
+    "traceComplete": 297,
+    "sameDateParity": 297
   },
   "regionCounts": {
     "dnr": {
@@ -130,11 +130,11 @@
       "id": "single-khabarovsk",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
+      "attempted": 7,
+      "audited": 7,
       "traversalProven": 0,
-      "pricedWeekday": 6,
-      "pricedWeekend": 6
+      "pricedWeekday": 7,
+      "pricedWeekend": 7
     },
     {
       "id": "pair-m4-a289",
@@ -10122,6 +10122,38 @@
       ],
       "routeMeters": 143142,
       "routeSeconds": 6716
+    },
+    {
+      "caseId": "single-khabarovsk-khabarovsk-to-vyazemsky",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T01-52-11-176Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "khabarovsk"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "khabarovsk"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 127461,
+      "routeSeconds": 5983
     }
   ],
   "historicalExecutionExceptions": [],
@@ -17039,7 +17071,8 @@
         "single-ckad-kazan-to-dmitrov",
         "single-ckad-klin-to-ramenskoe",
         "single-ckad-rostov-to-dmitrov",
-        "single-khabarovsk-berezovka-to-vyazemsky"
+        "single-khabarovsk-berezovka-to-vyazemsky",
+        "single-khabarovsk-khabarovsk-to-vyazemsky"
       ],
       "occurrences": [
         {
@@ -17895,9 +17928,23 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-berezovka-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T01-51-35-848Z.json"
+        },
+        {
+          "caseId": "single-khabarovsk-khabarovsk-to-vyazemsky",
+          "detail": {
+            "expectedRoads": [
+              "khabarovsk"
+            ],
+            "provenRoads": [],
+            "missingExpectedRoads": [
+              "khabarovsk"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T01-52-11-176Z.json"
         }
       ],
-      "caseCount": 50
+      "caseCount": 51
     },
     {
       "code": "m11-58-679:unpriced",

@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 299,
-  "rawCaptureCaseCount": 296,
+  "rawCaptureCount": 300,
+  "rawCaptureCaseCount": 297,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -21269,6 +21269,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-52-09-407Z.json",
+      "caseId": "single-khabarovsk-khabarovsk-to-vyazemsky",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T01-52-11-176Z.json",
+          "exists": true,
+          "bytes": 2450,
+          "sha256": "f82125ca75511a5428012f5545973552a583a98cbd108d092b37584542074d05",
+          "gitBlobSha": "4083e55113c0270e146f2d57b9501c3840d221d6",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/2026-10-16T01-52-11-167Z-capture.json.gz",
+          "exists": true,
+          "bytes": 54452,
+          "sha256": "dd5c3cb4f59f912e619e97a09dec60faeebbc94635335ff7de5569c7f8848e48",
+          "gitBlobSha": "60791502fe3bb4001e32e0a34aacbd2cd1f4eac2",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 4
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-52-11-537Z.json",
+          "exists": true,
+          "bytes": 2528,
+          "sha256": "a36d923dbe82d8b8f0326acbdebc569bef6e34f193cd77964d3372e4d0293b6d",
+          "gitBlobSha": "4fffbeed217248ece08081bb270adb0c8684818c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-52-11-884Z.json",
+          "exists": true,
+          "bytes": 2528,
+          "sha256": "400ca54a073aa999159a0ae7b0e5a7393230a9254eee6b6c1e569852bcb97ec1",
+          "gitBlobSha": "e63dcd7d9e90994a4437cfb1a76d831f41f31f8b",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -23625,6 +23670,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 5
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/2026-10-16T01-52-11-167Z-capture.json.gz",
+      "exists": true,
+      "bytes": 54452,
+      "sha256": "dd5c3cb4f59f912e619e97a09dec60faeebbc94635335ff7de5569c7f8848e48",
+      "gitBlobSha": "60791502fe3bb4001e32e0a34aacbd2cd1f4eac2",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 4
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-knyaze-to-smidovich/2026-10-16T00-18-27-187Z-capture.json.gz",
