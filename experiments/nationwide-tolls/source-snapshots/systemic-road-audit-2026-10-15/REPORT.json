@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:04:11.260Z",
+  "generatedAt": "2026-10-16T00:04:34.470Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 109,
-    "recordedLiveAttempts": 122,
-    "liveCaptured": 108,
-    "savedLiveSummaries": 108,
+    "distinctCaseAttempts": 110,
+    "recordedLiveAttempts": 123,
+    "liveCaptured": 109,
+    "savedLiveSummaries": 109,
     "missingOrInvalidReferences": 1,
-    "audited": 108,
-    "traceComplete": 108,
-    "sameDateParity": 108
+    "audited": 109,
+    "traceComplete": 109,
+    "sameDateParity": 109
   },
   "regionCounts": {
     "dnr": {
@@ -170,8 +170,8 @@
       "id": "pair-m11-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 2,
-      "audited": 2,
+      "attempted": 3,
+      "audited": 3,
       "traversalProven": 1,
       "pricedWeekday": 0,
       "pricedWeekend": 0
@@ -3779,6 +3779,42 @@
       ],
       "routeMeters": 772549,
       "routeSeconds": 25413
+    },
+    {
+      "caseId": "pair-m11-ckad-spb-to-domodedovo",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-31-908Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 767751,
+      "routeSeconds": 27422
     }
   ],
   "historicalExecutionExceptions": [],
@@ -5262,7 +5298,8 @@
         "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
         "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
         "pair-m11-ckad-domodedovo-to-spb",
-        "pair-m11-ckad-noginsk-to-spb"
+        "pair-m11-ckad-noginsk-to-spb",
+        "pair-m11-ckad-spb-to-domodedovo"
       ],
       "occurrences": [
         {
@@ -5912,9 +5949,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-09-543Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-31-908Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-04-32-328Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-32-746Z.json"
         }
       ],
-      "caseCount": 24
+      "caseCount": 25
     },
     {
       "code": "m4:unpriced",
@@ -6434,7 +6498,8 @@
       "code": "unknown-paid-road:unpriced",
       "cases": [
         "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
-        "max-chain-m4-ckad-m11-zsd-voronezh-to-prim"
+        "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+        "pair-m11-ckad-spb-to-domodedovo"
       ],
       "occurrences": [
         {
@@ -6490,9 +6555,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-03-25-201Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-31-908Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-04-32-328Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-domodedovo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-32-746Z.json"
         }
       ],
-      "caseCount": 2
+      "caseCount": 3
     },
     {
       "code": "expected-road-not-proven",
@@ -6502,7 +6594,8 @@
         "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
         "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
         "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
-        "pair-m11-ckad-domodedovo-to-spb"
+        "pair-m11-ckad-domodedovo-to-spb",
+        "pair-m11-ckad-spb-to-domodedovo"
       ],
       "occurrences": [
         {
@@ -6627,9 +6720,27 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-03-47-879Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-domodedovo",
+          "detail": {
+            "expectedRoads": [
+              "m11",
+              "ckad"
+            ],
+            "provenRoads": [
+              "zsd",
+              "m11"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-31-908Z.json"
         }
       ],
-      "caseCount": 6
+      "caseCount": 7
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
