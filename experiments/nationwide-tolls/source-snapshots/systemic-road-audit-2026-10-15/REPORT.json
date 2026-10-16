@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:03:26.912Z",
+  "generatedAt": "2026-10-16T00:03:50.463Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 107,
-    "recordedLiveAttempts": 120,
-    "liveCaptured": 106,
-    "savedLiveSummaries": 106,
+    "distinctCaseAttempts": 108,
+    "recordedLiveAttempts": 121,
+    "liveCaptured": 107,
+    "savedLiveSummaries": 107,
     "missingOrInvalidReferences": 1,
-    "audited": 106,
-    "traceComplete": 106,
-    "sameDateParity": 106
+    "audited": 107,
+    "traceComplete": 107,
+    "sameDateParity": 107
   },
   "regionCounts": {
     "dnr": {
@@ -170,8 +170,8 @@
       "id": "pair-m11-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 0,
-      "audited": 0,
+      "attempted": 1,
+      "audited": 1,
       "traversalProven": 0,
       "pricedWeekday": 0,
       "pricedWeekend": 0
@@ -3708,6 +3708,42 @@
       ],
       "routeMeters": 1245601,
       "routeSeconds": 46261
+    },
+    {
+      "caseId": "pair-m11-ckad-domodedovo-to-spb",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-03-47-879Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 757880,
+      "routeSeconds": 26376
     }
   ],
   "historicalExecutionExceptions": [],
@@ -5189,7 +5225,8 @@
         "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
         "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
         "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
-        "max-chain-m4-ckad-m11-zsd-voronezh-to-prim"
+        "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+        "pair-m11-ckad-domodedovo-to-spb"
       ],
       "occurrences": [
         {
@@ -5785,9 +5822,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-03-25-201Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-domodedovo-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-03-47-879Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-domodedovo-to-spb",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-03-48-307Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-domodedovo-to-spb",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-03-48-722Z.json"
         }
       ],
-      "caseCount": 22
+      "caseCount": 23
     },
     {
       "code": "m4:unpriced",
@@ -6318,7 +6382,8 @@
         "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
         "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
         "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
-        "max-chain-m4-ckad-m11-zsd-voronezh-to-prim"
+        "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+        "pair-m11-ckad-domodedovo-to-spb"
       ],
       "occurrences": [
         {
@@ -6425,9 +6490,27 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T00-03-24-126Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-domodedovo-to-spb",
+          "detail": {
+            "expectedRoads": [
+              "m11",
+              "ckad"
+            ],
+            "provenRoads": [
+              "m11",
+              "zsd"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-03-47-879Z.json"
         }
       ],
-      "caseCount": 5
+      "caseCount": 6
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
