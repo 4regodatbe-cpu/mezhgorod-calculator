@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:32:32.085Z",
+  "generatedAt": "2026-10-16T00:32:59.978Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 178,
-    "recordedLiveAttempts": 191,
-    "liveCaptured": 177,
-    "savedLiveSummaries": 177,
+    "distinctCaseAttempts": 179,
+    "recordedLiveAttempts": 192,
+    "liveCaptured": 178,
+    "savedLiveSummaries": 178,
     "missingOrInvalidReferences": 1,
-    "audited": 177,
-    "traceComplete": 177,
-    "sameDateParity": 177
+    "audited": 178,
+    "traceComplete": 178,
+    "sameDateParity": 178
   },
   "regionCounts": {
     "dnr": {
@@ -200,9 +200,9 @@
       "id": "triple-m11-ckad-m12",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 1,
-      "audited": 1,
-      "traversalProven": 1,
+      "attempted": 2,
+      "audited": 2,
+      "traversalProven": 2,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -6078,6 +6078,42 @@
       ],
       "routeMeters": 1524816,
       "routeSeconds": 61507
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-56-925Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad",
+          "m12"
+        ],
+        "provenRoads": [
+          "m12",
+          "m11",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1066548,
+      "routeSeconds": 47641
     }
   ],
   "historicalExecutionExceptions": [],
@@ -9155,7 +9191,8 @@
         "pair-m12-ckad-kazan-to-klin",
         "pair-m12-ckad-klin-to-kazan",
         "pair-m12-ckad-vladimir-to-klin",
-        "triple-m11-ckad-m12-kazan-to-spb"
+        "triple-m11-ckad-m12-kazan-to-spb",
+        "triple-m11-ckad-m12-kazan-to-torzhok"
       ],
       "occurrences": [
         {
@@ -9481,9 +9518,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-29-989Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-56-925Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-32-57-404Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-57-868Z.json"
         }
       ],
-      "caseCount": 12
+      "caseCount": 13
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -9507,7 +9571,8 @@
         "single-m11-tver-to-moscow",
         "single-m3-kaluga-to-moscow",
         "single-odintsovo-golitsyno-to-moscow",
-        "single-zsd-blag-to-prim"
+        "single-zsd-blag-to-prim",
+        "triple-m11-ckad-m12-kazan-to-torzhok"
       ],
       "occurrences": [
         {
@@ -10049,9 +10114,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-30-25-309Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-56-925Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-32-57-404Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-57-868Z.json"
         }
       ],
-      "caseCount": 20
+      "caseCount": 21
     },
     {
       "code": "expected-road-not-proven",
@@ -10553,7 +10645,8 @@
         "single-ckad-ramenskoe-to-klin",
         "single-m11-moscow-to-torzhok",
         "single-m11-moscow-to-tver",
-        "single-m11-tver-to-moscow"
+        "single-m11-tver-to-moscow",
+        "triple-m11-ckad-m12-kazan-to-torzhok"
       ],
       "occurrences": [
         {
@@ -10852,9 +10945,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-21-53-871Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-56-925Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-32-57-404Z.json"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-57-868Z.json"
         }
       ],
-      "caseCount": 11
+      "caseCount": 12
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
