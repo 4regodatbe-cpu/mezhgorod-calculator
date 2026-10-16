@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:08:44.482Z",
+  "generatedAt": "2026-10-16T01:09:33.067Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 234,
-    "recordedLiveAttempts": 248,
-    "liveCaptured": 234,
-    "savedLiveSummaries": 234,
+    "distinctCaseAttempts": 235,
+    "recordedLiveAttempts": 249,
+    "liveCaptured": 235,
+    "savedLiveSummaries": 235,
     "missingOrInvalidReferences": 0,
-    "audited": 234,
-    "traceComplete": 234,
-    "sameDateParity": 234
+    "audited": 235,
+    "traceComplete": 235,
+    "sameDateParity": 235
   },
   "regionCounts": {
     "dnr": {
@@ -30,9 +30,9 @@
     },
     "zaporizhzhia": {
       "planned": 40,
-      "liveCaptured": 24,
-      "audited": 24,
-      "traceComplete": 24,
+      "liveCaptured": 25,
+      "audited": 25,
+      "traceComplete": 25,
       "pricedWeekday": 6,
       "pricedWeekend": 7
     },
@@ -7963,6 +7963,42 @@
       ],
       "routeMeters": 2886070,
       "routeSeconds": 139798
+    },
+    {
+      "caseId": "zaporizhzhia-мелитополь-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "zaporizhzhia",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-09-28-756Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2376567,
+      "routeSeconds": 124829
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8503,7 +8539,8 @@
         "kherson-херсон-moscow-center",
         "kherson-херсон-saint-petersburg-center",
         "zaporizhzhia-кушугум-moscow-center",
-        "zaporizhzhia-кушугум-saint-petersburg-center"
+        "zaporizhzhia-кушугум-saint-petersburg-center",
+        "zaporizhzhia-мелитополь-kazan-center"
       ],
       "occurrences": [
         {
@@ -9828,9 +9865,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-08-41-549Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-09-28-756Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-09-29-445Z.json"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-09-30-112Z.json"
         }
       ],
-      "caseCount": 49
+      "caseCount": 50
     },
     {
       "code": "zsd:unpriced",
