@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T02:19:35.847Z",
-  "phase": "DONE",
+  "at": "2026-10-16T02:19:41.412Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,101 +23,10 @@
       "group": "triple-m4-m11-zsd"
     }
   },
-  "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
-    "startedAt": "2026-10-16T02:18:56.068Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T02-19-07-368Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/2026-10-16T02-19-07-294Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-19-07-897Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-19-08-438Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m4",
-        "m11",
-        "zsd"
-      ],
-      "provenRoads": [
-        "zsd",
-        "m11",
-        "m4"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-58-679, unknown-paid-road, zsd",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "unknown-paid-road: unmapped_selected_route_paid_booth",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-58-679, unknown-paid-road, zsd",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "unknown-paid-road: unmapped_selected_route_paid_booth",
-        "zsd: zsd_trip_extends_outside_reviewed_zone1"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m4",
-        "amount": 1830,
-        "reason": "matrix exact selected-route M4 vector"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": null,
-        "reason": "only_one_verified_boundary_crossing"
-      },
-      {
-        "id": "unknown-paid-road",
-        "amount": null,
-        "reason": "unmapped_selected_route_paid_booth"
-      },
-      {
-        "id": "zsd",
-        "amount": null,
-        "reason": "zsd_trip_extends_outside_reviewed_zone1"
-      }
-    ],
-    "finishedAt": "2026-10-16T02:19:08.460Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-18-54-677Z-part18",
-  "parent": "1c5b2b16f26b3b6a0ee4bb39e14096847ef46c84",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-19-35-847Z-done.json"
+  "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-19-41-411Z-part18",
+  "parent": "5cfe21c8714ab473a235c8790dcacadce4cdea44",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-19-41-412Z-started.json"
 }
