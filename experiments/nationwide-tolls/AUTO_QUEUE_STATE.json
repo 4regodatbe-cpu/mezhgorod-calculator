@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T02:17:04.200Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T02:17:52.909Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,121 @@
     },
     {
       "stage": 2,
-      "done": 150,
+      "done": 151,
       "total": 154
     }
   ],
   "next": {
     "part": 18,
     "spec": {
-      "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+      "caseId": "triple-m4-m11-zsd-prim-to-krasnodar",
       "kind": "road",
       "group": "triple-m4-m11-zsd"
     }
   },
   "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+    "startedAt": "2026-10-16T02:17:05.568Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T02-17-24-485Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/2026-10-16T02-17-24-374Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-17-25-118Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-17-25-755Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "provenRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 5040,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "amount": 1130,
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": 3900,
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "amount": 94,
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "amount": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      },
+      {
+        "id": "unknown-paid-road",
+        "amount": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ],
+    "finishedAt": "2026-10-16T02:17:25.774Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-17-04-200Z-part18",
-  "parent": "904e1b81ed35fd7255d1bcc34069aeb227af406b",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-17-04-200Z-started.json"
+  "parent": "f49bfffc11577d1260fc13c08f2485f2803b743a",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-17-52-909Z-done.json"
 }
