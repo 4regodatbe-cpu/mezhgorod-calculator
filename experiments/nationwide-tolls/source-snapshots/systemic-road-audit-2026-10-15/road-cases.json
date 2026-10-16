@@ -3166,7 +3166,22 @@
         "m11"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-12-35-194Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-spb/2026-10-16T00-12-35-097Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 1791969,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-12-19-506Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-12-35-194Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-spb/2026-10-16T00-12-35-097Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-12-35-810Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-12-36-409Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "pair-m4-m11-spb-to-rostov",

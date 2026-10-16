@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:12:18.025Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:12:50.284Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 96,
+      "done": 97,
       "total": 155
     },
     {
@@ -18,15 +18,112 @@
   "next": {
     "part": 8,
     "spec": {
-      "caseId": "pair-m4-m11-rostov-to-spb",
+      "caseId": "pair-m4-m11-spb-to-krasnodar",
       "kind": "road",
       "group": "pair-m4-m11"
     }
   },
   "caseId": "pair-m4-m11-rostov-to-spb",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "pair-m4-m11-rostov-to-spb",
+    "startedAt": "2026-10-16T00:12:19.508Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-12-35-194Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-spb/2026-10-16T00-12-35-097Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-12-35-810Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-12-36-409Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m4",
+        "m11"
+      ],
+      "provenRoads": [
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": 9234,
+      "weekdayAmount": 9234,
+      "weekendAmount": 10884,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-911 → m4-71 · Стоимость не подтверждена",
+        "М-11 15–58: moscow → solnechnogorsk: 1130 ₽ · Стоимость не подтверждена",
+        "М-11: p58 → p679 · Стоимость не подтверждена",
+        "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+        "ЗСД: тарифная зона 1 · 300 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 10884,
+      "weekdayAmount": 9234,
+      "weekendAmount": 10884,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "М-4: m4-911 → m4-71 · Стоимость не подтверждена",
+        "М-11 15–58: moscow → solnechnogorsk: 1650 ₽ · Стоимость не подтверждена",
+        "М-11: p58 → p679 · Стоимость не подтверждена",
+        "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+        "ЗСД: тарифная зона 1 · 300 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 3810,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "amount": 1130,
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": 3900,
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "amount": 94,
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "amount": 300,
+        "reason": "zsd_zone1_complete_directed_base_tariff"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:12:36.428Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-12-18-025Z-part8",
-  "parent": "ceeae668546965d4ed1bcffcdbedc58e067c158d",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-12-18-025Z-started.json"
+  "parent": "e8a6cebcbd96ce75feef23cff9b7dbbbc5a1f473",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-12-50-284Z-done.json"
 }
