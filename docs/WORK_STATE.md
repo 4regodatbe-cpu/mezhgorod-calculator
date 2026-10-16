@@ -1,6 +1,6 @@
 # Калькулятор «Из А в Б»: актуальное состояние
 
-16.10.2026. Только ветка `fix/v3-missing-route-prices-2026-10-15`, PR #14 draft/open. Последний проверенный remote commit перед этой записью: `7aa114acec35d285ca8377814b763da9bbaa16fa`, tree `27a7287d397bdde961a0ac8909becabb4f2838c8`. Main, merge, Production и Android не трогались.
+16.10.2026. Только ветка `fix/v3-missing-route-prices-2026-10-15`, PR #14 draft/open. Последний проверенный remote commit перед этой записью: `a53bd290ce4738aa01d484e23163e99939c045ff`, tree `f280ac8936a2dd33fcf828db5d7b4945fa39673a`. Main, merge, Production и Android не трогались.
 
 ## DONE
 
@@ -16,11 +16,11 @@
 
 Разобрать остальные категории [PART19_FINDINGS_QUEUE.json](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) по одному случаю; [план 20 частей](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json). Часть 20 ещё не начата.
 
-**19C, историческая M4 crossing-policy: проверено 2/25.** Гранитное→Москва: current-engine offline 3810/4640 ₽; Пришиб→Москва: **5840/6890 ₽** (М-4 5040/6090 + А-289800). Оба случая complete 2/2, trip-departure-v1; историческая ошибка не воспроизвелась, нового source fix не требовалось. Старые unknown сохранены. [Гранитное](checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md), [Пришиб: результат/SHA/NEXT](checkpoints/2026-10-16-073825-part19c-prishib-m4-policy-replay.md). Это не fresh live или подтверждение тарифа.
+**19C, историческая M4 crossing-policy: проверено 3/25.** Гранитное→Москва: current-engine offline 3810/4640 ₽; Пришиб→Москва и Раденск→Москва: **5840/6890 ₽** (М-4 5040/6090 + А-289800) каждый. Все три случая complete 2/2, trip-departure-v1; историческая ошибка не воспроизвелась, нового source fix не требовалось. Старые unknown сохранены. [Гранитное](checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md), [Пришиб](checkpoints/2026-10-16-073825-part19c-prishib-m4-policy-replay.md), [Раденск/SHA/NEXT](checkpoints/2026-10-16-083802-part19c-radensk-m4-policy-replay.md). Это не fresh live или подтверждение тарифа.
 
 ## NEXT — один сохраняемый микрошаг
 
-**Только `kherson-раденск-moscow-center`, историческая M4 policy 3/25.** Получить existing capture из corpus.auditEvidence; existing runner `run-systemic-route-case.mjs --replay` на 15/17 октября 09:00 МСК. Проверить integrity, фактический M4 quote и trip-departure basis; unrelated unknown не скрывать. Сохранить новые timestamped outputs, checkpoint, WORK_LOG/NEXT_STEPS и оценку в queue; commit, GitHub branch head и exact tree readback **до следующего случая**. При кириллице — NUL-safe Git paths. Для PR использовать metadata-only get_pr_info: fetch_pr с огромным diff возвращал Transport closed.
+**Только `dnr-гранитное-saint-petersburg-center`, историческая M4 policy 4/25.** Получить existing capture из corpus.auditEvidence; existing runner `run-systemic-route-case.mjs --replay` на 15/17 октября 09:00 МСК. Проверить integrity, фактический M4 quote и trip-departure basis; unrelated unknown не скрывать, subtotal не выдавать за итог. Сохранить новые timestamped outputs, checkpoint, WORK_LOG/NEXT_STEPS и оценку в queue; commit, GitHub branch head и exact tree readback **до следующего случая**. При кириллице — NUL-safe Git paths. Для PR использовать metadata-only get_pr_info: fetch_pr с огромным diff возвращал Transport closed.
 
 Автоматически продолжать без команды «дальше». Перед записью проверить отсутствие другого writer. STARTED до долгой операции, DONE/FAILED и durable save после каждого микрошaга. Если сохранение не прошло — остановить расширение, сообщить blocker. Не считать старую same-date parity проверкой исправленного кода.
 
