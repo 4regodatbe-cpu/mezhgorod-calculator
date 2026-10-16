@@ -1553,3 +1553,5 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 2026-10-16T14:35:29.499Z: ZSD case46 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-35-29-498Z.md). NEXT ZSD nextcase dnr-харцызск-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
 
 2026-10-16T14:36:02.345Z: ZSD case47 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-36-02-342Z.md). NEXT ZSD nextcase lnr-ровеньки-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:36:42.146Z: ZSD case48 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-36-42-146Z.md). NEXT ZSD nextcase lnr-сорокино-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
