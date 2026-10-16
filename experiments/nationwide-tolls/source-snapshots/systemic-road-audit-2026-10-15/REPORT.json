@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:56:56.052Z",
+  "generatedAt": "2026-10-16T00:57:54.082Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 216,
-    "recordedLiveAttempts": 230,
-    "liveCaptured": 216,
-    "savedLiveSummaries": 216,
+    "distinctCaseAttempts": 217,
+    "recordedLiveAttempts": 231,
+    "liveCaptured": 217,
+    "savedLiveSummaries": 217,
     "missingOrInvalidReferences": 0,
-    "audited": 216,
-    "traceComplete": 216,
-    "sameDateParity": 216
+    "audited": 217,
+    "traceComplete": 217,
+    "sameDateParity": 217
   },
   "regionCounts": {
     "dnr": {
@@ -38,9 +38,9 @@
     },
     "kherson": {
       "planned": 40,
-      "liveCaptured": 39,
-      "audited": 39,
-      "traceComplete": 39,
+      "liveCaptured": 40,
+      "audited": 40,
+      "traceComplete": 40,
       "pricedWeekday": 10,
       "pricedWeekend": 10
     }
@@ -7394,6 +7394,43 @@
       ],
       "routeMeters": 2485550,
       "routeSeconds": 133243
+    },
+    {
+      "caseId": "kherson-херсон-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-57-49-734Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 3197320,
+      "routeSeconds": 162410
     }
   ],
   "historicalExecutionExceptions": [],
@@ -7931,7 +7968,8 @@
         "kherson-таврийск-moscow-center",
         "kherson-таврийск-saint-petersburg-center",
         "kherson-херсон-kazan-center",
-        "kherson-херсон-moscow-center"
+        "kherson-херсон-moscow-center",
+        "kherson-херсон-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -9175,9 +9213,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-56-53-375Z.json"
+        },
+        {
+          "caseId": "kherson-херсон-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-57-49-734Z.json"
+        },
+        {
+          "caseId": "kherson-херсон-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-57-50-567Z.json"
+        },
+        {
+          "caseId": "kherson-херсон-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-57-51-386Z.json"
         }
       ],
-      "caseCount": 46
+      "caseCount": 47
     },
     {
       "code": "zsd:unpriced",
