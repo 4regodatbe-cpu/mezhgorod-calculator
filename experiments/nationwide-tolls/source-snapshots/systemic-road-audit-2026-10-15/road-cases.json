@@ -4308,7 +4308,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-14-374Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/2026-10-16T01-34-14-347Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 486338,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-34-11-540Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-14-374Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/2026-10-16T01-34-14-347Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-34-14-760Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-34-15-134Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "pair-m11-zsd-prim-to-torzhok",
