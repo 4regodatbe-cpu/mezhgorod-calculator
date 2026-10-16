@@ -1696,7 +1696,7 @@
         "a289-slavyansk-directed-connector",
         "zsd-planernaya-exact-booth-identity"
       ],
-      "nextSubstep": "ZSD next distinct case pair-m11-zsd-moscow-to-prim: existing capture twoofflineprofiles; compare exact selected scope",
+      "nextSubstep": "ZSD nextcase pair-m11-zsd-moscow-to-sest; --next; savedcapture twoofflineprofiles",
       "findingsQueue": "PART19_FINDINGS_QUEUE.json"
     },
     {
@@ -1710,6 +1710,6 @@
     "totalParts": 20,
     "method": "100*completedParts/totalParts; unfinished parts earn no partial credit",
     "meaning": "Completion of the agreed 20-part work plan; NOT percent verified tariff coverage or release readiness",
-    "percent": 90.0
+    "percent": 90
   }
 }

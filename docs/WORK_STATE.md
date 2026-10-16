@@ -10,7 +10,7 @@
 
 19D M4review22/22:5wholeunconfirmedestimates/3pricedM4componentswithotherunknowns/8physical545scopegates/6shortM4scopegates. Эти14sourcegates открыты, unknown≠0. [M4/очередь](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json).
 
-**ZSDreview26/76**: каждыйcase отдельно воспроизведён в2offlineprofiles сcomplete/SHA/head/tree. Различные направления/съезды разобраны отдельно; совпадениеwayset+boothsequence разрешает повторное использование диагноза, не тарифа. Итоги остаютсяunknown приотсутствииполногоfinishedcollectionscope. Подробности/ссылки всех26 вочереди. [Итогблока/автопродолжение](checkpoints/2026-10-16-zsd-26case-handoff-and-auto-reporting.md).
+**ZSDreview27/76**: каждыйcase отдельно воспроизведён в2offlineprofiles сcomplete/SHA/head/tree. Различные направления/съезды разобраны отдельно; совпадениеwayset+boothsequence разрешает повторное использование диагноза, не тарифа. Итоги остаютсяunknown приотсутствииполногоfinishedcollectionscope. Подробности/ссылки всех26 вочереди. [Итогблока/автопродолжение](checkpoints/2026-10-16-zsd-26case-handoff-and-auto-reporting.md).
 
 Исправление exactnode1766158781→ZSD валидировано: первичная направленная топология иselectedledger подтвердилиПВППланерная; redundantunknownpaidroad устранён, M11head/CKAD/ZSDблокеры сохранены. [Replay](checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md).
 
@@ -18,22 +18,8 @@
 
 ## NEXT STARTED
 
-**Case27 `pair-m11-zsd-moscow-to-prim`**: взять exactauditEvidence.capture изcorpus.json/road-cases.json; offline15/17Oct09:00MSK; затем точечно сравнить selectedZSDways/orderedbooths/geometry. Новыйscope разобратьпередследующимcase; новуюнеизвестнуюкассунезависимоидентифицироватьпередисправлением. Сохранятькаждыйcase/тест/изменение+checkpoint/log/plan/state/commit/remotehead/exacttree. Не запускать309live/22M4/25policyзаново.
+**ZSD nextcase pair-m11-zsd-moscow-to-sest; --next; savedcapture twoofflineprofiles**
 
-Автопродолжениевключено; требованиепроцентадобавленовегоотчёты, readbackпроверен. Это не утверждение обactivejob. Одинисполнитель: приactive/queuedjobилиизменившемсяremoteheadнеписатьвветку. Тарифпоотправлению, unknownне0, subtotalнеитог, benchmarkснимкинеliveвыбор. Никакихmain/merge/Production/Android/messages.
+ZSD review **27/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T14-20-22-671Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
-[AGENTS](../AGENTS.md) · [Protocol](CHECKPOINT_PROTOCOL.md) · [Plan](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json) · [Queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md). Все прежние checkpoints/history сохранены.
-
-16.10.2026 16:54MSK scratch-pruning recovery DONE, exactclonehead/tree verified; no routeprogress lost. NEXT frozen dependencies/repository-owned ZSDsinglecaseutility, then case27. checkpoints/2026-10-16-1654-resume-after-scratch-pruning.md Plan90%.
-
-16.10.2026 frozen dependencies restored exit0/15.7s, lockunchanged; NEXT repository-owned ZSD review utility. checkpoints/2026-10-16-1656-frozen-dependencies-restored.md No newtest/build/route; plan90%.
-
-16.10.2026 ZSD repository-owned singlecase utility CODE DONE, fourintegrity/adversarial tests added; syntaxchecks passed, focused/fullgate NOTyet run. checkpoints/2026-10-16-zsd-repository-runner-code.md NEXT focusedchecks, fullgate, case27. Plan90%.
-
-16.10.2026 ZSDdurablerunnerfocused4/4PASS/lint2filesexit0, rulesreread peruser17:11; NEXTfullgate then automaticcase27. checkpoints/2026-10-16-zsd-runner-focused-pass.md Plan90%.
-
-16.10.2026 current-chat resume: rules/20parts reread, exact remote tree matched in own checkout. Plan90%. NEXT fullgate then case27. docs/checkpoints/2026-10-16-continue-current-chat.md
-
-16.10.2026 fullgate DONE exit0:695/695, quote/API, webpack/TS/static16/16 PASS. Raw log preserved. NEXT case27 --next. Plan90%. docs/checkpoints/2026-10-16-current-chat-fullgate-pass.md
-
-16.10.2026 runnerpreflight FAILED before replay: untracked dependency symlink, localexclude repaired. No caseprogress. NEXT retrycase27. Plan90%. docs/checkpoints/2026-10-16-zsd-preflight-symlink-recovery.md
+Repository-owned utility: `node experiments/nationwide-tolls/scripts/review-zsd-finding-case.mjs --next` (or `--diagnose` after a new scope). One step only; caller commits/publishes/exacthead-tree before continuing. Do not rerun completed M4/policy/live queues. No main/merge/Production. Autocontinuation remains enabled.
