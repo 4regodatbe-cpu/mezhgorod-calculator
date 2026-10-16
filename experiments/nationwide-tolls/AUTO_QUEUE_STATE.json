@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:49:30.240Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:49:34.658Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,62 +23,10 @@
       "region": "kherson"
     }
   },
-  "caseId": "kherson-скадовск-kerch-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "kherson-скадовск-kerch-center",
-    "startedAt": "2026-10-16T00:49:08.647Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-49-11-258Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-kerch-center/2026-10-16T00-49-11-234Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-49-11-657Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-49-12-054Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T00:49:12.071Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-49-07-296Z-part11",
-  "parent": "d9e3a8f09623dbad9b58195efaff0382983f6777",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-49-30-240Z-done.json"
+  "caseId": "kherson-скадовск-moscow-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-49-34-658Z-part12",
+  "parent": "ed7d8dd488c040b6af1d7b126025023fd9dda31a",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-49-34-658Z-started.json"
 }
