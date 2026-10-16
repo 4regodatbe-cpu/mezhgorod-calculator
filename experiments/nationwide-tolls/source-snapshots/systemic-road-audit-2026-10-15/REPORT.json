@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:36:06.313Z",
+  "generatedAt": "2026-10-16T01:36:42.350Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 273,
-    "recordedLiveAttempts": 287,
-    "liveCaptured": 273,
-    "savedLiveSummaries": 273,
+    "distinctCaseAttempts": 274,
+    "recordedLiveAttempts": 288,
+    "liveCaptured": 274,
+    "savedLiveSummaries": 274,
     "missingOrInvalidReferences": 0,
-    "audited": 273,
-    "traceComplete": 273,
-    "sameDateParity": 273
+    "audited": 274,
+    "traceComplete": 274,
+    "sameDateParity": 274
   },
   "regionCounts": {
     "dnr": {
@@ -180,8 +180,8 @@
       "id": "pair-m12-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 8,
-      "audited": 8,
+      "attempted": 9,
+      "audited": 9,
       "traversalProven": 2,
       "pricedWeekday": 3,
       "pricedWeekend": 3
@@ -9346,6 +9346,42 @@
       ],
       "routeMeters": 491116,
       "routeSeconds": 23380
+    },
+    {
+      "caseId": "pair-m12-ckad-klin-to-vladimir",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-38-167Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12",
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11",
+          "ckad"
+        ],
+        "missingExpectedRoads": [
+          "m12"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 280840,
+      "routeSeconds": 12591
     }
   ],
   "historicalExecutionExceptions": [],
@@ -13983,7 +14019,8 @@
         "pair-m11-ckad-ramenskoe-to-torzhok",
         "pair-m11-ckad-tver-to-noginsk",
         "pair-m12-ckad-arzamas-to-domodedovo",
-        "pair-m12-ckad-domodedovo-to-arzamas"
+        "pair-m12-ckad-domodedovo-to-arzamas",
+        "pair-m12-ckad-klin-to-vladimir"
       ],
       "occurrences": [
         {
@@ -14687,9 +14724,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-02-921Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-38-167Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-36-38-566Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-38-943Z.json"
         }
       ],
-      "caseCount": 26
+      "caseCount": 27
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -14733,7 +14797,8 @@
         "pair-m11-zsd-prim-to-torzhok",
         "pair-m11-zsd-sest-to-novgorod",
         "pair-m11-zsd-sest-to-tver",
-        "pair-m11-zsd-torzhok-to-prim"
+        "pair-m11-zsd-torzhok-to-prim",
+        "pair-m12-ckad-klin-to-vladimir"
       ],
       "occurrences": [
         {
@@ -15815,9 +15880,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-34-15-134Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-38-167Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-36-38-566Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-38-943Z.json"
         }
       ],
-      "caseCount": 40
+      "caseCount": 41
     },
     {
       "code": "expected-road-not-proven",
@@ -15863,7 +15955,8 @@
         "pair-m11-ckad-novgorod-to-domodedovo",
         "pair-m12-ckad-arzamas-to-domodedovo",
         "pair-m12-ckad-dmitrov-to-murom",
-        "pair-m12-ckad-domodedovo-to-arzamas"
+        "pair-m12-ckad-domodedovo-to-arzamas",
+        "pair-m12-ckad-klin-to-vladimir"
       ],
       "occurrences": [
         {
@@ -16590,9 +16683,27 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-122Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "expectedRoads": [
+              "m12",
+              "ckad"
+            ],
+            "provenRoads": [
+              "m11",
+              "ckad"
+            ],
+            "missingExpectedRoads": [
+              "m12"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-38-167Z.json"
         }
       ],
-      "caseCount": 42
+      "caseCount": 43
     },
     {
       "code": "m11-58-679:unpriced",
@@ -16621,7 +16732,8 @@
         "pair-m11-zsd-prim-to-torzhok",
         "pair-m11-zsd-sest-to-novgorod",
         "pair-m11-zsd-sest-to-tver",
-        "pair-m11-zsd-torzhok-to-prim"
+        "pair-m11-zsd-torzhok-to-prim",
+        "pair-m12-ckad-klin-to-vladimir"
       ],
       "occurrences": [
         {
@@ -17298,9 +17410,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-34-15-134Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-38-167Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-36-38-566Z.json"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-38-943Z.json"
         }
       ],
-      "caseCount": 25
+      "caseCount": 26
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
