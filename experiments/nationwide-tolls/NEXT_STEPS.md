@@ -597,3 +597,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 2026-10-16T00:43:09.971Z: automatic queue STARTED; 155/155,9/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-09-971Z-started.json). dnr-талаковка-saint-petersburg-center
 
 2026-10-16T00:43:51.804Z: automatic queue DONE; 155/155,10/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-51-804Z-done.json). dnr-талаковка-saint-petersburg-center
+
+2026-10-16T00:43:55.942Z: automatic queue STARTED; 155/155,10/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-55-942Z-started.json). dnr-урзуф-kazan-center
