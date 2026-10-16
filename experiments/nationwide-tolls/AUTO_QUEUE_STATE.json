@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:31:43.803Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:31:48.919Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,94 +23,10 @@
       "group": "pair-m11-zsd"
     }
   },
-  "caseId": "pair-m11-ckad-tver-to-noginsk",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "pair-m11-ckad-tver-to-noginsk",
-    "startedAt": "2026-10-16T01:31:15.113Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-tver-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T01-31-18-057Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-tver-to-noginsk/2026-10-16T01-31-18-037Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-31-18-432Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-31-18-792Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m11",
-        "ckad"
-      ],
-      "provenRoads": [
-        "m11",
-        "ckad"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "ckad: ckad_east_arc_not_proven",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "ckad: ckad_east_arc_not_proven",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m11-58-679",
-        "amount": null,
-        "reason": "only_one_verified_boundary_crossing"
-      },
-      {
-        "id": "ckad",
-        "amount": null,
-        "reason": "ckad_east_arc_not_proven"
-      },
-      {
-        "id": "unknown-paid-road",
-        "amount": null,
-        "reason": "unmapped_selected_route_paid_booth"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:31:18.810Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-31-13-770Z-part15",
-  "parent": "469913ac42c45b3febdb9ed683df221948b113a3",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-31-43-803Z-done.json"
+  "caseId": "pair-m11-zsd-novgorod-to-sest",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-31-48-919Z-part15",
+  "parent": "053b68be7890e5cfe5b6a95ed14b6d3a7554d9ba",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-31-48-919Z-started.json"
 }
