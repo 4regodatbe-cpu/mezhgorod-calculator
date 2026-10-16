@@ -19,7 +19,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "dnr-широкино-saint-petersburg-center",
+  "nextCase": "lnr-лисичанск-saint-petersburg-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -53,7 +53,7 @@
       ],
       "status": "historical_policy_needs_current_replay",
       "note": "trip-departure-v1 already implemented; preserve original raw/results and replay before any new source fix",
-      "currentCasesChecked": 12,
+      "currentCasesChecked": 13,
       "currentEvaluations": [
         {
           "caseId": "dnr-гранитное-moscow-center",
@@ -575,6 +575,90 @@
             }
           ],
           "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-47-47-368Z-part19_m4_policy_done.json"
+        },
+        {
+          "caseId": "dnr-широкино-saint-petersburg-center",
+          "result": "not_reproduced_current_engine",
+          "weekdayAmount": 9234,
+          "weekendAmount": 10884,
+          "m4WeekdayAmount": 3810,
+          "m4WeekendAmount": 4640,
+          "remainingMissing": [],
+          "outputs": [
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-47-53-015Z.json",
+              "sha256": "58fb6703e24d680ec4023eaa430a8e30ac0ef9d82e349a22afbbd7a1f918de62"
+            },
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-47-53-684Z.json",
+              "sha256": "74d0367c57d03a0ab07f4403a8ea709cd356ac5ade498aa6c3c476c1b9f61373"
+            }
+          ],
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/2026-10-15T12-04-54-252Z-capture.json.gz",
+          "captureSha256": "6ffccea6b7cf0b7a43994058f70cabaa68a10111b8b696eeb8bf0a40b60e45b4",
+          "components": [
+            {
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 3810,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "m11-15-58",
+                  "amount": 1130,
+                  "reason": "m11_head_ready_direct_pair_at_departure"
+                },
+                {
+                  "id": "m11-58-679",
+                  "amount": 3900,
+                  "reason": "matrix dated selected-route M11 direct pair"
+                },
+                {
+                  "id": "m11-679-684",
+                  "amount": 94,
+                  "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+                },
+                {
+                  "id": "zsd",
+                  "amount": 300,
+                  "reason": "zsd_zone1_complete_directed_base_tariff"
+                }
+              ]
+            },
+            {
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 4640,
+                  "reason": "matrix exact selected-route M4 vector"
+                },
+                {
+                  "id": "m11-15-58",
+                  "amount": 1650,
+                  "reason": "m11_head_ready_direct_pair_at_departure"
+                },
+                {
+                  "id": "m11-58-679",
+                  "amount": 4200,
+                  "reason": "matrix dated selected-route M11 direct pair"
+                },
+                {
+                  "id": "m11-679-684",
+                  "amount": 94,
+                  "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+                },
+                {
+                  "id": "zsd",
+                  "amount": 300,
+                  "reason": "zsd_zone1_complete_directed_base_tariff"
+                }
+              ]
+            }
+          ],
+          "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-47-53-722Z-part19_m4_policy_done.json"
         }
       ]
     },
