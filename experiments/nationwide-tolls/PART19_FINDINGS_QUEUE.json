@@ -26,8 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "dnr-донецк-saint-petersburg-center",
-  "nextAction": "ZSD next distinct case dnr-донецк-saint-petersburg-center: existing capture twoofflineprofiles; compare exact selected scope",
+  "nextCase": "lnr-алчевск-saint-petersburg-center",
+  "nextAction": "ZSD next distinct case lnr-алчевск-saint-petersburg-center: existing capture twoofflineprofiles; compare exact selected scope",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2457,9 +2457,18 @@
         "missing": [
           "zsd"
         ]
+      },
+      {
+        "caseId": "dnr-донецк-saint-petersburg-center",
+        "status": "source_gated_same_exact_way_set",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-140859-zsd-case8.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-140859-zsd-case8.json",
+        "missing": [
+          "zsd"
+        ]
       }
     ],
-    "checked": 7,
+    "checked": 8,
     "total": 76
   }
 }
