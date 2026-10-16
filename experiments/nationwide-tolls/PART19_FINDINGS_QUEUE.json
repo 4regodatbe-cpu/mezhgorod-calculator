@@ -33,8 +33,8 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "lnr-сорокино-saint-petersburg-center",
-  "nextAction": "ZSD nextcase lnr-сорокино-saint-petersburg-center; --next; savedcapture twoofflineprofiles",
+  "nextCase": "lnr-старобельск-saint-petersburg-center",
+  "nextAction": "ZSD nextcase lnr-старобельск-saint-petersburg-center; --next; savedcapture twoofflineprofiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2902,9 +2902,19 @@
         ],
         "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-36-42-146Z.md",
         "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-36-42-146Z.json"
+      },
+      {
+        "caseId": "lnr-сорокино-saint-petersburg-center",
+        "status": "source_gated_same_reviewed_zsd_scope",
+        "sameReviewedScopeCase": "lnr-брянка-saint-petersburg-center",
+        "missing": [
+          "zsd"
+        ],
+        "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-37-13-167Z.md",
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-37-13-167Z.json"
       }
     ],
-    "checked": 48,
+    "checked": 49,
     "total": 76,
     "identityFix": {
       "status": "validated",
