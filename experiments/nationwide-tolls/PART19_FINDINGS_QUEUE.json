@@ -26,8 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "zaporizhzhia-гуляйполе-saint-petersburg-center",
-  "nextAction": "ZSD next distinct case zaporizhzhia-гуляйполе-saint-petersburg-center: existing capture twoofflineprofiles; compare exact selected scope",
+  "nextCase": "dnr-бахмут-saint-petersburg-center",
+  "nextAction": "ZSD next distinct case dnr-бахмут-saint-petersburg-center: existing capture twoofflineprofiles; compare exact selected scope",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2430,9 +2430,18 @@
         "missing": [
           "zsd"
         ]
+      },
+      {
+        "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+        "status": "source_gated_same_exact_way_set",
+        "checkpoint": "../../docs/checkpoints/2026-10-16-140757-zsd-case5.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-140757-zsd-case5.json",
+        "missing": [
+          "zsd"
+        ]
       }
     ],
-    "checked": 4,
+    "checked": 5,
     "total": 76
   }
 }
