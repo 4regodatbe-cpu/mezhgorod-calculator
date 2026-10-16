@@ -1,5 +1,7 @@
 # Калькулятор «Из А в Б»: часть19, исправления
 
+19B Москва→Тамань whole-engine offline **complete2/2,4725/5625₽** (15/17Oct09:00MSK), A289385 +M44340/5240; unconfirmed tariff, not fresh live. [Replay / reverse STARTED](checkpoints/2026-10-16-part19b-moscow-taman-replay.md). Original baseline preserved.
+
 19B **fullgate676/676 + quote/API/Next/TS/static16/16PASS**, scopedlint5/diffPASS. [Gate checkpoint / STARTED Moscow→Taman offline replay](checkpoints/2026-10-16-part19b-a289-build-pass.md). Runtime source79df66d8; no whole-engine result yet.
 
 16.10.2026:19B connector implementation + focused **23/23PASS** saved; RED reproduced before fix. Narrow directed Slavyansk binding, existing dated385 matrix, no partial fallback. **Full gate STARTED, not yet verified; whole-engine replay pending**. [Checkpoint](checkpoints/2026-10-16-part19b-a289-connector-focused.md). Part19 continues,20 not started.
