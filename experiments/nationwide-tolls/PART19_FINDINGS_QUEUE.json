@@ -19,7 +19,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "zaporizhzhia-гуляйполе-moscow-center",
+  "nextCase": "kherson-старая-збурьевка-moscow-center",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -53,7 +53,7 @@
       ],
       "status": "historical_policy_needs_current_replay",
       "note": "trip-departure-v1 already implemented; preserve original raw/results and replay before any new source fix",
-      "currentCasesChecked": 19,
+      "currentCasesChecked": 20,
       "currentEvaluations": [
         {
           "caseId": "dnr-гранитное-moscow-center",
@@ -1115,6 +1115,50 @@
             }
           ],
           "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-48-33-733Z-part19_m4_policy_done.json"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+          "result": "not_reproduced_current_engine",
+          "weekdayAmount": 3810,
+          "weekendAmount": 4640,
+          "m4WeekdayAmount": 3810,
+          "m4WeekendAmount": 4640,
+          "remainingMissing": [],
+          "outputs": [
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-48-39-707Z.json",
+              "sha256": "812cc85444056b7c369ae4bbe388a9132c0a402834a1d3d0ee5b33edf4710a60"
+            },
+            {
+              "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-48-40-306Z.json",
+              "sha256": "88d09c0dc56b0e58770504132c79e5f21be1794db540679406422cd6319317fe"
+            }
+          ],
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/2026-10-15T18-16-40-411Z-capture.json.gz",
+          "captureSha256": "c76a9a1ade47e032e1a510fcabed7c762b3cabf691fcf539501272acda2a83ed",
+          "components": [
+            {
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 3810,
+                  "reason": "matrix exact selected-route M4 vector"
+                }
+              ]
+            },
+            {
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "components": [
+                {
+                  "id": "m4",
+                  "amount": 4640,
+                  "reason": "matrix exact selected-route M4 vector"
+                }
+              ]
+            }
+          ],
+          "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-48-40-342Z-part19_m4_policy_done.json"
         }
       ]
     },
