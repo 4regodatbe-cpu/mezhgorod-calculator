@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:31:06.657Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:31:25.258Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 142,
+      "done": 143,
       "total": 155
     },
     {
@@ -18,15 +18,71 @@
   "next": {
     "part": 10,
     "spec": {
-      "caseId": "single-zsd-prim-to-blag",
+      "caseId": "single-zsd-pushkin-to-sest",
       "kind": "road",
       "group": "single-zsd"
     }
   },
   "caseId": "single-zsd-prim-to-blag",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-zsd-prim-to-blag",
+    "startedAt": "2026-10-16T00:31:08.007Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-blag/live-2026-10-15T09-00-00-03-00-2026-10-16T00-31-09-455Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-blag/2026-10-16T00-31-09-448Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-31-09-794Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-31-10-124Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "zsd"
+      ],
+      "provenRoads": [],
+      "missingExpectedRoads": [
+        "zsd"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "weekend": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "пятница–воскресенье",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "components": [],
+    "finishedAt": "2026-10-16T00:31:10.137Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-31-06-657Z-part10",
-  "parent": "3ecb2912a139cb001b93e473feb65e96293f3ed6",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-31-06-657Z-started.json"
+  "parent": "b1423d2af11913dd4fc81a3ff10a0093f82f3a76",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-31-25-258Z-done.json"
 }

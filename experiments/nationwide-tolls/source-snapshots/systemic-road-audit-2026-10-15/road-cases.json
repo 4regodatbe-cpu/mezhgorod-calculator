@@ -2346,7 +2346,22 @@
         "zsd"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-blag/live-2026-10-15T09-00-00-03-00-2026-10-16T00-31-09-455Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-blag/2026-10-16T00-31-09-448Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 18096,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-31-08-004Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-blag/live-2026-10-15T09-00-00-03-00-2026-10-16T00-31-09-455Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-blag/2026-10-16T00-31-09-448Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-31-09-794Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-31-10-124Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-zsd-pushkin-to-sest",
