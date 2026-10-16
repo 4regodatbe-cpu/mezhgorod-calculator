@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 312,
-  "rawCaptureCaseCount": 309,
+  "rawCaptureCount": 313,
+  "rawCaptureCaseCount": 310,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -21854,6 +21854,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-00-10-550Z.json",
+      "caseId": "single-m12-moscow-to-cheboksary",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-cheboksary/live-2026-10-15T09-00-00-03-00-2026-10-16T02-00-15-730Z.json",
+          "exists": true,
+          "bytes": 2423,
+          "sha256": "a96ab18383f45e6db8caf2f476d7d2a78a057beb2885cc6af5aeacab8fcc130e",
+          "gitBlobSha": "656d44774b3120b8dfbf0155a717e0303c9be320",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-cheboksary/2026-10-16T02-00-15-677Z-capture.json.gz",
+          "exists": true,
+          "bytes": 343094,
+          "sha256": "c4b3c5cbd90b3a9de54d637ae8a99973d83e0b17b5c4e1a6280bcf5240e4a400",
+          "gitBlobSha": "791770adf3a988ac89ac0650ab621af33c352e2a",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 8
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-cheboksary/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-00-16-214Z.json",
+          "exists": true,
+          "bytes": 2501,
+          "sha256": "af6b4183fa39e277db11bb752ee11a90287bfcd9a38999c3baf46d54fc695967",
+          "gitBlobSha": "3b5174d4ac12cbac3efd42a71144ebaf9dad209d",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-cheboksary/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-00-16-683Z.json",
+          "exists": true,
+          "bytes": 2501,
+          "sha256": "911aef0c4087b7d590a24970653110cb24099ec18f7e5efa83b734a42e8af8fc",
+          "gitBlobSha": "2a629607f889fab16ec6a331faf163122cff2ff4",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -24485,6 +24530,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 7
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-cheboksary/2026-10-16T02-00-15-677Z-capture.json.gz",
+      "exists": true,
+      "bytes": 343094,
+      "sha256": "c4b3c5cbd90b3a9de54d637ae8a99973d83e0b17b5c4e1a6280bcf5240e4a400",
+      "gitBlobSha": "791770adf3a988ac89ac0650ab621af33c352e2a",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 8
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-kazan/2026-10-16T00-23-10-215Z-capture.json.gz",
