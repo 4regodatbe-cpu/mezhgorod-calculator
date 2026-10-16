@@ -1077,3 +1077,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 2026-10-16T02:03:48.780Z: automatic queue STARTED; 155/155,129/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-03-48-780Z-started.json). single-m4-moscow-to-voronezh
 
 2026-10-16T02:04:22.776Z: automatic queue DONE; 155/155,130/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-04-22-776Z-done.json). single-m4-moscow-to-voronezh
+
+2026-10-16T02:04:28.174Z: automatic queue STARTED; 155/155,130/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-04-28-174Z-started.json). single-m4-rostov-to-krasnodar
