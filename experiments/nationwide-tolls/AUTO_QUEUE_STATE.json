@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:30:31.797Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:30:37.051Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,95 +23,10 @@
       "group": "pair-m11-ckad"
     }
   },
-  "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
-    "startedAt": "2026-10-16T01:30:02.375Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-055Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/2026-10-16T01-30-06-017Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-30-06-477Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-30-06-875Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m11",
-        "ckad"
-      ],
-      "provenRoads": [
-        "m11"
-      ],
-      "missingExpectedRoads": [
-        "ckad"
-      ],
-      "status": "expected-road-not-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
-        "m11-15-58: m11_58_679_facility_sequence_incomplete",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
-        "m11-15-58: m11_58_679_facility_sequence_incomplete",
-        "m11-58-679: only_one_verified_boundary_crossing",
-        "unknown-paid-road: unmapped_selected_route_paid_booth"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m11-15-58",
-        "amount": null,
-        "reason": "m11_58_679_facility_sequence_incomplete"
-      },
-      {
-        "id": "m11-58-679",
-        "amount": null,
-        "reason": "only_one_verified_boundary_crossing"
-      },
-      {
-        "id": "unknown-paid-road",
-        "amount": null,
-        "reason": "unmapped_selected_route_paid_booth"
-      }
-    ],
-    "finishedAt": "2026-10-16T01:30:06.891Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-30-00-791Z-part14",
-  "parent": "5d62f5a8328ed2601874e43c01a969e51fc677c3",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-30-31-797Z-done.json"
+  "caseId": "pair-m11-ckad-ramenskoe-to-torzhok",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-30-37-051Z-part15",
+  "parent": "eddc25f2403c44f0e798ee5b68f83835e3310670",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-30-37-051Z-started.json"
 }
