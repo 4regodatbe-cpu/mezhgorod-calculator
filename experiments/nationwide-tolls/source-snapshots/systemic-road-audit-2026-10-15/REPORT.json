@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:01:43.935Z",
+  "generatedAt": "2026-10-16T00:02:22.852Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 104,
-    "recordedLiveAttempts": 117,
-    "liveCaptured": 103,
-    "savedLiveSummaries": 103,
+    "distinctCaseAttempts": 105,
+    "recordedLiveAttempts": 118,
+    "liveCaptured": 104,
+    "savedLiveSummaries": 104,
     "missingOrInvalidReferences": 1,
-    "audited": 103,
-    "traceComplete": 103,
-    "sameDateParity": 103
+    "audited": 104,
+    "traceComplete": 104,
+    "sameDateParity": 104
   },
   "regionCounts": {
     "dnr": {
@@ -210,8 +210,8 @@
       "id": "max-chain-m4-ckad-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 2,
-      "audited": 2,
+      "attempted": 3,
+      "audited": 3,
       "traversalProven": 0,
       "pricedWeekday": 0,
       "pricedWeekend": 0
@@ -3583,6 +3583,49 @@
       ],
       "routeMeters": 1826770,
       "routeSeconds": 82679
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-02-19-869Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "ckad",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11",
+          "m4"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2093658,
+      "routeSeconds": 96229
     }
   ],
   "historicalExecutionExceptions": [],
@@ -5061,7 +5104,8 @@
         "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
         "max-chain-m12-ckad-m11-zsd-sest-to-murom",
         "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
-        "max-chain-m4-ckad-m11-zsd-rostov-to-sest"
+        "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+        "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar"
       ],
       "occurrences": [
         {
@@ -5576,9 +5620,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-01-42-274Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-02-19-869Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-02-20-525Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-02-21-171Z.json"
         }
       ],
-      "caseCount": 19
+      "caseCount": 20
     },
     {
       "code": "m4:unpriced",
@@ -6050,7 +6121,8 @@
       "code": "expected-road-not-proven",
       "cases": [
         "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
-        "max-chain-m4-ckad-m11-zsd-rostov-to-sest"
+        "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+        "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar"
       ],
       "occurrences": [
         {
@@ -6094,9 +6166,30 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-01-41-056Z.json"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+          "detail": {
+            "expectedRoads": [
+              "m4",
+              "ckad",
+              "m11",
+              "zsd"
+            ],
+            "provenRoads": [
+              "zsd",
+              "m11",
+              "m4"
+            ],
+            "missingExpectedRoads": [
+              "ckad"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T00-02-19-869Z.json"
         }
       ],
-      "caseCount": 2
+      "caseCount": 3
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
