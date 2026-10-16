@@ -1281,3 +1281,5 @@ BLOCKED: автоматическая проверка отклонила обе
 16.10.2026: A289fullinterior vector focused20/20PASS; fullbuildSTARTED, затемlint/replay. ../../docs/checkpoints/2026-10-16-part19-a289-focused-pass.md. Часть19ещёINPROGRESS.
 
 16.10.2026: A289fullvector fullbuild673/673+quote/API/Next/TypeScript/static16/16PASS; lint3/diffSTARTED. ../../docs/checkpoints/2026-10-16-part19-a289-build-pass.md.
+
+16.10.2026: A289lint3/diffPASS; STARTED correctedengine offlineАскания-Нова→Казань15/17октября, baselineнепереписывать. ../../docs/checkpoints/2026-10-16-part19-a289-lint-pass-replay-started.md.
