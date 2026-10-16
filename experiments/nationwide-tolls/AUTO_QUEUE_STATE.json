@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:19:30.471Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:19:35.388Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,62 +23,10 @@
       "region": "zaporizhzhia"
     }
   },
-  "caseId": "zaporizhzhia-токмак-kerch-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "zaporizhzhia-токмак-kerch-center",
-    "startedAt": "2026-10-16T01:19:03.247Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-19-06-023Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-kerch-center/2026-10-16T01-19-05-995Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-19-06-443Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-19-06-848Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T01:19:06.865Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-19-01-797Z-part14",
-  "parent": "d8ce8438ec43060176ce286d8125fee19d7117e0",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-19-30-471Z-done.json"
+  "caseId": "zaporizhzhia-токмак-moscow-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-19-35-388Z-part14",
+  "parent": "6624c87b98a5c4949868f806eb6224734d01009d",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-19-35-388Z-started.json"
 }
