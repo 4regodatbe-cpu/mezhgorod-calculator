@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:04:48.931Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:05:08.588Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 78,
+      "done": 79,
       "total": 155
     },
     {
@@ -18,15 +18,108 @@
   "next": {
     "part": 7,
     "spec": {
-      "caseId": "pair-m11-ckad-spb-to-noginsk",
+      "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
       "kind": "road",
       "group": "pair-m11-ckad"
     }
   },
   "caseId": "pair-m11-ckad-spb-to-noginsk",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "pair-m11-ckad-spb-to-noginsk",
+    "startedAt": "2026-10-16T00:04:50.297Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-54-675Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/2026-10-16T00-04-54-634Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-04-55-107Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-55-516Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m11",
+        "ckad"
+      ],
+      "provenRoads": [
+        "zsd",
+        "m11",
+        "ckad"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: ckad, zsd",
+        "ckad: ckad_east_arc_not_proven",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: ckad, zsd",
+        "ckad: ckad_east_arc_not_proven",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m11-15-58",
+        "amount": 200,
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": 3900,
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "amount": 94,
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "ckad",
+        "amount": null,
+        "reason": "ckad_east_arc_not_proven"
+      },
+      {
+        "id": "zsd",
+        "amount": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:04:55.534Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-04-48-931Z-part7",
-  "parent": "96b8ce20fdbdb5f0b5c6918373634aa163797db8",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-04-48-931Z-started.json"
+  "parent": "85e863c1b1a666f2a5a8c09698527edbdc426f04",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-05-08-588Z-done.json"
 }

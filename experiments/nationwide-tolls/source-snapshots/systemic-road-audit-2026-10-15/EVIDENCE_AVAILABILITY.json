@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 112,
-  "rawCaptureCaseCount": 110,
+  "rawCaptureCount": 113,
+  "rawCaptureCaseCount": 111,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -10382,6 +10382,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-04-50-295Z.json",
+      "caseId": "pair-m11-ckad-spb-to-noginsk",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-54-675Z.json",
+          "exists": true,
+          "bytes": 6729,
+          "sha256": "6ba644907ef1f435f86917b76275226e57b5d3c6cfc6151fcf3a358ebf00895e",
+          "gitBlobSha": "c3fea6eb77f84bf79afa55ccf492034872afdc82",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/2026-10-16T00-04-54-634Z-capture.json.gz",
+          "exists": true,
+          "bytes": 238574,
+          "sha256": "9fa98f4f93639f6c2d7de6dbb8d6529c6e2a889e0a4d53456c93aceae5633eaa",
+          "gitBlobSha": "06f4da6b5a83bdf4592b879bcee24ce697aad204",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 9
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-04-55-107Z.json",
+          "exists": true,
+          "bytes": 6807,
+          "sha256": "2cffcb0e85dbe83c0022fd55d14c314e17becd76944f5f4398109a38e23f2592",
+          "gitBlobSha": "58030790dbed0a22032c6d225eb1d5f4075dae1d",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-55-516Z.json",
+          "exists": true,
+          "bytes": 6804,
+          "sha256": "0e0b03e09d961a97d3cd23bd0aa66e6bd0ad446992008b33854bd424004f7955",
+          "gitBlobSha": "16c46f829300d02dfcd1596616b958debddaf67c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -11381,6 +11426,17 @@
       "bytes": 264532,
       "sha256": "7e59435e53caa51ba754f0750dd80c7898389144b3504a85d9d6aa743d4236d0",
       "gitBlobSha": "e49f8933d83790528176f45baa3c7b47b7492232",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 9
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/2026-10-16T00-04-54-634Z-capture.json.gz",
+      "exists": true,
+      "bytes": 238574,
+      "sha256": "9fa98f4f93639f6c2d7de6dbb8d6529c6e2a889e0a4d53456c93aceae5633eaa",
+      "gitBlobSha": "06f4da6b5a83bdf4592b879bcee24ce697aad204",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,

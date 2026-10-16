@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:04:34.470Z",
+  "generatedAt": "2026-10-16T00:04:57.255Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 110,
-    "recordedLiveAttempts": 123,
-    "liveCaptured": 109,
-    "savedLiveSummaries": 109,
+    "distinctCaseAttempts": 111,
+    "recordedLiveAttempts": 124,
+    "liveCaptured": 110,
+    "savedLiveSummaries": 110,
     "missingOrInvalidReferences": 1,
-    "audited": 109,
-    "traceComplete": 109,
-    "sameDateParity": 109
+    "audited": 110,
+    "traceComplete": 110,
+    "sameDateParity": 110
   },
   "regionCounts": {
     "dnr": {
@@ -170,9 +170,9 @@
       "id": "pair-m11-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 3,
-      "audited": 3,
-      "traversalProven": 1,
+      "attempted": 4,
+      "audited": 4,
+      "traversalProven": 2,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -3815,6 +3815,41 @@
       ],
       "routeMeters": 767751,
       "routeSeconds": 27422
+    },
+    {
+      "caseId": "pair-m11-ckad-spb-to-noginsk",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-54-675Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 781492,
+      "routeSeconds": 25675
     }
   ],
   "historicalExecutionExceptions": [],
@@ -5299,7 +5334,8 @@
         "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
         "pair-m11-ckad-domodedovo-to-spb",
         "pair-m11-ckad-noginsk-to-spb",
-        "pair-m11-ckad-spb-to-domodedovo"
+        "pair-m11-ckad-spb-to-domodedovo",
+        "pair-m11-ckad-spb-to-noginsk"
       ],
       "occurrences": [
         {
@@ -5976,9 +6012,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-32-746Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-noginsk",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-54-675Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-noginsk",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-04-55-107Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-noginsk",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-55-516Z.json"
         }
       ],
-      "caseCount": 25
+      "caseCount": 26
     },
     {
       "code": "m4:unpriced",
@@ -6326,7 +6389,8 @@
         "max-chain-m12-ckad-m11-zsd-murom-to-sest",
         "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
         "max-chain-m12-ckad-m11-zsd-sest-to-murom",
-        "pair-m11-ckad-noginsk-to-spb"
+        "pair-m11-ckad-noginsk-to-spb",
+        "pair-m11-ckad-spb-to-noginsk"
       ],
       "occurrences": [
         {
@@ -6490,9 +6554,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-09-543Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-noginsk",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-54-675Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-noginsk",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-04-55-107Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-noginsk",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-55-516Z.json"
         }
       ],
-      "caseCount": 6
+      "caseCount": 7
     },
     {
       "code": "unknown-paid-road:unpriced",
