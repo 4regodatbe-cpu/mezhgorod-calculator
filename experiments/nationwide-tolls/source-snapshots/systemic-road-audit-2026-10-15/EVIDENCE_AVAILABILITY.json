@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 119,
-  "rawCaptureCaseCount": 117,
+  "rawCaptureCount": 120,
+  "rawCaptureCaseCount": 118,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -10697,6 +10697,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-07-28-237Z.json",
+      "caseId": "pair-m12-ckad-dmitrov-to-kazan",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/live-2026-10-15T09-00-00-03-00-2026-10-16T00-07-34-447Z.json",
+          "exists": true,
+          "bytes": 3927,
+          "sha256": "d55424b4dc08bd1adaa1b0566cf475251f5e880c46c4b9beecadda95d76aef89",
+          "gitBlobSha": "eef8bec4245f8a3007ef10b7d7b74948140d24b0",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/2026-10-16T00-07-34-392Z-capture.json.gz",
+          "exists": true,
+          "bytes": 340651,
+          "sha256": "5a1b57074dcb8ad3a3a64e878c5884dc6b92f869eea03acff6b84db0846b85be",
+          "gitBlobSha": "87d011dda533635a5b3acfb43346f443119bff55",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 10
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-07-34-900Z.json",
+          "exists": true,
+          "bytes": 4005,
+          "sha256": "fe91c976a64c800c912c98cf2a7a2dd90b4c4c896214412b8733b89c879091c7",
+          "gitBlobSha": "f0442424dcf0554d32f4f07d67a7ab3f8cf87d5a",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-07-35-354Z.json",
+          "exists": true,
+          "bytes": 4005,
+          "sha256": "0b9d631aa5a296b38729522d1295fb9163a0385550da440e669b61e4ca727ec5",
+          "gitBlobSha": "127b13667ca2a6711c5be672edd574f271e95773",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -11777,6 +11822,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 8
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/2026-10-16T00-07-34-392Z-capture.json.gz",
+      "exists": true,
+      "bytes": 340651,
+      "sha256": "5a1b57074dcb8ad3a3a64e878c5884dc6b92f869eea03acff6b84db0846b85be",
+      "gitBlobSha": "87d011dda533635a5b3acfb43346f443119bff55",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 10
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-kazan-center/2026-10-15T23-52-45-140Z-capture.json.gz",

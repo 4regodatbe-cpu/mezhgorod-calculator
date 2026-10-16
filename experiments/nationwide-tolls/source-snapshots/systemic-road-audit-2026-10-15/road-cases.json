@@ -4094,7 +4094,22 @@
         "ckad"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/live-2026-10-15T09-00-00-03-00-2026-10-16T00-07-34-447Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/2026-10-16T00-07-34-392Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 857336,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-07-28-237Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/live-2026-10-15T09-00-00-03-00-2026-10-16T00-07-34-447Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/2026-10-16T00-07-34-392Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-07-34-900Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-07-35-354Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "pair-m12-ckad-vladimir-to-klin",
