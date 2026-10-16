@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 122,
-  "rawCaptureCaseCount": 120,
+  "rawCaptureCount": 123,
+  "rawCaptureCaseCount": 121,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -10832,6 +10832,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-08-41-988Z.json",
+      "caseId": "pair-m12-ckad-klin-to-kazan",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/live-2026-10-15T09-00-00-03-00-2026-10-16T00-08-48-320Z.json",
+          "exists": true,
+          "bytes": 5723,
+          "sha256": "6ca67bd7aa71e6b9e9088f86435695df8336caca33f3b9b07528c97aa21917e5",
+          "gitBlobSha": "5242971efc840654916951188c534783d1ab8f92",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/2026-10-16T00-08-48-266Z-capture.json.gz",
+          "exists": true,
+          "bytes": 352404,
+          "sha256": "9dc5f3c3201e45c5ad888fe71de1112daac1a26b510e6410b1d0ca58ba145539",
+          "gitBlobSha": "3dfbc5610e94e7ef356ba97d7e4454bcf07ee2cb",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 10
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-08-48-795Z.json",
+          "exists": true,
+          "bytes": 5801,
+          "sha256": "d7f55a9983daddbfc9c7e9318d0fd51d86798122aa381f3bff57e0e1c4360f47",
+          "gitBlobSha": "1d6b0ba39e74a1d23de335325828a8da1c2ed4d6",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-08-49-247Z.json",
+          "exists": true,
+          "bytes": 5801,
+          "sha256": "b1442163dcca5f196db7991976e41f2ab6b27e014bb4b7595e8ad162141e6806",
+          "gitBlobSha": "2d90f318c39ec24538df83c4fbe906f495e58a15",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -11941,6 +11986,17 @@
       "bytes": 349087,
       "sha256": "2adf0ed3480fa6f39517852c63e63a2764245ca929a3d016e3abb5e9632123a5",
       "gitBlobSha": "78578664d00438c8c33692861b90fb7b21f4b85c",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 10
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/2026-10-16T00-08-48-266Z-capture.json.gz",
+      "exists": true,
+      "bytes": 352404,
+      "sha256": "9dc5f3c3201e45c5ad888fe71de1112daac1a26b510e6410b1d0ca58ba145539",
+      "gitBlobSha": "3dfbc5610e94e7ef356ba97d7e4454bcf07ee2cb",
       "recoveryShaMatches": null,
       "readableJson": true,
       "schemaVersion": 2,

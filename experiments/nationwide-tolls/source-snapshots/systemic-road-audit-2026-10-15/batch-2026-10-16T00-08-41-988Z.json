@@ -1,0 +1,94 @@
+{
+  "startedAt": "2026-10-16T00:08:41.988Z",
+  "scope": {
+    "region": null,
+    "group": "pair-m12-ckad",
+    "caseId": "pair-m12-ckad-klin-to-kazan",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "pair-m12-ckad-klin-to-kazan",
+      "startedAt": "2026-10-16T00:08:41.990Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/live-2026-10-15T09-00-00-03-00-2026-10-16T00-08-48-320Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/2026-10-16T00-08-48-266Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-08-48-795Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-08-49-247Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12",
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11",
+          "m12",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "ckad: ckad_east_arc_not_proven",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "ckad: ckad_east_arc_not_proven",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m11-58-679",
+          "amount": null,
+          "reason": "only_one_verified_boundary_crossing"
+        },
+        {
+          "id": "m12",
+          "amount": 3513,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "finishedAt": "2026-10-16T00:08:49.265Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T00:08:49.267Z"
+}
