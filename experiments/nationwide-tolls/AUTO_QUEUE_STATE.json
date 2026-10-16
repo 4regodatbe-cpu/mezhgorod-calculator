@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:15:59.141Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T01:16:28.661Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,94 @@
     },
     {
       "stage": 2,
-      "done": 57,
+      "done": 58,
       "total": 154
     }
   ],
   "next": {
     "part": 14,
     "spec": {
-      "caseId": "zaporizhzhia-розовка-kerch-center",
+      "caseId": "zaporizhzhia-розовка-moscow-center",
       "kind": "regional",
       "region": "zaporizhzhia"
     }
   },
   "caseId": "zaporizhzhia-розовка-kerch-center",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "zaporizhzhia-розовка-kerch-center",
+    "startedAt": "2026-10-16T01:16:00.518Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-16-04-444Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kerch-center/2026-10-16T01-16-04-380Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-16-04-918Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-16-05-366Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "m4",
+        "a289"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": 1650,
+      "weekdayAmount": 1650,
+      "weekendAmount": 1800,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+        "А-289: Maryanskaya → TamanBridge: 800 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 1800,
+      "weekdayAmount": 1650,
+      "weekendAmount": 1800,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+        "А-289: Maryanskaya → TamanBridge: 800 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 850,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "a289",
+        "amount": 800,
+        "reason": "A-289 selected-route OD vector"
+      }
+    ],
+    "finishedAt": "2026-10-16T01:16:05.382Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-15-59-141Z-part14",
-  "parent": "cb4252ff68335374bd78d9e3e7d11b00208f5029",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-15-59-141Z-started.json"
+  "parent": "662ffd5a6a75778241bcc42d9c57104f298d7bd3",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-16-28-661Z-done.json"
 }

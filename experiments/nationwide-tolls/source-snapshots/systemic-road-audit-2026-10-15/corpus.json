@@ -4187,7 +4187,22 @@
       },
       "routeMustBeLive": true,
       "expectedRoads": [],
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-16-04-444Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kerch-center/2026-10-16T01-16-04-380Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 788280,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-16-00-515Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-16-04-444Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kerch-center/2026-10-16T01-16-04-380Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-16-04-918Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-16-05-366Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "zaporizhzhia-токмак-moscow-center",
