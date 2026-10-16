@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:19:12.651Z",
+  "generatedAt": "2026-10-16T00:19:35.482Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 145,
-    "recordedLiveAttempts": 158,
-    "liveCaptured": 144,
-    "savedLiveSummaries": 144,
+    "distinctCaseAttempts": 146,
+    "recordedLiveAttempts": 159,
+    "liveCaptured": 145,
+    "savedLiveSummaries": 145,
     "missingOrInvalidReferences": 1,
-    "audited": 144,
-    "traceComplete": 144,
-    "sameDateParity": 144
+    "audited": 145,
+    "traceComplete": 145,
+    "sameDateParity": 145
   },
   "regionCounts": {
     "dnr": {
@@ -130,11 +130,11 @@
       "id": "single-khabarovsk",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 3,
-      "audited": 3,
+      "attempted": 4,
+      "audited": 4,
       "traversalProven": 0,
-      "pricedWeekday": 3,
-      "pricedWeekend": 3
+      "pricedWeekday": 4,
+      "pricedWeekend": 4
     },
     {
       "id": "pair-m4-a289",
@@ -5015,6 +5015,38 @@
       ],
       "routeMeters": 135777,
       "routeSeconds": 6749
+    },
+    {
+      "caseId": "single-khabarovsk-smidovich-to-vyazemsky",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T00-19-32-756Z.json",
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "khabarovsk"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "khabarovsk"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 241153,
+      "routeSeconds": 10884
     }
   ],
   "historicalExecutionExceptions": [],
@@ -8562,7 +8594,8 @@
         "single-ckad-ramenskoe-to-klin",
         "single-khabarovsk-knyaze-to-smidovich",
         "single-khabarovsk-smidovich-to-knyaze",
-        "single-khabarovsk-smidovich-to-nekrasovka"
+        "single-khabarovsk-smidovich-to-nekrasovka",
+        "single-khabarovsk-smidovich-to-vyazemsky"
       ],
       "occurrences": [
         {
@@ -8875,9 +8908,23 @@
             "status": "expected-road-not-proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-nekrasovka/live-2026-10-15T09-00-00-03-00-2026-10-16T00-19-09-955Z.json"
+        },
+        {
+          "caseId": "single-khabarovsk-smidovich-to-vyazemsky",
+          "detail": {
+            "expectedRoads": [
+              "khabarovsk"
+            ],
+            "provenRoads": [],
+            "missingExpectedRoads": [
+              "khabarovsk"
+            ],
+            "status": "expected-road-not-proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T00-19-32-756Z.json"
         }
       ],
-      "caseCount": 18
+      "caseCount": 19
     },
     {
       "code": "m11-58-679:unpriced",

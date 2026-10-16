@@ -2619,7 +2619,22 @@
         "khabarovsk"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T00-19-32-756Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-vyazemsky/2026-10-16T00-19-32-738Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 241153,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-19-30-606Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T00-19-32-756Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-vyazemsky/2026-10-16T00-19-32-738Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-19-33-151Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-19-33-527Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-khabarovsk-vyazemsky-to-smidovich",
