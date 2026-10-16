@@ -1,8 +1,8 @@
 {
-  "at": "2026-10-16T02:20:21.259Z",
-  "phase": "AUDIT_QUEUE_DONE",
+  "at": "2026-10-16T07:44:59.433Z",
+  "phase": "PART19_POLICY_QUEUE_READY",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
-  "workflowRun": "38824450386",
+  "workflowRun": null,
   "stageCounts": [
     {
       "stage": 1,
@@ -15,6 +15,11 @@
       "total": 154
     }
   ],
-  "next": "Part19: review findings; do not claim fares fixed or release ready",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-20-21-259Z-audit_queue_done.json"
+  "next": "Observe newly triggered workflow run/jobs before any branch write; runner will persist actual runID after build",
+  "checkpointPath": "docs/checkpoints/2026-10-16-part19-policy-queue-ready.md",
+  "previousCompletedWorkflowRun": "38824450386",
+  "pendingCase": "zaporizhzhia-пришиб-saint-petersburg-center",
+  "checked": 5,
+  "total": 25,
+  "workflowRunsUrl": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/runs?branch=fix%2Fv3-missing-route-prices-2026-10-15&event=push&per_page=5"
 }
