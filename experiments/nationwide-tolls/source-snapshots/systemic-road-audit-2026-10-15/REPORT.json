@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:05:47.841Z",
+  "generatedAt": "2026-10-16T01:06:30.976Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 230,
-    "recordedLiveAttempts": 244,
-    "liveCaptured": 230,
-    "savedLiveSummaries": 230,
+    "distinctCaseAttempts": 231,
+    "recordedLiveAttempts": 245,
+    "liveCaptured": 231,
+    "savedLiveSummaries": 231,
     "missingOrInvalidReferences": 0,
-    "audited": 230,
-    "traceComplete": 230,
-    "sameDateParity": 230
+    "audited": 231,
+    "traceComplete": 231,
+    "sameDateParity": 231
   },
   "regionCounts": {
     "dnr": {
@@ -22,9 +22,9 @@
     },
     "lnr": {
       "planned": 40,
-      "liveCaptured": 39,
-      "audited": 39,
-      "traceComplete": 39,
+      "liveCaptured": 40,
+      "audited": 40,
+      "traceComplete": 40,
       "pricedWeekday": 28,
       "pricedWeekend": 28
     },
@@ -7827,6 +7827,38 @@
       ],
       "routeMeters": 883547,
       "routeSeconds": 45056
+    },
+    {
+      "caseId": "lnr-старобельск-saint-petersburg-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "lnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-06-26-871Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1599743,
+      "routeSeconds": 66972
     }
   ],
   "historicalExecutionExceptions": [],
@@ -9691,7 +9723,8 @@
         "dnr-талаковка-saint-petersburg-center",
         "dnr-харцызск-saint-petersburg-center",
         "lnr-ровеньки-saint-petersburg-center",
-        "lnr-сорокино-saint-petersburg-center"
+        "lnr-сорокино-saint-petersburg-center",
+        "lnr-старобельск-saint-petersburg-center"
       ],
       "occurrences": [
         {
@@ -11016,9 +11049,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-04-00-567Z.json"
+        },
+        {
+          "caseId": "lnr-старобельск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-06-26-871Z.json"
+        },
+        {
+          "caseId": "lnr-старобельск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-06-27-493Z.json"
+        },
+        {
+          "caseId": "lnr-старобельск-saint-petersburg-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-06-28-089Z.json"
         }
       ],
-      "caseCount": 49
+      "caseCount": 50
     },
     {
       "code": "m4:unpriced",
