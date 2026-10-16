@@ -6,7 +6,7 @@
 
 Части1–18:155/155+154/154, frozenREPORT340/340.19A/19B A289:57helper-only+2whole-routecases, не59полныхтарифов.19Cpolicy25/25DONE:20wholeofflinequotes/5unknownZSD.
 
-19D m4:unpriced15/22 replaychecked:
+19D m4:unpriced16/22 replaychecked:
 - **4wholeofflinequotes recovered**: Лисичанск/Рубежное/Бахмут/Краматорск→Москва, каждый1830/2300₽15/17окт09:00МСК, unconfirmed estimate. [Лисичанск](checkpoints/2026-10-16-part19d-lisichansk-moscow-recovered.md), [case4](checkpoints/2026-10-16-part19d-case4-replay.md), [case5](checkpoints/2026-10-16-part19d-case5-replay.md), [case6](checkpoints/2026-10-16-part19d-case6-replay.md).
 - Fix4811a106: compilercombined416+460 northbound atomicorder;36ключейперенесены/безновыхцен. Не36готовыхмаршрутов. Rawsourcechainsнепереписаны.
 - **1M4component recovered** case8 Воронеж→Приморский:1830/2300, но wholeunknown ZSD+unmappedbooth; не выдаватьsubtotalзаитог. [Разбор](checkpoints/2026-10-16-part19d-case8-component-recovered.md).
@@ -17,7 +17,7 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 
 ## NEXT STARTED автоматически
 
-**NEXT STARTED** Next dnr-талаковка-kazan-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible. [Checkpoint](checkpoints/2026-10-16-124051-part19d-current-case15.md).
+**NEXT STARTED** Next zaporizhzhia-розовка-kazan-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible. [Checkpoint](checkpoints/2026-10-16-124158-part19d-current-case16.md).
 
 Часть19 IN PROGRESS,20 PLANNED; прочиеfindingclasses неполностьюразобраны. Одинwriter; active/queuedjob→неписатьвветку. TIME_LIMITвозобновляем. Raw/live/baseline/historyсохранять. Replay≠freshlive/подтверждённыйтариф. Unknown≠0,subtotal≠итог, wholetripпоотправлению, междорожныевекторыотложены. No main/merge/Production/Android/messages. Автопродолжение включено, неотключатьпокавсе20незавершены.
 
@@ -27,4 +27,4 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 
 16.10.2026 current checkout refreshed to actuala11dcf46, GitHub jobSUCCESS rechecked. [Fresh-checkout/STARTED](checkpoints/2026-10-16-1222-fresh-checkout-case9-resume.md): samecase9 primaryPDF+selected545geometry. Prior687gate historical; no runtime change. Trace chunk indices are not selectedroute indices.
 
-Latest checkpoint: [part19d-current-case15](checkpoints/2026-10-16-124051-part19d-current-case15.md). Case15/22 dnr-новоазовск-kazan-center DONE: source_gated_same_two_way_collection_scope, providerValhalla/1647414m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal.
+Latest checkpoint: [part19d-current-case16](checkpoints/2026-10-16-124158-part19d-current-case16.md). Case16/22 dnr-талаковка-kazan-center DONE: source_gated_same_two_way_collection_scope, providerValhalla/1688157m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal.
