@@ -8,8 +8,8 @@
       "id": "m4-northbound-compound-boundary",
       "sourceCommit": "4811a106efc0a844b32e1733f0292f74f2cb7d61",
       "validationCheckpoint": "../../docs/checkpoints/2026-10-16-part19d-compound-fullgate-pass.md",
-      "wholeRouteCasesReplayed": 1,
-      "scope": "36 keys relocated without newfares; only LisichanskMoscow fullquote pair verified so far, not operatorODconfirmation"
+      "wholeRouteCasesReplayed": 4,
+      "scope": "36 keys relocated without newfares;4wholequotes Lisichansk/Rubezhnoe/Bakhmut/Kramatorsk toMoscow each2profiles verified, not operatorODconfirmation"
     },
     {
       "id": "a289-full-interior-vector",
@@ -26,7 +26,7 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "zaporizhzhia-гуляйполе-kazan-center",
+  "nextCase": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1742,7 +1742,7 @@
       "code": "m4:unpriced",
       "currentCasesChecked": 7,
       "currentEvaluations": [
-        {"caseId":"zaporizhzhia-гуляйполе-kazan-center","result":"current_unknown_needs_diagnosis","weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case7-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case7-replay.json"},
+        {"caseId":"zaporizhzhia-гуляйполе-kazan-center","result":"source_gated_unknown_retained","weekdayAmount":null,"weekendAmount":null,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case7-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case7-replay.json","diagnosticCheckpoint":"../../docs/checkpoints/2026-10-16-part19d-gulyaypole-kazan-source-hold.md","scopeEvidence":"../../docs/checkpoints/evidence/2026-10-16-gulyaypole-kazan-scope.json"},
         {"caseId":"dnr-краматорск-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case6-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case6-replay.json"},
         {"caseId":"dnr-бахмут-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case5-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case5-replay.json"},
         {"caseId":"lnr-рубежное-moscow-center","result":"recovered_current_engine_unconfirmed_estimate","weekdayAmount":1830,"weekendAmount":2300,"checkpoint":"../../docs/checkpoints/2026-10-16-part19d-case4-replay.md","evidence":"../../docs/checkpoints/evidence/2026-10-16-part19d-case4-replay.json"},
