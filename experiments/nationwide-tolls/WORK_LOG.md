@@ -861,3 +861,5 @@ BLOCKED: автоматическая проверка отклонила обе
 2026-10-16T01:11:12.911Z: automatic queue STARTED; 155/155,51/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-11-12-911Z-started.json). zaporizhzhia-мелитополь-saint-petersburg-center
 
 2026-10-16T01:12:03.027Z: automatic queue DONE; 155/155,52/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-03-027Z-done.json). zaporizhzhia-мелитополь-saint-petersburg-center
+
+2026-10-16T01:12:08.139Z: automatic queue STARTED; 155/155,52/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-08-139Z-started.json). zaporizhzhia-пологи-kazan-center
