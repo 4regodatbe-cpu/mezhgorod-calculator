@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:55:17.316Z",
+  "generatedAt": "2026-10-16T01:55:54.355Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 302,
-    "recordedLiveAttempts": 316,
-    "liveCaptured": 302,
-    "savedLiveSummaries": 302,
+    "distinctCaseAttempts": 303,
+    "recordedLiveAttempts": 317,
+    "liveCaptured": 303,
+    "savedLiveSummaries": 303,
     "missingOrInvalidReferences": 0,
-    "audited": 302,
-    "traceComplete": 302,
-    "sameDateParity": 302
+    "audited": 303,
+    "traceComplete": 303,
+    "sameDateParity": 303
   },
   "regionCounts": {
     "dnr": {
@@ -80,9 +80,9 @@
       "id": "single-m11",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 7,
-      "audited": 7,
-      "traversalProven": 7,
+      "attempted": 8,
+      "audited": 8,
+      "traversalProven": 8,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -10314,6 +10314,39 @@
       ],
       "routeMeters": 589226,
       "routeSeconds": 20739
+    },
+    {
+      "caseId": "single-m11-spb-to-tver",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-55-49-952Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 548168,
+      "routeSeconds": 17773
     }
   ],
   "historicalExecutionExceptions": [],
@@ -12530,7 +12563,8 @@
         "pair-m11-zsd-sest-to-novgorod",
         "pair-m11-zsd-sest-to-tver",
         "pair-m11-zsd-torzhok-to-prim",
-        "pair-m4-m11-spb-to-voronezh"
+        "pair-m4-m11-spb-to-voronezh",
+        "single-m11-spb-to-tver"
       ],
       "occurrences": [
         {
@@ -14287,9 +14321,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-04-574Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-55-49-952Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-55-50-344Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-55-50-729Z.json"
         }
       ],
-      "caseCount": 65
+      "caseCount": 66
     },
     {
       "code": "m4:unpriced",
@@ -15906,7 +15967,8 @@
         "pair-m4-m11-tver-to-rostov",
         "single-ckad-klin-to-ramenskoe",
         "single-m11-moscow-to-novgorod",
-        "single-m11-novgorod-to-moscow"
+        "single-m11-novgorod-to-moscow",
+        "single-m11-spb-to-tver"
       ],
       "occurrences": [
         {
@@ -17231,9 +17293,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-55-13-690Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-55-49-952Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-55-50-344Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-55-50-729Z.json"
         }
       ],
-      "caseCount": 49
+      "caseCount": 50
     },
     {
       "code": "expected-road-not-proven",
@@ -18243,7 +18332,8 @@
         "pair-m4-m11-tver-to-rostov",
         "single-ckad-klin-to-ramenskoe",
         "single-m11-moscow-to-novgorod",
-        "single-m11-novgorod-to-moscow"
+        "single-m11-novgorod-to-moscow",
+        "single-m11-spb-to-tver"
       ],
       "occurrences": [
         {
@@ -19163,9 +19253,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-55-13-690Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-55-49-952Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-55-50-344Z.json"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-55-50-729Z.json"
         }
       ],
-      "caseCount": 34
+      "caseCount": 35
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
