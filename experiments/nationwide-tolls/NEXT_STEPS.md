@@ -1196,3 +1196,5 @@ Fullbuild658/658 PASS сохранён, без новых source изменен�
 # 16.10.2026 current next: part19B full gate
 
 After persisted connector-focused checkpoint: pnpm build + scoped lint/diff. Do not claim whole-engine totals before per-direction offline replay of selected capture. Each direction separate checkpoint/commit/head/tree. Part19 not complete;20 not started. See docs/checkpoints/2026-10-16-part19b-a289-connector-focused.md.
+
+16.10.2026 next: fullgate676 PASS; run ONLY Moscow→Taman raw00-10-06-845Z offline replay15/17Oct09:00MSK, inspect complete/missingResponses/tolls, save/checkpoint first; then reverse. ../../docs/checkpoints/2026-10-16-part19b-a289-build-pass.md.

@@ -1292,3 +1292,5 @@ BLOCKED: автоматическая проверка отклонила обе
 # 16.10.2026 — part19B directed connector focused DONE / full gate STARTED
 
 Parent c2d11f9f, working branch/PR14draft only. RED reproduces missing385 on selected Valhalla Moscow/Taman partial vector; implemented strict three-control directed Slavyansk entry/exit proof before generic M4 fallback. Actual dated matrix supplies fare; missing23 alone never suffices. Focused23/23PASS, full gate and whole-engine replay not yet run. Details/recovery: docs/checkpoints/2026-10-16-part19b-a289-connector-focused.md. No baseline/raw/live rewriting, no production/main/Android.
+
+16.10.2026:19B fullgate676/676+quote/API/Next/TS/static16/16PASS, scopedlint5/diffPASS. Remote79df66d8/tree8dab735a verified. STARTED single Moscow→Taman selected-capture offline replay15/17Oct09:00MSK. Details/rawSHA/recovery: ../../docs/checkpoints/2026-10-16-part19b-a289-build-pass.md. Minor save preflight blankEOF fixed before durable save; no lost data.
