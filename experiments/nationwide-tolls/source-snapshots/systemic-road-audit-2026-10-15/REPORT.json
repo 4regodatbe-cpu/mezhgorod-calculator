@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:34:30.385Z",
+  "generatedAt": "2026-10-16T00:35:12.383Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 182,
-    "recordedLiveAttempts": 195,
-    "liveCaptured": 181,
-    "savedLiveSummaries": 181,
+    "distinctCaseAttempts": 183,
+    "recordedLiveAttempts": 196,
+    "liveCaptured": 182,
+    "savedLiveSummaries": 182,
     "missingOrInvalidReferences": 1,
-    "audited": 181,
-    "traceComplete": 181,
-    "sameDateParity": 181
+    "audited": 182,
+    "traceComplete": 182,
+    "sameDateParity": 182
   },
   "regionCounts": {
     "dnr": {
@@ -190,9 +190,9 @@
       "id": "triple-m4-m11-zsd",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 0,
-      "audited": 0,
-      "traversalProven": 0,
+      "attempted": 1,
+      "audited": 1,
+      "traversalProven": 1,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -6223,6 +6223,46 @@
       ],
       "routeMeters": 487734,
       "routeSeconds": 21691
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-35-08-937Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2096260,
+      "routeSeconds": 96311
     }
   ],
   "historicalExecutionExceptions": [],
@@ -7749,7 +7789,8 @@
         "single-zsd-pushkin-to-sest",
         "single-zsd-sest-to-pushkin",
         "triple-m11-ckad-m12-kazan-to-spb",
-        "triple-m11-ckad-m12-spb-to-kazan"
+        "triple-m11-ckad-m12-spb-to-kazan",
+        "triple-m4-m11-zsd-krasnodar-to-sest"
       ],
       "occurrences": [
         {
@@ -8804,9 +8845,36 @@
             "reason": "zsd_trip_extends_outside_reviewed_zone1"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-33-33-211Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-35-08-937Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-35-09-592Z.json"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "zsd",
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-35-10-230Z.json"
         }
       ],
-      "caseCount": 39
+      "caseCount": 40
     },
     {
       "code": "m4:unpriced",
