@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 40
     }
   },
-  "rawCaptureCount": 285,
-  "rawCaptureCaseCount": 282,
+  "rawCaptureCount": 286,
+  "rawCaptureCaseCount": 283,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -20639,6 +20639,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-42-51-836Z.json",
+      "caseId": "pair-m4-m11-spb-to-voronezh",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T01-43-03-480Z.json",
+          "exists": true,
+          "bytes": 7345,
+          "sha256": "7715a9154093a9305bf3c6c1dd81baaad3a54d06f18507c7a6dd30b89c7a340f",
+          "gitBlobSha": "69bf664e3d95e78479b64422c07f5fa053fc134c",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/2026-10-16T01-43-03-406Z-capture.json.gz",
+          "exists": true,
+          "bytes": 466775,
+          "sha256": "4d3c6d232c73eab5c662c3532fb85931d3083bfb43f4c5184dfe1b285abebc57",
+          "gitBlobSha": "d5399278bbc75a9384c4db93fecf4a52acc5cd1b",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 14
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-43-04-039Z.json",
+          "exists": true,
+          "bytes": 7423,
+          "sha256": "c4cbb50b61fd356fdd73a5b48b93bc923a68411682d40bb72e0c5cdb115f1b56",
+          "gitBlobSha": "ce24eeab6224af5161a6cc3dd8c676881cf356d6",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-04-574Z.json",
+          "exists": true,
+          "bytes": 7423,
+          "sha256": "26498a70982d81ce8d662421c1690dc872010752d6ce5bb71f501ecd39c52db6",
+          "gitBlobSha": "d54ec1eca87f51f64f0548c9a3816b7d559d3589",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -22720,6 +22765,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 17
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/2026-10-16T01-43-03-406Z-capture.json.gz",
+      "exists": true,
+      "bytes": 466775,
+      "sha256": "4d3c6d232c73eab5c662c3532fb85931d3083bfb43f4c5184dfe1b285abebc57",
+      "gitBlobSha": "d5399278bbc75a9384c4db93fecf4a52acc5cd1b",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 14
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/2026-10-16T00-14-21-840Z-capture.json.gz",
