@@ -1,10 +1,10 @@
 # Калькулятор: автоматическая очередь
 
-2026-10-16T01:33:34.790Z. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. Фаза **STARTED**. Stage1 **155/155**; Stage2 **82/154**.
+2026-10-16T01:34:05.101Z. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. Фаза **DONE**. Stage1 **155/155**; Stage2 **83/154**.
 
-Следующий подшаг: **часть15, pair-m11-zsd-sest-to-tver**.
+Следующий подшаг: **часть15, pair-m11-zsd-torzhok-to-prim**.
 
-[Состояние и точные входы](../experiments/nationwide-tolls/AUTO_QUEUE_STATE.json), [checkpoint](checkpoints/auto-2026-10-16T01-33-34-790Z-started.json), [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
+[Состояние и точные входы](../experiments/nationwide-tolls/AUTO_QUEUE_STATE.json), [checkpoint](checkpoints/auto-2026-10-16T01-34-05-101Z-done.json), [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
 
 Каждый маршрут: durable STARTED → live/same-date/weekend → report/inventory → DONE/FAILED → commit/push/head readback. Не запускать второго writer, пока workflow активен. GitHub Actions пишет только рабочую ветку. При конфликте/ошибке сохранения остановка безforce. Raw и progress в source-snapshots и artifact.
 
