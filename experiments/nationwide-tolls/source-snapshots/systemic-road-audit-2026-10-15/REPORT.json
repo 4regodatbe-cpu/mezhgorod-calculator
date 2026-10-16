@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T02:06:28.972Z",
+  "generatedAt": "2026-10-16T02:07:05.118Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 320,
-    "recordedLiveAttempts": 334,
-    "liveCaptured": 320,
-    "savedLiveSummaries": 320,
+    "distinctCaseAttempts": 321,
+    "recordedLiveAttempts": 335,
+    "liveCaptured": 321,
+    "savedLiveSummaries": 321,
     "missingOrInvalidReferences": 0,
-    "audited": 320,
-    "traceComplete": 320,
-    "sameDateParity": 320
+    "audited": 321,
+    "traceComplete": 321,
+    "sameDateParity": 321
   },
   "regionCounts": {
     "dnr": {
@@ -120,9 +120,9 @@
       "id": "single-odintsovo",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 5,
-      "audited": 5,
-      "traversalProven": 0,
+      "attempted": 6,
+      "audited": 6,
+      "traversalProven": 1,
       "pricedWeekday": 4,
       "pricedWeekend": 4
     },
@@ -10892,6 +10892,38 @@
       ],
       "routeMeters": 565794,
       "routeSeconds": 26647
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-00-759Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "odintsovo"
+        ],
+        "provenRoads": [
+          "odintsovo"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 46386,
+      "routeSeconds": 2811
     }
   ],
   "historicalExecutionExceptions": [],
@@ -16628,7 +16660,8 @@
         "single-m11-spb-to-tver",
         "single-m11-torzhok-to-moscow",
         "single-m11-tver-to-spb",
-        "single-m3-kaluga-to-obninsk"
+        "single-m3-kaluga-to-obninsk",
+        "single-odintsovo-golitsyno-to-rublevo"
       ],
       "occurrences": [
         {
@@ -18061,9 +18094,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-obninsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-02-05-127Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-00-759Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-07-01-099Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-07-01-434Z.json"
         }
       ],
-      "caseCount": 53
+      "caseCount": 54
     },
     {
       "code": "expected-road-not-proven",
@@ -20551,7 +20611,8 @@
         "single-m3-kaluga-to-balabanovo",
         "single-m3-kaluga-to-obninsk",
         "single-m3-maloyaroslavets-to-moscow",
-        "single-m3-obninsk-to-kaluga"
+        "single-m3-obninsk-to-kaluga",
+        "single-odintsovo-golitsyno-to-rublevo"
       ],
       "occurrences": [
         {
@@ -20823,9 +20884,36 @@
             "reason": "m3_engine_not_yet_composed"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-03-16-820Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m1",
+            "reason": "m1_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-00-759Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m1",
+            "reason": "m1_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-07-01-099Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m1",
+            "reason": "m1_engine_not_yet_composed"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-07-01-434Z.json"
         }
       ],
-      "caseCount": 10
+      "caseCount": 11
     },
     {
       "code": "m12_current_operator_pair_not_bound",
@@ -20946,6 +21034,42 @@
         }
       ],
       "caseCount": 4
+    },
+    {
+      "code": "odintsovo:unpriced",
+      "cases": [
+        "single-odintsovo-golitsyno-to-rublevo"
+      ],
+      "occurrences": [
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "odintsovo",
+            "reason": "М-1 · Северный обход Одинцова"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-00-759Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "odintsovo",
+            "reason": "М-1 · Северный обход Одинцова"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-07-01-099Z.json"
+        },
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "odintsovo",
+            "reason": "М-1 · Северный обход Одинцова"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-07-01-434Z.json"
+        }
+      ],
+      "caseCount": 1
     }
   ],
   "next": "Complete all 40 regional OD cases per region and >=10 traversal-proven live cases per qualifying single road, then pairs/triples/chains; resolve physical inventory counts. Discuss pricing fixes only after findings review."
