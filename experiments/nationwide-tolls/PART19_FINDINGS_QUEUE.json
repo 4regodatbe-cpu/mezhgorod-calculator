@@ -33,8 +33,8 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   ],
-  "nextCase": "zaporizhzhia-розовка-saint-petersburg-center",
-  "nextAction": "ZSD nextcase zaporizhzhia-розовка-saint-petersburg-center; --next; savedcapture twoofflineprofiles",
+  "nextCase": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+  "nextAction": "ZSD nextcase max-chain-m12-ckad-m11-zsd-cheboksary-to-prim; --next; savedcapture twoofflineprofiles",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2922,9 +2922,19 @@
         ],
         "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-37-50-456Z.md",
         "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-37-50-456Z.json"
+      },
+      {
+        "caseId": "zaporizhzhia-розовка-saint-petersburg-center",
+        "status": "source_gated_same_reviewed_zsd_scope",
+        "sameReviewedScopeCase": "lnr-брянка-saint-petersburg-center",
+        "missing": [
+          "zsd"
+        ],
+        "checkpoint": "../../docs/checkpoints/zsd-2026-10-16T14-38-28-073Z.md",
+        "evidence": "../../docs/checkpoints/evidence/zsd-2026-10-16T14-38-28-073Z.json"
       }
     ],
-    "checked": 50,
+    "checked": 51,
     "total": 76,
     "identityFix": {
       "status": "validated",
