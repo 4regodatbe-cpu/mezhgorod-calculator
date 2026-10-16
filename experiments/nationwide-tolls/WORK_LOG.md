@@ -1285,3 +1285,5 @@ BLOCKED: автоматическая проверка отклонила обе
 16.10.2026: A289lint3/diffPASS; STARTED correctedengine offlineАскания-Нова→Казань15/17октября, baselineнепереписывать. ../../docs/checkpoints/2026-10-16-part19-a289-lint-pass-replay-started.md.
 
 16.10.2026: correctedofflineАскания-Нова→Казаньcomplete2/2,3640/3970(RUB15/17окт),baselineunknownнеперезаписан. STARTED helperimpactна59A289findings. ../../docs/checkpoints/2026-10-16-part19-a289-replay-pass.md. Не новыйlive/внешнееподтверждение.
+
+16.10.2026:19AfullinteriorA289 DONE; helperimpact57/59A289компонентоввосстановлены,2partialМосква↔Таманьunknown. Full673/focused20/lint3PASS; wholeofflineAskaniaKazan3640/3970complete. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-a289-impact-done.md). NEXTSTARTED19B: pair-m4-a289-moscow-to-taman, actualentryproofпередвыбором385. ОчередьPART19_FINDINGS_QUEUE.json. Часть19не завершена,20не начата; baselineREPORTimmutable.

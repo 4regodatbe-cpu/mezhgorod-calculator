@@ -1,0 +1,11 @@
+# Часть19A: полный interior A289 исправлен; impact сохранён
+
+DONE16.10.2026. Parent59ca6ad8, ветка fix/v3-missing-route-prices-2026-10-15/PR14draft. Код fix принят после focused20/20, fullgate673/673+quote/API/Next/TypeScript/static16/16, ESLint3/diffPASS. Два whole-engine offline replaycomplete: Аскания-Нова→Казань3640/3970 (15/17октября09:00+03), A289800 добавленодинраз; baselineunknownоставлен.
+
+Компонентныйimpact по59caseID изнеизменённого REPORT.findings[a289:unpriced]:57recovered,2unresolved,0previouslypriced. Точные before/after/reasons/date/rawSHA: [impact JSON](evidence/2026-10-16-part19-a289-impact.json). Алгоритм проверки зафиксирован в предыдущемcheckpoint: прочитатьoriginal live/raw, вызыватьтолькоa289ShortRoute наselectedgeometry, безroutingcalls. Все57восстановленныхкомпонентов имеют800 и reason complete ordered three-frame traversal; это не57подтверждённыхполныхцен всейпоездки. BaselineREPORT ивсеoldlive/replaysimmutable, небылипереписаны.
+
+Остались A289: pair-m4-a289-moscow-to-taman (82→103) иpair-m4-a289-taman-to-moscow (103→82). Helper возвращает selected frame vector has no applicable finished OD price. Гипотеза: восточнаяпривязкаMaryanskaya поодномуфактуМ4 неверна длявыезда/въездасосевернойстороны,минуяРВП23. Нельзя автоматическиподставить385 толькоизотсутствиярамки; сначала проверитьгеометриюactualexit и существующиеsourceboundaries.
+
+**NEXT STARTED19B**: разобратьровноcase pair-m4-a289-moscow-to-taman по raw 2026-10-16T00-10-06-845Z-capture.json.gz, live2026-10-16T00-10-06-923Z.json; directory source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/. Посмотретьselectedgeometry/OSRMsteps/localendpointregister, чтонаделевходитвA289передпервойрамкой82, сопоставитьссуществующимпрямымOD385 иbindingправилами. Не выполнятьновыеliveзапросы безнеобходимости. Не расширятьнаостальные13категорийвтомжешаге; одиндиагноз/исправление/проверки/checkpoint зараз.
+
+Общаяочередьнаходокотделенаотвыполненныхпрогоновв PART19_FINDINGS_QUEUE.json. Часть19INPROGRESS; часть20неначата. Не всеfindingsявляютсяошибками: m4_crossing_profile_changes25изстарыхcapturesследуетповторитьнаcurrentengineпередизменениемкода. Не main/merge/Production/Android. Следующийподшагзапускатьпослеdurable head/treereadbackэтогоcheckpoint.

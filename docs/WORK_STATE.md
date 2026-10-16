@@ -1,25 +1,19 @@
-# Калькулятор: автоматическая очередь
+# Калькулятор «Из А в Б»: часть19, исправления
 
-2026-10-16T02:20:21.259Z. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. Фаза **AUDIT_QUEUE_DONE**. Stage1 **155/155**; Stage2 **154/154**.
+16.10.2026. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft/open. Проверенный parent59ca6ad8; headэтойзаписи проверяетсяпослепубликации. Main/merge/Production/Androidнеизменялись.
 
-Часть19 **IN PROGRESS**: [checkpoint](checkpoints/2026-10-16-part19-started.md). Первый подшаг — A289 full three-frame traversal на длинных маршрутах; ещё не исправлен. Workflow завершён SUCCESS, другого writer нет. Часть20 не начата.
+## DONE
 
-[Состояние и точные входы](../experiments/nationwide-tolls/AUTO_QUEUE_STATE.json), [checkpoint](checkpoints/auto-2026-10-16T02-20-21-259Z-audit_queue_done.json), [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json).
+Части1–18: **155/155 и154/154**, workflow38824450386/job116729992063 SUCCESS. ИсторическийREPORT340/340с31раннимконтролем,0повреждённыхссылок. Это воспроизводимость, не подтверждениевсехцен.
 
-Каждый маршрут: durable STARTED → live/same-date/weekend → report/inventory → DONE/FAILED → commit/push/head readback. Не запускать второго writer, пока workflow активен. GitHub Actions пишет только рабочую ветку. При конфликте/ошибке сохранения остановка безforce. Raw и progress в source-snapshots и artifact.
+**Часть19A DONE — A289 полныйвнутреннийвектор** на длинныхмаршрутах: трирамки23→82→103/обратно, безповторов, существующаяdatedматрица800. Не нуженлокальныйконечныйгородвсейпоездки. Partial/repeated/date/M4unknownguardsсохранены. Focused20/20, **fullgate673/673** + quote/API/Next/TypeScript/static16/16, lint3/diffPASS. [Итог/checkpoint](checkpoints/2026-10-16-part19-a289-impact-done.md), [build](checkpoints/2026-10-16-part19-a289-build-pass.md).
 
-Audited — воспроизводимость, не независимая проверка цены; unknown не ноль, subtotal не итог. Часть19 не выполнена автоматически одним прогоном, часть20 требует итоговых проверок после исправлений. Fullbuild661PASS — прежняя локальная проверка до автоматического runner; свежий gate см.workflow/checkpoint. No main/merge/Production/Android. Междорожныевекторы отложены, тарификация всей поездки по отправлению. Пользователь16.10 02:12 разрешил автоматическое последовательное продолжение всехчастей.
+[Impact](checkpoints/evidence/2026-10-16-part19-a289-impact.json): восстановленA289компоненту57/59затронутыхкейсов;2остаютсяunknown. Не57полныхцен. [Whole-engine replay](checkpoints/evidence/2026-10-16-part19-a289-replay-verified.json): Аскания-Нова→Казань3640/3970(15/17октября09:00МСК), обаcomplete; не новыйlive/внешняяпроверка. OriginalbaselineREPORT/live/replaysнепереписывались.
 
-[Протокол](CHECKPOINT_PROTOCOL.md), [журнал](../experiments/nationwide-tolls/WORK_LOG.md), [решения](../experiments/nationwide-tolls/DECISIONS.md).
+## NEXT STARTED19B
 
-Часть19/A289: realcapture regression RED (1expected fail,2PASS), baseline не менялся. [Checkpoint](checkpoints/2026-10-16-part19-a289-regression-red.md). STARTED minimal full-frame binding через существующий datedadapter.
+**pair-m4-a289-moscow-to-taman**, толькоодинcase: frames82→103, восточнаяпривязкаещёнеподтверждена. В обратномcase103→82тожеunknown. Проверитьactualentryнаselectedgeometry/OSRMsteps/localregisterизсуществующегоraw, затемonecausefix+regression+fullgate/replay. Не подставлять385 толькоизотсутствияРВП23. Входы/точныефайлы/recoveryв [checkpoint](checkpoints/2026-10-16-part19-a289-impact-done.md).
 
-16.10.2026: A289fullvector code внедрён, первыйfocused FAILED15PASS/1testfilefailed наVMJSONloader. Следующее nativeimport composition вновомтесте. checkpoints/2026-10-16-part19-a289-focused-loader-failed.md. Новоеполноеисправление ещёнепроверено.
+[Очередьнаходокчасти19](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), [20частей](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json). Остальныекатегорииещёнеразобраны,25m4_crossing_profile_changesизстарыхcapturesневыдаватьзановыеошибки,нуженcurrent-engineofflineповтор. **Часть19INPROGRESS,20неначата**.
 
-16.10.2026: A289fullinterior vector focused20/20PASS; fullbuildSTARTED, затемlint/replay. checkpoints/2026-10-16-part19-a289-focused-pass.md. Часть19ещёINPROGRESS.
-
-16.10.2026: A289fullvector fullbuild673/673+quote/API/Next/TypeScript/static16/16PASS; lint3/diffSTARTED. checkpoints/2026-10-16-part19-a289-build-pass.md.
-
-16.10.2026: A289lint3/diffPASS; STARTED correctedengine offlineАскания-Нова→Казань15/17октября, baselineнепереписывать. checkpoints/2026-10-16-part19-a289-lint-pass-replay-started.md.
-
-16.10.2026: correctedofflineАскания-Нова→Казаньcomplete2/2,3640/3970(RUB15/17окт),baselineunknownнеперезаписан. STARTED helperimpactна59A289findings. checkpoints/2026-10-16-part19-a289-replay-pass.md. Не новыйlive/внешнееподтверждение.
+Автоматическипродолжатьпоодномусохраняемомуподшагубез«дальше»; STARTEDпереддолгимшагом,DONE/FAILED+commit/GitHub/head/treeпередследующим. Unknownне0,subtotalнеитог; тарификациявсейпоездкипоотправлению;междорожныевекторыотложены. GitHub/routingconsentдействуют. [Protocol](CHECKPOINT_PROTOCOL.md),[WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md),[NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md),[DECISIONS](../experiments/nationwide-tolls/DECISIONS.md).

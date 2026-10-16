@@ -1690,7 +1690,12 @@
     {
       "id": 19,
       "title": "Разбор находок и исправления по одной ошибке",
-      "status": "in_progress"
+      "status": "in_progress",
+      "completedFixes": [
+        "a289-full-interior-vector"
+      ],
+      "nextSubstep": "Diagnose A289 partial interior binding: pair-m4-a289-moscow-to-taman",
+      "findingsQueue": "PART19_FINDINGS_QUEUE.json"
     },
     {
       "id": 20,
