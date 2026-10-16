@@ -14,11 +14,11 @@ Parts1–18:155/155+154/154, frozenREPORT340/340.19A/B A28957helper-only+2wholec
 
 [22-casequeue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), latestper-caseevidence/checkpoints inqueue/log. Allcases10–22 twoofflineprofiles separatelysaved/readback; raw/live/olderreplays/REPORTuntouched. Fix4811a106 northboundcompound416+460relocated36keys/no newfares. Prior full687/687+quote/API/Next/TS/static16/16/focused26PASS remainshistorical; no runtimecodechange/newgate thisturn. OrdinaryCJS-lint failure andexplicitexception documented, notsilentlypassed.
 
-## NEXT STARTED — ZSD first case
+## NEXT STARTED — ZSD case2 Bryanka→SPB
 
-Short-M4 positive-proof review DONE; six unknowns retained pending current independent physical collection-scope applicability. General open-system rule confirmed in PDF, but effectiveFrom remains unknown and exact current operator scope not independently bound. No zero/free guard implemented. [Review](checkpoints/2026-10-16-1358-short-m4-proof-review.md).
+ZSD case1 Granitnoe→SPB DONE2/2offline: M4/M11components priced; wholequote unknown onlyZSD. Actualnorthbound PVP5 node933974870 and Ekateringofka exit established,26ZSDways/12outside reviewedzone1; not a simplealiasgap. Cash/card per-zone300 documented but fulltrip collectionscope unbound; case1source-gated, no guessed600. [Replay](checkpoints/2026-10-16-1403-zsd-granitnoe-spb-replay.md) · [Physicalscope](checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md) · [Sourcereview](checkpoints/2026-10-16-1410-zsd-primary-rule-scope-hold.md).
 
-Next ONLY dnr-гранитное-saint-petersburg-center existing capture from corpus.json: frozen dependencies, offline15/17Oct09:00MSK replay, then ZSD missing-scope diagnosis. Completed22 M4 and25 policy cases must not be rerun. Fresh checkout calculator-resume at ecd165c2; historical687 not rerun.
+Next ONLY lnr-брянка-saint-petersburg-center: exactcapture fromcorpus, offline15/17Oct09:00MSK, comparephysicalZSDscope; durablecheckpointbeforenextcase. No rerun22M4/25policy/309live. SixshortM4unknowns retained [proofreview](checkpoints/2026-10-16-1358-short-m4-proof-review.md). Frozen dependencies restored; no runtimechange/newfullgate; prior687historical. Currentcheckout calculator-resume, local/remoteSHA differ with connector saves but trees verified aftereach.
 
 Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. Ifcontextends, startfromthisspecificNEXT, notoldrecovery/309live/25policyqueue. One writer; active/queuedjob→no writes, TIME_LIMITresumable. Unknown≠0,subtotal≠total, wholetripdeparturepricing; cross-roadvectorsdeferred. No main/merge/Production/Android/messages. Autocontinuation remainsenabled untilall20done.
 

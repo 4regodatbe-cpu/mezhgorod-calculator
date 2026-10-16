@@ -26,8 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "dnr-гранитное-saint-petersburg-center",
-  "nextAction": "Same ZSD Granitnoe→SPB: bind northbound PVP5 and Ekateringofka exit to owner cash/card collection scope before finished dated traversal",
+  "nextCase": "lnr-брянка-saint-petersburg-center",
+  "nextAction": "ZSD case2 Bryanka→SPB exact savedcapture two-profile replay, compare exact physicalscope to first source-gated case",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2398,6 +2398,8 @@
       "zsd"
     ],
     "scopeCheckpoint": "../../docs/checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md",
-    "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-granitnoe-exact-scope.json"
+    "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-zsd-granitnoe-exact-scope.json",
+    "firstCaseStatus": "source_gated_finished_collection_scope",
+    "sourceReviewCheckpoint": "../../docs/checkpoints/2026-10-16-1410-zsd-primary-rule-scope-hold.md"
   }
 }
