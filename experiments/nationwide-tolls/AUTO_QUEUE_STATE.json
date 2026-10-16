@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-16T00:11:12.322Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T00:11:35.219Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
     {
       "stage": 1,
-      "done": 94,
+      "done": 95,
       "total": 155
     },
     {
@@ -18,15 +18,96 @@
   "next": {
     "part": 7,
     "spec": {
-      "caseId": "pair-m4-a289-voronezh-to-taman",
+      "caseId": "pair-m4-m11-krasnodar-to-spb",
       "kind": "road",
-      "group": "pair-m4-a289"
+      "group": "pair-m4-m11"
     }
   },
   "caseId": "pair-m4-a289-voronezh-to-taman",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "pair-m4-a289-voronezh-to-taman",
+    "startedAt": "2026-10-16T00:11:13.795Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/live-2026-10-15T09-00-00-03-00-2026-10-16T00-11-20-545Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/2026-10-16T00-11-20-485Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-11-21-022Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-11-21-491Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m4",
+        "a289"
+      ],
+      "provenRoads": [
+        "m4",
+        "krasnodar-west-bypass",
+        "a289"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m4",
+        "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m4",
+        "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": null,
+        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      },
+      {
+        "id": "a289",
+        "amount": 800,
+        "reason": "A-289 selected-route OD vector"
+      },
+      {
+        "id": "krasnodar-west-bypass",
+        "amount": 410,
+        "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:11:21.509Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-11-12-322Z-part7",
-  "parent": "a32a91c22f6341a724707e124c38f49ca4ddd393",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-11-12-322Z-started.json"
+  "parent": "2c555e9c31a8412df86fc8550fb9b7322ebc37e2",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-11-35-219Z-done.json"
 }

@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:10:56.764Z",
+  "generatedAt": "2026-10-16T00:11:23.341Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 126,
-    "recordedLiveAttempts": 139,
-    "liveCaptured": 125,
-    "savedLiveSummaries": 125,
+    "distinctCaseAttempts": 127,
+    "recordedLiveAttempts": 140,
+    "liveCaptured": 126,
+    "savedLiveSummaries": 126,
     "missingOrInvalidReferences": 1,
-    "audited": 125,
-    "traceComplete": 125,
-    "sameDateParity": 125
+    "audited": 126,
+    "traceComplete": 126,
+    "sameDateParity": 126
   },
   "regionCounts": {
     "dnr": {
@@ -140,9 +140,9 @@
       "id": "pair-m4-a289",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 4,
-      "audited": 4,
-      "traversalProven": 4,
+      "attempted": 5,
+      "audited": 5,
+      "traversalProven": 5,
       "pricedWeekday": 2,
       "pricedWeekend": 2
     },
@@ -4367,6 +4367,41 @@
       ],
       "routeMeters": 1026560,
       "routeSeconds": 49083
+    },
+    {
+      "caseId": "pair-m4-a289-voronezh-to-taman",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/live-2026-10-15T09-00-00-03-00-2026-10-16T00-11-20-545Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "a289"
+        ],
+        "provenRoads": [
+          "m4",
+          "krasnodar-west-bypass",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1025458,
+      "routeSeconds": 49179
     }
   ],
   "historicalExecutionExceptions": [],
@@ -6738,7 +6773,8 @@
         "dnr-краматорск-moscow-center",
         "zaporizhzhia-гуляйполе-kazan-center",
         "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
-        "pair-m4-a289-taman-to-voronezh"
+        "pair-m4-a289-taman-to-voronezh",
+        "pair-m4-a289-voronezh-to-taman"
       ],
       "occurrences": [
         {
@@ -6956,9 +6992,36 @@
             "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-10-54-934Z.json"
+        },
+        {
+          "caseId": "pair-m4-a289-voronezh-to-taman",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/live-2026-10-15T09-00-00-03-00-2026-10-16T00-11-20-545Z.json"
+        },
+        {
+          "caseId": "pair-m4-a289-voronezh-to-taman",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-11-21-022Z.json"
+        },
+        {
+          "caseId": "pair-m4-a289-voronezh-to-taman",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-11-21-491Z.json"
         }
       ],
-      "caseCount": 8
+      "caseCount": 9
     },
     {
       "code": "saved-live-evidence-missing",
