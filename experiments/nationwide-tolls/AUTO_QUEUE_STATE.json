@@ -1,14 +1,14 @@
 {
-  "at": "2026-10-16T17:16:56.121Z",
-  "phase": "PART19_ZSD_CASE69_REPLAY_DONE",
+  "at": "2026-10-16T17:19:29.899Z",
+  "phase": "PART19_ZSD_CASE69_SCOPE_DIAGNOSIS_DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "ZSD case 69 saved-capture replay under two offline date profiles; not tariff confirmation",
+  "scope": "ZSD case 69 distinct finished-scope diagnosis; offline scope audit, not tariff confirmation",
   "checked": 69,
   "total": 76,
-  "next": "Diagnose case 69 ZSD scope before starting another route; retain unknown if scope is not established",
+  "next": "Case 70 single-zsd-sest-to-blag; replay saved capture under two offline date profiles after durable diagnosis checkpoint",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "ee8f9456112155640179b726dab97d091f11081c",
-  "nextFinding": "zsd:single-zsd-peterhof-to-prim",
-  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-16-56-120Z.md"
+  "parent": "0e732cddb7b18f1f52510df1cb61aeda6e589f2f",
+  "nextFinding": "zsd:single-zsd-sest-to-blag",
+  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-19-29-896Z.md"
 }
