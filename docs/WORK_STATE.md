@@ -17,7 +17,7 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 
 ## NEXT STARTED автоматически
 
-**Same case9 pair-m4-a289-taman-to-voronezh**: selectedcapture2026-10-16T00-10-53-930Z-capture.json.gz вsystemicruns. Точечно прочитатьselectedpaid-edge/geometry вокругПВП545 и northboundexit→Voronezh. Независимо установить545-a/b collection/traversalscope передготовойdirectmatrixcell; не alias545→a/b/min/max/legacysum. Еслинеустановлено, сохранятьunknown. Отдельныйcheckpoint/log/queue/plan/state+commit/GitHub/head/exacttree доисправления/case10. Cases10–22 ещёнепровереныcurrentengine; regional corpus.json и control road-cases.json — дваиндекса, не искатьcontrolтольковregional.
+**Case10 pair-m4-a289-voronezh-to-taman STARTED**: exactexisting road-cases.json.auditEvidence.capture, offline15/17Oct09:00MSK, inspectSHA/provider/integrity/departure/M4reason. Durablecheckpoint before diagnosis/case11. Case9 source-gated: primaryPDF+exactOSMlane reviewed, collection-scheme rule stillunresolved; do not alias545-a/b or treat namedM4length as paidproof. [Latest](checkpoints/2026-10-16-122949-case9-545-source-gate.md). Cases10–22 not yetcurrentreplayed; regionalcorpus+road-cases arebothindexes.
 
 Часть19 IN PROGRESS,20 PLANNED; прочиеfindingclasses неполностьюразобраны. Одинwriter; active/queuedjob→неписатьвветку. TIME_LIMITвозобновляем. Raw/live/baseline/historyсохранять. Replay≠freshlive/подтверждённыйтариф. Unknown≠0,subtotal≠итог, wholetripпоотправлению, междорожныевекторыотложены. No main/merge/Production/Android/messages. Автопродолжение включено, неотключатьпокавсе20незавершены.
 
