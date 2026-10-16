@@ -1642,3 +1642,6 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 
 
 2026-10-16T20:00:50.463Z: M11 boundary case4 DONE/source-gated, no material exception; 4/8 cases checked. Next only `triple-m11-ckad-m12-kazan-to-spb` saved-evidence exception check; no full replay/new live absent a concrete difference. See checkpoint `../../docs/checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md`. Formal plan remains90% (18/20), not tariff readiness.
+
+
+2026-10-16 23:19:47 MSK: Part19 M11 boundary case5 DONE from saved evidence only; M11 cause 5/8 checks. No material exception; case-specific CKAD east arc/ZSD scope unresolved, M11 amount unknown and trip total null. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-case5-boundary-source-gated.md). NEXT after verified save and no active writer: case6 `max-chain-m12-ckad-m11-zsd-cheboksary-to-prim`, saved-data exception check only. Formal plan remains18/20=90%, not tariff readiness.

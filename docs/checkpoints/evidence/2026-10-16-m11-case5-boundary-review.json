@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "finding": "m11_partial_head_entry_boundary_unresolved",
+  "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+  "causeReviewStatus": "blocked_by_missing_reliable_data_no_material_exception",
+  "reviewedAtUtc": "2026-10-16T20:19:47Z",
+  "reviewedAtMsk": "2026-10-16T23:19:47+03:00",
+  "sourceCommit": "7ce720c381265524189b198902f70b3c97009ab5",
+  "sourceTree": "df7d751d76a3819ab68ec9f14d0bd4a81438e5bc",
+  "capture": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/2026-10-16T00-32-28-847Z-capture.json.gz",
+    "gitBlobSha1": "60c9bc47506932b4741441506baec735bf138e4a",
+    "sha256": "b4e49dba2d15497de15fb898e007ec1153335884d21d6300c5d475604acafe00",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "routeMeters": 1524816,
+    "routeSeconds": 61507,
+    "traceComplete": true,
+    "checkedChunks": 11,
+    "totalChunks": 11,
+    "failedChunks": 0,
+    "checkedEdges": 2106,
+    "selectedProvider": "Valhalla",
+    "routeSelection": {
+      "rule": "fastest-route-only",
+      "selectedSeconds": 61507,
+      "otherCandidate": {
+        "provider": "OSRM",
+        "routeMeters": 1522729,
+        "routeSeconds": 70869
+      },
+      "rejectedCandidate": {
+        "provider": "BRouter",
+        "reason": "ROUTE_QUALITY_REJECTED"
+      },
+      "selectionConsistentWithFastestCandidate": true
+    },
+    "roadCoverage": {
+      "expected": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "proven": [
+        "m12",
+        "m11",
+        "zsd",
+        "ckad"
+      ],
+      "missing": []
+    }
+  },
+  "profiles": [
+    {
+      "mode": "live",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-32-28-925Z.json",
+      "gitBlobSha1": "8b249b9fe5b05b59791a3c4fb79b3468307aa77f",
+      "routeMeters": 1524816,
+      "routeSeconds": 61507,
+      "captureSha256": "b4e49dba2d15497de15fb898e007ec1153335884d21d6300c5d475604acafe00",
+      "m11Head": "unknown",
+      "ckad": "unknown",
+      "zsd": "unknown"
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-32-29-467Z.json",
+      "gitBlobSha1": "879ff511a9d652b4dc11aac5b186587442f7f524",
+      "routeMeters": 1524816,
+      "routeSeconds": 61507,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "b4e49dba2d15497de15fb898e007ec1153335884d21d6300c5d475604acafe00",
+      "m11Head": "unknown",
+      "ckad": "unknown",
+      "zsd": "unknown"
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-29-989Z.json",
+      "gitBlobSha1": "d1c50e3235f2b35611de2d20fa909d6a2c75d332",
+      "routeMeters": 1524816,
+      "routeSeconds": 61507,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "b4e49dba2d15497de15fb898e007ec1153335884d21d6300c5d475604acafe00",
+      "m11Head": "unknown",
+      "ckad": "unknown",
+      "zsd": "unknown"
+    }
+  ],
+  "boundaryCheck": {
+    "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-15-mmk-bindings/directed-mmk-north-gates.json",
+    "directedGateWayIds": [
+      "795569815",
+      "795569816"
+    ],
+    "directedGateWaysInSelectedTrace": [
+      false,
+      false
+    ],
+    "gateNodeIds": [
+      "3499155981",
+      "3499155978"
+    ],
+    "approxNearestPolylineDistanceMeters": [
+      26.47,
+      41.76
+    ],
+    "configuredMatchThresholdMeters": 25,
+    "moscowPvp21SpatialAnchor": "unresolved"
+  },
+  "tollState": {
+    "m11HeadStatus": "unknown",
+    "ckadEastArcStatus": "not_proven",
+    "zsdScopeStatus": "outside_reviewed_zone1",
+    "m12Traversal": "proven",
+    "routeAmountRub": null,
+    "pricingStatus": "unknown",
+    "priceConfirmation": "unconfirmed"
+  },
+  "decision": "No material exception to the established M11 boundary-evidence cause is demonstrated. Case-specific CKAD east-arc and ZSD zone-1 scope gaps remain. Keep unknown amounts unknown and the whole-route amount null.",
+  "newLiveRequests": 0,
+  "codeChanged": false,
+  "testsRun": [],
+  "tariffConfirmed": false,
+  "nextCase": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim"
+}
