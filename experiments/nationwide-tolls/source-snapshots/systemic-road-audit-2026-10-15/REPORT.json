@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T01:29:00.370Z",
+  "generatedAt": "2026-10-16T01:29:34.245Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 261,
-    "recordedLiveAttempts": 275,
-    "liveCaptured": 261,
-    "savedLiveSummaries": 261,
+    "distinctCaseAttempts": 262,
+    "recordedLiveAttempts": 276,
+    "liveCaptured": 262,
+    "savedLiveSummaries": 262,
     "missingOrInvalidReferences": 0,
-    "audited": 261,
-    "traceComplete": 261,
-    "sameDateParity": 261
+    "audited": 262,
+    "traceComplete": 262,
+    "sameDateParity": 262
   },
   "regionCounts": {
     "dnr": {
@@ -170,9 +170,9 @@
       "id": "pair-m11-ckad",
       "minimumRuns": 10,
       "planned": 10,
-      "attempted": 6,
-      "audited": 6,
-      "traversalProven": 3,
+      "attempted": 7,
+      "audited": 7,
+      "traversalProven": 4,
       "pricedWeekday": 0,
       "pricedWeekend": 0
     },
@@ -8934,6 +8934,40 @@
       ],
       "routeMeters": 635875,
       "routeSeconds": 22295
+    },
+    {
+      "caseId": "pair-m11-ckad-noginsk-to-tver",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": null,
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-29-30-169Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11",
+          "ckad"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        }
+      ],
+      "routeMeters": 243975,
+      "routeSeconds": 9976
     }
   ],
   "historicalExecutionExceptions": [],
@@ -13426,7 +13460,8 @@
         "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
         "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
         "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
-        "max-chain-m12-ckad-m11-zsd-vladimir-to-sest"
+        "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+        "pair-m11-ckad-noginsk-to-tver"
       ],
       "occurrences": [
         {
@@ -13995,9 +14030,36 @@
             "reason": "ckad_east_arc_not_proven"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-24-12-180Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-29-30-169Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-29-30-541Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "ckad",
+            "reason": "ckad_east_arc_not_proven"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-29-30-897Z.json"
         }
       ],
-      "caseCount": 21
+      "caseCount": 22
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -14032,7 +14094,8 @@
         "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
         "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
         "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
-        "pair-m11-ckad-domodedovo-to-novgorod"
+        "pair-m11-ckad-domodedovo-to-novgorod",
+        "pair-m11-ckad-noginsk-to-tver"
       ],
       "occurrences": [
         {
@@ -14871,9 +14934,36 @@
             "reason": "unmapped_selected_route_paid_booth"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-28-56-996Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-29-30-169Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-29-30-541Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-29-30-897Z.json"
         }
       ],
-      "caseCount": 31
+      "caseCount": 32
     },
     {
       "code": "expected-road-not-proven",
@@ -15596,7 +15686,8 @@
         "triple-m11-ckad-m12-torzhok-to-kazan",
         "triple-m11-ckad-m12-tver-to-murom",
         "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
-        "pair-m11-ckad-domodedovo-to-novgorod"
+        "pair-m11-ckad-domodedovo-to-novgorod",
+        "pair-m11-ckad-noginsk-to-tver"
       ],
       "occurrences": [
         {
@@ -16030,9 +16121,36 @@
             "reason": "only_one_verified_boundary_crossing"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-28-56-996Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-29-30-169Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-29-30-541Z.json"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m11-58-679",
+            "reason": "only_one_verified_boundary_crossing"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-29-30-897Z.json"
         }
       ],
-      "caseCount": 16
+      "caseCount": 17
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
