@@ -1,6 +1,6 @@
 # Калькулятор «Из А в Б»: текущее состояние
 
-16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Перед case75 проверенный PR head `1b9e70731087949f46be5e454b52878ea827b6c6`, tree `d78da88a2aa273f4bcd6c8d4d39a8000e108f47d` совпадал с локальным. Checkout `calculator-run`. Local/connector commit SHA могут различаться; сравнивать точные trees и remote head после каждого сохранения.
+16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Перед case76 проверенный PR head `39dd3f1e6d2f83de903c9f107d823bc4118e0c56`, tree `72dcac5f6178f753b95453c207eee863ffb909fa` совпадал с локальным. Checkout `calculator-run`. Local/connector commit SHA могут различаться; сравнивать точные trees и remote head после каждого сохранения.
 
 ## Прогресс
 
@@ -10,7 +10,7 @@
 
 19D M4review22/22:5wholeunconfirmedestimates/3pricedM4componentswithotherunknowns/8physical545scopegates/6shortM4scopegates. Эти14sourcegates открыты, unknown≠0. [M4/очередь](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json).
 
-**ZSDreview75/76**: каждыйcase отдельно воспроизведён в2offlineprofiles сcomplete/SHA/head/tree. Различные направления/съезды разобраны отдельно; совпадениеwayset+boothsequence разрешает повторное использование диагноза, не тарифа. Итоги остаютсяunknown приотсутствииполногоfinishedcollectionscope. Подробности/ссылки всех26 вочереди. [Итогблока/автопродолжение](checkpoints/2026-10-16-zsd-26case-handoff-and-auto-reporting.md).
+**ZSDreview76/76**: каждыйcase отдельно воспроизведён в2offlineprofiles сcomplete/SHA/head/tree. Различные направления/съезды разобраны отдельно; совпадениеwayset+boothsequence разрешает повторное использование диагноза, не тарифа. Итоги остаютсяunknown приотсутствииполногоfinishedcollectionscope. Подробности/ссылки всех26 вочереди. [Итогблока/автопродолжение](checkpoints/2026-10-16-zsd-26case-handoff-and-auto-reporting.md).
 
 Исправление exactnode1766158781→ZSD валидировано: первичная направленная топология иselectedledger подтвердилиПВППланерная; redundantunknownpaidroad устранён, M11head/CKAD/ZSDблокеры сохранены. [Replay](checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md).
 
@@ -18,8 +18,8 @@
 
 ## NEXT STARTED
 
-**ZSD nextcase triple-m4-m11-zsd-sest-to-domodedovo; --next; savedcapture twoofflineprofiles**
+**ZSD class reviewed; assess remaining finding classes, do not mark part19 complete**
 
-ZSD review **75/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T17-36-52-510Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
+ZSD review **76/76**. [Latest checkpoint](checkpoints/zsd-2026-10-16T17-39-01-254Z.md). Overall plan **90% (18/20 completed parts)**; not tariff coverage. Latest fullgate/readiness references above remain prior checks, not rerun for audit-only changes.
 
 Repository-owned utility: `node experiments/nationwide-tolls/scripts/review-zsd-finding-case.mjs --next` (or `--diagnose` after a new scope). One step only; caller commits/publishes/exacthead-tree before continuing. Do not rerun completed M4/policy/live queues. No main/merge/Production. Autocontinuation remains enabled.

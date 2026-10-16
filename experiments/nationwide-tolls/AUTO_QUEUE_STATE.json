@@ -1,14 +1,14 @@
 {
-  "at": "2026-10-16T17:36:52.511Z",
-  "phase": "PART19_ZSD_CASE75_REPLAY_DONE",
+  "at": "2026-10-16T17:39:01.255Z",
+  "phase": "PART19_ZSD_QUEUE_COMPLETE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38869309675",
-  "scope": "ZSD case 75 saved-capture replay under two offline date profiles; same reviewed ZSD scope, M11 tail and unknown road gaps remain",
-  "checked": 75,
+  "scope": "ZSD finding queue case 76/76 completed with saved-capture two-profile replay; unresolved ZSD/other products remain unpriced",
+  "checked": 76,
   "total": 76,
-  "next": "Case 76 triple-m4-m11-zsd-sest-to-domodedovo; replay saved capture under two offline date profiles",
+  "next": "Part19 remains IN_PROGRESS: inspect PART19_FINDINGS_QUEUE and diagnose/correct the next distinct finding one at a time; then Part20 required gates",
   "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
-  "parent": "1b9e70731087949f46be5e454b52878ea827b6c6",
-  "nextFinding": "zsd:triple-m4-m11-zsd-sest-to-domodedovo",
-  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-36-52-510Z.md"
+  "parent": "39dd3f1e6d2f83de903c9f107d823bc4118e0c56",
+  "nextFinding": "remaining:review-recorded-findings-in-priority-order",
+  "checkpointPath": "docs/checkpoints/zsd-2026-10-16T17-39-01-254Z.md"
 }

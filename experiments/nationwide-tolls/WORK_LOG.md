@@ -1722,3 +1722,5 @@ Recovery is the only current action: transfer full exact `NEXT_STEPS.md`, `PART1
 2026-10-16T17:35:07.405Z: ZSD case74 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-35-07-404Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-prim-to-voronezh; --next; savedcapture twoofflineprofiles.
 
 2026-10-16T17:36:52.511Z: ZSD case75 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-36-52-510Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-sest-to-domodedovo; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:39:01.255Z: ZSD case76 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-39-01-254Z.md). NEXT ZSD class reviewed; assess remaining finding classes, do not mark part19 complete.
