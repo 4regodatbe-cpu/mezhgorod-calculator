@@ -20,6 +20,8 @@
 
 ## NEXT — один сохраняемый микрошаг
 
+**STARTED автоматическая очередь оставшихся20/25 policy replays** в существующем GitHubworkflow: сначалаrunner/tests/fullgate, потомworkflowpush и наблюдаемыйrun. Case6 пока не запущен. [Recovery](checkpoints/2026-10-16-part19-automatic-policy-queue-started.md). После каждого durable save сразу следующийcase, по прямому уточнению пользователя10:27МСК.
+
 **Только `zaporizhzhia-пришиб-saint-petersburg-center`, историческая M4 policy 6/25.** Получить existing capture из corpus.auditEvidence; existing runner `run-systemic-route-case.mjs --replay` на 15/17 октября 09:00 МСК. Проверить integrity, фактический M4 quote и trip-departure basis; unrelated unknown не скрывать, subtotal не выдавать за итог. Сохранить новые timestamped outputs, checkpoint, WORK_LOG/NEXT_STEPS и оценку в queue; commit, GitHub branch head и exact tree readback **до следующего случая**. При кириллице — NUL-safe Git paths. Для PR использовать metadata-only get_pr_info: fetch_pr с огромным diff возвращал Transport closed.
 
 Автоматически продолжать без команды «дальше»: **после каждого durable save сразу следующий случай**, не останавливаться после одного маршрута за заход. Прямое уточнение пользователя16.10.2026 10:27МСК, [checkpoint](checkpoints/2026-10-16-1030-auto-sequential-microsteps.md). Один маршрут на микрошаг, один writer. Перед записью проверить отсутствие другого writer. STARTED до долгой операции, DONE/FAILED и durable save после каждого микрошaга. Если сохранение не прошло — остановить расширение, сообщить blocker. Не считать старую same-date parity проверкой исправленного кода.
