@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:25:01.214Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:25:04.976Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,78 +23,10 @@
       "group": "single-m3"
     }
   },
-  "caseId": "single-m3-moscow-to-kaluga",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-m3-moscow-to-kaluga",
-    "startedAt": "2026-10-16T00:24:42.570Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-45-755Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/2026-10-16T00-24-45-734Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-24-46-120Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-46-465Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "m3"
-      ],
-      "provenRoads": [
-        "m3"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "понедельник–четверг",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m3",
-        "m3: m3_engine_not_yet_composed"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "weekend": {
-      "amount": null,
-      "weekdayAmount": null,
-      "weekendAmount": null,
-      "period": "пятница–воскресенье",
-      "segments": [
-        "Обнаружены, но не полностью оценены платные системы: m3",
-        "m3: m3_engine_not_yet_composed"
-      ],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "unknown"
-    },
-    "components": [
-      {
-        "id": "m3",
-        "amount": null,
-        "reason": "m3_engine_not_yet_composed"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:24:46.481Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-24-40-949Z-part9",
-  "parent": "7d434e3890a44ae0c808975a57caf0511acfefea",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-25-01-214Z-done.json"
+  "caseId": "single-m3-moscow-to-maloyaroslavets",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-25-04-975Z-part9",
+  "parent": "6f88fea4cfbdfce8005301c728dafdc15d3c2b84",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-25-04-976Z-started.json"
 }
