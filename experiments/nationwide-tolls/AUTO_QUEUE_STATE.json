@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T00:16:05.771Z",
-  "phase": "DONE",
+  "at": "2026-10-16T00:16:09.361Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,76 +23,10 @@
       "group": "single-a289"
     }
   },
-  "caseId": "single-a289-krasnodar-to-temryuk",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "single-a289-krasnodar-to-temryuk",
-    "startedAt": "2026-10-16T00:15:48.785Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-15-50-792Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/2026-10-16T00-15-50-775Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-15-51-155Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-15-51-513Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [
-        "a289"
-      ],
-      "provenRoads": [
-        "a289"
-      ],
-      "missingExpectedRoads": [],
-      "status": "traversal-proven"
-    },
-    "weekday": {
-      "amount": 620,
-      "weekdayAmount": 620,
-      "weekendAmount": 620,
-      "period": "все дни",
-      "segments": [
-        "А-289: Maryanskaya → Temryuk: 620 ₽"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "weekend": {
-      "amount": 620,
-      "weekdayAmount": 620,
-      "weekendAmount": 620,
-      "period": "все дни",
-      "segments": [
-        "А-289: Maryanskaya → Temryuk: 620 ₽"
-      ],
-      "confidence": "matched",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "priced"
-    },
-    "components": [
-      {
-        "id": "a289",
-        "amount": 620,
-        "reason": "A-289 Temryuk two-frame city estimate; exit binding unverified"
-      }
-    ],
-    "finishedAt": "2026-10-16T00:15:51.528Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-15-47-452Z-part8",
-  "parent": "ce1c5df5000f7fdcbf3f27ff66fe270087056bca",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-16-05-771Z-done.json"
+  "caseId": "single-a289-taman-to-krasnodar",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-16-09-361Z-part8",
+  "parent": "70e6191b315af7235bf7a315d7388cd0e50a6cc2",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T00-16-09-361Z-started.json"
 }
