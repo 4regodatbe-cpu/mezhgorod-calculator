@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:05:37.523Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T01:06:06.215Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,86 @@
     },
     {
       "stage": 2,
-      "done": 43,
+      "done": 44,
       "total": 154
     }
   ],
   "next": {
     "part": 13,
     "spec": {
-      "caseId": "lnr-старобельск-moscow-center",
+      "caseId": "lnr-старобельск-saint-petersburg-center",
       "kind": "regional",
       "region": "lnr"
     }
   },
   "caseId": "lnr-старобельск-moscow-center",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "lnr-старобельск-moscow-center",
+    "startedAt": "2026-10-16T01:05:38.886Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-05-43-939Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-moscow-center/2026-10-16T01-05-43-867Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-05-44-458Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-05-44-965Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "m4"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": 2480,
+      "weekdayAmount": 2480,
+      "weekendAmount": 2730,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-620 → m4-71 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 2730,
+      "weekdayAmount": 2480,
+      "weekendAmount": 2730,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "М-4: m4-620 → m4-71 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 2480,
+        "reason": "matrix exact selected-route M4 vector"
+      }
+    ],
+    "finishedAt": "2026-10-16T01:05:44.983Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-05-37-523Z-part13",
-  "parent": "098e46bc24217579f840ac86467ec8f02b1bed53",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-05-37-523Z-started.json"
+  "parent": "20666ab6ec13223c79a472536a9d037d89b84b61",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-06-06-215Z-done.json"
 }
