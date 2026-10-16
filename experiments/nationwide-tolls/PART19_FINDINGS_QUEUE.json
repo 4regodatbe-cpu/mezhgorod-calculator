@@ -2649,14 +2649,16 @@
       },
       {
         "caseId": "pair-m11-ckad-spb-to-domodedovo",
-        "status": "current_unknown_needs_distinct_scope_review",
+        "status": "source_gated_distinct_finished_zsd_scope",
         "sameReviewedScopeCase": null,
         "checkpoint": "../../docs/checkpoints/2026-10-16-142733-zsd-case25.md",
         "evidence": "../../docs/checkpoints/evidence/2026-10-16-142733-zsd-case25.json",
         "missing": [
           "unknown-paid-road",
           "zsd"
-        ]
+        ],
+        "scopeCheckpoint": "../../docs/checkpoints/2026-10-16-142752-zsd-case25-scope.md",
+        "scopeEvidence": "../../docs/checkpoints/evidence/2026-10-16-142752-zsd-case25-scope.json"
       }
     ],
     "checked": 25,
