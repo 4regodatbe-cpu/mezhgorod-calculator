@@ -525,7 +525,22 @@
         "m4"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-05-46-867Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/2026-10-16T02-05-46-824Z-capture.json.gz",
+        "provider": "Valhalla",
+        "routeMeters": 520174,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T02-05-43-120Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-05-46-867Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/2026-10-16T02-05-46-824Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-05-47-328Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-05-47-762Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-m4-moscow-to-voronezh",
