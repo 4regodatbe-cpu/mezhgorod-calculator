@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-16T00:31:03.058Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 142,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 10,
+    "spec": {
+      "caseId": "single-zsd-prim-to-blag",
+      "kind": "road",
+      "group": "single-zsd"
+    }
+  },
+  "caseId": "single-zsd-peterhof-to-sest",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-zsd-peterhof-to-sest",
+    "startedAt": "2026-10-16T00:30:45.415Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-47-252Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-sest/2026-10-16T00-30-47-244Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-30-47-595Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-30-47-942Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "zsd"
+      ],
+      "provenRoads": [],
+      "missingExpectedRoads": [
+        "zsd"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "weekend": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "пятница–воскресенье",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "components": [],
+    "finishedAt": "2026-10-16T00:30:47.956Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-30-44-064Z-part10",
+  "parent": "5c1cc550bbff26c04fb6e396f42467ed30ee04ad"
+}
