@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T01:07:22.083Z",
-  "phase": "DONE",
+  "at": "2026-10-16T01:07:26.625Z",
+  "phase": "STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -23,62 +23,10 @@
       "region": "zaporizhzhia"
     }
   },
-  "caseId": "zaporizhzhia-кушугум-kerch-center",
-  "batch": {
-    "code": 0,
-    "signal": null
-  },
-  "report": {
-    "code": 0,
-    "signal": null
-  },
-  "inventory": {
-    "code": 0,
-    "signal": null
-  },
-  "evidence": {
-    "caseId": "zaporizhzhia-кушугум-kerch-center",
-    "startedAt": "2026-10-16T01:06:56.021Z",
-    "status": "audited",
-    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-06-59-677Z.json",
-    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kerch-center/2026-10-16T01-06-59-634Z-capture.json.gz",
-    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-07-00-125Z.json",
-    "sameDateParity": true,
-    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-07-00-559Z.json",
-    "replayErrors": [],
-    "traceComplete": true,
-    "roadCoverage": {
-      "expectedRoads": [],
-      "provenRoads": [],
-      "missingExpectedRoads": [],
-      "status": "not-assigned"
-    },
-    "weekday": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "понедельник–четверг",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "weekend": {
-      "amount": 0,
-      "weekdayAmount": 0,
-      "weekendAmount": 0,
-      "period": "пятница–воскресенье",
-      "segments": [],
-      "confidence": "none",
-      "priceConfirmation": "unconfirmed",
-      "displayLabel": null,
-      "pricingStatus": "free"
-    },
-    "components": [],
-    "finishedAt": "2026-10-16T01:07:00.576Z"
-  },
-  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-06-54-511Z-part13",
-  "parent": "49fe5f7ac6c95f18049f183d3c6114b432cf9348",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-07-22-083Z-done.json"
+  "caseId": "zaporizhzhia-кушугум-moscow-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-07-26-625Z-part13",
+  "parent": "c4ef3746a5cb4b24b92ef9acb4b2503ab1ff1438",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T01-07-26-625Z-started.json"
 }
