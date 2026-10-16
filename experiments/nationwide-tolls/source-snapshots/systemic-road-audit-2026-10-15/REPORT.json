@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-16T00:51:59.074Z",
+  "generatedAt": "2026-10-16T00:52:44.035Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 209,
-    "recordedLiveAttempts": 223,
-    "liveCaptured": 209,
-    "savedLiveSummaries": 209,
+    "distinctCaseAttempts": 210,
+    "recordedLiveAttempts": 224,
+    "liveCaptured": 210,
+    "savedLiveSummaries": 210,
     "missingOrInvalidReferences": 0,
-    "audited": 209,
-    "traceComplete": 209,
-    "sameDateParity": 209
+    "audited": 210,
+    "traceComplete": 210,
+    "sameDateParity": 210
   },
   "regionCounts": {
     "dnr": {
@@ -38,9 +38,9 @@
     },
     "kherson": {
       "planned": 40,
-      "liveCaptured": 32,
-      "audited": 32,
-      "traceComplete": 32,
+      "liveCaptured": 33,
+      "audited": 33,
+      "traceComplete": 33,
       "pricedWeekday": 8,
       "pricedWeekend": 8
     }
@@ -7155,6 +7155,42 @@
       ],
       "routeMeters": 435821,
       "routeSeconds": 23507
+    },
+    {
+      "caseId": "kherson-таврийск-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "kherson",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-52-40-129Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "OSRM",
+      "rejectedProviders": [
+        {
+          "provider": "Valhalla",
+          "error": "Error: ROUTE_UNAVAILABLE"
+        },
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 2379740,
+      "routeSeconds": 127157
     }
   ],
   "historicalExecutionExceptions": [],
@@ -7687,7 +7723,8 @@
         "kherson-скадовск-kazan-center",
         "kherson-скадовск-moscow-center",
         "kherson-скадовск-saint-petersburg-center",
-        "kherson-старая-збурьевка-kazan-center"
+        "kherson-старая-збурьевка-kazan-center",
+        "kherson-таврийск-kazan-center"
       ],
       "occurrences": [
         {
@@ -8796,9 +8833,36 @@
             "reason": "A-289 frames detected but selected-route exits are unresolved"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-51-28-769Z.json"
+        },
+        {
+          "caseId": "kherson-таврийск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-52-40-129Z.json"
+        },
+        {
+          "caseId": "kherson-таврийск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-52-40-797Z.json"
+        },
+        {
+          "caseId": "kherson-таврийск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "a289",
+            "reason": "A-289 frames detected but selected-route exits are unresolved"
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-52-41-465Z.json"
         }
       ],
-      "caseCount": 41
+      "caseCount": 42
     },
     {
       "code": "zsd:unpriced",

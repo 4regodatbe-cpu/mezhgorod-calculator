@@ -9,9 +9,9 @@
     },
     "kherson": {
       "planned": 40,
-      "historicallyAudited": 32,
-      "rawAvailable": 32,
-      "fourArtifactsAvailable": 32
+      "historicallyAudited": 33,
+      "rawAvailable": 33,
+      "fourArtifactsAvailable": 33
     },
     "lnr": {
       "planned": 40,
@@ -26,8 +26,8 @@
       "fourArtifactsAvailable": 21
     }
   },
-  "rawCaptureCount": 212,
-  "rawCaptureCaseCount": 209,
+  "rawCaptureCount": 213,
+  "rawCaptureCaseCount": 210,
   "invalidRawCaptures": [],
   "missingReferencedFiles": [
     "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
@@ -5023,10 +5023,49 @@
     {
       "caseId": "kherson-таврийск-kazan-center",
       "region": "kherson",
-      "historicalStatus": "planned",
-      "rawAvailable": false,
-      "fourArtifactsAvailable": false,
-      "artifacts": {}
+      "historicalStatus": "audited",
+      "rawAvailable": true,
+      "fourArtifactsAvailable": true,
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-52-40-129Z.json",
+          "exists": true,
+          "bytes": 7171,
+          "sha256": "e6fec610e46f721b5fdc8cbe2ac5f74f689702b088ca21e03e0a3396ec797984",
+          "gitBlobSha": "ed4a86af455f3d1b1c90615a23fbdb6172b91756",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/2026-10-16T00-52-39-971Z-capture.json.gz",
+          "exists": true,
+          "bytes": 941540,
+          "sha256": "5eb0effd28e3ba7574acf2eec83632c328faa2a0519a6777a40f3824ee62a5e7",
+          "gitBlobSha": "515b8ccc3d25f93ab8ed52239a87b2c53aa33ffe",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 20
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-52-40-797Z.json",
+          "exists": true,
+          "bytes": 7249,
+          "sha256": "c3fe47509cc386e327abf2b7478004cd4dc7dd0b725771fafaaca59c60f3f620",
+          "gitBlobSha": "00e009398846de1faaf2dc03f174344aeed02189",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-52-41-465Z.json",
+          "exists": true,
+          "bytes": 7249,
+          "sha256": "0b3b979801a3d11226b1fff2202a97d5b6f78343b54ef7413b458a4ac2e03e61",
+          "gitBlobSha": "f4d5a3f0305460b5cb77251b12cc16a2a3046578",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     },
     {
       "caseId": "kherson-таврийск-kerch-center",
@@ -15755,6 +15794,51 @@
           "readableJson": true
         }
       }
+    },
+    {
+      "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-52-20-923Z.json",
+      "caseId": "kherson-таврийск-kazan-center",
+      "historicalStatus": "audited",
+      "artifacts": {
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-52-40-129Z.json",
+          "exists": true,
+          "bytes": 7171,
+          "sha256": "e6fec610e46f721b5fdc8cbe2ac5f74f689702b088ca21e03e0a3396ec797984",
+          "gitBlobSha": "ed4a86af455f3d1b1c90615a23fbdb6172b91756",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/2026-10-16T00-52-39-971Z-capture.json.gz",
+          "exists": true,
+          "bytes": 941540,
+          "sha256": "5eb0effd28e3ba7574acf2eec83632c328faa2a0519a6777a40f3824ee62a5e7",
+          "gitBlobSha": "515b8ccc3d25f93ab8ed52239a87b2c53aa33ffe",
+          "recoveryShaMatches": null,
+          "readableJson": true,
+          "schemaVersion": 2,
+          "recordedCalls": 20
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-52-40-797Z.json",
+          "exists": true,
+          "bytes": 7249,
+          "sha256": "c3fe47509cc386e327abf2b7478004cd4dc7dd0b725771fafaaca59c60f3f620",
+          "gitBlobSha": "00e009398846de1faaf2dc03f174344aeed02189",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-52-41-465Z.json",
+          "exists": true,
+          "bytes": 7249,
+          "sha256": "0b3b979801a3d11226b1fff2202a97d5b6f78343b54ef7413b458a4ac2e03e61",
+          "gitBlobSha": "f4d5a3f0305460b5cb77251b12cc16a2a3046578",
+          "recoveryShaMatches": null,
+          "readableJson": true
+        }
+      }
     }
   ],
   "rawCaptures": [
@@ -16527,6 +16611,17 @@
       "readableJson": true,
       "schemaVersion": 2,
       "recordedCalls": 24
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/2026-10-16T00-52-39-971Z-capture.json.gz",
+      "exists": true,
+      "bytes": 941540,
+      "sha256": "5eb0effd28e3ba7574acf2eec83632c328faa2a0519a6777a40f3824ee62a5e7",
+      "gitBlobSha": "515b8ccc3d25f93ab8ed52239a87b2c53aa33ffe",
+      "recoveryShaMatches": null,
+      "readableJson": true,
+      "schemaVersion": 2,
+      "recordedCalls": 20
     },
     {
       "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/2026-10-15T12-09-56-015Z-capture.json.gz",
