@@ -24,3 +24,5 @@ Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26P
 [Protocol](CHECKPOINT_PROTOCOL.md) · [Plan](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json) · [Queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md).
 
 2026-10-16 resume: exact-tree ancestry recovery DONE; see checkpoints/2026-10-16-resume-exact-tree-recovery.md. Same case9 next, no runtime change.
+
+16.10.2026 current checkout refreshed to actuala11dcf46, GitHub jobSUCCESS rechecked. [Fresh-checkout/STARTED](checkpoints/2026-10-16-1222-fresh-checkout-case9-resume.md): samecase9 primaryPDF+selected545geometry. Prior687gate historical; no runtime change. Trace chunk indices are not selectedroute indices.
