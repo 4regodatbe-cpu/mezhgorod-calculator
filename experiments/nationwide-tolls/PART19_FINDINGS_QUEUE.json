@@ -26,7 +26,8 @@
       "scope": "Existing selected captures, not new live or confirmed operator fares"
     }
   ],
-  "nextCase": "dnr-гранитное-saint-petersburg-center",
+  "nextCase": "dnr-гранитное-kazan-center",
+  "nextAction": "Evaluate newlyfound primaryopen-collection rule for exactreviewed2wayM4scope; nozero/free implementation yet; then ZSDfirstcase ifproofinsufficient",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",

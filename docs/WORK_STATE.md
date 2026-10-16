@@ -1,30 +1,25 @@
 # Калькулятор «Из А в Б»: часть19
 
-16.10.2026. Только fix/v3-missing-route-prices-2026-10-15, PR14 draft. Verified parent29239dcce31ea961893833411f10f3a452dde6e7/tree7876ad39. Actualworkflow38869309675/job116869376746 SUCCESS, noactivewriter (latestGitHubcheck). AUTO_QUEUE_STATE still records completedpolicyclass, not a new activewriter; do not rerun that completedclass.
+16.10.2026. Только fix/v3-missing-route-prices-2026-10-15, PR14draft. Verified parentb344f59f5f89d662e0c20f3069a66733d78457ae/treecc717951. Latestworkflow38869309675/job116869376746 SUCCESS; noactivewriterobserved. AUTOstate records completed25policyclass; do notrerun it. Currentcheckout mezhgorod-current fromremotea11; local/remotecommitSHA can differ, exacttree readback mandatory.
 
 ## DONE
 
-Части1–18:155/155+154/154, frozenREPORT340/340.19A/19B A289:57helper-only+2whole-routecases, не59полныхтарифов.19Cpolicy25/25DONE:20wholeofflinequotes/5unknownZSD.
+Parts1–18:155/155+154/154, frozenREPORT340/340.19A/B A28957helper-only+2wholecases; not59wholefares.19Cpolicy25/25DONE,20wholeofflinequotes/5unknownZSD.
 
-19D m4:unpriced22/22 replaychecked:
-- **4wholeofflinequotes recovered**: Лисичанск/Рубежное/Бахмут/Краматорск→Москва, каждый1830/2300₽15/17окт09:00МСК, unconfirmed estimate. [Лисичанск](checkpoints/2026-10-16-part19d-lisichansk-moscow-recovered.md), [case4](checkpoints/2026-10-16-part19d-case4-replay.md), [case5](checkpoints/2026-10-16-part19d-case5-replay.md), [case6](checkpoints/2026-10-16-part19d-case6-replay.md).
-- Fix4811a106: compilercombined416+460 northbound atomicorder;36ключейперенесены/безновыхцен. Не36готовыхмаршрутов. Rawsourcechainsнепереписаны.
-- **1M4component recovered** case8 Воронеж→Приморский:1830/2300, но wholeunknown ZSD+unmappedbooth; не выдаватьsubtotalзаитог. [Разбор](checkpoints/2026-10-16-part19d-case8-component-recovered.md).
-- **3source-gated unknown** Гранитное/Широкино/Гуляйполе→Казань: same2selectedpaidways≈1.966km/0booths/0knownPVP; exactcollection/freeproof отсутствует, operator403необходили. [Диагноз](checkpoints/2026-10-16-part19d-gulyaypole-kazan-source-hold.md).
-- **Case9 currentunknown** Тамань→Воронеж OSRM1026560m: endpoints1223→545resolved, exactdatedphysical545pairabsent. Semantic545-a/b have differentexistingfinishedfares, physical545alone insufficient. A289800/DZOK410known, неитог. [Checkpoint/evidence](checkpoints/2026-10-16-part19d-case9-545-scope-diagnosis.md).
+**19D M4finding review22/22 distinctDONE, not22verifiedfares**:
+-5wholeunconfirmedestimates: Lisichansk/Rubezhnoe/Bakhmut/Kramatorsk/Voronezh→Moscow, each1830/2300 on15/17Oct09:00MSK.
+-3M4componentspriced, fulltotalunknown: Voronezh→Prim2controls andVoronezh→SPB, ZSD/unmappedboothremainmissing.
+-8physical545scopegates: Taman/Anapa/Krasnodar/Rostov↔Voronezh. ExactPVP545cannotchoose semantic545-a/b, primarycollectionsplitunresolved; no alias/minmax/reverseguess.
+-6shortM4scopegates: Granitnoe/Shirokino/Gulyaypole/Novoazovsk/Talakovka/Rozovka→Kazan. Same2primaryOSMpaidways≈1.966km,0booths/0knownPVP, selecteddirectedgeometrymatched; unknownretained.
 
-Fullgate687/687+quote/API/Nextwebpack/TypeScript/static16/16 PASS; focused26/26PASS. Ordinaryeslintcompilerexit1(existingrequire), затемCJS-onlyexplicitruleexceptionexit0; [запись](checkpoints/2026-10-16-part19d-compound-lint-recovery-done.md). Преждевременная записьlintPASS явноисправлена/историясохранена.
+[22-casequeue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json), latestper-caseevidence/checkpoints inqueue/log. Allcases10–22 twoofflineprofiles separatelysaved/readback; raw/live/olderreplays/REPORTuntouched. Fix4811a106 northboundcompound416+460relocated36keys/no newfares. Prior full687/687+quote/API/Next/TS/static16/16/focused26PASS remainshistorical; no runtimecodechange/newgate thisturn. OrdinaryCJS-lint failure andexplicitexception documented, notsilentlypassed.
 
-## NEXT STARTED автоматически
+## NEXT STARTED — positive no-charge proof review
 
-**NEXT STARTED** NEXT narrowstep: evaluate primaryopen-rule applicability and safe exactlyreviewedM4scope guard, then one-causecodechange only ifindependentproofsuffices; focused+fullgate and6separatecasecheckpoints beforeacceptance. Otherwise keep6unknown and continueZSDfirst dnr-гранитное-saint-petersburg-center. Keep8physical545sourcegates; parts19ongoing/20planned. [Checkpoint](checkpoints/2026-10-16-125248-part19d-m4-22-review-and-open-collection-rule.md).
+Revisit exactshortM4scope case1 dnr-гранитное-kazan-center: decide whether primaryfullway-node geometry/facilitymap+operatoropenrule establishes positive no-charge proof. If sufficient, implement reviewedroad-scopeguard (no benchmarkrouteIDs) requiring same-selectedcompleteValhalla/boothcoverage, exact2ways1182567076+31984600/directedgeometry,0booths+0knownM4candidates; wholezero onlywithnoothermissingproducts, preserveauditraw and avoidlatefallback/APIcontradictions. Focused adversarialtests+fullgate and6separatecasecheckpoints before accepting any0/FREE. If proofstillinsufficient, keep6unknown and continueZSDfirstcase dnr-гранитное-saint-petersburg-center. Parts19ongoing/20planned.
 
-Часть19 IN PROGRESS,20 PLANNED; прочиеfindingclasses неполностьюразобраны. Одинwriter; active/queuedjob→неписатьвветку. TIME_LIMITвозобновляем. Raw/live/baseline/historyсохранять. Replay≠freshlive/подтверждённыйтариф. Unknown≠0,subtotal≠итог, wholetripпоотправлению, междорожныевекторыотложены. No main/merge/Production/Android/messages. Автопродолжение включено, неотключатьпокавсе20незавершены.
+[Exactprimaryrule/APIreview](checkpoints/2026-10-16-125719-m4-open-rule-proof-and-api-review.md). OperatorPDF receipt-rules SHAa3ed4b13 section2.1 page4 (correctedfrompage3), primarygeneralopenbillingrulefound. This is newevidence, NOT an implementedfreequote. Needjudgepositivephysicalscopeproof before anycodechange. API0 currentlyrequiresfreevalidation andlatefallbackmayreblock; do notskip unrelatedunknownproducts. Eight545gatesareseparate, stillunresolved.
 
-[Protocol](CHECKPOINT_PROTOCOL.md) · [Plan](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json) · [Queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md).
+Parts19IN_PROGRESS/20PLANNED; ZSD76andotherfindingclassesnotyetfullyreviewed. Ifcontextends, startfromthisspecificNEXT, notoldrecovery/309live/25policyqueue. One writer; active/queuedjob→no writes, TIME_LIMITresumable. Unknown≠0,subtotal≠total, wholetripdeparturepricing; cross-roadvectorsdeferred. No main/merge/Production/Android/messages. Autocontinuation remainsenabled untilall20done.
 
-2026-10-16 resume: exact-tree ancestry recovery DONE; see checkpoints/2026-10-16-resume-exact-tree-recovery.md. Same case9 next, no runtime change.
-
-16.10.2026 current checkout refreshed to actuala11dcf46, GitHub jobSUCCESS rechecked. [Fresh-checkout/STARTED](checkpoints/2026-10-16-1222-fresh-checkout-case9-resume.md): samecase9 primaryPDF+selected545geometry. Prior687gate historical; no runtime change. Trace chunk indices are not selectedroute indices.
-
-Latest checkpoint: [part19d-m4-22-review-and-open-collection-rule](checkpoints/2026-10-16-125248-part19d-m4-22-review-and-open-collection-rule.md). M4 finding review DONE22/22 distinctcases, NOT22confirmedfares:5wholeunconfirmedestimates,3M4componentspriced/wholeunknown,8physical545scopegated,6shortM4scopegated. Currentqueue and per-caseSHA/checkpoints preserve exactoutcomes; unchangedfrozenREPORT. No newruntimechange/fullgate thisturn, prior687historical.
+[AGENTS](../AGENTS.md) · [Protocol](CHECKPOINT_PROTOCOL.md) · [Plan](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json) · [WORK_LOG](../experiments/nationwide-tolls/WORK_LOG.md) · [NEXT](../experiments/nationwide-tolls/NEXT_STEPS.md).

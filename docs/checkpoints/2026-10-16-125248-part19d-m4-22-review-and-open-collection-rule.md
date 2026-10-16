@@ -1,5 +1,7 @@
 # part19d-m4-22-review-and-open-collection-rule
 
+PAGE CORRECTION: section2.1 is on printed/PDF page4, visually rendered and checked after this checkpoint. Page3 in the body below is an earlier pagination mistake, not a different rule. No pricing implementation/zero/freeclaim follows from this note alone.
+
 2026-10-16-125248 MSK, parent2546c6e7dd35dbbcba69c8abae0a794920ee8b82, authorizedbranch/PR14draft, noactivewriter observed. Parts19ongoing/20planned.
 
 M4 finding review DONE22/22 distinctcases, NOT22confirmedfares:5wholeunconfirmedestimates,3M4componentspriced/wholeunknown,8physical545scopegated,6shortM4scopegated. Currentqueue and per-caseSHA/checkpoints preserve exactoutcomes; unchangedfrozenREPORT. No newruntimechange/fullgate thisturn, prior687historical.
