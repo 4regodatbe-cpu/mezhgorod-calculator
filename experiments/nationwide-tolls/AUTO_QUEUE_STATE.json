@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-16T02:00:48.986Z",
-  "phase": "STARTED",
+  "at": "2026-10-16T02:01:19.245Z",
+  "phase": "DONE",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
   "workflowRun": "38824450386",
   "stageCounts": [
@@ -11,22 +11,90 @@
     },
     {
       "stage": 2,
-      "done": 124,
+      "done": 125,
       "total": 154
     }
   ],
   "next": {
     "part": 17,
     "spec": {
-      "caseId": "single-m3-balabanovo-to-kaluga",
+      "caseId": "single-m3-kaluga-to-balabanovo",
       "kind": "road",
       "group": "single-m3"
     }
   },
   "caseId": "single-m3-balabanovo-to-kaluga",
-  "departureAt": "2026-10-15T09:00:00+03:00",
-  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-m3-balabanovo-to-kaluga",
+    "startedAt": "2026-10-16T02:00:50.314Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-balabanovo-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T02-00-51-674Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-balabanovo-to-kaluga/2026-10-16T02-00-51-663Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-00-52-015Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-00-52-339Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m3"
+      ],
+      "provenRoads": [
+        "m3"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m3",
+        "m3: m3_engine_not_yet_composed"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m3",
+        "m3: m3_engine_not_yet_composed"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m3",
+        "amount": null,
+        "reason": "m3_engine_not_yet_composed"
+      }
+    ],
+    "finishedAt": "2026-10-16T02:00:52.353Z"
+  },
   "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-00-48-986Z-part17",
-  "parent": "d63bbffaeae56a0e8c72d9ff5ba6eeba1b17d442",
-  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-00-48-986Z-started.json"
+  "parent": "c1ab8d2b5b30558d3a833e64841074d393c74a47",
+  "checkpointPath": "docs/checkpoints/auto-2026-10-16T02-01-19-245Z-done.json"
 }
