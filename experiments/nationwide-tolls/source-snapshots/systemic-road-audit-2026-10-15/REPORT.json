@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-10-16T00:38:55.675Z",
+  "generatedAt": "2026-10-16T00:39:31.967Z",
   "scope": "Internal component audit. A date replay is not a fresh live route. Audited means reproducible capture, not correct/confirmed fare. Priced means a numeric engine result, not independent Yandex/operator verification. Unknown is never free.",
   "totals": {
-    "distinctCaseAttempts": 188,
-    "recordedLiveAttempts": 202,
-    "liveCaptured": 188,
-    "savedLiveSummaries": 188,
+    "distinctCaseAttempts": 189,
+    "recordedLiveAttempts": 203,
+    "liveCaptured": 189,
+    "savedLiveSummaries": 189,
     "missingOrInvalidReferences": 0,
-    "audited": 188,
-    "traceComplete": 188,
-    "sameDateParity": 188
+    "audited": 189,
+    "traceComplete": 189,
+    "sameDateParity": 189
   },
   "regionCounts": {
     "dnr": {
       "planned": 40,
-      "liveCaptured": 26,
-      "audited": 26,
-      "traceComplete": 26,
+      "liveCaptured": 27,
+      "audited": 27,
+      "traceComplete": 27,
       "pricedWeekday": 12,
       "pricedWeekend": 15
     },
@@ -6481,6 +6481,36 @@
       ],
       "routeMeters": 1851581,
       "routeSeconds": 82443
+    },
+    {
+      "caseId": "dnr-новоазовск-kazan-center",
+      "historicalStatus": "audited",
+      "status": "audited",
+      "evidenceComplete": true,
+      "rawAvailable": true,
+      "region": "dnr",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-39-28-681Z.json",
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "provider": "Valhalla",
+      "rejectedProviders": [
+        {
+          "provider": "BRouter",
+          "error": "Error: route_quality_rejected"
+        }
+      ],
+      "routeMeters": 1647414,
+      "routeSeconds": 82133
     }
   ],
   "historicalExecutionExceptions": [],
@@ -9242,7 +9272,8 @@
         "pair-m4-m11-voronezh-to-spb",
         "single-m4-krasnodar-to-voronezh",
         "single-m4-voronezh-to-krasnodar",
-        "triple-m4-m11-zsd-voronezh-to-prim"
+        "triple-m4-m11-zsd-voronezh-to-prim",
+        "dnr-новоазовск-kazan-center"
       ],
       "occurrences": [
         {
@@ -9622,9 +9653,36 @@
             "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
           },
           "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-voronezh-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-37-43-105Z.json"
+        },
+        {
+          "caseId": "dnr-новоазовск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-39-28-681Z.json"
+        },
+        {
+          "caseId": "dnr-новоазовск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-39-29-211Z.json"
+        },
+        {
+          "caseId": "dnr-новоазовск-kazan-center",
+          "detail": {
+            "departureAt": "2026-10-17T09:00:00+03:00",
+            "component": "m4",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          },
+          "evidence": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-39-29-720Z.json"
         }
       ],
-      "caseCount": 14
+      "caseCount": 15
     },
     {
       "code": "m11_partial_head_entry_boundary_unresolved",
