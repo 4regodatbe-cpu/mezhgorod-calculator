@@ -843,7 +843,22 @@
         "a289"
       ],
       "routeMustBeLive": true,
-      "status": "planned"
+      "status": "audited",
+      "liveEvidence": {
+        "result": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-anapa-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-45-14-248Z.json",
+        "capture": "source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-anapa-to-krasnodar/2026-10-16T01-45-14-228Z-capture.json.gz",
+        "provider": "OSRM",
+        "routeMeters": 166211,
+        "traceComplete": true
+      },
+      "auditEvidence": {
+        "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-45-12-172Z.json",
+        "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-anapa-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-45-14-248Z.json",
+        "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-anapa-to-krasnodar/2026-10-16T01-45-14-228Z-capture.json.gz",
+        "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-45-14-623Z.json",
+        "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-45-14-974Z.json",
+        "sameDateParity": true
+      }
     },
     {
       "id": "single-a289-slavyansk-to-taman",
