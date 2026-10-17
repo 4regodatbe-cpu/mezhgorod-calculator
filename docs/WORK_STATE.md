@@ -1,3 +1,20 @@
+## STARTED — 18.10.2026 00:01 МСК: М-12 западные границы
+
+- Source d497df67…/PR14draft; CI39068966825 completed/success: verify иlive_probe фактическиуспешны; ожиданиеокончено. [STARTED](checkpoints/2026-10-18-000148-m12-western-boundaries-STARTED.md) · [9exact OSM URLs/frozen inputs](../experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/inputs.json).
+- Только3западныхgantry +дваразныхexit:9GET≤15с/120с,terminalcircuit;2узкихoperatorqueries/≤4pageopens. ДоdurableSTARTED/readback сетьнепускать. ЦКАДвходreuse; новыхrouting/trace0.1239/2952 кандидатамиостаютсядоproof.
+- **NEXT после durableSTARTED:** boundedprimarycapture иоператорскаяпривязка; припровалеисточникафиксироватьBLOCKEDбезрасширенияпоиска. Только доказательство разрешаетузкийadapter/обаowncases/fullgate; иначеruntime/ценыбезизменения. Старые74/76/309/ЦКАДнеповторять.
+
+## Предыдущая сохранённая история
+
+## DONE — ограничение address probe сохранено в remote d497df67…
+
+- Branch/PR14draft head **d497df67738696dbe9c11e4dc14e617717ea1a2a**, tree8e50f77a553ace772f0f1ccb39722baa5627062b.20path SHA + head/draft readbackPASS. Code/docs/evidence reachable из разрешённой GitHub-ветки; STARTED925c8c4d… был docs-onlyskip, finalcodecommit безskip.
+- Полный локальный gate:focused8/8,audit744/744+quote/API,TS,ESLint,Next16/16PASS. Новый CI39068966825 **verify completed/success**, live_probe активен (provider geometry при последнем наблюдении). Полный run success ещё НЕ заявлен.
+- [Фактический readback](checkpoints/2026-10-17-address-timeout-remote-readback.json). Эта последняя запись наблюдений/CI пока LOCAL ONLY из-за activeCI; исправление и20файлов ужеdurable вd497df67…. Сохранить наблюдения следующим разрешённым checkpoint.
+- **NEXT:** проверить CI39068966825 иhead/PRdraft; затем отдельный STARTED перед boundedprimary привязкой западныхМ-12 рамок10782165529/11214930528/11157985901 и разныхвыходов22Н-0239/М-7. Не повторятьпройденныеtests/ЦКАД/74/76/309 безновойпричины.2952/1239 бездоказательстваненазначать; fulltripunknown сохранять. Никакогоmain/merge/Production/Android.
+
+## Предыдущая сохранённая история
+
 ## DONE — 17.10.2026: лимиты адресной сетевой проверки
 
 - Request+body10с, общий budget90с; abort/race, прекращение новых запросов, incremental atomic array/progress. Budget-exhausted не выдаётся заDONE (CLIexit1), ошибки источников видны. Диагностический probe и artifact path; app/lib/тарифы/матрица без изменения. [DONE](checkpoints/2026-10-17-2350-address-probe-timeout-DONE.md) · [отчёт/логи](../experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/README.md).

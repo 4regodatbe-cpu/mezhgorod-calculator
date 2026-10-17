@@ -2248,3 +2248,15 @@ Actualfocused8/8,fullaudit744/744+quote/API,TS,ESLint иNext16/16 PASS. Initials
 Локальных live/providercaptures0;8faulttests mocked, externalavailability не заявляется. Передfinal non-force expected925c8c4d… сверитьhead/PRdraft/terminalCI; commit безskip,exacttree/blobs/headreadback. Новыйpost-saveCI отдельно. NEXTcodeCI,затемМ-12 западныерамки иразныеexits;unknown/fulltariffs не превращатьв0.
 
 Уточнение сохранности evidence: initial focused invocation exit1 наблюдался в выводе инструмента (AssertionError по undefined/JSON normalization), однако focused-initial.log при финальной проверке имеет0байт, причина не установлена. Полный initial focused raw НЕ сохранён; empty gzip не является его доказательством. initial-observations.json явно фиксирует доступное наблюдение и это ограничение. Initial build raw и все принятые final logs доступны; окончательные8/744/TS/ESLint/build PASS прочитаны из реальных логов.
+
+
+## 2026-10-17 — actual code save/readback: address timeout
+
+Final non-force d497df67738696dbe9c11e4dc14e617717ea1a2a parent925c8c4d…, exacttree8e50f77a553ace772f0f1ccb39722baa5627062b/20path/head/PR14draft readbackPASS. НовыйCI39068966825 verify117502410949 completed/success;live_probe117502411255in_progress/providergeometry принаблюдении. Fullrun successнезаявлен. Focused8/full744/quoteAPI/TS/ESLint/build16/16 — фактический localgate изреальныхлогов. Readbackrecord docs/checkpoints/2026-10-17-address-timeout-remote-readback.json; последниеCIнаблюдения локальные, код/evidence20файловужеdurable. NEXTactualCI/head, затем отдельныйМ-12STARTED; прошедшиекейсы/тестынеповторятьбезпричины.
+
+
+## 2026-10-18 00:01 МСК — STARTED: bounded М-12 western boundary binding
+
+Source d497df67…/PR14draft; CI39068966825activeприподготовке,verify success. Подготовлены frozeninputs8SHA,9точныхprimaryOSM URLs(3nodes+6ways/full),15сeach/120сwhole иterminalfirstfailure. Запланированы2узкихoperatorqueries/≤4opens толькоboundaryidentity, не тарифы. Savedcases дают разные exitsМ-7Владимир/22Н-0239Арзамас; общийCKADentryreuse. Готовые1239/2952неприменены,новыхrouting/trace0; архивЦКАД/74/76/309неповторять. STARTEDdocs-onlyskipCI, доterminalстарогоCI/head/readbackremoteнеписать; доdurableSTARTEDprimaryсетьнепускать. Checkpoint docs/checkpoints/2026-10-18-000148-m12-western-boundaries-STARTED.md; inputs checks/2026-10-18-m12-western-boundaries/inputs.json. NEXTboundedprimary, затемproof+узкийadapter/gateиликонкретныйBLOCKED/DONEбезрасширенияпоиска.
+
+Перед STARTED: CI39068966825 обаjobscompleted/success,ожиданиезакончено; source-ci.json сохранён. Точныедвеprimarysearchquery/domainfiltersуточненывinputsбезувеличениялимита.
