@@ -1,3 +1,11 @@
+## STARTED — 17.10.2026 16:25 МСК: guard повторного заездаЗСД
+
+- Поручение: исправить6подтверждённых повторныхзаездов группы5733. Source head0cc2c469…, PR14draft. [STARTED](../../docs/checkpoints/2026-10-17-162522-zsd-no-reentry-STARTED.md). До длительныхтестов сохранить и проверитьreadback; приактивномCI не обновлятьветку.
+- Решение: узкий geometryguard вобщемV3 `isUsableRoute` до выбораETA;8физическихсвидетелей, порядок/dense/maxlocalspan. ОбычныйOSRMкандидатестьво всех6savedresponses; цены не участвуют ввыборе, чужойtrace не переносить. V2/тарифы не менять.
+- NEXT: послеdurableSTARTED реализоватьguard иfocused/integrationтесты, затемfullgate/TS/build, per-caseprogress, одинDONEcheckpoint. Покаисправлениене выполнено; live/replay74/76/309 не запускать.
+
+## Предыдущая сохранённая история
+
 ## Handoff — 17.10.2026 16:15 МСК: представители ЗСД и повторный заезд
 
 - **DONE:** 9 новых представителей +5проверок исключений =14уникальных сохранённых случаев; SHA и geometry выбранного провайдера совпали14/14. Накопленно представлены все11групп50unknown, но границы проверены только24/50случаев;26siblings не проверены. Новых цен0, baseline26рассчитанных компонентов/50unknown неизменён. [Checkpoint](../../docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md) · [таблица/доказательства](checks/2026-10-17-zsd-remaining-scopes/README.md).

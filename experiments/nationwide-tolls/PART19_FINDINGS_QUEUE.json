@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Implement a bounded no-reentry route selection/validation guard from saved trace proof, with focused and required gates; no toll-avoiding alternate/live corpus.",
+  "nextAction": "Persist STARTED after activeCI completes; implement bounded V3 candidate geometry no-reentry guard and focused/full required checks. Source snapshots only; no live corpus.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -4307,7 +4307,10 @@
       "fixed": false,
       "evidenceDirectory": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases",
       "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
-      "nextAction": "Implement a bounded no-reentry route selection/validation guard from saved trace proof, with focused and required gates; no toll-avoiding alternate/live corpus."
+      "nextAction": "Implement a bounded no-reentry route selection/validation guard from saved trace proof, with focused and required gates; no toll-avoiding alternate/live corpus.",
+      "implementationStatus": "STARTED",
+      "implementationStartedCheckpoint": "docs/checkpoints/2026-10-17-162522-zsd-no-reentry-STARTED.md",
+      "implementationSourceHead": "0cc2c469d5ef0385fe8446983103233ef73606a2"
     }
   ],
   "postAuditNextFinding": "zsd:selected-route-reentry"
