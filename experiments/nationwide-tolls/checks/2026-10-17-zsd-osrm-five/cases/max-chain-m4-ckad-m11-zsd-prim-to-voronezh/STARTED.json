@@ -1,0 +1,27 @@
+{
+  "atUtc": "2026-10-17T14:52:11.814Z",
+  "input": {
+    "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/2026-10-16T01-27-29-307Z-capture.json.gz",
+    "sha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d"
+  },
+  "routeSha256": "c96cb9d5fdf36607c9cc5f1f64b8fc9805e95bb2e6574792d7b3e3f3978c484f",
+  "geometrySha256": "6fd6dd550bff8b48e45e77d7a18ecefa0ccdb2e2fed95e73dcce8cfbef7b1071",
+  "candidates": [
+    {
+      "provider": "Valhalla",
+      "admitted": false,
+      "seconds": 48214
+    },
+    {
+      "provider": "OSRM",
+      "admitted": true,
+      "seconds": 55226
+    },
+    {
+      "provider": "BRouter",
+      "admitted": false,
+      "seconds": 52458
+    }
+  ]
+}

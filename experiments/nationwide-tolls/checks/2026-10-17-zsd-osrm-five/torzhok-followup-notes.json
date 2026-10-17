@@ -1,0 +1,36 @@
+{
+  "mode": "read_only_followup_preparation_no_fix_no_price_assigned",
+  "caseId": "pair-m11-zsd-prim-to-torzhok",
+  "observedOwnTraceExit": {
+    "osmNodeId": "3183012434",
+    "wayId": "795246101"
+  },
+  "candidateOperatorPoint": {
+    "id": "p258",
+    "routeKm": 258,
+    "pvpKm": 258,
+    "label": "км 258 / ПВП км 258",
+    "corridorLabel": "д. Будово"
+  },
+  "candidateBindingConfirmed": false,
+  "verifiedSourceGap": "p258 exists as current operator tariff point, but no facility with tariffPointId=p258 exists in current spatial snapshot. Do not widen the distance threshold or bind by proximity alone.",
+  "sources": [
+    {
+      "path": "data/tolls/m11/2026-10-01-58-679-category1-a1-current.json",
+      "sha256": "61628b9052b90a8a77c9b49277a0e17851490f7b00399806fb4c278314287bed"
+    },
+    {
+      "path": "data/tolls/m11/2026-10-01-58-679-spatial-anchors.json",
+      "sha256": "39919154bce0c9beea83afcc051d8e236a9e7e8605bb38cf633825b51015f854"
+    },
+    {
+      "path": "lib/toll-engine/m11-boundary-resolver.ts",
+      "sha256": "e435fccb9acba908fae72f47cc48a6ed8ace99c458095bf99a3fdaf6deb93664"
+    },
+    {
+      "path": "lib/toll-engine/m11-production.ts",
+      "sha256": "e20f9d3225f9ddfe032e7495f6fd8d04f4eb229d6a1c33037f3f927268ebe23e"
+    }
+  ],
+  "nextAction": "Obtain/check primary directed physical identity for this exit and candidate p258/Budovo, then select the proven ready pair. Keep M11 and full trip unknown until binding and complete scope, including tail, are proved."
+}

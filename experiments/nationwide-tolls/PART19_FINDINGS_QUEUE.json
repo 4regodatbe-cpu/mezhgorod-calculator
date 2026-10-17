@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "After durable DONE/current CI: one bounded batch of remaining five changed OSRM geometries, own metadata and trace; exact request payload reuse only, no broad route rerun.",
+  "nextAction": "Bind own saved Torzhok OSRM exit3183012434/way795246101 and ready M11 pair, fail closed until proved; then shared M12/CKAD scope for Arzamas/Cheboksary. No new routing or broad replay.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2022,6 +2022,64 @@
             },
             "preSaveCi": {
               "runId": 39040459995,
+              "status": "completed",
+              "conclusion": "success",
+              "verify": "completed/success",
+              "live_probe": "completed/success"
+            }
+          }
+        ],
+        "selectedRouteReplacementBatches": [
+          {
+            "atUtc": "2026-10-17T14:57:42.448638+00:00",
+            "sourceHead": "8fecbab5245fed3b7bff644eb0ccce4f2efa2c33",
+            "sourceCi": {
+              "runId": 39041543624,
+              "status": "completed",
+              "conclusion": "success"
+            },
+            "startedCommit": "d9a96ec04875078fefb0ec2b487dc6446ede220f",
+            "checkedCases": 5,
+            "caseIds": [
+              "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+              "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+              "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+              "pair-m11-zsd-prim-to-torzhok",
+              "triple-m4-m11-zsd-prim-to-voronezh"
+            ],
+            "ownTraceCompleteCases": 5,
+            "pricedComponents": 19,
+            "pricedZsdComponents": 5,
+            "zsdRubEach": 300,
+            "confirmedFullTripFares": 0,
+            "pricedButUnconfirmedFullTripCases": 2,
+            "unknownFullTripCases": 3,
+            "newRoutingRequests": 0,
+            "newTraceNetworkRequests": 16,
+            "traceRequestOccurrences": 43,
+            "exactReusedOccurrences": 27,
+            "distinctUsedRawResponses": 20,
+            "outcome": "fixed_and_verified",
+            "scope": "ZSD component on five changed saved ordinary OSRM geometries only",
+            "fareBasis": "existing source-derived owner zone1 vector; no independent operator OD receipt",
+            "historicalBaselineRecomputed": false,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/summary.json",
+            "integrity": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/integrity.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-175742-zsd-osrm-five-DONE.md",
+            "checks": {
+              "strictReplayCases": 5,
+              "misses": 0,
+              "unusedResponses": 0,
+              "negativeChecks": 15,
+              "sourceHashes": 7,
+              "auditPass": 721,
+              "auditFail": 0,
+              "quoteApi": "PASS",
+              "tsc": "PASS",
+              "build": "PASS static16/16"
+            },
+            "preSaveCi": {
+              "runId": 39042535356,
               "status": "completed",
               "conclusion": "success",
               "verify": "completed/success",
@@ -4356,8 +4414,8 @@
       "fixed": true,
       "evidenceDirectory": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases",
       "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
-      "nextAction": "After durable DONE/current CI: one bounded batch of remaining five changed OSRM geometries, own metadata and trace; exact request payload reuse only, no broad route rerun.",
-      "implementationStatus": "DONE_CODE_AND_ONE_REPLACEMENT_TRACE_VERIFIED",
+      "nextAction": "ZSD replacement component work complete. Next: exact M11 exit binding for own Torzhok OSRM, then common M12/CKAD scopes; no old Valhalla trace reuse.",
+      "implementationStatus": "DONE_CODE_AND_ALL_SIX_OWN_REPLACEMENT_ZSD_COMPONENTS_VERIFIED",
       "implementationStartedCheckpoint": "docs/checkpoints/2026-10-17-162522-zsd-no-reentry-STARTED.md",
       "implementationSourceHead": "0cc2c469d5ef0385fe8446983103233ef73606a2",
       "implementationDoneCheckpoint": "docs/checkpoints/2026-10-17-163758-zsd-no-reentry-DONE.md",
@@ -4437,8 +4495,103 @@
         "runId": 39038119987,
         "status": "completed",
         "conclusion": "success"
+      },
+      "selectedGeometryBatch": {
+        "atUtc": "2026-10-17T14:57:42.448638+00:00",
+        "sourceHead": "8fecbab5245fed3b7bff644eb0ccce4f2efa2c33",
+        "sourceCi": {
+          "runId": 39041543624,
+          "status": "completed",
+          "conclusion": "success"
+        },
+        "startedCommit": "d9a96ec04875078fefb0ec2b487dc6446ede220f",
+        "checkedCases": 5,
+        "caseIds": [
+          "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+          "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+          "pair-m11-zsd-prim-to-torzhok",
+          "triple-m4-m11-zsd-prim-to-voronezh"
+        ],
+        "ownTraceCompleteCases": 5,
+        "pricedComponents": 19,
+        "pricedZsdComponents": 5,
+        "zsdRubEach": 300,
+        "confirmedFullTripFares": 0,
+        "pricedButUnconfirmedFullTripCases": 2,
+        "unknownFullTripCases": 3,
+        "newRoutingRequests": 0,
+        "newTraceNetworkRequests": 16,
+        "traceRequestOccurrences": 43,
+        "exactReusedOccurrences": 27,
+        "distinctUsedRawResponses": 20,
+        "outcome": "fixed_and_verified",
+        "scope": "ZSD component on five changed saved ordinary OSRM geometries only",
+        "fareBasis": "existing source-derived owner zone1 vector; no independent operator OD receipt",
+        "historicalBaselineRecomputed": false,
+        "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/summary.json",
+        "integrity": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/integrity.json",
+        "checkpoint": "docs/checkpoints/2026-10-17-175742-zsd-osrm-five-DONE.md",
+        "checks": {
+          "strictReplayCases": 5,
+          "misses": 0,
+          "unusedResponses": 0,
+          "negativeChecks": 15,
+          "sourceHashes": 7,
+          "auditPass": 721,
+          "auditFail": 0,
+          "quoteApi": "PASS",
+          "tsc": "PASS",
+          "build": "PASS static16/16"
+        },
+        "preSaveCi": {
+          "runId": 39042535356,
+          "status": "completed",
+          "conclusion": "success",
+          "verify": "completed/success",
+          "live_probe": "completed/success"
+        }
+      },
+      "replacementCoverage": {
+        "changedCaseCount": 6,
+        "ownCompleteTraceCases": 6,
+        "pricedZsdComponents": 6,
+        "zsdRubEach": 300,
+        "pricedComponentsAcrossSix": 23,
+        "pricedButUnconfirmedFullTripCases": 3,
+        "unknownFullTripCases": 3,
+        "confirmedFullTripFares": 0,
+        "uncheckedReplacementCases": 0,
+        "historicalBaselineRecomputed": false
       }
     }
   ],
-  "postAuditNextFinding": "zsd:selected-route-reentry:remaining-five-own-traces"
+  "postAuditNextFinding": "m11:selected-osrm-torzhok-boundary",
+  "postAuditPricingFollowups": [
+    {
+      "code": "m11:selected-osrm-torzhok-boundary",
+      "caseIds": [
+        "pair-m11-zsd-prim-to-torzhok"
+      ],
+      "outcome": "deferred",
+      "rationale": "Own new full trace exists, but exact exit and ready pair not investigated in ZSD batch; only_one_verified_boundary_crossing + unmapped_selected_route_paid_booth3183012434/795246101. Known ZSD300 is not full fare.",
+      "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/capture.json.gz",
+      "checkpoint": "docs/checkpoints/2026-10-17-175742-zsd-osrm-five-DONE.md",
+      "preliminaryCandidatePoint": "p258",
+      "candidateBindingConfirmed": false,
+      "spatialSnapshotGap": "No facility with tariffPointId=p258 in current spatial snapshot; operator point p258/Budovo exists.",
+      "preparationEvidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/torzhok-followup-notes.json"
+    },
+    {
+      "code": "m12-ckad:selected-osrm-scope",
+      "caseIds": [
+        "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+        "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+      ],
+      "outcome": "deferred",
+      "rationale": "Own new full traces report m12_current_operator_pair_not_bound + ckad_east_arc_not_proven; separate common boundary/scope review required, no guessed fare.",
+      "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/integrity.json",
+      "checkpoint": "docs/checkpoints/2026-10-17-175742-zsd-osrm-five-DONE.md"
+    }
+  ]
 }
