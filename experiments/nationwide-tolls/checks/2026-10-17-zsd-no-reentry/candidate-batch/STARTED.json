@@ -1,0 +1,44 @@
+{
+  "sourceHashes": {
+    "lib/v3-calculation/route-candidate.ts": "060548c62fd1ac3f76a811e7fc20137a7ad46aca791657caaa60fcc19bbb3f1b",
+    "lib/v3-calculation/zsd-reentry-policy.ts": "f7ea79476be9bfb0f96a2b26e3bbfeb5bd13fa97f0da128f8ea537942235ddea",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-planernaya-no-reentry/geometry.json": "4e19e59c5093db591f57ef01c0995fb455974bbb6029e6ae288573eb45e97b21",
+    "experiments/nationwide-tolls/fastest-route-policy.mjs": "e5cc9a6a2aadb3fd62d2ac65c8fa17731026574f3bbc968a5de36d6301c875e5"
+  },
+  "sourceHead": "0cc2c469d5ef0385fe8446983103233ef73606a2",
+  "inputs": [
+    {
+      "caseId": "pair-m11-zsd-prim-to-moscow",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/2026-10-16T00-06-25-425Z-capture.json.gz",
+      "sha256": "24a24fda86b252ba77c3765a24b8ee58f05c742b84af6ed7445540368fd0eb61"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/2026-10-16T01-22-12-554Z-capture.json.gz",
+      "sha256": "c7fe6e20ebaf1854e7dba96db30bac54b2c929be4482f9f2144c686b17d104a4"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/2026-10-16T01-22-56-513Z-capture.json.gz",
+      "sha256": "ff9294352008224ef3ce7433539682ed9d80bcb8f7b3a4eb4d573cfd8dd4a4d5"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/2026-10-16T01-27-29-307Z-capture.json.gz",
+      "sha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d"
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-torzhok",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/2026-10-16T01-32-28-268Z-capture.json.gz",
+      "sha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/2026-10-16T02-19-07-294Z-capture.json.gz",
+      "sha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a"
+    }
+  ],
+  "newLiveRequests": 0,
+  "newFullTripReplays": 0,
+  "newFareCalculations": 0
+}

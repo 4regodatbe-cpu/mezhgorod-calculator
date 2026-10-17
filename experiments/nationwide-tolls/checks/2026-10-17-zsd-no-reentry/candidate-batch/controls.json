@@ -1,0 +1,26 @@
+[
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+    "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0",
+    "rejected": false
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-kazan/2026-10-16T00-00-02-750Z-capture.json.gz",
+    "sha256": "1541f0cf350d5c4613d150985aae0d110111f3ea1af5ad0d74be468c299fe99b",
+    "rejected": false
+  },
+  {
+    "caseId": "single-zsd-blag-to-prim",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/2026-10-16T00-30-24-682Z-capture.json.gz",
+    "sha256": "81d39b35576832f92026ba1c7eb7e4cf41d80c93eb5f26e96d0bb1370431bb92",
+    "rejected": false
+  },
+  {
+    "caseId": "dnr-гранитное-saint-petersburg-center",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+    "sha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+    "rejected": false
+  }
+]

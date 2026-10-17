@@ -4,6 +4,9 @@ import { NextRequest } from 'next/server';
 import { POST } from '../app/api/v3/calculate/route.ts';
 import { isUsableRoute } from '../lib/v3-calculation/route-candidate.ts';
 import type { Coordinate } from '../lib/tolls.ts';
+import {readFileSync} from 'node:fs';
+import {gunzipSync} from 'node:zlib';
+import reentryManifest from '../experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-planernaya-no-reentry/source-manifest.json' with {type: 'json'};
 
 const anapa={label:'Анапа',position:{lng:37.32,lat:44.90}};
 const krasnodar={label:'Краснодар',position:{lng:38.98,lat:45.04}};
@@ -14,12 +17,17 @@ const threeFrames:Coordinate[]=[[37.5878131,45.168457],...twoFrames];
 function polyline(points:Coordinate[]){let lat=0,lng=0,s='';const enc=(n:number)=>{let v=n<0?~(n<<1):n<<1,r='';while(v>=32){r+=String.fromCharCode((32|(v&31))+63);v>>=5;}return r+String.fromCharCode(v+63);};for(const [x,y] of points){const a=Math.round(y*1e6),b=Math.round(x*1e6);s+=enc(a-lat)+enc(b-lng);lat=a;lng=b;}return s;}
 function json(data:unknown,status=200){return new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json'}});}
 type Provider={meters:number;seconds:number;interior?:Coordinate[];coordinates?:Coordinate[]};
-async function calculate(from:typeof anapa,to:typeof anapa,providers:{valhalla?:Provider;osrm?:Provider;brouter?:Provider}){
+async function calculate(from:typeof anapa,to:typeof anapa,providers:{valhalla?:Provider;osrm?:Provider;brouter?:Provider},traceUnavailable=false){
  const original=globalThis.fetch;
  const requests:string[]=[];
- globalThis.fetch=async(input)=>{
+ const traceShapes:Coordinate[][]=[];
+ globalThis.fetch=async(input,init)=>{
   const url=new URL(String(input));requests.push(url.href);
-  if(url.pathname==='/trace_attributes')return json({edges:[{toll:true,names:['А-289'],way_id:1,end_node:{type:'toll_booth',node_id:13022464435}}]});
+  if(url.pathname==='/trace_attributes'){
+   const body=JSON.parse(String(init?.body??'{}'));
+   traceShapes.push((body.shape??[]).map((p:{lon:number;lat:number})=>[p.lon,p.lat]));
+   return traceUnavailable?json({},503):json({edges:[{toll:true,names:['А-289'],way_id:1,end_node:{type:'toll_booth',node_id:13022464435}}]});
+  }
   const provider=url.hostname==='valhalla1.openstreetmap.de'&&url.pathname==='/route'?'valhalla':url.hostname==='router.project-osrm.org'?'osrm':url.hostname==='brouter.de'?'brouter':null;
   if(!provider||!providers[provider])return json({},503);
   const p=providers[provider]!;
@@ -30,7 +38,7 @@ async function calculate(from:typeof anapa,to:typeof anapa,providers:{valhalla?:
  };
  try {
   const result=await POST(new NextRequest('http://localhost/api/v3/calculate',{method:'POST',body:JSON.stringify({from,to,departureAt:'2026-10-13T09:00:00+03:00'})}));
-  return {status:result.status,body:await result.json(),requests};
+  return {status:result.status,body:await result.json(),requests,traceShapes};
  } finally {globalThis.fetch=original;}
 }
 
@@ -87,4 +95,48 @@ test('unresolved A289 vector stays unknown instead of reviving a legacy numeric 
  assert.equal(r.status,200,JSON.stringify(r.body));
  assert.equal(r.body.legs[0].fast.tolls.pricingStatus,'unknown',JSON.stringify(r.body.legs[0].fast.tolls));
  assert.equal(r.body.legs[0].fast.tolls.amount,null);
+});
+
+const reentryCapture=JSON.parse(gunzipSync(readFileSync(new URL('../'+reentryManifest.referenceCapture.capture,import.meta.url))).toString());
+const reentryRecord=reentryCapture.record;
+const ordinaryOsrm=JSON.parse(reentryCapture.calls.find((c:{url:string;status:number})=>c.url.includes('router.project-osrm.org')&&c.status===200).text).routes[0];
+
+test('ordinary V3 excludes the recorded faster reentry before ranking and validates only the admitted OSRM geometry',async()=>{
+ const from=reentryRecord.spec.from,to=reentryRecord.spec.to;
+ const r=await calculate(from,to,{
+  valhalla:{...reentryRecord.route},
+  osrm:{meters:Math.round(ordinaryOsrm.distance),seconds:Math.round(ordinaryOsrm.duration),coordinates:ordinaryOsrm.geometry.coordinates},
+ },true);
+ assert.equal(r.status,200,JSON.stringify(r.body));
+ const fast=r.body.legs[0].fast;
+ assert.deepEqual(fast.quality.providers,['OSRM']);
+ assert.equal(fast.seconds,Math.round(ordinaryOsrm.duration));
+ assert.equal(fast.tolls.amount,null);
+ assert.equal(fast.tolls.pricingStatus,'unknown');
+ assert.equal(r.body.legs[0].free,null);
+ const coordinates=new Set(ordinaryOsrm.geometry.coordinates.map((c:Coordinate)=>JSON.stringify(c)));
+ assert.ok(r.traceShapes.length>0);
+ assert.ok(r.traceShapes.every(shape=>shape.every(point=>coordinates.has(JSON.stringify(point)))),'old rejected Valhalla evidence must not be traced or reused');
+ assert.equal(r.requests.filter(url=>url.includes('toll_booth_penalty')||url.includes('avoid_toll')).length,0);
+});
+
+test('special-zone V3 uses the same admission guard before ETA and cannot promote an invalid reentry',async()=>{
+ const loop=reentryRecord.route.coordinates.slice(162,206) as Coordinate[];
+ const r=await calculate(donetsk,moscow,{
+  valhalla:{meters:1800000,seconds:10000,interior:loop},
+  osrm:{meters:1100000,seconds:50000},
+ },true);
+ assert.equal(r.status,200,JSON.stringify(r.body));
+ assert.equal(r.body.options.length,1);
+ assert.deepEqual(r.body.options[0].fast.quality.providers,['OSRM']);
+ assert.equal(r.body.options[0].fast.seconds,50000);
+ assert.equal(r.body.options[0].fast.tolls.amount,null);
+ assert.equal(r.requests.filter(url=>url.includes('toll_booth_penalty')||url.includes('avoid_toll')).length,0);
+});
+
+test('ordinary V3 reports routing unavailable when only the forbidden reentry is returned',async()=>{
+ const r=await calculate(reentryRecord.spec.from,reentryRecord.spec.to,{valhalla:{...reentryRecord.route}},true);
+ assert.equal(r.status,502,JSON.stringify(r.body));
+ assert.equal(r.body.legs,undefined);
+ assert.equal(r.traceShapes.length,0);
 });

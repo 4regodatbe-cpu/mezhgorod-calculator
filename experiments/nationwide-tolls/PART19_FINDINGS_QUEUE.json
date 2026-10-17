@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Persist STARTED after activeCI completes; implement bounded V3 candidate geometry no-reentry guard and focused/full required checks. Source snapshots only; no live corpus.",
+  "nextAction": "After durable code commit check its CI; if proceeding with pricing, obtain own selected OSRM trace for one representative, no broad live replay.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -4302,15 +4302,38 @@
         "triple-m4-m11-zsd-prim-to-voronezh"
       ],
       "checkedCases": 6,
-      "outcome": "deferred",
-      "rationale": "Physical exit/urban links/reentry proved for all6; preserve diagnosis in its own checkpoint before a separate runtime/selection fix. Current amount unknown, no numeric mispricing claimed.",
-      "fixed": false,
+      "outcome": "fixed_and_verified",
+      "rationale": "6own bad candidate geometries rejected,6own ordinary OSRM admitted,4continuous controls; API ordinary/special/all-invalid verified.",
+      "fixed": true,
       "evidenceDirectory": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases",
       "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
-      "nextAction": "Implement a bounded no-reentry route selection/validation guard from saved trace proof, with focused and required gates; no toll-avoiding alternate/live corpus.",
-      "implementationStatus": "STARTED",
+      "nextAction": "After durable code commit check its CI; if proceeding with pricing, obtain own selected OSRM trace for one representative, no broad live replay.",
+      "implementationStatus": "DONE_CODE_VERIFIED_POSTSAVE_CI_SEPARATE",
       "implementationStartedCheckpoint": "docs/checkpoints/2026-10-17-162522-zsd-no-reentry-STARTED.md",
-      "implementationSourceHead": "0cc2c469d5ef0385fe8446983103233ef73606a2"
+      "implementationSourceHead": "0cc2c469d5ef0385fe8446983103233ef73606a2",
+      "implementationDoneCheckpoint": "docs/checkpoints/2026-10-17-163758-zsd-no-reentry-DONE.md",
+      "implementationStartedCommit": "80a15c47087199bab3d96783559fc486946b52be",
+      "runtimeGuard": "lib/v3-calculation/zsd-reentry-policy.ts",
+      "scope": "Only the proven Planernaya urban-turn motif, before V3 ETA selection. Not all-road reentry detection.",
+      "checks": {
+        "focused": 24,
+        "fullAudit": 721,
+        "fullAuditFailed": 0,
+        "quoteApi": "PASS",
+        "tsc": "PASS",
+        "eslint": "PASS",
+        "nextBuild": "PASS",
+        "mutationExpectedApiFailures": 3
+      },
+      "newPricedComponents": 0,
+      "confirmedFullTripFares": 0,
+      "selectedGeometryTrace": "New selected OSRM trace not captured live; old Valhalla trace must not be reused.",
+      "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-no-reentry/candidate-batch/summary.json",
+      "preSaveCi": {
+        "runId": 39036931767,
+        "verify": "completed/success",
+        "live_probe": "completed/success"
+      }
     }
   ],
   "postAuditNextFinding": "zsd:selected-route-reentry"

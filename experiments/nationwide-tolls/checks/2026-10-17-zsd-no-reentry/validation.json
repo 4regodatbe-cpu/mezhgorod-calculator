@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "startedCommit": "80a15c47087199bab3d96783559fc486946b52be",
+  "focused": {
+    "tests": 24,
+    "pass": 24,
+    "fail": 0,
+    "exitCode": 0
+  },
+  "fullAudit": {
+    "tests": 721,
+    "pass": 721,
+    "fail": 0,
+    "exitCode": 0,
+    "quoteApiChecks": "PASS"
+  },
+  "initialFullAudit": {
+    "tests": 716,
+    "pass": 715,
+    "fail": 1,
+    "exitCode": 1,
+    "reason": "missing tracked A289 fixture; recovered exact3source blobs"
+  },
+  "typescript": {
+    "exitCode": 0
+  },
+  "eslint": {
+    "exitCode": 0
+  },
+  "nextBuild": {
+    "exitCode": 0,
+    "staticPages": 16
+  },
+  "candidateBatch": {
+    "cases": 6,
+    "rejectedReentry": 6,
+    "admittedOsrm": 6,
+    "controls": 4,
+    "reproduction": "allcaseJSON andsummary byte-identical; no new unique cases counted"
+  },
+  "mutation": {
+    "status": "PASS",
+    "meaning": "Disabling only the guard makes all3 API regressions fail as expected. No production file mutated.",
+    "disabledGuardExitCode": 1,
+    "expectedFailingTests": 3
+  },
+  "handoffLinks": "PASS",
+  "json": "PASS",
+  "gitDiff": "PASS",
+  "v2TariffsAndWorkflowChanged": false,
+  "newLiveRequests": 0,
+  "newActualFareComponents": 0,
+  "confirmedFullTripFares": 0,
+  "logSha256": {
+    "audit.log": "0ef2a35576d53841537e2d4020566835954be607a3292e51728b584ac4bbd0bc",
+    "audit-initial.log": "33e556a16d0e7d0ed4a60c999d05c202925fbf73d42db580f2b5dc3225e07e82",
+    "mutation-expected-failure.log": "e104a6cfec602aa4c48d14575e756b9df38058087163f12fac9bc75a48025799",
+    "focused-initial.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build.log": "8ebb750eadc310865a7bf58862b42a0d54825d4ac5704003929065be3a86b54e",
+    "tsc-initial.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-batch.log": "cf2f5a27d2ff621be2fb3d9ef059e2b2442132d491022ab2fd63fc65c50ee39d",
+    "eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reproduction.log": "cf2f5a27d2ff621be2fb3d9ef059e2b2442132d491022ab2fd63fc65c50ee39d",
+    "focused.log": "0a7cf816e596504d7f57289ac65a2859db6c64d101535917b8f49afb3e83a2ab"
+  },
+  "preSaveCi": {
+    "runId": 39036931767,
+    "verify": "completed/success",
+    "live_probe": "completed/success",
+    "cancelledByAgent": false
+  },
+  "sourceCodeSha256": {
+    "lib/v3-calculation/route-candidate.ts": "060548c62fd1ac3f76a811e7fc20137a7ad46aca791657caaa60fcc19bbb3f1b",
+    "lib/v3-calculation/zsd-reentry-policy.ts": "f7ea79476be9bfb0f96a2b26e3bbfeb5bd13fa97f0da128f8ea537942235ddea",
+    "lib/v3-calculation/zsd-reentry-policy.test.ts": "43f13b262ce6eb0bb72fe286f0520b98650b57634c33792c7c11060568790e18",
+    "scripts/v3-route-selection-audit.test.ts": "295db7203efe072679d6271b23f1d58c8224ef23f12138772e82a04a5a3f2bc0",
+    "experiments/nationwide-tolls/scripts/check-zsd-no-reentry.mjs": "143b4d5dc0c583fd6b9542417c18fa1ac9277b844cc11d117a1618bea91fa919"
+  },
+  "normalizedLogs": {
+    "build.log": {
+      "rawArchive": "build.raw.log.gz",
+      "rawBytesSha256": "683257f9ccf9e40c1b763ccb05e068e097e1cbc9de3a04801dfed6486f9a4adb",
+      "archiveSha256": "9049a77da98c0708b86dbaf9e6cbe36f30678fd9e3b26ab91c7aba4580e7ac68",
+      "normalization": "Trailing whitespace/CR and extra final blank lines removed for review; exact raw output retained compressed."
+    },
+    "mutation-expected-failure.log": {
+      "rawArchive": "mutation-expected-failure.raw.log.gz",
+      "rawBytesSha256": "7841576a1a38ac8316b19a01460714f275ea57f86d85f7737452f004a0383849",
+      "archiveSha256": "f5fe0c82b3f37fbfca446ce6ff3950485f962d3451b1a0595a4bd167e37fda5a",
+      "normalization": "Trailing whitespace/CR and extra final blank lines removed for review; exact raw output retained compressed."
+    }
+  },
+  "initialStagedDiffCheck": "FAILED only for raw build/mutation log whitespace; exact raw archives retained, review logs normalized; no code/test rerun needed"
+}
