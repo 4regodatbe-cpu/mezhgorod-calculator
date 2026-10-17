@@ -1,0 +1,22 @@
+{
+  "status": "DONE",
+  "sourceCommit": "54f4cccccd0d4b70ae34f063ac4db351b013acba",
+  "completedCases": [
+    "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+    "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+  ],
+  "counts": {
+    "reviewedCases": 2,
+    "representativeReviews": 1,
+    "siblingExceptionChecks": 1,
+    "verifiedTraceOccurrences": 19,
+    "distinctRawResponses": 13,
+    "newRoutingRequests": 0,
+    "newTraceRequests": 0,
+    "newPrimaryRequests": 0,
+    "fullPricingReplays": 0,
+    "newlyPricedComponents": 0,
+    "newlyCalculatedFullTrips": 0,
+    "confirmedFullTripFares": 0
+  }
+}
