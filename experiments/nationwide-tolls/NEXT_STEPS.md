@@ -1,12 +1,12 @@
 # Следующие действия
 
-[Актуальный handoff](../../docs/WORK_STATE.md); история ниже сохранена без удаления.
+[Актуальный handoff](../../docs/WORK_STATE.md); история ниже сохранена.
 
-Part19 cause `m11_58_679_facility_sequence_incomplete`: **blocked_by_missing_reliable_data**, 15/15 cases and 30 saved weekday/weekend profiles reviewed. Amount remains unknown/null; no fare or full trip total confirmed. No live/replay/build/tests were run.
+Part19 `m11-58-679:unpriced`: **blocked_by_missing_reliable_data**. All 41 route cases assessed across 82 unique saved weekday/weekend profiles (15/30 earlier + 26/52 now). The 74 residual artifact-file entries contained 22 duplicates, excluded from the check count. M11 remains unknown/null; no tariff/full total confirmed. No new live/replay/build/tests.
 
-NEXT: inspect only 26 residual IDs in `m11-58-679:unpriced` outside the 15 already reviewed, cross-referencing the completed M11 boundary review. No repeated cases or new live/replay without concrete evidence gap. Formal plan remains 18/20=90%; Part19 IN_PROGRESS, Part20 PLANNED. No main/merge/Production/Android.
+NEXT: `arc_not_proven` (baseline34): inspect grouped causes and exceptions from saved artifacts only. No duplicate profiles or new probes without material distinction/evidence gap. Formal plan stays 18/20=90%; Part19 IN_PROGRESS, Part20 PLANNED. No main/merge/Production/Android.
 
-[Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-facility-sequence-blocked.md) · [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-m11-facility-sequence-blocked.json)
+[Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-58-679-blocked.md) · [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-m11-58-679-blocked.json)
 
 ---
 

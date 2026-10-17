@@ -1,13 +1,14 @@
 # Калькулятор «Из А в Б»: актуальное состояние
 
-## Handoff — 2026-10-17 17.10.2026, 04:34:06 МСК
+## Handoff — 2026-10-17 17.10.2026, 05:23:56 МСК
 
-- Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 открыт/draft; parent head `2b61dad6560284da60d9ec2c49952ace3608ae13`, tree `8cd3f0857f8ccabc431a4898c98e090c367d6560`; перед записью активных/queued branch runs не было.
-- Последний наблюдаемый parent run [#38985688974](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38985688974) успешен, но предшествует этой классификации.
+- PR14 открыт/draft; ветка `fix/v3-missing-route-prices-2026-10-15`, parent head `a7e71c150131f9e8f8e111a398b9340dfed99c50`, дерево `ff85704b2557cb40b5672eca70f2e36820bf1a87`. До записи активных/queued runs не было.
+- Последний завершённый workflow [#38991432644](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38991432644) успешен на родительском коммите; это не проверка новой документационной классификации.
 - Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это не готовность калькулятора и не подтверждение тарифов.
-- Причина `m11_58_679_facility_sequence_incomplete`: проверены **15 маршрутов / 30 сохранённых weekday-weekend профилей**. Все показывают один fail-closed spatial gap; официальные данные дают 21 тарифную точку без координат, а пространственные якоря покрывают только p58/p593/p679. Итог: **заблокирована отсутствием надёжных данных**; сумма остаётся unknown/null.
-- Новых live/replay/build/tests не было. NEXT: проверить только **26 residual IDs** из `m11-58-679:unpriced`, без повторов уже просмотренных 15 случаев.
-- [Checkpoint](../docs/checkpoints/2026-10-17-part19-m11-facility-sequence-blocked.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-m11-facility-sequence-blocked.json).
+- Причина `m11-58-679:unpriced`: **41/41 маршрутов** оценены по сохранённым данным. В этом шаге рассмотрены 26 остаточных маршрутов и **52 уникальных weekday/weekend профиля**; 22 копии профилей не засчитаны повторно. Все 52 оставляют M11 unknown/null с одним подтверждённым crossing. Статус: **заблокирована отсутствием надёжных данных**.
+- Тариф и полный итог не подтверждены. CKAD/ZSD/неидентифицированные ПВП — отдельные причины; частичные M4/M12 суммы не выдаются за итог.
+- NEXT: `arc_not_proven` (34 исходных случая), только сохранённые данные/исключения; без повторов. Новых live/replay/build/tests не было.
+- [Checkpoint](../docs/checkpoints/2026-10-17-part19-m11-58-679-blocked.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-m11-58-679-blocked.json).
 
 ## Предыдущая handoff-сводка (оставлена как история, не источник текущего состояния)
 

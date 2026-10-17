@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Review only the 26 residual IDs in m11-58-679:unpriced that are outside m11_58_679_facility_sequence_incomplete, comparing saved weekday/weekend evidence and completed M11 boundary review. Do not replay/live-probe absent a concrete evidence gap or material distinction.",
+  "nextAction": "Next: diagnose arc_not_proven (baseline 34) by grouped cause and user impact, inspecting saved traces/profiles and exceptions only. No new live/replay absent material route/input/code distinction or evidence gap; preserve fastest-route-only and fail-closed unknown.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2417,8 +2417,347 @@
         "triple-m11-ckad-m12-vladimir-to-novgorod",
         "triple-m4-m11-zsd-prim-to-voronezh"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "blocked_by_missing_reliable_data",
+      "note": "All 41 M11 58–679 cases assessed (15 prior + 26 residual). All 52 unique residual profiles show one independently verified crossing and remain unknown/null. Official 21-point inventory lacks coordinates; spatial anchors cover only p58/p593/p679. Other CKAD/ZSD/unnamed-booth blockers remain separate. Status blocked by missing reliable data, not a proven code defect or tariff.",
+      "reviewStatus": "41_of_41_assessed; 26 residual cases/52 unique saved weekday_weekend profiles checked; same one-crossing M11 blocker",
+      "currentCasesChecked": 26,
+      "currentProfilesChecked": 52,
+      "profileArtifactFileEntries": 74,
+      "duplicateProfileEntriesExcluded": 22,
+      "totalCasesAssessed": 41,
+      "totalUniqueProfilesAssessed": 82,
+      "lastReviewedAtUtc": "2026-10-17T02:23:56Z",
+      "currentEvaluations": [
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "74057b6e56202a220bb4c93a7b5b33a174b4dd0f",
+          "weekendProfileBlobSha": "a4d3dbd074b1110877fbd0b7482761888680c372",
+          "captureSha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "unknown-paid-road",
+            "zsd"
+          ]
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "0bd466b810622861e208602592c52b4443ccea10",
+          "weekendProfileBlobSha": "58eb549e563acf074dd6dbdc8062359e291896d9",
+          "captureSha256": "3235c04e3f0d95c30df518d159c3e47bce988a0c4a0b1b5700b5ee9e206f61b1",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m11-ckad-ramenskoe-to-torzhok",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "0d720f2fae995ccaebd8af336e8f681e1ad5290f",
+          "weekendProfileBlobSha": "fe44c3105d3a0a7e9e411d4b6752d1f8349e4f3d",
+          "captureSha256": "997d836b516306fa31e9d3849b10586f59e4eeb17e1e1b2299d2a4351a0851b7",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "66ed37c070c46176be5ad318ae1b03d1a296a0d0",
+          "weekendProfileBlobSha": "3778ba9e4cf5e70894e6e91df4bfc674a8cab5a3",
+          "captureSha256": "8fe0ec0ac265d465dbeabeed12087a44d105529839c120bf3bc8231a7feeb4d6",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m11-ckad-tver-to-noginsk",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "4f3a3d20443dfacfacf3fe1a1fdbd41684b1e980",
+          "weekendProfileBlobSha": "03f6398be695a8ad71b7748d46cbf13c2b7ece74",
+          "captureSha256": "891ee5ad4fb654412d9b9530a6c0e8d0e1e8fa0016e20b3923d63fd0951568ca",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m11-zsd-novgorod-to-sest",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "296cde5491a377f8e0125d17e859739c1e08517e",
+          "weekendProfileBlobSha": "8f4a3fc07b0d13addd91ad7cc79a4465d2fc6534",
+          "captureSha256": "205d1dd3d2b2fabccdc6400065a1fd56861de1d93bd5166652973f26fc57d779",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "unknown-paid-road",
+            "zsd"
+          ]
+        },
+        {
+          "caseId": "pair-m11-zsd-prim-to-torzhok",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "1afac36b5bbc29cacf0f630b627fa1be88ad8c07",
+          "weekendProfileBlobSha": "53406343375323c41b7b59396512bb5f341d46f8",
+          "captureSha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "unknown-paid-road",
+            "zsd"
+          ]
+        },
+        {
+          "caseId": "pair-m11-zsd-sest-to-novgorod",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "9c305dc21239f0c30a9e6e12f9af052ee293a39c",
+          "weekendProfileBlobSha": "803e5fc62703eea2e00170e96a4b87468e810978",
+          "captureSha256": "50906f673fa32a6219e678697a823c16806bf8c400f5408a4472f6a2a3f44534",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "zsd",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m11-zsd-sest-to-tver",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "9625de38342df9d484d52dee2f459049f7ded69e",
+          "weekendProfileBlobSha": "dba742ee564e147806fe1e31725d4fd43923cc49",
+          "captureSha256": "f345d2c725eefeff29ec7fcfb73d7a510c1e8199e4e04191a1cccb92bcbf35f0",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "zsd",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m11-zsd-torzhok-to-prim",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "1c3ca509abe10c42b883d44b01d03de40c613177",
+          "weekendProfileBlobSha": "de9222f8d4349555ceb8d353323bec6b6d353b98",
+          "captureSha256": "875a7b43b82e9e35432ac2ac76cb116242fb2a646eb745fc82fd85c9981fdb09",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "unknown-paid-road",
+            "zsd"
+          ]
+        },
+        {
+          "caseId": "pair-m11-zsd-tver-to-sest",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "9f3aa162690e40d41a9edd13c5023602a42fe638",
+          "weekendProfileBlobSha": "481156e6c12f4ecef327856316d1592998ed95b1",
+          "captureSha256": "23569180e6f0281e83966b4269468fb3e022facdede07769ec29b76c8fc01edf",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "unknown-paid-road",
+            "zsd"
+          ]
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "3801ff43103fdb832b91c71c41e27f35d01a888e",
+          "weekendProfileBlobSha": "4038e335ea1722fedf55bea026cecada952322ba",
+          "captureSha256": "2adf0ed3480fa6f39517852c63e63a2764245ca929a3d016e3abb5e9632123a5",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-kazan",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "1d6b0ba39e74a1d23de335325828a8da1c2ed4d6",
+          "weekendProfileBlobSha": "2d90f318c39ec24538df83c4fbe906f495e58a15",
+          "captureSha256": "9dc5f3c3201e45c5ad888fe71de1112daac1a26b510e6410b1d0ca58ba145539",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "f08788085175503621efc8a15343f043d98c4438",
+          "weekendProfileBlobSha": "e9ada92bbda0040b901b88e07f80b209afa7704b",
+          "captureSha256": "46110034583a519fae3dc7ef4330263f313c9d6353ee038264bca964561c716d",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m12-ckad-vladimir-to-klin",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "644a02497b1bacb5be09e63d6cbaf6b15bc3c9d4",
+          "weekendProfileBlobSha": "8cf8ebd7dfe238d54de821aaec20eaa1c2efc41a",
+          "captureSha256": "7ef6d5c26ac800e2f2078e0a3402cdfeda49ce161be931a69e12c3ddc2bed34a",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "pair-m4-m11-spb-to-voronezh",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "ce24eeab6224af5161a6cc3dd8c676881cf356d6",
+          "weekendProfileBlobSha": "d54ec1eca87f51f64f0548c9a3816b7d559d3589",
+          "captureSha256": "4d3c6d232c73eab5c662c3532fb85931d3083bfb43f4c5184dfe1b285abebc57",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "zsd",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "single-ckad-ramenskoe-to-klin",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "defdbd75d299693840d534d0e33359ec7cabdcc8",
+          "weekendProfileBlobSha": "5ef169af9638f87dd923a2e81cc4f26f72938429",
+          "captureSha256": "7e51c29bed351d8f5b24dfd4630802d84a04152e5703d677b8edb1e68c297d14",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "597285bb15501b50c300c59c4fd2cfddddb4b4e2",
+          "weekendProfileBlobSha": "823e3ad9bbff7c67fb98505cd7a60583a6e9c9fe",
+          "captureSha256": "dbe832b30cefdedaeca8e818eece65af91461febd941b579cbc2032a94d6db94",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "zsd",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "single-m11-tver-to-spb",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "6ae37071c70c7f32bb3d2d23d6b7845f68c71b23",
+          "weekendProfileBlobSha": "6f6b613d1fd6555093aec09cebc2aaf769a746f1",
+          "captureSha256": "105e36359823ef4a72a16a9ba7f5892f09d836b461b0726d20a8efc3c4627d0f",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "unknown-paid-road",
+            "zsd"
+          ]
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "1393a7db550ca6d7f4f34c7fc4008d4211fb0b3c",
+          "weekendProfileBlobSha": "9c5d71ce92accb889b65d8e8a72b127b318b954c",
+          "captureSha256": "3435dbbb707f6d1441e92b4783032b2506e79a2021d46963be96120d642434f6",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-murom-to-tver",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "d3d084ef9a12a63a71d8025279b2a7ac9d322863",
+          "weekendProfileBlobSha": "41d28ef2d49168646df60afe7bd6f7a3fc2ab8d0",
+          "captureSha256": "39a3c1a8b884e3dae772918ef5f298c8c55162974bcecdb03096ef61f988fa55",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-novgorod-to-vladimir",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "d14fa720f428a0d3f23610329fe43c364094e379",
+          "weekendProfileBlobSha": "deec9a0950703bf394a3e0ebb45937da408fa1c0",
+          "captureSha256": "8863dbc88b6b83021dc2fbcbcec24faff68645a428c537d83d90885c6d8fe4b4",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-torzhok-to-kazan",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "72dfb517d253014b570a29aa0c5468517d1d8ce7",
+          "weekendProfileBlobSha": "ad9b4ef164f95413bf6a800dd4237a7650006f0e",
+          "captureSha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "446f4ceeeced2eb4c07e1cbe951693abf4a55371",
+          "weekendProfileBlobSha": "1f5943c77d66c3713076479cb81cdbf9a78c7e36",
+          "captureSha256": "52c526f20f0642c5928210f5dd37ce18e224da9dc1d91f552270f905ed1c04b8",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "3f45f4c0071711fef15e3b8dd107c3e9406f9984",
+          "weekendProfileBlobSha": "9e34f4c3f75570d28ec884466f10f103f6d87df5",
+          "captureSha256": "5671de2c63b81379466bdf674937ce80265736c2526e0e526e55a49442c40eb3",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "ckad",
+            "unknown-paid-road"
+          ]
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+          "profiles": 2,
+          "weekdayProfileBlobSha": "ba39e262870cd5d7af2e0778dbfa7d7ec16cbafb",
+          "weekendProfileBlobSha": "f7e256604014485a7f0caa05c0cd99587dce54f5",
+          "captureSha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a",
+          "m11Reason": "only_one_verified_boundary_crossing",
+          "otherMissingComponents": [
+            "unknown-paid-road",
+            "zsd"
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "at": "2026-10-17T02:23:56Z",
+          "from": "needs_diagnosis",
+          "to": "blocked_by_missing_reliable_data",
+          "reason": "all 26 residual cases/52 unique profiles show only_one_verified_boundary_crossing; official point coordinates unavailable"
+        }
+      ],
+      "causeOutcome": "blocked_by_missing_reliable_data",
+      "reviewEvidence": "docs/checkpoints/evidence/2026-10-17-part19-m11-58-679-blocked.json",
+      "checkpoint": "docs/checkpoints/2026-10-17-part19-m11-58-679-blocked.md",
+      "profileCounts": {
+        "priorFacilitySequenceProfiles": 30,
+        "newUniqueResidual": 52,
+        "newArtifactFileEntries": 74,
+        "duplicateFilesExcluded": 22,
+        "totalUnique": 82
+      }
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
