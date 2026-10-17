@@ -1,0 +1,81 @@
+{
+  "atUtc": "2026-10-17T09:39:11Z",
+  "sourceCommit": "69e7933257f5ac0d2ee42dd0bfbd258fcb1eb74f",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "finalWorkflow": {
+    "id": 39019024457,
+    "conclusion": "success",
+    "head": "69e7933257f5ac0d2ee42dd0bfbd258fcb1eb74f",
+    "updatedAt": "2026-10-17T09:06:19Z"
+  },
+  "oldPlan": {
+    "completedParts": 20,
+    "totalParts": 20,
+    "percent": 100,
+    "continuationDisabled": true
+  },
+  "newUserScope": "Review the completed audit and find solutions to unresolved causes",
+  "newRouteCases": 0,
+  "newLiveRouteRuns": 0,
+  "newReplays": 0,
+  "manualTests": 0,
+  "manualBuilds": 0,
+  "codeChanged": false,
+  "tariffConfirmed": false,
+  "sourceFiles": [
+    {
+      "path": "docs/checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md",
+      "blobSha": "d337d59fb92aa0799fbc663133a1355eef7e6721"
+    },
+    {
+      "path": "experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json",
+      "blobSha": "7a7e3a5bfedd67e25deed62de966ef6a710fb511"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/whsd-owner-rules.html",
+      "blobSha": "c2f74944b751bc38624c7b8d2a3299704a39ab67"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/whsd-owner-tariffs.html",
+      "blobSha": "6c0556d3163ee440435a6fde71fe10f310d87b86"
+    },
+    {
+      "path": "lib/v3-calculation/m11-product-boundaries.ts",
+      "blobSha": "f8576c65035007757fbbd61a9dd65bed0a6274c0"
+    },
+    {
+      "path": "lib/v3-calculation/m11-traversal-safety.ts",
+      "blobSha": "376cef397b52ac609548fc915ca462ea314ec885"
+    },
+    {
+      "path": "lib/v3-calculation/zsd-zone1-component.ts",
+      "blobSha": "3ecb42e084c44463791f5256a154315b849de269"
+    }
+  ],
+  "sourceChecks": [
+    {
+      "source": "saved owner rules",
+      "clauses": [
+        "6.2.2",
+        "6.2.17",
+        "6.3"
+      ],
+      "newConstraint": "Linked cash/card collection with receipt exception on Avtomobilnaya<->Blagodatnaya; not a proof of Granitnoe full ZSD fare"
+    },
+    {
+      "url": "https://whsd.ru/tarifyi-na-proezd",
+      "result": "502 via web retrieval"
+    },
+    {
+      "url": "https://whsd.ru/pravila-ispolzovaniya-zsd",
+      "result": "502 via web retrieval"
+    },
+    {
+      "url": "https://www.nch-spb.com/",
+      "result": "403 via web retrieval"
+    }
+  ],
+  "outcome": "Solution design documented; ZSD fare activation remains blocked_by_missing_reliable_data",
+  "next": "Bind saved KAD-south->Ekateringofka cash/card finished collection span to a primary operator scheme, not generic zone prices"
+}
