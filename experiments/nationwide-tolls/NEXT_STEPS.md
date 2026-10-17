@@ -1,13 +1,16 @@
 # Следующие действия
 
-[Текущий handoff](../../docs/WORK_STATE.md),[подробная история](NEXT_STEPS_HISTORY_2026-10-15_2228.md).
+[Актуальный handoff](../../docs/WORK_STATE.md); история ниже сохранена без удаления.
 
-M11 boundary cause: **8/8 case reviews DONE; outcome blocked by missing reliable data**. Findings queue reconciled so its counters match individual checkpoints. No M11 tariff/full-route amount confirmed.
-[Reconciliation checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md).
+M11 boundary: 8/8 сохранённых исключений разобраны; outcome заблокирован отсутствием надёжных данных. Тариф и полный маршрутный итог не подтверждены.
 
-NEXT: diagnose `unknown-paid-road:unpriced` from saved evidence and current engine, checking whether its baseline 64 cases overlap with `expected-road-not-proven` (baseline 64). Counts are not necessarily unique. No full reruns/live requests without a concrete evidence gap or material difference. Then continue Part19 cause outcomes and Part20 required gates/handoff. Formal plan18/20=90%, not tariff or release readiness. No main/merge/Production/Android.
+Part19 finding `unknown-paid-road:unpriced` (64 baseline IDs) **deferred** как широкий агрегат с пересекающимися категориями, не как подтверждённая ошибка. На этом шаге текущих route cases/profiles проверено 0. Композитор намеренно оставляет unknown-paid-road вне тарифицируемых matched-компонентов и возвращает unknown/null при неполноте.
 
+NEXT: `m11_58_679_facility_sequence_incomplete` (baseline 15), сопоставить сохранённые доказательства с `m11-58-679:unpriced`; только конкретные отличия требуют replay/live. Без новых broad reruns. Формальный план 18/20=90%, не готовность релиза и не подтверждённость тарифов. No main/merge/Production/Android.
 
+---
+
+## Сохранённая история предыдущих очередей
 
 2026-10-16T02:09:14.454441+03:00: пользователь изменил порядок на 20 небольших частей с отдельными запусками. Часть1 DONE; часть2 NEXT. [План](SMALL_PARTS_PLAN.md), [checkpoint](../../docs/checkpoints/2026-10-16-small-parts-01.md). Счётчик не повышен, новые маршруты/сборка не запускались.
 

@@ -1,4 +1,19 @@
-# Калькулятор «Из А в Б»: текущее состояние
+# Калькулятор «Из А в Б»: актуальное состояние
+
+## Handoff — 2026-10-17 03:15 МСК
+
+- Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 открыт и draft. Удалённый head перед этим шагом: `1f6b47f4c297779307fe9e59e69571e5bc1100ab`; базовое дерево `67b4ef630a5145852b3e2ec7d067b67dd0162d7e`.
+- Последний наблюдаемый run [#38981909036](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38981909036) завершился success (`verify` и `live_probe`); на preflight активных run не было.
+- Формальный план: **18/20 = 90%**. Part19 IN_PROGRESS, Part20 PLANNED. Это completion плана, не готовность калькулятора и не покрытие тарифов.
+- M11 boundary: **8/8** сохранённых исключений рассмотрены; итог заблокирован отсутствием надёжного доказательства границы. M11 тариф не подтверждён.
+- В этом шаге aggregate `unknown-paid-road:unpriced` (64 baseline ID) отложен как несамостоятельная причина; текущих маршрутов/профилей проверено **0**. Он пересекается с другими категориями; текущая композиция fail-closed сохраняет `unknown`/null.
+- Нерешённые тарифы и полные суммы остаются unknown; новые live/replay, код и тесты не выполнялись.
+- **NEXT:** диагностировать более узкую причину `m11_58_679_facility_sequence_incomplete` (baseline 15) по сохранённым capture/profile данным; без повторов при отсутствии конкретного отличия.
+- [Checkpoint](checkpoints/2026-10-17-part19-unknown-paid-road-aggregate-deferred.md) · [evidence](checkpoints/evidence/2026-10-17-part19-unknown-paid-road-aggregate-deferred.json) · [очередь](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [правила](WORKFLOW_RULES.md).
+
+---
+
+## Предыдущая handoff-сводка (оставлена как история, не источник текущего состояния)
 
 16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Проверенный source head для правил `e197a7a40ec10ae08ea470f50ca61844a1226bfc`, tree `54b899d424b3da1170af5d7e2871ae2801ad49e8`; case3 reviewed from this tree, see latest checkpoint. Из него создан отдельный чистый checkout `calculator-rules`; старый расходящийся `calculator-run` сохранён. Пользователь утвердил [правила разбора по причинам и отчётности](WORKFLOW_RULES.md); они включены в AGENTS и автоматическое продолжение. [Checkpoint правил и Git auth](checkpoints/2026-10-16-215327-workflow-efficiency-rules.md).
 

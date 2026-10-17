@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Diagnose unknown-paid-road:unpriced from saved evidence/current engine (baseline 64; do not assume unique cases or overlap with expected-road-not-proven). Choose one cause outcome; no new live/replay absent material difference or incomplete evidence. Part19 remains in progress.",
+  "nextAction": "Next diagnose the narrower cause m11_58_679_facility_sequence_incomplete (baseline 15), comparing its saved evidence to m11-58-679:unpriced; inspect only source captures/profiles and route/code distinctions. No new live/replay unless a material difference or evidence gap is found. Preserve unknown≠0 and no full total.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2284,8 +2284,20 @@
         "triple-m4-m11-zsd-prim-to-voronezh",
         "triple-m4-m11-zsd-sest-to-domodedovo"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "deferred",
+      "note": "Deferred as an aggregate label, not one independently actionable root cause. Baseline case IDs overlap: 41/64 with m11-58-679:unpriced (all 15 facility-sequence cases are within both), and 19/64 with expected-road-not-proven. Current composer deliberately excludes unknown-paid-road from valid priced inputs and returns unknown with tolls:null when unresolved components remain (source blob a24aca29a47560cc5aa6e38c28ec598ae30121a6). This step reviewed queue membership and code only; 0 current route cases/profiles checked. Preserve fail-closed behavior; do not infer 0 or a fare.",
+      "causeReviewStatus": "deferred_aggregate_not_independent_root_cause",
+      "currentRouteCasesChecked": 0,
+      "reviewedAt": "2026-10-17T00:15:54Z",
+      "reviewEvidence": "../../docs/checkpoints/evidence/2026-10-17-part19-unknown-paid-road-aggregate-deferred.json",
+      "statusHistory": [
+        {
+          "at": "2026-10-17T00:15:54Z",
+          "from": "needs_diagnosis",
+          "to": "deferred",
+          "reason": "aggregate overlaps independent cause categories; no one user-facing root cause can be assessed from this label alone"
+        }
+      ]
     },
     {
       "code": "expected-road-not-proven",
@@ -3322,5 +3334,5 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   },
-  "lastSynthesisAtUtc": "2026-10-16T23:31:29Z"
+  "lastSynthesisAtUtc": "2026-10-17T00:15:54Z"
 }
