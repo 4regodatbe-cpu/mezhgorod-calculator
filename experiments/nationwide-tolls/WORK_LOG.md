@@ -2171,3 +2171,12 @@ Source remote/PR14 draft a666fb4887ea54a328a29fb3bfc2dfa5102e5499; workflow39056
 Проверки этой правки: content assertions, существование новых относительных ссылок в Git tree, git diff --check и allowlist staged paths. Full build/новые тарифные, routing/trace проверки не запускались (docs-only). Фактические результаты проверок и durable/readback подтверждаются выполнением и последующей проверкой коммита; старые результаты ЦКАД не считаются проверками этого шага. NEXT: восстановить сохранение a9f2bf по трём частям из WORK_STATE, без повторения аудита. Main/merge/Production/Android не изменяются.
 
 Точный локальный сбой сохранения: обычный git commit завершился exit1 (Error building trees) из-за отсутствующего старого blob a18460bd… в исходном partial object store. Документы staged и diff --cached --check успешны. Для docs-only дерева использовать git write-tree --missing-ok и commit-tree; это сохраняет ссылки на неизменённые удалённые blobs, не подменяет их пустыми файлами и не включает удалений. Итоговое дерево обязано совпасть с деревом GitHub create_tree, построенным от source tree.
+
+
+## 2026-10-17 23:12 МСК — восстановление сохранения ЦКАД, часть1
+
+DONE локальная проверка готового a9f2bf…:60 exact files/1306375bytes,6runtime hashes,13frozen sources,12primary raw,2case files PASS. Прежние логи focused8/8,audit736/736,quote/API/TS/ESLint/build exit0 доступны и прочитаны; новые тесты/сеть0. Исправлена только проверка формата Node reporter в recovery-скрипте. Manifest: checks/2026-10-17-ckad-save-recovery/verification.json; подробности/команды/ограничения: docs/checkpoints/2026-10-17-231217-ckad-recovery-part1-DONE.md.
+
+Source remote5102b44…/PR14draft, CI39065562352 verify success/live_probe active. По правилу active CI remote пока не обновлять; подготовлена одна docs-only единица сохранения части1. Pending runtime ещё не опубликован. NEXT после terminal CI и durable checkpoint readback — exact transfer60 файлов с согласованием трёх журналов, затем code save/readback; аудит не повторять.
+
+Для устранения зависимости от исходного scratch в ту же recovery-единицу добавлен pending-ckad.bundle82729байт с исходным a9f2bf и prerequisite a666fb48. Git bundle create/list-heads/verify PASS; SHA256 в manifest. Архив не применяет код к runtime. После remote commit/readback эту часть можно восстановить из GitHub без исходного checkout.

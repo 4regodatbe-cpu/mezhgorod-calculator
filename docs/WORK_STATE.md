@@ -1,3 +1,12 @@
+## DONE проверки / сохранение ожидает CI — 17.10.2026 23:12 МСК: ЦКАД recovery, часть 1
+
+- Проверены все60 файлов неопубликованного a9f2bf… (1306375байт), их Git blob/SHA256,6current runtime,13frozen source и12primary raw hashes. Сохранённые focused8/8, audit736/736, quote/API/TS/ESLint/build exit0 прочитаны; новых тестов/запросов0. [Checkpoint](checkpoints/2026-10-17-231217-ckad-recovery-part1-DONE.md) · [manifest](../experiments/nationwide-tolls/checks/2026-10-17-ckad-save-recovery/verification.json).
+- Remote/PR14draft5102b44… сверены. CI39065562352 verify success, live_probe активен при подготовке; до terminal ветку не обновлять. Код a9f2bf пока НЕ durable. Этот docs-only recovery checkpoint должен получить commit/readback до следующей независимой части.
+- Подготовлена переносимая копия `checks/2026-10-17-ckad-save-recovery/pending-ckad.bundle`:82729байт, head a9f2bf…, prerequisite a666fb48…, git bundle verify PASS. После commit/readback архив обеспечит восстановление60файлов без старого scratch; runtime ещё не интегрирован.
+- **NEXT после durable readback:** перенос60 exact файлов на актуальный remote с сохранением новых правил/журналов и per-file progress; затем запись code tree/readback и code CI. Старый аудит не повторять; обе полные цены пока unknown из-заМ-12.
+
+## Предыдущая сохранённая история
+
 ## DONE — 17.10.2026 23:07 МСК: правило восстановления после зависания
 
 - Пользователь поручил после зависания делить последнюю незавершённую задачу на меньшие части. Правило добавлено в WORKFLOW_RULES, AGENTS и CHECKPOINT_PROTOCOL: проверка фактического прогресса, последовательные части, durable-сохранение каждой, повторное дробление при новой остановке. [Checkpoint](checkpoints/2026-10-17-230704-hang-recovery-rule-DONE.md).
