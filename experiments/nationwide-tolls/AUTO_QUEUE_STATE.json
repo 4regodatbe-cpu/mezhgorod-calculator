@@ -1,8 +1,8 @@
 {
-  "at": "2026-10-17T07:41:10Z",
-  "phase": "PART19_ODINTSOVO_UNPRICED_BLOCKED",
+  "at": "2026-10-17T08:11:16Z",
+  "phase": "PART19_OUTCOME_SYNTHESIS",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
-  "workflowRun": "39010035622",
+  "workflowRun": "39014574620",
   "scope": "Saved-evidence-only review of odintsovo:unpriced baseline2; classify route-to-PVP binding gap and overlap.",
   "checked": 2,
   "total": 2,
@@ -13,7 +13,7 @@
   "checkpointPath": "docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md",
   "evidencePath": "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json",
   "reviewRules": "docs/WORKFLOW_RULES.md",
-  "lastObservedVerificationRun": "39010035622",
+  "lastObservedVerificationRun": "39014574620",
   "lastObservedVerificationRunStatus": "completed_success_on_source_head",
   "lastReviewMode": "saved_odintsovo_route_to_pvp_binding_and_overlap_review",
   "lastReviewProfileCount": 4,
@@ -26,12 +26,21 @@
   "currentUniqueLiveEvidenceFilesPresent": 6,
   "currentNewRouteRuns": 0,
   "currentNewReplays": 0,
-  "postSaveWorkflowStatus": "not_yet_observed; inspect newest branch run after checkpoint ref update",
-  "formalPlanCompletedParts": 18,
+  "postSaveWorkflowStatus": "completed_success_on_source_head",
+  "formalPlanCompletedParts": 19,
   "formalPlanParts": 20,
-  "formalPlanPercent": 90,
-  "sourceHead": "bdf620e441d2cbe287a348bd388d28e188106341",
+  "formalPlanPercent": 95,
+  "sourceHead": "2e816d7a744298b5e7a8aa70d33c4b5c6a5de41f",
   "tariffConfirmed": false,
   "currentProfileCount": 4,
-  "lastReviewAtUtc": "2026-10-17T07:41:10Z"
+  "lastReviewAtUtc": "2026-10-17T07:41:10Z",
+  "part19FindingRecordsReviewed": 13,
+  "part19OutcomeCounts": {
+    "not_reproduced": 1,
+    "fixed_and_verified": 1,
+    "blocked_by_missing_reliable_data": 8,
+    "deferred": 3
+  },
+  "part19Next": "After the synthesis commit's branch workflow succeeds, perform Part20 docs-only required verification and handoff.",
+  "part19SynthesisAtUtc": "2026-10-17T08:11:16Z"
 }

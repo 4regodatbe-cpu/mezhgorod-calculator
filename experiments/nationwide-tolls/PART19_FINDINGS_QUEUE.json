@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "NEXT: after post-save CI completes, synthesize/reconcile the 13 Part 19 findings and canonical outcomes; then perform Part 20 required verification and handoff.",
+  "nextAction": "After post-save Actions succeeds, execute Part20 docs-only content/link checks and required workflow verification; do not merge.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1589,7 +1589,9 @@
           ],
           "checkpoint": "../../docs/checkpoints/policy-2026-10-16T07-49-12-569Z-part19_m4_policy_done.json"
         }
-      ]
+      ],
+      "canonicalOutcome": "not_reproduced",
+      "canonicalOutcomeRationale": "Saved captures and replay evidence show current trip-departure policy already handles the observed crossings; no current-engine defect reproduced."
     },
     {
       "code": "a289:unpriced",
@@ -1660,7 +1662,9 @@
       "componentRecovered": 59,
       "remainingCaseIds": [],
       "evidence": "../../docs/checkpoints/evidence/2026-10-16-part19-a289-impact.json",
-      "remainingTwoValidation": "../../docs/checkpoints/2026-10-16-part19b-taman-moscow-replay.md"
+      "remainingTwoValidation": "../../docs/checkpoints/2026-10-16-part19b-taman-moscow-replay.md",
+      "canonicalOutcome": "fixed_and_verified",
+      "canonicalOutcomeRationale": "The A-289 component-binding cause was resolved in the recorded fixes and validation checkpoints. Scope is limited: 57 helper-only recoveries plus 2 whole-engine cases; this does not mean 59 confirmed whole-route totals or operator fares."
     },
     {
       "code": "zsd:unpriced",
@@ -1754,7 +1758,9 @@
         "distinctFinishedScope": 9
       },
       "evidence": "../../docs/checkpoints/2026-10-16-zsd-classification-76-cases.md",
-      "note": "All 76 saved cases and two departure-date profiles reproduced. Finished operator collection span remains unbound; no tariff, free status or runtime fix claimed. Case counts are not fare coverage."
+      "note": "All 76 saved cases and two departure-date profiles reproduced. Finished operator collection span remains unbound; no tariff, free status or runtime fix claimed. Case counts are not fare coverage.",
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "The selected route evidence does not establish the operator collection span needed to bind a tariff. Keep amount unknown/null."
     },
     {
       "code": "m4:unpriced",
@@ -2082,7 +2088,9 @@
         "single-m4-voronezh-to-rostov"
       ],
       "status": "source_gated_collection_scope_unbound",
-      "note": "All22 saved evaluations classified. Five whole-route estimates remain operator-unconfirmed; three have known M4 components but another product unknown; eight physical545 and six short-route scopes remain unbound. No unsupported tariff/zero/free claim or runtime bug inferred."
+      "note": "All22 saved evaluations classified. Five whole-route estimates remain operator-unconfirmed; three have known M4 components but another product unknown; eight physical545 and six short-route scopes remain unbound. No unsupported tariff/zero/free claim or runtime bug inferred.",
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Saved evaluations include operator-unconfirmed whole-route estimates and unbound physical/short-route scopes. Do not infer a tariff or zero."
     },
     {
       "code": "m11_partial_head_entry_boundary_unresolved",
@@ -2171,7 +2179,9 @@
       ],
       "causeOutcome": "blocked_by_missing_reliable_data",
       "lastReviewedAtUtc": "2026-10-16T23:31:29Z",
-      "lastReviewCheckpoint": "../../docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md"
+      "lastReviewCheckpoint": "../../docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md",
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Eight saved boundary cases, including the four queued cases, share an unresolved directed M11 entry/payment boundary. No material exception or confirmed tariff is established."
     },
     {
       "code": "arc_not_proven",
@@ -2276,7 +2286,9 @@
           "status": "blocked_by_missing_reliable_data",
           "reason": "Aligned top-level queue status with the already saved completed cause review."
         }
-      ]
+      ],
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Saved route evidence does not prove the precise chargeable CKAD east-arc scope for every case; preserve null amounts."
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -2360,7 +2372,9 @@
           "to": "deferred",
           "reason": "aggregate overlaps independent cause categories; no one user-facing root cause can be assessed from this label alone"
         }
-      ]
+      ],
+      "canonicalOutcome": "deferred",
+      "canonicalOutcomeRationale": "This is an overlapping aggregate symptom across distinct toll products and findings, not one independently actionable cause; keep separate causes intact."
     },
     {
       "code": "expected-road-not-proven",
@@ -2471,7 +2485,9 @@
           "evidence": "docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json",
           "note": "Saved-evidence aggregation review; no new routes, live calls, replays, builds, tests, or tariff confirmation."
         }
-      ]
+      ],
+      "canonicalOutcome": "deferred",
+      "canonicalOutcomeRationale": "The label aggregates unrelated route-road discrepancies; a missing expected-road label alone does not show the fastest selected route crossed a chargeable segment."
     },
     {
       "code": "m11-58-679:unpriced",
@@ -2859,7 +2875,9 @@
         "newArtifactFileEntries": 74,
         "duplicateFilesExcluded": 22,
         "totalUnique": 82
-      }
+      },
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "The 41-case review found the same source-gated M11 facility-sequence gap; authoritative facility coordinates needed to bind the 58–679 pair are absent. Keep unknown/null."
     },
     {
       "code": "m11_58_679_facility_sequence_incomplete",
@@ -3025,7 +3043,9 @@
         "sharedIds": 15,
         "residualUniqueIds": 26,
         "next": "Review only residual IDs; do not repeat checked cases."
-      }
+      },
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "All 15 saved cases reproduce the same incomplete spatial facility sequence in weekday/weekend profiles; no material exception or code defect was established."
     },
     {
       "code": "engine_not_yet_composed",
@@ -3080,7 +3100,9 @@
           "to": "deferred",
           "reason": "Decomposed 13-case M1/M3 aggregate; M3 has expired tariff verification and M1 rows overlap distinct findings."
         }
-      ]
+      ],
+      "canonicalOutcome": "deferred",
+      "canonicalOutcomeRationale": "This is a mixed historical aggregate: the M3 subcause is data-blocked and M1 rows overlap distinct route-scope findings; do not treat the parent as a single engine defect."
     },
     {
       "code": "m12_current_operator_pair_not_bound",
@@ -3126,7 +3148,9 @@
           "evidence": "docs/checkpoints/evidence/2026-10-17-part19-m12-operator-pair-blocked.json",
           "note": "Four cases reviewed across saved live, same-date, and weekend evidence. No new routes/replays/tests/builds; spatial RVP/operator-pair binding remains unsupported."
         }
-      ]
+      ],
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Four cases consistently lack a safely bound operator chargeable entry/exit pair; the available spatial anchors are partial. Keep amounts null."
     },
     {
       "code": "odintsovo:unpriced",
@@ -3156,7 +3180,9 @@
           "checkpoint": "docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md",
           "evidence": "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json"
         }
-      ]
+      ],
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Both routes prove bypass traversal, but the exact directed PVP tariff vector is unbound and other toll components remain unresolved; no full total is supported."
     }
   ],
   "shortM4ProofReview": {
@@ -4006,7 +4032,7 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   },
-  "lastSynthesisAtUtc": "2026-10-17T06:28:16Z",
+  "lastSynthesisAtUtc": "2026-10-17T08:11:16Z",
   "nextFinding": null,
   "lastCauseReviewAtUtc": "2026-10-17T07:41:10Z",
   "lastCauseReview": {
@@ -4019,5 +4045,18 @@
     "newRouteRuns": 0,
     "checkpoint": "docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md",
     "evidence": "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json"
+  },
+  "outcomeSynthesis": {
+    "atUtc": "2026-10-17T08:11:16Z",
+    "reviewedFindingRecords": 13,
+    "canonicalOutcomeCounts": {
+      "not_reproduced": 1,
+      "fixed_and_verified": 1,
+      "blocked_by_missing_reliable_data": 8,
+      "deferred": 3
+    },
+    "rule": "One canonical cause outcome per finding; underlying legacy diagnostic status and evidence remain preserved. Baseline case counts overlap and are not additive.",
+    "scopeNote": "Existing evidence only; no new live route runs, replay, builds, tests, or tariff values.",
+    "next": "After post-save Actions succeeds, execute Part20 docs-only content/link checks and required workflow verification; do not merge."
   }
 }

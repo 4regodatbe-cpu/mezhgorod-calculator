@@ -1691,14 +1691,24 @@
     {
       "id": 19,
       "title": "Разбор находок и исправления по одной ошибке",
-      "status": "in_progress",
+      "status": "done",
       "completedFixes": [
         "a289-full-interior-vector",
         "a289-slavyansk-directed-connector",
         "zsd-planernaya-exact-booth-identity"
       ],
-      "nextSubstep": "Part 19 cause queue is classified; after post-save CI, reconcile terminal outcomes/status fields for all 13 findings and produce a concise synthesis, then start Part 20 required verification and handoff. Do not count unresolved tariffs as complete coverage.",
-      "findingsQueue": "PART19_FINDINGS_QUEUE.json"
+      "nextSubstep": "DONE: all 13 Part19 causes have a canonical outcome. Part20 remains planned and starts after this commit's workflow result is observed.",
+      "findingsQueue": "PART19_FINDINGS_QUEUE.json",
+      "completedAtUtc": "2026-10-17T08:11:16Z",
+      "outcomeSynthesis": {
+        "findingRecords": 13,
+        "canonicalOutcomeCounts": {
+          "not_reproduced": 1,
+          "fixed_and_verified": 1,
+          "blocked_by_missing_reliable_data": 8,
+          "deferred": 3
+        }
+      }
     },
     {
       "id": 20,
@@ -1707,12 +1717,12 @@
     }
   ],
   "progressReporting": {
-    "completedParts": 18,
+    "completedParts": 19,
     "totalParts": 20,
     "method": "100*completedParts/totalParts; unfinished parts earn no partial credit",
     "meaning": "Completion of the agreed 20-part work plan; NOT percent verified tariff coverage or release readiness",
     "scope": "Includes both 155- and 154-case route-audit batches; completion of the broader calculator/matrix task is not established by this percentage",
-    "percent": 90
+    "percent": 95
   },
-  "lastUpdatedAtUtc": "2026-10-17T07:41:10Z"
+  "lastUpdatedAtUtc": "2026-10-17T08:11:16Z"
 }

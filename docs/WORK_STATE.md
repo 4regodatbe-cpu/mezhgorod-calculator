@@ -1,4 +1,16 @@
-# Калькулятор «Из А в Б»: актуальное состояние
+## Handoff — 2026-10-17T08:11:16Z (2026-10-17 11:11 МСК)
+
+- PR14 открытый draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Перед синтезом remote head/PR head совпадали: `2e816d7a744298b5e7a8aa70d33c4b5c6a5de41f`; branch Actions #39014574620 завершился success на этом head. Проверить workflow уже сохранённого синтеза перед Part20.
+- Part19 завершена: все 13 сохранённых findings получили канонический исход с сохранением старых статусов/истории: 1 fixed and verified (только A-289 component binding, не полные тарифы), 1 not reproduced, 8 blocked by missing reliable data, 3 deferred. Кейсы между findings перекрываются.
+- Четыре ранее ожидавших M11 случаев уже включены в сохранённую восьмикейсную проверку общей причины; новых прогонов не запускал. M11 tariff remains unknown/null.
+- Новых live/replay, тестов, сборок, кодовых/тарифных изменений нет. Полные тарифные итоги не подтверждены.
+- Формальный план: **19/20 = 95%** (`progressReporting`); это не процент готовности тарифа или релиза.
+- [Checkpoint](checkpoints/2026-10-17-111116-part19-outcome-synthesis.md) · [очередь причин](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [Part19 findings](../experiments/nationwide-tolls/NEXT_STEPS.md).
+
+## NEXT
+После успешного запуска Actions для коммита синтеза выполнить Part20: проверки содержания и ссылок по docs-only gate, зафиксировать результат и handoff. Не сливать PR и не менять main/Production/Android.
+
+## Предыдущие handoff и история
 
 ## Handoff — 2026-10-17T07:41:10Z (2026-10-17 10:41 МСК)
 

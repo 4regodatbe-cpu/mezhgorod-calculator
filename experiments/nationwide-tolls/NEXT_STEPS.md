@@ -1,3 +1,14 @@
+## Current handoff — 2026-10-17T08:11:16Z (2026-10-17 11:11 МСК)
+
+- Part19 synthesis DONE: 13/13 finding records normalized to canonical outcomes; counts 1 fixed-and-verified component binding, 1 not reproduced, 8 blocked by missing reliable data, 3 deferred. Cross-finding route baselines overlap.
+- The four named M11 cases are among the saved eight-case boundary review; no rerun. They remain blocked by missing reliable route-to-entry/payment boundary evidence; amount remains null.
+- No new route calls/replays/tests/builds or tariff changes. Formal plan 19/20 = 95%, not tariff confidence.
+- NEXT: after this commit's Actions result is observed, complete Part20 docs-only content/link checks and required CI handoff.
+
+[Checkpoint](../../docs/checkpoints/2026-10-17-111116-part19-outcome-synthesis.md) · [Queue](PART19_FINDINGS_QUEUE.json) · [WORK_STATE](../../docs/WORK_STATE.md).
+
+---
+
 ## Current handoff — 2026-10-17T07:41:10Z (2026-10-17 10:41 МСК)
 
 - PR14 draft открыт; source head до записи `bdf620e441d2cbe287a348bd388d28e188106341`, Actions #39010035622 success на этом head. Проверить новый post-save run перед следующей записью.
