@@ -1,3 +1,13 @@
+## DONE physical / BLOCKED operator — М-12,18.10.2026
+
+- Девять primaryOSMответов HTTP200 за8.684с подтвердили три рамки и два разных связных съезда. Операторские идентификаторы не получены: Арзамас выходит на22Н-0239, Чебоксары — наМ-7 уВладимира. [DONE](checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md) · [отчёт](../experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/README.md).
+- Два поиска/четыре плановых чтения страниц и два отдельно учтённых чтения конкретного linkedendpoint не дали crosswalk. Raw/metadata сохранены. Нерелевантные результаты и неправильный домен исключены; отсутствие данных у оператора не утверждается. Новая ссылка m-12-vostok найдена, но ещё не открыта.
+- Frozen8/raw9hashes, offline reuse/noSTARTEDguard с0fetch, full744/quoteAPI/TS/ESLint/build16/16 — PASS. Initial отказ guard из-за смешанного каталога сохранён; исправлена организация данных. Runtime/матрица/цены не менялись. Новых routing/trace/pricingreplay/компонентов/подтверждённых fullfares0; прежний subtotal5475 — частичный. Остальная история и счётчики очереди сохранены.
+- Source d497df67…/CI39068966825success; durable STARTED1a8df19a…. Final code commit без skipCI; после exact head/tree/path readback проверить новый CI. PR14draft; main/merge/Production/Android без изменений.
+- **NEXT:** новый observed источник https://russianhighways.ru/for_drivers/m-12-vostok/ — один отдельный bounded проход после CI. Старые9OSM/поиски/ЦКАД/74/76/309 не повторять. Если crosswalk нет — BLOCKED и другие assessed causes.2952/1239 без доказательства не применять.
+
+## Предыдущая сохранённая история
+
 ## STARTED — 18.10.2026 00:01 МСК: М-12 западные границы
 
 - Source d497df67…/PR14draft; CI39068966825 completed/success: verify иlive_probe фактическиуспешны; ожиданиеокончено. [STARTED](checkpoints/2026-10-18-000148-m12-western-boundaries-STARTED.md) · [9exact OSM URLs/frozen inputs](../experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/inputs.json).

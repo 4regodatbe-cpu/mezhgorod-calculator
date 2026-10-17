@@ -1,0 +1,70 @@
+{
+  "status": "DONE_PHYSICAL_REVIEW_BLOCKED_OPERATOR_BINDING",
+  "causeReviewStatus": "blocked_by_missing_reliable_data",
+  "sourceCommit": "d497df67738696dbe9c11e4dc14e617717ea1a2a",
+  "durableStartedCommit": "1a8df19a22af70b8ebccda0160f805ab6e677cdc",
+  "sourceCI": {
+    "id": 39068966825,
+    "verify": "completed/success",
+    "live_probe": "completed/success"
+  },
+  "primaryOsmGets": 9,
+  "rawOsmHashesChecked": 9,
+  "frozenSourceHashesChecked": 8,
+  "primaryCaptureMs": 8684,
+  "physicalGantryNodesConfirmed": 3,
+  "physicalExitChainsConfirmed": 2,
+  "operatorBindingsConfirmed": 0,
+  "caseIds": [
+    "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+    "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+  ],
+  "newWholeRouteReplays": 0,
+  "newRoutingRequests": 0,
+  "newTraceRequests": 0,
+  "newPricedComponents": 0,
+  "newCalculatedFullTrips": 0,
+  "confirmedFullTripFares": 0,
+  "existingKnownSubtotalRubPerCase": 5475,
+  "fullTripRubPerCase": null,
+  "unappliedCandidateRub": [
+    2952,
+    1239
+  ],
+  "operatorSearchQueries": 2,
+  "plannedOperatorPageReads": 4,
+  "supplementalLinkedOperatorDataReads": 2,
+  "sourceSpecificExtensionReason": "Saved official HTML exposed one exact M12 gettrack link. First GET redirected to a generic HTML shell; one corrected AJAX-header request returned the M12 info fragment. This is a bounded source-specific extension, not another search or repeated OSM capture.",
+  "retrievalLimitation": "Wrong avto-dor.ru domain and irrelevant numeric12 search results excluded; limited retrieval cannot prove official data do not exist. Supplemental observed AJAX endpoint gave a general M12 fragment, no reliable boundary crosswalk.",
+  "focusedChecks": {
+    "primaryCapture": "9/9 HTTP200",
+    "offlineResumeNoRefetch": "PASS0unexpectedfetch",
+    "missingStartedGuard": "PASSexpectedexit1/0fetch",
+    "physicalReview": "PASS3nodes/2chains",
+    "scriptSyntax": "PASS"
+  },
+  "audit": {
+    "passed": 744,
+    "failed": 0
+  },
+  "quoteAPI": "PASS",
+  "tsc": "PASS",
+  "eslint": "PASS",
+  "build": "PASS16/16",
+  "unrelatedQueueHistoryAndCountersPreserved": true,
+  "runtimeOrMatrixChanges": false,
+  "initialFocusedFailure": "Strict resume rejected unrelated operator metadata mixed in OSM root; operator records moved into a subfolder, guard unchanged, raw preserved and offline checks passed",
+  "codeHashes": {
+    "experiments/nationwide-tolls/scripts/capture-m12-western-boundaries.mjs": "11eca6d3ae2ea1e450918f5aabfddf4f2a85bfb7307094c512aea384cf269be2",
+    "experiments/nationwide-tolls/scripts/review-m12-western-boundaries.py": "192c9692f4d5211ae8546aa4cdd50c3879de8a8baf8bc002845fccfb30e151a2"
+  },
+  "nextObservedOfficialSource": {
+    "url": "https://russianhighways.ru/for_drivers/m-12-vostok/",
+    "source": "official-m12-track-ajax.response",
+    "status": "OBSERVED_NOT_FETCHED",
+    "condition": "One future bounded source-specific review; do not repeat current OSM objects or prior searches"
+  },
+  "nextAction": "Do not repeat nine OSM objects or the same searches. New observed source only: https://russianhighways.ru/for_drivers/m-12-vostok/ (linked from retained official AJAX fragment, not yet fetched). One bounded source-specific review may reopen binding; if it gives no reliable crosswalk retain BLOCKED and move to other assessed causes.",
+  "durableSaveTransportEvents": "transport-events.json",
+  "initialTransferInterruptedBeforeAnyBlob": true
+}

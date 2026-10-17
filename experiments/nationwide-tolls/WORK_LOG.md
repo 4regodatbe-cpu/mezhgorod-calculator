@@ -2260,3 +2260,16 @@ Final non-force d497df67738696dbe9c11e4dc14e617717ea1a2a parent925c8c4d…, exac
 Source d497df67…/PR14draft; CI39068966825activeприподготовке,verify success. Подготовлены frozeninputs8SHA,9точныхprimaryOSM URLs(3nodes+6ways/full),15сeach/120сwhole иterminalfirstfailure. Запланированы2узкихoperatorqueries/≤4opens толькоboundaryidentity, не тарифы. Savedcases дают разные exitsМ-7Владимир/22Н-0239Арзамас; общийCKADentryreuse. Готовые1239/2952неприменены,новыхrouting/trace0; архивЦКАД/74/76/309неповторять. STARTEDdocs-onlyskipCI, доterminalстарогоCI/head/readbackremoteнеписать; доdurableSTARTEDprimaryсетьнепускать. Checkpoint docs/checkpoints/2026-10-18-000148-m12-western-boundaries-STARTED.md; inputs checks/2026-10-18-m12-western-boundaries/inputs.json. NEXTboundedprimary, затемproof+узкийadapter/gateиликонкретныйBLOCKED/DONEбезрасширенияпоиска.
 
 Перед STARTED: CI39068966825 обаjobscompleted/success,ожиданиезакончено; source-ci.json сохранён. Точныедвеprimarysearchquery/domainfiltersуточненывinputsбезувеличениялимита.
+
+
+## 2026-10-18 — DONEphysical/BLOCKEDoperator: westernМ-12
+
+Source d497df67…/CI39068966825обаjobs success;durableSTARTED1a8df19a…/7pathreadback. Primary9OSMHTTP200/8.684с;3gantrycoordsи2connectedexitsverified,операторскихномеровнет. Арзамас22Н-0239неавтоматическийP158alias;ЧебоксарыМ-7exitнеавтоматическийoperatorvladimirpoint.1239/2952неприменены,subtotal5475исторический,fullTripunknown. Новыхrouting/trace/wholepricingreplay/components/fullfares0.
+
+2operatorqueries/4plannedpagesсretrievallimitation(неверныйavto-dor.ru/нерелевантные12resultsисключены),затемявнообоснованные2точечныхdatareadsнаблюдённогоgettrack86127:normalGETredirect→одинAJAX-headerGET. Обаraw/metadataсохранены,не скрытывOSMcount. ОбщийМ-12fragmentнеcrosswalk;новыйsource m-12-vostokнаблюдён,неполучен. Полныеформулировки/ограничениявREADME,operator-retrieval.json иcheckpointdocs/checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md.
+
+Focusedcapture-reuse/noSTARTEDguards0unexpectedfetchPASS;reviewfrozen8/raw9hashes/3coords/2chainsPASS. Initialofflineexit1guardоткрылmixedoperator/OSMmetadatafolder:rawлогсохранён,operatorrecordsперенесенывsubfolder,guardбезизменения. Fullgate744/quoteAPI/TS/ESLint/Next16/16всеexit0,exactcommand/timing/gzipсохранены. Этоutilitygate,неповторживоготарифногоаудита. QueueM12followupupdated;всебазовыесчётчикииостальныеfindings/historyM11/CKADfixespreservedassertPASS.
+
+NEXTactualnewCI;одинновыйboundedsource-specificпроходтолькопоobservedm-12-vostokURL;старые9objects/search/ЦКАД/74/76/309неповторять. Еслиновыйsourceнеустанавливаетcrosswalk,retainBLOCKEDиперейтикдругимassessedcauses. Finalnon-forceexpected1a8df19a…/tree/path/headreadback,безskip,PR14draft;никакихmain/merge/Production/Android.
+
+Сбой сохранения: первая передача объектов остановилась до загрузки первого blob, потому что exec-server потерял соединение. Read-only pwd затем успешно подтвердил доступ к тому же checkout; GitHub head не изменился. Исходные файлы доступны, codeSHA совпали. Передача продолжена последовательно с per-file progress. Тесты и сетевые прогоны из-за этого сбоя не повторялись. Точное событие — checks/2026-10-18-m12-western-boundaries/transport-events.json.

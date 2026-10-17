@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Review own saved OSRM M12/CKAD physical boundaries for Arzamas/Cheboksary together, bind ready vectors only on proved scope. No new routing or broad replay.",
+  "nextAction": "Do not repeat nine OSM objects or the same searches. New observed source only: https://russianhighways.ru/for_drivers/m-12-vostok/ (linked from retained official AJAX fragment, not yet fetched). One bounded source-specific review may reopen binding; if it gives no reliable crosswalk retain BLOCKED and move to other assessed causes.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -3477,7 +3477,20 @@
         }
       ],
       "canonicalOutcome": "blocked_by_missing_reliable_data",
-      "canonicalOutcomeRationale": "Four cases consistently lack a safely bound operator chargeable entry/exit pair; the available spatial anchors are partial. Keep amounts null."
+      "canonicalOutcomeRationale": "Four cases consistently lack a safely bound operator chargeable entry/exit pair; the available spatial anchors are partial. Keep amounts null.",
+      "reviewHistory": [
+        {
+          "atUtc": "2026-10-17T21:15:08.834970+00:00",
+          "outcome": "blocked_by_missing_reliable_data",
+          "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries",
+          "checkpoint": "docs/checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md",
+          "scope": "New primary physical binding evidence for2 existing post-audit OSRM; not a new route replay and no increase to historical case counts",
+          "physicalGantryNodesConfirmed": 3,
+          "physicalExitChainsConfirmed": 2,
+          "operatorBindingsConfirmed": 0
+        }
+      ],
+      "latestPrimaryBindingAttempt": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries"
     },
     {
       "code": "odintsovo:unpriced",
@@ -4372,17 +4385,14 @@
   },
   "lastSynthesisAtUtc": "2026-10-17T08:11:16Z",
   "nextFinding": null,
-  "lastCauseReviewAtUtc": "2026-10-17T07:41:10Z",
+  "lastCauseReviewAtUtc": "2026-10-17T21:15:08.834970+00:00",
   "lastCauseReview": {
-    "code": "odintsovo:unpriced",
-    "status": "blocked_by_missing_reliable_data",
-    "routeCasesChecked": 2,
-    "uniqueProfilesChecked": 4,
-    "evidenceOccurrences": 6,
-    "evidenceFilesPresent": 6,
-    "newRouteRuns": 0,
-    "checkpoint": "docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md",
-    "evidence": "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json"
+    "code": "m12-ckad:selected-osrm-scope",
+    "outcome": "blocked_missing_reliable_boundary_data",
+    "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries",
+    "checkpoint": "docs/checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md",
+    "newPricedComponents": 0,
+    "confirmedFullTripFares": 0
   },
   "outcomeSynthesis": {
     "atUtc": "2026-10-17T08:11:16Z",
@@ -4594,7 +4604,7 @@
       ]
     }
   ],
-  "postAuditNextFinding": "m12:selected-osrm-western-boundaries",
+  "postAuditNextFinding": null,
   "postAuditPricingFollowups": [
     {
       "code": "m11:selected-osrm-torzhok-boundary",
@@ -4661,9 +4671,9 @@
         "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
       ],
       "outcome": "blocked_missing_reliable_boundary_data",
-      "rationale": "CKAD common directed M11→M12 is now fixed981 under one full named block and own primary geometry; M12 western RVP and distinct exits remain unbound. Full trips remain unknown, subtotal5475 each.",
+      "rationale": "CKAD981 remains fixed. New primary OSM confirms three western gantry coordinates and both distinct physical exits. Gantries have only highway=toll_gantry, no operator numbering; Arzamas exit is22Н-0239 rather than a proved tariff alias forР158. Bounded operator retrieval did not establish the missing crosswalk. M12 prices1239/2952 remain unapplied; full trips unknown, known subtotal5475 each.",
       "evidence": "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/summary.json",
-      "checkpoint": "docs/checkpoints/2026-10-17-205246-selected-osrm-m12-ckad-scope-DONE.md",
+      "checkpoint": "docs/checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md",
       "reviewHistory": [
         {
           "code": "m12-ckad:selected-osrm-scope",
@@ -4762,6 +4772,27 @@
             "live_probe": "completed/success",
             "readback": "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/pre-save-readback.json"
           }
+        },
+        {
+          "atUtc": "2026-10-17T21:15:08.834970+00:00",
+          "sourceCommit": "d497df67738696dbe9c11e4dc14e617717ea1a2a",
+          "durableStartedCommit": "1a8df19a22af70b8ebccda0160f805ab6e677cdc",
+          "outcome": "blocked_missing_reliable_boundary_data",
+          "priorOutcome": "blocked_missing_reliable_boundary_data",
+          "priorRationale": "CKAD common directed M11→M12 is now fixed981 under one full named block and own primary geometry; M12 western RVP and distinct exits remain unbound. Full trips remain unknown, subtotal5475 each.",
+          "priorCheckpoint": "docs/checkpoints/2026-10-17-205246-selected-osrm-m12-ckad-scope-DONE.md",
+          "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries",
+          "checkpoint": "docs/checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md",
+          "physicalGantryNodesConfirmed": 3,
+          "directedExitChainsConfirmed": 2,
+          "primaryOsmGets": 9,
+          "operatorQueries": 2,
+          "operatorPageReads": 4,
+          "operatorBindingsConfirmed": 0,
+          "newRoutingRequests": 0,
+          "newTraceRequests": 0,
+          "newPricedComponents": 0,
+          "confirmedFullTripFares": 0
         }
       ],
       "causeReviewStatus": "blocked_missing_reliable_data",
@@ -4831,7 +4862,7 @@
         "eslint": "PASS",
         "build": "PASS16/16"
       },
-      "nextAction": "Separate bounded primary M12 western RVP/actual exits binding; no new routing, no blanket replay, no candidate2952/1239 before proof.",
+      "nextAction": "Do not repeat nine OSM objects or the same searches. New observed source only: https://russianhighways.ru/for_drivers/m-12-vostok/ (linked from retained official AJAX fragment, not yet fetched). One bounded source-specific review may reopen binding; if it gives no reliable crosswalk retain BLOCKED and move to other assessed causes.",
       "preSaveCi": {
         "runId": 39054871192,
         "status": "completed",
@@ -4849,7 +4880,31 @@
       "currentKnownSubtotalRubEach": 5475,
       "currentFullTripRubEach": null,
       "ckadFixEvidence": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/summary.json",
-      "ckadFixCheckpoint": "docs/checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md"
+      "ckadFixCheckpoint": "docs/checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md",
+      "latestPrimaryBindingAttempt": {
+        "atUtc": "2026-10-17T21:15:08.834970+00:00",
+        "sourceCommit": "d497df67738696dbe9c11e4dc14e617717ea1a2a",
+        "durableStartedCommit": "1a8df19a22af70b8ebccda0160f805ab6e677cdc",
+        "outcome": "blocked_missing_reliable_boundary_data",
+        "priorOutcome": "blocked_missing_reliable_boundary_data",
+        "priorRationale": "CKAD common directed M11→M12 is now fixed981 under one full named block and own primary geometry; M12 western RVP and distinct exits remain unbound. Full trips remain unknown, subtotal5475 each.",
+        "priorCheckpoint": "docs/checkpoints/2026-10-17-205246-selected-osrm-m12-ckad-scope-DONE.md",
+        "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries",
+        "checkpoint": "docs/checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md",
+        "physicalGantryNodesConfirmed": 3,
+        "directedExitChainsConfirmed": 2,
+        "primaryOsmGets": 9,
+        "operatorQueries": 2,
+        "operatorPageReads": 4,
+        "operatorBindingsConfirmed": 0,
+        "newRoutingRequests": 0,
+        "newTraceRequests": 0,
+        "newPricedComponents": 0,
+        "confirmedFullTripFares": 0,
+        "supplementalLinkedOperatorDataReads": 2,
+        "extensionReason": "Saved official HTML exposed one exact M12 gettrack link. First GET redirected to a generic HTML shell; one corrected AJAX-header request returned the M12 info fragment. This is a bounded source-specific extension, not another search or repeated OSM capture.",
+        "nextObservedOfficialLink": "https://russianhighways.ru/for_drivers/m-12-vostok/"
+      }
     },
     {
       "code": "ckad:selected-osrm-m11-m12-boundary",

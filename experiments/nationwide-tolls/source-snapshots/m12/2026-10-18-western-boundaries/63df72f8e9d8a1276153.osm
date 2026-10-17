@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3814576 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="9003577536" visible="true" version="4" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0796577" lon="40.1954394"/>
+ <node id="10026978937" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0795595" lon="40.1956488"/>
+ <way id="972809728" visible="true" version="18" changeset="161281189" timestamp="2025-01-12T17:20:07Z" user="TrickyFoxy" uid="11528195">
+  <nd ref="9003577536"/>
+  <nd ref="10026978937"/>
+  <tag k="agricultural" v="no"/>
+  <tag k="bicycle" v="no"/>
+  <tag k="check_date" v="2021-11-06"/>
+  <tag k="foot" v="no"/>
+  <tag k="highway" v="trunk"/>
+  <tag k="highway:category" v="ru:IБ"/>
+  <tag k="horse" v="no"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="RU:rural"/>
+  <tag k="maxspeed:goods" v="110"/>
+  <tag k="maxspeed:motorcar" v="110"/>
+  <tag k="maxspeed:variable" v="yes"/>
+  <tag k="minspeed" v="40"/>
+  <tag k="moped" v="no"/>
+  <tag k="motorroad" v="yes"/>
+  <tag k="name" v="«Восток»"/>
+  <tag k="name:ru" v="«Восток»"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="М-12"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="wikidata" v="Q56742564"/>
+  <tag k="wikipedia" v="ru:Восток (автодорога)"/>
+ </way>
+</osm>
