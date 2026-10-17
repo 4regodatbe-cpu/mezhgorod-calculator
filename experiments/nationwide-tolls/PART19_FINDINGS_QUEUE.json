@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "NEXT: review engine_not_yet_composed (baseline13) by root cause and user impact using saved evidence only; check overlaps first. Do not start broad replay without a concrete evidence gap or material input/geometry/code difference.",
+  "nextAction": "NEXT: review odintsovo:unpriced (baseline2) using saved evidence only; check overlap with engine_not_yet_composed and expected-road-not-proven. No replay without a material evidence gap.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -3035,8 +3035,42 @@
         "single-odintsovo-kubinka-to-moscow",
         "single-odintsovo-rublevo-to-golitsyno"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "deferred",
+      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first",
+      "causeReviewStatus": "deferred_aggregate_m3_and_m1_odintsovo_symptoms",
+      "currentCasesChecked": 13,
+      "currentEvidenceOccurrences": 39,
+      "currentEvidenceFilesPresent": 39,
+      "currentTraceCompleteCases": 13,
+      "currentSameDateParityCases": 13,
+      "causeReviews": [
+        {
+          "cause": "m3_engine_not_yet_composed",
+          "outcome": "blocked_by_missing_reliable_data",
+          "caseCount": 10,
+          "profileOccurrences": 30,
+          "reason": "Current route-leg pricing keeps M1/M3 under diagnostic shadow only. All ten saved M3 rows prove road traversal but return null amounts. Operator fare records are verified only through 2026-10-10; these route profiles depart 2026-10-15 and 2026-10-17. M3 gate identity inventory is explicitly not fare-version proof; shadow pricing requires all three ordered gates on this same route and a verified operator tariff date."
+        },
+        {
+          "cause": "m1_component_label_overlaps_odintsovo",
+          "outcome": "deferred",
+          "caseCount": 3,
+          "profileOccurrences": 9,
+          "reason": "Three M1-labeled rows are not an independent single cause: two overlap the queued odintsovo:unpriced finding and one overlaps expected-road-not-proven. Preserve them as distinct pending route-scope review."
+        }
+      ],
+      "causeOutcome": "Parent label deferred as mixed aggregate; M3 subcause blocked by missing reliable data; M1/OD subcause deferred to odintsovo:unpriced and expected-road-not-proven reviews.",
+      "lastReviewedAtUtc": "2026-10-17T06:28:16Z",
+      "checkpoint": "../../docs/checkpoints/2026-10-17-part19-engine-not-yet-composed-review.md",
+      "reviewEvidence": "../../docs/checkpoints/evidence/2026-10-17-part19-engine-not-yet-composed-review.json",
+      "statusHistory": [
+        {
+          "at": "2026-10-17T06:28:16Z",
+          "from": "needs_diagnosis",
+          "to": "deferred",
+          "reason": "Decomposed 13-case M1/M3 aggregate; M3 has expired tariff verification and M1 rows overlap distinct findings."
+        }
+      ]
     },
     {
       "code": "m12_current_operator_pair_not_bound",
@@ -3942,6 +3976,6 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   },
-  "lastSynthesisAtUtc": "2026-10-17T05:41:17Z",
-  "nextFinding": "engine_not_yet_composed"
+  "lastSynthesisAtUtc": "2026-10-17T06:28:16Z",
+  "nextFinding": "odintsovo:unpriced"
 }

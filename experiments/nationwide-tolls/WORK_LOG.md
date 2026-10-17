@@ -1800,3 +1800,12 @@ Updated queue, AUTO_QUEUE_STATE, WORK_STATE, NEXT_STEPS and this append-only log
 - The M12 RVP evidence snapshot is explicitly `CALIBRATED_PARTIAL_RVP_EVIDENCE`, has 9 anchors, and warns it is not a complete inventory. This supports a missing spatial binding cause, not a proven tariff amount. Two of the four route cases also have a separate CKAD unknown. Counts overlap.
 - Outcome: **blocked by missing reliable data**; preserved fail-closed unknown, no code/tariff changes. No new route/live/replay/test/build. Formal plan remains 18/20=90%.
 - Checkpoint/evidence: `docs/checkpoints/2026-10-17-0841-part19-m12-operator-pair-blocked.md`, `docs/checkpoints/evidence/2026-10-17-part19-m12-operator-pair-blocked.json`. Next: assess `engine_not_yet_composed` (baseline13), stored evidence only.
+
+
+## 2026-10-17T06:28:16Z (2026-10-17 09:28 МСК) — M1/M3 engine-not-composed cause review
+
+- Verified PR14 draft and branch head `2b1882159d7ef0576c7eb8c3dcb6ca13f6bd0c21`; branch Actions #39007230631 success on source head, plus known PR workflow #38959170444 success on older head; no active branch run at start.
+- Reviewed saved finding `engine_not_yet_composed`: 13 case rows, 39 live/same-date/weekend evidence occurrences; all 39 paths exist, all 13 traces and same-date parity complete, all weekday/weekend amounts null. No new route requests, replays, tests or builds.
+- This parent label mixes causes. M3: 10 traversal-proven cases, but category-I rates in the national registry are verified through 2026-10-10 only; saved profiles depart 2026-10-15 and 2026-10-17. Gate inventory does not verify fare version and shadow pricing requires complete three-gate proof; M1/M3 are diagnostic-only in current route composition. Status: **blocked by missing reliable data**. User-facing full amounts must remain unknown/null.
+- M1/OD-labeled: 3 rows; 2 overlap `odintsovo:unpriced`, 1 overlaps `expected-road-not-proven`. Status for this subcause: **deferred** pending OD-specific review. Parent aggregate status: **deferred**. No independent bug or tariff inferred.
+- Formal progress remains 18/20=90% only. Details/evidence: `docs/checkpoints/2026-10-17-part19-engine-not-yet-composed-review.md`, `docs/checkpoints/evidence/2026-10-17-part19-engine-not-yet-composed-review.json`. Next: saved-evidence review of `odintsovo:unpriced` baseline2 and overlap check.

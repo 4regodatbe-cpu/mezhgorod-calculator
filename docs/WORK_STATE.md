@@ -1,16 +1,15 @@
 # Калькулятор «Из А в Б»: актуальное состояние
 
-## Handoff — 2026-10-17T05:41:17Z (2026-10-17 08:41 МСК)
+## Handoff — 2026-10-17T06:28:16Z (2026-10-17 09:28 МСК)
 
-- PR14 открыт/draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. До этого шага remote head/tree: `8582031d0565ebcb6ecd4982a12bfa389ec411ba` / `7fb29e51a6ce5dac755b502684278894034e868c`; PR head совпал. Workflow run #39003295081 completed/success на этом head; активных branch runs нет.
-- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это не готовность калькулятора и не подтверждённость тарифов.
-- M11 boundary cases 5–8 уже имеют отдельные DONE checkpoints; общая причина остаётся **blocked by missing reliable data**, суммы unknown/null.
-- M12 `m12_current_operator_pair_not_bound`: проверены 4 сохранённых маршрутных случая, 8 профилей и 12 evidence occurrences (live/capture, same-date, weekend); все файлы доступны. Во всех M12 сумма null/unknown; 9-anchor RVP dataset явно partial, поэтому точный тарифный операторский entry/exit pair не привязан. Outcome **blocked by missing reliable data**. В 2 случаях отдельно остаётся CKAD unknown. Никакой полный итог не подтверждён.
-- Новых маршрутов, live/replay, тестов, сборки и тарифов в этом шаге нет. [Checkpoint](../docs/checkpoints/2026-10-17-0841-part19-m12-operator-pair-blocked.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-m12-operator-pair-blocked.json).
-- NEXT: `engine_not_yet_composed` (baseline13), только сохранённые доказательства и overlap analysis.
-
+- PR14 открыт/draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Исходный remote/PR head перед этим шагом: `2b1882159d7ef0576c7eb8c3dcb6ca13f6bd0c21`; PR head совпадал. Run #39007230631 completed/success на source head; run #38959170444 completed/success на более старом head. Проверка новой Actions-задачи после checkpoint ещё требуется.
+- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это не готовность калькулятора или тарифов.
+- `engine_not_yet_composed` (baseline13) разобран по сохранённым данным: 13 route rows / 39 evidence occurrences, все файлы присутствуют; 13 trace/same-date parity complete; weekday/weekend amounts null. Родительская метка смешивает разные причины, поэтому outcome **deferred** как aggregate. M3 (10 cases) **blocked by missing reliable data**: операторский тариф проверен только по 2026-10-10, а профили отправляются 2026-10-15/17; gate evidence не подтверждает тарифную версию и current code оставляет M1/M3 diagnostic-only. Три M1-labelled/OD строки не считать самостоятельной общей причиной: 2 пересекаются с `odintsovo:unpriced`, 1 с `expected-road-not-proven`.
+- Не запускались новые live/replay, tests/build; тарифы не подтверждены. Суммы остаются unknown/null, не ноль.
+- [Checkpoint](../docs/checkpoints/2026-10-17-part19-engine-not-yet-composed-review.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-engine-not-yet-composed-review.json). NEXT: `odintsovo:unpriced` (baseline2), saved evidence only, first reconcile overlap with both prior findings.
 
 ## Предыдущие handoff и история
+
 
 ### Предыдущий handoff — 2026-10-17T04:35:31Z (2026-10-17 07:35 МСК)
 ## Handoff — 2026-10-17T04:35:31Z (2026-10-17 07:35 МСК)
