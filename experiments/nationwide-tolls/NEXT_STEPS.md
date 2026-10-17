@@ -1,3 +1,13 @@
+## Current handoff — 2026-10-17T05:41:17Z (2026-10-17 08:41 МСК)
+
+- PR14 open/draft; branch head before save `8582031d0565ebcb6ecd4982a12bfa389ec411ba`; run #39003295081 completed/success; no active branch job at review start.
+- M11 cases5–8 are already DONE with committed case checkpoints; shared boundary cause blocked by missing reliable data, tariff unknown.
+- M12 `m12_current_operator_pair_not_bound`: reviewed 4 routes / 8 date profiles / 12 saved evidence occurrences; all artifacts present. M12 amount is null/unknown in all four. The RVP evidence snapshot contains only 9 calibrated anchors and explicitly is not a complete inventory; no authoritative chargeable operator pair can be attached to these route spans. Outcome **blocked by missing reliable data**. Two routes additionally have unresolved CKAD scope. No new route/replay/test/build or price confirmation.
+- Formal plan remains **18/20 = 90%** only.
+- Next: `engine_not_yet_composed` (baseline13), saved-evidence-only, overlap and impact first.
+
+[Checkpoint](../../docs/checkpoints/2026-10-17-0841-part19-m12-operator-pair-blocked.md) · [Evidence](../../docs/checkpoints/evidence/2026-10-17-part19-m12-operator-pair-blocked.json) · [Findings queue](PART19_FINDINGS_QUEUE.json).
+
 ## Current handoff — 2026-10-17T04:35:31Z (2026-10-17 07:35 МСК)
 
 - Remote head `fec51dab8eddc1919b4e839cc1b59a1c345f3b05`; PR14 open/draft. Run #38999218280 success at current head; no active branch run.

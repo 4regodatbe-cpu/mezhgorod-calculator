@@ -1791,3 +1791,12 @@ Updated queue, AUTO_QUEUE_STATE, WORK_STATE, NEXT_STEPS and this append-only log
 - M11 boundary cases5–8 were found already DONE in committed checkpoints; the shared M11 boundary cause remains **blocked by missing reliable data**, amounts unknown/null. No repeats.
 - No new route/live/replay/build/test, no tariff confirmation. Formal-plan progress stays 18/20=90%.
 - Checkpoint/evidence: `docs/checkpoints/2026-10-17-0735-part19-expected-road-not-proven-deferred.md`, `docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json`. Next: review `m12_current_operator_pair_not_bound` (baseline4) from saved evidence only.
+
+
+## 2026-10-17 08:41 МСК — M12 operator-pair cause review
+
+- Reviewed cause `m12_current_operator_pair_not_bound` on `fix/v3-missing-route-prices-2026-10-15`, source head/tree `8582031d0565ebcb6ecd4982a12bfa389ec411ba` / `7fb29e51a6ce5dac755b502684278894034e868c`, PR14 draft. Latest branch workflow #39003295081 success on source head; no active writer at review start.
+- Checked 4 cases across 8 date profiles and 12 saved evidence occurrences (4 live, 4 same-date replay, 4 weekend replay); all 12 files and all 4 captures exist in the tree. All four M12 outputs are `amount=null` / `pricingStatus=unknown` with the same explicit reason. Route spans are present; no toll-node IDs/operator pair bound.
+- The M12 RVP evidence snapshot is explicitly `CALIBRATED_PARTIAL_RVP_EVIDENCE`, has 9 anchors, and warns it is not a complete inventory. This supports a missing spatial binding cause, not a proven tariff amount. Two of the four route cases also have a separate CKAD unknown. Counts overlap.
+- Outcome: **blocked by missing reliable data**; preserved fail-closed unknown, no code/tariff changes. No new route/live/replay/test/build. Formal plan remains 18/20=90%.
+- Checkpoint/evidence: `docs/checkpoints/2026-10-17-0841-part19-m12-operator-pair-blocked.md`, `docs/checkpoints/evidence/2026-10-17-part19-m12-operator-pair-blocked.json`. Next: assess `engine_not_yet_composed` (baseline13), stored evidence only.

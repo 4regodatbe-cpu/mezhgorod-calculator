@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "NEXT: review m12_current_operator_pair_not_bound (baseline4) using saved evidence only; check overlaps and user impact. Do not launch live/replay unless an evidence gap or material route-input distinction is found.",
+  "nextAction": "NEXT: review engine_not_yet_composed (baseline13) by root cause and user impact using saved evidence only; check overlaps first. Do not start broad replay without a concrete evidence gap or material input/geometry/code difference.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -3047,8 +3047,42 @@
         "single-m12-arzamas-to-moscow",
         "single-m12-moscow-to-arzamas"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "blocked_by_missing_reliable_data",
+      "note": "All four saved live/same-date/weekend case records consistently identify m12_current_operator_pair_not_bound. Route spans are recorded, but the repository's RVP traversal evidence is explicitly partial (9 calibrated anchors, not a complete inventory); the exact operator chargeable entry/exit pair is not safely bound. Two cases also overlap separate unresolved CKAD scope. Fail-closed unknown is correct; no amount/full trip total can be inferred.",
+      "causeReviewStatus": "four_cases_saved_profiles_consistent_partial_rvp_binding_gap",
+      "currentCasesChecked": 4,
+      "currentProfilesChecked": 8,
+      "currentEvidenceOccurrences": 12,
+      "currentEvidenceFilesPresent": 12,
+      "currentCaptureFilesPresent": 4,
+      "currentM12AmountsNull": 4,
+      "newRouteRuns": 0,
+      "reviewedAt": "2026-10-17T05:41:17Z",
+      "causeOutcome": "blocked_by_missing_reliable_data",
+      "checkpoint": "docs/checkpoints/2026-10-17-0841-part19-m12-operator-pair-blocked.md",
+      "evidence": "docs/checkpoints/evidence/2026-10-17-part19-m12-operator-pair-blocked.json",
+      "causeReview": {
+        "outcome": "blocked_by_missing_reliable_data",
+        "routeCases": 4,
+        "dateProfiles": 8,
+        "evidenceOccurrences": 12,
+        "liveAndCapturePathsPresent": 4,
+        "sameDateReplayPathsPresent": 4,
+        "weekendReplayPathsPresent": 4,
+        "allAmountsNull": true,
+        "allPricingUnknown": true,
+        "partialRvpAnchorCount": 9,
+        "additionalCkadUnknownCases": 2
+      },
+      "statusHistory": [
+        {
+          "at": "2026-10-17T05:41:17Z",
+          "status": "blocked_by_missing_reliable_data",
+          "checkpoint": "docs/checkpoints/2026-10-17-0841-part19-m12-operator-pair-blocked.md",
+          "evidence": "docs/checkpoints/evidence/2026-10-17-part19-m12-operator-pair-blocked.json",
+          "note": "Four cases reviewed across saved live, same-date, and weekend evidence. No new routes/replays/tests/builds; spatial RVP/operator-pair binding remains unsupported."
+        }
+      ]
     },
     {
       "code": "odintsovo:unpriced",
@@ -3908,6 +3942,6 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   },
-  "lastSynthesisAtUtc": "2026-10-17T04:35:31Z",
-  "nextFinding": "m12_current_operator_pair_not_bound"
+  "lastSynthesisAtUtc": "2026-10-17T05:41:17Z",
+  "nextFinding": "engine_not_yet_composed"
 }
