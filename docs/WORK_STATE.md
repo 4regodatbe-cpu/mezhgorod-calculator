@@ -1,3 +1,16 @@
+## STARTED: новая официальная страница М-12
+
+CI39071021984 completed/success на a9ad4722…; PR14 draft. Ограничение: одна новая страница и одна связанная схема, без повторных маршрутов. [План](checkpoints/2026-10-18-m12-official-page-STARTED.md).
+
+## DONE: физическая проверка М-12 сохранена в a9ad4722…
+
+- Remote/PR14draft head **a9ad472218b15fc2952304b1fa5d70670ce929a1**, tree16f81749670cec8480fc8cfe5ce8b74bda7b4828. Non-force save и readback52pathSHA/head/draft — PASS. Файлы, первичные ответы, проверки, очередь и отчёт уже доступны из рабочей ветки.
+- Новый CI39071021984: verify117508472379 completed/success; live_probe117508472518 ещё выполняется. Полный run success не заявлен. Локальные744/quoteAPI/TS/ESLint/build16/16 прошли; тарифные привязки по-прежнему BLOCKED. Новых цен/компонентов/fullfares0.
+- [Фактическое подтверждение записи](checkpoints/2026-10-18-m12-western-remote-readback.json). Только эта последняя запись наблюдений/CI пока LOCAL ONLY из-за activeCI; основной блок52файла уже durable в a9ad4722…. Сохранить наблюдение в следующем разрешённом checkpoint.
+- **NEXT:** actualCI39071021984 и head/PR; затем один новый bounded проход по https://russianhighways.ru/for_drivers/m-12-vostok/ (точная ссылка найдена в сохранённом официальном AJAX-фрагменте, ещё не открывалась) и одной явно связанной схеме при наличии. Не повторять9OSM объектов/прежниеqueries/ЦКАД/74/76/309. Без официального соответствия рамок/съездов операторским интервалам2952/1239 не применять; при пробеле оставить BLOCKED и перейти к другим assessed causes.
+
+## Предыдущая сохранённая история
+
 ## DONE physical / BLOCKED operator — М-12,18.10.2026
 
 - Девять primaryOSMответов HTTP200 за8.684с подтвердили три рамки и два разных связных съезда. Операторские идентификаторы не получены: Арзамас выходит на22Н-0239, Чебоксары — наМ-7 уВладимира. [DONE](checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md) · [отчёт](../experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/README.md).

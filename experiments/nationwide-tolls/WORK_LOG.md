@@ -2273,3 +2273,15 @@ Focusedcapture-reuse/noSTARTEDguards0unexpectedfetchPASS;reviewfrozen8/raw9hashe
 NEXTactualnewCI;одинновыйboundedsource-specificпроходтолькопоobservedm-12-vostokURL;старые9objects/search/ЦКАД/74/76/309неповторять. Еслиновыйsourceнеустанавливаетcrosswalk,retainBLOCKEDиперейтикдругимassessedcauses. Finalnon-forceexpected1a8df19a…/tree/path/headreadback,безskip,PR14draft;никакихmain/merge/Production/Android.
 
 Сбой сохранения: первая передача объектов остановилась до загрузки первого blob, потому что exec-server потерял соединение. Read-only pwd затем успешно подтвердил доступ к тому же checkout; GitHub head не изменился. Исходные файлы доступны, codeSHA совпали. Передача продолжена последовательно с per-file progress. Тесты и сетевые прогоны из-за этого сбоя не повторялись. Точное событие — checks/2026-10-18-m12-western-boundaries/transport-events.json.
+
+
+## 2026-10-18 — фактическое сохранение М-12 primary review
+
+Remote a9ad472218b15fc2952304b1fa5d70670ce929a1 parent1a8df19a…, tree16f81749670cec8480fc8cfe5ce8b74bda7b4828;52pathSHA/head/PR14draft readbackPASS. Новый CI39071021984 verify117508472379 completed/success, live_probe117508472518 in_progress. Полный run не объявлен успешным. Точные record/status сохранены локально в docs/checkpoints/2026-10-18-m12-western-remote-readback.json; эта последняя запись CI пока не опубликована из-за activeCI, основной блок и52файла уже durable.
+
+Транспорт exec-server восстановился после одного read-only healthcheck; последовательная передача48blob+progressfile прошла с exactSHA, исходные тесты/сеть не повторялись. NEXT: actualCI/head, затем только новый observed URLm-12-vostok. Исследованные9объектов и два прежних поиска не повторять.
+
+
+## STARTED 2026-10-18: официальный источник М-12
+
+CI39071021984 completed/success на a9ad4722…; одна новая страница и одна связанная схема,15с/request,60с budget. План: docs/checkpoints/2026-10-18-m12-official-page-STARTED.md. Не повторять готовые физические проверки и расчёты.
