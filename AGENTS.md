@@ -55,3 +55,8 @@ If essential context is missing from the repository, search the named earlier ch
 ## Latest user update — 2026-10-17 15:00 MSK
 
 The user authorized bounded batch exception checks for repeated cases: persist STARTED, per-case evidence/progress, then one final checkpoint/commit/readback for the batch. Do not trigger one commit/CI per case in an authorized batch. See the latest section of docs/WORKFLOW_RULES.md and docs/CHECKPOINT_PROTOCOL.md. The completed old formal-plan percentage is historical; omit it from current user reports. These updates override the earlier per-case commit and percentage-reporting text for this scope.
+
+
+## Recovery after a hang (user decision, 2026-10-17 23:07 MSK)
+
+After a reported hang/interruption, follow the mandatory “После зависания” section in `docs/WORKFLOW_RULES.md`: inspect actual progress and split only the unfinished remainder of the last task into smaller sequential parts. Save each completed part with verified durable readback; if it hangs again, split that remainder further. Resume from saved outputs rather than repeating completed audits. A save-stage interruption requires smaller persistence steps, not recalculation. Do not automatically cancel active CI or start duplicate writers.

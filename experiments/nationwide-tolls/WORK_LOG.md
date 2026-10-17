@@ -2158,3 +2158,16 @@ NEXT: один ограниченный первичный проход обще
 Затем обе saved-case exceptions, focused/API negative controls, обязательные audit/quoteAPI/TS/ESLint/build, per-case results/progress, один DONE checkpoint/commit/readback. Число проверенных случаев, новых рассчитанных компонентов и подтверждённых полных тарифов отдельно. При активном CI ветку не обновлять. Нового routing/trace, main/merge/Production/Android/сообщений/автоматизаций нет.
 
 Статус STARTED: первичных запросов и новых рассчитанных компонентов пока0. Следующий шаг после durable readback — ограниченный capturer с CKAD_DURABLE_STARTED_COMMIT; только при доказательстве реализация, иначе точный blocker и следующая причина.
+
+
+## 2026-10-17 23:07 МСК — DONE: правило после зависания и точка восстановления
+
+Прямой запрос пользователя: после зависания делить последнюю задачу на части. Обновлены AGENTS.md, docs/WORKFLOW_RULES.md и docs/CHECKPOINT_PROTOCOL.md; связаны WORK_STATE, NEXT_STEPS, DECISIONS и отдельный checkpoint docs/checkpoints/2026-10-17-230704-hang-recovery-rule-DONE.md. Правило ограничивает повторный запуск незавершённым остатком, требует результата/durable-save каждой части и повторного дробления при новой остановке.
+
+Source remote/PR14 draft a666fb4887ea54a328a29fb3bfc2dfa5102e5499; workflow39056837838 completed/success проверен через GitHub. Локальный a9f2bf98106bc798cc3536a7c920cd2c4dbd10a2 содержит 60-файловый готовый блок ЦКАД, но remote всё ещё STARTED: это остановка сохранения, а не основание повторять аудит. Исходный checkout не изменён. Новый docs commit основывается на remote; перенос a9f2bf поверх него потребует согласовать журналы, сохранив новые правила.
+
+Первое создание полного checkout из shared partial repository показало отсутствующие старые blobs. Вместо сетевого восстановления тысяч неотносящихся файлов использован чистый sparse checkout только нужных документов на точном remote SHA. Коммит включает только восемь явно выбранных документов; удалений evidence/runtime нет.
+
+Проверки этой правки: content assertions, существование новых относительных ссылок в Git tree, git diff --check и allowlist staged paths. Full build/новые тарифные, routing/trace проверки не запускались (docs-only). Фактические результаты проверок и durable/readback подтверждаются выполнением и последующей проверкой коммита; старые результаты ЦКАД не считаются проверками этого шага. NEXT: восстановить сохранение a9f2bf по трём частям из WORK_STATE, без повторения аудита. Main/merge/Production/Android не изменяются.
+
+Точный локальный сбой сохранения: обычный git commit завершился exit1 (Error building trees) из-за отсутствующего старого blob a18460bd… в исходном partial object store. Документы staged и diff --cached --check успешны. Для docs-only дерева использовать git write-tree --missing-ok и commit-tree; это сохраняет ссылки на неизменённые удалённые blobs, не подменяет их пустыми файлами и не включает удалений. Итоговое дерево обязано совпасть с деревом GitHub create_tree, построенным от source tree.
