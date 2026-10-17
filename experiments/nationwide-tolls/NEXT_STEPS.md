@@ -2,6 +2,14 @@
 
 [Актуальный handoff](../../docs/WORK_STATE.md); история ниже сохранена.
 
+## Part 19 cause review — `arc_not_proven`
+
+Outcome: **blocked_by_missing_reliable_data**. Reviewed all 34 baseline cases across 68 unique weekday/weekend profiles and 102 unique saved live/replay evidence files; all paths exist, report rows are complete, all occurrences are `ckad_east_arc_not_proven`, and weekday/weekend amounts remain null. Broader road traversal is proven in 22 rows and not proven in 12; neither proves the exact CKAD east-arc chargeable boundary. No new route calls, replay, tests, builds or tariff confirmation. See [checkpoint](../../docs/checkpoints/2026-10-17-0632-part19-arc-not-proven-blocked.md) and [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-arc-not-proven-blocked.json).
+
+Formal progress stays **18/20 = 90%**; this is only the formal plan percentage, not tariff coverage or release readiness.
+
+NEXT: `expected-road-not-proven` (baseline 64), inspect shared cause and exceptions from saved evidence only, with overlaps excluded; no live/replay absent material distinction or evidence gap. Workflow run #38994773498 also executed an out-of-scope toll-avoidance probe; that step is removed from the PR workflow in this commit. Observe new workflow status after save.
+
 Part19 `m11-58-679:unpriced`: **blocked_by_missing_reliable_data**. All 41 route cases assessed across 82 unique saved weekday/weekend profiles (15/30 earlier + 26/52 now). The 74 residual artifact-file entries contained 22 duplicates, excluded from the check count. M11 remains unknown/null; no tariff/full total confirmed. No new live/replay/build/tests.
 
 NEXT: `arc_not_proven` (baseline34): inspect grouped causes and exceptions from saved artifacts only. No duplicate profiles or new probes without material distinction/evidence gap. Formal plan stays 18/20=90%; Part19 IN_PROGRESS, Part20 PLANNED. No main/merge/Production/Android.

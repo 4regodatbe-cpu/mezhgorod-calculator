@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Next: diagnose arc_not_proven (baseline 34) by grouped cause and user impact, inspecting saved traces/profiles and exceptions only. No new live/replay absent material route/input/code distinction or evidence gap; preserve fastest-route-only and fail-closed unknown.",
+  "nextAction": "NEXT: review expected-road-not-proven (baseline64) by root cause, user impact and overlap with already reviewed findings using saved evidence only. The arc_not_proven overlap is 12 cases; counts are not additive. No new live/replay absent a material distinction or evidence gap.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2213,7 +2213,60 @@
         "triple-m11-ckad-m12-vladimir-to-novgorod"
       ],
       "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first",
+      "causeReviewStatus": "blocked_by_missing_reliable_data",
+      "causeReviewAt": "2026-10-17T06:32:46",
+      "currentCasesChecked": 34,
+      "currentProfilesChecked": 68,
+      "currentEvidenceOccurrences": 102,
+      "currentEvidenceFilesPresent": 102,
+      "causeReview": {
+        "sourceCommit": "6df92a4bf60ba64e0a3ac8ca2d5e856248de7c9b",
+        "sourceTree": "dc4c2b12a326ab4316e364d2779d2d6c606c0869",
+        "reportPath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.json",
+        "reportGitBlobSha": "528163f94cf0092bf58ad5b0be200059d61baff9",
+        "baselineReportSha256": "cf72f0f4084236e3acb442a961bae5a9c79f49980566b6d784bd8b73642d765e",
+        "sharedReason": "ckad_east_arc_not_proven",
+        "reasonOccurrences": {
+          "ckad_east_arc_not_proven": 102
+        },
+        "completeEvidenceRows": 34,
+        "rawAvailableRows": 34,
+        "completeTraceRows": 34,
+        "sameDateParityRows": 34,
+        "weekdayAndWeekendAmountsNullRows": 34,
+        "selectedProviderCounts": {
+          "Valhalla": 34
+        },
+        "roadCoverageStatusCounts": {
+          "traversal-proven": 22,
+          "expected-road-not-proven": 12
+        },
+        "uniqueDepartureProfiles": 68,
+        "evidenceOccurrencesByKind": {
+          "live": 34,
+          "replay": 68
+        },
+        "uniqueEvidencePathsPresent": 102,
+        "overlaps": {
+          "m4_crossing_profile_changes": 0,
+          "a289:unpriced": 0,
+          "zsd:unpriced": 16,
+          "m4:unpriced": 0,
+          "m11_partial_head_entry_boundary_unresolved": 8,
+          "arc_not_proven": 34,
+          "unknown-paid-road:unpriced": 18,
+          "expected-road-not-proven": 12,
+          "m11-58-679:unpriced": 14,
+          "m11_58_679_facility_sequence_incomplete": 0,
+          "engine_not_yet_composed": 0,
+          "m12_current_operator_pair_not_bound": 2,
+          "odintsovo:unpriced": 0
+        },
+        "outcome": "blocked_by_missing_reliable_data",
+        "userImpact": "The saved selected routes cannot be assigned a complete numerical toll total while CKAD east-arc chargeable traversal/billing scope is unsupported; keep amount unknown/null, not zero or partial subtotal.",
+        "noNewLiveReplayOrBuild": true
+      }
     },
     {
       "code": "unknown-paid-road:unpriced",

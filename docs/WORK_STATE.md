@@ -1,14 +1,15 @@
 # Калькулятор «Из А в Б»: актуальное состояние
 
-## Handoff — 2026-10-17 17.10.2026, 05:23:56 МСК
+## Handoff — 2026-10-17T06:32:46 МСК
 
-- PR14 открыт/draft; ветка `fix/v3-missing-route-prices-2026-10-15`, parent head `a7e71c150131f9e8f8e111a398b9340dfed99c50`, дерево `ff85704b2557cb40b5672eca70f2e36820bf1a87`. До записи активных/queued runs не было.
-- Последний завершённый workflow [#38991432644](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38991432644) успешен на родительском коммите; это не проверка новой документационной классификации.
-- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это не готовность калькулятора и не подтверждение тарифов.
-- Причина `m11-58-679:unpriced`: **41/41 маршрутов** оценены по сохранённым данным. В этом шаге рассмотрены 26 остаточных маршрутов и **52 уникальных weekday/weekend профиля**; 22 копии профилей не засчитаны повторно. Все 52 оставляют M11 unknown/null с одним подтверждённым crossing. Статус: **заблокирована отсутствием надёжных данных**.
-- Тариф и полный итог не подтверждены. CKAD/ZSD/неидентифицированные ПВП — отдельные причины; частичные M4/M12 суммы не выдаются за итог.
-- NEXT: `arc_not_proven` (34 исходных случая), только сохранённые данные/исключения; без повторов. Новых live/replay/build/tests не было.
-- [Checkpoint](../docs/checkpoints/2026-10-17-part19-m11-58-679-blocked.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-m11-58-679-blocked.json).
+- PR14 открыт/draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Источник шага: head `6df92a4bf60ba64e0a3ac8ca2d5e856248de7c9b`, tree `dc4c2b12a326ab4316e364d2779d2d6c606c0869`; ветка и PR совпали до записи.
+- Последний проверенный Actions run до этой записи: [#38994773498](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38994773498), success на исходном head. Он также выполнил успешный non-fastest toll-avoidance probe; этот лишний шаг удалён из PR workflow в текущем commit по уже принятому fastest-route-only правилу. Новый run нужно проверить отдельно.
+- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это не готовность калькулятора или тарифное покрытие.
+- M11 58–679: **41/41** маршрутов по сохранённым данным, 82 уникальных weekday/weekend профиля; outcome blocked by missing reliable data. Тарифы M11 остаются unknown/null.
+- CKAD `arc_not_proven`: **34/34 случаев**, 68 профилей, 102 уникальных live/replay evidence файла. Все occurrences имеют `ckad_east_arc_not_proven`; все строки evidence/raw/trace/same-date complete, суммы weekday/weekend null. Широкий CKAD traversal proven в 22 строках и not proven в 12, но exact east-arc billing scope не подтверждён. Outcome **blocked_by_missing_reliable_data**; тариф/полный итог неизвестен.
+- Перекрытия не суммируются: ZSD16, M11 head8, M11 58–67914, unknown-paid-road18, expected-road-not-proven12, M12 pair2. Новых live/replay/build/tests и подтверждённых тарифов нет.
+- [Checkpoint](../docs/checkpoints/2026-10-17-0632-part19-arc-not-proven-blocked.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-arc-not-proven-blocked.json).
+- NEXT: `expected-road-not-proven` (baseline64), root cause/impact/exceptions from saved data only; no new probe absent material difference/evidence gap.
 
 ## Предыдущая handoff-сводка (оставлена как история, не источник текущего состояния)
 
@@ -32,12 +33,13 @@
 
 ## NEXT — Part 19, one unresolved cause at a time
 
-**M11 shared cause `m11_partial_head_entry_boundary_unresolved`: 8/8 saved cases checked; final outcome BLOCKED by missing reliable data. No material exception was found. The findings queue had stale M11 metadata (4/8); it is now reconciled to the eight individually saved checkpoints.** Full route toll amount remains unknown.
+M11 `m11_partial_head_entry_boundary_unresolved`: 8/8 saved cases reviewed; final outcome blocked by missing reliable data, no material exception. CKAD `arc_not_proven`: 34/34 cases and 68 weekday/weekend profiles reviewed from the frozen report, with 102 saved evidence files present; all occurrences remain `ckad_east_arc_not_proven`, outcome blocked by missing reliable data. 22/34 broader CKAD road traversals are proven and 12/34 are not; exact east-arc chargeable scope is unproven in both groups. Full toll totals remain unknown.
 
-**NEXT finding:** `unknown-paid-road:unpriced` (baseline count 64) — inspect its saved evidence and current classification; compare overlap with `expected-road-not-proven` (also baseline 64) before interpreting the count. The two numbers are not confirmed unique cases. No replay/live unless saved evidence is incomplete or a material difference is identified. [Part19 queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json).
+**NEXT:** `expected-road-not-proven` (baseline64): compare common causes and exceptions against existing findings using saved evidence only. Counts overlap. No new live/replay unless evidence is incomplete or a material input/geometry/product/code difference is demonstrated. Formal plan stays **90% (18/20)**; Part19 remains IN_PROGRESS and Part20 PLANNED.
 
-Previously reviewed findings remain bounded to their evidence: M4 crossing-profile change was not reproduced in the current engine (25 checked); A289 component binding was recovered (57 helper-only + 2 whole-engine cases, not 59 confirmed whole-route fares); ZSD 76/76 is source-gated because the operator collection span remains unbound; M4 unpriced 22/22 is source-gated because collection scope remains unbound. These are not overall tariff coverage. Part19 remains IN PROGRESS; Part20 remains PLANNED. Formal plan stays **90% (18/20)**.
+The previous live workflow run executed a non-fastest toll-avoidance alternative; its step has been removed from the PR workflow in this commit to honor fastest-route-only scope. Observe the workflow triggered by this commit before the next independent step.
 
+[Part19 queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [checkpoint](../docs/checkpoints/2026-10-17-0632-part19-arc-not-proven-blocked.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-arc-not-proven-blocked.json)
 
 2026-10-16 23:00 MSK: Case4 reviewed from parent `8819f8175edf616ed2229536cdf8abde5ef40a68` / tree `8b99cebadb42786e8e95e2b24b504bf713dbda2f`; result source-gated with no material exception. 3 saved profiles, 1 exact capture, 0 new live requests; M11 finding 4/8; formal plan90% (18/20), no new tariff confirmation. [Checkpoint](checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-16-m11-case4-boundary-review.json).
 
