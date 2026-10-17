@@ -1,0 +1,19 @@
+{
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "mode": "bounded_short_offline_evidence_review",
+  "representatives": [
+    "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+    "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+    "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+    "pair-m11-ckad-spb-to-domodedovo",
+    "pair-m11-zsd-prim-to-moscow",
+    "single-zsd-blag-to-prim",
+    "single-zsd-blag-to-sest",
+    "single-zsd-peterhof-to-prim",
+    "single-zsd-sest-to-blag"
+  ],
+  "reentrySiblings": 5,
+  "priorSummarySha256": "95d10f2a7af6ab966b03f259ec3370f44fd3b58631ceba96bacbc070c94511b2",
+  "newComponentChecks": 0,
+  "newProviderCalls": 0
+}

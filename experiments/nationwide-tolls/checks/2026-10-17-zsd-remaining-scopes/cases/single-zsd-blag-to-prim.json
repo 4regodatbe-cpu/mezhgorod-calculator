@@ -1,0 +1,109 @@
+{
+  "caseId": "single-zsd-blag-to-prim",
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/2026-10-16T00-30-24-682Z-capture.json.gz",
+  "captureSha256": "81d39b35576832f92026ba1c7eb7e4cf41d80c93eb5f26e96d0bb1370431bb92",
+  "priorResultPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-blag-to-prim.json",
+  "priorResultSha256": "647e202838e881cd019bf7b589c70e068434fd8679e3db43503e97492e8bcccf",
+  "fingerprint": "e9966bcae780ea3c61f76494d6db1c6e14da365cbea561c5f593dedf3a2641b6",
+  "selectedProvider": "OSRM",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 380,
+  "selectedProviderSteps": [
+    {
+      "name": "",
+      "maneuver": {
+        "bearing_after": 279,
+        "bearing_before": 270,
+        "location": [
+          30.298599,
+          59.875594
+        ],
+        "modifier": "straight",
+        "type": "new name"
+      },
+      "distance": 79.3
+    },
+    {
+      "name": "",
+      "destinations": "Зсд, 1–й и 2–й районы Порта",
+      "maneuver": {
+        "bearing_after": 275,
+        "bearing_before": 267,
+        "location": [
+          30.297188,
+          59.875594
+        ],
+        "modifier": "slight right",
+        "type": "fork"
+      },
+      "distance": 714.6
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 298,
+        "bearing_before": 293,
+        "location": [
+          30.289987,
+          59.880341
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 16440.7
+    },
+    {
+      "name": "",
+      "destinations": "Богатырский проспект, Планерная улица",
+      "maneuver": {
+        "bearing_after": 21,
+        "bearing_before": 2,
+        "location": [
+          30.231695,
+          59.997206
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 556.5
+    }
+  ],
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "recordedZsdBooths": [
+    {
+      "osmNodeId": "1766158781",
+      "wayId": "355755817",
+      "edgeToll": true
+    }
+  ],
+  "scopeReview": "Благодатная, въезд на север → Богатырский/Планерная",
+  "ownerZoneCandidateOnly": "entry2–exit3",
+  "outcome": "blocked_by_missing_reliable_data",
+  "readyTariffRub": null,
+  "newPricedComponents": 0,
+  "priorComponentProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "newComponentDateChecks": 0,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "reentryProof": [],
+  "separateInterchangeGantryEvidence": [],
+  "traceIndexLimit": "Do not apply trace end_shape_index to input shape: matched trace indices differ. No such coordinate mapping used.",
+  "missing": "Primary directed cash/card collection bundle for these entry/exit boundaries; separate interchange fee where applicable."
+}

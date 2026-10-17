@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "After exact checkpoint commit readback, review reverse group1e954c437e46 representative max-chain-m12-ckad-m11-zsd-sest-to-kazan from saved capture/primary evidence. Do not rerun74/76/309 or reopen blocked collection spans without new primary mapping.",
+  "nextAction": "Implement a bounded no-reentry route selection/validation guard from saved trace proof, with focused and required gates; no toll-avoiding alternate/live corpus.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1831,10 +1831,155 @@
             "groupReviewStatus": "partial_representative_only",
             "missing": "Owner directed cash/card collection bundle and exact north-KAD exit binding for1766158812",
             "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/next-group-representative.json"
+          },
+          {
+            "fingerprint": "1e954c437e46cc7926adf88189e1f0af9fcb2d6ec184332656bfee9d91fd2625",
+            "representative": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+            "groupSize": 8,
+            "checkedCases": 1,
+            "uncheckedSiblings": [
+              "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+              "pair-m11-zsd-sest-to-moscow",
+              "single-zsd-sest-to-pushkin",
+              "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+              "pair-m11-zsd-sest-to-novgorod",
+              "pair-m11-zsd-sest-to-tver",
+              "triple-m4-m11-zsd-sest-to-domodedovo"
+            ],
+            "scopeReview": "КАД-север → КАД-юг, на юг",
+            "outcome": "blocked_by_missing_reliable_data",
+            "readyTariffRub": null,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+          },
+          {
+            "fingerprint": "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c",
+            "representative": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+            "groupSize": 5,
+            "checkedCases": 1,
+            "uncheckedSiblings": [
+              "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+              "single-zsd-pushkin-to-sest",
+              "triple-m4-m11-zsd-krasnodar-to-sest",
+              "triple-m4-m11-zsd-rostov-to-sest"
+            ],
+            "scopeReview": "КАД-юг → КАД-север, OSRM, другая полоса северного ПВП",
+            "outcome": "blocked_by_missing_reliable_data",
+            "readyTariffRub": null,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+          },
+          {
+            "fingerprint": "3404a9c7bbd60f8c3caa6644223c2434ee84611661181bab6b9c1cf626c57851",
+            "representative": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+            "groupSize": 4,
+            "checkedCases": 1,
+            "uncheckedSiblings": [
+              "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+              "triple-m4-m11-zsd-sest-to-krasnodar",
+              "triple-m4-m11-zsd-sest-to-rostov"
+            ],
+            "scopeReview": "КАД-север → КАД-юг, OSRM, другая полоса северного ПВП",
+            "outcome": "blocked_by_missing_reliable_data",
+            "readyTariffRub": null,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+          },
+          {
+            "fingerprint": "2c00c1cc6c1d9e8f8b34365454ebb654ed4c4054a8530c84c21fe727dd5f5377",
+            "representative": "pair-m11-ckad-spb-to-domodedovo",
+            "groupSize": 7,
+            "checkedCases": 1,
+            "uncheckedSiblings": [
+              "pair-m11-ckad-spb-to-noginsk",
+              "single-m11-spb-to-moscow",
+              "triple-m11-ckad-m12-spb-to-kazan",
+              "pair-m4-m11-spb-to-voronezh",
+              "single-m11-spb-to-tver",
+              "triple-m11-ckad-m12-spb-to-arzamas"
+            ],
+            "scopeReview": "Въезд со стороны проспекта Крузенштерна / Шкиперского протока → КАД-юг",
+            "outcome": "blocked_by_missing_reliable_data",
+            "readyTariffRub": null,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+          },
+          {
+            "fingerprint": "5733fbb44c1c68eac1b81aa40e7e08b59201621562b0c133671ae51437d09a34",
+            "representative": "pair-m11-zsd-prim-to-moscow",
+            "groupSize": 6,
+            "checkedCases": 6,
+            "uncheckedSiblings": [],
+            "scopeReview": "Приморский → съезд Богатырский/Планерная → городской разворот → ЗСД на юг → КАД-юг",
+            "outcome": "deferred_route_policy_fix",
+            "readyTariffRub": null,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+          },
+          {
+            "fingerprint": "e9966bcae780ea3c61f76494d6db1c6e14da365cbea561c5f593dedf3a2641b6",
+            "representative": "single-zsd-blag-to-prim",
+            "groupSize": 1,
+            "checkedCases": 1,
+            "uncheckedSiblings": [],
+            "scopeReview": "Благодатная, въезд на север → Богатырский/Планерная",
+            "outcome": "blocked_by_missing_reliable_data",
+            "readyTariffRub": null,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+          },
+          {
+            "fingerprint": "94943ad7caf714125fff0505bfaaab356360e7dfa5392eed5e7a516373ae41af",
+            "representative": "single-zsd-blag-to-sest",
+            "groupSize": 1,
+            "checkedCases": 1,
+            "uncheckedSiblings": [],
+            "scopeReview": "Благодатная, въезд на север → КАД-север",
+            "outcome": "blocked_by_missing_reliable_data",
+            "readyTariffRub": null,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+          },
+          {
+            "fingerprint": "31bded062e92f96393dd7de5e5a1a584708bc469c2146c274175d3e41bae75c1",
+            "representative": "single-zsd-peterhof-to-prim",
+            "groupSize": 1,
+            "checkedCases": 1,
+            "uncheckedSiblings": [],
+            "scopeReview": "КАД-юг со стороны Петергофа/Таллинского → Богатырский/Планерная",
+            "outcome": "blocked_by_missing_reliable_data",
+            "readyTariffRub": null,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+          },
+          {
+            "fingerprint": "d3776069805a720e7bd3635900250dedc5f8322cc152847153369b0c03152853",
+            "representative": "single-zsd-sest-to-blag",
+            "groupSize": 1,
+            "checkedCases": 1,
+            "uncheckedSiblings": [],
+            "scopeReview": "КАД-север → съезд Благодатная/Кубинская, на юг",
+            "outcome": "blocked_by_missing_reliable_data",
+            "readyTariffRub": null,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
           }
         ],
         "latestReviewCheckpoint": "docs/checkpoints/2026-10-17-153001-zsd-planernaya-group9-BLOCKED.md",
-        "latestReviewPersistence": "included_in_checkpoint_commit; verify exact remote head/tree/blobs after write"
+        "latestReviewPersistence": "included_in_checkpoint_commit; verify exact remote head/tree/blobs after write",
+        "remainingRepresentativesReview": {
+          "newUniqueCasesReviewed": 14,
+          "newRepresentativeReviews": 9,
+          "newSiblingExceptionChecks": 5,
+          "cumulativeBoundaryReviewedUnknownCases": 24,
+          "unknownSiblingsNotBoundaryReviewed": 26,
+          "groupsRepresented": 11,
+          "newPricedComponents": 0,
+          "confirmedFullTripFares": 0,
+          "newComponentDateChecks": 0,
+          "summary": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
+          "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+        }
       }
     },
     {
@@ -4144,5 +4289,26 @@
     "rule": "One canonical cause outcome per finding; underlying legacy diagnostic status and evidence remain preserved. Baseline case counts overlap and are not additive.",
     "scopeNote": "Existing evidence only; no new live route runs, replay, builds, tests, or tariff values.",
     "next": "After post-save Actions succeeds, execute Part20 docs-only content/link checks and required workflow verification; do not merge."
-  }
+  },
+  "postAuditGeometryFindings": [
+    {
+      "code": "zsd:selected-route-reentry",
+      "caseIds": [
+        "pair-m11-zsd-prim-to-moscow",
+        "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+        "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+        "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+        "pair-m11-zsd-prim-to-torzhok",
+        "triple-m4-m11-zsd-prim-to-voronezh"
+      ],
+      "checkedCases": 6,
+      "outcome": "deferred",
+      "rationale": "Physical exit/urban links/reentry proved for all6; preserve diagnosis in its own checkpoint before a separate runtime/selection fix. Current amount unknown, no numeric mispricing claimed.",
+      "fixed": false,
+      "evidenceDirectory": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases",
+      "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
+      "nextAction": "Implement a bounded no-reentry route selection/validation guard from saved trace proof, with focused and required gates; no toll-avoiding alternate/live corpus."
+    }
+  ],
+  "postAuditNextFinding": "zsd:selected-route-reentry"
 }

@@ -1,0 +1,86 @@
+{
+  "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-kazan/2026-10-16T00-00-02-750Z-capture.json.gz",
+  "captureSha256": "1541f0cf350d5c4613d150985aae0d110111f3ea1af5ad0d74be468c299fe99b",
+  "priorResultPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-sest-to-kazan.json",
+  "priorResultSha256": "1dca922a47a2ad8fabc4dff36da69d5ae4bfe98979fc15c86f9c05cc05e91026",
+  "fingerprint": "1e954c437e46cc7926adf88189e1f0af9fcb2d6ec184332656bfee9d91fd2625",
+  "selectedProvider": "Valhalla",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 9143,
+  "selectedProviderSteps": [
+    {
+      "instruction": "Поверните направо к КАД/Выборгское ш./Мурманское ш..",
+      "begin_shape_index": 184,
+      "end_shape_index": 232,
+      "length": 9.123
+    },
+    {
+      "instruction": "Сверните на съезде к ЗСД.",
+      "begin_shape_index": 232,
+      "end_shape_index": 239,
+      "length": 0.328
+    },
+    {
+      "instruction": "Держитесь правее, чтобы свернуть на Богатырский проспект к ЗСД.",
+      "begin_shape_index": 239,
+      "end_shape_index": 402,
+      "length": 13.841
+    },
+    {
+      "instruction": "Держитесь левее, чтобы остаться на ЗСД к набережная Обводного канала/Благодатная улица.",
+      "begin_shape_index": 402,
+      "end_shape_index": 633,
+      "length": 17.353
+    },
+    {
+      "instruction": "Держитесь левее, чтобы свернуть на А-118/КАД/Кольцевая автомобильная дорога вокруг г. Санкт-Петербурга к КАД/Пулковское ш..",
+      "begin_shape_index": 633,
+      "end_shape_index": 692,
+      "length": 3.469
+    }
+  ],
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "recordedZsdBooths": [
+    {
+      "osmNodeId": "1766158804",
+      "wayId": "458501127",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "edgeToll": true
+    }
+  ],
+  "scopeReview": "КАД-север → КАД-юг, на юг",
+  "ownerZoneCandidateOnly": "entry4–exit1",
+  "outcome": "blocked_by_missing_reliable_data",
+  "readyTariffRub": null,
+  "newPricedComponents": 0,
+  "priorComponentProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "newComponentDateChecks": 0,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "reentryProof": [],
+  "separateInterchangeGantryEvidence": [],
+  "traceIndexLimit": "Do not apply trace end_shape_index to input shape: matched trace indices differ. No such coordinate mapping used.",
+  "missing": "Primary directed cash/card collection bundle for these entry/exit boundaries; separate interchange fee where applicable."
+}

@@ -1,0 +1,143 @@
+{
+  "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar/2026-10-16T00-02-19-759Z-capture.json.gz",
+  "captureSha256": "9e1e0ed4c4400b84bf188a1664a6f89f7cf082500fcffe4fe746b3e6765ebc65",
+  "priorResultPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar.json",
+  "priorResultSha256": "9c2dc15a55931765d4e7c2795acf61ade30d15e91c1b9fc5672385710f62cad6",
+  "fingerprint": "3404a9c7bbd60f8c3caa6644223c2434ee84611661181bab6b9c1cf626c57851",
+  "selectedProvider": "OSRM",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 12489,
+  "selectedProviderSteps": [
+    {
+      "name": "КАД",
+      "maneuver": {
+        "bearing_after": 81,
+        "bearing_before": 67,
+        "location": [
+          29.99857,
+          60.038911
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 7517.2
+    },
+    {
+      "name": "",
+      "destinations": "ЗСД, Левашовское шоссе",
+      "maneuver": {
+        "bearing_after": 80,
+        "bearing_before": 73,
+        "location": [
+          30.128665,
+          60.056654
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 328.9
+    },
+    {
+      "name": "",
+      "destinations": "ЗСД",
+      "maneuver": {
+        "bearing_after": 80,
+        "bearing_before": 74,
+        "location": [
+          30.134457,
+          60.057181
+        ],
+        "modifier": "slight right",
+        "type": "fork"
+      },
+      "distance": 778.5
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 161,
+        "bearing_before": 160,
+        "location": [
+          30.145561,
+          60.055287
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 503.4
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 158,
+        "bearing_before": 163,
+        "location": [
+          30.148253,
+          60.050974
+        ],
+        "modifier": "slight left",
+        "type": "turn"
+      },
+      "distance": 29954.4
+    },
+    {
+      "name": "",
+      "destinations": "КАД, Пулковское ш.",
+      "maneuver": {
+        "bearing_after": 189,
+        "bearing_before": 191,
+        "location": [
+          30.280144,
+          59.835919
+        ],
+        "modifier": "slight left",
+        "type": "fork"
+      },
+      "distance": 791.1
+    }
+  ],
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "recordedZsdBooths": [
+    {
+      "osmNodeId": "5745105499",
+      "wayId": "605825360",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "edgeToll": true
+    }
+  ],
+  "scopeReview": "КАД-север → КАД-юг, OSRM, другая полоса северного ПВП",
+  "ownerZoneCandidateOnly": "entry4–exit1",
+  "outcome": "blocked_by_missing_reliable_data",
+  "readyTariffRub": null,
+  "newPricedComponents": 0,
+  "priorComponentProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "newComponentDateChecks": 0,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "reentryProof": [],
+  "separateInterchangeGantryEvidence": [],
+  "traceIndexLimit": "Do not apply trace end_shape_index to input shape: matched trace indices differ. No such coordinate mapping used.",
+  "missing": "Primary directed cash/card collection bundle for these entry/exit boundaries; separate interchange fee where applicable."
+}

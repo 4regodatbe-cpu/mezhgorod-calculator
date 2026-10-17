@@ -1,0 +1,207 @@
+{
+  "atUtc": "2026-10-17T13:13:17.489421+00:00",
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "oldSummarySha256": "95d10f2a7af6ab966b03f259ec3370f44fd3b58631ceba96bacbc070c94511b2",
+  "runtimeSourceHashes": {
+    "lib/v3-calculation/zsd-cash-card-component.ts": "068551e6e57d75092447e7cdbec07bcaa3aeea30d1458355acad8730a2c94f9c",
+    "lib/v3-calculation/zsd-zone1-component.ts": "05081f33cd30e0904558a24d41859030b38a1737b22162bc59eefc7ecc04d4d7",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/readiness.json": "24bc1ef0a00bf3da64e4bd59b05eede366338dd31ac6ce5d3de311641caba034",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/zone1-readiness.json": "4a83afcebc698490af0f39388422a45235a18fcf300526709f532ec17999f53b"
+  },
+  "newRepresentativeReviews": 9,
+  "newSiblingExceptionChecks": 5,
+  "newUniqueCasesReviewed": 14,
+  "selectedProviderGeometryIdentityChecks": 14,
+  "groups": [
+    {
+      "fingerprint": "1e954c437e46cc7926adf88189e1f0af9fcb2d6ec184332656bfee9d91fd2625",
+      "representative": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+      "groupSize": 8,
+      "checkedCases": 1,
+      "uncheckedSiblings": [
+        "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+        "pair-m11-zsd-sest-to-moscow",
+        "single-zsd-sest-to-pushkin",
+        "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+        "pair-m11-zsd-sest-to-novgorod",
+        "pair-m11-zsd-sest-to-tver",
+        "triple-m4-m11-zsd-sest-to-domodedovo"
+      ],
+      "scopeReview": "КАД-север → КАД-юг, на юг",
+      "outcome": "blocked_by_missing_reliable_data",
+      "readyTariffRub": null
+    },
+    {
+      "fingerprint": "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c",
+      "representative": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+      "groupSize": 5,
+      "checkedCases": 1,
+      "uncheckedSiblings": [
+        "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+        "single-zsd-pushkin-to-sest",
+        "triple-m4-m11-zsd-krasnodar-to-sest",
+        "triple-m4-m11-zsd-rostov-to-sest"
+      ],
+      "scopeReview": "КАД-юг → КАД-север, OSRM, другая полоса северного ПВП",
+      "outcome": "blocked_by_missing_reliable_data",
+      "readyTariffRub": null
+    },
+    {
+      "fingerprint": "3404a9c7bbd60f8c3caa6644223c2434ee84611661181bab6b9c1cf626c57851",
+      "representative": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+      "groupSize": 4,
+      "checkedCases": 1,
+      "uncheckedSiblings": [
+        "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+        "triple-m4-m11-zsd-sest-to-krasnodar",
+        "triple-m4-m11-zsd-sest-to-rostov"
+      ],
+      "scopeReview": "КАД-север → КАД-юг, OSRM, другая полоса северного ПВП",
+      "outcome": "blocked_by_missing_reliable_data",
+      "readyTariffRub": null
+    },
+    {
+      "fingerprint": "2c00c1cc6c1d9e8f8b34365454ebb654ed4c4054a8530c84c21fe727dd5f5377",
+      "representative": "pair-m11-ckad-spb-to-domodedovo",
+      "groupSize": 7,
+      "checkedCases": 1,
+      "uncheckedSiblings": [
+        "pair-m11-ckad-spb-to-noginsk",
+        "single-m11-spb-to-moscow",
+        "triple-m11-ckad-m12-spb-to-kazan",
+        "pair-m4-m11-spb-to-voronezh",
+        "single-m11-spb-to-tver",
+        "triple-m11-ckad-m12-spb-to-arzamas"
+      ],
+      "scopeReview": "Въезд со стороны проспекта Крузенштерна / Шкиперского протока → КАД-юг",
+      "outcome": "blocked_by_missing_reliable_data",
+      "readyTariffRub": null
+    },
+    {
+      "fingerprint": "5733fbb44c1c68eac1b81aa40e7e08b59201621562b0c133671ae51437d09a34",
+      "representative": "pair-m11-zsd-prim-to-moscow",
+      "groupSize": 6,
+      "checkedCases": 6,
+      "uncheckedSiblings": [],
+      "scopeReview": "Приморский → съезд Богатырский/Планерная → городской разворот → ЗСД на юг → КАД-юг",
+      "outcome": "deferred_route_policy_fix",
+      "readyTariffRub": null
+    },
+    {
+      "fingerprint": "e9966bcae780ea3c61f76494d6db1c6e14da365cbea561c5f593dedf3a2641b6",
+      "representative": "single-zsd-blag-to-prim",
+      "groupSize": 1,
+      "checkedCases": 1,
+      "uncheckedSiblings": [],
+      "scopeReview": "Благодатная, въезд на север → Богатырский/Планерная",
+      "outcome": "blocked_by_missing_reliable_data",
+      "readyTariffRub": null
+    },
+    {
+      "fingerprint": "94943ad7caf714125fff0505bfaaab356360e7dfa5392eed5e7a516373ae41af",
+      "representative": "single-zsd-blag-to-sest",
+      "groupSize": 1,
+      "checkedCases": 1,
+      "uncheckedSiblings": [],
+      "scopeReview": "Благодатная, въезд на север → КАД-север",
+      "outcome": "blocked_by_missing_reliable_data",
+      "readyTariffRub": null
+    },
+    {
+      "fingerprint": "31bded062e92f96393dd7de5e5a1a584708bc469c2146c274175d3e41bae75c1",
+      "representative": "single-zsd-peterhof-to-prim",
+      "groupSize": 1,
+      "checkedCases": 1,
+      "uncheckedSiblings": [],
+      "scopeReview": "КАД-юг со стороны Петергофа/Таллинского → Богатырский/Планерная",
+      "outcome": "blocked_by_missing_reliable_data",
+      "readyTariffRub": null
+    },
+    {
+      "fingerprint": "d3776069805a720e7bd3635900250dedc5f8322cc152847153369b0c03152853",
+      "representative": "single-zsd-sest-to-blag",
+      "groupSize": 1,
+      "checkedCases": 1,
+      "uncheckedSiblings": [],
+      "scopeReview": "КАД-север → съезд Благодатная/Кубинская, на юг",
+      "outcome": "blocked_by_missing_reliable_data",
+      "readyTariffRub": null
+    }
+  ],
+  "confirmedReentryCases": 6,
+  "sourceBlockedRepresentatives": 8,
+  "cumulativeUnknownGroupsRepresented": 11,
+  "cumulativeBoundaryReviewedUniqueCases": 24,
+  "unknownSiblingCasesNotBoundaryReviewed": 26,
+  "newComponentDateChecks": 0,
+  "priorComponentProfilesReferenced": 28,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "newPricedComponents": 0,
+  "confirmedFullTripFares": 0,
+  "baselinePricedZsdComponents": 26,
+  "baselineUnknownZsdComponents": 50,
+  "caseResults": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+      "sha256": "6fb40fe115cc4c625e0d07ff851888d31ece87ee2d9b3f06079ef596899ea689"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+      "sha256": "36a248feeae8c86a0c2ed00de528baf85133e9f11314bd28fe8b6ac65ecca7f1"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+      "sha256": "928fcb0191d647d17f53c4be435efea812397c59b2e01c594657bc2bfe56e604"
+    },
+    {
+      "caseId": "pair-m11-ckad-spb-to-domodedovo",
+      "sha256": "825b1aafe3826b638b5f725c722dda21aa496e9fae92268d5324d035b6fefefb"
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-moscow",
+      "sha256": "a8bf5dba9c2ba49ebbe5669daf2d3581003ea2aa64cc82c476a3ad5a3e03cbb0"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "sha256": "c0837ffcfecc375ca2e4f87b4462d9ca52928fc88fc6edafa226d0dc56a6fed3"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "sha256": "403e0d1f90cdc19263734f039a96fcd6d3f6666b1aa3307f77ce0bf731c505a4"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "sha256": "b611f9d894dc23cc251055fc4ae921122b96bdc0a16fb4e47c964bed0f1300e0"
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-torzhok",
+      "sha256": "3f0abe99d4f5484ef40034e550ae3c90fa2255d4a1e6134066dd4440fbcc0450"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "sha256": "87c4df2d910bd04ad30db38fb862b2e3a0ded8c0706383b174f7dab61868a93b"
+    },
+    {
+      "caseId": "single-zsd-blag-to-prim",
+      "sha256": "9bd701774dea6238b7d3afa5bf84fbc17af954cfc6b38fae7174af7f6e393b34"
+    },
+    {
+      "caseId": "single-zsd-blag-to-sest",
+      "sha256": "6417daa010e33fc6ec1ed57f62e88afea37f1d5bc593d890689d50c63a2f27d6"
+    },
+    {
+      "caseId": "single-zsd-peterhof-to-prim",
+      "sha256": "432d578f3f7ce0e911a06fad6fa27b95f1ee4c5e09e61ef3971a179cd593923d"
+    },
+    {
+      "caseId": "single-zsd-sest-to-blag",
+      "sha256": "3ff4fa4f0638b526fa2394a4fbe9c51b25109f92da7bb878dcd990eceb1ffeaa"
+    }
+  ],
+  "limits": [
+    "Representative review is not a sibling check or new tariff execution.",
+    "Provider geometry identity and recorded trace do not confirm payment bundle or price.",
+    "Interchange gantry with toll=false is not proof that the interchange is free."
+  ]
+}
