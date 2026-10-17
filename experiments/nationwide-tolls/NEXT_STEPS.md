@@ -1,3 +1,7 @@
+## 17.10.2026 14:33 МСК — ЗСД: проверен второй сохранённый случай
+
+Брянка→СПб: component-only600 на2датах;3negative unknown. Новых full replay/live0. Накопленно2/76cases,74не зачтены этой версией. Полный итог Брянки не заявлять. CI правки39026791473 success. [Checkpoint](../../docs/checkpoints/2026-10-17-143328-zsd-bryanka-exceptions.md). NEXT после нового CI/head: Лисичанск→СПб, только material exceptions полного физического scope. Формальный план100%, не подтверждённость тарифов.
+
 ## 17.10.2026 13:53 МСК — один вектор ЗСД исправлен
 
 КАД-юг→Екатерингофка:600 ₽ source-derived owner vector, полные offline totals Гранитное→СПб9534/11184 с сохранением unconfirmed. Full704 + TS + build PASS. [Подробный checkpoint](../../docs/checkpoints/2026-10-17-135300-zsd-kad-ekateringofka-fixed.md). После post-save CI проверить только фактические исключения совпавшего physical scope; остальные75 случаев не считать выполненными по этому шагу. Старый формальный план20/20=100%.

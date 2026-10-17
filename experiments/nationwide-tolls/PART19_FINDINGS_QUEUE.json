@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "After post-save CI success, check exceptions in matching ZSD physical scope against the new finished vector; no mass live rerun.",
+  "nextAction": "After current save CI/head verification, check lnr-лисичанск-saint-petersburg-center physical-scope exceptions only; no mass replay.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1763,17 +1763,35 @@
       "canonicalOutcomeRationale": "The selected route evidence does not establish the operator collection span needed to bind a tariff. Keep amount unknown/null.",
       "postAuditSolution": {
         "atUtc": "2026-10-17T10:53:00Z",
-        "status": "partial_fix_one_finished_vector_locally_verified",
+        "status": "partial_fix_two_saved_cases_verified",
         "caseId": "dnr-гранитное-saint-petersburg-center",
-        "checkedCases": 1,
+        "checkedCases": 2,
         "fullReplayProfiles": 2,
         "newLiveRouteRuns": 0,
         "vectorRub": 600,
         "fareBasis": "source-derived owner directed tariff-zone definitions + current cash/card rates; no independent OD receipt",
         "fullQuotePriceConfirmation": "unconfirmed",
-        "otherBaselineCasesNotRechecked": 75,
+        "otherBaselineCasesNotRechecked": 74,
         "checkpoint": "docs/checkpoints/2026-10-17-135300-zsd-kad-ekateringofka-fixed.md",
-        "evidence": "docs/checkpoints/evidence/2026-10-17-zsd-kad-ekateringofka-fixed.json"
+        "evidence": "docs/checkpoints/evidence/2026-10-17-zsd-kad-ekateringofka-fixed.json",
+        "componentOnlyCases": 1,
+        "componentOnlyDateChecks": 2,
+        "sourceFixCommit": "dc44185940e0da95dafa00b5718b751fb729981c",
+        "sourceFixCiRun": 39026791473,
+        "sourceFixCiConclusion": "success",
+        "exceptionChecks": [
+          {
+            "caseId": "lnr-брянка-saint-petersburg-center",
+            "outcome": "fixed_and_verified_component_only",
+            "mode": "saved_capture_current_component_exception_check",
+            "dateChecks": 2,
+            "negativeChecks": 3,
+            "fullReplays": 0,
+            "liveRequests": 0,
+            "checkpoint": "docs/checkpoints/2026-10-17-143328-zsd-bryanka-exceptions.md",
+            "evidence": "docs/checkpoints/evidence/2026-10-17-zsd-bryanka-exceptions.json"
+          }
+        ]
       }
     },
     {
@@ -4044,7 +4062,9 @@
       "sourceCommit": "e4c1b8b02118f7c96b3aa6440df7a0f545df3c88",
       "fullgateCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md",
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
-    }
+    },
+    "postAuditFixCaseCount": 2,
+    "postAuditCasesRemainingUnchecked": 74
   },
   "lastSynthesisAtUtc": "2026-10-17T08:11:16Z",
   "nextFinding": null,
