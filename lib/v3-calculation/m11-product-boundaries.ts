@@ -4,10 +4,12 @@ import {crossingAt,facilityAnchors,nearestSegment,haversineKm,MOSCOW_M11_ENTRY,
 import type {M11RoadEvidence} from '../toll-engine/m11-road-evidence';
 import validity from '@/experiments/nationwide-tolls/engine/fare-validity.cjs';
 import {inspectM11MmkHeadBoundary} from './m11-mmk-head-boundary';
+import {inspectM11P258Exit} from './m11-p258-exit-boundary';
+import type {TollValidation} from '../toll-validator';
 
 /** Each product has its own outer boundaries. A CKAD entry need not cross
  * Moscow's15-km boundary in order to prove the mainline58→679 pair. */
-export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSeconds:number,departureAt:string,evidence?:M11RoadEvidence|null) {
+export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSeconds:number,departureAt:string,evidence?:M11RoadEvidence|null,validation:TollValidation|null=null) {
  const entry=nearestSegment(route,[MOSCOW_M11_ENTRY]);
  const p58=nearestSegment(route,facilityAnchors('p58'));
  const p679=nearestSegment(route,facilityAnchors('p679'));
@@ -38,6 +40,11 @@ export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSec
   && (north && mmk.from==='mmk_a107' && mmk.gateIndex<p58.index
    || south && mmk.to==='mmk_a107' && mmk.gateIndex>p58.index);
  const timeResolved=validity.validInstant(departureAt) && Number.isFinite(routeSeconds) && routeSeconds>0;
+ if(!geometryResolved && timeResolved && inspectM11P258Exit(route,evidence,validation))return {
+  candidate:true,headDetected:false,resolved:true as const,reason:'m11_p679_p258_directed_paid_exit_proved',parts:{
+   from:'p679',to:'p258',departureAt,mainlineAt:departureAt,mainlineWindowSeconds:0,headDetected:false,head:null,
+  },
+ };
  const unresolved={candidate:headDetected||strictGeometry,headDetected,resolved:false as const,parts:null,
   reason:geometryResolved?'m11_exit_payment_time_missing':'m11_outer_boundaries_unresolved'};
  if(!geometryResolved || !timeResolved)return unresolved;

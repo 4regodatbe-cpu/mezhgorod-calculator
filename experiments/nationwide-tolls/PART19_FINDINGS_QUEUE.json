@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Bind own saved Torzhok OSRM exit3183012434/way795246101 and ready M11 pair, fail closed until proved; then shared M12/CKAD scope for Arzamas/Cheboksary. No new routing or broad replay.",
+  "nextAction": "Review own saved OSRM M12/CKAD physical boundaries for Arzamas/Cheboksary together, bind ready vectors only on proved scope. No new routing or broad replay.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -4414,7 +4414,7 @@
       "fixed": true,
       "evidenceDirectory": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases",
       "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
-      "nextAction": "ZSD replacement component work complete. Next: exact M11 exit binding for own Torzhok OSRM, then common M12/CKAD scopes; no old Valhalla trace reuse.",
+      "nextAction": "ZSD and own Torzhok M11 exit complete for six replacements; next shared M12/CKAD scope of Arzamas/Cheboksary.",
       "implementationStatus": "DONE_CODE_AND_ALL_SIX_OWN_REPLACEMENT_ZSD_COMPONENTS_VERIFIED",
       "implementationStartedCheckpoint": "docs/checkpoints/2026-10-17-162522-zsd-no-reentry-STARTED.md",
       "implementationSourceHead": "0cc2c469d5ef0385fe8446983103233ef73606a2",
@@ -4557,30 +4557,89 @@
         "ownCompleteTraceCases": 6,
         "pricedZsdComponents": 6,
         "zsdRubEach": 300,
-        "pricedComponentsAcrossSix": 23,
-        "pricedButUnconfirmedFullTripCases": 3,
-        "unknownFullTripCases": 3,
+        "pricedComponentsAcrossSix": 25,
+        "pricedButUnconfirmedFullTripCases": 4,
+        "unknownFullTripCases": 2,
         "confirmedFullTripFares": 0,
         "uncheckedReplacementCases": 0,
-        "historicalBaselineRecomputed": false
-      }
+        "historicalBaselineRecomputed": false,
+        "latestFollowupCheckpoint": "docs/checkpoints/2026-10-17-203458-m11-torzhok-p258-DONE.md"
+      },
+      "replacementCoverageHistory": [
+        {
+          "changedCaseCount": 6,
+          "ownCompleteTraceCases": 6,
+          "pricedZsdComponents": 6,
+          "zsdRubEach": 300,
+          "pricedComponentsAcrossSix": 23,
+          "pricedButUnconfirmedFullTripCases": 3,
+          "unknownFullTripCases": 3,
+          "confirmedFullTripFares": 0,
+          "uncheckedReplacementCases": 0,
+          "historicalBaselineRecomputed": false
+        }
+      ]
     }
   ],
-  "postAuditNextFinding": "m11:selected-osrm-torzhok-boundary",
+  "postAuditNextFinding": "m12-ckad:selected-osrm-scope",
   "postAuditPricingFollowups": [
     {
       "code": "m11:selected-osrm-torzhok-boundary",
       "caseIds": [
         "pair-m11-zsd-prim-to-torzhok"
       ],
-      "outcome": "deferred",
-      "rationale": "Own new full trace exists, but exact exit and ready pair not investigated in ZSD batch; only_one_verified_boundary_crossing + unmapped_selected_route_paid_booth3183012434/795246101. Known ZSD300 is not full fare.",
-      "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/capture.json.gz",
-      "checkpoint": "docs/checkpoints/2026-10-17-175742-zsd-osrm-five-DONE.md",
+      "outcome": "fixed_and_verified",
+      "rationale": "Directed primary paid access maps exact3183012434/795246101 to258; complete owntrace and physical geometry prove p679→p258 despite unnamed exit link outside strictmainline. Existing ready fare2400 plus separate94tail and300ZSD yields2794 atdeparture, internal unconfirmed.",
+      "evidence": "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/result.json",
+      "checkpoint": "docs/checkpoints/2026-10-17-203458-m11-torzhok-p258-DONE.md",
       "preliminaryCandidatePoint": "p258",
-      "candidateBindingConfirmed": false,
+      "candidateBindingConfirmed": true,
       "spatialSnapshotGap": "No facility with tariffPointId=p258 in current spatial snapshot; operator point p258/Budovo exists.",
-      "preparationEvidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/torzhok-followup-notes.json"
+      "preparationEvidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/torzhok-followup-notes.json",
+      "reviewHistory": [
+        {
+          "code": "m11:selected-osrm-torzhok-boundary",
+          "caseIds": [
+            "pair-m11-zsd-prim-to-torzhok"
+          ],
+          "outcome": "deferred",
+          "rationale": "Own new full trace exists, but exact exit and ready pair not investigated in ZSD batch; only_one_verified_boundary_crossing + unmapped_selected_route_paid_booth3183012434/795246101. Known ZSD300 is not full fare.",
+          "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/capture.json.gz",
+          "checkpoint": "docs/checkpoints/2026-10-17-175742-zsd-osrm-five-DONE.md",
+          "preliminaryCandidatePoint": "p258",
+          "candidateBindingConfirmed": false,
+          "spatialSnapshotGap": "No facility with tariffPointId=p258 in current spatial snapshot; operator point p258/Budovo exists.",
+          "preparationEvidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/torzhok-followup-notes.json"
+        }
+      ],
+      "fixedPoint": "p258",
+      "runtimeGuard": "lib/v3-calculation/m11-p258-exit-boundary.ts",
+      "bindingProof": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/binding-proof.json",
+      "checkedTargetCases": 1,
+      "independentThroughControls": 1,
+      "pricedComponents": 3,
+      "newPricedComponents": 2,
+      "calculatedTripRub": 2794,
+      "confirmedFullTripFares": 0,
+      "newRoutingRequests": 0,
+      "newTraceRequests": 0,
+      "primaryOsmGets": 3,
+      "checks": {
+        "focused": 7,
+        "auditPassed": 728,
+        "auditFailed": 0,
+        "quoteApi": "PASS",
+        "tsc": "PASS",
+        "eslint": "PASS",
+        "build": "PASS static16/16"
+      },
+      "preSaveCi": {
+        "runId": 39044745179,
+        "status": "completed",
+        "conclusion": "success",
+        "verify": "completed/success",
+        "live_probe": "completed/success"
+      }
     },
     {
       "code": "m12-ckad:selected-osrm-scope",
