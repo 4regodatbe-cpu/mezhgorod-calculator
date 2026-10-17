@@ -1,3 +1,7 @@
+## 17.10.2026 15:01 МСК — пакет74 STARTED
+
+Прямое поручение: один пакет, один итоговый commit, отдельные case results. [Входы/восстановление](../../docs/checkpoints/2026-10-17-150159-zsd-batch74-STARTED.md). Выполнить current ZSD component на74 saved captures×2dates, no live/full replay. Формальный старый процент в текущих отчётах не использовать.
+
 ## 17.10.2026 14:33 МСК — ЗСД: проверен второй сохранённый случай
 
 Брянка→СПб: component-only600 на2датах;3negative unknown. Новых full replay/live0. Накопленно2/76cases,74не зачтены этой версией. Полный итог Брянки не заявлять. CI правки39026791473 success. [Checkpoint](../../docs/checkpoints/2026-10-17-143328-zsd-bryanka-exceptions.md). NEXT после нового CI/head: Лисичанск→СПб, только material exceptions полного физического scope. Формальный план100%, не подтверждённость тарифов.

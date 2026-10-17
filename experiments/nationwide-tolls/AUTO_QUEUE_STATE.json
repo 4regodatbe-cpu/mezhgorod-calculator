@@ -1,11 +1,11 @@
 {
-  "at": "2026-10-17T11:33:28.098570+00:00",
-  "phase": "POST_AUDIT_ZSD_EXCEPTION_CHECK_SAVED",
+  "at": "2026-10-17T12:01:59.339325+00:00",
+  "phase": "POST_AUDIT_ZSD_BATCH74_STARTED",
   "branch": "fix/v3-missing-route-prices-2026-10-15",
-  "sourceHead": "dc44185940e0da95dafa00b5718b751fb729981c",
+  "sourceHead": "3ae7761fc0cebccc72777f487c5af8ca0b926665",
   "sourceTree": "d3e25d4261a89580a139a55945740f91e9a3e24a",
-  "workflowRun": "39026791473",
-  "lastObservedVerificationRun": "39026791473",
+  "workflowRun": "39029215204",
+  "lastObservedVerificationRun": "39029215204",
   "lastObservedVerificationRunStatus": "completed_success_on_source_head",
   "postSaveWorkflowStatus": "not_yet_observed; discover new run on current branch/PR head",
   "scope": "lnr-брянка-saint-petersburg-center saved capture component exception check",
@@ -25,9 +25,9 @@
   "formalPlanParts": 20,
   "formalPlanPercent": 100,
   "oldPlanContinuationDisabled": true,
-  "checkpointPath": "docs/checkpoints/2026-10-17-143328-zsd-bryanka-exceptions.md",
+  "checkpointPath": "docs/checkpoints/2026-10-17-150159-zsd-batch74-STARTED.md",
   "evidencePath": "docs/checkpoints/evidence/2026-10-17-zsd-bryanka-exceptions.json",
-  "next": "After current post-save CI/head check, inspect lnr-лисичанск-saint-petersburg-center material scope exceptions only. No new live/full replay without concrete difference.",
+  "next": "Run saved-capture current-component batch74, preserve per-case results/progress; no live/full trip replay; save one final batch commit after checking active jobs.",
   "previousState": {
     "at": "2026-10-17T10:53:00Z",
     "phase": "POST_AUDIT_ZSD_ONE_VECTOR_FIXED",
@@ -87,5 +87,9 @@
     "currentFullReplayProfiles": 2,
     "currentNewLiveRouteRuns": 0,
     "sourceDerivedZsdVectorRub": 600
-  }
+  },
+  "batchInputs": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/inputs.json",
+  "batchChecked": 0,
+  "batchTotal": 74,
+  "userReportsOmitOldFormalPlan": true
 }

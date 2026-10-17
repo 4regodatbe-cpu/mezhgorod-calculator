@@ -1,3 +1,11 @@
+## Handoff — 17.10.2026 15:01 МСК
+
+- STARTED: пользователь поручил пакет74 сохранённых случаев ЗСД, с отдельными case outputs и одним итоговым сохранением. [Входы/восстановление](checkpoints/2026-10-17-150159-zsd-batch74-STARTED.md), [правило](WORKFLOW_RULES.md). Старый процент больше не включать в текущие отчёты.
+- Source head3ae7761fc0cebccc72777f487c5af8ca0b926665, CI39029215204 success, PR14 draft. Runtime/тарифы не меняются. Пакет component-only, без live/full trip replay; ни один из74 ещё не засчитан.
+- NEXT: выполнить script на74 capture с SHA-проверкой, сохранить progress/per-case outputs, сгруппировать реальные guard-причины. Итоги только после наблюдаемого завершения и durable save.
+
+## История
+
 ## Handoff — 17.10.2026 14:33 МСК
 
 - Проверен сохранённый code commit `dc44185940e0da95dafa00b5718b751fb729981c`: PR14 open/draft, Actions39026791473 **completed/success**. Правка ЗСД600 прошла CI.

@@ -50,3 +50,8 @@ If essential context is missing from the repository, search the named earlier ch
 - Preserve toll fail-closed rules: unknown is not free, partial toll sums are not complete, and only independently confirmed routes may be labeled free.
 - Keep offline benchmark snapshots out of live route selection and pricing.
 - After code changes, run focused tests plus the required full gate/build. For docs-only changes, verify links/content and accurately report CI status.
+
+
+## Latest user update — 2026-10-17 15:00 MSK
+
+The user authorized bounded batch exception checks for repeated cases: persist STARTED, per-case evidence/progress, then one final checkpoint/commit/readback for the batch. Do not trigger one commit/CI per case in an authorized batch. See the latest section of docs/WORKFLOW_RULES.md and docs/CHECKPOINT_PROTOCOL.md. The completed old formal-plan percentage is historical; omit it from current user reports. These updates override the earlier per-case commit and percentage-reporting text for this scope.
