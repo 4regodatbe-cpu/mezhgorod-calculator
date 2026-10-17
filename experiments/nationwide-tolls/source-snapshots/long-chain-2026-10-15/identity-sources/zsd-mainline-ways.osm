@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1330 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <way id="28935150" visible="true" version="13" changeset="128758142" timestamp="2022-11-11T04:04:05Z" user="Dinamik" uid="39040">
+  <nd ref="301550064"/>
+  <nd ref="318102335"/>
+  <nd ref="933975074"/>
+  <nd ref="318102336"/>
+  <nd ref="3847689343"/>
+  <tag k="destination" v="Благодатная ул.;Кубинская ул."/>
+  <tag k="highway" v="primary_link"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="40"/>
+  <tag k="motorroad" v="yes"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="source" v="survey"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="surface:grade" v="3"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="80056716" visible="true" version="30" changeset="141361669" timestamp="2023-09-16T23:18:24Z" user="traveleditor" uid="8726248">
+  <nd ref="301550064"/>
+  <nd ref="933974919"/>
+  <nd ref="2326313090"/>
+  <nd ref="301550065"/>
+  <nd ref="301550066"/>
+  <nd ref="3847689344"/>
+  <tag k="check_date" v="2012-10-10"/>
+  <tag k="description" v="правое направление (на север)"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="10"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="40"/>
+  <tag k="name" v="ЗСД"/>
+  <tag k="name:en" v="Western High-Speed Diameter"/>
+  <tag k="name:ru" v="ЗСД"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="source" v="survey"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="surface:grade" v="3"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="721628540" visible="true" version="4" changeset="139821981" timestamp="2023-08-13T12:35:42Z" user="Vas111" uid="16951803">
+  <nd ref="933975022"/>
+  <nd ref="301550063"/>
+  <nd ref="301550064"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="4"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="40"/>
+  <tag k="name" v="ЗСД"/>
+  <tag k="name:en" v="Western High-Speed Diameter"/>
+  <tag k="name:ru" v="ЗСД"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="source" v="survey"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="surface:grade" v="3"/>
+  <tag k="toll" v="yes"/>
+  <tag k="turn:lanes" v="through|through|through|through;slight_right"/>
+ </way>
+</osm>

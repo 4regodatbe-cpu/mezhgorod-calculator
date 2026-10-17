@@ -1,0 +1,102 @@
+✔ M11 resolves the departure calendar at01:00; later holidays/profile changes do not reprice (6.081827ms)
+✔ M11 early Monday interval never uses a noon sample outside the journey (0.695157ms)
+✔ CKAD andM11 reject normalized impossible dates, absent timezone andnon-string times (0.837079ms)
+✔ native head money cannot substitute absent directed head boundaries (0.517923ms)
+✔ 17new date bounds block pre-tariff lookups and preserve current amounts (21.706595ms)
+✔ Ryazan night zero requires verified lane; MSDtransit requires eligibility context (0.536421ms)
+✔ M11 uses directed current OD even where the old native table is unknown (5.857401ms)
+✔ M11 local Moscow Friday profile, missing/expired/profile-transition/mixed are blocked (1.599477ms)
+✔ M11 geometry adapter prices both independent products from matrix, ignores native money (1.743943ms)
+✔ CKAD direct matrix uses actual direction and date, no guessed section sum (1.114273ms)
+✔ strict south vector uses finished matrix price (9.245235ms)
+✔ reverse south vector same fare (0.982957ms)
+✔ current candidate exact vector carries warning (0.571743ms)
+✔ partial gate evidence does not replace fare (0.172147ms)
+✔ missing departure date fails; Thursday fare remains fixed across Friday midnight (7.501986ms)
+✔ A289 component cannot vanish in M4 replacement (0.258566ms)
+✔ single confirmed M4 plaza uses its existing candidate fare (0.71046ms)
+✔ ordinary weekday midnight and weekend midnight retain an unchanged complete M4 fare (0.947044ms)
+✔ departure profile stays fixed across a weekend/year boundary; unknown departure year fails (1.324887ms)
+✔ new endpoint-only south lookup needs no intermediate plaza evidence (0.771351ms)
+✔ new endpoint-only lookup supports a single tariff section without native sums (0.357794ms)
+✔ mainline endpoints use the canonical chain excluding intermediate entry tariff (0.61649ms)
+✔ Yandex reviewed northbound cells replace all conflicting variants with one price per profile (1.203286ms)
+✔ reviewed northbound fare does not get mirrored; reverse uses its own canonical estimate (0.588738ms)
+✔ published355 northbound receipt pair is charged220 once in both profiles (0.73676ms)
+✔ 355 southward artificial fare boundaries stay unknown with a specific reason (2.749353ms)
+✔ all 210 head cells remain directed ready fares, including differing Friday reverse price (19.200536ms)
+✔ head uses its own night, next-day 01:00 and holiday calendar (0.38246ms)
+✔ head rejects invalid departure, missing boundaries and negative duration; later night does not reprice (0.629429ms)
+✔ V3 outer boundaries work both directions without intermediate p593 or native fare eligibility (2.336807ms)
+✔ north head fare uses departure despite the Friday exit and ignores old numeric fields (0.780255ms)
+✔ south head and mainline both retain Thursday departure despite a Friday payment window (0.456482ms)
+✔ upper V3 adds head and mainline once in both directions, never the old M11 aggregate (31.071317ms)
+✔ user-approved 94 RUB tail fare prices the continuation in both directions (21.486757ms)
+✔ a route without the Moscow head does not infer the missing mainline from the 94 RUB tail fare (8.30194ms)
+✔ explicit departure overrides the later head payment clock, including night and source date (0.670911ms)
+✔ OSRM M12 span follows exactly the chosen geometry in either direction (8.206607ms)
+✔ M12 destinations, disjoint entries and mismatched overview cannot manufacture a complete vector (0.567537ms)
+✔ M4 worker pool completes candidates in route order with at most two remote requests (117.784595ms)
+✔ M11 retains departure fare overnight and across an intervening weekend (2.444718ms)
+✔ new M4 path checks only its outer boundaries, never intermediate PVPs (105.652329ms)
+✔ archived primary map matches the normalized booths and named one-way toll roads (7.474405ms)
+✔ both actual directional carriageways resolve their own 410 matrix fare (6.466441ms)
+✔ wrong-way geometry, proximity and a long interpolated chord cannot bind a directional fare (0.392976ms)
+✔ bypass needs proven boundaries and valid departure; later Friday does not reprice (2.248927ms)
+✔ M4, A289 and bypass compose three independent ready fares exactly once (1.915348ms)
+✔ upper V3 consumes the bypass product rather than the old aggregate (6.475976ms)
+✔ an unresolved physical bypass blocks a provider-free route at the API boundary (1.68221ms)
+✔ legacy toll weekday display uses Moscow time independently of the host timezone (2.165682ms)
+✔ M11 head respects exact 01:00 and 06:00 Moscow night boundaries and its own stored special days (1.80893ms)
+✖ M4 retains Thursday departure fare; unsupported dates, durations and unresolved A289 still block (7.101929ms)
+✔ M4 calendar rejects normalized impossible dates before tariff lookup (0.511844ms)
+✔ M11 date-only cannot fabricate an entry hour or a midnight transition (0.834966ms)
+✔ M11 mainline uses its own verified order274 holiday schedule and rejects unsupported years (0.930068ms)
+✔ primary owner HTML gives actual cash base fare and matches saved hashes (1.997582ms)
+✔ either actual directed zone1 plaza charges exactly300 without a transponder/night discount (2.05705ms)
+✔ another zone, missing IDs, repeated plazas and incomplete trace cannot turn zone1 into a complete ZSD total (0.451954ms)
+✔ recorded complete Krasnodar–Moscow–SPb geometry prices its actual ZSD zone1, not a named-road guess (44.248883ms)
+✔ ZSD fare validity uses departure, never a later gate crossing that could revive a future fare (0.633115ms)
+ℹ tests 59
+ℹ suites 0
+ℹ pass 58
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 532.307563
+
+✖ failing tests:
+
+test at scripts/v3-time-calendar-audit.test.ts:26:1
+✖ M4 retains Thursday departure fare; unsupported dates, durations and unresolved A289 still block (7.101929ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   amount: 1265,
+  +   confidence: 'matched',
+  +   period: 'понедельник–четверг',
+  +   segments: [
+  +     'М-4: m4-1223 → m4-1184 → m4-1093 · Стоимость не подтверждена',
+  +     'А-289: Slavyansk → Maryanskaya: 415 ₽'
+  +   ],
+  +   weekdayAmount: 1265,
+  +   weekendAmount: 1415
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/b6b2dcd2107d/mezhgorod-calculator/scripts/v3-time-calendar-audit.test.ts:32:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { amount: 1265, weekdayAmount: 1265, weekendAmount: 1415, period: 'понедельник–четверг', segments: [ 'М-4: m4-1223 → m4-1184 → m4-1093 · Стоимость не подтверждена', 'А-289: Slavyansk → Maryanskaya: 415 ₽' ], confidence: 'matched' },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

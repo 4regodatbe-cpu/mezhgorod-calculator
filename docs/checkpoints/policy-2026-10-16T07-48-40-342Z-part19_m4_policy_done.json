@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-16T07:48:40.342Z",
+  "phase": "PART19_M4_POLICY_DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 20,
+  "total": 25,
+  "next": "kherson-старая-збурьевка-moscow-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "parent": "12d60749587ac47c53288c89a5411a0124d7da7d",
+  "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+  "evaluation": {
+    "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+    "result": "not_reproduced_current_engine",
+    "weekdayAmount": 3810,
+    "weekendAmount": 4640,
+    "m4WeekdayAmount": 3810,
+    "m4WeekendAmount": 4640,
+    "remainingMissing": [],
+    "outputs": [
+      {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-48-39-707Z.json",
+        "sha256": "812cc85444056b7c369ae4bbe388a9132c0a402834a1d3d0ee5b33edf4710a60"
+      },
+      {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-48-40-306Z.json",
+        "sha256": "88d09c0dc56b0e58770504132c79e5f21be1794db540679406422cd6319317fe"
+      }
+    ],
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/2026-10-15T18-16-40-411Z-capture.json.gz",
+    "captureSha256": "c76a9a1ade47e032e1a510fcabed7c762b3cabf691fcf539501272acda2a83ed",
+    "components": [
+      {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "components": [
+          {
+            "id": "m4",
+            "amount": 3810,
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      },
+      {
+        "departureAt": "2026-10-17T09:00:00+03:00",
+        "components": [
+          {
+            "id": "m4",
+            "amount": 4640,
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      }
+    ]
+  },
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-40-342Z-part19_m4_policy_done.json"
+}

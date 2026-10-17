@@ -1,0 +1,9 @@
+# Part19D selected paid-way evidence — narrow diagnosis DONE / NEXT STARTED
+
+16.10.2026. Parent0d42950e2715ae0aca6fbe733da2d7ef237c3013/tree7febd2fbedc519739e0fc5bf599aef7f3f089bf1, working branch/PR14draft. Noactivewriter after successfulworkflow38869309675. Samecase only dnr-гранитное-kazan-center; rawSHA5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9, no freshrequest.
+
+Selected capture.record.provider=Valhalla. record.validation complete=true, **paidRoadEdges exactly2**, tollBooths=[]/count0. Both paidways aliases М-4/E50/E115/«Дон»: **1182567076** and **31984600**. Mainland routeplan onlyGranитное→Казань, no alternateprovider/control mixing. Route1696588m; runtimeM4candidateCount0/no knownPVPwithin1.5km, as separately persisted two-profile replay.
+
+Read lib/v3-calculation/unpriced-road-coverage.ts and route-leg-pricing M4 detection: selected named paid evidence adds matchedCoreProducts=m4; M4production validator returnsunknown when route neverapproaches knownPVP. This explains why currentcase is blocked, but it does NOT prove that paidtags are false or that scope is actuallychargeable. Runtime unchanged, no guessedprice/0/freeclaim. Existing full684/focused8/lint3+CIbuildSUCCESS not rerun for readonlydiagnosis.
+
+NEXT STARTED samecase: extract ONLY those2 selectedValhalla trace edges and their shape window from compressedcapture.calls; identify exact length/coordinates/join/exit and rawtollflag, compare with savedM4facilitymap and independent primaryOSM way tags if needed. Do not read whole raw/history into context. Determine missingphysicalfacility vs ramp/tag-scope artifact vs legitimateunknown, then saveevidence before anycodefix. Other22cases/otherclasses not expanded until thiscause understood. Userautomaticcontinuation remainsenabled; no main/merge/Production/Android/messages.

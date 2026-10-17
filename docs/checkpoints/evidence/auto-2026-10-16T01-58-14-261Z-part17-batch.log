@@ -1,0 +1,9 @@
+START 1/1 single-m12-cheboksary-to-moscow
+PHASE --live single-m12-cheboksary-to-moscow 2026-10-15T09:00:00+03:00
+{"caseId":"single-m12-cheboksary-to-moscow","mode":"live","provider":"Valhalla","routeMeters":672177,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-cheboksary-to-moscow/2026-10-16T01-58-19-492Z-capture.json.gz 2026-10-15T09:00:00+03:00
+{"caseId":"single-m12-cheboksary-to-moscow","mode":"offline-recorded-response-replay","provider":"Valhalla","routeMeters":672177,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-cheboksary-to-moscow/2026-10-16T01-58-19-492Z-capture.json.gz 2026-10-17T09:00:00+03:00
+{"caseId":"single-m12-cheboksary-to-moscow","mode":"offline-recorded-response-replay","provider":"Valhalla","routeMeters":672177,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"пятница–воскресенье","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+DONE single-m12-cheboksary-to-moscow audited parity=true
+{"batchPath":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-58-15-634Z.json","attempted":1,"audited":1,"stoppedReason":null}

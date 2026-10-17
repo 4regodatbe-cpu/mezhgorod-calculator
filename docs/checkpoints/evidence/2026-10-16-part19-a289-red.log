@@ -1,0 +1,32 @@
+✖ saved long route proves a complete A289 frame vector with both trip ends outside local exits (207.031496ms)
+✔ unbound partial A289 traversal still blocks a long-route price (0.600349ms)
+✔ full A289 physical frames do not bypass fare validity (296.935799ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 908.622634
+
+✖ failing tests:
+
+test at scripts/v3-a289-long-route.test.mjs:15:1
+✖ saved long route proves a complete A289 frame vector with both trip ends outside local exits (207.031496ms)
+  AssertionError [ERR_ASSERTION]: A-289 frames detected but selected-route exits are unresolved
+  
+  undefined !== 800
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/aeb682d0bb1b/mezhgorod-calculator/scripts/v3-a289-long-route.test.mjs:19:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 800,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

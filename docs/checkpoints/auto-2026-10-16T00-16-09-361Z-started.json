@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:16:09.361Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 104,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 8,
+    "spec": {
+      "caseId": "single-a289-taman-to-krasnodar",
+      "kind": "road",
+      "group": "single-a289"
+    }
+  },
+  "caseId": "single-a289-taman-to-krasnodar",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-16-09-361Z-part8",
+  "parent": "70e6191b315af7235bf7a315d7388cd0e50a6cc2"
+}

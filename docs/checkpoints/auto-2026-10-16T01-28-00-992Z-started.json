@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:28:00.992Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 73,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 14,
+    "spec": {
+      "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+      "kind": "road",
+      "group": "max-chain-m4-ckad-m11-zsd"
+    }
+  },
+  "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-28-00-992Z-part14",
+  "parent": "dbe844878bab13cf8c59dac22d0f9ba88a5912ce"
+}

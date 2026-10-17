@@ -1,0 +1,75 @@
+{
+  "sourceHashes": {
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-planernaya-no-reentry/source-manifest.json": "725b254eaaf053eb2f739a03c0b43dcb2059c7621459eab658f87b871792a3e2",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/capture.json.gz": "e920e57e3e296d51b0f3e3461f150e10fe697d3643d5aff05828e9a47f1cf69b",
+    "experiments/nationwide-tolls/scripts/trace-zsd-osrm-replacements.mjs": "595158b010e5b4e2dc8f68f2c1df999ea95b74d0d174b7800d14bc6b455dd262",
+    "lib/v3-calculation/route-candidate.ts": "060548c62fd1ac3f76a811e7fc20137a7ad46aca791657caaa60fcc19bbb3f1b",
+    "lib/v3-calculation/zsd-reentry-policy.ts": "f7ea79476be9bfb0f96a2b26e3bbfeb5bd13fa97f0da128f8ea537942235ddea",
+    "lib/toll-validator.ts": "94e8d3ed0b16cd175b9ecc0ea89f35e369a52745253d5909c8d55a5615b40df7",
+    "lib/v3-calculation/route-leg-pricing.ts": "58d7aa0a6e7049c99c40aeb251bc163b45cd29c3971b23a50ddfff607f818ab7",
+    "lib/v3-calculation/zsd-cash-card-component.ts": "068551e6e57d75092447e7cdbec07bcaa3aeea30d1458355acad8730a2c94f9c",
+    "lib/v3-calculation/zsd-zone1-component.ts": "05081f33cd30e0904558a24d41859030b38a1737b22162bc59eefc7ecc04d4d7"
+  },
+  "counts": {
+    "checkedCases": 5,
+    "pricedComponents": 19,
+    "pricedZsdComponents": 5,
+    "confirmedFullTripFares": 0,
+    "completeOwnTraces": 5,
+    "newRoutingRequests": 0
+  },
+  "newTraceNetworkRequests": 16,
+  "traceRequestOccurrences": 43,
+  "reusedResponseOccurrences": 27,
+  "distinctUsedRawResponses": 20,
+  "distinctPriorSeedResponsesUsed": 4,
+  "terminalBlock": null,
+  "cases": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "zsdRub": 300,
+      "calculatedTripRub": null,
+      "priceConfirmation": "unconfirmed",
+      "missing": [
+        "m12",
+        "ckad"
+      ]
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "zsdRub": 300,
+      "calculatedTripRub": null,
+      "priceConfirmation": "unconfirmed",
+      "missing": [
+        "m12",
+        "ckad"
+      ]
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "zsdRub": 300,
+      "calculatedTripRub": 7254,
+      "priceConfirmation": "unconfirmed",
+      "missing": []
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-torzhok",
+      "zsdRub": 300,
+      "calculatedTripRub": null,
+      "priceConfirmation": "unconfirmed",
+      "missing": [
+        "m11-58-679",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "zsdRub": 300,
+      "calculatedTripRub": 7254,
+      "priceConfirmation": "unconfirmed",
+      "missing": []
+    }
+  ],
+  "historicalBaselineRecomputed": false,
+  "priorRepresentativeNotRepriced": true
+}

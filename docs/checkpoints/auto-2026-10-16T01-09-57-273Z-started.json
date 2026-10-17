@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:09:57.273Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 49,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 13,
+    "spec": {
+      "caseId": "zaporizhzhia-мелитополь-kerch-center",
+      "kind": "regional",
+      "region": "zaporizhzhia"
+    }
+  },
+  "caseId": "zaporizhzhia-мелитополь-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-09-57-272Z-part13",
+  "parent": "637a29c03b7ca0a5bc1022b6fb4f3bdd7d6c589c"
+}

@@ -20,7 +20,10 @@ test('both airport directions become one detected unresolved product, not an inv
  for(const shape of [route,[...route].reverse()]){
   const evidence=inspectM11PulkovoAccess(shape);
   assert.equal(evidence.candidate,true);assert.equal(evidence.productId,'m11-679-684');
-  assert.ok(evidence.matchedGateIds.length);assert.equal('amount' in evidence,false);
+  assert.equal(evidence.matchedGateIds.length,2);
+  assert.equal(evidence.direction,null);
+  assert.equal(evidence.evidenceStatus,'ambiguous_nearby_gates');
+  assert.equal('amount' in evidence,false);
  }
  assert.equal(inspectM11PulkovoAccess([[30.2,59.79],[30.21,59.79]]).candidate,false);
 });
@@ -31,5 +34,5 @@ test('an airport toll gantry blocks a complete zero even when the provider calls
  const api=tollsForApi(result.tolls,result.fastValidation);
  assert.equal(api.amount,null);
  assert.equal(api.pricingStatus,'unknown');
- assert.match(JSON.stringify(result),/m11_pulkovo_paid_product_scope_unresolved/);
+ assert.match(JSON.stringify(result),/m11_pulkovo_direction_ambiguous/);
 });

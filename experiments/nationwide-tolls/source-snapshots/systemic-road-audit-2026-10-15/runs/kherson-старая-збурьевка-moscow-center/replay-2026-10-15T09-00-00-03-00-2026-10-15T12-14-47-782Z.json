@@ -1,0 +1,323 @@
+{
+  "caseId": "kherson-старая-збурьевка-moscow-center",
+  "region": "kherson",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "OSRM",
+      "meters": 2031289,
+      "seconds": 101632
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "Valhalla",
+      "error": "Error: ROUTE_UNAVAILABLE"
+    },
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 2031289,
+  "routeSeconds": 101632,
+  "controls": [
+    {
+      "corridor": "crimea",
+      "positions": [
+        {
+          "lat": 46.4727289,
+          "lng": 32.420034
+        },
+        {
+          "lat": 45.708,
+          "lng": 34.395
+        },
+        {
+          "lat": 45.2117,
+          "lng": 36.7161
+        },
+        {
+          "lat": 45.045,
+          "lng": 39.15
+        },
+        {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [],
+    "provenRoads": [
+      "a289",
+      "m4"
+    ],
+    "missingExpectedRoads": [],
+    "status": "not-assigned"
+  },
+  "passageEvidence": [
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1058111108",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1381361836",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1058111107",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1040867783",
+      "names": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1040867782",
+      "names": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "87094276",
+      "names": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9772717210"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "6594273708"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5325424716"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11295106602"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11838466120"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "75715767"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "7678126300"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "4315323077"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5818209495"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3257030196"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "75724804"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3717382721"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "2431427636"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5061777372"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "4341143825"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "285903913"
+    },
+    {
+      "road": "a289",
+      "kind": "selected-geometry-exact-frames",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ]
+    }
+  ],
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/2026-10-15T12-14-47-097Z-capture.json.gz",
+  "captureSha256": "360bde4f11db57e9dd35c3b7d58c03fc5130e77f66b714622ab0ef644596ca08",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": null,
+      "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+    },
+    {
+      "id": "a289",
+      "amount": null,
+      "reason": "A-289 frames detected but selected-route exits are unresolved"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "А-289",
+    "М-4",
+    "E 115",
+    "«Дон»",
+    "E 50",
+    "Дон",
+    "Самарское шоссе",
+    "улица Изыскателей",
+    "E 119",
+    "AH8"
+  ],
+  "tollNodeIds": [
+    "9772717210",
+    "6594273708",
+    "5325424716",
+    "11295106602",
+    "11838466120",
+    "75715767",
+    "7678126300",
+    "4315323077",
+    "5818209495",
+    "3257030196",
+    "75724804",
+    "3717382721",
+    "2431427636",
+    "5061777372",
+    "4341143825",
+    "285903913"
+  ],
+  "m4PvpPreview": {
+    "status": "boundaries_resolved",
+    "reason": null,
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 3,
+    "confirmedPvps": [
+      "m4-1223",
+      "m4-71"
+    ],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [
+    "103",
+    "82",
+    "23"
+  ],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m4, a289",
+      "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+      "a289: A-289 frames detected but selected-route exits are unresolved"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m4",
+      "a289"
+    ],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": null,
+        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+      },
+      {
+        "id": "a289",
+        "detected": true,
+        "tolls": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      }
+    ]
+  },
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "a289": {
+      "occurrences": 180,
+      "uniqueWays": 157
+    },
+    "m4": {
+      "occurrences": 818,
+      "uniqueWays": 590
+    }
+  }
+}

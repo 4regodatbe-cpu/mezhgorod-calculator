@@ -1,0 +1,88 @@
+{
+  "caseId": "kherson-чулаковка-kerch-center",
+  "region": "kherson",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 449145,
+      "seconds": 25371
+    },
+    {
+      "name": "OSRM",
+      "meters": 432652,
+      "seconds": 23761
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: ROUTE_UNAVAILABLE"
+    }
+  ],
+  "routeMeters": 432652,
+  "routeSeconds": 23761,
+  "controls": [
+    {
+      "corridor": "crimea",
+      "positions": [
+        {
+          "lat": 46.361961,
+          "lng": 32.358509
+        },
+        {
+          "lat": 45.708,
+          "lng": 34.395
+        },
+        {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [],
+    "provenRoads": [],
+    "missingExpectedRoads": [],
+    "status": "not-assigned"
+  },
+  "passageEvidence": [],
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kerch-center/2026-10-15T12-11-17-292Z-capture.json.gz",
+  "captureSha256": "217ca10b0c0c5c0b4d22d20ff31b8fcf669e42b98a20d580eda2e53e31d0d60b",
+  "detectedRoadComponents": [],
+  "paidRoadEdgeNames": [],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 0,
+    "weekdayAmount": 0,
+    "weekendAmount": 0,
+    "period": "понедельник–четверг",
+    "segments": [],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "free"
+  },
+  "audit": {
+    "status": "none",
+    "priced": [],
+    "missing": [],
+    "components": []
+  }
+}

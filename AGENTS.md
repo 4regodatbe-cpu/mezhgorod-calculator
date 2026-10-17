@@ -2,6 +2,24 @@
 
 Before repository work, read docs/WORK_STATE.md. It is the canonical current-state handoff and links to the relevant specifications and checkpoints.
 
+## Scope, repeated findings and honest progress (user decision, 2026-10-16)
+
+Read and follow `docs/WORKFLOW_RULES.md`. Review findings by root cause and user impact. Check repeated cases for material exceptions instead of repeating a complete investigation without a new reason. Give each assessed cause one explicit outcome: fixed and verified; not reproduced; blocked by missing reliable data; deferred. Preserve evidence for the decision and distinguish unfinished assessment from a final outcome.
+
+Do not add stages to increase a counter. Read large JSON/logs by exact fields, paths and ranges; keep full evidence out of the model context. For short local evidence reviews, save one completed-step checkpoint; a separate STARTED commit is required before long operations, not before every read. The durable-save requirements below still apply to each completed unit.
+
+Report `SMALL_PARTS_PLAN.json.progressReporting` only as completion of that formal plan, using its existing formula (currently 18/20 = 90%). Separately state unresolved causes, checks actually completed, and tariff confirmation. The 20-part route-audit plan includes both 155- and 154-case batches; it does not establish completion of the broader calculator/matrix task. Do not invent weighted completion percentages or treat a representative case as all cases checked.
+
+Use the existing authorized GitHub transport. An unauthenticated CLI push is a transport limitation, not absence of repository write permission. Do not repeatedly retry unchanged CLI credentials, extract connector secrets, or report Git authorization as configured without a successful check. A clean checkout must start from the verified remote head; use non-force updates and verify exact tree/path SHAs.
+
+## Mandatory small-step durable checkpoints (user clarification, 2026-10-15)
+
+Read and follow `docs/CHECKPOINT_PROTOCOL.md` before any task action. This clarification supersedes older instructions limiting records to substantial blocks or saying not to log tiny operations.
+
+After **each small completed change, test step, recovery operation or route case**, create a separate dated checkpoint record under `docs/checkpoints/`, save the exact changed files and evidence, update the short handoff/index, commit, persist to the authorized GitHub working branch, and read back the branch head to verify the expected commit. Do not start the next independent step until this durable checkpoint is verified. A local commit, uploaded unreferenced blobs/tree, or a chat report alone is not sufficient.
+
+Before a long operation, first persist a STARTED checkpoint with inputs and the recovery action; after it ends, save DONE/FAILED and exact outputs. If durable saving fails, stop expansion, preserve the current work, record the blocker and notify the user. Do not claim unsaved results are safely stored. Keep chat updates compact; detailed small-step records belong in the repository. This rule does not authorize merging, production deployment or destructive actions.
+
 ## Mandatory repository handoff and full work history (user requirement, 2026-10-09)
 
 **The repository, not an individual chat, is the persistent record of the project.** Every developer/agent in every new chat must be able to resume the project from committed files alone, without access to previous chats.
@@ -23,7 +41,7 @@ Before repository work, read docs/WORK_STATE.md. It is the canonical current-sta
 
 ## Keep state recoverable
 For each substantial implementation block, update docs/WORK_STATE.md in the same branch before ending. Record what changed and why, important files, deferred/rejected work, exact tests/builds/workflow runs and verified commit, remaining risks, and one next action.
-Append a dated entry to the relevant detailed work log/checkpoint for large blocks. Keep WORK_STATE concise and link evidence instead of copying it. Do not log every tiny operation. Label items done, in progress, blocked, or deferred; never state a plan as completed.
+Append a dated record for every small completed step according to docs/CHECKPOINT_PROTOCOL.md. Keep WORK_STATE concise and link the checkpoint/evidence instead of copying it. Label items done, in progress, blocked, or deferred; never state a plan as completed.
 If essential context is missing from the repository, search the named earlier chat as a fallback and immediately persist the recovered decision in the repository.
 
 ## Safety and verification
@@ -32,3 +50,8 @@ If essential context is missing from the repository, search the named earlier ch
 - Preserve toll fail-closed rules: unknown is not free, partial toll sums are not complete, and only independently confirmed routes may be labeled free.
 - Keep offline benchmark snapshots out of live route selection and pricing.
 - After code changes, run focused tests plus the required full gate/build. For docs-only changes, verify links/content and accurately report CI status.
+
+
+## Latest user update — 2026-10-17 15:00 MSK
+
+The user authorized bounded batch exception checks for repeated cases: persist STARTED, per-case evidence/progress, then one final checkpoint/commit/readback for the batch. Do not trigger one commit/CI per case in an authorized batch. See the latest section of docs/WORKFLOW_RULES.md and docs/CHECKPOINT_PROTOCOL.md. The completed old formal-plan percentage is historical; omit it from current user reports. These updates override the earlier per-case commit and percentage-reporting text for this scope.

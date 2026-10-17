@@ -1,0 +1,30 @@
+{
+  "sourceHead": "5281fa019eda95128035be5a0a1d2d1d95f34425",
+  "caseId": "pair-m11-zsd-prim-to-torzhok",
+  "ownRouteInputRoot": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok",
+  "observedExit": {
+    "osmNodeId": "3183012434",
+    "wayId": "795246101"
+  },
+  "candidatePoint": "p258",
+  "candidateBindingConfirmed": false,
+  "readyRowsLookupOnlyNotAppliedToRoute": {
+    "from": "p679",
+    "to": "p258",
+    "monThu": 2400,
+    "friSun": 2490,
+    "date": "2026-10-15",
+    "source": "source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf"
+  },
+  "sourceHashes": {
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/capture.json.gz": "ad40dfa2b7bd7fc69266854e18816c5804d7152879edab54d5abb1a7e2b49bb4",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/route.json.gz": "3ca13bf5d3f36ec91fa14ed7a4b683423a6cc3f988780ce0a7f4ec57ca920597",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/result.json": "89ce4723dcd40069480659a170c12d99adf7b167ba362c449cd7ec5207214bf5",
+    "data/tolls/m11/2026-10-01-58-679-category1-a1-current.json": "61628b9052b90a8a77c9b49277a0e17851490f7b00399806fb4c278314287bed",
+    "data/tolls/m11/2026-10-01-58-679-spatial-anchors.json": "39919154bce0c9beea83afcc051d8e236a9e7e8605bb38cf633825b51015f854",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf": "6b52ca130ee7e8a7948c2b39982c00d82174e4e45ec5dcd3983355238c403b91"
+  },
+  "newRoutingRequests": 0,
+  "newTraceRequests": 0,
+  "status": "PREPARED_SOURCE_BINDING_NOT_PROVED"
+}

@@ -18,6 +18,7 @@ export type TollValidation = {
   wayIds: string[];
   roadNames: string[];
   message: string;
+  paidRoadEdges?: Array<{wayId:string|null;roadNames:string[]}>;
   tollBoothCount?: number;
   tollBooths?: TollBoothEvent[];
   // New validators always fill these fields. They remain optional at the type
@@ -46,7 +47,10 @@ type TraceEdge = {
 
 const MAX_TRACE_POINTS = 320;
 const MAX_TRACE_CHUNK_KM = 140;
-const CHUNK_CONCURRENCY = 3;
+// The public Valhalla instance rate-limits long multi-chunk traces. Keep the
+// per-route fanout modest; transient 429 responses also receive a bounded
+// exponential retry below. Incomplete chunks must still fail closed.
+const CHUNK_CONCURRENCY = 2;
 
 function distanceKm(a: Coordinate, b: Coordinate) {
   const rad = Math.PI / 180;
@@ -129,7 +133,8 @@ async function traceChunk(route: Coordinate[]) {
       ],
     },
   };
-  const response = await fetch(url, {
+  const deadlineAt = Date.now() + 18_000;
+  const send = () => fetch(url, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -138,8 +143,26 @@ async function traceChunk(route: Coordinate[]) {
     },
     body: JSON.stringify(request),
     cache: "no-store",
-    signal: AbortSignal.timeout(18_000),
+    signal: AbortSignal.timeout(Math.max(1, deadlineAt - Date.now())),
   });
+  let response = await send();
+  // A long route sends several chunks. Retry transient rate limits twice with
+  // bounded backoff. Respect Retry-After when supplied; if it is too long for
+  // this request budget, leave the chunk unresolved instead of retrying early.
+  for (let retry = 0; response.status === 429 && retry < 2; retry += 1) {
+    const retryAfter = response.headers.get("retry-after");
+    const seconds = retryAfter === null || retryAfter.trim() === "" ? NaN : Number(retryAfter);
+    const date = retryAfter ? Date.parse(retryAfter) : NaN;
+    const delay = Number.isFinite(seconds) && seconds >= 0 ? seconds * 1000
+      : Number.isFinite(date) ? Math.max(0, date - Date.now()) : 1_000 * (2 ** retry);
+    if (delay <= 5_000 && delay + 1_000 < deadlineAt - Date.now()) {
+      await response.body?.cancel();
+      if (delay > 0) await new Promise(resolve => setTimeout(resolve, delay));
+      response = await send();
+    } else {
+      break;
+    }
+  }
   if (!response.ok) throw new Error(`TRACE_${response.status}`);
   const data = (await response.json()) as { edges?: TraceEdge[] };
   // HTTP200 with missing/empty trace is not proof that a route has no tolls.
@@ -198,6 +221,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
   const complete = failed.length === 0 && successful.length === chunks.length;
   const checkedEdgeCount = successful.reduce((sum, item) => sum + item.edges.length, 0);
   const roadNames = dedupe(tollEdges.flatMap((edge) => edge.names ?? []).filter(Boolean));
+  const paidRoadEdges = tollEdges.map(edge => ({wayId:edgeWayId(edge),roadNames:edge.names??[]}));
   const wayIds = dedupe(tollEdges.map(edgeWayId).filter((value): value is string => Boolean(value)));
   const tollBooths: TollBoothEvent[] = boothEdges.map((edge, edgeIndex) => ({
     osmNodeId: edgeNodeId(edge),
@@ -217,6 +241,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       checkedEdgeCount,
       wayIds,
       roadNames,
+      paidRoadEdges,
       message: tollEdges.length > 0
         ? `Платные дорожные рёбра подтверждены, но проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`
         : `Проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`,
@@ -237,6 +262,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     checkedEdgeCount,
     wayIds,
     roadNames,
+    paidRoadEdges,
     message: tollEdges.length > 0
       ? `Подтверждены платные дорожные рёбра: ${tollEdges.length}`
       : tollBooths.length > 0

@@ -1,0 +1,60 @@
+{
+  "startedAt": "2026-10-16T00:19:30.607Z",
+  "scope": {
+    "region": null,
+    "group": "single-khabarovsk",
+    "caseId": "single-khabarovsk-smidovich-to-vyazemsky",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-khabarovsk-smidovich-to-vyazemsky",
+      "startedAt": "2026-10-16T00:19:30.609Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-vyazemsky/live-2026-10-15T09-00-00-03-00-2026-10-16T00-19-32-756Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-vyazemsky/2026-10-16T00-19-32-738Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-19-33-151Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-19-33-527Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "khabarovsk"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "khabarovsk"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "weekday": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "понедельник–четверг",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "weekend": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "пятница–воскресенье",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "components": [],
+      "finishedAt": "2026-10-16T00:19:33.543Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T00:19:33.545Z"
+}

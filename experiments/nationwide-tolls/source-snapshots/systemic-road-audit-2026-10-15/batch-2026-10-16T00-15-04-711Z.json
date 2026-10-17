@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-10-16T00:15:04.711Z",
+  "scope": {
+    "region": null,
+    "group": "single-a289",
+    "caseId": "single-a289-krasnodar-to-kerch",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-a289-krasnodar-to-kerch",
+      "startedAt": "2026-10-16T00:15:04.713Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-kerch/live-2026-10-15T09-00-00-03-00-2026-10-16T00-15-07-053Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-kerch/2026-10-16T00-15-07-021Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-15-07-444Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-15-07-840Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "a289"
+        ],
+        "provenRoads": [
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": 800,
+        "weekdayAmount": 800,
+        "weekendAmount": 800,
+        "period": "все дни",
+        "segments": [
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 800,
+        "weekdayAmount": 800,
+        "weekendAmount": 800,
+        "period": "все дни",
+        "segments": [
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "a289",
+          "amount": 800,
+          "reason": "A-289 selected-route OD vector"
+        }
+      ],
+      "finishedAt": "2026-10-16T00:15:07.856Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T00:15:07.858Z"
+}

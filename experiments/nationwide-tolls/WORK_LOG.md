@@ -1,1219 +1,2145 @@
-# Nationwide toll-road calculator — append-only work log
+# Текущий рабочий журнал
 
-## 2026-10-09 — phase A: nationwide inventory, verified source examples and safe Preview diagnostics
-**User request**: extend toll calculation to **all Russian paid roads**, not only M4. No repeat requirements questions; build autonomous blocks in isolated Git branch.
+Полная прежняя история без изменения содержания: [WORK_LOG_HISTORY_2026-10-15_2228.md](WORK_LOG_HISTORY_2026-10-15_2228.md). Новые записи добавляются ниже; подробности каждого малого шага — в docs/checkpoints/.
 
-**Baseline discovered**: `lib/v2-calculation/route-leg-pricing.ts` had existing independent live M4/M11/M12/CKAD/A289 components, but M1/M3 detected by old `estimateTolls` were always `tolls:null` and the `regional` family collapsed Ufa/Tolyatti to an unpriced catch-all. Legacy `lib/toll-data/m1-m3.ts`, `regional-ckad.ts` contained approximate checkpoint geometry not independently verified toll evidence. `lib/toll-engine/other-road-current-tariffs.ts` already had official M1/M3/CKAD/A289 2026-10-01 amounts that were not fully wired. The new M4 PVP matrix remained empty.
+# Восстановление среды после прерывания сохранения
 
-**Implementation commits (this phase)**:
-- `723d7b7366476ae367b5aba68e00474f41e3e1a6`: `national-registry.json` for 22 networks, strict `national-price.mjs` and standalone tests. Operator fare sources for M1, M3, Bagration, Udmurt Kama/Bui, Kazan Voznesensky, Moscow MSD. No assumption that register includes all toll points.
-- `213313b236ee5689066f4ae1d538340a0ecc372e`: added Ufa East fixed 150 RUB and Tolyatti exclusive 210/140/320 RUB corridor fares, protecting full corridor from incorrectly summing 210+140.
-- `d1d20b709250ac8d1447ad9bee4a5d1fee2b5a99`: `national-preview.mjs` route-family classifier, `lib/v2-calculation/route-leg-pricing.ts` and `route-leg.ts` attach `nationalTollCoverage`, UI collapsible `result-panels.tsx`, server static `app/v2/toll-roads/page.tsx`, link from main `/v2`, app DTO, extend `pnpm run build` to test both experiment suites. **No new money added to UI totals.**
-- `2fe9ad2a862f4a929c120e1fb9a81c117b55339f`: MSD city fare on official working days only, same civil-date entry and exit checks, returns null for temporal mismatches and 0 only for independently verified truly free city pass.
-- `672a768f4c8b2a5996db6b47bfa6588852941cde`: `quoteNationwideTrip` strictly sums only completely proven national road events, with no mixed partial totals; restricts future audit-unknown tariffs, invalid Gregorian dates, MSD CKAD-CKAD 24h requirement.
-- `6917191f6be70561872a971cd904c9f665e4dda7`: found via actual browser E2E that legacy `estimateTolls` supplied no M4 segment labels even though real strict M4 PVP validator confirmed 7 paid gates. Updated national coverage inspector to accept independent system candidate signals from existing strict M4, M11, M12, CKAD production modules, **but still not bill based on mere candidate status**.
+STARTED 2026-10-15T22:29:12.186127+03:00. Execcell36недоступен, прежняярабочаякопияисчезла. Созданновыйclone рабочейветки fix/v3-missing-route-prices-2026-10-15 изGitHub. Remote/local97386e0ca063792f5c85e44dace2794964ed00f1,tree91d27d96a86735c7668926bb7d9709863142a325 сверены. Основнойкодdeparturepolicy сохранён. Последнийlocalc2acfe6/59PASSне дошёлдоremote: осталасьстараяassertnullдляизвестнойМ4+А289суммы1265; новыйauditmarkerтакженесохранён. Необъявлятьпрежний59PASSвосстановленнымбезновогозапуска.
 
-**Actual native tests & deployments**: At commit `672a768f`, Vercel deployment `dpl_5Y4dHFCLkHZeHVqLYUf1qqbYoBfF` was READY; combined `node --test experiments/toll-od-matrix/*.test.mjs experiments/nationwide-tolls/*.test.mjs`: **232 PASS / 0 FAIL**, Next/TypeScript compiled and deployed successfully. Latest `6917191` additionally authors 3 coverage-focused test cases; must inspect **its own** Vercel build logs for exact total before upgrading the verified number. [This block may be completed in following log entry.]
+Каталогиnode_modules другихстарыхкопий не содержатдоступногоnext; нужнызависимости. NEXT: pnpm install --frozen-lockfile,stdout docs/checkpoints/evidence/2026-10-15-resume-departure-install.log; затемсохранитьрезультат. Послеinstall восстановитьдваизвестныхмалыхизменения иfocused59,отдельныйcheckpoint; потомfullbuild/replay/liveБахмут→Казань.
 
-**Live-browser E2E on commit `672a768f` Preview**: `/v2/toll-roads` renders all 22 systems; back navigation to V2 confirmed. Actual Москва→Воронеж produced 515.9 km / 6h45 / **3,060 RUB legacy M4 toll**, M4 strict validator identified 9 candidates, 7 paid points; national reference fares were **not added**. Browser uncovered a diagnostic omission: national indicator showed zero candidates because approximate legacy road segments were blank. Fixed in `6917191` by piping strict M4 actual signal; next E2E should show M4 as candidate.
+Дляуменьшенияобъёмакаждогосохранения большойWORK_LOGиNEXT_STEPSперенесеныбезизменениябайтовв*_HISTORY_2026-10-15_2228.md. Новыеиндексысодержатпрямыессылки; историянеудалена/непереписана, дальнейшиезаписиappendвкороткийWORK_LOG. Этоустраняетповторнуюпередачусотентысячбайтовприкаждомcheckpoint. Артефакты/кодпрежнихшаговостаютсядостижимымивGitHub.
 
-**Source provenance and exclusions**: see `SOURCE_AUDIT_2026-10-09.md`. Operator sites for Avtodor, m-road, MSD, Kazan, Udmurt, Pskov, Ryazan, Transtoll and ZSD consulted. Unverified full ZSD OD, Mytishchi, Khabarovsk, Northern Odintsovo time-by-gate, Ryazan 2026 new tariff, Pskov 4 actual tariffs, international bridge not numerically loaded. It would be incorrect to claim all Russian tolls priced. 8 source-price groups only, many require exact working day, direction or camera proof.
+Новыхтестов/buildещёнет; Production/Android/mergeнет. Аудит8/155,40rawOD/39originalcomplete, тарифыдосменыполитикиисторические. Междорожныевекторыотложены; новоеdeparturepolicy21:48 действует.
 
-**Release control**: experiments are hosted in Preview; `main`, PR #12 and Production remain unchanged. All new road table calculations are shadow/offline; existing customer fare remains legacy calculator. No background worker, scheduler or live data scraper started.
 
-**Remaining**: build independent physical paid gate/zone extraction for each network, secure dated tariff matrices across all 22 and add official operator ticket/calc E2E, then enable strictly gated actual fare cutover by network. Avoid falsely claiming all roads done.
+# Зависимости восстановлены
 
-## 2026-10-09 — phase B: latest Preview verification, real-browser route regression, and confirmed handoff
+DONE 2026-10-15T22:30:22.511770+03:00, remote5d2dcf1f0b092231f6d223586842e5eb134ac434/tree4c1437636a4b0ae48488d13d60114ecf6778c94a подтверждены. pnpm install --frozen-lockfile exit0; stdout docs/checkpoints/evidence/2026-10-15-resume-departure-install.log. Lockfileнеизменён, новыхruntimeтестовещёнет.
 
-- **Code revision actually tested:** `6917191f6be70561872a971cd904c9f665e4dda7`. This changed national candidate extraction to combine selected-route strict M4 PVP evidence and current M11/M12/CKAD engine signals with old geometry labels; still does not use tentative road names to bill money.
-- **Vercel deployment inspected:** `dpl_DEWDeg7fWdkM8Lcr8fK88eycsDb4` `readyState=READY`, https://mezhgorod-calculator-pjfvyy2kq-4regodatbe-5310.vercel.app/v2 . Deployment logs show **235 native Node tests PASS, 0 FAIL**, then **Next.js compilation PASS, TypeScript PASS, static generation 14/14 PASS** (includes `/v2` and `/v2/toll-roads`). `/v2/toll-roads` independently fetched with HTTP 200.
-- **Full actual browser E2E on that same deployed code:** TinyFish run `4227d920-4a18-4992-940b-d520ca07cbcd`, selecting Москва → Воронеж via address suggestions. Page calculated **515.9 km**, **6 h 45 min**, **3,060 RUB existing/legacy M4 toll**, with no new national price added. National collapsible diagnostic correctly reports **22 systems inventoried, 8 with selected operator fare rows**, and **М-4 «Дон»** as potential system on actual route. Separate M4 strict diagnostics shows **9 plaza candidates, 7 confirmed crossings** `m4-71 → m4-133 → m4-228 → m4-322 → m4-339 → m4-416 → m4-460`, new M4 full price rows **0**, reason `no_verified_complete_m4_pvp_tariffs`. No interface error in this run.
-- **Earlier browser E2E** of `672a768f` showed national candidates empty due to absence of legacy M4 checkpoint matches **even while strict M4 PVP found seven**; fixed by `6917191f`. Retain this negative test as regression rationale.
-- Documentation-only followup commit after `6917191f` does not change the tested code. **No proof** that all 22 systems are simultaneously priced. This phase implements inventory, selected offline operator rules, fail-closed national compositor and route-scoped Preview diagnostics; not an all-Russia invoice deployment.
-- **Next executable task:** build a national paid-edge/camera and entry/exit graph-matching adapter with timestamp and vehicle class on selected route; validate actual source-issued whole-route tariffs in a second real network (e.g. M3) before gated billing cutover. Operator matrices for unpriced 14 groups remain incomplete. Record all findings in this log before the next handoff.
+NEXT/STARTED: восстановитьнезакреплённыепоследниеправкиassert1265+missingM4guardиauditmarkertrip-departure-v1; выполнитьexpandedfocused8файлов заново,сохранитьлог/результат. Затемfullbuild/ESLint,offlineконтроль,продолжениеаудита. Старый59PASSневосстановленизсырогологаи незасчитывается заново. Матричныеданные/Production/Androidбезизменений.
 
-## 2026-10-09 — Phase C: M1/M3 physical PVP extraction, debugging, six named bidirectional M3 nodes and shadow quote
 
-**User asked "Делай"**. Follow-up to the nationwide project. Objective: integrate M1/M3 exact physical passage detection and start matching operator rates **without inventing route tolls**. New scope M1 PVP46 km and M3 PVP86/136/168 km from Avtodor official sources (links in M1_M3_EVIDENCE_2026-10-09.md). Per user repository rule record each failed verification and correction.
+# Восстановленная проверка59/59PASS, полныйbuildSTARTED
 
-**Source code commits**, all on `experiment/toll-od-matrix-2026-10-08`:
-- `17cbd59bbe2f975a4b031f109e8945a594e7e7cb`: `m1-m3-official-gates.json` operator-km physical facility template; `m1-m3-gate-evidence.mjs` selected-route full Valhalla toll-booth evidence matcher, refuses unknown/incomplete/duplicate and `strictPriceAllowed:false`; 20 regressions authored.
-- `4e126fad9e7cac63edec530848b3ea8104ebae76`: wires selected-route evidence to V2 API coverage diagnostics. **Vercel native tests 258/258 passed but TypeScript failed** due to missing `m1m3GateAudit` in return signature; fixed `eb01350e68cb11d76d7f1e9161eb6a062795f2fd`, Vercel READY.
-- `b840d8e2f9981ca61704c2b22a6b23c97e065c9a`: explicit opt-in checkbox `Углублённая проверка ПВП` makes full-route `diagnostics:true` request to `validateTollEdges`; preserving default faster route UI and amounts. Vercel **262/262 PASS**, READY.
-- `a4eae6929636cab56abcfc488181d47d31b205ac`: add unknown toll-booth candidate OSM IDs to UI. **263/263 native tests passed, Next JSX build FAILED** because new paragraph siblings were missing enclosing fragment. Fixed `0377e556e647a43766f64d5a8fcb20b2e7269bed`, Vercel READY **263/263**. Browser real Москва→Калуга 189.1 km/3h14, deep mode: 3 paid events on M3, 0 verified OSM nodes, IDs were null.
-- `93e087129d4cf260a3bf96c8750cf82713bb0db4`: fixed full-route Valhalla trace attr `node.osm_id` → `edge.end_osm_node_id` with fallback; 3 additional tests, Vercel **266/266 PASS**. Repeated browser E2E resolves real M3 IDs `13294157951`, `4780909558`, `4780909555`.
-- `1bb04415c6e691c1ce93e56f319f3e1a1752808c`: fetched each official `openstreetmap.org/api/0.6/node/...`, verified `barrier=toll_booth` plus explicit "ПВП 86/136/168 км", location and (where present) operator; appended to gate inventory with full provenance and regressions.
-- `5608c39970a52d58a41f3c0a648175140198b95e`: `m1-m3-shadow-quote.mjs`, gated sample complete 3-PVP **M3 component only** computation, non-overlapping tariff date/profile and original `quoteNationalRoad` validation, 15 regression tests; `strictPriceAllowed` remains false for actual money.
-- `0118196e5bc24caccc0e5b35ff21571fed64bcdd`: show M3 full 3-PVP shadow amount only when all data matches, otherwise unknown; actual route price unchanged. Vercel **285/285 PASS**, Next/TypeScript PASS, deployment `dpl_6z1EEyzUgqHwoKdx6f97GDd8vha7` READY. Browser forward E2E `d8d0756e-8e68-428d-9961-e6a852bf4061`: M3 **3 verified physical nodes, 0 unknown**, M3 component 800 RUB (2026-10-09 Friday), money **NOT charged to customer**. Browser reverse E2E `f50a7cf3-01c2-4b27-82d9-7967bec0eb3c`: reverse 187.8km/3h15, three unrecognized physical node IDs `4780909556`, `4780909557`, `13310936104`, no shadow price.
-- `053b32c3a2d9619c4c3abfe83183ce883906e057`: independently fetched all **three reverse direction** nodes from OSM API; names/coordinates confirm reverse assignment 168km→136km→86km; added each to same facility's `verifiedOsmNodeIds`. Added 3 regressions including duplicate opposite-lane toll proof rejection.
-- `04c253d23ade176a49b236032aebaa6c0d1a6498`: revised UI to say M3 directional physical nodes are verified while M1 remains unknown. Vercel deployment `dpl_AyBUbHjyX1mZFh6rA2wftV2Fv5ja` **READY**, 289/289 native Node tests PASS, TypeScript/Next PASS. Latest verified executable preview URL `https://mezhgorod-calculator-r6x9ndg7j-4regodatbe-5310.vercel.app/v2`.
-- **Live browser reverse proof:** run `95dab92e-7e65-46cf-9509-9d4a64466aa7`, selected Калуга→Москва 187.8km 3h15, **3 confirmed named M3 OSM physical gates**, unmapped count 0, source Fri M3 shadow diagnostic **800 RUB**, **NOT added**; customer toll cost still unknown, standard fare shown without paid roads. No critical browser errors. Detailed six-node + three-run evidence in `M1_M3_EVIDENCE_2026-10-09.md`.
+DONE 2026-10-15T22:31:01.629582+03:00, parentremote740156474625283083b4e16f101af2be182a56d4. Восстановлены2потерянныхизменения: составнаяМ4+А289цена1265иотдельныйmissingM4guard вv3-time-calendar-audit.test.ts; tariffPolicy trip-departure-v1/basisAt вновыхauditoutputs. Повторnode --import ./scripts/register-ts-paths.mjs --test8файлов(М4/datecalendar/М11ЦКАД/М11products/ЗСД/timecalendar/southern/availability) exit0,59/59PASS. Новыйточныйstdout docs/checkpoints/evidence/2026-10-15-departure-policy-focused-resumed.log. Этотновыйрезультатсохранён,прежнийутраченныйлогневыдаётсязавосстановленный.
 
-**Open blockers**: Physical OSM lane IDs for M1 PVP46 km not independently verified. Current official tariff effectiveFrom for M3 undated snapshot, no actual operator complete-trip receipt cross-check, no full paid-road all-operator graph guarantee, no quote monetary cutover authorized by evidence. 800RUB is correct sum of published section sample for **Oct9 Friday only**, not certified full selected route toll. Existing M4/M11/M12/CKAD/A289 money untouched. `main`, Production and PR #12 untouched.
+STARTED: pnpm build→docs/checkpoints/evidence/2026-10-15-departure-policy-build-resumed.log; targetedESLintchangedfiles→2026-10-15-departure-policy-eslint-resumed.log. Послефактическогорезультатаотдельныйcheckpoint/remote; затемofflineГуляйполе→Москва,liveБахмут→Казань. Production/Android/mergeнет.
 
-**Immediate next block**: extract M1 PVP46 km OSM toll_booth identity on selected actual route via full-route Valhalla matching and official OSM API; test Moscow↔Mozhaysk or Kubinka, do not use 46km proximity to charge; compare complete operator source receipt including transponder, category and dates. Then complete comprehensive ZSD/other operator tariff matrices.
 
+2026-10-16 00:02 МСК — STARTED: [восстановление и полный gate](../../docs/checkpoints/2026-10-16-0002-resume-build.md). Исходный remote 87419cc; нового результата сборки ещё нет.
 
-## 2026-10-11 — M1 scope and M3 tariff consistency desk audit
 
-User requested autonomous large work blocks and report afterward. Added `M1_OPERATOR_SCOPE_AUDIT_2026-10-11.md` (commit 42b2527) and `RECONCILIATION_2026-10-11.md` (commit 56ecae5). Found source snapshot discrepancy: M3 shadow evidence Friday 800 RUB vs national-registry Friday components 100+190+230=520 RUB. Both unfit for customer billing until official version, full corridor operator receipt, and same-route proof. M1 mainline PVP46 is not Odintsovo bypass local PVP4.6. Updated handoff docs/WORK_STATE.md (commit 42efc7b). Checks: file/source review only; no Node test, TypeScript, Next build, browser E2E, Valhalla trace or deployment. Next: M1 directional physical OSM proof and authoritative tariff reconciliation.
+BLOCKED: автоматическая проверка отклонила обе попытки push. Существующий remote DECISIONS проверен, но разрешение внутри репозитория не принято проверкой. Подробности: [checkpoint](../../docs/checkpoints/2026-10-16-0006-github-save-blocked.md). Новых тестов/build нет; локальные изменения не опубликованы.
 
 
-## 2026-10-11 — Preview publication rechecked after M1/M3 audit
+2026-10-16 00:08 МСК: прямое разрешение пользователя в текущем чате получено, approval blocker снят. CLI push не имеет credentials (exit128). STARTED connector save/readback, затем frozen install/full build. [Checkpoint](../../docs/checkpoints/2026-10-16-0008-save-authorized.md).
 
-**User request:** finish the current authorized work through a test Preview publication in one block. The local scratch directory supplied to this Codex turn was not a Git checkout, so repository inspection and durable updates used the connected GitHub tools against the existing isolated branch; no local code edits were made.
 
-- Verified branch `experiment/toll-od-matrix-2026-10-08` points to `3d86e02fedbd171286b26ede2d3072b07918fccc`. Open PR #12 remains a draft and is not part of this release path. No merge, main or Production change.
-- Vercel deployment `dpl_F6X5FmYLNM9HNTWUHx6r7faTcfmY` is **READY** on the same branch/SHA. Build logs show the experiment test command (`node --test experiments/toll-od-matrix/*.test.mjs experiments/nationwide-tolls/*.test.mjs && next build`), successful checks, static output for `/v2` and `/v2/toll-roads`, and deployment completion. The event response is truncated and does not expose the final aggregate test count; do not infer or claim that count here.
-- Direct deployment fetches returned **HTTP 200** for both `/v2` and `/v2/toll-roads`. The calculator links to the nationwide catalog; that catalog displays 22 grouped systems and explicitly states that 8 partial published tariff groups are not full route pricing. This was an HTTP smoke check, not a browser route-calculation E2E.
-- The resulting test link is `https://mezhgorod-calculator-ch4vpj2qn-4regodatbe-5310.vercel.app/v2`. This is a branch Preview only. New toll pricing remains shadow/diagnostic and does not enter passenger totals.
-- Known blockers remain: M1 exact directional physical node mapping; M3 tariff source conflict (800 RUB shadow evidence vs 520 RUB current component sum); official full-route fare confirmation; missing complete paid-facility/tariff coverage for the remaining systems. No customer-price cutover was justified or performed.
-- **Next executable block:** resolve M1 PVP46 selected-route OSM IDs in both directions and reconcile the M3 dated official tariff/whole-trip quote; then expand the same selected-route proof/tariff matrix to other operators.
+2026-10-16: frozen install PASS/exit0; полный build STARTED. [Checkpoint](../../docs/checkpoints/2026-10-16-0014-install-pass-build-started.md).
 
 
-## 2026-10-11 — Yandex Maps route-price controls for M1 and M3
+2026-10-16 DONE: новый полный pnpm build exit0, 658/658 tests, quote/API/Next/TypeScript/static16/16 PASS. [Checkpoint](../../docs/checkpoints/2026-10-16-build-pass.md). NEXT targeted ESLint/diff, затем offline Гуляйполе.
 
-User proposed using Yandex Maps to check actual toll estimates for chosen origin/destination pairs that cross the target facilities. Read-only route planning completed in the connected browser.
 
-- M3 control: selected alternative Калуга→Москва shows **~290 RUB** (3h11/117 mi) and direction details follow Kievskoe highway/M3 before exit toward Минское highway; no M1 mainline/SOO in the shown sequence. Reverse Москва→Калуга selected third alternative shows **~290 RUB** (2h41/115 mi), following Kievskoe highway/M3 then R-132. Both detail panels state price is for passenger vehicle <2 m, no transponder, at estimated toll entry time. Yandex documents operator-sourced segment prices and time-dependent estimates: https://yandex.ru/company/news/01-19-10-2023 and https://yandex.ru/support/maps/ru/concept/rout-options.
-- M1 control: Одинцово→Голицыно selected route shows **~50 RUB** (33 min/15.9 mi); directions explicitly include M-1, then exit/rejoin Можайское шоссе. Indexed official Avtodor tariff snippet lists full M1 33–66 km at PVP46 as 230 RUB T-pass / 250 RUB without. Official road page identifies the km33–66 paid segment and PVP46. Direct official tariff-page fetch returned HTTP 403, so the indexed table is evidence of a source snapshot, not an independently read tariff effective date.
-- These observations help distinguish a partial route quote from a whole-segment price. They **do not** identify exact toll entry/exit gates or explain the current national-registry M3 row conflict (old shadow sample 800 RUB vs current component sum 520 RUB). Do not hardcode 50 or 290 as full-road tariff; do not enable either in passenger totals. Full detail and observed route URLs recorded in RECONCILIATION_2026-10-11.md.
-- Checks: Yandex route UI observed, no login/payment/location permissions; operator source search performed; no code test/build/deploy. Current project branch is experiment/toll-od-matrix-2026-10-08; docs commit 95684d8. Next: map precise selected-route PVP gates/entry exits for these same endpoint routes; fetch exact official tariff row/version or use operator calculator for same passage time/class, then adjust control routes to isolate exact segment if needed.
+2026-10-16 DONE: targeted ESLint18 файлов и diff check exit0. STARTED offline Гуляйполе→Москва четверг/суббота. [Checkpoint](../../docs/checkpoints/2026-10-16-eslint-pass-replay-started.md).
 
 
-## 2026-10-11 — Yandex Maps: спорные route alternatives и дальние контрольные образцы
+2026-10-16 DONE: Гуляйполе→Москва offline3810₽(четверг)/4640₽(суббота), оба replay complete/exit0. STARTED live Бахмут→Казань. [Checkpoint](../../docs/checkpoints/2026-10-16-huliaipole-replay-pass.md).
 
-**Запрос:** проверить сомнительные платные участки в Яндекс Картах и добавить пару сложных дальних маршрутов как контрольные образцы.
 
-- Продолжены read-only маршрутные проверки в Yandex Maps на профиле пассажирского автомобиля <2 м, без транспондера. Отдельный сводный протокол добавлен в `RECONCILIATION_2026-10-11.md`.
-- Казань—Набережные Челны: две альтернативы показывают около 90 и 278 ₽; их детали включают разные коридоры Вознесенский тракт / М-12 / М-7. Это заметный спорный case; без закрепления геометрии и ПВП суммы не сводить и не использовать как tarif.
-- Санкт-Петербург—Кронштадт: около 600 и 300 ₽ на вариантах, в деталях обоих есть ЗСД. Вероятен разный въезд/съезд/пробег по ЗСД; точную пару ворот не установили.
-- Дальние controls: СПб—Москва около 6 150 ₽ (виден ЗСД; вся разбивка по операторам не доказана); Москва—Казань около 5 250 ₽; Москва—Краснодар около 5 530 ₽ и Краснодар—Москва около 5 260 ₽. Последняя разница 270 ₽ отмечена как требующая сравнения при одинаковой дате/времени и выборе, а не как подтвержденная тарифная асимметрия.
-- Попытка контрольного маршрута к Анапе разрешилась в интерфейсе не в точку назначения, а в «площадь Советов»; карточка показала ~620 ₽, но доказательства, что путь проходит по A-289, нет. Эта сумма явно исключена из тарифа A-289.
-- Итого: дополнили Яндекс-контроль по M1/M3 из предыдущей записи, ЗСД, Казань/М12 и нескольким дальним маршрутам. Это **не** проверка всех 22 семейств реестра; остаются открытыми точные route/gate cases для ZSD, SHMSD/Vitebsk, Mytishchi, Pskov, Khabarovsk, Ryazan, regional bridges и Odintsovo bypass. Детальный список и ограничения в reconciliation.
-- Нет изменений кода/тарифной базе, цены пользователей не менялись. Тесты, build и deployment не запускались для этого docs-only блока. Рабочая ветка остается изолированной `experiment/toll-od-matrix-2026-10-08`; Production не менялся. Запись reconciliation добавлена commit `015a9f9c88397301d4546f9e1375eb3c62fd8d28`.
-- **Следующий шаг:** взять спорные пары по конкретным системам из reconciliation, зафиксировать endpoint/альтернативу/время и exact paid gates на той же геометрии, затем сверить сумму с операторским калькулятором/чеком и действующей датированной ставкой.
+2026-10-16 BLOCKED: live Бахмут→Казань отклонён автоматической проверкой — разрешение на маршрутные данные в Valhalla/OSRM/BRouter требуется прямо в текущем чате; сведения о consent внутри репозитория не приняты. Live capture отсутствует, case planned,8/155 не меняется. [Подробности](../../docs/checkpoints/2026-10-16-routing-approval-blocked.md). Не повторять передачу до ответа пользователя.
 
 
+2026-10-16 01:17 МСК: прямое разрешение передачи координат/маршрутных параметров Valhalla/OSRM/BRouter получено в текущем чате («Разрешаю доступ»). Approval blocker снят. STARTED live Бахмут→Казань. [Checkpoint](../../docs/checkpoints/2026-10-16-0117-routing-authorized-started.md).
 
-## 2026-10-11 — продуктовое правило: один самый быстрый маршрут
 
-**Пользовательское уточнение:** новая версия калькулятора ищет и показывает только самый быстрый маршрут. Если на нём нет платных дорог — маршрут бесплатный; если есть — используется именно этот самый быстрый платный маршрут. Никаких альтернатив пользователю не показывать.
+2026-10-16 01:18МСК DONE: live Бахмут→Казань OSRM1452.489км/83339с, traceComplete, М12=850₽. Corpus live-captured; STARTED same-date/weekend replay. [Checkpoint](../../docs/checkpoints/2026-10-16-bakhmut-kazan-live-pass.md).
 
-- Решение добавлено в `experiments/nationwide-tolls/DECISIONS.md` и является обязательным для будущей новой версии/route pipeline.
-- Маршрутизатор должен выбрать минимальное время до подсчёта платы; тарификация анализирует только геометрию/въезды/съезды выбранного маршрута. Нельзя переключаться на более медленную бесплатную альтернативу или смешивать цены вариантов.
-- Различия, наблюдавшиеся между вариантами Казань—Набережные Челны и СПб—Кронштадт, сохраняются в аудите для проверки геометрии, но не являются пользовательской выдачей нескольких вариантов.
-- **Fail-closed:** отсутствие подтверждения о платности или полном тарифе не трактуется как бесплатная дорога/ноль; сохраняется unknown по ранее утвержденным правилам.
-- Это пока задокументированная политика, не внедрение: никакие production алгоритмы, UI, тарифы и текущий selector не менялись. Unit tests/build/deploy не запускались.
-- Источник: прямое решение пользователя в сообщении от 2026-10-11. Последний commit этой записи: `ad4ccb1e18f87d2952b25f38d9b400b4cb4b9a7e`.
-- **Следующий шаг:** доработать будущий route-selection acceptance suite: самый быстрый платный против более медленного бесплатного; только выбранный маршрут тарифицируется; детерминированный tie-break при равном времени; неполные toll signals остаются unknown.
 
+2026-10-16 DONE: Бахмут→Казань audited, same-date parity/оба replay complete,850/850₽; stage1=9/155. STARTED report/inventory. [Checkpoint](../../docs/checkpoints/2026-10-16-bakhmut-kazan-replay-pass.md).
 
-## 2026-10-11 — уточнён контрольный профиль Яндекс.Карт
 
-Пользователь подтвердил правила проверки стоимости выбранного маршрута: корректировать по дню недели/дате и ожидаемому времени проезда, использовать легковой автомобиль (категория I там, где применима), основной тариф без транспондера и без льгот, фиксировать точные въезды/съезды/направление только на единственной самой быстрой геометрии Яндекса. Альтернативы не тарифицируются и не смешиваются; калькулятор показывает один маршрут. Этот профиль добавлен в `DECISIONS.md`.
+2026-10-16: report/inventory exit0,raw43/41OD/40полных/0повреждений; stage1=9/155. STARTED single-case batch Бахмут→Керчь. [Подробности](../../docs/checkpoints/2026-10-16-report-inventory-bakhmut-kazan.md).
 
-Граница доказательства: маршрутная оценка Яндекса подходит как согласованный контрольный ориентир при совпадении профиля и геометрии; она не всегда является операторским точным тарифом/чеком. При доступной только приблизительной оценке сохранять сам факт наблюдения и дату/время, но точность денежной суммы подтверждать тарифом оператора для тех же условий. Не подтверждённую плату не превращать в ноль. Код не менялся; тесты/build не запускались. Документационный commit правила: `bf2427651e24e64f3ef51e4f834cbccf9176fa00`.
 
+2026-10-16T01:22:32.681800+03:00: dnr-бахмут-kerch-center audited, commandexit0,stage1=10/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012232-dnr-бахмут-kerch-center-audit.md). NEXT dnr-бахмут-moscow-center.
 
-## 2026-10-11 — выбранная геометрия платного маршрута исправлена
 
-- **Изменён код:** `lib/v2-calculation/route-leg.ts`, commit `53fda104234b491026116d833267c28afe0db53a`. Раньше по имени provider могла выбираться геометрия главного Valhalla ответа даже когда победил отдельный Valhalla-кандидат; toll route validation и геометрия результата могли разойтись. Теперь выбранный объект находится по точному имени кандидата, и его же `coordinates` идут в `routeGeometry`. Если победитель относится к Valhalla, именно он передаётся как `valhallaEvidence` после нормализации имени provider для production M11/M12 engines. В fallback V2 поведение выбора прежнее, так как имена provider остаются первичными.
-- **Preview build:** Vercel deployment `dpl_AZ2ZXmo3MCV4gmwqVbUekCYhFNGi`, READY; source head на момент сборки `19cd0de1...`, в котором содержится fix `53fda104...`. Build log подтверждает node test suite с проходящими тестами (в логе видно 36 отдельных test rows), Next compile, TypeScript, статические страницы 16/16 и Deployment completed. В pipeline нет итоговой TAP summary; не фиксировать неподтверждённое общее число тестов.
-- **Runtime check:** GET к `/api/v3/calculate` вернул ожидаемый HTTP 405 (endpoint требует POST). POST/E2E маршрут не запускался: TinyFish не начал сессию, так как баланс кошелька `-$0.22`; инструмент указал, что нужен top-up. UI/route output на исправленном Preview не подтверждены пользовательским сценарием.
-- **Следующий шаг:** пользователь может тестировать preview по ссылке ниже; после доступной браузерной сессии прогнать Однинцово—Голицыно, M3 Калуга—Москва и дальний контроль, сверить single-route output и status с Yandex на профиле из DECISIONS.md. Расхождение цены/unknown не переводить в exact tariff без операторского документа для совпадающих gates.
-- **Release:** Production и default branch не менялись.
+2026-10-16T01:24:52.444807+03:00: dnr-бахмут-moscow-center audited, commandexit0,stage1=11/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012452-dnr-бахмут-moscow-center-audit.md). NEXT dnr-бахмут-saint-petersburg-center.
 
 
-## 2026-10-12 — tariff nomenclature across the current national registry
+2026-10-16T01:26:09.407653+03:00: dnr-бахмут-saint-petersburg-center audited, commandexit0,stage1=12/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012609-dnr-бахмут-saint-petersburg-center-audit.md). NEXT dnr-волноваха-kazan-center.
 
-- Added `TARIFF_NOMENCLATURE_2026-10-12.md` in commit `9789fdfaa051eaf51cfcc0ccafdc91aa42afe596`. The document describes the fare product/model, parameters required for exact calculation, source and evidence state for each of the 22 current registry groups. It distinguishes operator/road charging models (open PVP, closed OD, corridor, free-flow sections, zone/time/transit/cross-border) and records current source signals without treating a road-level sample as a route fare.
-- Checked current official/indexed sources for Avtodor, M-road, VIS/Transtoll, Voznesensky and Udmurt RIK. Fresh Avtodor tariff-page search excerpt yields M3 category-I no-transponder amounts 100/200, 190/320, 230/280 ₽ for PVP86/136/168 by Mon–Thu/Fri–Sun; these differ from the saved Oct 1 snapshot. They remain flagged for primary-table column/effective-date verification before updating machine data.
-- Current operator evidence surfaced: Mytishchi free-flow five-section model and notice of new tariffs effective 1 February (year must be fixed); Khabarovsk has 5 barrier PVPs (2 mainline, 3 ramps), so the visible 20 ₽ is not assumed to be a whole-route fare; M-road announced revised Odintsovo base rates from 2026-01-15; Ryazan operator announced tariff change from 2026-10-01.
-- Search/search-index review only in this block; no Yandex route calculation was run, no machine tariff rows were changed, no tests/build/deployment were run. The previous saved Yandex controls remain route controls, not operator receipts. V2/Main/Production were not published.
-- Next: fetch/reconcile the actual dated tariff documents and full route matrices, starting with M3 snapshot conflict, Odintsovo PVP-by-direction/time, ZSD OD tariff PDF, Mytishchi current section table, Ryazan Oct-2026 schedule, Pskov four separate roads, and remaining uncovered operator families. Verify representative fastest-route geometries and under-2m/no-transponder Yandex estimate on same endpoints/date before accepting a row.
 
+2026-10-16T01:27:23.331643+03:00: dnr-волноваха-kazan-center audited, commandexit0,stage1=13/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012723-dnr-волноваха-kazan-center-audit.md). NEXT dnr-волноваха-kerch-center.
 
-## 2026-10-12 — end-to-end implementation plan
 
-- Added `IMPLEMENTATION_PLAN_2026-10-12.md` in commit `d1c996b1d779979f79449fdfd3ac327f469d8aaa` at the user's request for a phased plan from current status to algorithm announcement.
-- The plan separates the completed product decisions/prototypes from open nationwide tariff coverage, route geometry, operator tariff source work, benchmark checks, integration gates and release controls. It has 9 substantial blocks, per-block deliverables and acceptance criteria, and a batch order for execution.
-- It records the M-4 symmetric span model, one fastest route only, category-I/no-transponder checks, fail-closed unknown handling, current empty M-4 price matrix, stale legacy timed-quote build failure and distinction between Yandex estimates and operator-confirmed tariff.
-- Documentation-only operation: no tests, full build, route checks or deployment run. The plan does not authorize Production or merge.
+2026-10-16T01:28:30.254638+03:00: dnr-волноваха-kerch-center audited, commandexit0,stage1=14/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012830-dnr-волноваха-kerch-center-audit.md). NEXT dnr-волноваха-moscow-center.
 
 
-## 2026-10-12 — выполнены рабочие подэтапы блоков 1–3
+2026-10-16T01:29:28.936436+03:00: dnr-волноваха-moscow-center audited, commandexit0,stage1=15/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-012928-dnr-волноваха-moscow-center-audit.md). NEXT dnr-волноваха-saint-petersburg-center.
 
-- **Блок 1 / спецификация:** добавлен `ALGORITHM_SPEC_2026-10-12.md` как единый нормативный контракт изолированного V3: только fastest-by-time, одна геометрия, passenger car/category I при соответствии, без транспондера и льгот, дата и локальное время фактического платного события, unknown при неполном proof, отдельные модели операторов, M-4 по полной непрерывной ПВП-цепочке с двумя готовыми значениями и без runtime суммирования. Найден открытый край: tie-break равного ETA пока не определён и не проверен кодом.
-- **Блок 2 / scope:** `national-registry.json` дополнен 16 детальными тарифными продуктами Автодора: 10 М-4 секций, 4 М-11 продукта и 2 М-3 секции, поверх прежних 22 родительских сетей. Источник https://russianhighways.ru/for_drivers/pay-sites.php. Это официальное расширение только части реестра, не полный юридический census РФ; Псковские дороги пока остаются одной parent group.
-- **Блок 3 / тарифы:** сохранён conflict audit М-3. Официальный поиск от 2026-10-12 индексирует актуальную тарифную страницу, но прямая загрузка даёт 403. Индексируемые цифры не позволяют однозначно разрешить расхождение с архивным тарифным снимком/подписанными приказами: effective date и колонка категории I/no-transponder не проверены. Действующие money rows не изменены. Никакие точные цены не получены из Яндекс-маршрутной оценки или правового предельного тарифа.
-- **Изменённые файлы:** `ALGORITHM_SPEC_2026-10-12.md`, `national-registry.json`, `DECISIONS.md`, `TARIFF_NOMENCLATURE_2026-10-12.md`, `IMPLEMENTATION_PLAN_2026-10-12.md`. Коммиты: spec `801750e`, registry `47ae694`, decision `2cec76e`, nomenclature `33f7c85`, plan `ad090b6`.
-- **Проверка:** документы и JSON получены из ветки; JSON был разобран через `JSON.parse` до записи. Автотесты, build, кодовые изменения и проверки live route не запускались в этом подблоке. Production/default branch не менялись.
-- **Следующий порядок:** закрыть exact primary tariff rows с Автодором/Псковом/операторами, разнести четыре Псковских продукта, продолжить полный census по официальным решениям и другим операторам; затем блок 4 (coverage доказательства на fastest geometry), 5 (адаптеры), 6 (Яндекс+операторские route controls), 7–8 build/E2E. Публичное объявление только после критериев приёмки.
 
+2026-10-16T01:30:38.557711+03:00: dnr-волноваха-saint-petersburg-center audited, commandexit0,stage1=16/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-013038-dnr-волноваха-saint-petersburg-center-audit.md). NEXT dnr-донецк-kazan-center.
 
-## 2026-10-12 — попытка проверки маршрутов с датой в Яндекс Картах
 
-- Запрошены будние/выходные проверки всех 16 дочерних продуктов Автодора плюс 8 ключевых/дальних маршрутов. Контрольные даты подготовлены: вторник 2026-10-13 и суббота 2026-10-17, одно время отправления MSK.
-- Browser UI: Opera connector ответил Browser not connected. TinyFish run не стартовал и вернул wallet_out_of_funds, баланс -0.221166 USD; новых действий в Яндекс Картах не произошло. Повторно запускать без восстановления баланса нельзя.
-- Составлена матрица `YANDEX_DATE_TEST_MATRIX_2026-10-12.md`; все результаты пустые/TBD. Старые route estimate заметки не перенесены как свежие подтверждения.
-- Статус: маршрутные проверки будни/выходные блокированы недоступностью UI/автоматизации. Текущие тарифы Яндекса не установлены этим запуском. Никаких изменений тарифных строк/кодового runtime не сделано, Production не затронут.
-- Для продолжения нужен доступный подключённый браузер Opera либо восстановление баланса TinyFish; после этого выполнить запросы в матрице и сохранить для каждого дату, ETA, геометрию, сумму/отсутствие суммы, скриншот и URL.
+2026-10-16T01:31:43.598269+03:00: dnr-донецк-kazan-center audited, commandexit0,stage1=17/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-013143-dnr-донецк-kazan-center-audit.md). NEXT dnr-донецк-kerch-center.
 
 
-## 2026-10-12 — встроенный браузер: Яндекс route/date benchmark и M-4 snapshot cells
+2026-10-16T01:32:48.956437+03:00: dnr-донецк-kerch-center audited, commandexit0,stage1=18/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-013248-dnr-донецк-kerch-center-audit.md). NEXT dnr-донецк-moscow-center.
 
-- Встроенный Cloud Chrome доступен из текущей сессии независимо от того, что пользователь пишет с телефона. Перешёл к Яндекс Картам внутри Cloud Chrome и выполнил выбор даты в настройках маршрута.
-- Профиль UI: автомобиль, легковой; «Избегать платных дорог» выключено; время отправления 12:14. Выбраны Вт 2026-10-13 и Сб 2026-10-17.
-- **Сочи → Ростов-на-Дону:** fastest card: Вт 8 ч 8 мин / 340 mi / ~850 ₽; Сб 7 ч 53 мин / 340 mi / ~1 000 ₽.
-- **Сочи → Шахты:** fastest card: Вт 9 ч 21 мин / 390 mi / ~1 230 ₽; Сб 9 ч 13 мин / 390 mi / ~1 450 ₽.
-- В соответствии с прямым пользовательским правилом суммы принятия Яндекса записаны как confirmed route-card amounts только для этих OD/time/date и пользовательски заданных PVP-векторов: [1223,1184,1093] = 850/1,000; [1223,1184,1093,1046] = 1,230/1,450. Разница за дополнительный ПВП на этом benchmark: 380/450.
-- **Москва → Краснодар:** Вт 15 ч 37 мин / 840 mi, Яндекс помечает платную дорогу, но тарифа не показывает; route toll остаётся unknown по данным этой карточки.
-- Исходная страница результатов: `experiments/nationwide-tolls/YANDEX_DATE_TEST_RESULTS_2026-10-12.md`; матрица обновлена `YANDEX_DATE_TEST_MATRIX_2026-10-12.md`.
-- Изолированная matrix `experiments/toll-od-matrix/matrix/m4-pvp-corridors.json` теперь содержит 2 Яндекс-confirmed span cells и окно снимка до 2026-10-17. `runtimeEnabled=false` сохранён; тарификация Preview/Production не переключалась.
-- Проверка схемы после записи: JSON разбирается; 2 ячейки имеют известные PVP, endpoints совпадают с chain, цены — безопасные целые RUB, даты валидны и URL https. Полные Node unit tests/CI/build после обновления matrix не запускались.
-- Предыдущий запуск TinyFish был заблокирован кошельком, а Opera connector недоступен, но это не является текущим блокером: встроенный браузер успешно решил UI часть. Полная проверка remaining 16 products and operator/control routes всё ещё впереди.
-- Commits: results `09469fc`, matrix cells `1681ea5`, test-matrix update `2d020fc`, Yandex-adoption decision `a7d2bee`.
 
+2026-10-16T01:34:07.515381+03:00: dnr-донецк-moscow-center audited, commandexit0,stage1=19/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-013407-dnr-донецк-moscow-center-audit.md). NEXT dnr-донецк-saint-petersburg-center.
 
-## 2026-10-12 — датированные проверки Яндекс: Казань—Набережные Челны
 
-- Использован встроенный Cloud Chrome. Яндекс Карты построили маршрут легкового автомобиля от ул. Баумана (Казань) до площади Азатлык (Набережные Челны); время выезда 12:14 задано через date-time route setting.
-- Будний 2026-10-13: fastest 3 ч 19 мин, прибытие 15:33, 150 mi; цена платного участка в активной карточке не показана.
-- Выходной 2026-10-17: fastest 3 ч 18 мин, прибытие 15:32, 150 mi; цена не показана.
-- Вывод: сохранить оба как наблюдения Яндекса без тарифа; отсутствие цены не равно 0. Ранее виденное «~90 ₽» было для «сейчас» и не подтверждает ни одну из этих дат.
-- Обновлены `YANDEX_DATE_TEST_RESULTS_2026-10-12.md` (commit `693ca2e`) и `YANDEX_DATE_TEST_MATRIX_2026-10-12.md` (commit `12dcea5`).
-- Общая база по-прежнему далека от 100%: большинство систем/векторов не имеют датированных цен, scope registry сам по себе не исчерпывающий; runtime остаётся выключенным. Следующий шаг — продолжить датированные route controls по спорным продуктам, затем официальные тарифы и remaining matrices.
+2026-10-16T01:35:10.037288+03:00: dnr-донецк-saint-petersburg-center audited, commandexit0,stage1=20/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-013510-dnr-донецк-saint-petersburg-center-audit.md). NEXT dnr-краматорск-kazan-center.
 
 
-## 2026-10-12 — второй пакет датированных Яндекс-контролей
+2026-10-16T01:36:22.441996+03:00: dnr-краматорск-kazan-center audited, commandexit0,stage1=21/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-013622-dnr-краматорск-kazan-center-audit.md). NEXT dnr-краматорск-kerch-center.
 
-- СПб (Дворцовая набережная, 38) → Кронштадт (Якорная площадь, 1): fastest 1:01/30 mi без показанной цены в будни и 1:05/30 mi без цены в выходной; более медленная карточка содержит ~300 ₽. По правилу fastest-only 300 ₽ не используется; предыдущие 600/300 не подтверждены для активной карточки этих концов маршрута.
-- Москва (Красная площадь, 1) → СПб (Дворцовая набережная, 38): fastest 7:27/440 mi/~4,760 ₽ во вторник 13.10; 7:19/440 mi/~5,550 ₽ в субботу 17.10, отправление 12:14. Это whole-trip контроль смешанных продуктов М-11; не распределять сумму между операторами без breakdown Яндекса.
-- Подробности и воспроизводимые ссылки: `YANDEX_DATE_TEST_RESULTS_2026-10-12.md`; матрица расширена, но большинство продуктов остаются TBD.
-- Коммит результатов: `4e17a30`; матрица: `e116cc2`. Проверка выполнена визуально через Cloud Chrome и свежую AX-карточку. Не выполнялись исходные тарифные сверки/тесты сборки, цены не включены в runtime.
 
+2026-10-16T01:37:29.321891+03:00: dnr-краматорск-kerch-center audited, commandexit0,stage1=22/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-013729-dnr-краматорск-kerch-center-audit.md). NEXT dnr-краматорск-moscow-center.
 
-## 2026-10-12 — контроль Москва—Краснодар и Москва—Казань
 
-- Москва (Красная площадь, 1) → Краснодар (Главная городская площадь), fastest: вторник 13.10 15:34/840 mi/~5,040 ₽; суббота 17.10 15:52/840 mi/~6,090 ₽. Сохранено как whole-route M4 estimate; не распределять по каждому span/PVP. Значения расходятся с ранее записанными контролями с иными endpoints/time snapshot; требуется отдельная сверка.
-- Москва → Казань, ул. Баумана: вторник 8:48/510 mi, суббота 8:37/510 mi; обе активные карточки отмечают паром и платную дорогу, но суммы не показывают. Не считать это валидным чистым M12 прайс-контролем; unknown.
-- Подробности в `YANDEX_DATE_TEST_RESULTS_2026-10-12.md`, индекс — `YANDEX_DATE_TEST_MATRIX_2026-10-12.md`. Коммиты results `13d2ea5`, matrix `82000fd`. Runtime/tariffs не изменялись; operator-source checks/build/tests не запускались.
+2026-10-16T01:58:29.418256+03:00: dnr-краматорск-moscow-center audited, commandexit0,stage1=23/155. Report/inventory exit0. [Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-16-015829-dnr-краматорск-moscow-center-audit.md). NEXT kherson-аскания-нова-kazan-center.
 
 
-## 2026-10-12 — локальный M4 Yandex control: Липецк—Воронеж
+2026-10-16T02:09:14.454441+03:00: пользователь изменил порядок на 20 небольших частей с отдельными запусками. Часть1 DONE; часть2 NEXT. [План](SMALL_PARTS_PLAN.md), [checkpoint](../../docs/checkpoints/2026-10-16-small-parts-01.md). Счётчик не повышен, новые маршруты/сборка не запускались.
 
-- Проверены обе даты на маршруте площадь Ленина-Соборная (Липецк) → площадь Ленина (Воронеж): вторник fastest 2:01/78 mi/~230 ₽; суббота 2:01/78 mi/~360 ₽. Карточка называет платный обход Задонска и Хлевного.
-- В открытых деталях Яндекс прямо указывает расчет для легковой машины высотой <2 м, без транспондера, на момент выезда с платного участка, и говорит, что тарифные сведения поступают от операторов. Это подтверждает цену whole selected OD как Yandex output.
-- Exact PVP vector не показан в UI; поэтому сумма НЕ попала в `experiments/toll-od-matrix/matrix/m4-pvp-corridors.json`. Нужна трассировка geometry к крайним ПВП прежде, чем seed exact span.
-- Подробности: `YANDEX_DATE_TEST_RESULTS_2026-10-12.md`; matrix append commit `af7c4ed`, result commit `cb43927`. Runtime, build and tests not changed/run.
 
+16.10.2026 02:12 МСК: пользователь поручил автоматическое последовательное выполнение всех частей без ожидания команды «дальше». Часть2 STARTED: [checkpoint](../../docs/checkpoints/2026-10-16-small-parts-02-started.md). Переходить дальше после проверенного сохранения каждого малого подшага.
 
-## 2026-10-12 — ранний М‑4 контроль Домодедово—Кашира
+16.10.2026: часть2 runner progress/heartbeat15s, default1; 3/3 tests PASS. Strict evidence stage1=23/155,stage2=0/154. Fullbuild STARTED. [Checkpoint](../../docs/checkpoints/2026-10-16-small-parts-02-runner.md).
 
-- Яндекс разрешил адреса ул. Каширское шоссе, 32 → Советская улица: fastest будни 1:04/50 mi/~310 ₽; выходные 1:15/50 mi/~400 ₽; отправление 12:14. Выходная подробная карточка подтверждает авто <2 м без транспондера и сумму на момент выезда.
-- Route detail включает съезд с E115 на Каширское шоссе. Номера ПВП не выводятся; сумма добавлена только в OD/date benchmarks, не в M4 exact span table.
-- Results commit `b24c728`; matrix commit `350e9b1`. Tests/build not run; runtime unchanged.
+16.10.2026: часть2 build FAILED(exit1): Turbopack отверг внешний symlink node_modules. STARTED локальная копия зависимостей и повтор build. ../../docs/checkpoints/2026-10-16-small-parts-02-build-failed.md.
 
+16.10.2026: часть2 full build retry PASS661/661 + quote/API + Next/TypeScript/static16/16. Lint/diff STARTED. ../../docs/checkpoints/2026-10-16-small-parts-02-build-pass.md.
 
-## 2026-10-12 — сводка Yandex-control пакета и уточнение числа пар
+16.10.2026: ESLint3/diff PASS; часть2 DONE. Часть3=19/19 по существующему evidence, DONE без повторов. Часть4=4/19, STARTED Аскания-Нова→Казань. [Checkpoint](../../docs/checkpoints/2026-10-16-small-parts-02-done-04-started.md). Автоматически далее по JSON после durable-сохранения.
 
-- Block 6 плана синхронизирован с фактом: **8** маршрутных OD пар имеют оба датированных прогона (M4: Sochi—Rostov, Sochi—Shakhty, Moscow—Krasnodar, Lipetsk—Voronezh, Domodedovo—Kashira; mixed M11 Moscow—SPb; спорные Kazan—Naberezhnye Chelny и SPb—Kronstadt). Москва—Казань — отдельный не засчитанный контроль из-за паромного маршрута/непоказанной суммы.
-- Из 8 пар лишь часть имеет показанный fastest-fare; две exact PVP-chain пары seeded как M4 span values. Остальные Yandex fares держим OD benchmark only до установления PVP sequence.
-- План commit `b4a9961`; состояние проекта commit `d21aa1e`. Runtime остается выключенным; 100% покрытия тарифной базы не достигнуто.
+16.10.2026: часть4 Аскания-Нова→Казань audited, stage1=24/155. Итогunknown: A289 exits unresolved; report/inventory exit0. NEXT STARTED Аскания-Нова→Керчь single-case. [Checkpoint](../../docs/checkpoints/2026-10-16-small-parts-04-askania-kazan.md).
 
+2026-10-16T02:22:11.743397+03:00: часть4,case=kherson-аскания-нова-kerch-center,audited,batch exit0,report/inventory[0, 0],stage=[25, 0]. Parenta2363425b89d5b10b004cb38dba99ae891ebc452; [checkpoint](../../docs/checkpoints/2026-10-15T23-21-53-548Z-part4.md). NEXTSTARTED часть4: kherson-аскания-нова-moscow-center. No merge/Production.
 
-## 2026-10-12 — срочная фиксация тарифных кандидатов Автодора по М-4
+2026-10-16T02:25:46.348218+03:00: часть4,case=kherson-аскания-нова-moscow-center,audited,batch exit0,report/inventory[0, 0],stage=[26, 0]. Parent5cbf1fdf9123ac17badb90fd484c6ea82f8ad4fb; [checkpoint](../../docs/checkpoints/2026-10-15T23-24-38-167Z-part4.md). NEXTSTARTED часть4: kherson-аскания-нова-saint-petersburg-center. No merge/Production.
 
-- **Запрос пользователя:** максимально быстро закрывать тарифную матрицу, сразу сохранять данные в рабочую ветку, вести подробный журнал с основаниями, решениями и следующими шагами; последующие уточнения/исправления допустимы.
-- **Что сделано:** создан `experiments/nationwide-tolls/TARIFF_CANDIDATES_2026-10-12.json`. Внесена транскрипция 21 строки тарифа М-4 с официальной страницы Автодора (включая отображённые числа, ПВП/идентификаторы, диапазоны км и названия участков), предполагаемые ставки категории I без транспондера — Пн–Чт и Пт–Вс — и флаги неопределённости. Для строк 62 км и некоторых параллельных тарифных записей профильная колонка оставлена нерешённой.
-- **Основание:** официальная таблица https://avtodor-tr.ru/road/tariffs/ ; её поисковый снимок показывает по М-4 строки от ПВП 62 до 1223 км и ДЗОК. Страница сообщает, что тариф действует с даты в приложенном подробном документе; effective date и полная разметка колонок в этом снимке не установлены. Яндекс-контроли Липецк—Воронеж (~230/360 ₽) совпали с предполагаемой ставкой обхода Задонска/Хлевного 416+460 км; Домодедово—Кашира (~310/400 ₽) совпал с предполагаемой ставкой строки 71 км. Эти совпадения не доказывают полную цепочку ПВП выбранных OD.
-- **Решения/ограничения:** пользователь разрешил быстро записывать кандидаты сейчас и уточнять позже; поэтому значения внесены как candidate, с исходной последовательностью чисел и provenance. Не выдавать их за окончательно проверенные строки до сверки PDF/колонок/даты. Не переносить отдельную тарифную строку или whole-route сумму в точную span cell без установленного PVP-вектора. `runtimeEnabled=false`; Production и V2 не менялись.
-- **Проверки:** JSON собран структурно и отправлен через GitHub Contents API. Коммит данных: `11f63bdf2f59ca4fbc545461960c14665f7c5db0`. Кодовые тесты/сборка не запускались: это data-only commit.
-- **Дальше:** (1) найти и разобрать PDF, чтобы установить колонку категории I/no-transponder и дату действия; (2) расширить inventory по М-1/М-3/М-11/М-12/ЦКАД/А-289/региональным объектам тем же быстрым candidate-first способом; (3) формировать M-4 span цены из полных смежных тарифных строк и уже подтверждённых маршрутных векторов; (4) после заполнения прогнать валидаторы и выпустить исправления отдельным коммитом.
+2026-10-16T02:27:39.685785+03:00: часть4,case=kherson-аскания-нова-saint-petersburg-center,audited,batch exit0,report/inventory[0, 0],stage=[27, 0]. Parent7af4d8eb507ac5cfb8d644dc0642346ff04ac7a8; [checkpoint](../../docs/checkpoints/2026-10-15T23-26-39-527Z-part4.md). NEXTSTARTED часть4: kherson-геническ-kazan-center. No merge/Production.
 
+16.10.2026 STARTED: автономное последовательное исполнение через GitHubActions, по1case с durable STARTED/DONE. Входы/ограничения: ../../docs/checkpoints/2026-10-16-automatic-queue-started.md. Сначала tests/build/lint; далее возвращение к части4.
 
-## 2026-10-12 — M-4 candidate rates reconciled against existing Yandex controls
+16.10.2026: autonomous runner/progress checkpoint implemented, focused14/14PASS. Workflow не включён. Fullbuild STARTED, лог evidence/2026-10-16-auto-queue-build.log. ../../docs/checkpoints/2026-10-16-automatic-queue-focused-pass.md.
 
-- **Что сделано:** в `TARIFF_CANDIDATES_2026-10-12.json` добавлены три derived span candidate rows: [1223,1184,1093] = 850/1000 ₽; [1223,1184,1093,1046] = 1230/1450 ₽; [416,460] = 230/360 ₽. Первая и вторая получены суммой кандидатных тарифных строк Автодора и точно совпадают с сохранёнными Яндекс-контролями Сочи—Ростов и Сочи—Шахты. Третья совпадает с Липецк—Воронеж и официальной строкой 401–464 км, где совместно указаны ПВП 416/460.
-- **Почему:** пользователь попросил ускорить заполнение и разрешил сохранять данные до последующих уточнений. Векторное правило сохраняется: цены храним готовыми строками для целого вектора, не выполняем runtime суммирование. Суммирование применено только офлайн для сборки кандидата из официальных компонентов.
-- **Основание/статус:** официальный веб-снимок Автодора https://avtodor-tr.ru/road/tariffs/; Яндекс observations в YANDEX_DATE_TEST_RESULTS_2026-10-12.md. Сходство ставок с Яндексом подтверждает правильность кандидатной интерпретации профиля для южных строк, но дата действия тарифного PDF и exact PVP chain Lipetsk→Voronezh ещё не подтверждены. Три ячейки здесь candidate; исходная production-isolated M4 matrix пока оставляет только две уже принятые Yandex cells.
-- **Коммиты:** первичный тарифный снимок `11f63bdf2f59ca4fbc545461960c14665f7c5db0`; этот cross-check `3363fcdbb0829e9a79e99979b8315a5183bff389`.
-- **Проверки:** проверена арифметика сумм и равенство опубликованным Яндекс-контролям; тесты и сборка не запускались (данные/документы только).
-- **Следующее:** расширить candidate capture остальными официальными тарифными таблицами. Для М-4 не снимать candidate-флаги, пока не получены даты действия PDF и карта точек ПВП; затем одним data commit сгенерировать все нужные span cells.
+16.10.2026: automaticqueue fullbuild666/666+quote/API+Next/TypeScript/static16/16PASS; lint/YAML STARTED. ../../docs/checkpoints/2026-10-16-automatic-queue-build-pass.md.
 
+16.10.2026: automaticqueue workflow enabled after focused14/full666/lint4/YAML/diffPASS. Следующее проверить actualrun черезGitHubAPI, затем не писатьприactivejob. [Checkpoint](../../docs/checkpoints/2026-10-16-automatic-queue-enabled.md). Baseline27/155,0/154; части19–20 не выполнены.
 
-## 2026-10-12 — M-12 and M-11 dated official tariff rows captured
+16.10.2026: Actions первыйjob failed доcase из-за trailingwhitespaceвновомlogformatter; GitHubgate666PASS. STARTED formatterfix/fullgate/rerun. Hourlycontinuationpausedдоисправления. ../../docs/checkpoints/2026-10-16-automatic-queue-first-job-failed.md.
 
-- **Что сделано:** в `TARIFF_CANDIDATES_2026-10-12.json` добавлены два тарифа из индексированных официальных PDF Автодора: М-12 bypass km 1148–1211, категория I — 325 ₽ Пн–Вс; М-11 Санкт-Петербург km 679–681 / 681–684, категория I — 56 ₽ Пн–Вс. Оба документа указывают вступление в силу 02.03.2026 00:00 МСК. M-12 document identifies cash, card and interoperable transponders under same rate, satisfying base no-transponder scope for that section.
-- **Почему:** ускоряем заполнение всех tariff candidates и фиксируем датированные operator values сразу; полные matrices затем будут собраны по каждому оператору/вектору.
-- **Источники:** M-12 https://avtodor-tr.ru/upload/iblock/fe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf ; M-11 St Petersburg https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf . Поиск также выдал ЦКАД full node rates, но payment-column meanings still require full official PDF and thus not yet transcribed into accepted cells.
-- **Статус:** source-dated exact product rates; does not close whole M-12 or whole M-11 tariff matrix and is not yet wired into route engine.
-- **Коммит данных:** `ab915c42e4ef420aea086af7963ad1c755770643`. Tests/build not run; data-only update. Next: capture full dated M-12 national rows and full operator PDFs for M-1/M-3/M-11/ЦКАД/A-289 and regional roads.
+16.10.2026: checkpointformatter исправлен, focused15/15PASS; fullgate STARTED, затем lint/rerunjob. ../../docs/checkpoints/2026-10-16-automatic-queue-log-fix.md.
 
+16.10.2026: formatterfix fullgate667/667PASS; lint2/diff STARTED. ../../docs/checkpoints/2026-10-16-automatic-queue-log-fix-build-pass.md.
 
-## 2026-10-12 — bulk capture of remaining Avtodor indexed schedules
+16.10.2026: lint2/diffPASS; full667PASS; STARTED rerunjob116728494584, latestbranch. Послестарта не писатьпараллельно. [Checkpoint](../../docs/checkpoints/2026-10-16-automatic-queue-log-fix-ready.md).
 
-- **Что сделано:** в `TARIFF_CANDIDATES_2026-10-12.json` сохранены raw tariff rows с официальной страницы Автодора для М-1 (1 строка), М-3 (3), М-12 mainline (25), ЦКАД (16, включая полный круг), А-289 (6 ramp pairs), обхода Тольятти (3 OD тарифы). Числа сохранены ordered arrays ровно в порядке выдачи источника; период/класс/payment columns не переинтерпретируются без PDF.
-- **Почему:** по запросу нужно максимально быстро закрывать матрицу, а не ждать уточнений. Сначала сохраняем весь найденный официальный числовой материал; после этого превращаем его в профильные fare cells по PDF и Yandex controls.
-- **Основание:** официальная страница `https://avtodor-tr.ru/road/tariffs/`, результат indexed content от 2026-10-12. Поиск показал для М-12 mainline все listed sections 33–1430 км; для ЦКАД все 16 rows; для А-289 6 ramps. В строке 1205 (Исаметово—Асяново) 325 ₽ I category additionally matched dated official Appendix 3 (effective 2026-03-02). Other raw rows stay candidate pending PDF headers/date.
-- **Не делалось:** raw schedule arrays НЕ преобразованы в `national-registry` prices, M-4 span matrix или route-runtime fare. Это не молчаливое утверждение о точном тарифном профиле.
-- **Commit data:** `5559ee2012f3dd7f55c7d557878658f6dd3f257a`; docs/data only, no tests/build.
-- **Следующее:** скачать/прочесть тарифные PDFs, задать точные profile mappings and effective intervals; затем сгруппировать M-4 continuous spans и complete operator-specific matrices; выполнить validators and coverage checks.
+2026-10-15T23:40:33.905Z: automatic queue STARTED; 27/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-40-33-905Z-started.json). kherson-геническ-kazan-center
 
+2026-10-15T23:41:04.596Z: automatic queue DONE; 28/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-04-596Z-done.json). kherson-геническ-kazan-center
 
-## 2026-10-12 — complete M-11 15–58 km no-section-transponder matrix captured
+2026-10-15T23:41:07.612Z: automatic queue STARTED; 28/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-07-612Z-started.json). kherson-геническ-kerch-center
 
-- **Что сделано:** добавлены все 42 направленных тарифных пары между семью узлами участка М-11 15–58 км в `TARIFF_CANDIDATES_2026-10-12.json`. Сохранены пять ценовых окон: каждый день 01:00–06:00; Пн–Чт 06:00–01:00; Пт; Сб; Вс (дневные окна до 01:00 следующего дня). Профиль PDF: группа 1, включая легковые машины высотой ≤2 м; прямо указано отсутствие транспондера секции 15–58. Действие с 12.01.2026 01:00.
-- **Почему:** это полноценная тарифная матрица независимого оператора; native time/day bands должны сохраниться, поскольку общая M-4 модель Пн–Чт/Пт–Вс сюда не подходит.
-- **Источник:** официальный PDF М-11 https://m11-neva.ru/upload/iblock/efd/jchklu42unx7iu0avbw123k314l3w6dk.pdf (стр. 1–2), список действующих документов https://m11-neva.ru/documentation/ . Данные переведены по таблице из PDF, не из Яндекс-карточек.
-- **Проверка:** JSON повторно прочитан из ветки и распарсен; проверено 42 клетки, 7 origins, 5 bands, все значения целые числа, null отсутствуют. Commit data `c6e544edf501937410c2e04ba083632ccba7d8cb`. Tests/build not run (data-only).
-- **Открытый вопрос:** правило выбора времени в операторской таблице на маршруте, пересекающем временную границу, не кодировали; проверить по правилам ОССП до route engine integration. Далее — добавить pricing table для М-11 58–679, М-4/M-12 others and external operators.
+2026-10-15T23:41:19.772Z: automatic queue DONE; 29/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-19-772Z-done.json). kherson-геническ-kerch-center
 
+2026-10-15T23:41:22.289Z: automatic queue STARTED; 29/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-22-289Z-started.json). kherson-геническ-moscow-center
 
-# Local recovery updates through 13.10.2026
+2026-10-15T23:41:46.556Z: automatic queue DONE; 30/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-46-556Z-done.json). kherson-геническ-moscow-center
 
-# Toll tariff matrix work log
+2026-10-15T23:41:49.369Z: automatic queue STARTED; 30/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-41-49-369Z-started.json). kherson-геническ-saint-petersburg-center
 
-## 2026-10-12 — user triage decisions, route controls, and audit cleanup
+2026-10-15T23:42:23.746Z: automatic queue DONE; 31/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-42-23-746Z-done.json). kherson-геническ-saint-petersburg-center
 
-- **User decisions captured:** A-289 fastest route Maryanskaya→Temryuk is 620 RUB; full paid-road vector through to the Crimean Bridge is 800 RUB; the previous 1,103-RUB interpretation is wrong scope and excluded. Heihe is 1,320 RUB in both directions. SHMSD, ZSD and Khabarovsk are excluded. For fixed-price candidates, use Yandex's fastest route between points before/after the toll crossing, repeat with endpoints reversed, and exclude fares unavailable in Yandex and open sources. Keep Odintsovo and MSD on official published schedules, with Yandex route controls still needed.
-- **CKAD control:** saved a live Yandex Maps route check in both directions between M-10 Russia 45th km and the selected Kaluzhskoe highway—PK5 toll-plaza point. The forward fastest route displayed approximately 972 RUB; the reversed fastest route displayed no toll estimate. Neither endpoint pair is proven equivalent to the operator's exact matrix junction nodes. This is diagnostic evidence only; do not replace the official 3,189-RUB M-10→PK5 matrix cell with it.
-- **Current open-work ledger:** 13 active groups: #1 M-11 closed, #11 Heihe closed; #2 CKAD/A-289 partial, #3 M4 partial, #4 M12 partial, #5 Odintsovo partial, #6 Pskov partial, #9 MSD partial, #12 Mytishchi open, #13 fixed-price-road/Yandex checks partial, #14 traversal model and #15 completeness percentage deferred to final review, #16 intended branch persistence blocked. #7 SHMSD, #8 ZSD and #10 Khabarovsk are excluded. This is 2 closed, 7 partial, 3 open/deferred and 1 blocked; it is not a tariff-completeness percentage.
-- **State correction:** updated `WORK_STATE.md` to remove stale A-289-conflict and excluded-road blockers, and revised the next action list. Historical entries in this log that reported 1,103 RUB as the no-transponder whole-road fare or 441 M-11 cells remaining are earlier observations; they are superseded by the user's scope decision and later complete Order 274 transcription.
-- **Validation:** source snapshot files and tariff candidate JSON parse. CKAD endpoint mismatch, Yandex estimate and reversed direction are explicitly marked non-authoritative for matrix pricing. No runtime integration, V1/V2 edits, build, publication or production change.
+2026-10-15T23:42:26.758Z: automatic queue STARTED; 31/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-42-26-758Z-started.json). kherson-каховка-kazan-center
 
-## 2026-10-12 — M12 extension and Pskov legal-currentness review
+2026-10-15T23:42:58.137Z: automatic queue DONE; 32/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-42-58-137Z-done.json). kherson-каховка-kazan-center
 
-- **M12 confirmed:** reopened the official holding-company notice about the 2026-10-08 M-12 toll-boundary extension. It states that the direct Sokury exit→Shali (M-7 junction) Category-I fare is 99 RUB all day and that Shali–Bavly is free when the trip does not enter the M-12 mainline or cross the toll boundary. Added the review/source-failure note to the M12 snapshot and candidate record.
-- **M12 limitation:** the legacy `kazan_p239` node has not been proven identical to the new Sokury toll boundary. The linked live Avtodor tariff page returned HTTP 403 to web retrieval. No post-extension Moscow/Kazan→Shali direct fare was inferred; the March Moscow→Shali fare remains explicitly superseded.
-- **Pskov review:** found the official regional transport department's current “Платные автодороги” inventory and official legal portal search. The inventory confirms all four roads remain listed. Amounts (Ostrov–Vyshgorodok 300; Estonia–Pechory–Izborsk 150; Opochka–Dubrovka 220; Olsha–Velizh–Usvyaty–Nevel 200 RUB) are supported by the 2025 regional resolution and current secondary coverage, but the current official tariff annex/latest amendment was not retrievable. Issue #6 advanced Open→Partial; mark tariff values date-sourced but do not assert a newly verified amendment status.
-- **Sources:** official holding-company announcement https://ruhw.ru/press/news/154667/; Avtodor linked tariff page https://avtodor-tr.ru/road/tariffs/ (HTTP 403); Pskov official road inventory https://transport.pskov.ru/perechen-avtodorog-oblasti/platnye-avtodorogi (fetch timeout); legal text https://base.garant.ru/411968606/ (403); official publication search index surfaced https://publication.pravo.gov.ru/.
-- **Files:** updated M12 snapshot, candidate record, audit and recovery state. Audit remains 1 closed / 8 partial / 7 open-or-blocked (Pskov swapped into Partial; M12 remains Partial).
-- **Verification:** M12 and candidate JSON parse; audit count remains 1 closed / 8 partial / 7 open-or-blocked. No runtime, V1/V2, build, deployment, or publication changes.
+2026-10-15T23:43:01.052Z: automatic queue STARTED; 32/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-01-052Z-started.json). kherson-каховка-kerch-center
 
-## 2026-10-12 — recovery checkpoint and two operator tariffs
+2026-10-15T23:43:13.981Z: automatic queue DONE; 33/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-13-981Z-done.json). kherson-каховка-kerch-center
 
-- **What:** created `TARIFF_MATRIX_CANDIDATES_2026-10-12.json` with official tariff records for the Ryazan paid overpass and Kazan Voznesensky tract; created this recovery log and `WORK_STATE.md`.
-- **Why:** continue filling the new algorithm's matrix while keeping the existing V1/V2 calculators untouched and preserving source/effective-date evidence for future reconciliation.
-- **Decisions:** passenger-car class; base fare without transponder discount; operator-defined clock windows retained; Ryazan night exemption remains conditional on direction/timing; Kazan amount selected at gantry passage time. Entries remain outside runtime pending route-anchor verification.
-- **Evidence:** Ryazan operator notice, published 2026-09-21 and effective 2026-10-01: https://m-road62.ru/izmenenie-tarifov-na-platnom-puteprovode-s-1-oktyabrya-2026-goda/ . Kazan official tariff page and its referenced order: https://vtkazan.ru/road/tarifs/ (Order No. 07/ПД-ВТ dated 2025-03-06).
-- **Verification:** source pages reviewed. JSON syntax and semantic checks are recorded after local validation. No app tests/build run because this is data-only and the project Git checkout is not writable/available in this workspace.
-- **Branch/commit/PR:** not committed; the only writable workspace directory has no usable Git metadata. Existing discovered calculator checkout is `fix/v2-mobile-layout-2026-10-05` with 22 modified and 6 untracked files; it was not touched. Second checkout is a separate special-territory branch. Git fetch is blocked by read-only `.git` metadata.
-- **Remaining:** recover the intended working experiment branch, restore its earlier matrix dataset, add this checkpoint there and commit; then continue all-operator capture and verify Odintsovo/Bagration image tariffs.
+2026-10-15T23:43:16.487Z: automatic queue STARTED; 33/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-16-487Z-started.json). kherson-каховка-moscow-center
 
-## 2026-10-12 — expand candidate matrix to 50% asset presence
+2026-10-15T23:43:42.217Z: automatic queue DONE; 34/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-42-217Z-done.json). kherson-каховка-moscow-center
 
-- **What:** expanded the candidate file to include Bagration (790 RUB class 1 base fare) and the four-plaza Odintsovo current base tariff schedule; preserved six existing official-source snapshots for Avtodor M1/M3/CKAD/A-289, M12, M11 km15–58 and M11 km58–679 evidence. Added three previously recorded M4 user/Yandex span amounts as explicitly provisional candidates. Updated coverage and handoff state.
-- **Why:** make rapid progress toward broad nationwide tariff coverage while retaining operator-native matrices/schedules and keeping the new data isolated from V1/V2 runtime.
-- **Coverage decision:** use the 20-road/asset inventory in T—Ж's 2026 overview as a coarse scope denominator; 10 assets have at least some tariff record, so asset presence is 50%. This does not claim half of all tariff cells, route pairs or entry/exit combinations are complete. M4 candidates are not counted as independently confirmed asset coverage.
-- **Source and mapping decisions:** copied existing date-stamped JSON evidence without rewriting its tariff contents; snapshots retain their own official-source URLs/effective dates. Bagration uses operator base fare (790 RUB), excluding 750 registered-plate prepayment and 550 operator transponder fare. Odintsovo preserves published four-PVP order and the page's day/direction/time rows as raw candidate data; no derived route sum is calculated until route traversal is verified. M4 values (850/1000, 1230/1450, 230/360) are marked provisional because the old dated Yandex cards are unavailable here.
-- **Verification:** validated top-level JSON and entry keys; audited source snapshot cardinalities: M1 1, M3 3, CKAD 16, A-289 6, M12 19 adjacent rows, M11 km15–58 42 directed cells over five time profiles; current M11 km58–679 explicitly says incomplete and records two verified controls. No app tests/build were run; no runtime files changed.
-- **Branch/commit/PR:** not committed. The writable folder still has no usable Git metadata; discovered V2 checkout has a modified worktree and read-only `.git`, so it was not edited. Six snapshots were copied from its existing source-controlled data files into the portable checkpoint.
-- **Remaining:** restore the intended experiment branch before project commit; complete remaining ten assets from inventory; fill M11 km58–679 and exact span mapping; recheck Odintsovo time/day labels and M4 dated evidence. Next operator intake: Pskov regional roads and remaining regional/concessionary roads.
+2026-10-15T23:43:45.038Z: automatic queue STARTED; 34/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-43-45-038Z-started.json). kherson-каховка-saint-petersburg-center
 
-## 2026-10-12 — expand coarse asset coverage to 75%
+2026-10-15T23:44:20.843Z: automatic queue DONE; 35/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-20-843Z-done.json). kherson-каховка-saint-petersburg-center
 
-- **What:** added current published tariff records for Udmurtia's Kama/Buy bridges (400/300/700 RUB, category group 1), Ufa Eastern Exit (150 RUB without transponder), Togliatti bypass three route spans (210/140/320 RUB without transponder), four Pskov regional roads (150/300/220/200 RUB, class 1 schedule), and the opened first SHMSD section (300 RUB category I). Added source URLs, effective dates where established, and mapping/completeness limits. Updated coverage inventory to 15/20.
-- **Why:** meet the requested next milestone by broadening road-system representation while capturing operator-native whole-road and OD-span rates.
-- **Evidence/decisions:** Udmurtia and Ufa rates were taken from official operator tariff pages; Togliatti values from Avtodor's current table; Pskov values from the 2025 regional tariff resolution as indexed by the legal-document source and remain provisional pending current-amendment confirmation; SHMSD amount from the concessionaire tariff-plan PDF, only for the first open stage. Base/no-transponder fare remains the default. For Togliatti, retain the published full 17–97 km tariff (320 RUB), not a sum inferred from partial spans.
-- **Coverage metric:** the 20 assets in the 2026 T—Ж national overview remain the denominator. 15 assets are now represented, giving 75% coarse asset presence. This must not be reported as 75% of all route pairs/tariff cells; M11 58–679 is still incomplete, Odintsovo route interpretation is pending, and some newly added regional rows need date/scope validation.
-- **Verification:** checked JSON parsing, record count, the 15/20 inventory count, key tariff amounts and source/scope fields. No application tests/build or runtime changes.
-- **Branch/commit/PR:** not committed because the writable workspace lacks usable Git metadata; no other calculator checkout was touched.
-- **Remaining:** finish five unrepresented assets; reconcile matrix with recoverable earlier candidate records; confirm Pskov current legal schedule, SHMSD open-section current status, effective date of Togliatti current tariff source, and the exact no-transponder profile for Odintsovo; then resolve all directed span/entry/exit gaps.
+2026-10-15T23:44:23.831Z: automatic queue STARTED; 35/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-23-831Z-started.json). kherson-новая-збурьевка-kazan-center
 
-## 2026-10-12 — expand inventory presence to 100% and correct MSD tariff versioning
+2026-10-15T23:44:55.819Z: automatic queue DONE; 36/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-55-819Z-done.json). kherson-новая-збурьевка-kazan-center
 
-- **What:** added source/topology records for MSD, ZSD, the Blagoveshchensk–Heihe bridge, Khabarovsk bypass, and Mytishchi Speed Chord. Inventory presence is now 20/20 objects (100%), explicitly not fare-cell completeness.
-- **Why:** continue the user's instruction to close the nationwide asset inventory quickly while keeping unknown tariff cells visible instead of inventing prices.
-- **MSD rule:** official MSD FAQ says there are nine sections and 19 RUB per section from 2026-04-10, weekday peak charging 07:00–11:00 and 16:00–20:00, while weekends/holidays and other weekday periods are free apart from transit trips. The same currently indexed site announces 25 RUB per section from 2026-10-16; as of this checkpoint date (2026-10-12), that is future-effective and must not be applied yet. Charging depends on entry and exit timing. No transponder payment is available. A complete dated segment-pair/transit table remains missing.
-- **ZSD:** operator-annex search extraction provides one Category-I base-tariff pair, zone 1–2: 70 RUB day / 30 RUB night, dated 2025-09-10. Full PDF retrieval returned HTTP 403 in the research interface; no other pairs were invented.
-- **Khabarovsk:** official operator page states four named tariff sections and five toll plazas (two mainline, three ramps) and exposes an OD calculator, but the static text view exposes an isolated 20 RUB without selection context. No exact route fare cell was added. 160 RUB full-route secondary-source reference remains clearly segregated from operator-confirmed fares.
-- **Blagoveshchensk–Heihe:** added official regional toll-rule source. No current passenger-car toll was found; bus passenger ticket prices, customs charges and historical vehicle-category amounts were excluded.
-- **Mytishchi Speed Chord:** Avtodor confirms the toll road and operator-holding information identifies five chargeable tariff segments or a whole-road trip; current category-I price cells were not exposed in retrieved pages, so they remain null.
-- **Coverage semantics:** 20/20 = 100% topology/source presence only. Tariff-cell completeness remains uncomputed because expected directed cell counts are not yet fully enumerated. Null entries mean unknown, not free.
-- **Evidence:** MSD official FAQ https://msd.mos.ru/faq and documents https://msd.mos.ru/docs; operator ZSD tariff annex https://nch-spb.com/upload/iblock/4c0/Prilozhenie-2.pdf and rules https://nch-spb.com/upload/iblock/8f4/b6g07qyzz91fvhx46txlz5m2ldp5unk1/Pravila-s-10.09.2025.pdf; Khabarovsk operator https://vis-transtoll.ru/khabarovsk; Amur Region Government Resolution 725 https://www.amur-gov.ru/doc/101326; Mytishchi official Avtodor note https://avtodor-tr.ru/press-center/news/skorostnaya-mytishchinskaya-khorda-kak-oplatit-proezd/ and operator https://vis-transtoll.ru/.
-- **Verification:** JSON parse/count check; 15 unique candidate rows; all 20 named assets represented and no unrepresented assets. Confirmed four newly added tariff objects contain null price cells. No application runtime changes or app tests.
-- **Branch/commit:** still not committed; current working checkpoint is the writable portable folder, while project Git metadata remains unavailable/read-only.
-- **Remaining:** enumerate and fill tariff cells; obtain current MSD future-effective order, complete ZSD matrix, Heihe car price, and Khabarovsk/Mytishchi exact OD tariff tables.
+2026-10-15T23:44:59.259Z: automatic queue STARTED; 36/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-44-59-259Z-started.json). kherson-новая-збурьевка-kerch-center
 
-## 2026-10-12 — audit of incomplete operator tariff images
+2026-10-15T23:45:12.468Z: automatic queue DONE; 37/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-45-12-468Z-done.json). kherson-новая-збурьевка-kerch-center
 
-- **What:** checked the apparent 73 RUB value exposed in the Mytishchi operator page and opened the linked image. The value has no origin/destination labels in the static extract, and the linked image rendered a general road layout, not a legible tariff table. Removed any implication that 73 RUB is the full-road fare; kept the five tariff-segment topology only.
-- **Why:** prevent a selected UI cell or unrelated dynamic value from becoming a false confirmed fare.
-- **Decision:** Mytishchi current tariff schedule is acknowledged but numeric matrix cells remain null pending a direct tariff table or route calculator result with selected endpoints visible.
-- **Verification:** re-parsed JSON; checked 15 unique record IDs, coverage 20/20, and that Mytishchi whole-road and numeric tariff fields are null.
+2026-10-15T23:45:15.365Z: automatic queue STARTED; 37/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-45-15-365Z-started.json). kherson-новая-збурьевка-moscow-center
 
-## 2026-10-12 — continue unresolved issue audit and operator controls
+2026-10-15T23:45:41.811Z: automatic queue DONE; 38/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-45-41-811Z-done.json). kherson-новая-збурьевка-moscow-center
 
-- **What:** verified that the latest JSON edits parsed and contained eight explicit official/diagnostic controls; created `AUDIT_ISSUES_2026-10-12.md` with status and precise blocker for each of the 16 remaining questions.
-- **Why:** continue through the issue list without overstating coarse asset presence as tariff completeness, and leave a resumable record of what is confirmed versus still unresolved.
-- **New evidence captured:** Khabarovsk official tariff tabs expose category-I section rates 20/45/90/40 RUB and a separate full-route fare of 160 RUB; sum of section fares is 195 RUB, so the whole-route fare is operator-defined and non-additive. The operator OD calculator returned 175 RUB for Gorky–Vostochnoye, conflicting with its displayed 45 RUB section tariff; preserved only as a diagnostic conflict. Odintsovo operator mapping for representative exit vectors was added to the data. MSD transit flat fare 950 RUB and future 25 RUB rate effective 2026-10-16 are recorded with separate temporal status. A 2025 Heihe fare comparator (1,320 RUB) is retained as historical, not current. Official controls added for M4, M1, M3, CKAD, A-289 and the newly paid M12 Sokury–Shali 7 km span at 99 RUB effective 2026-10-08.
-- **Reconciliation flags:** A-289 saved whole-route span 1,103 RUB conflicts with official 2026-03-02 800 RUB benchmark; M1 saved no-transponder 250 RUB conflicts with official benchmark 230 RUB; these may reflect route/payment/date differences and are not silently overwritten. M12 March snapshot predates the new paid span. Khabarovsk calculator route anchors need operator clarification.
-- **Coverage decision:** 20/20 refers only to coarse asset inventory presence. No percentage is assigned to fare-cell coverage because expected directed cell counts are not yet enumerated.
-- **Verification:** `python -m json.tool` passed for the candidate dataset; checked 15 candidate records and eight validation controls. No runtime code was changed and no application tests/build or publication were run. Research browser checks were read-only.
-- **Branch/persistence:** checkpoint, audit and log are saved in the writable workspace. The intended experiment branch remains inaccessible from this workspace's Git metadata, so no commit was made and unrelated calculator worktrees were not changed.
+2026-10-15T23:45:44.855Z: automatic queue STARTED; 38/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-45-44-855Z-started.json). lnr-алчевск-kazan-center
 
-## 2026-10-12 — correct SHMSD/WHSD tariff classification
+2026-10-15T23:46:08.515Z: automatic queue DONE; 39/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-08-515Z-done.json). lnr-алчевск-kazan-center
 
-- **What:** reclassified the 300 RUB Vitebsk/Blagodatnaya tariff finding from an independent SHMSD price to a candidate ZSD tariff-zone-6 amount. Kept standalone SHMSD fare null and added the zone-6 candidate to the ZSD record with explicit interpretation caveat.
-- **Why:** the official operator annex search extract names zone 6 as the Southern ZSD span from Blagodatnaya Street to Vitebsky Prospekt, while the official city source describes the Vitebsk interchange as stage 1 of SHMSD connected to ZSD. The evidence does not establish an independent SHMSD charge.
-- **Evidence:** official tariff annex https://nch-spb.com/upload/iblock/c89/9w3aehlsbrrr4ys27479u925nkbtno11/Prilozhenie-_1-k-Prikazu-_32-ot-22.04.2025_Bazovye-tarify.pdf (search-indexed excerpt; direct retrieval returned 403); official city statement https://www.gov.spb.ru/press/governor/291314/ . The annex extract shows 300 RUB among columns, but exact category/payment column and trip cell remain unverified.
-- **Verification:** re-parsed candidate JSON. No unsupported fare promoted to confirmed status; runtime remains unchanged.
+2026-10-15T23:46:11.469Z: automatic queue STARTED; 39/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-11-469Z-started.json). lnr-алчевск-kerch-center
 
-## 2026-10-12 — M11 tariff-table discovery and Yandex point test
+2026-10-15T23:46:26.805Z: automatic queue DONE; 40/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-26-805Z-done.json). lnr-алчевск-kerch-center
 
-- **What:** followed the proposed point method in Yandex Maps for the 88 km→90 km M-11 points near PVP 89. The map returned an 8-minute / 4.2-mile route labelled “Платная дорога,” but displayed no tariff amount. The geocoded kilometer pins route via local access roads, so this attempt does not verify a single adjacent-PVP fare and is excluded from tariff data.
-- **Official-source correction:** found that Avtodor does publish M-11 tariff tables. Its official tariff page exposes the 58–679 km tariff table and current category-I rates from the km58 origin to listed exits. An official matrix PDF approved under Order 53 dated 2026-02-22 includes directed PVP-to-PVP rows (e.g. km89 to km97), proving the previous claim that the operator material had only two tariff cells was incorrect. The current detailed PDF, recorded in the existing snapshot as Order 274 dated 2026-09-03, is identified at https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf; direct web retrieval returned 403 and the cloud browser showed DDoS-Guard, so its full current matrix was not extracted in this pass. Do not carry forward Order 53 rates as current without reconciliation.
-- **Decision:** use the latest official route matrix as the primary tariff source; use Yandex points for geometry/route validation only when Maps exposes no tariff amount. Keep route-cell prices null until Order 274 is transcribed and reconciled, especially for the PVP km593 opened 2026-09-18.
-- **Evidence:** official tariff page https://avtodor-tr.ru/road/tariffs/ (search-indexed extraction, including current no-transponder category-I rates from km58); Order 53 matrix PDF https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf; current Order 274 file above. Research refs: `turn117search0`, `turn117search1`, `turn116search5`. Yandex Maps observation on 2026-10-12: route 88→90 km, paid-road label, no fare shown.
-- **Verification:** confirmed the current snapshot metadata already identifies Order 274 and records 22 PVPs but only two cells had been transcribed. No tariff was inferred from the Yandex route or by differencing PVP prices. No runtime code changed.
+2026-10-15T23:46:29.515Z: automatic queue STARTED; 40/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-29-515Z-started.json). lnr-алчевск-moscow-center
 
+2026-10-15T23:46:48.189Z: automatic queue DONE; 41/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-48-189Z-done.json). lnr-алчевск-moscow-center
 
-## 2026-10-12 — establish current M-11 km58-origin tariff cells
+2026-10-15T23:46:51.166Z: automatic queue STARTED; 41/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-46-51-166Z-started.json). lnr-алчевск-saint-petersburg-center
 
-- **What:** expanded the current M-11 snapshot with all 20 category-I, no-transponder PVP58→published-exit fares exposed by the official Avtodor tariff page, for Mon–Thu and Fri–Sun. Captured the tariff table URL, source access limitation, and route/PVP kilometer mapping.
-- **Why:** the user asked for a deep method to resolve tariff cells and specifically proposed 88→648 km as a check. On M-11 the route markers map to PVP km89 and PVP km647 (published road km 646), respectively. The official table can directly supply PVP58-origin fares; Yandex provides route geometry but did not show an amount on the earlier point test.
-- **Method decision:** treat each official row/cell as an operator-native tariff vector. Do not derive 89→647 by subtracting PVP58-origin amounts. Keep weekday and weekend prices in separate cells. When the exact OD cell is inaccessible, retain null and use Yandex only as an independent route/path check, then reconcile with operator fare result.
-- **Evidence:** official tariff page https://avtodor-tr.ru/road/tariffs/ (search-index extraction ref `turn161search0` / `turn155search2`); current detailed tariff PDF/order 274 https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf (direct access returns 403 in this research interface); official OССП tariff-change notice from 2026-09-04 is recorded in prior research refs `turn125view0`/`turn126view1`. Official page defines Mon–Thu vs Fri–Sun and lists its current validity document.
-- **Limit:** tariff page exposes the km58-origin row in the retrieved text, but not the requested arbitrary pair row PVP89→PVP647; do not label that exact cell verified yet. The order PDF's effective-date clause and the complete OD matrix remain to be captured. PVP593 is not included as a published exit in the extracted km58 row and remains a distinct unresolved mapping.
-- **Verification:** JSON parses; all 20 mapped destination IDs exist in the 22-point list; values were copied from the four category-I columns [with transponder Mon–Thu, no transponder Mon–Thu, with transponder Fri–Sun, no transponder Fri–Sun], selecting only the no-transponder values. Existing 58→593 and 58→679 controls remain separate. No runtime code changed.
+2026-10-15T23:47:21.506Z: automatic queue DONE; 42/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-47-21-506Z-done.json). lnr-алчевск-saint-petersburg-center
 
-## 2026-10-12 — MDS direct tariff cell for M-11 89–646 km
+2026-10-15T23:47:24.743Z: automatic queue STARTED; 42/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-47-24-743Z-started.json). lnr-антрацит-kazan-center
 
-- **What:** captured a Category-I tariff table cell shown on the MDS operator website for route 89–646 km: 3,120 RUB on workdays and 3,310 RUB on weekends/holidays. Added it to the M11 snapshot as the user's Yandex point pair 88→648 km, mapped to PVP89→PVP647 (operator route km646).
-- **Why:** the user requested a way to obtain exact M-11 tariffs through operator-defined spans and emphasized storing a complete vector price instead of summing individual PVP charges. This is a directly published route cell; it is not inferred from the PVP58 origin fare or synthesized by subtraction.
-- **Evidence:** official MDS tariffs https://www.mos-spb.ru/tariffs/main/main-ru, Category I (<2 m, 2+ axles), row “89-646 км”; the opened page was crawled 2026-10-12. The row shows 3,120/3,120 across workday time columns and 3,310/3,310 across weekend/holiday time columns. At initial capture this was treated as current; the follow-up source comparison below reclassifies it as disputed and likely stale. Yandex route geometry for 88→648 km previously showed an M-11 route, 5h09, and no price.
-- **Limitations:** captured MDS tariff page does not state the exact effective-from date. The Avtodor current detailed Order 274 PDF remains inaccessible behind DDoS-Guard, so reconcile this direct operator cell against the current Avtodor full matrix when it can be read. Do not generalize one cell to other endpoints.
-- **Verification:** updated M11 JSON snapshot, candidate source index, state, and issue #1. JSON parse and semantic checks follow. No V1/V2/runtime edits.
-- **Source conflict found during follow-up:** the MDS table also publishes 58–646 km at 3,290/3,520 RUB, while the current Avtodor tariff page publishes the corresponding PVP58→PVP647 cell at 3,890/4,580 RUB. MDS says full M-11 tariff information/calculation is on Avtodor's website. This suggests the MDS page may be stale or reflect a different tariff scope; exact cause is not established. Therefore the captured MDS 89–646 cell is marked disputed and excluded from runtime approval until reconciled against current Order 274 / Avtodor calculator. Do not extrapolate either amount to other pairs.
+2026-10-15T23:47:49.399Z: automatic queue DONE; 43/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-47-49-399Z-done.json). lnr-антрацит-kazan-center
 
-## 2026-10-12 — date/scope analysis of the MDS discrepancy
+2026-10-15T23:47:52.449Z: automatic queue STARTED; 43/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-47-52-449Z-started.json). lnr-антрацит-kerch-center
 
-- **What:** checked the official OССП M-11 announcement after finding conflicting MDS and Avtodor 58–646 values. OССП says M-11 tariffs on km 58–543 change effective 2026-09-04. The current Avtodor detailed tariff PDF is identified as published 2026-09-04 (Order 274 dated 2026-09-03), while the MDS page does not show a tariff effective date and points users to Avtodor for complete tariff information/calculation.
-- **Why:** determine whether the MDS route-cell observation is applicable to the current price matrix and whether the change is in the component containing the requested 89→646 trip.
-- **Decision:** interpret MDS 58–646 and 89–646 numbers as likely stale/historical observations because those trips include the repriced km58–543 span, but label this cause as an inference, not proven. Keep 3,120/3,310 as disputed source data; do not subtract old/current fares to synthesize a new value. Current Avtodor PVP58-origin cells are the active sourced values for that origin and dated 2026-09-04 where the updated official tariff page supports them.
-- **Blocker:** current Avtodor PDF direct open returned 403; the official site’s browser page served a DDoS-Guard human-verification page. No challenge was solved or bypassed. The full row 89/current 89→646 fare remains untranscribed; no exact Yandex price was shown.
-- **Evidence:** official OССП notice https://unitoll.ru/about/press/news/izmenyayutsya-tarify-na-proezd-po-doroge-m-11-neva-/ ; official MDS table https://www.mos-spb.ru/tariffs/main/main-ru ; Avtodor tariff page https://avtodor-tr.ru/road/tariffs/ and detailed PDF https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf .
-- **Verification:** JSON parse and assertions on source conflict / 20 PVP58 origin cells / null complete-matrix status passed. No app or runtime changes.
+2026-10-15T23:48:07.967Z: automatic queue DONE; 44/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-48-07-967Z-done.json). lnr-антрацит-kerch-center
 
-## 2026-10-12 — Yandex weekday/weekend route control for A-289
+2026-10-15T23:48:10.725Z: automatic queue STARTED; 44/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-48-10-725Z-started.json). lnr-антрацит-moscow-center
 
-- **What:** built the Yandex Maps car route from станица Марьянская to Темрюк. Tested Monday 2026-10-12 and Saturday 2026-10-17, both at 19:44 local time. The fastest route on each date follows A-289. Weekday: 1 h 28 min, 73 mi, toll display ~620 RUB. Saturday: 1 h 27 min, 73 mi, toll display ~620 RUB. Yandex details say this fare is for a vehicle under 2 m without a transponder and that toll data is supplied by road operators.
-- **Why:** user authorized Yandex route-price checks as a truth source and instructed that the product selects only the fastest route. This is a controlled weekday/weekend test for a disputed A-289 route.
-- **Decision:** preserve this as a user-approved Yandex route control with the displayed approximation marker intact. Do not substitute it for an operator tariff cell with toll-plaza endpoints and do not propagate it to other A-289 routes. Slower options are excluded by the fastest-only rule.
-- **Evidence:** Yandex Maps browser observation on 2026-10-12; selected path detail shows A-289 segments (28.5 mi and 22.8 mi); weekday screenshot/DOM date 2026-10-12 19:44; Saturday DOM date 2026-10-17 19:44. Separate snapshot: `source-snapshots/yandex-2026-10-12-a289-maryanskaya-temryuk.json`.
-- **Verification:** JSON parse and semantic assertions passed; control indexed in candidate file. No runtime code changes.
+2026-10-15T23:48:29.934Z: automatic queue DONE; 45/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-48-29-934Z-done.json). lnr-антрацит-moscow-center
 
-## 2026-10-12 — M-12 Sokury–Shali post-extension tariff addendum
+2026-10-15T23:48:32.972Z: automatic queue STARTED; 45/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-48-32-972Z-started.json). lnr-антрацит-saint-petersburg-center
 
-- **What:** added the direct Sокуры exit→Шали Category-I passenger-car fare of 99 RUB, effective 2026-10-08 00:00 local, all day. Stored both in the M-12 source snapshot as a later operator tariff addendum and linked from the candidate control index. Updated audit/state notes to invalidate the older March Moscow→Шали assertion for routes crossing the newly paid span.
-- **Why:** prevent a stale pre-extension whole-vector result from being used after the toll boundary moved; obey the matrix rule to capture complete operator-defined route vectors directly and never append a component price to unrelated adjacent prices.
-- **Evidence:** Russian Highways official announcement https://ruhw.ru/press/news/154667/ (lines 109–112 states date, exact endpoints, Category I 99 RUB, 24-hour applicability, and references Avtodor tariffs). Interfax separately confirms the 7.045 km scope and toll-boundary endpoints: https://www.interfax-russia.ru/volga/news/proezd-po-7-kilometrovomu-otrezku-m-12-pod-kazanyu-s-8-oktyabrya-stanet-platnym (lines 26–32).
-- **Limits:** this proves only the Sокуры-exit→Шали vector. It does not refresh other M-12 entries/exits or validate the legacy Moscow→Шали price after the boundary extension. Avtodor tariff page direct fetch returned 403 in search; no browser challenge was attempted.
-- **Verification:** JSON parsing and semantic checks for the exact route, 99 RUB, start date, all-day period, and addendum linkage passed. No runtime files changed.
+2026-10-15T23:49:02.941Z: automatic queue DONE; 46/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-02-941Z-done.json). lnr-антрацит-saint-petersburg-center
 
-## 2026-10-12 — matrix readiness and issue-count definition
+2026-10-15T23:49:06.684Z: automatic queue STARTED; 46/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-06-684Z-started.json). lnr-довжанск-kazan-center
 
-- **What:** recalculated state from the 16 tracked audit groups and candidate index: coarse road-asset presence is 20/20 (100%); issue-group status is 0 closed, 8 partial, 8 open/blocked. Added these counts to the recovery state and clarified the audit header. The consistency check also found that the Ryazan paid overpass was represented by a tariff entry but missing from the explicit 20-name asset list; added it so the listed count, declared count and inventory agree. Explicitly quarantined the M-12 March 2026 Moscow→Shali 5,909 RUB assertion as historical and non-runtime-approved, while retaining the direct post-extension Sokury-exit→Shali 99 RUB addendum.
-- **Why:** answer readiness questions without conflating presence of a road/source with completeness of its tariff cells or directed endpoint vectors.
-- **Method:** counted the 16 issue rows in `AUDIT_ISSUES_2026-10-12.md`; only rows explicitly marked Partial qualify as partial. The other 11 are Open, Reclassified unresolved, or Blocked; none meets the full closure standard.
-- **Verification:** parsed candidate matrix and M-12 snapshot; asserted 20 represented assets, 16 unique audit issue numbers, 0 Closed, 8 Partial, 8 Open/blocked; asserted March 5,909 RUB vector is quarantined and current direct 99 RUB vector remains present. No runtime changes. Git status unavailable because this writable work folder has no Git repository metadata.
+2026-10-15T23:49:30.303Z: automatic queue DONE; 47/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-30-303Z-done.json). lnr-довжанск-kazan-center
 
-## 2026-10-12 — accessed and tested the official M-11 «Нева» tariff calculator
+2026-10-15T23:49:33.379Z: automatic queue STARTED; 47/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-33-379Z-started.json). lnr-довжанск-kerch-center
 
-- **What:** opened `https://m11-neva.ru/`; confirmed the route form is interactive and exposes origin/destination points, weekday, arrival-time interval, vehicle category and transponder/no-transponder. Verified direct Category-I no-transponder tariff for Moscow km22→Solnechnogorsk/M10 km58: 1,130 RUB Tuesday and 1,650 RUB Saturday for the selected 00:00–01:00 interval. These match the existing official 15–58 km table for Mon–Thu and Saturday daytime periods.
-- **Critical scope finding:** the operator tariff page heading says M-11 Moscow–Solnechnogorsk and identifies the 15–58 km concession. Homepage route selectors list points farther north, but km89→km646 also returned the same 15–58 values (1,130 weekday / 1,650 Saturday); a control from km58→km646 likewise displayed the weekday 15–58 amount. Do not ingest those outputs as prices for km58–679 or PVP89→PVP647. Store them only as a calculator scope/UI diagnostic.
-- **Why:** user specifically directed checking direct combinations on this operator site. Direct access was successful, but the scope boundary matters: this site validates the previously captured 15–58 matrix, not the Avtodor-operated km58–679 matrix.
-- **Evidence:** operator tariff page https://m11-neva.ru/rate/ explicitly labels the tariffs “Москва—Солнечногорск”; text search extract states km15–58. Direct browser UI observation saved in `source-snapshots/m11/m11-neva-live-calculator-access-2026-10-12.json`. The page warns its calculations are reference values and may differ from actual charges.
-- **Verification:** snapshot JSON parsed; compared observed 1,130/1,650 values to existing operator PDF snapshot `2026-04-24-section15-58-category1-no-transponder.json`; confirmed selected endpoints/payment/class/day are written. No runtime edits. No Git metadata available in this workspace.
+2026-10-15T23:49:48.761Z: automatic queue DONE; 48/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-48-761Z-done.json). lnr-довжанск-kerch-center
 
-## 2026-10-12 — resolve interpretation of the M-11 58–679 full-span row
+2026-10-15T23:49:51.662Z: automatic queue STARTED; 48/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-49-51-662Z-started.json). lnr-довжанск-moscow-center
 
-- **What:** confirmed that PVP58→PVP679 (full km58–679 vector) already exists as an official current row. Clarified all four Category-I cells in the audit record: Mon–Thu 3,900 RUB with transponder / 4,200 RUB without; Fri–Sun 4,690 RUB with / 4,940 RUB without. Under the calculator's default no-transponder rule, use 4,200 and 4,940 RUB for the published day profiles.
-- **Why:** user correctly pointed out that a direct full-span route cell can be counted as one vector; the prior response blurred that specific complete row with the still-incomplete all-origin M11 matrix. The issue is only the mapping of 3,900/4,200 to day groups: in the official table those are payment-method columns within Mon–Thu, not Tue–Fri and Sat–Mon prices.
-- **Evidence:** current official Avtodor tariff page `https://avtodor-tr.ru/road/tariffs/` labels the span 58–679 km and, under Category I, lists columns Mon–Thu (with / without transponder), Fri–Sun (with / without transponder), with row values 3,900 / 4,200 / 4,690 / 4,940. The same page defines Mon–Thu and Fri–Sun treatment, including holidays and pre-holiday days. Search extraction ref `turn203search0`; direct page open is unavailable in this research interface.
-- **Decision:** the PVP58→PVP679 full-span cell is counted and runtime-eligible as source data with no transponder: 4,200/4,940 RUB, subject to the official effective-date scope recorded in the snapshot. User-reported 3,900 Tue–Fri / 4,200 Sat–Mon is preserved as a discrepancy note, not silently remapped. This does not complete arbitrary origin rows in the M11 58–679 matrix.
-- **Verification:** snapshot and candidate JSON parse; assertions confirm PVP58→679 current no-transponder values are 4,200/4,940, with-transponder values are 3,900/4,690, and the day profiles match the operator's published definitions. No runtime code changed.
+2026-10-15T23:50:11.104Z: automatic queue DONE; 49/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-50-11-104Z-done.json). lnr-довжанск-moscow-center
 
-## 2026-10-12 — retract premature M-11 closure and log operator-calculator discrepancy
+2026-10-15T23:50:14.101Z: automatic queue STARTED; 49/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-50-14-101Z-started.json). lnr-довжанск-saint-petersburg-center
 
-- **What:** reverted issue #1 from Closed to Partial and restored the aggregate count to 0 closed / 8 partial / 8 open or blocked. Updated `AUDIT_ISSUES_2026-10-12.md` and `WORK_STATE.md`.
-- **Why:** user clarified that the prior message about closure was a question, and reported the m11-neva.ru UI showing 3,900 RUB Tuesday–Friday and 4,200 RUB Monday/Saturday/Sunday, with identical amounts regardless of transponder. This is not what the current Avtodor km58→679 table publishes.
-- **Evidence:** Avtodor official tariff page search result `turn205search0` displays 3,900/4,200 RUB Mon–Thu with/without transponder and 4,690/4,940 RUB Fri–Sun with/without. m11-neva.ru `/rate/` page itself labels the tariff scope Moscow–Solnechnogorsk; prior homepage UI test selected beyond-scope exits and returned the 15–58 section fare. No new 58→679 live selection was made in this turn; the user's current output remains a reported observation pending capture with exact controls.
-- **Decision:** retain Avtodor values as current published-source candidates; do not silently replace with the unexplained reported UI output. Ask no clarification now; continue next by reproducing the precise UI controls on m11-neva.ru, if possible, and establish whether it returns a genuine Avtodor fare or a calculator scope artifact. If direct output still differs, contact/source clarification is needed before choosing runtime values.
-- **Verification:** checked the official table's four cells and day/payment headings, the m11-neva.ru rate page scope, and consistency of 16 issue rows / 0 closed / 8 partial / 8 open-or-blocked. No runtime code changed.
+2026-10-15T23:50:43.650Z: automatic queue DONE; 50/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-50-43-650Z-done.json). lnr-довжанск-saint-petersburg-center
 
-## 2026-10-12 — set Avtodor as authoritative source for M-11 km58–679
+2026-10-15T23:50:46.902Z: automatic queue STARTED; 50/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-50-46-902Z-started.json). lnr-марковка-kazan-center
 
-- **What:** preserved the official Avtodor tariff cells as the adopted M-11 values, reclassified the reported m11-neva.ru figures as a UI diagnostic only, and recorded the user's source-priority decision in the M-11 snapshot, audit and state files.
-- **Why:** the user said official Avtodor data should be retained where available. The direct published PVP58→PVP679 Cat-I cells are 3,900/4,200 RUB Mon–Thu with/without transponder and 4,690/4,940 RUB Fri–Sun with/without. The m11-neva.ru page's stated rate scope is Moscow–Solnechnogorsk; previous higher-kilometer controls repeated the 15–58 section fare.
-- **Coverage limit:** this settles which source wins for the overlapping PVP58-origin vector cells; it does not establish that every entry/exit pair for km58–679 is already in our files. The current snapshot contains 20 direct PVP58-origin vectors, not the complete origin/destination matrix. Keep issue #1 Partial until the remaining applicable vectors are transcribed or the defined product vector set is explicitly bounded.
-- **Verification:** parsed the edited JSON snapshot and candidate matrix; asserted audit row count 16 with 0 closed, 8 partial and 8 open/blocked; confirmed all 20 PVP58-origin rows remain intact and the direct no-transponder PVP58→PVP679 values remain 4,200/4,940 RUB. No runtime code changed.
+2026-10-15T23:51:09.610Z: automatic queue DONE; 51/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-09-610Z-done.json). lnr-марковка-kazan-center
 
-## 2026-10-12 — clarify that Avtodor publishes direct prices for PVP pairs
+2026-10-15T23:51:12.775Z: automatic queue STARTED; 51/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-12-775Z-started.json). lnr-марковка-kerch-center
 
-- **What:** updated the M-11 audit and recovery state to describe the official source correctly: detailed tariff appendices are PVP-origin × PVP-destination matrices, where each cell is a direct route-vector fare. Set the next task to transcribe all current cells from Order 274, not to infer them by summing per-PVP increments.
-- **Why:** the user's proposed vector model corresponds directly to the operator's matrix format. The previous summary understated the existence of other combinations. A prior official Avtodor matrix exposes rows and columns for many PVPs and direct values for every pair (e.g., km67→km89); these historic numbers demonstrate structure only and are not current fare inputs.
-- **Evidence:** official historical Appendix 1 search result `turn208search2` / `turn212search0` includes the full PVP-pair matrix. Current Avtodor Order 274 PDF dated 2026-09-04 is identified at `https://avtodor-tr.ru/upload/iblock/b40/0dbxelqoqelj4yx3ey7yfieo3odimmkn.pdf` (search result `turn210search0`); direct open returns 403, and the current local snapshot contains 20 PVP58-origin cells only.
-- **Verification:** no prices copied from the historical matrix into current data. JSON parse and audit row-count check; runtime unchanged. Next task: obtain/transcribe the current Order 274 matrix cells while preserving category, payment basis, direction and day profile.
+2026-10-15T23:51:29.650Z: automatic queue DONE; 52/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-29-650Z-done.json). lnr-марковка-kerch-center
 
-## 2026-10-12 — user supplied Avtodor Order 274 PDF; inspected current M-11 matrices
+2026-10-15T23:51:32.507Z: automatic queue STARTED; 52/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-32-507Z-started.json). lnr-марковка-moscow-center
 
-- **What:** copied the supplied 10-page Order 274 PDF into `source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf`; visually inspected the document and transcribed the Category-I PVP58-origin row for both day profiles into `currentOrder274Matrix` in the M-11 snapshot. Updated audit, state and candidate source index.
-- **Why:** user supplied the exact current operator document needed to resolve M-11 directed vector prices. The PDF contains complete origin-PVP × destination-PVP matrices; each cell is a direct fare, so do not compose prices from increments.
-- **Document facts:** Appendix 1, page 1 is Mon–Thu; page 5 is Fri–Sun; category I; 22 tariff points (462 ordered non-self cells/profile); Order 274 signed 2026-09-03 and tariffs effective 2026-09-04. The matrix header lists cash, bank card, and transponders APD/OSSP/MCC/NKD in one common table. Day definitions include holidays and pre-holidays as printed.
-- **Transcribed control:** PVP58→PVP679 is 3,900 RUB Mon–Thu / 4,200 RUB Fri–Sun; PVP67→PVP89 is 130/160 RUB. The first PVP58-origin row includes PVP58→PVP593 3,440/3,600 and PVP58→PVP647 3,600/3,890. These values are copied from the attached Order 274 matrices, not inferred.
-- **Conflict:** the current Avtodor tariff overview separately exposes a four-cell schedule for PVP58→PVP679 (3,900/4,200 Mon–Thu and 4,690/4,940 Fri–Sun with/without transponder). The detailed Order 274 matrix shows one common payment table at 3,900/4,200 by day profile. Both source records are retained separately; use Order 274 direct cells for this route-vector matrix and hold runtime integration until the source scope/payment distinction is reconciled.
-- **Coverage:** only the PVP58-origin row (21 destinations per profile) has been transcribed; the remaining 21 origin rows (441 ordered non-self cells/profile) are still outstanding. Matrix completion remains partial.
-- **Verification:** PDF has 10 pages and is unencrypted; visual inspection confirmed the two Cat-I tables and effective date; JSON parses; 22 PVP points and both 22-value row arrays asserted; PVP58→PVP679 and PVP67→PVP89 controls asserted. No runtime code changed.
+2026-10-15T23:51:50.024Z: automatic queue DONE; 53/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-50-024Z-done.json). lnr-марковка-moscow-center
 
+2026-10-15T23:51:53.065Z: automatic queue STARTED; 53/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-51-53-065Z-started.json). lnr-марковка-saint-petersburg-center
 
-## 2026-10-12 — user confirmed M-11 tariff source priority
+2026-10-15T23:52:20.470Z: automatic queue DONE; 54/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-52-20-470Z-done.json). lnr-марковка-saint-petersburg-center
 
-- **Decision:** User explicitly designated Avtodor Order No. 274 dated 2026-09-03 as the basis for all M-11 km58–679 tariff data. Its direct Category-I origin-PVP × destination-PVP cells prevail over conflicting Avtodor overview-page values or calculator observations.
-- **Payment/day interpretation:** preserve the order's two profiles exactly (Mon–Thu excluding weekends, non-working holidays and pre-holiday days; Fri–Sun including weekends, non-working holidays and pre-holiday days). It prints one common matrix for cash, bank card and listed transponders; the calculator's base fare remains the no-transponder choice, with no extra adjustment where the order provides none.
-- **Scope:** copy each published direct vector cell from pages 1 and 5; do not calculate vectors by summing increments or subtracting origin totals. Retain conflicting lower-priority source observations in audit notes, but they no longer block Order 274 transcription.
-- **Progress:** PVP58-origin row is present (21 non-self cells per profile); the other 21 origin rows per profile are still outstanding. No runtime or V1/V2 edits.
-- **Verification:** JSON parse passed; PDF pages 1 and 5 rendered and reviewed. Full row-by-row transcription and matrix consistency check remain pending.
+2026-10-15T23:52:23.549Z: automatic queue STARTED; 54/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-52-23-549Z-started.json). zaporizhzhia-бердянск-kazan-center
 
-- **Transcription aid:** rendered Order 274 pages 1 and 5 at 300 dpi and saved a raw Tesseract OCR transcript to `source-snapshots/m11/2026-10-12-order274-pages1-5-ocr-raw.txt`. It is explicitly labeled unverified/non-canonical; legible original page cells remain the only tariff authority. This captures all OCR candidate rows for subsequent correction without feeding OCR guesses to runtime.
+2026-10-15T23:52:57.567Z: automatic queue DONE; 55/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-52-57-567Z-done.json). zaporizhzhia-бердянск-kazan-center
 
+2026-10-15T23:53:01.004Z: automatic queue STARTED; 55/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-01-004Z-started.json). zaporizhzhia-бердянск-kerch-center
 
-## 2026-10-12 — Order 274 cell extraction attempt
+2026-10-15T23:53:17.071Z: automatic queue DONE; 56/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-17-071Z-done.json). zaporizhzhia-бердянск-kerch-center
 
-- **What:** rendered Appendix 1 pages 1 and 5 at 300 dpi; isolated the Category-I tables; saved raw page OCR. Tested per-cell Tesseract extraction with grid coordinates.
-- **Result:** OCR is not accurate enough to promote automatically: digits are dropped/changed and the first-page parsing has unresolved cell alignment/missing cells. No newly OCR-read fares were inserted into the canonical matrix. Existing verified PVP58 row remains the only transcribed Order 274 row.
-- **Decision:** keep issue #1 partial; do not infer/fill the other 21 rows from noisy OCR or add/subtract route totals. Resume from original page images and verify each value directly; then run bidirectional/symmetry and full-cell-count checks.
-- **Environment:** the scratch workspace has no usable project Git branch; candidate state and raw OCR artifacts are local only. No runtime, publication or V1/V2 changes.
+2026-10-15T23:53:19.996Z: automatic queue STARTED; 56/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-19-996Z-started.json). zaporizhzhia-бердянск-moscow-center
 
+2026-10-15T23:53:48.804Z: automatic queue DONE; 57/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-48-804Z-done.json). zaporizhzhia-бердянск-moscow-center
 
-## 2026-10-12 — manually transcribed next Order 274 M-11 rows
+2026-10-15T23:53:52.239Z: automatic queue STARTED; 57/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-53-52-239Z-started.json). zaporizhzhia-бердянск-saint-petersburg-center
 
-- **What:** added direct Category-I origin rows PVP67, PVP89 and PVP97 for both Mon–Thu and Fri–Sun to the existing PVP58 row in the current snapshot. Prices were copied directly from the original page images (Appendix 1, pp.1 and 5); OCR was used only as a locator/check aid, not as the value source.
-- **Verification:** each row has 22 columns including an explicit null diagonal; JSON validation passed. Reciprocal cells among the four transcribed rows match where both sides are available. Per profile: 4/22 origin rows and 84/462 ordered non-self cells are transcribed; 18 rows / 378 cells remain.
-- **Decision:** matrix remains Partial and not runtime complete. Continue direct cell transcription; do not derive fare values.
+2026-10-15T23:54:30.887Z: automatic queue DONE; 58/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-54-30-887Z-done.json). zaporizhzhia-бердянск-saint-petersburg-center
 
+2026-10-15T23:54:34.353Z: automatic queue STARTED; 58/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-54-34-353Z-started.json). zaporizhzhia-васильевка-kazan-center
 
-- **Follow-up transcription:** added four more direct Order 274 rows: PVP124, PVP147, PVP159 and PVP177, for both day profiles. Paired reciprocal values were checked against already transcribed rows; the checks agree. Current coverage is 8/22 rows (168/462 cells per profile); 14 rows / 294 cells per profile remain. JSON parse and semantic length/diagonal checks passed.
+2026-10-15T23:55:08.986Z: automatic queue DONE; 59/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-55-08-986Z-done.json). zaporizhzhia-васильевка-kazan-center
 
+2026-10-15T23:55:12.345Z: automatic queue STARTED; 59/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-55-12-345Z-started.json). zaporizhzhia-васильевка-kerch-center
 
-## 2026-10-12 — completed M-11 km58–679 Order 274 matrix transcription
+2026-10-15T23:55:28.580Z: automatic queue DONE; 60/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-55-28-580Z-done.json). zaporizhzhia-васильевка-kerch-center
 
-- **What:** transcribed the remaining eight rows (PVP402, PVP444, PVP524, PVP545, PVP593, PVP647, PVP668, PVP679) for both profiles from original PDF page images. Combined with previously transcribed rows, both 22×22 Category-I matrices are now complete in the snapshot.
-- **Why:** user directed completion of this matrix before moving to other roads and confirmed Order No. 274 (signed 2026-09-03, effective 2026-09-04) as the source of truth. Each cell remains a direct PVP-to-PVP price; no increments or differences were used.
-- **Validation:** each profile has 22 rows, 22 columns/row, 22 null diagonal cells and 462 non-self fares. Automated reciprocal equality check passed across all 462 pairs in each profile; JSON parse and row-shape checks passed. PVP58→PVP679 in the Order is 3,900 RUB Mon–Thu / 4,200 RUB Fri–Sun.
-- **Disposition:** audit issue #1 moved Partial→Closed for source-matrix collection; overall issues are now 1 closed / 7 partial / 8 open. No runtime integration, build/test, publication or production change. Next road issue is M4 route-vector confirmation, then continue through the remaining audit list.
-- **Repository:** no usable Git working branch in this workspace; updated portable checkpoint files only.
+2026-10-15T23:55:31.606Z: automatic queue STARTED; 60/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-55-31-606Z-started.json). zaporizhzhia-васильевка-moscow-center
 
-## 2026-10-12 — M-4 south-region tariff and Yandex controls
+2026-10-15T23:56:00.813Z: automatic queue DONE; 61/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-56-00-813Z-done.json). zaporizhzhia-васильевка-moscow-center
 
-- **What:** captured current Avtodor Category-I payment/day cells for PVP1046, 1093, 1184 and 1223; stored them with two precomputed audit vectors and preserved the prior Yandex candidate numbers. Ran live Yandex fastest-route checks for street-level Rostov-on-Don→central Krasnodar at 10:00 Tue 2026-10-13 and Sat 2026-10-17, with car <2 m/no transponder.
-- **Observed:** Yandex displays approximate toll totals of ~850 RUB Tuesday (3 h 46 min) and ~1,000 RUB Saturday (3 h 42 min). It does not expose the exact PVP sequence on the route card. Official Avtodor table extraction lists for PVP1093 transponder/no-transponder 150/150 Mon–Thu and 210/270 Fri–Sun; PVP1184 300/350 and 380/470; PVP1223 400/500 and 530/690; PVP1046 380/450 and 600/770. The official current page heading orders the columns by weekday/profile and payment type.
-- **Vector precomputations:** PVP sequence 1223→1184→1093: 1,000/1,430 RUB no transponder and 850/1,120 with transponder (Mon–Thu/Fri–Sun); adding PVP1046: 1,450/2,200 no transponder and 1,230/1,720 with transponder. These were precomputed offline from the published PVP cells and stored as audit vectors; no runtime sums are permitted.
-- **Why partial:** old 850/1,000 values plausibly mix the weekday transponder total (850) and weekday no-transponder total (1,000), but the newly tested Yandex street-level route independently displays those same numbers as weekday/weekend no-transponder estimates. Exact route-to-PVP equivalence is unproven, and the effective date printed inside the official detailed PDF was not independently extracted. Preserve both observations; do not silently reconcile them or approve a runtime cell.
-- **Files:** added `source-snapshots/m4-2026-10-12-avtodor-and-yandex-checks.json`; updated M4 record, audit issue #3, and recovery state.
-- **Verification:** JSON parse passed; asserted all four PVP rows and both Yandex controls exist with no-transponder metadata; verified vector arithmetic only as a one-time audit consistency check. No application runtime changes, tests, build or publication.
+2026-10-15T23:56:04.416Z: automatic queue STARTED; 61/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-56-04-416Z-started.json). zaporizhzhia-васильевка-saint-petersburg-center
 
-## 2026-10-12 — corrected A-289 payment-basis label; CKAD/A-289 audit advanced
+2026-10-15T23:56:43.745Z: automatic queue DONE; 62/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-56-43-745Z-done.json). zaporizhzhia-васильевка-saint-petersburg-center
 
-- **Finding:** the Avtodor current tariff table for A-289's direct Марьянская→Темрюк vector lists Category-I amounts 800 RUB with a transponder and 1,103 RUB without. The existing whole-road control had stored “800 RUB” without a payment-method label, which could be mistaken for the calculator's base/no-transponder fare. Corrected the control to preserve both prices and clearly label 800 as the transponder rate.
-- **Yandex comparison:** existing date-selected fastest city route cards for Марьянская→Темрюк show ~620 RUB without a transponder on Mon 2026-10-12 and Sat 2026-10-17. This is retained as a user-authorized route-specific Yandex control; it conflicts with the direct operator vector and is not generalized. The endpoint/PVP mapping discrepancy remains open.
-- **CKAD:** its 16 current tariff rows and 2,381-RUB whole-ring benchmark remain; complete directed RVP-pair matrix is not yet present.
-- **State maintenance:** audit counts are now 1 closed / 8 partial / 7 open or blocked because M4 has moved from Open to Partial after capturing official and Yandex controls. Updated candidate control, audit, and recovery state.
-- **Verification:** both dataset/snapshot JSON parse; asserted A-289 payment basis 800-with / 1,103-without and count/status consistency. No runtime code/build/tests/publication.
+2026-10-15T23:56:47.333Z: automatic queue STARTED; 62/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-56-47-333Z-started.json). zaporizhzhia-гуляйполе-kazan-center
 
+2026-10-15T23:57:18.299Z: automatic queue DONE; 63/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-57-18-299Z-done.json). zaporizhzhia-гуляйполе-kazan-center
 
-## 2026-10-12 — corrected M4 tariff-column interpretation and verified south vector
+2026-10-15T23:57:21.660Z: automatic queue STARTED; 63/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-57-21-660Z-started.json). zaporizhzhia-гуляйполе-kerch-center
 
-- **Correction:** retract the earlier M4 interpretation that mapped 850/1,000 RUB to mixed transponder/day cells and the derived no-transponder vector 1,000/1,430 RUB. That conclusion came from flattening the overview table columns and is not supported by the direct operator tariff pages.
-- **Operator evidence:** direct pages for PVP1093, PVP1184 and PVP1223 show Category-I weekday/weekend tariffs of 150/150, 300/350 and 400/500 RUB. The operator identifies these as its three successive toll points on km1091.6–1319. The complete vector is recorded as 850/1,000 RUB Mon–Thu/Fri–Sun; runtime should look up this finished vector and never sum its PVP components.
-- **Yandex controls:** date-selected fastest routes from the PVP1093 vicinity to central Krasnodar displayed ~850 RUB Tuesday 2026-10-13 and ~1,000 RUB Saturday 2026-10-17; Yandex details specified car <2 m without transponder. A separate route from M4 km1025 (north of PVP1046) to central Krasnodar displayed ~1,230/~1,450 RUB on the same weekday/weekend dates and traced M4/E115/A-136. Treat these as approximate route controls, not standalone 1046 cells: Yandex route cards do not itemize each toll crossing.
-- **Files changed:** corrected the M4 source snapshot, candidate row, audit issue #3 and recovery state. The old flattened overview readings are not used as normalized tariff cells. PVP1046 remains unverified from a dated operator tariff document; M4 remains Partial.
-- **Verification:** source and candidate JSON parse; asserted southern PVP fare values, vector 850/1,000, Yandex controls and null unresolved cells; checked audit issue counts remain 1 closed / 8 partial / 7 open or blocked. No runtime changes, application tests, build or publication.
+2026-10-15T23:57:40.220Z: automatic queue DONE; 64/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-57-40-220Z-done.json). zaporizhzhia-гуляйполе-kerch-center
 
+2026-10-15T23:57:43.287Z: automatic queue STARTED; 64/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-57-43-287Z-started.json). zaporizhzhia-кушугум-kazan-center
 
-## 2026-10-12 — normalized M4 PVP1046 and four-point vector
+2026-10-15T23:58:20.131Z: automatic queue DONE; 65/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-58-20-131Z-done.json). zaporizhzhia-кушугум-kazan-center
 
-- **New source finding:** the current Avtodor tariff page and its March 2026 tariff data give the Category-I base fare at PVP1046 (km1024–1091) as 380 RUB Mon–Thu and 450 RUB Fri–Sun, effective 2026-03-02. A dated report reproducing Avtodor's update confirms 380 RUB Monday–Friday / 450 RUB Saturday–Sunday (https://www.kommersant.ru/doc/8479038). This corrects the earlier flattened extraction that recorded 450/770 as a no-transponder fare.
-- **Completed vector:** added the direct lookup cell [1046,1093,1184,1223] = 1,230/1,450 RUB Mon–Thu/Fri–Sun, from the current PVP1046 base fare and the three downstream operator PVP fares. This is a one-time matrix transcription/normalization, not a runtime component sum. It matches date-selected Yandex fastest route estimates from M4 km1025 to central Krasnodar on 2026-10-13/17; Yandex explicitly says no transponder and car below 2 m.
-- **Coverage status:** M4 rows 1093→1184→1223 and 1046→1093→1184→1223 now have candidate complete vector prices, supported by direct PVP pages/current Avtodor schedule and route controls. Other contiguous vectors/road groups remain open, so issue #3 stays Partial.
-- **Verification:** recalculated the offline vector cells against the stored current PVP fares; JSON source/candidate files parse; route controls and day profiles match; audit counts remain 1 closed / 8 partial / 7 open or blocked. No runtime code or deployment changed.
+2026-10-15T23:58:23.588Z: automatic queue STARTED; 65/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-58-23-588Z-started.json). max-chain-m12-ckad-m11-zsd-arzamas-to-prim
 
+2026-10-15T23:58:46.375Z: automatic queue DONE; 66/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-58-46-375Z-done.json). max-chain-m12-ckad-m11-zsd-arzamas-to-prim
 
-## 2026-10-12 — inspected A-289 fastest-route toll trace
+2026-10-15T23:58:49.671Z: automatic queue STARTED; 66/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-58-49-671Z-started.json). max-chain-m12-ckad-m11-zsd-kazan-to-sest
 
-- **What:** reopened the saved date-selected Yandex route for Марьянская→Темрюк and inspected the complete Saturday directions and fare card.
-- **Observed:** fastest route is ~620 RUB, car <2 m, no transponder. Directions take two long A-289 legs (28.5 and 22.8 mi), leave the toll road via 03К-010, then rejoin A-289 for the final legs. The map's ~620 RUB equals the official A-289 direct full-vector transponder amount; the no-transponder table cell is 1,103 RUB.
-- **Disposition:** preserve Yandex ~620 as the route-specific control per user rule and preserve Avtodor 1,103 as the operator matrix vector. The route includes an exit/re-entry/bypass that may alter which toll facilities are traversed, but the observed amount matches the transponder cell; exact toll-point accounting and/or Yandex fare basis remains unresolved. Do not overwrite one with the other or infer arbitrary A-289 fare cells.
-- **Files:** amended A-289 Yandex source snapshot, audit issue #2 and recovery state.
-- **Verification:** displayed Yandex card explicitly labels no-transponder and lists A-289/03К-010 directions; JSON parses. No runtime changes.
+2026-10-15T23:59:18.896Z: automatic queue DONE; 67/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-59-18-896Z-done.json). max-chain-m12-ckad-m11-zsd-kazan-to-sest
 
+2026-10-15T23:59:22.000Z: automatic queue STARTED; 67/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-59-22-000Z-started.json). max-chain-m12-ckad-m11-zsd-murom-to-sest
 
-## 2026-10-12 — transcribed the current CKAD direct fare matrix
+2026-10-15T23:59:43.943Z: automatic queue DONE; 68/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-59-43-943Z-done.json). max-chain-m12-ckad-m11-zsd-murom-to-sest
 
-- **Source:** official CKAD operator tariff page, https://tskad.ru/stoimost-proezda/tarifs-ckad/, identifies Order No. 56 dated 2026-02-27 and tariff validity from 2026-03-02. The current indexed operator page exposes the complete Category-I entry/exit matrix. The live operator page timed out in the browser, so the search-indexed primary-source table was transcribed, with this retrieval limitation recorded.
-- **What:** saved 15 entry/exit nodes and 210 direct ordered non-self fares (null diagonal) as Category-I base/post-payment prices in source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json. This is a direct vector matrix, not component increments.
-- **Validation:** every reciprocal origin/destination fare is equal, all 15 diagonals are null, and there are 210 non-self cells. Representative direct cell M-10→M-11 is 60 RUB; M-10→PK-5 is 3,189 RUB.
-- **Remaining conflict:** the holding-company release says “whole CKAD” is 2,381 RUB (2,023.85 after maximum T-pass discount), while the operator pair table has longer direct origin/destination cells up to 3,189 RUB. Preserve both with distinct scopes; do not overwrite the direct matrix or treat a max pair as the full-road cell until route endpoints are reconciled.
-- **Status:** CKAD matrix capture is complete for published nodes, but combined issue #2 remains Partial due to this whole-road scope conflict and the A-289 Yandex-vs-operator discrepancy.
+2026-10-15T23:59:47.109Z: automatic queue STARTED; 68/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-15T23-59-47-109Z-started.json). max-chain-m12-ckad-m11-zsd-sest-to-kazan
 
+2026-10-16T00:00:16.443Z: automatic queue DONE; 69/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-00-16-443Z-done.json). max-chain-m12-ckad-m11-zsd-sest-to-kazan
 
-## 2026-10-12 — full recovered catalogue and vector construction
+2026-10-16T00:00:19.716Z: automatic queue STARTED; 69/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-00-19-716Z-started.json). max-chain-m12-ckad-m11-zsd-sest-to-murom
 
-User requested finishing the matrix without reopening agreed questions. Recovered correct GitHub branch and prior 21 M4 / 25 M12 raw rows, built 4,683 tariff records and 374 canonical M4 candidate spans, captured live Mytishchi 73/57/44/51/34 and whole259, fixed Heihe and excluded-road JSON, added Odintsovo time combinations and MSD dated masks. Corrected M1/M3 class-column mistakes using the current indexed official page. `node scripts/build-vector-matrix.cjs` and `node scripts/validate-vector-matrix.cjs` both passed; exact assertions and limitations are in `MATRIX_VALIDATION_2026-10-12.json`. Complete narrative: `MATRIX_HANDOFF_2026-10-12.md`. This is data construction, not proof that every route was independently checked in Yandex. Old M12 Shali cells expire Oct8; new99 is a separate direct span and is not blindly added to old whole-route fares. No V1/V2/Production changes. Starting remote head440ce6b2; correct experiment branch restored via connector, atomic data/docs commit prepared next.
+2026-10-16T00:00:41.241Z: automatic queue DONE; 70/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-00-41-241Z-done.json). max-chain-m12-ckad-m11-zsd-sest-to-murom
 
-## 2026-10-13 — этап 1: восстановление и сверка
+2026-10-16T00:00:44.484Z: automatic queue STARTED; 70/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-00-44-484Z-started.json). max-chain-m4-ckad-m11-zsd-krasnodar-to-sest
 
-Создана отдельная writable копия репозитория и локальная audit-ветка. Перенесены исходные данные без изменения тарифных чисел. Старый противоречивый аудит сохранён как AUDIT_HISTORY; создан актуальный аудит и краткое состояние. Отозван ошибочный вывод предыдущего прохода о неверных южных ценах в действующем сводном JSON.
+2026-10-16T00:01:18.964Z: automatic queue DONE; 71/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-01-18-964Z-done.json). max-chain-m4-ckad-m11-zsd-krasnodar-to-sest
 
-Проверка: node experiments/nationwide-tolls/scripts/validate-vector-matrix.cjs — PASS 4683. Предыдущий EROFS устранён использованием writable копии. Shell git ls-remote завершился сетевой ошибкой; GitHub connector подтвердил существование целевой ветки, но её head и PR не проверены. Нет удалённого коммита/публикации. Следующий шаг: этап 2 по текущему аудиту.
+2026-10-16T00:01:22.469Z: automatic queue STARTED; 71/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-01-22-469Z-started.json). max-chain-m4-ckad-m11-zsd-rostov-to-sest
 
-## 2026-10-13 — этап 2: отбор актуальных тарифов
+2026-10-16T00:01:54.934Z: automatic queue DONE; 72/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-01-54-934Z-done.json). max-chain-m4-ckad-m11-zsd-rostov-to-sest
 
-Создан воспроизводимый build-release-register.cjs: 2086 записей с опубликованной/согласованной ценой на дату 13 октября, 777 истёкших или будущих версий отдельно, 1820 candidate-записей отдельно. Ни одна selected-строка не одобрена для runtime без привязки маршрута. Проверки partition-count, запрета candidate и текущих дат — PASS. Тарифные значения не подменялись. Публичные источники повторно подтверждают Багратион790, Уфа150, тарифную группу1 Удмуртии400/300/700; особые условия классификации ТС не отменены. Автодор403; сообщение М12 timeout. Новые arbitrary OD-пары не извлечены, массовый Яндекс-контроль не проводился.
+2026-10-16T00:01:58.481Z: automatic queue STARTED; 72/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-01-58-481Z-started.json). max-chain-m4-ckad-m11-zsd-sest-to-krasnodar
 
-Сбор реестра выполнен. Этап2 по маршрутной привязке остаётся частично выполненным: М4 candidate, новые М12 пары, контроль ЦКАД/фиксированных проездов. Следующий шаг — маршрутная проверка этих групп либо явное ограничение покрываемых векторов перед финальной моделью.
+2026-10-16T00:02:33.938Z: automatic queue DONE; 73/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-02-33-938Z-done.json). max-chain-m4-ckad-m11-zsd-sest-to-krasnodar
 
-## 2026-10-13 — закрытие статуса кандидатов
+2026-10-16T00:02:37.408Z: automatic queue STARTED; 73/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-02-37-408Z-started.json). max-chain-m4-ckad-m11-zsd-sest-to-rostov
 
-По прямому запросу пользователя и ранее согласованному правилу исключения недоказанных тарифов: 1456 М4 candidate +4 ДЗОК +360 М12 candidate исключены из текущего покрытия. Генератор теперь сохраняет причины/условия повторного включения; pendingCandidates=0. Это не подтверждение всех проездов; остаётся ограниченное покрытие и неизвестный итог при пересечении исключения. Проверка численности, непересечения групп, отсутствия runtime-повышения, сохранения М4юг и М12direct99 — PASS. Следующий шаг: модель маршрута/времени и интеграция; удалённого обновления не выполнялось.
+2026-10-16T00:03:09.731Z: automatic queue DONE; 74/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-03-09-731Z-done.json). max-chain-m4-ckad-m11-zsd-sest-to-rostov
 
-## 2026-10-13 — пользователь разрешил оценки
+2026-10-16T00:03:13.205Z: automatic queue STARTED; 74/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-03-13-205Z-started.json). max-chain-m4-ckad-m11-zsd-voronezh-to-prim
 
-Прямое решение пользователя заменило исключение1820: разрешено применять с пометкой «Стоимость не подтверждена». Изменён генератор: provisional, authorizedForEstimate, обязательная видимая метка. История/будущие версии сохранены вне текущего расчёта. Проверки1820, обязательных меток, дат и суммы4683 — PASS. Записан контракт следующего этапа ROUTE_PRICE_POLICY.md; интерфейс/API ещё не подключены. Следующий шаг: интеграция в актуальную экспериментальную ветку.
+2026-10-16T00:03:38.150Z: automatic queue DONE; 75/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-03-38-150Z-done.json). max-chain-m4-ckad-m11-zsd-voronezh-to-prim
 
-## 2026-10-13 — реализация изолированного обработчика тарифов
+2026-10-16T00:03:41.472Z: automatic queue STARTED; 75/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-03-41-472Z-started.json). pair-m11-ckad-domodedovo-to-spb
 
-engine/quote.cjs реализует точный ключ дорожной группы/from/to/profile, проверку действующей даты, согласованность routeId и exactTraversal, полноту платных доказательств, уникальность traversalId. selected/provisional/history используются с датами; кандидат выдаёт числовую оценку и метку, которая распространяется на общий результат и formatCopy. Неизвестный компонент делает итог null; ноль только при confirmedNoPaidCrossing.
+2026-10-16T00:04:01.727Z: automatic queue DONE; 76/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-01-727Z-done.json). pair-m11-ckad-domodedovo-to-spb
 
-scripts/quote.test.cjs — PASS: confirmed югМ4, candidate310, смешанный итог с предупреждением, копирование, отсутствующая цена, другая геометрия, дубликат, unresolved profile, бесплатность, граница МСД15/16 октября, старый Шали. Это изолированные unit-тесты, не API/браузер E2E или полный build. Адаптер геометрии/таймзон должен обеспечивать правдивые exactTraversal/profileResolved; они не выводятся обработчиком самостоятельно.
+2026-10-16T00:04:05.018Z: automatic queue STARTED; 76/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-05-018Z-started.json). pair-m11-ckad-noginsk-to-spb
 
-GitHub connector прочитал актуальные AGENTS и docs/WORK_STATE экспериментальной ветки: продолжать изолированно, сохранять журнал/решения/next steps. Прямой git mirror не авторизован. API/UI действующего экспериментального приложения ещё не подключены, удалённого коммита/публикации нет. Следующий шаг: восстановить актуальные исходники V3/эксперимента и вставить этот контракт в его adapter/API/UI, проверить сборку и браузер.
+2026-10-16T00:04:22.536Z: automatic queue DONE; 77/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-22-536Z-done.json). pair-m11-ckad-noginsk-to-spb
 
-## 2026-10-13 — API adapter и защита повторного начисления
+2026-10-16T00:04:25.897Z: automatic queue STARTED; 77/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-25-897Z-started.json). pair-m11-ckad-spb-to-domodedovo
 
-Прочитаны актуальные GitHub файлы V3 API/page, route-leg/route-leg-pricing, shared result types/copy/result-panels и README/backlog. Источники показывают диагностическое national coverage; actual native API/UI ещё не используют новый обработчик.
+2026-10-16T00:04:45.763Z: automatic queue DONE; 78/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-45-763Z-done.json). pair-m11-ckad-spb-to-domodedovo
 
-Добавлен engine/api-adapter.cjs: перевод результата quote в tolls.amount/pricingStatus/priceConfirmation/displayLabel и matrixQuote; copyRouteResult сохраняет предупреждение. quote запрещает двойное представление одной дорожной группы (m4-south+m4-candidate, аналогично М12). Раздельные дорожные группы суммируются с распространением unconfirmed. Подготовлен app/v3/components/toll-confirmation-note.tsx для UI, пока не импортирован текущей страницей.
+2026-10-16T00:04:48.931Z: automatic queue STARTED; 78/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-04-48-931Z-started.json). pair-m11-ckad-spb-to-noginsk
 
-Проверки: scripts/quote.test.cjs PASS (включая API JSON roundtrip, копирование, null, двойной М4, М4+Уфа); validate-vector-matrix.cjs PASS4683. React-компонент не отрендерен, TypeScript/fullbuild/HTTP/browser E2E не запускались. Remote source tree прочитан частично; head SHA не установлен и новая работа только в локальной audit-ветке. Следующий шаг: восстановить полный актуальный checkout, интегрировать API adapter через реальные route evidence и вывести компонент рядом с суммой, затем полный build/E2E.
+2026-10-16T00:05:08.588Z: automatic queue DONE; 79/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-08-588Z-done.json). pair-m11-ckad-spb-to-noginsk
 
-## 2026-10-13 — V3 integration of estimates (current block)
+2026-10-16T00:05:11.843Z: automatic queue STARTED; 79/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-11-843Z-started.json). pair-m11-ckad-torzhok-to-ramenskoe
 
-User policy: current candidate prices may be used with a visible «Стоимость не подтверждена» label. Restored every remote blob of experimental head440ce6b2 via connector; all source hashes matched. Local recovery history differs from remote Git history; remote integration must use440ce6b2 as parent, not the special-territory base.
+2026-10-16T00:05:30.318Z: automatic queue DONE; 80/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-30-318Z-done.json). pair-m11-ckad-torzhok-to-ramenskoe
 
-Implemented V3-only route-leg/pricing modules and changed V3 API to use them. M4 adapter selects a finished exact confirmed-PVP vector from selected/provisional tables, keeps direction prices equal, rejects missing dates, duplicate Pvps, partial evidence, day/profile boundary and A289 composition replacement. Existing other-road engines still provide their prices; all V3 numeric results are labeled unconfirmed while nationwide integration remains partial. Dedicated V3 copy hook appends the label. UI note is imported beside V3 results. V2 pricing files/UI unchanged; shared m4-production only normalizes diagnostic renamed field for TypeScript compatibility.
+2026-10-16T00:05:33.477Z: automatic queue STARTED; 80/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-33-477Z-started.json). pair-m11-zsd-moscow-to-prim
 
-Found pre-existing experimental regression failures22/305: compiler tests used seeded source as an empty template, preview tests assumed zero rather than two seeded cells, timed wrapper used obsolete priceCells schema. Fixed synthetic fixture separation and migrated timed source selection to spanCells without changing seeded tariffs.
+2026-10-16T00:05:53.489Z: automatic queue DONE; 81/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-53-489Z-done.json). pair-m11-zsd-moscow-to-prim
 
-Actually run: TypeScript noEmit PASS after fixing the original renamed preview field plus new adapter typing; native experiment tests305/305 PASS; M4 route adapter6/6 PASS; quote/JSON/copy assertions PASS; React server render warning visible/unconfirmed and hidden/confirmed PASS; Next production build --webpack PASS with16/16 static pages; real local HTTP /v3=200 and invalid /api/v3/calculate=400 PASS. Initial default-host server encountered uv_interface_addresses; explicit127.0.0.1 resolves start, same-process HTTP verified.
+2026-10-16T00:05:56.791Z: automatic queue STARTED; 81/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-05-56-791Z-started.json). pair-m11-zsd-moscow-to-sest
 
-NOT RUN: live geographic route APIs/Yandex/browser driving E2E, the full calculator-final-gate workflow, new Preview deployment. Per-road integrations beyond M4 remain partial; marked estimates are not national independently verified coverage. Next: persist this tested code against actual experimental head, inspect branch CI/Preview, then verify real routes and extend other-road matrix adapters.
+2026-10-16T00:06:16.585Z: automatic queue DONE; 82/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-06-16-585Z-done.json). pair-m11-zsd-moscow-to-sest
 
-## 2026-10-13 — remote persistence and M12 dated integration
+2026-10-16T00:06:19.793Z: automatic queue STARTED; 82/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-06-19-793Z-started.json). pair-m11-zsd-prim-to-moscow
 
-Uploaded44 changed blobs to GitHub with every SHA equal to local content; atomic commit bd77b6f125de9e2062a66cb4849661ec80ff62cb persisted on experiment/toll-od-matrix-2026-10-08 with parent440ce6b2 (lease checked). Vercel Preview dpl_6pdqTza1rSL8Cce7MJWAdN7bUBFy was started at exactly bd77b6f, target=null; observed BUILDING, not yet considered tested/ready. Initial API request target=preview was rejected400; retry omitting optional target created Preview, no production target.
+2026-10-16T00:06:39.445Z: automatic queue DONE; 83/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-06-39-445Z-done.json). pair-m11-zsd-prim-to-moscow
 
-Added M12 adapter to V3: native resolved continuous final RVP vector matches a dated current candidate matrix key; known prices rendered as unconfirmed estimates. Missing dated vectors or expired832/Shali block the entire component instead of using stale native money. Tests4 M12 +6 M4 =10/10 PASS; TypeScript PASS and Next build16/16 PASS after this change. Other-road matrix adapters remain the next block. This follow-up changes code after bd77b6f, so that first deployment is superseded for final code verification.
+2026-10-16T00:06:42.824Z: automatic queue STARTED; 83/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-06-42-824Z-started.json). pair-m11-zsd-sest-to-moscow
 
-## 2026-10-13 — final special-route wiring
+2026-10-16T00:07:02.015Z: automatic queue DONE; 84/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-02-015Z-done.json). pair-m11-zsd-sest-to-moscow
 
-Remote M12 commit8d00f0a433df005bfc73a258be1c9a1c9ebca880 persisted successfully; Preview dpl_BSAkHN4rvU8yLgDGBTsKYMuQ7tqY became READY, exact source8d00f0a. Protected Vercel fetch /v3 returned200; build logs say Build Completed23s. No driving-browser E2E claimed.
+2026-10-16T00:07:05.302Z: automatic queue STARTED; 84/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-05-302Z-started.json). pair-m11-zsd-tver-to-sest
 
-Final review found specialEndpoint V3 still called shared V2 special-options. Copied the current module to lib/v3-calculation/special-options.ts with V3 pricing import and changed V3 API import. This ensures M4/M12 dated pricing and expired-Shali rejection also apply to special-zone routes. TypeScript PASS, Next --webpack build16/16 PASS after change. V2 files unchanged. This final follow-up needs its own exact-commit Preview.
+2026-10-16T00:07:23.608Z: automatic queue DONE; 85/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-23-608Z-done.json). pair-m11-zsd-tver-to-sest
 
-## 2026-10-13 — final remote checkpoint and Preview verification
+2026-10-16T00:07:26.937Z: automatic queue STARTED; 85/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-26-937Z-started.json). pair-m12-ckad-dmitrov-to-kazan
 
-Final code10276acf786c9ceb60ae19b8f85f7938bd84a9f0 persisted in experiment/toll-od-matrix-2026-10-08; includes V3 special-options isolation. Vercel Preview dpl_8rCSYEHPBRZ3DYVzsst2kqstoE1j READY, target=null, exact source10276ac. URL https://mezhgorod-calculator-a3d3ijrcm-4regodatbe-5310.vercel.app/v3 . Authenticated connector HTTP check completed on this page.
+2026-10-16T00:07:48.677Z: automatic queue DONE; 86/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-48-677Z-done.json). pair-m12-ckad-dmitrov-to-kazan
 
-Cloud browser navigation with temporary share link redirected to Vercel login, so driving-route browser E2E was blocked at deployment authentication. No CAPTCHA/bot claim, no login attempted, test tab closed. Authenticated connector page availability is not a live route calculation. Temporary share tokens are not stored in Git.
+2026-10-16T00:07:52.201Z: automatic queue STARTED; 86/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-07-52-201Z-started.json). pair-m12-ckad-kazan-to-dmitrov
 
-Done this block: matrix lookup for resolved M4/M12 in ordinary and special-zone V3, API warning, V3 result note/copy, expired Shali guard, source/state restored remotely,305native+10adapter tests, TS/build, local HTTP contracts and Vercel READY. Remaining: M11/CKAD/regional matrix-to-route adapters and complete live route verification/full CI gate; do not claim100% national tariff verification or all matrix engines connected. No merge/Production change.
+2026-10-16T00:08:12.393Z: automatic queue DONE; 87/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-08-12-393Z-done.json). pair-m12-ckad-kazan-to-dmitrov
 
-## 2026-10-13 — user route checks, Crimea Yalta → Moscow
+2026-10-16T00:08:15.777Z: automatic queue STARTED; 87/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-08-15-777Z-started.json). pair-m12-ckad-kazan-to-klin
 
-User observed 5,040 ₽, the whole Moscow–Krasnodar M-4 tariff, as the toll total from Crimean Yalta to Moscow. They require the additional 800 ₽ full A-289 vector toward the Crimean Bridge, plus the separately traversed Krasnodar bypass. They also asked whether «Ялта — ДНР» is real: it is a separate named settlement. The address-search code intentionally lists that namesake first; no change to the existing priority was made. My prior inference about selecting the namesake did not explain the reported 5,040 ₽ and is superseded.
+2026-10-16T00:08:36.263Z: automatic queue DONE; 88/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-08-36-263Z-done.json). pair-m12-ckad-kazan-to-klin
 
-Diagnosis: shared `m4-production.ts` chooses the 5,040/6,090 whole M-4 tariff and thereby drops its previously detected A-289 frame sum; V3 matrix M-4 adapter declines to replace when an A-289 segment exists. `estimateTolls` has a distinct west-bypass match, but that value also was omitted by the full M-4 substitution. The shared A-289 engine's old three-frame 1,103 ₽ contradicts the user's agreed 800 ₽ full-bridge vector and must not leak into this V3 trip.
+2026-10-16T00:08:39.658Z: automatic queue STARTED; 88/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-08-39-658Z-started.json). pair-m12-ckad-klin-to-kazan
 
-Implementation: isolated V3 `lib/v3-calculation/crimea-m4-total.ts` gates on an actual Crimea endpoint, native full M-4 result, exact production and three distinct A-289 frame matches on the selected route. It composes 5,040/6,090 +800 and conditionally +410 only when the selected geometry's existing toll segments include the west bypass. An incomplete A-289 frame set yields unknown/null, not 5,040 as a trip total. Wired before other M-4 matrix fallback in `route-leg-pricing.ts`. The bypass tariff 410 is an existing local value, not newly independently confirmed; the user recalled roughly 300+. `next.config.ts` selects the TS API checker because the inherited Next CLI checker receives zero stdout for `--showConfig` in this workspace. V2 pricing unchanged.
+2026-10-16T00:09:02.707Z: automatic queue DONE; 89/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-02-707Z-done.json). pair-m12-ckad-klin-to-kazan
 
-Tests actually run: `node scripts/crimea-m4-total.test.mjs` 2/2 PASS for forward/reverse, conditional bypass, missing frames and non-Crimea; `node_modules/.bin/tsc --noEmit` PASS; `node --test experiments/toll-od-matrix/*.test.mjs experiments/nationwide-tolls/*.test.mjs` 21 files PASS; first Next `--webpack` build failed due inherited `--showConfig` CLI runner, then after config adjustment `node_modules/.bin/next build --webpack` PASS, 16/16 static pages. No actual Valhalla/OSRM or protected Preview live trip executed, and no external source confirms the west bypass figure for the selected trip. Next: validate exact selected Yalta—Moscow route evidence, verify bypass rate, deploy/test Preview at exact new commit, then continue other network adapters. Remote head verified010cf2d at start; local branch integration/matrix-estimates-2026-10-13. No merge/Production.
+2026-10-16T00:09:06.105Z: automatic queue STARTED; 89/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-06-105Z-started.json). pair-m12-ckad-vladimir-to-klin
 
-Follow-up persistence: remote GitHub experimental commit `8b8442ceb2efe9e18382efc08d1d91e274952459` has parent010cf2d and the eight code/state blobs. Preview `dpl_EMmxvx7w6ZELCuKag9upow8Kh2Q4` built exact8b8442c, READY target=null, authenticated GET `/v3` HTTP200 with application title. This checks deployment/page availability only; real Yalta→Moscow API/geographic routing and 410 ₽ bypass match remain unverified. Next run selected route on accessible Preview and compare component evidence, then extend other matrices. No Production/merge.
+2026-10-16T00:09:24.022Z: automatic queue DONE; 90/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-24-022Z-done.json). pair-m12-ckad-vladimir-to-klin
 
-## 2026-10-13 — A-289 three sections and entrance/exit OD pairs
+2026-10-16T00:09:27.508Z: automatic queue STARTED; 90/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-27-508Z-started.json). pair-m4-a289-kerch-to-rostov
 
-User requested a matrix of A-289 direct pairs for Krasnodar side, Slavyansk, Temryuk, Anapa exit, and Taman/Crimean-Bridge continuation, in both directions. Inspected archived Avtodor category-I/no-transponder direct table and Yandex route snapshot. Created `A289_OD_MATRIX_2026-10-13.json` with physical frames km23/82/103, named exits, seven undirected priced pairs: Maryanskaya–Slavyansk555, Slavyansk–Varenikovskaya278, Maryanskaya–Varenikovskaya833, Varenikovskaya–Temryuk270, Slavyansk–Temryuk548 from saved operator source; Maryanskaya–Temryuk city fastest620 from user's Yandex control; Maryanskaya–Taman/bridge800 from user's full-vector decision. Both directions are persisted, total14 records. Eight undirected Anapa and partial Taman pairs are recorded as unresolved with reasons; no subtraction/interpolation or 1,103 fallback. Named Varenikovskaya is not silently equated to the Anapa exit.
+2026-10-16T00:09:46.074Z: automatic queue DONE; 91/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-46-074Z-done.json). pair-m4-a289-kerch-to-rostov
 
-Generator `scripts/build-vector-matrix.cjs` now reads this versioned file and produces complete OD rows instead of two hardcoded pairs. The previous remote recovery omitted its original `TARIFF_MATRIX_CANDIDATES_2026-10-12.json` input: restored that existing experiment source from the read-only prior checkout to make the whole matrix reproducible. `a289-route-adapter.mjs` requires route identity, exact bound exit and ordered physical frame evidence; Maryanskaya–Temryuk620 additionally requires the city-route bypass control. The V3 full Crimea-M4 helper reads 800 through the new direct registry, not a local literal. Other pairs remain data/adapter ready but require live exit classification; no automatic arbitrary-city assignment.
+2026-10-16T00:09:49.466Z: automatic queue STARTED; 91/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-09-49-466Z-started.json). pair-m4-a289-moscow-to-taman
 
-Actually run: build matrix4693 rows (A289 14 vs4); release selection2086 selected,1830 provisional,777 history; validator PASS unique price keys, directed A289 controls and explicit missing Anapa/Taman; quote/API tests PASS; A289 adapter2/2 and Crimea composition2/2 PASS; experiment native21 test files PASS; Next webpack build16/16 and TypeScript PASS. No real route POST or browser E2E; first source search did not yield a direct current official Anapa/Taman OD quote, so those prices remain unknown. Remote experimental head `7afb510` checked before work; local branch `integration/matrix-estimates-2026-10-13`; persistence/Preview pending. Next: bind exact junctions, run live bidirectional controls, and fill direct prices from evidence. No main/Production.
+2026-10-16T00:10:21.709Z: automatic queue DONE; 92/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-10-21-709Z-done.json). pair-m4-a289-moscow-to-taman
 
-Persistence follow-up: all16 changed blobs matched local Git blob SHA, published atomically as remote experimental commit `f9c092a0a492cf15c472b488ff71c64ef2c2d1e6` with parent7afb510. Preview `dpl_7CfgeSqL2jfpziGSYFDcFM8nhzPN` built exact code, READY target=null; authenticated GET `/v3` HTTP200/title. Neither page GET nor successful build verifies actual route entry/exit binding. No merge/Production.
+2026-10-16T00:10:25.320Z: automatic queue STARTED; 92/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-10-25-320Z-started.json). pair-m4-a289-rostov-to-kerch
 
-## 2026-10-13 — user reports no toll amount for Yalta/Anapa → Krasnodar
+2026-10-16T00:10:43.932Z: automatic queue DONE; 93/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-10-43-932Z-done.json). pair-m4-a289-rostov-to-kerch
 
-Diagnosis in code: `crimeaM4Total` returns null unless full M-4 Moscow–Krasnodar is priced; the general matrix A-289 quote adapter was not wired to short city routes at all. Consequently even a selected short trip with A-289 frames could fall into unknown/partial composition. Added V3-only `a289-short-route.ts`, called by `route-leg-pricing.ts` for matching short routes even when a partial native M-4 toll-plaza candidate exists. It reads physical frame events from the exact selected geometry and maps Crimea/Yalta↔Krasnodar all-three-frames to accepted finished 800 ₽; maps Anapa↔Krasnodar two-frame vector to the stored Maryanskaya↔Varenikovskaya 833 ₽ direct candidate as an unconfirmed approximation to the Anapa exit; also supports exact Slavyansk/Temryuk lookup. Geometrically matched western bypass is added once using existing 410 ₽ candidate. Missing/different frame evidence gives unknown rather than a forced city-based toll. This is a provisional interpretation of the user request to display the majority of already stored prices, not proof of the actual Anapa exit tariff.
+2026-10-16T00:10:47.619Z: automatic queue STARTED; 93/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-10-47-619Z-started.json). pair-m4-a289-taman-to-voronezh
 
-Checks actually run: synthetic selected frame and endpoint regression `node scripts/a289-short-route.test.mjs` 2/2 PASS forward/reverse Yalta/Anapa, bypass once, wrong/missing frame null; `node_modules/.bin/tsc --noEmit` PASS; `node_modules/.bin/next build --webpack` PASS16/16 static pages. Real exact user journey API/browser not run due protected Preview and external routing access, so do not claim the observed UI now returns those numbers until live exercise. Persisted experimental commit `ed34c4c18ba74fe292042be4ea2ec985269eb1f7`; Preview `dpl_CUGKzMqTn6D8H4cjoDTDpkNtD3z5` READY target=null; authenticated GET /v3 HTTP200. Also ran native experiment files22/22 PASS. Next: inspect real routes and refine exit binding. No main/Production.
+2026-10-16T00:11:08.710Z: automatic queue DONE; 94/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-11-08-710Z-done.json). pair-m4-a289-taman-to-voronezh
 
-## 2026-10-13 — full requested audit, code and calculation pass
+2026-10-16T00:11:12.322Z: automatic queue STARTED; 94/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-11-12-322Z-started.json). pair-m4-a289-voronezh-to-taman
 
-User requested a complete audit in large stages and immediate fixes. Remote baseline verified d0dc2227 (code ed34c4c); checkpointed previously published working tree locally as9b30d57. Inspected canonical state, decisions and source, all4693 selection-register rows (zero overlapping date intervals or invalid amounts). Found and fixed the issues enumerated in AUDIT_2026-10-13.md, including an additional missing-A289 charge for Anapa/Taman full-M4 routes. Kept source prices and existing explicit uncertainty policy; no fabricated official tariff verification. Temryuk preliminary620 now requires ordered two frames and never sets the bypass-control-proved flag from the city name. Anapa833 remains provisional. Shared M4 amounts are consumed instead of hardcoded5040/6090. Invalid/duplicate components fail to unknown, invalid zone lengths to null, not zero.
+2026-10-16T00:11:35.219Z: automatic queue DONE; 95/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-11-35-219Z-done.json). pair-m4-a289-voronezh-to-taman
 
-Initial broad run:57/61 files passed; two stale M1/M3 expectations contradicted the snapshot's explicit 10.10 correction (M1 230; M3 weekdays100/190/190, weekends100/190/230), and two API tests failed JSON native loading. Fixed tests and Node hook; subsequent62/62 files and quote/API contracts PASS. Actual API tests simulate only routing transport and demonstrate numeric unconfirmed Yalta/Anapa responses; they are not live route observations. Focused6 scenarios PASS, TS PASS, webpack16 pages PASS, scoped ESLint0 errors/warnings, diff-check PASS. Added test:audit to build so adapters/integration no longer fall out of release checks. No measured live performance claim; registry already indexed once and no new pricing network calls. Open calendar holiday/midnight issue, incomplete other-road live composition and exact local route bindings are documented, not silently declared solved. Remote persistence/Preview pending at this entry. No main/Production.
+2026-10-16T00:11:38.769Z: automatic queue STARTED; 95/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-11-38-769Z-started.json). pair-m4-m11-krasnodar-to-spb
 
-## 2026-10-13 — десятичастный аудит, часть 1: восстановление и API
+2026-10-16T00:12:14.266Z: automatic queue DONE; 96/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-12-14-266Z-done.json). pair-m4-m11-krasnodar-to-spb
 
-User requested ten comparable audit parts with fixes. Plan/acceptance criteria saved in AUDIT_PLAN_10_PARTS_2026-10-13.md. Read repository instructions/current state/decisions/log; clean local baseline8556e578901b24223a634c05c808791c12c52b0d on integration/matrix-estimates-2026-10-13. GitHub GET git/refs/heads/experiment/toll-od-matrix-2026-10-08 confirmed remote d0dc2227d75862c58b1fc880c96a9440049ceef7. No open PR for that branch in returned open PR list; #12 is V2, not target. Prior audit remains local and was not represented as newly implemented.
+2026-10-16T00:12:18.025Z: automatic queue STARTED; 96/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-12-18-025Z-started.json). pair-m4-m11-rostov-to-spb
 
-Reproduced npm run test:audit:458/458 plus quote/API contracts. Found V3 request validation accepted normalized invalid calendar dates (Feb30) and ambiguous/timezone-free strings. Added strict ISO calendar validation in app/api/v3/calculate/route.ts before routing; timestamps require timezone, ISO dates remain compatible. Added real POST tests for six invalid inputs asserting zero external fetches, and leap-day/UTC/date positive cases. External routing transport remains simulated; no real route/browser claim. No tariff policy changes.
+2026-10-16T00:12:50.284Z: automatic queue DONE; 97/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-12-50-284Z-done.json). pair-m4-m11-rostov-to-spb
 
-Executed after fix: npm run test:audit PASS460/460 plus quote/API contracts; node node_modules/typescript/bin/tsc --noEmit exit0; node node_modules/next/dist/bin/next build --webpack exit0,16/16 pages; node node_modules/eslint/bin/eslint.js app/api/v3/calculate/route.ts scripts/v3-api-audit.test.ts exit0; git diff --check exit0. Logs /tmp/izavb-audit-part1-fixed.log and /tmp/izavb-audit-part1-build.log are temporary; results recorded here. No failed check concealed: initial lookup of nonexistent fastest-route-selection.ts returned file-not-found; next block must locate actual selector. Build/test commands completed, no live/deployment action.
+2026-10-16T00:12:54.045Z: automatic queue STARTED; 97/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-12-54-045Z-started.json). pair-m4-m11-spb-to-krasnodar
 
-Part1 complete locally; parts2–10 pending. Next: audit route-leg selector/special-options for minimum ETA, stable ties and same-provider geometry/evidence. Remote publication remains pending; do not claim current Preview contains these fixes. Commit for this block is the commit containing this entry (resolve via git log); base8556e57. No merge/main/Production.
+2026-10-16T00:13:30.524Z: automatic queue DONE; 98/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-13-30-524Z-done.json). pair-m4-m11-spb-to-krasnodar
 
-## 2026-10-13 — часть 2, fastest selection / same-route evidence
+2026-10-16T00:13:34.224Z: automatic queue STARTED; 98/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-13-34-224Z-started.json). pair-m4-m11-spb-to-rostov
 
-Resume on ef0da4c with pending route candidate edits; remote experiment head rechecked via GitHub GET: d0dc2227 unchanged. Added isUsableRoute in V3 (finite positive distance/time, valid complete coordinate array and matching oriented endpoints with existing policy tolerance). Applied before ordinary/special candidate ranking. Removed straight endpoint-line substitution for missing geometry. Special fastest-only now prices the exact selector provider and final candidates stay in the allowed geographic corridor. No freeError on ordinary fastest-only since no bypass search ran. Equal ETA retains fixed provider order; existing selector already provides this invariant.
+2026-10-16T00:14:07.012Z: automatic queue DONE; 99/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-07-012Z-done.json). pair-m4-m11-spb-to-rostov
 
-Tests added in scripts/v3-route-selection-audit.test.ts exercise actual POST/policy/pricing with only external transport simulated: fastest OSRM A289 geometry and fare, rejected negative distance, special rejected negative ETA (previous second ranking could select it), stable tie on both flows, unusable endpoint/coordinate values and empty shape rejected with502. Focused6/6 PASS. npm run test:audit PASS466/466 plus quote/API contracts. tsc --noEmit PASS. First scoped ESLint failed prefer-const/unused index in edited existing functions; fixed and reran successfully. Next webpack build exit0/16 pages. git diff --check PASS. No live-provider/browser/new tariff/source/deployment claim. Source files route-candidate.ts, route-leg.ts, special-options.ts. V2 unchanged.
+2026-10-16T00:14:10.887Z: automatic queue STARTED; 99/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-10-887Z-started.json). pair-m4-m11-voronezh-to-spb
 
-Next part3: intermediate A289 OD pairs, same-segment frame ordering, unknown-not-fallback handling. State saved in this commit; remote persistence remains pending. No merge/main/Production.
+2026-10-16T00:14:37.228Z: automatic queue DONE; 100/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-37-228Z-done.json). pair-m4-m11-voronezh-to-spb
 
-## 2026-10-13 — часть 3, A289 intermediate OD / ordered camera traversal
+2026-10-16T00:14:40.938Z: automatic queue STARTED; 100/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-40-938Z-started.json). single-a289-kerch-to-krasnodar
 
-Base57543aa. Inspected actual A289_OD_MATRIX, adapter, physical engine and V3 short/composite flow. Removed unnecessary Maryanskaya-only restriction so recorded intermediate pairs reach V3 (Slavyansk–Anapa278 and Anapa–Temryuk270 as provisional Varenikovskaya alias; Slavyansk–Temryuk548; reverse same stored cells). No new tariff cells invented. Unknown OD or exits returns explicit tolls:null with reason, and route-leg-pricing preserves the blocked result instead of nullish fallback to native monetary sum. crimeaM4Total also handles unresolved extra component safely.
+2026-10-16T00:14:59.522Z: automatic queue DONE; 101/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-14-59-522Z-done.json). single-a289-kerch-to-krasnodar
 
-Physical engine previously sorted only segmentIndex: two cameras on one coarse shape segment inherited registry order instead of travel order. Now stores within-segment projection, sorts first passage along the route, and reports repeatedFrames when the same anchor is revisited after leaving camera vicinity (>0.5km progress between near matches). V3 blocks finished single-OD price for repeat passage; neighboring sampled points remain one passage. This does not certify independent map/road-lane evidence: same existing80m geometry matching and direction-anchor data remain, live bindings deferred. Native V2 counted-once monetary rule unchanged.
+2026-10-16T00:15:03.210Z: automatic queue STARTED; 101/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-03-210Z-started.json). single-a289-krasnodar-to-kerch
 
-Focused20/20 PASS (real registry/frame geometry and API with fetch-only simulation); full npm run test:audit472/472 plus quote/API contracts PASS. tsc --noEmit PASS, Next webpack16/16 PASS. Initial scoped ESLint failed legacy mock variable module; renamed testModule and reran scoped lint plus affected mock2/2 PASS. git diff --check PASS. No real route/browser/public source verification. All provisional prices keep warning; Slavyansk–Taman remains unknown.
+2026-10-16T00:15:22.149Z: automatic queue DONE; 102/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-22-149Z-done.json). single-a289-krasnodar-to-kerch
 
-Remote preparation: GitHub GET remote commit d0dc2227/tree0ed91222, recursive646 entries/no truncation. Changed tracked files relative to local checkpoint9b30d57 all match remote baseline blob SHA, no mismatches/missing source. Write to experimental branch pending; do not claim Preview changed. Next part4 M4 partial/full composition with A289. No merge/main/Production.
+2026-10-16T00:15:25.700Z: automatic queue STARTED; 102/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-25-700Z-started.json). single-a289-krasnodar-to-taman
 
-## 2026-10-13 — части1–3 persisted / exact Preview verified
+2026-10-16T00:15:44.038Z: automatic queue DONE; 103/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-44-038Z-done.json). single-a289-krasnodar-to-taman
 
-Saved all35 changed files since remote-matching checkpoint9b30d57 via GitHub create_tree(base0ed91222) → tree5419073db1028042710f803cd5cea72bf6bb3f57, create_commit(parent d0dc2227) → code93c0c5d2848202824f5a0e3f2afb1f782080c7d6, update_ref experiment/toll-od-matrix-2026-10-08 with expected_sha d0dc2227 and force=false succeeded. New recursive tree655 entries/nontruncated; compared all35 changed blob hashes against localHEAD373fefd, mismatches0. This also publishes previously local audit8556e57, part1ef0da4c, part257543aa and part3373fefd.
+2026-10-16T00:15:47.452Z: automatic queue STARTED; 103/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-15-47-452Z-started.json). single-a289-krasnodar-to-temryuk
 
-Inspected Vercel team_UFuw0UGXjMqBV2hJBxsWGAMS/projectprj_JbuIKFQNjD3FvAcX2I65Dm5OBKie. Auto Git Preview dpl_7yF5xLbKL6bHP4NBqKUwQ9bTodVv changed BUILDING→READY, target=null, exact git meta93c0c5d/experiment. URL https://mezhgorod-calculator-5xqtongc3-4regodatbe-5310.vercel.app/v3 . Build tail confirms472 tests/pass472/fail0, quote/API contracts PASS, compile/Next16/16, completed27s. Earlier500-log request was truncated; retrieved backward80-event tail for actual summary. Authenticated web_fetch_vercel_url GET /v3 success/status200, correct page title. This verifies page/deployment availability only, not a routed user calculation. No browser/new live router or production publication.
+2026-10-16T00:16:05.771Z: automatic queue DONE; 104/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-05-771Z-done.json). single-a289-krasnodar-to-temryuk
 
-Followed Vercel deployments-cicd and access-protected-vercel-deployment instructions for inspection/protected fetch. No protection setting changes. Current code remote93c0c5d; this subsequent documentation commit preserves checkpoint, does not require rerunning unchanged code. Next: part4 M4 vectors/partial/full and A289 composition, then remaining5–10. Full audit not yet finished.
+2026-10-16T00:16:09.361Z: automatic queue STARTED; 104/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-09-361Z-started.json). single-a289-taman-to-krasnodar
 
-## 2026-10-13 — user833 objection, class-column repair and audit stage4
+2026-10-16T00:16:27.596Z: automatic queue DONE; 105/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-27-596Z-done.json). single-a289-taman-to-krasnodar
 
-Base local801aa3a, remote8cc2982424e78c32d696b79bc857be05310ce94e checked via GitHub. User explicitly questioned partial Anapa833 > fullA289800 and requested Slavyansk→Krasnodar/Rostov checks, then next stage. Diagnosed flattened operator vehicle category I/II columns misread as payment modes. Primary web search indexed avtodor-tr.ru/road/tariffs returns complete A289 category rows415/205/620/180/800/385 vs II555/278/833/270/1103/548. Direct pages403/timeout/proxy_error, no new PDF downloaded; tskad indexed docs identify order59/27.02.2026. Saved source-snapshots/a289-category-columns-2026-10-13.json. This corrects previous assistant scope/transponder explanations without undoing user's accepted620/800 values. Bypass410 checked against separate primary indexed DZOK class-I410/410, not changed.
+2026-10-16T00:16:31.324Z: automatic queue STARTED; 105/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-31-324Z-started.json). single-ckad-domodedovo-to-klin
 
-Updated active data/tolls and experiment snapshot A289 rows (old interpretation preserved explicitly), frame engine415/205/180, direct OD matrix and class metadata/guard, generators and4699-row vectors/register/validation. City two-frame620 stored as TemryukCity; operator three-frame Temryuk800 is separate. Taman385/180 continuation aliases use independently stated direct terminal OD, visibly provisional. Related old class-II test expectations corrected. First broad edit accidentally changed gate longitude37.8330177 in tests; corrected before acceptance. Initial full gate failed and is not counted as passed.
+2026-10-16T00:16:51.432Z: automatic queue DONE; 106/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-51-432Z-done.json). single-ckad-domodedovo-to-klin
 
-Live external API requests actually ran (no routing simulation): AnapaKrasnodar165009m/8657s/620, OSRMframes82→23; SlavyanskKrasnodar83634m/4824s/415, frame23; SlavyanskRostov316724m/16991s/150 on an OSRM route without A289, confirmedM4-1093. Raw API/provider responses saved under live-controls, portable replay scripts/v3-live-a289-audit.mjs. Independent live cloud Yandex UI for same representative public coordinates: Anapa102mi/2h17/~620, Slavyansk52mi/1h22/~415; Rostov218mi/4h throughA289→M4, paid label but no amount. Opera not connected, metered TinyFish wallet negative, free source fetch errors; independent public route-browser interaction worked without CAPTCHA/login. No site claim based on failed tools. Exact postredirect URLs/directions/profile in yandex-a289-city-controls JSON.
+2026-10-16T00:16:55.385Z: automatic queue STARTED; 106/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-16-55-385Z-started.json). single-ckad-klin-to-domodedovo
 
-Stage4 new m4-a289-composition.ts: V3 calls nativeM4 with includeA289=false, default existing callers unchanged. Exact/known partial-corridor M4 vector and separate A289 lookup sum once; a confirmed M4 PVP binds eastern A289 continuation, not full Moscow-only condition. Nearby unconfirmed M4 candidates don't spoil a local A289 quote; any confirmed M4 passage is retained. Partial/unknown M4 blocks complete total; mixed M4/A289 payload rejected; duplicate legacy bypass labels add once. Synthetic real-matrix controls850+415=1265,850+620=1470,+410 only when separately detected; full5040+800=5840,+410=6250. These conditional vector tests are not YandexRostov totals.
+2026-10-16T00:17:14.091Z: automatic queue DONE; 107/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-14-091Z-done.json). single-ckad-klin-to-domodedovo
 
-One live diagnostic through old approximate bypass-start control returned360335m/19073s/1265, slower than unconstrained provider; not added to runtime/ranking. Record persisted. OSM new booth query returned406, no new gate coordinates derived. SlavyanskRostov route/ETA discrepancy remains open; cannot close all geographic accuracy from two agreeing money controls.
+2026-10-16T00:17:17.820Z: automatic queue STARTED; 107/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-17-820Z-started.json). single-ckad-noginsk-to-podolsk
 
-Verification: vector validator4699 rows PASS; focused A289, API and composition suites PASS (composition/API17/17); final npm run test:audit478/478 + quote/API contracts PASS; final tsc --noEmit exit0; scoped ESLint exit0; Next webpack16/16 exit0; git diff --check PASS. Initial TS union-inference error at JS adapter/TS boundary fixed with result type boundary; final compiler log clean. Actual gate logs /tmp/izavb-part4-final-gate.log, -types, -lint, -build; meaningful results persisted here and detailed report A289_CLASS1_AND_M4_COMPOSITION_AUDIT_2026-10-13.md. No hidden failed check or live-route universal claim.
+2026-10-16T00:17:35.955Z: automatic queue DONE; 108/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-35-955Z-done.json). single-ckad-noginsk-to-podolsk
 
-Next: persist correction and stage4 to remote experiment, inspect exact Preview, then stage5 M11/M12/CKAD. All audit stages not yet finished; holidays/midnight stage7 and live same-route controls stage10 remain. No merge/main/Production.
+2026-10-16T00:17:39.817Z: automatic queue STARTED; 108/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-39-817Z-started.json). single-ckad-podolsk-to-noginsk
 
-## 2026-10-13 — category repair and stage4 remote checkpoint
+2026-10-16T00:17:58.422Z: automatic queue DONE; 109/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-17-58-422Z-done.json). single-ckad-podolsk-to-noginsk
 
-Local implementation b9a4983 persisted to remote experiment/toll-od-matrix-2026-10-08 code4b27032ff430308b46163c876f35b8cf9dcc12b2 (parent8cc2982424e78c32d696b79bc857be05310ce94e), treeced4c0e1da9f6e91e17997b8b2ffa3353a95a678. All39 changed baseline files matched remote before write; after upload all39 blob SHAs matched local,0 mismatches. Large generated register/vector blobs uploaded intact, no truncation; base tree preserved unrelated files; update_ref expected8cc29824 force=false succeeded.
+2026-10-16T00:18:01.958Z: automatic queue STARTED; 109/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-01-958Z-started.json). single-ckad-ramenskoe-to-klin
 
-Vercel automatic Preview dpl_CAK7URaKJrP8oNhs6ZhY2svN1VCy READY, exact source4b27032, target=null, URL https://mezhgorod-calculator-4ncn2cwjo-4regodatbe-5310.vercel.app/v3 . Backward80 build-log events show tests478/pass478/fail0, quote/API contracts PASS, compile/Next16/16, Build Completed33s. Protected authenticated connector GET /v3 success/status200. No Preview browser trip claim; actual API/router and Yandex observations already persisted separately. No production/main/merge/protection-setting change.
+2026-10-16T00:18:20.886Z: automatic queue DONE; 110/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-20-886Z-done.json). single-ckad-ramenskoe-to-klin
 
-Following checkpoint clarifies both source snapshot notes: obsolete assistant explanation about payment columns/scope moved into previousNote; active note describes vehicle-category correction. Asserted complete roads objects unchanged before/after, so no fee or price/profile change in this metadata edit. Record checkpoint/next stage5 and open Rostov same-route discrepancy. Final full478/TS/lint/build evidence remains from the unchanged calculation implementation; metadata-only integrity and focused snapshot contracts checked separately.
+2026-10-16T00:18:24.296Z: automatic queue STARTED; 110/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-24-296Z-started.json). single-khabarovsk-knyaze-to-smidovich
 
+2026-10-16T00:18:42.200Z: automatic queue DONE; 111/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-42-200Z-done.json). single-khabarovsk-knyaze-to-smidovich
 
-## 2026-10-13 — stage5 M11/M12/CKAD audit and fixes
+2026-10-16T00:18:45.575Z: automatic queue STARTED; 111/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-18-45-575Z-started.json). single-khabarovsk-smidovich-to-knyaze
 
-User requested continuation of the ten-part audit. Actual checkout integration/matrix-estimates-2026-10-13 clean at ac6fefb; remote experiment head839784e5 reconfirmed. Read AGENTS/current handoff/experiment decisions/plan and existing engines/tests. Implemented OSRM selected-route M11 evidence; directed Order274 M11 matrix adapter and separate geometry head/mainline parts; p147 physical check; fractional facility positions/crossing time; M11 disjoint/malformed/repeated-physical-anchor protection; CKAD directed/date-versioned exact pair; M12 continuous-span strict validation; blocked missing679–684 complete-total subset. New source files engine/m11-route-adapter.mjs, ckad-route-adapter.mjs and lib/v3-calculation/m11-traversal-safety.ts; existing tariff data unchanged. Current authorized candidate/unconfirmed policy remains, unknown never free. Full diagnosis/algorithms/source boundaries and exact limitations: STAGE5_M11_M12_CKAD_AUDIT_2026-10-13.md.
+2026-10-16T00:19:03.441Z: automatic queue DONE; 112/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-03-441Z-done.json). single-khabarovsk-smidovich-to-knyaze
 
-Final focused13/13 and full491/491 + quote/API contracts PASS; Next webpack16/16/TypeScript PASS; scoped ESLint/diff-check PASS. Initial TypeScript verification command TS5074 fixed incremental option, compiler API PASS. Test assertion notes vs segments corrected; coarse-shape failure caused actual fractional-ordering fix. Live repeat guard false positive from two distinct p58 plazas1.346km apart corrected to physical-anchor repeat with regression. Actual external local V3 POST controls final Moscow→Petersburg710.317km/24636s Valhalla unknown679–684; Tver→Moscow179.202km/8889s OSRM unknown incomplete OD. Known5030 Moscow subset observed on intermediate code was rejected before publication; final records only. Replay script scripts/v3-live-stage5-audit.mjs and raw live-controls/2026-10-13-stage5-*.json persist exact sources, HTTP200, unsimulated. No hosted POST/browser/Yandex/CKAD/M12 live validation.
+2026-10-16T00:19:06.975Z: automatic queue STARTED; 112/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-06-975Z-started.json). single-khabarovsk-smidovich-to-nekrasovka
 
-Stage5 existing code/calculation audit DONE with explicitly deferred physical/calendar coverage; nextstage6 M1/M3/regional. Existing Slavyansk→Rostov provider gap remainsstage10; stage7 calendar and source series. Local/remote publication pending, to append verified SHA/Preview after completion. No main/merge/Production.
+2026-10-16T00:19:25.068Z: automatic queue DONE; 113/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-25-068Z-done.json). single-khabarovsk-smidovich-to-nekrasovka
 
+2026-10-16T00:19:29.150Z: automatic queue STARTED; 113/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-29-150Z-started.json). single-khabarovsk-smidovich-to-vyazemsky
 
-## Verified persistence / Preview — stage5
+2026-10-16T00:19:47.884Z: automatic queue DONE; 114/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-47-884Z-done.json). single-khabarovsk-smidovich-to-vyazemsky
 
-Local implementation538c8ac maps to remote code6f68c9574f8eab5e4a6d795764949d53b9a99f49 (parent839784e5), followed by1506a8623cd9780930de75a346fb96133dc5f93c for large work-log/live-control blobs. Final tree dd4c509fb9de22ce16a335475496ffaaae7e5824 matches all21 changed local blobs,0 mismatches; unrelated tree preserved, ref fast-forward with expected_sha and force=false. First post-upload verification caught3 omitted large files because the upload orchestration updated a transient loaded array rather than persisted entries; corrected immediately in the follow-up commit and all21 verified. No lost local work or different source code deployed.
+2026-10-16T00:19:51.451Z: automatic queue STARTED; 114/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-19-51-451Z-started.json). single-khabarovsk-vyazemsky-to-smidovich
 
-Vercel dpl_BCRWYuDsaxfZMvL72C66EyMbfHWe READY, target=null, exact source1506a862. URL https://mezhgorod-calculator-oy89ta0xy-4regodatbe-5310.vercel.app/v3 . Remote build logs491 tests/pass491/fail0; quote/API contracts PASS; TypeScript/Next16/16 PASS; Build Completed37s. Authenticated connector GET /v3 HTTP200. This establishes page availability, not hosted browser/route POST, which still have not run. No merge/main/Production. Nextstage6.
+2026-10-16T00:20:10.356Z: automatic queue DONE; 115/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-10-356Z-done.json). single-khabarovsk-vyazemsky-to-smidovich
 
+2026-10-16T00:20:13.936Z: automatic queue STARTED; 115/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-13-936Z-started.json). single-m11-moscow-to-spb
 
-## 2026-10-13 — stage6 M1/M3/regional audit
+2026-10-16T00:20:35.171Z: automatic queue DONE; 116/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-35-171Z-done.json). single-m11-moscow-to-spb
 
-User asked to continue the ten-part audit. Actual clean checkout0714614 and remoteacefcefe matched checkpoint; AGENTS/state/README/decisions/next/log and relevant code read. Open PR heads #12 draft64631d23, #9 draft63b4c392, #6 open808394c8 inspected; none used for experimental work. Fixed dropped unpriced selected-route M1/M3 and14 regional network detections in V3 composition; late trace cannot revive partial prices; unnamed paid booths retain unknown; exact road-ref boundaries and CKAD intersection labels corrected; precompiled patterns; strict four gate road/km/fare identity and safe integer trace count contract. Added unpriced-road-coverage.ts, focused selected-route regression and actual live replay. Tariff data untouched, no new numeric M1/M3/regional fees. Source series/date, physical binding and always-on evidence coverage are explicitly deferred, see STAGE6_M1_M3_REGIONAL_AUDIT_2026-10-13.md.
+2026-10-16T00:20:38.715Z: automatic queue STARTED; 116/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-38-715Z-started.json). single-m11-moscow-to-torzhok
 
-Final build webpack:500/500 tests, fail0, quote/API contracts PASS; Next TypeScript/16pages PASS; scoped ESLint/diff-check PASS. Strengthened initially weak approximate A289 fixture to actual stored frames and baseline620 assertion; then verify additional synthetic M1/M3/ZSD detection blocks numeric subset. Live actual local API/provider/trace: Moscow→Kaluga OSRM184.817km/10636s unknown, two physical M3 booths86/136 (not168); Moscow→Odintsovo OSRM26.172km/1937s free0 for exact complete1/1 trace269edges,0 paidedges/booths. External HTTP/API200, no mocks; raw live-controls persisted. Not hosted browser/POST/Yandex verification; no all-road coverage claim. Source national shadow M3 verifiedThroughOct10 and undated generated M1/M3 matrix rows still need stage8, M1 node inventory incomplete; conservative unknown retained. Stage6 existing code audit DONE, nextstage7 calendar. GitHub/Preview pending, to append actual verified identifiers. No main/merge/Production.
+2026-10-16T00:20:58.104Z: automatic queue DONE; 117/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-20-58-104Z-done.json). single-m11-moscow-to-torzhok
 
+2026-10-16T00:21:01.556Z: automatic queue STARTED; 117/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-01-556Z-started.json). single-m11-moscow-to-tver
 
-### Stage6 final validator hardening / publication progress
+2026-10-16T00:21:21.086Z: automatic queue DONE; 118/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-21-086Z-done.json). single-m11-moscow-to-tver
 
-After the initial500 gate and live controls, code review exposed two false-free paths: missing/empty/malformed trace edges accepted as complete0; physical booth without toll=true accepted as free. Hardened traceChunk schema/coverage, complete free status now requires0booths, and V3 unpriced detection retains even contradictory physical booth events. Added2 regressions; final502/502 + contracts/TypeScript/webpack16pages PASS; scopedlint PASS. No invented payment or booth identity. Final actual live replay confirmed unchanged routes/results on hardened code, external/API200 (Kaluga18919ms, Odintsovo16040ms); stored raw files from final replay. Initialab191c8 persisted remote6a230c9d (parentacefcefe),15 hashesmatch. Initial create_tree result had no usableSHA, successful retry and tree verification before ref write; no branch loss. Preview first500 version READY dpl_wVWix16XsKBywxoN1zoMzkEzWQau. Final502 source/Preview pending and will supersede that interim version.
+2026-10-16T00:21:24.687Z: automatic queue STARTED; 118/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-24-687Z-started.json). single-m11-spb-to-moscow
 
+2026-10-16T00:21:46.141Z: automatic queue DONE; 119/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-46-141Z-done.json). single-m11-spb-to-moscow
 
-## Stage6 verified final publication
+2026-10-16T00:21:49.792Z: automatic queue STARTED; 119/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-21-49-792Z-started.json). single-m11-tver-to-moscow
 
-Local implementation0260915 maps to remote8df6745822c6e521a1009b6aecb4645a0c3aca1a (parent6a230c9d), final tree5a0f37d73d6bbe460bf0035cb9da24b3a0fffd29. All16 total changed file blobs match tested local code,0 mismatches; base tree preserved; ref expected_sha/force=false. Final live records replayed on hardened validator and saved. First list-deployments immediately after update was empty; no readiness inferred until the deployment appeared.
+2026-10-16T00:22:08.383Z: automatic queue DONE; 120/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-08-383Z-done.json). single-m11-tver-to-moscow
 
-Preview dpl_87VMJRdHd9ToEbjV8QMURTrjwAjB READY, target=null, exact source8df67458; https://mezhgorod-calculator-2hq1o2uiy-4regodatbe-5310.vercel.app/v3 . Remote logs tests502/pass502/fail0; quote/API contracts PASS; TypeScript/Next16/16 PASS; Build Completed2m (dependency installation delay observed, not a failed check). Authenticated GET /v3 HTTP200 confirms page availability only; no hosted POST/browser/Yandex validation.
+2026-10-16T00:22:12.268Z: automatic queue STARTED; 120/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-12-268Z-started.json). single-m12-kazan-to-moscow
 
-Stage6 code/calculation audit complete with explicitly deferred M1/M3 tariff-source/physical integration and regional OD coverage. Nextstage7 road-specific calendar/time. No main/merge/Production.
+2026-10-16T00:22:33.807Z: automatic queue DONE; 121/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-33-807Z-done.json). single-m12-kazan-to-moscow
 
+2026-10-16T00:22:37.604Z: automatic queue STARTED; 121/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-37-604Z-started.json). single-m12-kazan-to-vladimir
 
-## 2026-10-13 — stage7 temporal/calendar audit
+2026-10-16T00:22:58.761Z: automatic queue DONE; 122/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-22-58-761Z-done.json). single-m12-kazan-to-vladimir
 
-User requested continuation. Clean local4e6a1a4 / remoteexperimentc48b18e confirmed. Read AGENTS/state/next/decisions, native clock calculations, per-road schedules and adapters. Fixed server-timezone getDay in legacy toll/native M11 to Moscow weekdays; M12 supported allDays label; explicit M4 null-tolls calendar/midnight result retained across V3/M4+A289 rather than resurrecting native amount; impossible Date-normalized calendar; M11 date-only/missing hourly time and unknown years; potential mainline special-day ambiguity guard avoids borrowing head/M4 calendar rates; native crossing-time wording now calculated, not actual. No fare cells or new holiday rates added. Detailed algorithms/source limitations STAGE7_TIME_CALENDAR_AUDIT_2026-10-13.md.
+2026-10-16T00:23:02.634Z: automatic queue STARTED; 122/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-02-634Z-started.json). single-m12-moscow-to-kazan
 
-Focused6/6; final508/508 + quote/API contracts, TypeScript/Next webpack16pages PASS, scoped lint/diff-check PASS. Initial M12 unused-argument lint warning fixed while preserving API. Deterministic synthetic selected vectors and TZ/night boundary checks only; no new live external routing/browser/hosted POST. M4 same-trip midnight remains conservative unknown; complete mainline special/transferred-day schedule, seasonal source succession, version-at-crossing and actual payment/edge ETA unresolved, delegated to continuing source/version stage8 and E2E10 rather than claimed complete. Stage7 existing temporal code audit DONE, nextstage8. No main/merge/Production. Local/remote checkpoint publication pending, append exact verified SHA/Preview evidence.
+2026-10-16T00:23:25.875Z: automatic queue DONE; 123/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-25-875Z-done.json). single-m12-moscow-to-kazan
 
+2026-10-16T00:23:30.500Z: automatic queue STARTED; 123/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-30-500Z-started.json). single-m12-murom-to-kazan
 
-## Stage7 verified publication
+2026-10-16T00:23:50.000Z: automatic queue DONE; 124/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-50-000Z-done.json). single-m12-murom-to-kazan
 
-Local99fbcf4 maps to remote988a2a0b6f20518c368ea1239bbd2f10a3250e57 (parentc48b18e2), treeb18a787c48eeada9bdf4eb9ea405cb7ee2febcf7. All17 changed blobs matched local tested source,0 mismatches; remote base protected with expected_sha, force=false. Open unrelated PRs12draft64631d23,9draft63b4c392,6open808394c8 rechecked unchanged; no experiment PR/merge action.
+2026-10-16T00:23:53.543Z: automatic queue STARTED; 124/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-23-53-543Z-started.json). single-m12-vladimir-to-kazan
 
-Preview dpl_Fvjo1poQfyvkPkbsVSDiEEP29UDB READY exact source988a2a0b, target=null; https://mezhgorod-calculator-h1hah9yrn-4regodatbe-5310.vercel.app/v3 . Remote logs508/pass508/fail0, quote/API contracts PASS, TypeScript/Next16/16 PASS, Build Completed28s. Protected authenticated GET /v3 HTTP200 establishes availability only, no hosted route POST/browser/current-tariff or live calendar verification. Nextstage8 with explicit source/time limitations above. No main/merge/Production.
+2026-10-16T00:24:13.972Z: automatic queue DONE; 125/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-24-13-972Z-done.json). single-m12-vladimir-to-kazan
 
+2026-10-16T00:24:17.863Z: automatic queue STARTED; 125/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-24-17-863Z-started.json). single-m3-kaluga-to-moscow
 
-## 2026-10-13 — stage8 tariff versions/zones/rounding
+2026-10-16T00:24:37.344Z: automatic queue DONE; 126/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-24-37-344Z-done.json). single-m3-kaluga-to-moscow
 
-User asked continuation. Clean local67644e5 and remoteexperiment6eeb8bde confirmed; instructions/current handoff/decisions/generator/pricing and source snapshots read; unrelated PRs12/9/6 unchanged. Fixed lexical date-vs-ISO first-day exclusion, Moscow interval normalization, intraday unknown, effectiveUntil alias and invalid/conflicting bounds; selected-row provisional identity;1549 undated rows now unconfirmed while numeric candidate permission retained. Added fare-validity.cjs and offline createQuoteEngine factory, runtime still shipped registry. Commercial fare now rounded once then apportioned by largest fractional remainders with stable index ties; displayed parts equal total; strict floating-point split coverage and safe money/overflow/vehicle-review guards. Prices/rate tiers/zone policies and all4699 source rows unchanged. Report STAGE8_VERSION_ZONE_ROUNDING_AUDIT_2026-10-13.md.
+2026-10-16T00:24:40.949Z: automatic queue STARTED; 126/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-24-40-949Z-started.json). single-m3-moscow-to-kaluga
 
-Focused8/8; final516/516 + contracts/TypeScript/webpack16pages PASS. Scoped lint initially rejected CommonJS require-import syntax in .cjs; declared intended CommonJS file style, lint rerun clean; diff-check PASS. No new live routing/browser/hosted POST. Primary M1 official query noresults; official tariff page403. Found generator230 vs stored noTransponder250 conflict, retained data and unknown customer M1 rather than guessing category/payment meaning. M3 series/date, mainline M11 independent calendar/seasonal succession/physical coverage remain deferred. Stage8 existing calculation/version/rounding code audit DONE, nextstage9. Local/remote publication pending; append actual verifiedSHA/Preview next. No main/merge/Production.
+2026-10-16T00:25:01.214Z: automatic queue DONE; 127/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-01-214Z-done.json). single-m3-moscow-to-kaluga
 
+2026-10-16T00:25:04.976Z: automatic queue STARTED; 127/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-04-976Z-started.json). single-m3-moscow-to-maloyaroslavets
 
-## Stage8 verified publication
+2026-10-16T00:25:24.167Z: automatic queue DONE; 128/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-24-167Z-done.json). single-m3-moscow-to-maloyaroslavets
 
-Local8993d81 maps to remote5d222c7727b9e911800c985e15f8c5f4f7016277 (parent6eeb8bde), tree22a00de6f518f038b43d88414446bf12ae234116. All10 changed file blob hashes matched tested local source,0 mismatches; base tree preserved, update_ref expected_sha/force=false. No source price dataset regenerated.
+2026-10-16T00:25:27.677Z: automatic queue STARTED; 128/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-27-677Z-started.json). single-m3-moscow-to-obninsk
 
-Preview dpl_EXRpmoF43j4Y43XAS9aq1seZVtN9 READY exact source5d222c77, target=null; https://mezhgorod-calculator-e7f9g7iwb-4regodatbe-5310.vercel.app/v3 . Remote logs516/pass516/fail0, quote/API contracts PASS, TypeScript/Next16/16 PASS, Build Completed31s. Authenticated protected GET /v3 HTTP200 confirms page availability only, no hosted trip POST/browser/new live source certification. Nextstage9. No main/merge/Production.
+2026-10-16T00:25:46.795Z: automatic queue DONE; 129/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-46-795Z-done.json). single-m3-moscow-to-obninsk
 
+2026-10-16T00:25:50.265Z: automatic queue STARTED; 129/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-25-50-265Z-started.json). single-m3-obninsk-to-moscow
 
-## 2026-10-13 — stage9 UI/copy/failure/state audit
+2026-10-16T00:26:09.291Z: automatic queue DONE; 130/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-26-09-291Z-done.json). single-m3-obninsk-to-moscow
 
-User requested continuation. Clean ca53a08/local integration and remoteexperiment72fcdbd7 verified; instructions/state/decisions/next/README/shared UI/provider cache read. Unrelated PR12/9/6 unchanged. Fixed fastest-only UI/copy replacing API toll.amount with weekday/weekend references: explicit actual mode/card-owned warning; V2 selector kept. Added strict nested response money/arrays/total/toll-state validator and actual automaticMode type; request identity/unmount abort, reset/error/manual/copied lifecycle, clipboard catch/cancel/late identity; guarded optional browser storage/crypto, stable SSR urgency init, best-effort telemetry does not invent missing fares0. Combined display money/manual overflow guard. Provider21600s geometry cache documented unchanged, no final price cache found or added. Details STAGE9_UI_COPY_FAILURE_AUDIT_2026-10-13.md.
+2026-10-16T00:26:12.808Z: automatic queue STARTED; 130/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-26-12-808Z-started.json). single-m4-domodedovo-to-krasnodar
 
-Focused11 functional tests PASS: controlled real-hook lifecycle/fetch/clipboard harness and actual ReactDOMServer ResultPanels/Card/PriceRows markup. Real API880 night amount vs1130/1650 references preserves880/+base100=980 and unconfirmed warning in both markup/copied text. Final527/527 + quote/API contracts, TypeScript/Next webpack16pages PASS; scoped ESLint/diff-check PASS. Initial TypeScript failure exposed missing automaticMode shared response field after narrowing; fixed type, no assertion hiding. Applied React Best Practices skill checklist to TSX changes. No actual hosted browser/system clipboard/live routing in this block. Pending stage10E2E/provider/cache/performance/source/physical/calendar gaps remain explicit. Stage9 existing client code/render audit DONE; GitHub/Preview pending, append actual verifiedSHA. No main/merge/Production.
+2026-10-16T00:26:41.445Z: automatic queue DONE; 131/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-26-41-445Z-done.json). single-m4-domodedovo-to-krasnodar
 
+2026-10-16T00:26:45.237Z: automatic queue STARTED; 131/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-26-45-237Z-started.json). single-m4-krasnodar-to-domodedovo
 
-## Stage9 verified publication
+2026-10-16T00:27:10.945Z: automatic queue DONE; 132/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-10-945Z-done.json). single-m4-krasnodar-to-domodedovo
 
-Locald0fcdfa maps to remote402a1b2a15dbbde22fa20ac7d328a9329ebd45c4 (parent72fcdbd7), treeec52233f826b853c59fafaed065fc4eb33086ae2. All16 changed blobs matched tested local source,0 mismatches; base tree preserved, expected_sha/force=false ref update. Strict response validator also replayed7 saved actual API responses (Anapa/Slavyansk/Krasnodar/Rostov, Moscow–Petersburg/Tver/Kaluga/Odintsovo), all valid; this is saved-payload compatibility, not a new live route run.
+2026-10-16T00:27:14.934Z: automatic queue STARTED; 132/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-14-934Z-started.json). single-m4-krasnodar-to-rostov
 
-Preview dpl_4uHeVRXK2J3GcKENFYrqddQ6BNKw READY exact source402a1b2a, target=null; https://mezhgorod-calculator-7u2o9rrzb-4regodatbe-5310.vercel.app/v3 . Remote527/pass527/fail0, quote/API contracts PASS, TypeScript/Next16/16 PASS, Build Completed52s. Authenticated protected GET /v3 HTTP200 establishes availability only, no hosted trip/browser/system clipboard verification. Next finalstage10. No main/merge/Production.
+2026-10-16T00:27:33.972Z: automatic queue DONE; 133/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-33-972Z-done.json). single-m4-krasnodar-to-rostov
 
+2026-10-16T00:27:37.698Z: automatic queue STARTED; 133/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-37-698Z-started.json). single-m4-krasnodar-to-voronezh
 
-## 2026-10-13 — stage10 UI and user screenshot controls, IN PROGRESS
-# Stage10 in progress — requested UI and screenshot routes, 2026-10-13
+2026-10-16T00:27:58.445Z: automatic queue DONE; 134/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-27-58-445Z-done.json). single-m4-krasnodar-to-voronezh
 
-User asked: approved «из А в Б» logo, centre city swap, larger/centred ₽/км, filled circular increment and outline circular decrement controls, Calculate disabled until A/B entered, remove «единственный допустимый», investigate missing road fees for screenshot routes. Baseline local1a02b81, remote3ce874f365e4647e7a1cce49ccd1646d37ac71f9 checked unchanged; unrelated PRs12/9/6 unchanged. No main/merge/Production.
+2026-10-16T00:28:02.338Z: automatic queue STARTED; 134/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-02-338Z-started.json). single-m4-voronezh-to-krasnodar
 
-## Implemented
+2026-10-16T00:28:23.339Z: automatic queue DONE; 135/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-23-339Z-done.json). single-m4-voronezh-to-krasnodar
 
-- `public/izavb-approved-logo.svg` copied byte-for-byte from existing portal working source `/workspace/scratch/f8c8d11baabe/portal-work/apps/web/preview/assets/logo.svg`. Prior approved variant2: navy text, lower orange line/two markers, no upper line. Replaced V3 Car placeholder with this asset via Next Image; accessible h1 remains. No new logo invented.
-- V3 swap exchanges whole Place objects (labels AND positions), cancels/clears old results. Desktop centre control between A/B, stacked mobile control between fields. Shared form only renders swap when handler exists; V2 gets no dead control.
-- CTA desktop/mobile disabled for empty/whitespace labels or loading. Typed addresses can still be geocoded by API; no artificial requirement to choose a suggestion added.
-- Rate/unit22px/17px, centred in the available column, circle-filled upper stepper/circle-outline lower stepper. Do not span across the decrement button column (initial draft overlap corrected).
-- Ordinary V3 route note now «Выбран маршрут с минимальным временем». Unknown road fare has a prominent card-owned note that the full trip total is unknown; base fare remains labelled without roads.
-- Proven calculation bug: `recoverCorridorTolls` can sum just two approximate M12 segments and produce995 as matched. V3 local/remote recovery now retains those segments as diagnostics with zero internal sentinel and null/unknown API fare, not a full charge. Matrices/strict road engines and A289620/415 unchanged. V2 legacy recovery unchanged.
+2026-10-16T00:28:26.949Z: automatic queue STARTED; 135/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-26-949Z-started.json). single-odintsovo-golitsyno-to-moscow
 
-## Corrected earlier assumptions
+2026-10-16T00:28:45.507Z: automatic queue DONE; 136/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-45-507Z-done.json). single-odintsovo-golitsyno-to-moscow
 
-Earlier uncommitted A289 alias detection and direct-price override were speculative, unsupported by a failing example, and could suppress a road candidate. They were fully removed before final tests. Earlier commentary asserting A289 alias as the root cause was incorrect. Existing saved live A289 controls already returned620/415. Current proven issue is subset recovery, not a missing A289 tariff.
+2026-10-16T00:28:49.318Z: automatic queue STARTED; 136/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-28-49-318Z-started.json). single-odintsovo-moscow-to-golitsyno
 
-## Screenshot comparison / actual fresh API-handler runs
+2026-10-16T00:29:08.202Z: automatic queue DONE; 137/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-08-202Z-done.json). single-odintsovo-moscow-to-golitsyno
 
-Screenshots are user-provided Yandex UI observations, not authoritative billing tables. API uses representative city coordinates, not guaranteed identical addresses/traffic/departure minute. All external providers actual, not mocked. Full raw geometry was not archived in this block; final Ufa API body/provider summaries retained in `live-controls/2026-10-13-stage10-ui-ufa-moscow.json`. Replay runner `scripts/v3-live-user-routes-audit.mjs [case-name]`.
+2026-10-16T00:29:11.655Z: automatic queue STARTED; 137/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-11-655Z-started.json). single-odintsovo-moscow-to-kubinka
 
-| Route | Screenshot fastest | Actual API chosen | Road amount / reason |
-|---|---|---|---|
-| Ufa→Moscow |1330km,13h52,~6720₽ (other paid choice~5909)|Valhalla1315.853km,63893s (17h44m53s)|Before995 subset recovery; finalnull unknown, same selected distance/time. Final measured39162ms; screenshot fare not imported.|
-| Petersburg→Moscow |710km,7h18,~5630₽|Valhalla718.376km,24952s (6h55m52s),11410ms|null, `m11_northbound_sequence_not_proven`: full geometry head engine supports northbound and Tver southbound, not complete Petersburg southbound. Separate679–684 remains unresolved.|
-| Petersburg→Sevastopol |2590km,30h03,~11899₽|OSRM2591.826km,122968s (34h09m28s),34467ms|null, unresolved full M4/A289 and M11; Valhalla/BRouter400 for controlled corridor.|
+2026-10-16T00:29:30.388Z: automatic queue DONE; 138/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-30-388Z-done.json). single-odintsovo-moscow-to-kubinka
 
-Distances look similar but durations differ substantially. No ≤3% Yandex equivalence claim. Earlier discussion suggesting Ufa time was17 minutes faster was incorrect: API17h45 vs Yandex13h52. Display unknown does not fix source/physical completeness; the requested full numeric tariffs for these three routes remain OPEN.
+2026-10-16T00:29:34.228Z: automatic queue STARTED; 138/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-34-228Z-started.json). single-odintsovo-moscow-to-zvenigorod
 
-## Verification actually run
+2026-10-16T00:29:54.103Z: automatic queue DONE; 139/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-54-103Z-done.json). single-odintsovo-moscow-to-zvenigorod
 
-Focused final12 tests PASS, including actual React static form render (CTA blank/typed addresses and swap rendered) and actual recovery+V3 regression proving legacy995 becomes null unknown. Full `npm run build -- --webpack`:530/pass530/fail0, quote/API contracts PASS, TypeScript and Next16/16 PASS. Scoped ESLint/diff-check PASS. First focused command omitted TS loader and failed module resolution; corrected command with register-ts-paths passed. React skill review: accessible labels/button types/logo alt, no new hook/dependency, swap/reset consistency, static asset dimensions.
+2026-10-16T00:29:57.830Z: automatic queue STARTED; 139/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-29-57-830Z-started.json). single-odintsovo-zvenigorod-to-moscow
 
-Local Next startup default hostname failed `uv_interface_addresses`; explicit127.0.0.1:3101 started successfully. Playwright installed but Chromium executable absent, no system browser found; browser script could not launch. No screenshot visual QA, real browser swap/click/system clipboard or hosted POST claimed. Previous final UI draft530 tests/build ran after final source edits; live replay helper changed only afterwards (not runtime). Actual API-handler calls bypass Next HTTP transport, not hosted browser tests.
+2026-10-16T00:30:16.832Z: automatic queue DONE; 140/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-30-16-832Z-done.json). single-odintsovo-zvenigorod-to-moscow
 
-## Next work
+2026-10-16T00:30:21.422Z: automatic queue STARTED; 140/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-30-21-422Z-started.json). single-zsd-blag-to-prim
 
-1. Publish/check exact experimental Preview source; persist SHA/logs/availability checkpoint.
-2. Complete directed M11 southbound head/mainline +679–684 physical/source model before numeric Petersburg fares; extend actual M12 complete selected-route boundaries/current versions for Ufa. Do not copy screenshot amounts to other geometry or revive subsets.
-3. Obtain a working browser runtime for real desktop/mobile layout and client→API verification; compare same endpoint/date/profile selected Yandex route, then complete stage10 performance/coverage report. Stage10 remains IN PROGRESS; nationwide audit not complete.
+2026-10-16T00:30:40.480Z: automatic queue DONE; 141/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-30-40-480Z-done.json). single-zsd-blag-to-prim
 
-## Verified experimental publication — 2026-10-13
+2026-10-16T00:30:44.064Z: automatic queue STARTED; 141/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-30-44-064Z-started.json). single-zsd-peterhof-to-sest
 
-Local implementationfeafa14 maps to remotea38c50e3fb19dbbb461104f5483a400ca1da986d (parent3ce874f), tree43b42df8f17f8da1010ca1da021d36f98371394d. All16 changed blobs matched tested local source; remote tree691+new entries not truncated,0 mismatches. Expected-head/nonforce ref update. PRs12/9/6 unchanged.
+2026-10-16T00:31:03.058Z: automatic queue DONE; 142/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-03-058Z-done.json). single-zsd-peterhof-to-sest
 
-Preview dpl_DyQNDZRP7MEn6F1L1ryATYhhc7rZ READY, exact sourcea38c50e3, target=null. https://mezhgorod-calculator-ir6hc5hpg-4regodatbe-5310.vercel.app/v3 . Vercel530/pass530/fail0, quote/API contracts PASS, TypeScript/Next16/16, Build Completed30s. Protected authenticated GET /v3 and logo asset200; page references new asset. This proves hosted page/asset availability only, not visual/mobile/hosted trip verification.
+2026-10-16T00:31:06.657Z: automatic queue STARTED; 142/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-06-657Z-started.json). single-zsd-prim-to-blag
 
-Built static HTML contains new logo and swap label. Logo byte-identical to approved portal source, SHA256b5e594ad67f6a7b6ab9eb968df02671b186a30562d117508a1d3f29bc1015957. Local server initially reported Ready on127.0.0.1 but later GET refused connection; no local HTTP availability claim. Browser unable to launch due absentChromium. No installation, auth/protection changes, main/merge/Production.
+2026-10-16T00:31:25.258Z: automatic queue DONE; 143/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-25-258Z-done.json). single-zsd-prim-to-blag
 
-Next action: complete M11 full southbound/head/tail and M12 full selected vector; repeat exact-route Yandex and working browser checks. User-requested three complete road prices still OPEN; stage10 IN PROGRESS, not10/10 audit finished.
+2026-10-16T00:31:29.017Z: automatic queue STARTED; 143/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-29-017Z-started.json). single-zsd-pushkin-to-sest
 
-## 2026-10-13 — fare recovery verified locally; environment offline; persistence checkpoint
-# Road-price recovery checkpoint — 2026-10-13, execution environment OFFLINE
+2026-10-16T00:31:47.876Z: automatic queue DONE; 144/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-47-876Z-done.json). single-zsd-pushkin-to-sest
 
-## Current verified state
+2026-10-16T00:31:51.487Z: automatic queue STARTED; 144/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-31-51-487Z-started.json). single-zsd-sest-to-pushkin
 
-User supplied screenshots Volnovakha→Moscow (1182.6 km/17h09) and Ufa→Petersburg (2018.8 km/26h18), requested fixing these and similar missing road fares. Last confirmed local commit8429442; remote experiment branch ad9a8b06f5363c3a2d9c71899a82b9148178005a. No main/merge/Production.
+2026-10-16T00:32:10.383Z: automatic queue DONE; 145/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-32-10-383Z-done.json). single-zsd-sest-to-pushkin
 
-Implemented and verified in the local working tree BEFORE disconnect:
-1. M4 validation changes24s/four-request batches/4.5s attempt →55s budget/two-worker queue/8s attempt; next plaza starts when a slot frees. Existing strict near-miss rejection skips needless requests; positive charges STILL require exact toll-tagged expected OSM nodes. Nonarray local trace edges fail safely.
-2. M4/M11 midnight guard: every crossed Moscow day must have the same road-specific resolved profile AND applicable fare/source. Tue→Wed/Fri→Sat no longer falsely block; Thu→Fri/holidays/unknown year/hidden weekend/version change remain unknown.
-3. OSRM M12 strict named-step evidence bound to the EXACT selected overview geometry, excludes destinations; retains unresolved candidate. Single continuous span uses existing calibrated core. Disjoint traversal is not silently omitted from a composed total.
-4. Special route result retains selected M4/national diagnostics; composition reasons retain upstream failures.
-5. Tests updated for the intentional calendar/pool policy, with new availability regression suite.
+2026-10-16T00:32:14.007Z: automatic queue STARTED; 145/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-32-14-007Z-started.json). triple-m11-ckad-m12-kazan-to-spb
 
-## Actual checks, not plans
+2026-10-16T00:32:45.192Z: automatic queue DONE; 146/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-32-45-192Z-done.json). triple-m11-ckad-m12-kazan-to-spb
 
-Full npm run build -- --webpack FINAL:536/pass536/fail0; quote/API contracts PASS; TypeScript/Next16/16 PASS; scoped ESLint/diff-check PASS. First build failed two stale expectations (all date transitions null/peak4 requests); corrected Tue→Wed unchanged fare with Thu→Fri null and peak2; final build inspected. No browser/hosted POST claimed.
+2026-10-16T00:32:48.935Z: automatic queue STARTED; 146/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-32-48-935Z-started.json). triple-m11-ckad-m12-kazan-to-torzhok
 
-Actual local API-handler + external providers/trace:
-- Volnovakha→Moscow BEFORE: OSRM1182.425km/61701s,35.414s API; null because only8/14 M4 candidates completed. Another diagnostic old run11/14 showed repeated4500ms timeouts and tail plazas exhausted budget.
-- Same saved selected geometry AFTER queue change, ACTUAL new trace requests:14/14 candidates resolved,8 paid nodes/6 rejected; complete native3050 weekday/3890 weekend.
-- Fresh final Volnovakha API: same OSRM1182.425km/61701s,54.732s API;3050 RUB priced/unconfirmed. Longer verification is intentional;25s route+55s proof fits120s API allowance.
-- Fresh Moscow→Voronezh API: Valhalla516.348km/24040s,32.618s API;2300 RUB priced/unconfirmed; ordinary weekday midnight trip.
-- Ufa→Petersburg BEFORE: OSRM2016.848km/94548s,14.861s API; null for m11/ckad while M12 was omitted.
-- Ufa→Petersburg FINAL: same OSRM2016.848km/94548s,16.068s API; null with explicit m11,m12,ckad. Full Ufa fee NOT solved.
+2026-10-16T00:33:13.222Z: automatic queue DONE; 147/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-33-13-222Z-done.json). triple-m11-ckad-m12-kazan-to-torzhok
 
-Ufa selected trace: M11 has a301.2m unnamed step around p679, followed by5.327km named M11→A118. CKAD is M7→M11, not the currently supported complete M4→M11 east arc. M12 has two separated traversals (eastern section and mainline), interrupted by M7/local16K-1091; cannot treat one known subset as whole fee.
+2026-10-16T00:33:17.195Z: automatic queue STARTED; 147/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-33-17-195Z-started.json). triple-m11-ckad-m12-spb-to-kazan
 
-Primary source read: existing scanned September Order274 PDF pages9/10, text layer empty. Mainline679–681/681–684 categoryI56 RUB effective04Sep2026; airport access38 and conditional combined94 (footnote2 requires airport RVP fixation). No new tail money enabled without exact passage binding. Official direct PDF web fetch403; current search index identified the same10-page September PDF. Original PDF exists under source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf. Re-read originals before implementing physical mapping.
+2026-10-16T00:33:48.554Z: automatic queue DONE; 148/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-33-48-554Z-done.json). triple-m11-ckad-m12-spb-to-kazan
 
-## Blocker and persistence limits
+2026-10-16T00:33:52.340Z: automatic queue STARTED; 148/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-33-52-340Z-started.json). triple-m11-ckad-m12-torzhok-to-kazan
 
-During final docs/Git save, tool call stalled; it was terminated without a completion result. Subsequent read-only exec failed:
-failed to query exec-server capabilities ...409 Conflict, environment_offline: Environment is not connected.
+2026-10-16T00:34:17.652Z: automatic queue DONE; 149/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-34-17-652Z-done.json). triple-m11-ckad-m12-torzhok-to-kazan
 
-Thus the local final docs/commit command may or may not have executed. Do not claim a new local SHA or clean tree. Remote runtime remained ad9a8b06 when rechecked; NEW runtime source has NOT been published. Last verified functioning UI Preview remains https://mezhgorod-calculator-ir6hc5hpg-4regodatbe-5310.vercel.app/v3 (sourcea38c50e3,530 tests). This checkpoint is docs/recovery data only and does NOT deploy the fare fixes.
+2026-10-16T00:34:21.592Z: automatic queue STARTED; 149/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-34-21-592Z-started.json). triple-m11-ckad-m12-tver-to-murom
 
-Complete local source files and gzip chosen-provider responses existed before disconnect, but are currently inaccessible. Do not fabricate or substitute them. Recovery JSON reconstructs executed code edits from inspected remote baseline and recorded tool commands; it is NOT a byte-hash comparison with the inaccessible final local tree. New helper/test/live-runner sources are retained within it. Before using, prefer recovered local files, compare, run gates, and verify actual fees again.
+2026-10-16T00:34:43.795Z: automatic queue DONE; 150/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-34-43-795Z-done.json). triple-m11-ckad-m12-tver-to-murom
 
-## Resume, precisely
+2026-10-16T00:34:47.648Z: automatic queue STARTED; 150/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-34-47-648Z-started.json). triple-m4-m11-zsd-krasnodar-to-sest
 
-1. Restore/check writable runtime. Locate /workspace/scratch/fff27e842376/current-experiment, read AGENTS/current state, git status/head and actual remote/PRs. Do not overwrite an existing modified tree.
-2. Prefer its already-tested changes and local live-controls/*.provider.json.gz. If unavailable, run recovery/apply-road-availability.py --apply in an isolated experiment checkout; driver validates base Git blob SHA or skips identical targets, aborts conflicts BEFORE writing.
-3. Recovery new test expects the chosen Volnovakha archive. Recover the original JSON+gzip; if not possible regenerate with node --import ./scripts/register-ts-paths.mjs scripts/v3-live-user-routes-audit.mjs volnovakha-moscow. This is actual fresh routing; confirm selected route geometry/proof before treating new fixture as equivalent. Other runner cases moscow-voronezh/ufa-petersburg.
-4. npm run build -- --webpack, scoped lint/diffcheck; inspect source/fixture hashes. Persist implementation and detailed log in Git, publish exact experimental Preview, inspect its own536 gate/source/availability; do not claim docs-only deployment carries fixes.
-5. Finish full M12 multiple/eastern products, M11 southbound head/mainline+tail and CKAD M7→M11 direct pair binding (dated matrix1313 RUB present but physical integration missing). Ufa/prior Petersburg totals remain OPEN. No borrowed competitor geometry, city-only fare, subset-as-total, main/merge/Production.
+2026-10-16T00:35:25.792Z: automatic queue DONE; 151/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-35-25-792Z-done.json). triple-m4-m11-zsd-krasnodar-to-sest
 
+2026-10-16T00:35:29.786Z: automatic queue STARTED; 151/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-35-29-786Z-started.json). triple-m4-m11-zsd-rostov-to-sest
 
+2026-10-16T00:36:05.569Z: automatic queue DONE; 152/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-36-05-569Z-done.json). triple-m4-m11-zsd-rostov-to-sest
 
+2026-10-16T00:36:09.659Z: automatic queue STARTED; 152/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-36-09-659Z-started.json). triple-m4-m11-zsd-sest-to-krasnodar
 
-## 2026-10-13 20:05 MSK — фиксация повторного пользовательского правила
+2026-10-16T00:36:47.881Z: automatic queue DONE; 153/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-36-47-881Z-done.json). triple-m4-m11-zsd-sest-to-krasnodar
 
-Пользователь отверг предложенный пункт проверки промежуточных съездов: в принятой модели водитель едет по платной дороге до необходимого конечного съезда; промежуточные съезды невозможны и не должны рассматриваться. Зафиксировано в DECISIONS.md; добавлен приоритет переработки в NEXT_STEPS.md и актуальная запись WORK_STATE.md. Старые требования mainlineContinuity/reentryStatus для нового алгоритма этим уточнением superseded. Код в этом блоке не изменён, тесты не запускались (docs only). Локальная ветка integration/matrix-estimates-2026-10-13, исходный HEAD8429442; незакоммиченный runtime-задел прошлого блока сохранён без включения в этот docs-коммит. Следующий шаг — реализация lookup по двум границам без обязательных промежуточных сетевых проверок. Этап10 и полное покрытие цен остаются IN PROGRESS. Production/merge не выполнялись.
+2026-10-16T00:36:52.014Z: automatic queue STARTED; 153/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-36-52-014Z-started.json). triple-m4-m11-zsd-sest-to-rostov
 
+2026-10-16T00:37:27.200Z: automatic queue DONE; 154/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-37-27-200Z-done.json). triple-m4-m11-zsd-sest-to-rostov
 
-## 2026-10-13 — new endpoint-only implementation, full gate540
+2026-10-16T00:37:31.219Z: automatic queue STARTED; 154/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-37-31-219Z-started.json). triple-m4-m11-zsd-voronezh-to-prim
 
-# Endpoint-only implementation — 2026-10-13
+2026-10-16T00:37:59.085Z: automatic queue DONE; 155/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-37-59-085Z-done.json). triple-m4-m11-zsd-voronezh-to-prim
 
-User repeated and required: one continuous toll-road journey, first/last tariff boundaries, no intermediate exit/re-entry analysis, ready matrix cell. Local branch integration/matrix-estimates-2026-10-13; policy commit5a660cc; remote parent49e1da08 verified. Runtime reconnected and previous uncommitted availability work recovered.
+2026-10-16T00:38:03.294Z: automatic queue STARTED; 155/155,0/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-38-03-294Z-started.json). lnr-лисичанск-moscow-center
 
-## Implemented
+2026-10-16T00:38:27.289Z: automatic queue DONE; 155/155,1/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-38-27-289Z-done.json). lnr-лисичанск-moscow-center
 
-V3 calculateLegTolls now calls resolveSelectedM4Endpoints, not calculateProductionM4/calculateM4Core. Boundary search starts from both route ends, rejects nearby free-ramp candidates until finding each actual paid boundary, stops on confirmed or unknown, does not validate the interior. Cached boundary checks avoid duplicate single-section requests. Existing all-PVP validation is retained for older consumers, not V3 final pricing. No native sum in new M4 production result (tolls:null); only ready matrix lookup can produce its fare.
+2026-10-16T00:38:31.483Z: automatic queue STARTED; 155/155,1/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-38-31-483Z-started.json). dnr-краматорск-saint-petersburg-center
 
-Existing stored candidate fares are re-indexed by outer boundaries, deduplicating identical amount/source/version cells without adding money. Conflicting prices for the same endpoints fail explicitly as m4_endpoint_matrix_ambiguous-fare-version. Direct south matrix rows support both directions and single sections. Source/calendar/unknown guards retained. No arbitrary tariff winner.
+2026-10-16T00:39:09.609Z: automatic queue DONE; 155/155,2/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-39-09-609Z-done.json). dnr-краматорск-saint-petersburg-center
 
-M11 V3 no longer scans geometry for intermediate gaps/repeated crossings. Malformed input and actual endpoint/product mapping still matter; head and679–684 remain separate tariff products. M12 providers additionally expose an endpoint span spanning first/last strict road labels; V3 uses it. Exact OSRM step-chain/overview equality remains required. Older single-span evidence remains available to older consumers, deliberately distinct from new user policy.
+2026-10-16T00:39:13.891Z: automatic queue STARTED; 155/155,2/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-39-13-891Z-started.json). dnr-новоазовск-kazan-center
 
-Prior recovered work includes stable road-specific overnight tariff windows, OSRM M12 metadata, diagnostic serialization and live source archives. Native per-PVP M4 remains legacy compatibility only; prior3050 live result used that legacy mechanism and must not be presented as proof of new endpoint pricing.
+2026-10-16T00:39:45.880Z: automatic queue DONE; 155/155,3/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-39-45-880Z-done.json). dnr-новоазовск-kazan-center
 
-## Actual verification
+2026-10-16T00:39:50.030Z: automatic queue STARTED; 155/155,3/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-39-50-030Z-started.json). dnr-новоазовск-kerch-center
 
-npm run build -- --webpack:540 tests/pass540/fail0, quote/API contracts PASS, TypeScript5.0s, Next16/16 PASS. Scoped ESLint PASS (npm environment warning only), git diff --check PASS. Tests cover M4 only2 boundary checks when valid, both directions, single-section direct lookup, missing/conflicting cell unknown, M11 same endpoint fare despite internal metadata gap, M12 endpoint span with exact overview binding. No browser/hosted POST/Production.
+2026-10-16T00:40:12.053Z: automatic queue DONE; 155/155,4/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-40-12-053Z-done.json). dnr-новоазовск-kerch-center
 
-Fresh actual external-provider local V3 handler POST Volnovakha→Moscow:OSRM1182425m/61701s, elapsed30356ms, unknown due m4_endpoint_matrix_ambiguous-fare-version. Boundary resolution succeeded; this is now a tariff-table ambiguity, not unfinished intermediate checks. First attempted fixed-two-nearby-candidates version failed because one was a free ramp; corrected boundary search and repeated live control. Full price is NOT fixed, and no all-roads completion claim. Saved live metadata and gzip provider geometry in live-controls/2026-10-13-stage10-ui-volnovakha-moscow.*.
+2026-10-16T00:40:16.031Z: automatic queue STARTED; 155/155,4/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-40-16-031Z-started.json). dnr-новоазовск-moscow-center
 
-## Next
+2026-10-16T00:40:44.163Z: automatic queue DONE; 155/155,5/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-40-44-163Z-done.json). dnr-новоазовск-moscow-center
 
-Resolve endpoint table conflicts from actual direct operator tariffs without selecting arbitrary internal chains. Complete missing M11 head/tail, M12 eastern products and CKAD M7↔M11 boundary mapping. User goal remains IN PROGRESS, stage10 not complete. Publish only experimental Preview after verified persistence; main/Production untouched.
+2026-10-16T00:40:48.395Z: automatic queue STARTED; 155/155,5/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-40-48-395Z-started.json). dnr-новоазовск-saint-petersburg-center
 
+2026-10-16T00:41:27.995Z: automatic queue DONE; 155/155,6/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-41-27-995Z-done.json). dnr-новоазовск-saint-petersburg-center
 
-## 2026-10-13 — actual Yandex controls and four reviewed endpoint cells
+2026-10-16T00:41:32.084Z: automatic queue STARTED; 155/155,6/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-41-32-084Z-started.json). dnr-талаковка-kazan-center
 
-# Яндекс: устранение конфликтов готовых endpoint-ячеек — 2026-10-13
+2026-10-16T00:42:06.047Z: automatic queue DONE; 155/155,7/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-42-06-047Z-done.json). dnr-талаковка-kazan-center
 
-Запрос пользователя: проверить конфликтующие записи Яндекс Картами и оставить по одной. Выполнена реальная облачная UI-сверка двух северных векторов М4, не всех конфликтов страны. Новые правила one-entry/exit соблюдены; контрольный промежуточный ПВП71 применяется только в исследовании для определения правильной тарифной границы, не в live расчёте.
+2026-10-16T00:42:10.359Z: automatic queue STARTED; 155/155,7/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-42-10-359Z-started.json). dnr-талаковка-kerch-center
 
-| Направление | Пн–Чт | Пт–Вс | Основание |
-|---|---:|---:|---|
-| m4-620 → m4-71 | 2480 | 2730 | Яндекс623км→ПВП71→66км |
-| m4-636 → m4-71 | 3050 | 3370 | Яндекс641км→ПВП71→66км |
+2026-10-16T00:42:32.667Z: automatic queue DONE; 155/155,8/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-42-32-667Z-done.json). dnr-талаковка-kerch-center
 
-Параметры Яндекса: легковое авто ниже2м без транспондера, отправление13Oct20:33/34 и17Oct20:33MSK, прибытие14/18Oct. Подробный маршрут показывал именно эти суммы с~ и текстом оператора о цене на момент выезда. Все сохранённые суммы — unconfirmed estimates, не подтверждённые квитанции. Точные проверенные post-redirect URLs, координаты, даты, ETA и отрицательные контроли в live-controls/2026-10-13-yandex-m4-endpoint-conflicts.json. Точность расстояния показана в милях; не заменять округлённые мили точной геометрией.
+2026-10-16T00:42:36.615Z: automatic queue STARTED; 155/155,8/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-42-36-615Z-started.json). dnr-талаковка-moscow-center
 
-В текущем калькуляторном OSRM Волноваха→Москва границы636→71. Отдельный Яндекс целиком Волноваха→Москва показывал3810/800mi/16h49; его полная цена НЕ скопирована в калькуляторный1182km маршрут. Используется только отдельно исследованный endpoint-коридор. Полное геометрическое равенство двух провайдеров не установлено и не заявляется.
+2026-10-16T00:43:05.635Z: automatic queue DONE; 155/155,9/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-05-635Z-done.json). dnr-талаковка-moscow-center
 
-Первоначальный северный контроль623→66 показал2480 в будни, совпавшую с одним старым вариантом; старый2330 не совпал. Выходной контроль2730 не совпал НИ с3130, НИ с2950. Поэтому ошибочно было бы просто выбрать одну старую цепочку и перенести её выходной тариф. В обратном направлении без фиксации ПВП71 Яндекс объезжал его через Каширское шоссе и показывал2170 в будни; этот контроль не разрешает зеркалить северный тариф. На пересчёте будущего маршрута также была платная иконка без суммы; она не считается0/проверенной ценой.
+2026-10-16T00:43:09.971Z: automatic queue STARTED; 155/155,9/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-09-971Z-started.json). dnr-талаковка-saint-petersburg-center
 
-Активные четыре directed/profile-ячейки в M4_REVIEWED_ENDPOINT_CELLS_2026-10-13.json имеют приоритет в endpointRegister; все старые варианты для точного ключа road/from/to/profile исключаются из активного lookup. Исходный TARIFF_SELECTION_REGISTER сохранён как история/legacy, не уничтожен. Другие пары/обратные направления не выбираются по аналогии и остаются открытыми. Генератор старых цепочек не создаёт reviewed-ячейки и не может перезаписать их импорт; никаких сумм ПВП в новой обработке нет.
+2026-10-16T00:43:51.804Z: automatic queue DONE; 155/155,10/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-51-804Z-done.json). dnr-талаковка-saint-petersburg-center
 
-Проверки: npm run build -- --webpack542/pass542/fail0, quote/API contracts PASS, TypeScript4.6s/Next16pages PASS; scopedESLint иdiffcheck PASS. Тесты обеих северных пар/двухпрофилей/unconfirmed и запрета переноса в reverse/другую конфликтующую пару. Живой локальный handler контроль записывается отдельно по фактическому результату; browser UI тарифы не выдаются за hostedPOST.
+2026-10-16T00:43:55.942Z: automatic queue STARTED; 155/155,10/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-43-55-942Z-started.json). dnr-урзуф-kazan-center
 
-Статус: две пары/четыре ячейки обработаны; полная очистка всех конфликтов и nationwidestage10 остаются IN PROGRESS. Следующий шаг — аналогично проверять остальные реальные крайние участки/направления, сохранять суммы и случаи несовпадения, не выбирать min/max произвольно. Production/merge не выполнялись.
+2026-10-16T00:44:40.867Z: automatic queue DONE; 155/155,11/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-44-40-867Z-done.json). dnr-урзуф-kazan-center
 
-Actual fresh local V3 API handler/external-provider control after selection: Volnovakha→Moscow1182425m/61701s, status200, elapsed33949ms; priced3050, weekday3050/weekend3370, unconfirmed, segment m4-636→m4-71. This is live local handler evidence, not hostedPOST/browser calculator E2E.
+2026-10-16T00:44:45.196Z: automatic queue STARTED; 155/155,11/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-44-45-196Z-started.json). dnr-урзуф-kerch-center
 
-Persistence: localf93ec71081be48fb541f997b496b7aada0a49179 → remote ca8d317f138a2727f0399de9dd6751c0b6115429, parent34b9a0ca;9 changed blobs verified byte-hash identical before nonforce expected-head ref update. Working tree clean. Preview dpl_D2pZpBEFmaN5JEW94TJymCvujcx5 automatically created target=null, exactca8d317 source; last observed BUILDING, not yet READY/availability-verified. No Production.
+2026-10-16T00:45:06.967Z: automatic queue DONE; 155/155,12/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-45-06-967Z-done.json). dnr-урзуф-kerch-center
 
-Whole index audit after expanding compound boundary IDs and counting directed/profile keys:472 conflicting keys before,468 remain after4 reviewed cells. These are fare keys, not472 physical roads or distinct journeys. This block fixes only two northbound pairs. Other pairs need actual control geometry/paid boundaries; no global339/355 winner inferred.
-## 2026-10-13 — matrix stage 1: writable checkout and M4 endpoint conflicts
+2026-10-16T00:45:10.946Z: automatic queue STARTED; 155/155,12/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-45-10-946Z-started.json). dnr-харцызск-kazan-center
 
-User asked to remove the read-only limitation and start the first matrix-audit block. The earlier `matrix-work` checkout is mounted read-only (`EROFS`); this is a workspace mount policy, not Unix file mode. Created a full Git clone under the permitted writable workspace at `/workspace/scratch/806dbc1ef74b/matrix-audit-work`, branch `audit/matrix-endpoint-conflicts-2026-10-13`, based on integration head `8cc7cf4d967fb356f9923aa71654adf51a8aca10`. The original mount was not modified. Existing installed dependency tree was reused read-only after the package registry returned `EPERM`; lockfile unchanged.
+2026-10-16T00:45:43.103Z: automatic queue DONE; 155/155,13/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-45-43-103Z-done.json). dnr-харцызск-kazan-center
 
-Finding: full keys `(road, from-chain, to-chain, profile)` were unique, but endpoint lookup collapses alternative M4 chains to `(directed first section, directed last section, profile)`. Those collapsed groups can carry different offline-added amounts. Generator `build-vector-matrix.cjs` now expands compound endpoint IDs, marks each M4 candidate runtime eligible only where all source chains for that directed pair/profile agree, and emits `m4EndpointConflicts` plus `m4RuntimeEndpointSpans`. Conflicting source rows remain in the matrix as audit-only, with no arbitrary min/max/first winner. Rebuilt selection register preserves those fields. `m4-route-adapter.mjs` excludes quarantined rows, reports an explicit ambiguous-fare reason for known conflicts, and does not synthesize reverse prices; reverse rows are independently grouped. The four existing Yandex reviewed directed cells continue to override only their exact keys.
+2026-10-16T00:45:47.325Z: automatic queue STARTED; 155/155,13/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-45-47-325Z-started.json). dnr-харцызск-kerch-center
 
-Validation on this branch's input: matrix contains4699 rows, of which1456 are M4 candidate rows; 428 ordered endpoint/profile groups have conflicting amounts and remain quarantined; 360 groups have a unique offline amount. These figures are specific to this generated input and counting key, and are not a claim that 428 roads or journeys were checked. `validate-vector-matrix.cjs` verifies every conflict is excluded from runtime and each eligible row belongs to a unique fare group. Quote test and M4 adapter tests pass, including conflict→unknown, previously reviewed cells, unreviewed reverse, and single-section direct lookup.
+2026-10-16T00:46:10.987Z: automatic queue DONE; 155/155,14/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-46-10-987Z-done.json). dnr-харцызск-kerch-center
 
-Commands actually passed: `node experiments/nationwide-tolls/scripts/build-vector-matrix.cjs`; `node experiments/nationwide-tolls/scripts/build-release-register.cjs`; `node experiments/nationwide-tolls/scripts/validate-vector-matrix.cjs`; `node experiments/nationwide-tolls/scripts/quote.test.cjs`; `npm run build -- --webpack` (75/75 tests, quote/API contracts, Next16 webpack build and TypeScript). `git diff --check` passed before docs. An initial full gate without dependencies failed because clone had no `node_modules`; npm registry install attempts were denied `EPERM`. Reused exact existing local package versions (Next16.3.4, TypeScript5.9.3), then reran the full gate successfully. No browser, new Yandex route, hosted API POST, Vercel deployment, push, merge, or Production action performed.
+2026-10-16T00:46:15.177Z: automatic queue STARTED; 155/155,14/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-46-15-177Z-started.json). dnr-харцызск-moscow-center
 
-Remaining: query/direct operator evidence for the other428 conflict keys; confirm why this branch's scope count differs from the separately recorded broader audit count472 (the counts use different input snapshots/normalization and must not be conflated); complete M11/M12/CKAD product bindings. Full nationwide pricing audit remains IN PROGRESS. Working branch is local and must be pushed through the normal repository path only when explicitly requested/approved by the project workflow.
+2026-10-16T00:46:43.075Z: automatic queue DONE; 155/155,15/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-46-43-075Z-done.json). dnr-харцызск-moscow-center
 
-## 2026-10-13 — M1/M3 and regional tariff re-audit
+2026-10-16T00:46:47.431Z: automatic queue STARTED; 155/155,15/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-46-47-431Z-started.json). dnr-харцызск-saint-petersburg-center
 
-User requested a full tariff audit. Rechecked current Avtodor's official tariff-page indexed table and the official 2026-03-02 tariff notice. Found M1 no-transponder had been collapsed to the 230 ₽ transponder fare; corrected to 250 ₽ in active `data/tolls`, `national-registry`, and the matrix builder. Reconciled M3 800-vs-520: the archived snapshot read higher vehicle classes (200/320/280) as payment-mode rates. Category-I direct schedule is 100/100, 190/190, 190/230 MonThu/FriSun; full-road benchmark is 480/520. Corrected active and source snapshots and explicitly withdrew the old 800 ₽ shadow diagnostic. A second legacy class error was found in `lib/toll-data/regional-ckad.ts`: full Tolyatti span was 650 ₽ (higher class) instead of category-I 320 ₽; corrected and added a both-direction `estimateTolls` regression.
+2026-10-16T00:47:27.732Z: automatic queue DONE; 155/155,16/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-47-27-732Z-done.json). dnr-харцызск-saint-petersburg-center
 
-The generator now sources M1's category-I no-transponder fare from its JSON row and composes M3 vectors from the saved category-I rates. Rebuilt the 4,699-row vector matrix and selection register; 428 endpoint/profile M4 conflicts remain quarantined, 360 unique cells. Builders/validator and focused tariff tests pass. `npm run build -- --webpack` passes 75/75 tests plus Next/TypeScript; the first attempt lacked node_modules and failed, then reused an installed identical Next16.3.4/TypeScript5.9.3 dependency tree and the complete gate passed. No live Yandex route, hosted API, deploy, push, merge or Production action in this block. Other M4/M11/M12/CKAD/region tariff-source dates and route scopes remain open; this is partial audit progress, not full tariff coverage. Detailed report `M1_M3_TARIFF_REAUDIT_2026-10-13.md`.
+2026-10-16T00:47:32.144Z: automatic queue STARTED; 155/155,16/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-47-32-144Z-started.json). kherson-новая-збурьевка-saint-petersburg-center
 
+2026-10-16T00:48:17.467Z: automatic queue DONE; 155/155,17/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-48-17-467Z-done.json). kherson-новая-збурьевка-saint-petersburg-center
 
-## 2026-10-13 — тарифный аудит актуальности М-12 и ЦКАД
+2026-10-16T00:48:21.967Z: automatic queue STARTED; 155/155,17/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-48-21-967Z-started.json). kherson-скадовск-kazan-center
 
-Пользователь продолжил полный тарифный аудит. Повторно сверил current source для M12/CKAD и группы дополнительных систем после предыдущих исправлений M1/M3/Tolyatti. Госкомпания «Автодор» подтверждает с 08.10.2026 цену 99 ₽ cat-I для конкретной пары съезд Сокуры→Шали. В legacy code M12 сохраняется исторический `kazan_p239→shali=62`; точное равенство P239 и нового Сокуры въезда не подтверждено, поэтому 62 не заменялось 99. Отдельная legacy full-route строка Москва—Казань ошибочно включала эти 62 ₽: исправлена 5909→5847 ₽ по официальному мартовскому direct matrix assertion Москва→Казань (P239), а не до Шали. Добавлен `scripts/m12-full-route-tariff-audit.test.ts`: синтетическая последовательность опубликованных M12 segments до P239 в прямом/обратном направлении подтверждает 5847 ₽ и исключает сегмент Шали; focused 1/1 PASS. Оператор CKAD публикует длинную OD-cell М-10→ПК-5 3189 ₽ (base no-transponder в сохранённой таблице), тогда как holding-company release на той же дате указывает «вся дорога ЦКАД» 2381 ₽. Оба scope сохранены отдельно; это unresolved source/product conflict, CKAD `runtimeApproved=false`; не выбрана цена. Багратион 790 ₽ base confirmed current, Удмуртия group1 amounts retained pending class mapping. Подробный отчет `TARIFF_AUDIT_CURRENTNESS_2026-10-13.md`.
+2026-10-16T00:49:02.902Z: automatic queue DONE; 155/155,18/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-49-02-902Z-done.json). kherson-скадовск-kazan-center
 
-Повторный `npm run build -- --webpack` в разрешённой рабочей копии после M12-коррекции прошёл: 77 test files pass, quote/API contracts PASS, Next.js 16.3.4 / TypeScript PASS, static pages16/16. Зависимости exact versions переиспользованы из локального package tree через временную ссылку; lock-файл не менялся, ссылка удалена. No new Yandex/operator calculator trip or receipt, no runtime fare changed, no deploy/merge/Production. Repository branch `audit/matrix-endpoint-conflicts-2026-10-13`, base local HEAD `bd95fcd` at start; Report/state/log/next-step and Moscow—Kazan correction/test committed as `fb50f8f` on `audit/matrix-endpoint-conflicts-2026-10-13` (one local commit ahead of its local origin); no push/deploy/merge/Production. `git diff --check` PASS; temporary node_modules symlink removed. Next: exact geometry regression for stale M12 legacy matches and direct CKAD operator resolution, then continue M4/M11/other systems.
-## 2026-10-13 22:26 MSK — свод правил из чатов и постоянное журналирование
+2026-10-16T00:49:07.296Z: automatic queue STARTED; 155/155,18/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-49-07-296Z-started.json). kherson-скадовск-kerch-center
 
-**Запрос пользователя:** найти все правила из связанных с новым алгоритмом/матрицей чатов, обнаружить пропущенное/конфликтующее, добавить новое правило «отдельная пара въезда/съезда для каждой платной дороги; готовые суммы этих дорог просто сложить», и сделать подробные записи по каждому этапу постоянным требованием для продолжения из другого чата/ИИ.
+2026-10-16T00:49:30.240Z: automatic queue DONE; 155/155,19/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-49-30-240Z-done.json). kherson-скадовск-kerch-center
 
-**Источники, которые просмотрены:** актуальная ветка/HEAD и чистота checkout до изменений; `AGENTS.md`, `docs/WORK_STATE.md`, `README.md`, `experiments/nationwide-tolls/README.md`, `DECISIONS.md`, `ALGORITHM_SPEC_2026-10-12.md`, `NEXT_STEPS.md`, `WORK_LOG.md`, `experiments/toll-od-matrix/DECISIONS.md` и backlog. Доступный поиск прошлых чатов вернул релевантные выдержки по правилам от 9–13 октября (fastest-only, geometry, Yandex, тарифные границы, fail-closed, ведение handoff); полный текст всех чатов не был возвращён, что прямо отмечено в сводке.
+2026-10-16T00:49:34.658Z: automatic queue STARTED; 155/155,19/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-49-34-658Z-started.json). kherson-скадовск-moscow-center
 
-**Результат сверки:** позднее уточнение пользователя от 13 октября о поездке по платной дороге до конечного необходимого съезда уже отменяло проверки промежуточных съездов/re-entry. Текущее сообщение уточняет арифметику между дорогами: для каждой самостоятельной дороги отдельная пара крайних пунктов оплаты → одна готовая ячейка/вектор конкретной матрицы → обычное сложение готовых сумм дорог. Это не разрешает складывать промежуточные ПВП внутри одной дороги. Неизвестная или конфликтная ячейка любой обнаруженной дороги оставляет весь итог unknown. Также сопоставлены fastest-only, выбранная геометрия, passenger/category-I/no-transponder profile, дата и будни/выходные, принятие конкретных Yandex controls и общероссийская цель покрытия.
+2026-10-16T00:50:10.284Z: automatic queue DONE; 155/155,20/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-50-10-284Z-done.json). kherson-скадовск-moscow-center
 
-**Изменённые файлы:**
-- `AGENTS.md`: постоянное требование отдельного append-only stage log с «что/как/зачем/для чего», путями, решениями, источниками, точными проверками, ошибками, ограничениями, Git/PR/deployment state и следующим шагом. Исправлена устаревшая production authorization: прямой запрос нужен перед Production/merge/main.
-- `experiments/nationwide-tolls/DECISIONS.md`: добавлены датированные подтверждённые решения по паре каждой дороги/суммированию и журналу.
-- `experiments/nationwide-tolls/ALGORITHM_SPEC_2026-10-12.md`: актуализированы составление route total и endpoint matrix lookup; runtime не ищет цену по промежуточным ПВП.
-- `experiments/nationwide-tolls/RULES_RECONCILIATION_DRAFT_2026-10-13.md`: новая сводка, приоритет источников, отменённые старые правила и семь вопросов для совместного решения.
-- `experiments/nationwide-tolls/NEXT_STEPS.md`, `docs/WORK_STATE.md`: handoff/приоритеты обновлены.
+2026-10-16T00:50:14.821Z: automatic queue STARTED; 155/155,20/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-50-14-821Z-started.json). kherson-скадовск-saint-petersburg-center
 
-**Остаточные границы:** в сводке предложены безопасные defaults: самостоятельность определять по тарифному продукту, не только бренду; незаписанный endpoint/реально разрывный проезд без точной ячейки оставлять unknown; равный ETA разрешать существующим детерминированным порядком; направленность брать только из явной матрицы; часовой/праздничный тариф применять только по точному расписанию; совпадающий по всем полям, но расходящийся Yandex-контроль оставлять unresolved. Главный продуктовый каталогический вопрос для дальнейшего обсуждения — как разделить связанные/последовательные тарифные продукты одной магистрали без пропуска и двойного учёта.
+2026-10-16T00:51:01.175Z: automatic queue DONE; 155/155,21/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-51-01-175Z-done.json). kherson-скадовск-saint-petersburg-center
 
-**Проверки:** `git diff --check` PASS после удаления лишней пустой строки в конце журнала. Относительные Markdown-ссылки сверены в 7 изменённых/новых файлов: PASS. При первой проверке обнаружились старые ссылки на отсутствующие recovery archive/patch; исправлены как явные исторические ограничения в `docs/WORK_STATE.md` и `NEXT_STEPS.md`, без утверждения, что архив восстановлен. Код, тарифные таблицы и тесты в этом блоке не менялись; тесты/сборка/маршруты/веб-контроли не запускались (docs-only). Branch `audit/matrix-endpoint-conflicts-2026-10-13`, исходный HEAD `3ce9f4a` (локально ahead of origin by 2 commits до фиксации этого этапа); push/merge/deploy/Production не выполнялись.
+2026-10-16T00:51:05.667Z: automatic queue STARTED; 155/155,21/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-51-05-667Z-started.json). kherson-старая-збурьевка-kazan-center
 
-**Следующий шаг:** совместно проверить сводку, особенно определение самостоятельных тарифных продуктов; затем продолжить текущую матричную сверку по exact endpoint pairs. Общая матричная работа остаётся IN PROGRESS.
+2026-10-16T00:51:47.319Z: automatic queue DONE; 155/155,22/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-51-47-319Z-done.json). kherson-старая-збурьевка-kazan-center
 
-**Сохранение этапа:** нормативные правки и сводка сохранены в commit `7cf40fb` (`docs: reconcile toll matrix rules and handoff`) ветки `audit/matrix-endpoint-conflicts-2026-10-13`; после него локальная ветка была ahead of origin by 3, worktree clean. Этот последующий журналирующий commit добавляет только идентификатор сохранённого этапа; push/merge/deploy/Production не выполнялись.
+2026-10-16T00:51:51.935Z: automatic queue STARTED; 155/155,22/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-51-51-935Z-started.json). kherson-старая-збурьевка-kerch-center
 
-## 2026-10-13 23:54 MSK — план внедрения и официального выпуска V3
+2026-10-16T00:52:15.293Z: automatic queue DONE; 155/155,23/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-52-15-293Z-done.json). kherson-старая-збурьевка-kerch-center
 
-**Запрос:** составить чёткий план реализации согласованного нового алгоритма/матрицы до интеграции, тестовой версии и официальной публикации калькулятора. Этот блок — планирование, не реализация и не публикация.
+2026-10-16T00:52:19.529Z: automatic queue STARTED; 155/155,23/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-52-19-529Z-started.json). kherson-таврийск-kazan-center
 
-**Проверенное исходное состояние:** локальная ветка `audit/matrix-endpoint-conflicts-2026-10-13` на `22bffe7`, worktree до редактирования чистый; локальный `origin` ведёт на scratch checkout и отстаёт на 4 коммита. GitHub repo `4regodatbe-cpu/mezhgorod-calculator` доступен, default `main`; поиск GitHub не обнаружил audit-ветку, экспериментальная `experiment/toll-od-matrix-2026-10-08` существует. Открытые PR №12/9/6 не являются отдельным V3 release PR. Vercel просмотрен только read-only: последний показанный экспериментальный Preview READY с source `1642c76`, последний показанный Production READY с V2 source `64631d23`; эти показания не заменяют повторную проверку в момент релиза.
+2026-10-16T00:53:00.314Z: automatic queue DONE; 155/155,24/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-00-314Z-done.json). kherson-таврийск-kazan-center
 
-**Кодовая сверка для плана:** `README.md`, `docs/CALCULATOR_HANDOFF.md`, `AGENTS.md`, `docs/WORK_STATE.md`, `DECISIONS.md`, `NEXT_STEPS.md`, `ALGORITHM_SPEC_2026-10-12.md`, десятичастный audit plan, `lib/v3-calculation/route-leg-pricing.ts`, `lib/toll-engine/route-toll-composition.ts`, `experiments/nationwide-tolls/engine/quote.cjs`, `app/api/v3/calculate/route.ts`, `app/page.tsx`, `.github/workflows/calculator-final-gate.yml`, `scripts/segment10-production-readiness.mjs`, Android `MainActivity.kt`. Найдено: runtime-компонент `m4_a289` объединяет продукты, M1/M3/regional стоят с null в V3 composition, legacy fallback остаётся в части кода, V3 API числовую цену помечает unconfirmed; официальный корень, Android и статический final gate закреплены за V2. Матрица ранее имела 428 изолированных конфликтов endpoint keys и незакрытое nationwide покрытие. Новых route/browser/source-проверок в этом блоке не выполнялось.
+2026-10-16T00:53:05.163Z: automatic queue STARTED; 155/155,24/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-05-163Z-started.json). kherson-таврийск-kerch-center
 
-**Результат:** создан `DELIVERY_PLAN_TO_OFFICIAL_RELEASE_2026-10-13.md` с шестью крупными этапами, путями, артефактами `stages/01`–`06`, переходными проверками и критериями выпуска; `NEXT_STEPS.md` и `docs/WORK_STATE.md` обновлены как короткий handoff. План включает синхронизацию актуальной ветки, каталог платных продуктов, исправление матрицы группами причин, интеграцию exact pair lookup и простого суммирования, полный live/CI/browser gate, тестовый Vercel Preview на проверенном SHA, затем отдельный production gate/rollback и Android. Production/merge не выполнялись.
+2026-10-16T00:53:28.811Z: automatic queue DONE; 155/155,25/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-28-811Z-done.json). kherson-таврийск-kerch-center
 
-**Почему такой порядок:** удалённая экспериментальная ветка и локальный тарифный аудит нужно сравнить до нового кода; без идентификатора самостоятельного платного продукта общий номер магистрали может дать пропуск или двойное начисление; без ready-fare matrix runtime неизбежно вернёт unknown. Старые релизные проверки прямо требуют V2, поэтому их нельзя оставлять как истинное подтверждение выпуска V3. Всякий неподтверждённый тариф остаётся unknown, а покрытие фиксируется количественно без обещания 100% числовых цен по стране.
+2026-10-16T00:53:32.922Z: automatic queue STARTED; 155/155,25/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-53-32-922Z-started.json). kherson-таврийск-moscow-center
 
-**Проверки этого документа:** `git diff --check` PASS; относительные Markdown-ссылки четырёх изменённых/новых файлов проверены и существуют (`DOC_LINKS_OK: 4 files`); `git status` показал только перечисленные docs. Код, данные, тесты и build не менялись/не запускались в этом docs-only блоке. Следующий шаг — сохранить план Git-коммитом, затем начать stage 1 с актуального GitHub HEAD и локальных коммитов. Прямой запрос на Production/merge требуется перед release stage согласно текущему `AGENTS.md` и пользовательской инструкции.
+2026-10-16T00:54:09.211Z: automatic queue DONE; 155/155,26/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-54-09-211Z-done.json). kherson-таврийск-moscow-center
 
-**Сохранение:** план, handoff и очередь сохранены в commit `47b045f` (`docs: plan V3 toll matrix delivery and release`) локальной ветки `audit/matrix-endpoint-conflicts-2026-10-13`. Следующая запись журнала фиксирует SHA основного docs-коммита. Push, merge, Vercel Preview/Production и APK не выполнялись.
+2026-10-16T00:54:13.740Z: automatic queue STARTED; 155/155,26/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-54-13-740Z-started.json). kherson-таврийск-saint-petersburg-center
 
-## 2026-10-13 — реализация этапа 1: каталог продуктов и исходный SHA
+2026-10-16T00:55:00.354Z: automatic queue DONE; 155/155,27/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-55-00-354Z-done.json). kherson-таврийск-saint-petersburg-center
 
-Запрос пользователя: приступить к шестиступенчатому плану внедрения нового V3 калькулятора. Начальное состояние: чистая локальная ветка `audit/matrix-endpoint-conflicts-2026-10-13` на `3059331`; `origin` — другой временный checkout. GitHub API подтвердил экспериментальный HEAD `1642c76cc479c8790c18351f1496ecc2949eeb52`; локального объекта нет, Git HTTPS недоступен (`browser-proxy port 8889`). Ни ancestry, ни сравнение файлов, ни перенос в удалённую ветку не выполнены. Старые PR не менялись.
+2026-10-16T00:55:05.338Z: automatic queue STARTED; 155/155,27/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-55-05-338Z-started.json). kherson-херсон-kazan-center
 
-Созданы `tariff-products.json`, `tariff-products.test.mjs` и подробный `stages/01-baseline-and-product-boundaries.md`. Реестр связывает 23 уникальных платных продукта с `national-registry.json`, явно оставляет Псков как неразделённый агрегат, фиксирует ключ пары, границы и исключение двойных тарифов М-4/А-289/обхода, частей М-11 и ЗСД/ШМСД. Это модель данных, не новый runtime тариф. Просмотрены `route-toll-composition.ts`, `m4-a289-composition.ts`, `route-leg-pricing.ts`; старое объединение `m4_a289`, `regional`, legacy fallback и неподключённые М-1/М-3 сохраняются до последующих этапов. При неизвестной границе или цене полный итог остаётся unknown.
+2026-10-16T00:55:53.498Z: automatic queue DONE; 155/155,28/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-55-53-498Z-done.json). kherson-херсон-kazan-center
 
-Проверки: локальный catalog test PASS; с доступным временно вторым `node_modules` 78/78 audit tests и quote contracts PASS, `next build --webpack` PASS (16 app routes). Первые две попытки полного `npm run build` не имели TypeScript, третья прошла тесты, но Turbopack отверг внешний симлинк пакетов; стандартный build на полноценной установке в проекте не подтверждён. `git diff --check` PASS. Live routes, тарифы оператора, Preview, Production не проверены/не менялись. Следующий шаг — завершить GitHub comparison/единую ветку и потом аудит 428 конфликтов М-4. Итоговый commit SHA этапа фиксируется следующей записью.
+2026-10-16T00:55:58.239Z: automatic queue STARTED; 155/155,28/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-55-58-239Z-started.json). kherson-херсон-kerch-center
 
-Сохранение этапа 1: commit `deac03a` (`feat(tolls): catalog tariff product boundaries for V3 stage one`) в локальной ветке. GitHub push/PR/Preview отсутствуют; это частичный этап 1, не релиз-кандидат.
+2026-10-16T00:56:25.678Z: automatic queue DONE; 155/155,29/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-56-25-678Z-done.json). kherson-херсон-kerch-center
 
-## 2026-10-14 — завершение этапа 1, объединение с опубликованной экспериментальной историей
+2026-10-16T00:56:29.988Z: automatic queue STARTED; 155/155,29/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-56-29-988Z-started.json). kherson-херсон-moscow-center
 
-По запросу пользователя довести этап 1 до завершения повторно проверена настоящая GitHub экспериментальная ветка. `git fetch github experiment/toll-od-matrix-2026-10-08` получил HEAD `1642c76cc479c8790c18351f1496ecc2949eeb52`; merge-base с локальным `06e072d` = `1a63018c850a57e114674a28502276c07804c0b7`. Расхождение 49 локальных/439 удалённых коммитов. Новая ветка `integration/v3-product-baseline-2026-10-14` сохраняет два родителя; в add/add конфликтах сохранены более поздние локальные проверенные тарифные файлы. Итоговый diff к локальному HEAD: только три документа/файла recovery из GitHub, без автоматического применения reconstructive patch. Сравнение текущего локального кода с GitHub выявляет подтверждённые исправления 5847 вместо 5909 (М-12 Москва—Казань), 320 вместо 650 (Тольятти), карантин конфликтов М-4. Список продуктов и защита от двойного счёта: `tariff-products.json`, `tariff-products.test.mjs`, `stages/01-baseline-and-product-boundaries.md`.
+2026-10-16T00:57:13.277Z: automatic queue DONE; 155/155,30/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-57-13-277Z-done.json). kherson-херсон-moscow-center
 
-`pnpm install --offline --frozen-lockfile` завершился ошибкой отсутствующей offline metadata для `@alloc/quick-lru`; использован готовый локальный набор зависимостей проекта, физически скопированный внутрь checkout. `npm run build` PASS: audit tests 546/546, quote contracts PASS, Turbopack и 16 маршрутов PASS. `git diff --check` для staged/unstaged PASS, конфликтов индекса 0. Runtime каталогом пока не пользуется; содержимое recovery patch требует отдельной проверки. Публикация объединённой ветки и подтверждённый SHA фиксируются следующим checkpoint, не являются Production/merge в main.
+2026-10-16T00:57:17.909Z: automatic queue STARTED; 155/155,30/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-57-17-909Z-started.json). kherson-херсон-saint-petersburg-center
 
-Checkpoint интеграции: локальный merge `cf18e8677aa53c30f959c93aff8745d57167ab5d` содержит родителей `06e072d` и удалённый `1642c76`. Push новой ветки `integration/v3-product-baseline-2026-10-14` отклонён auto-review по причине возможной передачи полного локального содержимого во внешний GitHub без достаточно явного разрешения на конкретную отправку. GitHub branch search вернул пустой список. Никакого обходного способа не применялось. Этап 1 — локально готов, удалённый критерий BLOCKED; подробности в `stages/01-baseline-and-product-boundaries.md`. Следующий шаг: явное разрешение на отправку указанного SHA, затем сверка ref. Не считать PR/Preview/Production выполненными.
+2026-10-16T00:58:11.291Z: automatic queue DONE; 155/155,31/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-11-291Z-done.json). kherson-херсон-saint-petersburg-center
 
+2026-10-16T00:58:16.380Z: automatic queue STARTED; 155/155,31/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-16-380Z-started.json). lnr-ровеньки-kazan-center
 
-## 2026-10-14 — пользователь разрешил продолжить публикацию
+2026-10-16T00:58:51.318Z: automatic queue DONE; 155/155,32/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-51-318Z-done.json). lnr-ровеньки-kazan-center
 
-На запрос разрешения отправить `3ad1bc2` в новую интеграционную ветку пользователь ответил «Продолжай». Повторный `git push` не был отклонён auto-review, но завершился ошибкой отсутствия CLI credentials: `fatal: could not read Username for https://github.com`. Используется уже подключённый GitHub для переноса точного Git-дерева проверенных файлов на базе `1642c76`; это snapshot commit с новым SHA, не публикация исходного merge SHA. Исходная merge-история сохраняется в отдельной локальной ветке. После GitHub commit обязательны сравнение tree SHA, fetch новой ветки и единое локальное/удалённое состояние. Окончательный результат будет добавлен ниже.
+2026-10-16T00:58:56.015Z: automatic queue STARTED; 155/155,32/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-58-56-015Z-started.json). lnr-ровеньки-kerch-center
 
+2026-10-16T00:59:22.332Z: automatic queue DONE; 155/155,33/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-59-22-332Z-done.json). lnr-ровеньки-kerch-center
 
-## 2026-10-14 — DONE: критерии этапа 1 выполнены
+2026-10-16T00:59:26.729Z: automatic queue STARTED; 155/155,33/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-59-26-729Z-started.json). lnr-ровеньки-moscow-center
 
-Пользователь сообщил повторное зависание и потребовал разобраться до продолжения. Проверка сохранённого progress JSON показала `completedIndex:39`, то есть повторная передача уже закончилась; первоначально отсутствовал blob №20 (`TARIFF_SELECTION_REGISTER.json`, 3 833 832 байта), а при последнем возобновлении отсутствовала только ветка. Проверенный GitHub `create_tree` из всех 39 hashes вернул `4f0574609ffe5fb7dec55ddb405b3069352e9688`, точное совпадение локального HEAD `c6d3843`. Точную внутреннюю причину подвисания интерфейса/оркестратора установить не удалось; нельзя выдавать её за недостаток разрешений или ошибку GitHub. Устранённое организационное ограничение: длинная передача прежде делала много мелких чтений без долговременного progress; при возобновлении использованы чтения с дедупликацией строк, каждый blob проверен по SHA, progress записан отдельно. Не было повторной передачи уже подтверждённых blobs.
+2026-10-16T00:59:56.300Z: automatic queue DONE; 155/155,34/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T00-59-56-300Z-done.json). lnr-ровеньки-moscow-center
 
-Подключённый GitHub создал snapshot commit `2b756ef73c793d1ee03ad66e4c0587578582b8a2` с родителем опубликованного V3 `1642c76cc479c8790c18351f1496ecc2949eeb52`; затем создана `integration/v3-product-baseline-2026-10-14`. `git fetch github integration/v3-product-baseline-2026-10-14` PASS, `git diff --exit-code` между локальным заделом и полученной веткой PASS. Локальная исходная интеграционная ветка переименована в `archive/v3-local-audit-merged-2026-10-14`, новая рабочая локальная ветка создана от GitHub ref с upstream. Обе рабочие стороны имеют source SHA `2b756ef...`, дерево совпадает побайтно. Полная локальная merge-история не отправлена в GitHub; опубликован её проверенный итоговый source tree поверх настоящей удалённой истории. Подробные прежние work logs и решения входят в snapshot и доступны следующему разработчику.
+2026-10-16T01:00:00.944Z: automatic queue STARTED; 155/155,34/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-00-00-944Z-started.json). lnr-ровеньки-saint-petersburg-center
 
-Критерии: одна воспроизводимая опубликованная рабочая ветка — DONE; каталог самостоятельных продуктов и явных unresolved — DONE; уникальные ID, границы/матрица/правила overlap — DONE; примеры М-4 + А-289 + обход и М-11 head/mainline/tail — DONE в данном отчёте; проверка каталога и полного source tree — DONE. `npm run build` на идентичном source tree ранее PASS: 546/546 tests, quote contracts, 16 app routes. Финальное обновление касается только WORK_STATE, NEXT_STEPS, WORK_LOG и данного отчёта; нет новых runtime правок после полного build. Критерий этапа 1 полностью выполнен. Тарифный аудит 428 конфликтующих М-4 ключей и runtime интеграция независимых продуктов остаются этапами 2 и 3. Main/Production/merge PR не выполнялись. Новый Preview/CI в этом этапе не подтверждался. Следующий конкретный шаг: этап 2 и отдельный отчёт `stages/02-matrix-and-provenance.md`.
+2026-10-16T01:00:40.950Z: automatic queue DONE; 155/155,35/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-00-40-950Z-done.json). lnr-ровеньки-saint-petersburg-center
 
-## 2026-10-14 — этап2: структурный аудит матрицы и происхождения
+2026-10-16T01:00:45.754Z: automatic queue STARTED; 155/155,35/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-00-45-754Z-started.json). lnr-рубежное-kazan-center
 
-User supplied six-stage delivery plan. Actual repository state already recorded stage1 DONE; read plan/AGENTS/state/decisions/stage1, independently fetched GitHub integration head a5c892e67af4b050f53bf2211b62feac34d6df6c. Local ea8bf4a and remote a5c892e had identical files (diff stat empty) but distinct docs commit IDs. Created isolated audit/v3-matrix-provenance-2026-10-14 from true remote baseline. No old PR or production change.
+2026-10-16T01:01:18.976Z: automatic queue DONE; 155/155,36/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-01-18-976Z-done.json). lnr-рубежное-kazan-center
 
-Implemented scripts/audit-matrix-provenance.cjs, deterministic MATRIX_PROVENANCE_AUDIT_2026-10-14.json and matrix-provenance.test.mjs. Every conflict key matched saved quarantine list;428 keys classify as339/355=140,636/672=168,both=120. All1096 conflicting source chains stay audit-only. Matrix4699 rows;1549 lack start date. Source fields exist for every row but content/currentness is not certified. Date auditor initially treated explicit timestamp boundaries as invalid; corrected before final build, tested explicit timezone/calendar validity. No fare rows promoted or changed; unique fare not equivalent to confirmed price.
+2026-10-16T01:01:23.598Z: automatic queue STARTED; 155/155,36/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-01-23-598Z-started.json). lnr-рубежное-kerch-center
 
-Commands/results: generator PASS; focused tests3/3 PASS; final npm run build -- --webpack549/549 PASS, quote/API contracts PASS, Next webpack/TypeScript PASS(exit0); git diff --check PASS. Initial full build with2 new tests also passed but final rerun covers timestamp correction and third test. No fresh operator/Yandex retrieval, browser, hostedAPI, CI, push, Preview, merge or Production. Stage2 remains IN PROGRESS. Detailed report stages/02-matrix-and-provenance.md includes per-road coverage and next exact evidence requirements. Separate earlier local runtime fixes a01e2bf from /workspace/scratch/806dbc1ef74b/matrix-audit-work remain outside this baseline; preserve and evaluate during integration, not silently discard.
+2026-10-16T01:01:50.677Z: automatic queue DONE; 155/155,37/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-01-50-677Z-done.json). lnr-рубежное-kerch-center
 
-## 2026-10-14 — этап2: primary topology evidence and core quarantine fix
+2026-10-16T01:01:55.144Z: automatic queue STARTED; 155/155,37/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-01-55-144Z-started.json). lnr-сорокино-kazan-center
 
-Continued authorized stage2 on parent ebcea80, clean initial worktree. Read current handoff and source snapshots. Fresh primary-source retrieval: Avtodor tariff page indexed rows match339/355 and636/672 saved arrays, direct page403; historical Avtodor bypass opening page67350 read fully,672 is a Pavlovsk exit; indexed Avtodor appendix e0b/5kq5uo88zxclelibmubucv607fda7cvv.pdf states entry355 towards Moscow and receipt at339, directPDF403. Another historic tariffPDF4c3/oni2swug8zwnp3eh55on5qjxvrjcjy9t.pdf indexed exemption rule but direct403; not used as current money source. Stored facts/inference/access limitations in source-snapshots/m4-conflict-topology-evidence-2026-10-14.json. No unverified date/price imported. Cause inference: generator kmRange grouping conflates through-section and ramp-specific products; correct exact direction/current OD evidence still required for all428 conflicts.
+2026-10-16T01:02:30.090Z: automatic queue DONE; 155/155,38/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-02-30-090Z-done.json). lnr-сорокино-kazan-center
 
-Found bypass of quarantine: general createQuoteEngine included provisional runtimeEligible:false rows by full-vector key, despite endpoint adapter excluding them. engine/quote.cjs now rejects audit-only exact rows and returns null total. New matrix-quarantine.test.mjs checks every1096 rejected chain and propagation with another known road; no partial overall800 result. Test fixture800 is not tariff verification. Existing runtime normal candidate estimates unchanged.
+2026-10-16T01:02:34.831Z: automatic queue STARTED; 155/155,38/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-02-34-831Z-started.json). lnr-сорокино-kerch-center
 
-Actually ran focused tests2/2 PASS, full npm run build -- --webpack551/551 PASS, quote/API contracts PASS, TypeScript/Next webpack PASS(exit0), git diff --check PASS. No CI/browser/Yandex fresh route/hostedPOST/push/Preview/merge/Production. Stage2 remains IN PROGRESS. NEXT verify current exact boundary/OD rules before reconstructing mainline versus ramp matrix; retain unknown where evidence absent; then M11/M12/CKAD source/date bindings.
+2026-10-16T01:03:01.485Z: automatic queue DONE; 155/155,39/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-03-01-485Z-done.json). lnr-сорокино-kerch-center
 
-## 2026-10-14 — user requested correct endpoint fare and removal of extras
+2026-10-16T01:03:06.073Z: automatic queue STARTED; 155/155,39/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-03-06-073Z-started.json). lnr-сорокино-moscow-center
 
-Parent e1f465f; user explicitly asked to establish correct fares and remove redundant alternatives. Fresh read of primary OSSP traffic-junctions page https://unitoll.ru/roads/m-4/objects_m4/traffic_junctions/ confirms672 exit towards Pavlovsk; its road-rules page describes mixed systems but has historical range633–715 (not current price evidence). Earlier primary355 receipt appendix proves entry355 towards Moscow, only indexed text because direct403. These topology facts under user's continuous-trip/no-reentry model justify filtering internal ramp substitutions, not official fare certification.
+2026-10-16T01:03:36.279Z: automatic queue DONE; 155/155,40/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-03-36-279Z-done.json). lnr-сорокино-moscow-center
 
-Created scripts/build-m4-endpoint-register.cjs and M4_ACTIVE_ENDPOINT_REGISTER.json; build-release-register.cjs rebuilds it automatically. All1456 old M4 candidate chains retained in source matrix;668 with355/672 as internal substitute excluded from active lookup. Remaining through-chain grouping gives one saved candidate per key. Unsupported355 boundary directions kept unknown rather than manufacturing reverse entry/exit. Compiled726 active keys with4 reviewed exact overrides, zero multi-price active cells.404 of428 original conflict keys obtain one canonical topology estimate;24 remain unknown. Additional64 total keys excluded by355 direction policy across full source. No min/max/first-price selector; future unexplained conflicts remain unknown.62→460 now1740/2120 unconfirmed, lower1590/1940 from inappropriate intermediate355 eliminated. Reviewed2480/2730 and3050/3370 north cells retained with exact key precedence; other directions use independently stored estimates, never copied reviewed price.
+2026-10-16T01:03:40.990Z: automatic queue STARTED; 155/155,40/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-03-40-990Z-started.json). lnr-сорокино-saint-petersburg-center
 
-Runtime m4-route-adapter.mjs now reads compiled endpoint register; no runtime intermediate sum/request. Old source quarantine remains enforced in general core for historical vector lookup. Added m4-endpoint-register.test.mjs coverage for unique/reproducible/all conflicts accounted/direction/reviewed override/unexpected conflict, updated endpoint regressions for canonical through fare and separately stored reverse estimate.
+2026-10-16T01:04:21.602Z: automatic queue DONE; 155/155,41/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-04-21-602Z-done.json). lnr-сорокино-saint-petersburg-center
 
-Actually passed focused17/17, register builder, matrix validator (raw archive4699/428/360 unchanged), final npm run build -- --webpack554/554 tests, quote/API contracts and TypeScript/Next webpack(exit0), git diff --check. Initial full build also passed; final rerun covers new generator rebuild-hook. Generated-only timestamp changes in old selection/validation artifacts restored (no semantic source difference). Source-topology adoption and stages/02 report updated. No fresh Yandex route, operator receipt, complete effective-date PDF, browser E2E, CI/push/Preview/merge/Production. Therefore prices remain visibly unconfirmed estimates; no claim that404 correct official fares have been individually verified. NEXT same-boundary/date/profile monetary verification, then M11/M12/CKAD sources; unknown unsupported355 pairs stay unknown.
+2026-10-16T01:04:26.300Z: automatic queue STARTED; 155/155,41/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-04-26-300Z-started.json). lnr-старобельск-kazan-center
 
-## 2026-10-14 — user requested directPDF and Yandex check of24 PVP355 cells
+2026-10-16T01:05:00.601Z: automatic queue DONE; 155/155,42/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-05-00-601Z-done.json). lnr-старобельск-kazan-center
 
-Found previously unresolved direct current-index M4 tariffPDF https://avtodor-tr.ru/upload/iblock/a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf; search exposes five-page tariff document with2026 heading and633–741 cells. Direct web open403; did not inspect actualPDF pages/columns/effective dates. Separate355 receipt-rulePDF e0b/5kq5uo88zxclelibmubucv607fda7cvv.pdf kept as rules source, not same tariff document. User offered download/upload.
+2026-10-16T01:05:05.345Z: automatic queue STARTED; 155/155,42/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-05-05-345Z-started.json). lnr-старобельск-kerch-center
 
-Actual control set:355↔803,911,1046,1093,1184,1223:12 directed pairs x2profiles =24 cells. Prepared exact node-anchor URLs Thu2026-10-15 and Sat2026-10-17 10:00 Moscow in live-controls/2026-10-14-yandex-355-pending.json. Coordinates are observed repo anchors, not proof that Yandex snaps to/actually crosses gate355.
+2026-10-16T01:05:32.857Z: automatic queue DONE; 155/155,43/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-05-32-857Z-done.json). lnr-старобельск-kerch-center
 
-Opera list_tabs failed Browser not connected. Tried one authorized TinyFish route355→803+reverse; rejected before run started(wallet_out_of_funds balance-0.221166USD), no runID. Not retryable without restored access/funds. No actual Yandex route, date/ETA/fare/geometry observations; all24 marked not-executed. Cannot mark impossible direction from automation blocker. No changes to runtime/tariffs/tests/build/remote/Production. NEXT restore browser UI access and execute prepared matrix, then exact fare/geometry classification; wait for userPDF. Docs/data preparation verification JSON rowcount24 and diffcheck only.
+2026-10-16T01:05:37.523Z: automatic queue STARTED; 155/155,43/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-05-37-523Z-started.json). lnr-старобельск-moscow-center
 
-##2026-10-14 — user-authorized cloud Yandex controls355:24/24 observed
+2026-10-16T01:06:06.215Z: automatic queue DONE; 155/155,44/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-06-06-215Z-done.json). lnr-старобельск-moscow-center
 
-User explicitly approved cloud browser fallback (Да разрешаю) after Opera disconnected/TinyFish insufficient funds. Initialized cloud browser through cua_repl and used only documented UI APIs. Existing Yandex parameterized route support reused from observed URL; inspected active route and route-details DOM, date/day visible, vehicle under2m/no transponder and passage-at-exit price basis visible. For alternatives, active route had minimum visibleETA. Ran all12 directed anchor pairs x2dateprofiles(ThuOct15/SatOct17,10:00Moscow). Fare asynchronous in initial weekend803 and1184 cases: waited for visible price annotation;355→803 weekend re-observed after missing price; deduplicated25 captures to24 actual cases. All24 now show approximate fare. No CAPTCHA/botblock/login, no account/settings changes.
+2026-10-16T01:06:10.921Z: automatic queue STARTED; 155/155,44/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-06-10-921Z-started.json). lnr-старобельск-saint-petersburg-center
 
-Actual sums weekday/weekend:355→8033530/4090;803→3551450/1830;355→9113370/3970;911→3552010/2450;355→10463550/4170;1046→3552590/3150;355→10933550/4170;1093→3552890/3450;355→11844300/5020;1184→3552740/3300;355→12234800/5670;1223→3553040/3650. These are whole selected route estimates tocoordinates, not operator-certified endpoint tariffs. Directional distance/ETA differ and should not be mirrored. UI distance unit was miles; preserved as displayed, not claimed exactkm.
+2026-10-16T01:06:49.582Z: automatic queue DONE; 155/155,45/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-06-49-582Z-done.json). lnr-старобельск-saint-petersburg-center
 
-Named Yandex organization toll_plaza_355_km_m4_don/164007456868 found through site search. Card addressM4,357thkm; org route coordinate52.797990,38.314710 vsrepo52.7980213,38.3147948, nearby. Corrected provisional concern about label mismatch: address357 does not establish wrong355point. Snapshot/screenshot of organization and near355 route details inspected. South→355 routes show explicit local exit, turn and U-turn at end;355→south starts through Yar kino bypass then exit/join. Thus actual requested coordinates have routes, not proof of impossible journeys, but actual355 paid boundary/continuous tariff-product equivalence not proved. Other anchor lane choice also causes turns; cannot assign whole-route estimate to existing candidate matrixpair.
+2026-10-16T01:06:54.511Z: automatic queue STARTED; 155/155,45/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-06-54-511Z-started.json). zaporizhzhia-кушугум-kerch-center
 
-Saved compact24 actual DOM-derived observations/URLs/dates/vehicle/amounts/ETA/distances/near355maneuvers in live-controls/2026-10-14-yandex-355-results.json and report stages/02-yandex-355-controls-2026-10-14.md. Full rawDOM/screenshots not persisted; stated limitation. Historical blocked pendingJSON retained with continuation pointer. No tariff/code changes, no money imported,24 unknown remain; prior4reviewed override cells unchanged. Checked JSON24distinctrows and diffcheckPASS; no new tests/build/CI/preview/push/merge/Production. NEXT userPDF + directed actual payment-boundary/side selection, then exact-source equivalence and import only qualifying fares.
+2026-10-16T01:07:22.083Z: automatic queue DONE; 155/155,46/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-07-22-083Z-done.json). zaporizhzhia-кушугум-kerch-center
 
-##2026-10-14 — uploaded official M4 PDF visually verified and generator provenance updated
+2026-10-16T01:07:26.625Z: automatic queue STARTED; 155/155,46/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-07-26-625Z-started.json). zaporizhzhia-кушугум-moscow-center
 
-User uploaded9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf and offered more downloads. Read PDF skill, read attachment directly at supplied scratch path (noLibrary retrieval). pdfinfo5pages, scanned/no text layer; pdftotext yielded only formfeeds. pdftoppm140dpi rendered all5pages, visually inspected each. Tesseract onlyeng/osd installed, no Russian OCR run; structured transcription was visual, not claimed automated OCR success. No PDF authoring/edit performed.
+2026-10-16T01:08:07.581Z: automatic queue DONE; 155/155,47/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-08-07-581Z-done.json). zaporizhzhia-кушугум-moscow-center
 
-Verified payment header supports cash/card without transponder; I-row columnsMonThu/FriSun. Page5 explicitly start00:00:00March2,2026. Order58 visible; uncertain handwritten approval-date not normalized. Rates21 normalized rows match original raw arrays, including62=220/220,71=310/400,339=370/400,355=220/220 specificallytowardsMoscow,416/460samecorridor230/360 once,636=570/640,672=350/440,1046=380/450,1093=150/150,1184=300/350,1223=400/500,DZOK410/410. PDF545secondrange544–589 corrects metadata knowledge from old545–589 snapshot; original historical file not rewritten. Page4/5 footnote5 second slash636/672220/270 is APDtransponder633↔672partial120min; not no-transponder. Exemption exit636/672within120min afterpaidentry;416/460receipt within12h; rules documented in source snapshot, not declared all timed route fares certified.
+2026-10-16T01:08:12.361Z: automatic queue STARTED; 155/155,47/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-08-12-361Z-started.json). zaporizhzhia-кушугум-saint-petersburg-center
 
-Preserved uploaded unchangedPDF in source-documents/m4-order58-effective-2026-03-02.pdf,SHA25625fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d; visually verified transcription source-snapshots/m4-order58-2026-03-02-category1-verified.json withpages/hash/limits. Generator now validates each original candidate numeric row against this source (aborts mismatch), assigns datedsource status to1456candidate+32south+4DZOK rows. Same prices, no numeric changes. Rebuilt matrix/register/activeendpoint/provenance. MissingStartDate1549→57. Source/category/date provenance verified, completed endpointOD binding stays unconfirmed. Existing4reviewed Yandex overrides remain exact observations, no fabricated effectivedate.24unknown remain, compiler cardinal726/404/24/668 unchanged. Earlier core-quarantine enforcement preserved.
+2026-10-16T01:09:03.397Z: automatic queue DONE; 155/155,48/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-09-03-397Z-done.json). zaporizhzhia-кушугум-saint-petersburg-center
 
-New m4-verified-source.test.mjs checksactual preservedPDF hash, no-transponder636/672 notdiscount, preMarch2fareblocked andMarch2candidate remainsunconfirmed. Actually ran matrixbuilder,release+activebuilder,provenancebuilder,validatorPASS,focused3/3PASS,fullnpm run build -- --webpack557/557tests+quote/APIcontracts+TypeScript/NextwebpackPASS(exit0),gitdiffcheckPASS. No newCI/browserroute/hostedAPI/push/deploy/merge/Production. Source read does not certify absenceof lateramendment. Tried official russianhighways edc rulesPDFURL fromindex,got404,not requested as working download. ExistingAvtodor e0b rulesPDFdirect403 hasindexed355 receipttext; give user that working-index URL for manual download ifneeded. NEXT obtainactual rulepages for355 semantics,then geometry/payment-boundary equivalence;continueothernetworksstage2.
+2026-10-16T01:09:08.450Z: automatic queue STARTED; 155/155,48/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-09-08-450Z-started.json). zaporizhzhia-мелитополь-kazan-center
 
-##2026-10-14 — uploaded rulesPDF:355 adjudication and directreceipt cell
+2026-10-16T01:09:52.276Z: automatic queue DONE; 155/155,49/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-09-52-276Z-done.json). zaporizhzhia-мелитополь-kazan-center
 
-User supplied5kq5uo88zxclelibmubucv607fda7cvv.pdf, implicit continuation. Read suppliedscratch attachment directly; pdfinfo13pages andmetadata creationAug13,2025; pdftotext extracted readabletext, relevant section4.2pages7–8 rendered130dpi and visuallyverified. Page7states entry355towardsMoscow,receipt at339prevents secondcharge; page8states636/672receipt120min. RulePDFdoesnotpublishnumericfare/startdate. Preserved unchanged source-documents/m4-entry-receipt-rules-uploaded-2026-10-14.pdf,SHA256a3ed4b13529e0eae7865bfc4192c6944a0b3ece6c371062a97d5b6dc461c57dc; source-snapshots/m4-355-receipt-rule-verified-2026-10-14.json distinguishesmetadata/effective-dateunknown/2026tariffcomplement. Printedold416/460range414–464 notsilently substitutedforcurrent2026range401–464.
+2026-10-16T01:09:57.273Z: automatic queue STARTED; 155/155,49/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-09-57-273Z-started.json). zaporizhzhia-мелитополь-kerch-center
 
-Adjudication:existing24originalconflictkeys355↔803/911/1046/1093/1184/1223 are not a supportedcontinuous355entrytariffpair. PhysicalYandexroutes tocoordinates doexistwithdetours; classificationexcludes publishedfaremodel,not physicaltravel. Compiler now records excludedEndpoints separately from unresolvedprices:64such355keys overfullsource,24originalconflicts; original428keys accounted404canonical+24excluded+0unresolved. Active728keys including2newoperatorcells and4reviewed;668internalrampchainexclusions preserved. Oldraw4699/428 archive preserved for audit. No inventedfare for discarded southward355boundaries.
+2026-10-16T01:10:23.761Z: automatic queue DONE; 155/155,50/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-10-23-761Z-done.json). zaporizhzhia-мелитополь-kerch-center
 
-Added M4_OPERATOR_ENDPOINT_CELLS.json:355→339categoryI/no-transponder220MonThuand220FriSun,effectiveMarch2from2026tariffrow,page2,andreceiptbasisrulespage7. Compile takes explicitoperatorrows,validates class/payment/source/rule/profilenum/duplicates and refuses disagreement withsamecanonicalprice. Reviewedexactcells stillapply. Adapterexcludedkey=>unknown specificm4_unsupported_paid_endpoint_pair; notfalse0. Direct355→339charged220once, reverse notgenerated. UI/routeexactconfirmation remainsunconfirmed; no hostedAPI/actualphysical355→339geometrycertification claimed.
+2026-10-16T01:10:28.425Z: automatic queue STARTED; 155/155,50/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-10-28-425Z-started.json). zaporizhzhia-мелитополь-moscow-center
 
-Updated register/adapters/sourcehash and sourceaccounting regressions. Actually ran generatorPASS (728active,404restored,24excluded,0unresolved,668chains,4reviewed,2operator),focused23/23PASS;fullnpm run build -- --webpack560/560tests+quote/APIcontracts+TypeScript/NextwebpackPASS(exit0),gitdiffcheckPASS. No newbrowserroute/CI/push/Preview/merge/Production. SourcePDF+compacttranscription+code+state allpersisted inGit. NEXT remaindernationwide stage2M11/M12/CKAD,57rawdategaps and fullselectedgeometrybinding; stage3separateproductcomposition. Existinga01e2bf fromsecondlocalcheckout stillseparate/preserved;verify before releaseintegration.
+2026-10-16T01:11:07.941Z: automatic queue DONE; 155/155,51/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-11-07-941Z-done.json). zaporizhzhia-мелитополь-moscow-center
 
-## 2026-10-14 — пользователь спрашивает, закрыта ли матрица и нужны ли документы
+2026-10-16T01:11:12.911Z: automatic queue STARTED; 155/155,51/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-11-12-911Z-started.json). zaporizhzhia-мелитополь-saint-petersburg-center
 
-Parent d66b1d4471d4a4700eb61aba871710d256ff2e32, branch audit/v3-matrix-provenance-2026-10-14, clean initial tree. Read AGENTS/state/current audit/snapshots/nextsteps/decisions. M4 conflict cleanup is done but404 canonical fares remain unconfirmed, not full national completion. New primary-index comparison found probable CKAD category-column contamination: official tariff page I values42/2278 vsII60/3189, while saved210-cell Cat-I table includes60/3189. FullPDF403, no visual confirmation or fare mutation; keep existing runtimeApproved=false. Historical 2278transponder/3189base interpretation flagged for re-audit, not erased. Identified6-page order56CKADPDF165/wiri43iwx18q7t9xc6izr4qeds5odt3z.pdf, index confirmsCKAD/SmallVyazemy but dateOCR unreliable. M12 knownorder57PDFfe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf also403; Marchbase alone cannot prove postOct8OD. M11mainlinePDF already preserved, head/rules webPDF accessible; no redundant userrequest.57undatedrawrows and physical bindings stillopen.
+2026-10-16T01:12:03.027Z: automatic queue DONE; 155/155,52/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-03-027Z-done.json). zaporizhzhia-мелитополь-saint-petersburg-center
 
-Persisted MATRIX_OPEN_ITEMS_AND_DOCUMENTS_2026-10-14.md, topstate/nextsteps and correction appendix in currentness report. Sources: official tariff index; CKADPDFindex; fresh officialM12announcement154667 confirms99exactspan. No code/tariff/registry changed, no sourcePDFfabricated, no build/tests/CI rerun, no push/Preview/merge/main/Production. Check docs paths and diffcheck before commit. Next get2PDF then fullcategory/directcell re-audit and physicalbinding.
+2026-10-16T01:12:08.139Z: automatic queue STARTED; 155/155,52/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-08-139Z-started.json). zaporizhzhia-пологи-kazan-center
 
-## 2026-10-14 — повторныеrulesPDF и неработающая ссылка пользователя
+2026-10-16T01:12:53.423Z: automatic queue DONE; 155/155,53/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-53-423Z-done.json). zaporizhzhia-пологи-kazan-center
 
-Parent5fb60cd, sameauditbranch, cleanstart. User suppliesPDF(2)+404screenshot. Checked scratchexists, SHA256, pdfinfo13pages, pdftotexttitle. PDF matches preservedM4rules exactly(a3ed4b...); no newtable/no duplicateimport. Screenshot visibly404butfulladdressclipped, no claim whicholdPDFfails. Search stillindexesCKAD165/M12fe5; directindex existence not activeURLproof. Cloudbrowser actualtariffs visit seesbrowsercheck, one reloadseesmanualrobotcheck; no CAPTCHAsolved/no workaround, botDetectionchallenge_loopreported. OnecrediblealternateofficialtskadURL502connectionrefused. ActualcurrentPDFlinksremainunretrieved. Telluser path viaownofficialtariffpage links rather than reissue unverifiedhashedURLs. Appended statusdoc/updateWORK_STATE/NEXT. No fare/code/build/tests/CI/push/Preview/merge/Production changes; docs-onlychecks andcommit. Userfiles notmodified. IndependentM11/regionworkcancontinue.
+2026-10-16T01:12:58.448Z: automatic queue STARTED; 155/155,53/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-12-58-448Z-started.json). zaporizhzhia-пологи-kerch-center
 
-## 2026-10-14 — семь PDF оператора: CatI ЦКАД и текущая М12 матрица
+2026-10-16T01:13:26.650Z: automatic queue DONE; 155/155,54/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-13-26-650Z-done.json). zaporizhzhia-пологи-kerch-center
 
-User supplies7PDF after failedhashedlinks; implicitauthorization continues sourceaudit andcorrection. Parent77ca608, sameauditbranch cleaninitial. Metadata/hash/textlayer inspected all7, five scannednewPDFs rendered140dpi, numeric tables visual/manualtranscription bothdirections independently. M4+M11 duplicatehashmatch reuse. Fullsources preservedwithSHAmanifest; no library reread or userfilemutations. CKADorder56page1 proves prior210cells correspondII notI: replaceall210I, archivewrongtable, correct16mirroreddata/snapshotrows, M10PK5=2278/M4M11=1800. PDFfootnote2 requires contextforM12initial/finalsection; generated28M12endpointcells requireTariffContext, quoteunknownuntilcallinglayerevidence. SeparateSmallVyazemy103 twoexplicitdirections added sourcefare/product, physicaladapterpending;2381 arithmeticconsistent but nofullroutealias.
+2026-10-16T01:13:31.286Z: automatic queue STARTED; 155/155,54/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-13-31-286Z-started.json). zaporizhzhia-пологи-moscow-center
 
-M12newuploadedcavPDForder302Oct2 effectiveOct8 page3,20x20I page1,380explicitdirectcells; replace5oldcurrentassertions withcomplete380, retains oldsourceaudit and2Sokuryaddenda. MoscowShali5946/P239Shali99/Kazan5847 fromdirecttable notsum. Definitionspage8twoShali;noold832resurrection,noSokuryP239alias. Appendix2–4sourceotherproducts preservednotruntimeactivated. A28912directI cells match existingfares; provenancePDFupgraded; aliasesremaincandidate. M3ratesmatch,24rowdatesadded. Tolyatti210/140/direct320 confirmMarch1,6dates previouslydropped bygenerator fixed. Raw4699→5076,selected2477/history777/provisional1822, undated57→27; M4countsunchanged.
+2026-10-16T01:14:11.480Z: automatic queue DONE; 155/155,55/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-14-11-480Z-done.json). zaporizhzhia-пологи-moscow-center
 
-Changes recorded in stages/02-uploaded-operator-pdfs-2026-10-14.md with algorithms/files/limitations. Actuallyexecutedbuilders,validator5076unique/provenancePASS,focused26/26. Firstfullbuildfailed564/565 staleCKAD227expected vs161actual insegment6c; testcorrectedbyPDF,focused1/1 thenfinalnpm run build -- --webpack565/565+quote/APIcontracts+NextTypeScript16pagesPASS(exit0). DiffcheckPASS. No live route controls/CI/push/Preview/main/merge/Production; remotebranchsearchexistenceonly, currentremoteSHAfetchunavailable; lastindependentfetcha5c892e remainshistorical. Next27undatedregionalrows,M11products/newShaliphysicalbinding,thenstage3. No additionalCKAD/M12PDFrequested.
+2026-10-16T01:14:16.648Z: automatic queue STARTED; 155/155,55/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-14-16-648Z-started.json). zaporizhzhia-пологи-saint-petersburg-center
 
-## 2026-10-14 — продолжение:17дат и календарь М11
+2026-10-16T01:15:07.518Z: automatic queue DONE; 155/155,56/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-15-07-518Z-done.json). zaporizhzhia-пологи-saint-petersburg-center
 
-Пользователь:«Делай». Parent4d004ac, cleanbranch audit/v3-matrix-provenance-2026-10-14. ИзученыAGENTS/state/README/log/decisions/next/source/code. Реальныйgitls-remoteGitHubинтеграции=a5c892e67af4b050f53bf2211b62feac34d6df6c. Найдены первичные подтверждения М1March2(индексPDF,403), РязаньOct1, Кама/БуйFeb1, КазаньMarch9 23:50:01 (приказdateMarch6 не effective), МСДtransitJan2,2023. SourceproofJSON сохранён; перенос17rowdates, raw5076unchanged, undated27→10(pskov8/heihe2). Псковprimaryfetcherror/legalquery no effective evidence; не угадывать.
+2026-10-16T01:15:12.695Z: automatic queue STARTED; 155/155,56/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-15-12-695Z-started.json). zaporizhzhia-розовка-kazan-center
 
-СохранённыйM11order274 страницы3/4/8 визуально прочитаны125dpi: switch01:00, ownholidaysNov3/4Dec30/31. НовыйcalendarJSON/resolver: previous tariff-day before01, unknown2027outsideverifiedcalendar. stablewindow проверяет actualboundariesinsideinterval, прежнийполденьвнеshortMondaytrip убран. Северная геометрия mainlineAt изменена навыезд679; южная exit58alreadyused. Не изменялись суммы924М11cells/nativeamountполя иневыдавалась ETA зафактическуютелеметрию. a01e2bfпрочитан изsecondcheckout, перенесены актуализированныйstrictdateЦКАДguard иsafeinttotalМ11, безегостарыхцен/docs. validInstant не принимаетnull/number/dateonly/timezoneless/impossibledate/24:00. quote laneproofдляРязани0 иeligibilitycontextМСД950;нетruntimeсписанияврегиональныхадapters.
+2026-10-16T01:15:53.983Z: automatic queue DONE; 155/155,57/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-15-53-983Z-done.json). zaporizhzhia-розовка-kazan-center
 
-Sourcefiles/code/tests перечисленывstages/02-dates-and-m11-tariff-calendar-2026-10-14.md. Initialfocused28/28; finalfocused30/30; полныйnpmrunbuild--webpack571/571+quote/APIcontracts+NextTypeScript16pagesPASS(exit0); generators/validator/audit/diffcheckPASS. Ни новыхlivecontrols/UI/hostedAPI,ниCI/push/Preview/PRmerge/main/Production. Следующее:physicalbindingsМ11tail/М12Shali/ЦКАД иstage3independentproducts;10undatedestimateстрокбезфальшивойдаты.
+2026-10-16T01:15:59.141Z: automatic queue STARTED; 155/155,57/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-15-59-141Z-started.json). zaporizhzhia-розовка-kerch-center
 
-## 2026-10-14 — М12directpair, independentproducts иphysicalPulkovo guard
+2026-10-16T01:16:28.661Z: automatic queue DONE; 155/155,58/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-16-28-661Z-done.json). zaporizhzhia-розовка-kerch-center
 
-User«Дальше»,parent806e4b8,cleanlocalauditbranch. Readstate/next/source/code;lsremoteactualintegration=a5c892e67af4b050f53bf2211b62feac34d6df6c. M12adapter usesoperatordirectpairfromprovednativeboundariesfirst/last/direction, notfullvector. Ignoresnativeamounts/intermediatevectorrepresentation;nativepriced/tolls eligibility remains (notfullgeometrymigration). OctoberShali/old832blocked;properexplicittimezone/dates/mixedroadguards. RecordedM12projectioncontrols replaybothdirections3513Vladimir↔P241, no freshrouteclaimed. quoteproductidentitynormalizesaliases, nowM4+DZOKadd separately andduplicates/mismatchedproductIds unknown. CKADfootnoteonly16eastM12Nosovinitial/finalcells, not12northsidepairs; no numericchanges. SmallVyazemy separateproduct added,24catalogproducts.
+2026-10-16T01:16:33.642Z: automatic queue STARTED; 155/155,58/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-16-33-642Z-started.json). zaporizhzhia-розовка-moscow-center
 
-OSMprimarynodeGET200;Overpass406 nojson(noShalievidence);OSMmapinitial40050000nodelimit, smaller200 thennarrowcorridor200. Raw5.7MB archivedgzip541985byteswithSHA/ODbLattribution. Contains2namedPulkovo tollgantries13377945035/36 andknown679booths, no independentlyidentifiedmainlineframes. Existingorder274pages9/10 visuallyre-read140dpi verifiesairport38/mainline56/conditional94; no newmoneyactivation. Positiveairportcandidategeometry<=25m forcesV3unknown evenproviderfree;APIamountnull. Not claimabsenceunmappedcamerasorallgeographicbindings. Details/files/limitations instages/03-directed-pairs-and-physical-product-guards-2026-10-14.md.
+2026-10-16T01:17:11.054Z: automatic queue DONE; 155/155,59/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-17-11-054Z-done.json). zaporizhzhia-розовка-moscow-center
 
-Builders5076unique/matrixvalidator/auditPASS,focusedinitial19/19 then17/17;geometryfirst14/15 failedbecausetestusedinternallegacy0insteadAPIserializednull. Testassertioncorrectedonly,finalnew9/9;fullnpmrunbuild--webpack580/580+quote/APIcontracts+NextTypeScript16pagesPASSexit0;diffcheck/docslinksPASS. No hostedAPI/Yandex/CI/push/Preview/merge/main/Production. NextM12outergeometry/newShali andM11tail/airportexactscope; upperV3productcomposition stillpending,10datesunknownremain.
+2026-10-16T01:17:16.187Z: automatic queue STARTED; 155/155,59/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-17-16-187Z-started.json). zaporizhzhia-розовка-saint-petersburg-center
 
+2026-10-16T01:18:04.900Z: automatic queue DONE; 155/155,60/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-18-04-900Z-done.json). zaporizhzhia-розовка-saint-petersburg-center
 
-## 2026-10-14 — верхний расчёт V3 без прямых production-подстановок
+2026-10-16T01:18:09.995Z: automatic queue STARTED; 155/155,60/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-18-09-995Z-started.json). zaporizhzhia-токмак-kazan-center
 
-Пользователь: «Дальше». Начальный HEAD `4e7ff40`, чистое дерево audit-ветки. Удалённый integration HEAD повторно проверен: `a5c892e67af4b050f53bf2211b62feac34d6df6c`. Убраны верхние денежные подстановки М4/М11/М12/ЦКАД и внутренняя подстановка production-М4 в М4/А289. Геометрическая оценка больше не может стать ценой при отсутствии компонентов. Recovery остаётся диагностическим; неизвестная цена в API — null. Для нулевой цены без компонентов требуется полное подтверждение бесплатности выбранного маршрута. Общий V2/V3 сборщик проверяет безопасные целые суммы и переполнение.
+2026-10-16T01:18:56.622Z: automatic queue DONE; 155/155,61/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-18-56-622Z-done.json). zaporizhzhia-токмак-kazan-center
 
-Подробный алгоритм, пути, первоначальные 28/30 и исправления, ограничения и точные команды: [отчёт](stages/03-v3-upper-pricing-fallbacks-2026-10-14.md). Итоговые focused 30/30 и новые 4/4 PASS; полный build 585/585, quote/API, TypeScript/Next PASS (exit 0); diff-check PASS. Тарифные данные не менялись. Верхние агрегированные ID, старые денежные поля обхода Краснодара и головного участка М11 остаются открытыми; весь этап 3 не объявляется завершённым. Нет CI/push/Preview/Production. Коммит этого блока определяется по истории Git файла отчёта; parent указан выше.
+2026-10-16T01:19:01.797Z: automatic queue STARTED; 155/155,61/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-19-01-797Z-started.json). zaporizhzhia-токмак-kerch-center
 
+2026-10-16T01:19:30.471Z: automatic queue DONE; 155/155,62/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-19-30-471Z-done.json). zaporizhzhia-токмак-kerch-center
 
-## 2026-10-14 — самостоятельные М4, А289 и обход Краснодара
+2026-10-16T01:19:35.388Z: automatic queue STARTED; 155/155,62/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-19-35-388Z-started.json). zaporizhzhia-токмак-moscow-center
 
-User «Дальше», parent `1d09027`, чистая audit-ветка. Повторный ls-remote integration подтвердил `a5c892e67af4b050f53bf2211b62feac34d6df6c`. Получены первичные OSM данные двух направленных ПВП 46 обхода; XML/gzip и нормализация с SHA/ODbL сохранены. Старый большой bbox вернул 400, меньший восточный 200 с двумя toll_booth на named/oneway/toll=yes дорогах; западный ответ не доказывает отсутствие платности. Готовые тарифы m4-dzok 410/410 взяты из существующей матрицы; цены не изменены.
+2026-10-16T01:20:16.965Z: automatic queue DONE; 155/155,63/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-20-16-965Z-done.json). zaporizhzhia-токмак-moscow-center
 
-В активном верхнем V3 агрегат m4_a289 заменён компонентами m4/a289/krasnodar-west-bypass. Обход требует направленного пересечения ПВП и собственного датированного quote, больше не читает цену M4-массива. Одно legacy название → неизвестный обход, unknown → весь итог null в API. Общий V2/V3 сборщик запрещает aggregate+новые пересекающиеся ID и дубли. Каталог остаётся 24 продуктов. Старые неиспользуемые активным верхним V3 helper-пути не объявляются очищенными.
+2026-10-16T01:20:22.091Z: automatic queue STARTED; 155/155,63/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-20-22-091Z-started.json). zaporizhzhia-токмак-saint-petersburg-center
 
-Полный алгоритм, пути, primary provenance, ограничения и команды: [отчёт](stages/03-v3-southern-products-2026-10-14.md). Initial focused 14/15 из-за VM default JSON import; тест переведён на native TS import, итог 21/21. Новые 7/7 PASS. Первый full build: 592/592 tests, TypeScript FAIL (confidence:string); точный JSDoc тип исправлен. Итог full build 592/592 + quote/API + TypeScript/Next PASS, exit0; diffcheck PASS. Нет browser/Yandex/CI/push/Preview/merge/main/Production. Следующее: отдельный готовый тариф головного М11 и независимые head/mainline/tail. Commit определяется Git-историей этого отчёта, parent указан выше.
+2026-10-16T01:21:13.437Z: automatic queue DONE; 155/155,64/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-21-13-437Z-done.json). zaporizhzhia-токмак-saint-petersburg-center
 
+2026-10-16T01:21:18.659Z: automatic queue STARTED; 155/155,64/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-21-18-659Z-started.json). max-chain-m12-ckad-m11-zsd-cheboksary-to-prim
 
-## 2026-10-14 — М11: независимые head/mainline/tail и оплата на выезде
+2026-10-16T01:21:56.791Z: automatic queue DONE; 155/155,65/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-21-56-791Z-done.json). max-chain-m12-ckad-m11-zsd-cheboksary-to-prim
 
-User «Дальше», parent7d3427f, чистая audit-ветка; integration повторно проверен ls-remote=a5c892e67af4b050f53bf2211b62feac34d6df6c. Самостоятельно получены два official m11-neva PDF (819442/2969094 байт), сохранены с SHA/URL, визуально прочитаны тарифная страница2 и правила страница3. 42×5 ячеек из PDF независимо разобраны: 210 совпадений,0 расхождений; суммы матрицы не менялись. Найдены native head entry-time и directional проблемы; actual tariff определяется на конечном платёжном выезде по собственной таблице/часам/дням head.
+2026-10-16T01:22:01.888Z: automatic queue STARTED; 155/155,65/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-22-01-888Z-started.json). max-chain-m12-ckad-m11-zsd-prim-to-arzamas
 
-Новый head adapter берёт готовую направленную цену; native headAmount/headWeekday/headWeekend не участвуют. V3 boundary resolver использует p58/p679 в обоих направлениях без обязательного p593/старой цены. Север: общий конечный p679 ETA; юг: московский ПВП21 ещё без координат, стабильное окно p58→15 вместо выдуманного времени. Верхний V3 добавляет отдельные head/mainline/tail, неизвестный хвост блокирует весь итог на обоих концах и для mainline-only поездок. Старый aggregate+новые ID/дубли запрещены. Native V2 production не изменён; каталог24.
+2026-10-16T01:22:38.010Z: automatic queue DONE; 155/155,66/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-22-38-010Z-done.json). max-chain-m12-ckad-m11-zsd-prim-to-arzamas
 
-Полные алгоритмы/пути/источники/ограничения: [отчёт](stages/03-v3-m11-products-and-payment-time-2026-10-14.md). Focused23/23,16/16,new8/8; final focused25/25. Первый build600/600PASS; дополнительный tail scope/regr оправдал новый полный gate: итог601/601+quote/API+TypeScript/NextPASS(exit0),diffcheckPASS. Ошибок сборки/тестов нет. Нет live/Yandex/browser/hostedAPI/CI/push/PR/Preview/merge/main/Production. Следующее: М12 outer geometry без old priced gate, затем ЦКАД/context/региональныеID/helper cleanup. p21/p147/tail физика ещё open, этап3 не завершён. SHA блока — Git history отчёта, parent указан.
+2026-10-16T01:22:42.958Z: automatic queue STARTED; 155/155,66/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-22-42-958Z-started.json). max-chain-m12-ckad-m11-zsd-prim-to-cheboksary
 
+2026-10-16T01:23:21.954Z: automatic queue DONE; 155/155,67/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-23-21-954Z-done.json). max-chain-m12-ckad-m11-zsd-prim-to-cheboksary
 
-## 2026-10-14 — М12 outer boundary без native денег; cleanup V3 helpers
+2026-10-16T01:23:27.025Z: automatic queue STARTED; 155/155,67/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-23-27-025Z-started.json). max-chain-m12-ckad-m11-zsd-sest-to-vladimir
 
-User «Дальше»,parent10bc704,чистая audit-ветка; fresh remoteintegration=a5c892e67af4b050f53bf2211b62feac34d6df6c. Новый V3 М12 resolver содержит только крайние калиброванные границы/направление/span, не вызывает continuity/inferred/money. Верхний V3 больше не вызывает calculateProductionM12; matrix adapter не требует priced/tolls и проверяет даты/версию во всём окне поездки. Старый832 не новаяШали; unknown/профиль/partial гарантии сохраняются. Удалён dead crimeaM4Total с устаревшими тестами, A289helper больше не читает обход изM4 и имеет strictdate/allDays. Actual supported415/620/800, independentDZOK410 сохраняются; матрица5076,10undated неизменны.
+2026-10-16T01:23:59.127Z: automatic queue DONE; 155/155,68/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-23-59-127Z-done.json). max-chain-m12-ckad-m11-zsd-sest-to-vladimir
 
-Полный отчёт с алгоритмом/источниками/путями/командами/ограничениями: [stage](stages/03-v3-m12-outer-boundaries-and-helper-cleanup-2026-10-14.md). Firstfocused29/29,new8/8; cleanup28/29 из-за потеряннойunverifiedпометкиТемрюка, исправленаcode reason; finalfocused30/30. Firstfull606/606+quote/API passed, TSfailed(optionaldateJSnarrowing);typeofguard исправлен. Finalfull606/606+quote/API+TypeScript/NextPASS(exit0),diffcheckPASS. 601→606 =9newtests−4obsoletehelpertests. Нет новых live/Yandex/browser/hostedAPI/CI/push/PR/Preview/merge/main/Production. Следующее: ЦКАД/context и независимые региональныеproductIDs, then stage3 finalaudit/stage4. География новойШали/М11tail/ПВП21/SmallVyazemy и10дат не закрыты; этап3 не завершён. CommitSHA определяется history отчёта, parent указан.
+2026-10-16T01:24:04.133Z: automatic queue STARTED; 155/155,68/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-24-04-133Z-started.json). max-chain-m12-ckad-m11-zsd-vladimir-to-sest
 
+2026-10-16T01:24:36.582Z: automatic queue DONE; 155/155,69/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-24-36-582Z-done.json). max-chain-m12-ckad-m11-zsd-vladimir-to-sest
 
-## 2026-10-14 — ЦКАД/региональные ID и пропуск paid evidence исправлены
+2026-10-16T01:24:41.736Z: automatic queue STARTED; 155/155,69/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-24-41-736Z-started.json). max-chain-m4-ckad-m11-zsd-krasnodar-to-prim
 
-User«Дальше»,parentdf9120a,чистая audit-ветка; fresh integration lsremote=a5c892e67af4b050f53bf2211b62feac34d6df6c. Выявлен partial-total bug: paid validation называла М4/М11/М12/ЦКАД, но coverage отдавал верхнему составителю толькоm1/m3/regional; известнаяА289620 могла закрыть неоценённую дополнительную дорогу. Named core paid evidence теперь добавляет собственныйunknownкомпонент, early/late/provider-free не обходят защиту. Regional aggregate заменён13namedproductIDs, collectorspskov-unresolved/unknown-paid-road сохраняютunknown и не принимаютmatched0. Алиасыодногоbooth не создаютпараллельныйМ1/М4 рядом сОдинцово/ДЗОК;SmallVyazemy отдельноunknown.
+2026-10-16T01:25:28.388Z: automatic queue DONE; 155/155,70/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-25-28-388Z-done.json). max-chain-m4-ckad-m11-zsd-krasnodar-to-prim
 
-CKAD новыйgeometry-only adapter без native section money, готоваяM4↔M11=1800 черезquote/window; стараяeast-arc geography модель сохраняется и не объявляетсяобщимирамками. PDF56page2/3 визуально перечитаны, scope120мин **после** регистрации иSmall103 сохранёнhashproofJSON.16cells остаютсяblocked, callerbool неproof. Fare rows5076/10undated/cat24 unchanged.
+2026-10-16T01:25:33.687Z: automatic queue STARTED; 155/155,70/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-25-33-687Z-started.json). max-chain-m4-ckad-m11-zsd-prim-to-krasnodar
 
-Подробные algorithms/files/evidence/checks/limitations: [stage](stages/03-v3-ckad-regional-identity-and-paid-evidence-2026-10-14.md). Firstfocused38/39: старыйassertdiagnosticsword теперьраньшезаменёнexplicitmissingm12 при сохранённыхAPIunknown/null; исправленtestscope. Existing14/14, new9/9 затем10/10, finaltargeted20/20. Full616/616+quote/API+TypeScript/NextPASS(exit0),diffcheckPASS. Никакихlive/Yandex/browser/hostedAPI/CI/push/PR/Preview/merge/main/Production. Следующее: консолидированныйactiveV3 audit/releaseblockers, thenstage4. География/120minproof/10dates open, этап3/Russia coverage не объявленыготовыми. Commit определяетсяhistory stage,parent указан.
+2026-10-16T01:26:21.340Z: automatic queue DONE; 155/155,71/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-26-21-340Z-done.json). max-chain-m4-ckad-m11-zsd-prim-to-krasnodar
 
+2026-10-16T01:26:26.717Z: automatic queue STARTED; 155/155,71/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-26-26-717Z-started.json). max-chain-m4-ckad-m11-zsd-prim-to-rostov
 
-## 2026-10-14 — сводный аудит V3: diagnostics не меняет цену
+2026-10-16T01:27:10.549Z: automatic queue DONE; 155/155,72/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-27-10-549Z-done.json). max-chain-m4-ckad-m11-zsd-prim-to-rostov
 
-Запрос пользователя: «Дальше», продолжение подготовки к официальному выпуску. Исходный HEAD a662b78; remote integration a5c892e67af4b050f53bf2211b62feac34d6df6c. Проверен путь выбранная геометрия → независимые продукты → API → presentation. Найдена зависимость полноты платного расчёта от diagnostics и отсутствие обязательной trace в специальных планах; исправлены route-leg.ts/special-options.ts. Явно неполная trace добавляет unknown-paid-road и блокирует итог. Response-validation.ts требует один согласованный маршрут. HTTP fixtures существующих API тестов дополнены явной полноценной trace; новые пять pipeline тестов проверяют реальные адаптеры/матрицу/API и отрицательные случаи. Тарифы и источники не менялись.
+2026-10-16T01:27:16.136Z: automatic queue STARTED; 155/155,72/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-27-16-136Z-started.json). max-chain-m4-ckad-m11-zsd-prim-to-voronezh
 
-Focused 27/27, новые 5/5, полный npm run build -- --webpack exit0: 621/621 + quote/API + TypeScript/Next PASS. Локальный запуск: uv_interface_addresses без hostname; с 127.0.0.1 Ready, но HTTP smoke не завершён/не засчитан. Живые маршруты/браузер/мобильный/CI/Preview не проверены. Процессы попыток остановлены. git diff --check и ссылки отчёта PASS перед коммитом. Изменения сохраняются коммитом «fix(v3): require complete paid evidence independently of diagnostics»; точный SHA доступен в git log. [Полный отдельный отчёт](stages/03-consolidated-v3-audit-2026-10-14.md) содержит файлы, инварианты, ограничения, матричные счётчики и приёмочные сценарии. Следующий шаг — GitHub checkpoint/точный Preview и живые проверки; обязательная trace требует измерения задержки/отказа. Неподтверждённые даты/география/операторский контекст остаются открытыми; Production не менялся.
+2026-10-16T01:27:55.153Z: automatic queue DONE; 155/155,73/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-27-55-153Z-done.json). max-chain-m4-ckad-m11-zsd-prim-to-voronezh
 
+2026-10-16T01:28:00.992Z: automatic queue STARTED; 155/155,73/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-28-00-992Z-started.json). max-chain-m4-ckad-m11-zsd-rostov-to-prim
 
-## 2026-10-14 22:17–22:35 МСК — GitHub snapshot, Preview и живые API; CI correction
+2026-10-16T01:28:44.731Z: automatic queue DONE; 155/155,74/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-28-44-731Z-done.json). max-chain-m4-ckad-m11-zsd-rostov-to-prim
 
-Продолжение «Дальше»: 114 blobs/2 удаления перенесены с durable progress, хеши сверены, tree 943b7806... совпал с 3b675df. Опубликован snapshot 37d55f6 в audit-ветке; fetch/diff PASS. Draft PR13 теперь в integration baseline, mergeable true; PR10 closed. Vercel READY Preview dpl_67vpYt2..., version SHA подтверждён, remote 621/621+quote/API+Next/TS PASS. Live Анапа off/on 620 одинаковый toll payload/дистанция/ETA; Ялта800 с предупреждением, JSON и desktop screenshot сохраняются отдельно. Копирование показало toast, actual clipboard не подтверждён. Actions38623167929 FAIL: Node22.13 не экспортирует registerHooks; build workflow segment8-route-quality и calculator-final-gate приведены к24.x без ослабления gate. Повторный CI pending; Москва—СПб pending. [Отдельный отчёт](stages/04-preview-and-live-acceptance-2026-10-14.md). Исходная локальная Git-история архивирована; GitHub получил точное итоговое дерево/все журналы, не все промежуточные коммиты. Main/Production/Android не менялись. Следующий шаг — опубликовать correction, проверить CI, добавить живой длинный результат, продолжить приёмку.
+2026-10-16T01:28:50.161Z: automatic queue STARTED; 155/155,74/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-28-50-161Z-started.json). pair-m11-ckad-domodedovo-to-novgorod
 
+2026-10-16T01:29:22.142Z: automatic queue DONE; 155/155,75/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-29-22-142Z-done.json). pair-m11-ckad-domodedovo-to-novgorod
 
-## 2026-10-14 22:34–22:38 МСК — повторный CI PASS и завершённый Preview acceptance checkpoint
+2026-10-16T01:29:27.122Z: automatic queue STARTED; 155/155,75/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-29-27-122Z-started.json). pair-m11-ckad-noginsk-to-tver
 
-Correction afdc2c4 опубликован через verified tree и ref lease37d55f6, fetch/diff PASS. Actions38624425083/job116059843286 полностьюsuccess включаяbuild/API smoke; PR38624434385 verify116059876836 success, optionallive_probe покаin_progress. Новый Preview dpl_DaGA58ER... READY/versionafdc2c4; runtime идентичен протестированному37d55f6. Длинный живойAPI Москва—СПб200/10,394с/710312м/24633с: unknown/null изМ11tail+ЗСД, частичная сумма не выдана полной. DesktopUI сподсказками711,2км/6ч54мин показываеттолько«Итого без дорог» иunknown. ФактическиеCtrl+V вставкиАнапы/Москвы подтвердилипредупреждение/unknown ичетыресуммы; сообщения неотправлялись, временное полеочищено. ЧетыреJSON, дваscreenshots, clipboardtext иpublication-verification.json сохранены вsource-snapshots/preview-2026-10-14. Focused5/5PASS, workflow/screenshotassertions, parity иdiffcheckPASS. [Отчёт сдобавленной записью](stages/04-preview-and-live-acceptance-2026-10-14.md). Следующийшаг: расширеннаяприёмка/mobile/free/отказtrace/профиль иsourcegaps. Матрица/production/main/Androidнеизменны; полногоRussia coverageнет. Финальныйcheckpointкоммит «docs: preserve verified Preview and live acceptance evidence» публикуетсяповерхafdc2c4; точныйSHAgitlog/remote.
+2026-10-16T01:29:55.697Z: automatic queue DONE; 155/155,76/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-29-55-697Z-done.json). pair-m11-ckad-noginsk-to-tver
+
+2026-10-16T01:30:00.791Z: automatic queue STARTED; 155/155,76/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-30-00-791Z-started.json). pair-m11-ckad-novgorod-to-domodedovo
+
+2026-10-16T01:30:31.797Z: automatic queue DONE; 155/155,77/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-30-31-797Z-done.json). pair-m11-ckad-novgorod-to-domodedovo
+
+2026-10-16T01:30:37.051Z: automatic queue STARTED; 155/155,77/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-30-37-051Z-started.json). pair-m11-ckad-ramenskoe-to-torzhok
+
+2026-10-16T01:31:08.768Z: automatic queue DONE; 155/155,78/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-31-08-768Z-done.json). pair-m11-ckad-ramenskoe-to-torzhok
+
+2026-10-16T01:31:13.770Z: automatic queue STARTED; 155/155,78/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-31-13-770Z-started.json). pair-m11-ckad-tver-to-noginsk
+
+2026-10-16T01:31:43.803Z: automatic queue DONE; 155/155,79/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-31-43-803Z-done.json). pair-m11-ckad-tver-to-noginsk
+
+2026-10-16T01:31:48.919Z: automatic queue STARTED; 155/155,79/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-31-48-919Z-started.json). pair-m11-zsd-novgorod-to-sest
+
+2026-10-16T01:32:18.681Z: automatic queue DONE; 155/155,80/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-32-18-681Z-done.json). pair-m11-zsd-novgorod-to-sest
+
+2026-10-16T01:32:23.619Z: automatic queue STARTED; 155/155,80/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-32-23-619Z-started.json). pair-m11-zsd-prim-to-torzhok
+
+2026-10-16T01:32:54.132Z: automatic queue DONE; 155/155,81/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-32-54-132Z-done.json). pair-m11-zsd-prim-to-torzhok
+
+2026-10-16T01:32:59.715Z: automatic queue STARTED; 155/155,81/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-32-59-715Z-started.json). pair-m11-zsd-sest-to-novgorod
+
+2026-10-16T01:33:29.687Z: automatic queue DONE; 155/155,82/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-33-29-687Z-done.json). pair-m11-zsd-sest-to-novgorod
+
+2026-10-16T01:33:34.790Z: automatic queue STARTED; 155/155,82/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-33-34-790Z-started.json). pair-m11-zsd-sest-to-tver
+
+2026-10-16T01:34:05.101Z: automatic queue DONE; 155/155,83/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-34-05-101Z-done.json). pair-m11-zsd-sest-to-tver
+
+2026-10-16T01:34:10.149Z: automatic queue STARTED; 155/155,83/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-34-10-149Z-started.json). pair-m11-zsd-torzhok-to-prim
+
+2026-10-16T01:34:40.308Z: automatic queue DONE; 155/155,84/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-34-40-308Z-done.json). pair-m11-zsd-torzhok-to-prim
+
+2026-10-16T01:34:45.501Z: automatic queue STARTED; 155/155,84/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-34-45-501Z-started.json). pair-m12-ckad-arzamas-to-domodedovo
+
+2026-10-16T01:35:15.444Z: automatic queue DONE; 155/155,85/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-35-15-444Z-done.json). pair-m12-ckad-arzamas-to-domodedovo
+
+2026-10-16T01:35:20.507Z: automatic queue STARTED; 155/155,85/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-35-20-507Z-started.json). pair-m12-ckad-dmitrov-to-murom
+
+2026-10-16T01:35:51.073Z: automatic queue DONE; 155/155,86/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-35-51-073Z-done.json). pair-m12-ckad-dmitrov-to-murom
+
+2026-10-16T01:35:56.365Z: automatic queue STARTED; 155/155,86/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-35-56-365Z-started.json). pair-m12-ckad-domodedovo-to-arzamas
+
+2026-10-16T01:36:28.117Z: automatic queue DONE; 155/155,87/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-36-28-117Z-done.json). pair-m12-ckad-domodedovo-to-arzamas
+
+2026-10-16T01:36:33.356Z: automatic queue STARTED; 155/155,87/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-36-33-356Z-started.json). pair-m12-ckad-klin-to-vladimir
+
+2026-10-16T01:37:04.248Z: automatic queue DONE; 155/155,88/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-37-04-248Z-done.json). pair-m12-ckad-klin-to-vladimir
+
+2026-10-16T01:37:09.503Z: automatic queue STARTED; 155/155,88/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-37-09-503Z-started.json). pair-m12-ckad-murom-to-dmitrov
+
+2026-10-16T01:37:39.830Z: automatic queue DONE; 155/155,89/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-37-39-830Z-done.json). pair-m12-ckad-murom-to-dmitrov
+
+2026-10-16T01:37:45.033Z: automatic queue STARTED; 155/155,89/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-37-45-033Z-started.json). pair-m4-a289-anapa-to-voronezh
+
+2026-10-16T01:38:17.612Z: automatic queue DONE; 155/155,90/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-38-17-612Z-done.json). pair-m4-a289-anapa-to-voronezh
+
+2026-10-16T01:38:22.888Z: automatic queue STARTED; 155/155,90/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-38-22-888Z-started.json). pair-m4-a289-domodedovo-to-kerch
+
+2026-10-16T01:39:03.214Z: automatic queue DONE; 155/155,91/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-39-03-214Z-done.json). pair-m4-a289-domodedovo-to-kerch
+
+2026-10-16T01:39:08.713Z: automatic queue STARTED; 155/155,91/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-39-08-713Z-started.json). pair-m4-a289-kerch-to-domodedovo
+
+2026-10-16T01:39:47.578Z: automatic queue DONE; 155/155,92/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-39-47-578Z-done.json). pair-m4-a289-kerch-to-domodedovo
+
+2026-10-16T01:39:53.101Z: automatic queue STARTED; 155/155,92/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-39-53-101Z-started.json). pair-m4-a289-taman-to-moscow
+
+2026-10-16T01:40:32.529Z: automatic queue DONE; 155/155,93/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-40-32-529Z-done.json). pair-m4-a289-taman-to-moscow
+
+2026-10-16T01:40:38.089Z: automatic queue STARTED; 155/155,93/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-40-38-089Z-started.json). pair-m4-a289-voronezh-to-anapa
+
+2026-10-16T01:41:12.284Z: automatic queue DONE; 155/155,94/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-41-12-284Z-done.json). pair-m4-a289-voronezh-to-anapa
+
+2026-10-16T01:41:17.734Z: automatic queue STARTED; 155/155,94/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-41-17-734Z-started.json). pair-m4-m11-krasnodar-to-torzhok
+
+2026-10-16T01:42:00.406Z: automatic queue DONE; 155/155,95/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-42-00-406Z-done.json). pair-m4-m11-krasnodar-to-torzhok
+
+2026-10-16T01:42:06.043Z: automatic queue STARTED; 155/155,95/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-42-06-043Z-started.json). pair-m4-m11-rostov-to-tver
+
+2026-10-16T01:42:44.850Z: automatic queue DONE; 155/155,96/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-42-44-850Z-done.json). pair-m4-m11-rostov-to-tver
+
+2026-10-16T01:42:50.414Z: automatic queue STARTED; 155/155,96/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-42-50-414Z-started.json). pair-m4-m11-spb-to-voronezh
+
+2026-10-16T01:43:30.546Z: automatic queue DONE; 155/155,97/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-43-30-546Z-done.json). pair-m4-m11-spb-to-voronezh
+
+2026-10-16T01:43:35.901Z: automatic queue STARTED; 155/155,97/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-43-35-901Z-started.json). pair-m4-m11-torzhok-to-krasnodar
+
+2026-10-16T01:44:19.101Z: automatic queue DONE; 155/155,98/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-44-19-101Z-done.json). pair-m4-m11-torzhok-to-krasnodar
+
+2026-10-16T01:44:24.563Z: automatic queue STARTED; 155/155,98/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-44-24-563Z-started.json). pair-m4-m11-tver-to-rostov
+
+2026-10-16T01:45:04.917Z: automatic queue DONE; 155/155,99/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-45-04-917Z-done.json). pair-m4-m11-tver-to-rostov
+
+2026-10-16T01:45:10.639Z: automatic queue STARTED; 155/155,99/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-45-10-639Z-started.json). single-a289-anapa-to-krasnodar
+
+2026-10-16T01:45:41.134Z: automatic queue DONE; 155/155,100/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-45-41-134Z-done.json). single-a289-anapa-to-krasnodar
+
+2026-10-16T01:45:46.512Z: automatic queue STARTED; 155/155,100/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-45-46-512Z-started.json). single-a289-krasnodar-to-anapa
+
+2026-10-16T01:46:16.992Z: automatic queue DONE; 155/155,101/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-46-16-992Z-done.json). single-a289-krasnodar-to-anapa
+
+2026-10-16T01:46:22.361Z: automatic queue STARTED; 155/155,101/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-46-22-361Z-started.json). single-a289-slavyansk-to-taman
+
+2026-10-16T01:46:52.647Z: automatic queue DONE; 155/155,102/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-46-52-647Z-done.json). single-a289-slavyansk-to-taman
+
+2026-10-16T01:46:57.753Z: automatic queue STARTED; 155/155,102/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-46-57-753Z-started.json). single-a289-taman-to-slavyansk
+
+2026-10-16T01:47:27.389Z: automatic queue DONE; 155/155,103/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-47-27-389Z-done.json). single-a289-taman-to-slavyansk
+
+2026-10-16T01:47:32.769Z: automatic queue STARTED; 155/155,103/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-47-32-769Z-started.json). single-a289-temryuk-to-krasnodar
+
+2026-10-16T01:48:02.559Z: automatic queue DONE; 155/155,104/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-48-02-559Z-done.json). single-a289-temryuk-to-krasnodar
+
+2026-10-16T01:48:07.880Z: automatic queue STARTED; 155/155,104/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-48-07-880Z-started.json). single-ckad-dmitrov-to-kazan
+
+2026-10-16T01:48:43.251Z: automatic queue DONE; 155/155,105/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-48-43-251Z-done.json). single-ckad-dmitrov-to-kazan
+
+2026-10-16T01:48:48.566Z: automatic queue STARTED; 155/155,105/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-48-48-566Z-started.json). single-ckad-dmitrov-to-rostov
+
+2026-10-16T01:49:27.150Z: automatic queue DONE; 155/155,106/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-49-27-150Z-done.json). single-ckad-dmitrov-to-rostov
+
+2026-10-16T01:49:32.735Z: automatic queue STARTED; 155/155,106/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-49-32-735Z-started.json). single-ckad-kazan-to-dmitrov
+
+2026-10-16T01:50:05.934Z: automatic queue DONE; 155/155,107/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-50-05-934Z-done.json). single-ckad-kazan-to-dmitrov
+
+2026-10-16T01:50:11.266Z: automatic queue STARTED; 155/155,107/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-50-11-266Z-started.json). single-ckad-klin-to-ramenskoe
+
+2026-10-16T01:50:42.712Z: automatic queue DONE; 155/155,108/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-50-42-712Z-done.json). single-ckad-klin-to-ramenskoe
+
+2026-10-16T01:50:48.290Z: automatic queue STARTED; 155/155,108/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-50-48-290Z-started.json). single-ckad-rostov-to-dmitrov
+
+2026-10-16T01:51:26.089Z: automatic queue DONE; 155/155,109/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-51-26-089Z-done.json). single-ckad-rostov-to-dmitrov
+
+2026-10-16T01:51:31.854Z: automatic queue STARTED; 155/155,109/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-51-31-854Z-started.json). single-khabarovsk-berezovka-to-vyazemsky
+
+2026-10-16T01:52:02.835Z: automatic queue DONE; 155/155,110/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-52-02-835Z-done.json). single-khabarovsk-berezovka-to-vyazemsky
+
+2026-10-16T01:52:08.099Z: automatic queue STARTED; 155/155,110/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-52-08-099Z-started.json). single-khabarovsk-khabarovsk-to-vyazemsky
+
+2026-10-16T01:52:38.131Z: automatic queue DONE; 155/155,111/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-52-38-131Z-done.json). single-khabarovsk-khabarovsk-to-vyazemsky
+
+2026-10-16T01:52:43.635Z: automatic queue STARTED; 155/155,111/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-52-43-635Z-started.json). single-khabarovsk-nekrasovka-to-smidovich
+
+2026-10-16T01:53:13.968Z: automatic queue DONE; 155/155,112/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-53-13-968Z-done.json). single-khabarovsk-nekrasovka-to-smidovich
+
+2026-10-16T01:53:19.304Z: automatic queue STARTED; 155/155,112/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-53-19-304Z-started.json). single-khabarovsk-vyazemsky-to-berezovka
+
+2026-10-16T01:53:49.431Z: automatic queue DONE; 155/155,113/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-53-49-431Z-done.json). single-khabarovsk-vyazemsky-to-berezovka
+
+2026-10-16T01:53:54.651Z: automatic queue STARTED; 155/155,113/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-53-54-651Z-started.json). single-khabarovsk-vyazemsky-to-khabarovsk
+
+2026-10-16T01:54:24.878Z: automatic queue DONE; 155/155,114/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-54-24-878Z-done.json). single-khabarovsk-vyazemsky-to-khabarovsk
+
+2026-10-16T01:54:30.073Z: automatic queue STARTED; 155/155,114/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-54-30-073Z-started.json). single-m11-moscow-to-novgorod
+
+2026-10-16T01:55:03.222Z: automatic queue DONE; 155/155,115/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-55-03-222Z-done.json). single-m11-moscow-to-novgorod
+
+2026-10-16T01:55:08.565Z: automatic queue STARTED; 155/155,115/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-55-08-565Z-started.json). single-m11-novgorod-to-moscow
+
+2026-10-16T01:55:40.161Z: automatic queue DONE; 155/155,116/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-55-40-161Z-done.json). single-m11-novgorod-to-moscow
+
+2026-10-16T01:55:45.631Z: automatic queue STARTED; 155/155,116/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-55-45-631Z-started.json). single-m11-spb-to-tver
+
+2026-10-16T01:56:17.278Z: automatic queue DONE; 155/155,117/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-56-17-278Z-done.json). single-m11-spb-to-tver
+
+2026-10-16T01:56:22.715Z: automatic queue STARTED; 155/155,117/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-56-22-715Z-started.json). single-m11-torzhok-to-moscow
+
+2026-10-16T01:56:54.006Z: automatic queue DONE; 155/155,118/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-56-54-006Z-done.json). single-m11-torzhok-to-moscow
+
+2026-10-16T01:56:59.345Z: automatic queue STARTED; 155/155,118/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-56-59-345Z-started.json). single-m11-tver-to-spb
+
+2026-10-16T01:57:31.308Z: automatic queue DONE; 155/155,119/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-57-31-308Z-done.json). single-m11-tver-to-spb
+
+2026-10-16T01:57:36.826Z: automatic queue STARTED; 155/155,119/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-57-36-826Z-started.json). single-m12-arzamas-to-moscow
+
+2026-10-16T01:58:08.890Z: automatic queue DONE; 155/155,120/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-58-08-890Z-done.json). single-m12-arzamas-to-moscow
+
+2026-10-16T01:58:14.261Z: automatic queue STARTED; 155/155,120/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-58-14-261Z-started.json). single-m12-cheboksary-to-moscow
+
+2026-10-16T01:58:47.062Z: automatic queue DONE; 155/155,121/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-58-47-062Z-done.json). single-m12-cheboksary-to-moscow
+
+2026-10-16T01:58:52.609Z: automatic queue STARTED; 155/155,121/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-58-52-609Z-started.json). single-m12-kazan-to-murom
+
+2026-10-16T01:59:24.864Z: automatic queue DONE; 155/155,122/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-59-24-864Z-done.json). single-m12-kazan-to-murom
+
+2026-10-16T01:59:30.304Z: automatic queue STARTED; 155/155,122/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T01-59-30-304Z-started.json). single-m12-moscow-to-arzamas
+
+2026-10-16T02:00:03.509Z: automatic queue DONE; 155/155,123/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-00-03-509Z-done.json). single-m12-moscow-to-arzamas
+
+2026-10-16T02:00:09.055Z: automatic queue STARTED; 155/155,123/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-00-09-055Z-started.json). single-m12-moscow-to-cheboksary
+
+2026-10-16T02:00:43.415Z: automatic queue DONE; 155/155,124/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-00-43-415Z-done.json). single-m12-moscow-to-cheboksary
+
+2026-10-16T02:00:48.986Z: automatic queue STARTED; 155/155,124/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-00-48-986Z-started.json). single-m3-balabanovo-to-kaluga
+
+2026-10-16T02:01:19.245Z: automatic queue DONE; 155/155,125/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-01-19-245Z-done.json). single-m3-balabanovo-to-kaluga
+
+2026-10-16T02:01:24.637Z: automatic queue STARTED; 155/155,125/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-01-24-637Z-started.json). single-m3-kaluga-to-balabanovo
+
+2026-10-16T02:01:55.465Z: automatic queue DONE; 155/155,126/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-01-55-465Z-done.json). single-m3-kaluga-to-balabanovo
+
+2026-10-16T02:02:00.755Z: automatic queue STARTED; 155/155,126/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-02-00-755Z-started.json). single-m3-kaluga-to-obninsk
+
+2026-10-16T02:02:31.787Z: automatic queue DONE; 155/155,127/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-02-31-787Z-done.json). single-m3-kaluga-to-obninsk
+
+2026-10-16T02:02:37.102Z: automatic queue STARTED; 155/155,127/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-02-37-102Z-started.json). single-m3-maloyaroslavets-to-moscow
+
+2026-10-16T02:03:07.910Z: automatic queue DONE; 155/155,128/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-03-07-910Z-done.json). single-m3-maloyaroslavets-to-moscow
+
+2026-10-16T02:03:13.269Z: automatic queue STARTED; 155/155,128/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-03-13-269Z-started.json). single-m3-obninsk-to-kaluga
+
+2026-10-16T02:03:43.465Z: automatic queue DONE; 155/155,129/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-03-43-465Z-done.json). single-m3-obninsk-to-kaluga
+
+2026-10-16T02:03:48.780Z: automatic queue STARTED; 155/155,129/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-03-48-780Z-started.json). single-m4-moscow-to-voronezh
+
+2026-10-16T02:04:22.776Z: automatic queue DONE; 155/155,130/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-04-22-776Z-done.json). single-m4-moscow-to-voronezh
+
+2026-10-16T02:04:28.174Z: automatic queue STARTED; 155/155,130/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-04-28-174Z-started.json). single-m4-rostov-to-krasnodar
+
+2026-10-16T02:04:59.144Z: automatic queue DONE; 155/155,131/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-04-59-144Z-done.json). single-m4-rostov-to-krasnodar
+
+2026-10-16T02:05:04.575Z: automatic queue STARTED; 155/155,131/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-05-04-575Z-started.json). single-m4-rostov-to-voronezh
+
+2026-10-16T02:05:36.396Z: automatic queue DONE; 155/155,132/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-05-36-396Z-done.json). single-m4-rostov-to-voronezh
+
+2026-10-16T02:05:41.781Z: automatic queue STARTED; 155/155,132/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-05-41-781Z-started.json). single-m4-voronezh-to-moscow
+
+2026-10-16T02:06:14.535Z: automatic queue DONE; 155/155,133/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-06-14-535Z-done.json). single-m4-voronezh-to-moscow
+
+2026-10-16T02:06:19.916Z: automatic queue STARTED; 155/155,133/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-06-19-916Z-started.json). single-m4-voronezh-to-rostov
+
+2026-10-16T02:06:52.176Z: automatic queue DONE; 155/155,134/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-06-52-176Z-done.json). single-m4-voronezh-to-rostov
+
+2026-10-16T02:06:57.761Z: automatic queue STARTED; 155/155,134/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-06-57-761Z-started.json). single-odintsovo-golitsyno-to-rublevo
+
+2026-10-16T02:07:28.191Z: automatic queue DONE; 155/155,135/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-07-28-191Z-done.json). single-odintsovo-golitsyno-to-rublevo
+
+2026-10-16T02:07:33.658Z: automatic queue STARTED; 155/155,135/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-07-33-658Z-started.json). single-odintsovo-kubinka-to-moscow
+
+2026-10-16T02:08:03.929Z: automatic queue DONE; 155/155,136/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-08-03-929Z-done.json). single-odintsovo-kubinka-to-moscow
+
+2026-10-16T02:08:09.338Z: automatic queue STARTED; 155/155,136/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-08-09-338Z-started.json). single-odintsovo-lesnoy-to-moscow
+
+2026-10-16T02:08:40.203Z: automatic queue DONE; 155/155,137/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-08-40-203Z-done.json). single-odintsovo-lesnoy-to-moscow
+
+2026-10-16T02:08:45.471Z: automatic queue STARTED; 155/155,137/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-08-45-471Z-started.json). single-odintsovo-moscow-to-lesnoy
+
+2026-10-16T02:09:15.850Z: automatic queue DONE; 155/155,138/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-09-15-850Z-done.json). single-odintsovo-moscow-to-lesnoy
+
+2026-10-16T02:09:21.083Z: automatic queue STARTED; 155/155,138/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-09-21-083Z-started.json). single-odintsovo-rublevo-to-golitsyno
+
+2026-10-16T02:09:52.140Z: automatic queue DONE; 155/155,139/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-09-52-140Z-done.json). single-odintsovo-rublevo-to-golitsyno
+
+2026-10-16T02:09:57.435Z: automatic queue STARTED; 155/155,139/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-09-57-435Z-started.json). single-zsd-blag-to-sest
+
+2026-10-16T02:10:28.474Z: automatic queue DONE; 155/155,140/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-10-28-474Z-done.json). single-zsd-blag-to-sest
+
+2026-10-16T02:10:33.867Z: automatic queue STARTED; 155/155,140/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-10-33-867Z-started.json). single-zsd-peterhof-to-prim
+
+2026-10-16T02:11:04.634Z: automatic queue DONE; 155/155,141/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-11-04-634Z-done.json). single-zsd-peterhof-to-prim
+
+2026-10-16T02:11:10.152Z: automatic queue STARTED; 155/155,141/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-11-10-152Z-started.json). single-zsd-prim-to-peterhof
+
+2026-10-16T02:11:41.552Z: automatic queue DONE; 155/155,142/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-11-41-552Z-done.json). single-zsd-prim-to-peterhof
+
+2026-10-16T02:11:47.094Z: automatic queue STARTED; 155/155,142/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-11-47-094Z-started.json). single-zsd-sest-to-blag
+
+2026-10-16T02:12:18.130Z: automatic queue DONE; 155/155,143/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-12-18-130Z-done.json). single-zsd-sest-to-blag
+
+2026-10-16T02:12:23.453Z: automatic queue STARTED; 155/155,143/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-12-23-453Z-started.json). single-zsd-sest-to-peterhof
+
+2026-10-16T02:12:54.015Z: automatic queue DONE; 155/155,144/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-12-54-015Z-done.json). single-zsd-sest-to-peterhof
+
+2026-10-16T02:12:59.412Z: automatic queue STARTED; 155/155,144/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-12-59-412Z-started.json). triple-m11-ckad-m12-arzamas-to-spb
+
+2026-10-16T02:13:37.109Z: automatic queue DONE; 155/155,145/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-13-37-109Z-done.json). triple-m11-ckad-m12-arzamas-to-spb
+
+2026-10-16T02:13:42.586Z: automatic queue STARTED; 155/155,145/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-13-42-586Z-started.json). triple-m11-ckad-m12-murom-to-tver
+
+2026-10-16T02:14:15.468Z: automatic queue DONE; 155/155,146/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-14-15-468Z-done.json). triple-m11-ckad-m12-murom-to-tver
+
+2026-10-16T02:14:20.906Z: automatic queue STARTED; 155/155,146/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-14-20-906Z-started.json). triple-m11-ckad-m12-novgorod-to-vladimir
+
+2026-10-16T02:14:53.978Z: automatic queue DONE; 155/155,147/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-14-53-978Z-done.json). triple-m11-ckad-m12-novgorod-to-vladimir
+
+2026-10-16T02:14:59.747Z: automatic queue STARTED; 155/155,147/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-14-59-747Z-started.json). triple-m11-ckad-m12-spb-to-arzamas
+
+2026-10-16T02:15:38.204Z: automatic queue DONE; 155/155,148/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-15-38-204Z-done.json). triple-m11-ckad-m12-spb-to-arzamas
+
+2026-10-16T02:15:43.892Z: automatic queue STARTED; 155/155,148/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-15-43-892Z-started.json). triple-m11-ckad-m12-vladimir-to-novgorod
+
+2026-10-16T02:16:18.230Z: automatic queue DONE; 155/155,149/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-16-18-230Z-done.json). triple-m11-ckad-m12-vladimir-to-novgorod
+
+2026-10-16T02:16:23.688Z: automatic queue STARTED; 155/155,149/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-16-23-688Z-started.json). triple-m4-m11-zsd-domodedovo-to-sest
+
+2026-10-16T02:16:58.645Z: automatic queue DONE; 155/155,150/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-16-58-645Z-done.json). triple-m4-m11-zsd-domodedovo-to-sest
+
+2026-10-16T02:17:04.200Z: automatic queue STARTED; 155/155,150/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-17-04-200Z-started.json). triple-m4-m11-zsd-krasnodar-to-prim
+
+2026-10-16T02:17:52.909Z: automatic queue DONE; 155/155,151/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-17-52-909Z-done.json). triple-m4-m11-zsd-krasnodar-to-prim
+
+2026-10-16T02:17:58.671Z: automatic queue STARTED; 155/155,151/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-17-58-671Z-started.json). triple-m4-m11-zsd-prim-to-krasnodar
+
+2026-10-16T02:18:48.824Z: automatic queue DONE; 155/155,152/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-18-48-824Z-done.json). triple-m4-m11-zsd-prim-to-krasnodar
+
+2026-10-16T02:18:54.677Z: automatic queue STARTED; 155/155,152/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-18-54-677Z-started.json). triple-m4-m11-zsd-prim-to-voronezh
+
+2026-10-16T02:19:35.847Z: automatic queue DONE; 155/155,153/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-19-35-847Z-done.json). triple-m4-m11-zsd-prim-to-voronezh
+
+2026-10-16T02:19:41.412Z: automatic queue STARTED; 155/155,153/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-19-41-412Z-started.json). triple-m4-m11-zsd-sest-to-domodedovo
+
+2026-10-16T02:20:15.618Z: automatic queue DONE; 155/155,154/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-20-15-618Z-done.json). triple-m4-m11-zsd-sest-to-domodedovo
+
+2026-10-16T02:20:21.259Z: automatic queue AUDIT_QUEUE_DONE; 155/155,154/154. [Checkpoint](../../docs/checkpoints/auto-2026-10-16T02-20-21-259Z-audit_queue_done.json).
+
+16.10.2026 05:20МСК: части1–18DONE,309/309иREPORT340/340; queue jobSUCCESS. Часть19 STARTED: A289 полные3рамки при внешних концах длинной поездки. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-started.md). Parentdb83e758; no merge/Production.
+
+16.10.2026: A289realcapture regression RED,1expectedfail/2PASS; STARTED полный3РВПвектор при внешнемконце. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-a289-regression-red.md). Parent3ed0437d; codefix ещё не внедрён.
+
+16.10.2026: A289fullvector code внедрён, первыйfocused FAILED15PASS/1testfilefailed наVMJSONloader. Следующее nativeimport composition вновомтесте. ../../docs/checkpoints/2026-10-16-part19-a289-focused-loader-failed.md. Новоеполноеисправление ещёнепроверено.
+
+16.10.2026: A289fullinterior vector focused20/20PASS; fullbuildSTARTED, затемlint/replay. ../../docs/checkpoints/2026-10-16-part19-a289-focused-pass.md. Часть19ещёINPROGRESS.
+
+16.10.2026: A289fullvector fullbuild673/673+quote/API/Next/TypeScript/static16/16PASS; lint3/diffSTARTED. ../../docs/checkpoints/2026-10-16-part19-a289-build-pass.md.
+
+16.10.2026: A289lint3/diffPASS; STARTED correctedengine offlineАскания-Нова→Казань15/17октября, baselineнепереписывать. ../../docs/checkpoints/2026-10-16-part19-a289-lint-pass-replay-started.md.
+
+16.10.2026: correctedofflineАскания-Нова→Казаньcomplete2/2,3640/3970(RUB15/17окт),baselineunknownнеперезаписан. STARTED helperimpactна59A289findings. ../../docs/checkpoints/2026-10-16-part19-a289-replay-pass.md. Не новыйlive/внешнееподтверждение.
+
+16.10.2026:19AfullinteriorA289 DONE; helperimpact57/59A289компонентоввосстановлены,2partialМосква↔Таманьunknown. Full673/focused20/lint3PASS; wholeofflineAskaniaKazan3640/3970complete. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-a289-impact-done.md). NEXTSTARTED19B: pair-m4-a289-moscow-to-taman, actualentryproofпередвыбором385. ОчередьPART19_FINDINGS_QUEUE.json. Часть19не завершена,20не начата; baselineREPORTimmutable.
+
+16.10.2026:19Bdiagnosed: selectedValhallaвходитA289с03К252между23и82,рамка23>13.5км; восточныйMaryanskayafallbackневерен. STARTED directedconnectorregression/guardedbindingдо385черезсуществующуюматрицу. ../../docs/checkpoints/2026-10-16-part19b-a289-connector-diagnosed.md.
+# 16.10.2026 — part19B directed connector focused DONE / full gate STARTED
+
+Parent c2d11f9f, working branch/PR14draft only. RED reproduces missing385 on selected Valhalla Moscow/Taman partial vector; implemented strict three-control directed Slavyansk entry/exit proof before generic M4 fallback. Actual dated matrix supplies fare; missing23 alone never suffices. Focused23/23PASS, full gate and whole-engine replay not yet run. Details/recovery: docs/checkpoints/2026-10-16-part19b-a289-connector-focused.md. No baseline/raw/live rewriting, no production/main/Android.
+
+16.10.2026:19B fullgate676/676+quote/API/Next/TS/static16/16PASS, scopedlint5/diffPASS. Remote79df66d8/tree8dab735a verified. STARTED single Moscow→Taman selected-capture offline replay15/17Oct09:00MSK. Details/rawSHA/recovery: ../../docs/checkpoints/2026-10-16-part19b-a289-build-pass.md. Minor save preflight blankEOF fixed before durable save; no lost data.
+
+16.10.2026: Moscow→Taman offline complete2/2, priced4725/5625 (M44340/5240 +A289385), 15/17Oct09:00MSK; no replay misses, raw preserved, tariffunconfirmed. Parentc1771e4d. Exact outputSHA/checkpoint: ../../docs/checkpoints/2026-10-16-part19b-moscow-taman-replay.md. STARTED reverse single case after durable head/tree verification.
+
+16.10.2026:19B DONE reverse Taman→Moscow observed same4725/5625,2/2complete/missingResponses=[], direct selectedValhalla exit proof. Parent79abfd50/tree69f28fa5 verified. Raw/baseline preserved, tariffunconfirmed. Exactpaths/SHA in ../../docs/checkpoints/2026-10-16-part19b-taman-moscow-replay.md. A289 remaining2 recovered after57prior component-only; do not call59totalquotes. Findings queue/part19 plan updated. NEXT STARTED one historicalM4-policy case dnr-гранитное-moscow-center, no newsourcefix before replay. Part19ongoing/20planned.
+
+16.10.2026:19C historicalM4policy1/25 checked: dnr-гранитное-moscow-center currentoffline3810/4640, complete2/2, trip-departure-v1 basisAt matchesdeparture, no currentfinding. No sourcefix, originalbaselineweekdaynull preserved. NUL-safe filename inspection recovered from GitCquoted Cyrillic ENOENT. Exacthashes/recovery: ../../docs/checkpoints/2026-10-16-part19c-granitnoe-m4-policy-replay.md. Nextsinglecase zaporizhzhia-пришиб-moscow-center afterdurablesave.
+
+16.10.2026: current WORK_STATE refreshed, superseded statuses moved out of current index only; all historical records retained. Parent9561e3f4/treee261b502 verified. No source/evidence changes. ../../docs/checkpoints/2026-10-16-part19-handoff-refreshed.md. Next case unchanged, part19ongoing/20planned.
+
+16.10.2026 07:38 МСК:19C Пришиб→Москва DONE, historical M4 policy2/25 checked. Selected OSRM2018186m; current offline5840/6890 (М-4 5040/6090+А-289800), complete2/2/missingResponses=[], trip-departure-v1; no new runtime change, baseline unknown preserved, tariff unconfirmed. Source79df66d8/full676 validation from prior step, not rerun. Metadata-only PR14draft/head7aa114ac verified after full fetch_pr Transport closed twice; workflow38824450386/job116729992063 SUCCESS, no relaunch. [Exact evidence/checkpoint](../../docs/checkpoints/2026-10-16-073825-part19c-prishib-m4-policy-replay.md). NEXT STARTED ONLY kherson-раденск-moscow-center3/25, existing capture/two profiles then durable commit/head/tree. Part19ongoing/20planned; no main/merge/Production/Android.
+
+16.10.2026 08:38 МСК:19C Раденск→Москва DONE, historical M4 policy3/25 checked. Selected OSRM1980035m; offline5840/6890=М-4 5040/6090+А-289800, complete2/2/missingResponses=[], trip-departure-v1. No runtime change, old unknown preserved, tariff unconfirmed; full676 относится к предыдущему19B и не rerun. PR14draft/head a53bd290/tree f280ac89 и workflow SUCCESS проверены. Read-only metadata SyntaxError исправлен до replay без изменения данных. [Результат/SHA/recovery](../../docs/checkpoints/2026-10-16-083802-part19c-radensk-m4-policy-replay.md). NEXT STARTED ONLY dnr-гранитное-saint-petersburg-center4/25: existing capture/two profiles, preserve unrelated unknown, checkpoint+commit+head/tree до следующего случая. Part19ongoing/20planned; no main/merge/Production/Android.
+
+16.10.2026 09:36МСК:19C Гранитное→СПб historicalM4policy4/25 DONE; selectedValhalla1972786m, replay complete2/2/no missingResponses. М-4 3810/4640 по отправлению, ошибка не воспроизвелась; **fulltotal unknown**, missing=[zsd], zsd_trip_extends_outside_reviewed_zone1 сохранён, subtotal не итог. Code unchanged, prior full676 not rerun, raw/baseline preserved. PR14draft/head9565897c/tree14f9dc1d и job SUCCESS verified. [Точные outputs/SHA](../../docs/checkpoints/2026-10-16-093623-part19c-granitnoe-spb-m4-policy-replay.md). NEXT STARTED ONLY lnr-брянка-saint-petersburg-center5/25, existingcapture/two dates then checkpoint/commit/head/tree. Часть19ongoing/20planned, no release/main/merge/Android.
+
+16.10.2026 10:22МСК:19C Брянка→СПб M4policy5/25checked, selectedValhalla1827396m, complete2/2/no missingResponses. M43810/4640 по отправлению, oldprofileerror не воспроизвелась; **total unknown**, missingzsd/outside reviewedzone1. Existing M11 components retained, subtotal не итог. No runtimechange/full676notrerun; baseline/report/raw сохранены. PR14draft/head6fa74b45/treed6f6b901 и jobSUCCESS verified. Вспомогательный clocktool недоступен после successful replay, error не влияет на расчёт. [Evidence/SHA/recovery](../../docs/checkpoints/2026-10-16-102232-part19c-bryanka-spb-m4-policy-replay.md). NEXT STARTED ONLY zaporizhzhia-пришиб-saint-petersburg-center6/25, two savedcapture profiles then checkpoint+head/tree. Часть19ongoing/20planned, no release/main/merge/Android.
+
+16.10.2026 10:27МСК пользователь вновь прямо поручил запускать следующий этап автоматически. ExecutionUnit уточнён: один маршрут на отдельный durable checkpoint, затем сразу следующий без нового захода/«дальше». Старый лимит одногоcaseза запуск снят, последовательность/одинwriter/commit/head/tree после каждого не отменены. [Решение и NEXT STARTED case6/25](../../docs/checkpoints/2026-10-16-1030-auto-sequential-microsteps.md). Автоматически продолжать case7 и далее после подтверждения сохранения предыдущего; part19ongoing/20planned.
+
+16.10.2026 STARTED automatic-policy-replay-queue дляоставшихся20historicalM4cases в существующемworkflow/одинwriter. Пользователь10:27МСК подтвердилсразуnextпослекаждогоdurablesave. Runner/focused/fullgate передworkflowpush/observedrun. [Recovery](../../docs/checkpoints/2026-10-16-part19-automatic-policy-queue-started.md). No309rerun/no newlive/no guessed fares, part19ongoing/20planned.
+
+16.10.2026 automatic policy runner implemented, focused5/5/scopedlint2/diff PASS; workflow still not enabled. STARTED raw/report guard and isolated per-case persistence integration, then fullgate before workflow finalpush. [Checkpoint/recovery](../../docs/checkpoints/2026-10-16-part19-policy-runner-focused.md). Only existing20remainingM4policycases; no live/fare changes. Transient exec-server transport closed while appending logs retried after actual file/status check, no duplicate entry/data loss.
+
+16.10.2026 policyqueue focused8/8+scopedlint3/diff PASS: actualraw identity/reportSHA guards, isolated STARTED/DONE/FAILED/pushstop integration. Firstfixturelint5require-errors fixed with asyncnativeimports, tests rerunPASS. STARTED pnpm build fullgate, workflow notyet enabled. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-policy-runner-integration-pass.md). No runtimefarechange/no newrouting.
+
+16.10.2026 policyqueue fullgate684/684+quote/API/Next/TS/static16/16 PASS, focused8/lint3/diffPASS, runtimefaresunchanged. STARTED final workflowactivation afterdurablesave; mustobserveactualnewrun/job, then noassistantbranchwriteswhileactive. [Checkpoint/recovery](../../docs/checkpoints/2026-10-16-part19-policy-queue-build-pass.md). Remaining20historicalM4cases only, part19/20notdone.
+
+16.10.2026 automaticpolicyqueue READY: existingworkflow now selects currentpolicy phase after completedparts1–18, remaining20/25, fullbuildbeforewriter, sameconcurrency, percaseSTARTED/DONE/head/tree. Full684/focused8/lint3PASS. Finalworkflowpush triggersNEWRUN; AUTOstate.workflowRun deliberatelynull untilobserved/runnerSTARTED. [Activation/recovery](../../docs/checkpoints/2026-10-16-part19-policy-queue-ready.md). Next observebranchpushruns/jobs, no branchwriteswhileactive. No claimrunactive beforeobservation. Part19ongoing/20planned.
+
+2026-10-16T07:47:04.533Z: PART19_M4_POLICY_STARTED M4 policy 5/25; zaporizhzhia-пришиб-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-04-533Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:08.572Z: PART19_M4_POLICY_DONE M4 policy 6/25; zaporizhzhia-пришиб-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-08-572Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:11.016Z: PART19_M4_POLICY_STARTED M4 policy 6/25; kherson-раденск-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-11-016Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:15.404Z: PART19_M4_POLICY_DONE M4 policy 7/25; kherson-раденск-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-15-404Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:17.848Z: PART19_M4_POLICY_STARTED M4 policy 7/25; zaporizhzhia-пришиб-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-17-848Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:21.626Z: PART19_M4_POLICY_DONE M4 policy 8/25; zaporizhzhia-пришиб-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-21-626Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:23.977Z: PART19_M4_POLICY_STARTED M4 policy 8/25; kherson-раденск-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-23-977Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:27.711Z: PART19_M4_POLICY_DONE M4 policy 9/25; kherson-раденск-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-27-711Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:30.151Z: PART19_M4_POLICY_STARTED M4 policy 9/25; dnr-широкино-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-30-151Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:33.600Z: PART19_M4_POLICY_DONE M4 policy 10/25; dnr-широкино-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-33-600Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:36.234Z: PART19_M4_POLICY_STARTED M4 policy 10/25; zaporizhzhia-молочанск-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-36-234Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:40.375Z: PART19_M4_POLICY_DONE M4 policy 11/25; zaporizhzhia-молочанск-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-40-375Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:42.968Z: PART19_M4_POLICY_STARTED M4 policy 11/25; kherson-чулаковка-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-42-968Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:47.368Z: PART19_M4_POLICY_DONE M4 policy 12/25; kherson-чулаковка-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-47-368Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:49.787Z: PART19_M4_POLICY_STARTED M4 policy 12/25; dnr-широкино-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-49-787Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:53.722Z: PART19_M4_POLICY_DONE M4 policy 13/25; dnr-широкино-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-53-722Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:47:56.385Z: PART19_M4_POLICY_STARTED M4 policy 13/25; lnr-лисичанск-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-47-56-385Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:00.252Z: PART19_M4_POLICY_DONE M4 policy 14/25; lnr-лисичанск-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-00-252Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:02.873Z: PART19_M4_POLICY_STARTED M4 policy 14/25; zaporizhzhia-молочанск-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-02-873Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:06.984Z: PART19_M4_POLICY_DONE M4 policy 15/25; zaporizhzhia-молочанск-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-06-984Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:09.504Z: PART19_M4_POLICY_STARTED M4 policy 15/25; kherson-чулаковка-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-09-504Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:13.558Z: PART19_M4_POLICY_DONE M4 policy 16/25; kherson-чулаковка-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-13-558Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:16.287Z: PART19_M4_POLICY_STARTED M4 policy 16/25; zaporizhzhia-молочанск-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-16-287Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:20.249Z: PART19_M4_POLICY_DONE M4 policy 17/25; zaporizhzhia-молочанск-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-20-249Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:22.893Z: PART19_M4_POLICY_STARTED M4 policy 17/25; kherson-чулаковка-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-22-893Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:27.149Z: PART19_M4_POLICY_DONE M4 policy 18/25; kherson-чулаковка-kazan-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-27-149Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:29.874Z: PART19_M4_POLICY_STARTED M4 policy 18/25; dnr-урзуф-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-29-874Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:33.733Z: PART19_M4_POLICY_DONE M4 policy 19/25; dnr-урзуф-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-33-733Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:36.281Z: PART19_M4_POLICY_STARTED M4 policy 19/25; zaporizhzhia-гуляйполе-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-36-281Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:40.342Z: PART19_M4_POLICY_DONE M4 policy 20/25; zaporizhzhia-гуляйполе-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-40-342Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:42.974Z: PART19_M4_POLICY_STARTED M4 policy 20/25; kherson-старая-збурьевка-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-42-974Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:46.959Z: PART19_M4_POLICY_DONE M4 policy 21/25; kherson-старая-збурьевка-moscow-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-46-959Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:49.596Z: PART19_M4_POLICY_STARTED M4 policy 21/25; dnr-урзуф-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-49-596Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:53.580Z: PART19_M4_POLICY_DONE M4 policy 22/25; dnr-урзуф-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-53-580Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:56.134Z: PART19_M4_POLICY_STARTED M4 policy 22/25; lnr-рубежное-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-56-134Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:48:59.820Z: PART19_M4_POLICY_DONE M4 policy 23/25; lnr-рубежное-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-48-59-820Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:49:02.404Z: PART19_M4_POLICY_STARTED M4 policy 23/25; zaporizhzhia-гуляйполе-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-02-404Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:49:06.131Z: PART19_M4_POLICY_DONE M4 policy 24/25; zaporizhzhia-гуляйполе-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-06-131Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:49:08.576Z: PART19_M4_POLICY_STARTED M4 policy 24/25; kherson-старая-збурьевка-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-08-576Z-part19_m4_policy_started.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:49:12.569Z: PART19_M4_POLICY_DONE M4 policy 25/25; kherson-старая-збурьевка-saint-petersburg-center. [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-12-569Z-part19_m4_policy_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+2026-10-16T07:49:15.074Z: PART19_M4_POLICY_CLASS_DONE M4 policy 25/25; . [Checkpoint](../../docs/checkpoints/policy-2026-10-16T07-49-15-074Z-part19_m4_policy_class_done.json).  Offline reproducibility only; unknown is not0, subtotal is not total.
+
+16.10.2026 automaticM4policy25/25 DONE, actualrun38869309675/job116869376746 SUCCESS. Rootverified20raw+40replaySHA/integrity/departure/M4, originalREPORTunchanged;20wholeofflinequotes/5unknownZSD, not25confirmedfares. Cleancheckout syncedafterjobcompletion to b90d630f/tree1f5465e3. Full684/focused8/lint3 plusCIbuildPASS. [Verifiedhandoff](../../docs/checkpoints/2026-10-16-part19-policy-25-done-m4-unpriced-started.md). NEXT STARTED19D m4:unpriced1/22 dnr-гранитное-kazan-center savedcapture/two profiles then durablesave before one-causefix. Parts19ongoing/20planned.
+
+16.10.2026 19D Granitnoe→Kazan currentunknown reproduced2/2complete, m4candidateCount0/confirmedPvps=[]; notprooffree/runtimebug. No fare/codechange. [Outputs/SHA/NEXT](../../docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-unknown-reproduced.md). NEXT STARTED samecase selectedraw paid-edge/booth/wayIDs/geometryscope diagnosis before fix; no nextroute yet. Full684+CIbuildPASS remainspriorvalidation, part19ongoing/20planned.
+
+16.10.2026 19D selectedraw diagnosis: exactly2paidM4ways1182567076/31984600 (aliasesМ4/E50/E115/Дон),0booths, complete trace; matchedcore=m4 but0knownPVP. Causeofblockinglocated, correctnessofpaidtag/scope notyet established; no price/freeclaim/sourcechange. [Evidence/NEXT](../../docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-paid-ways.md): samecase only extract2selectedtraceedges/shapewindow+facilitymap/primaryOSMtags; saveproofbeforefix. Full684/CIbuildPASSprior, policy25/25done; part19ongoing/20planned.
+
+16.10.2026 freshcheckout recoveryDONE: actualremote8c3d73ee/tree189a4708, PR14draft, workflow38869309675/jobSUCCESS. Transientexecserverdisconnect and helperJSsyntax recovered before projectchanges, no loss/bypass. [Checkpoint](../../docs/checkpoints/2026-10-16-1119-fresh-checkout-recovery.md). NEXT same19DGranitnoeKazan selected2M4traceedges/shapewindow only; no source/farechange, old684gate notrerun.
+
+16.10.2026 19D GranitnoeKazan selectedscopeDONE:2primaryOSMways≈1.966km matchselectedgeometry,0booths,nearestknown1046≈8.638km. Traceoutputshapeabsent, indicesnotrequestindices. Exactpaymentapplicability notestablished/operatorpage403; no bypass, unknownretained, no fare/freeclaim/runtimechange. [Evidence/checkpoint](../../docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-scope-reviewed.md). Case1source-gatedhold; NEXT restorefrozentools/currentcheckout then Lisichansk→Moscowcase2 offline2profiles and durablecheckpoint. Other21casesnotblocked; part19ongoing/20planned.
+16.10.2026 dependency recovery DONE: frozen install exit0/18.6s, Node24.19.0/pnpm11.25.0, lockfile unchanged. No new fullgate. NEXT STARTED Lisichansk→Moscow m4:unpriced2/22 two offlineprofiles; checkpoint before fix/nextcase. [Recovery](../../docs/checkpoints/2026-10-16-part19d-dependencies-restored.md).
+
+16.10.2026 19D Lisichansk→Moscow2/22 offline2profiles DONE, complete/hash/departure verified; unknown retained:460→71 endpoint exactfaremissing. No runtimechange/newfullgate. [Checkpoint](../../docs/checkpoints/2026-10-16-part19d-lisichansk-moscow-replay.md). NEXT STARTED samecase adapter/matrix/source review before correction/nextcase; continue automatically.
+
+16.10.2026 19D samecase diagnosisDONE: reversed combined416+460 retained forward atomic order, creating wrong416→71 key instead of460→71; existing1830/2300 fare not newprice. [Correction STARTED](../../docs/checkpoints/2026-10-16-part19d-reversed-compound-boundary-diagnosis.md): compiler orientation+regression, focused/fullgate separate durable steps; unknown/unconfirmed preserved.
+
+16.10.2026 [part19d-compound-compiler-change](../../docs/checkpoints/2026-10-16-part19d-compound-compiler-change.md): Code change DONE, regenerated register; tests NOT yet run, not accepted for completion. NEXT STARTED: Run focused endpoint/adapter/source tests and eslint modified compiler/test, record exact PASS/FAIL then fullgate; do not replay another route before validation.
+
+16.10.2026 [part19d-compound-focused-pass](../../docs/checkpoints/2026-10-16-part19d-compound-focused-pass.md): Focused validation DONE:26/26 PASS, eslint2modifiedfiles exit0. Commands: node --import ./scripts/register-ts-paths.mjs --test experiments/nationwide-tolls/m4-endpoint-register.test.mjs experiments/nationwide-tolls/engine/m4-route-adapter.test.mjs experiments/nationwide-tolls/m4-verified-source.test.mjs; pnpm exec eslint compiler/test. No runtime sums/newprice/reversefare invention; sourcePDF/receipt hashes verified by tests. Fullgate not yet run. NEXT STARTED: Run npm run build -- --webpack with log capture; inspect complete audit/quote/API/Next/TS/static summary and exitstatus; record before route replay.
+
+16.10.2026 [part19d-focused-lint-failed](../../docs/checkpoints/2026-10-16-part19d-focused-lint-failed.md): Correction / FAILED lint:26/26 focusedtestsPASS, but combined command exit1 from2no-require-imports violations at existing CommonJS compilerline1. Previous focused-pass checkpoint incorrectly asserted exit0 before finaloutput was inspected; superseded and visibly annotated, old log preserved. No fullgate launched, no pricing acceptance. Compiler is deliberately.cjs with unchanged native require; no new lintissue introduced by directionpatch. NEXT STARTED: Run eslint test normally and CJS compiler with explicit no-require-imports exception only; document exact command and inspect exit before recording. Then fullgate. Do not change global lint policy.
+
+16.10.2026 [part19d-compound-lint-recovery-done](../../docs/checkpoints/2026-10-16-part19d-compound-lint-recovery-done.md): Lint recovery DONE exit0: pnpm exec eslint experiments/nationwide-tolls/m4-endpoint-register.test.mjs && pnpm exec eslint experiments/nationwide-tolls/scripts/build-m4-endpoint-register.cjs --rule '@typescript-eslint/no-require-imports: off'. Explicit CJS-only exception for existing native require, not ordinary lintPASS/global policy change.26/26 focused tests passed earlier; plain eslint exit1 is retained in prior correction checkpoint. NEXT STARTED: Fullgate STARTED: npm run build -- --webpack, /tmp/part19-compound-fullgate.log. Require actual exit0 and audit/quote/API/Next/TS/static summaries; onfailure record exactfailure beforefix. Do not price/replay nextcase yet.
+
+16.10.2026 [part19d-compound-fullgate-pass](../../docs/checkpoints/2026-10-16-part19d-compound-fullgate-pass.md): Fullgate DONE: npm run build -- --webpack exit0,687/687testsPASS,0fail; quotecontractPASS, APIadapterPASS, Nextwebpackcompiled7.0s, TypeScript6.1s, static16/16. Previously684+3newregressions. Focused26/26PASS; eslint CJS exception documented separately, ordinarylintfailure retained. Worktree clean/diffcheckPASS aftergate. No deployment/merge/livechecks. NEXT STARTED: Replay ONLY Lisichansk→Moscow savedcapture again for15/17October09:00MSK on correctedengine; verify outputs/hash/unknownstatus and record durablecase before nextcase.
+
+16.10.2026 [part19d-lisichansk-moscow-recovered](../../docs/checkpoints/2026-10-16-part19d-lisichansk-moscow-recovered.md): Case2 corrected replay DONE: whole-route offline estimate1830/2300 RUB for15/17Oct09:00MSK; not confirmed operatorfare. Same OSRM937773m/capture9dd9bdfb..., integrity complete2/2/missingResponses=[], departurebasis unchanged, missing=[], auditpriced.36endpoint key relocation is NOT36verifiedwhole-routecases. NEXT STARTED: Next dnr-широкино-kazan-center3/22 only: savedcapture2026-10-15T12-08-35-445Z-capture.json.gz, two currentengineoffline15/17Oct09:00MSK; verify actualresult/evidence, durablecheckpoint before diagnosis/nextcase; automatic continuation.
+
+16.10.2026 [part19d-shirokino-kazan-source-hold](../../docs/checkpoints/2026-10-16-part19d-shirokino-kazan-source-hold.md): Case3/22 DONE review: Valhalla1668355m, offline15/17October09:00MSK complete2/2/hash/departure verified; unknownM4/candidate0/0booths. Selected paidledger contains exactly same2ways1182567076/31984600 as GranitnoeKazan. Independent selectedgeometry endpoint match1719→1721→1728within0.046m, savedPVP1046 nearestselectedvertex≈8.640km. Reused preserved primaryOSMways, no newfetch or403bypass; no inferredfreefare. Same1.966km source-gatedcollectionscope, no compilerregression. [Evidence/SHA](evidence/2026-10-16-shirokino-kazan-scope.json). Oldraw/live/replays preserved, fullgate687PASS remainslatest. Class3reviewed:1recovered/2sourcegated, not3confirmedfares. NEXT STARTED: Next lnr-рубежное-moscow-center4/22 only, get exactexistingcorpus capture, currentoffline15/17Oct09:00MSK; durablepair/checkpoint before nextcase; no repeat completedpolicyclass.
+
+16.10.2026 [part19d-case4-replay](../../docs/checkpoints/2026-10-16-part19d-case4-replay.md): Case4/22 lnr-рубежное-moscow-center offlinepair DONE: 1830/2300 RUB, whole-route estimate recovered, stillunconfirmed. ProviderOSRM/914568m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case4-replay.json), captureSHA36d0b3bfcf20b6d80eb8bd3baa310c61be3a87a49b5e988e6502f232997ea2b6. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Next dnr-бахмут-moscow-center case5/22 only, exactexistingcorpus capture and15/17Oct09:00MSK offlinepair; durablecheckpoint before nextcase.
+
+16.10.2026 [part19d-case5-replay](../../docs/checkpoints/2026-10-16-part19d-case5-replay.md): Case5/22 dnr-бахмут-moscow-center offlinepair DONE: 1830/2300 RUB, whole-route estimate recovered, stillunconfirmed. ProviderOSRM/991458m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case5-replay.json), captureSHAf2d806e59d7c139ab6d0875757ee76c55abf1b85b9e909e12e4673a40147ea44. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Next dnr-краматорск-moscow-center case6/22 only, exactexistingcorpus capture and15/17Oct09:00MSK offlinepair; durablecheckpoint before nextcase.
+
+16.10.2026 [part19d-case6-replay](../../docs/checkpoints/2026-10-16-part19d-case6-replay.md): Case6/22 dnr-краматорск-moscow-center offlinepair DONE: 1830/2300 RUB, whole-route estimate recovered, stillunconfirmed. ProviderOSRM/982509m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case6-replay.json), captureSHAed4c45197f7a105878675ec0e4021e2c3bc95df216addfcedde0e4c896578d12. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Next zaporizhzhia-гуляйполе-kazan-center case7/22 only, exactexistingcorpus capture and15/17Oct09:00MSK offlinepair; durablecheckpoint before nextcase.
+
+16.10.2026 [part19d-case7-replay](../../docs/checkpoints/2026-10-16-part19d-case7-replay.md): Case7/22 zaporizhzhia-гуляйполе-kazan-center offlinepair DONE: / RUB, unknown retained. ProviderValhalla/1842528m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case7-replay.json), captureSHA34148e82f69e87b58eadce3e90ec0965d2c25e4b939213c5106c1059cacbafce. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Samecase zaporizhzhia-гуляйполе-kazan-center: diagnose exact currentmissing reason/selectedscope before nextcase; do not guess price.
+
+16.10.2026 [part19d-gulyaypole-kazan-source-hold](../../docs/checkpoints/2026-10-16-part19d-gulyaypole-kazan-source-hold.md): Case7 scope diagnosis DONE: complete selectedValhalla1842528m/0booths, exactlysame2paidways1182567076/31984600 as source-gatedGranitnoe/ShirokinoKazan. Reused primaryOSM endpoints independently match selectedvertices3011→3013→3020 within0.046m, saved1046 nearestvertex≈8.640km. Same≈1.966kmpaid-taggedscope; exactcollection/freeproof remainsabsent, no newfetch/bypass/fareinvention. [Geometryevidence](evidence/2026-10-16-gulyaypole-kazan-scope.json); two replays/SHA in case7checkpoint.7/22reviewed:4wholeestimates recovered/3sourcegated; not7confirmedfares. Remotehead/PR14draft/jobSUCCESS rechecked atfb137002, noactivewriter. Full687gatePASS remainslatest. NEXT STARTED: Next max-chain-m4-ckad-m11-zsd-voronezh-to-prim8/22 exactexistingcapture/two offlineprofiles; actualcomponentmissing/evidence review before furthercase. Automatic continuation; all20notcomplete.
+
+16.10.2026 [part19d-case8-replay](../../docs/checkpoints/2026-10-16-part19d-case8-replay.md): Case8/22 max-chain-m4-ckad-m11-zsd-voronezh-to-prim offlinepair DONE: / RUB, unknown retained. ProviderValhalla/1245601m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case8-replay.json), captureSHAfa38a093f1ccf7fee9c35e27eec0dff76bf878fcdcf88bb06fda0ea79f17c7c9. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Samecase max-chain-m4-ckad-m11-zsd-voronezh-to-prim: diagnose exact currentmissing reason/selectedscope before nextcase; do not guess price.
+
+16.10.2026 [part19d-case8-component-recovered](../../docs/checkpoints/2026-10-16-part19d-case8-component-recovered.md): Case8 M4 finding classified DONE:1830/2300 M4component restored, wholequote remainsunknown duezsd_trip_extends_outside_reviewed_zone1 andunmapped_selected_route_paid_booth. Do not present knownM4/M11 subtotal asfulltotal. Remaining products are separate existing findingclasses, retained for later diagnosis; no M4fare change needed. Exactoutputs/hashes incase8evidence, complete2/2 samecaptureValhalla1245601m/departurepolicy. Initial capturelookup incorrectly searched regionalcorpus only, failed before replay; recovered exactroad-cases.json.auditEvidence.capture2026-10-16T00-03-24-052Z without guessing filename/provider. No failedroute/rebuiltlive.8/22checked:4wholeestimates+1M4componentrecovered/3sourcegated. Previousfull687gate stilllatest. NEXT STARTED: Next pair-m4-a289-taman-to-voronezh9/22 fromroad-cases.json, exactsavedcapture twoofflineprofiles, verifyeverycomponent; durablebefore nextcase. M4componentdone canadvance thisclass while unrelatedunknownproductsremainqueued.
+
+16.10.2026 [part19d-case9-replay](../../docs/checkpoints/2026-10-16-part19d-case9-replay.md): Case9/22 pair-m4-a289-taman-to-voronezh offlinepair DONE: / RUB, unknown retained. ProviderOSRM/1026560m, complete2/2/SHA/departurepolicy verified; frozenREPORT unchanged. [Exactevidence](evidence/2026-10-16-part19d-case9-replay.json), captureSHAdb7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a. Existingraw/live/oldreplay preserved. Full687gate/26focusedPASS remainslatest; no newruntimechange. Not freshlive/independentoperatorconfirmation. NEXT STARTED: Samecase pair-m4-a289-taman-to-voronezh: diagnose exact currentmissing reason/selectedscope before nextcase; do not guess price.
+
+16.10.2026 [part19d-case9-545-scope-diagnosis](../../docs/checkpoints/2026-10-16-part19d-case9-545-scope-diagnosis.md): Case9 diagnosis DONE / scope binding still UNRESOLVED, not a proven new runtimebug. OSRM1026560m/complete10booths/784paidedges, exact545node5818209495. Physicalendpoint1223→545 cannot directly match semantic tariff IDs545-a/b. Existingdatedmatrix has two different finished variants:1223→545-a3060/3620 includesbothrows;1223→545-b2920/3460 includesonlyb. Crossing545alone cannot choose these: explicit existing m4-plaza-nodes.ts notes and corridorinventory require independently proven scope/precomputed finishedspan. Primaryverifiedrows517–544140/160 and544–589180/250 retained; do not rename/fold blindly or selectmin/max. Nativelegacy through545 helper needs flankingplazas<517 and>589; selected endpoint-only preview isnotthatproof and legacyamountmustnotbeimported. NEXT STARTED: Samecase9 first: inspect only selected trace/route paid-edge geometry around545 northbound and actualexit toward Voronezh; locate independent operator collection rule or prove exact545section scope before one-causefix. Keepunknownifnotproven. Persist this microstep before case10. Automatic task remainsenabled; this isnot a fulltaskblocker.
+
+2026-10-16 resume: exact-tree ancestry recovery DONE; see ../../docs/checkpoints/2026-10-16-resume-exact-tree-recovery.md. Same case9 next, no runtime change.
+
+16.10.2026 [Fresh checkout DONE / samecase9 narrowreview STARTED](../../docs/checkpoints/2026-10-16-1222-fresh-checkout-case9-resume.md): actuala11dcf46/PR14draft, workflow38869309675SUCCESS. No newcode/build. Next primaryPDF545tariffrows/footnotes+selectedgeometry, unknown preserved until scopeproof; oldcheckout retained.
+
+2026-10-16-122949 MSK [Case9scopeDONE/source-gated](../../docs/checkpoints/2026-10-16-122949-case9-545-source-gate.md): primaryPDF/4OSMobjects andselected545exactlane reviewed, M4named28km notpaid-scopeproof; collectionrule unresolved/operator403notbypassed, unknownretained. No code/newgate; prior687historical. NEXT STARTED case10 Voronezh→Taman savedcapture/twoofflineprofiles; case9holdnotfulltaskblocker. CLIcredentialfailure recoveredconnector exacttree2ac0d2a; source/historypreserved.
+
+2026-10-16-123215 MSK [case10-frozen-tools-ready](../../docs/checkpoints/2026-10-16-123215-case10-frozen-tools-ready.md): Dependency prerequisite DONE: pnpm install --frozen-lockfile exit0 in1.1s, pnpm11.25.0; tracked worktree remainedclean, lockfileunchanged. No newtest/build claim, previous687gate historical. No sourcepricechange. NEXT: Case10 pair-m4-a289-voronezh-to-taman capture2026-10-16T00-11-20-485Z-capture.json.gz; run twoofflineprofiles15/17Oct09:00MSK, verifySHA/provider/integrity/departure/M4component; save separately before nextcase.
+
+2026-10-16-123435 MSK [part19d-current-case10](../../docs/checkpoints/2026-10-16-123435-part19d-current-case10.md): Case10/22 pair-m4-a289-voronezh-to-taman DONE: source_gated_physical545_scope_unresolved, providerOSRM/1025458m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next pair-m4-m11-voronezh-to-spb, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-123630 MSK [part19d-current-case11](../../docs/checkpoints/2026-10-16-123630-part19d-current-case11.md): Case11/22 pair-m4-m11-voronezh-to-spb DONE: m4_component_priced_other_products_unknown, providerValhalla/1236369m. Wholeamounts[null,null], remaining["zsd"]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-krasnodar-to-voronezh, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-123734 MSK [part19d-current-case12](../../docs/checkpoints/2026-10-16-123734-part19d-current-case12.md): Case12/22 single-m4-krasnodar-to-voronezh DONE: source_gated_physical545_scope_unresolved, providerOSRM/836186m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-voronezh-to-krasnodar, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-123840 MSK [part19d-current-case13](../../docs/checkpoints/2026-10-16-123840-part19d-current-case13.md): Case13/22 single-m4-voronezh-to-krasnodar DONE: source_gated_physical545_scope_unresolved, providerOSRM/835029m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next triple-m4-m11-zsd-voronezh-to-prim, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-123947 MSK [part19d-current-case14](../../docs/checkpoints/2026-10-16-123947-part19d-current-case14.md): Case14/22 triple-m4-m11-zsd-voronezh-to-prim DONE: m4_component_priced_other_products_unknown, providerValhalla/1245601m. Wholeamounts[null,null], remaining["zsd","unknown-paid-road"]; no numeric subtotal presented asfulltotal. NEXT: Next dnr-новоазовск-kazan-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-124051 MSK [part19d-current-case15](../../docs/checkpoints/2026-10-16-124051-part19d-current-case15.md): Case15/22 dnr-новоазовск-kazan-center DONE: source_gated_same_two_way_collection_scope, providerValhalla/1647414m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next dnr-талаковка-kazan-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-124158 MSK [part19d-current-case16](../../docs/checkpoints/2026-10-16-124158-part19d-current-case16.md): Case16/22 dnr-талаковка-kazan-center DONE: source_gated_same_two_way_collection_scope, providerValhalla/1688157m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next zaporizhzhia-розовка-kazan-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-124305 MSK [part19d-current-case17](../../docs/checkpoints/2026-10-16-124305-part19d-current-case17.md): Case17/22 zaporizhzhia-розовка-kazan-center DONE: source_gated_same_two_way_collection_scope, providerValhalla/1742659m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next pair-m4-a289-anapa-to-voronezh, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-124417 MSK [part19d-current-case18](../../docs/checkpoints/2026-10-16-124417-part19d-current-case18.md): Case18/22 pair-m4-a289-anapa-to-voronezh DONE: source_gated_physical545_scope_unresolved, providerOSRM/992359m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next pair-m4-a289-voronezh-to-anapa, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-124521 MSK [part19d-current-case19](../../docs/checkpoints/2026-10-16-124521-part19d-current-case19.md): Case19/22 pair-m4-a289-voronezh-to-anapa DONE: source_gated_physical545_scope_unresolved, providerOSRM/991519m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-rostov-to-voronezh, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-124629 MSK [part19d-current-case20](../../docs/checkpoints/2026-10-16-124629-part19d-current-case20.md): Case20/22 single-m4-rostov-to-voronezh DONE: source_gated_physical545_scope_unresolved, providerValhalla/567353m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-voronezh-to-moscow, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-124732 MSK [part19d-current-case21](../../docs/checkpoints/2026-10-16-124732-part19d-current-case21.md): Case21/22 single-m4-voronezh-to-moscow DONE: whole_estimate_present_current_engine, providerValhalla/520174m. Wholeamounts[1830,2300], remaining[]; no numeric subtotal presented asfulltotal. NEXT: Next single-m4-voronezh-to-rostov, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-124839 MSK [part19d-current-case22](../../docs/checkpoints/2026-10-16-124839-part19d-current-case22.md): Case22/22 single-m4-voronezh-to-rostov DONE: source_gated_physical545_scope_unresolved, providerValhalla/565794m. Wholeamounts[null,null], remaining["m4"]; no numeric subtotal presented asfulltotal. NEXT: Next dnr-гранитное-saint-petersburg-center, exactexistingcapture fromregionalcorpus/road-cases, offline15/17Oct09:00MSK; separatecasecheckpoint/readback before next. Keepknownsourcegates/unrelatedmissingproductsvisible.
+
+2026-10-16-125248 MSK [part19d-m4-22-review-and-open-collection-rule](../../docs/checkpoints/2026-10-16-125248-part19d-m4-22-review-and-open-collection-rule.md): M4 finding review DONE22/22 distinctcases, NOT22confirmedfares:5wholeunconfirmedestimates,3M4componentspriced/wholeunknown,8physical545scopegated,6shortM4scopegated. Currentqueue and per-caseSHA/checkpoints preserve exactoutcomes; unchangedfrozenREPORT. No newruntimechange/fullgate thisturn, prior687historical. NEXT: NEXT narrowstep: evaluate primaryopen-rule applicability and safe exactlyreviewedM4scope guard, then one-causecodechange only ifindependentproofsuffices; focused+fullgate and6separatecasecheckpoints beforeacceptance. Otherwise keep6unknown and continueZSDfirst dnr-гранитное-saint-petersburg-center. Keep8physical545sourcegates; parts19ongoing/20planned.
+
+2026-10-16-125719 MSK [m4-open-rule-proof-and-api-review](../../docs/checkpoints/2026-10-16-125719-m4-open-rule-proof-and-api-review.md): Primary-rule verification DONE, implementation NOT started: operator uploaded13pagePDF SHAa3ed4b13529e0eae7865bfc4192c6944a0b3ece6c371062a97d5b6dc461c57dc section2.1 is PAGE4 (visuallyrendered1600px), notpage3; earliercheckpoint visiblyannotated, oldstatementpreserved. Page2matchingheading is tableofcontents. Fulltext containsno545-specificrule, so8physical545gates remainunresolved. NEXT: Revisit exactshortM4scope case1 dnr-гранитное-kazan-center: decide whether primaryfullway-node geometry/facilitymap+operatoropenrule establishes positive no-charge proof. If sufficient, implement reviewedroad-scopeguard (no benchmarkrouteIDs) requiring same-selectedcompleteValhalla/boothcoverage, exact2ways1182567076+31984600/directedgeometry,0booths+0knownM4candidates; wholezero onlywithnoothermissingproducts, preserveauditraw and avoidlatefallback/APIcontradictions. Focused adversarialtests+fullgate and6separatecasecheckpoints before accepting any0/FREE. If proofstillinsufficient, keep6unknown and continueZSDfirstcase dnr-гранитное-saint-petersburg-center. Parts19ongoing/20planned.
+
+2026-10-16 13:58 MSK: # Short M4 positive proof review — DONE, source gate retained
+
+16.10.2026 MSK. Parent ecd165c2aefb93f6331129f8a8da34ddcdab3021, working branch fix/v3-missing-route-prices-2026-10-15, draft PR14. Fresh clone calculator-resume matches remote parent; prior checkout no longer exists. Initial exec failed due missing working directory, retry in /tmp succeeded; no permission escalation needed. Latest parent PR workflow38884064919 completed/success; no active writer observed.
+
+Read primary PDF pages3–4 with pdftotext -layout, existing fullway geometry evidence and API review. General rule applicability to M4 is explicit (definitions p3); section2.1 p4 states payment is triggered at a PVP and allows travel without crossing one. This supports the intended algorithm, but source record m4-355-receipt-rule-verified-2026-10-14.json explicitly has effectiveFrom:null and notes historical/current topology differences. No independently dated operator physical collection-scope record for these two exact ways is present; association to PVP1046 remains a search snippet previously rejected for scope proof. Valhalla completeness and an OSM map without booth tags are useful corroboration, not independent operator inventory completeness. Endpoint/direct-way matching cannot turn absence of map data into independent no-charge confirmation.
+
+Decision: retain six source-gated unknowns; do not implement a route/way allowlist returning zero on this evidence alone. This is not a rejection of open collection or proof of a charge. Missing proof: current operator applicability/collection boundaries for the exact selected short segment (or equivalent independently confirmed control). Eight physical545 gates remain separate. No code/prices changed; no tests/build executed; historical687 remains historical. Raw/captures/REPORT preserved.
+
+NEXT STARTED: ZSD first case dnr-гранитное-saint-petersburg-center, locate exact existing capture from corpus.json, restore frozen dependencies, offline replay15/17Oct09:00MSK, preserve raw and inspect missing ZSD scope. Do not rerun completed22 M4 or25 policy cases. Save each replay case before continuing. Parts19 ongoing/20 planned; no main/merge/Production/Android changes.
+
+Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
+
+16.10.2026 frozen dependencies DONE exit0/24.2s, lock unchanged; ZSD Granitnoe→SPB exact saved-capture two-profile replay STARTED. See ../../docs/checkpoints/2026-10-16-1401-zsd-dependencies-ready.md
+
+16.10.2026 ZSD Granitnoe→SPB replay DONE2/2 complete; M4 now3810/4640, only ZSD missing; component sums are not totals. Samecase exactways/gates scope diagnosis STARTED. ../../docs/checkpoints/2026-10-16-1403-zsd-granitnoe-spb-replay.md
+
+16.10.2026 ZSD Granitnoe→SPB physicalscope DONE: actual northbound PVP5 node933974870,26ways/12outside reviewedzone1, exitEkateringofka. Primaryzone prices exist; wholecollectionscope stillrequires binding. ../../docs/checkpoints/2026-10-16-1406-zsd-granitnoe-exact-scope.md NEXT samecase ownercash/cardscope, noalias/guessedtotal.
+
+16.10.2026 ZSD case1 primaryrules review DONE; source-gatedfinishedscope, no600guess. NEXT STARTED case2 Bryanka→SPB twoofflineprofiles. ../../docs/checkpoints/2026-10-16-1410-zsd-primary-rule-scope-hold.md
+
+16.10.2026 ZSDcase2 Bryanka→SPB DONE2/2 exit0/complete, same26ways/PVP5 ascase1, unknownZSDonly. NEXT case3 Lisichansk→SPB exactcapturetwoofflineprofiles. ../../docs/checkpoints/2026-10-16-1412-zsd-bryanka-spb-replay.md
+
+2026-10-16T14:06:50.067788+03:00: ZSDcase3 lnr-лисичанск-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140650-zsd-case3.md. NEXT lnr-рубежное-saint-petersburg-center.
+
+2026-10-16T14:07:37.609727+03:00: ZSDcase4 lnr-рубежное-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140737-zsd-case4.md. NEXT zaporizhzhia-гуляйполе-saint-petersburg-center.
+
+2026-10-16T14:07:57.816486+03:00: ZSDcase5 zaporizhzhia-гуляйполе-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140757-zsd-case5.md. NEXT dnr-бахмут-saint-petersburg-center.
+
+2026-10-16T14:08:18.519398+03:00: ZSDcase6 dnr-бахмут-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140818-zsd-case6.md. NEXT dnr-волноваха-saint-petersburg-center.
+
+2026-10-16T14:08:39.298384+03:00: ZSDcase7 dnr-волноваха-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140839-zsd-case7.md. NEXT dnr-донецк-saint-petersburg-center.
+
+2026-10-16T14:08:59.138428+03:00: ZSDcase8 dnr-донецк-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140859-zsd-case8.md. NEXT lnr-алчевск-saint-petersburg-center.
+
+2026-10-16T14:09:19.598530+03:00: ZSDcase9 lnr-алчевск-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140919-zsd-case9.md. NEXT lnr-антрацит-saint-petersburg-center.
+
+2026-10-16T14:09:40.512335+03:00: ZSDcase10 lnr-антрацит-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-140940-zsd-case10.md. NEXT lnr-довжанск-saint-petersburg-center.
+
+2026-10-16T14:10:00.457425+03:00: ZSDcase11 lnr-довжанск-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141000-zsd-case11.md. NEXT lnr-марковка-saint-petersburg-center.
+
+2026-10-16T14:10:21.676416+03:00: ZSDcase12 lnr-марковка-saint-petersburg-center DONE2/2 exit0/complete, source_gated_same_exact_way_set, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141021-zsd-case12.md. NEXT max-chain-m12-ckad-m11-zsd-arzamas-to-prim.
+
+2026-10-16T14:10:40.127312+03:00: ZSDcase13 max-chain-m12-ckad-m11-zsd-arzamas-to-prim DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['ckad', 'm11-15-58', 'unknown-paid-road', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141040-zsd-case13.md. NEXT max-chain-m12-ckad-m11-zsd-kazan-to-sest.
+
+16.10.2026 primaryproof DONE: unnamednode1766158781 belongsZSD via4directedways, all in selectedcase13ledger; fixexactidentity STARTED, nofarechange. ../../docs/checkpoints/2026-10-16-zsd-planernaya-identity-proof.md Plan90%18/20. NEXT source/adversarialregression thenfocused/fullgate/samecasereplay.
+
+16.10.2026 Planernayaexactidentity CODE DONE/fourregressionsadded, NOTtested; NEXT focusedtests/lint thenfullgate/samecase. ../../docs/checkpoints/2026-10-16-zsd-planernaya-identity-code.md Plan90%.
+
+16.10.2026 Planernayafocused8/8PASS/eslintnewtestexit0; fullgateSTARTED npm run build -- --webpack. ../../docs/checkpoints/2026-10-16-zsd-planernaya-focused-pass.md Plan90%.
+
+16.10.2026 Planernayafullgate DONE exit0:691/691+quote/API+Nextwebpack/TS/static16/16PASS. NEXT correctedcase13twoofflineprofiles. ../../docs/checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md Overallplan90%18/20.
+
+16.10.2026 ZSD1766158781identityfix validated withcorrectedcase13pair: redundantunknownroadgone, M11head/CKAD/ZSD stillblocknulltotal. 691fullgatePASS/8focusedPASS. Rawfullgatelog CR bytepreservation recovery included; requireexacttree. ../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md NEXT case14Kazan→Sestroretsk; plan90%18/20.
+
+2026-10-16T14:19:34.491002+03:00: ZSDcase14 max-chain-m12-ckad-m11-zsd-kazan-to-sest DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['ckad', 'm11-15-58', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-141934-zsd-case14.md. NEXT max-chain-m12-ckad-m11-zsd-murom-to-sest.
+
+16.10.2026 ZSDcase14 scopeDONE:76ways/two namedPvP/south→northKAD, no newidentitybug, sourcegate retained. Latest691fullgatePASS supersedes stale687template. ../../docs/checkpoints/2026-10-16-zsd-kazan-sestroretsk-scope.md NEXTcase15Murom→Sestroretsk; plan90%.
+
+2026-10-16T14:21:32.369652+03:00: ZSDcase15 max-chain-m12-ckad-m11-zsd-murom-to-sest DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'm11-15-58', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142132-zsd-case15.md. NEXT max-chain-m12-ckad-m11-zsd-sest-to-kazan.
+
+2026-10-16T14:22:04.923099+03:00: ZSDcase16 max-chain-m12-ckad-m11-zsd-sest-to-kazan DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['ckad', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142204-zsd-case16.md. NEXT max-chain-m12-ckad-m11-zsd-sest-to-murom.
+
+16.10.2026 ZSDcase16 distinctscopeDONE: 67ways/54outside reviewedzone1, actualguardrefusal consistent, no fareguess/runtimefix. ../../docs/checkpoints/2026-10-16-142324-zsd-case16-scope.md NEXTmax-chain-m12-ckad-m11-zsd-sest-to-murom; plan90%, latest691gatePASS.
+
+2026-10-16T14:24:14.117035+03:00: ZSDcase17 max-chain-m12-ckad-m11-zsd-sest-to-murom DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142414-zsd-case17.md. NEXT max-chain-m4-ckad-m11-zsd-krasnodar-to-sest.
+
+2026-10-16T14:24:35.248947+03:00: ZSDcase18 max-chain-m4-ckad-m11-zsd-krasnodar-to-sest DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142435-zsd-case18.md. NEXT max-chain-m4-ckad-m11-zsd-rostov-to-sest.
+
+16.10.2026 ZSDcase18 distinctscopeDONE: 76ways/62outside reviewedzone1, actualguardrefusal consistent, no fareguess/runtimefix. ../../docs/checkpoints/2026-10-16-142453-zsd-case18-scope.md NEXTmax-chain-m4-ckad-m11-zsd-rostov-to-sest; plan90%, latest691gatePASS.
+
+2026-10-16T14:25:11.185285+03:00: ZSDcase19 max-chain-m4-ckad-m11-zsd-rostov-to-sest DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142511-zsd-case19.md. NEXT max-chain-m4-ckad-m11-zsd-sest-to-krasnodar.
+
+2026-10-16T14:25:33.114822+03:00: ZSDcase20 max-chain-m4-ckad-m11-zsd-sest-to-krasnodar DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142533-zsd-case20.md. NEXT max-chain-m4-ckad-m11-zsd-sest-to-rostov.
+
+16.10.2026 ZSDcase20 distinctscopeDONE: 67ways/54outside reviewedzone1, actualguardrefusal consistent, no fareguess/runtimefix. ../../docs/checkpoints/2026-10-16-142551-zsd-case20-scope.md NEXTmax-chain-m4-ckad-m11-zsd-sest-to-rostov; plan90%, latest691gatePASS.
+
+2026-10-16T14:26:11.986552+03:00: ZSDcase21 max-chain-m4-ckad-m11-zsd-sest-to-rostov DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142611-zsd-case21.md. NEXT max-chain-m4-ckad-m11-zsd-voronezh-to-prim.
+
+2026-10-16T14:26:33.677215+03:00: ZSDcase22 max-chain-m4-ckad-m11-zsd-voronezh-to-prim DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142633-zsd-case22.md. NEXT pair-m11-ckad-domodedovo-to-spb.
+
+2026-10-16T14:26:54.350882+03:00: ZSDcase23 pair-m11-ckad-domodedovo-to-spb DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142654-zsd-case23.md. NEXT pair-m11-ckad-noginsk-to-spb.
+
+2026-10-16T14:27:12.414460+03:00: ZSDcase24 pair-m11-ckad-noginsk-to-spb DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'm11-15-58', 'zsd']; sameexactscope=True. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142712-zsd-case24.md. NEXT pair-m11-ckad-spb-to-domodedovo.
+
+2026-10-16T14:27:33.618941+03:00: ZSDcase25 pair-m11-ckad-spb-to-domodedovo DONE2/2 exit0/complete, current_unknown_needs_distinct_scope_review, missing['unknown-paid-road', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142733-zsd-case25.md. NEXT pair-m11-ckad-spb-to-noginsk.
+
+16.10.2026 ZSDcase25 distinctscopeDONE: 38ways/25outside reviewedzone1, actualguardrefusal consistent, no fareguess/runtimefix. ../../docs/checkpoints/2026-10-16-142752-zsd-case25-scope.md NEXTpair-m11-ckad-spb-to-noginsk; plan90%, latest691gatePASS.
+
+2026-10-16T14:28:10.896352+03:00: ZSDcase26 pair-m11-ckad-spb-to-noginsk DONE2/2 exit0/complete, source_gated_same_reviewed_zsd_scope, missing['ckad', 'zsd']; sameexactscope=False. Plan progress90% (18/20, notfarecoverage). Checkpoint ../../docs/checkpoints/2026-10-16-142810-zsd-case26.md. NEXT pair-m11-zsd-moscow-to-prim.
+
+2026-10-16T14:30:02.393729+03:00: ZSD26/76 individuallydurable; thisblock13additionalcases, sourcegateskept, no runtimechange/newfullgate. Overallplan90%18/20. Existingauto enabled/readbackconfirmed; promptonlyupdatedwithpercentinstruction/scheduleunchanged. Checkpoint ../../docs/checkpoints/2026-10-16-zsd-26case-handoff-and-auto-reporting.md. NEXTcase27pair-m11-zsd-moscow-to-prim.
+
+16.10.2026 16:54MSK scratch-pruning recovery DONE, exactclonehead/tree verified; no routeprogress lost. NEXT frozen dependencies/repository-owned ZSDsinglecaseutility, then case27. ../../docs/checkpoints/2026-10-16-1654-resume-after-scratch-pruning.md Plan90%.
+# 2026-10-16 16:54 МСК — case 27 replay: FAILED import path
+
+Первый offline replay `pair-m11-zsd-moscow-to-prim` не запустился: ошибочно указан `./experiments/nationwide-tolls/scripts/register-ts-paths.mjs`, фактический import — `./scripts/register-ts-paths.mjs`. Exit 1 до чтения capture; результаты и тарифная логика не менялись. См. `../../docs/checkpoints/2026-10-16-1654-zsd-case27-replay-failed-import.md`. Следом повторить тот же case с исправленным import. План 90% (18/20), ZSD review 26/76.
+
+16.10.2026 frozen dependencies restored exit0/15.7s, lockunchanged; NEXT repository-owned ZSD review utility. ../../docs/checkpoints/2026-10-16-1656-frozen-dependencies-restored.md No newtest/build/route; plan90%.
+
+16.10.2026 ZSD repository-owned singlecase utility CODE DONE, fourintegrity/adversarial tests added; syntaxchecks passed, focused/fullgate NOTyet run. ../../docs/checkpoints/2026-10-16-zsd-repository-runner-code.md NEXT focusedchecks, fullgate, case27. Plan90%.
+
+16.10.2026 ZSDdurablerunnerfocused4/4PASS/lint2filesexit0, rulesreread peruser17:11; NEXTfullgate then automaticcase27. ../../docs/checkpoints/2026-10-16-zsd-runner-focused-pass.md Plan90%.
+
+16.10.2026 current-chat resume: rules/20parts reread, exact remote tree matched in own checkout. Plan90%. NEXT fullgate then case27. docs/checkpoints/2026-10-16-continue-current-chat.md
+
+16.10.2026 fullgate DONE exit0:695/695, quote/API, webpack/TS/static16/16 PASS. Raw log preserved. NEXT case27 --next. Plan90%. docs/checkpoints/2026-10-16-current-chat-fullgate-pass.md
+
+16.10.2026 runnerpreflight FAILED before replay: untracked dependency symlink, localexclude repaired. No caseprogress. NEXT retrycase27. Plan90%. docs/checkpoints/2026-10-16-zsd-preflight-symlink-recovery.md
+
+2026-10-16T14:20:22.672Z: ZSD case27 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-20-22-671Z.md). NEXT ZSD nextcase pair-m11-zsd-moscow-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:21:01.822Z: ZSD case28 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-21-01-821Z.md). NEXT ZSD nextcase pair-m11-zsd-prim-to-moscow; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:21:34.192Z: ZSD case29 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-21-34-191Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
+
+2026-10-16T14:22:03.311Z: ZSD distinct scope diagnosis DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-22-03-311Z.md). NEXT ZSD nextcase pair-m11-zsd-sest-to-moscow; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:22:40.283Z: ZSD case30 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-22-40-282Z.md). NEXT ZSD nextcase pair-m11-zsd-tver-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:23:16.596Z: ZSD case31 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-23-16-595Z.md). NEXT ZSD nextcase pair-m4-m11-voronezh-to-spb; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:23:47.962Z: ZSD case32 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-23-47-961Z.md). NEXT ZSD nextcase single-m11-moscow-to-spb; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:24:19.601Z: ZSD case33 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-24-19-601Z.md). NEXT ZSD nextcase single-m11-spb-to-moscow; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:24:53.591Z: ZSD case34 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-24-53-591Z.md). NEXT ZSD nextcase single-zsd-blag-to-prim; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:25:27.773Z: ZSD case35 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-25-27-773Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
+
+16.10.2026 case35 diagnosis FAILED optionalmaneuvers absent; runnerfix+regression CODE DONE, untested. NEXT focused/fullgate then retrydiagnose. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-only-diagnosis-fix.md
+
+16.10.2026 geometry-only focused5/5PASS+eslint exit0. NEXT fullgate then case35diagnosis. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-focused-pass.md
+
+16.10.2026 geometry-only fullgate exit0:696/696+quote/API+webpack/TS/static16/16PASS. NEXT case35 --diagnose. Plan90%. docs/checkpoints/2026-10-16-zsd-geometry-fullgate-pass.md
+
+2026-10-16T14:28:34.645Z: ZSD distinct scope diagnosis DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-28-34-645Z.md). NEXT ZSD nextcase single-zsd-pushkin-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:29:07.615Z: ZSD case36 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-29-07-614Z.md). NEXT ZSD nextcase single-zsd-sest-to-pushkin; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:29:41.096Z: ZSD case37 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-29-41-095Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-kazan-to-spb; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:30:11.880Z: ZSD case38 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-30-11-879Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-spb-to-kazan; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:30:45.809Z: ZSD case39 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-30-45-808Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-krasnodar-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:31:19.288Z: ZSD case40 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-31-19-287Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-rostov-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:31:51.979Z: ZSD case41 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-31-51-978Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-sest-to-krasnodar; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:32:29.470Z: ZSD case42 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-32-29-470Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-sest-to-rostov; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:33:00.908Z: ZSD case43 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-33-00-907Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-voronezh-to-prim; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:33:32.505Z: ZSD case44 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-33-32-503Z.md). NEXT ZSD nextcase dnr-краматорск-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:34:04.922Z: ZSD case45 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-34-04-922Z.md). NEXT ZSD nextcase dnr-талаковка-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
+
+16.10.2026 case45 exacttree durable after Cyrillic path transfer recovery; raw retained/no rerun. NEXTcase46. Plan90%. docs/checkpoints/2026-10-16-zsd-cyrillic-path-persist-recovery.md
+
+2026-10-16T14:35:29.499Z: ZSD case46 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-35-29-498Z.md). NEXT ZSD nextcase dnr-харцызск-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:36:02.345Z: ZSD case47 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-36-02-342Z.md). NEXT ZSD nextcase lnr-ровеньки-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:36:42.146Z: ZSD case48 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-36-42-146Z.md). NEXT ZSD nextcase lnr-сорокино-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:37:13.168Z: ZSD case49 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-37-13-167Z.md). NEXT ZSD nextcase lnr-старобельск-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:37:50.457Z: ZSD case50 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-37-50-456Z.md). NEXT ZSD nextcase zaporizhzhia-розовка-saint-petersburg-center; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:38:28.073Z: ZSD case51 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-38-28-073Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-cheboksary-to-prim; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:54:09.670Z: ZSD case52 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-54-09-669Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-prim-to-arzamas; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:55:21.353Z: ZSD case53 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-55-21-353Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-prim-to-cheboksary; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T14:56:23.108Z: ZSD case54 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T14-56-23-107Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-sest-to-vladimir; --next; savedcapture twoofflineprofiles.
+2026-10-16T18:43:00+03:00: восстановлен отдельный checkout и зависимости после очистки временной среды; `pnpm install --frozen-lockfile` exit0, 504 policy entries, 429 packages. Исходники/lockfile без изменений. [Checkpoint](../../docs/checkpoints/2026-10-16-1843-dependencies-restored.md). NEXT ZSD case55. Plan90% (18/20), ZSD54/76.
+
+2026-10-16T15:43:19.349Z: ZSD case55 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T15-43-19-348Z.md). NEXT ZSD nextcase max-chain-m12-ckad-m11-zsd-vladimir-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T15:44:20.992Z: ZSD case56 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T15-44-20-991Z.md). NEXT ZSD nextcase max-chain-m4-ckad-m11-zsd-krasnodar-to-prim; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T16:51:08.178Z: ZSD case57 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-51-08-177Z.md). NEXT ZSD nextcase max-chain-m4-ckad-m11-zsd-prim-to-voronezh; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T16:52:00.109Z: ZSD case58 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-52-00-108Z.md). NEXT ZSD nextcase max-chain-m4-ckad-m11-zsd-rostov-to-prim; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T16:53:50.520Z: ZSD case59 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-53-50-519Z.md). NEXT ZSD nextcase pair-m11-zsd-novgorod-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T16:55:29.263Z: ZSD case60 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-55-29-262Z.md). NEXT ZSD nextcase pair-m11-zsd-prim-to-torzhok; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T16:56:47.020Z: ZSD case61 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-56-47-019Z.md). NEXT ZSD nextcase pair-m11-zsd-sest-to-novgorod; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T16:58:56.541Z: ZSD case62 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T16-58-56-537Z.md). NEXT ZSD nextcase pair-m11-zsd-sest-to-tver; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:00:04.181Z: ZSD case63 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-00-04-180Z.md). NEXT ZSD nextcase pair-m11-zsd-torzhok-to-prim; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:01:23.089Z: ZSD case64 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-01-23-087Z.md). NEXT ZSD nextcase pair-m4-m11-spb-to-voronezh; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:02:36.458Z: ZSD case65 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-02-36-457Z.md). NEXT ZSD nextcase single-m11-spb-to-tver; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:03:59.021Z: ZSD case66 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-03-59-020Z.md). NEXT ZSD nextcase single-m11-tver-to-spb; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:05:06.763Z: ZSD case67 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-05-06-762Z.md). NEXT ZSD nextcase single-zsd-blag-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:06:19.284Z: ZSD case68 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-06-19-283Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
+
+2026-10-16T17:07:20.803Z: ZSD distinct scope diagnosis DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-07-20-801Z.md). NEXT ZSD nextcase single-zsd-peterhof-to-prim; --next; savedcapture twoofflineprofiles.
+## 2026-10-16 — ZSD case 68 persistence recovery
+
+The case 68 scope diagnosis checkpoint remained intact, but the first GitHub connector upload of its seven-file local commit did not preserve three oversized append-only files. PR14 advanced to `1a215cc1dbd97f834b1c1c19ce2532d783c38df9`; GitHub tree `35eecba59e1faac4613a4ce0a48a8188464af065` differed from local `30d25946739467c909269b84b30c89f19b03fc53`. Mismatched local/remote blob SHAs are recorded in [the repair checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-12-02-000Z-tree-readback-repair.md). The shell base64 output had been silently truncated before connector upload; do not treat such uploads as complete based only on successful API responses.
+
+Recovery is the only current action: transfer full exact `NEXT_STEPS.md`, `PART19_FINDINGS_QUEUE.json`, and `WORK_LOG.md` blob data in bounded pieces, create a non-force fast-forward commit based on the currently verified PR14 head, then confirm exact local tree and path blob SHAs by Git fetch/readback. The case 68 diagnostic remains “selected trace extends beyond zone 1; 57 unreviewed ways”; no tariff decision or runtime change. No full test/build was run. Plan remains 90% (18/20). Case 69 must not start before repair verification.
+
+2026-10-16T17:14:47Z: Recovery DONE. Large files were transported as bounded base64 slices; the returned GitHub blob SHA for each matched the exact local Git blob before tree creation. New PR14 head `c2e744d030b9a6f1c3cbc3ed5ac20674458dbb67` fetches tree `433ea764ea17d4f5cd4b41a37e2b59902a31586a`, equal to local companion commit tree. All seven path SHAs matched and working tree was clean. The incomplete checkpoint snapshot at `1a215cc...` is superseded; no force update used. Audit finding remains no tariff inference. [DONE checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-14-47-000Z-tree-readback-repair-done.md). NEXT case69 saved-capture/two-profile replay.
+
+2026-10-16T17:16:56.121Z: ZSD case69 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-16-56-120Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
+
+2026-10-16T17:19:29.899Z: ZSD distinct scope diagnosis DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-19-29-896Z.md). NEXT ZSD nextcase single-zsd-sest-to-blag; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:21:33.811Z: ZSD case70 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-21-33-810Z.md). NEXT Diagnose current ZSD scope using --diagnose before the nextcase.
+
+2026-10-16T17:23:39.495Z: ZSD distinct scope diagnosis DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-23-39-494Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-arzamas-to-spb; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:25:46.942Z: ZSD case71 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-25-46-940Z.md). NEXT ZSD nextcase triple-m11-ckad-m12-spb-to-arzamas; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:28:40.815Z: ZSD case72 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-28-40-814Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-domodedovo-to-sest; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:31:01.437Z: ZSD case73 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-31-01-435Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-krasnodar-to-prim; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:35:07.405Z: ZSD case74 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-35-07-404Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-prim-to-voronezh; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:36:52.511Z: ZSD case75 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-36-52-510Z.md). NEXT ZSD nextcase triple-m4-m11-zsd-sest-to-domodedovo; --next; savedcapture twoofflineprofiles.
+
+2026-10-16T17:39:01.255Z: ZSD case76 replay DONE; plan90% (18/20). [Checkpoint](../../docs/checkpoints/zsd-2026-10-16T17-39-01-254Z.md). NEXT ZSD class reviewed; assess remaining finding classes, do not mark part19 complete.
+## 2026-10-16 — ZSD queue finding classification
+
+After case76, all 76 ZSD saved-capture cases were replayed in both departure-date profiles with complete integrity. The recorded finding has been reclassified from `needs_diagnosis` to `source_gated_collection_span_unbound`: source evidence does not bind the operator’s finished collection span, so the tool’s fail-closed unknown remains appropriate. This classifies the current evidence; it does not fix runtime code, confirm a toll, or claim a free route. See [checkpoint](../../docs/checkpoints/2026-10-16-zsd-classification-76-cases.md) and exact count evidence `docs/checkpoints/evidence/2026-10-16-zsd-queue-classification.json`.
+
+Audit distribution: 53 same reviewed scope, 9 distinct finished-scope cases, 11 exact-way-set matches, plus three distinct source/identity classes; missing-component case counts are preserved in the evidence JSON. Case counts are reproduction coverage, not fare coverage. No runtime tests/full build were run. Overall 18/20 parts =90%; Part19 remains in progress. NEXT: assess `m4:unpriced` from its 22 saved evaluations, one finding only.
+
+2026-10-16T17:48:58Z: Part19 finding `m4:unpriced` classified from all22 saved evaluations; grouped results 5 whole-route estimates without operator confirmation, 3 M4 components with other products unknown, 8 physical545 unresolved, 6 short/open-collection unresolved. Exact M4 finished collection scope remains unbound; general open-collection rule has no effectiveFrom in the saved M4 record. Preserved unknown; no price/zero/free inference. Runtime unchanged, no tests/build run. Evidence: [checkpoint](../../docs/checkpoints/2026-10-16-part19-m4-unpriced-classification.md), [grouped evidence](../../docs/checkpoints/evidence/2026-10-16-m4-22-case-classification.json). NEXT inspect `m11_partial_head_entry_boundary_unresolved` saved evidence only; one finding at a time. Plan90% (18/20), not fare coverage.
+
+2026-10-16T17:55:31Z: STARTED diagnosis of Part19 finding `m11_partial_head_entry_boundary_unresolved`, first saved case `max-chain-m12-ckad-m11-zsd-arzamas-to-prim`. Input capture SHA, baseline occurrences and paired-profile replay paths are recorded in [STARTED checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-head-boundary-started.md). Next inspect selected paid-edge entry sequence against exact primary M11 payment boundary; unknown remains until proven. No new live call, price/code change, or test/build. Plan90% (18/20), not fare coverage.
+
+2026-10-16T18:01:25Z: M11 boundary case1 `max-chain-m12-ckad-m11-zsd-arzamas-to-prim` DONE/source-gated. Complete 9/9 captured trace; two complete offline date-profile replays retain unknown M11 15–58, CKAD and ZSD. Selected route does not contain the operator-identity-linked MMK north gate ways, and nearest gate nodes exceed the existing 25m directional crossing rule; Moscow PVP21 spatial anchor is explicitly unresolved in the saved primary-source evidence. No threshold widening or price/zero inference. Evidence checkpoint `../../docs/checkpoints/2026-10-16-part19-m11-case1-boundary-source-gated.md`. Next only case2. Overall plan90% (18/20), not tariff coverage.
+
+2026-10-16T18:06:04Z: STARTED case2 `max-chain-m12-ckad-m11-zsd-kazan-to-sest` for Part19 M11 head-boundary finding. Saved capture and live/offline paired profile SHA-256 values are fixed in [checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-case2-boundary-started.md) and [evidence](../../docs/checkpoints/evidence/2026-10-16-m11-case2-boundary-inputs.json). Current saved results show complete trace but keep M11 15–58 null, alongside unknown CKAD/ZSD; not a whole fare. Compare exact selected paid-edge sequence with the primary M11 boundary proof; no new live request, code/fare change, or test/build. Completed review count remains 1/8. Overall agreed plan90% (18/20), not tariff confirmation.
+
+2026-10-16T18:08:14Z: M11 boundary case2 `max-chain-m12-ckad-m11-zsd-kazan-to-sest` DONE/source-gated. Complete 1,558,165m trace and 15/17 Oct paired outputs remain reproducible; selected trace lacks the two operator-identity-linked directed gate ways and nearest gate nodes are outside the existing 25m match threshold (26.5m/41.8m); stored Moscow PVP21 anchor remains unresolved. Preserve M11 15–58 unknown; CKAD and ZSD remain unknown, so no whole fare or subtotal claim. No runtime/fare change or tests/build. Evidence: [checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md), [review JSON](../../docs/checkpoints/evidence/2026-10-16-m11-case2-boundary-review.json). Two of eight finding cases reviewed; overall plan90% (18/20), not tariff coverage. NEXT case3 `max-chain-m12-ckad-m11-zsd-murom-to-sest`.
+
+2026-10-16T18:53:27Z: User decision21:51MSK recorded as binding [WORKFLOW_RULES](../../docs/WORKFLOW_RULES.md) and AGENTS/CHECKPOINT_PROTOCOL clarification. Root cause/user impact determines finding review; repeated cases get bounded exception checks; four final cause outcomes are explicit; unfinished assessment stays operational IN_PROGRESS. Full logs/raw stay out of context, short offline review uses one completed checkpoint, required code gates and remote readback remain. Formal90%=18/20 belongs to both155/154 audit batches and is separate from wider calculator/matrix completion, actual checks and tariff confirmation. Existing continuation automation prompt update returned success; cadence/enabled state preserved. Source cf97c6e4aaf2220655c17a8978e89c4b0f587e62/treefb2d2a0e5ad7d18df2cae25d3e17413c8a8a2872, PR14open/draft, CI38947789852 verify/live_probe completed/success. A clean detached checkout was created from that source without touching the divergent old checkout. Git CLI auth diagnostic: no helper/gh/standard GitHub credentials found; push --dry-run exit128 `fatal: unable to get password from user`; no secret emitted or requested. Connector auth cannot be exported through available tools, so CLI setup remains BLOCKED_BY_ENVIRONMENT_AUTH, authorized connector remains usable. Docs/JSON/link/diff checks before commit; no runtime/fare/source capture changes, no new route replay/live/full build. NEXT murom-to-sest exception check only after durable save/readback and checking absence of active writer. [Checkpoint](../../docs/checkpoints/2026-10-16-215327-workflow-efficiency-rules.md).
+
+
+2026-10-16T19:39:58Z: Part19 M11 boundary case3 `max-chain-m12-ckad-m11-zsd-murom-to-sest` checked against saved evidence. Complete 8/8 trace; live + same-date replay + weekend replay match capture and remain unknown for M11 15–58/CKAD/ZSD. Directed gate ways absent; nearest nodes 26.5m/41.8m >25m; PVP21 spatial anchor remains unresolved. Same source-gated cause, no material exception. No new live/capture/code/tariff/test. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-case3-boundary-source-gated.md); [evidence](../../docs/checkpoints/evidence/2026-10-16-m11-case3-boundary-review.json). M11 cause reviewed3/8; next pair-M11 CKAD Noginsk→SPb bounded check. Formal plan18/20=90%, not tariff coverage.
+
+2026-10-16T20:00:50.463Z: Part19 M11 boundary case4 `pair-m11-ckad-noginsk-to-spb` reviewed from saved capture/profiles. Complete 6/6 trace; live + same-capture weekday/weekend profiles match; directed MMK gate ways absent and approximate nearest-node distances 26.61m/41.98m exceed 25m; no material exception, same boundary-source blocker. Unknown M11 15–58/CKAD/ZSD preserved; no new live/code/tariff/tests. Valhalla candidate 25,413s vs OSRM 32,301s is consistent with fastest-route-only rule. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md); [evidence](../../docs/checkpoints/evidence/2026-10-16-m11-case4-boundary-review.json). M11 cause reviewed4/8; next triple-M11/CKAD/M12 Kazan→SPb. Formal plan18/20=90%, not tariff coverage.
+
+2026-10-16T20:19:47Z: Part19 M11 boundary case5 `triple-m11-ckad-m12-kazan-to-spb` reviewed against saved capture and profiles only. Complete 11/11 trace/2,106 edges; live + same-date and weekend replay all bind capture SHA-256 b4e49dba…cafe00. Directed MMK gate ways absent; approximate nearest gate-node distances 26.47m/41.76m exceed 25m. Fastest saved route remains Valhalla 61,507s vs OSRM 70,869s. No material exception to M11 boundary blocker; CKAD east arc and ZSD scope remain separate route unknowns; route amount null. No new live/code/tests/tariff confirmation. Check 5/8; formal plan 18/20=90%. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-case5-boundary-source-gated.md); [evidence](../../docs/checkpoints/evidence/2026-10-16-m11-case5-boundary-review.json). Next: case6.
+
+2026-10-16T20:39:00Z: Part19 M11 boundary case6 `max-chain-m12-ckad-m11-zsd-cheboksary-to-prim` reviewed from saved capture/live/replay only. Complete 10/10 trace, 2,766 edges; five complete profiles bind capture SHA ce2577c8…b1f6fdcf. All preserve route 1,380,434m/53,656s and fastest-only Valhalla (OSRM 64,253s). M11 directed gate ways absent; nearest gate nodes approx 26.47m/41.76m >25m. Earlier live/replays showed redundant unknown-paid-road, later same-capture weekday/weekend replay added exact selected-trace ZSD node 1766158781 and removed that label; this is consistent with previously source-validated ZSD identity fix, but ZSD zone/fare remains unknown. M12 expected traversal and CKAD east arc remain unproven. No new live/code/tests/price. M11 cause outcome blocked by missing reliable data; case count6/8. Formal plan18/20=90%. [Checkpoint](../../docs/checkpoints/2026-10-16-part19-m11-case6-boundary-exception.md); [evidence](../../docs/checkpoints/evidence/2026-10-16-m11-case6-boundary-exception.json). Next: case7.
+
+2026-10-16T21:16:00Z: Part19 M11 boundary case7 `max-chain-m12-ckad-m11-zsd-vladimir-to-sest` reviewed from saved capture/live/replays. Complete 7/7 trace, 1,690 edges; 3 unique profiles bind capture SHA 5e895d67…f52eb6f and preserve 921,380m/31,886s. Valhalla remains fastest vs OSRM 40,158s. Directed M11 gate ways absent; approximate nearest gate-node distances 26.47m/41.76m >25m. No material M11 exception. Expected M12 traversal not proven; CKAD east arc and ZSD beyond reviewed zone1 remain unresolved; route total null. No new live/code/tests. Cause exception check7/8; formal plan18/20=90%. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md); [evidence](../../docs/checkpoints/evidence/2026-10-17-m11-case7-boundary-source-gated.json). Next: case8.
+
+
+2026-10-16T22:45:16Z: Part19 M11 boundary case8 `triple-m11-ckad-m12-arzamas-to-spb` reviewed from saved evidence only at parent 5cb2b80a0b69202af606badaf226b0fb5642feb4. Capture blob b95d07d9…264f0936658d55f4 / SHA-256 b47f5207…91ea61b; live, same-date and weekend profiles reduce to 3 unique blob SHAs, all capture-bound and preserving Valhalla fastest route 1,149,643m/43,716s (OSRM 51,485s). Expected M11/CKAD/M12 traversals represented; M11 15–58 reason remains `m11_partial_head_entry_boundary_unresolved`, CKAD east arc and ZSD beyond reviewed zone1 unresolved. Full toll amount null; component matrix outputs do not establish total fare. No material exception; cause outcome blocked by missing reliable data. No new live/replay/code/tests/tariff confirmation. M11 exception checks complete 8/8. Formal plan18/20=90%, not tariff coverage. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md); [evidence](../../docs/checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json). NEXT: Part19 cross-cause synthesis and Part20 required gates/handoff.
+
+
+2026-10-16T23:31:29Z: Part19 state reconciliation found stale M11 metadata in `PART19_FINDINGS_QUEUE.json` (4/8 checked/five pending) despite saved case5–8 checkpoints. Updated M11 to 8/8, outcome blocked by missing reliable data, linked all eight reviews and preserved prior state in `statusHistory`; no result/evidence history deleted. PR14 open draft at 3e61db433146a9449576c6c7c51073992d96be28; CI #38977636786 completed/success; no active jobs. Updated short handoff and next priority. No live/replay/code/tests/tariff claims. Next cause is `unknown-paid-road:unpriced` (baseline64), compare case overlap with `expected-road-not-proven` before treating counts as affected routes. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md); [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-m11-ledger-reconciliation.json).
+
+2026-10-17T00:15:54Z: Part19 `unknown-paid-road:unpriced` aggregate classified DEFERRED after inspecting its 64 saved queue IDs and current route composer. Overlap: 41 with `m11-58-679:unpriced`, 15 with `m11_58_679_facility_sequence_incomplete` (contained in that M11 subset), 19 with `expected-road-not-proven`; counts overlap, not unique routes. Composer source lines 58–59 excludes the unknown aggregate from valid priced components; lines 71–77 preserve status unknown/tolls null if unresolved. This is intentional fail-closed behavior, not a confirmed bug or price. Actual current route/profile checks 0; no live/replay/code/tests. Parent run #38981909036: verify/live_probe completed success; branch was quiet at write preflight. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-unknown-paid-road-aggregate-deferred.md); [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-unknown-paid-road-aggregate-deferred.json). NEXT narrower cause: `m11_58_679_facility_sequence_incomplete` (baseline15), inspect saved evidence only for material distinctions.
+
+## 2026-10-17 — Part19 M11 facility-sequence finding blocked
+
+Reviewed `m11_58_679_facility_sequence_incomplete`: 15 route cases, 30 saved weekday/weekend profiles. All profiles have complete trace/replay integrity, the same capture SHA per pair, the same selected fastest provider, and the same incomplete facility-sequence reason; amounts remain null/unconfirmed. Official inventory lists 21 PVP IDs without coordinates; spatial anchors bind only p58/p593/p679. Outcome: **blocked by missing reliable data**, not an established code defect. Unknown/null preserved; no fare or full trip total inferred. No live/replay/build/tests. Next: inspect only the 26 IDs in `m11-58-679:unpriced` not among these 15. Formal progress 18/20=90%, unchanged.
+
+[Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-facility-sequence-blocked.md) · [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-m11-facility-sequence-blocked.json)
+
+## 2026-10-17 — Part19 M11 58–679 cause blocked
+
+Reviewed the 26 residual IDs outside the previously reviewed facility-sequence 15. Inspected 74 replay-file entries but deduplicated to 52 unique weekday/weekend profiles; all 26 cases have one profile per date. All 52 have complete trace/replay integrity, select the fastest provider, show `only_one_verified_boundary_crossing`, and keep M11 amount null/unconfirmed. Official tariff inventory has 21 points with no coordinates; spatial controls cover p58/p593/p679 only; resolver requires two independent crossings. Outcome: **blocked by missing reliable data**, not a proven defect. Separate CKAD/ZSD/unnamed-booth blockers remain distinct and known M4/M12 components remain partial. Combined finding: 41 cases / 82 unique profiles. No live/replay/build/tests. NEXT: `arc_not_proven`, baseline34, saved evidence/exceptions only. Formal progress 18/20=90%.
+
+[Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-58-679-blocked.md) · [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-m11-58-679-blocked.json)
+
+
+## 2026-10-17T06:32:46 — Part19 CKAD east-arc cause blocked
+
+Reviewed historical `arc_not_proven` from the frozen audit report at source head `6df92a4bf60ba64e0a3ac8ca2d5e856248de7c9b` / tree `dc4c2b12a326ab4316e364d2779d2d6c606c0869`. It contains 34 route cases, 102 occurrences, and 68 distinct weekday/weekend profiles. All 34 rows report evidence/raw/trace complete and same-date parity true; weekday/weekend amounts are null; selected provider is Valhalla. Every occurrence has `ckad_east_arc_not_proven`. All 102 unique live/replay evidence paths exist in the source tree (34 live, 68 replay). Broader road coverage says traversal proven in 22 cases and expected-road-not-proven in 12; neither establishes exact CKAD east-arc billing scope. Overlaps are non-additive (ZSD16, M11 head8, M11 58–67914, unknown-paid-road18, expected-road-not-proven12, M12 pair2). Outcome: **blocked by missing reliable data**, not a code fix or fare proof. No new live/replay/tests/builds; unknown/null preserved.
+
+Also verified run #38994773498 succeeded on the source head but executed the non-fastest payment-point-avoiding Moscow–Krasnodar probe (step7) successfully, contrary to fastest-route-only scope. Removed that step and its artifact entry from `.github/workflows/special-territory-policy.yml`; the workflow triggered by this update must be observed before the next independent step.
+
+Updated queue, AUTO_QUEUE_STATE, WORK_STATE, NEXT_STEPS and this append-only log. Formal plan 18/20=90%, not tariff coverage. [Checkpoint](../../docs/checkpoints/2026-10-17-0632-part19-arc-not-proven-blocked.md) · [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-arc-not-proven-blocked.json). NEXT: `expected-road-not-proven`, saved-data exceptions only.
+
+
+## 2026-10-17 07:35 МСК — expected-road-not-proven grouped assessment
+
+- Saved-report-only review on branch `fix/v3-missing-route-prices-2026-10-15`, source head/tree `fec51dab8eddc1919b4e839cc1b59a1c345f3b05` / `0bd121306facb563761e924d54c57ad4aa4487c1`, PR14 open/draft. Latest workflow run #38999218280 success at source head; no active branch run before this documentation save.
+- Matched 64/64 finding case IDs to report rows; checked 64 unique live artifact paths in the source tree (all present), with raw, trace-complete, same-date-parity flags true. Missing expected road-label distribution: CKAD30, M12 11, Khabarovsk10, Odintsovo8, ZSD3, M4 2. 32 cases overlap existing finding ledgers and 32 do not; do not add overlapping counts.
+- Conclusion: `expected-road-not-proven` is a mixed symptom, not one demonstrated defect. Report evidence does not establish that a fastest selected route actually traversed a chargeable omitted segment. Outcome: **deferred**; no road or fare was forced/added. User impact remains conditional/unconfirmed.
+- M11 boundary cases5–8 were found already DONE in committed checkpoints; the shared M11 boundary cause remains **blocked by missing reliable data**, amounts unknown/null. No repeats.
+- No new route/live/replay/build/test, no tariff confirmation. Formal-plan progress stays 18/20=90%.
+- Checkpoint/evidence: `docs/checkpoints/2026-10-17-0735-part19-expected-road-not-proven-deferred.md`, `docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json`. Next: review `m12_current_operator_pair_not_bound` (baseline4) from saved evidence only.
+
+
+## 2026-10-17 08:41 МСК — M12 operator-pair cause review
+
+- Reviewed cause `m12_current_operator_pair_not_bound` on `fix/v3-missing-route-prices-2026-10-15`, source head/tree `8582031d0565ebcb6ecd4982a12bfa389ec411ba` / `7fb29e51a6ce5dac755b502684278894034e868c`, PR14 draft. Latest branch workflow #39003295081 success on source head; no active writer at review start.
+- Checked 4 cases across 8 date profiles and 12 saved evidence occurrences (4 live, 4 same-date replay, 4 weekend replay); all 12 files and all 4 captures exist in the tree. All four M12 outputs are `amount=null` / `pricingStatus=unknown` with the same explicit reason. Route spans are present; no toll-node IDs/operator pair bound.
+- The M12 RVP evidence snapshot is explicitly `CALIBRATED_PARTIAL_RVP_EVIDENCE`, has 9 anchors, and warns it is not a complete inventory. This supports a missing spatial binding cause, not a proven tariff amount. Two of the four route cases also have a separate CKAD unknown. Counts overlap.
+- Outcome: **blocked by missing reliable data**; preserved fail-closed unknown, no code/tariff changes. No new route/live/replay/test/build. Formal plan remains 18/20=90%.
+- Checkpoint/evidence: `docs/checkpoints/2026-10-17-0841-part19-m12-operator-pair-blocked.md`, `docs/checkpoints/evidence/2026-10-17-part19-m12-operator-pair-blocked.json`. Next: assess `engine_not_yet_composed` (baseline13), stored evidence only.
+
+
+## 2026-10-17T06:28:16Z (2026-10-17 09:28 МСК) — M1/M3 engine-not-composed cause review
+
+- Verified PR14 draft and branch head `2b1882159d7ef0576c7eb8c3dcb6ca13f6bd0c21`; branch Actions #39007230631 success on source head, plus known PR workflow #38959170444 success on older head; no active branch run at start.
+- Reviewed saved finding `engine_not_yet_composed`: 13 case rows, 39 live/same-date/weekend evidence occurrences; all 39 paths exist, all 13 traces and same-date parity complete, all weekday/weekend amounts null. No new route requests, replays, tests or builds.
+- This parent label mixes causes. M3: 10 traversal-proven cases, but category-I rates in the national registry are verified through 2026-10-10 only; saved profiles depart 2026-10-15 and 2026-10-17. Gate inventory does not verify fare version and shadow pricing requires complete three-gate proof; M1/M3 are diagnostic-only in current route composition. Status: **blocked by missing reliable data**. User-facing full amounts must remain unknown/null.
+- M1/OD-labeled: 3 rows; 2 overlap `odintsovo:unpriced`, 1 overlaps `expected-road-not-proven`. Status for this subcause: **deferred** pending OD-specific review. Parent aggregate status: **deferred**. No independent bug or tariff inferred.
+- Formal progress remains 18/20=90% only. Details/evidence: `docs/checkpoints/2026-10-17-part19-engine-not-yet-composed-review.md`, `docs/checkpoints/evidence/2026-10-17-part19-engine-not-yet-composed-review.json`. Next: saved-evidence review of `odintsovo:unpriced` baseline2 and overlap check.
+
+
+## 2026-10-17 10:41 МСК — Part19 Odintsovo route-to-PVP cause review
+
+- Verified branch/PR14 at source head `bdf620e441d2cbe287a348bd388d28e188106341`; branch and PR heads matched. Run #39010035622 completed success on this head; no active branch writer before review.
+- Reviewed saved finding `odintsovo:unpriced`: 2 route cases (Golitsyno–Rublevo and reverse), 4 unique route/date profiles (weekday and weekend), 6 saved live/same-date/weekend evidence occurrences; all six files exist and their blob SHAs are recorded in the evidence file.
+- Both selected-route traces prove Northern Odintsovo Bypass traversal. The current official category-I base-fare candidate table exists, but route-product boundary is “operator direction/time pair to audit”; tariff selection report states runtimeApproved=false/integration pending. Exact directed route-to-PVP binding is missing, and M1/unmapped paid-booth components also remain unknown.
+- Outcome: **blocked by missing reliable data**. Whole toll totals stay null; no amount inferred, no code or tariff values changed. No new live/replay/test/build.
+- Aligned the stale `arc_not_proven` top-level queue status with its already saved completed blocked outcome. Updated current handoff and next action; Part19 remains IN_PROGRESS for synthesis/status reconciliation before Part20.
+- Checkpoint/evidence: `docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md`, `docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json`.
+
+
+## 2026-10-17 11:11 МСК — Part19 canonical outcome synthesis
+
+User/project decision: follow AGENTS.md and WORKFLOW_RULES.md; keep only one canonical disposition per cause and avoid repeating completed M11 checks. Before edit, verified branch and PR14 point to 2e816d7a744298b5e7a8aa70d33c4b5c6a5de41f; branch Actions #39014574620 success on that source head; no active branch writer. Inspected the current 13-record Part19 queue and relevant saved checkpoints. Added canonicalOutcome/canonicalOutcomeRationale to each existing record while preserving prior status, history, case IDs and source evidence. Outcome counts: fixed_and_verified 1 (A-289 component binding only, not full trip/fare confirmation), not_reproduced 1, blocked_by_missing_reliable_data 8, deferred 3. Four named M11 cases are present in the saved eight-case boundary exception review and remain blocked by the same missing directed entry/payment boundary; not rerun. No new live/replay, tests/builds, code or tariff data. Marked Part19 done; plan advances to 19/20=95%; Part20 is next after verifying this commit's Actions. See docs/checkpoints/2026-10-17-111116-part19-outcome-synthesis.md and queue outcomeSynthesis. Unknown remains null; no full toll totals confirmed.
+
+
+## 2026-10-17 11:51 МСК — Part20 final verification
+
+Verified PR14/branch head cfb442401a3cde9b6311026675d39484df394182; post-Part19 Actions #39016525904 completed success on this exact commit. Both verify and live_probe jobs passed. Verified tests, TypeScript, Next build, provider geometry/per-leg-times, Photon suggestions, the fixed 50-settlement route corpus, and six Yandex screenshot-route comparisons. Parsed the Part19 queue (13 entries with canonical outcomes 1 fixed-and-verified component binding, 1 not reproduced, 8 blocked, 3 deferred), plan progress and states, and checked the handoff link targets against the repository tree. Four previously queued M11 cases were already in the saved eight-case boundary review; no duplicate run. No tariff amounts changed or confirmed by these checks; unknown remains null and full trip totals remain unconfirmed. Marked formal Part20 done (20/20=100%); this is only the agreed formal route-audit plan, not completion of the broader calculator. See docs/checkpoints/2026-10-17-115129-part20-final-verification.md. Verify the post-save workflow/head before disabling the scheduled continuation.
+
+## 17.10.2026 12:39 МСК — от завершённого аудита к конкретным решениям
+
+Новый запрос пользователя: после успешного финального run перейти к разбору аудита и поиску решений. Run39019024457 completed/success на 69e7933257f5ac0d2ee42dd0bfbd258fcb1eb74f; PR14/head совпали, активных branch runs нет. Старое автопродолжение отключено (update подтвердил is_enabled=false). Разобраны реальные различия по дорогам, записан experiments/nationwide-tolls/POST_AUDIT_SOLUTIONS_2026-10-17.md. Выбрана точная цель ЗСД: не общая зональная цена, а cash/card collection span сохранённого КАД-юг→Екатерингофка. Повторно извлечена норма6.2.17 о связанном проезде Автомобильная↔Благодатная по чеку; это запрещает слепую сумму физических шлагбаумов. Проверен zone1-only код и уже существующая независимая mainline58↔679 логика M11, чтобы не предлагать ненужную полную перепись 21 координаты для доказанного полного вектора. Свежие запросы общих страниц whsd/nch дали502/403; транспондерные/непервичные цены не использованы. Тариф не активирован, runtime код не менялся, новых route cases/live/capture/replay/manual tests/builds0. Формальный план100% не является процентом новой работы. Checkpoint docs/checkpoints/2026-10-17-123911-post-audit-solutions.md, evidence docs/checkpoints/evidence/2026-10-17-post-audit-solutions.json. Следующий шаг — точная первичная схема коллекции ПВП5 и проверки исключений, не повтор всех76.
+
+
+## 17.10.2026 13:36 МСК — ЗСД primary scope STARTED
+
+Новый прямой запрос «Делай». PR14/head ea14eb19953d362cb22b2377b32f83203afba6ca, Actions39022053725 success. Сохранён docs/checkpoints/2026-10-17-133600-zsd-primary-scope-STARTED.md перед скачиванием и визуальным разбором первичных PDF. Прямые публичные запросы whsd.ru успешны200; прежний502 ограничивался web retrieval. nch-spb403 без обхода. Уже сохранённая HTML-таблица доступна, готовая привязка цены конкретного пути пока не доказана. Выявлены точные PDF96/32_1/Pravila0926. Новых маршрутных запусков0; цена/код не менялись.
+
+
+## 17.10.2026 13:53 МСК — ЗСД КАД-юг→Екатерингофка, один finished vector
+
+Выполнено прямое «Делай». После STARTED fbc7be2 и source CI39025484086 success получены первичные PDFs владельца96/32_1 и правила с01.10.2026; прямой owner HTTP200, не обход nch403. Новое направленное включение съезда в owner96 Annex1 снимает прежнюю конкретную неопределённость scope; текущие зональные цены дают precomputed vector600, не operator OD receipt. OSM26ways непрерывны, toll/oneway yes; exact exit183902370 проверен первично. Новый guarded cash/card component выбирает одну готовую строку, старый zone1 сохранён. Один сохранённый capture и2offline profiles:9534/11184, missing=[], totalpriceConfirmation unconfirmed, zero new live. Focused16/16, finalfull704/704 plus quote/API pass,TS/build pass. Первые failures только sparse fixture omissions, затем exact tracked fixtures восстановлены. Первичные sources/manifest, source proof, code/tests, outputs/logs и DONE checkpoint сохранены в этом шаге. См. docs/checkpoints/2026-10-17-135300-zsd-kad-ekateringofka-fixed.md и evidence. Другие75 ZSDcases не перепроверены/не засчитаны. Следующее — проверить материальные исключения совпавшего physicalscope после post-saveCI; старый план100% не новое farecoverage.
+
+
+## 17.10.2026 14:33 МСК — Брянка: исключения нового вектора ЗСД
+
+Прямое «Дальше». Head/PR dc44185940e0da95dafa00b5718b751fb729981c, CI39026791473 success; checkout сверён. На собственном сохранённом capture SHA bb720239367689bf2c68a22c3c2277cf3c34cd48a80a3d8052464c1f68a71815 текущий компонент подтвердил26ways,12направленных witnesses, complete trace/booths и выход183902370. Два отправления дали600, три отрицательные модификации далиunknown; assertions PASS. Это1component-onlycase,2positive date checks,3negative; full replay/live0. Цена source-derived, не независимый OD-чек, whole trip не пересчитан. Накопленно2 из76cases на новой правке,74не зачтены; общая причина остаётся partial/data-blocked, другие причины не менялись. Код/источники цен не менялись; новых broad tests/build0. Checkpoint docs/checkpoints/2026-10-17-143328-zsd-bryanka-exceptions.md, evidence docs/checkpoints/evidence/2026-10-17-zsd-bryanka-exceptions.json; JSON/content/links проверяются перед connector commit/tree/head readback. NEXT после post-saveCI: Лисичанск→СПб exception check, no309rerun. Старый план20/20=100%.
+
+
+## 17.10.2026 15:01 МСК — пользователь разрешил пакет74
+
+Текущий head/PR3ae7761fc0cebccc72777f487c5af8ca0b926665, CI39029215204 success. Прямое поручение запустить74 разом; старый процент больше не выводить. Правила AGENTS/WORKFLOW_RULES/CHECKPOINT_PROTOCOL уточнены: одна разрешённая batch-единица с progress и отдельным результатом каждого случая, STARTED и один итоговый commit/readback. Inputs74 unique caseIds/capture paths/SHA из сохранённой очереди; ни один ещё не выполнен этим пакетом. STARTED docs/checkpoints/2026-10-17-150159-zsd-batch74-STARTED.md; затем current component-only2dates per capture, no live/full trip replay.
+
+
+## 17.10.2026 15:08 МСК — пакет74 завершён
+
+По прямому поручению пользователя, в соответствии с новым batch-правилом STARTED7f6e6b8a4488bc3ee0aa4ce760b727b03b57f28b. Source runtime3ae7761fc0cebccc72777f487c5af8ca0b926665, CI39029215204 success. Script check-zsd-saved-batch.mjs прочитал74точных capture (SHA matched,32691411bytes), выполнил148current component/date checks;24case×2 дали600source-derived,50case×2 unknown; errors0, complete traces/booths74. No live/full replay. Отдельные74case JSON, progress/summary/hash manifests, README12physical fingerprints, validation и логи сохранены. Итог текущей правки26/76ZSDcomponentscalculated,50unknown; все76оценены, не все исправлены/не все full totalsconfirmed. Full704+quote/API PASS,TS/build PASS. Initial audit ENOENT sparse fixture восстановлен точным tracked Git object; bulkblobfetch bad revision заменён bounded git show4readers без смены авторизации, всеSHAverified. Runtime/тарифы не менялись. DONE docs/checkpoints/2026-10-17-150839-zsd-batch74-DONE.md. Перед итоговым remote update исключить activeCI39030982703, затем connector expected-parent/non-force/tree/head readback. NEXT primary directed scope representative9 Arzamas→Prim, остальные8exceptions; не50новыхlive.
+
+
+### Наблюдение о задержке CI при сохранении
+
+Служебный STARTED-коммит повторно запустил `.github/workflows/special-territory-policy.yml`, включая неизменённые широкие сетевые проверки. У live_probe timeout-minutes60 и continue-on-error true; `scripts/address-search-live-probe.mjs` последовательно перебирает13queries и вызывает fetch без явного AbortSignal/timeout. Поэтому завершённый локальный batch сам по себе не означает завершение побочного CI. Во время ожидания run39030982703 наблюдались переходы provider geometry → Photon →50-settlement corpus →6Yandex comparisons: признаков остановки runner не установлено. Runtime/тарифы не менялись. Это отдельная конкретная причина избыточных ожиданий; её оптимизация — ограниченный timeout и запуск live только при изменении влияющих файлов, с сохранением обязательного verify. В данном пакете workflow/пробы не изменялись.
+
+
+# ЗСД: группа из 9 случаев, съезд к Богатырскому / Планерной
+
+17.10.2026, 15:30 МСК. **Анализ DONE; тариф BLOCKED_BY_MISSING_RELIABLE_DATA.**
+
+## Исходное состояние
+
+Remote и PR head: `567090bf34db7ba9dc343469398d53682048bb48`, tree `112dc32686802a203b599f8df69731e922f39722`. Единственная рабочая ветка `fix/v3-missing-route-prices-2026-10-15`; PR №14 открыт и остаётся draft. При начале Actions run `39031962573` был in_progress: verify success, live_probe выполнял Photon suggestions. На повторной проверке 15:31 МСК оба job completed/success; условия для единственного remote writer выполнены. В последних шести runs других активных нет. Ветка не обновлялась; merge, Production, Android и автоматизаций нет.
+
+Создан собственный checkout текущей сессии от точного remote head. Старый checkout был detached на другом commit с тем же tree. Попытка shared clone не прошла из-за отсутствующего promisor object; восстановление через общую базу объектов и точные commit metadata GitHub успешно: локально воспроизведён SHA567090bf… и сверено дерево. Не выполнялись push или настройка credentials. При извлечении HTML отсутствовал bs4; успешно использована стандартная библиотека Python.
+
+## Представитель и исключения
+
+Представитель: `max-chain-m12-ckad-m11-zsd-arzamas-to-prim`, fingerprint `0c0e778a8622dfc6a3f57032f70fd16bc29fa010f3785c0215b8bb7ffae9c6c4`.
+
+Проверены все 9 capture и 9 sealed результатов по SHA256. На собственном dense trace каждого подтверждены восемь упорядоченных свидетелей въезда / южного ПВП / северного съезда: отклонение ≤25 м, сегменты ≤500 м; complete trace и booth coverage; два направленных ПВП `933974870→1766158781`; направленная цепь съезда `721839717→165031082→252148968→355755817`. Ответвление Екатерингофки `183902370` отсутствует. **Среди остальных восьми случаев материальных исключений нет.**
+
+Физический въезд: КАД (юг), на север. Физический съезд: к **Богатырскому проспекту / Планерной улице** через ПВП1766158781. Название контрольной точки «Приморский проспект» не является названием этого съезда. Исходная OSM topology имеет destination:street=Богатырский проспект;Планерная улица и непрерывную направленную цепь. Она доказывает идентичность дороги, но сама не определяет сбор.
+
+Первичные определения зон `96.pdf` (приложение1), текущие cash/card ставки `32_1.pdf`, правила6.2/6.3 и сохранённая topology прочитаны; восемь source-manifest SHA проверены. Владелец указывает направленный въезд КАД-юг в зоне1, центральный путь в зоне2 и съезд Богатырского со стороны Приморского в зоне3. Однако в этих источниках не найдена **явная направленная привязка оплачиваемого набора зон к связанной паре ПВП** данного законченного проезда. Общая ставка300руб/зона и число ПВП не заменяют эту привязку.
+
+Пункт6.2.17 описывает чек для Автомобильная↔Благодатная: первый ПВП, сохранённый чек, до60мин. Текущая пара КАД-юг→Богатырский/Планерная иной области; автоматически распространять льготу по чеку нельзя. Общая обязанность сохранять чек — п.6.2.8. По п.6.3 модуль показывает стоимость за зону(зоны), но конкретной таблицы соответствия для пары здесь нет.
+
+**Итог причины для группы: заблокирована отсутствием надёжных данных.** Не хватает первичной направленной схемы/таблицы владельца, определяющей область и цену (или доказанный набор оплачиваемых зон) для проезда через933974870 и1766158781, включая зачёт/перекрытие оплаты, если он применяется. Альтернатива — операторский cash/card OD-расчёт или чеки именно этой пары, направления и класса без транспондера. Готовый вектор600руб заканчивается на Екатерингофке; здесь его не применяли. Новую цену900/1200 и сумму по шлагбаумам не назначали. Исторический600-вектор не переаудирован.
+
+Два ограниченных свежих обращения к страницам тарифов и правил владельца через web вернули502 Bad Gateway. Два поисковых вызова не дали релевантной первичной привязки; поиск остановлен, новые маршруты не запрашивались. Подробное source review: `experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/source-review.json`.
+
+## Переход к следующей группе
+
+После блокировки рассмотрен **только представитель** следующей группы из7: `max-chain-m12-ckad-m11-zsd-kazan-to-sest`, fingerprint258ee8abe705…. Его capture SHA, sealed result SHA, прежняя scope-запись, complete trace/booths и инструкции съезда проверены. Фактически это КАД-юг→КАД-север через1766158812, не продолжение доЕ18«Скандинавия», несмотря на to-sest вID.
+
+Для представителя также нет надёжного готового вектора: недостаёт первичной направленной области сбора на1766158812 и точной привязки варианта северного съезда. Только один представитель проверен; **остальные шесть не проверены, группа не закрыта**. Доказательства: `experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/next-group-representative.json`.
+
+## Фактические проверки и счётчики
+
+`python experiments/nationwide-tolls/scripts/review-zsd-planernaya-group.py` — exit0: checkedCases9, exceptions0, newPricedComponents0. Скрипт выполняет только краткую offline-проверку границ и контрольных сумм. STARTED.json, отдельные cases/*.json, progress.json и summary.json сохранены локально; долгий пакет или новый component replay не запускались.
+
+Группа9: один представитель + восемь проверок исключений; ноль новых рассчитанных компонентов; девять unknown; ноль подтверждённых полных тарифов. Следующая группа7: один представитель, шесть непроверенных; ноль новых цен. Новых component/date запусков0; переиспользованы18 sealed результатов при неизменённых source hashes. Новых live-маршрутов/full replay0. Baseline остаётся26 рассчитанных ZSD-компонентов /50 unknown из76 оценённых случаев. Полные тарифы поездок этим шагом не подтверждены.
+
+Runtime, тарифные данные и старые результаты не изменены. Новый full build / unit gate не запускался. Python syntax, JSON, ссылки и контрольные суммы проверяются в validation.json; результаты предыдущего CI не выдаются за новый локальный запуск.
+
+## Сохранение и точный следующий шаг
+
+Checkpoint, WORK_STATE, NEXT_STEPS, WORK_LOG и очередь подготовлены к одному итоговому сохранению. Пока CI был активен, ветка не обновлялась. После его завершения оба job success; перед переносом повторно сверяются run status, branch/PR head и active runs. Перенос: один GitHub connector commit с expected parent, non-force и exact tree/blob/head readback. Если head изменился, сначала согласовать различия; force не применять. Фактический новый commit определяется readback после записи, без самоссылочного SHA в этом файле.
+
+После сохранения: обратная группа `1e954c437e46`, представитель `max-chain-m12-ckad-m11-zsd-sest-to-kazan`; сначала её сохранённые capture/primary evidence. Не повторять74/76/309 маршрутов и не искать заново общие ставки300руб без новых данных об области сбора. К двум текущим блокировкам возвращаться при появлении конкретной первичной привязки.
+
+Дополнительная проверка15:32МСК: воспроизведение скрипта в отдельном output-dir прошло exit0; case JSON идентичны9/9, summary идентичен без timestamp. Это повтор тех же9 случаев, не дополнительные случаи. Python syntax, JSON, ссылки короткого handoff, hashes и git diff --check PASS; validation.json сохранён.
+
+
+# ЗСД: оставшиеся представители, DONE
+
+2026-10-17T16:15:12.524763+03:00. Статус анализа: DONE. Итог тарифных областей: **заблокирована отсутствием надёжных данных**. Новая причина повторного заезда: **отложена до отдельного кодового блока**, точные6proof сохранены.
+
+## Входы и состояние
+
+Ветка `fix/v3-missing-route-prices-2026-10-15`, source/branch/PR head `97d165fe4d071e68d2a30b341babc16fb1c2af56`; PR14 открыт/draft. Actions39033008320 фактически completed/success при начале работы; последние3runs completed/success. Чистый checkout текущей сессии совпадал с remote. CLIpush/credentials не трогали. Main/merge/Production/Android/сообщений/автоматизаций нет.
+
+Канонический handoff указывал обратную группу1e954c437e46. Проверен представитель Сестрорецк→Казань: физически КАД-север→КАД-юг, южное направление, два направленных ПВП1766158804 и933975069. Надёжного готового cash/card вектора не найдено. По тому же source-gap далее изучены только ещё не разобранные представители, без повторения9/7представителей прошлого блока и без rerun74/76/309.
+
+## Что выполнено и зачем
+
+9 новых представителей соответствуют34 случаям в physical fingerprints; это не34проверки. Для каждого проверены captureSHA, sealed resultSHA, complete trace/booths, selected provider, метры и точное совпадение всей geometry с record.route.coordinates. Для OSRM берутся собственные steps/GeoJSON; для Valhalla — собственные decoded polyline6/maneuvers. После обнаружения конкретного повторного заезда добавлены5siblings той же группы; всего14уникальных фактически изученных случаев. Скрипт `experiments/nationwide-tolls/scripts/review-zsd-remaining-scopes.py`. Отдельные cases/*.json, progress/summary/STARTED сохранены как короткая offline-единица; долгих новых сетевых тестов не было.
+
+Полная таблица, первичные ссылки/SHA и ограничения: `experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/README.md`, `experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/source-review.json`, `experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json`.
+
+Во всех6случаях5733 подтверждён selected trace motif: северное ЗСД ответвление→ПВП1766158781→городские links151490266/355755820/192140964/784207300/784207299/355755821 с toll=false→312063993/192140957/355755818/191727240/355755819/721839718/252148969→ЗСД233006897 наюг. Вход и выход разных оплачиваемых частей разделены городским разворотом. Готовый единый обратный вектор применять нельзя. Фактическая ошибка выбора физической геометрии по правилу no-reentry доказана; числовая ошибка тарифа не заявляется, поскольку компонент ужеunknown. Исправление ещё не реализовано; отдельный следующий кодовый блок, не новая серия source-gap поиска.
+
+Группа2c00 (7случаев) входит со стороны Крузенштерна/Шкиперского, а не Екатерингофки: найден raw end_node13020687195 type=toll_gantry на351741889, toll=false. Это не доказательство бесплатности. Точный отдельный продукт/тариф развязки source-gated;6siblings этой группы не проверены. Не переносить600-вектор Екатерингофки на этот въезд.
+
+Общие ставки/направленные определения владельца сохранены и сверены по8SHA. Свежие bounded обращения: оператор403, владелец502. Поиск выдал старые operator rules/нерелевантные результаты, но не current directed collection bundle; вторичные цены не использованы. Поиск остановлен. Для восьми представителей нужны точные primary привязки оплаты к entry/exit; тарифы не назначены по количествуПВП или совпадениюназваний.
+
+## Проверки, ошибки и ограничения
+
+Первый запуск остановился после1case на OSRMGeoJSON KeyError0: скрипт ожидал encoded string. Добавлено чтение geometry.coordinates для dict; rerunexit0,14unique/6reentry. Ошибка и восстановление сохранены. Эксперимент прямой привязки trace end_shape_index к input.shape отброшен: matched trace индексы отличаются от входной формы; пробные координаты не попали в решения/тарифы. Не считать это доказательством runtimeошибки координат.
+
+Выполнено:14captureSHA и14sealedSHA,14selectedgeometry identity. Воспроизводимость, syntax, JSON, ссылки, resultSHA иgitdiff фиксируются в validation.json. Full unitgate/TS/Nextbuild заново не запускались; runtime/тарифы/старыеcases не менялись. ИсходныйCI39033008320 success; post-saveCI проверять отдельно, не приписывать ему успех.
+
+Счётчики:9представителей+5исключений=14новых уникальных boundaryreviews. Накопленно24из50unknowncases получили разборграниц,11из11physicalgroups представлены;26siblings непроверены. Новыхcomponent/date проверок0;28старыхprofile records использованы безпересчёта. Новыхfullreplay/live0. Новыхрассчитанныхкомпонентов0; подтверждённыхполныхтарифов0. Baseline26priced/50unknown неизменён.
+
+## Сохранение и NEXT
+
+Обновлены короткий WORK_STATE, NEXT_STEPS, append-only WORK_LOG, PART19_FINDINGS_QUEUE.postAuditSolution.directedGroupReviews и новая postAuditGeometryFindings. История сохранена. Перед переносом проверитьhead/PR/activewriter; один non-force connector commit с expectedparent97d165fe…, exact local/remote tree, всеchangedblobSHA иbranch/PRreadback. ФактическийSHA итоговогокоммита определяетсяпослезаписи, безсамоссылки. ПриактивномCI веткунеобновлять.
+
+Следующийкодовыйблок: устранение подтверждённого выхода/повторногозаезда5733 в выбранном маршруте. Сначала trace transport/route selection/validation контракты и мотив из6capture; затем один узко ограниченный guard и focused отрицательные/положительные тесты, обязательныйgate/build; не подменять один fastest маршрут более медленным бесплатным. Пока sourceцены unknown, их не подставлять. Остальные26siblings не запускать безготового общего решения/новойпричины.
+
+Фактическая финальная проверка: повтор в отдельном output-dir exit0;14caseJSON идентичны, summary идентичен безtimestamp. Python syntax, JSON, hashes14+14, первичные8SHA, handoff links, очередь11groups/24checked/26unchecked иgitdiff PASS. Это повтор техже14случаев, не новыеуникальныепроверки. validation.json сохранён.
+
+
+# ЗСД: исправление повторного заезда — STARTED
+
+2026-10-17T16:25:22.498391+03:00. Source remote/PR head `0cc2c469d5ef0385fe8446983103233ef73606a2`, tree `e8504dc0cf4d36a6cc1f3a77e37cd03b5996e9de`. Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. Run39035926910 в начале in_progress: verify success, live_probe выполняет Photon. Пока активен — remote update не выполняется. Перед сохранением этогоSTARTED проверить фактический статус/head и отсутствие другихwriters. Старые тарифные статусы и доказательства сохраняются.
+
+## Цель и ограниченная реализация
+
+Шесть capture группы5733 подтверждают один конкретный мотив: северное ЗСД→ПВП1766158781→городской разворот Богатырского/Планерной→новый южный заезд наЗСД. Нужно исключать этот физически недопустимый кандидат **до ранжирования по времени** в обеих V3 ветвях ordinary/special. Не менять V2, тарифные источники, транспондеры, main/Production/Android. Не начинать общий поиск более медленных бесплатных альтернатив.
+
+Точка интеграции найдена: `lib/v3-calculation/route-candidate.ts:isUsableRoute` уже вызывается обеими ветвями до выбора/тарификации. Добавить узкий geometry-only guard известного мотива. Он использует8упорядоченных физических свидетелей выбранной dense geometry, допуск15м, плотностьсегментов≤500м и ограничение локальной длины. Северный проезд без повторного въезда, обычныйюжныйвъезд, обратный порядок, соседняя дорога и редкий chord не должны ложно отклоняться. Это геометрические физические якоря, не OD/ETA/ценовойbenchmark.
+
+По короткому локальному предварительному анализу восемь свидетелей присутствуют у всех6исходныхValhalla маршрутов (отклонения0м); у сохранённыхобычныхOSRMответов motif отсутствует. Прежний выбор Valhalla был по меньшемуETA. После структурного фильтра ожидается обычныйOSRMкандидат с минимальным временем средиоставшихсявалидныхответов; стоимость не участвует вранжировании. При отсутствии допустимыхкандидатов вернуть существующую ошибкумаршрутизации, не продавать invalidroute и не возвращатьнулевой тариф. Чужойtrace старойValhallaгеометрии не переносить наOSRM.
+
+## Входы и проверка
+
+Точные6capture/SHA перечислены в `experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json` и соответствующихcases/*.json. Входной fingerprint5733fbb44c1c68eac1b81aa40e7e08b59201621562b0c133671ae51437d09a34. Результаты каждого нового guard/selection исключения, SHA, progress и сводку сохранить в `experiments/nationwide-tolls/checks/2026-10-17-zsd-no-reentry`. Фикстуры и физические witnesses — новыйsource snapshot ЗСД с provenance; runtime читает только небольшой geometry asset.
+
+План проверок:6старыхbad геометрий+6собственных обычныхOSRMкандидатов, несколько известных непрерывныхnegativecontrols; end-to-end mocked V3ordinary иspecial API (безlive), проверка отсутствияbypassзапросов и переноса чужогоpricingevidence; затем обязательные fullaudit+quote/API, TypeScript иNextbuild. Новыхlive и полногоauditreplay74/76/309 не запускать. ЕслиOSRMgeometryвыбрана, но её новыйtrace вsavedcapture отсутствует, оставить tariffunknown; недостающие данные не объявлятьнулём или готовымполнымитогом.
+
+## Восстановление
+
+До долгихтестов этотSTARTED должен быть достижимизразрешённойветки и readbackпроверен. Результаты ещё не выполнены и не засчитаны. В случае прерывания прочитать этотcheckpoint, проверитьremotehead/CI иprogressдиректории; не повторять исходныйrootcauseaudit. По завершении — одинDONE/FAILEDcheckpoint софактическимивыходами, WORK_STATE/NEXT_STEPS/WORK_LOG/queue и exact tree/blob/headreadback. НовыйCI послеSTARTED можетидтипараллельно локальнойработе; финальныйremoteupdate только послеотсутствияactive/queuedрелевантныхruns.
+
+ИсходныйCI39035926910 передSTARTED completed/success; localdraft guard/tests подготовлен беззапускапроверок, будетотдельнымDONEкодовымсохранением.
+
+
+# V3 ЗСД: защита от повторного заезда — DONE локально
+
+17.10.2026, 16:38 МСК. Причина `zsd:selected-route-reentry`: **исправлена и проверена в точной области шести сохранённых случаев**. Итоговый remote commit ещё требует записи и readback после прекращения активного CI.
+
+Source head: `0cc2c469d5ef0385fe8446983103233ef73606a2`. Durable STARTED: `80a15c47087199bab3d96783559fc486946b52be`, tree `f7980a092d1146f6f561c452c182b7961c0cf080`. Единственная ветка `fix/v3-missing-route-prices-2026-10-15`; PR №14 открыт/draft.
+
+## Что изменено и почему
+
+Добавлен `lib/v3-calculation/zsd-reentry-policy.ts`. Он проверяет конкретную доказанную последовательность: северное ЗСД → съезд через Планерную/Богатырский → городской разворот → новый въезд на южное ЗСД. Требуются восемь упорядоченных физических свидетелей, расстояние до собственной геометрии ≤15 м, плотность каждого местного сегмента ≤500 м и местная длина ≤4 км. Одного ПВП, конечного пункта или названия дороги недостаточно.
+
+Небольшой runtime asset: `experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-planernaya-no-reentry/geometry.json`. Capture SHA, индексы исходной геометрии, шесть случаев и четыре независимых контроля вынесены в source-manifest.json. Runtime не читает OD/ETA/ценовой benchmark.
+
+Общий V3 `lib/v3-calculation/route-candidate.ts:isUsableRoute` исключает такой кандидат **до сравнения времени**; эта функция уже используется ordinary и special pipeline. Из оставшихся обычных ответов провайдеров выбирается один с минимальным временем. Цена и наличие тарифа не влияют на выбор. Новые бесплатные/bypass-запросы не добавлялись. Если допустимых кандидатов нет, возвращается существующая ошибка маршрутизации.
+
+На каждом из шести собственных capture прежний более быстрый Valhalla нарушает no-reentry и отклонён; собственный обычный OSRM допустим и выбирается среди оставшихся ответов. Это исправление известного мотива, **не общий детектор всех повторных заездов России**. V2, тарифные источники, API-контракт и правило тарификации по отправлению не менялись.
+
+## Проверки
+
+`lib/v3-calculation/zsd-reentry-policy.test.ts`: шесть bad/шесть обычных OSRM, четыре непрерывных negative controls, source hashes, обратный порядок, соседний путь, chord, разрыв и отсутствие допустимого кандидата.
+
+`scripts/v3-route-selection-audit.test.ts`: ordinary API выбирает OSRM и проверяет только его собственные точки; special API применяет тот же допуск; единственный запрещённый кандидат даёт502 без тарификации. Все три API-регрессии ожидаемо падают при отключении только guard через внешний тестовый loader. Production-файлы для mutation не изменялись.
+
+`experiments/nationwide-tolls/scripts/check-zsd-no-reentry.mjs`: воспроизводимый пакет шести candidate checks с отдельными JSON, progress и SHA summary, плюс четыре контроля; без запросов routing/tracing/fare.
+
+Фактические результаты:
+
+- Focused24/24 PASS; mutation: exit1/fail3 ожидаемо, проверка существенности регрессий PASS.
+- Full audit721/721 PASS; quote/API checks PASS.
+- TypeScript exit0; targeted ESLint exit0.
+- Next build exit0: compile/TS PASS, static16/16.
+- Candidate batch:6/6 случаев, шесть отклонённых reentry-геометрий, шесть допущенных собственных OSRM, четыре неотклонённых непрерывных контроля.
+
+Первый full audit:715 pass и1 module fail из716 из-за ENOENT старой A289-фикстуры в sparse checkout. Восстановлены три точных tracked capture из Git objects, blob SHA совпали; повтор прошёл721/721. Initial failure, recovery и оба лога сохранены. Первый focused log пуст при exit0; явный reporter24/24 и full audit проверены. После STARTED первый PR readback ещё видел прежний head при уже обновлённой ветке; повтор подтвердил80a15c…/draft/tree/шесть blob, повторный writer не запускался.
+
+Зависимости скопированы из имеющегося локального node_modules в собственный checkout без install/network и изменения lockfile. Итоговые JSON/hash/link/diff-проверки — validation.json.
+
+## Счётчики и ограничения
+
+Шесть уникальных исходных случаев;12 проверенных candidate-геометрий; четыре самостоятельных negative controls. Новых live provider requests и full-trip replay0. Новых рассчитанных тарифных компонентов и подтверждённых полных тарифов0. Mock HTTP в тестах не является live-данными.
+
+Полные цены для новых OSRM-геометрий не пересчитывались. Старый trace Valhalla нельзя переносить на новый OSRM: mocked API подтверждает запрос только собственных точек выбранного OSRM и unknown при недоступном новом trace. Исторический baseline26 priced/50unknown не является пересчитанным покрытием новых выбранных геометрий.
+
+## CI и сохранение
+
+Исходный run39035926910 completed/success перед STARTED. Post-STARTED run39036931767: verify completed/success; необязательная широкая live_probe ещё активна при подготовке этого checkpoint. Отмена не выполнялась: в connector нет cancel-команды; пользователь уведомлён. CLI credentials и browser fallback не пробовали. Дождаться фактического прекращения перед remote update. Новый code CI не выдавать за успешный по локальным проверкам.
+
+Обновлены append-only WORK_LOG, короткие WORK_STATE/NEXT_STEPS и geometry finding в очереди. Пути результатов: `experiments/nationwide-tolls/checks/2026-10-17-zsd-no-reentry/`. Перед записью проверить head/PR/active writers; перенос одним non-force connector commit с expected parent80a15c… и точными tree/blob/head readback. При изменении head сначала readback/reconcile. Main, merge, Production, Android, сообщений и автоматизаций нет.
+
+NEXT: после сохранения проверить CI нового кода. При продолжении pricing получить собственный selected OSRM trace одного представителя, поскольку геометрия действительно изменилась. Source collection gaps остаются unknown. Не повторять74/76/309 и26 siblings без общего решения.
+
+Финальная проверка перед записью 2026-10-17T16:46:26.789689+03:00: run39036931767 завершил verify иlive_probe completed/success. Отмена не выполнялась. Активныхзаданий исходногозапуска больше нет; разрешена итоговаязапись сexpectedparent80a15c…. Новыйpost-saveCI проверятьотдельно.
+
+При финальном staged diff --check обнаружены только trailing whitespace/CR в исходных build/mutation логах. Точные исходные байты сохранены в build.raw.log.gz и mutation-expected-failure.raw.log.gz (SHA и обратная распаковка проверены); печатные .log нормализованы по пробелам/концу файла, validation обновлён. Код не менялся, тесты не перезапускались. Полный staged diff к STARTED проверяется повторно перед единственным итоговым remote commit.
+
+
+# Собственный trace OSRM — DONE
+
+2026-10-17T17:28:10.010625+03:00. Разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. Source/code head `a49470b7b9ebf4065c44890bc5e516a74dbe0166`; CI39038119987 фактически completed/success. Durable STARTED `dbb5a1ef669e3ce5179d35b59f22378602b766c8`, tree6042eb4100736f0e1989fef87c7cebd0d5781c0f. Точные head/tree/два blob и PR draft проверены readback.
+
+## Причина и результат
+
+После исправления повторного заезда старый Valhalla trace неприменим к выбранному OSRM. Для одного `pair-m11-zsd-prim-to-moscow` восстановлены собственные OSRM metadata из записанного ответа: 715622 м / 30963 с. Valhalla отклонён. BRouter3D не принимается существующим контрактом, а его диагностическая 2D-проекция тоже содержит физический повторный заезд. OSRM выбран по ETA среди допустимых обычных ответов; цена в выборе не участвует.
+
+Единственный новый live map-matching: 6/6 HTTP200, полный trace и booth coverage, failed chunks0. Все точки запросов принадлежат OSRM. Законченный проезд ЗСД: Благодатная → КАД-юг к Пулковскому, точные318102347/375574651 и упорядоченный exit proof. Семь source SHA проверены, включая первичные приказы96/32_1 и правила. Применим существующий готовый вектор зоны1 за300 ₽. Цена600 Екатерингофки и зачёт по чеку другой пары не переносились. Вектор рассчитан по первичным данным; независимого OD-чека нет.
+
+Итог для представителя: **исправлена и проверена** собственная привязка и расчёт компонента ЗСД после замены маршрута. Геометрическое исправление всех шести сохраняет fixed_and_verified; цены остальных пяти новых маршрутов не проверены. Проверен один случай, рассчитаны четыре компонента (ЗСД1/300), подтверждённых полных тарифов0. Составной расчёт5424 на отправление2026-10-15T09:00:00+03:00 имеет priceConfirmation=unconfirmed. Исторический26/50 не является пересчитанным глобальным покрытием новых геометрий.
+
+## Файлы и проверки
+
+[Полный отчёт](../../experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/README.md), capture.json.gz, selected-route.json.gz, шесть raw requests, STARTED/progress/result/boundary-proof/validation и логи. Скрипты trace-selected-zsd-osrm.mjs и check-selected-zsd-osrm.mjs сохраняют raw и progress, ограничивают сеть trace endpoint /12attempts/120с и блокируют продолжение при terminal error. Offline-mode строго проверяет точные request bodies и результат. Runtime и тарифные векторы не менялись.
+
+Выполнено: два node--check PASS; один offline pricing replay нового capture точно совпал, misses0 и новой сети0; семь source hashes, шесть копий raw responses и собственные route/geometry SHA совпали; пять отрицательных проверок PASS; диагностическая 2D-проекция BRouter подтвердила повторный заезд. Новых routing-запросов0, старых replay74/76/309 нет. Для новых скриптов, по обязательному правилу AGENTS после кода, gate повторён: 721/721, quote/API, TypeScript и Next build16/16 PASS. Точные stdout сохранены gzip без изменения байтов; required-checks.json содержит exit codes и время. Runtime не менялся.
+
+## Сохранение и следующий шаг
+
+Post-STARTED CI39040459995 при готовности случая ещё выполнял необязательную широкую live_probe; обязательный verify completed/success. Операция ЗСД закончена: это ожидание CI. До прекращения активного CI ветку не обновлять. Перед одним итоговым non-force connector commit проверить head/PR/CI, expected parentdbb5a1ef…, затем точные tree/blob/head. Результат не считать сохранённым в remote до переноса. WORK_LOG дополнен, короткие WORK_STATE/NEXT_STEPS и очередь обновлены. Main/merge/Production/Android, сообщений и новых автоматизаций нет.
+
+NEXT после durable DONE и актуального CI: один ограниченный пакет остальных пяти новых OSRM с собственными geometry/metadata/trace. Повторно использовать новый raw только при идентичном request payload, а не общем ПВП. Группа9 и другие непривязанные области сбора остаются BLOCKED; общий поиск тех же тарифов не повторять.
+
+Финальная проверка перед сохранением 2026-10-17T14:36:20.852653+00:00: branch/PR headdbb5a1ef… совпали, PR14 open/draft; CI39040459995 completed/success, verify и live_probe completed/success. Пять последних запусков завершены. Ожидание CI закончилось; разрешена одна итоговая non-force запись с expected parentdbb5a1ef…. Новый post-save CI проверяется отдельно.
+
+
+# Пять изменившихся OSRM ЗСД — DONE
+
+17.10.2026 17:57 МСК. Разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. Source `8fecbab5245fed3b7bff644eb0ccce4f2efa2c33`; CI39041543624 completed/success перед STARTED. Durable STARTED `d9a96ec04875078fefb0ec2b487dc6446ede220f`, tree `85a47e0f8bdc23224918ff9ccc39b417acf8eaf1`; head/tree/четыре blob/PR draft проверены readback. Runtime не изменён.
+
+## Законченный результат
+
+Пять оставшихся OSRM восстановлены с собственными metadata из собственных записанных ответов. Все capture SHA совпали. Valhalla и диагностический BRouter2D имеют запрещённый повторный заезд. OSRM выбран по ETA среди допустимых обычных кандидатов; цена в выборе не участвует. Новых routing-запросов нет.
+
+Все пять trace и booth coverage полные. Основных chunks41, дополнительно два вызова одного локального trace М-4: всего43 обращения,27 точных reuse,16 новых HTTP200,20 различных использованных raw-ответов. Ошибок и retry429 нет. У всех законченный scope Благодатная → КАД-юг к Пулковскому: собственный gate318102347/375574651, полный набор zone1 ways, направленный exit proof. Семь source SHA, включая owner96/32_1/правила, проверены. Применён готовый вектор зоны1 за300 ₽. Цена не назначена по общему ПВП;600 Екатерингофки и receipt credit другой пары не переносились. Независимого OD-чека нет.
+
+Причина ЗСД для пяти заменённых геометрий **исправлена и проверена**. Проверено пять случаев, рассчитано19 компонентов, включая пять ЗСД; подтверждённых полных тарифов0. Два составных расчёта к Воронежу7254 имеют статус unconfirmed. Три полных итога остались unknown; известные subtotal4494/4494/300 не выданы за полную цену. Вся поездка тарифицируется по отправлению15.10.2026 09:00 МСК, легковой, cash/card.
+
+Вместе с предыдущим представителем: все шесть изменившихся OSRM имеют собственный полный trace и ЗСД300. Рассчитано23 компонента; три составных расчёта и три unknown; подтверждённых полных тарифов0. Предыдущий представитель не пересчитывался. Исторический baseline26/50 не объявляется пересчитанным покрытием всех76.
+
+## Доказательства и проверки
+
+[Подробный отчёт](../../experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/README.md), inputs-plan/STARTED/progress/summary, отдельные route/capture/result и raw responses в том же каталоге. Runner trace-zsd-osrm-replacements.mjs сохранён до сети; новые запросы допускаются только к trace_attributes, максимум35 attempts/180с, terminal circuit, точный URL/method/body cache. Проверяющий check-zsd-osrm-replacements.mjs не использует сеть.
+
+Выполнено: строгий offline replay пяти результатов точно совпал, misses0/unused0/network0; независимая проверка пяти собственных геометрий и границ,20 raw и семи source SHA;15 отрицательных проверок PASS. Синтаксис двух скриптов PASS, обязательный audit721/721, quote/API, TypeScript и Next build16/16 PASS. Точные stdout сохранены gzip без изменения байтов, exit codes — required-checks.json. Старые74/76/309 не повторялись, широких ручных live-проб нет.
+
+## Остаток и сохранение
+
+Независимые причины отложены: М-12/ЦКАД у двух новых маршрутов (`m12_current_operator_pair_not_bound`, `ckad_east_arc_not_proven`); М-11 Торжка (`only_one_verified_boundary_crossing`, неопознанный узел3183012434 на way795246101). К ним нельзя переносить тарифы старого Valhalla. Следующий ограниченный блок — точная привязка съезда Торжка по сохранённому capture и готовым источникам, без нового routing. Исходные owner collection gaps других групп ЗСД остаются BLOCKED отдельно.
+
+Post-STARTED CI39042535356 при готовности пакета ещё активен, verify успешен. До прекращения active/queued CI ветку не обновлять. Это ожидание широкой live_probe, а не работа пакета. WORK_LOG дополнен, короткие WORK_STATE/NEXT_STEPS и очередь обновлены. Перед одним итоговым non-force commit проверить branch/PR/CI с expected parentd9a96ec0…, затем точные tree/blob/head readback. Новый post-save CI проверять отдельно. Main/merge/Production/Android, сообщений и новых автоматизаций нет.
+
+Во время ожидания CI выполнена только безопасная read-only подготовка следующего блока: p258/Будово присутствует в операторском списке точек, но facility p258 отсутствует в текущем spatial snapshot. Узел3183012434/795246101 — кандидат, привязка не доказана и цена не назначена. Точные источники и SHA сохранены в torzhok-followup-notes.json; это не новый выполненный pricing case и не исправление М-11.
+
+Финальная проверка перед сохранением 2026-10-17T15:05:37.441302+00:00: branch/PR head d9a96ec04875078fefb0ec2b487dc6446ede220f совпали, PR14 open/draft; CI39042535356 completed/success, verify и live_probe completed/success. Все пять последних runs завершены. Ожидание CI закончено, разрешена одна итоговая non-force запись с expected parent d9a96ec0…. Новый post-save CI проверять отдельно.
+
+
+# М-11 Торжок p258 — DONE
+
+17.10.2026 20:34 МСК. Source `5281fa019eda95128035be5a0a1d2d1d95f34425`; durable STARTED `5b000b5ff6220ffab307b835feabb7764a661b89`, tree `8b867023f6299b27e3aca13e8abb8964e948392b`. Единственная ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 draft. STARTED head/tree/четыре blob/PR draft проверены. При продолжении20:24 фактические remote/PR/local head совпали с5b000b5f…, CI39044745179 completed/success. Три сохранённых первичных OSM ответа не повторялись.
+
+## Причина и решение
+
+Именованная часть М-11 на собственном OSRM к Торжку заканчивается примерно за930м до кассы. В старом spatial snapshot нетp258, узел3183012434 не классифицирован; готовая строка p679→p258 существовала, но до физической привязки не применялась.
+
+Первичные node/way/local-map подтверждают ПВП8 Торжок и соседний объект «ПВП Торжок258км» в том же комплексе, согласованный с официальной точкой258/Будово. Связная цепь семи one-way paid links, точные узлы, полный собственный trace и старый первичный gate679 сохранены. Здание не объявляется содержащим gate. Это привязка по первичным данным; независимого операторского OD-чека нет. После одной нерелевантной пары поисковых запросов поиск не расширялся. Новых routing/trace нет.
+
+Новый m11-p258-exit-boundary.ts и малый directed-exit.json проверяют полные coverage, собственные entry679/exit258 на правильных ways, strict конец у junction, девять упорядоченных свидетелей, плотность и local span. Стандартные120/500м не менялись. m11-product-boundaries.ts создаёт отдельный доказанный продукт p679→p258, route-leg-pricing передаёт собственную validation; unpriced-road-coverage узнаёт точный3183012434 как М-11. Исторические spatial/capture не менялись; обратное направление не включено. Runtime читает только физические якоря, а не case/OD/ETA/fare benchmark.
+
+Итог причины: **исправлена и проверена**. При отправлении15.10.2026 09:00 МСК:2400+94+300=2794 ₽. Три компонента, два новых; полный расчёт внутренне unconfirmed, подтверждённых полных тарифов0. Один целевой случай и один независимый сквозной контроль5424 без изменения. Три проверки отправления одного случая подтверждают сохранение четверга при достижении gate в пятницу. Публичный API возвращает priced2794 и по действующей политике не публикует внутренние confirmation fields; политика не менялась.
+
+## Проверки и сохранение
+
+[Подробный отчёт](../../experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/README.md). Focused7/7, обязательные728/728 и quote/API, TypeScript, ESLint, Next build16/16 PASS. Initial focused6/7 был ошибочным ожиданием внутреннего поля публичного API; исправлено только ожидание, исходный лог сохранён. Artifact replay сопоставил четыре точных собственных trace-запроса, validation совпала, misses/unused/network0. Raw, источники, SHA, result/runtime SHA и точные gzip-логи сохранены.74/76/309 не повторялись.
+
+По конкретным шести изменившимся OSRM теперь25 рассчитанных компонентов, четыре составных расчёта/два unknown, ЗСД6×300; подтверждённых полных тарифов0. Исторический baseline26/50 не переписан как глобальная сводка всех76. WORK_LOG дополнен, короткие WORK_STATE/NEXT_STEPS и очередь обновлены. Перед одним итоговым non-force commit проверить branch/PR/CI с expected parent5b000b5f…, затем точные tree/blob/head. Новый post-save CI проверять отдельно. Main/merge/Production/Android, сообщений и автоматизаций нет.
+
+NEXT: общий scope М-12/ЦКАД двух собственных OSRM Арзамаса/Чебоксар. Сначала сохранённые границы и готовые операторские продукты, без нового routing. Остальные owner collection blocks ЗСД сохраняются.
+
+Финальная проверка перед записью 2026-10-17T17:37:04.652520+00:00: branch/PR head5b000b5ff6220ffab307b835feabb7764a661b89 совпали, PR14 open/draft; CI39044745179 completed/success, verify и live_probe completed/success. Пять последних runs завершены. Итоговая non-force запись с expected parent5b000b5f…, новый post-save CI проверять отдельно.
+
+
+# Собственные OSRM: М-12/ЦКАД — DONE разбора / BLOCKED привязки
+
+17.10.2026 20:52 МСК. Source `54f4cccccd0d4b70ae34f063ac4db351b013acba`, tree `d28efcdc61f6bcfb3c6681cdce078a89eb2b60ce`. Единственная ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 open/draft; local/remote/PR heads совпали. CI39054871192 при начале активен; verify успешен, широкая live_probe ещё выполняется. До окончания active/queued CI remote не обновлять. Сохраняется один ограниченный offline-разбор, не новый pricing-пакет.
+
+## Общая причина и исключение
+
+Два собственных OSRM имеют идентичный направленный коридор ЦКАД от М-11 до М-12 (SHA2809793ae661e5178eda289723955fdc7fac43fe4afe3b89bcea8fe8b032fac1), а текущий адаптер поддерживает только полный М-11↔М-4. Ослабление южных anchors или тариф всего восточного проезда ошибочны. Отдельная физическая привязка к операторской паре нужна до узкого нового adapter.
+
+Выходы М-12 существенно различаются: Арзамас —22Н-0239 после420; Чебоксары —М-7 у Владимира до184. У Арзамаса direct184/281/314/392/420 не доказывают западный вход:114.748км до первого известного против интервала174→184. У Чебоксар нет двух прямых калиброванных RVP,184 находится93.291м от геометрии за её М-12 выходом. Радиус80м и другие thresholds не менялись.
+
+Координаты трёх западных рамок10782165529/11214930528/11157985901 уже сохранены в limited fixture, совпадают с обоими маршрутами и trace; отсутствует первичная привязка к операторским RVP/оплачиваемым интервалам. Калиброванных81/118/174 нет. Реальные съезды не объявлялись тарифными точками по названию города. Существующие981/2952/1239 — только lookup кандидатов, не начислены. Для северной пары ЦКАД М-11→М-12 сноска М-12–Носовихинское120мин не требуется;16 условных клеток не разрешались.
+
+Итог причины: **заблокирована отсутствием надёжных данных о физических тарифных границах**. Это законченная диагностика и подготовка точных входов, не исправление runtime и не подтверждение цены.
+
+## Выполненные проверки
+
+[Полный отчёт](../../experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/README.md), per-case JSON/progress/summary/source-hashes и воспроизводимый script. Рассмотрены2 случая:1 представитель+1 проверка исключения;19 trace occurrences/13 различных raw;45 hash entries, включая первичные PDF. Все request points принадлежат собственным маршрутам; capture/route/geometry SHA и coverage полные. Начальная ошибочная сверка текущего pricing-file с историческим SHA исправлена проверкой замороженного Git5281fa01; raw и прежние результаты сохранены. Диагностика ошибки записана.
+
+Final script syntax/review PASS; audit728/728 +quote/API, TypeScript, ESLint, Next build16/16 PASS. Процессы ограничены40с каждый, фактически10.101/2.065/1.095/8.554с; короткий локальный разбор не требовал STARTED. Новых routing/trace/primary requests0; pricing replay0; новых рассчитанных компонентов0; новых полных расчётов0; подтверждённых полных тарифов0. Сохранённый subtotal4494 каждого случая не является полным итогом. Совокупные25 компонентов/4расчёта/2unknown по шести изменившимся OSRM и исторический26/50 не переписаны.
+
+## Сохранение и следующий шаг
+
+WORK_LOG дополнен, короткие WORK_STATE/NEXT_STEPS и актуальная очередь обновлены с сохранением истории. После окончания CI39054871192 проверить branch/PR head54f4cccc… и все текущие runs, затем один non-force update с expected parent54f4cccc…, exact tree/blob/head readback. Новый post-save CI проверять отдельно. Main/merge/Production/Android/сообщений/новых автоматизаций нет.
+
+NEXT: один ограниченный первичный проход общей пары ЦКАД М-11→М-12 по точным сохранённым ways1148492112/1148492111/1189855267 и соединению916593974→916593983→916593976→1189855268; не новый routing и не повтор74/76/309. Только при доказательстве — новый узкий adapter и пакетная проверка двух собственных случаев. М-12 западные RVP и два разных выхода требуют отдельного первичного определения; отсутствие связи не лечить увеличением radius. До длительной операции — durable STARTED; при отсутствии данных остановить эту причину и перейти к другой.
+
+Финальная проверка перед записью 2026-10-17T17:54:55.476Z: branch/PR head54f4cccccd0d4b70ae34f063ac4db351b013acba совпали; PR14 open/draft. CI39054871192 completed/success (verify и live_probe), пять последних runs завершены. Ожидание CI закончено; один non-force update с expected parent54f4cccc…, новый post-save CI проверять отдельно. Exact readback — pre-save-readback.json.

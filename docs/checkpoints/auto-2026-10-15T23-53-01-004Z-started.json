@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-15T23:53:01.004Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 55,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 5,
+    "spec": {
+      "caseId": "zaporizhzhia-бердянск-kerch-center",
+      "kind": "regional",
+      "region": "zaporizhzhia"
+    }
+  },
+  "caseId": "zaporizhzhia-бердянск-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-53-01-003Z-part5",
+  "parent": "1cff7c791613bb99f85ff964940a90f04b235b9e"
+}

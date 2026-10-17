@@ -1,0 +1,579 @@
+{
+  "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+  "reviewStatus": "DONE",
+  "causeReviewStatus": "blocked_missing_reliable_boundary_data",
+  "sourceRouteSha256": "5a64525ac31cece284d759d57ea520269c3b0bbf7e14219f718d731a19c6cd2a",
+  "sourceGeometrySha256": "d29cc3c89e493835aa215f8254cad83f225a235b9803a390f734018a50a6e4a3",
+  "ownFullTraceChunksChecked": 9,
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "provider": "OSRM",
+  "ckadCorridorSha256": "2809793ae661e5178eda289723955fdc7fac43fe4afe3b89bcea8fe8b032fac1",
+  "ckadProviderEvidence": {
+    "entryFromM11": [
+      37.199624,
+      56.09007
+    ],
+    "mainlineBegin": [
+      37.219513,
+      56.09382
+    ],
+    "mainlineEnd": [
+      38.560259,
+      55.816549
+    ],
+    "ownMainlineMeters": 108889.4,
+    "m12Merge": [
+      38.551879,
+      55.815314
+    ],
+    "runtime": {
+      "candidate": false,
+      "exact": false,
+      "traversal": null,
+      "reason": "ckad_east_arc_not_proven"
+    },
+    "fullM4ArcAnchorDistancesKm": [
+      {
+        "coordinate": [
+          37.75,
+          55.32
+        ],
+        "index": 3674,
+        "distanceKm": 74.3686132733203
+      },
+      {
+        "coordinate": [
+          37.8,
+          55.35
+        ],
+        "index": 3674,
+        "distanceKm": 69.75844361864594
+      },
+      {
+        "coordinate": [
+          38.05,
+          55.39
+        ],
+        "index": 3674,
+        "distanceKm": 56.40697259580867
+      },
+      {
+        "coordinate": [
+          38.34,
+          55.53
+        ],
+        "index": 3673,
+        "distanceKm": 33.93687261906459
+      },
+      {
+        "coordinate": [
+          38.35,
+          55.65
+        ],
+        "index": 3674,
+        "distanceKm": 21.92108309864102
+      },
+      {
+        "coordinate": [
+          38.46,
+          55.72
+        ],
+        "index": 3673,
+        "distanceKm": 11.68723023871625
+      },
+      {
+        "coordinate": [
+          38.5,
+          55.9
+        ],
+        "index": 3583.49910000132,
+        "distanceKm": 2.3708269415185317
+      },
+      {
+        "coordinate": [
+          37.92,
+          56.13
+        ],
+        "index": 3300.9186931519384,
+        "distanceKm": 0.7348542907890329
+      },
+      {
+        "coordinate": [
+          37.55,
+          56.18
+        ],
+        "index": 3184.1852150995805,
+        "distanceKm": 1.374686996513159
+      }
+    ]
+  },
+  "m12ProviderEvidence": {
+    "entry": {
+      "coordinate": [
+        38.551879,
+        55.815314
+      ],
+      "stepIndex": 36,
+      "mergeFrom": [
+        38.551879,
+        55.815314
+      ]
+    },
+    "exit": {
+      "coordinate": [
+        43.566959,
+        55.50064
+      ],
+      "stepIndex": 37,
+      "exitManeuver": "turn",
+      "followingRoadRef": "22Н-0239",
+      "followingCoordinate": [
+        43.565838,
+        55.49818
+      ]
+    },
+    "selectedSpan": {
+      "beginKm": 776.186,
+      "endKm": 1126.234
+    },
+    "runtime": {
+      "boundary": {
+        "direction": "forward",
+        "firstRvpKm": 184,
+        "lastRvpKm": 420,
+        "entryOutsideRvpKm": 174,
+        "exitOutsideRvpKm": 485,
+        "entryRouteGapKm": 114.748189,
+        "exitRouteGapKm": 0.219302,
+        "entryOfficialGapKm": 10,
+        "exitOfficialGapKm": 65,
+        "calibrationMarginKm": 2.5,
+        "status": "unknown",
+        "reason": "Entry boundary does not exclude the previous official RVP"
+      },
+      "directMarkers": [
+        184,
+        281,
+        314,
+        392,
+        420
+      ],
+      "reason": "Entry boundary does not exclude the previous official RVP"
+    },
+    "calibratedProjectionEvidence": [
+      {
+        "rvpKm": 184,
+        "nearestDistanceKm": 0.006463,
+        "chainageKm": 890.934189
+      },
+      {
+        "rvpKm": 281,
+        "nearestDistanceKm": 0.005232,
+        "chainageKm": 987.983174
+      },
+      {
+        "rvpKm": 314,
+        "nearestDistanceKm": 0.005199,
+        "chainageKm": 1020.27465
+      },
+      {
+        "rvpKm": 392,
+        "nearestDistanceKm": 0.006203,
+        "chainageKm": 1097.845717
+      },
+      {
+        "rvpKm": 420,
+        "nearestDistanceKm": 0.010513,
+        "chainageKm": 1126.014698
+      }
+    ],
+    "westernGantryCandidates": [
+      {
+        "nodeId": "10782165529",
+        "coordinate": [
+          38.7402523,
+          55.8259863
+        ],
+        "operatorMarkerBindingProven": false,
+        "ownGeometry": {
+          "index": 3770.0000717438556,
+          "distanceKm": 0.00003255426613314261
+        }
+      },
+      {
+        "nodeId": "11214930528",
+        "coordinate": [
+          39.2843314,
+          55.9090383
+        ],
+        "operatorMarkerBindingProven": false,
+        "ownGeometry": {
+          "index": 4032.000141779407,
+          "distanceKm": 0.00002906295297244843
+        }
+      },
+      {
+        "nodeId": "11157985901",
+        "coordinate": [
+          40.084432,
+          56.0659396
+        ],
+        "operatorMarkerBindingProven": false,
+        "ownGeometry": {
+          "index": 4397.999746001193,
+          "distanceKm": 0.00003657366657859917
+        }
+      }
+    ]
+  },
+  "gantries": [
+    {
+      "chunk": 4,
+      "edgeIndex": 144,
+      "wayId": "1159435304",
+      "toll": true,
+      "names": [
+        "А-113",
+        "Центральная кольцевая автомобильная дорога"
+      ],
+      "endNodeId": "8120716330"
+    },
+    {
+      "chunk": 4,
+      "edgeIndex": 164,
+      "wayId": "689903688",
+      "toll": true,
+      "names": [
+        "А-113",
+        "Центральная кольцевая автомобильная дорога"
+      ],
+      "endNodeId": "6472385694"
+    },
+    {
+      "chunk": 5,
+      "edgeIndex": 31,
+      "wayId": "791008671",
+      "toll": true,
+      "names": [
+        "А-113",
+        "Центральная кольцевая автомобильная дорога"
+      ],
+      "endNodeId": "8120716327"
+    },
+    {
+      "chunk": 5,
+      "edgeIndex": 83,
+      "wayId": "1159434708",
+      "toll": true,
+      "names": [
+        "А-113",
+        "Центральная кольцевая автомобильная дорога"
+      ],
+      "endNodeId": "8120716326"
+    },
+    {
+      "chunk": 5,
+      "edgeIndex": 120,
+      "wayId": "885684087",
+      "toll": true,
+      "names": [
+        "А-113",
+        "Центральная кольцевая автомобильная дорога"
+      ],
+      "endNodeId": "11072845296"
+    },
+    {
+      "chunk": 5,
+      "edgeIndex": 143,
+      "wayId": "1000052584",
+      "toll": true,
+      "names": [
+        "М-12",
+        "«Восток»"
+      ],
+      "endNodeId": "10782165529"
+    },
+    {
+      "chunk": 5,
+      "edgeIndex": 179,
+      "wayId": "1159894199",
+      "toll": true,
+      "names": [
+        "М-12",
+        "«Восток»"
+      ],
+      "endNodeId": "11214930528"
+    },
+    {
+      "chunk": 6,
+      "edgeIndex": 20,
+      "wayId": "1159437693",
+      "toll": true,
+      "names": [
+        "М-12",
+        "«Восток»"
+      ],
+      "endNodeId": "11157985901"
+    },
+    {
+      "chunk": 6,
+      "edgeIndex": 34,
+      "wayId": "1159437926",
+      "toll": true,
+      "names": [
+        "М-12",
+        "«Восток»"
+      ],
+      "endNodeId": "8712957062"
+    },
+    {
+      "chunk": 7,
+      "edgeIndex": 6,
+      "wayId": "924184978",
+      "toll": true,
+      "names": [
+        "М-12",
+        "«Восток»"
+      ],
+      "endNodeId": "12202115855"
+    },
+    {
+      "chunk": 7,
+      "edgeIndex": 27,
+      "wayId": "1000304039",
+      "toll": true,
+      "names": [
+        "М-12",
+        "«Восток»"
+      ],
+      "endNodeId": "11583833201"
+    },
+    {
+      "chunk": 7,
+      "edgeIndex": 56,
+      "wayId": "1431118628",
+      "toll": true,
+      "names": [
+        "М-12",
+        "«Восток»"
+      ],
+      "endNodeId": "8996000050"
+    },
+    {
+      "chunk": 8,
+      "edgeIndex": 4,
+      "wayId": "1550135076",
+      "toll": true,
+      "names": [
+        "М-12",
+        "«Восток»"
+      ],
+      "endNodeId": "10090995833"
+    }
+  ],
+  "traceTransitions": [
+    {
+      "chunk": 4,
+      "edgeIndex": 112,
+      "road": "А-113",
+      "edges": [
+        {
+          "wayId": "317945847",
+          "toll": true,
+          "names": [
+            "М-11",
+            "«Нева»"
+          ],
+          "endNodeId": "3499365566"
+        },
+        {
+          "wayId": "1270188034",
+          "toll": true,
+          "names": [
+            "М-11",
+            "«Нева»"
+          ],
+          "endNodeId": "9556466755"
+        },
+        {
+          "wayId": "1148492112",
+          "toll": false,
+          "names": [
+            "А-113",
+            "Центральная кольцевая автодорога"
+          ],
+          "endNodeId": "10685667960"
+        },
+        {
+          "wayId": "1148492111",
+          "toll": false,
+          "names": [
+            "А-113",
+            "Центральная кольцевая автодорога"
+          ],
+          "endNodeId": "10685667959"
+        },
+        {
+          "wayId": "791520971",
+          "toll": false,
+          "names": [
+            "А-113",
+            "Центральная кольцевая автодорога"
+          ],
+          "endNodeId": "4697496088"
+        }
+      ]
+    },
+    {
+      "chunk": 5,
+      "edgeIndex": 126,
+      "road": "А-113",
+      "edges": [
+        {
+          "wayId": "885684084",
+          "toll": true,
+          "names": [
+            "А-113",
+            "Центральная кольцевая автомобильная дорога"
+          ],
+          "endNodeId": "8235775442"
+        },
+        {
+          "wayId": "1159429186",
+          "toll": true,
+          "names": [
+            "А-113",
+            "Центральная кольцевая автомобильная дорога"
+          ],
+          "endNodeId": "8235775429"
+        },
+        {
+          "wayId": "1189855267",
+          "toll": true,
+          "names": [
+            "А-113",
+            "Центральная кольцевая автомобильная дорога"
+          ],
+          "endNodeId": "8235775428"
+        },
+        {
+          "wayId": "916593974",
+          "toll": false,
+          "names": [],
+          "endNodeId": "8513080514"
+        },
+        {
+          "wayId": "916593983",
+          "toll": false,
+          "names": [],
+          "endNodeId": "8513080526"
+        }
+      ]
+    },
+    {
+      "chunk": 5,
+      "edgeIndex": 130,
+      "road": "М-12",
+      "edges": [
+        {
+          "wayId": "916593983",
+          "toll": false,
+          "names": [],
+          "endNodeId": "8513080526"
+        },
+        {
+          "wayId": "916593976",
+          "toll": false,
+          "names": [],
+          "endNodeId": "8513080479"
+        },
+        {
+          "wayId": "1189855268",
+          "toll": true,
+          "names": [
+            "М-12",
+            "«Восток»"
+          ],
+          "endNodeId": "8513080597"
+        },
+        {
+          "wayId": "916593991",
+          "toll": true,
+          "names": [
+            "М-12",
+            "«Восток»"
+          ],
+          "endNodeId": "8513080596"
+        },
+        {
+          "wayId": "1092379412",
+          "toll": true,
+          "names": [
+            "М-12",
+            "«Восток»"
+          ],
+          "endNodeId": "10004424339"
+        }
+      ]
+    },
+    {
+      "chunk": 8,
+      "edgeIndex": 5,
+      "road": "М-12",
+      "edges": [
+        {
+          "wayId": "1102734151",
+          "toll": true,
+          "names": [
+            "М-12",
+            "«Восток»"
+          ],
+          "endNodeId": "10090995978"
+        },
+        {
+          "wayId": "1550135076",
+          "toll": true,
+          "names": [
+            "М-12",
+            "«Восток»"
+          ],
+          "endNodeId": "10090995833"
+        },
+        {
+          "wayId": "1550135076",
+          "toll": true,
+          "names": [
+            "М-12",
+            "«Восток»"
+          ],
+          "endNodeId": "14102954884"
+        },
+        {
+          "wayId": "1550561305",
+          "toll": false,
+          "names": [],
+          "endNodeId": "10090995838"
+        },
+        {
+          "wayId": "1206479738",
+          "toll": false,
+          "names": [
+            "22Н-0239"
+          ],
+          "endNodeId": "5728630970"
+        }
+      ]
+    }
+  ],
+  "newPairIsNotEstablished": {
+    "physicalEntryPrimaryBinding": false,
+    "physicalExitPrimaryBinding": false,
+    "independentOperatorOdReceipt": false,
+    "candidateAmountApplied": false
+  },
+  "existingPricedComponents": 4,
+  "existingSubtotalRub": 4494,
+  "fullTripRub": null,
+  "newlyPricedComponents": 0,
+  "confirmedFullTripFares": 0
+}

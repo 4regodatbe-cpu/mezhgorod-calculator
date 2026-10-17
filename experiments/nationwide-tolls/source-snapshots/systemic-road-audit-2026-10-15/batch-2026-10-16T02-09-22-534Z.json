@@ -1,0 +1,86 @@
+{
+  "startedAt": "2026-10-16T02:09:22.534Z",
+  "scope": {
+    "region": null,
+    "group": "single-odintsovo",
+    "caseId": "single-odintsovo-rublevo-to-golitsyno",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "startedAt": "2026-10-16T02:09:22.537Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/live-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-629Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/2026-10-16T02-09-24-620Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-973Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-09-25-301Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "odintsovo"
+        ],
+        "provenRoads": [
+          "odintsovo"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m1, unknown-paid-road, odintsovo",
+          "m1: m1_engine_not_yet_composed",
+          "unknown-paid-road: unmapped_selected_route_paid_booth",
+          "odintsovo: М-1 · Северный обход Одинцова"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m1, unknown-paid-road, odintsovo",
+          "m1: m1_engine_not_yet_composed",
+          "unknown-paid-road: unmapped_selected_route_paid_booth",
+          "odintsovo: М-1 · Северный обход Одинцова"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m1",
+          "amount": null,
+          "reason": "m1_engine_not_yet_composed"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        },
+        {
+          "id": "odintsovo",
+          "amount": null,
+          "reason": "М-1 · Северный обход Одинцова"
+        }
+      ],
+      "finishedAt": "2026-10-16T02:09:25.315Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T02:09:25.318Z"
+}

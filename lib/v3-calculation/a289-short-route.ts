@@ -1,5 +1,6 @@
 import type { Coordinate } from "@/lib/tolls";
 import { priceA289Route } from "@/lib/toll-engine/a289-engine";
+import { a289SlavyanskConnector } from "@/lib/toll-engine/a289-connector-evidence";
 import { inCrimea } from "@/lib/special-territory-policy";
 import {validInstant} from "@/experiments/nationwide-tolls/engine/fare-validity.cjs";
 import { quoteA289SelectedRoute } from "@/experiments/nationwide-tolls/engine/a289-route-adapter.mjs";
@@ -22,16 +23,32 @@ export function a289ShortRoute(route:Coordinate[],legacySegments:string[],depart
   void legacySegments; // Compatibility argument; never supplies money or another product.
   if(route.length<2)return null;
   let start=a289Endpoint(route[0]),end=a289Endpoint(route.at(-1)!);
+  const physical=priceA289Route(route,departureAt);
+  const frames=physical.crossedFrames;
+  const frameOrder=frames.join(">");
+  // Bind the actual intermediate ramp BEFORE the generic eastern M4 fallback.
+  // Missing frame 23 alone is never evidence for a Slavyansk fare.
+  if(easternM4Traversal && !physical.repeatedFrames?.length){
+    if(!start && end==="TamanBridge" && frameOrder==="82>103" && a289SlavyanskConnector(route)==="entry")start="Slavyansk";
+    if(!end && start==="TamanBridge" && frameOrder==="103>82" && a289SlavyanskConnector(route)==="exit")end="Slavyansk";
+  }
   // A separately evidenced M-4 traversal supplies the eastern A-289 side.
   if(easternM4Traversal){
     if(start && start!=="Maryanskaya" && !end)end="Maryanskaya";
     if(end && end!=="Maryanskaya" && !start)start="Maryanskaya";
   }
-  const physical=priceA289Route(route,departureAt);
-  const frames=physical.crossedFrames;
   if(!frames.length)return null;
   const unresolved = (reason: string) => ({tolls: null, reason});
   if(physical.repeatedFrames?.length)return unresolved("A-289 repeated passage is outside the finished OD vector");
+  // Trip endpoints need not be A-289 exits: a long journey may contain the
+  // complete road as an interior product. Only all three ordered physical
+  // frames bind this full operator vector independently of endpoint labels.
+  // Partial or repeated passages still require the existing exit bindings.
+  const fullTraversal=(!start||!end) && (frameOrder==="23>82>103"||frameOrder==="103>82>23");
+  if(fullTraversal){
+    start=frames[0]==="23"?"Maryanskaya":"Temryuk";
+    end=frames[0]==="23"?"Temryuk":"Maryanskaya";
+  }
   if(!start||!end||start===end)return unresolved("A-289 frames detected but selected-route exits are unresolved");
   let from=start==="AnapaExit"?"Varenikovskaya":start;
   let to=end==="AnapaExit"?"Varenikovskaya":end;
@@ -51,8 +68,9 @@ export function a289ShortRoute(route:Coordinate[],legacySegments:string[],depart
   const weekdayAmount=quote.rub;
   const weekendAmount=quote.rub;
   const amount=quote.rub;
-  return {reason:cityTemryuk?"A-289 Temryuk two-frame city estimate; exit binding unverified":anapa?"A-289 Anapa exit inferred from two selected-route frames; estimate":"A-289 selected-route OD vector",
+  const passage=fullTraversal?frames.map(frame=>`РВП ${frame}`).join(" → "):`${start} → ${end}`;
+  return {reason:fullTraversal?"A-289 complete ordered three-frame traversal":cityTemryuk?"A-289 Temryuk two-frame city estimate; exit binding unverified":anapa?"A-289 Anapa exit inferred from two selected-route frames; estimate":"A-289 selected-route OD vector",
     tolls:{amount,weekdayAmount,weekendAmount,period:"все дни",
-      segments:[`А-289: ${start} → ${end}: ${quote.rub} ₽ · Стоимость не подтверждена`],
+      segments:[`А-289: ${passage}: ${quote.rub} ₽`],
       confidence:"matched" as const}};
 }

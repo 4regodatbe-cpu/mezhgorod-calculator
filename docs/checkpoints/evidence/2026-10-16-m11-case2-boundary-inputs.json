@@ -1,0 +1,37 @@
+{
+  "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+  "finding": "m11_partial_head_entry_boundary_unresolved",
+  "findingCases": 8,
+  "completedCaseReviewsBeforeThisStep": 1,
+  "status": "started",
+  "sourceCommit": "574f2c5686ad9b3900cedc7ca18663456b409566",
+  "capture": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/2026-10-15T23-59-05-400Z-capture.json.gz",
+    "sha256": "51b8e21059a597bf7797b348f58f2e47ac55ce992d364ef112f7085660e90d90"
+  },
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-15T23-59-05-480Z.json",
+      "sha256": "d245ca51ecc2be4b0713ee1bfe92059fdd0ea4fb2473258a0470e09a4e506855"
+    },
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-19-34-045Z.json",
+      "sha256": "ef108a4ee36bc1ca470e347334a00f2c38e6e0e334ef840fbda890226986c663"
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-19-34-474Z.json",
+      "sha256": "69c1df1057978e28760e5f6c9b64d62aef455fe9f11ac90bc428e8b8af25bb45"
+    }
+  ],
+  "observed": {
+    "traceComplete": true,
+    "routeMeters": 1558165,
+    "selectedTollNodeIds": ["8087316065", "4348128722", "4348128721", "2492861246", "933974870", "1766158812"],
+    "missingComponents": ["m11-15-58", "ckad", "zsd"],
+    "noWholeFare": true
+  },
+  "next": "Compare the saved selected paid-edge sequence with the primary directed M11 payment-boundary proof; do not infer price from adjacency or a partial subtotal."
+}

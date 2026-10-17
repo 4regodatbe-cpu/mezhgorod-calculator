@@ -3,12 +3,15 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import vm from 'node:vm';
+import { load, root } from './helpers/load-ts.mjs';
+import { resolve } from 'node:path';
 const require=createRequire(import.meta.url),ts=require('typescript');
 const source=readFileSync(new URL('../lib/v3-calculation/a289-short-route.ts',import.meta.url),'utf8');
 const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
 let frames=[];
 const testModule={exports:{}};
 vm.runInNewContext(compiled,{module:testModule,exports:testModule.exports,require:name=>{
+  if(name==='@/lib/toll-engine/a289-connector-evidence')return load(resolve(root,'lib/toll-engine/a289-connector-evidence.ts'));
   if(name==='@/lib/toll-engine/a289-engine')return {priceA289Route:()=>({crossedFrames:frames,period:'понедельник–четверг'})};
   if(name==='@/lib/special-territory-policy')return {inCrimea:({lng,lat})=>lng<35&&lat<46};
   if(name==='@/experiments/nationwide-tolls/engine/fare-validity.cjs')return require('../experiments/nationwide-tolls/engine/fare-validity.cjs');
@@ -34,4 +37,16 @@ test('A289 helper never adds a bypass label; missing exits do not invent fare',(
   assert.equal(quote([anapa,krasnodar],[],date).tolls,null);
   frames=[];
   assert.equal(quote([yalta,krasnodar],[],date),null);
+});
+
+test('long-trip recovery accepts only the exact complete directed frame vector',()=>{
+  const outsideA=[33.868487,46.45102],outsideB=[49.122187,55.788659];
+  for(const sequence of [['23','82','103'],['103','82','23']]){
+    frames=sequence;
+    assert.equal(quote([outsideA,outsideB],[],date).tolls.amount,800);
+  }
+  for(const sequence of [['23','103','82'],['103','23','82'],['82','23'],['23','82','82','103']]){
+    frames=sequence;
+    assert.equal(quote([outsideA,outsideB],[],date).tolls,null);
+  }
 });

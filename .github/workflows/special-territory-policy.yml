@@ -37,9 +37,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Probe live provider geometry and per-leg times
         run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
-      - name: Probe live payment-point-avoiding alternative for Moscow–Krasnodar
-        continue-on-error: true
-        run: node --import ./scripts/register-ts-paths.mjs scripts/payment-point-avoidance-live-probe.mjs
+      # Keep live routing checks on the selected fastest route; toll-avoiding alternatives are out of scope.
       - name: Probe live Photon address suggestions
         run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-live-probe.mjs
       - name: Audit the fixed 50-settlement route corpus
@@ -53,7 +51,6 @@ jobs:
           path: |
             special-territory-live-probe.json
             special-territory-full-flow-probe.json
-            payment-point-avoidance-live-probe.json
             address-search-live-probe.json
             settlement-random-route-audit.json
             yandex-route-reference-audit.json

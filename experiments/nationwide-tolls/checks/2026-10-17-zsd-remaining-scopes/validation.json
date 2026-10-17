@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "captureHashes": 14,
+  "sealedResultHashes": 14,
+  "selectedProviderGeometryIdentity": 14,
+  "reentryCases": 6,
+  "primarySourceHashes": 8,
+  "reproduction": "14caseJSON identical; summary identical excepttimestamp; no additional unique cases counted",
+  "jsonParse": "PASS",
+  "handoffLinks": "PASS",
+  "queueGroupCounts": "11groups/24checked/26unchecked",
+  "pythonSyntax": "PASS",
+  "gitDiffCheck": "PASS",
+  "runtimeTariffsChanged": false,
+  "newFullBuildOrUnitGate": "NOT_RUN_RUNTIME_UNCHANGED",
+  "priorCiRun": 39033008320,
+  "priorCiConclusion": "success",
+  "newPricedComponents": 0,
+  "confirmedFullTripFares": 0
+}

@@ -1,0 +1,43 @@
+{
+  "caseId": "dnr-донецк-moscow-center",
+  "status": "audited",
+  "commandExit": 0,
+  "stage1Completed": 19,
+  "stage1Planned": 155,
+  "next": {
+    "caseId": "dnr-донецк-saint-petersburg-center",
+    "kind": "regional",
+    "region": "dnr"
+  },
+  "provider": "OSRM",
+  "routeMeters": 1122972,
+  "traceComplete": true,
+  "weekday": 3050,
+  "weekend": 3370,
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "components": [
+    {
+      "id": "m4",
+      "amount": 3050,
+      "reason": "matrix exact selected-route M4 vector"
+    }
+  ],
+  "captureSha256": "8b168610a9b6e899b6ca4074e64cfbea2f52bc6ccafddc09f63c28716df2f630",
+  "parity": true,
+  "evidence": {
+    "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-33-21-031Z.json",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-34-03-244Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-moscow-center/2026-10-15T22-34-03-156Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-34-03-667Z.json",
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-34-04-089Z.json",
+    "sameDateParity": true
+  },
+  "commands": {
+    "inventory": 0,
+    "report": 0
+  },
+  "parentRemote": "98b3d8ad659657ab572186743e6f9d8f0f54d351"
+}

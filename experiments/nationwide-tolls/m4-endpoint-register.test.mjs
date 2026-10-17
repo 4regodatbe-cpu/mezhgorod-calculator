@@ -29,3 +29,27 @@ test('new unexplained same-endpoint conflict remains unknown instead of min/max 
  const out=compiler.compileEndpoints({rows:[a,{...a,rub:20}],m4EndpointConflicts:[]},{rows:[]});
  assert.equal(out.rows.length,0);assert.equal(out.unknown[0].reason,'remaining-fare-conflict');
 });
+test('northbound combined section has directed atomic boundaries, never a new fare',()=>{
+ const row={road:'m4-candidate',sectionVector:['m4-416+m4-460','m4-339','m4-71'],profile:'monThu',rub:1830};
+ const out=compiler.compileEndpoints({rows:[row],m4EndpointConflicts:[{from:'m4-416',to:'m4-71',profile:'monThu'}]},{rows:[]});
+ assert.equal(out.rows[0].from,'m4-460');
+ assert.equal(out.rows[0].to,'m4-71');
+ assert.deepEqual(out.rows[0].sectionVector,['m4-460','m4-416','m4-339','m4-71']);
+ assert.equal(out.rows[0].rub,row.rub);
+ assert.equal(out.counts.resolvedConflictEstimates,1);
+ assert.deepEqual(row.sectionVector,['m4-416+m4-460','m4-339','m4-71']);
+});
+test('southbound and undirected standalone combined sections preserve boundaries',()=>{
+ const rows=[['m4-71','m4-416+m4-460'],['m4-416+m4-460']].map(sectionVector=>({road:'m4-candidate',sectionVector,profile:'monThu',rub:230}));
+ const out=compiler.compileEndpoints({rows,m4EndpointConflicts:[]},{rows:[]});
+ assert.ok(out.rows.some(r=>r.from==='m4-71'&&r.to==='m4-460'));
+ assert.ok(out.rows.some(r=>r.from==='m4-416'&&r.to==='m4-460'));
+ assert.ok(!out.rows.some(r=>r.from==='m4-460'&&r.to==='m4-416'));
+});
+test('saved northbound460 to71 profiles reuse existing verified-row totals',()=>{
+ for(const [profile,rub]of [['monThu',1830],['friSun',2300]]){
+  const row=active.rows.find(r=>r.from==='m4-460'&&r.to==='m4-71'&&r.profile===profile);
+  assert.equal(row.rub,rub);assert.equal(row.priceConfirmation,'unconfirmed');
+  assert.equal(active.rows.find(r=>r.from==='m4-416'&&r.to==='m4-71'&&r.profile===profile),undefined);
+ }
+});

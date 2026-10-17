@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:21:01.556Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 117,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 9,
+    "spec": {
+      "caseId": "single-m11-moscow-to-tver",
+      "kind": "road",
+      "group": "single-m11"
+    }
+  },
+  "caseId": "single-m11-moscow-to-tver",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-21-01-555Z-part9",
+  "parent": "a4a1622ed1d22b334c4ee441f2fbe6cd55ac7c55"
+}

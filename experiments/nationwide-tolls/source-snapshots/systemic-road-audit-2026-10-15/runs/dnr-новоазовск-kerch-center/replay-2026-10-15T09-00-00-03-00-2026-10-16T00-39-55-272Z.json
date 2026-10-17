@@ -1,0 +1,266 @@
+{
+  "caseId": "dnr-новоазовск-kerch-center",
+  "region": "dnr",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 744570,
+      "seconds": 43667
+    },
+    {
+      "name": "OSRM",
+      "meters": 694489,
+      "seconds": 36824
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 694489,
+  "routeSeconds": 36824,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lat": 47.1138718,
+          "lng": 38.0830911
+        },
+        {
+          "lat": 47.12,
+          "lng": 39.86
+        },
+        {
+          "lat": 45.045,
+          "lng": 39.15
+        },
+        {
+          "lat": 45.2117,
+          "lng": 36.7161
+        },
+        {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [],
+    "provenRoads": [
+      "m4",
+      "a289"
+    ],
+    "missingExpectedRoads": [],
+    "status": "not-assigned"
+  },
+  "passageEvidence": [
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1345403307",
+      "names": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1217342526",
+      "names": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1217342527",
+      "names": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1372979845",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1372979844",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1344980705",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5325424715"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9620386263"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9772717211"
+    },
+    {
+      "road": "a289",
+      "kind": "selected-geometry-exact-frames",
+      "frames": [
+        "23",
+        "82",
+        "103"
+      ]
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m4": {
+      "occurrences": 118,
+      "uniqueWays": 102
+    },
+    "a289": {
+      "occurrences": 184,
+      "uniqueWays": 164
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kerch-center/2026-10-16T00-39-54-752Z-capture.json.gz",
+  "captureSha256": "e4fae69271fe4eee4d80293f7e13cc13ba8dda06b62e8b4953af092f61f22ba0",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": 850,
+      "reason": "matrix exact selected-route M4 vector"
+    },
+    {
+      "id": "a289",
+      "amount": 800,
+      "reason": "A-289 selected-route OD vector"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-4",
+    "E 50",
+    "E 115",
+    "«Дон»",
+    "Самарское шоссе",
+    "А-289"
+  ],
+  "tollNodeIds": [
+    "5325424715",
+    "9620386263",
+    "9772717211"
+  ],
+  "m4PvpPreview": {
+    "status": "boundaries_resolved",
+    "reason": null,
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 2,
+    "confirmedPvps": [
+      "m4-1093",
+      "m4-1223"
+    ],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [
+    "23",
+    "82",
+    "103"
+  ],
+  "tolls": {
+    "amount": 1650,
+    "weekdayAmount": 1650,
+    "weekendAmount": 1800,
+    "period": "понедельник–четверг",
+    "segments": [
+      "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+      "А-289: Maryanskaya → TamanBridge: 800 ₽"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m4",
+      "a289"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 850,
+          "weekdayAmount": 850,
+          "weekendAmount": 1000,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "a289",
+        "detected": true,
+        "tolls": {
+          "amount": 800,
+          "weekdayAmount": 800,
+          "weekendAmount": 800,
+          "period": "все дни",
+          "segments": [
+            "А-289: Maryanskaya → TamanBridge: 800 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "A-289 selected-route OD vector"
+      }
+    ]
+  }
+}

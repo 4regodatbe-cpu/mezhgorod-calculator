@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-16T01:17:11.054Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 59,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 14,
+    "spec": {
+      "caseId": "zaporizhzhia-розовка-saint-petersburg-center",
+      "kind": "regional",
+      "region": "zaporizhzhia"
+    }
+  },
+  "caseId": "zaporizhzhia-розовка-moscow-center",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "zaporizhzhia-розовка-moscow-center",
+    "startedAt": "2026-10-16T01:16:35.121Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-16-46-221Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-moscow-center/2026-10-16T01-16-46-126Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-16-46-808Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-16-47-387Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "m4"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": 3810,
+      "weekdayAmount": 3810,
+      "weekendAmount": 4640,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 4640,
+      "weekdayAmount": 3810,
+      "weekendAmount": 4640,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 3810,
+        "reason": "matrix exact selected-route M4 vector"
+      }
+    ],
+    "finishedAt": "2026-10-16T01:16:47.406Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-16-33-642Z-part14",
+  "parent": "10566edbea72f21921a2cc9e30ef48736cf44dac"
+}

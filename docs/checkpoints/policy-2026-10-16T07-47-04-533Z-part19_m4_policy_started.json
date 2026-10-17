@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-16T07:47:04.533Z",
+  "phase": "PART19_M4_POLICY_STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 5,
+  "total": 25,
+  "next": "zaporizhzhia-пришиб-saint-petersburg-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "caseId": "zaporizhzhia-пришиб-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T17-07-07-263Z-capture.json.gz",
+  "captureSha256": "55137f2633cd2a41328a43093654782c4fb77306adc0a663a616a6c997c3258b",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "97cbf808f2efe3a4d7050e29ea6bb58489883297",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-47-04-532Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-04-533Z-part19_m4_policy_started.json"
+}

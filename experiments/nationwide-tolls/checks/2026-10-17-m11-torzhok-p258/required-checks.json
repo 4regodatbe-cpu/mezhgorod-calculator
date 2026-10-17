@@ -1,0 +1,30 @@
+[
+  {
+    "name": "audit",
+    "exitCode": 0,
+    "seconds": 9.88,
+    "bytes": 61972,
+    "log": "audit.log.gz"
+  },
+  {
+    "name": "tsc",
+    "exitCode": 0,
+    "seconds": 3.38,
+    "bytes": 0,
+    "log": "tsc.log.gz"
+  },
+  {
+    "name": "eslint",
+    "exitCode": 0,
+    "seconds": 1.75,
+    "bytes": 0,
+    "log": "eslint.log.gz"
+  },
+  {
+    "name": "build",
+    "exitCode": 0,
+    "seconds": 8.09,
+    "bytes": 1038,
+    "log": "build.log.gz"
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "caseId": "single-a289-temryuk-to-krasnodar",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 146370,
+      "seconds": 9308
+    },
+    {
+      "name": "OSRM",
+      "meters": 144916,
+      "seconds": 7547
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 144916,
+  "routeSeconds": 7547,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 37.38,
+          "lat": 45.272
+        },
+        {
+          "lng": 38.975313,
+          "lat": 45.03547
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "a289"
+    ],
+    "provenRoads": [
+      "a289"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1382373410",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1354743710",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1381361850",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-geometry-exact-frames",
+      "frames": [
+        "82",
+        "23"
+      ]
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "a289": {
+      "occurrences": 141,
+      "uniqueWays": 123
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-temryuk-to-krasnodar/2026-10-16T01-47-35-770Z-capture.json.gz",
+  "captureSha256": "485dff853e437d6d8cf1eaf5fd0d74e71cd133e742c770e84ba9e96976aad7d2",
+  "detectedRoadComponents": [
+    {
+      "id": "a289",
+      "amount": 620,
+      "reason": "A-289 Temryuk two-frame city estimate; exit binding unverified"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "А-289"
+  ],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [
+    "82",
+    "23"
+  ],
+  "tolls": {
+    "amount": 620,
+    "weekdayAmount": 620,
+    "weekendAmount": 620,
+    "period": "все дни",
+    "segments": [
+      "А-289: Temryuk → Maryanskaya: 620 ₽"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "a289"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "a289",
+        "detected": true,
+        "tolls": {
+          "amount": 620,
+          "weekdayAmount": 620,
+          "weekendAmount": 620,
+          "period": "все дни",
+          "segments": [
+            "А-289: Temryuk → Maryanskaya: 620 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "A-289 Temryuk two-frame city estimate; exit binding unverified"
+      }
+    ]
+  }
+}

@@ -1,0 +1,610 @@
+{
+  "atUtc": "2026-10-17T12:06:02.390Z",
+  "sourceHead": "3ae7761fc0cebccc72777f487c5af8ca0b926665",
+  "startedCommit": "7f6e6b8a4488bc3ee0aa4ce760b727b03b57f28b",
+  "runIdentity": "59d5235b7bc898c2e3dc2bee864253f32aef5eaad7290b94e50d939f95fc6e65",
+  "scriptSha256": "3c4dfff2b17f90c4261f452d71c08e82c06a78bdfb3ed7797b232841350a21dd",
+  "inputsSha256": "72a2a03ddb26ace4cf814f632e338c2b9186785369eafba87bbca93c57d06786",
+  "sourceHashes": {
+    "lib/v3-calculation/zsd-cash-card-component.ts": "068551e6e57d75092447e7cdbec07bcaa3aeea30d1458355acad8730a2c94f9c",
+    "lib/v3-calculation/zsd-zone1-component.ts": "05081f33cd30e0904558a24d41859030b38a1737b22162bc59eefc7ecc04d4d7",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/readiness.json": "24bc1ef0a00bf3da64e4bd59b05eede366338dd31ac6ce5d3de311641caba034",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/zone1-readiness.json": "4a83afcebc698490af0f39388422a45235a18fcf300526709f532ec17999f53b"
+  },
+  "total": 74,
+  "processed": 74,
+  "actualCasesChecked": 74,
+  "componentDateChecks": 148,
+  "pricedComponentCases": 24,
+  "unknownComponentCases": 50,
+  "executionErrors": 0,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "pricedCases": [
+    "lnr-лисичанск-saint-petersburg-center",
+    "lnr-рубежное-saint-petersburg-center",
+    "zaporizhzhia-гуляйполе-saint-petersburg-center",
+    "dnr-бахмут-saint-petersburg-center",
+    "dnr-волноваха-saint-petersburg-center",
+    "dnr-донецк-saint-petersburg-center",
+    "lnr-алчевск-saint-petersburg-center",
+    "lnr-антрацит-saint-petersburg-center",
+    "lnr-довжанск-saint-petersburg-center",
+    "lnr-марковка-saint-petersburg-center",
+    "pair-m11-ckad-domodedovo-to-spb",
+    "pair-m11-ckad-noginsk-to-spb",
+    "pair-m4-m11-voronezh-to-spb",
+    "single-m11-moscow-to-spb",
+    "triple-m11-ckad-m12-kazan-to-spb",
+    "dnr-краматорск-saint-petersburg-center",
+    "dnr-талаковка-saint-petersburg-center",
+    "dnr-харцызск-saint-petersburg-center",
+    "lnr-ровеньки-saint-petersburg-center",
+    "lnr-сорокино-saint-petersburg-center",
+    "lnr-старобельск-saint-petersburg-center",
+    "zaporizhzhia-розовка-saint-petersburg-center",
+    "single-m11-tver-to-spb",
+    "triple-m11-ckad-m12-arzamas-to-spb"
+  ],
+  "reasonGroups": {
+    "zsd_kad_south_ekateringofka_owner_zone_vector|zsd_kad_south_ekateringofka_owner_zone_vector": [
+      "lnr-лисичанск-saint-petersburg-center",
+      "lnr-рубежное-saint-petersburg-center",
+      "zaporizhzhia-гуляйполе-saint-petersburg-center",
+      "dnr-бахмут-saint-petersburg-center",
+      "dnr-волноваха-saint-petersburg-center",
+      "dnr-донецк-saint-petersburg-center",
+      "lnr-алчевск-saint-petersburg-center",
+      "lnr-антрацит-saint-petersburg-center",
+      "lnr-довжанск-saint-petersburg-center",
+      "lnr-марковка-saint-petersburg-center",
+      "pair-m11-ckad-domodedovo-to-spb",
+      "pair-m11-ckad-noginsk-to-spb",
+      "pair-m4-m11-voronezh-to-spb",
+      "single-m11-moscow-to-spb",
+      "triple-m11-ckad-m12-kazan-to-spb",
+      "dnr-краматорск-saint-petersburg-center",
+      "dnr-талаковка-saint-petersburg-center",
+      "dnr-харцызск-saint-petersburg-center",
+      "lnr-ровеньки-saint-petersburg-center",
+      "lnr-сорокино-saint-petersburg-center",
+      "lnr-старобельск-saint-petersburg-center",
+      "zaporizhzhia-розовка-saint-petersburg-center",
+      "single-m11-tver-to-spb",
+      "triple-m11-ckad-m12-arzamas-to-spb"
+    ],
+    "zsd_finished_vector_scope_not_reviewed|zsd_finished_vector_scope_not_reviewed": [
+      "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+      "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+      "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+      "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+      "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+      "pair-m11-zsd-moscow-to-prim",
+      "pair-m11-zsd-moscow-to-sest",
+      "pair-m11-zsd-tver-to-sest",
+      "single-zsd-pushkin-to-sest",
+      "triple-m4-m11-zsd-krasnodar-to-sest",
+      "triple-m4-m11-zsd-rostov-to-sest",
+      "triple-m4-m11-zsd-voronezh-to-prim",
+      "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+      "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+      "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+      "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+      "pair-m11-zsd-novgorod-to-sest",
+      "pair-m11-zsd-torzhok-to-prim",
+      "single-zsd-peterhof-to-prim",
+      "triple-m4-m11-zsd-domodedovo-to-sest",
+      "triple-m4-m11-zsd-krasnodar-to-prim"
+    ],
+    "zsd_trip_extends_outside_reviewed_zone1|zsd_trip_extends_outside_reviewed_zone1": [
+      "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+      "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+      "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+      "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+      "pair-m11-ckad-spb-to-domodedovo",
+      "pair-m11-ckad-spb-to-noginsk",
+      "pair-m11-zsd-prim-to-moscow",
+      "pair-m11-zsd-sest-to-moscow",
+      "single-m11-spb-to-moscow",
+      "single-zsd-blag-to-prim",
+      "single-zsd-sest-to-pushkin",
+      "triple-m11-ckad-m12-spb-to-kazan",
+      "triple-m4-m11-zsd-sest-to-krasnodar",
+      "triple-m4-m11-zsd-sest-to-rostov",
+      "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+      "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "pair-m11-zsd-prim-to-torzhok",
+      "pair-m11-zsd-sest-to-novgorod",
+      "pair-m11-zsd-sest-to-tver",
+      "pair-m4-m11-spb-to-voronezh",
+      "single-m11-spb-to-tver",
+      "single-zsd-blag-to-sest",
+      "single-zsd-sest-to-blag",
+      "triple-m11-ckad-m12-spb-to-arzamas",
+      "triple-m4-m11-zsd-prim-to-voronezh",
+      "triple-m4-m11-zsd-sest-to-domodedovo"
+    ]
+  },
+  "physicalScopeGroups": {
+    "5538ef82450665f3119ea17d65ec0bc5a0fcb5c28ed5886c465e38882ed4a6b6": [
+      "lnr-лисичанск-saint-petersburg-center",
+      "lnr-рубежное-saint-petersburg-center",
+      "zaporizhzhia-гуляйполе-saint-petersburg-center",
+      "dnr-бахмут-saint-petersburg-center",
+      "dnr-волноваха-saint-petersburg-center",
+      "dnr-донецк-saint-petersburg-center",
+      "lnr-алчевск-saint-petersburg-center",
+      "lnr-антрацит-saint-petersburg-center",
+      "lnr-довжанск-saint-petersburg-center",
+      "lnr-марковка-saint-petersburg-center",
+      "pair-m11-ckad-domodedovo-to-spb",
+      "pair-m11-ckad-noginsk-to-spb",
+      "pair-m4-m11-voronezh-to-spb",
+      "single-m11-moscow-to-spb",
+      "triple-m11-ckad-m12-kazan-to-spb",
+      "dnr-краматорск-saint-petersburg-center",
+      "dnr-талаковка-saint-petersburg-center",
+      "dnr-харцызск-saint-petersburg-center",
+      "lnr-ровеньки-saint-petersburg-center",
+      "lnr-сорокино-saint-petersburg-center",
+      "lnr-старобельск-saint-petersburg-center",
+      "zaporizhzhia-розовка-saint-petersburg-center",
+      "single-m11-tver-to-spb",
+      "triple-m11-ckad-m12-arzamas-to-spb"
+    ],
+    "0c0e778a8622dfc6a3f57032f70fd16bc29fa010f3785c0215b8bb7ffae9c6c4": [
+      "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+      "pair-m11-zsd-moscow-to-prim",
+      "triple-m4-m11-zsd-voronezh-to-prim",
+      "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+      "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+      "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+      "pair-m11-zsd-torzhok-to-prim",
+      "triple-m4-m11-zsd-krasnodar-to-prim"
+    ],
+    "258ee8abe7051eda2e4d11f093e10fa37184adc36cd3c3e12d67823afdd32f08": [
+      "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+      "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+      "pair-m11-zsd-moscow-to-sest",
+      "pair-m11-zsd-tver-to-sest",
+      "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+      "pair-m11-zsd-novgorod-to-sest",
+      "triple-m4-m11-zsd-domodedovo-to-sest"
+    ],
+    "1e954c437e46cc7926adf88189e1f0af9fcb2d6ec184332656bfee9d91fd2625": [
+      "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+      "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+      "pair-m11-zsd-sest-to-moscow",
+      "single-zsd-sest-to-pushkin",
+      "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+      "pair-m11-zsd-sest-to-novgorod",
+      "pair-m11-zsd-sest-to-tver",
+      "triple-m4-m11-zsd-sest-to-domodedovo"
+    ],
+    "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c": [
+      "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+      "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+      "single-zsd-pushkin-to-sest",
+      "triple-m4-m11-zsd-krasnodar-to-sest",
+      "triple-m4-m11-zsd-rostov-to-sest"
+    ],
+    "3404a9c7bbd60f8c3caa6644223c2434ee84611661181bab6b9c1cf626c57851": [
+      "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+      "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+      "triple-m4-m11-zsd-sest-to-krasnodar",
+      "triple-m4-m11-zsd-sest-to-rostov"
+    ],
+    "2c00c1cc6c1d9e8f8b34365454ebb654ed4c4054a8530c84c21fe727dd5f5377": [
+      "pair-m11-ckad-spb-to-domodedovo",
+      "pair-m11-ckad-spb-to-noginsk",
+      "single-m11-spb-to-moscow",
+      "triple-m11-ckad-m12-spb-to-kazan",
+      "pair-m4-m11-spb-to-voronezh",
+      "single-m11-spb-to-tver",
+      "triple-m11-ckad-m12-spb-to-arzamas"
+    ],
+    "5733fbb44c1c68eac1b81aa40e7e08b59201621562b0c133671ae51437d09a34": [
+      "pair-m11-zsd-prim-to-moscow",
+      "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "pair-m11-zsd-prim-to-torzhok",
+      "triple-m4-m11-zsd-prim-to-voronezh"
+    ],
+    "e9966bcae780ea3c61f76494d6db1c6e14da365cbea561c5f593dedf3a2641b6": [
+      "single-zsd-blag-to-prim"
+    ],
+    "94943ad7caf714125fff0505bfaaab356360e7dfa5392eed5e7a516373ae41af": [
+      "single-zsd-blag-to-sest"
+    ],
+    "31bded062e92f96393dd7de5e5a1a584708bc469c2146c274175d3e41bae75c1": [
+      "single-zsd-peterhof-to-prim"
+    ],
+    "d3776069805a720e7bd3635900250dedc5f8322cc152847153369b0c03152853": [
+      "single-zsd-sest-to-blag"
+    ]
+  },
+  "limits": [
+    "component-only; no new whole-trip totals",
+    "source-derived vector is not an independent operator OD receipt",
+    "unknown is not zero",
+    "previous results and captures are unchanged",
+    "scope fingerprint groups geometry evidence; it does not authorize a fare"
+  ],
+  "caseResults": [
+    {
+      "caseId": "lnr-лисичанск-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/lnr-лисичанск-saint-petersburg-center.json",
+      "sha256": "a845e3d78a24d57756084971a5aa37ed28290c6492a7dbd08541d64ae1e7efb6"
+    },
+    {
+      "caseId": "lnr-рубежное-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/lnr-рубежное-saint-petersburg-center.json",
+      "sha256": "1a0bce53e7d99114c688ab4b98ff9d66df2807b5f7cf38e9ccfe34c33ea24111"
+    },
+    {
+      "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/zaporizhzhia-гуляйполе-saint-petersburg-center.json",
+      "sha256": "f4252e0425ea41dd31cd99731d422b778b1a6bce211f59db5cc09f3396b5e030"
+    },
+    {
+      "caseId": "dnr-бахмут-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/dnr-бахмут-saint-petersburg-center.json",
+      "sha256": "3c15a135e847874088ee920a5f1f7013392b129266c810fa4852cfa84c8e0790"
+    },
+    {
+      "caseId": "dnr-волноваха-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/dnr-волноваха-saint-petersburg-center.json",
+      "sha256": "6314414ce5154b615856bb61aa292b8298593548e77278d54ce48da8e697fa82"
+    },
+    {
+      "caseId": "dnr-донецк-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/dnr-донецк-saint-petersburg-center.json",
+      "sha256": "08b151300b9a19e0f279c544122c7633d8f0d5251bc890cacab6019a8251c5d6"
+    },
+    {
+      "caseId": "lnr-алчевск-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/lnr-алчевск-saint-petersburg-center.json",
+      "sha256": "c40b36a353cefba93c34a2eb9d6315ea9c2efaa2f4165c14a5a5d16f48f6c531"
+    },
+    {
+      "caseId": "lnr-антрацит-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/lnr-антрацит-saint-petersburg-center.json",
+      "sha256": "c8f3bf8299ec9da23c9881e93d67ffce3ba5baa3b052ce15896c8d6ba3444975"
+    },
+    {
+      "caseId": "lnr-довжанск-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/lnr-довжанск-saint-petersburg-center.json",
+      "sha256": "634b3a28e536b9bf8936faa9cc117084ae7081c63033ee4a1d98ef157f10f552"
+    },
+    {
+      "caseId": "lnr-марковка-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/lnr-марковка-saint-petersburg-center.json",
+      "sha256": "80cf82d425e4aaf942cf836713447b34e0239d926f3660d595e9db86ece521b9"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-arzamas-to-prim.json",
+      "sha256": "88ac85fbc40d5c81a504497c5a255252cee85c5df7ad320fc6ed2486616119d5"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-kazan-to-sest.json",
+      "sha256": "f9a73ffc72643431fad0f91231bd9c1ac20cf5de18ee51a4a6c93559d0f90ac7"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-murom-to-sest.json",
+      "sha256": "07e53d2354ed431ad4de87429ac5ac5dcb3b2421fe65f422d4bccc29ea97824a"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-sest-to-kazan.json",
+      "sha256": "1dca922a47a2ad8fabc4dff36da69d5ae4bfe98979fc15c86f9c05cc05e91026"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-sest-to-murom.json",
+      "sha256": "9ff1da5128ddcfea1e8740e5ce0c274ef643a51673df680d84001f1d51d0226a"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest.json",
+      "sha256": "78bbb96c6f47e1b7b088877bddd1ccb1b95facbd3fed47552f6115a3f6d75cd2"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-rostov-to-sest.json",
+      "sha256": "4b61a461887cbf7661a9c990caeb929fc4076ee7d8f8a7b8754e441768545462"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar.json",
+      "sha256": "9c2dc15a55931765d4e7c2795acf61ade30d15e91c1b9fc5672385710f62cad6"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-sest-to-rostov.json",
+      "sha256": "14951ecea24f0f70043381abd735715fadc0b024adb099178060bacdb9f37d4a"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-voronezh-to-prim.json",
+      "sha256": "0e10fc4afd41db4b3fb7f55bd93d2453ea6d47f720ae5d514730c1159e71a0ec"
+    },
+    {
+      "caseId": "pair-m11-ckad-domodedovo-to-spb",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-ckad-domodedovo-to-spb.json",
+      "sha256": "068c76b380a58dd3e3bd9e981948cbe97ce4bd17538299a9d6ea717c95e0681b"
+    },
+    {
+      "caseId": "pair-m11-ckad-noginsk-to-spb",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-ckad-noginsk-to-spb.json",
+      "sha256": "341c06b14aa3e42ba817f0cd25e09b733c9acf79462ddc555d4711a781ec1ee5"
+    },
+    {
+      "caseId": "pair-m11-ckad-spb-to-domodedovo",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-ckad-spb-to-domodedovo.json",
+      "sha256": "bcc305c24c89fdf62c0b6cbf4e164df8350715476277e714da09c2058762e234"
+    },
+    {
+      "caseId": "pair-m11-ckad-spb-to-noginsk",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-ckad-spb-to-noginsk.json",
+      "sha256": "425973c85fbcfaf7bfa80f2c32115bebf079e7250c50ee94a250a8b98c6b4ca8"
+    },
+    {
+      "caseId": "pair-m11-zsd-moscow-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-moscow-to-prim.json",
+      "sha256": "445d15260289ee063ae80bf4f8f4689548c761a9fdebffb21ee36af82563c49c"
+    },
+    {
+      "caseId": "pair-m11-zsd-moscow-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-moscow-to-sest.json",
+      "sha256": "0dfa9d89f4096591b5081dd37142f5842fbd2e91ba776e4e6b7aecfcc6923d8d"
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-moscow",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-prim-to-moscow.json",
+      "sha256": "6180b5120d1da31e6609fef2362bd08346db1ba5a6d72d8f39a968e2418aa45d"
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-moscow",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-sest-to-moscow.json",
+      "sha256": "d1cd0dc8059a444b2dd4d7899b0514727bd3ddd288e203d542a3903b1e50218d"
+    },
+    {
+      "caseId": "pair-m11-zsd-tver-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-tver-to-sest.json",
+      "sha256": "534dcf5b086c69e73fdeb111a977edec366c2f916c5c3a13b1dbeec4f4292c46"
+    },
+    {
+      "caseId": "pair-m4-m11-voronezh-to-spb",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m4-m11-voronezh-to-spb.json",
+      "sha256": "a7c47165eba6b077d7bcd9a8976a86ad3c18b5cd824b247b25c9961ec419e07b"
+    },
+    {
+      "caseId": "single-m11-moscow-to-spb",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-m11-moscow-to-spb.json",
+      "sha256": "3475c7290b9dbd3653b5ef1fb028c80cce723434720a0acfcb44505f7c9ee230"
+    },
+    {
+      "caseId": "single-m11-spb-to-moscow",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-m11-spb-to-moscow.json",
+      "sha256": "ad43b2d72efbe15a19adf65c0390c8a280c1949adf3925869db59ff8aa48ce93"
+    },
+    {
+      "caseId": "single-zsd-blag-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-blag-to-prim.json",
+      "sha256": "647e202838e881cd019bf7b589c70e068434fd8679e3db43503e97492e8bcccf"
+    },
+    {
+      "caseId": "single-zsd-pushkin-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-pushkin-to-sest.json",
+      "sha256": "65d275e1347d741c5eab6353d75c0bf128cdf7eaa03ca7097213b0f9c7a148ae"
+    },
+    {
+      "caseId": "single-zsd-sest-to-pushkin",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-sest-to-pushkin.json",
+      "sha256": "8340cad4858b1315e51d5c16b7570b715dc090f5f939bb0bbd959ad820944ddb"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m11-ckad-m12-kazan-to-spb.json",
+      "sha256": "54936d5a15f27b9d5062a31b5daf6dc766b2f6187149c379cdebd04f6b4e3c4f"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m11-ckad-m12-spb-to-kazan.json",
+      "sha256": "97c164c85e9275e29e3bcbf9f73c90f773f8412405812087a8558195b21ab913"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-krasnodar-to-sest.json",
+      "sha256": "a59a03c28241ad77b3fccfac93fbdd51d226da7ec79ab26f2b5397b091e9d912"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-rostov-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-rostov-to-sest.json",
+      "sha256": "119e04be9fedb037911bfbf9c1cacaef3ba77b3d42a45c792932fb6c6fcfd347"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-krasnodar",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-sest-to-krasnodar.json",
+      "sha256": "3ee8322243125b5e865d02e2e12ae20a47e8204c81d66d7f574d4ae0f2ee223f"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-sest-to-rostov.json",
+      "sha256": "7f3ebfcb89a3f2aeb8d0508594e9426382ed07a7af46c070f953446a17afdca9"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-voronezh-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-voronezh-to-prim.json",
+      "sha256": "a8f00d402632fdfdad3b0a60125f68cb46e67e3e4ca849d79b7aaf2dfbf4da79"
+    },
+    {
+      "caseId": "dnr-краматорск-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/dnr-краматорск-saint-petersburg-center.json",
+      "sha256": "d68b23feaa2c07fcc6cb8e48f0a01ae0dbd77fe908390e8e2c6b1196808b7852"
+    },
+    {
+      "caseId": "dnr-талаковка-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/dnr-талаковка-saint-petersburg-center.json",
+      "sha256": "87f7394081dbc342936231889d348cee0a8463cfafb6b656a8fd39e62b5f8be5"
+    },
+    {
+      "caseId": "dnr-харцызск-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/dnr-харцызск-saint-petersburg-center.json",
+      "sha256": "b53858666068286cfa2e1f4a937018fe4f1f4b85cdbb466edbc2773265f63bb6"
+    },
+    {
+      "caseId": "lnr-ровеньки-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/lnr-ровеньки-saint-petersburg-center.json",
+      "sha256": "f41f2ba4e69678906a3419a63fef76ebe3be2ea5ccf305f7ed759e888a24bfef"
+    },
+    {
+      "caseId": "lnr-сорокино-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/lnr-сорокино-saint-petersburg-center.json",
+      "sha256": "07d0ef2c9e17456bd8c8394c9dba66cd65e9efe177bc8a23b7974e87f42408ba"
+    },
+    {
+      "caseId": "lnr-старобельск-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/lnr-старобельск-saint-petersburg-center.json",
+      "sha256": "d94bb40df3e8988dab14c85a35f92229d57b17909f174cb5dd4a27a2b216d8f5"
+    },
+    {
+      "caseId": "zaporizhzhia-розовка-saint-petersburg-center",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/zaporizhzhia-розовка-saint-petersburg-center.json",
+      "sha256": "42bf910b107813c7137446f3337923ad49fd3b5356b27c8e8a7aacafc2fe35fd"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim.json",
+      "sha256": "a900cfece9caa47c7966a916df6ce8229f20aae5ad1a51c6d72b63f7a83fa285"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas.json",
+      "sha256": "8152de4cd17f4b2f08d7cff1c6fdf89d00c97c13edb1f041cdc1892ddac827a5"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary.json",
+      "sha256": "7878449fcd68ae2dfb11418180a6757c2a53d1d822ff2d77d3b4a0860b3d6564"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-sest-to-vladimir.json",
+      "sha256": "5cc0bc16c1d4ea14379c6dad5da5522f990160ad44054974257e25e0818b0dcf"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-vladimir-to-sest.json",
+      "sha256": "dbbc68f4c4ee59c6e8fd034116b1c3a470cc6365052a74dccb59dc0604961690"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-krasnodar-to-prim.json",
+      "sha256": "a3ee803620d9d73644db3df949617540cbd48d175570fbf8a129de8e46b46023"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-prim-to-voronezh.json",
+      "sha256": "b3e3f0fd1e25908ca0908afbffe6813e1b98d9c1c2b45d1fd08cfb80559cd140"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-rostov-to-prim.json",
+      "sha256": "248e650587a4197456995eb00dfe253ccb325b5b88b5ad43ae8c88cfe6a5ec00"
+    },
+    {
+      "caseId": "pair-m11-zsd-novgorod-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-novgorod-to-sest.json",
+      "sha256": "dcb64bcdc5a3375c94cb82c8fc05a978b9118d40d9584b2dd15d4dcb3c07c2ea"
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-torzhok",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-prim-to-torzhok.json",
+      "sha256": "60352bc1c4c3f9e58fe5bf7e93e66848764f341fe98450a817248f13f7e74a24"
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-novgorod",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-sest-to-novgorod.json",
+      "sha256": "feee9e9288075f7d2d822ed5f57f6fe799fabe58cab6d39e582f4385f0e2b09f"
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-tver",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-sest-to-tver.json",
+      "sha256": "b8f25dfae8e6069579d59118b96e0998cb69143ec7e23b6548133a4d0d97ea08"
+    },
+    {
+      "caseId": "pair-m11-zsd-torzhok-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-torzhok-to-prim.json",
+      "sha256": "25a65f69d20d46186a154031a21739256f7ddcf0bc867d2ebb374ff244744596"
+    },
+    {
+      "caseId": "pair-m4-m11-spb-to-voronezh",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m4-m11-spb-to-voronezh.json",
+      "sha256": "655ba46a891c0b6d5909edb5fcd15b8872e4ebe773346ae4a58d8ab3de3e98e5"
+    },
+    {
+      "caseId": "single-m11-spb-to-tver",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-m11-spb-to-tver.json",
+      "sha256": "359460685e6d14363dbaa9614cdc4fefcc6203f8a52eefa9a9e19cedd972f35b"
+    },
+    {
+      "caseId": "single-m11-tver-to-spb",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-m11-tver-to-spb.json",
+      "sha256": "755ea020b77df6387ed7ac60276462661b73462caa82993c2f5724cab74f29ba"
+    },
+    {
+      "caseId": "single-zsd-blag-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-blag-to-sest.json",
+      "sha256": "fbb1b7c7327ef7c72b1f228de8d9dd21106e824ac5b80c8b39b2ade9fb11f8e6"
+    },
+    {
+      "caseId": "single-zsd-peterhof-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-peterhof-to-prim.json",
+      "sha256": "55fd4da51a7eff4491447c26c9be691b8c546c8173780906f658f55b8e00708d"
+    },
+    {
+      "caseId": "single-zsd-sest-to-blag",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-sest-to-blag.json",
+      "sha256": "4c94b49726ae997d247ae610c7e0d14299a899c341048b1ff9b064cac36e3f81"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m11-ckad-m12-arzamas-to-spb.json",
+      "sha256": "0af33ca45f425460536fabdecc56f2b1ee8e7701f4b951fae9834a4f4a80893d"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-spb-to-arzamas",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m11-ckad-m12-spb-to-arzamas.json",
+      "sha256": "5ff3f7299a19ff7e02c2ab01cc642320381317d98a22e40f05f8c5e9d7d7b42d"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-domodedovo-to-sest.json",
+      "sha256": "297bfb5c402617b9b7ea6720902b7b78944b9cf84fc2ca7670543f962f30cc8e"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-krasnodar-to-prim.json",
+      "sha256": "354c492094979f33831701bde67c8ae13062b2b9ed3cc82a42fd6f04485550e7"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-prim-to-voronezh.json",
+      "sha256": "850af5d9d8707eb45196d5dc3366e15b80bf8ea1c8e1de2f2b027b770c895408"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-sest-to-domodedovo.json",
+      "sha256": "58a81ce4ae927218c2f8973013fab9ad2c9a0edc3585a22a4548d56eb9d607e3"
+    }
+  ]
+}
