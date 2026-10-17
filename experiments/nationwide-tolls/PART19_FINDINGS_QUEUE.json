@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Do not repeat nine OSM objects or the same searches. New observed source only: https://russianhighways.ru/for_drivers/m-12-vostok/ (linked from retained official AJAX fragment, not yet fetched). One bounded source-specific review may reopen binding; if it gives no reliable crosswalk retain BLOCKED and move to other assessed causes.",
+  "nextAction": "Leave M12 binding blocked; reconcile remaining assessed causes from saved PART19 queue and determine final verification scope, without another western-M12 crawl absent a new reliable source.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -4954,5 +4954,31 @@
         "readback": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/pre-save-readback.json"
       }
     }
-  ]
+  ],
+  "officialM12PageFollowup": {
+    "status": "blocked_by_missing_reliable_data",
+    "sourceHead": "a9ad472218b15fc2952304b1fa5d70670ce929a1",
+    "startedHead": "db5c99646c646d38c1f4d87ac087a423aa9ea706",
+    "sourceCI": "39071021984 completed/success",
+    "httpRequests": 1,
+    "linkedSchemeRequests": 0,
+    "httpStatus": 200,
+    "bodySha256": "67df512e56623482aba1ffef987df4197088cd4a021ef2998471f233b466e509",
+    "checks": {
+      "rawHash": "PASS",
+      "pageContainsStageDescriptions": true,
+      "relevantLinkedScheme": false,
+      "inlineGantryCoordinates": false,
+      "operatorBindingsProven": 0
+    },
+    "outcome": "Official M12 road overview describes construction stages and photos, but gives no crosswalk for nodes10782165529/11214930528/11157985901 or the two selected exits. No relevant linked scheme was found. This is a limitation of this inspected source, not proof that no independent source exists.",
+    "newPricedComponents": 0,
+    "newWholeFares": 0,
+    "runtimeChanged": false,
+    "tests": "No test/build replay: evidence and documentation only. Existing source CI success observed.",
+    "errors": [
+      "Initial bs4 import failed before network; stdlib fallback used, no duplicate GET."
+    ],
+    "next": "Leave M12 binding blocked; reconcile remaining assessed causes from saved PART19 queue and determine final verification scope, without another western-M12 crawl absent a new reliable source."
+  }
 }

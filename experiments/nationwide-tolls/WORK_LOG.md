@@ -2285,3 +2285,8 @@ Remote a9ad472218b15fc2952304b1fa5d70670ce929a1 parent1a8df19a…, tree16f817496
 ## STARTED 2026-10-18: официальный источник М-12
 
 CI39071021984 completed/success на a9ad4722…; одна новая страница и одна связанная схема,15с/request,60с budget. План: docs/checkpoints/2026-10-18-m12-official-page-STARTED.md. Не повторять готовые физические проверки и расчёты.
+
+
+## DONE 2026-10-18: новая официальная страница М-12
+
+Один GET200,229612bytes; raw+metadata+links+result сохранены. Нет нужного crosswalk и релевантной схемы, привязка BLOCKED. Новых цен0; код не менялся, тесты не повторялись. Checkpoint: docs/checkpoints/2026-10-18-m12-official-page-DONE.md. NEXT: saved Part19 cause reconciliation/final gate scope.
