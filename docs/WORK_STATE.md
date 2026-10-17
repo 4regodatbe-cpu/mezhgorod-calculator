@@ -1,3 +1,11 @@
+## STARTED — 17.10.2026 17:21 МСК: собственный trace OSRM
+
+- CI39038119987 completed/success, branch/PR14draft head a49470b7… фактически проверены. [STARTED](checkpoints/2026-10-17-172148-zsd-selected-osrm-trace-STARTED.md).
+- Один `pair-m11-zsd-prim-to-moscow`: восстановить собственный OSRM из saved response, затем ограниченный live trace его изменившейся geometry. Старый Valhalla trace неприменим. Нового routing и повторов74/76/309 нет; цены пока не проверены.
+- NEXT: durable STARTED/readback перед сетью; один case result/progress и итоговый checkpoint. Unknown не0, subtotal не полный итог.
+
+## Предыдущая сохранённая история
+
 ## DONE — 17.10.2026 16:46 МСК: no-reentry ЗСД
 
 - **Исправлена и проверена точная причина шести случаев5733:** общий V3 `isUsableRoute` исключает доказанный городской разворот и повторный заезд до ETA-ранжирования. Восемь физических свидетелей,15м, сегменты≤500м, местный путь≤4км. Один самый быстрый допустимый обычный кандидат; цена не участвует. Без допустимых кандидатов — ошибка маршрутизации. [DONE](checkpoints/2026-10-17-163758-zsd-no-reentry-DONE.md) · [результаты](../experiments/nationwide-tolls/checks/2026-10-17-zsd-no-reentry/README.md).
