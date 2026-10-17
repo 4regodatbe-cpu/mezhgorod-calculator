@@ -1,0 +1,143 @@
+{
+  "retrievedAt": "2026-10-17T10:39:11Z",
+  "scope": "Exact reviewed northbound KAD-south/M11 connection to Ekateringofka exit. No reverse or general multi-zone authorization.",
+  "paymentMethod": "cash_or_bank_card_without_transponder",
+  "from": "kad-south",
+  "to": "ekateringofka",
+  "tariffZones": [
+    "zone-1",
+    "zone-2"
+  ],
+  "rub": 600,
+  "rateDerivation": {
+    "zone1Rub": 300,
+    "zone2Rub": 300,
+    "basis": "Owner order96 Annex1 explicitly includes the KAD south entry in zone1 and the Ekateringofka exit from Blagodatnaya in zone2; order32 Annex1 sets300 per zone. Current rules6.2/6.3 apply base zone tariffs. This is a source-derived finished vector, not an operator OD receipt. Rule6.2.17 Auto->Blagodatnaya receipt exception is not this entry/exit pair."
+  },
+  "rows": [
+    {
+      "road": "zsd",
+      "productId": "zsd",
+      "from": "kad-south",
+      "to": "ekateringofka",
+      "profile": "allDays",
+      "rub": 600,
+      "validFrom": "2025-05-01",
+      "vehicleCategory": 1,
+      "verification": "official_owner_directed_zone_definitions_and_current_base_tariff",
+      "runtimeEligible": true,
+      "source": "https://whsd.ru/assets/disclosure/70/32_1.pdf"
+    }
+  ],
+  "wayIds": [
+    "1122966006",
+    "1122966005",
+    "1122966004",
+    "400111354",
+    "400111351",
+    "31369306",
+    "28934684",
+    "465117517",
+    "80056742",
+    "139658547",
+    "461676671",
+    "80056745",
+    "721628540",
+    "80056716",
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541"
+  ],
+  "gate": {
+    "wayId": "381576632",
+    "before": {
+      "id": "3847689344",
+      "lon": 30.295498,
+      "lat": 59.8721118
+    },
+    "gate": {
+      "id": "933974870",
+      "lon": 30.2955029,
+      "lat": 59.872213
+    },
+    "after": {
+      "id": "3847689346",
+      "lon": 30.2955098,
+      "lat": 59.8723214
+    }
+  },
+  "entry": {
+    "wayId": "1122966006",
+    "witnesses": [
+      {
+        "id": "10270133471",
+        "lon": 30.2805497,
+        "lat": 59.8359361
+      },
+      {
+        "id": "2326313083",
+        "lon": 30.2805736,
+        "lat": 59.8359934
+      },
+      {
+        "id": "1833109726",
+        "lon": 30.2807444,
+        "lat": 59.836389
+      }
+    ]
+  },
+  "exit": {
+    "wayId": "183902370",
+    "witnesses": [
+      {
+        "id": "1339782267",
+        "lon": 30.2467344,
+        "lat": 59.9004241
+      },
+      {
+        "id": "7020792290",
+        "lon": 30.2473067,
+        "lat": 59.9008421
+      },
+      {
+        "id": "1943198683",
+        "lon": 30.2482906,
+        "lat": 59.9015368
+      },
+      {
+        "id": "2903386149",
+        "lon": 30.2483565,
+        "lat": 59.9015812
+      },
+      {
+        "id": "2396020561",
+        "lon": 30.2490775,
+        "lat": 59.9021328
+      },
+      {
+        "id": "25893875",
+        "lon": 30.2493057,
+        "lat": 59.9023393
+      }
+    ]
+  },
+  "sourceManifest": "source-manifest.json",
+  "fixture": {
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+    "sha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1"
+  },
+  "exclusionFixture": {
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+    "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0",
+    "reason": "larger selected ZSD scope reaches Planernaya, not the finished Ekateringofka exit"
+  }
+}

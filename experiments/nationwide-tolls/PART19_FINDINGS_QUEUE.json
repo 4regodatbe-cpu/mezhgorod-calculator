@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "After post-save Actions succeeds, execute Part20 docs-only content/link checks and required workflow verification; do not merge.",
+  "nextAction": "After post-save CI success, check exceptions in matching ZSD physical scope against the new finished vector; no mass live rerun.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1760,7 +1760,21 @@
       "evidence": "../../docs/checkpoints/2026-10-16-zsd-classification-76-cases.md",
       "note": "All 76 saved cases and two departure-date profiles reproduced. Finished operator collection span remains unbound; no tariff, free status or runtime fix claimed. Case counts are not fare coverage.",
       "canonicalOutcome": "blocked_by_missing_reliable_data",
-      "canonicalOutcomeRationale": "The selected route evidence does not establish the operator collection span needed to bind a tariff. Keep amount unknown/null."
+      "canonicalOutcomeRationale": "The selected route evidence does not establish the operator collection span needed to bind a tariff. Keep amount unknown/null.",
+      "postAuditSolution": {
+        "atUtc": "2026-10-17T10:53:00Z",
+        "status": "partial_fix_one_finished_vector_locally_verified",
+        "caseId": "dnr-гранитное-saint-petersburg-center",
+        "checkedCases": 1,
+        "fullReplayProfiles": 2,
+        "newLiveRouteRuns": 0,
+        "vectorRub": 600,
+        "fareBasis": "source-derived owner directed tariff-zone definitions + current cash/card rates; no independent OD receipt",
+        "fullQuotePriceConfirmation": "unconfirmed",
+        "otherBaselineCasesNotRechecked": 75,
+        "checkpoint": "docs/checkpoints/2026-10-17-135300-zsd-kad-ekateringofka-fixed.md",
+        "evidence": "docs/checkpoints/evidence/2026-10-17-zsd-kad-ekateringofka-fixed.json"
+      }
     },
     {
       "code": "m4:unpriced",
