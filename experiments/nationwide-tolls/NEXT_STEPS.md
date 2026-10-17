@@ -1,3 +1,11 @@
+## STARTED — 17.10.2026 21:08 МСК: ЦКАД М-11→М-12
+
+- Source/branch/PR14draft headf010d847… сверены; CI39055898864 success. [STARTED](../../docs/checkpoints/2026-10-17-210814-ckad-m11-m12-STARTED.md) · [inputs](checks/2026-10-17-ckad-m11-m12/inputs.json).
+- Один ограниченный первичный проход:8 way/full+4 node GET,≤120с/15с каждый, terminal circuit; новых routing/trace0. До durable STARTED/readback сеть не запускать. При доказательстве — forward-only adapter и непрерывный named trace блока ЦКАД, оба случая и полный gate. М-12 остаётся отдельным unknown.
+- NEXT: durable STARTED, primary capture/proof; при нехватке данных конкретный blocker без расширения поиска. В активный CI remote не писать.
+
+## Предыдущая сохранённая история
+
 ## DONE разбора / BLOCKED привязки — 17.10.2026 20:52 МСК: собственные М-12/ЦКАД
 
 - Проверены2 случая:1 представитель+1 исключение,19 сохранённых trace occurrences/13 raw,45 source hash entries. Общая геометрия ЦКАД М-11→М-12 полностью совпадает; адаптер поддерживает только М-11↔М-4. Выход М-12 к Чебоксарам —М-7 у Владимира; к Арзамасу —22Н-0239 после420. Один вектор между ними не переносить. [DONE](../../docs/checkpoints/2026-10-17-205246-selected-osrm-m12-ckad-scope-DONE.md) · [отчёт](checks/2026-10-17-selected-osrm-m12-ckad-scope/README.md).

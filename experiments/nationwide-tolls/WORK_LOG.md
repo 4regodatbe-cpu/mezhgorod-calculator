@@ -2143,3 +2143,18 @@ WORK_LOG дополнен, короткие WORK_STATE/NEXT_STEPS и актуа�
 NEXT: один ограниченный первичный проход общей пары ЦКАД М-11→М-12 по точным сохранённым ways1148492112/1148492111/1189855267 и соединению916593974→916593983→916593976→1189855268; не новый routing и не повтор74/76/309. Только при доказательстве — новый узкий adapter и пакетная проверка двух собственных случаев. М-12 западные RVP и два разных выхода требуют отдельного первичного определения; отсутствие связи не лечить увеличением radius. До длительной операции — durable STARTED; при отсутствии данных остановить эту причину и перейти к другой.
 
 Финальная проверка перед записью 2026-10-17T17:54:55.476Z: branch/PR head54f4cccccd0d4b70ae34f063ac4db351b013acba совпали; PR14 open/draft. CI39054871192 completed/success (verify и live_probe), пять последних runs завершены. Ожидание CI закончено; один non-force update с expected parent54f4cccc…, новый post-save CI проверять отдельно. Exact readback — pre-save-readback.json.
+
+
+# ЦКАД М-11→М-12 — STARTED
+
+17.10.2026 21:08 МСК. Source `f010d847765874573a52ef1926f3ca82dc1a44c4`, tree `94ba2e72308312c56d0c77cda00d09ccae98c911`. Единственная ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 open/draft; local/remote/PR совпали, CI39055898864 completed/success, пять последних runs завершены. Перед сетью/длительными тестами сохранить STARTED и проверить head/tree/blob.
+
+Два собственных OSRM и общий коридор уже проверены в предыдущем DONE; не повторять routing/trace и74/76/309. Цель — первичная направленная привязка М-11→М-12 и узкий adapter готовой981 клетки только при доказательстве. Первичный PDF/матрица/регистр уже сохранены, повторный числовой аудит не нужен. М-12 и его разные выходы в этом шаге не включаются; subtotal не полный итог.
+
+[Точные inputs и SHA](../../experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/inputs.json). Не более12 exact OSM GET (8 ways/full,4 nodes), максимум120с суммарно и15с каждый, без retry/широкого поиска. Capturer сохраняет каждый raw/metadata/progress; terminal response останавливает сеть. Восстановление только тех же inputs и точных сохранённых ответов; неизвестные привязки остаются BLOCKED.
+
+Если первичная связная геометрия и операторские границы доказаны, добавить небольшой physical snapshot и forward-only adapter. Нынешняя validation отбрасывает non-toll соединения; сохранить минимальный контекст named А-113 блока из полного trace, чтобы доказать один непрерывный проезд, вход из М-11 и выход через три links к М-12. Отклонять неполноту, другой/повторный блок, reverse/parallel/sparse geometry и чужие концы. Старый М-11↔М-4 adapter/пороги без изменения. Runtime не читает benchmark/case/OD/ETA/fare expectations.
+
+Затем обе saved-case exceptions, focused/API negative controls, обязательные audit/quoteAPI/TS/ESLint/build, per-case results/progress, один DONE checkpoint/commit/readback. Число проверенных случаев, новых рассчитанных компонентов и подтверждённых полных тарифов отдельно. При активном CI ветку не обновлять. Нового routing/trace, main/merge/Production/Android/сообщений/автоматизаций нет.
+
+Статус STARTED: первичных запросов и новых рассчитанных компонентов пока0. Следующий шаг после durable readback — ограниченный capturer с CKAD_DURABLE_STARTED_COMMIT; только при доказательстве реализация, иначе точный blocker и следующая причина.
