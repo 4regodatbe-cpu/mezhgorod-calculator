@@ -1713,16 +1713,37 @@
     {
       "id": 20,
       "title": "Итоговая проверка и передача состояния",
-      "status": "planned"
+      "status": "done",
+      "completedAtUtc": "2026-10-17T08:51:29Z",
+      "verification": {
+        "sourceHead": "cfb442401a3cde9b6311026675d39484df394182",
+        "workflowRun": 39016525904,
+        "workflowConclusion": "success",
+        "successfulJobs": [
+          "verify",
+          "live_probe"
+        ],
+        "checks": [
+          "scripts/*test.ts",
+          "typescript-noEmit",
+          "next-build",
+          "live-provider-geometry-and-leg-times",
+          "photon-address-suggestions",
+          "fixed-50-settlement-route-corpus",
+          "six-yandex-screenshot-route-comparisons",
+          "handoff-relative-links",
+          "part19-canonical-outcomes"
+        ]
+      }
     }
   ],
   "progressReporting": {
-    "completedParts": 19,
+    "completedParts": 20,
     "totalParts": 20,
     "method": "100*completedParts/totalParts; unfinished parts earn no partial credit",
     "meaning": "Completion of the agreed 20-part work plan; NOT percent verified tariff coverage or release readiness",
     "scope": "Includes both 155- and 154-case route-audit batches; completion of the broader calculator/matrix task is not established by this percentage",
-    "percent": 95
+    "percent": 100
   },
-  "lastUpdatedAtUtc": "2026-10-17T08:11:16Z"
+  "lastUpdatedAtUtc": "2026-10-17T08:51:29Z"
 }

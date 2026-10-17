@@ -1,3 +1,14 @@
+## Current handoff — 2026-10-17T08:51:29Z (2026-10-17 11:51 МСК)
+
+- Формальный план 20/20 = 100%; Parts 19 и 20 завершены в сохранённой ветке. Это не подтверждённость тарифов и не завершение всей широкой задачи калькулятора.
+- Part19: 13 findings, outcomes 1 fixed-and-verified component binding, 1 not reproduced, 8 blocked by missing reliable data, 3 deferred. M11 four named cases уже были включены в 8-case saved review; тариф остаётся unknown/null.
+- Part20: workflow #39016525904 success на source head `cfb442401a3cde9b6311026675d39484df394182`; tests/TS/build/live probes, fixed 50-settlement corpus audit и 6 Yandex screenshot comparisons прошли. Ссылки и статусы формального плана проверены.
+- NEXT: verify post-save Actions + exact branch/PR head; upon success disable this automation. No merge/main/Production/Android.
+
+[Checkpoint](../../docs/checkpoints/2026-10-17-115129-part20-final-verification.md) · [Queue](PART19_FINDINGS_QUEUE.json) · [Plan](SMALL_PARTS_PLAN.json).
+
+---
+
 ## Current handoff — 2026-10-17T08:11:16Z (2026-10-17 11:11 МСК)
 
 - Part19 synthesis DONE: 13/13 finding records normalized to canonical outcomes; counts 1 fixed-and-verified component binding, 1 not reproduced, 8 blocked by missing reliable data, 3 deferred. Cross-finding route baselines overlap.

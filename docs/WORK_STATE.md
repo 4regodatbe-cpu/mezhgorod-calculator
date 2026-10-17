@@ -1,4 +1,16 @@
-## Handoff — 2026-10-17T08:11:16Z (2026-10-17 11:11 МСК)
+## Handoff — 2026-10-17T08:51:29Z (2026-10-17 11:51 МСК)
+
+- PR14 открыт/draft; ветка `fix/v3-missing-route-prices-2026-10-15`. Перед Part20 PR и ветка совпадали на `cfb442401a3cde9b6311026675d39484df394182`.
+- Part19 завершена: 13 причин классифицированы — 1 исправлена и проверена (только A‑289 component binding), 1 не воспроизвелась, 8 заблокированы надёжными данными, 3 отложены. Пересекающиеся baseline case counts не складываются.
+- Part20 проверки завершены на source commit `cfb442401a3cde9b6311026675d39484df394182`: Actions #39016525904 success; тесты, TypeScript, Next build, live probes, аудит фиксированного набора из 50 settlement routes и 6 сравнений с Yandex screenshots прошли. Проверены JSON статусы и относительные ссылки handoff.
+- Формальный план: **20/20 = 100%** по `progressReporting`. Это только выполнение 20-пунктного route-audit плана, не готовность всего калькулятора и не подтверждённость тарифов.
+- Четыре названных M11 cases входят в сохранённую проверку 8 исключений общей причины; повторных прогонов не делал. M11 и другие source-gated amounts остаются unknown/null; полные тарифы не подтверждены.
+- [Checkpoint](checkpoints/2026-10-17-115129-part20-final-verification.md) · [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json) · [очередь причин](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json).
+
+## NEXT
+После сохранения этой handoff-записи проверить новый Actions run и точный PR/branch head. Если он успешен, отключить именно это автопродолжение: все 20 пунктов формального плана завершены. Не сливать PR и не публиковать приложение; дальнейшую работу над общей задачей начинать отдельно по прямому запросу.
+
+## Предыдущие handoff и история
 
 - PR14 открытый draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Перед синтезом remote head/PR head совпадали: `2e816d7a744298b5e7a8aa70d33c4b5c6a5de41f`; branch Actions #39014574620 завершился success на этом head. Проверить workflow уже сохранённого синтеза перед Part20.
 - Part19 завершена: все 13 сохранённых findings получили канонический исход с сохранением старых статусов/истории: 1 fixed and verified (только A-289 component binding, не полные тарифы), 1 not reproduced, 8 blocked by missing reliable data, 3 deferred. Кейсы между findings перекрываются.
