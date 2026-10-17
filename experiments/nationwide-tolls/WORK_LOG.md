@@ -2237,3 +2237,14 @@ Readback JSON docs/checkpoints/2026-10-17-ckad-code-durable-readback.json и о�
 ## 2026-10-17 23:49 МСК — STARTED: bounded address live probe
 
 Sourcee3c07ac3…/PR14draft, CI39067254489 completed/success проверен. Отсутствуют deadlines запроса/тела адресной проверки. Один ограниченный блок:10с request+body,90с whole probe, abort/race и incremental reports/progress; offline failure/budget tests и обязательный audit/TS/ESLint/build. STARTED docs-only [skip ci] предотвращает ненужный повтор широкого live-аудита для журналов; финальный code commit безskip проходит обычный CI. Источник механизма: https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs . Полные инструкции/recovery в docs/checkpoints/2026-10-17-234931-address-probe-timeout-STARTED.md. Scope probe/tests/progress artifact только; тарифы/матрица/app/lib без изменения.
+
+
+## 2026-10-17 — DONE: bounded address-search probe
+
+Одна причинаисправлена: запрос/JSONbody10с, общийbudget90с сabort/race, per-source errors, atomic partial array+progress после города и явныйBUDGET_EXHAUSTED/CLIexit1. Добавлены helper,8offline tests и одна строка progress artifact вworkflow. App/lib/матрица/ставки без изменения. Source e3c07ac3…/CI39067254489 success; durable STARTED925c8c4d…/6path readback, docs-only skipCI.
+
+Actualfocused8/8,fullaudit744/744+quote/API,TS,ESLint иNext16/16 PASS. Initialserializationtest failure исправлен только test fixture/normalization. Initialbuild exit1: external node_modules symlink rejected byTurbopack; зависимости локально скопированы, повторён только failed build,exit0. Exact source SHA256/commands/exit/timing/initial+final gzip logs в checks/2026-10-17-address-probe-timeout; подробныйcheckpoint docs/checkpoints/2026-10-17-2350-address-probe-timeout-DONE.md.
+
+Локальных live/providercaptures0;8faulttests mocked, externalavailability не заявляется. Передfinal non-force expected925c8c4d… сверитьhead/PRdraft/terminalCI; commit безskip,exacttree/blobs/headreadback. Новыйpost-saveCI отдельно. NEXTcodeCI,затемМ-12 западныерамки иразныеexits;unknown/fulltariffs не превращатьв0.
+
+Уточнение сохранности evidence: initial focused invocation exit1 наблюдался в выводе инструмента (AssertionError по undefined/JSON normalization), однако focused-initial.log при финальной проверке имеет0байт, причина не установлена. Полный initial focused raw НЕ сохранён; empty gzip не является его доказательством. initial-observations.json явно фиксирует доступное наблюдение и это ограничение. Initial build raw и все принятые final logs доступны; окончательные8/744/TS/ESLint/build PASS прочитаны из реальных логов.

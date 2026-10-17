@@ -1,3 +1,13 @@
+## DONE — 17.10.2026: лимиты адресной сетевой проверки
+
+- Request+body10с, общий budget90с; abort/race, прекращение новых запросов, incremental atomic array/progress. Budget-exhausted не выдаётся заDONE (CLIexit1), ошибки источников видны. Диагностический probe и artifact path; app/lib/тарифы/матрица без изменения. [DONE](../../docs/checkpoints/2026-10-17-2350-address-probe-timeout-DONE.md) · [отчёт/логи](checks/2026-10-17-address-probe-timeout/README.md).
+- Focused8/8, full744/744+quote/API,TS,ESLint,Next16/16 PASS. Initial test-serialization failure и initial build environment failure сохранены; после локальной копии dependencies повторён только failed build. Новых local live/routing/trace/primary0. Sourcee3c07ac3…/CI39067254489success, durableSTARTED925c8c4d….
+- Evidence limitation: полный initial focused raw отсутствует (файл0байт); initial-observations.json фиксирует фактическое наблюдение ошибки. Final test/build logs и initial build raw сохранены.
+- Final code commit безskipci; после durable save проверить новыйCI фактически. До head/tree/blob readback код не считать опубликованным; PR14draft, no main/merge/Production/Android.
+- **NEXT после durable save:** фактический codeCI; затем первичная привязка западныхМ-12 рамок10782165529/11214930528/11157985901 и двух выходов22Н-0239/М-7 по saved inputs.2952/1239 без доказательства не назначать,74/76/309 иЦКАД не повторять.
+
+## Предыдущая сохранённая история
+
 ## STARTED — 17.10.2026 23:49 МСК: ограничение времени адресной проверки
 
 - Source e3c07ac3…/PR14draft, **CI39067254489 completed/success**. Код ЦКАД сохранён и повторно не проверяется. [STARTED](../../docs/checkpoints/2026-10-17-234931-address-probe-timeout-STARTED.md).

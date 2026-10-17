@@ -52,6 +52,7 @@ jobs:
             special-territory-live-probe.json
             special-territory-full-flow-probe.json
             address-search-live-probe.json
+            address-search-live-probe-progress.json
             settlement-random-route-audit.json
             yandex-route-reference-audit.json
           if-no-files-found: ignore
