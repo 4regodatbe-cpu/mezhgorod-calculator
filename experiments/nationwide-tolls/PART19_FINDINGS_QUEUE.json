@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "After durable code commit check its CI; if proceeding with pricing, obtain own selected OSRM trace for one representative, no broad live replay.",
+  "nextAction": "After durable DONE/current CI: one bounded batch of remaining five changed OSRM geometries, own metadata and trace; exact request payload reuse only, no broad route rerun.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1979,7 +1979,56 @@
           "newComponentDateChecks": 0,
           "summary": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
           "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
-        }
+        },
+        "selectedRouteReplacementReviews": [
+          {
+            "caseId": "pair-m11-zsd-prim-to-moscow",
+            "sourceCodeCommit": "a49470b7b9ebf4065c44890bc5e516a74dbe0166",
+            "sourceCiRun": 39038119987,
+            "sourceCiConclusion": "success",
+            "startedCommit": "dbb5a1ef669e3ce5179d35b59f22378602b766c8",
+            "outcome": "fixed_and_verified",
+            "selectedProvider": "OSRM",
+            "routeMeters": 715622,
+            "routeSeconds": 30963,
+            "ownTraceComplete": true,
+            "ownTraceChunks": 6,
+            "newRoutingRequests": 0,
+            "newTraceRequests": 6,
+            "checkedCases": 1,
+            "pricedComponents": 4,
+            "pricedZsdComponents": 1,
+            "zsdRub": 300,
+            "fareBasis": "existing source-derived owner zone1 ready vector, not independent operator OD receipt",
+            "departureAt": "2026-10-15T09:00:00+03:00",
+            "calculatedTripRub": 5424,
+            "priceConfirmation": "unconfirmed",
+            "confirmedFullTripFares": 0,
+            "uncheckedReplacementCases": 5,
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/result.json",
+            "checkpoint": "docs/checkpoints/2026-10-17-172810-zsd-selected-osrm-trace-DONE.md",
+            "historicalBaselineRecomputed": false,
+            "checks": {
+              "syntax": "PASS two scripts",
+              "strictOwnCaptureReplay": "PASS zero misses/network",
+              "sourceHashes": 7,
+              "rawResponses": 6,
+              "negativeChecks": 5,
+              "auditPassed": 721,
+              "auditFailed": 0,
+              "quoteApi": "PASS",
+              "tsc": "PASS",
+              "nextBuild": "PASS static16/16"
+            },
+            "preSaveCi": {
+              "runId": 39040459995,
+              "status": "completed",
+              "conclusion": "success",
+              "verify": "completed/success",
+              "live_probe": "completed/success"
+            }
+          }
+        ]
       }
     },
     {
@@ -4307,8 +4356,8 @@
       "fixed": true,
       "evidenceDirectory": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases",
       "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
-      "nextAction": "After durable code commit check its CI; if proceeding with pricing, obtain own selected OSRM trace for one representative, no broad live replay.",
-      "implementationStatus": "DONE_CODE_VERIFIED_POSTSAVE_CI_SEPARATE",
+      "nextAction": "After durable DONE/current CI: one bounded batch of remaining five changed OSRM geometries, own metadata and trace; exact request payload reuse only, no broad route rerun.",
+      "implementationStatus": "DONE_CODE_AND_ONE_REPLACEMENT_TRACE_VERIFIED",
       "implementationStartedCheckpoint": "docs/checkpoints/2026-10-17-162522-zsd-no-reentry-STARTED.md",
       "implementationSourceHead": "0cc2c469d5ef0385fe8446983103233ef73606a2",
       "implementationDoneCheckpoint": "docs/checkpoints/2026-10-17-163758-zsd-no-reentry-DONE.md",
@@ -4327,14 +4376,69 @@
       },
       "newPricedComponents": 0,
       "confirmedFullTripFares": 0,
-      "selectedGeometryTrace": "New selected OSRM trace not captured live; old Valhalla trace must not be reused.",
+      "selectedGeometryTrace": {
+        "caseId": "pair-m11-zsd-prim-to-moscow",
+        "sourceCodeCommit": "a49470b7b9ebf4065c44890bc5e516a74dbe0166",
+        "sourceCiRun": 39038119987,
+        "sourceCiConclusion": "success",
+        "startedCommit": "dbb5a1ef669e3ce5179d35b59f22378602b766c8",
+        "outcome": "fixed_and_verified",
+        "selectedProvider": "OSRM",
+        "routeMeters": 715622,
+        "routeSeconds": 30963,
+        "ownTraceComplete": true,
+        "ownTraceChunks": 6,
+        "newRoutingRequests": 0,
+        "newTraceRequests": 6,
+        "checkedCases": 1,
+        "pricedComponents": 4,
+        "pricedZsdComponents": 1,
+        "zsdRub": 300,
+        "fareBasis": "existing source-derived owner zone1 ready vector, not independent operator OD receipt",
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "calculatedTripRub": 5424,
+        "priceConfirmation": "unconfirmed",
+        "confirmedFullTripFares": 0,
+        "uncheckedReplacementCases": 5,
+        "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/result.json",
+        "checkpoint": "docs/checkpoints/2026-10-17-172810-zsd-selected-osrm-trace-DONE.md",
+        "historicalBaselineRecomputed": false,
+        "checks": {
+          "syntax": "PASS two scripts",
+          "strictOwnCaptureReplay": "PASS zero misses/network",
+          "sourceHashes": 7,
+          "rawResponses": 6,
+          "negativeChecks": 5,
+          "auditPassed": 721,
+          "auditFailed": 0,
+          "quoteApi": "PASS",
+          "tsc": "PASS",
+          "nextBuild": "PASS static16/16"
+        },
+        "preSaveCi": {
+          "runId": 39040459995,
+          "status": "completed",
+          "conclusion": "success",
+          "verify": "completed/success",
+          "live_probe": "completed/success"
+        }
+      },
       "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-no-reentry/candidate-batch/summary.json",
       "preSaveCi": {
         "runId": 39036931767,
         "verify": "completed/success",
         "live_probe": "completed/success"
+      },
+      "selectedGeometryTraceHistory": [
+        "New selected OSRM trace not captured live; old Valhalla trace must not be reused."
+      ],
+      "implementationCommit": "a49470b7b9ebf4065c44890bc5e516a74dbe0166",
+      "implementationCi": {
+        "runId": 39038119987,
+        "status": "completed",
+        "conclusion": "success"
       }
     }
   ],
-  "postAuditNextFinding": "zsd:selected-route-reentry"
+  "postAuditNextFinding": "zsd:selected-route-reentry:remaining-five-own-traces"
 }

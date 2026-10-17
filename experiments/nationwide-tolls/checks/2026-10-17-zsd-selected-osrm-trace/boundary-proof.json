@@ -1,0 +1,325 @@
+{
+  "caseId": "pair-m11-zsd-prim-to-moscow",
+  "status": "PASS",
+  "ownGeometryProof": "every trace request point belongs to selected OSRM geometry; strict offline replay additionally checks exact request bodies",
+  "otherRecordedCandidate": {
+    "provider": "BRouter",
+    "seconds": 30659,
+    "originalDimensions": [
+      3
+    ],
+    "projectionDiagnosticOnly": true,
+    "reviewedReentryAfter2DProjection": true,
+    "admittedAfter2DProjection": false,
+    "runtimeNormalizationChanged": false
+  },
+  "directedScope": "Благодатная → КАД-юг, далее на восток к Пулковскому шоссе",
+  "entry": {
+    "wayId": "375574651",
+    "booth": "318102347",
+    "witnesses": [
+      {
+        "nodeId": "3789313436",
+        "index": 573.0033700289778,
+        "distanceKm": 0.0000025601542704355854
+      },
+      {
+        "nodeId": "318102347",
+        "index": 574.0000764598246,
+        "distanceKm": 0.000005540861019032357
+      },
+      {
+        "nodeId": "3789313425",
+        "index": 575.0009532490399,
+        "distanceKm": 0.000006863953568277221
+      }
+    ]
+  },
+  "exit": {
+    "orderedTrace": [
+      {
+        "wayId": "305638466",
+        "edgeIndex": 352,
+        "way_id": 305638466,
+        "toll": true,
+        "end_shape_index": 556,
+        "begin_shape_index": 555,
+        "end_node": {
+          "intersecting_edges": [
+            {}
+          ],
+          "node_id": 318102363,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "wayId": "375574651",
+        "edgeIndex": 354,
+        "way_id": 375574651,
+        "toll": true,
+        "end_shape_index": 574,
+        "begin_shape_index": 573,
+        "end_node": {
+          "node_id": 318102347,
+          "type": "toll_booth"
+        }
+      },
+      {
+        "wayId": "375574658",
+        "edgeIndex": 356,
+        "way_id": 375574658,
+        "toll": true,
+        "end_shape_index": 576,
+        "begin_shape_index": 575,
+        "end_node": {
+          "intersecting_edges": [
+            {}
+          ],
+          "node_id": 6428471651,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "wayId": "81348980",
+        "edgeIndex": 358,
+        "way_id": 81348980,
+        "toll": true,
+        "end_shape_index": 581,
+        "begin_shape_index": 579,
+        "names": [
+          "ЗСД"
+        ],
+        "end_node": {
+          "node_id": 301550023,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "wayId": "129780705",
+        "edgeIndex": 367,
+        "way_id": 129780705,
+        "toll": true,
+        "end_shape_index": 617,
+        "begin_shape_index": 615,
+        "names": [
+          "ЗСД"
+        ],
+        "end_node": {
+          "intersecting_edges": [
+            {}
+          ],
+          "node_id": 301535040,
+          "type": "motor_way_junction"
+        }
+      },
+      {
+        "wayId": "27462214",
+        "edgeIndex": 368,
+        "way_id": 27462214,
+        "toll": true,
+        "end_shape_index": 618,
+        "begin_shape_index": 617,
+        "sign": {},
+        "end_node": {
+          "node_id": 1431123625,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "wayId": "427378978",
+        "edgeIndex": 369,
+        "way_id": 427378978,
+        "toll": true,
+        "end_shape_index": 620,
+        "begin_shape_index": 618,
+        "end_node": {
+          "node_id": 301535188,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "wayId": "427378977",
+        "edgeIndex": 370,
+        "way_id": 427378977,
+        "toll": true,
+        "end_shape_index": 623,
+        "begin_shape_index": 620,
+        "end_node": {
+          "node_id": 301535192,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "wayId": "129780711",
+        "edgeIndex": 371,
+        "way_id": 129780711,
+        "toll": true,
+        "end_shape_index": 633,
+        "begin_shape_index": 623,
+        "end_node": {
+          "node_id": 301535203,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "wayId": "27462227",
+        "edgeIndex": 372,
+        "way_id": 27462227,
+        "toll": true,
+        "end_shape_index": 650,
+        "begin_shape_index": 633,
+        "end_node": {
+          "node_id": 1351939480,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "wayId": "129780707",
+        "edgeIndex": 373,
+        "way_id": 129780707,
+        "toll": false,
+        "end_shape_index": 651,
+        "begin_shape_index": 650,
+        "end_node": {
+          "intersecting_edges": [
+            {}
+          ],
+          "node_id": 187587300,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "wayId": "400111366",
+        "edgeIndex": 374,
+        "way_id": 400111366,
+        "toll": false,
+        "end_shape_index": 654,
+        "begin_shape_index": 651,
+        "names": [
+          "А-118",
+          "КАД",
+          "Кольцевая автомобильная дорога вокруг г. Санкт-Петербурга"
+        ],
+        "end_node": {
+          "node_id": 187587293,
+          "type": "street_intersection"
+        }
+      }
+    ]
+  },
+  "primaryBasis": "Owner order96 zone1 expressly includes Blagodatnaya entry towards KAD and KAD exit towards Pulkovo. Owner order32_1 classI zone1=300. No Avtomobilnaya↔Blagodatnaya receipt discount transplanted.",
+  "fareBasis": "existing ready source-derived zone1 vector, not an independent operator OD receipt",
+  "responses": [
+    {
+      "index": 0,
+      "requestSha256": "3e2c7788ce3bdb05fb0cc7ac500a7ce47a7126201acc2261589d9b14ac75cbc5",
+      "responseSha256": "67993f0e84d379fa76223821522cdd13fba99ab020d97296497d952b949a4c30",
+      "points": 320,
+      "edges": 546
+    },
+    {
+      "index": 1,
+      "requestSha256": "a39b6b7d34965a57377b8c38d3e88f9a0cedc4fc748edbe7b3220c3fee9b561d",
+      "responseSha256": "eb6a0fdf0ba0feaadd6d9a29f88f3c4d14d933e7e5571ae8f5100b7a4a484ab2",
+      "points": 320,
+      "edges": 165
+    },
+    {
+      "index": 2,
+      "requestSha256": "482ee45e73ac91f102951c8c8c01af469d1cfa02d803147a679386950642a0aa",
+      "responseSha256": "12f342779af8a6b9f8b5fb75f9cd0e5e680018a0c0480e66efcb245a538d7839",
+      "points": 320,
+      "edges": 133
+    },
+    {
+      "index": 3,
+      "requestSha256": "bcd0074aee494b2f3c247ce2baa0eadc665b51f4c28a15ebc46944d1f750756f",
+      "responseSha256": "d533d652c6607e75b91342bfb764acdd0f553c1e5aafe990f8432e09d6707017",
+      "points": 320,
+      "edges": 141
+    },
+    {
+      "index": 4,
+      "requestSha256": "a6270b780a65157666c6cee5613b164418a5161317f6d8cb878f2ed0e3e9af77",
+      "responseSha256": "b66f37c63c6a25a920510471cb614b5d59e1578fea89faac22097bfd6efd3617",
+      "points": 320,
+      "edges": 202
+    },
+    {
+      "index": 5,
+      "requestSha256": "75433941088633d8a368512989fb5522b71793251e6f2475340fbc9bae9485a6",
+      "responseSha256": "48dd25756bf03c6b04a0fd420fe81687852a921406044286b6e5261212c3ede0",
+      "points": 320,
+      "edges": 308
+    }
+  ],
+  "sourceChecks": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+      "sha256": "debfe6e45d6c51554d2710b83068f206ffbf93cf9f4b3bc4d9aa3bdfdbd0a8c5"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/whsd-owner-tariffs.html",
+      "sha256": "02f1f3eb15f566831bc83bfc9599c17a5520a97a752bc2735d832f7a9308aad5"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/whsd-owner-rules.html",
+      "sha256": "7fc16154f626d7596c6f12ec6f85e3db1d70b7b63c58981bcf18e2cace9cc4e7"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-ways.osm.gz",
+      "sha256": "327c5bdd61576e414184ef2d6b2fbebfab71cc32cb7589a55c5fd98ab1a3b954"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-zones-96.pdf",
+      "sha256": "3651cf7c42ec6530f2d994cd03c2929c94bd45c86b8479ebce98b6688b23975e",
+      "url": "https://whsd.ru/assets/disclosure/70/96.pdf"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-base-32-1.pdf",
+      "sha256": "a8041b8a0b44189fd9f3e8dcd9bf155ec9b1b86c2023445fa2805367f0586413",
+      "url": "https://whsd.ru/assets/disclosure/70/32_1.pdf"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-rules.html",
+      "sha256": "39da1d5dd3a4235c50c09e55736b4939a5c62735464348564a7e606ce4b701c3",
+      "url": "https://whsd.ru/pravila-ispolzovaniya-zsd"
+    }
+  ],
+  "negatives": [
+    {
+      "name": "incomplete_trace",
+      "reason": "zsd_complete_selected_trace_missing",
+      "status": "PASS"
+    },
+    {
+      "name": "partial_booth_coverage",
+      "reason": "zsd_complete_selected_trace_missing",
+      "status": "PASS"
+    },
+    {
+      "name": "unreviewed_zsd_way",
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "status": "PASS"
+    },
+    {
+      "name": "additional_zsd_plaza",
+      "reason": "zsd_additional_unbound_paid_booth",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong_direction_geometry",
+      "reason": "zsd_zone1_directional_geometry_unresolved",
+      "status": "PASS"
+    }
+  ],
+  "counts": {
+    "checkedCases": 1,
+    "newRoutingRequests": 0,
+    "selectedGeometryTraceRuns": 1,
+    "attemptedNetworkRequests": 6,
+    "pricedComponents": 4,
+    "pricedZsdComponents": 1,
+    "confirmedFullTripFares": 0
+  }
+}
