@@ -1,3 +1,13 @@
+## Current handoff — 2026-10-17T04:35:31Z (2026-10-17 07:35 МСК)
+
+- Remote head `fec51dab8eddc1919b4e839cc1b59a1c345f3b05`; PR14 open/draft. Run #38999218280 success at current head; no active branch run.
+- M11 boundary cases 5–8 are already DONE in their committed case checkpoints. Shared cause remains blocked by missing reliable data; fares stay unknown/null. No repeat routes in this step.
+- `expected-road-not-proven`: reviewed 64 saved rows and verified all 64 unique live artifact paths; trace/same-date evidence complete. Missing-label groups: CKAD30, M12 11, Khabarovsk10, Odintsovo8, ZSD3, M4 2. 32 overlap existing findings and 32 do not. Because this is a mixed symptom and the report does not establish actual selected-route toll scope, outcome **deferred**; no route forced onto a road and no price inferred.
+- No new route runs, live/replay, tests, builds, or fare confirmation. Formal plan remains **18/20 = 90%** only.
+- Next: `m12_current_operator_pair_not_bound` (baseline4), saved data only; no replay absent material distinction/evidence gap.
+
+[Checkpoint](../../docs/checkpoints/2026-10-17-0735-part19-expected-road-not-proven-deferred.md) · [Evidence](../../docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json) · [Findings queue](PART19_FINDINGS_QUEUE.json).
+
 # Следующие действия
 
 [Актуальный handoff](../../docs/WORK_STATE.md); история ниже сохранена.

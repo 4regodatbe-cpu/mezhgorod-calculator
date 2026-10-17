@@ -1781,3 +1781,13 @@ Reviewed historical `arc_not_proven` from the frozen audit report at source head
 Also verified run #38994773498 succeeded on the source head but executed the non-fastest payment-point-avoiding Moscow–Krasnodar probe (step7) successfully, contrary to fastest-route-only scope. Removed that step and its artifact entry from `.github/workflows/special-territory-policy.yml`; the workflow triggered by this update must be observed before the next independent step.
 
 Updated queue, AUTO_QUEUE_STATE, WORK_STATE, NEXT_STEPS and this append-only log. Formal plan 18/20=90%, not tariff coverage. [Checkpoint](../../docs/checkpoints/2026-10-17-0632-part19-arc-not-proven-blocked.md) · [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-arc-not-proven-blocked.json). NEXT: `expected-road-not-proven`, saved-data exceptions only.
+
+
+## 2026-10-17 07:35 МСК — expected-road-not-proven grouped assessment
+
+- Saved-report-only review on branch `fix/v3-missing-route-prices-2026-10-15`, source head/tree `fec51dab8eddc1919b4e839cc1b59a1c345f3b05` / `0bd121306facb563761e924d54c57ad4aa4487c1`, PR14 open/draft. Latest workflow run #38999218280 success at source head; no active branch run before this documentation save.
+- Matched 64/64 finding case IDs to report rows; checked 64 unique live artifact paths in the source tree (all present), with raw, trace-complete, same-date-parity flags true. Missing expected road-label distribution: CKAD30, M12 11, Khabarovsk10, Odintsovo8, ZSD3, M4 2. 32 cases overlap existing finding ledgers and 32 do not; do not add overlapping counts.
+- Conclusion: `expected-road-not-proven` is a mixed symptom, not one demonstrated defect. Report evidence does not establish that a fastest selected route actually traversed a chargeable omitted segment. Outcome: **deferred**; no road or fare was forced/added. User impact remains conditional/unconfirmed.
+- M11 boundary cases5–8 were found already DONE in committed checkpoints; the shared M11 boundary cause remains **blocked by missing reliable data**, amounts unknown/null. No repeats.
+- No new route/live/replay/build/test, no tariff confirmation. Formal-plan progress stays 18/20=90%.
+- Checkpoint/evidence: `docs/checkpoints/2026-10-17-0735-part19-expected-road-not-proven-deferred.md`, `docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json`. Next: review `m12_current_operator_pair_not_bound` (baseline4) from saved evidence only.

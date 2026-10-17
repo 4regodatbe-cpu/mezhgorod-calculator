@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "NEXT: review expected-road-not-proven (baseline64) by root cause, user impact and overlap with already reviewed findings using saved evidence only. The arc_not_proven overlap is 12 cases; counts are not additive. No new live/replay absent a material distinction or evidence gap.",
+  "nextAction": "NEXT: review m12_current_operator_pair_not_bound (baseline4) using saved evidence only; check overlaps and user impact. Do not launch live/replay unless an evidence gap or material route-input distinction is found.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2421,8 +2421,47 @@
         "triple-m4-m11-zsd-domodedovo-to-sest",
         "triple-m4-m11-zsd-sest-to-domodedovo"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "deferred",
+      "note": "Deferred as an aggregate symptom, not one demonstrated defect: 64 complete saved route rows span six unrelated missing-road labels; 32 overlap previously reviewed findings and 32 are not in those ledgers. ExpectedRoads labels alone do not prove that the fastest selected route crossed a chargeable segment. No tariff is inferred, no price forced, and no broad replay launched.",
+      "causeReviewStatus": "aggregate_not_independent_root_cause",
+      "currentCasesChecked": 64,
+      "currentEvidenceOccurrences": 64,
+      "currentEvidenceFilesPresent": 64,
+      "currentTraceComplete": 64,
+      "currentSameDateParity": 64,
+      "currentLiveRuns": 0,
+      "reviewedAt": "2026-10-17T04:35:31Z",
+      "causeOutcome": "deferred",
+      "checkpoint": "docs/checkpoints/2026-10-17-0735-part19-expected-road-not-proven-deferred.md",
+      "reviewEvidence": "docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json",
+      "causeReview": {
+        "outcome": "deferred",
+        "userImpact": "A toll could be omitted only if the selected fastest route actually traverses the chargeable road; the saved report establishes expected-versus-proven label differences, not that condition.",
+        "evidenceRows": 64,
+        "liveFilesPresent": 64,
+        "traceComplete": 64,
+        "sameDateParity": 64,
+        "overlapWithExistingFindingLedgers": 32,
+        "distinctCaseIdsNotInThoseLedgers": 32,
+        "missingExpectedRoadCounts": {
+          "ckad": 30,
+          "m12": 11,
+          "khabarovsk": 10,
+          "odintsovo": 8,
+          "zsd": 3,
+          "m4": 2
+        },
+        "disposition": "No shared root cause established across CKAD/M12/Khabarovsk/Odintsovo/ZSD/M4 labels; defer until a concrete route or authoritative toll-boundary exception is independently identified."
+      },
+      "statusHistory": [
+        {
+          "at": "2026-10-17T04:35:31Z",
+          "status": "deferred",
+          "checkpoint": "docs/checkpoints/2026-10-17-0735-part19-expected-road-not-proven-deferred.md",
+          "evidence": "docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json",
+          "note": "Saved-evidence aggregation review; no new routes, live calls, replays, builds, tests, or tariff confirmation."
+        }
+      ]
     },
     {
       "code": "m11-58-679:unpriced",
@@ -3869,5 +3908,6 @@
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     }
   },
-  "lastSynthesisAtUtc": "2026-10-17T00:15:54Z"
+  "lastSynthesisAtUtc": "2026-10-17T04:35:31Z",
+  "nextFinding": "m12_current_operator_pair_not_bound"
 }

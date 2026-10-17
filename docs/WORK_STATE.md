@@ -1,5 +1,18 @@
 # Калькулятор «Из А в Б»: актуальное состояние
 
+## Handoff — 2026-10-17T04:35:31Z (2026-10-17 07:35 МСК)
+
+- PR14 открыт/draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Перед шагом remote head/tree: `fec51dab8eddc1919b4e839cc1b59a1c345f3b05` / `0bd121306facb563761e924d54c57ad4aa4487c1`; PR head совпадает. Run #38999218280 завершён success на этом head; отдельный PR run #38959170444 также completed/success (старый head `7ce720c381265524189b198902f70b3c97009ab5`). Активных branch runs нет.
+- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это только процент формального плана, не готовность продукта, покрытия тарифов или релиза.
+- M11 boundary cases **5–8 уже DONE** в сохранённых checkpoints (four named cases). Общая причина остаётся **blocked by missing reliable data**; тарифы unknown/null. В этом запуске эти маршруты не запускались повторно.
+- `expected-road-not-proven`: 64/64 сохранённых строк проанализированы по report; все 64 raw/live-ссылки присутствуют, trace complete, same-date parity true. Метки отсутствующих expected roads: CKAD30, M12 11, Khabarovsk10, Odintsovo8, ZSD3, M4 2. 32 случая перекрываются уже рассмотренными findings, 32 не находятся в этих ledgers; счётчики не складываются. Это несколько независимых road labels, а не доказанная одна причина. Outcome **deferred**: отсутствующая метка сама по себе не доказывает, что fastest selected route проезжал chargeable сегмент; тариф не добавляли, full quote не подтверждён.
+- Нет новых live/replay/build/test запусков и новых тарифов. [Checkpoint](../docs/checkpoints/2026-10-17-0735-part19-expected-road-not-proven-deferred.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json).
+- NEXT: `m12_current_operator_pair_not_bound` (4 baseline cases), saved evidence only; check overlap and user impact before any replay.
+
+
+## Предыдущие handoff и история
+
+### Предыдущий handoff — 2026-10-17T06:32:46 МСК
 ## Handoff — 2026-10-17T06:32:46 МСК
 
 - PR14 открыт/draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Источник шага: head `6df92a4bf60ba64e0a3ac8ca2d5e856248de7c9b`, tree `dc4c2b12a326ab4316e364d2779d2d6c606c0869`; ветка и PR совпали до записи.
