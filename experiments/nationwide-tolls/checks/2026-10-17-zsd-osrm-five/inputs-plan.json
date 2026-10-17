@@ -1,0 +1,196 @@
+{
+  "sourceHead": "8fecbab5245fed3b7bff644eb0ccce4f2efa2c33",
+  "priorPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/capture.json.gz",
+  "priorSha256": "e920e57e3e296d51b0f3e3461f150e10fe697d3643d5aff05828e9a47f1cf69b",
+  "newRoutingRequests": 0,
+  "newLiveRequests": 0,
+  "pricedCases": 0,
+  "inputs": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/2026-10-16T01-22-12-554Z-capture.json.gz",
+      "sha256": "c7fe6e20ebaf1854e7dba96db30bac54b2c929be4482f9f2144c686b17d104a4",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "routeSha256": "5a64525ac31cece284d759d57ea520269c3b0bbf7e14219f718d731a19c6cd2a",
+      "geometrySha256": "d29cc3c89e493835aa215f8254cad83f225a235b9803a390f734018a50a6e4a3",
+      "candidates": [
+        {
+          "provider": "Valhalla",
+          "admitted": false,
+          "seconds": 44435
+        },
+        {
+          "provider": "OSRM",
+          "admitted": true,
+          "seconds": 52323
+        },
+        {
+          "provider": "BRouter",
+          "admitted": false,
+          "seconds": 49626
+        }
+      ],
+      "brouterReentryAfter2DProjection": true,
+      "traceRequestKeys": [
+        "f19098ecac2d8b81006a2171fc0d6e04267359a277b1191757b5e829ffda9ae0",
+        "cbd75ae154f0ac57f35c2d3b00833b37d0fe9f9a2f394af7bdf8599fab19e6b3",
+        "fd4ff3d1d167548b8b73258a29933fe9802c18302f43e5040c21c411a303bdf8",
+        "132596df67514137e3a709e74d15405f4cad6acb8d84554e236949b36935bb49",
+        "aaae46ebb9956338e9c2cfbedf304767b9a5270e235f90b5c936440dab73f3ea",
+        "a1f2baa14135e54ffc7d132d81fca6dfa298d4a2b049a4a8b61e0e4ea55d37cd",
+        "b092f3ea7577f5c3a86574d5ea583c48b2123dacfdaffae5bca7ab2d89e19662",
+        "4b4b709378afd9d0e9e838fc75c8d6ffc421a332be79742a46a04c1077f9a4d3",
+        "337992402a67181c746c9771b0f3f597b9e05a61ffcdb3eb4d74dc067cc5a509"
+      ]
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/2026-10-16T01-22-56-513Z-capture.json.gz",
+      "sha256": "ff9294352008224ef3ce7433539682ed9d80bcb8f7b3a4eb4d573cfd8dd4a4d5",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "routeSha256": "ccf1dae85faa72c53f9f7534a87de98b5347ff43b512ad9c13e865257eab7c98",
+      "geometrySha256": "b7160cd1eaa69e8a5fa958fc87a6d4705b203e5b184f14e9477663548d62d72e",
+      "candidates": [
+        {
+          "provider": "Valhalla",
+          "admitted": false,
+          "seconds": 54716
+        },
+        {
+          "provider": "OSRM",
+          "admitted": true,
+          "seconds": 64986
+        },
+        {
+          "provider": "BRouter",
+          "admitted": false,
+          "seconds": 62487
+        }
+      ],
+      "brouterReentryAfter2DProjection": true,
+      "traceRequestKeys": [
+        "f19098ecac2d8b81006a2171fc0d6e04267359a277b1191757b5e829ffda9ae0",
+        "cbd75ae154f0ac57f35c2d3b00833b37d0fe9f9a2f394af7bdf8599fab19e6b3",
+        "fd4ff3d1d167548b8b73258a29933fe9802c18302f43e5040c21c411a303bdf8",
+        "132596df67514137e3a709e74d15405f4cad6acb8d84554e236949b36935bb49",
+        "aaae46ebb9956338e9c2cfbedf304767b9a5270e235f90b5c936440dab73f3ea",
+        "a1f2baa14135e54ffc7d132d81fca6dfa298d4a2b049a4a8b61e0e4ea55d37cd",
+        "2a5b47010e74b516707444f23a52cbb0317497aa6df40bea56c06648b1a37f37",
+        "e7a79e32c9b49462fbcd543f9f9d0e5fc43d51509980186c841c30f02d185847",
+        "8164e4c35bac280d9c20d9870409bfd464770eb4bb79eebefa62a9e8c62ddc5f",
+        "487994ddde68283f8662a564a13106c7f2a81b7a77d72839376335242606afff"
+      ]
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/2026-10-16T01-27-29-307Z-capture.json.gz",
+      "sha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "routeSha256": "c96cb9d5fdf36607c9cc5f1f64b8fc9805e95bb2e6574792d7b3e3f3978c484f",
+      "geometrySha256": "6fd6dd550bff8b48e45e77d7a18ecefa0ccdb2e2fed95e73dcce8cfbef7b1071",
+      "candidates": [
+        {
+          "provider": "Valhalla",
+          "admitted": false,
+          "seconds": 48214
+        },
+        {
+          "provider": "OSRM",
+          "admitted": true,
+          "seconds": 55226
+        },
+        {
+          "provider": "BRouter",
+          "admitted": false,
+          "seconds": 52458
+        }
+      ],
+      "brouterReentryAfter2DProjection": true,
+      "traceRequestKeys": [
+        "f19098ecac2d8b81006a2171fc0d6e04267359a277b1191757b5e829ffda9ae0",
+        "cbd75ae154f0ac57f35c2d3b00833b37d0fe9f9a2f394af7bdf8599fab19e6b3",
+        "fd4ff3d1d167548b8b73258a29933fe9802c18302f43e5040c21c411a303bdf8",
+        "132596df67514137e3a709e74d15405f4cad6acb8d84554e236949b36935bb49",
+        "59f71cb89ad90298c60bbfc2b8b2f80279e29cada321939f5fbd14487406dc78",
+        "95a4220226c6fefe9d5ae35a4dedd6c667009cd60700f9b336b9444f10039848",
+        "5f30c55fc33d1989396e6b1aeac3348ced638e39444fe1cbd09b6cc13357f9df",
+        "b266c790effbfc2b776b2d5867cfe4f13dbfeebd51e216f8549eb2b7533d556c",
+        "d5228dce78b783558052a981c6ad9386b33e28e3f3adc2591e0ed16f6f7746c2"
+      ]
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-torzhok",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/2026-10-16T01-32-28-268Z-capture.json.gz",
+      "sha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "routeSha256": "e933912e4b6f074670459f2cfc14a2a44163f141479f19540e3d1111cf54ffa6",
+      "geometrySha256": "3edb9264591acfccdf372b7ffe604901ec314ece9087b74fa561afc67696e1ff",
+      "candidates": [
+        {
+          "provider": "Valhalla",
+          "admitted": false,
+          "seconds": 16578
+        },
+        {
+          "provider": "OSRM",
+          "admitted": true,
+          "seconds": 21098
+        },
+        {
+          "provider": "BRouter",
+          "admitted": false,
+          "seconds": 20967
+        }
+      ],
+      "brouterReentryAfter2DProjection": true,
+      "traceRequestKeys": [
+        "f19098ecac2d8b81006a2171fc0d6e04267359a277b1191757b5e829ffda9ae0",
+        "cbd75ae154f0ac57f35c2d3b00833b37d0fe9f9a2f394af7bdf8599fab19e6b3",
+        "fd4ff3d1d167548b8b73258a29933fe9802c18302f43e5040c21c411a303bdf8",
+        "477fd293562644ba81052f38bc7dee848c7dfd2dfd9505eca708ec457ae76222"
+      ]
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/2026-10-16T02-19-07-294Z-capture.json.gz",
+      "sha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "routeSha256": "c96cb9d5fdf36607c9cc5f1f64b8fc9805e95bb2e6574792d7b3e3f3978c484f",
+      "geometrySha256": "6fd6dd550bff8b48e45e77d7a18ecefa0ccdb2e2fed95e73dcce8cfbef7b1071",
+      "candidates": [
+        {
+          "provider": "Valhalla",
+          "admitted": false,
+          "seconds": 48214
+        },
+        {
+          "provider": "OSRM",
+          "admitted": true,
+          "seconds": 55226
+        },
+        {
+          "provider": "BRouter",
+          "admitted": false,
+          "seconds": 52458
+        }
+      ],
+      "brouterReentryAfter2DProjection": true,
+      "traceRequestKeys": [
+        "f19098ecac2d8b81006a2171fc0d6e04267359a277b1191757b5e829ffda9ae0",
+        "cbd75ae154f0ac57f35c2d3b00833b37d0fe9f9a2f394af7bdf8599fab19e6b3",
+        "fd4ff3d1d167548b8b73258a29933fe9802c18302f43e5040c21c411a303bdf8",
+        "132596df67514137e3a709e74d15405f4cad6acb8d84554e236949b36935bb49",
+        "59f71cb89ad90298c60bbfc2b8b2f80279e29cada321939f5fbd14487406dc78",
+        "95a4220226c6fefe9d5ae35a4dedd6c667009cd60700f9b336b9444f10039848",
+        "5f30c55fc33d1989396e6b1aeac3348ced638e39444fe1cbd09b6cc13357f9df",
+        "b266c790effbfc2b776b2d5867cfe4f13dbfeebd51e216f8549eb2b7533d556c",
+        "d5228dce78b783558052a981c6ad9386b33e28e3f3adc2591e0ed16f6f7746c2"
+      ]
+    }
+  ],
+  "requestOccurrences": 41,
+  "uniquePayloads": 19,
+  "priorExactPayloads": 4,
+  "missingUniquePayloads": 15,
+  "status": "PREPARED_ONLY_NO_LIVE_OR_PRICING"
+}

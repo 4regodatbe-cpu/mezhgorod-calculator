@@ -1,3 +1,11 @@
+## STARTED — 17.10.2026 17:49 МСК: пакет пяти собственных OSRM trace
+
+- Source/branch/PR14draft head8fecbab5… сверены. [STARTED](checkpoints/2026-10-17-174952-zsd-osrm-five-STARTED.md). CI39041543624 в начале активен; до его завершения ветку не обновлять.
+- Пять изменившихся OSRM, собственные metadata:41 request occurrences/19unique,4точных prior matches,15missing payloads. Пока только подготовка saved inputs, сеть/ценовые проверки0. Новый routing и74/76/309 не запускать.
+- NEXT: durable STARTED/readback, один bounded batch (35attempts/180с), per-case raw/progress, строгий offline replay и обязательный gate, один DONE commit/readback. Unknown не0; исторический26/50 не пересчитан.
+
+## Предыдущая сохранённая история
+
 ## DONE — 17.10.2026 17:28 МСК: собственный trace одного OSRM
 
 - `pair-m11-zsd-prim-to-moscow`: выбран собственный OSRM из сохранённого ответа, 715622 м /30963 с. Новый trace6/6 HTTP200, coverage complete. Благодатная → КАД-юг через ПВП318102347; существующий вектор зоны1: **300 ₽**. [DONE](checkpoints/2026-10-17-172810-zsd-selected-osrm-trace-DONE.md).
