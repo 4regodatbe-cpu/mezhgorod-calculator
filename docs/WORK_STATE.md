@@ -1,3 +1,32 @@
+## STARTED — 17.10.2026 23:49 МСК: ограничение времени адресной проверки
+
+- Source e3c07ac3…/PR14draft, **CI39067254489 completed/success**. Код ЦКАД сохранён и повторно не проверяется. [STARTED](checkpoints/2026-10-17-234931-address-probe-timeout-STARTED.md).
+- Один блок: request+body timeout10с, общий budget90с, abort/race, incremental array/progress и явный budget-exhausted статус; offline fault tests и обязательный full gate. Новых live/primary/routing/trace0, тарифы/матрица/app/lib без изменений.
+- Docs-only STARTED сохраняется с [skip ci] после content/link/diff checks; финальный code commit безskip, обычный CI обязателен. Это не успешный code CI для STARTED.
+- **NEXT после STARTED readback:** реализовать bounded probe/helper/tests, проверить fault scenarios без сети, full gate и DONE/remote readback. Затем — М-12.
+
+## Предыдущая сохранённая история
+
+## DONE — код ЦКАД надёжно сохранён, 17.10.2026 23:35 МСК
+
+- **Remote/PR14draft head e3c07ac3e09e8be1bbecd482b70974c691681f2b**, tree d3e0340c9e352cd858854666c0f225a168f31764. Non-force update выполнен после terminal success CI39066237658 и проверки parent fe5f1fc8…. Все62path SHA повторно прочитаны из GitHub и совпали. Перенос/аудит ЦКАД больше НЕ повторять.
+- Новый code CI39067254489: **verify completed/success**, реальный лог117497372912:284tests/pass284/fail0,TypeScript success,Next build/static16/16 success. Широкая live_probe ещё выполняется; весь run успешным не объявлен. Прежние audit736 и focused8 остаются прежними результатами.
+- Два собственных маршрута: ЦКАД981 каждый, subtotal5475, полная суммаunknown/missingm12. Матрица/тарифы без изменения.
+- [Readback evidence](checkpoints/2026-10-17-ckad-code-durable-readback.json), [точный статус](checkpoints/2026-10-17-pending-ckad-remote-save.json). Код/evidence/исходные журналы уже в remote e3c07ac3…. **Только эта новая запись фактического readback/CI пока локальна:** remote во время activeCI не обновлять; сохранить наблюдение в следующем разрешённом checkpoint.
+- **NEXT:** проверить actual CI39067254489 и head/PR; после terminal отдельным ограниченным блоком устранить отсутствие request/body timeout и общего бюджета в address-search-live-probe (без отмены текущегоCI). Затем — первичная привязка западныхМ-12 рамок10782165529/11214930528/11157985901 и разных выходов22Н-0239/М-7.2952/1239 без доказательства не назначать. Не повторять74/76/309; main/merge/Production/Android не менять.
+
+## Предыдущая локальная история (статусы ниже исторические)
+
+## LOCAL ONLY — code save готов, ожидается terminal CI39066237658
+
+- Удалённая разрешённая ветка/PR14draft: fe5f1fc8bd0986e222cb49a4e906a12005513c65. В ней надёжно сохранены manifest и bundle исходного блока ЦКАД.
+- Полностью подготовленный GitHub commit **e3c07ac3e09e8be1bbecd482b70974c691681f2b**, tree **d3e0340c9e352cd858854666c0f225a168f31764**, parent fe5f1fc8…;62path SHA проверены через GitHub. Объект существует, но ref на него ЕЩЁ НЕ ПЕРЕМЕЩЁН. Код в рабочую ветку пока не включён.
+- [Точная точка продолжения](checkpoints/2026-10-17-pending-ckad-remote-save.json): проверить actual CI/branch/PR; если CI terminal и head всё ещё fe5f1fc8…, выполнить **non-force update_ref** разрешённой ветки на e3c07ac3… с expected_sha fe5f1fc8…, затем head/tree/path readback и фактический новый code CI. Если head изменился — согласовать изменения; не force/reset. Не повторять аудит, сборку дерева и передачу62файлов.
+- Обнаружено: scripts/address-search-live-probe.mjs fetch без per-request timeout; workflow live_probe имеет только60минут общего лимита. Последнее наблюдение: verify success, адресный probe active; фактическое зависание отдельного запроса не доказано. Отдельный следующий технический fix — timeout запроса/тела и общий бюджет с incremental progress; активный CI автоматически не отменять.
+- **Эта верхняя запись локальная и ещё НЕ опубликована в GitHub из-за active-CI rule.** Нельзя объявлять ни её, ни новый код durable. Для нового чата без локального checkout использовать prepared commit e3c07ac3…/parent fe5f1fc8… из handoff, либо durable bundle в fe5f1fc8…. Новых тестов/маршрутных запросов в recovery0.
+
+## Предыдущая локальная история
+
 ## Восстановлен готовый код ЦКАД — 17.10.2026: сохранение code tree
 
 - Исходный prepared a9f2bf… перенесён на актуальный remote fe5f1fc8…:57exact файлов +3согласованных журнала; новые правила после зависания и recovery-история сохраняются. [Recovery checkpoint](checkpoints/2026-10-17-2320-ckad-code-save-recovery-DONE.md). Исходный [DONE21:20](checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md) теперь сохраняется вместе с кодом/evidence.

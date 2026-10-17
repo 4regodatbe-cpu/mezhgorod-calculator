@@ -2216,3 +2216,24 @@ WORK_LOG дополнен, короткие WORK_STATE/NEXT_STEPS и очере�
 ## 2026-10-17 — восстановление code save ЦКАД после зависания
 
 После durable recovery часть1 fe5f1fc8… перенесены57exact файлов исходного a9f2bf и согласованы3журнала без утраты новых правил/истории. Runtime/evidence соответствуют прежним проверкам, матрица/цены не меняются. Checkpoint docs/checkpoints/2026-10-17-2320-ckad-code-save-recovery-DONE.md; progress checks/2026-10-17-ckad-save-recovery/transfer-progress.json. Source CI39065562352 success; recovery CI39066237658 активен при подготовке, до terminal не двигать ref. Один atomic non-force code commit на fe5f1fc8… и exact tree/blobs/head readback, затем фактический code CI. Новых тестов/сети/pricing replay0; прежние focused8/audit736/quoteAPI/TS/ESLint/build результаты сохранены. NEXT: code CI, затем отдельная привязкаМ-12; полный итог двух поездок unknown.
+
+
+## 2026-10-17 23:30 МСК — LOCAL ONLY: готовый code commit ожидает terminal CI
+
+Prepared remote commit e3c07ac3e09e8be1bbecd482b70974c691681f2b/tree d3e0340c9e352cd858854666c0f225a168f31764, parent fe5f1fc8bd0986e222cb49a4e906a12005513c65;62path SHA readback PASS. Remote ref не перемещён: CI39066237658 verify success, live Photon address probe active. Нет per-request timeout в scripts/address-search-live-probe.mjs (blob deae251b0f199dbe82b6eb5aa4013f435abd1e5c), job ограничен60минутами. Это наблюдаемая причина потенциального долгого ожидания, не доказательство зависшего конкретного fetch; автоотмена не разрешена правилами.
+
+Точный recovery record docs/checkpoints/2026-10-17-pending-ckad-remote-save.json и верхние WORK_STATE/NEXT_STEPS локальные, НЕ сохранены в GitHub. NEXT: actual CI/heads, после terminal non-force ref fe5f1fc8→e3c07ac3 и readback/code CI; при изменённом head согласовать без force. Повторять перенос62файлов и исходный аудит не нужно. Durable bundle/manifest уже сохранены в fe5f1fc8; runtime пока не интегрирован.
+
+
+## 2026-10-17 23:35 МСК — DONE: code save ЦКАД и фактический code verify
+
+CI39066237658 terminal completed/success, parent fe5f1fc8…/PR14draft сверены; non-force ref update на e3c07ac3e09e8be1bbecd482b70974c691681f2b выполнен. Exact tree d3e0340c9e352cd858854666c0f225a168f31764/62pathSHA/head/PRdraft readback PASS. Блок восстановлен и reachable из единственной разрешённой GitHub-ветки; больше не pending save.
+
+Code CI39067254489 verify117497372912 completed/success. Реальный job log получен:tests284/pass284/fail0/skipped0,TypeScript success,Next compiled/static16/16 success. Это новые CI-проверки; прежний audit736 не переименовывать в новый CI. Live_probe активен, полного success run ещё нет. Source code/audit/pricing не повторялись, новые primary/routing/trace0 в локальной работе; CI live-запросы считать отдельно.
+
+Readback JSON docs/checkpoints/2026-10-17-ckad-code-durable-readback.json и обновлённая pending-record statusDONE отражают фактический статус. Эти последние наблюдения пока локальные из-за новогоactiveCI; код и исходные журналы ужеdurable в e3c07ac3. NEXT после проверки terminalCI — отдельный bounded address-probe timeout fix; затем М-12. Полные цены двух поездокunknown.
+
+
+## 2026-10-17 23:49 МСК — STARTED: bounded address live probe
+
+Sourcee3c07ac3…/PR14draft, CI39067254489 completed/success проверен. Отсутствуют deadlines запроса/тела адресной проверки. Один ограниченный блок:10с request+body,90с whole probe, abort/race и incremental reports/progress; offline failure/budget tests и обязательный audit/TS/ESLint/build. STARTED docs-only [skip ci] предотвращает ненужный повтор широкого live-аудита для журналов; финальный code commit безskip проходит обычный CI. Источник механизма: https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs . Полные инструкции/recovery в docs/checkpoints/2026-10-17-234931-address-probe-timeout-STARTED.md. Scope probe/tests/progress artifact только; тарифы/матрица/app/lib без изменения.
