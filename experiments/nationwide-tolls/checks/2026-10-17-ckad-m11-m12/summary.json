@@ -1,0 +1,229 @@
+{
+  "status": "DONE",
+  "outcome": "fixed_and_verified",
+  "sourceCommit": "f010d847765874573a52ef1926f3ca82dc1a44c4",
+  "durableStartedCommit": "a666fb4887ea54a328a29fb3bfc2dfa5102e5499",
+  "cases": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas.json",
+      "newCkadRub": 981,
+      "pricedComponents": 5,
+      "newPricedComponents": 1,
+      "knownSubtotalRub": 5475,
+      "fullTripRub": null,
+      "missing": [
+        "m12"
+      ],
+      "confirmedFullTripFares": 0,
+      "ownTraceRequestsReplayed": 9
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary.json",
+      "newCkadRub": 981,
+      "pricedComponents": 5,
+      "newPricedComponents": 1,
+      "knownSubtotalRub": 5475,
+      "fullTripRub": null,
+      "missing": [
+        "m12"
+      ],
+      "confirmedFullTripFares": 0,
+      "ownTraceRequestsReplayed": 10
+    }
+  ],
+  "counts": {
+    "checkedTargetCases": 2,
+    "independentExistingCompositionControlCases": 1,
+    "pricedComponentsAcrossTwo": 10,
+    "newPricedComponents": 2,
+    "newCalculatedFullTrips": 0,
+    "confirmedFullTripFares": 0,
+    "distinctTargetTraceRawResponses": 13,
+    "ownMainTraceOccurrencesPerProfile": 19,
+    "newRoutingRequests": 0,
+    "newTargetTraceRequests": 0,
+    "primarySourceGets": 12
+  },
+  "networkException": "One pre-guard independent M4 control invocation was uninstrumented; exact HTTP attempt count not measured, response not retained, not used as accepted evidence. Final focused validation has deny-by-default fetch and exact local-M4 replay. See initial-check-findings.json. Do not claim the entire unit had zero network exposure outside its12 planned primary reads.",
+  "replacementCoverage": {
+    "changedCaseCount": 6,
+    "ownCompleteTraceCases": 6,
+    "pricedComponentsAcrossSix": 27,
+    "pricedButUnconfirmedFullTripCases": 4,
+    "unknownFullTripCases": 2,
+    "pricedZsdComponents": 6,
+    "confirmedFullTripFares": 0,
+    "historicalBaselineRecomputed": false
+  },
+  "checks": {
+    "focused": {
+      "passed": 8,
+      "failed": 0
+    },
+    "negativeContextVariants": 20,
+    "negativeGeometryVariants": 6,
+    "mutatedRawFreeGap": "PASS, paid-only fields unchanged; two named blocks reject",
+    "apiOwnRouteCases": 2,
+    "audit": {
+      "passed": 736,
+      "failed": 0
+    },
+    "quoteApi": "PASS",
+    "tsc": "PASS",
+    "eslint": "PASS",
+    "build": "PASS16/16",
+    "unexpectedFocusedFetchAttempts": 0
+  },
+  "runtimeHashes": {
+    "lib/toll-validator.ts": "58e16135882a73f8d81792204038730abcc2f4f11a35fb269c9b16804c65f59d",
+    "lib/v3-calculation/ckad-m11-m12-boundary.ts": "4c0489d8b48dfea6d9f7fc7365a2c6bfde083a2f9364c899177d2b482f604751",
+    "lib/v3-calculation/ckad-product-boundaries.ts": "f5d021575a5d71b7249312b41fede705a7ce1e2f9a618503f89850d261b2fcf3",
+    "lib/v3-calculation/route-leg-pricing.ts": "1dd42f6355572b5aec04ab9712cd8f6c94876f7ef77928ab032e47577eb366f2",
+    "scripts/v3-ckad-m11-m12-boundary.test.ts": "bb3009c3e6ab063b9fa241050508cdd56f895e7c9ff314c473be806f21925578",
+    "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/physical-directed.json": "950990d1f8ce69bffae5ffff5c5fc8db9c80ddbfb4f2deab1d2e6f238b3fca03"
+  },
+  "sourceHashChecks": [
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/route.json.gz",
+      "sha256": "3bdfaa4e3d305b23a5c8e83c28fa7885c588dee6b506db9bcb4d6279f7cca42f",
+      "version": "unchanged"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/capture.json.gz",
+      "sha256": "499a736b6a699d1076867193a222f1eae076249347df72c9788698e087df87bf",
+      "version": "unchanged"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/result.json",
+      "sha256": "7cc644f27be0251178669acf2579713905ad7757453b1e5ddd59771d38e65323",
+      "version": "unchanged"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/route.json.gz",
+      "sha256": "6ebcc0dce2c45dc8a178434104f8ed38a792e599c12005fefbea88521c2b510f",
+      "version": "unchanged"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/capture.json.gz",
+      "sha256": "370ac4c3bbc70768e5a84f635c4fe07ec30bb8208f91cc2eb25d8cd37cfe3756",
+      "version": "unchanged"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/result.json",
+      "sha256": "425c72314e7910aa1469e365bf5e66b97f65cf8591f8fb0f495015712a3ed098",
+      "version": "unchanged"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/summary.json",
+      "sha256": "d138da5624a7f6c80dddfe5ede49f105fca33189aad842acbdda3ec4a28cc347",
+      "version": "unchanged"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+      "sha256": "e6b2178c2448f071de92556d1d72237bd0281da9628f4855cb11b2cd32e6f9ca",
+      "version": "unchanged"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf",
+      "sha256": "839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7",
+      "version": "unchanged"
+    },
+    {
+      "path": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
+      "sha256": "527b0ac0bcf932a30e8a9d95a2bd9c6cac90ee081107371bebb1abd8d0f5d378",
+      "version": "unchanged"
+    },
+    {
+      "path": "lib/toll-validator.ts",
+      "sha256": "94e8d3ed0b16cd175b9ecc0ea89f35e369a52745253d5909c8d55a5615b40df7",
+      "version": "sourceCommit"
+    },
+    {
+      "path": "lib/v3-calculation/ckad-product-boundaries.ts",
+      "sha256": "151cf35ddbbf2ac5f6e6f0003cb0b634f8bd2f9acc85c428a6b4d7e21126dc18",
+      "version": "sourceCommit"
+    },
+    {
+      "path": "lib/v3-calculation/route-leg-pricing.ts",
+      "sha256": "2b8c640e740ffdc24958d9ffa63c21cab2835ebdc756d4c65f1b2cf44f4a7eaf",
+      "version": "sourceCommit"
+    }
+  ],
+  "primaryRawSourceHashes": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/916593983/full",
+      "bodyFile": "188b375d0695e2a1c254.osm",
+      "sha256": "b3594fb3d1fde05d3498f805b60fb3ebdce0204b69cb281c19a42268802cc56f",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/916593974/full",
+      "bodyFile": "616dc95325a09bcadbf8.osm",
+      "sha256": "38e7ec698a896151be59a9a9efa44b29c385cd6d91cda49303f9d2d9d76e8b2c",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/8120716330",
+      "bodyFile": "64a04cac63bfc59f524d.osm",
+      "sha256": "f847530d927f3666293a6e0667611f0d63a6d81ed774e0cd93228187ff2d41a8",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/8120716327",
+      "bodyFile": "c4b24dcb8db4743a900f.osm",
+      "sha256": "0ac33202e2e96070fc757cdb940bdaa3df13a0a5fcb6e0849ac73326374d35a7",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/916593976/full",
+      "bodyFile": "3bfb7278c60ffb4a20a3.osm",
+      "sha256": "759095314a5fd89a4e9bda2adb900892ed6641d368ba42d01a8c9c59329a84c5",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1189855267/full",
+      "bodyFile": "01ba060f9aefa925fbec.osm",
+      "sha256": "7210bd1b53c660c36fa50935945f790afa844d292e778f9477a765b21511da77",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/8120716326",
+      "bodyFile": "6587d1637ed49b3cbb47.osm",
+      "sha256": "b972214f9aef2abbd4bb7cf7a8b651353fc32dc7c555657408b67178321df56f",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1189855268/full",
+      "bodyFile": "b2d6f4bfb98c3a6535e9.osm",
+      "sha256": "8554a401be399efc923a8a709da8e878224c31194720c55630076a0a21265df6",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1270188041/full",
+      "bodyFile": "dfdac5ff1ade415d779d.osm",
+      "sha256": "176301f355d8ca3cc8ffe6fc7022609ea6ddb49919ae31557f57d390bf47ab39",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1148492112/full",
+      "bodyFile": "311dc7698b6a73a2265f.osm",
+      "sha256": "cdd0c9b0e56ec2939041f83eb4d9d5508eb054e80a5483cdca60da05fc207ca0",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1148492111/full",
+      "bodyFile": "b2319a830347351be8d7.osm",
+      "sha256": "5893a2bc98c5f83a68bc16190ee8a852ae2ae9ab1030f2fe4c66e241f9f43a30",
+      "status": 200
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/11072845296",
+      "bodyFile": "919bcb82b0adc9391fec.osm",
+      "sha256": "1a8ef5a2227dd95c9263d4297269756c860c532388e75432de97927b4a34cb3e",
+      "status": 200
+    }
+  ],
+  "nextAction": "Bind the three western M12 gantry candidates and the two different selected exits to operator charged intervals. Use saved own routes; no new routing, no blanket replay or unproved2952/1239."
+}

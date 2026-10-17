@@ -29,6 +29,15 @@ export type TollValidation = {
   failedChunkCount?: number;
   complete?: boolean;
   boothEventCoverage?: "complete" | "partial" | "none";
+  // Named CKAD continuity must include non-toll access links. The paid-only
+  // list cannot distinguish a complete interchange pair from exit/re-entry.
+  ckadTraceBlocks?: Array<{
+    firstWayId: string | null;
+    lastWayId: string | null;
+    before: {wayId: string | null; endNodeId: string | null; roadNames: string[]} | null;
+    after: Array<{wayId: string | null; endNodeId: string | null; roadNames: string[]}>;
+    repeatedWayId: boolean;
+  }>;
 };
 
 type TraceEdge = {
@@ -108,6 +117,28 @@ function edgeWayId(edge: TraceEdge) {
 function edgeNodeId(edge: TraceEdge) {
   const value = edge.end_node?.node_id ?? edge.end_osm_node_id ?? edge.node_id;
   return value === undefined || value === null ? null : String(value);
+}
+
+function ckadTraceBlocks(edges: TraceEdge[]): NonNullable<TollValidation['ckadTraceBlocks']> {
+  const isCkad = (edge: TraceEdge) => (edge.names ?? []).some(n => /^(?:А|A)[-–\s]*113$/iu.test(n));
+  const compact = (edge: TraceEdge) => ({wayId: edgeWayId(edge), endNodeId: edgeNodeId(edge), roadNames: edge.names ?? []});
+  const blocks: NonNullable<TollValidation['ckadTraceBlocks']> = [];
+  for (let index = 0; index < edges.length; index++) {
+    if (!isCkad(edges[index])) continue;
+    const start = index;
+    const wayIds: Array<string | null> = [];
+    while (index < edges.length && isCkad(edges[index])) {
+      const id = edgeWayId(edges[index]);
+      if (wayIds.at(-1) !== id) wayIds.push(id);
+      index++;
+    }
+    blocks.push({firstWayId: edgeWayId(edges[start]), lastWayId: edgeWayId(edges[index - 1]),
+      before: start > 0 ? compact(edges[start - 1]) : null,
+      after: edges.slice(index, index + 4).map(compact),
+      repeatedWayId: wayIds.some((id, i) => id === null || wayIds.indexOf(id) !== i)});
+    index--;
+  }
+  return blocks;
 }
 
 function isTollBooth(edge: TraceEdge) {
@@ -232,6 +263,8 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     beginShapeIndex: edge.begin_shape_index,
     endShapeIndex: edge.end_shape_index,
   }));
+  const ckadBlocks = ckadTraceBlocks(successful.flatMap(item => item.edges));
+  const ckadContinuity = ckadBlocks.length ? {ckadTraceBlocks: ckadBlocks} : {};
 
   if (!complete) {
     return {
@@ -242,6 +275,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       wayIds,
       roadNames,
       paidRoadEdges,
+      ...ckadContinuity,
       message: tollEdges.length > 0
         ? `Платные дорожные рёбра подтверждены, но проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`
         : `Проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`,
@@ -263,6 +297,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     wayIds,
     roadNames,
     paidRoadEdges,
+    ...ckadContinuity,
     message: tollEdges.length > 0
       ? `Подтверждены платные дорожные рёбра: ${tollEdges.length}`
       : tollBooths.length > 0

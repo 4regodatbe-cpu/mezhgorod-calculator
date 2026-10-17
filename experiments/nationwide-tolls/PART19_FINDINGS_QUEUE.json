@@ -4557,13 +4557,13 @@
         "ownCompleteTraceCases": 6,
         "pricedZsdComponents": 6,
         "zsdRubEach": 300,
-        "pricedComponentsAcrossSix": 25,
+        "pricedComponentsAcrossSix": 27,
         "pricedButUnconfirmedFullTripCases": 4,
         "unknownFullTripCases": 2,
         "confirmedFullTripFares": 0,
         "uncheckedReplacementCases": 0,
         "historicalBaselineRecomputed": false,
-        "latestFollowupCheckpoint": "docs/checkpoints/2026-10-17-203458-m11-torzhok-p258-DONE.md"
+        "latestFollowupCheckpoint": "docs/checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md"
       },
       "replacementCoverageHistory": [
         {
@@ -4577,11 +4577,24 @@
           "confirmedFullTripFares": 0,
           "uncheckedReplacementCases": 0,
           "historicalBaselineRecomputed": false
+        },
+        {
+          "changedCaseCount": 6,
+          "ownCompleteTraceCases": 6,
+          "pricedZsdComponents": 6,
+          "zsdRubEach": 300,
+          "pricedComponentsAcrossSix": 25,
+          "pricedButUnconfirmedFullTripCases": 4,
+          "unknownFullTripCases": 2,
+          "confirmedFullTripFares": 0,
+          "uncheckedReplacementCases": 0,
+          "historicalBaselineRecomputed": false,
+          "latestFollowupCheckpoint": "docs/checkpoints/2026-10-17-203458-m11-torzhok-p258-DONE.md"
         }
       ]
     }
   ],
-  "postAuditNextFinding": "ckad:selected-osrm-m11-m12-boundary",
+  "postAuditNextFinding": "m12:selected-osrm-western-boundaries",
   "postAuditPricingFollowups": [
     {
       "code": "m11:selected-osrm-torzhok-boundary",
@@ -4648,7 +4661,7 @@
         "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
       ],
       "outcome": "blocked_missing_reliable_boundary_data",
-      "rationale": "Complete own CKAD corridor M11→M12 is identical but unsupported by full M11↔M4 adapter; M12 exits materially differ (22Н-0239 after420 vsM7 atVladimir before184). Three western gantry coordinates are saved, operator RVP/charged-interval binding is not proved; no ready vector applied.",
+      "rationale": "CKAD common directed M11→M12 is now fixed981 under one full named block and own primary geometry; M12 western RVP and distinct exits remain unbound. Full trips remain unknown, subtotal5475 each.",
       "evidence": "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/summary.json",
       "checkpoint": "docs/checkpoints/2026-10-17-205246-selected-osrm-m12-ckad-scope-DONE.md",
       "reviewHistory": [
@@ -4662,6 +4675,93 @@
           "rationale": "Own new full traces report m12_current_operator_pair_not_bound + ckad_east_arc_not_proven; separate common boundary/scope review required, no guessed fare.",
           "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/integrity.json",
           "checkpoint": "docs/checkpoints/2026-10-17-175742-zsd-osrm-five-DONE.md"
+        },
+        {
+          "code": "m12-ckad:selected-osrm-scope",
+          "caseIds": [
+            "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+            "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+          ],
+          "outcome": "blocked_missing_reliable_boundary_data",
+          "rationale": "Complete own CKAD corridor M11→M12 is identical but unsupported by full M11↔M4 adapter; M12 exits materially differ (22Н-0239 after420 vsM7 atVladimir before184). Three western gantry coordinates are saved, operator RVP/charged-interval binding is not proved; no ready vector applied.",
+          "evidence": "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/summary.json",
+          "checkpoint": "docs/checkpoints/2026-10-17-205246-selected-osrm-m12-ckad-scope-DONE.md",
+          "causeReviewStatus": "blocked_missing_reliable_data",
+          "checkedCases": 2,
+          "representativeReviews": 1,
+          "siblingExceptionChecks": 1,
+          "verifiedTraceOccurrences": 19,
+          "distinctRawResponses": 13,
+          "newlyPricedComponents": 0,
+          "newlyCalculatedFullTrips": 0,
+          "confirmedFullTripFares": 0,
+          "fullPricingReplays": 0,
+          "newRoutingRequests": 0,
+          "newTraceRequests": 0,
+          "newPrimaryRequests": 0,
+          "unboundCandidateRows": [
+            {
+              "road": "ckad",
+              "from": "М-11 Нева",
+              "to": "М-12 Восток",
+              "rub": 981
+            },
+            {
+              "road": "m12",
+              "from": "ckad",
+              "to": "arzamas_p158",
+              "rub": 2952
+            },
+            {
+              "road": "m12",
+              "from": "ckad",
+              "to": "vladimir",
+              "rub": 1239
+            }
+          ],
+          "candidateRowsApplied": false,
+          "missingPrimaryBinding": {
+            "ckadTransitionWays": [
+              "1148492112",
+              "1148492111",
+              "1189855267",
+              "916593974",
+              "916593983",
+              "916593976",
+              "1189855268"
+            ],
+            "m12WesternGantryNodes": [
+              "10782165529",
+              "11214930528",
+              "11157985901"
+            ],
+            "m12DistinctExitWays": [
+              "1550135076",
+              "1550561305",
+              "1206479738",
+              "972809728",
+              "972809720",
+              "292501171"
+            ]
+          },
+          "checks": {
+            "artifactReview": "PASS45 hashes,19 occurrences,13 raw",
+            "auditPassed": 728,
+            "auditFailed": 0,
+            "quoteApi": "PASS",
+            "tsc": "PASS",
+            "eslint": "PASS",
+            "build": "PASS16/16"
+          },
+          "nextAction": "Bounded primary binding of common CKAD M11→M12 corridor; narrow adapter only if proved; two-case exceptions. M12 western RVP and differing exits separately; no new routing and no74/76/309 replay.",
+          "preSaveCi": {
+            "runId": 39054871192,
+            "status": "completed",
+            "conclusion": "success",
+            "verify": "completed/success",
+            "live_probe": "completed/success",
+            "readback": "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/pre-save-readback.json"
+          }
         }
       ],
       "causeReviewStatus": "blocked_missing_reliable_data",
@@ -4731,7 +4831,7 @@
         "eslint": "PASS",
         "build": "PASS16/16"
       },
-      "nextAction": "Bounded primary binding of common CKAD M11→M12 corridor; narrow adapter only if proved; two-case exceptions. M12 western RVP and differing exits separately; no new routing and no74/76/309 replay.",
+      "nextAction": "Separate bounded primary M12 western RVP/actual exits binding; no new routing, no blanket replay, no candidate2952/1239 before proof.",
       "preSaveCi": {
         "runId": 39054871192,
         "status": "completed",
@@ -4739,6 +4839,64 @@
         "verify": "completed/success",
         "live_probe": "completed/success",
         "readback": "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/pre-save-readback.json"
+      },
+      "resolvedProducts": [
+        "ckad"
+      ],
+      "remainingProducts": [
+        "m12"
+      ],
+      "currentKnownSubtotalRubEach": 5475,
+      "currentFullTripRubEach": null,
+      "ckadFixEvidence": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/summary.json",
+      "ckadFixCheckpoint": "docs/checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md"
+    },
+    {
+      "code": "ckad:selected-osrm-m11-m12-boundary",
+      "caseIds": [
+        "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+        "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+      ],
+      "outcome": "fixed_and_verified",
+      "causeReviewStatus": "fixed_and_verified",
+      "rationale": "Primary directed entry/exit/gantry geometry plus one complete own named A113 trace block proves M11→M12; ready981 applied once. Paid-only trace no longer authorizes the pair after city re-entry.",
+      "sourceCommit": "f010d847765874573a52ef1926f3ca82dc1a44c4",
+      "startedCommit": "a666fb4887ea54a328a29fb3bfc2dfa5102e5499",
+      "checkpoint": "docs/checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md",
+      "evidence": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/summary.json",
+      "bindingProof": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/binding-proof.json",
+      "runtimeGuard": "lib/v3-calculation/ckad-m11-m12-boundary.ts",
+      "checkedTargetCases": 2,
+      "independentExistingCompositionControlCases": 1,
+      "newPricedComponents": 2,
+      "ckadRubEach": 981,
+      "knownSubtotalRubEach": 5475,
+      "calculatedFullTrips": 0,
+      "confirmedFullTripFares": 0,
+      "newRoutingRequests": 0,
+      "newTargetTraceRequests": 0,
+      "primarySourceGets": 12,
+      "unrecordedControlNetworkExposure": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/initial-check-findings.json",
+      "checks": {
+        "focused": 8,
+        "auditPassed": 736,
+        "auditFailed": 0,
+        "negativeContextVariants": 20,
+        "negativeGeometryVariants": 6,
+        "apiOwnCases": 2,
+        "quoteApi": "PASS",
+        "tsc": "PASS",
+        "eslint": "PASS",
+        "build": "PASS16/16",
+        "unexpectedFocusedFetchAttempts": 0
+      },
+      "preSaveCi": {
+        "runId": 39056837838,
+        "status": "completed",
+        "conclusion": "success",
+        "verify": "completed/success",
+        "live_probe": "completed/success",
+        "readback": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/pre-save-readback.json"
       }
     }
   ]

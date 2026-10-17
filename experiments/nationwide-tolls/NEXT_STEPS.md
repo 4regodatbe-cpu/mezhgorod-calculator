@@ -1,3 +1,12 @@
+## Восстановлен готовый код ЦКАД — 17.10.2026: сохранение code tree
+
+- Исходный prepared a9f2bf… перенесён на актуальный remote fe5f1fc8…:57exact файлов +3согласованных журнала; новые правила после зависания и recovery-история сохраняются. [Recovery checkpoint](../../docs/checkpoints/2026-10-17-2320-ckad-code-save-recovery-DONE.md). Исходный [DONE21:20](../../docs/checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md) теперь сохраняется вместе с кодом/evidence.
+- Два собственных OSRM: ЦКАД981 каждый, subtotal5475; полный итог unknown/missingm12. Восстановлены прежние focused8/8, audit736/736, quote/API/TS/ESLint/build exit0; это прежние проверки, новые live/pricing0. Все runtime hashes соответствуют проверенному a9f2bf.
+- До terminal CI39066237658 remote ref не обновлять; после записи — exact tree/blob/head readback и отдельный code CI. Код считается durable только после этой записи/readback. PR14draft, main/merge/Production/Android без изменений.
+- **NEXT после durable code readback:** проверить code CI; затем первичная привязка западных М-12 рамок10782165529/11214930528/11157985901 и двух разных выходов22Н-0239/М-7.2952/1239 не назначать без доказательства; старые74/76/309 не повторять.
+
+## Предыдущая сохранённая история
+
 ## DONE проверки / сохранение ожидает CI — 17.10.2026 23:12 МСК: ЦКАД recovery, часть 1
 
 - Проверены все60 файлов неопубликованного a9f2bf… (1306375байт), их Git blob/SHA256,6current runtime,13frozen source и12primary raw hashes. Сохранённые focused8/8, audit736/736, quote/API/TS/ESLint/build exit0 прочитаны; новых тестов/запросов0. [Checkpoint](../../docs/checkpoints/2026-10-17-231217-ckad-recovery-part1-DONE.md) · [manifest](checks/2026-10-17-ckad-save-recovery/verification.json).
@@ -1840,3 +1849,18 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 
 
 2026-10-17 02:31:29 MSK: Reconciled Part19 queue: M11 case1–8 checkpoints now represented in the findings ledger; shared cause status blocked by missing reliable data. NEXT single cause: `unknown-paid-road:unpriced`, inspect saved evidence/current engine and compare overlap with `expected-road-not-proven`; do not infer 128 unique cases. No new live/replay/tests in this reconciliation. [Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md). Plan18/20=90% only.
+
+
+## Восстановленный отчёт исходного блока (до публикации, 21:20 МСК)
+
+## DONE — 17.10.2026 21:20 МСК: ЦКАД М-11→М-12
+
+- **Исправлена и проверена** одна общая причина двух собственных OSRM. Primary12GET/49witnesses, полный named контекст А-113 с non-toll links; новый forward-only adapter. У каждого ЦКАД981,5компонентов, subtotal5475; full amountnull/missingm12. Новых компонентов2, полных расчётов/подтверждённых полных тарифов0. [DONE](../../docs/checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md) · [отчёт](checks/2026-10-17-ckad-m11-m12/README.md).
+- Focused8, full736/quoteAPI/TS/ESLint/build16/16 PASS.20 контекстных+6 геометрических отрицательных вариантов, API2, recorded control7254. Initial тестовые ошибки и один uninstrumented М-4 control fetch-capable invocation сохранены; final default fetch закрыт/exact replay. Не заявлять нулевую сетевую экспозицию всего блока. Primary/target queries считать отдельно. ProgressDONE12 восстановлен по exact raw без re-fetch.
+- По шести заменённым OSRM27 рассчитанных компонентов,4составных расчёта/2unknown, подтверждённых полных тарифов0. Historical26/50 без изменения. Старый полный ЦКАД arc/общие thresholds, матрица и цены не менялись; новые routing/target trace0.
+- Durable STARTEDa666fb48…/tree0e04b98c… verified, PR14draft. CI39056837838 активен при подготовке, verify success; до завершения remote не писать. Новый post-save CI отдельно.
+- **NEXT после durable DONE:** первичная привязка западных М-12 рамок и разных выходов. Рамки10782165529/11214930528/11157985901, выходы22Н-0239/М-7 у Владимира;2952/1239 не присваивать без доказательства. Без нового routing и повторов74/76/309. Затем остальные причины и итоговый gate/handoff; исходные ZSD owner blocks остаются отдельно.
+
+- Перед итоговой записью: CI39056837838 completed/success (verify и live_probe), последние пять runs завершены; branch/PR heada666fb48… совпали, PR14 draft. Final focused asserts0 неожиданных fetch attempts. Новый post-save CI отдельно.
+
+## Предыдущая сохранённая история

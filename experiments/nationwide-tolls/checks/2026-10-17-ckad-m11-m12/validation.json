@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "frozenSourcesChecked": 13,
+  "primaryRawResponsesChecked": 12,
+  "physicalWitnesses": 49,
+  "targetCasesChecked": 2,
+  "exactCurrentRuntimeHashes": {
+    "lib/toll-validator.ts": "58e16135882a73f8d81792204038730abcc2f4f11a35fb269c9b16804c65f59d",
+    "lib/v3-calculation/ckad-m11-m12-boundary.ts": "4c0489d8b48dfea6d9f7fc7365a2c6bfde083a2f9364c899177d2b482f604751",
+    "lib/v3-calculation/ckad-product-boundaries.ts": "f5d021575a5d71b7249312b41fede705a7ce1e2f9a618503f89850d261b2fcf3",
+    "lib/v3-calculation/route-leg-pricing.ts": "1dd42f6355572b5aec04ab9712cd8f6c94876f7ef77928ab032e47577eb366f2",
+    "scripts/v3-ckad-m11-m12-boundary.test.ts": "bb3009c3e6ab063b9fa241050508cdd56f895e7c9ff314c473be806f21925578",
+    "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/physical-directed.json": "950990d1f8ce69bffae5ffff5c5fc8db9c80ddbfb4f2deab1d2e6f238b3fca03"
+  },
+  "acceptedFocusedNetworkPolicy": "deny by default; all request keys match saved responses",
+  "initialNetworkExposureDisclosed": true,
+  "sourceProgressReconciled": true,
+  "newDocLinks": "PASS",
+  "queueHistoryAndUnrelatedFindingsPreserved": true,
+  "currentRuntimeHashesStillMatch": true,
+  "acceptedFocusedUnexpectedFetchAttempts": 0
+}

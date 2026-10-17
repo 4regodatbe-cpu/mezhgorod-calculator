@@ -97,7 +97,7 @@ export async function calculateLegTolls({
   const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289") || Boolean(m4A289);
   const m11Detected = m11Boundaries.candidate || productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(selectedFastRoute.m11RoadEvidence?.strictBlocks.length);
   const m12Detected = legacyFamilies.has("m12") || Boolean(m12Span) || selectedFastRoute.m12Candidate === true;
-  const productionCkad = resolveCkadProductBoundaries(routeGeometry, selectedFastRoute.m11RoadEvidence);
+  const productionCkad = resolveCkadProductBoundaries(routeGeometry, selectedFastRoute.m11RoadEvidence, diagnosticFastValidation);
   const matrixCkad = matrixCkadComponent(productionCkad, departureAt, routeSeconds);
   // CKAD is a paid component only when legacy evidence names it or the strict
   // route-level CKAD engine proves a candidate/verified east-arc traversal.

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1296 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8513080479" visible="true" version="8" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8153139" lon="38.5518791"/>
+ <node id="8513080597" visible="true" version="7" changeset="152716019" timestamp="2024-06-15T11:01:33Z" user="literan" uid="830106" lat="55.8168989" lon="38.5589195"/>
+ <node id="11158042782" visible="true" version="3" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8161485" lon="38.5555850"/>
+ <way id="1189855268" visible="true" version="16" changeset="187908409" timestamp="2026-08-23T20:52:10Z" user="Nine-tailed" uid="2006945">
+  <nd ref="8513080479"/>
+  <nd ref="11158042782"/>
+  <nd ref="8513080597"/>
+  <tag k="agricultural" v="no"/>
+  <tag k="bicycle" v="no"/>
+  <tag k="foot" v="no"/>
+  <tag k="highway" v="trunk"/>
+  <tag k="highway:category" v="ru:IБ"/>
+  <tag k="horse" v="no"/>
+  <tag k="image" v="https://www.roads.ru/forum/uploads/monthly_2019_03/mosvka_noginsk.jpg.7eb290a32b882d5eed15e9f913129fe5.jpg"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="RU:rural"/>
+  <tag k="maxspeed:goods" v="110"/>
+  <tag k="maxspeed:motorcar" v="110"/>
+  <tag k="maxspeed:variable" v="yes"/>
+  <tag k="minspeed" v="40"/>
+  <tag k="moped" v="no"/>
+  <tag k="motorroad" v="yes"/>
+  <tag k="name" v="«Восток»"/>
+  <tag k="name:ru" v="«Восток»"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="М-12"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="wikidata" v="Q56742564"/>
+  <tag k="wikipedia" v="ru:Восток (автодорога)"/>
+ </way>
+</osm>

@@ -2180,3 +2180,39 @@ DONE локальная проверка готового a9f2bf…:60 exact fil
 Source remote5102b44…/PR14draft, CI39065562352 verify success/live_probe active. По правилу active CI remote пока не обновлять; подготовлена одна docs-only единица сохранения части1. Pending runtime ещё не опубликован. NEXT после terminal CI и durable checkpoint readback — exact transfer60 файлов с согласованием трёх журналов, затем code save/readback; аудит не повторять.
 
 Для устранения зависимости от исходного scratch в ту же recovery-единицу добавлен pending-ckad.bundle82729байт с исходным a9f2bf и prerequisite a666fb48. Git bundle create/list-heads/verify PASS; SHA256 в manifest. Архив не применяет код к runtime. После remote commit/readback эту часть можно восстановить из GitHub без исходного checkout.
+
+
+# ЦКАД М-11→М-12 — DONE
+
+17.10.2026 21:20 МСК. Sourcef010d847765874573a52ef1926f3ca82dc1a44c4/tree94ba2e72308312c56d0c77cda00d09ccae98c911. Durable STARTEDa666fb4887ea54a328a29fb3bfc2dfa5102e5499/tree0e04b98cc6140027c7fb076ecfd97f8ff0551c76; head/tree/6blobs/PR14open draft проверены. Однократное отставание PR исправилось повторным read без второго update. Единственная ветка fix/v3-missing-route-prices-2026-10-15; до STARTED CI39055898864 success. Текущий CI39056837838 активен во время подготовки DONE, verify успешен; remote до завершения не писать.
+
+## Причина, источники и реализация
+
+Старый adapter ЦКАД принимал только полный М-11↔М-4, два собственных OSRM имеют общий неполный М-11→М-12. Paid-only validation теряла non-toll connections и не доказывала непрерывный проезд. Итог причины: **исправлена и проверена** для двух выбранных направленных проездов.
+
+12 заранее объявленных primary OSM GET:8 ways/full+4 nodes, все200,7738мс, без повторного routing/target trace/широкого поиска. Первичные А-113 entry и касса8087316064, четыре gantry и connected exit1189855267→916593974→916593983→916593976→1189855268. Их49 координат, собственный полный named trace с предшествующей М-11 и опубликованные operator interchange labels доказывают пару. Существующая categoryI cash/postpay981 клетка приказа56 применяется напрямую; матрица/регистр не менялись. Северная пара не использует conditional М12–Носовихинское;120мин boolean не применялся. Независимого OD-чека нет.
+
+Новый ckad-m11-m12-boundary.ts+physical-directed.json требуют one named А-113 block с собственными граничными событиями, полного trace/booths/checked chunks, одной кассы, правильных links/направления и49 ordered own witnesses≤25м, local density≤500м/core≤5км и ограниченного пути. toll-validator.ts сохраняет компактный ckadTraceBlocks из всех edges, включая non-toll. Врезка в ckad-product-boundaries.ts выполняется только после неуспеха старого full arc; route-leg-pricing передаёт own validation. Старый full arc/общие thresholds без изменения, reverse/другие пары не включены. Benchmark/case/OD/ETA/fare expectations в runtime не читаются.
+
+## Результаты и проверки
+
+[Подробный отчёт](../../experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/README.md), [первичные evidence](../../experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/README.md). Два случая: оба ЦКАД981, по5 рассчитанных компонентов, subtotal4494→5475; full API amountnull, missing толькоm12. Новых рассчитанных компонентов2, новых полных расчётов0, подтверждённых полных тарифов0. Прежние fields validation из19 own main trace occurrences/13 raw совпали, добавился только context. По шести OSRM27компонентов/4составных расчёта/2unknown, historical26/50 не менялся.
+
+Final focused8/8:20 context+6 geometry negative variants; raw non-toll city-gap mutation сохраняет paid-only list, но даёт2 named blocks и отвергается. Own API2, departure checks, exact auxiliary М-4 replay независимого контроля7254 без лишнегоЦКАД. Full736/quoteAPI/TS/ESLint/build16/16 PASS, exact gzip stdout/exit/time сохранены. Долгие операции выполнены после durable STARTED.
+
+Initial5/8: три ошибки тестовых ожиданий (uid regex, ложное предположение по названию case, непубличный API field), исправлены только тесты. Второй8/8 не принят как доказательство: независимый Voronezh control мог выполнять local М-4 fetch без перехвата; один вызов контроля неинструментирован, HTTP attempt count не измерен/raw отсутствует. После обнаружения default fetch закрыт, exact auxiliary replay добавлен, final focused и весь gate повторены. Сетевую экспозицию всего блока не объявлять нулевой;12 planned primary reads и0 новых target routing/trace считаются отдельно. Логи/initial-check-findings сохраняют историю.
+
+Source progress после exit0 оказался старымIN_PROGRESS9 при наличии12 exact raw/metadata. Старый файл сохранён, DONE12 восстановлен только после проверки полного planned URL набора и каждогоSHA, без re-fetch. Причина устаревшего progress не установлена. Это не новый pricing case.
+
+## Сохранение и следующие этапы
+
+WORK_LOG дополнен, короткие WORK_STATE/NEXT_STEPS и очередь обновлены с сохранением истории. После прекращения CI39056837838 проверить head a666fb48…/PR14draft и текущие runs, затем один non-force DONE с expected parenta666fb48…, exact tree/blob/head readback; новый CI отдельно. Main/merge/Production/Android/сообщений/новых автоматизаций нет.
+
+Остались три крупных этапа: (1) М-12 западные RVP и разные съезды, готовые векторы только после привязки; (2) остальные незакрытые причины очереди по одному решению и пакетным исключениям, сохраняя source gaps какBLOCKED; (3) итоговый focused/general gate и handoff с раздельным учётом компонентов/полных расчётов/подтверждённых тарифов. Старый20-план/74/76/309 не повторять. Ближайший шаг — STARTED перед ограниченной первичной привязкой М-12 по saved nodes10782165529/11214930528/11157985901 и distinct exits22Н-0239/М-7. Полная цена двух поездок пока неизвестна.
+
+Финальная проверка перед записью 2026-10-17T18:22:54.393Z: branch/PR head a666fb4887ea54a328a29fb3bfc2dfa5102e5499 совпали, PR14 open/draft. CI39056837838 completed/success, verify и live_probe; пять последних runs завершены. Один non-force DONE с expected parenta666fb48… после завершения CI. Новый post-save CI проверять отдельно. Exact evidence: pre-save-readback.json. Final focused отдельно утверждает0 неожиданных fetch attempts; gate повторён после усиления guard.
+
+
+## 2026-10-17 — восстановление code save ЦКАД после зависания
+
+После durable recovery часть1 fe5f1fc8… перенесены57exact файлов исходного a9f2bf и согласованы3журнала без утраты новых правил/истории. Runtime/evidence соответствуют прежним проверкам, матрица/цены не меняются. Checkpoint docs/checkpoints/2026-10-17-2320-ckad-code-save-recovery-DONE.md; progress checks/2026-10-17-ckad-save-recovery/transfer-progress.json. Source CI39065562352 success; recovery CI39066237658 активен при подготовке, до terminal не двигать ref. Один atomic non-force code commit на fe5f1fc8… и exact tree/blobs/head readback, затем фактический code CI. Новых тестов/сети/pricing replay0; прежние focused8/audit736/quoteAPI/TS/ESLint/build результаты сохранены. NEXT: code CI, затем отдельная привязкаМ-12; полный итог двух поездок unknown.
