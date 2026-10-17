@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "NEXT: review odintsovo:unpriced (baseline2) using saved evidence only; check overlap with engine_not_yet_composed and expected-road-not-proven. No replay without a material evidence gap.",
+  "nextAction": "NEXT: after post-save CI completes, synthesize/reconcile the 13 Part 19 findings and canonical outcomes; then perform Part 20 required verification and handoff.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2212,7 +2212,7 @@
         "triple-m11-ckad-m12-spb-to-arzamas",
         "triple-m11-ckad-m12-vladimir-to-novgorod"
       ],
-      "status": "needs_diagnosis",
+      "status": "blocked_by_missing_reliable_data",
       "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first",
       "causeReviewStatus": "blocked_by_missing_reliable_data",
       "causeReviewAt": "2026-10-17T06:32:46",
@@ -2266,7 +2266,17 @@
         "outcome": "blocked_by_missing_reliable_data",
         "userImpact": "The saved selected routes cannot be assigned a complete numerical toll total while CKAD east-arc chargeable traversal/billing scope is unsupported; keep amount unknown/null, not zero or partial subtotal.",
         "noNewLiveReplayOrBuild": true
-      }
+      },
+      "reviewStatus": "34_of_34_cases_and_68_profiles reviewed; exact CKAD east arc remains unproven",
+      "checkpoint": "docs/checkpoints/2026-10-17-0632-part19-arc-not-proven-blocked.md",
+      "statusHistory": [
+        {
+          "atUtc": "2026-10-17T07:41:10Z",
+          "previousStatus": "needs_diagnosis",
+          "status": "blocked_by_missing_reliable_data",
+          "reason": "Aligned top-level queue status with the already saved completed cause review."
+        }
+      ]
     },
     {
       "code": "unknown-paid-road:unpriced",
@@ -3125,8 +3135,28 @@
         "single-odintsovo-golitsyno-to-rublevo",
         "single-odintsovo-rublevo-to-golitsyno"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "blocked_by_missing_reliable_data",
+      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first",
+      "causeReviewStatus": "2_of_2 saved route cases reviewed; OD traversal proven; directed route-to-PVP binding unproven; M1 and unknown-paid-road also remain unknown",
+      "causeOutcome": "blocked_by_missing_reliable_data",
+      "currentCasesChecked": 2,
+      "currentProfilesChecked": 4,
+      "currentEvidenceOccurrences": 6,
+      "currentEvidenceFilesPresent": 6,
+      "newRouteRuns": 0,
+      "newReplays": 0,
+      "reviewedAtUtc": "2026-10-17T07:41:10Z",
+      "checkpoint": "# Part 19 — Odintsovo unpriced finding\n\n- Status: DONE for this bounded cause review; outcome **blocked by missing reliable data**. Reviewed 2026-10-17 10:41 МСК (2026-10-17T07:41:10Z).\n- Branch/PR: `fix/v3-missing-route-prices-2026-10-15`, PR14 open/draft. Source head/tree: `bdf620e441d2cbe287a348bd388d28e188106341` / `2deefbad4cf1b3038576cabbbe77745643f2a818`.\n- Pre-review check: branch run #39010035622 completed/success on source head; PR head matched branch; no active branch writer.\n\n## Finding and user impact\n\nReviewed `odintsovo:unpriced`, baseline **2 route cases**: `single-odintsovo-golitsyno-to-rublevo` and `single-odintsovo-rublevo-to-golitsyno`. The saved selected-route traces prove Northern Odintsovo Bypass traversal on both routes. These two cases are also listed under `engine_not_yet_composed`; neither is in `expected-road-not-proven`.\n\nThe six saved evidence artifacts cover weekday live, same-date replay and weekend replay for each route. Both route traces are complete; same-date parity is true. The road-specific amounts remain null in all six artifacts. Each route also has unresolved M-1 and `unknown-paid-road` components, so the complete toll total remains unknown.\n\nThe operator's category-I base-fare table exists as a current candidate source, with direction and time bands. The product registry still marks the directed route boundary pair “to audit”, and `TARIFF_SELECTION_REPORT.json` says integration is pending and `runtimeApproved=false`. Although the evidence records named toll-booth nodes, it does not bind either selected route to a verified directed PVP vector.\n\n**Outcome: blocked by missing reliable route-to-PVP evidence.** This does not justify a fare correction. The calculator keeps the total unknown/null rather than showing an unsupported amount or zero. No code or tariff value was changed.\n\n## Checks and limits\n\n- Reviewed 2 route cases, 4 unique route/date profiles, 6 saved evidence occurrences; all 6 files were present, with blob SHAs in [evidence](evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json).\n- No new live route runs, replays, tests, builds, tariff confirmation, or full quote.\n- Formal plan remains 18/20 = 90%; Part 19 remains IN_PROGRESS pending synthesis/status reconciliation; Part 20 remains PLANNED.\n\n## Next step\n\nAfter post-save CI completes, reconcile the 13 Part 19 finding records and their canonical outcomes in the queue; then perform Part 20's required verification and handoff. Do not infer tariff confirmation from the saved candidate table.\n",
+      "reviewEvidence": "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json",
+      "statusHistory": [
+        {
+          "atUtc": "2026-10-17T07:41:10Z",
+          "previousStatus": "needs_diagnosis",
+          "status": "blocked_by_missing_reliable_data",
+          "checkpoint": "docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md",
+          "evidence": "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json"
+        }
+      ]
     }
   ],
   "shortM4ProofReview": {
@@ -3977,5 +4007,17 @@
     }
   },
   "lastSynthesisAtUtc": "2026-10-17T06:28:16Z",
-  "nextFinding": "odintsovo:unpriced"
+  "nextFinding": null,
+  "lastCauseReviewAtUtc": "2026-10-17T07:41:10Z",
+  "lastCauseReview": {
+    "code": "odintsovo:unpriced",
+    "status": "blocked_by_missing_reliable_data",
+    "routeCasesChecked": 2,
+    "uniqueProfilesChecked": 4,
+    "evidenceOccurrences": 6,
+    "evidenceFilesPresent": 6,
+    "newRouteRuns": 0,
+    "checkpoint": "docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md",
+    "evidence": "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json"
+  }
 }

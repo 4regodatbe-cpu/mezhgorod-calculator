@@ -1809,3 +1809,13 @@ Updated queue, AUTO_QUEUE_STATE, WORK_STATE, NEXT_STEPS and this append-only log
 - This parent label mixes causes. M3: 10 traversal-proven cases, but category-I rates in the national registry are verified through 2026-10-10 only; saved profiles depart 2026-10-15 and 2026-10-17. Gate inventory does not verify fare version and shadow pricing requires complete three-gate proof; M1/M3 are diagnostic-only in current route composition. Status: **blocked by missing reliable data**. User-facing full amounts must remain unknown/null.
 - M1/OD-labeled: 3 rows; 2 overlap `odintsovo:unpriced`, 1 overlaps `expected-road-not-proven`. Status for this subcause: **deferred** pending OD-specific review. Parent aggregate status: **deferred**. No independent bug or tariff inferred.
 - Formal progress remains 18/20=90% only. Details/evidence: `docs/checkpoints/2026-10-17-part19-engine-not-yet-composed-review.md`, `docs/checkpoints/evidence/2026-10-17-part19-engine-not-yet-composed-review.json`. Next: saved-evidence review of `odintsovo:unpriced` baseline2 and overlap check.
+
+
+## 2026-10-17 10:41 МСК — Part19 Odintsovo route-to-PVP cause review
+
+- Verified branch/PR14 at source head `bdf620e441d2cbe287a348bd388d28e188106341`; branch and PR heads matched. Run #39010035622 completed success on this head; no active branch writer before review.
+- Reviewed saved finding `odintsovo:unpriced`: 2 route cases (Golitsyno–Rublevo and reverse), 4 unique route/date profiles (weekday and weekend), 6 saved live/same-date/weekend evidence occurrences; all six files exist and their blob SHAs are recorded in the evidence file.
+- Both selected-route traces prove Northern Odintsovo Bypass traversal. The current official category-I base-fare candidate table exists, but route-product boundary is “operator direction/time pair to audit”; tariff selection report states runtimeApproved=false/integration pending. Exact directed route-to-PVP binding is missing, and M1/unmapped paid-booth components also remain unknown.
+- Outcome: **blocked by missing reliable data**. Whole toll totals stay null; no amount inferred, no code or tariff values changed. No new live/replay/test/build.
+- Aligned the stale `arc_not_proven` top-level queue status with its already saved completed blocked outcome. Updated current handoff and next action; Part19 remains IN_PROGRESS for synthesis/status reconciliation before Part20.
+- Checkpoint/evidence: `docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md`, `docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json`.

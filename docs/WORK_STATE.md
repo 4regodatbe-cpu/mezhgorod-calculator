@@ -1,12 +1,16 @@
 # Калькулятор «Из А в Б»: актуальное состояние
 
-## Handoff — 2026-10-17T06:28:16Z (2026-10-17 09:28 МСК)
+## Handoff — 2026-10-17T07:41:10Z (2026-10-17 10:41 МСК)
 
-- PR14 открыт/draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Исходный remote/PR head перед этим шагом: `2b1882159d7ef0576c7eb8c3dcb6ca13f6bd0c21`; PR head совпадал. Run #39007230631 completed/success на source head; run #38959170444 completed/success на более старом head. Проверка новой Actions-задачи после checkpoint ещё требуется.
-- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это не готовность калькулятора или тарифов.
-- `engine_not_yet_composed` (baseline13) разобран по сохранённым данным: 13 route rows / 39 evidence occurrences, все файлы присутствуют; 13 trace/same-date parity complete; weekday/weekend amounts null. Родительская метка смешивает разные причины, поэтому outcome **deferred** как aggregate. M3 (10 cases) **blocked by missing reliable data**: операторский тариф проверен только по 2026-10-10, а профили отправляются 2026-10-15/17; gate evidence не подтверждает тарифную версию и current code оставляет M1/M3 diagnostic-only. Три M1-labelled/OD строки не считать самостоятельной общей причиной: 2 пересекаются с `odintsovo:unpriced`, 1 с `expected-road-not-proven`.
-- Не запускались новые live/replay, tests/build; тарифы не подтверждены. Суммы остаются unknown/null, не ноль.
-- [Checkpoint](../docs/checkpoints/2026-10-17-part19-engine-not-yet-composed-review.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-engine-not-yet-composed-review.json). NEXT: `odintsovo:unpriced` (baseline2), saved evidence only, first reconcile overlap with both prior findings.
+- PR14 открыт/draft; рабочая ветка `fix/v3-missing-route-prices-2026-10-15`. Проверенный source head/tree: `bdf620e441d2cbe287a348bd388d28e188106341` / `2deefbad4cf1b3038576cabbbe77745643f2a818`; branch и PR head совпадали. Actions #39010035622 завершился success на source head; post-save запуск проверяется после нового коммита.
+- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS (cause queue рассмотрена, итоговая сверка статусов ещё нужна), Part20 PLANNED. Это процент формального плана, не подтверждённость тарифов.
+- `odintsovo:unpriced` (2 случая) проверен по сохранённым данным: 2 маршрута / 4 уникальных профиля дат / 6 evidence-файлов; все пути и SHA сохранены. Проезд по Северному обходу доказан на обоих выбранных маршрутах, но точная направленная пара ПВП не привязана к проверенному тарифному вектору. Официальная таблица категории I есть как candidate; отчёт выбора тарифов указывает `runtimeApproved=false` и integration pending. M1 и `unknown-paid-road` также не закрыты, поэтому полный итог остаётся null. Причина **blocked by missing reliable data**; тариф/сумма не подтверждены.
+- Сверена запись `arc_not_proven`: 34 случая уже имели сохранённый blocked outcome, но верхний status был устаревшим `needs_diagnosis`; он приведён в соответствие с сохранённым разбором.
+- Новых live-запросов, replay, тестов, сборок, изменений кода или тарифных значений нет. Unknown остаётся null.
+- [Checkpoint](checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md) · [evidence](checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json) · [очередь Part19](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [следующие шаги](../experiments/nationwide-tolls/NEXT_STEPS.md).
+
+## NEXT
+После завершения post-save CI синтезировать/сверить outcome для записей Part19; затем выполнить обязательные проверки Part20 по AGENTS.md и передать handoff.
 
 ## Предыдущие handoff и история
 

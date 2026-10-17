@@ -1,12 +1,15 @@
-## Current handoff — 2026-10-17T06:28:16Z (2026-10-17 09:28 МСК)
+## Current handoff — 2026-10-17T07:41:10Z (2026-10-17 10:41 МСК)
 
-- Reviewed `engine_not_yet_composed` baseline13: 13 route rows / 39 saved live/same-date/weekend occurrences, all evidence paths present. All outputs remain null; no new route calls.
-- Parent result: **deferred** because it aggregates distinct M3 and M1/Odintsovo causes. M3 10/10: **blocked by missing reliable data**; tariffs verified through 2026-10-10 only, while routes depart 2026-10-15/17, and current M1/M3 integration is diagnostic-only. M1-labelled/OD 3 cases: **deferred** to the separate `odintsovo:unpriced` review; 2 overlap that finding and 1 overlaps `expected-road-not-proven`.
-- No code, tariff, test, build, replay or live changes. Formal plan stays 18/20=90%.
+- PR14 draft открыт; source head до записи `bdf620e441d2cbe287a348bd388d28e188106341`, Actions #39010035622 success на этом head. Проверить новый post-save run перед следующей записью.
+- Part19 cause `odintsovo:unpriced`: **blocked_by_missing_reliable_data**. 2 route cases, 4 unique route/date profiles, 6 saved live/same-date/weekend artifacts; all files present. Both routes prove Odintsovo bypass traversal, but exact directed PVP vector binding is unresolved. Official fare candidate exists, while selection report has `runtimeApproved=false`; M1 and unknown paid booth also keep totals null.
+- `arc_not_proven` queue field aligned with its saved blocked outcome. No new route calls, replay, tests, builds or tariff changes. Full quote remains unknown/null.
+- Formal plan stays **18/20 = 90%**. Part19 synthesis/status reconciliation remains; Part20 required verification is planned.
 
-[Checkpoint](../../docs/checkpoints/2026-10-17-part19-engine-not-yet-composed-review.md) · [Evidence](../../docs/checkpoints/evidence/2026-10-17-part19-engine-not-yet-composed-review.json) · [Queue](PART19_FINDINGS_QUEUE.json).
+[Checkpoint](../../docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md) · [Evidence](../../docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json) · [Queue](PART19_FINDINGS_QUEUE.json).
 
 # Следующие действия
+
+
 
 [Актуальный handoff](../../docs/WORK_STATE.md); история ниже сохранена.
 
