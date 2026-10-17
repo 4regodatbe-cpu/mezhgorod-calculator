@@ -1,3 +1,15 @@
+## Handoff — 17.10.2026 15:08 МСК
+
+- **DONE пакет74:**74capture SHA проверены,148 component/date checks. Дополнительно24случая ЗСД600,50unknown,0execution errors; live/full-route replay0. Все trace/booth coverage complete.
+- Текущая правка проверена на всех76ZSD baseline cases: **26рассчитанных ZSD-компонентов /50unknown**, а не76подтверждённых полных поездок. Только предыдущий Гранитное имеет2full replay; для75остальных component-only.50unknown образуют11групп физических входов.
+- [DONE](checkpoints/2026-10-17-150839-zsd-batch74-DONE.md) · [таблица/воспроизведение](../experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/README.md) · [summary](../experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/summary.json). Node syntax/independent result-hash checks PASS; full704+quote/API PASS,TS PASS,build PASS. Runtime/цены не менялись. Первые sparse-fixture/transport ошибки восстановлены и записаны в checkpoint.
+- Разрешённая ветка/PR14draft; исходный code head3ae7761fc0cebccc72777f487c5af8ca0b926665, durable STARTED7f6e6b8a4488bc3ee0aa4ce760b727b03b57f28b. Для итоговой записи исключить активный CI39030982703; post-saveCI проверять отдельно. Старую историю сохранять, не включать её процент в текущие отчёты.
+
+## NEXT
+Один representative группы9: `max-chain-m12-ckad-m11-zsd-arzamas-to-prim`. Доказать по первичным источникам законченный cash/card scope, потом проверить исключения остальных8. Не повторять50маршрутов live. Unknown не0, полного подтверждения тарифов нет. No main/merge/Production/Android.
+
+## История
+
 ## Handoff — 17.10.2026 15:01 МСК
 
 - STARTED: пользователь поручил пакет74 сохранённых случаев ЗСД, с отдельными case outputs и одним итоговым сохранением. [Входы/восстановление](checkpoints/2026-10-17-150159-zsd-batch74-STARTED.md), [правило](WORKFLOW_RULES.md). Старый процент больше не включать в текущие отчёты.

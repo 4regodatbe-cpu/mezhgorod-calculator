@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "After current save CI/head verification, check lnr-лисичанск-saint-petersburg-center physical-scope exceptions only; no mass replay.",
+  "nextAction": "Review primary directed finished ZSD scope for max-chain-m12-ckad-m11-zsd-arzamas-to-prim, representative of 9 cases, then exceptions only. No mass live/replay.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1763,19 +1763,19 @@
       "canonicalOutcomeRationale": "The selected route evidence does not establish the operator collection span needed to bind a tariff. Keep amount unknown/null.",
       "postAuditSolution": {
         "atUtc": "2026-10-17T10:53:00Z",
-        "status": "partial_fix_two_saved_cases_verified",
+        "status": "partial_fix_all76_saved_cases_assessed",
         "caseId": "dnr-гранитное-saint-petersburg-center",
-        "checkedCases": 2,
+        "checkedCases": 76,
         "fullReplayProfiles": 2,
         "newLiveRouteRuns": 0,
         "vectorRub": 600,
         "fareBasis": "source-derived owner directed tariff-zone definitions + current cash/card rates; no independent OD receipt",
         "fullQuotePriceConfirmation": "unconfirmed",
-        "otherBaselineCasesNotRechecked": 74,
+        "otherBaselineCasesNotRechecked": 0,
         "checkpoint": "docs/checkpoints/2026-10-17-135300-zsd-kad-ekateringofka-fixed.md",
         "evidence": "docs/checkpoints/evidence/2026-10-17-zsd-kad-ekateringofka-fixed.json",
-        "componentOnlyCases": 1,
-        "componentOnlyDateChecks": 2,
+        "componentOnlyCases": 75,
+        "componentOnlyDateChecks": 150,
         "sourceFixCommit": "dc44185940e0da95dafa00b5718b751fb729981c",
         "sourceFixCiRun": 39026791473,
         "sourceFixCiConclusion": "success",
@@ -1791,7 +1791,22 @@
             "checkpoint": "docs/checkpoints/2026-10-17-143328-zsd-bryanka-exceptions.md",
             "evidence": "docs/checkpoints/evidence/2026-10-17-zsd-bryanka-exceptions.json"
           }
-        ]
+        ],
+        "pricedComponentCases": 26,
+        "unknownComponentCases": 50,
+        "batch74": {
+          "checkedCases": 74,
+          "componentDateChecks": 148,
+          "pricedComponentCases": 24,
+          "unknownComponentCases": 50,
+          "executionErrors": 0,
+          "newLiveRouteRequests": 0,
+          "newFullReplays": 0,
+          "physicalScopeGroups": 12,
+          "unknownPhysicalScopeGroups": 11,
+          "summary": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/summary.json",
+          "checkpoint": "docs/checkpoints/2026-10-17-150839-zsd-batch74-DONE.md"
+        }
       }
     },
     {
@@ -4063,8 +4078,17 @@
       "fullgateCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md",
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
     },
-    "postAuditFixCaseCount": 2,
-    "postAuditCasesRemainingUnchecked": 74
+    "postAuditFixCaseCount": 26,
+    "postAuditCasesRemainingUnchecked": 0,
+    "currentFixReview": {
+      "sourceCodeHead": "3ae7761fc0cebccc72777f487c5af8ca0b926665",
+      "checkedCases": 76,
+      "pricedComponentCases": 26,
+      "unknownComponentCases": 50,
+      "status": "complete_saved_component_batch",
+      "checkpoint": "docs/checkpoints/2026-10-17-150839-zsd-batch74-DONE.md",
+      "batchSummary": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/summary.json"
+    }
   },
   "lastSynthesisAtUtc": "2026-10-17T08:11:16Z",
   "nextFinding": null,

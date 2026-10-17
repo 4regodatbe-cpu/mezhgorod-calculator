@@ -1,3 +1,7 @@
+## 17.10.2026 15:08 МСК — пакет74 DONE
+
+74/74captures×2dates:24новых calculated ZSDcomponents600,50unknown,0execution errors, no live/full replay. Итого76/76assessed,26componentspriced/50unknown. [Итог/группы](checks/2026-10-17-zsd-batch74/README.md) · [checkpoint](../../docs/checkpoints/2026-10-17-150839-zsd-batch74-DONE.md). Проверки704/TS/build PASS. NEXT после сохранения/currentCI: primary finished scope одного representative9cases `max-chain-m12-ckad-m11-zsd-arzamas-to-prim`; не50поштучных live повторов. Старый процент не выводить в текущих отчётах.
+
 ## 17.10.2026 15:01 МСК — пакет74 STARTED
 
 Прямое поручение: один пакет, один итоговый commit, отдельные case results. [Входы/восстановление](../../docs/checkpoints/2026-10-17-150159-zsd-batch74-STARTED.md). Выполнить current ZSD component на74 saved captures×2dates, no live/full replay. Формальный старый процент в текущих отчётах не использовать.
