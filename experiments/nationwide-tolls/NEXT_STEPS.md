@@ -2,11 +2,11 @@
 
 [Актуальный handoff](../../docs/WORK_STATE.md); история ниже сохранена без удаления.
 
-M11 boundary: 8/8 сохранённых исключений разобраны; outcome заблокирован отсутствием надёжных данных. Тариф и полный маршрутный итог не подтверждены.
+Part19 cause `m11_58_679_facility_sequence_incomplete`: **blocked_by_missing_reliable_data**, 15/15 cases and 30 saved weekday/weekend profiles reviewed. Amount remains unknown/null; no fare or full trip total confirmed. No live/replay/build/tests were run.
 
-Part19 finding `unknown-paid-road:unpriced` (64 baseline IDs) **deferred** как широкий агрегат с пересекающимися категориями, не как подтверждённая ошибка. На этом шаге текущих route cases/profiles проверено 0. Композитор намеренно оставляет unknown-paid-road вне тарифицируемых matched-компонентов и возвращает unknown/null при неполноте.
+NEXT: inspect only 26 residual IDs in `m11-58-679:unpriced` outside the 15 already reviewed, cross-referencing the completed M11 boundary review. No repeated cases or new live/replay without concrete evidence gap. Formal plan remains 18/20=90%; Part19 IN_PROGRESS, Part20 PLANNED. No main/merge/Production/Android.
 
-NEXT: `m11_58_679_facility_sequence_incomplete` (baseline 15), сопоставить сохранённые доказательства с `m11-58-679:unpriced`; только конкретные отличия требуют replay/live. Без новых broad reruns. Формальный план 18/20=90%, не готовность релиза и не подтверждённость тарифов. No main/merge/Production/Android.
+[Checkpoint](../../docs/checkpoints/2026-10-17-part19-m11-facility-sequence-blocked.md) · [evidence](../../docs/checkpoints/evidence/2026-10-17-part19-m11-facility-sequence-blocked.json)
 
 ---
 

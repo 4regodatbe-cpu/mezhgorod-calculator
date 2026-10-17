@@ -1,17 +1,13 @@
 # Калькулятор «Из А в Б»: актуальное состояние
 
-## Handoff — 2026-10-17 03:15 МСК
+## Handoff — 2026-10-17 17.10.2026, 04:34:06 МСК
 
-- Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 открыт и draft. Удалённый head перед этим шагом: `1f6b47f4c297779307fe9e59e69571e5bc1100ab`; базовое дерево `67b4ef630a5145852b3e2ec7d067b67dd0162d7e`.
-- Последний наблюдаемый run [#38981909036](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38981909036) завершился success (`verify` и `live_probe`); на preflight активных run не было.
-- Формальный план: **18/20 = 90%**. Part19 IN_PROGRESS, Part20 PLANNED. Это completion плана, не готовность калькулятора и не покрытие тарифов.
-- M11 boundary: **8/8** сохранённых исключений рассмотрены; итог заблокирован отсутствием надёжного доказательства границы. M11 тариф не подтверждён.
-- В этом шаге aggregate `unknown-paid-road:unpriced` (64 baseline ID) отложен как несамостоятельная причина; текущих маршрутов/профилей проверено **0**. Он пересекается с другими категориями; текущая композиция fail-closed сохраняет `unknown`/null.
-- Нерешённые тарифы и полные суммы остаются unknown; новые live/replay, код и тесты не выполнялись.
-- **NEXT:** диагностировать более узкую причину `m11_58_679_facility_sequence_incomplete` (baseline 15) по сохранённым capture/profile данным; без повторов при отсутствии конкретного отличия.
-- [Checkpoint](checkpoints/2026-10-17-part19-unknown-paid-road-aggregate-deferred.md) · [evidence](checkpoints/evidence/2026-10-17-part19-unknown-paid-road-aggregate-deferred.json) · [очередь](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [правила](WORKFLOW_RULES.md).
-
----
+- Ветка `fix/v3-missing-route-prices-2026-10-15`, PR14 открыт/draft; parent head `2b61dad6560284da60d9ec2c49952ace3608ae13`, tree `8cd3f0857f8ccabc431a4898c98e090c367d6560`; перед записью активных/queued branch runs не было.
+- Последний наблюдаемый parent run [#38985688974](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38985688974) успешен, но предшествует этой классификации.
+- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это не готовность калькулятора и не подтверждение тарифов.
+- Причина `m11_58_679_facility_sequence_incomplete`: проверены **15 маршрутов / 30 сохранённых weekday-weekend профилей**. Все показывают один fail-closed spatial gap; официальные данные дают 21 тарифную точку без координат, а пространственные якоря покрывают только p58/p593/p679. Итог: **заблокирована отсутствием надёжных данных**; сумма остаётся unknown/null.
+- Новых live/replay/build/tests не было. NEXT: проверить только **26 residual IDs** из `m11-58-679:unpriced`, без повторов уже просмотренных 15 случаев.
+- [Checkpoint](../docs/checkpoints/2026-10-17-part19-m11-facility-sequence-blocked.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-m11-facility-sequence-blocked.json).
 
 ## Предыдущая handoff-сводка (оставлена как история, не источник текущего состояния)
 

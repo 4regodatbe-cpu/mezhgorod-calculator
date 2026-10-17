@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Next diagnose the narrower cause m11_58_679_facility_sequence_incomplete (baseline 15), comparing its saved evidence to m11-58-679:unpriced; inspect only source captures/profiles and route/code distinctions. No new live/replay unless a material difference or evidence gap is found. Preserve unknown≠0 and no full total.",
+  "nextAction": "Review only the 26 residual IDs in m11-58-679:unpriced that are outside m11_58_679_facility_sequence_incomplete, comparing saved weekday/weekend evidence and completed M11 boundary review. Do not replay/live-probe absent a concrete evidence gap or material distinction.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2440,8 +2440,151 @@
         "single-m11-novgorod-to-moscow",
         "single-m11-torzhok-to-moscow"
       ],
-      "status": "needs_diagnosis",
-      "note": "Historical finding, not assumed current implementation bug; verify evidence/current-engine behavior first"
+      "status": "blocked_by_missing_reliable_data",
+      "note": "All 15 saved cases reproduce the same incomplete M11 58–679 spatial facility sequence in both weekday/weekend profiles. Official inventory lists 21 tariff points with no coordinates; separate spatial anchors cover only p58/p593/p679. No material exception or code defect established. Keep unknown/null; no tariff or full total confirmed.",
+      "causeReviewStatus": "15_of_15_saved_cases_and_30_weekday_weekend_profiles_reviewed_same_missing_spatial_sequence",
+      "currentCasesChecked": 15,
+      "currentProfilesChecked": 30,
+      "reviewedAtUtc": "2026-10-17T01:34:06Z",
+      "currentEvaluations": [
+        {
+          "caseId": "pair-m11-ckad-domodedovo-to-novgorod",
+          "profiles": 2,
+          "captureSha256": "c6d502f856ae39ea9f044c28e4a5731cf75e371fcfbbb56e445a2d6e2e88fd7d",
+          "weekdayProfileBlobSha": "9df8b1a7d49ff86d1a714bdba78570ebb2803b41",
+          "weekendProfileBlobSha": "c6f25449c6702d02042c22ed406962333acf501f",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "profiles": 2,
+          "captureSha256": "95e85d22d9154096958daa04a7f2fa19c3e0887cd4942436c58717c9d0af1564",
+          "weekdayProfileBlobSha": "5a422ae219cd9ff686f2b46c5020d4d13624475c",
+          "weekendProfileBlobSha": "37eae7089cae6fe0146fb19d3666e27b66269aca",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "pair-m4-m11-krasnodar-to-torzhok",
+          "profiles": 2,
+          "captureSha256": "4a3d1ca1ee59891e94b12690f70046b4600bc59226be7b4b449968bdde5aa1da",
+          "weekdayProfileBlobSha": "23bccdb2e5de79179ad9bc083831c630ebd6cc89",
+          "weekendProfileBlobSha": "30cc7e3132e15714c8c1073530f0d212743b3e20",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "profiles": 2,
+          "captureSha256": "6cccb320f5cc436c33eed7b2731396e427b410c7de519188221b88cda4f7ca82",
+          "weekdayProfileBlobSha": "9db49f3b29283ce1a8e1bdb3203e963448503ff8",
+          "weekendProfileBlobSha": "b5151f0cf30bbd31da04d977da19ed6507b8457c",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "profiles": 2,
+          "captureSha256": "92790f5b131ecf57f859619ff98b272067ef469cbfb34b91efe6d9ba79e6f249",
+          "weekdayProfileBlobSha": "04330572b7070dc43923b0a2b2dc056b27d6d807",
+          "weekendProfileBlobSha": "364285db3247b221cfdd02d4242e1326733e12e2",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "pair-m4-m11-tver-to-rostov",
+          "profiles": 2,
+          "captureSha256": "b3b5ddece93d90c7ac1b4e09555113867012fc084b640ca0458beb2c62a20574",
+          "weekdayProfileBlobSha": "5ba30092fe4c9b4d62c49a6631b45660dbff7e01",
+          "weekendProfileBlobSha": "17169e37e4e628080e11d00b8ba3918e83b139e6",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "profiles": 2,
+          "captureSha256": "3bc427f0942a9081dfb33a1a689ff83e980d17a4b2004cbceb4d0c98232101f7",
+          "weekdayProfileBlobSha": "9ee982373f00943ece189b5e658f273f8c1be4a9",
+          "weekendProfileBlobSha": "257a8678cda3e7617ce60685be670a71a39bf5b8",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "single-ckad-klin-to-domodedovo",
+          "profiles": 2,
+          "captureSha256": "c43b8ffbe9e08bddae3f773cf030bb958b38fcd319a840dd748df2b6fff4dbc4",
+          "weekdayProfileBlobSha": "264ae7748628739088f9507dd58fcedbcf7f4efe",
+          "weekendProfileBlobSha": "06752bbf07759f984f96c0723face1c52fc4ca16",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "profiles": 2,
+          "captureSha256": "43a188c7e5d0d91462574e2f8407b152ed66be721ea1ec8f0d8b630336525f2c",
+          "weekdayProfileBlobSha": "aa9444d7aa666f2a2e6b3aaf7c96cb1574acad5c",
+          "weekendProfileBlobSha": "862ba13c8b4d3f3c50bfb622d98f7a9edaa09e18",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "profiles": 2,
+          "captureSha256": "5e02fe73b6cf73be09885f8c27e6c64de2ee00f8443bb0286318cf4606cbe927",
+          "weekdayProfileBlobSha": "98cd7a9de54d7c9bdff0153523222778efe61979",
+          "weekendProfileBlobSha": "3dbb07287a2b66f5c2cd0ca6f150ca80cbb5a1db",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "profiles": 2,
+          "captureSha256": "6b667e386702b41fd3d6b3ba9433a0f12df846fa53727a76bca48aae9c695b17",
+          "weekdayProfileBlobSha": "b74a990049058b70232eb048e6f7eb4555015b9b",
+          "weekendProfileBlobSha": "e40cec40069a1271ded2024c0070fc00e099fec7",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "profiles": 2,
+          "captureSha256": "fdabe3231a0504f174a1b478b2eefbc1b940bb13ee74ed0bef163f0d447f3031",
+          "weekdayProfileBlobSha": "016b9f1f563537e13851143b79e5b37b2e8e4c1b",
+          "weekendProfileBlobSha": "01a9ae94deca5fb1bb1c381093cdbc91edab301d",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "single-m11-novgorod-to-moscow",
+          "profiles": 2,
+          "captureSha256": "9e106677404d9fa490694cf63eb26db107ede81ce5ff9571e0d8d8beaae15402",
+          "weekdayProfileBlobSha": "3526aa89a81a7f858b41213f5763497e77cd7115",
+          "weekendProfileBlobSha": "aba1bd59a3469beac79cc76742e364b9f91a0c2c",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "single-m11-torzhok-to-moscow",
+          "profiles": 2,
+          "captureSha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798",
+          "weekdayProfileBlobSha": "268f2fb9158d76fbafbdab5a8a8c489eb8695ea8",
+          "weekendProfileBlobSha": "e6f10e231a706a6e458bab5f38bfd3e2caa325b9",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        },
+        {
+          "caseId": "single-m11-tver-to-moscow",
+          "profiles": 2,
+          "captureSha256": "0c65966fffb33ef1e3afd404e485db07b11ccff9a06736c34db79525c20d1d52",
+          "weekdayProfileBlobSha": "37c0c291b8958a98e8dda1cb1453a2a3b7c246b0",
+          "weekendProfileBlobSha": "1b2e56a3f672303aad5fd09ac3da902acb0b7c83",
+          "result": "same_source_gated_incomplete_facility_sequence"
+        }
+      ],
+      "statusHistory": [
+        {
+          "at": "2026-10-17T01:34:06Z",
+          "from": "needs_diagnosis",
+          "to": "blocked_by_missing_reliable_data",
+          "reason": "all 15 saved case pairs reproduce same source-gated missing spatial facility sequence; authoritative inventory lacks coordinates for 21 tariff points, while spatial anchors cover only p58/p593/p679"
+        }
+      ],
+      "causeOutcome": "blocked_by_missing_reliable_data",
+      "reviewEvidence": "docs/checkpoints/evidence/2026-10-17-part19-m11-facility-sequence-blocked.json",
+      "checkpoint": "docs/checkpoints/2026-10-17-part19-m11-facility-sequence-blocked.md",
+      "overlap": {
+        "m11UnpricedIds": 41,
+        "sharedIds": 15,
+        "residualUniqueIds": 26,
+        "next": "Review only residual IDs; do not repeat checked cases."
+      }
     },
     {
       "code": "engine_not_yet_composed",
