@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Review primary directed finished ZSD scope for max-chain-m12-ckad-m11-zsd-arzamas-to-prim, representative of 9 cases, then exceptions only. No mass live/replay.",
+  "nextAction": "After exact checkpoint commit readback, review reverse group1e954c437e46 representative max-chain-m12-ckad-m11-zsd-sest-to-kazan from saved capture/primary evidence. Do not rerun74/76/309 or reopen blocked collection spans without new primary mapping.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1806,7 +1806,35 @@
           "unknownPhysicalScopeGroups": 11,
           "summary": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/summary.json",
           "checkpoint": "docs/checkpoints/2026-10-17-150839-zsd-batch74-DONE.md"
-        }
+        },
+        "directedGroupReviews": [
+          {
+            "fingerprint": "0c0e778a8622dfc6a3f57032f70fd16bc29fa010f3785c0215b8bb7ffae9c6c4",
+            "representative": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+            "checkedCases": 9,
+            "exceptionCases": 8,
+            "materialExceptions": 0,
+            "newPricedComponents": 0,
+            "unknownCases": 9,
+            "outcome": "blocked_by_missing_reliable_data",
+            "missing": "Owner directed cash/card collection bundle/receipt credit for KAD south to Bogatyrsky/Planernaya via933974870→1766158781. General rates do not prove collection span.",
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/summary.json",
+            "sourceReview": "experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/source-review.json"
+          },
+          {
+            "fingerprint": "258ee8abe7051eda2e4d11f093e10fa37184adc36cd3c3e12d67823afdd32f08",
+            "representative": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+            "checkedCases": 1,
+            "uncheckedSiblings": 6,
+            "newPricedComponents": 0,
+            "representativeOutcome": "blocked_by_missing_reliable_data",
+            "groupReviewStatus": "partial_representative_only",
+            "missing": "Owner directed cash/card collection bundle and exact north-KAD exit binding for1766158812",
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/next-group-representative.json"
+          }
+        ],
+        "latestReviewCheckpoint": "docs/checkpoints/2026-10-17-153001-zsd-planernaya-group9-BLOCKED.md",
+        "latestReviewPersistence": "included_in_checkpoint_commit; verify exact remote head/tree/blobs after write"
       }
     },
     {

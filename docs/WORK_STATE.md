@@ -1,3 +1,12 @@
+## Handoff — 17.10.2026 15:31 МСК: группа9 заблокирована по источникам
+
+- **DONE анализ группы9; тариф BLOCKED:** 9 capture и sealed результатов проверены поSHA; восемь проверок исключений без отличий. Въезд КАД-юг, съезд к Богатырскому/Планерной через1766158781. Не хватает первичной направленной области cash/card сбора и зачёта для пары933974870→1766158781. Готовый600-вектор Екатерингофки не применён. Runtime/цены не менялись.
+- Следующий представитель группы7 Kazan→Sest проверен по сохранённому capture: физически КАД-юг→КАД-север/1766158812; надёжной привязки сбора нет, шесть остальных случаев не проверены. Новых цен0; baseline26 рассчитанных компонентов/50unknown сохраняется. Новых component/date, full replay и live-маршрутов0. [Checkpoint](checkpoints/2026-10-17-153001-zsd-planernaya-group9-BLOCKED.md) · [9case evidence](../experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/summary.json) · [следующий представитель](../experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/next-group-representative.json).
+- CI39031962573: verify и live_probe completed/success (повторная проверка15:31МСК); во время активногоCI ветка не менялась. Исходный remote/PR head567090bf…, PR14 draft. Этот блок сохраняется одним connector commit с expected parent и проверкой tree/blob/head; CLIpush не повторять.
+- NEXT после сохранения: обратная группа1e954c437e46, представитель `max-chain-m12-ckad-m11-zsd-sest-to-kazan`; использовать сохранённые данные, не повторять пакет74/76/309 и общий поиск тех же ставок.
+
+## Предыдущая сохранённая история
+
 ## Handoff — 17.10.2026 15:08 МСК
 
 - **DONE пакет74:**74capture SHA проверены,148 component/date checks. Дополнительно24случая ЗСД600,50unknown,0execution errors; live/full-route replay0. Все trace/booth coverage complete.

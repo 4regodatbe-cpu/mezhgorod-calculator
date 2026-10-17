@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "uniqueGroupCases": 9,
+  "nextGroupRepresentatives": 1,
+  "group9Reproduction": "identical case JSON and summary excluding timestamp; same9 cases, no additional unique cases",
+  "caseResultHashesVerified": 9,
+  "primarySourceHashesVerified": 8,
+  "jsonParse": "PASS",
+  "currentHandoffLinks": "PASS",
+  "pythonSyntax": "PASS",
+  "gitDiffCheck": "PASS",
+  "runtimeTariffsChanged": false,
+  "newFullGate": "NOT_RUN_DOCS_EVIDENCE_ONLY",
+  "priorCi": {
+    "runId": 39031962573,
+    "verify": "completed/success",
+    "live_probe": "completed/success"
+  },
+  "newRouteRequests": 0,
+  "newComponentDateChecks": 0,
+  "newPricedComponents": 0,
+  "confirmedFullTripFares": 0
+}
