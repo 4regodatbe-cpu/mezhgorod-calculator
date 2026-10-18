@@ -1,3 +1,9 @@
+## FIXED — южный head М11→ЦКАД47; новый CI pending
+
+[Код, owncases и проверки](../../docs/checkpoints/2026-10-18-m11-ckad47-exit-CODE-DONE.md): ownРаменскоеhead200Thu/240Sat, М11subtotal1450/1630, fullnull/missingCKAD. OwnКазань2componentprofilesPASS; Москва/КраснодарнеперенялиCKADhead. Focused27/27,full777/777+quote/API,Next16/16,TS/ESLintPASS; initialM4testassumptionfailureсохранён. NEXT послеCI: конкретныйownCKADexit/contextРаменского,безповтораобщихаудитов/источников.
+
+## Предыдущая история
+
 ## SOURCE DONE / CODE STARTED — строгий съезд М11→ЦКАД47
 
 [Proof и кодовыйscope](../../docs/checkpoints/2026-10-18-m11-ckad47-exit-source-DONE-CODE-STARTED.md):4GET200,10onewayways,48orderedownpointsPASS. NEXT: exactsouthboundheadmatcher+readyreversepair200Thu/240Sat,focused/fullbuild/TS/ESLint; CKADwholeunknownсохранить. СтарыеGET/48sourcepoints/p214prefixне повторять.

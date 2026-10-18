@@ -4,6 +4,7 @@ import {crossingAt,facilityAnchors,nearestSegment,haversineKm,MOSCOW_M11_ENTRY,
 import type {M11RoadEvidence} from '../toll-engine/m11-road-evidence';
 import validity from '@/experiments/nationwide-tolls/engine/fare-validity.cjs';
 import {inspectM11MmkHeadBoundary} from './m11-mmk-head-boundary';
+import {inspectM11CkadHeadExit} from './m11-ckad-head-exit';
 import {inspectM11SouthboundMoscowHead} from './m11-southbound-moscow-head';
 import {inspectM11P214Entry} from './m11-p214-entry-boundary';
 import {inspectM11P258Exit} from './m11-p258-exit-boundary';
@@ -47,10 +48,11 @@ export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSec
  const timeResolved=validity.validInstant(departureAt) && Number.isFinite(routeSeconds) && routeSeconds>0;
  if(!geometryResolved && timeResolved && inspectM11P214Entry(route,evidence,validation)) {
   const moscowHead=inspectM11SouthboundMoscowHead(route,evidence,validation);
+  const ckadExit=!moscowHead&&inspectM11CkadHeadExit(route,evidence,validation);
   return {
-  candidate:true,headDetected:true,resolved:true as const,reason:moscowHead?'m11_p214_p58_and_southbound_moscow_head_proved':'m11_p214_p58_directed_paid_entry_proved',parts:{
+  candidate:true,headDetected:true,resolved:true as const,reason:moscowHead?'m11_p214_p58_and_southbound_moscow_head_proved':ckadExit?'m11_p214_p58_and_southbound_ckad_head_proved':'m11_p214_p58_directed_paid_entry_proved',parts:{
    from:'p214',to:'p58',departureAt,mainlineAt:departureAt,mainlineWindowSeconds:0,headDetected:true,
-   head:moscowHead?{from:'solnechnogorsk',to:'moscow',paymentAt:departureAt,paymentWindowSeconds:0,timeBasis:'strict_southbound_head_at_departure'}:null,
+   head:moscowHead?{from:'solnechnogorsk',to:'moscow',paymentAt:departureAt,paymentWindowSeconds:0,timeBasis:'strict_southbound_head_at_departure'}:ckadExit?{from:'solnechnogorsk',to:'tskad',paymentAt:departureAt,paymentWindowSeconds:0,timeBasis:'strict_ckad47_exit_at_departure'}:null,
   },
  };
  }

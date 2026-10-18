@@ -40,10 +40,18 @@
       "verifiedCompleteEstimateCase": "single-m11-torzhok-to-moscow",
       "departureProfiles": 5,
       "confirmedWholeTripFares": 0
+    },
+    {
+      "id": "m11-ckad47-source-bound-southbound-head-exit",
+      "sourceParentCommit": "5a6bef2d0a61bbcb9c3c4a6ec4f8574cafcef7a8",
+      "validationCheckpoint": "../../docs/checkpoints/2026-10-18-m11-ckad47-exit-CODE-DONE.md",
+      "scope": "Strict p214 mainline plus independently proved southbound CKAD47 head, not the CKAD tariff. Own Ramenskoe5datedquotes remain unknown CKAD; own Kazan2M11componentcontrols; Moscow/Krasnodar negative controls.",
+      "newPricedHeadComponents": 2,
+      "confirmedWholeTripFares": 0
     }
   ],
   "nextCase": null,
-  "nextAction": "After new code CI: offline own pair-m11-ckad-torzhok-to-ramenskoe head58→CKAD binding using retained southbound gate8087316064/way1270188041. Do not repeat source passes, 364 inventory or completed p214 checks.",
+  "nextAction": "After new codeCI: own pair-m11-ckad-torzhok-to-ramenskoe actual CKAD exit/billing context from saved selected trace and retained CKAD M11→M12 context source. No repeated broad arc/364 inventory/p214 or 10way48pointsource audits.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",

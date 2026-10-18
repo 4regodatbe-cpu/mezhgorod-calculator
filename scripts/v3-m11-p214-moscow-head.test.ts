@@ -65,6 +65,6 @@ test('own partial mainline composes only the directed reverse head pair at depar
 test('other own p214 exits cannot inherit Moscow head',()=>{
  for(const p of ['pair-m11-ckad-torzhok-to-ramenskoe/2026-10-16T00-05-16-512Z-capture.json.gz','triple-m11-ckad-m12-torzhok-to-kazan/2026-10-16T00-34-01-248Z-capture.json.gz']){
   const other=load(p);assert.equal(inspectM11SouthboundMoscowHead(other.route.coordinates,other.route.m11RoadEvidence,other.validation),false);
-  assert.equal(resolveM11ProductBoundaries(other.route.coordinates,other.route.seconds,'2026-10-15T09:00:00+03:00',other.route.m11RoadEvidence,other.validation).parts?.head,null);
+  assert.equal(resolveM11ProductBoundaries(other.route.coordinates,other.route.seconds,'2026-10-15T09:00:00+03:00',other.route.m11RoadEvidence,other.validation).parts?.head?.to,'tskad');
  }
 });
