@@ -2723,3 +2723,20 @@ Own capture c4c60b8987cb2ff44be21df4a0359249c90b5cfb: полный selected Valh
 Обязательные fullgate/build/ESLint ещё pending вPART B по сохранённому recovery-плану. Это промежуточная часть, не завершённое исправление или подтверждённый полный тариф. Локальный node_modules symlink использует уже установленный набор среды, вgit не включается. Новых сетевых маршрутов/источников0, новых priced components0.
 
 NEXT PART B после durable readback: включить только p214→p58 с headDetected=true/head=null; ownweekday/weekendquote и негативные regression, fullgate/build/TS/ESLint. Полный итог оставлятьunknown из-за head58→ЦКАД. ЗатемPART CcodeCI. Не менять main/Production/Android.
+
+
+# М11 p214→p58 — PART B DONE, codeCI pending
+
+18.10.2026. Parent d55cc55ee79188ab3aa6960ed025c7091dac4855, tree9ce0761addd1cfb40687ef8ed9cee337526bc21c; remote branch/commit/tree и PR14 head/draft прочитаны и совпали с локальным деревом PART A. Следующий source checkout синхронизирован fetch и недеструктивным update-ref; изменений данных при синхронизации нет. Последние codeCI до изменения completed/success; для PART A [skip ci] runs отсутствуют.
+
+Включён inspectM11P214Entry в resolveM11ProductBoundaries только как southbound p214→p58 fallback при неразрешённых generic boundaries и корректных дате/длительности. headDetected=true/head=null; отрезок p58→ЦКАД не присвоен. Уточнённая physical association p214/source-derived review сохранена в предыдущем STARTED; это не независимый операторский lane crosswalk. Цены берутся существующим matrix adapter из Order274, таблица/цены не редактировались.
+
+Собственный полный selected Valhalla capture c4c60b8987cb2ff44be21df4a0359249c90b5cfb, три отправления: Thu09:00/Thu23:59 дают mainline1250₽, Sat09:00 даёт1390₽. Переход полуночи не меняет профиль отправления. Новых рассчитанных компонентов1; новых подтверждённых полных тарифов0. Полный API итогnull: missing m11-15-58,ckad,unknown-paid-road. Никакого вывода free/0. Эти результаты относятся к одному собственному случаю, остальные41/15/siblings этим не проверены.
+
+Проверки:
+- timeout60 node --import ./scripts/register-ts-paths.mjs --test scripts/v3-m11-p214-boundary.test.ts scripts/v3-m11-p258-boundary.test.ts scripts/v3-m11-ckad-entry.test.ts:19/19PASS. Final audit включает точные1250/1390 asserts, malformed/coverage/direction guards. Owncomposer mock fetch attempts0.
+- timeout300 npm run build: полный audit762/762PASS + quote/API contractsPASS, затем NextFAIL из-за внешнейnode_modules symlink. Ошибка не объявляется успешной сборкой.
+- После замены только localdependency symlink на hardlinkcopy: timeout300 node node_modules/next/dist/bin/next build exit0; Next/TypeScript/static16/16PASS. Package/lockfilesне менялись. Полный audit не повторялся, поскольку код после него не менялся.
+- node node_modules/typescript/bin/tsc --noEmit, targetedESLint и git diff --check exit0. Точные команды/returncodes в part-b-check-status.json; gzлоги и SHA в part-b-result.json. Первые tsc/ESLint также без вывода; финальные повторены для однозначного exitcode.
+
+Remote-save/codeCI ещё не выполнены этим локальным checkpoint. После записи требуется exact head/tree/readback, затем наблюдать новый CI. Не запускать другогоwriter при active/queued jobs. Если CI завершёнsuccess, следующий отдельный boundedSTARTED: проверить только ещё не проверенные owncaptures с exactp214 entry на исключения; готовые41/15, source3GET/61checks и текущий case не повторять. Оставшиесяhead/CKAD/unknown-paid-road blockersразбирать отдельно. Main/merge/Production/Android/автоматизации не затрагивались.

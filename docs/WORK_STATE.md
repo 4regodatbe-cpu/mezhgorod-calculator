@@ -1,3 +1,9 @@
+## PART B DONE — М11 p214→p58 подключён, codeCI pending
+
+[Код, результаты и ограничения](checkpoints/2026-10-18-m11-p214-part-b-DONE.md): ownmainline1250/1390₽; focused19/19, audit762/762+quote/API, Next16/16, TS/ESLintPASS. Initialsymlinkbuildfailure сохранён. Полный итогnull: head58→ЦКАД/ЦКАД/unknown-paid-road. NEXT: exactremote readback и codeCI; только после success — boundedпроверка ещёнепроверенных собственныхp214captures.
+
+## Предыдущая история
+
 ## PART A DONE — строгий распознаватель p214
 
 [Код и проверки](checkpoints/2026-10-18-m11-p214-part-a-DONE.md): standalone matcher, focused4/4 и tscPASS. Composer ещё не подключён; fullgate/build pending. NEXT PART B: p214→p58, ownquote и обязательные проверки; head58→ЦКАДunknown.

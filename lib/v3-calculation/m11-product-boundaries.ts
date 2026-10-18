@@ -4,6 +4,7 @@ import {crossingAt,facilityAnchors,nearestSegment,haversineKm,MOSCOW_M11_ENTRY,
 import type {M11RoadEvidence} from '../toll-engine/m11-road-evidence';
 import validity from '@/experiments/nationwide-tolls/engine/fare-validity.cjs';
 import {inspectM11MmkHeadBoundary} from './m11-mmk-head-boundary';
+import {inspectM11P214Entry} from './m11-p214-entry-boundary';
 import {inspectM11P258Exit} from './m11-p258-exit-boundary';
 import {inspectM11CkadHeadEntry} from './m11-ckad-head-entry';
 import type {TollValidation} from '../toll-validator';
@@ -43,6 +44,11 @@ export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSec
  const ckad=inspectM11CkadHeadEntry(route,validation);
  const ckadResolved=partialHead&&strictGeometry&&north&&ckad.resolved&&ckad.gateIndex!==null&&ckad.gateIndex<p58.index;
  const timeResolved=validity.validInstant(departureAt) && Number.isFinite(routeSeconds) && routeSeconds>0;
+ if(!geometryResolved && timeResolved && inspectM11P214Entry(route,evidence,validation))return {
+  candidate:true,headDetected:true,resolved:true as const,reason:'m11_p214_p58_directed_paid_entry_proved',parts:{
+   from:'p214',to:'p58',departureAt,mainlineAt:departureAt,mainlineWindowSeconds:0,headDetected:true,head:null,
+  },
+ };
  if(!geometryResolved && timeResolved && inspectM11P258Exit(route,evidence,validation))return {
   candidate:true,headDetected:false,resolved:true as const,reason:'m11_p679_p258_directed_paid_exit_proved',parts:{
    from:'p679',to:'p258',departureAt,mainlineAt:departureAt,mainlineWindowSeconds:0,headDetected:false,head:null,
