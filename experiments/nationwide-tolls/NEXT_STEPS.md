@@ -1,3 +1,9 @@
+## PART C DONE — p214 codeCI PASS, внешний Photon FAIL
+
+[Remote и CI](../../docs/checkpoints/2026-10-18-m11-p214-part-c-DONE.md): code3da74d0f, run39120413592 completed/success, verifyPASS; live_probeFAIL(Photon503/timeouts/budget), последующиеlivechecksSKIPPED. NEXT: короткаяofflineинвентаризация ещёнепроверенных owncaptures сexactp214gate; готовыйcase/41/15 не повторять. Полныйтарифunknown.
+
+## Предыдущая история
+
 ## PART B DONE — М11 p214→p58 подключён, codeCI pending
 
 [Код, результаты и ограничения](../../docs/checkpoints/2026-10-18-m11-p214-part-b-DONE.md): ownmainline1250/1390₽; focused19/19, audit762/762+quote/API, Next16/16, TS/ESLintPASS. Initialsymlinkbuildfailure сохранён. Полный итогnull: head58→ЦКАД/ЦКАД/unknown-paid-road. NEXT: exactremote readback и codeCI; только после success — boundedпроверка ещёнепроверенных собственныхp214captures.

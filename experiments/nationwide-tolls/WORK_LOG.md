@@ -2740,3 +2740,14 @@ NEXT PART B после durable readback: включить только p214→p5
 - node node_modules/typescript/bin/tsc --noEmit, targetedESLint и git diff --check exit0. Точные команды/returncodes в part-b-check-status.json; gzлоги и SHA в part-b-result.json. Первые tsc/ESLint также без вывода; финальные повторены для однозначного exitcode.
 
 Remote-save/codeCI ещё не выполнены этим локальным checkpoint. После записи требуется exact head/tree/readback, затем наблюдать новый CI. Не запускать другогоwriter при active/queued jobs. Если CI завершёнsuccess, следующий отдельный boundedSTARTED: проверить только ещё не проверенные owncaptures с exactp214 entry на исключения; готовые41/15, source3GET/61checks и текущий case не повторять. Оставшиесяhead/CKAD/unknown-paid-road blockersразбирать отдельно. Main/merge/Production/Android/автоматизации не затрагивались.
+
+
+# М11 p214 — PART C DONE: remote и CI проверены
+
+18.10.2026. Remote branch/PR14/local head3da74d0f487bdc2b7d9ec4df9a2f8c3d2bb22723; exacttree3604bdd2633a54b379965bfa8a546b9f3f715c0a совпал с локальным PART B. Worktreeclean, PRopen/draft. Сохранение всех16файлов PART B подтверждено совпадениемGitblobSHA и итоговогоtree.
+
+Actions39120413592 completed/success. Jobverify117654704930 completed/success: focused corpus,tsc,Nextbuild. Joblive_probe117654704870 completed/failure, workflowcontinue-on-error=true: geometryPASS, PhotonaddresssearchFAIL, последующие50settlement/YandexstepsSKIPPED. Нельзя объявлятьвесьlivegateпройденным. Логи прочитаны через connector, summary/errorproof сохранены в checks/2026-10-18-m11-p214-entry/part-c-ci-result.json. PhotonHTTP503, затемtimeout10s и totalbudget90s;100failedsources из13queries, completed13/planned13 но statusBUDGET_EXHAUSTED. Rankingfalse на пустом ответе не доказывает ошибку ранжирования; новыхlivequeries/rerun нет. Причина внешнего сбоя: blockedbyexternalavailability; source reliability issue отдельно от M11integration.
+
+p214→p58 исправление и локальные+remote codechecks завершены; полная стоимость и оставшиесяproducts по-прежнемуunknown. Новых тарифных/маршрутных проверок вPART Cнет. Main/merge/Production/Androidне тронуты.
+
+NEXT после durableсохранения: короткаяofflineинвентаризация exact gate5286168661 среди собственных savedcaptures, исключая уже проверенныйpair-m11-ckad-torzhok-to-ramenskoe; перечислить только реальныеuncheckedsiblings с уникальнымиinputSHA. Не повторять41/15 routeaudits. Еслиsiblingsнет — не создавать пустойпакет, перейти к конкретному собственному unresolvedhead58→ЦКАД. До длительногоboundedпакета отдельныйSTARTED. ВнешнийPhotonсбой не считать устранённым.
