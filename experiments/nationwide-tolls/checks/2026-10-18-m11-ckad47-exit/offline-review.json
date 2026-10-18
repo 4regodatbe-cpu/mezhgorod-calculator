@@ -1,0 +1,43 @@
+{
+  "status": "DONE_OFFLINE_REVIEW",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/2026-10-16T00-05-16-512Z-capture.json.gz",
+  "captureSha256": "8fe0ec0ac265d465dbeabeed12087a44d105529839c120bf3bc8231a7feeb4d6",
+  "retainedMapPath": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/entry-local-map.osm",
+  "retainedMapSha256": "4c67bf668d770e1c2f2925bf19d622cea4a4deca37db7a1d010415bbef7dc85c",
+  "strictEnd": [
+    37.199624,
+    56.09007
+  ],
+  "strictEndOsmNodeFromSelectedTrace": "9556466755",
+  "gate": {
+    "node": "8087316064",
+    "way": "1270188041"
+  },
+  "missingSourceDefinitions": {
+    "1148492112": false,
+    "1148492111": false,
+    "791520971": false,
+    "620063414": false
+  },
+  "orderedSelectedAccessWays": [
+    "1148492112",
+    "1148492111",
+    "791520971",
+    "620063414",
+    "476099617",
+    "620063413",
+    "1270188044",
+    "1270188043",
+    "1270188042",
+    "1270188041"
+  ],
+  "operatorPair": "solnechnogorsk→tskad",
+  "headFare": {
+    "night": 50,
+    "monThu": 200,
+    "fri": 220,
+    "sat": 240,
+    "sun": 320
+  },
+  "networkRequestsInReview": 0
+}

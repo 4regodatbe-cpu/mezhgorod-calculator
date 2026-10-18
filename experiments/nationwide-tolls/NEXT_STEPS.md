@@ -1,3 +1,9 @@
+## STARTED — четыре недостающих approachways съезда М11→ЦКАД47
+
+[Offlinegap/точныеinputs/лимиты](../../docs/checkpoints/2026-10-18-m11-ckad47-exit-source-STARTED.md): ownРаменскоеstrictend9556466755;retainedgate8087316064/1270188041. NEXT:4exactOSMwayfullGET→sourcechainproof,per-responseprogress; безповторакарты/p214/routechecks. Headcandidate200Thu/240Sat,ценыruntimeне менялись. ПредыдущийCIverify/livePASS.
+
+## Предыдущая история
+
 ## RECOVERY DONE — checkout восстановлен, прошлый CI полностью PASS
 
 [Восстановление и ограничения](../../docs/checkpoints/2026-10-18-ramenskoe-checkout-recovery-DONE.md): remote/local24695f0f,CI39123710038 verify/liveобаsuccess. Код/доказательствавосстановленыизGitHub, безповторапроверок/источников. NEXT: ownРаменскоеsouthbound8087316064/1270188041 изretainedmap; сначалаofflineboundaryreview.
