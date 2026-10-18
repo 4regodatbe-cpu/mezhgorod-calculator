@@ -1,0 +1,122 @@
+{
+  "results": [
+    {
+      "spec": {
+        "id": "single-odintsovo-golitsyno-to-rublevo",
+        "groups": [
+          "single-odintsovo"
+        ],
+        "from": {
+          "label": "Голицыно, центр",
+          "position": {
+            "lng": 36.987,
+            "lat": 55.617
+          },
+          "kind": "fixed-city-control"
+        },
+        "to": {
+          "label": "Рублёво, центр",
+          "position": {
+            "lng": 37.354,
+            "lat": 55.785
+          },
+          "kind": "fixed-city-control"
+        },
+        "expectedRoads": [
+          "odintsovo"
+        ],
+        "routeMustBeLive": true,
+        "status": "planned"
+      },
+      "componentAudit": {
+        "status": "unknown",
+        "priced": [],
+        "missing": [
+          "odintsovo"
+        ],
+        "components": [
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "tolls": null,
+            "reason": "source_bound_selected_route_odintsovo_lane:3109177688; source_bound_selected_route_odintsovo_lane:3783549013"
+          }
+        ]
+      },
+      "api": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: odintsovo",
+          "odintsovo: source_bound_selected_route_odintsovo_lane:3109177688; source_bound_selected_route_odintsovo_lane:3783549013"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      }
+    },
+    {
+      "spec": {
+        "id": "single-odintsovo-rublevo-to-golitsyno",
+        "groups": [
+          "single-odintsovo"
+        ],
+        "from": {
+          "label": "Рублёво, центр",
+          "position": {
+            "lng": 37.354,
+            "lat": 55.785
+          },
+          "kind": "fixed-city-control"
+        },
+        "to": {
+          "label": "Голицыно, центр",
+          "position": {
+            "lng": 36.987,
+            "lat": 55.617
+          },
+          "kind": "fixed-city-control"
+        },
+        "expectedRoads": [
+          "odintsovo"
+        ],
+        "routeMustBeLive": true,
+        "status": "planned"
+      },
+      "componentAudit": {
+        "status": "unknown",
+        "priced": [],
+        "missing": [
+          "odintsovo"
+        ],
+        "components": [
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "tolls": null,
+            "reason": "source_bound_selected_route_odintsovo_lane:3783549015; source_bound_selected_route_odintsovo_lane:3109177690"
+          }
+        ]
+      },
+      "api": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: odintsovo",
+          "odintsovo: source_bound_selected_route_odintsovo_lane:3783549015; source_bound_selected_route_odintsovo_lane:3109177690"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      }
+    }
+  ],
+  "externalRequests": 0,
+  "newPrices": 0
+}

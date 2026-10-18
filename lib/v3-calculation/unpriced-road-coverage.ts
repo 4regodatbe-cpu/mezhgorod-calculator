@@ -3,6 +3,7 @@ import {M4_NODE_TO_PLAZA} from '@/lib/toll-engine/m4-plaza-nodes';
 import nodeIdentities from '@/experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/identity-sources/node-identities.json' with {type:'json'};
 import {M11_P214_ENTRY_NODE,M11_P214_ENTRY_WAY} from './m11-p214-entry-boundary';
 import {M11_P258_EXIT_NODE} from './m11-p258-exit-boundary';
+import {isOdintsovoLane} from '@/experiments/nationwide-tolls/odintsovo-lane-identity.mjs';
 import {type RegionalTollProductId,type RouteTollComponentId} from '@/lib/toll-engine/route-toll-composition';
 
 const coreNetworks=new Set(['m1','m3','m4','m11','m11-15-58','m12','ckad','a289']);
@@ -72,7 +73,11 @@ export function unpricedRoadCoverage(args:{segments:readonly string[];validation
  const boothAliases=new Set<string>();
  for(const booth of args.validation?.tollBooths??[]){
   // Names on one event are aliases, not several independent paid roads.
-  let products=detect(booth.roadNames.join(" · "),true);
+  let products:RouteTollComponentId[];
+  if(isOdintsovoLane(booth)) {
+   products=['odintsovo'];
+   addRegional('odintsovo','source_bound_selected_route_odintsovo_lane:'+booth.osmNodeId);
+  } else products=detect(booth.roadNames.join(" · "),true);
   // Trace often omits names on the short plaza lanes. The exact traversed
   // OSM node, already bound in the saved M4 inventory, identifies the road;
   // it does not establish a tariff, entry/exit pair or complete coverage.

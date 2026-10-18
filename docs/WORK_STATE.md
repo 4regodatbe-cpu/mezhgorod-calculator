@@ -1,3 +1,9 @@
+## FIXED — identity4полос Одинцово; codeCI pending
+
+[Код и реальные проверки](checkpoints/2026-10-18-odintsovo-identity-CODE-DONE.md): оба ownroutes теперь missing=[odintsovo], ложныеМ1/unknownaliases устранены; полного тарифа пока нет. Focused43/43, full788/788+quote, Next16/16,TS/ESLint/diff PASS. Sources0новых; матрица/ценыбезизменений. NEXT после remote/codeCI: strict17,7↔6,9scope/continuity/no-reentry, затем готовые fares с boundedSTARTED;4primaryGET/27points не повторять. PR14draft.
+
+## Предыдущая история
+
 ## Одинцово — primary lanes DONE, identity CODE STARTED
 
 [Sourceproof и scope](checkpoints/2026-10-18-odintsovo-primary-DONE-identity-CODE-STARTED.md):4GET200,27ordered ownsourcepoints PASS; обе направленные пары17,7/6,9 привязаны физически. NEXT: exactnode/way identity, убрать ложныеM1/unknownaliases без добавления цены; focused/fullbuild. Готовые4GET/27points не повторять. Полный тариф пока unknown.
