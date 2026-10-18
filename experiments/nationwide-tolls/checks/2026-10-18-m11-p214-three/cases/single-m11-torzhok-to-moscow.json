@@ -1,0 +1,40 @@
+{
+  "status": "DONE",
+  "caseId": "single-m11-torzhok-to-moscow",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz",
+  "captureSha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798",
+  "provider": "Valhalla",
+  "traceComplete": true,
+  "chunkCount": 2,
+  "checkedChunkCount": 2,
+  "strictBlockCount": 1,
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "mainlineRub": 1250,
+      "fullAmount": null,
+      "priced": [
+        "m11-58-679"
+      ],
+      "missing": [
+        "m11-15-58",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "mainlineRub": 1390,
+      "fullAmount": null,
+      "priced": [
+        "m11-58-679"
+      ],
+      "missing": [
+        "m11-15-58",
+        "unknown-paid-road"
+      ]
+    }
+  ],
+  "negativeGuards": 3,
+  "materialException": false,
+  "scope": "Own component boundary/composer exception check, not new route audit or confirmed whole fare"
+}
