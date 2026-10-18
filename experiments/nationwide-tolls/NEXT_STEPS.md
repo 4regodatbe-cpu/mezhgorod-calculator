@@ -1,3 +1,9 @@
+## CODE STARTED — p214→Москва,строгийheadmatcher
+
+[Bindingreview/план/лимиты](../../docs/checkpoints/2026-10-18-m11-p214-moscow-head-CODE-STARTED.md): retainedreverseheadpair1130Thu/1500Sat. Толькоподтверждённыйp214fallback+exactgate+strictM11доМКАД; полныйитогunknownpaidroadnull. NEXT: matcher/integration/focused/fullgate/TS/ESLint,безновойсети/sourceповторов.
+
+## Предыдущая история
+
 ## SOURCE DONE — точная южная рамка М11
 
 [Sourceproof/ограничения](../../docs/checkpoints/2026-10-18-m11-moscow-head-source-DONE.md): 2GET200,3orderedanchorsсовпали сownТоржок→Москва; node7171624764/way502872285southboundдоМКАД. Runtime/headценыunchanged. NEXT: offlineoperatorbindingreview solnechnogorsk→moscow; потомотдельныйCODE STARTED,focused/fullgate. Не повторять2GET/3anchors/готовые4p214cases. PhotonavailabilityFAILотдельно.
