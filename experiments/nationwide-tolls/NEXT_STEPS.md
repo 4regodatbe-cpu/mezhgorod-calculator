@@ -1,3 +1,9 @@
+## SOURCE DONE — точная южная рамка М11
+
+[Sourceproof/ограничения](../../docs/checkpoints/2026-10-18-m11-moscow-head-source-DONE.md): 2GET200,3orderedanchorsсовпали сownТоржок→Москва; node7171624764/way502872285southboundдоМКАД. Runtime/headценыunchanged. NEXT: offlineoperatorbindingreview solnechnogorsk→moscow; потомотдельныйCODE STARTED,focused/fullgate. Не повторять2GET/3anchors/готовые4p214cases. PhotonavailabilityFAILотдельно.
+
+## Предыдущая история
+
 ## STARTED — точная рамка head Торжок→Москва
 
 [Scope/2GET/лимиты](../../docs/checkpoints/2026-10-18-m11-moscow-head-source-STARTED.md): node7171624764/way502872285 отсутствуюткакdefinitionвretainedsource. Готовые3owncases/6profilesсохранены; неповторять. NEXT:2primaryGET,per-responseprogress, затемsourceDONE/BLOCKED. Runtime/ценыбезизменений; headunknown.

@@ -2786,3 +2786,16 @@ NEXT: отдельныйкороткийoffline source review own single-m11-tor
 Существующийruntime MOSCOW_M11_ENTRY37.472,55.8842 имеет1.5kmlegacytolerance; использоватьегоодногодлянегenericp214fullheadнельзя. Retainedm11-head-route-adapter имеетготовуюнаправленнуюпаруsolnechnogorsk→moscow; деньгиотдельноизoperatorтаблицы, OSMденегне даёт. Runtimeне менялся, quote/sourcechecksготовыхcasesне повторены.
 
 STARTED boundedsourceproof: ровнодваprimaryGET https://api.openstreetmap.org/api/0.6/node/7171624764 и https://api.openstreetmap.org/api/0.6/way/502872285/full. Перзапрос20s, общийлимит50s, maxbody2MB. Сохранятьrawиstatus/SHAсразупослекаждого,безавтоповтора. Цель: exactкоординаты/тегиgate инаправленныйwayпорядок/соседниеподтверждённыеузлы. Сравнениегеометриитолькособственногоsinglecapture, безrouting/trace/pricingreplay. Ошибкаили403/timeoutне означаетдоказательствоидентичности/цены. Выходвsource-snapshots/m11/2026-10-18-moscow-head7171624764. ПослеответоводинDONE/BLOCKEDcheckpoint,sourceproofне активируеттариф. ДлякодаотдельныйSTARTED/focused/fullgate. Main/Production/Androidне трогать.
+
+
+# Head Торжок→Москва — SOURCE DONE, tariff binding pending
+
+18.10.2026. Sourceparent e42a00eb23a4e1006a2a39924ac880da79ebb71b/tree77f20b00f806ef9340164654d71be85e5f5ff4c7; branch/PR14draft совпали, sourceSTARTEDdurable. Сделано ровно2новыхprimaryGET200: node7171624764(525bytes), way502872285/full(1900bytes),4.6/5.1s. Rawmetadata/sha/progress сразу сохранены в source-snapshots/m11/2026-10-18-moscow-head7171624764. Отказов/повторов0.
+
+Node55.9354985,37.4500368: barrier=toll_booth,fee=yes. Way502872285: oneway=yes,toll=yes,refМ-11/nameНева,3orderednodes4932294633→7171624764→4932294632. Собственныйsingle-m11-torzhok-to-moscow captureSHA11c1ccb9…72b798: все3sourceanchors совпали в0.000019km(max,около2см),индексы1255.009→1255.990→1256.999,послеp58(963.431,32.1м),доstrictend1330. Selectedgateeventexactnode/wayedgeToll=true. StrictendотстарогоMoscowentryanchorв584.5м,routeближайшийв499.1м. Этофизическоеsourceproofнаодномсобственноммаршруте; неоператорскийODчек/непривязкацены.
+
+Деньги/кодне менялись; runtimeheadпо-прежнемуunknown,новыхpricedcomponents0. ВrawнетимениПВП21/операторскоготарифногокода: невыдаватьегоназваниезаsourcefact. directed-gate.jsonсодержиттолькопервичнуюгеометрию,own-proof.json—отдельныйofflinebenchmarkне дляruntime. Scriptcapture.pyсохранён дляаудита,неперезапускатьготовыеGET. verify-own.mjsпроверяетсобственныйrouteбезсети;выполнен1разиз/tmp,врепосохраненаэквивалентнаяверсиясaliasимпортом. node--checkпроверен; новыйfullbuildне нуженприsource-onlyизменении.
+
+NEXT: короткийofflineoperatorbindingreview парыsolnechnogorsk→moscow по retainedcurrentheadtable/source иexistingМoscowendpointpolicy. Припринятомscope отдельныйboundedCODE STARTED: толькоownp214fallback+exactdirectedheadgate+strictsingleblock+p58→gate→strictend/Moscowcoverage; genericdistanceпороги нерасширять,другиеp214casesheadнепереносить. Затемnegative/focused/fullgate/build и ownunknownguard,unknownpaidroadне скрывать. Еслиfullheadнеподтверждается — source-gated,нужендругойнезависимыйsource,готовые2GET/3anchorsнеповторять.
+
+Предыдущийпакет4/4p214owncapturesmainlineготов,6новыхпрофилей/9negativeguardsсохраненывc25b163b. ВнешнийPhotonсбойпоCI39120413592остаётсяотдельнымblockedavailability. PR14draft,никакогоmain/merge/Production/Android.
