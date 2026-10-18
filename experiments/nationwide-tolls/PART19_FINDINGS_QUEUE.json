@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Подтвердить primary node5286168661 / way766468434 и направленное продолжение для pair-m11-ckad-torzhok-to-ramenskoe, затем сопоставить с операторской тарифной точкой. До сети bounded STARTED; p258 не переносить по названию города.",
+  "nextAction": "Offline: проверить operator p214 crosswalk и собственные p58/ЦКАД exit boundaries по retained источникам. Три GET въезда завершены, не повторять. До длительной работы или новых источников отдельный bounded STARTED.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -5284,6 +5284,25 @@
       "runtimeChanged": false,
       "confirmedWholeTripFares": 0,
       "nextAction": "Подтвердить primary node5286168661 / way766468434 и направленное продолжение для pair-m11-ckad-torzhok-to-ramenskoe, затем сопоставить с операторской тарифной точкой. До сети bounded STARTED; p258 не переносить по названию города."
+    }
+  ],
+  "focusedPrimaryBindingReviews": [
+    {
+      "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+      "status": "DONE_SOURCE_ONLY",
+      "entryGate": "5286168661",
+      "entryWay": "766468434",
+      "directedWays": 5,
+      "sourceCorridorPoints": 61,
+      "tariffPointCandidate": "p214",
+      "operatorCrosswalk": "not independently proved",
+      "evidence": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/binding-proof.json",
+      "newSourceGets": 3,
+      "http200": 3,
+      "runtimeChanged": false,
+      "newPricedComponents": 0,
+      "confirmedWholeTripFares": 0,
+      "nextAction": "Offline: проверить operator p214 crosswalk и собственные p58/ЦКАД exit boundaries по retained источникам. Три GET въезда завершены, не повторять. До длительной работы или новых источников отдельный bounded STARTED."
     }
   ]
 }

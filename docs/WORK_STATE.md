@@ -1,3 +1,11 @@
+## DONE SOURCE — подтверждён фактический въезд М11
+
+Три GET200, пять направленных ways;61/61 independent ordered points совпали с собственным маршрутом. Соседний комплекс214км: p214 candidate, runtime/цены без изменений. [Доказательства, ограничения и команды](checkpoints/2026-10-18-m11-entry5286168661-source-DONE.md).
+
+**NEXT:** Offline: проверить operator p214 crosswalk и собственные p58/ЦКАД exit boundaries по retained источникам. Три GET въезда завершены, не повторять. До длительной работы или новых источников отдельный bounded STARTED.
+
+## Предыдущая история
+
 ## STARTED — первичная привязка фактического въезда М11
 
 [План и лимиты](checkpoints/2026-10-18-m11-entry5286168661-STARTED.md): exact node5286168661 / way766468434, два GET и при необходимости одна локальная карта. Capture не повторять, runtime/цены пока без изменений. После durable STARTED выполнить source capture и сохранить DONE.

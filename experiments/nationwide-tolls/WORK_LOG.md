@@ -2669,3 +2669,24 @@ NEXT: отдельный bounded STARTED для primary node5286168661, way76646
 Лимиты: сначала два GET exact node и way/full, затем максимум одна локальная карта до0.02° на сторону при конкретном пробеле связности. Каждый запрос timeout15s, суммарно до45s; без retry/routing/trace/price replay. Существующий capture-m11-p258-sources.mjs сохраняет полные bytes/HTTP/SHA/progress и пропускает уже сохранённые ответы. Выход source-snapshots/m11/2026-10-18-entry5286168661/. После получения short offline review и DONE; код/цены до доказательства не менять.
 
 Recovery: продолжить по metadata/progress, не повторять сохранённые GET. При timeout сохранить ошибку и конкретный gap. После DONE exact tree/blob/head readback до следующей независимой работы. Официальный тариф и соответствие exit ЦКАД могут остаться отдельными блокерами; unknown не free. Main/merge/Production/Android/автоматизации не разрешены.
+
+
+# М11: точный въезд 5286168661 — DONE SOURCE / тариф не включён
+
+18.10.2026. Parent и durable STARTED a6018ad2e74a760edcfb8a428fd83f4265defef0, exact tree/4 paths/PR head draft проверены. Разрешённая ветка fix/v3-missing-route-prices-2026-10-15. До STARTED пять последних Actions completed/success, последний code run39115104478 по29129946. Предыдущий capture не переснимался.
+
+## Установлено
+
+Три новых primary OSM GET, все HTTP200: exact node5286168661, way766468434/full, одна карта bbox35.419,56.976,35.438,56.994. Суммарное networkElapsedMs в progress.json; каждый запрос ограничен15s, retry0. Полные bytes/метаданные/SHA/progress сохранены в source-snapshots/m11/2026-10-18-entry5286168661. Источники: https://api.openstreetmap.org/api/0.6/node/5286168661 ; https://api.openstreetmap.org/api/0.6/way/766468434/full ; https://api.openstreetmap.org/api/0.6/map?bbox=35.419,56.976,35.438,56.994 . OSM © OpenStreetMap contributors, ODbL.
+
+Рамка fee=yes, cash/mastercard/visa=yes; gate way oneway=yes, destination Москва / М11. Полная directed цепь766468434→766468433(toll=yes)→547081894→496959520→1205158257(toll=yes,refМ11). На промежуточном4886068970 начинается именованный block provider. 61 независимая первичная точка совпадает с собственным capture в строгом порядке; max deviation0.0000555км, strict begin0.0000288км. Это не расширение допусков и не перенос p258.
+
+Соседний way655195663 назван «ПВП Лихославль —214км», ближайшая вершина в70.56м от рамки. Рамка не объявлена находящейся внутри этого здания. Retained Order274 control имеет p214 (Букарево), дата04.09.2026. Километр согласован, имя отличается: p214 записана как candidate, не выдана за независимую operator lane crosswalk. Ни p209, ни p258 по названию исходного города не назначались.
+
+## Проверка и ограничения
+
+`python .../build-proof.py`, затем `node --import ./scripts/register-ts-paths.mjs .../verify-capture.mjs`: exit0, SHA источников и собственного capture проверены,61/61ordered point matches, exact selected gate way766468434. Полные результаты binding-proof.json, physical-only directed-entry.json. build-proof.py пересоздаёт промежуточный proof, verifier завершает его; operatorPointReview добавлен отдельно из retained current control. Новые routing/trace/full pricing replay0. Runtime/цены не менялись, новых рассчитанных компонентов0, подтверждённых полных тарифов0. Full build не требовался и не запускался. Предыдущие8/41/15cases и ЗСДне повторялись.
+
+## Точный следующий шаг
+
+Короткий offline review: сопоставить p214 с retained operator документами и проверить собственное пересечение p58 и выход кЦКАД8087316064 по retained геометрии. Оставшийся gap обозначить отдельно; если нужен новый source — bounded STARTED, без повторов этих3GET. Runtime включать лишь для строгой доказанной пары, полная цена по-прежнему зависит от других компонентов. Перед сохранением сверить PR/branch/activeCI; non-force expected parent a6018ad2…, затем exact tree/blob/head readback. При сбое передачи продолжить сохранение этих файлов, не повторять source capture. Main/merge/Production/Android/автоматизации не затрагиваются.
