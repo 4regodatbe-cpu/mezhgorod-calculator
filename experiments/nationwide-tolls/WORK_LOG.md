@@ -2777,3 +2777,12 @@ STARTED следующий boundedexceptionbatch: только три новых
 Остатокпоowncases: Краснодар — missingМ4/head/unknownpaidroad; Москва — head/unknownpaidroad; Казань — head/ЦКАД/unknownpaidroad, М12компонентимеется. Не считатьчислоmissingновымиуникальнымипричинами.
 
 NEXT: отдельныйкороткийoffline source review own single-m11-torzhok-to-moscow: точныеheadentryp58/Moscowexitgates и retainedoperatorheadtable, безповторатрассирования/цены. Еслиfullheadужефизическидоказан, спланировать узкуюинтеграцию p214→p58 + p58→Москва; unknownpaidroadвсёравнонепрятать. До длительногоsource/codeшагаdurableSTARTED. Main/Production/Androidне затрагивались.
+
+
+# Торжок→Москва — head source review DONE / exact node source STARTED
+
+18.10.2026. Parentc25b163b088aaded3ea245fac0741e555f702dd4/tree0c9e2100502033af39ad719f4aab61f299505b18, PR14draft, codeCIverifyPASS. Own single-m11-torzhok-to-moscow captureSHA11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798; полныйstrictblockends37.481044,55.885579. Exactheadcandidategate7171624764/way502872285,tolltrue. Нельзяприсвоитьегоpvp21поиндексуилигороду: retainedOSM3files содержатегоwayвrelationmembership, но definitionузлаотсутствует. Этообнаружениеevidencegap, не доказанныйhead/тариф.
+
+Существующийruntime MOSCOW_M11_ENTRY37.472,55.8842 имеет1.5kmlegacytolerance; использоватьегоодногодлянегenericp214fullheadнельзя. Retainedm11-head-route-adapter имеетготовуюнаправленнуюпаруsolnechnogorsk→moscow; деньгиотдельноизoperatorтаблицы, OSMденегне даёт. Runtimeне менялся, quote/sourcechecksготовыхcasesне повторены.
+
+STARTED boundedsourceproof: ровнодваprimaryGET https://api.openstreetmap.org/api/0.6/node/7171624764 и https://api.openstreetmap.org/api/0.6/way/502872285/full. Перзапрос20s, общийлимит50s, maxbody2MB. Сохранятьrawиstatus/SHAсразупослекаждого,безавтоповтора. Цель: exactкоординаты/тегиgate инаправленныйwayпорядок/соседниеподтверждённыеузлы. Сравнениегеометриитолькособственногоsinglecapture, безrouting/trace/pricingreplay. Ошибкаили403/timeoutне означаетдоказательствоидентичности/цены. Выходвsource-snapshots/m11/2026-10-18-moscow-head7171624764. ПослеответоводинDONE/BLOCKEDcheckpoint,sourceproofне активируеттариф. ДлякодаотдельныйSTARTED/focused/fullgate. Main/Production/Androidне трогать.

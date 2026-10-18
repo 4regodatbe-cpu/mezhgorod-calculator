@@ -1,3 +1,9 @@
+## STARTED — точная рамка head Торжок→Москва
+
+[Scope/2GET/лимиты](../../docs/checkpoints/2026-10-18-m11-moscow-head-source-STARTED.md): node7171624764/way502872285 отсутствуюткакdefinitionвretainedsource. Готовые3owncases/6profilesсохранены; неповторять. NEXT:2primaryGET,per-responseprogress, затемsourceDONE/BLOCKED. Runtime/ценыбезизменений; headunknown.
+
+## Предыдущая история
+
 ## DONE — ещё три own p214 случая,6профилей
 
 [Результаты и caveat](../../docs/checkpoints/2026-10-18-m11-p214-three-DONE.md): М11mainline1250/1390,9negativeguardsPASS,исключений0. Вместе сРаменское4/4owncaptures. Runtimeunchanged. Полныйитогunknown;4fetchattemptsМ4заблокированымоком,реальнойсети0,harnessfinalassertexit1сохранён. NEXT: offlineheadsource review ownТоржок→Москва; готовыеcases/sourcechecksне повторять. PhotonFAILостаётсяотдельно.
