@@ -1,3 +1,9 @@
+## FIXED — paidА113/fullCKADname учитываются; новыйcodeCI pending
+
+[Код/проверки](checkpoints/2026-10-18-ckad-paid-alias-coverage-CODE-DONE.md): ownforwardОдинцово missing=[ckad,odintsovo], reverse=[odintsovo]; обаAPIOSRM amountnull, никакихценне добавлено. Focused18/18,full792/792+quote,Next16/16,TS/ESLint/diffPASS; initialtestproviderassumption сохранён. Source95c1fbd3 durable, предыдущийCI39146933232verify/liveSUCCESS. NEXT послеremote/newcodeCI: strict17,7↔6,9continuity/no-reentry и отдельныйfareadapter; forwardнепоказыватьчастичнуюсумму. Источникиготовы/повторовнет. PR14draft.
+
+## Предыдущая история
+
 ## SCOPE DONE / CODE STARTED — оплачиваемаяА113не должна теряться
 
 [Evidence/ограниченныйcode scope](checkpoints/2026-10-18-odintsovo-pair-scope-LOCAL-CI-BLOCKED.md): CI39146933232 verify/liveSUCCESS, ожиданиезавершено. ForwardОдинцово8paidА113edges/gantry12443433262, текущийcoverageне распознаётА113/fullCKADname. NEXT послеdurableSTARTED: минимальныйpaidproductnamematcher+ownforwardunknownCKAD/reversecontrol,focused/fullbuild; цены/gantryAPI/frozensне менять.

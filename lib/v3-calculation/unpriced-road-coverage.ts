@@ -36,7 +36,7 @@ export function paidProductsFromName(name:string):RouteTollComponentId[] {
  if(smallVyazemy.test(name))return ['ckad-small-vyazemy'];
  const regional=regionalPatterns.filter(([pattern])=>pattern.test(name)).map(([,id])=>id);
  if(regional.length)return [...new Set(regional)];
- if(/цкад/iu.test(name))return ['ckad'];
+ if(/цкад/iu.test(name) || /(?:^|·)\s*(?:(?:А|A)\s*[-‐‑–—]?\s*113|Центральная\s+кольцевая\s+автомобильная\s+дорога)\s*(?:$|·)/iu.test(name))return ['ckad'];
  if(/дальний западный обход/iu.test(name))return ['krasnodar-west-bypass'];
  return corePatterns.filter(([pattern])=>pattern.test(name)).map(([,id])=>id);
 }
