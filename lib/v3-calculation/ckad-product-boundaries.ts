@@ -3,11 +3,14 @@ import type {M11RoadEvidence} from '../toll-engine/m11-road-evidence';
 import {resolveCkadEastArcEvidence} from '../toll-engine/ckad-evidence';
 import type {TollValidation} from '../toll-validator';
 import {inspectCkadM11ToM12} from './ckad-m11-m12-boundary';
+import {inspectCkadM11ToEgoryevskoye} from './ckad-m11-egoryevskoye-boundary';
 
 /** Reuse the existing east-arc geography without any old section-money gate.
  * Other CKAD pairs need their own physical boundaries; no price is inferred. */
 export function resolveCkadProductBoundaries(route:readonly Coordinate[],evidence:M11RoadEvidence|null|undefined,
  validation:TollValidation|null=null) {
+ if(inspectCkadM11ToEgoryevskoye(route,evidence,validation))return {candidate:true,exact:true,
+  traversal:{from:'М-11 Нева',to:'Егорьевское шоссе'},reason:'ckad_complete_directed_m11_to_egoryevskoye'};
  const boundary=resolveCkadEastArcEvidence(route,evidence);
  if(boundary.status!=='verified') {
   if(inspectCkadM11ToM12(route,evidence,validation))return {candidate:true,exact:true,

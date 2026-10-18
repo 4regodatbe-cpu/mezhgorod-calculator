@@ -1,3 +1,9 @@
+## PART B DONE — ЦКАД М11 → Егорьевское подключён
+
+[Код, проверки и ограничения](checkpoints/2026-10-18-ckad-egoryevskoye-part-b-DONE.md): own Торжок→Раменское2668Thu/2828Fri/2848Sat/2928Sun, Thu23:59=2668, полный unconfirmed estimate. ЦКАД1218 из прежней матрицы, новый рассчитанный компонент1, подтверждённых полных тарифов0. APIready2668, trace503→null/unknown; frozen безctx остаётся unknown. Focused15/15, full784/784+quote, Next16/16, TS/ESLint/diff PASS; initial ошибка тестового status сохранена. Sources/audits не повторялись. Source b030cd71, CI39144007812 verify/livePASS. Новый codeCI pending. NEXT PART C: exact remote readback и codeCI; PR14draft, никаких main/merge/Production/Android.
+
+## Предыдущая история
+
 ## PART A DONE — strict М11 → Егорьевское
 
 [Код и проверки](checkpoints/2026-10-18-ckad-egoryevskoye-part-a-DONE.md): focused3/3, TS/ESLint PASS. Standalone, composer пока не подключён; fullgate/build pending. NEXT B: resolver + own quote/API и полный gate.
