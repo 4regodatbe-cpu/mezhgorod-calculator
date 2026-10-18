@@ -1,3 +1,9 @@
+## Одинцово — primary lanes DONE, identity CODE STARTED
+
+[Sourceproof и scope](checkpoints/2026-10-18-odintsovo-primary-DONE-identity-CODE-STARTED.md):4GET200,27ordered ownsourcepoints PASS; обе направленные пары17,7/6,9 привязаны физически. NEXT: exactnode/way identity, убрать ложныеM1/unknownaliases без добавления цены; focused/fullbuild. Готовые4GET/27points не повторять. Полный тариф пока unknown.
+
+## Предыдущая история
+
 ## Одинцово — retained DONE, primary lanes STARTED
 
 [Scope/evidence](checkpoints/2026-10-18-odintsovo-retained-DONE-primary-STARTED.md): два known booth orders извлечены без повторного route audit; tariffbinding BLOCKED. NEXT: четыре exactway/full,≤60с/безretry,raw/progress; готовые тарифы/FAQ не искать. М11→Егорьевское codeCI39145260247 обе jobs PASS.
