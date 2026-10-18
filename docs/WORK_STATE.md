@@ -1,3 +1,9 @@
+## PART C DONE — codeCI успешно; далее Одинцово
+
+[Проверка и bounded inputs](checkpoints/2026-10-18-ckad-egoryevskoye-part-c-DONE-odintsovo-STARTED.md): bd811734/treeac581f87, CI39145260247 verify/live_probe success; PR14draft/localclean. М11→Егорьевское сохранён и проверен. NEXT: только retained directed PVP/tariff provenance двух Голицынo↔Рублёво; без повторного route audit/сети/источников М4/М3/ЗСД.
+
+## Предыдущая история
+
 ## PART B DONE — ЦКАД М11 → Егорьевское подключён
 
 [Код, проверки и ограничения](checkpoints/2026-10-18-ckad-egoryevskoye-part-b-DONE.md): own Торжок→Раменское2668Thu/2828Fri/2848Sat/2928Sun, Thu23:59=2668, полный unconfirmed estimate. ЦКАД1218 из прежней матрицы, новый рассчитанный компонент1, подтверждённых полных тарифов0. APIready2668, trace503→null/unknown; frozen безctx остаётся unknown. Focused15/15, full784/784+quote, Next16/16, TS/ESLint/diff PASS; initial ошибка тестового status сохранена. Sources/audits не повторялись. Source b030cd71, CI39144007812 verify/livePASS. Новый codeCI pending. NEXT PART C: exact remote readback и codeCI; PR14draft, никаких main/merge/Production/Android.
