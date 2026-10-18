@@ -2643,3 +2643,18 @@ Routing/trace/sourceGET/fullpricingreplay/network — 0. Проверялся т
 Следующий точный случай: **Торжок→Раменское**, `pair-m11-ckad-torzhok-to-ramenskoe`, из оставшейся М11 58–679 причины. Сначала точные сохранённые въезд/съезд и уже имеющаяся primaryгеометрия Торжка. Не переносить подтверждённыйвыезд p679→p258 на иной въезд/направление без proof; не повторять41/15/готовые8. До длительного source/testзапуска новый boundedSTARTED.
 
 Проверки текущего пакета:7rawGitblob/sha,6runtime/datafingerprints,14ownprofiles,21negativeguards,7caseoutputSHA,JSON/progress/queuecanonicalcounts,runner syntax иdiff PASS. Имена caseoutputs иSHA вsummary.json; ошибки/исключения0. STARTED до выполнения уже durable. Последующий DONEcommit/tree/path/headreadback выполняется до следующего независимого шага. Merge/main/Production/Android/автоматизации не выполнялись.
+
+
+# Торжок → Раменское: отдельный въезд — DONE / тариф BLOCKED
+
+18.10.2026. Parent `4067d68f4cb750070b1c022b81105cf7565784f1`, разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`, PR #14 draft. Предыдущий пакет 8/8 сохранён: exact tree и 16 paths проверены. Для parent workflow_runs пуст; последний code CI 39115104478: verify/live_probe success.
+
+Один короткий offline-разбор собственного полного Valhalla capture, два профиля отправления (15/17 октября 09:00 МСК). Архивный blob отсутствовал локально; получен из той же версии GitHub и импортирован в Git objects с проверкой SHA c4c60b8987cb2ff44be21df4a0359249c90b5cfb и SHA256 из прежней очереди. Захват не повторялся.
+
+Выбранные события: въезд 5286168661 / way766468434 (edgeToll=false), последующий 8087316064 / way1270188041 у ЦКАД. Начало именованного блока М11 [35.426147,56.983081], примерно в40.94км от gate p258. Ближайшая точка всего маршрута к gate p258 —20.63км. В retained primary карте ПВП8 есть противоположная рамка5286254520, но нет фактического въезда5286168661. Нельзя считать название города доказательством въезда p258; иное тарифное имя пока не назначено.
+
+Текущий p679→p258 guard корректно false; оба профиля возвращают m11_outer_boundaries_unresolved. Это проверка границ, не полный pricing replay и не подтверждение полного тарифа. Сетевая тарификация/routing/trace0; один connector-read существующего capture. Runtime/тарифы не менялись; full build не запускался. Одна причина остаётся заблокирована отсутствием надёжной привязки, глобальные счётчики не увеличены как за исправление.
+
+Воспроизведение: `node --import ./scripts/register-ts-paths.mjs experiments/nationwide-tolls/checks/2026-10-18-m11-torzhok-ramenskoe/inspect.mjs`, exit0. Полные выбранные поля и SHA в result.json. Скрипт запрещает fetch; проверяет blob, completeness и ожидаемые отрицательные результаты.
+
+NEXT: отдельный bounded STARTED для primary node5286168661, way766468434/full и при необходимости локальной карты связного въезда. Установить физическую направленную цепь и сопоставление с официальной тарифной границей. Не переносить p258/другую точку по близости; прежние41/15/8 и ЗСД PDF не повторять. Перед записью проверить PR/branch/отсутствие active CI; non-force expected parent, затем exact tree/blob/head readback. Фактический remote SHA фиксируется транспортом после сохранения.

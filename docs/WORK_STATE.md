@@ -1,3 +1,11 @@
+## DONE — Торжок → Раменское: проверен другой въезд
+
+Собственный complete capture, два профиля: границы unresolved. Фактический gate5286168661 отличается от p258; его нет в retained карте Торжка. Runtime и цены не менялись. [Доказательства и ограничения](checkpoints/2026-10-18-m11-torzhok-ramenskoe-boundary-DONE.md).
+
+**NEXT:** Подтвердить primary node5286168661 / way766468434 и направленное продолжение для pair-m11-ckad-torzhok-to-ramenskoe, затем сопоставить с операторской тарифной точкой. До сети bounded STARTED; p258 не переносить по названию города.
+
+## Предыдущая история
+
 ## DONE — ЦКАД47→М11: headпричина закрыта8/8
 
 Семь новых owncapturechecks/14датированныхпрофилей, исключений0, negativeguards21/21PASS; первыйпредставительнеповторялся. [Результаты и ограничения](checkpoints/2026-10-18-m11-ckad47-seven-DONE.md). Code29129946/CI39115104478verify/live_probeобаsuccess. Runtimeвпакетеunchanged, новыхheadcomponents7 (всего8), подтверждённыхwholefares0. По13исходнымfindingrecordsтеперь2fixed/1notreproduced/7blocked/3deferred; стараясводкасохраненавистории.

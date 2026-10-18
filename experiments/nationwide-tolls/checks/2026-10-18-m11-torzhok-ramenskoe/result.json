@@ -1,0 +1,98 @@
+{
+  "status": "DONE",
+  "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+  "sourceCommit": "4067d68f4cb750070b1c022b81105cf7565784f1",
+  "captureGitBlob": "c4c60b8987cb2ff44be21df4a0359249c90b5cfb",
+  "captureSha256": "8fe0ec0ac265d465dbeabeed12087a44d105529839c120bf3bc8231a7feeb4d6",
+  "provider": "Valhalla",
+  "complete": true,
+  "boothEventCoverage": "complete",
+  "strictBlocks": [
+    {
+      "provider": "valhalla",
+      "legIndex": 0,
+      "sourceStartIndex": 14,
+      "sourceEndIndex": 15,
+      "beginKm": 34.987,
+      "endKm": 202.997,
+      "lengthKm": 168.01,
+      "beginCoordinate": [
+        35.426147,
+        56.983081
+      ],
+      "endCoordinate": [
+        37.199624,
+        56.09007
+      ],
+      "labels": [
+        "М-11",
+        "«Нева»"
+      ]
+    }
+  ],
+  "selectedGateEvents": [
+    {
+      "osmNodeId": "5286168661",
+      "wayId": "766468434",
+      "roadNames": [],
+      "edgeIndex": 0,
+      "edgeToll": false,
+      "beginShapeIndex": 348,
+      "endShapeIndex": 349
+    },
+    {
+      "osmNodeId": "8087316064",
+      "wayId": "1270188041",
+      "roadNames": [
+        "А-113",
+        "Центральная кольцевая автодорога",
+        "ЦКАД"
+      ],
+      "edgeIndex": 1,
+      "edgeToll": false,
+      "beginShapeIndex": 332,
+      "endShapeIndex": 333
+    }
+  ],
+  "p258ExitGuard": false,
+  "p258GateNearestRoute": {
+    "index": 0,
+    "distanceKm": 20.630660168668964
+  },
+  "strictBeginDistanceFromP258Km": 40.938275924614004,
+  "retainedMap": {
+    "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/e16194851d1c15e2611d.osm",
+    "sha256": "ccf9f1c7228bb0f01edc7e03e2afb7a86c6b56173d8ffd19ff5e6aac7d62ed86",
+    "hasSelectedEntryGate": false,
+    "hasOppositeP258Gate": true
+  },
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "result": {
+        "candidate": false,
+        "headDetected": false,
+        "resolved": false,
+        "parts": null,
+        "reason": "m11_outer_boundaries_unresolved"
+      }
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "result": {
+        "candidate": false,
+        "headDetected": false,
+        "resolved": false,
+        "parts": null,
+        "reason": "m11_outer_boundaries_unresolved"
+      }
+    }
+  ],
+  "networkCalls": 0,
+  "newRoutingRequests": 0,
+  "newTraceRequests": 0,
+  "confirmedWholeTripFares": 0,
+  "runtimeChanged": false,
+  "outcome": "blocked_by_missing_reliable_entry_binding",
+  "nextAction": "Bind exact selected gate 5286168661 / way766468434 and its directed paid continuation to an operator tariff boundary. Do not infer p258 or another tariff point from the city label."
+}
