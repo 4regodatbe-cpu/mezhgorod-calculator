@@ -2313,3 +2313,8 @@ CI39071021984 completed/success на a9ad4722…; одна новая стран
 Исправлены два указателя очереди: путь отчёта Одинцово (раньше весь текст; точное совпадение с файлом проверено) и уже выполненный запрос М12. Детали, SHA и проверенные ссылки: result.json.
 
 NEXT: M4 physical545: inspect only the retained 1223→545-a/545-b tariff-span provenance and source documents to specify the missing boundary identity; no repeat22 routes or live routing. A new network review requires a bounded STARTED and a precise independent source. If retained evidence already exhausts that question, preserve BLOCKED and state the exact missing operator evidence.
+
+
+## 2026-10-18T03:01:01.198125+00:00 — М4-545 retained provenance
+
+Точная полоса и цены двух вариантов уже сохранены;4objectSHA+2PDFSHA совпали. Новый операторский lane-to-section источник отсутствует в retained наборе. BLOCKED, runtime/сеть/replay/tests0. docs/checkpoints/2026-10-18-m4-545-retained-provenance-DONE.md. NEXT: New source only: operator collection scheme or direction/lane rule for physical545 and sections517–544/544–589, applicable to trip departure. Bound any retrieval in STARTED; do not repeat the retained403 URLs or select min/max/alias.

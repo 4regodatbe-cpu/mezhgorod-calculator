@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "M4 physical545: inspect only the retained 1223→545-a/545-b tariff-span provenance and source documents to specify the missing boundary identity; no repeat22 routes or live routing. A new network review requires a bounded STARTED and a precise independent source. If retained evidence already exhausts that question, preserve BLOCKED and state the exact missing operator evidence.",
+  "nextAction": "New source only: operator collection scheme or direction/lane rule for physical545 and sections517–544/544–589, applicable to trip departure. Bound any retrieval in STARTED; do not repeat the retained403 URLs or select min/max/alias.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2417,7 +2417,14 @@
       "status": "source_gated_collection_scope_unbound",
       "note": "All22 saved evaluations classified. Five whole-route estimates remain operator-unconfirmed; three have known M4 components but another product unknown; eight physical545 and six short-route scopes remain unbound. No unsupported tariff/zero/free claim or runtime bug inferred.",
       "canonicalOutcome": "blocked_by_missing_reliable_data",
-      "canonicalOutcomeRationale": "Saved evaluations include operator-unconfirmed whole-route estimates and unbound physical/short-route scopes. Do not infer a tariff or zero."
+      "canonicalOutcomeRationale": "Saved evaluations include operator-unconfirmed whole-route estimates and unbound physical/short-route scopes. Do not infer a tariff or zero.",
+      "latestRetainedProvenanceReview": {
+        "atUtc": "2026-10-18T03:01:01.198125+00:00",
+        "checkpoint": "docs/checkpoints/2026-10-18-m4-545-retained-provenance-DONE.md",
+        "evidence": "docs/checkpoints/evidence/2026-10-18-m4-545-retained-provenance.json",
+        "outcome": "blocked_by_missing_reliable_data",
+        "geometryAndRetainedFareTablesAlreadyReviewed": true
+      }
     },
     {
       "code": "m11_partial_head_entry_boundary_unresolved",
@@ -5008,6 +5015,6 @@
       "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
       "M12 followup continuation now points past completed official-page read"
     ],
-    "nextAction": "M4 physical545: inspect only the retained 1223→545-a/545-b tariff-span provenance and source documents to specify the missing boundary identity; no repeat22 routes or live routing. A new network review requires a bounded STARTED and a precise independent source. If retained evidence already exhausts that question, preserve BLOCKED and state the exact missing operator evidence."
+    "nextAction": "New source only: operator collection scheme or direction/lane rule for physical545 and sections517–544/544–589, applicable to trip departure. Bound any retrieval in STARTED; do not repeat the retained403 URLs or select min/max/alias."
   }
 }
