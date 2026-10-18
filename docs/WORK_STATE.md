@@ -1,3 +1,9 @@
+## CALENDAR DONE / ОдинцовоfareCODESTARTED
+
+[Источники/инференция/лимиты](checkpoints/2026-10-18-odintsovo-calendar-DONE-fare-CODE-STARTED.md):2026calendarsource-derivedизофициальныхindexedtextМинтруда+adopted1466;directPDF503/HTML403безобхода,скачанныхисточниковнет. NEXT strictpairmatrixadapter+профильотправления;00–01/внегодакалендаряunknown,forwardCKADwholeunknown. Готовыеценынепересобирать.
+
+## Предыдущая история
+
 ## RECOVERY DONE / календарьОдинцовоSTARTED
 
 [Восстановление/лимиты](checkpoints/2026-10-18-odintsovo-fare-recovery-calendar-STARTED.md): freshGitHubclone24ea6edc/tree566d967fclean,CI39149617219success. Sources/результатывосстановленыбезповтора. NEXT:≤2newofficialdomainqueries+≤2primaryreadsдляcalendar2026;таблицыM-Road/OSMнеповторять. ПослеcalendarотдельныйfareCODESTARTED.

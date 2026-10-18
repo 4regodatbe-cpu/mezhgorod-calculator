@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "year": 2026,
+  "timeZone": "Europe/Moscow",
+  "regularWeekendIsoDays": [
+    6,
+    7
+  ],
+  "additionalNonWorkingDates": [
+    "2026-01-01",
+    "2026-01-02",
+    "2026-01-03",
+    "2026-01-04",
+    "2026-01-05",
+    "2026-01-06",
+    "2026-01-07",
+    "2026-01-08",
+    "2026-01-09",
+    "2026-02-23",
+    "2026-03-08",
+    "2026-03-09",
+    "2026-05-01",
+    "2026-05-09",
+    "2026-05-11",
+    "2026-06-12",
+    "2026-11-04",
+    "2026-12-31"
+  ],
+  "transferredWorkingDates": [],
+  "sources": [
+    {
+      "url": "https://mintrud.gov.ru/social/social/1366",
+      "kind": "official indexed calendar article; originally proposal July1 2025; date ranges used only together with adopted decree",
+      "directHttp": 403
+    },
+    {
+      "url": "https://static.government.ru/media/files/4jeB8hNKm69ggOa9yDiYOli6YoAyM21i.pdf",
+      "kind": "official adopted decree1466 Sep24 2025; full substantive text exposed in search index; confirms two transfers",
+      "directHttp": 503
+    }
+  ],
+  "basis": "Source-derived 2026 national nonworking calendar inferred from two official indexed texts. Downloaded source PDF/HTML unavailable; not an operator-specific calendar or receipt. No source bypass/retry.",
+  "searchSnapshot": "search-results.json",
+  "searchSha256": "72bb2900f4bfe45c50c4b3c7fcc7b3d4b7c8a05bb4f8df26a11e8707099095e5",
+  "unknownOutsideYear": true,
+  "sourceQueries": 2,
+  "sourceDirectReads": 2,
+  "computedNonWorkingDays": 118
+}
