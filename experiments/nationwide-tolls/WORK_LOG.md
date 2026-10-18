@@ -2703,3 +2703,10 @@ Own capture c4c60b8987cb2ff44be21df4a0359249c90b5cfb: полный selected Valh
 План bounded реализации: отдельный inspectM11P214Entry с полным selected coverage/chunks, exact unique gate/way, двумя paid ways,61точкой independent corridor в25м, strictbegin25м, плотностью и направлением, p58 до strictend. Только directed p214→p58; headDetected=true,head=null. Reverse/прочиеp214/переезды и обрывочные capture не включать. Runtime physical JSON не содержит caseID/времени/цен/benchmark. Два профиля тарифицировать существующей таблицей Order274 по отправлению. Нового routing/trace/source/full routeaudit нет.
 
 До кода сохранить этот STARTED exact tree/path/head. Затем focusednegative/regression и owncomposercheck, обязательные pnpm build/audit, tsc/ESLint. Риск прерывания: каждый процесс ограничить временем, логи писать в checks/2026-10-18-m11-p214-entry/, результаты сохранять DONE/FAILED без повторов готового. Следующий блок — диагностика исключенийsiblings только после codeCI и отдельногоSTARTED; эта реализация не засчитывает непроверенныеcases. Runtime/build не выполнены этимSTARTED. Main/merge/production/Android/автоматизации не затрагиваются.
+
+
+# Восстановление p214 после остановки — STARTED
+
+18.10.2026 13:34 МСК. Последний подтверждённый remote/local/PR14 head d1d0bd9797ca3ae9351de8a1898090bbdf372353, draft. STARTED реализации сохранён; runtime не менялся, новых процессов/расчётов нет. Уже готовые3GET/61pointchecks не повторять.
+
+Незавершённый остаток разделён: A) standalone strict physical matcher + короткие focused negative tests, сохранить PART-A DONE с обязательными широкими checks ещё pending, без включения в composer; B) подключение пары p214→p58 и own quote, focused + обязательный full gate/build/TS/ESLint, сохранить результаты; C) точное remote readback и codeCI. Если снова остановится, дробить только незавершённый остаток. Не пересчитывать завершённое при проблеме сохранения. Лимитfocused60s,build300s; полные логи в checks/2026-10-18-m11-p214-entry. До завершенияB не объявлять исправление интегрированным и проверенным. Ценаwholetripunknown, head58→ЦКАДunknown. Main/merge/production/Android/автоматизации не затрагиваются.

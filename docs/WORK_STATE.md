@@ -1,3 +1,9 @@
+## STARTED — восстановление p214, остаток разделён
+
+[План A→B→C](checkpoints/2026-10-18-m11-p214-hang-recovery-STARTED.md): matcher/focused → интеграция/fullgate → remote/codeCI. Runtime пока не менялся, источники завершены и не повторяются.
+
+## Предыдущая история
+
 ## STARTED — строгая пара М11 p214→p58
 
 [Source review, scope и проверки](checkpoints/2026-10-18-m11-p214-entry-STARTED.md). Собственный въезд и p58 подтверждены; реализация ещё не выполнена. Head58→ЦКАД остаётсяunknown, полная цена не заявляется. После durable STARTED — узкий matcher, focused/fullgate/build и DONE.
