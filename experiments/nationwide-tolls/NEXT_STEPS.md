@@ -1,3 +1,9 @@
+## DONE — Одинцово базовые650 ₽ круглосуточно; новый CI pending
+
+[Новое правило, код и проверки](../../docs/checkpoints/2026-10-18-odintsovo-planning-base-650-DONE.md). Прямое решение пользователя: плановая база650, ночь/пик не прогнозируются. Удалены runtime календарь/часовые профили и отказы00–01/2027 для этой пары. Матрица прежняя; дата только для срока действия строки. 196 временных проверок,10ownquotes,6APIreplays; focused14/14,full802/802+quote/API,Next16/16,TS/ESLint/diffPASS. Новые уведомления не добавлены. ForwardCKAD всё ещё unknown. NEXT послеremote/newCI: дальнейшие оценки по рациональным опорным тарифам; готовые источники не повторять. Общий fallback всех дорог ещё не внедрён. PR14draft.
+
+## Предыдущая история
+
 ## STARTED — новая политика: Одинцово базовые650 ₽ в любое время
 
 [Решение пользователя и scope](../../docs/checkpoints/2026-10-18-odintsovo-planning-base-650-STARTED.md). Ночь/пик не прогнозируются; runtime calendar2026 и блок00–01 для этой пары убрать, готовый ordinary vector650 использовать как плановую базу. Числа матрицы сохранить. Source dbd1b81c/tree d3dc45f3, CI39154472440success, fresh cloneclean. NEXT: minimal code+focused/fullbuild, DONE/remote/readback.

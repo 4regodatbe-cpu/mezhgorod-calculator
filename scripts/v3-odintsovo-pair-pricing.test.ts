@@ -4,7 +4,7 @@ import {readFileSync, mkdirSync, writeFileSync} from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {NextRequest} from 'next/server';
 import {POST} from '../app/api/v3/calculate/route.ts';
-import {odintsovoDepartureProfile, matrixOdintsovoPairComponent} from '../lib/v3-calculation/odintsovo-pair-component.ts';
+import {matrixOdintsovoPairComponent} from '../lib/v3-calculation/odintsovo-pair-component.ts';
 import {calculateLegTolls} from '../lib/v3-calculation/route-leg-pricing.ts';
 import {tollsForApi} from '../lib/v2-calculation/free-route-selection.ts';
 import {replayingFetch} from '../experiments/nationwide-tolls/scripts/systemic-audit-io.mjs';
@@ -30,39 +30,30 @@ const quote = (i: number, at: string) => {
   return calculateLegTolls({routeGeometry: r.route.coordinates, routeSeconds: r.route.seconds, departureAt: at,
     selectedFastProvider: r.provider, selectedFastRoute: r.route, valhallaEvidence: null, confirmedFreeRoute: null, diagnosticFastValidation: cases[i].validation});
 };
-test('departure profile uses independent 2026 calendar, directional peaks and explicit unknown windows', () => {
-  const profile = (at: string, direction: 'towardMoscow' | 'fromMoscow' = 'towardMoscow') => odintsovoDepartureProfile(at, direction);
-  assert.deepEqual(profile('2026-10-15T06:00:00Z'), profile('2026-10-15T09:00:00+03:00'));
-  for (const date of ['2026-11-04', '2026-12-31', '2026-03-09', '2026-05-11', '2026-10-17', '2026-10-18']) {
-    assert.deepEqual(profile(date + 'T09:00:00+03:00'), {status: 'resolved', date, profile: 'weekendDay'});
+test('planning baseline is650 in both directions across hours, weekends, holidays and future calendar years', () => {
+  const dates = ['2026-10-15', '2026-10-16', '2026-10-17', '2026-10-18', '2026-11-04', '2026-12-31', '2027-01-15'];
+  const times = ['00:00:00', '00:59:59', '01:00:00', '04:59:59', '05:00:00', '06:59:59', '07:00:00',
+    '12:59:59', '13:00:00', '15:59:59', '16:00:00', '21:59:59', '22:00:00', '23:59:59'];
+  for (const date of dates) for (const time of times) for (const i of [0, 1]) {
+    const result = component(i, date + 'T' + time + '+03:00');
+    assert.equal(result.tolls?.amount, 650, `${i}/${date}/${time}`);
+    assert.equal(result.tolls?.period, 'базовая оценка');
   }
-  assert.deepEqual(profile('2026-10-16T09:00:00+03:00'), {status: 'resolved', date: '2026-10-16', profile: 'weekdayPeak'});
-  for (const at of ['2027-01-15T09:00:00+03:00', '2026-02-30T09:00:00+03:00', 'bad', '2026-10-15T00:00:00+03:00', '2026-10-15T00:59:59+03:00']) {
-    assert.equal(profile(at).status, 'unknown', at);
-  }
+  save('planning-base-controls', {dates, times, ownDirections: 2, checked: dates.length * times.length * 2, planningRub: 650, externalRequests: 0});
 });
-test('ready matrix values respect 01/05/07/13/16/22 boundaries and freeze at departure', () => {
-  const controls: Array<[string, number, number]> = [
-    ['01:00:00', 20, 20], ['04:59:59', 20, 20], ['05:00:00', 650, 650],
-    ['06:59:59', 650, 650], ['07:00:00', 700, 650], ['12:59:59', 700, 650],
-    ['13:00:00', 650, 650], ['15:59:59', 650, 650], ['16:00:00', 650, 700],
-    ['21:59:59', 650, 700], ['22:00:00', 650, 650], ['23:59:59', 650, 650],
-  ];
-  for (const [time, forward, reverse] of controls) {
-    const at = '2026-10-15T' + time + '+03:00';
-    assert.equal(component(0, at).tolls?.amount, forward, time);
-    assert.equal(component(1, at).tolls?.amount, reverse, time);
-    assert.equal(component(1, at, cases[1].validation, 100000).tolls?.amount, reverse, 'arrival must not reprice');
+test('planning baseline preserves tariff validity, invalid date guards and departure-only calculation', () => {
+  for (const i of [0, 1]) {
+    assert.equal(component(i, '2026-10-15T06:00:00Z').tolls?.amount, component(i, '2026-10-15T09:00:00+03:00').tolls?.amount);
+    assert.equal(component(i, '2026-10-15T23:59:59+03:00', cases[i].validation, 100000).tolls?.amount, 650);
+    for (const at of ['2026-01-14T09:00:00+03:00', '2026-02-30T09:00:00+03:00', 'bad']) assert.equal(component(i, at).tolls, null);
+    assert.equal(component(i, '2026-10-15T09:00:00+03:00', cases[i].validation, -1).tolls, null);
   }
-  for (const at of ['2026-01-14T09:00:00+03:00', '2027-10-15T09:00:00+03:00', '2026-10-15T00:30:00+03:00']) assert.equal(component(1, at).tolls, null);
-  assert.equal(component(1, '2026-10-15T09:00:00+03:00', cases[1].validation, -1).tolls, null);
-  save('time-boundaries', {controls, status: 'PASS', externalRequests: 0});
 });
 test('five own profiles in each direction price the component but never hide forward CKAD', async () => {
   const profiles = [
-    ['2026-10-15T09:00:00+03:00', 700, 650], ['2026-10-15T23:59:00+03:00', 650, 650],
-    ['2026-10-16T17:00:00+03:00', 650, 700], ['2026-10-17T09:00:00+03:00', 650, 650],
-    ['2026-10-18T02:00:00+03:00', 20, 20],
+    ['2026-10-15T09:00:00+03:00', 650, 650], ['2026-10-15T23:59:00+03:00', 650, 650],
+    ['2026-10-16T17:00:00+03:00', 650, 650], ['2026-10-17T09:00:00+03:00', 650, 650],
+    ['2026-10-18T02:00:00+03:00', 650, 650],
   ] as const;
   const results: unknown[] = [];
   for (const [at, forward, reverse] of profiles) for (const i of [0, 1]) {
@@ -75,7 +66,7 @@ test('five own profiles in each direction price the component but never hide for
     save('profiles', {completed: results, newConfirmedFullTripFares: 0, externalRequests: 0});
   }
 });
-test('missing, partial, repeated or wrong own context and unsupported calendar never authorize money', () => {
+test('missing, partial, repeated or wrong own context never authorize a planning charge', () => {
   for (const i of [0, 1]) {
     const variants = [cases[i].capture.record.validation,
       {...cases[i].validation, complete: false}, {...cases[i].validation, failedChunkCount: 1},
@@ -85,7 +76,7 @@ test('missing, partial, repeated or wrong own context and unsupported calendar n
     for (const v of variants) assert.equal(component(i, '2026-10-15T09:00:00+03:00', v).tolls, null);
   }
 });
-async function api(i: number, traceUnavailable: boolean) {
+async function api(i: number, traceUnavailable: boolean, departureAt = '2026-10-15T09:00:00+03:00') {
   const c = cases[i], r = c.capture.record, io = replayingFetch(c.capture.calls), old = globalThis.fetch, requests: string[] = [];
   globalThis.fetch = async (input, init) => {
     const url = new URL(String(input)); requests.push(url.href);
@@ -94,12 +85,12 @@ async function api(i: number, traceUnavailable: boolean) {
   };
   try {
     const response = await POST(new NextRequest('http://localhost/api/v3/calculate', {method: 'POST',
-      body: JSON.stringify({from: r.spec.from, to: r.spec.to, departureAt: '2026-10-15T09:00:00+03:00'})}));
+      body: JSON.stringify({from: r.spec.from, to: r.spec.to, departureAt})}));
     assert.equal(response.status, 200); assert.deepEqual(io.misses, []);
     assert.equal(requests.some(u => u.includes('avoid_toll') || u.includes('toll_booth_penalty')), false);
     const fast = (await response.json()).legs[0].fast;
     assert.equal(fast.meters, r.route.meters); assert.equal(fast.seconds, r.route.seconds); assert.ok(fast.quality.providers.includes(r.provider));
-    save(`api-${i}-${traceUnavailable ? 'unavailable' : 'ready'}`, {fast, requests, misses: io.misses, externalRequests: 0});
+    save(`api-${i}-${traceUnavailable ? 'unavailable' : 'ready'}-${departureAt.replace(/[^0-9]/g, '')}`, {fast, requests, misses: io.misses, externalRequests: 0});
     return fast;
   } finally {globalThis.fetch = old;}
 }
@@ -112,4 +103,7 @@ test('public API prices reverse650, forward remains CKAD-unknown, unavailable tr
   assert.equal('priceConfirmation' in reverse.tolls, false);
   assert.match(reverse.tolls.segments.join('\n'), /ПВП 6\.9 → 17\.7/);
   assert.equal(unavailable.tolls.amount, null); assert.equal(unavailable.tolls.pricingStatus, 'unknown');
+  for (const at of ['2026-10-18T02:00:00+03:00', '2026-10-16T17:00:00+03:00', '2026-10-15T00:30:00+03:00']) {
+    const planning = await api(1, false, at); assert.equal(planning.tolls.amount, 650); assert.equal(planning.tolls.pricingStatus, 'priced');
+  }
 });

@@ -1,0 +1,98 @@
+{
+  "status": "LOCAL_FIXED_BASE_VALIDATED",
+  "sourceHead": "99d78d5b8b56fdd5e81b7eacc3c7818dd8eaa3a0",
+  "planningBaseRub": 650,
+  "fixedBaseAssertions": 196,
+  "focusedPass": 14,
+  "fullPass": 802,
+  "staticPages": 16,
+  "buildExit": 0,
+  "tscExit": 0,
+  "eslintExit": 0,
+  "directQuotes": 10,
+  "apiReplays": 6,
+  "externalRequests": 0,
+  "confirmedFullTripFares": 0,
+  "files": [
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/api-0-ready-202610150900000300.json",
+      "bytes": 6170,
+      "sha256": "af6d032d985c3713b0f09a35bd8c7e811ffd402482deb89586ac409b438f6a89"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/api-1-ready-202610150030000300.json",
+      "bytes": 6070,
+      "sha256": "b36c8fd26fbc6394cae17f3da2293139b1ef41136df424322d4b97c2282df37e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/api-1-ready-202610150900000300.json",
+      "bytes": 6070,
+      "sha256": "b36c8fd26fbc6394cae17f3da2293139b1ef41136df424322d4b97c2282df37e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/api-1-ready-202610161700000300.json",
+      "bytes": 6070,
+      "sha256": "b36c8fd26fbc6394cae17f3da2293139b1ef41136df424322d4b97c2282df37e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/api-1-ready-202610180200000300.json",
+      "bytes": 6070,
+      "sha256": "b36c8fd26fbc6394cae17f3da2293139b1ef41136df424322d4b97c2282df37e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/api-1-unavailable-202610150900000300.json",
+      "bytes": 6215,
+      "sha256": "8bad630f46c2e1f0116ee7c7df94d2b137e42b4a928479e71a1e2409dffaa138"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/build.log",
+      "bytes": 72559,
+      "sha256": "4411dca82a0734833e8e203ff1a5339bb209e81c0f21e8c213afa2dec3aba2c7"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/eslint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/focused.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/focused.log",
+      "bytes": 1635,
+      "sha256": "95811717cd8f1de299f7d7d85dfa65fb6f56cf1e2430707747381c30cef10c13"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/planning-base-controls.json",
+      "bytes": 474,
+      "sha256": "e1c5043169b7d660ccb85635444cde7bc1018f87a799d951750f28adf097d597"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/profiles.json",
+      "bytes": 14733,
+      "sha256": "cf25c61a4140314c07aa3f36e88ef0ac16d5a9fff9ed7d248a2f0d583a37b6d6"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/tsc.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-planning-base-650/tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
