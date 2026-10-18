@@ -1,3 +1,7 @@
+## STARTED — семь оставшихся границ ЗСД, КАД-север→КАД-юг
+
+Группа1e954c437e46:проверить7ownsavedcaptures/trace/entry/exit,безpricingreplay/сети/повтора74. [План](../../docs/checkpoints/2026-10-18-zsd-north-south-seven-STARTED.md). Точныеinputs иper-caseprogress вchecks/2026-10-18-zsd-north-south-seven.
+
 ## DONE — ещё6ZSD exit/trace exceptionchecks, группа7/7
 
 Группа258ee8:6own savedcaptures проверены, точнаяselectedgeometry/rawboothorder/exitКАД-север; exceptions0/errors0. [Результат](../../docs/checkpoints/2026-10-18-zsd-north-kad-six-DONE.md). Это новаяпроверкаграниц, не повтор74component checks. ЦенаBLOCKED: operatorcollectionbundle отсутствует. Новыхцен/route/replay0.

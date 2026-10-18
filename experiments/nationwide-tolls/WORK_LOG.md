@@ -2392,3 +2392,8 @@ CI39101746826 verify117599261373/live_probe117599261271 completed/success; вс�
 Source STARTED1f5dbd9d…/treec2439975…,13path/head/PR14draft readback. Метод выборки следует existingreview-zsd-remaining-scopes.py: decode selected-provider shape, compare own record, use own maneuver indices; trace-output shapeindices не применялиськвходнойгеометрии. Reproduction inputs/отдельныефакты/хэши сохранены; один-offline Pythonанализ не подключёнкприложению.
 
 NEXT: следующая отдельно незавершённая группа1e954c437e46 (КАД-север→КАД-юг),7unchecked siblings. До пакетногочтения отдельныйSTARTED сточнымиcaseIDs/frozenpaths; толькоowncapture exceptionchecks,безreplay/сети. М3datesource иМ4sourcepass удерживатьBLOCKED,неповторять безнезависимогоисточника.
+
+
+## 2026-10-18T06:08:08.643649+00:00 — STARTED ZSD north→south seven
+
+Группа1e954c437e46,7явноunchecked sibling boundarychecks. Frozeninputs: experiments/nationwide-tolls/checks/2026-10-18-zsd-north-south-seven/inputs.json. До7cases/120с, сеть/replay/pricing0. Source53726893…/PR14draft/emptyworkflowruns проверены. Per-caseprogress иодинDONEcheckpoint.
