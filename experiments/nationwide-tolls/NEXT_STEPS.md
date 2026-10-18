@@ -1,3 +1,15 @@
+## SCOPE DONE / CODE STARTED — оплачиваемаяА113не должна теряться
+
+[Evidence/ограниченныйcode scope](../../docs/checkpoints/2026-10-18-odintsovo-pair-scope-LOCAL-CI-BLOCKED.md): CI39146933232 verify/liveSUCCESS, ожиданиезавершено. ForwardОдинцово8paidА113edges/gantry12443433262, текущийcoverageне распознаётА113/fullCKADname. NEXT послеdurableSTARTED: минимальныйpaidproductnamematcher+ownforwardunknownCKAD/reversecontrol,focused/fullbuild; цены/gantryAPI/frozensне менять.
+
+## Предыдущая история
+
+## LOCAL ONLY — scopeDONE; remote save ждёт активныйCI
+
+[Локальныйcheckpoint/точныйNEXT](../../docs/checkpoints/2026-10-18-odintsovo-pair-scope-LOCAL-CI-BLOCKED.md): codeCI39146933232 verifyPASS/live_probeactive; в forwardОдинцово rawtrace найден отдельный8edgepaidА113/gantry12443433262, который paidcoverage не распознаёт. ЦенунеподключатьдопокрытияCKAD. NEXT: послеCI сначала durablesaveэтогоблока, затем boundedA113coveragefix; всеисточникиужеесть.
+
+## Предыдущая история
+
 ## FIXED — identity4полос Одинцово; codeCI pending
 
 [Код и реальные проверки](../../docs/checkpoints/2026-10-18-odintsovo-identity-CODE-DONE.md): оба ownroutes теперь missing=[odintsovo], ложныеМ1/unknownaliases устранены; полного тарифа пока нет. Focused43/43, full788/788+quote, Next16/16,TS/ESLint/diff PASS. Sources0новых; матрица/ценыбезизменений. NEXT после remote/codeCI: strict17,7↔6,9scope/continuity/no-reentry, затем готовые fares с boundedSTARTED;4primaryGET/27points не повторять. PR14draft.
