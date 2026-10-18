@@ -55,7 +55,7 @@ test('own forward route retains omitted paid CKAD; reverse does not inherit the 
   }
   save('quotes', {results, externalRequests: 0, newPrices: 0});
 });
-test('own POST replay keeps unknown with CKAD explanation on forward only, without toll-avoid routing', async () => {
+test('own POST replay keeps forward CKAD unknown and prices only the complete reverse route', async () => {
   for (const [i, c] of cases.entries()) {
     const r = c.record, replay = replayingFetch(c.calls), previous = globalThis.fetch, requests: string[] = [];
     globalThis.fetch = async (input, init) => {requests.push(String(input)); return replay.fetch(input, init);};
@@ -67,7 +67,7 @@ test('own POST replay keeps unknown with CKAD explanation on forward only, witho
       const fast = (await response.json()).legs[0].fast;
       assert.equal(fast.meters, r.route.meters); assert.equal(fast.seconds, r.route.seconds);
       assert.ok(fast.quality.providers.includes(r.provider));
-      assert.equal(fast.tolls.amount, null); assert.equal(fast.tolls.pricingStatus, 'unknown');
+      assert.equal(fast.tolls.amount, i === 0 ? null : 650); assert.equal(fast.tolls.pricingStatus, i === 0 ? 'unknown' : 'priced');
       assert.equal(fast.tolls.segments.some((s: string) => s.includes('ckad_east_arc_not_proven')), i === 0);
       save(`api-${i}`, {fast, requests, misses: replay.misses, externalRequests: 0});
     } finally {globalThis.fetch = previous;}

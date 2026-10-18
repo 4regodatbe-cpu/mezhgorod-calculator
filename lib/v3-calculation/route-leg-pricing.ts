@@ -3,6 +3,7 @@ import { resolveM12ProductBoundaries } from "./m12-product-boundaries";
 import { resolveM11ProductBoundaries } from "./m11-product-boundaries";
 import { unpricedRoadCoverage } from "./unpriced-road-coverage";
 import { matrixZsdCashCardComponent } from "./zsd-cash-card-component";
+import { matrixOdintsovoPairComponent } from "./odintsovo-pair-component";
 import { m11TraversalSafety } from "./m11-traversal-safety";
 import { matrixM11Component, matrixM11GeometryComponent } from "@/experiments/nationwide-tolls/engine/m11-route-adapter.mjs";
 import { matrixCkadComponent } from "@/experiments/nationwide-tolls/engine/ckad-route-adapter.mjs";
@@ -167,6 +168,8 @@ export async function calculateLegTolls({
     {id:"ckad-small-vyazemy",detected:unpricedCoverage.smallVyazemy,tolls:null,reason:"small_vyazemy_physical_boundaries_not_priced"},
     ...unpricedCoverage.regionalProducts.map(product=>product.id==='zsd'
       ?{id:product.id,detected:true,...matrixZsdCashCardComponent(routeGeometry,diagnosticFastValidation,departureAt,routeSeconds)}
+      :product.id==='odintsovo'
+      ?{id:product.id,detected:true,...matrixOdintsovoPairComponent(routeGeometry,diagnosticFastValidation,departureAt,routeSeconds)}
       :{id:product.id,detected:true,tolls:null,reason:product.reason}),
   ];
   const composition = composeRouteTolls(components);

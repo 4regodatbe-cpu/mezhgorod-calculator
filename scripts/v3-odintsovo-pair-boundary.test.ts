@@ -97,12 +97,12 @@ test('reversed, shifted, sparse or detouring geometry cannot borrow valid trace 
     assert.equal(inspect(c, c.validation!, [[NaN, 55], ...geometry]), null);
   }
 });
-test('standalone physical pair proof has not enabled any component price', async () => {
+test('historical snapshots without continuity context cannot borrow the new component price', async () => {
   for (const c of cases) {
     const r = c.capture.record;
     const q = await calculateLegTolls({routeGeometry: r.route.coordinates, routeSeconds: r.route.seconds,
       departureAt: '2026-10-15T09:00:00+03:00', selectedFastProvider: r.provider, selectedFastRoute: r.route,
-      valhallaEvidence: null, confirmedFreeRoute: null, diagnosticFastValidation: c.validation});
+      valhallaEvidence: null, confirmedFreeRoute: null, diagnosticFastValidation: c.capture.record.validation});
     assert.ok(q.componentAudit.missing.includes('odintsovo'));
     assert.equal(tollsForApi(q.tolls, q.fastValidation).amount, null);
   }

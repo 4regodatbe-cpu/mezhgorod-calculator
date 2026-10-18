@@ -1,0 +1,117 @@
+{
+  "status": "LOCAL_PART_B_VERIFIED",
+  "sourceHead": "b08de00a6eaa6d1963d4aa0032d62a46f81604ca",
+  "focusedInitialPass": 13,
+  "focusedInitialFail": 1,
+  "focusedFinalPass": 14,
+  "initialBuildExit": 1,
+  "initialTscExit": 2,
+  "fullFinalPass": 802,
+  "buildFinalExit": 0,
+  "tscFinalExit": 0,
+  "eslintFinalExit": 0,
+  "nextPages": 16,
+  "ownRouteCases": 2,
+  "ownDepartureQuotes": 10,
+  "apiReplays": 3,
+  "newPricedComponents": 2,
+  "confirmedFullTripFares": 0,
+  "codeBlockExternalRequests": 0,
+  "limitations": [
+    "calendar2026 source-derived indexed official texts; direct documents unavailable",
+    "00:00-00:59 profile unknown",
+    "forward CKAD full fare unknown"
+  ],
+  "files": [
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/api-0-ready.json",
+      "bytes": 6170,
+      "sha256": "af6d032d985c3713b0f09a35bd8c7e811ffd402482deb89586ac409b438f6a89"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/api-1-ready.json",
+      "bytes": 6085,
+      "sha256": "521c1a43d05e7b92eae6b448877bba4cdc0281ec1d6a244df744ed0232dde0a3"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/api-1-unavailable.json",
+      "bytes": 6215,
+      "sha256": "8bad630f46c2e1f0116ee7c7df94d2b137e42b4a928479e71a1e2409dffaa138"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/build-initial.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/build-initial.log",
+      "bytes": 73233,
+      "sha256": "83bcde3e8eac8ed3c73be26fed578ba336e6b9deb7117b6eb001127288cef7b9"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/build.log",
+      "bytes": 72001,
+      "sha256": "3ef4d16f2a236eade632b7d0b69827dfd3acf4c7f9d92bddb5f5b4bac5976174"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/eslint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/focused-initial.log",
+      "bytes": 2568,
+      "sha256": "8dbc949750e405ea9a9de0a76e4a9819807e141c62ca30fadc743adc941523d4"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/focused.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/focused.log",
+      "bytes": 1629,
+      "sha256": "fc158025f221fb2fee457400d39233b9c0f6eef3a6e58831b3fec43baabee85b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/profiles.json",
+      "bytes": 14889,
+      "sha256": "8a2bcaee87316b0cbf7e167591581dfa1e15f1598f1e76d7bdd22481bba38b34"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/time-boundaries.json",
+      "bytes": 688,
+      "sha256": "0d22fac2ddab687809bfabef609adcee98aead805837c0a65098d41bde914536"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/tsc-initial.exit",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/tsc-initial.log",
+      "bytes": 504,
+      "sha256": "2ad6d3a85923c370dabc38e6fb2facb3897e92e15fa36cf8d5b6711648958882"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/tsc.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-pricing/tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

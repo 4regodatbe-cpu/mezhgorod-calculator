@@ -1,3 +1,9 @@
+## DONE — подключён тариф пары Одинцово; новый CI pending
+
+[Код, результаты и ограничения](../../docs/checkpoints/2026-10-18-odintsovo-fare-PART-B-DONE.md). Два маршрута / 10 профилей: компонент 650/700/20 ₽ из прежней матрицы. Reverse API ready650, trace503→unknown; forward whole amount null из-за ЦКАД. Оценки unconfirmed, подтверждённых полных тарифов0. Focused14/14, full802/802+quote/API, Next16/16, TS/ESLint/diff PASS; initial ошибки тестового API-ожидания и TS сохранены. Календарь source-derived2026; 00–01 и другие годы unknown. NEXT после remote/newCI: точная рамка ЦКАД12443433262/1080462753 и операторский продукт, сначала сохранённые данные. PR14draft.
+
+## Предыдущая история
+
 ## CALENDAR DONE / ОдинцовоfareCODESTARTED
 
 [Источники/инференция/лимиты](../../docs/checkpoints/2026-10-18-odintsovo-calendar-DONE-fare-CODE-STARTED.md):2026calendarsource-derivedизофициальныхindexedtextМинтруда+adopted1466;directPDF503/HTML403безобхода,скачанныхисточниковнет. NEXT strictpairmatrixadapter+профильотправления;00–01/внегодакалендаряunknown,forwardCKADwholeunknown. Готовыеценынепересобирать.
