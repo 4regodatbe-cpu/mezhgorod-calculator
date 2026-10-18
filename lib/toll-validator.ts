@@ -1,4 +1,13 @@
 import type { Coordinate } from "@/lib/tolls";
+import {isOdintsovoLaneWay} from '@/experiments/nationwide-tolls/odintsovo-lane-identity.mjs';
+
+export type OdintsovoTraceEdge = {
+  wayId: string | null;
+  endNodeId: string | null;
+  roadNames: string[];
+  toll: boolean;
+  paymentEvent: boolean;
+};
 
 export type TollBoothEvent = {
   osmNodeId: string | null;
@@ -29,6 +38,12 @@ export type TollValidation = {
   failedChunkCount?: number;
   complete?: boolean;
   boothEventCoverage?: "complete" | "partial" | "none";
+  odintsovoTraceBlocks?: Array<{
+    edges: OdintsovoTraceEdge[];
+    before: OdintsovoTraceEdge | null;
+    after: OdintsovoTraceEdge | null;
+    repeatedWayId: boolean;
+  }>;
   // Named CKAD continuity must include non-toll access links. The paid-only
   // list cannot distinguish a complete interchange pair from exit/re-entry.
   ckadTraceBlocks?: Array<{
@@ -143,6 +158,28 @@ function ckadTraceBlocks(edges: TraceEdge[]): NonNullable<TollValidation['ckadTr
 
 function isTollBooth(edge: TraceEdge) {
   return edge.end_node?.type === "toll_booth";
+}
+
+function odintsovoTraceBlocks(edges: TraceEdge[]): NonNullable<TollValidation['odintsovoTraceBlocks']> {
+  const belongs = (edge: TraceEdge) => (edge.names ?? []).some(n => /^Северный обход Одинцова$/iu.test(n))
+    || isOdintsovoLaneWay(edgeWayId(edge));
+  const compact = (edge: TraceEdge): OdintsovoTraceEdge => ({wayId: edgeWayId(edge), endNodeId: edgeNodeId(edge),
+    roadNames: edge.names ?? [], toll: edge.toll === true,
+    paymentEvent: isTollBooth(edge) || edge.end_node?.type === 'toll_gantry'});
+  const blocks: NonNullable<TollValidation['odintsovoTraceBlocks']> = [];
+  for (let i = 0; i < edges.length; i++) {
+    if (!belongs(edges[i])) continue;
+    const start = i, ways: Array<string | null> = [];
+    while (i < edges.length && belongs(edges[i])) {
+      const way = edgeWayId(edges[i]); if (ways.at(-1) !== way) ways.push(way);
+      i++;
+    }
+    blocks.push({edges: edges.slice(start, i).map(compact), before: start ? compact(edges[start - 1]) : null,
+      after: i < edges.length ? compact(edges[i]) : null,
+      repeatedWayId: ways.some((way, j) => way === null || ways.indexOf(way) !== j)});
+    i--;
+  }
+  return blocks;
 }
 
 async function traceChunk(route: Coordinate[]) {
@@ -265,6 +302,8 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
   }));
   const ckadBlocks = ckadTraceBlocks(successful.flatMap(item => item.edges));
   const ckadContinuity = ckadBlocks.length ? {ckadTraceBlocks: ckadBlocks} : {};
+  const odintsovoBlocks = odintsovoTraceBlocks(successful.flatMap(item => item.edges));
+  const odintsovoContinuity = odintsovoBlocks.length ? {odintsovoTraceBlocks: odintsovoBlocks} : {};
 
   if (!complete) {
     return {
@@ -276,6 +315,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       roadNames,
       paidRoadEdges,
       ...ckadContinuity,
+      ...odintsovoContinuity,
       message: tollEdges.length > 0
         ? `Платные дорожные рёбра подтверждены, но проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`
         : `Проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`,
@@ -298,6 +338,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     roadNames,
     paidRoadEdges,
     ...ckadContinuity,
+    ...odintsovoContinuity,
     message: tollEdges.length > 0
       ? `Подтверждены платные дорожные рёбра: ${tollEdges.length}`
       : tollBooths.length > 0

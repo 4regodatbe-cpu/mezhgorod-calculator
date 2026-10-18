@@ -1,3 +1,9 @@
+## PART A DONE — strictОдинцово17,7↔6,9, standaloneбезденег
+
+[Код/доказательства/проверки](../../docs/checkpoints/2026-10-18-odintsovo-continuity-PART-A-DONE.md): optionalnamedtracecontext+exactdirectionmatcher, ownblocks61/59edges,2exactofflinevalidationreplays+1negativecitygap,40context/10geometrynegativechecksPASS. Focused13/13,full797/797+quote/API,Next16/16,TS/ESLint/diffPASS. Цены/матрицабезизменений,новыхpriced0. NEXT послеremote/newcodeCI: PART Bfareadapter+обоснованныйСООweekday/weekendHolidaycalendar,daystart,ownAPI; forwardCKADunknownсохранить. Sourcesготовы/неповторять. PR14draft.
+
+## Предыдущая история
+
 ## STARTED — Одинцово strictконтекст/геометрия, безденег
 
 [BoundedA/Bscope](../../docs/checkpoints/2026-10-18-odintsovo-continuity-STARTED.md): codeCI39148079088verify/liveSUCCESS. NEXT A: optionalnamedtraceblock+standalonematcher,2exactofflinevalidationreplay/negativeguards/fullbuild; источники4GET/27pointsготовы. Bfareadapterотдельно,day/timecalendarнегадать. ForwardCKADunknownсохранить. PR14draft.
