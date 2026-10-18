@@ -2601,3 +2601,18 @@ Focused20/20; fullaudit757/757 +quote/API contracts PASS; targetedESLint PASS; `
 ## Продолжение
 
 После публикации проверить actual codeCI; до его завершения не писать в ветку. Затем отдельный boundedSTARTED на семь остальных headcases: только owncapture/gate/way/geometry/датированныепары по новой общейпривязке, per-caseprogress, без повторных восьми replay/41routeaudit и новой сети. Они **не засчитаны** текущим представителем. Baselineочередь и canonicalистория сохранены, latestFixReviewотдельно. ЗСДРВП64/ЦКАД/М12прочиепробелы не закрыты этимисправлением. Merge/main/Production/Android не выполнялись.
+
+
+## 2026-10-18T12:32:21.990710+03:00 — codeCI success / seven-case STARTED
+
+# STARTED — семь оставшихся М11 head cases
+
+МСК 2026-10-18T12:32:21.990710+03:00. Source code `29129946ed7445677332749857f89efbc9ff546b`; CI39115104478 **completed/success**, оба jobsverify/live_probecompleted/success. Remote/PRhead повторносовпал,PR14draft;разрешённаяветка `fix/v3-missing-route-prices-2026-10-15`.
+
+Цель: проверить применение уже сохранённой севернойпривязкиЦКАД47→М11 ксеми оставшимся собственнымcapture. ПервыйпредставительАрзамас→Приморскийнеповторяется. Входы7точныхGitblob/path,6code/dataSHA и14datedпрофилей в `experiments/nationwide-tolls/checks/2026-10-18-m11-ckad47-seven/inputs.json`.
+
+Лимит:7cases,2датыкаждый,60секработы; новыхсети/routing/trace/sourceGET/fullpricingreplay0. Проверяется собственныйrawGitblobSHA,полнотаvalidation,exactgate/paidcontinuation/38pointcorridor/7orderedanchors,strictmainline58→679 иготоваяheadпара. Длякаждого3negativeguards:reverse/incomplete/absentgate. Полныеитогипоездок ипрочиедорогивэтомблокенепересчитываются.
+
+Runner `experiments/nationwide-tolls/checks/2026-10-18-m11-ckad47-seven/check-head.mjs` сохраняеткаждыйрезультат иprogressатомарно. ПрипрерыванииDONEпереиспользоватьтолькоприinput/runner/runtimefingerprint+blobсовпадении;иначестоп. Любоеотличиефактическихданныхсчитатьmaterialexception,неослаблятьguard. Заодинпакетодинитоговыйcommit/readback;поштучныхCIнебудет. Runtimeнеменяется,fullgateповторне нужен;проверкиrunner syntax/JSON/hash/diffдостаточныдляsource-onlyпакета.
+
+ПослеdurableSTARTEDreadbackвыполнитьодинrunnerзапуск,прочитатькаждыйcaseиитог,сохранитьDONE/ошибкуиобновитьочередь. БлокиЗСД/ЦКАД/М12необъявлятьзакрытыми. Никакихавтоматизаций,merge/main/Production/Android.

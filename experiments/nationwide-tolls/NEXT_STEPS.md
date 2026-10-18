@@ -1,3 +1,9 @@
+## STARTED — семь собственных М11 head cases
+
+CodeCI39115104478по29129946completed/success,verify/live_probeобаPASS. [Пакет7cases/14профилей,лимитыиrecovery](../../docs/checkpoints/2026-10-18-m11-ckad47-seven-STARTED.md). Новыхrouting/trace/сети0,первыйпредставительнеповторяется. ПослеdurableSTARTEDreadbackзапуститьrunner,сохранитьper-caseprogressиодинDONE. Runtimeнеизменяется.
+
+## Предыдущая история
+
 ## DONE — М11: северный въезд ЦКАД47 исправлен
 
 Один собственный target: head280₽будни/320₽суббота, новыхкомпонентов1, fulltripunknown из-заЦКАД/ЗСД. [Изменение, sourceproof, проверки и ограничения](../../docs/checkpoints/2026-10-18-m11-ckad47-implementation-DONE.md). Focused20/20, audit757/757+quote/API,TS,ESLint,Next16/16PASS; ошибкиlocalfixture/dependency сохранены.
