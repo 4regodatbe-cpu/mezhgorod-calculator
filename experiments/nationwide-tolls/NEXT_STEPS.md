@@ -1,3 +1,11 @@
+## DONE — ещё6ZSD exit/trace exceptionchecks, группа7/7
+
+Группа258ee8:6own savedcaptures проверены, точнаяselectedgeometry/rawboothorder/exitКАД-север; exceptions0/errors0. [Результат](../../docs/checkpoints/2026-10-18-zsd-north-kad-six-DONE.md). Это новаяпроверкаграниц, не повтор74component checks. ЦенаBLOCKED: operatorcollectionbundle отсутствует. Новыхцен/route/replay0.
+
+NEXT:7unchecked siblings группы1e954c437e46, КАД-север→КАД-юг. Передпакетом отдельныйboundedSTARTED, толькоownsavedexit/traceexceptionchecks. М3date иМ4sourcepasses не повторять безновогоисточника.
+
+## Предыдущая история
+
 ## DONE М3source / STARTED шесть ZSD scope exceptions
 
 CI39101746826 verify/live_probe success. Новый M3sourcepass4queries/4reads не доказалдаты15/17Oct; verifiedThrough нерасширен. [Результат и следующий пакет](../../docs/checkpoints/2026-10-18-m3-date-source-DONE-zsd-six-STARTED.md).

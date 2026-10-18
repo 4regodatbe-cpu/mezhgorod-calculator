@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "After durable readback, compare only six unchecked siblings in ZSD group258ee8 with retained representative exit/trace. Inputs: experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/inputs.json; no network/fullreplay/componentrerun.",
+  "nextAction": "Next ZSD group1e954c437e46 (northKAD→southKAD), seven explicitly unchecked siblings; persist bounded STARTED, then compare only their own saved geometry/trace/exit and exceptions. No whole pricing/component rerun, no network. M3Oct15/17 tariff-date source and M4physical545 stayBLOCKED until new independent evidence.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1824,13 +1824,30 @@
           {
             "fingerprint": "258ee8abe7051eda2e4d11f093e10fa37184adc36cd3c3e12d67823afdd32f08",
             "representative": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
-            "checkedCases": 1,
-            "uncheckedSiblings": 6,
+            "checkedCases": 7,
+            "uncheckedSiblings": 0,
             "newPricedComponents": 0,
             "representativeOutcome": "blocked_by_missing_reliable_data",
-            "groupReviewStatus": "partial_representative_only",
+            "groupReviewStatus": "all7_own_saved_boundary_reviews_complete",
             "missing": "Owner directed cash/card collection bundle and exact north-KAD exit binding for1766158812",
-            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/next-group-representative.json"
+            "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/next-group-representative.json",
+            "reviewHistory": [
+              {
+                "atUtc": "2026-10-18T06:03:59.236184+00:00",
+                "previous": {
+                  "checkedCases": 1,
+                  "uncheckedSiblings": 6,
+                  "groupReviewStatus": "partial_representative_only",
+                  "representativeOutcome": "blocked_by_missing_reliable_data"
+                },
+                "reason": "Six own saved exit/trace sibling exceptions now reviewed; prior component pricing not rerun."
+              }
+            ],
+            "newSiblingBoundaryChecks": 6,
+            "materialExceptions": 0,
+            "outcome": "blocked_by_missing_reliable_data",
+            "siblingEvidence": "experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/summary.json",
+            "siblingCheckpoint": "docs/checkpoints/2026-10-18-zsd-north-kad-six-DONE.md"
           },
           {
             "fingerprint": "1e954c437e46cc7926adf88189e1f0af9fcb2d6ec184332656bfee9d91fd2625",
@@ -5036,7 +5053,7 @@
       "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
       "M12 followup continuation now points past completed official-page read"
     ],
-    "nextAction": "After durable readback, compare only six unchecked siblings in ZSD group258ee8 with retained representative exit/trace. Inputs: experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/inputs.json; no network/fullreplay/componentrerun."
+    "nextAction": "Next ZSD group1e954c437e46 (northKAD→southKAD), seven explicitly unchecked siblings; persist bounded STARTED, then compare only their own saved geometry/trace/exit and exceptions. No whole pricing/component rerun, no network. M3Oct15/17 tariff-date source and M4physical545 stayBLOCKED until new independent evidence."
   },
   "postAuditDiagnosticFixes": [
     {
