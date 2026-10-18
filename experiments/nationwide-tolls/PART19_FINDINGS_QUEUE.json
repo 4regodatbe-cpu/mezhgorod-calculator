@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "After durable readback, finish13explicitlyunchecked siblings in ZSD groups3493/3404/2c00 from own saved geometry/rawtrace/entry-exit. Inputs:experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/inputs.json; no network/pricing/replay. Preserve separate group outcomes and exact interchangegantryproof.",
+  "nextAction": "Do not repeat route audits or completed sibling boundary checks. Next independent gap: exact owner cash/card rule or dated receipt for Makарова/Шкиперский entry gantry13020687195/351741889 and southKAD booth933975069. Require a new bounded STARTED and precise independent source; neither toll=false nor gantry type proves zero/charge. Existing M3 date/M4 physical545 blocks remain until new primary evidence.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1886,53 +1886,98 @@
             "fingerprint": "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c",
             "representative": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
             "groupSize": 5,
-            "checkedCases": 1,
-            "uncheckedSiblings": [
-              "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
-              "single-zsd-pushkin-to-sest",
-              "triple-m4-m11-zsd-krasnodar-to-sest",
-              "triple-m4-m11-zsd-rostov-to-sest"
-            ],
+            "checkedCases": 5,
+            "uncheckedSiblings": [],
             "scopeReview": "КАД-юг → КАД-север, OSRM, другая полоса северного ПВП",
             "outcome": "blocked_by_missing_reliable_data",
             "readyTariffRub": null,
             "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
-            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
+            "reviewHistory": [
+              {
+                "atUtc": "2026-10-18T06:14:59.345709+00:00",
+                "previousCheckedCases": 1,
+                "previousUncheckedSiblings": [
+                  "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+                  "single-zsd-pushkin-to-sest",
+                  "triple-m4-m11-zsd-krasnodar-to-sest",
+                  "triple-m4-m11-zsd-rostov-to-sest"
+                ],
+                "reason": "Remaining own boundary sibling checks completed. No component pricing replay."
+              }
+            ],
+            "newSiblingBoundaryChecks": 4,
+            "materialExceptions": 0,
+            "groupReviewStatus": "all_group_own_saved_boundary_reviews_complete",
+            "siblingEvidence": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/summary.json",
+            "siblingCheckpoint": "docs/checkpoints/2026-10-18-zsd-remaining-thirteen-DONE.md"
           },
           {
             "fingerprint": "3404a9c7bbd60f8c3caa6644223c2434ee84611661181bab6b9c1cf626c57851",
             "representative": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
             "groupSize": 4,
-            "checkedCases": 1,
-            "uncheckedSiblings": [
-              "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
-              "triple-m4-m11-zsd-sest-to-krasnodar",
-              "triple-m4-m11-zsd-sest-to-rostov"
-            ],
+            "checkedCases": 4,
+            "uncheckedSiblings": [],
             "scopeReview": "КАД-север → КАД-юг, OSRM, другая полоса северного ПВП",
             "outcome": "blocked_by_missing_reliable_data",
             "readyTariffRub": null,
             "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
-            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
+            "reviewHistory": [
+              {
+                "atUtc": "2026-10-18T06:14:59.345709+00:00",
+                "previousCheckedCases": 1,
+                "previousUncheckedSiblings": [
+                  "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+                  "triple-m4-m11-zsd-sest-to-krasnodar",
+                  "triple-m4-m11-zsd-sest-to-rostov"
+                ],
+                "reason": "Remaining own boundary sibling checks completed. No component pricing replay."
+              }
+            ],
+            "newSiblingBoundaryChecks": 3,
+            "materialExceptions": 0,
+            "groupReviewStatus": "all_group_own_saved_boundary_reviews_complete",
+            "siblingEvidence": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/summary.json",
+            "siblingCheckpoint": "docs/checkpoints/2026-10-18-zsd-remaining-thirteen-DONE.md"
           },
           {
             "fingerprint": "2c00c1cc6c1d9e8f8b34365454ebb654ed4c4054a8530c84c21fe727dd5f5377",
             "representative": "pair-m11-ckad-spb-to-domodedovo",
             "groupSize": 7,
-            "checkedCases": 1,
-            "uncheckedSiblings": [
-              "pair-m11-ckad-spb-to-noginsk",
-              "single-m11-spb-to-moscow",
-              "triple-m11-ckad-m12-spb-to-kazan",
-              "pair-m4-m11-spb-to-voronezh",
-              "single-m11-spb-to-tver",
-              "triple-m11-ckad-m12-spb-to-arzamas"
-            ],
+            "checkedCases": 7,
+            "uncheckedSiblings": [],
             "scopeReview": "Въезд со стороны проспекта Крузенштерна / Шкиперского протока → КАД-юг",
             "outcome": "blocked_by_missing_reliable_data",
             "readyTariffRub": null,
             "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
-            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
+            "reviewHistory": [
+              {
+                "atUtc": "2026-10-18T06:14:59.345709+00:00",
+                "previousCheckedCases": 1,
+                "previousUncheckedSiblings": [
+                  "pair-m11-ckad-spb-to-noginsk",
+                  "single-m11-spb-to-moscow",
+                  "triple-m11-ckad-m12-spb-to-kazan",
+                  "pair-m4-m11-spb-to-voronezh",
+                  "single-m11-spb-to-tver",
+                  "triple-m11-ckad-m12-spb-to-arzamas"
+                ],
+                "reason": "Remaining own boundary sibling checks completed. No component pricing replay."
+              }
+            ],
+            "newSiblingBoundaryChecks": 6,
+            "materialExceptions": 0,
+            "groupReviewStatus": "all_group_own_saved_boundary_reviews_complete",
+            "siblingEvidence": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/summary.json",
+            "siblingCheckpoint": "docs/checkpoints/2026-10-18-zsd-remaining-thirteen-DONE.md",
+            "interchangeScopeClarification": {
+              "recordedApproachEdgeToll": false,
+              "gantryIdentityProven": true,
+              "chargeOrFreeStatusProven": false,
+              "comparisonCorrection": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/comparison-correction.json"
+            }
           },
           {
             "fingerprint": "5733fbb44c1c68eac1b81aa40e7e08b59201621562b0c133671ae51437d09a34",
@@ -2116,7 +2161,19 @@
               "live_probe": "completed/success"
             }
           }
-        ]
+        ],
+        "siblingBoundaryReviewCompletion": {
+          "atUtc": "2026-10-18T06:14:59.345709+00:00",
+          "explicitUncheckedSiblingCases": 0,
+          "newChecksThisSession": 20,
+          "previousSessionChecks": 6,
+          "currentSessionEvidence": [
+            "experiments/nationwide-tolls/checks/2026-10-18-zsd-north-south-seven/summary.json",
+            "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/summary.json"
+          ],
+          "meaning": "Only explicitly queued boundary exception checks completed. No new baseline component execution, no tariff confirmation.",
+          "allSourceBlockedScopesRemainVisible": true
+        }
       }
     },
     {
@@ -5066,7 +5123,7 @@
       "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
       "M12 followup continuation now points past completed official-page read"
     ],
-    "nextAction": "After durable readback, finish13explicitlyunchecked siblings in ZSD groups3493/3404/2c00 from own saved geometry/rawtrace/entry-exit. Inputs:experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/inputs.json; no network/pricing/replay. Preserve separate group outcomes and exact interchangegantryproof."
+    "nextAction": "Do not repeat route audits or completed sibling boundary checks. Next independent gap: exact owner cash/card rule or dated receipt for Makарова/Шкиперский entry gantry13020687195/351741889 and southKAD booth933975069. Require a new bounded STARTED and precise independent source; neither toll=false nor gantry type proves zero/charge. Existing M3 date/M4 physical545 blocks remain until new primary evidence."
   },
   "postAuditDiagnosticFixes": [
     {

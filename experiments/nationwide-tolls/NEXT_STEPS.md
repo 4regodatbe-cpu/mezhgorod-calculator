@@ -1,3 +1,11 @@
+## DONE — очередь ZSD sibling boundary checks закрыта
+
+Вэтойсессии20новыхownsavedboundarychecks(7+13); вместе сготовымипредставителями группы8/8,5/5,4/4,7/7. Finalmaterialexceptions0/errors0. [Результат](../../docs/checkpoints/2026-10-18-zsd-remaining-thirteen-DONE.md). Увъезднойрамки13020687195toll=falseподход ивrepresentative,ив6siblings;initialtoll=trueassumption/correction сохранены,плата/бесплатностьневыводятся.
+
+Явноunchecked siblings вdirectedGroupReviews0. Это неготовностьтарифов: новыеpricedcomponents/confirmedfullfares0. NEXT: конкретноеownercash/cardrule/datedreceipt въездМакарова/Шкиперский→КАД-юг(13020687195/933975069),сboundedSTARTED/newsource. Старыеrouteaudits/sourcepassesнеповторять.
+
+## Предыдущая история
+
 ## DONE7ZSD / STARTED оставшиеся13boundarychecks
 
 Группа1e954:7siblings безотличий,8/8сучётомготовогопредставителя. [Результат и следующийпакет](../../docs/checkpoints/2026-10-18-zsd-seven-DONE-remaining13-STARTED.md). Ценанедоказана; новыхрасчётов/сети0.

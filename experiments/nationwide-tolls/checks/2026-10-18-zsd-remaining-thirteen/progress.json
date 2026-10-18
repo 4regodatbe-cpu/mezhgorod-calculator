@@ -1,0 +1,59 @@
+{
+  "status": "DONE",
+  "processed": 13,
+  "expected": 13,
+  "cases": [
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "single-zsd-pushkin-to-sest",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-rostov-to-sest",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-krasnodar",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "pair-m11-ckad-spb-to-noginsk",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "single-m11-spb-to-moscow",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "pair-m4-m11-spb-to-voronezh",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "single-m11-spb-to-tver",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-spb-to-arzamas",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    }
+  ]
+}
