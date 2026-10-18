@@ -1,3 +1,7 @@
+## DONE — локальный поиск boundary mapping А-113 по сохранённым inventories
+
+[Результат](../../docs/checkpoints/2026-10-18-ckad-a113-inventory-match-DONE.md). Совпадений IDs блока А-113 в трёх сохранённых CKAD physical inventories —0; эти inventories относятся к М-11→М-12 и М-11→Раменское/А-107. Не повторять проверку; re-entry уже исключён непрерывным trace. NEXT: взять следующий заранее подготовленный тарифный пункт с сохранёнными границами, а к А-113 вернуться только при новом boundary evidence.
+
 ## DONE — saved trace CKAD А-113 непрерывен
 
 [Поля trace и вывод](../../docs/checkpoints/2026-10-18-ckad-a113-saved-trace-continuity-DONE.md). Для forward Голицынo→Рублёво `calls[3]` сохранённого capture показывает8 последовательных toll edges46–53; re-entry нет. Выбранный route provider OSRM, Valhalla trace — только сохранённые атрибуты той же геометрии. NEXT: сопоставить уже сохранённые начало/конец этого CKAD-блока с одной из15 матричных пар; если нет прямого соответствия — не назначать тариф по геометрическому сходству.
