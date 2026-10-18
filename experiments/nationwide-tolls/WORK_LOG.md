@@ -3005,3 +3005,6 @@ STARTED owneraliaslookup: один точный поиск по официаль
 CODE STARTED bounded: отдельныйforwardCKADmatcherдляentryM119556466755/1148492112/8087316064 иexit886019081/10832306578 через886019063→A107119881263. Нужны currentvalidationckadTraceBlocks1/repeatedfalse/exactbefore/after4/completechunks/paidlastway, независимыйentrycorridor48points иretainedcoreprefix12+exit29,порядок25м/плотность/длинабезпетли. Не переноситьM12exitconnectorилиполныйM4arc. Матчерразрешаеттолькоточнопривязаннуюнаправленнуюпару;unknown/инаярамка/инойexitостаютсяunknown.
 
 OwnРаменскоеcurrentvalidationfromsavedraw3exactmockreplay(старыйsnapshotбезctxне считатьготовым). ОжиданиеThu2668/Sat2848, пятьdepartureprofilesвсего,unconfirmedcompleteestimate; source3GET/41physicalpointsне повторятькакновыемаршруты. APIexactownrecordedresponses: ready2668,missingtrace→null. Focusedtimeout60s/fullbuild300s,TS/ESLint/diff;сохранитьвchecks/2026-10-18-ckad-ramenskoe-boundary. Новыхrouting/trace/sourceGETдлякода0. ПослеDONEremote/readback/codeCI,никакогоmain/merge/Production/Android.
+
+
+18.10.2026 recovery STARTED: remote e8c4e32 verified, CI39132410371 success; unfinished implementation split A matcher / B quoteAPI and gates / C readbackCI. Sources not repeated. See ../../docs/checkpoints/2026-10-18-ckad-egoryevskoe-recovery-STARTED.md

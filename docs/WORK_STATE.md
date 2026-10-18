@@ -1,3 +1,7 @@
+## IN PROGRESS — восстановление М11 → Егорьевское
+
+[Короткие части A/B/C](checkpoints/2026-10-18-ckad-egoryevskoe-recovery-STARTED.md). NEXT: A strict matcher, full gate pending.
+
 ## OWNER BINDING DONE / CODE STARTED — М11→Егорьевское
 
 [OwnerPDFvisualproof/scope](checkpoints/2026-10-18-ckad-egoryevskoe-owner-DONE-CODE-STARTED.md): officialprojectpage25 + actualselectedA107southconnector,source-derivedalias. Currentdirectcell1218₽,неизменённая. NEXT: strictnamedctx+entry48/core12/exit29matcher,owncurrentparser/APIready2668/tracefailednull,focused/fullbuild. Готовыеисточникинеповторять,fullтарифещёнезаявлять.
