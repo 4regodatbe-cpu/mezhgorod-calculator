@@ -1,3 +1,7 @@
+## STARTED — проверка дат тарифного источника М3
+
+CI39101746826 по65bed1ae… completed/success:verify иlive_probe прошли. Исправление правилаотправления сохранено. [Новая source-задача](checkpoints/2026-10-18-m3-tariff-date-source-STARTED.md):до4queries/4новыхreads, даты15/17Oct, без старогоPDF/новостимарта/route replay. verifiedThrough не расширять безproof.
+
 ## DONE — исправлено правило отправления в диагностике М1/М3
 
 Shadow больше не отвергает переход московской полуночи; тарифный профиль определяется отправлением. [Изменение и проверки](checkpoints/2026-10-18-m1-m3-departure-policy-DONE.md). Regression:до26/31,после31/31; full750/750+quote/API,TS,ESLint,cleanbuild16/16 PASS. Первичный buildcachefailure сохранён.

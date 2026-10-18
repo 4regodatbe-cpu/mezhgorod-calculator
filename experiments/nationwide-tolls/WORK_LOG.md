@@ -2365,3 +2365,8 @@ NEXT: М4 остаётсяdata-blocked до нового независимог�
 Source369df969…; durable STARTED5866364a…/tree6d65bd18…,5path/head/PR14draft readback. Final code commit безskipci; workflow settings не менялись. До следующего writer проверить фактический CI этого commit.
 
 NEXT: CI, затем только новый ограниченный source/date разборМ3 при наличии независимого официального источника. Не повторять10saved routes, М4sourcepass или старые пакеты. ПолеeffectiveFrom само по себе не продлевает verifiedThrough.
+
+
+## 2026-10-18T05:57:06.449954+00:00 — codeCI success / M3 date-source STARTED
+
+CI39101746826 verify117599261373/live_probe117599261271 completed/success; всеstepssuccess, remotePRhead65bed1ae…/draft сверены. Новый bounded M3source:4queries/4reads, безroute/replay/старыхисточников. Inputs: experiments/nationwide-tolls/checks/2026-10-18-m3-tariff-date-source/inputs.json.
