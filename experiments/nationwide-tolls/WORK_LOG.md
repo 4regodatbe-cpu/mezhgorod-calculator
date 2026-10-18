@@ -1,3 +1,7 @@
+
+## 2026-10-18 — bounded mapped-fare candidate index
+
+Read only the current handoff, CKAD tariff row names/values and the relevant product-boundary exports. The saved table contains CKAD М-11→А-107 = 119 ₽, but the reviewed handoff does not establish a separate exact boundary for a new route using that pair. Existing M-11→Егорьевское and M-11→М-12 geometry matchers are already connected. No code, fare matrix, runtime, source requests, route replay or build changed. [Checkpoint](../../docs/checkpoints/2026-10-18-mapped-fare-index-DONE.md).
 # Текущий рабочий журнал
 
 Полная прежняя история без изменения содержания: [WORK_LOG_HISTORY_2026-10-15_2228.md](WORK_LOG_HISTORY_2026-10-15_2228.md). Новые записи добавляются ниже; подробности каждого малого шага — в docs/checkpoints/.
