@@ -1,3 +1,9 @@
+## PHYSICAL DONE / OWNER STARTED — ownЦКАД→A107exit
+
+[Доказательства/одинquery/дваownerreads](checkpoints/2026-10-18-ckad-ramenskoe-physical-DONE-owner-STARTED.md):3GET200,selected29exit+12retainedprefixpointsPASS. Exactexit10832306578/886019081,connector886019063,A107119881263. NEXT: подтвердитьoperatorbillingalias;понеоднозначномуA107ценуневыбирать. Runtimeunchanged/fullunknown. Готовые3GET/41pointproofнеповторять.
+
+## Предыдущая история
+
 ## DIAGNOSIS DONE / SOURCE STARTED — точный выход ЦКАД к Раменскому
 
 [Contextreplay и3GETscope](checkpoints/2026-10-18-ckad-ramenskoe-exit-source-STARTED.md): owncurrenttracecomplete3/3,misses0,ноexitдругой:886019081→886019063→A107119881263. NEXT:3exactwayfullGET→sourceproof; billingpoint/ценыневыбиратьпоA107label. CI39132410371verify/liveобаPASS. Новыйrouting/trace0,готовыеисточникинеповторять.
