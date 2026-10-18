@@ -2751,3 +2751,14 @@ Actions39120413592 completed/success. Jobverify117654704930 completed/success: f
 p214→p58 исправление и локальные+remote codechecks завершены; полная стоимость и оставшиесяproducts по-прежнемуunknown. Новых тарифных/маршрутных проверок вPART Cнет. Main/merge/Production/Androidне тронуты.
 
 NEXT после durableсохранения: короткаяofflineинвентаризация exact gate5286168661 среди собственных savedcaptures, исключая уже проверенныйpair-m11-ckad-torzhok-to-ramenskoe; перечислить только реальныеuncheckedsiblings с уникальнымиinputSHA. Не повторять41/15 routeaudits. Еслиsiblingsнет — не создавать пустойпакет, перейти к конкретному собственному unresolvedhead58→ЦКАД. До длительногоboundedпакета отдельныйSTARTED. ВнешнийPhotonсбой не считать устранённым.
+
+
+# p214 inventory DONE / три собственных случая STARTED
+
+18.10.2026. Parent93d7175b562f119cc239160ff68f349cbc81ac06/tree66ef9d497eb54e76b3a8afc014b96faaf020a18e, PR14open/draft; PARTCсохранение подтвердилось после первоначальноустаревшегоPRreadback, rawPR/head/treeповторносовпали. Code3da74d0f CIverifyPASS, livePhotonFAIL сохранён отдельно; activejobsнет.
+
+Короткаяofflineинвентаризация364уникальных gzipcaptureSHA из experiments/nationwide-tolls (18.45s, лимит40s), ошибок0. Проверялись только exact booth osmNodeId5286168661 в собственномvalidation, не цена/маршрут/границы. Inputsmanifest и result в checks/2026-10-18-m11-p214-sibling-inventory. Четыре owncompletecaptures: готовыйРаменское плюс ещётри — pair-m4-m11-torzhok-to-krasnodar, single-m11-torzhok-to-moscow, triple-m11-ckad-m12-torzhok-to-kazan. Это364прочитанныхcapturefiles, не364проверенныхмаршрута или тарифныхслучая. Новыхисточников/запросов0.
+
+STARTED следующий boundedexceptionbatch: только три новыхcaptures, точныеpaths/SHA в checks/2026-10-18-m11-p214-three/inputs.json, два профиляThu/Sat, всего6. Лимит60s. Отдельно проверить ownstrictgeometry, exactentry, matcher/resolver, компонент1250/1390 и owncomposer сохранениеunknownполнойцены. Mockfetch запрещаетсеть; missingvalidation/missinggate отрицательныеguards. Per-caseprogress писатьпослекаждого, готовыйРаменское исключён. Не повторять41/15полныхаудитов, source3GET или61sourcepointcheck. Причина новогоcomponentcheck — новая runtimeреализацияp214, отсутствиеownexceptionresultsэтихтрёх. Тарифнаяматрица/кодне меняются.
+
+После durableSTARTED/readback выполнитьrunner и сохранитьодинDONE/FAILEDсдетальнымирезультатами. Если любойматериальныйисключительныйслучай — не присваиватьемуценуавтоматически; записатьотличие и отдельныйследующийшаг. Полныетарифыunknown, остальныеhead/CKAD/unknownpaidroadblockersнеприкрывать. Затем перейти к собственному head58→ЦКАДboundaries, еслиосталсянеизвестен. Main/merge/Production/Androidне трогать.

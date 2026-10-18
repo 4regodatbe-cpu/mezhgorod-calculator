@@ -1,0 +1,71 @@
+{
+  "status": "STARTED",
+  "codeCommit": "3da74d0f487bdc2b7d9ec4df9a2f8c3d2bb22723",
+  "cases": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/2026-10-16T01-43-51-795Z-capture.json.gz",
+      "sha256": "92790f5b131ecf57f859619ff98b272067ef469cbfb34b91efe6d9ba79e6f249",
+      "gates": [
+        {
+          "osmNodeId": "5286168661",
+          "wayId": "766468434",
+          "roadNames": [],
+          "edgeIndex": 0,
+          "edgeToll": false,
+          "beginShapeIndex": 348,
+          "endShapeIndex": 349
+        }
+      ],
+      "complete": true,
+      "boothEventCoverage": "complete",
+      "hasOwnGeometry": true
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz",
+      "sha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798",
+      "gates": [
+        {
+          "osmNodeId": "5286168661",
+          "wayId": "766468434",
+          "roadNames": [],
+          "edgeIndex": 0,
+          "edgeToll": false,
+          "beginShapeIndex": 348,
+          "endShapeIndex": 349
+        }
+      ],
+      "complete": true,
+      "boothEventCoverage": "complete",
+      "hasOwnGeometry": true
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/2026-10-16T00-34-01-248Z-capture.json.gz",
+      "sha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a",
+      "gates": [
+        {
+          "osmNodeId": "5286168661",
+          "wayId": "766468434",
+          "roadNames": [],
+          "edgeIndex": 0,
+          "edgeToll": false,
+          "beginShapeIndex": 348,
+          "endShapeIndex": 349
+        }
+      ],
+      "complete": true,
+      "boothEventCoverage": "complete",
+      "hasOwnGeometry": true
+    }
+  ],
+  "departures": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "limits": {
+    "caseCount": 3,
+    "profiles": 6,
+    "timeoutSeconds": 60,
+    "newNetworkRequests": 0
+  },
+  "skipExistingCase": "pair-m11-ckad-torzhok-to-ramenskoe"
+}

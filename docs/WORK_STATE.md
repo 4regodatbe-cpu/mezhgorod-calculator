@@ -1,3 +1,9 @@
+## INVENTORY DONE / STARTED — три собственных p214 случая
+
+[Inputs и лимиты](checkpoints/2026-10-18-m11-p214-inventory-DONE-three-STARTED.md): 364capturefiles прочитаны,4exactmatches,готовыйРаменскоеисключён. NEXT: 3owncaptures/6профилей,strictmatcher+owncomponent/unknowncheck, timeout60s,перслучайprogress. КодCIverifyPASS; livePhotonFAILотдельно. Новыхсети/полныхмаршрутныхаудитов0.
+
+## Предыдущая история
+
 ## PART C DONE — p214 codeCI PASS, внешний Photon FAIL
 
 [Remote и CI](checkpoints/2026-10-18-m11-p214-part-c-DONE.md): code3da74d0f, run39120413592 completed/success, verifyPASS; live_probeFAIL(Photon503/timeouts/budget), последующиеlivechecksSKIPPED. NEXT: короткаяofflineинвентаризация ещёнепроверенных owncaptures сexactp214gate; готовыйcase/41/15 не повторять. Полныйтарифunknown.
