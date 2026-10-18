@@ -2690,3 +2690,16 @@ Recovery: продолжить по metadata/progress, не повторять �
 ## Точный следующий шаг
 
 Короткий offline review: сопоставить p214 с retained operator документами и проверить собственное пересечение p58 и выход кЦКАД8087316064 по retained геометрии. Оставшийся gap обозначить отдельно; если нужен новый source — bounded STARTED, без повторов этих3GET. Runtime включать лишь для строгой доказанной пары, полная цена по-прежнему зависит от других компонентов. Перед сохранением сверить PR/branch/activeCI; non-force expected parent a6018ad2…, затем exact tree/blob/head readback. При сбое передачи продолжить сохранение этих файлов, не повторять source capture. Main/merge/Production/Android/автоматизации не затрагиваются.
+
+
+# М11 p214→p58 — SOURCE REVIEW DONE / IMPLEMENTATION STARTED
+
+18.10.2026. Parent b9248a5d1257d8fb2cc5e8a480c3273473421b28, local/PR head совпали; PR14 draft, последние3 Actions completed/success (code39115104478). Три GET и61точка sourceproof сохранены, не повторяются.
+
+Короткий offline review: точный gate5286168661 находится на московском въезде комплекса «ПВП Лихославль —214км», в70.56м от именованного административного здания. Операторская утверждённая Order274 таблица содержит p214/Букарево,км214. Принимается source-derived physical binding кp214 по километру, комплексу и связной направленной цепи, как для p258. Это не независимый операторский lane crosswalk или OD-чек; источник и ограничение сохраняются. Разные названия комплекса/деревни не подменяются названием города Торжок. Старый статус candidate сохраняется в source-only checkpoint.
+
+Own capture c4c60b8987cb2ff44be21df4a0359249c90b5cfb: полный selected Valhalla, entry5286168661/way766468434, paid766468433 и1205158257, strictbegin у4886068970. p58 independent anchor3243217926 проходит в32.1м; индекс963.43 после gate и до strictend1036. Другие якоря p58 в66–103м. Уже принятые120м generic p58 допуски не расширять. End южнееp58, gate8087316064 на переходе кЦКАД; retained CKAD карта подтверждает его way1270188041, но эта рамка не даёт автоматически точную headfare. Map не полностью покрывает strictend, поэтому head58→ЦКАД сохраняетсяunknown.
+
+План bounded реализации: отдельный inspectM11P214Entry с полным selected coverage/chunks, exact unique gate/way, двумя paid ways,61точкой independent corridor в25м, strictbegin25м, плотностью и направлением, p58 до strictend. Только directed p214→p58; headDetected=true,head=null. Reverse/прочиеp214/переезды и обрывочные capture не включать. Runtime physical JSON не содержит caseID/времени/цен/benchmark. Два профиля тарифицировать существующей таблицей Order274 по отправлению. Нового routing/trace/source/full routeaudit нет.
+
+До кода сохранить этот STARTED exact tree/path/head. Затем focusednegative/regression и owncomposercheck, обязательные pnpm build/audit, tsc/ESLint. Риск прерывания: каждый процесс ограничить временем, логи писать в checks/2026-10-18-m11-p214-entry/, результаты сохранять DONE/FAILED без повторов готового. Следующий блок — диагностика исключенийsiblings только после codeCI и отдельногоSTARTED; эта реализация не засчитывает непроверенныеcases. Runtime/build не выполнены этимSTARTED. Main/merge/production/Android/автоматизации не затрагиваются.

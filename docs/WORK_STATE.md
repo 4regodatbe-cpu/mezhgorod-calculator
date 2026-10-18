@@ -1,3 +1,9 @@
+## STARTED — строгая пара М11 p214→p58
+
+[Source review, scope и проверки](checkpoints/2026-10-18-m11-p214-entry-STARTED.md). Собственный въезд и p58 подтверждены; реализация ещё не выполнена. Head58→ЦКАД остаётсяunknown, полная цена не заявляется. После durable STARTED — узкий matcher, focused/fullgate/build и DONE.
+
+## Предыдущая история
+
 ## DONE SOURCE — подтверждён фактический въезд М11
 
 Три GET200, пять направленных ways;61/61 independent ordered points совпали с собственным маршрутом. Соседний комплекс214км: p214 candidate, runtime/цены без изменений. [Доказательства, ограничения и команды](checkpoints/2026-10-18-m11-entry5286168661-source-DONE.md).
