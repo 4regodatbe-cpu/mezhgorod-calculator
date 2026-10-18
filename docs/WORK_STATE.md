@@ -1,3 +1,9 @@
+## SOURCE DONE / CODE STARTED — строгий съезд М11→ЦКАД47
+
+[Proof и кодовыйscope](checkpoints/2026-10-18-m11-ckad47-exit-source-DONE-CODE-STARTED.md):4GET200,10onewayways,48orderedownpointsPASS. NEXT: exactsouthboundheadmatcher+readyreversepair200Thu/240Sat,focused/fullbuild/TS/ESLint; CKADwholeunknownсохранить. СтарыеGET/48sourcepoints/p214prefixне повторять.
+
+## Предыдущая история
+
 ## STARTED — четыре недостающих approachways съезда М11→ЦКАД47
 
 [Offlinegap/точныеinputs/лимиты](checkpoints/2026-10-18-m11-ckad47-exit-source-STARTED.md): ownРаменскоеstrictend9556466755;retainedgate8087316064/1270188041. NEXT:4exactOSMwayfullGET→sourcechainproof,per-responseprogress; безповторакарты/p214/routechecks. Headcandidate200Thu/240Sat,ценыruntimeне менялись. ПредыдущийCIverify/livePASS.

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1296 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="3566328296" visible="true" version="5" changeset="132876829" timestamp="2023-02-22T12:15:25Z" user="literan" uid="830106" lat="56.0881660" lon="37.2011668"/>
+ <node id="4697496088" visible="true" version="3" changeset="118135905" timestamp="2022-03-05T18:06:46Z" user="literan" uid="830106" lat="56.0875207" lon="37.2012970"/>
+ <node id="9556466756" visible="true" version="2" changeset="132876829" timestamp="2023-02-22T12:15:25Z" user="literan" uid="830106" lat="56.0886973" lon="37.2009194"/>
+ <node id="10685667959" visible="true" version="1" changeset="132876829" timestamp="2023-02-22T12:15:25Z" user="literan" uid="830106" lat="56.0896040" lon="37.2001427"/>
+ <node id="10685667962" visible="true" version="1" changeset="132876829" timestamp="2023-02-22T12:15:25Z" user="literan" uid="830106" lat="56.0892241" lon="37.2005653"/>
+ <node id="11793817117" visible="true" version="1" changeset="149625664" timestamp="2024-04-05T17:17:42Z" user="Vas111" uid="16951803" lat="56.0879042" lon="37.2012359"/>
+ <node id="11793817118" visible="true" version="1" changeset="149625664" timestamp="2024-04-05T17:17:42Z" user="Vas111" uid="16951803" lat="56.0889637" lon="37.2007799"/>
+ <way id="791520971" visible="true" version="6" changeset="149625664" timestamp="2024-04-05T17:17:42Z" user="Vas111" uid="16951803">
+  <nd ref="10685667959"/>
+  <nd ref="10685667962"/>
+  <nd ref="11793817118"/>
+  <nd ref="9556466756"/>
+  <nd ref="3566328296"/>
+  <nd ref="11793817117"/>
+  <nd ref="4697496088"/>
+  <tag k="destination" v="ЦКАД;Дмитровское шоссе;Ярославское шоссе"/>
+  <tag k="destination:lang:en" v="TsKAD"/>
+  <tag k="destination:ref" v="А-113"/>
+  <tag k="highway" v="motorway_link"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="50"/>
+  <tag k="name" v="Центральная кольцевая автодорога"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="А-113"/>
+  <tag k="shoulder" v="no"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="width" v="10"/>
+ </way>
+</osm>
