@@ -2370,3 +2370,8 @@ NEXT: CI, затем только новый ограниченный source/dat
 ## 2026-10-18T05:57:06.449954+00:00 — codeCI success / M3 date-source STARTED
 
 CI39101746826 verify117599261373/live_probe117599261271 completed/success; всеstepssuccess, remotePRhead65bed1ae…/draft сверены. Новый bounded M3source:4queries/4reads, безroute/replay/старыхисточников. Inputs: experiments/nationwide-tolls/checks/2026-10-18-m3-tariff-date-source/inputs.json.
+
+
+## 2026-10-18T06:00:37.438303+00:00 — М3 date source DONE/BLOCKED; ZSDsix STARTED
+
+4queries/4reads; indexedстарыецифры/news2025 неproof2026. Sourcehorizon ицены неизменны, directtrack38AJAX20021KBбезdatedrates. docs/checkpoints/2026-10-18-m3-date-source-DONE-zsd-six-STARTED.md. Следующийновыйscope:6uncheckedsiblings258ee8 exit/trace exceptioncompare, безreplay/сети/componentrerun.

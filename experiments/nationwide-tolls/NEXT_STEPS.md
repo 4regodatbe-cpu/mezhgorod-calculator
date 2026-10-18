@@ -1,3 +1,9 @@
+## DONE М3source / STARTED шесть ZSD scope exceptions
+
+CI39101746826 verify/live_probe success. Новый M3sourcepass4queries/4reads не доказалдаты15/17Oct; verifiedThrough нерасширен. [Результат и следующий пакет](../../docs/checkpoints/2026-10-18-m3-date-source-DONE-zsd-six-STARTED.md).
+
+NEXT:6явноunchecked siblings группы258ee8, только own savedcapture/trace/exit comparison с представителем; network/replay/componentrerun0. Inputs: experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/inputs.json. Per-caseprogress,одинфинальныйcheckpoint. Старыеroutebatches/M3source не повторять.
+
 ## STARTED — проверка дат тарифного источника М3
 
 CI39101746826 по65bed1ae… completed/success:verify иlive_probe прошли. Исправление правилаотправления сохранено. [Новая source-задача](../../docs/checkpoints/2026-10-18-m3-tariff-date-source-STARTED.md):до4queries/4новыхreads, даты15/17Oct, без старогоPDF/новостимарта/route replay. verifiedThrough не расширять безproof.

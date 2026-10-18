@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Observe CI for this code commit before any branch write. Then bounded source/date review for M3 Oct15/17 if a genuinely new official effective-date source is available; no repeat10saved routes, M4sourcepass, oldroutebatches or source horizon extension from PDF effectiveFrom alone.",
+  "nextAction": "After durable readback, compare only six unchecked siblings in ZSD group258ee8 with retained representative exit/trace. Inputs: experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/inputs.json; no network/fullreplay/componentrerun.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -5036,7 +5036,7 @@
       "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
       "M12 followup continuation now points past completed official-page read"
     ],
-    "nextAction": "Observe CI for this code commit before any branch write. Then bounded source/date review for M3 Oct15/17 if a genuinely new official effective-date source is available; no repeat10saved routes, M4sourcepass, oldroutebatches or source horizon extension from PDF effectiveFrom alone."
+    "nextAction": "After durable readback, compare only six unchecked siblings in ZSD group258ee8 with retained representative exit/trace. Inputs: experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/inputs.json; no network/fullreplay/componentrerun."
   },
   "postAuditDiagnosticFixes": [
     {
@@ -5049,6 +5049,15 @@
       "fullAuditPassed": 750,
       "confirmedFullFares": 0,
       "sourceDateBlockerResolved": false
+    }
+  ],
+  "postAuditSourceReviews": [
+    {
+      "code": "m3:tariff-date-source-Oct15-Oct17",
+      "outcome": "blocked_by_missing_reliable_data",
+      "checkpoint": "docs/checkpoints/2026-10-18-m3-date-source-DONE-zsd-six-STARTED.md",
+      "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m3-tariff-date-source/result.json",
+      "verifiedThroughUnchanged": true
     }
   ]
 }
