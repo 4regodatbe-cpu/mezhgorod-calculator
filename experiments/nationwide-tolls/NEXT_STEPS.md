@@ -1,3 +1,9 @@
+## Одинцово — retained DONE, primary lanes STARTED
+
+[Scope/evidence](../../docs/checkpoints/2026-10-18-odintsovo-retained-DONE-primary-STARTED.md): два known booth orders извлечены без повторного route audit; tariffbinding BLOCKED. NEXT: четыре exactway/full,≤60с/безretry,raw/progress; готовые тарифы/FAQ не искать. М11→Егорьевское codeCI39145260247 обе jobs PASS.
+
+## Предыдущая история
+
 ## PART C DONE — codeCI успешно; далее Одинцово
 
 [Проверка и bounded inputs](../../docs/checkpoints/2026-10-18-ckad-egoryevskoye-part-c-DONE-odintsovo-STARTED.md): bd811734/treeac581f87, CI39145260247 verify/live_probe success; PR14draft/localclean. М11→Егорьевское сохранён и проверен. NEXT: только retained directed PVP/tariff provenance двух Голицынo↔Рублёво; без повторного route audit/сети/источников М4/М3/ЗСД.
