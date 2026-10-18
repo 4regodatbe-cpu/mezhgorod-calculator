@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "New source only: operator collection scheme or direction/lane rule for physical545 and sections517–544/544–589, applicable to trip departure. Bound any retrieval in STARTED; do not repeat the retained403 URLs or select min/max/alias.",
+  "nextAction": "Hold M4 physical545 until an independent current operator collection scheme/receipt is available. Do not revisit six attempted URLs or old PDFs/geometry. Next bounded work: inspect saved M3 tariff verification dates/provenance to determine whether a new official effective-date source can close that separate blocker, without route replay.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2424,6 +2424,27 @@
         "evidence": "docs/checkpoints/evidence/2026-10-18-m4-545-retained-provenance.json",
         "outcome": "blocked_by_missing_reliable_data",
         "geometryAndRetainedFareTablesAlreadyReviewed": true
+      },
+      "operatorSourceReview": {
+        "atUtc": "2026-10-18T05:41:30.875493+00:00",
+        "outcome": "blocked_by_missing_reliable_data",
+        "checkpoint": "docs/checkpoints/2026-10-18-m4-545-operator-source-DONE.md",
+        "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m4-545-operator-source/result.json",
+        "historicalIndexedRuleOnly": true,
+        "currentLaneBindingConfirmed": false,
+        "attemptedSectionUrls": [
+          {
+            "url": "https://russianhighways.ru/for_drivers/m-4/pay_sites/obkhod-sel-novaya-usman-i-rogachevka-km-517-km-544_2",
+            "observedBody": "Элемент не найден!",
+            "operatorLaneRuleFound": false
+          },
+          {
+            "url": "https://russianhighways.ru/for_drivers/m-4/pay_sites/km-544-km-633-voronezhskaya-oblast",
+            "observedBody": "Элемент не найден!",
+            "operatorLaneRuleFound": false
+          }
+        ],
+        "nextAction": "Hold M4 physical545 until an independent current operator collection scheme/receipt is available. Do not revisit six attempted URLs or old PDFs/geometry. Next bounded work: inspect saved M3 tariff verification dates/provenance to determine whether a new official effective-date source can close that separate blocker, without route replay."
       }
     },
     {
@@ -5015,6 +5036,6 @@
       "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
       "M12 followup continuation now points past completed official-page read"
     ],
-    "nextAction": "New source only: operator collection scheme or direction/lane rule for physical545 and sections517–544/544–589, applicable to trip departure. Bound any retrieval in STARTED; do not repeat the retained403 URLs or select min/max/alias."
+    "nextAction": "Hold M4 physical545 until an independent current operator collection scheme/receipt is available. Do not revisit six attempted URLs or old PDFs/geometry. Next bounded work: inspect saved M3 tariff verification dates/provenance to determine whether a new official effective-date source can close that separate blocker, without route replay."
   }
 }

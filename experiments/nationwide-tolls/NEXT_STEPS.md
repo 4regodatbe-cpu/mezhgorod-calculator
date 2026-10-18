@@ -1,3 +1,11 @@
+## DONE — новыйsourcepass М4-545, привязкаBLOCKED
+
+Найден исторический operatorтекст о1/2участках; directoperator403, обе точныеownersectionpages «Элемент не найден». Текущаяполоса/тарифныйохват не доказаны; новыхцен0. [Отчёт](../../docs/checkpoints/2026-10-18-m4-545-operator-source-DONE.md).4queries/6reads в2durablebounded проходах; безrouting/replay.
+
+NEXT: М4 удерживать до нового независимогоoperatorproof, этотsourcepass/старыеPDF/геометрию не повторять. Перейти к savedprovenance дат тарифовМ3; перед новойсетью отдельныйboundedSTARTED.
+
+## Предыдущая история
+
 ## DONE discovery / STARTED — две связанные страницы М4-545
 
 4queries/4reads завершены:3operator403,ownerindex200. Найден исторический текст о раздельной/совместной оплате и две точные новые ссылки517–544/544–633. ПривязкаBLOCKED, новых цен0. [Следующий bounded проход](../../docs/checkpoints/2026-10-18-m4-545-source-discovery-DONE-linked-sections-STARTED.md):2sectionpages+до2linked schemes,0searchqueries.
