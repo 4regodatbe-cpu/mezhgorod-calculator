@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Hold M4 physical545 until an independent current operator collection scheme/receipt is available. Do not revisit six attempted URLs or old PDFs/geometry. Next bounded work: inspect saved M3 tariff verification dates/provenance to determine whether a new official effective-date source can close that separate blocker, without route replay.",
+  "nextAction": "Observe CI for this code commit before any branch write. Then bounded source/date review for M3 Oct15/17 if a genuinely new official effective-date source is available; no repeat10saved routes, M4sourcepass, oldroutebatches or source horizon extension from PDF effectiveFrom alone.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -5036,6 +5036,19 @@
       "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
       "M12 followup continuation now points past completed official-page read"
     ],
-    "nextAction": "Hold M4 physical545 until an independent current operator collection scheme/receipt is available. Do not revisit six attempted URLs or old PDFs/geometry. Next bounded work: inspect saved M3 tariff verification dates/provenance to determine whether a new official effective-date source can close that separate blocker, without route replay."
-  }
+    "nextAction": "Observe CI for this code commit before any branch write. Then bounded source/date review for M3 Oct15/17 if a genuinely new official effective-date source is available; no repeat10saved routes, M4sourcepass, oldroutebatches or source horizon extension from PDF effectiveFrom alone."
+  },
+  "postAuditDiagnosticFixes": [
+    {
+      "code": "m1-m3:shadow-midnight-departure-policy",
+      "outcome": "fixed_and_verified",
+      "checkpoint": "docs/checkpoints/2026-10-18-m1-m3-departure-policy-DONE.md",
+      "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/result.json",
+      "runtimeScope": "diagnostic shadow only",
+      "focusedPassed": 31,
+      "fullAuditPassed": 750,
+      "confirmedFullFares": 0,
+      "sourceDateBlockerResolved": false
+    }
+  ]
 }
