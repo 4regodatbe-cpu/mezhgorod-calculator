@@ -1,3 +1,7 @@
+## STARTED — точный въезд ЗСД и тариф Шкиперской развязки
+
+Найдены3новыхPDFlinks вretainedownerindex. [План](../../docs/checkpoints/2026-10-18-zsd-shkipersky-source-STARTED.md):3ownerPDF+1exactOSMway,0queries/route/replay. СперваразличитьфактическийвъездМакарова/Шкиперский,неприсваиватьразвязочныйтарифпоlabel.
+
 ## DONE — очередь ZSD sibling boundary checks закрыта
 
 Вэтойсессии20новыхownsavedboundarychecks(7+13); вместе сготовымипредставителями группы8/8,5/5,4/4,7/7. Finalmaterialexceptions0/errors0. [Результат](../../docs/checkpoints/2026-10-18-zsd-remaining-thirteen-DONE.md). Увъезднойрамки13020687195toll=falseподход ивrepresentative,ив6siblings;initialtoll=trueassumption/correction сохранены,плата/бесплатностьневыводятся.

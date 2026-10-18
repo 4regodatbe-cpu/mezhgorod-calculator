@@ -2437,3 +2437,8 @@ Missingworkingtreecaptures восстановлены толькоизсущес
 STARTEDd28d6629…/tree06f5a119…,17path/head/PR14draft readbackPASS. Методselectedgeometry/trace следуетexistingreview-zsd-remaining-scopes.py; trace-outputshapeindices не используютсядляselectedinputcoordinates.
 
 NEXT: нерасширятьrouteaudit. Следующийнезависимыйпробел —operatorrule/datedreceipt по въездуМакарова/Шкиперскийчерезрамку13020687195 ивыходуКАД-югчерез933975069. Передновымsourcepass boundedSTARTED сточнымnewsource; общие300₽/зона,наличиерамкиилиtolltag не выбиратькакцену. М3date/M4physical545 удерживатьBLOCKEDбезновогонезависимогоисточника.
+
+
+## 2026-10-18T06:23:04.436340+00:00 — STARTED exactZSDinterchange source
+
+Sourcefb097de6…/PR14draft/emptyruns проверены. Вretainedindex найдены95-1/pr47/pr8-1,ещёнечитались. Бюджет3PDF+1exactOSMway,max20с/12MB,parallel2. Inputs:experiments/nationwide-tolls/checks/2026-10-18-zsd-shkipersky-source/inputs.json. Existingroutebatch не повторять; actualinterchangeidentity отдельноотbillingproof.
