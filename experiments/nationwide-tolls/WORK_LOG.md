@@ -2343,3 +2343,8 @@ Raw weboutputs сохранены как gzipJSON с SHA256. Всё относи
 **Итог:** нет операторского соответствия physicalnode5818209495/way615270691 тарифному охвату517–544/544–589 на дату поездки. Суммы3060/3620 и2920/3460 остаются неприменёнными вариантами. Runtime/матрица не менялись, новыеroute/replay/pricedcomponents/fullfares0. Тесты/сборка не требовались для этой source-only единицы и не запускались. Проверены JSON/gzip/hash/diff и ссылки отчёта; последний codeCI39071021984 success относится к своему head.
 
 NEXT: М4 остаётсяdata-blocked до нового независимого operatorcollectionproof. Не повторять этотsourcepass или старуюгеометрию/22маршрута. Следующая отдельная причина — датировка сохранённых тарифовМ3; сначала только savedprovenance, затем boundedSTARTED перед новым primarysource.
+
+
+## 2026-10-18T05:43:04.560076+00:00 — STARTED M1/M3 shadow departure-policy bug
+
+Конкретноеотличие: сохранённыйshadow сравниваетdate/profile конца, конфликт с15Octproductrule. Inputs: experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/inputs.json. Толькоmidnightdiagnosticguard; farehorizon/physicalproof/customerpricing безизменения. Требуютсяfocused/fullgate, сеть0.

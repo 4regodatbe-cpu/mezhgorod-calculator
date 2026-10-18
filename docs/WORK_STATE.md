@@ -1,3 +1,7 @@
+## STARTED — исправление даты диагностического тарифаМ1/М3
+
+Обнаруженcodebug: shadow отвергаетпереходполуночи вопрекиправилуотправления. [План](checkpoints/2026-10-18-m1-m3-departure-policy-STARTED.md). Срокверификацииисточника нерасширять, никакогоcustomerpricecutover. Проверитьрегрессии+fullgateофлайн.
+
 ## DONE — новыйsourcepass М4-545, привязкаBLOCKED
 
 Найден исторический operatorтекст о1/2участках; directoperator403, обе точныеownersectionpages «Элемент не найден». Текущаяполоса/тарифныйохват не доказаны; новыхцен0. [Отчёт](checkpoints/2026-10-18-m4-545-operator-source-DONE.md).4queries/6reads в2durablebounded проходах; безrouting/replay.
