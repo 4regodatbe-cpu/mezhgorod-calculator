@@ -1,3 +1,9 @@
+## OWNER PASS1 NOT_PROVEN / PASS2 STARTED — настоящийdomainsfilter
+
+[Результат и лимит2queries/2newownerreads](checkpoints/2026-10-18-ckad-ramenskoe-owner-pass1-DONE-pass2-STARTED.md): physicalexitдоказан;siteORпоискне далownerhits,tskad502/avtodor403,безобхода/повторов. NEXT:2domain-filteredofficialqueries;неподставлятьbillingpointпоA107. Runtime/priceunchanged,fullunknown. Готовые3GET/41pointsнеповторять.
+
+## Предыдущая история
+
 ## PHYSICAL DONE / OWNER STARTED — ownЦКАД→A107exit
 
 [Доказательства/одинquery/дваownerreads](checkpoints/2026-10-18-ckad-ramenskoe-physical-DONE-owner-STARTED.md):3GET200,selected29exit+12retainedprefixpointsPASS. Exactexit10832306578/886019081,connector886019063,A107119881263. NEXT: подтвердитьoperatorbillingalias;понеоднозначномуA107ценуневыбирать. Runtimeunchanged/fullunknown. Готовые3GET/41pointproofнеповторять.
