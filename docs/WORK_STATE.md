@@ -1,3 +1,7 @@
+## STARTED — официальный источник о взимании на М4-545
+
+До4queries/4новых primary reads, directGET15с/max-time20с. Старые403/PDF/OSM/route batches не повторять. [План](checkpoints/2026-10-18-m4-545-operator-source-STARTED.md).
+
 ## DONE — М4-545: повтор geometry/PDF не требуется
 
 Сохранённые источники исчерпаны: точная полоса доказана, операторское соответствие двум тарифным вариантам нет. Проверены4objectSHA+2PDFSHA; новых сетевых запросов/расчётов/цен0. [Пробел и источники](checkpoints/2026-10-18-m4-545-retained-provenance-DONE.md).
