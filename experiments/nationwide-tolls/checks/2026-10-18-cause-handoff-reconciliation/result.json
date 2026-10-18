@@ -1,0 +1,242 @@
+{
+  "atUtc": "2026-10-18T02:59:25.665840+00:00",
+  "sourceHead": "878ef70a5f69a1de431ea34f91f7372d503a72ee",
+  "sourceTree": "fdcb3479b95f67e4c8ad6e7549046b736d0d49b1",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "prDraft": true,
+  "sourceHeadWorkflowRuns": [],
+  "lastCodeCI": {
+    "head": "a9ad472218b15fc2952304b1fa5d70670ce929a1",
+    "runId": 39071021984,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "baselineFindingRecordCounts": {
+    "not_reproduced": 1,
+    "fixed_and_verified": 1,
+    "blocked_by_missing_reliable_data": 8,
+    "deferred": 3
+  },
+  "countsAreNotUniqueRouteCounts": true,
+  "historicalPlanParts19and20": "already done; no new final-plan rerun needed",
+  "rows": [
+    {
+      "code": "m4_crossing_profile_changes",
+      "baselineCaseCount": 25,
+      "canonicalOutcome": "not_reproduced",
+      "canonicalOutcomeRationale": "Saved captures and replay evidence show current trip-departure policy already handles the observed crossings; no current-engine defect reproduced."
+    },
+    {
+      "code": "a289:unpriced",
+      "baselineCaseCount": 59,
+      "canonicalOutcome": "fixed_and_verified",
+      "canonicalOutcomeRationale": "The A-289 component-binding cause was resolved in the recorded fixes and validation checkpoints. Scope is limited: 57 helper-only recoveries plus 2 whole-engine cases; this does not mean 59 confirmed whole-route totals or operator fares."
+    },
+    {
+      "code": "zsd:unpriced",
+      "baselineCaseCount": 76,
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "The selected route evidence does not establish the operator collection span needed to bind a tariff. Keep amount unknown/null."
+    },
+    {
+      "code": "m4:unpriced",
+      "baselineCaseCount": 22,
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Saved evaluations include operator-unconfirmed whole-route estimates and unbound physical/short-route scopes. Do not infer a tariff or zero."
+    },
+    {
+      "code": "m11_partial_head_entry_boundary_unresolved",
+      "baselineCaseCount": 8,
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Eight saved boundary cases, including the four queued cases, share an unresolved directed M11 entry/payment boundary. No material exception or confirmed tariff is established."
+    },
+    {
+      "code": "arc_not_proven",
+      "baselineCaseCount": 34,
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Saved route evidence does not prove the precise chargeable CKAD east-arc scope for every case; preserve null amounts."
+    },
+    {
+      "code": "unknown-paid-road:unpriced",
+      "baselineCaseCount": 64,
+      "canonicalOutcome": "deferred",
+      "canonicalOutcomeRationale": "This is an overlapping aggregate symptom across distinct toll products and findings, not one independently actionable cause; keep separate causes intact."
+    },
+    {
+      "code": "expected-road-not-proven",
+      "baselineCaseCount": 64,
+      "canonicalOutcome": "deferred",
+      "canonicalOutcomeRationale": "The label aggregates unrelated route-road discrepancies; a missing expected-road label alone does not show the fastest selected route crossed a chargeable segment."
+    },
+    {
+      "code": "m11-58-679:unpriced",
+      "baselineCaseCount": 41,
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "The 41-case review found the same source-gated M11 facility-sequence gap; authoritative facility coordinates needed to bind the 58–679 pair are absent. Keep unknown/null."
+    },
+    {
+      "code": "m11_58_679_facility_sequence_incomplete",
+      "baselineCaseCount": 15,
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "All 15 saved cases reproduce the same incomplete spatial facility sequence in weekday/weekend profiles; no material exception or code defect was established."
+    },
+    {
+      "code": "engine_not_yet_composed",
+      "baselineCaseCount": 13,
+      "canonicalOutcome": "deferred",
+      "canonicalOutcomeRationale": "This is a mixed historical aggregate: the M3 subcause is data-blocked and M1 rows overlap distinct route-scope findings; do not treat the parent as a single engine defect."
+    },
+    {
+      "code": "m12_current_operator_pair_not_bound",
+      "baselineCaseCount": 4,
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Four cases consistently lack a safely bound operator chargeable entry/exit pair; the available spatial anchors are partial. Keep amounts null."
+    },
+    {
+      "code": "odintsovo:unpriced",
+      "baselineCaseCount": 2,
+      "canonicalOutcome": "blocked_by_missing_reliable_data",
+      "canonicalOutcomeRationale": "Both routes prove bypass traversal, but the exact directed PVP tariff vector is unbound and other toll components remain unresolved; no full total is supported."
+    }
+  ],
+  "referenceChecks": [
+    {
+      "finding": "a289:unpriced",
+      "field": "evidence",
+      "path": "docs/checkpoints/evidence/2026-10-16-part19-a289-impact.json",
+      "sha256": "64d5b233deb43957a7a9bc6be8b65b3c91e8f70c77f38886b1f1dd518771c544"
+    },
+    {
+      "finding": "zsd:unpriced",
+      "field": "evidence",
+      "path": "docs/checkpoints/2026-10-16-zsd-classification-76-cases.md",
+      "sha256": "34495d92b79ce06440a1bad68b8b8c8eddd3269040ed596ba3e5d2fdee22c0ea"
+    },
+    {
+      "finding": "m4:unpriced",
+      "field": "classificationCheckpoint",
+      "path": "docs/checkpoints/2026-10-16-part19-m4-unpriced-classification.md",
+      "sha256": "a3008148454542818bfb6145ff4b05d926ec2de3b87c904b0e1908dc0bc12229"
+    },
+    {
+      "finding": "m4:unpriced",
+      "field": "classificationEvidence",
+      "path": "docs/checkpoints/evidence/2026-10-16-m4-22-case-classification.json",
+      "sha256": "055a34958ee48a1aed440475dbb729ce1fa25619554fd459b582ff7cde240fc7"
+    },
+    {
+      "finding": "m11_partial_head_entry_boundary_unresolved",
+      "field": "lastReviewCheckpoint",
+      "path": "docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md",
+      "sha256": "9d3c3fdff863df9f8c4fbf6643384769644831bbb5cee1f9b94259bfad35e812"
+    },
+    {
+      "finding": "arc_not_proven",
+      "field": "checkpoint",
+      "path": "docs/checkpoints/2026-10-17-0632-part19-arc-not-proven-blocked.md",
+      "sha256": "e61672837570d7c20d93c5a1935816c2e4789d13131811bda3b688b95738d452"
+    },
+    {
+      "finding": "unknown-paid-road:unpriced",
+      "field": "reviewEvidence",
+      "path": "docs/checkpoints/evidence/2026-10-17-part19-unknown-paid-road-aggregate-deferred.json",
+      "sha256": "9f2f7c2313328ad842e2220486bc72dc1915d9c84967e089f58a3a6395c29b03"
+    },
+    {
+      "finding": "expected-road-not-proven",
+      "field": "checkpoint",
+      "path": "docs/checkpoints/2026-10-17-0735-part19-expected-road-not-proven-deferred.md",
+      "sha256": "901463c347bfd6f5e71b41c36e9c0d3c92aeb0ab163b8fbc5e298f11d4673fb6"
+    },
+    {
+      "finding": "expected-road-not-proven",
+      "field": "reviewEvidence",
+      "path": "docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json",
+      "sha256": "0d8aba83cfcd970f54797dab0d4a846cf3cc3e0c61bcd0d30bbfea1d0669ef30"
+    },
+    {
+      "finding": "m11-58-679:unpriced",
+      "field": "checkpoint",
+      "path": "docs/checkpoints/2026-10-17-part19-m11-58-679-blocked.md",
+      "sha256": "70fad6c141474ea23103a381c14ccd4824acba435a88b0a58b8b5b57e5d86aa9"
+    },
+    {
+      "finding": "m11-58-679:unpriced",
+      "field": "reviewEvidence",
+      "path": "docs/checkpoints/evidence/2026-10-17-part19-m11-58-679-blocked.json",
+      "sha256": "37eba47a1533e9aa13ae5ffc34c2092bfdbe166ea5372d18557eeecf3f02c914"
+    },
+    {
+      "finding": "m11_58_679_facility_sequence_incomplete",
+      "field": "checkpoint",
+      "path": "docs/checkpoints/2026-10-17-part19-m11-facility-sequence-blocked.md",
+      "sha256": "88fdcd5bba1cf76e27a067b3568ff0a7661460e5f5eaa06d3af759921fe501af"
+    },
+    {
+      "finding": "m11_58_679_facility_sequence_incomplete",
+      "field": "reviewEvidence",
+      "path": "docs/checkpoints/evidence/2026-10-17-part19-m11-facility-sequence-blocked.json",
+      "sha256": "43599489cd94dc05a3cc4428162e766d45bb340cbe58a6363add25466d20373e"
+    },
+    {
+      "finding": "engine_not_yet_composed",
+      "field": "checkpoint",
+      "path": "docs/checkpoints/2026-10-17-part19-engine-not-yet-composed-review.md",
+      "sha256": "d470b1b726be09d5443478632eabc4cf9ac7524ff939bb056d6d9acf1a0f39d0"
+    },
+    {
+      "finding": "engine_not_yet_composed",
+      "field": "reviewEvidence",
+      "path": "docs/checkpoints/evidence/2026-10-17-part19-engine-not-yet-composed-review.json",
+      "sha256": "a3378b56f9d5ad57193f2489d114c4c4abc0ca33fe740a14d2f7abfad810d78f"
+    },
+    {
+      "finding": "m12_current_operator_pair_not_bound",
+      "field": "evidence",
+      "path": "docs/checkpoints/evidence/2026-10-17-part19-m12-operator-pair-blocked.json",
+      "sha256": "a2ac29fa48c371d99148543f1d45204f7fab8cf4481e07d2bd2a19b01bf82fef"
+    },
+    {
+      "finding": "m12_current_operator_pair_not_bound",
+      "field": "checkpoint",
+      "path": "docs/checkpoints/2026-10-17-0841-part19-m12-operator-pair-blocked.md",
+      "sha256": "ea7a1bfe2e967fe94279829aeca125463ee55f784cf8b66292bc9491d0398fcb"
+    },
+    {
+      "finding": "odintsovo:unpriced",
+      "field": "reviewEvidence",
+      "path": "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json",
+      "sha256": "7286274fa0c053162101bb36adc4559fa73bba5398d328f4e9405e7fe297ed0f"
+    }
+  ],
+  "repairs": [
+    "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
+    "M12 followup continuation now points past completed official-page read"
+  ],
+  "laterWork": {
+    "zsd": "Baseline finding blocked does not erase later component fixes. Saved76 assessment:26 component-priced,50unknown;6replacement geometries have separate own traces. These cohorts overlap; do not add them.",
+    "geometryReentry": "fixed_and_verified, six own replacement geometries; not all-road reentry proof",
+    "postAuditPricingFollowups": {
+      "fixed_and_verified": 2,
+      "blocked": 1
+    },
+    "m12": "Both own target trips retain partial subtotal5475; CKAD981 component fixed, M12 operator pair blocked, full amountnull",
+    "m3": "Subcause under deferred aggregate remains blocked by verified fare date and ordered spatial gates"
+  },
+  "newRouteRuns": 0,
+  "newReplays": 0,
+  "newPricedComponents": 0,
+  "newConfirmedFullFares": 0,
+  "runtimeChanges": 0,
+  "checks": [
+    "JSON parsed",
+    "13 canonical outcomes preserved",
+    "all selected source references exist and hashed",
+    "Odintsovo text exactly equals committed checkpoint",
+    "Parts19/20 already done",
+    "source branch/PR/draft verified",
+    "source code CI success observed"
+  ],
+  "nextAction": "M4 physical545: inspect only the retained 1223→545-a/545-b tariff-span provenance and source documents to specify the missing boundary identity; no repeat22 routes or live routing. A new network review requires a bounded STARTED and a precise independent source. If retained evidence already exhausts that question, preserve BLOCKED and state the exact missing operator evidence."
+}

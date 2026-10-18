@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Leave M12 binding blocked; reconcile remaining assessed causes from saved PART19 queue and determine final verification scope, without another western-M12 crawl absent a new reliable source.",
+  "nextAction": "M4 physical545: inspect only the retained 1223→545-a/545-b tariff-span provenance and source documents to specify the missing boundary identity; no repeat22 routes or live routing. A new network review requires a bounded STARTED and a precise independent source. If retained evidence already exhausts that question, preserve BLOCKED and state the exact missing operator evidence.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -3510,7 +3510,7 @@
       "newRouteRuns": 0,
       "newReplays": 0,
       "reviewedAtUtc": "2026-10-17T07:41:10Z",
-      "checkpoint": "# Part 19 — Odintsovo unpriced finding\n\n- Status: DONE for this bounded cause review; outcome **blocked by missing reliable data**. Reviewed 2026-10-17 10:41 МСК (2026-10-17T07:41:10Z).\n- Branch/PR: `fix/v3-missing-route-prices-2026-10-15`, PR14 open/draft. Source head/tree: `bdf620e441d2cbe287a348bd388d28e188106341` / `2deefbad4cf1b3038576cabbbe77745643f2a818`.\n- Pre-review check: branch run #39010035622 completed/success on source head; PR head matched branch; no active branch writer.\n\n## Finding and user impact\n\nReviewed `odintsovo:unpriced`, baseline **2 route cases**: `single-odintsovo-golitsyno-to-rublevo` and `single-odintsovo-rublevo-to-golitsyno`. The saved selected-route traces prove Northern Odintsovo Bypass traversal on both routes. These two cases are also listed under `engine_not_yet_composed`; neither is in `expected-road-not-proven`.\n\nThe six saved evidence artifacts cover weekday live, same-date replay and weekend replay for each route. Both route traces are complete; same-date parity is true. The road-specific amounts remain null in all six artifacts. Each route also has unresolved M-1 and `unknown-paid-road` components, so the complete toll total remains unknown.\n\nThe operator's category-I base-fare table exists as a current candidate source, with direction and time bands. The product registry still marks the directed route boundary pair “to audit”, and `TARIFF_SELECTION_REPORT.json` says integration is pending and `runtimeApproved=false`. Although the evidence records named toll-booth nodes, it does not bind either selected route to a verified directed PVP vector.\n\n**Outcome: blocked by missing reliable route-to-PVP evidence.** This does not justify a fare correction. The calculator keeps the total unknown/null rather than showing an unsupported amount or zero. No code or tariff value was changed.\n\n## Checks and limits\n\n- Reviewed 2 route cases, 4 unique route/date profiles, 6 saved evidence occurrences; all 6 files were present, with blob SHAs in [evidence](evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json).\n- No new live route runs, replays, tests, builds, tariff confirmation, or full quote.\n- Formal plan remains 18/20 = 90%; Part 19 remains IN_PROGRESS pending synthesis/status reconciliation; Part 20 remains PLANNED.\n\n## Next step\n\nAfter post-save CI completes, reconcile the 13 Part 19 finding records and their canonical outcomes in the queue; then perform Part 20's required verification and handoff. Do not infer tariff confirmation from the saved candidate table.\n",
+      "checkpoint": "docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md",
       "reviewEvidence": "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json",
       "statusHistory": [
         {
@@ -3522,7 +3522,13 @@
         }
       ],
       "canonicalOutcome": "blocked_by_missing_reliable_data",
-      "canonicalOutcomeRationale": "Both routes prove bypass traversal, but the exact directed PVP tariff vector is unbound and other toll components remain unresolved; no full total is supported."
+      "canonicalOutcomeRationale": "Both routes prove bypass traversal, but the exact directed PVP tariff vector is unbound and other toll components remain unresolved; no full total is supported.",
+      "checkpointFieldRepair": {
+        "atUtc": "2026-10-18T02:59:25.665840+00:00",
+        "previousValueKind": "entire checkpoint text instead of path",
+        "previousValueSha256": "0ddc54a126575336e774e0dbe508579119d231e06423484d97c338e1c22fc6e5",
+        "exactOriginalPreservedAt": "docs/checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md"
+      }
     }
   ],
   "shortM4ProofReview": {
@@ -4793,6 +4799,12 @@
           "newTraceRequests": 0,
           "newPricedComponents": 0,
           "confirmedFullTripFares": 0
+        },
+        {
+          "atUtc": "2026-10-18T02:59:25.665840+00:00",
+          "kind": "continuation_pointer_repair",
+          "previousNextAction": "Do not repeat nine OSM objects or the same searches. New observed source only: https://russianhighways.ru/for_drivers/m-12-vostok/ (linked from retained official AJAX fragment, not yet fetched). One bounded source-specific review may reopen binding; if it gives no reliable crosswalk retain BLOCKED and move to other assessed causes.",
+          "reason": "The linked official page was fetched and reviewed in878ef70a; do not repeat it."
         }
       ],
       "causeReviewStatus": "blocked_missing_reliable_data",
@@ -4862,7 +4874,7 @@
         "eslint": "PASS",
         "build": "PASS16/16"
       },
-      "nextAction": "Do not repeat nine OSM objects or the same searches. New observed source only: https://russianhighways.ru/for_drivers/m-12-vostok/ (linked from retained official AJAX fragment, not yet fetched). One bounded source-specific review may reopen binding; if it gives no reliable crosswalk retain BLOCKED and move to other assessed causes.",
+      "nextAction": "BLOCKED after official page review878ef70a. Reopen only with independent physical-object/operator-boundary crosswalk; no repeated page, nine OSM objects, searches or route batches.",
       "preSaveCi": {
         "runId": 39054871192,
         "status": "completed",
@@ -4904,7 +4916,8 @@
         "supplementalLinkedOperatorDataReads": 2,
         "extensionReason": "Saved official HTML exposed one exact M12 gettrack link. First GET redirected to a generic HTML shell; one corrected AJAX-header request returned the M12 info fragment. This is a bounded source-specific extension, not another search or repeated OSM capture.",
         "nextObservedOfficialLink": "https://russianhighways.ru/for_drivers/m-12-vostok/"
-      }
+      },
+      "latestOfficialPageReview": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-official-page/result.json"
     },
     {
       "code": "ckad:selected-osrm-m11-m12-boundary",
@@ -4980,5 +4993,21 @@
       "Initial bs4 import failed before network; stdlib fallback used, no duplicate GET."
     ],
     "next": "Leave M12 binding blocked; reconcile remaining assessed causes from saved PART19 queue and determine final verification scope, without another western-M12 crawl absent a new reliable source."
+  },
+  "currentContinuationReview": {
+    "atUtc": "2026-10-18T02:59:25.665840+00:00",
+    "sourceHead": "878ef70a5f69a1de431ea34f91f7372d503a72ee",
+    "baselineFindingRecordCounts": {
+      "not_reproduced": 1,
+      "fixed_and_verified": 1,
+      "blocked_by_missing_reliable_data": 8,
+      "deferred": 3
+    },
+    "historicalPlanParts19and20": "already done; no new final-plan rerun needed",
+    "repairs": [
+      "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
+      "M12 followup continuation now points past completed official-page read"
+    ],
+    "nextAction": "M4 physical545: inspect only the retained 1223→545-a/545-b tariff-span provenance and source documents to specify the missing boundary identity; no repeat22 routes or live routing. A new network review requires a bounded STARTED and a precise independent source. If retained evidence already exhausts that question, preserve BLOCKED and state the exact missing operator evidence."
   }
 }
