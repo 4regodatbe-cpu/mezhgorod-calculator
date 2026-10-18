@@ -5,6 +5,7 @@ import type {M11RoadEvidence} from '../toll-engine/m11-road-evidence';
 import validity from '@/experiments/nationwide-tolls/engine/fare-validity.cjs';
 import {inspectM11MmkHeadBoundary} from './m11-mmk-head-boundary';
 import {inspectM11P258Exit} from './m11-p258-exit-boundary';
+import {inspectM11CkadHeadEntry} from './m11-ckad-head-entry';
 import type {TollValidation} from '../toll-validator';
 
 /** Each product has its own outer boundaries. A CKAD entry need not cross
@@ -39,6 +40,8 @@ export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSec
  const mmkResolved=partialHead && strictGeometry && mmk.boundaryStatus==='resolved' && mmk.gateIndex!==null
   && (north && mmk.from==='mmk_a107' && mmk.gateIndex<p58.index
    || south && mmk.to==='mmk_a107' && mmk.gateIndex>p58.index);
+ const ckad=inspectM11CkadHeadEntry(route,validation);
+ const ckadResolved=partialHead&&strictGeometry&&north&&ckad.resolved&&ckad.gateIndex!==null&&ckad.gateIndex<p58.index;
  const timeResolved=validity.validInstant(departureAt) && Number.isFinite(routeSeconds) && routeSeconds>0;
  if(!geometryResolved && timeResolved && inspectM11P258Exit(route,evidence,validation))return {
   candidate:true,headDetected:false,resolved:true as const,reason:'m11_p679_p258_directed_paid_exit_proved',parts:{
@@ -58,7 +61,7 @@ export function resolveM11ProductBoundaries(route:readonly Coordinate[],routeSec
   reason:fullHead?'m11_direct_outer_boundaries_with_final_payment_clock':'m11_mainline_outer_pair_independent_of_head_entry',parts:{
    from:north?'p58':'p679',to:north?'p679':'p58',departureAt,mainlineAt:paymentAt.toISOString(),
    mainlineWindowSeconds:paymentWindowSeconds,headDetected,
-   head:fullHead||mmkResolved?{from:fullHead?(north?'moscow':'solnechnogorsk'):mmk.from!,to:fullHead?(north?'solnechnogorsk':'moscow'):mmk.to!,
+   head:fullHead||mmkResolved||ckadResolved?{from:fullHead?(north?'moscow':'solnechnogorsk'):ckadResolved?'tskad':mmk.from!,to:fullHead?(north?'solnechnogorsk':'moscow'):ckadResolved?'solnechnogorsk':mmk.to!,
     paymentAt:paymentAt.toISOString(),paymentWindowSeconds,
     timeBasis:north?'adjacent_sections_common_final_p679_exit':mmkResolved?'mmk_north_physical_final_payment_plaza':'moscow_pvp21_exit_within_p58_to_moscow_window'}:null,
   }};

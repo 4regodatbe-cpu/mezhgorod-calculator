@@ -1,3 +1,11 @@
+## DONE — М11: северный въезд ЦКАД47 исправлен
+
+Один собственный target: head280₽будни/320₽суббота, новыхкомпонентов1, fulltripunknown из-заЦКАД/ЗСД. [Изменение, sourceproof, проверки и ограничения](checkpoints/2026-10-18-m11-ckad47-implementation-DONE.md). Focused20/20, audit757/757+quote/API,TS,ESLint,Next16/16PASS; ошибкиlocalfixture/dependency сохранены.
+
+**NEXT:** после exactremotehead/tree/pathreadback проверить codeCI; затем boundedпакет7siblings owncapturedentrychecks сновымSTARTED. Семьне засчитаны этимпримером; маршруты/sourcepass не повторять. Ветка/PR14draft; никакихавтоматизаций/merge/Production/Android.
+
+## Предыдущая история
+
 ## DONE SOURCE / STARTED CODE — въезд ЦКАД47→М11
 
 Новая первичная привязка gate8087316065 / ПВП18, четыреonewayсегмента и семь orderedanchors подтверждены наодном собственном маршруте. [Source proof и узкая интеграция](checkpoints/2026-10-18-m11-ckad47-source-DONE-implementation-STARTED.md). ТриGET200,безrouting/replay. Следующийшаг: strict northboundmatcher+готоваяпараtskad→solnechnogorsk,focused/fullgate/build. Runtimeпока unchanged,новыхpricedcomponents0. Остальные8случаевне засчитывать автоматически.
