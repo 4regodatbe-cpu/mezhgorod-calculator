@@ -1,3 +1,9 @@
+## STARTED — новая политика: Одинцово базовые650 ₽ в любое время
+
+[Решение пользователя и scope](../../docs/checkpoints/2026-10-18-odintsovo-planning-base-650-STARTED.md). Ночь/пик не прогнозируются; runtime calendar2026 и блок00–01 для этой пары убрать, готовый ordinary vector650 использовать как плановую базу. Числа матрицы сохранить. Source dbd1b81c/tree d3dc45f3, CI39154472440success, fresh cloneclean. NEXT: minimal code+focused/fullbuild, DONE/remote/readback.
+
+## Предыдущая история
+
 ## DONE — подключён тариф пары Одинцово; новый CI pending
 
 [Код, результаты и ограничения](../../docs/checkpoints/2026-10-18-odintsovo-fare-PART-B-DONE.md). Два маршрута / 10 профилей: компонент 650/700/20 ₽ из прежней матрицы. Reverse API ready650, trace503→unknown; forward whole amount null из-за ЦКАД. Оценки unconfirmed, подтверждённых полных тарифов0. Focused14/14, full802/802+quote/API, Next16/16, TS/ESLint/diff PASS; initial ошибки тестового API-ожидания и TS сохранены. Календарь source-derived2026; 00–01 и другие годы unknown. NEXT после remote/newCI: точная рамка ЦКАД12443433262/1080462753 и операторский продукт, сначала сохранённые данные. PR14draft.
