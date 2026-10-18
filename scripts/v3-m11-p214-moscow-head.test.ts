@@ -45,7 +45,7 @@ test('one selected strict span must cover p58 and continue beyond exact gate to 
  {...evidence,strictBlocks:[{...evidence.strictBlocks[0],endCoordinate:route[1250]}]},
  {...evidence,strictBlocks:[{...evidence.strictBlocks[0],endCoordinate:[0,0] as Coordinate}]}])assert.equal(inspect(route,validation,e),false);
 });
-test('own partial mainline composes only the directed reverse head pair at departure and keeps unknown total',async()=>{
+test('own partial mainline composes only the directed reverse head pair at departure and returns a complete unconfirmed estimate when every product is identified',async()=>{
  const old=globalThis.fetch;let attempts=0;globalThis.fetch=async()=>{attempts++;throw Error('offline head test');};
  try{
   for(const [at,head,mainline] of [['2026-10-15T09:00:00+03:00',1130,1250],['2026-10-15T23:59:00+03:00',1130,1250],
@@ -56,7 +56,7 @@ test('own partial mainline composes only the directed reverse head pair at depar
    assert.equal(m?.components.find(c=>c.id==='m11-15-58')?.tolls?.amount,head);assert.equal(m?.tolls?.amount,head+mainline);
    const q=await calculateLegTolls({routeGeometry:route,routeSeconds:r.route.seconds,departureAt:at,selectedFastProvider:r.provider,selectedFastRoute:r.route,valhallaEvidence:null,confirmedFreeRoute:null,diagnosticFastValidation:validation});
    assert.ok(q.componentAudit.priced.includes('m11-15-58'));assert.ok(q.componentAudit.priced.includes('m11-58-679'));
-   assert.ok(q.componentAudit.missing.includes('unknown-paid-road'));assert.equal(tollsForApi(q.tolls,q.fastValidation).amount,null);
+   assert.deepEqual(q.componentAudit.missing,[]);assert.equal(tollsForApi(q.tolls,q.fastValidation).amount,head+mainline);assert.equal(q.tolls.priceConfirmation,'unconfirmed');
    console.log(JSON.stringify({at,head,mainline,m11Subtotal:head+mainline,missing:q.componentAudit.missing}));
   }
   assert.equal(attempts,0);

@@ -1,3 +1,9 @@
+## FIXED — exact p214 orphan; own Торжок → Москва полностью рассчитывается
+
+[Код, API и проверки](checkpoints/2026-10-18-m11-p214-orphan-CODE-DONE.md):2380Thu/2650Fri/2890Sat/3040Sun,missing=[],estimateunconfirmed. API ownreplay2380,traceunavailable→null. Focused28/28,full771/771+quote/API,build16/16,TS/ESLintPASS. НовыйcodeCIpending. NEXT послеCI: offlineownРаменскоеhead58→ЦКАД/southgate8087316064/way1270188041 по retainedmap; готовыеисточники/4cases/364inventoryнеповторять. Общиеblocksне закрыты однимestimate.
+
+## Предыдущая история
+
 ## DIAGNOSIS DONE / CODE STARTED — exact p214 orphan
 
 [Причина, scope и проверки](checkpoints/2026-10-18-m11-p214-orphan-CODE-STARTED.md): unnamed5286168661/766468434 уже source-boundМ11, ноcoverageсоздаётunknown. CI39122753013 verify/liveобаPASS, ожиданиезавершено. NEXT: узкаяexacttupleклассификация + negatives/ownquote/APIreplay/fullgate. Никакихновыхsource/routeGET, ставок илибесплатныхисключений.

@@ -31,10 +31,19 @@
       "scope": "exact primaryconfirmed node1766158781 mapsZSD; no fare activated",
       "validationCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md",
       "correctedReplayCheckpoint": "../../docs/checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md"
+    },
+    {
+      "id": "m11-p214-exact-unnamed-entry-identity",
+      "sourceParentCommit": "2ce7b121d83538db67560f5f3c1cd91c44bb96e6",
+      "validationCheckpoint": "../../docs/checkpoints/2026-10-18-m11-p214-orphan-CODE-DONE.md",
+      "scope": "Only exact node5286168661/way766468434 identified as M11; no new fare values. One own route complete estimate verified at five departures plus public API/rejected trace. Other unknown road identities remain blocked.",
+      "verifiedCompleteEstimateCase": "single-m11-torzhok-to-moscow",
+      "departureProfiles": 5,
+      "confirmedWholeTripFares": 0
     }
   ],
   "nextCase": null,
-  "nextAction": "Offline: проверить operator p214 crosswalk и собственные p58/ЦКАД exit boundaries по retained источникам. Три GET въезда завершены, не повторять. До длительной работы или новых источников отдельный bounded STARTED.",
+  "nextAction": "After new code CI: offline own pair-m11-ckad-torzhok-to-ramenskoe head58→CKAD binding using retained southbound gate8087316064/way1270188041. Do not repeat source passes, 364 inventory or completed p214 checks.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",

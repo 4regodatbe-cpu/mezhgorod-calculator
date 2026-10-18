@@ -4,6 +4,9 @@ import type {M11RoadEvidence} from '../toll-engine/m11-road-evidence';
 import type {TollValidation} from '../toll-validator';
 import {nearestSegment, haversineKm, facilityAnchors} from '../toll-engine/m11-moscow-geometry';
 
+export const M11_P214_ENTRY_NODE = physical.gate.osmNodeId;
+export const M11_P214_ENTRY_WAY = physical.gate.wayId;
+
 /** Source-derived southbound p214 access only. This proves no head fare south of p58. */
 export function inspectM11P214Entry(route: readonly Coordinate[], evidence: M11RoadEvidence | null | undefined,
   validation: TollValidation | null) {

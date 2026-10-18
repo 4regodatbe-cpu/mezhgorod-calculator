@@ -1,6 +1,7 @@
 import type {TollValidation} from '@/lib/toll-validator';
 import {M4_NODE_TO_PLAZA} from '@/lib/toll-engine/m4-plaza-nodes';
 import nodeIdentities from '@/experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/identity-sources/node-identities.json' with {type:'json'};
+import {M11_P214_ENTRY_NODE,M11_P214_ENTRY_WAY} from './m11-p214-entry-boundary';
 import {M11_P258_EXIT_NODE} from './m11-p258-exit-boundary';
 import {type RegionalTollProductId,type RouteTollComponentId} from '@/lib/toll-engine/route-toll-composition';
 
@@ -80,6 +81,8 @@ export function unpricedRoadCoverage(args:{segments:readonly string[];validation
    matchedCoreProducts.add('m4');
   }
   if(!products.length && booth.osmNodeId) {
+   // Exact independently sourced p214 lane identity; this names the road, not its fare.
+   if(booth.osmNodeId===M11_P214_ENTRY_NODE && booth.wayId===M11_P214_ENTRY_WAY) {products=['m11'];matchedCoreProducts.add('m11');}
    if(booth.osmNodeId===M11_P258_EXIT_NODE) {products=['m11'];matchedCoreProducts.add('m11');}
    const product=nodeIdentities.nodes.find(node=>node.osmNodeId===booth.osmNodeId)?.productId;
    if(product==='m4') {products=['m4'];matchedCoreProducts.add('m4');}
