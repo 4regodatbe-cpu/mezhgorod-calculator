@@ -1,3 +1,9 @@
+## DONE SOURCE / STARTED CODE — въезд ЦКАД47→М11
+
+Новая первичная привязка gate8087316065 / ПВП18, четыреonewayсегмента и семь orderedanchors подтверждены наодном собственном маршруте. [Source proof и узкая интеграция](../../docs/checkpoints/2026-10-18-m11-ckad47-source-DONE-implementation-STARTED.md). ТриGET200,безrouting/replay. Следующийшаг: strict northboundmatcher+готоваяпараtskad→solnechnogorsk,focused/fullgate/build. Runtimeпока unchanged,новыхpricedcomponents0. Остальные8случаевне засчитывать автоматически.
+
+## Предыдущая история
+
 ## STARTED — М11: точный въезд с ЦКАД47
 
 В сохранённом собственном trace выделен gate8087316065→way1270188032, отдельный от прежних рамок ММК50. [Цель, входы и лимит3GET](../../docs/checkpoints/2026-10-18-m11-ckad47-entry-STARTED.md). Сначала primaryidentity/topology, затем отдельное внедрение при доказательстве. Старые8/41routechecks не повторять, тариф пока unknown. ЗСД РВП64 остаётся BLOCKED до нового источника. Автоматизации не запускаются.
