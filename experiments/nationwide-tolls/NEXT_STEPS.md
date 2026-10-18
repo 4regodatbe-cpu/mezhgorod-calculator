@@ -1,3 +1,9 @@
+## RECOVERY DONE / календарьОдинцовоSTARTED
+
+[Восстановление/лимиты](../../docs/checkpoints/2026-10-18-odintsovo-fare-recovery-calendar-STARTED.md): freshGitHubclone24ea6edc/tree566d967fclean,CI39149617219success. Sources/результатывосстановленыбезповтора. NEXT:≤2newofficialdomainqueries+≤2primaryreadsдляcalendar2026;таблицыM-Road/OSMнеповторять. ПослеcalendarотдельныйfareCODESTARTED.
+
+## Предыдущая история
+
 ## PART A DONE — strictОдинцово17,7↔6,9, standaloneбезденег
 
 [Код/доказательства/проверки](../../docs/checkpoints/2026-10-18-odintsovo-continuity-PART-A-DONE.md): optionalnamedtracecontext+exactdirectionmatcher, ownblocks61/59edges,2exactofflinevalidationreplays+1negativecitygap,40context/10geometrynegativechecksPASS. Focused13/13,full797/797+quote/API,Next16/16,TS/ESLint/diffPASS. Цены/матрицабезизменений,новыхpriced0. NEXT послеremote/newcodeCI: PART Bfareadapter+обоснованныйСООweekday/weekendHolidaycalendar,daystart,ownAPI; forwardCKADunknownсохранить. Sourcesготовы/неповторять. PR14draft.
