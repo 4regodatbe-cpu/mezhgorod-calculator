@@ -2323,3 +2323,8 @@ NEXT: M4 physical545: inspect only the retained 1223→545-a/545-b tariff-span p
 ## 2026-10-18T05:38:35.458521+00:00 — STARTED М4-545 operator source
 
 До4queries/4новых primary reads, directGET15с/max-time20с/max4MB. Точные параметры в experiments/nationwide-tolls/checks/2026-10-18-m4-545-operator-source/inputs.json. Без повторных маршрутов/PDF/403URL, без выбора суммы.
+
+
+## 2026-10-18T05:40:13.277762+00:00 — М4-545 source discovery DONE / linkedsections STARTED
+
+4queries/4reads;3newoperator403/ownerindex200. Исторический текст2016 один/два участка не currentproof. Две новые observed links сохраняются для bounded2pages+2schemes, безqueries. docs/checkpoints/2026-10-18-m4-545-source-discovery-DONE-linked-sections-STARTED.md. Runtime/route/replay/цены0.

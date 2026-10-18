@@ -1,3 +1,7 @@
+## DONE discovery / STARTED — две связанные страницы М4-545
+
+4queries/4reads завершены:3operator403,ownerindex200. Найден исторический текст о раздельной/совместной оплате и две точные новые ссылки517–544/544–633. ПривязкаBLOCKED, новых цен0. [Следующий bounded проход](checkpoints/2026-10-18-m4-545-source-discovery-DONE-linked-sections-STARTED.md):2sectionpages+до2linked schemes,0searchqueries.
+
 ## STARTED — официальный источник о взимании на М4-545
 
 До4queries/4новых primary reads, directGET15с/max-time20с. Старые403/PDF/OSM/route batches не повторять. [План](checkpoints/2026-10-18-m4-545-operator-source-STARTED.md).
