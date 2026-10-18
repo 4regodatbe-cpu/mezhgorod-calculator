@@ -1,3 +1,9 @@
+## CODE DONE — М11 p214 → Москва; новый CI pending
+
+[Изменение, проверки и следующий шаг](../../docs/checkpoints/2026-10-18-m11-p214-moscow-head-CODE-DONE.md): точный directed head1130Thu/1500Sat, М11subtotal2380/2890; полный API итогnull из-за `unknown-paid-road`. Focused25/25, fullaudit768/768+quote/API, build16/16, TS/ESLintPASS. NEXT: remote readback/codeCI, затем короткий offline exactorphan review на ownТоржок→Москва. Готовые4cases/364inventory/sourceGET не повторять; PhotonFAIL отдельно.
+
+## Предыдущая история
+
 ## CODE STARTED — p214→Москва,строгийheadmatcher
 
 [Bindingreview/план/лимиты](../../docs/checkpoints/2026-10-18-m11-p214-moscow-head-CODE-STARTED.md): retainedreverseheadpair1130Thu/1500Sat. Толькоподтверждённыйp214fallback+exactgate+strictM11доМКАД; полныйитогunknownpaidroadnull. NEXT: matcher/integration/focused/fullgate/TS/ESLint,безновойсети/sourceповторов.
