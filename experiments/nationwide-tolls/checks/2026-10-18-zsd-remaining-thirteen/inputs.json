@@ -1,0 +1,110 @@
+{
+  "status": "STARTED",
+  "atUtc": "2026-10-18T06:10:25.222035+00:00",
+  "sourceHead": "816e8752ad1b017ed4ae2ae4d479437bc888bd5d",
+  "groups": [
+    {
+      "fingerprint": "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c",
+      "representative": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+      "representativeEvidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest.json",
+      "representativeEvidenceSha256": "36a248feeae8c86a0c2ed00de528baf85133e9f11314bd28fe8b6ac65ecca7f1",
+      "scopeReview": "КАД-юг → КАД-север, OSRM, другая полоса северного ПВП",
+      "caseReports": [
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-rostov-to-sest.json",
+          "sha256": "4b61a461887cbf7661a9c990caeb929fc4076ee7d8f8a7b8754e441768545462"
+        },
+        {
+          "caseId": "single-zsd-pushkin-to-sest",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-pushkin-to-sest.json",
+          "sha256": "65d275e1347d741c5eab6353d75c0bf128cdf7eaa03ca7097213b0f9c7a148ae"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-krasnodar-to-sest.json",
+          "sha256": "a59a03c28241ad77b3fccfac93fbdd51d226da7ec79ab26f2b5397b091e9d912"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-rostov-to-sest",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-rostov-to-sest.json",
+          "sha256": "119e04be9fedb037911bfbf9c1cacaef3ba77b3d42a45c792932fb6c6fcfd347"
+        }
+      ]
+    },
+    {
+      "fingerprint": "3404a9c7bbd60f8c3caa6644223c2434ee84611661181bab6b9c1cf626c57851",
+      "representative": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+      "representativeEvidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar.json",
+      "representativeEvidenceSha256": "928fcb0191d647d17f53c4be435efea812397c59b2e01c594657bc2bfe56e604",
+      "scopeReview": "КАД-север → КАД-юг, OSRM, другая полоса северного ПВП",
+      "caseReports": [
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-sest-to-rostov.json",
+          "sha256": "14951ecea24f0f70043381abd735715fadc0b024adb099178060bacdb9f37d4a"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-sest-to-krasnodar",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-sest-to-krasnodar.json",
+          "sha256": "3ee8322243125b5e865d02e2e12ae20a47e8204c81d66d7f574d4ae0f2ee223f"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-sest-to-rostov.json",
+          "sha256": "7f3ebfcb89a3f2aeb8d0508594e9426382ed07a7af46c070f953446a17afdca9"
+        }
+      ]
+    },
+    {
+      "fingerprint": "2c00c1cc6c1d9e8f8b34365454ebb654ed4c4054a8530c84c21fe727dd5f5377",
+      "representative": "pair-m11-ckad-spb-to-domodedovo",
+      "representativeEvidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases/pair-m11-ckad-spb-to-domodedovo.json",
+      "representativeEvidenceSha256": "825b1aafe3826b638b5f725c722dda21aa496e9fae92268d5324d035b6fefefb",
+      "scopeReview": "Въезд со стороны проспекта Крузенштерна / Шкиперского протока → КАД-юг",
+      "caseReports": [
+        {
+          "caseId": "pair-m11-ckad-spb-to-noginsk",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-ckad-spb-to-noginsk.json",
+          "sha256": "425973c85fbcfaf7bfa80f2c32115bebf079e7250c50ee94a250a8b98c6b4ca8"
+        },
+        {
+          "caseId": "single-m11-spb-to-moscow",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-m11-spb-to-moscow.json",
+          "sha256": "ad43b2d72efbe15a19adf65c0390c8a280c1949adf3925869db59ff8aa48ce93"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m11-ckad-m12-spb-to-kazan.json",
+          "sha256": "97c164c85e9275e29e3bcbf9f73c90f773f8412405812087a8558195b21ab913"
+        },
+        {
+          "caseId": "pair-m4-m11-spb-to-voronezh",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m4-m11-spb-to-voronezh.json",
+          "sha256": "655ba46a891c0b6d5909edb5fcd15b8872e4ebe773346ae4a58d8ab3de3e98e5"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-m11-spb-to-tver.json",
+          "sha256": "359460685e6d14363dbaa9614cdc4fefcc6203f8a52eefa9a9e19cedd972f35b"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-spb-to-arzamas",
+          "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m11-ckad-m12-spb-to-arzamas.json",
+          "sha256": "5ff3f7299a19ff7e02c2ab01cc642320381317d98a22e40f05f8c5e9d7d7b42d"
+        }
+      ]
+    }
+  ],
+  "totalCases": 13,
+  "scope": "Remaining explicitly unchecked own boundary exceptions of3alreadyassessed ZSDscope groups. No component rerun, no re-evaluation of existing representatives.",
+  "limits": {
+    "secondsPerCase": 30,
+    "totalSeconds": 180,
+    "networkRequests": 0,
+    "routeReplays": 0,
+    "newPricingCalls": 0
+  },
+  "recovery": "Atomic case/progress; exact existing local Git captureblobs withGIT_NO_LAZY_FETCH=1 if absent; resume unfinished only.",
+  "checks": "Own selected provider geometry identity; complete own raw trace and ordered booths; same frozen wayset and actual entry/exitsteps; forKruzenshtern entry independently check exact recorded gantry13020687195/way351741889. Differences => explicit exception, never guessed fare."
+}

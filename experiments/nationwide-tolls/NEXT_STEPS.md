@@ -1,3 +1,9 @@
+## DONE7ZSD / STARTED оставшиеся13boundarychecks
+
+Группа1e954:7siblings безотличий,8/8сучётомготовогопредставителя. [Результат и следующийпакет](../../docs/checkpoints/2026-10-18-zsd-seven-DONE-remaining13-STARTED.md). Ценанедоказана; новыхрасчётов/сети0.
+
+NEXT:13ownsavedboundaryexceptions в3группах3493/3404/2c00(4+3+6),точныеinputsвchecks/2026-10-18-zsd-remaining-thirteen. Представителей/74componentchecksнеповторять,per-caseprogress.
+
 ## STARTED — семь оставшихся границ ЗСД, КАД-север→КАД-юг
 
 Группа1e954c437e46:проверить7ownsavedcaptures/trace/entry/exit,безpricingreplay/сети/повтора74. [План](../../docs/checkpoints/2026-10-18-zsd-north-south-seven-STARTED.md). Точныеinputs иper-caseprogress вchecks/2026-10-18-zsd-north-south-seven.

@@ -2397,3 +2397,18 @@ NEXT: следующая отдельно незавершённая групп�
 ## 2026-10-18T06:08:08.643649+00:00 — STARTED ZSD north→south seven
 
 Группа1e954c437e46,7явноunchecked sibling boundarychecks. Frozeninputs: experiments/nationwide-tolls/checks/2026-10-18-zsd-north-south-seven/inputs.json. До7cases/120с, сеть/replay/pricing0. Source53726893…/PR14draft/emptyworkflowruns проверены. Per-caseprogress иодинDONEcheckpoint.
+
+
+## 2026-10-18T06:10:25.222035+00:00 — ZSDsevenDONE/remaining13STARTED
+
+# ЗСД: семь sibling boundary checks, КАД-север→КАД-юг
+
+18.10.2026. Проверены семь явно незавершённых siblings группы1e954c437e46; представительСестрорецк→Казань ранее готов и повторно не проигрывался. Каждый frozenreport/captureSHA совпал. SelectedValhalla response geometry точно совпадает с собственной сохранённойroute geometry, tracecomplete иboothcoveragecomplete. В собственномrawtrace подтверждён порядок1766158804/way458501127 →933975069/way375574640; wayset совпадает сrepresentative. Ownmaneuvers подтверждают входсоКАД/Выборгскогош. и выходкА118/КАД/Пулковскому. Materialexceptions0/errors0.
+
+Новыми являются7own boundary exceptionchecks; с прежнимпредставителем группа8/8. Это не новыеroutecaptures, componentdatechecks или fullpricingreplay. Прежнийкомпонентныйпакет74 не перезапускался. Runtime/матрица/тарифы безизменений; новыхpricedcomponents/confirmedfullfares0. Outcome: blocked_by_missing_reliable_data — отсутствует directedowner cash/card collectionbundle/готовыйтарифныйвектор дляточныхграниц. Физическийwayset/ПВП не подтверждаетсумму300₽/зона.
+
+Недостающиевworkingtreecaptures восстановленыизсуществующихlocalGitblobs сlazyfetchdisabled. Проверены7reportSHA/7captureSHA/GitblobSHA. Per-case/progress атомарны; пакет0.168с, network/provider/pricing/replay0. Fulltests/build дляevidence-only не требовались и не запускались. Метод выбираетownselectedproviderroute и сравниваетгеометрию; используетownmaneuverindices, неиндексыtraceoutputshape.
+
+STARTED816e8752…/treea5c9d8e2…,5paths/head/PR14draft readbackPASS. Вариантыreceipt/sourceкМ3/М4неповторялись. Подробныефакты:cases/*.json,summary.json,progress.json,recovery-progress.json.
+
+Следующийboundedbatch13(4+3+6): experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/inputs.json. Сначалаdurablereadback,послебезсети/replay.

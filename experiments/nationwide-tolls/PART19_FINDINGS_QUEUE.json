@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Next ZSD group1e954c437e46 (northKAD→southKAD), seven explicitly unchecked siblings; persist bounded STARTED, then compare only their own saved geometry/trace/exit and exceptions. No whole pricing/component rerun, no network. M3Oct15/17 tariff-date source and M4physical545 stayBLOCKED until new independent evidence.",
+  "nextAction": "After durable readback, finish13explicitlyunchecked siblings in ZSD groups3493/3404/2c00 from own saved geometry/rawtrace/entry-exit. Inputs:experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/inputs.json; no network/pricing/replay. Preserve separate group outcomes and exact interchangegantryproof.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1853,21 +1853,34 @@
             "fingerprint": "1e954c437e46cc7926adf88189e1f0af9fcb2d6ec184332656bfee9d91fd2625",
             "representative": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
             "groupSize": 8,
-            "checkedCases": 1,
-            "uncheckedSiblings": [
-              "max-chain-m12-ckad-m11-zsd-sest-to-murom",
-              "pair-m11-zsd-sest-to-moscow",
-              "single-zsd-sest-to-pushkin",
-              "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
-              "pair-m11-zsd-sest-to-novgorod",
-              "pair-m11-zsd-sest-to-tver",
-              "triple-m4-m11-zsd-sest-to-domodedovo"
-            ],
+            "checkedCases": 8,
+            "uncheckedSiblings": [],
             "scopeReview": "КАД-север → КАД-юг, на юг",
             "outcome": "blocked_by_missing_reliable_data",
             "readyTariffRub": null,
             "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
-            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md"
+            "checkpoint": "docs/checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md",
+            "reviewHistory": [
+              {
+                "atUtc": "2026-10-18T06:10:25.222035+00:00",
+                "previousCheckedCases": 1,
+                "previousUncheckedSiblings": [
+                  "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+                  "pair-m11-zsd-sest-to-moscow",
+                  "single-zsd-sest-to-pushkin",
+                  "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+                  "pair-m11-zsd-sest-to-novgorod",
+                  "pair-m11-zsd-sest-to-tver",
+                  "triple-m4-m11-zsd-sest-to-domodedovo"
+                ],
+                "reason": "Seven own retained boundary checks completed, not a component-price rerun."
+              }
+            ],
+            "newSiblingBoundaryChecks": 7,
+            "materialExceptions": 0,
+            "groupReviewStatus": "all8_own_saved_boundary_reviews_complete",
+            "siblingEvidence": "experiments/nationwide-tolls/checks/2026-10-18-zsd-north-south-seven/summary.json",
+            "siblingCheckpoint": "docs/checkpoints/2026-10-18-zsd-seven-DONE-remaining13-STARTED.md"
           },
           {
             "fingerprint": "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c",
@@ -5053,7 +5066,7 @@
       "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
       "M12 followup continuation now points past completed official-page read"
     ],
-    "nextAction": "Next ZSD group1e954c437e46 (northKAD→southKAD), seven explicitly unchecked siblings; persist bounded STARTED, then compare only their own saved geometry/trace/exit and exceptions. No whole pricing/component rerun, no network. M3Oct15/17 tariff-date source and M4physical545 stayBLOCKED until new independent evidence."
+    "nextAction": "After durable readback, finish13explicitlyunchecked siblings in ZSD groups3493/3404/2c00 from own saved geometry/rawtrace/entry-exit. Inputs:experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/inputs.json; no network/pricing/replay. Preserve separate group outcomes and exact interchangegantryproof."
   },
   "postAuditDiagnosticFixes": [
     {
