@@ -1,3 +1,9 @@
+## RECOVERY DONE — checkout восстановлен, прошлый CI полностью PASS
+
+[Восстановление и ограничения](../../docs/checkpoints/2026-10-18-ramenskoe-checkout-recovery-DONE.md): remote/local24695f0f,CI39123710038 verify/liveобаsuccess. Код/доказательствавосстановленыизGitHub, безповторапроверок/источников. NEXT: ownРаменскоеsouthbound8087316064/1270188041 изretainedmap; сначалаofflineboundaryreview.
+
+## Предыдущая история
+
 ## FIXED — exact p214 orphan; own Торжок → Москва полностью рассчитывается
 
 [Код, API и проверки](../../docs/checkpoints/2026-10-18-m11-p214-orphan-CODE-DONE.md):2380Thu/2650Fri/2890Sat/3040Sun,missing=[],estimateunconfirmed. API ownreplay2380,traceunavailable→null. Focused28/28,full771/771+quote/API,build16/16,TS/ESLintPASS. НовыйcodeCIpending. NEXT послеCI: offlineownРаменскоеhead58→ЦКАД/southgate8087316064/way1270188041 по retainedmap; готовыеисточники/4cases/364inventoryнеповторять. Общиеblocksне закрыты однимestimate.
