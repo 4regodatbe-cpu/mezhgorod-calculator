@@ -1,3 +1,7 @@
+## PART A DONE — strict М11 → Егорьевское
+
+[Код и проверки](checkpoints/2026-10-18-ckad-egoryevskoye-part-a-DONE.md): focused3/3, TS/ESLint PASS. Standalone, composer пока не подключён; fullgate/build pending. NEXT B: resolver + own quote/API и полный gate.
+
 ## IN PROGRESS — восстановление М11 → Егорьевское
 
 [Короткие части A/B/C](checkpoints/2026-10-18-ckad-egoryevskoe-recovery-STARTED.md). NEXT: A strict matcher, full gate pending.

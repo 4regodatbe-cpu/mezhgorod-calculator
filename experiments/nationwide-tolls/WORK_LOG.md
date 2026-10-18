@@ -3008,3 +3008,6 @@ OwnРаменскоеcurrentvalidationfromsavedraw3exactmockreplay(старыйs
 
 
 18.10.2026 recovery STARTED: remote e8c4e32 verified, CI39132410371 success; unfinished implementation split A matcher / B quoteAPI and gates / C readbackCI. Sources not repeated. See ../../docs/checkpoints/2026-10-18-ckad-egoryevskoe-recovery-STARTED.md
+
+
+18.10.2026 PART A DONE: standalone Egoryevskoye matcher, independent entry48/core12/exit29, focused3/3 including23context+8geometry negatives, TS/ESLint/diff PASS. No integration/fullgate yet. Recovery clone84e365a7 exact. See ../../docs/checkpoints/2026-10-18-ckad-egoryevskoye-part-a-DONE.md
