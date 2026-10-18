@@ -1,3 +1,11 @@
+## DONE — ЦКАД47→М11: headпричина закрыта8/8
+
+Семь новых owncapturechecks/14датированныхпрофилей, исключений0, negativeguards21/21PASS; первыйпредставительнеповторялся. [Результаты и ограничения](checkpoints/2026-10-18-m11-ckad47-seven-DONE.md). Code29129946/CI39115104478verify/live_probeобаsuccess. Runtimeвпакетеunchanged, новыхheadcomponents7 (всего8), подтверждённыхwholefares0. По13исходнымfindingrecordsтеперь2fixed/1notreproduced/7blocked/3deferred; стараясводкасохраненавистории.
+
+**NEXT:** точныйсохранённыйслучайМ11 `pair-m11-ckad-torzhok-to-ramenskoe` — въезд/съезд иretainedprimaryТоржка. Не повторять41/15илиготовые8, не переноситьp679→p258выезд наинойвъезд/направление. До длительнойработыboundedSTARTED; послеэтогоDONEсначалаexactremote readback.
+
+## Предыдущая история
+
 ## STARTED — семь собственных М11 head cases
 
 CodeCI39115104478по29129946completed/success,verify/live_probeобаPASS. [Пакет7cases/14профилей,лимитыиrecovery](checkpoints/2026-10-18-m11-ckad47-seven-STARTED.md). Новыхrouting/trace/сети0,первыйпредставительнеповторяется. ПослеdurableSTARTEDreadbackзапуститьrunner,сохранитьper-caseprogressиодинDONE. Runtimeнеизменяется.

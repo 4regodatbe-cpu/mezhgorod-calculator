@@ -1,0 +1,48 @@
+{
+  "status": "DONE",
+  "fingerprint": "1ea03b40cb54472b3b95aaeff95abe0b685000471b8c5f77855dc20f67798cbf",
+  "caseId": "pair-m11-ckad-noginsk-to-spb",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/2026-10-16T00-04-08-712Z-capture.json.gz",
+  "captureGitBlob": "7bf36b92145eb4cfec0d1bff8e6b9d06ce6e733c",
+  "captureSha256": "738c29e0773a4ac17fa4b56ea324cf060a62533b843560f3ca0413ea9b7234e4",
+  "provider": "Valhalla",
+  "routeMeters": 772549,
+  "routeSeconds": 25413,
+  "completeOwnCapture": true,
+  "gateIndex": 769.0012607479109,
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "physicalResolved": true,
+      "boundariesResolved": true,
+      "from": "tskad",
+      "to": "solnechnogorsk",
+      "headRub": 280,
+      "headReason": "m11_head_ready_direct_pair_at_departure",
+      "headWithoutSelectedGateValidation": null,
+      "m11SubtotalRub": 4180,
+      "wholeTripEvaluated": false
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "physicalResolved": true,
+      "boundariesResolved": true,
+      "from": "tskad",
+      "to": "solnechnogorsk",
+      "headRub": 320,
+      "headReason": "m11_head_ready_direct_pair_at_departure",
+      "headWithoutSelectedGateValidation": null,
+      "m11SubtotalRub": 4520,
+      "wholeTripEvaluated": false
+    }
+  ],
+  "negativeChecks": {
+    "reverseRejected": true,
+    "incompleteRejected": true,
+    "absentGateRejected": true
+  },
+  "recoveredHeadComponent": true,
+  "outcome": "fixed_and_verified_for_this_own_capture",
+  "confirmedWholeTripFares": 0,
+  "networkCalls": 0
+}

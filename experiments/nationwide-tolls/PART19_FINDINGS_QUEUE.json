@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Next exact new source only: owner mapping and ordinary WHSD cash/card billing scope forRVP64/ref64E at30.2224424,59.9615898 onway351741889, to southKAD booth933975069. Do not repeat ShkiperskyPDFpass or completed routes; do not attach95-1fee or0to64 without crosswalk. Persist boundedSTARTED before new source work.",
+  "nextAction": "M11 58–679: next exact case pair-m11-ckad-torzhok-to-ramenskoe. Inspect its saved entry/exit evidence and retained Torzhok primary geometry; do not transfer the proven southbound p679→p258 exit guard to a different entry/direction. No rerun of41/15 historical batches or completed CKAD47 eight.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -2561,9 +2561,9 @@
         "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
         "triple-m11-ckad-m12-arzamas-to-spb"
       ],
-      "status": "blocked_by_missing_reliable_data",
+      "status": "component_binding_resolved",
       "startedCheckpoint": "../../docs/checkpoints/2026-10-16-part19-m11-head-boundary-started.md",
-      "reviewStatus": "8_of_8_saved_cases_reviewed_no_material_exception_same_boundary_source_gated",
+      "reviewStatus": "8_of_8_own_head_captures_fixed_and_verified_at_current_code",
       "currentCasesChecked": 8,
       "reviewedCases": [
         {
@@ -2623,7 +2623,7 @@
           "evidence": "../../docs/checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json"
         }
       ],
-      "note": "All 8 saved cases have bounded exception reviews. No material exception to the shared M11 head-entry boundary finding. Exact directed entry/payment boundary remains unbound; keep M11 15–58 unknown. M12/CKAD/ZSD route-specific findings remain separate and do not establish a complete toll amount.",
+      "note": "Previous eight source-gated head records retained in history. Current CKAD47 northbound fix verified on8/8 own captures and16 standard dated head profiles; seven newly checked, representative not repeated. This does not fix all M11 partial mainline routes or confirm any whole-trip fare.",
       "statusHistory": [
         {
           "recordedAtUtc": "2026-10-16T23:31:29Z",
@@ -2631,32 +2631,68 @@
           "previousReviewStatus": "4_of_8_saved_cases_reviewed_case4_checked_no_material_exception_same_source_gated_cause",
           "previousCasesChecked": 4,
           "previousNote": "Cases1–3 remain source-gated; exact M11 entry boundary is unbound. Preserve unknown until exact directed entry/payment boundary proof exists. Five remaining cases are pending bounded exception checks."
+        },
+        {
+          "recordedAtMsk": "2026-10-18T12:35:35.102446+03:00",
+          "sourceCodeCommit": "29129946ed7445677332749857f89efbc9ff546b",
+          "previousStatus": "blocked_by_missing_reliable_data",
+          "previousReviewStatus": "8_of_8_saved_cases_reviewed_no_material_exception_same_boundary_source_gated",
+          "previousCanonicalOutcome": "blocked_by_missing_reliable_data",
+          "previousCanonicalOutcomeRationale": "Eight saved boundary cases, including the four queued cases, share an unresolved directed M11 entry/payment boundary. No material exception or confirmed tariff is established.",
+          "previousNote": "All 8 saved cases have bounded exception reviews. No material exception to the shared M11 head-entry boundary finding. Exact directed entry/payment boundary remains unbound; keep M11 15–58 unknown. M12/CKAD/ZSD route-specific findings remain separate and do not establish a complete toll amount."
         }
       ],
-      "causeOutcome": "blocked_by_missing_reliable_data",
-      "lastReviewedAtUtc": "2026-10-16T23:31:29Z",
-      "lastReviewCheckpoint": "../../docs/checkpoints/2026-10-17-part19-m11-ledger-reconciliation.md",
-      "canonicalOutcome": "blocked_by_missing_reliable_data",
-      "canonicalOutcomeRationale": "Eight saved boundary cases, including the four queued cases, share an unresolved directed M11 entry/payment boundary. No material exception or confirmed tariff is established.",
+      "causeOutcome": "fixed_and_verified",
+      "lastReviewedAtUtc": "2026-10-18T09:35:35.104807+00:00",
+      "lastReviewCheckpoint": "../../docs/checkpoints/2026-10-18-m11-ckad47-seven-DONE.md",
+      "canonicalOutcome": "fixed_and_verified",
+      "canonicalOutcomeRationale": "Exact primary CKAD47/PVP18 northbound binding recovers the ready tskad→solnechnogorsk head component on the representative and all seven own saved siblings. No full-route fare confirmation; other road causes remain separate.",
       "latestFixReview": {
-        "atMsk": "2026-10-18T12:22:04.441702+03:00",
-        "status": "one_target_fixed_seven_sibling_checks_pending",
-        "targetCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
-        "ownCasesChecked": 1,
-        "uncheckedSiblingCaseIds": [
-          "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
-          "max-chain-m12-ckad-m11-zsd-murom-to-sest",
-          "pair-m11-ckad-noginsk-to-spb",
-          "triple-m11-ckad-m12-kazan-to-spb",
-          "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
-          "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
-          "triple-m11-ckad-m12-arzamas-to-spb"
-        ],
-        "runtimeGuard": "lib/v3-calculation/m11-ckad-head-entry.ts",
-        "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m11-ckad47-entry/implementation-result.json",
-        "checkpoint": "docs/checkpoints/2026-10-18-m11-ckad47-implementation-DONE.md",
-        "scope": "Current exact CKAD47 binding followup; baseline8 outcome/history retained and not re-counted as8 new verified prices."
-      }
+        "atMsk": "2026-10-18T12:35:35.102446+03:00",
+        "status": "fixed_and_verified_all_8_own_head_cases",
+        "sourceCodeCommit": "29129946ed7445677332749857f89efbc9ff546b",
+        "sourceCi": {
+          "id": 39115104478,
+          "status": "completed",
+          "conclusion": "success",
+          "verify": "success",
+          "live_probe": "success"
+        },
+        "representativeCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+        "representativeRepeated": false,
+        "newOwnCasesChecked": 7,
+        "totalOwnHeadCasesChecked": 8,
+        "totalStandardDatedProfiles": 16,
+        "newProfilesChecked": 14,
+        "negativeChecksPassedInNewBatch": 21,
+        "uncheckedSiblingCaseIds": [],
+        "newHeadComponentsRecoveredInBatch": 7,
+        "totalHeadComponentsRecoveredAcrossEight": 8,
+        "confirmedWholeTripFares": 0,
+        "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m11-ckad47-seven/summary.json",
+        "checkpoint": "docs/checkpoints/2026-10-18-m11-ckad47-seven-DONE.md"
+      },
+      "fixReviewHistory": [
+        {
+          "atMsk": "2026-10-18T12:22:04.441702+03:00",
+          "status": "one_target_fixed_seven_sibling_checks_pending",
+          "targetCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+          "ownCasesChecked": 1,
+          "uncheckedSiblingCaseIds": [
+            "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+            "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+            "pair-m11-ckad-noginsk-to-spb",
+            "triple-m11-ckad-m12-kazan-to-spb",
+            "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+            "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+            "triple-m11-ckad-m12-arzamas-to-spb"
+          ],
+          "runtimeGuard": "lib/v3-calculation/m11-ckad-head-entry.ts",
+          "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m11-ckad47-entry/implementation-result.json",
+          "checkpoint": "docs/checkpoints/2026-10-18-m11-ckad47-implementation-DONE.md",
+          "scope": "Current exact CKAD47 binding followup; baseline8 outcome/history retained and not re-counted as8 new verified prices."
+        }
+      ]
     },
     {
       "code": "arc_not_proven",
@@ -4538,7 +4574,7 @@
     }
   },
   "lastSynthesisAtUtc": "2026-10-17T08:11:16Z",
-  "nextFinding": null,
+  "nextFinding": "m11-58-679:unpriced",
   "lastCauseReviewAtUtc": "2026-10-17T21:15:08.834970+00:00",
   "lastCauseReview": {
     "code": "m12-ckad:selected-osrm-scope",
@@ -4549,17 +4585,18 @@
     "confirmedFullTripFares": 0
   },
   "outcomeSynthesis": {
-    "atUtc": "2026-10-17T08:11:16Z",
+    "atUtc": "2026-10-18T09:35:35.104991+00:00",
     "reviewedFindingRecords": 13,
     "canonicalOutcomeCounts": {
       "not_reproduced": 1,
-      "fixed_and_verified": 1,
-      "blocked_by_missing_reliable_data": 8,
+      "fixed_and_verified": 2,
+      "blocked_by_missing_reliable_data": 7,
       "deferred": 3
     },
-    "rule": "One canonical cause outcome per finding; underlying legacy diagnostic status and evidence remain preserved. Baseline case counts overlap and are not additive.",
-    "scopeNote": "Existing evidence only; no new live route runs, replay, builds, tests, or tariff values.",
-    "next": "After post-save Actions succeeds, execute Part20 docs-only content/link checks and required workflow verification; do not merge."
+    "sourceCodeCommit": "29129946ed7445677332749857f89efbc9ff546b",
+    "rule": "Same13 original finding records; only the CKAD47 head cause changed from blocked to fixed in this update. Older baseline snapshot preserved in outcomeSynthesisHistory. Overlapping route cohorts are not additive.",
+    "scopeNote": "8 own head captures verified, zero confirmed whole-trip fares; mainline41/15 and other road findings unchanged.",
+    "next": "M11 58–679: next exact case pair-m11-ckad-torzhok-to-ramenskoe. Inspect its saved entry/exit evidence and retained Torzhok primary geometry; do not transfer the proven southbound p679→p258 exit guard to a different entry/direction. No rerun of41/15 historical batches or completed CKAD47 eight."
   },
   "postAuditGeometryFindings": [
     {
@@ -5118,13 +5155,25 @@
     {
       "code": "m11:ckad47-northbound-head-entry",
       "outcome": "fixed_and_verified",
-      "checkedTargetCases": 1,
-      "newPricedComponents": 1,
+      "checkedTargetCases": 8,
+      "newPricedComponents": 8,
       "confirmedFullTripFares": 0,
-      "uncheckedSiblingCases": 7,
+      "uncheckedSiblingCases": 0,
       "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m11-ckad47-entry/implementation-result.json",
       "checkpoint": "docs/checkpoints/2026-10-18-m11-ckad47-implementation-DONE.md",
-      "nextAction": "Observe exact published-code CI; after completion perform one bounded seven-sibling own-capture exception batch, persist per-case progress, no new routing/source/replay unless a material exception requires it."
+      "nextAction": "M11 58–679: next exact case pair-m11-ckad-torzhok-to-ramenskoe. Inspect its saved entry/exit evidence and retained Torzhok primary geometry; do not transfer the proven southbound p679→p258 exit guard to a different entry/direction. No rerun of41/15 historical batches or completed CKAD47 eight.",
+      "previousTargetReview": {
+        "code": "m11:ckad47-northbound-head-entry",
+        "outcome": "fixed_and_verified",
+        "checkedTargetCases": 1,
+        "newPricedComponents": 1,
+        "confirmedFullTripFares": 0,
+        "uncheckedSiblingCases": 7,
+        "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m11-ckad47-entry/implementation-result.json",
+        "checkpoint": "docs/checkpoints/2026-10-18-m11-ckad47-implementation-DONE.md",
+        "nextAction": "Observe exact published-code CI; after completion perform one bounded seven-sibling own-capture exception batch, persist per-case progress, no new routing/source/replay unless a material exception requires it."
+      },
+      "batchEvidence": "experiments/nationwide-tolls/checks/2026-10-18-m11-ckad47-seven/summary.json"
     }
   ],
   "officialM12PageFollowup": {
@@ -5154,20 +5203,17 @@
     "next": "Leave M12 binding blocked; reconcile remaining assessed causes from saved PART19 queue and determine final verification scope, without another western-M12 crawl absent a new reliable source."
   },
   "currentContinuationReview": {
-    "atUtc": "2026-10-18T02:59:25.665840+00:00",
-    "sourceHead": "878ef70a5f69a1de431ea34f91f7372d503a72ee",
-    "baselineFindingRecordCounts": {
+    "atMsk": "2026-10-18T12:35:35.102446+03:00",
+    "sourceHead": "7ca43b55783109fb53b9df31070759c83080cbd4",
+    "sourceCodeCommit": "29129946ed7445677332749857f89efbc9ff546b",
+    "currentFindingRecordCounts": {
       "not_reproduced": 1,
-      "fixed_and_verified": 1,
-      "blocked_by_missing_reliable_data": 8,
+      "fixed_and_verified": 2,
+      "blocked_by_missing_reliable_data": 7,
       "deferred": 3
     },
-    "historicalPlanParts19and20": "already done; no new final-plan rerun needed",
-    "repairs": [
-      "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
-      "M12 followup continuation now points past completed official-page read"
-    ],
-    "nextAction": "Next exact new source only: owner mapping and ordinary WHSD cash/card billing scope forRVP64/ref64E at30.2224424,59.9615898 onway351741889, to southKAD booth933975069. Do not repeat ShkiperskyPDFpass or completed routes; do not attach95-1fee or0to64 without crosswalk. Persist boundedSTARTED before new source work."
+    "headEntryFix": "fixed_and_verified_8_of_8",
+    "nextAction": "M11 58–679: next exact case pair-m11-ckad-torzhok-to-ramenskoe. Inspect its saved entry/exit evidence and retained Torzhok primary geometry; do not transfer the proven southbound p679→p258 exit guard to a different entry/direction. No rerun of41/15 historical batches or completed CKAD47 eight."
   },
   "postAuditDiagnosticFixes": [
     {
@@ -5189,6 +5235,39 @@
       "checkpoint": "docs/checkpoints/2026-10-18-m3-date-source-DONE-zsd-six-STARTED.md",
       "evidence": "experiments/nationwide-tolls/checks/2026-10-18-m3-tariff-date-source/result.json",
       "verifiedThroughUnchanged": true
+    }
+  ],
+  "outcomeSynthesisHistory": [
+    {
+      "atUtc": "2026-10-17T08:11:16Z",
+      "reviewedFindingRecords": 13,
+      "canonicalOutcomeCounts": {
+        "not_reproduced": 1,
+        "fixed_and_verified": 1,
+        "blocked_by_missing_reliable_data": 8,
+        "deferred": 3
+      },
+      "rule": "One canonical cause outcome per finding; underlying legacy diagnostic status and evidence remain preserved. Baseline case counts overlap and are not additive.",
+      "scopeNote": "Existing evidence only; no new live route runs, replay, builds, tests, or tariff values.",
+      "next": "After post-save Actions succeeds, execute Part20 docs-only content/link checks and required workflow verification; do not merge."
+    }
+  ],
+  "continuationReviewHistory": [
+    {
+      "atUtc": "2026-10-18T02:59:25.665840+00:00",
+      "sourceHead": "878ef70a5f69a1de431ea34f91f7372d503a72ee",
+      "baselineFindingRecordCounts": {
+        "not_reproduced": 1,
+        "fixed_and_verified": 1,
+        "blocked_by_missing_reliable_data": 8,
+        "deferred": 3
+      },
+      "historicalPlanParts19and20": "already done; no new final-plan rerun needed",
+      "repairs": [
+        "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
+        "M12 followup continuation now points past completed official-page read"
+      ],
+      "nextAction": "Next exact new source only: owner mapping and ordinary WHSD cash/card billing scope forRVP64/ref64E at30.2224424,59.9615898 onway351741889, to southKAD booth933975069. Do not repeat ShkiperskyPDFpass or completed routes; do not attach95-1fee or0to64 without crosswalk. Persist boundedSTARTED before new source work."
     }
   ]
 }
