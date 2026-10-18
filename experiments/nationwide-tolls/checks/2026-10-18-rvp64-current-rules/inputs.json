@@ -1,0 +1,40 @@
+{
+  "status": "STARTED",
+  "atMsk": "2026-10-18T10:47:29.621070+03:00",
+  "sourceHead": "ccde1c328359c39d5bdc1ba819d2ff4798dea536",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "prDraft": true,
+  "latestObservedCi": {
+    "id": 39101746826,
+    "head": "65bed1ae4a5236c40adc50cc596593696e3197a7",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "goal": "Establish official ordinary WHSD product and no-transponder collection scope for RVP64/ref64E, captured node13020687195, to south KAD booth933975069.",
+  "sources": [
+    {
+      "name": "current-rules-Pravila0926.pdf",
+      "url": "https://whsd.ru/assets/disclosure/70/Pravila0926.pdf",
+      "discoveredIn": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-documents.html",
+      "label": "Правила оказания услуг по ЗСД, действуют с 01.10.2026"
+    }
+  ],
+  "limits": {
+    "exactGet": 1,
+    "additionalNewLinkedSchemeReads": 1,
+    "newSearchQueries": 0,
+    "perRequestMaxSeconds": 20,
+    "perRequestMaxBytes": 12000000,
+    "routeRequests": 0,
+    "replays": 0
+  },
+  "skipCompleted": [
+    "19-file source save ccde1c",
+    "74 ZSD component checks",
+    "20 ZSD sibling boundary checks",
+    "4 Shkipersky/OSM GET already completed"
+  ],
+  "recovery": "Persist raw and metadata immediately. Skip matching completed response verified by URL/hash; do not rerun old source passes or audits. Select and visually inspect only relevant PDF pages. Add a linked scheme only when the new PDF identifies it and scope remains unresolved.",
+  "acceptance": "Reliable official physical interchange/product/payment mapping; no rate activation without exact complete scope and source date. If still missing, preserve blocked status and name the exact missing fact."
+}
