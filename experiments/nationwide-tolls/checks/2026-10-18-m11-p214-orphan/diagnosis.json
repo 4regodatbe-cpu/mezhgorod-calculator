@@ -1,0 +1,79 @@
+{
+  "status": "DONE_DIAGNOSIS",
+  "codeCommit": "d5d8b37c87be9ea0811298e2496c173cd8581aca",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz",
+  "captureSha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798",
+  "wholeCoverage": {
+    "m1": false,
+    "m3": false,
+    "regional": true,
+    "regionalReason": "unmapped_selected_route_paid_booth",
+    "regionalProducts": [
+      {
+        "id": "unknown-paid-road",
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ],
+    "smallVyazemy": false,
+    "matchedCoreProducts": [
+      "m11"
+    ]
+  },
+  "events": [
+    {
+      "event": {
+        "osmNodeId": "5286168661",
+        "wayId": "766468434",
+        "roadNames": [],
+        "edgeIndex": 0,
+        "edgeToll": false,
+        "beginShapeIndex": 348,
+        "endShapeIndex": 349
+      },
+      "isolatedCoverage": {
+        "m1": false,
+        "m3": false,
+        "regional": true,
+        "regionalReason": "unmapped_selected_route_paid_booth",
+        "regionalProducts": [
+          {
+            "id": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          }
+        ],
+        "smallVyazemy": false,
+        "matchedCoreProducts": []
+      },
+      "matchesRetainedPhysicalIdentity": true
+    },
+    {
+      "event": {
+        "osmNodeId": "7171624764",
+        "wayId": "502872285",
+        "roadNames": [
+          "\u041c-11",
+          "\u00ab\u041d\u0435\u0432\u0430\u00bb"
+        ],
+        "edgeIndex": 1,
+        "edgeToll": true,
+        "beginShapeIndex": 507,
+        "endShapeIndex": 508
+      },
+      "isolatedCoverage": {
+        "m1": false,
+        "m3": false,
+        "regional": false,
+        "regionalReason": "regional_exact_traversal_not_priced",
+        "regionalProducts": [],
+        "smallVyazemy": false,
+        "matchedCoreProducts": [
+          "m11"
+        ]
+      },
+      "matchesRetainedPhysicalIdentity": false
+    }
+  ],
+  "sourceProof": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/binding-proof.json",
+  "diagnosis": "Exact unnamed p214 gate/way is not yet classified as M11; it creates an orphan alongside independently priced M11 components. This diagnoses identity only, no automatic fare/free decision.",
+  "networkRequests": 0
+}

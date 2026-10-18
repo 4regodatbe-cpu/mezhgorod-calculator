@@ -1,3 +1,9 @@
+## DIAGNOSIS DONE / CODE STARTED — exact p214 orphan
+
+[Причина, scope и проверки](checkpoints/2026-10-18-m11-p214-orphan-CODE-STARTED.md): unnamed5286168661/766468434 уже source-boundМ11, ноcoverageсоздаётunknown. CI39122753013 verify/liveобаPASS, ожиданиезавершено. NEXT: узкаяexacttupleклассификация + negatives/ownquote/APIreplay/fullgate. Никакихновыхsource/routeGET, ставок илибесплатныхисключений.
+
+## Предыдущая история
+
 ## CODE DONE — М11 p214 → Москва; новый CI pending
 
 [Изменение, проверки и следующий шаг](checkpoints/2026-10-18-m11-p214-moscow-head-CODE-DONE.md): точный directed head1130Thu/1500Sat, М11subtotal2380/2890; полный API итогnull из-за `unknown-paid-road`. Focused25/25, fullaudit768/768+quote/API, build16/16, TS/ESLintPASS. NEXT: remote readback/codeCI, затем короткий offline exactorphan review на ownТоржок→Москва. Готовые4cases/364inventory/sourceGET не повторять; PhotonFAIL отдельно.
