@@ -2710,3 +2710,16 @@ Own capture c4c60b8987cb2ff44be21df4a0359249c90b5cfb: полный selected Valh
 18.10.2026 13:34 МСК. Последний подтверждённый remote/local/PR14 head d1d0bd9797ca3ae9351de8a1898090bbdf372353, draft. STARTED реализации сохранён; runtime не менялся, новых процессов/расчётов нет. Уже готовые3GET/61pointchecks не повторять.
 
 Незавершённый остаток разделён: A) standalone strict physical matcher + короткие focused negative tests, сохранить PART-A DONE с обязательными широкими checks ещё pending, без включения в composer; B) подключение пары p214→p58 и own quote, focused + обязательный full gate/build/TS/ESLint, сохранить результаты; C) точное remote readback и codeCI. Если снова остановится, дробить только незавершённый остаток. Не пересчитывать завершённое при проблеме сохранения. Лимитfocused60s,build300s; полные логи в checks/2026-10-18-m11-p214-entry. До завершенияB не объявлять исправление интегрированным и проверенным. Ценаwholetripunknown, head58→ЦКАДunknown. Main/merge/production/Android/автоматизации не затрагиваются.
+
+
+# М11 p214 — PART A DONE, интеграция pending
+
+18.10.2026. Source/remote head 4eec0318fe1be828a8ab4effb1a0be354101caf8; ветка fix/v3-missing-route-prices-2026-10-15, PR14 open/draft. Новый session checkout получен git clone непосредственно от текущего remote; worktree был чист. Последние три branch CI completed/success, последний code run39115104478; для docs-only head runs нет.
+
+Добавлен standalone inspectM11P214Entry: полные chunks/booth coverage, единственный exact gate/way, две paid ways, 61 ordered independent points в25м, directed strict begin в25м, плотный corridor и продолжение до p58 в существующих120м, strictend послеp58. В composer не подключён. Тарифы и runtime-ответы не меняются. Исходные GET/capture/sourcechecks не повторялись.
+
+Команда timeout60 node --import ./scripts/register-ts-paths.mjs --test scripts/v3-m11-p214-boundary.test.ts: final4/4PASS, 11 validation-negative variants,5 evidence-negative/null checks,4 geometry-negative checks. Первоначально3/4: проверка corridor ошибочно включала наружную вершину после source-end; проверка внутренних вершин ограничена собственным диапазоном, плотность крайних сегментов сохранена. Initial/final логи в checks/2026-10-18-m11-p214-entry. timeout60 node node_modules/typescript/bin/tsc --noEmit exit0.
+
+Обязательные fullgate/build/ESLint ещё pending вPART B по сохранённому recovery-плану. Это промежуточная часть, не завершённое исправление или подтверждённый полный тариф. Локальный node_modules symlink использует уже установленный набор среды, вgit не включается. Новых сетевых маршрутов/источников0, новых priced components0.
+
+NEXT PART B после durable readback: включить только p214→p58 с headDetected=true/head=null; ownweekday/weekendquote и негативные regression, fullgate/build/TS/ESLint. Полный итог оставлятьunknown из-за head58→ЦКАД. ЗатемPART CcodeCI. Не менять main/Production/Android.

@@ -1,3 +1,9 @@
+## PART A DONE — строгий распознаватель p214
+
+[Код и проверки](checkpoints/2026-10-18-m11-p214-part-a-DONE.md): standalone matcher, focused4/4 и tscPASS. Composer ещё не подключён; fullgate/build pending. NEXT PART B: p214→p58, ownquote и обязательные проверки; head58→ЦКАДunknown.
+
+## Предыдущая история
+
 ## STARTED — восстановление p214, остаток разделён
 
 [План A→B→C](checkpoints/2026-10-18-m11-p214-hang-recovery-STARTED.md): matcher/focused → интеграция/fullgate → remote/codeCI. Runtime пока не менялся, источники завершены и не повторяются.

@@ -1,3 +1,9 @@
+## PART A DONE — строгий распознаватель p214
+
+[Код и проверки](../../docs/checkpoints/2026-10-18-m11-p214-part-a-DONE.md): standalone matcher, focused4/4 и tscPASS. Composer ещё не подключён; fullgate/build pending. NEXT PART B: p214→p58, ownquote и обязательные проверки; head58→ЦКАДunknown.
+
+## Предыдущая история
+
 ## STARTED — строгая пара М11 p214→p58
 
 [Source review, scope и проверки](../../docs/checkpoints/2026-10-18-m11-p214-entry-STARTED.md). Собственный въезд и p58 подтверждены; реализация ещё не выполнена. Head58→ЦКАД остаётсяunknown, полная цена не заявляется. После durable STARTED — узкий matcher, focused/fullgate/build и DONE.
