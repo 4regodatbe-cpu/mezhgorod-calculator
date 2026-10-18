@@ -1,3 +1,9 @@
+## STARTED — первичная привязка фактического въезда М11
+
+[План и лимиты](../../docs/checkpoints/2026-10-18-m11-entry5286168661-STARTED.md): exact node5286168661 / way766468434, два GET и при необходимости одна локальная карта. Capture не повторять, runtime/цены пока без изменений. После durable STARTED выполнить source capture и сохранить DONE.
+
+## Предыдущая история
+
 ## DONE — Торжок → Раменское: проверен другой въезд
 
 Собственный complete capture, два профиля: границы unresolved. Фактический gate5286168661 отличается от p258; его нет в retained карте Торжка. Runtime и цены не менялись. [Доказательства и ограничения](../../docs/checkpoints/2026-10-18-m11-torzhok-ramenskoe-boundary-DONE.md).

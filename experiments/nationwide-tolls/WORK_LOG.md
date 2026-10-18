@@ -2658,3 +2658,14 @@ Routing/trace/sourceGET/fullpricingreplay/network — 0. Проверялся т
 Воспроизведение: `node --import ./scripts/register-ts-paths.mjs experiments/nationwide-tolls/checks/2026-10-18-m11-torzhok-ramenskoe/inspect.mjs`, exit0. Полные выбранные поля и SHA в result.json. Скрипт запрещает fetch; проверяет blob, completeness и ожидаемые отрицательные результаты.
 
 NEXT: отдельный bounded STARTED для primary node5286168661, way766468434/full и при необходимости локальной карты связного въезда. Установить физическую направленную цепь и сопоставление с официальной тарифной границей. Не переносить p258/другую точку по близости; прежние41/15/8 и ЗСД PDF не повторять. Перед записью проверить PR/branch/отсутствие active CI; non-force expected parent, затем exact tree/blob/head readback. Фактический remote SHA фиксируется транспортом после сохранения.
+
+
+# Точный въезд М11 5286168661 — STARTED
+
+18.10.2026 12:42 МСК. Parent b6df97d0497bd30d4ccf7912fbe0aa9ad9fa9acd; local/PR head совпали, PR14 open/draft, ветка fix/v3-missing-route-prices-2026-10-15. Последние5 Actions completed/success; активных запусков в выборке нет. Предыдущий отдельный разбор сохранён, capture SHA c4c60b8987cb2ff44be21df4a0359249c90b5cfb не переснимать.
+
+Цель: первичная идентичность node5286168661 / way766468434 и направленное платное продолжение; не назначать тарифную точку по названию Торжка. Не переносить p679→p258 guard.
+
+Лимиты: сначала два GET exact node и way/full, затем максимум одна локальная карта до0.02° на сторону при конкретном пробеле связности. Каждый запрос timeout15s, суммарно до45s; без retry/routing/trace/price replay. Существующий capture-m11-p258-sources.mjs сохраняет полные bytes/HTTP/SHA/progress и пропускает уже сохранённые ответы. Выход source-snapshots/m11/2026-10-18-entry5286168661/. После получения short offline review и DONE; код/цены до доказательства не менять.
+
+Recovery: продолжить по metadata/progress, не повторять сохранённые GET. При timeout сохранить ошибку и конкретный gap. После DONE exact tree/blob/head readback до следующей независимой работы. Официальный тариф и соответствие exit ЦКАД могут остаться отдельными блокерами; unknown не free. Main/merge/Production/Android/автоматизации не разрешены.
