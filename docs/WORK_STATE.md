@@ -1,3 +1,9 @@
+## STARTED — Одинцово strictконтекст/геометрия, безденег
+
+[BoundedA/Bscope](checkpoints/2026-10-18-odintsovo-continuity-STARTED.md): codeCI39148079088verify/liveSUCCESS. NEXT A: optionalnamedtraceblock+standalonematcher,2exactofflinevalidationreplay/negativeguards/fullbuild; источники4GET/27pointsготовы. Bfareadapterотдельно,day/timecalendarнегадать. ForwardCKADunknownсохранить. PR14draft.
+
+## Предыдущая история
+
 ## FIXED — paidА113/fullCKADname учитываются; новыйcodeCI pending
 
 [Код/проверки](checkpoints/2026-10-18-ckad-paid-alias-coverage-CODE-DONE.md): ownforwardОдинцово missing=[ckad,odintsovo], reverse=[odintsovo]; обаAPIOSRM amountnull, никакихценне добавлено. Focused18/18,full792/792+quote,Next16/16,TS/ESLint/diffPASS; initialtestproviderassumption сохранён. Source95c1fbd3 durable, предыдущийCI39146933232verify/liveSUCCESS. NEXT послеremote/newcodeCI: strict17,7↔6,9continuity/no-reentry и отдельныйfareadapter; forwardнепоказыватьчастичнуюсумму. Источникиготовы/повторовнет. PR14draft.
