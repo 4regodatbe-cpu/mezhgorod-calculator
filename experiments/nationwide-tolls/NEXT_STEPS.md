@@ -1,3 +1,9 @@
+## DIAGNOSIS DONE / SOURCE STARTED — точный выход ЦКАД к Раменскому
+
+[Contextreplay и3GETscope](../../docs/checkpoints/2026-10-18-ckad-ramenskoe-exit-source-STARTED.md): owncurrenttracecomplete3/3,misses0,ноexitдругой:886019081→886019063→A107119881263. NEXT:3exactwayfullGET→sourceproof; billingpoint/ценыневыбиратьпоA107label. CI39132410371verify/liveобаPASS. Новыйrouting/trace0,готовыеисточникинеповторять.
+
+## Предыдущая история
+
 ## FIXED — южный head М11→ЦКАД47; новый CI pending
 
 [Код, owncases и проверки](../../docs/checkpoints/2026-10-18-m11-ckad47-exit-CODE-DONE.md): ownРаменскоеhead200Thu/240Sat, М11subtotal1450/1630, fullnull/missingCKAD. OwnКазань2componentprofilesPASS; Москва/КраснодарнеперенялиCKADhead. Focused27/27,full777/777+quote/API,Next16/16,TS/ESLintPASS; initialM4testassumptionfailureсохранён. NEXT послеCI: конкретныйownCKADexit/contextРаменского,безповтораобщихаудитов/источников.
