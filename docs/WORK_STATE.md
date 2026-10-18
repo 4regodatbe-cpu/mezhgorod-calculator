@@ -1,3 +1,11 @@
+## DONE — установлен РВП64; тарифШкиперской кнемунепривязан
+
+4новыхprimaryGET200. Точныйnode13020687195/way351741889 названРВП64/ref64E. Тариф95Шкиперскойперечисляетдругиерамки; безТПвэтомпродуктеестьосвобождение,ноононеподтверждаетfree/0длянашегоРВП64→КАД-юг. [Источник и решение](checkpoints/2026-10-18-zsd-rvp64-identity-and-shkipersky-rule-DONE.md). Runtime/ценыбезизменений.
+
+NEXT:новыйточечныйowner crosswalkРВП64/ref64E иmainWHSDcash/cardscopeдо933975069; boundedSTARTEDдосети. ГотовыеGET/routechecksнеповторять; прежнийambiguousШкиперскийlabelнеиспользоватькакproductidentity.
+
+## Предыдущая история
+
 ## STARTED — точный въезд ЗСД и тариф Шкиперской развязки
 
 Найдены3новыхPDFlinks вretainedownerindex. [План](checkpoints/2026-10-18-zsd-shkipersky-source-STARTED.md):3ownerPDF+1exactOSMway,0queries/route/replay. СперваразличитьфактическийвъездМакарова/Шкиперский,неприсваиватьразвязочныйтарифпоlabel.

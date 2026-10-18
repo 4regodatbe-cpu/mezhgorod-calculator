@@ -34,7 +34,7 @@
     }
   ],
   "nextCase": null,
-  "nextAction": "Do not repeat route audits or completed sibling boundary checks. Next independent gap: exact owner cash/card rule or dated receipt for Makарова/Шкиперский entry gantry13020687195/351741889 and southKAD booth933975069. Require a new bounded STARTED and precise independent source; neither toll=false nor gantry type proves zero/charge. Existing M3 date/M4 physical545 blocks remain until new primary evidence.",
+  "nextAction": "Next exact new source only: owner mapping and ordinary WHSD cash/card billing scope forRVP64/ref64E at30.2224424,59.9615898 onway351741889, to southKAD booth933975069. Do not repeat ShkiperskyPDFpass or completed routes; do not attach95-1fee or0to64 without crosswalk. Persist boundedSTARTED before new source work.",
   "findings": [
     {
       "code": "m4_crossing_profile_changes",
@@ -1947,7 +1947,7 @@
             "groupSize": 7,
             "checkedCases": 7,
             "uncheckedSiblings": [],
-            "scopeReview": "Въезд со стороны проспекта Крузенштерна / Шкиперского протока → КАД-юг",
+            "scopeReview": "Въезд по проспекту Крузенштерна через РВП-64/ref64E → КАД-юг; owner interchange/billing crosswalk remains unproven",
             "outcome": "blocked_by_missing_reliable_data",
             "readyTariffRub": null,
             "evidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/summary.json",
@@ -1965,6 +1965,11 @@
                   "triple-m11-ckad-m12-spb-to-arzamas"
                 ],
                 "reason": "Remaining own boundary sibling checks completed. No component pricing replay."
+              },
+              {
+                "atUtc": "2026-10-18T06:27:49.494322+00:00",
+                "previousScopeReview": "Въезд со стороны проспекта Крузенштерна / Шкиперского протока → КАД-юг",
+                "reason": "New exactOSMprimary source identifies gantryRVP64; separate Shkiperskyproduct should not be inferred from ambiguous streetlabel."
               }
             ],
             "newSiblingBoundaryChecks": 6,
@@ -1977,7 +1982,16 @@
               "gantryIdentityProven": true,
               "chargeOrFreeStatusProven": false,
               "comparisonCorrection": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/comparison-correction.json"
-            }
+            },
+            "latestPrimarySourceReview": {
+              "checkpoint": "docs/checkpoints/2026-10-18-zsd-rvp64-identity-and-shkipersky-rule-DONE.md",
+              "evidence": "experiments/nationwide-tolls/checks/2026-10-18-zsd-shkipersky-source/result.json",
+              "physicalNodeIdentity": "RVP64",
+              "separateShkiperskyTariffBindingProven": false,
+              "ordinaryWhsdCashCardAmount": null,
+              "noTransponderShkiperskyExemptionExistsButNotAppliedToRvp64": true
+            },
+            "missing": "Owner mapping and ordinary WHSD cash/card collection scope for recordedRVP64/ref64E→southKAD933975069. Separate tariff95listsdifferentgantryIDs and cannot be assigned bystreetlabel; no zero/freeclaim."
           },
           {
             "fingerprint": "5733fbb44c1c68eac1b81aa40e7e08b59201621562b0c133671ae51437d09a34",
@@ -5123,7 +5137,7 @@
       "Odintsovo checkpoint field restored to exact path; original text matches existing committed report",
       "M12 followup continuation now points past completed official-page read"
     ],
-    "nextAction": "Do not repeat route audits or completed sibling boundary checks. Next independent gap: exact owner cash/card rule or dated receipt for Makарова/Шкиперский entry gantry13020687195/351741889 and southKAD booth933975069. Require a new bounded STARTED and precise independent source; neither toll=false nor gantry type proves zero/charge. Existing M3 date/M4 physical545 blocks remain until new primary evidence."
+    "nextAction": "Next exact new source only: owner mapping and ordinary WHSD cash/card billing scope forRVP64/ref64E at30.2224424,59.9615898 onway351741889, to southKAD booth933975069. Do not repeat ShkiperskyPDFpass or completed routes; do not attach95-1fee or0to64 without crosswalk. Persist boundedSTARTED before new source work."
   },
   "postAuditDiagnosticFixes": [
     {
