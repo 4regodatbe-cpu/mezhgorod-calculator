@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-19",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "sourceHead": "cebd5550434b79f4c158787a38069afe6d829640",
+  "pr": 14,
+  "prDraft": true,
+  "workflowRunsForHead": [],
+  "newPricedComponents": 0,
+  "confirmedFullFares": 0,
+  "codeOrMatrixChanged": false,
+  "sources": [
+    {"url": "https://roadckad.ru/ckad3.php", "operator": "ГК Российские автомобильные дороги", "opened": true, "finding": "ЦКАД-3 lists distinct M-11, A-107 Никольское-Горки, M-8/A-107, and M-7 interchanges."},
+    {"url": "https://roadckad.ru/ckad4.php", "operator": "ГК Российские автомобильные дороги", "opened": true, "finding": "ЦКАД-4 lists separate A-107/Egoryevskoye interchange."},
+    {"url": "https://roadckad.ru/ckad5.php", "operator": "ГК Российские автомобильные дороги", "opened": true, "finding": "CKAD-5 has 17.46 km new road plus 58.98 km reconstructed A-107; site does not price the saved exact route segment."},
+    {"url": "https://russianhighways.ru/for_drivers/a-113/", "operator": "ГК Российские автомобильные дороги", "opened": true, "finding": "Page states that travel on CKAD-5 is toll-free."},
+    {"url": "https://avtodor-tr.ru/press-center/news/kak-zaekhat-na-tskad-3-s-trassy-m-11-neva/", "operator": "ГК Автодор", "openedViaSearchIndex": true, "directOpenStatus": 403, "finding": "Historical note describes M-11 entry, one booth, and A-107 Nikolskoe-Gorki exit."},
+    {"url": "https://avtodor-tr.ru/road/tariffs/", "operator": "ГК Автодор", "openedViaSearchIndex": true, "directOpenStatus": 403, "finding": "Search-indexed category-I M-11—Nikolskoe-Gorki fare: 119 RUB; same value already exists in the saved matrix."},
+    {"url": "https://avtodor-tr.ru/upload/iblock/165/wiri43iwx18q7t9xc6izr4qeds5odt3z.pdf", "operator": "ГК Автодор", "openedViaSearchIndex": true, "directOpenStatus": 403, "finding": "Search index identifies 2026 tariff appendix row M-11—Nikolskoye-Gorki at 119 RUB."},
+    {"url": "https://whsd.ru/tarifyi-na-proezd/", "operator": "Магистраль Северной Столицы", "openedViaSearchIndex": true, "directOpenStatus": 502, "finding": "No exact RVP-64/64E tariff-product crosswalk retrieved."}
+  ],
+  "localEvidence": {
+    "ckadExitSnapshot": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-18-ramenskoe-exit/physical-directed.json",
+    "ckadExitNode": "3140785578",
+    "ckadExitWay": "119881263",
+    "ckadExitCoordinate": [38.3591975, 55.6313228],
+    "ckadM11EntryCoordinate": [37.1996241, 56.0900701],
+    "a113Capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/2026-10-16T02-07-00-749Z-capture.json.gz",
+    "a113Edges": [46, 53],
+    "a113Ways": [1080462756, 1080462754, 1080462753, 1080462751, 1346919149, 1080462767],
+    "a113RouteCoordinateBounds": {"lon": [37.009077, 37.014098], "lat": [55.618699, 55.631242]}
+  },
+  "interpretation": "The M11—Nikolskoye-Gorki tariff is not transferred to the saved Egoryevskoye exit. Operator information that CKAD-5 is toll-free conflicts with the trace toll=true flag only if the saved A-113 block maps to that segment; exact geographic crosswalk remains unproven. RVP-64 remains blocked.",
+  "networkRouteReplayRequests": 0,
+  "sourceDownloads": 0,
+  "runtimePriceChanges": 0
+}
