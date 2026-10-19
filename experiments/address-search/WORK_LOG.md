@@ -43,3 +43,11 @@ The initial STARTED record is local commit `6a69402`; the source/test/BLOCKED pa
 - The response header showed `x-vercel-id: fra1:iad1:...`: request entered the Frankfurt edge, but the function still ran in `iad1`. Per-function `vercel.json` path settings alone did not move the Next App Router functions in this deployment.
 - Added Next.js route segment `export const preferredRegion = "fra1"` to both `app/r/route.ts` and `app/api/suggest/route.ts`, retaining Vercel `supportsCancellation`. This is a corrective attempt; verify the next deployment's actual runtime region and same query set.
 - Do not treat earlier mixed responses as a pass; runtime still returned 502. Newest commit/build/live probe is pending.
+
+
+## 2026-10-19 — final preview verification
+
+- Latest authorized branch head `b82e951875284b3ef1cacbf09b78be0811d1365a` is PR #14's open/draft head; Vercel Preview deployment `dpl_B9R6u4Y4eMiVrFEumgQwb4Qigwyf` is READY and its Vercel status is success.
+- Replayed GET `/api/suggest` for «Ростов», «Красн», «Моск» and «Краснодар»: all returned HTTP 200. For «Ростов», «Ростов-на-Дону» appears among the first three ranked suggestions. Response headers included `::fra1::` in `x-vercel-id`.
+- Focused address-search/proxy/Photon/cache tests passed 43/43. The test confirms that `POST /r` forwards the incoming abort signal. A live POST was not executed: the available protected-preview fetch connector supports GET only. Do not infer POST live behavior beyond the passing proxy regression test.
+- No merge or Production deployment. If the user's original UI still shows the unavailable message on this preview, the next needed evidence is the exact full typed query and approximate attempt time so its POST request can be investigated.
