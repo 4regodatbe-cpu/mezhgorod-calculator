@@ -1,6 +1,6 @@
-# IN PROGRESS — РВП-64 Yandex/V3 diagnostic batch
+# BLOCKED — РВП-64 Yandex/V3 diagnostic batch
 
-[STARTED checkpoint](../../docs/checkpoints/2026-10-19-161200-rvp64-yandex-route-comparison-STARTED.md): pilot through exact waypoint `59.9615898,30.2224424` shows Yandex aggregate toll `~600 ₽` on `20,7 ми`/47-min route. Now compare the same O-D in V3, verify selected geometry and toll status, then decide whether the 20-case batch remains informative. Even 20 repeated aggregate route estimates cannot prove a tariff-to-gate mapping; do not set a fare/zero or change matrix/runtime. Exact operator crosswalk or dated cash/card receipt remains the only tariff-resolution gate.
+Ограниченная проверка остановлена после одного matched-coordinate O-D: Yandex строит через waypoint и показывает aggregate `~600 ₽`; V3 не принимает/не использует `via`, выбирает собственный OSRM route и не выдаёт geometry. Exact path match не подтверждён, оставшиеся 19 cases не запускались, потому что сравнение было бы методологически ненадёжным. [Результат и ограничение](../../docs/checkpoints/2026-10-19-162600-rvp64-yandex-v3-comparison-BLOCKED.md), [STARTED/pilot](../../docs/checkpoints/2026-10-19-161200-rvp64-yandex-route-comparison-STARTED.md). Следующий шаг для тарифа — только exact operator crosswalk/table or dated cash/card receipt. Для route diagnostics сначала нужен валидируемый одинаковый путь в обеих системах; не выводить цену по общей разнице, не ставить 0, код/runtime/матрицу не менять.
 
 ---
 
