@@ -1,3 +1,7 @@
+## IN PROGRESS — восстановление минимального runtime перед двумя issue #2 cases
+
+[Входы, пути и критерий готовности](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-STARTED.md). После CI success run39239030289 на head4954467 восстановить sparse dirs `scripts/`, `lib/`, `app/`, `components/`, `public/`, `data/` и выполнить `pnpm install --frozen-lockfile`. Затем только найти подходящий runner и проверенные endpoint controls. Пока не запускать live route/replay; точные старые точки неизвестны.
+
 ## BLOCKED — issue #2: Ейск—Москва и Майкоп—Москва требуют bounded capture/replay
 
 [Проверка наличия evidence и текущий runtime blocker](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-capture-availability-BLOCKED.md). В именах сохранённых файлов и searchable JSON в systemic audit/checks нет точных route records; exact issue endpoint controls также не установлены. Local checkout sparse: `scripts/` отсутствует, `node_modules` отсутствует. NEXT: после завершения CI восстановить полный checkout/deps и проверить точные controls/runner. Затем STARTED checkpoint и два ограниченных named/proxy route cases с same-date и weekend offline replay; proxy не называть точной регрессией.

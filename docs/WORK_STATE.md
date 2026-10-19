@@ -1,3 +1,7 @@
+## IN PROGRESS — восстановить checkout/runtime для оставшихся двух cases issue #2
+
+[STARTED checkpoint и узкий scope](checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-STARTED.md). CI run39239030289 на head4954467 завершён `verify=success`, `live_probe=success`; PR14 draft. Следующий блок: sparse expansion только `scripts/lib/app/components/public/data`, затем frozen install. Capture/replay не запускать, пока не установлены runner и endpoint controls.
+
 ## BLOCKED — Ейск—Москва и Майкоп—Москва: exact capture/runtime отсутствуют
 
 [Инвентарь и причина остановки](checkpoints/2026-10-19-issue2-yeysk-maykop-capture-availability-BLOCKED.md). В named paths и несжатых JSON двух целевых архивов exact route evidence не найдено; checkout sparse (только `docs/` и `experiments/nationwide-tolls/`), `scripts/` и `node_modules` отсутствуют. Новые route calls/replay не запускались. Случаи остаются непроверенными. NEXT: после CI восстановить полный checkout/deps, установить точные endpoint controls и runner; затем bounded pair capture/replay. PR14 draft.
