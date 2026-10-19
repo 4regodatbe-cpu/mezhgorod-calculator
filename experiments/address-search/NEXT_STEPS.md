@@ -1,8 +1,5 @@
 # Address-search next steps
 
-1. **IN PROGRESS — live provider timeout.** Screenshot queries «Ростов», «Красн…», «Моск…» produced HTTP 502; Vercel logs identify Photon connect timeouts from `iad1`.
-2. Region-only Vercel config attempt did not move functions: response header showed edge `fra1`, function `iad1`; its live results were mixed and include HTTP 502. Next.js `preferredRegion="fra1"` is now added to both handlers; request cancellation and proxy signal propagation are enabled.
-3. Wait for the new Preview build, confirm runtime region from response headers, replay the three screenshot queries, and inspect Vercel runtime logs. Update this handoff with actual status.
-4. PR #14 remains open/draft. No merge or Production release without a direct request.
+**Preview API verification complete.** On branch head `b82e951`, GET `/api/suggest` returned HTTP 200 for «Ростов», «Красн», «Моск» and «Краснодар»; «Ростов-на-Дону» appeared in the first three results for «Ростов». Local signal-propagation regression is included in the 43/43 passing focused suite. The protected-preview connector only supports GET, so `POST /r` was not live-tested. PR #14 remains open/draft; no merge or Production release was made.
 
-The local browser cache speeds repeated exact searches across A/B. It does not improve first-time Photon latency; a first-query optimization needs a separately verified faster provider or a staged UI design that preserves territory ranking.
+If the user still sees the unavailable message in the same Preview, capture the full point-B input and attempt time, then correlate it to the POST request/runtime error. The shared browser cache speeds repeated exact searches across A/B; a first lookup still depends on Photon.
