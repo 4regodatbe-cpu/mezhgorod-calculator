@@ -1,3 +1,7 @@
+## IN PROGRESS — РВП-64: один новый официальный поиск
+
+По прямому указанию пользователя начат ограниченный поиск по официальному домену WHSD для точной связи `64E`/Макарова с тарифом наличными/картой до ПВП `933975069`. [STARTED и лимиты](checkpoints/2026-10-19-rvp64-official-domain-search-STARTED.md). Старые запросы, PDF, route checks не повторять; код/матрица не менять без прямого доказательства. PR #14 draft; head `82941bf0`; CI `39244213930` success.
+
 ## DONE / STARTED — V3 proxy capture/replay завершён; V2 comparison начат
 
 [V3 результаты и replay evidence](checkpoints/2026-10-19-issue2-yeysk-maykop-v3-capture-replay-DONE.md). Ейск→Москва V3 4 340 ₽ Thu / 5 240 ₽ Sat; Майкоп→Москва 5 040/6 090 ₽; offline replay 4/4, live fetch=0/misses=0/all responses consumed. Важное уточнение: широкие regression assertions 5 240/7 240 и 6 090/8 400 относятся к `/api/v2`, а не к V3. NEXT: durable STARTED для двух bounded V2 captures и same-call offline Thu/Sat replay; test amounts не считать operator fare source.

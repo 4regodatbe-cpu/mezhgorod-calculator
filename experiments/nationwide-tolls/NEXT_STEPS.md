@@ -1,3 +1,7 @@
+## IN PROGRESS — РВП-64: один новый exact owner-domain поиск
+
+Выполнить только после durable сохранения [STARTED](../../docs/checkpoints/2026-10-19-rvp64-official-domain-search-STARTED.md): `site:whsd.ru "64E" "Макарова" тариф`; максимум одна новая первичная страница, только если найдена точная схема/продуктовая связь. Предыдущие запросы/PDF/маршруты не повторять. Если точной связи нет — сохранить blocker и не назначать тариф/ноль.
+
 ## DONE / STARTED — V3 proxy capture/replay выполнен; V2 comparison следующий
 
 [V3 evidence и статус](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-v3-capture-replay-DONE.md). Thursday/Saturday offline replay: 4/4 HTTP200, zero network, misses0, all recorded calls consumed. Из captures: Ейск 4 340/5 240 ₽, Майкоп 5 040/6 090 ₽. Test expectations в segment1 runner используют `/api/v2`, поэтому далее отдельный STARTED на два bounded V2 API capture и same-call replay. Координаты остаются project proxy, не точный historical issue input.
