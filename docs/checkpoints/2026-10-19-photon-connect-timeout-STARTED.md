@@ -23,6 +23,14 @@
 - `vercel.json` JSON parse and `git diff --check`: passed.
 - Preview build/live verification for this remediation: pending; do not claim fixed until tested.
 
+## First preview attempt — failed to verify
+
+Commit `df460e7f5a3a00224cd6029bb7dcdb48207702ba` reached READY, but live results were mixed: «Ростов» and «Моск» returned HTTP 200; «Красн» and «Краснодар» returned HTTP 502. The response header had `x-vercel-id: fra1:iad1:...`, showing the request entered Frankfurt edge while the function still ran in `iad1`. Do not treat this as fixed.
+
+## Corrective attempt
+
+Added `export const preferredRegion = "fra1"` to both Next route handlers (`app/r/route.ts`, `app/api/suggest/route.ts`), retaining `supportsCancellation` in `vercel.json`. This uses Next's Route Segment Config; the new deployment and live verification are pending.
+
 ## Next step
 
 Commit to the already authorized branch after confirming the remote head still equals the recorded PR head. Then inspect the new Vercel deployment's function region and test the three failing queries through both GET `/api/suggest` and POST `/r`. Review runtime logs for new Photon connect timeouts. Leave PR draft and Production unchanged.

@@ -36,3 +36,10 @@ The initial STARTED record is local commit `6a69402`; the source/test/BLOCKED pa
 - Local follow-up: `app/r/route.ts` now forwards the request signal; `vercel.json` assigns only `/r` and `/api/suggest` functions to `fra1` and enables `supportsCancellation`. Added `scripts/address-search-proxy.test.ts` to ensure signal aborts pass through the proxy. This targets the observed connection timeout while keeping unrelated functions in their existing region.
 - Checks: focused address/Photon/cache/proxy suite passed 43/43; targeted ESLint, JSON parse and `git diff --check` passed. The region/proxy patch has not yet deployed to Preview; live behavior remains unverified.
 - Next: save on the authorized branch, wait for Vercel preview build, verify function region `fra1`, then probe the three screenshot queries and the `/r` POST path; inspect runtime error counts. Do not mark fixed unless these succeed. PR #14 remains draft; no Production release.
+
+### Preview verification and region-config correction — 2026-10-19
+
+- The first follow-up commit built successfully, but live queries on its preview were mixed: «Ростов» and «Моск» returned HTTP 200; «Красн» and «Краснодар» returned HTTP 502.
+- The response header showed `x-vercel-id: fra1:iad1:...`: request entered the Frankfurt edge, but the function still ran in `iad1`. Per-function `vercel.json` path settings alone did not move the Next App Router functions in this deployment.
+- Added Next.js route segment `export const preferredRegion = "fra1"` to both `app/r/route.ts` and `app/api/suggest/route.ts`, retaining Vercel `supportsCancellation`. This is a corrective attempt; verify the next deployment's actual runtime region and same query set.
+- Do not treat earlier mixed responses as a pass; runtime still returned 502. Newest commit/build/live probe is pending.

@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GET as getSuggestions } from "../api/suggest/route";
 
+export const preferredRegion = "fra1";
+
 export function createSuggestionForwardRequest(request: NextRequest, query: string): NextRequest {
   const url = new URL(request.url);
   url.pathname = "/api/suggest";

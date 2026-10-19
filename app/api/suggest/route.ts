@@ -3,6 +3,8 @@ import { SPECIAL_TERRITORY_BOUNDARIES } from "../../../lib/special-territory-bou
 import { photonSearchUrls, rankPhotonFeatures } from "../../../lib/photon-address-search.ts";
 import { fetchPhotonFeatures } from "../../../lib/photon-fetch.ts";
 
+export const preferredRegion = "fra1";
+
 export async function GET(request: NextRequest) {
   const q = (request.nextUrl.searchParams.get("q") ?? request.nextUrl.searchParams.get("term") ?? "").trim();
   if (q.length < 3) return NextResponse.json({ items: [] });
