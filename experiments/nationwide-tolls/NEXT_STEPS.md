@@ -1,3 +1,9 @@
+# IN PROGRESS — РВП-64 Yandex/V3 diagnostic batch
+
+[STARTED checkpoint](../../docs/checkpoints/2026-10-19-161200-rvp64-yandex-route-comparison-STARTED.md): pilot through exact waypoint `59.9615898,30.2224424` shows Yandex aggregate toll `~600 ₽` on `20,7 ми`/47-min route. Now compare the same O-D in V3, verify selected geometry and toll status, then decide whether the 20-case batch remains informative. Even 20 repeated aggregate route estimates cannot prove a tariff-to-gate mapping; do not set a fare/zero or change matrix/runtime. Exact operator crosswalk or dated cash/card receipt remains the only tariff-resolution gate.
+
+---
+
 ## BLOCKED — РВП-64: тариф наличными/картой не установлен
 
 [Оценка ответа Алисы](../../docs/checkpoints/2026-10-19-153700-rvp64-alice-response-assessment.md): OSM label/ref и официальный тарифный ключ — разные уровни; `933975069` есть в сохранённых данных как OSM node ID, но это не подтверждает официальный номер МСС. Ответ не устанавливает ни точное соответствие тарифа, ни отсутствие такого соответствия. Не назначать сумму и не менять runtime/матрицу. Возобновить только с первичной схемой/таблицей МСС для `13020687195`/`64E` и cash/card продукта либо датированным чеком. Не повторять ранее проверенные запросы, PDF и route checks.
