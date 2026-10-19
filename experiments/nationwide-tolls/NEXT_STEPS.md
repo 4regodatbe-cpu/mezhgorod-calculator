@@ -1,3 +1,7 @@
+## BLOCKED — issue #2: Ейск—Москва и Майкоп—Москва требуют bounded capture/replay
+
+[Проверка наличия evidence и текущий runtime blocker](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-capture-availability-BLOCKED.md). В именах сохранённых файлов и searchable JSON в systemic audit/checks нет точных route records; exact issue endpoint controls также не установлены. Local checkout sparse: `scripts/` отсутствует, `node_modules` отсутствует. NEXT: после завершения CI восстановить полный checkout/deps и проверить точные controls/runner. Затем STARTED checkpoint и два ограниченных named/proxy route cases с same-date и weekend offline replay; proxy не называть точной регрессией.
+
 ## DONE — старый симптом Москва—Казань проверен по сохранённым route evidence
 
 [Результаты и границы вывода](../../docs/checkpoints/2026-10-19-issue2-m12-saved-route-review-DONE.md). Forward/reverse M-12 traversal proven; saved quote 3 513 ₽ в weekday и weekend replay, `priceConfirmation=unconfirmed`. Это не точное воспроизведение исторического issue route. Для Ейск—Москва и Майкоп—Москва соответствующих captures в текущем дереве нет. NEXT: проверить два OD только по exact controls/captures; при отсутствии evidence — bounded capture + same-date/weekend replay отдельными шагами.

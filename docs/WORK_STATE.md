@@ -1,3 +1,7 @@
+## BLOCKED — Ейск—Москва и Майкоп—Москва: exact capture/runtime отсутствуют
+
+[Инвентарь и причина остановки](checkpoints/2026-10-19-issue2-yeysk-maykop-capture-availability-BLOCKED.md). В named paths и несжатых JSON двух целевых архивов exact route evidence не найдено; checkout sparse (только `docs/` и `experiments/nationwide-tolls/`), `scripts/` и `node_modules` отсутствуют. Новые route calls/replay не запускались. Случаи остаются непроверенными. NEXT: после CI восстановить полный checkout/deps, установить точные endpoint controls и runner; затем bounded pair capture/replay. PR14 draft.
+
 ## DONE — старая авто-ошибка Москва—Казань не воспроизвелась на сохранённых системных трассах
 
 [Checkpoint](checkpoints/2026-10-19-issue2-m12-saved-route-review-DONE.md). В обе стороны saved M-12 traversal proven; 3 513 ₽ на 15/17 октября, но цена unconfirmed. Это только два близких сохранённых маршрута, не точная регрессия старого issue #2. Ейск—Москва и Майкоп—Москва в текущем дереве не имеют сохранённых route captures; остаются непроверенными. Код/матрица без изменений.
