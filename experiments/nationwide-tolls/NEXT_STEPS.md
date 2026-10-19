@@ -2415,3 +2415,6 @@ Checkpoint: ../../docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md
 - Перед итоговой записью: CI39056837838 completed/success (verify и live_probe), последние пять runs завершены; branch/PR heada666fb48… совпали, PR14 draft. Final focused asserts0 неожиданных fetch attempts. Новый post-save CI отдельно.
 
 ## Предыдущая сохранённая история
+## IN PROGRESS — V3 default cutover / Production publish
+
+Local-only app changes make `/` open V3 and label `/v2` «старый алгоритм» while preserving the V2 route. Audit matrix/evidence/findings remain untouched. Full `pnpm build`: 802 audit tests passed, quote/API checks passed; `next build --webpack` succeeded and emitted `/`, `/v2`, `/v3`. Local default Turbopack build failed to resolve an existing tracked vendor CSS import; keep this limitation explicit. Remote branch remains at `54fcfed28801b13ef00583e92bbbb205f7aa44ad`; PR #14 open/draft; Actions run `39285105010` queued. Do not update remote while queued/active. After it is terminal, verify head/PR/draft, save only app/docs update with non-force expected-head and exact readback, wait for checks and Vercel preview at the new SHA, then promote only that verified deployment and confirm root/V2/V3.

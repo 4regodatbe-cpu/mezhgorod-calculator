@@ -19,3 +19,9 @@
 ## Восстановление
 
 Если локальная операция прервётся, проверить фактическую ветку, `git status`, head, незаконченные локальные правки, PR #14 и статусы Actions/Vercel. Не отменять активный CI и не запускать дубликат. Если PR или remote head изменился, не продвигать устаревший commit и не перезаписывать чужие изменения.
+
+## Локальная проверка — перед сохранением release commit
+
+Изменены только `app/page.tsx` (главная перенаправляет на `/v3`), видимая пометка `/v2` «Версия 2 · старый алгоритм» и ссылка с V2 на актуальный V3; на `/v3` добавлена пометка «Актуальный калькулятор», а обратная ссылка подписана «V2 · старый алгоритм». Страницы `/v2` и `/v3` сохранены. Проверки аудита: 802 passed, 0 failed; quote и API adapter checks passed. Локальный `pnpm exec next build --webpack` завершился успешно и собрал `/`, `/v2`, `/v3`; обычный Turbopack build в этой среде завершился ошибкой разрешения существующего tracked CSS `vendor/shadcn-tailwind-4.13.0.css`, поэтому он не считается успешным. Успешный Vercel preview на предшествующем docs-only SHA `54fcfed28801b13ef00583e92bbbb205f7aa44ad` не проверяет эти локальные app changes.
+
+На момент этой записи Actions run `39285105010` для SHA `54fcfed28801b13ef00583e92bbbb205f7aa44ad` всё ещё `queued`; PR #14 остаётся open/draft. Из-за действующего правила не выполнять remote update при active/queued CI, release commit пока не сохранять в удалённую ветку и ничего не продвигать в Production. После terminal CI — заново проверить branch head/PR/draft, сохранить release commit non-force с `expected_sha`, сверить exact readback, дождаться CI и готового Vercel preview для точного release SHA; затем отдельно подтвердить Production alias/routes.
