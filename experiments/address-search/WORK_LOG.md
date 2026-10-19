@@ -27,3 +27,12 @@ The initial STARTED record is local commit `6a69402`; the source/test/BLOCKED pa
 - Vercel Preview deployment `dpl_F3ftRbQdneZEoJrhZ3XfgoJHESMy` reached READY. Its full `pnpm build` ran `test:audit`: 809 passed, 0 failed; quote/API checks passed; Next compiled successfully and generated 16/16 static pages. New Photon timeout/cancellation and address-cache tests appeared in the passing audit output.
 - Preview `/api/suggest?q=Краснодар` returned HTTP 200 and 20 suggestions. This control does not reproduce the exact address the user reported.
 - PR remains draft/open. No merge or Production release was performed. Exact next step only if the issue persists after eventual release: collect the literal point-B query and reproduce it before changing provider/ranking logic.
+
+## 2026-10-19 — screenshot follow-up: Photon connection timeout
+
+- User screenshots show the failure persisted in preview for «Ростов», partial «Красн…», and partial «Моск…».
+- Reproduced via the current preview API: those three queries returned HTTP 502; a simultaneous control for «Краснодар» returned HTTP 200. Vercel runtime diagnostics showed 8 `ConnectTimeoutError` failures to `photon.komoot.io:443`, all from function region `iad1`, each at the configured 10-second deadline.
+- The UI submits through `POST /r`. Inspection found that proxy rebuilt `NextRequest` without the original `request.signal`; additionally, Vercel request cancellation is opt-in for Node functions. Thus the previous abort propagation did not stop obsolete Photon requests for this UI path.
+- Local follow-up: `app/r/route.ts` now forwards the request signal; `vercel.json` assigns only `/r` and `/api/suggest` functions to `fra1` and enables `supportsCancellation`. Added `scripts/address-search-proxy.test.ts` to ensure signal aborts pass through the proxy. This targets the observed connection timeout while keeping unrelated functions in their existing region.
+- Checks: focused address/Photon/cache/proxy suite passed 43/43; targeted ESLint, JSON parse and `git diff --check` passed. The region/proxy patch has not yet deployed to Preview; live behavior remains unverified.
+- Next: save on the authorized branch, wait for Vercel preview build, verify function region `fra1`, then probe the three screenshot queries and the `/r` POST path; inspect runtime error counts. Do not mark fixed unless these succeed. PR #14 remains draft; no Production release.

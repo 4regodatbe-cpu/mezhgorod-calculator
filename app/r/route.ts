@@ -1,6 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GET as getSuggestions } from "../api/suggest/route";
 
+export function createSuggestionForwardRequest(request: NextRequest, query: string): NextRequest {
+  const url = new URL(request.url);
+  url.pathname = "/api/suggest";
+  url.search = "";
+  url.searchParams.set("q", query);
+  return new NextRequest(url, { signal: request.signal });
+}
+
 export async function POST(request: NextRequest) {
   let body: unknown;
   try {
@@ -16,9 +24,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Не указан поисковый запрос" }, { status: 400 });
   }
 
-  const url = new URL(request.url);
-  url.pathname = "/api/suggest";
-  url.search = "";
-  url.searchParams.set("q", query);
-  return getSuggestions(new NextRequest(url));
+  return getSuggestions(createSuggestionForwardRequest(request, query));
 }
