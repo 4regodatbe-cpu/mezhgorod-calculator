@@ -1,3 +1,7 @@
+## STARTED — issue #2 proxy capture: Ейск/Майкоп → Москва
+
+[Входы и лимиты](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-capture-STARTED.md). NEXT: два API capture, сохранить полный request/response и используемые raw fetch responses; затем отдельный offline replay для Thu 22 Oct и Sat 24 Oct. Никаких широких audit runners, toll-avoid routes или неподтверждённых тарифных выводов.
+
 ## DONE — runtime восстановлен; regression controls найдены, captures отсутствуют
 
 [Отчёт](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-DONE.md). Dependencies installed; runner candidates `scripts/live-user-route-audit.mjs` (9 routes) и `scripts/segment1-user-regression.mjs` (широкий regression suite) намеренно не запускались. Сохранённые city coordinates найдены в тестах, но нет доказательства, что это исходные issue controls; captures/replays отсутствуют. NEXT: отдельный STARTED, изолированный только для Ейск→Москва и Майкоп→Москва, один capture на case с сохранением inputs/raw response, затем offline weekday/weekend replay. Test expected amounts не считать подтверждёнными тарифами.

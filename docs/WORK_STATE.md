@@ -1,3 +1,7 @@
+## STARTED — bounded capture proxy-controls Ейск/Майкоп
+
+[Точный объём и входы](checkpoints/2026-10-19-issue2-yeysk-maykop-capture-STARTED.md). PR14 draft, head `82f4176978dcf5994455546a7be3aba020f15777`, code CI `39241370620` success. Следующий блок: только два project regression OD capture через собственный V3 API с записью полного raw/replay evidence; затем отдельный offline same-date/Sat replay. Координаты не подтверждены как исходные controls issue #2, старые ожидания тестов не являются тарифным источником.
+
 ## DONE — восстановлен runtime и найдены regression controls двух issue #2 OD
 
 [Runtime, controls и ограничения](checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-DONE.md). Sparse dirs восстановлены, `pnpm install --frozen-lockfile` успешен (429 пакетов); run39240195036 success. Существующий широкий runner не запускался. Regression coordinates найдены в `scripts/segment1-user-regression.mjs`, но точные исходные UI-точки issue #2 не подтверждены, saved captures отсутствуют. NEXT: STARTED на изолированный ровно двухмаршрутный capture + offline weekday/weekend replay; значения тестовых ожиданий не выдавать за confirmed fares.
