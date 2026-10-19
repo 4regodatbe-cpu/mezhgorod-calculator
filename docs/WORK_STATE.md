@@ -1,6 +1,8 @@
-## STARTED — bounded capture proxy-controls Ейск/Майкоп
+## DONE / STARTED — V3 proxy capture/replay завершён; V2 comparison начат
 
-[Точный объём и входы](checkpoints/2026-10-19-issue2-yeysk-maykop-capture-STARTED.md). PR14 draft, head `82f4176978dcf5994455546a7be3aba020f15777`, code CI `39241370620` success. Следующий блок: только два project regression OD capture через собственный V3 API с записью полного raw/replay evidence; затем отдельный offline same-date/Sat replay. Координаты не подтверждены как исходные controls issue #2, старые ожидания тестов не являются тарифным источником.
+[V3 результаты и replay evidence](checkpoints/2026-10-19-issue2-yeysk-maykop-v3-capture-replay-DONE.md). Ейск→Москва V3 4 340 ₽ Thu / 5 240 ₽ Sat; Майкоп→Москва 5 040/6 090 ₽; offline replay 4/4, live fetch=0/misses=0/all responses consumed. Важное уточнение: широкие regression assertions 5 240/7 240 и 6 090/8 400 относятся к `/api/v2`, а не к V3. NEXT: durable STARTED для двух bounded V2 captures и same-call offline Thu/Sat replay; test amounts не считать operator fare source.
+
+[Фактические суммы и capture hashes](checkpoints/2026-10-19-issue2-yeysk-maykop-capture-DONE-replay-STARTED.md). По одному завершённому V3 capture на Ейск→Москва и Майкоп→Москва; полные requests/API responses/provider fetch responses сохранены. API amount Thu: 4 340 ₽ и 5 040 ₽; API weekday/weekend: 4 340/5 240 ₽ и 5 040/6 090 ₽. Отличается от прежних test assertions; точные исторические issue-controls и подтверждённый полный операторский тариф не установлены. NEXT: offline replay сохранённых calls для Thu/Sat с нулём сети/misses.
 
 ## DONE — восстановлен runtime и найдены regression controls двух issue #2 OD
 

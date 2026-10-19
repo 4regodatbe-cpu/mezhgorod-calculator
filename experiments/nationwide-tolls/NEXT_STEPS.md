@@ -1,6 +1,8 @@
-## STARTED — issue #2 proxy capture: Ейск/Майкоп → Москва
+## DONE / STARTED — V3 proxy capture/replay выполнен; V2 comparison следующий
 
-[Входы и лимиты](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-capture-STARTED.md). NEXT: два API capture, сохранить полный request/response и используемые raw fetch responses; затем отдельный offline replay для Thu 22 Oct и Sat 24 Oct. Никаких широких audit runners, toll-avoid routes или неподтверждённых тарифных выводов.
+[V3 evidence и статус](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-v3-capture-replay-DONE.md). Thursday/Saturday offline replay: 4/4 HTTP200, zero network, misses0, all recorded calls consumed. Из captures: Ейск 4 340/5 240 ₽, Майкоп 5 040/6 090 ₽. Test expectations в segment1 runner используют `/api/v2`, поэтому далее отдельный STARTED на два bounded V2 API capture и same-call replay. Координаты остаются project proxy, не точный historical issue input.
+
+[Результат и evidence](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-capture-DONE-replay-STARTED.md). По одному current V3 API capture: Ейск→Москва 4 340 ₽ Thu / 5 240 ₽ weekend, Майкоп→Москва 5 040 ₽ Thu / 6 090 ₽ weekend. Это project-coordinate proxy, не исторические точные inputs; суммы отличаются от старых test assertions и не подтверждены оператором как full-route fares. NEXT: replay only saved fetch calls for Thu 22 Oct and Sat 24 Oct; require 0 network, 0 replay misses, full call consumption.
 
 ## DONE — runtime восстановлен; regression controls найдены, captures отсутствуют
 

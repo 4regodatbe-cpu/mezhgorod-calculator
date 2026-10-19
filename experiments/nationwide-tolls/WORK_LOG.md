@@ -3321,3 +3321,17 @@ A bounded official-source lookup found that Russian Highways identifies PK-5 as 
 ## STARTED — 19.10.2026: bounded issue #2 proxy captures
 
 Проверены PR14 open/draft, head/tree `82f4176`/`0d5809c`, локальный clean checkout exact match, CI `39241370620` success. По handoff выбраны только два project regression controls: Ейск→Москва и Майкоп→Москва из `scripts/segment1-user-regression.mjs`; это не доказанные исходные UI-точки issue и test expected amounts не тарификация. Следующий блок ограничен двумя собственными V3 API capture-вызовами с полным raw response/fetch evidence; затем separate offline same-date + Saturday replay. Код и матрица без изменений. [STARTED](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-capture-STARTED.md).
+
+
+## DONE / STARTED — 19.10.2026: два issue #2 proxy capture, offline replay следующий
+
+Собственный current V3 API вызван по одному разу на Ейск→Москва и Майкоп→Москва, оба с departure `2026-10-22T09:00:00+03:00`. Оба HTTP200, выбран Valhalla, все 14/15 raw fetch responses имеют HTTP200. Ейск: 1 271 781 м / 59 629 с, amount 4 340 ₽, weekday/weekend 4 340/5 240 ₽; Майкоп: 1 404 674 м / 65 838 с, amount 5 040 ₽, weekday/weekend 5 040/6 090 ₽. API route validation говорит complete для распознанного M-4 и одного toll edge; это не независимое подтверждение whole-route tariffs. Суммы отличаются от сохранённых test assertions 5 240/7 240 и 6 090/8 400. Historical issue coordinates не доказаны; captures маркируются project proxy. Full requests/responses/fetches и SHA-256 сохранены в [checkpoint](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-capture-DONE-replay-STARTED.md). Первая попытка прервана 8-секундным shell timeout до полного API response; процесс завершился, durable capture не было; один bounded повтор Ейск дал конечный complete capture. Код/матрица без изменений. NEXT: offline Thu/Sat replay из saved calls, сеть0/misses0/all consumed.
+
+
+## DONE / STARTED — 19.10.2026: issue #2 V3 proxy replay и V2 comparison
+
+Два собственных V3 captures завершены и сохранены с raw HTTP evidence. Offline replay обеих сохранённых трасс на Thu 22 Oct и Sat 24 Oct: 4/4 API HTTP200, live fetch0, misses0, unused responses0. Thu/Sat: Ейск 4 340/5 240 ₽, Майкоп 5 040/6 090 ₽; метры/секунды/provider стабильны. [V3 DONE](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-v3-capture-replay-DONE.md). Важная коррекция: `segment1-user-regression.mjs` проверяет `/api/v2`, V3 captures не сопоставимы напрямую с его test bands. NEXT: отдельный STARTED checkpoint на два V2 proxy captures и replay.
+
+## STARTED — 19.10.2026: bounded V2 comparison
+
+Проверить собственный `/api/v2/calculate` только для двух project controls Ейск→Москва и Майкоп→Москва из сохранённого runner, один четверговый capture на OD, полные raw inputs/API/fetches; offline same-call replay Thu/Sat. Не запускать широкий regression script; test expectations остаются assertions, не confirmed fares. [STARTED](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-v2-compare-STARTED.md).
