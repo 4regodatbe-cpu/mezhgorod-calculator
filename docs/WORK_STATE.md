@@ -1,10 +1,14 @@
-## STARTED — 19.10.2026: поиск адреса точки Б
+## DONE — поиск адреса точки Б и повторный поиск, 19.10.2026
+
+В общий путь A/B добавлены ограничение Photon-запроса 10 сек с передачей отмены, а в браузере — LRU-кэш непустых подсказок на 5 минут/128 нормализованных запросов. Первый новый запрос всё ещё зависит от Photon; кэш ускоряет повтор того же запроса между полями A/B. Точный не найденный адрес пользователь не указал, поэтому адресный промах не воспроизведён. PR #14 получил коммит `b8c3766aa3163c0e9e0c0d4310ac22ac46dd1a29`; Vercel Preview READY. Полный `test:audit`: 809 passed, 0 failed; Next compile успешен, static generation 16/16. Preview `/api/suggest?q=Краснодар`: HTTP 200, 20 подсказок. PR остаётся draft; Production не менялась. Подробности: [DONE checkpoint](checkpoints/2026-10-19-address-search-DONE.md), [work log](../experiments/address-search/WORK_LOG.md).
+
+## HISTORICAL STARTED — 19.10.2026: поиск адреса точки Б
 
 Пользователь сообщил, что не находится точка Б. Поле Б использует общий address-field и `/api/suggest`. Live probe опубликованного API на «Краснодар» вернул HTTP 200 с результатами за 8.224717 с; прямой Photon — HTTP 200 за 6.779325 с. Текущий suggest handler запускает все Photon URLs без request timeout и не связывает их с `request.signal`; предыдущие handoff также фиксируют Photon 503/timeouts. Изменение тарификации/геометрии не планируется. Работа начата в разрешённой ветке, PR #14 остаётся draft. [STARTED checkpoint](checkpoints/2026-10-19-214500-address-search-latency-STARTED.md). NEXT: bounded upstream fetch + abort propagation, focused tests, required checks, remote readback/CI. Production не менять.
 
-## BLOCKED — адрес точки Б: локальное исправление готово, remote save отклонён
+## HISTORICAL BLOCKED — адрес точки Б: ожидалось разрешение на remote save
 
-Подтверждено, что поля A/B используют общий address search. Published API «Краснодар» отвечает медленно (наблюдения 6.37–9.20 с), direct Photon — 6.78 с. Локально добавлены timeout/abort propagation и общий browser LRU cache на 5 минут/128 непустых запросов для повторного поиска между полями A/B; ranking/geography/tolls не менялись. Focused 42/42 и ESLint PASS. Первичный запрос всё ещё зависит от Photon и не ускорен; повторные live тайминги не доказывают cache effect. TypeScript не подтверждён: sparse checkout пропускает существующие ZSD JSON imports; полный audit/build не запускался. Попытка remote save отклонена auto-review; изменения не в GitHub и не в Production. См. [checkpoint](checkpoints/2026-10-19-215500-address-search-latency-BLOCKED.md) и [work log](../experiments/address-search/WORK_LOG.md). NEXT: получить явное согласие на remote write, перепроверить branch/PR, сохранить и запустить required gates. PR #14 draft, merge отсутствует.
+На этом этапе ожидалось разрешение на запись; ожидание завершилось после согласия пользователя. Актуальный результат см. в DONE выше.
 
 ## DONE — V3 опубликована основной версией, V2 сохранена как старый алгоритм
 

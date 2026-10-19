@@ -19,4 +19,11 @@ The initial STARTED record is local commit `6a69402`; the source/test/BLOCKED pa
 - User asked whether address search can be accelerated. A repeat published API request returned in 9.202622 s; an immediate repeat returned in 6.373840 s. Both returned 20 suggestions. The variation does not isolate caching or provider/network effects, and Photon itself remains the dominant unverified latency source.
 - Added a browser-side normalized LRU cache shared by the A/B fields: non-empty results are reused for five minutes, at most 128 query keys. Empty results are not cached. New files: `lib/address-suggestion-cache.ts`, `scripts/address-suggestion-cache.test.ts`; integration in `app/v2/components/address-field.tsx`.
 - Validation: combined focused suite passed 42/42; targeted ESLint passed. No full build, full audit, remote update, CI or Production release.
-- First lookup remains externally bounded by Photon and is not claimed faster. Remote branch writing remains blocked by the previously recorded automatic review rejection.
+- First lookup remains externally bounded by Photon and is not claimed faster. The automatic review rejection was superseded by the user's explicit authorization.
+
+## 2026-10-19 — authorized save and full preview build
+
+- Rechecked branch and PR #14 immediately before writing: source head was `2ddc6112c3c2f7ad802485408d765449268e8a6b`, PR open/draft. Saved the combined change as commit `b8c3766aa3163c0e9e0c0d4310ac22ac46dd1a29` on the authorized branch; verified the branch head and PR head match.
+- Vercel Preview deployment `dpl_F3ftRbQdneZEoJrhZ3XfgoJHESMy` reached READY. Its full `pnpm build` ran `test:audit`: 809 passed, 0 failed; quote/API checks passed; Next compiled successfully and generated 16/16 static pages. New Photon timeout/cancellation and address-cache tests appeared in the passing audit output.
+- Preview `/api/suggest?q=Краснодар` returned HTTP 200 and 20 suggestions. This control does not reproduce the exact address the user reported.
+- PR remains draft/open. No merge or Production release was performed. Exact next step only if the issue persists after eventual release: collect the literal point-B query and reproduce it before changing provider/ranking logic.
