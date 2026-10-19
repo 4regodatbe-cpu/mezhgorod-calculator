@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MapPin, X } from "lucide-react";
 import type { Place, Suggestion } from "./types";
+import { cacheAddressSuggestions, getCachedAddressSuggestions } from "../../../lib/address-suggestion-cache";
 
 export function AddressField({ label, value, onChange, placeholder }: { label: string; value: Place; onChange: (place: Place) => void; placeholder: string }) {
   const [items, setItems] = useState<Suggestion[]>([]);
@@ -13,6 +14,13 @@ export function AddressField({ label, value, onChange, placeholder }: { label: s
   useEffect(() => {
     if (value.position || value.label.trim().length < 3) {
       setSearchState("idle");
+      return;
+    }
+    const cached = getCachedAddressSuggestions(value.label);
+    if (cached) {
+      setItems(cached);
+      setSearchState("idle");
+      setOpen(true);
       return;
     }
     setSearchState("idle");
@@ -31,6 +39,7 @@ export function AddressField({ label, value, onChange, placeholder }: { label: s
         if (!controller.signal.aborted) {
           const results = Array.isArray(data.items) ? data.items : [];
           setItems(results);
+          cacheAddressSuggestions(value.label, results);
           setSearchState(results.length ? "idle" : "empty");
           setOpen(true);
         }
