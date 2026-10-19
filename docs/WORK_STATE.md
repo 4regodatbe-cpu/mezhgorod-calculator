@@ -1,6 +1,10 @@
-## IN PROGRESS — восстановить checkout/runtime для оставшихся двух cases issue #2
+## DONE — восстановлен runtime и найдены regression controls двух issue #2 OD
 
-[STARTED checkpoint и узкий scope](checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-STARTED.md). CI run39239030289 на head4954467 завершён `verify=success`, `live_probe=success`; PR14 draft. Следующий блок: sparse expansion только `scripts/lib/app/components/public/data`, затем frozen install. Capture/replay не запускать, пока не установлены runner и endpoint controls.
+[Runtime, controls и ограничения](checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-DONE.md). Sparse dirs восстановлены, `pnpm install --frozen-lockfile` успешен (429 пакетов); run39240195036 success. Существующий широкий runner не запускался. Regression coordinates найдены в `scripts/segment1-user-regression.mjs`, но точные исходные UI-точки issue #2 не подтверждены, saved captures отсутствуют. NEXT: STARTED на изолированный ровно двухмаршрутный capture + offline weekday/weekend replay; значения тестовых ожиданий не выдавать за confirmed fares.
+
+## HISTORICAL STARTED — восстановить checkout/runtime для оставшихся двух cases issue #2
+
+[Исходный STARTED checkpoint](checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-STARTED.md); закрыт итогом выше. CI run39239030289 завершён `verify=success`, `live_probe=success`.
 
 ## BLOCKED — Ейск—Москва и Майкоп—Москва: exact capture/runtime отсутствуют
 

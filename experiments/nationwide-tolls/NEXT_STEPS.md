@@ -1,6 +1,10 @@
-## IN PROGRESS — восстановление минимального runtime перед двумя issue #2 cases
+## DONE — runtime восстановлен; regression controls найдены, captures отсутствуют
 
-[Входы, пути и критерий готовности](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-STARTED.md). После CI success run39239030289 на head4954467 восстановить sparse dirs `scripts/`, `lib/`, `app/`, `components/`, `public/`, `data/` и выполнить `pnpm install --frozen-lockfile`. Затем только найти подходящий runner и проверенные endpoint controls. Пока не запускать live route/replay; точные старые точки неизвестны.
+[Отчёт](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-DONE.md). Dependencies installed; runner candidates `scripts/live-user-route-audit.mjs` (9 routes) и `scripts/segment1-user-regression.mjs` (широкий regression suite) намеренно не запускались. Сохранённые city coordinates найдены в тестах, но нет доказательства, что это исходные issue controls; captures/replays отсутствуют. NEXT: отдельный STARTED, изолированный только для Ейск→Москва и Майкоп→Москва, один capture на case с сохранением inputs/raw response, затем offline weekday/weekend replay. Test expected amounts не считать подтверждёнными тарифами.
+
+## HISTORICAL STARTED — восстановление runtime перед двумя issue #2 cases
+
+[Исходный STARTED checkpoint](../../docs/checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-STARTED.md); блок завершён итогом выше. CI run39239030289 завершён `verify=success`, `live_probe=success`.
 
 ## BLOCKED — issue #2: Ейск—Москва и Майкоп—Москва требуют bounded capture/replay
 
