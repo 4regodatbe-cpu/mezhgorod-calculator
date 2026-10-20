@@ -27,3 +27,8 @@ Updated: 2026-10-02. This note records the current boundary between the standalo
 ## Internal pricing
 
 The standalone V2 calculator keeps its own internal tariffs, including special-segment rates Standard 70, Comfort 80, Comfort+ 90, Minivan 110 RUB/km. Do not source these values from the public platform configuration.
+
+
+## 2026-10-20 — долгосрочная локальная дорожная сеть (DEFERRED)
+
+Пользователь поручил сохранить [долгосрочный план](LONG_TERM_ROAD_NETWORK_PLAN.md) собственной дорожной сети без зданий/POI и исследования упрощения городов для междугородних расчётов. Сейчас реализацию не начинать; даты/автоматического запуска нет. Сохранить ПВП, точные соединения и платные участки; прямые линии из центра — предложение для оценки, не готовая routing policy. Оценки размеров не измерены. Это решение не меняет активный алгоритм, тарифы, аудит или опубликованную версию.
