@@ -76,3 +76,8 @@ See [bounded UI evidence](../../docs/checkpoints/2026-10-20-repeated-address-sea
 ## 2026-10-20 — short deadline regression and sanitized diagnostics
 
 [Patch checkpoint](../../docs/checkpoints/2026-10-20-repeated-address-search-PATCH.md): Production prefix Доне502; direct Photon20features after11.272841s exceeds our10s. Hard limit20s, cancellation retained, no retry fanout; safe all-source failure counts. Focused45/full819 + quote/API/ESLint/webpack buildPASS. Preview live pending; exact Production upstream failure not yet classified, no new release.
+
+
+## 2026-10-20 — Preview full-story verification complete
+
+[Verified checkpoint](../../docs/checkpoints/2026-10-20-repeated-address-search-VERIFIED.md). Source4f62abf/tree0808d21e matches local and remote; Previewdpl_646vu3uc3f4dJzFmQDLpaPRL9svL READY/statussuccess, standard build819/819 + compile/static16/16PASS. Actual fresh-origin UI POST ДонеPASS; exact two-calculation/X replacement sequencePASS including selecting Донецк—ДНР. Screenshot/build proof retained. Underlying old Production individual failures cannot be classified retrospectively; valid11.27s response demonstrates10s timeout regression, corrected20s tested. No new Production release.

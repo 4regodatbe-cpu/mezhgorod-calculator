@@ -1,3 +1,7 @@
+## DONE PREVIEW — повторный ввод адресов, 20.10.2026
+
+Устранён10сек предел, отсекавший валидный Photon ответ11,27сек:20сек + безопасная диагностика отказов. Source4f62abf, exact tree0808d21e; Previewdpl_646vu3uc3f4dJzFmQDLpaPRL9svL READY/statussuccess. Новый UI/POST: «Доне» нашёлся; Анапа→Краснодар620₽ → очисткаB/Ростов1880₽ → очисткаA/Донецк/выборДНР прошли. Focused45/full819/quote/API/ESLint/buildPASS; Vercel819/static16/16PASS. [Полное evidence](checkpoints/2026-10-20-repeated-address-search-VERIFIED.md). Исторические ошибки каждого upstream не классифицированы; не обещать отсутствие всех сетевых сбоев. PR14draft, Production прежняя. NEXT: release только по прямому текущему поручению; при новом отказе смотреть новую диагностику.
+
 ## IN PROGRESS — исправление короткого таймаута поиска, 20.10.2026
 
 На «Доне» реальный UI и API отказали; direct Photon вернул20адресов за11,27сек — дольше нашего10сек ограничения. Предел увеличен до20сек, добавлена безопасная диагностика всех отказов без текста адреса. Focused45/45, full819/819 + quote/API, ESLint, webpack buildPASS. Preview live ещё не проверен; точную причину Production отказа логи старой версии не раскрывают. [Patch/evidence](checkpoints/2026-10-20-repeated-address-search-PATCH.md). Production не менять без прямого поручения.
