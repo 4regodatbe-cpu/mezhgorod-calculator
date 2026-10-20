@@ -1,6 +1,32 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { fetchPhotonFeatures } from "../lib/photon-fetch.ts";
+import { fetchPhotonFeatures, photonFailureReason, PHOTON_REQUEST_TIMEOUT_MS } from "../lib/photon-fetch.ts";
+
+test("a valid slow prefix response survives the former ten-second deadline", async (t) => {
+  t.mock.timers.enable({ apis: ["setTimeout"] });
+  const features = [{ geometry: { coordinates: [37.8, 48] }, properties: { name: "Донецьк" } }];
+  let upstreamSignal: AbortSignal | undefined;
+  const pending = fetchPhotonFeatures("https://photon.test/prefix", {
+    fetchImpl: async (_url, init) => {
+      upstreamSignal = init?.signal ?? undefined;
+      return new Promise<Response>((resolve) => setTimeout(() => resolve(response(features)), 11_300));
+    },
+  });
+  t.mock.timers.tick(11_300);
+  assert.deepEqual(await pending, features);
+  assert.equal(upstreamSignal?.aborted, false);
+  assert.equal(PHOTON_REQUEST_TIMEOUT_MS, 20_000);
+});
+
+test("failure diagnostics distinguish provider failures without exposing raw text", () => {
+  assert.equal(photonFailureReason(new Error("Photon request timed out")), "deadline");
+  assert.equal(photonFailureReason(new Error("Photon request cancelled")), "cancelled");
+  assert.equal(photonFailureReason(new Error("Photon 503")), "http_503");
+  assert.equal(photonFailureReason(new Error("Photon 429")), "http_429");
+  assert.equal(photonFailureReason(new Error("Photon returned invalid features")), "invalid_response");
+  assert.equal(photonFailureReason(new Error("fetch failed", { cause: { code: "UND_ERR_CONNECT_TIMEOUT" } })), "connect_timeout");
+  assert.equal(photonFailureReason(new Error("private address https://secret.invalid")), "network_error");
+});
 
 function response(features: unknown[], status = 200): Response {
   return new Response(JSON.stringify({ features }), { status, headers: { "Content-Type": "application/json" } });

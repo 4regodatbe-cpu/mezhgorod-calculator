@@ -1,6 +1,20 @@
 import type { PhotonFeature } from "./photon-address-search.ts";
 
-export const PHOTON_REQUEST_TIMEOUT_MS = 10_000;
+// A valid live prefix response took 11.27 s. Ten seconds rejected usable
+// results; retain a finite deadline without retrying seven requests at once.
+export const PHOTON_REQUEST_TIMEOUT_MS = 20_000;
+
+/** Bounded diagnostic labels only: never log query text, URLs or raw errors. */
+export function photonFailureReason(reason: unknown): string {
+  if (!(reason instanceof Error)) return "unknown";
+  if (reason.message === "Photon request timed out") return "deadline";
+  if (reason.message === "Photon request cancelled") return "cancelled";
+  if (reason.message === "Photon returned invalid features") return "invalid_response";
+  if (/^Photon [45]\d{2}$/u.test(reason.message)) return `http_${reason.message.slice(7)}`;
+  const cause = reason.cause as { code?: unknown } | undefined;
+  if (cause?.code === "UND_ERR_CONNECT_TIMEOUT") return "connect_timeout";
+  return "network_error";
+}
 
 type PhotonFetchInit = RequestInit & { next: { revalidate: number } };
 type PhotonFetch = (input: string | URL | Request, init?: PhotonFetchInit) => Promise<Response>;

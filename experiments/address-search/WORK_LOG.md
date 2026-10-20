@@ -71,3 +71,8 @@ Production build: 810 tests / 810 pass / 0 fail; quote/API contracts PASS; Next 
 ## 2026-10-20 — exact repeated-edit UI scenario
 
 See [bounded UI evidence](../../docs/checkpoints/2026-10-20-repeated-address-search-UI.md). Two calculations passed; first full Донецк search passed; subsequent fresh prefix Доне failed while cached full query worked. No precise upstream cause established; current API suppresses errors. Diagnostics/resilience remain IN_PROGRESS, no new release.
+
+
+## 2026-10-20 — short deadline regression and sanitized diagnostics
+
+[Patch checkpoint](../../docs/checkpoints/2026-10-20-repeated-address-search-PATCH.md): Production prefix Доне502; direct Photon20features after11.272841s exceeds our10s. Hard limit20s, cancellation retained, no retry fanout; safe all-source failure counts. Focused45/full819 + quote/API/ESLint/webpack buildPASS. Preview live pending; exact Production upstream failure not yet classified, no new release.

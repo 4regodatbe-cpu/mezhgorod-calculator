@@ -1,3 +1,7 @@
+# IN PROGRESS — verify20s search patch
+
+[Patch checkpoint](../../docs/checkpoints/2026-10-20-repeated-address-search-PATCH.md). Await Preview standard build, then one live Доне query; inspect sanitized all-source failure categories if needed. Do not repeat successful route/tariff audits. No Production release in this task.
+
 # IN PROGRESS — repeated address edits, 2026-10-20
 
 Read [UI evidence](../../docs/checkpoints/2026-10-20-repeated-address-search-UI.md). Fresh prefix Доне failed after two valid route calculations and prior successful Донецк. Cached full query works. Inspect one exact server response; add sanitized first-failure diagnostics and focused resilience tests. Preserve all search windows/ranking, cancellation, tariffs and bypass correction. No new Production release.
