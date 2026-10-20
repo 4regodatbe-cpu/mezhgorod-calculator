@@ -66,3 +66,8 @@ Production build: 810 tests / 810 pass / 0 fail; quote/API contracts PASS; Next 
 Скан error runtime logs нового deployment за последние 5 минут: No logs found. Это ограниченный скан, не доказательство отсутствия всех ошибок. Полный интерактивный сценарий A→B и live POST /r в этом выпуске не проверены; authenticated connector выполняет только GET, существующего authenticated Vercel CLI в среде нет. Не считать GET проверкой UI. Прокси abort propagation ранее покрыт focused regression (43/43).
 
 Опубликованы ранее проверенные изменения timeout/abort, общего LRU cache и региона адресных handlers. Тарифная матрица и аудит в этом выпуске не редактировались. Evidence: 2026-10-20-address-search-production-evidence.json. Следующий шаг — при повторном отказе UI сопоставить точный запрос и время с POST /r; не повторять полный тарифный аудит.
+
+
+## 2026-10-20 — exact repeated-edit UI scenario
+
+See [bounded UI evidence](../../docs/checkpoints/2026-10-20-repeated-address-search-UI.md). Two calculations passed; first full Донецк search passed; subsequent fresh prefix Доне failed while cached full query worked. No precise upstream cause established; current API suppresses errors. Diagnostics/resilience remain IN_PROGRESS, no new release.

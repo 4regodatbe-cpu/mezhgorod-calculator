@@ -1,3 +1,7 @@
+## IN PROGRESS — повторный поиск адресов, 20.10.2026
+
+Проверен фактический UI: Анапа→Краснодар620₽; замена B на Ростов проходит; замена A на Донецк сначала проходит. При повторном вводе по частям «Доне» воспроизведён отказ, полный «Донецк» открывается из браузерного кэша. Причина конкретного сетевого отказа пока не видна: server catch скрывает ошибки, runtime logs пусты. [Evidence и следующий шаг](checkpoints/2026-10-20-repeated-address-search-UI.md). Поле/X постоянно не блокируется; не заявлять исправление.
+
 ## DONE PREVIEW — Крым↔М4 через обход Краснодара, 20.10.2026
 
 Исправлена восточная контрольная точка, уводившая Крым→М4 мимо западного обхода. Направленные controls ПВП ДЗОК и проверка фактического проезда; Краснодар/Майкоп/Нальчик без обязательного обхода. Собственные live OSRM в обе стороны подтверждают ПВП; own trace + полный offline V3 composer: **2060₽будни/2210₽выходные**, включая410₽одинраз. Code commit `0f568c57384907b8fc5f2a08412f0e3687c22cb0`, exact remote/local tree совпал. Preview `dpl_2M44uZUARGfqjU7ZwxFkySrA3SpU` **READY/status success**; Vercel full standard build **817/817PASS**, quote/API/compile/static16/16PASS; GET страницы HTTP200. Live Preview POST/UI не проверен; сохранённый полный composer replay2consumed/misses0/network0. PR14draft; Production текущего выпуска поиска ещё без этой routing правки. [Checkpoint](checkpoints/2026-10-20-crimea-m4-bypass-DONE.md) · [журнал](../experiments/crimea-m4-bypass/WORK_LOG.md). NEXT: публикация проверенного source только по прямому запросу; аудит/captures не повторять.

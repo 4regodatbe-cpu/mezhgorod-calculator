@@ -1,3 +1,7 @@
+# IN PROGRESS — repeated address edits, 2026-10-20
+
+Read [UI evidence](../../docs/checkpoints/2026-10-20-repeated-address-search-UI.md). Fresh prefix Доне failed after two valid route calculations and prior successful Донецк. Cached full query works. Inspect one exact server response; add sanitized first-failure diagnostics and focused resilience tests. Preserve all search windows/ranking, cancellation, tariffs and bypass correction. No new Production release.
+
 # Address-search next steps
 
 ## Выполнено — 20.10.2026
