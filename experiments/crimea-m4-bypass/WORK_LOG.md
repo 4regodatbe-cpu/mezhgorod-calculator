@@ -29,3 +29,10 @@ Source13b70ad7cdcbba89eee28b8063e118a50f7ea414; durable STARTED c1bc2c153d35e08f
 ## Следующий шаг
 
 Сохранить code/tests/evidence/checkpoint и short state одним итоговым commit на разрешённой ветке, проверить точное дерево и Preview standard build. PR14оставить draft; Production для нового routing change требует прямого запроса. Если сторонний map matching снова недоступен, сохранять unknown, не публиковать известную часть как полный итог.
+
+
+## Preview проверен — 20.10.2026
+
+Code commit 0f568c57384907b8fc5f2a08412f0e3687c22cb0 сохранён в разрешённой ветке, PR14head совпал, draft=true. Все32 Git blob SHA проверены; remote tree3960de5e2038f1607e4f744aa05b5dbce234149c совпал с локальным деревом проверенной версии. Preview dpl_2M44uZUARGfqjU7ZwxFkySrA3SpU READY, Vercel combined status success. Полный стандартный pnpm build в Vercel:817tests/817pass/0fail, quote/API PASS, Next Turbopack compile PASS, static16/16. GET https://mezhgorod-calculator-1rcqv4m14-4regodatbe-5310.vercel.app/ — HTTP200, метка актуального калькулятора. Live POST/UI на Preview не проверен; полный V3 composer проверен на собственных live captures offline с2точными ответами/misses0/network0. Это закрывает environment-only локальную ошибку Turbopack symlink.
+
+Текущая routing правка подготовлена в Preview. Production выпуска поиска dpl_DGhwwdXRTKwbbEMR127M5AbDMAoP не заменён; для новой публикации нужен прямой запрос. Итоговый документационный commit может запустить новый Preview build, но application source выше уже проверен. Не повторять live route captures или тарифный аудит.
