@@ -1,15 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GET as getSuggestions } from "../api/suggest/route";
+import { createSuggestionForwardRequest } from "../../lib/address-search-proxy";
 
 export const preferredRegion = "fra1";
-
-export function createSuggestionForwardRequest(request: NextRequest, query: string): NextRequest {
-  const url = new URL(request.url);
-  url.pathname = "/api/suggest";
-  url.search = "";
-  url.searchParams.set("q", query);
-  return new NextRequest(url, { signal: request.signal });
-}
 
 export async function POST(request: NextRequest) {
   let body: unknown;

@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-20T11:48:00.696Z",
+  "from": {
+    "lat": 47.2357,
+    "lng": 39.7015
+  },
+  "to": {
+    "lat": 44.4987874,
+    "lng": 34.1689358
+  },
+  "plan": {
+    "corridor": "mainland",
+    "positions": [
+      {
+        "lat": 47.2357,
+        "lng": 39.7015
+      },
+      {
+        "lat": 47.12,
+        "lng": 39.86
+      },
+      {
+        "lat": 45.1285353,
+        "lng": 38.7416466
+      },
+      {
+        "lat": 45.1278631,
+        "lng": 38.7405898
+      },
+      {
+        "lat": 45.126824,
+        "lng": 38.7392146
+      },
+      {
+        "lat": 45.2117,
+        "lng": 36.7161
+      },
+      {
+        "lat": 44.4987874,
+        "lng": 34.1689358
+      }
+    ]
+  },
+  "url": "https://router.project-osrm.org/route/v1/driving/39.7015,47.2357;39.86,47.12;38.7416466,45.1285353;38.7405898,45.1278631;38.7392146,45.126824;36.7161,45.2117;34.1689358,44.4987874?overview=full&steps=true&geometries=geojson",
+  "status": 200,
+  "providerCode": "Ok",
+  "meters": 786773.3,
+  "seconds": 39679.9,
+  "points": 6713,
+  "bypass": {
+    "candidate": true,
+    "matchedGateIds": [
+      "6761599487"
+    ],
+    "boundaryStatus": "resolved",
+    "from": "0",
+    "to": "51",
+    "reason": "dzok_directional_plaza_crossing"
+  },
+  "followsPlan": true
+}

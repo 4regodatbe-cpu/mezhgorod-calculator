@@ -1,7 +1,7 @@
 import type { Coordinate } from "@/lib/tolls";
 import { priceA289Route } from "@/lib/toll-engine/a289-engine";
 import { a289SlavyanskConnector } from "@/lib/toll-engine/a289-connector-evidence";
-import { inCrimea } from "@/lib/special-territory-policy";
+import { inCrimea } from "@/lib/crimea-geography";
 import {validInstant} from "@/experiments/nationwide-tolls/engine/fare-validity.cjs";
 import { quoteA289SelectedRoute } from "@/experiments/nationwide-tolls/engine/a289-route-adapter.mjs";
 

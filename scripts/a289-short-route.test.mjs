@@ -13,7 +13,7 @@ const testModule={exports:{}};
 vm.runInNewContext(compiled,{module:testModule,exports:testModule.exports,require:name=>{
   if(name==='@/lib/toll-engine/a289-connector-evidence')return load(resolve(root,'lib/toll-engine/a289-connector-evidence.ts'));
   if(name==='@/lib/toll-engine/a289-engine')return {priceA289Route:()=>({crossedFrames:frames,period:'понедельник–четверг'})};
-  if(name==='@/lib/special-territory-policy')return {inCrimea:({lng,lat})=>lng<35&&lat<46};
+  if(name==='@/lib/crimea-geography')return load(resolve(root,'lib/crimea-geography.ts'));
   if(name==='@/experiments/nationwide-tolls/engine/fare-validity.cjs')return require('../experiments/nationwide-tolls/engine/fare-validity.cjs');
   if(name==='@/experiments/nationwide-tolls/engine/a289-route-adapter.mjs')return require('../experiments/nationwide-tolls/engine/a289-route-adapter.mjs');
   throw Error(name);

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { NextRequest } from "next/server";
-import { createSuggestionForwardRequest } from "../app/r/route.ts";
+import { createSuggestionForwardRequest } from "../lib/address-search-proxy.ts";
 
 test("address search proxy preserves the caller abort signal and query", () => {
   const controller = new AbortController();

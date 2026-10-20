@@ -1,0 +1,146 @@
+{
+  "at": "2026-10-20T11:50:15.604Z",
+  "reasonForRetry": "One missing live M4 endpoint prevented verification of the numeric total; one bounded retry only",
+  "requests": 2,
+  "m4": {
+    "endpointOnly": true,
+    "candidate": true,
+    "exact": true,
+    "tolls": null,
+    "validation": {
+      "status": "toll",
+      "source": "Valhalla map matching",
+      "tollEdgeCount": 2,
+      "checkedEdgeCount": 2,
+      "wayIds": [],
+      "roadNames": [
+        "М-4 Дон"
+      ],
+      "tollBoothCount": 2,
+      "tollBooths": [
+        {
+          "osmNodeId": "9772717210",
+          "wayId": "1040868051",
+          "roadNames": [
+            "М-4",
+            "E 115",
+            "«Дон»"
+          ],
+          "edgeIndex": 7,
+          "edgeToll": true,
+          "beginShapeIndex": 23,
+          "endShapeIndex": 24
+        },
+        {
+          "osmNodeId": "5325424716",
+          "wayId": "617143592",
+          "roadNames": [
+            "М-4",
+            "E 50",
+            "E 115",
+            "Дон"
+          ],
+          "edgeIndex": 13,
+          "edgeToll": true,
+          "beginShapeIndex": 25,
+          "endShapeIndex": 26
+        }
+      ],
+      "chunkCount": 2,
+      "checkedChunkCount": 2,
+      "failedChunkCount": 0,
+      "complete": true,
+      "boothEventCoverage": "complete",
+      "message": "M-4 local PVP validator: Проверено 2 локальных кандидатов М-4: подтверждено 2 (из них route-traversal fallback 0), отклонено 0."
+    },
+    "reason": "Selected M4 first/last tariff boundaries resolved",
+    "m4PvpPreview": {
+      "status": "boundaries_resolved",
+      "reason": null,
+      "priceRub": null,
+      "verifiedPriceCells": 0,
+      "candidateCount": 2,
+      "confirmedPvps": [
+        "m4-1223",
+        "m4-1093"
+      ],
+      "diagnosticOnly": true
+    }
+  },
+  "matrix": {
+    "reason": "matrix exact selected-route M4 vector",
+    "priceConfirmation": "unconfirmed",
+    "tolls": {
+      "amount": 850,
+      "weekdayAmount": 850,
+      "weekendAmount": 1000,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-1223 → m4-1093 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched"
+    }
+  },
+  "result": {
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 850,
+          "weekdayAmount": 850,
+          "weekendAmount": 1000,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-4: m4-1223 → m4-1093 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "a289",
+        "detected": true,
+        "tolls": {
+          "amount": 800,
+          "weekdayAmount": 800,
+          "weekendAmount": 800,
+          "period": "все дни",
+          "segments": [
+            "А-289: TamanBridge → Maryanskaya: 800 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "A-289 selected-route OD vector"
+      },
+      {
+        "id": "krasnodar-west-bypass",
+        "detected": true,
+        "tolls": {
+          "amount": 410,
+          "weekdayAmount": 410,
+          "weekendAmount": 410,
+          "period": "понедельник–четверг",
+          "confidence": "matched",
+          "segments": [
+            "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+      }
+    ],
+    "tolls": {
+      "amount": 2060,
+      "weekdayAmount": 2060,
+      "weekendAmount": 2210,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-1223 → m4-1093 · Стоимость не подтверждена",
+        "А-289: TamanBridge → Maryanskaya: 800 ₽",
+        "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+      ],
+      "confidence": "matched"
+    },
+    "reason": "Selected-route M-4, A-289 and bypass composed as distinct products"
+  }
+}
