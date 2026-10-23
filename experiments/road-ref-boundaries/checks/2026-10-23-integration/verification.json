@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "sourceParent": "1e445b7a89ee36ac96ed5e4d7812a582b1a6e5ce",
+  "sourceParentCI": {
+    "runId": 39992042216,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "audit": {
+    "command": "pnpm test:audit",
+    "tests": 833,
+    "passed": 833,
+    "failed": 0,
+    "quoteContract": "PASS",
+    "apiAdapter": "PASS"
+  },
+  "build": {
+    "command": "node node_modules/next/dist/bin/next build --webpack",
+    "exitCode": 0,
+    "staticPages": "16/16"
+  },
+  "eslint": {
+    "command": "node node_modules/eslint/bin/eslint.js lib/toll-engine/road-boundaries.ts lib/toll-engine/m4-production.ts lib/route-providers.ts lib/v3-calculation/route-leg-pricing.ts scripts/road-boundaries.test.ts scripts/road-boundaries-v3-replay.test.ts",
+    "exitCode": 0
+  },
+  "integration": {
+    "providerReplayTests": 1,
+    "profiles": [
+      "monThu",
+      "friSun"
+    ],
+    "selectedGeometryPreserved": true,
+    "liveNetworkRequests": 0,
+    "entryExitStatus": "resolved",
+    "priceStatus": "unknown"
+  },
+  "recovery": {
+    "initialTestsAndTypes": "Missing tracked fixtures/JSON in sparse checkout; restored required paths. No assertions disabled.",
+    "initialBuild": "Missing tracked vendor/shadcn-tailwind-4.13.0.css; restored vendor. No product CSS/source workaround.",
+    "sparsePaths": [
+      "app",
+      "components",
+      "data",
+      "docs",
+      "experiments/crimea-m4-bypass",
+      "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12",
+      "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope",
+      "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok",
+      "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/responses",
+      "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace",
+      "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary",
+      "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-continuity",
+      "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding",
+      "experiments/nationwide-tolls/engine",
+      "experiments/nationwide-tolls/live-controls",
+      "experiments/nationwide-tolls/matrix",
+      "experiments/nationwide-tolls/scripts",
+      "experiments/nationwide-tolls/source-documents",
+      "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding",
+      "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-18-ramenskoe-exit",
+      "experiments/nationwide-tolls/source-snapshots/dzok",
+      "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/identity-sources",
+      "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-ckad-2026-10-14T21-36-07-401Z",
+      "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T21-33-34-774Z",
+      "experiments/nationwide-tolls/source-snapshots/m11",
+      "experiments/nationwide-tolls/source-snapshots/odintsovo",
+      "\"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\\320\\263\\321\\200\\320\\260\\320\\275\\320\\270\\321\\202\\320\\275\\320\\276\\320\\265-kazan-center\"",
+      "\"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\\320\\263\\321\\200\\320\\260\\320\\275\\320\\270\\321\\202\\320\\275\\320\\276\\320\\265-saint-petersburg-center\"",
+      "\"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\\320\\260\\321\\201\\320\\272\\320\\260\\320\\275\\320\\270\\321\\217-\\320\\275\\320\\276\\320\\262\\320\\260-kazan-center\"",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-moscow",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan",
+      "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh",
+      "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1",
+      "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka",
+      "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-planernaya-no-reentry",
+      "experiments/road-ref-boundaries",
+      "experiments/toll-od-matrix",
+      "lib",
+      "public",
+      "scripts",
+      "types",
+      "vendor"
+    ]
+  },
+  "productionChanged": false,
+  "knownLimitations": [
+    "M4 maneuver access identity is not operator payment-scope proof.",
+    "BRouter without road instructions retains the old evidence path.",
+    "No new prices; unresolved 545 collection variants stay unknown."
+  ],
+  "evidenceSha256": {
+    "selected-vector.json": "2999941640cd529ddb668e1d963c10c4a9c5353a727ea1f6164afa1030e658a2",
+    "build.log": "efea17701025fc74d951ccb8420986c53aee54be6113ed360dcc90fd157dc0a9",
+    "v3-replay.log": "a255eb488a0601b178e72c0998e8a83508d8411fe245ebb7a3ce45292e328c7b",
+    "eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full-audit.log": "a9309aa79be140aaaf35fe971a0823f268dee70085262591116090972fdbdaec"
+  },
+  "gitTransferRecovery": {
+    "cause": "Universal-newline text read changed three CR bytes in build.log; remote tree SHA mismatch detected before ref mutation.",
+    "fix": "Read UTF8 content from original bytes; exact local/remote tree verified before commit.",
+    "codeChanged": false
+  }
+}

@@ -27,6 +27,16 @@ test("normalize complete road-number labels; do not accept prose or destinations
   assert.equal(roadBoundariesFromOsrm(input, shape(input)).status, "not-detected");
 });
 
+test("regional connecting road refs and unnumbered named routes retain their identity", () => {
+  assert.equal(normalizeRoadRef("03K-002"), "03К-002");
+  assert.equal(normalizeRoadRef("22Н-0239"), "22Н-0239");
+  assert.notEqual(normalizeRoadRef("60К-6-1"), normalizeRoadRef("60К-61"));
+  const input = simple(); input[0].steps![2].ref = "22Н-0239";
+  assert.deepEqual(roadBoundariesFromOsrm(input, shape(input)).exit!.to!.refs, ["22Н-0239"]);
+  input[0].steps![2].ref = "ЗСД";
+  assert.deepEqual(roadBoundariesFromOsrm(input, shape(input)).exit!.to!.names, ["ЗСД"]);
+});
+
 test("saved Granitnoe→Kazan selects actual northern-bypass entry and R260 exit without a price", async () => {
   const bounds = roadBoundariesFromValhalla(legs);
   assert.equal(bounds.status, "resolved");

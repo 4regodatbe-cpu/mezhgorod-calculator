@@ -46,8 +46,13 @@ export function roadRouteSignature(route: readonly Coordinate[]) {
 /** Normalize whole route-number labels only. A destination or prose mention
  * is never evidence that the selected route actually uses that road. */
 export function normalizeRoadRef(value: string): string | null {
-  const compact = value.normalize("NFKC").toUpperCase().replace(/[\s‐‑‒–—−-]+/gu, "");
-  const match = /^([MМAАPРR]|E|AH)(\d+[А-ЯA-Z]?)$/u.exec(compact);
+  const compact = value.normalize("NFKC").toUpperCase().replace(/\s+/gu, "").replace(/[‐‑‒–—−]/gu, "-");
+  const regional = /^(\d{1,3})([КKНHРP])-?(\d+[А-ЯA-Z]?(?:-\d+[А-ЯA-Z]?)*)$/u.exec(compact);
+  if (regional) {
+    const category = ({ K: "К", H: "Н", P: "Р" } as Record<string, string>)[regional[2]] ?? regional[2];
+    return `${regional[1]}${category}-${regional[3]}`;
+  }
+  const match = /^([MМAАPРR]|E|AH)-?(\d+[А-ЯA-Z]?(?:-\d+[А-ЯA-Z]?)*)$/u.exec(compact);
   if (!match) return null;
   const prefix = ({ M: "М", A: "А", P: "Р", R: "Р" } as Record<string, string>)[match[1]] ?? match[1];
   return `${prefix}-${match[2]}`;
@@ -58,7 +63,7 @@ function identity(labels: string[], explicitRefs: string[] = []): RoadIdentity {
   explicitRefs = explicitRefs.filter((value): value is string => typeof value === "string");
   const refs = unique([...explicitRefs, ...labels].flatMap(value => value.split(";"))
     .map(normalizeRoadRef).filter((ref): ref is string => ref !== null));
-  return { refs, names: unique(labels.map(value => value.trim()).filter(value => value && !normalizeRoadRef(value))) };
+  return { refs, names: unique([...labels, ...explicitRefs].map(value => value.trim()).filter(value => value && !normalizeRoadRef(value))) };
 }
 
 function distanceKm(a: Coordinate, b: Coordinate) {

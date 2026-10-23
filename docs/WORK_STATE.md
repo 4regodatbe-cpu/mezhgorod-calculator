@@ -1,3 +1,7 @@
+## DONE IMPLEMENTATION — дорожные переходы М4 и неизвестная цена, 23.10.2026
+
+OSRM/Valhalla сохраняют конкретные направленные переходы; М4 выбирает отдельный дорожный вектор при отсутствии цены/известныхПВП. Полный сохранённый Гранитное→Казань в двух профилях: вход/выход resolved, API amount=null до заполнения тарифа,0liveзапросов. Все833 теста, quote/API, ESLint и Next webpack build/static16/16 PASS. [Итог и ограничения](checkpoints/2026-10-23-road-ref-boundaries-integration-DONE.md) · [описание](../experiments/road-ref-boundaries/README.md) · [вектор/координаты](../experiments/road-ref-boundaries/checks/2026-10-23-integration/selected-vector.json). Операторский scope545/коротких участков не доказан; BRouter без инструкций использует прежний путь. PR14draft, изменения в рабочей ветке, безProduction. NEXT: exact remote readback/CI, затем проверенные строки тарифов по конкретным границам. Старые записи ниже исторические.
+
 ## DONE LAYER / IN PROGRESS — дорожные переходы М4, 23.10.2026
 
 Добавлены фактические направленные переходы OSRM/Valhalla и выбор отдельного М4-вектора при неизвестной цене, в том числе без известныхПВП.28focusedtests/ESLint/tscPASS; существующаяцена700₽сохранена. Это ещё не полныйV3integration/build. [Checkpoint](checkpoints/2026-10-23-road-ref-boundaries-layer-DONE.md) · [журнал](../experiments/road-ref-boundaries/WORK_LOG.md). NEXT: сохранённый Гранитное→Казань через provider+composer и полныйgate. Цены/545scopeнеугадывать,PR14draft,безProduction.
