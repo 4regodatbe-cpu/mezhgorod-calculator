@@ -1,5 +1,7 @@
 import type { Coordinate } from "@/lib/tolls";
 import {isOdintsovoLaneWay} from '@/experiments/nationwide-tolls/odintsovo-lane-identity.mjs';
+import { roadBoundariesFromTrace } from "@/lib/toll-engine/road-trace-boundaries";
+import { normalizeRoadRef, type RoadBoundaryResolution } from "@/lib/toll-engine/road-boundaries";
 
 export type OdintsovoTraceEdge = {
   wayId: string | null;
@@ -38,6 +40,7 @@ export type TollValidation = {
   failedChunkCount?: number;
   complete?: boolean;
   boothEventCoverage?: "complete" | "partial" | "none";
+  m4RoadBoundaries?: RoadBoundaryResolution;
   odintsovoTraceBlocks?: Array<{
     edges: OdintsovoTraceEdge[];
     before: OdintsovoTraceEdge | null;
@@ -304,6 +307,12 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
   const ckadContinuity = ckadBlocks.length ? {ckadTraceBlocks: ckadBlocks} : {};
   const odintsovoBlocks = odintsovoTraceBlocks(successful.flatMap(item => item.edges));
   const odintsovoContinuity = odintsovoBlocks.length ? {odintsovoTraceBlocks: odintsovoBlocks} : {};
+  // Do not change unrelated roads' archived validation contracts with an
+  // empty M4 diagnostic. Absence of this optional field never proves free.
+  const m4Observed = successful.some(item => item.edges.some(edge => (edge.names ?? [])
+    .some(name => name.split(";").some(ref => normalizeRoadRef(ref) === "М-4"))));
+  const m4RoadContext = m4Observed ? { m4RoadBoundaries: roadBoundariesFromTrace(
+    chunkResults.map(item => item.ok ? item.edges : null), route) } : {};
 
   if (!complete) {
     return {
@@ -316,6 +325,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       paidRoadEdges,
       ...ckadContinuity,
       ...odintsovoContinuity,
+      ...m4RoadContext,
       message: tollEdges.length > 0
         ? `Платные дорожные рёбра подтверждены, но проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`
         : `Проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`,
@@ -339,6 +349,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     paidRoadEdges,
     ...ckadContinuity,
     ...odintsovoContinuity,
+    ...m4RoadContext,
     message: tollEdges.length > 0
       ? `Подтверждены платные дорожные рёбра: ${tollEdges.length}`
       : tollBooths.length > 0

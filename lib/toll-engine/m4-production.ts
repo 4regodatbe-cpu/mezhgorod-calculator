@@ -136,9 +136,14 @@ export async function calculateProductionM4(
 /** V3 boundary resolver: no native per-plaza price or corridor recovery. */
 export async function resolveSelectedM4Endpoints(route: Coordinate[], routeDurationSeconds?: number, selectedTrace?: TollValidation | null, roadEvidence?: RoadBoundaryResolution): Promise<ProductionM4Result> {
   // Never attach another provider/candidate's maneuver evidence to this route.
-  const roadBoundaries = roadEvidence && roadEvidence.targetRef === "М-4"
-    ? roadEvidence.routeSignature === roadRouteSignature(route) ? roadEvidence
-      : { ...roadEvidence, status: "unknown" as const, reason: "road_evidence_geometry_mismatch", entry: null, exit: null }
+  const tracedRoadEvidence = selectedTrace?.m4RoadBoundaries;
+  const inputRoadEvidence = tracedRoadEvidence
+    ? selectedTrace?.complete === true && selectedTrace.boothEventCoverage === "complete" ? tracedRoadEvidence
+      : { ...tracedRoadEvidence, status: "unknown" as const, reason: "road_trace_incomplete", entry: null, exit: null }
+    : roadEvidence;
+  const roadBoundaries = inputRoadEvidence && inputRoadEvidence.targetRef === "М-4"
+    ? inputRoadEvidence.routeSignature === roadRouteSignature(route) ? inputRoadEvidence
+      : { ...inputRoadEvidence, status: "unknown" as const, reason: "road_evidence_geometry_mismatch", entry: null, exit: null }
     : undefined;
   const paidM4Observed = selectedTrace?.paidRoadEdges?.some(edge => edge.roadNames
     .some(name => name.split(";").some(ref => normalizeRoadRef(ref) === "М-4"))) === true;

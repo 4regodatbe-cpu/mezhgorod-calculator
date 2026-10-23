@@ -37,7 +37,7 @@ test("regional connecting road refs and unnumbered named routes retain their ide
   assert.deepEqual(roadBoundariesFromOsrm(input, shape(input)).exit!.to!.names, ["ЗСД"]);
 });
 
-test("saved Granitnoe→Kazan selects actual northern-bypass entry and R260 exit without a price", async () => {
+test("saved Granitnoe→Kazan maneuver labels identify the corridor but do not prove an exact tariff entry", async () => {
   const bounds = roadBoundariesFromValhalla(legs);
   assert.equal(bounds.status, "resolved");
   assert.equal(bounds.precision, "route-maneuver");
@@ -54,12 +54,7 @@ test("saved Granitnoe→Kazan selects actual northern-bypass entry and R260 exit
   assert.equal(production.candidate, true);
   assert.equal(production.exact, false);
   assert.deepEqual(production.m4PvpPreview!.confirmedPvps, []);
-  const quote = matrixM4Component(production, date, 3600)!;
-  assert.equal(quote.tolls, null);
-  assert.equal(quote.reason, "m4_road_vector_price_unknown");
-  assert.equal(quote.tariffVector!.from, bounds.entry!.id);
-  assert.equal(quote.tariffVector!.to, bounds.exit!.id);
-  assert.equal(quote.tariffVector!.priceStatus, "unknown");
+  assert.equal(matrixM4Component(production, date, 3600), null);
   // A different geometry must not reuse this selected-route access proof.
   const different = geometry.map(([lon, lat]): Coordinate => [lon + 1, lat]);
   const mismatch = await resolveSelectedM4Endpoints(different, 3600, paid, bounds);

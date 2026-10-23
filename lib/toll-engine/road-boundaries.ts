@@ -8,18 +8,22 @@ export type RoadBoundary = {
   kind: "road-transition" | "route-endpoint";
   from: RoadIdentity | null;
   to: RoadIdentity | null;
-  coordinate: Coordinate;
-  legIndex: number;
+  coordinate: Coordinate | null;
+  osmNodeId?: string;
+  fromWayId?: string;
+  toWayId?: string;
+  legIndex?: number;
+  chunkIndex?: number;
   sourceIndex: number;
   connectorCount: number;
 };
 export type RoadBoundaryResolution = {
-  provider: "osrm" | "valhalla";
+  provider: "osrm" | "valhalla" | "valhalla-trace";
   targetRef: string;
   routeSignature: string;
   // A maneuver boundary identifies the selected access, not an operator's
   // charging boundary or an OSM junction/node ID.
-  precision: "route-maneuver";
+  precision: "route-maneuver" | "matched-road-edge";
   status: "resolved" | "partial" | "unknown" | "not-detected";
   reason: string;
   entry: RoadBoundary | null;
@@ -58,7 +62,7 @@ export function normalizeRoadRef(value: string): string | null {
   return `${prefix}-${match[2]}`;
 }
 
-function identity(labels: string[], explicitRefs: string[] = []): RoadIdentity {
+export function roadIdentity(labels: string[], explicitRefs: string[] = []): RoadIdentity {
   labels = labels.filter((value): value is string => typeof value === "string");
   explicitRefs = explicitRefs.filter((value): value is string => typeof value === "string");
   const refs = unique([...explicitRefs, ...labels].flatMap(value => value.split(";"))
@@ -159,7 +163,7 @@ export function roadBoundariesFromValhalla(legs: M11ValhallaLeg[], target = "М-
     const valid = Number.isInteger(begin) && Number.isInteger(end) && begin! >= 0 && end! >= begin!
       && end! < leg.coordinates.length;
     const geometry = valid ? leg.coordinates.slice(begin!, end! + 1) : [];
-    return { road: identity(m.street_names ?? []), geometry, legIndex, sourceIndex,
+    return { road: roadIdentity(m.street_names ?? []), geometry, legIndex, sourceIndex,
       valid: valid && geometry.length > 0 && geometry.every(coordinateValid) };
   }));
   return resolve("valhalla", sections, legs.flatMap(leg => leg.coordinates), target);
@@ -168,7 +172,7 @@ export function roadBoundariesFromValhalla(legs: M11ValhallaLeg[], target = "М-
 export function roadBoundariesFromOsrm(legs: M11OsrmLeg[], route: Coordinate[], target = "М-4") {
   const sections = legs.flatMap((leg, legIndex) => (leg.steps ?? []).map((step, sourceIndex): Section => {
     const geometry = step.geometry?.coordinates ?? [];
-    return { road: identity(step.name ? [step.name] : [], step.ref ? [step.ref] : []), geometry, legIndex, sourceIndex,
+    return { road: roadIdentity(step.name ? [step.name] : [], step.ref ? [step.ref] : []), geometry, legIndex, sourceIndex,
       valid: geometry.length > 0 && geometry.every(coordinateValid) };
   }));
   return resolve("osrm", sections, route, target);

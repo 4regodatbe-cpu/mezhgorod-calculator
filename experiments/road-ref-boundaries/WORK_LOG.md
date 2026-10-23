@@ -25,3 +25,8 @@
 ## 23.10.2026 — полный replay и gate DONE
 
 [Подробная запись](../../docs/checkpoints/2026-10-23-road-ref-boundaries-integration-DONE.md). Сохранённый provider response Гранитное→Казань прошёл полный composer в двух профилях; переходы и вектор определены, ценаunknown/API amount=null. Добавлена поддержка региональных номеров и отдельный replay regression. Полный test:audit833/833, quote/API, ESLint, Next webpack build/static16/16 PASS. Начальные ENOENT/missing vendor в sparse checkout устранены восстановлением tracked data; source workarounds не применялись. Parent1e445b7/CI39992042216success. Полный аудит всех направлений/live не проводился; цены и операторский scope не выдуманы. Точный следующий шаг — remote readback/CI, затем отдельное заполнение проверенных тарифов.
+
+
+## 23.10.2026 — точные graph nodes DONE, прежняя maneuver-точка диагностическая
+
+[Подробный checkpoint](../../docs/checkpoints/2026-10-23-road-ref-exact-graph-DONE.md). Начало инструкции не совпадало с фактическим въездом. Реализован разбор уже имеющихся graph edges, связывание chunks по directed overlap и идентификаторы OSM node+way pair. Это работает с выбранной геометрией любого provider при полном matching. Шесть retained случаев/12 профилей дают один общий вектор, ценыunknown. Полный replay14 responses/0misses/0live;840tests, quote/API, ESLint и build/static16/16 PASS. Добавлен graph endpoint register:0 активных строк,1pending. Не повторялся тарифный аудит и не менялись цены. Следующий шаг — exact remote readback/CI, затем проверенные цены/scope.

@@ -1,11 +1,16 @@
 import core from './quote.cjs';
 import endpoints from '../M4_ACTIVE_ENDPOINT_REGISTER.json' with {type:'json'};
+import graphEndpoints from '../M4_GRAPH_ENDPOINT_REGISTER.json' with {type:'json'};
 const endpointKey=(from,to,profile)=>JSON.stringify([from,to,profile]);
 const endpointConflictKeys=new Set(endpoints.unknown.filter(row=>row.reason==='remaining-fare-conflict').map(row=>row.key));
 const excludedEndpointKeys=new Set(endpoints.excludedEndpoints.map(row=>row.key));
 // Compiled offline: one directed endpoint/profile row. No runtime sums or
 // selection among historical chains. Unknown ramp directions stay absent.
-const endpointCore=core.createQuoteEngine({selected:[],provisional:endpoints.rows,history:[]});
+// Pending physical transitions carry no fare. Reviewed exact graph cells use
+// the same version/profile/unknown safeguards as the existing endpoint matrix.
+const graphRows=graphEndpoints.rows.filter(row=>row.scopeBindingStatus==='reviewed'&&row.runtimeEligible===true
+ &&row.road==='m4-candidate'&&/^osm-transition:\d+:\d+>\d+$/.test(row.from??'')&&/^osm-transition:\d+:\d+>\d+$/.test(row.to??''));
+const endpointCore=core.createQuoteEngine({selected:[],provisional:[...endpoints.rows,...graphRows],history:[]});
 import {departureTariffContext} from './tariff-window.mjs';
 import {m4TariffPeriodAt} from '../../toll-od-matrix/m4-fare-calendar-2026.mjs';
 export function matrixM4Component(production, departureAt, routeSeconds){
@@ -14,6 +19,10 @@ export function matrixM4Component(production, departureAt, routeSeconds){
  // or no price row. It selects its own directed physical vector, never the
  // nearest booth or an arbitrary 545-a/b operator scope.
  const roadOnly=production?.candidate===true&&production?.exact!==true&&access?.status==='resolved'
+   &&access.precision==='matched-road-edge'&&access.targetRef==='М-4'
+   &&access.provider==='valhalla-trace'
+   &&/^osm-transition:\d+:\d+>\d+$/.test(access.entry?.id??'')
+   &&/^osm-transition:\d+:\d+>\d+$/.test(access.exit?.id??'')
    &&access.entry?.kind==='road-transition'&&access.exit?.kind==='road-transition';
  if(!roadOnly&&(production?.exact!==true||(!production.endpointOnly&&!production.tolls)))return null;
  // A289 must remain its own separately evidenced component, not disappear in an M4 replacement.
