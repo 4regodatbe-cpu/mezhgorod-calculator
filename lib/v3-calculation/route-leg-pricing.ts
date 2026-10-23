@@ -58,8 +58,11 @@ export async function calculateLegTolls({
 
   const legacyFamilies = detectedFamiliesFromLegacySegments(geometricTolls.segments);
 
-  const productionM4 = await resolveSelectedM4Endpoints(routeGeometry, routeSeconds, diagnosticFastValidation);
+  const productionM4 = await resolveSelectedM4Endpoints(routeGeometry, routeSeconds, diagnosticFastValidation, selectedFastRoute.m4RoadBoundaries);
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
+  if (productionM4.m4PvpPreview && matrixM4?.tariffVector) {
+    productionM4.m4PvpPreview.tariffVector = matrixM4.tariffVector;
+  }
   const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as ProductionM4Result["tolls"]} : null, geometricTolls.segments, departureAt, routeSeconds);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
   const m11Airport = inspectM11PulkovoAccess(routeGeometry);

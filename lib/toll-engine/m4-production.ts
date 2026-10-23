@@ -7,6 +7,7 @@ import { calculateM4Core } from "@/lib/toll-engine/m4-core";
 import { fullM4RouteTariff } from "@/lib/toll-engine/m4-full-route-tariff";
 import { inspectM4PvpPreview } from "@/experiments/toll-od-matrix/m4-pvp-preview.mjs";
 import m4PvpMatrix from "@/experiments/toll-od-matrix/matrix/m4-pvp-corridors.json";
+import { normalizeRoadRef, roadRouteSignature, type RoadBoundaryResolution } from "./road-boundaries";
 
 export type ProductionM4Tolls = {
   amount: number;
@@ -24,10 +25,13 @@ export type ProductionM4Result = {
   tolls: ProductionM4Tolls | null;
   validation: TollValidation | null;
   reason: string;
+  roadBoundaries?: RoadBoundaryResolution;
   m4PvpPreview?: {
     status: string; reason: string | null; priceRub: number | null;
     verifiedPriceCells: number; candidateCount: number; confirmedPvps: string[];
     direction?: string; diagnosticOnly: boolean;
+    roadBoundaries?: RoadBoundaryResolution;
+    tariffVector?: { from: string; to: string; profile: string; selectionBasis: string; priceStatus: "known" | "unknown" };
   };
 };
 
@@ -130,14 +134,22 @@ export async function calculateProductionM4(
 }
 
 /** V3 boundary resolver: no native per-plaza price or corridor recovery. */
-export async function resolveSelectedM4Endpoints(route: Coordinate[], routeDurationSeconds?: number, selectedTrace?: TollValidation | null): Promise<ProductionM4Result> {
+export async function resolveSelectedM4Endpoints(route: Coordinate[], routeDurationSeconds?: number, selectedTrace?: TollValidation | null, roadEvidence?: RoadBoundaryResolution): Promise<ProductionM4Result> {
+  // Never attach another provider/candidate's maneuver evidence to this route.
+  const roadBoundaries = roadEvidence && roadEvidence.targetRef === "М-4"
+    ? roadEvidence.routeSignature === roadRouteSignature(route) ? roadEvidence
+      : { ...roadEvidence, status: "unknown" as const, reason: "road_evidence_geometry_mismatch", entry: null, exit: null }
+    : undefined;
+  const paidM4Observed = selectedTrace?.paidRoadEdges?.some(edge => edge.roadNames
+    .some(name => name.split(";").some(ref => normalizeRoadRef(ref) === "М-4"))) === true;
   const validation = await validateKnownM4Plazas(route, routeDurationSeconds, true, selectedTrace);
   const ids = validation.checks.filter(check => check.status === "confirmed")
     .map(check => `m4-${check.km}`);
   const exact = validation.complete && ids.length > 0;
-  return {endpointOnly:true, candidate:validation.candidateCount > 0, exact, tolls:null,
+  return {endpointOnly:true, candidate:validation.candidateCount > 0 || paidM4Observed, exact, tolls:null, roadBoundaries,
     validation:m4AsTollValidation(validation),
     reason:exact ? "Selected M4 first/last tariff boundaries resolved" : validation.message,
-    m4PvpPreview:{status:exact ? "boundaries_resolved" : "unknown",reason:exact ? null : validation.message,
+    m4PvpPreview:{status:exact ? "boundaries_resolved" : roadBoundaries?.status === "resolved" ? "road_boundaries_resolved" : "unknown",reason:exact ? null : validation.message,
+      roadBoundaries,
       priceRub:null,verifiedPriceCells:0,candidateCount:validation.candidateCount,confirmedPvps:ids,diagnosticOnly:true}};
 }

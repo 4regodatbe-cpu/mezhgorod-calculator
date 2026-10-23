@@ -1,5 +1,6 @@
 import {deriveM12FromOsrm} from "@/lib/toll-engine/m12-osrm-span";
 import { safeRoutePositions } from "@/lib/safe-route";
+import { roadBoundariesFromOsrm, roadBoundariesFromValhalla, type RoadBoundaryResolution } from "@/lib/toll-engine/road-boundaries";
 import type { Coordinate } from "@/lib/tolls";
 import { deriveM11EvidenceFromValhalla, deriveM11EvidenceFromOsrm, type M11OsrmStep, type M11RoadEvidence, type M11ValhallaManeuver } from "@/lib/toll-engine/m11-road-evidence";
 import { deriveStrictM12Span, type M12StrictRouteSpan } from "@/lib/toll-engine/m12-valhalla-span";
@@ -15,6 +16,7 @@ export type RouteWithGeometry = RouteSummary & {
   m12Candidate?: boolean;
   m12SpanReason?: string | null;
   m11RoadEvidence?: M11RoadEvidence | null;
+  m4RoadBoundaries?: RoadBoundaryResolution;
 };
 
 export async function geocode(point: Point): Promise<Located> {
@@ -107,6 +109,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
     m12StrictSpan,
     m12EndpointSpan: useTolls === 1 ? deriveStrictM12Span(decodedLegs, true) : null,
     m11RoadEvidence,
+    m4RoadBoundaries: roadBoundariesFromValhalla(decodedLegs),
   };
 }
 
@@ -163,5 +166,5 @@ export async function osrmRoute(from: Located, to: Located, positions = safeRout
   const route = data.routes?.[0];
   if (!route?.distance || !route.duration) throw new Error("ROUTE_NOT_FOUND");
   const m12 = deriveM12FromOsrm(route.legs ?? [], route.geometry?.coordinates ?? []);
-  return { m12EndpointSpan:m12.endpointSpan,m12StrictSpan:m12.span,m12Candidate:m12.candidate,m12SpanReason:m12.reason,m11RoadEvidence: deriveM11EvidenceFromOsrm(route.legs ?? []), meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[], legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
+  return { m4RoadBoundaries:roadBoundariesFromOsrm(route.legs ?? [], route.geometry?.coordinates ?? []), m12EndpointSpan:m12.endpointSpan,m12StrictSpan:m12.span,m12Candidate:m12.candidate,m12SpanReason:m12.reason,m11RoadEvidence: deriveM11EvidenceFromOsrm(route.legs ?? []), meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[], legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
 }

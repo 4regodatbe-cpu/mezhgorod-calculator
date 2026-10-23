@@ -15,3 +15,8 @@
 ## 23.10.2026 — реализация STARTED
 
 Пользователь дал прямую команду начать. Исходный head7d1196a7d299e2c28690d814a8eadc472443a2ba, PR14open/draft, CI39988935029completed/success проверен перед записью. Подготовлен свежий изолированный worktree от этого SHA; грязные старые checkout сохранены. Включено ранее подготовленное уточнение об отсутствии зависимости от цен. [План и восстановление](../../docs/checkpoints/2026-10-23-road-ref-boundaries-STARTED.md).
+
+
+## 23.10.2026 — слой переходов DONE, полная интеграция впереди
+
+[Подробная запись](../../docs/checkpoints/2026-10-23-road-ref-boundaries-layer-DONE.md).12новыхпроверок+16существующихM4adapter:28/28PASS; ESLint/tscPASSпослеподтягиванияотсутствовавшихsparsedata. Новыхцен0; фактическиеentry/exitГранитное→Казаньвыбраны,ценаunknown. Parent71d4b20163f14435b820c2723519b30c446eb6db/CI39990302513success;следующийшагofflinerealprovider+fullcomposerreplay,затемgate/build.
