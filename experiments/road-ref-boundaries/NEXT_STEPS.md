@@ -1,3 +1,7 @@
+## STARTED special runtime — 24.10.2026
+
+Следом один Донецк→Москва, diagnostic case ID/worker60с/один CI POST. Анапа уже DONE, не повторять. [План/лимиты](../../docs/checkpoints/2026-10-24-special-runtime-STARTED.md). Runtime/цены не менять;послеcode gates/durable прочитать первый live результат и сохранить.
+
 ## DONE first real-network handler POST — 24.10.2026
 
 Анапа→Краснодар:HTTP200/OSRM/165.009км/620₽,handler2.225с,totalprocess2.621с. [Полный результат/ограничения](../../docs/checkpoints/2026-10-24-calculation-runtime-live-DONE.md). Один случай уложился10с на CI host;не браузерныйSLA. Code885tests/buildPASS;следом отдельный bounded special-route замер с STARTED,не повтор Анапы. Км/Photon blockersсохранены,Productionнет.

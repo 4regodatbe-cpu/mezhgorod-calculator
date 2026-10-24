@@ -186,3 +186,12 @@ NEXT: для специального маршрута отдельный bounde
 
 
 ФинальныйCI40082993536:verify/calculation_timing/geometryPASS,addressFAIL,50/YandexSKIPPED. ci-result.json сохранён после завершения всех jobs;дополнительных запусков0.
+
+
+# STARTED — один runtime special-route, 24.10.2026 МСК
+
+Remote/local24e8343becea324821ca4edc1e41a115221abd22/treeab2143a82efede6cb63dc996d771047f8677bdd5, PR14draft подтверждены; workflow_runs пуст (docs skipci). Анапа→Краснодар уже измерена/сохранена, не повторять.
+
+Следующие малые блоки в этом сеансе: (1) расширить существующий diagnostic probe двумя фиксированными case IDs, default legacy anapa-krasnodar сохранить; новый donetsk-moscow с уже используемыми в scripts/v3-route-selection-audit.test.ts координатами Донецк37.8029/48.0156→Москва37.6174782/55.7505412, та же дата. CI calculation_timing через CALCULATION_PROBE_CASE выбирает только donetsk-moscow: один POST/60с child/2min job, без матрицы/batch/retries. Case ID и фактический request передать worker и записать в progress/result/error; неизвестный ID отклонять до spawn/сети. Для special-case проверить specialEndpoint:true и наличие special_options/provider/routing/matching/pricing timings, иначе явный failure. Не смешивать outcome времени с подтверждённой ценой. (2) Focused/fullgate/build, DONE/remote/readback. (3) Первый фактический CI special POST/log/full artifact с SHA256, точная длительность/статус/ошибка; не перезапускать до зелёного, потом evidence checkpoint после завершения active CI.
+
+Runtime app/lib/data/критерии fastest/тарифы не менять в диагностическом блоке. Только если новый замер докажет отдельный bottleneck — отдельный план/STARTED/минимальное исправление; обязательный matching не урезать ради10с. При timeout/sourcefailure записатьBLOCKED и продолжить независимое. Handler-with-network не deployed/browser E2E. Координаты известные городские контрольные, не личные адреса. Main/Production/merge/backup/Android не трогать. Широкий старый audit вручную не повторять; обычный существующий CI не отменять.
