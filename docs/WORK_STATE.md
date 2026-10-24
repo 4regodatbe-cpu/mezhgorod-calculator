@@ -1,3 +1,7 @@
+## DONE GeoNames C / runtime ещё BLOCKED — 24.10.2026
+
+237006 P-records/458879строк, invalid/duplicate0;8имён→93кандидата,7запросовнеоднозначны. [Итог](checkpoints/2026-10-24-geonames-offline-review-DONE.md) · [данные/команды](../experiments/road-ref-boundaries/checks/2026-10-24-geonames-review/README.md). В4полигонахестьrecords, полнота/точность/ru aliases/adminlabelsнеподтверждены;КрымполигонUNKNOWN. NEXT bounded review93records/featurecodes/labels, затем independent validation;no activation.
+
 ## DONE GeoNames B / STARTED C offline — 24.10.2026
 
 RU/UA получены и SHA/size/CRC проверены, manifest сохранён. CI40091639551 completed: verify/geometry/timing PASS,address FAIL,50/Yandex SKIPPED. [План C/точные источники](checkpoints/2026-10-24-geonames-download-DONE-review-STARTED.md). NEXT offline разбор8имён+4полигона из существующего artifact, без новых downloads/routes/активации.

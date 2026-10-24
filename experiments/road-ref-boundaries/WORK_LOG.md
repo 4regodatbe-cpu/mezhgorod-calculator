@@ -276,3 +276,8 @@ NEXT: отдельный bounded primary-source intake для coordinate-settlem
 ## 24.10.2026 — country download B DONE / C STARTED
 
 Run40091634576/2ZIP17.7MB, exactSHA/CRC+local artifact digest PASS. Permanent manifest: checks/2026-10-24-geonames-country-download; rawartifact14days. Общий автоматически запущенныйCI40091639551 completed/verify geometry timingPASS,addressFAIL,50/YandexSKIP. Новый маршрутный аудит вручную не запущен. Checkpoint: docs/checkpoints/2026-10-24-geonames-download-DONE-review-STARTED.md; next C offline8names/4polygons/format+identity, no runtime.
+
+
+## 24.10.2026 — GeoNames offline C DONE
+
+C STARTED e6578e8 прочитанremote;5.789сoffline/458879строк237006P/0invalidduplicate.93selectedrawrows/hash/admin/geometryсохранены.7/8queriesambiguous;2ТарасовкивДНР;labels/ruV2/accuracy/completenessнеподтверждены. Коданализа/commands/results: checks/2026-10-24-geonames-review; checkpoint docs/checkpoints/2026-10-24-geonames-offline-review-DONE.md. Selftest/conservation/rawrow93checksPASS,calculatorruntimeunchanged/network0. NEXT короткийpolicyreview93records + independentvalidation;неактивировать.

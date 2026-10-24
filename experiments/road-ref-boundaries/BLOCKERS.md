@@ -7,7 +7,7 @@
 | KM-001 | BLOCKED_BY_DATA | У graph pair4443232947→358467208 нет проверенных официальных километров/координат output shape; нельзя назначить соседний км | Добавить reviewed anchor/section с источником в локальный реестр, модуль не блокировать |
 | KM-002 | BLOCKED_BY_DATA | Полной калиброванной геометрии обходов/шкал км нет | Пополнять только нужные sections; свою дорожную сеть не строить |
 | PERF-001 | DIAGNOSTICS_DONE / browser E2E UNVERIFIED | Два real-network handler случая: Анапа2.225с,Донецк7.318с; общего SLA нет | Не расширять однотипный корпус без нового медленного случая; сохранять обязательные проверки |
-| ADDRESS-001 | LOCAL_FIX_VERIFIED / AVAILABILITY_BLOCKED_BY_SOURCE | Pool/cancel/cooldown исправлены и проверены; cold query при полном Photon503 всё ещё502, B-only не доказан | Source intake/design DONE; pilot A DNS BLOCKED. Возобновить только при новой доступности, затем B/C по SETTLEMENT_PILOT_ACCEPTANCE.md; runtime не активирован |
+| ADDRESS-001 | LOCAL_FIX_VERIFIED / AVAILABILITY_BLOCKED_BY_SOURCE | Pool/cancel/cooldown исправлены и проверены; cold query при полном Photon503 всё ещё502, B-only не доказан | CI delivery A/B DONE, C structural review DONE: 237006P/93 selected candidates. Runtime blocked by independent accuracy/ru aliases/admin labels/current-place validation; no activation |
 | TARIFF-001 | BLOCKED_BY_DATA | Scope/цены graph pair pending unknown, активных новых строк0 | Заполнить проверенный scope/источник/даты отдельно |
 | DOC-001 | DEFERRED |24.10 web open OSM milestone timeout, новых данных не извлечено | При сборе реальных anchors проверить первичный источник; для локального ядра не блокер |
 
@@ -76,3 +76,8 @@ Parent d4ca027fca819291c8913cdb63d3376253058eff/tree2639d883c3af11ab784260083042
 ## 24.10.2026 — GeoNames delivery pilot A BLOCKED_BY_ENVIRONMENT_DNS
 
 3HEAD`RU.zip`/`UA.zip`/`alternateNamesV2.zip` → curl6, HTTP000, DNSresolve failure `download.geonames.org`; ZIP0, Content-Length unknown, B/C NOT_STARTED. Не утверждатьнедоступностьсервераисточника. Следомread-only optional module design; повторять3HEAD только при изменении сети. [Full evidence](../../docs/checkpoints/2026-10-24-address-geonames-head-DNS-BLOCKED.md). ADDRESS-AVAILABILITY не исправлено.
+
+
+## 24.10.2026 — GeoNames A/B/C structural review DONE, activation BLOCKED
+
+CIсетьустранилаdeliveryblocker;RU/UA17.7MB/SHA/CRCподтверждены.C:237006P/0invalid/duplicate,93selectedrows/7ambiguousqueries. ДНР1803/ЛНР1376/Запорожская1266/Херсонская985точек, completenessUNKNOWN;КрымполигонUNKNOWN. Pвключаетabandoned/historical;ru aliases/V2/adminlabels/independentaccuracyUNVERIFIED. Полныйкаталогнеактивирован. Evidence: checks/2026-10-24-geonames-review/README.md; nextreview93records,недownload/replay.
