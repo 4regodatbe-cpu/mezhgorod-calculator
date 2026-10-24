@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:42:50.414Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 96,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 16,
+    "spec": {
+      "caseId": "pair-m4-m11-spb-to-voronezh",
+      "kind": "road",
+      "group": "pair-m4-m11"
+    }
+  },
+  "caseId": "pair-m4-m11-spb-to-voronezh",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-42-50-414Z-part16",
+  "parent": "c21e3b0b81357db475be7220bfd53ea5153238b6"
+}

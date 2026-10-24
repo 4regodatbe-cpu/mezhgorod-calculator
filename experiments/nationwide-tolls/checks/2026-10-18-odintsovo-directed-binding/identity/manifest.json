@@ -1,0 +1,59 @@
+{
+  "status": "LOCAL_IDENTITY_VERIFIED",
+  "sourceHead": "f8aeb1aa796ff1e811a8f29e099cf5e16b985b54",
+  "focusedPass": 43,
+  "fullPass": 788,
+  "staticPages": 16,
+  "buildExit": 0,
+  "tscExit": 0,
+  "eslintExit": 0,
+  "newPrices": 0,
+  "externalRequests": 0,
+  "files": [
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/identity/build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/identity/build.log",
+      "bytes": 70436,
+      "sha256": "7aa3bdbb5e754d09b9e1152352f22b070883962bfab6a5c7ff0f00ea1e71445c"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/identity/eslint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/identity/eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/identity/focused.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/identity/focused.log",
+      "bytes": 3593,
+      "sha256": "c513bb8e5c94f4e236628e399ba298e59335c3dfd35eec5fc93aedd65deab328"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/identity/quotes.json",
+      "bytes": 3467,
+      "sha256": "18408de603689084ce58ccdd36c2ec3bd3036e9868cc89b2da09ad418d11c7fb"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/identity/tsc.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/identity/tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

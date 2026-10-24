@@ -1,0 +1,191 @@
+{
+  "caseId": "dnr-гранитное-saint-petersburg-center",
+  "region": "dnr",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 1972786,
+      "seconds": 81745
+    },
+    {
+      "name": "OSRM",
+      "meters": 1973220,
+      "seconds": 90888
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1972786,
+  "routeSeconds": 81745,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lat": 47.4593941,
+          "lng": 37.866983
+        },
+        {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+  "captureSha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": null,
+      "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+    },
+    {
+      "id": "m11-15-58",
+      "amount": 1650,
+      "reason": "m11_head_ready_direct_pair_at_exit_payment"
+    },
+    {
+      "id": "m11-58-679",
+      "amount": 4200,
+      "reason": "matrix dated selected-route M11 direct pair"
+    },
+    {
+      "id": "m11-679-684",
+      "amount": 94,
+      "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+    },
+    {
+      "id": "zsd",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-4",
+    "E 50",
+    "E 115",
+    "«Дон»",
+    "улица Изыскателей",
+    "Дон",
+    "E 119",
+    "AH8",
+    "М-11",
+    "«Нева»",
+    "ЗСД",
+    "набережная реки Екатерингофки"
+  ],
+  "tollNodeIds": [
+    "11838466120",
+    "75715767",
+    "7678126300",
+    "4315323077",
+    "3504914294",
+    "3257030196",
+    "75724804",
+    "1051218389",
+    "3598837930",
+    "2431427636",
+    "3598939358",
+    "4341143825",
+    "285903913",
+    "7171625012",
+    "2492861246",
+    "933974870"
+  ],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m4, zsd",
+      "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+      "zsd: zsd_trip_extends_outside_reviewed_zone1"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [
+      "m11-15-58",
+      "m11-58-679",
+      "m11-679-684"
+    ],
+    "missing": [
+      "m4",
+      "zsd"
+    ],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": null,
+        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+      },
+      {
+        "id": "m11-15-58",
+        "detected": true,
+        "tolls": {
+          "amount": 1650,
+          "weekdayAmount": 1130,
+          "weekendAmount": 1650,
+          "period": "по расчётному времени оплаты М-11 15–58 (fri)",
+          "confidence": "matched",
+          "segments": [
+            "М-11 15–58: moscow → solnechnogorsk: 1650 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "m11_head_ready_direct_pair_at_exit_payment"
+      },
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": {
+          "amount": 4200,
+          "weekdayAmount": 3900,
+          "weekendAmount": 4200,
+          "period": "пятница–воскресенье",
+          "segments": [
+            "М-11: p58 → p679 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "detected": true,
+        "tolls": {
+          "amount": 94,
+          "weekdayAmount": 94,
+          "weekendAmount": 94,
+          "period": "пн–вс, приказ №274 с 04.09.2026",
+          "segments": [
+            "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "tolls": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ]
+  }
+}

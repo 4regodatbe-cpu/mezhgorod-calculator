@@ -1,0 +1,44 @@
+{
+  "status": "DONE",
+  "caseId": "triple-m11-ckad-m12-torzhok-to-kazan",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/2026-10-16T00-34-01-248Z-capture.json.gz",
+  "captureSha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a",
+  "provider": "Valhalla",
+  "traceComplete": true,
+  "chunkCount": 8,
+  "checkedChunkCount": 8,
+  "strictBlockCount": 1,
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "mainlineRub": 1250,
+      "fullAmount": null,
+      "priced": [
+        "m11-58-679",
+        "m12"
+      ],
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "mainlineRub": 1390,
+      "fullAmount": null,
+      "priced": [
+        "m11-58-679",
+        "m12"
+      ],
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "unknown-paid-road"
+      ]
+    }
+  ],
+  "negativeGuards": 3,
+  "materialException": false,
+  "scope": "Own component boundary/composer exception check, not new route audit or confirmed whole fare"
+}

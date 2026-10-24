@@ -1,0 +1,3 @@
+# Runner preflight recovery — DONE; case27 STARTED
+
+16.10.2026. Fullgate remote db813582d53322478c6c133217dc0ff45a0efbb8 exacttree67e23d5cc72e0bc85dd9ec0e4c39d2441ec594ba verified. First --next invocation exited1 WRONG_BRANCH_OR_UNSAVED_STEP before replay. git status identified only untracked node_modules symlink: committed ignore node_modules/ does not match a symlink. Added /node_modules to local .git/info/exclude (no tracked policy/code change); clean status for runner after checkpoint commit. No route progress increment, no replay ran. Prior695fullgate PASS unchanged. NEXT retry same case27 --next, preserve evidence and diagnose if needed. Plan90%18/20.

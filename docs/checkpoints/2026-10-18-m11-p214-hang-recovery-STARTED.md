@@ -1,0 +1,5 @@
+# Восстановление p214 после остановки — STARTED
+
+18.10.2026 13:34 МСК. Последний подтверждённый remote/local/PR14 head d1d0bd9797ca3ae9351de8a1898090bbdf372353, draft. STARTED реализации сохранён; runtime не менялся, новых процессов/расчётов нет. Уже готовые3GET/61pointchecks не повторять.
+
+Незавершённый остаток разделён: A) standalone strict physical matcher + короткие focused negative tests, сохранить PART-A DONE с обязательными широкими checks ещё pending, без включения в composer; B) подключение пары p214→p58 и own quote, focused + обязательный full gate/build/TS/ESLint, сохранить результаты; C) точное remote readback и codeCI. Если снова остановится, дробить только незавершённый остаток. Не пересчитывать завершённое при проблеме сохранения. Лимитfocused60s,build300s; полные логи в checks/2026-10-18-m11-p214-entry. До завершенияB не объявлять исправление интегрированным и проверенным. Ценаwholetripunknown, head58→ЦКАДunknown. Main/merge/production/Android/автоматизации не затрагиваются.

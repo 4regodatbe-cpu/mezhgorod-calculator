@@ -1,0 +1,11 @@
+{
+  "run": 40091639551,
+  "overall": "success",
+  "verify": "success",
+  "calculation_timing": "success",
+  "geometry": "success",
+  "address_collector": "failure",
+  "settlement50": "skipped",
+  "yandex": "skipped",
+  "note": "Automatic PR workflow; no explicit rerun. Failure cause not re-investigated in this block."
+}

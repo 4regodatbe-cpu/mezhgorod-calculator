@@ -1,0 +1,120 @@
+{
+  "status": "DONE",
+  "codeCommit": "3da74d0f487bdc2b7d9ec4df9a2f8c3d2bb22723",
+  "runId": 39120413592,
+  "runConclusion": "success",
+  "verify": "success",
+  "liveProbe": "failure",
+  "continueOnError": true,
+  "geometryProbe": "success",
+  "addressProbe": {
+    "type": "address-search-live-summary",
+    "status": "BUDGET_EXHAUSTED",
+    "completed": 13,
+    "planned": 13,
+    "remainingQueries": [],
+    "elapsedMs": 90002,
+    "requestTimeoutMs": 10000,
+    "totalTimeoutMs": 90000,
+    "failedSources": 100,
+    "checks": [
+      {
+        "query": "Донецк",
+        "rankingChecks": {
+          "donetskDnrFirst": true,
+          "donetskRostovSecond": true
+        },
+        "featureCount": 127,
+        "failedSources": 0
+      },
+      {
+        "query": "Донецкая область",
+        "rankingChecks": {},
+        "featureCount": 51,
+        "failedSources": 4
+      },
+      {
+        "query": "Макеевка",
+        "rankingChecks": {
+          "makeyevkaDnrPresent": false
+        },
+        "featureCount": 0,
+        "failedSources": 12
+      },
+      {
+        "query": "Луганск",
+        "rankingChecks": {},
+        "featureCount": 16,
+        "failedSources": 6
+      },
+      {
+        "query": "Ялта",
+        "rankingChecks": {
+          "yaltaPriorityTerritoryFirst": false
+        },
+        "featureCount": 0,
+        "failedSources": 7
+      },
+      {
+        "query": "Изюм",
+        "rankingChecks": {
+          "izyumPriorityTerritoryFirst": false,
+          "izyumUkraineCityWithinFirstEight": false
+        },
+        "featureCount": 0,
+        "failedSources": 12
+      },
+      {
+        "query": "Ялта ДНР",
+        "rankingChecks": {
+          "yaltaDnrFirst": false
+        },
+        "featureCount": 0,
+        "failedSources": 7
+      },
+      {
+        "query": "Ялта Крым",
+        "rankingChecks": {
+          "yaltaCrimeaQualifiedFirst": false
+        },
+        "featureCount": 0,
+        "failedSources": 7
+      },
+      {
+        "query": "Севастополь",
+        "rankingChecks": {},
+        "featureCount": 0,
+        "failedSources": 7
+      },
+      {
+        "query": "Краснодар",
+        "rankingChecks": {},
+        "featureCount": 0,
+        "failedSources": 7
+      },
+      {
+        "query": "Москва",
+        "rankingChecks": {
+          "moscowFirst": false
+        },
+        "featureCount": 0,
+        "failedSources": 7
+      },
+      {
+        "query": "Запорожье",
+        "rankingChecks": {},
+        "featureCount": 0,
+        "failedSources": 12
+      },
+      {
+        "query": "Харьков, Украина",
+        "rankingChecks": {},
+        "featureCount": 0,
+        "failedSources": 12
+      }
+    ]
+  },
+  "subsequentLiveSteps": "skipped",
+  "diagnosis": "External Photon source HTTP 503 then per-request timeouts and 90s total budget exhaustion. This is not proof of ranking correctness or regression. No automatic rerun; current code verification passed.",
+  "source": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/39120413592/job/117654704870"
+}

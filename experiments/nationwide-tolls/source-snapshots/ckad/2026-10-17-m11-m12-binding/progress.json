@@ -1,0 +1,11 @@
+{
+  "status": "DONE",
+  "completed": 12,
+  "planned": 12,
+  "elapsedMs": 7738,
+  "terminal": false,
+  "reconciledFromAllExactRawMetadata": true,
+  "priorObservedStatus": "IN_PROGRESS",
+  "priorObservedCompleted": 9,
+  "reason": "Process exited0 with all12 metadata/raw; latest progress file still showed an older in-progress record. Reconciled only after validating the full planned URL set and every raw hash; no refetch."
+}

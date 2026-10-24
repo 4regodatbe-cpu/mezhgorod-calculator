@@ -1,0 +1,45 @@
+✔ exact A113 references and full CKAD name identify paid product including booth aliases (6.146195ms)
+✔ paid trace name without any booth still requires the CKAD component; incomplete trace stays unknown (0.828448ms)
+✔ own forward route retains omitted paid CKAD; reverse does not inherit the other direction evidence (64.411553ms)
+✖ own POST replay keeps unknown with CKAD explanation on forward only, without toll-avoid routing (149.210616ms)
+✔ four product identities retain exact primary booth and one-way source provenance (1.555602ms)
+✔ both own traces classify the separate bypass without a second M1 or anonymous product (4.012292ms)
+✔ wrong tuples, other paid booths, real M1 and partial coverage remain conservative (2.545102ms)
+✔ product identity authorizes no money for either saved selected route (64.121756ms)
+✔ road references require exact numeric and word boundaries (2.41111ms)
+✔ M1/M3 matched candidates and named paid booths cannot be omitted (3.337516ms)
+✔ all catalog regional candidates block a complete total until priced (0.575507ms)
+✔ regional names and unmapped paid events block a numeric subset (0.977031ms)
+✔ V3 known A289 price cannot hide another unpriced regional road (249.053042ms)
+✔ CKAD endpoint labels do not assert passage on the intersecting highways (0.971192ms)
+✔ late map matching cannot revive an incomplete toll price (7.980627ms)
+✔ HTTP200 empty or malformed trace is unknown, never proof of free (4.07104ms)
+✔ a physical booth without toll=true cannot certify a free route (0.945494ms)
+✔ approximate M12 corridor recovery cannot publish a numeric subset as a complete fare (10.074952ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 17
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 764.436719
+
+✖ failing tests:
+
+test at scripts/v3-ckad-alias-coverage.test.ts:58:1
+✖ own POST replay keeps unknown with CKAD explanation on forward only, without toll-avoid routing (149.210616ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(fast.quality.providers.includes('Valhalla'))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/9847ba89efdb/mezhgorod/scripts/v3-ckad-alias-coverage.test.ts:69:14)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

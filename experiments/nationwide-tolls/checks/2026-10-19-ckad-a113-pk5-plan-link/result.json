@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-19",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "sourceHead": "c23b13a9914babce74cc8e8d68171aa8fc98b5ad",
+  "pr": 14,
+  "prDraft": true,
+  "ci": {
+    "githubActionsRun": 39211015878,
+    "verify": "success",
+    "live_probe": "in_progress"
+  },
+  "officialMunicipalRecord": "https://nfreg.ru/documents/dokumentatsiya-po-planirovke-territorii-po-obektu-a-113-stroyashhayasya-tsentralnaya-koltsevaya-avtomobilnaya-doroga-moskovskaya-oblast-puskovoj-kompleks-5/",
+  "officialPlanningDocumentLink": "https://yadi.sk/d/-VNEML1GXHYsTA",
+  "fetch": {
+    "finalUrl": "https://disk.yandex.com/d/-VNEML1GXHYsTA",
+    "result": "Link blocked",
+    "message": "The file is blocked for violating the terms of placing user content on Yandex services.",
+    "accessed": true,
+    "documentRead": false
+  },
+  "sourceDownloads": 0,
+  "routeRequests": 0,
+  "replays": 0,
+  "pricedComponentsAdded": 0,
+  "codeOrMatrixChanged": false,
+  "next": "No exact CKAD coordinate-to-chainage crosswalk was retrieved. No next prepared mapped-fare item with both proven boundaries and a saved tariff row is identified in the current handoff; wait for an official accessible crosswalk or a newly prepared exact pair."
+}

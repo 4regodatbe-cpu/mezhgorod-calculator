@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:37:09.503Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 88,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 15,
+    "spec": {
+      "caseId": "pair-m12-ckad-murom-to-dmitrov",
+      "kind": "road",
+      "group": "pair-m12-ckad"
+    }
+  },
+  "caseId": "pair-m12-ckad-murom-to-dmitrov",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-37-09-503Z-part15",
+  "parent": "7158ac63b7ac228e62f0f41b7bdb46f6802e6570"
+}

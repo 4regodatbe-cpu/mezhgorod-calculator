@@ -89,7 +89,8 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
-  let [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
+  const [initialSelectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
+  let selectedFree = initialSelectedFree;
   // The expensive full-detour search is a genuine fallback; keep it off the
   // critical path when a faster candidate already passes the complete booth trace.
   if (!fastestOnly && !selectedFree) {

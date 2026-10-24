@@ -1,0 +1,64 @@
+name: GeoNames bounded delivery pilot
+on:
+  push:
+    branches: [fix/v3-missing-route-prices-2026-10-15]
+    paths: [.github/workflows/geonames-delivery-pilot.yml]
+permissions:
+  contents: read
+concurrency:
+  group: geonames-delivery-pilot-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  head-only:
+    if: github.ref_name == 'fix/v3-missing-route-prices-2026-10-15'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Three bounded HEAD requests, no archives
+        shell: python
+        run: |
+          import datetime, json, pathlib, subprocess
+          root = pathlib.Path('geonames-delivery')
+          root.mkdir()
+          rows = []
+          for name in ['RU.zip', 'UA.zip', 'alternateNamesV2.zip']:
+              url = 'https://download.geonames.org/export/dump/' + name
+              headers = root / (name + '.headers.txt')
+              result = subprocess.run(['curl', '--head', '--silent', '--show-error',
+                  '--location', '--max-redirs', '2', '--proto', '=https', '--proto-redir', '=https',
+                  '--connect-timeout', '6', '--max-time', '10', '--dump-header', str(headers),
+                  '--output', '/dev/null', '--write-out', '%{http_code}', url],
+                  text=True, capture_output=True, timeout=12)
+              raw = headers.read_text() if headers.exists() else ''
+              final = raw.replace('\r\n', '\n').strip().split('\n\n')[-1]
+              fields = {}
+              for line in final.splitlines()[1:]:
+                  if ':' in line:
+                      key, value = line.split(':', 1)
+                      fields[key.lower()] = value.strip()
+              length = fields.get('content-length', '')
+              rows.append(dict(url=url, curlExit=result.returncode, http=result.stdout.strip(),
+                  contentLength=int(length) if length.isdecimal() else None,
+                  etag=fields.get('etag'), lastModified=fields.get('last-modified'),
+                  error=result.stderr.strip(), timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat()))
+              (root / 'progress.json').write_text(json.dumps(rows, indent=2))
+          country = rows[:2]
+          ready = all(r['curlExit'] == 0 and r['http'] == '200' and
+              r['contentLength'] is not None and r['contentLength'] > 0 for r in country)
+          size = sum(r['contentLength'] or 0 for r in country)
+          report = dict(stage='A_HEAD_ONLY', rows=rows, bodyDownloads=0,
+              countryTotalBytes=size if ready else None,
+              readyForSeparateBStarted=ready and size <= 50 * 1024 * 1024,
+              runtimeApproved=False)
+          (root / 'result.json').write_text(json.dumps(report, indent=2))
+          print(json.dumps(report, indent=2))
+          if not report['readyForSeparateBStarted']:
+              raise SystemExit(1)
+      - name: Preserve exact headers and result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: geonames-delivery-head-${{ github.run_id }}
+          path: geonames-delivery/
+          if-no-files-found: error
+          retention-days: 14

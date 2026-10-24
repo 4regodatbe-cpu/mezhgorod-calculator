@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3964668 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="1872038476" visible="true" version="6" changeset="83493941" timestamp="2020-04-13T19:21:54Z" user="literan" uid="830106" lat="56.0897492" lon="37.2004102"/>
+ <node id="3566326245" visible="true" version="4" changeset="149625664" timestamp="2024-04-05T17:17:42Z" user="Vas111" uid="16951803" lat="56.0888728" lon="37.2016452"/>
+ <way id="1270188032" visible="true" version="4" changeset="154894187" timestamp="2024-08-06T13:40:56Z" user="Vas111" uid="16951803">
+  <nd ref="3566326245"/>
+  <nd ref="1872038476"/>
+  <tag k="change:lanes" v="yes|yes|not_right|no"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="highway:category" v="ru:IА"/>
+  <tag k="lanes" v="4"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="RU:motorway"/>
+  <tag k="maxspeed:designed" v="150"/>
+  <tag k="name" v="«Нева»"/>
+  <tag k="name:en" v="Neva Motorway"/>
+  <tag k="name:ru" v="«Нева»"/>
+  <tag k="name:uk" v="«Нева»"/>
+  <tag k="old_name:2:ru" v="скоростная платная автомобильная дорога Москва — Санкт-Петербург"/>
+  <tag k="old_name:en" v="Moscow – Saint Petersburg Highway"/>
+  <tag k="old_name:ru" v="Москва — Санкт-Петербург"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="М-11"/>
+  <tag k="short_name:ru" v="СПАД"/>
+  <tag k="shoulder" v="right"/>
+  <tag k="shoulder:width" v="2.5"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="width" v="18.5"/>
+ </way>
+</osm>

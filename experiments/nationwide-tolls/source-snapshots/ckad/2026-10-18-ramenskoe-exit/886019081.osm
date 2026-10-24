@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1295 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8238636473" visible="true" version="1" changeset="96028354" timestamp="2020-12-17T21:19:04Z" user="literan" uid="830106" lat="55.6363943" lon="38.3595909"/>
+ <node id="8238636524" visible="true" version="2" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6339006" lon="38.3610414"/>
+ <node id="8238636525" visible="true" version="1" changeset="96028354" timestamp="2020-12-17T21:19:04Z" user="literan" uid="830106" lat="55.6372548" lon="38.3590824"/>
+ <node id="8238636526" visible="true" version="1" changeset="96028354" timestamp="2020-12-17T21:19:04Z" user="literan" uid="830106" lat="55.6386550" lon="38.3582872"/>
+ <node id="8238636527" visible="true" version="1" changeset="96028354" timestamp="2020-12-17T21:19:04Z" user="literan" uid="830106" lat="55.6396951" lon="38.3578134"/>
+ <node id="8238636528" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6413138" lon="38.3573413"/>
+ <node id="8238636529" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6429658" lon="38.3572528"/>
+ <node id="8238636530" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6447567" lon="38.3575424"/>
+ <node id="8238636531" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6463110" lon="38.3581426"/>
+ <node id="8238636532" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6477665" lon="38.3589898"/>
+ <node id="8238636533" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6488437" lon="38.3599517"/>
+ <node id="8238636534" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6500533" lon="38.3611919"/>
+ <node id="8238636535" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6514690" lon="38.3631099"/>
+ <node id="8238636536" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6528145" lon="38.3652913"/>
+ <node id="10782061695" visible="true" version="2" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6545085" lon="38.3680882"/>
+ <node id="10832306578" visible="true" version="2" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6403954" lon="38.3575425"/>
+ <node id="12980657994" visible="true" version="1" changeset="168536767" timestamp="2025-07-05T19:40:05Z" user="solenoid jam" uid="10129333" lat="55.6470455" lon="38.3585308"/>
+ <node id="13184575929" visible="true" version="1" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6455637" lon="38.3578205"/>
+ <node id="13184575931" visible="true" version="1" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6438775" lon="38.3573645"/>
+ <node id="13184575932" visible="true" version="1" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6421640" lon="38.3572572"/>
+ <node id="13184575997" visible="true" version="1" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6340905" lon="38.3608836"/>
+ <node id="13184576000" visible="true" version="1" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6350906" lon="38.3602604"/>
+ <way id="886019081" visible="true" version="8" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333">
+  <nd ref="10782061695"/>
+  <nd ref="8238636536"/>
+  <nd ref="8238636535"/>
+  <nd ref="8238636534"/>
+  <nd ref="8238636533"/>
+  <nd ref="8238636532"/>
+  <nd ref="12980657994"/>
+  <nd ref="8238636531"/>
+  <nd ref="13184575929"/>
+  <nd ref="8238636530"/>
+  <nd ref="13184575931"/>
+  <nd ref="8238636529"/>
+  <nd ref="13184575932"/>
+  <nd ref="8238636528"/>
+  <nd ref="10832306578"/>
+  <nd ref="8238636527"/>
+  <nd ref="8238636526"/>
+  <nd ref="8238636525"/>
+  <nd ref="8238636473"/>
+  <nd ref="13184576000"/>
+  <nd ref="13184575997"/>
+  <nd ref="8238636524"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="highway:category" v="ru:IА"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="RU:motorway"/>
+  <tag k="maxspeed:designed" v="140"/>
+  <tag k="name" v="Центральная кольцевая автомобильная дорога"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="А-113"/>
+  <tag k="short_name" v="ЦКАД"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+</osm>

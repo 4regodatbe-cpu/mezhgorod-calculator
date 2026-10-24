@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-17T06:32:46",
+  "status": "DONE",
+  "causeReviewStatus": "blocked_by_missing_reliable_data",
+  "findingId": "arc_not_proven",
+  "baselineCaseCount": 34,
+  "source": {
+    "branch": "fix/v3-missing-route-prices-2026-10-15",
+    "commit": "6df92a4bf60ba64e0a3ac8ca2d5e856248de7c9b",
+    "tree": "dc4c2b12a326ab4316e364d2779d2d6c606c0869",
+    "reportPath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.json",
+    "reportGitBlobSha": "528163f94cf0092bf58ad5b0be200059d61baff9",
+    "baselineReportSha256": "cf72f0f4084236e3acb442a961bae5a9c79f49980566b6d784bd8b73642d765e",
+    "queueGitBlobSha": "88866f075c5effe474213a0e17ecb7783ec13579",
+    "resolverPath": "lib/toll-engine/ckad-evidence.ts",
+    "resolverGitBlobSha": "7d5e26c1e4ff6a4ad1deb06c1727c357f6e05fb6"
+  },
+  "result": {
+    "uniqueRouteCases": 34,
+    "uniqueWeekdayWeekendProfiles": 68,
+    "findingOccurrences": 102,
+    "liveEvidenceFiles": 34,
+    "replayEvidenceFiles": 68,
+    "uniqueEvidenceFilesPresent": 102,
+    "missingEvidencePaths": 0,
+    "evidenceCompleteRows": 34,
+    "rawAvailableRows": 34,
+    "traceCompleteRows": 34,
+    "sameDateParityRows": 34,
+    "weekdayAndWeekendAmountsNullRows": 34,
+    "selectedProviderCounts": {
+      "Valhalla": 34
+    },
+    "roadCoverageStatusCounts": {
+      "traversal-proven": 22,
+      "expected-road-not-proven": 12
+    },
+    "reasonCounts": {
+      "ckad_east_arc_not_proven": 102
+    }
+  },
+  "overlapCountsNotAdditive": {
+    "m4_crossing_profile_changes": 0,
+    "a289:unpriced": 0,
+    "zsd:unpriced": 16,
+    "m4:unpriced": 0,
+    "m11_partial_head_entry_boundary_unresolved": 8,
+    "arc_not_proven": 34,
+    "unknown-paid-road:unpriced": 18,
+    "expected-road-not-proven": 12,
+    "m11-58-679:unpriced": 14,
+    "m11_58_679_facility_sequence_incomplete": 0,
+    "engine_not_yet_composed": 0,
+    "m12_current_operator_pair_not_bound": 2,
+    "odintsovo:unpriced": 0
+  },
+  "diagnosis": {
+    "userImpact": "CKAD toll amount/full route toll total is unsupported for these saved cases; unknown/null, not zero or partial subtotal.",
+    "cause": "Every saved report occurrence carries ckad_east_arc_not_proven. The conservative resolver requires nine broad geographic anchors in order and within distance/arc-length limits, plus M11 continuation where applicable; report does not prove this exact chargeable east-arc traversal/scope.",
+    "materialExceptions": "None in the frozen report: all 34 rows have complete evidence, raw capture, complete trace, same-date parity and null weekday/weekend amounts. Broad road layer splits into 22 traversal-proven and 12 expected-road-not-proven; neither proves exact east-arc billing scope.",
+    "reliableEvidenceNeeded": "Operator/source-backed mapping from selected fastest route to the exact CKAD east-arc chargeable boundary/event or pairwise billing scope; do not relax geometric gates or infer from road name/distance."
+  },
+  "actions": {
+    "newLiveRequests": 0,
+    "newReplays": 0,
+    "tests": 0,
+    "builds": 0,
+    "tariffsConfirmed": 0,
+    "priorCiRun": {
+      "id": 38994773498,
+      "status": "completed",
+      "conclusion": "success",
+      "headSha": "6df92a4bf60ba64e0a3ac8ca2d5e856248de7c9b",
+      "avoidanceProbeExecuted": true,
+      "avoidanceProbeConclusion": "success"
+    },
+    "workflowChangedPath": ".github/workflows/special-territory-policy.yml",
+    "workflowChange": "Removed out-of-scope non-fastest payment-point-avoiding route probe and its artifact entry; no longer run on future PR checks.",
+    "postCommitWorkflow": "pending observation after branch ref update"
+  }
+}

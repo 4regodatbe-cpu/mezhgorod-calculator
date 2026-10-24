@@ -1,0 +1,20 @@
+{
+  "startedAt": "2026-10-15T16:43:50.233Z",
+  "scope": {
+    "region": null,
+    "group": null,
+    "caseId": "lnr-лисичанск-saint-petersburg-center",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "lnr-лисичанск-saint-petersburg-center",
+      "startedAt": "2026-10-15T16:43:50.234Z",
+      "executionStatus": "blocked-before-confirmed-result"
+    }
+  ],
+  "blockedByApproval": true,
+  "blockedReason": "Automatic approval review rejected Valhalla disclosure of private repository coordinates without explicit destination permission"
+}

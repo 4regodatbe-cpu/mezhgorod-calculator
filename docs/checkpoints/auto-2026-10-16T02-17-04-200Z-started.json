@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T02:17:04.200Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 150,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 18,
+    "spec": {
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+      "kind": "road",
+      "group": "triple-m4-m11-zsd"
+    }
+  },
+  "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-17-04-200Z-part18",
+  "parent": "904e1b81ed35fd7255d1bcc34069aeb227af406b"
+}

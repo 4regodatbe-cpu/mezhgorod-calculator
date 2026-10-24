@@ -37,7 +37,7 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
     data.legs.forEach((leg, legIndex) => {
       const variants: Array<{ type: string; trip: Trip; tolls: TollView | null }> = leg.fast.tolls.pricingStatus !== "free"
         ? [
-          { type: leg.fast.tolls.pricingStatus === "unknown" ? "Быстрый, цена дороги не подтверждена" : "Платный", trip: leg.fast, tolls: leg.fast.tolls },
+          { type: leg.fast.tolls.pricingStatus === "unknown" ? "Быстрый, цена дороги неизвестна" : "Платный", trip: leg.fast, tolls: leg.fast.tolls },
           ...(leg.free ? [{ type: "Альтернатива без пунктов оплаты", trip: leg.free, tolls: null }] : []),
         ]
         : [{ type: "Оптимальный", trip: pickOptimal(leg.fast, leg.free), tolls: null }];
@@ -130,15 +130,18 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
     const tollPrice = resolveTollAmount(toll, tollPeriod, manualTollOverride);
     const periodLabel = tollPeriod === "actual" ? (toll?.period ?? "дата расчёта") : tollPeriod === "weekday" ? "будни, Пн–Чт" : "выходные, Пт–Вс";
     const lines = ["из А в Б", `${shortPlaceName(leg.from)} → ${shortPlaceName(leg.to)}`, `${distance(trip.meters)} · ${duration(trip.seconds)}`, `День поездки: ${periodLabel}`];
-    if ((toll as (TollView & {priceConfirmation?:string}) | undefined)?.priceConfirmation === "unconfirmed") lines.push("Стоимость не подтверждена");
-    if (manualTollOverride?.trim()) lines.push("Сумма платных дорог введена вручную и не подтверждена провайдером.");
-    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог не подтверждена.");
+    if (manualTollOverride?.trim()) lines.push("Сумма платных дорог указана вручную.");
+    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог неизвестна.");
     for (const rate of Object.keys(defaults) as Array<keyof typeof defaults>) {
       const vehicle = vehicleForRate[rate];
       const baseFare = trip.pricingByVehicle?.[vehicle]?.requiresSplit ? null : trip.pricingByVehicle?.[vehicle]?.totalPrice;
       const total = totalWithToll(baseFare, tollPrice);
       const addition = tollPrice.amount === null ? "платные дороги: сумма неизвестна" : `+ ${money(tollPrice.amount)} ${tollPrice.status === "manual" ? "дороги вручную" : "платные дороги"}`;
-      lines.push(`${tariffNames[rate]}: ${baseFare == null ? "тариф не рассчитан" : money(baseFare)} ${addition} = ${total === null ? "итого не рассчитано" : money(total)}`);
+      if (baseFare != null && tollPrice.amount === null) {
+        lines.push(`${tariffNames[rate]}: ${money(baseFare)} без платных дорог`);
+      } else {
+        lines.push(`${tariffNames[rate]}: ${baseFare == null ? "тариф не рассчитан" : money(baseFare)} ${addition} = ${total === null ? "итого не рассчитано" : money(total)}`);
+      }
     }
     if (warning) lines.push(`Важно: ${warning}`);
     await navigator.clipboard.writeText(lines.join("\n"));

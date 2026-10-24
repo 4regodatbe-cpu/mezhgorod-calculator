@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-17T00:15:54Z",
+  "scope": "Part19 single-cause classification",
+  "causeId": "unknown-paid-road:unpriced",
+  "outcome": "deferred",
+  "outcomeLabel": "deferred",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pullRequest": 14,
+  "source": {
+    "commit": "1f6b47f4c297779307fe9e59e69571e5bc1100ab",
+    "tree": "67b4ef630a5145852b3e2ec7d067b67dd0162d7e",
+    "queueBlob": "f1f8e4b23d68fed30ad2dadeef2afd0c98a4ddb9",
+    "composerPath": "lib/toll-engine/route-toll-composition.ts",
+    "composerBlob": "a24aca29a47560cc5aa6e38c28ec598ae30121a6"
+  },
+  "verificationRun": {
+    "id": 38981909036,
+    "status": "completed",
+    "conclusion": "success",
+    "verify": "success",
+    "live_probe": "success",
+    "headSha": "1f6b47f4c297779307fe9e59e69571e5bc1100ab",
+    "url": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38981909036"
+  },
+  "findings": {
+    "statusBefore": "needs_diagnosis",
+    "baselineCaseIdCount": 64,
+    "overlap": {
+      "unknownPaidRoad_expectedRoadNotProven": 19,
+      "unknownPaidRoad_m11_58_679": 41,
+      "unknownPaidRoad_m11FacilitySequenceIncomplete": 15,
+      "m11_58_679_m11FacilitySequenceIncomplete": 15
+    },
+    "overlapInterpretation": "Counts overlap and do not represent unique affected routes; all 41 m11-58-679 entries are also under this umbrella, and all 15 facility-sequence entries are within that M11 set."
+  },
+  "codeReview": {
+    "sourceLines": "58-59, 71-77",
+    "behavior": "unknown-paid-road and pskov-unresolved are excluded from valid priced components; an unresolved detected component contributes to missing and composition returns status=unknown, tolls=null.",
+    "interpretation": "This is an intentional fail-closed composition guard, not proof that the upstream detection or any toll tariff is correct. A broad label spanning multiple groups is not an independently actionable defect."
+  },
+  "reviewCounts": {
+    "savedQueueIdsInspected": 64,
+    "currentRouteCasesChecked": 0,
+    "routeProfilesChecked": 0,
+    "newLiveRequests": 0,
+    "newReplays": 0,
+    "testsRun": 0
+  },
+  "userImpact": "Affected calculations remain unknown rather than showing a fabricated zero or incomplete subtotal as a full trip total. This diagnosis does not remove any unknown component.",
+  "limitations": [
+    "No route-specific saved evidence was replayed in this aggregate classification.",
+    "No toll price, boundary, free-road status, or complete route total was newly confirmed.",
+    "No code change or test/build was performed."
+  ],
+  "next": "Review m11_58_679_facility_sequence_incomplete (baseline 15) against m11-58-679:unpriced using saved evidence only; identify any actual material distinctions before considering any replay."
+}

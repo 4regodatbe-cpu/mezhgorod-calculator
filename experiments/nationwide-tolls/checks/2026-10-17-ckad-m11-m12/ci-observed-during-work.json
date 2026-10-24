@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-17T18:21:16.155Z",
+  "sourceHead": "f010d847765874573a52ef1926f3ca82dc1a44c4",
+  "durableStartedHead": "a666fb4887ea54a328a29fb3bfc2dfa5102e5499",
+  "startedTree": "0e04b98cc6140027c7fb076ecfd97f8ff0551c76",
+  "pr": {
+    "number": 14,
+    "draft": true
+  },
+  "ci": {
+    "id": 39056837838,
+    "jobs": [
+      {
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "active": []
+      },
+      {
+        "name": "live_probe",
+        "status": "in_progress",
+        "conclusion": null,
+        "active": [
+          "Audit the fixed 50-settlement route corpus"
+        ]
+      }
+    ]
+  },
+  "branchNotUpdatedDuringActiveCi": true
+}

@@ -1,0 +1,7 @@
+{"regions": {"dnr": {"planned": 40, "historicallyAudited": 11, "rawAvailable": 11, "fourArtifactsAvailable": 11}, "kherson": {"planned": 40, "historicallyAudited": 10, "rawAvailable": 10, "fourArtifactsAvailable": 10}, "lnr": {"planned": 40, "historicallyAudited": 10, "rawAvailable": 10, "fourArtifactsAvailable": 9}, "zaporizhzhia": {"planned": 40, "historicallyAudited": 10, "rawAvailable": 10, "fourArtifactsAvailable": 10}}, "rawCaptureCount": 43, "rawCaptureCaseCount": 41, "invalidRawCaptures": []}
+missingReferencedFiles: 55
+
+INVENTORY_EXIT_CODE=0
+{"totals":{"distinctCaseAttempts":41,"recordedLiveAttempts":54,"liveCaptured":40,"savedLiveSummaries":40,"missingOrInvalidReferences":1,"audited":40,"traceComplete":40,"sameDateParity":40},"regionCounts":{"dnr":{"planned":40,"liveCaptured":11,"audited":11,"traceComplete":11,"pricedWeekday":3,"pricedWeekend":6},"lnr":{"planned":40,"liveCaptured":9,"audited":9,"traceComplete":9,"pricedWeekday":5,"pricedWeekend":5},"zaporizhzhia":{"planned":40,"liveCaptured":10,"audited":10,"traceComplete":10,"pricedWeekday":2,"pricedWeekend":3},"kherson":{"planned":40,"liveCaptured":10,"audited":10,"traceComplete":10,"pricedWeekday":2,"pricedWeekend":2}},"executedGroups":[],"findings":[{"code":"m4_crossing_profile_changes","caseCount":25},{"code":"a289:unpriced","caseCount":16},{"code":"zsd:unpriced","caseCount":5},{"code":"m4:unpriced","caseCount":3},{"code":"saved-live-evidence-missing","caseCount":1}]}
+
+REPORT_EXIT_CODE=0

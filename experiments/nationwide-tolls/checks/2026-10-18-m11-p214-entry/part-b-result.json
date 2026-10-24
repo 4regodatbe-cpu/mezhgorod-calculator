@@ -1,0 +1,91 @@
+{
+  "status": "PART_B_DONE_LOCAL",
+  "sourceCommit": "d55cc55ee79188ab3aa6960ed025c7091dac4855",
+  "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+  "captureGitBlob": "c4c60b8987cb2ff44be21df4a0359249c90b5cfb",
+  "focusedTests": 19,
+  "auditTests": 762,
+  "auditFailures": 0,
+  "quoteAndApiContracts": "PASS",
+  "nextBuild": {
+    "exitCode": 0,
+    "staticPages": "16/16",
+    "initialNpmRunBuild": "audit PASS, Next failed on external node_modules symlink; preserved in log; standalone next succeeded after local hardlink copy"
+  },
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "mainlineRub": 1250,
+      "fullAmount": null,
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "departureAt": "2026-10-15T23:59:00+03:00",
+      "mainlineRub": 1250,
+      "fullAmount": null,
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "mainlineRub": 1390,
+      "fullAmount": null,
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "unknown-paid-road"
+      ]
+    }
+  ],
+  "negativeNetworkAttemptsInOwnComposerTest": 0,
+  "newRoutingRequests": 0,
+  "newSourceGets": 0,
+  "newPricedComponents": 1,
+  "confirmedWholeTripFares": 0,
+  "remainingCause": "p214 mainline pair fixed and verified for own selected capture; head58→CKAD, CKAD and unknown-paid-road remain blocked",
+  "checks": {
+    "tsc-final": {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0
+    },
+    "eslint-final": {
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "lib/v3-calculation/m11-p214-entry-boundary.ts",
+        "lib/v3-calculation/m11-product-boundaries.ts",
+        "scripts/v3-m11-p214-boundary.test.ts"
+      ],
+      "exitCode": 0
+    },
+    "diff-check": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0
+    }
+  },
+  "evidenceSha256": {
+    "part-b-focused.log.gz": "0499cc3d87e6b6f6e9dfb7bff22d544ba93896b9527532116bed4ea976f5e8a3",
+    "part-b-tsc.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "part-b-eslint-final.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "part-b-next-final.log.gz": "c5cd3031d42477680aa5b432b6617f00c1489e93934cc48451d49b7535465de2",
+    "part-b-eslint.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "part-b-tsc-final.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "part-b-diff-check.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "part-b-build.log.gz": "5df970a801073d1077f4e90060f001adb15a0a3565caff43bd8119f02d78e64c"
+  }
+}

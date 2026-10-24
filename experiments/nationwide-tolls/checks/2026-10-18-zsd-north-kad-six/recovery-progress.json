@@ -1,0 +1,37 @@
+{
+  "restoredFromLocalGit": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-murom-to-sest/2026-10-15T23-59-30-619Z-capture.json.gz",
+      "gitBlobSha": "80a267646f5af3f1fe25f61bf2823bee0d562543",
+      "sha256": "7f52b3f094508f3782a3b13b1785b39a0e200123c948ad45771bddc82e76def9"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-sest/2026-10-16T00-06-02-495Z-capture.json.gz",
+      "gitBlobSha": "bf3eeea724dcd969db69816cca06c32674291fea",
+      "sha256": "3373138f25f8eba9eeae0544f0c18cac148b5073af4c4fa28481398508d000a9"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/2026-10-16T00-07-09-536Z-capture.json.gz",
+      "gitBlobSha": "32ba712953c7fc7f05288efd3e9e83907d3b1e9d",
+      "sha256": "23569180e6f0281e83966b4269468fb3e022facdede07769ec29b76c8fc01edf"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/2026-10-16T01-24-11-271Z-capture.json.gz",
+      "gitBlobSha": "80bf282afa92f210adc7d141bc204ebb48d326df",
+      "sha256": "5e895d6785df78dafd9a016706e733fd3da66502001fbb5611ff34d33f52eb6f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/2026-10-16T01-31-53-074Z-capture.json.gz",
+      "gitBlobSha": "635a8c86328c4b5426220bc6c27eaa490a60d1cc",
+      "sha256": "205d1dd3d2b2fabccdc6400065a1fd56861de1d93bd5166652973f26fc57d779"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-domodedovo-to-sest/2026-10-16T02-16-30-383Z-capture.json.gz",
+      "gitBlobSha": "b2cc9143efad8a2290331a38cd1bbe7f19dbca54",
+      "sha256": "95ec87d65b77d9d153a285b811847dad0097ea7b4bdff733607942a25aab9e25"
+    }
+  ],
+  "lazyFetchDisabled": true,
+  "initialProbe": "First capture file missing from sparse working tree. One restored during schema probe and five during batch. Exact existing local Git blobs used; providers never called.",
+  "newNetworkRequests": 0
+}

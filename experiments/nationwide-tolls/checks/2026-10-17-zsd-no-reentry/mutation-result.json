@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "meaning": "Disabling only the guard makes all3 API regressions fail as expected. No production file mutated.",
+  "disabledGuardExitCode": 1,
+  "expectedFailingTests": 3
+}

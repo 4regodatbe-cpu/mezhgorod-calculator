@@ -1,0 +1,44 @@
+✔ own directed exit resolves the exact existing1218 cell without M12 endpoint restriction (23.79921ms)
+✖ five own departure profiles compose complete unconfirmed estimates using the departure date (74.541651ms)
+✔ old, absent, partial or wrong context cannot turn a CKAD subtotal into a full fare (300.781445ms)
+✔ own public API uses recorded Valhalla geometry and prices only a complete trace (154.734293ms)
+✔ own saved current named trace proves directed M11 to Egoryevskoye; old paid-only snapshot cannot (20.743008ms)
+✔ incomplete trace, other boundary, repeated passage or wrong plaza cannot borrow proof (15.06168ms)
+✔ reverse, shift, sparse, detour, malformed or mismatched strict end fail closed (19.672554ms)
+✔ primary directed CKAD source bytes and49 physical witnesses retain exact object/owner provenance (32.481464ms)
+✔ both own complete traces bind the shared directed pair; old paid-only validation cannot authorize it (85.615758ms)
+✔ a free city gap lost from paidRoadEdges creates two real named trace blocks and rejects the pair (10.123094ms)
+✔ incomplete coverage and missing/repeated/wrong boundary context or plaza fail closed (26.142618ms)
+✔ reverse, shifted, sparse or inconsistent own geometry cannot borrow a complete trace (43.760348ms)
+✔ each own quote adds981 only to the known subtotal; M12 remains the sole missing component and API amount stays null (464.648225ms)
+✔ independent own Voronezh OSRM keeps7254 and gains no CKAD merely from its historical case name (123.66123ms)
+✔ V3 API uses each own OSRM and exact trace responses while preserving unknown full fare (418.990654ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1622.239561
+
+✖ failing tests:
+
+test at scripts/v3-ckad-egoryevskoye-pricing.test.ts:49:1
+✖ five own departure profiles compose complete unconfirmed estimates using the departure date (74.541651ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'priced'
+  - 'complete'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/9847ba89efdb/mezhgorod/scripts/v3-ckad-egoryevskoye-pricing.test.ts:53:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'priced',
+    expected: 'complete',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

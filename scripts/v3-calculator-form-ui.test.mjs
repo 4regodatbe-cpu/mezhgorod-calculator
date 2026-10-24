@@ -23,3 +23,32 @@ test('rubles per kilometre amount and unit are enlarged and centered',()=>{
  assert.match(html,/text-\[22px\]/);
  assert.match(html,/text-\[17px\] font-extrabold text-brand-action/);
 });
+
+// SSR contract only: browser event handlers/effects are intentionally not exercised here.
+const citySnapshot=JSON.parse(readFileSync(resolve(root,'data/address-city-snapshot.json'),'utf8'));
+const fallbackPlace={...citySnapshot.records[0].suggestion,addressSource:'reviewed_city_snapshot'};
+const ordinaryPlace=citySnapshot.records[2].suggestion;
+const notice='Резервный поиск: только сохранённые города.';
+function assertSnapshotCredit(html,count){
+ assert.equal(html.split(notice).length-1,count);
+ assert.equal((html.match(/href="https:\/\/www\.openstreetmap\.org\/copyright"/g)||[]).length,count);
+ if(count) assert.match(html,/© OpenStreetMap contributors · ODbL/);
+}
+test('selected snapshot city renders limited coverage and licensed credit in either address field',()=>{
+ const before=render(fallbackPlace,ordinaryPlace);
+ const after=render(ordinaryPlace,fallbackPlace);
+ assertSnapshotCredit(before,1);
+ assertSnapshotCredit(after,1);
+ // Swap is represented by parent props; this does not claim that clicking was tested.
+ assert.ok(before.indexOf(notice)<before.indexOf('Точка B'));
+ assert.ok(after.indexOf(notice)>after.indexOf('Точка B'));
+});
+test('two selected snapshot cities retain a separate notice and credit for each field',()=>{
+ const second={...citySnapshot.records[1].suggestion,addressSource:'reviewed_city_snapshot'};
+ assertSnapshotCredit(render(fallbackPlace,second),2);
+});
+test('cleared, edited and ordinary places do not display a stale snapshot notice',()=>{
+ for(const replacement of [{label:''},{label:'Новое название'},ordinaryPlace]){
+  assertSnapshotCredit(render(replacement,ordinaryPlace),0);
+ }
+});

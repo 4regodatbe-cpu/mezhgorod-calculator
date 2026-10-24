@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1309 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8238636468" visible="true" version="3" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6326627" lon="38.3604866"/>
+ <node id="8238636469" visible="true" version="3" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6331896" lon="38.3605617"/>
+ <node id="8238636470" visible="true" version="3" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6338474" lon="38.3604183"/>
+ <node id="8914828064" visible="true" version="2" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6319310" lon="38.3599046"/>
+ <node id="10832306578" visible="true" version="2" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6403954" lon="38.3575425"/>
+ <node id="10832306579" visible="true" version="1" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6395421" lon="38.3577776"/>
+ <node id="10832306580" visible="true" version="1" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6387731" lon="38.3580351"/>
+ <node id="10832306581" visible="true" version="1" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6384158" lon="38.3582014"/>
+ <node id="10832306582" visible="true" version="1" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6351730" lon="38.3600682"/>
+ <node id="10832306583" visible="true" version="1" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6347521" lon="38.3602452"/>
+ <node id="10832306584" visible="true" version="1" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6329504" lon="38.3605778"/>
+ <node id="10832306585" visible="true" version="1" changeset="135239065" timestamp="2023-04-22T18:25:45Z" user="literan" uid="830106" lat="55.6324568" lon="38.3603579"/>
+ <node id="13184575942" visible="true" version="1" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6355850" lon="38.3598310"/>
+ <node id="13184575946" visible="true" version="1" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333" lat="55.6375562" lon="38.3586963"/>
+ <way id="886019063" visible="true" version="6" changeset="172672379" timestamp="2025-09-30T17:47:59Z" user="solenoid jam" uid="10129333">
+  <nd ref="10832306578"/>
+  <nd ref="10832306579"/>
+  <nd ref="10832306580"/>
+  <nd ref="10832306581"/>
+  <nd ref="13184575946"/>
+  <nd ref="13184575942"/>
+  <nd ref="10832306582"/>
+  <nd ref="10832306583"/>
+  <nd ref="8238636470"/>
+  <nd ref="8238636469"/>
+  <nd ref="10832306584"/>
+  <nd ref="8238636468"/>
+  <nd ref="10832306585"/>
+  <nd ref="8914828064"/>
+  <tag k="highway" v="trunk_link"/>
+  <tag k="lanes" v="1"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="90"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+</osm>

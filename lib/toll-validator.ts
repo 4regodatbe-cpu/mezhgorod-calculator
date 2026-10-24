@@ -1,4 +1,15 @@
 import type { Coordinate } from "@/lib/tolls";
+import {isOdintsovoLaneWay} from '@/experiments/nationwide-tolls/odintsovo-lane-identity.mjs';
+import { roadBoundariesFromTrace } from "@/lib/toll-engine/road-trace-boundaries";
+import { normalizeRoadRef, type RoadBoundaryResolution } from "@/lib/toll-engine/road-boundaries";
+
+export type OdintsovoTraceEdge = {
+  wayId: string | null;
+  endNodeId: string | null;
+  roadNames: string[];
+  toll: boolean;
+  paymentEvent: boolean;
+};
 
 export type TollBoothEvent = {
   osmNodeId: string | null;
@@ -18,6 +29,7 @@ export type TollValidation = {
   wayIds: string[];
   roadNames: string[];
   message: string;
+  paidRoadEdges?: Array<{wayId:string|null;roadNames:string[]}>;
   tollBoothCount?: number;
   tollBooths?: TollBoothEvent[];
   // New validators always fill these fields. They remain optional at the type
@@ -28,6 +40,22 @@ export type TollValidation = {
   failedChunkCount?: number;
   complete?: boolean;
   boothEventCoverage?: "complete" | "partial" | "none";
+  m4RoadBoundaries?: RoadBoundaryResolution;
+  odintsovoTraceBlocks?: Array<{
+    edges: OdintsovoTraceEdge[];
+    before: OdintsovoTraceEdge | null;
+    after: OdintsovoTraceEdge | null;
+    repeatedWayId: boolean;
+  }>;
+  // Named CKAD continuity must include non-toll access links. The paid-only
+  // list cannot distinguish a complete interchange pair from exit/re-entry.
+  ckadTraceBlocks?: Array<{
+    firstWayId: string | null;
+    lastWayId: string | null;
+    before: {wayId: string | null; endNodeId: string | null; roadNames: string[]} | null;
+    after: Array<{wayId: string | null; endNodeId: string | null; roadNames: string[]}>;
+    repeatedWayId: boolean;
+  }>;
 };
 
 type TraceEdge = {
@@ -46,7 +74,10 @@ type TraceEdge = {
 
 const MAX_TRACE_POINTS = 320;
 const MAX_TRACE_CHUNK_KM = 140;
-const CHUNK_CONCURRENCY = 3;
+// The public Valhalla instance rate-limits long multi-chunk traces. Keep the
+// per-route fanout modest; transient 429 responses also receive a bounded
+// exponential retry below. Incomplete chunks must still fail closed.
+const CHUNK_CONCURRENCY = 2;
 
 function distanceKm(a: Coordinate, b: Coordinate) {
   const rad = Math.PI / 180;
@@ -106,8 +137,52 @@ function edgeNodeId(edge: TraceEdge) {
   return value === undefined || value === null ? null : String(value);
 }
 
+function ckadTraceBlocks(edges: TraceEdge[]): NonNullable<TollValidation['ckadTraceBlocks']> {
+  const isCkad = (edge: TraceEdge) => (edge.names ?? []).some(n => /^(?:А|A)[-–\s]*113$/iu.test(n));
+  const compact = (edge: TraceEdge) => ({wayId: edgeWayId(edge), endNodeId: edgeNodeId(edge), roadNames: edge.names ?? []});
+  const blocks: NonNullable<TollValidation['ckadTraceBlocks']> = [];
+  for (let index = 0; index < edges.length; index++) {
+    if (!isCkad(edges[index])) continue;
+    const start = index;
+    const wayIds: Array<string | null> = [];
+    while (index < edges.length && isCkad(edges[index])) {
+      const id = edgeWayId(edges[index]);
+      if (wayIds.at(-1) !== id) wayIds.push(id);
+      index++;
+    }
+    blocks.push({firstWayId: edgeWayId(edges[start]), lastWayId: edgeWayId(edges[index - 1]),
+      before: start > 0 ? compact(edges[start - 1]) : null,
+      after: edges.slice(index, index + 4).map(compact),
+      repeatedWayId: wayIds.some((id, i) => id === null || wayIds.indexOf(id) !== i)});
+    index--;
+  }
+  return blocks;
+}
+
 function isTollBooth(edge: TraceEdge) {
   return edge.end_node?.type === "toll_booth";
+}
+
+function odintsovoTraceBlocks(edges: TraceEdge[]): NonNullable<TollValidation['odintsovoTraceBlocks']> {
+  const belongs = (edge: TraceEdge) => (edge.names ?? []).some(n => /^Северный обход Одинцова$/iu.test(n))
+    || isOdintsovoLaneWay(edgeWayId(edge));
+  const compact = (edge: TraceEdge): OdintsovoTraceEdge => ({wayId: edgeWayId(edge), endNodeId: edgeNodeId(edge),
+    roadNames: edge.names ?? [], toll: edge.toll === true,
+    paymentEvent: isTollBooth(edge) || edge.end_node?.type === 'toll_gantry'});
+  const blocks: NonNullable<TollValidation['odintsovoTraceBlocks']> = [];
+  for (let i = 0; i < edges.length; i++) {
+    if (!belongs(edges[i])) continue;
+    const start = i, ways: Array<string | null> = [];
+    while (i < edges.length && belongs(edges[i])) {
+      const way = edgeWayId(edges[i]); if (ways.at(-1) !== way) ways.push(way);
+      i++;
+    }
+    blocks.push({edges: edges.slice(start, i).map(compact), before: start ? compact(edges[start - 1]) : null,
+      after: i < edges.length ? compact(edges[i]) : null,
+      repeatedWayId: ways.some((way, j) => way === null || ways.indexOf(way) !== j)});
+    i--;
+  }
+  return blocks;
 }
 
 async function traceChunk(route: Coordinate[]) {
@@ -129,7 +204,8 @@ async function traceChunk(route: Coordinate[]) {
       ],
     },
   };
-  const response = await fetch(url, {
+  const deadlineAt = Date.now() + 18_000;
+  const send = () => fetch(url, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -138,8 +214,26 @@ async function traceChunk(route: Coordinate[]) {
     },
     body: JSON.stringify(request),
     cache: "no-store",
-    signal: AbortSignal.timeout(18_000),
+    signal: AbortSignal.timeout(Math.max(1, deadlineAt - Date.now())),
   });
+  let response = await send();
+  // A long route sends several chunks. Retry transient rate limits twice with
+  // bounded backoff. Respect Retry-After when supplied; if it is too long for
+  // this request budget, leave the chunk unresolved instead of retrying early.
+  for (let retry = 0; response.status === 429 && retry < 2; retry += 1) {
+    const retryAfter = response.headers.get("retry-after");
+    const seconds = retryAfter === null || retryAfter.trim() === "" ? NaN : Number(retryAfter);
+    const date = retryAfter ? Date.parse(retryAfter) : NaN;
+    const delay = Number.isFinite(seconds) && seconds >= 0 ? seconds * 1000
+      : Number.isFinite(date) ? Math.max(0, date - Date.now()) : 1_000 * (2 ** retry);
+    if (delay <= 5_000 && delay + 1_000 < deadlineAt - Date.now()) {
+      await response.body?.cancel();
+      if (delay > 0) await new Promise(resolve => setTimeout(resolve, delay));
+      response = await send();
+    } else {
+      break;
+    }
+  }
   if (!response.ok) throw new Error(`TRACE_${response.status}`);
   const data = (await response.json()) as { edges?: TraceEdge[] };
   // HTTP200 with missing/empty trace is not proof that a route has no tolls.
@@ -198,6 +292,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
   const complete = failed.length === 0 && successful.length === chunks.length;
   const checkedEdgeCount = successful.reduce((sum, item) => sum + item.edges.length, 0);
   const roadNames = dedupe(tollEdges.flatMap((edge) => edge.names ?? []).filter(Boolean));
+  const paidRoadEdges = tollEdges.map(edge => ({wayId:edgeWayId(edge),roadNames:edge.names??[]}));
   const wayIds = dedupe(tollEdges.map(edgeWayId).filter((value): value is string => Boolean(value)));
   const tollBooths: TollBoothEvent[] = boothEdges.map((edge, edgeIndex) => ({
     osmNodeId: edgeNodeId(edge),
@@ -208,6 +303,16 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     beginShapeIndex: edge.begin_shape_index,
     endShapeIndex: edge.end_shape_index,
   }));
+  const ckadBlocks = ckadTraceBlocks(successful.flatMap(item => item.edges));
+  const ckadContinuity = ckadBlocks.length ? {ckadTraceBlocks: ckadBlocks} : {};
+  const odintsovoBlocks = odintsovoTraceBlocks(successful.flatMap(item => item.edges));
+  const odintsovoContinuity = odintsovoBlocks.length ? {odintsovoTraceBlocks: odintsovoBlocks} : {};
+  // Do not change unrelated roads' archived validation contracts with an
+  // empty M4 diagnostic. Absence of this optional field never proves free.
+  const m4Observed = successful.some(item => item.edges.some(edge => (edge.names ?? [])
+    .some(name => name.split(";").some(ref => normalizeRoadRef(ref) === "М-4"))));
+  const m4RoadContext = m4Observed ? { m4RoadBoundaries: roadBoundariesFromTrace(
+    chunkResults.map(item => item.ok ? item.edges : null), route) } : {};
 
   if (!complete) {
     return {
@@ -217,6 +322,10 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
       checkedEdgeCount,
       wayIds,
       roadNames,
+      paidRoadEdges,
+      ...ckadContinuity,
+      ...odintsovoContinuity,
+      ...m4RoadContext,
       message: tollEdges.length > 0
         ? `Платные дорожные рёбра подтверждены, но проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`
         : `Проверка маршрута неполная: ${failed.length}/${chunks.length} частей не проверены`,
@@ -237,6 +346,10 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     checkedEdgeCount,
     wayIds,
     roadNames,
+    paidRoadEdges,
+    ...ckadContinuity,
+    ...odintsovoContinuity,
+    ...m4RoadContext,
     message: tollEdges.length > 0
       ? `Подтверждены платные дорожные рёбра: ${tollEdges.length}`
       : tollBooths.length > 0

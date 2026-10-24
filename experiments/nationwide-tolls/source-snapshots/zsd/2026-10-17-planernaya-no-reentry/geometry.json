@@ -1,0 +1,64 @@
+{
+  "scope": "Only the reviewed northbound exit / Bogatyrsky urban turn / southbound ZSD reentry motif. No general Russian-road reentry detection or tariff assertion.",
+  "maxDistanceKm": 0.015,
+  "maxSegmentKm": 0.5,
+  "maxLocalSpanKm": 4,
+  "witnesses": [
+    {
+      "label": "northbound-mainline",
+      "coordinate": [
+        30.231588,
+        59.996225
+      ]
+    },
+    {
+      "label": "directed-exit-ramp",
+      "coordinate": [
+        30.232582,
+        59.999641
+      ]
+    },
+    {
+      "label": "exit-plaza1766158781",
+      "coordinate": [
+        30.232949,
+        60.000586
+      ]
+    },
+    {
+      "label": "urban-fork",
+      "coordinate": [
+        30.233058,
+        60.002131
+      ]
+    },
+    {
+      "label": "urban-turn",
+      "coordinate": [
+        30.232571,
+        60.002923
+      ]
+    },
+    {
+      "label": "southbound-entry-ramp",
+      "coordinate": [
+        30.231705,
+        60.000662
+      ]
+    },
+    {
+      "label": "southbound-merge",
+      "coordinate": [
+        30.231364,
+        59.997382
+      ]
+    },
+    {
+      "label": "southbound-mainline",
+      "coordinate": [
+        30.229854,
+        59.985661
+      ]
+    }
+  ]
+}

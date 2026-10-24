@@ -1,0 +1,20 @@
+{
+  "tsc": {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exitCode": 0
+  },
+  "eslint": {
+    "command": [
+      "node",
+      "node_modules/eslint/bin/eslint.js",
+      "lib/v3-calculation/m11-southbound-moscow-head.ts",
+      "lib/v3-calculation/m11-product-boundaries.ts",
+      "scripts/v3-m11-p214-moscow-head.test.ts"
+    ],
+    "exitCode": 0
+  }
+}

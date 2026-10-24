@@ -1,0 +1,310 @@
+{
+  "source": "4f62abf4d325fa450dd876efba1fd02c1dbdd785",
+  "deployment": {
+    "id": "dpl_646vu3uc3f4dJzFmQDLpaPRL9svL",
+    "state": "READY",
+    "url": "mezhgorod-calculator-24yo70y00-4regodatbe-5310.vercel.app"
+  },
+  "build": [
+    {
+      "date": 1792502038303,
+      "text": "Build cache uploaded: 6.069s"
+    },
+    {
+      "date": 1792502032234,
+      "text": "Uploading build cache [375.95 MB]"
+    },
+    {
+      "date": 1792502032234,
+      "text": "Created build cache: 25s"
+    },
+    {
+      "date": 1792502007694,
+      "text": "Creating build cache..."
+    },
+    {
+      "date": 1792502007653,
+      "text": "Deployment completed"
+    },
+    {
+      "date": 1792502000448,
+      "text": "Deploying outputs..."
+    },
+    {
+      "date": 1792502000410,
+      "text": "Build Completed in /vercel/output [2m]"
+    },
+    {
+      "date": 1792501999851,
+      "text": ""
+    },
+    {
+      "date": 1792501999851,
+      "text": "ƒ  (Dynamic)  server-rendered on demand"
+    },
+    {
+      "date": 1792501999851,
+      "text": "○  (Static)   prerendered as static content"
+    },
+    {
+      "date": 1792501999850,
+      "text": ""
+    },
+    {
+      "date": 1792501999850,
+      "text": ""
+    },
+    {
+      "date": 1792501999850,
+      "text": "└ ○ /v3"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ○ /v2/toll-roads"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ○ /v2"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /r"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/version"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/v3/calculate"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/v2/debug-route"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/v2/debug-pvp-node"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/v2/debug-m4"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/v2/classify"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/v2/calculate"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/suggest"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/collect"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ƒ /api/calculate"
+    },
+    {
+      "date": 1792501999850,
+      "text": "├ ○ /_not-found"
+    },
+    {
+      "date": 1792501999850,
+      "text": "┌ ○ /"
+    },
+    {
+      "date": 1792501999849,
+      "text": "Route (app)"
+    },
+    {
+      "date": 1792501999847,
+      "text": ""
+    },
+    {
+      "date": 1792501999679,
+      "text": "  Running onBuildComplete from Vercel"
+    },
+    {
+      "date": 1792501999580,
+      "text": "  Finalizing page optimization ..."
+    },
+    {
+      "date": 1792501999571,
+      "text": "✓ Generating static pages using 1 worker (16/16) in 384ms"
+    },
+    {
+      "date": 1792501999402,
+      "text": "  Generating static pages using 1 worker (12/16) \r"
+    },
+    {
+      "date": 1792501999395,
+      "text": "  Generating static pages using 1 worker (8/16) \r"
+    },
+    {
+      "date": 1792501999217,
+      "text": "  Generating static pages using 1 worker (4/16) \r"
+    },
+    {
+      "date": 1792501999187,
+      "text": "  Generating static pages using 1 worker (0/16) ..."
+    },
+    {
+      "date": 1792501997356,
+      "text": "⚠ The \"preferredRegion\" route segment config is deprecated. Learn more: https://nextjs.org/docs/messages/preferred-region-deprecated"
+    },
+    {
+      "date": 1792501997280,
+      "text": "  Collecting page data using 1 worker ..."
+    },
+    {
+      "date": 1792501997270,
+      "text": "  Finished TypeScript in 15.9s ..."
+    },
+    {
+      "date": 1792501981333,
+      "text": "  Running TypeScript ..."
+    },
+    {
+      "date": 1792501981328,
+      "text": "✓ Compiled successfully in 4.6s"
+    },
+    {
+      "date": 1792501975614,
+      "text": "  Creating an optimized production build ..."
+    },
+    {
+      "date": 1792501975557,
+      "text": ""
+    },
+    {
+      "date": 1792501975557,
+      "text": "  ⨯ useTypeScriptCli"
+    },
+    {
+      "date": 1792501975557,
+      "text": "- Experiments (use with caution):"
+    },
+    {
+      "date": 1792501975531,
+      "text": "✓ Running next.config.ts took 462ms"
+    },
+    {
+      "date": 1792501975528,
+      "text": "  Applying modifyConfig from Vercel"
+    },
+    {
+      "date": 1792501975068,
+      "text": "▲ Next.js 16.3.4 (Turbopack)"
+    },
+    {
+      "date": 1792501974009,
+      "text": "PASS API adapter: JSON numeric estimate and warning survive; copy warning; incomplete/null"
+    },
+    {
+      "date": 1792501974008,
+      "text": "PASS quote: known, provisional, warning propagation/copy, unknown completeness, duplicate/route guards, MSD version boundary, expired Shali"
+    },
+    {
+      "date": 1792501973824,
+      "text": "ℹ duration_ms 78009.931433"
+    },
+    {
+      "date": 1792501973823,
+      "text": "ℹ todo 0"
+    },
+    {
+      "date": 1792501973823,
+      "text": "ℹ skipped 0"
+    },
+    {
+      "date": 1792501973823,
+      "text": "ℹ cancelled 0"
+    },
+    {
+      "date": 1792501973823,
+      "text": "ℹ fail 0"
+    },
+    {
+      "date": 1792501973823,
+      "text": "ℹ pass 819"
+    },
+    {
+      "date": 1792501973822,
+      "text": "ℹ suites 0"
+    },
+    {
+      "date": 1792501973822,
+      "text": "ℹ tests 819"
+    },
+    {
+      "date": 1792501973790,
+      "text": "✔ ZSD fare validity uses departure, never a later gate crossing that could revive a future fare (1.5118ms)"
+    },
+    {
+      "date": 1792501973790,
+      "text": "✔ recorded complete Krasnodar–Moscow–SPb geometry prices its actual ZSD zone1, not a named-road guess (91.016944ms)"
+    },
+    {
+      "date": 1792501973790,
+      "text": "✔ another zone, missing IDs, repeated plazas and incomplete trace cannot turn zone1 into a complete ZSD total (0.901615ms)"
+    },
+    {
+      "date": 1792501973790,
+      "text": "✔ either actual directed zone1 plaza charges exactly300 without a transponder/night discount (3.89102ms)"
+    },
+    {
+      "date": 1792501973776,
+      "text": "✔ primary owner HTML gives actual cash base fare and matches saved hashes (3.475895ms)"
+    },
+    {
+      "date": 1792501973380,
+      "text": "✔ resolving Planernaya identity cannot hide incomplete selected payment coverage (0.778661ms)"
+    },
+    {
+      "date": 1792501973380,
+      "text": "✔ an unreviewed neighbouring node on the same unnamed way remains an unknown paid road (0.872521ms)"
+    },
+    {
+      "date": 1792501973380,
+      "text": "✔ actual unnamed Planernaya event resolves as ZSD while its larger trip still has no zone1 fare (11.174813ms)"
+    },
+    {
+      "date": 1792501973380,
+      "text": "✔ Planernaya plaza identity has hashed primary booth and continuous directed ZSD topology (3.734627ms)"
+    },
+    {
+      "date": 1792501972987,
+      "text": "✔ another recorded mainline/plaza journey cannot borrow the Ekateringofka finished price (24.504095ms)"
+    },
+    {
+      "date": 1792501972987,
+      "text": "✔ known ZSD price does not become a full trip total while another product is unknown (21.288873ms)"
+    },
+    {
+      "date": 1792501972987,
+      "text": "✔ the direction, actual entry and complete exit are required (89.449405ms)"
+    },
+    {
+      "date": 1792501972986,
+      "text": "✔ extra, repeated or unpaid plazas do not receive the finished vector (5.61538ms)"
+    },
+    {
+      "date": 1792501972985,
+      "text": "✔ incomplete or materially different paid scope stays unknown (7.416623ms)"
+    },
+    {
+      "date": 1792501972984,
+      "text": "✔ a ready fare cannot revive a future tariff at a later gate crossing (74.40137ms)"
+    },
+    {
+      "date": 1792501972983,
+      "text": "✔ recorded directed KAD-south to Ekateringofka trace selects its ready two-zone cash/card vector (122.325324ms)"
+    }
+  ]
+}

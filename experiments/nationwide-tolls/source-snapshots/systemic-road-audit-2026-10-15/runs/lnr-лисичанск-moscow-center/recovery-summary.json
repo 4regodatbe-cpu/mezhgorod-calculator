@@ -1,0 +1,37 @@
+{
+  "caseId": "lnr-лисичанск-moscow-center",
+  "mode": "recovered-offline-summary",
+  "sourceCapture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/2026-10-15T12-03-20-913Z-capture.json.gz",
+  "sourceCaptureSha256": "54f90ef278e0bca47313503419ccba018eb3362c8ae6dc25a51d0a1e6e4d51d9",
+  "provider": "OSRM",
+  "routeMeters": 937773,
+  "replays": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-15T16-29-34-604Z.json",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "sha256": "07fd9c4752aa3dab71afafcfc938240814264ff52d13710ea40383c7a28368c4",
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      },
+      "amount": null
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-15T16-29-40-719Z.json",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "sha256": "7bafe9a2f6bd64d978dc0d050bbd26cad49ce74f357c32d5ca2b8a45acb912b9",
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      },
+      "amount": null
+    }
+  ],
+  "tollsEqualHistoricalBatch": {
+    "2026-10-15T09:00:00+03:00": true,
+    "2026-10-17T09:00:00+03:00": true
+  },
+  "originalLiveSummaryRecovered": false,
+  "freshLiveRoute": false,
+  "scope": "Reconstructed only from saved raw; historic batch toll values match. Original live summary remains lost; full live audit parity not re-established."
+}

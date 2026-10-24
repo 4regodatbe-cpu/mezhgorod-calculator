@@ -1,0 +1,594 @@
+[
+  {
+    "caseId": "lnr-лисичанск-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-140650-zsd-case3.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/2026-10-15T16-58-16-753Z-capture.json.gz",
+    "sha256": "4e57bf75932979db5bdced425b67dc617fd7107b87824d3ed6299e77186704f8",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "lnr-рубежное-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-140737-zsd-case4.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/2026-10-15T17-03-35-545Z-capture.json.gz",
+    "sha256": "0dec6793237ea0b72e224c90ad797953bb8e7d9461bb36057898a2a0565677a7",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-140757-zsd-case5.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/2026-10-15T18-18-15-355Z-capture.json.gz",
+    "sha256": "fc521b0bf71e2b331794cccb9edf58ecfb92f188d45b9631e9bb46849e3b1fd2",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "dnr-бахмут-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-140818-zsd-case6.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-saint-petersburg-center/2026-10-15T22-26-07-326Z-capture.json.gz",
+    "sha256": "a5a5c85437d22007c8b7e8e53ec40f6635ba524336cb6d4b5e637562f32c2906",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "dnr-волноваха-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-140839-zsd-case7.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-saint-petersburg-center/2026-10-15T22-30-32-979Z-capture.json.gz",
+    "sha256": "ca7587412920f88d877c8f08db81a806b23e0cc854675f7a9a1841ad62cc9464",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "dnr-донецк-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-140859-zsd-case8.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-saint-petersburg-center/2026-10-15T22-35-07-667Z-capture.json.gz",
+    "sha256": "e46d6bee84222d17700ed46e0f6233f99170f83090ea1f070446e9445979d5ec",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "lnr-алчевск-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-140919-zsd-case9.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-saint-petersburg-center/2026-10-15T23-47-10-449Z-capture.json.gz",
+    "sha256": "4bf7f18a46c846c87b005ec60dadd7c2259ed2290fd972aa8457e17d6a6b3523",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "lnr-антрацит-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-140940-zsd-case10.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-антрацит-saint-petersburg-center/2026-10-15T23-48-51-572Z-capture.json.gz",
+    "sha256": "cdc93c5f30bb20dd51d0ab45ba01fad4f412a06ee8fed982b07d3d97dde5d4c4",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "lnr-довжанск-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-141000-zsd-case11.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-довжанск-saint-petersburg-center/2026-10-15T23-50-32-019Z-capture.json.gz",
+    "sha256": "93485c6863864283f48e713554d1104af3bdc5f07dbe7b245a2acf872146d81a",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "lnr-марковка-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-141021-zsd-case12.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-saint-petersburg-center/2026-10-15T23-52-08-514Z-capture.json.gz",
+    "sha256": "2ee5240512d140e98a5c4e181ae3c9d54fccb33870fa68023b1d4f0f2b743a19",
+    "previousStatus": "source_gated_same_exact_way_set",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-141040-zsd-case13.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+    "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0",
+    "previousStatus": "zsd_identity_recovered_other_products_unknown",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-141934-zsd-case14.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/2026-10-15T23-59-05-400Z-capture.json.gz",
+    "sha256": "51b8e21059a597bf7797b348f58f2e47ac55ce992d364ef112f7085660e90d90",
+    "previousStatus": "source_gated_south_kad_to_north_kad",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142132-zsd-case15.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-murom-to-sest/2026-10-15T23-59-30-619Z-capture.json.gz",
+    "sha256": "7f52b3f094508f3782a3b13b1785b39a0e200123c948ad45771bddc82e76def9",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-kazan-to-sest"
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142204-zsd-case16.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-kazan/2026-10-16T00-00-02-750Z-capture.json.gz",
+    "sha256": "1541f0cf350d5c4613d150985aae0d110111f3ea1af5ad0d74be468c299fe99b",
+    "previousStatus": "source_gated_distinct_finished_zsd_scope",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142414-zsd-case17.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-murom/2026-10-16T00-00-27-781Z-capture.json.gz",
+    "sha256": "e216f1a726f777fd77fc40e1422e982cca13bd7afb4418c4e1fb677e9dcbddfd",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-sest-to-kazan"
+  },
+  {
+    "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142435-zsd-case18.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/2026-10-16T00-01-04-945Z-capture.json.gz",
+    "sha256": "3c29b35159cbdfb9e308db468d0896c19f54e4ebc73591bbf42216cbba0d1175",
+    "previousStatus": "source_gated_distinct_finished_zsd_scope",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142511-zsd-case19.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-sest/2026-10-16T00-01-40-957Z-capture.json.gz",
+    "sha256": "74733c833d428ab1d61023bbbe4566e425336fd6994234c5f66d7b612a69f95c",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest"
+  },
+  {
+    "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142533-zsd-case20.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar/2026-10-16T00-02-19-759Z-capture.json.gz",
+    "sha256": "9e1e0ed4c4400b84bf188a1664a6f89f7cf082500fcffe4fe746b3e6765ebc65",
+    "previousStatus": "source_gated_distinct_finished_zsd_scope",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142611-zsd-case21.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-rostov/2026-10-16T00-02-55-469Z-capture.json.gz",
+    "sha256": "72cbd07bf21293d93a6ff42138e55ddd252aa4ee886fcbfc7ba22f0a948850b8",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar"
+  },
+  {
+    "caseId": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142633-zsd-case22.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/2026-10-16T00-03-24-052Z-capture.json.gz",
+    "sha256": "fa38a093f1ccf7fee9c35e27eec0dff76bf878fcdcf88bb06fda0ea79f17c7c9",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+  },
+  {
+    "caseId": "pair-m11-ckad-domodedovo-to-spb",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142654-zsd-case23.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/2026-10-16T00-03-47-831Z-capture.json.gz",
+    "sha256": "0e26ddd23e2542a907122ee95c662cb03d857abbff4a64225d040de69888e28f",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "pair-m11-ckad-noginsk-to-spb",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142712-zsd-case24.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/2026-10-16T00-04-08-712Z-capture.json.gz",
+    "sha256": "738c29e0773a4ac17fa4b56ea324cf060a62533b843560f3ca0413ea9b7234e4",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "pair-m11-ckad-spb-to-domodedovo",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142733-zsd-case25.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/2026-10-16T00-04-31-865Z-capture.json.gz",
+    "sha256": "7e59435e53caa51ba754f0750dd80c7898389144b3504a85d9d6aa743d4236d0",
+    "previousStatus": "source_gated_distinct_finished_zsd_scope",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "pair-m11-ckad-spb-to-noginsk",
+    "evidence": "docs/checkpoints/evidence/2026-10-16-142810-zsd-case26.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/2026-10-16T00-04-54-634Z-capture.json.gz",
+    "sha256": "9fa98f4f93639f6c2d7de6dbb8d6529c6e2a889e0a4d53456c93aceae5633eaa",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-ckad-spb-to-domodedovo"
+  },
+  {
+    "caseId": "pair-m11-zsd-moscow-to-prim",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-20-22-671Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-prim/2026-10-16T00-05-39-475Z-capture.json.gz",
+    "sha256": "7a51a446061ddacfd33a6ce2669110570da6a33d8e6b9f7f4c1bc0b9cbf68705",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+  },
+  {
+    "caseId": "pair-m11-zsd-moscow-to-sest",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-21-01-821Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-sest/2026-10-16T00-06-02-495Z-capture.json.gz",
+    "sha256": "3373138f25f8eba9eeae0544f0c18cac148b5073af4c4fa28481398508d000a9",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-kazan-to-sest"
+  },
+  {
+    "caseId": "pair-m11-zsd-prim-to-moscow",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-21-34-191Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/2026-10-16T00-06-25-425Z-capture.json.gz",
+    "sha256": "24a24fda86b252ba77c3765a24b8ee58f05c742b84af6ed7445540368fd0eb61",
+    "previousStatus": "source_gated_distinct_finished_zsd_scope",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "pair-m11-zsd-sest-to-moscow",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-22-40-282Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-moscow/2026-10-16T00-06-47-974Z-capture.json.gz",
+    "sha256": "a30ef881b9290377bf30abc1d75c1a740bcc797762b2447182e2169db6c017cc",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-sest-to-kazan"
+  },
+  {
+    "caseId": "pair-m11-zsd-tver-to-sest",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-23-16-595Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/2026-10-16T00-07-09-536Z-capture.json.gz",
+    "sha256": "23569180e6f0281e83966b4269468fb3e022facdede07769ec29b76c8fc01edf",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-kazan-to-sest"
+  },
+  {
+    "caseId": "pair-m4-m11-voronezh-to-spb",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-23-47-961Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/2026-10-16T00-14-21-840Z-capture.json.gz",
+    "sha256": "1ee4623d549d84d8ba29838b2a5ab649a0875a5484c6c3df5dfa402d16f27904",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "single-m11-moscow-to-spb",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-24-19-601Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-spb/2026-10-16T00-20-19-830Z-capture.json.gz",
+    "sha256": "8b55d896cc1c1cb8f57b7834171adaf2d1c154547dea4b449def001c5e164f7e",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "single-m11-spb-to-moscow",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-24-53-591Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-moscow/2026-10-16T00-21-30-804Z-capture.json.gz",
+    "sha256": "4c46688a3500002398c580012b3f0c5b1f397decc49c01c9237e60fce2ef3094",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-ckad-spb-to-domodedovo"
+  },
+  {
+    "caseId": "single-zsd-blag-to-prim",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-25-27-773Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/2026-10-16T00-30-24-682Z-capture.json.gz",
+    "sha256": "81d39b35576832f92026ba1c7eb7e4cf41d80c93eb5f26e96d0bb1370431bb92",
+    "previousStatus": "source_gated_distinct_finished_zsd_scope",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "single-zsd-pushkin-to-sest",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-29-07-614Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-pushkin-to-sest/2026-10-16T00-31-32-110Z-capture.json.gz",
+    "sha256": "a961c7c83a363ea8ac664a3084ab66137fdcba30f3b52114ad0e4f851c6486b0",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest"
+  },
+  {
+    "caseId": "single-zsd-sest-to-pushkin",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-29-41-095Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/2026-10-16T00-31-54-560Z-capture.json.gz",
+    "sha256": "826f1e75c2bc9819a50ad7e99a90490fd3353b7eb2230d656b3ad088f79728b4",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-sest-to-kazan"
+  },
+  {
+    "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-30-11-879Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/2026-10-16T00-32-28-847Z-capture.json.gz",
+    "sha256": "b4e49dba2d15497de15fb898e007ec1153335884d21d6300c5d475604acafe00",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-30-45-808Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/2026-10-16T00-33-32-062Z-capture.json.gz",
+    "sha256": "5803bd2fa0a447847d6ffdb78eb58fbf7828fbb77fde1a9f5c4414fbeaff77cb",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-ckad-spb-to-domodedovo"
+  },
+  {
+    "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-31-19-287Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/2026-10-16T00-35-08-826Z-capture.json.gz",
+    "sha256": "db8d46c55c2901add588de7c0f8cb727e2122411a8ea092f8ebcb600f272fd8b",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest"
+  },
+  {
+    "caseId": "triple-m4-m11-zsd-rostov-to-sest",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-31-51-978Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-rostov-to-sest/2026-10-16T00-35-48-639Z-capture.json.gz",
+    "sha256": "035e17e6313a038ac2e41da041d91f3a98ffe284c779f78ae1714e70add2eee3",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest"
+  },
+  {
+    "caseId": "triple-m4-m11-zsd-sest-to-krasnodar",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-32-29-470Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-krasnodar/2026-10-16T00-36-30-643Z-capture.json.gz",
+    "sha256": "a7dbc2feb0e4868f85b22bb790d11468b6eb3a275bf2d485b71d828aa4a1af65",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar"
+  },
+  {
+    "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-33-00-907Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-rostov/2026-10-16T00-37-10-139Z-capture.json.gz",
+    "sha256": "92155c45aeafc0cffbaaa5a90b8206cfeb013075449bde8aba63fd2473b758b8",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar"
+  },
+  {
+    "caseId": "triple-m4-m11-zsd-voronezh-to-prim",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-33-32-503Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-voronezh-to-prim/2026-10-16T00-37-41-949Z-capture.json.gz",
+    "sha256": "d3cc5bb511b0708c17bbb15347338a0e2d483db809bea8c7348d205e0b68e5ae",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+  },
+  {
+    "caseId": "dnr-краматорск-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-34-04-922Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-saint-petersburg-center/2026-10-16T00-38-52-089Z-capture.json.gz",
+    "sha256": "84d7fba91dc89ca70022d7458e0d1b8f10dc10b3edb05f724e86226660dd481b",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "dnr-талаковка-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-35-29-498Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-saint-petersburg-center/2026-10-16T00-43-33-284Z-capture.json.gz",
+    "sha256": "7574636f28afb646ca13b7b033d1d9c47ee241a65062578921a57686a9c59004",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "dnr-харцызск-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-36-02-342Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-харцызск-saint-petersburg-center/2026-10-16T00-47-08-409Z-capture.json.gz",
+    "sha256": "c3319b76cb8da5c03007811885528fb1df014e9953282c58cae4ea952da42d76",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "lnr-ровеньки-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-36-42-146Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-ровеньки-saint-petersburg-center/2026-10-16T01-00-19-156Z-capture.json.gz",
+    "sha256": "d296504aaa25e964a351eeb441d2ec5a9113bbcdb73ec8075a67e792e2af9255",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "lnr-сорокино-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-37-13-167Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-сорокино-saint-petersburg-center/2026-10-16T01-03-59-219Z-capture.json.gz",
+    "sha256": "2a639434ff3783a738d77c32f1979ffcbc037ba3d0f0575778f8aca5764e5647",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "lnr-старобельск-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-37-50-456Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-старобельск-saint-petersburg-center/2026-10-16T01-06-26-769Z-capture.json.gz",
+    "sha256": "38edb90e297c81dde1baf8d5c5c06557c2a260733fc11980cbc2c44d11500369",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "zaporizhzhia-розовка-saint-petersburg-center",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-38-28-073Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/2026-10-16T01-17-39-935Z-capture.json.gz",
+    "sha256": "68ab50393b30454a81c0b17950b3d26d6e3680ddc8cc1314acbe7143ead856a6",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-54-09-669Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+    "sha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-55-21-353Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/2026-10-16T01-22-12-554Z-capture.json.gz",
+    "sha256": "c7fe6e20ebaf1854e7dba96db30bac54b2c929be4482f9f2144c686b17d104a4",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-zsd-prim-to-moscow"
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-56-23-107Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/2026-10-16T01-22-56-513Z-capture.json.gz",
+    "sha256": "ff9294352008224ef3ce7433539682ed9d80bcb8f7b3a4eb4d573cfd8dd4a4d5",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-zsd-prim-to-moscow"
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T15-43-19-348Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/2026-10-16T01-23-33-921Z-capture.json.gz",
+    "sha256": "f65cd0bf4f8e7b05a5f4182be4f7568daded7b31731cedd8b08d5fc2ea557ed7",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-sest-to-kazan"
+  },
+  {
+    "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T15-44-20-991Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/2026-10-16T01-24-11-271Z-capture.json.gz",
+    "sha256": "5e895d6785df78dafd9a016706e733fd3da66502001fbb5611ff34d33f52eb6f",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-kazan-to-sest"
+  },
+  {
+    "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T16-51-08-177Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-prim/2026-10-16T01-25-02-469Z-capture.json.gz",
+    "sha256": "091a0267c85c6e06fb3a8ba635a24e8a46da3ebe05be102828f8780ca44c8030",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+  },
+  {
+    "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T16-52-00-108Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/2026-10-16T01-27-29-307Z-capture.json.gz",
+    "sha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-zsd-prim-to-moscow"
+  },
+  {
+    "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T16-53-50-519Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/2026-10-16T01-28-18-618Z-capture.json.gz",
+    "sha256": "b54fc4d7d26dc8df2a002eb3373fcb4d5a2e1a65d81de80077727eb68ca44176",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+  },
+  {
+    "caseId": "pair-m11-zsd-novgorod-to-sest",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T16-55-29-262Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/2026-10-16T01-31-53-074Z-capture.json.gz",
+    "sha256": "205d1dd3d2b2fabccdc6400065a1fd56861de1d93bd5166652973f26fc57d779",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-kazan-to-sest"
+  },
+  {
+    "caseId": "pair-m11-zsd-prim-to-torzhok",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T16-56-47-019Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/2026-10-16T01-32-28-268Z-capture.json.gz",
+    "sha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-zsd-prim-to-moscow"
+  },
+  {
+    "caseId": "pair-m11-zsd-sest-to-novgorod",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T16-58-56-537Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-novgorod/2026-10-16T01-33-03-898Z-capture.json.gz",
+    "sha256": "50906f673fa32a6219e678697a823c16806bf8c400f5408a4472f6a2a3f44534",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-sest-to-kazan"
+  },
+  {
+    "caseId": "pair-m11-zsd-sest-to-tver",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-00-04-180Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/2026-10-16T01-33-39-370Z-capture.json.gz",
+    "sha256": "f345d2c725eefeff29ec7fcfb73d7a510c1e8199e4e04191a1cccb92bcbf35f0",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-sest-to-kazan"
+  },
+  {
+    "caseId": "pair-m11-zsd-torzhok-to-prim",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-01-23-087Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/2026-10-16T01-34-14-347Z-capture.json.gz",
+    "sha256": "875a7b43b82e9e35432ac2ac76cb116242fb2a646eb745fc82fd85c9981fdb09",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+  },
+  {
+    "caseId": "pair-m4-m11-spb-to-voronezh",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-02-36-457Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/2026-10-16T01-43-03-406Z-capture.json.gz",
+    "sha256": "4d3c6d232c73eab5c662c3532fb85931d3083bfb43f4c5184dfe1b285abebc57",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-ckad-spb-to-domodedovo"
+  },
+  {
+    "caseId": "single-m11-spb-to-tver",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-03-59-020Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/2026-10-16T01-55-49-922Z-capture.json.gz",
+    "sha256": "dbe832b30cefdedaeca8e818eece65af91461febd941b579cbc2032a94d6db94",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-ckad-spb-to-domodedovo"
+  },
+  {
+    "caseId": "single-m11-tver-to-spb",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-05-06-762Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-spb/2026-10-16T01-57-04-032Z-capture.json.gz",
+    "sha256": "105e36359823ef4a72a16a9ba7f5892f09d836b461b0726d20a8efc3c4627d0f",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "single-zsd-blag-to-sest",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-06-19-283Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-sest/2026-10-16T02-10-00-890Z-capture.json.gz",
+    "sha256": "77a2eb49ca1cf11d3ec016d2ae428a727d3c92e1fa9a481caf859f73c643dd0e",
+    "previousStatus": "source_gated_distinct_finished_zsd_scope",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "single-zsd-peterhof-to-prim",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-16-56-120Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/2026-10-16T02-10-37-044Z-capture.json.gz",
+    "sha256": "a6094dac09cb047abc904962c94db56d59e9a96b43303aed84ef6dd59f54fbc3",
+    "previousStatus": "source_gated_distinct_finished_zsd_scope",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "single-zsd-sest-to-blag",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-21-33-810Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-blag/2026-10-16T02-11-50-603Z-capture.json.gz",
+    "sha256": "553b0f40b267cc5c5ffa1e1a60eaf5b020e10fcd31b049bbb3c865d980a26437",
+    "previousStatus": "source_gated_distinct_finished_zsd_scope",
+    "previousScopeReference": null
+  },
+  {
+    "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-25-46-940Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/2026-10-16T02-13-09-138Z-capture.json.gz",
+    "sha256": "b47f5207bc108a91b0121614d3184d5c7fe9339db341cd44102acfba191ea61b",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "lnr-брянка-saint-petersburg-center"
+  },
+  {
+    "caseId": "triple-m11-ckad-m12-spb-to-arzamas",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-28-40-814Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-arzamas/2026-10-16T02-15-10-048Z-capture.json.gz",
+    "sha256": "51d960752775c382ff16f6e76431a7389010f71fd6bc85103ad722368954467a",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-ckad-spb-to-domodedovo"
+  },
+  {
+    "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-31-01-435Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-domodedovo-to-sest/2026-10-16T02-16-30-383Z-capture.json.gz",
+    "sha256": "95ec87d65b77d9d153a285b811847dad0097ea7b4bdff733607942a25aab9e25",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-kazan-to-sest"
+  },
+  {
+    "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-35-07-404Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/2026-10-16T02-17-24-374Z-capture.json.gz",
+    "sha256": "860f18ffe2fa0627df462b57888a8033a4f16964316f79dfacdfe9af0e976374",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim"
+  },
+  {
+    "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-36-52-510Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/2026-10-16T02-19-07-294Z-capture.json.gz",
+    "sha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "pair-m11-zsd-prim-to-moscow"
+  },
+  {
+    "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+    "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-39-01-254Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz",
+    "sha256": "a2173d14fed6e04452f39096e87344095c47341c926639d241c1136cc8e63571",
+    "previousStatus": "source_gated_same_reviewed_zsd_scope",
+    "previousScopeReference": "max-chain-m12-ckad-m11-zsd-sest-to-kazan"
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-16T00:30:16.832Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 140,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 10,
+    "spec": {
+      "caseId": "single-zsd-blag-to-prim",
+      "kind": "road",
+      "group": "single-zsd"
+    }
+  },
+  "caseId": "single-odintsovo-zvenigorod-to-moscow",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-odintsovo-zvenigorod-to-moscow",
+    "startedAt": "2026-10-16T00:29:59.371Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-zvenigorod-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-30-00-960Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-zvenigorod-to-moscow/2026-10-16T00-30-00-949Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-30-01-320Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-30-01-671Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "provenRoads": [],
+      "missingExpectedRoads": [
+        "odintsovo"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "weekend": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "пятница–воскресенье",
+      "segments": [],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "free"
+    },
+    "components": [],
+    "finishedAt": "2026-10-16T00:30:01.685Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-29-57-830Z-part10",
+  "parent": "d59145b8753ae02d3c8f61019f3300e88f71bd9e"
+}

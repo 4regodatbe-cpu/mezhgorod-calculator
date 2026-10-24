@@ -1,0 +1,14 @@
+{
+  "name": "tsc",
+  "command": [
+    "node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit"
+  ],
+  "startedAtUtc": "2026-10-18T05:44:43.926965+00:00",
+  "elapsedSeconds": 2.197,
+  "exitCode": 0,
+  "status": "PASS",
+  "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/tsc.log.gz",
+  "uncompressedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

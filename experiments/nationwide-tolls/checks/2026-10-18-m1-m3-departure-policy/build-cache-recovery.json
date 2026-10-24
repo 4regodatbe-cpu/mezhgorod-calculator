@@ -1,0 +1,8 @@
+{
+  "reason": "Next/Turbopack failed opening persisted database: invalid digit found in string",
+  "action": "Quarantine generated .next directory; fresh retry without code/config/dependency changes",
+  "from": "/workspace/scratch/d0f3512a9d78/mezhgorod/.next",
+  "to": "/tmp/mezhgorod-next-cache-before-m1m3-20261018T054519",
+  "originalBuildLog": "build.log.gz",
+  "renamed": true
+}

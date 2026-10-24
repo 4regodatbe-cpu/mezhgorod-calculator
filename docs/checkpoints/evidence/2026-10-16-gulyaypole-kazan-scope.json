@@ -1,0 +1,56 @@
+{
+  "caseId": "zaporizhzhia-гуляйполе-kazan-center",
+  "complete": true,
+  "boothEventCoverage": "complete",
+  "tollBoothCount": 0,
+  "paidEdges": [
+    {
+      "wayId": "1182567076",
+      "roadNames": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "wayId": "31984600",
+      "roadNames": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    }
+  ],
+  "primaryEndpointMatches": [
+    {
+      "way": "https://api.openstreetmap.org/api/0.6/way/1182567076/full.json",
+      "from": {
+        "index": 3011,
+        "distanceKm": 0.00004502858131882864
+      },
+      "to": {
+        "index": 3013,
+        "distanceKm": 0.000029988906011819833
+      }
+    },
+    {
+      "way": "https://api.openstreetmap.org/api/0.6/way/31984600/full.json",
+      "from": {
+        "index": 3013,
+        "distanceKm": 0.000029988906011819833
+      },
+      "to": {
+        "index": 3020,
+        "distanceKm": 0.000018652372335047468
+      }
+    }
+  ],
+  "saved1046": {
+    "index": 2900,
+    "distanceKm": 8.640217589226765
+  },
+  "reusedPrimarySource": "2026-10-16-granitnoe-kazan-m4-scope.json",
+  "result": "source_gated_unknown_retained"
+}

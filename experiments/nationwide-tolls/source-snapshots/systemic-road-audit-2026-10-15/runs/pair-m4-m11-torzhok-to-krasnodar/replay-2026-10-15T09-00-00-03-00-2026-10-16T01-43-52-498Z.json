@@ -1,0 +1,364 @@
+{
+  "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 1608714,
+      "seconds": 72896
+    },
+    {
+      "name": "OSRM",
+      "meters": 1607046,
+      "seconds": 76484
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1608714,
+  "routeSeconds": 72896,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        {
+          "lng": 38.975313,
+          "lat": 45.03547
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m4",
+      "m11"
+    ],
+    "provenRoads": [
+      "m11",
+      "m4"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1205158257",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "596233803",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "598405257",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "461450930",
+      "names": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "461450925",
+      "names": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1051304958",
+      "names": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "7171624764"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3036681112"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "4341143826"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3598939357"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "2486362587"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3598837929"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "1051218390"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "1051205779"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3200592308"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3842564088"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9620404676"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "7678126301"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11838757138"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11838466121"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11295106601"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5325424715"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9620386263"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9772717211"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m11": {
+      "occurrences": 221,
+      "uniqueWays": 172
+    },
+    "m4": {
+      "occurrences": 855,
+      "uniqueWays": 633
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/2026-10-16T01-43-51-795Z-capture.json.gz",
+  "captureSha256": "92790f5b131ecf57f859619ff98b272067ef469cbfb34b91efe6d9ba79e6f249",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": 5040,
+      "reason": "matrix exact selected-route M4 vector"
+    },
+    {
+      "id": "m11-15-58",
+      "amount": null,
+      "reason": "m11_58_679_facility_sequence_incomplete"
+    },
+    {
+      "id": "m11-58-679",
+      "amount": null,
+      "reason": "only_one_verified_boundary_crossing"
+    },
+    {
+      "id": "unknown-paid-road",
+      "amount": null,
+      "reason": "unmapped_selected_route_paid_booth"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-11",
+    "«Нева»",
+    "М-4",
+    "E 115",
+    "E 119",
+    "AH8",
+    "«Дон»",
+    "Дон",
+    "улица Изыскателей",
+    "AH61",
+    "E 50",
+    "Самарское шоссе"
+  ],
+  "tollNodeIds": [
+    "5286168661",
+    "7171624764",
+    "3036681112",
+    "4341143826",
+    "3598939357",
+    "2486362587",
+    "3598837929",
+    "1051218390",
+    "1051205779",
+    "3200592308",
+    "3842564088",
+    "9620404676",
+    "7678126301",
+    "11838757138",
+    "11838466121",
+    "11295106601",
+    "5325424715",
+    "9620386263",
+    "9772717211"
+  ],
+  "m4PvpPreview": {
+    "status": "boundaries_resolved",
+    "reason": null,
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 3,
+    "confirmedPvps": [
+      "m4-71",
+      "m4-1223"
+    ],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-58-679, unknown-paid-road",
+      "m11-15-58: m11_58_679_facility_sequence_incomplete",
+      "m11-58-679: only_one_verified_boundary_crossing",
+      "unknown-paid-road: unmapped_selected_route_paid_booth"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [
+      "m4"
+    ],
+    "missing": [
+      "m11-15-58",
+      "m11-58-679",
+      "unknown-paid-road"
+    ],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 5040,
+          "weekdayAmount": 5040,
+          "weekendAmount": 6090,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-4: m4-71 → m4-1223 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "detected": true,
+        "tolls": null,
+        "reason": "m11_58_679_facility_sequence_incomplete"
+      },
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ]
+  }
+}

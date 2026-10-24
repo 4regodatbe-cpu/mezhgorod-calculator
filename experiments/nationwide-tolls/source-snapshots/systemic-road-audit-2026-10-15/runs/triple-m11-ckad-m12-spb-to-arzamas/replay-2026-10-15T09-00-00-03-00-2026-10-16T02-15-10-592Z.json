@@ -1,0 +1,352 @@
+{
+  "caseId": "triple-m11-ckad-m12-spb-to-arzamas",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 1155730,
+      "seconds": 43916
+    },
+    {
+      "name": "OSRM",
+      "meters": 1144797,
+      "seconds": 51582
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1155730,
+  "routeSeconds": 43916,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 30.3159,
+          "lat": 59.9391
+        },
+        {
+          "lng": 43.84,
+          "lat": 55.394
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m11",
+      "ckad",
+      "m12"
+    ],
+    "provenRoads": [
+      "zsd",
+      "m11",
+      "m12",
+      "ckad"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "130062824",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "350477987",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "1257246774",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "241668022",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1395997593",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1395997592",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1236253486",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "972809736",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "972809735",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-booth-name",
+      "osmNodeId": "933975069"
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "2492861243"
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "4348128722"
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "4348128721"
+    },
+    {
+      "road": "ckad",
+      "kind": "selected-booth-name",
+      "osmNodeId": "8087316064"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "zsd": {
+      "occurrences": 41,
+      "uniqueWays": 38
+    },
+    "m11": {
+      "occurrences": 699,
+      "uniqueWays": 532
+    },
+    "m12": {
+      "occurrences": 145,
+      "uniqueWays": 89
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-arzamas/2026-10-16T02-15-10-048Z-capture.json.gz",
+  "captureSha256": "51d960752775c382ff16f6e76431a7389010f71fd6bc85103ad722368954467a",
+  "detectedRoadComponents": [
+    {
+      "id": "m11-15-58",
+      "amount": 200,
+      "reason": "m11_head_ready_direct_pair_at_departure"
+    },
+    {
+      "id": "m11-58-679",
+      "amount": 3900,
+      "reason": "matrix dated selected-route M11 direct pair"
+    },
+    {
+      "id": "m11-679-684",
+      "amount": 94,
+      "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+    },
+    {
+      "id": "m12",
+      "amount": 1713,
+      "reason": "matrix dated selected-route M12 directed endpoint pair"
+    },
+    {
+      "id": "ckad",
+      "amount": null,
+      "reason": "ckad_east_arc_not_proven"
+    },
+    {
+      "id": "zsd",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "ЗСД",
+    "М-11",
+    "«Нева»",
+    "А-113",
+    "Центральная кольцевая автомобильная дорога",
+    "М-12",
+    "«Восток»"
+  ],
+  "tollNodeIds": [
+    "933975069",
+    "2492861243",
+    "4348128722",
+    "4348128721",
+    "8087316064"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": {
+    "beginKm": 881.756,
+    "endKm": 1139.429
+  },
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: ckad, zsd",
+      "ckad: ckad_east_arc_not_proven",
+      "zsd: zsd_trip_extends_outside_reviewed_zone1"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [
+      "m11-15-58",
+      "m11-58-679",
+      "m11-679-684",
+      "m12"
+    ],
+    "missing": [
+      "ckad",
+      "zsd"
+    ],
+    "components": [
+      {
+        "id": "m11-15-58",
+        "detected": true,
+        "tolls": {
+          "amount": 200,
+          "weekdayAmount": 200,
+          "weekendAmount": 320,
+          "period": "по тарифу отправления М-11 15–58 (monThu)",
+          "confidence": "matched",
+          "segments": [
+            "М-11 15–58: solnechnogorsk → mmk_a107: 200 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": {
+          "amount": 3900,
+          "weekdayAmount": 3900,
+          "weekendAmount": 4200,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-11: p679 → p58 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "detected": true,
+        "tolls": {
+          "amount": 94,
+          "weekdayAmount": 94,
+          "weekendAmount": 94,
+          "period": "пн–вс, приказ №274 с 04.09.2026",
+          "segments": [
+            "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": {
+          "amount": 1713,
+          "weekdayAmount": 1713,
+          "weekendAmount": 1713,
+          "period": "все дни",
+          "segments": [
+            "М-12: vladimir → arzamas_p158 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      },
+      {
+        "id": "ckad",
+        "detected": true,
+        "tolls": null,
+        "reason": "ckad_east_arc_not_proven"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "tolls": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ]
+  }
+}

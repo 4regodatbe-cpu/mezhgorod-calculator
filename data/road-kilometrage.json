@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Local position evidence only; no fares or live lookups. Sections require reviewed official chainage endpoints and a distinct scale/branch.",
+  "anchors": [],
+  "sections": [],
+  "pending": [
+    { "transitionId": "osm-transition:4443232947:447135768>1182567076", "roadRef": "М-4", "km": null, "reason": "KM-001: official kilometre and calibrated output shape unavailable" },
+    { "transitionId": "osm-transition:358467208:1211606940>28835034", "roadRef": "М-4", "km": null, "reason": "KM-001: official kilometre and calibrated output shape unavailable" }
+  ]
+}

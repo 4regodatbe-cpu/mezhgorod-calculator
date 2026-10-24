@@ -1,0 +1,5 @@
+START 1/1 dnr-краматорск-moscow-center
+DONE dnr-краматорск-moscow-center audited parity=true
+{"batchPath":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-38-01-945Z.json","attempted":1,"audited":1,"stoppedReason":null}
+
+EXIT_CODE=0

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1326 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="25893875" visible="true" version="8" changeset="30269696" timestamp="2015-04-16T16:51:56Z" user="EIjas" uid="700550" lat="59.9023393" lon="30.2493057"/>
+ <node id="1339782267" visible="true" version="2" changeset="13339579" timestamp="2012-10-02T20:07:19Z" user="Дмитрий Кудряшов" uid="303945" lat="59.9004241" lon="30.2467344"/>
+ <node id="1943198683" visible="true" version="4" changeset="28958380" timestamp="2015-02-19T15:17:50Z" user="EIjas" uid="700550" lat="59.9015368" lon="30.2482906"/>
+ <node id="2396020561" visible="true" version="1" changeset="17085955" timestamp="2013-07-25T09:25:33Z" user="Константин Гам" uid="392109" lat="59.9021328" lon="30.2490775"/>
+ <node id="2903386149" visible="true" version="2" changeset="60419011" timestamp="2018-07-04T20:47:57Z" user="fims7" uid="584771" lat="59.9015812" lon="30.2483565">
+  <tag k="crossing" v="uncontrolled"/>
+  <tag k="highway" v="crossing"/>
+ </node>
+ <node id="7020792290" visible="true" version="1" changeset="77745518" timestamp="2019-11-29T22:59:28Z" user="mini-me" uid="3846961" lat="59.9008421" lon="30.2473067"/>
+ <way id="183902370" visible="true" version="20" changeset="159832266" timestamp="2024-12-02T08:17:39Z" user="lisits" uid="8260677">
+  <nd ref="1339782267"/>
+  <nd ref="7020792290"/>
+  <nd ref="1943198683"/>
+  <nd ref="2903386149"/>
+  <nd ref="2396020561"/>
+  <nd ref="25893875"/>
+  <tag k="description" v="ЗСД -&gt;наб. р. Екатерингофка"/>
+  <tag k="foot" v="no"/>
+  <tag k="highway" v="primary"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="RU:urban"/>
+  <tag k="name" v="набережная реки Екатерингофки"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="source:maxspeed" v="implicit"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+</osm>

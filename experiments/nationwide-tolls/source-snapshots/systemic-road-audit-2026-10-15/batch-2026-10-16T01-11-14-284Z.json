@@ -1,0 +1,98 @@
+{
+  "startedAt": "2026-10-16T01:11:14.284Z",
+  "scope": {
+    "region": null,
+    "group": null,
+    "caseId": "zaporizhzhia-мелитополь-saint-petersburg-center",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "zaporizhzhia-мелитополь-saint-petersburg-center",
+      "startedAt": "2026-10-16T01:11:14.289Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-11-39-016Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-saint-petersburg-center/2026-10-16T01-11-38-856Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-11-39-746Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-11-40-487Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4",
+          "m11",
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:11:40.507Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:11:40.511Z"
+}

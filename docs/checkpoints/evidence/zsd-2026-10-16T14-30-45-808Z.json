@@ -1,0 +1,282 @@
+{
+  "parent": "22cc1963ce4a695b528ecade65cef763696a4562",
+  "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/2026-10-16T00-33-32-062Z-capture.json.gz",
+  "captureSha256": "5803bd2fa0a447847d6ffdb78eb58fbf7828fbb77fde1a9f5c4414fbeaff77cb",
+  "provider": "Valhalla",
+  "execution": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/2026-10-16T00-33-32-062Z-capture.json.gz",
+        "2026-10-15T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"triple-m11-ckad-m12-spb-to-kazan\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1533663,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: ckad, zsd\",\"ckad: ckad_east_arc_not_proven\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":200,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"m12\",\"amount\":3513,\"reason\":\"matrix dated selected-route M12 directed endpoint pair\"},{\"id\":\"ckad\",\"amount\":null,\"reason\":\"ckad_east_arc_not_proven\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/2026-10-16T00-33-32-062Z-capture.json.gz",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"triple-m11-ckad-m12-spb-to-kazan\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1533663,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: ckad, zsd\",\"ckad: ckad_east_arc_not_proven\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":240,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"m12\",\"amount\":3513,\"reason\":\"matrix dated selected-route M12 directed endpoint pair\"},{\"id\":\"ckad\",\"amount\":null,\"reason\":\"ckad_east_arc_not_proven\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": {
+    "ways": [
+      "1053072562",
+      "1090759975",
+      "1120339785",
+      "119176958",
+      "1257246768",
+      "1257246769",
+      "1257246773",
+      "1257246774",
+      "129780705",
+      "130062824",
+      "130068395",
+      "139658546",
+      "165035750",
+      "172999960",
+      "183912265",
+      "183912266",
+      "183912269",
+      "183921952",
+      "183921953",
+      "189271976",
+      "27462206",
+      "350477987",
+      "375574640",
+      "375646973",
+      "397223750",
+      "400111352",
+      "400111353",
+      "46948905",
+      "589047640",
+      "589047641",
+      "688149996",
+      "721628539",
+      "721628542",
+      "736306923",
+      "80056721",
+      "80056729",
+      "80056747",
+      "81348980"
+    ],
+    "gates": [
+      "933975069"
+    ]
+  },
+  "sameReviewedScopeCase": "pair-m11-ckad-spb-to-domodedovo",
+  "status": "source_gated_same_reviewed_zsd_scope",
+  "missing": [
+    "ckad",
+    "zsd"
+  ],
+  "uniqueZsdWays": [
+    "1053072562",
+    "1090759975",
+    "1120339785",
+    "119176958",
+    "1257246768",
+    "1257246769",
+    "1257246773",
+    "1257246774",
+    "129780705",
+    "130062824",
+    "130068395",
+    "139658546",
+    "165035750",
+    "172999960",
+    "183912265",
+    "183912266",
+    "183912269",
+    "183921952",
+    "183921953",
+    "189271976",
+    "27462206",
+    "350477987",
+    "375574640",
+    "375646973",
+    "397223750",
+    "400111352",
+    "400111353",
+    "46948905",
+    "589047640",
+    "589047641",
+    "688149996",
+    "721628539",
+    "721628542",
+    "736306923",
+    "80056721",
+    "80056729",
+    "80056747",
+    "81348980"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 386,
+      "endShapeIndex": 387
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T14-30-44-933Z.json",
+      "sha256": "4853ad41f7d76936481cb55d17c5797e6fdd3544cfc218d842b83160a0b111f0",
+      "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "5803bd2fa0a447847d6ffdb78eb58fbf7828fbb77fde1a9f5c4414fbeaff77cb",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: ckad, zsd",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m11-15-58",
+          "amount": 200,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "amount": 3513,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "ckad",
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/replay-2026-10-17T09-00-00-03-00-2026-10-16T14-30-45-394Z.json",
+      "sha256": "4f875081afdc3f0166eff737e031577ff6999bb12bb982ea2ab5c7d54904de82",
+      "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "5803bd2fa0a447847d6ffdb78eb58fbf7828fbb77fde1a9f5c4414fbeaff77cb",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: ckad, zsd",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m11-15-58",
+          "amount": 240,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "amount": 3513,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "ckad",
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    }
+  ],
+  "note": "Case39: both profiles exit0/complete/SHA/departure verified. Status source_gated_same_reviewed_zsd_scope; whole-route missing ckad,zsd. Scope equivalence reuses diagnosis only, never a fare.",
+  "at": "2026-10-16T14:30:45.809Z",
+  "checkpoint": "docs/checkpoints/zsd-2026-10-16T14-30-45-808Z.md",
+  "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-30-45-808Z.json",
+  "overallPlanPercent": 90
+}

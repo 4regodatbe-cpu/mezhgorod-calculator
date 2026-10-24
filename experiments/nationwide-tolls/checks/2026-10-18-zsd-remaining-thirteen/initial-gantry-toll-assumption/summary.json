@@ -1,0 +1,125 @@
+{
+  "atUtc": "2026-10-18T06:12:26.649338+00:00",
+  "startedHead": "d28d66295c1dd19583d3bba1d05df7d745e87628",
+  "inputsSha256": "be910b256f691ce0c3d11c898f50f6c9b8b469d407b23c0363d173e8cab2ec54",
+  "extractionMethodReference": "experiments/nationwide-tolls/scripts/review-zsd-remaining-scopes.py",
+  "extractionMethodReferenceSha256": "5f9fa2e9a436e86314a985153749e7858a18e3d4cd8a45f31135b5b03c8a82f5",
+  "processed": 13,
+  "expected": 13,
+  "reviewErrors": 0,
+  "materialExceptions": 6,
+  "newSiblingBoundaryChecks": 13,
+  "newPricingCalls": 0,
+  "newRouteCalls": 0,
+  "newTraceCalls": 0,
+  "newFullRouteReplays": 0,
+  "newPricedComponents": 0,
+  "confirmedFullFares": 0,
+  "elapsedSeconds": 0.615,
+  "groups": [
+    {
+      "fingerprint": "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c",
+      "newSiblingChecks": 4,
+      "priorRepresentativeChecks": 1,
+      "groupSize": 5,
+      "errors": 0,
+      "materialExceptions": 0
+    },
+    {
+      "fingerprint": "3404a9c7bbd60f8c3caa6644223c2434ee84611661181bab6b9c1cf626c57851",
+      "newSiblingChecks": 3,
+      "priorRepresentativeChecks": 1,
+      "groupSize": 4,
+      "errors": 0,
+      "materialExceptions": 0
+    },
+    {
+      "fingerprint": "2c00c1cc6c1d9e8f8b34365454ebb654ed4c4054a8530c84c21fe727dd5f5377",
+      "newSiblingChecks": 6,
+      "priorRepresentativeChecks": 1,
+      "groupSize": 7,
+      "errors": 0,
+      "materialExceptions": 6
+    }
+  ],
+  "caseResults": [
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/max-chain-m4-ckad-m11-zsd-rostov-to-sest.json",
+      "sha256": "1f6f48751caac56fb927fc1d1afd1bf2384939afc2fb5480440ed4a5c16bbddb",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "single-zsd-pushkin-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/single-zsd-pushkin-to-sest.json",
+      "sha256": "80a5e681e429a25dcbdf70591926219594b26a0c0e8e240e579bc8c5fccaf3b4",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m4-m11-zsd-krasnodar-to-sest.json",
+      "sha256": "3315e082e6b3b92cb01b6f1fb19bf1a7db9a2ce42127ed230c9ed3248ec6a432",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-rostov-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m4-m11-zsd-rostov-to-sest.json",
+      "sha256": "72e3a23d0427c4366089f95eeb8fa84cebebe81ebeff91d6c2371c508b7a6097",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/max-chain-m4-ckad-m11-zsd-sest-to-rostov.json",
+      "sha256": "b8cbb74bb48a0993b6dadd611256e0e6d729a371b8bc007a09ff96c684d49751",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-krasnodar",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m4-m11-zsd-sest-to-krasnodar.json",
+      "sha256": "41a5bb2dfea7f08614b7334765ebf127226504e707483263e4b0c6493a0e6b3c",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m4-m11-zsd-sest-to-rostov.json",
+      "sha256": "073f3ebe291a14cdd139ff8f668817c09848fd490b1077a27ca871b2d42ef74e",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "pair-m11-ckad-spb-to-noginsk",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/pair-m11-ckad-spb-to-noginsk.json",
+      "sha256": "41590f9627b44607c28b123cf02f5864fe4133b6062daca01bd513b9c3bc7a0e",
+      "outcome": "material_exception_requires_separate_review"
+    },
+    {
+      "caseId": "single-m11-spb-to-moscow",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/single-m11-spb-to-moscow.json",
+      "sha256": "9f4099ffa52b6ca3a990c9e798edf6fcc8d0927b0a9a742a8a636d6586487c77",
+      "outcome": "material_exception_requires_separate_review"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m11-ckad-m12-spb-to-kazan.json",
+      "sha256": "a72f5482873144fe57a3ef2a7a6c03883acb90160725062a98ffa44d8c723e3a",
+      "outcome": "material_exception_requires_separate_review"
+    },
+    {
+      "caseId": "pair-m4-m11-spb-to-voronezh",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/pair-m4-m11-spb-to-voronezh.json",
+      "sha256": "a96a1f86d25342c388521581aafea9db7d4ce38f7313613fb4892efe3aacd89a",
+      "outcome": "material_exception_requires_separate_review"
+    },
+    {
+      "caseId": "single-m11-spb-to-tver",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/single-m11-spb-to-tver.json",
+      "sha256": "4d39e3e477b01225bd06a79c12031de5cace14263a1730019abc1b3d8563d7ee",
+      "outcome": "material_exception_requires_separate_review"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-spb-to-arzamas",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m11-ckad-m12-spb-to-arzamas.json",
+      "sha256": "31fd07fe9585b5f3a90970b28fab65ac76a8b49590f28f0c9e8fc10300cd7bc2",
+      "outcome": "material_exception_requires_separate_review"
+    }
+  ]
+}

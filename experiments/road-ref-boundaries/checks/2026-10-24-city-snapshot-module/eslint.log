@@ -1,0 +1,53 @@
+
+/workspace/scratch/6a7402161c9f/calculator/app/v2/components/use-v2-calculation.ts
+  24:141  warning  'analyticsVersion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/6a7402161c9f/calculator/experiments/nationwide-tolls/engine/api-adapter.cjs
+  1:26  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/workspace/scratch/6a7402161c9f/calculator/experiments/nationwide-tolls/scripts/audit-matrix-provenance.cjs
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  3:21  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/workspace/scratch/6a7402161c9f/calculator/experiments/nationwide-tolls/scripts/build-m4-endpoint-register.cjs
+  1:10  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  1:34  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/workspace/scratch/6a7402161c9f/calculator/experiments/nationwide-tolls/scripts/build-release-register.cjs
+   1:10  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+   1:34  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+   1:62  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  25:1   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/workspace/scratch/6a7402161c9f/calculator/experiments/nationwide-tolls/scripts/build-vector-matrix.cjs
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/workspace/scratch/6a7402161c9f/calculator/experiments/nationwide-tolls/scripts/quote.test.cjs
+   1:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+   1:69  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  20:42  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/workspace/scratch/6a7402161c9f/calculator/experiments/nationwide-tolls/scripts/validate-vector-matrix.cjs
+  1:10  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  1:34  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  1:62  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/workspace/scratch/6a7402161c9f/calculator/experiments/toll-od-matrix/m4-pvp-compiler.test.mjs
+  9:7  warning  'clone' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/6a7402161c9f/calculator/lib/photon-address-search.ts
+  421:16  warning  'key' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/6a7402161c9f/calculator/lib/toll-engine/m12-route-evidence.ts
+  16:7  warning  'amountByMarker' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/6a7402161c9f/calculator/lib/v2-calculation/route-leg.ts
+  92:22  error  'diagnosticFastValidation' is never reassigned. Use 'const' instead  prefer-const
+
+/workspace/scratch/6a7402161c9f/calculator/lib/v2-calculation/special-options.ts
+  71:20  warning  'index' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 24 problems (19 errors, 5 warnings)
+

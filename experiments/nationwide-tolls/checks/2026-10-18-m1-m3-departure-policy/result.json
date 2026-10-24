@@ -1,0 +1,41 @@
+{
+  "atUtc": "2026-10-18T05:46:12.454967+00:00",
+  "outcome": "fixed_and_verified",
+  "sourceHead": "369df969ab363ccada5e6af17c70997108c497ef",
+  "startedHead": "5866364a0ba47fc0ceecd9c26291b9111f7bb499",
+  "startedTree": "6d65bd183206ae11b34fe49e41079ee7a15ff275",
+  "defect": "M1/M3 diagnostic shadow wrongly rejected Moscow-midnight crossings despite the trip-departure tariff policy.",
+  "change": "Resolve operator calendar/profile only at departure. Retain duration/timestamp validation, source effectiveFrom/verifiedThrough and physical same-route gate proof. Shadow remains diagnosticOnly; no customer fare integration.",
+  "regressionBeforeFix": {
+    "tests": 31,
+    "pass": 26,
+    "fail": 5,
+    "expectedFailures": true
+  },
+  "focusedAfterFix": {
+    "tests": 31,
+    "pass": 31,
+    "fail": 0
+  },
+  "fullAudit": {
+    "tests": 750,
+    "pass": 750,
+    "fail": 0,
+    "quoteApi": "PASS"
+  },
+  "tsc": "PASS",
+  "eslint": "PASS",
+  "build": "PASS clean retry,16/16",
+  "initialBuild": "FAIL persisted Turbopack database invalid digit; generated cache quarantined; original log retained. No code/config/dependency workaround.",
+  "changedCodeBlobs": {
+    "experiments/nationwide-tolls/m1-m3-shadow-quote.mjs": "0f714c42861986d759cc39ecfcbefa412728a521",
+    "experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs": "349de3d21f9ce726f6f310fbba733374f66b809e"
+  },
+  "newRouteRuns": 0,
+  "newTraceRequests": 0,
+  "newCaptureReplays": 0,
+  "newConfirmedFullFares": 0,
+  "newCustomerPricedComponents": 0,
+  "remaining": "M1/M3 fare source remains verifiedThrough2026-10-10; departuresOct15/17 remain date-blocked. M3 requires three ordered proven gates; M1 still needs independently verified booth mapping.",
+  "nextAction": "Observe CI for this code commit before any branch write. Then bounded source/date review for M3 Oct15/17 if a genuinely new official effective-date source is available; no repeat10saved routes, M4sourcepass, oldroutebatches or source horizon extension from PDF effectiveFrom alone."
+}

@@ -60,7 +60,7 @@ export default function V3Page() {
       <header className="mb-4 flex items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2.5">
           <a href="/v3" aria-label="из А в Б — калькулятор" className="shrink-0 rounded-xl bg-[#F7F4EE] p-1"><Image src="/izavb-approved-logo.svg" alt="из А в Б" width={136} height={60} priority /></a>
-          <div className="min-w-0"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><p className="text-xs font-semibold text-brand-muted">Калькулятор поездок · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">Версия 2</a><a href="/v3" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">V3 · один самый быстрый</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
+          <div className="min-w-0"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><p className="text-xs font-semibold text-brand-muted">Актуальный калькулятор · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">V2 · старый алгоритм</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
         </div>
         <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle /></div>
       </header>

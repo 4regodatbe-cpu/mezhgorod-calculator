@@ -1,0 +1,229 @@
+{
+  "caseId": "pair-m11-ckad-spb-to-domodedovo",
+  "index": 25,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/2026-10-16T00-04-31-865Z-capture.json.gz",
+  "captureSha256": "7e59435e53caa51ba754f0750dd80c7898389144b3504a85d9d6aa743d4236d0",
+  "selectedProvider": "Valhalla",
+  "routeMeters": 767751,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "uniqueZsdWays": [
+    "130062824",
+    "350477987",
+    "1257246774",
+    "1257246773",
+    "1257246769",
+    "1257246768",
+    "130068395",
+    "165035750",
+    "688149996",
+    "119176958",
+    "589047640",
+    "589047641",
+    "721628542",
+    "172999960",
+    "27462206",
+    "736306923",
+    "189271976",
+    "183912266",
+    "183912269",
+    "183921953",
+    "183921952",
+    "397223750",
+    "183912265",
+    "80056721",
+    "80056747",
+    "1053072562",
+    "375574640",
+    "375646973",
+    "81348980",
+    "721628539",
+    "1090759975",
+    "80056729",
+    "139658546",
+    "46948905",
+    "1120339785",
+    "400111353",
+    "400111352",
+    "129780705"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 386,
+      "endShapeIndex": 387
+    }
+  ],
+  "sameExactZsdWayAndBoothSetAsReviewedFirstCase": false,
+  "sameReviewedScopeCase": null,
+  "scopeFingerprint": [
+    [
+      "1053072562",
+      "1090759975",
+      "1120339785",
+      "119176958",
+      "1257246768",
+      "1257246769",
+      "1257246773",
+      "1257246774",
+      "129780705",
+      "130062824",
+      "130068395",
+      "139658546",
+      "165035750",
+      "172999960",
+      "183912265",
+      "183912266",
+      "183912269",
+      "183921952",
+      "183921953",
+      "189271976",
+      "27462206",
+      "350477987",
+      "375574640",
+      "375646973",
+      "397223750",
+      "400111352",
+      "400111353",
+      "46948905",
+      "589047640",
+      "589047641",
+      "688149996",
+      "721628539",
+      "721628542",
+      "736306923",
+      "80056721",
+      "80056729",
+      "80056747",
+      "81348980"
+    ],
+    [
+      "933975069"
+    ]
+  ],
+  "status": "current_unknown_needs_distinct_scope_review",
+  "execution": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"pair-m11-ckad-spb-to-domodedovo\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":767751,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\",\"unknown-paid-road: unmapped_selected_route_paid_booth\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":200,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"},{\"id\":\"unknown-paid-road\",\"amount\":null,\"reason\":\"unmapped_selected_route_paid_booth\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"pair-m11-ckad-spb-to-domodedovo\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":767751,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\",\"unknown-paid-road: unmapped_selected_route_paid_booth\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":240,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"},{\"id\":\"unknown-paid-road\",\"amount\":null,\"reason\":\"unmapped_selected_route_paid_booth\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-27-32-769Z.json",
+      "sha256": "33cbecb8d7fd726b0be4b6dfa8d935a2fdf837bf8fc3e8500dc1eff6845719b8",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "zsd",
+        "unknown-paid-road"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": 200,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ]
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-27-33-106Z.json",
+      "sha256": "1ea395f6ab78a4311a48c1a1a3741edd6abe14ced678648d5c386e75fa7dc2bd",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "zsd",
+        "unknown-paid-road"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": 240,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,467 @@
+{
+  "status": "PASS",
+  "checkedCases": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "ownFullTraceCount": 9,
+      "auxiliaryCount": 0,
+      "directedScope": "Благодатная → КАД-юг к Пулковскому",
+      "namedZsdWayIds": [
+        "1090759975",
+        "1120339785",
+        "129780705",
+        "139658546",
+        "400111352",
+        "400111353",
+        "46948905",
+        "721628539",
+        "80056729",
+        "81348980"
+      ],
+      "witnesses": [
+        {
+          "index": 573.0033700289778,
+          "distanceKm": 0.0000025601542704355854
+        },
+        {
+          "index": 574.0000764598246,
+          "distanceKm": 0.000005540861019032357
+        },
+        {
+          "index": 575.0009532490399,
+          "distanceKm": 0.000006863953568277221
+        }
+      ],
+      "negativeChecks": 3,
+      "calculatedComponents": 4,
+      "zsdRub": 300,
+      "knownSubtotalRub": 4494,
+      "calculatedTripRub": null,
+      "missing": [
+        "m12",
+        "ckad"
+      ],
+      "missingReasons": [
+        {
+          "id": "m12",
+          "reason": "m12_current_operator_pair_not_bound"
+        },
+        {
+          "id": "ckad",
+          "reason": "ckad_east_arc_not_proven"
+        }
+      ],
+      "confirmedFullTripFares": 0
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "ownFullTraceCount": 10,
+      "auxiliaryCount": 0,
+      "directedScope": "Благодатная → КАД-юг к Пулковскому",
+      "namedZsdWayIds": [
+        "1090759975",
+        "1120339785",
+        "129780705",
+        "139658546",
+        "400111352",
+        "400111353",
+        "46948905",
+        "721628539",
+        "80056729",
+        "81348980"
+      ],
+      "witnesses": [
+        {
+          "index": 573.0033700289778,
+          "distanceKm": 0.0000025601542704355854
+        },
+        {
+          "index": 574.0000764598246,
+          "distanceKm": 0.000005540861019032357
+        },
+        {
+          "index": 575.0009532490399,
+          "distanceKm": 0.000006863953568277221
+        }
+      ],
+      "negativeChecks": 3,
+      "calculatedComponents": 4,
+      "zsdRub": 300,
+      "knownSubtotalRub": 4494,
+      "calculatedTripRub": null,
+      "missing": [
+        "m12",
+        "ckad"
+      ],
+      "missingReasons": [
+        {
+          "id": "m12",
+          "reason": "m12_current_operator_pair_not_bound"
+        },
+        {
+          "id": "ckad",
+          "reason": "ckad_east_arc_not_proven"
+        }
+      ],
+      "confirmedFullTripFares": 0
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "ownFullTraceCount": 9,
+      "auxiliaryCount": 1,
+      "directedScope": "Благодатная → КАД-юг к Пулковскому",
+      "namedZsdWayIds": [
+        "1090759975",
+        "1120339785",
+        "129780705",
+        "139658546",
+        "400111352",
+        "400111353",
+        "46948905",
+        "721628539",
+        "80056729",
+        "81348980"
+      ],
+      "witnesses": [
+        {
+          "index": 573.0033700289778,
+          "distanceKm": 0.0000025601542704355854
+        },
+        {
+          "index": 574.0000764598246,
+          "distanceKm": 0.000005540861019032357
+        },
+        {
+          "index": 575.0009532490399,
+          "distanceKm": 0.000006863953568277221
+        }
+      ],
+      "negativeChecks": 3,
+      "calculatedComponents": 5,
+      "zsdRub": 300,
+      "knownSubtotalRub": 7254,
+      "calculatedTripRub": 7254,
+      "missing": [],
+      "missingReasons": [],
+      "confirmedFullTripFares": 0
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-torzhok",
+      "ownFullTraceCount": 4,
+      "auxiliaryCount": 0,
+      "directedScope": "Благодатная → КАД-юг к Пулковскому",
+      "namedZsdWayIds": [
+        "1090759975",
+        "1120339785",
+        "129780705",
+        "139658546",
+        "400111352",
+        "400111353",
+        "46948905",
+        "721628539",
+        "80056729",
+        "81348980"
+      ],
+      "witnesses": [
+        {
+          "index": 573.0033700289778,
+          "distanceKm": 0.0000025601542704355854
+        },
+        {
+          "index": 574.0000764598246,
+          "distanceKm": 0.000005540861019032357
+        },
+        {
+          "index": 575.0009532490399,
+          "distanceKm": 0.000006863953568277221
+        }
+      ],
+      "negativeChecks": 3,
+      "calculatedComponents": 1,
+      "zsdRub": 300,
+      "knownSubtotalRub": 300,
+      "calculatedTripRub": null,
+      "missing": [
+        "m11-58-679",
+        "unknown-paid-road"
+      ],
+      "missingReasons": [
+        {
+          "id": "m11-58-679",
+          "reason": "only_one_verified_boundary_crossing"
+        },
+        {
+          "id": "unknown-paid-road",
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "confirmedFullTripFares": 0
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "ownFullTraceCount": 9,
+      "auxiliaryCount": 1,
+      "directedScope": "Благодатная → КАД-юг к Пулковскому",
+      "namedZsdWayIds": [
+        "1090759975",
+        "1120339785",
+        "129780705",
+        "139658546",
+        "400111352",
+        "400111353",
+        "46948905",
+        "721628539",
+        "80056729",
+        "81348980"
+      ],
+      "witnesses": [
+        {
+          "index": 573.0033700289778,
+          "distanceKm": 0.0000025601542704355854
+        },
+        {
+          "index": 574.0000764598246,
+          "distanceKm": 0.000005540861019032357
+        },
+        {
+          "index": 575.0009532490399,
+          "distanceKm": 0.000006863953568277221
+        }
+      ],
+      "negativeChecks": 3,
+      "calculatedComponents": 5,
+      "zsdRub": 300,
+      "knownSubtotalRub": 7254,
+      "calculatedTripRub": 7254,
+      "missing": [],
+      "missingReasons": [],
+      "confirmedFullTripFares": 0
+    }
+  ],
+  "sourceChecks": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+      "sha256": "debfe6e45d6c51554d2710b83068f206ffbf93cf9f4b3bc4d9aa3bdfdbd0a8c5"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/whsd-owner-tariffs.html",
+      "sha256": "02f1f3eb15f566831bc83bfc9599c17a5520a97a752bc2735d832f7a9308aad5"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/whsd-owner-rules.html",
+      "sha256": "7fc16154f626d7596c6f12ec6f85e3db1d70b7b63c58981bcf18e2cace9cc4e7"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-ways.osm.gz",
+      "sha256": "327c5bdd61576e414184ef2d6b2fbebfab71cc32cb7589a55c5fd98ab1a3b954"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-zones-96.pdf",
+      "sha256": "3651cf7c42ec6530f2d994cd03c2929c94bd45c86b8479ebce98b6688b23975e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-base-32-1.pdf",
+      "sha256": "a8041b8a0b44189fd9f3e8dcd9bf155ec9b1b86c2023445fa2805367f0586413"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-rules.html",
+      "sha256": "39da1d5dd3a4235c50c09e55736b4939a5c62735464348564a7e606ce4b701c3"
+    }
+  ],
+  "distinctUsedResponses": [
+    {
+      "key": "f19098ecac2d8b81006a2171fc0d6e04267359a277b1191757b5e829ffda9ae0",
+      "path": "responses/seed-f19098ecac2d8b81006a2171fc0d6e04267359a277b1191757b5e829ffda9ae0.json.gz",
+      "sha256": "1c6845a0aa802f3f04dbc066b571ec790da769250f6dae866984eb714b249981",
+      "requestSha256": "3e2c7788ce3bdb05fb0cc7ac500a7ce47a7126201acc2261589d9b14ac75cbc5",
+      "responseSha256": "67993f0e84d379fa76223821522cdd13fba99ab020d97296497d952b949a4c30",
+      "priorSeed": true,
+      "points": 320
+    },
+    {
+      "key": "cbd75ae154f0ac57f35c2d3b00833b37d0fe9f9a2f394af7bdf8599fab19e6b3",
+      "path": "responses/seed-cbd75ae154f0ac57f35c2d3b00833b37d0fe9f9a2f394af7bdf8599fab19e6b3.json.gz",
+      "sha256": "642c496711f40c88ec9584b57d33992d2aa962979b1bf1116a13227bd417ae8d",
+      "requestSha256": "a39b6b7d34965a57377b8c38d3e88f9a0cedc4fc748edbe7b3220c3fee9b561d",
+      "responseSha256": "eb6a0fdf0ba0feaadd6d9a29f88f3c4d14d933e7e5571ae8f5100b7a4a484ab2",
+      "priorSeed": true,
+      "points": 320
+    },
+    {
+      "key": "fd4ff3d1d167548b8b73258a29933fe9802c18302f43e5040c21c411a303bdf8",
+      "path": "responses/seed-fd4ff3d1d167548b8b73258a29933fe9802c18302f43e5040c21c411a303bdf8.json.gz",
+      "sha256": "4dd6f39db441bf77879a7e2edfacc47c4e0b90f8c201f52de18f15cba2a5b704",
+      "requestSha256": "482ee45e73ac91f102951c8c8c01af469d1cfa02d803147a679386950642a0aa",
+      "responseSha256": "12f342779af8a6b9f8b5fb75f9cd0e5e680018a0c0480e66efcb245a538d7839",
+      "priorSeed": true,
+      "points": 320
+    },
+    {
+      "key": "132596df67514137e3a709e74d15405f4cad6acb8d84554e236949b36935bb49",
+      "path": "responses/seed-132596df67514137e3a709e74d15405f4cad6acb8d84554e236949b36935bb49.json.gz",
+      "sha256": "339e83348c009a244b37875af9bbb036e8906624870e314a7edda69d93038738",
+      "requestSha256": "bcd0074aee494b2f3c247ce2baa0eadc665b51f4c28a15ebc46944d1f750756f",
+      "responseSha256": "d533d652c6607e75b91342bfb764acdd0f553c1e5aafe990f8432e09d6707017",
+      "priorSeed": true,
+      "points": 320
+    },
+    {
+      "key": "aaae46ebb9956338e9c2cfbedf304767b9a5270e235f90b5c936440dab73f3ea",
+      "path": "responses/network-0001.json.gz",
+      "sha256": "a97d5f4710946d4148d336e5734c54e14bcc1e18db858572d7404d7d86e48902",
+      "requestSha256": "39180eb7abd00fb9cb53a1d55d2abb0a60ec56162d0a888ccce85472b64291e7",
+      "responseSha256": "540e6a8605d13f09dc2596eb2660c47de657089d9ee9fb87786a819f83932de0",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "a1f2baa14135e54ffc7d132d81fca6dfa298d4a2b049a4a8b61e0e4ea55d37cd",
+      "path": "responses/network-0002.json.gz",
+      "sha256": "6b887078e639eef70d2fc73992ebad65684dc18d0781a70f7bd04ca520c00863",
+      "requestSha256": "0b48d4883b5162b183342849479d94794aaa3fe09360f53b4c82cef51ee45279",
+      "responseSha256": "3699719e5ebd71a25bd32dfb23bf9ca58da802c41927d7850f525110bca21e35",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "b092f3ea7577f5c3a86574d5ea583c48b2123dacfdaffae5bca7ab2d89e19662",
+      "path": "responses/network-0003.json.gz",
+      "sha256": "6a68b9db70eed23077e552a97b91eb2257abd641b57cf3893f7c3f36a3ed28bf",
+      "requestSha256": "2f30bec26e0b06240c569ffcf990e74c4fde2a2e2c11ea21332cb5a17e8e4e04",
+      "responseSha256": "bb36141cbaee554064796a0834ee08e83b061e2402396cad179eda23668e9b82",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "4b4b709378afd9d0e9e838fc75c8d6ffc421a332be79742a46a04c1077f9a4d3",
+      "path": "responses/network-0004.json.gz",
+      "sha256": "aa1e01b3558383c70b0e503bda25f21f9d552e617854a957981a14221d36fd5d",
+      "requestSha256": "d3506ea3699c7588a6a38cc491f65781faf78474f049d6000761cafe56dc4424",
+      "responseSha256": "32f30f5c8d90defe256d157cbfb250d065b43433e2519c448263d60b53e434bc",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "337992402a67181c746c9771b0f3f597b9e05a61ffcdb3eb4d74dc067cc5a509",
+      "path": "responses/network-0005.json.gz",
+      "sha256": "5dbd8ab9939875dc403e416050970e4f69a6602c900f4bd0d6dad40545d12b45",
+      "requestSha256": "0bc74e5c09e554f3f101de84e447387d8853b8713f495fc8a4e0673e635b3785",
+      "responseSha256": "e562d310eaeafc456451352215840b281e2c4853852df5edadfc7cd598e5abc7",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "2a5b47010e74b516707444f23a52cbb0317497aa6df40bea56c06648b1a37f37",
+      "path": "responses/network-0006.json.gz",
+      "sha256": "49043161f82a3906377d61bcfb5ce35de297484de4483c336c348fd41fa35d67",
+      "requestSha256": "5a5ebcbb4090585461721860f595b88d5feebd25206e3eba0b843bfa7786c6a1",
+      "responseSha256": "d6fce8e0b53362dbcc8f2621d95a8670f9e08b8086a45ef15bd1993936adddcd",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "e7a79e32c9b49462fbcd543f9f9d0e5fc43d51509980186c841c30f02d185847",
+      "path": "responses/network-0007.json.gz",
+      "sha256": "29089828480cc43d8e510c125bcc46aaa6d404dce4c6bfc2ff24116a84cba75d",
+      "requestSha256": "3b7e1a1f9094ac1417637e9a305869fbd8b389fd83c7a527adef7f91fe7468de",
+      "responseSha256": "4f185fbedf14124e2b3879d670a14c102d59b5bc07486d06df3d6cf1fd8060ff",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "8164e4c35bac280d9c20d9870409bfd464770eb4bb79eebefa62a9e8c62ddc5f",
+      "path": "responses/network-0008.json.gz",
+      "sha256": "7b47cae8d2ecdbeef8e3d68c50f4130508a5a0b6d253773c7b6c53af0dcebd67",
+      "requestSha256": "03439708d9111906869ee17a945fac569a2191e3f4895dcd41af67ec1c575b4e",
+      "responseSha256": "9812d7615ede62fc4098e54d17010ced20fa65e042c6609fd69655734e8804ad",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "487994ddde68283f8662a564a13106c7f2a81b7a77d72839376335242606afff",
+      "path": "responses/network-0009.json.gz",
+      "sha256": "cb49d2d387b362d4af3423bf1a69454e08cf717d6c639c9e2e9a2ea9c102b141",
+      "requestSha256": "2419ad3a6ca573135b6ad2c996c18b633e8180aba031320e34face54a1783c35",
+      "responseSha256": "7f08380d6eaa529ff24971bbecaae4d0a8f69d0a9bf07b7e3ecf2542fb758275",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "59f71cb89ad90298c60bbfc2b8b2f80279e29cada321939f5fbd14487406dc78",
+      "path": "responses/network-0010.json.gz",
+      "sha256": "935578402e0c81e1b7a3535480badf4809153b238f3cc2e6983bc83add4f36d3",
+      "requestSha256": "58163ea199c4e12ebb647589fa7e20554108c5360e73f42b9dd8a368baf5e229",
+      "responseSha256": "55f8528f2025f03f345073c27157ceaae070690027407dd0419e821536167894",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "95a4220226c6fefe9d5ae35a4dedd6c667009cd60700f9b336b9444f10039848",
+      "path": "responses/network-0011.json.gz",
+      "sha256": "89c571ec07a7c750e52f4ef66336eb0964800f8bc6cf36fa715680d8e3603c7a",
+      "requestSha256": "24cf4fe4b6a58ed8a52b77516ba4088e82d4f6cc147dfc992cb2b026bf99e31f",
+      "responseSha256": "c28ba787503f940524c6a4297e65d4a8dcfb320abdfcdc87edf8f1d992ec632d",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "5f30c55fc33d1989396e6b1aeac3348ced638e39444fe1cbd09b6cc13357f9df",
+      "path": "responses/network-0012.json.gz",
+      "sha256": "c3095de7ee9a885eca099de4c5cc09e7924425d97cdcbe98a2409ab750cf9741",
+      "requestSha256": "7e0ce02b3be5f427ed39aa06f6877a0e075c8c415c28753f7a6e5e2a9e4f7efd",
+      "responseSha256": "eb45aa27bbafdc8c2d0b65dd5e2bf079759f4734e59e13aed6a107f9a74c1ded",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "b266c790effbfc2b776b2d5867cfe4f13dbfeebd51e216f8549eb2b7533d556c",
+      "path": "responses/network-0013.json.gz",
+      "sha256": "1db098bed16611a9fcef14f0b9a26bb7a0727b21ad2f7188e6b2bba453d5aeef",
+      "requestSha256": "a4d89140a3e7837dfeefe640be848f87dda7a6731b6b5c678c885595645aa154",
+      "responseSha256": "c960e58b5e8997e7fe14b855c3602ca5128b5010795c492b750a1fccbd876631",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "d5228dce78b783558052a981c6ad9386b33e28e3f3adc2591e0ed16f6f7746c2",
+      "path": "responses/network-0014.json.gz",
+      "sha256": "11c9e334b5fc3e5e0e0a916bf6ccb2657f3dd3617be61da93459e045a76e70df",
+      "requestSha256": "b844cac6d3d43c5ab76b306432b4f282a0a556e9e3c9f3b628b4388713b0c58f",
+      "responseSha256": "e3ad908d2f7a7127b73ef4353ab4c4b13d34ad2b1bc80862bff6de9815e56bd3",
+      "priorSeed": false,
+      "points": 320
+    },
+    {
+      "key": "d6d8dad79491c1e6234fafde36d356512a5b5da8d8abd63eb453bbd7347e95f0",
+      "path": "responses/network-0015.json.gz",
+      "sha256": "c20fae5f95c55d65f9353b555501392f47aea8d21bf38140f7c0169a7e238c8d",
+      "requestSha256": "b46d5e381919f7a0096e2c295ed7b3192177e9a7d79f328d3bf4f2815ca55272",
+      "responseSha256": "1ca6bba4e06d49bb09a54e129ad73305e3cd2d53a1a4d2aa6d8ae2bc4f034366",
+      "priorSeed": false,
+      "points": 24
+    },
+    {
+      "key": "477fd293562644ba81052f38bc7dee848c7dfd2dfd9505eca708ec457ae76222",
+      "path": "responses/network-0016.json.gz",
+      "sha256": "79acfbe564d2ef01b0ad21778b899f3feff574a3682b5d16b5775923fca761ac",
+      "requestSha256": "cdccd77cb5a22bbe18336e383716a5f7f379daf241eb36eaac7c0de05b831d5d",
+      "responseSha256": "f18dc8c21addb519741ffbad8ba697a24cece43bcad7640e169296a8a7b089d4",
+      "priorSeed": false,
+      "points": 320
+    }
+  ],
+  "mainTraceOccurrences": 41,
+  "auxiliaryOccurrences": 2,
+  "localM4Explanation": "Two pricing invocations use one identical own-route local M4 trace, archived once and reused exactly.",
+  "counts": {
+    "checkedCases": 5,
+    "pricedComponents": 19,
+    "pricedZsdComponents": 5,
+    "confirmedFullTripFares": 0,
+    "completeOwnTraces": 5,
+    "newRoutingRequests": 0
+  },
+  "negativeChecks": 15,
+  "fullTripPriceRemainsUnknownCases": 3,
+  "pricedButUnconfirmedTripCases": 2
+}

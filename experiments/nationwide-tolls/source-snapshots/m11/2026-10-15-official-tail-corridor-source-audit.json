@@ -1,0 +1,33 @@
+{
+  "retrievedAt": "2026-10-15",
+  "scope": "Primary-source corridor and toll-system rules only; no fare selected for live route",
+  "sources": [
+    {
+      "url": "https://avtodor-tr.ru/business/road/m-11/",
+      "type": "official road owner page",
+      "claims": [
+        "M-11 paid km 646-684 is operated as a closed toll system, charging distance actually traveled between entry and exit PVPs.",
+        "Pulkovo access starts at km 681; the access road has a free-flow toll system.",
+        "The tariff statement does not identify the exact selected-route lane event at PVP 679 or choose between the 56, 38, and 94 RUB rows of Order 274."
+      ]
+    },
+    {
+      "url": "https://avtodor-tpass.ru/page/punkty-vzimaniya-platy-i-tsentry-podderzhki",
+      "type": "operator PVP list",
+      "claims": [
+        "For the km 668-684 Leningrad region segment, PVP km 679 is operated by OOO Operator of High-Speed Roads North-West, and PVP km 668 by Avtodor-Paid Roads."
+      ],
+      "limitation": "The indexed page establishes PVP/operator identity, not lane-level direction or endpoint pairing for the captured route."
+    }
+  ],
+  "osmArchive": {
+    "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-14-osm-tail-corridor.osm.gz",
+    "nodes": {
+      "2492861243": { "barrier": "toll_booth", "fee": "yes", "onWay": "1395997595", "wayTags": { "highway": "motorway", "ref": "М-11", "toll": "yes", "oneway": "yes" } },
+      "2492861246": { "barrier": "toll_booth", "fee": "yes", "onWays": ["1395997596", "1395997597"], "wayTags": { "highway": "motorway", "ref": "М-11", "toll": "yes", "oneway": "yes" } },
+      "7014845616": { "barrier": "toll_booth", "fee": null, "onWay": "241701006", "wayTags": { "highway": "service", "oneway": "yes", "maxspeed": "30" } }
+    },
+    "limitation": "OSM topology is spatial evidence, not the operator fare/endpoint ledger."
+  },
+  "decision": "Evidence narrows the unknown to event-level route matching, but still does not support activating a numeric tail or Pulkovo fare. Keep public result unknown/null."
+}

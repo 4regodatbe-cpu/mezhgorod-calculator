@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "status": 200,
+  "statusText": "OK",
+  "text": "{\"commit\":\"da77f96f4f9185017938ed07022557611f3ea9bf\",\"environment\":\"production\",\"generatedAt\":\"2026-10-24T14:44:25.868Z\"}",
+  "headers": {
+    "age": "0",
+    "cache-control": "no-store, max-age=0",
+    "content-encoding": "br",
+    "content-type": "application/json",
+    "date": "Sat, 24 Oct 2026 14:44:25 GMT",
+    "server": "Vercel",
+    "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+    "transfer-encoding": "chunked",
+    "x-matched-path": "/api/version",
+    "x-vercel-cache": "MISS",
+    "x-vercel-id": "arn1:iad1::iad1::44m7k-1792853065670-3a4af8210f47"
+  }
+}

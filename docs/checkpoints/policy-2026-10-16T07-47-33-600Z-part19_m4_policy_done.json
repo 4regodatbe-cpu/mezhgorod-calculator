@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-16T07:47:33.600Z",
+  "phase": "PART19_M4_POLICY_DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 10,
+  "total": 25,
+  "next": "zaporizhzhia-молочанск-moscow-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "parent": "269cd6b4fe041d51bdf6086956432c01eaf2c921",
+  "caseId": "dnr-широкино-moscow-center",
+  "evaluation": {
+    "caseId": "dnr-широкино-moscow-center",
+    "result": "not_reproduced_current_engine",
+    "weekdayAmount": 3810,
+    "weekendAmount": 4640,
+    "m4WeekdayAmount": 3810,
+    "m4WeekendAmount": 4640,
+    "remainingMissing": [],
+    "outputs": [
+      {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T07-47-33-027Z.json",
+        "sha256": "1ec773d7bbfbef34b6f9046e3a160c0b56258b2ada00fe10e4b93ded8b4648ac"
+      },
+      {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T07-47-33-568Z.json",
+        "sha256": "5a117927caf1405e753e07e1b577fe232cedca2bbdc1bfe066eff22bff7db2b0"
+      }
+    ],
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/2026-10-15T12-03-07-004Z-capture.json.gz",
+    "captureSha256": "a4bd488dd0d777371b49f1f41ef225b65af21d71b0b65b2c2fb83e8cdd549bda",
+    "components": [
+      {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "components": [
+          {
+            "id": "m4",
+            "amount": 3810,
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      },
+      {
+        "departureAt": "2026-10-17T09:00:00+03:00",
+        "components": [
+          {
+            "id": "m4",
+            "amount": 4640,
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      }
+    ]
+  },
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-33-600Z-part19_m4_policy_done.json"
+}

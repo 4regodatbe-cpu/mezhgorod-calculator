@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "productId": "odintsovo",
+  "provenance": "Primary OSM named toll booths and one-way lanes; identity only, no tariff authorization.",
+  "lanes": [
+    {
+      "osmNodeId": "3109177688",
+      "wayId": "1067836106",
+      "plazaName": "ПВП 17,7 км",
+      "operator": "АО «Новое качество дорог»",
+      "oneway": true,
+      "witnesses": [
+        {
+          "nodeId": "9803415303",
+          "coordinate": [
+            37.178037,
+            55.6417153
+          ]
+        },
+        {
+          "nodeId": "3109177688",
+          "coordinate": [
+            37.1780521,
+            55.6418071
+          ]
+        }
+      ],
+      "sourceFile": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/1067836106.osm.xml",
+      "sourceSha256": "896d898d5651728dd3fef071cb5e8272338584d17605ce2a273b90d1a108cbaa"
+    },
+    {
+      "osmNodeId": "3783549013",
+      "wayId": "374972862",
+      "plazaName": "ПВП 6,9 км",
+      "operator": "АО «Новое качество дорог»",
+      "oneway": true,
+      "witnesses": [
+        {
+          "nodeId": "3783548605",
+          "coordinate": [
+            37.2913688,
+            55.6967811
+          ]
+        },
+        {
+          "nodeId": "3783548642",
+          "coordinate": [
+            37.2919645,
+            55.6969923
+          ]
+        },
+        {
+          "nodeId": "3783548660",
+          "coordinate": [
+            37.2924463,
+            55.697155
+          ]
+        },
+        {
+          "nodeId": "3783548709",
+          "coordinate": [
+            37.2933146,
+            55.6974636
+          ]
+        },
+        {
+          "nodeId": "3783548728",
+          "coordinate": [
+            37.2936582,
+            55.6975895
+          ]
+        },
+        {
+          "nodeId": "3783549013",
+          "coordinate": [
+            37.294105,
+            55.697749
+          ]
+        },
+        {
+          "nodeId": "3783548858",
+          "coordinate": [
+            37.2943773,
+            55.6978462
+          ]
+        },
+        {
+          "nodeId": "3783548873",
+          "coordinate": [
+            37.2947542,
+            55.6979775
+          ]
+        },
+        {
+          "nodeId": "3783548900",
+          "coordinate": [
+            37.2953786,
+            55.6982224
+          ]
+        },
+        {
+          "nodeId": "3783548947",
+          "coordinate": [
+            37.2962871,
+            55.6986214
+          ]
+        },
+        {
+          "nodeId": "920071130",
+          "coordinate": [
+            37.2972387,
+            55.6990292
+          ]
+        }
+      ],
+      "sourceFile": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/374972862.osm.xml",
+      "sourceSha256": "4cd154f387f8e8d3b72efbb8a3c6c7513a689cb57f83b18cfb511897c50d70c3"
+    },
+    {
+      "osmNodeId": "3783549015",
+      "wayId": "374972870",
+      "plazaName": "ПВП 6,9 км",
+      "operator": "АО «Новое качество дорог»",
+      "oneway": true,
+      "witnesses": [
+        {
+          "nodeId": "920071228",
+          "coordinate": [
+            37.2970345,
+            55.6991906
+          ]
+        },
+        {
+          "nodeId": "3783548956",
+          "coordinate": [
+            37.2960687,
+            55.6987867
+          ]
+        },
+        {
+          "nodeId": "3783548925",
+          "coordinate": [
+            37.2951444,
+            55.6984071
+          ]
+        },
+        {
+          "nodeId": "3783548895",
+          "coordinate": [
+            37.2945409,
+            55.6981643
+          ]
+        },
+        {
+          "nodeId": "3783548879",
+          "coordinate": [
+            37.2941755,
+            55.6980258
+          ]
+        },
+        {
+          "nodeId": "3783549015",
+          "coordinate": [
+            37.2937257,
+            55.6978652
+          ]
+        },
+        {
+          "nodeId": "3783548750",
+          "coordinate": [
+            37.2934563,
+            55.6977691
+          ]
+        },
+        {
+          "nodeId": "3783548736",
+          "coordinate": [
+            37.2931169,
+            55.697645
+          ]
+        },
+        {
+          "nodeId": "3783548695",
+          "coordinate": [
+            37.2922675,
+            55.6973267
+          ]
+        },
+        {
+          "nodeId": "3783548659",
+          "coordinate": [
+            37.2918007,
+            55.6971545
+          ]
+        },
+        {
+          "nodeId": "3783548626",
+          "coordinate": [
+            37.2912118,
+            55.6969445
+          ]
+        },
+        {
+          "nodeId": "920071189",
+          "coordinate": [
+            37.290573,
+            55.6967297
+          ]
+        }
+      ],
+      "sourceFile": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/374972870.osm.xml",
+      "sourceSha256": "9d8f83e52801b89f65194a0b3bf47a3cb3f28be3d511fc39904a1d3f76f3eb1b"
+    },
+    {
+      "osmNodeId": "3109177690",
+      "wayId": "1067836109",
+      "plazaName": "ПВП 17,7 км",
+      "operator": "АО «Новое качество дорог»",
+      "oneway": true,
+      "witnesses": [
+        {
+          "nodeId": "9803415306",
+          "coordinate": [
+            37.1774519,
+            55.6417936
+          ]
+        },
+        {
+          "nodeId": "3109177690",
+          "coordinate": [
+            37.1774461,
+            55.6417186
+          ]
+        }
+      ],
+      "sourceFile": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/1067836109.osm.xml",
+      "sourceSha256": "b3d9458ad972ab01d6dfa89b097a7529cbdd477aa8bf40a8d2ec9b2792dd5a02"
+    }
+  ]
+}

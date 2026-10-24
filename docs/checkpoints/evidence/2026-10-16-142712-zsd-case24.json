@@ -1,0 +1,209 @@
+{
+  "caseId": "pair-m11-ckad-noginsk-to-spb",
+  "index": 24,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/2026-10-16T00-04-08-712Z-capture.json.gz",
+  "captureSha256": "738c29e0773a4ac17fa4b56ea324cf060a62533b843560f3ca0413ea9b7234e4",
+  "selectedProvider": "Valhalla",
+  "routeMeters": 772549,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "uniqueZsdWays": [
+    "1122966006",
+    "1122966005",
+    "1122966004",
+    "400111354",
+    "400111351",
+    "31369306",
+    "28934684",
+    "465117517",
+    "80056742",
+    "139658547",
+    "461676671",
+    "80056745",
+    "721628540",
+    "80056716",
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 2,
+      "edgeToll": true,
+      "beginShapeIndex": 512,
+      "endShapeIndex": 513
+    }
+  ],
+  "sameExactZsdWayAndBoothSetAsReviewedFirstCase": true,
+  "sameReviewedScopeCase": "lnr-брянка-saint-petersburg-center",
+  "scopeFingerprint": [
+    [
+      "1122966004",
+      "1122966005",
+      "1122966006",
+      "123709500",
+      "123709505",
+      "139658547",
+      "183912267",
+      "183912268",
+      "223744446",
+      "28934684",
+      "31369306",
+      "381576631",
+      "381576632",
+      "397223749",
+      "397223751",
+      "397223752",
+      "400111351",
+      "400111354",
+      "461676671",
+      "465117517",
+      "721628540",
+      "721628541",
+      "80056716",
+      "80056742",
+      "80056745",
+      "85763340"
+    ],
+    [
+      "933974870"
+    ]
+  ],
+  "status": "source_gated_same_reviewed_zsd_scope",
+  "execution": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"pair-m11-ckad-noginsk-to-spb\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":772549,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd\",\"m11-15-58: m11_partial_head_entry_boundary_unresolved\",\"ckad: ckad_east_arc_not_proven\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":null,\"reason\":\"m11_partial_head_entry_boundary_unresolved\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"ckad\",\"amount\":null,\"reason\":\"ckad_east_arc_not_proven\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"pair-m11-ckad-noginsk-to-spb\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":772549,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd\",\"m11-15-58: m11_partial_head_entry_boundary_unresolved\",\"ckad: ckad_east_arc_not_proven\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":null,\"reason\":\"m11_partial_head_entry_boundary_unresolved\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"ckad\",\"amount\":null,\"reason\":\"ckad_east_arc_not_proven\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-27-12-038Z.json",
+      "sha256": "bea682859719b33e53f2642833051265016606f129a76495807d7242061abc42",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd",
+          "m11-15-58: m11_partial_head_entry_boundary_unresolved",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-27-12-376Z.json",
+      "sha256": "6e35441797d4d72db83cf5b90bec7bb4e8fa282c88ceb5b01658a10f2b7570ea",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd",
+          "m11-15-58: m11_partial_head_entry_boundary_unresolved",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    }
+  ]
+}

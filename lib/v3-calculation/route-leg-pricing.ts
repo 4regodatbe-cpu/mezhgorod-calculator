@@ -2,6 +2,8 @@ import fareValidity from '@/experiments/nationwide-tolls/engine/fare-validity.cj
 import { resolveM12ProductBoundaries } from "./m12-product-boundaries";
 import { resolveM11ProductBoundaries } from "./m11-product-boundaries";
 import { unpricedRoadCoverage } from "./unpriced-road-coverage";
+import { matrixZsdCashCardComponent } from "./zsd-cash-card-component";
+import { matrixOdintsovoPairComponent } from "./odintsovo-pair-component";
 import { m11TraversalSafety } from "./m11-traversal-safety";
 import { matrixM11Component, matrixM11GeometryComponent } from "@/experiments/nationwide-tolls/engine/m11-route-adapter.mjs";
 import { matrixCkadComponent } from "@/experiments/nationwide-tolls/engine/ckad-route-adapter.mjs";
@@ -21,6 +23,7 @@ import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { facilityAnchors, haversineKm } from "@/lib/toll-engine/m11-moscow-geometry";
 import { calculateM11MoscowToPetersburg } from "@/lib/toll-engine/m11-moscow-production";
 import { inspectM11PulkovoAccess } from "@/lib/toll-engine/m11-pulkovo-evidence";
+import { matrixM11TailComponent } from "@/lib/toll-engine/m11-tail-component";
 import { resolveCkadProductBoundaries } from "./ckad-product-boundaries";
 import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent } from "@/lib/toll-engine/route-toll-composition";
 import { compositionValidation, routeDifferenceEvidence, unknownValidation, zeroUnknownTolls, type TollEstimate } from "../v2-calculation/free-route-selection";
@@ -45,7 +48,7 @@ export async function calculateLegTolls({
   selectedFastRoute,
   confirmedFreeRoute,
   diagnosticFastValidation,
-}: LegTollInput): Promise<{ tolls: TollEstimate & {priceConfirmation:string;displayLabel:string}; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
+}: LegTollInput): Promise<{ tolls: TollEstimate & {priceConfirmation:string;displayLabel:string | null}; fastValidation: TollValidation; componentAudit: {status:string;priced:string[];missing:string[];components:RouteTollComponent[]}; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
@@ -55,13 +58,16 @@ export async function calculateLegTolls({
 
   const legacyFamilies = detectedFamiliesFromLegacySegments(geometricTolls.segments);
 
-  const productionM4 = await resolveSelectedM4Endpoints(routeGeometry, routeSeconds);
+  const productionM4 = await resolveSelectedM4Endpoints(routeGeometry, routeSeconds, diagnosticFastValidation, selectedFastRoute.m4RoadBoundaries);
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
+  if (productionM4.m4PvpPreview && matrixM4?.tariffVector) {
+    productionM4.m4PvpPreview.tariffVector = matrixM4.tariffVector;
+  }
   const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as ProductionM4Result["tolls"]} : null, geometricTolls.segments, departureAt, routeSeconds);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
   const m11Airport = inspectM11PulkovoAccess(routeGeometry);
-  const m11Boundaries = resolveM11ProductBoundaries(routeGeometry,routeSeconds,departureAt);
-  const matrixM11Geometry = matrixM11GeometryComponent({exact:m11Boundaries.resolved,parts:m11Boundaries.parts});
+  const m11Boundaries = resolveM11ProductBoundaries(routeGeometry,routeSeconds,departureAt,selectedFastRoute.m11RoadEvidence,diagnosticFastValidation);
+  const matrixM11Geometry = matrixM11GeometryComponent({exact:m11Boundaries.resolved,parts:m11Boundaries.parts},departureAt);
   const productionM11 = selectedFastRoute.m11RoadEvidence
     ? calculateProductionM11(
         routeGeometry,
@@ -86,6 +92,7 @@ export async function calculateLegTolls({
     !firstM11Block || !facilityAnchors("p679").some(anchor =>
       haversineKm(anchor, firstM11Block.beginCoordinate) <= 0.5)
   ));
+  const matrixM11Tail = matrixM11TailComponent(m11TailUnresolved, departureAt);
   const matrixM11 = m11SafetyReason ? {tolls:null,reason:m11SafetyReason}
     : matrixM11Component(productionM11, departureAt, routeSeconds);
   const m12Span = selectedFastRoute.m12EndpointSpan ?? selectedFastRoute.m12StrictSpan;
@@ -94,7 +101,7 @@ export async function calculateLegTolls({
   const m4Detected = productionM4.candidate || legacyFamilies.has("m4_a289") || Boolean(m4A289);
   const m11Detected = m11Boundaries.candidate || productionM11Geometry.candidate || legacyFamilies.has("m11") || Boolean(selectedFastRoute.m11RoadEvidence?.strictBlocks.length);
   const m12Detected = legacyFamilies.has("m12") || Boolean(m12Span) || selectedFastRoute.m12Candidate === true;
-  const productionCkad = resolveCkadProductBoundaries(routeGeometry, selectedFastRoute.m11RoadEvidence);
+  const productionCkad = resolveCkadProductBoundaries(routeGeometry, selectedFastRoute.m11RoadEvidence, diagnosticFastValidation);
   const matrixCkad = matrixCkadComponent(productionCkad, departureAt, routeSeconds);
   // CKAD is a paid component only when legacy evidence names it or the strict
   // route-level CKAD engine proves a candidate/verified east-arc traversal.
@@ -139,7 +146,8 @@ export async function calculateLegTolls({
     component.reason = m11BlockReason;
   }
   m11Products.push({id:"m11-679-684",detected:m11Airport.candidate || m11TailUnresolved,
-    tolls:null,reason:m11Airport.candidate ? m11Airport.reason : "m11_679_684_continuation_not_priced"});
+    tolls:matrixM11Tail?.tolls ?? null,
+    reason:matrixM11Tail?.reason ?? (m11Airport.candidate ? m11Airport.reason : "m11_679_684_continuation_not_priced")});
 
   const southernProducts: RouteTollComponent[] = m4A289?.components ?? [{id:"m4",detected:m4Detected,
     tolls:matrixM4?.tolls as ProductionM4Result["tolls"] ?? null,reason:matrixM4?.reason ?? productionM4.reason}];
@@ -161,7 +169,11 @@ export async function calculateLegTolls({
     { id: "m1", detected: unpricedCoverage.m1, tolls: null, reason: "m1_engine_not_yet_composed" },
     { id: "m3", detected: unpricedCoverage.m3, tolls: null, reason: "m3_engine_not_yet_composed" },
     {id:"ckad-small-vyazemy",detected:unpricedCoverage.smallVyazemy,tolls:null,reason:"small_vyazemy_physical_boundaries_not_priced"},
-    ...unpricedCoverage.regionalProducts.map(product=>({id:product.id,detected:true,tolls:null,reason:product.reason})),
+    ...unpricedCoverage.regionalProducts.map(product=>product.id==='zsd'
+      ?{id:product.id,detected:true,...matrixZsdCashCardComponent(routeGeometry,diagnosticFastValidation,departureAt,routeSeconds)}
+      :product.id==='odintsovo'
+      ?{id:product.id,detected:true,...matrixOdintsovoPairComponent(routeGeometry,diagnosticFastValidation,departureAt,routeSeconds)}
+      :{id:product.id,detected:true,tolls:null,reason:product.reason}),
   ];
   const composition = composeRouteTolls(components);
 
@@ -204,7 +216,7 @@ export async function calculateLegTolls({
     // certify a complete selected-route charge, even when the subset has money.
     if (localRecovery) {
       pricedTolls = zeroUnknownTolls(localRecovery,
-        ["Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика", ...localRecovery.segments]);
+          ["Полная стоимость коридора неизвестна; найденные отрезки — только диагностика", ...localRecovery.segments]);
       fastValidation = unknownValidation("Найдены приблизительные платные отрезки; полного тарифа маршрута нет");
     }
   }
@@ -229,7 +241,7 @@ export async function calculateLegTolls({
       const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
       if (remoteRecovery) {
         pricedTolls = zeroUnknownTolls(remoteRecovery,
-          ["Полная стоимость коридора не подтверждена; найденные отрезки — только диагностика", ...remoteRecovery.segments]);
+          ["Полная стоимость коридора неизвестна; найденные отрезки — только диагностика", ...remoteRecovery.segments]);
         fastValidation = unknownValidation("Резервный расчёт нашёл только часть отрезков; полный тариф выбранного маршрута неизвестен");
       } else if (fastValidation.status !== "free" || fastValidation.complete !== true) {
         fastValidation = unknownValidation("Проверка дорожных рёбер не дала готового тарифа или полного подтверждения бесплатного маршрута");
@@ -238,5 +250,10 @@ export async function calculateLegTolls({
   }
 
   const tolls = pricedTolls;
-  return { tolls: { ...tolls, priceConfirmation: matrixM4?.tolls && composition.status === "priced" ? matrixM4.priceConfirmation : "unconfirmed", displayLabel: "Стоимость не подтверждена" }, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
+  // Read-only audit of the composition that was actually priced. It never
+  // changes eligibility or the total, and is not added to the public API DTO.
+  const componentAudit = {status:composition.status,priced:[...composition.priced],missing:[...composition.missing],
+    components:components.filter(component=>component.detected).map(component=>({...component,
+      tolls:component.tolls?{...component.tolls,segments:[...component.tolls.segments]}:null}))};
+  return { componentAudit, tolls: { ...tolls, priceConfirmation: matrixM4?.tolls && composition.status === "priced" ? matrixM4.priceConfirmation : "unconfirmed", displayLabel: null }, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
 }

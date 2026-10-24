@@ -1,0 +1,184 @@
+{
+  "sourceRequest": "requests/001.json.gz",
+  "approach": "Кубинская улица → подъезд развязки Благодатной → ПВП318102347 → ЗСД к КАД",
+  "orderedEdges": [
+    {
+      "edgeIndex": 344,
+      "way_id": 331995960,
+      "toll": false,
+      "end_shape_index": 534,
+      "begin_shape_index": 533,
+      "names": [
+        "Кубинская улица"
+      ],
+      "end_node": {
+        "intersecting_edges": [
+          {}
+        ],
+        "node_id": 1718647232,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 345,
+      "way_id": 331995960,
+      "toll": false,
+      "end_shape_index": 537,
+      "begin_shape_index": 534,
+      "names": [
+        "Кубинская улица"
+      ],
+      "end_node": {
+        "intersecting_edges": [
+          {},
+          {}
+        ],
+        "node_id": 1399448104,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 346,
+      "way_id": 880516882,
+      "toll": false,
+      "end_shape_index": 538,
+      "begin_shape_index": 537,
+      "names": [
+        "Кубинская улица"
+      ],
+      "end_node": {
+        "intersecting_edges": [
+          {},
+          {}
+        ],
+        "node_id": 301550299,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 347,
+      "way_id": 28935158,
+      "toll": true,
+      "end_shape_index": 539,
+      "begin_shape_index": 538,
+      "end_node": {
+        "intersecting_edges": [
+          {}
+        ],
+        "node_id": 318102375,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 348,
+      "way_id": 972792570,
+      "toll": true,
+      "end_shape_index": 541,
+      "begin_shape_index": 539,
+      "end_node": {
+        "node_id": 7556576329,
+        "type": "toll_gantry"
+      }
+    },
+    {
+      "edgeIndex": 349,
+      "way_id": 972792570,
+      "toll": true,
+      "end_shape_index": 542,
+      "begin_shape_index": 541,
+      "sign": {},
+      "end_node": {
+        "node_id": 318102373,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 350,
+      "way_id": 972792569,
+      "toll": true,
+      "end_shape_index": 548,
+      "begin_shape_index": 542,
+      "end_node": {
+        "intersecting_edges": [
+          {}
+        ],
+        "node_id": 13691124847,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 351,
+      "way_id": 972792569,
+      "toll": true,
+      "end_shape_index": 555,
+      "begin_shape_index": 548,
+      "end_node": {
+        "node_id": 9003331664,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 352,
+      "way_id": 305638466,
+      "toll": true,
+      "end_shape_index": 556,
+      "begin_shape_index": 555,
+      "end_node": {
+        "intersecting_edges": [
+          {}
+        ],
+        "node_id": 318102363,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 353,
+      "way_id": 305638466,
+      "toll": true,
+      "end_shape_index": 573,
+      "begin_shape_index": 556,
+      "end_node": {
+        "node_id": 3789313436,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 354,
+      "way_id": 375574651,
+      "toll": true,
+      "end_shape_index": 574,
+      "begin_shape_index": 573,
+      "end_node": {
+        "node_id": 318102347,
+        "type": "toll_booth"
+      }
+    },
+    {
+      "edgeIndex": 355,
+      "way_id": 375574651,
+      "toll": true,
+      "end_shape_index": 575,
+      "begin_shape_index": 574,
+      "sign": {},
+      "end_node": {
+        "node_id": 3789313425,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 356,
+      "way_id": 375574658,
+      "toll": true,
+      "end_shape_index": 576,
+      "begin_shape_index": 575,
+      "end_node": {
+        "intersecting_edges": [
+          {}
+        ],
+        "node_id": 6428471651,
+        "type": "street_intersection"
+      }
+    }
+  ],
+  "observation": "Raw also records toll_gantry7556576329 on entry way972792570 before cash/card booth318102347. The gantry is retained as an observed node, not assigned a separate zero or guessed fee. The applied 300 vector is based on the entire directed zone1 entry/exit scope under owner order96/32_1, not on counting booth/gantry nodes."
+}

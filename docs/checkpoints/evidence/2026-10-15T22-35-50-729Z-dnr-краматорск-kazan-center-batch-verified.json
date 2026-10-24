@@ -1,0 +1,43 @@
+{
+  "caseId": "dnr-краматорск-kazan-center",
+  "status": "audited",
+  "commandExit": 0,
+  "stage1Completed": 21,
+  "stage1Planned": 155,
+  "next": {
+    "caseId": "dnr-краматорск-kerch-center",
+    "kind": "regional",
+    "region": "dnr"
+  },
+  "provider": "OSRM",
+  "routeMeters": 1463931,
+  "traceComplete": true,
+  "weekday": 850,
+  "weekend": 850,
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "components": [
+    {
+      "id": "m12",
+      "amount": 850,
+      "reason": "matrix dated selected-route M12 directed endpoint pair"
+    }
+  ],
+  "captureSha256": "fb8bff8a79010fd8e9df840a6814ff743b5494c510deeea5aa1ffafde82368c3",
+  "parity": true,
+  "evidence": {
+    "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-35-50-959Z.json",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-36-17-143Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kazan-center/2026-10-15T22-36-17-033Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-36-17-646Z.json",
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-36-18-077Z.json",
+    "sameDateParity": true
+  },
+  "commands": {
+    "inventory": 0,
+    "report": 0
+  },
+  "parentRemote": "84ac2ab9bf2ae9d712af8cab63f2d3d93e1f1a3a"
+}

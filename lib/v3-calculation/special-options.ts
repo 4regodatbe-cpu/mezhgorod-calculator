@@ -8,6 +8,7 @@ import { calculateLegTolls } from "./route-leg-pricing";
 import { hasPracticalSavings, tollsForApi, withinDetourLimits } from "../v2-calculation/free-route-selection";
 import { validateTollEdges } from "../toll-validator";
 import { selectFastestRoute } from "@/experiments/nationwide-tolls/fastest-route-policy.mjs";
+import type { CalculationStage, CalculationTiming } from "../calculation-timing";
 
 type PricedCandidate = {
   corridor:"mainland"|"crimea";
@@ -27,12 +28,16 @@ type PricedCandidate = {
   freeCandidate:null;
 };
 
-export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string,fastestOnly=false) {
+export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string,fastestOnly=false,timing?:CalculationTiming) {
+  const measure = <T>(stage:CalculationStage,operation:()=>Promise<T>) => timing ? timing.measure(stage,operation) : operation();
   const plans=candidatePlans(from.position,to.position,zones);
   const preferredCorridor=plans[0]?.corridor??"mainland";
   const candidates = await Promise.all(plans.map(async plan => {
     const rejectedStretchProviders=new Map<string,number>();
-    const responses=await Promise.allSettled([valhalla(from,to,1,plan.positions),osrmRoute(from,to,plan.positions)]);
+    const responses=await measure("routing",()=>Promise.allSettled([
+      measure("provider_valhalla",()=>valhalla(from,to,1,plan.positions)),
+      measure("provider_osrm",()=>osrmRoute(from,to,plan.positions)),
+    ]));
     const routed=responses.map((response,index) => {
       if(response.status!=="fulfilled")return null;
       try {
@@ -67,8 +72,8 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     const routesToPrice=fastestOnly?rankedRoutes.filter(item=>item.provider===routeChoice.provider):rankedRoutes;
     const selected:PricedCandidate[]=[];
     for(const item of routesToPrice){
-      const selectedRouteValidation=await validateTollEdges(item.route.coordinates);
-      const pricing=await calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:selectedRouteValidation});
+      const selectedRouteValidation=await measure("toll_matching",()=>validateTollEdges(item.route.coordinates));
+      const pricing=await measure("toll_pricing",()=>calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:selectedRouteValidation}));
       const {route,index,...candidate}=item;
       void index;
       selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality,m4PvpPreview:pricing.m4PvpPreview,nationalTollCoverage:pricing.nationalTollCoverage}});

@@ -1,0 +1,52 @@
+{
+  "status": "DONE_SOURCE_DERIVED_ALIAS_BINDING",
+  "queries": [
+    {
+      "q": "ЦКАД Егорьевское шоссе А107",
+      "domains": [
+        "russianhighways.ru",
+        "tskad.ru",
+        "avtodor-tr.ru"
+      ]
+    },
+    {
+      "q": "ЦКАД Егорьевское шоссе развязка Раменское",
+      "domains": [
+        "russianhighways.ru"
+      ]
+    }
+  ],
+  "operatorDefinitionLead": {
+    "url": "https://avtodor-tr.ru/upload/iblock/165/wiri43iwx18q7t9xc6izr4qeds5odt3z.pdf",
+    "section": "1.12",
+    "searchRef": "turn2search22",
+    "semanticSummary": "Egoryevskoye tariff name denotes the grade-separated A107 interchange near Egoryevskoye road.",
+    "fullReadStatus": 403,
+    "role": "Indexed primary-source discovery lead only; full body unavailable, not claimed as read"
+  },
+  "verifiedOwnerDocument": {
+    "url": "https://www.russianhighways.ru/upload/ckad/Infomemo_CRR4_rus.pdf",
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-18-ramenskoe-owner/operator-ckad4-project-memo.pdf",
+    "sha256": "52d00e6911470dc9bf3f74a4986174dd3c32219f0e8704192f3d92b284113bca",
+    "pages": [
+      24,
+      25,
+      26
+    ],
+    "visualReviewPage": 25,
+    "semanticSummary": "Historical official CKAD4 project memo separates interchange2 at MMK from interchange3 at Egoryevskoye; interchange3 exit1 runs from CKAD north onto A107 south then R105. Diagram and direction agree with independently mapped actual selected connector.",
+    "limit": "Project topology, not current fare document or operator lane ID crosswalk"
+  },
+  "binding": {
+    "from": "М-11 Нева",
+    "to": "Егорьевское шоссе",
+    "kind": "source-derived physical and official road alias association",
+    "physicalJunction": "10832306578",
+    "physicalSource": "../2026-10-18-ramenskoe-exit/physical-exit.json"
+  },
+  "fareSource": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+  "fareRub": 1218,
+  "fareValuesChanged": false,
+  "runtimeChanged": false,
+  "confirmedWholeTripFares": 0
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:57:36.826Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 119,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 17,
+    "spec": {
+      "caseId": "single-m12-arzamas-to-moscow",
+      "kind": "road",
+      "group": "single-m12"
+    }
+  },
+  "caseId": "single-m12-arzamas-to-moscow",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-57-36-825Z-part17",
+  "parent": "aa1fcdebb7f233851c6225a4c577a3732b258a3b"
+}

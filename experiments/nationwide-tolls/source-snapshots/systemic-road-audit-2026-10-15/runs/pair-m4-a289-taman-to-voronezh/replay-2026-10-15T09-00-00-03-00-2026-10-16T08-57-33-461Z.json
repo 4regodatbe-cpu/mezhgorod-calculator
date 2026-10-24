@@ -1,0 +1,336 @@
+{
+  "caseId": "pair-m4-a289-taman-to-voronezh",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 1006381,
+      "seconds": 50717
+    },
+    {
+      "name": "OSRM",
+      "meters": 1026560,
+      "seconds": 49083
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1026560,
+  "routeSeconds": 49083,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 36.716,
+          "lat": 45.211
+        },
+        {
+          "lng": 39.2003,
+          "lat": 51.6608
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m4",
+      "a289"
+    ],
+    "provenRoads": [
+      "a289",
+      "krasnodar-west-bypass",
+      "m4"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1058111108",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1381361836",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1058111107",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "krasnodar-west-bypass",
+      "kind": "selected-paid-edge",
+      "wayId": "1182292334",
+      "names": [
+        "М-4",
+        "Дальний западный обход г. Краснодара"
+      ]
+    },
+    {
+      "road": "krasnodar-west-bypass",
+      "kind": "selected-paid-edge",
+      "wayId": "1380370306",
+      "names": [
+        "М-4",
+        "Дальний западный обход г. Краснодара"
+      ]
+    },
+    {
+      "road": "krasnodar-west-bypass",
+      "kind": "selected-paid-edge",
+      "wayId": "1380370304",
+      "names": [
+        "М-4",
+        "Дальний западный обход г. Краснодара"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1182291333",
+      "names": [
+        "М-4"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1475530180",
+      "names": [
+        "М-4"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1475530182",
+      "names": [
+        "М-4"
+      ]
+    },
+    {
+      "road": "krasnodar-west-bypass",
+      "kind": "selected-booth-name",
+      "osmNodeId": "10979205243"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9772717210"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "6594273708"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5325424716"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11295106602"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11838466120"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "75715767"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "7678126300"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "4315323077"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5818209495"
+    },
+    {
+      "road": "a289",
+      "kind": "selected-geometry-exact-frames",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ]
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "a289": {
+      "occurrences": 179,
+      "uniqueWays": 157
+    },
+    "krasnodar-west-bypass": {
+      "occurrences": 45,
+      "uniqueWays": 42
+    },
+    "m4": {
+      "occurrences": 553,
+      "uniqueWays": 366
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/2026-10-16T00-10-53-930Z-capture.json.gz",
+  "captureSha256": "db7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": null,
+      "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+    },
+    {
+      "id": "a289",
+      "amount": 800,
+      "reason": "A-289 selected-route OD vector"
+    },
+    {
+      "id": "krasnodar-west-bypass",
+      "amount": 410,
+      "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "А-289",
+    "М-4",
+    "Дальний западный обход г. Краснодара",
+    "E 115",
+    "«Дон»",
+    "E 50",
+    "Дон",
+    "Самарское шоссе"
+  ],
+  "tollNodeIds": [
+    "10979205243",
+    "9772717210",
+    "6594273708",
+    "5325424716",
+    "11295106602",
+    "11838466120",
+    "75715767",
+    "7678126300",
+    "4315323077",
+    "5818209495"
+  ],
+  "m4PvpPreview": {
+    "status": "boundaries_resolved",
+    "reason": null,
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 2,
+    "confirmedPvps": [
+      "m4-1223",
+      "m4-545"
+    ],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [
+    "103",
+    "82",
+    "23"
+  ],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m4",
+      "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [
+      "a289",
+      "krasnodar-west-bypass"
+    ],
+    "missing": [
+      "m4"
+    ],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": null,
+        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      },
+      {
+        "id": "a289",
+        "detected": true,
+        "tolls": {
+          "amount": 800,
+          "weekdayAmount": 800,
+          "weekendAmount": 800,
+          "period": "все дни",
+          "segments": [
+            "А-289: TamanBridge → Maryanskaya: 800 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "A-289 selected-route OD vector"
+      },
+      {
+        "id": "krasnodar-west-bypass",
+        "detected": true,
+        "tolls": {
+          "amount": 410,
+          "weekdayAmount": 410,
+          "weekendAmount": 410,
+          "period": "понедельник–четверг",
+          "confidence": "matched",
+          "segments": [
+            "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+      }
+    ]
+  }
+}

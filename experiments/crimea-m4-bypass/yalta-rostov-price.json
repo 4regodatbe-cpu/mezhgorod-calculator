@@ -1,0 +1,101 @@
+{
+  "at": "2026-10-20T11:46:24.204Z",
+  "source": "own live OSRM route + own bounded M4 local trace",
+  "requests": 3,
+  "meters": 789843.2,
+  "seconds": 39570.2,
+  "m4": {
+    "endpointOnly": true,
+    "candidate": true,
+    "exact": false,
+    "tolls": null,
+    "validation": {
+      "status": "toll",
+      "source": "Valhalla map matching",
+      "tollEdgeCount": 1,
+      "checkedEdgeCount": 1,
+      "wayIds": [],
+      "roadNames": [
+        "М-4 Дон"
+      ],
+      "tollBoothCount": 1,
+      "tollBooths": [
+        {
+          "osmNodeId": "5325424716",
+          "wayId": "617143592",
+          "roadNames": [
+            "М-4",
+            "E 50",
+            "E 115",
+            "Дон"
+          ],
+          "edgeIndex": 13,
+          "edgeToll": true,
+          "beginShapeIndex": 25,
+          "endShapeIndex": 26
+        }
+      ],
+      "chunkCount": 2,
+      "checkedChunkCount": 1,
+      "failedChunkCount": 1,
+      "complete": false,
+      "boothEventCoverage": "partial",
+      "message": "M-4 local PVP validator: Локальная проверка неполна: подтверждено 1 (route-traversal fallback 0), отклонено 0, не проверено 1 из 2."
+    },
+    "reason": "Локальная проверка неполна: подтверждено 1 (route-traversal fallback 0), отклонено 0, не проверено 1 из 2.",
+    "m4PvpPreview": {
+      "status": "unknown",
+      "reason": "Локальная проверка неполна: подтверждено 1 (route-traversal fallback 0), отклонено 0, не проверено 1 из 2.",
+      "priceRub": null,
+      "verifiedPriceCells": 0,
+      "candidateCount": 2,
+      "confirmedPvps": [
+        "m4-1093"
+      ],
+      "diagnosticOnly": true
+    }
+  },
+  "matrix": null,
+  "result": {
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": null,
+        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: Локальная проверка неполна: подтверждено 1 (route-traversal fallback 0), отклонено 0, не проверено 1 из 2."
+      },
+      {
+        "id": "a289",
+        "detected": true,
+        "tolls": {
+          "amount": 800,
+          "weekdayAmount": 800,
+          "weekendAmount": 800,
+          "period": "все дни",
+          "segments": [
+            "А-289: TamanBridge → Maryanskaya: 800 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "A-289 selected-route OD vector"
+      },
+      {
+        "id": "krasnodar-west-bypass",
+        "detected": true,
+        "tolls": {
+          "amount": 410,
+          "weekdayAmount": 410,
+          "weekendAmount": 410,
+          "period": "понедельник–четверг",
+          "confidence": "matched",
+          "segments": [
+            "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+      }
+    ],
+    "tolls": null,
+    "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: Локальная проверка неполна: подтверждено 1 (route-traversal fallback 0), отклонено 0, не проверено 1 из 2."
+  }
+}

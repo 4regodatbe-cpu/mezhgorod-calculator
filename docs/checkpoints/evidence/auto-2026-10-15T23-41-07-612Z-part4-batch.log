@@ -1,0 +1,9 @@
+START 1/1 kherson-геническ-kerch-center
+PHASE --live kherson-геническ-kerch-center 2026-10-15T09:00:00+03:00
+{"caseId":"kherson-геническ-kerch-center","mode":"live","provider":"OSRM","routeMeters":296762,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-kerch-center/2026-10-15T23-41-11-118Z-capture.json.gz 2026-10-15T09:00:00+03:00
+{"caseId":"kherson-геническ-kerch-center","mode":"offline-recorded-response-replay","provider":"OSRM","routeMeters":296762,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-kerch-center/2026-10-15T23-41-11-118Z-capture.json.gz 2026-10-17T09:00:00+03:00
+{"caseId":"kherson-геническ-kerch-center","mode":"offline-recorded-response-replay","provider":"OSRM","routeMeters":296762,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"пятница–воскресенье","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+DONE kherson-геническ-kerch-center audited parity=true
+{"batchPath":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T23-41-09-364Z.json","attempted":1,"audited":1,"stoppedReason":null}

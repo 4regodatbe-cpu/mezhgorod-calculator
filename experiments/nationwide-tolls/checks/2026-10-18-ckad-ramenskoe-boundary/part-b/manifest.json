@@ -1,0 +1,84 @@
+{
+  "sourceCommit": "b030cd714d3442de7e32e14c3075e6339c5628fe",
+  "status": "LOCAL_VALIDATION_PASS",
+  "files": [
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/api-ready.json",
+      "bytes": 7044,
+      "sha256": "6ea8d512251e9f031882e896316575cc3d0d04b1f7f87c7e63491d4636567103"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/api-trace-unavailable.json",
+      "bytes": 7211,
+      "sha256": "dcf113d1b2eff0e9bd49f8b5acfe8a21341ef7079783e4d81b310d5d0a41346f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/build.log",
+      "bytes": 70548,
+      "sha256": "38e02f31ec19526dca6dbb6baf811cd2ec40f553613726300e6cd2c1757b7cde"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/eslint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/focused-initial.log",
+      "bytes": 2513,
+      "sha256": "249eb1fa4dd0c72bc3fc87927ce5a4f100a1c74d78b798be60e7e0d6b15c4c29"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/focused.log",
+      "bytes": 1760,
+      "sha256": "0dd19221072e8250fd45d7184ce8d58e6df2e805cbdef796cb976844f2a6b0af"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/negative-pricing.json",
+      "bytes": 181,
+      "sha256": "ba03c407f28deb59b9055aca63cc67ab0d1693c3a1183a779fc7c84f43e5c84c"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/profiles.json",
+      "bytes": 13392,
+      "sha256": "407c639faae114c32fcc8de181b813ed2fa6b5801191eb2bbe408bab93cfcc56"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/tsc.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/part-b/tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "focused": {
+    "initialPass": 14,
+    "initialFail": 1,
+    "finalPass": 15,
+    "finalFail": 0
+  },
+  "build": {
+    "exit": 0,
+    "tests": 784,
+    "pass": 784,
+    "fail": 0,
+    "staticPages": 16
+  },
+  "tscExit": 0,
+  "eslintExit": 0,
+  "newExternalRequests": 0,
+  "newlyPricedComponents": 1,
+  "confirmedFullTripFares": 0
+}

@@ -1,0 +1,27 @@
+{
+  "atUtc": "2026-10-17T14:52:37.988Z",
+  "input": {
+    "caseId": "pair-m11-zsd-prim-to-torzhok",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/2026-10-16T01-32-28-268Z-capture.json.gz",
+    "sha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e"
+  },
+  "routeSha256": "e933912e4b6f074670459f2cfc14a2a44163f141479f19540e3d1111cf54ffa6",
+  "geometrySha256": "3edb9264591acfccdf372b7ffe604901ec314ece9087b74fa561afc67696e1ff",
+  "candidates": [
+    {
+      "provider": "Valhalla",
+      "admitted": false,
+      "seconds": 16578
+    },
+    {
+      "provider": "OSRM",
+      "admitted": true,
+      "seconds": 21098
+    },
+    {
+      "provider": "BRouter",
+      "admitted": false,
+      "seconds": 20967
+    }
+  ]
+}

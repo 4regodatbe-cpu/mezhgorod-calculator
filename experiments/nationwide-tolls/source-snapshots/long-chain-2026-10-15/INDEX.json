@@ -1,0 +1,440 @@
+{
+  "scope": "10 live captures; latest offline recorded-response replay indexed separately; no partial total accepted.",
+  "cases": [
+    {
+      "case": "kazan-spb-ckad",
+      "capture": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-ckad-2026-10-14T21-36-07-401Z/capture.json.gz",
+      "live": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-ckad-2026-10-14T21-36-07-401Z/live.json",
+      "finalStableReplay": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-ckad-2026-10-14T21-36-07-401Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T21-44-46-073Z.json",
+      "provider": "Valhalla",
+      "meters": 1663348,
+      "seconds": 80354,
+      "traceComplete": true,
+      "missingExpectedRoads": [],
+      "liveMissing": [
+        "m11-58-679",
+        "m12",
+        "ckad",
+        "zsd"
+      ],
+      "finalMissing": [
+        "m11-15-58",
+        "m11-679-684",
+        "m12",
+        "ckad",
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": null,
+          "reason": "m11_679_684_continuation_not_priced"
+        },
+        {
+          "id": "m12",
+          "amount": null,
+          "reason": "m12_current_operator_pair_not_bound"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "ЗСД"
+        }
+      ]
+    },
+    {
+      "case": "kazan-spb-moscow",
+      "capture": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-33-33-310Z/capture.json.gz",
+      "live": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-33-33-310Z/live.json",
+      "finalStableReplay": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-33-33-310Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T21-44-46-983Z.json",
+      "provider": "Valhalla",
+      "meters": 1532929,
+      "seconds": 66182,
+      "traceComplete": false,
+      "missingExpectedRoads": [],
+      "liveMissing": [
+        "m11-679-684",
+        "zsd",
+        "unknown-paid-road"
+      ],
+      "finalMissing": [
+        "m11-679-684",
+        "zsd",
+        "unknown-paid-road"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": 880,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": null,
+          "reason": "m11_679_684_continuation_not_priced"
+        },
+        {
+          "id": "m12",
+          "amount": 3513,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "ЗСД"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "selected_route_payment_trace_incomplete"
+        }
+      ]
+    },
+    {
+      "case": "kazan-spb-moscow",
+      "capture": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-44-12-041Z/capture.json.gz",
+      "live": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-44-12-041Z/live.json",
+      "finalStableReplay": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-44-12-041Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T21-46-44-893Z.json",
+      "provider": "Valhalla",
+      "meters": 1532929,
+      "seconds": 66182,
+      "traceComplete": true,
+      "missingExpectedRoads": [],
+      "liveMissing": [
+        "m11-679-684",
+        "zsd"
+      ],
+      "finalMissing": [
+        "m11-679-684",
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": 880,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": null,
+          "reason": "m11_679_684_continuation_not_priced"
+        },
+        {
+          "id": "m12",
+          "amount": 3513,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "ЗСД"
+        }
+      ]
+    },
+    {
+      "case": "krasnodar-spb-ckad",
+      "capture": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-2026-10-14T21-37-26-638Z/capture.json.gz",
+      "live": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-2026-10-14T21-37-26-638Z/live.json",
+      "finalStableReplay": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-2026-10-14T21-37-26-638Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T21-44-47-967Z.json",
+      "provider": "OSRM",
+      "meters": 2267077,
+      "seconds": 116077,
+      "traceComplete": true,
+      "missingExpectedRoads": [],
+      "liveMissing": [
+        "m11-58-679",
+        "ckad",
+        "unknown-paid-road",
+        "zsd"
+      ],
+      "finalMissing": [
+        "m11-15-58",
+        "m11-679-684",
+        "ckad",
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": null,
+          "reason": "m11_679_684_continuation_not_priced"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_arc_length_out_of_range"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "saved_selected_route_zsd_booth:933974949; ЗСД"
+        }
+      ]
+    },
+    {
+      "case": "krasnodar-spb-ckad-outer",
+      "capture": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-outer-2026-10-14T21-41-55-075Z/capture.json.gz",
+      "live": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-outer-2026-10-14T21-41-55-075Z/live.json",
+      "finalStableReplay": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-outer-2026-10-14T21-41-55-075Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T21-44-49-064Z.json",
+      "provider": "OSRM",
+      "meters": 2204090,
+      "seconds": 105497,
+      "traceComplete": true,
+      "missingExpectedRoads": [],
+      "liveMissing": [
+        "m11-15-58",
+        "m11-679-684",
+        "ckad",
+        "zsd"
+      ],
+      "finalMissing": [
+        "m11-15-58",
+        "m11-679-684",
+        "ckad",
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": null,
+          "reason": "m11_679_684_continuation_not_priced"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "saved_selected_route_zsd_booth:933974949; ЗСД"
+        }
+      ]
+    },
+    {
+      "case": "krasnodar-spb-moscow",
+      "capture": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T21-33-34-774Z/capture.json.gz",
+      "live": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T21-33-34-774Z/live.json",
+      "finalStableReplay": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T21-33-34-774Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T21-44-50-091Z.json",
+      "provider": "OSRM",
+      "meters": 2055390,
+      "seconds": 95746,
+      "traceComplete": true,
+      "missingExpectedRoads": [],
+      "liveMissing": [
+        "m11-679-684",
+        "unknown-paid-road",
+        "zsd"
+      ],
+      "finalMissing": [
+        "m11-679-684",
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": null,
+          "reason": "m11_679_684_continuation_not_priced"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "saved_selected_route_zsd_booth:933974949; ЗСД"
+        }
+      ]
+    },
+    {
+      "case": "spb-kazan-moscow",
+      "capture": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-kazan-moscow-2026-10-14T21-34-43-485Z/capture.json.gz",
+      "live": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-kazan-moscow-2026-10-14T21-34-43-485Z/live.json",
+      "finalStableReplay": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-kazan-moscow-2026-10-14T21-34-43-485Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T21-44-51-057Z.json",
+      "provider": "Valhalla",
+      "meters": 1539383,
+      "seconds": 66307,
+      "traceComplete": true,
+      "missingExpectedRoads": [],
+      "liveMissing": [
+        "m11-679-684",
+        "zsd"
+      ],
+      "finalMissing": [
+        "m11-679-684",
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": null,
+          "reason": "m11_679_684_continuation_not_priced"
+        },
+        {
+          "id": "m12",
+          "amount": 3513,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "ЗСД"
+        }
+      ]
+    },
+    {
+      "case": "spb-krasnodar-moscow",
+      "capture": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-14T21-34-43-497Z/capture.json.gz",
+      "live": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-14T21-34-43-497Z/live.json",
+      "finalStableReplay": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-14T21-34-43-497Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T21-44-51-959Z.json",
+      "provider": "OSRM",
+      "meters": 2051957,
+      "seconds": 95882,
+      "traceComplete": false,
+      "missingExpectedRoads": [],
+      "liveMissing": [
+        "m11-679-684",
+        "unknown-paid-road",
+        "zsd"
+      ],
+      "finalMissing": [
+        "m11-679-684",
+        "zsd",
+        "unknown-paid-road"
+      ],
+      "components": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": null,
+          "reason": "m11_679_684_continuation_not_priced"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "saved_selected_route_zsd_booth:318102347; ЗСД"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "selected_route_payment_trace_incomplete"
+        }
+      ]
+    }
+  ],
+  "latestBindingReplays": [
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-ckad-2026-10-14T21-36-07-401Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-20-716Z.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-33-33-310Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-21-274Z.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-44-12-041Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-21-808Z.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-2026-10-14T21-37-26-638Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-22-523Z.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-outer-2026-10-14T21-41-55-075Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-23-200Z.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T21-33-34-774Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-23-818Z.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T22-16-24-914Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-24-459Z.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-kazan-ckad-2026-10-14T22-04-00-214Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-24-994Z.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-kazan-moscow-2026-10-14T21-34-43-485Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-25-496Z.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-14T21-34-43-497Z/replay-2026-10-13T09-00-00-03-00-2026-10-14T22-22-26-142Z.json"
+  ],
+  "newLiveCaptures": [
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-ckad-2026-10-14T21-36-07-401Z/live.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-33-33-310Z/live.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-44-12-041Z/live.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-2026-10-14T21-37-26-638Z/live.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-outer-2026-10-14T21-41-55-075Z/live.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T21-33-34-774Z/live.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T22-16-24-914Z/live.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-kazan-ckad-2026-10-14T22-04-00-214Z/live.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-kazan-moscow-2026-10-14T21-34-43-485Z/live.json",
+    "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-14T21-34-43-497Z/live.json"
+  ]
+}

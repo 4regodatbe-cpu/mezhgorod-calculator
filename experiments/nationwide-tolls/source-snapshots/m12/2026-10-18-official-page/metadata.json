@@ -1,0 +1,26 @@
+{
+  "url": "https://russianhighways.ru/for_drivers/m-12-vostok/",
+  "startedAtUtc": "2026-10-17T23:54:53.307236+00:00",
+  "timeoutSeconds": 15,
+  "initialAttempt": "bs4 import failed before any request; replaced with stdlib",
+  "status": 200,
+  "finalUrl": "https://russianhighways.ru/for_drivers/m-12-vostok/",
+  "headers": {
+    "Server": "nginx",
+    "Date": "Sat, 17 Oct 2026 23:55:00 GMT",
+    "Content-Type": "text/html; charset=UTF-8",
+    "Content-Length": "229612",
+    "Connection": "close",
+    "Vary": "Accept-Encoding",
+    "Set-Cookie": "RHWSSESSID=9V0OoetWq7GUv4icOkuEoqm92bMCl2FO; path=/; domain=russianhighways.ru; secure; HttpOnly; SameSite=Lax",
+    "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "Cache-Control": "no-store, no-cache, must-revalidate",
+    "Pragma": "no-cache",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Security-Policy": "frame-ancestors 'self';",
+    "X-Content-Type-Options": "nosniff"
+  },
+  "bytes": 229612,
+  "sha256": "67df512e56623482aba1ffef987df4197088cd4a021ef2998471f233b466e509",
+  "elapsedSeconds": 8.263
+}

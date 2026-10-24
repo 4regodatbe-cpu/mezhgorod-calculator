@@ -226,8 +226,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -252,8 +252,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -276,8 +276,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -302,8 +302,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -326,8 +326,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -351,8 +351,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -374,8 +374,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -399,8 +399,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -422,8 +422,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -446,8 +446,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -468,8 +468,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -492,8 +492,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -514,8 +514,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -537,8 +537,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -558,8 +558,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -581,15 +581,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-1046",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 3150,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -602,8 +602,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -624,14 +624,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-1046",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 2590,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -644,8 +644,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -666,8 +666,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -902,8 +902,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -929,8 +929,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -954,8 +954,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -981,8 +981,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -1186,8 +1186,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -1213,8 +1213,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -1238,8 +1238,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -1265,8 +1265,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -1595,8 +1595,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -1622,8 +1622,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -1647,8 +1647,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -1674,8 +1674,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -1699,8 +1699,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -1725,8 +1725,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -1749,8 +1749,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -1775,8 +1775,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -1799,8 +1799,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -1824,8 +1824,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -1847,8 +1847,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -1872,8 +1872,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -1895,8 +1895,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -1919,8 +1919,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -1941,8 +1941,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -1965,15 +1965,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-1093",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 3300,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -1987,8 +1987,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -2010,14 +2010,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-1093",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 2740,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -2031,8 +2031,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -2054,8 +2054,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -2303,8 +2303,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -2331,8 +2331,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -2357,8 +2357,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -2385,8 +2385,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -2603,8 +2603,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -2631,8 +2631,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -2657,8 +2657,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -2685,8 +2685,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -3024,8 +3024,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -3052,8 +3052,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -3078,8 +3078,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -3106,8 +3106,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -3132,8 +3132,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -3159,8 +3159,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -3184,8 +3184,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -3211,8 +3211,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -3236,8 +3236,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -3262,8 +3262,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -3286,8 +3286,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -3312,8 +3312,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -3336,8 +3336,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -3361,8 +3361,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -3384,8 +3384,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -3409,15 +3409,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-1184",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 3650,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -3432,8 +3432,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -3456,14 +3456,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-1184",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 3040,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -3478,8 +3478,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -3502,8 +3502,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -3764,8 +3764,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -3793,8 +3793,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -3820,8 +3820,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -3849,8 +3849,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -4080,8 +4080,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -4109,8 +4109,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -4136,8 +4136,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -4165,8 +4165,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -4521,8 +4521,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -4550,8 +4550,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -4577,8 +4577,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -4606,8 +4606,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -4633,8 +4633,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -4661,8 +4661,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -4687,8 +4687,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -4715,8 +4715,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -4741,8 +4741,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -4768,8 +4768,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -4793,8 +4793,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -4820,8 +4820,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -4845,8 +4845,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -4871,8 +4871,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -4895,8 +4895,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -4921,15 +4921,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-1223",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 4150,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -4945,8 +4945,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -4970,14 +4970,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-1223",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 3440,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -4993,8 +4993,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -5018,8 +5018,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -5293,8 +5293,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -5323,8 +5323,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -5351,8 +5351,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -5381,8 +5381,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -5625,8 +5625,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -5655,8 +5655,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -5683,8 +5683,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -5713,8 +5713,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -12199,252 +12199,6 @@
     {
       "road": "m4-candidate",
       "from": "m4-416",
-      "to": "m4-133",
-      "profile": "friSun",
-      "rub": 1900,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
-      "to": "m4-133",
-      "profile": "monThu",
-      "rub": 1520,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
-      "to": "m4-228",
-      "profile": "friSun",
-      "rub": 1400,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
-      "to": "m4-228",
-      "profile": "monThu",
-      "rub": 1120,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
-      "to": "m4-322",
-      "profile": "friSun",
-      "rub": 1080,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
-      "to": "m4-322",
-      "profile": "monThu",
-      "rub": 860,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
-      "to": "m4-339",
-      "profile": "friSun",
-      "rub": 760,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
-      "to": "m4-339",
-      "profile": "monThu",
-      "rub": 600,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
       "to": "m4-460",
       "profile": "friSun",
       "rub": 360,
@@ -12669,78 +12423,6 @@
     {
       "road": "m4-candidate",
       "from": "m4-416",
-      "to": "m4-62",
-      "profile": "friSun",
-      "rub": 2120,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133",
-        "m4-62"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133",
-        "m4-62"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
-      "to": "m4-62",
-      "profile": "monThu",
-      "rub": 1740,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133",
-        "m4-62"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133",
-        "m4-62"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
       "to": "m4-620",
       "profile": "friSun",
       "rub": 1190,
@@ -12947,78 +12629,6 @@
     {
       "road": "m4-candidate",
       "from": "m4-416",
-      "to": "m4-71",
-      "profile": "friSun",
-      "rub": 2300,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133",
-        "m4-71"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133",
-        "m4-71"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
-      "to": "m4-71",
-      "profile": "monThu",
-      "rub": 1830,
-      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
-      "sectionVector": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133",
-        "m4-71"
-      ],
-      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
-      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
-      "effectiveFrom": "2026-03-02T00:00:00+03:00",
-      "sourceFareStatus": "verified-operator-rows",
-      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
-      "runtimeEligible": true,
-      "disposition": "canonical-continuous-endpoint-estimate",
-      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
-      "priceConfirmation": "unconfirmed",
-      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
-      "sourceChain": [
-        "m4-416",
-        "m4-460",
-        "m4-339",
-        "m4-322",
-        "m4-228",
-        "m4-133",
-        "m4-71"
-      ]
-    },
-    {
-      "road": "m4-candidate",
-      "from": "m4-416",
       "to": "m4-803",
       "profile": "friSun",
       "rub": 2450,
@@ -13170,6 +12780,396 @@
         "m4-636",
         "m4-803",
         "m4-911"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-133",
+      "profile": "friSun",
+      "rub": 1900,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-133",
+      "profile": "monThu",
+      "rub": 1520,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-228",
+      "profile": "friSun",
+      "rub": 1400,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-228",
+      "profile": "monThu",
+      "rub": 1120,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-322",
+      "profile": "friSun",
+      "rub": 1080,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-322",
+      "profile": "monThu",
+      "rub": 860,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-339",
+      "profile": "friSun",
+      "rub": 760,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-339",
+      "profile": "monThu",
+      "rub": 600,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-62",
+      "profile": "friSun",
+      "rub": 2120,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133",
+        "m4-62"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133",
+        "m4-62"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-62",
+      "profile": "monThu",
+      "rub": 1740,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133",
+        "m4-62"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133",
+        "m4-62"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-71",
+      "profile": "friSun",
+      "rub": 2300,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133",
+        "m4-71"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133",
+        "m4-71"
+      ]
+    },
+    {
+      "road": "m4-candidate",
+      "from": "m4-460",
+      "to": "m4-71",
+      "profile": "monThu",
+      "rub": 1830,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sectionVector": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133",
+        "m4-71"
+      ],
+      "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
+      "basis": "offline tariff normalization; historical chain alternatives retained for audit",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "runtimeEligible": true,
+      "disposition": "canonical-continuous-endpoint-estimate",
+      "ambiguityReason": "alternative stored chains yield different amounts for the same directed outer-boundary pair/profile",
+      "priceConfirmation": "unconfirmed",
+      "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
+      "sourceChain": [
+        "m4-460",
+        "m4-416",
+        "m4-339",
+        "m4-322",
+        "m4-228",
+        "m4-133",
+        "m4-71"
       ]
     },
     {
@@ -13509,8 +13509,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -13528,8 +13528,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -13545,8 +13545,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -13564,8 +13564,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -13581,8 +13581,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -13599,8 +13599,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -13615,8 +13615,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -13633,8 +13633,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -13649,8 +13649,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -13666,8 +13666,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -13681,8 +13681,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -13698,8 +13698,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -13713,8 +13713,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -13728,8 +13728,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -13742,8 +13742,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -13757,22 +13757,22 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-515",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 530,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -13785,21 +13785,21 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-515",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 380,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -13812,8 +13812,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -13975,8 +13975,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -13995,8 +13995,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14013,8 +14013,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14033,8 +14033,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14233,8 +14233,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14253,8 +14253,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14271,8 +14271,8 @@
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14291,8 +14291,8 @@
       "topologySource": "source-snapshots/m4-conflict-topology-evidence-2026-10-14.json",
       "sourceChain": [
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14762,8 +14762,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14782,8 +14782,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14800,8 +14800,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14820,8 +14820,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -14838,8 +14838,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -14857,8 +14857,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -14874,8 +14874,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -14893,8 +14893,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -14910,8 +14910,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -14928,8 +14928,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -14944,8 +14944,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -14962,8 +14962,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -14978,8 +14978,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -14994,8 +14994,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -15009,8 +15009,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -15025,23 +15025,23 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-545-a",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 690,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -15055,22 +15055,22 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-545-a",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 520,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -15084,8 +15084,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -15244,8 +15244,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -15265,8 +15265,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -15284,8 +15284,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -15305,8 +15305,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -15494,8 +15494,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -15515,8 +15515,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -15534,8 +15534,8 @@
       "sectionVector": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -15555,8 +15555,8 @@
       "sourceChain": [
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16003,8 +16003,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16024,8 +16024,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16043,8 +16043,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16064,8 +16064,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16083,8 +16083,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -16103,8 +16103,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -16121,8 +16121,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -16141,8 +16141,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -16159,8 +16159,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -16178,8 +16178,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -16195,8 +16195,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -16214,8 +16214,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -16231,8 +16231,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -16248,8 +16248,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -16264,8 +16264,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -16281,15 +16281,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-545-b",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 940,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -16297,8 +16297,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -16313,14 +16313,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-545-b",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 700,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -16328,8 +16328,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -16344,8 +16344,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -16509,8 +16509,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16531,8 +16531,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16551,8 +16551,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16573,8 +16573,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16751,8 +16751,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16773,8 +16773,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16793,8 +16793,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -16815,8 +16815,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -18730,8 +18730,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -18752,8 +18752,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -18772,8 +18772,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -18794,8 +18794,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -18814,8 +18814,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -18835,8 +18835,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -18854,8 +18854,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -18875,8 +18875,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -18894,8 +18894,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -18914,8 +18914,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -18932,8 +18932,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -18952,8 +18952,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -18970,8 +18970,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -18988,8 +18988,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -19005,8 +19005,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -19023,15 +19023,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-620",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 1190,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -19040,8 +19040,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -19057,14 +19057,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-620",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 880,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -19073,8 +19073,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -19090,8 +19090,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -19268,8 +19268,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -19291,8 +19291,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -19312,8 +19312,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -19335,8 +19335,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -19901,8 +19901,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -19924,8 +19924,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -19945,8 +19945,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -19968,8 +19968,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -19989,8 +19989,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -20011,8 +20011,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -20031,8 +20031,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -20053,8 +20053,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -20073,8 +20073,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -20094,8 +20094,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -20113,8 +20113,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -20134,8 +20134,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -20153,8 +20153,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -20172,8 +20172,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -20190,8 +20190,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -20209,15 +20209,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-636",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 1830,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -20227,8 +20227,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -20245,14 +20245,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-636",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 1450,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -20262,8 +20262,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -20280,8 +20280,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -20471,8 +20471,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -20495,8 +20495,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -20517,8 +20517,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -20541,8 +20541,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21045,8 +21045,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21068,8 +21068,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21089,8 +21089,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21112,8 +21112,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21133,8 +21133,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -21155,8 +21155,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -21175,8 +21175,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -21197,8 +21197,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -21217,8 +21217,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -21238,8 +21238,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -21257,8 +21257,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -21278,8 +21278,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -21297,8 +21297,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -21316,8 +21316,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -21334,8 +21334,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -21353,15 +21353,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-672",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 1630,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -21371,8 +21371,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -21389,14 +21389,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-672",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 1230,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -21406,8 +21406,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -21424,8 +21424,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -21615,8 +21615,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21639,8 +21639,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21661,8 +21661,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21685,8 +21685,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21803,8 +21803,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21827,8 +21827,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21849,8 +21849,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -21873,8 +21873,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -23730,8 +23730,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -23754,8 +23754,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -23776,8 +23776,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -23800,8 +23800,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -23822,8 +23822,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -23845,8 +23845,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -23866,8 +23866,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -23889,8 +23889,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -23910,8 +23910,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -23932,8 +23932,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -23952,8 +23952,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -23974,8 +23974,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -23994,8 +23994,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -24015,8 +24015,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -24034,8 +24034,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -24055,15 +24055,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-803",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 2450,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -24074,8 +24074,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -24094,14 +24094,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-803",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 2010,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -24112,8 +24112,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -24132,8 +24132,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -24342,8 +24342,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -24367,8 +24367,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -24390,8 +24390,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -24415,8 +24415,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -24594,8 +24594,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -24619,8 +24619,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -24642,8 +24642,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -24667,8 +24667,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25011,8 +25011,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25036,8 +25036,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25059,8 +25059,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25084,8 +25084,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25107,8 +25107,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -25131,8 +25131,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -25153,8 +25153,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -25177,8 +25177,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228"
@@ -25199,8 +25199,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -25222,8 +25222,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -25243,8 +25243,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ],
@@ -25266,8 +25266,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322"
       ]
@@ -25287,8 +25287,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -25309,8 +25309,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
@@ -25329,8 +25329,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
@@ -25351,15 +25351,15 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-911",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "friSun",
       "rub": 2700,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -25371,8 +25371,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -25392,14 +25392,14 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
       "road": "m4-candidate",
       "from": "m4-911",
-      "to": "m4-460",
+      "to": "m4-416",
       "profile": "monThu",
       "rub": 2210,
       "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
@@ -25411,8 +25411,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ],
       "verification": "topology-filtered endpoint estimate; operator rows/date provenance kept separately from unconfirmed exact OD binding",
       "basis": "offline tariff normalization; historical chain alternatives retained for audit",
@@ -25432,8 +25432,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
-        "m4-460"
+        "m4-460",
+        "m4-416"
       ]
     },
     {
@@ -25655,8 +25655,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25681,8 +25681,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25705,8 +25705,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25731,8 +25731,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25923,8 +25923,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25949,8 +25949,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25973,8 +25973,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -25999,8 +25999,8 @@
         "m4-545-b",
         "m4-545-a",
         "m4-515",
-        "m4-416",
         "m4-460",
+        "m4-416",
         "m4-339",
         "m4-322",
         "m4-228",
@@ -26121,7 +26121,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-62\",\"monThu\"]",
+      "key": "[\"m4-460\",\"m4-62\",\"monThu\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -26149,7 +26149,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-62\",\"friSun\"]",
+      "key": "[\"m4-460\",\"m4-62\",\"friSun\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -26177,7 +26177,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-71\",\"monThu\"]",
+      "key": "[\"m4-460\",\"m4-71\",\"monThu\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -26205,7 +26205,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-71\",\"friSun\"]",
+      "key": "[\"m4-460\",\"m4-71\",\"friSun\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -30304,7 +30304,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-133\",\"monThu\"]",
+      "key": "[\"m4-460\",\"m4-133\",\"monThu\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -30330,7 +30330,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-133\",\"friSun\"]",
+      "key": "[\"m4-460\",\"m4-133\",\"friSun\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -32295,7 +32295,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-228\",\"monThu\"]",
+      "key": "[\"m4-460\",\"m4-228\",\"monThu\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -32319,7 +32319,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-228\",\"friSun\"]",
+      "key": "[\"m4-460\",\"m4-228\",\"friSun\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -34186,7 +34186,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-322\",\"monThu\"]",
+      "key": "[\"m4-460\",\"m4-322\",\"monThu\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -34208,7 +34208,7 @@
       "ramp": "m4-355"
     },
     {
-      "key": "[\"m4-416\",\"m4-322\",\"friSun\"]",
+      "key": "[\"m4-460\",\"m4-322\",\"friSun\"]",
       "sourceChain": [
         "m4-416+m4-460",
         "m4-355",
@@ -36870,7 +36870,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-803\",\"m4-460\",\"monThu\"]",
+      "key": "[\"m4-803\",\"m4-416\",\"monThu\"]",
       "sourceChain": [
         "m4-803",
         "m4-672",
@@ -36900,7 +36900,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-803\",\"m4-460\",\"friSun\"]",
+      "key": "[\"m4-803\",\"m4-416\",\"friSun\"]",
       "sourceChain": [
         "m4-803",
         "m4-672",
@@ -36931,7 +36931,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-911\",\"m4-460\",\"monThu\"]",
+      "key": "[\"m4-911\",\"m4-416\",\"monThu\"]",
       "sourceChain": [
         "m4-911",
         "m4-803",
@@ -36963,7 +36963,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-911\",\"m4-460\",\"friSun\"]",
+      "key": "[\"m4-911\",\"m4-416\",\"friSun\"]",
       "sourceChain": [
         "m4-911",
         "m4-803",
@@ -36996,7 +36996,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-1046\",\"m4-460\",\"monThu\"]",
+      "key": "[\"m4-1046\",\"m4-416\",\"monThu\"]",
       "sourceChain": [
         "m4-1046",
         "m4-911",
@@ -37030,7 +37030,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-1046\",\"m4-460\",\"friSun\"]",
+      "key": "[\"m4-1046\",\"m4-416\",\"friSun\"]",
       "sourceChain": [
         "m4-1046",
         "m4-911",
@@ -37065,7 +37065,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-1093\",\"m4-460\",\"monThu\"]",
+      "key": "[\"m4-1093\",\"m4-416\",\"monThu\"]",
       "sourceChain": [
         "m4-1093",
         "m4-1046",
@@ -37101,7 +37101,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-1093\",\"m4-460\",\"friSun\"]",
+      "key": "[\"m4-1093\",\"m4-416\",\"friSun\"]",
       "sourceChain": [
         "m4-1093",
         "m4-1046",
@@ -37138,7 +37138,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-1184\",\"m4-460\",\"monThu\"]",
+      "key": "[\"m4-1184\",\"m4-416\",\"monThu\"]",
       "sourceChain": [
         "m4-1184",
         "m4-1093",
@@ -37176,7 +37176,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-1184\",\"m4-460\",\"friSun\"]",
+      "key": "[\"m4-1184\",\"m4-416\",\"friSun\"]",
       "sourceChain": [
         "m4-1184",
         "m4-1093",
@@ -37215,7 +37215,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-1223\",\"m4-460\",\"monThu\"]",
+      "key": "[\"m4-1223\",\"m4-416\",\"monThu\"]",
       "sourceChain": [
         "m4-1223",
         "m4-1184",
@@ -37255,7 +37255,7 @@
       "ramp": "m4-672"
     },
     {
-      "key": "[\"m4-1223\",\"m4-460\",\"friSun\"]",
+      "key": "[\"m4-1223\",\"m4-416\",\"friSun\"]",
       "sourceChain": [
         "m4-1223",
         "m4-1184",
@@ -38805,8 +38805,8 @@
       "ruleSource": "source-snapshots/m4-355-receipt-rule-verified-2026-10-14.json"
     },
     {
-      "key": "[\"m4-416\",\"m4-355\",\"monThu\"]",
-      "from": "m4-416",
+      "key": "[\"m4-460\",\"m4-355\",\"monThu\"]",
+      "from": "m4-460",
       "to": "m4-355",
       "profile": "monThu",
       "reason": "not-a-published-continuous-355-entry-pair",
@@ -38821,8 +38821,8 @@
       "ruleSource": "source-snapshots/m4-355-receipt-rule-verified-2026-10-14.json"
     },
     {
-      "key": "[\"m4-416\",\"m4-355\",\"friSun\"]",
-      "from": "m4-416",
+      "key": "[\"m4-460\",\"m4-355\",\"friSun\"]",
+      "from": "m4-460",
       "to": "m4-355",
       "profile": "friSun",
       "reason": "not-a-published-continuous-355-entry-pair",

@@ -1,0 +1,105 @@
+{
+  "startedAt": "2026-10-16T01:25:35.259Z",
+  "scope": {
+    "region": null,
+    "group": "max-chain-m4-ckad-m11-zsd",
+    "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-krasnodar",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-krasnodar",
+      "startedAt": "2026-10-16T01:25:35.262Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-krasnodar/live-2026-10-15T09-00-00-03-00-2026-10-16T01-25-55-523Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-krasnodar/2026-10-16T01-25-55-412Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-25-56-185Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-25-56-824Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "ckad",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11",
+          "m4"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "weekday": {
+        "amount": 10464,
+        "weekdayAmount": 10464,
+        "weekendAmount": 12334,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-71 → m4-1223 · Стоимость не подтверждена",
+          "М-11 15–58: solnechnogorsk → moscow: 1130 ₽ · Стоимость не подтверждена",
+          "М-11: p679 → p58 · Стоимость не подтверждена",
+          "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+          "ЗСД: тарифная зона 1 · 300 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 12184,
+        "weekdayAmount": 10464,
+        "weekendAmount": 12334,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-71 → m4-1223 · Стоимость не подтверждена",
+          "М-11 15–58: solnechnogorsk → moscow: 1500 ₽ · Стоимость не подтверждена",
+          "М-11: p679 → p58 · Стоимость не подтверждена",
+          "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+          "ЗСД: тарифная зона 1 · 300 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:25:56.843Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:25:56.846Z"
+}

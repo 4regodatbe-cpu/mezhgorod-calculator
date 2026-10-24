@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:44:24.563Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 98,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 16,
+    "spec": {
+      "caseId": "pair-m4-m11-tver-to-rostov",
+      "kind": "road",
+      "group": "pair-m4-m11"
+    }
+  },
+  "caseId": "pair-m4-m11-tver-to-rostov",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-44-24-563Z-part16",
+  "parent": "01c4bd8b968c2cd97d161d7a7c21f293849174ae"
+}

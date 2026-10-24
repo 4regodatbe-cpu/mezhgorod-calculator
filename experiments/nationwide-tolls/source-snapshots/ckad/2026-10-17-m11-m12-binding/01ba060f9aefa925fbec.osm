@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1303 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8235775428" visible="true" version="6" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8165487" lon="38.5602586"/>
+ <node id="8235775429" visible="true" version="3" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8178358" lon="38.5589813"/>
+ <node id="8513080437" visible="true" version="4" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8169458" lon="38.5599013"/>
+ <way id="1189855267" visible="true" version="6" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671">
+  <nd ref="8235775429"/>
+  <nd ref="8513080437"/>
+  <nd ref="8235775428"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="highway:category" v="ru:IА"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="RU:motorway"/>
+  <tag k="maxspeed:designed" v="140"/>
+  <tag k="name" v="Центральная кольцевая автомобильная дорога"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="А-113"/>
+  <tag k="short_name" v="ЦКАД"/>
+  <tag k="source" v="survey"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="turn:lanes" v="through|through|right"/>
+ </way>
+</osm>

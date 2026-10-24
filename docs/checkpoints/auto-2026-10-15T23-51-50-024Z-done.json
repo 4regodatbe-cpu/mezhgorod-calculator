@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-15T23:51:50.024Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 53,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 5,
+    "spec": {
+      "caseId": "lnr-марковка-saint-petersburg-center",
+      "kind": "regional",
+      "region": "lnr"
+    }
+  },
+  "caseId": "lnr-марковка-moscow-center",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "lnr-марковка-moscow-center",
+    "startedAt": "2026-10-15T23:51:33.852Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-51-38-439Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-марковка-moscow-center/2026-10-15T23-51-38-368Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-51-38-940Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-51-39-432Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "m4"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": 3050,
+      "weekdayAmount": 3050,
+      "weekendAmount": 3370,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-636 → m4-71 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 3370,
+      "weekdayAmount": 3050,
+      "weekendAmount": 3370,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "М-4: m4-636 → m4-71 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 3050,
+        "reason": "matrix exact selected-route M4 vector"
+      }
+    ],
+    "finishedAt": "2026-10-15T23:51:39.449Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-51-32-507Z-part5",
+  "parent": "d44385617e5861317e166501a8a6ea9b9a5d3978"
+}

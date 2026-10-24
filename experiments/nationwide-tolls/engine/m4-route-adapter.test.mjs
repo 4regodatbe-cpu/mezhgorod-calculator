@@ -5,7 +5,7 @@ test('strict south vector uses finished matrix price',()=>assert.equal(matrixM4C
 test('reverse south vector same fare',()=>assert.equal(matrixM4Component(production(['m4-1223','m4-1184','m4-1093']),t,3600).tolls.amount,850));
 test('current candidate exact vector carries warning',()=>{const q=matrixM4Component(production(['m4-71','m4-133']),t,3600);assert.equal(q.tolls.amount,710);assert.equal(q.priceConfirmation,'unconfirmed');});
 test('partial gate evidence does not replace fare',()=>assert.equal(matrixM4Component({...production(['m4-1184','m4-1223']),exact:false},t,3600),null));
-test('missing date and midnight profile changes do not choose arbitrary price',()=>{assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),undefined,3600).tolls,null);assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),'2026-10-15T23:30:00+03:00',3600).tolls,null);});
+test('missing departure date fails; Thursday fare remains fixed across Friday midnight',()=>{assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),undefined,3600).tolls,null);assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),'2026-10-15T23:30:00+03:00',3600).tolls.amount,700);});
 test('A289 component cannot vanish in M4 replacement',()=>{const p=production(['m4-1184','m4-1223']);p.tolls.segments=['А-289: fee'];assert.equal(matrixM4Component(p,t,3600),null);});
 
 test('single confirmed M4 plaza uses its existing candidate fare',()=>assert.equal(matrixM4Component(production(['m4-71']),t,900)?.tolls.amount,310));
@@ -15,9 +15,11 @@ test('ordinary weekday midnight and weekend midnight retain an unchanged complet
  assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),'2026-10-13T19:00:00+03:00',17*3600)?.tolls.amount,700);
  assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),'2026-10-16T23:30:00+03:00',3600)?.tolls.amount,850);
 });
-test('same endpoint profile cannot conceal an intervening weekend or unverified year',()=>{
- assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),'2026-10-13T19:00:00+03:00',7*86400)?.tolls,null);
- assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),'2026-12-31T23:30:00+03:00',3600)?.tolls,null);
+test('departure profile stays fixed across a weekend/year boundary; unknown departure year fails',()=>{
+ assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),'2026-10-13T19:00:00+03:00',7*86400)?.tolls.amount,700);
+ const yearEnd='2026-12-31T23:30:00+03:00';
+ assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),yearEnd,3600)?.tolls.amount,matrixM4Component(production(['m4-1184','m4-1223']),yearEnd,0)?.tolls.amount);
+ assert.equal(matrixM4Component(production(['m4-1184','m4-1223']),'2027-01-01T12:00:00+03:00',0)?.tolls,null);
 });
 
 const boundaries=ids=>({endpointOnly:true,exact:true,tolls:null,m4PvpPreview:{confirmedPvps:ids}});

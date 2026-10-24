@@ -51,8 +51,7 @@ export function RouteCard({
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Clock3 className="h-4 w-4 text-brand-action" />{duration(trip.seconds)}</span>
       </div>
       <QualityNote quality={trip.quality} />
-      {toll?.priceConfirmation === "unconfirmed" && <p role="note" className="mt-2 text-sm font-semibold text-amber-700">Стоимость не подтверждена</p>}
-      {isUnknown && <p role="note" className="mt-2 text-sm font-semibold text-amber-700">Стоимость платных дорог не подтверждена — полная сумма поездки неизвестна.</p>}
+      {isUnknown && <p role="note" className="mt-2 text-sm font-semibold text-amber-700">Стоимость платных дорог неизвестна — полная сумма поездки не рассчитана.</p>}
       <PriceRows trip={trip} toll={toll} period={tollPeriod} manualToll={manualToll} />
       {showTollPanel && toll && (
         <div className="mt-2 rounded-2xl border border-brand-route/35 bg-brand-route/10 p-2">
@@ -61,7 +60,7 @@ export function RouteCard({
             {hasManualToll && <span className="text-xs font-bold text-brand-action">Указана вручную</span>}
           </div>
           {isPriced && tollPeriod === "actual" && <p className="mt-1.5 text-sm font-bold text-brand-text">Платные дороги: {selectedAmount.amount === null ? "сумма неизвестна" : money(selectedAmount.amount)} · {toll.period}</p>}
-          {isUnknown && <p className="mt-1.5 text-sm font-bold text-brand-route">Стоимость платных дорог пока не подтверждена</p>}
+          {isUnknown && <p className="mt-1.5 text-sm font-bold text-brand-route">Стоимость платных дорог неизвестна</p>}
           {isPriced && tollPeriod !== "actual" && <div className="mt-1.5 grid grid-cols-2 gap-1.5">
             <button type="button" aria-pressed={tollPeriod === "weekday"} onClick={() => onTollPeriodChange("weekday")} className={"min-h-11 rounded-xl border px-2 py-1 text-left transition focus-visible:outline-2 focus-visible:outline-brand-focus " + (tollPeriod === "weekday" ? "border-brand-action bg-brand-action text-brand-action-foreground" : "border-brand-border/20 bg-brand-surface text-brand-text hover:bg-brand-subtle")}>
               <span className="block text-xs font-bold">Пн–Чт</span><strong className="block text-sm">{tollLabel(weekdayAmount)}</strong>
@@ -70,7 +69,7 @@ export function RouteCard({
               <span className="block text-xs font-bold">Пт–Вс</span><strong className="block text-sm">{tollLabel(weekendAmount)}</strong>
             </button>
           </div>}
-          <p className="mt-1.5 text-xs leading-snug text-brand-muted">{hasManualToll ? "Сумма введена вручную и не подтверждена оператором." : isUnknown ? "Платность или полная стоимость не подтверждена." : "Стоимость платных дорог может измениться — уточняйте её перед поездкой."}</p>
+          <p className="mt-1.5 text-xs leading-snug text-brand-muted">{hasManualToll ? "Сумма платных дорог указана вручную." : isUnknown ? "Полная сумма маршрута не рассчитана без стоимости платных дорог." : "Стоимость платных дорог может измениться — уточняйте её перед поездкой."}</p>
           {onManualToll && <label className="mt-1.5 flex flex-wrap items-center gap-2 text-xs font-semibold text-brand-text">Уточнить сумму:<input aria-label="Стоимость платных дорог вручную" type="number" min="0" step="1" value={manualToll ?? ""} placeholder={selectedAmount.amount === null ? "" : String(selectedAmount.amount)} onChange={(event) => onManualToll(event.target.value === "" ? "" : String(clampNumber(Number(event.target.value), 0, 100000, 0)))} className="h-9 w-24 rounded-xl border border-brand-border/20 bg-brand-surface px-2 text-brand-text outline-none focus-visible:ring-2 focus-visible:ring-brand-focus" /> ₽</label>}
         </div>
       )}

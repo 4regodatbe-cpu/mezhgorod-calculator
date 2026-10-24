@@ -37,11 +37,9 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Probe live provider geometry and per-leg times
         run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
-      - name: Probe live payment-point-avoiding alternative for Moscow–Krasnodar
-        continue-on-error: true
-        run: node --import ./scripts/register-ts-paths.mjs scripts/payment-point-avoidance-live-probe.mjs
-      - name: Probe live Photon address suggestions
-        run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-live-probe.mjs
+      # Keep live routing checks on the selected fastest route; toll-avoiding alternatives are out of scope.
+      - name: Probe production address collector with bounded requests
+        run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-runtime-probe.mjs
       - name: Audit the fixed 50-settlement route corpus
         run: node --import ./scripts/register-ts-paths.mjs scripts/settlement-random-route-audit.mjs
       - name: Compare six Yandex screenshot routes with live providers
@@ -53,8 +51,31 @@ jobs:
           path: |
             special-territory-live-probe.json
             special-territory-full-flow-probe.json
-            payment-point-avoidance-live-probe.json
             address-search-live-probe.json
+            address-search-live-probe-progress.json
+            address-search-runtime-probe.json
+            address-search-runtime-probe-progress.json
             settlement-random-route-audit.json
             yandex-route-reference-audit.json
           if-no-files-found: ignore
+  calculation_timing:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --global pnpm@11.25.0
+      - run: pnpm install --frozen-lockfile
+      - name: Measure one special V3 handler with real routing sources
+        env:
+          CALCULATION_PROBE_CASE: donetsk-moscow
+        run: node scripts/calculation-runtime-probe.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: calculation-runtime-probe-${{ github.run_id }}
+          path: calculation-runtime-probe.json
+          if-no-files-found: error

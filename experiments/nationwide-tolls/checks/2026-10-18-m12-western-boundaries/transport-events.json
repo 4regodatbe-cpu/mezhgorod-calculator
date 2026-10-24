@@ -1,0 +1,11 @@
+[
+  {
+    "atUtc": "2026-10-17T21:24:43.700753+00:00",
+    "stage": "durable-save blob transfer",
+    "error": "exec_command failed: exec-server transport disconnected",
+    "completedBlobsBeforeFailure": 0,
+    "recoveryHealthCheck": "pwd succeeded in the same checkout; GitHub PR head remains1a8df19a22af70b8ebccda0160f805ab6e677cdc",
+    "saferContinuation": "Sequential reads/uploads; preserve per-file progress; no test, route or primary-source rerun",
+    "resolved": true
+  }
+]
