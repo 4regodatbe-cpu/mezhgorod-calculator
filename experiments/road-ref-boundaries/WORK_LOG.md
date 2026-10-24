@@ -35,3 +35,8 @@
 ## 24.10.2026 — recovery / точный CI readback
 
 [Checkpoint](../../docs/checkpoints/2026-10-24-road-ref-recovery-DONE.md). PR14head f2abc85/draft подтверждён. Run39997833752 success, verify/live geometry success; live_probe failure: Photon503/timeouts, BUDGET_EXHAUSTED90s,12/13 queries,94 source failures; последующие route audits skipped. Workflow continue-on-error объясняет общий success. Реализация и старые840checks не повторялись; причина внешнего поиска остаётся IN_PROGRESS, связь с A/B не доказана. Следующий шаг — offline fan-out/fallback review после remote readback.
+
+
+## 24.10.2026 — STARTED локального километража
+
+Пользователь разрешил этап и модульную неблокирующую разработку. Source5c61b6a/CI40067156518 завершён (verifyPASS, PhotonFAIL). План/лимиты: docs/checkpoints/2026-10-24-road-kilometrage-STARTED.md. Пробелы вынесены в BLOCKERS.md; runtime тарифы пока не менялись. Следом отдельный локальный resolver с переключателем и проверки.

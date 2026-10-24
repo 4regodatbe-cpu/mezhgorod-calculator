@@ -1,3 +1,7 @@
+## STARTED — локальный отключаемый километраж, 24.10.2026
+
+Пользователь разрешил следующий этап и правило независимых модулей: выполнимое продолжать, стопы/пробелы логировать без угадывания цен. [План](checkpoints/2026-10-24-road-kilometrage-STARTED.md) · [модули](OPTIONAL_MODULES.md) · [проблемы](../experiments/road-ref-boundaries/BLOCKERS.md). Source5c61b6a/PR14draft; CI40067156518 завершён: verifyPASS, PhotonFAIL. NEXT: чистый локальный resolver, feature switch, preview integration и bounded checks; официальные км pending pair неизвестны и не блокируют ядро. До10с — цель, не измеренный SLA. БезProduction.
+
 ## DONE recovery / IN PROGRESS external address search — 24.10.2026
 
 Source f2abc85/PR14draft подтверждён. CI39997833752 completed/success: verify и live geometry PASS, но live_probe FAILED из-за Photon503/timeouts/90s budget; 50-settlement и Yandex проверки SKIPPED (continue-on-error). Graph boundary реализация сохранена; 840 локальных tests/build повторно не запускались. [Recovery checkpoint](checkpoints/2026-10-24-road-ref-recovery-DONE.md) · [точные CI результаты](../experiments/road-ref-boundaries/checks/2026-10-24-recovery/ci-status.json). NEXT: ограниченный offline разбор внешнего поиска, отдельно от неизвестных тарифов. Не заявлять связь сбоя с A/B или исправление Photon без доказательства. Без Production/main/merge.

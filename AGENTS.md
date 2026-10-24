@@ -60,3 +60,8 @@ The user authorized bounded batch exception checks for repeated cases: persist S
 ## Recovery after a hang (user decision, 2026-10-17 23:07 MSK)
 
 After a reported hang/interruption, follow the mandatory “После зависания” section in `docs/WORKFLOW_RULES.md`: inspect actual progress and split only the unfinished remainder of the last task into smaller sequential parts. Save each completed part with verified durable readback; if it hangs again, split that remainder further. Resume from saved outputs rather than repeating completed audits. A save-stage interruption requires smaller persistence steps, not recalculation. Do not automatically cancel active CI or start duplicate writers.
+
+
+## User decision — 2026-10-24: independent optional modules
+
+For new capabilities follow docs/OPTIONAL_MODULES.md: isolate code/data/switch/integration, log unresolved stops with evidence and proceed with independent viable work. Missing data does not block unrelated modules; preserve unknown/partial pricing guards. A failing mandatory check is not success: fix or disable the new capability. Avoid a blanket refactor of existing engines. Whole-calculation target is about10seconds, not a measured guarantee.
