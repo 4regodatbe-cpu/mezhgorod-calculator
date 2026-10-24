@@ -8,6 +8,7 @@ import { analyzeRoute, candidatePlans, endpointPolicy } from "@/lib/special-terr
 import { calculateSpecialOptions } from "@/lib/v3-calculation/special-options";
 import { acceptedYandexRouteEstimate, yandexRouteEstimateTolls } from "@/lib/v3-calculation/yandex-route-estimates";
 import type { Coordinate } from "@/lib/tolls";
+import { createCalculationTiming } from "@/lib/calculation-timing";
 
 type UserRates = { standard: number; comfort: number; comfortPlus: number; minivan: number };
 const VEHICLES: PricingVehicle[] = ["standard", "comfort", "comfort_plus", "minivan"];
@@ -42,9 +43,16 @@ function validDepartureAt(value: unknown): value is string {
 export const maxDuration = 120;
 
 export async function POST(request: NextRequest) {
+  const timing = createCalculationTiming();
+  const respond = (body: unknown, init?: { status?: number }) => {
+    const response = NextResponse.json(body, init);
+    const result = timing.finish(response.status);
+    if (result?.header) response.headers.set("Server-Timing", result.header);
+    return response;
+  };
   // V3 contract: one fastest route; no slower free-route substitution.
   try {
-    const body = (await request.json()) as {
+    const body = (await timing.measure("request_body", () => request.json())) as {
       from?: Point;
       via?: Point;
       to?: Point;
@@ -58,24 +66,24 @@ export async function POST(request: NextRequest) {
       manualRates?: number[];
       multiplier?: number;
     };
-    if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return NextResponse.json({ error: "Некорректный режим расчёта" }, { status: 400 });
-    if (body.departureAt !== undefined && !validDepartureAt(body.departureAt)) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
-    if (body.vehicle !== undefined && !VEHICLES.includes(body.vehicle)) return NextResponse.json({ error: "Некорректный класс автомобиля" }, { status: 400 });
-    if (body.modeOverride !== undefined && typeof body.modeOverride !== "boolean") return NextResponse.json({error:"Некорректный режим"},{status:400});
-    if (body.specialRates !== undefined && !validUserRates(body.specialRates)) return NextResponse.json({error:"Некорректные особые тарифы"},{status:400});
-    if (body.rates !== undefined && !validUserRates(body.rates)) return NextResponse.json({ error: "Некорректные тарифы" }, { status: 400 });
-    if (body.manualRates !== undefined && (!Array.isArray(body.manualRates) || body.manualRates.length !== 2 || !body.manualRates.every(validRate))) return NextResponse.json({ error: "Некорректные тарифы участков" }, { status: 400 });
-    if (body.multiplier !== undefined && (typeof body.multiplier !== "number" || !Number.isFinite(body.multiplier) || body.multiplier < 1 || body.multiplier > 6)) return NextResponse.json({ error: "Некорректная наценка" }, { status: 400 });
-    if (!validPoint(body.from) || !validPoint(body.to)) return NextResponse.json({ error: "Проверьте точки маршрута" }, { status: 400 });
+    if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return respond({ error: "Некорректный режим расчёта" }, { status: 400 });
+    if (body.departureAt !== undefined && !validDepartureAt(body.departureAt)) return respond({ error: "Некорректная дата поездки" }, { status: 400 });
+    if (body.vehicle !== undefined && !VEHICLES.includes(body.vehicle)) return respond({ error: "Некорректный класс автомобиля" }, { status: 400 });
+    if (body.modeOverride !== undefined && typeof body.modeOverride !== "boolean") return respond({error:"Некорректный режим"},{status:400});
+    if (body.specialRates !== undefined && !validUserRates(body.specialRates)) return respond({error:"Некорректные особые тарифы"},{status:400});
+    if (body.rates !== undefined && !validUserRates(body.rates)) return respond({ error: "Некорректные тарифы" }, { status: 400 });
+    if (body.manualRates !== undefined && (!Array.isArray(body.manualRates) || body.manualRates.length !== 2 || !body.manualRates.every(validRate))) return respond({ error: "Некорректные тарифы участков" }, { status: 400 });
+    if (body.multiplier !== undefined && (typeof body.multiplier !== "number" || !Number.isFinite(body.multiplier) || body.multiplier < 1 || body.multiplier > 6)) return respond({ error: "Некорректная наценка" }, { status: 400 });
+    if (!validPoint(body.from) || !validPoint(body.to)) return respond({ error: "Проверьте точки маршрута" }, { status: 400 });
     const departureAt = body.departureAt ?? new Date().toISOString();
 
-    const [from,to] = await Promise.all([geocode(body.from),geocode(body.to)]);
+    const [from,to] = await timing.measure("geocoding", () => Promise.all([geocode(body.from!),geocode(body.to!)]));
     const policy = endpointPolicy(from.position,to.position,zones);
     const automaticMode = policy.specialEndpoint ? "dual" : "standard";
     const mode = body.modeOverride === true && body.mode ? body.mode : policy.specialEndpoint ? "dual" : "standard";
     const normalRateOverrides = body.rates ? { ...body.rates, comfort_plus:body.rates.comfortPlus } : undefined;
     const specialRateOverrides = body.specialRates ? { ...body.specialRates, comfort_plus:body.specialRates.comfortPlus } : undefined;
-    const attachPricing = <T extends { meters:number; seconds:number; coordinates:Coordinate[]; legs?:unknown }>(trip:T) => {
+    const attachPricing = <T extends { meters:number; seconds:number; coordinates:Coordinate[]; legs?:unknown }>(trip:T) => timing.measureSync("response_pricing", () => {
       // Policy is independent of manual pricing mode, including every alternative.
       const territorySplit = analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
       const {coordinates, legs, ...summary} = trip;
@@ -96,21 +104,21 @@ export async function POST(request: NextRequest) {
         from:from.label,to:to.label,vehicle,mode,normalRateOverrides,specialRateOverrides,multiplier:body.multiplier,
         legs:[{from:from.label,to:to.label,distanceKm:trip.meters/1000,territorySplit}],
       })]))};
-    };
+    });
     if(policy.specialEndpoint) {
-      const special=await calculateSpecialOptions(from,to,departureAt,true);
+      const special=await timing.measure("special_options", () => calculateSpecialOptions(from,to,departureAt,true));
       const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast),free:null,freeCandidate:null}));
       if(!options.length)throw new Error("MAINLAND_UNAVAILABLE");
-      return NextResponse.json({legs:options,options,mode,automaticMode,specialEndpoint:true,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
+      return respond({legs:options,options,mode,automaticMode,specialEndpoint:true,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
     }
     const plan=candidatePlans(from.position,to.position,zones)[0];
-    const leg=await calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true);
+    const leg=await timing.measure("route_leg", () => calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true,timing));
     const attachAlternative = <T extends { meters:number;seconds:number;coordinates:Coordinate[] }>(trip:T|null) => {
       if(!trip)return null;
       try { return attachPricing(trip); } catch {return null;}
     };
     const priced={...leg,fast:attachPricing(leg.fast),free:attachAlternative(leg.free),freeCandidate:attachAlternative(leg.freeCandidate)};
-    return NextResponse.json({legs:[priced],mode,automaticMode,specialEndpoint:false});
+    return respond({legs:[priced],mode,automaticMode,specialEndpoint:false});
   } catch (error) {
     const code = error instanceof Error ? error.message : "UNKNOWN";
     const messages: Record<string, string> = {
@@ -121,6 +129,6 @@ export async function POST(request: NextRequest) {
       ROUTE_NOT_FOUND: "Не удалось построить автомобильный маршрут.",
       ROUTE_UNAVAILABLE: "Сервис маршрутов временно недоступен. Попробуйте позже.",
     };
-    return NextResponse.json({ error: messages[code] ?? "Не удалось выполнить расчёт." }, { status: code.endsWith("UNAVAILABLE") ? 502 : 400 });
+    return respond({ error: messages[code] ?? "Не удалось выполнить расчёт." }, { status: code.endsWith("UNAVAILABLE") ? 502 : 400 });
   }
 }

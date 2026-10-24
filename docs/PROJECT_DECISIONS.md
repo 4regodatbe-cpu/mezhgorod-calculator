@@ -77,3 +77,8 @@ The standalone V2 calculator keeps its own internal tariffs, including special-s
 ## 24.10.2026 — корректировка адресного cooldown по live evidence
 
 Одинpartial503неявляетсяоснованиемблокироватьoriginдляследующегогорода. Реализованпорог3HTTP503/429безsuccessвполном15сокне,successfulupstreamсбрасываетstreak/паузу. Live849102cвыявилрегрессию;fix5d7043aPreview3адреса200,875tests/buildPASS. CIпроверяетactualcollector/poolboundedprobeвместоlegacyrawfanout. Подробности:checkpoints/2026-10-24-address-live-fixed-series-DONE.md. Availability/phone/10сSLAнеобещаются.
+
+
+## 24.10.2026 — PERF-001: измерять до оптимизации
+
+Цель пользователя — стараться до10с. Добавлена отключаемая диагностика стадий V3 без смены маршрута/цены/дедлайнов и новых запросов. Параллельные стадии не суммировать. handlerElapsedMs не означает E2E SLA; измерять реальный запрос отдельно. Не обрывать обязательную проверку платных участков ради скорости. Модуль: experiments/road-ref-boundaries/CALCULATION_TIMING.md.

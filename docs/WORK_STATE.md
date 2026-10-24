@@ -1,3 +1,7 @@
+## DONE PERF-001 — диагностика времени V3, 24.10.2026
+
+Добавлен отдельный отключаемый calculationTiming: Server-Timing и structured logs этапов без адресов/координат/новой сети. Маршрут и цена не меняются. Focused9/9, full880/880, quote/API/ESLint/webpack+TypeScript/static16/16 PASS. [Итог](checkpoints/2026-10-24-calculation-timing-DONE.md) · [подключение](../experiments/road-ref-boundaries/CALCULATION_TIMING.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-calculation-timing/verification.json). 10с E2E UNVERIFIED; special_options измеряется целиком. NEXT: exact remote/обычный CI; затем bounded Preview POST timing при доступном поддержанном транспорте. KM/source blockers сохраняются. PR14 draft, без Production.
+
 ## DONE bounded KM intake / BLOCKED data / STARTED PERF review — 24.10.2026
 
 2OSMAPIopensнедоступны,4точечныхwebqueriesнеподтвердиликмnode4443232947/358467208. Сохранённыйtraceoutputshape/latlon/kmотсутствуют. Отклонёнложный1038кмкандидат(соседняяразвязкаНовочеркасска,неbindingПлатовnode). [Итог/планPERF](checkpoints/2026-10-24-km-intake-DATA-BLOCKED-performance-STARTED.md) · [sourceevidence](../experiments/road-ref-boundaries/checks/2026-10-24-km-intake/result.json). Runtimeкм/ценыбезизменений,новыхanchors0. NEXTпослеdurable—ограниченныйreviewсуществующихтайминговполногоV3,припробелеотдельнаяотключаемаядиагностикабезновойсети/сменымаршрута.10сE2Eпо-прежнемуUNVERIFIED. Addresssourceoutageотдельноblocked,готовые875tests/Previewнеповторятьбезпричины. PR14draft/безProduction.

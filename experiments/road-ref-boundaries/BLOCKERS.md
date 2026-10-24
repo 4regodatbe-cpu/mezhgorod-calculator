@@ -44,3 +44,8 @@ ADDRESS-AVAILABILITYBLOCKED_BY_SOURCEвэтомrun:Донецк4actualhttp503+3c
 ## 24.10.2026 — KM-001 boundedsourceintakeзакрыткакBLOCKED_BY_DATA
 
 2OSMAPIopensинструментомнедоступны;4primarysearchqueriesнепривязаликмкexactnodes.1038кмАвтодораотносятсякНовочеркасскойразвязке,неприсваиватьПлатову.PDFРосавтодораtimeout.Сохранённыйtraceнеимеетoutputshape/latlon/km.Ограниченныйintakeсохранёнвchecks/2026-10-24-km-intake/result.json;runtimeanchors/sections0новых. ПовтортехжеAPI/searchбезсменыисточника/доступаненужен. Следующийsource—точныйOSMobject/linkedmilestoneилиоператорскаясхемасbranch/scale/km. ПерешликнезависимомуPERFreview.
+
+
+## 24.10.2026 — PERF-001 diagnostics DONE / E2E UNVERIFIED
+
+Отсутствие стадийных замеров устранено отдельным calculationTiming. Local880 tests/build PASS. Это не ускорение и не доказательство10с. Нет измерения браузера/cold start/передачи; special_options пока общий span. Следом actual CI и bounded Preview POST при доступном транспорте. Новая сеть0; KM/source blockers сохранены.

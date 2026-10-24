@@ -7,16 +7,18 @@ import { selectLiveRouteCandidates } from "@/lib/route-quality";
 import { selectFreeRoute, tollsForApi } from "../v2-calculation/free-route-selection";
 import { calculateLegTolls } from "./route-leg-pricing";
 import { selectFastestRoute } from "@/experiments/nationwide-tolls/fastest-route-policy.mjs";
+import type { CalculationTiming, CalculationStage } from "@/lib/calculation-timing";
 
-export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>, fastestOnly = false) {
+export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>, fastestOnly = false, timing?: CalculationTiming) {
+  const measure = <T>(stage: CalculationStage, operation: () => Promise<T>) => timing ? timing.measure(stage, operation) : operation();
   const rejectedStretchProviders = new Map<string, number>();
-  const rawResults = await Promise.allSettled([
-    valhalla(from, to, 1, positions),
+  const rawResults = await measure("routing", () => Promise.allSettled([
+    measure("provider_valhalla", () => valhalla(from, to, 1, positions)),
     fastestOnly ? Promise.reject(new Error("FASTEST_ONLY_SKIP_BYPASS")) : valhalla(from, to, 1, positions, 900), // V2-only payment-point bypass candidate.
     fastestOnly ? Promise.reject(new Error("FASTEST_ONLY_SKIP_BYPASS")) : valhalla(from, to, 1, positions, 1_200), // V2-only partial M-4 bypass candidate.
-    osrmRoute(from, to, positions),
-    brouterFast(from, to, positions),
-  ]);
+    measure("provider_osrm", () => osrmRoute(from, to, positions)),
+    measure("provider_brouter", () => brouterFast(from, to, positions)),
+  ]));
   const resultNames = ["Valhalla", "Valhalla 900s bypass", "Valhalla 1,200s bypass", "OSRM", "BRouter"];
   const [fastResult, valhallaModerateAvoidResult, valhallaPartialTollResult, osrmResult, brouterFastResult] = rawResults.map((result, index) => {
     if (result.status === "rejected") return result;
@@ -88,7 +90,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   // Paid evidence is part of pricing correctness, not an optional diagnostic.
   void diagnostics; // Compatibility flag; cannot change the selected-route price.
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = routeGeometry.length >= 2
-    ? validateTollEdges(routeGeometry)
+    ? measure("toll_matching", () => validateTollEdges(routeGeometry))
     : Promise.resolve(null);
   const [initialFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
   let selectedFree = initialFree;
@@ -117,7 +119,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   const selectedFastIsValhalla = selectedFast.provider.startsWith("Valhalla");
   const valhallaEvidence = selectedFastIsValhalla ? selectedFastRoute : null;
   const selectedFastPricingProvider = selectedFastIsValhalla ? "Valhalla" : selectedFast.provider;
-  const pricing = await calculateLegTolls({
+  const pricing = await measure("toll_pricing", () => calculateLegTolls({
     routeGeometry,
     routeSeconds: selectedFast.route.seconds,
     departureAt,
@@ -126,7 +128,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     valhallaEvidence,
     confirmedFreeRoute: fastestOnly ? null : confirmedFree?.route ?? null,
     diagnosticFastValidation,
-  });
+  }));
   const { tolls, fastValidation, m4PvpPreview, nationalTollCoverage } = pricing;
 
   // `free` is the legacy response key for the payment-point-avoiding alternative;

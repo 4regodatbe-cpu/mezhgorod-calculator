@@ -1,3 +1,9 @@
+## Актуально после PERF-001
+
+1. Сохранить и проверить remote head/tree блока timing; прочитать обычный CI, verify/live/skipped отдельно.
+2. При доступном поддержанном POST-транспорте — один известный Preview маршрут с Server-Timing; без нового полного корпуса. Иначе зафиксировать ограничение, не выдавать offline CPU за10сE2E.
+3. Километры/тарифы добавлять только по проверенным данным. Photon outage и два неизвестных км не обходить угадыванием. Подробности: docs/checkpoints/2026-10-24-calculation-timing-DONE.md.
+
 ## Сейчас PERF-001 existingtimingsreview
 
 KM-001intakeBLOCKED_BY_DATAсevidenceвdocs/checkpoints/2026-10-24-km-intake-DATA-BLOCKED-performance-STARTED.md. ПослеdurableпроверитьexistingV3timings,еслидостаточнынесоздаватьлишниймодуль;еслинет—отдельнаяотключаемаядиагностикастадийбезсети/измененийцены. Необъявлять10сSLAпоofflineCPU. KM/Addresssourceошибкисохранены,незацикливатьсянапустыхисточниках.

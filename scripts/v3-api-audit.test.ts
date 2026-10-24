@@ -29,6 +29,9 @@ test('V3 Anapa and Yalta requests expose numeric A289 price without confirmation
   const result=await POST(req({from,to:krasnodar,departureAt:'2026-10-13T09:00:00+03:00'}));
   const body=await result.json();
   assert.equal(result.status,200,JSON.stringify(body));
+  assert.match(result.headers.get('Server-Timing') ?? '', /calc_total;dur=/);
+  assert.match(result.headers.get('Server-Timing') ?? '', /toll_matching;dur=/);
+  assert.match(result.headers.get('Server-Timing') ?? '', /response_pricing;dur=/);
   assert.equal(body.legs.length,1);
   const tolls=body.legs[0].fast.tolls;
   assert.equal(tolls.pricingStatus,'priced',JSON.stringify(tolls));
@@ -53,6 +56,7 @@ test('invalid calendar and ambiguous dates fail before any external request',asy
   for(const departureAt of ['2026-02-30T09:00:00+03:00','2026-02-29','2026-04-31','10/13/2026','2026-10-13T09:00:00','2026-10-13T24:00:00Z']) {
    const result=await POST(req({from:anapa,to:krasnodar,departureAt}));
    assert.equal(result.status,400,departureAt);
+   assert.match(result.headers.get('Server-Timing') ?? '', /request_body;dur=/);
    assert.equal((await result.json()).error,'Некорректная дата поездки',departureAt);
   }
   assert.equal(requests,0);
