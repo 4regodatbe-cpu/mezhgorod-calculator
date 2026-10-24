@@ -50,3 +50,8 @@
 ## 24.10.2026 — DONE уточнения исполнения блоков
 
 [Checkpoint](../../docs/checkpoints/2026-10-24-sequential-blocks-one-response-DONE.md). Source9ffada1/PR14draft, CI40069527041overall success (job статусы этим шагом не оценивались). Ранее small-step/recovery правила существовали; теперь явно указаны предварительная разбивка и несколько последовательных сохранённых блоков в одном ответе, без ожидания «дальше». Docs-only, diff/link/content checks; tests/build не повторялись. Следующий development блок прежний: offline ADDRESS-001.
+
+
+## 24.10.2026 — block1 DONE address fan-out diagnosis; block2 STARTED
+
+Source deed213/PR14draft подтверждён. [Checkpoint/план](../../docs/checkpoints/2026-10-24-address-diagnosis-DONE-pool-STARTED.md).7–13URLs на один autocomplete, один Photonorigin, нет server concurrency/singleflight/circuit. ExistingUI debounce/abort/cache и общий компонент A/B сохранены; B-only причина не доказана. Counts10queries/offline/live0. Официальный PhotonREADME проверен web: demoavailability не гарантируется. Следом bounded optionalpool с cancel/cache/circuit, затем endpoint regression; никаких новых маршрутов/геокодеров/цен. Docs-only сохранение помечается skipci после завершения текущегоCI, codecommit с обычнымCI.

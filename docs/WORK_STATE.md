@@ -1,3 +1,7 @@
+## DONE address diagnosis / STARTED bounded request pool — 24.10.2026
+
+Один autocomplete порождает7–13 одновременных запросов к одномуPhotonorigin; общего server pool/cache/singleflight нет. A/B используют один AddressField; отдельный B-only дефект не установлен. [Диагноз/последовательный план](checkpoints/2026-10-24-address-diagnosis-DONE-pool-STARTED.md) · [counts,live0](../experiments/road-ref-boundaries/checks/2026-10-24-address-pool/diagnosis.json). Source deed213/PR14draft. NEXT после durable readback: отдельный отключаемый pool2/queue/cache/cooldown и budget20с, прежний ranking/URLs сохранить; затем endpoint regression в том же сеансе. Цены/километры/Production не менять.
+
 ## DONE правило — несколько малых блоков в одном ответе, 24.10.2026
 
 Большую разрешённую задачу заранее делить, выполнять блоки подряд: результат/проверка/checkpoint/commit/remote readback → следующий блок в том же сеансе без ожидания «дальше». После сбоя — первый незавершённый блок; локальные стопы логировать и продолжать независимое. [Актуальное правило](WORKFLOW_RULES.md) · [checkpoint](checkpoints/2026-10-24-sequential-blocks-one-response-DONE.md). Source9ffada1/PR14draft; CI40069527041 completed/overall success, live jobs этим шагом не оценивались. Runtime не менялся; NEXT разработки остаётся offline ADDRESS-001 после durable readback.

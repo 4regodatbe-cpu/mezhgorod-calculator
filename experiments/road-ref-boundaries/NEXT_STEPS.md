@@ -1,3 +1,7 @@
+## Актуальная серия ADDRESS-001
+
+Блок1 diagnosisDONE, блок2 poolSTARTED: docs/checkpoints/2026-10-24-address-diagnosis-DONE-pool-STARTED.md. После exactremote readback реализовать ограниченный отключаемый requestpool/cache/singleflight/cooldown и общий20сbudget, focused/fullgate/build; сохранить. Затем endpoint /r regression по последовательности замен адресов, отдельно сохранить итог, не ждать «дальше». Existingranking/URLcoverage и prices не менять; availability/B-only остаются неподтверждёнными.
+
 ## Порядок исполнения24.10
 
 Выполнять несколько небольших разрешённых блоков последовательно в одном ответе, сохраняя/проверяя remote после каждого; не завершать ответ ради ожидания «дальше». При сбое продолжить первый незавершённый. См. docs/WORKFLOW_RULES.md и checkpoint2026-10-24-sequential-blocks-one-response-DONE. Очередь разработки ниже не меняется.

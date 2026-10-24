@@ -1,0 +1,85 @@
+{
+  "sourceCommit": "deed213c738a6744496841a1ed59e135a48b06fd",
+  "liveRequests": 0,
+  "rows": [
+    {
+      "query": "Донецк",
+      "urlCount": 7,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    },
+    {
+      "query": "Краснодар",
+      "urlCount": 7,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    },
+    {
+      "query": "Москва",
+      "urlCount": 7,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    },
+    {
+      "query": "Ростов",
+      "urlCount": 7,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    },
+    {
+      "query": "Макеевка",
+      "urlCount": 12,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    },
+    {
+      "query": "Ялта",
+      "urlCount": 7,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    },
+    {
+      "query": "Изюм",
+      "urlCount": 12,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    },
+    {
+      "query": "Тарасовка",
+      "urlCount": 13,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    },
+    {
+      "query": "Харьков, Украина",
+      "urlCount": 12,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    },
+    {
+      "query": "Москва, Тверская улица, 1",
+      "urlCount": 7,
+      "origins": [
+        "https://photon.komoot.io"
+      ]
+    }
+  ],
+  "observedArchitecture": {
+    "parallel": "Promise.allSettled(urls.map(fetchPhotonFeatures))",
+    "perSourceTimeoutMs": 20000,
+    "serverSingleFlight": false,
+    "serverConcurrencyLimit": false,
+    "serverFailureCircuit": false,
+    "clientCache": "128 entries /5min positive-only",
+    "sameAddressComponentForAB": true
+  }
+}
