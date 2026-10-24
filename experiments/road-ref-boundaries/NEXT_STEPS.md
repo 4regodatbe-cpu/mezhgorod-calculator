@@ -1,3 +1,7 @@
+## UI preflight BLOCKED / snapshot выключен — 24.10.2026
+
+[Checkpoint](../../docs/checkpoints/2026-10-24-city-snapshot-ui-preflight-BLOCKED.md). Код d6d9023 и точное tree подтверждены remote. Chromium отсутствует; UI E2E NOT_RUN, сервер/браузер не запускались. NEXT: UI только при доступном браузере с отдельным STARTED; проверить срок снимка перед активацией. Тесты 895/895, ESLint 0 ошибок / 5 прежних предупреждений, build PASS. PR14 draft.
+
 ## DONE LINT-001 / snapshotвыключен — 24.10.2026
 
 [Итог](../../docs/checkpoints/2026-10-24-eslint-baseline-DONE.md) · [проверки](checks/2026-10-24-eslint-baseline/README.md).19ошибокустранены:CommonJSscopepolicy+consttuple;TS/ESMrestrictionsсохранены. Full895/quoteAPI/buildTypeScript/static16/whole-repoESLint0errors5warningsPASS. NEXTUIenvironmentpreflight/локальнаяпроверкапридоступномбраузере;неактивироватьавтоматически/неповторятьмаршруты.

@@ -336,3 +336,6 @@ Actualremote7d4dc22/PR14draft,CIcompleted.19errorsдвепричины18require�
 ## 24.10.2026 — LINT-001 FIXED/VERIFIED
 
 Source81dfe59/STARTEDdurable;18importstyleerrorsscopedCommonJS/sourceType+1consttupleисправлены. Первыйpolicytestmodule/commonjsFAILсохранён,configисправленбезослабленияassertion.10CJSruntimebodiesexact,quoteoldcommentonlyremoved. Policy1+3negative/full895/quoteAPI/whole-repolint0errors5warnings/buildTypeScript/static16PASS. Selectorconcurrency2timeoutsunchanged. Evidence checks/2026-10-24-eslint-baseline;checkpoint docs/checkpoints/2026-10-24-eslint-baseline-DONE.md. Snapshotfalse/UIpending,нетlive/Production. NEXTотдельныйUIenvironmentpreflight.
+
+
+24.10.2026 — ESLint DONE сохранён remote d6d902320d3b5a2b43cc7836358120acdfd0d0ad / tree cf1249a10a3bb594cbbc430f600573e0c38a9d0d, exact readback PASS. Следующий UI preflight: BLOCKED_BY_ENVIRONMENT_BROWSER (Playwright есть, Chromium отсутствует). UI NOT_RUN, install/server/browser/live 0, snapshot false. Checkpoint: docs/checkpoints/2026-10-24-city-snapshot-ui-preflight-BLOCKED.md. Нужен доступный браузер и новый STARTED перед UI run; старые тесты не объявлены E2E.

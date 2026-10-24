@@ -1,0 +1,15 @@
+{
+  "status": "BLOCKED_BY_ENVIRONMENT_BROWSER",
+  "date": "2026-10-24",
+  "codeCommit": "d6d902320d3b5a2b43cc7836358120acdfd0d0ad",
+  "codeTree": "cf1249a10a3bb594cbbc430f600573e0c38a9d0d",
+  "playwrightModule": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+  "chromiumExecutable": "/root/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome",
+  "executableExists": false,
+  "browserLaunched": false,
+  "serverStarted": false,
+  "browserInstallAttempted": false,
+  "liveRequests": 0,
+  "addressCitySnapshot": false,
+  "uiE2E": "NOT_RUN"
+}
