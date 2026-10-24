@@ -241,3 +241,8 @@ NEXT: отдельный bounded primary-source intake для coordinate-settlem
 ## 24.10.2026 — ADDRESS-001: source intake GeoNames DONE, next pilot pending
 
 По поручению выполнить не более4поисковыхзапросов/3primary docs изучены official GeoNames export/readme и Geofabrik Russia extract. Исходный branch `fix/v3-missing-route-prices-2026-10-15` parent `39465bf1022976153188acfd92a09dc10b4926a0` tree `9108c92551a443e3a5cfe531bcb13bffbf215e89`, PR14 draft. Итог: GeoNames CC BY4.0 WGS84 country dumps/aliases/admin — предварительный кандидат для отдельного opt-in offline settlement fallback, **не** подтверждённая конкретная геобаза; Geofabrik OSM РФ ~3.9GB/ODbL непрактичен для текущего пилота. Из-за неизвестных размеров, полигона приоритетных территорий, русских алиасов/одноимённых поселений координаты не допущены к runtime. [Полные критерии, URL и checks](../../docs/checkpoints/2026-10-24-address-coordinate-source-intake-DONE.md). Сеть: поисковых запросов4, прочитанных primary docs3; скачиваний0, Photon/live/route/test/build0. Docs-only, история сохраняется; следующий шаг — STARTED перед импортом, отдельные bounded gates. Не утверждать, что 887 тестов повторно запускались.
+
+
+## 24.10.2026 — bounded GeoNames delivery pilot STARTED
+
+После прочитанного обратно исходного source intake commit `868bb9738d158a35b325d3e97456eb98a580c7e1` оформлен [план pilot A/B/C](../../docs/checkpoints/2026-10-24-address-geonames-pilot-STARTED.md). Первый мини-блок не скачивает ZIP: ≤3 HEAD country RU/UA+V2 для HTTP+размера. B импортировать только после отдельного STARTED, лимита50MiB и checksums; C на проверенных кейсах, до runtime module ещё отдельное approval-gate. В STARTED нет новой успешной проверки. Source fallback пока не реализован, Photon outage открыт.

@@ -1,3 +1,7 @@
+## STARTED GeoNames bounded pilot A — 24.10.2026
+
+[План и точка восстановления](../../docs/checkpoints/2026-10-24-address-geonames-pilot-STARTED.md): A ≤3 HEAD RU.zip/UA.zip/alternateNamesV2.zip, зафиксировать size/HTTP status без download; B только после отдельного STARTED при допустимых размерах; C offline limited place/aliases/homonyms/priority coverage; до code/feature enable — ещё один STARTED. Source suitability уже DONE, не повторять4queries/3docs.
+
 ## DONE GeoNames source suitability / NEXT separate pilot STARTED — 24.10.2026
 
 [Source-intake checkpoint](../../docs/checkpoints/2026-10-24-address-coordinate-source-intake-DONE.md): 4 source queries/3 primary documents; GeoNames CC BY 4.0 RU+UA + alternateNamesV2 preliminary candidate (not live enabled), disambiguation via geonameid/admin, WGS84. Priority polygon coverage, counts, ZIP bytes, Russian aliases and precise positions **not yet validated**. Geofabrik OSM РФ ~3.9 GB/ODbL postponed. Next: record separate STARTED before downloads, bounded sample/size/checksum/feature-P/priority-coverage and ambiguity criteria; no app/lib or tariff changes; no street/house guarantee.

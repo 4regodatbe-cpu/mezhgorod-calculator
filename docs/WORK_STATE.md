@@ -1,3 +1,7 @@
+## STARTED GeoNames limited source-delivery pilot A — 24.10.2026
+
+После source intake `868bb973` готов [ограниченный план A/B/C и правила остановки](checkpoints/2026-10-24-address-geonames-pilot-STARTED.md). Ближайший шаг: ≤3 HEAD к GeoNames country RU/UA и alternateNamesV2, таймауты; до длинной загрузки отдельный B-STARTED. Локальные координаты/coverage ещё0, code0, live0. При отказе сети фиксировать BLOCKED и не заменять домыслами. PR14 draft, Production нет.
+
 ## DONE ADDRESS-001 coordinate-source intake / GeoNames pilot candidate — 24.10.2026
 
 GeoNames (CC BY 4.0, WGS84, RU/UA country dumps, ru aliases через alternateNamesV2, geonameid/admin disambiguation) **кандидат только для ограниченного offline пилота**, не новый runtime fallback. Реальный coverage приоритетных территорий, размеры RU/UA и качество координат пока не проверены. OSM РФ ~3.9 GB / ODbL отложен. [Первичные источники, критерии и запреты](checkpoints/2026-10-24-address-coordinate-source-intake-DONE.md). 4 searches/3 primary docs, ZIP0/live0/code0, 887 прежних tests не повторялись. NEXT: отдельный STARTED перед скачиванием/импортом с size/coverage/alias/homonyms/provenance gates. ADDRESS-AVAILABILITY по-прежнему BLOCKED. PR14 draft/без Production.
