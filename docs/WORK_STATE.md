@@ -1,3 +1,7 @@
+## DONE4citypositive-subset / STARTEDdefault-offmodule — 24.10.2026
+
+[Review/implementationplan](checkpoints/2026-10-24-positive-city-subset-DONE-module-STARTED.md). Exactreuse4реальныхуспешныхPhotonSuggestion(2Донецка,Краснодар,Ростов-на-Дону),captureSHA/полигоныпроверены;неbenchmark/неGeoNames. NEXTизолированныйaddressCitySnapshot:false,fulloutageonly/7dayexpiry/20сbudget/UIcoverage+OSMcredit+localgates. Liveещёнеактивирован;большойcatalogblocked.
+
 ## DONE bounded second-source / NEXT positivecapture review — 24.10.2026
 
 [Итог](checkpoints/2026-10-24-address-secondary-source-review-DONE.md):4queries/OSMcopyrightprimarydoc,0approvedlabels/coords;GeoNameslabelgapостаётсяblocked. NEXTofflineоценкареальныхsavedPhotonPASScapturesдлямалогоlocalcitysubset(неbenchmark/неальтернативныйorigindata). Передкодомreviewedmanifest+STARTED,необещатьвсеадреса.

@@ -311,3 +311,8 @@ Durable934ff22;52remainder,44exactADM3/4bindings/ru0;57missingcodeentries;addedl
 ## 24.10.2026 — bounded second-source DONE / next captured-positive subset review
 
 4queries/1officialOSMlicensedoc,нетдопущенныхрусскихadminlabels/coordsдля2ДНРТарасовок. PrimarysourcegapBLOCKED_BY_DATA. Checkpoint docs/checkpoints/2026-10-24-address-secondary-source-review-DONE.md. NEXTкороткийofflineосмотрреальныхPhotonpositivecaptures,неbenchmark/недownload/нетрассы;возможенмалыйverifiedlocalcitysubsetтолькопослеreviewmanifest/STARTED. Runtime0/live0;docslinks/diffchecks.
+
+
+## 24.10.2026 — positivecitysubset review DONE / default-offmodule STARTED
+
+Exact4SuggestionизуспешныхPreviewcaptures/captureSHA/sourceDate/sourceID/territoryPASS;0newcoords/network/benchmark. Snapshot/review checks/2026-10-24-positive-city-subset. ДанныеPhoton/OSM,availabilitylocal—notindependentgeodesy. План/docs/checkpoints/2026-10-24-positive-city-subset-DONE-module-STARTED.md:addressCitySnapshotfalse/fulloutageonly/expiry7days/remaining20с/cancel/UIlimitedcoverage+ODbLcredit/focused+fullgates. NEXTпослеdurableреализоватьбезактивации,GeoNameslargecatalogremainsblocked.
