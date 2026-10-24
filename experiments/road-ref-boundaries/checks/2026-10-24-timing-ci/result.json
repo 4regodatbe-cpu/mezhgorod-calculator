@@ -1,0 +1,203 @@
+{
+  "source": "5d8e9041d5de5cf0240e3316d91bb1f88ed97f13",
+  "run": 40081150517,
+  "overall": "success",
+  "jobs": [
+    {
+      "id": 120834805529,
+      "name": "live_probe",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_id": 40081150517,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Probe live provider geometry and per-leg times",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Probe production address collector with bounded requests",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 7
+        },
+        {
+          "name": "Audit the fixed 50-settlement route corpus",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8
+        },
+        {
+          "name": "Compare six Yandex screenshot routes with live providers",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 9
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 19
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        }
+      ]
+    },
+    {
+      "id": 120834805737,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40081150517,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run node node_modules/typescript/bin/tsc --noEmit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run node node_modules/next/dist/bin/next build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        }
+      ]
+    }
+  ],
+  "address": {
+    "status": "SOURCE_UNAVAILABLE",
+    "elapsedMs": 1798,
+    "queries": [
+      {
+        "query": "Ростов",
+        "status": "PASS",
+        "elapsedMs": 1070,
+        "failures": {
+          "http_503": 1
+        }
+      },
+      {
+        "query": "Красн",
+        "status": "PASS",
+        "elapsedMs": 528,
+        "failures": {
+          "http_503": 2,
+          "source_cooldown": 4
+        }
+      },
+      {
+        "query": "Донецк",
+        "status": "SOURCE_UNAVAILABLE",
+        "elapsedMs": 191,
+        "failures": {
+          "http_503": 4,
+          "source_cooldown": 3
+        }
+      }
+    ]
+  }
+}

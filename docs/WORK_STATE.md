@@ -1,3 +1,7 @@
+## DONE timing CI / STARTED Preview — 24.10.2026
+
+CI40081150517: verify/geometry PASS, address external503 FAIL,50/Yandex SKIPPED. [Checkpoint/лимит одного расчёта](checkpoints/2026-10-24-timing-ci-DONE-preview-STARTED.md). Ссылка из docs: checkpoints/2026-10-24-timing-ci-DONE-preview-STARTED.md. NEXT после durable: exact Preview5d8e904 Анапа→Краснодар, один расчёт/сохранение timings или blocker. 10с UNVERIFIED; без Production.
+
 ## DONE PERF-001 — диагностика времени V3, 24.10.2026
 
 Добавлен отдельный отключаемый calculationTiming: Server-Timing и structured logs этапов без адресов/координат/новой сети. Маршрут и цена не меняются. Focused9/9, full880/880, quote/API/ESLint/webpack+TypeScript/static16/16 PASS. [Итог](checkpoints/2026-10-24-calculation-timing-DONE.md) · [подключение](../experiments/road-ref-boundaries/CALCULATION_TIMING.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-calculation-timing/verification.json). 10с E2E UNVERIFIED; special_options измеряется целиком. NEXT: exact remote/обычный CI; затем bounded Preview POST timing при доступном поддержанном транспорте. KM/source blockers сохраняются. PR14 draft, без Production.
