@@ -1,3 +1,7 @@
+## BLOCKED GeoNames pilot A HEAD / NEXT optional contract — 24.10.2026
+
+[Точный результат](../../docs/checkpoints/2026-10-24-address-geonames-head-DNS-BLOCKED.md): три HEAD -> curl6/HTTP000/DNS; файлы не скачаны, B/C не стартовали, полноценная база не существует. Pilot A reattempt только при изменении сетевого доступа. Пока выполнить **read-only** дизайн независимого opt-in settlement fallback из текущих интерфейсов поиска, с fail-closed на ambiguous/absent entries, не меняя ranking/Photon/routes/prices и не выдумывая координаты.
+
 ## STARTED GeoNames bounded pilot A — 24.10.2026
 
 [План и точка восстановления](../../docs/checkpoints/2026-10-24-address-geonames-pilot-STARTED.md): A ≤3 HEAD RU.zip/UA.zip/alternateNamesV2.zip, зафиксировать size/HTTP status без download; B только после отдельного STARTED при допустимых размерах; C offline limited place/aliases/homonyms/priority coverage; до code/feature enable — ещё один STARTED. Source suitability уже DONE, не повторять4queries/3docs.

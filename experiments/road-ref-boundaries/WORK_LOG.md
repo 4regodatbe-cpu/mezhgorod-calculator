@@ -246,3 +246,8 @@ NEXT: отдельный bounded primary-source intake для coordinate-settlem
 ## 24.10.2026 — bounded GeoNames delivery pilot STARTED
 
 После прочитанного обратно исходного source intake commit `868bb9738d158a35b325d3e97456eb98a580c7e1` оформлен [план pilot A/B/C](../../docs/checkpoints/2026-10-24-address-geonames-pilot-STARTED.md). Первый мини-блок не скачивает ZIP: ≤3 HEAD country RU/UA+V2 для HTTP+размера. B импортировать только после отдельного STARTED, лимита50MiB и checksums; C на проверенных кейсах, до runtime module ещё отдельное approval-gate. В STARTED нет новой успешной проверки. Source fallback пока не реализован, Photon outage открыт.
+
+
+## 24.10.2026 — GeoNames HEAD pilot A BLOCKED_BY_ENVIRONMENT_DNS
+
+После durable STARTED (`1e38e0b6544f107a8299ce396474fe78dd340f15`) на текущем контейнере исполнена команда: `curl -sS -I --max-time 10 --connect-timeout 6 -L` на `RU.zip`, `UA.zip`, `alternateNamesV2.zip`; каждый вернул exit6/HTTP000/`Could not resolve host: download.geonames.org`. ZIP/files/headers/bytes0; данные/coverage/import не проверены. [Checkpoint](../../docs/checkpoints/2026-10-24-address-geonames-head-DNS-BLOCKED.md). Это DNS окружающей среды, не оценка работы GeoNames. Повтор без изменения доступа не нужен; независимый шаг — проверка интерфейса для future opt-in settlement fallback, read-only. Текущий calc/routing/price/code untouched; CI не запускали.

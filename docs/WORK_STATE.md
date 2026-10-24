@@ -1,3 +1,7 @@
+## BLOCKED GeoNames pilot A HEAD — 24.10.2026
+
+[3 фактических HEAD / DNS evidence](checkpoints/2026-10-24-address-geonames-head-DNS-BLOCKED.md): `RU.zip`, `UA.zip`, `alternateNamesV2.zip` → curl6/HTTP000, не удалось разрешить host `download.geonames.org`; bytes0. Это environmental DNS, не data/server failure. Pilot B/C NOT_STARTED, реальные sizes/coverage/aliases неизвестны, runtime0. НЕ повторять HEAD без новой доступной сети; следующий независимый шаг — read-only opt-in fallback integration contract. PR14 draft/без Production.
+
 ## STARTED GeoNames limited source-delivery pilot A — 24.10.2026
 
 После source intake `868bb973` готов [ограниченный план A/B/C и правила остановки](checkpoints/2026-10-24-address-geonames-pilot-STARTED.md). Ближайший шаг: ≤3 HEAD к GeoNames country RU/UA и alternateNamesV2, таймауты; до длинной загрузки отдельный B-STARTED. Локальные координаты/coverage ещё0, code0, live0. При отказе сети фиксировать BLOCKED и не заменять домыслами. PR14 draft, Production нет.

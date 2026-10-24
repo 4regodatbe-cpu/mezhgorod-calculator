@@ -71,3 +71,8 @@ Parent d4ca027fca819291c8913cdb63d3376253058eff/tree2639d883c3af11ab784260083042
 ## 24.10.2026 — ADDRESS source intake: GeoNames candidate, activation BLOCKED_BY_DATA
 
 После4поисковыхзапросов/3первичныхдокументовGeoNamesпризнанCANDIDATE_FOR_LIMITED_OFFLINE_PILOT: countryRU/UA, WGS84, geonameid/admin1…4, alternateNamesV2(ru), CC BY4.0/атрибуция. Этоещёнерезервныйактивныйпоиск: нетизмеренныхразмеров, actual coverage приоритетных полигонов/Крыма/малых поселений, проверки алиасов/гомонимов/точности, импортированногоснапшота и product gate. Имена-only RuWiki/benchmark неактивировать. OSM РФ~3.9GB/ODbL дляэтогоузкогошагаотложен. Источники/точныйnext: docs/checkpoints/2026-10-24-address-coordinate-source-intake-DONE.md. Runtime/tariffs/live0. Следом отдельный STARTED до длительного download/ETL.
+
+
+## 24.10.2026 — GeoNames delivery pilot A BLOCKED_BY_ENVIRONMENT_DNS
+
+3HEAD`RU.zip`/`UA.zip`/`alternateNamesV2.zip` → curl6, HTTP000, DNSresolve failure `download.geonames.org`; ZIP0, Content-Length unknown, B/C NOT_STARTED. Не утверждатьнедоступностьсервераисточника. Следомread-only optional module design; повторять3HEAD только при изменении сети. [Full evidence](../../docs/checkpoints/2026-10-24-address-geonames-head-DNS-BLOCKED.md). ADDRESS-AVAILABILITY не исправлено.
