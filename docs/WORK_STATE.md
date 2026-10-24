@@ -1,3 +1,7 @@
+## DONE ru/adminjoin / STARTED labelremainder — 24.10.2026
+
+[Итог/план](checkpoints/2026-10-24-geonames-alias-join-DONE-refinement-STARTED.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-geonames-alias-join/README.md). Ruимена92/93city,77/93admin;25cityissues,17collisiongroups,2ru-taggedLatinadmins.10fieldsschemaподтверждён,190rurowsсохранены;runtime0. NEXTточныйADM3/ADM4дляremainderизимеющихсяZIP,безновыхdownloads/геометрии.
+
 ## DONE language archives / STARTED offlinejoin — 24.10.2026
 
 CI40094650834PASS,aliasesRU+UA14.95MB/SHA/CRCпроверены. [Manifest/планjoin](checkpoints/2026-10-24-geonames-alias-download-DONE-join-STARTED.md). ОбщийCI40094656564completed;NEXT8/10fieldsschema→ru/history→93cityIDs+exactADM1/ADM2labels;безсети/координатнойактивации/повторамаршрутов.
