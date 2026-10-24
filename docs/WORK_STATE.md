@@ -2,6 +2,10 @@
 
 По прямой команде «Публикуй» выпущен exact source `da77f96f4f9185017938ed07022557611f3ea9bf`. [Release DONE](checkpoints/2026-10-24-production-release-DONE.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-production-release/result.json). Production `dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk` READY; оба основных aliases переключены, version200 подтверждает commit/production. /,/v3,/v2 HTTP200 через authenticated connector, browser/anonymous E2E не подтверждены. Snapshot false; V2 сохранена. PR14 draft, main/Android/backup не менялись. Предыдущий Production `dpl_DGhwwdXRTKwbbEMR127M5AbDMAoP` — rollback reference. Это разовый разрешённый выпуск, не постоянное разрешение следующих публикаций.
 
+## Задание для внешнего исполнителя готово
+
+[Текст и воспроизведение Word](contractor-brief/README.md) · [DONE](checkpoints/2026-10-24-external-blocker-brief-DONE.md).16страниц/12пакетов/62ссылки, sourcec959bc2. Отдельно описаны актуальные blockers и исторические data gaps, роли/материалы/критерии приёмки. Алгоритм и Production этим документом не менялись.
+
 # Калькулятор «Из А в Б» — текущее состояние, 24.10.2026 МСК
 
 Источник истины — код и checkpoints в этой ветке. Репозиторий `4regodatbe-cpu/mezhgorod-calculator`; разрешена только `fix/v3-missing-route-prices-2026-10-15`. PR №14 — draft, без merge. Не менять main, Android, backup/algorithm-before-road-ref-2026-10-23 (backup c7048e0a7c0fc6b471c333292f01bcfa213abad4).
