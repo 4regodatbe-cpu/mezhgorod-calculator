@@ -90,3 +90,8 @@ Parent5d7043a/tree2f1c640 exactreadbackпроверен. [Checkpoint](../../docs
 ## 24.10.2026 — workflowtransferrecovery
 
 Remote5203f3a/tree682346b содержалscript/tests/docs,workflowнепопалвindexиз-заsparsegitaddwarning. [Checkpoint](../../docs/checkpoints/2026-10-24-runtime-probe-workflow-transfer-DONE.md). Ошибказамеченадопереходакlive. Готовыйworkflowсохраняется--sparse/exactremotepathreadback,неповторяявычисления. Live0вэтомrecovery,обязательнаяпроверка875/buildужеготова.
+
+
+## 24.10.2026 11:26 МСК — fixPreviewsmokeDONE / сериязавершена
+
+Parent16644a3/tree5542454remotechecked,workflowblobecb7469runtimeprobe/artifactsreadbackPASS;filesystemhashпослеsparseSwitchENOENTисправленчтениемGitobjectбезповторатестов. ExactfixPreview5d7043a/dpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss/app-lib-dataidentical:3GETРостов200/Красн200/Донецк200,ДНРпервым/Ростоввторым,connector7425/4187/2426мс. Rostovruntimepartial1http503/236мс;sourceoutsвсёещёбывают. Междуqueries19–29с,невыдаватьзаsameprocess<15сproof(этотконтрактвтестах). [Подробныйитог](../../docs/checkpoints/2026-10-24-address-live-fixed-series-DONE.md). Локальныйcodegate875/buildPASS,этотdocs-only/liveшаггейтынерепитил. ФинальныйобычныйCIбезskip,далеечитатьегоactualстатусы. Productionнет.

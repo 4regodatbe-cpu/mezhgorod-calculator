@@ -1,3 +1,7 @@
+## DONE live address series — 24.10.2026
+
+ЖивойbadPreviewвыявилнашложныйcooldown;fixthreshold3/15с+successresetсохранён. НовыйfixPreview5d7043a:Ростов/Красн/Донецквсе200,ДНРпервым/Ростоввторым;raw/logsсохранены. НовыйCIprobeиспользуетproductioncollector/pool≤3queries/≤60с,workflowполностьюсохранёнв16644a3(blobjecb7469);sparseпотеряindexисправленаотдельно. [Итогсерии](checkpoints/2026-10-24-address-live-fixed-series-DONE.md) · [новыйlive](../experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/summary.json).875tests/quote/API/ESLint/buildTypeScript/static16/16PASSлокально. Внешний503ещёвстречается;phone/mobileB-only/10сE2Eнепроверены;3GETнеизолированныйsameprocess<15сproof. NEXT:actualобычныйCIитоговогоhead,newruntimeprobe/sourcefailuresотдельно. Production/main/merge/backupнетронуты.
+
 ## Persistence recovery — runtime workflow, 24.10.2026
 
 Commit5203f3aсохранилscript/tests/docs,ноgitaddпропустилworkflowoutside sparse-checkout. ПолноеCIподключениедоrecoveryнезаявлять. [Исправлениесохранения](checkpoints/2026-10-24-runtime-probe-workflow-transfer-DONE.md). Готовыйworkflowдобавить--sparse/commit/remoteexactpathreadback;liveещёнепродолжался. ЗатемтотжезаключительныйfixPreviewsmoke;875tests/buildнерепититьрадипередачи.

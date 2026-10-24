@@ -72,3 +72,8 @@ The standalone V2 calculator keeps its own internal tariffs, including special-s
 ## 24.10.2026 — независимый ограничитель адресного поиска
 
 ВрамкахразрешённогопродолжениядобавленaddressRequestPool:одинswitch,localconcurrency2/queue64,positivecache128URL5мин,singleflight,cancellation,cooldown50342915с,общий20сbudget. СохраняютсявсепрежниеURLварианты/приоритеты/координаты. Полнаянедоступностьнепревращаетсяв«адреснесуществует»; никакихновыхгеокодеров/фиктивныхкоординат. Документация:../experiments/road-ref-boundaries/ADDRESS_REQUEST_POOL.md; итогcheckpoints/2026-10-24-address-endpoint-series-DONE.md. Неутверждатьavailability/B-onlyfix/10сSLAпомокам.
+
+
+## 24.10.2026 — корректировка адресного cooldown по live evidence
+
+Одинpartial503неявляетсяоснованиемблокироватьoriginдляследующегогорода. Реализованпорог3HTTP503/429безsuccessвполном15сокне,successfulupstreamсбрасываетstreak/паузу. Live849102cвыявилрегрессию;fix5d7043aPreview3адреса200,875tests/buildPASS. CIпроверяетactualcollector/poolboundedprobeвместоlegacyrawfanout. Подробности:checkpoints/2026-10-24-address-live-fixed-series-DONE.md. Availability/phone/10сSLAнеобещаются.

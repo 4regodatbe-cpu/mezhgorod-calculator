@@ -1,3 +1,9 @@
+## Актуальное продолжение после live/fixсерии
+
+1. ПроверитьобычныйCIфинальногоhead:verify,newproductioncollectoraddressprobe,source/checkfailuresиskippedотдельно;неприниматьoverall successзаlivePASS. Workflowblobecb7469сохранёнв16644a3.
+2. ЖивойfixPreview5d7043aуже3/3GET200;безновогоотличиянеповторятьsmoke. См.docs/checkpoints/2026-10-24-address-live-fixed-series-DONE.md. Точныйpartial→newcity<15сsameprocessконтрактпокрыттестами,неизолированlive. Source503/phoneB-only/10сE2Eнеобъявлятьзакрытыми.
+3. Припроверенныхданныхнезависимопополнятьpendingkm/scope/цены;неугадывать,нестроитьDEFERREDполныйroadgraph. Сохранятькаждыйблок,несколькоподрядвсеансе. СтарыеSTARTEDнижеисторические.
+
 ## Сейчас заключительныйfixPreviewsmoke
 
 По docs/checkpoints/2026-10-24-runtime-address-probe-DONE-livefix-STARTED.md послеdurablereadback≤3GETнаexactfix5d7043aPreviewREADY,stopнаsourcefailure,сохранитьновыеbody/logsсотдельнымитогом. Codeprobeготов/875tests/buildPASS. ОбычныйCIнафинальномcheckpointсерии;невыдаватьисходныйbad849102cзановыйкод.
