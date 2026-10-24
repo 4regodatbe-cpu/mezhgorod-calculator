@@ -1,3 +1,7 @@
+## DONE language archives / STARTED offlinejoin — 24.10.2026
+
+CI40094650834PASS,aliasesRU+UA14.95MB/SHA/CRCпроверены. [Manifest/планjoin](checkpoints/2026-10-24-geonames-alias-download-DONE-join-STARTED.md). ОбщийCI40094656564completed;NEXT8/10fieldsschema→ru/history→93cityIDs+exactADM1/ADM2labels;безсети/координатнойактивации/повторамаршрутов.
+
 ## DONE новыйalias-source / STARTEDпоставка — 24.10.2026
 
 ОфициальныеcountryalternatenamesRU/UA(~12M/2.2M)могутзакрытьlanguagegapбезглобальногоV2. Schema/datefieldsпоканеизвестны. [План/лимиты](checkpoints/2026-10-24-geonames-country-alias-source-DONE-pilot-STARTED.md). NEXT2HEAD/2GETвread-onlyCI≤50MiB/SHA/CRC,послеcompletedmanifestиSTARTEDofflinejoin,безruntime/повтораgeographicdumps.

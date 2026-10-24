@@ -291,3 +291,8 @@ C STARTED e6578e8 прочитанremote;5.789сoffline/458879строк237006P/
 ## 24.10.2026 — country alias source DONE / delivery STARTED
 
 2searches/2officialdocs: alternatenames/countryRU~12M/UA~2.2M,общийV2ненужендляпроверкивозможности. SchemaещёUNKNOWN;CCBY4.0/specизофициальногоreadme. Созданread-onlyworkflow2HEAD+2GET/50MiB/exactETag/SHA/CRC,передсетьюSTARTED: docs/checkpoints/2026-10-24-geonames-country-alias-source-DONE-pilot-STARTED.md. YAML/compile/constraintsPASS;runtime0. NEXTactualCIresult,completedthenofflinealias/adminjoinSTARTED.
+
+
+## 24.10.2026 — country aliases delivery DONE / join STARTED
+
+Run40094650834/2HEAD2GET/PASS,RU+UA14.95MB,exactSHA/CRC/outerdigestPASS;manifest checks/2026-10-24-geonames-alias-download. ОбщийавтоматическийCI40094656564completed,последосмотраstepsсохранитьотдельно. Sourcec63e984/tree1ba2fb0,PR14draft;NEXTdurableSTARTEDofflinejoin93ids/admins/ruhistory,неактивироватьcoords. План: docs/checkpoints/2026-10-24-geonames-alias-download-DONE-join-STARTED.md.
