@@ -30,3 +30,8 @@
 ## 23.10.2026 — точные graph nodes DONE, прежняя maneuver-точка диагностическая
 
 [Подробный checkpoint](../../docs/checkpoints/2026-10-23-road-ref-exact-graph-DONE.md). Начало инструкции не совпадало с фактическим въездом. Реализован разбор уже имеющихся graph edges, связывание chunks по directed overlap и идентификаторы OSM node+way pair. Это работает с выбранной геометрией любого provider при полном matching. Шесть retained случаев/12 профилей дают один общий вектор, ценыunknown. Полный replay14 responses/0misses/0live;840tests, quote/API, ESLint и build/static16/16 PASS. Добавлен graph endpoint register:0 активных строк,1pending. Не повторялся тарифный аудит и не менялись цены. Следующий шаг — exact remote readback/CI, затем проверенные цены/scope.
+
+
+## 24.10.2026 — recovery / точный CI readback
+
+[Checkpoint](../../docs/checkpoints/2026-10-24-road-ref-recovery-DONE.md). PR14head f2abc85/draft подтверждён. Run39997833752 success, verify/live geometry success; live_probe failure: Photon503/timeouts, BUDGET_EXHAUSTED90s,12/13 queries,94 source failures; последующие route audits skipped. Workflow continue-on-error объясняет общий success. Реализация и старые840checks не повторялись; причина внешнего поиска остаётся IN_PROGRESS, связь с A/B не доказана. Следующий шаг — offline fan-out/fallback review после remote readback.
