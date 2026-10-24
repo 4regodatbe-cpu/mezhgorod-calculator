@@ -1,3 +1,7 @@
+## Remoteподтверждён4113542 / модульвыключен — 24.10.2026
+
+Кодовыйcommit411354238f4ab3b54b562384456c8682eb772e95/tree377f46024352cb940f9539c7339faf430a97a2daпроверены. [Exact-byte recovery](../../docs/checkpoints/2026-10-24-city-snapshot-remote-byte-recovery-DONE.md).4cityfallbackготов/flagfalse;local894/buildPASS,whole-repoLintFAIL19baseline. NEXTbaseline-lintreview/позжеPreviewUI,безавтоактивации/повторамаршрутов.
+
 ## DONE optionalcitysnapshot / DISABLED — 24.10.2026
 
 [Итог](../../docs/checkpoints/2026-10-24-city-snapshot-module-DONE-DISABLED.md) · [подключение](ADDRESS_CITY_SNAPSHOT.md). Кодготов:4savedlivecitySuggestion/fulloutageonly/7dayexpiry/shared20с/UIcoverage+OSMcredit;flagaddressCitySnapshot:false. Focused7/full894/quoteAPI/buildTypeScript/static16PASS;changedESLintPASS,whole-repoESLintFAIL19unchangederrors. NEXTотдельныйbaseline-lintreview,затемPreview/UIreview;неактивироватьавтоматически. Новыхlive0/Productionнет.

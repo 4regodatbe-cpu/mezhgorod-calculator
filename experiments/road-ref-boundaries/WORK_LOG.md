@@ -321,3 +321,8 @@ Exact4SuggestionизуспешныхPreviewcaptures/captureSHA/sourceDate/source
 ## 24.10.2026 — optionalcitysnapshot module DONE/DISABLED
 
 STARTED97cb150передкодомdurable. Изолированныelib/data/flagfalse/однаunavailableинтеграция/api/suggest/sharedUIcoverage+ODbL+Placeorigin/cacheguard;4реальныхsavedcitySuggestion,expiry31.10/20собщийbudget,knownhomonymsраздельно. НикакихGeoNames/benchmarkcoords. Focused7/65mock/live0;finalfull894/quoteAPIadapter/buildTypeScript/static16/changedESLintPASS. Whole-repoESLintFAIL19unchangederrors/5warnings(blobproof);parallelbuild25мсoldtest1FAILсохранён,isolated8/8/finalsequential894/894PASS,assertionsunchanged. Evidence: checks/2026-10-24-city-snapshot-module;docs/checkpoints/2026-10-24-city-snapshot-module-DONE-DISABLED.md,ADDRESS_CITY_SNAPSHOT.md,OPTIONAL_MODULES. NEXTотдельныйbaseline-lintreview/PreviewUI,flagfalse/noProduction.
+
+
+## 24.10.2026 — exact-byte transfer recovery DONE
+
+Moduleactualremote411354238f4ab3b54b562384456c8682eb772e95/tree377f46024352cb940f9539c7339faf430a97a2da/readbackPASS. FirstcreateTree mismatchcaughtbeforeref;read_textnewlineconversionлоговисправленнаread_bytes().decodeUTF8,exacttreeравен. Tests/codeнеповторялись. Protocolдополнен,checkpoint docs/checkpoints/2026-10-24-city-snapshot-remote-byte-recovery-DONE.md. Flagfalse/whole-repolintFAIL19baseline;NEXTотдельныйlintreview/PreviewUI,Productionнет.

@@ -55,3 +55,8 @@
 ## Восстановление после зависания — 17.10.2026 23:07 МСК
 
 Применять раздел «После зависания» в [WORKFLOW_RULES.md](WORKFLOW_RULES.md). В recovery checkpoint записывать последний подтверждённо сохранённый шаг, фактические локальные/удалённые результаты и место остановки; разбить незавершённый остаток последней задачи на последовательные части с входами, лимитами, выходами и критериями готовности. После каждой части — фактические проверки, commit/readback и следующий шаг; при повторной остановке дробить только оставшуюся часть. Сохранять per-case progress разрешённого пакета, без повторного запуска готовых случаев. При сбое передачи восстанавливать сохранение готовых файлов, а не повторять вычисления.
+
+
+## Exact UTF-8 bytes when persisting logs — 24.10.2026
+
+When composing GitHub tree entries from local UTF-8 files, preserve original bytes including CR/CRLF in logs. Python Path.read_text() uses universal-newline conversion; use Path.read_bytes().decode("utf-8") when exact Git blob/tree identity is required. Check the resulting tree against the local Git tree before creating/updating the branch ref. A mismatched/unreferenced tree is not durable persistence; repair transfer, not calculation/tests. Evidence: checkpoints/2026-10-24-city-snapshot-remote-byte-recovery-DONE.md.
