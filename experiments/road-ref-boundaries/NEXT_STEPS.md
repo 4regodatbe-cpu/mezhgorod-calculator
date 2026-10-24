@@ -1,3 +1,7 @@
+## DONE special timing CI / STARTED one POST probe — 24.10.2026
+
+CI40082403690:verify/geometryPASS,addressFAIL,50/YandexSKIPPED. [План/лимит](../../docs/checkpoints/2026-10-24-special-timing-ci-DONE-runtime-probe-STARTED.md). Следом отдельный CI diagnostic: один production handlerPOST Анапа→Краснодар с реальной сетью,child60с/atomic artifacts; не deployedE2E,не новые runtime запросы/тарифы.
+
 ## DONE special timing — 24.10.2026
 
 Детализированы provider/routing/matching/pricing внутри special_options тем же optional calculationTiming. Focused16/16, full880/880, quote/API/ESLint/webpackTypeScript/static16/16 PASS. [Итог/следующий шаг](../../docs/checkpoints/2026-10-24-special-timing-DONE.md). Новых live0, E2E10с UNVERIFIED; Preview требует auth. NEXT: exact remote/обычный CI, затем один авторизованный runtime POST либо bounded in-process CI probe с честной границей измерения. Цены/выбор не менялись, PR14 draft, без Production.
