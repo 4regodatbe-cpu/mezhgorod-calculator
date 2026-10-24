@@ -1,3 +1,7 @@
+## DONE special runtime / performance series closed — 24.10.2026
+
+Донецк→Москва:HTTP200/specialEndpoint:true/dual/mainland/OSRM,1123.25км,3050₽изматрицы(непересверенотдельно),handler7.318с/process7.587с. [Evidence/ограничения/next](checkpoints/2026-10-24-special-runtime-live-DONE.md). Обычный2.225с иspecial7.318с уложились10с;глобальныйbrowserE2EUNVERIFIED.887tests/buildPASS. Не расширять perfкорпус безпричины;следом bounded offline outage/fallback review поиска. RuWiki2110имёнбезкоординат неготовыйfallback. Км/тарифныепробелы сохранены,Productionнет.
+
 ## DONE special probe setup / NEXT live — 24.10.2026
 
 Diagnostic whitelist/workercasebinding/specialbranch+stages checks готовы. CIвыбираеттолькоДонецк→Москва;Анапунеповторяет.22focused/887full/quote/API/ESLint/webpackTypeScript/static16/16PASS;localLive0. [Итог/next](checkpoints/2026-10-24-special-runtime-probe-DONE.md). Послеdurable прочитатьпервыйactualCI,сохранитьbody/timings/errors. Runtime/ценыбезизменений,Productionнет.

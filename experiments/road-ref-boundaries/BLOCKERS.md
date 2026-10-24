@@ -6,8 +6,8 @@
 | --- | --- | --- | --- |
 | KM-001 | BLOCKED_BY_DATA | У graph pair4443232947→358467208 нет проверенных официальных километров/координат output shape; нельзя назначить соседний км | Добавить reviewed anchor/section с источником в локальный реестр, модуль не блокировать |
 | KM-002 | BLOCKED_BY_DATA | Полной калиброванной геометрии обходов/шкал км нет | Пополнять только нужные sections; свою дорожную сеть не строить |
-| PERF-001 | UNVERIFIED | До10с всей системы — целевой ориентир; slow external routing/matching может его превышать | Отдельный bounded E2E timing после стабилизации источников; локальные замеры модуля сохранять отдельно |
-| ADDRESS-001 | IN_PROGRESS | CI39997833752 и40067156518: Photon live job failed, общий success допускает ошибку; причина A/B не доказана | Offline fan-out/fallback review; не смешивать с километражем |
+| PERF-001 | DIAGNOSTICS_DONE / browser E2E UNVERIFIED | Два real-network handler случая: Анапа2.225с,Донецк7.318с; общего SLA нет | Не расширять однотипный корпус без нового медленного случая; сохранять обязательные проверки |
+| ADDRESS-001 | LOCAL_FIX_VERIFIED / AVAILABILITY_BLOCKED_BY_SOURCE | Pool/cancel/cooldown исправлены и проверены; cold query при полном Photon503 всё ещё502, B-only не доказан | Bounded offline fallback review; не брать координаты из именного RuWiki индекса/benchmark |
 | TARIFF-001 | BLOCKED_BY_DATA | Scope/цены graph pair pending unknown, активных новых строк0 | Заполнить проверенный scope/источник/даты отдельно |
 | DOC-001 | DEFERRED |24.10 web open OSM milestone timeout, новых данных не извлечено | При сборе реальных anchors проверить первичный источник; для локального ядра не блокер |
 
