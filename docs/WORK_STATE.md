@@ -1,3 +1,7 @@
+## LIVE regression found / STARTED circuit fix — 24.10.2026
+
+ExactPreview849102c:Ростов200/Красн200/Донецк502,ровно3GET. Runtime logs:первые2partialс1http503,последний7source_cooldown/16мс. Новыйpoolошибочновключаетoriginpauseпослеодногочастичного503,мешаяследующемуадресу. [Checkpoint/исправление](checkpoints/2026-10-24-address-preview-DONE-circuit-fix-STARTED.md) · [raw/API/logs](../experiments/road-ref-boundaries/checks/2026-10-24-address-live/summary.json). NEXT:threshold3failures/15с + resetнаsuccess, regressionpartial→newquery,fulloutageотдельно;gates/сохранение. ЗатемruntimeCIprobepath. Старые864testsэтурегрессиюнепоймали;необъявлятьполныйпоискисправленным. Productionнет.
+
 ## DONE CI / STARTED live Preview address smoke — 24.10.2026
 
 Source849102c/PR14draft подтверждён. CI40074351547:verify/geometryPASS, legacyPhotonFAIL, следующиеauditsSKIPPED. Legacyprobe обходитновыйpool; этоотдельныйдефектпроверки. ExactPreview dpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXxREADY. [План/лимиты](checkpoints/2026-10-24-address-live-STARTED.md) · [CIevidence](../experiments/road-ref-boundaries/checks/2026-10-24-address-live/ci-readback.json). NEXT: ≤3последовательныхGETадреса наPreview, stopприsourcefailure; сохранить, затемотдельныйruntimeprobe/CIpathfix. НеProduction,неmobileproof,неновыетарифы/километры.

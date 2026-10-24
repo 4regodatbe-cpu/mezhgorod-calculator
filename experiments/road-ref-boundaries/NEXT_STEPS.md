@@ -1,3 +1,7 @@
+## Приоритет: исправить ADDR-CIRCUIT-001
+
+Live3GETпоймалирегрессиюновогоcooldown:1partial503→следующийадреслокально502. По docs/checkpoints/2026-10-24-address-preview-DONE-circuit-fix-STARTED.md реализоватьthreshold3/15с+successreset,partial-nextquery/fulloutageконтракты,gates,сохранить. ЗатемнезависимыйactualruntimeCIprobe. Приошибкеотключитьновыйpoolвместоизвестнойрегрессии.
+
 ## Сейчас bounded live + CIprobepath
 
 По docs/checkpoints/2026-10-24-address-live-STARTED.md: послеdurableSTARTED≤3exactPreviewGETs,сохранитьрезультат/ошибку;затемисправитьlegacyCIprobe,которыйобходитновыйpool. Source849102cverifyPASS,legacyPhotonFAILнепроверяетновыйpath. НеProduction/неповторrouteкорпуса.

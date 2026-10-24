@@ -24,3 +24,7 @@ KM-001/KM-002 остаются BLOCKED_BY_DATA: локальное ядро/ин
 ## 24.10.2026 — ADDRESS endpoint proof / ограничения
 
 ADDRESS-FANOUTfixed-and-verified:poolcontracts+настоящийNextendpoint/rсdeterministicPhotonmocks,864fullgate/buildPASS. ADDRESS-AVAILABILITY/mobileB-onlyUNVERIFIED:live0,приoutageновыйадрес502. Sharedcancel/cache/sequentialreplacementPASS;40mockrequestspeak2. TEST-FIXTURE-001закрыт:mockнеузнавалlowercasebboxварианты,исходныйлогсохранён,поправлентолькоfixtureбезослабленияassertions. Очередь/параллельностьпроверенывпроцессе,междуreplicasнетглобальнойкоординации.
+
+## 24.10.2026 — ADDR-CIRCUIT-001 OPEN / live regression
+
+Preview849102c/3GET:Ростов200,Красн200,Донецк502. Runtime7source_cooldownпоследнему,1http503впредыдущемpartialresponse. Нельзяглобальноблокироватьследующийадреспослеединственного503придругихsuccess. Приоритетthreshold3безsuccess/15с,+resetуспешнымответом;testpartial→newcoldquery.Несчитатьисправленнымдоgates. Старыйendpointtestзакреплял502послеpartial;поправитьтребование,добавитьполныйoutageотдельно. Evidence:checks/2026-10-24-address-live.
