@@ -281,3 +281,8 @@ Run40091634576/2ZIP17.7MB, exactSHA/CRC+local artifact digest PASS. Permanent ma
 ## 24.10.2026 — GeoNames offline C DONE
 
 C STARTED e6578e8 прочитанremote;5.789сoffline/458879строк237006P/0invalidduplicate.93selectedrawrows/hash/admin/geometryсохранены.7/8queriesambiguous;2ТарасовкивДНР;labels/ruV2/accuracy/completenessнеподтверждены. Коданализа/commands/results: checks/2026-10-24-geonames-review; checkpoint docs/checkpoints/2026-10-24-geonames-offline-review-DONE.md. Selftest/conservation/rawrow93checksPASS,calculatorruntimeunchanged/network0. NEXT короткийpolicyreview93records + independentvalidation;неактивировать.
+
+
+## 24.10.2026 — bounded candidate-policy/source review DONE
+
+ПослеCremote08109c5,4queries/3primarydocs(2READ/1timeout). Officialcodepolicyonly,93recordsallcandidate-types/7ambiguousqueries. LuhanskQ134279identity702658corroborated,butP625Wikipediaimport/notindependent/pointdelta723.027m,accuracyUNVERIFIED. Donetskdoc timeout. policy/result/checkpoint docs/checkpoints/2026-10-24-geonames-policy-review-DONE.md;JSON/counts/math/links/diffPASS,runtime/networkroutes0. NEXTnewboundedprimarycentres/adminlabels,noactivefallbackbeforevalidation/STARTED.

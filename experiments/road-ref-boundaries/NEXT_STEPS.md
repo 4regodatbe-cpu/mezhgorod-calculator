@@ -1,3 +1,7 @@
+## DONE candidate policy / validation BLOCKED — 24.10.2026
+
+[Разбор](../../docs/checkpoints/2026-10-24-geonames-policy-review-DONE.md) · [политикакандидатов](SETTLEMENT_CANDIDATE_POLICY.md). Все93selectedтипамикандидатны,но7queriesнеоднозначны;нужныru/adminlabels/проверенныецентры. Luhanskidentitycorroborated,точкиразнятся723м,accuracyUNVERIFIED;Donetskdoc timeout. Runtime0. NEXT bounded≤3primarysourcesдляpriorityID/labels/centres,передкодомSTARTED;неповторятьdownloads/корпус.
+
 ## DONE GeoNames C / runtime ещё BLOCKED — 24.10.2026
 
 237006 P-records/458879строк, invalid/duplicate0;8имён→93кандидата,7запросовнеоднозначны. [Итог](../../docs/checkpoints/2026-10-24-geonames-offline-review-DONE.md) · [данные/команды](checks/2026-10-24-geonames-review/README.md). В4полигонахестьrecords, полнота/точность/ru aliases/adminlabelsнеподтверждены;КрымполигонUNKNOWN. NEXT bounded review93records/featurecodes/labels, затем independent validation;no activation.
