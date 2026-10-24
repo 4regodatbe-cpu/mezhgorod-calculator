@@ -343,3 +343,5 @@ Source81dfe59/STARTEDdurable;18importstyleerrorsscopedCommonJS/sourceType+1const
 24.10.2026 — STARTED SSR-контракт по checkpoint 2026-10-24-city-snapshot-render-STARTED; parent f606d36, PR14 draft, active CI нет. 2 последовательных блока, без повторения маршрутов/поиска браузера и без активации.
 
 24.10.2026 — DONE SSR city snapshot: scripts/v3-calculator-form-ui.test.mjs +3 assertions groups, focused5/full898/quoteAPI/ESLint0errors5warnings/webpackTS16 PASS. Raw/SHA/commands: checks/2026-10-24-city-snapshot-render. Это HTML props contract, не browser click/effect/E2E. Snapshot false, live0. STARTED c51dd81, PR14draft. NEXT browser checklist после save/readback.
+
+24.10.2026 — DONE browser acceptance plan: ADDRESS_CITY_SNAPSHOT.md 8 сценариев/expected/evidence, exact local mock /r/network isolation, разделение SSR и browser E2E, freshness gate. Parent d22205e/treece123f0 readbackPASS. Docs paths/falseflag/diff-check PASS, без новых tests/build/live. Browser NOT_RUN/Chromium unavailable; следующий запуск только при изменении предпосылки + STARTED.

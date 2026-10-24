@@ -1,3 +1,7 @@
+## DONE browser acceptance plan / запуск BLOCKED — 24.10.2026
+
+[Checkpoint](checkpoints/2026-10-24-city-snapshot-browser-acceptance-DONE.md). SSR код сохранён remote d22205e/treece123f0. В ADDRESS_CITY_SNAPSHOT.md 8 браузерных сценариев с expected/evidence и mock-only границами. Browser NOT_RUN: нужен доступный браузер и STARTED; не повторять поиск Chromium при прежней среде. Snapshot false, срок31.10.2026 11:24:54МСК; full898/ESLint/build PASS — только локальные gates.
+
 ## DONE SSR-контракт / browser E2E NOT_RUN — 24.10.2026
 
 [Итог](checkpoints/2026-10-24-city-snapshot-render-DONE.md). Focused5/full898/quoteAPI/ESLint0errors5warnings/buildTypeScript/static16 PASS. Проверен rendered notice/credit при selected/swap-props/clear-props, не события браузера. Snapshot false. NEXT: конкретизировать browser acceptance; Chromium blocker сохраняется.
