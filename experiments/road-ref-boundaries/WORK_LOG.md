@@ -341,3 +341,5 @@ Source81dfe59/STARTEDdurable;18importstyleerrorsscopedCommonJS/sourceType+1const
 24.10.2026 — ESLint DONE сохранён remote d6d902320d3b5a2b43cc7836358120acdfd0d0ad / tree cf1249a10a3bb594cbbc430f600573e0c38a9d0d, exact readback PASS. Следующий UI preflight: BLOCKED_BY_ENVIRONMENT_BROWSER (Playwright есть, Chromium отсутствует). UI NOT_RUN, install/server/browser/live 0, snapshot false. Checkpoint: docs/checkpoints/2026-10-24-city-snapshot-ui-preflight-BLOCKED.md. Нужен доступный браузер и новый STARTED перед UI run; старые тесты не объявлены E2E.
 
 24.10.2026 — STARTED SSR-контракт по checkpoint 2026-10-24-city-snapshot-render-STARTED; parent f606d36, PR14 draft, active CI нет. 2 последовательных блока, без повторения маршрутов/поиска браузера и без активации.
+
+24.10.2026 — DONE SSR city snapshot: scripts/v3-calculator-form-ui.test.mjs +3 assertions groups, focused5/full898/quoteAPI/ESLint0errors5warnings/webpackTS16 PASS. Raw/SHA/commands: checks/2026-10-24-city-snapshot-render. Это HTML props contract, не browser click/effect/E2E. Snapshot false, live0. STARTED c51dd81, PR14draft. NEXT browser checklist после save/readback.

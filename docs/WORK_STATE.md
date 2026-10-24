@@ -1,3 +1,7 @@
+## DONE SSR-контракт / browser E2E NOT_RUN — 24.10.2026
+
+[Итог](checkpoints/2026-10-24-city-snapshot-render-DONE.md). Focused5/full898/quoteAPI/ESLint0errors5warnings/buildTypeScript/static16 PASS. Проверен rendered notice/credit при selected/swap-props/clear-props, не события браузера. Snapshot false. NEXT: конкретизировать browser acceptance; Chromium blocker сохраняется.
+
 ## STARTED: SSR-контракт резервного города — 24.10.2026
 
 [План](checkpoints/2026-10-24-city-snapshot-render-STARTED.md). Проверить реальный серверный HTML attribution/selected/swap/clear; затем уточнить browser acceptance. Браузерный blocker сохраняется, snapshot false.
