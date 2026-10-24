@@ -1,3 +1,7 @@
+## DONE новыйalias-source / STARTEDпоставка — 24.10.2026
+
+ОфициальныеcountryalternatenamesRU/UA(~12M/2.2M)могутзакрытьlanguagegapбезглобальногоV2. Schema/datefieldsпоканеизвестны. [План/лимиты](checkpoints/2026-10-24-geonames-country-alias-source-DONE-pilot-STARTED.md). NEXT2HEAD/2GETвread-onlyCI≤50MiB/SHA/CRC,послеcompletedmanifestиSTARTEDofflinejoin,безruntime/повтораgeographicdumps.
+
 ## DONE candidate policy / validation BLOCKED — 24.10.2026
 
 [Разбор](checkpoints/2026-10-24-geonames-policy-review-DONE.md) · [политикакандидатов](../experiments/road-ref-boundaries/SETTLEMENT_CANDIDATE_POLICY.md). Все93selectedтипамикандидатны,но7queriesнеоднозначны;нужныru/adminlabels/проверенныецентры. Luhanskidentitycorroborated,точкиразнятся723м,accuracyUNVERIFIED;Donetskdoc timeout. Runtime0. NEXT bounded≤3primarysourcesдляpriorityID/labels/centres,передкодомSTARTED;неповторятьdownloads/корпус.

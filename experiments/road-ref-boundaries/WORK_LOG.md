@@ -286,3 +286,8 @@ C STARTED e6578e8 прочитанremote;5.789сoffline/458879строк237006P/
 ## 24.10.2026 — bounded candidate-policy/source review DONE
 
 ПослеCremote08109c5,4queries/3primarydocs(2READ/1timeout). Officialcodepolicyonly,93recordsallcandidate-types/7ambiguousqueries. LuhanskQ134279identity702658corroborated,butP625Wikipediaimport/notindependent/pointdelta723.027m,accuracyUNVERIFIED. Donetskdoc timeout. policy/result/checkpoint docs/checkpoints/2026-10-24-geonames-policy-review-DONE.md;JSON/counts/math/links/diffPASS,runtime/networkroutes0. NEXTnewboundedprimarycentres/adminlabels,noactivefallbackbeforevalidation/STARTED.
+
+
+## 24.10.2026 — country alias source DONE / delivery STARTED
+
+2searches/2officialdocs: alternatenames/countryRU~12M/UA~2.2M,общийV2ненужендляпроверкивозможности. SchemaещёUNKNOWN;CCBY4.0/specизофициальногоreadme. Созданread-onlyworkflow2HEAD+2GET/50MiB/exactETag/SHA/CRC,передсетьюSTARTED: docs/checkpoints/2026-10-24-geonames-country-alias-source-DONE-pilot-STARTED.md. YAML/compile/constraintsPASS;runtime0. NEXTactualCIresult,completedthenofflinealias/adminjoinSTARTED.
