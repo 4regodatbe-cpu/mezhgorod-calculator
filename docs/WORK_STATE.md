@@ -1,3 +1,7 @@
+## DONE address pool / STARTED endpoint regression — 24.10.2026
+
+Отдельный pool2/queue64/singleflight/positiveLRU128URL5мин/cooldown50342915с и общий20сbudget подключены к suggest; очистка одного subscriber не отменяет другой. Один addressRequestPool switch. СтарыеURLs/ranking/клиент/цены сохранены. [Итог блока2 / план3](checkpoints/2026-10-24-address-pool-DONE-endpoint-STARTED.md) · [модуль](../experiments/road-ref-boundaries/ADDRESS_REQUEST_POOL.md) · [checks](../experiments/road-ref-boundaries/checks/2026-10-24-address-pool/verification.json).54focused/863full/quote/API/ESLint/build+TypeScript/static16/16PASS, live0. Следующий блок в том же сеансе: endpoint /r последовательность замен/отмена/cache. Промежуточныйcodecommit skipci с локальнымиgates; обычныйCI на итоговомблоке3. Источник43d4813/PR14draft, безProduction. Availability/B-only/10снеобещаны.
+
 ## DONE address diagnosis / STARTED bounded request pool — 24.10.2026
 
 Один autocomplete порождает7–13 одновременных запросов к одномуPhotonorigin; общего server pool/cache/singleflight нет. A/B используют один AddressField; отдельный B-only дефект не установлен. [Диагноз/последовательный план](checkpoints/2026-10-24-address-diagnosis-DONE-pool-STARTED.md) · [counts,live0](../experiments/road-ref-boundaries/checks/2026-10-24-address-pool/diagnosis.json). Source deed213/PR14draft. NEXT после durable readback: отдельный отключаемый pool2/queue/cache/cooldown и budget20с, прежний ranking/URLs сохранить; затем endpoint regression в том же сеансе. Цены/километры/Production не менять.

@@ -8,8 +8,11 @@
 
 | Модуль | Состояние | Включение / удаление | Контракт |
 | --- | --- | --- | --- |
+| addressRequestPool | DONE, local863tests/buildPASS; endpoint regression next | data/toll-feature-switches.json → addressRequestPool:false | queue/cache/singleflight/cooldown; collectAddressFeatures сохраняет прежние варианты/ranking и20с общий budget |
 | roadKilometrage | DONE, локальные851tests/buildPASS | data/toll-feature-switches.json → roadKilometrage:false; один вызов optionalRoadKilometrage в m4-production.ts | m4PvpPreview.roadKilometrage; unknown/stop вместо ошибки основного расчёта; тарифы/выбор маршрута не меняет |
 
 Пробелы/стопы: experiments/road-ref-boundaries/BLOCKERS.md. Последовательный план: docs/checkpoints/2026-10-24-road-kilometrage-STARTED.md. Production/main/merge не разрешены.
 
 Подключение, удаление, схема данных и фактическое покрытие: experiments/road-ref-boundaries/KILOMETRAGE.md. Правило на будущие задачи сохранено в AGENTS.md; существующие движки целиком не переписывались.
+
+Address module: experiments/road-ref-boundaries/ADDRESS_REQUEST_POOL.md. Лимит2 относится к одному тёплому process, не ко всем replicas.

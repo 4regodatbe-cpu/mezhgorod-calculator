@@ -9,6 +9,8 @@ export function photonFailureReason(reason: unknown): string {
   if (!(reason instanceof Error)) return "unknown";
   if (reason.message === "Photon request timed out") return "deadline";
   if (reason.message === "Photon request cancelled") return "cancelled";
+  if (reason.message === "Photon source cooling down") return "source_cooldown";
+  if (reason.message === "Photon request queue full") return "queue_full";
   if (reason.message === "Photon returned invalid features") return "invalid_response";
   if (/^Photon [45]\d{2}$/u.test(reason.message)) return `http_${reason.message.slice(7)}`;
   const cause = reason.cause as { code?: unknown } | undefined;
@@ -28,6 +30,7 @@ export async function fetchPhotonFeatures(
     timeoutMs?: number;
   } = {},
 ): Promise<PhotonFeature[]> {
+  if (signal?.aborted) throw new Error("Photon request cancelled");
   const controller = new AbortController();
   let rejectAbort!: (reason: Error) => void;
   const cancelled = new Promise<never>((_, reject) => { rejectAbort = reject; });

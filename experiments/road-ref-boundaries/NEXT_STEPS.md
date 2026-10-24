@@ -1,3 +1,7 @@
+## Сейчас: block3 ADDRESS endpoint regression
+
+Блок2poolDONE/54focused/863full/buildPASS. После durable readback — scripts/address-search-endpoint.test.ts по сценарию замены адресов и отмены shared/устаревшего запроса через /r; preserve originalranking. См. docs/checkpoints/2026-10-24-address-pool-DONE-endpoint-STARTED.md. ОбычныйCI на финальномcommit, промежуточныйskipci ужепроверенlocalgate. Готовый module не переписывать; externalavailability остаётся отдельнымпробелом.
+
 ## Актуальная серия ADDRESS-001
 
 Блок1 diagnosisDONE, блок2 poolSTARTED: docs/checkpoints/2026-10-24-address-diagnosis-DONE-pool-STARTED.md. После exactremote readback реализовать ограниченный отключаемый requestpool/cache/singleflight/cooldown и общий20сbudget, focused/fullgate/build; сохранить. Затем endpoint /r regression по последовательности замен адресов, отдельно сохранить итог, не ждать «дальше». Existingranking/URLcoverage и prices не менять; availability/B-only остаются неподтверждёнными.

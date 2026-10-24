@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SPECIAL_TERRITORY_BOUNDARIES } from "../../../lib/special-territory-boundaries.ts";
-import { photonSearchUrls, rankPhotonFeatures } from "../../../lib/photon-address-search.ts";
-import { fetchPhotonFeatures, photonFailureReason } from "../../../lib/photon-fetch.ts";
+import { rankPhotonFeatures } from "../../../lib/photon-address-search.ts";
+import { collectAddressFeatures } from "../../../lib/address-search-service.ts";
 
 export const preferredRegion = "fra1";
 
@@ -12,19 +12,15 @@ export async function GET(request: NextRequest) {
 
   const started = Date.now();
   try {
-    const outcomes = await Promise.allSettled(photonSearchUrls(q).map((url) => fetchPhotonFeatures(url, { signal: request.signal })));
-    const features = outcomes.flatMap((outcome) => outcome.status === "fulfilled" ? outcome.value : []);
-    if (outcomes.every((outcome) => outcome.status === "rejected")) {
+    const { features, sourceCount, failures, budgetExpired, unavailable } = await collectAddressFeatures(q, { signal: request.signal });
+    if (unavailable) {
       if (!request.signal.aborted) {
-        const failures: Record<string, number> = {};
-        for (const outcome of outcomes) {
-          if (outcome.status !== "rejected") continue;
-          const reason = photonFailureReason(outcome.reason);
-          failures[reason] = (failures[reason] ?? 0) + 1;
-        }
-        console.error("address_search_unavailable", { elapsedMs: Date.now() - started, sourceCount: outcomes.length, failures });
+        console.error("address_search_unavailable", { elapsedMs: Date.now() - started, sourceCount, failures, budgetExpired });
       }
       throw new Error("Photon unavailable");
+    }
+    if (!request.signal.aborted && Object.keys(failures).length) {
+      console.warn("address_search_partial", { elapsedMs: Date.now() - started, sourceCount, failures, budgetExpired });
     }
     return NextResponse.json({ items: rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, q) });
   } catch {

@@ -16,3 +16,7 @@
 ## 24.10.2026 — результаты реализации
 
 KM-001/KM-002 остаются BLOCKED_BY_DATA: локальное ядро/индекс/проекция готовы, но real pending pair по-прежнему без км.14 named groups/81 nodes добавлены из прежнего runtime inventory только как номинальные позиционные anchors; новых live данных0. Projection проверена synthetic; reviewed реальных sections0. PERF-001 остаётся UNVERIFIED для E2E10с; локальные CPU замеры — checks/2026-10-24-kilometrage/performance.json. ADDRESS-001/TARIFF-001 не переделывались этим этапом. Попытка прочитать ещё работающий job120797900591 вернула GitHub logs404 BlobNotFound; трактуется как недоступность незавершённого лога, без повтора маршрутов/отмены CI. Правки обязательных source проверок не пропускались.
+
+## 24.10.2026 — ADDRESS-001 mitigated, availability UNVERIFIED
+
+Избыточный7–13parallelfanout заменён boundedprocesspool/singleflight/cache/cooldown и20собщимbudget. Contractsgate54/863/buildPASS; следующийendpointregression отдельно. Реальнаядоступностьсервиса/исходныйmobileсбой/B-only причинность не подтверждены. Успешныйкэш толькоуже полученныхURL, холодныйновыйадрес приoutageпо-прежнему502. Никаких выдуманныхкоординат/новыхAPI. ДлинныйCIплан: промежуточныйcodecommit skipci приполномlocalgate, обычныйCI послеendpointблока; CIограниченияwriterсохраняются.
