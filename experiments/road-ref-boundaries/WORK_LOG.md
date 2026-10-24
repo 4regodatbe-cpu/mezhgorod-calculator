@@ -85,3 +85,8 @@ Sourceb54f7d8/treec5e753c exactremotechecked. [Checkpoint](../../docs/checkpoint
 ## 24.10.2026 — actualruntimeCIprobeDONE / finalfixsmokeSTARTED
 
 Parent5d7043a/tree2f1c640 exactreadbackпроверен. [Checkpoint](../../docs/checkpoints/2026-10-24-runtime-address-probe-DONE-livefix-STARTED.md). Новыйproductioncollectorprobe3queries/≤60сnetworkbudget/atomicprogress/sourcechecks,legacyнеизменён. CIзаменёнтолькоPhotonstep/artifacts.31focused/875full/quote/API/ESLint/webpackTypeScript/static16/16PASS;rawcap500flag,live0. ExactfixPreview5d7043aREADYdpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss;app/lib/dataбезdiff. Следом3GETlivefixsmoke→отдельноесохранениеобычнымCI;этотcodecommitintermediateskipci,обязательныелокальныеgatesпрошли.
+
+
+## 24.10.2026 — workflowtransferrecovery
+
+Remote5203f3a/tree682346b содержалscript/tests/docs,workflowнепопалвindexиз-заsparsegitaddwarning. [Checkpoint](../../docs/checkpoints/2026-10-24-runtime-probe-workflow-transfer-DONE.md). Ошибказамеченадопереходакlive. Готовыйworkflowсохраняется--sparse/exactremotepathreadback,неповторяявычисления. Live0вэтомrecovery,обязательнаяпроверка875/buildужеготова.

@@ -1,3 +1,7 @@
+## Persistence recovery — runtime workflow, 24.10.2026
+
+Commit5203f3aсохранилscript/tests/docs,ноgitaddпропустилworkflowoutside sparse-checkout. ПолноеCIподключениедоrecoveryнезаявлять. [Исправлениесохранения](checkpoints/2026-10-24-runtime-probe-workflow-transfer-DONE.md). Готовыйworkflowдобавить--sparse/commit/remoteexactpathreadback;liveещёнепродолжался. ЗатемтотжезаключительныйfixPreviewsmoke;875tests/buildнерепититьрадипередачи.
+
 ## DONE actual-runtime CI probe / STARTED fixed Preview smoke — 24.10.2026
 
 Новыйscripts/address-search-runtime-probe.mjs используетproductioncollector/pool/ranking,≤3queries/20скаждая/60собщийnetworkbudget,atomicprogress/results,CLIнеPASSдляsource/check/timeout. PhotonCIstepзаменён,legacyсохранён,routecorpusнерасширен.31focused/875full/quote/API/ESLint/buildTypeScript/static16/16PASS;liveэтогопроба0. [Итог/заключительныйsmoke](checkpoints/2026-10-24-runtime-address-probe-DONE-livefix-STARTED.md). FixPreview5d7043aREADYdpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss;app/lib/dataсfixSHAсовпадают. NEXTпослеdurable≤3GETsmokeисправления,stopнаsourcefailure;отдельныйcheckpointиобычныйCIфинальногоhead. PR14draft,Productionнет.

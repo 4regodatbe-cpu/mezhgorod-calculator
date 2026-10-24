@@ -38,8 +38,8 @@ jobs:
       - name: Probe live provider geometry and per-leg times
         run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
       # Keep live routing checks on the selected fastest route; toll-avoiding alternatives are out of scope.
-      - name: Probe live Photon address suggestions
-        run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-live-probe.mjs
+      - name: Probe production address collector with bounded requests
+        run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-runtime-probe.mjs
       - name: Audit the fixed 50-settlement route corpus
         run: node --import ./scripts/register-ts-paths.mjs scripts/settlement-random-route-audit.mjs
       - name: Compare six Yandex screenshot routes with live providers
@@ -53,6 +53,8 @@ jobs:
             special-territory-full-flow-probe.json
             address-search-live-probe.json
             address-search-live-probe-progress.json
+            address-search-runtime-probe.json
+            address-search-runtime-probe-progress.json
             settlement-random-route-audit.json
             yandex-route-reference-audit.json
           if-no-files-found: ignore
