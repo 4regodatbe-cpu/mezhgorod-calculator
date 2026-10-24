@@ -1,0 +1,94 @@
+{
+  "sourceCommit": "4af5b44864ae4b87d42726fc52759c7664c85810",
+  "status": "BLOCKED_BY_DATA",
+  "newLiveRoutingRequests": 0,
+  "apiOpens": [
+    {
+      "url": "https://www.openstreetmap.org/api/0.6/node/4443232947",
+      "outcome": "URL not accessible via web tool; no node record retrieved"
+    },
+    {
+      "url": "https://www.openstreetmap.org/api/0.6/node/358467208",
+      "outcome": "URL not accessible via web tool; no node record retrieved"
+    }
+  ],
+  "webQueries": [
+    "site:openstreetmap.org \"4443232947\"",
+    "site:openstreetmap.org \"358467208\"",
+    "site:russianhighways.ru \"Платов\" \"километр\"",
+    "site:rosavtodor.gov.ru \"Р-260\" \"М-4\" \"км\""
+  ],
+  "primarySources": [
+    {
+      "url": "https://www.russianhighways.ru/press/news/87670/",
+      "publicationDate": "2022-12-01",
+      "paraphrase": "1038km concerns Novocherkassk interchange; Platov is an alternative detour, not a node-to-km binding",
+      "decision": "reject1038km binding to target node"
+    },
+    {
+      "url": "https://rosavtodor.gov.ru/file/10342912",
+      "outcome": "web fetch timeout; snippet not sufficient"
+    }
+  ],
+  "savedCapture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+  "captureSha256": "5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9",
+  "targetEdges": [
+    {
+      "captureCallIndex": 4,
+      "responseKeys": [
+        "units",
+        "edges",
+        "alternate_paths"
+      ],
+      "shapePresent": false,
+      "edge": {
+        "way_id": 447135768,
+        "toll": false,
+        "end_shape_index": 737,
+        "begin_shape_index": 720,
+        "names": [
+          "подъезд к аэропорту «Платов»",
+          "подъезд от магистрали «Дон» к аэропорту «Платов»"
+        ],
+        "end_node": {
+          "intersecting_edges": [
+            {}
+          ],
+          "node_id": 4443232947,
+          "type": "street_intersection"
+        }
+      }
+    },
+    {
+      "captureCallIndex": 5,
+      "responseKeys": [
+        "units",
+        "edges",
+        "alternate_paths"
+      ],
+      "shapePresent": false,
+      "edge": {
+        "way_id": 1211606940,
+        "toll": false,
+        "end_shape_index": 110,
+        "begin_shape_index": 106,
+        "names": [
+          "М-4",
+          "E 115",
+          "«Дон»"
+        ],
+        "end_node": {
+          "intersecting_edges": [
+            {}
+          ],
+          "node_id": 358467208,
+          "type": "motor_way_junction"
+        }
+      }
+    }
+  ],
+  "runtimeChanges": false,
+  "newReviewedKmAnchors": 0,
+  "newReviewedSections": 0,
+  "nextSourceRequired": "raw exact OSM object/linked milestone or operator interchange scheme with unambiguous road/branch/scale and official chainage"
+}

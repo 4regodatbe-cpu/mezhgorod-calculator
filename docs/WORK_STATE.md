@@ -1,3 +1,7 @@
+## DONE bounded KM intake / BLOCKED data / STARTED PERF review — 24.10.2026
+
+2OSMAPIopensнедоступны,4точечныхwebqueriesнеподтвердиликмnode4443232947/358467208. Сохранённыйtraceoutputshape/latlon/kmотсутствуют. Отклонёнложный1038кмкандидат(соседняяразвязкаНовочеркасска,неbindingПлатовnode). [Итог/планPERF](checkpoints/2026-10-24-km-intake-DATA-BLOCKED-performance-STARTED.md) · [sourceevidence](../experiments/road-ref-boundaries/checks/2026-10-24-km-intake/result.json). Runtimeкм/ценыбезизменений,новыхanchors0. NEXTпослеdurable—ограниченныйreviewсуществующихтайминговполногоV3,припробелеотдельнаяотключаемаядиагностикабезновойсети/сменымаршрута.10сE2Eпо-прежнемуUNVERIFIED. Addresssourceoutageотдельноblocked,готовые875tests/Previewнеповторятьбезпричины. PR14draft/безProduction.
+
 ## DONE runtime CI / STARTED two-junction KM intake — 24.10.2026
 
 CI40078223671:verify/geometryPASS,newruntimeaddressprobeFAILза2225мс:Ростов/КраснPASS,Донецк4http503+3cooldown/0features.50/YandexSKIPPED;overall successнеlivePASS. [Readback/новыйплан](checkpoints/2026-10-24-runtime-ci-DONE-km-intake-STARTED.md) · [CIevidence](../experiments/road-ref-boundaries/checks/2026-10-24-runtime-ci-readback/result.json). ExternalavailabilityBLOCKED_BY_SOURCE;готовыеpool/contracts/Previewнеповторятьбезновогоматериала. NEXTпослеdurable:ограниченныйsourceintakeкмдляnode4443232947/358467208,неполнаясеть/нетарифы. Сохранённыйtraceoutputshapeотсутствует,requestиндексыдлякоординатнеиспользовать. Sourcee0295e4/PR14draft,Productionнет.

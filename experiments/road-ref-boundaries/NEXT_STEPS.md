@@ -1,3 +1,7 @@
+## Сейчас PERF-001 existingtimingsreview
+
+KM-001intakeBLOCKED_BY_DATAсevidenceвdocs/checkpoints/2026-10-24-km-intake-DATA-BLOCKED-performance-STARTED.md. ПослеdurableпроверитьexistingV3timings,еслидостаточнынесоздаватьлишниймодуль;еслинет—отдельнаяотключаемаядиагностикастадийбезсети/измененийцены. Необъявлять10сSLAпоofflineCPU. KM/Addresssourceошибкисохранены,незацикливатьсянапустыхисточниках.
+
 ## Сейчас KM-001 source intake
 
 CI40078223671readbackDONE:verifyPASS,addressruntime2citiesPASS/Донецкexternal503FAIL,sourceavailabilityотдельноblocked. По docs/checkpoints/2026-10-24-runtime-ci-DONE-km-intake-STARTED.md выполнитьпослеdurableточечныйintakeдля2OSMnodes,лимит2API/4webqueries;различатькоординату/официальныйкм/съездref. Пригодныеreviewedanchorsотдельноилиpendinggapбезугадывания. Полнуюсеть/повторrouteкорпусанезапускать.

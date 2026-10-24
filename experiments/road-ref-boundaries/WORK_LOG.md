@@ -103,3 +103,8 @@ Sourcee0295e4/PR14draft exactheadпроверен. Run40078223671verify/geometry
 
 
 24.10: первая попытка передачи завершилась TypeError до GitHub write: JS helper предыдущего сеанса отсутствовал в памяти инструмента. Это восстановление транспорта, не Git permission failure. Восстановить helper, передать готовое дерево и проверить remote head/tree; расчёты/CI/retrieval не повторять.
+
+
+## 24.10.2026 — KM boundedintakeDONE/dataBLOCKED / PERF reviewSTARTED
+
+Parent4af5b44/tree95bfbc8remotechecked. [Checkpoint](../../docs/checkpoints/2026-10-24-km-intake-DATA-BLOCKED-performance-STARTED.md).2OSMAPIurlsнедоступны/4webqueries/2primaryopens:точныекмнеполучены. Отклонён1038км—officialarticleописываетНовочеркасск,аПлатовдругойобъезд. РосавтодорPDFtimeout. Captureend_nodeнетlatlon/km/outputshape. ResultJSONсhash/edgefieldsсохранён,anchors/sections0новых/runtimeнеизменён. СледомнезависимыйPERF-001existingtimingsreview,неподмена10сE2Eмоками;docschecksбезповторныхfulltests.

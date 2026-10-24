@@ -40,3 +40,7 @@ ADDR-CIRCUIT-001fixedcontracts+новыйPreview5d7043aпоказалРосто�
 ## 24.10.2026 — actualruntimeCI40078223671
 
 ADDRESS-AVAILABILITYBLOCKED_BY_SOURCEвэтомrun:Донецк4actualhttp503+3cooldown,0features;Ростов/КраснPASS,2225мстotal. Harnessпроверяетновыйpool,ошибкаsourceявнаянеPASS. Verify/geometryPASS;50/YandexSKIPPED. СледомнезависимыйKMsourceintake2nodes,sourceoutageнеповоддляновогоширокогоroute/retryаудита.
+
+## 24.10.2026 — KM-001 boundedsourceintakeзакрыткакBLOCKED_BY_DATA
+
+2OSMAPIopensинструментомнедоступны;4primarysearchqueriesнепривязаликмкexactnodes.1038кмАвтодораотносятсякНовочеркасскойразвязке,неприсваиватьПлатову.PDFРосавтодораtimeout.Сохранённыйtraceнеимеетoutputshape/latlon/km.Ограниченныйintakeсохранёнвchecks/2026-10-24-km-intake/result.json;runtimeanchors/sections0новых. ПовтортехжеAPI/searchбезсменыисточника/доступаненужен. Следующийsource—точныйOSMobject/linkedmilestoneилиоператорскаясхемасbranch/scale/km. ПерешликнезависимомуPERFreview.
