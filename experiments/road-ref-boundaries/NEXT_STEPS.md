@@ -1,3 +1,7 @@
+## DONE GeoNames source suitability / NEXT separate pilot STARTED — 24.10.2026
+
+[Source-intake checkpoint](../../docs/checkpoints/2026-10-24-address-coordinate-source-intake-DONE.md): 4 source queries/3 primary documents; GeoNames CC BY 4.0 RU+UA + alternateNamesV2 preliminary candidate (not live enabled), disambiguation via geonameid/admin, WGS84. Priority polygon coverage, counts, ZIP bytes, Russian aliases and precise positions **not yet validated**. Geofabrik OSM РФ ~3.9 GB/ODbL postponed. Next: record separate STARTED before downloads, bounded sample/size/checksum/feature-P/priority-coverage and ambiguity criteria; no app/lib or tariff changes; no street/house guarantee.
+
 ## DONE outage/fallback review / next coordinate-source intake — 24.10.2026
 
 Все7вариантовДонецкаидутв1Photonorigin. Positiveкэши5миннепомогаютновомуcoldqueryприfull503. RuWiki2110имёнбезкоординат,benchmarkнельзяактивировать. [Итог/ограниченныйследующийшаг](../../docs/checkpoints/2026-10-24-address-outage-fallback-review-DONE.md). Нуженпроверенныйcoordinatecitycatalog/независимыйautocompleteисточник;runtime0изменений/live0. До4primaryqueries/3docsintake,неroadnetwork/неповторperf/неугадыватьпозиции. Specialruntime7.318сDONE/887tests/buildPASSранее,Productionнет.

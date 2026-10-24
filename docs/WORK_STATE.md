@@ -1,3 +1,7 @@
+## DONE ADDRESS-001 coordinate-source intake / GeoNames pilot candidate — 24.10.2026
+
+GeoNames (CC BY 4.0, WGS84, RU/UA country dumps, ru aliases через alternateNamesV2, geonameid/admin disambiguation) **кандидат только для ограниченного offline пилота**, не новый runtime fallback. Реальный coverage приоритетных территорий, размеры RU/UA и качество координат пока не проверены. OSM РФ ~3.9 GB / ODbL отложен. [Первичные источники, критерии и запреты](checkpoints/2026-10-24-address-coordinate-source-intake-DONE.md). 4 searches/3 primary docs, ZIP0/live0/code0, 887 прежних tests не повторялись. NEXT: отдельный STARTED перед скачиванием/импортом с size/coverage/alias/homonyms/provenance gates. ADDRESS-AVAILABILITY по-прежнему BLOCKED. PR14 draft/без Production.
+
 ## DONE outage/fallback review / next coordinate-source intake — 24.10.2026
 
 Все7вариантовДонецкаидутв1Photonorigin. Positiveкэши5миннепомогаютновомуcoldqueryприfull503. RuWiki2110имёнбезкоординат,benchmarkнельзяактивировать. [Итог/ограниченныйследующийшаг](checkpoints/2026-10-24-address-outage-fallback-review-DONE.md). Нуженпроверенныйcoordinatecitycatalog/независимыйautocompleteисточник;runtime0изменений/live0. До4primaryqueries/3docsintake,неroadnetwork/неповторperf/неугадыватьпозиции. Specialruntime7.318сDONE/887tests/buildPASSранее,Productionнет.
