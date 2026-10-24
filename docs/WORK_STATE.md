@@ -4,7 +4,9 @@
 
 Первый технический блок B03 завершён статусом [BLOCKED](checkpoints/2026-10-24-215649-b03-browser-runtime-BLOCKED.md): Chromium154 существует, но bounded headless smoke падает до DOM (`setsockopt: Operation not permitted`, exit133). Восемь browser-сценариев NOT_RUN, зависимости не устанавливались, SSR/API не повторялись, snapshot остаётся false.
 
-B04 exact OSM identity/topology [DONE](checkpoints/2026-10-24-220143-b04-osm-coordinate-intake-DONE.md): 2 nodes + 4 ways HTTP200/raw/SHA/ODbL, directed entry/exit и координаты подтверждены; focused verifier PASS15/15, live0. Официальный km/operator scope/fare остаются null, runtime inactive, никакая цена/zero не назначена. Следующий независимый блок — B10 точечное восстановление V2 compare Ейск/Майкоп. Production/main/merge/Android/backup запрещены.
+B04 exact OSM identity/topology [DONE](checkpoints/2026-10-24-220143-b04-osm-coordinate-intake-DONE.md): 2 nodes + 4 ways HTTP200/raw/SHA/ODbL, directed entry/exit и координаты подтверждены; focused verifier PASS15/15, live0. Официальный km/operator scope/fare остаются null, runtime inactive, никакая цена/zero не назначена.
+
+B10 V2 compare recovery начат отдельным [STARTED](checkpoints/2026-10-24-220525-b10-v2-compare-recovery-STARTED.md): frozen install и bounded two-case harness/no-network preflight; сохранённые V3 captures не повторять, live V2 только после следующего STARTED. Production/main/merge/Android/backup запрещены.
 
 # Production DONE — 24.10.2026 МСК
 

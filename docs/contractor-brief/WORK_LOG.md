@@ -23,3 +23,7 @@ Chromium 154 теперь присутствует, но bounded headless `about
 Шесть exact OSM API объектов получены HTTP200 и сохранены с metadata/SHA/ODbL. Entry `4443232947` подтверждён как directed `447135768 → 1182567076`, exit `358467208` как `1211606940 → 28835034`; координаты сохранены. Offline verifier PASS15/15, live0. Reviewed manifest остаётся `runtimeEligible:false`, `officialKilometre:null`, `operatorScope:null`, `fare:null`. Runtime/data/tariffs не менялись, route replay/full audit/build NOT_RUN. [DONE](../checkpoints/2026-10-24-220143-b04-osm-coordinate-intake-DONE.md).
 
 Следующий независимый блок: B10 точечное восстановление незавершённого V2 compare Ейск/Майкоп; B05–B09 ждут новых первичных документов.
+
+## 24.10.2026 22:05 МСК — B10 V2 compare recovery STARTED
+
+Сверён старый незавершённый STARTED: V2 evidence/DONE отсутствуют, V3 captures/replay уже сохранены и повторяться не будут. Текущий блок ограничен frozen install и подготовкой двухслучайного V2 harness с no-network preflight; live capture начнётся только после следующего durable STARTED. [План и recovery](../checkpoints/2026-10-24-220525-b10-v2-compare-recovery-STARTED.md).

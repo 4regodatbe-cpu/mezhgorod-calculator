@@ -2,7 +2,7 @@
 
 Актуально на 24.10.2026 21:54 МСК.
 
-1. **B10 READY_FOR_RECOVERY:** проверить сохранённый STARTED V2 compare Ейск/Майкоп и выполнить только отсутствующие два capture + offline Thu/Sat replay; общий regression runner не запускать.
+1. **B10 IN_PROGRESS:** STARTED recovery сохранён; frozen install + bounded two-case V2 harness/no-network preflight. Live capture только после отдельного durable STARTED; общий regression runner не запускать.
 2. **B03 BLOCKED_BY_ENVIRONMENT_BROWSER_RUNTIME:** Chromium 154 падает до DOM с crashpad `setsockopt: Operation not permitted`, exit133. Восемь сценариев NOT_RUN; повторять только в среде с разрешённым browser runtime.
 3. **B01–B02 BLOCKED_BY_SOURCE/DATA:** pool/circuit выполнены; GeoNames downloads/joins не повторять. Нужен новый проверенный источник labels/hierarchy/coordinates.
 4. **B04 IDENTITY_DONE / DATA_BLOCKED:** exact coordinates и directed topology сохранены; official km/operator scope/fare unknown, runtime inactive.
