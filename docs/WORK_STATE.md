@@ -1,8 +1,12 @@
+# STARTED Production release — 24.10.2026 МСК
+
+Текущая прямая команда пользователя «Публикуй» разрешает выпуск exact source da77f96. [Release STARTED](checkpoints/2026-10-24-production-release-STARTED.md). Production пока не обновлён этим шагом; snapshot false, PR14 draft/main/Android/backup не менять. После сохранения создать Production из exact SHA, проверить READY/aliases/HTTP, записать результат. Состояние и ограничения кода ниже сохраняются.
+
 # Калькулятор «Из А в Б» — текущее состояние, 24.10.2026 МСК
 
-Источник истины — код и checkpoints в этой ветке. Репозиторий `4regodatbe-cpu/mezhgorod-calculator`; разрешена только `fix/v3-missing-route-prices-2026-10-15`. PR №14 — draft, без merge. Не менять main, Production, Android, backup/algorithm-before-road-ref-2026-10-23 (backup c7048e0a7c0fc6b471c333292f01bcfa213abad4).
+Источник истины — код и checkpoints в этой ветке. Репозиторий `4regodatbe-cpu/mezhgorod-calculator`; разрешена только `fix/v3-missing-route-prices-2026-10-15`. PR №14 — draft, без merge. Не менять main, Android, backup/algorithm-before-road-ref-2026-10-23 (backup c7048e0a7c0fc6b471c333292f01bcfa213abad4).
 
-Последний проверенный remote перед этим checkpoint: `be8720a244fdc246e52554ac766be81a5c9455ac`, tree `e8ebe05715d868bff9f1222005013eb8b049383a`. После сохранения этого документа сверять actual ref/PR, не считать записанный parent текущим head. CI перед записью completed; не писать при active/queued и не отменять jobs.
+Исторический parent компактного handoff: `be8720a244fdc246e52554ac766be81a5c9455ac`, tree `e8ebe05715d868bff9f1222005013eb8b049383a`. После сохранения этого документа сверять actual ref/PR, не считать записанный parent текущим head. CI перед записью completed; не писать при active/queued и не отменять jobs.
 
 ## Выполнено
 
