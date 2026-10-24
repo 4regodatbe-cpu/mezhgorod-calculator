@@ -306,3 +306,8 @@ Run40094650834/2HEAD2GET/PASS,RU+UA14.95MB,exactSHA/CRC/outerdigestPASS;manifest
 ## 24.10.2026 — ADM3/4 label remainder DONE / DATA_BLOCKED
 
 Durable934ff22;52remainder,44exactADM3/4bindings/ru0;57missingcodeentries;addedlabels0. Russian-scriptguard19collisiongroupsvs17baseline,ДНРТарасовкинеразличимы;93idsнепотеряны. Selftest/dataset2.517с/93ids/44bindingrawhashPASS,network0/runtime0. Result/repro checks/2026-10-24-geonames-label-refinement;checkpoint docs/checkpoints/2026-10-24-geonames-label-refinement-DATA-BLOCKED-DONE.md. NEXTинойисточникlabels/coordinatevalidationилиreviewedsubset,неповторGeoNamescycle. CI40094656564stepsсохраненывalias-download/ci-readback.json.
+
+
+## 24.10.2026 — bounded second-source DONE / next captured-positive subset review
+
+4queries/1officialOSMlicensedoc,нетдопущенныхрусскихadminlabels/coordsдля2ДНРТарасовок. PrimarysourcegapBLOCKED_BY_DATA. Checkpoint docs/checkpoints/2026-10-24-address-secondary-source-review-DONE.md. NEXTкороткийofflineосмотрреальныхPhotonpositivecaptures,неbenchmark/недownload/нетрассы;возможенмалыйverifiedlocalcitysubsetтолькопослеreviewmanifest/STARTED. Runtime0/live0;docslinks/diffchecks.

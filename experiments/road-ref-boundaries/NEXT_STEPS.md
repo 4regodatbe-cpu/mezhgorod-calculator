@@ -1,3 +1,7 @@
+## DONE bounded second-source / NEXT positivecapture review — 24.10.2026
+
+[Итог](../../docs/checkpoints/2026-10-24-address-secondary-source-review-DONE.md):4queries/OSMcopyrightprimarydoc,0approvedlabels/coords;GeoNameslabelgapостаётсяblocked. NEXTofflineоценкареальныхsavedPhotonPASScapturesдлямалогоlocalcitysubset(неbenchmark/неальтернативныйorigindata). Передкодомreviewedmanifest+STARTED,необещатьвсеадреса.
+
 ## DONE labelsremainder / DATA_BLOCKED — 24.10.2026
 
 [Итог](../../docs/checkpoints/2026-10-24-geonames-label-refinement-DATA-BLOCKED-DONE.md) · [evidence](checks/2026-10-24-geonames-label-refinement/README.md).52cityremainder,44точныхADM3/4bindings/rualiases0;новыхрусскихlabels0. ПослеотбраковкиLatinruadmins19collisiongroups,включая2ДНРТарасовки. НЕповторятьGeoNamesdownload/alias/adminjoin;NEXTинойисточникточныхlabels/coordinatevalidationилиограниченныйreviewedsubset. Runtimeещёнет/неактивирован;PR14draft.
