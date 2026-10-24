@@ -9,6 +9,8 @@
 | PERF-001 | DIAGNOSTICS_DONE / browser E2E UNVERIFIED | Два real-network handler случая: Анапа2.225с,Донецк7.318с; общего SLA нет | Не расширять однотипный корпус без нового медленного случая; сохранять обязательные проверки |
 | ADDRESS-001 | LOCAL_FIX_VERIFIED / AVAILABILITY_BLOCKED_BY_SOURCE | Pool/cancel/cooldown исправлены и проверены; cold query при полном Photon503 всё ещё502, B-only не доказан | GeoNames geometry+language intake DONE; ru city92/93, base admins77/93 (2 Latin), extra ADM3/4 ru0/44,19 label collisions. Runtime blocked by labels/independent accuracy/reviewed snapshot; no repeat of completed GeoNames joins |
 | TARIFF-001 | BLOCKED_BY_DATA | Scope/цены graph pair pending unknown, активных новых строк0 | Заполнить проверенный scope/источник/даты отдельно |
+| UI-001 | BLOCKED_BY_ENVIRONMENT_BROWSER | Playwright доступен, Chromium отсутствует; browser E2E NOT_RUN, SSR не заменяет события | При доступном браузере STARTED и8сценариев ADDRESS_CITY_SNAPSHOT.md; не повторять поиск в прежней среде |
+| LINT-001 | FIXED_AND_VERIFIED | Все19ошибок закрыты, последние gates898/ESLint0errors5warnings/buildPASS | Не является текущим blocker; исторические FAIL ниже сохранены |
 | DOC-001 | DEFERRED |24.10 web open OSM milestone timeout, новых данных не извлечено | При сборе реальных anchors проверить первичный источник; для локального ядра не блокер |
 
 Исходные статусы/логи: docs/checkpoints/2026-10-24-road-ref-recovery-DONE.md и checks/2026-10-24-recovery/ci-status.json. Новые runtime стопы возвращать структурированно в диагностике расчёта; не писать синхронные сетевые/file logs в критическом пути.
