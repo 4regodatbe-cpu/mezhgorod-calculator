@@ -1,3 +1,7 @@
+## DONE labelsremainder / DATA_BLOCKED — 24.10.2026
+
+[Итог](checkpoints/2026-10-24-geonames-label-refinement-DATA-BLOCKED-DONE.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-geonames-label-refinement/README.md).52cityremainder,44точныхADM3/4bindings/rualiases0;новыхрусскихlabels0. ПослеотбраковкиLatinruadmins19collisiongroups,включая2ДНРТарасовки. НЕповторятьGeoNamesdownload/alias/adminjoin;NEXTинойисточникточныхlabels/coordinatevalidationилиограниченныйreviewedsubset. Runtimeещёнет/неактивирован;PR14draft.
+
 ## DONE ru/adminjoin / STARTED labelremainder — 24.10.2026
 
 [Итог/план](checkpoints/2026-10-24-geonames-alias-join-DONE-refinement-STARTED.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-geonames-alias-join/README.md). Ruимена92/93city,77/93admin;25cityissues,17collisiongroups,2ru-taggedLatinadmins.10fieldsschemaподтверждён,190rurowsсохранены;runtime0. NEXTточныйADM3/ADM4дляremainderизимеющихсяZIP,безновыхdownloads/геометрии.

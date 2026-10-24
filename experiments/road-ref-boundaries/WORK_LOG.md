@@ -301,3 +301,8 @@ Run40094650834/2HEAD2GET/PASS,RU+UA14.95MB,exactSHA/CRC/outerdigestPASS;manifest
 ## 24.10.2026 — ru/admin join DONE / remainder STARTED
 
 10fields/all1,427,089aliases/0invalidduplicate;93exactadminbindings;92city/77adminru,25labelissues/17collisiongroups/2Latinru-taggedadmins.190rawrurows+SHA+flagsсохраненывchecks/2026-10-24-geonames-alias-join;selftests/dataset3.623с/93ids/190hashPASS. Runtime0/network0. Checkpoint docs/checkpoints/2026-10-24-geonames-alias-join-DONE-refinement-STARTED.md;NEXTboundedADM3/4remainderпослеdurable,неповторC/downloads.
+
+
+## 24.10.2026 — ADM3/4 label remainder DONE / DATA_BLOCKED
+
+Durable934ff22;52remainder,44exactADM3/4bindings/ru0;57missingcodeentries;addedlabels0. Russian-scriptguard19collisiongroupsvs17baseline,ДНРТарасовкинеразличимы;93idsнепотеряны. Selftest/dataset2.517с/93ids/44bindingrawhashPASS,network0/runtime0. Result/repro checks/2026-10-24-geonames-label-refinement;checkpoint docs/checkpoints/2026-10-24-geonames-label-refinement-DATA-BLOCKED-DONE.md. NEXTинойисточникlabels/coordinatevalidationилиreviewedsubset,неповторGeoNamescycle. CI40094656564stepsсохраненывalias-download/ci-readback.json.
