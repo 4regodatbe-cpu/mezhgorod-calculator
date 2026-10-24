@@ -20,3 +20,7 @@ KM-001/KM-002 остаются BLOCKED_BY_DATA: локальное ядро/ин
 ## 24.10.2026 — ADDRESS-001 mitigated, availability UNVERIFIED
 
 Избыточный7–13parallelfanout заменён boundedprocesspool/singleflight/cache/cooldown и20собщимbudget. Contractsgate54/863/buildPASS; следующийendpointregression отдельно. Реальнаядоступностьсервиса/исходныйmobileсбой/B-only причинность не подтверждены. Успешныйкэш толькоуже полученныхURL, холодныйновыйадрес приoutageпо-прежнему502. Никаких выдуманныхкоординат/новыхAPI. ДлинныйCIплан: промежуточныйcodecommit skipci приполномlocalgate, обычныйCI послеendpointблока; CIограниченияwriterсохраняются.
+
+## 24.10.2026 — ADDRESS endpoint proof / ограничения
+
+ADDRESS-FANOUTfixed-and-verified:poolcontracts+настоящийNextendpoint/rсdeterministicPhotonmocks,864fullgate/buildPASS. ADDRESS-AVAILABILITY/mobileB-onlyUNVERIFIED:live0,приoutageновыйадрес502. Sharedcancel/cache/sequentialreplacementPASS;40mockrequestspeak2. TEST-FIXTURE-001закрыт:mockнеузнавалlowercasebboxварианты,исходныйлогсохранён,поправлентолькоfixtureбезослабленияassertions. Очередь/параллельностьпроверенывпроцессе,междуreplicasнетглобальнойкоординации.

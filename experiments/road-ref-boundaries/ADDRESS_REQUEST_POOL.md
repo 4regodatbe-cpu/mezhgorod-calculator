@@ -23,3 +23,7 @@ lib/photon-request-pool.ts — независимый process-local pool; lib/ad
 Диагноз и counts с live0: checks/2026-10-24-address-pool/diagnosis.json. Focused contracts и full gate в той же папке. Доказаны поведение очереди/подписок/cache/cooldown/budget и отсутствие лишнего pre-aborted fetch. Не доказаны текущая доступность Photon, отсутствие блокировки конкретного IP, исправление исходного mobile UI сбоя или одинаковая задержка всех реальных адресов. Сохранённые503/timeouts — факты, высокая fan-out нагрузка — выявленный недостаток; причинность каждого503 и запрет пользователя не установлены.
 
 Официальный PhotonREADME предупреждает о throttling/ban интенсивного использования и отсутствии availability guarantee: https://github.com/komoot/photon/blob/master/README.md (прочитан24.10web). Library concurrency ограничивает нашу нагрузку, но не устраняет внешнюю зависимость. Свой геокодер/полная дорожная сеть остаются вне этого этапа.
+
+## Финальный endpoint regression24.10
+
+checks/2026-10-24-address-endpoint/sequence.json:NextPOST/r→suggest→pool→mockPhoton,40fetches/peak2/live0. Последовательнаязамена/clearDonetsk/cache/sharedcancel/partial503/cooldownPASS. Initialfixturefailurelowercasevariantsсохранёнвinitial-fixture-failure.log; assertionнеослаблялся. Финальныйполныйgate864PASS/buildPASS. Этоservercontract,неbrowser/mobile/liveproof.

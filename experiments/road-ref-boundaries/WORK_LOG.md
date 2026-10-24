@@ -60,3 +60,8 @@ Source deed213/PR14draft подтверждён. [Checkpoint/план](../../doc
 ## 24.10.2026 — block2 DONE addresspool / block3 endpoint STARTED
 
 Source43d4813 с exactremote readback. [Checkpoint](../../docs/checkpoints/2026-10-24-address-pool-DONE-endpoint-STARTED.md).pool2/queue64/cache128URL5мин/singleflight/cooldown15с и querybudget20с; preabortedfetchguard, partial/unavailableprivacylogs. Focused54,full863,quote/API,ESLint,webpack/TypeScript/static16/16PASS; live0. После partiallog/slow11.3s regression gates повторены и финальный output сохранён. Промежуточныйcodecommit skipci после full localgate (причина: один liveCI на финальныйблок3, пользователь уведомлён); workflowнеизменён. Далее без команды«дальше» endpointsequence/abort/cache regression. Externalavailability/mobile/B-only не доказаны; тарифы/км не менялись.
+
+
+## 24.10.2026 10:27 МСК — block3 DONE, серия ADDRESS mitigation завершена
+
+Source479f9dc/treeb8d38e9 exactremote/PR14draft подтверждён доendpointблока; workflows[]напромежуточномskipci. [Подробныйитог](../../docs/checkpoints/2026-10-24-address-endpoint-series-DONE.md). Nextendpoint/r deterministicsequencepassed:40mockfetch,peak2,cache0extra,sharedcancelAнепортитB,partial503positiveсохранён,cooldownretry0extra. Initialfixturefailure34vs30calls сохранён:lowercasebboxqueries mockнеузнавал; исправленmock,prodнеизменён/assertionsнеослаблены. Финальныйfocused48/full864/quote/API/ESLint/buildTypeScript/static16/16PASS,live0. ФинальныйcommitобычныйCIбезskip. Externalavailability/mobileB-only/10сE2Eнепроверены; tariffs/kmбезизменений. СледомCIreadbackитоговогоhead, безстарыхrouteаудитов.

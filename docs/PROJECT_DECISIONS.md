@@ -67,3 +67,8 @@ The standalone V2 calculator keeps its own internal tariffs, including special-s
 ## 24.10.2026 — серия малых блоков в одном ответе
 
 Уточнено пользователем: большую задачу заранее делить на небольшие законченные блоки, выполнять их последовательно в одном ответе/сеансе; после проверки и durable checkpoint автоматически переходить дальше без команды пользователя. После сбоя продолжать с первого незавершённого. Локальные блокеры записывать и продолжать независимую работу. Подробный порядок в WORKFLOW_RULES.md; существующие safety/CI/checkpoint правила сохраняются.
+
+
+## 24.10.2026 — независимый ограничитель адресного поиска
+
+ВрамкахразрешённогопродолжениядобавленaddressRequestPool:одинswitch,localconcurrency2/queue64,positivecache128URL5мин,singleflight,cancellation,cooldown50342915с,общий20сbudget. СохраняютсявсепрежниеURLварианты/приоритеты/координаты. Полнаянедоступностьнепревращаетсяв«адреснесуществует»; никакихновыхгеокодеров/фиктивныхкоординат. Документация:../experiments/road-ref-boundaries/ADDRESS_REQUEST_POOL.md; итогcheckpoints/2026-10-24-address-endpoint-series-DONE.md. Неутверждатьavailability/B-onlyfix/10сSLAпомокам.

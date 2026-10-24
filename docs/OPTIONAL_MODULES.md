@@ -8,7 +8,7 @@
 
 | Модуль | Состояние | Включение / удаление | Контракт |
 | --- | --- | --- | --- |
-| addressRequestPool | DONE, local863tests/buildPASS; endpoint regression next | data/toll-feature-switches.json → addressRequestPool:false | queue/cache/singleflight/cooldown; collectAddressFeatures сохраняет прежние варианты/ranking и20с общий budget |
+| addressRequestPool | DONE, local864tests/buildPASS + endpoint/r regression | data/toll-feature-switches.json → addressRequestPool:false | queue/cache/singleflight/cooldown; collectAddressFeatures сохраняет прежние варианты/ranking и20с общий budget |
 | roadKilometrage | DONE, локальные851tests/buildPASS | data/toll-feature-switches.json → roadKilometrage:false; один вызов optionalRoadKilometrage в m4-production.ts | m4PvpPreview.roadKilometrage; unknown/stop вместо ошибки основного расчёта; тарифы/выбор маршрута не меняет |
 
 Пробелы/стопы: experiments/road-ref-boundaries/BLOCKERS.md. Последовательный план: docs/checkpoints/2026-10-24-road-kilometrage-STARTED.md. Production/main/merge не разрешены.

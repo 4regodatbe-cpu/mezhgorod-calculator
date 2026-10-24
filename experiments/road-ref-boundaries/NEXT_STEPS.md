@@ -1,3 +1,9 @@
+## Актуально: серия ADDRESS завершена
+
+1. Проверить exactremote и обычныйCI финальногоhead (verify/livePhoton/skipped отдельно). Кодpool сохранёнв479f9dc; endpointproof/итог: docs/checkpoints/2026-10-24-address-endpoint-series-DONE.md.864tests/buildPASSлокально,live0.
+2. Если источник доступен, отдельныйкороткийliveaddresssmoke/исходныйmobileсценарий поSTARTED слимитом, безповтораfullrouteкорпуса. Failure503 невыдаватьзавсеадресаисправлены. Приoutageлогировать/двигатьсякнезависимому.
+3. Км/scope/цены pendingпары пополнятьотдельноподоказаннымисточникам; неизвестныеданные неугадывать. ПолнаясвоякартаDEFERRED. ПредыдущиеSTARTEDразделынижеисторические.
+
 ## Сейчас: block3 ADDRESS endpoint regression
 
 Блок2poolDONE/54focused/863full/buildPASS. После durable readback — scripts/address-search-endpoint.test.ts по сценарию замены адресов и отмены shared/устаревшего запроса через /r; preserve originalranking. См. docs/checkpoints/2026-10-24-address-pool-DONE-endpoint-STARTED.md. ОбычныйCI на финальномcommit, промежуточныйskipci ужепроверенlocalgate. Готовый module не переписывать; externalavailability остаётся отдельнымпробелом.
