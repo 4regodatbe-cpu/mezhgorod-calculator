@@ -2,7 +2,7 @@
 
 Актуально на 24.10.2026 21:54 МСК.
 
-1. **B04 READY:** сохранить отдельный STARTED и выполнить exact OSM coordinate/topology intake для pending-пары `4443232947 → 358467208`; `km:null`, scope/price unknown, runtime inactive.
+1. **B04 IN_PROGRESS:** STARTED сохранён; получить ровно 2 nodes + 4 ways, raw/SHA/ODbL, проверить directed membership; `km:null`, scope/price unknown, runtime inactive.
 2. **B03 BLOCKED_BY_ENVIRONMENT_BROWSER_RUNTIME:** Chromium 154 падает до DOM с crashpad `setsockopt: Operation not permitted`, exit133. Восемь сценариев NOT_RUN; повторять только в среде с разрешённым browser runtime.
 3. **B01–B02 BLOCKED_BY_SOURCE/DATA:** pool/circuit выполнены; GeoNames downloads/joins не повторять. Нужен новый проверенный источник labels/hierarchy/coordinates.
 4. **B05–B09 BLOCKED_BY_MISSING_RELIABLE_DATA:** текущие fail-closed guards сохранять; не повторять завершённые source passes и маршруты.

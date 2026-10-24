@@ -2,7 +2,7 @@
 
 По прямому поручению владельца автономная работа начата из отдельной чистой копии exact remote/PR head `70ab6b840862fa40f090b960ee650b058e83b768`; исходная локальная ветка `work` не изменялась. Четыре исполнителя выполняют только read-only исследование, writer один. Recovery: [DONE](checkpoints/2026-10-24-215401-b01-b12-autonomous-recovery-DONE.md) · [WORK_LOG](contractor-brief/WORK_LOG.md) · [NEXT_STEPS](contractor-brief/NEXT_STEPS.md).
 
-Первый технический блок B03 завершён статусом [BLOCKED](checkpoints/2026-10-24-215649-b03-browser-runtime-BLOCKED.md): Chromium154 существует, но bounded headless smoke падает до DOM (`setsockopt: Operation not permitted`, exit133). Восемь browser-сценариев NOT_RUN, зависимости не устанавливались, SSR/API не повторялись, snapshot остаётся false. Следующий независимый блок — B04 exact-coordinate/topology intake без назначения km/scope/price. Production/main/merge/Android/backup запрещены.
+Первый технический блок B03 завершён статусом [BLOCKED](checkpoints/2026-10-24-215649-b03-browser-runtime-BLOCKED.md): Chromium154 существует, но bounded headless smoke падает до DOM (`setsockopt: Operation not permitted`, exit133). Восемь browser-сценариев NOT_RUN, зависимости не устанавливались, SSR/API не повторялись, snapshot остаётся false. B04 exact-coordinate/topology intake для двух nodes/четырёх ways начат отдельным [STARTED](checkpoints/2026-10-24-215900-b04-osm-coordinate-intake-STARTED.md); официальный km/scope/price остаются unknown. Production/main/merge/Android/backup запрещены.
 
 # Production DONE — 24.10.2026 МСК
 

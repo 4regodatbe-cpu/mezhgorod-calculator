@@ -13,3 +13,7 @@
 Chromium 154 теперь присутствует, но bounded headless `about:blank` smoke упал до DOM: crashpad `setsockopt: Operation not permitted`, SIGTRAP/exit133. Поэтому dependencies не устанавливались и восемь UI-сценариев не запускались. Статус уточнён с «binary отсутствует» на `BLOCKED_BY_ENVIRONMENT_BROWSER_RUNTIME`; это не дефект приложения и не PASS. Evidence: [README](../../experiments/road-ref-boundaries/checks/2026-10-24-b03-browser-preflight/README.md) · [checkpoint](../checkpoints/2026-10-24-215649-b03-browser-runtime-BLOCKED.md).
 
 Следующий независимый шаг: B04 exact-coordinate/topology intake; официальный км/scope/цена остаются unknown.
+
+## 24.10.2026 21:59 МСК — B04 exact OSM intake STARTED
+
+После durable B03 blocker начат отдельный bounded source intake ровно двух nodes и четырёх ways уже доказанной pending-пары М-4. Лимиты, fail-closed поля и recovery: [STARTED](../checkpoints/2026-10-24-215900-b04-osm-coordinate-intake-STARTED.md). Route replay, тарифные изменения и широкий аудит запрещены.
