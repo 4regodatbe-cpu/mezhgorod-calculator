@@ -1,3 +1,7 @@
+## Актуальный следующий шаг24.10
+
+Километражный модуль DONE: см. KILOMETRAGE.md и docs/checkpoints/2026-10-24-road-kilometrage-DONE.md.851tests/buildPASS; reviewedsections0, pendingkmunknown, E2E10сUNVERIFIED. Сначала exact remote/codeCI readback, затем ограниченный offline ADDRESS-001 fan-out/fallback. Заполнение km/scope/цен независимо при наличии source; не повторять готовые6captures/12профилей и не запускать полный roadgraph. Предыдущий STARTED план ниже исторический.
+
 ## Приоритет24.10: локальный километраж
 
 Сначала выполнить разрешённый модуль по docs/checkpoints/2026-10-24-road-kilometrage-STARTED.md: local index/section projection, switch, preview, focused/full gate и performance evidence. ADDRESS-001/цены независимы и остаются в BLOCKERS.md. Новые данные не угадывать; следующим этапом не считать полный дорожный граф.

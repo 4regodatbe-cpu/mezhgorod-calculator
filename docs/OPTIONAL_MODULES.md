@@ -8,6 +8,8 @@
 
 | Модуль | Состояние | Включение / удаление | Контракт |
 | --- | --- | --- | --- |
-| roadKilometrage | STARTED | План: data/toll-feature-switches.json, один вызов из m4-production.ts | Дополнительная позиционная диагностика; тарифы/выбор маршрута не меняет |
+| roadKilometrage | DONE, локальные851tests/buildPASS | data/toll-feature-switches.json → roadKilometrage:false; один вызов optionalRoadKilometrage в m4-production.ts | m4PvpPreview.roadKilometrage; unknown/stop вместо ошибки основного расчёта; тарифы/выбор маршрута не меняет |
 
 Пробелы/стопы: experiments/road-ref-boundaries/BLOCKERS.md. Последовательный план: docs/checkpoints/2026-10-24-road-kilometrage-STARTED.md. Production/main/merge не разрешены.
+
+Подключение, удаление, схема данных и фактическое покрытие: experiments/road-ref-boundaries/KILOMETRAGE.md. Правило на будущие задачи сохранено в AGENTS.md; существующие движки целиком не переписывались.

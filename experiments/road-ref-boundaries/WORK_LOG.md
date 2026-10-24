@@ -40,3 +40,8 @@
 ## 24.10.2026 — STARTED локального километража
 
 Пользователь разрешил этап и модульную неблокирующую разработку. Source5c61b6a/CI40067156518 завершён (verifyPASS, PhotonFAIL). План/лимиты: docs/checkpoints/2026-10-24-road-kilometrage-STARTED.md. Пробелы вынесены в BLOCKERS.md; runtime тарифы пока не менялись. Следом отдельный локальный resolver с переключателем и проверки.
+
+
+## 24.10.2026 09:14 МСК — DONE module локального километража
+
+[Отдельный подробный checkpoint](../../docs/checkpoints/2026-10-24-road-kilometrage-DONE.md), source50d36ae/CI40068908259completed (verifyPASS,PhotonFAIL). Новый чистый resolver+registry/switch+одна preview integration, без изменения цены/маршрута и без новых запросов.14namedgroups/81nodeanchors; дополнительныхsections0, pending2unknownкм. Финальный gate851/851+quote/API,ESLint,webpack/TypeScript/static16/16PASS; initialfocused18PASS. PNPM fallback один раз не дал итог тестов — повторены прямые команды, это отражено в checkpoint; full log содержит851PASS. Benchmark21000calls:p95 named0.0041мс,4096segment projection0.6595мс; E2E10снепроверен. Новые stops/известные блокеры в BLOCKERS.md. Следующий шаг после durable readback — offlineADDRESS-001,без ожидания тарифов/км.

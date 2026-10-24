@@ -47,6 +47,9 @@ test("full saved selected provider→M4 boundaries→V3 composer preserves unkno
       assert.equal(result.componentAudit.status, "unknown");
       assert.deepEqual(result.componentAudit.missing, ["m4"]);
       assert.equal(result.m4PvpPreview!.roadBoundaries!.status, "resolved");
+      assert.equal(result.m4PvpPreview!.roadKilometrage!.status, "unknown");
+      assert.equal(result.m4PvpPreview!.roadKilometrage!.entry.position, null);
+      assert.ok(result.m4PvpPreview!.roadKilometrage!.stops.includes("entry:km_coordinate_and_anchor_missing"));
       assert.equal(result.m4PvpPreview!.tariffVector!.priceStatus, "unknown");
       assert.equal(result.m4PvpPreview!.tariffVector!.from, validation.m4RoadBoundaries!.entry!.id);
       assert.equal(result.m4PvpPreview!.tariffVector!.to, validation.m4RoadBoundaries!.exit!.id);

@@ -8,6 +8,8 @@ import { fullM4RouteTariff } from "@/lib/toll-engine/m4-full-route-tariff";
 import { inspectM4PvpPreview } from "@/experiments/toll-od-matrix/m4-pvp-preview.mjs";
 import m4PvpMatrix from "@/experiments/toll-od-matrix/matrix/m4-pvp-corridors.json";
 import { normalizeRoadRef, roadRouteSignature, type RoadBoundaryResolution } from "./road-boundaries";
+import { optionalRoadKilometrage } from "./optional-road-kilometrage";
+import type { RoadKilometrage } from "./road-kilometrage";
 
 export type ProductionM4Tolls = {
   amount: number;
@@ -31,6 +33,7 @@ export type ProductionM4Result = {
     verifiedPriceCells: number; candidateCount: number; confirmedPvps: string[];
     direction?: string; diagnosticOnly: boolean;
     roadBoundaries?: RoadBoundaryResolution;
+    roadKilometrage?: RoadKilometrage;
     tariffVector?: { from: string; to: string; profile: string; selectionBasis: string; priceStatus: "known" | "unknown" };
   };
 };
@@ -156,5 +159,6 @@ export async function resolveSelectedM4Endpoints(route: Coordinate[], routeDurat
     reason:exact ? "Selected M4 first/last tariff boundaries resolved" : validation.message,
     m4PvpPreview:{status:exact ? "boundaries_resolved" : roadBoundaries?.status === "resolved" ? "road_boundaries_resolved" : "unknown",reason:exact ? null : validation.message,
       roadBoundaries,
+      ...(roadBoundaries ? { roadKilometrage: optionalRoadKilometrage(roadBoundaries) } : {}),
       priceRub:null,verifiedPriceCells:0,candidateCount:validation.candidateCount,confirmedPvps:ids,diagnosticOnly:true}};
 }

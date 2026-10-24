@@ -12,3 +12,7 @@
 | DOC-001 | DEFERRED |24.10 web open OSM milestone timeout, новых данных не извлечено | При сборе реальных anchors проверить первичный источник; для локального ядра не блокер |
 
 Исходные статусы/логи: docs/checkpoints/2026-10-24-road-ref-recovery-DONE.md и checks/2026-10-24-recovery/ci-status.json. Новые runtime стопы возвращать структурированно в диагностике расчёта; не писать синхронные сетевые/file logs в критическом пути.
+
+## 24.10.2026 — результаты реализации
+
+KM-001/KM-002 остаются BLOCKED_BY_DATA: локальное ядро/индекс/проекция готовы, но real pending pair по-прежнему без км.14 named groups/81 nodes добавлены из прежнего runtime inventory только как номинальные позиционные anchors; новых live данных0. Projection проверена synthetic; reviewed реальных sections0. PERF-001 остаётся UNVERIFIED для E2E10с; локальные CPU замеры — checks/2026-10-24-kilometrage/performance.json. ADDRESS-001/TARIFF-001 не переделывались этим этапом. Попытка прочитать ещё работающий job120797900591 вернула GitHub logs404 BlobNotFound; трактуется как недоступность незавершённого лога, без повтора маршрутов/отмены CI. Правки обязательных source проверок не пропускались.
