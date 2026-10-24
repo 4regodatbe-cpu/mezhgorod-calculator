@@ -82,3 +82,8 @@ The standalone V2 calculator keeps its own internal tariffs, including special-s
 ## 24.10.2026 — PERF-001: измерять до оптимизации
 
 Цель пользователя — стараться до10с. Добавлена отключаемая диагностика стадий V3 без смены маршрута/цены/дедлайнов и новых запросов. Параллельные стадии не суммировать. handlerElapsedMs не означает E2E SLA; измерять реальный запрос отдельно. Не обрывать обязательную проверку платных участков ради скорости. Модуль: experiments/road-ref-boundaries/CALCULATION_TIMING.md.
+
+
+## 24.10.2026 — Production release по команде «Публикуй»
+
+Разрешён разовый выпуск текущего проверенного source da77f96 без merge/main/Android/backup, PR14 draft. Выпущен dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk READY; snapshotfalse сохранён, data/UI/tariff blockers не закрыты публикацией. Подробности: checkpoints/2026-10-24-production-release-DONE.md. Новые выпуски требуют прямого поручения.

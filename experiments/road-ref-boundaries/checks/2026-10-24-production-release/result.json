@@ -1,0 +1,70 @@
+{
+  "source": "da77f96f4f9185017938ed07022557611f3ea9bf",
+  "startCommit": "0855f16b32eff01e405096b4059539284d40c340",
+  "deployment": {
+    "id": "dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk",
+    "url": "mezhgorod-calculator-3efwb9kbx-4regodatbe-5310.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "source": "da77f96f4f9185017938ed07022557611f3ea9bf",
+    "aliasError": null,
+    "createdAt": 1792852835103,
+    "readyAt": 1792853038318
+  },
+  "aliases": [
+    {
+      "alias": "mezhgorod-calculator.vercel.app",
+      "deploymentId": "dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk",
+      "projectId": "prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie"
+    },
+    {
+      "alias": "mezhgorod-calculator-4regodatbe-5310.vercel.app",
+      "deploymentId": "dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk",
+      "projectId": "prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie"
+    }
+  ],
+  "version": {
+    "status": 200,
+    "body": {
+      "commit": "da77f96f4f9185017938ed07022557611f3ea9bf",
+      "environment": "production",
+      "generatedAt": "2026-10-24T14:44:25.868Z"
+    }
+  },
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "current": true,
+      "old": true,
+      "hasForm": true
+    },
+    {
+      "path": "/v3",
+      "status": 200,
+      "current": true,
+      "old": true,
+      "hasForm": true
+    },
+    {
+      "path": "/v2",
+      "status": 200,
+      "current": false,
+      "old": true,
+      "hasForm": true
+    }
+  ],
+  "runtimeScan": {
+    "deployment": "dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk",
+    "window": "2026-10-24T14:39:45.693Z/2026-10-24T14:44:45.693Z",
+    "levels": [
+      "error",
+      "fatal"
+    ],
+    "result": "No logs found for the specified criteria."
+  },
+  "browserE2E": "NOT_RUN",
+  "anonymousAccess": "Web retrieval tool could not access /api/version; anonymous availability not established. HTTP200 smoke used authenticated Vercel fetch.",
+  "addressCitySnapshot": false,
+  "previousProduction": "dpl_DGhwwdXRTKwbbEMR127M5AbDMAoP"
+}

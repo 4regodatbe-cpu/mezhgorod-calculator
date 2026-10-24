@@ -1,3 +1,7 @@
+## Production выпущен — 24.10.2026 МСК
+
+[Release DONE](../../docs/checkpoints/2026-10-24-production-release-DONE.md): exactsource da77f96, dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk READY, aliases/version/HTML200 подтверждены authenticated GET. Snapshot false, V2 сохранена, PR14 draft. Не повторять релиз/GET/route corpus без причины; browser/data blockers ниже сохраняются. Новые production изменения требуют нового прямого поручения.
+
 # Следующий шаг — 24.10.2026 МСК
 
 Текущее состояние: [docs/WORK_STATE.md](../../docs/WORK_STATE.md). Единственная ветка fix/v3-missing-route-prices-2026-10-15, PR14 draft. Parent перед этим checkpoint be8720a/treee8ebe05, читать actual remote. Не main/Production/Android/backup; не писать при active/queued CI.

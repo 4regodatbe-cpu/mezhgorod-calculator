@@ -1,6 +1,6 @@
-# STARTED Production release — 24.10.2026 МСК
+# Production DONE — 24.10.2026 МСК
 
-Текущая прямая команда пользователя «Публикуй» разрешает выпуск exact source da77f96. [Release STARTED](checkpoints/2026-10-24-production-release-STARTED.md). Production пока не обновлён этим шагом; snapshot false, PR14 draft/main/Android/backup не менять. После сохранения создать Production из exact SHA, проверить READY/aliases/HTTP, записать результат. Состояние и ограничения кода ниже сохраняются.
+По прямой команде «Публикуй» выпущен exact source `da77f96f4f9185017938ed07022557611f3ea9bf`. [Release DONE](checkpoints/2026-10-24-production-release-DONE.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-production-release/result.json). Production `dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk` READY; оба основных aliases переключены, version200 подтверждает commit/production. /,/v3,/v2 HTTP200 через authenticated connector, browser/anonymous E2E не подтверждены. Snapshot false; V2 сохранена. PR14 draft, main/Android/backup не менялись. Предыдущий Production `dpl_DGhwwdXRTKwbbEMR127M5AbDMAoP` — rollback reference. Это разовый разрешённый выпуск, не постоянное разрешение следующих публикаций.
 
 # Калькулятор «Из А в Б» — текущее состояние, 24.10.2026 МСК
 
