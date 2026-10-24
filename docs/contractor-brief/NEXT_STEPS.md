@@ -2,9 +2,10 @@
 
 Актуально на 24.10.2026 21:54 МСК.
 
-1. **B03 READY_FOR_BOUNDED_RUN:** сохранить STARTED и выполнить восемь сценариев из `experiments/road-ref-boundaries/ADDRESS_CITY_SNAPSHOT.md` в локальном Chromium с exact mocked `/r` и network isolation. Не включать `addressCitySnapshot`.
-2. **B01–B02 RESEARCH_IN_PROGRESS:** сверить поздние address checkpoints и новые допустимые первичные источники; не повторять GeoNames downloads/joins.
-3. **B04–B09 RESEARCH_IN_PROGRESS:** искать только новые первичные identity/boundary/fare доказательства; при их отсутствии сохранять точный DATA blocker, unknown не превращать в zero.
-4. **B10–B12 REVIEW_IN_PROGRESS:** сверить late DONE против исторических STARTED и выбрать точечные проверки без массового аудита.
+1. **B04 READY:** сохранить отдельный STARTED и выполнить exact OSM coordinate/topology intake для pending-пары `4443232947 → 358467208`; `km:null`, scope/price unknown, runtime inactive.
+2. **B03 BLOCKED_BY_ENVIRONMENT_BROWSER_RUNTIME:** Chromium 154 падает до DOM с crashpad `setsockopt: Operation not permitted`, exit133. Восемь сценариев NOT_RUN; повторять только в среде с разрешённым browser runtime.
+3. **B01–B02 BLOCKED_BY_SOURCE/DATA:** pool/circuit выполнены; GeoNames downloads/joins не повторять. Нужен новый проверенный источник labels/hierarchy/coordinates.
+4. **B05–B09 BLOCKED_BY_MISSING_RELIABLE_DATA:** текущие fail-closed guards сохранять; не повторять завершённые source passes и маршруты.
+5. **B10 IN_PROGRESS; B11 DIAGNOSTICS_DONE; B12 BLOCKED:** V2 Ейск/Майкоп compare не завершён; нового performance bottleneck нет; browser runtime блокирован.
 
 После каждого отдельного блока обязательны focused verification, checkpoint, обновление этого списка/WORK_STATE/WORK_LOG, commit, non-force remote persistence и exact readback. При активном CI запись не выполняется.
