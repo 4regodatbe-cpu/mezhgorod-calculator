@@ -1,3 +1,7 @@
+## DONE GeoNames B / STARTED C offline — 24.10.2026
+
+RU/UA получены и SHA/size/CRC проверены, manifest сохранён. CI40091639551 completed: verify/geometry/timing PASS,address FAIL,50/Yandex SKIPPED. [План C/точные источники](checkpoints/2026-10-24-geonames-download-DONE-review-STARTED.md). NEXT offline разбор8имён+4полигона из существующего artifact, без новых downloads/routes/активации.
+
 ## DONE GeoNames A / STARTED B download — 24.10.2026
 
 CI40091487220:3HEAD200, RU+UA17657946bytes. [A evidence/B план](checkpoints/2026-10-24-geonames-ci-head-DONE-download-STARTED.md). Отдельный read-only workflow: два ZIP/exactETag/bytes/SHA/CRC/60с, no aliases download, no runtime. Дождаться B, сохранить manifest; C отдельно без повторного download.

@@ -271,3 +271,8 @@ NEXT: отдельный bounded primary-source intake для coordinate-settlem
 ## 24.10.2026 — Pilot A DONE / B STARTED
 
 Новая сеть runner доступна: run40091487220,3HEAD200, RU+UA17657946bytes; rawheaders artifact12559197312, result постоянно в checks/2026-10-24-geonames-head-ci. Создан отдельный B-workflow2ZIP/exactETag/bytecap/SHA/CRC, без runtime/aliases; YAML compile/limits PASS, local live0. План: docs/checkpoints/2026-10-24-geonames-ci-head-DONE-download-STARTED.md. Дождаться B, сохранить результат, C отдельно.
+
+
+## 24.10.2026 — country download B DONE / C STARTED
+
+Run40091634576/2ZIP17.7MB, exactSHA/CRC+local artifact digest PASS. Permanent manifest: checks/2026-10-24-geonames-country-download; rawartifact14days. Общий автоматически запущенныйCI40091639551 completed/verify geometry timingPASS,addressFAIL,50/YandexSKIP. Новый маршрутный аудит вручную не запущен. Checkpoint: docs/checkpoints/2026-10-24-geonames-download-DONE-review-STARTED.md; next C offline8names/4polygons/format+identity, no runtime.
