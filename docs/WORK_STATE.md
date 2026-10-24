@@ -2,7 +2,9 @@
 
 По прямому поручению владельца автономная работа начата из отдельной чистой копии exact remote/PR head `70ab6b840862fa40f090b960ee650b058e83b768`; исходная локальная ветка `work` не изменялась. Четыре исполнителя выполняют только read-only исследование, writer один. Recovery: [DONE](checkpoints/2026-10-24-215401-b01-b12-autonomous-recovery-DONE.md) · [WORK_LOG](contractor-brief/WORK_LOG.md) · [NEXT_STEPS](contractor-brief/NEXT_STEPS.md).
 
-Первый технический блок B03 завершён статусом [BLOCKED](checkpoints/2026-10-24-215649-b03-browser-runtime-BLOCKED.md): Chromium154 существует, но bounded headless smoke падает до DOM (`setsockopt: Operation not permitted`, exit133). Восемь browser-сценариев NOT_RUN, зависимости не устанавливались, SSR/API не повторялись, snapshot остаётся false. B04 exact-coordinate/topology intake для двух nodes/четырёх ways начат отдельным [STARTED](checkpoints/2026-10-24-215900-b04-osm-coordinate-intake-STARTED.md); официальный km/scope/price остаются unknown. Production/main/merge/Android/backup запрещены.
+Первый технический блок B03 завершён статусом [BLOCKED](checkpoints/2026-10-24-215649-b03-browser-runtime-BLOCKED.md): Chromium154 существует, но bounded headless smoke падает до DOM (`setsockopt: Operation not permitted`, exit133). Восемь browser-сценариев NOT_RUN, зависимости не устанавливались, SSR/API не повторялись, snapshot остаётся false.
+
+B04 exact OSM identity/topology [DONE](checkpoints/2026-10-24-220143-b04-osm-coordinate-intake-DONE.md): 2 nodes + 4 ways HTTP200/raw/SHA/ODbL, directed entry/exit и координаты подтверждены; focused verifier PASS15/15, live0. Официальный km/operator scope/fare остаются null, runtime inactive, никакая цена/zero не назначена. Следующий независимый блок — B10 точечное восстановление V2 compare Ейск/Майкоп. Production/main/merge/Android/backup запрещены.
 
 # Production DONE — 24.10.2026 МСК
 

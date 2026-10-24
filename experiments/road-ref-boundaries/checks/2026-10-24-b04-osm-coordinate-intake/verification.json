@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "verifiedAtMsk": "2026-10-24T22:01:43+03:00",
+  "sourceCommit": "7d3f84d4f27e12fe18bbee8623f27c637aeae0e0",
+  "command": "node experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/verify.mjs",
+  "checks": 15,
+  "liveRequestsDuringVerification": 0,
+  "captureRequests": 6,
+  "captureHttpStatus": [200, 200, 200, 200, 200, 200],
+  "sha256": {
+    "raw/node-358467208.json": "e6deb4ad47726ea90d9c3a7f863c15f9df11b1e4a109e88146fe6adad55229d2",
+    "raw/node-4443232947.json": "3ebfa2eebc97fc2d79f54de8955da40f9e1d5a5f1c14aff96cf4936154f221da",
+    "raw/way-1182567076.json": "08dbe65c03a0c477970979106c9ccef7e83fa262c45438cad54e8dceb47c3209",
+    "raw/way-1211606940.json": "78836f6eb4b1ffe8fc33f6d97b60c6b60d07b9c0a1fb9444501f85761409f405",
+    "raw/way-28835034.json": "e38e0a66ca4be214ce69405c8b9a46df07b78347d697ffaa1f2fb5fcb2f43d2e",
+    "raw/way-447135768.json": "bb7d3c3f80669fa933fed7b3a67d6313434a3bae75b0c6093901bbe553fcc9c2",
+    "capture-metadata.json": "7ff78bb8708efbbc877bf584b9a61ab5f75410589b161c1c2f3bea0b43c3dc44",
+    "reviewed-identity.json": "8a3b7793631ba3f7b1ba232fab80dd93d89a8bac35b241b186619d104d365357",
+    "verify.mjs": "b786cfc168c3354ae78454f50741ea9ebd832ec263325c26948df8a22c45feda"
+  },
+  "notRun": [
+    "route replay",
+    "full audit",
+    "router requests",
+    "tariff mutation checks",
+    "build"
+  ],
+  "limitations": [
+    "OSM identity and topology do not prove an official kilometre",
+    "operator scope and fare remain unknown",
+    "reviewed evidence is runtime-ineligible"
+  ]
+}

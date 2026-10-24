@@ -17,3 +17,9 @@ Chromium 154 теперь присутствует, но bounded headless `about
 ## 24.10.2026 21:59 МСК — B04 exact OSM intake STARTED
 
 После durable B03 blocker начат отдельный bounded source intake ровно двух nodes и четырёх ways уже доказанной pending-пары М-4. Лимиты, fail-closed поля и recovery: [STARTED](../checkpoints/2026-10-24-215900-b04-osm-coordinate-intake-STARTED.md). Route replay, тарифные изменения и широкий аудит запрещены.
+
+## 24.10.2026 22:01 МСК — B04 OSM identity/topology DONE; km/scope/fare BLOCKED
+
+Шесть exact OSM API объектов получены HTTP200 и сохранены с metadata/SHA/ODbL. Entry `4443232947` подтверждён как directed `447135768 → 1182567076`, exit `358467208` как `1211606940 → 28835034`; координаты сохранены. Offline verifier PASS15/15, live0. Reviewed manifest остаётся `runtimeEligible:false`, `officialKilometre:null`, `operatorScope:null`, `fare:null`. Runtime/data/tariffs не менялись, route replay/full audit/build NOT_RUN. [DONE](../checkpoints/2026-10-24-220143-b04-osm-coordinate-intake-DONE.md).
+
+Следующий независимый блок: B10 точечное восстановление незавершённого V2 compare Ейск/Майкоп; B05–B09 ждут новых первичных документов.
