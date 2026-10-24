@@ -31,3 +31,7 @@ checks/2026-10-24-address-endpoint/sequence.json:NextPOST/r→suggest→pool→m
 ## Исправление после живого smoke24.10
 
 На exactPreview849102c одиночный503 при6 успешныхvariants включалобщуюпаузу и блокировал следующий Донецк. Это обнаруженнаярегрессия, raw/logs в checks/2026-10-24-address-live. Исправлено threshold3/15с полного streak + successreset; прежний endpointtestожидалневернуюблокировку и заменён на partialСочи→новыйЛуганск200 + отдельный полныйoutage502. Старые записи оcooldownсодного503исторические. Local867tests/buildPASS;живойповторновогоfixнеподтверждён.
+
+## Живой CI путь24.10
+
+scripts/address-search-runtime-probe.mjs вызываетproductioncollectAddressFeaturesиpool,далеепрежнийrank;1–3queries/≤20скаждая/≤60сnetworkbudget,atomicresult/progress,stopнаполныйsourcefailure,неPASSприневернойвыдаче. CIPhotonstepиспользуетэтотscript;legacyaddress-search-live-probe.mjsсохранёндляистории. Артефактыaddress-search-runtime-probe.json/progress. НовыйscriptliveфактическийстатусоцениватьпообычномуCI,local875testsнеозначаютliveуспеха.

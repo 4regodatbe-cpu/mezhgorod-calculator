@@ -1,3 +1,7 @@
+## DONE actual-runtime CI probe / STARTED fixed Preview smoke — 24.10.2026
+
+Новыйscripts/address-search-runtime-probe.mjs используетproductioncollector/pool/ranking,≤3queries/20скаждая/60собщийnetworkbudget,atomicprogress/results,CLIнеPASSдляsource/check/timeout. PhotonCIstepзаменён,legacyсохранён,routecorpusнерасширен.31focused/875full/quote/API/ESLint/buildTypeScript/static16/16PASS;liveэтогопроба0. [Итог/заключительныйsmoke](checkpoints/2026-10-24-runtime-address-probe-DONE-livefix-STARTED.md). FixPreview5d7043aREADYdpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss;app/lib/dataсfixSHAсовпадают. NEXTпослеdurable≤3GETsmokeисправления,stopнаsourcefailure;отдельныйcheckpointиобычныйCIфинальногоhead. PR14draft,Productionнет.
+
 ## DONE circuit fix / STARTED runtime CI probe — 24.10.2026
 
 ADDR-CIRCUIT-001 исправлен:cooldown после3серийных503/429 за15сбезsuccess,successсбрасываетstreak/паузу. PartialСочи200→новыйЛуганск200;полныйoutageотдельно502/<=4fetch. [Итог/следующийблок](checkpoints/2026-10-24-address-circuit-fix-DONE-runtime-probe-STARTED.md) · [checks](../experiments/road-ref-boundaries/checks/2026-10-24-address-circuit-fix/verification.json).16focused/867full/quote/API/ESLint/buildTypeScript/static16/16PASS;живойисправленныйPreviewнепроверен. Sourceb54f7d8/PR14draft. NEXTпослеdurable:boundedactualruntimeCIprobe3queries/≤60с/progress,старыйlegacyprobeсохранить. Productionнет,невыдаватьстарые200занewfixproof.

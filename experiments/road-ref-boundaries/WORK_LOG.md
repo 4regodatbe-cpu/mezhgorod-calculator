@@ -80,3 +80,8 @@ Source849102c/tree7ed6f91/PR14draft проверен. CI40074351547verifyPASS/ge
 ## 24.10.2026 — ADDR-CIRCUIT-001 codefixDONE / runtimeprobeSTARTED
 
 Sourceb54f7d8/treec5e753c exactremotechecked. [Checkpoint](../../docs/checkpoints/2026-10-24-address-circuit-fix-DONE-runtime-probe-STARTED.md).Threshold3/полное15сstreakwindow/successreset,new3contracts. Endpointpartial200→newcity200,отдельныйполныйoutage<=4fetch/502иcacheсохранён. Послеуточненияwindowиprovenancemetadataфинальныеfocused16/full867/quote/API/ESLint/webpackTypeScript/static16/16PASS;нельзясчитатьповторныеgateотдельнымиrouteпроверками. Liverequest0вэтомблоке,новыйPreviewнепроверен. СледомactualruntimeCIprobeбезlegacyfanout,progress/≤3queries60с. Intermediatecode skipci,обычныйCIфинальногоprobecommit.
+
+
+## 24.10.2026 — actualruntimeCIprobeDONE / finalfixsmokeSTARTED
+
+Parent5d7043a/tree2f1c640 exactreadbackпроверен. [Checkpoint](../../docs/checkpoints/2026-10-24-runtime-address-probe-DONE-livefix-STARTED.md). Новыйproductioncollectorprobe3queries/≤60сnetworkbudget/atomicprogress/sourcechecks,legacyнеизменён. CIзаменёнтолькоPhotonstep/artifacts.31focused/875full/quote/API/ESLint/webpackTypeScript/static16/16PASS;rawcap500flag,live0. ExactfixPreview5d7043aREADYdpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss;app/lib/dataбезdiff. Следом3GETlivefixsmoke→отдельноесохранениеобычнымCI;этотcodecommitintermediateskipci,обязательныелокальныеgatesпрошли.

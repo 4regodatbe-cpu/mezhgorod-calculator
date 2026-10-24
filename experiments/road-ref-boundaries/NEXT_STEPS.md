@@ -1,3 +1,7 @@
+## Сейчас заключительныйfixPreviewsmoke
+
+По docs/checkpoints/2026-10-24-runtime-address-probe-DONE-livefix-STARTED.md послеdurablereadback≤3GETнаexactfix5d7043aPreviewREADY,stopнаsourcefailure,сохранитьновыеbody/logsсотдельнымитогом. Codeprobeготов/875tests/buildPASS. ОбычныйCIнафинальномcheckpointсерии;невыдаватьисходныйbad849102cзановыйкод.
+
 ## Сейчас actual-runtime CI probe
 
 ADDR-CIRCUIT-001fixDONE/contracts867PASS. По docs/checkpoints/2026-10-24-address-circuit-fix-DONE-runtime-probe-STARTED.md послеdurableсоздатьbounded3query≤60сprobeчерезcollectAddressFeatures/pool,atomicprogress+source/checkfailures,заменитьтолькоPhotonCIstep/artifacts. Legacyprobeисторическийсохранить. ДалееordinaryCIиnewPreviewпоследующегоhead,нестарого849102c.
