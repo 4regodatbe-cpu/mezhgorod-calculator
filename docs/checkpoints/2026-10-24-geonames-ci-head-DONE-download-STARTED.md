@@ -1,0 +1,9 @@
+# DONE Pilot A / STARTED Pilot B — 24.10.2026 МСК
+
+Parent/source 0c2dbe846e8be9346483137b58f4a0798d553c36/tree41c261d04190efda4ea06110d23e57815a79f953, разрешённая fix branch, PR14 draft. HEAD workflow exact blob01f060571802a59da18d47912a36d0f400ad46c3 проверен после connector передачи.
+
+A: run40091487220/job120864901345 completed/success. Все3HEAD curl0/HTTP200, downloads0. RU15263760 bytes, UA2394186 bytes; сумма17657946 (<50MiB). alternateNamesV2 205159418 bytes: НЕ загружать. Фактические ETag/Last-Modified/timestamps сохранены в checks/2026-10-24-geonames-head-ci/result.json. Artifact12559197312/ZIPsha256 389607e6a7bf8556c44d8d98e096a268893e766c0a868952aac6a535244965f3 содержит исходные headers, progress, result; срок14дней, не объявлять постоянным архивом. DNS доступ подтверждён только на GitHub runner.
+
+B STARTED: отдельный read-only workflow .github/workflows/geonames-country-download-pilot.yml, только RU.zip/UA.zip. If-Match на полученные ETag, exact byte counts и curl --max-filesize, max60с/архив, без retry, total<=50MiB. max256MiB uncompressed/country, whitelist RU.txt/UA.txt/readme.txt, ZIP CRC, SHA256, manifests/progress, никаких extract/runtime records. Runner job3мин. Artifact14дней; checksum/provenance/результат записать постоянно в repository; истечение artifact не означает сохранение исходных ZIP навсегда.
+
+Новые проверяемые условия: compile inline Python/YAML, статическая проверка2URLs/If-Match/лимитов/no GET aliases, git diff --check. Данные/география/алиасы/омонимы не проверены; code gates калькулятора не запускались (runtime0 изменений). Не активировать координаты. После B completed: сохранить manifest/checkpoint, далее отдельный C STARTED для offline review сохранённых файлов. Не скачивать RU/UA повторно ради C; использовать artifact exact run/digest. Branch writes из CI отсутствуют, active/queued не отменять и не писать ветку до окончания.

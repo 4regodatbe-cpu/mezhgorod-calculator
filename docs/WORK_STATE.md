@@ -1,3 +1,7 @@
+## DONE GeoNames A / STARTED B download — 24.10.2026
+
+CI40091487220:3HEAD200, RU+UA17657946bytes. [A evidence/B план](checkpoints/2026-10-24-geonames-ci-head-DONE-download-STARTED.md). Отдельный read-only workflow: два ZIP/exactETag/bytes/SHA/CRC/60с, no aliases download, no runtime. Дождаться B, сохранить manifest; C отдельно без повторного download.
+
 ## STARTED GeoNames HEAD в GitHub Actions — 24.10.2026
 
 Новый сетевой путь: отдельный read-only CI, только3HEAD/10с, архивы0. [План](checkpoints/2026-10-24-geonames-ci-head-STARTED.md). Дождаться actual run и сохранить A-result; до B отдельный STARTED. Не повторять container DNS/маршруты; runtime не меняется.

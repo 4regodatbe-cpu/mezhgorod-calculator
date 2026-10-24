@@ -266,3 +266,8 @@ NEXT: отдельный bounded primary-source intake для coordinate-settlem
 ## 24.10.2026 — GeoNames CI HEAD STARTED
 
 Отдельная сеть GitHub runner для bounded Pilot A: .github/workflows/geonames-delivery-pilot.yml. Только3HEAD, contents:read/no writer, артефакты/headers/progress, ZIP0. План: docs/checkpoints/2026-10-24-geonames-ci-head-STARTED.md. После durable проверить actual run; B только отдельным STARTED. Source prior2d399b3/PR14draft, production untouched.
+
+
+## 24.10.2026 — Pilot A DONE / B STARTED
+
+Новая сеть runner доступна: run40091487220,3HEAD200, RU+UA17657946bytes; rawheaders artifact12559197312, result постоянно в checks/2026-10-24-geonames-head-ci. Создан отдельный B-workflow2ZIP/exactETag/bytecap/SHA/CRC, без runtime/aliases; YAML compile/limits PASS, local live0. План: docs/checkpoints/2026-10-24-geonames-ci-head-DONE-download-STARTED.md. Дождаться B, сохранить результат, C отдельно.
