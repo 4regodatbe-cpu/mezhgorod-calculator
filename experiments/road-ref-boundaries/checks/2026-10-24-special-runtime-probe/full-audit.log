@@ -1,0 +1,4310 @@
+✔ forwards progress and heartbeat before completion (186.692136ms)
+✔ terminates a silent child within its deadline (87.283934ms)
+✔ preserves failure code and stderr (94.609584ms)
+✔ unknown numeric price is compatible with complete execution evidence (3.137893ms)
+✔ missing raw and incomplete replay do not count as completed (0.777553ms)
+✔ rejects crossed case IDs, replay money mismatch and damaged raw checksum (1.329986ms)
+✔ queue preserves part/case order and skips only verified cases (0.23913ms)
+✔ completed provider replies and failures invoke durable progress hook (5.808461ms)
+✔ checkpoint log passes whitespace gate with optional case/error absent (0.40478ms)
+✔ writer persists STARTED and DONE separately before each next case and class completion (6811.380563ms)
+✔ incomplete second-case replay persists FAILED without advancing it or starting another case (4446.427864ms)
+✔ failed push stops before the next route without force or progress expansion (1657.993256ms)
+✔ policy queue resumes in order from unique durable evaluations (1.400192ms)
+✔ M4 recovery never upgrades an unknown ZSD subtotal to a full total (1.167521ms)
+✔ complete whole-route output must be consistently priced (0.285711ms)
+✔ wrong route, raw hash, provider or departure basis cannot pass replay validation (0.343559ms)
+✔ missing recorded response or still-unpriced M4 stops the queue (0.365482ms)
+✔ direct A-289 pairs, reverse, bridge vector and unknown exits (2.28729ms)
+✔ city Temryuk control cannot be inferred from three free-flow frames (0.255325ms)
+✔ M11 resolves the departure calendar at01:00; later holidays/profile changes do not reprice (4.960472ms)
+✔ M11 early Monday interval never uses a noon sample outside the journey (1.096935ms)
+✔ CKAD andM11 reject normalized impossible dates, absent timezone andnon-string times (0.753637ms)
+✔ native head money cannot substitute absent directed head boundaries (0.7093ms)
+✔ 17new date bounds block pre-tariff lookups and preserve current amounts (22.725228ms)
+✔ Ryazan night zero requires verified lane; MSDtransit requires eligibility context (0.515277ms)
+✔ M12 ready direct pair ignores native money and intermediate vector representation (4.392415ms)
+✔ recorded calibrated M12 projection controls select their operator pair in both directions (46.23579ms)
+✔ M12 rejects missing/impossible date, direction conflict and unbound OctoberShali (0.965136ms)
+✔ M4 and its separate western bypass add once, but two M4 representations stay rejected (0.579054ms)
+✔ missing separate bypass price never becomes a numeric M4 subtotal (0.242997ms)
+✔ CKAD footnote requires context only for the16M12–Nosov-side pairs (24.921149ms)
+✔ M11 uses directed current OD even where the old native table is unknown (3.836206ms)
+✔ M11 local Moscow Friday profile, missing/expired/profile-transition/mixed are blocked (1.55784ms)
+✔ M11 geometry adapter prices both independent products from matrix, ignores native money (1.800956ms)
+✔ CKAD direct matrix uses actual direction and date, no guessed section sum (1.044635ms)
+✔ current exact M12 endpoint pair uses published direct matrix estimate (3.113617ms)
+✔ expired Shali never falls back to stale native price (0.463839ms)
+✔ missing date rejects estimate (0.169326ms)
+✔ unpriced native geometry never gains invented traversal (0.2717ms)
+✔ strict south vector uses finished matrix price (3.780913ms)
+✔ reverse south vector same fare (0.771353ms)
+✔ current candidate exact vector carries warning (0.503329ms)
+✔ partial gate evidence does not replace fare (0.179731ms)
+✔ missing departure date fails; Thursday fare remains fixed across Friday midnight (0.568047ms)
+✔ A289 component cannot vanish in M4 replacement (0.180082ms)
+✔ single confirmed M4 plaza uses its existing candidate fare (0.480936ms)
+✔ ordinary weekday midnight and weekend midnight retain an unchanged complete M4 fare (2.885913ms)
+✔ departure profile stays fixed across a weekend/year boundary; unknown departure year fails (1.248793ms)
+✔ new endpoint-only south lookup needs no intermediate plaza evidence (3.092635ms)
+✔ new endpoint-only lookup supports a single tariff section without native sums (0.533585ms)
+✔ mainline endpoints use the canonical chain excluding intermediate entry tariff (3.69615ms)
+✔ Yandex reviewed northbound cells replace all conflicting variants with one price per profile (2.252137ms)
+✔ reviewed northbound fare does not get mirrored; reverse uses its own canonical estimate (0.78894ms)
+✔ published355 northbound receipt pair is charged220 once in both profiles (0.646625ms)
+✔ 355 southward artificial fare boundaries stay unknown with a specific reason (2.4598ms)
+✔ uploaded sources retain exact original hashes, including reused duplicate PDFs (24.743586ms)
+✔ all210 CKAD classI direct prices survive generator and dated quote without classII leakage (7.440843ms)
+✔ CKAD M12 endpoint prices require operator footnote context; unknown blocks a mixed total (0.343208ms)
+✔ M12 order302 supplies380 direct dated cells, never a stale price beforeOctober8 (9.224233ms)
+✔ separate CKAD bypass and Tolyatti direct fare remain distinct, dated products (0.655629ms)
+✔ selects the fastest toll route even when a slower free route exists (1.225218ms)
+✔ selects the fastest free route when it is actually fastest (0.204359ms)
+✔ returns free only when the chosen route is verified free (0.184599ms)
+✔ does not replace fastest unknown toll status with a slower known route (0.242306ms)
+✔ equal duration preserves provider order deterministically (0.202695ms)
+✔ filters malformed candidates and fails when none remain (0.518271ms)
+✔ a chosen priced route with unverified amount keeps amount unknown (0.147192ms)
+✔ selected-route full booth audit is opt-in to protect performance (1.319831ms)
+✔ V2 page connects user opt-in to selected-route API (0.279601ms)
+✔ user sees that the extended strict PVP audit does not change fare money (0.621067ms)
+✔ strict nationwide verifier requires full Valhalla match before declaring physical facility (0.299222ms)
+✔ physical operator inventory contains exact four M1/M3 kilometre gates (2.342023ms)
+✔ M1 physical PVP still lacks independently verified OSM nodes (0.164088ms)
+✔ inventory validator accepts complete four gates (0.368746ms)
+✔ missing inventory gate is rejected (0.420214ms)
+✔ duplicate OSM node across plazas is rejected (0.347524ms)
+✔ M11 label does not count as M1 (1.571671ms)
+✔ M12 label does not count as M1 (0.261665ms)
+✔ true M1 booth name is candidate, not chargeable (0.223617ms)
+✔ true M3 booth name is candidate, not chargeable (0.171559ms)
+✔ a passing free edge is not a chargeable PVP event (0.181343ms)
+✔ no route identity means unknown, never free (0.141193ms)
+✔ missing map matching means no paid event proof (0.131528ms)
+✔ incomplete Valhalla chunks fail closed (0.143387ms)
+✔ partial event coverage fails closed (0.459613ms)
+✔ unknown matched node cannot be treated as approved plaza (0.19256ms)
+✔ pinned OSM node maps to corresponding physical gate in test-only approved fixture (0.32455ms)
+✔ wrong non-M1 road name can't claim pinned M3 if still no road continuity for pricing (0.176366ms)
+✔ unknown M1 and M3 booths are both surfaced without false pricing (0.15279ms)
+✔ duplicate same physical gate is rejected in pinned test fixture (0.17212ms)
+✔ a complete trace with no M1/M3 gate is not certified free (0.301324ms)
+✔ live M3 OSM IDs independently resolved to named 86,136,168km operator gates (0.11927ms)
+✔ same-route exactly mapped live M3 paid crossings produce three physical gate identities, but not an approved fare (0.428096ms)
+✔ reverse direction synthetic matching still cannot price without other lane proof (0.337459ms)
+✔ future editorial placeholder IDs cannot automatically become verified (0.736251ms)
+✔ M3 physical PVPs have each two independent officially named OSM lane nodes (0.223597ms)
+✔ independently verified reverse direction real Valhalla nodes match 168→136→86 (0.526765ms)
+✔ a repeat crossing of a same plaza in opposite lanes invalidates one continuous M3 fare (0.566304ms)
+✔ operator gate ID cannot bind a wrong road, kilometer or fare row (0.735019ms)
+✔ fractional or missing trace chunk counts cannot prove complete coverage (0.747037ms)
+✔ only unmapped paid gate nodes are disclosed for manual OSM source verification (1.396457ms)
+✔ M3 directions are documented as verified physical nodes while M1 remains pending (2.218957ms)
+✔ operator Friday profile: M3 3 matched PVPs => 520 RUB component SHADOW only (18.004497ms)
+✔ reverse selected physical M3 gate sequence yields same 520 RUB component (0.830503ms)
+✔ value is M3 component only, not customer-facing full route price (0.372041ms)
+✔ two verified gates is not a valid whole M3 example (1.316165ms)
+✔ dated order 53 permits Oct8 2026 source rate before Oct10 audit (0.372582ms)
+✔ future Oct11 not automatically covered by Oct10 operator audit (0.32456ms)
+✔ crossing Moscow midnight keeps the departure-date M3 shadow fare (0.734658ms)
+✔ Thursday to Friday keeps Thursday M3 rate in either physical direction (1.521455ms)
+✔ Sunday to Monday keeps the Sunday M3 rate using Moscow departure date (1.274383ms)
+✔ last verified departure day remains valid when M3 arrival is outside source horizon (0.463929ms)
+✔ crossing into the first effective day cannot authorize a pre-effective M3 departure (0.518753ms)
+✔ duration >24h remains outside the bounded diagnostic corridor contract (0.109556ms)
+✔ invalid durations remain unknown with departure-only calendar selection (0.1524ms)
+✔ partial route audit is unknown (0.091238ms)
+✔ unmapped physical booth invalidates three-gate quote (0.185711ms)
+✔ fake fourth gate invalidates bounded M3 example (0.273413ms)
+✔ random order invalidates corridor (0.116526ms)
+✔ foreign paid road cannot be combined into exact M3 physical invoice (0.127362ms)
+✔ invalid departure timestamps fail closed (0.07959ms)
+✔ unknown date format also returns null (0.066981ms)
+✔ M3 Saturday Oct10 2026 three actual gates yields 520 Rub (0.226371ms)
+✔ M3 2026-03-01 operator order not in force yet (0.227654ms)
+✔ test fixture isolation: a deliberately malicious event from a previous test never mutates later physical gate evidence (0.221434ms)
+✔ M1 no OSM mapping means UNKNOWN, never add an unverified fare in live pricing (0.204899ms)
+✔ M1 verified physical gate contract yields dated 250-ruble no-transponder component only (0.261634ms)
+✔ M1 false nearby node cannot be billed (0.157778ms)
+✔ M1 wrong PVP identity cannot be billed (0.088754ms)
+✔ M1 unrecognized other M1 paid booth blocks full M1 price (0.080972ms)
+✔ M1 Oct11 cannot inherit Oct10 operator snapshot without re-audit (0.21224ms)
+✔ M1 operator Order 54 not applicable before 2026-03-02 (0.36441ms)
+✔ M1 midnight crossing uses a verified departure and keeps source-date guards (0.523399ms)
+✔ full-route toll validator requests Valhalla end OSM node id like proven M4 local tracer (1.090234ms)
+✔ Valhalla toll booth node reader accepts both nested end_node and flattened end_osm_node_id (0.243347ms)
+✔ full route must still validate all route chunks before asserting completeness (0.179661ms)
+✔ active endpoint matrix is reproducible, unique and accounts for every original conflict (62.92011ms)
+✔ canonical through price differs from a ramp tariff; exact reviewed controls take precedence (0.412022ms)
+✔ new unexplained same-endpoint conflict remains unknown instead of min/max selection (0.239682ms)
+✔ northbound combined section has directed atomic boundaries, never a new fare (0.240783ms)
+✔ southbound and undirected standalone combined sections preserve boundaries (0.279832ms)
+✔ saved northbound460 to71 profiles reuse existing verified-row totals (0.282616ms)
+✔ verified operator transcription is linked to the actual preserved PDF bytes (3.473569ms)
+✔ operator355 receipt semantics link to the second unchanged uploaded PDF (1.198548ms)
+✔ no-transponder636/672 fare never picks the slash transponder-only value (3.369152ms)
+✔ verified tariff start excludes pre-March2 endpoint fares and retains unconfirmed OD status (1.088352ms)
+✔ provenance audit accounts for every saved M4 conflict without selecting a price (101.975694ms)
+✔ same-section price conflict and missing source/date remain explicit (0.401435ms)
+✔ effective boundaries accept explicit operator instants and reject normalized invalid dates (0.263287ms)
+✔ all quarantined M4 chains stay unknown even with an exact full-vector key (45.963023ms)
+✔ quarantine propagates through multi-road quote; it never becomes a subtotal (0.536569ms)
+✔ 22 catalog systems are visible but none is claimed charged (2.074709ms)
+✔ M1 and M11 are not confused (0.843472ms)
+✔ regional raw checkpoint is a candidate not exact passage (0.572304ms)
+✔ two paid systems reported independently (0.631493ms)
+✔ unknown name ignored, not misrepresented as free (0.196597ms)
+✔ catalog with source fares is not a proof on selected road (0.182765ms)
+✔ strict M4 PVP signal is reported even when legacy checkpoint heuristics miss the road (0.215505ms)
+✔ mere M4 candidacy without any verified paid gate is NOT enough (0.160412ms)
+✔ M11,M12 and CKAD system evidence creates three preliminary candidates (0.263187ms)
+✔ strict Valhalla M1 booth candidate appears without old nearby road label (0.468797ms)
+✔ strict Valhalla M3 booth candidate appears without old estimated section (0.204658ms)
+✔ m1m3 candidate injection ignores unknown or forged road family ids (6.002614ms)
+✔ national manifest has unique entries and valid fee provenance (4.505666ms)
+✔ never invent tariff for other systems (7.322595ms)
+✔ Bagration official base without transponder (0.210087ms)
+✔ Bagration: reject arbitrary toll event (0.127453ms)
+✔ Bagration: no double count (0.174683ms)
+✔ Kama official zone 400 (0.162285ms)
+✔ Bui official zone 300 (0.282726ms)
+✔ both bridges official exclusive zone 700, not double surcharge (1.131306ms)
+✔ crossing both as separate charging zones rejected to avoid double count (0.222065ms)
+✔ Kazan offpeak 90 RUB (0.384129ms)
+✔ Kazan workday 08:59 peak 150 RUB (0.214894ms)
+✔ Kazan peak starts 06:30 (0.136606ms)
+✔ Kazan peak ends at 19:30 (0.166521ms)
+✔ Kazan weekend peak remains 90 (0.177247ms)
+✔ Kazan unknown holiday state returns unknown (0.182795ms)
+✔ M1 official category-I no-transponder rate is 250 (230 is the transponder column) (0.107292ms)
+✔ M3 verified monThu two-section fare (0.07949ms)
+✔ M3 FriSun category-I PVP86+136 is 290 (0.373954ms)
+✔ M3 no period proof unknown (0.101243ms)
+✔ M3 no half known crossing sum (0.080091ms)
+✔ Road name only, without map-matching proof, cannot price (0.083076ms)
+✔ route mismatch cannot be priced (0.167302ms)
+✔ repeated gate or billing event rejected (0.087262ms)
+✔ missing tariff date rejected (0.11229ms)
+✔ unsupported vehicle class rejected (0.070867ms)
+✔ MSD city one operator-proven peak zone costs 19 (1.852585ms)
+✔ MSD city off peak with complete official evidence really free (0.234163ms)
+✔ MSD city boundary entry in peak and exit outside is free (0.164258ms)
+✔ MSD exempt taxi without exemption proof unknown (1.443758ms)
+✔ MSD schedule without active verification unknown (0.111539ms)
+✔ MSD transit 950 with both CKAD and regional proof (0.21888ms)
+✔ MSD transit 950 denied to unknown region (0.120782ms)
+✔ MSD transit >2 hours denied (0.19931ms)
+✔ Ufa eastern exit fixed official category-I no-transponder fare (0.165469ms)
+✔ Ufa arbitrary camera cannot be billed (0.209566ms)
+✔ Tolyatti 17–60 km single operator fare (0.10571ms)
+✔ Tolyatti 60–97 km single operator fare (0.19217ms)
+✔ Tolyatti 17–97 km full official corridor fare 320 (not 210+140) (0.083976ms)
+✔ Tolyatti cannot add exclusive operator tariff zones (0.08635ms)
+✔ MSD peak hours are free on verified holiday or weekend (6.880869ms)
+✔ MSD date mismatch with selected trip is unknown (0.24526ms)
+✔ MSD reversed entry/exit time returns unknown (0.15874ms)
+✔ reject nonexistent Gregorian civil dates, not just a shape (0.131929ms)
+✔ a future tariff cannot be proven by Oct 2026 operator snapshot (0.087442ms)
+✔ undated official snapshot cannot prove historical prices (0.09285ms)
+✔ MSD transit requires proof that both CKAD crossings occur within 24 hours (0.08597ms)
+✔ national multi-network total is sum only if every component is verified (0.511171ms)
+✔ one unpriced road invalidates full national trip total (0.143366ms)
+✔ empty national events cannot be assumed free (0.077637ms)
+✔ verified free national route must prove no toll edges independently (0.185099ms)
+✔ national route missing full coverage fails closed (0.090356ms)
+✔ national route with unregistered paid road fails closed (0.064918ms)
+✔ national route rejects repeated billable traversal identities (0.081863ms)
+✔ national route cannot reuse proof from another selected route (0.081463ms)
+✔ M1 operator order 54 valid Oct10 2026 category-I no-transponder 250 Rub (0.488506ms)
+✔ M1 dated order began March 2 2026; March 1 rejected (0.108394ms)
+✔ M3 operator order 53 FriSun category-I 100+190+230 = 520 Rub Oct10 (0.192911ms)
+✔ M3 operator order 53 MonThu 100+190+190 = 480 Rub (0.083887ms)
+✔ updating M1/M3 operator does not falsely extend Bagration undated Oct9 snapshot (0.073411ms)
+✔ updating M1/M3 operator does not extend other dated Udmurt Oct9 evidence (0.098969ms)
+✔ recording reserves request order even when repeated requests finish out of order (12.740357ms)
+✔ offline replay preserves retry-after and has no fallback for missing responses (0.873558ms)
+✔ capture includes requests made during pricing, after routing (0.906307ms)
+✔ parity compares the complete toll audit, not just the numeric total (0.262206ms)
+✔ planned roads, incomplete traces and partially traversed pairs never count as proven coverage (2.136783ms)
+✔ compaction preserves every exact gate and road family while bounding duplicate paid-edge samples (9.007577ms)
+✔ report survives lost evidence and excludes historic audited claims without raw/replays (110.292569ms)
+✔ each known network has a unique tariff product or an explicit unresolved aggregate (1.81693ms)
+✔ connected corridors and overlapping tariffs have distinct identities (0.253873ms)
+✔ ZSD resume rejects duplicates, skipped cases and unresolved scope before advancing (1.571189ms)
+✔ replay identity, departure and complete recorded evidence are mandatory (1.378379ms)
+✔ known road component subtotal cannot pass as a whole unknown quote (0.462107ms)
+✔ scope equivalence retains physical gate order and recognizes exact unnamed identities only (0.670602ms)
+✔ scope diagnosis supports geometry-only recorded routes and keeps named ZSD maneuvers (0.268775ms)
+✔ matrix integrity (0.935391ms)
+✔ verified weekday pair (1.62414ms)
+✔ verified weekend pair (0.175925ms)
+✔ unknown intermediate cannot be derived by subtraction (0.190768ms)
+✔ reverse direction unknown (0.1196ms)
+✔ same boundaries unknown (0.11298ms)
+✔ confirmed independent trips are additive (0.20551ms)
+✔ unknown component makes whole toll unknown (0.163607ms)
+✔ reject cross-route evidence (0.149315ms)
+✔ empty detection is not proven free (0.164127ms)
+✔ only verified free can return zero (0.109375ms)
+✔ reject unknown tariff profile (0.237027ms)
+✔ reject duplicate traversal IDs (0.118098ms)
+✔ reject unverified entry/exit (1.226249ms)
+✔ reject duplicate directed matrix cell (0.480615ms)
+✔ reject negative tariff (0.173652ms)
+✔ ordinary Thursday weekday tariff (25.420392ms)
+✔ ordinary Friday weekend tariff (0.613856ms)
+✔ Sunday weekend tariff (0.279391ms)
+✔ Monday before Nov holidays weekday (0.320704ms)
+✔ 03 November is official preholiday surcharge (0.313683ms)
+✔ 04 November is national holiday (0.261605ms)
+✔ 30 April is official special day (0.307344ms)
+✔ 11 June is preholiday (0.320233ms)
+✔ 30-31 December are operator special days (0.661758ms)
+✔ UTC midnight is transformed to Moscow civil date (0.531441ms)
+✔ unverified 2027 schedule returns unknown (0.352982ms)
+✔ timezone-naive timestamp rejected (0.124518ms)
+✔ date-only timestamp rejected (0.151208ms)
+✔ invalid offset timestamp rejected (0.103416ms)
+✔ without mixed-gate crossings both systems are not used (1.906105ms)
+✔ 401 section exactly 12h remains in ordinary payment window (0.460615ms)
+✔ 401 section 12h + 1 minute requires extra payment state (0.171348ms)
+✔ 633 section 60 minutes: both official sources agree no extra charge (0.153532ms)
+✔ 633 section 90 minutes: 60/120-minute operator discrepancy is unresolved (0.446484ms)
+✔ 633 section exactly 120 minutes still disputed (0.184849ms)
+✔ 633 section over 120 minutes: both sources imply exceeded (0.194393ms)
+✔ southbound gate order works (0.579604ms)
+✔ single gate in a mixed system cannot establish exit rule (0.203086ms)
+✔ out-of-order chronology is invalid (0.236497ms)
+✔ inconsistent named direction is invalid (0.155074ms)
+✔ zone 401 wrong direction cannot claim verified mixed context (0.136165ms)
+✔ naive timestamps without offsets are invalid (1.927918ms)
+✔ V2 root opts out of machine translation that can mutate React child nodes (1.061511ms)
+✔ both loading buttons keep translation disabled (0.225841ms)
+✔ form opts out of translation (0.406824ms)
+✔ error boundary also opts out of translation (0.372693ms)
+✔ V2 route metadata instructs automatic translators to leave React DOM intact (1.020689ms)
+✔ loading labels are stable sibling elements, not text-node replacement (0.309888ms)
+✔ desktop and mobile status never unmount during loading toggle (0.214594ms)
+✔ real intake remains empty and creates no unsupported price (1.613724ms)
+✔ offline compiler sums tariff components once into two span prices (2.007077ms)
+✔ same compiled span quote works in either direction (0.72958ms)
+✔ an optional route-level control is checked when supplied (0.346232ms)
+✔ a route-level control is not required to compile verified row sums (0.270238ms)
+✔ a conflicting optional control is rejected (0.433745ms)
+✔ a chain that skips an intermediate known PVP is rejected (1.373812ms)
+✔ missing PVP fee row is rejected (1.474004ms)
+✔ wrong chain endpoints rejected (0.338771ms)
+✔ wrong source payment profile rejected (0.356117ms)
+✔ nonofficial source rejected (0.25203ms)
+✔ invalid tariff effective date rejected (0.135394ms)
+✔ missing continuous route evidence rejected (0.161584ms)
+✔ different nonoverlapping tariff versions are kept separately (0.33093ms)
+✔ overlapping tariff versions are rejected (0.292892ms)
+✔ 20 PVP boundaries yield 190 unordered endpoint spans (1.247221ms)
+✔ all spans remain unpriced hypotheses (0.201163ms)
+✔ each unordered endpoint pair appears once (0.358581ms)
+✔ no single-PVP pseudo-spans are generated (0.229216ms)
+✔ the longest candidate uses all 20 known PVP IDs (0.177347ms)
+✔ reverse travel has no duplicate directional row (0.190287ms)
+✔ ambiguous 339/355 chain is flagged for source review (0.142545ms)
+✔ 545 handling is recorded without splitting runtime price (0.230547ms)
+✔ mixed 401 span requires source review (0.160372ms)
+✔ mixed 633 span requires source review (3.772811ms)
+✔ duplicate boundaries are rejected (0.54334ms)
+✔ invalid labels are rejected (0.198039ms)
+✔ current matrix preserves the two user-accepted dated estimates (5.875422ms)
+✔ unknown span has no price (0.461666ms)
+✔ two-PVP span returns its precomputed weekday value (0.256947ms)
+✔ two-PVP span returns its precomputed weekend value (0.189947ms)
+✔ three-PVP span returns its precomputed weekday value (0.221615ms)
+✔ three-PVP span returns its precomputed weekend value (0.15932ms)
+✔ reverse travel reuses the same span cell and amount (0.323969ms)
+✔ extra endpoint PVP cannot reuse a shorter span price (1.508405ms)
+✔ skipped intermediate PVP does not match a known span chain (0.191609ms)
+✔ missing date version stays unknown (0.20588ms)
+✔ same span versions cannot overlap (0.758774ms)
+✔ the same span cannot change its proof chain across versions (0.738774ms)
+✔ unknown or partial geometry remains unknown (0.35795ms)
+✔ repeated PVP event is rejected (0.237618ms)
+✔ invalid cell endpoint order is rejected (0.153391ms)
+✔ a price cell must contain exactly the two weekday/weekend values (0.184448ms)
+✔ maps matched booth events into ordered PVP IDs (4.550113ms)
+✔ the adapter excludes rejected booth candidates (0.338901ms)
+✔ proof route ID always retained (0.176526ms)
+✔ missing continuity proof rejected (0.172851ms)
+✔ incomplete local validation rejected (0.199891ms)
+✔ unknown candidate rejected (0.17189ms)
+✔ spatial fallback is not accepted as a charged PVP (0.163837ms)
+✔ event must match actual exact OSM node (0.21871ms)
+✔ matched edge must be toll (0.264269ms)
+✔ duplicated PVP rejected (0.307874ms)
+✔ same progress point rejected (0.182375ms)
+✔ wrong direction rejected (0.1794ms)
+✔ empty span catalog never invents a fare (3.270313ms)
+✔ full ordered PVP evidence is reported (1.101412ms)
+✔ preview remains diagnostic only (0.343398ms)
+✔ missing validation is unknown (0.160843ms)
+✔ zero gates cannot be labelled free (0.184909ms)
+✔ unmatched gate cannot create a span (0.341716ms)
+✔ partial validation stays unknown (0.179541ms)
+✔ reverse route direction is derived from the same gate evidence (0.282236ms)
+✔ both directions resolve the same span amount (3.252195ms)
+✔ continuity proof is still required for a span quote (0.327013ms)
+✔ identical Thursday profile uses weekday price (19.774688ms)
+✔ identical Friday profile uses weekend price (0.436108ms)
+✔ special Thursday before May uses weekend charge (0.405471ms)
+✔ Thu to Fri overnight is unknown, never uses first profile silently (0.384791ms)
+✔ Monday to operator preholiday is unknown (0.43076ms)
+✔ Fri to Sat overnight remains one weekend price (0.953959ms)
+✔ fare version switch overnight fails closed even on same weekend (3.959412ms)
+✔ unverified year 2027 fails closed (2.701225ms)
+✔ missing passage times is unknown (0.277038ms)
+✔ wrong PVP time identity is unknown (0.445071ms)
+✔ cross-route time evidence is unknown (0.183627ms)
+✔ actual empty trusted matrix remains unknown (0.51709ms)
+✔ auto derives 401 mixed-state instead of trusting caller (0.714989ms)
+✔ caller-forced wrong mixed state is rejected (0.474216ms)
+✔ uncertain 90-minute 633 grace period always returns unknown (0.992297ms)
+✔ resolves one continuous OD span (2.035069ms)
+✔ does not split a continuous multi-edge paid span (0.210838ms)
+✔ direction is part of gate identity (0.164558ms)
+✔ rejects false nearby untraversed access node (0.138579ms)
+✔ rejects wrong gate coordinate even with matching node id (0.161524ms)
+✔ rejects incomplete matching (0.110998ms)
+✔ rejects missing edges (0.110056ms)
+✔ rejects route graph discontinuity (0.501987ms)
+✔ rejects wrong route evidence (0.223507ms)
+✔ rejects duplicate catalog boundary (0.187323ms)
+✔ rejects partial unverified boundary (0.171779ms)
+✔ paid start is unknown (1.788287ms)
+✔ paid end is unknown (0.117257ms)
+✔ free labeling requires separate validation (0.114913ms)
+✔ rejects reversed direction inside same system (0.092539ms)
+✔ rejects one edge without exact proof (0.13307ms)
+✔ rejects missing end ramp (0.084808ms)
+✔ rejects insufficient geometry (0.108053ms)
+✔ two separate entries are two distinct charges not one (0.25199ms)
+✔ unknown second crossing fails whole extraction (0.176777ms)
+✔ two road families are separate if both gated (0.248916ms)
+✔ direct transfer between priced networks requires both gate records (0.10621ms)
+✔ resolved synthetic profile prices stored directed 58 to 679 (1.628005ms)
+✔ Friday-Sunday prices from ready matrix cell (0.227062ms)
+✔ unlisted reverse direction unknown (0.410108ms)
+✔ missing OD system unknown (0.287844ms)
+✔ missing boundary unknown (3.948436ms)
+✔ partial route cannot be priced (0.17904ms)
+✔ empty crossing not free (0.122805ms)
+✔ independently validated free route gives zero (0.161754ms)
+✔ free evidence from other route cannot be used (0.136125ms)
+✔ no tariff profile matches unknown (0.214994ms)
+✔ unverified M4 pair never priced (2.631419ms)
+✔ bad tariff matrix fails closed without crashing (0.280713ms)
+✔ duplicate road system matrix fails closed (0.15939ms)
+✔ uses the accepted direction-specific Krasnodar to St Petersburg Maps estimate on capture date (22.705558ms)
+✔ keeps the reverse amount separate and does not transfer it across dates or endpoints (0.402227ms)
+✔ uses only the accepted directed ZSD and Kazan-to-Moscow route controls (0.253402ms)
+✔ max-chain-m12-ckad-m11-zsd-arzamas-to-prim: its own continuous recorded route is not rejected (46.377383ms)
+✔ max-chain-m12-ckad-m11-zsd-sest-to-kazan: its own continuous recorded route is not rejected (19.792173ms)
+✔ single-zsd-blag-to-prim: its own continuous recorded route is not rejected (1.235023ms)
+✔ dnr-гранитное-saint-petersburg-center: its own continuous recorded route is not rejected (33.228149ms)
+✔ physical witnesses retain their exact recorded coordinates and asset hash (2.647504ms)
+✔ pair-m11-zsd-prim-to-moscow: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (35.027003ms)
+✔ max-chain-m12-ckad-m11-zsd-prim-to-arzamas: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (35.934247ms)
+✔ max-chain-m12-ckad-m11-zsd-prim-to-cheboksary: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (49.402967ms)
+✔ max-chain-m4-ckad-m11-zsd-prim-to-voronezh: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (46.347879ms)
+✔ pair-m11-zsd-prim-to-torzhok: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (11.540427ms)
+✔ triple-m4-m11-zsd-prim-to-voronezh: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (49.391767ms)
+✔ a northbound exit without reentry and an ordinary southbound entry remain admissible (3.687548ms)
+✔ nearby parallel geometry, a sparse chord and a disconnected local gap do not prove the reviewed turn (3.978116ms)
+✔ when all candidates violate the policy no route or zero quote is manufactured (11.912817ms)
+✔ connector requires correct directed controls (1.059308ms)
+✔ parallel path, sparse chords, repeated returns and invalid points are not connector proof (1.740635ms)
+✔ Yalta and Anapa to Krasnodar return selected A-289 estimates in both directions (3.574579ms)
+✔ A289 helper never adds a bypass label; missing exits do not invent fare (2.318164ms)
+✔ long-trip recovery accepts only the exact complete directed frame vector (0.776791ms)
+✔ hanging headers are bounded and the source is aborted even if it ignores cancellation (28.123289ms)
+✔ headers arriving successfully cannot bypass the deadline while JSON body hangs (29.213106ms)
+✔ expired total budget starts no source request; invalid time limits fail promptly (0.509788ms)
+✔ HTTP and malformed JSON failures remain explicit and abort unread response work (3.052582ms)
+✔ successful source JSON and original report array/ranking contract survive incremental writes (145.074661ms)
+✔ global budget bounds concurrent stalled sources, saves partial results and stops later cities (46.689299ms)
+✔ budget exhaustion on the final city is still reported instead of a false DONE (35.236453ms)
+✔ one unavailable source is a recorded failure, while the other source and following city still finish (55.673115ms)
+✔ runtime probe persists checked cities/raw features/progress after every query (128.2033ms)
+✔ full source failure stops further requests and never becomes successful empty results (9.271897ms)
+✔ wrong nonempty city result is CHECK_FAILED while other independent cities are checked (26.341351ms)
+✔ total budget preserves completed results and remaining queries (10.533919ms)
+✔ noncooperative collector/body is bounded and aborted with recoverable progress (16.642677ms)
+✔ transport errors are saved as bounded labels rather than dropped exceptions (7.275106ms)
+✔ probe rejects unbounded query counts or time limits before network work (1.361402ms)
+✔ default probe exercises production collector/pool with mocked fetch and concurrency2 (44.775539ms)
+✔ real endpoint/proxy flow survives sequential replacements, shared cancellation and partial outage (217.726224ms)
+✔ address search proxy preserves the caller abort signal and query (3.401538ms)
+✔ searches globally, within Ukraine and Russia, and in each priority territory (3.260846ms)
+✔ Russian Makeyevka query also searches Photon using the Ukrainian locality spelling (0.931654ms)
+✔ RuWiki alternate settlement names trigger a search inside the matching priority territory (0.666435ms)
+✔ RuWiki alias results are matched and labeled using the settlement's listed name (82.65407ms)
+✔ all special-oblast queries search provider aliases in Ukraine's state layer (13.183142ms)
+✔ exact matches in all five high-demand areas rank before ordinary namesakes (15.626294ms)
+✔ Donetsk search ranks priority territories before Russia and foreign namesakes (8.290277ms)
+✔ same-name city inside a special ADM1 polygon ranks above its Russian namesake by coordinates (2.469623ms)
+✔ Ukrainian Makeyevka spelling is matched and displayed in Russian for a Russian query (1.625901ms)
+✔ special place remains first when merged from the country-filtered query after global results (3.831465ms)
+✔ priority-territory settlement named Moscow outranks the Russian city, while unrelated POIs stay secondary (3.046792ms)
+✔ invalid provider coordinates are not exposed as selectable results (1.242613ms)
+✔ special-region cities use DNR/LNR or the requested oblast display name based on coordinates (6.340968ms)
+✔ Crimea localities omit provider country and show the compact Crimea suffix (5.557637ms)
+✔ oblast-level results get Russian region labels rather than a country suffix (1.999584ms)
+✔ boosts exact namesake cities in special polygons while keeping unrelated partial matches lower (11.79505ms)
+✔ region query boosts exact oblast result and not a similarly named street (4.482116ms)
+✔ exact oblast result outranks a partial locality name during a region search (2.277843ms)
+✔ localized Ukrainian oblast result matches a Russian region query by its explicit alias (1.154821ms)
+✔ Ukrainian locality spelling matches a Russian query and omits community suffix (4.684932ms)
+✔ Russian Zaporizhzhia query searches and ranks Ukrainian city spelling (3.44948ms)
+✔ Russian Kharkiv query with country qualifier searches Ukrainian spelling and ranks the city first (2.966492ms)
+✔ special-region hamlet outranks Russian city with the same exact name (7.350911ms)
+✔ all new-territory settlements rank before Russian namesakes regardless of size (3.904656ms)
+✔ Tarasovka DNR ranks first, Kyiv region Tarasovka stays visible, and Russia precedes other countries (11.092941ms)
+✔ municipality relations are excluded and duplicate locality cards collapse (2.921073ms)
+✔ transit stations and platforms are excluded while actual settlements remain selectable (1.628756ms)
+✔ city query with DNR, LNR or Crimea qualifier still matches exact settlement (4.813586ms)
+✔ isolated dwellings and farms are included as inhabited locality types (2.234358ms)
+✔ Russian localized provider name is preferred for a Ukrainian OSM settlement name (1.37975ms)
+✔ Izyum searches Ukrainian spelling and ranks priority territories, Russia, then all other countries (7.56304ms)
+✔ exact Russian namesakes stay ahead of Kazakhstan even when Photon omits their place subtype (1.653732ms)
+✔ regional qualifier is removed from Photon query without changing full address searches (3.921071ms)
+✔ unqualified Yalta prefers a new-territory namesake; explicit qualifiers win (5.414772ms)
+✔ RuWiki index uses only its four configured RuWiki source pages and records no fabricated coordinates (0.935229ms)
+✔ address cache shares exact query results across fields and normalizes case and whitespace (1.828877ms)
+✔ address cache expires entries and does not retain empty results (0.229036ms)
+✔ address cache evicts the least recently used entry when the bound is exceeded (0.707036ms)
+✔ runtime report distinguishes successful timing, slow request and HTTP failure (1.040408ms)
+✔ unknown price stays null and cannot be converted into a free/complete total (0.279301ms)
+{"type":"calculation-runtime-summary","caseId":"anapa-krasnodar","status":"PASS","httpStatus":200,"elapsedMs":2.7096739999999926,"handlerElapsedMs":50,"targetMs":10000,"overTarget":false,"meters":170000,"seconds":10000,"tollPricingStatus":"priced","tollAmount":620,"tariffIndependentlyVerified":false,"deployedBrowserEndToEnd":false,"importedMs":0.0009109999999878937,"serverTiming":"calc_total;dur=50, routing;dur=30"}
+✔ one injected handler call preserves the complete body and atomic result (18.445804ms)
+{"type":"calculation-runtime-process","status":"PROCESS_TIMEOUT","supervisorElapsedMs":117.77192100000002}
+{"type":"calculation-runtime-process","status":"WORKER_ERROR","supervisorElapsedMs":126.070986}
+{"type":"calculation-runtime-process","status":"WORKER_ERROR","supervisorElapsedMs":98.04408899999999}
+✔ supervisor bounds a stalled child and retains progress; crash cannot pass (348.344975ms)
+{"type":"calculation-runtime-process","status":"PASS","supervisorElapsedMs":83.09510999999998}
+✔ supervisor preserves a completed child result and body (85.354786ms)
+{"type":"calculation-runtime-summary","caseId":"donetsk-moscow","status":"PASS","httpStatus":200,"elapsedMs":0.4233790000000681,"handlerElapsedMs":90,"targetMs":10000,"overTarget":false,"meters":170000,"seconds":10000,"tollPricingStatus":"priced","tollAmount":620,"tariffIndependentlyVerified":false,"deployedBrowserEndToEnd":false,"importedMs":0.0005110000000740911,"serverTiming":"calc_total;dur=90, special_options;dur=80, routing;dur=20, provider_valhalla;dur=10, provider_osrm;dur=20, toll_matching;dur=50, toll_pricing;dur=10"}
+✔ special probe binds the requested case, branch and detailed timing (3.475549ms)
+{"type":"calculation-runtime-process","status":"WORKER_ERROR","supervisorElapsedMs":99.09143700000004}
+✔ a child cannot report another case as the requested run (104.033728ms)
+✔ timing preserves values and records overlapping stages without summing request duration (1.836398ms)
+✔ timing preserves original synchronous and asynchronous errors (0.84247ms)
+✔ disabled timing performs no instrumentation (0.254053ms)
+✔ unavailable clocks and loggers cannot break the calculation (1.090384ms)
+✔ backwards clock is unknown and a slow valid request exceeds the target (0.376026ms)
+CKAD production regression: GREEN; east-arc no-transponder total=1800 RUB
+✔ scripts/ckad-production-test.ts (220.154779ms)
+✔ own Yalta Rostov capture replays the complete V3 toll composer as 2060/2210 with no network (295.896382ms)
+✔ Crimea to northbound M4 uses the paid west bypass in both driving directions (60.081685ms)
+✔ Krasnodar, Maykop and Kabardino-Balkaria retain the southern city approach (0.244118ms)
+✔ a Crimea M4 route must cross the directional plaza, not just pass within broad control tolerance (0.173722ms)
+✔ recorded own OSRM routes cross the correct bypass plaza and price 410 in either direction (64.342739ms)
+✔ a northern mainland approach to the special Crimea corridor also uses its directional bypass (2.858649ms)
+M11 Moscow production regression: GREEN; weekday=5330 weekend(max Fri-Sun)=6590 RUB
+✔ scripts/m11-moscow-production-test.ts (207.888555ms)
+M12_FULL_ROUTE_TARIFF_GREEN moscow-to-kazan-p239=5847 bothDirections=true shaliExcluded=true
+✔ scripts/m12-full-route-tariff-audit.test.ts (240.59824ms)
+✔ full Moscow—Krasnodar corridor uses the published route tariff on weekdays and weekends (14.656142ms)
+✔ a partial M-4 route does not receive the full-corridor fare (0.222215ms)
+✔ mixed M-4 zones are not charged from flanking open plazas when booth edges were bypassed (15.449728ms)
+✔ M-4 633-741 bills only the first actually traversed paid gate (1.117234ms)
+✔ M-4 633-741 charges at exit only when estimated gate transit exceeds 120 minutes (0.47125ms)
+✔ paired mixed-zone gates remain unresolved without route ETA (0.435596ms)
+✔ a single verified 633-741 gate resolves to its published gate tariff (0.622168ms)
+✔ the 401-464 mixed zone is not billed when the route only has flanking open-PVP evidence (0.545012ms)
+✔ the 401-464 mixed zone charges once when either paid gate is confirmed (1.342604ms)
+✔ the 401-464 mixed zone adds an exit tariff when estimated transit exceeds 12 hours (0.864203ms)
+✔ M-4 priced plaza breakdown preserves ID, selected tariff, direction truth and deduplicates same plaza (26.584353ms)
+M4 strict route traversal regression passed { throughDistanceKm: 0, maxDistanceKm: 0.2 }
+✔ scripts/m4-route-traversal-test.ts (145.563889ms)
+✔ a free toll-booth bypass is rejected and contributes no charge (16.049523ms)
+✔ a free booth edge at a second plaza cannot inflate an otherwise paid route (0.560505ms)
+✔ a toll-tagged edge at the expected booth remains chargeable (0.183396ms)
+✔ missing edge toll evidence remains unknown instead of inventing a charge (0.134382ms)
+✔ a successful trace with no expected booth node is a verified near miss (0.125349ms)
+✔ geometric proximity alone cannot prove a paid toll crossing (0.096967ms)
+✔ a valid slow prefix response survives the former ten-second deadline (4.231218ms)
+✔ failure diagnostics distinguish provider failures without exposing raw text (0.221854ms)
+✔ Photon fetch returns parsed features and preserves the cache window (0.576118ms)
+✔ Photon fetch rejects promptly on deadline and aborts the upstream request (20.275592ms)
+✔ Photon fetch forwards caller cancellation (5.671959ms)
+✔ an unavailable Photon source remains an individual failed result (0.728168ms)
+✔ global pool caps concurrent requests across different address queries (7.948ms)
+✔ same URL shares one fetch; cancelling A does not cancel subscriber B (4.817742ms)
+✔ clearing last subscriber aborts request; immediate retyping cannot reuse abandoned task (1.152247ms)
+✔ queued cancelled prefixes never reach the provider and free queue capacity (1.001059ms)
+✔ pre-aborted callers invoke neither pool provider nor low-level fetch (0.534136ms)
+✔ three consecutive503/429 failures pause queue; retry after cooldown works (0.752805ms)
+✔ healthy cached results survive cooldown; TTL/LRU/empty responses stay bounded (0.573134ms)
+✔ one partial503 never blocks next city, and successes reset the failure streak (0.442707ms)
+✔ an in-flight success clears an already-open circuit (0.468666ms)
+✔ the complete failure streak must fit within15seconds, not just each adjacent gap (0.35818ms)
+✔ source cooldown does not block another origin and has bounded diagnostic labels (0.241273ms)
+✔ collector keeps partial positives and every original variant (3.215517ms)
+✔ collector total budget includes queue and does not hang on a non-cooperative fetch (16.569697ms)
+✔ collector preserves the previously observed usable11.3second prefix response (8.795598ms)
+✔ collector caller cancellation stops all queued variants without opening cooldown (2.349421ms)
+✔ full saved selected provider→M4 boundaries→V3 composer preserves unknown price in both profiles (693.92722ms)
+✔ normalize complete road-number labels; do not accept prose or destinations (2.379176ms)
+✔ regional connecting road refs and unnumbered named routes retain their identity (1.934697ms)
+✔ saved Granitnoe→Kazan maneuver labels identify the corridor but do not prove an exact tariff entry (26.842702ms)
+✔ same pair of road refs at different locations has different directed transition IDs (0.881398ms)
+✔ an old begin_street_names label does not extend M4 onto a different selected road (0.257839ms)
+✔ concurrent E-road labels do not split a continuous M4 block (16.209093ms)
+✔ discontinuous/malformed selected geometry cannot prove road boundaries (1.629547ms)
+✔ exit/re-entry is not silently folded into a single outer tariff vector (0.29168ms)
+✔ starting on M4 is partial access evidence, not a fabricated entry interchange (2.504355ms)
+✔ road names alone do not introduce a new toll charge or override legacy matrix prices (6.757546ms)
+✔ only a short continuous unnamed connector can link two named road transitions (0.613705ms)
+✔ road evidence signature binds all vertices, not merely endpoints (1.581764ms)
+✔ internally continuous OSRM steps from another candidate cannot annotate the selected shape (0.236667ms)
+✔ kilometrage exact directed identities, increasing and decreasing selected traversal (3.11778ms)
+✔ transition-specific row never leaks to another approach on same node (0.240853ms)
+✔ calibrated local projection uses actual access refs and supports reversed scale (1.193139ms)
+✔ nearby branches / duplicate anchors / overlapping km ranges are not guessed (0.435477ms)
+✔ different branches, scales and partial trace cannot establish direction (0.228244ms)
+✔ missing geometry, wrong target road and out-of-section coordinates stay unknown (0.207533ms)
+✔ unreviewed/bad rows log stops without blocking valid independent rows (4.15905ms)
+✔ registry and lookup budgets fail closed; no partial nearest choice (6.964709ms)
+✔ switch disables module, existing named PVP anchors work without network (1.367642ms)
+✔ real retained M4 transitions remain unknown kilometres without invented data (0.255916ms)
+✔ selected-route integration rejects foreign geometry before kilometrage and keeps price null (2.755674ms)
+✔ selected graph nodes and directed way pairs identify transitions without invented coordinates (2.533889ms)
+✔ a verified directed overlap joins M4 across trace chunks with different shape indices (0.374875ms)
+✔ an unproven join outside the target span does not erase an independently bound M4 transition (0.532502ms)
+✔ incomplete coverage, repeated target blocks and malformed shape order cannot authorize a vector (0.435757ms)
+✔ missing OSM node/way identity cannot be replaced by a nearest-booth or numeric ref guess (0.630661ms)
+✔ beginning on M4 is not a fabricated entry junction (0.267513ms)
+✔ BRouter-style route without instructions uses its own complete graph trace (4.074092ms)
+Route corridor policy GREEN
+✔ scripts/route-corridor-policy-test.ts (155.799828ms)
+✔ geometric segments compose normal and special mileage for all four rates (1.689056ms)
+✔ custom rates and urgency apply after geometric splitting (1.253319ms)
+✔ manual ordinary mode changes rates without modifying geography (0.151067ms)
+✔ address labels cannot classify endpoints or substitute for missing geometry (0.193862ms)
+Route-quality majority regression: GREEN
+✔ scripts/route-quality-majority-test.ts (198.672548ms)
+Safe-route position tests GREEN
+✔ scripts/safe-route-position-test.ts (141.147036ms)
+M11_EVIDENCE_FIXTURE_OK valhalla moscow-spb-continuous blocks=1 malformed=0
+M11_EVIDENCE_FIXTURE_OK valhalla malformed-index-break blocks=2 malformed=1
+M11_EVIDENCE_FIXTURE_OK osrm northbound-two-blocks-with-gap blocks=2 clues=0
+M11_EVIDENCE_FIXTURE_OK osrm southbound-destination-clue-not-strict blocks=1 clues=1
+M11_EVIDENCE_FIXTURE_OK osrm neva-without-m11-ref-is-clue blocks=0 clues=1
+M11_EVIDENCE_FIXTURE_OK osrm non-m11-control blocks=0 clues=0
+M11_EVIDENCE_FIXTURES_GREEN valhalla=2 osrm=4
+✔ scripts/segment6a2c-m11-road-evidence-test.ts (203.109206ms)
+M11_CURRENT_A1_GREEN historicalPoints=21 currentPoints=22 controls=2
+✔ scripts/segment6a3a2-m11-current-tariff-refresh-test.ts (214.109242ms)
+M11_CURRENT_PARTIAL_CORE_GREEN points=22 directPairs=2 exactLookups=4 unknownLookups=7
+✔ scripts/segment6a3a2c-m11-partial-tariff-core-test.ts (166.716659ms)
+M11_BOUNDARY_MODEL_GREEN systems=2 points=28 boundFacilities=30 unboundFacilities=1 coordinates=0
+✔ scripts/segment6a3b2-m11-boundary-model-test.ts (203.512082ms)
+M11_MULTI_ANCHOR_SPATIAL_GREEN facilities=3 anchors=7 syntheticCoordinates=0
+✔ scripts/segment6a3b2e-m11-spatial-anchor-model-test.ts (154.727446ms)
+M11_BOUNDARY_RESOLVER_GREEN controls=7 moneyFields=0
+✔ scripts/segment6a3b3-m11-boundary-resolver-test.ts (231.399294ms)
+M11_BOUNDARY_FIXTURE_GATE_GREEN controls=8 unsupportedRemainUnresolved=true
+✔ scripts/segment6a3b4-m11-boundary-fixture-gate-test.ts (204.539512ms)
+M11_CURRENT_SELECTION_GREEN pricedControls=4 unknownControls=6 falseZero=0
+✔ scripts/segment6a3c-m11-current-selection-test.ts (175.475011ms)
+M11_PRODUCTION_WRAPPER_GREEN exact=2 rejected=4 extraNetworkRequests=0
+✔ scripts/segment6a3d-m11-production-wrapper-test.ts (211.481877ms)
+OTHER_ROAD_TARIFF_SNAPSHOT_GREEN m1=1 m3=3 ckad=16 a289=6 modes=2
+✔ scripts/segment6b-other-road-tariff-snapshot-test.ts (217.190962ms)
+OTHER_ROAD_EVIDENCE_CONTRACT_GREEN pricedControls=6 failClosed=2 tariffModes=2
+✔ scripts/segment6c-other-road-evidence-contract-test.ts (175.684767ms)
+REGIONAL_TARIFF_REGRESSION_GREEN tolyatti=320 bothDirections=true
+✔ scripts/segment6d-regional-tariff-regression-test.ts (220.268797ms)
+Segment 7 direct core test: GREEN
+✔ scripts/segment7-versioning-core-test.ts (140.276539ms)
+Segment 8 route-quality corpus: GREEN
+✔ scripts/segment8-route-quality-test.ts (168.495911ms)
+✔ special route toll checks are serialized to avoid saturating Valhalla trace matching (364.320952ms)
+✔ coordinate endpoint classifies all areas and rejects malformed input (108.059295ms)
+✔ both providers retain distinct per-leg seconds and geometries (6.040085ms)
+✔ ordinary calculation preserves unknown toll price, prices all classes and does not require via (29.492527ms)
+✔ ordinary calculation rejects an extreme control-leg detour and exposes a warning (11.577231ms)
+✔ server geocoding automatically enables special rates; manual ordinary remains ordinary (86.172594ms)
+✔ rejects extreme control-leg detours and warns on the surviving provider (10.91337ms)
+✔ transit is removed even in manual ordinary mode, not returned as zero price (20.41337ms)
+✔ requires verified, sourced boundaries for all four special territories (5.408252ms)
+✔ loads the four OCHA ADM1 boundary features and classifies representative points (104.611929ms)
+✔ splits actual route geometry across every crossed special region (1.083554ms)
+✔ does not guess on a tariff boundary; route-time estimates remain diagnostic (0.261655ms)
+✔ chooses only a route from the corridor selected by geographic policy (0.541967ms)
+✔ real four polygons split transitions, Crimea ordinary, transit excluded (159.267876ms)
+✔ rejects an anomalously long leg between required route controls (0.531631ms)
+✔ geographic route zone selects one corridor without forcing a mainland detour (5.911751ms)
+✔ uses real leg seconds, never proportional route duration (1.6386ms)
+✔ timing plan merges adjacent special administrative polygons as one tariff class (0.441155ms)
+✔ sub-meter boundary fragment creates no zero-length leg and counts whole leg conservatively (1.331607ms)
+✔ manual override survives calculations/activity, expires only after idle/new session (0.193312ms)
+✔ special route providers surface material distance disagreement (0.501466ms)
+✔ geographic selector puts the fastest valid route first (0.352241ms)
+✔ geographic selector ignores elapsed-time evidence and preserves toll uncertainty (0.409517ms)
+✔ geographic selector returns main and distinct alternative only from preferred corridor (0.243677ms)
+✔ geographic selector skips invalid durations and keeps toll/provider preference only for ties (0.229166ms)
+✔ route cards are ordered fastest to slowest without mutating the source list (0.194413ms)
+Systemic toll composition test: GREEN
+✔ scripts/systemic-toll-composition-test.ts (163.019021ms)
+✔ theme toggle switches between dark and light (1.074149ms)
+✔ light mode opts out of automatic Android darkening (0.184247ms)
+✔ unavailable local storage falls back safely to the light theme (0.222555ms)
+✔ visible theme change is applied even when local storage write fails (0.95553ms)
+✔ M-4/A-289 tariff period uses Moscow calendar day at UTC day boundary (23.148063ms)
+✔ Moscow Friday start belongs to weekend tariff period (0.408636ms)
+✔ one temporary trace rate limit retries and preserves an actual paid edge (7.248736ms)
+✔ two temporary rate limits are retried and the recovered paid edge stays complete (1.248822ms)
+✔ a persistent rate limit cannot become free and has exactly two bounded retries (0.746735ms)
+✔ a long Retry-After remains incomplete without ignoring the server delay (1.60537ms)
+✔ current quote period uses the Europe/Moscow weekday (19.625953ms)
+✔ short copy labels retain the city and remove longer address details (0.71694ms)
+✔ weekday and weekend toll selection drives every fare total (2.159445ms)
+✔ unknown tolls stay unknown and confirmed-free routes get an explicit zero (0.201293ms)
+✔ manual toll override is applied to totals without treating it as provider evidence (0.230277ms)
+✔ displayed whole-ruble components add up to the displayed total (0.691733ms)
+✔ unknown toll shows a base-only amount and never a complete trip total (1.216033ms)
+✔ confirmed-free and priced tolls show a complete trip total (0.246412ms)
+✔ alternative clipboard contains short endpoints, route facts and only four base fares (6.242681ms)
+✔ payment-point alternative may retain tolled road edges when no toll booth is found (8.770921ms)
+✔ a route with a toll booth is rejected as the payment-point alternative (1.397417ms)
+✔ an incomplete booth trace is rejected because payment-point avoidance is unproven (4.547395ms)
+✔ a candidate without route geometry is never offered as an unverified detour (1.650728ms)
+✔ a route without meaningful time or distance savings is rejected before map matching (0.267062ms)
+✔ a payment-point-avoiding route beyond the distance or time detour limit is not offered (0.267493ms)
+✔ detour limits permit moderately longer/slower routes but reject extreme outliers (0.153221ms)
+✔ a route that saves time may be longer, and a route that saves distance may be slower (1.852162ms)
+✔ toll fallback evidence requires real savings and rejects regression-only differences (1.072346ms)
+✔ candidate search falls back from a route with booths to a verified partial M-4 bypass (2.207758ms)
+✔ selected Valhalla Moscow/Taman captures bind the Slavyansk connector, not Maryanskaya (972.597724ms)
+✔ saved long route proves a complete A289 frame vector with both trip ends outside local exits (651.954077ms)
+✔ unbound partial A289 traversal still blocks a long-route price (0.524981ms)
+✔ full A289 physical frames do not bypass fare validity (414.968957ms)
+✔ A289 full-vector recovery cannot hide an unresolved M4 component (32.9647ms)
+✔ returning to an A289 frame remains an unresolved repeated traversal (0.74317ms)
+✔ stored intermediate A289 pairs reach V3 in both directions (9.989027ms)
+✔ physical camera order is independent of shape sampling and reverses with direction (1.974546ms)
+✔ missing intermediate price blocks fallback rather than subtracting unrelated OD tariffs (1.213018ms)
+✔ camera return passage cannot be charged as a single ordinary OD trip (0.76312ms)
+✔ neighboring shape points at a single frame are one passage (0.872746ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 103.904,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.259,
+      maxMs: 1.259
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.129,
+      maxMs: 0.129
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 31.901,
+      maxMs: 31.901
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.511,
+      maxMs: 6.511
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.421,
+      maxMs: 6.421
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 2.578,
+      maxMs: 2.578
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.75,
+      maxMs: 0.75
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.457,
+      maxMs: 2.457
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 20.921,
+      maxMs: 20.921
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.315,
+      maxMs: 1.315
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 19.993,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.117,
+      maxMs: 0.117
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.059,
+      maxMs: 0.059
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 18.009,
+      maxMs: 18.009
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.508,
+      maxMs: 1.508
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.495,
+      maxMs: 1.495
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.689,
+      maxMs: 0.689
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.356,
+      maxMs: 0.356
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.247,
+      maxMs: 2.247
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 13.56,
+      maxMs: 13.56
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.196,
+      maxMs: 1.196
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 4.767,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.203,
+      maxMs: 0.203
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.024,
+      maxMs: 0.024
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.154,
+      maxMs: 4.154
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.909,
+      maxMs: 0.909
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.899,
+      maxMs: 0.899
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.341,
+      maxMs: 0.341
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.24,
+      maxMs: 0.24
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.36,
+      maxMs: 0.36
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.725,
+      maxMs: 2.725
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.13,
+      maxMs: 0.13
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.206,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.061,
+      maxMs: 0.061
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.283,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.088,
+      maxMs: 0.088
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.155,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.047,
+      maxMs: 0.047
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.195,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.083,
+      maxMs: 0.083
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.371,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.093,
+      maxMs: 0.093
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.197,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.086,
+      maxMs: 0.086
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.164,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.05,
+      maxMs: 0.05
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 6.263,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.078,
+      maxMs: 0.078
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.019,
+      maxMs: 0.019
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.733,
+      maxMs: 5.733
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.717,
+      maxMs: 0.717
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.707,
+      maxMs: 0.707
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.271,
+      maxMs: 0.271
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.15,
+      maxMs: 0.15
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.536,
+      maxMs: 0.536
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.273,
+      maxMs: 4.273
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.138,
+      maxMs: 0.138
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 9.304,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.053,
+      maxMs: 0.053
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.021,
+      maxMs: 0.021
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 7.981,
+      maxMs: 7.981
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.868,
+      maxMs: 0.868
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.859,
+      maxMs: 0.859
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.316,
+      maxMs: 0.316
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.187,
+      maxMs: 0.187
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.43,
+      maxMs: 0.43
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.462,
+      maxMs: 6.462
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.912,
+      maxMs: 0.912
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 8.188,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.055,
+      maxMs: 0.055
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.024,
+      maxMs: 0.024
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 7.73,
+      maxMs: 7.73
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.08,
+      maxMs: 3.08
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.071,
+      maxMs: 3.071
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 2.512,
+      maxMs: 2.512
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 2.427,
+      maxMs: 2.427
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.493,
+      maxMs: 0.493
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.955,
+      maxMs: 3.955
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.128,
+      maxMs: 0.128
+    }
+  ],
+  stops: []
+}
+✔ V3 Anapa and Yalta requests expose numeric A289 price without confirmation labels (136.611294ms)
+✔ omitted departure date is normalized; malformed rates are rejected (8.279671ms)
+✔ invalid calendar and ambiguous dates fail before any external request (5.670708ms)
+✔ valid leap day and explicit timezone dates remain accepted (26.141816ms)
+✔ both calculate buttons wait until both addresses are entered, and swap control is rendered (50.99654ms)
+✔ rubles per kilometre amount and unit are enlarged and centered (19.433133ms)
+✔ actual M12–CKAD–M11 chain resolves its own MMK head and mainline pair (48.863926ms)
+✔ a genuinely headless mainline pair does not manufacture a head charge (16.918423ms)
+✔ real unnamed ZSD/M11 events have their own identity and no invented fare (4.061131ms)
+✔ reverse-chain unnamed booths map to ZSD and M4, preserving incomplete trace refusal (0.43076ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 119.69,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.798,
+      maxMs: 0.798
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.121,
+      maxMs: 0.121
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 73.942,
+      maxMs: 73.942
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 14.349,
+      maxMs: 14.349
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 14.285,
+      maxMs: 14.285
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 12.005,
+      maxMs: 12.005
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 11.474,
+      maxMs: 11.474
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 12.693,
+      maxMs: 12.693
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 26.354,
+      maxMs: 26.354
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.331,
+      maxMs: 3.331
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 62.29,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.101,
+      maxMs: 0.101
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.028,
+      maxMs: 0.028
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 56.555,
+      maxMs: 56.555
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.07,
+      maxMs: 6.07
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.048,
+      maxMs: 6.048
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.546,
+      maxMs: 5.546
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.087,
+      maxMs: 4.087
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 15.808,
+      maxMs: 15.808
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 23.517,
+      maxMs: 23.517
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.034,
+      maxMs: 5.034
+    }
+  ],
+  stops: []
+}
+✔ exact A113 references and full CKAD name identify paid product including booth aliases (7.140443ms)
+✔ paid trace name without any booth still requires the CKAD component; incomplete trace stays unknown (4.580735ms)
+✔ own forward route retains omitted paid CKAD; reverse does not inherit the other direction evidence (72.833968ms)
+✔ own POST replay keeps forward CKAD unknown and prices only the complete reverse route (191.918152ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 211.38,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.059,
+      maxMs: 1.059
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.107,
+      maxMs: 0.107
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 170.934,
+      maxMs: 170.934
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 22.649,
+      maxMs: 22.649
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 22.58,
+      maxMs: 22.58
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 17.411,
+      maxMs: 17.411
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 15.915,
+      maxMs: 15.915
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 24.453,
+      maxMs: 24.453
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 78.265,
+      maxMs: 78.265
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.496,
+      maxMs: 4.496
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 141.921,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.129,
+      maxMs: 0.129
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.026,
+      maxMs: 0.026
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 135.6,
+      maxMs: 135.6
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 13.703,
+      maxMs: 13.703
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 13.45,
+      maxMs: 13.45
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 12.761,
+      maxMs: 12.761
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 11.984,
+      maxMs: 11.984
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.522,
+      maxMs: 1.522
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 100.656,
+      maxMs: 100.656
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.504,
+      maxMs: 5.504
+    }
+  ],
+  stops: []
+}
+✔ own directed exit resolves the exact existing1218 cell without M12 endpoint restriction (33.138126ms)
+✔ five own departure profiles compose complete unconfirmed estimates using the departure date (326.19759ms)
+✔ old, absent, partial or wrong context cannot turn a CKAD subtotal into a full fare (324.641125ms)
+✔ own public API uses recorded Valhalla geometry and prices only a complete trace (361.141505ms)
+✔ own saved current named trace proves directed M11 to Egoryevskoye; old paid-only snapshot cannot (30.235225ms)
+✔ incomplete trace, other boundary, repeated passage or wrong plaza cannot borrow proof (25.300478ms)
+✔ reverse, shift, sparse, detour, malformed or mismatched strict end fail closed (34.097452ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 343.831,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.276,
+      maxMs: 0.276
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.117,
+      maxMs: 0.117
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 254.264,
+      maxMs: 254.264
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 36.793,
+      maxMs: 36.793
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 10.854,
+      maxMs: 10.854
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 35.236,
+      maxMs: 35.236
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.565,
+      maxMs: 0.565
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 15.695,
+      maxMs: 15.695
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 143.732,
+      maxMs: 143.732
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 10.176,
+      maxMs: 10.176
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 234.106,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.193,
+      maxMs: 0.193
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.041,
+      maxMs: 0.041
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 223.974,
+      maxMs: 223.974
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 10.749,
+      maxMs: 10.749
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 2.511,
+      maxMs: 2.511
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 10.489,
+      maxMs: 10.489
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.365,
+      maxMs: 0.365
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 15.28,
+      maxMs: 15.28
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 187.666,
+      maxMs: 187.666
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 9.375,
+      maxMs: 9.375
+    }
+  ],
+  stops: []
+}
+✔ primary directed CKAD source bytes and49 physical witnesses retain exact object/owner provenance (103.329787ms)
+✔ both own complete traces bind the shared directed pair; old paid-only validation cannot authorize it (119.200149ms)
+✔ a free city gap lost from paidRoadEdges creates two real named trace blocks and rejects the pair (28.839672ms)
+✔ incomplete coverage and missing/repeated/wrong boundary context or plaza fail closed (43.728209ms)
+✔ reverse, shifted, sparse or inconsistent own geometry cannot borrow a complete trace (44.076519ms)
+✔ each own quote adds981 only to the known subtotal; M12 remains the sole missing component and API amount stays null (601.977033ms)
+✔ independent own Voronezh OSRM keeps7254 and gains no CKAD merely from its historical case name (160.450449ms)
+✔ V3 API uses each own OSRM and exact trace responses while preserving unknown full fare (615.032403ms)
+✔ regional identities remain independent and duplicate same-product clues collapse (5.455453ms)
+✔ CKAD junction labels and Small Vyazemy do not create M1/M4/M11 traversals (0.25871ms)
+✔ ambiguous Pskov and unidentified paid objects remain explicit unknown products (5.145826ms)
+✔ every recognized core paid booth blocks a known A289 subset until its own price exists (59.510569ms)
+✔ regional and Small Vyazemy clues block total separately without inventing published fees (14.317471ms)
+✔ unidentified paid edges or a contradictory free trace cannot hide behind known money (9.773672ms)
+✔ late core and regional evidence cannot turn an unknown route into free (19.981069ms)
+✔ CKAD boundary model has no native monetary prerequisite and uses one ready directed pair (1.673953ms)
+✔ CKAD conditions and version window never resolve from a caller flag or source amount alone (0.894558ms)
+✔ references and product names on one booth are aliases, never a second charged road (0.406914ms)
+✔ unnamed selected-route M4 booths resolve by exact saved node identity (0.6165ms)
+✔ node identity cannot suppress an unknown booth, incomplete trace or a distinct named product (0.286101ms)
+✔ component audit separates known road prices from the product blocking the complete total (4.237797ms)
+✔ CKAD midnight ISO boundary is active on its first Moscow date (3.088566ms)
+✔ date-only input cannot choose a price on an intraday change (0.379332ms)
+✔ validity uses Moscow day, rejects impossible bounds and preserves exclusive ends (0.171759ms)
+✔ fractional zones round once and displayed parts sum to the trip price (1.113428ms)
+✔ zone loss and monetary overflow cannot produce an apparently complete fare (0.427183ms)
+✔ undated matrix prices retain numeric estimate but cannot become confirmed (0.185069ms)
+✔ expired provisional history cannot mark an independently dated current row provisional (0.312341ms)
+✔ conflicting validity aliases cannot silently choose the more permissive date (0.193662ms)
+✔ composition rejects fractional and unsafe money in every displayed amount (1.431057ms)
+✔ individually safe fares cannot overflow any route total (0.376778ms)
+✔ a free alternative and incomplete selected-route free evidence never produce zero (11.809852ms)
+✔ complete selected-route free evidence still permits an explicit zero (1.105226ms)
+✔ late response ignoring abort cannot replace a newer calculation (258.420006ms)
+✔ reset and unmount prevent late response commitment (62.330345ms)
+✔ clipboard failure is handled and never reports success (51.264004ms)
+✔ clipboard contains the same actual toll and warning as the displayed quote (18.86074ms)
+✔ a late clipboard completion cannot mark a reset quote copied (17.283723ms)
+✔ unknown road charge preserves a calculated special fare in copied text (10.596793ms)
+✔ CKAD47 physical source and original own capture hashes remain independently verifiable (9.547381ms)
+✔ own CKAD access resolves its ready head pair despite non-toll access ways being absent from paid-only wayIds (52.404243ms)
+✔ CKAD head uses departure profile even when the final payment falls on the following day (22.616071ms)
+✔ incomplete validation or missing exact gate and paid continuation cannot enable CKAD head (68.477881ms)
+✔ wrong direction and nearby parallel geometry do not reuse a captured CKAD gate (7.696812ms)
+✔ a local detour between anchors cannot borrow the original gate and way identities (4.282175ms)
+✔ proved CKAD entry does not replace missing strict M11 mainline evidence (6.40843ms)
+{"at":"2026-10-15T09:00:00+03:00","head":200,"m11Subtotal":1450,"missing":["ckad"]}
+{"at":"2026-10-15T23:59:00+03:00","head":200,"m11Subtotal":1450,"missing":["ckad"]}
+{"at":"2026-10-16T09:00:00+03:00","head":220,"m11Subtotal":1610,"missing":["ckad"]}
+{"at":"2026-10-17T09:00:00+03:00","head":240,"m11Subtotal":1630,"missing":["ckad"]}
+{"at":"2026-10-18T09:00:00+03:00","head":320,"m11Subtotal":1710,"missing":["ckad"]}
+✔ full independent directed source chain and own exit prove the southbound head despite non-toll access (30.471622ms)
+✔ missing, wrong, duplicate exit and incomplete coverage cannot authorize a head fare (58.649948ms)
+✔ wrong direction, shifted, sparse, cropped and diverted corridors cannot borrow the source gate (38.855599ms)
+✔ the own strict M11 end must bind this exit junction after p58 (4.699323ms)
+✔ own Ramenskoe head uses its reverse published fare at departure and leaves CKAD unknown (407.399733ms)
+✔ other own CKAD exit routes prove their own corridors, while Moscow stays a separate head (241.063232ms)
+✔ primary OSM bytes and original operator identity PDF match the recorded proof hashes (17.798199ms)
+✔ both directed MMK lanes select their own existing fare, never a CKAD or Moscow row (6.976526ms)
+✔ wrong-way, nearby and interpolated chords do not authorize MMK entry (0.435446ms)
+{"departureAt":"2026-10-15T09:00:00+03:00","mainlineRub":1250,"missing":["ckad"]}
+{"departureAt":"2026-10-15T23:59:00+03:00","mainlineRub":1250,"missing":["ckad"]}
+{"departureAt":"2026-10-17T09:00:00+03:00","mainlineRub":1390,"missing":["ckad"]}
+✔ own complete capture proves only its directed p214 access (32.286127ms)
+✔ incomplete chunks, coverage and missing or duplicate physical identities fail closed (0.539173ms)
+✔ missing, malformed, multiple and shifted strict mainline boundaries fail closed (14.60811ms)
+✔ reverse, parallel, sparse and truncated geometry cannot borrow the gate identity (37.955763ms)
+✔ directed p214→p58 prices its own component and keeps the unpriced CKAD product separate in both departure profiles (287.759717ms)
+{"at":"2026-10-15T09:00:00+03:00","head":1130,"mainline":1250,"m11Subtotal":2380,"missing":[]}
+{"at":"2026-10-15T23:59:00+03:00","head":1130,"mainline":1250,"m11Subtotal":2380,"missing":[]}
+{"at":"2026-10-16T09:00:00+03:00","head":1260,"mainline":1390,"m11Subtotal":2650,"missing":[]}
+{"at":"2026-10-17T09:00:00+03:00","head":1500,"mainline":1390,"m11Subtotal":2890,"missing":[]}
+{"at":"2026-10-18T09:00:00+03:00","head":1650,"mainline":1390,"m11Subtotal":3040,"missing":[]}
+✔ independent physical lane source bytes remain intact and own southbound route proves head (7.583792ms)
+✔ missing, wrong, duplicate and unpaid gate plus incomplete chunks fail closed (68.006426ms)
+✔ borrowed direction, nearby geometry, sparse chord, truncation and local detour fail closed (3.232052ms)
+✔ one selected strict span must cover p58 and continue beyond exact gate to Moscow (2.963898ms)
+✔ own partial mainline composes only the directed reverse head pair at departure and returns a complete unconfirmed estimate when every product is identified (331.131533ms)
+✔ other own p214 exits cannot inherit Moscow head (89.289628ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 160.483,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.809,
+      maxMs: 0.809
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.087,
+      maxMs: 0.087
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 129.461,
+      maxMs: 129.461
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 20.934,
+      maxMs: 20.934
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 20.877,
+      maxMs: 20.877
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 18.155,
+      maxMs: 18.155
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 17.047,
+      maxMs: 17.047
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 18.676,
+      maxMs: 18.676
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 65.281,
+      maxMs: 65.281
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.667,
+      maxMs: 1.667
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 69.955,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.11,
+      maxMs: 0.11
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.022,
+      maxMs: 0.022
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 68.425,
+      maxMs: 68.425
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 9.304,
+      maxMs: 9.304
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 9.286,
+      maxMs: 9.286
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 8.139,
+      maxMs: 8.139
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.319,
+      maxMs: 6.319
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.307,
+      maxMs: 4.307
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 44.22,
+      maxMs: 44.22
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.986,
+      maxMs: 0.986
+    }
+  ],
+  stops: []
+}
+✔ only exact independently identified unnamed p214 node and way join the M11 product (3.850364ms)
+✔ road identity alone does not authorize a fare or hide missing own trace, head or entry evidence (252.053943ms)
+✔ public V3 API prices its own selected trace and keeps unknown when trace is unavailable (237.076417ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 176.02,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.548,
+      maxMs: 3.548
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.139,
+      maxMs: 0.139
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 110.17,
+      maxMs: 110.17
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 20.052,
+      maxMs: 20.052
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 4.831,
+      maxMs: 4.831
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 17.794,
+      maxMs: 17.794
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 1.703,
+      maxMs: 1.703
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 13.182,
+      maxMs: 13.182
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 49.638,
+      maxMs: 49.638
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 11.092,
+      maxMs: 11.092
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 50.761,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.154,
+      maxMs: 0.154
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.077,
+      maxMs: 0.077
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 48.696,
+      maxMs: 48.696
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.272,
+      maxMs: 6.272
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 3.214,
+      maxMs: 3.214
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.01,
+      maxMs: 6.01
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 2.334,
+      maxMs: 2.334
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.183,
+      maxMs: 2.183
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 37.124,
+      maxMs: 37.124
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.38,
+      maxMs: 1.38
+    }
+  ],
+  stops: []
+}
+✔ p258 primary raw bytes, named258 facility and connected paid links retain their proof hashes (2.939591ms)
+✔ own complete trace resolves p679→p258 without widening the generic mainline endpoint tolerance (39.706773ms)
+✔ incomplete coverage, missing/wrong/duplicate booth, missing paid link and extra M11 plaza fail closed (1.005355ms)
+✔ borrowed trace cannot price reverse, neighbouring, sparse/chord or inconsistent strict evidence (14.218883ms)
+✔ own selected quote composes2400+94+300 at departure; later Friday does not reprice Thursday (265.567279ms)
+✔ independent through-M11 own OSRM route keeps its existing complete composition5424 (81.553039ms)
+✔ V3 API returns2794 on the selected own OSRM trace and preserves unknown when that trace is unavailable (254.045016ms)
+✔ all 210 head cells remain directed ready fares, including differing Friday reverse price (22.173855ms)
+✔ head uses its own night, next-day 01:00 and holiday calendar (1.20757ms)
+✔ head rejects invalid departure, missing boundaries and negative duration; later night does not reprice (0.695107ms)
+✔ V3 outer boundaries work both directions without intermediate p593 or native fare eligibility (3.844695ms)
+✔ north head fare uses departure despite the Friday exit and ignores old numeric fields (1.26019ms)
+✔ south head and mainline both retain Thursday departure despite a Friday payment window (0.669739ms)
+✔ upper V3 adds head and mainline once in both directions, never the old M11 aggregate (39.088681ms)
+✔ user-approved 94 RUB tail fare prices the continuation in both directions (25.810556ms)
+✔ a route without the Moscow head does not infer the missing mainline from the 94 RUB tail fare (7.112402ms)
+✔ explicit departure overrides the later head payment clock, including night and source date (0.474746ms)
+✔ the selected M-11 679–684 tail fare is direction-independent at 94 RUB (1.52612ms)
+✔ the 94 RUB tail fare does not apply before the order effective date (0.244148ms)
+✔ an undetected tail does not create a charge (0.162615ms)
+✔ recorded selected-route outer boundaries work both directions without inferred marker charges (7.377708ms)
+✔ internal chainage failure in the old engine cannot block a proven outer pair (1.324308ms)
+✔ bad outer span or evidence never becomes a fare (1.872174ms)
+✔ actual calibrated anchors can price an outer pair where native distance continuity cannot (1.364819ms)
+✔ geometry, unsupported single-boundary traversal and unbound October Shali stay unknown (0.545823ms)
+✔ M12 prices cannot cross an unknown version change or use invalid route duration (0.789621ms)
+✔ upper V3 uses the new boundary proof and ready matrix in both directions (6.848469ms)
+✔ missing outer evidence blocks the whole upper result rather than reviving old money (1.097826ms)
+✔ Crimea Rostov composes A289800 + M4850 + DZOK410 once, including the return carriageway (8.979103ms)
+✔ Anapa620 and Slavyansk415 use category I, never category-II833/555 (4.095837ms)
+✔ Slavyansk Rostov and Anapa Rostov compose the south M4 vector with actual A289 entry (3.311365ms)
+✔ full Crimea Moscow consumes the supplied matrix rather than native money (3.010231ms)
+✔ missing/partial M4 cannot disappear behind a known A289 price (0.834549ms)
+✔ a mixed legacy M4 payload is rejected instead of charging A289 twice (0.912676ms)
+✔ confirmed M4 on a locally named trip is still included, diagnostic neighbors are not (1.237546ms)
+✔ a legacy exact M4 amount cannot replace an absent or rejected matrix (1.689809ms)
+✔ complete selected-route positive booth proof survives local service failure without another request (2.841226ms)
+✔ incomplete, ambiguous, non-toll and wrong-node trace never replace crossing proof (1212.458884ms)
+✔ four product identities retain exact primary booth and one-way source provenance (3.269481ms)
+✔ both own traces classify the separate bypass without a second M1 or anonymous product (8.54965ms)
+✔ wrong tuples, other paid booths, real M1 and partial coverage remain conservative (3.454921ms)
+✔ product identity authorizes no money for either saved selected route (108.678082ms)
+✔ each own continuous named trace and independent physical lanes prove its directed two-plaza pair only (29.142254ms)
+✔ a free city gap with unchanged paid edges and booth order prevents exit-reentry borrowing (4.376431ms)
+✔ incomplete, repeated, unknown or wrong directional context cannot authorize the pair (8.915147ms)
+✔ reversed, shifted, sparse or detouring geometry cannot borrow valid trace context (16.83385ms)
+✔ historical snapshots without continuity context cannot borrow the new component price (56.002708ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 108.194,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.989,
+      maxMs: 0.989
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.115,
+      maxMs: 0.115
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 67.529,
+      maxMs: 67.529
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 15.824,
+      maxMs: 15.824
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 15.768,
+      maxMs: 15.768
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 10.649,
+      maxMs: 10.649
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 9.85,
+      maxMs: 9.85
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 11.618,
+      maxMs: 11.618
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 16.557,
+      maxMs: 16.557
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.062,
+      maxMs: 3.062
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 36.787,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.183,
+      maxMs: 0.183
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.321,
+      maxMs: 0.321
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 34.58,
+      maxMs: 34.58
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.357,
+      maxMs: 4.357
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.332,
+      maxMs: 4.332
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.019,
+      maxMs: 4.019
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.629,
+      maxMs: 3.629
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 7.676,
+      maxMs: 7.676
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 18.732,
+      maxMs: 18.732
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.071,
+      maxMs: 1.071
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 33.785,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.07,
+      maxMs: 0.07
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.018,
+      maxMs: 0.018
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 32.366,
+      maxMs: 32.366
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 8.068,
+      maxMs: 8.068
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 8.05,
+      maxMs: 8.05
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.155,
+      maxMs: 4.155
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.745,
+      maxMs: 3.745
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.859,
+      maxMs: 0.859
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 12.758,
+      maxMs: 12.758
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.948,
+      maxMs: 0.948
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 22.052,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.069,
+      maxMs: 0.069
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.026,
+      maxMs: 0.026
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 21.202,
+      maxMs: 21.202
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.61,
+      maxMs: 3.61
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.593,
+      maxMs: 3.593
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.22,
+      maxMs: 3.22
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.83,
+      maxMs: 2.83
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.986,
+      maxMs: 1.986
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 13.666,
+      maxMs: 13.666
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.387,
+      maxMs: 0.387
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 22.542,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.048,
+      maxMs: 0.048
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.018,
+      maxMs: 0.018
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 21.182,
+      maxMs: 21.182
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.445,
+      maxMs: 2.445
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.434,
+      maxMs: 2.434
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.194,
+      maxMs: 2.194
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.989,
+      maxMs: 1.989
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.023,
+      maxMs: 2.023
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 13.165,
+      maxMs: 13.165
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.833,
+      maxMs: 0.833
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 19.692,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.046,
+      maxMs: 0.046
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.019,
+      maxMs: 0.019
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 16.381,
+      maxMs: 16.381
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.893,
+      maxMs: 2.893
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.88,
+      maxMs: 2.88
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.562,
+      maxMs: 2.562
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.248,
+      maxMs: 2.248
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.487,
+      maxMs: 1.487
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 10.562,
+      maxMs: 10.562
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.572,
+      maxMs: 0.572
+    }
+  ],
+  stops: []
+}
+✔ planning baseline is650 in both directions across hours, weekends, holidays and future calendar years (215.32565ms)
+✔ planning baseline preserves tariff validity, invalid date guards and departure-only calculation (7.110705ms)
+✔ five own profiles in each direction price the component but never hide forward CKAD (175.98868ms)
+✔ missing, partial, repeated or wrong own context never authorize a planning charge (1.660945ms)
+✔ public API prices reverse650, forward remains CKAD-unknown, unavailable trace stays null (254.980301ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 87.908,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.165,
+      maxMs: 1.165
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.123,
+      maxMs: 0.123
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 28.271,
+      maxMs: 28.271
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.199,
+      maxMs: 4.199
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.115,
+      maxMs: 4.115
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 1.181,
+      maxMs: 1.181
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.663,
+      maxMs: 0.663
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.263,
+      maxMs: 2.263
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 19.901,
+      maxMs: 19.901
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.13,
+      maxMs: 1.13
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 7.886,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.17,
+      maxMs: 0.17
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.033,
+      maxMs: 0.033
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.694,
+      maxMs: 6.694
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.379,
+      maxMs: 1.379
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.366,
+      maxMs: 1.366
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.635,
+      maxMs: 0.635
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.358,
+      maxMs: 0.358
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.761,
+      maxMs: 0.761
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.26,
+      maxMs: 4.26
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.506,
+      maxMs: 0.506
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 19.323,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.078,
+      maxMs: 0.078
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.022,
+      maxMs: 0.022
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 18.22,
+      maxMs: 18.22
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.09,
+      maxMs: 1.09
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.079,
+      maxMs: 1.079
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.333,
+      maxMs: 0.333
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.227,
+      maxMs: 0.227
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.221,
+      maxMs: 1.221
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 15.264,
+      maxMs: 15.264
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.623,
+      maxMs: 0.623
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 22.945,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.073,
+      maxMs: 0.073
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.114,
+      maxMs: 0.114
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 20.687,
+      maxMs: 20.687
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 7.32,
+      maxMs: 7.32
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 7.299,
+      maxMs: 7.299
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.349,
+      maxMs: 0.349
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.237,
+      maxMs: 0.237
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.209,
+      maxMs: 1.209
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 11.507,
+      maxMs: 11.507
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.562,
+      maxMs: 0.562
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 6.122,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.111,
+      maxMs: 0.111
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.024,
+      maxMs: 0.024
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.46,
+      maxMs: 5.46
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.771,
+      maxMs: 0.771
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.76,
+      maxMs: 0.76
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.276,
+      maxMs: 0.276
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.192,
+      maxMs: 0.192
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.406,
+      maxMs: 0.406
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.032,
+      maxMs: 4.032
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.201,
+      maxMs: 0.201
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 17.937,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.057,
+      maxMs: 0.057
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.021,
+      maxMs: 0.021
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 17.174,
+      maxMs: 17.174
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.197,
+      maxMs: 5.197
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.159,
+      maxMs: 5.159
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 4.678,
+      maxMs: 4.678
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.447,
+      maxMs: 0.447
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.804,
+      maxMs: 0.804
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 10.531,
+      maxMs: 10.531
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.351,
+      maxMs: 0.351
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 7.943,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.364,
+      maxMs: 3.364
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.088,
+      maxMs: 0.088
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.081,
+      maxMs: 4.081
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.595,
+      maxMs: 0.595
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.59,
+      maxMs: 0.59
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.18,
+      maxMs: 0.18
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.11,
+      maxMs: 0.11
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.208,
+      maxMs: 0.208
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.16,
+      maxMs: 3.16
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.101,
+      maxMs: 0.101
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 3.996,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.042,
+      maxMs: 0.042
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.015,
+      maxMs: 0.015
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.665,
+      maxMs: 3.665
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.468,
+      maxMs: 0.468
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.464,
+      maxMs: 0.464
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.166,
+      maxMs: 0.166
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.109,
+      maxMs: 0.109
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.304,
+      maxMs: 0.304
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.758,
+      maxMs: 2.758
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.099,
+      maxMs: 0.099
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 2.135,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.068,
+      maxMs: 0.068
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.015,
+      maxMs: 0.015
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.827,
+      maxMs: 1.827
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.481,
+      maxMs: 0.481
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.475,
+      maxMs: 0.475
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.233,
+      maxMs: 0.233
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.151,
+      maxMs: 0.151
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.374,
+      maxMs: 0.374
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.855,
+      maxMs: 0.855
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.063,
+      maxMs: 0.063
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 10.602,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.064,
+      maxMs: 0.064
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.015,
+      maxMs: 0.015
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 10.212,
+      maxMs: 10.212
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.484,
+      maxMs: 0.484
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.479,
+      maxMs: 0.479
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.236,
+      maxMs: 0.236
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.148,
+      maxMs: 0.148
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.529,
+      maxMs: 0.529
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.951,
+      maxMs: 2.951
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.095,
+      maxMs: 0.095
+    }
+  ],
+  stops: []
+}
+✔ mandatory paid trace cannot be disabled by diagnostics on ordinary or special V3 (150.666747ms)
+✔ complete paid traces preserve the actual A289 price without confirmation labels (26.131985ms)
+✔ failed or empty paid traces cannot certify a complete numeric amount (13.451508ms)
+✔ a fully checked two-point free route retains explicit zero (2.884971ms)
+✔ V3 response guard rejects multiple routes and mismatched duplicate special options (12.114872ms)
+✔ Pulkovo airport gantries retain original primary map evidence (17.494657ms)
+✔ both airport directions become one detected unresolved product, not an invented fare (0.420794ms)
+✔ an airport toll gantry blocks a complete zero even when the provider calls the route free (7.375414ms)
+✔ V3 actual amount preserves night/holiday/mixed crossing price, instead of schedule maxima (0.981119ms)
+✔ unknown cannot become zero through the actual period (0.171358ms)
+✔ valid complete and explicitly unavailable commercial fares pass the response guard (0.611072ms)
+✔ malformed nested money, arrays, route statistics and contradictory status fail before rendering (0.41771ms)
+✔ combined displayed fare and manual toll cannot overflow integer money (0.135024ms)
+✔ actual fastest result render preserves night price without confirmation notice (42.867656ms)
+✔ fastest V3 keeps dual fare visible and permits an explicitly manual road total (26.469292ms)
+✔ OSRM M12 span follows exactly the chosen geometry in either direction (4.327097ms)
+✔ M12 destinations, disjoint entries and mismatched overview cannot manufacture a complete vector (0.37138ms)
+✔ M4 worker pool completes candidates in route order with at most two remote requests (120.200576ms)
+✔ M11 retains departure fare overnight and across an intervening weekend (2.669707ms)
+✔ new M4 path checks only its outer boundaries, never intermediate PVPs (206.263207ms)
+✔ M12 single-span pricing rejects departure and re-entry, both directions (2.490446ms)
+✔ M12 malformed strict evidence cannot disappear behind a valid segment (0.298871ms)
+✔ M12 disconnected legs cannot produce a continuous paid span (0.316107ms)
+✔ OSRM preserves its own strict M11 evidence; destinations remain clues (10.71058ms)
+✔ V3 uses selected OSRM M11 evidence and never borrows competing Valhalla evidence (255.62633ms)
+✔ Tver proximity and p58 alone cannot prove the p147 paid boundary (0.739024ms)
+✔ M11 tail continuation uses the user-approved 94 RUB component after p679 (29.588378ms)
+✔ M11 user single-entry policy does not scan for intermediate return trips (0.469127ms)
+✔ M11 distinct physical plazas sharing p58 are not a repeated traversal (0.281465ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 131.308,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.994,
+      maxMs: 1.994
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.121,
+      maxMs: 0.121
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 58.874,
+      maxMs: 58.874
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 11.026,
+      maxMs: 11.026
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 10.867,
+      maxMs: 10.867
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.014,
+      maxMs: 5.014
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.035,
+      maxMs: 4.035
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.005,
+      maxMs: 3.005
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 32.769,
+      maxMs: 32.769
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.536,
+      maxMs: 1.536
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 9.327,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.318,
+      maxMs: 0.318
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.031,
+      maxMs: 0.031
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 8.037,
+      maxMs: 8.037
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.501,
+      maxMs: 2.501
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.483,
+      maxMs: 2.483
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.919,
+      maxMs: 1.919
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 1.249,
+      maxMs: 1.249
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.159,
+      maxMs: 1.159
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.922,
+      maxMs: 3.922
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.384,
+      maxMs: 0.384
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 11.521,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.087,
+      maxMs: 0.087
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.045,
+      maxMs: 0.045
+    },
+    {
+      stage: 'special_options',
+      calls: 1,
+      errors: 0,
+      totalMs: 7.23,
+      maxMs: 7.23
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.752,
+      maxMs: 0.752
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.728,
+      maxMs: 0.728
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.437,
+      maxMs: 0.437
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.284,
+      maxMs: 0.284
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.498,
+      maxMs: 3.498
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.371,
+      maxMs: 1.371
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 8.973,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.075,
+      maxMs: 0.075
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.014,
+      maxMs: 0.014
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 8.536,
+      maxMs: 8.536
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.147,
+      maxMs: 4.147
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.48,
+      maxMs: 1.48
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.235,
+      maxMs: 1.235
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.435,
+      maxMs: 0.435
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.59,
+      maxMs: 0.59
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.539,
+      maxMs: 3.539
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.113,
+      maxMs: 0.113
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 5.116,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.047,
+      maxMs: 0.047
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.013,
+      maxMs: 0.013
+    },
+    {
+      stage: 'special_options',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.978,
+      maxMs: 3.978
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.386,
+      maxMs: 0.386
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.376,
+      maxMs: 0.376
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.246,
+      maxMs: 0.246
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.27,
+      maxMs: 0.27
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.524,
+      maxMs: 1.524
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.669,
+      maxMs: 0.669
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 502,
+  handlerElapsedMs: 7.248,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.061,
+      maxMs: 0.061
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.024,
+      maxMs: 0.024
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 1,
+      totalMs: 6.982,
+      maxMs: 6.982
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.925,
+      maxMs: 6.925
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 6.797,
+      maxMs: 6.797
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.402,
+      maxMs: 0.402
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.193,
+      maxMs: 0.193
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 6.281,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.076,
+      maxMs: 0.076
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.013,
+      maxMs: 0.013
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.793,
+      maxMs: 5.793
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.414,
+      maxMs: 0.414
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.341,
+      maxMs: 0.341
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.273,
+      maxMs: 0.273
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.141,
+      maxMs: 0.141
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.918,
+      maxMs: 1.918
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.308,
+      maxMs: 3.308
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.095,
+      maxMs: 0.095
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 119.25,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.066,
+      maxMs: 0.066
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.014,
+      maxMs: 0.014
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 113.223,
+      maxMs: 113.223
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 16.386,
+      maxMs: 16.386
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 16.367,
+      maxMs: 16.367
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 14.887,
+      maxMs: 14.887
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.2,
+      maxMs: 0.2
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.938,
+      maxMs: 4.938
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 75.468,
+      maxMs: 75.468
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.662,
+      maxMs: 3.662
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 5.145,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.083,
+      maxMs: 0.083
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.016,
+      maxMs: 0.016
+    },
+    {
+      stage: 'special_options',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.012,
+      maxMs: 4.012
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.985,
+      maxMs: 0.985
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.975,
+      maxMs: 0.975
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.81,
+      maxMs: 0.81
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.956,
+      maxMs: 0.956
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.259,
+      maxMs: 1.259
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.602,
+      maxMs: 0.602
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 502,
+  handlerElapsedMs: 4.674,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.079,
+      maxMs: 0.079
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.018,
+      maxMs: 0.018
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 1,
+      totalMs: 4.331,
+      maxMs: 4.331
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.102,
+      maxMs: 3.102
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.093,
+      maxMs: 3.093
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.19,
+      maxMs: 0.19
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.121,
+      maxMs: 0.121
+    }
+  ],
+  stops: []
+}
+✔ fastest OSRM geometry owns the A289 quote; slower Valhalla evidence cannot replace it (144.917651ms)
+✔ ordinary V3 skips malformed fast distance and keeps the valid provider route (14.663767ms)
+✔ special-zone V3 filters invalid time before choosing and pricing the winning route (13.176444ms)
+✔ equal ETA keeps provider order in both ordinary and special V3 chains (15.868474ms)
+✔ route candidate requires finite positive totals, valid coordinates and matching endpoints (0.259311ms)
+✔ incomplete geometry never becomes a straight line priced as a real road (7.960567ms)
+✔ unresolved A289 vector stays unknown instead of reviving a legacy numeric total (7.044755ms)
+✔ ordinary V3 excludes the recorded faster reentry before ranking and validates only the admitted OSRM geometry (121.788731ms)
+✔ special-zone V3 uses the same admission guard before ETA and cannot promote an invalid reentry (6.626284ms)
+✔ ordinary V3 reports routing unavailable when only the forbidden reentry is returned (5.459425ms)
+✔ archived primary map matches the normalized booths and named one-way toll roads (5.504282ms)
+✔ both actual directional carriageways resolve their own 410 matrix fare (11.004448ms)
+✔ wrong-way geometry, proximity and a long interpolated chord cannot bind a directional fare (0.315205ms)
+✔ bypass needs proven boundaries and valid departure; later Friday does not reprice (8.377707ms)
+✔ M4, A289 and bypass compose three independent ready fares exactly once (2.548214ms)
+✔ upper V3 consumes the bypass product rather than the old aggregate (8.661925ms)
+✔ an unresolved physical bypass blocks a provider-free route at the API boundary (5.46951ms)
+✔ legacy toll weekday display uses Moscow time independently of the host timezone (8.397435ms)
+✔ M11 head respects exact 01:00 and 06:00 Moscow night boundaries and its own stored special days (1.569807ms)
+✔ M4 and known A289 retain Thursday fares; missing M4, invalid dates and durations still block (9.46059ms)
+✔ M4 calendar rejects normalized impossible dates before tariff lookup (0.393654ms)
+✔ M11 date-only cannot fabricate an entry hour or a midnight transition (0.792635ms)
+✔ M11 mainline uses its own verified order274 holiday schedule and rejects unsupported years (0.936302ms)
+✔ real physical gates and real matrix price Yalta and Anapa in both directions (11.241295ms)
+✔ Temryuk estimate requires ordered two-frame evidence, not merely a city endpoint (1.691892ms)
+✔ quote rejects impossible calendar dates and malformed components without throwing (0.208144ms)
+✔ invalid zone lengths and empty legs cannot silently produce a zero or underpriced trip (0.434655ms)
+✔ A289 product cannot inherit changed legacy bypass money (13.398078ms)
+✔ A289 cannot normalize an impossible date or infer a missing timezone (0.940269ms)
+✔ road references require exact numeric and word boundaries (2.350605ms)
+✔ M1/M3 matched candidates and named paid booths cannot be omitted (6.582579ms)
+✔ all catalog regional candidates block a complete total until priced (0.565583ms)
+✔ regional names and unmapped paid events block a numeric subset (1.448434ms)
+✔ V3 known A289 price cannot hide another unpriced regional road (265.875779ms)
+✔ CKAD endpoint labels do not assert passage on the intersecting highways (0.850543ms)
+✔ late map matching cannot revive an incomplete toll price (15.728433ms)
+✔ HTTP200 empty or malformed trace is unknown, never proof of free (1.777381ms)
+✔ a physical booth without toll=true cannot certify a free route (2.306979ms)
+✔ approximate M12 corridor recovery cannot publish a numeric subset as a complete fare (8.725471ms)
+✔ finished-vector sources and selected capture retain their exact hashes (3.602303ms)
+✔ recorded directed KAD-south to Ekateringofka trace selects its ready two-zone cash/card vector (77.133434ms)
+✔ a ready fare cannot revive a future tariff at a later gate crossing (63.605975ms)
+✔ incomplete or materially different paid scope stays unknown (5.31117ms)
+✔ extra, repeated or unpaid plazas do not receive the finished vector (6.995381ms)
+✔ the direction, actual entry and complete exit are required (66.063382ms)
+✔ known ZSD price does not become a full trip total while another product is unknown (9.597116ms)
+✔ another recorded mainline/plaza journey cannot borrow the Ekateringofka finished price (9.861193ms)
+✔ Planernaya plaza identity has hashed primary booth and continuous directed ZSD topology (2.611569ms)
+✔ actual unnamed Planernaya event resolves as ZSD while its larger trip still has no zone1 fare (12.661568ms)
+✔ an unreviewed neighbouring node on the same unnamed way remains an unknown paid road (2.254119ms)
+✔ resolving Planernaya identity cannot hide incomplete selected payment coverage (0.471741ms)
+✔ primary owner HTML gives actual cash base fare and matches saved hashes (1.876531ms)
+✔ either actual directed zone1 plaza charges exactly300 without a transponder/night discount (2.369674ms)
+✔ another zone, missing IDs, repeated plazas and incomplete trace cannot turn zone1 into a complete ZSD total (0.42409ms)
+✔ recorded complete Krasnodar–Moscow–SPb geometry prices its actual ZSD zone1, not a named-road guess (36.19381ms)
+✔ ZSD fare validity uses departure, never a later gate crossing that could revive a future fare (0.556369ms)
+ℹ tests 887
+ℹ suites 0
+ℹ pass 887
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13057.905266

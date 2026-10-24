@@ -12,3 +12,6 @@ Server-Timing показывает calc_total и завершённые стад
 ## Один расчёт с реальной сетью на CI host
 
 node scripts/calculation-runtime-probe.mjs — фиксированный Анапа→Краснодар,production POST handler в child60с,atomic calculation-runtime-probe.json. Отдельный calculation_timing CI job не зависит от Photon. Полный body/Server-Timing/overTarget/partial/error сохраняются. PASS не подтверждает тариф; unknown:null сохраняется,unknown0ошибка. importedMs/supervisorElapsedMs отдельно от handler elapsed. Это не запрос к Vercel и не браузерный E2E. Не применять transport limits к runtimeкалькулятору. Итог: docs/checkpoints/2026-10-24-calculation-runtime-probe-DONE.md.
+
+
+24.10: diagnostic CALCULATION_PROBE_CASE=donetsk-moscow выбирает один Донецк→Москва вместо defaultАнапы; другие IDs отклоняются до сети. CaseID/request связываются parent/worker/result; специальная ветка и её spans проверяются. CI теперь выбирает только этот case. Калькулятор/его env не меняются. См.2026-10-24-special-runtime-probe-DONE.md.

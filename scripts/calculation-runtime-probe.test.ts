@@ -3,7 +3,7 @@ import test from "node:test";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { summarizeCalculation, runCalculationHandlerProbe, superviseCalculationProbe } from "./calculation-runtime-probe.mjs";
+import { calculationProbeCase, summarizeCalculation, runCalculationHandlerProbe, superviseCalculationProbe } from "./calculation-runtime-probe.mjs";
 const body = { legs: [{ fast: { meters: 170000, seconds: 10000, tolls: { pricingStatus: "priced", amount: 620 } } }] };
 const input = { httpStatus: 200, body, serverTiming: "calc_total;dur=50, routing;dur=30", elapsedMs: 60 };
 test("runtime report distinguishes successful timing, slow request and HTTP failure", () => {
@@ -43,10 +43,38 @@ test("supervisor bounds a stalled child and retains progress; crash cannot pass"
 test("supervisor preserves a completed child result and body", async t => {
   const dir = await mkdtemp(join(tmpdir(), "calculation-complete-")); t.after(() => rm(dir, { recursive: true, force: true }));
   const outputPath = join(dir, "result.json");
-  const payload = { schemaVersion: 1, status: "PASS", body };
+  const payload = { schemaVersion: 1, status: "PASS", body, ...calculationProbeCase() };
   const source = "require('node:fs').writeFileSync(process.argv[1],process.argv[2])";
   const result = await superviseCalculationProbe({ outputPath, timeoutMs: 2000,
     args: ["-e", source, outputPath, JSON.stringify(payload)], quiet: true });
   assert.equal(result.status, "PASS"); assert.deepEqual(result.body, body);
   assert.equal(JSON.parse(await readFile(outputPath, "utf8")).status, "PASS");
+});
+test("special probe binds the requested case, branch and detailed timing", async t => {
+  const dir = await mkdtemp(join(tmpdir(), "calculation-special-")); t.after(() => rm(dir, { recursive: true, force: true }));
+  const specialBody = { ...body, specialEndpoint: true };
+  const serverTiming = "calc_total;dur=90, special_options;dur=80, routing;dur=20, provider_valhalla;dur=10, provider_osrm;dur=20, toll_matching;dur=50, toll_pricing;dur=10";
+  let calledWith: unknown;
+  const result = await runCalculationHandlerProbe({ caseId: "donetsk-moscow", outputPath: join(dir, "result.json"),
+    requestFactory: (request: unknown) => request, handler: async (request: unknown) => {
+      calledWith = request;
+      return new Response(JSON.stringify(specialBody), { headers: { "Server-Timing": serverTiming } });
+    } });
+  assert.equal(result.status, "PASS"); assert.equal(result.caseId, "donetsk-moscow");
+  assert.deepEqual(calledWith, calculationProbeCase("donetsk-moscow").request);
+  assert.equal(result.request.from.position.lng, 37.8029);
+  assert.equal(summarizeCalculation({ ...input, body: specialBody, expectedSpecial: true }).status, "TIMING_INVALID");
+  assert.equal(summarizeCalculation({ ...input, expectedSpecial: true, serverTiming }).status, "ROUTE_POLICY_MISMATCH");
+  assert.equal(calculationProbeCase().caseId, "anapa-krasnodar");
+  await assert.rejects(superviseCalculationProbe({ caseId: "unexpected", outputPath: join(dir, "not-created.json") }), RangeError);
+  await assert.rejects(readFile(join(dir, "not-created.json")), { code: "ENOENT" });
+});
+test("a child cannot report another case as the requested run", async t => {
+  const dir = await mkdtemp(join(tmpdir(), "calculation-wrong-case-")); t.after(() => rm(dir, { recursive: true, force: true }));
+  const outputPath = join(dir, "result.json");
+  const payload = { schemaVersion: 1, status: "PASS", body, ...calculationProbeCase() };
+  const result = await superviseCalculationProbe({ outputPath, caseId: "donetsk-moscow", timeoutMs: 2000, quiet: true,
+    args: ["-e", "require('node:fs').writeFileSync(process.argv[1],process.argv[2])", outputPath, JSON.stringify(payload)] });
+  assert.equal(result.status, "WORKER_ERROR"); assert.equal(result.caseId, "donetsk-moscow");
+  assert.equal(result.partial.caseId, "anapa-krasnodar");
 });

@@ -1,3 +1,7 @@
+## DONE special probe setup / NEXT live — 24.10.2026
+
+Diagnostic whitelist/workercasebinding/specialbranch+stages checks готовы. CIвыбираеттолькоДонецк→Москва;Анапунеповторяет.22focused/887full/quote/API/ESLint/webpackTypeScript/static16/16PASS;localLive0. [Итог/next](../../docs/checkpoints/2026-10-24-special-runtime-probe-DONE.md). Послеdurable прочитатьпервыйactualCI,сохранитьbody/timings/errors. Runtime/ценыбезизменений,Productionнет.
+
 ## STARTED special runtime — 24.10.2026
 
 Следом один Донецк→Москва, diagnostic case ID/worker60с/один CI POST. Анапа уже DONE, не повторять. [План/лимиты](../../docs/checkpoints/2026-10-24-special-runtime-STARTED.md). Runtime/цены не менять;послеcode gates/durable прочитать первый live результат и сохранить.
