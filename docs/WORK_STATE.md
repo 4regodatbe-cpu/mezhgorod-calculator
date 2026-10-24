@@ -1,3 +1,7 @@
+# B01–B12 IN PROGRESS — 24.10.2026 21:54 МСК
+
+По прямому поручению владельца автономная работа начата из отдельной чистой копии exact remote/PR head `70ab6b840862fa40f090b960ee650b058e83b768`; исходная локальная ветка `work` не изменялась. Четыре исполнителя выполняют только read-only исследование, writer один. Recovery и порядок малых блоков: [DONE](checkpoints/2026-10-24-215401-b01-b12-autonomous-recovery-DONE.md) · [WORK_LOG](contractor-brief/WORK_LOG.md) · [NEXT_STEPS](contractor-brief/NEXT_STEPS.md). Перед записью active/queued Actions отсутствовали. Новая среда содержит Chromium 154; первым техническим блоком после durable readback назначена ограниченная B03 browser acceptance. Это ещё не PASS; snapshot остаётся false, Production/main/merge/Android/backup запрещены.
+
 # Production DONE — 24.10.2026 МСК
 
 По прямой команде «Публикуй» выпущен exact source `da77f96f4f9185017938ed07022557611f3ea9bf`. [Release DONE](checkpoints/2026-10-24-production-release-DONE.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-production-release/result.json). Production `dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk` READY; оба основных aliases переключены, version200 подтверждает commit/production. /,/v3,/v2 HTTP200 через authenticated connector, browser/anonymous E2E не подтверждены. Snapshot false; V2 сохранена. PR14 draft, main/Android/backup не менялись. Предыдущий Production `dpl_DGhwwdXRTKwbbEMR127M5AbDMAoP` — rollback reference. Это разовый разрешённый выпуск, не постоянное разрешение следующих публикаций.
