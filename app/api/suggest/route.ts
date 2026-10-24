@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SPECIAL_TERRITORY_BOUNDARIES } from "../../../lib/special-territory-boundaries.ts";
 import { rankPhotonFeatures } from "../../../lib/photon-address-search.ts";
-import { collectAddressFeatures } from "../../../lib/address-search-service.ts";
+import { collectAddressFeatures, ADDRESS_SEARCH_BUDGET_MS } from "../../../lib/address-search-service.ts";
+import { searchCitySnapshot } from "../../../lib/address-city-snapshot.ts";
 
 export const preferredRegion = "fra1";
 
@@ -14,6 +15,12 @@ export async function GET(request: NextRequest) {
   try {
     const { features, sourceCount, failures, budgetExpired, unavailable } = await collectAddressFeatures(q, { signal: request.signal });
     if (unavailable) {
+      const fallback = searchCitySnapshot(q, { signal: request.signal, deadlineAt: started + ADDRESS_SEARCH_BUDGET_MS });
+      if (fallback.status === "ready") {
+        console.warn("address_search_city_snapshot", { snapshotId: fallback.meta.snapshotId, itemCount: fallback.items.length,
+          elapsedMs: Date.now() - started, sourceCount, failures, budgetExpired });
+        return NextResponse.json({ items: fallback.items, fallback: fallback.meta });
+      }
       if (!request.signal.aborted) {
         console.error("address_search_unavailable", { elapsedMs: Date.now() - started, sourceCount, failures, budgetExpired });
       }

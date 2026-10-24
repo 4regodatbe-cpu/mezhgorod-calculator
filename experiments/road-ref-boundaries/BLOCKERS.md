@@ -86,3 +86,8 @@ CIсетьустранилаdeliveryblocker;RU/UA17.7MB/SHA/CRCподтверж�
 ## 24.10.2026 — actual ru/admin data intake DONE / labelgap BLOCKED_BY_DATA
 
 Countryaliases14.95MBполучены/10fields,1,427,089rows,invalidduplicate0;92/93cityru,77/93baseadminru(2Latin).190rurows/rawhashсохранены. Remainder52→44exactADM3/4bindings,rualiases0;новыхlabels0. ConservativeRussianscriptguardоставил19collisiongroups(2ДНРТарасовки/2Ялтывтомчисле). Runtimeничегонеактивировано. НЕповторятьтежеZIP/joins. Нужендругойпроверенныйисточникlabelsилиограниченныйreviewedsubset;coords/Crimea/coverageотдельноUNVERIFIED. Checkpoints2026-10-24-geonames-label-refinement-DATA-BLOCKED-DONE.
+
+
+## 24.10.2026 — optional4citysnapshot IMPLEMENTED/DISABLED
+
+ADDRESS-001полнаяavailabilityещёUNVERIFIED:новыйaddressCitySnapshot:falseможетподставитьтолько4reviewedlivecitySuggestionприfullfailureдо20сdeadline/expiry7дней,необщийGeoNamescatalog. Localfocused7/full894/quoteAPI/buildPASS;changedESLintPASS. LINT-001BLOCKED:whole-repo19errors/5warningsвнеизменённыхHEADblobs,configunchanged;отдельныйreviewнеподменятьPASS. PreviewUI/E2EновогомодуляNOT_RUN;автоматическинеактивировать. Evidence/checkpoint2026-10-24-city-snapshot-module-DONE-DISABLED. НетновыхPhoton/routequeries/Production.

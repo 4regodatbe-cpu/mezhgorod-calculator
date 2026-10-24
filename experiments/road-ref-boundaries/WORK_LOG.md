@@ -316,3 +316,8 @@ Durable934ff22;52remainder,44exactADM3/4bindings/ru0;57missingcodeentries;addedl
 ## 24.10.2026 — positivecitysubset review DONE / default-offmodule STARTED
 
 Exact4SuggestionизуспешныхPreviewcaptures/captureSHA/sourceDate/sourceID/territoryPASS;0newcoords/network/benchmark. Snapshot/review checks/2026-10-24-positive-city-subset. ДанныеPhoton/OSM,availabilitylocal—notindependentgeodesy. План/docs/checkpoints/2026-10-24-positive-city-subset-DONE-module-STARTED.md:addressCitySnapshotfalse/fulloutageonly/expiry7days/remaining20с/cancel/UIlimitedcoverage+ODbLcredit/focused+fullgates. NEXTпослеdurableреализоватьбезактивации,GeoNameslargecatalogremainsblocked.
+
+
+## 24.10.2026 — optionalcitysnapshot module DONE/DISABLED
+
+STARTED97cb150передкодомdurable. Изолированныelib/data/flagfalse/однаunavailableинтеграция/api/suggest/sharedUIcoverage+ODbL+Placeorigin/cacheguard;4реальныхsavedcitySuggestion,expiry31.10/20собщийbudget,knownhomonymsраздельно. НикакихGeoNames/benchmarkcoords. Focused7/65mock/live0;finalfull894/quoteAPIadapter/buildTypeScript/static16/changedESLintPASS. Whole-repoESLintFAIL19unchangederrors/5warnings(blobproof);parallelbuild25мсoldtest1FAILсохранён,isolated8/8/finalsequential894/894PASS,assertionsunchanged. Evidence: checks/2026-10-24-city-snapshot-module;docs/checkpoints/2026-10-24-city-snapshot-module-DONE-DISABLED.md,ADDRESS_CITY_SNAPSHOT.md,OPTIONAL_MODULES. NEXTотдельныйbaseline-lintreview/PreviewUI,flagfalse/noProduction.

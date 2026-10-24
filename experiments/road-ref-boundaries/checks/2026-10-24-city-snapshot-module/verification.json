@@ -1,0 +1,48 @@
+{
+  "sourceParent": "97cb1507ea1643910ec42d2ec439b5f9e20954d4",
+  "status": "IMPLEMENTED_DISABLED_FULL_REPO_LINT_BLOCKED",
+  "flag": "addressCitySnapshot:false",
+  "snapshotId": "positive-cities-2026-10-24",
+  "records": 4,
+  "expiresAt": "2026-10-31T08:24:54Z",
+  "focused": {
+    "pass": 7,
+    "fail": 0,
+    "mockFetches": 65,
+    "liveFetches": 0
+  },
+  "full": {
+    "pass": 894,
+    "fail": 0
+  },
+  "quoteApiAdapter": "PASS",
+  "webpackTypeScriptStatic16": "PASS",
+  "eslintChangedFiles": "PASS",
+  "eslintWholeRepository": {
+    "status": "FAIL",
+    "errors": 19,
+    "warnings": 5,
+    "allReportedFilesUnchanged": true
+  },
+  "earlierConcurrentBuildFullRun": {
+    "pass": 893,
+    "fail": 1,
+    "case": "budget exhaustion on the final city is still reported instead of a false DONE",
+    "isolatedRecheck": "8/8 PASS",
+    "sequentialFinal": "894/894 PASS",
+    "causality": "failure occurred under concurrent build; deterministic root cause not established; no assertion weakened"
+  },
+  "snapshotExactSourceSuggestionsAndDates": "PASS",
+  "browserE2E": "NOT_RUN",
+  "productionRequests": 0,
+  "newPhotonOrRouteLiveQueries": 0,
+  "logs": {
+    "eslint-changed.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build.log": "bf20ee95aabb4aacc758cebb3ed64a273ed846f3b2ed979525bb0880e07419dc",
+    "full-tests-concurrent-build-failed.log": "6478d581b57378067fa6cf31cf93db77ff9ebdbae764259644aa812fd24fc14a",
+    "focused.log": "fae81579afd86a942afb64279c3d783e46185112d95ce2987f57d74b654d9852",
+    "full-tests.log": "d3843e32adc53e247ab0900f732e4d76573b3a726fba71b234f1892003026599",
+    "timeout-focused-recheck.log": "1899e248d57b79214c83edd7d33790ab4ccd17e9638af93fc0fc7fd46abad88a",
+    "eslint.log": "3ccf49b8a27e9d2d9a7d3e7da46af2a21ebbe28d1fb3b7ee9384f6ff2a5657dc"
+  }
+}

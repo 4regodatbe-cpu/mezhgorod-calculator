@@ -1,4 +1,4 @@
-export type Place = { label: string; position?: { lat: number; lng: number } };
+export type Place = { label: string; position?: { lat: number; lng: number }; addressSource?: "reviewed_city_snapshot" };
 export type Suggestion = Place & { id: string; title: string; region: string };
 export type RouteQuality = { status: "verified" | "single" | "warning"; providers: string[]; distanceSpreadPercent: number | null; message: string };
 export type TollValidationView = { status: "toll" | "free" | "unknown"; message?: string };

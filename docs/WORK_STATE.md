@@ -1,3 +1,7 @@
+## DONE optionalcitysnapshot / DISABLED — 24.10.2026
+
+[Итог](checkpoints/2026-10-24-city-snapshot-module-DONE-DISABLED.md) · [подключение](../experiments/road-ref-boundaries/ADDRESS_CITY_SNAPSHOT.md). Кодготов:4savedlivecitySuggestion/fulloutageonly/7dayexpiry/shared20с/UIcoverage+OSMcredit;flagaddressCitySnapshot:false. Focused7/full894/quoteAPI/buildTypeScript/static16PASS;changedESLintPASS,whole-repoESLintFAIL19unchangederrors. NEXTотдельныйbaseline-lintreview,затемPreview/UIreview;неактивироватьавтоматически. Новыхlive0/Productionнет.
+
 ## DONE4citypositive-subset / STARTEDdefault-offmodule — 24.10.2026
 
 [Review/implementationplan](checkpoints/2026-10-24-positive-city-subset-DONE-module-STARTED.md). Exactreuse4реальныхуспешныхPhotonSuggestion(2Донецка,Краснодар,Ростов-на-Дону),captureSHA/полигоныпроверены;неbenchmark/неGeoNames. NEXTизолированныйaddressCitySnapshot:false,fulloutageonly/7dayexpiry/20сbudget/UIcoverage+OSMcredit+localgates. Liveещёнеактивирован;большойcatalogblocked.

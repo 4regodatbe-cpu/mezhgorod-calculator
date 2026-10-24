@@ -1,0 +1,16 @@
+{"addressCitySnapshotEndpoint":[{"scenario":"full-outage-GET-and-r","statuses":[200,200]},{"scenario":"unknown-house-off-abort-partial-empty-budget-expiry","status":"PASS","mockFetches":65,"liveFetches":0}]}
+✔ real GET and /r use optional snapshot only for full outage, respecting partial/empty/abort/off/deadline/expiry (182.152934ms)
+✔ snapshot contains only four exact successful live suggestions with source SHA and separate homonyms (8.773449ms)
+✔ bounded Cyrillic prefixes and reviewed qualifiers, no houses or unknown cities (1.808237ms)
+✔ disabled default, abort and exhausted original budget do not return fallback (0.470067ms)
+✔ expired/future-reviewed/overlong validity and altered payload fail closed (1.695284ms)
+✔ schema guards apply even to freshly hashed invalid records (1.171847ms)
+✔ returned suggestions cannot mutate subsequent snapshot results (0.526946ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 861.746211
