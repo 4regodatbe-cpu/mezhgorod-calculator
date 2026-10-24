@@ -1,3 +1,7 @@
+## DONE settlement fallback interface design / BLOCKED pilot — 24.10.2026
+
+[Интеграционный контракт](SETTLEMENT_FALLBACK_INTEGRATION.md), [7-file read-only checkpoint](../../docs/checkpoints/2026-10-24-settlement-fallback-contract-DONE.md). Безопасная интеграция только при полном `unavailable` Photon, optional OFF, verified geonameid/admin/coordinate snapshot, no local house data, fail-closed, unchanged Photon ranking. **Not implemented**. Pilot A DNS blocked/size unknown/B+C NOT_STARTED. Возобновлять HEAD/ограниченную выборку только если сетевое окружение изменено; последующая code-реализация требует отдельного STARTED и реально проверенных records. Не повторять audits/tests без причины.
+
 ## BLOCKED GeoNames pilot A HEAD / NEXT optional contract — 24.10.2026
 
 [Точный результат](../../docs/checkpoints/2026-10-24-address-geonames-head-DNS-BLOCKED.md): три HEAD -> curl6/HTTP000/DNS; файлы не скачаны, B/C не стартовали, полноценная база не существует. Pilot A reattempt только при изменении сетевого доступа. Пока выполнить **read-only** дизайн независимого opt-in settlement fallback из текущих интерфейсов поиска, с fail-closed на ambiguous/absent entries, не меняя ranking/Photon/routes/prices и не выдумывая координаты.

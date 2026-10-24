@@ -1,3 +1,7 @@
+## DONE settlementFallback design-only / GeoNames delivery BLOCKED — 24.10.2026
+
+[Техническая схема отключаемого источника](../experiments/road-ref-boundaries/SETTLEMENT_FALLBACK_INTEGRATION.md) и [checkpoint](checkpoints/2026-10-24-settlement-fallback-contract-DONE.md) подтверждены чтением интерфейсов `/api/suggest`/`collectAddressFeatures`/`Suggestion`/switches. Это ТОЛЬКО DESIGN: нет switch, code, dataset, live-координат; таймаут общего запроса не удвоен. Pilot HEAD curl6/DNS, B/C NOT_STARTED; next реальный источник только при новой сети. PR14 draft/без Production, прошлые887 tests не повторялись.
+
 ## BLOCKED GeoNames pilot A HEAD — 24.10.2026
 
 [3 фактических HEAD / DNS evidence](checkpoints/2026-10-24-address-geonames-head-DNS-BLOCKED.md): `RU.zip`, `UA.zip`, `alternateNamesV2.zip` → curl6/HTTP000, не удалось разрешить host `download.geonames.org`; bytes0. Это environmental DNS, не data/server failure. Pilot B/C NOT_STARTED, реальные sizes/coverage/aliases неизвестны, runtime0. НЕ повторять HEAD без новой доступной сети; следующий независимый шаг — read-only opt-in fallback integration contract. PR14 draft/без Production.
