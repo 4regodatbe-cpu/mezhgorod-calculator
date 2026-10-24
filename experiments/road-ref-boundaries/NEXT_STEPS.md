@@ -1,3 +1,7 @@
+## Сейчас bounded live + CIprobepath
+
+По docs/checkpoints/2026-10-24-address-live-STARTED.md: послеdurableSTARTED≤3exactPreviewGETs,сохранитьрезультат/ошибку;затемисправитьlegacyCIprobe,которыйобходитновыйpool. Source849102cverifyPASS,legacyPhotonFAILнепроверяетновыйpath. НеProduction/неповторrouteкорпуса.
+
 ## Актуально: серия ADDRESS завершена
 
 1. Проверить exactremote и обычныйCI финальногоhead (verify/livePhoton/skipped отдельно). Кодpool сохранёнв479f9dc; endpointproof/итог: docs/checkpoints/2026-10-24-address-endpoint-series-DONE.md.864tests/buildPASSлокально,live0.

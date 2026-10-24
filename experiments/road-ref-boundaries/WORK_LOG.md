@@ -65,3 +65,8 @@ Source43d4813 с exactremote readback. [Checkpoint](../../docs/checkpoints/2026-
 ## 24.10.2026 10:27 МСК — block3 DONE, серия ADDRESS mitigation завершена
 
 Source479f9dc/treeb8d38e9 exactremote/PR14draft подтверждён доendpointблока; workflows[]напромежуточномskipci. [Подробныйитог](../../docs/checkpoints/2026-10-24-address-endpoint-series-DONE.md). Nextendpoint/r deterministicsequencepassed:40mockfetch,peak2,cache0extra,sharedcancelAнепортитB,partial503positiveсохранён,cooldownretry0extra. Initialfixturefailure34vs30calls сохранён:lowercasebboxqueries mockнеузнавал; исправленmock,prodнеизменён/assertionsнеослаблены. Финальныйfocused48/full864/quote/API/ESLint/buildTypeScript/static16/16PASS,live0. ФинальныйcommitобычныйCIбезskip. Externalavailability/mobileB-only/10сE2Eнепроверены; tariffs/kmбезизменений. СледомCIreadbackитоговогоhead, безстарыхrouteаудитов.
+
+
+## 24.10.2026 — CIreadbackDONE / PreviewsmokeSTARTED
+
+Source849102c/tree7ed6f91/PR14draft проверен. CI40074351547verifyPASS/geometryPASS/legacyPhotonFAIL;legacyprobeнапрямуюfanoutбезновогоpool,summary10/13queries76failures. ExactPreviewREADYdpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXx. [План](../../docs/checkpoints/2026-10-24-address-live-STARTED.md):≤3PreviewGETs,stopприошибке,затемнезависимыйruntimeprobe/CIpathfix. NovyliveдоSTARTED0. Документыskipci, обычныйCIитоговогокода;Productionнет.
