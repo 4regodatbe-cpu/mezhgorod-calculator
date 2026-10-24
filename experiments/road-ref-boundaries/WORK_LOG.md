@@ -326,3 +326,8 @@ STARTED97cb150передкодомdurable. Изолированныelib/data/fla
 ## 24.10.2026 — exact-byte transfer recovery DONE
 
 Moduleactualremote411354238f4ab3b54b562384456c8682eb772e95/tree377f46024352cb940f9539c7339faf430a97a2da/readbackPASS. FirstcreateTree mismatchcaughtbeforeref;read_textnewlineconversionлоговисправленнаread_bytes().decodeUTF8,exacttreeравен. Tests/codeнеповторялись. Protocolдополнен,checkpoint docs/checkpoints/2026-10-24-city-snapshot-remote-byte-recovery-DONE.md. Flagfalse/whole-repolintFAIL19baseline;NEXTотдельныйlintreview/PreviewUI,Productionнет.
+
+
+## 24.10.2026 — ESLintbaseline repair STARTED
+
+Actualremote7d4dc22/PR14draft,CIcompleted.19errorsдвепричины18requireвCJSи1mixedconstdestructure. План docs/checkpoints/2026-10-24-eslint-baseline-STARTED.md:scoped.cjspolicy+TS/ESMnegativeproof,tupleconst+mutablefreeбезлогическихизменений,fullgatesпоследовательно. Snapshotfalse/неновыемаршруты/неProduction.

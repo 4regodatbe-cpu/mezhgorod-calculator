@@ -1,3 +1,7 @@
+## STARTED isolatedESLintbaseline — 24.10.2026
+
+[План](checkpoints/2026-10-24-eslint-baseline-STARTED.md):18ошибокCommonJSformatpolicy+1mixedlet/const,узкий.cjsoverrideсTS/ESMnegativeproof,Promise.allсемантикапрежняя. NEXTминимальнаяправка→fulltests/lint/buildпоследовательно;неослаблять25мсfixtures. Модульsnapshotfalse/Productionнет.
+
 ## Remoteподтверждён4113542 / модульвыключен — 24.10.2026
 
 Кодовыйcommit411354238f4ab3b54b562384456c8682eb772e95/tree377f46024352cb940f9539c7339faf430a97a2daпроверены. [Exact-byte recovery](checkpoints/2026-10-24-city-snapshot-remote-byte-recovery-DONE.md).4cityfallbackготов/flagfalse;local894/buildPASS,whole-repoLintFAIL19baseline. NEXTbaseline-lintreview/позжеPreviewUI,безавтоактивации/повторамаршрутов.
