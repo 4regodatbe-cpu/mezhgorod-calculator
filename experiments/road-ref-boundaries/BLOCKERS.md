@@ -91,3 +91,8 @@ Countryaliases14.95MBполучены/10fields,1,427,089rows,invalidduplicate0;9
 ## 24.10.2026 — optional4citysnapshot IMPLEMENTED/DISABLED
 
 ADDRESS-001полнаяavailabilityещёUNVERIFIED:новыйaddressCitySnapshot:falseможетподставитьтолько4reviewedlivecitySuggestionприfullfailureдо20сdeadline/expiry7дней,необщийGeoNamescatalog. Localfocused7/full894/quoteAPI/buildPASS;changedESLintPASS. LINT-001BLOCKED:whole-repo19errors/5warningsвнеизменённыхHEADblobs,configunchanged;отдельныйreviewнеподменятьPASS. PreviewUI/E2EновогомодуляNOT_RUN;автоматическинеактивировать. Evidence/checkpoint2026-10-24-city-snapshot-module-DONE-DISABLED. НетновыхPhoton/routequeries/Production.
+
+
+## 24.10.2026 — LINT-001 FIXED/VERIFIED
+
+ScopedsourceTypecommonjs+requirepolicyтолькодляexperiment.cjs,TS/ESM/out-of-scoperestrictionsпровереныnegativecases. Mixedlet/constPromiseallисправленбезмаршрутнойлогики. ПолныйESLint0errors5warnings/full895/quoteAPI/build16PASS,10CJSruntimebodiesunchanged. HistoricalFAIL19осталсявеvidence,большенетекущийблокер. AddressCitySnapshotfalse,UIreviewещёнеPASS. Checkpoint2026-10-24-eslint-baseline-DONE.

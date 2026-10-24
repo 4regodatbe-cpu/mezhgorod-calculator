@@ -331,3 +331,8 @@ Moduleactualremote411354238f4ab3b54b562384456c8682eb772e95/tree377f46024352cb940
 ## 24.10.2026 — ESLintbaseline repair STARTED
 
 Actualremote7d4dc22/PR14draft,CIcompleted.19errorsдвепричины18requireвCJSи1mixedconstdestructure. План docs/checkpoints/2026-10-24-eslint-baseline-STARTED.md:scoped.cjspolicy+TS/ESMnegativeproof,tupleconst+mutablefreeбезлогическихизменений,fullgatesпоследовательно. Snapshotfalse/неновыемаршруты/неProduction.
+
+
+## 24.10.2026 — LINT-001 FIXED/VERIFIED
+
+Source81dfe59/STARTEDdurable;18importstyleerrorsscopedCommonJS/sourceType+1consttupleисправлены. Первыйpolicytestmodule/commonjsFAILсохранён,configисправленбезослабленияassertion.10CJSruntimebodiesexact,quoteoldcommentonlyremoved. Policy1+3negative/full895/quoteAPI/whole-repolint0errors5warnings/buildTypeScript/static16PASS. Selectorconcurrency2timeoutsunchanged. Evidence checks/2026-10-24-eslint-baseline;checkpoint docs/checkpoints/2026-10-24-eslint-baseline-DONE.md. Snapshotfalse/UIpending,нетlive/Production. NEXTотдельныйUIenvironmentpreflight.

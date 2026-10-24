@@ -8,7 +8,7 @@
 
 | Модуль | Состояние | Включение / удаление | Контракт |
 | --- | --- | --- | --- |
-| addressCitySnapshot | IMPLEMENTED/DISABLED; focused7/full894/buildPASS, whole-repo ESLintFAIL19 baseline | data/toll-feature-switches.json → addressCitySnapshot:false; одна unavailable-ветка /api/suggest | локальные4 citySuggestion/7dayexpiry/sourceSHA, fulloutage-only/cancel/sharedbudget/limitedcoverage+OSMcredit; ADDRESS_CITY_SNAPSHOT.md |
+| addressCitySnapshot | IMPLEMENTED/DISABLED; full895/buildPASS; whole-repo ESLintPASS0errors/5warnings, UIpending | data/toll-feature-switches.json → addressCitySnapshot:false; одна unavailable-ветка /api/suggest | локальные4 citySuggestion/7dayexpiry/sourceSHA, fulloutage-only/cancel/sharedbudget/limitedcoverage+OSMcredit; ADDRESS_CITY_SNAPSHOT.md |
 | calculationTiming | DONE, local880tests/buildPASS; E2E UNVERIFIED | data/toll-feature-switches.json → calculationTiming:false | фиксированные стадии включая special_options, Server-Timing/structured logs, без новой сети/смены цены; CALCULATION_TIMING.md |
 | addressRequestPool | DONE, local864tests/buildPASS + endpoint/r regression | data/toll-feature-switches.json → addressRequestPool:false | queue/cache/singleflight/cooldown; collectAddressFeatures сохраняет прежние варианты/ranking и20с общий budget |
 | roadKilometrage | DONE, локальные851tests/buildPASS | data/toll-feature-switches.json → roadKilometrage:false; один вызов optionalRoadKilometrage в m4-production.ts | m4PvpPreview.roadKilometrage; unknown/stop вместо ошибки основного расчёта; тарифы/выбор маршрута не меняет |

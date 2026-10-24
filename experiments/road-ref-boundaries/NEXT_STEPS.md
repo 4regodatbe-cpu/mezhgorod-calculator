@@ -1,3 +1,7 @@
+## DONE LINT-001 / snapshotвыключен — 24.10.2026
+
+[Итог](../../docs/checkpoints/2026-10-24-eslint-baseline-DONE.md) · [проверки](checks/2026-10-24-eslint-baseline/README.md).19ошибокустранены:CommonJSscopepolicy+consttuple;TS/ESMrestrictionsсохранены. Full895/quoteAPI/buildTypeScript/static16/whole-repoESLint0errors5warningsPASS. NEXTUIenvironmentpreflight/локальнаяпроверкапридоступномбраузере;неактивироватьавтоматически/неповторятьмаршруты.
+
 ## STARTED isolatedESLintbaseline — 24.10.2026
 
 [План](../../docs/checkpoints/2026-10-24-eslint-baseline-STARTED.md):18ошибокCommonJSformatpolicy+1mixedlet/const,узкий.cjsoverrideсTS/ESMnegativeproof,Promise.allсемантикапрежняя. NEXTминимальнаяправка→fulltests/lint/buildпоследовательно;неослаблять25мсfixtures. Модульsnapshotfalse/Productionнет.
