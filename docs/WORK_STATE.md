@@ -1,3 +1,7 @@
+## DONE first real-network handler POST — 24.10.2026
+
+Анапа→Краснодар:HTTP200/OSRM/165.009км/620₽,handler2.225с,totalprocess2.621с. [Полный результат/ограничения](checkpoints/2026-10-24-calculation-runtime-live-DONE.md). Один случай уложился10с на CI host;не браузерныйSLA. Code885tests/buildPASS;следом отдельный bounded special-route замер с STARTED,не повтор Анапы. Км/Photon blockersсохранены,Productionнет.
+
 ## DONE runtime probe / NEXT actual single POST — 24.10.2026
 
 Один настоящий V3 handler Анапа→Краснодар в отдельном CI job, atomic progress/fullbody/Server-Timing,hard60с child/2minjob,отдельные API/timing/price integrity failures. Focused10/10/full885/885/quote/API/ESLint/webpackTypeScript/static16/16 PASS;local live0. [Итог/next](checkpoints/2026-10-24-calculation-runtime-probe-DONE.md). После durable прочитать actualCI/сохранить один runtime результат;не повторять для зелёного. Handler-with-network≠deployed/browserE2E. Без Production.
