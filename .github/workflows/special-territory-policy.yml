@@ -58,3 +58,22 @@ jobs:
             settlement-random-route-audit.json
             yandex-route-reference-audit.json
           if-no-files-found: ignore
+  calculation_timing:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --global pnpm@11.25.0
+      - run: pnpm install --frozen-lockfile
+      - name: Measure one production V3 handler with real routing sources
+        run: node scripts/calculation-runtime-probe.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: calculation-runtime-probe-${{ github.run_id }}
+          path: calculation-runtime-probe.json
+          if-no-files-found: error

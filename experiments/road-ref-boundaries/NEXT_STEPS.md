@@ -1,3 +1,7 @@
+## DONE runtime probe / NEXT actual single POST — 24.10.2026
+
+Один настоящий V3 handler Анапа→Краснодар в отдельном CI job, atomic progress/fullbody/Server-Timing,hard60с child/2minjob,отдельные API/timing/price integrity failures. Focused10/10/full885/885/quote/API/ESLint/webpackTypeScript/static16/16 PASS;local live0. [Итог/next](../../docs/checkpoints/2026-10-24-calculation-runtime-probe-DONE.md). После durable прочитать actualCI/сохранить один runtime результат;не повторять для зелёного. Handler-with-network≠deployed/browserE2E. Без Production.
+
 ## DONE special timing CI / STARTED one POST probe — 24.10.2026
 
 CI40082403690:verify/geometryPASS,addressFAIL,50/YandexSKIPPED. [План/лимит](../../docs/checkpoints/2026-10-24-special-timing-ci-DONE-runtime-probe-STARTED.md). Следом отдельный CI diagnostic: один production handlerPOST Анапа→Краснодар с реальной сетью,child60с/atomic artifacts; не deployedE2E,не новые runtime запросы/тарифы.
