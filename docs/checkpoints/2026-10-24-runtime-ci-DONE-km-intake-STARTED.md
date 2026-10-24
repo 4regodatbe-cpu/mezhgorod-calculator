@@ -1,0 +1,24 @@
+# DONE actual runtime CI readback / STARTED KM-001 source intake — 24.10.2026 МСК
+
+Source e0295e44a60c215ca945b4c8e54aac2f84d95b57/tree0c8ea7bfc5835e7d5f684c15ecee98994ac4eea1, remotePR14head совпал, open/draft, разрешённаяветкапрежняя. Trackedcheckoutclean;старыеworktrees/node_modulessymlinkсохранены. Актуальныеstate/NEXT/BLOCKERS прочитаны, действующиеcheckpoint/workflowправиласохраняются.
+
+## Блок1 CI DONE
+
+Run40078223671 completed/overall success; verify(test/tsc/build)PASS, livegeometryPASS. Новыйproductioncollectoraddressprobe действительно запущен, FAILED:РостовPASS1217мс/1http503/103features;КраснPASS727мс/2http503+4cooldown/20features;ДонецкSOURCE_UNAVAILABLE274мс/4http503+3cooldown/0features. Общийbudgetelapsed2225мс/3из3;networkbudgetнеисчерпан. Sourcefailureне превращён вempty/PASS.50settlements/YandexSKIPPEDиз-заошибкишага;общийsuccessизcontinue-on-error. ВыборкаrawJSONстроклога/jobsсохранена:checks/2026-10-24-runtime-ci-readback/result.json. Новыхживыхзапросовприreadback0. Не повторятьстарыйlegacyfanout/широкийкорпус.
+
+ADDRESS-FANOUT/CIRCUIT/harnessfixнеоткатываютсяпододинoutage. ВэтомCIДонецкнебылтолькоошибочнолокальнозаблокирован:4фактических503получены. ExternalavailabilityостаётсяBLOCKED_BY_SOURCE;исходныйmobileB-onlyUNVERIFIED. Preview3/3успехнаsourcefix5d7043aостаётсяотдельнымдатированнымфактом,необщейгарантией.
+
+## Блок2 STARTED — ограниченный источник километража
+
+KM-001 касаетсятолько двухpendingпереходов:osmnode4443232947,ways447135768→1182567076(доступПлатов→М4);osmnode358467208,ways1211606940→28835034(М4→Р260). Цены/scopeне нужныдляпозиционнойпроверки. Неугадыватькилометры/невыдаватьrefномерасъездазакм.
+
+БыстраяofflineпроверкасохранённогоГранитное→Казаньcapture показала:trace_attributesresponsekeys units/edges/alternate_paths,shape отсутствует,edgesсодержатway_id/toll/begin/end_shape_index/names/end_node. Requestshape не равенmatchedoutputshape. Поэтомудекодироватьнесуществующийответилиприсвоитьrequestиндексамoutputкоординатынельзя. Повторныйprovider/mapmatchingне нужен.
+
+Следом послеdurableSTARTED:точечныйпоиск двухnodeIDsвлокальныхinventory;≤2OSMnodeAPI/webfetchи≤4точечныхwebзапросапооператорскимразвязкам/км. ИспользоватьофициальныеOSM/оператор/Росавтодористочники,сохранятьисходныйответ/дату/sourcehashтамгдеполучен. Толькодверазвязки,недорожнаясетьРоссии/неширокийOverpassdownload. При401/403/404/timeoutнеобходитьограничение,записатьstopипроверитьнезависимыйисточниквлимите. ИзвлечённыеOSMкоординаты—позиционныеобъектыOSM,неофициальныйкилометр. KManchorreviewedдобавлятьтолькоеслиестьоднозначныйroad/branch/scale/км/source;иначепополнитьpendingevidenceбезruntimeактивации. Sourceпустотунепревращатьв0км.
+
+Блок3послеdurableрезультатаintake:еслинадёжныйкилометрнайден—добавитьограниченныереальныелокальныеanchors,focused/fullgate/buildиотдельноесохранение;еслинет—сохранитьточныйgapиотдельныйисполняемыйследующийшагбезвыдуманныхданных. Предыдущие875tests/6capturesнерепититьрадиdocs/retrieval. Документарныесохраненияskipci,обычныйCIтолькокогдаестьнеобходимоеизменениекода/данных. Production/main/merge/Android/backupнетронуты.
+
+Webисточниксхемыпроверен24.10:OSM highway=milestone сdistance/ref/carriageway_ref;этаппроверяетналичиеконкретныхданных,несоздаётгарантиюпокрытия. Источник:https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmilestone. Не путатьtagdistanceмаршрутнойrelation(общаядлина)сmilestonenode(отметка).
+
+
+24.10: первая попытка передачи завершилась TypeError до GitHub write: JS helper предыдущего сеанса отсутствовал в памяти инструмента. Это восстановление транспорта, не Git permission failure. Восстановить helper, передать готовое дерево и проверить remote head/tree; расчёты/CI/retrieval не повторять.

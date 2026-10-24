@@ -95,3 +95,11 @@ Remote5203f3a/tree682346b содержалscript/tests/docs,workflowнепопа
 ## 24.10.2026 11:26 МСК — fixPreviewsmokeDONE / сериязавершена
 
 Parent16644a3/tree5542454remotechecked,workflowblobecb7469runtimeprobe/artifactsreadbackPASS;filesystemhashпослеsparseSwitchENOENTисправленчтениемGitobjectбезповторатестов. ExactfixPreview5d7043a/dpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss/app-lib-dataidentical:3GETРостов200/Красн200/Донецк200,ДНРпервым/Ростоввторым,connector7425/4187/2426мс. Rostovruntimepartial1http503/236мс;sourceoutsвсёещёбывают. Междуqueries19–29с,невыдаватьзаsameprocess<15сproof(этотконтрактвтестах). [Подробныйитог](../../docs/checkpoints/2026-10-24-address-live-fixed-series-DONE.md). Локальныйcodegate875/buildPASS,этотdocs-only/liveшаггейтынерепитил. ФинальныйобычныйCIбезskip,далеечитатьегоactualстатусы. Productionнет.
+
+
+## 24.10.2026 — runtimeCIreadbackDONE / KM-001intakeSTARTED
+
+Sourcee0295e4/PR14draft exactheadпроверен. Run40078223671verify/geometryPASS,newaddressruntimeprobeFAIL(2225мс,Ростов/КраснPASS,Донецк4http503+3cooldown/0features);50/YandexSKIPPED. [Checkpoint/лимиты](../../docs/checkpoints/2026-10-24-runtime-ci-DONE-km-intake-STARTED.md), JSONлогвыборкасохранён. Externaloutageлогирован,перешликинезависимомуKM-001:2pendingnodes/≤2API+≤4websourcequeries. Быстрыйofflinecaptureinspectподтвердилотсутствиеmatchedoutputshape,новыйroutingне запускать. Неповторять875testsрадиretrieval.
+
+
+24.10: первая попытка передачи завершилась TypeError до GitHub write: JS helper предыдущего сеанса отсутствовал в памяти инструмента. Это восстановление транспорта, не Git permission failure. Восстановить helper, передать готовое дерево и проверить remote head/tree; расчёты/CI/retrieval не повторять.

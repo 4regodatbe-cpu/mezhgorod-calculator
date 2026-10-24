@@ -1,3 +1,7 @@
+## Сейчас KM-001 source intake
+
+CI40078223671readbackDONE:verifyPASS,addressruntime2citiesPASS/Донецкexternal503FAIL,sourceavailabilityотдельноblocked. По docs/checkpoints/2026-10-24-runtime-ci-DONE-km-intake-STARTED.md выполнитьпослеdurableточечныйintakeдля2OSMnodes,лимит2API/4webqueries;различатькоординату/официальныйкм/съездref. Пригодныеreviewedanchorsотдельноилиpendinggapбезугадывания. Полнуюсеть/повторrouteкорпусанезапускать.
+
 ## Актуальное продолжение после live/fixсерии
 
 1. ПроверитьобычныйCIфинальногоhead:verify,newproductioncollectoraddressprobe,source/checkfailuresиskippedотдельно;неприниматьoverall successзаlivePASS. Workflowblobecb7469сохранёнв16644a3.

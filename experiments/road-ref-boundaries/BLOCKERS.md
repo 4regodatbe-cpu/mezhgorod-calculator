@@ -36,3 +36,7 @@ Threshold3серийных503429за15ссначалаstreak+successreset.16focu
 ## 24.10.2026 — finalfixPreview3/3PASS / sourcehealthчастичный
 
 ADDR-CIRCUIT-001fixedcontracts+новыйPreview5d7043aпоказалРостов/Красн/Донецк200;sourcepartial503вRostovlogсохраняется. КонкретныйисходныйphoneB-onlyUNVERIFIED,нетsameprocess<15сliveisolation. CI-HARNESS-001fixed:legacybypassзаменёнproductioncollectorprobe;SPARSE-PERSIST-001fixed:workflowпотерянприgitadd,восстановлен--sparse/readbackblobecb7469,sourceгейтынеповторялисьрадипередачи. Runtimefileпослеswitchскрывалсяsparse,Gitobjectreadbackподтверждён. СледомactualnewCI;overallsuccessнеравноlivePASS.
+
+## 24.10.2026 — actualruntimeCI40078223671
+
+ADDRESS-AVAILABILITYBLOCKED_BY_SOURCEвэтомrun:Донецк4actualhttp503+3cooldown,0features;Ростов/КраснPASS,2225мстotal. Harnessпроверяетновыйpool,ошибкаsourceявнаянеPASS. Verify/geometryPASS;50/YandexSKIPPED. СледомнезависимыйKMsourceintake2nodes,sourceoutageнеповоддляновогоширокогоroute/retryаудита.

@@ -1,3 +1,7 @@
+## DONE runtime CI / STARTED two-junction KM intake — 24.10.2026
+
+CI40078223671:verify/geometryPASS,newruntimeaddressprobeFAILза2225мс:Ростов/КраснPASS,Донецк4http503+3cooldown/0features.50/YandexSKIPPED;overall successнеlivePASS. [Readback/новыйплан](checkpoints/2026-10-24-runtime-ci-DONE-km-intake-STARTED.md) · [CIevidence](../experiments/road-ref-boundaries/checks/2026-10-24-runtime-ci-readback/result.json). ExternalavailabilityBLOCKED_BY_SOURCE;готовыеpool/contracts/Previewнеповторятьбезновогоматериала. NEXTпослеdurable:ограниченныйsourceintakeкмдляnode4443232947/358467208,неполнаясеть/нетарифы. Сохранённыйtraceoutputshapeотсутствует,requestиндексыдлякоординатнеиспользовать. Sourcee0295e4/PR14draft,Productionнет.
+
 ## DONE live address series — 24.10.2026
 
 ЖивойbadPreviewвыявилнашложныйcooldown;fixthreshold3/15с+successresetсохранён. НовыйfixPreview5d7043a:Ростов/Красн/Донецквсе200,ДНРпервым/Ростоввторым;raw/logsсохранены. НовыйCIprobeиспользуетproductioncollector/pool≤3queries/≤60с,workflowполностьюсохранёнв16644a3(blobjecb7469);sparseпотеряindexисправленаотдельно. [Итогсерии](checkpoints/2026-10-24-address-live-fixed-series-DONE.md) · [новыйlive](../experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/summary.json).875tests/quote/API/ESLint/buildTypeScript/static16/16PASSлокально. Внешний503ещёвстречается;phone/mobileB-only/10сE2Eнепроверены;3GETнеизолированныйsameprocess<15сproof. NEXT:actualобычныйCIитоговогоhead,newruntimeprobe/sourcefailuresотдельно. Production/main/merge/backupнетронуты.
