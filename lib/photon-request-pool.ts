@@ -9,16 +9,17 @@ const cancelled = () => new Error("Photon request cancelled");
 /** Process-local only. One user's cancellation never aborts another user's
  * identical request. No retries, new providers or background probes. */
 export function createPhotonRequestPool({ fetchFeatures = fetchPhotonFeatures, concurrency = 2, maxQueued = 64,
-  maxCacheEntries = 128, cacheTtlMs = 300_000, cooldownMs = 15_000, now = Date.now }: {
+  maxCacheEntries = 128, cacheTtlMs = 300_000, cooldownMs = 15_000, failureThreshold = 3, now = Date.now }: {
     fetchFeatures?: FeaturesFetch; concurrency?: number; maxQueued?: number;
-    maxCacheEntries?: number; cacheTtlMs?: number; cooldownMs?: number; now?: () => number;
+    maxCacheEntries?: number; cacheTtlMs?: number; cooldownMs?: number; failureThreshold?: number; now?: () => number;
   } = {}) {
-  for (const n of [concurrency, maxQueued, maxCacheEntries, cacheTtlMs, cooldownMs]) {
+  for (const n of [concurrency, maxQueued, maxCacheEntries, cacheTtlMs, cooldownMs, failureThreshold]) {
     if (!Number.isSafeInteger(n) || n <= 0) throw new RangeError("Photon pool limits must be positive integers");
   }
   const tasks = new Map<string, Task>(), queue: Task[] = [];
   const cache = new Map<string, { features: PhotonFeature[]; expiresAt: number }>();
   const pausedUntil = new Map<string, number>();
+  const failures = new Map<string, { count: number; since: number }>();
   let active = 0;
   const counts = { started: 0, sharedJoins: 0, cacheHits: 0, queueRejected: 0, circuitRejected: 0, cancelledSubscribers: 0 };
 
@@ -35,6 +36,11 @@ export function createPhotonRequestPool({ fetchFeatures = fetchPhotonFeatures, c
       if (task.controller.signal.aborted || !task.subscribers.size) throw cancelled();
       counts.started++;
       const features = await fetchFeatures(task.url, { signal: task.controller.signal });
+      if (!task.controller.signal.aborted) {
+        // A partial query can contain both a transient503 and valid responses.
+        // Those successes prove the origin is usable; do not block the next city.
+        failures.delete(task.origin); pausedUntil.delete(task.origin);
+      }
       if (features.length && task.subscribers.size && !task.controller.signal.aborted) {
         cache.delete(task.url);
         cache.set(task.url, { features, expiresAt: now() + cacheTtlMs });
@@ -43,7 +49,10 @@ export function createPhotonRequestPool({ fetchFeatures = fetchPhotonFeatures, c
       finish(task, features);
     } catch (error) {
       if (!task.controller.signal.aborted && error instanceof Error && /^Photon (429|503)$/u.test(error.message)) {
-        pausedUntil.set(task.origin, now() + cooldownMs);
+        const at = now(), previous = failures.get(task.origin);
+        const count = previous && at - previous.since < cooldownMs ? previous.count + 1 : 1;
+        failures.set(task.origin, { count, since: count === 1 ? at : previous!.since });
+        if (count >= failureThreshold) pausedUntil.set(task.origin, at + cooldownMs);
       }
       finish(task, null, error);
     } finally { active--; pump(); }

@@ -1,3 +1,7 @@
+## DONE circuit fix / STARTED runtime CI probe — 24.10.2026
+
+ADDR-CIRCUIT-001 исправлен:cooldown после3серийных503/429 за15сбезsuccess,successсбрасываетstreak/паузу. PartialСочи200→новыйЛуганск200;полныйoutageотдельно502/<=4fetch. [Итог/следующийблок](checkpoints/2026-10-24-address-circuit-fix-DONE-runtime-probe-STARTED.md) · [checks](../experiments/road-ref-boundaries/checks/2026-10-24-address-circuit-fix/verification.json).16focused/867full/quote/API/ESLint/buildTypeScript/static16/16PASS;живойисправленныйPreviewнепроверен. Sourceb54f7d8/PR14draft. NEXTпослеdurable:boundedactualruntimeCIprobe3queries/≤60с/progress,старыйlegacyprobeсохранить. Productionнет,невыдаватьстарые200занewfixproof.
+
 ## LIVE regression found / STARTED circuit fix — 24.10.2026
 
 ExactPreview849102c:Ростов200/Красн200/Донецк502,ровно3GET. Runtime logs:первые2partialс1http503,последний7source_cooldown/16мс. Новыйpoolошибочновключаетoriginpauseпослеодногочастичного503,мешаяследующемуадресу. [Checkpoint/исправление](checkpoints/2026-10-24-address-preview-DONE-circuit-fix-STARTED.md) · [raw/API/logs](../experiments/road-ref-boundaries/checks/2026-10-24-address-live/summary.json). NEXT:threshold3failures/15с + resetнаsuccess, regressionpartial→newquery,fulloutageотдельно;gates/сохранение. ЗатемruntimeCIprobepath. Старые864testsэтурегрессиюнепоймали;необъявлятьполныйпоискисправленным. Productionнет.

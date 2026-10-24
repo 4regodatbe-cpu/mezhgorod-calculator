@@ -75,3 +75,8 @@ Source849102c/tree7ed6f91/PR14draft проверен. CI40074351547verifyPASS/ge
 ## 24.10.2026 — boundedPreviewDONE, poolcooldownregressionFOUND
 
 [Checkpoint](../../docs/checkpoints/2026-10-24-address-preview-DONE-circuit-fix-STARTED.md).ExactPreview849102c,dpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXx:3GETРостов200/Красн200/Донецк502. RawAPI/logsсохранены;server578/159/16мс,connector7498/2449/2884мс. Logsдоказали1http503причастичномsuccess→origincooldown7следующемугороду. Этонашаnewpoolregression,неисходныйB-onlyproof. STOPADDR-CIRCUIT-001открыт;приоритетисправитьthreshold3+successreset/regressionиfullgate. ProbeCIpathотложеннаследующийблок,Productionнет.
+
+
+## 24.10.2026 — ADDR-CIRCUIT-001 codefixDONE / runtimeprobeSTARTED
+
+Sourceb54f7d8/treec5e753c exactremotechecked. [Checkpoint](../../docs/checkpoints/2026-10-24-address-circuit-fix-DONE-runtime-probe-STARTED.md).Threshold3/полное15сstreakwindow/successreset,new3contracts. Endpointpartial200→newcity200,отдельныйполныйoutage<=4fetch/502иcacheсохранён. Послеуточненияwindowиprovenancemetadataфинальныеfocused16/full867/quote/API/ESLint/webpackTypeScript/static16/16PASS;нельзясчитатьповторныеgateотдельнымиrouteпроверками. Liverequest0вэтомблоке,новыйPreviewнепроверен. СледомactualruntimeCIprobeбезlegacyfanout,progress/≤3queries60с. Intermediatecode skipci,обычныйCIфинальногоprobecommit.

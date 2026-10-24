@@ -1,3 +1,7 @@
+## Сейчас actual-runtime CI probe
+
+ADDR-CIRCUIT-001fixDONE/contracts867PASS. По docs/checkpoints/2026-10-24-address-circuit-fix-DONE-runtime-probe-STARTED.md послеdurableсоздатьbounded3query≤60сprobeчерезcollectAddressFeatures/pool,atomicprogress+source/checkfailures,заменитьтолькоPhotonCIstep/artifacts. Legacyprobeисторическийсохранить. ДалееordinaryCIиnewPreviewпоследующегоhead,нестарого849102c.
+
 ## Приоритет: исправить ADDR-CIRCUIT-001
 
 Live3GETпоймалирегрессиюновогоcooldown:1partial503→следующийадреслокально502. По docs/checkpoints/2026-10-24-address-preview-DONE-circuit-fix-STARTED.md реализоватьthreshold3/15с+successreset,partial-nextquery/fulloutageконтракты,gates,сохранить. ЗатемнезависимыйactualruntimeCIprobe. Приошибкеотключитьновыйpoolвместоизвестнойрегрессии.

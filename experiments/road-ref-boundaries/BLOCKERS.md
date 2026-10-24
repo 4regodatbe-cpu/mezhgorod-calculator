@@ -28,3 +28,7 @@ ADDRESS-FANOUTfixed-and-verified:poolcontracts+настоящийNextendpoint/r�
 ## 24.10.2026 — ADDR-CIRCUIT-001 OPEN / live regression
 
 Preview849102c/3GET:Ростов200,Красн200,Донецк502. Runtime7source_cooldownпоследнему,1http503впредыдущемpartialresponse. Нельзяглобальноблокироватьследующийадреспослеединственного503придругихsuccess. Приоритетthreshold3безsuccess/15с,+resetуспешнымответом;testpartial→newcoldquery.Несчитатьисправленнымдоgates. Старыйendpointtestзакреплял502послеpartial;поправитьтребование,добавитьполныйoutageотдельно. Evidence:checks/2026-10-24-address-live.
+
+## 24.10.2026 — ADDR-CIRCUIT-001 fixed/contracts, liveafterfix UNVERIFIED
+
+Threshold3серийных503429за15ссначалаstreak+successreset.16focused/867full/buildPASS. Частичныйответнеподавляетследующийcoldaddress;fulloutageпродолжаетохлаждаться. Endpointtestисправлен,новые3contractsдобавлены. ЖивойстарыйPreviewс502сохраняетсяevidenceошибки;новыйliveрезультатнезаявляется. СледомисправитьCIharnessbypass,independentexternal503causeостаётся.

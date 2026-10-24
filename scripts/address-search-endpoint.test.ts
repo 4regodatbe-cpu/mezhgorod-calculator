@@ -17,6 +17,7 @@ const places: Record<string, PhotonFeature[]> = {
   Донецк: [town(4, "Донецк", [37.8013407, 48.0158753], "Донецкая область"), town(5, "Донецк", [39.9509488, 48.3382864], "Ростовская область")],
   Москва: [town(6, "Москва", [37.617, 55.755], "Москва")],
   Сочи: [town(7, "Сочи", [39.723, 43.585])],
+  Луганск: [town(8, "Луганск", [39.303, 48.574], "Луганская область")],
 };
 const immediate = () => new Promise<void>(resolve => setImmediate(resolve));
 function post(query: string, signal?: AbortSignal) {
@@ -48,6 +49,7 @@ test("real endpoint/proxy flow survives sequential replacements, shared cancella
       }
       await immediate();
       if (queryKey === "Сочи" && url.searchParams.get("countrycode") === "UA") return new Response("{}", { status: 503 });
+      if (query.toLocaleLowerCase("ru-RU") === "полныйотказ") return new Response("{}", { status: 503 });
       assert.ok(queryKey, `Unexpected deterministic query: ${query}`);
       return new Response(JSON.stringify({ features: places[queryKey] }), { headers: { "Content-Type": "application/json" } });
     } finally { active--; }
@@ -93,6 +95,13 @@ test("real endpoint/proxy flow survives sequential replacements, shared cancella
 
     const partial = await read(await post("Сочи"));
     assert.equal(partial.status, 200); assert.ok(partial.data.items?.[0].label.includes("Сочи"));
+    const nextCity = await read(await post("Луганск"));
+    assert.equal(nextCity.status, 200); assert.equal(nextCity.data.items?.[0].label, "Луганск — ЛНР");
+    evidence.push({ step: "partial-503-does-not-block-next-city", partialStatus: partial.status, nextCityStatus: nextCity.status });
+    const beforeTotalOutage = calledUrls.length;
+    const totalOutage = await read(await post("ПолныйОтказ"));
+    assert.equal(totalOutage.status, 502);
+    assert.ok(calledUrls.length - beforeTotalOutage <= 4);
     const beforeOutageRetry = calledUrls.length;
     const unavailable = await read(await post("НовыйПрефикс"));
     assert.equal(unavailable.status, 502); assert.ok(unavailable.data.error); assert.equal(unavailable.data.items, undefined);
@@ -100,7 +109,8 @@ test("real endpoint/proxy flow survives sequential replacements, shared cancella
     assert.equal(calledUrls.length, beforeOutageRetry);
     const stillCached = await read(await post("Донецк"));
     assert.equal(stillCached.status, 200); assert.equal(stillCached.data.items?.[0].label, "Донецк — ДНР");
-    evidence.push({ step: "partial-503-then-origin-cooldown", positiveStatus: partial.status, newQueryStatus: unavailable.status,
+    evidence.push({ step: "three-consecutive-503-then-origin-cooldown", positiveStatus: partial.status, newQueryStatus: unavailable.status,
+      totalOutageFetches: beforeOutageRetry - beforeTotalOutage,
       retryExtraFetches: calledUrls.length - beforeOutageRetry, cachedDonetskStatus: stillCached.status });
 
     const short = await read(await post("Я")); assert.equal(short.status, 200); assert.deepEqual(short.data.items, []);
@@ -111,7 +121,7 @@ test("real endpoint/proxy flow survives sequential replacements, shared cancella
     assert.doesNotMatch(JSON.stringify(diagnostics), /Донецк|Москва|Сочи|НовыйПрефикс|https:\/\//u);
     assert.ok(peak <= 2); assert.equal(active, 0);
     if (process.env.ADDRESS_ENDPOINT_EVIDENCE_PATH) writeFileSync(process.env.ADDRESS_ENDPOINT_EVIDENCE_PATH,
-      JSON.stringify({ sourceCommit: "479f9dc636c5330d48a9750eef8c8fca20b682c0", scope: "deterministic Next endpoint/proxy with Photon mocks; not live/browser/mobile",
+      JSON.stringify({ sourceBaseCommit: process.env.ADDRESS_ENDPOINT_SOURCE_COMMIT ?? null, scope: "deterministic Next endpoint/proxy with Photon mocks; not live/browser/mobile",
         liveRequests: 0, peakUpstream: peak, mockFetches: calledUrls.length, evidence,
         diagnosticCodes: [...new Set(diagnostics.map(row => row[0]))] }, null, 2) + "\n");
   } finally { globalThis.fetch = originalFetch; console.error = originalError; console.warn = originalWarn; }

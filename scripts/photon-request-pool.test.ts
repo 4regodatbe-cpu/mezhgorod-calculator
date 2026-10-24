@@ -78,23 +78,23 @@ test("pre-aborted callers invoke neither pool provider nor low-level fetch", asy
   assert.equal(calls, 0);
 });
 
-test("503 and429 pause same-origin queue; retry after cooldown works without error caching", async () => {
+test("three consecutive503/429 failures pause queue; retry after cooldown works", async () => {
   for (const code of [503, 429]) {
     let now = 100, calls = 0, failed = true;
     const pool = createPhotonRequestPool({ concurrency: 1, cooldownMs: 15, now: () => now,
       fetchFeatures: async () => { calls++; if (failed) throw new Error(`Photon ${code}`); return features; } });
-    const results = await Promise.allSettled(["one", "two", "three"].map(name => pool.get(`https://photon.test/${name}`)));
-    assert.ok(results.every(result => result.status === "rejected")); assert.equal(calls, 1);
-    await assert.rejects(pool.get("https://photon.test/four"), /cooling down/u); assert.equal(calls, 1);
+    const results = await Promise.allSettled(["one", "two", "three", "four", "five"].map(name => pool.get(`https://photon.test/${name}`)));
+    assert.ok(results.every(result => result.status === "rejected")); assert.equal(calls, 3);
+    await assert.rejects(pool.get("https://photon.test/six"), /cooling down/u); assert.equal(calls, 3);
     failed = false; now += 16;
-    assert.deepEqual(await pool.get("https://photon.test/one"), features); assert.equal(calls, 2);
+    assert.deepEqual(await pool.get("https://photon.test/one"), features); assert.equal(calls, 4);
     assert.equal(pool.stats().inFlight, 0);
   }
 });
 
 test("healthy cached results survive cooldown; TTL/LRU/empty responses stay bounded", async () => {
   let now = 0, calls = 0;
-  const pool = createPhotonRequestPool({ maxCacheEntries: 2, cacheTtlMs: 10, now: () => now,
+  const pool = createPhotonRequestPool({ maxCacheEntries: 2, cacheTtlMs: 10, failureThreshold: 1, now: () => now,
     fetchFeatures: async url => { calls++; if (url.endsWith("bad")) throw new Error("Photon 503"); return url.endsWith("empty") ? [] : features; } });
   await pool.get("https://photon.test/a"); await pool.get("https://photon.test/b");
   await pool.get("https://photon.test/a"); await pool.get("https://photon.test/c");
@@ -104,6 +104,42 @@ test("healthy cached results survive cooldown; TTL/LRU/empty responses stay boun
   await pool.get("https://photon.test/empty"); await pool.get("https://photon.test/empty"); assert.equal(calls, 7);
   await assert.rejects(pool.get("https://photon.test/bad"), /503/u);
   assert.deepEqual(await pool.get("https://photon.test/b"), features); assert.equal(calls, 8);
+});
+
+test("one partial503 never blocks next city, and successes reset the failure streak", async () => {
+  let calls = 0;
+  const pool = createPhotonRequestPool({ concurrency: 1, fetchFeatures: async url => {
+    calls++; if (url.includes("bad")) throw new Error("Photon 503"); return features;
+  } });
+  for (let i = 0; i < 3; i++) {
+    await assert.rejects(pool.get(`https://photon.test/bad-${i}`), /503/u);
+    assert.deepEqual(await pool.get(`https://photon.test/city-${i}`), features);
+  }
+  assert.equal(calls, 6); assert.equal(pool.stats().circuitRejected, 0);
+});
+
+test("an in-flight success clears an already-open circuit", async () => {
+  const success = deferred(); let failures = 0;
+  const pool = createPhotonRequestPool({ concurrency: 2, fetchFeatures: async url => {
+    if (url.endsWith("good")) return success.promise;
+    failures++; throw new Error("Photon 503");
+  } });
+  const good = pool.get("https://photon.test/good");
+  const errors = await Promise.allSettled([1, 2, 3].map(i => pool.get(`https://photon.test/bad-${i}`)));
+  assert.ok(errors.every(result => result.status === "rejected")); assert.equal(failures, 3);
+  await assert.rejects(pool.get("https://photon.test/blocked"), /cooling down/u);
+  success.resolve(features); await good;
+  // A different good URL is a fresh fetch, not a cache hit.
+  assert.deepEqual(await pool.get("https://photon.test/new-good"), features);
+});
+
+test("the complete failure streak must fit within15seconds, not just each adjacent gap", async () => {
+  let now = 0, calls = 0;
+  const pool = createPhotonRequestPool({ concurrency: 1, now: () => now, fetchFeatures: async () => { calls++; throw new Error("Photon 503"); } });
+  for (let i = 0; i < 4; i++) {
+    await assert.rejects(pool.get(`https://photon.test/failure-${i}`), /503/u); now += 10_000;
+  }
+  assert.equal(calls, 4); assert.equal(pool.stats().circuitRejected, 0);
 });
 
 test("source cooldown does not block another origin and has bounded diagnostic labels", async () => {
