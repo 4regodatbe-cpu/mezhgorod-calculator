@@ -1,6 +1,8 @@
 # ADDRESS-001: проект отдельного `settlementFallback` (DESIGN ONLY)
 
-Статус: **DESIGN_REVIEW_DONE / IMPLEMENTATION_NOT_STARTED**, 24.10.2026. [Source candidate](../../docs/checkpoints/2026-10-24-address-coordinate-source-intake-DONE.md), [Pilot HEAD DNS BLOCKED](../../docs/checkpoints/2026-10-24-address-geonames-head-DNS-BLOCKED.md). **Никаких импортированных координат сейчас нет**.
+Актуальный статус 24.10.2026: **GeoNames settlementFallback — DESIGN_ONLY / RUNTIME_BLOCKED_BY_DATA**. Поставка и offline review уже выполнены: [приёмка и факты](SETTLEMENT_PILOT_ACCEPTANCE.md). В runtime GeoNames не импортирован. Отдельный модуль [addressCitySnapshot](ADDRESS_CITY_SNAPSHOT.md) уже реализован, выключен и использует только четыре reviewed Photon Suggestion; его нельзя смешивать с будущим GeoNames-модулем.
+
+Интерфейсы и проектный контракт ниже относятся к исходному commit и сохранены как дизайн, а не описание нынешнего отсутствия любых fallback. В текущем /api/suggest есть unavailable-ветка addressCitySnapshot с отдельным false-флагом. Полные alias ZIP/joins повторно не нужны.
 
 ## Подтверждённые интерфейсы на commit `497cb4588d29192c2a60ab8f4dece7750f3f3112`
 
@@ -26,8 +28,8 @@
 
 ## Условия перехода к реализации
 
-1. Отдельный уже созданный [Pilot STARTED](../../docs/checkpoints/2026-10-24-address-geonames-pilot-STARTED.md); pilot A DNS-blocked, B/C не начинались.
-2. После доступности download — HEAD/size/checksum и выборка действительно сохранённых RU/UA records (с приоритетными полигонами, омонимами и русскими aliases), подготовка manifest, независимая attribution audit. Не внедрять пустую/выдуманную базу.
+1. Пилот поставки/структурного разбора завершён: [актуальные результаты](SETTLEMENT_PILOT_ACCEPTANCE.md). Исторический [Pilot STARTED](../../docs/checkpoints/2026-10-24-address-geonames-pilot-STARTED.md) не является текущим NEXT.
+2. На сохранённых данных закрыть оставшиеся 19 label-collision groups и независимую точность будущих selectable координат/политику покрытия. Нужен новый источник/доказательство, а не повтор HEAD/download/joins; актуальные counts и provenance уже сохранены. Проверить пользовательскую attribution перед реализацией.
 3. Перед **code implementation** — ещё один подробный STARTED, и только потом feature flag off / focused mocked tests (unavailable, partial, cancel, ambiguous, stale, missing checksum, no houses), regression /api/suggest, existing 887+ full tests, ESLint/TS/webpack/static gate.
 4. Сначала code review, долговременное сохранение и readback; включение в live отдельно после доказанной точности/политики и прямого разрешения релиза. До того ADDRESS-AVAILABILITY остаётся BLOCKED_BY_SOURCE/ENVIRONMENT.
 

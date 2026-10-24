@@ -1,3 +1,7 @@
+## DONE: сверка GeoNames статусов — 24.10.2026
+
+[Checkpoint](checkpoints/2026-10-24-settlement-status-reconciliation-DONE.md). Убраны устаревшие DNS/NOT_STARTED утверждения из текущих pilot/integration guide; GeoNames DATA_BLOCKED, snapshot false. NEXT: компактный актуальный handoff с сохранением истории.
+
 ## DONE browser acceptance plan / запуск BLOCKED — 24.10.2026
 
 [Checkpoint](checkpoints/2026-10-24-city-snapshot-browser-acceptance-DONE.md). SSR код сохранён remote d22205e/treece123f0. В ADDRESS_CITY_SNAPSHOT.md 8 браузерных сценариев с expected/evidence и mock-only границами. Browser NOT_RUN: нужен доступный браузер и STARTED; не повторять поиск Chromium при прежней среде. Snapshot false, срок31.10.2026 11:24:54МСК; full898/ESLint/build PASS — только локальные gates.
