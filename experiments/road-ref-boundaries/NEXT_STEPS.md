@@ -1,3 +1,7 @@
+## DONE recovery / критерии приёмки GeoNames — 24.10.2026
+
+Remote source `7058f97` уже содержит source intake/DNS blocker/design: не повторены. [Checkpoint](../../docs/checkpoints/2026-10-24-fallback-recovery-acceptance-DONE.md) · [критерии пилота](SETTLEMENT_PILOT_ACCEPTANCE.md). Критерии готовы, данные/покрытие НЕ проверены; runtime0, новых запросов/маршрутов0. NEXT: pilot A только при изменении доступа к download.geonames.org; до B отдельный STARTED с размером/лимитами. PR14 draft, без Production.
+
 ## DONE settlement fallback interface design / BLOCKED pilot — 24.10.2026
 
 [Интеграционный контракт](SETTLEMENT_FALLBACK_INTEGRATION.md), [7-file read-only checkpoint](../../docs/checkpoints/2026-10-24-settlement-fallback-contract-DONE.md). Безопасная интеграция только при полном `unavailable` Photon, optional OFF, verified geonameid/admin/coordinate snapshot, no local house data, fail-closed, unchanged Photon ranking. **Not implemented**. Pilot A DNS blocked/size unknown/B+C NOT_STARTED. Возобновлять HEAD/ограниченную выборку только если сетевое окружение изменено; последующая code-реализация требует отдельного STARTED и реально проверенных records. Не повторять audits/tests без причины.

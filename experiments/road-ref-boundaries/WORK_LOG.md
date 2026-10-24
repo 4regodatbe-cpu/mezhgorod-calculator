@@ -256,3 +256,8 @@ NEXT: отдельный bounded primary-source intake для coordinate-settlem
 ## 24.10.2026 — settlementFallback optional interface DESIGN DONE
 
 В рамках следующего независимого маленького шага после DNS блокера прочитаны `lib/address-search-service.ts`, `lib/photon-request-pool.ts`, `lib/photon-address-search.ts`, `app/api/suggest/route.ts`, `app/v2/components/types.ts`, `data/toll-feature-switches.json`, `lib/address-suggestion-cache.ts`. Определён [контракт](SETTLEMENT_FALLBACK_INTEGRATION.md): новый необязательный источник только при total `unavailable` текущего Photon, compatible `Suggestion`, отдельный origin/id geonameid/admin, проверенные WGS84/территориальные полигоны, 502 при пустом/unverified snapshot, no street/house, общий request budget без удвоения. [Датированный checkpoint](../../docs/checkpoints/2026-10-24-settlement-fallback-contract-DONE.md) содержит прочитанные SHA/точные проверки. Это проект документации; code0/tests0/live0/ZIP0. Следующий source step только после network change: pilot A bounded HEAD; B-STARTED перед download и code STARTED перед внедрением. Не трогать PR14 draft/main/Production/backup.
+
+
+## 24.10.2026 — recovery remote7058f97 / acceptance matrix DONE
+
+Сверены actual PR14 draft/head и последние completed CI. В текущем checkout восстановлены четыре exact blobs из partial clone; исходный tree подтверждён. Готовые source intake/pilot DNS/design не повторялись. Добавлена SETTLEMENT_PILOT_ACCEPTANCE.md с evidence/stop criteria; это не выполненная проверка данных. Подробнее: docs/checkpoints/2026-10-24-fallback-recovery-acceptance-DONE.md. Docs diff/link checks; code/build/live0. NEXT pilot A при изменении доступа; B STARTED до download; guards/Production без изменений.
