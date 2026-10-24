@@ -1,3 +1,7 @@
+## Preview BLOCKED / STARTED special timing — 24.10.2026
+
+Одна browser попытка exact Preview требует Vercel login. POST0, E2E UNVERIFIED; защита не менялась. [Следующий независимый блок](../../docs/checkpoints/2026-10-24-preview-BLOCKED-special-timing-STARTED.md): детализация provider/matching/pricing внутри special_options существующим optional timing. Цены/маршруты/число запросов сохранить.
+
 ## DONE timing CI / STARTED Preview — 24.10.2026
 
 CI40081150517: verify/geometry PASS, address external503 FAIL,50/Yandex SKIPPED. [Checkpoint/лимит одного расчёта](../../docs/checkpoints/2026-10-24-timing-ci-DONE-preview-STARTED.md). NEXT после durable: exact Preview5d8e904 Анапа→Краснодар, один расчёт/сохранение timings или blocker. 10с UNVERIFIED; без Production.
