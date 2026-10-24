@@ -1,3 +1,7 @@
+## DONE special timing — 24.10.2026
+
+Детализированы provider/routing/matching/pricing внутри special_options тем же optional calculationTiming. Focused16/16, full880/880, quote/API/ESLint/webpackTypeScript/static16/16 PASS. [Итог/следующий шаг](checkpoints/2026-10-24-special-timing-DONE.md). Новых live0, E2E10с UNVERIFIED; Preview требует auth. NEXT: exact remote/обычный CI, затем один авторизованный runtime POST либо bounded in-process CI probe с честной границей измерения. Цены/выбор не менялись, PR14 draft, без Production.
+
 ## Preview BLOCKED / STARTED special timing — 24.10.2026
 
 Одна browser попытка exact Preview требует Vercel login. POST0, E2E UNVERIFIED; защита не менялась. [Следующий независимый блок](checkpoints/2026-10-24-preview-BLOCKED-special-timing-STARTED.md): детализация provider/matching/pricing внутри special_options существующим optional timing. Цены/маршруты/число запросов сохранить.

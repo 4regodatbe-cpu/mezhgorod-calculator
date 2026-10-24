@@ -38,7 +38,7 @@ async function calculate(from:typeof anapa,to:typeof anapa,providers:{valhalla?:
  };
  try {
   const result=await POST(new NextRequest('http://localhost/api/v3/calculate',{method:'POST',body:JSON.stringify({from,to,departureAt:'2026-10-13T09:00:00+03:00'})}));
-  return {status:result.status,body:await result.json(),requests,traceShapes};
+  return {status:result.status,body:await result.json(),requests,traceShapes,serverTiming:result.headers.get("Server-Timing")};
  } finally {globalThis.fetch=original;}
 }
 
@@ -68,6 +68,8 @@ test('special-zone V3 filters invalid time before choosing and pricing the winni
  const r=await calculate(donetsk,moscow,{valhalla:{meters:1200000,seconds:-1},osrm:{meters:1210000,seconds:60000}});
  assert.equal(r.status,200,JSON.stringify(r.body));
  assert.equal(r.body.options.length,1);assert.equal(r.body.options[0].fast.seconds,60000);
+ for(const stage of ['special_options','routing','provider_valhalla','provider_osrm','toll_matching','toll_pricing','response_pricing']) assert.match(r.serverTiming ?? '',new RegExp(stage+';dur='));
+ assert.equal(r.requests.some(url=>url.includes('brouter.de')||url.includes('toll_booth_penalty')),false);
  assert.equal(r.body.options[0].fast.meters,1210000);assert.deepEqual(r.body.options[0].fast.quality.providers,['OSRM']);
 });
 

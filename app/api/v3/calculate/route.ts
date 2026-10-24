@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
       })]))};
     });
     if(policy.specialEndpoint) {
-      const special=await timing.measure("special_options", () => calculateSpecialOptions(from,to,departureAt,true));
+      const special=await timing.measure("special_options", () => calculateSpecialOptions(from,to,departureAt,true,timing));
       const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast),free:null,freeCandidate:null}));
       if(!options.length)throw new Error("MAINLAND_UNAVAILABLE");
       return respond({legs:options,options,mode,automaticMode,specialEndpoint:true,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});

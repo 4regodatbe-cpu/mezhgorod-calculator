@@ -56,3 +56,8 @@ ADDRESS-AVAILABILITYBLOCKED_BY_SOURCEвэтомrun:Донецк4actualhttp503+3c
 Parent d4ca027fca819291c8913cdb63d3376253058eff/tree2639d883c3af11ab784260083042e4ce841ad1cf прочитан обратно. Exact Preview5d8e904 READY, browser GET перенаправлен на Login–Vercel. POST расчётов0, autocomplete0, измеренного E2E нет. Vercel web_fetch — GET-only; локальный vercel CLI отсутствует, linked project отсутствует. Защита/credentials не менялись, share secret не извлекался/не создавался. Это BLOCKED_BY_ENVIRONMENT_AUTH, не ошибка приложения и не bot block. Тесты/сборка не повторялись ради наблюдения. Одного неавторизованного GET достаточно; не повторять login попытки.
 
 Следующий независимый малый блок STARTED: существующий optional calculationTiming передать последним необязательным аргументом calculateSpecialOptions, измерить provider_valhalla/provider_osrm/routing и обязательные toll_matching/toll_pricing внутри special_options. Fastest-only ветка: та же последовательность/Promise.allSettled, те же планы, критерии выбора, число fetch, тарифы. V2 без аргумента неизменён; обходные probes V2 не расширять. Метрики агрегированы по фиксированным labels без адресов/коридорных координат; не складывать пересекающиеся стадии. Проверить существующий special-options/API replay и добавить утверждения timing без новой внешней сети. Focused+fullgate+build, checkpoint/remote/readback. Это диагностика, не достигнутые10с и не устранение внешнего outage. Production/main/merge/backup не трогать.
+
+
+## 24.10.2026 — special timing gap FIXED
+
+Ранее общий special_options теперь содержит provider/routing/matching/pricing spans.16focused/880full/build PASS. Preview POST auth и10с E2E остаются UNVERIFIED; сбор диагностик не устраняет external503 и pending km.
