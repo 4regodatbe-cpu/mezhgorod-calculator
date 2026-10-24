@@ -1,5 +1,9 @@
 # Instructions for contributors and coding agents
 
+## Latest execution rule — 2026-10-24
+
+Split large authorized work into small bounded blocks before implementation. Execute multiple blocks sequentially in the same response/work session: complete, verify, checkpoint, commit/persist/read back, then automatically continue to the next authorized block without ending the turn or asking the user to say “continue” after every block. Resume from the first unfinished block after interruption; do not repeat completed work. Record blockers and proceed with independent viable blocks. If persistence fails, restore it before expanding work. Follow the current clarification at the top of docs/WORKFLOW_RULES.md and existing CI/single-writer/safety requirements. This does not imply background execution after the final response.
+
 Before repository work, read docs/WORK_STATE.md. It is the canonical current-state handoff and links to the relevant specifications and checkpoints.
 
 ## Scope, repeated findings and honest progress (user decision, 2026-10-16)

@@ -1,3 +1,7 @@
+## Порядок исполнения24.10
+
+Выполнять несколько небольших разрешённых блоков последовательно в одном ответе, сохраняя/проверяя remote после каждого; не завершать ответ ради ожидания «дальше». При сбое продолжить первый незавершённый. См. docs/WORKFLOW_RULES.md и checkpoint2026-10-24-sequential-blocks-one-response-DONE. Очередь разработки ниже не меняется.
+
 ## Актуальный следующий шаг24.10
 
 Километражный модуль DONE: см. KILOMETRAGE.md и docs/checkpoints/2026-10-24-road-kilometrage-DONE.md.851tests/buildPASS; reviewedsections0, pendingkmunknown, E2E10сUNVERIFIED. Сначала exact remote/codeCI readback, затем ограниченный offline ADDRESS-001 fan-out/fallback. Заполнение km/scope/цен независимо при наличии source; не повторять готовые6captures/12профилей и не запускать полный roadgraph. Предыдущий STARTED план ниже исторический.
