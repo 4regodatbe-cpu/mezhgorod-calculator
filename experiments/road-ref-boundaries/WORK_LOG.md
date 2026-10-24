@@ -261,3 +261,8 @@ NEXT: отдельный bounded primary-source intake для coordinate-settlem
 ## 24.10.2026 — recovery remote7058f97 / acceptance matrix DONE
 
 Сверены actual PR14 draft/head и последние completed CI. В текущем checkout восстановлены четыре exact blobs из partial clone; исходный tree подтверждён. Готовые source intake/pilot DNS/design не повторялись. Добавлена SETTLEMENT_PILOT_ACCEPTANCE.md с evidence/stop criteria; это не выполненная проверка данных. Подробнее: docs/checkpoints/2026-10-24-fallback-recovery-acceptance-DONE.md. Docs diff/link checks; code/build/live0. NEXT pilot A при изменении доступа; B STARTED до download; guards/Production без изменений.
+
+
+## 24.10.2026 — GeoNames CI HEAD STARTED
+
+Отдельная сеть GitHub runner для bounded Pilot A: .github/workflows/geonames-delivery-pilot.yml. Только3HEAD, contents:read/no writer, артефакты/headers/progress, ZIP0. План: docs/checkpoints/2026-10-24-geonames-ci-head-STARTED.md. После durable проверить actual run; B только отдельным STARTED. Source prior2d399b3/PR14draft, production untouched.

@@ -1,3 +1,7 @@
+## STARTED GeoNames HEAD в GitHub Actions — 24.10.2026
+
+Новый сетевой путь: отдельный read-only CI, только3HEAD/10с, архивы0. [План](checkpoints/2026-10-24-geonames-ci-head-STARTED.md). Дождаться actual run и сохранить A-result; до B отдельный STARTED. Не повторять container DNS/маршруты; runtime не меняется.
+
 ## DONE recovery / критерии приёмки GeoNames — 24.10.2026
 
 Remote source `7058f97` уже содержит source intake/DNS blocker/design: не повторены. [Checkpoint](checkpoints/2026-10-24-fallback-recovery-acceptance-DONE.md) · [критерии пилота](../experiments/road-ref-boundaries/SETTLEMENT_PILOT_ACCEPTANCE.md). Критерии готовы, данные/покрытие НЕ проверены; runtime0, новых запросов/маршрутов0. NEXT: pilot A только при изменении доступа к download.geonames.org; до B отдельный STARTED с размером/лимитами. PR14 draft, без Production.
