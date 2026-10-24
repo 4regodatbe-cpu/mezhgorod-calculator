@@ -61,3 +61,8 @@ Parent d4ca027fca819291c8913cdb63d3376253058eff/tree2639d883c3af11ab784260083042
 ## 24.10.2026 — special timing gap FIXED
 
 Ранее общий special_options теперь содержит provider/routing/matching/pricing spans.16focused/880full/build PASS. Preview POST auth и10с E2E остаются UNVERIFIED; сбор диагностик не устраняет external503 и pending km.
+
+
+## 24.10 — bounded outage/fallback review DONE
+
+Донецк7URL/1origin,нетнезависимогоfallbackдляcoldqueryприfull503.Positivecacheprocess/browser5миннеполныйкаталог.RuWiki2110имёнбезкоординат;benchmarkнеактивировать.ADDRESS-AVAILABILITYblockedsource/architecture,неисправлено.Следомboundedprimarysourceintakecoordinatecitycatalog,неполнаяroadnetwork. Подробности:docs/checkpoints/2026-10-24-address-outage-fallback-review-DONE.md.

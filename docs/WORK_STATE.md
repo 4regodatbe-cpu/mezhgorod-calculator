@@ -1,3 +1,7 @@
+## DONE outage/fallback review / next coordinate-source intake — 24.10.2026
+
+Все7вариантовДонецкаидутв1Photonorigin. Positiveкэши5миннепомогаютновомуcoldqueryприfull503. RuWiki2110имёнбезкоординат,benchmarkнельзяактивировать. [Итог/ограниченныйследующийшаг](checkpoints/2026-10-24-address-outage-fallback-review-DONE.md). Нуженпроверенныйcoordinatecitycatalog/независимыйautocompleteисточник;runtime0изменений/live0. До4primaryqueries/3docsintake,неroadnetwork/неповторperf/неугадыватьпозиции. Specialruntime7.318сDONE/887tests/buildPASSранее,Productionнет.
+
 ## DONE special runtime / performance series closed — 24.10.2026
 
 Донецк→Москва:HTTP200/specialEndpoint:true/dual/mainland/OSRM,1123.25км,3050₽изматрицы(непересверенотдельно),handler7.318с/process7.587с. [Evidence/ограничения/next](checkpoints/2026-10-24-special-runtime-live-DONE.md). Обычный2.225с иspecial7.318с уложились10с;глобальныйbrowserE2EUNVERIFIED.887tests/buildPASS. Не расширять perfкорпус безпричины;следом bounded offline outage/fallback review поиска. RuWiki2110имёнбезкоординат неготовыйfallback. Км/тарифныепробелы сохранены,Productionнет.
