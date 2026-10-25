@@ -2,6 +2,8 @@
 
 ## 25.10.2026 07:46 МСК — nationwide three-test infrastructure blocker
 
+Уточнение после readback remote SHA `77658f4bffe872e2db29bd796f4993befa4529c6`: connector ref update не породил GitHub Actions run, а доступного workflow-dispatch API нет. Hosted tests NOT_RUN; sandbox-only classification не сделана. Следующий запуск требует обычного authenticated push event по разрешённой ветке. Подробности: [checkpoint](../checkpoints/2026-10-25-nationwide-three-tests-CODEX-ENVIRONMENT-BLOCKED.md).
+
 Три файла имеют общий наблюдаемый локальный блокер: при попытке запуска `node --test <file>` parent Node получил `Error: spawnSync /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node EPERM`; stdout/stderr дочернего процесса пусты. Assertion-level причины неизвестны. Для отделения sandbox от тестов добавлен узкий Node 24 workflow только в разрешённой ветке; он сохраняет каждый stdout/stderr/exit code артефактом. Результат GitHub Actions пока не подтверждён. [Checkpoint](../checkpoints/2026-10-25-nationwide-three-tests-CODEX-ENVIRONMENT-BLOCKED.md).
 
 ## 24.10.2026 21:54 МСК — автономная работа начата

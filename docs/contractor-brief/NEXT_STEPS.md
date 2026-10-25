@@ -1,6 +1,6 @@
 # B01–B12 next steps
 
-Актуально на 25.10.2026 07:46 МСК.
+Актуально на 25.10.2026 07:46 МСК; уточнение после remote readback SHA `77658f4bffe872e2db29bd796f4993befa4529c6`: hosted run отсутствует, поскольку connector ref update не создал Actions event, доступного dispatch API нет. Нужен обычный authenticated push на разрешённую ветку; до результата тесты остаются BLOCKED.
 
 1. **B10 / infrastructure diagnostic PENDING:** локально три теста не дошли до assertion из-за общего `spawnSync ... EPERM`; дождаться узкого Node 24 workflow и прочитать stdout/stderr/exit-code artifacts. Не повторять локальный запуск при неизменном sandbox.
 
