@@ -1,5 +1,9 @@
 # B01–B12 work log
 
+## 25.10.2026 07:46 МСК — nationwide three-test infrastructure blocker
+
+Три файла имеют общий наблюдаемый локальный блокер: при попытке запуска `node --test <file>` parent Node получил `Error: spawnSync /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node EPERM`; stdout/stderr дочернего процесса пусты. Assertion-level причины неизвестны. Для отделения sandbox от тестов добавлен узкий Node 24 workflow только в разрешённой ветке; он сохраняет каждый stdout/stderr/exit code артефактом. Результат GitHub Actions пока не подтверждён. [Checkpoint](../checkpoints/2026-10-25-nationwide-three-tests-CODEX-ENVIRONMENT-BLOCKED.md).
+
 ## 24.10.2026 21:54 МСК — автономная работа начата
 
 По прямому поручению владельца создана отдельная чистая копия разрешённой ветки на exact remote/PR head `70ab6b840862fa40f090b960ee650b058e83b768`; исходная локальная ветка `work` не изменялась. Обязательные инструкции и полный brief B01–B12 прочитаны. Четыре параллельных исполнителя назначены только на read-only исследование; writer один.
