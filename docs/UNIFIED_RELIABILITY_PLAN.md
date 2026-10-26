@@ -1,5 +1,7 @@
 # Unified reliability and B01–B12 work queue
 
+Latest technical result: 24-block plan DONE17/24 (70.83%):1–14,17,19,22. Block14 adds a mocked transport rejection while Valhalla is unavailable; successful faster OSRM remains selected with its own ETA/geometry. Existing route-selection/pipeline suites, TypeScript, scoped ESLint and diff PASS; no live service. Checkpoint2026-10-27-0314-block-14-provider-fallback-DONE.md. Next block15 cache review; block20 profiling remains PARTIAL.
+
 Latest technical result: 24-block plan DONE16/24 (66.67%):1–13,17,19,22. Block13 offline review found no exact duplicate provider requests in saved Eisk/Maykop captures (32/32 and36/36 unique method+URL+body); current fan-out is needed for three Valhalla penalty candidates, OSRM/BRouter comparison, conditional bypass, and separate trace chunks. No code change. Checkpoint2026-10-27-0301-block-13-provider-request-counts-DONE.md. Next block14 existing-mock fallback review; block20 profiling remains PARTIAL.
 
 Latest technical result: 24-block plan DONE15/24 (62.5%):1–12,17,19,22. Block11 caps streamed Valhalla/OSRM/BRouter JSON at8MiB (>12x retained max652,899 B) and rejects malformed or incomplete route geometry; retained artifacts only, 68/68 HTTP200. Focused tests, API error mapping, tsc/ESLint/diff PASS. Checkpoint2026-10-27-0252-block-11-provider-response-bounds-DONE.md. Next block20 offline profile follow-up (PARTIAL).

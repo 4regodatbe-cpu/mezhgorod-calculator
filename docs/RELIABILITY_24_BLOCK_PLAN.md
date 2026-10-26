@@ -109,6 +109,8 @@
 
 ## Status reconciliation
 
+Latest block14 DONE: mocked Valhalla transport rejection does not suppress valid faster OSRM; own ETA/geometry are retained. Existing route-selection and pipeline cases cover invalid candidates, tie order and unknown/null toll evidence. Focused suites, TypeScript, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0314-block-14-provider-fallback-DONE.md`. Technical DONE17/24 (70.83%):1–14,17,19,22. Next block15 cache key/lifetime/isolation.
+
 Latest block13 DONE: current V2 route flow and B10 logs reviewed offline. Eisk32/32 and Maykop36/36 exact method+URL+body request keys were unique; 4 Valhalla route requests, OSRM/BRouter candidates and trace chunks are distinct; no unnecessary exact duplicate reproduced. No behavior change. Checkpoint `2026-10-27-0301-block-13-provider-request-counts-DONE.md`. Technical DONE16/24 (66.67%):1–13,17,19,22. Next block14 fallback/candidate correctness with mocks.
 
 Latest block11 DONE: B10 retained artifacts (no new provider requests) bound router response sizes: largest captured individual payload652,899 B, so a generous8MiB stream cap (>12x) is applied to Valhalla/OSRM/BRouter. Empty/malformed/interrupted JSON and invalid/empty geometry fail closed. Focused tests, API error mapping, tsc, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0252-block-11-provider-response-bounds-DONE.md`. Technical DONE15/24 (62.5%):1–12,17,19,22. Next block20 offline profiling follow-up; block20 remains PARTIAL.

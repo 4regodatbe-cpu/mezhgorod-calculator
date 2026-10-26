@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 03:14 МСК — reliability block14 provider fallback DONE
+
+- Parent remote/local `82dbd8a2e832816f832d20bb428e9910eda518df`; allowed branch only, PR14 Draft; no workflow runs on parent.
+- Added one regression to `scripts/v3-route-selection-audit.test.ts`: mocked Valhalla transport timeout/rejection with valid OSRM must retain the successful competing candidate and return its ETA/provider identity. No production code or policy changed.
+- Existing V3 tests in the same suite cover selecting fastest OSRM's own geometry, excluding invalid distance/time/geometry candidates, tie ordering and unknown toll when evidence is incomplete. Pipeline tests retain the unknown/null and paid/free contracts.
+- Focused route selection + V3 pipeline suites PASS, `npx tsc --noEmit` PASS, scoped ESLint PASS, `git diff --check` PASS. External providers fully mocked, zero live requests.
+- Checkpoint [block14](../checkpoints/2026-10-27-0314-block-14-provider-fallback-DONE.md). Technical progress17/24 (70.83%): blocks1–14,17,19,22. Next block15 cache key/TTL/isolation.
+
 ## 27.10.2026 03:01 МСК — reliability block13 provider request-count review DONE
 
 - Source remote/local `f5e694c87f0fbfbd2b9e4c4ab71d10f1851ca457`; allowed branch only, PR14 Draft; no source Actions runs.
