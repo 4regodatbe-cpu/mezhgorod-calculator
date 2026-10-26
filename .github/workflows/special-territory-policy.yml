@@ -7,12 +7,20 @@ on:
       - 'lib/**'
       - 'data/special-territory-boundaries.json'
       - 'scripts/**'
-      - '.github/workflows/special-territory-policy.yml'
+      - 'experiments/nationwide-tolls/**'
+      - 'experiments/toll-od-matrix/**'
+      - '**/*.test.ts'
+      - '**/*.test.mjs'
+      - '**/*.spec.ts'
+      - '**/*.spec.mjs'
+      - '.github/workflows/**'
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 jobs:
   verify:
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,9 +30,33 @@ jobs:
       - run: npm install --global pnpm@11.25.0
       - run: pnpm install --frozen-lockfile
       - run: node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts
+      - run: node scripts/special-territory-live-push-classifier.test.mjs
       - run: node node_modules/typescript/bin/tsc --noEmit
       - run: node node_modules/next/dist/bin/next build
+  classify_live_scope:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run_live: ${{ steps.changed.outputs.should_run_live }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - id: changed
+        name: Compare this PR update with its previous checked head; uncertainty fails open
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/classify-special-territory-live-push.mjs >> "$GITHUB_OUTPUT"
   live_probe:
+    needs: classify_live_scope
+    if: >-
+      ${{
+        always() &&
+        (
+          needs.classify_live_scope.result != 'success' ||
+          needs.classify_live_scope.outputs.should_run_live == 'true'
+        )
+      }}
     runs-on: ubuntu-latest
     continue-on-error: true
     timeout-minutes: 60
@@ -59,6 +91,15 @@ jobs:
             yandex-route-reference-audit.json
           if-no-files-found: ignore
   calculation_timing:
+    needs: classify_live_scope
+    if: >-
+      ${{
+        always() &&
+        (
+          needs.classify_live_scope.result != 'success' ||
+          needs.classify_live_scope.outputs.should_run_live == 'true'
+        )
+      }}
     runs-on: ubuntu-latest
     continue-on-error: true
     timeout-minutes: 2
