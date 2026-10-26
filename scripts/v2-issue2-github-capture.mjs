@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { pathToFileURL } from "node:url";
 import { CASES, DEFAULT_DEPARTURE, OUTPUT_ROOT, captureCase, replayCase } from "./v2-issue2-proxy-capture.mjs";
+import { selectCaptureCaseIds } from "./select-v2-issue2-cases.mjs";
 
 const ROUTERS = Object.freeze({
   valhalla: "valhalla1.openstreetmap.de",
@@ -28,8 +29,8 @@ function atomicWrite(file, data) {
 function jsonGzip(file, value) { atomicWrite(file, gzipSync(JSON.stringify(value))); }
 function updateManifest(manifest) { atomicWrite(path.join(artifactPath, "execution.json"), `${JSON.stringify(manifest, null, 2)}\n`); }
 
-function probeRequests() {
-  const { from, to } = CASES["yeisk-to-moscow"];
+function probeRequests(caseId) {
+  const { from, to } = CASES[caseId];
   const a = from.position;
   const b = to.position;
 
@@ -57,9 +58,9 @@ function probeRequests() {
   ];
 }
 
-async function probeProviders() {
+async function probeProviders(caseId) {
   const records = [];
-  for (const item of probeRequests()) {
+  for (const item of probeRequests(caseId)) {
     const started = Date.now();
     const record = { provider: item.provider, host: item.host, requestUrl: item.url, method: "GET" };
     try {
@@ -87,12 +88,12 @@ async function probeProviders() {
     }
     record.elapsedMs = Date.now() - started;
     records.push(record);
-    console.log(JSON.stringify({ phase: "provider-preflight", provider: record.provider, host: record.host, status: record.status ?? null, validRouteData: record.validRouteData ?? false, elapsedMs: record.elapsedMs, error: record.error ?? null }));
+    console.log(JSON.stringify({ phase: "provider-preflight", caseId, provider: record.provider, host: record.host, status: record.status ?? null, validRouteData: record.validRouteData ?? false, elapsedMs: record.elapsedMs, error: record.error ?? null }));
   }
 
   const summary = records.map(({ responseText, ...item }) => item);
-  jsonGzip(path.join(artifactPath, "provider-preflight.json.gz"), { createdAt: new Date().toISOString(), caseId: "yeisk-to-moscow", requestLimit: 1, providers: records });
-  atomicWrite(path.join(artifactPath, "provider-preflight-summary.json"), `${JSON.stringify({ caseId: "yeisk-to-moscow", requestLimit: 1, providers: summary }, null, 2)}\n`);
+  jsonGzip(path.join(artifactPath, "provider-preflight.json.gz"), { createdAt: new Date().toISOString(), caseId, requestLimit: 1, providers: records });
+  atomicWrite(path.join(artifactPath, "provider-preflight-summary.json"), `${JSON.stringify({ caseId, requestLimit: 1, providers: summary }, null, 2)}\n`);
   const blocked = records.filter((record) => record.status !== 200 || record.validRouteData !== true || new URL(record.responseUrl ?? record.requestUrl).hostname !== record.host);
   if (blocked.length) throw new Error(`PROVIDER_PREFLIGHT_BLOCKED:${blocked.map((item) => `${item.provider}:${item.status ?? item.error ?? "invalid-route-data"}`).join(",")}`);
 }
@@ -150,13 +151,13 @@ function resultSummary(response) {
 
 function v3SummaryFromText(text) { return resultSummary({ responseStatus: 200, ...JSON.parse(text) }); }
 
-async function compareWithV3(v2Captures) {
+async function compareWithV3(v2Captures, caseIds = Object.keys(CASES)) {
   const v3Root = "experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/2026-10-19";
   const v3ReplayPath = path.join(v3Root, "offline-replay.json.gz");
   const v3ReplayBytes = fs.readFileSync(v3ReplayPath);
   const v3Replay = JSON.parse(gunzipSync(v3ReplayBytes));
   const rows = [];
-  for (const caseId of Object.keys(CASES)) {
+  for (const caseId of caseIds) {
     const v3CapturePath = path.join(v3Root, `${caseId}.json.gz`);
     const v3CaptureBytes = fs.readFileSync(v3CapturePath);
     const v3Capture = JSON.parse(gunzipSync(v3CaptureBytes));
@@ -199,6 +200,7 @@ async function compareWithV3(v2Captures) {
 }
 
 async function main() {
+  const caseIds = selectCaptureCaseIds(process.env.B10_CAPTURE_CASES, Object.keys(CASES));
   fs.mkdirSync(artifactPath, { recursive: true });
   const manifest = {
     status: "STARTED",
@@ -209,16 +211,17 @@ async function main() {
     node: process.version,
     platform: process.platform,
     arch: process.arch,
-    caseOrder: ["provider preflight (one request per router)", "yeisk-to-moscow capture", "maykop-to-moscow capture", "offline Thu/Sat replay and V2/V3 comparison"],
+    caseIds,
+    caseOrder: ["provider preflight (one request per router for first selected case)", ...caseIds.map((caseId) => `${caseId} capture`), "offline Thu/Sat replay and V2/V3 comparison for selected cases"],
     casesCompleted: [],
   };
   updateManifest(manifest);
   try {
-    await probeProviders();
+    await probeProviders(caseIds[0]);
     manifest.status = "PROVIDERS_AVAILABLE";
     updateManifest(manifest);
     const captures = {};
-    for (const caseId of Object.keys(CASES)) {
+    for (const caseId of caseIds) {
       const summary = await captureCase(caseId, DEFAULT_DEPARTURE);
       const checked = checkCapture(caseId, summary);
       captures[caseId] = checked;
@@ -226,7 +229,7 @@ async function main() {
       manifest.status = caseId === "yeisk-to-moscow" ? "YEISK_CAPTURE_COMPLETE" : "MAYKOP_CAPTURE_COMPLETE";
       updateManifest(manifest);
     }
-    const comparison = await compareWithV3(captures);
+    const comparison = await compareWithV3(captures, caseIds);
     manifest.status = comparison.status;
     manifest.completedAt = new Date().toISOString();
     updateManifest(manifest);
