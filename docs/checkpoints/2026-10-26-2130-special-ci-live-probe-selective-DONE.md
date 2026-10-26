@@ -1,6 +1,7 @@
 # Selective PR live-probe CI — DONE
 
-- Status/time: DONE, 26.10.2026 21:30 МСК.
+- Status/time: DONE, 26.10.2026 20:02 МСК (timestamp corrected; this draft path's `2130` suffix was wrong and is retained without deleting history).
+- Accurate checkpoint path: [2026-10-26-2002-selective-ci-live-probe-DONE.md](2026-10-26-2002-selective-ci-live-probe-DONE.md).
 - Source branch/head before this checkpoint: `fix/v3-missing-route-prices-2026-10-15` / `f2208fdae88983b5efe1ce69c29d3b9da6845c57`.
 - PR #14 remains open and Draft. `main`, Android, backup, Production, merge, and force push untouched.
 - Files changed for this bounded block: `.github/workflows/special-territory-policy.yml`, `scripts/classify-special-territory-live-push.mjs`, `scripts/special-territory-live-push-classifier.test.mjs`, proposal/status/log/checkpoint docs.
@@ -18,4 +19,4 @@ The existing PR `verify` job still runs project tests, TypeScript and Next build
 
 ## Limits and next step
 
-The change does not alter application algorithms, tariff/geometric logic, `addressCitySnapshot`, Production, or the other workflows. Remote PR head was read back as `f2208fdae88983b5efe1ce69c29d3b9da6845c57` before docs finalization; subsequent file updates must be verified by branch readback. Next: inspect the already-prepared B10 workflow and capture harness for Maykop-only scope, confirm the expected current-update classifier result will be non-runtime, then make at most one narrow Maykop capture with raw provider responses/status/hash and offline replay/V3 comparison. Do not recapture Eisk. If safe skip cannot be proven, do not launch B10 automatically.
+The change does not alter application algorithms, tariff/geometric logic, `addressCitySnapshot`, Production, or the other workflows. Hosted Actions run timestamp is 2026-10-26 17:02 UTC = 20:02 МСК. Remote PR head was read back as `f2208fdae88983b5efe1ce69c29d3b9da6845c57` before docs finalization. Next: inspect the already-prepared B10 workflow and capture harness for Maykop-only scope, confirm the expected current-update classifier result will be non-runtime, then make at most one narrow Maykop capture with raw provider responses/status/hash and offline replay/V3 comparison. Do not recapture Eisk. If safe skip cannot be proven, do not launch B10 automatically.
