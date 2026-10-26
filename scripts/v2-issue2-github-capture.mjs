@@ -10,7 +10,8 @@ const ROUTERS = Object.freeze({
   osrm: "router.project-osrm.org",
   brouter: "brouter.de",
 });
-const REQUIRED_CALLS = Object.freeze({ [ROUTERS.valhalla]: 3, [ROUTERS.osrm]: 1, [ROUTERS.brouter]: 1 });
+const REQUIRED_MIN_CALLS = Object.freeze({ [ROUTERS.valhalla]: 3, [ROUTERS.osrm]: 1, [ROUTERS.brouter]: 1 });
+const MAX_ROUTE_CALLS = 64;
 const THURSDAY = "2026-10-22T09:00:00+03:00";
 const SATURDAY = "2026-10-24T09:00:00+03:00";
 const artifactRoot = process.env.B10_ARTIFACT_DIR ?? `b10-v2-issue2-${process.env.GITHUB_RUN_ID ?? "local"}`;
@@ -96,7 +97,7 @@ async function probeProviders() {
   if (blocked.length) throw new Error(`PROVIDER_PREFLIGHT_BLOCKED:${blocked.map((item) => `${item.provider}:${item.status ?? item.error ?? "invalid-route-data"}`).join(",")}`);
 }
 
-function checkCapture(caseId, summary) {
+export function checkCapture(caseId, summary) {
   const capturePath = path.join(runRoot, caseId, "capture.json.gz");
   const bytes = fs.readFileSync(capturePath);
   const capture = JSON.parse(gunzipSync(bytes));
@@ -104,18 +105,28 @@ function checkCapture(caseId, summary) {
     const host = new URL(call.url).hostname;
     return { host, url: call.url, method: call.method, status: call.status ?? null, error: call.error ?? null, elapsedMs: call.elapsedMs ?? null, responseBytes: call.text == null ? null : Buffer.byteLength(call.text), responseSha256: call.text == null ? null : sha256(call.text) };
   });
-  const counts = Object.fromEntries(Object.keys(REQUIRED_CALLS).map((host) => [host, callReport.filter((call) => call.host === host).length]));
+  const counts = Object.fromEntries(Object.keys(REQUIRED_MIN_CALLS).map((host) => [host, callReport.filter((call) => call.host === host).length]));
+  const countsByEndpoint = Object.fromEntries([...new Set(callReport.map((call) => `${call.host}${new URL(call.url).pathname}`))].map((key) => [key, callReport.filter((call) => `${call.host}${new URL(call.url).pathname}` === key).length]));
   const failures = callReport.filter((call) => call.status !== 200 || call.error || call.responseSha256 === null);
   const routeResponse = capture.response?.json;
   const fast = routeResponse?.legs?.[0]?.fast;
   const errors = [];
   if (capture.response?.status !== 200) errors.push(`API_STATUS_${capture.response?.status}`);
   if (capture.caseId !== caseId) errors.push("CASE_ID_MISMATCH");
-  if (callReport.length !== Object.values(REQUIRED_CALLS).reduce((a, b) => a + b, 0)) errors.push(`CALL_COUNT_${callReport.length}`);
-  for (const [host, expected] of Object.entries(REQUIRED_CALLS)) if (counts[host] !== expected) errors.push(`HOST_CALL_COUNT_${host}_${counts[host]}_EXPECTED_${expected}`);
+  if (callReport.length > MAX_ROUTE_CALLS) errors.push(`CALL_COUNT_LIMIT_${callReport.length}_MAX_${MAX_ROUTE_CALLS}`);
+  for (const host of Object.keys(REQUIRED_MIN_CALLS)) if (counts[host] < REQUIRED_MIN_CALLS[host]) errors.push(`HOST_CALL_COUNT_${host}_${counts[host]}_MIN_${REQUIRED_MIN_CALLS[host]}`);
+  if (callReport.some((call) => !Object.values(ROUTERS).includes(call.host))) errors.push("UNEXPECTED_PROVIDER_HOST");
+  if (callReport.some((call) => {
+    if (call.host !== ROUTERS.valhalla) return false;
+    const pathname = new URL(call.url).pathname;
+    return !((pathname === "/route" && call.method === "GET") || (pathname === "/trace_attributes" && call.method === "POST"));
+  })) errors.push("UNEXPECTED_VALHALLA_PATH_OR_METHOD");
+  if (callReport.filter((call) => call.host === ROUTERS.valhalla && new URL(call.url).pathname === "/route" && call.method === "GET").length < REQUIRED_MIN_CALLS[ROUTERS.valhalla]) errors.push("VALHALLA_ROUTE_CALLS_INCOMPLETE");
+  if (callReport.some((call) => call.host === ROUTERS.osrm && (!new URL(call.url).pathname.startsWith("/route/v1/driving/") || call.method !== "GET")) || callReport.filter((call) => call.host === ROUTERS.osrm).length !== 1) errors.push("OSRM_ROUTE_CALL_COUNT_NOT_ONE");
+  if (callReport.some((call) => call.host === ROUTERS.brouter && (new URL(call.url).pathname !== "/brouter" || call.method !== "GET")) || callReport.filter((call) => call.host === ROUTERS.brouter).length !== 1) errors.push("BROUTER_ROUTE_CALL_COUNT_NOT_ONE");
   if (failures.length) errors.push(`HTTP_OR_FETCH_FAILURES_${failures.length}`);
   if (!(Number(fast?.meters) > 0 && Number(fast?.seconds) > 0)) errors.push("API_ROUTE_RESULT_MISSING");
-  const report = { caseId, passed: errors.length === 0, responseStatus: capture.response?.status, providerCalls: callReport.length, counts, calls: callReport, capture: { path: capturePath, bytes: bytes.length, sha256: sha256(bytes), declaredSha256: summary.captureSha256 }, errors };
+  const report = { caseId, passed: errors.length === 0, responseStatus: capture.response?.status, providerCalls: callReport.length, counts, countsByEndpoint, calls: callReport, capture: { path: capturePath, bytes: bytes.length, sha256: sha256(bytes), declaredSha256: summary.captureSha256 }, errors };
   atomicWrite(path.join(artifactPath, `${caseId}-capture-validation.json`), `${JSON.stringify(report, null, 2)}\n`);
   console.log(JSON.stringify({ phase: "capture-validation", caseId, passed: report.passed, responseStatus: report.responseStatus, providerCalls: report.providerCalls, counts, errors }));
   if (!report.passed) throw new Error(`CAPTURE_INCOMPLETE:${caseId}:${errors.join(";")}`);
