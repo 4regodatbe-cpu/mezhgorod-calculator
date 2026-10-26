@@ -1,5 +1,9 @@
 # B01–B12 work log
 
+## 26.10.2026 16:51 МСК — three nationwide tests environment diagnosis DONE
+
+GitHub Actions run [40332405721](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40332405721) on allowed head `2907a409305834c4cb9b25bc717978f049bb22f9`, Node 24.21.0: child-process tests 3/3, automatic policy replay integration 3/3, systemic report 1/1; total 7/7 PASS, 0 FAIL. Artifact/log streams fetched and archived with zero exit codes/empty stderr; see [evidence](../../experiments/nationwide-tolls/checks/2026-10-26-three-test-diagnostic/README.md). Earlier local `spawnSync ... EPERM` failures are confirmed Codex child-process sandbox restriction, not product failures. Do not rerun absent a new cause. [Checkpoint](../checkpoints/2026-10-26-1651-nationwide-three-tests-CODEX-ENVIRONMENT-DIAGNOSIS-DONE.md).
+
 ## 25.10.2026 07:46 МСК — nationwide three-test infrastructure blocker
 
 Уточнение после readback remote SHA `77658f4bffe872e2db29bd796f4993befa4529c6`: connector ref update не породил GitHub Actions run, а доступного workflow-dispatch API нет. Hosted tests NOT_RUN; sandbox-only classification не сделана. Следующий запуск требует обычного authenticated push event по разрешённой ветке. Подробности: [checkpoint](../checkpoints/2026-10-25-nationwide-three-tests-CODEX-ENVIRONMENT-BLOCKED.md).

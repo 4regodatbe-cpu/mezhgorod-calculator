@@ -1,10 +1,10 @@
 # B01–B12 next steps
 
-Актуально на 25.10.2026 07:46 МСК; уточнение после remote readback SHA `77658f4bffe872e2db29bd796f4993befa4529c6`: hosted run отсутствует, поскольку connector ref update не создал Actions event, доступного dispatch API нет. Нужен обычный authenticated push на разрешённую ветку; до результата тесты остаются BLOCKED.
+Актуально на 26.10.2026 16:51 МСК; nationwide Node 24 diagnostic завершён: [run 40332405721](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40332405721), 7/7 PASS, логи и артефакт сохранены в репозитории. Локальный EPERM объясняется Codex sandbox; тесты не повторять без новой причины.
 
-1. **B10 / infrastructure diagnostic PENDING:** локально три теста не дошли до assertion из-за общего `spawnSync ... EPERM`; дождаться узкого Node 24 workflow и прочитать stdout/stderr/exit-code artifacts. Не повторять локальный запуск при неизменном sandbox.
+1. **B10 / three-test diagnosis DONE:** 7/7 PASS hosted; [evidence](../../experiments/nationwide-tolls/checks/2026-10-26-three-test-diagnostic/README.md). Локальные падения — sandbox EPERM; тесты завершены, не повторять без новой причины.
 
-2. **B10 IN_PROGRESS:** V2 capture harness завершён, live capture заблокирован недоступностью Valhalla/OSRM/BRouter; не повторять без изменения доступности.
+2. **B10 IN_PROGRESS / BLOCKED_BY_NETWORK:** V2 capture harness завершён; следующий полезный блок — точное сравнение Ейска/Майкопа при доступных provider captures. Сейчас Valhalla/OSRM/BRouter недоступны; без изменения доступности не повторять.
 3. **B03 BLOCKED_BY_ENVIRONMENT_BROWSER_RUNTIME:** Chromium падает до DOM с crashpad `setsockopt: Operation not permitted`, exit 133; восемь UI сценариев NOT_RUN. Повторять только в другой browser runtime.
 4. **B01–B02 BLOCKED_BY_SOURCE/DATA:** address pool/circuit и GeoNames intake выполнены; нужны новые подтверждённые labels/hierarchy/coordinates.
 5. **B04 IDENTITY_DONE / DATA_BLOCKED:** точные координаты и directed topology сохранены; official km/operator scope/fare unknown, runtime inactive.

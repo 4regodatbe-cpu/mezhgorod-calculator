@@ -1,6 +1,6 @@
-# B01–B12 — 25.10.2026 07:46 МСК
+# B01–B12 — 26.10.2026 16:51 МСК
 
-Текущий remote/PR head: `77658f4bffe872e2db29bd796f4993befa4529c6` (tree `88711b2b565448059832082a1b08fab5f3f09dbf`). Три nationwide tests объединены в один infrastructure blocker: дочерний Node невозможен в Codex (`spawnSync ... EPERM`); hosted Node 24 workflow сохранён, но на этом commit run не создан, доступного dispatch нет. Tests остаются NOT_RUN на hosted; повторять локально не следует. Следующий необходимый вход — обычный authenticated push event по разрешённой ветке. Точный readback/ограничения: [checkpoint](checkpoints/2026-10-25-nationwide-three-tests-CODEX-ENVIRONMENT-BLOCKED.md), [WORK_LOG](contractor-brief/WORK_LOG.md), [NEXT_STEPS](contractor-brief/NEXT_STEPS.md).
+Разрешённая ветка и PR #14 подтверждены на `2907a409305834c4cb9b25bc717978f049bb22f9`; PR остаётся Draft. Nationwide test environment diagnosis DONE: GitHub Actions run 40332405721, Node 24.21.0, 7/7 PASS. Сохранены stdout/stderr/exit codes и ZIP артефакт с SHA256; локальный `spawnSync ... EPERM` классифицирован как ограничение Codex sandbox. Тесты не повторять без новой причины. См. [checkpoint](checkpoints/2026-10-26-1651-nationwide-three-tests-CODEX-ENVIRONMENT-DIAGNOSIS-DONE.md), [evidence](../experiments/nationwide-tolls/checks/2026-10-26-three-test-diagnostic/README.md), [WORK_LOG](contractor-brief/WORK_LOG.md), [NEXT_STEPS](contractor-brief/NEXT_STEPS.md).
 
 # B01–B12 IN PROGRESS — 24.10.2026 21:54 МСК
 
