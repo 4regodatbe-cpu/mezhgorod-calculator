@@ -1,38 +1,39 @@
 # Технический аудит репозитория «Из А в Б»
 
-IN_PROGRESS; новый аудит из 18 блоков. Remote `fix/v3-missing-route-prices-2026-10-15`; initial source SHA `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`. Только статический анализ и просмотр исторических evidence. Не менялись код, бизнес-логика, тарифы/CI; не запускались тесты, build, browser или live запросы. Процент только нового плана.
+IN_PROGRESS; новый аудит — 18 блоков. Current source `fix/v3-missing-route-prices-2026-10-15`; initial reviewed SHA `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`. Read-only; no business logic, tariffs, CI, or production changes. No tests/build/browser/live requests. Progress applies only to this audit.
 
-## План / прогресс
+## Progress
 
-1 architecture; 2 address lookup; 3 cache/cancel; 4 API inputs; 5 providers; 6 candidate selection; 7 saved V2/V3 captures; 8 geometry; 9 fare composition; 10 V2 UI; 11 V3 UI; 12 API outputs/errors; 13 security; 14 performance; 15 dependencies/build; 16 test quality; 17 CI; 18 docs/data governance. Done 12/18 (66.7%). Последний [B12 checkpoint](checkpoints/2026-10-26-2229-codebase-audit-block-12-DONE.md).
+1 architecture; 2 address lookup; 3 cache/pool; 4 API input; 5 providers; 6 candidate selection; 7 saved captures; 8 geometry/boundaries; 9 pricing composition; 10 V2 UI; 11 V3 UI; 12 API outputs; 13 security/privacy; 14 perf; 15 deps/build; 16 tests; 17 CI; 18 data governance/synthesis. Done 13/18 (72.2%); [last checkpoint B13](checkpoints/2026-10-26-2240-codebase-audit-block-13-DONE.md).
 
-## Saved V2/V3 comparison
+## Existing V2/V3 results (no replay)
 
-Ейск V2−V3 Thu: −1m/0s/+580₽; Sat −1m/0s/+1,530₽. Майкоп Thu/Sat: −1m/0s/0₽. Это capture/API proxy results, не тарифные доказательства; details/SHA в [B7](checkpoints/2026-10-26-2143-codebase-audit-block-07-DONE.md).
+Eisk Thu/Sat V2−V3 fare deltas +580/+1,530 RUB and route −1m/0s; Maykop fare delta 0 both days and route −1m/0s. Outputs are proxy evidence only, not operator tariff confirmation. See B7 checkpoint for source hashes.
 
-## Findings
+## Findings: P2, not runtime-reproduced
 
-### P2 — вероятные риски / ограниченные контракты
+- **AUD-GEOCODE-01:** direct Photon label geocode lacks local timeout; a slow provider may hold calculation until platform timeout. Recommend bounded adapter/abort test, isolated.
+- **AUD-API-01:** calculate routes lack explicit request bytes/label size limits; platform constraints unknown. Shared input validator recommendation.
+- **AUD-PROVIDER-01:** route JSON responses have no explicit app-level byte cap; provider/platform limits unverified.
+- **AUD-TEST-01:** V2-specific invalid geometry regression not found; empty geometry on current API paths is rejected by route control checks. Coverage gap only.
+- **AUD-TRACE-RECOVERY-01:** incomplete map trace can still have status=toll; corridor recovery then uses lower threshold (M4 2/4; M12 2/5 consecutive matched geometry segments) and may return matched sum for detected segments. Potential partial-total classification, unproven. Add bounded complete/incomplete trace fixtures before behavior changes; medium risk.
+- **AUD-UI-01:** V2 calculation hook has no unmount cancellation (file lines25,70–74,143), unlike V3. Possible continued backend work on SPA navigation. Low-risk isolated cleanup/test.
+- **AUD-DATE-01, confirmed validation inconsistency:** `app/api/v2/calculate/route.ts:48` only tests Date parse; invalid calendar dates can normalize and time without timezone is accepted, while V3 validates date and offset. Since departure affects toll period, direct malformed V2 API input can select another period. UI normally sends ISO. Recommend share strict date validator + tests; low–medium risk.
+- **AUD-ERROR-01, confirmed HTTP status weakness:** V2 line97 / V3 line132 map all non-`UNAVAILABLE` exceptions to 400, including unknown internal errors. Generic message is safe, but clients/monitoring misclassify server failures. Recommend typed input errors=400, upstream=502, unexpected=500; low risk.
+- **AUD-SEC-01, probable abuse/resource risk:** `app/api/collect/route.ts:20–57` accepts public POST, parses JSON before truncating fields, then forwards accepted events/feedback to configured webhook without visible body-size limit, rate limit or fetch deadline. Feedback itself is capped after parse; route fields are coarsened. Repeated large/valid requests could consume function/webhook capacity; no abuse was attempted. Recommend pre-parse/platform size cap, abuse-rate policy at edge or service, and bounded webhook deadline; low/medium risk and independently testable. Validate deployment rate controls before calling it an exploitable defect.
 
-- **AUD-GEOCODE-01:** direct label Photon geocode lacks local deadline; slow call may hold request. Not reproduced. Isolated bounded transport fix/test.
-- **AUD-API-01:** no explicit request byte/label size caps in calculate handlers; platform caps unknown. Shared validator suggested.
-- **AUD-PROVIDER-01:** route JSON parsed without explicit application size cap; upstream limits unverified.
-- **AUD-TEST-01:** no V2 counterpart found for V3 invalid geometry regression; V2 public calls enforce plan controls. Coverage gap, no demonstrated wrong fare.
-- **AUD-TRACE-RECOVERY-01:** `toll-validator.ts:317–325` can return `complete:false,status:toll`; `toll-recovery.ts:101–104,117` then uses lower minimum geometry run (M4 2 vs4; M12 2 vs5) and may return matched toll for matched subset. Plausible partial-total risk; no repro, geometry still required. Add controlled complete/incomplete trace fixtures before policy changes. Medium risk; isolated evidence contract.
-- **AUD-UI-01:** V2 `use-v2-calculation.ts:25,70–74,143` cancels on replacement/clear but not unmount. Potential ongoing backend work on SPA unmount; not reproduced. Low-risk isolated cleanup. V3 already has cleanup.
-- **AUD-DATE-01 (confirmed validation inconsistency):** V2 `app/api/v2/calculate/route.ts:48` checks only whether `new Date(value)` is invalid; impossible calendar dates can normalize and time-of-day strings without an offset are accepted. V3 `app/api/v3/calculate/route.ts:33+` validates calendar and requires an offset when time is included. Since departure date selects toll period, direct V2 API input can map to a different day/period instead of 400. UI sends ISO timestamps, so exposure to normal users is not demonstrated. Fix proposal: reuse strict date contract and regression tests; low–medium risk, independent validator.
-- **AUD-ERROR-01 (confirmed contract weakness):** V2 `app/api/v2/calculate/route.ts:97` and V3 `app/api/v3/calculate/route.ts:132` classify every exception not suffixed `UNAVAILABLE` as HTTP400. Unknown/internal failures therefore masquerade as client errors, weakening monitoring/retry behavior; response body remains generic. Recommend explicit typed input errors (400), known upstream unavailable (502), unexpected internal (500) with safe generic body. Low risk, independently testable.
+No P0/P1 confirmed. Provisional V2 empty-geometry P1 withdrawn after B6.
 
-No P0/P1 confirmed. Initial V2 empty-geometry P1 was withdrawn after current call paths showed ordered controls required. Incomplete recovery concern remains P2 only.
+## B13 controls reviewed
 
-## UI/API safeguards observed
-
-V2/V3 UI preserve toll `unknown` as null in request telemetry and show unknown price wording. V3 hook response validator checks schema, numeric bounds, fare sums and unknown/free semantics. V2 response validation is shallower. V2 and V3 API handlers validate enum/rate/coordinates; V2 date is less strict. Error status classification is shared weakness above.
+- `/api/suggest` caps q at 200 chars, ignores under-3 chars, and uses shared bounded address budget with request abort; logs coarse operational failure metadata, not raw query in inspected handler.
+- Vercel debug endpoints require configured `CALCULATOR_DEBUG_TOKEN`; hide unauthorized responses as 404; bound labels/timeouts. `/api/v2/classify` caps positions at 2.
+- `/api/collect` has field validation/coarsening and honeypot for feedback, but no explicit request body/rate/webhook timeout found in handler.
 
 ## Unchecked
 
-Blocks 13–18: abuse/privacy/security, perf/memory/requests, deps/build/supply chain, test breadth/quality, CI selective coverage, data governance and final synthesis. No runtime tests/requests/build. No mass route/fare audit repeated.
+Blocks 14–18: performance/memory, dependencies/build/supply chain, test effectiveness, CI configuration and data/doc governance. No runtime execution; no security probing. No tariff/road audit.
 
 ## Next
 
-B13 security/abuse/privacy static-only: API limits, logging/analytics payloads, external services and error/data handling. Do not probe or attack running services.
+B14 static resource/performance review: repeated computation, provider fan-out, caching and possible memory bounds. No benchmarks or network.

@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:29 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:40 МСК
 
-**Progress: 12/18 blocks (66.7%).** B12 API contracts reviewed. New P2 findings: V2 date validation is weaker than V3 (normalizes invalid calendar dates / accepts local timestamps); V2/V3 map unknown internal errors to HTTP400. Static only, no request tests. [Audit](CODEBASE_AUDIT.md) · [B12](checkpoints/2026-10-26-2229-codebase-audit-block-12-DONE.md).
+**Progress: 13/18 blocks (72.2%).** B13 security/abuse/privacy review complete. P2 risk: public `/api/collect` parses body before field caps, has no visible app-level rate/size cap or webhook timeout. No probing/abuse tests. [Audit](CODEBASE_AUDIT.md) · [B13](checkpoints/2026-10-26-2240-codebase-audit-block-13-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
