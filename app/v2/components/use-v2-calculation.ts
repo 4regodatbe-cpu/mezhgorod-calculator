@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { pickOptimal } from "./route-utils";
 import { distance, duration, money } from "./format";
 import { defaults, tariffNames } from "./pricing-data";
@@ -23,6 +23,7 @@ const vehicleForRate = { standard: "standard", comfort: "comfort", comfortPlus: 
 
 export function useV2Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint = "/api/v2/calculate", analyticsVersion = "2.0" }: CalculationInput) {
   const pending=useRef<AbortController|null>(null);
+  useEffect(() => () => { pending.current?.abort(); pending.current = null; }, []);
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);

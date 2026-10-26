@@ -35,3 +35,12 @@
 - Contrary to local classification model, hosted classifier output `route-runtime-changed` because its last verified baseline predates earlier skipped commits. Consequently `live_probe` ran. Its route geometry probe PASS; address runtime probe completed3/3 in2.427s: Ростов PASS (103 features), Красн PASS (20), Донецк SOURCE_UNAVAILABLE (HTTP503/cooldown, 0 features). 50-settlement and Yandex jobs SKIPPED. Job conclusion failure is tolerated (`continue-on-error`); overall workflow SUCCESS. This unplanned live probe is logged; do not repeat it. No B03 browser or B10 capture ran.
 - Local isolated version/YAML checks PASS; exact systemic composition workflow command PASS on Node24.19. Local `npm run build` could not complete because nationwide child-process tests are blocked by known Codex `spawnSync EPERM`; direct Turbopack build also hit `Operation not permitted`. Hosted verification resolves the Node24/build regression question; the local failures remain environment-specific.
 - Only setup-node versions changed; triggers, jobs, pricing and geometry checks/assertions untouched. Next block: AUD-UI-01.
+
+## 26.10.2026 23:30 МСК — AUD-UI-01 DONE
+
+- Parent: `3f5f751898554cde144cbf67c6eff1d61bcc2f36`; allowed branch and PR14 Draft; Actions idle after run40394972858.
+- Regression test first: new `scripts/v2-hook-unmount-abort.test.mjs` failed because the request AbortSignal remained `aborted:false` after simulated component cleanup. The deferred response is released, and late result remains uncommitted after the fix.
+- Minimal fix in `app/v2/components/use-v2-calculation.ts`: `useEffect` cleanup aborts `pending.current` and clears the ref. No fetch semantics, result behavior, or business logic changed.
+- GREEN: focused V2 lifecycle1/1, existing V3 lifecycle/race6/6, ESLint focused files (0 errors; existing `analyticsVersion` unused warning), `npx tsc --noEmit` exit0, diff check PASS.
+- No browser/B03 or external services. Full hosted verify not triggered because this V2 runtime path makes special live classifier run unrelated provider corpus; it is not required to verify the abort contract. No CI run active before save.
+- Next block: AUD-DATA-01 read-only evidence/recommendation; do not edit tariff values or effective dates.
