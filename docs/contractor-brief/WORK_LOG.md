@@ -125,3 +125,8 @@ Remote tree 7,240 entries; app38/lib119/data25/scripts166. Mapped Next V2/V3 end
 ## 26.10.2026 21:06 МСК — codebase audit block 2/18 DONE: address/geocoding
 
 Reviewed remote suggest route, Photon query/rank, timeout/error handling, snapshot fallback, existing tests and saved verification. No provider calls/tests. No confirmed user-visible defect. Candidate risk: label dedupe can hide same-label distinct OSM localities (not reproduced); per-query/pool bounds are not necessarily global rate limits (security block pending). Existing historical focused records 54/48 PASS, 40 mocks peak2 cite older source SHAs and are not claimed as current-head proof. [Checkpoint](../checkpoints/2026-10-26-2106-codebase-audit-block-02-DONE.md).
+
+
+## 26.10.2026 21:08 МСК — codebase audit block 3/18 DONE: pool/cache/cancel
+
+Reviewed process-local Photon pool, query cache, AddressField cache use, and focused tests. No test execution. No defect confirmed: same-URL singleflight, per-subscriber cancel, last-subscriber abort, queue removal, timeout, positive LRU/TTL and cooldown/reset are implemented/tested. Per-warm-process (not global) scope remains for security assessment. [Checkpoint](../checkpoints/2026-10-26-2108-codebase-audit-block-03-DONE.md).

@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:06 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:08 МСК
 
-**Progress: 2/18 blocks (11.1%).** Block1 inventory and block2 address/geocoding review are complete. Preliminary findings: scripts static type-check gap and integration coupling (B1); homonym-dedupe and request-rate exposure are risks, not proven defects, pending later blocks. No code/network/test/build run. Source baseline `f1ca4d2…`, PR14 Draft, Actions idle. [Plan](checkpoints/2026-10-26-2100-codebase-audit-STARTED.md) · [B1](checkpoints/2026-10-26-2103-codebase-audit-block-01-DONE.md) · [B2](checkpoints/2026-10-26-2106-codebase-audit-block-02-DONE.md).
+**Progress: 3/18 blocks (16.7%).** B1 inventory; B2 address/geocoding; B3 pool/cache/cancellation complete. No new cache/cancellation defect confirmed. Existing bounded pool contracts are per warm process, not global; revisit only as security/resource risk. No tests/network/build run. Remote baseline `f1ca4d2…`, PR14 Draft, Actions idle. [Plan](checkpoints/2026-10-26-2100-codebase-audit-STARTED.md) · [B1](checkpoints/2026-10-26-2103-codebase-audit-block-01-DONE.md) · [B2](checkpoints/2026-10-26-2106-codebase-audit-block-02-DONE.md) · [B3](checkpoints/2026-10-26-2108-codebase-audit-block-03-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
