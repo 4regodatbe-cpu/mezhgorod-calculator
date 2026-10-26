@@ -5,6 +5,7 @@ type RouteEvent = { type: "route"; fromRegion: string; toRegion: string; distanc
 type RouteV2Event = { type: "route_v2"; version?: string; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; routeType: string; totals: { standard: number; comfort: number; comfortPlus: number; minivan: number }; tollWeekday: number | null; tollWeekend: number | null; tollPricingStatus?: "priced" | "free" | "unknown" };
 type FeedbackEvent = { type: "feedback"; category: string; message: string; website?: string };
 type VisitEvent = { type: "visit"; visitorId: string; version?: string };
+const WEBHOOK_TIMEOUT_MS = 8_000;
 
 const clean = (value: unknown, max: number) => typeof value === "string" ? value.trim().slice(0, max) : "";
 const ADDRESS_PART = /(?<![\p{L}\p{N}_])(?:\d{1,6}[а-яa-z]?|ул(?:ица)?|просп(?:ект)?|пр-т|пер(?:еулок)?|шоссе|наб(?:ережная)?|бульвар|бул\.?|проезд|дом|д\.|корп(?:ус)?|кв\.)(?![\p{L}\p{N}_])/iu;
@@ -55,11 +56,13 @@ export async function POST(request: NextRequest) {
         : body.type === "feedback"
           ? { type: "feedback", category: clean(body.category, 40), message: clean(body.message, 1000) }
           : { type: "visit", visitorId: clean(body.visitorId, 64), version: clean(body.version, 20) };
+    const signal = AbortSignal.timeout(WEBHOOK_TIMEOUT_MS);
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify({ token, ...webhookBody }),
       cache: "no-store",
+      signal,
     });
     const result = await response.json().catch(() => ({ ok: false }));
     if (!response.ok || !result.ok) throw new Error("WEBHOOK_FAILED");

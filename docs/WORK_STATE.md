@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest block10 DONE: `/api/collect` webhook POST has an8s abort deadline and no retry. Mocked timeout confirms one call, abort, safe502 message and no provider details. Webhook/bounds suite3/3, tsc, ESLint and diff check PASS. [Checkpoint](checkpoints/2026-10-27-0245-block-10-webhook-deadline-DONE.md). Technical14/24 (58.33%):1–10,12,17,19,22. Next11 router response size handling; real response evidence only.
+
 Latest block9 DONE: `/api/collect` now shares a16KiB bounded streamed object parser and returns400/413 before webhook on bad input. Fixed Cyrillic street/house filter that leaked street names into webhook regions; coarse city/region retained. Unknown toll accepted only as null and never forwarded as a tariff. Privacy/API tests2/2, body-limit tests2/2, tsc/lint/diff PASS. [Checkpoint](checkpoints/2026-10-27-0244-block-9-collect-DONE.md). Technical13/24 (54.17%):1–9,12,17,19,22. Next10 webhook deadline. Webhook timeout not yet changed.
 
 Latest block8 DONE: shared V2/V3 endpoint validation caps route labels at256 Unicode code points. Oversized label returns400 before any provider request; exact256 including emoji boundary passes. Focused label/API tests, tsc, scoped ESLint and diff check PASS. [Checkpoint](checkpoints/2026-10-27-0242-block-8-label-bounds-DONE.md). Technical12/24 (50%):1–8,12,17,19,22. Next9 `/api/collect` bounds. No route/business semantics or normalization changed.

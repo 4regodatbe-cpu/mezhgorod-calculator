@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:45 МСК — reliability block10 webhook deadline DONE
+
+- Parent `3b60bd138d6ed9a76dbd870ed0892d72ea0d3c28`; allowed branch only; PR14 Draft; no Actions for parent.
+- RED mocked test confirmed the collection webhook request had no abort signal or deadline.
+- Added an8s `AbortSignal.timeout` to the single webhook POST. Existing generic502 handling covers timeout and transport failures; no retry loop was added. The collection response/body privacy policy is unchanged.
+- GREEN: `collect-webhook-deadline.test.ts` verifies8s signal, cancellation,1 fetch, generic502 and no leaked timeout/provider message; `collect-api-bounds.test.ts` tests PASS; `npx tsc --noEmit`, scoped ESLint and `git diff --check` PASS.
+- No actual webhook/network call. Technical progress14/24 (58.33%): blocks1–10,12,17,19,22. Next11 response byte limits using retained provider payload evidence. [Checkpoint](../checkpoints/2026-10-27-0245-block-10-webhook-deadline-DONE.md).
+
 ## 27.10.2026 02:44 МСК — reliability block9 collection endpoint bounds/privacy DONE
 
 - Parent `e5c4d89c29fe1539d3b07b1002e3f5edaee18132`; allowed branch only; PR14 Draft; no Actions for parent.
