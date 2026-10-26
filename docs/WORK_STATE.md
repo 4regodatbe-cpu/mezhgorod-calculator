@@ -1,6 +1,6 @@
-# CODEBASE AUDIT FIXES — IN PROGRESS — 26.10.2026 23:17 МСК
+# CODEBASE AUDIT FIXES — IN PROGRESS — 26.10.2026 23:21 МСК
 
-Исправления P2: AUD-DATE-01 и AUD-ERROR-01 завершены и сохранены отдельными commits/readback. V2 дата строго календарно валидируется как в V3; V2/V3 API теперь дают 400 для распознанных input ошибок, 502 для известных upstream и 500 с безопасным общим сообщением для неожиданных исключений. Новый план: 2/6 блоков (33.3%). PR14 Draft. Журнал: [WORK_LOG](codebase-audit/WORK_LOG.md); [NEXT_STEPS](codebase-audit/NEXT_STEPS.md); checkpoints [DATE](checkpoints/2026-10-26-231423-aud-date-01-DONE.md), [ERROR](checkpoints/2026-10-26-231751-aud-error-01-DONE.md). Следующий блок: AUD-CI-01.
+Исправления AUD-DATE-01 и AUD-ERROR-01 завершены, commits и readback подтверждены. AUD-CI-01: два Node22 workflow изменены на Node24; focused config/runtime tests PASS, но локальный полный build заблокирован sandbox process limits. Сохранён STARTED checkpoint перед PR verify, которая должна запускать тесты/TS/build без live corpus (проверенная classifier модель). Новый план: 2/6 DONE (33.3%), AUD-CI-01 IN_PROGRESS. PR14 Draft. Журнал: [WORK_LOG](codebase-audit/WORK_LOG.md); [NEXT_STEPS](codebase-audit/NEXT_STEPS.md); checkpoints [DATE](checkpoints/2026-10-26-231423-aud-date-01-DONE.md), [ERROR](checkpoints/2026-10-26-231751-aud-error-01-DONE.md), [CI STARTED](checkpoints/2026-10-26-232105-aud-ci-01-STARTED.md). Не повторять B03/B10; не менять тарифы и recovery policy.
 
 # CODEBASE AUDIT — DONE — 26.10.2026 21:39 МСК
 

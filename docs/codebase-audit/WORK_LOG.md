@@ -19,3 +19,11 @@
 - Изменены оба API route handler, один общий classifier и focused test. Live providers не вызывались; fetch полностью mock.
 - Полный Actions/широкий live-probe не запускался: unrelated 50-route corpus не нужен для mapping. Не заявляем hosted CI.
 - Следующий блок: AUD-CI-01. Тарифы, геометрия и восстановления не менялись.
+
+## 26.10.2026 23:21 МСК — AUD-CI-01 STARTED
+
+- Parent `28c48f1e89ea5cd8b0907b221f97a6c0f045050e`, allowed branch only, PR14 Draft, no active Actions at preflight.
+- Test-first RED: the new config regression reports Node22.13.0 in both `.github/workflows/route-quality.yml` and `.github/workflows/systemic-toll-composition.yml` while `package.json` requires24.x. Updated only those `node-version` scalars to `'24'`; workflow triggers/jobs/commands and toll/geometry assertions are unchanged.
+- Local checks: `scripts/audit-ci-node-version.test.mjs` 2/2 PASS; PyYAML syntax parse2/2 PASS; existing live-scope classifier10/10 PASS; exact changed-path model returns `no-route-runtime-change-in-update`; systemic composition command PASS under Node24.19; `tsc --noEmit` exit0.
+- `pnpm build` could not start because managed environment lacks `/home/agent/.local/share/pnpm`. Equivalent `npm run build` started the repository’s broad offline `test:audit`; the two already-known spawnSync-dependent nationwide suites failed in this Codex sandbox, so the run was interrupted (exit130) and Next build stage did not run. No retry planned here. Running Next build directly also stopped with Turbopack `creating new process/binding to a port: Operation not permitted` (exit1). These are environment limitations, not evidence of a Node24 workflow regression.
+- The scoped PR verify is started by this test/workflow update. Expected classifier outcome is skip live jobs; if metadata is incomplete, current fail-open may choose live, which is a CI limitation to report accurately. Await Actions completion before declaring DONE; no files may be written during the run.
