@@ -15,6 +15,13 @@ test('unknown cannot become zero through the actual period',()=>{
  assert.equal(resolveTollAmount({...toll,pricingStatus:'unknown',amount:null},'actual').amount,null);
  assert.equal(resolveTollAmount({...toll,amount:Infinity},'actual').amount,null);
 });
+test('V3 accepts unknown toll only with null amounts and keeps a missing tariff distinct from free',()=>{
+ const unknown:any=data();unknown.legs[0].fast.tolls={...unknown.legs[0].fast.tolls,amount:null,weekdayAmount:null,weekendAmount:null,period:'unknown',confidence:'none',pricingStatus:'unknown'};
+ assert.equal(validV3Response(unknown),true);
+ for(const key of ['amount','weekdayAmount','weekendAmount']){const contradicted=structuredClone(unknown);contradicted.legs[0].fast.tolls[key]=0;assert.equal(validV3Response(contradicted),false,`${key}=0 contradicts unknown`);}
+ const free=structuredClone(unknown);free.legs[0].fast.tolls={...free.legs[0].fast.tolls,amount:0,weekdayAmount:0,weekendAmount:0,confidence:'none',pricingStatus:'free'};
+ assert.equal(validV3Response(free),true);
+});
 test('valid complete and explicitly unavailable commercial fares pass the response guard',()=>{
  assert.equal(validV3Response(data()),true);
  const d=data();for(const p of Object.values(d.legs[0].fast.pricingByVehicle)){p.totalPrice=null as never;p.requiresSplit=true;p.reviewRequired=true;p.pricingSegments=[];}

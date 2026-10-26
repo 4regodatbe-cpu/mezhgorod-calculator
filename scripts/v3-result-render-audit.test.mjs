@@ -16,6 +16,16 @@ test('actual fastest result render preserves night price without confirmation no
  assert.doesNotMatch(html,/1130|1650|Пн–Чт|Пт–Вс/);
 });
 
+test('V3 shared fastest-route UI keeps unknown tolls base-only and never presents zero as total',()=>{
+ const fare={totalPrice:100,requiresSplit:false,reviewRequired:false,dualTariff:false,pricingSegments:[]};
+ const toll={amount:null,weekdayAmount:null,weekendAmount:null,period:'unknown',segments:[],pricingStatus:'unknown',confidence:'none'};
+ const fast={meters:10000,seconds:1000,tolls: toll,pricingByVehicle:Object.fromEntries(['standard','comfort','comfort_plus','minivan'].map(k=>[k,fare]))};
+ const leg={from:'A',to:'B',fast,free:null};
+ const html=renderToStaticMarkup(React.createElement(ResultPanels,{result:{legs:[leg]},fastestOnly:true,tollPeriod:'actual',onTollPeriodChange:()=>{},copyStandard:async()=>{},copiedKey:'',manualToll:'',onManualToll:()=>{},standardHasTolls:true,standardOptimal:null}));
+ assert.match(html,/Стоимость платных дорог неизвестна/);assert.match(html,/Итого без дорог/);
+ assert.doesNotMatch(html,/Итого за поездку|=\s*0(?:[,.]00)?\s*₽/);
+});
+
 
 test('fastest V3 keeps dual fare visible and permits an explicitly manual road total',()=>{
  const fare={totalPrice:55299,requiresSplit:false,reviewRequired:false,dualTariff:true,pricingSegments:[

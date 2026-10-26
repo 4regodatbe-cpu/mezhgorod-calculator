@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:31 МСК — reliability block3 V3 unknown/null contract DONE
+
+- Parent `a5ee1c1f6785d5cd421d80de2c3eb3d1f4c56e4b`; allowed branch only; PR14 Draft; prior block remote readback confirmed matching tree and code/test/checkpoint/state blobs.
+- Audited the V3 validator, shared V2/V3 fastest-route UI and copied quote. No application defect reproduced: unknown is accepted only with all three toll amounts null; explicitly free is a distinct state; shared V3 display is base-only; copied quote preserves unknown rather than zero.
+- Added focused validation case in `scripts/v3-response-copy-audit.test.ts` and server-render case in `scripts/v3-result-render-audit.test.mjs`. No runtime code or tariff/routing behavior changed.
+- GREEN: render suite3/3; response/copy and hook-race suites PASS; `npx tsc --noEmit`, scoped ESLint, `git diff --check` PASS. No browser, network, full build or broad CI.
+- Technical progress 7/24 (29.17%): blocks1,2,3,12,17,19,22. Next block4 UI errors. [Checkpoint](../checkpoints/2026-10-27-0231-block-3-v3-unknown-DONE.md).
+
 ## 27.10.2026 02:28 МСК — reliability block2 V2 unknown/null presentation DONE
 
 - Parent `1d8892d542b4eef1f973f0ad8489372c05613b3e`; allowed branch only; PR14 remains Draft; local tree was clean before this block.

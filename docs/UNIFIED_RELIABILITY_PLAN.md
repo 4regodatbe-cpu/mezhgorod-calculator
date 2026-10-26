@@ -1,6 +1,6 @@
 # Unified reliability and B01–B12 work queue
 
-Latest technical result: 24-block plan DONE6/24 (25%):1,2,12,17,19,22. Block2 V2 unknown/null display verified with SSR; manually entered toll on an unknown provider amount computes a labeled total without a contradictory “full total not calculated” warning. Block20 profiling remains PARTIAL. Next block3 V3 unknown/null contract.
+Latest technical result: 24-block plan DONE7/24 (29.17%):1,2,3,12,17,19,22. Block3 confirms V3 unknown/null validation, shared fastest-route rendering and copied status; no V3 defect reproduced. Checkpoint2026-10-27-0231-block-3-v3-unknown-DONE.md. Block20 profiling remains PARTIAL. Next block4 UI error cases.
 
 2026-10-27. Baseline `396daf20b02c2d56fc49b53174fb923f633fc861`; allowed fix branch, PR14 Draft.
 
