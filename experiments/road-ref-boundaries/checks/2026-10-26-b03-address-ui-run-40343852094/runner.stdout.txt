@@ -1,0 +1,9 @@
+PASS 01-donetsk-disambiguation: requests=3, externalBlocked=0
+PASS 02-select-a-and-b: requests=8, externalBlocked=0
+PASS 03-swap-and-reset: requests=9, externalBlocked=0
+PASS 04-clear-and-replace-b: requests=6, externalBlocked=0
+PASS 05-stale-response-race: requests=4, externalBlocked=0
+PASS 06-normal-empty-error-retry: requests=6, externalBlocked=0
+PASS 07-fallback-not-in-legacy-cache: requests=5, externalBlocked=0
+PASS 08-mobile-keyboard: requests=4, externalBlocked=0
+{"finishedAt":"2026-10-26T14:54:08.785Z","status":"PASS","passed":8,"failed":0,"notRun":0,"resultsPath":"/home/runner/work/mezhgorod-calculator/mezhgorod-calculator/b03-browser-results/scenarios.json"}
