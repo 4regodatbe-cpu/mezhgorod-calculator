@@ -1,4 +1,5 @@
 export const MAX_CALCULATE_REQUEST_BYTES = 16 * 1024;
+export const MAX_COLLECT_REQUEST_BYTES = 16 * 1024;
 
 export class RequestBodyError extends Error {
   readonly status: 400 | 413;
@@ -10,9 +11,12 @@ export class RequestBodyError extends Error {
 }
 
 /** Reads and parses a bounded JSON object, counting actual streamed bytes. */
-export async function readLimitedJsonObject(request: Request): Promise<Record<string, unknown>> {
+export async function readLimitedJsonObject(
+  request: Request,
+  maxBytes = MAX_CALCULATE_REQUEST_BYTES,
+): Promise<Record<string, unknown>> {
   const declaredLength = request.headers.get("content-length");
-  if (declaredLength && /^\d+$/.test(declaredLength) && Number(declaredLength) > MAX_CALCULATE_REQUEST_BYTES) {
+  if (declaredLength && /^\d+$/.test(declaredLength) && Number(declaredLength) > maxBytes) {
     await request.body?.cancel().catch(() => undefined);
     throw new RequestBodyError(413, "Размер запроса превышает допустимый предел.");
   }
@@ -26,7 +30,7 @@ export async function readLimitedJsonObject(request: Request): Promise<Record<st
       const { done, value } = await reader.read();
       if (done) break;
       byteLength += value.byteLength;
-      if (byteLength > MAX_CALCULATE_REQUEST_BYTES) {
+      if (byteLength > maxBytes) {
         await reader.cancel().catch(() => undefined);
         throw new RequestBodyError(413, "Размер запроса превышает допустимый предел.");
       }

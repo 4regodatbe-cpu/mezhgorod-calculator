@@ -9,9 +9,10 @@
 - [x] Block6 — V2/V3 input/output contracts after date/error/trace changes; no defect reproduced. [Checkpoint](../checkpoints/2026-10-27-0237-block-6-api-contracts-DONE.md).
 - [x] Block7 — 16KiB streamed request-body cap for V2/V3; malformed/non-object JSON is a client error. [Checkpoint](../checkpoints/2026-10-27-0240-block-7-request-size-DONE.md).
 - [x] Block8 — route-point labels capped at256 Unicode code points for both APIs; oversized values rejected before providers. [Checkpoint](../checkpoints/2026-10-27-0242-block-8-label-bounds-DONE.md).
-- [ ] Block9 — `/api/collect` size, validation and resource limits.
+- [x] Block9 — `/api/collect` streamed size/object validation and privacy-safe coarse regions; unknown toll stays null. [Checkpoint](../checkpoints/2026-10-27-0244-block-9-collect-DONE.md).
+- [ ] Block10 — webhook timeout, cancellation and errors.
 
-Technical progress: 12/24 (50%): blocks1–8,12,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. B02/B04–B09 remain data-blocked.
+Technical progress: 13/24 (54.17%): blocks1–9,12,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. B02/B04–B09 remain data-blocked.
 
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 

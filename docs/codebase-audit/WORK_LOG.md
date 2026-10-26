@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:44 МСК — reliability block9 collection endpoint bounds/privacy DONE
+
+- Parent `e5c4d89c29fe1539d3b07b1002e3f5edaee18132`; allowed branch only; PR14 Draft; no Actions for parent.
+- RED: `/api/collect` accepted a body over16KiB and called the webhook. Privacy fixture also showed Cyrillic `ул. Секретная` and `ул. Частная` leaked because JavaScript ASCII `\b` did not detect a boundary before Cyrillic letters.
+- Reused `readLimitedJsonObject` with a separate16KiB collect limit. Bad/malformed/non-object is400; oversize is413 before webhook. Replaced address-part boundary with Unicode letter/number guards, which remove street/house parts while retaining city/region. Existing `route_v2` contract still requires unknown toll values null; webhook schema does not receive a guessed price.
+- GREEN: `collect-api-bounds.test.ts`2/2, calculation body-limit tests2/2, tsc, scoped ESLint, diff check PASS. Test confirms webhook receives coarse regions only and returns no street/house tokens. No actual webhook or external service called.
+- Technical progress13/24 (54.17%): blocks1–9,12,17,19,22. Block10 external webhook deadline remains next; no timeout behavior changed here. [Checkpoint](../checkpoints/2026-10-27-0244-block-9-collect-DONE.md).
+
 ## 27.10.2026 02:42 МСК — reliability block8 route-label bounds DONE
 
 - Parent `e12ffd2f880413efe5a906b2996d82cf2f38d01b`; allowed branch only; PR14 Draft; no Actions for parent.

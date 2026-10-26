@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { MAX_COLLECT_REQUEST_BYTES, readLimitedJsonObject, RequestBodyError } from "@/lib/limited-json-body";
 
 type RouteEvent = { type: "route"; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; rate: number; total: number };
 type RouteV2Event = { type: "route_v2"; version?: string; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; routeType: string; totals: { standard: number; comfort: number; comfortPlus: number; minivan: number }; tollWeekday: number | null; tollWeekend: number | null; tollPricingStatus?: "priced" | "free" | "unknown" };
@@ -6,7 +7,7 @@ type FeedbackEvent = { type: "feedback"; category: string; message: string; webs
 type VisitEvent = { type: "visit"; visitorId: string; version?: string };
 
 const clean = (value: unknown, max: number) => typeof value === "string" ? value.trim().slice(0, max) : "";
-const ADDRESS_PART = /(?:\b\d{1,6}[а-яa-z]?\b|\b(?:ул(?:ица)?|просп(?:ект)?|пр-т|пер(?:еулок)?|шоссе|наб(?:ережная)?|бульвар|бул\.?|проезд|дом|д\.|корп(?:ус)?|кв\.)\b)/i;
+const ADDRESS_PART = /(?<![\p{L}\p{N}_])(?:\d{1,6}[а-яa-z]?|ул(?:ица)?|просп(?:ект)?|пр-т|пер(?:еулок)?|шоссе|наб(?:ережная)?|бульвар|бул\.?|проезд|дом|д\.|корп(?:ус)?|кв\.)(?![\p{L}\p{N}_])/iu;
 function coarseRegion(value: unknown) {
   const parts = clean(value, 240).split(",").map((part) => part.trim()).filter(Boolean);
   const safe = parts.filter((part) => !ADDRESS_PART.test(part) && !/^\d{5,6}$/.test(part));
@@ -19,7 +20,7 @@ function effectiveRate(distanceKm: number, total: number) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as RouteEvent | RouteV2Event | FeedbackEvent | VisitEvent;
+    const body = (await readLimitedJsonObject(request, MAX_COLLECT_REQUEST_BYTES)) as RouteEvent | RouteV2Event | FeedbackEvent | VisitEvent;
     if (body.type === "feedback") {
       if (body.website) return NextResponse.json({ ok: true });
       const message = clean(body.message, 1000);
@@ -64,6 +65,7 @@ export async function POST(request: NextRequest) {
     if (!response.ok || !result.ok) throw new Error("WEBHOOK_FAILED");
     return NextResponse.json({ ok: true });
   } catch (error) {
+    if (error instanceof RequestBodyError) return NextResponse.json({ error: error.message }, { status: error.status });
     if (error instanceof SyntaxError) return NextResponse.json({ error: "Некорректный JSON" }, { status: 400 });
     return NextResponse.json({ error: "Не удалось сохранить данные. Попробуйте позже." }, { status: 502 });
   }

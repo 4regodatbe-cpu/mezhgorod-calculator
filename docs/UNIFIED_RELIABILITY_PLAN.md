@@ -1,6 +1,6 @@
 # Unified reliability and B01–B12 work queue
 
-Latest technical result: 24-block plan DONE12/24 (50%):1–8,12,17,19,22. Block8 applies a256-Unicode-code-point label bound at the shared V2/V3 server validator;257-character labels return400 before provider calls, exact-boundary cases PASS. Checkpoint2026-10-27-0242-block-8-label-bounds-DONE.md. Block20 remains PARTIAL. Next block9 `/api/collect` protection.
+Latest technical result: 24-block plan DONE13/24 (54.17%):1–9,12,17,19,22. Block9 adds streamed size/object validation and fixes the Cyrillic address-detail filter leaking street names to the collection webhook; privacy and unknown-toll tests pass. Checkpoint2026-10-27-0244-block-9-collect-DONE.md. Block20 remains PARTIAL. Next block10 webhook deadline.
 
 2026-10-27. Baseline `396daf20b02c2d56fc49b53174fb923f633fc861`; allowed fix branch, PR14 Draft.
 

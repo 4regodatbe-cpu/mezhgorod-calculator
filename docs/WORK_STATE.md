@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest block9 DONE: `/api/collect` now shares a16KiB bounded streamed object parser and returns400/413 before webhook on bad input. Fixed Cyrillic street/house filter that leaked street names into webhook regions; coarse city/region retained. Unknown toll accepted only as null and never forwarded as a tariff. Privacy/API tests2/2, body-limit tests2/2, tsc/lint/diff PASS. [Checkpoint](checkpoints/2026-10-27-0244-block-9-collect-DONE.md). Technical13/24 (54.17%):1–9,12,17,19,22. Next10 webhook deadline. Webhook timeout not yet changed.
+
 Latest block8 DONE: shared V2/V3 endpoint validation caps route labels at256 Unicode code points. Oversized label returns400 before any provider request; exact256 including emoji boundary passes. Focused label/API tests, tsc, scoped ESLint and diff check PASS. [Checkpoint](checkpoints/2026-10-27-0242-block-8-label-bounds-DONE.md). Technical12/24 (50%):1–8,12,17,19,22. Next9 `/api/collect` bounds. No route/business semantics or normalization changed.
 
 Latest block7 DONE: V2/V3 request body parsing capped at16KiB using streamed byte counting (not only `Content-Length`). Oversized declared/actual bodies return413 before provider calls; malformed JSON and non-object JSON return400. Focused body tests2/2; V2/V3 API, safe error and trace integration suites PASS; tsc, scoped ESLint and diff check PASS. [Checkpoint](checkpoints/2026-10-27-0240-block-7-request-size-DONE.md). Technical11/24 (45.83%):1–7,12,17,19,22. Next8 string bounds. No broad audit/build/Actions.
