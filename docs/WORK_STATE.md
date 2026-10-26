@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:12 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:24 МСК
 
-**Progress: 4/18 blocks (22.2%).** B1 inventory, B2 address/geocoding, B3 cache/pool, B4 route API/call graph complete. Candidate risks: missing server payload/label caps (P2 probable); legacy API direct Photon/OSRM calls lack local deadline (P2, active-use unknown). No exploit reproduced; source/tests/network/build unchanged. Remote baseline f1ca4d2, PR14 Draft, Actions idle. [Plan](checkpoints/2026-10-26-2100-codebase-audit-STARTED.md) · [B4](checkpoints/2026-10-26-2112-codebase-audit-block-04-DONE.md).
+**Progress: 5/18 blocks (27.8%).** B1 inventory, B2 address lookup, B3 cache/pool, B4 API flow, B5 provider adapters complete. Candidate requiring cross-check in B6: V2 appears to admit empty route geometry before substituting endpoint line; compare with V3 guard/test. B5 probable reliability risk: label-only direct geocode lacks a local timeout; no failure reproduced. No tests/live requests; source is read-only. Report: [CODEBASE_AUDIT.md](CODEBASE_AUDIT.md); [B5 checkpoint](checkpoints/2026-10-26-2124-codebase-audit-block-05-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
