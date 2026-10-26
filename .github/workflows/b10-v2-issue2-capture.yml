@@ -1,0 +1,41 @@
+name: B10 V2 issue 2 bounded provider capture
+
+on:
+  push:
+    branches:
+      - fix/v3-missing-route-prices-2026-10-15
+    paths:
+      - .github/workflows/b10-v2-issue2-capture.yml
+
+permissions:
+  contents: read
+
+jobs:
+  capture-and-compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      V2_ISSUE2_CAPTURE_ROOT: experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/v2-hosted-${{ github.run_id }}
+      B10_ARTIFACT_DIR: b10-v2-issue2-${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: pnpm
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Probe each required router once, then capture sequentially and compare offline
+        run: node --import ./scripts/register-ts-paths.mjs scripts/v2-issue2-github-capture.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: b10-v2-issue2-${{ github.run_id }}
+          path: |
+            b10-v2-issue2-${{ github.run_id }}/
+            experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/v2-hosted-${{ github.run_id }}/
+          if-no-files-found: warn
+          retention-days: 90

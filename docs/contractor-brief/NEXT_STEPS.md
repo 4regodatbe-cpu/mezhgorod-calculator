@@ -1,12 +1,12 @@
 # B01–B12 next steps
 
-Актуально на 26.10.2026 18:01 МСК. B03 mocked browser scenarios DONE 8/8; V2 swap callback fix and reset verified; existing Actions verification completed (focused tests, TypeScript, Next build; workflow overall success). [DONE](../checkpoints/2026-10-26-1755-b03-v2-swap-fix-DONE.md); [per-case evidence](../../experiments/road-ref-boundaries/checks/2026-10-26-b03-address-ui-run-40343852094/README.md). PR #14 Draft; original real-service B-only incident remains unverified; snapshot flag false. Next: resume B10's prepared V2 comparison only if a new provider capture appears; otherwise choose an offline B01–B12 task. Do not repeat B03 absent a change.
+Актуально на 26.10.2026 18:52 МСК. B03 remains DONE 8/8; do not repeat. B10 V2 capture is STARTED from base `769d462fe11a07b4ac887ba0b9292dbe0589d320`; run40345807008 shows Valhalla/OSRM data on hosted runner, while BRouter remains unverified. [STARTED](../checkpoints/2026-10-26-1852-b10-v2-hosted-capture-STARTED.md). One isolated workflow checks one request/provider, then Eisk → conditional Maykop → offline comparison; a single accompanying special-territory run is authorized. Next: verify one narrow workflow event and artifact; no retries if trigger absent or any required provider/capture is incomplete. PR #14 Draft; tariffs unchanged.
 
 Nationwide Node 24 diagnostic завершён: [run 40332405721](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40332405721), 7/7 PASS, логи и артефакт сохранены в репозитории. Локальный EPERM объясняется Codex sandbox; тесты не повторять без новой причины.
 
 1. **B10 / three-test diagnosis DONE:** 7/7 PASS hosted; [evidence](../../experiments/nationwide-tolls/checks/2026-10-26-three-test-diagnostic/README.md). Локальные падения — sandbox EPERM; тесты завершены, не повторять без новой причины.
 
-2. **B10 IN_PROGRESS / BLOCKED_BY_NETWORK:** V2 capture harness завершён; следующий полезный блок — точное сравнение Ейска/Майкопа при доступных provider captures. Сейчас Valhalla/OSRM/BRouter недоступны; без изменения доступности не повторять.
+2. **B10 IN_PROGRESS:** V2 harness ready; provider availability is being tested on GitHub Actions because prior Codex network failures do not establish hosted-runner availability. Required provider failure blocks both captures/comparison; do not retry unchanged conditions.
 3. **B03 UI scenarios DONE (mocked):** all 8/8 pass on hosted Chrome; swap callback and result reset verified. Original external B-only issue remains unverified; `addressCitySnapshot` remains off. Hosted artifact is retained through 2026-11-25T14:54:08Z.
 4. **B01–B02 BLOCKED_BY_SOURCE/DATA:** address pool/circuit и GeoNames intake выполнены; нужны новые подтверждённые labels/hierarchy/coordinates.
 5. **B04 IDENTITY_DONE / DATA_BLOCKED:** точные координаты и directed topology сохранены; official km/operator scope/fare unknown, runtime inactive.

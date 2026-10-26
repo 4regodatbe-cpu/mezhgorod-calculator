@@ -1,3 +1,7 @@
+# B10 bounded hosted V2 capture — STARTED — 26.10.2026 18:52 МСК
+
+Base `769d462fe11a07b4ac887ba0b9292dbe0589d320`; PR #14 Draft. Run40345807008 proves Valhalla/OSRM returned route data on GitHub-hosted runner; BRouter remains untested. Single isolated workflow limits probes to one/provider, then sequential Eisk and Maykop V2 captures only if all required responses are complete; followed only by offline Thu/Sat replay and saved V3 comparison. Existing failed Codex capture remains preserved; new output root is run-specific. One companion existing special-territory workflow is authorized. [STARTED checkpoint](checkpoints/2026-10-26-1852-b10-v2-hosted-capture-STARTED.md).
+
 # B03 hosted UI suite + V2 swap fix — DONE 8/8 — 26.10.2026 17:55 МСК
 
 Chrome smoke DONE: run 40336150199. B03 hosted UI suite run [40343852094](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40343852094) passed 8/8 on Chrome156/Node24; app swap callback now exchanges full Place metadata and resets the result. Scenario/per-case logs and artifact digest are recorded [here](../experiments/road-ref-boundaries/checks/2026-10-26-b03-address-ui-run-40343852094/README.md); [DONE checkpoint](checkpoints/2026-10-26-1755-b03-v2-swap-fix-DONE.md). Run40343863068 completed successfully, including focused tests, TypeScript, Next build, and live_probe. Actions were idle before this save. `addressCitySnapshot=false`; original real-service B-only failure is not proven fixed.

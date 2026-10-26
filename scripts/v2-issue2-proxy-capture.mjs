@@ -19,7 +19,7 @@ export const CASES = Object.freeze({
 });
 
 export const DEFAULT_DEPARTURE = "2026-10-22T09:00:00+03:00";
-export const OUTPUT_ROOT = "experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/v2-2026-10-24";
+export const OUTPUT_ROOT = process.env.V2_ISSUE2_CAPTURE_ROOT ?? "experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/v2-2026-10-24";
 
 export function buildCaseRequest(caseId, departureAt = DEFAULT_DEPARTURE) {
   const route = CASES[caseId];
