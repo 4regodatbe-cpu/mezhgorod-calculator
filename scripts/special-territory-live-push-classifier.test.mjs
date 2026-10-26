@@ -14,6 +14,8 @@ const currentHead = "2".repeat(40);
 test("GitHub output contains only valid key-value commands", () => {
   assert.equal(formatGitHubOutput({ shouldRunLive: false, reason: "head-already-checked" }),
     "should_run_live=false\nreason=head-already-checked\n");
+  assert.equal(formatGitHubOutput({ shouldRunLive: true, reason: "classifier-or-api-error" }),
+    "should_run_live=true\nreason=classifier-or-api-error\n");
 });
 
 function comparison(paths, overrides = {}) {
