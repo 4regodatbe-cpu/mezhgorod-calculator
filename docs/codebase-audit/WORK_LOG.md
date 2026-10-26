@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:40 МСК — reliability block7 calculation request body bounds DONE
+
+- Parent `fff8197ef0a9d7d579ed18b6eed75a360209d8ca`; allowed branch only; PR14 Draft; no Actions for parent.
+- RED: mocked endpoint tests showed a >16KiB JSON request was parsed and proceeded to provider work (eventually400 only because the mock had no address); malformed JSON returned500 in V2. No limit existed before `request.json()`.
+- Added `lib/limited-json-body.ts`: shared16KiB cap, early declared-length rejection, streamed actual-byte count for missing/underreported lengths, body cancellation on excess, fatal UTF-8/JSON/object validation. V2/V3 return413 for oversized bodies and400 for malformed/non-object JSON. Oversized tests assert0 external calls.
+- GREEN: new body guard2/2; V2 special/ordinary API, V3 pipeline, error mapping and partial-trace integration suites PASS; `npx tsc --noEmit`, scoped ESLint and `git diff --check` PASS. No routing/pricing behavior changed.
+- No live service, full build or broad Actions. Technical progress11/24 (45.83%): blocks1–7,12,17,19,22. Next block8 string limits. [Checkpoint](../checkpoints/2026-10-27-0240-block-7-request-size-DONE.md).
+
 ## 27.10.2026 02:37 МСК — reliability block6 API contract compatibility DONE
 
 - Parent `ca1704e4d234a281980b09c0216e546bceb19304`; allowed branch only; PR14 Draft; no Actions for parent.

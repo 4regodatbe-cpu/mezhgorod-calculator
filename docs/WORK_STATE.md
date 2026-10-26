@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest block7 DONE: V2/V3 request body parsing capped at16KiB using streamed byte counting (not only `Content-Length`). Oversized declared/actual bodies return413 before provider calls; malformed JSON and non-object JSON return400. Focused body tests2/2; V2/V3 API, safe error and trace integration suites PASS; tsc, scoped ESLint and diff check PASS. [Checkpoint](checkpoints/2026-10-27-0240-block-7-request-size-DONE.md). Technical11/24 (45.83%):1–7,12,17,19,22. Next8 string bounds. No broad audit/build/Actions.
+
 Latest block6 DONE: focused mocked V2/V3 integration suites confirm input/output contracts, V2 special/ordinary route shapes, V3 single-fast-route schema, sanitized 400/502/500 mapping, and partial-trace unknown/null propagation. Four suites PASS; no contract defect reproduced and engines remain separate. [Checkpoint](checkpoints/2026-10-27-0237-block-6-api-contracts-DONE.md). Technical10/24 (41.67%):1–6,12,17,19,22. Next7 body-size bounds. No broad audit/network/build/Actions.
 
 Latest block5 DONE: V2 reset now clears errors and manual input; late route response/copy completions cannot overwrite newer/reset state, and clipboard rejection is handled safely. V2 lifecycle suite9/9, V3 hook suite8/8, TypeScript PASS; ESLint0 errors/1 existing warning. [Checkpoint](checkpoints/2026-10-27-0236-block-5-v2-races-DONE.md). Technical9/24 (37.5%):1–5,12,17,19,22. Next6 API request/response contracts. No hosted B03 rerun, full build or Actions.

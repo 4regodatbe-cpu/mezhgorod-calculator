@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { classifyCalculateApiError } from "@/lib/calculate-api-error";
+import { readLimitedJsonObject, RequestBodyError } from "@/lib/limited-json-body";
 import { geocode, type Point } from "@/lib/route-providers";
 import { calculateLeg } from "@/lib/v3-calculation/route-leg";
 import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-integration";
@@ -53,7 +54,7 @@ export async function POST(request: NextRequest) {
   };
   // V3 contract: one fastest route; no slower free-route substitution.
   try {
-    const body = (await timing.measure("request_body", () => request.json())) as {
+    const body = (await timing.measure("request_body", () => readLimitedJsonObject(request))) as {
       from?: Point;
       via?: Point;
       to?: Point;
@@ -121,6 +122,7 @@ export async function POST(request: NextRequest) {
     const priced={...leg,fast:attachPricing(leg.fast),free:attachAlternative(leg.free),freeCandidate:attachAlternative(leg.freeCandidate)};
     return respond({legs:[priced],mode,automaticMode,specialEndpoint:false});
   } catch (error) {
+    if (error instanceof RequestBodyError) return respond({ error: error.message }, { status: error.status });
     const failure = classifyCalculateApiError(error);
     return respond({ error: failure.message }, { status: failure.status });
   }

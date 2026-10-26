@@ -7,9 +7,10 @@
 - [x] Block4 — V2/V3 HTTP/network/malformed response errors; generic handling of unexpected details, retry, abort and stale response. [Checkpoint](../checkpoints/2026-10-27-0234-block-4-ui-errors-DONE.md).
 - [x] Block5 — V2/V3 request cancellation/races, V2 clear state and delayed clipboard completion. No hosted B03 rerun. [Checkpoint](../checkpoints/2026-10-27-0236-block-5-v2-races-DONE.md).
 - [x] Block6 — V2/V3 input/output contracts after date/error/trace changes; no defect reproduced. [Checkpoint](../checkpoints/2026-10-27-0237-block-6-api-contracts-DONE.md).
-- [ ] Block7 — request-body size limits.
+- [x] Block7 — 16KiB streamed request-body cap for V2/V3; malformed/non-object JSON is a client error. [Checkpoint](../checkpoints/2026-10-27-0240-block-7-request-size-DONE.md).
+- [ ] Block8 — address, locality and label string bounds.
 
-Technical progress: 10/24 (41.67%): blocks1–6,12,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. B02/B04–B09 remain data-blocked.
+Technical progress: 11/24 (45.83%): blocks1–7,12,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. B02/B04–B09 remain data-blocked.
 
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 
