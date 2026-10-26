@@ -105,3 +105,8 @@ Rechecked remote branch HEAD `f85955f4d3596617cad3d399a4b593524dd733f6`, PR #14 
 ## 26.10.2026 20:31 МСК — Maykop workflow-change CI proof — PASS
 
 Run40369124628 for docs-only head `c65db6d026d5fb2b42d62986efa75a675da92a7b`: overall SUCCESS; classifier `no-route-runtime-change-in-update`; required verify (tests, selector, TypeScript, build) SUCCESS; `live_probe` and `calculation_timing` SKIPPED. No actions cancelled and no provider traffic. This proves the pending B10 workflow-only delta does not activate the broad live jobs. Next, after checking idle state, one comment-only B10 workflow update triggers the selected Maykop case; never recapture Eisk. [Checkpoint](../checkpoints/2026-10-26-2031-b10-maykop-selective-ci-proof-DONE.md).
+
+
+## 26.10.2026 20:35 МСК — B10 Maykop hosted capture + Thu/Sat offline replay + V2/V3 — DONE
+
+Run40369626668 SUCCESS on Ubuntu24.04/Node24.21.0; only Maykop selected. Valhalla, OSRM, BRouter preflight all HTTP200/valid; capture response HTTP200, 36/36 calls HTTP200, capture SHA256 `bd103585f4456c1e3e7b9d45e484a7c630a4d555472f7cefaddc7f97799f6552`. Raw responses and replay/comparison files verified in artifact12671872287 (ZIP SHA256 `586930587557644424dc6ff36107c48e74f4fdd3df0a22cd4f70e54c9e9f472e`, 90-day retention). Thu/Sat offline replays HTTP200, all36 calls consumed, live0/missing0/unused0. V2/V3 each: −1m, 0s, 0₽ delta; Thu5040₽/Sat6090₽ in both; no fare edit. Companion CI40369636065 SUCCESS, mandatory verify PASS, broad jobs skipped. [Evidence](../../experiments/nationwide-tolls/checks/2026-10-26-b10-maykop-hosted-run-40369626668/README.md) · [Checkpoint](../checkpoints/2026-10-26-2035-b10-maykop-capture-DONE.md).
