@@ -12,8 +12,9 @@
 - [x] Block9 — `/api/collect` streamed size/object validation and privacy-safe coarse regions; unknown toll stays null. [Checkpoint](../checkpoints/2026-10-27-0244-block-9-collect-DONE.md).
 - [x] Block10 — `/api/collect` webhook uses an8s abort deadline, generic error response and no retry. [Checkpoint](../checkpoints/2026-10-27-0245-block-10-webhook-deadline-DONE.md).
 - [x] Block11 — retained B10 captures show max individual body652,899 B; Valhalla/OSRM/BRouter now use a streaming8MiB cap, and malformed/incomplete geometry is rejected. Focused tests, API error mapping, tsc/ESLint/diff PASS. [Checkpoint](../checkpoints/2026-10-27-0252-block-11-provider-response-bounds-DONE.md).
+- [x] Block13 — current V2 candidate fan-out compared with retained B10 request logs; all 68 recorded `(method, URL, body)` keys unique, no redundant exact request reproduced. No behavior changed. [Checkpoint](../checkpoints/2026-10-27-0301-block-13-provider-request-counts-DONE.md).
 
-Technical progress: 15/24 (62.5%): blocks1–12,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. Next block20 profiling follow-up. B02/B04–B09 remain data-blocked.
+Technical progress: 16/24 (66.67%): blocks1–13,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. Next block14 fallback/candidate correctness. B02/B04–B09 remain data-blocked.
 
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 

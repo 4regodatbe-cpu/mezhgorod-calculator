@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 03:01 МСК — reliability block13 provider request-count review DONE
+
+- Source remote/local `f5e694c87f0fbfbd2b9e4c4ab71d10f1851ca457`; allowed branch only, PR14 Draft; no source Actions runs.
+- Read current V2 provider candidate flow and exact recorded B10 requests offline. The regular comparison intentionally uses Valhalla at three distinct toll penalties plus one OSRM and one BRouter candidate; a fourth high-penalty Valhalla route is conditional fallback only. Trace-attributes calls are per evidence chunk.
+- Eisk run40354432433 capture:32/32 unique method+URL+body; Maykop run40369626668:36/36 unique. Per-route counts are four Valhalla route, 26/30 Valhalla trace, one OSRM and one BRouter. No exact repeated call was found. No additional runtime tests or live fetches were needed because no code changed.
+- No call was removed: the differences represent candidate parameters and trace chunks needed to compare/validate route candidates. Exact capture provenance/sizes are linked in block11 checkpoint. Dynamic fallback coverage remains bounded by saved evidence and existing mocks.
+- Checkpoint [block13](../checkpoints/2026-10-27-0301-block-13-provider-request-counts-DONE.md). Technical progress16/24 (66.67%): blocks1–13,17,19,22. Next block14 fallback/candidate correctness using existing mock coverage.
+
 ## 27.10.2026 02:52 МСК — reliability block11 router response limits DONE
 
 - Source remote/local `c7bfe7157fc3decf2111102fb0eea9f99a623b95`; allowed branch only, PR14 Draft; no active workflow for source SHA.

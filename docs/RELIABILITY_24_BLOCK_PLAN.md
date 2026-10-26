@@ -109,6 +109,8 @@
 
 ## Status reconciliation
 
+Latest block13 DONE: current V2 route flow and B10 logs reviewed offline. Eisk32/32 and Maykop36/36 exact method+URL+body request keys were unique; 4 Valhalla route requests, OSRM/BRouter candidates and trace chunks are distinct; no unnecessary exact duplicate reproduced. No behavior change. Checkpoint `2026-10-27-0301-block-13-provider-request-counts-DONE.md`. Technical DONE16/24 (66.67%):1–13,17,19,22. Next block14 fallback/candidate correctness with mocks.
+
 Latest block11 DONE: B10 retained artifacts (no new provider requests) bound router response sizes: largest captured individual payload652,899 B, so a generous8MiB stream cap (>12x) is applied to Valhalla/OSRM/BRouter. Empty/malformed/interrupted JSON and invalid/empty geometry fail closed. Focused tests, API error mapping, tsc, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0252-block-11-provider-response-bounds-DONE.md`. Technical DONE15/24 (62.5%):1–12,17,19,22. Next block20 offline profiling follow-up; block20 remains PARTIAL.
 
 Latest block10 DONE: collection webhook POST now uses an8s `AbortSignal.timeout`; timeout/transport failures return the existing generic502 response, and there are no retries. Mocked RED confirmed no signal existed before the change; GREEN verifies8s signal, abort path, exactly1 fetch and no leaked provider/timeout text. Collection privacy/bounds and TypeScript/scoped ESLint/diff pass. Checkpoint `2026-10-27-0245-block-10-webhook-deadline-DONE.md`. Technical DONE14/24 (58.33%):1–10,12,17,19,22. Next11 router response size limits.
