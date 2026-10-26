@@ -38,6 +38,8 @@ GitHub-hosted Chrome preflight passed in run 40336150199 on head 0895948e294b9f1
 
 26.10.2026 17:22 МСК: isolated Node24/Chrome156/Playwright1.56 scenario workflow and harness prepared; not yet run. Current remote snapshot rechecked at 17:22 МСК, record-set hash verified; expires 31.10.2026 11:24:54 МСК. Test result must not be used after expiry. `addressCitySnapshot` remains false; no B-only fix is claimed.
 
+26.10.2026 17:26 МСК: first full-suite workflow attempt 40339480704 failed in setup-node because pnpm was not yet on PATH (`cache: pnpm` was resolved before `pnpm/action-setup`); browser and all eight scenarios were NOT_RUN, with no artifact. Reordering the setup steps is the only correction. See [bootstrap failure](../../docs/checkpoints/2026-10-26-1726-b03-ui-runner-bootstrap-FAILED.md) and [retry STARTED](../../docs/checkpoints/2026-10-26-1727-b03-address-ui-retry-STARTED.md).
+
 ## Браузерная приёмка — ранее NOT_RUN (24.10.2026)
 
 Серверный HTML отдельно проверен: checks/2026-10-24-city-snapshot-render/verification.json, full898 PASS. Перестановка/очистка props в SSR не подтверждает реальные клики, useEffect, отмену или кэш. Локальный UI preflight: BLOCKED_BY_ENVIRONMENT_BROWSER; установленного Chromium нет. Не повторять поиск бинарника без изменения среды.

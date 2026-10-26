@@ -1,5 +1,9 @@
 # B01–B12 work log
 
+## 26.10.2026 17:26 МСК — B03 workflow setup failure; retry prepared
+
+Hosted run [40339480704](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40339480704) checked out `685685bcc5b31f05ecf2cc46f2f95a0ecc5184d9` and Node 24.21.0, then failed at setup-node: `Unable to locate executable file: pnpm`. `pnpm/action-setup` was ordered afterward, so no Chrome/app/scenario ran and no artifact exists. Reorder setup to install pnpm before setup-node's pnpm cache resolution; no test/application logic changed. Exact record: [FAILED](../checkpoints/2026-10-26-1726-b03-ui-runner-bootstrap-FAILED.md); retry inputs: [STARTED](../checkpoints/2026-10-26-1727-b03-address-ui-retry-STARTED.md). At diagnosis time, unrelated Actions run 40339494194 remained active; wait for idle before saving.
+
 ## 26.10.2026 17:22 МСК — B03 mocked address UI harness prepared
 
 Rechecked actual remote branch head `9cb39fcd59507ac0b562edd5fe5d4a2412d9374c`, PR #14 Draft, and no active/queued Actions. Re-fetched the allowed-branch address snapshot: expires `2026-10-31T08:24:54Z`, reviewed-record hash matches. Added an isolated Node 24 / Chrome 156 / Playwright 1.56 push workflow and eight mocked UI cases. `/r`, classification, calculation and telemetry are controlled; browser requests to non-loopback origins fail closed. Syntax and YAML parsing passed; no browser scenarios have run. Code inspection indicates the swap prop is not wired by the V2 page; preserve as an expected test observation, with no pre-emptive app change. [STARTED checkpoint](../checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md).

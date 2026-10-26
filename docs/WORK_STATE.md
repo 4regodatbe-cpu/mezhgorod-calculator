@@ -1,6 +1,6 @@
-# B03 mocked address UI harness prepared — 26.10.2026 17:22 МСК
+# B03 address UI runner bootstrap FAILED — 26.10.2026 17:26 МСК
 
-Chromium smoke DONE: run 40336150199, Chrome 156.0.8078.47, DOM создан, artifact hash verified; [checkpoint](checkpoints/2026-10-26-1711-b03-chromium-dom-smoke-DONE.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-26-b03-chromium-dom-smoke/README.md). Eight-case isolated UI harness prepared; fresh remote snapshot check passed at 17:22 МСК, hash verified, expires 31.10.2026 11:24:54 МСК. Workflow not yet run. `addressCitySnapshot=false`; исходная B-only issue not proven fixed. [checkpoint](checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md).
+Chromium smoke DONE: run 40336150199, Chrome 156.0.8078.47, DOM создан, artifact hash verified; [checkpoint](checkpoints/2026-10-26-1711-b03-chromium-dom-smoke-DONE.md). Eight-case run 40339480704 failed in setup-node before Chrome/app; zero scenarios ran, no artifact. Exact diagnosis and prepared ordering correction: [FAILED](checkpoints/2026-10-26-1726-b03-ui-runner-bootstrap-FAILED.md). Retry has separate STARTED checkpoint [here](checkpoints/2026-10-26-1727-b03-address-ui-retry-STARTED.md); freshness must be rechecked before execution. `addressCitySnapshot=false`; B-only issue remains unverified.
 
 # B01–B12 — 26.10.2026 16:51 МСК
 
