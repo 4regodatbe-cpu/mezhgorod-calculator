@@ -32,7 +32,11 @@ LookupтолькоCyrillic reviewed city-name/qualifier prefixот3символ�
 
 Отключение:addressCitySnapshot:falseнемедленнооставляетпрежнийPhotonpath/502. Удаление:одинimport+unavailablebranchв/api/suggest,этотфлаг,двафайлаlib/data+тесты;UImetadataветкиможноудалитьотдельно. ОстальныеaddressRequestPool/calculationTiming/roadKilometrageнепереписываются.
 
-## Браузерная приёмка — остаётся NOT_RUN (24.10.2026)
+## Браузерная приёмка — STATUS UPDATE 26.10.2026
+
+GitHub-hosted Chrome preflight passed in run 40336150199 on head 0895948e294b9f17efa00cb8a9a52c14bf9eef27: Chrome 156.0.8078.47 created DOM for `about:blank` (exit0). This is only a runtime smoke; no app/UI scenario ran. The eight `/r` scenarios are separately STARTED; evidence and exact case list: [checkpoint](../../docs/checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md). The local Codex browser restriction remains unchanged.
+
+## Браузерная приёмка — ранее NOT_RUN (24.10.2026)
 
 Серверный HTML отдельно проверен: checks/2026-10-24-city-snapshot-render/verification.json, full898 PASS. Перестановка/очистка props в SSR не подтверждает реальные клики, useEffect, отмену или кэш. Локальный UI preflight: BLOCKED_BY_ENVIRONMENT_BROWSER; установленного Chromium нет. Не повторять поиск бинарника без изменения среды.
 

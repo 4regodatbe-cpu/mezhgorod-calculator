@@ -1,5 +1,9 @@
 # B01–B12 work log
 
+## 26.10.2026 17:11 МСК — B03 Chromium smoke DONE; UI scenarios STARTED
+
+Run [40336150199](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40336150199) passed on Chrome 156.0.8078.47: headless `about:blank`, exit 0, exact HTML DOM. Evidence ZIP hash verified and retained. Smoke does not cover UI or B-only behavior. Eight mocked `/r` browser scenarios are now a separate STARTED block; snapshot expiry recheck is required at execution. [Smoke DONE](../checkpoints/2026-10-26-1711-b03-chromium-dom-smoke-DONE.md) · [UI STARTED](../checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md).
+
 ## 26.10.2026 17:01 МСК — B03 hosted Chromium DOM smoke STARTED
 
 Remote SHA `1ac7776dea54139554cfce39b20d11b7a04125a2`, PR #14 Draft. Added isolated Chrome runner targeting only `about:blank`; no application `/r`, external address service, or eight UI scenarios in this block. Snapshot expiry is 31.10.2026 11:24:54 МСК; currently fresh, but must be checked again before any scenario use. [STARTED](../checkpoints/2026-10-26-1701-b03-chrome-smoke-STARTED.md).

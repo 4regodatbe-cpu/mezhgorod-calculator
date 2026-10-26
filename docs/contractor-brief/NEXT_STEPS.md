@@ -1,13 +1,13 @@
 # B01–B12 next steps
 
-Актуально на 26.10.2026 17:01 МСК; B03 STARTED: выполнить только Chrome `about:blank` DOM smoke через [.github/workflows/b03-chromium-dom-smoke.yml](../../.github/workflows/b03-chromium-dom-smoke.yml). При успехе — отдельный STARTED и восемь mocked `/r` сценариев; при отсутствии события Actions — зафиксировать блокер и запросить однократный push-trigger согласно checkpoint. Snapshot свеж до 31.10.2026 11:24:54 МСК; перепроверить до scenario run.
+Актуально на 26.10.2026 17:11 МСК; B03 Chrome smoke DONE: run 40336150199 passed, Chrome 156.0.8078.47 и DOM подтверждены, artifact сохранён. Восемь mocked `/r` UI-сценариев STARTED: см. [checkpoint](../checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md). Snapshot expires 31.10.2026 11:24:54 МСК; проверить актуальность непосредственно до теста.
 
 Nationwide Node 24 diagnostic завершён: [run 40332405721](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40332405721), 7/7 PASS, логи и артефакт сохранены в репозитории. Локальный EPERM объясняется Codex sandbox; тесты не повторять без новой причины.
 
 1. **B10 / three-test diagnosis DONE:** 7/7 PASS hosted; [evidence](../../experiments/nationwide-tolls/checks/2026-10-26-three-test-diagnostic/README.md). Локальные падения — sandbox EPERM; тесты завершены, не повторять без новой причины.
 
 2. **B10 IN_PROGRESS / BLOCKED_BY_NETWORK:** V2 capture harness завершён; следующий полезный блок — точное сравнение Ейска/Майкопа при доступных provider captures. Сейчас Valhalla/OSRM/BRouter недоступны; без изменения доступности не повторять.
-3. **B03 BLOCKED_BY_ENVIRONMENT_BROWSER_RUNTIME:** Chromium падает до DOM с crashpad `setsockopt: Operation not permitted`, exit 133; восемь UI сценариев NOT_RUN. Повторять только в другой browser runtime.
+3. **B03 UI scenarios IN_PROGRESS:** hosted Chrome 156 DOM smoke passed. Eight mocked `/r` scenarios are STARTED separately; snapshot freshness must be rechecked before use. Local Codex Chromium remains blocked; do not repeat there.
 4. **B01–B02 BLOCKED_BY_SOURCE/DATA:** address pool/circuit и GeoNames intake выполнены; нужны новые подтверждённые labels/hierarchy/coordinates.
 5. **B04 IDENTITY_DONE / DATA_BLOCKED:** точные координаты и directed topology сохранены; official km/operator scope/fare unknown, runtime inactive.
 6. **B05–B09 BLOCKED_BY_MISSING_RELIABLE_DATA:** fail-closed guards оставить; ранее завершённые исследования не повторять без новых первичных доказательств.

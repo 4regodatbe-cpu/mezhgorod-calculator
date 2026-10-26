@@ -1,6 +1,6 @@
-# B03 Chromium smoke STARTED — 26.10.2026 17:01 МСК
+# B03 mocked address UI scenarios STARTED — 26.10.2026 17:11 МСК
 
-Исходный remote head `1ac7776dea54139554cfce39b20d11b7a04125a2`, PR №14 Draft. Узкий GitHub Actions smoke должен только запустить hosted Chrome и создать DOM для `about:blank`; приложение, `/r` и восемь сценариев пока не запускаются. Snapshot истекает 31.10.2026 11:24:54 МСК и на дату checkpoint свеж; повторно проверить перед scenario run. `addressCitySnapshot=false`. [STARTED](checkpoints/2026-10-26-1701-b03-chrome-smoke-STARTED.md), [B03 workflow](../.github/workflows/b03-chromium-dom-smoke.yml).
+Chromium smoke DONE: run 40336150199, Chrome 156.0.8078.47, DOM создан, artifact hash verified; [checkpoint](checkpoints/2026-10-26-1711-b03-chromium-dom-smoke-DONE.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-26-b03-chromium-dom-smoke/README.md). Восемь mocked `/r` browser cases отдельно STARTED; snapshot expiry recheck обязателен before use: 31.10.2026 11:24:54 МСК. `addressCitySnapshot=false`; исходная B-only issue not proven fixed. [STARTED](checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md).
 
 # B01–B12 — 26.10.2026 16:51 МСК
 
