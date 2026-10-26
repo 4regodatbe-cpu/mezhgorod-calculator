@@ -8,6 +8,13 @@
 - No code/business/tariff policy changed. `priced` from a positive subtotal does not prove route-wide completeness. Follow-up proposal is separately recorded and awaits approval before policy implementation.
 - Checkpoint: [V2 trace regression](../checkpoints/2026-10-26-2349-aud-trace-regression-DONE.md). Next: record proposal and await approval for trace policy; independently fix freshness-gate date source.
 
+## 26.10.2026 23:52 МСК — AUD-TRACE-RECOVERY-01 policy proposal WAITING_FOR_APPROVAL
+
+- Parent `0e3e9cb4be09aba212f424a2fd4e7e760b148928`; only allowed branch; PR14 Draft.
+- Recorded proposed fail-closed public behavior in [proposal](AUD-TRACE-RECOVERY-PROPOSAL.md): positive approximate recovery fragments alone do not establish a route-wide fare; without independent full-route proof return null totals/unknown; incomplete traces cannot qualify for map-matched recovery. No M4/M12 thresholds or values change.
+- This is a user-visible business/API policy decision. No implementation was made. Block 2 is paused awaiting approval; independent freshness-gate work may continue.
+- Checkpoint: [policy WAITING](../checkpoints/2026-10-26-2352-aud-trace-policy-WAITING.md).
+
 ## 26.10.2026 23:14 МСК — AUD-DATE-01 DONE
 
 - Исходная разрешённая ветка / parent: `fix/v3-missing-route-prices-2026-10-15` / `fd41d4aaa817f8904be7e141b5bd6e5c0aca0ede`; PR #14 Draft. Рабочая копия создана отдельно из проверенного remote HEAD.

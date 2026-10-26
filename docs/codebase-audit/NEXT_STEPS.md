@@ -3,7 +3,7 @@
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 
 - [x] Block 1 — V2 full/incomplete trace characterization against saved synthetic case; 0 network calls. Checkpoint: [trace regression](../checkpoints/2026-10-26-2349-aud-trace-regression-DONE.md).
-- [ ] Block 2 — propose safe public behavior for partial recovery; implementation paused pending user approval. Do not change current business behavior meanwhile.
+- [ ] Block 2 — proposal saved at [AUD-TRACE-RECOVERY-PROPOSAL](AUD-TRACE-RECOVERY-PROPOSAL.md); implementation paused `WAITING_FOR_APPROVAL`. Do not change current business behavior meanwhile.
 - [ ] Block 3 — freshness gate uses actual run date by default and a fixed test date override; preserve UNKNOWN effective dates.
 - [ ] Block 4 — document three unknown effective-date rows and exact primary evidence required; no tariff-data edits.
 
