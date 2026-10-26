@@ -79,14 +79,16 @@ test("an incomplete comparison fails open to live_probe", () => {
 
 test("the prior baseline must be a completed run associated with this PR", () => {
   const good = {
-    id: 10, status: "completed", conclusion: "success", head_sha: "9".repeat(40),
-    created_at: "2026-10-26T10:00:00Z", pull_requests: [{ number: 14, head: { sha: previousHead } }],
+    id: 10, status: "completed", conclusion: "success", head_sha: previousHead,
+    head_branch: "fix/v3-missing-route-prices-2026-10-15",
+    created_at: "2026-10-26T10:00:00Z", pull_requests: [{ number: 14, head: { sha: currentHead } }],
   };
   const otherPr = { ...good, id: 11, pull_requests: [{ number: 13, head: { sha: currentHead } }] };
-  const current = { ...good, id: 12, pull_requests: [{ number: 14, head: { sha: currentHead } }] };
+  const current = { ...good, id: 12, head_sha: currentHead, pull_requests: [{ number: 14, head: { sha: currentHead } }] };
   const unfinished = { ...good, id: 13, status: "in_progress" };
   assert.equal(findPreviousCompletedRun([otherPr, unfinished, current], 14, 12), null);
   assert.equal(findPreviousCompletedRun([good], 14, 99)?.checked_head_sha, previousHead);
+  assert.notEqual(findPreviousCompletedRun([good], 14, 99)?.checked_head_sha, currentHead);
   assert.equal(findPreviousCompletedRun([{ ...good, pull_requests: [] }], 14, 99), null);
 });
 
