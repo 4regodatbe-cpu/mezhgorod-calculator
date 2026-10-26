@@ -44,6 +44,8 @@ GitHub-hosted Chrome preflight passed in run 40336150199 on head 0895948e294b9f1
 
 26.10.2026 17:48 МСК: corrected run 40342429468 produced five valid PASS (01,02,04,05,07). Case03 confirmed the V2 swap control is absent after result; case06 counted the retry button as a suggestion (test defect); case08 had no `/r` before timeout and remains inconclusive, likely hydration timing. [Evidence/results](checks/2026-10-26-b03-address-ui-run-40342429468/README.md), [partial checkpoint](../../docs/checkpoints/2026-10-26-1748-b03-ui-run2-PARTIAL.md). Focused swap callback implementation and complete hosted rerun STARTED: [checkpoint](../../docs/checkpoints/2026-10-26-1748-b03-v2-swap-fix-STARTED.md).
 
+26.10.2026 17:55 МСК: hosted Chrome run 40343852094 passed all eight mocked UI cases after wiring the V2 swap callback; per-case outputs and artifact hash: [run evidence](checks/2026-10-26-b03-address-ui-run-40343852094/README.md), [DONE](../../docs/checkpoints/2026-10-26-1755-b03-v2-swap-fix-DONE.md). This validates controlled UI behavior only. `addressCitySnapshot` remains false and the real external B-only incident is not declared fixed. Hosted artifact retained through 2026-11-25T14:54:08Z. Do not use underlying snapshot data beyond 31.10.2026 11:24:54 МСК without a new capture/review.
+
 ## Браузерная приёмка — ранее NOT_RUN (24.10.2026)
 
 Серверный HTML отдельно проверен: checks/2026-10-24-city-snapshot-render/verification.json, full898 PASS. Перестановка/очистка props в SSR не подтверждает реальные клики, useEffect, отмену или кэш. Локальный UI preflight: BLOCKED_BY_ENVIRONMENT_BROWSER; установленного Chromium нет. Не повторять поиск бинарника без изменения среды.

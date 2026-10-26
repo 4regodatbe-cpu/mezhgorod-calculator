@@ -1,6 +1,6 @@
-# B03 UI suite — swap fix STARTED — 26.10.2026 17:48 МСК
+# B03 hosted UI suite + V2 swap fix — DONE 8/8 — 26.10.2026 17:55 МСК
 
-Chrome smoke DONE: run 40336150199. Runner bootstrap error fixed. Run 40340623345 caught harness mistakes and is recorded [here](checkpoints/2026-10-26-1739-b03-ui-harness-run-FAILED.md). Run 40342429468: cases 01,02,04,05,07 PASS; 03 confirms V2 swap control absent; 06 assertion counted retry button; 08 began before hydration and is inconclusive. Evidence/artifact: [partial checkpoint](checkpoints/2026-10-26-1748-b03-ui-run2-PARTIAL.md) · [files](../experiments/road-ref-boundaries/checks/2026-10-26-b03-address-ui-run-40342429468/README.md). Focused `onSwap` fix + corrected browser runner are STARTED [here](checkpoints/2026-10-26-1748-b03-v2-swap-fix-STARTED.md). Recheck fresh remote snapshot and Action idle before next run. `addressCitySnapshot=false`; original B-only live failure unverified.
+Chrome smoke DONE: run 40336150199. B03 hosted UI suite run [40343852094](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40343852094) passed 8/8 on Chrome156/Node24; app swap callback now exchanges full Place metadata and resets the result. Scenario/per-case logs and artifact digest are recorded [here](../experiments/road-ref-boundaries/checks/2026-10-26-b03-address-ui-run-40343852094/README.md); [DONE checkpoint](checkpoints/2026-10-26-1755-b03-v2-swap-fix-DONE.md). Run40343863068 completed successfully, including focused tests, TypeScript, Next build, and live_probe. Actions were idle before this save. `addressCitySnapshot=false`; original real-service B-only failure is not proven fixed.
 
 # B01–B12 — 26.10.2026 16:51 МСК
 
