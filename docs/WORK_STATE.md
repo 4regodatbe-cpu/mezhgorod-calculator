@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:34 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:43 МСК
 
-**Progress: 6/18 blocks (33.3%).** B1–B6 complete. B6 cross-check disproved the provisional P1 empty-geometry path for current API callers: V2 always supplies route controls and `followsPlan` rejects missing controls before selection. V2 lacks V3's explicit finite/endpoint geometry guard; keep as P2 test/defense-in-depth gap, not demonstrated wrong price. B5 geocode-deadline risk remains P2 probable. Read-only, no tests or network. [Report](CODEBASE_AUDIT.md) · [B6](checkpoints/2026-10-26-2134-codebase-audit-block-06-DONE.md).
+**Progress: 7/18 blocks (38.9%).** B1–B7 complete. Saved captures: Eisk V2/V3 output delta +580 ₽ Thu, +1,530 ₽ Sat; Maykop delta 0 ₽ both days; route deltas −1 m/0 s. Proxy/API outputs only, not independent fare evidence. No recapture/replay. [Report](CODEBASE_AUDIT.md) · [B7](checkpoints/2026-10-26-2143-codebase-audit-block-07-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
