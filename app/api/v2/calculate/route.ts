@@ -25,6 +25,17 @@ function validUserRates(value: unknown): value is UserRates {
   const rates = value as Partial<UserRates>;
   return validRate(rates.standard) && validRate(rates.comfort) && validRate(rates.comfortPlus) && validRate(rates.minivan);
 }
+// Match the V3 calendar contract: reject normalized impossible dates and
+// require an explicit timezone whenever a time is supplied.
+function validDepartureAt(value: unknown): value is string {
+  if (typeof value !== "string") return false;
+  const match = /^(\d{4})-(\d{2})-(\d{2})(?:T(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d{1,3})?)?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d))?$/.exec(value);
+  if (!match) return false;
+  const calendar = new Date(`${match[1]}-${match[2]}-${match[3]}T00:00:00Z`);
+  return Number.isFinite(calendar.getTime())
+    && calendar.toISOString().slice(0, 10) === value.slice(0, 10)
+    && Number.isFinite(new Date(value).getTime());
+}
 
 export const maxDuration = 120;
 
@@ -45,7 +56,7 @@ export async function POST(request: NextRequest) {
       multiplier?: number;
     };
     if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return NextResponse.json({ error: "Некорректный режим расчёта" }, { status: 400 });
-    if (body.departureAt !== undefined && (typeof body.departureAt !== "string" || Number.isNaN(new Date(body.departureAt).getTime()))) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
+    if (body.departureAt !== undefined && !validDepartureAt(body.departureAt)) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
     if (body.vehicle !== undefined && !VEHICLES.includes(body.vehicle)) return NextResponse.json({ error: "Некорректный класс автомобиля" }, { status: 400 });
     if (body.modeOverride !== undefined && typeof body.modeOverride !== "boolean") return NextResponse.json({error:"Некорректный режим"},{status:400});
     if (body.specialRates !== undefined && !validUserRates(body.specialRates)) return NextResponse.json({error:"Некорректные особые тарифы"},{status:400});

@@ -1,3 +1,7 @@
+# CODEBASE AUDIT FIXES — IN PROGRESS — 26.10.2026 23:14 МСК
+
+Исправления P2: AUD-DATE-01 завершён локально и сохранён отдельным remote checkpoint; строгая календарная проверка V2 совпадает с V3, тарифный день не менялся. Текущий remote SHA будет указан после readback в checkpoint/work log. PR14 остаётся Draft. Новый план: 1/6 блоков завершён (16.7%): AUD-DATE-01, AUD-ERROR-01, AUD-CI-01, AUD-UI-01, доказательства AUD-DATA-01, доказательства AUD-TRACE-RECOVERY-01. Журнал: [WORK_LOG](codebase-audit/WORK_LOG.md); [NEXT_STEPS](codebase-audit/NEXT_STEPS.md); [checkpoint](checkpoints/2026-10-26-231423-aud-date-01-DONE.md). Следующий блок: AUD-ERROR-01.
+
 # CODEBASE AUDIT — DONE — 26.10.2026 21:39 МСК
 
 **New audit plan: 18/18 blocks (100%).** This is completion of the bounded static audit only, not project readiness. No application/business/tariff/CI code changed; no tests/build/browser/live calls run. Final audit report: [CODEBASE_AUDIT.md](CODEBASE_AUDIT.md). Final checkpoint: [B18](checkpoints/2026-10-26-2139-codebase-audit-block-18-DONE.md). [Timestamp correction](checkpoints/2026-10-26-2139-codebase-audit-timestamp-correction.md) clarifies B7–B17 timestamps; exact individual completion times were not captured. PR14 remains Draft; required branch-protection checks unverified (GitHub connector 403).
