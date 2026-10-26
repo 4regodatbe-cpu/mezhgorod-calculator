@@ -1,8 +1,8 @@
 import fs from "node:fs";
 
-const ALLOWED_REF = "refs/heads/fix/v3-missing-route-prices-2026-10-15";
-const ZERO_SHA = /^0{40}$/;
 const SAFE_SHA = /^[0-9a-f]{40}$/i;
+const MAX_COMPARE_FILES = 300;
+const ALLOWED_BRANCH = "fix/v3-missing-route-prices-2026-10-15";
 const LIVE_PATHS = [
   "app/api/v2/",
   "app/v2/",
@@ -37,35 +37,94 @@ export function classifyChangedPaths(paths) {
   const matched = paths.filter((file) => !isTestPath(file) && LIVE_PATHS.some((prefix) => file === prefix || file.startsWith(prefix)));
   return matched.length
     ? { shouldRunLive: true, reason: "route-runtime-changed" }
-    : { shouldRunLive: false, reason: "no-route-runtime-change-in-this-push" };
+    : { shouldRunLive: false, reason: "no-route-runtime-change-in-update" };
 }
 
-export function classifyPushEvent(event) {
-  if (!event || event.ref !== ALLOWED_REF || typeof event.before !== "string" || !SAFE_SHA.test(event.before) || typeof event.after !== "string" || !SAFE_SHA.test(event.after)) {
-    return { shouldRunLive: true, reason: "push-range-unverifiable" };
-  }
-  if (ZERO_SHA.test(event.before) || !Number.isInteger(event.size) || event.size < 1 || !Array.isArray(event.commits) || event.commits.length !== event.size) {
-    return { shouldRunLive: true, reason: "push-commit-list-incomplete" };
-  }
-
-  const paths = [];
-  for (const commit of event.commits) {
-    if (!commit || !Array.isArray(commit.added) || !Array.isArray(commit.modified) || !Array.isArray(commit.removed)) {
-      return { shouldRunLive: true, reason: "push-file-list-incomplete" };
-    }
-    paths.push(...commit.added, ...commit.modified, ...commit.removed);
-  }
-  return classifyChangedPaths(paths);
+export function findPreviousCompletedRun(runs, prNumber, currentRunId) {
+  if (!Array.isArray(runs) || !Number.isInteger(prNumber)) return null;
+  const candidates = runs.flatMap((run) => {
+    if (!run || run.id === currentRunId || run.status !== "completed" || !["success", "failure"].includes(run.conclusion) || !Number.isFinite(Date.parse(run.created_at))) return [];
+    const linkedPr = Array.isArray(run.pull_requests) ? run.pull_requests.find((pr) => pr?.number === prNumber) : null;
+    const checkedHeadSha = linkedPr?.head?.sha;
+    if (!SAFE_SHA.test(checkedHeadSha ?? "")) return [];
+    return [{ ...run, checked_head_sha: checkedHeadSha }];
+  });
+  candidates.sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at));
+  return candidates[0] ?? null;
 }
 
-function main() {
+export function hasReliablePreviousChecks(jobs) {
+  if (!Array.isArray(jobs)) return false;
+  const verify = jobs.find((job) => job?.name === "verify");
+  if (verify?.status !== "completed" || verify.conclusion !== "success") return false;
+  const classifier = jobs.find((job) => job?.name === "classify_live_scope");
+  const liveProbe = jobs.find((job) => job?.name === "live_probe");
+  if (classifier) {
+    return classifier.status === "completed" && classifier.conclusion === "success" && liveProbe?.status === "completed";
+  }
+  const timing = jobs.find((job) => job?.name === "calculation_timing");
+  const geometryStep = liveProbe?.steps?.find((step) => step?.name === "Probe live provider geometry and per-leg times");
+  return liveProbe?.status === "completed" && geometryStep?.status === "completed" && geometryStep.conclusion === "success" && timing?.status === "completed" && timing.conclusion === "success";
+}
+
+export function classifyPullRequestDelta(previousHead, currentHead, comparison) {
+  if (!SAFE_SHA.test(previousHead ?? "") || !SAFE_SHA.test(currentHead ?? "")) {
+    return { shouldRunLive: true, reason: "comparison-head-unverifiable" };
+  }
+  if (previousHead === currentHead || comparison?.status === "identical") {
+    return { shouldRunLive: false, reason: "head-already-checked" };
+  }
+  if (comparison?.status !== "ahead" || !Array.isArray(comparison.files) || comparison.files.length >= MAX_COMPARE_FILES) {
+    return { shouldRunLive: true, reason: "comparison-incomplete-or-non-linear" };
+  }
+  return classifyChangedPaths(comparison.files.map((file) => file?.filename));
+}
+
+async function githubJson(url, token) {
+  const response = await fetch(url, {
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+    signal: AbortSignal.timeout(15_000),
+  });
+  if (!response.ok) throw new Error(`GitHub API HTTP ${response.status}`);
+  return response.json();
+}
+
+async function classifyCurrentPrEvent(event) {
+  if (process.env.GITHUB_EVENT_NAME === "workflow_dispatch") {
+    return { shouldRunLive: true, reason: "explicit-workflow-dispatch" };
+  }
+  const prNumber = event?.pull_request?.number;
+  const currentHead = event?.pull_request?.head?.sha;
+  const repository = process.env.GITHUB_REPOSITORY;
+  const token = process.env.GH_TOKEN;
+  if (process.env.GITHUB_EVENT_NAME !== "pull_request" || !Number.isInteger(prNumber) || !SAFE_SHA.test(currentHead ?? "") || !repository || !token) {
+    return { shouldRunLive: true, reason: "pr-context-unverifiable" };
+  }
+
+  const root = `https://api.github.com/repos/${repository}`;
+  const workflow = await githubJson(`${root}/actions/workflows/special-territory-policy.yml/runs?event=pull_request&branch=${encodeURIComponent(ALLOWED_BRANCH)}&per_page=100`, token);
+  const previous = findPreviousCompletedRun(workflow?.workflow_runs, prNumber, Number(process.env.GITHUB_RUN_ID));
+  if (!previous) return { shouldRunLive: true, reason: "previous-checked-head-unavailable" };
+
+  const previousJobs = await githubJson(`${root}/actions/runs/${previous.id}/jobs?per_page=100`, token);
+  if (!hasReliablePreviousChecks(previousJobs?.jobs)) return { shouldRunLive: true, reason: "previous-checks-incomplete" };
+
+  const comparison = await githubJson(`${root}/compare/${previous.checked_head_sha}...${currentHead}`, token);
+  return classifyPullRequestDelta(previous.checked_head_sha, currentHead, comparison);
+}
+
+async function main() {
   let result;
   try {
-    const eventPath = process.argv[2];
-    if (!eventPath) throw new Error("missing event path");
-    result = classifyPushEvent(JSON.parse(fs.readFileSync(eventPath, "utf8")));
+    const eventPath = process.env.GITHUB_EVENT_PATH;
+    if (!eventPath) throw new Error("event payload unavailable");
+    result = await classifyCurrentPrEvent(JSON.parse(fs.readFileSync(eventPath, "utf8")));
   } catch {
-    result = { shouldRunLive: true, reason: "classifier-error" };
+    result = { shouldRunLive: true, reason: "classifier-or-api-error" };
   }
   const output = `should_run_live=${result.shouldRunLive}\nreason=${result.reason}\n`;
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, output);
@@ -73,4 +132,4 @@ function main() {
   console.log(JSON.stringify(result));
 }
 
-if (process.argv[1] && new URL(import.meta.url).pathname === process.argv[1]) main();
+if (process.argv[1] && new URL(import.meta.url).pathname === process.argv[1]) await main();
