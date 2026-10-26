@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:10 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:18 МСК
 
-**Progress: 10/18 blocks (55.6%).** B10 V2 UI statically reviewed. Address query cancels stale requests; calculation cancels on replacement/form changes but no hook unmount cleanup was found (P2 resource-risk, unverified). No UI defect reproduced; no browser run. [Report](CODEBASE_AUDIT.md) · [B10](checkpoints/2026-10-26-2210-codebase-audit-block-10-DONE.md).
+**Progress: 11/18 blocks (61.1%).** B11 V3 UI/lifecycle reviewed; unmount cleanup and strict API response validation exist. No new defect. V2 unmount cancellation remains a P2 risk. [Audit](CODEBASE_AUDIT.md) · [B11](checkpoints/2026-10-26-2218-codebase-audit-block-11-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
