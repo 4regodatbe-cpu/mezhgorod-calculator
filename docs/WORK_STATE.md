@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 23:31 МСК
+# CODEBASE AUDIT — DONE — 26.10.2026 21:39 МСК
 
-**Progress: 17/18 blocks (94.4%).** B17 workflows reviewed. P2 Node runtime mismatch: scheduled route-quality and manual systemic toll-composition use Node22.13 though package engines require 24.x. Branch protection required checks remain unknown (connector 403). [Audit](CODEBASE_AUDIT.md) · [B17](checkpoints/2026-10-26-2331-codebase-audit-block-17-DONE.md).
+**New audit plan: 18/18 blocks (100%).** This is completion of the bounded static audit only, not project readiness. No application/business/tariff/CI code changed; no tests/build/browser/live calls run. Final audit report: [CODEBASE_AUDIT.md](CODEBASE_AUDIT.md). Final checkpoint: [B18](checkpoints/2026-10-26-2139-codebase-audit-block-18-DONE.md). [Timestamp correction](checkpoints/2026-10-26-2139-codebase-audit-timestamp-correction.md) clarifies B7–B17 timestamps; exact individual completion times were not captured. PR14 remains Draft; required branch-protection checks unverified (GitHub connector 403).
 
 ## Historical state log (superseded by the current summary above)
 
