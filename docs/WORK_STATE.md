@@ -1,8 +1,8 @@
-# B01–B12 / selective CI configuration — IN_PROGRESS — 26.10.2026 21:18 МСК
+# B01–B12 / selective CI configuration — DONE — 26.10.2026 21:30 МСК
 
 # B01–B12 / selective CI configuration — IN_PROGRESS — 26.10.2026 21:05 МСК
 
-Remote before workflow write: allowed branch head `11f3a5c3d408b04d47140252ce88a1f734333e12`; PR #14 Draft; no GitHub Actions active. Workflow persisted at `f477eab7cad37c699bd96e3f4e6a2875c331f538`. Hosted run `40363211385`: verify and calculation_timing PASS; classifier failed after computing `head-already-checked` because diagnostic JSON was also appended to `$GITHUB_OUTPUT`. Fail-open correctly ran live jobs: geometry passed; bounded address probe failed on Красн HTTP503/cooldown and Donetsk cooldown; later route corpus/Yandex steps skipped. No application/tariff files changed. Local fix sends diagnostics to stderr; classifier-failure baseline is reusable only if verify succeeded and fail-open live job completed. Nine focused model cases pass. Need persist this fix and get hosted verify/classifier result before B10. [STARTED checkpoint](checkpoints/2026-10-26-2030-special-ci-live-probe-selective-STARTED.md).
+Remote branch now at `f2208fdae88983b5efe1ce69c29d3b9da6845c57`; PR #14 open/Draft. Workflow selective PR-delta classifier and helper are saved. Node model tests 10/10 PASS. Hosted run `40364820838` completed SUCCESS: `verify` PASS (435 project tests, 10 classifier tests, TypeScript, build), classifier PASS with `head-already-checked`, `live_probe` and `calculation_timing` correctly skipped. Earlier run `40363211385` exposed output formatting bug and fail-open correctly ran; address probe hit bounded 503/cooldown as recorded in the DONE checkpoint. No app/tariff/data/geometry logic changed; no Actions cancelled. [DONE checkpoint](checkpoints/2026-10-26-2130-special-ci-live-probe-selective-DONE.md). Next: check whether a Maykop-only B10 run can trigger without broad live jobs, then capture/replay only if safe.
 
 # B10 hosted V2 capture — partial — 26.10.2026 19:10 МСК
 
