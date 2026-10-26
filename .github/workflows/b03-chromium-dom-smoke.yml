@@ -1,0 +1,64 @@
+name: B03 Chromium DOM smoke
+on:
+  push:
+    branches: [fix/v3-missing-route-prices-2026-10-15]
+    paths:
+      - .github/workflows/b03-chromium-dom-smoke.yml
+permissions:
+  contents: read
+concurrency:
+  group: b03-chromium-dom-smoke-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  chromium-dom-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Prepare evidence directory
+        run: mkdir -p b03-smoke-evidence
+      - name: Install stable Chrome
+        id: chrome
+        uses: browser-actions/setup-chrome@c785b87e244131f27c9f19c1a33e2ead956ab7ce # v1
+        with:
+          chrome-version: stable
+          install-dependencies: true
+          install-chromedriver: false
+      - name: Launch only about:blank and verify DOM creation
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          CHROME_VERSION: ${{ steps.chrome.outputs.chrome-version }}
+        shell: bash
+        run: |
+          set -u
+          {
+            printf 'event=%s\nbranch=%s\ncommit=%s\n' "$GITHUB_EVENT_NAME" "$GITHUB_REF_NAME" "$GITHUB_SHA"
+            printf 'runner_os=%s\n' "$RUNNER_OS"
+            uname -a
+            node --version
+            printf 'chrome_path=%s\nchrome_version=%s\n' "$CHROME_PATH" "$CHROME_VERSION"
+            "$CHROME_PATH" --version
+          } > b03-smoke-evidence/environment.txt 2> b03-smoke-evidence/environment.stderr.txt
+          set +e
+          timeout 30s "$CHROME_PATH" \
+            --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage \
+            --disable-background-networking --disable-extensions --disable-sync \
+            --no-first-run --no-default-browser-check \
+            --user-data-dir="$RUNNER_TEMP/b03-chrome-smoke-profile" \
+            --dump-dom about:blank \
+            > b03-smoke-evidence/dom.html 2> b03-smoke-evidence/chrome.stderr.txt
+          code=$?
+          printf '%s\n' "$code" > b03-smoke-evidence/exit-code.txt
+          if [ "$code" -eq 0 ] && grep -Eqi '<html([[:space:]>])' b03-smoke-evidence/dom.html; then
+            printf 'PASS: Chromium launched and emitted an HTML document for about:blank\n' > b03-smoke-evidence/dom-check.txt
+          else
+            printf 'FAIL: Chromium did not produce a valid about:blank DOM (exit %s)\n' "$code" > b03-smoke-evidence/dom-check.txt
+            exit 1
+          fi
+      - name: Upload smoke evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b03-chromium-dom-smoke-${{ github.run_id }}
+          path: b03-smoke-evidence/
+          if-no-files-found: warn
+          retention-days: 30

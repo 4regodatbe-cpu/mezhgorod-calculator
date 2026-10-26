@@ -1,5 +1,9 @@
 # B01–B12 work log
 
+## 26.10.2026 17:01 МСК — B03 hosted Chromium DOM smoke STARTED
+
+Remote SHA `1ac7776dea54139554cfce39b20d11b7a04125a2`, PR #14 Draft. Added isolated Chrome runner targeting only `about:blank`; no application `/r`, external address service, or eight UI scenarios in this block. Snapshot expiry is 31.10.2026 11:24:54 МСК; currently fresh, but must be checked again before any scenario use. [STARTED](../checkpoints/2026-10-26-1701-b03-chrome-smoke-STARTED.md).
+
 ## 26.10.2026 16:51 МСК — three nationwide tests environment diagnosis DONE
 
 GitHub Actions run [40332405721](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40332405721) on allowed head `2907a409305834c4cb9b25bc717978f049bb22f9`, Node 24.21.0: child-process tests 3/3, automatic policy replay integration 3/3, systemic report 1/1; total 7/7 PASS, 0 FAIL. Artifact/log streams fetched and archived with zero exit codes/empty stderr; see [evidence](../../experiments/nationwide-tolls/checks/2026-10-26-three-test-diagnostic/README.md). Earlier local `spawnSync ... EPERM` failures are confirmed Codex child-process sandbox restriction, not product failures. Do not rerun absent a new cause. [Checkpoint](../checkpoints/2026-10-26-1651-nationwide-three-tests-CODEX-ENVIRONMENT-DIAGNOSIS-DONE.md).

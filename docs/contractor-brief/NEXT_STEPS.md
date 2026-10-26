@@ -1,6 +1,8 @@
 # B01–B12 next steps
 
-Актуально на 26.10.2026 16:51 МСК; nationwide Node 24 diagnostic завершён: [run 40332405721](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40332405721), 7/7 PASS, логи и артефакт сохранены в репозитории. Локальный EPERM объясняется Codex sandbox; тесты не повторять без новой причины.
+Актуально на 26.10.2026 17:01 МСК; B03 STARTED: выполнить только Chrome `about:blank` DOM smoke через [.github/workflows/b03-chromium-dom-smoke.yml](../../.github/workflows/b03-chromium-dom-smoke.yml). При успехе — отдельный STARTED и восемь mocked `/r` сценариев; при отсутствии события Actions — зафиксировать блокер и запросить однократный push-trigger согласно checkpoint. Snapshot свеж до 31.10.2026 11:24:54 МСК; перепроверить до scenario run.
+
+Nationwide Node 24 diagnostic завершён: [run 40332405721](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40332405721), 7/7 PASS, логи и артефакт сохранены в репозитории. Локальный EPERM объясняется Codex sandbox; тесты не повторять без новой причины.
 
 1. **B10 / three-test diagnosis DONE:** 7/7 PASS hosted; [evidence](../../experiments/nationwide-tolls/checks/2026-10-26-three-test-diagnostic/README.md). Локальные падения — sandbox EPERM; тесты завершены, не повторять без новой причины.
 
