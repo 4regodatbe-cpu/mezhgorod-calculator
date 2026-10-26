@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest technical5/24 (20.83%): block22 selective-CI review saved, classifier10/10 PASS. Cumulative runtime changes since last checked baseline explain docs-triggered live jobs; pending-runtime accounting remains necessary before safely narrowing this further. No CI config changed, no live run started. Next20 offline profiling.
+
 Latest DONE4/24 (16.67%):1,12,17,19. Eisk delta explained exactly by13-PVP sum4920/6770 versus V3 endpoint-cell4340/5240; no tariff changes. Evidence docs/codebase-audit/EISK_COMPONENT_ANALYSIS.md. Next22 CI saved metadata.
 
 Latest: technical DONE3/24 (1,12,17). Block12 geocode deadline25s implemented; timeout maps to GEOCODE_UNAVAILABLE, first-feature selection and supplied coordinates preserved. Two mocked tests, TypeScript/scoped ESLint PASS. [Checkpoint](checkpoints/2026-10-27-geocode-deadline-DONE.md). Next19/B10 saved Eisk component attribution. B01 remains partial.

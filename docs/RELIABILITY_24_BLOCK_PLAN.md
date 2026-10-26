@@ -109,6 +109,8 @@
 
 ## Status reconciliation
 
+Latest22 review DONE with residual cumulative-baseline limitation; checkpoint2026-10-27-block22-DONE.md. DONE5/24 (1,12,17,19,22),20.83%. Next20 offline profiling.
+
 Latest block19 DONE: docs/codebase-audit/EISK_COMPONENT_ANALYSIS.md and EISK_COMPONENT_EVIDENCE.json. DONE4/24 (1,12,17,19),16.67%. No live queries. Next22.
 
 Latest: block12 DONE, checkpoint2026-10-27-geocode-deadline-DONE.md. Confirmed DONE3/24:1,12,17. Below reconciliation records the initial restoration snapshot. Next19/B10 offline Eisk component attribution.
