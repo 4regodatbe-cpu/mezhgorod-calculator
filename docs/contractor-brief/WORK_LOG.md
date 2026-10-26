@@ -1,5 +1,9 @@
 # B01–B12 work log
 
+## 2026-10-27 — unified queue reconciled
+
+Supplement read; baseline396daf20 verified against remote/PR14 Draft; current-head Actions list empty. Linked completed repairs and B directions in `docs/UNIFIED_RELIABILITY_PLAN.md`; no repeated test/audit/capture. Original 24 numbered definitions missing, so technical count UNKNOWN/24. Functional direction statuses:4 ACTIONABLE,7 BLOCKED_BY_DATA,1 BLOCKED_BY_ENVIRONMENT; no broad direction declared fully closed from narrow evidence. Next B01/AUD-GEOCODE-01. Checkpoint `docs/checkpoints/2026-10-27-unified-plan-reconciliation-DONE.md`.
+
 ## 26.10.2026 20:07 МСК — B10 Maykop-only selector STARTED after selective CI PASS
 
 Selective CI is verified on hosted run40364820838 (verify/classifier success, live jobs skipped). The branch's existing B10 workflow and capture harness are exact matches to remote files; harness currently preflights/captures both Eisk and Maykop. Introduce a strict case-list parser; preflight uses the first selected case, capture and offline comparison iterate selected cases only. Add four local tests for default/two-case, Maykop-only, subset, and invalid/duplicate selections. All four pass locally; no network requests. Update special verify to run selector tests, hosted-verify with the B10 workflow unchanged, then only set `B10_CAPTURE_CASES=maykop-to-moscow` and run one narrow capture. [STARTED checkpoint](../checkpoints/2026-10-26-2007-b10-maykop-capture-STARTED.md).
