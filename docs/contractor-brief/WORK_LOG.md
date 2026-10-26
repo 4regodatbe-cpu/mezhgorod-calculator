@@ -95,3 +95,8 @@ Chromium 154 теперь присутствует, но bounded headless `about
 ## 24.10.2026 22:05 МСК — B10 V2 compare recovery STARTED
 
 Сверён старый незавершённый STARTED: V2 evidence/DONE отсутствуют, V3 captures/replay уже сохранены и повторяться не будут. Текущий блок ограничен frozen install и подготовкой двухслучайного V2 harness с no-network preflight; live capture начнётся только после следующего durable STARTED. [План и recovery](../checkpoints/2026-10-24-220525-b10-v2-compare-recovery-STARTED.md).
+
+
+## 26.10.2026 20:28 МСК — B10 Maykop-only workflow scope staged; docs-only classifier proof next
+
+Rechecked remote branch HEAD `f85955f4d3596617cad3d399a4b593524dd733f6`, PR #14 Draft, and Actions (no queued/in-progress runs). B10 workflow env now selects only `maykop-to-moscow`, saved/read back in `f85955f4d3596617cad3d399a4b593524dd733f6`; `[skip ci]` prevented an incidental run. No provider traffic and no Eisk recapture. The next normal update contains docs/checkpoint only; wait for special verify and classifier result. Trigger exactly one Maykop capture only if required verify passes and wide jobs skip. [Checkpoint](../checkpoints/2026-10-26-2028-b10-maykop-workflow-scope-DONE.md).
