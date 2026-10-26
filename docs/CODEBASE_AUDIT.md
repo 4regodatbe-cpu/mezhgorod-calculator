@@ -1,48 +1,36 @@
 # Технический аудит репозитория «Из А в Б»
 
-Статус IN_PROGRESS; план этого аудита — 18 блоков. Источник — текущая удалённая ветка `fix/v3-missing-route-prices-2026-10-15`, исходный SHA `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`. Только статический код/evidence review. Изменения касаются только документов/checkpoints; тарифы и продуктовая логика не менялись. Процент — только новый план.
+Статус IN_PROGRESS; новый план — 18 блоков. Source: remote `fix/v3-missing-route-prices-2026-10-15`, baseline `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`. Read-only source/evidence review; no application, pricing or business-rule changes. Progress percent applies only to this audit.
 
-## Прогресс
+## Progress
 
-18 блоков: 1 architecture; 2 address lookup; 3 cache/pool/cancel; 4 API inputs; 5 providers; 6 selection; 7 saved V2/V3 comparison; 8 geometry/boundaries; 9 tariff composition; 10 V2 UI; 11 V3 UI; 12 API output/errors; 13 security; 14 performance; 15 dependencies/build; 16 tests; 17 CI; 18 docs/data governance/synthesis. Завершено 9/18 (50.0%). Последний [B9 checkpoint](checkpoints/2026-10-26-2201-codebase-audit-block-09-DONE.md). Тесты/build/live/browser не запускались.
+18 blocks: 1 architecture; 2 address lookup; 3 cache/pool/cancel; 4 API inputs; 5 providers; 6 selection; 7 saved V2/V3 evidence; 8 geometry/boundaries; 9 tariff composition; 10 V2 UI; 11 V3 UI; 12 API output/errors; 13 security; 14 performance; 15 dependencies/build; 16 test quality; 17 CI; 18 docs/data governance/synthesis. Done: 10/18 (55.6%). Last: [B10 checkpoint](checkpoints/2026-10-26-2210-codebase-audit-block-10-DONE.md). No tests/build/browser/live requests in this audit.
 
-## Оценка состояния
+## Saved V2/V3 evidence (reports only)
 
-Текущие pricing/geometry paths содержат заметные fail-closed проверки: неполное road-system composition не становится полным total; unknown-ноль сериализуется как null; trace coverage явно учитывается. Подтверждённых P0/P1 пока нет. Есть несколько вероятных P2, каждый требует изолированной проверки/уточнения.
+Eisk V2−V3: Thu −1m/0s/+580₽; Sat −1m/0s/+1,530₽. Maykop: Thu/Sat −1m/0s/0₽. Capture SHAs and limits are recorded in [B7](checkpoints/2026-10-26-2143-codebase-audit-block-07-DONE.md). These are proxy outputs, not operator fare verification.
 
-## Сохранённое V2/V3 evidence (не запускалось повторно)
+## Findings
 
-| Направление/день | V2 | V3 | V2−V3 |
-|---|---|---|---|
-| Ейск—Москва Thu | 1,271,780 м; 59,629 с; 4,920 ₽ | 1,271,781 м; 59,629 с; 4,340 ₽ | −1 м; 0 с; +580 ₽ |
-| Ейск—Москва Sat | same route/time; 6,770 ₽ | same route/time; 5,240 ₽ | −1 м; 0 с; +1,530 ₽ |
-| Майкоп—Москва Thu | 1,404,673 м; 65,838 с; 5,040 ₽ | 1,404,674 м; 65,838 с; 5,040 ₽ | −1 м; 0 с; 0 ₽ |
-| Майкоп—Москва Sat | same route/time; 6,090 ₽ | same route/time; 6,090 ₽ | −1 м; 0 с; 0 ₽ |
+### P2 — probable/unverified
 
-Это proxy/API outputs, не независимая проверка тарифов; тарифы не менять.
+- **AUD-GEOCODE-01:** direct Photon label geocode has no local deadline; may hold request until platform timeout. No timeout reproduced. Bounded transport/abort regression recommended, isolated.
+- **AUD-API-01:** calculate endpoints have no explicit app-level request byte/label cap. Platform caps/exploitability unverified; shared validator recommended.
+- **AUD-PROVIDER-01:** provider JSON responses are parsed without explicit app byte cap; upstream constraints unknown. Risk only.
+- **AUD-TEST-01:** V3 explicitly rejects invalid route geometry; equivalent V2 regression not found, though public V2 paths reject missing plan controls. Coverage/defense-in-depth gap, not proven output defect.
+- **AUD-TRACE-RECOVERY-01:** partial trace with a toll edge has `status:toll, complete:false`; recovery uses that status to lower geometric segment threshold (M4 2 vs4, M12 2 vs5) and may emit a matched amount from matching segments. Potential partial/subtotal classification risk; not reproduced and geometry still independently matches corridor. Recommend focused complete/partial-trace fixtures, then define policy. Medium fix risk (could increase unknown outcomes), isolated to recovery evidence contract.
+- **AUD-UI-01:** V2 calculation hook stores pending AbortController, cancels previous calculation/new form clear, but no unmount cleanup is present in `use-v2-calculation.ts:25,70–74,143`; `app/v2/page.tsx` uses hook without cleanup. On SPA unmount an in-flight API request could continue consuming server/provider work. No runtime reproduced; browser not run. Recommend cleanup on unmount and a focused hook test. Low risk, isolated hook lifecycle change.
 
-## Находки
+No P0/P1 confirmed. Earlier provisional V2 empty geometry P1 was withdrawn after controls-path review.
 
-### P2 — вероятные риски, дефект не воспроизведён
+## B10 V2 UI review
 
-**AUD-GEOCODE-01 — локальный deadline отсутствует у direct label geocode.** `lib/route-providers.ts`, `geocode`: Photon fetch без AbortSignal; V2/V3 разрешают label-only точки. Возможное удержание запроса до platform timeout. Исправление: bounded adapter + abort regression, не менять ranking. Риск низкий/средний; изолируемо. Доказательств runtime-отказа нет.
+`app/v2/components/address-field.tsx` uses 350ms debounce, cache, AbortController cleanup, checks `signal.aborted` before applying response, and exposes retry/error/empty/live status. Input maxLength 200 and suggestion controls are keyboard-native buttons; snapshot source is visibly labeled. No race/accessibility issue proven from inspection. `use-v2-calculation.ts` aborts old requests on new call and `clearResult`; telemetry failure is isolated. Only unmount cancellation is the probable lifecycle risk above.
 
-**AUD-API-01 — calculate handlers без явного app-level лимита body bytes/label длины.** [B4](checkpoints/2026-10-26-2112-codebase-audit-block-04-DONE.md); platform caps и exploitability не проверены. Предложение — общий validator на границе API; низкий/средний риск, независимо.
+## Not reviewed
 
-**AUD-PROVIDER-01 — отсутствует явный byte cap для JSON route provider responses.** `lib/route-providers.ts` использует `response.json()`; platform/upstream ограничения не установлены. Это resource-risk, не доказанная уязвимость. Сначала выяснить реальные пределы.
+Blocks 11–18: V3 UI, API response contract, security/privacy, perf/memory, dependencies/build, tests, CI and governance. No tests/build/browser/live requests; no road/fare audit repeated.
 
-**AUD-TEST-01 — V2-specific regression для invalid geometry не найден.** В просмотренном V3 есть `isUsableRoute` и тест empty geometry; публичный V2 path пустую геометрию отклоняет через `followsPlan`, поэтому неправильная цена не доказана. Добавить точечный contract test до guard-refactor; низкий риск.
+## Next
 
-**AUD-TRACE-RECOVERY-01 — неполный платный map trace влияет на пониженный порог corridor recovery.** В `lib/toll-validator.ts:317–325` неуспешная часть возвращает `complete:false`, но `status:"toll"`, если хотя бы один успешный chunk содержит toll edge. `lib/toll-recovery.ts:101–104,117` трактует любой `status:"toll"` как map-matched evidence и использует `minRunWithMapMatch`: M4 — 2 вместо 4 подряд recovery segments, M12 — 2 вместо 5. При совпадении только короткого отрезка recovery выдаёт сумму по найденным сегментам с `confidence:"matched"`; caller затем может её отдать как priced. Это статический потенциальный риск неполного коридорного расчёта, не воспроизведённый результат: сама recovery требует независимого геометрического совпадения, а неизвестно, сможет ли частичная геометрия выдать неполный subtotal на реальном маршруте. Рекомендация: отдельные контролируемые fixtures с частичным/полным trace, route traversing short/long corridor, затем определить — запрещать понижение порога при `complete:false` или обосновать комбинацию геометрии и partial evidence. Риск исправления средний: может вернуть unknown на легитимной трассе; польза — исключить неполный total; отдельный validator/recovery contract test. Тарифы менять нельзя.
-
-### Подтверждённые defects
-
-На блоках 1–9 P0/P1 не подтверждены. Начальное предположение о V2 empty geometry P1 снято после B6: route controls отклоняют пустые координаты до выбора.
-
-## Не проверено
-
-Блоки 10–18: V2/V3 frontend state, API response contracts, security/privacy, perf/memory, dependency/build configuration, test quality (без полного запуска), CI and documentation/data governance. Нет runtime проверок, сетевых запросов или повторных route/fare audits.
-
-## Следующий шаг
-
-B10 — статически проверить V2 frontend state/address input/request lifecycle/error rendering. Только связанные файлы; не запускать browser.
+B11 statically inspect V3 address/calculation state and error lifecycle; no browser tests.

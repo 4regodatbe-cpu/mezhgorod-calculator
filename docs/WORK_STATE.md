@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:01 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:10 МСК
 
-**Progress: 9/18 blocks (50.0%).** B9 pricing review: composition blocks partial/conflicting/unknown components; zero-unknown serializes as null. P2 candidate: incomplete trace with any paid edge uses reduced geometry-recovery threshold (M4 2 vs4 segments; M12 2 vs5), returning matched recovered amount; consequence not reproduced. [Report](CODEBASE_AUDIT.md) · [B9](checkpoints/2026-10-26-2201-codebase-audit-block-09-DONE.md).
+**Progress: 10/18 blocks (55.6%).** B10 V2 UI statically reviewed. Address query cancels stale requests; calculation cancels on replacement/form changes but no hook unmount cleanup was found (P2 resource-risk, unverified). No UI defect reproduced; no browser run. [Report](CODEBASE_AUDIT.md) · [B10](checkpoints/2026-10-26-2210-codebase-audit-block-10-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
