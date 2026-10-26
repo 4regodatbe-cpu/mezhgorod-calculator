@@ -2,6 +2,10 @@
 
 Updated: 2026-10-02. This note records the current boundary between the standalone Calculator 2.0, the public platform, and route benchmarks.
 
+## 2026-10-27 — V2 corridor recovery is diagnostic, not a full fare
+
+Approved by the user for AUD-TRACE-RECOVERY-01. Approximate corridor-recovery subtotals alone must not be returned as a public full-route toll: without independent route-wide pricing evidence, V2 uses `pricingStatus:"unknown"` and null monetary totals. Preserve subtotal/section detail in diagnostics. A partial trace cannot use the more permissive map-matched recovery threshold; numeric M4/M12 thresholds remain unchanged. Independent complete route-composition pricing remains `priced` even when trace metadata is incomplete; a complete trace alone is not full-tariff evidence. Do not change existing tariff values, road geometry, or fastest-route selection. [Decision/evidence](codebase-audit/AUD-TRACE-RECOVERY-DECISION.md).
+
 ## Product boundary
 
 - This repository remains the standalone Calculator 2.0 site/application used by dispatchers and taxi drivers.

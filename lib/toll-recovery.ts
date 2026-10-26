@@ -114,7 +114,11 @@ export function recoverCorridorTolls(
 ): RecoveredTolls | null {
   if (route.length < 3) return null;
   const dense = densify(route);
-  const mapMatched = validation.status === "toll";
+  // Only a complete toll trace may select the more permissive recovery run.
+  // A partial/legacy result remains diagnostic evidence, never a full match.
+  const mapMatched = validation.status === "toll"
+    && validation.complete === true
+    && validation.boothEventCoverage === "complete";
 
   const candidates = ROADS
     .map((road) => recoverRoad(dense, road, mapMatched, routeDifferenceConfirmed))
@@ -132,7 +136,11 @@ export function recoverCorridorTolls(
   const validDate = Number.isNaN(date.getTime()) ? new Date() : date;
   const day = validDate.getDay();
   const weekend = day === 0 || day === 5 || day === 6;
-  const evidence = mapMatched ? "map matching + геометрия" : "геометрия + сравнение маршрутов";
+  const evidence = mapMatched
+    ? "полный map matching + геометрия"
+    : validation.status === "toll"
+      ? "геометрия (trace не подтверждена как полная; строгий порог восстановления)"
+      : "геометрия + сравнение маршрутов";
 
   return {
     amount: weekend ? weekendAmount : weekdayAmount,

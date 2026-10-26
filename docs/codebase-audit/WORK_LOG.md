@@ -1,5 +1,15 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 00:54 МСК — AUD-TRACE-RECOVERY-01 approved V2 fix DONE
+
+- Parent remote/local `d891271479cce6164d10a72a317a51fa7f7f98d3`; allowed branch only; PR14 open/Draft; no Actions associated with that SHA at preflight.
+- User approved the previously recorded policy: corridor recovery is approximate only; without independent full-route pricing, totals are null/status unknown; retain subtotal/segments for diagnostics; incomplete trace cannot use matched thresholds; independent composed complete cost remains priced under incomplete trace. Numeric thresholds and fare data unchanged.
+- Test-first RED on `scripts/v2-partial-trace-recovery.test.ts`: complete and partial traces both exposed M12 subtotal995 as priced; partial `recoverCorridorTolls` returned the lower-threshold two-section recovery. Independent composed route-price fixture serialized priced even when validation was partial.
+- Implementation: `lib/toll-recovery.ts` gates the existing soft matched threshold on toll+complete+complete booth-event coverage. `lib/v2-calculation/route-leg-pricing.ts` moves corridor recovery amounts into `corridorRecoveryDiagnostic` and returns zero-backed internal unknown totals. `lib/v2-calculation/route-leg.ts` exposes diagnostic subtotal and sections only in diagnostics mode. `tollsForApi` therefore emits null totals/unknown. No tariff/geometry/route-selection code changed. Existing V3 fixture now explicitly marks booth coverage complete.
+- GREEN: focused trace tests (3 cases) and four related test files PASS; TypeScript noEmit PASS; scoped ESLint PASS; diff check PASS. Exact command/check list in [checkpoint](../checkpoints/2026-10-27-0054-aud-trace-recovery-fix-DONE.md).
+- Broad full build/Actions intentionally not run because the full build launches repository-wide tests/live audit outside the user's narrow scope. No hosted CI claim. No route/provider/browser/network calls.
+- Decision: [AUD-TRACE-RECOVERY-DECISION](AUD-TRACE-RECOVERY-DECISION.md). No independent block remains in the follow-up plan.
+
 ## 26.10.2026 23:49 МСК — AUD-TRACE-RECOVERY-01 V2 focused regression DONE
 
 - Parent `529fb708bd880f9396b3399f5ec389eea78d7041`; allowed branch only; PR #14 Draft; preflight showed no runs for the current SHA.
