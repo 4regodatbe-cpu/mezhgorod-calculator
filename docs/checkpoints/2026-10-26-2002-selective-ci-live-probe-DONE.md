@@ -14,3 +14,7 @@ The existing PR `verify` job still runs project tests, TypeScript and Next build
 - First hosted [run 40363211385](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40363211385): classifier computed `head-already-checked` but initially failed because diagnostic JSON went to stdout redirected into `$GITHUB_OUTPUT`. Fail-open activated; run was not cancelled. `verify`, timing and geometry passed; address collector returned Ростов PASS, Красн failed after five HTTP503 plus cooldown, Донецк unavailable after cooldown; 50-settlement/Yandex steps skipped. Artifact `12668374825`. The helper now writes diagnostics to stderr. Do not repeat address audit without a new reason.
 
 The exact readback of workflow, classifier, tests and checkpoint/docs was confirmed at the following branch head; PR remains Draft. This work changes no application/tariff/geometry logic, `addressCitySnapshot`, or unrelated workflow. Next: narrow B10 to Maykop only and run only if classifier confirms live jobs skip.
+
+## Safety correction discovered before B10
+
+Run40366544254 later returned `head-already-checked` at f63a58d, while independent compare from known prior run head f2208fdae… to f63a58d… is `ahead` by16 commits. Its exact prior SHA was not logged, so this suggests but does not prove mutable PR-link head metadata. Local hardening uses immutable workflow-run `head_sha`; PR association remains required, and missing/uncertain data fails open. This correction still needs hosted verification. B10 is held until then.
