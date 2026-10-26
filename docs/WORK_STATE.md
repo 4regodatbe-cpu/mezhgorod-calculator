@@ -1,8 +1,6 @@
-# B01–B12 / selective CI configuration — DONE — 26.10.2026 21:30 МСК
+# B01–B12 / B10 Maykop-only capture — IN_PROGRESS — 26.10.2026 20:07 МСК
 
-# B01–B12 / selective CI configuration — IN_PROGRESS — 26.10.2026 21:05 МСК
-
-Remote branch now at `f2208fdae88983b5efe1ce69c29d3b9da6845c57`; PR #14 open/Draft. Workflow selective PR-delta classifier and helper are saved. Node model tests 10/10 PASS. Hosted run `40364820838` completed SUCCESS: `verify` PASS (435 project tests, 10 classifier tests, TypeScript, build), classifier PASS with `head-already-checked`, `live_probe` and `calculation_timing` correctly skipped. Earlier run `40363211385` exposed output formatting bug and fail-open correctly ran; address probe hit bounded 503/cooldown as recorded in the DONE checkpoint. No app/tariff/data/geometry logic changed; no Actions cancelled. [DONE checkpoint](checkpoints/2026-10-26-2130-special-ci-live-probe-selective-DONE.md). Next: check whether a Maykop-only B10 run can trigger without broad live jobs, then capture/replay only if safe.
+Selective CI DONE: hosted run40364820838 SUCCESS; see accurate [checkpoint](checkpoints/2026-10-26-2002-selective-CI-live-probe-DONE.md). B10 selector change is underway: strict `B10_CAPTURE_CASES` parser, first-selected-case provider preflight, selected-only V2/V3 comparison. Local no-network tests 4/4 PASS; no capture or network request yet. Eisk is already captured and must not be repeated. [B10 STARTED checkpoint](checkpoints/2026-10-26-2007-b10-maykop-capture-STARTED.md).
 
 # B10 hosted V2 capture — partial — 26.10.2026 19:10 МСК
 
