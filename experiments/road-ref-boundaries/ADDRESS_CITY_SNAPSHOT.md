@@ -40,6 +40,8 @@ GitHub-hosted Chrome preflight passed in run 40336150199 on head 0895948e294b9f1
 
 26.10.2026 17:26 МСК: first full-suite workflow attempt 40339480704 failed in setup-node because pnpm was not yet on PATH (`cache: pnpm` was resolved before `pnpm/action-setup`); browser and all eight scenarios were NOT_RUN, with no artifact. Reordering the setup steps is the only correction. See [bootstrap failure](../../docs/checkpoints/2026-10-26-1726-b03-ui-runner-bootstrap-FAILED.md) and [retry STARTED](../../docs/checkpoints/2026-10-26-1727-b03-address-ui-retry-STARTED.md).
 
+26.10.2026 17:39 МСК: Chrome UI run 40340623345 executed all cases; case 01 passed. Cases 02–07 are invalidated by specific harness callback/heading mistakes and will be repeated only after correction. Case08 passed narrow-screen and keyboard assertions but observed no A↔B control. Evidence and artifact digest: [run record](checks/2026-10-26-b03-address-ui-run-40340623345/README.md); root causes and limits: [checkpoint](../../docs/checkpoints/2026-10-26-1739-b03-ui-harness-run-FAILED.md). New harness-correction block: [STARTED](../../docs/checkpoints/2026-10-26-1740-b03-ui-harness-correction-STARTED.md).
+
 ## Браузерная приёмка — ранее NOT_RUN (24.10.2026)
 
 Серверный HTML отдельно проверен: checks/2026-10-24-city-snapshot-render/verification.json, full898 PASS. Перестановка/очистка props в SSR не подтверждает реальные клики, useEffect, отмену или кэш. Локальный UI preflight: BLOCKED_BY_ENVIRONMENT_BROWSER; установленного Chromium нет. Не повторять поиск бинарника без изменения среды.

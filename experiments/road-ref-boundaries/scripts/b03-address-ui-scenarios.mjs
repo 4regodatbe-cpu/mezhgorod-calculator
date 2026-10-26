@@ -101,6 +101,11 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     },
   };
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const defaultAddressAnswer = async query => {
+    if (query === "Краснодар") return fallbackResponse([krasnodar]);
+    if (query === "Ростов-на-Дону") return fallbackResponse([rostov]);
+    return fallbackResponse(donetsk);
+  };
 
   async function openHarness({ viewport = { width: 1280, height: 900 }, answerAddress = () => fallbackResponse(donetsk) } = {}) {
     const context = await browser.newContext({ viewport, serviceWorkers: "block" });
@@ -180,7 +185,7 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     const calculation = page.waitForRequest(request => new URL(request.url()).pathname === "/api/v2/calculate");
     await page.getByRole("button", { name: "Рассчитать поездку" }).first().click();
     await calculation;
-    await page.getByRole("heading", { name: "Быстрый маршрут" }).waitFor({ state: "visible" });
+    await page.getByRole("heading", { name: "Основной маршрут" }).waitFor({ state: "visible" });
   }
   async function screenshot(page, id, suffix) {
     const name = `${id}${suffix}.png`;
@@ -198,7 +203,7 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
   environment.browserVersion = browser.version();
   writeFileSync(path.join(outputDir, "environment.json"), JSON.stringify(environment, null, 2) + "\n");
 
-  async function runCase(id, name, viewport, fn, answerAddress = async () => fallbackResponse(donetsk)) {
+  async function runCase(id, name, viewport, fn, answerAddress = defaultAddressAnswer) {
     const record = { id, name, status: "RUNNING", startedAt: new Date().toISOString(), viewport, requestCount: 0, addressRequestCount: 0, blockedExternalRequestCount: 0, evidence: [] };
     let harness;
     try {
@@ -260,7 +265,7 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     const calcRequest = page.waitForRequest(request => new URL(request.url()).pathname === "/api/v2/calculate");
     await page.getByRole("button", { name: "Рассчитать поездку" }).first().click();
     await calcRequest;
-    await page.getByRole("heading", { name: "Быстрый маршрут" }).waitFor({ state: "visible" });
+    await page.getByRole("heading", { name: "Основной маршрут" }).waitFor({ state: "visible" });
     const body = state.calculationBodies[0];
     record.actual = { selectedA: await a.inputValue(), selectedB: await b.inputValue(), addressSources: [body?.from?.addressSource, body?.to?.addressSource], positions: [body?.from?.position, body?.to?.position], noticeCounts: [await h.noticeFor(a).count(), await h.noticeFor(b).count()] };
     assert.deepEqual(body?.from?.position, donetsk[0].position, "A calculation request must retain the exact selected coordinate");
@@ -274,12 +279,12 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     await h.prepareSelectedRoute(page);
     const swap = page.getByRole("button", { name: "Поменять точки A и B местами" });
     const swapCount = await swap.count();
-    record.actual = { resultVisibleBeforeSwap: await page.getByRole("heading", { name: "Быстрый маршрут" }).count(), swapButtonCount: swapCount };
+    record.actual = { resultVisibleBeforeSwap: await page.getByRole("heading", { name: "Основной маршрут" }).count(), swapButtonCount: swapCount };
     if (swapCount === 0) throw new Error("expected A↔B swap control is absent from the V2 page");
     await swap.click();
     record.actual.valuesAfterSwap = [await h.inputA(page).inputValue(), await h.inputB(page).inputValue()];
     record.actual.noticesAfterSwap = [await h.noticeFor(h.inputA(page)).count(), await h.noticeFor(h.inputB(page)).count()];
-    record.actual.resultCountAfterSwap = await page.getByRole("heading", { name: "Быстрый маршрут" }).count();
+    record.actual.resultCountAfterSwap = await page.getByRole("heading", { name: "Основной маршрут" }).count();
     assert.deepEqual(record.actual.valuesAfterSwap, [donetsk[1].label, donetsk[0].label]);
     assert.deepEqual(record.actual.noticesAfterSwap, [1, 1]);
     assert.equal(record.actual.resultCountAfterSwap, 0, "swap should reset the previous calculation result");
@@ -326,7 +331,7 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     assert.ok(labels[0].includes(krasnodar.label), "new response must remain displayed");
     assert.ok(!labels.some(label => label.includes(donetsk[0].label) || label.includes(donetsk[1].label)), "stale Donetsk response must not restore old items");
     assert.deepEqual(state.pageErrors, [], "aborted old response must not cause an uncaught error");
-  }, Object.assign(async () => fallbackResponse(donetsk), { answerAddress: async query => query === "Донецк" ? { ...fallbackResponse(donetsk), delayMs: 1800 } : fallbackResponse([krasnodar]) }));
+  }, async query => query === "Донецк" ? { ...fallbackResponse(donetsk), delayMs: 1800 } : fallbackResponse([krasnodar]));
 
   await runCase(caseSpecs[5][0], caseSpecs[5][1], { width: 1280, height: 900 }, async ({ page, state, record, helpers: h }) => {
     const a = h.inputA(page);
@@ -351,12 +356,12 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     record.actual = { requestCount: state.requests.filter(item => item.path === "/r").length, requestsBeforeRetry: beforeRetry, emptyMessageVisible: true, retryResult: await h.buttonsFor(a).allTextContents(), noticeCount: await h.noticeFor(a).count() };
     assert.equal(record.actual.requestCount, beforeRetry + 1, "retry must issue a new /r request");
     assert.equal(record.actual.noticeCount, 0);
-  }, Object.assign(async () => normalResponse, { answerAddress: async (query, count) => {
+  }, async (query, count) => {
     if (query === "Москва") return normalResponse;
     if (query === "Неттакого") return { status: 200, body: { items: [] } };
     if (query === "Сбой" && count === 3) return { status: 502, body: { error: "controlled outage" } };
     return normalResponse;
-  } }));
+  });
 
   await runCase(caseSpecs[6][0], caseSpecs[6][1], { width: 1280, height: 900 }, async ({ page, state, record, helpers: h }) => {
     const a = h.inputA(page);
@@ -375,7 +380,7 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     record.actual = { fallbackRequests: fallbackRequestCount, ordinaryRequestsBeforePositiveCache: beforeCache, requestsAfterCacheHit: state.requests.filter(item => item.path === "/r").length, cachedSuggestions: await h.buttonsFor(a).allTextContents() };
     assert.equal(record.actual.requestsAfterCacheHit, beforeCache, "ordinary positive cache should avoid an extra /r request");
     assert.equal(await h.buttonsFor(a).count(), 1, "ordinary cached item should remain available");
-  }, Object.assign(async () => fallbackResponse(donetsk), { answerAddress: async query => query === "Москва" ? normalResponse : fallbackResponse(donetsk) }));
+  }, async query => query === "Москва" ? normalResponse : defaultAddressAnswer(query));
 
   await runCase(caseSpecs[7][0], caseSpecs[7][1], { width: 320, height: 720 }, async ({ page, record, helpers: h }) => {
     const a = h.inputA(page);

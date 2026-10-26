@@ -1,6 +1,6 @@
-# B03 address UI runner bootstrap FAILED — 26.10.2026 17:26 МСК
+# B03 mocked UI first run — harness defects plus swap issue — 26.10.2026 17:39 МСК
 
-Chromium smoke DONE: run 40336150199, Chrome 156.0.8078.47, DOM создан, artifact hash verified; [checkpoint](checkpoints/2026-10-26-1711-b03-chromium-dom-smoke-DONE.md). Eight-case run 40339480704 failed in setup-node before Chrome/app; zero scenarios ran, no artifact. Exact diagnosis and prepared ordering correction: [FAILED](checkpoints/2026-10-26-1726-b03-ui-runner-bootstrap-FAILED.md). Retry has separate STARTED checkpoint [here](checkpoints/2026-10-26-1727-b03-address-ui-retry-STARTED.md); freshness must be rechecked before execution. `addressCitySnapshot=false`; B-only issue remains unverified.
+Chrome smoke DONE: run 40336150199. Run 40339480704 failed before scenarios and is documented [here](checkpoints/2026-10-26-1726-b03-ui-runner-bootstrap-FAILED.md). Corrected bootstrap hosted eight cases in run 40340623345; case 1 passed, 02–07 invalid from harness selectors/callbacks; case 8 passed mobile/keyboard checks but observed missing swap control. Full scenario evidence + artifact digest: [FAILED](checkpoints/2026-10-26-1739-b03-ui-harness-run-FAILED.md) · [files](../experiments/road-ref-boundaries/checks/2026-10-26-b03-address-ui-run-40340623345/README.md). Corrected rerun STARTED at [checkpoint](checkpoints/2026-10-26-1740-b03-ui-harness-correction-STARTED.md); snapshot freshness recheck is required. `addressCitySnapshot=false`; original B-only issue unverified.
 
 # B01–B12 — 26.10.2026 16:51 МСК
 
