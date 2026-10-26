@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { classifyCalculateApiError } from "@/lib/calculate-api-error";
 import { geocode, type Point } from "@/lib/route-providers";
 import { calculateLeg } from "@/lib/v3-calculation/route-leg";
 import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-integration";
@@ -120,15 +121,7 @@ export async function POST(request: NextRequest) {
     const priced={...leg,fast:attachPricing(leg.fast),free:attachAlternative(leg.free),freeCandidate:attachAlternative(leg.freeCandidate)};
     return respond({legs:[priced],mode,automaticMode,specialEndpoint:false});
   } catch (error) {
-    const code = error instanceof Error ? error.message : "UNKNOWN";
-    const messages: Record<string, string> = {
-      PREFERRED_ROUTE_UNAVAILABLE: "Не удалось построить маршрут выбранного направления. Попробуйте позже.",
-      SPECIAL_TRANSIT_EXCLUDED: "Маршрут проходит через особую тарифную зону и исключён.",
-      ADDRESS_NOT_FOUND: "Адрес не найден. Уточните город или населённый пункт.",
-      GEOCODE_UNAVAILABLE: "Поиск адресов временно недоступен.",
-      ROUTE_NOT_FOUND: "Не удалось построить автомобильный маршрут.",
-      ROUTE_UNAVAILABLE: "Сервис маршрутов временно недоступен. Попробуйте позже.",
-    };
-    return respond({ error: messages[code] ?? "Не удалось выполнить расчёт." }, { status: code.endsWith("UNAVAILABLE") ? 502 : 400 });
+    const failure = classifyCalculateApiError(error);
+    return respond({ error: failure.message }, { status: failure.status });
   }
 }

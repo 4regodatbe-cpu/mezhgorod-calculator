@@ -1,6 +1,6 @@
-# CODEBASE AUDIT FIXES — IN PROGRESS — 26.10.2026 23:14 МСК
+# CODEBASE AUDIT FIXES — IN PROGRESS — 26.10.2026 23:17 МСК
 
-Исправления P2: AUD-DATE-01 завершён локально и сохранён отдельным remote checkpoint; строгая календарная проверка V2 совпадает с V3, тарифный день не менялся. Текущий remote SHA будет указан после readback в checkpoint/work log. PR14 остаётся Draft. Новый план: 1/6 блоков завершён (16.7%): AUD-DATE-01, AUD-ERROR-01, AUD-CI-01, AUD-UI-01, доказательства AUD-DATA-01, доказательства AUD-TRACE-RECOVERY-01. Журнал: [WORK_LOG](codebase-audit/WORK_LOG.md); [NEXT_STEPS](codebase-audit/NEXT_STEPS.md); [checkpoint](checkpoints/2026-10-26-231423-aud-date-01-DONE.md). Следующий блок: AUD-ERROR-01.
+Исправления P2: AUD-DATE-01 и AUD-ERROR-01 завершены и сохранены отдельными commits/readback. V2 дата строго календарно валидируется как в V3; V2/V3 API теперь дают 400 для распознанных input ошибок, 502 для известных upstream и 500 с безопасным общим сообщением для неожиданных исключений. Новый план: 2/6 блоков (33.3%). PR14 Draft. Журнал: [WORK_LOG](codebase-audit/WORK_LOG.md); [NEXT_STEPS](codebase-audit/NEXT_STEPS.md); checkpoints [DATE](checkpoints/2026-10-26-231423-aud-date-01-DONE.md), [ERROR](checkpoints/2026-10-26-231751-aud-error-01-DONE.md). Следующий блок: AUD-CI-01.
 
 # CODEBASE AUDIT — DONE — 26.10.2026 21:39 МСК
 
