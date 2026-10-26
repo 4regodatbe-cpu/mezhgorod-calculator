@@ -5,6 +5,7 @@ import { pickOptimal } from "./route-utils";
 import { distance, duration, money } from "./format";
 import { defaults, tariffNames } from "./pricing-data";
 import { buildAlternativeFareCopy, resolveTollAmount, shortPlaceName, totalWithToll, type TollPeriod } from "./quote-presentation";
+import { UserFacingCalculationError, userFacingCalculationErrorMessage } from "./request-errors";
 import type { Place, Result, Leg, Trip, TollView } from "./types";
 
 type CalculatorMode = "standard" | "dual";
@@ -95,21 +96,21 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
       });
       const data = await response.json().catch(() => null);
       if(controller.signal.aborted)return;
-      if (!response.ok) throw new Error(typeof data?.error === "string" ? data.error : "Сервис маршрутов временно недоступен. Повторите расчёт.");
+      if (!response.ok) throw new UserFacingCalculationError(typeof data?.error === "string" && data.error.trim() ? data.error : "Сервис маршрутов временно недоступен. Повторите расчёт.");
       // A gateway/transport failure may return malformed success JSON. Never
       // commit such a payload to React state and crash the entire calculator.
       const valid = data && Array.isArray(data.legs) && data.legs.length > 0 && data.legs.every((leg: Leg) =>
         leg && typeof leg.from === "string" && typeof leg.to === "string" &&
         leg.fast && Number.isFinite(leg.fast.meters) && Number.isFinite(leg.fast.seconds) &&
         leg.fast.tolls && typeof leg.fast.tolls.pricingStatus === "string");
-      if(!valid) throw new Error("Маршрут получен не полностью. Повторите расчёт.");
+      if(!valid) throw new UserFacingCalculationError("Маршрут получен не полностью. Повторите расчёт.");
       if(data.automaticMode === "standard" || data.automaticMode === "dual") onServerMode(data.automaticMode);
       setResult(data as Result);
       // Telemetry is best-effort and must never break a successful route.
       try { recordRoutes(data as Result); } catch { /* do not abort quote for analytics */ }
     } catch (e) {
       if(controller.signal.aborted)return;
-      setError(e instanceof Error ? e.message : "Не удалось выполнить расчёт");
+      setError(userFacingCalculationErrorMessage(e, "Не удалось выполнить расчёт. Проверьте соединение и повторите попытку."));
     } finally {
       if(pending.current===controller)setLoading(false);
     }

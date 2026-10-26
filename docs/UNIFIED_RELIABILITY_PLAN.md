@@ -1,6 +1,6 @@
 # Unified reliability and B01–B12 work queue
 
-Latest technical result: 24-block plan DONE7/24 (29.17%):1,2,3,12,17,19,22. Block3 confirms V3 unknown/null validation, shared fastest-route rendering and copied status; no V3 defect reproduced. Checkpoint2026-10-27-0231-block-3-v3-unknown-DONE.md. Block20 profiling remains PARTIAL. Next block4 UI error cases.
+Latest technical result: 24-block plan DONE8/24 (33.33%):1–4,12,17,19,22. Block4 reproduced raw network exception details in both UI hooks, replaced them with a generic retry message while preserving trusted API errors, and verified retry/malformed/abort cases. Checkpoint2026-10-27-0234-block-4-ui-errors-DONE.md. Block20 remains PARTIAL. Next block5 request cancellation/races.
 
 2026-10-27. Baseline `396daf20b02c2d56fc49b53174fb923f633fc861`; allowed fix branch, PR14 Draft.
 

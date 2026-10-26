@@ -39,6 +39,7 @@ function harness(fetch, clipboard = { writeText: async () => {} }) {
     module: mod,
     exports: mod.exports,
     AbortController,
+    Error,
     fetch,
     navigator: { clipboard },
     setTimeout,
@@ -97,5 +98,43 @@ test('unknown V2 road price stays unknown in copied quote instead of becoming ze
   assert.match(copied, /Стоимость платных дорог неизвестна/);
   assert.match(copied, /44[\s\u00a0\u202f]?516 ₽ платные дороги: сумма неизвестна = итого не рассчитано/);
   assert.doesNotMatch(copied, /=\s*0(?:[,.]00)?\s*₽/);
+  h.cleanup();
+});
+
+test('V2 preserves safe API error messages for client, upstream and timeout responses', async () => {
+  for (const [status, message] of [[400, 'Проверьте адреса.'], [500, 'Сервис временно недоступен.'], [502, 'Маршрутизатор временно недоступен.'], [504, 'Время ожидания маршрута истекло.']]) {
+    const h = harness(async () => Response.json({ error: message }, { status }));
+    await h.hook.calculate();
+    assert.equal(h.states[1], message, `HTTP ${status} keeps its safe client message`);
+    h.cleanup();
+  }
+});
+
+test('V2 hides unexpected request exception details and allows retry', async () => {
+  let calls = 0;
+  const safeMessage = 'Не удалось выполнить расчёт. Проверьте соединение и повторите попытку.';
+  const data = { legs: [{ from: 'A', to: 'B', fast: { meters: 10_000, seconds: 1_000, tolls: { pricingStatus: 'unknown' } } }] };
+  const h = harness(async () => {
+    calls += 1;
+    if (calls === 1) throw new Error('provider.internal.example/private-token');
+    return Response.json(data);
+  });
+
+  await h.hook.calculate();
+  assert.equal(h.states[1], safeMessage);
+  assert.doesNotMatch(h.states[1], /private-token|provider\.internal/);
+
+  await h.hook.calculate();
+  assert.equal(h.states[1], '');
+  assert.equal(h.states[0].legs[0].from, 'A');
+  h.cleanup();
+});
+
+test('V2 rejects malformed successful JSON with a safe incomplete-route message', async () => {
+  const h = harness(async () => new Response('{malformed', { status: 200 }));
+  await h.hook.calculate();
+  assert.equal(h.states[0], null);
+  assert.equal(h.states[1], 'Маршрут получен не полностью. Повторите расчёт.');
+  assert.equal(h.states[2], false);
   h.cleanup();
 });

@@ -4,10 +4,10 @@
 
 - [x] Block2 — V2 unknown/null display: verified server-rendered RouteCard and presentation helpers; manually entered toll on unknown provider pricing now computes a clearly manual total without the contradictory “full total not calculated” message. Unknown provider status remains visible. [Checkpoint](../checkpoints/2026-10-27-0228-block-2-v2-unknown-DONE.md).
 - [x] Block3 — V3 unknown/null response contract, shared fastest-route render and copied status; no defect reproduced. [Checkpoint](../checkpoints/2026-10-27-0231-block-3-v3-unknown-DONE.md).
-- [ ] Block4 — UI error cases.
+- [x] Block4 — V2/V3 HTTP/network/malformed response errors; generic handling of unexpected details, retry, abort and stale response. [Checkpoint](../checkpoints/2026-10-27-0234-block-4-ui-errors-DONE.md).
 - [ ] Block5 — request cancellation/races (do not repeat hosted B03 cases).
 
-Technical progress: 7/24 (29.17%): blocks1,2,3,12,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. B02/B04–B09 remain data-blocked.
+Technical progress: 8/24 (33.33%): blocks1–4,12,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. B02/B04–B09 remain data-blocked.
 
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 

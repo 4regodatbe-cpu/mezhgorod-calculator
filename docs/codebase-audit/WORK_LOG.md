@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:34 МСК — reliability block4 UI error handling DONE
+
+- Parent `a6f30e7ada3f760c770577e52bba6e639a195d0b`; allowed branch only; PR14 Draft; no active Actions for parent.
+- Test-first red in both V2 and V3 hook harnesses reproduced the defect: a fetch rejection message containing `provider.internal.example/private-token` was surfaced verbatim. Existing HTTP 400/500/502/504 response messages were already displayed; preserve those server-sanitized strings.
+- Added `app/v2/components/request-errors.ts`, with a branded safe-message error so only deliberately user-facing response/validation messages pass through. Both hooks now show a generic retry message for untagged exceptions; malformed successful payloads retain the existing incomplete-route message. No retry loops or business logic added.
+- Tests: V2 hook5/5; V3 hook8/8 (HTTP cases, network redaction, retry, malformed JSON, existing abort/race/clipboard); `scripts/special-territory-api.test.ts` PASS; `npx tsc --noEmit` PASS; scoped ESLint0 errors/1 existing warning (`analyticsVersion` in V2 hook); `git diff --check` PASS.
+- No browser, network, full build or broad CI. Technical progress 8/24 (33.33%): blocks1–4,12,17,19,22. Next block5 lifecycle/race tests, without repeating B03 hosted cases. [Checkpoint](../checkpoints/2026-10-27-0234-block-4-ui-errors-DONE.md).
+
 ## 27.10.2026 02:31 МСК — reliability block3 V3 unknown/null contract DONE
 
 - Parent `a5ee1c1f6785d5cd421d80de2c3eb3d1f4c56e4b`; allowed branch only; PR14 Draft; prior block remote readback confirmed matching tree and code/test/checkpoint/state blobs.
