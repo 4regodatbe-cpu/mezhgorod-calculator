@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Sprint block20 PARTIAL: reproducible offline profile and baseline saved (scripts/offline-computation-profile.mjs, docs/codebase-audit/computation-baseline.json). Technical remains5/24. Saved9433point route: recognition median61.28ms,recovery30.72ms. Next test call-local recovery endpoint memoization with output parity; coverage gaps explicit in baseline/checkpoint.
+
 Latest technical5/24 (20.83%): block22 selective-CI review saved, classifier10/10 PASS. Cumulative runtime changes since last checked baseline explain docs-triggered live jobs; pending-runtime accounting remains necessary before safely narrowing this further. No CI config changed, no live run started. Next20 offline profiling.
 
 Latest DONE4/24 (16.67%):1,12,17,19. Eisk delta explained exactly by13-PVP sum4920/6770 versus V3 endpoint-cell4340/5240; no tariff changes. Evidence docs/codebase-audit/EISK_COMPONENT_ANALYSIS.md. Next22 CI saved metadata.
