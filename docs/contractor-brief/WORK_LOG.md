@@ -100,3 +100,8 @@ Chromium 154 теперь присутствует, но bounded headless `about
 ## 26.10.2026 20:28 МСК — B10 Maykop-only workflow scope staged; docs-only classifier proof next
 
 Rechecked remote branch HEAD `f85955f4d3596617cad3d399a4b593524dd733f6`, PR #14 Draft, and Actions (no queued/in-progress runs). B10 workflow env now selects only `maykop-to-moscow`, saved/read back in `f85955f4d3596617cad3d399a4b593524dd733f6`; `[skip ci]` prevented an incidental run. No provider traffic and no Eisk recapture. The next normal update contains docs/checkpoint only; wait for special verify and classifier result. Trigger exactly one Maykop capture only if required verify passes and wide jobs skip. [Checkpoint](../checkpoints/2026-10-26-2028-b10-maykop-workflow-scope-DONE.md).
+
+
+## 26.10.2026 20:31 МСК — Maykop workflow-change CI proof — PASS
+
+Run40369124628 for docs-only head `c65db6d026d5fb2b42d62986efa75a675da92a7b`: overall SUCCESS; classifier `no-route-runtime-change-in-update`; required verify (tests, selector, TypeScript, build) SUCCESS; `live_probe` and `calculation_timing` SKIPPED. No actions cancelled and no provider traffic. This proves the pending B10 workflow-only delta does not activate the broad live jobs. Next, after checking idle state, one comment-only B10 workflow update triggers the selected Maykop case; never recapture Eisk. [Checkpoint](../checkpoints/2026-10-26-2031-b10-maykop-selective-ci-proof-DONE.md).
