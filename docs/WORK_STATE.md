@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 23:17 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 23:31 МСК
 
-**Progress: 16/18 blocks (88.9%).** B16 reviewed static test inventory: 145 current-tree tests all match test:audit patterns. No full-suite execution. Gaps: no V2 date-validator regression located (V3 strict-date cases exist); no coverage metrics. [Audit](CODEBASE_AUDIT.md) · [B16](checkpoints/2026-10-26-2317-codebase-audit-block-16-DONE.md).
+**Progress: 17/18 blocks (94.4%).** B17 workflows reviewed. P2 Node runtime mismatch: scheduled route-quality and manual systemic toll-composition use Node22.13 though package engines require 24.x. Branch protection required checks remain unknown (connector 403). [Audit](CODEBASE_AUDIT.md) · [B17](checkpoints/2026-10-26-2331-codebase-audit-block-17-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
