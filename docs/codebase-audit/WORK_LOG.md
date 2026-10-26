@@ -24,6 +24,13 @@
 - No tariff/effective dates changed. No broad Actions/build/audit run; skip-CI commit avoids unrelated cumulative live probes.
 - Checkpoint: [freshness date DONE](../checkpoints/2026-10-26-2353-tariff-freshness-date-DONE.md). Next: evidence-only list of the three UNKNOWN tariff dates.
 
+## 26.10.2026 23:55 МСК — AUD-DATA-01 unknown-date evidence list DONE
+
+- Parent `8c66a7b73ebdbd4240a854d5bb1c791fc74b1e9b`; allowed branch; PR14 Draft.
+- Documented all three null dates and required primary evidence. M11 needs full signed order274, relevant complete 58–679 Category-I annex, and explicit commencement/amendment clause. Other-roads transponder/no-transponder need official dated order/publication tables covering every underlying M1/M3/CKAD/A289 row and explicit date clause; heterogeneous source dates require split registry metadata.
+- Existing PDF/OCR and Oct1 page snapshot are insufficient to assign exact legal dates; no new external requests made. No tariff data/effectiveFrom changed.
+- Record: [unknown effective dates](AUD-DATA-01-UNKNOWN-EFFECTIVE-DATES.md); checkpoint: [DONE](../checkpoints/2026-10-26-2355-aud-data-unknown-dates-DONE.md). Block 2 trace pricing proposal remains WAITING_FOR_APPROVAL.
+
 ## 26.10.2026 23:14 МСК — AUD-DATE-01 DONE
 
 - Исходная разрешённая ветка / parent: `fix/v3-missing-route-prices-2026-10-15` / `fd41d4aaa817f8904be7e141b5bd6e5c0aca0ede`; PR #14 Draft. Рабочая копия создана отдельно из проверенного remote HEAD.

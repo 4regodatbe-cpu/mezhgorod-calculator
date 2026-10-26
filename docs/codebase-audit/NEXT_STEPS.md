@@ -5,9 +5,9 @@
 - [x] Block 1 — V2 full/incomplete trace characterization against saved synthetic case; 0 network calls. Checkpoint: [trace regression](../checkpoints/2026-10-26-2349-aud-trace-regression-DONE.md).
 - [ ] Block 2 — proposal saved at [AUD-TRACE-RECOVERY-PROPOSAL](AUD-TRACE-RECOVERY-PROPOSAL.md); implementation paused `WAITING_FOR_APPROVAL`. Do not change current business behavior meanwhile.
 - [x] Block 3 — freshness gate uses actual run date by default and a fixed test date override; preserve UNKNOWN effective dates. Checkpoint: [freshness gate](../checkpoints/2026-10-26-2353-tariff-freshness-date-DONE.md).
-- [ ] Block 4 — document three unknown effective-date rows and exact primary evidence required; no tariff-data edits.
+- [x] Block 4 — documented the three unknown-date rows and exact primary evidence required; no tariff-data edits. [Evidence list](AUD-DATA-01-UNKNOWN-EFFECTIVE-DATES.md), [checkpoint](../checkpoints/2026-10-26-2355-aud-data-unknown-dates-DONE.md).
 
-Current follow-up progress: 2/4 blocks complete; block 2 is WAITING_FOR_APPROVAL and not counted as complete; block 4 remains pending. Previous six-block plan below is historical and remains complete.
+Current follow-up progress: 3/4 blocks complete; block 2 is WAITING_FOR_APPROVAL and not counted as complete. Blocks 1, 3, and 4 are complete. Previous six-block plan below is historical and remains complete.
 
 Новый ограниченный план: 6 независимых блоков. Завершение одного блока не означает готовность проекта.
 
