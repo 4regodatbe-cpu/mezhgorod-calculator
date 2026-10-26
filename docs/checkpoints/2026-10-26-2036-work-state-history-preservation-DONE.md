@@ -1,0 +1,3 @@
+# WORK_STATE history preservation — DONE — 26.10.2026 20:36 МСК
+
+After B10 DONE save at `da75ff737df572c5ae19462ac3753934ebd0307d`, readback revealed that the current summary had lost the pre-existing append-only historical portion of `docs/WORK_STATE.md`. Restored that historical content from the exact prior remote snapshot at parent `2b2dcc8e43605f4017b1a6197d97d6ce2559397f`, preserving the current Maykop DONE summary and explicitly labeling the retained older entries as historical/superseded. No application/workflow/raw capture files changed; no Actions were active before this docs-only correction. This corrective commit uses `[skip ci]`. Verify current WORK_STATE contains both the Maykop DONE top block and the preserved earlier checkpoint history.
