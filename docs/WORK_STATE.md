@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:18 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:29 МСК
 
-**Progress: 11/18 blocks (61.1%).** B11 V3 UI/lifecycle reviewed; unmount cleanup and strict API response validation exist. No new defect. V2 unmount cancellation remains a P2 risk. [Audit](CODEBASE_AUDIT.md) · [B11](checkpoints/2026-10-26-2218-codebase-audit-block-11-DONE.md).
+**Progress: 12/18 blocks (66.7%).** B12 API contracts reviewed. New P2 findings: V2 date validation is weaker than V3 (normalizes invalid calendar dates / accepts local timestamps); V2/V3 map unknown internal errors to HTTP400. Static only, no request tests. [Audit](CODEBASE_AUDIT.md) · [B12](checkpoints/2026-10-26-2229-codebase-audit-block-12-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
