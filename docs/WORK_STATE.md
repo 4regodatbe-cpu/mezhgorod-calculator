@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:52 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:01 МСК
 
-**Progress: 8/18 blocks (44.4%).** B8 shared geometry/direction/boundary contracts reviewed statically; no new proven defect, no road/fare mass audit. Current P2 risks unchanged. [Audit report](CODEBASE_AUDIT.md) · [B8](checkpoints/2026-10-26-2152-codebase-audit-block-08-DONE.md).
+**Progress: 9/18 blocks (50.0%).** B9 pricing review: composition blocks partial/conflicting/unknown components; zero-unknown serializes as null. P2 candidate: incomplete trace with any paid edge uses reduced geometry-recovery threshold (M4 2 vs4 segments; M12 2 vs5), returning matched recovered amount; consequence not reproduced. [Report](CODEBASE_AUDIT.md) · [B9](checkpoints/2026-10-26-2201-codebase-audit-block-09-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
