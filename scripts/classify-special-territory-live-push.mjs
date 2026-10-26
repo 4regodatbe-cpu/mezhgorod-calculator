@@ -60,7 +60,10 @@ export function hasReliablePreviousChecks(jobs) {
   const classifier = jobs.find((job) => job?.name === "classify_live_scope");
   const liveProbe = jobs.find((job) => job?.name === "live_probe");
   if (classifier) {
-    return classifier.status === "completed" && classifier.conclusion === "success" && liveProbe?.status === "completed";
+    // A classifier failure is still a usable baseline only when fail-open actually
+    // ran the wide probe to completion; this covers runner output-processing errors.
+    if (classifier.status !== "completed" || !["success", "failure"].includes(classifier.conclusion) || liveProbe?.status !== "completed") return false;
+    return classifier.conclusion === "success" || ["success", "failure"].includes(liveProbe.conclusion);
   }
   const timing = jobs.find((job) => job?.name === "calculation_timing");
   const geometryStep = liveProbe?.steps?.find((step) => step?.name === "Probe live provider geometry and per-leg times");
@@ -78,6 +81,10 @@ export function classifyPullRequestDelta(previousHead, currentHead, comparison) 
     return { shouldRunLive: true, reason: "comparison-incomplete-or-non-linear" };
   }
   return classifyChangedPaths(comparison.files.map((file) => file?.filename));
+}
+
+export function formatGitHubOutput(result) {
+  return `should_run_live=${result.shouldRunLive}\nreason=${result.reason}\n`;
 }
 
 async function githubJson(url, token) {
@@ -126,10 +133,14 @@ async function main() {
   } catch {
     result = { shouldRunLive: true, reason: "classifier-or-api-error" };
   }
-  const output = `should_run_live=${result.shouldRunLive}\nreason=${result.reason}\n`;
-  if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, output);
-  else process.stdout.write(output);
-  console.log(JSON.stringify(result));
+  const output = formatGitHubOutput(result);
+  if (process.env.GITHUB_OUTPUT) {
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, output);
+    console.error(JSON.stringify(result));
+  } else {
+    process.stdout.write(output);
+    console.log(JSON.stringify(result));
+  }
 }
 
 if (process.argv[1] && new URL(import.meta.url).pathname === process.argv[1]) await main();
