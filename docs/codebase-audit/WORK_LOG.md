@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 26.10.2026 23:49 МСК — AUD-TRACE-RECOVERY-01 V2 focused regression DONE
+
+- Parent `529fb708bd880f9396b3399f5ec389eea78d7041`; allowed branch only; PR #14 Draft; preflight showed no runs for the current SHA.
+- Added two offline V2 characterization cases from the existing synthetic saved M12 geometry: complete and incomplete trace. Both produced helper amount `995` and public `pricingStatus:"priced"`; incomplete metadata remained false/partial. A guarded global fetch observed 0 calls.
+- `node --import ./scripts/register-ts-paths.mjs --test scripts/v2-partial-trace-recovery.test.ts` PASS; `git diff --check` PASS. This confirms only fixture-level behavior, not an official fare or user incident.
+- No code/business/tariff policy changed. `priced` from a positive subtotal does not prove route-wide completeness. Follow-up proposal is separately recorded and awaits approval before policy implementation.
+- Checkpoint: [V2 trace regression](../checkpoints/2026-10-26-2349-aud-trace-regression-DONE.md). Next: record proposal and await approval for trace policy; independently fix freshness-gate date source.
+
 ## 26.10.2026 23:14 МСК — AUD-DATE-01 DONE
 
 - Исходная разрешённая ветка / parent: `fix/v3-missing-route-prices-2026-10-15` / `fd41d4aaa817f8904be7e141b5bd6e5c0aca0ede`; PR #14 Draft. Рабочая копия создана отдельно из проверенного remote HEAD.
