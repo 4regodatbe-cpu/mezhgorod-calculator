@@ -7,6 +7,6 @@
 - [x] AUD-CI-01 — Node 24 in both workflows; hosted verify PASS. Unplanned live-probe side effect documented; do not rerun.
 - [x] AUD-UI-01 — abort active V2 calculation on unmount; focused lifecycle regression passes.
 - [x] AUD-DATA-01 — evidence/recommendation saved; fare amounts/effectiveFrom unchanged; source-date clarification remains BLOCKED_BY_DATA.
-- [ ] AUD-TRACE-RECOVERY-01 — static evidence and recommendations only; do not change partial-geometry recovery rules.
+- [x] AUD-TRACE-RECOVERY-01 — evidence/recommendation saved; recovery thresholds/policy unchanged.
 
-Progress: 5/6 blocks complete (83.3%). AUD-DATA-01 evidence is saved, but accurate tariff effective dates remain BLOCKED_BY_DATA. The special-territory PR workflow can classify cumulative skipped commits as runtime changes; avoid unrelated live probes. No B03/B10 rerun or route mass audit is authorized here. Remaining: one read-only trace-recovery evidence checkpoint.
+Progress: all 6/6 requested blocks complete. The fix plan itself is 4/4 P2 code blocks (100%); the two accompanying reviews are evidence-only and do not imply product policy/data is resolved. AUD-DATA-01 source dates remain BLOCKED_BY_DATA; AUD-TRACE-RECOVERY-01 requires a separately authorized policy change after focused follow-up tests. No B03/B10 or mass route audit was repeated.

@@ -1,6 +1,6 @@
-# CODEBASE AUDIT FIXES — IN PROGRESS — 26.10.2026 23:31 МСК
+# CODEBASE AUDIT FIXES — IN PROGRESS — 26.10.2026 23:32 МСК
 
-AUD-DATE-01, AUD-ERROR-01, AUD-CI-01, AUD-UI-01 и read-only AUD-DATA-01 evidence завершены; все remote checkpoints подтверждены. Новый план: 5/6 (83.3%); последний блок — read-only AUD-TRACE-RECOVERY-01. AUD-DATA-01: freshness baseline захардкожен на 2026-10-02, 3 effectiveFrom остаются UNKNOWN, корректировать тарифы нельзя без первичных дат. [Evidence](codebase-audit/AUD-DATA-01.md). Не менялись суммы/effectiveFrom. PR14 Draft. Последний checkpoint: [AUD-DATA-01](checkpoints/2026-10-26-233118-aud-data-01-DONE.md); журнал [WORK_LOG](codebase-audit/WORK_LOG.md), план [NEXT_STEPS](codebase-audit/NEXT_STEPS.md).
+Все четыре P2 code-fix блока завершены (4/4, 100% нового плана исправлений); обе evidence-проверки завершены (2/2). AUD-DATA-01 остаётся BLOCKED_BY_DATA по датам тарифов; AUD-TRACE-RECOVERY-01 выявил риск V2 при неполной trace, но recovery/business rules не менялись. Неплановые run40394972858 и40396491540 из-за stale cumulative CI baseline запускали live geometry/address checks; address probe завершился SOURCE_UNAVAILABLE, 50-settlement/Yandex jobs skipped. Не повторять. [Trace evidence](codebase-audit/AUD-TRACE-RECOVERY-01.md). Не менялись суммы/effectiveFrom или правила восстановления. PR14 Draft. Последний checkpoint [AUD-TRACE-RECOVERY-01](checkpoints/2026-10-26-233224-aud-trace-recovery-01-DONE.md); журнал [WORK_LOG](codebase-audit/WORK_LOG.md), план [NEXT_STEPS](codebase-audit/NEXT_STEPS.md).
 
 # CODEBASE AUDIT — DONE — 26.10.2026 21:39 МСК
 
