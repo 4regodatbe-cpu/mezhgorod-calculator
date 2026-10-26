@@ -3,12 +3,18 @@ import assert from "node:assert/strict";
 import {
   classifyChangedPaths,
   classifyPullRequestDelta,
+  formatGitHubOutput,
   findPreviousCompletedRun,
   hasReliablePreviousChecks,
 } from "./classify-special-territory-live-push.mjs";
 
 const previousHead = "1".repeat(40);
 const currentHead = "2".repeat(40);
+
+test("GitHub output contains only valid key-value commands", () => {
+  assert.equal(formatGitHubOutput({ shouldRunLive: false, reason: "head-already-checked" }),
+    "should_run_live=false\nreason=head-already-checked\n");
+});
 
 function comparison(paths, overrides = {}) {
   return {
@@ -92,6 +98,11 @@ test("a prior baseline requires completed classification/live checks or legacy r
     { name: "verify", status: "completed", conclusion: "success" },
     { name: "classify_live_scope", status: "completed", conclusion: "failure" },
     { name: "live_probe", status: "completed", conclusion: "success" },
+  ]), true);
+  assert.equal(hasReliablePreviousChecks([
+    { name: "verify", status: "completed", conclusion: "success" },
+    { name: "classify_live_scope", status: "completed", conclusion: "failure" },
+    { name: "live_probe", status: "skipped", conclusion: "skipped" },
   ]), false);
   assert.equal(hasReliablePreviousChecks([
     { name: "verify", status: "completed", conclusion: "success" },
