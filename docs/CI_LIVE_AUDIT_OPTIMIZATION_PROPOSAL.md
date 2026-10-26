@@ -1,6 +1,6 @@
 # Предложение: отделить быстрый CI от широкого live-аудита
 
-Статус: предложение, не реализовано. Никакой workflow этим документом не меняется.
+Статус: ограниченная первая реализация выполнена в `special-territory-policy.yml`; дальнейшее разделение live-наборов остаётся предложением.
 
 ## Наблюдение
 
@@ -19,3 +19,9 @@
 - Это только предложение для отдельного review/approval; сейчас PR #14 Draft, main и существующий workflow не изменены.
 - GitHub `workflow_dispatch` требует workflow в default branch. Изолированный push-trigger на рабочей ветке полезен для ограниченного эксперимента, но сам по себе не даёт безопасный постоянный dispatch UX.
 - Перед реализацией нужно согласовать required status checks и не скрывать ошибки runtime-кода; перенос широкого live job из PR не должен ослаблять обязательные offline проверки.
+
+## Реализованный ограниченный этап — 26.10.2026
+
+Для открытого PR #14 добавлен PR-head delta classifier. Он ищет последний завершённый run этого workflow, связанный именно с PR и разрешённой веткой; требует успешный `verify` и подтверждённые завершённые live/classifier jobs; сравнивает exact linked PR head с текущим PR head. `live_probe` и `calculation_timing` пропускаются только при полном линейном сравнении без runtime paths. API failure, отсутствующий baseline, незавершённый verify/live, diverged/invalid comparison или лимит ≥300 файлов сохраняет fail-open запуск широких jobs. `workflow_dispatch` по-прежнему запускает их явно. Проверки `verify` (тесты, TypeScript, Next build) и содержимое live probes не ослаблены; concurrency и отмена существующих runs не менялись.
+
+Модель: 10 focused Node cases PASS. Hosted run [40364820838](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40364820838) SUCCESS на Node24: verify PASS (435 проектных тестов + 10 classifier cases, TypeScript/build), classifier `head-already-checked`, оба live jobs SKIPPED. Первый hosted run [40363211385](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40363211385) выявил вывод JSON в `$GITHUB_OUTPUT`; fail-open включился как задумано. После фикса stderr формат валиден. Run403632 также подтвердил, что повторный address live probe нестабилен: Ростов PASS; Красн 5×503+cooldown; Донецк 7 cooldown; массовые дальнейшие шаги не выполнялись. Эти отказавшие endpoint-проверки не повторять без новой причины.
