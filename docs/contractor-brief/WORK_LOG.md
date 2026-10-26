@@ -1,5 +1,7 @@
 # B01–B12 work log
 
+2026-10-27: restored all24 definitions from user attachment; credited only1/17 against existing checkpoint evidence,2/24. No tests repeated. Crosswalk in docs/RELIABILITY_24_BLOCK_PLAN.md. Next12/B01.
+
 ## 2026-10-27 — unified queue reconciled
 
 Supplement read; baseline396daf20 verified against remote/PR14 Draft; current-head Actions list empty. Linked completed repairs and B directions in `docs/UNIFIED_RELIABILITY_PLAN.md`; no repeated test/audit/capture. Original 24 numbered definitions missing, so technical count UNKNOWN/24. Functional direction statuses:4 ACTIONABLE,7 BLOCKED_BY_DATA,1 BLOCKED_BY_ENVIRONMENT; no broad direction declared fully closed from narrow evidence. Next B01/AUD-GEOCODE-01. Checkpoint `docs/checkpoints/2026-10-27-unified-plan-reconciliation-DONE.md`.

@@ -4,6 +4,8 @@
 
 ## Counters and missing input
 
+Resolved 2026-10-27: original definitions restored verbatim in [24-block plan](RELIABILITY_24_BLOCK_PLAN.md), including per-block status and B01–B12 crosswalk. Confirmed DONE2/24 (1,17); other blocks receive no automatic credit from static audit. The missing-input note below is historical. Next block12/B01 direct geocode deadline.
+
 Technical plan: **UNKNOWN/24**. The uploaded supplement refers to a prior 24-block assignment, but its numbered definitions are absent from the available request and repository search. Do not manufacture them or count the completed 18-block static audit / 6+4 fix plans as these 24 blocks. Obtain the original numbered plan to establish this counter and exact crosswalk.
 
 Functional directions: 0/12 fully closed against the broad BRIEF acceptance criteria; all 12 have partial evidence or implementation. Current next-action classification: 4 ACTIONABLE, 7 BLOCKED_BY_DATA, 1 BLOCKED_BY_ENVIRONMENT. These counts describe directions, not product readiness. Historical captures and mock tests do not establish operator fares or real-service E2E.
