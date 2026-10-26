@@ -1,6 +1,6 @@
-# CODEBASE AUDIT FIXES — IN PROGRESS — 26.10.2026 23:30 МСК
+# CODEBASE AUDIT FIXES — IN PROGRESS — 26.10.2026 23:31 МСК
 
-AUD-DATE-01, AUD-ERROR-01, AUD-CI-01 и AUD-UI-01 завершены, сохранены и проверены. Новый план: 4/6 (66.7%); остались только документальные доказательства AUD-DATA-01 и AUD-TRACE-RECOVERY-01 (без правок тарифов/effectiveFrom/recovery). UI unmount regression PASS; следующий блок AUD-DATA-01. PR14 Draft. Журнал: [WORK_LOG](codebase-audit/WORK_LOG.md); [NEXT_STEPS](codebase-audit/NEXT_STEPS.md); последний checkpoint [AUD-UI-01](checkpoints/2026-10-26-233009-aud-ui-01-DONE.md). CI-01 hosted run [40394972858](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40394972858) verify PASS; неплановый live_probe не повторять, причина и scope описаны в CI checkpoint.
+AUD-DATE-01, AUD-ERROR-01, AUD-CI-01, AUD-UI-01 и read-only AUD-DATA-01 evidence завершены; все remote checkpoints подтверждены. Новый план: 5/6 (83.3%); последний блок — read-only AUD-TRACE-RECOVERY-01. AUD-DATA-01: freshness baseline захардкожен на 2026-10-02, 3 effectiveFrom остаются UNKNOWN, корректировать тарифы нельзя без первичных дат. [Evidence](codebase-audit/AUD-DATA-01.md). Не менялись суммы/effectiveFrom. PR14 Draft. Последний checkpoint: [AUD-DATA-01](checkpoints/2026-10-26-233118-aud-data-01-DONE.md); журнал [WORK_LOG](codebase-audit/WORK_LOG.md), план [NEXT_STEPS](codebase-audit/NEXT_STEPS.md).
 
 # CODEBASE AUDIT — DONE — 26.10.2026 21:39 МСК
 

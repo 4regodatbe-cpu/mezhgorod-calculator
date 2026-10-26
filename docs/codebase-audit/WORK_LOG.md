@@ -44,3 +44,12 @@
 - GREEN: focused V2 lifecycle1/1, existing V3 lifecycle/race6/6, ESLint focused files (0 errors; existing `analyticsVersion` unused warning), `npx tsc --noEmit` exit0, diff check PASS.
 - No browser/B03 or external services. Full hosted verify not triggered because this V2 runtime path makes special live classifier run unrelated provider corpus; it is not required to verify the abort contract. No CI run active before save.
 - Next block: AUD-DATA-01 read-only evidence/recommendation; do not edit tariff values or effective dates.
+
+## 26.10.2026 23:31 МСК — AUD-DATA-01 evidence DONE; tariff provenance BLOCKED_BY_DATA
+
+- Parent `7769f0b0840962ac7289acdb04f08e57e9a6e8a8`; no active Actions, PR14 Draft.
+- Inspected only existing source/workflow/script; no network or tariff source requests. At `lib/toll-engine/tariff-registry.ts` rows M11 58–679 and Avtodor-other-roads transponder/no-transponder explicitly state effective-from not established; three rows keep `effectiveFrom:null`.
+- `.github/workflows/calculator-final-gate.yml:55-59` pins `TARIFF_AS_OF=2026-10-02` and strict stale mode. `scripts/check-tariff-freshness.mjs:3,12-19` computes age from `observedAt`; it counts missing effectiveFrom but only prints it. Exit2 is set only for stale rows.
+- Reproducible offline runs: current `asOf=2026-10-26`: 4 rows, stale0, effectiveDateUnknown3, ages24/25d; pinned `asOf=2026-10-02`: stale0, unknown3, ages0/1d; simulated `asOf=2026-11-20` + strict: 4 stale, unknown3, exit2. The workflow's frozen date means that simulated future staleness would not advance in its actual run.
+- Evidence proves gate drift and metadata incompleteness; it does not prove any displayed fare amount wrong. Recommendation: derive freshness date from CI run UTC date (with deterministic test override), and separately surface UNKNOWN effective date as unresolved provenance. Obtain exact applicability dates from operator primary documents before editing any tariff metadata or fare values.
+- No data/code/tariff changes. Next: AUD-TRACE-RECOVERY-01 static/offline evidence only.
