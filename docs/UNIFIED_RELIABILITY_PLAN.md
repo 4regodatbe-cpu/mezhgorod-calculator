@@ -1,5 +1,7 @@
 # Unified reliability and B01–B12 work queue
 
+Latest technical result: 24-block plan DONE15/24 (62.5%):1–12,17,19,22. Block11 caps streamed Valhalla/OSRM/BRouter JSON at8MiB (>12x retained max652,899 B) and rejects malformed or incomplete route geometry; retained artifacts only, 68/68 HTTP200. Focused tests, API error mapping, tsc/ESLint/diff PASS. Checkpoint2026-10-27-0252-block-11-provider-response-bounds-DONE.md. Next block20 offline profile follow-up (PARTIAL).
+
 Latest technical result: 24-block plan DONE14/24 (58.33%):1–10,12,17,19,22. Block10 adds an8s abortable collection webhook deadline; mocked timeout returns sanitized502 after one call, with no retry. Checkpoint2026-10-27-0245-block-10-webhook-deadline-DONE.md. Block20 remains PARTIAL. Next block11 router response bounds.
 
 Latest technical result: 24-block plan DONE13/24 (54.17%):1–9,12,17,19,22. Block9 adds streamed size/object validation and fixes the Cyrillic address-detail filter leaking street names to the collection webhook; privacy and unknown-toll tests pass. Checkpoint2026-10-27-0244-block-9-collect-DONE.md. Block20 remains PARTIAL. Next block10 webhook deadline.

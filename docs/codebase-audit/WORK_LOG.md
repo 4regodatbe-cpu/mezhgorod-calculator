@@ -1,5 +1,14 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:52 МСК — reliability block11 router response limits DONE
+
+- Source remote/local `c7bfe7157fc3decf2111102fb0eea9f99a623b95`; allowed branch only, PR14 Draft; no active workflow for source SHA.
+- Inspected saved hosted artifacts only: B10 Eisk artifact12666050121 and Maykop artifact12671872287; downloaded ZIP SHA matched GitHub artifact digests. Parsed retained captures offline. All68 provider calls were HTTP200. Largest bodies: Valhalla route101,844 B, trace_attributes120,335 B, OSRM585,477 B, BRouter652,899 B.
+- Added shared bounded streaming JSON response parsing (`lib/limited-provider-json.ts`) at8MiB (>12x observed largest response) and applied to Valhalla/OSRM/BRouter. It checks actual bytes, cancels over-limit streams, rejects malformed/empty/interrupted/invalid UTF-8 as generic `ROUTE_UNAVAILABLE`; existing25s fetch signal applies during body reads.
+- Added WGS84/shape validation for provider route geometry (`lib/provider-route-geometry.ts`), requiring at least2 finite lon/lat points in range before downstream use. This prevents valid-HTTP but incomplete geometry from being used as a route.
+- Tests: bounded-body4 assertions, geometry2 assertions; existing `calculate-api-error-mapping.test.ts` PASS; `npx tsc --noEmit`, scoped ESLint, `git diff --check` PASS. No live routing, build, or broad audit.
+- No tariff, route-selection, or retry logic changed. Limit remains an engineering guard based on retained—not exhaustive—production-size samples. Checkpoint [block11](../checkpoints/2026-10-27-0252-block-11-provider-response-bounds-DONE.md). Technical progress15/24 (62.5%): blocks1–12,17,19,22. Next block20 profiling follow-up.
+
 ## 27.10.2026 02:45 МСК — reliability block10 webhook deadline DONE
 
 - Parent `3b60bd138d6ed9a76dbd870ed0892d72ea0d3c28`; allowed branch only; PR14 Draft; no Actions for parent.

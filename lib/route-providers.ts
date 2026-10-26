@@ -2,6 +2,8 @@ import {deriveM12FromOsrm} from "@/lib/toll-engine/m12-osrm-span";
 import { safeRoutePositions } from "@/lib/safe-route";
 import { roadBoundariesFromOsrm, roadBoundariesFromValhalla, type RoadBoundaryResolution } from "@/lib/toll-engine/road-boundaries";
 import type { Coordinate } from "@/lib/tolls";
+import { readLimitedProviderJson } from "@/lib/limited-provider-json";
+import { requireProviderRouteGeometry } from "@/lib/provider-route-geometry";
 import { deriveM11EvidenceFromValhalla, deriveM11EvidenceFromOsrm, type M11OsrmStep, type M11RoadEvidence, type M11ValhallaManeuver } from "@/lib/toll-engine/m11-road-evidence";
 import { deriveStrictM12Span, type M12StrictRouteSpan } from "@/lib/toll-engine/m12-valhalla-span";
 
@@ -94,12 +96,12 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
     signal: AbortSignal.timeout(25_000),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as {
+  const data = await readLimitedProviderJson<{
     trip?: {
       summary?: { length?: number; time?: number };
       legs?: Array<{ summary?: { length?: number; time?: number }; shape?: string; maneuvers?: M11ValhallaManeuver[] }>;
     };
-  };
+  }>(response);
   const summary = data.trip?.summary;
   if (!summary?.length || !summary.time) throw new Error("ROUTE_NOT_FOUND");
   const decodedLegs = (data.trip?.legs ?? []).map((item) => ({
@@ -109,6 +111,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
     seconds: Number(item.summary?.time),
   }));
   const coordinates = decodedLegs.flatMap((item) => item.coordinates);
+  requireProviderRouteGeometry(coordinates);
   const m12StrictSpan = useTolls === 1 ? deriveStrictM12Span(decodedLegs) : null;
   const m11RoadEvidence = useTolls === 1 ? deriveM11EvidenceFromValhalla(decodedLegs) : null;
   return {
@@ -137,18 +140,20 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, pos
     signal: AbortSignal.timeout(25_000),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as {
+  const data = await readLimitedProviderJson<{
     features?: Array<{
       properties?: { "track-length"?: string | number; "total-time"?: string | number };
       geometry?: { coordinates?: Coordinate[] };
     }>;
-  };
+  }>(response);
   const feature = data.features?.[0];
   const properties = feature?.properties;
   const meters = Number(properties?.["track-length"]);
   const seconds = Number(properties?.["total-time"]);
   if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new Error("ROUTE_NOT_FOUND");
-  return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates: feature?.geometry?.coordinates ?? [] };
+  const coordinates = feature?.geometry?.coordinates;
+  requireProviderRouteGeometry(coordinates);
+  return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates };
 }
 
 export function brouterFree(from: Located, to: Located, positions = safeRoutePositions(from, to)) {
@@ -172,9 +177,11 @@ export async function osrmRoute(from: Located, to: Located, positions = safeRout
     signal: AbortSignal.timeout(25_000),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as { routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> };
+  const data = await readLimitedProviderJson<{ routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> }>(response);
   const route = data.routes?.[0];
   if (!route?.distance || !route.duration) throw new Error("ROUTE_NOT_FOUND");
+  const coordinates = route.geometry?.coordinates;
+  requireProviderRouteGeometry(coordinates);
   const m12 = deriveM12FromOsrm(route.legs ?? [], route.geometry?.coordinates ?? []);
-  return { m4RoadBoundaries:roadBoundariesFromOsrm(route.legs ?? [], route.geometry?.coordinates ?? []), m12EndpointSpan:m12.endpointSpan,m12StrictSpan:m12.span,m12Candidate:m12.candidate,m12SpanReason:m12.reason,m11RoadEvidence: deriveM11EvidenceFromOsrm(route.legs ?? []), meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[], legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
+  return { m4RoadBoundaries:roadBoundariesFromOsrm(route.legs ?? [], coordinates), m12EndpointSpan:m12.endpointSpan,m12StrictSpan:m12.span,m12Candidate:m12.candidate,m12SpanReason:m12.reason,m11RoadEvidence: deriveM11EvidenceFromOsrm(route.legs ?? []), meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates, legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
 }

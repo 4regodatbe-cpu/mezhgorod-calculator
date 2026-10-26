@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest block11 DONE: Valhalla/OSRM/BRouter responses are streamed and capped at8MiB; empty, malformed, interrupted, or oversized bodies fail as sanitized upstream errors. Empty/invalid route geometry is rejected. Cap is >12x largest retained B10 body (652,899 bytes). New focused tests, API error mapping, tsc, scoped ESLint and diff PASS. No live calls. [Checkpoint](checkpoints/2026-10-27-0252-block-11-provider-response-bounds-DONE.md). Technical15/24 (62.5%):1–12,17,19,22. Next block20 offline profiling follow-up; it remains PARTIAL.
+
 Latest block10 DONE: `/api/collect` webhook POST has an8s abort deadline and no retry. Mocked timeout confirms one call, abort, safe502 message and no provider details. Webhook/bounds suite3/3, tsc, ESLint and diff check PASS. [Checkpoint](checkpoints/2026-10-27-0245-block-10-webhook-deadline-DONE.md). Technical14/24 (58.33%):1–10,12,17,19,22. Next11 router response size handling; real response evidence only.
 
 Latest block9 DONE: `/api/collect` now shares a16KiB bounded streamed object parser and returns400/413 before webhook on bad input. Fixed Cyrillic street/house filter that leaked street names into webhook regions; coarse city/region retained. Unknown toll accepted only as null and never forwarded as a tariff. Privacy/API tests2/2, body-limit tests2/2, tsc/lint/diff PASS. [Checkpoint](checkpoints/2026-10-27-0244-block-9-collect-DONE.md). Technical13/24 (54.17%):1–9,12,17,19,22. Next10 webhook deadline. Webhook timeout not yet changed.
