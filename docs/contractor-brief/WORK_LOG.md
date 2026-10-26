@@ -1,5 +1,7 @@
 # B01–B12 work log
 
+2026-10-27 block19 DONE: retained artifact12666050121 extraction reused.13 V2 PVP amounts mechanically sum4920/6770; V3 saved M4 endpoint cell4340/5240. Delta580/1530 fully reconciled to calculation representation. No per-PVP allocation of V3 cell exists; no tariff correctness claim. No live calls/replay. Evidence docs/codebase-audit/EISK_COMPONENT_ANALYSIS.md and JSON. Technical4/24, next22.
+
 2026-10-27 block12 DONE: direct Photon geocode now carries25s AbortSignal across fetch/body; abort maps to existing GEOCODE_UNAVAILABLE. Test-first RED missing signal; GREEN2/2 including ranking/coordinate bypass, tsc/scoped ESLint/diff PASS. No live requests, broad tests/build or hosted CI. Technical3/24; next19 saved Eisk attribution.
 
 2026-10-27: restored all24 definitions from user attachment; credited only1/17 against existing checkpoint evidence,2/24. No tests repeated. Crosswalk in docs/RELIABILITY_24_BLOCK_PLAN.md. Next12/B01.

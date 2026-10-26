@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest DONE4/24 (16.67%):1,12,17,19. Eisk delta explained exactly by13-PVP sum4920/6770 versus V3 endpoint-cell4340/5240; no tariff changes. Evidence docs/codebase-audit/EISK_COMPONENT_ANALYSIS.md. Next22 CI saved metadata.
+
 Latest: technical DONE3/24 (1,12,17). Block12 geocode deadline25s implemented; timeout maps to GEOCODE_UNAVAILABLE, first-feature selection and supplied coordinates preserved. Two mocked tests, TypeScript/scoped ESLint PASS. [Checkpoint](checkpoints/2026-10-27-geocode-deadline-DONE.md). Next19/B10 saved Eisk component attribution. B01 remains partial.
 
 Original 24 definitions restored: [plan](RELIABILITY_24_BLOCK_PLAN.md), DONE2/24 (1,17); exact B crosswalk recorded. Missing-plan blocker resolved. Next block12/B01 deadline. Earlier UNKNOWN/24 notes below are historical.
