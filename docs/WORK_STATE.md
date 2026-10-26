@@ -1,6 +1,8 @@
 # B01–B12 / B10 Maykop-only capture — IN_PROGRESS — 26.10.2026 20:07 МСК
 
-Selective CI DONE: hosted run40364820838 SUCCESS; see accurate [checkpoint](checkpoints/2026-10-26-2002-selective-CI-live-probe-DONE.md). B10 selector change is underway: strict `B10_CAPTURE_CASES` parser, first-selected-case provider preflight, selected-only V2/V3 comparison. Local no-network tests 4/4 PASS; no capture or network request yet. Eisk is already captured and must not be repeated. [B10 STARTED checkpoint](checkpoints/2026-10-26-2007-b10-maykop-capture-STARTED.md).
+Selective CI DONE: hosted run40364820838 SUCCESS; see accurate [checkpoint](checkpoints/2026-10-26-2002-selective-ci-live-probe-DONE.md). B10 selector change is underway: strict `B10_CAPTURE_CASES` parser, first-selected-case provider preflight, selected-only V2/V3 comparison. Local no-network tests 4/4 PASS; no capture or network request yet. Eisk is already captured and must not be repeated. [B10 STARTED checkpoint](checkpoints/2026-10-26-2007-b10-maykop-capture-STARTED.md).
+
+Safety hold: run40366544254 returned `head-already-checked` for branch head `f63a58d...`, while independent compare `f2208fdae...`→`f63a58d...` is `ahead` by16 commits. The run did not log its prior SHA, so mutable `pull_requests[].head.sha` is plausible but unproven. Classifier now uses immutable workflow-run `head_sha` for comparison, retaining PR association only as scope evidence; absent/invalid SHA or uncertain compare fails open. This correction is local/unhosted. No B10 trigger until hosted run proves `no-route-runtime-change-in-update` on a post-run non-runtime change and verify passes.
 
 # B10 hosted V2 capture — partial — 26.10.2026 19:10 МСК
 
