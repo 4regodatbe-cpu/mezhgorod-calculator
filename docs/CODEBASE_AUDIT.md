@@ -1,39 +1,41 @@
 # Технический аудит репозитория «Из А в Б»
 
-IN_PROGRESS; новый аудит — 18 блоков. Current source `fix/v3-missing-route-prices-2026-10-15`; initial reviewed SHA `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`. Read-only; no business logic, tariffs, CI, or production changes. No tests/build/browser/live requests. Progress applies only to this audit.
+IN_PROGRESS; 18-block audit; remote source branch `fix/v3-missing-route-prices-2026-10-15`, reviewed baseline `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`. Read-only. No code/business/CI changes, no tests/build/browser/live calls. Progress applies only here.
 
-## Progress
+## Прогресс
 
-1 architecture; 2 address lookup; 3 cache/pool; 4 API input; 5 providers; 6 candidate selection; 7 saved captures; 8 geometry/boundaries; 9 pricing composition; 10 V2 UI; 11 V3 UI; 12 API outputs; 13 security/privacy; 14 perf; 15 deps/build; 16 tests; 17 CI; 18 data governance/synthesis. Done 13/18 (72.2%); [last checkpoint B13](checkpoints/2026-10-26-2240-codebase-audit-block-13-DONE.md).
+B1 architecture; B2 address; B3 pool/cache; B4 API; B5 providers; B6 selection; B7 saved V2/V3; B8 geometry; B9 fare composition; B10 V2 UI; B11 V3 UI; B12 response contracts; B13 security; B14 performance; B15 dependencies/build; B16 tests; B17 CI; B18 docs/data governance/synthesis. Complete 14/18 (77.8%); [B14 checkpoint](checkpoints/2026-10-26-2249-codebase-audit-block-14-DONE.md).
 
-## Existing V2/V3 results (no replay)
+## Saved V2/V3 comparison
 
-Eisk Thu/Sat V2−V3 fare deltas +580/+1,530 RUB and route −1m/0s; Maykop fare delta 0 both days and route −1m/0s. Outputs are proxy evidence only, not operator tariff confirmation. See B7 checkpoint for source hashes.
+Ейск V2−V3 Thu/Sat fare +580/+1,530 RUB; Maykop 0/0; both route output −1m/0s. Historical API proxy captures only; no operator tariff confirmation. Details and SHA in B7 checkpoint.
 
-## Findings: P2, not runtime-reproduced
+## Findings
 
-- **AUD-GEOCODE-01:** direct Photon label geocode lacks local timeout; a slow provider may hold calculation until platform timeout. Recommend bounded adapter/abort test, isolated.
-- **AUD-API-01:** calculate routes lack explicit request bytes/label size limits; platform constraints unknown. Shared input validator recommendation.
-- **AUD-PROVIDER-01:** route JSON responses have no explicit app-level byte cap; provider/platform limits unverified.
-- **AUD-TEST-01:** V2-specific invalid geometry regression not found; empty geometry on current API paths is rejected by route control checks. Coverage gap only.
-- **AUD-TRACE-RECOVERY-01:** incomplete map trace can still have status=toll; corridor recovery then uses lower threshold (M4 2/4; M12 2/5 consecutive matched geometry segments) and may return matched sum for detected segments. Potential partial-total classification, unproven. Add bounded complete/incomplete trace fixtures before behavior changes; medium risk.
-- **AUD-UI-01:** V2 calculation hook has no unmount cancellation (file lines25,70–74,143), unlike V3. Possible continued backend work on SPA navigation. Low-risk isolated cleanup/test.
-- **AUD-DATE-01, confirmed validation inconsistency:** `app/api/v2/calculate/route.ts:48` only tests Date parse; invalid calendar dates can normalize and time without timezone is accepted, while V3 validates date and offset. Since departure affects toll period, direct malformed V2 API input can select another period. UI normally sends ISO. Recommend share strict date validator + tests; low–medium risk.
-- **AUD-ERROR-01, confirmed HTTP status weakness:** V2 line97 / V3 line132 map all non-`UNAVAILABLE` exceptions to 400, including unknown internal errors. Generic message is safe, but clients/monitoring misclassify server failures. Recommend typed input errors=400, upstream=502, unexpected=500; low risk.
-- **AUD-SEC-01, probable abuse/resource risk:** `app/api/collect/route.ts:20–57` accepts public POST, parses JSON before truncating fields, then forwards accepted events/feedback to configured webhook without visible body-size limit, rate limit or fetch deadline. Feedback itself is capped after parse; route fields are coarsened. Repeated large/valid requests could consume function/webhook capacity; no abuse was attempted. Recommend pre-parse/platform size cap, abuse-rate policy at edge or service, and bounded webhook deadline; low/medium risk and independently testable. Validate deployment rate controls before calling it an exploitable defect.
+### P2 probable, unverified except date/status contract findings
 
-No P0/P1 confirmed. Provisional V2 empty-geometry P1 withdrawn after B6.
+- **AUD-GEOCODE-01:** direct label Photon geocode no local timeout; slow call can hold handler. Not reproduced. Isolated timeout test/adapter.
+- **AUD-API-01:** calculate body/label size caps not explicit in app; platform protection unknown.
+- **AUD-PROVIDER-01:** JSON response body size cap absent in adapters; upstream bounds unknown.
+- **AUD-TEST-01:** V2 invalid geometry regression not located; public route-control checks reject empty geometry. Defense-in-depth gap.
+- **AUD-TRACE-RECOVERY-01:** partial trace marked toll can lower corridor recovery thresholds (M4 2 vs4, M12 2 vs5); possible partial result surfaced matched. No repro; requires geometry too. Focused fixtures before change.
+- **AUD-UI-01:** V2 calculation hook lacks unmount abort; potential orphan server work, not reproduced. V3 has cleanup.
+- **AUD-DATE-01 (confirmed):** V2 at route.ts:48 accepts normalizable invalid dates and timestamps without zone; V3 validates calendar/zone. Since date affects toll period, direct API malformed input can choose wrong day. UI sends ISO. Recommend shared strict validator; low/medium risk.
+- **AUD-ERROR-01 (confirmed contract weakness):** V2 line97 and V3 line132 label unexpected exceptions 400 instead of 500; weak diagnostics/retry signals. Use typed error classes, safe body.
+- **AUD-SEC-01:** public collect parses request JSON before field caps and has no visible body/rate/deadline controls. Potential webhook/function abuse, not exploited; confirm platform protections then add cap/rate/deadline.
 
-## B13 controls reviewed
+No P0/P1 confirmed. V2 geometry P1 hypothesis withdrawn at B6.
 
-- `/api/suggest` caps q at 200 chars, ignores under-3 chars, and uses shared bounded address budget with request abort; logs coarse operational failure metadata, not raw query in inspected handler.
-- Vercel debug endpoints require configured `CALCULATOR_DEBUG_TOKEN`; hide unauthorized responses as 404; bound labels/timeouts. `/api/v2/classify` caps positions at 2.
-- `/api/collect` has field validation/coarsening and honeypot for feedback, but no explicit request body/rate/webhook timeout found in handler.
+## B14 performance/resource review
 
-## Unchecked
+- Address pool already caps active work/queue/cache; route providers use parallel fanout (V2 up to five initial candidates), cache revalidation and 25s deadlines.
+- Trace sampling is capped at 320 points, chunks at 140km, concurrency2, with per-chunk 18s deadline/retry bound. Chunk count is driven by route length; public API has 120s maxDuration. Actual worst-case total for extreme valid coordinate pairs was not benchmarked. Recommend offline synthetic performance fixtures/measurement rather than broad live audit.
+- V3 fastest-only path selects one candidate and traces/prices that route; calculation timing captures stage durations but the 10s target is observational, does not cancel/enforce timeouts. No request timing/profiling done in this audit. No new measured performance issue.
 
-Blocks 14–18: performance/memory, dependencies/build/supply chain, test effectiveness, CI configuration and data/doc governance. No runtime execution; no security probing. No tariff/road audit.
+## Not checked
+
+Blocks15–18: deps/build, test gaps, workflow path triggers/check coverage, docs/data governance and report finalization. Runtime, browser, builds and tests not run.
 
 ## Next
 
-B14 static resource/performance review: repeated computation, provider fan-out, caching and possible memory bounds. No benchmarks or network.
+B15 static dependency/build/supply-chain configuration: package manifests/lockfile/tool versions, TS project excludes and scripts test execution. No install/build.

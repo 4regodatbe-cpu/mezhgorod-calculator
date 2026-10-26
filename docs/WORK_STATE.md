@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:40 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 22:49 МСК
 
-**Progress: 13/18 blocks (72.2%).** B13 security/abuse/privacy review complete. P2 risk: public `/api/collect` parses body before field caps, has no visible app-level rate/size cap or webhook timeout. No probing/abuse tests. [Audit](CODEBASE_AUDIT.md) · [B13](checkpoints/2026-10-26-2240-codebase-audit-block-13-DONE.md).
+**Progress: 14/18 blocks (77.8%).** B14 static performance/resource flow reviewed; no benchmark or new measured defect. Trace/provider fanout is bounded in some dimensions, full handler target remains observational and there is no audit runtime measurement. [Audit](CODEBASE_AUDIT.md) · [B14](checkpoints/2026-10-26-2249-codebase-audit-block-14-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
