@@ -1,6 +1,6 @@
-# B03 mocked address UI scenarios STARTED — 26.10.2026 17:11 МСК
+# B03 mocked address UI harness prepared — 26.10.2026 17:22 МСК
 
-Chromium smoke DONE: run 40336150199, Chrome 156.0.8078.47, DOM создан, artifact hash verified; [checkpoint](checkpoints/2026-10-26-1711-b03-chromium-dom-smoke-DONE.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-26-b03-chromium-dom-smoke/README.md). Восемь mocked `/r` browser cases отдельно STARTED; snapshot expiry recheck обязателен before use: 31.10.2026 11:24:54 МСК. `addressCitySnapshot=false`; исходная B-only issue not proven fixed. [STARTED](checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md).
+Chromium smoke DONE: run 40336150199, Chrome 156.0.8078.47, DOM создан, artifact hash verified; [checkpoint](checkpoints/2026-10-26-1711-b03-chromium-dom-smoke-DONE.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-26-b03-chromium-dom-smoke/README.md). Eight-case isolated UI harness prepared; fresh remote snapshot check passed at 17:22 МСК, hash verified, expires 31.10.2026 11:24:54 МСК. Workflow not yet run. `addressCitySnapshot=false`; исходная B-only issue not proven fixed. [checkpoint](checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md).
 
 # B01–B12 — 26.10.2026 16:51 МСК
 

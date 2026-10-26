@@ -36,6 +36,8 @@ LookupтолькоCyrillic reviewed city-name/qualifier prefixот3символ�
 
 GitHub-hosted Chrome preflight passed in run 40336150199 on head 0895948e294b9f17efa00cb8a9a52c14bf9eef27: Chrome 156.0.8078.47 created DOM for `about:blank` (exit0). This is only a runtime smoke; no app/UI scenario ran. The eight `/r` scenarios are separately STARTED; evidence and exact case list: [checkpoint](../../docs/checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md). The local Codex browser restriction remains unchanged.
 
+26.10.2026 17:22 МСК: isolated Node24/Chrome156/Playwright1.56 scenario workflow and harness prepared; not yet run. Current remote snapshot rechecked at 17:22 МСК, record-set hash verified; expires 31.10.2026 11:24:54 МСК. Test result must not be used after expiry. `addressCitySnapshot` remains false; no B-only fix is claimed.
+
 ## Браузерная приёмка — ранее NOT_RUN (24.10.2026)
 
 Серверный HTML отдельно проверен: checks/2026-10-24-city-snapshot-render/verification.json, full898 PASS. Перестановка/очистка props в SSR не подтверждает реальные клики, useEffect, отмену или кэш. Локальный UI preflight: BLOCKED_BY_ENVIRONMENT_BROWSER; установленного Chromium нет. Не повторять поиск бинарника без изменения среды.

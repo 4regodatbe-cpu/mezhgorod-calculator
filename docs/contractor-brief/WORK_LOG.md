@@ -1,5 +1,9 @@
 # B01–B12 work log
 
+## 26.10.2026 17:22 МСК — B03 mocked address UI harness prepared
+
+Rechecked actual remote branch head `9cb39fcd59507ac0b562edd5fe5d4a2412d9374c`, PR #14 Draft, and no active/queued Actions. Re-fetched the allowed-branch address snapshot: expires `2026-10-31T08:24:54Z`, reviewed-record hash matches. Added an isolated Node 24 / Chrome 156 / Playwright 1.56 push workflow and eight mocked UI cases. `/r`, classification, calculation and telemetry are controlled; browser requests to non-loopback origins fail closed. Syntax and YAML parsing passed; no browser scenarios have run. Code inspection indicates the swap prop is not wired by the V2 page; preserve as an expected test observation, with no pre-emptive app change. [STARTED checkpoint](../checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md).
+
 ## 26.10.2026 17:11 МСК — B03 Chromium smoke DONE; UI scenarios STARTED
 
 Run [40336150199](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40336150199) passed on Chrome 156.0.8078.47: headless `about:blank`, exit 0, exact HTML DOM. Evidence ZIP hash verified and retained. Smoke does not cover UI or B-only behavior. Eight mocked `/r` browser scenarios are now a separate STARTED block; snapshot expiry recheck is required at execution. [Smoke DONE](../checkpoints/2026-10-26-1711-b03-chromium-dom-smoke-DONE.md) · [UI STARTED](../checkpoints/2026-10-26-1711-b03-address-ui-STARTED.md).

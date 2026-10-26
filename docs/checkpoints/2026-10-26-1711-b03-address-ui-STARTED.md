@@ -1,6 +1,6 @@
 # B03 mocked address UI scenarios — STARTED
 
-26.10.2026 17:11 МСК. Parent: allowed branch `fix/v3-missing-route-prices-2026-10-15`, remote head `0895948e294b9f17efa00cb8a9a52c14bf9eef27`; PR #14 Draft. Chromium prerequisite passed in run `40336150199`, Chrome `156.0.8078.47`; no active Actions at block start.
+26.10.2026 17:11 МСК; execution-config update 26.10.2026 17:22 МСК. Parent at start: allowed branch `fix/v3-missing-route-prices-2026-10-15`, head `0895948e294b9f17efa00cb8a9a52c14bf9eef27`; PR #14 Draft. Before this config save, branch readback showed `9cb39fcd59507ac0b562edd5fe5d4a2412d9374c`, PR #14 remained Draft, and no runs were queued/in progress. Chromium prerequisite passed in run `40336150199`, Chrome `156.0.8078.47`.
 
 ## Scope and limits
 
@@ -24,3 +24,9 @@ Save a per-scenario JSON outcome, expected/actual summary, request count, viewpo
 ## Execution plan
 
 Use a narrowly scoped workflow and test harness. Install only frozen project dependencies plus a pinned, temporary browser test runner; start local `pnpm dev`; test Chromium against loopback with network egress blocked at the browser request layer. The test runner itself must assert no unexpected external request. Save a separate DONE/FAILED/BLOCKED checkpoint and read back all changed files before proceeding further.
+
+## Prepared isolated workflow (not yet run)
+
+At 17:22 МСК the current remote snapshot was fetched again from the allowed branch: `expiresAt=2026-10-31T08:24:54Z` (31.10.2026 11:24:54 МСК), `recordsSha256=98f0b3aff117d77525bcba9d65c4d507b1a29d540e0c9fdf553e5fb9494b2933`; exact record-set hash recomputation passed. The eight-case harness is `experiments/road-ref-boundaries/scripts/b03-address-ui-scenarios.mjs`; isolated push-only workflow is `.github/workflows/b03-address-ui-browser.yml`, scoped to these files and the permitted branch, Node 24, Chrome 156.0.8078.47, and Playwright 1.56.0. It intercepts `/r` with snapshot-derived fixtures and mocks `/api/v2/classify`, `/api/v2/calculate`, and `/api/collect`; browser requests to non-loopback origins are blocked and counted. It saves per-case actuals, request counts, viewport, stdout/stderr, versions, screenshots and their SHA-256. It fails closed after snapshot expiry or hash mismatch.
+
+Static checks before save: `node --check experiments/road-ref-boundaries/scripts/b03-address-ui-scenarios.mjs` passed; PyYAML parsed the workflow; local snapshot expiry and records hash check passed. These are not browser scenario results. The workflow has not run yet. First expected observation: source inspection found V2 `CalculatorForm` supports optional `onSwap`, but `app/v2/page.tsx` does not pass it; cases 3 and 8 should report this UI behavior if reproduced, without changing app code in advance. Exact browser failure and remaining cases will be recorded from the hosted artifact. Next action: save this config on the current remote head without force, then inspect the resulting Actions event; do not activate `addressCitySnapshot` or claim the original B-only bug fixed.

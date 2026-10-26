@@ -1,0 +1,76 @@
+name: B03 address UI browser scenarios
+on:
+  push:
+    branches: [fix/v3-missing-route-prices-2026-10-15]
+    paths:
+      - .github/workflows/b03-address-ui-browser.yml
+      - experiments/road-ref-boundaries/scripts/b03-address-ui-scenarios.mjs
+permissions:
+  contents: read
+concurrency:
+  group: b03-address-ui-browser-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  address-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+          cache: pnpm
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - run: pnpm install --frozen-lockfile
+      - name: Install a pinned temporary Playwright runner
+        run: npm install --prefix "$RUNNER_TEMP/b03-playwright" --no-save --package-lock=false --no-audit --no-fund playwright@1.56.0
+      - name: Install the same Chrome version as the successful DOM smoke
+        id: chrome
+        uses: browser-actions/setup-chrome@c785b87e244131f27c9f19c1a33e2ead956ab7ce # v1
+        with:
+          chrome-version: '156.0.8078.47'
+          install-dependencies: true
+          install-chromedriver: false
+      - name: Validate snapshot freshness before starting the application
+        run: |
+          node --input-type=module -e 'import fs from "node:fs"; const {expiresAt}=JSON.parse(fs.readFileSync("data/address-city-snapshot.json","utf8")); const expiry=Date.parse(expiresAt); if (!Number.isFinite(expiry) || Date.now() >= expiry) { console.error(`BLOCKED_BY_EXPIRED_SNAPSHOT expiresAt=${expiresAt}`); process.exit(2); } console.log(JSON.stringify({checkedAt:new Date().toISOString(),expiresAt,validUntil:new Date(expiry).toISOString()}));'
+      - name: Start the local app and run only the eight UI scenarios
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          CHROME_VERSION: ${{ steps.chrome.outputs.chrome-version }}
+          PLAYWRIGHT_MODULE: ${{ runner.temp }}/b03-playwright/node_modules/playwright/index.mjs
+          B03_BASE_URL: http://127.0.0.1:3000
+          B03_OUTPUT_DIR: b03-browser-results
+          NEXT_TELEMETRY_DISABLED: '1'
+        shell: bash
+        run: |
+          mkdir -p "$B03_OUTPUT_DIR"
+          printf 'branch=%s\ncommit=%s\nnode=%s\nchrome=%s\n' "$GITHUB_REF_NAME" "$GITHUB_SHA" "$(node --version)" "$CHROME_VERSION" > "$B03_OUTPUT_DIR/environment-runner.txt"
+          pnpm exec next dev --hostname 127.0.0.1 > "$B03_OUTPUT_DIR/next-server.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=0
+          for _ in $(seq 1 60); do
+            if curl --silent --fail http://127.0.0.1:3000/v2 >/dev/null; then ready=1; break; fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then cat "$B03_OUTPUT_DIR/next-server.log"; exit 1; fi
+          set +e
+          node experiments/road-ref-boundaries/scripts/b03-address-ui-scenarios.mjs > "$B03_OUTPUT_DIR/runner.stdout.txt" 2> "$B03_OUTPUT_DIR/runner.stderr.txt"
+          code=$?
+          set -e
+          printf '%s\n' "$code" > "$B03_OUTPUT_DIR/exit-code.txt"
+          exit "$code"
+      - name: Upload scenario results and browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b03-address-ui-browser-${{ github.run_id }}
+          path: b03-browser-results/
+          if-no-files-found: warn
+          retention-days: 30
