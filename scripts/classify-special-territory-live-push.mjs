@@ -45,7 +45,10 @@ export function findPreviousCompletedRun(runs, prNumber, currentRunId) {
   const candidates = runs.flatMap((run) => {
     if (!run || run.id === currentRunId || run.status !== "completed" || !["success", "failure"].includes(run.conclusion) || !Number.isFinite(Date.parse(run.created_at))) return [];
     const linkedPr = Array.isArray(run.pull_requests) ? run.pull_requests.find((pr) => pr?.number === prNumber) : null;
-    const checkedHeadSha = linkedPr?.head?.sha;
+    if (!linkedPr) return [];
+    // The linked PR head can reflect the PR's newer head when Actions history
+    // is queried later. Use this run's immutable head_sha for the comparison.
+    const checkedHeadSha = run.head_sha;
     if (!SAFE_SHA.test(checkedHeadSha ?? "")) return [];
     return [{ ...run, checked_head_sha: checkedHeadSha }];
   });
