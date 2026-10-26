@@ -15,6 +15,15 @@
 - This is a user-visible business/API policy decision. No implementation was made. Block 2 is paused awaiting approval; independent freshness-gate work may continue.
 - Checkpoint: [policy WAITING](../checkpoints/2026-10-26-2352-aud-trace-policy-WAITING.md).
 
+## 26.10.2026 23:53 МСК — AUD-DATA-01 freshness gate DONE
+
+- Parent `a2d592a29bc83d1653a80bb838ac97aec77dab03`; allowed branch; PR14 Draft.
+- Removed only the stale fixed date from `calculator-final-gate.yml`; runtime now resolves actual UTC CI date. `TARIFF_AS_OF` remains a strict, reproducible override.
+- `scripts/check-tariff-freshness.mjs` now validates dates and reports freshness separately from effective-date provenance (`KNOWN`/`UNKNOWN`/`INVALID`). Strict mode fails stale or invalid metadata. Missing effective dates remain UNKNOWN and are not synthesized.
+- Added `scripts/check-tariff-freshness.test.mjs`: focused test PASS. Actual-date run at 2026-10-26 and fixed 2026-10-02 run both: 4 rows, stale0, invalid0, unknown3, exit0. `git diff --check` PASS.
+- No tariff/effective dates changed. No broad Actions/build/audit run; skip-CI commit avoids unrelated cumulative live probes.
+- Checkpoint: [freshness date DONE](../checkpoints/2026-10-26-2353-tariff-freshness-date-DONE.md). Next: evidence-only list of the three UNKNOWN tariff dates.
+
 ## 26.10.2026 23:14 МСК — AUD-DATE-01 DONE
 
 - Исходная разрешённая ветка / parent: `fix/v3-missing-route-prices-2026-10-15` / `fd41d4aaa817f8904be7e141b5bd6e5c0aca0ede`; PR #14 Draft. Рабочая копия создана отдельно из проверенного remote HEAD.
