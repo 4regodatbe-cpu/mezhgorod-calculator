@@ -4,9 +4,9 @@
 
 Selective CI is verified on hosted run40364820838 (verify/classifier success, live jobs skipped). The branch's existing B10 workflow and capture harness are exact matches to remote files; harness currently preflights/captures both Eisk and Maykop. Introduce a strict case-list parser; preflight uses the first selected case, capture and offline comparison iterate selected cases only. Add four local tests for default/two-case, Maykop-only, subset, and invalid/duplicate selections. All four pass locally; no network requests. Update special verify to run selector tests, hosted-verify with the B10 workflow unchanged, then only set `B10_CAPTURE_CASES=maykop-to-moscow` and run one narrow capture. [STARTED checkpoint](../checkpoints/2026-10-26-2007-b10-maykop-capture-STARTED.md).
 
-## 26.10.2026 20:16 МСК — CI baseline SHA semantics safety hold
+## 26.10.2026 20:20 МСК — CI baseline SHA semantics resolved; B10 selector hosted PASS
 
-Run40366544254 returned `head-already-checked` at f63a58d. Independent GitHub compare confirms f2208fdae…→f63a58d… is `ahead` by16 commits. The runner log did not include the prior SHA, so mutable PR association metadata is a plausible but unproven source. The classifier now uses immutable workflow-run `head_sha` for comparison, while requiring PR association to scope runs. Missing/unreliable SHA or uncertain compare fails open. Local classifier model 10/10 PASS; hosted verification is still required before B10. No capture was launched.
+Run40366544254 returned `head-already-checked` at f63a58d despite compare f2208fdae…→f63a58d… being `ahead` by16. The classifier was hardened to use immutable workflow-run `head_sha` and still require PR association; missing/unreliable SHA or uncertain compare fails open. Hosted run40367512131 confirms `no-route-runtime-change-in-update`, `verify` PASS (435 project tests + 10 classifier + 4 B10 selector tests, TypeScript/build), and broad live jobs SKIPPED. Current head edd7e79f…; PR remains Draft. B10 workflow unchanged, no capture/network calls. Before B10: save current-head STARTED; set Maykop env with `[skip ci]`; run separate docs-only special classifier/verify with no B10 push path; then add a meaningful explanatory comment in normal B10 workflow commit to launch one run.
 
 ## 26.10.2026 20:02 МСК — selective live-probe CI implemented and hosted verification PASS
 
