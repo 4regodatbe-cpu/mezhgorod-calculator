@@ -17,6 +17,7 @@ jobs:
     env:
       V2_ISSUE2_CAPTURE_ROOT: experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/v2-hosted-${{ github.run_id }}
       B10_ARTIFACT_DIR: b10-v2-issue2-${{ github.run_id }}
+      # One-time capture: Eisk is already saved; keep this run restricted to Maykop.
       B10_CAPTURE_CASES: maykop-to-moscow
     steps:
       - uses: actions/checkout@v4
