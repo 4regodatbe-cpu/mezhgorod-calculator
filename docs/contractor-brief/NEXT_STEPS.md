@@ -1,4 +1,4 @@
 # B01–B12 next steps
 
-Актуально 26.10.2026 21:08 МСК: codebase audit 3/18 (16.7%). Address pool/cache/cancellation inspected; no defect confirmed. Next: route API input/call graph, then providers/selection/toll logic. Source remote baseline f1ca4d2, PR14 Draft; Actions idle. No tests/network/build. [Plan](../checkpoints/2026-10-26-2100-codebase-audit-STARTED.md), [B3](../checkpoints/2026-10-26-2108-codebase-audit-block-03-DONE.md).
+Актуально 26.10.2026 21:12 МСК: codebase audit 4/18 (22.2%). API/call graph reviewed. Pending security check: body/point label bounds; legacy /api/calculate timeout and active consumers. Next: provider adapter semantics and response limits; no live requests or broad tests. [Plan](../checkpoints/2026-10-26-2100-codebase-audit-STARTED.md), [B4](../checkpoints/2026-10-26-2112-codebase-audit-block-04-DONE.md).
 

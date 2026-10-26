@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:08 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:12 МСК
 
-**Progress: 3/18 blocks (16.7%).** B1 inventory; B2 address/geocoding; B3 pool/cache/cancellation complete. No new cache/cancellation defect confirmed. Existing bounded pool contracts are per warm process, not global; revisit only as security/resource risk. No tests/network/build run. Remote baseline `f1ca4d2…`, PR14 Draft, Actions idle. [Plan](checkpoints/2026-10-26-2100-codebase-audit-STARTED.md) · [B1](checkpoints/2026-10-26-2103-codebase-audit-block-01-DONE.md) · [B2](checkpoints/2026-10-26-2106-codebase-audit-block-02-DONE.md) · [B3](checkpoints/2026-10-26-2108-codebase-audit-block-03-DONE.md).
+**Progress: 4/18 blocks (22.2%).** B1 inventory, B2 address/geocoding, B3 cache/pool, B4 route API/call graph complete. Candidate risks: missing server payload/label caps (P2 probable); legacy API direct Photon/OSRM calls lack local deadline (P2, active-use unknown). No exploit reproduced; source/tests/network/build unchanged. Remote baseline f1ca4d2, PR14 Draft, Actions idle. [Plan](checkpoints/2026-10-26-2100-codebase-audit-STARTED.md) · [B4](checkpoints/2026-10-26-2112-codebase-audit-block-04-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 

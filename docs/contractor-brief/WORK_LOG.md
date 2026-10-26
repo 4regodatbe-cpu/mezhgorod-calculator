@@ -130,3 +130,8 @@ Reviewed remote suggest route, Photon query/rank, timeout/error handling, snapsh
 ## 26.10.2026 21:08 МСК — codebase audit block 3/18 DONE: pool/cache/cancel
 
 Reviewed process-local Photon pool, query cache, AddressField cache use, and focused tests. No test execution. No defect confirmed: same-URL singleflight, per-subscriber cancel, last-subscriber abort, queue removal, timeout, positive LRU/TTL and cooldown/reset are implemented/tested. Per-warm-process (not global) scope remains for security assessment. [Checkpoint](../checkpoints/2026-10-26-2108-codebase-audit-block-03-DONE.md).
+
+
+## 26.10.2026 21:12 МСК — codebase audit block 4/18 DONE: route API inputs/call graph
+
+Reviewed legacy, V2/V3 calculate, classify, version and debug routes at remote source. No requests/tests executed. V2/V3 validate enums/rates/date/coords and isolate route engines. Candidate P2: body/label lack application-level size limits; UI/provider constraints do not protect direct API callers. Legacy /api/calculate has direct Photon/OSRM fetch without local timeout; root UI redirects to /v2, so relevance unknown. Risks, not demonstrated incidents. [Checkpoint](../checkpoints/2026-10-26-2112-codebase-audit-block-04-DONE.md).
