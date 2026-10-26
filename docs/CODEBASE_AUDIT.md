@@ -1,42 +1,44 @@
 # Технический аудит репозитория «Из А в Б»
 
-IN_PROGRESS; план 18 блоков. Источник — удалённая разрешённая ветка, baseline f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d. Анализ read-only; код, тарифы, CI и Production не менялись. Не запускались тесты, build, browser или live requests. Процент только этого аудита.
+IN_PROGRESS; новый audit — 18 blocks. Source: remote branch fix/v3-missing-route-prices-2026-10-15; baseline f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d. Статический read-only анализ; код/тарифы/CI не изменялись. В этом аудите не запускались тесты, build, браузер, live calls или security probes. Процент — только этого плана.
 
 ## Прогресс
 
-1 architecture; 2 address; 3 cache/cancel; 4 API input; 5 providers; 6 selection; 7 saved V2/V3; 8 geometry; 9 pricing; 10 V2 UI; 11 V3 UI; 12 API outputs; 13 security; 14 performance; 15 deps/build; 16 tests; 17 CI; 18 governance/synthesis. Done 15/18 (83.3%). [B15 checkpoint](checkpoints/2026-10-26-2302-codebase-audit-block-15-DONE.md).
+1 architecture; 2 address; 3 cache; 4 API inputs; 5 providers; 6 selection; 7 saved comparisons; 8 geometry; 9 pricing; 10 V2 UI; 11 V3 UI; 12 API outputs; 13 security; 14 performance; 15 deps/build; 16 tests; 17 CI; 18 governance/synthesis. Done 16/18 (88.9%). [B16 checkpoint](checkpoints/2026-10-26-2317-codebase-audit-block-16-DONE.md).
 
-## Сохранённые V2/V3 outputs
+## Existing V2/V3 proxy outputs
 
-Ейск V2−V3: Thu +580₽/−1m/0s, Sat +1,530₽/−1m/0s. Майкоп: Thu/Sat 0₽/−1m/0s. Только proxy/API results, не независимое подтверждение тарифов. Подробные SHA в B7.
+Eisk Thu/Sat V2−V3 toll delta +580/+1,530 ₽, route −1m/0s; Maykop Thu/Sat 0 ₽, route −1m/0s. Historical captures/replays only; not independent tariff evidence. No recapture/replay.
 
-## Находки
+## Findings
 
-Все ниже P2; кроме помеченных confirmed, это вероятные риски, не воспроизведённые runtime-дефекты.
+Все находки P2; только date/error/status/build observations подтверждены статически как контракт/gap. Runtime wrong fare/security exploit не воспроизведены.
 
-- AUD-GEOCODE-01: direct Photon label geocode без локального deadline; медленный вызов может удерживать handler. Нет воспроизведения. Предложение: bounded transport + abort test.
-- AUD-API-01: нет явных app-level лимитов body bytes/label length в calculate API; deploy/platform caps неизвестны.
-- AUD-PROVIDER-01: route adapter напрямую парсит JSON без app-level byte cap; реальные upstream limits не установлены.
-- AUD-TEST-01: V2 invalid geometry regression не найден; public V2 path пустую geometry отклоняет через route controls. Это coverage gap, не доказанная неверная цена.
-- AUD-TRACE-RECOVERY-01: неполный trace с toll edge получает status=toll; recovery снижает порог геометрического run (M4 2/4, M12 2/5) и может вернуть matched сумму совпавших сегментов. Плаузибельный partial-total риск, не воспроизведён; сначала создать изолированные fixtures. Средний риск поведенческого исправления.
-- AUD-UI-01: V2 use-v2-calculation.ts:25,70–74,143 aborts при новом запросе/clear, но не при unmount; возможна лишняя backend работа. V3 cleanup уже имеет.
-- AUD-DATE-01, confirmed mismatch: V2 route.ts:48 только проверяет Date parse; нормализуемая невозможная дата и timestamp без зоны принимаются. V3 валидирует календарь/zone. Поскольку дата влияет на toll period, прямой malformed V2 API input может выбрать другой период; UI шлёт ISO. Предложение: общий strict validator + tests; низкий/средний риск.
-- AUD-ERROR-01, confirmed contract weakness: V2 route.ts:97 и V3:132 все ошибки без суффикса UNAVAILABLE классифицируют как 400, включая неожиданные серверные. Рекомендуется типизированное разделение 400/502/500.
-- AUD-SEC-01: public /api/collect парсит JSON до field truncation, явных body/rate limit и timeout для webhook не видно. Abuse не проверялся; сначала подтвердить edge protections.
-- AUD-BUILD-01, confirmed validation gap: tsconfig исключает scripts, но test:audit выполняет TypeScript tests через Node, не typecheck. Рекомендуется отдельный no-emit tsconfig/CI typecheck; tooling-only, низкий/средний риск.
+- AUD-GEOCODE-01: direct Photon label geocode has no local deadline; request-hold risk, not reproduced.
+- AUD-API-01: no explicit body-bytes/label length cap in calculation API; platform caps unknown.
+- AUD-PROVIDER-01: route responses parsed without app-level byte caps; upstream limits unknown.
+- AUD-TEST-01: V2 invalid-geometry regression not found; current public flow rejects missing controls.
+- AUD-TRACE-RECOVERY-01: incomplete trace with paid edge gets status=toll; recovery uses lower segment-run thresholds (M4 2/4, M12 2/5) and may return matched subset. Potential incomplete total, not reproduced. Add focused fixtures before policy change.
+- AUD-UI-01: V2 request hook lacks unmount abort; possible extra server work. V3 includes cleanup.
+- AUD-DATE-01: V2 date parser accepts Date-normalized invalid calendar dates/zone-less timestamps while V3 validates. Since date selects fare period, direct malformed V2 API could pick a different period; UI sends ISO. Strict shared validator recommended; low-medium risk.
+- AUD-ERROR-01: V2/V3 unknown errors map to 400 rather than 500; monitoring/retry contract weak, generic body safe.
+- AUD-SEC-01: public /api/collect parses body before field limits, no visible app-level byte/rate/webhook deadline. Abuse not attempted; confirm edge limits.
+- AUD-BUILD-01: tsconfig excludes scripts, so Node-executed TS tests are not typechecked; separate no-emit TS config recommended.
 
-Подтверждённых P0/P1 пока нет. Предположение о V2 empty geometry P1 снято: публичные пути требуют route controls и отклоняют отсутствие control coordinates.
+No P0/P1 confirmed. V2 empty geometry P1 hypothesis withdrawn; public paths enforce plan controls.
 
-## Performance/security and safeguards reviewed
+## B16 test inventory
 
-Address pool ограничивает concurrency/queue/cache; route providers timeout/revalidate; trace sampler cap320 points, chunks140km, concurrency2, bounded 429 retry, per-chunk timeout18s. Total worst-case under Vercel maxDuration120 не измерялся. Timing target10s observational only. Suggest API caps; debug routes gated by token on Vercel, suggest q<=200 and bounded service. Collect handler has field coarsening but no visible pre-parse body cap/rate/deadline.
+Remote recursive tree at B16 parent enumerated 145 test-looking files; each matched a declared test:audit glob or explicit quote.test.cjs. Static check only. Existing suite includes address pool/endpoint tests, V3 response/API tests, pricing-composition and trace-rate-limit focused tests, route regressions. No coverage instrumenter configured in package scripts, so repository audit cannot quantify branch coverage. The V3 API audit explicitly asserts invalid calendar days and missing timezones return 400; the V2 special-territory API test has no departureAt cases, leaving AUD-DATE-01 without a V2 regression. No tests executed.
 
-V3 UI strictly validates response schema and cleans up abort/timer on unmount; V2 validates a minimum shape and lacks unmount abort. Saved Eisk/Maykop comparisons are proxy data only.
+## Positive controls
 
-## Осталось непроверенным
+Unknown toll is serialized as null; partial composition is fail-closed; V3 response schema strict; V3 hook abort cleanup; address suggestion bounded; workflow and dependency audit still pending.
 
-Blocks16–18: test adequacy/oracles; workflow required checks/triggers; data governance and final synthesis. Не запускались build/test/security scan/network/browser. Никакой новый дорожный аудит не выполнялся.
+## Осталось
 
-## Следующий этап
+B17 Actions triggers, required checks, secrets/permissions and broad live-audit scope; B18 docs/data governance + final consolidated report and safe remediation plan. No actual build/test/dependency/security scan.
 
-B16 статически инвентаризировать test files, relevant assertions and CI wiring, without running suite.
+## Следующий шаг
+
+B17 static review workflows relevant to normal PR/push and required checks. Do not trigger Actions; do not edit workflows.

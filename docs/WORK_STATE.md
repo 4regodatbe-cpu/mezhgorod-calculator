@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 23:02 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 23:17 МСК
 
-**Progress: 15/18 blocks (83.3%).** Package/lock/TS config reviewed; no install or vulnerability audit. Confirmed P2: scripts tests execute but are excluded from TypeScript checks. [Audit](CODEBASE_AUDIT.md) · [B15](checkpoints/2026-10-26-2302-codebase-audit-block-15-DONE.md).
+**Progress: 16/18 blocks (88.9%).** B16 reviewed static test inventory: 145 current-tree tests all match test:audit patterns. No full-suite execution. Gaps: no V2 date-validator regression located (V3 strict-date cases exist); no coverage metrics. [Audit](CODEBASE_AUDIT.md) · [B16](checkpoints/2026-10-26-2317-codebase-audit-block-16-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
