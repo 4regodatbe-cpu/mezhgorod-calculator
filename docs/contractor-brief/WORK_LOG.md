@@ -1,6 +1,10 @@
 # B01–B12 work log
 
-## 26.10.2026 21:30 МСК — selective live-probe CI implemented and hosted verification PASS
+## 26.10.2026 20:07 МСК — B10 Maykop-only selector STARTED after selective CI PASS
+
+Selective CI is verified on hosted run40364820838 (verify/classifier success, live jobs skipped). The branch's existing B10 workflow and capture harness are exact matches to remote files; harness currently preflights/captures both Eisk and Maykop. Introduce a strict case-list parser; preflight uses the first selected case, capture and offline comparison iterate selected cases only. Add four local tests for default/two-case, Maykop-only, subset, and invalid/duplicate selections. All four pass locally; no network requests. Update special verify to run selector tests, hosted-verify with the B10 workflow unchanged, then only set `B10_CAPTURE_CASES=maykop-to-moscow` and run one narrow capture. [STARTED checkpoint](../checkpoints/2026-10-26-2007-b10-maykop-capture-STARTED.md).
+
+## 26.10.2026 20:02 МСК — selective live-probe CI implemented and hosted verification PASS
 
 The expected `77b8…` SHA was stale; branch source was `192d2238…`, PR14 Draft. Workflow first saved at `f477eab7…`. Run40363211385 exposed a JSON-to-`$GITHUB_OUTPUT` parser bug after classifier had correctly computed `head-already-checked`; fail-open ran broad jobs and no Action was cancelled. `verify` PASS (435 project tests + 9 classifier tests, TypeScript/build), timing PASS, geometry PASS. Address runtime probe: Ростов PASS with 1 HTTP503; Красн CHECK_FAILED after 5 HTTP503 + 1 cooldown; Донецк SOURCE_UNAVAILABLE after 7 cooldown responses; 3/3 requests completed in 2.572s; later 50-route/Yandex steps skipped. Narrow helper fix emits diagnostics to stderr; it also permits a classifier-failure prior run only if verify succeeded and fail-open live job finished. Model tests now 10/10 PASS. After saving fix, hosted run40364820838 SUCCESS: verify PASS (435 project tests + 10 classifier cases, TypeScript and Next build), classifier PASS `head-already-checked`; broad `live_probe` and timing jobs both SKIPPED. Thus a non-runtime update in the cumulative PR does not repeat broad checks; unknown/API/incomplete/runtime cases still fail open. Current head `f2208fdae88983b5efe1ce69c29d3b9da6845c57`; PR14 remains Draft. Next: Maykop-only B10 scope check, no Eisk recapture.
 
