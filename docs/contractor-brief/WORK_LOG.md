@@ -115,3 +115,8 @@ Run40369626668 SUCCESS on Ubuntu24.04/Node24.21.0; only Maykop selected. Valhall
 ## 26.10.2026 21:00 МСК — comprehensive codebase audit STARTED
 
 User requested a read-only technical audit and `docs/CODEBASE_AUDIT.md`, with no automatic fixes. Verified remote branch `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`, PR14 Draft and Actions idle. Local checkout `82faf1b7bf6634271563dc01dbf504ec889e4b59` is 89 commits behind and dirty, so current code is inspected through GitHub reads. Recursive remote tree has 7,240 entries, dominated by docs/evidence. Defined 18 bounded blocks; no prior routes, mass audit, browser, network or broad tests repeated. [STARTED](../checkpoints/2026-10-26-2100-codebase-audit-STARTED.md).
+
+
+## 26.10.2026 21:03 МСК — codebase audit block 1/18 DONE: repo inventory/dependency map
+
+Remote tree 7,240 entries; app38/lib119/data25/scripts166. Mapped Next V2/V3 endpoints to shared provider/pricing/policy layers; found static config excludes scripts (tsconfig line53) while Node test command executes them. Tagged as P2 validation gap pending CI confirmation. Provider facade imports M11/M12/M4 toll-specific evidence; V3 UI hook imports V2 utilities/types, tagged architectural coupling risks P2/P3, no behavior defect proven. No tests/build/live calls. [Checkpoint](../checkpoints/2026-10-26-2103-codebase-audit-block-01-DONE.md).

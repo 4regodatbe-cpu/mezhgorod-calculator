@@ -1,3 +1,7 @@
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:03 МСК
+
+**Progress: 1/18 blocks (5.6%).** Block 1 mapped 7,240-entry remote repository, app/lib/data/script boundaries and V2/V3/provider integration. Preliminary findings: scripts excluded from `tsconfig` (P2 validation gap); provider facade and V3→V2 UI imports (P2/P3 coupling risks, not proven defects). No code or business-logic changes; tests/build/live requests not run. [Plan](checkpoints/2026-10-26-2100-codebase-audit-STARTED.md) · [Block 1](checkpoints/2026-10-26-2103-codebase-audit-block-01-DONE.md).
+
 # CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:00 МСК
 
 Remote allowed branch `fix/v3-missing-route-prices-2026-10-15` at `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`; PR #14 Draft; Actions idle. Read-only comprehensive audit planned as 18 independent blocks. **0/18 completed (0%).** No source/business logic changes, wide tests, builds, live requests or prior route audits are in scope. The local checkout is stale (89 commits behind) and dirty; exact remote branch files are the source of truth. [Audit plan](checkpoints/2026-10-26-2100-codebase-audit-STARTED.md).
