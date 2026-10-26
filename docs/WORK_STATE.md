@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest block8 DONE: shared V2/V3 endpoint validation caps route labels at256 Unicode code points. Oversized label returns400 before any provider request; exact256 including emoji boundary passes. Focused label/API tests, tsc, scoped ESLint and diff check PASS. [Checkpoint](checkpoints/2026-10-27-0242-block-8-label-bounds-DONE.md). Technical12/24 (50%):1–8,12,17,19,22. Next9 `/api/collect` bounds. No route/business semantics or normalization changed.
+
 Latest block7 DONE: V2/V3 request body parsing capped at16KiB using streamed byte counting (not only `Content-Length`). Oversized declared/actual bodies return413 before provider calls; malformed JSON and non-object JSON return400. Focused body tests2/2; V2/V3 API, safe error and trace integration suites PASS; tsc, scoped ESLint and diff check PASS. [Checkpoint](checkpoints/2026-10-27-0240-block-7-request-size-DONE.md). Technical11/24 (45.83%):1–7,12,17,19,22. Next8 string bounds. No broad audit/build/Actions.
 
 Latest block6 DONE: focused mocked V2/V3 integration suites confirm input/output contracts, V2 special/ordinary route shapes, V3 single-fast-route schema, sanitized 400/502/500 mapping, and partial-trace unknown/null propagation. Four suites PASS; no contract defect reproduced and engines remain separate. [Checkpoint](checkpoints/2026-10-27-0237-block-6-api-contracts-DONE.md). Technical10/24 (41.67%):1–6,12,17,19,22. Next7 body-size bounds. No broad audit/network/build/Actions.

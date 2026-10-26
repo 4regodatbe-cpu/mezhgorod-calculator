@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:42 МСК — reliability block8 route-label bounds DONE
+
+- Parent `e12ffd2f880413efe5a906b2996d82cf2f38d01b`; allowed branch only; PR14 Draft; no Actions for parent.
+- RED endpoint test showed a257-character route label passed V2 field validation, reached mocked routing providers and returned502 rather than rejecting input.
+- Added shared `lib/route-input-validation.ts`; V2/V3 now cap `from`/`to` labels at256 Unicode code points while retaining the existing trimmed-nonempty, coordinate-range, and address text unchanged. Values beyond the bound return400 before geocoding/routing. Tests cover exact256, 257, Cyrillic and supplementary emoji code points.
+- GREEN: `calculation-point-label-limit.test.ts` 2/2; existing V2 special/ordinary and V3 pipeline API suites PASS; `npx tsc --noEmit`, scoped ESLint and `git diff --check` PASS.
+- No live calls or changes to query normalization/ranking, coordinates, route policy, tariff behavior or UI copy. Technical progress12/24 (50%): blocks1–8,12,17,19,22. Next block9 `/api/collect` resource bounds. [Checkpoint](../checkpoints/2026-10-27-0242-block-8-label-bounds-DONE.md).
+
 ## 27.10.2026 02:40 МСК — reliability block7 calculation request body bounds DONE
 
 - Parent `fff8197ef0a9d7d579ed18b6eed75a360209d8ca`; allowed branch only; PR14 Draft; no Actions for parent.

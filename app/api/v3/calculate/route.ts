@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { classifyCalculateApiError } from "@/lib/calculate-api-error";
 import { readLimitedJsonObject, RequestBodyError } from "@/lib/limited-json-body";
+import { validPoint } from "@/lib/route-input-validation";
 import { geocode, type Point } from "@/lib/route-providers";
 import { calculateLeg } from "@/lib/v3-calculation/route-leg";
 import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-integration";
@@ -15,12 +16,6 @@ import { createCalculationTiming } from "@/lib/calculation-timing";
 type UserRates = { standard: number; comfort: number; comfortPlus: number; minivan: number };
 const VEHICLES: PricingVehicle[] = ["standard", "comfort", "comfort_plus", "minivan"];
 
-function validPoint(point: Point | undefined): point is Point {
-  if (!point || typeof point.label !== "string" || !point.label.trim()) return false;
-  if (!point.position) return true;
-  const { lat, lng } = point.position;
-  return Number.isFinite(lat) && Number.isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180;
-}
 function validRate(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value) && value >= 1 && value <= 10000;
 }

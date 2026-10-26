@@ -1,6 +1,6 @@
 # Unified reliability and B01–B12 work queue
 
-Latest technical result: 24-block plan DONE11/24 (45.83%):1–7,12,17,19,22. Block7 adds a16KiB streaming JSON object cap to V2/V3 APIs, counting actual bytes and returning400/413 safely. Focused body and ordinary integration tests PASS; zero provider calls for oversized requests. Checkpoint2026-10-27-0240-block-7-request-size-DONE.md. Block20 remains PARTIAL. Next block8 input string bounds.
+Latest technical result: 24-block plan DONE12/24 (50%):1–8,12,17,19,22. Block8 applies a256-Unicode-code-point label bound at the shared V2/V3 server validator;257-character labels return400 before provider calls, exact-boundary cases PASS. Checkpoint2026-10-27-0242-block-8-label-bounds-DONE.md. Block20 remains PARTIAL. Next block9 `/api/collect` protection.
 
 2026-10-27. Baseline `396daf20b02c2d56fc49b53174fb923f633fc861`; allowed fix branch, PR14 Draft.
 
