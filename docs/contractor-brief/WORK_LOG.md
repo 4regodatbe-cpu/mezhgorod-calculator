@@ -110,3 +110,8 @@ Run40369124628 for docs-only head `c65db6d026d5fb2b42d62986efa75a675da92a7b`: ov
 ## 26.10.2026 20:35 МСК — B10 Maykop hosted capture + Thu/Sat offline replay + V2/V3 — DONE
 
 Run40369626668 SUCCESS on Ubuntu24.04/Node24.21.0; only Maykop selected. Valhalla, OSRM, BRouter preflight all HTTP200/valid; capture response HTTP200, 36/36 calls HTTP200, capture SHA256 `bd103585f4456c1e3e7b9d45e484a7c630a4d555472f7cefaddc7f97799f6552`. Raw responses and replay/comparison files verified in artifact12671872287 (ZIP SHA256 `586930587557644424dc6ff36107c48e74f4fdd3df0a22cd4f70e54c9e9f472e`, 90-day retention). Thu/Sat offline replays HTTP200, all36 calls consumed, live0/missing0/unused0. V2/V3 each: −1m, 0s, 0₽ delta; Thu5040₽/Sat6090₽ in both; no fare edit. Companion CI40369636065 SUCCESS, mandatory verify PASS, broad jobs skipped. [Evidence](../../experiments/nationwide-tolls/checks/2026-10-26-b10-maykop-hosted-run-40369626668/README.md) · [Checkpoint](../checkpoints/2026-10-26-2035-b10-maykop-capture-DONE.md).
+
+
+## 26.10.2026 21:00 МСК — comprehensive codebase audit STARTED
+
+User requested a read-only technical audit and `docs/CODEBASE_AUDIT.md`, with no automatic fixes. Verified remote branch `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`, PR14 Draft and Actions idle. Local checkout `82faf1b7bf6634271563dc01dbf504ec889e4b59` is 89 commits behind and dirty, so current code is inspected through GitHub reads. Recursive remote tree has 7,240 entries, dominated by docs/evidence. Defined 18 bounded blocks; no prior routes, mass audit, browser, network or broad tests repeated. [STARTED](../checkpoints/2026-10-26-2100-codebase-audit-STARTED.md).
