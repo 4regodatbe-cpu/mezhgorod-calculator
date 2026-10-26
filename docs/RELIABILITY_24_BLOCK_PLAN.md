@@ -109,6 +109,8 @@
 
 ## Status reconciliation
 
+Latest block2 DONE (V2 unknown/null presentation). Real SSR rendering and helper tests confirmed `unknown/null` remains base-only and never becomes zero. A manual user-entered amount correctly computes a labeled total, but exposed a contradictory stale warning; `RouteCard` now hides only the “full total is not calculated” notice while manual input is present. Unknown provider status remains visible. Focused tests, TypeScript, scoped ESLint and diff check PASS; checkpoint `2026-10-27-0228-block-2-v2-unknown-DONE.md`. Technical DONE6/24 (25%): 1,2,12,17,19,22. Next3 V3 unknown contract.
+
 Latest22 review DONE with residual cumulative-baseline limitation; checkpoint2026-10-27-block22-DONE.md. DONE5/24 (1,12,17,19,22),20.83%. Next20 offline profiling.
 
 Latest block19 DONE: docs/codebase-audit/EISK_COMPONENT_ANALYSIS.md and EISK_COMPONENT_EVIDENCE.json. DONE4/24 (1,12,17,19),16.67%. No live queries. Next22.

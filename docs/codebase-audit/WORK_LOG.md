@@ -1,5 +1,14 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:28 МСК — reliability block2 V2 unknown/null presentation DONE
+
+- Parent `1d8892d542b4eef1f973f0ad8489372c05613b3e`; allowed branch only; PR14 remains Draft; local tree was clean before this block.
+- Existing V2 helper tests already showed unknown/null tolls render as base-only and confirmed-free routes as explicit zero. Added `scripts/v2-unknown-result-render.test.mjs` to verify actual server-rendered cards. RED reproduced a contradictory message: with provider pricing unknown and a user-entered 3,050 ₽ amount, UI showed a calculated 3,150 ₽ total while the card also said the full amount was not calculated.
+- Minimal fix: `app/v2/components/route-card.tsx` suppresses only that contradictory notice while a manual amount exists. The unknown provider toll status remains visible and manual amount remains explicitly labeled. No pricing, toll or routing logic changed.
+- GREEN: SSR render2/2; copied-quote regression verifies unknown stays unknown and never copies a zero road fee; `scripts/v2-quote-presentation.test.ts` plus `scripts/v2-hook-unmount-abort.test.mjs` PASS; `npx tsc --noEmit`, scoped ESLint, `git diff --check` PASS. No browser, network, full build or broad CI.
+- Technical progress moves 5/24→6/24 (25%): blocks1,2,12,17,19,22. Block20 profiling remains PARTIAL. Next: block3 V3 unknown/null contract. PR14 Draft; only the allowed branch is used.
+- Checkpoint: [block2](../checkpoints/2026-10-27-0228-block-2-v2-unknown-DONE.md).
+
 ## 27.10.2026 00:54 МСК — AUD-TRACE-RECOVERY-01 approved V2 fix DONE
 
 - Parent remote/local `d891271479cce6164d10a72a317a51fa7f7f98d3`; allowed branch only; PR14 open/Draft; no Actions associated with that SHA at preflight.

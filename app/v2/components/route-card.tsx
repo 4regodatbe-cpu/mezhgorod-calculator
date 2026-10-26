@@ -51,7 +51,7 @@ export function RouteCard({
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Clock3 className="h-4 w-4 text-brand-action" />{duration(trip.seconds)}</span>
       </div>
       <QualityNote quality={trip.quality} />
-      {isUnknown && <p role="note" className="mt-2 text-sm font-semibold text-amber-700">Стоимость платных дорог неизвестна — полная сумма поездки не рассчитана.</p>}
+      {isUnknown && !hasManualToll && <p role="note" className="mt-2 text-sm font-semibold text-amber-700">Стоимость платных дорог неизвестна — полная сумма поездки не рассчитана.</p>}
       <PriceRows trip={trip} toll={toll} period={tollPeriod} manualToll={manualToll} />
       {showTollPanel && toll && (
         <div className="mt-2 rounded-2xl border border-brand-route/35 bg-brand-route/10 p-2">

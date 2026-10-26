@@ -15,7 +15,7 @@ function deferred() {
   return { promise, resolve: resolvePromise };
 }
 
-function harness(fetch) {
+function harness(fetch, clipboard = { writeText: async () => {} }) {
   const states = [];
   const cleanups = [];
   const react = {
@@ -40,7 +40,7 @@ function harness(fetch) {
     exports: mod.exports,
     AbortController,
     fetch,
-    navigator: { clipboard: { writeText: async () => {} } },
+    navigator: { clipboard },
     setTimeout,
     clearTimeout,
     require: name => name === 'react'
@@ -78,4 +78,24 @@ test('unmount aborts the active V2 calculation and blocks its late response', as
 
   assert.equal(signal.aborted, true, 'unmount aborts the in-flight fetch');
   assert.equal(h.states[0], null, 'late response does not set a result');
+});
+
+test('unknown V2 road price stays unknown in copied quote instead of becoming zero', async () => {
+  let copied = '';
+  const h = harness(async () => Response.json({}), { writeText: async text => { copied = text; } });
+  const fare = { totalPrice: 44_516, requiresSplit: false };
+  const trip = {
+    meters: 100_000,
+    seconds: 3_600,
+    pricingByVehicle: Object.fromEntries(['standard', 'comfort', 'comfort_plus', 'minivan'].map(key => [key, fare])),
+  };
+  const toll = { amount: null, weekdayAmount: null, weekendAmount: null, period: 'unknown', segments: [], confidence: 'none', pricingStatus: 'unknown' };
+  const leg = { from: 'A', to: 'B' };
+
+  await h.hook.copyStandard('unknown', 'route', leg, trip, toll, undefined, 'actual');
+
+  assert.match(copied, /Стоимость платных дорог неизвестна/);
+  assert.match(copied, /44[\s\u00a0\u202f]?516 ₽ платные дороги: сумма неизвестна = итого не рассчитано/);
+  assert.doesNotMatch(copied, /=\s*0(?:[,.]00)?\s*₽/);
+  h.cleanup();
 });

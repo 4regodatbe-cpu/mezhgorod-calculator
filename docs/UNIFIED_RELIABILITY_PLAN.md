@@ -1,5 +1,7 @@
 # Unified reliability and B01–B12 work queue
 
+Latest technical result: 24-block plan DONE6/24 (25%):1,2,12,17,19,22. Block2 V2 unknown/null display verified with SSR; manually entered toll on an unknown provider amount computes a labeled total without a contradictory “full total not calculated” warning. Block20 profiling remains PARTIAL. Next block3 V3 unknown/null contract.
+
 2026-10-27. Baseline `396daf20b02c2d56fc49b53174fb923f633fc861`; allowed fix branch, PR14 Draft.
 
 ## Counters and missing input
