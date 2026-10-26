@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest practical sprint result: call-local recovery endpoint cache, long-fixture median30.72→17.17ms; all16 measured operation hashes unchanged, positive/partial recovery regression files+tsc+ESLint PASS. Checkpoint2026-10-27-recovery-endpoint-cache-DONE.md. Block20 profiling remains PARTIAL (missing stage/fixture coverage), technical5/24. Next2/V2 unknown presentation; then3/V3, UI errors/API guards. No broad CI/build run.
+
 Sprint block20 PARTIAL: reproducible offline profile and baseline saved (scripts/offline-computation-profile.mjs, docs/codebase-audit/computation-baseline.json). Technical remains5/24. Saved9433point route: recognition median61.28ms,recovery30.72ms. Next test call-local recovery endpoint memoization with output parity; coverage gaps explicit in baseline/checkpoint.
 
 Latest technical5/24 (20.83%): block22 selective-CI review saved, classifier10/10 PASS. Cumulative runtime changes since last checked baseline explain docs-triggered live jobs; pending-runtime accounting remains necessary before safely narrowing this further. No CI config changed, no live run started. Next20 offline profiling.

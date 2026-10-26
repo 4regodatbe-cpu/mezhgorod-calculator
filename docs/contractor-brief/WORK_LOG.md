@@ -1,5 +1,7 @@
 # B01–B12 work log
 
+2026-10-27 B11: measured call-local nearest-endpoint reuse implemented in lib/toll-recovery.ts. Long median30.72→17.17ms, same inputs/result hashes; other workload medians improve. Two targeted regression files, tsc/scoped ESLint/diff PASS. Baseline/after JSON persisted, no external calls. Whole-calculation speedup not measured; block20 remains PARTIAL,5/24. Checkpoint2026-10-27-recovery-endpoint-cache-DONE.md.
+
 2026-10-27 B11/block20 baseline PARTIAL: four workloads, saved geometry hashes,2warmups/10samples, medians/p95/heap deltas and deterministic result hashes. No network; technical still5/24. Checkpoint2026-10-27-profile-baseline-PARTIAL.md. Next endpoint-search reuse experiment.
 
 2026-10-27 block22 DONE review:10/10 classifier regressions PASS; verify remains unconditional; saved run outcomes explained by last-checked-baseline cumulative runtime changes. Narrow event.before diff could omit unchecked runtime commits, so no unsafe CI change. Residual limitation checkpoint2026-10-27-block22-DONE.md. Technical5/24; next20.
