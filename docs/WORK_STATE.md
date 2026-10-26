@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest: technical DONE3/24 (1,12,17). Block12 geocode deadline25s implemented; timeout maps to GEOCODE_UNAVAILABLE, first-feature selection and supplied coordinates preserved. Two mocked tests, TypeScript/scoped ESLint PASS. [Checkpoint](checkpoints/2026-10-27-geocode-deadline-DONE.md). Next19/B10 saved Eisk component attribution. B01 remains partial.
+
 Original 24 definitions restored: [plan](RELIABILITY_24_BLOCK_PLAN.md), DONE2/24 (1,17); exact B crosswalk recorded. Missing-plan blocker resolved. Next block12/B01 deadline. Earlier UNKNOWN/24 notes below are historical.
 
 [Unified work order](UNIFIED_RELIABILITY_PLAN.md): B01–B12 reconciled with completed fixes; 4 actionable directions, 7 data blockers, 1 environment blocker, 0 broadly fully closed directions. The original numbered 24 technical blocks are absent from available context/repository; technical count UNKNOWN/24, awaiting source definitions. Next concrete work: B01/AUD-GEOCODE-01 direct geocoder deadline. [Checkpoint](checkpoints/2026-10-27-unified-plan-reconciliation-DONE.md). Previous completed stages below remain historical evidence.

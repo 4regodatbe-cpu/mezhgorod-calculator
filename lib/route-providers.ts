@@ -24,9 +24,19 @@ export async function geocode(point: Point): Promise<Located> {
   const url = new URL("https://photon.komoot.io/api/");
   url.searchParams.set("q", point.label);
   url.searchParams.set("limit", "1");
-  const response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" } });
+  const signal = AbortSignal.timeout(25_000);
+  let response: Response;
+  try {
+    response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" }, signal });
+  } catch (error) {
+    if (signal.aborted) throw new Error("GEOCODE_UNAVAILABLE");
+    throw error;
+  }
   if (!response.ok) throw new Error("GEOCODE_UNAVAILABLE");
-  const data = (await response.json()) as { features?: Array<{ geometry?: { coordinates?: Coordinate }; properties?: Record<string, string | undefined> }> };
+  const data = (await response.json().catch((error: unknown) => {
+    if (signal.aborted) throw new Error("GEOCODE_UNAVAILABLE");
+    throw error;
+  })) as { features?: Array<{ geometry?: { coordinates?: Coordinate }; properties?: Record<string, string | undefined> }> };
   const item = data.features?.[0];
   const coordinates = item?.geometry?.coordinates;
   if (!coordinates) throw new Error("ADDRESS_NOT_FOUND");

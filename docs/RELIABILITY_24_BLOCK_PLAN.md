@@ -109,6 +109,8 @@
 
 ## Status reconciliation
 
+Latest: block12 DONE, checkpoint2026-10-27-geocode-deadline-DONE.md. Confirmed DONE3/24:1,12,17. Below reconciliation records the initial restoration snapshot. Next19/B10 offline Eisk component attribution.
+
 DONE: 1,17. Evidence: docs/UNIFIED_RELIABILITY_PLAN.md and checkpoint 2026-10-27-0054-aud-trace-recovery-fix-DONE.md. Block1 uses existing module map in CODEBASE_AUDIT.md; static audit was not repeated. Block17 uses the five focused regression files recorded in that checkpoint. Other definitions exceed the prior narrow checks and are not credited automatically.
 
 ACTIONABLE: 2–16,18–22. PENDING:23,24 (final gates/consolidation follow implementation). Confirmed progress:2/24.

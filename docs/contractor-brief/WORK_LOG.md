@@ -1,5 +1,7 @@
 # B01–B12 work log
 
+2026-10-27 block12 DONE: direct Photon geocode now carries25s AbortSignal across fetch/body; abort maps to existing GEOCODE_UNAVAILABLE. Test-first RED missing signal; GREEN2/2 including ranking/coordinate bypass, tsc/scoped ESLint/diff PASS. No live requests, broad tests/build or hosted CI. Technical3/24; next19 saved Eisk attribution.
+
 2026-10-27: restored all24 definitions from user attachment; credited only1/17 against existing checkpoint evidence,2/24. No tests repeated. Crosswalk in docs/RELIABILITY_24_BLOCK_PLAN.md. Next12/B01.
 
 ## 2026-10-27 — unified queue reconciled

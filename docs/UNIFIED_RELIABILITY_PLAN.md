@@ -27,6 +27,8 @@ Functional directions: 0/12 fully closed against the broad BRIEF acceptance crit
 
 ## Execution order and overlap
 
+Update2026-10-27: block12/B01 direct geocode deadline DONE; two offline regressions, TypeScript/scoped ESLint PASS. Technical DONE3/24. B01 remains partially addressed (general outage source unresolved). Next19/B10 saved Eisk attribution.
+
 1. B01 / AUD-GEOCODE-01: direct geocoder deadline and abort regression. Preserve ranking, coordinates and error contract.
 2. B10: offline explanation of saved Eisk tariff-component difference. Any tariff/policy change needs independent evidence and separate approval.
 3. B12: reconcile actual cumulative CI classifier behavior with its model; reproduce with stored event metadata, not a new broad live run.
