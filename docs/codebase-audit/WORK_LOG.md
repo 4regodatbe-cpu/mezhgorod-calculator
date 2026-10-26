@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:37 МСК — reliability block6 API contract compatibility DONE
+
+- Parent `ca1704e4d234a281980b09c0216e546bceb19304`; allowed branch only; PR14 Draft; no Actions for parent.
+- Reused focused mocked integration evidence instead of retesting route corpora: `special-territory-api.test.ts` exercises V2 input validation/ordinary+special output and unknown toll nulls; `v3-pipeline-integrity.test.ts` checks the V3 single-fast-route schema/validator and paid/unknown/free states; `calculate-api-error-mapping.test.ts` checks sanitized 400/502/500 responses; `v2-partial-trace-recovery.test.ts` verifies incomplete corridor recovery returns public unknown/null while retaining diagnostics.
+- All four suites PASS. No contract defect reproduced; V2 and V3 engine/response policy remain separate. Size and string bounds are explicitly left for blocks7–8. No runtime changes in this block.
+- No live service calls, broad audit, build or Actions. Technical progress10/24 (41.67%): blocks1–6,12,17,19,22. Next block7 body limits. [Checkpoint](../checkpoints/2026-10-27-0237-block-6-api-contracts-DONE.md).
+
 ## 27.10.2026 02:36 МСК — reliability block5 V2 cancellation/races DONE
 
 - Parent `37024801dd3c0f2795fdd6dedb181bb9b0700ffa`; allowed branch only; PR14 Draft; no active Actions for parent.

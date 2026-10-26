@@ -1,6 +1,6 @@
 # Unified reliability and B01–B12 work queue
 
-Latest technical result: 24-block plan DONE9/24 (37.5%):1–5,12,17,19,22. Block5 reproduced stale V2 error and clipboard completion after reset; V2 now clears reset state, blocks stale copy completion, and cleans up copy timers. Focused lifecycle/race tests PASS. Checkpoint2026-10-27-0236-block-5-v2-races-DONE.md. Block20 remains PARTIAL. Next block6 API contracts.
+Latest technical result: 24-block plan DONE10/24 (41.67%):1–6,12,17,19,22. Block6 API integration checks pass across V2/V3 after date, safe-error and corridor-recovery changes; no contract defect reproduced, engines remain separate. Checkpoint2026-10-27-0237-block-6-api-contracts-DONE.md. Block20 remains PARTIAL. Next block7 request-body limits.
 
 2026-10-27. Baseline `396daf20b02c2d56fc49b53174fb923f633fc861`; allowed fix branch, PR14 Draft.
 

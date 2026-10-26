@@ -6,9 +6,10 @@
 - [x] Block3 — V3 unknown/null response contract, shared fastest-route render and copied status; no defect reproduced. [Checkpoint](../checkpoints/2026-10-27-0231-block-3-v3-unknown-DONE.md).
 - [x] Block4 — V2/V3 HTTP/network/malformed response errors; generic handling of unexpected details, retry, abort and stale response. [Checkpoint](../checkpoints/2026-10-27-0234-block-4-ui-errors-DONE.md).
 - [x] Block5 — V2/V3 request cancellation/races, V2 clear state and delayed clipboard completion. No hosted B03 rerun. [Checkpoint](../checkpoints/2026-10-27-0236-block-5-v2-races-DONE.md).
-- [ ] Block6 — API request/response contracts.
+- [x] Block6 — V2/V3 input/output contracts after date/error/trace changes; no defect reproduced. [Checkpoint](../checkpoints/2026-10-27-0237-block-6-api-contracts-DONE.md).
+- [ ] Block7 — request-body size limits.
 
-Technical progress: 9/24 (37.5%): blocks1–5,12,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. B02/B04–B09 remain data-blocked.
+Technical progress: 10/24 (41.67%): blocks1–6,12,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. B02/B04–B09 remain data-blocked.
 
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 
