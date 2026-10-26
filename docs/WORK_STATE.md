@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:43 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:52 МСК
 
-**Progress: 7/18 blocks (38.9%).** B1–B7 complete. Saved captures: Eisk V2/V3 output delta +580 ₽ Thu, +1,530 ₽ Sat; Maykop delta 0 ₽ both days; route deltas −1 m/0 s. Proxy/API outputs only, not independent fare evidence. No recapture/replay. [Report](CODEBASE_AUDIT.md) · [B7](checkpoints/2026-10-26-2143-codebase-audit-block-07-DONE.md).
+**Progress: 8/18 blocks (44.4%).** B8 shared geometry/direction/boundary contracts reviewed statically; no new proven defect, no road/fare mass audit. Current P2 risks unchanged. [Audit report](CODEBASE_AUDIT.md) · [B8](checkpoints/2026-10-26-2152-codebase-audit-block-08-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
