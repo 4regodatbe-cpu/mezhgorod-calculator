@@ -1,6 +1,6 @@
-# B03 mocked UI first run — harness defects plus swap issue — 26.10.2026 17:39 МСК
+# B03 UI suite — swap fix STARTED — 26.10.2026 17:48 МСК
 
-Chrome smoke DONE: run 40336150199. Run 40339480704 failed before scenarios and is documented [here](checkpoints/2026-10-26-1726-b03-ui-runner-bootstrap-FAILED.md). Corrected bootstrap hosted eight cases in run 40340623345; case 1 passed, 02–07 invalid from harness selectors/callbacks; case 8 passed mobile/keyboard checks but observed missing swap control. Full scenario evidence + artifact digest: [FAILED](checkpoints/2026-10-26-1739-b03-ui-harness-run-FAILED.md) · [files](../experiments/road-ref-boundaries/checks/2026-10-26-b03-address-ui-run-40340623345/README.md). Corrected rerun STARTED at [checkpoint](checkpoints/2026-10-26-1740-b03-ui-harness-correction-STARTED.md); snapshot freshness recheck is required. `addressCitySnapshot=false`; original B-only issue unverified.
+Chrome smoke DONE: run 40336150199. Runner bootstrap error fixed. Run 40340623345 caught harness mistakes and is recorded [here](checkpoints/2026-10-26-1739-b03-ui-harness-run-FAILED.md). Run 40342429468: cases 01,02,04,05,07 PASS; 03 confirms V2 swap control absent; 06 assertion counted retry button; 08 began before hydration and is inconclusive. Evidence/artifact: [partial checkpoint](checkpoints/2026-10-26-1748-b03-ui-run2-PARTIAL.md) · [files](../experiments/road-ref-boundaries/checks/2026-10-26-b03-address-ui-run-40342429468/README.md). Focused `onSwap` fix + corrected browser runner are STARTED [here](checkpoints/2026-10-26-1748-b03-v2-swap-fix-STARTED.md). Recheck fresh remote snapshot and Action idle before next run. `addressCitySnapshot=false`; original B-only live failure unverified.
 
 # B01–B12 — 26.10.2026 16:51 МСК
 

@@ -72,6 +72,7 @@ export default function V2Page() {
         onFromChange={(value)=>{setFrom(value);clearResult();}}
         to={to}
         onToChange={(value)=>{setTo(value);clearResult();}}
+        onSwap={()=>{setFrom(to);setTo(from);clearResult();}}
         rates={rates}
         onRatesChange={(value)=>{setRates(value);clearResult();}}
         specialRates={specialRates}

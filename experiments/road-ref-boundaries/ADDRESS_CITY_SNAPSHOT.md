@@ -42,6 +42,8 @@ GitHub-hosted Chrome preflight passed in run 40336150199 on head 0895948e294b9f1
 
 26.10.2026 17:39 МСК: Chrome UI run 40340623345 executed all cases; case 01 passed. Cases 02–07 are invalidated by specific harness callback/heading mistakes and will be repeated only after correction. Case08 passed narrow-screen and keyboard assertions but observed no A↔B control. Evidence and artifact digest: [run record](checks/2026-10-26-b03-address-ui-run-40340623345/README.md); root causes and limits: [checkpoint](../../docs/checkpoints/2026-10-26-1739-b03-ui-harness-run-FAILED.md). New harness-correction block: [STARTED](../../docs/checkpoints/2026-10-26-1740-b03-ui-harness-correction-STARTED.md).
 
+26.10.2026 17:48 МСК: corrected run 40342429468 produced five valid PASS (01,02,04,05,07). Case03 confirmed the V2 swap control is absent after result; case06 counted the retry button as a suggestion (test defect); case08 had no `/r` before timeout and remains inconclusive, likely hydration timing. [Evidence/results](checks/2026-10-26-b03-address-ui-run-40342429468/README.md), [partial checkpoint](../../docs/checkpoints/2026-10-26-1748-b03-ui-run2-PARTIAL.md). Focused swap callback implementation and complete hosted rerun STARTED: [checkpoint](../../docs/checkpoints/2026-10-26-1748-b03-v2-swap-fix-STARTED.md).
+
 ## Браузерная приёмка — ранее NOT_RUN (24.10.2026)
 
 Серверный HTML отдельно проверен: checks/2026-10-24-city-snapshot-render/verification.json, full898 PASS. Перестановка/очистка props в SSR не подтверждает реальные клики, useEffect, отмену или кэш. Локальный UI preflight: BLOCKED_BY_ENVIRONMENT_BROWSER; установленного Chromium нет. Не повторять поиск бинарника без изменения среды.

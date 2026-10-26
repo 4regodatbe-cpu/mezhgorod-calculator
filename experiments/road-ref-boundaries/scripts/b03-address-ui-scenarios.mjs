@@ -153,8 +153,13 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     const page = await context.newPage();
     page.setDefaultTimeout(10000);
     page.on("pageerror", error => state.pageErrors.push(error.message));
+    const appHydrated = page.waitForRequest(request => {
+      const url = new URL(request.url());
+      return url.pathname === "/api/collect" && request.method() === "POST";
+    });
     await page.goto(`${baseUrl}/v2`, { waitUntil: "domcontentloaded" });
     await page.locator('input[placeholder="Откуда"]').waitFor({ state: "visible" });
+    await appHydrated;
     return { context, page, state };
   }
 
@@ -347,13 +352,15 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     const failRequest = requestForQuery(page, "Сбой");
     await a.fill("Сбой"); await failRequest;
     await page.getByText("Сервис поиска временно недоступен.").waitFor({ state: "visible" });
-    assert.equal(await h.buttonsFor(a).count(), 0, "502 must not leave old items selectable");
+    const selectableTitlesAfterFailure = await h.fieldFor(a).locator('[role="status"] button strong').allTextContents();
+    record.actual = { selectableTitlesAfterFailure, retryVisible: await page.getByRole("button", { name: "Повторить" }).count() === 1 };
+    assert.deepEqual(selectableTitlesAfterFailure, [], "502 must not leave old suggestion items selectable");
     const beforeRetry = state.requests.filter(item => item.path === "/r").length;
     const retryRequest = page.waitForRequest(request => new URL(request.url()).pathname === "/r");
     await page.getByRole("button", { name: "Повторить" }).click();
     await retryRequest;
     await h.buttonsFor(a).first().waitFor({ state: "visible" });
-    record.actual = { requestCount: state.requests.filter(item => item.path === "/r").length, requestsBeforeRetry: beforeRetry, emptyMessageVisible: true, retryResult: await h.buttonsFor(a).allTextContents(), noticeCount: await h.noticeFor(a).count() };
+    record.actual = { ...record.actual, requestCount: state.requests.filter(item => item.path === "/r").length, requestsBeforeRetry: beforeRetry, emptyMessageVisible: true, retryResult: await h.buttonsFor(a).allTextContents(), noticeCount: await h.noticeFor(a).count() };
     assert.equal(record.actual.requestCount, beforeRetry + 1, "retry must issue a new /r request");
     assert.equal(record.actual.noticeCount, 0);
   }, async (query, count) => {
