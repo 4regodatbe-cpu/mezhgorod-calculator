@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 02:36 МСК — reliability block5 V2 cancellation/races DONE
+
+- Parent `37024801dd3c0f2795fdd6dedb181bb9b0700ffa`; allowed branch only; PR14 Draft; no active Actions for parent.
+- Test-first red reproduced two V2 lifecycle defects: reset after failure retained the stale error, and a delayed clipboard completion marked a cleared result as copied. The existing V2 hook also lacked V3-equivalent clipboard rejection handling.
+- `use-v2-calculation.ts` now clears error/manual/copy state on reset, detaches and aborts the active controller, guards clipboard completion against the current controller, handles clipboard failures with a safe message, and clears the copied indicator timer on new request/reset/unmount. Request and pricing behavior unchanged.
+- V2 lifecycle suite9/9 (unmount, older response after new response, clear, copy after clear, clipboard failure); V3 hook race suite8/8; `npx tsc --noEmit` PASS; scoped ESLint0 errors/1 existing unused `analyticsVersion` warning; `git diff --check` PASS.
+- No B03 browser suite, network, full build or broad Actions. Technical progress9/24 (37.5%): blocks1–5,12,17,19,22. Next block6 API contracts. [Checkpoint](../checkpoints/2026-10-27-0236-block-5-v2-races-DONE.md).
+
 ## 27.10.2026 02:34 МСК — reliability block4 UI error handling DONE
 
 - Parent `a6f30e7ada3f760c770577e52bba6e639a195d0b`; allowed branch only; PR14 Draft; no active Actions for parent.

@@ -15,6 +15,10 @@ function deferred() {
   return { promise, resolve: resolvePromise };
 }
 
+function routeResponse(from = 'A') {
+  return { legs: [{ from, to: 'B', fast: { meters: 10_000, seconds: 1_000, tolls: { pricingStatus: 'unknown' } } }] };
+}
+
 function harness(fetch, clipboard = { writeText: async () => {} }) {
   const states = [];
   const cleanups = [];
@@ -136,5 +140,54 @@ test('V2 rejects malformed successful JSON with a safe incomplete-route message'
   assert.equal(h.states[0], null);
   assert.equal(h.states[1], 'Маршрут получен не полностью. Повторите расчёт.');
   assert.equal(h.states[2], false);
+  h.cleanup();
+});
+
+test('late V2 response ignoring abort cannot overwrite a newer calculation', async () => {
+  const first = deferred(), second = deferred();
+  let calls = 0;
+  const h = harness(() => calls++ === 0 ? first.promise : second.promise);
+  const oldCalculation = h.hook.calculate();
+  const newCalculation = h.hook.calculate();
+  second.resolve(Response.json(routeResponse('new')));
+  await newCalculation;
+  first.resolve(Response.json(routeResponse('old')));
+  await oldCalculation;
+  assert.equal(h.states[0].legs[0].from, 'new');
+  h.cleanup();
+});
+
+test('clearing V2 result clears a prior request error', async () => {
+  const h = harness(async () => { throw new Error('network unavailable'); });
+  await h.hook.calculate();
+  assert.notEqual(h.states[1], '');
+  h.hook.setManualToll('3050');
+  h.hook.clearResult();
+  assert.equal(h.states[0], null);
+  assert.equal(h.states[1], '');
+  assert.equal(h.states[4], '');
+  h.cleanup();
+});
+
+test('late V2 clipboard completion after clear cannot mark a stale route copied', async () => {
+  const pending = deferred();
+  const h = harness(async () => Response.json(routeResponse()), { writeText: () => pending.promise });
+  await h.hook.calculate();
+  const data = routeResponse();
+  const leg = data.legs[0];
+  const copying = h.hook.copyStandard('old', 'route', leg, leg.fast, undefined, undefined, 'weekday', undefined, true);
+  h.hook.clearResult();
+  pending.resolve();
+  await copying;
+  assert.equal(h.states[5], '');
+  assert.equal(h.states[0], null);
+  h.cleanup();
+});
+
+test('V2 clipboard failure returns a safe visible message without a rejection', async () => {
+  const h = harness(async () => Response.json(routeResponse()), { writeText: async () => { throw new Error('clipboard private details'); } });
+  await assert.doesNotReject(() => h.hook.copyStandard('route', 'route', { from: 'A', to: 'B' }, { meters: 10_000, seconds: 1_000 }, undefined));
+  assert.equal(h.states[1], 'Не удалось скопировать результат. Разрешите доступ к буферу обмена и повторите попытку.');
+  assert.equal(h.states[5], '');
   h.cleanup();
 });

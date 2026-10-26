@@ -1,6 +1,6 @@
 # Unified reliability and B01–B12 work queue
 
-Latest technical result: 24-block plan DONE8/24 (33.33%):1–4,12,17,19,22. Block4 reproduced raw network exception details in both UI hooks, replaced them with a generic retry message while preserving trusted API errors, and verified retry/malformed/abort cases. Checkpoint2026-10-27-0234-block-4-ui-errors-DONE.md. Block20 remains PARTIAL. Next block5 request cancellation/races.
+Latest technical result: 24-block plan DONE9/24 (37.5%):1–5,12,17,19,22. Block5 reproduced stale V2 error and clipboard completion after reset; V2 now clears reset state, blocks stale copy completion, and cleans up copy timers. Focused lifecycle/race tests PASS. Checkpoint2026-10-27-0236-block-5-v2-races-DONE.md. Block20 remains PARTIAL. Next block6 API contracts.
 
 2026-10-27. Baseline `396daf20b02c2d56fc49b53174fb923f633fc861`; allowed fix branch, PR14 Draft.
 

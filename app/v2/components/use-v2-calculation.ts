@@ -24,7 +24,8 @@ const vehicleForRate = { standard: "standard", comfort: "comfort", comfortPlus: 
 
 export function useV2Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint = "/api/v2/calculate", analyticsVersion = "2.0" }: CalculationInput) {
   const pending=useRef<AbortController|null>(null);
-  useEffect(() => () => { pending.current?.abort(); pending.current = null; }, []);
+  const copiedTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
+  useEffect(() => () => { pending.current?.abort(); pending.current = null; if(copiedTimer.current)clearTimeout(copiedTimer.current); }, []);
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -73,6 +74,7 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
     pending.current?.abort();
     const controller=new AbortController();
     pending.current=controller;
+    if(copiedTimer.current)clearTimeout(copiedTimer.current);
     setError("");
     setResult(null);
     setLoading(true);
@@ -117,11 +119,15 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
   }
 
   async function copyStandard(key: string, title: string, leg: Leg, trip: Trip, toll?: TollView, warning?: string, tollPeriod: TollPeriod = "weekday", manualTollOverride?: string, fareOnly = false) {
+    const copyRequest=pending.current;
+    try {
     void title;
     if (fareOnly) {
       await navigator.clipboard.writeText(buildAlternativeFareCopy(leg.from, leg.to, trip));
+      if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
       setCopiedKey(key);
-      setTimeout(() => setCopiedKey(""), 1800);
+      if(copiedTimer.current)clearTimeout(copiedTimer.current);
+      copiedTimer.current=setTimeout(() => { copiedTimer.current=null; setCopiedKey(""); }, 1800);
       return;
     }
     const tollPrice = resolveTollAmount(toll, tollPeriod, manualTollOverride);
@@ -138,10 +144,17 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
     }
     if (warning) lines.push(`Важно: ${warning}`);
     await navigator.clipboard.writeText(lines.join("\n"));
+    if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
     setCopiedKey(key);
-    setTimeout(() => setCopiedKey(""), 1800);
+    if(copiedTimer.current)clearTimeout(copiedTimer.current);
+    copiedTimer.current=setTimeout(() => { copiedTimer.current=null; setCopiedKey(""); }, 1800);
+    } catch {
+      if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
+      setCopiedKey("");
+      setError("Не удалось скопировать результат. Разрешите доступ к буферу обмена и повторите попытку.");
+    }
   }
 
-  const clearResult = () => { pending.current?.abort(); pending.current=null; setLoading(false); setResult(null); };
+  const clearResult = () => { pending.current?.abort(); pending.current=null; setLoading(false); setResult(null); setError(""); setManualToll(""); setCopiedKey(""); if(copiedTimer.current)clearTimeout(copiedTimer.current); copiedTimer.current=null; };
   return { result, error, loading, deepTollDiagnostics, setDeepTollDiagnostics, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard };
 }
