@@ -1,33 +1,37 @@
 # Технический аудит репозитория «Из А в Б»
 
-Статус: IN_PROGRESS; новый план — 18 блоков. Источник — remote branch `fix/v3-missing-route-prices-2026-10-15`, исходный SHA `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`. Read-only; бизнес-логика, тарифы и настройки не менялись. Процент относится только к этому аудиту.
+Статус: IN_PROGRESS; новый план — 18 блоков. Источник: удалённая ветка `fix/v3-missing-route-prices-2026-10-15`; исходный SHA `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`. Только анализ документов/кода и сохранённых тестов: рабочая бизнес-логика, цены и настройки не изменялись. Процент относится только к этому аудиту.
 
 ## План и прогресс
 
-18 блоков: 1 архитектура; 2 адресный поиск; 3 кэш/очередь/отмена; 4 API входы/поток; 5 адаптеры; 6 выбор fastest; 7 V2/V3 и сохранённые Eisk/Maykop evidence; 8 геометрия/границы без повтора аудита дорог; 9 тарифная композиция; 10 V2 UI; 11 V3 UI; 12 API outputs/errors; 13 безопасность; 14 производительность; 15 зависимости/build; 16 тесты; 17 CI; 18 docs/data governance и синтез. Завершено 5/18 (27.8%); [checkpoint B5](checkpoints/2026-10-26-2124-codebase-audit-block-05-DONE.md). Широкие, сетевые и браузерные тесты не запускались.
+18 блоков: 1 архитектура; 2 адресный поиск; 3 кэш/очередь/отмена; 4 API inputs/call graph; 5 провайдеры; 6 candidate selection/fastest; 7 V2/V3 и сохранённые Eisk/Maykop evidence; 8 геометрия/границы без повтора аудита дорог; 9 тарифная композиция; 10 V2 UI; 11 V3 UI; 12 API ответы/ошибки; 13 безопасность; 14 производительность; 15 зависимости/build; 16 тесты; 17 CI; 18 документация/data governance/синтез.
+
+Завершено 6/18 (33.3%). Условия, evidence и ограничения — в dated checkpoints B1–B6 под `docs/checkpoints/`; последний: [B6](checkpoints/2026-10-26-2134-codebase-audit-block-06-DONE.md). Массовые аудиты, live-сеть, браузер, build и тесты не запускались.
 
 ## Предварительная оценка
 
-Есть явные defensive controls: bounded address suggestion pool и 25s deadlines у route adapters. Выявлен риск разной строгости admission между V2/V3; его окончательная классификация ожидает B6 cross-check. API ограничения ресурсов и route provider behavior ещё будут проверены.
+Проверенные области демонстрируют bounded address suggestion pool и таймауты route adapters. Существенного подтверждённого P0/P1 пока нет. Основные кандидаты — отсутствие deadline в прямом geocode path и неполное совпадение явных геометрических проверок V2/V3; оба требуют дальнейшей проверки и точечного regression, но текущий аудит read-only.
 
-## Предварительные находки
-
-### P1 — вероятный риск, ожидает B6 подтверждения
-
-**AUD-ROUTE-01 — V2 может тарифицировать endpoint straight-line вместо provider geometry.** В `lib/v2-calculation/route-leg.ts` fulfilled candidates после анализа маршрута передаются в `selectLiveRouteCandidates`; `lib/route-quality.ts` сравнивает расстояние/согласие, без проверки координат. Пустая geometry заменяется двумя endpoint координатами и передаётся в `calculateLegTolls` (`lib/v2-calculation/route-leg-pricing.ts`). V3 использует `isUsableRoute` (`lib/v3-calculation/route-candidate.ts`); `scripts/v3-route-selection-audit.test.ts` содержит regression “incomplete geometry never becomes a straight line priced as a real road”. Кодовой путь доказан статически, неправильная цена не воспроизводилась. Возможное последствие — tariff/road detection по несуществующему пути. Рекомендация: B6 проверить все варианты V2, затем отдельный fail-closed admission guard и regression. Средний риск изменения; высокая потенциальная польза; изолируется в V2 candidate gate.
+## Находки
 
 ### P2 — вероятный риск надёжности
 
-**AUD-GEOCODE-01 — direct label geocoding не имеет локального timeout.** `lib/route-providers.ts` `geocode` делает Photon fetch без AbortSignal; V2/V3 принимают точки без position и параллельно вызывают geocode. Route adapters имеют 25s timeout, отдельный suggestion-service ограничен иначе, но этот путь его не использует. Долгая задержка/отказ не воспроизводились. Рекомендация: bounded transport + abort regression без изменения ranking; низкий–средний риск, улучшает предсказуемость ресурсов, модульно.
+**AUD-GEOCODE-01 — direct label geocoding не имеет локального timeout.** В `lib/route-providers.ts` функция `geocode` при отсутствии позиции делает Photon fetch без AbortSignal; V2/V3 calculate handlers разрешают label-only point и вызывают geocode параллельно. Route adapters задают 25s deadline, отдельный suggestion service ограничен отдельно, но этот путь его не использует. Долгая задержка/отказ не воспроизводились. Возможное следствие — удержание API-расчёта до platform/request timeout. Рекомендация: ограничить direct adapter и добавить abort regression без изменения ranking. Низкий–средний риск, польза — предсказуемые ресурсы; отдельный модуль.
 
-**AUD-API-01 — нет явных app-level max bytes/label длины в calculate endpoints.** B4 checkpoint фиксирует статическое наблюдение; возможный лимит платформы не проверялся, DoS не доказан. Рекомендуется отдельная валидация request limits; низкий/средний риск, изолируемо.
+**AUD-API-01 — calculate API не задаёт явный app-level лимит тела запроса/длины point label.** Статическое подтверждение описано в [B4](checkpoints/2026-10-26-2112-codebase-audit-block-04-DONE.md). Платформенный body cap/эксплуатация не проверялись, поэтому это вероятный ресурсный риск, не установленная уязвимость. Изолировать через общий API validator; низкий–средний риск.
 
-**AUD-PROVIDER-01 — JSON body провайдеров читается без явного app-level byte cap.** Valhalla/OSRM/BRouter адаптеры имеют timeout и revalidation, но вызывают `response.json()` напрямую. Последствие/эксплуатируемость зависят от upstream/platform caps и не проверены; считать это доказанным дефектом нельзя. Рекомендация — определить разумные пределы и ограниченное чтение только при подтверждении платформенной модели; риск низкий/средний.
+**AUD-PROVIDER-01 — нет явного app-level byte cap для JSON provider responses.** Три routing adapters используют abort/revalidation, но парсят response.json() напрямую. Нет доказательства, что upstream может превысить допустимый размер или что платформа не ограничивает его. Риск не доказан; сначала установить реальные лимиты среды/контрактов, затем при необходимости ограничить чтение.
 
-## Непроверенное
+**AUD-TEST-01 — V2 не имеет явно установленного regression для невалидной геометрии в исследованном наборе тестов.** V3 содержит `isUsableRoute` и regression «incomplete geometry never becomes a straight line priced as a real road» (`scripts/v3-route-selection-audit.test.ts`). В V2 такой явный gate не найден в просмотренных тестовых именах/файлах, хотя публичные API пути передают контрольные позиции. Это покрытие/defense-in-depth gap, не доказанный runtime-дефект. Добавить узкий V2 test на пустую geometry и некорректные meters/seconds/endpoints; не менять правила выбора маршрута без подтверждённого падения. Низкий риск теста, средний guard-риск, отдельный модуль.
 
-Тесты в этом сеансе не запускались; провайдеры не вызывались; live pricing, пограничные случаи тарифов, browsers и build не перепроверялись. Текущая точность/влияние AUD-ROUTE-01 ждёт B6. Итоговые P0–P3, план исправлений и список «не менять» будут после блоков 6–18.
+## Проверка предварительного P1-кандидата
 
-## Следующее действие
+Изначальное предположение, что пустая geometry V2 доходит до тарификации, **не подтверждено и снято**. Текущие публичные V2 обычный и special paths передают routing controls в `followsPlan`; helper ищет последовательный проход каждой позиции и возвращает false, если координат нет. Значит, пустой массив отклоняется до формирования/выбора routeCandidates на этих call paths. V2 действительно не вызывает V3 `isUsableRoute`, но из одного этого различия нельзя выводить ошибочную цену. Проверка статическая; V2 regression не запускался/не добавлялся.
 
-B6: проверить candidate admission в V2/V3, fastest-only и special path, тесты пустой/невалидной geometry. Не выполнять сетевые запросы.
+## Проверено и непроверено
+
+B1–B6 выполнены по текущим remote blobs; провайдеры не вызывались. Исторические Eisk/Maykop captures пока не повторялись. Остались B7–B18: V2/V3 saved-evidence comparison, toll geometry, tariff composition, UI, API outputs, security, performance, dependencies/build, tests, CI and governance. Ни один тест/build не запускался; runtime/P0–P1 assessment не завершён.
+
+## Следующий шаг
+
+B7: проверить только уже сохранённые V2/V3 captures/results по Ейск—Москва и Майкоп—Москва, не запускать новый capture и не менять тарифы. Затем checkpoint/readback.

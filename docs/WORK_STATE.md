@@ -1,6 +1,6 @@
-# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:24 МСК
+# CODEBASE AUDIT — IN_PROGRESS — 26.10.2026 21:34 МСК
 
-**Progress: 5/18 blocks (27.8%).** B1 inventory, B2 address lookup, B3 cache/pool, B4 API flow, B5 provider adapters complete. Candidate requiring cross-check in B6: V2 appears to admit empty route geometry before substituting endpoint line; compare with V3 guard/test. B5 probable reliability risk: label-only direct geocode lacks a local timeout; no failure reproduced. No tests/live requests; source is read-only. Report: [CODEBASE_AUDIT.md](CODEBASE_AUDIT.md); [B5 checkpoint](checkpoints/2026-10-26-2124-codebase-audit-block-05-DONE.md).
+**Progress: 6/18 blocks (33.3%).** B1–B6 complete. B6 cross-check disproved the provisional P1 empty-geometry path for current API callers: V2 always supplies route controls and `followsPlan` rejects missing controls before selection. V2 lacks V3's explicit finite/endpoint geometry guard; keep as P2 test/defense-in-depth gap, not demonstrated wrong price. B5 geocode-deadline risk remains P2 probable. Read-only, no tests or network. [Report](CODEBASE_AUDIT.md) · [B6](checkpoints/2026-10-26-2134-codebase-audit-block-06-DONE.md).
 
 ## Historical state log (superseded by the current summary above)
 
