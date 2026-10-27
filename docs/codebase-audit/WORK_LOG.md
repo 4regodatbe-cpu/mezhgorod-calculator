@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 11:30 МСК — block21 strict scripts/tests typecheck DONE
+
+- A corrected temporary strict noEmit config covering `scripts/**/*.ts` and `lib/**/*.test.ts` now passes with0 diagnostics. It extends the project tsconfig, disables incremental output, explicitly includes `node_modules/next/types/global.d.ts`, and excludes node_modules from discovery. This corrects the three config-only `RequestInit.next` false positives from the initial attempt. Temporary config was removed; no CI gate added.
+- Initial57 diagnostics across24 files:54 real type errors were corrected in the published groups; the remaining3 were ambient-config artifacts. Changes are type declarations, fixture shape/guards and API wrapper generic typing; assertions and fare/business behavior were not weakened. Application `npx tsc --noEmit` PASS; each modified test group passed its focused suite; scoped ESLint and diff checks PASS.
+- Scope is only script/test TypeScript and imported declarations; no full suite/build is claimed here. Block23 remains PARTIAL pending safe current-head full build/final gate. Block progress22/24 (91.67%).
+- Final checkpoint: [block21 DONE](../checkpoints/2026-10-27-1130-block-21-scripts-typecheck-DONE.md).
+
 ## 27.10.2026 11:25 МСК — block21 Odintsovo and southern M4 fixture typing DONE
 
 - Odintsovo's negative identity fixture uses `wayId: null`, matching the declared representation for missing way identity. V3 southern-products fixture now explicitly adapts the JavaScript M4 matrix result to the typed composer input using `Parameters<typeof composeSelectedM4A289>[2]`; runtime outputs remain asserted by the suite.

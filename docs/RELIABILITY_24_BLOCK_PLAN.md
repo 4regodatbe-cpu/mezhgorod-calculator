@@ -98,7 +98,7 @@
 
 Рассмотреть отдельный noEmit typecheck скриптов и тестовой инфраструктуры, не нарушая рабочий tsconfig приложения.
 
-Статус IN PROGRESS: типовые группы исправили20 ошибок; Next ambient augmentation сняла три ложные ошибки; generic `tollsForApi` сохраняет V3 extra fields. Также исправлены validation message, nullability, fixture shapes, supervisor args JSDoc, M11 bytes, source literal и CKAD evidence typing. Строгий остаток10/1 из начальных57; временный конфиг удаляется, CI gate не принимается. Checkpoints: `0522`, `0530`, `0540`, `0550`, `0610`, `0630`, `0645`, `0700`, `0715`, `0735`, `0750`, `0815`, `0840`, `1125`.
+Статус DONE: corrected temporary strict noEmit typecheck over `scripts/**/*.ts` and `lib/**/*.test.ts` exits0. Из первоначальных57 ошибок три были ложными из-за отсутствовавших Next ambient types; все остальные54 устранены типовыми исправлениями и fixture alignment без ослабления assertions. App `npx tsc --noEmit`, изменённые regression suites, scoped ESLint и diff PASS. Конфиг удалён после проверки, CI gate не добавлен. [Final checkpoint](docs/checkpoints/2026-10-27-1130-block-21-scripts-typecheck-DONE.md); detailed groups `0522`, `0530`, `0540`, `0550`, `0610`, `0630`, `0645`, `0700`, `0715`, `0735`, `0750`, `0815`, `0840`, `1125`.
 
 **Блок 22. GitHub Actions.**
 
@@ -115,9 +115,9 @@
 
 ## Status reconciliation
 
-Block23 PARTIAL: bounded18-suite offline regression and application TypeScript/scoped ESLint/diff pass; no full build, broad CI or route audit. Does not satisfy final gate. Checkpoint `2026-10-27-0408-block-23-focused-regression-PARTIAL.md`; progress remains19/24.
+Block23 PARTIAL: bounded18-suite offline regression, strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff pass; current-head full build is not re-run because the build invokes the broad audit and the hosted verify on the prior head already exposed an unintended live probe. Does not satisfy the full final gate. Checkpoints `2026-10-27-0408-block-23-focused-regression-PARTIAL.md` and `2026-10-27-1130-block-21-scripts-typecheck-DONE.md`; progress22/24.
 
-Block21 IN PROGRESS, not DONE: strict scripts/tests noEmit trial found57 existing diagnostics across24 files; root application typecheck passes. The knowingly failing config was not kept. Details/paths: `2026-10-27-0352-block-21-typecheck-BLOCKED.md`. Do not add to CI until resolved without weakening checks.
+Block21 DONE: strict scripts/tests noEmit trial passes with corrected Next ambient declarations; zero remaining diagnostics. The temporary config was removed and no CI gate was added. Details: `2026-10-27-1130-block-21-scripts-typecheck-DONE.md` and group checkpoints listed above.
 
 Latest block16 DONE: app-side suggestion/timing diagnostics contain bounded metadata only. RED confirmed V2 production error boundary exposed raw exception/digest; now details are dev/test-only and console logs digest only. Focused render2/2, tsc, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0340-block-16-diagnostics-privacy-DONE.md`. Technical DONE19/24 (79.17%):1–17,19,22. Next block21 scripts/tests typecheck feasibility; blocks18/20 remain.
 
