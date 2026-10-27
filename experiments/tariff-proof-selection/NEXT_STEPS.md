@@ -1,4 +1,6 @@
-# Experiment5 next steps
+# Experiment6 next steps
+
+Priority change: M11 DEFERRED, request draft M11_OPERATOR_REQUEST_DRAFT.md NOT_SENT. No repeat of experiments1–5. Main task ZSD/B09 Макарова/Шкиперский→КАДЮг: inspect retained evidence first, original2025rules/base32 plus newer editions, distinguish no-transponder zone collection from transponder OD matrix. Save each bounded result; if still blocked choose CKAD/M12/M4-545 by new-evidence availability.
 
 Current result: EXPERIMENT5_RESULT.md. Documentary existence is confirmed but not new;0new located boundaries/fullpairs/admitted amounts. Three-route candidates need official directed58km partition. M3 independent4-query lead returned no new primary document; two jq retained-status checks PASS. Do not repeat these queries/old source failures without new evidence. Next exact operator interface/road-passport plan or independently named alternate-exit12007034961 record. No public detector on locality windows.
 

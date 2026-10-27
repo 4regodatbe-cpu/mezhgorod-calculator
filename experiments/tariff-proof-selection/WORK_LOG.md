@@ -1,5 +1,7 @@
 # Experiment log
 
+27.10.2026 — Experiment6 first block: M11 temporarily deferred; prepared NOT_SENT operator request with both carriageways, physical/virtual tariff IDs, product58–149 versus PVP147 and nonconfidential topology alternative. Official ОССП contacts and M11/СЗКК form checked; Avtodor pages403/unavailable, no invented contact. No prior PDF/trace/window rerun. M11_OPERATOR_REQUEST_DRAFT.md/checkpoint2026-10-27-experiment6-m11-operator-draft.md. Source313464a4, prior CI40498720224SUCCESS. Next main ZSD/B09 task; zero messages sent.
+
 27.10.2026 — Experiment5 consolidation / independent M3 lead:4new bounded primary-domain queries all empty (exact strings in EXPERIMENT5_RESULT.md), no old failed URL retries. Known M3physical gates reused; tariff version remains unverified. Both jq evidence-status/horizon checks PASS exit0/true, diff checked before commit. All8experiment answers consolidated; documented virtual relation is not new located geometry. No detector/app/price changes;0new complete pairs/components/blockers removed. Parent a3b9df2b; CI40498300335 verify/classifier SUCCESS/live skipped. Next new operator interface plan or named alternate-exit proof, not repeated search/audit.
 
 27.10.2026 — Three-route verification: `node --test experiments/tariff-proof-selection/m11-virtual-route-review.test.mjs` PASS (one file aggregate covering3actual captures,0fail); `git diff --check` PASS. No claim that coordinate-window checks prove tariff boundaries or prices.

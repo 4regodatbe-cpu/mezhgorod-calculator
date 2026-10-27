@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment6: M11temporarily DEFERRED; [operator request draft](../experiments/tariff-proof-selection/M11_OPERATOR_REQUEST_DRAFT.md) prepared, NOT_SENT. Official ОССП contacts and СЗКК/M11 form verified; Avtodor contact access failed, no guessed address. [Checkpoint](checkpoints/2026-10-27-experiment6-m11-operator-draft.md). Next priority ZSD/B09 existing geometry + new/current primary rules; no58km repeat.
+
 Experiment5 PARTIAL: virtual interface documentary existence confirmed; all3routes screened, no certified directed cut or eligible new fare. Independent M3lead exhausted4new searches without primary evidence; retained-status checks PASS. [Result/8answers](../experiments/tariff-proof-selection/EXPERIMENT5_RESULT.md), [checkpoint](checkpoints/2026-10-27-experiment5-result-m3-lead.md). New located boundaries/fullpairs/components0; app unchanged. Need dated operator interface plan or independently named alternate-exit record; no repeat of completed source checks.
 
 Experiment5 route/method analysis: all3saved routes pass58km locality in correct directions, but no official graph cut is located. Earlier CKAD entry does not exclude a virtual58→147 component. No detector or fare admitted; methodsB/C need certified section partition. [Evidence](../experiments/tariff-proof-selection/M11_VIRTUAL_ROUTE_REVIEW.md), [checkpoint](checkpoints/2026-10-27-experiment5-three-route-methods.md). Next independent M3 primary-source lead; app unchanged.
