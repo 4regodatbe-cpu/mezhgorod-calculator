@@ -1,5 +1,7 @@
 # Experiment8 next steps
 
+Experiment9 bounded work COMPLETE / B05 PARTIAL: EXPERIMENT9_RESULT.md; M4_545_OPERATOR_REQUEST_DRAFT.md NOT_SENT. Next owner may authorize sending one current-rule question with directed3branchscheme, or provide dated operator rule. Do not resend/retryblocked origins or promote candidateproducts/money without collection/boundary/date/additivity proof. One realhistorycase+8controls9/9PASS already saved; no duplicate capture/PDF/oldtests.
+
 Experiment9 realcase DONE: M4_545_REAL_ROUTE_HISTORY.md + m4-545-route-history-review.json; history inspector9/9PASS, no priced pair. Next draft ONE NOT_SENT operator question: how three northbound branches+prior/onward itinerary select517–544 and/or544–589, receipt/re-entry/no-double-charge, currentdated document and physical boundary mapping. No need re-read rawcase/oldfivegeometrytests; do not infer matchedshapeindex→OSRMindex or candidateproducts→confirmedfare.
 
 Experiment9 source review DONE: M4_545_ROUTE_COLLECTION_SOURCES.md. Historic operator text makes545product route-dependent; October2026validity not confirmed. Next inspect one retained real5818209495trip's predecessor/gate/successor and coverage boundaries. Do not retry origin403/partialHTML unchanged or mistake indexed text for complete fresh origin capture. Prepare NOT_SENT operator rule question if needed.
