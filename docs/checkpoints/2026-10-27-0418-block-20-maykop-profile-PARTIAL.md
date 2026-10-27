@@ -1,0 +1,9 @@
+# Reliability block20 — saved Maykop profile coverage — PARTIAL — 27.10.2026 04:18 МСК
+
+- Parent remote `e4bee8241a1b52dc64d7bb4c00dec24f78ae921c`; allowed branch only, PR14 Draft; parent had no Actions run.
+- Added a route selector to the existing offline profiler and profiled only the previously unmeasured saved Maykop→Moscow Valhalla response (compressed source SHA256 `97465139af01510b4439ac494d56fb008b78177ce15efd05edb8996b66934366`). No external fetch was permitted by the harness; 0 network requests.
+- Captured geometry: 9,677 points; geometry SHA256 `086f162a7802af547a1d23774736befd1436cc18cb9a7de3f0c7b65cf5106a10`. Also recorded explicitly synthetic 50-point/3,226-point prefixes and reverse workload. Output: [Maykop profile](../codebase-audit/computation-maykop-profile.json).
+- Node v24.19.0, 2 warmups + 10 samples. Real-fixture medians: recognition/legacy estimate64.922ms, recovery17.839ms, composition0.004858ms, API serialization0.001391ms. Result SHA256 for each of the four operations exactly matches the corresponding saved Eisk baseline; this demonstrates deterministic result parity for these profiler operations, not parity of total route pricing.
+- Timing differs from the older Eisk run (recovery30.724ms) and is not a controlled before/after comparison; do not infer route-specific speedup. Existing call-local endpoint-cache optimization is not repeated. Heap deltas are noisy.
+- Checks: `node --check scripts/offline-computation-profile.mjs`, JSON parsing/result-hash comparison, `git diff --check` PASS. No application/business code, tariffs or route-selection rules changed.
+- Block20 remains PARTIAL: provider decode/direction matching/full API stage is uninstrumented; no verified multi-road/missing-tariff fixture. Progress remains19/24 (79.17%). Next: inspect whether a saved multi-road fixture can be used offline; otherwise document that evidence gap and move to another independent incomplete block.

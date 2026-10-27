@@ -8,7 +8,13 @@ import {composeRouteTolls} from '../lib/toll-engine/route-toll-composition.ts';
 import {tollsForApi} from '../lib/v2-calculation/free-route-selection.ts';
 import {valhalla} from '../lib/route-providers.ts';
 
-const path='experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/2026-10-19/yeisk-to-moscow.json.gz';
+const routeId=process.argv[2]??'eisk';
+const sources={
+ eisk:'experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/2026-10-19/yeisk-to-moscow.json.gz',
+ maykop:'experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/2026-10-19/maykop-to-moscow.json.gz',
+};
+const path=sources[routeId];
+if(!path)throw Error(`unknown saved route fixture: ${routeId}`);
 const bytes=fs.readFileSync(path);
 const captured=JSON.parse(zlib.gunzipSync(bytes));
 const recorded=captured.calls.find(call=>new URL(call.url).pathname==='/route');
@@ -18,13 +24,13 @@ const geometry=(await valhalla({label:'fixture origin',position:{lat:46.711524,l
 if(!Array.isArray(geometry)||geometry.length<10)throw Error('saved geometry missing');
 globalThis.fetch=async()=>{throw Error('network forbidden by offline profiler');};
 const fixtures=[
- {id:'saved-long-eisk',kind:'real saved first Valhalla provider geometry; selection not asserted',coordinates:geometry},
+ {id:`saved-long-${routeId}`,kind:'real saved first Valhalla provider geometry; selection not asserted',coordinates:geometry},
  {id:'synthetic-short-prefix',kind:'synthetic workload slice; not a captured OD',coordinates:geometry.slice(0,50)},
  {id:'synthetic-medium-prefix',kind:'synthetic workload slice; not a captured OD',coordinates:geometry.slice(0,Math.ceil(geometry.length/3))},
  {id:'synthetic-complex-reverse',kind:'synthetic reversed workload; not a real route',coordinates:[...geometry].reverse()},
 ];
 const validation={status:'toll',source:'Valhalla map matching',tollEdgeCount:1,checkedEdgeCount:1,wayIds:[],roadNames:[],message:'profiling only',complete:false,boothEventCoverage:'partial'};
-const report={schemaVersion:1,node:process.version,source:path,sourceSha256:crypto.createHash('sha256').update(bytes).digest('hex'),warmup:2,repeats:10,networkRequests:0,limitations:['heap delta is noisy retained heap, not allocation peak','synthetic slices/reversal are workloads, not observed routes','provider decoding/direction matcher/full API pipeline not instrumented','multi-road and missing-tariff real fixture coverage pending'],fixtures:[]};
+const report={schemaVersion:1,node:process.version,routeId,source:path,sourceSha256:crypto.createHash('sha256').update(bytes).digest('hex'),warmup:2,repeats:10,networkRequests:0,limitations:['heap delta is noisy retained heap, not allocation peak','synthetic slices/reversal are workloads, not observed routes','provider decoding/direction matcher/full API pipeline not instrumented','multi-road and missing-tariff real fixture coverage pending'],fixtures:[]};
 for(const fixture of fixtures){
  const tolls=estimateTolls(fixture.coordinates,'2026-10-22');
  const operations={geometryAndLegacyRecognition:()=>estimateTolls(fixture.coordinates,'2026-10-22'),corridorRecovery:()=>recoverCorridorTolls(fixture.coordinates,validation,'2026-10-22'),composition:()=>composeRouteTolls([{id:'m4',detected:true,tolls}]),apiSerialization:()=>JSON.stringify(tollsForApi(tolls,validation))};
@@ -37,4 +43,6 @@ for(const fixture of fixtures){
  }
  report.fixtures.push({id:fixture.id,kind:fixture.kind,coordinateCount:fixture.coordinates.length,geometrySha256:crypto.createHash('sha256').update(JSON.stringify(fixture.coordinates)).digest('hex'),operations:results});
 }
-console.log(JSON.stringify(report,null,2));
+const output=routeId==='eisk'?'docs/codebase-audit/computation-baseline.json':`docs/codebase-audit/computation-${routeId}-profile.json`;
+fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify({output,routeId,sourceSha256:report.sourceSha256,fixtureCount:report.fixtures.length,coordinateCounts:report.fixtures.map(f=>[f.id,f.coordinateCount]),networkRequests:report.networkRequests},null,2));

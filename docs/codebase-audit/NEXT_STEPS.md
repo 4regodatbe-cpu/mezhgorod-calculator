@@ -2,6 +2,8 @@
 
 ## Unified 24-block reliability sprint — current status
 
+Latest: block20 remains PARTIAL after adding saved Maykop geometry profile; see [checkpoint](../checkpoints/2026-10-27-0418-block-20-maykop-profile-PARTIAL.md). Continue only with offline saved fixtures for the missing stages; do not repeat the endpoint-cache benchmark. Overall progress19/24 (79.17%).
+
 - [x] Block2 — V2 unknown/null display: verified server-rendered RouteCard and presentation helpers; manually entered toll on unknown provider pricing now computes a clearly manual total without the contradictory “full total not calculated” message. Unknown provider status remains visible. [Checkpoint](../checkpoints/2026-10-27-0228-block-2-v2-unknown-DONE.md).
 - [x] Block3 — V3 unknown/null response contract, shared fastest-route render and copied status; no defect reproduced. [Checkpoint](../checkpoints/2026-10-27-0231-block-3-v3-unknown-DONE.md).
 - [x] Block4 — V2/V3 HTTP/network/malformed response errors; generic handling of unexpected details, retry, abort and stale response. [Checkpoint](../checkpoints/2026-10-27-0234-block-4-ui-errors-DONE.md).

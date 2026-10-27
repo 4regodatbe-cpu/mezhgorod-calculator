@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 04:18 МСК — block20 saved Maykop profile PARTIAL
+
+- Parent remote `e4bee8241a1b52dc64d7bb4c00dec24f78ae921c`; branch allowed, PR14 Draft; no Actions on parent.
+- Added a route selector to `scripts/offline-computation-profile.mjs` and profiled the saved Maykop source. Source SHA256 `97465139af01510b4439ac494d56fb008b78177ce15efd05edb8996b66934366`; geometry9,677 points, SHA256 `086f162a7802af547a1d23774736befd1436cc18cb9a7de3f0c7b65cf5106a10`; 0 network requests.
+- Four real-geometry operation result hashes match saved Eisk baseline; medians are descriptive only, not controlled before/after. `node --check`, JSON/hash checks and `git diff --check` PASS. No app/tariff/routing-rule changes.
+- Checkpoint [block20](../checkpoints/2026-10-27-0418-block-20-maykop-profile-PARTIAL.md). Block remains PARTIAL and overall remains19/24; pipeline stages plus multi-road/missing-tariff evidence remain open.
+
 ## 27.10.2026 04:08 МСК — focused combined regression, block23 PARTIAL
 
 - Parent `5dd4222a2096eaef32282af424994aa3d18515d7`; allowed branch only, PR14 Draft; no active parent Actions.

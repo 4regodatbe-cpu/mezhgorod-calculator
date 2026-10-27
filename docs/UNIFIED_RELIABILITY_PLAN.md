@@ -2,6 +2,8 @@
 
 Block23 PARTIAL:18/18 focused regression suites plus app TypeScript, scoped ESLint and diff PASS across recent changes; no live service/full build. Full gate remains unverified; see `docs/checkpoints/2026-10-27-0408-block-23-focused-regression-PARTIAL.md`. Next profile block20; overall DONE19/24 unchanged.
 
+Block20 PARTIAL: saved Maykop geometry profiled offline (9,677 points; 0 network); four operation hashes match saved Eisk baseline. No business logic changed; full pipeline and multi-road/missing-tariff fixture coverage remain. [Checkpoint](docs/checkpoints/2026-10-27-0418-block-20-maykop-profile-PARTIAL.md); progress remains19/24.
+
 Block21 typecheck IN PROGRESS, not adopted: temporary strict noEmit trial found57 diagnostics across24 test/script files; root app `tsc --noEmit` passes. Candidate config removed rather than adding a failing gate; details `docs/checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md`. Next combined focused regression, then fix test types in bounded groups.
 
 Latest technical result: 24-block plan DONE19/24 (79.17%):1–17,19,22. Block16 fixed confirmed V2 production error-boundary exception disclosure; raw details are now development-only, production console output contains digest only. App-side suggestion/timing logs otherwise carry bounded metadata, not addresses. Test2/2, tsc/ESLint/diff PASS. Checkpoint2026-10-27-0340-block-16-diagnostics-privacy-DONE.md. Next block21 scripts/tests TypeScript review; blocks18 and20 remain.
