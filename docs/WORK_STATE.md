@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment3: requested M11 PDF already retained; hash and visual original confirmed. Five selected real monetary rows M11/M4 revalidated, zero new complete physical pairs. M4 original1093 reads150/150;545 split starts544. [Evidence](../experiments/tariff-proof-selection/real-document-review.json), [checkpoint](checkpoints/2026-10-27-real-tariff-originals.md). Incomplete mappings remain unknown; no tariff edits.
+
 Experiment2 official-source follow-up: six URLs reviewed for M4 pending pair,545 scope and M11 Пешки–Тверь lead. Separate M11 tariff authorities confirmed; Road Invest page does not cover Aksay and1093 extracted rows conflict. Zero new admissible pairs/amounts. [Source review](../experiments/tariff-proof-selection/operator-source-review.json), [checkpoint](checkpoints/2026-10-27-composition-operator-sources.md). Need original dated tariff attachment and endpoint crosswalk.
 
 Experiment2 composition: immutable admitted registry/policy and bounded exact-cover prototype; ten named synthetic cases, one test-file aggregate PASS. No real fares admitted. [Analysis](../experiments/tariff-proof-selection/COMPOSITION.md), [checkpoint](checkpoints/2026-10-27-tariff-independent-composition.md). Next official-document research M4/M11; public algorithm untouched.
