@@ -12,7 +12,7 @@ import type {Coordinate} from '../lib/tolls';
 import type {TollValidation} from '../lib/toll-validator';
 import type {M11RoadEvidence} from '../lib/toll-engine/m11-road-evidence';
 const prefix='../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/';
-const load=(p:string)=>JSON.parse(gunzipSync(readFileSync(new URL(prefix+p,import.meta.url)))).record;
+const load=(p:string)=>JSON.parse(gunzipSync(new Uint8Array(readFileSync(new URL(prefix+p,import.meta.url)))).toString('utf8')).record;
 const r=load('single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz');
 const route:Coordinate[]=r.route.coordinates, validation:TollValidation=r.validation, evidence:M11RoadEvidence=r.route.m11RoadEvidence;
 const inspect=(g=route,v:TollValidation|null=validation,e:M11RoadEvidence|null=evidence)=>inspectM11SouthboundMoscowHead(g,e,v);
@@ -20,7 +20,7 @@ const inspect=(g=route,v:TollValidation|null=validation,e:M11RoadEvidence|null=e
 test('independent physical lane source bytes remain intact and own southbound route proves head',()=>{
  const base='../experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-moscow-head7171624764/';
  for(const [file,sha] of [['node7171624764.osm','a0694e1a4a9860a5f7830ef728c23b940d34aef008645b568f3139dead41140b'],['way502872285-full.osm','3f10db930083c10ca7d232957fc3b1e4d0bd7f713a3706ad83434727220a5b40']])
-  assert.equal(createHash('sha256').update(readFileSync(new URL(base+file,import.meta.url))).digest('hex'),sha);
+  assert.equal(createHash('sha256').update(new Uint8Array(readFileSync(new URL(base+file,import.meta.url)))).digest('hex'),sha);
  assert.equal(inspect(),true);
 });
 test('missing, wrong, duplicate and unpaid gate plus incomplete chunks fail closed',()=>{

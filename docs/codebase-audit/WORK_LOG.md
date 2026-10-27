@@ -1,5 +1,11 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 07:35 МСК — block21 M11 saved-data byte typing DONE
+
+- Three saved M11 capture tests had strict Buffer/InputType diagnostics despite passing runtime checks. Made compressed capture decoding explicitly produce UTF-8 text for JSON and passed exact raw bytes as `Uint8Array` to SHA-256 hashing; hash assertions remain unchanged and pass. In the orphan negative case, `wayId: undefined` was represented as the declared `null` variant for absent identity.
+- Three focused tests PASS; strict diagnostics moved28/12→24/9; scoped ESLint and diff check PASS. Temporary strict config removed; no CI gate adopted.
+- Checkpoint: [0735](../checkpoints/2026-10-27-0735-block-21-m11-byte-typing-DONE.md).
+
 ## 27.10.2026 07:15 МСК — block21 supervisor args typing DONE
 
 - The existing supervisor tests accepted injected child `args` at runtime, but inferred JSDoc type omitted this documented option and caused three strict errors. Added the option to `superviseCalculationProbe`'s JSDoc parameter shape; no runtime code changed.

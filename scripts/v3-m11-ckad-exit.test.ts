@@ -12,7 +12,7 @@ import type {Coordinate} from '../lib/tolls';
 import type {TollValidation} from '../lib/toll-validator';
 import type {M11RoadEvidence} from '../lib/toll-engine/m11-road-evidence';
 const root='../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/';
-const load=(p:string)=>JSON.parse(gunzipSync(readFileSync(new URL(root+p,import.meta.url)))).record;
+const load=(p:string)=>JSON.parse(gunzipSync(new Uint8Array(readFileSync(new URL(root+p,import.meta.url)))).toString('utf8')).record;
 const r=load('pair-m11-ckad-torzhok-to-ramenskoe/2026-10-16T00-05-16-512Z-capture.json.gz');
 const route:Coordinate[]=r.route.coordinates,v:TollValidation=r.validation,e:M11RoadEvidence=r.route.m11RoadEvidence;
 const inspect=(g=route,validation:TollValidation|null=v,evidence:M11RoadEvidence|null=e)=>inspectM11CkadHeadExit(g,evidence,validation);
@@ -20,7 +20,7 @@ const inspect=(g=route,validation:TollValidation|null=v,evidence:M11RoadEvidence
 test('full independent directed source chain and own exit prove the southbound head despite non-toll access',()=>{
  const base='../experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/';
  const proof=JSON.parse(readFileSync(new URL(base+'source-proof.json',import.meta.url),'utf8'));
- for(const s of proof.sources)assert.equal(createHash('sha256').update(readFileSync(new URL('../'+s.path,import.meta.url))).digest('hex'),s.sha256);
+ for(const s of proof.sources)assert.equal(createHash('sha256').update(new Uint8Array(readFileSync(new URL('../'+s.path,import.meta.url)))).digest('hex'),s.sha256);
  assert.equal(proof.directedWayConnectivity.length,10);
  for(let i=1;i<proof.directedWayConnectivity.length;i++)assert.equal(proof.directedWayConnectivity[i-1].lastNode,proof.directedWayConnectivity[i].firstNode);
  assert.ok(proof.directedWayConnectivity.every((w:{oneway:string})=>w.oneway==='yes'));

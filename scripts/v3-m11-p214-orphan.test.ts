@@ -9,8 +9,8 @@ import {NextRequest} from 'next/server';
 import {POST} from '../app/api/v3/calculate/route.ts';
 import {replayingFetch} from '../experiments/nationwide-tolls/scripts/systemic-audit-io.mjs';
 import type {TollValidation} from '../lib/toll-validator';
-const packed=readFileSync(new URL('../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz',import.meta.url));
-const capture=JSON.parse(gunzipSync(packed)),r=capture.record,v:TollValidation=r.validation;
+const packed=new Uint8Array(readFileSync(new URL('../experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz',import.meta.url)));
+const capture=JSON.parse(gunzipSync(packed).toString('utf8')),r=capture.record,v:TollValidation=r.validation;
 const gate=v.tollBooths!.find(b=>b.osmNodeId==='5286168661')!;
 const coverage=(validation:TollValidation)=>unpricedRoadCoverage({segments:[],validation,candidateNetworks:[],m1m3Candidates:[]});
 const unknown=(validation:TollValidation)=>coverage(validation).regionalProducts.some(p=>p.id==='unknown-paid-road');
@@ -19,7 +19,7 @@ const quote=(validation:TollValidation,at='2026-10-15T09:00:00+03:00',route=r.ro
 test('only exact independently identified unnamed p214 node and way join the M11 product',()=>{
  const one={...v,tollBooths:[gate],roadNames:[]};assert.equal(gate.edgeToll,false);
  assert.deepEqual(coverage(one).matchedCoreProducts,['m11']);assert.equal(unknown(one),false);
- for(const booth of [{...gate,osmNodeId:'5286168662'},{...gate,wayId:'766468435'},{...gate,wayId:undefined}])assert.equal(unknown({...one,tollBooths:[booth]}),true);
+ for(const booth of [{...gate,osmNodeId:'5286168662'},{...gate,wayId:'766468435'},{...gate,wayId:null}])assert.equal(unknown({...one,tollBooths:[booth]}),true);
  assert.equal(unknown({...one,tollBooths:[gate,{...gate,osmNodeId:'unreviewed'}]}),true);
  assert.equal(unknown({...one,complete:false}),true);
 });
