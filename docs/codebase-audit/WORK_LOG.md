@@ -1,5 +1,10 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 06:10 МСК — block21 tolls API type preservation group DONE
+
+- `tollsForApi<T>` now retains extra static properties from its input via the existing spread; no runtime code changed. Four `priceConfirmation` type errors cleared while the four saved/offline assertions and expected behavior remain.
+- Tests4/4, app tsc, scoped ESLint and diff PASS. Corrected standalone strict typecheck now34 errors/16 files (3 earlier errors were temporary Next ambient config omissions). Temporary config removed; no CI gate adopted. [Checkpoint](../checkpoints/2026-10-27-0610-block-21-api-tolls-generic-preservation-DONE.md). Block21 remains in progress.
+
 ## 27.10.2026 05:50 МСК — block21 Next ambient typecheck config correction
 
 - The three `RequestInit.next` errors were caused by the temporary standalone config omitting Next's ambient declaration, not by route-provider code. Including `node_modules/next/types/global.d.ts` reduced strict diagnostics41→38; no source changed. Declaration itself confirms `RequestInit.next` is supported.
