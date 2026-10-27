@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 04:08 МСК — focused combined regression, block23 PARTIAL
+
+- Parent `5dd4222a2096eaef32282af424994aa3d18515d7`; allowed branch only, PR14 Draft; no active parent Actions.
+- Combined18 relevant API/UI/provider suites passed across changed areas in blocks11/14/16 and related V2/V3 contracts: body/label/collect bounds and deadline; route provider size/geometry; API errors; V2 unknown/null, recovery and lifecycle; V3 pipeline, route selection, copy/render.
+- `npx tsc --noEmit` PASS; scoped ESLint on affected source/tests PASS; `git diff --check` PASS. No live router/webhook, browser or broad audit/build.
+- This is partial block23 evidence, not its full build/audit/CI acceptance. No source change and no progress increment. Checkpoint [focused regression](../checkpoints/2026-10-27-0408-block-23-focused-regression-PARTIAL.md). Next: continue block20 profile fixture/stage coverage, without rerunning the already completed cache optimization benchmark.
+
 ## 27.10.2026 03:52 МСК — reliability block21 TypeScript trial BLOCKED_FOR_ADOPTION
 
 - Parent `642c61a531659d1d66e5eae7ba7ec834397096d6`; allowed branch only, PR14 Draft; no Actions on parent.

@@ -109,6 +109,8 @@
 
 ## Status reconciliation
 
+Block23 PARTIAL: bounded18-suite offline regression and application TypeScript/scoped ESLint/diff pass; no full build, broad CI or route audit. Does not satisfy final gate. Checkpoint `2026-10-27-0408-block-23-focused-regression-PARTIAL.md`; progress remains19/24.
+
 Block21 IN PROGRESS, not DONE: strict scripts/tests noEmit trial found57 existing diagnostics across24 files; root application typecheck passes. The knowingly failing config was not kept. Details/paths: `2026-10-27-0352-block-21-typecheck-BLOCKED.md`. Do not add to CI until resolved without weakening checks.
 
 Latest block16 DONE: app-side suggestion/timing diagnostics contain bounded metadata only. RED confirmed V2 production error boundary exposed raw exception/digest; now details are dev/test-only and console logs digest only. Focused render2/2, tsc, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0340-block-16-diagnostics-privacy-DONE.md`. Technical DONE19/24 (79.17%):1–17,19,22. Next block21 scripts/tests typecheck feasibility; blocks18/20 remain.
