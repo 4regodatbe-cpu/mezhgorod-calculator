@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "decision": "docs/TARIFF_SOURCE_POLICY.md",
+  "classificationDate": "2026-10-27",
+  "fareVersionBasis": "latest_available_official_document",
+  "source": {
+    "road": "M4",
+    "orderNumber": "58",
+    "effectiveFrom": "2026-03-02T00:00:00+03:00",
+    "validTo": null,
+    "sourceFile": "experiments/nationwide-tolls/source-documents/m4-order58-effective-2026-03-02.pdf",
+    "sourceSha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d",
+    "sourceUrl": "https://avtodor-tr.ru/upload/iblock/a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf",
+    "reviewedSnapshot": "experiments/nationwide-tolls/source-snapshots/m4-order58-2026-03-02-category1-verified.json"
+  },
+  "products": [
+    {
+      "tariffKey": "m4-545-a",
+      "sectionKm": "517-544",
+      "operatorCategory": "I",
+      "payment": "cash/card, no transponder",
+      "rub": {
+        "monThu": 140,
+        "friSun": 160
+      },
+      "originalPdfPage": 2,
+      "priceStatus": "accepted_last_available_document",
+      "physicalProductBinding": "not_proven_for_selected_route"
+    },
+    {
+      "tariffKey": "m4-545-b",
+      "sectionKm": "544-589",
+      "operatorCategory": "I",
+      "payment": "cash/card, no transponder",
+      "rub": {
+        "monThu": 180,
+        "friSun": 250
+      },
+      "originalPdfPage": 2,
+      "priceStatus": "accepted_last_available_document",
+      "physicalProductBinding": "not_proven_for_selected_route"
+    }
+  ],
+  "routeExample": {
+    "caseId": "pair-m4-a289-taman-to-voronezh",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "observedGateNodeId": "5818209495",
+    "observedGateWayId": "615270691",
+    "physicallyObserved": true,
+    "candidateProductKeys": [
+      "m4-545-a",
+      "m4-545-b"
+    ],
+    "priceCellsKnown": true,
+    "confirmedChargedProducts": [],
+    "completePaymentCoverageProven": false,
+    "cashReceiptAvailable": false,
+    "routeFareRub": null,
+    "pricingStatus": "unknown",
+    "remainingProof": [
+      "route_to_payable_product_selection",
+      "prior_payment_and_no_double_charge",
+      "physical_product_endpoint_coverage"
+    ]
+  },
+  "comments": "Accepted published amounts per product; NOT admitted as a combined fare for this route. Lack of a newer document is not an expiry blocker."
+}
