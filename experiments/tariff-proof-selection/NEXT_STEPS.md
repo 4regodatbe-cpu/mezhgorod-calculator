@@ -2,6 +2,8 @@
 
 Current sequence: documentary virtual-interface comparison saved in M11_VIRTUAL_BOUNDARY_RULES.md; next inspect existing directed path evidence for all three routes, compare physical-plaza/certified-cut/unique-section-path methods. No new detector without independently documented partition; keep route pricing unknown. After missing-proof classification proceed to another narrow B04–B09 primary-source lead.
 
+Three-route/method analysis now saved in M11_VIRTUAL_ROUTE_REVIEW.md: CKAD entry can precede virtual58km transition, so do not reject its product solely for missing physical58plaza. All three locality crossings are candidates, not certified tariff cuts. Exact bridge missing; next independent M3 lead from retained prior-blocker record, with up to4new primary-source requests and no repeated failed URLs.
+
 1. M11: obtain official58km mainline/product-boundary scheme and retained parent-way node order; bind directed p58 crossing and p147 exit on one full saved route. Both147 booth directions now observed independently (6588472831 exit,6588472832 entry). Moscow→Тверь uses different unidentified12007034961; do not relabel it p147 or p159. See M11_PHYSICAL_CROSSWALK.md and M11_DIRECTION_CONTROLS.md. No repeat of these saved traces needed.
 2. M4 scope review saved:452-point vector excludes retained1093 booths, but official directed boundary-to-chainage/charging linkage remains missing. See M4_PHYSICAL_SCOPE.md; do not repeat this exclusion or old blocked545 URLs. Next obtain genuinely new operator ramp/coverage evidence.
 3. Next most promising B04–B09 pair: use independently identified nodes plus original dated direct fare. Only then create real compose positive/negative case; no public integration.

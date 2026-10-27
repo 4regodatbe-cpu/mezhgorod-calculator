@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment5 route/method analysis: all3saved routes pass58km locality in correct directions, but no official graph cut is located. Earlier CKAD entry does not exclude a virtual58→147 component. No detector or fare admitted; methodsB/C need certified section partition. [Evidence](../experiments/tariff-proof-selection/M11_VIRTUAL_ROUTE_REVIEW.md), [checkpoint](checkpoints/2026-10-27-experiment5-three-route-methods.md). Next independent M3 primary-source lead; app unchanged.
+
 Experiment5: operator2024/2022rules confirm virtual15–58↔Section1 interface;2024explains absence of physical mainline boundary plazas. Exact directed position remains unproved; inventory already knew this interface, new located boundaries0. [Comparison](../experiments/tariff-proof-selection/M11_VIRTUAL_BOUNDARY_RULES.md), [checkpoint](checkpoints/2026-10-27-experiment5-virtual-rules.md). Next saved directed path and method comparison; no runtime change.
 
 Experiment4 reciprocal control: observed6588472832 is M10→M11 entry; prior6588472831 is exit. Moscow→Тверь actually uses unidentified12007034961, so city labels are not reciprocal tariff proof. [Evidence](../experiments/tariff-proof-selection/M11_DIRECTION_CONTROLS.md), [checkpoint](checkpoints/2026-10-27-m11-reciprocal-route-control.md). Total2 new directed cross-references /0new full tariff pairs;58km mainline boundary proof still missing. Runtime unchanged.

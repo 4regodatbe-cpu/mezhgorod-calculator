@@ -1,5 +1,9 @@
 # Experiment log
 
+27.10.2026 — Three-route verification: `node --test experiments/tariff-proof-selection/m11-virtual-route-review.test.mjs` PASS (one file aggregate covering3actual captures,0fail); `git diff --check` PASS. No claim that coordinate-window checks prove tariff boundaries or prices.
+
+27.10.2026 — Experiment5 three-route/method block: actual coordinates pass58km locality in opposite directions; this is deliberately not a tariff boundary. Earlier CKAD entry may coexist with virtual58→147 product, correcting over-restrictive physical-booth interpretation. Context collector stores center/tags, not full parent-node order; matcher returns no matched shape. No safe detector on uncertified domain partition. M11_VIRTUAL_ROUTE_REVIEW.md comparesA/B/C, exact gaps and transfer requirements. Focused three-capture checks and diff outcome recorded by command; no runtime/money changes. Next independent M3 source lead after persistence. Parent eb68ca94; CI40497845768 SUCCESS.
+
 27.10.2026 — Experiment5 documentary block: original2024U0222.01 and2022U0231.01 confirm virtual connection;2024§2.2 explains missing physical mainline interfaces. Existing virtual-boundary inventory reused, not counted new. p3/p6 pdftotext/rg PASS;2024cover/p6 visually inspected,2022original read via web (no retained byte hash claimed). Exact official directed interface remains absent. See M11_VIRTUAL_BOUNDARY_RULES.md/checkpoint2026-10-27-experiment5-virtual-rules.md. Next focused saved-route section-path inspection. Source bbeb3798; prior CI40490652289 SUCCESS. No runtime/tariff changes.
 
 27.10.2026 — Reciprocal-control verification: `node --test experiments/tariff-proof-selection/m11-direction-controls.test.mjs` PASS (one file aggregate,0fail); `git diff --check` PASS. Missing58km original-anchor event assertion included for both retained journeys. The first run preceded that explicit assertion; final run includes it. No full audit/build rerun requested locally.
