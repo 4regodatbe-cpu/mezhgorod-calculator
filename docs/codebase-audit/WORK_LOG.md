@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 12:45 МСК — block23 hosted verification DONE; technical plan24/24
+
+- Reviewed block23 acceptance: focused regressions, TypeScript and Next production build after changes. Actions run40479628024 completed SUCCESS on source SHA `ea80282643f67886bd6486610a291ca8cffc05ce`, tree `2102cb20b95af94cbe1f986bfe9d2c012faeb79e`. PR merge checkout `1f255de30eae69474d4c801ed62377d8802de700` has the identical tree.
+- Primary test step458/458 PASS; classifier10/10 PASS; capture-selector4/4 PASS; TypeScript `--noEmit` PASS; Next16.3.4 direct `next build` PASS (`Compiled successfully in5.1s`) on Node24.21.0.
+- Classifier log: `no-route-runtime-change-in-update`; `live_probe` and `calculation_timing` SKIPPED. The run and job logs are retained; no separate build-only artifact is required for these criteria.
+- Block23 DONE; technical plan24/24 (100%). This is completion of the technical plan only: functional B01–B12 data blockers, including B02/B04–B09, remain open. Checkpoint: [block23 DONE](../checkpoints/2026-10-27-1245-block-23-hosted-build-DONE.md).
+
 ## 27.10.2026 12:10 МСК — block23 current-source build BLOCKED by sandbox
 
 - Verified remote source SHA `b2b3e6ccf5b39b26ebbfeda705e9e4192a0e9a5f` / tree `39e673880669e4d7f3a2b8e50f542937401d754a`, PR14 Draft, Node24.19.0. Existing commit has no Actions runs.

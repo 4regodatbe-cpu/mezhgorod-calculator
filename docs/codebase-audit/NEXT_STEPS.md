@@ -2,7 +2,7 @@
 
 ## Unified 24-block reliability sprint — current status
 
-Block23 remains PARTIAL at23/24 (95.83%). A direct `next build` on the exact current source/Node24.19.0 bypassed `test:audit` but hit sandbox EPERM while Turbopack created a process/bound a port. Existing hosted workflows also include or can fail-open into wide live checks; none dispatched and no CI changes made. Build logs and workflow analysis: [checkpoint](../checkpoints/2026-10-27-1210-block-23-next-build-sandbox-BLOCKED.md). Next safe step requires approval for an isolated hosted build-only workflow or an existing isolated runner mechanism.
+Block23 DONE: hosted run40479628024 on exact source/tree `ea80282643f67886bd6486610a291ca8cffc05ce` / `2102cb20b95af94cbe1f986bfe9d2c012faeb79e` passed458+10+4 tests, TypeScript and Next16.3.4 build on Node24.21.0. Both live jobs skipped. [Evidence](../checkpoints/2026-10-27-1245-block-23-hosted-build-DONE.md). Technical plan24/24 (100%); B02/B04–B09 functional data blockers remain separate.
 
 Latest: block20 DONE for bounded saved-route computation + Valhalla response decode profiling; deterministic geometry/result hashes match, 0 external requests. Limits are not E2E or network performance. [Checkpoint](../checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md). Block18 is DONE [checkpoint](../checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Overall progress22/24 (91.67%).
 
@@ -21,9 +21,9 @@ Latest: block20 DONE for bounded saved-route computation + Valhalla response dec
 - [x] Block15 — reviewed route and address cache keys/TTLs/LRU/cancellation. Three mocked suites PASS; no defect reproduced, no code change. [Checkpoint](../checkpoints/2026-10-27-0322-block-15-cache-review-DONE.md).
 - [x] Block16 — app diagnostics use bounded fields; V2 production error boundary no longer exposes raw internal exception/digest. Render test2/2, tsc, ESLint, diff PASS. [Checkpoint](../checkpoints/2026-10-27-0340-block-16-diagnostics-privacy-DONE.md).
 - [x] Block21 — corrected strict noEmit typecheck over scripts/tests passes with0 diagnostics; application TypeScript, targeted suites, scoped ESLint and diff PASS. Initial3 `RequestInit.next` errors were ambient-config false positives. Temporary config removed; no CI gate added. [Final checkpoint](../checkpoints/2026-10-27-1130-block-21-scripts-typecheck-DONE.md) · [initial evidence](../checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md).
-- [~] Block23 — 17 modified test files and two standalone CKAD/M11 scripts PASS; strict scripts/tests and app tsc, scoped ESLint/diff PASS. Current-head full build/hosted final gate unverified; build invokes broad audit and previous hosted verify unexpectedly ran live probes. [Checkpoint](../checkpoints/2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md).
+- [x] Block23 — hosted Node24 verification of exact current source tree:458 primary tests,10 classifier tests,4 capture-selector tests, TypeScript and Next build PASS; `live_probe`/`calculation_timing` skipped. [Checkpoint](../checkpoints/2026-10-27-1245-block-23-hosted-build-DONE.md).
 
-Technical progress: 23/24 DONE (95.83%): blocks1–22 and24 DONE. Block23 PARTIAL (full current-head build/hosted final gate unverified). B02/B04–B09 remain data-blocked. [Final consolidation](../RELIABILITY_24_BLOCK_FINAL_REPORT.md).
+Technical progress: 24/24 DONE (100%). This denotes completion of the 24-block technical plan, not closure of every functional B01–B12 issue. B02/B04–B09 remain data-blocked. [Final consolidation](../RELIABILITY_24_BLOCK_FINAL_REPORT.md).
 
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 

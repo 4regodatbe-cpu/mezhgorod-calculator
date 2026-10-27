@@ -112,16 +112,16 @@
 
 Подготовить итоговый отчёт: исправленные дефекты, проверенные оптимизации, добавленные тесты, PASS/FAIL/BLOCKED, нерешённые проблемы, ограничения и рекомендации следующего этапа.
 
-Статус DONE: итоговый отчёт `docs/RELIABILITY_24_BLOCK_FINAL_REPORT.md` фиксирует23 DONE-блока и блок23 PARTIAL, тесты, Actions/environment ограничения, BLOCKED_BY_DATA и безопасный следующий шаг. План не объявлен24/24.
+Статус DONE: итоговый отчёт `docs/RELIABILITY_24_BLOCK_FINAL_REPORT.md` фиксирует24/24 технических блока и отдельно сохраняет незакрытые функциональные B01–B12/BLOCKED_BY_DATA, результаты тестов, CI и ограничения.
 
 
 ## Status reconciliation
 
-Block23 PARTIAL:17 affected test files plus two standalone CKAD/M11 regression scripts PASS; strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff pass. On current remote source/tree, direct `next build` (without `test:audit`) failed only at Turbopack process/port binding with sandbox `Operation not permitted`. Existing hosted workflows also schedule broad live checks and were not dispatched. No CI changes. See `2026-10-27-1210-block-23-next-build-sandbox-BLOCKED.md` and earlier regression checkpoints; overall remains23/24.
+Block23 DONE: run40479628024 passed on source SHA `ea80282643f67886bd6486610a291ca8cffc05ce`, tree `2102cb20b95af94cbe1f986bfe9d2c012faeb79e`. Node24.21.0, Next16.3.4, 458+10+4 tests, TypeScript and production build PASS. PR merge tree matches source tree; classifier reported no route-runtime change and both live jobs were SKIPPED. See `2026-10-27-1245-block-23-hosted-build-DONE.md`. Technical plan24/24 (100%); functional B01–B12 data blockers remain separate.
 
 Block21 DONE: strict scripts/tests noEmit trial passes with corrected Next ambient declarations; zero remaining diagnostics. The temporary config was removed and no CI gate was added. Details: `2026-10-27-1130-block-21-scripts-typecheck-DONE.md` and group checkpoints listed above.
 
-Block24 DONE: consolidated report `docs/RELIABILITY_24_BLOCK_FINAL_REPORT.md` saved; block23 remains PARTIAL.
+Block24 DONE: consolidated report saved; technical plan24/24. This does not close separate functional B01–B12 data blockers.
 
 Latest block16 DONE: app-side suggestion/timing diagnostics contain bounded metadata only. RED confirmed V2 production error boundary exposed raw exception/digest; now details are dev/test-only and console logs digest only. Focused render2/2, tsc, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0340-block-16-diagnostics-privacy-DONE.md`. Technical DONE19/24 (79.17%):1–17,19,22. Next block21 scripts/tests typecheck feasibility; blocks18/20 remain.
 
