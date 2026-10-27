@@ -1,5 +1,7 @@
 # Experiment log
 
+27.10.2026 — Experiment8 inventory: boundedprojectfilesystem/reachableGitPDFhistory/Driveexactnames/2relevantartifactlists checked; no targetoriginalfound. Two oldM4PDFs identifiedas1712005byte tariff and657716byte rules viaSHA/pdfinfo/provenance/title; no moneyre-audit. EXPERIMENT8_INVENTORY.md records limits (artifactZIPnotmaterialized, not all oldchatfiles accessible). Networkskillpolicyread/currentenforcedunrestricted, no successassumption. DownloadSTARTED checkpoint saved before one ordinaryproxiedHTTPSrequestperofficialPDF. Source291550e9/CI40507516751SUCCESS; no code/tariffchanges.
+
 27.10.2026 — Final outcome verification: manifest JSON parsed, two originals explicitly unread/nohash, no Dpromotion, both recovery/evidence paths exist: PASS. `git diff --check` PASS. No repeated source/test execution beyond these new artifact checks.
 
 27.10.2026 — Experiment7B05outcome: newofficialPODDindexread,2exactmainline/alternativeplanURLs retained (M4_PODD_SOURCE_MANIFEST.json). Mainline38.5MBreaderlimit, alternativetimeout/failedtext/screenshot; ordinarybrowserUNAUTHORIZEDreauthrequired, not retried. Originalpagesunread, nohash/downloadclaim. STARTEDresolvedBLOCKED_BY_VIEWER_CAPABILITY; sourceisidentifiednotabsent. EXPERIMENT7_RESULT.mdseparatesnewreciprocalAfrom0C/D,0newframeoperatorIDs/amounts/functionalclosures. TwofocusedtestfilesPASS, jqbindingcheckPASS. Parent0578dbdc/CI40506660438SUCCESS/liveSKIPPED. Nextexact545leaveswithworkingviewer/ownerextract, no repeatedgenericresearch. No runtimechanges.

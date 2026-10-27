@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment8 inventory DONE/download STARTED: targetsnotfound in inspectedprojectpaths/reachablePDFhistory/Driveexactnames; two oldM4PDFs verifiedas tariff/rules, notplans. [Inventory/limits](../experiments/tariff-proof-selection/EXPERIMENT8_INVENTORY.md), [download checkpoint](checkpoints/2026-10-27-experiment8-inventory-download-STARTED.md). Nextordinaryproxieddownload2officialoriginals, bounded; ifsuccess immediatelyselected545leaves. No app/tariffchanges.
+
 Experiment7 PARTIAL: actualM12reversebranchdocumented, suppliedМ7chainnotР158, westernframes0/3operatorIDs;0newC/D/prices. B05newofficialPODDindex+2exactoriginalleads found, leafinspectionblockedbyreader38.5MBlimit/timeout/browserreauth (no bypass). [Result](../experiments/tariff-proof-selection/EXPERIMENT7_RESULT.md), [manifest](../experiments/tariff-proof-selection/M4_PODD_SOURCE_MANIFEST.json), [outcome](checkpoints/2026-10-27-experiment7-m4-podd-outcome.md). Nextexact545leaveswithworkingordinaryviewer/ownerextract, not repeatedsearch. Appunchanged.
 
 Experiment7 B05STARTED: new officialPODDcategory separates mainline464–546 and alternative517–544 plans, dated13.03.2025. [Recovery/budget](checkpoints/2026-10-27-experiment7-m4-podd-STARTED.md). Next bounded originalplanleaf inspection after save; no C/Dorprice yet. No app/tariff changes.
