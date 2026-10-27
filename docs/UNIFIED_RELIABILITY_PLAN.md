@@ -1,12 +1,14 @@
 # Unified reliability and B01–B12 work queue
 
-Block23 PARTIAL:17 modified test files and two standalone CKAD/M11 scripts PASS; strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff PASS. Current-head full build not verified because it invokes the broad audit and hosted verify on the prior head unexpectedly started live probes. No rerun. See `docs/checkpoints/2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md`; next block24 consolidation; completed progress22/24.
+Block23 PARTIAL:17 modified test files and two standalone CKAD/M11 scripts PASS; strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff PASS. Current-head full build not verified because it invokes the broad audit and hosted verify on the prior head unexpectedly started live probes. No rerun. See `docs/checkpoints/2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md`.
 
 Block20 DONE for bounded offline profiling: saved Eisk/Maykop geometry and Valhalla parse/decode/validation/evidence stages profiled with 0 network; deterministic geometry/result hashes match. Not an E2E/SLA benchmark; no separate multi-road/missing-tariff fixture. [Checkpoint](docs/checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md); progress22/24 (91.67%).
 
 Block18 DONE: three targeted offline suites cover component partial/unknown and duplicate boundaries, M4/A289 overlap, M12 direction/span, and M11 departure-date fare; no live calls. Bounded acceptance only, not a live route through all facilities. [Checkpoint](docs/checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Progress22/24 (91.67%).
 
 Block21 DONE: corrected standalone strict scripts/tests noEmit configuration passes with zero diagnostics after54 real type errors were resolved; three initial Next ambient omissions were config-only. Root app TypeScript and focused suites pass; temporary config removed, CI gate not adopted. [Checkpoint](docs/checkpoints/2026-10-27-1130-block-21-scripts-typecheck-DONE.md). Progress22/24 (91.67%).
+
+Block24 DONE: final outcomes, open gate, data blockers and next safe action consolidated in `docs/RELIABILITY_24_BLOCK_FINAL_REPORT.md`. Overall23/24 DONE (95.83%); block23 remains PARTIAL, so no24/24 claim.
 
 Latest technical result: 24-block plan DONE19/24 (79.17%):1–17,19,22. Block16 fixed confirmed V2 production error-boundary exception disclosure; raw details are now development-only, production console output contains digest only. App-side suggestion/timing logs otherwise carry bounded metadata, not addresses. Test2/2, tsc/ESLint/diff PASS. Checkpoint2026-10-27-0340-block-16-diagnostics-privacy-DONE.md. Next block21 scripts/tests TypeScript review; blocks18 and20 remain.
 

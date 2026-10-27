@@ -1,5 +1,11 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 11:30 МСК — block24 final consolidation DONE
+
+- Consolidated completed work, test/build evidence, tolerated hosted live-probe failure, unresolved data blocks, limitations and recommendation in [final report](../RELIABILITY_24_BLOCK_FINAL_REPORT.md).
+- Block24 DONE as a report;23/24 blocks DONE (95.83%). Block23 remains PARTIAL because full current-head build/final hosted gate is unverified. No code, fare, route, CI or protected-branch changes in this block.
+- Checkpoint: [block24](../checkpoints/2026-10-27-1130-block-24-reliability-consolidation-DONE.md).
+
 ## 27.10.2026 11:40 МСК — block23 targeted final regression PARTIAL
 
 - Ran one focused aggregate over17 modified test files:17/17 PASS. Two standalone scripts also PASS: CKAD production regression (east-arc subtotal1800 ₽) and M11 boundary fixture gate (8 controls; unsupported remain unresolved). No network capture or mass route corpus was run.

@@ -21,7 +21,7 @@ Latest: block20 DONE for bounded saved-route computation + Valhalla response dec
 - [x] Block21 — corrected strict noEmit typecheck over scripts/tests passes with0 diagnostics; application TypeScript, targeted suites, scoped ESLint and diff PASS. Initial3 `RequestInit.next` errors were ambient-config false positives. Temporary config removed; no CI gate added. [Final checkpoint](../checkpoints/2026-10-27-1130-block-21-scripts-typecheck-DONE.md) · [initial evidence](../checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md).
 - [~] Block23 — 17 modified test files and two standalone CKAD/M11 scripts PASS; strict scripts/tests and app tsc, scoped ESLint/diff PASS. Current-head full build/hosted final gate unverified; build invokes broad audit and previous hosted verify unexpectedly ran live probes. [Checkpoint](../checkpoints/2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md).
 
-Technical progress: 22/24 (91.67%): blocks1–22 DONE. Block23 PARTIAL (full current-head build/hosted final gate unverified); block24 open. B02/B04–B09 remain data-blocked.
+Technical progress: 23/24 DONE (95.83%): blocks1–22 and24 DONE. Block23 PARTIAL (full current-head build/hosted final gate unverified). B02/B04–B09 remain data-blocked. [Final consolidation](../RELIABILITY_24_BLOCK_FINAL_REPORT.md).
 
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 

@@ -112,12 +112,16 @@
 
 Подготовить итоговый отчёт: исправленные дефекты, проверенные оптимизации, добавленные тесты, PASS/FAIL/BLOCKED, нерешённые проблемы, ограничения и рекомендации следующего этапа.
 
+Статус DONE: итоговый отчёт `docs/RELIABILITY_24_BLOCK_FINAL_REPORT.md` фиксирует23 DONE-блока и блок23 PARTIAL, тесты, Actions/environment ограничения, BLOCKED_BY_DATA и безопасный следующий шаг. План не объявлен24/24.
+
 
 ## Status reconciliation
 
-Block23 PARTIAL: 17 affected test files plus two standalone CKAD/M11 regression scripts PASS; strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff pass. Current-head full build remains unverified because the build invokes the broad audit; hosted verify/build passed only on a prior head and unexpectedly triggered live probes. No repeat. Checkpoints `2026-10-27-0408-block-23-focused-regression-PARTIAL.md`, `2026-10-27-1130-block-21-scripts-typecheck-DONE.md`, and `2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md`; completed progress22/24.
+Block23 PARTIAL:17 affected test files plus two standalone CKAD/M11 regression scripts PASS; strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff pass. Current-head full build remains unverified because build invokes broad audit; hosted verify/build passed only on a prior head and unexpectedly triggered live probes. No repeat. Checkpoints `2026-10-27-0408-block-23-focused-regression-PARTIAL.md`, `2026-10-27-1130-block-21-scripts-typecheck-DONE.md`, `2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md`; completed progress22/24 before block24 report.
 
 Block21 DONE: strict scripts/tests noEmit trial passes with corrected Next ambient declarations; zero remaining diagnostics. The temporary config was removed and no CI gate was added. Details: `2026-10-27-1130-block-21-scripts-typecheck-DONE.md` and group checkpoints listed above.
+
+Block24 DONE: consolidated report `docs/RELIABILITY_24_BLOCK_FINAL_REPORT.md` saved; block23 remains PARTIAL.
 
 Latest block16 DONE: app-side suggestion/timing diagnostics contain bounded metadata only. RED confirmed V2 production error boundary exposed raw exception/digest; now details are dev/test-only and console logs digest only. Focused render2/2, tsc, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0340-block-16-diagnostics-privacy-DONE.md`. Technical DONE19/24 (79.17%):1–17,19,22. Next block21 scripts/tests typecheck feasibility; blocks18/20 remain.
 

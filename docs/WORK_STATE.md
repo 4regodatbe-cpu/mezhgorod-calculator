@@ -1,10 +1,10 @@
 # Unified reliability queue — 27.10.2026
 
-Latest validation: block23 bounded regression PASS —17 modified test files plus two standalone CKAD/M11 scripts; app `tsc`, scoped ESLint and diff PASS. Current-head full build/hosted final gate remains unverified, so block23 is PARTIAL. [Checkpoint](checkpoints/2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md). Overall completed progress22/24 (91.67%); next block24 consolidation.
+Latest validation: block23 bounded regression PASS —17 modified test files plus two standalone CKAD/M11 scripts; app `tsc`, scoped ESLint and diff PASS. Current-head full build/hosted final gate remains unverified, so block23 is PARTIAL. Block24 consolidation is DONE. [Final report](RELIABILITY_24_BLOCK_FINAL_REPORT.md). Overall completed progress23/24 (95.83%); block23 remains partial.
 
 Latest block20 DONE for bounded offline profiling: both saved Eisk/Maykop provider JSON responses were profiled through route parse/decode/validation/evidence derivation (0 network), matching saved geometry SHA/count. Four computation-stage result hashes also match across saved route profiles. Microbenchmark and scope limitations recorded. [Checkpoint](checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md). Progress22/24 (91.67%).
 
-Latest block18 DONE: three scoped offline composition/route-boundary test files PASS for M4/A289, M11, M12 and CKAD unknown/duplicate/direction/date boundaries; mocked provider fetch only, no live route claims. [Checkpoint](checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Progress22/24 (91.67%); block21 DONE,23 partial,24 open.
+Latest block18 DONE: three scoped offline composition/route-boundary test files PASS for M4/A289, M11, M12 and CKAD unknown/duplicate/direction/date boundaries; mocked provider fetch only, no live route claims. [Checkpoint](checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Progress23/24 (95.83%); block21 and24 DONE,23 partial.
 
 Block21 DONE: corrected temporary strict config reports zero diagnostics across `scripts/**/*.ts` and `lib/**/*.test.ts`; app `tsc --noEmit`, targeted tests, scoped ESLint and diff checks PASS. The initial three `RequestInit.next` findings were config-only and removed by including Next ambient declarations. No CI gate added. [Final checkpoint](checkpoints/2026-10-27-1130-block-21-scripts-typecheck-DONE.md) · [initial evidence](checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md). Progress22/24 (91.67%).
 
