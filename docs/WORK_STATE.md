@@ -1,5 +1,7 @@
 ## B03 continuation STARTED —28.10.2026
 
+Local preflight BLOCKED: Chromium154/Playwright1.57process started then CrashpadsetsockoptEPERM/SIGTRAP beforepage;0currentbrowsercases,0externalcalls, noNextstartup. [Evidence](../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/preflight.json), [checkpoint](checkpoints/2026-10-28-b03-browser-preflight-BLOCKED.md). No unchanged retry/app workaround. Next narrow hosted-ready newcases + B01offline; swap/focus suspicion remainsunconfirmed.
+
 Clean verified75d55b8a checkout; PR14Draft/CI40585215716SUCCESS. [Browser plan/recovery](checkpoints/2026-10-28-b03-browser-STARTED.md): one Chromium preflight, new current UI cases including swap/focus and503/429, then minimal proven fixes and independentB01. Previous eightfallback UItests/experiments1–9 not repeated. New tariff carry-forward policy read/accepted; B05product-binding stillunknown.
 
 ## B05 — цены из последнего доступного документа приняты, границы начисления всё ещё PARTIAL
