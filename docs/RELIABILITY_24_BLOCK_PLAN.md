@@ -117,7 +117,7 @@
 
 ## Status reconciliation
 
-Block23 PARTIAL:17 affected test files plus two standalone CKAD/M11 regression scripts PASS; strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff pass. Current-head full build remains unverified because build invokes broad audit; hosted verify/build passed only on a prior head and unexpectedly triggered live probes. No repeat. Checkpoints `2026-10-27-0408-block-23-focused-regression-PARTIAL.md`, `2026-10-27-1130-block-21-scripts-typecheck-DONE.md`, `2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md`; completed progress22/24 before block24 report.
+Block23 PARTIAL:17 affected test files plus two standalone CKAD/M11 regression scripts PASS; strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff pass. On current remote source/tree, direct `next build` (without `test:audit`) failed only at Turbopack process/port binding with sandbox `Operation not permitted`. Existing hosted workflows also schedule broad live checks and were not dispatched. No CI changes. See `2026-10-27-1210-block-23-next-build-sandbox-BLOCKED.md` and earlier regression checkpoints; overall remains23/24.
 
 Block21 DONE: strict scripts/tests noEmit trial passes with corrected Next ambient declarations; zero remaining diagnostics. The temporary config was removed and no CI gate was added. Details: `2026-10-27-1130-block-21-scripts-typecheck-DONE.md` and group checkpoints listed above.
 

@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 12:10 МСК — block23 current-source build BLOCKED by sandbox
+
+- Verified remote source SHA `b2b3e6ccf5b39b26ebbfeda705e9e4192a0e9a5f` / tree `39e673880669e4d7f3a2b8e50f542937401d754a`, PR14 Draft, Node24.19.0. Existing commit has no Actions runs.
+- Ran `node node_modules/next/dist/bin/next build` directly to avoid the package script's `test:audit`; it failed with Turbopack EPERM at process creation/port binding while parsing `app/globals.css`. This does not establish an app defect.
+- Inspected existing final-gate and special-territory workflows: no build-only hosted job; both may initiate broad audit/live work. Did not dispatch, change workflows, or repeat the build. No source change.
+- Evidence, full-log checksums, blocker and next safe step: [checkpoint](../checkpoints/2026-10-27-1210-block-23-next-build-sandbox-BLOCKED.md). Block23 remains PARTIAL, 23/24 overall.
+
 ## 27.10.2026 11:30 МСК — block24 final consolidation DONE
 
 - Consolidated completed work, test/build evidence, tolerated hosted live-probe failure, unresolved data blocks, limitations and recommendation in [final report](../RELIABILITY_24_BLOCK_FINAL_REPORT.md).

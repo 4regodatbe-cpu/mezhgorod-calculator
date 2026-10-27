@@ -2,6 +2,8 @@
 
 ## Unified 24-block reliability sprint — current status
 
+Block23 remains PARTIAL at23/24 (95.83%). A direct `next build` on the exact current source/Node24.19.0 bypassed `test:audit` but hit sandbox EPERM while Turbopack created a process/bound a port. Existing hosted workflows also include or can fail-open into wide live checks; none dispatched and no CI changes made. Build logs and workflow analysis: [checkpoint](../checkpoints/2026-10-27-1210-block-23-next-build-sandbox-BLOCKED.md). Next safe step requires approval for an isolated hosted build-only workflow or an existing isolated runner mechanism.
+
 Latest: block20 DONE for bounded saved-route computation + Valhalla response decode profiling; deterministic geometry/result hashes match, 0 external requests. Limits are not E2E or network performance. [Checkpoint](../checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md). Block18 is DONE [checkpoint](../checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Overall progress22/24 (91.67%).
 
 - [x] Block2 — V2 unknown/null display: verified server-rendered RouteCard and presentation helpers; manually entered toll on unknown provider pricing now computes a clearly manual total without the contradictory “full total not calculated” message. Unknown provider status remains visible. [Checkpoint](../checkpoints/2026-10-27-0228-block-2-v2-unknown-DONE.md).

@@ -1,6 +1,6 @@
 # Unified reliability queue — 27.10.2026
 
-Latest validation: block23 bounded regression PASS —17 modified test files plus two standalone CKAD/M11 scripts; app `tsc`, scoped ESLint and diff PASS. Current-head full build/hosted final gate remains unverified, so block23 is PARTIAL. Block24 consolidation is DONE. [Final report](RELIABILITY_24_BLOCK_FINAL_REPORT.md). Overall completed progress23/24 (95.83%); block23 remains partial.
+Latest validation: block23 bounded regression PASS —17 modified test files plus two standalone CKAD/M11 scripts; app `tsc`, scoped ESLint and diff PASS. Current remote source Next build was attempted directly on Node24.19.0, bypassing `test:audit`, but Turbopack failed on sandbox `Operation not permitted` while creating a process/binding a port. Existing Actions workflows are not safely build-only; do not dispatch or alter them without approval. Block23 remains PARTIAL. [Build evidence](checkpoints/2026-10-27-1210-block-23-next-build-sandbox-BLOCKED.md). Block24 consolidation is DONE. [Final report](RELIABILITY_24_BLOCK_FINAL_REPORT.md). Overall completed progress23/24 (95.83%).
 
 Latest block20 DONE for bounded offline profiling: both saved Eisk/Maykop provider JSON responses were profiled through route parse/decode/validation/evidence derivation (0 network), matching saved geometry SHA/count. Four computation-stage result hashes also match across saved route profiles. Microbenchmark and scope limitations recorded. [Checkpoint](checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md). Progress22/24 (91.67%).
 
