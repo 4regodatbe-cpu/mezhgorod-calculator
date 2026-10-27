@@ -1,5 +1,7 @@
 # Unified reliability and B01–B12 work queue
 
+Block21 typecheck IN PROGRESS, not adopted: temporary strict noEmit trial found57 diagnostics across24 test/script files; root app `tsc --noEmit` passes. Candidate config removed rather than adding a failing gate; details `docs/checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md`. Next combined focused regression, then fix test types in bounded groups.
+
 Latest technical result: 24-block plan DONE19/24 (79.17%):1–17,19,22. Block16 fixed confirmed V2 production error-boundary exception disclosure; raw details are now development-only, production console output contains digest only. App-side suggestion/timing logs otherwise carry bounded metadata, not addresses. Test2/2, tsc/ESLint/diff PASS. Checkpoint2026-10-27-0340-block-16-diagnostics-privacy-DONE.md. Next block21 scripts/tests TypeScript review; blocks18 and20 remain.
 
 Latest technical result: 24-block plan DONE18/24 (75%):1–15,17,19,22. Block15 cache review found route-cache URL dimensions include route controls/provider options; Photon uses exact URL key, positive-only5min LRU128, and subscriber-safe cancel. Three mocked cache/fetch suites PASS; no defect/code change. Checkpoint2026-10-27-0322-block-15-cache-review-DONE.md. Next block16 diagnostics/privacy; block20 profile remains PARTIAL.

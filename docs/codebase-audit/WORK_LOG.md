@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 03:52 МСК — reliability block21 TypeScript trial BLOCKED_FOR_ADOPTION
+
+- Parent `642c61a531659d1d66e5eae7ba7ec834397096d6`; allowed branch only, PR14 Draft; no Actions on parent.
+- A temporary strict noEmit config for TS tests/scripts was evaluated and removed because it produced57 errors across24 files. Categories:3 Next RequestInit augmentation,12 mock/response assignment,21 nullable/optional,4 invalid object props,12 fixture/argument mismatch,4 stale `priceConfirmation` accesses,1 missing toll validation message.
+- Root application `npx tsc --noEmit` passed. A separate typecheck would reveal useful debt but is not ready for use; strictness was not relaxed. Exact paths/command in [checkpoint](../checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md).
+- No code/runtime change and no typecheck success claimed. Progress remains19/24. Next: combined focused offline regression, then remediate typing in bounded groups.
+
 ## 27.10.2026 03:40 МСК — reliability block16 diagnostics/privacy DONE
 
 - Parent `c4bc4be85f5989822816ac83391b155ccd2407c6`; allowed branch only, PR14 Draft; no active parent run.
