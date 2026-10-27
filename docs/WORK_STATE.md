@@ -1,3 +1,7 @@
+## B03 continuation STARTED —28.10.2026
+
+Clean verified75d55b8a checkout; PR14Draft/CI40585215716SUCCESS. [Browser plan/recovery](checkpoints/2026-10-28-b03-browser-STARTED.md): one Chromium preflight, new current UI cases including swap/focus and503/429, then minimal proven fixes and independentB01. Previous eightfallback UItests/experiments1–9 not repeated. New tariff carry-forward policy read/accepted; B05product-binding stillunknown.
+
 ## B05 — цены из последнего доступного документа приняты, границы начисления всё ещё PARTIAL
 
 [Применение решения к реальным данным](../experiments/tariff-proof-selection/B05_PRICE_BASIS_REVIEW.md) · [машиночитаемые ячейки](../experiments/tariff-proof-selection/B05_ACCEPTED_PRICE_BASIS.json). Приказ М4 №58, категория I, 517–544: 140/160 ₽; 544–589: 180/250 ₽. Эти цены **считаются принятой последней редакцией**, без дополнительного ожидания обновления. По Тамань→Воронеж через5818209495 неизвестен **набор реально оплачиваемых продуктов**, а не их опубликованные суммы. Полная цена всё ещё `unknown/null`; ничего не внедрено. Далее B03 QA.
