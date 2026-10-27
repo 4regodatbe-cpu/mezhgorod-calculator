@@ -1,5 +1,7 @@
 # B03 current browser/runtime work —28.10.2026
 
+LivecheckSTARTED: newboundedbrowserrunner b03-live-replacement.mjs, max2/rlookups(Anapa→clear→Donetsk), actualPhotonbehindunchangedAPI, no routecalls/retry; outputs/status/bodySHAs distinctfrommocks. checkpoint2026-10-28-b03-b01-live-address-STARTED.md. Runtimepatchremainsonlylocal/portable, notremoteapp. Existingcache/pool mechanics notrerun.
+
 Minimal3line localAddressFieldfix verified: newbrowser10/10PASS, TS+ESLint0, directNextbuild0 after ownnode_modulescopyresolvedTurbopacksymlinkrootfailure. Before/fixedcomponentSHAs, portablepatch/fixed-local.json/mobilePNG/buildlogs in LOCAL_FIX_REVIEW.md. RemoteappNOTstaged dueprovenapp/v2→forbiddenwideCI. ExactUI-onlyclassifierproposal requires ownerpermission; no CIweakening. Parent845d1b42/treeb36d3144; CI40590095874SUCCESS. Checkpoint2026-10-28-b03-local-fix-verified-patch-saved.md. Next boundedliveB03/B01addressflow and independentofflinegap, not oldserverretests.
 
 Baseline newcurrentUI6PASS/1FAIL/3NOT_RUN: exactswap→focusreopensoldAnapa despitecorrectKrasnodarvalue/coords. Root selected-positioneffectdoesnotclearitems/open. Initialharnessrequestrecordtimingfailure corrected and retainedseparately (notappdefect). baseline.json/harnessAttempt.json + newrunner preserveevidence; screenshottempSHAincheckpoint. No Photon. CIpathsimulation diagnosticsfalse, app/v2/libtrue→forbiddenbroadlive. Next localfix+portablepatch/browserregression, not runtimepushwithoutCIpermission. Source75d55b8a; CI40589384427SUCCESS.

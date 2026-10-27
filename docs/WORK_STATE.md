@@ -1,5 +1,7 @@
 ## B03 continuation STARTED —28.10.2026
 
+Bounded liveaddresscheck STARTED: atmostАнапа→clear→Донецк throughactual/r+Photon,30s/query,no retry/routes; classification/analyticsmocked. [Recovery/budget](checkpoints/2026-10-28-b03-b01-live-address-STARTED.md). LocalB03patch savedandtested, runtimepublication stillneeds narrowCIpermission.
+
 B03 LOCAL_FIX_VERIFIED / PATCH_SAVED pendingCIpermission:3line selected-stateclear fixes proven swap/refocus; newmockedbrowser10/10PASS, TS+targetESLintPASS, directNextproductionbuildPASS on modifiedlocalSHA. **Remoteappunchanged** because app/v2pushtriggersforbiddenbroadlive. [Patch/results/proposal](../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/LOCAL_FIX_REVIEW.md), [checkpoint](checkpoints/2026-10-28-b03-local-fix-verified-patch-saved.md). OriginalexternalB-onlyincidentnotclaimedfixed. Next boundedliveaddresses/B01offline, not broadserveraudit.
 
 B03 swap/focus defect REPRODUCED: currentmockedChromium suite6PASS/1FAIL/3NOT_RUN. SwappedB shows correctnewvalue/coords but refocus reopensoldAnapa dropdown. OriginalAnapa→clear→DonetskPASS with mocks, externalincidentnotclaimedfixed. [Checkpoint](checkpoints/2026-10-28-b03-swap-focus-reproduced.md), [baseline](../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/baseline.json). Next localminimalfix/regression+portablepatch; runtimepushblocked by confirmedapp/v2→broadliveCI conflict, no unauthorizedCIweakening.
