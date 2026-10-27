@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment4 M11 PARTIAL: retained trace binds booth6588472831/way1307036920 to M11→M10 exit; full Пешки→Тверь remains blocked by directed58km entry proof. Current saved order274 cells610/750 differ from lower-priority overview750/770. [Crosswalk](../experiments/tariff-proof-selection/M11_PHYSICAL_CROSSWALK.md), [checkpoint](checkpoints/2026-10-27-m11-directed-exit-crosswalk.md), [next](../experiments/tariff-proof-selection/NEXT_STEPS.md). No runtime or tariff change.
+
 Experiment3: requested M11 PDF already retained; hash and visual original confirmed. Five selected real monetary rows M11/M4 revalidated, zero new complete physical pairs. M4 original1093 reads150/150;545 split starts544. [Evidence](../experiments/tariff-proof-selection/real-document-review.json), [checkpoint](checkpoints/2026-10-27-real-tariff-originals.md). Incomplete mappings remain unknown; no tariff edits.
 
 Experiment2 official-source follow-up: six URLs reviewed for M4 pending pair,545 scope and M11 Пешки–Тверь lead. Separate M11 tariff authorities confirmed; Road Invest page does not cover Aksay and1093 extracted rows conflict. Zero new admissible pairs/amounts. [Source review](../experiments/tariff-proof-selection/operator-source-review.json), [checkpoint](checkpoints/2026-10-27-composition-operator-sources.md). Need original dated tariff attachment and endpoint crosswalk.
