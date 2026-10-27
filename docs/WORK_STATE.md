@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment8 ORIGINALS ACQUIRED HTTP200: main38525744bytes/245pages, alternative11840573bytes/87pages; SHA/cover/integrity in [manifest](../experiments/tariff-proof-selection/M4_PODD_ACQUISITION.json), [checkpoint](checkpoints/2026-10-27-experiment8-originals-acquired.md). Locally/tmp/m4-podd-exp8.FSZfcc, originalsunchanged/notuploaded. Nextimmediatevisualmain242–245/alternativeend; noC/Dyet, 2023planisnot2026tarifffreshness. Appunchanged.
+
 Experiment8 inventory DONE/download STARTED: targetsnotfound in inspectedprojectpaths/reachablePDFhistory/Driveexactnames; two oldM4PDFs verifiedas tariff/rules, notplans. [Inventory/limits](../experiments/tariff-proof-selection/EXPERIMENT8_INVENTORY.md), [download checkpoint](checkpoints/2026-10-27-experiment8-inventory-download-STARTED.md). Nextordinaryproxieddownload2officialoriginals, bounded; ifsuccess immediatelyselected545leaves. No app/tariffchanges.
 
 Experiment7 PARTIAL: actualM12reversebranchdocumented, suppliedМ7chainnotР158, westernframes0/3operatorIDs;0newC/D/prices. B05newofficialPODDindex+2exactoriginalleads found, leafinspectionblockedbyreader38.5MBlimit/timeout/browserreauth (no bypass). [Result](../experiments/tariff-proof-selection/EXPERIMENT7_RESULT.md), [manifest](../experiments/tariff-proof-selection/M4_PODD_SOURCE_MANIFEST.json), [outcome](checkpoints/2026-10-27-experiment7-m4-podd-outcome.md). Nextexact545leaveswithworkingordinaryviewer/ownerextract, not repeatedsearch. Appunchanged.

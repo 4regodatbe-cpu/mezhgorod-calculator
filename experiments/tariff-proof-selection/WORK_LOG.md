@@ -1,5 +1,7 @@
 # Experiment log
 
+27.10.2026 — Experiment8 acquisitionDONE: ordinarycurlnetworkgrant+inheritedproxy/TLS succeededbothHTTP200/exit0. Main38525744bytes/245pages/SHAfae0cb80d7db62befd6ad297fe566d3d2add227c0e5dd47693752cdc17627e32; alternative11840573bytes/87pages/SHA1700a00fdeabe41719fb515bc9162d68108725ba6d57fb96fd62d82da2055187. stat/pdfinfo/completepdftotextPASS; cover2023/blankapprovaldates not2026farefreshness. Originalsunchanged/tmp/m4-podd-exp8.FSZfcc, notuploadedGit. M4_PODD_ACQUISITION.json/checkpoint2026-10-27-experiment8-originals-acquired.md. Nextvisualmain242–245andendalternative immediatelyafterdurablesave; no old22routeaudit. Parentf7d0d4d3/CI40513803991SUCCESS/liveSKIPPED. No app/tariffchanges.
+
 27.10.2026 — Experiment8 inventory: boundedprojectfilesystem/reachableGitPDFhistory/Driveexactnames/2relevantartifactlists checked; no targetoriginalfound. Two oldM4PDFs identifiedas1712005byte tariff and657716byte rules viaSHA/pdfinfo/provenance/title; no moneyre-audit. EXPERIMENT8_INVENTORY.md records limits (artifactZIPnotmaterialized, not all oldchatfiles accessible). Networkskillpolicyread/currentenforcedunrestricted, no successassumption. DownloadSTARTED checkpoint saved before one ordinaryproxiedHTTPSrequestperofficialPDF. Source291550e9/CI40507516751SUCCESS; no code/tariffchanges.
 
 27.10.2026 — Final outcome verification: manifest JSON parsed, two originals explicitly unread/nohash, no Dpromotion, both recovery/evidence paths exist: PASS. `git diff --check` PASS. No repeated source/test execution beyond these new artifact checks.

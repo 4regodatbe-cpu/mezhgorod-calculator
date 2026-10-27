@@ -1,5 +1,7 @@
 # Experiment8 next steps
 
+ORIGINALS ACQUIRED: M4_PODD_ACQUISITION.json; /tmp/m4-podd-exp8.FSZfcc, main245pages/alternative87, exactSHArecorded. NextimmediatevisualmainPDF242–245(PVP544+835–545+600)andlastalternativejunctionleaves; nofullmanual332pagereview. Sourcecovers2023/approvaldateblank, index2025: keepgeometryproofseparatefrom2026farevalidity. OriginalsnotinGit; iflocalmissingredownloadexactURL/verifySHA, notinventoryredo.
+
 Inventory DONE / download STARTED: EXPERIMENT8_INVENTORY.md and docs/checkpoints/2026-10-27-experiment8-inventory-download-STARTED.md. Targets notfound in inspectedplaces; old9ig1/5kq5correctlyclassifiednotplans. NextoneordinaryproxiedHTTPSrequesteachofficialPDF (45s/10s), then immediately verify/readselectedleavesifobtained. No Opera retryuntilreauthchanges; no fullroute/tariffaudit.
 
 Currenthandoff EXPERIMENT7_RESULT.md. B05STARTEDresolvedby2026-10-27-experiment7-m4-podd-outcome.md:2exactoriginalURLs in M4_PODD_SOURCE_MANIFEST.json; pagesunreadbecause38.5MBsize/timeoutandbrowserreauth. Do not redosearches/M12cases or failedoriginalrequestsunchanged. Resumeonly545relevantleafviafunctioningordinaryPDFviewer/ownerextract. NewC/D0, no publicprice. M12needsoperatorregistrationcrosswalk; suppliedМ7chainmustnotbeusedas442Р158.

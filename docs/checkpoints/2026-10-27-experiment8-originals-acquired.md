@@ -1,0 +1,9 @@
+# 27.10.2026 — оба инженерных оригинала получены
+
+DONE acquisition; географическая привязкаIN_PROGRESS. Parentf7d0d4d338f239b7b264783ef448c904d7a86ce3/tree242f0513e83ecc0059393618bf1eff14917730cb/all5files readbackverified. CI40513803991verify/classifierSUCCESS/liveSKIPPED beforepublication. Разрешеннаяветка, PR14Draft.
+
+ШтатныеcurlGETс разрешеннымnetworkaccess/inheritedproxy/TLS: обаexit0/HTTP200. Main38525744байт/245стр/SHAfae0cb80d7db62befd6ad297fe566d3d2add227c0e5dd47693752cdc17627e32; alternative11840573байт/87стр/SHA1700a00fdeabe41719fb515bc9162d68108725ba6d57fb96fd62d82da2055187. Ожидаемыйразмерmainсовпал. pdfinfoиcompletepdftotextPASS. Оригиналы/tmp/m4-podd-exp8.FSZfcc, неизменены, вGitнеотправлялись.
+
+M4_PODD_ACQUISITION.json сохраняет происхождение/размеры/SHA/заголовки/ограничения. Титулыдействительномain464–546иalternative517–544, год2023, датаутверждениянезаполнена. Это не свежестьтарифа2026. Текстmainp242содержитПВП544+835–545+600; кандидаты242–245, визуальныйразборследующий. Не читатьвсе332страницывручную.
+
+Следующийшаг немедленно: визуальноmain242–245/конецalternative, точныеномералистов/ветви/полосы/пикетаж; сравнитьтолькоnode5818209495/way615270691, безстарых22маршрутов/денежногореаудита. Сохранитьфактгеометрии отдельно отC/D. Normalcommit/tree/filesreadbackдоэтапа. Новыхсоответствий/ценпока0.
