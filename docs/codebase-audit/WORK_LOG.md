@@ -1,5 +1,11 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 05:22 МСК — block21 fetch-mock typing group 1 DONE
+
+- Strict scripts/tests typecheck remains experimental: baseline57 diagnostics/24 files. Typed the mock fetch contract in `scripts/address-probe-timeout.test.ts`; 11 diagnostics cleared, remaining46/23 files. No assertions or runtime logic changed.
+- Test1/1, scoped ESLint, `git diff --check` PASS. Temporary strict config removed after the check; this is not a ready CI gate. Details: [checkpoint](../checkpoints/2026-10-27-0522-block-21-fetch-mock-types-DONE.md).
+- Overall progress21/24 unchanged; continue another bounded type group.
+
 ## 27.10.2026 — редакционная подготовка рабочих сводок к сохранению
 
 - Connector returned file-level risk messages without identifying an exact matched line. Static review found no credential assignment in the current working documents; the historical release details in WORK_STATE were redundant there and are now represented by a link to the unchanged release evidence. Two test summaries no longer repeat private-looking synthetic strings; the tests and immutable checkpoints remain unchanged.
