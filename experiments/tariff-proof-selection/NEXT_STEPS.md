@@ -1,5 +1,7 @@
 # Experiment5 next steps
 
+Current result: EXPERIMENT5_RESULT.md. Documentary existence is confirmed but not new;0new located boundaries/fullpairs/admitted amounts. Three-route candidates need official directed58km partition. M3 independent4-query lead returned no new primary document; two jq retained-status checks PASS. Do not repeat these queries/old source failures without new evidence. Next exact operator interface/road-passport plan or independently named alternate-exit12007034961 record. No public detector on locality windows.
+
 Current sequence: documentary virtual-interface comparison saved in M11_VIRTUAL_BOUNDARY_RULES.md; next inspect existing directed path evidence for all three routes, compare physical-plaza/certified-cut/unique-section-path methods. No new detector without independently documented partition; keep route pricing unknown. After missing-proof classification proceed to another narrow B04–B09 primary-source lead.
 
 Three-route/method analysis now saved in M11_VIRTUAL_ROUTE_REVIEW.md: CKAD entry can precede virtual58km transition, so do not reject its product solely for missing physical58plaza. All three locality crossings are candidates, not certified tariff cuts. Exact bridge missing; next independent M3 lead from retained prior-blocker record, with up to4new primary-source requests and no repeated failed URLs.

@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment5 PARTIAL: virtual interface documentary existence confirmed; all3routes screened, no certified directed cut or eligible new fare. Independent M3lead exhausted4new searches without primary evidence; retained-status checks PASS. [Result/8answers](../experiments/tariff-proof-selection/EXPERIMENT5_RESULT.md), [checkpoint](checkpoints/2026-10-27-experiment5-result-m3-lead.md). New located boundaries/fullpairs/components0; app unchanged. Need dated operator interface plan or independently named alternate-exit record; no repeat of completed source checks.
+
 Experiment5 route/method analysis: all3saved routes pass58km locality in correct directions, but no official graph cut is located. Earlier CKAD entry does not exclude a virtual58→147 component. No detector or fare admitted; methodsB/C need certified section partition. [Evidence](../experiments/tariff-proof-selection/M11_VIRTUAL_ROUTE_REVIEW.md), [checkpoint](checkpoints/2026-10-27-experiment5-three-route-methods.md). Next independent M3 primary-source lead; app unchanged.
 
 Experiment5: operator2024/2022rules confirm virtual15–58↔Section1 interface;2024explains absence of physical mainline boundary plazas. Exact directed position remains unproved; inventory already knew this interface, new located boundaries0. [Comparison](../experiments/tariff-proof-selection/M11_VIRTUAL_BOUNDARY_RULES.md), [checkpoint](checkpoints/2026-10-27-experiment5-virtual-rules.md). Next saved directed path and method comparison; no runtime change.
