@@ -1,5 +1,7 @@
 # Experiment8 next steps
 
+Experiment9 realcase DONE: M4_545_REAL_ROUTE_HISTORY.md + m4-545-route-history-review.json; history inspector9/9PASS, no priced pair. Next draft ONE NOT_SENT operator question: how three northbound branches+prior/onward itinerary select517–544 and/or544–589, receipt/re-entry/no-double-charge, currentdated document and physical boundary mapping. No need re-read rawcase/oldfivegeometrytests; do not infer matchedshapeindex→OSRMindex or candidateproducts→confirmedfare.
+
 Experiment9 source review DONE: M4_545_ROUTE_COLLECTION_SOURCES.md. Historic operator text makes545product route-dependent; October2026validity not confirmed. Next inspect one retained real5818209495trip's predecessor/gate/successor and coverage boundaries. Do not retry origin403/partialHTML unchanged or mistake indexed text for complete fresh origin capture. Prepare NOT_SENT operator rule question if needed.
 
 ACTIVE Experiment9: docs/checkpoints/2026-10-27-experiment9-STARTED.md. Read two supplied operator sources once, persist; then inspect one saved real5818209495 trip before/after cash branch. Historical collection principle and October2026 applicability are separate. Do not repeat experiment8 geometry tests/PDF/OSM capture.

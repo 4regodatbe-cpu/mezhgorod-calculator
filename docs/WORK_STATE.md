@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment9 realcase9 history DONE / B05 PARTIAL: saved Тамань→Воронеж sourceSHAverified; lastchunk35–42 proves arrival/gate5818209495,43–71 bypass-side continuation→Р298. Isolated evidence inspector9/9testsPASS; no fullcurrent product/price admitted. [Review](../experiments/tariff-proof-selection/M4_545_REAL_ROUTE_HISTORY.md), [checkpoint](checkpoints/2026-10-27-experiment9-real-route-history.md). Missing dated operator collection/endpoint/no-double-payment proof; matchedshapeindices notOSRMindices. Next NOT_SENT operator question, no router calls.
+
 Experiment9 operator review DONE: historical2016text supports route-conditioned545 one/two-product choice; Moscow wording is less exhaustive. October2026collection rule UNKNOWN. Origin403/partialtimeout, indexed official texts explicitly distinguished. [Sources/limits](../experiments/tariff-proof-selection/M4_545_ROUTE_COLLECTION_SOURCES.md), [checkpoint](checkpoints/2026-10-27-experiment9-operator-sources.md). Next one saved5818209495 route before/after, no captures/oldtests.
 
 Experiment9 STARTED: new2016operator explanation + TPassindex, then one retained target545 route history. [Budget/recovery](checkpoints/2026-10-27-experiment9-STARTED.md). No new tariff admission; experiment8geometry reused, not repeated.
