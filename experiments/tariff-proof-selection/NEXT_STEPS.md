@@ -1,5 +1,7 @@
 # Experiment8 next steps
 
+Selected-leaf review COMPLETE: M4_545_ENGINEERING_CROSSWALK.md and m4-545-directed-osm.json identify target southern northbound bypass-side branch, distinct from neighbouring old-road and northern bank. Do not repeat sixleaves/mapGET merely to restate geometry. B05 still needs operator lane→product collection rule, both tariff endpoints including589, applicable dated tariff and no-double-payment condition;0new full pairs/amounts. If supplied, inspect one retained full traversal and add real priced positive+six negatives only after admission. Geometry-only test `node experiments/tariff-proof-selection/m4-545-directed-osm.test.mjs`; no public integration or guessed320/410.
+
 ORIGINALS ACQUIRED: M4_PODD_ACQUISITION.json; /tmp/m4-podd-exp8.FSZfcc, main245pages/alternative87, exactSHArecorded. NextimmediatevisualmainPDF242–245(PVP544+835–545+600)andlastalternativejunctionleaves; nofullmanual332pagereview. Sourcecovers2023/approvaldateblank, index2025: keepgeometryproofseparatefrom2026farevalidity. OriginalsnotinGit; iflocalmissingredownloadexactURL/verifySHA, notinventoryredo.
 
 Inventory DONE / download STARTED: EXPERIMENT8_INVENTORY.md and docs/checkpoints/2026-10-27-experiment8-inventory-download-STARTED.md. Targets notfound in inspectedplaces; old9ig1/5kq5correctlyclassifiednotplans. NextoneordinaryproxiedHTTPSrequesteachofficialPDF (45s/10s), then immediately verify/readselectedleavesifobtained. No Opera retryuntilreauthchanges; no fullroute/tariffaudit.
