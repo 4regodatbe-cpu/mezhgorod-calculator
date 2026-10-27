@@ -50,7 +50,7 @@ test('both own traces classify the separate bypass without a second M1 or anonym
 });
 test('wrong tuples, other paid booths, real M1 and partial coverage remain conservative', () => {
   const v: TollValidation = cases[0].validation, lane = v.tollBooths![1];
-  for (const b of [{...lane, osmNodeId: 'other'}, {...lane, wayId: 'other'}, {...lane, wayId: undefined}]) {
+  for (const b of [{...lane, osmNodeId: 'other'}, {...lane, wayId: 'other'}, {...lane, wayId: null}]) {
     assert.equal(unknown({...v, roadNames: [], tollBooths: [b]}), true);
     const m1 = {...v, roadNames: [], tollBooths: [{...b, roadNames: ['М-1'], edgeToll: true}]};
     assert.deepEqual(audit(m1).candidateRoads, ['m1']); assert.equal(coverage(m1).m1, true);

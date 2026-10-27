@@ -6,7 +6,7 @@ Block20 DONE for bounded offline profiling: saved Eisk/Maykop geometry and Valha
 
 Block18 DONE: three targeted offline suites cover component partial/unknown and duplicate boundaries, M4/A289 overlap, M12 direction/span, and M11 departure-date fare; no live calls. Bounded acceptance only, not a live route through all facilities. [Checkpoint](docs/checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Progress21/24 (87.5%) after block20.
 
-Block21 typecheck IN PROGRESS, not adopted: corrected ambient setup leaves14/3 after aligning CKAD fixtures to the production M11 evidence type and narrowing unresolved reason unions. Original57/24 included three config-only Next `RequestInit.next` errors. Root app `tsc --noEmit` passes; temporary config removed; no CI gate adopted. Hosted live probe evidence/failure is recorded; no repeat planned.
+Block21 typecheck IN PROGRESS, not adopted: corrected ambient setup leaves10/1 after saved test nullability and JS-adapter fixture boundary typing. Original57/24 included three config-only Next `RequestInit.next` errors. Root app `tsc --noEmit` passes; temporary config removed; no CI gate adopted. Hosted live probe evidence/failure is recorded; no repeat planned.
 
 Latest technical result: 24-block plan DONE19/24 (79.17%):1–17,19,22. Block16 fixed confirmed V2 production error-boundary exception disclosure; raw details are now development-only, production console output contains digest only. App-side suggestion/timing logs otherwise carry bounded metadata, not addresses. Test2/2, tsc/ESLint/diff PASS. Checkpoint2026-10-27-0340-block-16-diagnostics-privacy-DONE.md. Next block21 scripts/tests TypeScript review; blocks18 and20 remain.
 

@@ -1,5 +1,11 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 11:25 МСК — block21 Odintsovo and southern M4 fixture typing DONE
+
+- Odintsovo's negative identity fixture uses `wayId: null`, matching the declared representation for missing way identity. V3 southern-products fixture now explicitly adapts the JavaScript M4 matrix result to the typed composer input using `Parameters<typeof composeSelectedM4A289>[2]`; runtime outputs remain asserted by the suite.
+- Two targeted suites PASS; strict diagnostics14/3→10/1, scoped ESLint and `git diff --check` PASS. Temporary config removed, no CI gate adopted.
+- Checkpoint: [1125](../checkpoints/2026-10-27-1125-block-21-odintsovo-m4-fixture-types-DONE.md).
+
 ## 27.10.2026 08:40 МСК — block21 CKAD evidence and reason narrowing DONE
 
 - CKAD production fixture now uses the complete `M11RoadEvidence` type (provider, candidates, strict-block metadata) consumed by the production adapter, while satisfying the simpler CKAD resolver structurally. M11 boundary fixture tests now assert the unresolved discriminant before checking reason strings. Existing expected route directions, prices and unresolved cases are unchanged.

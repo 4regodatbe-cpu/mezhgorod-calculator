@@ -65,7 +65,7 @@ test('bypass needs proven boundaries and valid departure; later Friday does not 
 test('M4, A289 and bypass compose three independent ready fares exactly once',()=>{
  const production={candidate:true,exact:true,tolls:{amount:1,weekdayAmount:1,weekendAmount:1,
   confidence:'matched',period:'monThu',segments:[]},m4PvpPreview:{confirmedPvps:['m4-1046','m4-1093','m4-1184','m4-1223']}} as unknown as ProductionM4Result;
- const matrix=matrixM4Component(production,date,3600);
+ const matrix=matrixM4Component(production,date,3600) as Parameters<typeof composeSelectedM4A289>[2];
  const g=gates.gates.find(g=>g.from==='0')!;
  const route:Coordinate[]=[[37.62,55.76],...routeFor(g),[38.5327744,45.171408],[37.8330177,45.1961096],[37.5878131,45.168457],[34.16,44.5]];
  const result=composeSelectedM4A289(route,production,matrix,[],date,3600)!;
