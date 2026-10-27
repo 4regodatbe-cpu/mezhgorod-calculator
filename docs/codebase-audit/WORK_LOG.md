@@ -1,5 +1,10 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 05:30 МСК — block21 collector options mock group 2 DONE
+
+- Typed the optional collector options/signal in `scripts/address-runtime-probe.test.ts`; no runtime behavior changed. Strict diagnostic count45/22 after this group (prior46/23); test1/1, scoped ESLint and diff PASS.
+- Temporary typecheck config removed; overall gate not adopted. [Checkpoint](../checkpoints/2026-10-27-0530-block-21-collector-options-DONE.md). Progress21/24 unchanged.
+
 ## 27.10.2026 05:22 МСК — block21 fetch-mock typing group 1 DONE
 
 - Strict scripts/tests typecheck remains experimental: baseline57 diagnostics/24 files. Typed the mock fetch contract in `scripts/address-probe-timeout.test.ts`; 11 diagnostics cleared, remaining46/23 files. No assertions or runtime logic changed.

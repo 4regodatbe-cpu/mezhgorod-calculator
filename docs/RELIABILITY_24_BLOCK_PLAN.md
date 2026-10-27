@@ -98,7 +98,7 @@
 
 Рассмотреть отдельный noEmit typecheck скриптов и тестовой инфраструктуры, не нарушая рабочий tsconfig приложения.
 
-Статус IN PROGRESS: первая группа mock-fetch typing исправлена в одном тесте; строгая проба снизилась с57/24 файлов до46/23. Конфигурация пока не принимается как CI gate; см. `docs/checkpoints/2026-10-27-0522-block-21-fetch-mock-types-DONE.md`.
+Статус IN PROGRESS: две небольшие группы mock typing исправлены в двух тестах; строгая проба снизилась с57/24 до45/22. Конфигурация пока не принимается как CI gate; см. `docs/checkpoints/2026-10-27-0522-block-21-fetch-mock-types-DONE.md` и `docs/checkpoints/2026-10-27-0530-block-21-collector-options-DONE.md`.
 
 **Блок 22. GitHub Actions.**
 

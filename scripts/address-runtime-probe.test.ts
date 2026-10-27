@@ -60,7 +60,7 @@ test("noncooperative collector/body is bounded and aborted with recoverable prog
   const options = await paths(t); let signal: AbortSignal | undefined;
   const at = Date.now();
   const result = await runRuntimeAddressProbe({ ...options, perQueryBudgetMs: 10,
-    collect: async (_query: string, input: { signal: AbortSignal }) => { signal = input.signal; return new Promise(() => {}); } });
+    collect: async (_query: string, input?: { signal?: AbortSignal }) => { signal = input?.signal; return new Promise<never>(() => {}); } });
   assert.equal(result.progress.status, "QUERY_TIMEOUT"); assert.equal(result.rows.length, 1);
   assert.equal(signal?.aborted, true); assert.ok(Date.now() - at < 500);
   assert.equal(JSON.parse(await readFile(options.progressPath, "utf8")).completed, 1);
