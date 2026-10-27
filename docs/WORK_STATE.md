@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment9 STARTED: new2016operator explanation + TPassindex, then one retained target545 route history. [Budget/recovery](checkpoints/2026-10-27-experiment9-STARTED.md). No new tariff admission; experiment8geometry reused, not repeated.
+
 Experiment8 directed545 review DONE / B05 PARTIAL: main241–244 and alternative86–87 read; target5818209495 is northbound southern bypass-side cash branch, distinct from northern3504914294 and old-road9620416636. One document-supported geometry cross-reference,0new full tariff pairs/prices. Lane→517–544/544–589 collection bundle,589endpoint and current-date fare remain BLOCKED_BY_DATA. [Evidence](../experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md), [checkpoint](checkpoints/2026-10-27-experiment8-directed-545-review.md);5/5geometry testsPASS, no runtime changes. Next operator lane/product rule, not downloads/22route replay.
 
 Experiment8 ORIGINALS ACQUIRED HTTP200: main38525744bytes/245pages, alternative11840573bytes/87pages; SHA/cover/integrity in [manifest](../experiments/tariff-proof-selection/M4_PODD_ACQUISITION.json), [checkpoint](checkpoints/2026-10-27-experiment8-originals-acquired.md). Locally/tmp/m4-podd-exp8.FSZfcc, originalsunchanged/notuploaded. Nextimmediatevisualmain242–245/alternativeend; noC/Dyet, 2023planisnot2026tarifffreshness. Appunchanged.
