@@ -1,5 +1,11 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 08:15 МСК — block21 M11 nullable and source literal guards DONE
+
+- Added non-null assertions before consuming resolved M11 head/price fields and optional chaining where later matrix results may lack tolls. The assertions preserve positive fare expectations. Pulkovo validation fixture now uses the declared source literal; provider is OSRM. No pricing behavior changed.
+- Three targeted suites PASS. Corrected strict diagnostics moved23/8→18/5; scoped ESLint and diff check PASS. Temporary config removed; no CI gate.
+- Checkpoint: [0815](../checkpoints/2026-10-27-0815-block-21-m11-nullability-fixtures-DONE.md).
+
 ## 27.10.2026 07:50 МСК — block21 V2 alternative-route fixture type DONE
 
 - Existing `scripts/v2-toll-booth-alternative.test.ts` passed. Added the explicit `RouteWithGeometry` annotation to a copied fixture whose inferred `number[][]` coordinates were too broad; no runtime or assertion change.

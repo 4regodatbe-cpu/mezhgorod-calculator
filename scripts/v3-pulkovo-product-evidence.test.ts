@@ -29,8 +29,8 @@ test('both airport directions become one detected unresolved product, not an inv
 });
 test('an airport toll gantry blocks a complete zero even when the provider calls the route free',async()=>{
  const result=await calculateLegTolls({routeGeometry:route,routeSeconds:60,departureAt:'2026-10-14T12:00:00+03:00',
-  selectedFastProvider:'test',selectedFastRoute:{meters:112,seconds:60,coordinates:route},valhallaEvidence:null,
-  confirmedFreeRoute:{meters:112,seconds:60},diagnosticFastValidation:{status:'free',source:'test',tollEdgeCount:0,checkedEdgeCount:0,wayIds:[],roadNames:[],message:'fixture'}});
+  selectedFastProvider:'OSRM',selectedFastRoute:{meters:112,seconds:60,coordinates:route},valhallaEvidence:null,
+  confirmedFreeRoute:{meters:112,seconds:60},diagnosticFastValidation:{status:'free',source:'Valhalla map matching',tollEdgeCount:0,checkedEdgeCount:0,wayIds:[],roadNames:[],message:'fixture'}});
  const api=tollsForApi(result.tolls,result.fastValidation);
  assert.equal(api.amount,null);
  assert.equal(api.pricingStatus,'unknown');

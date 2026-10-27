@@ -31,8 +31,8 @@ test('M11 retains departure fare overnight and across an intervening weekend',()
  const p={boundaryStatus:'resolved',traversal:{entryPointId:'p67',exitPointId:'p124'}};
  const daily=matrixM11Component(p,'2026-10-13T19:00:00+03:00',0);
  assert.ok(daily?.tolls);
- assert.equal(matrixM11Component(p,'2026-10-13T19:00:00+03:00',17*3600)?.tolls.amount,daily.tolls.amount);
- assert.equal(matrixM11Component(p,'2026-10-13T19:00:00+03:00',7*86400)?.tolls.amount,daily.tolls.amount);
+ assert.equal(matrixM11Component(p,'2026-10-13T19:00:00+03:00',17*3600)?.tolls?.amount,daily.tolls.amount);
+ assert.equal(matrixM11Component(p,'2026-10-13T19:00:00+03:00',7*86400)?.tolls?.amount,daily.tolls.amount);
 });
 
 test('new M4 path checks only its outer boundaries, never intermediate PVPs',async()=>{

@@ -55,7 +55,8 @@ test('V3 outer boundaries work both directions without intermediate p593 or nati
 
 test('north head fare uses departure despite the Friday exit and ignores old numeric fields',()=>{
  const resolved=resolveM11ProductBoundaries(north,8*3600,'2026-10-15T22:00:00+03:00');
- assert.equal(resolved.parts?.head.paymentAt,'2026-10-16T03:00:00.000Z');
+ assert.ok(resolved.parts?.head);
+ assert.equal(resolved.parts.head.paymentAt,'2026-10-16T03:00:00.000Z');
  const production={exact:true,parts:{...resolved.parts,headAmount:NaN,headWeekday:Number.MAX_SAFE_INTEGER,headWeekend:-1}};
  const result=matrixM11GeometryComponent(production)!;
  const component=result.components.find(c=>c.id==='m11-15-58')!;
@@ -68,7 +69,8 @@ test('north head fare uses departure despite the Friday exit and ignores old num
 
 test('south head and mainline both retain Thursday departure despite a Friday payment window',()=>{
  const resolved=resolveM11ProductBoundaries(north.toReversed(),8*3600,'2026-10-15T22:00:00+03:00');
- assert.ok(resolved.parts!.head.paymentWindowSeconds>0);
+ assert.ok(resolved.parts?.head);
+ assert.ok(resolved.parts.head.paymentWindowSeconds>0);
  const parts={...resolved.parts,head:{...resolved.parts!.head,paymentAt:'2026-10-16T00:30:00+03:00',paymentWindowSeconds:3600}};
  const result=matrixM11GeometryComponent({exact:true,parts})!;
  assert.equal(result.components.find(c=>c.id==='m11-15-58')?.tolls?.amount,1130);
