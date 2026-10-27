@@ -7,9 +7,11 @@
 | Document | Official publication and original | Inspected page / result |
 | --- | --- | --- |
 | Government2580-р,09.09.2022 | [Mintrans index](https://mintrans.gov.ru/documents/2/12855), [original6-page PDF](https://mintrans.gov.ru/file/497149) | PDFp3,printed3 visually:421km crossing22ОПМЗ22Н-0239 Арзамас-1–Марьевка–Ковакса–Пиявочное, with exit possibility;442km interchangeР-158 with exit possibility. They are separate rows/objects. |
-| Government2624-р,23.09.2026 | [Mintrans index](https://mintrans.gov.ru/documents/2/16001?type=0), [original6-page PDF](https://mintrans.gov.ru/file/570617) | PDFpp2–3 visually: revised appendix start26+516–843+815; p3 list goes395→404→442. Р-158 interchange442 retained;421/22Н-0239 not in the corresponding list. Originalp1 screenshot failed timeout/internal error twice; approval date/number taken from official index, not falsely claimed visually read. |
+| Government2624-р,23.09.2026 | [Mintrans index](https://mintrans.gov.ru/documents/2/16001?type=0), [original6-page PDF](https://mintrans.gov.ru/file/570617) | PDFpp2–3 rendered; Р-158 interchange442 retained,421row not identified in the revised list. Do not use the initially written395→404→442sequence as a verified transcription of the new edition: that detailed sequence is withdrawn. Originalp1 screenshot failed timeout/internal error twice; later direct screenshot requests could not resolve PDF content type. Approval metadata comes from official index; full line-by-line comparison is not byte-verifiable locally. |
 
 Documents read through web original-PDF renderer; no original bytes locally downloaded or hashes claimed. Government acts are not operator monetary matrices. Secondary legal databases used to discover official sources, not substituted for original visual comparison.
+
+27.10.2026 follow-up clarification: consolidated legal text also describes442as an interchange and does not list421, but it is corroboration, not a locally preserved original. An attempted primary publication portal read (publication.pravo.gov.ru/document/0001202609250047) was inaccessible. The earlier precise page-row sequence is expressly withdrawn rather than silently reused. No legal closure or tariff identity follows from either representation.
 
 ### Exact relevant wording (government act)
 

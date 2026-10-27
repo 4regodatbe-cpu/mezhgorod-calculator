@@ -1,5 +1,9 @@
 # Experiment log
 
+27.10.2026 — Directional verification: `node --test experiments/tariff-proof-selection/m12-directed-approaches.test.mjs` PASS (one file aggregate,2named real-capture cases,0fail); `git diff --check` PASS. No D-level fare admitted.
+
+27.10.2026 — Experiment7 directions/registration: two retained selected paths show forwardexit1550561305→22Н-0239 and reverseentry1550561306via22Н-0226, not identical rampreversal. Three framesstillunbound. Two new officialAppendix3indexed leads describe first/lastregistration, originals403/currentversionnotproved. M12_DIRECTIONAL_REGISTRATION_REVIEW.md plus actualcapturetest. Explicitly withdrew overprecise newlegalpage rowsequence from priorreport (rendererunstable); no archive/historyrewrites. Matrix302metadataonly. Parentc0c65eb5/CI40505260145SUCCESS. NewC/D0; nextB05newdirected545source aftersave.
+
 27.10.2026 — Experiment7 identity verification: `node --test experiments/tariff-proof-selection/m12-case-identity.test.mjs` PASS (one file aggregate,0fail); `git diff --check` PASS. Evidence guard only, not new route replay/pricing verification.
 
 27.10.2026 — Experiment7 legal/caseidentity: inspected original2580-рp3and2624-рpp2–3;421row omitted in newer list,442Р-158retained, no closure inference. Important supplied-way correction:972809728→972809720→292501171 isМ-7, not442Р-158. M12_2624_SOURCE_COMPARISON.md and m12-case-identity.test.mjs; no matrix sums re-audit. Source3862c5db, CI40501699250SUCCESS. Two original government documents inspected,0newC/Dpairs or fare components. Next independently locate actualsavedР-158trace/operatorfreeflow definitions after persistence.

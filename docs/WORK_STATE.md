@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment7 M12directionreview: actualreverseentry uses1550561306via22Н-0226, not reversalofforwardexit1550561305. Three westernframesstill0/3operatorIDs; indexedfreeflowrulesfirst/lastregistrationlead, originals403. [Evidence](../experiments/tariff-proof-selection/M12_DIRECTIONAL_REGISTRATION_REVIEW.md), [checkpoint](checkpoints/2026-10-27-experiment7-m12-direction-registration.md). NoC/Dornewprice; nextB05directed545source. Prioroverpreciselegalrowsequenceexpresslywithdrawn.
+
 Experiment7: two legal originals inspected,421row omitted in2624-р but no physicalclosure proved;442Р-158retained. Supplied972809728chain actuallyМ-7, notР-158. [Comparison](../experiments/tariff-proof-selection/M12_2624_SOURCE_COMPARISON.md), [checkpoint](checkpoints/2026-10-27-experiment7-m12-government-identity.md). No newC/Dpair or price; next actualР-158savedtrace/freeflow operator mapping.
 
 Experiment6 PARTIAL: M11draftNOT_SENT; ZSDcollection constraints/access naming refined but64Epayment bundle unproved; B08bounded new-source lead no exact plan. [Result/counters](../experiments/tariff-proof-selection/EXPERIMENT6_RESULT.md), [checkpoint](checkpoints/2026-10-27-experiment6-b08-source-lead-result.md). New fullpairs/usableamounts/functionalclosures0;1new municipal notice,0new original tariffPDFs. Next new ownerZSDbundle or B07framecrosswalk; B07/B05not re-audited. App unchanged.

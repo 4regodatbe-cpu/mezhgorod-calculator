@@ -1,5 +1,7 @@
 # Experiment7 next steps
 
+M12_DIRECTIONAL_REGISTRATION_REVIEW.md now documents actualoppositedirections:1550561305exit22Н-0239;1550561306entryvia22Н-0226. No actual442selectedexit established; suppliedsecondchainisМ7. Three westernframes0/3operatorbindings. Freeflowfirst/lastregistration indexed leads originals403; noC/D. NextB05newlane/productsource, not oldfailedrequests. Priornewlegalpageprecisesequencewithdrawnexplicitly; no closureinferred.
+
 Current: M12_2624_SOURCE_COMPARISON.md. Supplied972809728chain isМ-7, notР-158; do not relabel. Two legal originals distinguish421crossing versus442interchange, omissionnotclosure. Next actualsavedР-158trace + free-flow billing-endpoint proof for three already-known westernframes. IfDnotreached, B05newdirected545product source. No general engine or mass audit.
 
 Experiment6 result EXPERIMENT6_RESULT.md:3bounded saved blocks,0new fully priced pairs. B08new4query lead did not retrieve a usable plan; oldblockedpublisherlink untouched. Need exact ownerZSD64Echarge bundle, otherwise next independentB07operatorframecrosswalk; B07/B05not assessed anew. Do not count old knownzones or test fixtures as new coverage. Last focused documentary/jqchecks PASS; no runtime modification.
