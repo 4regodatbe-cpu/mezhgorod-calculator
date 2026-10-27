@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 04:30 МСК — reliability block18 road-combination boundaries DONE
+
+- Parent remote `a0827a5a4d2e7d0b3b33bb4424ce8604c61013ad`; allowed branch, PR14 Draft; no active Actions.
+- Three focused offline files PASS: `systemic-toll-composition-test.ts`, `v3-m4-a289-composition.test.mjs`, `v3-road-availability-audit.test.ts` (command and limits in [checkpoint](../checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md)).
+- Confirmed unknown for incomplete components, no M4/A289 duplicate/mixed charge, M12 chosen geometry direction/span boundaries, and M11 departure-day fare behavior. No mass/live route audit, no tariff or business-logic edits.
+- Bounded block18 acceptance is DONE; total20/24 (83.33%). A single live route crossing all covered facilities was not tested. Next address block20 residual offline coverage.
+
 ## 27.10.2026 04:18 МСК — block20 saved Maykop profile PARTIAL
 
 - Parent remote `e4bee8241a1b52dc64d7bb4c00dec24f78ae921c`; branch allowed, PR14 Draft; no Actions on parent.
