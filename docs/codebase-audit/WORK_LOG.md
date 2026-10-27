@@ -1,5 +1,11 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 06:30 МСК — block21 required validation fixture field DONE
+
+- Strict scripts/tests typecheck reproduced a missing required `TollValidation.message` on the saved M12 recovery fixture. Added a descriptive fixture message; no behavior or assertion changed.
+- `scripts/v3-unpriced-coverage-audit.test.ts` 1/1 PASS, scoped ESLint and `git diff --check` PASS. Corrected temporary strict config moved34→33 diagnostics across16→15 files. Temporary config removed; no CI gate adopted.
+- Block21 remains IN PROGRESS. Checkpoint: [0630](../checkpoints/2026-10-27-0630-block-21-validation-message-fixture-DONE.md).
+
 ## 27.10.2026 06:10 МСК — block21 tolls API type preservation group DONE
 
 - `tollsForApi<T>` now retains extra static properties from its input via the existing spread; no runtime code changed. Four `priceConfirmation` type errors cleared while the four saved/offline assertions and expected behavior remain.
