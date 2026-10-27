@@ -1,5 +1,7 @@
 # Experiment8 next steps
 
+Experiment9 source review DONE: M4_545_ROUTE_COLLECTION_SOURCES.md. Historic operator text makes545product route-dependent; October2026validity not confirmed. Next inspect one retained real5818209495trip's predecessor/gate/successor and coverage boundaries. Do not retry origin403/partialHTML unchanged or mistake indexed text for complete fresh origin capture. Prepare NOT_SENT operator rule question if needed.
+
 ACTIVE Experiment9: docs/checkpoints/2026-10-27-experiment9-STARTED.md. Read two supplied operator sources once, persist; then inspect one saved real5818209495 trip before/after cash branch. Historical collection principle and October2026 applicability are separate. Do not repeat experiment8 geometry tests/PDF/OSM capture.
 
 Selected-leaf review COMPLETE: M4_545_ENGINEERING_CROSSWALK.md and m4-545-directed-osm.json identify target southern northbound bypass-side branch, distinct from neighbouring old-road and northern bank. Do not repeat sixleaves/mapGET merely to restate geometry. B05 still needs operator lane→product collection rule, both tariff endpoints including589, applicable dated tariff and no-double-payment condition;0new full pairs/amounts. If supplied, inspect one retained full traversal and add real priced positive+six negatives only after admission. Geometry-only test `node experiments/tariff-proof-selection/m4-545-directed-osm.test.mjs`; no public integration or guessed320/410.
