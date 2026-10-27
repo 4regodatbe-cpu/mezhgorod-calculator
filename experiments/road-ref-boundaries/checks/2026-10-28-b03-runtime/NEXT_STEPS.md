@@ -1,5 +1,7 @@
 # Next B03 runtime work
 
+STOPnewidenticalnetworkchecks: actualAnapa502/7network_error, Donetsknotrun (live-report.json/B01_LIVE_RESULT.md). Next REQUIREDownerdecision: exactapp/v2/components/address-field.tsx-onlyliveclassifierexception, retainverify/TS/build+focusedUI, mixed/unknownremainlive; then applyalreadyverified3linepatch. B01needsapprovedindependentsource;0newruntimechanges, snapshotdisabledexpiryunchanged. No broadCI/poolredo/falseoriginalB-onlyclosure.
+
 ACTIVE boundedliveaddressSTARTEDcheckpoint: run b03-live-replacement.mjs onceundergrant, readexistingreportbeforerecovery, max2queries/stopfirstlivefailure. Then B01precisegapassessment, no oldpooltests/snapshotactivation or wideCI/runtimepush.
 
 Localfix+new10casebrowserregression+TS/ESLint/defaultNextbuildPASS; portablepatch/evidence in LOCAL_FIX_REVIEW.md, REMOTEAPPUNCHANGED. Need ownerauthorize exactAddressField-only liveclassifierexception (mandatoryverify+TS+build+focusedUI retained; mixed/unknownfail-open) before runtimepublish. Now independently boundedliveAnapa/Donetsk(≤2queries/no routes) and B01offlinegap; no repeatedpool/serveraudit. Sourcepolicy/disabledsnapshotexpiry preserved.

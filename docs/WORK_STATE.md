@@ -1,4 +1,6 @@
-## B03 continuation STARTED —28.10.2026
+## B03/B01 local verification —28.10.2026; runtime publication pending CI decision
+
+Latest B03/B01: actualcoldAnapa/r502, UIerror+retryvisible,7network_error/onePhotonorigin, DonetskNOT_RUN afterfirstfailure; no claimHTTP503/globaloutage. [Liveevidence+B01assessment](../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/B01_LIVE_RESULT.md), [checkpoint](checkpoints/2026-10-28-b03-b01-live-result.md). B01noadditionalprovedruntimebug;0B01changes, independentapprovedsourcemissing. B03local3linefix10/10browser+TS/ESLint/NextbuildPASS, patchdurable but **remoteappunchanged**. Need ownerapproveexactAddressField-onlyCIexception before runtimepublish; no wideaudit/CIchange authorized. Newtariffpolicyconfirmed; snapshotdisabled/expiryunchanged.
 
 Bounded liveaddresscheck STARTED: atmostАнапа→clear→Донецк throughactual/r+Photon,30s/query,no retry/routes; classification/analyticsmocked. [Recovery/budget](checkpoints/2026-10-28-b03-b01-live-address-STARTED.md). LocalB03patch savedandtested, runtimepublication stillneeds narrowCIpermission.
 
