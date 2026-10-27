@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment7: two legal originals inspected,421row omitted in2624-р but no physicalclosure proved;442Р-158retained. Supplied972809728chain actuallyМ-7, notР-158. [Comparison](../experiments/tariff-proof-selection/M12_2624_SOURCE_COMPARISON.md), [checkpoint](checkpoints/2026-10-27-experiment7-m12-government-identity.md). No newC/Dpair or price; next actualР-158savedtrace/freeflow operator mapping.
+
 Experiment6 PARTIAL: M11draftNOT_SENT; ZSDcollection constraints/access naming refined but64Epayment bundle unproved; B08bounded new-source lead no exact plan. [Result/counters](../experiments/tariff-proof-selection/EXPERIMENT6_RESULT.md), [checkpoint](checkpoints/2026-10-27-experiment6-b08-source-lead-result.md). New fullpairs/usableamounts/functionalclosures0;1new municipal notice,0new original tariffPDFs. Next new ownerZSDbundle or B07framecrosswalk; B07/B05not re-audited. App unchanged.
 
 Experiment6 ZSD PARTIAL: retained2026rules and new focused no-double-payment exception reviewed; new municipal notice distinguishes Макарова/Намывная approaches. Exact64E→933975069 payable-zone bundle still missing,0new priced pairs. [Review](../experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md), [checkpoint](checkpoints/2026-10-27-experiment6-zsd-cash-card-scope.md). Next independent B08primary boundary lead; no app changes.
