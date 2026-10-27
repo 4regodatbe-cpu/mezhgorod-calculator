@@ -1,5 +1,10 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 05:50 МСК — block21 Next ambient typecheck config correction
+
+- The three `RequestInit.next` errors were caused by the temporary standalone config omitting Next's ambient declaration, not by route-provider code. Including `node_modules/next/types/global.d.ts` reduced strict diagnostics41→38; no source changed. Declaration itself confirms `RequestInit.next` is supported.
+- No behavior test was needed; diff check PASS. Temporary config removed, no CI gate adopted. [Checkpoint](../checkpoints/2026-10-27-0550-block-21-next-ambient-types-DONE.md). Block21 remains incomplete.
+
 ## 27.10.2026 05:40 МСК — block21 nullable address-result group 3 DONE
 
 - Added explicit result/position assertions in three ranked-address cases and guarded an optional position read; no ranking expectation weakened. Strict errors45/22→41/21. Test1/1, scoped ESLint and diff PASS.
