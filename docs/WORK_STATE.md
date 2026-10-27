@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experimental B04/B10: isolated tariff-proof selector compares full operator pair versus additive-chain witnesses and rejects partial/conflicting coverage. Saved M4 pending vector remains unknown. Focused tests PASS; no app integration. [Experiment](../experiments/tariff-proof-selection/README.md), [checkpoint](checkpoints/2026-10-27-tariff-proof-selection.md). Next: cross-road composition with immutable source/context proofs.
+
 B02 second batch: eight more IDs in Chernihiv/Sumy/Kharkiv investigated; two KATOTTG locality pages read but no independent coordinate/GeoNames linkage. Total15 AMBIGUOUS, zero new runtime entries. [Batch02](../experiments/road-ref-boundaries/checks/2026-10-27-independent-settlements/batch-02.json), [checkpoint](checkpoints/2026-10-27-settlements-batch-02.md). Thirteen collision groups remain unprocessed.
 
 B01–B02 functional continuation: first seven requested GeoNames IDs researched; seven AMBIGUOUS pending independent coordinate/ID proof. New municipal source and legal-source access failures recorded in [batch01](../experiments/road-ref-boundaries/checks/2026-10-27-independent-settlements/batch-01.json). [Checkpoint](checkpoints/2026-10-27-settlements-batch-01.md). No active fallback or tariff changes.
