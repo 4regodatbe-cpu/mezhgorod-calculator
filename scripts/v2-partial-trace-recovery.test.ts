@@ -44,7 +44,7 @@ async function calculate(validationResult: TollValidation) {
       routeSeconds: 4_800,
       departureAt: '2026-10-13T12:00:00+03:00',
       selectedFastProvider: 'Valhalla',
-      selectedFastRoute: { coordinates: routeGeometry, meters: 180_000, seconds: 4_800 },
+      selectedFastRoute: { meters: 180_000, seconds: 4_800 },
       valhallaEvidence: null,
       confirmedFreeRoute: null,
       diagnosticFastValidation: validationResult,

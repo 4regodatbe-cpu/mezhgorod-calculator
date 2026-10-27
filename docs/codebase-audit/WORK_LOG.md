@@ -1,5 +1,11 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 07:00 МСК — block21 V2 trace fixture shape DONE
+
+- The existing trace regression passed before and after correction. `calculateLegTolls` accepts `selectedFastRoute: RouteSummary`; removed the duplicate `coordinates` property from that summary fixture because route geometry is independently supplied via `routeGeometry`.
+- No runtime change or assertion weakening. Focused suite1/1, scoped ESLint and `git diff --check` PASS. Corrected strict scripts/tests diagnostic count31/13; temporary config removed, no CI gate.
+- Checkpoint: [0700](../checkpoints/2026-10-27-0700-block-21-route-summary-fixture-DONE.md).
+
 ## 27.10.2026 06:45 МСК — block21 Crimean-M4 nullable assertion DONE
 
 - The saved bidirectional Crimea/M4 test passed before and after correction. Added an explicit assertion that the derived DZOK toll quote exists before reading `.amount`; expected 410 ₽ assertion is unchanged.
