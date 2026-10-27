@@ -1,0 +1,3 @@
+# Experiment log
+
+27.10.2026 — Experiment2 composition prototype: compared graph, exact-cover, operator partition and interval proof-frontier methods. Implemented bounded complete-cover arbitration, document/record-hash admission, immutable registry/policy, strict date/direction/class/payment checks, independence/additivity admission, conflict and overlap rejection. Ten named synthetic regression cases, one PASS file aggregate. No real new fare or road identity proven. See COMPOSITION.md for trust/scale limits. Source ba8e87af48015a0e31102313af8eafdf8c0590c8; preceding CI40484856437 SUCCESS. Next: official-source M4/M11 research; no route queries.
