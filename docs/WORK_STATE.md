@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment6 PARTIAL: M11draftNOT_SENT; ZSDcollection constraints/access naming refined but64Epayment bundle unproved; B08bounded new-source lead no exact plan. [Result/counters](../experiments/tariff-proof-selection/EXPERIMENT6_RESULT.md), [checkpoint](checkpoints/2026-10-27-experiment6-b08-source-lead-result.md). New fullpairs/usableamounts/functionalclosures0;1new municipal notice,0new original tariffPDFs. Next new ownerZSDbundle or B07framecrosswalk; B07/B05not re-audited. App unchanged.
+
 Experiment6 ZSD PARTIAL: retained2026rules and new focused no-double-payment exception reviewed; new municipal notice distinguishes Макарова/Намывная approaches. Exact64E→933975069 payable-zone bundle still missing,0new priced pairs. [Review](../experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md), [checkpoint](checkpoints/2026-10-27-experiment6-zsd-cash-card-scope.md). Next independent B08primary boundary lead; no app changes.
 
 Experiment6: M11temporarily DEFERRED; [operator request draft](../experiments/tariff-proof-selection/M11_OPERATOR_REQUEST_DRAFT.md) prepared, NOT_SENT. Official ОССП contacts and СЗКК/M11 form verified; Avtodor contact access failed, no guessed address. [Checkpoint](checkpoints/2026-10-27-experiment6-m11-operator-draft.md). Next priority ZSD/B09 existing geometry + new/current primary rules; no58km repeat.

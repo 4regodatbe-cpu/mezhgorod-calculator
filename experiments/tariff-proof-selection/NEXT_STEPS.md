@@ -1,5 +1,7 @@
 # Experiment6 next steps
 
+Experiment6 result EXPERIMENT6_RESULT.md:3bounded saved blocks,0new fully priced pairs. B08new4query lead did not retrieve a usable plan; oldblockedpublisherlink untouched. Need exact ownerZSD64Echarge bundle, otherwise next independentB07operatorframecrosswalk; B07/B05not assessed anew. Do not count old knownzones or test fixtures as new coverage. Last focused documentary/jqchecks PASS; no runtime modification.
+
 ZSD bounded result saved in ZSD_EXPERIMENT6_SOURCE_REVIEW.md: source version and conditional payment scope clarified, but64E exact payable-zone bundle missing. New municipal naming is not graph/tariff binding. No repeat of supplied403URLs/current502hosts, oldgantry proof or74-route batch. Next B08/Голицыно new exact primary boundary source; read retained blocker first. Current app/prices unchanged.
 
 Priority change: M11 DEFERRED, request draft M11_OPERATOR_REQUEST_DRAFT.md NOT_SENT. No repeat of experiments1–5. Main task ZSD/B09 Макарова/Шкиперский→КАДЮг: inspect retained evidence first, original2025rules/base32 plus newer editions, distinguish no-transponder zone collection from transponder OD matrix. Save each bounded result; if still blocked choose CKAD/M12/M4-545 by new-evidence availability.
