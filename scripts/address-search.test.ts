@@ -42,7 +42,9 @@ test("RuWiki alias results are matched and labeled using the settlement's listed
   const russianHomonym = feature("Кировск", 39.7, 47.23, 74, "city");
   const results = rankPhotonFeatures([russianHomonym, lnrSettlement], SPECIAL_TERRITORY_BOUNDARIES, "Кировск");
   assert.equal(results[0]?.label, "Голубовка — ЛНР");
-  assert.equal(results[0]?.position.lng, 39.3078);
+  assert.ok(results[0]);
+  assert.ok(results[0].position);
+  assert.equal(results[0].position.lng, 39.3078);
 });
 
 test("all special-oblast queries search provider aliases in Ukraine's state layer", () => {
@@ -94,6 +96,8 @@ test("same-name city inside a special ADM1 polygon ranks above its Russian names
   specialDonetsk.properties!.country = "Россия";
   const results = rankPhotonFeatures([rostovDonetsk, specialDonetsk], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
   assert.deepEqual(results.map((item) => item.id), ["N-2", "N-1"]);
+  assert.ok(results[0]);
+  assert.ok(results[0].position);
   assert.equal(results[0].position.lng, 37.8029);
   assert.equal(results[0].label, "Донецк — ДНР");
   assert.equal(results[0].title, "Донецк — ДНР");
@@ -247,6 +251,8 @@ test("Russian Zaporizhzhia query searches and ranks Ukrainian city spelling", ()
     feature("Запоріжжя", 35.1182867, 47.8507859, 201, "city"),
     feature("Запорожье", 34.0, 44.5, 202, "village"),
   ], SPECIAL_TERRITORY_BOUNDARIES, "Запорожье");
+  assert.ok(results[0]);
+  assert.ok(results[0].position);
   assert.equal(results[0].position.lat, 47.8507859);
   assert.equal(results[0].label, "Запорожье — Запорожская область");
 });
@@ -262,7 +268,7 @@ test("Russian Kharkiv query with country qualifier searches Ukrainian spelling a
     feature("Харьков", 34.1689, 44.4988, 203, "village"),
     feature("Харків", 36.2310146, 49.9923181, 204, "city"),
   ], SPECIAL_TERRITORY_BOUNDARIES, "Харьков, Украина");
-  assert.ok(results.some((item) => item.position.lat === 49.9923181), "the Ukrainian spelling alias should return Kharkiv city");
+  assert.ok(results.some((item) => item.position?.lat === 49.9923181), "the Ukrainian spelling alias should return Kharkiv city");
 });
 
 

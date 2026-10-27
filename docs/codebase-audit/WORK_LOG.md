@@ -1,5 +1,10 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 05:40 МСК — block21 nullable address-result group 3 DONE
+
+- Added explicit result/position assertions in three ranked-address cases and guarded an optional position read; no ranking expectation weakened. Strict errors45/22→41/21. Test1/1, scoped ESLint and diff PASS.
+- Temporary typecheck config removed; no CI gate adopted. [Checkpoint](../checkpoints/2026-10-27-0540-block-21-nullable-search-results-DONE.md). Progress21/24 unchanged.
+
 ## 27.10.2026 05:30 МСК — block21 collector options mock group 2 DONE
 
 - Typed the optional collector options/signal in `scripts/address-runtime-probe.test.ts`; no runtime behavior changed. Strict diagnostic count45/22 after this group (prior46/23); test1/1, scoped ESLint and diff PASS.
