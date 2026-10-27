@@ -1,5 +1,7 @@
 ## B03 continuation STARTED —28.10.2026
 
+B03 swap/focus defect REPRODUCED: currentmockedChromium suite6PASS/1FAIL/3NOT_RUN. SwappedB shows correctnewvalue/coords but refocus reopensoldAnapa dropdown. OriginalAnapa→clear→DonetskPASS with mocks, externalincidentnotclaimedfixed. [Checkpoint](checkpoints/2026-10-28-b03-swap-focus-reproduced.md), [baseline](../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/baseline.json). Next localminimalfix/regression+portablepatch; runtimepushblocked by confirmedapp/v2→broadliveCI conflict, no unauthorizedCIweakening.
+
 Browser RECOVERED under changed standard commandnetworkgrant: Chromium154page+DOMPASS, previousdefaultEPERM preserved. [Checkpoint](checkpoints/2026-10-28-b03-browser-grant-recovery.md), [evidence](../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/browser-grant-recovery.json). Next currentmockedB03suite. Publishing app/v2 or lib fixes currently triggers prohibited broadliveCI; do not weakenCI or publishruntimeblindly.
 
 Local preflight BLOCKED: Chromium154/Playwright1.57process started then CrashpadsetsockoptEPERM/SIGTRAP beforepage;0currentbrowsercases,0externalcalls, noNextstartup. [Evidence](../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/preflight.json), [checkpoint](checkpoints/2026-10-28-b03-browser-preflight-BLOCKED.md). No unchanged retry/app workaround. Next narrow hosted-ready newcases + B01offline; swap/focus suspicion remainsunconfirmed.

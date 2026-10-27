@@ -1,5 +1,7 @@
 # B03 current browser/runtime work —28.10.2026
 
+Baseline newcurrentUI6PASS/1FAIL/3NOT_RUN: exactswap→focusreopensoldAnapa despitecorrectKrasnodarvalue/coords. Root selected-positioneffectdoesnotclearitems/open. Initialharnessrequestrecordtimingfailure corrected and retainedseparately (notappdefect). baseline.json/harnessAttempt.json + newrunner preserveevidence; screenshottempSHAincheckpoint. No Photon. CIpathsimulation diagnosticsfalse, app/v2/libtrue→forbiddenbroadlive. Next localfix+portablepatch/browserregression, not runtimepushwithoutCIpermission. Source75d55b8a; CI40589384427SUCCESS.
+
 Browser recoveryDONE in genuinely changed condition: command-scoped standardnetworkgrant, samebinary/Playwright/Node; one launch nowPASS, page+DOMPASS,0externalcalls. browser-grant-recovery.json/checkpoint2026-10-28-b03-browser-grant-recovery.md; olddefaultfailure untouched. Next localNext/newB03cases. Found separate CIpublicationconstraint app/v2/lib→broadlive: no silentpolicychange or runtimepublish before authorization.
 
 PreflightBLOCKED: one actualChromium154launch via installedPlaywright1.57 failedCrashpadsetsockoptEPERM/SIGTRAP, noDOM/page/Next/externalcalls. Initial ESMbaremodule failure was import-only, corrected absolute installedpath; no browserrepeat. preflight.json/checkpoint2026-10-28-b03-browser-preflight-BLOCKED.md preserve exact limits. Do not claim currentUItested or browserhypothesisconfirmed. Next hostedreadynewcases and independentofflineB01; priorfive/eightcases notrerun.
