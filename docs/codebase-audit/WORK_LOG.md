@@ -1,5 +1,11 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 08:40 МСК — block21 CKAD evidence and reason narrowing DONE
+
+- CKAD production fixture now uses the complete `M11RoadEvidence` type (provider, candidates, strict-block metadata) consumed by the production adapter, while satisfying the simpler CKAD resolver structurally. M11 boundary fixture tests now assert the unresolved discriminant before checking reason strings. Existing expected route directions, prices and unresolved cases are unchanged.
+- `ckad-production-test.ts` and `segment6a3b4-m11-boundary-fixture-gate-test.ts` PASS. Corrected strict diagnostics14/3; scoped ESLint and `git diff --check` PASS. Temporary config removed; no CI gate adopted.
+- Checkpoint: [0840](../checkpoints/2026-10-27-0840-block-21-ckad-fixture-narrowing-DONE.md).
+
 ## 27.10.2026 08:15 МСК — block21 M11 nullable and source literal guards DONE
 
 - Added non-null assertions before consuming resolved M11 head/price fields and optional chaining where later matrix results may lack tolls. The assertions preserve positive fare expectations. Pulkovo validation fixture now uses the declared source literal; provider is OSRM. No pricing behavior changed.

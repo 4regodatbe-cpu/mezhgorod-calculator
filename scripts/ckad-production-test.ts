@@ -1,16 +1,20 @@
 import assert from "node:assert/strict";
-import { resolveCkadEastArcEvidence, type CkadM11Evidence } from "../lib/toll-engine/ckad-evidence.ts";
+import { resolveCkadEastArcEvidence } from "../lib/toll-engine/ckad-evidence.ts";
 import { priceOtherRoadVerifiedSections } from "../lib/toll-engine/other-road-current-tariffs.ts";
 import { calculateProductionCkadM4M11 } from "../lib/toll-engine/ckad-production.ts";
+import type { M11RoadEvidence } from "../lib/toll-engine/m11-road-evidence.ts";
 
 type C = [number, number];
 const arc: C[] = [
   [37.75, 55.32], [37.80, 55.35], [38.05, 55.39], [38.34, 55.53], [38.35, 55.65],
   [38.46, 55.72], [38.50, 55.90], [37.92, 56.13], [37.55, 56.18], [37.42, 56.20], [37.30, 56.24],
 ];
-const evidence: CkadM11Evidence = {
+const evidence: M11RoadEvidence = {
+  provider: "osrm",
   malformedStrictCount: 0,
-  strictBlocks: [{ beginCoordinate: [37.42, 56.20], endCoordinate: [37.30, 56.24] }],
+  candidateClues: [],
+  strictBlocks: [{ provider: "osrm", legIndex: 0, sourceStartIndex: 0, sourceEndIndex: 1,
+    beginKm: 0, endKm: 1, lengthKm: 1, beginCoordinate: [37.42, 56.20], endCoordinate: [37.30, 56.24], labels: ["М-11"] }],
 };
 
 const forward = resolveCkadEastArcEvidence(arc, evidence);
@@ -18,9 +22,12 @@ assert.equal(forward.status, "verified");
 if (forward.status === "verified") assert.equal(forward.direction, "m4_to_m11");
 
 const reverseRoute = [...arc].reverse();
-const reverseEvidence: CkadM11Evidence = {
+const reverseEvidence: M11RoadEvidence = {
+  provider: "osrm",
   malformedStrictCount: 0,
-  strictBlocks: [{ beginCoordinate: [37.30, 56.24], endCoordinate: [37.42, 56.20] }],
+  candidateClues: [],
+  strictBlocks: [{ provider: "osrm", legIndex: 0, sourceStartIndex: 0, sourceEndIndex: 1,
+    beginKm: 0, endKm: 1, lengthKm: 1, beginCoordinate: [37.30, 56.24], endCoordinate: [37.42, 56.20], labels: ["М-11"] }],
 };
 const reverse = resolveCkadEastArcEvidence(reverseRoute, reverseEvidence);
 assert.equal(reverse.status, "verified");

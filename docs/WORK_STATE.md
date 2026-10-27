@@ -6,7 +6,7 @@ Latest block20 DONE for bounded offline profiling: both saved Eisk/Maykop provid
 
 Latest block18 DONE: three scoped offline composition/route-boundary test files PASS for M4/A289, M11, M12 and CKAD unknown/duplicate/direction/date boundaries; mocked provider fetch only, no live route claims. [Checkpoint](checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Progress21/24 (87.5%); block21 not adopted,23 partial,24 open.
 
-Block21 IN PROGRESS / not adopted: corrected strict config now has18 diagnostics across5 files after three nullable guards and a fixture's validation-source literal were made explicit. Fare/date assertions unchanged. No CI gate/weakening. [Initial evidence](checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md) · [group checkpoints](codebase-audit/NEXT_STEPS.md#unified-24-block-reliability-sprint--current-status). Progress21/24 (87.5%).
+Block21 IN PROGRESS / not adopted: corrected strict config now has14 diagnostics across3 files. CKAD tests share the full M11 evidence fixture shape required by the production adapter; unresolved M11 boundary reasons are narrowed before membership assertions. Regression totals remain unchanged. No CI gate/weakening. [Initial evidence](checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md) · [group checkpoints](codebase-audit/NEXT_STEPS.md#unified-24-block-reliability-sprint--current-status). Progress21/24 (87.5%).
 
 Unexpected hosted run on the prior readback SHA: run40469828321 overall SUCCESS (`verify`, `calculation_timing` PASS), but tolerated `live_probe` failure. Geometry probe PASS; address collector Ростов/Красн PASS and Донецк SOURCE_UNAVAILABLE (HTTP503/cooldown, 0 features); 50-settlement/Yandex steps SKIPPED. Artifact12718511135. Do not rerun without a new reason.
 
