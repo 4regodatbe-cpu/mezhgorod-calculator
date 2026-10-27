@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment5: operator2024/2022rules confirm virtual15–58↔Section1 interface;2024explains absence of physical mainline boundary plazas. Exact directed position remains unproved; inventory already knew this interface, new located boundaries0. [Comparison](../experiments/tariff-proof-selection/M11_VIRTUAL_BOUNDARY_RULES.md), [checkpoint](checkpoints/2026-10-27-experiment5-virtual-rules.md). Next saved directed path and method comparison; no runtime change.
+
 Experiment4 reciprocal control: observed6588472832 is M10→M11 entry; prior6588472831 is exit. Moscow→Тверь actually uses unidentified12007034961, so city labels are not reciprocal tariff proof. [Evidence](../experiments/tariff-proof-selection/M11_DIRECTION_CONTROLS.md), [checkpoint](checkpoints/2026-10-27-m11-reciprocal-route-control.md). Total2 new directed cross-references /0new full tariff pairs;58km mainline boundary proof still missing. Runtime unchanged.
 
 Experiment4 M4 PARTIAL: exact452-point saved vector excludes both retained1093 booths. New operator page confirms1091.6–1119.5 scope and undated150/150, not an eligible October fare. Official chainage/charging link for Platov→Р-260 still missing. [Evidence](../experiments/tariff-proof-selection/M4_PHYSICAL_SCOPE.md), [checkpoint](checkpoints/2026-10-27-m4-vector-scope-exclusion.md). No newly priced component; next saved full M11 traversal.
