@@ -1,0 +1,181 @@
+{
+  "reviewedAt": "2026-10-27",
+  "scope": "Three more collision groups: Chernihiv, Sumy, Kharkiv; bounded search, not full coordinate certification",
+  "sources": [
+    {
+      "id": "c1",
+      "url": "https://decentralization.ua/locality/49350",
+      "access": "WEB_OPEN_SUCCESS",
+      "observed": "Тарасівка; KATOTTG UA74060010440015351.",
+      "license": "CC BY 4.0 stated in footer",
+      "datePublished": null
+    },
+    {
+      "id": "c2",
+      "url": "https://decentralization.ua/locality/50193",
+      "access": "WEB_OPEN_SUCCESS",
+      "observed": "Тарасівка; KATOTTG UA74080170520043729.",
+      "license": "CC BY 4.0 stated in footer",
+      "datePublished": null
+    },
+    {
+      "id": "sumy",
+      "url": "https://mof.gov.ua/storage/files/ДМБ_10062022.pdf",
+      "access": "SEARCH_INDEX_ONLY; WEB_OPEN_REJECTED_SIZE_19001528",
+      "observed": "Index names Тарасівка, Великописарівська громада, Охтирський район, KATOTTG UA59040030200032742.",
+      "limits": "Full document not read; no coordinates."
+    },
+    {
+      "id": "registry",
+      "url": "https://geonames.land.gov.ua/map?id=0c455a122409",
+      "access": "WEB_OPEN_NO_EXTRACTABLE_LINES",
+      "observed": "Search index identifies a different Тарасівка at 46°25′23″N 33°04′18″E.",
+      "limits": "Different place; explicitly excluded as coordinate proof for this batch."
+    }
+  ],
+  "queries": [
+    "site.gov.ua Тарасівка Чернігівська область громада",
+    "site.gov.ua Тарасівка Сумська область громада",
+    "site.gov.ua Тарасівка Харківська область громада",
+    "Тарасівка Юнаківська громада",
+    "Тарасівка Великописарівська громада",
+    "Тарасівка Златопільська громада",
+    "Тарасівка Богодухівська громада"
+  ],
+  "records": [
+    {
+      "geonamesId": "691853",
+      "originalCoordinates": {
+        "lat": 51.5676,
+        "lon": 33.05113
+      },
+      "candidateLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "7406001",
+      "sourceRefs": [
+        "c1"
+      ],
+      "status": "AMBIGUOUS",
+      "identity": "Admin prefix correspondence only where a source is listed; exact GeoNames linkage unproven",
+      "coordinateVerification": "UNVERIFIED",
+      "runtimeEligible": false,
+      "limitations": "No independent coordinate-bearing matched record; no automatic choice."
+    },
+    {
+      "geonamesId": "815579",
+      "originalCoordinates": {
+        "lat": 52.16694,
+        "lon": 32.96611
+      },
+      "candidateLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "7406003",
+      "sourceRefs": [],
+      "status": "AMBIGUOUS",
+      "identity": "Admin prefix correspondence only where a source is listed; exact GeoNames linkage unproven",
+      "coordinateVerification": "UNVERIFIED",
+      "runtimeEligible": false,
+      "limitations": "No independent coordinate-bearing matched record; no automatic choice."
+    },
+    {
+      "geonamesId": "8530275",
+      "originalCoordinates": {
+        "lat": 50.70068,
+        "lon": 32.44165
+      },
+      "candidateLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "7408003",
+      "sourceRefs": [],
+      "status": "AMBIGUOUS",
+      "identity": "Admin prefix correspondence only where a source is listed; exact GeoNames linkage unproven",
+      "coordinateVerification": "UNVERIFIED",
+      "runtimeEligible": false,
+      "limitations": "No independent coordinate-bearing matched record; no automatic choice."
+    },
+    {
+      "geonamesId": "8530926",
+      "originalCoordinates": {
+        "lat": 50.56005,
+        "lon": 32.04253
+      },
+      "candidateLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "7408017",
+      "sourceRefs": [
+        "c2"
+      ],
+      "status": "AMBIGUOUS",
+      "identity": "Admin prefix correspondence only where a source is listed; exact GeoNames linkage unproven",
+      "coordinateVerification": "UNVERIFIED",
+      "runtimeEligible": false,
+      "limitations": "No independent coordinate-bearing matched record; no automatic choice."
+    },
+    {
+      "geonamesId": "691854",
+      "originalCoordinates": {
+        "lat": 51.09386,
+        "lon": 35.16408
+      },
+      "candidateLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "5908031",
+      "sourceRefs": [],
+      "status": "AMBIGUOUS",
+      "identity": "Admin prefix correspondence only where a source is listed; exact GeoNames linkage unproven",
+      "coordinateVerification": "UNVERIFIED",
+      "runtimeEligible": false,
+      "limitations": "No independent coordinate-bearing matched record; no automatic choice."
+    },
+    {
+      "geonamesId": "691855",
+      "originalCoordinates": {
+        "lat": 50.48222,
+        "lon": 35.29566
+      },
+      "candidateLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "5904003",
+      "sourceRefs": [
+        "sumy"
+      ],
+      "status": "AMBIGUOUS",
+      "identity": "Admin prefix correspondence only where a source is listed; exact GeoNames linkage unproven",
+      "coordinateVerification": "UNVERIFIED",
+      "runtimeEligible": false,
+      "limitations": "No independent coordinate-bearing matched record; no automatic choice."
+    },
+    {
+      "geonamesId": "691860",
+      "originalCoordinates": {
+        "lat": 50,
+        "lon": 35.61667
+      },
+      "candidateLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "6302003",
+      "sourceRefs": [],
+      "status": "AMBIGUOUS",
+      "identity": "Admin prefix correspondence only where a source is listed; exact GeoNames linkage unproven",
+      "coordinateVerification": "UNVERIFIED",
+      "runtimeEligible": false,
+      "limitations": "No independent coordinate-bearing matched record; no automatic choice."
+    },
+    {
+      "geonamesId": "808814",
+      "originalCoordinates": {
+        "lat": 49.14209,
+        "lon": 36.13356
+      },
+      "candidateLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "6306009",
+      "sourceRefs": [],
+      "status": "AMBIGUOUS",
+      "identity": "Admin prefix correspondence only where a source is listed; exact GeoNames linkage unproven",
+      "coordinateVerification": "UNVERIFIED",
+      "runtimeEligible": false,
+      "limitations": "No independent coordinate-bearing matched record; no automatic choice."
+    }
+  ]
+}

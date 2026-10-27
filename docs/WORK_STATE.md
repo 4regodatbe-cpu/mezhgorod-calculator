@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+B02 second batch: eight more IDs in Chernihiv/Sumy/Kharkiv investigated; two KATOTTG locality pages read but no independent coordinate/GeoNames linkage. Total15 AMBIGUOUS, zero new runtime entries. [Batch02](../experiments/road-ref-boundaries/checks/2026-10-27-independent-settlements/batch-02.json), [checkpoint](checkpoints/2026-10-27-settlements-batch-02.md). Thirteen collision groups remain unprocessed.
+
 B01–B02 functional continuation: first seven requested GeoNames IDs researched; seven AMBIGUOUS pending independent coordinate/ID proof. New municipal source and legal-source access failures recorded in [batch01](../experiments/road-ref-boundaries/checks/2026-10-27-independent-settlements/batch-01.json). [Checkpoint](checkpoints/2026-10-27-settlements-batch-01.md). No active fallback or tariff changes.
 
 Latest validation: block23 DONE on Actions run40479628024, source SHA `ea80282643f67886bd6486610a291ca8cffc05ce`, tree `2102cb20b95af94cbe1f986bfe9d2c012faeb79e`. Node24.21.0, Next16.3.4, 458+10+4 tests, TypeScript and production build PASS. Classifier selected no live scope; `live_probe` and `calculation_timing` SKIPPED. [Checkpoint](checkpoints/2026-10-27-1245-block-23-hosted-build-DONE.md). Technical plan24/24 (100%); functional B01–B12 data blockers remain separate. [Final report](RELIABILITY_24_BLOCK_FINAL_REPORT.md).
