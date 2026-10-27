@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Latest block15 DONE: route fetch cache URLs vary by coordinates/provider options, TTL21600s. Photon uses exact-URL singleflight/cache, positive-only5min LRU128, per-origin cooldown and subscriber-safe cancellation; address cache normalizes query with5min LRU128. Three mocked cache/fetch suites PASS; no defect or code change. [Checkpoint](checkpoints/2026-10-27-0322-block-15-cache-review-DONE.md). Technical18/24 (75%):1–15,17,19,22. Next block16 structured diagnostics/privacy review. Block20 remains PARTIAL.
+
 Latest block14 DONE: a mocked Valhalla transport timeout does not suppress a valid faster OSRM route; asserts selected ETA/provider. Existing cases cover invalid candidates, equal ETA, unknown pricing and incomplete geometry. Route-selection + pipeline suites, TypeScript, scoped ESLint and diff PASS; no network. [Checkpoint](checkpoints/2026-10-27-0314-block-14-provider-fallback-DONE.md). Technical17/24 (70.83%):1–14,17,19,22. Next block15 cache key/TTL/isolation review. Block20 remains PARTIAL.
 
 Latest block13 DONE: current V2 source plus saved B10 fetch logs show no unnecessary exact duplicate requests: Eisk32/32 and Maykop36/36 unique `(method,URL,body)` keys; candidate routing fan-out and conditional Valhalla fallback are intentional. No code changed or network rerun. [Checkpoint](checkpoints/2026-10-27-0301-block-13-provider-request-counts-DONE.md). Technical16/24 (66.67%):1–13,17,19,22. Next block14 fallback/candidate correctness with existing mocks. Block20 remains PARTIAL.

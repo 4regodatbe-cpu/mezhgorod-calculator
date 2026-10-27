@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 03:22 МСК — reliability block15 cache review DONE
+
+- Parent `ea559e8a8081eb07886d48b3f8ac1dba0d0046aa`; allowed branch only, PR14 Draft; no active run for parent.
+- Reviewed current cache key/expiry/isolation code: routing GET requests encode coordinates plus candidate/provider options and use Next `force-cache` with revalidation21,600s. Photon uses exact URL keys, positive-only process cache300s/LRU128 and per-origin cooldown; caller cancellation is subscriber-scoped. Address suggestion cache normalizes Russian case/space/ё and uses positive-only five-minute LRU128. Photon fetch also has300s revalidation and deadline/cancel propagation.
+- `photon-request-pool.test.ts`, `address-suggestion-cache.test.ts`, and `photon-fetch.test.ts` all PASS with mocked fetch/clock. No live request, no reproduced defect, no code change.
+- Limit: Next framework cache behavior and multi-instance cache sharing not tested in deployed runtime. Checkpoint [block15](../checkpoints/2026-10-27-0322-block-15-cache-review-DONE.md). Technical progress18/24 (75%):1–15,17,19,22. Next block16 structured diagnostics/privacy.
+
 ## 27.10.2026 03:14 МСК — reliability block14 provider fallback DONE
 
 - Parent remote/local `82dbd8a2e832816f832d20bb428e9910eda518df`; allowed branch only, PR14 Draft; no workflow runs on parent.

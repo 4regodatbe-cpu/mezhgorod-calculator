@@ -109,6 +109,8 @@
 
 ## Status reconciliation
 
+Latest block15 DONE: route provider fetch keys vary by coordinates and provider options; six-hour fetch revalidation retained. Photon uses exact-URL positive-only five-minute LRU128, shared request pool and subscriber-safe cancellation; suggestion cache normalizes Russian query and is also five-minute LRU128. Three mock suites PASS. Next runtime framework cache remains unverified. Checkpoint `2026-10-27-0322-block-15-cache-review-DONE.md`. Technical DONE18/24 (75%):1–15,17,19,22. Next block16 diagnostics/privacy.
+
 Latest block14 DONE: mocked Valhalla transport rejection does not suppress valid faster OSRM; own ETA/geometry are retained. Existing route-selection and pipeline cases cover invalid candidates, tie order and unknown/null toll evidence. Focused suites, TypeScript, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0314-block-14-provider-fallback-DONE.md`. Technical DONE17/24 (70.83%):1–14,17,19,22. Next block15 cache key/lifetime/isolation.
 
 Latest block13 DONE: current V2 route flow and B10 logs reviewed offline. Eisk32/32 and Maykop36/36 exact method+URL+body request keys were unique; 4 Valhalla route requests, OSRM/BRouter candidates and trace chunks are distinct; no unnecessary exact duplicate reproduced. No behavior change. Checkpoint `2026-10-27-0301-block-13-provider-request-counts-DONE.md`. Technical DONE16/24 (66.67%):1–13,17,19,22. Next block14 fallback/candidate correctness with mocks.
