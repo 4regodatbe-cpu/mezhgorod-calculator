@@ -1,5 +1,7 @@
 # Experiment7 next steps
 
+ACTIVE B05STARTED: docs/checkpoints/2026-10-27-experiment7-m4-podd-STARTED.md. New officialPODD Voronezhcategory has mainline464–546 and alternative517–544 plans. Next2originals/≤6targetedleafoperations, not genericsearch or oldfailedURLs. No C/Duntil evidence reviewed; preserve progress before nextwork.
+
 M12_DIRECTIONAL_REGISTRATION_REVIEW.md now documents actualoppositedirections:1550561305exit22Н-0239;1550561306entryvia22Н-0226. No actual442selectedexit established; suppliedsecondchainisМ7. Three westernframes0/3operatorbindings. Freeflowfirst/lastregistration indexed leads originals403; noC/D. NextB05newlane/productsource, not oldfailedrequests. Priornewlegalpageprecisesequencewithdrawnexplicitly; no closureinferred.
 
 Current: M12_2624_SOURCE_COMPARISON.md. Supplied972809728chain isМ-7, notР-158; do not relabel. Two legal originals distinguish421crossing versus442interchange, omissionnotclosure. Next actualsavedР-158trace + free-flow billing-endpoint proof for three already-known westernframes. IfDnotreached, B05newdirected545product source. No general engine or mass audit.

@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment7 B05STARTED: new officialPODDcategory separates mainline464–546 and alternative517–544 plans, dated13.03.2025. [Recovery/budget](checkpoints/2026-10-27-experiment7-m4-podd-STARTED.md). Next bounded originalplanleaf inspection after save; no C/Dorprice yet. No app/tariff changes.
+
 Experiment7 M12directionreview: actualreverseentry uses1550561306via22Н-0226, not reversalofforwardexit1550561305. Three westernframesstill0/3operatorIDs; indexedfreeflowrulesfirst/lastregistrationlead, originals403. [Evidence](../experiments/tariff-proof-selection/M12_DIRECTIONAL_REGISTRATION_REVIEW.md), [checkpoint](checkpoints/2026-10-27-experiment7-m12-direction-registration.md). NoC/Dornewprice; nextB05directed545source. Prioroverpreciselegalrowsequenceexpresslywithdrawn.
 
 Experiment7: two legal originals inspected,421row omitted in2624-р but no physicalclosure proved;442Р-158retained. Supplied972809728chain actuallyМ-7, notР-158. [Comparison](../experiments/tariff-proof-selection/M12_2624_SOURCE_COMPARISON.md), [checkpoint](checkpoints/2026-10-27-experiment7-m12-government-identity.md). No newC/Dpair or price; next actualР-158savedtrace/freeflow operator mapping.

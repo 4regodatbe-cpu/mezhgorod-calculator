@@ -1,5 +1,7 @@
 # Experiment log
 
+27.10.2026 — B05newsource discovery/STARTED: officialPODDcategory distinguishes mainline464+300–546+000 and alternative517+000–544+000 (13.03.2025). Exactcategory opens after fullindex4MiBtoolsizefailure. No oldfailed545URLs repeated. Save STARTED before2linkedPDF/≤6targetedleafoperations. Targetphysical5818209495/615270691 reused. checkpoint2026-10-27-experiment7-m4-podd-STARTED.md; no newbinding/price claimed. Next inspect originals after durableSTARTED and inactiveCI.
+
 27.10.2026 — Directional verification: `node --test experiments/tariff-proof-selection/m12-directed-approaches.test.mjs` PASS (one file aggregate,2named real-capture cases,0fail); `git diff --check` PASS. No D-level fare admitted.
 
 27.10.2026 — Experiment7 directions/registration: two retained selected paths show forwardexit1550561305→22Н-0239 and reverseentry1550561306via22Н-0226, not identical rampreversal. Three framesstillunbound. Two new officialAppendix3indexed leads describe first/lastregistration, originals403/currentversionnotproved. M12_DIRECTIONAL_REGISTRATION_REVIEW.md plus actualcapturetest. Explicitly withdrew overprecise newlegalpage rowsequence from priorreport (rendererunstable); no archive/historyrewrites. Matrix302metadataonly. Parentc0c65eb5/CI40505260145SUCCESS. NewC/D0; nextB05newdirected545source aftersave.
