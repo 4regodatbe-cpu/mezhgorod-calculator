@@ -1,5 +1,17 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 — редакционная подготовка рабочих сводок к сохранению
+
+- Connector returned file-level risk messages without identifying an exact matched line. Static review found no credential assignment in the current working documents; the historical release details in WORK_STATE were redundant there and are now represented by a link to the unchanged release evidence. Two test summaries no longer repeat private-looking synthetic strings; the tests and immutable checkpoints remain unchanged.
+- The local recovery commit remains intact. Computation profiles, their source/result SHA values, new profiler and checkpoint are unchanged. No security check was weakened and no alternate publication path was used.
+
+## 27.10.2026 04:45 МСК — reliability block20 bounded offline profiling DONE
+
+- Parent remote `c653fa9b1045c6f2b9adfee1488b12a30bf239cf`; allowed branch; PR14 Draft; no active Actions.
+- Added `scripts/offline-provider-route-profile.mjs`: retained Eisk and Maykop Valhalla bodies go through the actual provider parser/decoder/geometry validation/evidence derivation behind a fetch stub. Eisk9,433 points median9.0735ms/p9524.1062; Maykop9,677 median6.1167ms/p9510.2225. Mocked calls24 total, network0; output geometry SHA/count exactly match the saved compute profiles.
+- Existing operation benchmark result SHA values match across Eisk/Maykop fixtures. Old call-local cache optimization not repeated. Profiler assertions, syntax and JSON/provenance checks PASS; no runtime/tariff/routing edits.
+- Acceptance DONE for bounded offline profile; limitations (no E2E/provider wait/SLA/multi-road missing-tariff fixture) in [checkpoint](../checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md). Progress21/24 (87.5%). Next block21 bounded type remediation.
+
 ## 27.10.2026 04:30 МСК — reliability block18 road-combination boundaries DONE
 
 - Parent remote `a0827a5a4d2e7d0b3b33bb4424ce8604c61013ad`; allowed branch, PR14 Draft; no active Actions.
@@ -118,7 +130,7 @@
 ## 27.10.2026 02:34 МСК — reliability block4 UI error handling DONE
 
 - Parent `a6f30e7ada3f760c770577e52bba6e639a195d0b`; allowed branch only; PR14 Draft; no active Actions for parent.
-- Test-first red in both V2 and V3 hook harnesses reproduced the defect: a fetch rejection message containing `provider.internal.example/private-token` was surfaced verbatim. Existing HTTP 400/500/502/504 response messages were already displayed; preserve those server-sanitized strings.
+- Test-first red in both V2 and V3 hook harnesses reproduced the defect: a private-looking test sentinel in a fetch rejection message was surfaced verbatim. Existing HTTP 400/500/502/504 response messages were already displayed; preserve those server-sanitized strings. Exact sentinel remains in the focused regression test, not this work summary.
 - Added `app/v2/components/request-errors.ts`, with a branded safe-message error so only deliberately user-facing response/validation messages pass through. Both hooks now show a generic retry message for untagged exceptions; malformed successful payloads retain the existing incomplete-route message. No retry loops or business logic added.
 - Tests: V2 hook5/5; V3 hook8/8 (HTTP cases, network redaction, retry, malformed JSON, existing abort/race/clipboard); `scripts/special-territory-api.test.ts` PASS; `npx tsc --noEmit` PASS; scoped ESLint0 errors/1 existing warning (`analyticsVersion` in V2 hook); `git diff --check` PASS.
 - No browser, network, full build or broad CI. Technical progress 8/24 (33.33%): blocks1–4,12,17,19,22. Next block5 lifecycle/race tests, without repeating B03 hosted cases. [Checkpoint](../checkpoints/2026-10-27-0234-block-4-ui-errors-DONE.md).
@@ -194,7 +206,7 @@
 ## 26.10.2026 23:17 МСК — AUD-ERROR-01 DONE
 
 - Исходный parent: `725b78916da2f51c8861f8c02cfed67b7f0ea3a8`; разрешённая ветка; PR #14 Draft.
-- До исправления неизвестное исключение `Error("private-provider-host.example/token")` возвращало HTTP 400. Проверка воспроизведена для обоих API handlers.
+- До исправления неизвестное исключение с тестовым provider-host sentinel возвращало HTTP 400. Проверка воспроизведена для обоих API handlers; точный fixture остаётся в профильном regression test.
 - Добавлен общий typed classifier `lib/calculate-api-error.ts`: allowlist известных клиентских (400) и upstream (502) codes; все остальные исключения получают категорию `internal` и HTTP500. Тексты клиентских ответов остаются whitelist-only и не включают `error.message`. Существующие специальные error messages сохранены.
 - Добавлены endpoint contract tests для V2 и V3: адрес не найден→400, известная ошибка geocoding 503→502, неожиданное исключение→500; приватная строка отсутствует в body. RED: V2 unexpected exception был 400 (ожидался500). GREEN: новый mapping test 1/1; `special-territory-api.test.ts` 9/9; `v3-api-audit.test.ts` PASS; `npx tsc --noEmit` exit0; diff check PASS.
 - Изменены оба API route handler, один общий classifier и focused test. Live providers не вызывались; fetch полностью mock.

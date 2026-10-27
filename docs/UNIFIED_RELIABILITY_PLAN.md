@@ -2,9 +2,9 @@
 
 Block23 PARTIAL:18/18 focused regression suites plus app TypeScript, scoped ESLint and diff PASS across recent changes; no live service/full build. Full gate remains unverified; see `docs/checkpoints/2026-10-27-0408-block-23-focused-regression-PARTIAL.md`. Next profile block20; overall DONE19/24 unchanged.
 
-Block20 PARTIAL: saved Maykop geometry profiled offline (9,677 points; 0 network); four operation hashes match saved Eisk baseline. No business logic changed; full pipeline and multi-road/missing-tariff fixture coverage remain. [Checkpoint](docs/checkpoints/2026-10-27-0418-block-20-maykop-profile-PARTIAL.md); progress remains19/24.
+Block20 DONE for bounded offline profiling: saved Eisk/Maykop geometry and Valhalla parse/decode/validation/evidence stages profiled with 0 network; deterministic geometry/result hashes match. Not an E2E/SLA benchmark; no separate multi-road/missing-tariff fixture. [Checkpoint](docs/checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md); progress21/24 (87.5%).
 
-Block18 DONE: three targeted offline suites cover component partial/unknown and duplicate boundaries, M4/A289 overlap, M12 direction/span, and M11 departure-date fare; no live calls. Bounded acceptance only, not a live route through all facilities. [Checkpoint](docs/checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Progress20/24 (83.33%).
+Block18 DONE: three targeted offline suites cover component partial/unknown and duplicate boundaries, M4/A289 overlap, M12 direction/span, and M11 departure-date fare; no live calls. Bounded acceptance only, not a live route through all facilities. [Checkpoint](docs/checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Progress21/24 (87.5%) after block20.
 
 Block21 typecheck IN PROGRESS, not adopted: temporary strict noEmit trial found57 diagnostics across24 test/script files; root app `tsc --noEmit` passes. Candidate config removed rather than adding a failing gate; details `docs/checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md`. Next combined focused regression, then fix test types in bounded groups.
 

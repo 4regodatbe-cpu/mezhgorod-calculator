@@ -2,7 +2,7 @@
 
 ## Unified 24-block reliability sprint — current status
 
-Latest: block18 DONE from three targeted offline boundary suites; bounded coverage, not live end-to-end through all facilities. [Checkpoint](../checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Block20 remains PARTIAL after saved Maykop profile [checkpoint](../checkpoints/2026-10-27-0418-block-20-maykop-profile-PARTIAL.md). Overall progress20/24 (83.33%).
+Latest: block20 DONE for bounded saved-route computation + Valhalla response decode profiling; deterministic geometry/result hashes match, 0 external requests. Limits are not E2E or network performance. [Checkpoint](../checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md). Block18 is DONE [checkpoint](../checkpoints/2026-10-27-0430-block-18-road-composition-DONE.md). Overall progress21/24 (87.5%).
 
 - [x] Block2 — V2 unknown/null display: verified server-rendered RouteCard and presentation helpers; manually entered toll on unknown provider pricing now computes a clearly manual total without the contradictory “full total not calculated” message. Unknown provider status remains visible. [Checkpoint](../checkpoints/2026-10-27-0228-block-2-v2-unknown-DONE.md).
 - [x] Block3 — V3 unknown/null response contract, shared fastest-route render and copied status; no defect reproduced. [Checkpoint](../checkpoints/2026-10-27-0231-block-3-v3-unknown-DONE.md).
@@ -21,7 +21,7 @@ Latest: block18 DONE from three targeted offline boundary suites; bounded covera
 - [ ] Block21 — strict scripts/tests typecheck trial is not adoptable yet:57 diagnostics across24 files. Root application typecheck still passes. Fix test typing in bounded groups before adding CI command. [Evidence](../checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md).
 - [~] Block23 — focused18/18 regression plus app tsc/scoped ESLint/diff passes; full build/CI remains unrun, so acceptance is partial. [Checkpoint](../checkpoints/2026-10-27-0408-block-23-focused-regression-PARTIAL.md).
 
-Technical progress: 20/24 (83.33%): blocks1–19 except20, plus22. Block20 PARTIAL; block21 candidate check IN PROGRESS, not DONE; block23 PARTIAL; block24 open. B02/B04–B09 remain data-blocked.
+Technical progress: 21/24 (87.5%): blocks1–20 except none, plus22. Block21 candidate check IN PROGRESS, not DONE; block23 PARTIAL; block24 open. B02/B04–B09 remain data-blocked.
 
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 
