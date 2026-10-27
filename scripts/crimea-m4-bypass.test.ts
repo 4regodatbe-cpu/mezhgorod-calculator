@@ -55,7 +55,9 @@ test("recorded own OSRM routes cross the correct bypass plaza and price 410 in e
   const plan=candidatePlans(from,to,zones)[0];
   assert.equal(followsPlan(route.geometry.coordinates,plan.positions,plan.corridor,false),true);
   const evidence=inspectKrasnodarBypass(route.geometry.coordinates);
-  assert.equal(matrixDzokComponent(evidence,"2026-10-20T12:00:00+03:00",route.duration).tolls.amount,410);
+  const dzok=matrixDzokComponent(evidence,"2026-10-20T12:00:00+03:00",route.duration).tolls;
+  assert.ok(dzok);
+  assert.equal(dzok.amount,410);
   assert.equal(priceA289Route(route.geometry.coordinates,"2026-10-20T12:00:00+03:00").amount,800);
  }
 });

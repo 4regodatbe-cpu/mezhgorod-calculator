@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 06:45 МСК — block21 Crimean-M4 nullable assertion DONE
+
+- The saved bidirectional Crimea/M4 test passed before and after correction. Added an explicit assertion that the derived DZOK toll quote exists before reading `.amount`; expected 410 ₽ assertion is unchanged.
+- Focused suite1/1, scoped ESLint, `git diff --check` PASS. Strict scripts/tests diagnostics moved33/15→32/14; temporary config removed; no CI gate adopted.
+- Concurrent workflow run40469828321 on the preceding remote head: `verify` and `calculation_timing` PASS; `live_probe` geometry PASS, address search returned Ростов/Красн PASS and Донецк SOURCE_UNAVAILABLE after HTTP503/cooldown; corpus/Yandex jobs skipped. Overall Actions run SUCCESS with tolerated live-probe failure. Artifact12718511135. No rerun.
+- Checkpoint: [0645](../checkpoints/2026-10-27-0645-block-21-crimea-nullability-DONE.md).
+
 ## 27.10.2026 06:30 МСК — block21 required validation fixture field DONE
 
 - Strict scripts/tests typecheck reproduced a missing required `TollValidation.message` on the saved M12 recovery fixture. Added a descriptive fixture message; no behavior or assertion changed.
