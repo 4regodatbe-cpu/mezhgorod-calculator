@@ -1,3 +1,9 @@
+## Решение владельца 27.10.2026 — последнее тарифное свидетельство принимается до замены
+
+**УТВЕРЖДЕНО / DOCUMENTED:** [политика источников цен](TARIFF_SOURCE_POLICY.md) и [checkpoint](checkpoints/2026-10-27-tariff-source-carry-forward-DONE.md). Последняя доступная официальная редакция тарифа применяется вперёд без искусственного срока истечения, пока не обнаружена более новая. Не считать цену `unknown` лишь из-за возраста приказа. Не переносить новую редакцию на даты до вступления в силу. Физические тарифные концы и правила выбора одного/двух продуктов остаются обязательными.
+
+**B05:** приказ М4 №58 — принят как последняя имеющаяся денежная основа; проблема поездки Тамань→Воронеж пока в **идентификации оплачиваемого набора продуктов/учёте повторной оплаты**, а не в «истекшей свежести цен». Эксперимент №9 и его тесты не изменены, публичная сумма всё ещё `unknown/null`. Никакого live-кода/матриц/Production не изменялось.
+
 # Unified reliability queue — 27.10.2026
 
 Experiment9 research complete / B05 PARTIAL: historical route-conditioned545collection supported; one realTaman→Voronezh history+9testsPASS,0new fulltariffpairs/prices. [Result/10answers](../experiments/tariff-proof-selection/EXPERIMENT9_RESULT.md), [NOT_SENT operator question+scheme](../experiments/tariff-proof-selection/M4_545_OPERATOR_REQUEST_DRAFT.md), [checkpoint](checkpoints/2026-10-27-experiment9-result-operator-draft.md). Missing dated collection/physicalendpoint/priorpayment rule cannot be manufactured from OSMtoll or another router. Next owner-reviewed operator request/newdocument; no tariff/app changes.

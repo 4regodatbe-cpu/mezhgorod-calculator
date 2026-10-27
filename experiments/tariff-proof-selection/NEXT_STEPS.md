@@ -1,3 +1,7 @@
+## NOW — политика цены обновлена 27.10.2026
+
+[Решение владельца](../../docs/TARIFF_SOURCE_POLICY.md): последняя официальная тарифная редакция считается рабочей до новой, в том числе приказ М4 №58 для его собственных продуктов и профилей. Возраст исходного PDF больше **не** блокирует цену. Для B05 делать только узкое сопоставление выбранного набора начислений для сохранённой Тамань→Воронеж (история пути уже доказана), не искать новое подтверждение суммы ради её возраста. Пока не установлены один/два продукта и правило предотвращения повторной оплаты, итог остаётся `unknown/null`. Проект письма оператору существует и **NOT_SENT**. Следующая независимая выполнимая работа — B03 browser QA; B01 после него. См. [checkpoint](../../docs/checkpoints/2026-10-27-tariff-source-carry-forward-DONE.md).
+
 # Experiment8 next steps
 
 Experiment9 bounded work COMPLETE / B05 PARTIAL: EXPERIMENT9_RESULT.md; M4_545_OPERATOR_REQUEST_DRAFT.md NOT_SENT. Next owner may authorize sending one current-rule question with directed3branchscheme, or provide dated operator rule. Do not resend/retryblocked origins or promote candidateproducts/money without collection/boundary/date/additivity proof. One realhistorycase+8controls9/9PASS already saved; no duplicate capture/PDF/oldtests.
