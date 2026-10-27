@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment2 official-source follow-up: six URLs reviewed for M4 pending pair,545 scope and M11 Пешки–Тверь lead. Separate M11 tariff authorities confirmed; Road Invest page does not cover Aksay and1093 extracted rows conflict. Zero new admissible pairs/amounts. [Source review](../experiments/tariff-proof-selection/operator-source-review.json), [checkpoint](checkpoints/2026-10-27-composition-operator-sources.md). Need original dated tariff attachment and endpoint crosswalk.
+
 Experiment2 composition: immutable admitted registry/policy and bounded exact-cover prototype; ten named synthetic cases, one test-file aggregate PASS. No real fares admitted. [Analysis](../experiments/tariff-proof-selection/COMPOSITION.md), [checkpoint](checkpoints/2026-10-27-tariff-independent-composition.md). Next official-document research M4/M11; public algorithm untouched.
 
 Experimental B04/B10: isolated tariff-proof selector compares full operator pair versus additive-chain witnesses and rejects partial/conflicting coverage. Saved M4 pending vector remains unknown. Focused tests PASS; no app integration. [Experiment](../experiments/tariff-proof-selection/README.md), [checkpoint](checkpoints/2026-10-27-tariff-proof-selection.md). Next: cross-road composition with immutable source/context proofs.
