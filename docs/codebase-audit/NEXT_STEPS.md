@@ -19,7 +19,7 @@ Latest: block20 DONE for bounded saved-route computation + Valhalla response dec
 - [x] Block15 — reviewed route and address cache keys/TTLs/LRU/cancellation. Three mocked suites PASS; no defect reproduced, no code change. [Checkpoint](../checkpoints/2026-10-27-0322-block-15-cache-review-DONE.md).
 - [x] Block16 — app diagnostics use bounded fields; V2 production error boundary no longer exposes raw internal exception/digest. Render test2/2, tsc, ESLint, diff PASS. [Checkpoint](../checkpoints/2026-10-27-0340-block-16-diagnostics-privacy-DONE.md).
 - [x] Block21 — corrected strict noEmit typecheck over scripts/tests passes with0 diagnostics; application TypeScript, targeted suites, scoped ESLint and diff PASS. Initial3 `RequestInit.next` errors were ambient-config false positives. Temporary config removed; no CI gate added. [Final checkpoint](../checkpoints/2026-10-27-1130-block-21-scripts-typecheck-DONE.md) · [initial evidence](../checkpoints/2026-10-27-0352-block-21-typecheck-BLOCKED.md).
-- [~] Block23 — focused18/18 regression plus app tsc/scoped ESLint/diff passes; full build/CI remains unrun, so acceptance is partial. [Checkpoint](../checkpoints/2026-10-27-0408-block-23-focused-regression-PARTIAL.md).
+- [~] Block23 — 17 modified test files and two standalone CKAD/M11 scripts PASS; strict scripts/tests and app tsc, scoped ESLint/diff PASS. Current-head full build/hosted final gate unverified; build invokes broad audit and previous hosted verify unexpectedly ran live probes. [Checkpoint](../checkpoints/2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md).
 
 Technical progress: 22/24 (91.67%): blocks1–22 DONE. Block23 PARTIAL (full current-head build/hosted final gate unverified); block24 open. B02/B04–B09 remain data-blocked.
 

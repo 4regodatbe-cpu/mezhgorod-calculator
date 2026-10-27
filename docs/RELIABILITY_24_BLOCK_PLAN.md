@@ -115,7 +115,7 @@
 
 ## Status reconciliation
 
-Block23 PARTIAL: bounded18-suite offline regression, strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff pass; current-head full build is not re-run because the build invokes the broad audit and the hosted verify on the prior head already exposed an unintended live probe. Does not satisfy the full final gate. Checkpoints `2026-10-27-0408-block-23-focused-regression-PARTIAL.md` and `2026-10-27-1130-block-21-scripts-typecheck-DONE.md`; progress22/24.
+Block23 PARTIAL: 17 affected test files plus two standalone CKAD/M11 regression scripts PASS; strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff pass. Current-head full build remains unverified because the build invokes the broad audit; hosted verify/build passed only on a prior head and unexpectedly triggered live probes. No repeat. Checkpoints `2026-10-27-0408-block-23-focused-regression-PARTIAL.md`, `2026-10-27-1130-block-21-scripts-typecheck-DONE.md`, and `2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md`; completed progress22/24.
 
 Block21 DONE: strict scripts/tests noEmit trial passes with corrected Next ambient declarations; zero remaining diagnostics. The temporary config was removed and no CI gate was added. Details: `2026-10-27-1130-block-21-scripts-typecheck-DONE.md` and group checkpoints listed above.
 

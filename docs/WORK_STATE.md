@@ -1,6 +1,6 @@
 # Unified reliability queue — 27.10.2026
 
-Latest validation: strict scripts/tests typecheck and app TypeScript both PASS; targeted regressions, scoped ESLint and diff checks PASS. Block23 remains PARTIAL because no current-head full build was run. [Checkpoint](checkpoints/2026-10-27-1130-block-21-scripts-typecheck-DONE.md). Overall technical progress22/24 (91.67%); next block23 focused final regression and safe build review.
+Latest validation: block23 bounded regression PASS —17 modified test files plus two standalone CKAD/M11 scripts; app `tsc`, scoped ESLint and diff PASS. Current-head full build/hosted final gate remains unverified, so block23 is PARTIAL. [Checkpoint](checkpoints/2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md). Overall completed progress22/24 (91.67%); next block24 consolidation.
 
 Latest block20 DONE for bounded offline profiling: both saved Eisk/Maykop provider JSON responses were profiled through route parse/decode/validation/evidence derivation (0 network), matching saved geometry SHA/count. Four computation-stage result hashes also match across saved route profiles. Microbenchmark and scope limitations recorded. [Checkpoint](checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md). Progress22/24 (91.67%).
 

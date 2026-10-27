@@ -1,6 +1,6 @@
 # Unified reliability and B01–B12 work queue
 
-Block23 PARTIAL:18/18 bounded regression suites, strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff PASS; current-head full build not verified. See `docs/checkpoints/2026-10-27-0408-block-23-focused-regression-PARTIAL.md`. Next: limited final regression and report consolidation; progress22/24.
+Block23 PARTIAL:17 modified test files and two standalone CKAD/M11 scripts PASS; strict scripts/tests typecheck, app TypeScript, scoped ESLint and diff PASS. Current-head full build not verified because it invokes the broad audit and hosted verify on the prior head unexpectedly started live probes. No rerun. See `docs/checkpoints/2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md`; next block24 consolidation; completed progress22/24.
 
 Block20 DONE for bounded offline profiling: saved Eisk/Maykop geometry and Valhalla parse/decode/validation/evidence stages profiled with 0 network; deterministic geometry/result hashes match. Not an E2E/SLA benchmark; no separate multi-road/missing-tariff fixture. [Checkpoint](docs/checkpoints/2026-10-27-0445-block-20-offline-profile-DONE.md); progress22/24 (91.67%).
 

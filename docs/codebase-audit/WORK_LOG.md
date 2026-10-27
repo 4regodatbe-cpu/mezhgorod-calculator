@@ -1,5 +1,12 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 11:40 МСК — block23 targeted final regression PARTIAL
+
+- Ran one focused aggregate over17 modified test files:17/17 PASS. Two standalone scripts also PASS: CKAD production regression (east-arc subtotal1800 ₽) and M11 boundary fixture gate (8 controls; unsupported remain unresolved). No network capture or mass route corpus was run.
+- App `npx tsc --noEmit`, scoped ESLint for modified runtime/test files and `git diff --check` PASS. Block21 strict scripts/tests noEmit PASS is recorded separately in its checkpoint.
+- Current-head full `npm run build`/hosted final gate not run: project build invokes the broad `test:audit`; local nationwide child-process failure is already known, while hosted run40469828321 on a prior SHA unexpectedly executed live probes (address source later HTTP503; artifact12718511135). Its verify/build passed only for that earlier SHA; no current-head claim and no rerun.
+- Block23 remains PARTIAL. Checkpoint: [1140](../checkpoints/2026-10-27-1140-block-23-targeted-final-regression-PARTIAL.md).
+
 ## 27.10.2026 11:30 МСК — block21 strict scripts/tests typecheck DONE
 
 - A corrected temporary strict noEmit config covering `scripts/**/*.ts` and `lib/**/*.test.ts` now passes with0 diagnostics. It extends the project tsconfig, disables incremental output, explicitly includes `node_modules/next/types/global.d.ts`, and excludes node_modules from discovery. This corrects the three config-only `RequestInit.next` false positives from the initial attempt. Temporary config was removed; no CI gate added.
