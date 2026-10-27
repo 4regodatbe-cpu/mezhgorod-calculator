@@ -98,7 +98,7 @@
 
 Рассмотреть отдельный noEmit typecheck скриптов и тестовой инфраструктуры, не нарушая рабочий tsconfig приложения.
 
-Статус IN PROGRESS: типовые группы исправили20 ошибок; Next ambient augmentation сняла три ложные ошибки; generic `tollsForApi` сохраняет V3 extra fields. Исправлены validation message, nullable guard и лишняя геометрия в RouteSummary фикстуре; строгий остаток31/13 из начальных57. Временный конфиг удаляется после проверки, CI gate не принимается. См. checkpoints `2026-10-27-0522`, `0530`, `0540`, `0550`, `0610`, `0630`, `0645`, `0700`.
+Статус IN PROGRESS: типовые группы исправили20 ошибок; Next ambient augmentation сняла три ложные ошибки; generic `tollsForApi` сохраняет V3 extra fields. Исправлены validation message, nullable guard, лишняя геометрия в RouteSummary и JSDoc типа supervisor args; строгий остаток28/12 из начальных57. Временный конфиг удаляется после проверки, CI gate не принимается. См. checkpoints `2026-10-27-0522`, `0530`, `0540`, `0550`, `0610`, `0630`, `0645`, `0700`, `0715`.
 
 **Блок 22. GitHub Actions.**
 

@@ -78,6 +78,7 @@ export async function runCalculationHandlerProbe({ outputPath, handler, requestF
 }
 
 /** A hard process deadline also bounds stuck imports, CPU work and ignored AbortSignals. */
+/** @param {{outputPath?: string, timeoutMs?: number, command?: string, args?: string[], quiet?: boolean, caseId?: string}} options */
 export async function superviseCalculationProbe({ outputPath = "calculation-runtime-probe.json", timeoutMs = 60_000,
   command = process.execPath, args, quiet = false, caseId = "anapa-krasnodar" } = {}) {
   const { request } = calculationProbeCase(caseId);

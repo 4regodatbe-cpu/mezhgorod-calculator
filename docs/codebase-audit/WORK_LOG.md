@@ -1,5 +1,11 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 07:15 МСК — block21 supervisor args typing DONE
+
+- The existing supervisor tests accepted injected child `args` at runtime, but inferred JSDoc type omitted this documented option and caused three strict errors. Added the option to `superviseCalculationProbe`'s JSDoc parameter shape; no runtime code changed.
+- `scripts/calculation-runtime-probe.test.ts` PASS, scoped ESLint and `git diff --check` PASS. Strict scripts/tests diagnostics moved31/13→28/12; temporary config removed; no CI gate adopted.
+- Checkpoint: [0715](../checkpoints/2026-10-27-0715-block-21-supervisor-args-typing-DONE.md).
+
 ## 27.10.2026 07:00 МСК — block21 V2 trace fixture shape DONE
 
 - The existing trace regression passed before and after correction. `calculateLegTolls` accepts `selectedFastRoute: RouteSummary`; removed the duplicate `coordinates` property from that summary fixture because route geometry is independently supplied via `routeGeometry`.
