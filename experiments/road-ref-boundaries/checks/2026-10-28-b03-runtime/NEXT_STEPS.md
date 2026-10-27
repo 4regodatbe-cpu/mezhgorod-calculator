@@ -1,5 +1,7 @@
 # Next B03 runtime work
 
+Localfix+new10casebrowserregression+TS/ESLint/defaultNextbuildPASS; portablepatch/evidence in LOCAL_FIX_REVIEW.md, REMOTEAPPUNCHANGED. Need ownerauthorize exactAddressField-only liveclassifierexception (mandatoryverify+TS+build+focusedUI retained; mixed/unknownfail-open) before runtimepublish. Now independently boundedliveAnapa/Donetsk(≤2queries/no routes) and B01offlinegap; no repeatedpool/serveraudit. Sourcepolicy/disabledsnapshotexpiry preserved.
+
 Newswap/focusdefect confirmed (baseline.json6PASS/1FAIL/3NOT_RUN). After save implementminimal localselected-stateclear, testnew10suite, persistportablepatch/results withoutpublishingapp/lib (classifierwouldtriggerforbiddenbroadlive). Need ownerapprove narrowCIhandling before applyingruntimepatchremote. Then independentB01offline; originalexternalB-onlyincidentnotreproducedbycurrentmocks.
 
 Latest browser usable with per-command networkgrant (browser-grant-recovery.json); defaultfailurebelow is historical. Next localNext+newmocked10cases undergrant. CIclassifier app/v2/lib→broadlive remains publicationconstraint for runtimefixes; no unauthorizedpolicychange.
