@@ -1,5 +1,9 @@
 # Experiment log
 
+27.10.2026 — Final outcome verification: manifest JSON parsed, two originals explicitly unread/nohash, no Dpromotion, both recovery/evidence paths exist: PASS. `git diff --check` PASS. No repeated source/test execution beyond these new artifact checks.
+
+27.10.2026 — Experiment7B05outcome: newofficialPODDindexread,2exactmainline/alternativeplanURLs retained (M4_PODD_SOURCE_MANIFEST.json). Mainline38.5MBreaderlimit, alternativetimeout/failedtext/screenshot; ordinarybrowserUNAUTHORIZEDreauthrequired, not retried. Originalpagesunread, nohash/downloadclaim. STARTEDresolvedBLOCKED_BY_VIEWER_CAPABILITY; sourceisidentifiednotabsent. EXPERIMENT7_RESULT.mdseparatesnewreciprocalAfrom0C/D,0newframeoperatorIDs/amounts/functionalclosures. TwofocusedtestfilesPASS, jqbindingcheckPASS. Parent0578dbdc/CI40506660438SUCCESS/liveSKIPPED. Nextexact545leaveswithworkingviewer/ownerextract, no repeatedgenericresearch. No runtimechanges.
+
 27.10.2026 — B05newsource discovery/STARTED: officialPODDcategory distinguishes mainline464+300–546+000 and alternative517+000–544+000 (13.03.2025). Exactcategory opens after fullindex4MiBtoolsizefailure. No oldfailed545URLs repeated. Save STARTED before2linkedPDF/≤6targetedleafoperations. Targetphysical5818209495/615270691 reused. checkpoint2026-10-27-experiment7-m4-podd-STARTED.md; no newbinding/price claimed. Next inspect originals after durableSTARTED and inactiveCI.
 
 27.10.2026 — Directional verification: `node --test experiments/tariff-proof-selection/m12-directed-approaches.test.mjs` PASS (one file aggregate,2named real-capture cases,0fail); `git diff --check` PASS. No D-level fare admitted.

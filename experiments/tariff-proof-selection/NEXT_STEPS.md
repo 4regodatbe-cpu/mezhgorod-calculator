@@ -1,5 +1,7 @@
 # Experiment7 next steps
 
+Currenthandoff EXPERIMENT7_RESULT.md. B05STARTEDresolvedby2026-10-27-experiment7-m4-podd-outcome.md:2exactoriginalURLs in M4_PODD_SOURCE_MANIFEST.json; pagesunreadbecause38.5MBsize/timeoutandbrowserreauth. Do not redosearches/M12cases or failedoriginalrequestsunchanged. Resumeonly545relevantleafviafunctioningordinaryPDFviewer/ownerextract. NewC/D0, no publicprice. M12needsoperatorregistrationcrosswalk; suppliedМ7chainmustnotbeusedas442Р158.
+
 ACTIVE B05STARTED: docs/checkpoints/2026-10-27-experiment7-m4-podd-STARTED.md. New officialPODD Voronezhcategory has mainline464–546 and alternative517–544 plans. Next2originals/≤6targetedleafoperations, not genericsearch or oldfailedURLs. No C/Duntil evidence reviewed; preserve progress before nextwork.
 
 M12_DIRECTIONAL_REGISTRATION_REVIEW.md now documents actualoppositedirections:1550561305exit22Н-0239;1550561306entryvia22Н-0226. No actual442selectedexit established; suppliedsecondchainisМ7. Three westernframes0/3operatorbindings. Freeflowfirst/lastregistration indexed leads originals403; noC/D. NextB05newlane/productsource, not oldfailedrequests. Priornewlegalpageprecisesequencewithdrawnexplicitly; no closureinferred.

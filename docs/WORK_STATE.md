@@ -1,5 +1,7 @@
 # Unified reliability queue — 27.10.2026
 
+Experiment7 PARTIAL: actualM12reversebranchdocumented, suppliedМ7chainnotР158, westernframes0/3operatorIDs;0newC/D/prices. B05newofficialPODDindex+2exactoriginalleads found, leafinspectionblockedbyreader38.5MBlimit/timeout/browserreauth (no bypass). [Result](../experiments/tariff-proof-selection/EXPERIMENT7_RESULT.md), [manifest](../experiments/tariff-proof-selection/M4_PODD_SOURCE_MANIFEST.json), [outcome](checkpoints/2026-10-27-experiment7-m4-podd-outcome.md). Nextexact545leaveswithworkingordinaryviewer/ownerextract, not repeatedsearch. Appunchanged.
+
 Experiment7 B05STARTED: new officialPODDcategory separates mainline464–546 and alternative517–544 plans, dated13.03.2025. [Recovery/budget](checkpoints/2026-10-27-experiment7-m4-podd-STARTED.md). Next bounded originalplanleaf inspection after save; no C/Dorprice yet. No app/tariff changes.
 
 Experiment7 M12directionreview: actualreverseentry uses1550561306via22Н-0226, not reversalofforwardexit1550561305. Three westernframesstill0/3operatorIDs; indexedfreeflowrulesfirst/lastregistrationlead, originals403. [Evidence](../experiments/tariff-proof-selection/M12_DIRECTIONAL_REGISTRATION_REVIEW.md), [checkpoint](checkpoints/2026-10-27-experiment7-m12-direction-registration.md). NoC/Dornewprice; nextB05directed545source. Prioroverpreciselegalrowsequenceexpresslywithdrawn.
