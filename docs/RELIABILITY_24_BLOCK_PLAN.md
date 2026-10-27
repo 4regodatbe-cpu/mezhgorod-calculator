@@ -109,6 +109,8 @@
 
 ## Status reconciliation
 
+Latest block16 DONE: app-side suggestion/timing diagnostics contain bounded metadata only. RED confirmed V2 production error boundary exposed raw exception/digest; now details are dev/test-only and console logs digest only. Focused render2/2, tsc, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0340-block-16-diagnostics-privacy-DONE.md`. Technical DONE19/24 (79.17%):1–17,19,22. Next block21 scripts/tests typecheck feasibility; blocks18/20 remain.
+
 Latest block15 DONE: route provider fetch keys vary by coordinates and provider options; six-hour fetch revalidation retained. Photon uses exact-URL positive-only five-minute LRU128, shared request pool and subscriber-safe cancellation; suggestion cache normalizes Russian query and is also five-minute LRU128. Three mock suites PASS. Next runtime framework cache remains unverified. Checkpoint `2026-10-27-0322-block-15-cache-review-DONE.md`. Technical DONE18/24 (75%):1–15,17,19,22. Next block16 diagnostics/privacy.
 
 Latest block14 DONE: mocked Valhalla transport rejection does not suppress valid faster OSRM; own ETA/geometry are retained. Existing route-selection and pipeline cases cover invalid candidates, tie order and unknown/null toll evidence. Focused suites, TypeScript, scoped ESLint and diff PASS. Checkpoint `2026-10-27-0314-block-14-provider-fallback-DONE.md`. Technical DONE17/24 (70.83%):1–14,17,19,22. Next block15 cache key/lifetime/isolation.

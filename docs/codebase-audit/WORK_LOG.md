@@ -1,5 +1,13 @@
 # Codebase audit fixes — work log
 
+## 27.10.2026 03:40 МСК — reliability block16 diagnostics/privacy DONE
+
+- Parent `c4bc4be85f5989822816ac83391b155ccd2407c6`; allowed branch only, PR14 Draft; no active parent run.
+- App-side diagnostic review found `/api/suggest` logs use bounded failure labels/counts and timings only; no query or URL. `calculation_timing` is opt-in with fixed stage names/counts/times/stops and no address fields. `/api/collect` strips street/house and returns generic errors.
+- Test-first render reproduced `app/v2/error.tsx` unconditionally rendering raw `error.message`/digest in production despite “test-only” copy and logging the full Error object. Changed it to gate details outside production and log only `{digest}` (or `unavailable`). Dev/test still shows the troubleshooting detail; no API/calculation behavior changed.
+- `scripts/v2-error-boundary-safe.test.mjs` RED before fix, GREEN2/2 after. `npx tsc --noEmit`, scoped ESLint and diff check PASS. No browser/network/logging-vendor access.
+- Checkpoint [block16](../checkpoints/2026-10-27-0340-block-16-diagnostics-privacy-DONE.md). Technical19/24 (79.17%): blocks1–17,19,22. Next block21 scripts/tests TypeScript feasibility.
+
 ## 27.10.2026 03:22 МСК — reliability block15 cache review DONE
 
 - Parent `ea559e8a8081eb07886d48b3f8ac1dba0d0046aa`; allowed branch only, PR14 Draft; no active run for parent.

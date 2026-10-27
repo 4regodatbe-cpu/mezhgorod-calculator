@@ -15,8 +15,9 @@
 - [x] Block13 — current V2 candidate fan-out compared with retained B10 request logs; all 68 recorded `(method, URL, body)` keys unique, no redundant exact request reproduced. No behavior changed. [Checkpoint](../checkpoints/2026-10-27-0301-block-13-provider-request-counts-DONE.md).
 - [x] Block14 — mocked Valhalla rejection leaves a valid faster OSRM route selectable; existing candidates preserve fastest-route geometry and unknown/null pricing. Route-selection/pipeline suites, tsc, ESLint, diff PASS. [Checkpoint](../checkpoints/2026-10-27-0314-block-14-provider-fallback-DONE.md).
 - [x] Block15 — reviewed route and address cache keys/TTLs/LRU/cancellation. Three mocked suites PASS; no defect reproduced, no code change. [Checkpoint](../checkpoints/2026-10-27-0322-block-15-cache-review-DONE.md).
+- [x] Block16 — app diagnostics use bounded fields; V2 production error boundary no longer exposes raw internal exception/digest. Render test2/2, tsc, ESLint, diff PASS. [Checkpoint](../checkpoints/2026-10-27-0340-block-16-diagnostics-privacy-DONE.md).
 
-Technical progress: 18/24 (75%): blocks1–15,17,19,22. Block20 remains PARTIAL; no credit for incomplete profiling coverage. Next block16 structured diagnostics/privacy review. B02/B04–B09 remain data-blocked.
+Technical progress: 19/24 (79.17%): blocks1–17,19,22. Blocks18 and20 remain open/partial. Next block21 scripts/tests TypeScript feasibility. B02/B04–B09 remain data-blocked.
 
 ## Follow-up plan (started 26.10.2026 23:49 МСК; separate from the completed prior six-block plan)
 
