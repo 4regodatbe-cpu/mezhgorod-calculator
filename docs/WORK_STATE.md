@@ -1,3 +1,7 @@
+## 28.10.2026 — обязательная бесплатная основа: local gazetteer STARTED
+
+Новое решение: поискгородов не зависит от обязательного paidAPI; Geoapifyнеподключать/неизменять. Выбран исследовательский GeoNamesRU+UA локальныйиндекс; исходные24Octархивы восстановлены из существующихGitHubartifacts сSHAсовпадением, новыескачиванияGeoNames/старый93caseaudit не повторяются. OSMextract — альтернативный offlineисточник/дополнительнаяпроверка, безbulkdownload. [Выбор/лимитыпрототипа](checkpoints/2026-10-28-free-local-gazetteer-selection-STARTED.md). Runtime/publicadmission пока запрещены; далееfull-datasetcompiler/search/замеры. ВсеизмененияLOCAL/no publish.
+
 ## 28.10.2026 — B05.7/8: review-only fallback подготовлен, реальная приёмка BLOCKED
 
 Добавлены изолированные fallback-admission-review.mjs/test: общийranker/polygons, честныеgeoapify-ID/непроверенные city-centres, план18+2с внутри20с,4запросаmax/stop429.6/6tests+lintPASS; реальныйdry-runбезключаBLOCKED_NO_CREDENTIALS/0вызовов. app/lib не менялись, e231637 сохранён, ничего не опубликовано. [Checkpoint](checkpoints/2026-10-28-address-fallback-review-prepared-PARTIAL.md), [точная Previewматрица/допуски](../experiments/address-search/B05_SERVER_FAILOVER_ACCEPTANCE.md). Нужны штатный scopedGeoapifyключ, разрешениеfreequota/source-review и позжеотдельная Previewпубликация. Ошибка16×502 и неизвестная инфраструктурная причина не закрыты.
