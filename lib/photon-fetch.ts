@@ -42,11 +42,22 @@ export async function fetchPhotonFeatures(
   else signal?.addEventListener("abort", abortFromCaller, { once: true });
 
   const request = (async () => {
-    const response = await fetchImpl(url, {
+    const send = () => fetchImpl(url, {
       headers: { Accept: "application/json", "User-Agent": "MezhgorodCalculator/1.0" },
       signal: controller.signal,
       next: { revalidate: 300 },
     });
+    let response: Response;
+    try {
+      response = await send();
+    } catch (error) {
+      // Retry only a failed connection, once, under the SAME deadline and
+      // cancellation signal. Do not retry HTTP errors, bodies or empty results.
+      // A new fetch lets the transport select a reachable address/backend;
+      // it is not an independent provider or a guarantee of another instance.
+      if (controller.signal.aborted || photonFailureReason(error) !== "connect_timeout") throw error;
+      response = await send();
+    }
     if (!response.ok) throw new Error(`Photon ${response.status}`);
     const data = (await response.json()) as { features?: PhotonFeature[] };
     if (!Array.isArray(data.features)) throw new Error("Photon returned invalid features");

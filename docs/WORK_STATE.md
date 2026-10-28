@@ -1,3 +1,7 @@
+## 28.10.2026 — адресный connect-retry: LOCAL PASS / REMOTE PENDING
+
+Подготовлен один повтор только UND_ERR_CONNECT_TIMEOUT в исходном20с deadline; отмена/HTTP/пустой ответ не повторяются.10/10 fetch и1/1 новой endpoint-регрессии PASS; TS/ESLint/directNextbuild PASS. Полный test:audit отклонён auto-review до исполнения. Публикация runtime запускает запрещённые без отдельного согласования broad live jobs; CI не менялся. Независимый провайдер, mobile/Preview и полный отказ Photon остаются открыты. [Checkpoint](checkpoints/2026-10-28-address-connect-retry-local-PASS.md). Это локальная запись, не заявление о remote-сохранении.
+
 ## 28.10.2026 — B01: реальный серверный отказ воспроизведён, FIX NOT DONE
 
 Сеть Codex восстановлена штатным network.enabled=true. Публичные POST /r для Волновахи и Донецка успешны; промежуточный «Доне» дал 502 за20.38с. Vercel log подтверждает connect_timeout:2 + budget:5 при7 вариантах/20с. Это реальный серверный отказ соединения с Photon, не отсутствие города. 3/3 целевых тестовых файла PASS; UI/mobile/Preview и устойчивый независимый fallback ещё не проверены. [Evidence и следующий шаг](checkpoints/2026-10-28-b01-network-restored-live-reproduction.md). Runtime-код/Production не изменены; широкие live-проверки не запускались.

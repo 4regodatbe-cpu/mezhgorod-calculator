@@ -32,6 +32,41 @@ function response(features: unknown[], status = 200): Response {
   return new Response(JSON.stringify({ features }), { status, headers: { "Content-Type": "application/json" } });
 }
 
+test("a transient connect timeout gets one fresh attempt within the original deadline", async () => {
+  let calls = 0;
+  const features = [{ properties: { name: "Recovered" } }];
+  const result = await fetchPhotonFeatures("https://photon.test/api", { fetchImpl: async () => {
+    if (++calls === 1) throw new Error("fetch failed", { cause: { code: "UND_ERR_CONNECT_TIMEOUT" } });
+    return response(features);
+  } });
+  assert.deepEqual(result, features); assert.equal(calls, 2);
+});
+
+test("persistent connect timeout is bounded to two attempts", async () => {
+  let calls = 0;
+  await assert.rejects(fetchPhotonFeatures("https://photon.test/api", { fetchImpl: async () => {
+    calls++; throw new Error("fetch failed", { cause: { code: "UND_ERR_CONNECT_TIMEOUT" } });
+  } }), /fetch failed/u);
+  assert.equal(calls, 2);
+});
+
+test("caller cancellation after connect failure never starts a retry", async () => {
+  let calls = 0; const caller = new AbortController();
+  await assert.rejects(fetchPhotonFeatures("https://photon.test/api", { signal: caller.signal, fetchImpl: async () => {
+    calls++; caller.abort(); throw new Error("fetch failed", { cause: { code: "UND_ERR_CONNECT_TIMEOUT" } });
+  } }), /cancelled/u);
+  assert.equal(calls, 1);
+});
+
+test("retry cannot restart the original deadline or accept a late response", async () => {
+  let calls = 0; let retrySignal: AbortSignal | null | undefined;
+  await assert.rejects(fetchPhotonFeatures("https://photon.test/api", { timeoutMs: 25, fetchImpl: async (_url, init) => {
+    if (++calls === 1) throw new Error("fetch failed", { cause: { code: "UND_ERR_CONNECT_TIMEOUT" } });
+    retrySignal = init?.signal; return new Promise<Response>(() => {});
+  } }), /timed out/u);
+  assert.equal(calls, 2); assert.equal(retrySignal?.aborted, true);
+});
+
 test("Photon fetch returns parsed features and preserves the cache window", async () => {
   let requestInit: RequestInit | undefined;
   const features = [{ geometry: { coordinates: [38.9, 45] }, properties: { name: "Краснодар" } }];
