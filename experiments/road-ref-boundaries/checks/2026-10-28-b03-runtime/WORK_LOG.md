@@ -1,5 +1,7 @@
 # B03 current browser/runtime work —28.10.2026
 
+OwnerapprovedCIstage1: exactAddressField-onlyexception, APIstrictercoverage+rename/sparseguards,12classifier+2workflowcontracttestsPASS/YAML/diffPASS. B03workflowimmutablePRhead+PR/UItrigger addsnew10(07swap/refocus) whilepreservingold8; bothgateandartifact. Appunchanged, specialmandatoryworkflowunchanged. Checkpoint2026-10-28-b03-ci-exception-stage1.md; pendinghostedREDproof07/wideskips beforeappPatch. Source d5f36478, priorCI40592051765SUCCESS. No livequeries/B01fixclaim.
+
 LiveunitDONE/B01blocked: oneactual/rAnapaHTTP502,7network_error, noexhaustedbudget;7141msbrowser/5691mscollector; UIunavailable+retry. DonetskNOT_RUN/no retry perfirstfailure rule. live-report.json/rawresponse/next-server.log andB01_LIVE_RESULT.md saved. NotHTTP503orprovenDNS/TLS/globaloutage. Existingpool/cache/cancellation sourceguardsreviewed, oldtestsnotrerun,0newB01runtimechanges; approvedindependentcoverage missing. B03localfixalready10/10+TS/ESLint/buildPASS, remoteappunchangedpendingexactUI-onlyCIpermission. Parent0600072e/tree0cea0e88; priorCI40591239988SUCCESS. Checkpoint2026-10-28-b03-b01-live-result.md; next ownerCIdecision/newsource, no repeatedrequests.
 
 LivecheckSTARTED: newboundedbrowserrunner b03-live-replacement.mjs, max2/rlookups(Anapa→clear→Donetsk), actualPhotonbehindunchangedAPI, no routecalls/retry; outputs/status/bodySHAs distinctfrommocks. checkpoint2026-10-28-b03-b01-live-address-STARTED.md. Runtimepatchremainsonlylocal/portable, notremoteapp. Existingcache/pool mechanics notrerun.

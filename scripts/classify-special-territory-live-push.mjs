@@ -3,8 +3,11 @@ import fs from "node:fs";
 const SAFE_SHA = /^[0-9a-f]{40}$/i;
 const MAX_COMPARE_FILES = 300;
 const ALLOWED_BRANCH = "fix/v3-missing-route-prices-2026-10-15";
+// Owner-authorized exact UI-only exception. Never exempt its directory or aliases.
+const ADDRESS_FIELD_UI = "app/v2/components/address-field.tsx";
 const LIVE_PATHS = [
-  "app/api/v2/",
+  "app/api/",
+  "app/r/",
   "app/v2/",
   "lib/",
   "data/special-territory-boundaries.json",
@@ -31,10 +34,10 @@ function isTestPath(file) {
 }
 
 export function classifyChangedPaths(paths) {
-  if (!Array.isArray(paths) || paths.length === 0 || paths.some((file) => typeof file !== "string" || !file || file.startsWith("/") || file.split("/").includes(".."))) {
+  if (!Array.isArray(paths) || paths.length === 0 || Array.from(paths).some((file) => typeof file !== "string" || !file || file.startsWith("/") || file.split("/").includes(".."))) {
     return { shouldRunLive: true, reason: "changed-paths-unverifiable" };
   }
-  const matched = paths.filter((file) => !isTestPath(file) && LIVE_PATHS.some((prefix) => file === prefix || file.startsWith(prefix)));
+  const matched = paths.filter((file) => file !== ADDRESS_FIELD_UI && !isTestPath(file) && LIVE_PATHS.some((prefix) => file === prefix || file.startsWith(prefix)));
   return matched.length
     ? { shouldRunLive: true, reason: "route-runtime-changed" }
     : { shouldRunLive: false, reason: "no-route-runtime-change-in-update" };
@@ -83,7 +86,17 @@ export function classifyPullRequestDelta(previousHead, currentHead, comparison) 
   if (comparison?.status !== "ahead" || !Array.isArray(comparison.files) || comparison.files.length >= MAX_COMPARE_FILES) {
     return { shouldRunLive: true, reason: "comparison-incomplete-or-non-linear" };
   }
-  return classifyChangedPaths(comparison.files.map((file) => file?.filename));
+  const paths = [];
+  for (const file of comparison.files) {
+    paths.push(file?.filename);
+    if (file?.status === "renamed") {
+      if (typeof file.previous_filename !== "string" || !file.previous_filename) {
+        return { shouldRunLive: true, reason: "rename-origin-unverifiable" };
+      }
+      paths.push(file.previous_filename);
+    }
+  }
+  return classifyChangedPaths(paths);
 }
 
 export function formatGitHubOutput(result) {

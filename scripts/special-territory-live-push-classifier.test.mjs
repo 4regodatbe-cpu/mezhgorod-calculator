@@ -10,6 +10,34 @@ import {
 
 const previousHead = "1".repeat(40);
 const currentHead = "2".repeat(40);
+const addressField = "app/v2/components/address-field.tsx";
+
+test("only the exact AddressField UI path skips wide live jobs", () => {
+  assert.equal(classifyChangedPaths([addressField]).shouldRunLive, false);
+  assert.equal(classifyChangedPaths([addressField, "docs/WORK_STATE.md", "scripts/b03-browser-workflow.test.mjs"]).shouldRunLive, false);
+  for (const other of [
+    "app/v2/components/address-field.tsx.backup", "app/v2/components/types.ts",
+    "app/v2/components/use-v2-calculation.ts", "lib/v3-calculation/route-leg-pricing.ts",
+    "data/tolls/m4-current.json", "data/toll-feature-switches.json",
+    "app/api/v2/calculate/route.ts", "app/api/suggest/route.ts", "app/r/route.ts",
+    "package.json", "pnpm-lock.yaml",
+  ]) {
+    assert.equal(classifyChangedPaths([other]).shouldRunLive, true, other);
+    assert.equal(classifyPullRequestDelta(previousHead, currentHead, comparison([addressField, other])).shouldRunLive, true, other);
+  }
+});
+
+test("AddressField cannot hide missing paths, sparse lists or renamed runtime", () => {
+  for (const paths of [[], null, [addressField, undefined], [addressField, "../unknown"], [addressField, ...Array(1)]]) {
+    assert.equal(classifyChangedPaths(paths).shouldRunLive, true);
+  }
+  const sparse = Array(2); sparse[0] = addressField;
+  assert.equal(classifyChangedPaths(sparse).shouldRunLive, true);
+  assert.equal(classifyPullRequestDelta(previousHead, currentHead, comparison([addressField], {files:[{filename:addressField,status:"renamed",previous_filename:"app/v2/page.tsx"}]})).shouldRunLive, true);
+  assert.equal(classifyPullRequestDelta(previousHead, currentHead, comparison([addressField], {files:[{filename:addressField,status:"renamed"}]})).shouldRunLive, true);
+  assert.equal(classifyPullRequestDelta(previousHead, currentHead, comparison([addressField], {status:"diverged"})).shouldRunLive, true);
+  assert.equal(classifyPullRequestDelta(previousHead, currentHead, comparison([addressField], {files:Array(300).fill({filename:addressField})})).shouldRunLive, true);
+});
 
 test("GitHub output contains only valid key-value commands", () => {
   assert.equal(formatGitHubOutput({ shouldRunLive: false, reason: "head-already-checked" }),

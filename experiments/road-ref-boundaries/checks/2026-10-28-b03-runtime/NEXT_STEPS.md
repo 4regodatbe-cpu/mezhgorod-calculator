@@ -1,5 +1,7 @@
 # Next B03 runtime work
 
+OwnerCIpermissionGRANTED; stage1exception+PRbrowsernew10/legacy8savedpendinghostedinspection. Read2026-10-28-b03-ci-exception-stage1checkpoint. Needactualnew07RED onunchangedsource +specialverifyPASS/widesSKIPPED, thenapplysaved3linepatchonlyandverifygreenallbrowser+mandatoryCI+readback. Do not claimB01external502fixed or updatebranchwhileCIactive.
+
 STOPnewidenticalnetworkchecks: actualAnapa502/7network_error, Donetsknotrun (live-report.json/B01_LIVE_RESULT.md). Next REQUIREDownerdecision: exactapp/v2/components/address-field.tsx-onlyliveclassifierexception, retainverify/TS/build+focusedUI, mixed/unknownremainlive; then applyalreadyverified3linepatch. B01needsapprovedindependentsource;0newruntimechanges, snapshotdisabledexpiryunchanged. No broadCI/poolredo/falseoriginalB-onlyclosure.
 
 ACTIVE boundedliveaddressSTARTEDcheckpoint: run b03-live-replacement.mjs onceundergrant, readexistingreportbeforerecovery, max2queries/stopfirstlivefailure. Then B01precisegapassessment, no oldpooltests/snapshotactivation or wideCI/runtimepush.

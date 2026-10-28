@@ -1,4 +1,6 @@
-## B03/B01 local verification —28.10.2026; runtime publication pending CI decision
+## B03 CI exception authorized —28.10.2026; stage1 hosted checks pending
+
+ExactAddressField exception+mixed/fail-open tests14PASS, B03PRheadbrowserworkflow now runslegacy8+new10including07swap/refocus; mandatoryspecialverify/TS/buildunchanged. ApppatchNOTyetapplied. [Stage1checkpoint/recovery](checkpoints/2026-10-28-b03-ci-exception-stage1.md). Firsthostednew07expectedRED onoldsource; inspectactualjobs/wideskips beforestage2patch. B01external502remainsseparate.
 
 Latest B03/B01: actualcoldAnapa/r502, UIerror+retryvisible,7network_error/onePhotonorigin, DonetskNOT_RUN afterfirstfailure; no claimHTTP503/globaloutage. [Liveevidence+B01assessment](../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/B01_LIVE_RESULT.md), [checkpoint](checkpoints/2026-10-28-b03-b01-live-result.md). B01noadditionalprovedruntimebug;0B01changes, independentapprovedsourcemissing. B03local3linefix10/10browser+TS/ESLint/NextbuildPASS, patchdurable but **remoteappunchanged**. Need ownerapproveexactAddressField-onlyCIexception before runtimepublish; no wideaudit/CIchange authorized. Newtariffpolicyconfirmed; snapshotdisabled/expiryunchanged.
 
