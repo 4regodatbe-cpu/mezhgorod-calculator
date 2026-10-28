@@ -1,5 +1,7 @@
 # B03 current browser/runtime work —28.10.2026
 
+Stage1verifiedthenappPatch: all3runs40644589286/40644582844/40644589299completed, specialverifySUCCESS+widesSKIPPED, B03mandatoryverify458+12+3+4/TS/buildPASS and07expectedRED. stage1-verified.json persistsproof. AppliedonlysavedAddressField3lines, exactafterSHA5ece9b65/reversepatchcheck/local15testsPASS. Checkpoint2026-10-28-b03-patch-published-STARTED.md; nextexactreadback+actualgreenallbrowser/mandatoryCIbeforeDONE. B01external502untouched, no othersourcecomponentschanged.
+
 Stage1hostedREDverified40643922713/job122668209815: actualnew07staleAnapaFAIL,6PASS/3NOT_RUN; archive12796956685downloaded/hash885d69e5verified/selectedJSONpersisted. OnlypushB03emitted, originalPRverifyNOT_RUNforhead; addedsameofflineverifyjobtoB03withouteditingoriginalspecialworkflow or enablingwides. Local12classifier+3workflowcontractsPASS. Apppatchstillnotapplied. Checkpoint2026-10-28-b03-ci-stage1-red-verify-gap.md; nextactualverifyPASS/browserRED thenpatch.
 
 OwnerapprovedCIstage1: exactAddressField-onlyexception, APIstrictercoverage+rename/sparseguards,12classifier+2workflowcontracttestsPASS/YAML/diffPASS. B03workflowimmutablePRhead+PR/UItrigger addsnew10(07swap/refocus) whilepreservingold8; bothgateandartifact. Appunchanged, specialmandatoryworkflowunchanged. Checkpoint2026-10-28-b03-ci-exception-stage1.md; pendinghostedREDproof07/wideskips beforeappPatch. Source d5f36478, priorCI40592051765SUCCESS. No livequeries/B01fixclaim.

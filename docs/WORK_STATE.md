@@ -1,5 +1,7 @@
 ## B03 CI exception authorized —28.10.2026; stage1 hosted checks pending
 
+Stage1CI VERIFIED: specialverify/classifierSUCCESS+widesSKIPPED, B03push/PRofflineverifySUCCESS and actualnew07REDonoldcomponent. Exact3lineAddressFieldpatch nowappliedalone, sourceSHA5ece9b65matchespriorverifiedfix. [Stage2checkpoint](checkpoints/2026-10-28-b03-patch-published-STARTED.md), [stage1proof](../experiments/road-ref-boundaries/checks/2026-10-28-b03-ci/stage1-verified.json). Next remoteappreadback+actualhostedGREEN(current10incl07/legacy8/mandatoryverify), notyetclaimed. B01external502notfixed.
+
 Actualhostedstage1new07RED confirmed(run40643922713, artifactSHAverified/archiveparsed); appstillunchanged. PushtransportdidnotemitPRspecialverify, so B03workflow nowmirrorsunchangedmandatoryofflineverify inownjob; originalworkflowunchanged. [Correction/evidence](checkpoints/2026-10-28-b03-ci-stage1-red-verify-gap.md). NeedverifyPASS+actualnewbrowserREDbeforeappPatch; no widejobsorB01closureclaim.
 
 ExactAddressField exception+mixed/fail-open tests14PASS, B03PRheadbrowserworkflow now runslegacy8+new10including07swap/refocus; mandatoryspecialverify/TS/buildunchanged. ApppatchNOTyetapplied. [Stage1checkpoint/recovery](checkpoints/2026-10-28-b03-ci-exception-stage1.md). Firsthostednew07expectedRED onoldsource; inspectactualjobs/wideskips beforestage2patch. B01external502remainsseparate.

@@ -14,6 +14,9 @@ export function AddressField({ label, value, onChange, placeholder }: { label: s
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     if (value.position || value.label.trim().length < 3) {
+      setItems([]);
+      setCitySnapshot(false);
+      setOpen(false);
       setSearchState("idle");
       return;
     }
