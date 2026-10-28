@@ -65,3 +65,12 @@ test('deadline during body parsing cannot admit late coordinates', async () => {
     fetchImpl: async () => ({ ok: true, json: async () => { time = 1000; return { results: [row('late', 'Region')] }; } }) }));
   assert.equal(result.status, 'budget-exhausted'); assert.deepEqual(result.candidates, []);
 });
+test('provider metadata cannot echo API key or credential-bearing URLs into research results', async () => {
+  const key='synthetic-test-key';
+  const result=await researchFallback(options({fetchImpl:async()=>Response.json({results:[{
+    ...row('one','Region'),datasource:{sourcename:'openstreetmap',attribution:'OSM contributors',
+      license:'ODbL',url:`https://example.invalid/?apiKey=${key}`,debug:{key}},
+  }]})}));
+  assert.ok(!JSON.stringify(result).includes(key));
+  assert.equal(result.candidates[0].datasource.sourcename,'openstreetmap');
+});

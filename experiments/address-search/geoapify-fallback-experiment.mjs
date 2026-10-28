@@ -1,5 +1,20 @@
 // Research only: never imported by app/lib; disabled unless explicitly enabled.
 // Results are review candidates, NOT public address suggestions or precise fixes.
+function reviewedSourceMetadata(source, apiKey) {
+  if (!source || typeof source !== 'object' || Array.isArray(source)) return null;
+  const result = {};
+  // Provider debug/raw request metadata is not safe provenance for export.
+  for (const field of ['sourcename', 'attribution', 'license', 'url']) {
+    const value = source[field];
+    if (typeof value !== 'string' || !value.trim() || value.length > 2048 || value.includes(apiKey)) continue;
+    if (field === 'url') {
+      try { const url = new URL(value); if (url.protocol !== 'https:' || url.username || url.password || url.search || url.hash) continue; }
+      catch { continue; }
+    }
+    result[field] = value;
+  }
+  return Object.keys(result).length ? result : null;
+}
 export async function researchFallback({ enabled = false, photon, query, apiKey,
   deadline, signal, fetchImpl = globalThis.fetch, now = Date.now } = {}) {
   const stop = (reason) => ({ status: reason, candidates: [] });
@@ -33,10 +48,12 @@ export async function researchFallback({ enabled = false, photon, query, apiKey,
       for (const row of body.results) {
         const { place_id: id, lat, lon, city, state, county, country, formatted } = row ?? {};
         if (typeof id !== 'string' || !id || ids.has(id) || ![lat, lon].every(Number.isFinite) || Math.abs(lat) > 90 || Math.abs(lon) > 180 || row.result_type !== 'city' || ![city, state, country, formatted].every(value => typeof value === 'string' && value.trim().length > 0 && value.length <= 1000)) continue;
+        if ([id, city, state, country, formatted].some(value => value.includes(apiKey))) continue;
         ids.add(id);
-        candidates.push({ provider: 'geoapify', id, city, state, county: county ?? null, country,
+        candidates.push({ provider: 'geoapify', id, city, state,
+          county: typeof county === 'string' && county.length <= 1000 && !county.includes(apiKey) ? county : null, country,
           label: formatted, position: { lat, lng: lon }, precision: 'provider-reported-city-center',
-          reviewRequired: true, datasource: row.datasource ?? null });
+          reviewRequired: true, datasource: reviewedSourceMetadata(row.datasource, apiKey) });
       }
       return { status: candidates.length ? 'unreviewed-candidates' : 'no-admissible-candidates', candidates,
         attributionRequired: ['Geoapify', 'OpenStreetMap contributors'], publicUseApproved: false };
