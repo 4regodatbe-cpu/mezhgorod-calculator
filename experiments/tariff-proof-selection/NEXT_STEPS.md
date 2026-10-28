@@ -1,3 +1,15 @@
+## B05 approved working model —LOCALONLY28.10.2026
+
+## B06 — M11 composition guard checked 28.10.2026
+
+The local geometry adapter composes one 15–58 and one 58–679 component and blocks totals when a detected head is unbound. Focused test4/4PASS. See [checkpoint](../../docs/checkpoints/2026-10-28-b06-m11-composition-local-PASS.md). Next exact missing fact is one route's directed head/product endpoint binding, not another tariff-table review.
+
+## B07 — offline allocation guard checked 28.10.2026
+
+Sixteen M12↔CKAD rows requiring 120-minute registration context are held `unknown` by the current adapter; targeted regression passes. See [checkpoint](../../docs/checkpoints/2026-10-28-b07-context-gate-regression-local-PASS.md). Do not infer/charge these rows without registration history. Next evidence: one real route's recorded section/frame sequence and times; otherwise proceed to independent work.
+
+Newestownerpolicy accepts73.9kmcase320RUBThursday; [localmodule/5tests/contract](B05_ACCEPTED_WORKING_LOCAL.md). Do notwaitcash-lanecertificationforthiscase. To integrate, carryexistingdirectionaledgewitness throughruntimevalidationandreplace545productcoverage, neverappend320toexistingM4total. Publicationsecurityblocked. NextboundednewB06–B09sourcefacts, notoldcaseaudits.
+
 ## B05 — новое подтверждение правила/маршрута через Opera 28.10.2026
 
 [Rule/exit review](B05_2016_RULE_517_EXIT_REVIEW.md): историческое официальное правило выбора29,2/73,9 принято по пользовательской политике до нового, без требования «обновить дату». Реальный gate5818209495 продолжает до Р298/517-км развязки; 73,9-км full-bundle — сильный кандидат, 320/410₽ лишь условный расчёт принятой CategoryI цены. **Нужен один новый точный операторский gate-to-product документ либо официальный georeferenced517+808→OSM crosswalk**, затем один real positive+negative. Until then `rub:null` / B05 PARTIAL; переключайся на независимую B11/B01 работу, не ределай22маршрута/332PDF.

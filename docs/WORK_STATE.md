@@ -1,3 +1,33 @@
+## RESTORED TO GITHUB — 28.10.2026 (read this first)
+
+Published safe portions of Codex local patch from checksum `2e4b3ddf01ddcb4167620d3c5e1435efaf649423aecc4b2d108fbd1a95220604` to **only** `fix/v3-missing-route-prices-2026-10-15` with verified source blob hashes and CI. Successful commits: `61f736eb4a111a9176bf00499ce646457bd64129` (B05 module + tests), `375baa6bb99db909d9fd10a594300f4d54a04481` (strict B11 CI + API parity tests), `c59fc7096f8bf3e34886be6f0f8883338639fbf6` (exact three-line B11 runtime optimization), `88cee7851c730fc09502b571427236137b96367e` (B01 metadata security fix, B06 M11 and B07/CKAD tests). Associated CI runs for these source commits verified SUCCESS; broad live jobs SKIPPED. **B11 working API branch updated, not Production**; B05 remains a nonintegrated working quote module (320/410RUB for approved M4 case, not a full trip); B01 still disabled without Geoapify key; B06–B09 product/physical gaps remain. Historical PRE-PUBLICATION local checkpoints below intentionally retain the original timestamps/status; they do not override this fresh state.
+
+Two *previously security-denied* old historical files `experiments/address-search/NEXT_STEPS.md` and `experiments/address-search/WORK_LOG.md` were **not retransmitted/modified**, and two binary `.log.gz` evidence files remain only in the user's downloadable patch. Do not bypass the prior denial or claim full 40/40 transfer. New independent checkpoint: [restoration summary](checkpoints/2026-10-28-restored-codex-publication-STATUS.md). PR14 stays draft, main/Production/Android/backup untouched. Next Codex: inspect actual HEAD and CI, verify B11 impact, safely design B05 integration with directional witness + product-level replacement (not additive +320), retain B01 external key blocker and exact B06–B09 outstanding facts. No repeated audits of 22 M4 routes/GeoNames/old snapshots.
+
+## LOCAL continuation / security review BLOCKED —28.10.2026
+
+B06 M11 component composition also verified locally: exactly one head plus one mainline component, with unresolved head blocking the combined amount; 4/4 focused tests pass. [Checkpoint](checkpoints/2026-10-28-b06-m11-composition-local-PASS.md). Physical 15–58 product binding remains partial.
+
+B07 targeted context guard additionally verified locally: the16 matrix pairs requiring M12/CKAD registration context remain unknown in the runtime adapter. [Checkpoint](checkpoints/2026-10-28-b07-context-gate-regression-local-PASS.md). 6/6 focused subtests pass; B07 actual route allocation remains partial pending registration history.
+
+LOCALfinalgate976/976+quotePASS/TS/scopedESLint0warnings/directNext16pagesPASS; Node24.19/source3de8469. [Resultmatrix](../experiments/address-search/LOCAL_CONTINUATION_RESULT.md), [gatecheckpoint](checkpoints/2026-10-28-local-continuation-gate-PASS.md). Noapp/lib/data/Androidchange/B11application/B05runtimeintegration/GitHubsave. Securitydispositionrequired; retainlocalpatches, noalternatewriter. ActualOperaB06–B09used; B07originalrecovered/0newpairs. B01metadatafix10PASS/no realkey.
+
+B01localexperimentalmetadata-keyecho defect RED→FIXED10/10tests; safesourcefieldsretained. LiveGeoapifyBLOCKED_BY_EXTERNAL_CREDENTIAL/keyabsent, fallbackdisabled. [Checkpoint+mandatorygateSTARTED](checkpoints/2026-10-28-b01-metadata-local-PASS-gate-STARTED.md). Nextonefulloffline/TS/scopedlint/directNextbuild, no broadliveorAPIpatchpublication.
+
+B09Operaoperatorpagesread; exactmapexplicitlytemporarilyunavailable/technicalworks. [Localreview](../experiments/tariff-proof-selection/B09_OPERA_LOCAL_2026-10-28.md). No cash/cardcalculatorselection/transponderpriceimport/newpairs; actualzone2/3entry/receiptconditions remainmaterial. NextB01adapter/key.
+
+B08oneboundedsearch+actualOperaofficialCKADmapread: noexactGolitsynoway/chainagemapping. [Localreview](../experiments/tariff-proof-selection/B08_OPERA_LOCAL_2026-10-28.md). PublisherblockedplanNOTretried, nofreezero/newpairclaim. NextB09operatorzonebundle.
+
+B07Operarecoveredprevious403originalAppendix3: directfirst/lastframe rule and120minuteM12/CKADproductallocationconditions retained. [Review](../experiments/tariff-proof-selection/B07_OPERA_LOCAL_2026-10-28.md). No originalbinarySHA/newframeIDs/fares; actual22Н-0239notР158. PARTIALforregistrationidentity/time, notdocumentage. NextB08boundedlead.
+
+B06Operaactuallyused: officialM11labelsCKAD48/M1058/Tver149read; defaulttransponderpriceexcluded. [Localreview](../experiments/tariff-proof-selection/B06_OPERA_LOCAL_2026-10-28.md). Fullcash/cardcompositionstillmissing48→58headcharge/149exitcrosswalk, notcash-lanecertification.0newpairs. NextB07targetedofficialrules, nooldreplays.
+
+B05approvedworkingcomponent implementedLOCALLY: northboundreviewed73.9kmcase320RUBThursday/410Saturdayreplay,5testsPASS+scopedlintclean. [Contract](../experiments/tariff-proof-selection/B05_ACCEPTED_WORKING_LOCAL.md), [checkpoint](checkpoints/2026-10-28-b05-accepted-working-local-PASS.md). Noapp/libintegration/wholetrippricedclaim; preserveotherroadsunknown and replace545coverage, neverappend320toaggregate. Oldarchivesunchanged. NextboundednewOperaB06–B09leads.
+
+B11localfullAPIvariants3/3PASS aftercorrectingspecialtestfixtureYalta→DNR+branchassertion. SavedDonetsk12exactmockrequests/run/0misses/0network/bodyparity; singlehandlerpair3100→2015ms, notE2ESLA. [Checkpoint](checkpoints/2026-10-28-b11-api-variants-local-PASS.md). APIstillunchanged; noGitHubsave/CIforpreparation. NextB05acceptedworkingcase locally.
+
+Freshremote702fcopy restored prior technicalCIpatch; originalAPIunchanged. Securityrefusalnotresolved/nopublicationretry. Ownerexplicitlyallowslocalindependentblocks, eachlocalcheckpoint/patch; noGitHubsavedclaim. [Recovery/sequence](checkpoints/2026-10-28-resume-security-BLOCKED-local-STARTED.md). New28Octworkingtruth+B05specific320RUBdecision accepted. NextB11fullAPIvarianttests, thenB05localmodule, boundedB06–B09/B01.
+
 ## B05 operator rule carry-forward / 517-km exit cross-check — 28.10.2026
 
 **Официальное правило от26.12.2016 принято по решению владельца до новой редакции.** Прямой HTML прочитан через Opera. На север29,2 или73,9км по фактическому пути; сохранённая Тамань→Воронеж через5818209495 продолжает обход до развязки рядом с517км (OSM3057885096/5104; официальный узел517+808 не привязан напрямую к OSM). **73,9 км — сильный рабочий кандидат**, 320₽ Пн–чт /410₽ Пт–вс по приказу58 — **только условные суммы двух продуктов**, не real-priced-positive. B05 PARTIAL: ещё нужен операторский gate→bundle и точное terminal cut. `unknown/null` и runtime не менялись. [Полный разбор](../experiments/tariff-proof-selection/B05_2016_RULE_517_EXIT_REVIEW.md), [checkpoint](checkpoints/2026-10-28-b05-opera-rule-exit-DONE.md). Не повторять старый аудит.
