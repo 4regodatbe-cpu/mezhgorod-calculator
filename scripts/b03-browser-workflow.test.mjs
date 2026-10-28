@@ -27,6 +27,7 @@ test('push-only B03 runs retain the original mandatory offline verify commands',
     'node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts',
     'node scripts/special-territory-live-push-classifier.test.mjs',
     'node scripts/v2-issue2-github-capture.test.mjs',
+    'pnpm test:audit',
     'node node_modules/typescript/bin/tsc --noEmit',
     'node node_modules/next/dist/bin/next build',
   ]) assert.ok(workflow.includes(command),command);
