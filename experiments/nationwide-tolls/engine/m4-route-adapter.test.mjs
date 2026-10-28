@@ -62,3 +62,8 @@ test('355 southward artificial fare boundaries stay unknown with a specific reas
   assert.equal(q.tolls,null);assert.equal(q.reason,'m4_unsupported_paid_endpoint_pair');
  }
 });
+test('M4 515→620 quote carries the exact tariff-product vector needed for a safe 545 replacement',()=>{
+ const q=matrixM4Component({...production(['m4-515','m4-620']),endpointOnly:true},'2026-10-15T12:00:00+03:00',3600);
+ assert.equal(q.tolls.amount,650);
+ assert.deepEqual(q.productCoverage,{sectionVector:['m4-515','m4-545-a','m4-545-b','m4-620']});
+});

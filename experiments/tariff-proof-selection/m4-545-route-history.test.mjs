@@ -3,7 +3,7 @@ import {gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {inspectSaved545History} from './m4-545-route-history.mjs';
+import {inspect545TraceChunks,inspectSaved545History} from './m4-545-route-history.mjs';
 const path='../nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/2026-10-16T00-10-53-930Z-capture.json.gz';
 const bytes=readFileSync(new URL(path,import.meta.url));
 assert.equal(createHash('sha256').update(bytes).digest('hex'),'db7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a');
@@ -16,6 +16,23 @@ test('real saved Taman→Voronezh case proves observed history, not a full price
   assert.equal(r.traceCallIndex,10);assert.equal(r.gateEdgeIndex,38);assert.equal(r.connectorEdgeIndex,70);
   assert.equal(r.observedGateCount,1);assert.equal(r.rub,null);assert.equal(r.pricingStatus,'unknown');
   assert.deepEqual(r.confirmedProducts,[]);
+});
+test('runtime-shaped raw trace chunks reproduce the saved directed witness without capture metadata',()=>{
+  const calls=original.calls.filter(c=>String(c.url).includes('/trace_attributes'));
+  const chunks=calls.map(c=>JSON.parse(c.text).edges);
+  const r=inspect545TraceChunks({chunks,complete:true,chunkCount:chunks.length,checkedChunkCount:chunks.length,failedChunkCount:0});
+  assert.equal(r.historyStatus,'observed_reviewed_case');assert.equal(r.traceChunkIndex,7);
+  assert.equal(r.gateEdgeIndex,38);assert.equal(r.connectorEdgeIndex,70);assert.equal(r.rub,null);
+});
+test('runtime witness fails closed when any trace chunk is missing or its exact path is split',()=>{
+  const calls=original.calls.filter(c=>String(c.url).includes('/trace_attributes'));
+  const chunks=calls.map(c=>JSON.parse(c.text).edges);
+  assert.equal(inspect545TraceChunks({chunks:chunks.slice(0,-1),complete:true,chunkCount:chunks.length,
+    checkedChunkCount:chunks.length-1,failedChunkCount:1}).reason,'incomplete_trace');
+  const copy=structuredClone(chunks);const splitAt=40;const originalChunk=copy.splice(7,1)[0];
+  copy.splice(7,0,originalChunk.slice(0,splitAt),originalChunk.slice(splitAt));
+  const r=inspect545TraceChunks({chunks:copy,complete:true,chunkCount:copy.length,checkedChunkCount:copy.length,failedChunkCount:0});
+  assert.equal(r.reason,'unproved_directed_cash_path');
 });
 test('incomplete trace does not admit history',()=>{
   const c=copy();c.record.validation.complete=false;

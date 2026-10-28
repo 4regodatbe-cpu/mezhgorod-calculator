@@ -42,28 +42,21 @@ const expectedOnwardPath = [
   ['301694367','3057885104'],
   ['705714822','318331760'],
 ];
-export function inspectSaved545History(capture) {
+/** Validate only the retained directed booth-and-exit witness.  Runtime trace
+ * chunks are passed in-memory; this helper performs no I/O or provider calls. */
+export function inspect545TraceChunks({chunks, complete, chunkCount, checkedChunkCount, failedChunkCount}) {
   const unknown = reason => ({historyStatus:'unknown', reason, pricingStatus:'unknown', rub:null});
-  const validation = capture?.record?.validation;
-  const traceCalls = capture?.calls?.filter(c => String(c.url).includes('/trace_attributes')) ?? [];
-  if (!validation?.complete || validation.failedChunkCount !== 0 ||
-      validation.checkedChunkCount !== validation.chunkCount ||
-      traceCalls.length !== validation.chunkCount || !traceCalls.length) return unknown('incomplete_trace');
-  const chunks = [];
-  try {
-    for (const c of traceCalls) {
-      if (c.status !== 200) return unknown('failed_trace_response');
-      const edges = JSON.parse(c.text).edges;
-      if (!Array.isArray(edges) || !edges.length) return unknown('missing_edges');
-      for (let i=0;i<edges.length;i++) {
-        const e=edges[i];
-        if (!Number.isInteger(e.begin_shape_index) || !Number.isInteger(e.end_shape_index) ||
-            e.begin_shape_index < 0 || e.end_shape_index < e.begin_shape_index ||
-            (i && edges[i-1].end_shape_index !== e.begin_shape_index)) return unknown('shape_index_gap');
-      }
-      chunks.push(edges);
+  if (!complete || !Array.isArray(chunks) || !chunks.length || chunkCount !== chunks.length ||
+      checkedChunkCount !== chunkCount || failedChunkCount !== 0) return unknown('incomplete_trace');
+  for (const edges of chunks) {
+    if (!Array.isArray(edges) || !edges.length) return unknown('missing_edges');
+    for (let i=0;i<edges.length;i++) {
+      const e=edges[i];
+      if (!Number.isInteger(e.begin_shape_index) || !Number.isInteger(e.end_shape_index) ||
+          e.begin_shape_index < 0 || e.end_shape_index < e.begin_shape_index ||
+          (i && edges[i-1].end_shape_index !== e.begin_shape_index)) return unknown('shape_index_gap');
     }
-  } catch { return unknown('malformed_trace_response'); }
+  }
   const hits=chunks.flatMap((edges,chunkIndex)=>edges.flatMap((e,edgeIndex)=>
     String(e.end_node?.node_id)==='5818209495' ? [{chunkIndex,edgeIndex}] : []));
   // A repeated hit could be chunk overlap or re-entry, neither is safe to deduplicate here.
@@ -87,7 +80,7 @@ export function inspectSaved545History(capture) {
     predecessor:'northbound_M4_to_fork_4522140254',
     cashBranch:'southern_northbound_5818209495',
     successor:'bypass_side_M4_then_connector_301694367_to_R298',
-    traceCallIndex:capture.calls.indexOf(traceCalls[chunkIndex]),
+    traceChunkIndex:chunkIndex,
     gateEdgeIndex:edgeIndex,
     connectorEdgeIndex:connector,
     observedGateCount:1,
@@ -97,4 +90,27 @@ export function inspectSaved545History(capture) {
     pricingStatus:'unknown', rub:null,
     missingProof:['dated_operator_route_product_rule','certified_product_boundary_crossings','applicable_fare_and_no_double_payment'],
   };
+}
+
+export function inspectSaved545History(capture) {
+  const validation = capture?.record?.validation;
+  const traceCalls = capture?.calls?.filter(c => String(c.url).includes('/trace_attributes')) ?? [];
+  if (!validation?.complete || validation.failedChunkCount !== 0 ||
+      validation.checkedChunkCount !== validation.chunkCount ||
+      traceCalls.length !== validation.chunkCount || !traceCalls.length) {
+    return inspect545TraceChunks({chunks:[],complete:false,chunkCount:0,checkedChunkCount:0,failedChunkCount:1});
+  }
+  try {
+    const chunks=[];
+    for (const c of traceCalls) {
+      if (c.status !== 200) return {historyStatus:'unknown',reason:'failed_trace_response',pricingStatus:'unknown',rub:null};
+      const edges=JSON.parse(c.text).edges;
+      if (!Array.isArray(edges)) return {historyStatus:'unknown',reason:'missing_edges',pricingStatus:'unknown',rub:null};
+      chunks.push(edges);
+    }
+    const result=inspect545TraceChunks({chunks,complete:true,chunkCount:validation.chunkCount,
+      checkedChunkCount:validation.checkedChunkCount,failedChunkCount:validation.failedChunkCount});
+    if(result.historyStatus==='observed_reviewed_case') result.traceCallIndex=capture.calls.indexOf(traceCalls[result.traceChunkIndex]);
+    return result;
+  } catch { return {historyStatus:'unknown',reason:'malformed_trace_response',pricingStatus:'unknown',rub:null}; }
 }

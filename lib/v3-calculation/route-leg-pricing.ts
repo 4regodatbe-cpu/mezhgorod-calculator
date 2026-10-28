@@ -17,7 +17,7 @@ import { auditM1M3SelectedRoute } from "@/experiments/nationwide-tolls/m1-m3-gat
 import m1m3OfficialGates from "@/experiments/nationwide-tolls/m1-m3-official-gates.json";
 import { quoteM3ThreeGateShadow, quoteM1SingleGateShadow } from "@/experiments/nationwide-tolls/m1-m3-shadow-quote.mjs";
 import { recoverCorridorTolls } from "@/lib/toll-recovery";
-import { validateTollEdges, type TollValidation } from "@/lib/toll-validator";
+import { getPrivateTollTraceChunks, validateTollEdges, type TollValidation } from "@/lib/toll-validator";
 import { resolveSelectedM4Endpoints, type ProductionM4Result } from "@/lib/toll-engine/m4-production";
 import { calculateProductionM11 } from "@/lib/toll-engine/m11-production";
 import { facilityAnchors, haversineKm } from "@/lib/toll-engine/m11-moscow-geometry";
@@ -29,6 +29,9 @@ import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollCo
 import { compositionValidation, routeDifferenceEvidence, unknownValidation, zeroUnknownTolls, type TollEstimate } from "../v2-calculation/free-route-selection";
 import type { RouteSummary, RouteWithGeometry } from "@/lib/route-providers";
 import { familySegments } from "../v2-calculation/route-leg-pricing-helpers";
+import { quoteAccepted545Working } from "@/experiments/tariff-proof-selection/m4-545-accepted-working.mjs";
+import { inspect545TraceChunks } from "@/experiments/tariff-proof-selection/m4-545-route-history.mjs";
+import { splitM4MatrixAt545 } from "./m4-545-product-replacement";
 
 type LegTollInput = {
   routeGeometry: Coordinate[];
@@ -60,10 +63,29 @@ export async function calculateLegTolls({
 
   const productionM4 = await resolveSelectedM4Endpoints(routeGeometry, routeSeconds, diagnosticFastValidation, selectedFastRoute.m4RoadBoundaries);
   const matrixM4 = matrixM4Component(productionM4, departureAt, routeSeconds);
+  const privateM4Trace = getPrivateTollTraceChunks(diagnosticFastValidation,routeGeometry);
+  const b05Trace = privateM4Trace ? inspect545TraceChunks({chunks:privateM4Trace,complete:diagnosticFastValidation?.complete === true,
+    chunkCount:diagnosticFastValidation?.chunkCount,checkedChunkCount:diagnosticFastValidation?.checkedChunkCount,
+    failedChunkCount:diagnosticFastValidation?.failedChunkCount}) : null;
+  const b05Witness = b05Trace?.historyStatus === "observed_reviewed_case";
+  const b05Quote = b05Witness ? quoteAccepted545Working({traceChunks:privateM4Trace,traceComplete:true,
+    traceChunkCount:diagnosticFastValidation?.chunkCount,checkedTraceChunkCount:diagnosticFastValidation?.checkedChunkCount,
+    failedTraceChunkCount:diagnosticFastValidation?.failedChunkCount,departureAt,
+    alreadyChargedProductKeys:matrixM4?.productCoverage?.sectionVector ?? [],replaceExactlyCoveredProducts:true}) : null;
+  const b05Accepted = b05Quote?.status === "accepted_working_calculation" ? b05Quote : null;
+  const b05Split = b05Witness ? splitM4MatrixAt545(matrixM4,b05Accepted) : {matrix:matrixM4,product:null};
+  // A witnessed 545 crossing with an unknown/inconsistent matrix scope cannot
+  // leave the overlapping aggregate priced. Fail closed, retaining only the
+  // independently accepted component when its own policy/date checks pass.
+  const effectiveMatrixM4 = b05Witness && !b05Accepted && matrixM4
+    ? {...matrixM4,tolls:null,reason:`m4_545_working_price_unavailable: ${b05Quote && "reason" in b05Quote ? b05Quote.reason : "unknown"}; complete M4 remains unknown`}
+    : b05Split.matrix;
   if (productionM4.m4PvpPreview && matrixM4?.tariffVector) {
     productionM4.m4PvpPreview.tariffVector = matrixM4.tariffVector;
   }
-  const m4A289 = composeSelectedM4A289(routeGeometry, productionM4, matrixM4 ? {...matrixM4, tolls: matrixM4.tolls as ProductionM4Result["tolls"]} : null, geometricTolls.segments, departureAt, routeSeconds);
+  const m4A289 = composeSelectedM4A289(routeGeometry, productionM4,
+    effectiveMatrixM4 ? {...effectiveMatrixM4, tolls: effectiveMatrixM4.tolls as ProductionM4Result["tolls"]} : null,
+    geometricTolls.segments, departureAt, routeSeconds, b05Split.product);
   const productionM11Geometry = calculateM11MoscowToPetersburg(routeGeometry, routeSeconds, departureAt);
   const m11Airport = inspectM11PulkovoAccess(routeGeometry);
   const m11Boundaries = resolveM11ProductBoundaries(routeGeometry,routeSeconds,departureAt,selectedFastRoute.m11RoadEvidence,diagnosticFastValidation);

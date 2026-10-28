@@ -1,7 +1,7 @@
 import type { Coordinate } from "@/lib/tolls";
 import {isOdintsovoLaneWay} from '@/experiments/nationwide-tolls/odintsovo-lane-identity.mjs';
 import { roadBoundariesFromTrace } from "@/lib/toll-engine/road-trace-boundaries";
-import { normalizeRoadRef, type RoadBoundaryResolution } from "@/lib/toll-engine/road-boundaries";
+import { normalizeRoadRef, roadRouteSignature, type RoadBoundaryResolution } from "@/lib/toll-engine/road-boundaries";
 
 export type OdintsovoTraceEdge = {
   wayId: string | null;
@@ -71,6 +71,16 @@ type TraceEdge = {
     node_id?: string | number;
   };
 };
+
+// Keep raw matching edges private and non-enumerable: the public validation
+// DTO contains summaries only. A consumer may inspect a witnessed product
+// while the exact TollValidation object is still in memory.
+const privateTraceChunks = new WeakMap<TollValidation, {routeSignature:string;chunks:TraceEdge[][]}>();
+export function getPrivateTollTraceChunks(validation: TollValidation | null | undefined, route: Coordinate[]): readonly (readonly TraceEdge[])[] | null {
+  if(!validation||route.length<2)return null;
+  const evidence=privateTraceChunks.get(validation);
+  return evidence?.routeSignature===roadRouteSignature(route) ? evidence.chunks : null;
+}
 
 const MAX_TRACE_POINTS = 320;
 const MAX_TRACE_CHUNK_KM = 140;
@@ -339,7 +349,7 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     };
   }
 
-  return {
+  const result: TollValidation = {
     status: tollEdges.length > 0 ? "toll" : tollBooths.length > 0 ? "unknown" : "free",
     source: "Valhalla map matching",
     tollEdgeCount: tollEdges.length,
@@ -363,4 +373,6 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
     complete: true,
     boothEventCoverage: "complete",
   };
+  privateTraceChunks.set(result, {routeSignature:roadRouteSignature(route),chunks:successful.map(item => item.edges)});
+  return result;
 }

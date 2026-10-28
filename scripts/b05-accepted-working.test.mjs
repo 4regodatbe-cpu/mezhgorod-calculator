@@ -35,3 +35,12 @@ test('incomplete trace, wrong category/payment/date remain unknown; no fabricate
   const c=options();c.capture.record.validation.complete=false;assert.equal(quoteAccepted545Working(c).amount,null);
   for(const patch of [{operatorCategory:'II'},{payment:'transponder'},{departureAt:'2026-02-30'},{departureAt:'2026-02-01T09:00:00+03:00'}])assert.equal(quoteAccepted545Working({...options(),...patch}).amount,null);
 });
+test('runtime raw trace requires exact once-only overlap context before replacement is accepted',()=>{
+  const chunks=original.calls.filter(c=>String(c.url).includes('/trace_attributes')).map(c=>JSON.parse(c.text).edges);
+  const base={traceChunks:chunks,traceComplete:true,traceChunkCount:chunks.length,checkedTraceChunkCount:chunks.length,
+    failedTraceChunkCount:0,departureAt:'2026-10-15T12:00:00+03:00',replaceExactlyCoveredProducts:true};
+  const accepted=quoteAccepted545Working({...base,alreadyChargedProductKeys:['m4-515','m4-545-a','m4-545-b','m4-620']});
+  assert.equal(accepted.status,'accepted_working_calculation');assert.equal(accepted.amount,320);assert.equal(accepted.isWholeRouteTotal,false);
+  const partial=quoteAccepted545Working({...base,alreadyChargedProductKeys:['m4-545-a']});
+  assert.equal(partial.status,'unknown');assert.equal(partial.reason,'overlapping_product_coverage');
+});

@@ -1,4 +1,5 @@
 import core from './quote.cjs';
+import fareValidity from './fare-validity.cjs';
 import endpoints from '../M4_ACTIVE_ENDPOINT_REGISTER.json' with {type:'json'};
 import graphEndpoints from '../M4_GRAPH_ENDPOINT_REGISTER.json' with {type:'json'};
 const endpointKey=(from,to,profile)=>JSON.stringify([from,to,profile]);
@@ -30,7 +31,7 @@ export function matrixM4Component(production, departureAt, routeSeconds){
  const ids=roadOnly?[access.entry.id,access.exit.id]:production.m4PvpPreview?.confirmedPvps;
  if(!Array.isArray(ids)||ids.length<1||new Set(ids).size!==ids.length)return null;
  let tariffVector;
- const unknown=reason=>({tolls:null,reason,priceConfirmation:'unknown',...(tariffVector?{tariffVector:{...tariffVector,priceStatus:'unknown'}}:{})});
+ const unknown=reason=>({tolls:null,reason,priceConfirmation:'unknown',productCoverage:null,...(tariffVector?{tariffVector:{...tariffVector,priceStatus:'unknown'}}:{})});
  if(!Number.isFinite(routeSeconds)||routeSeconds<0||!Number.isFinite(new Date(departureAt).getTime()))return unknown('m4_crossing_date_missing');
  const window=departureTariffContext(departureAt,routeSeconds,m4TariffPeriodAt);
  if(window.status!=='resolved')return unknown('m4_'+window.reason);
@@ -51,6 +52,14 @@ export function matrixM4Component(production, departureAt, routeSeconds){
   const reason=endpointConflictKeys.has(endpointKey(component.from,component.to,component.profile))?'ambiguous-fare-version':actual.reason;
   return roadOnly?unknown('m4_road_vector_price_unknown'):production.endpointOnly?unknown('m4_endpoint_matrix_'+reason):null;
  }
+ const sectionRows=['monThu','friSun'].map(profile=>endpoints.rows.filter(row=>row.road===component.road
+  &&row.from===component.from&&row.to===component.to&&row.profile===profile&&row.runtimeEligible===true
+  &&fareValidity.fareValidityOnDate(row,start.date)==='inside'));
+ const vectors=sectionRows.map(rows=>rows.length===1&&Array.isArray(rows[0].sectionVector)?rows[0].sectionVector:null);
+ const productCoverage=vectors[0]&&vectors[1]&&JSON.stringify(vectors[0])===JSON.stringify(vectors[1])
+  &&sectionRows[0][0].rub===weekday.rub&&sectionRows[1][0].rub===weekend.rub
+  ?{sectionVector:[...vectors[0]]}:null;
  // Source evidence for the full nationwide trip is still incomplete; present replacement as an estimate.
- return {reason:'matrix exact selected-route M4 vector',priceConfirmation:'unconfirmed',tariffVector:{...tariffVector,priceStatus:'known'},tolls:{amount:actual.rub,weekdayAmount:weekday.rub,weekendAmount:weekend.rub,period:start.profile==='monThu'?'понедельник–четверг':'пятница–воскресенье',segments:[`М-4: ${ids.join(' → ')} · Стоимость не подтверждена`],confidence:'matched'}};
+ return {reason:'matrix exact selected-route M4 vector',priceConfirmation:'unconfirmed',tariffVector:{...tariffVector,priceStatus:'known'},productCoverage,
+  tolls:{amount:actual.rub,weekdayAmount:weekday.rub,weekendAmount:weekend.rub,period:start.profile==='monThu'?'понедельник–четверг':'пятница–воскресенье',segments:[`М-4: ${ids.join(' → ')} · Стоимость не подтверждена`],confidence:'matched'}};
 }
