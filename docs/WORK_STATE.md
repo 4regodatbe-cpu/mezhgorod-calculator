@@ -1,3 +1,7 @@
+## Experiment11 B01/B11 —28.10.2026
+
+B01: three providers reviewed; Nominatim autocomplete prohibited, Geoapify/DaData not operationally admitted. Default-off isolated Geoapify research adapter +9 synthetic tests, no public fallback/coordinates activated. [Review](../experiments/address-search/EXPERIMENT11_SOURCES.md), [checkpoint](checkpoints/2026-10-28-experiment11-b01-source-adapter.md). B01 PARTIAL; next B11 saved-stage review, no repeated B03/GeoNames/captures.
+
 ## B03 swap/refocus FIXED / hosted verified —28.10.2026
 
 B01nexttask: actualproxy-awarelocalAnapa200→clear→DonetskRostov200flowPASS, selectedcoordinatesverifiedagainstclientPOST; partial503/cooldownpositivesretained. [Raw/status/limits](../experiments/address-search/checks/2026-10-28-proxy-live-flow/REVIEW.md), [checkpoint](checkpoints/2026-10-28-b01-proxy-live-flow-result.md). No backendcode/Production/fulloutageresilience/DNRcoverageorold502causalclosureclaim; B01stillPARTIALpendingindependentfallback. No furthersamequeryretests; B03remainspublished/CIgreen, snapshotfalse/expiryunchanged.

@@ -1,3 +1,7 @@
+# Experiment11 —28.10.2026
+
+Default-off Geoapify research adapter prepared; [source review](EXPERIMENT11_SOURCES.md). No public-ready source yet. Next B11 saved profile decomposition; for B01 later provision a scoped key through normal credentials, capture a bounded real regional/homonym sample and review coordinates/attribution/budget before integration. Do not repeat GeoNames or B03. B01 PARTIAL.
+
 # DONE PREVIEW — repeated address edits
 
 [Verified full UI story](../../docs/checkpoints/2026-10-20-repeated-address-search-VERIFIED.md). Code source4f62abf; tests819/819, PreviewREADY. Problem prefix and exact two-calculation/replacement flowPASS. No more live repeats. Release only on direct current-task request; on a later outage inspect bounded failure diagnostics before altering limits/providers. Production remains4b647bf without latest patch/bypass correction.

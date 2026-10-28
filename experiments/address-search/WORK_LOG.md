@@ -1,5 +1,9 @@
 # Address search work log
 
+## 28.10.2026 — Experiment11 independent backup research
+
+Reviewed exactly three official sources; [decision, costs, license and unknowns](EXPERIMENT11_SOURCES.md). Added isolated disabled Geoapify candidate-research adapter with9 deterministic tests, including complete503/429failure, empty/partial nonfallback, cancellation, invalid data and shared deadline. No runtime integration, API key/account, live geocoding call, public coordinate admission or B01 closure. [Checkpoint](../../docs/checkpoints/2026-10-28-experiment11-b01-source-adapter.md). Next independent B11 saved profiles. Existing Photon snapshot and tariffs unchanged.
+
 ## 2026-10-19 — point-B search latency
 
 - Request: user reports that the calculator does not find the destination address (point B).
