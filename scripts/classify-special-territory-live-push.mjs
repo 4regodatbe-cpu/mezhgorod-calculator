@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { B11_API_FILE, B11_BEFORE_BLOB, B11_AFTER_BLOB, exactB11SourcePair } from "./b11-exact-reuse-change.mjs";
 
 const SAFE_SHA = /^[0-9a-f]{40}$/i;
 const MAX_COMPARE_FILES = 300;
@@ -76,7 +77,7 @@ export function hasReliablePreviousChecks(jobs) {
   return liveProbe?.status === "completed" && geometryStep?.status === "completed" && geometryStep.conclusion === "success" && timing?.status === "completed" && timing.conclusion === "success";
 }
 
-export function classifyPullRequestDelta(previousHead, currentHead, comparison) {
+export function classifyPullRequestDelta(previousHead, currentHead, comparison, b11Sources) {
   if (!SAFE_SHA.test(previousHead ?? "") || !SAFE_SHA.test(currentHead ?? "")) {
     return { shouldRunLive: true, reason: "comparison-head-unverifiable" };
   }
@@ -96,7 +97,20 @@ export function classifyPullRequestDelta(previousHead, currentHead, comparison) 
       paths.push(file.previous_filename);
     }
   }
-  return classifyChangedPaths(paths);
+  const ordinary = classifyChangedPaths(paths);
+  const apiFiles = comparison.files.filter(file => file?.filename === B11_API_FILE);
+  if (ordinary.shouldRunLive && apiFiles.length === 1 && apiFiles[0].status === "modified"
+    && apiFiles[0].sha === B11_AFTER_BLOB && typeof apiFiles[0].patch === "string" && apiFiles[0].patch.length > 0
+    && b11Sources?.beforeBlob === B11_BEFORE_BLOB && b11Sources?.afterBlob === B11_AFTER_BLOB
+    && exactB11SourcePair(b11Sources.before, b11Sources.after)) {
+    const others = paths.filter(path => path !== B11_API_FILE);
+    // Even the separate AddressField exemption cannot hide mixed runtime work.
+    const otherRuntime = others.some(path => /^(?:app|lib|data)\//.test(path) && !isTestPath(path));
+    if (!otherRuntime && (!others.length || !classifyChangedPaths(others).shouldRunLive)) {
+      return { shouldRunLive: false, reason: "exact-authorized-b11-split-reuse" };
+    }
+  }
+  return ordinary;
 }
 
 export function formatGitHubOutput(result) {
@@ -137,7 +151,20 @@ async function classifyCurrentPrEvent(event) {
   if (!hasReliablePreviousChecks(previousJobs?.jobs)) return { shouldRunLive: true, reason: "previous-checks-incomplete" };
 
   const comparison = await githubJson(`${root}/compare/${previous.checked_head_sha}...${currentHead}`, token);
-  return classifyPullRequestDelta(previous.checked_head_sha, currentHead, comparison);
+  let b11Sources;
+  if (comparison?.status === "ahead" && Array.isArray(comparison.files) && comparison.files.length < MAX_COMPARE_FILES
+    && comparison.files.some(file => file.filename === B11_API_FILE && file.status === "modified" && file.sha === B11_AFTER_BLOB)) {
+    const [before, after] = await Promise.all([
+      githubJson(`${root}/contents/${B11_API_FILE}?ref=${previous.checked_head_sha}`, token),
+      githubJson(`${root}/contents/${B11_API_FILE}?ref=${currentHead}`, token),
+    ]);
+    if (before.type === "file" && after.type === "file" && before.encoding === "base64" && after.encoding === "base64"
+      && typeof before.content === "string" && typeof after.content === "string") {
+      b11Sources = { beforeBlob: before.sha, afterBlob: after.sha,
+        before: Buffer.from(before.content, "base64").toString("utf8"), after: Buffer.from(after.content, "base64").toString("utf8") };
+    }
+  }
+  return classifyPullRequestDelta(previous.checked_head_sha, currentHead, comparison, b11Sources);
 }
 
 async function main() {
