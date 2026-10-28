@@ -1,5 +1,7 @@
 # Next B03 runtime work
 
+B03published/hostedCIclosurecomplete. IndependentB01changedproxytransportactualGET200andrealAnapa→clear→DonetskRostov/r200flowverified; seeB01proxy-live-flowREVIEW/checkpoint. Stopidenticalrequests. RemainingB01fulloutageresilience needsapprovedindependentfallback/catalog; no appbackendchanges/snapshotactivation/Productionorold502causalclaim. Nextnewsourceinput/reproonly, not rerunoldB03/roadchecks.
+
 B03swap/refocusDONE+published/CIgreen; stage2-green.jsonandDONEcheckpointshow18UI/964offline/TS/build. B12acceptanceupdated. Do notrerunoldB03/routecases. NextindependentB01oneGET underNode--use-env-proxy (proxyvarssetbutopt-inwasoff), saveSTARTEDfirst, no appcode/proxybypass; prioractual502notdeclaredfixed. Globalfallback/catalog/tariffbindingblockersremain.
 
 AppfixhostedUIgreen; tasknotDONEbecauseexistingofflineRoutequalitytestcontractfailed(2Node24setups vs1assert). Exactcount/allversions/negativecontrolsfixprepared+fullfailedofflinegateinB03verify. Needactualnewfullgate/TS/build/UIgreen andwideSKIPs; originalrouteworkflowunchanged, no newlive. Then B12handoff; B01external502stillblocked.

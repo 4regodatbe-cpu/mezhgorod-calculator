@@ -1,5 +1,7 @@
 ## B03 swap/refocus FIXED / hosted verified —28.10.2026
 
+B01nexttask: actualproxy-awarelocalAnapa200→clear→DonetskRostov200flowPASS, selectedcoordinatesverifiedagainstclientPOST; partial503/cooldownpositivesretained. [Raw/status/limits](../experiments/address-search/checks/2026-10-28-proxy-live-flow/REVIEW.md), [checkpoint](checkpoints/2026-10-28-b01-proxy-live-flow-result.md). No backendcode/Production/fulloutageresilience/DNRcoverageorold502causalclosureclaim; B01stillPARTIALpendingindependentfallback. No furthersamequeryretests; B03remainspublished/CIgreen, snapshotfalse/expiryunchanged.
+
 B01transportprobeactual200/20features/1128ms underNodeproxyopt-in, rawSHAretained; notold502causalprooforoutagefix. [Review](../experiments/address-search/checks/2026-10-28-proxy-transport/REVIEW.md). Next boundedactualAnapa→clear→Donetsk/rflowwithproxy-awarelocalserver, noappchanges; [STARTEDbudget/recovery](checkpoints/2026-10-28-b01-proxy-200-live-flow-STARTED.md). Classification/analyticsmocksseparate, newcoordinatesnotadmitted.
 
 B01newindependenttransportSTARTED: one12sGETwithNode--use-env-proxy throughunchangedinheritedproxy; previousenvironmenthadproxyvarsbutopt-infalse. [Budget/recovery](checkpoints/2026-10-28-b01-node-proxy-STARTED.md). Notapp/outagefix, no sourceactivation or prior502closure; savebeforecall.
