@@ -1,3 +1,7 @@
+## 28.10.2026 — retry budget/CI: LOCAL PASS, публикация запрещена до согласования CI
+
+Новые3/3 регрессии подтверждают остаток20с с учётом19с соединения/17с очереди и подавление позднего ответа после отмены. Подготовлен НЕ ЗАПУЩЕННЫЙ desktop/mobile сценарий20замен A/B. Точный разбор workflows: special-territory PR включает broad jobs; ручной build-only не предотвращает PR-событие. Старый локальный коммит8d362961 иpatch сохранены, remote8fb4d137 не менялся. Нужна отдельная узкая авторизация CI либо один обычный PR-run с broad jobs. [Checkpoint](checkpoints/2026-10-28-address-publication-gates-and-budget.md).
+
 ## 28.10.2026 — адресный connect-retry: LOCAL PASS / REMOTE PENDING
 
 Подготовлен один повтор только UND_ERR_CONNECT_TIMEOUT в исходном20с deadline; отмена/HTTP/пустой ответ не повторяются.10/10 fetch и1/1 новой endpoint-регрессии PASS; TS/ESLint/directNextbuild PASS. Полный test:audit отклонён auto-review до исполнения. Публикация runtime запускает запрещённые без отдельного согласования broad live jobs; CI не менялся. Независимый провайдер, mobile/Preview и полный отказ Photon остаются открыты. [Checkpoint](checkpoints/2026-10-28-address-connect-retry-local-PASS.md). Это локальная запись, не заявление о remote-сохранении.
