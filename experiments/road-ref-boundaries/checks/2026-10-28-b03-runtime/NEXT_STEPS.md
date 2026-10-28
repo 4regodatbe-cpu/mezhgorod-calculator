@@ -1,5 +1,7 @@
 # Next B03 runtime work
 
+B03swap/refocusDONE+published/CIgreen; stage2-green.jsonandDONEcheckpointshow18UI/964offline/TS/build. B12acceptanceupdated. Do notrerunoldB03/routecases. NextindependentB01oneGET underNode--use-env-proxy (proxyvarssetbutopt-inwasoff), saveSTARTEDfirst, no appcode/proxybypass; prioractual502notdeclaredfixed. Globalfallback/catalog/tariffbindingblockersremain.
+
 AppfixhostedUIgreen; tasknotDONEbecauseexistingofflineRoutequalitytestcontractfailed(2Node24setups vs1assert). Exactcount/allversions/negativecontrolsfixprepared+fullfailedofflinegateinB03verify. Needactualnewfullgate/TS/build/UIgreen andwideSKIPs; originalrouteworkflowunchanged, no newlive. Then B12handoff; B01external502stillblocked.
 
 Stage1CIchecked+wideSKIPsbeforeexactappPatch. Stage2greenverificationSTARTEDcheckpoint: inspectactualnew07/current10+legacy8/mandatoryverify/buildonpublishedsource, verifyappblob5ece9b65andtree/readback. No newbranchwritesuntilallCIcomplete. B01external502stillblocked; afterB03greenupdateB12acceptanceevidencewithoutnewliveaudit.

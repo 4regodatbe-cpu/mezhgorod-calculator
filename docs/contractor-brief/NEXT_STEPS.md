@@ -1,5 +1,7 @@
 # B01–B12 next steps
 
+28.10.2026: B03swap/refocuspublished+hosted18/18+fulloffline964/964/TS/buildPASS; B12evidencebatchupdated inB03_B12_ACCEPTANCE_2026-10-28.md. Do not rerunclosedtechnical24plan/oldUI/roads basedonolderqueuebelow. NextindependentB01boundedtransportprobeunderchangedNodeproxyopt-in, explicitSTARTEDbeforeoneGET; globalB01outage/fallbackstillunfixed. Tariffcarry-forwardpolicyunchanged, no sourceactivation/release.
+
 Block12/B01 deadline DONE (technical3/24). Next block19/B10: saved Eisk component attribution, no recapture. Source plan docs/RELIABILITY_24_BLOCK_PLAN.md.
 
 Current queue: [UNIFIED_RELIABILITY_PLAN](../UNIFIED_RELIABILITY_PLAN.md), 2026-10-27. Earlier audit progress below is historical. Next: B01/AUD-GEOCODE-01 focused direct-geocode deadline; then saved Eisk component analysis, CI baseline reconciliation, measured offline performance. The missing original 24-block definitions prevent exact X/24 accounting only.

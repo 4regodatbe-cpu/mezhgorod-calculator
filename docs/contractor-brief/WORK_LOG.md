@@ -1,5 +1,7 @@
 # B01–B12 work log
 
+28.10.2026 B03/B12: exactAddressFieldCIexceptionpublishedwithmixed/fail-opentests; actualhostedred07before→green10+legacy8after3linepatch, componentblob75bbf339. Source32038ec5 verifiedfulloffline964/964+quote/TS/Next16.3.4buildPASS, speciallive/timingSKIPPED, Node24.21/Chrome156. Artifact12797178490downloadSHA623155b4verified/parsed; B03_B12_ACCEPTANCE_2026-10-28.md updatescriteriaandhistoricalenvlimitswithoutnewtests/roadresearch. B01external502notfixed, snapshotdisabledexpiryunchanged. Checkpoint2026-10-28-b03-ci-and-fix-DONE.md; next independentboundedNodeproxytransportprobe, no tariff/businesslogic/releases.
+
 2026-10-27 B11: measured call-local nearest-endpoint reuse implemented in lib/toll-recovery.ts. Long median30.72→17.17ms, same inputs/result hashes; other workload medians improve. Two targeted regression files, tsc/scoped ESLint/diff PASS. Baseline/after JSON persisted, no external calls. Whole-calculation speedup not measured; block20 remains PARTIAL,5/24. Checkpoint2026-10-27-recovery-endpoint-cache-DONE.md.
 
 2026-10-27 B11/block20 baseline PARTIAL: four workloads, saved geometry hashes,2warmups/10samples, medians/p95/heap deltas and deterministic result hashes. No network; technical still5/24. Checkpoint2026-10-27-profile-baseline-PARTIAL.md. Next endpoint-search reuse experiment.

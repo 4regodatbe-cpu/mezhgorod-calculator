@@ -1,4 +1,8 @@
-## B03 CI exception authorized —28.10.2026; stage1 hosted checks pending
+## B03 swap/refocus FIXED / hosted verified —28.10.2026
+
+B01newindependenttransportSTARTED: one12sGETwithNode--use-env-proxy throughunchangedinheritedproxy; previousenvironmenthadproxyvarsbutopt-infalse. [Budget/recovery](checkpoints/2026-10-28-b01-node-proxy-STARTED.md). Notapp/outagefix, no sourceactivation or prior502closure; savebeforecall.
+
+Publishedexact3linepatch; testedhead32038ec595ffacf2fe04b10c27f378c1579f1660. AllcurrentrunsSUCCESS, speciallive/timingSKIPPED;964/964offline+quote/TS/productionbuildPASS, legacy8+current10browserPASSincluding07. GreenZIPdownloaded/SHAverified/sourceSHA/exitcodesparsed. [DONEcheckpoint](checkpoints/2026-10-28-b03-ci-and-fix-DONE.md), [B12acceptancehandoff](contractor-brief/B03_B12_ACCEPTANCE_2026-10-28.md). OnlyAddressFieldruntimechanged; strictCIandNodecontractcorrected, no othercomponent/tariffs/Production. B01external502remainsseparate. Next boundedNodeproxyopt-intransportcheck underchangedcondition, no unchangednetworkretry.
 
 PublishedAddressFieldfix hostedB03push+PRSUCCESS, specialSUCCESS/widesSKIPPED. UnexpectednormalofflineRoutequalityrun failedlatentNodecontract(1expectedvs2existingNode24jobs), NOTliveaudit; reproducedwithoutappchange. Strictcount/every-version/negativecontroltestfix nowprepared, B03verifyaddsactuallyfailedofflinegate beforeTS/build. [Checkpoint](checkpoints/2026-10-28-b03-unrelated-offline-gate-contract.md). RequireallnewCIgreenbeforedone; no othercomponents/routeworkflowchanged, B01external502untouched.
 
