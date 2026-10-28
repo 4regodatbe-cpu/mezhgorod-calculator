@@ -21,3 +21,14 @@ test('CI executes new swap/refocus regression and preserves old suite failures',
   assert.ok(!workflow.includes('b03-live-replacement.mjs'));
   assert.ok(workflow.includes('actions/upload-artifact@v4'));
 });
+test('push-only B03 runs retain the original mandatory offline verify commands',()=>{
+  assert.match(workflow,/\n  verify:\n/);
+  for(const command of [
+    'node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts',
+    'node scripts/special-territory-live-push-classifier.test.mjs',
+    'node scripts/v2-issue2-github-capture.test.mjs',
+    'node node_modules/typescript/bin/tsc --noEmit',
+    'node node_modules/next/dist/bin/next build',
+  ]) assert.ok(workflow.includes(command),command);
+  for(const broad of ['special-territory-live-probe.mjs','settlement-random-route-audit.mjs','yandex-route-reference-audit.mjs','calculation-runtime-probe.mjs']) assert.ok(!workflow.includes(broad));
+});
