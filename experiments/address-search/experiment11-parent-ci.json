@@ -1,0 +1,51 @@
+{
+  "sourceSha": "dd04293d13290a8818a4b960effff4c0cff8d6ba",
+  "specialRun": 40657065108,
+  "browserRun": 40657065144,
+  "jobs": [
+    {
+      "id": 122710577170,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 122710577433,
+      "name": "classify_live_scope",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 122710690713,
+      "name": "calculation_timing",
+      "status": "completed",
+      "conclusion": "skipped"
+    },
+    {
+      "id": 122710690923,
+      "name": "live_probe",
+      "status": "completed",
+      "conclusion": "skipped"
+    }
+  ],
+  "notes": [
+    "Automatic existing PR checks, not a manual rerun of closed B03",
+    "New experiment tests executed locally; not claimed included in old CI gate"
+  ],
+  "verifyLogExcerpt": [
+    "2026-10-28T08:28:57.4295002Z   node-version: 24",
+    "2026-10-28T08:28:57.9563275Z node: v24.21.0",
+    "2026-10-28T08:29:30.3712832Z ℹ tests 458",
+    "2026-10-28T08:29:30.3713407Z ℹ pass 458",
+    "2026-10-28T08:29:30.3713618Z ℹ fail 0",
+    "2026-10-28T08:29:30.4392625Z ℹ fail 0",
+    "2026-10-28T08:29:30.4966754Z ℹ fail 0",
+    "2026-10-28T08:29:30.5562999Z ℹ fail 0",
+    "2026-10-28T08:29:55.8670467Z ℹ tests 964",
+    "2026-10-28T08:29:55.8670926Z ℹ pass 964",
+    "2026-10-28T08:29:55.8671132Z ℹ fail 0",
+    "2026-10-28T08:29:55.9722952Z ##[group]Run node node_modules/typescript/bin/tsc --noEmit",
+    "2026-10-28T08:30:08.3923804Z ✓ Compiled successfully in 5.8s",
+    "2026-10-28T08:30:16.1320584Z ✓ Generating static pages using 3 workers (16/16) in 395ms"
+  ]
+}

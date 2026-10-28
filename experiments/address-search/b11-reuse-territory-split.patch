@@ -1,0 +1,24 @@
+diff --git a/app/api/v3/calculate/route.ts b/app/api/v3/calculate/route.ts
+--- a/app/api/v3/calculate/route.ts
++++ b/app/api/v3/calculate/route.ts
+@@ -80,9 +80,9 @@
+     const mode = body.modeOverride === true && body.mode ? body.mode : policy.specialEndpoint ? "dual" : "standard";
+     const normalRateOverrides = body.rates ? { ...body.rates, comfort_plus:body.rates.comfortPlus } : undefined;
+     const specialRateOverrides = body.specialRates ? { ...body.specialRates, comfort_plus:body.specialRates.comfortPlus } : undefined;
+-    const attachPricing = <T extends { meters:number; seconds:number; coordinates:Coordinate[]; legs?:unknown }>(trip:T) => timing.measureSync("response_pricing", () => {
++    const attachPricing = <T extends { meters:number; seconds:number; coordinates:Coordinate[]; legs?:unknown }>(trip:T, verifiedSplit?:ReturnType<typeof analyzeRoute>) => timing.measureSync("response_pricing", () => {
+       // Policy is independent of manual pricing mode, including every alternative.
+-      const territorySplit = analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
++      const territorySplit = verifiedSplit ?? analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
+       const {coordinates, legs, ...summary} = trip;
+       void coordinates; void legs;
+       const tolls = "tolls" in trip && trip.tolls && typeof trip.tolls === "object"
+@@ -104,7 +104,7 @@
+     });
+     if(policy.specialEndpoint) {
+       const special=await timing.measure("special_options", () => calculateSpecialOptions(from,to,departureAt,true,timing));
+-      const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast),free:null,freeCandidate:null}));
++      const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast,option.split),free:null,freeCandidate:null}));
+       if(!options.length)throw new Error("MAINLAND_UNAVAILABLE");
+       return respond({legs:options,options,mode,automaticMode,specialEndpoint:true,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
+     }

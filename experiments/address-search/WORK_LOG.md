@@ -2,6 +2,8 @@
 
 ## 28.10.2026 — Experiment11 independent backup research
 
+Continuation B11: [saved-stage review and measured duplicate](EXPERIMENT11_B11.md), profileJSON + portable3linepatch.0network,3paired samples1749→869ms for duplicated territory analysis;3paritytestsPASS (source/boundary/hash +8farepayload comparisons +scope). Runtimepatch not applied: API path invokes broadliveCI, no authorization to launch/skip it. B01parentdd04293d all7files/tree readback MATCH, CI40657065108/40657065144SUCCESS;964offline/TS/buildPASS,widesSKIPPED. No new functional blocker closed. [Checkpoint](../../docs/checkpoints/2026-10-28-experiment11-b11-profile-patch-PARTIAL.md). Next narrowCIvalidationdecision or scopedproviderkey, not repeatB03/captures.
+
 Reviewed exactly three official sources; [decision, costs, license and unknowns](EXPERIMENT11_SOURCES.md). Added isolated disabled Geoapify candidate-research adapter with9 deterministic tests, including complete503/429failure, empty/partial nonfallback, cancellation, invalid data and shared deadline. No runtime integration, API key/account, live geocoding call, public coordinate admission or B01 closure. [Checkpoint](../../docs/checkpoints/2026-10-28-experiment11-b01-source-adapter.md). Next independent B11 saved profiles. Existing Photon snapshot and tariffs unchanged.
 
 ## 2026-10-19 — point-B search latency

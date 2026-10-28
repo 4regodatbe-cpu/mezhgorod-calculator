@@ -1,5 +1,7 @@
 # Experiment11 —28.10.2026
 
+B11 bounded review/prototype complete, [report](EXPERIMENT11_B11.md). Runtime unchanged: targetAPIpublishing classifies live=true; need separate narrowCI/isolatedverification decision before applying savedpatch. Then full-route/API parity+TS/build and actualCI/readback; no broadlivewithoutpermission. B01credential/realregionalreview remains missing. No new functional blocker DONE.
+
 Default-off Geoapify research adapter prepared; [source review](EXPERIMENT11_SOURCES.md). No public-ready source yet. Next B11 saved profile decomposition; for B01 later provision a scoped key through normal credentials, capture a bounded real regional/homonym sample and review coordinates/attribution/budget before integration. Do not repeat GeoNames or B03. B01 PARTIAL.
 
 # DONE PREVIEW — repeated address edits

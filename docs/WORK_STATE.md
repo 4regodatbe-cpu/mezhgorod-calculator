@@ -1,5 +1,7 @@
 ## Experiment11 B01/B11 —28.10.2026
 
+B11 duplicate territory analysis confirmed; isolated saved9046-point prototype1749→869ms median,3parity/faretestsPASS,0network. [Report/evidence](../experiments/address-search/EXPERIMENT11_B11.md), [checkpoint](checkpoints/2026-10-28-experiment11-b11-profile-patch-PARTIAL.md). Three-line patch saved only: publishing targetAPIfile would require prohibited broadliveCI, classifierconfirmed; no new exception authorized. Application unchanged/B11PARTIAL. B01 adapter9syntheticPASS, no provider credential/real coverage admission; no new functional closure. ParentCI40657065108/40657065144SUCCESS/widesSKIPPED.
+
 B01: three providers reviewed; Nominatim autocomplete prohibited, Geoapify/DaData not operationally admitted. Default-off isolated Geoapify research adapter +9 synthetic tests, no public fallback/coordinates activated. [Review](../experiments/address-search/EXPERIMENT11_SOURCES.md), [checkpoint](checkpoints/2026-10-28-experiment11-b01-source-adapter.md). B01 PARTIAL; next B11 saved-stage review, no repeated B03/GeoNames/captures.
 
 ## B03 swap/refocus FIXED / hosted verified —28.10.2026
