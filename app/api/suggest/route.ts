@@ -29,7 +29,8 @@ export async function GET(request: NextRequest) {
     if (!request.signal.aborted && Object.keys(failures).length) {
       console.warn("address_search_partial", { elapsedMs: Date.now() - started, sourceCount, failures, budgetExpired });
     }
-    return NextResponse.json({ items: rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, q) });
+    return NextResponse.json({ items: rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, q),
+      partial: budgetExpired || Object.keys(failures).length > 0 });
   } catch {
     return NextResponse.json({ error: "Подсказки адресов временно недоступны" }, { status: 502 });
   }

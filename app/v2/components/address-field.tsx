@@ -46,7 +46,7 @@ export function AddressField({ label, value, onChange, placeholder }: { label: s
           setItems(results);
           const isCitySnapshot = data.fallback?.source === "reviewed_city_snapshot";
           setCitySnapshot(isCitySnapshot);
-          if (!isCitySnapshot) cacheAddressSuggestions(value.label, results);
+          if (!isCitySnapshot) cacheAddressSuggestions(value.label, results, { partial: data.partial === true });
           setSearchState(results.length ? "idle" : "empty");
           setOpen(true);
         }

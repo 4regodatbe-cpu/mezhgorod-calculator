@@ -25,10 +25,10 @@ export function getCachedAddressSuggestions(query: string, now = Date.now()): Su
 export function cacheAddressSuggestions(
   query: string,
   items: Suggestion[],
-  { now = Date.now(), ttlMs = DEFAULT_TTL_MS }: { now?: number; ttlMs?: number } = {},
+  { now = Date.now(), ttlMs = DEFAULT_TTL_MS, partial = false }: { now?: number; ttlMs?: number; partial?: boolean } = {},
 ): void {
   const key = keyFor(query);
-  if (!key || !items.length || ttlMs <= 0) return;
+  if (!key || !items.length || ttlMs <= 0 || partial) return;
   cache.delete(key);
   cache.set(key, { items, expiresAt: now + ttlMs });
   while (cache.size > MAX_ENTRIES) cache.delete(cache.keys().next().value!);
