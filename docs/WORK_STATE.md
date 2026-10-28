@@ -1,3 +1,7 @@
+## 28.10.2026 — бесплатный offline-поиск: реальный прототип PASS / publicadmission PARTIAL
+
+Собран универсальный GeoNamesRU+UA индекс221512активныхпунктов/456518aliases, без внешнегоAPI/ключа. Реальные ДонецкДНР→Ростов, Волноваха, Краснодар/Крым/4области находятся; омонимы сохраняютID. JSON42.76MB/gzip7.36MB; init1.80s, heap+207MiB/RSS509MiB, p95search2.54ms.6Node+3Pythontests/lintPASS. Но25043ruимени/31347adminподписей непроверены; корректностьвсехточек/полнота несертифицированы, интеграции нет. [Отчёт/лицензии/обновление](../experiments/address-search/LOCAL_GAZETTEER_PROTOTYPE.md), [checkpoint](checkpoints/2026-10-28-free-local-gazetteer-prototype-PARTIAL.md). Geoapifyнеобязателен/неизменён, платныхподключенийнет. ВсеизмененияLOCAL; remotefc83523d/PR14Draft.
+
 ## 28.10.2026 — обязательная бесплатная основа: local gazetteer STARTED
 
 Новое решение: поискгородов не зависит от обязательного paidAPI; Geoapifyнеподключать/неизменять. Выбран исследовательский GeoNamesRU+UA локальныйиндекс; исходные24Octархивы восстановлены из существующихGitHubartifacts сSHAсовпадением, новыескачиванияGeoNames/старый93caseaudit не повторяются. OSMextract — альтернативный offlineисточник/дополнительнаяпроверка, безbulkdownload. [Выбор/лимитыпрототипа](checkpoints/2026-10-28-free-local-gazetteer-selection-STARTED.md). Runtime/publicadmission пока запрещены; далееfull-datasetcompiler/search/замеры. ВсеизмененияLOCAL/no publish.

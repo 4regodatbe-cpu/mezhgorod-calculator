@@ -1,0 +1,662 @@
+{
+  "status": "PROTOTYPE_ONLY",
+  "runtimeApproved": false,
+  "node": "v24.19.0",
+  "records": 221512,
+  "postings": 456518,
+  "searchModuleSha256": "8a5411d0fe9058fd98c80f6be83b51851dda3e00715b1f946e67f51afd19519b",
+  "loadMethod": "fresh Node process; OS disk cache not flushed",
+  "jsonBytes": 42763328,
+  "gzipBytes": 7358514,
+  "sourceSha256": "2860aaeca95ff9b97f6778cbbaf64912b42e94ba47ceabc0bb409e4845d2b6f1",
+  "parseMs": 561.4019430000001,
+  "indexMs": 1234.209147,
+  "coldLoadMs": 1795.6110899999999,
+  "heapDeltaBytes": 217161240,
+  "rssBytes": 533204992,
+  "warmP50Ms": 0.600402000000031,
+  "warmP95Ms": 2.544383999999809,
+  "warmMaxMs": 100.65089200000011,
+  "flags": {
+    "ru_name_unverified": 25043,
+    "admin_binding_missing": 524,
+    "admin_ru_unverified": 31347
+  },
+  "results": [
+    {
+      "query": "Донецк",
+      "matches": 10,
+      "truncated": false,
+      "scanned": 10,
+      "ms": [
+        100.65089200000011,
+        1.630840000000262,
+        1.4695940000001428,
+        1.3021319999998013,
+        1.4191869999999653,
+        1.9420969999996487,
+        1.3600360000000364,
+        1.3669549999999617,
+        1.2471189999996568,
+        1.3143700000000536
+      ],
+      "items": [
+        {
+          "id": "geonames-709717",
+          "title": "Донецк",
+          "label": "Донецк — ДНР — Донецкая область — Donetsk Raion — Donetska Terytorialna Hromada",
+          "position": {
+            "lat": 48.023,
+            "lng": 37.80224
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-565348",
+          "title": "Донецк",
+          "label": "Донецк — Ростовская Область",
+          "position": {
+            "lat": 48.33711,
+            "lng": 39.95229
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-709713",
+          "title": "Донецкий",
+          "label": "Донецкий — ЛНР — Luganskaya Oblast’ — Alchevskyi Raion — Kadiivska Terytorialna Hromada",
+          "position": {
+            "lat": 48.6996,
+            "lng": 38.67627
+          },
+          "territory": "lnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-709714",
+          "title": "Донецкий",
+          "label": "Донецкий — ДНР — Донецкая область — Donetsk Raion — Amvrosiivska Terytorialna Hromada",
+          "position": {
+            "lat": 47.71556,
+            "lng": 38.40889
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "Донецк Ростовская область",
+      "matches": 4,
+      "truncated": false,
+      "scanned": 10,
+      "ms": [
+        1.299232999999731,
+        1.216363999999885,
+        1.273783000000094,
+        1.6343779999997423,
+        1.2164769999999407,
+        1.196009000000231,
+        1.5616100000002007,
+        1.207206000000042,
+        1.266924999999901,
+        1.2791449999999713
+      ],
+      "items": [
+        {
+          "id": "geonames-565348",
+          "title": "Донецк",
+          "label": "Донецк — Ростовская Область",
+          "position": {
+            "lat": 48.33711,
+            "lng": 39.95229
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-11763020",
+          "title": "Донецкий Лесхоз",
+          "label": "Донецкий Лесхоз — Ростовская Область",
+          "position": {
+            "lat": 49.03511,
+            "lng": 40.55049
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-565345",
+          "title": "Донецкий",
+          "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+          "position": {
+            "lat": 48.7168,
+            "lng": 39.9838
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-565346",
+          "title": "Донецкий",
+          "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+          "position": {
+            "lat": 47.3136,
+            "lng": 42.4969
+          },
+          "territory": null,
+          "qualityFlags": []
+        }
+      ]
+    },
+    {
+      "query": "Волноваха",
+      "matches": 1,
+      "truncated": false,
+      "scanned": 1,
+      "ms": [
+        0.1846069999996871,
+        0.16071899999997186,
+        0.15841099999988728,
+        0.15804499999967447,
+        0.1993320000001404,
+        0.16045900000017355,
+        0.15792999999985113,
+        0.15772900000001755,
+        0.16493099999979677,
+        0.1580109999999877
+      ],
+      "items": [
+        {
+          "id": "geonames-689198",
+          "title": "Волноваха",
+          "label": "Волноваха — ДНР — Донецкая область — Volnovakhskiy Rayon — Volnovaska Terytorialna Hromada",
+          "position": {
+            "lat": 47.6008,
+            "lng": 37.49358
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "Краснодар",
+      "matches": 10,
+      "truncated": false,
+      "scanned": 10,
+      "ms": [
+        0.45769400000017413,
+        0.2745599999998376,
+        0.2647900000001755,
+        0.5053440000001501,
+        0.3412020000000666,
+        0.5277439999999842,
+        0.4366909999998825,
+        0.4879590000000462,
+        0.2668669999998201,
+        0.24888999999984662
+      ],
+      "items": [
+        {
+          "id": "geonames-542420",
+          "title": "Краснодар",
+          "label": "Краснодар — Краснодарский край",
+          "position": {
+            "lat": 45.04534,
+            "lng": 38.98178
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-808966",
+          "title": "Краснодар",
+          "label": "Краснодар — Воронежская Область",
+          "position": {
+            "lat": 49.8958,
+            "lng": 40.24376
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-705177",
+          "title": "Краснодарка",
+          "label": "Краснодарка — Крым — Krasnogvardeyskiy rayon — Oleksandrivska",
+          "position": {
+            "lat": 45.60648,
+            "lng": 34.08541
+          },
+          "territory": "crimea",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-1502124",
+          "title": "Краснодарка",
+          "label": "Краснодарка — Омская Область",
+          "position": {
+            "lat": 54.2511,
+            "lng": 74.0239
+          },
+          "territory": null,
+          "qualityFlags": []
+        }
+      ]
+    },
+    {
+      "query": "Ялта Крым",
+      "matches": 1,
+      "truncated": false,
+      "scanned": 6,
+      "ms": [
+        0.6887149999997746,
+        0.501636999999846,
+        0.5498000000002321,
+        0.6139320000002044,
+        0.4901749999999083,
+        0.799775999999838,
+        1.510631000000103,
+        0.8505329999998139,
+        9.174321999999847,
+        0.45757099999991624
+      ],
+      "items": [
+        {
+          "id": "geonames-688533",
+          "title": "Ялта",
+          "label": "Ялта — Крым — Ялтинский район — Yaltynska Terytorialna Hromada",
+          "position": {
+            "lat": 44.50218,
+            "lng": 34.16624
+          },
+          "territory": "crimea",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "Луганск",
+      "matches": 7,
+      "truncated": false,
+      "scanned": 7,
+      "ms": [
+        0.6750310000002173,
+        0.6293930000001637,
+        0.6087969999998677,
+        0.7264399999999114,
+        0.6353320000002896,
+        0.61180800000011,
+        0.5705229999998664,
+        0.6075370000003204,
+        0.600402000000031,
+        0.559762999999748
+      ],
+      "items": [
+        {
+          "id": "geonames-702658",
+          "title": "Луганск",
+          "label": "Луганск — ЛНР — Luganskaya Oblast’ — Luhansk Raion — Luhanska Terytorialna Hromada",
+          "position": {
+            "lat": 48.56814,
+            "lng": 39.30553
+          },
+          "territory": "lnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-1500304",
+          "title": "Луганск",
+          "label": "Луганск — Новосибирская Область",
+          "position": {
+            "lat": 53.62197,
+            "lng": 77.59906
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-702684",
+          "title": "Луганское",
+          "label": "Луганское — ДНР — Донецкая область — Бахмут — Svitlodarska Terytorialna Hromada",
+          "position": {
+            "lat": 48.4447,
+            "lng": 38.25519
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-702686",
+          "title": "Луганское",
+          "label": "Луганское — Запорожская область — Пологовский район — Rozivska Terytorialna Hromada",
+          "position": {
+            "lat": 47.36748,
+            "lng": 37.09784
+          },
+          "territory": "zaporizhzhia",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "Запорожье",
+      "matches": 4,
+      "truncated": false,
+      "scanned": 4,
+      "ms": [
+        0.4472639999999046,
+        0.3573970000002191,
+        0.336435000000165,
+        0.3964239999995698,
+        0.3670520000000579,
+        0.3353089999995973,
+        0.3928149999997004,
+        0.3396759999995993,
+        0.39709799999991446,
+        0.33904000000029555
+      ],
+      "items": [
+        {
+          "id": "geonames-687700",
+          "title": "Запорожье",
+          "label": "Запорожье — Запорожская область — Запорожский район — Zaporizka Terytorialna Hromada",
+          "position": {
+            "lat": 47.85167,
+            "lng": 35.11714
+          },
+          "territory": "zaporizhzhia",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-687677",
+          "title": "Запорожье",
+          "label": "Запорожье — ЛНР — Luganskaya Oblast’ — Rovenkivskyi Raion — Khrustalnenska Terytorialna Hromada",
+          "position": {
+            "lat": 48.27361,
+            "lng": 38.71939
+          },
+          "territory": "lnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-2119386",
+          "title": "Запорожье",
+          "label": "Запорожье — Камчатский край",
+          "position": {
+            "lat": 51.50198,
+            "lng": 156.52143
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-7450115",
+          "title": "Zaporozh’ye",
+          "label": "Zaporozh’ye — Брянская Область",
+          "position": {
+            "lat": 52.6648,
+            "lng": 32.3937
+          },
+          "territory": null,
+          "qualityFlags": []
+        }
+      ]
+    },
+    {
+      "query": "Херсон",
+      "matches": 20,
+      "truncated": false,
+      "scanned": 21,
+      "ms": [
+        0.8259960000000319,
+        0.5563750000001164,
+        0.5474679999997534,
+        0.4773440000003575,
+        0.5071810000004007,
+        0.4578719999999521,
+        0.4932360000002518,
+        0.46253799999976764,
+        0.5860669999997299,
+        0.4621029999998427
+      ],
+      "items": [
+        {
+          "id": "geonames-706448",
+          "title": "Херсон",
+          "label": "Херсон — Херсонская область — Khersonskyi Raion — Khersonska Terytorialna Hromada",
+          "position": {
+            "lat": 46.63695,
+            "lng": 32.61458
+          },
+          "territory": "kherson",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-550344",
+          "title": "Херсон",
+          "label": "Херсон — Оренбургская Область · geonames-550344 · 51.4, 58.61667",
+          "position": {
+            "lat": 51.4,
+            "lng": 58.61667
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-550352",
+          "title": "Херсон",
+          "label": "Херсон — Оренбургская Область · geonames-550352 · 51.56667, 54.98333",
+          "position": {
+            "lat": 51.56667,
+            "lng": 54.98333
+          },
+          "territory": null,
+          "qualityFlags": []
+        },
+        {
+          "id": "geonames-706447",
+          "title": "Херсонес",
+          "label": "Херсонес — ДНР — Донецкая область — Mariupolskyi Raion — Kalchytska Terytorialna Hromada",
+          "position": {
+            "lat": 47.22909,
+            "lng": 37.55024
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "Доне",
+      "matches": 21,
+      "truncated": false,
+      "scanned": 22,
+      "ms": [
+        1.3132630000000063,
+        1.2896820000000844,
+        1.294514000000163,
+        1.2427470000002359,
+        2.346226999999999,
+        2.3685049999999137,
+        1.4337350000000697,
+        1.2359049999995477,
+        1.233400999999958,
+        1.2530629999996563
+      ],
+      "items": [
+        {
+          "id": "geonames-709717",
+          "title": "Донецк",
+          "label": "Донецк — ДНР — Донецкая область — Donetsk Raion — Donetska Terytorialna Hromada",
+          "position": {
+            "lat": 48.023,
+            "lng": 37.80224
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-709713",
+          "title": "Донецкий",
+          "label": "Донецкий — ЛНР — Luganskaya Oblast’ — Alchevskyi Raion — Kadiivska Terytorialna Hromada",
+          "position": {
+            "lat": 48.6996,
+            "lng": 38.67627
+          },
+          "territory": "lnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-709711",
+          "title": "Донецьке",
+          "label": "Донецьке — ДНР — Донецкая область — Kramatorskyi Raion — Mykolaivka Terytorialna Hromada",
+          "position": {
+            "lat": 48.93347,
+            "lng": 37.69006
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-709714",
+          "title": "Донецкий",
+          "label": "Донецкий — ДНР — Донецкая область — Donetsk Raion — Amvrosiivska Terytorialna Hromada",
+          "position": {
+            "lat": 47.71556,
+            "lng": 38.40889
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "Тарасовка",
+      "matches": 75,
+      "truncated": false,
+      "scanned": 75,
+      "ms": [
+        2.0943790000001172,
+        3.0816580000000613,
+        2.769967000000179,
+        2.0478950000001532,
+        2.2616119999997863,
+        2.0902430000001004,
+        2.2430359999998473,
+        2.392601999999897,
+        3.887752999999975,
+        2.544383999999809
+      ],
+      "items": [
+        {
+          "id": "geonames-691893",
+          "title": "Тарасовка",
+          "label": "Тарасовка — Херсонская область — Скадовский район — Skadovska Terytorialna Hromada",
+          "position": {
+            "lat": 46.14458,
+            "lng": 33.11739
+          },
+          "territory": "kherson",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-691863",
+          "title": "Тарасовка",
+          "label": "Тарасовка — ЛНР — Luganskaya Oblast’ — Svativskyi Raion — Nyzhnoduvanska Terytorialna Hromada",
+          "position": {
+            "lat": 49.66406,
+            "lng": 38.38937
+          },
+          "territory": "lnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-11125193",
+          "title": "Тарасовка",
+          "label": "Тарасовка — Запорожская область — Запорожский район — Petro-Mykhailivska Terytorialna Hromada",
+          "position": {
+            "lat": 48.0624,
+            "lng": 35.14804
+          },
+          "territory": "zaporizhzhia",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        },
+        {
+          "id": "geonames-691877",
+          "title": "Тарасовка",
+          "label": "Тарасовка — ДНР — Донецкая область — Kramatorskyi Raion — Illinivska Terytorialna Hromada",
+          "position": {
+            "lat": 48.34967,
+            "lng": 37.55241
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "несуществующийгород",
+      "matches": 0,
+      "truncated": false,
+      "scanned": 0,
+      "ms": [
+        0.01619200000004639,
+        0.004645999999866035,
+        0.003960999999890191,
+        0.003995999999915512,
+        0.003709999999955471,
+        0.003899999999703141,
+        0.004073999999945954,
+        0.004018999999971129,
+        0.004091999999673135,
+        0.0038890000000719738
+      ],
+      "items": []
+    }
+  ]
+}
