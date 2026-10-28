@@ -1,3 +1,7 @@
+## 28.10.2026 — B05.7/8: review-only fallback подготовлен, реальная приёмка BLOCKED
+
+Добавлены изолированные fallback-admission-review.mjs/test: общийranker/polygons, честныеgeoapify-ID/непроверенные city-centres, план18+2с внутри20с,4запросаmax/stop429.6/6tests+lintPASS; реальныйdry-runбезключаBLOCKED_NO_CREDENTIALS/0вызовов. app/lib не менялись, e231637 сохранён, ничего не опубликовано. [Checkpoint](checkpoints/2026-10-28-address-fallback-review-prepared-PARTIAL.md), [точная Previewматрица/допуски](../experiments/address-search/B05_SERVER_FAILOVER_ACCEPTANCE.md). Нужны штатный scopedGeoapifyключ, разрешениеfreequota/source-review и позжеотдельная Previewпубликация. Ошибка16×502 и неизвестная инфраструктурная причина не закрыты.
+
 ## 28.10.2026 — B05.5/6: один Photon-origin, независимый fallback BLOCKED
 
 Механически7вариантов→1origin, независимых runtime-провайдеров0; числофизическихинстансов неизвестно. Общийcooldown может исключить оставшиесяварианты. Точный инфраструктурный источник503/таймаутов неразличим по сохранённой агрегированнойтелеметрии; Vercel-ban/IPv6 не доказаны. Geoapifyresearch-адаптер есть, но ключа нет в процессе/Previewmetadata; Nominatimtypeahead запрещён, snapshotнеальтернатива. [CheckpointB05.5/6](checkpoints/2026-10-28-address-single-origin-and-fallback-BLOCKED.md). БезновыхPhotonзапросов/аккаунтов/публикаций. Далее review-only нормализация и boundedPreviewacceptance; runtimefallback не включать безреальныхисточников.
