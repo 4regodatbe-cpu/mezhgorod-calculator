@@ -1,3 +1,7 @@
+## 28.10.2026 — retry опубликован fc83523d; acceptance PARTIAL
+
+Однократное разрешение использовано: точные деревья двух локальных коммитов сохранены в remote30c5afe7→fc83523d, readbackPASS/PR14Draft. Actions40740322418 overallSUCCESS: verify991/991+TS/buildPASS, timingPASS7391мс; live_probeFAIL на503/cooldown: ДонецкДНР первый, Ростовский омоним отсутствует вторым. Actions40740322659SUCCESS/18browserPASS. Новый localdesktop/mobile сценарий40заменPASS с моками. Previewfc83523dREADY, но реальная проверкаBLOCKED: auto-review запретил share-link без отдельного разрешения; обходов нет. Полный отказPhoton/503coverage не устранены. [Итоговый checkpoint](checkpoints/2026-10-28-address-retry-published-CI-PARTIAL.md). Эта итоговая запись пока LOCAL: дополнительная публикация не выполнена во избежание второго CI-обновления.
+
 ## 28.10.2026 — retry budget/CI: LOCAL PASS, публикация запрещена до согласования CI
 
 Новые3/3 регрессии подтверждают остаток20с с учётом19с соединения/17с очереди и подавление позднего ответа после отмены. Подготовлен НЕ ЗАПУЩЕННЫЙ desktop/mobile сценарий20замен A/B. Точный разбор workflows: special-territory PR включает broad jobs; ручной build-only не предотвращает PR-событие. Старый локальный коммит8d362961 иpatch сохранены, remote8fb4d137 не менялся. Нужна отдельная узкая авторизация CI либо один обычный PR-run с broad jobs. [Checkpoint](checkpoints/2026-10-28-address-publication-gates-and-budget.md).
