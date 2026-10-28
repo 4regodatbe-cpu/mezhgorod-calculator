@@ -1,3 +1,7 @@
+## B05 operator rule carry-forward / 517-km exit cross-check — 28.10.2026
+
+**Официальное правило от26.12.2016 принято по решению владельца до новой редакции.** Прямой HTML прочитан через Opera. На север29,2 или73,9км по фактическому пути; сохранённая Тамань→Воронеж через5818209495 продолжает обход до развязки рядом с517км (OSM3057885096/5104; официальный узел517+808 не привязан напрямую к OSM). **73,9 км — сильный рабочий кандидат**, 320₽ Пн–чт /410₽ Пт–вс по приказу58 — **только условные суммы двух продуктов**, не real-priced-positive. B05 PARTIAL: ещё нужен операторский gate→bundle и точное terminal cut. `unknown/null` и runtime не менялись. [Полный разбор](../experiments/tariff-proof-selection/B05_2016_RULE_517_EXIT_REVIEW.md), [checkpoint](checkpoints/2026-10-28-b05-opera-rule-exit-DONE.md). Не повторять старый аудит.
+
 ## Experiment11 B01/B11 —28.10.2026
 
 B11 duplicate territory analysis confirmed; isolated saved9046-point prototype1749→869ms median,3parity/faretestsPASS,0network. [Report/evidence](../experiments/address-search/EXPERIMENT11_B11.md), [checkpoint](checkpoints/2026-10-28-experiment11-b11-profile-patch-PARTIAL.md). Three-line patch saved only: publishing targetAPIfile would require prohibited broadliveCI, classifierconfirmed; no new exception authorized. Application unchanged/B11PARTIAL. B01 adapter9syntheticPASS, no provider credential/real coverage admission; no new functional closure. ParentCI40657065108/40657065144SUCCESS/widesSKIPPED.
