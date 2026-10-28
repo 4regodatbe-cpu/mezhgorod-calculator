@@ -1,3 +1,7 @@
+## 28.10.2026 — B05.5/6: один Photon-origin, независимый fallback BLOCKED
+
+Механически7вариантов→1origin, независимых runtime-провайдеров0; числофизическихинстансов неизвестно. Общийcooldown может исключить оставшиесяварианты. Точный инфраструктурный источник503/таймаутов неразличим по сохранённой агрегированнойтелеметрии; Vercel-ban/IPv6 не доказаны. Geoapifyresearch-адаптер есть, но ключа нет в процессе/Previewmetadata; Nominatimtypeahead запрещён, snapshotнеальтернатива. [CheckpointB05.5/6](checkpoints/2026-10-28-address-single-origin-and-fallback-BLOCKED.md). БезновыхPhotonзапросов/аккаунтов/публикаций. Далее review-only нормализация и boundedPreviewacceptance; runtimefallback не включать безреальныхисточников.
+
 ## 28.10.2026 — реальный Preview: адресная приёмка FAIL; новая cache-правка LOCAL
 
 Проверен Previewfc83523d без моков: desktop/mobile по одному расчётуHTTP200, затем все16 запросов Донецка/Волновахи после очистки/повтора —502. Логи20002мс/budget:7. Независимые реальные проверки с ЯлтойКрым/СПб подтвердили сохранение второго поля при очисткеA/B на обоихviewport. Одна временная23чссылка отозвана, secretудалён; TLSпроверка не отключалась. Найдено закрепление частичных списков на5мин: подготовлены APIpartialflag+запреткэша partial+UIпередачаflag, локально5тестов/2browser/TS/lint/buildPASS. Ничего повторно не опубликовано, remotefc83523d/PR14Draft. [Полный checkpoint](checkpoints/2026-10-28-real-preview-address-FAIL-local-cache-fix.md). НедоступностьPhoton/503coverage остаются открыты; новая правка не объявлена решением полного отказа.
