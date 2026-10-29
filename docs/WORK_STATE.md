@@ -1,3 +1,7 @@
+## 29.10.2026 — C4/M12 actual22Н-0239 exit / operator registration BLOCKED LOCAL
+
+[M12checkpoint](checkpoints/2026-10-29-stage-C4-M12-operator-pair-DATA-BLOCKED.md), [currentquote](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-m12.json). OnepinnedOSRMMoscow→Arzamas:1550135076→1550561305→1206479738/22Н-0239,notР158. Currentfirstmarker184cannotexclude174given158.46kmroutegap; boundaryunknown,m12_current_operator_pair_not_bound/null,0network. Missingwestern/exitregisteredIDs+operatorproductcrosswalk,notorder302age. NextCKADGolitsyno→ZSD;M11partial58interfaceblockerretained. No push/runtime/data/A+B/CIchange.
+
 ## 29.10.2026 — C4/M11 one partial path reviewed / full product BLOCKED LOCAL
 
 [M11checkpoint](checkpoints/2026-10-29-stage-C4-M11-partial-DATA-BLOCKED.md), [currentquote](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-m11.json). ActualNoginsk→CKAD→M11→M10traceexit6588472831/way1307036920proved;notp58entry/reversebooth. Currentboundarym11_outer_boundaries_unresolved/quoteNULL,0network. Existingp58↔p147money610/750notageblocked; materialgap selectedCKADapproach→virtual58/productdivision,parentpath. No fabricatedphysicalbooth requirement. C4nextM12→CKAD→ZSD; runtime/data/CI/A+Bunchanged,no push.
