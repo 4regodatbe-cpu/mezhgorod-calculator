@@ -1,0 +1,46 @@
+{
+  "startedAt": "2026-10-29T14:07:11.702Z",
+  "sourceSha": "a1c169d3c7dce49b7d1d3747b9698e7aee4b581a",
+  "rows": [
+    {
+      "id": "0-global",
+      "query": "Москва Тверская 1",
+      "url": "https://photon.komoot.io/api/?q=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0+%D0%A2%D0%B2%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F+1&limit=20",
+      "httpStatus": 503,
+      "bytes": 190,
+      "sha256": "b429e25e7813a9e2b90dcec11d9cb5287751246128dd6c76a7349774829c5554",
+      "error": "SyntaxError: Unexpected token '<', \"<html>\r\n<h\"... is not valid JSON",
+      "elapsedMs": 987.1539750000001
+    },
+    {
+      "id": "0-RU",
+      "query": "Москва Тверская 1",
+      "url": "https://photon.komoot.io/api/?q=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0+%D0%A2%D0%B2%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F+1&limit=20&countrycode=RU",
+      "httpStatus": 200,
+      "bytes": 5248,
+      "sha256": "d36713b56c05c7984ffd1ef6a390809c916602fccbd93c31a548914b6f2fca54",
+      "features": 10,
+      "elapsedMs": 2675.609425
+    },
+    {
+      "id": "1-global",
+      "query": "Краснодар Красная 100",
+      "url": "https://photon.komoot.io/api/?q=%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80+%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+100&limit=20",
+      "httpStatus": 503,
+      "bytes": 190,
+      "sha256": "b429e25e7813a9e2b90dcec11d9cb5287751246128dd6c76a7349774829c5554",
+      "error": "SyntaxError: Unexpected token '<', \"<html>\r\n<h\"... is not valid JSON",
+      "elapsedMs": 196.58579099999997
+    },
+    {
+      "id": "1-RU",
+      "query": "Краснодар Красная 100",
+      "url": "https://photon.komoot.io/api/?q=%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80+%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+100&limit=20&countrycode=RU",
+      "httpStatus": 200,
+      "bytes": 10083,
+      "sha256": "759efc89bbcfe0f6f1fed6934d631259811482caa135846ebf9460e785b68311",
+      "features": 20,
+      "elapsedMs": 1737.1432190000005
+    }
+  ]
+}

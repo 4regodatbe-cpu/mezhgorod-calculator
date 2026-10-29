@@ -4,6 +4,7 @@ import { inCrimea } from "./special-territory-policy.ts";
 import type { Suggestion } from "../app/v2/components/types.ts";
 import ruwikiSettlementIndex from "../data/ruwiki-settlement-index.json" with { type: "json" };
 import { selectRussianSettlementDisplay } from "./russian-settlement-display.ts";
+import { hasAddressTerms, detailedAddressScore } from "./address-query.ts";
 
 export type PhotonFeature = {
   geometry?: { coordinates?: [number, number] };
@@ -127,11 +128,19 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
       const label = `${localityName} — ${areaName}`;
       return { title: label, label, region: areaName };
     }
-    const label = uniqueParts([name, ...providerRegion, areaName]).join(", ");
+    const reviewedCity = ruwikiNames.get(normalize(text(p.city)))?.find(row=>row.area===territory)?.names[0];
+    const verifiedAdministration = [
+      selectRussianSettlementDisplay([text(p["city:ru"]),text(p.city_ru),reviewedCity??""]),
+      selectRussianSettlementDisplay([text(p["district:ru"]),text(p.district_ru)]),
+      selectRussianSettlementDisplay([text(p["county:ru"]),text(p.county_ru)]),
+    ];
+    // Preserve the genuine object/street name; do not echo untranslated or
+    // contradictory administrative strings as verified Russian context.
+    const label = uniqueParts([name, street, ...verifiedAdministration, areaName]).join(", ");
     return { title: name || areaName, label: label || areaName, region: areaName };
   }
 
-  const label = uniqueParts([name, ...providerRegion, p.country]).join(", ");
+  const label = uniqueParts([name, street, ...providerRegion, p.country]).join(", ");
   return { title: name, label, region: uniqueParts([...providerRegion, p.country]).join(", ") };
 }
 
@@ -255,6 +264,7 @@ function localityNames(feature: PhotonFeature): string[] {
 }
 
 function providerSearchTerm(query: string): string {
+  if (hasAddressTerms(query)) return query;
   const normalized = normalize(query);
   const regionQualifiers = [
     "днр", "лнр", "крым", "республика крым", "россия", "рф", "украина",
@@ -319,7 +329,7 @@ export function photonSearchUrls(query: string): string[] {
   const term=providerSearchTerm(query);
   const localityTerm=primaryQueryName(query);
   const searchTerms=localitySearchTerms(query);
-  const isLocalityQuery=localityTerm.length>=3 && !/[0-9,;]/u.test(localityTerm);
+  const isLocalityQuery=!hasAddressTerms(query) && localityTerm.length>=3;
   const urls=[
     makeUrl(term),
     makeUrl(term,"UA"),
@@ -400,7 +410,7 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
       // Territory tiers dominate OSM place granularity so a local hamlet beats a Russian city.
-      score: (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
+      score: hasAddressTerms(query) ? detailedAddressScore(p,query) : (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
         (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank + (exactName ? 10 : 0),
       index,
       key: id,

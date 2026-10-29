@@ -132,6 +132,7 @@ test("priority-territory settlement named Moscow outranks the Russian city, whil
   const crimeaPoi = feature("Москва", 33.5187, 44.5788, 81, "shop");
   crimeaPoi.properties!.osm_key = "shop";
   crimeaPoi.properties!.city = "Севастополь";
+  crimeaPoi.properties!["city:ru"] = "Севастополь"; // Explicit Russian context for the nonlocality fixture.
   crimeaPoi.properties!.state = "Республика Крым";
   const moscowCity = feature("Москва", 37.6173, 55.7558, 82, "city");
   moscowCity.properties!.osm_type = "R";

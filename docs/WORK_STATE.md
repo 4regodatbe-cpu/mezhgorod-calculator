@@ -1,3 +1,7 @@
+## 29.10.2026 — Stage A2 generic detailed-address fix LOCAL / exact Moscow house unconfirmed
+
+ActualPhoton5boundedrequests: RUКраснодарКрасная100 exists; exactМоскваТверская1 absent from two returnedwindows, not proved absent globally;2global503 preserved without retries. Genericcity/street/house evidence ranking, full detail query preservation, no detail bbox windows, safe source-backed priority-area admin labels implemented LOCAL; no city exceptions or invented addresses.79isolatedtargetedPASS; full offline1011PASS/1SKIP, TS/scopedESLint/webpackPASS. [Evidence/limits](checkpoints/2026-10-29-stage-A2-compound-address-LOCAL.md). GeoNames/20s/pool/route/tariffs unchanged. A1boundedDONE/fullcoveragePARTIAL(ownerPreview evidence); nextA3 free detailed-address reserve assessment then A4. No push; publisheda1c still has old A2 behavior.
+
 ## 29.10.2026 — Stage A: A1 bounded DONE/full coverage PARTIAL; A2 STARTED
 
 Owner now reports actual publisheda1c169d3 Preview city/display acceptance; record as owner evidence, not a new agent run. A1 admitted169431/excluded52081 guard unchanged; nationwide semantic/coverage certificationPARTIAL. [Checkpoint and bounded next work](checkpoints/2026-10-29-stage-A1-handoff-A2-STARTED.md). A2 targets compound Photon address ranking/query truncation and safe priority-area administration, with at most4initial+2justifiedfollowup requests. No push/CI/Production or broad audit. Then A3 reuse free-reserve research; A4 distinguish mocks/local API/Preview.

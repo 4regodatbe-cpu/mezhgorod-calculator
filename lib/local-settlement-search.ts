@@ -4,15 +4,14 @@ import {join} from 'node:path';
 import {createShardLoader,type LocalLoader} from '../experiments/address-search/local-gazetteer-shards.mjs';
 import type {Suggestion} from '../app/v2/components/types.ts';
 import {normalize} from '../experiments/address-search/local-gazetteer.mjs';
+import {isDetailedAddress} from './address-query.ts';
+export {isDetailedAddress} from './address-query.ts';
 type Store={loader:LocalLoader;excludedNames:Set<string>};
 let cached: {directory:string; promise:Promise<Store>} | undefined;
 export function localPilotAllowed(env:NodeJS.ProcessEnv=process.env):boolean {
  if(env.GEONAMES_LOCAL_PILOT!=='1')return false;
  if(env.VERCEL==='1'||env.VERCEL_ENV!==undefined)return env.VERCEL_ENV==='preview'&&env.VERCEL_GIT_COMMIT_REF==='fix/v3-missing-route-prices-2026-10-15';
  return env.NODE_ENV!=='production'||env.GEONAMES_LOCAL_TEST==='1';
-}
-export function isDetailedAddress(query:string):boolean {
- return /\d|[,;]|(?:^|\s)(?:ул\.?|улица|проспект|пр-т|переулок|пер\.?|шоссе|дом|д\.?|корпус|кв\.?)(?:\s|$)/iu.test(query);
 }
 async function load(directory:string):Promise<Store>{
  const receiptBytes=await readFile(join(directory,'admission.json'));if(receiptBytes.length>16384)throw Error('Invalid admission size');
