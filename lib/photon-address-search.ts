@@ -4,7 +4,7 @@ import { inCrimea } from "./special-territory-policy.ts";
 import type { Suggestion } from "../app/v2/components/types.ts";
 import ruwikiSettlementIndex from "../data/ruwiki-settlement-index.json" with { type: "json" };
 import { selectRussianSettlementDisplay } from "./russian-settlement-display.ts";
-import { hasAddressTerms, detailedAddressScore } from "./address-query.ts";
+import { hasAddressTerms, isStreetQuery, detailedAddressScore } from "./address-query.ts";
 
 export type PhotonFeature = {
   geometry?: { coordinates?: [number, number] };
@@ -320,7 +320,7 @@ export function photonSearchUrls(query: string): string[] {
   const makeUrl = (term: string, countryCode?: string, layer?: string, bbox?: [number,number,number,number]) => {
     const url = new URL("https://photon.komoot.io/api/");
     url.searchParams.set("q", term);
-    url.searchParams.set("limit", layer ? "10" : "20");
+    url.searchParams.set("limit", layer && layer!=="street" ? "10" : "20");
     if (countryCode) url.searchParams.set("countrycode", countryCode);
     if (layer) url.searchParams.set("layer", layer);
     if (bbox) url.searchParams.set("bbox", bbox.map((value)=>Number(value.toFixed(5))).join(","));
@@ -330,10 +330,11 @@ export function photonSearchUrls(query: string): string[] {
   const localityTerm=primaryQueryName(query);
   const searchTerms=localitySearchTerms(query);
   const isLocalityQuery=!hasAddressTerms(query) && localityTerm.length>=3;
+  const streetLayer=isStreetQuery(query)?"street":undefined;
   const urls=[
-    makeUrl(term),
-    makeUrl(term,"UA"),
-    makeUrl(term,"RU"),
+    makeUrl(term,undefined,streetLayer),
+    makeUrl(term,"UA",streetLayer),
+    makeUrl(term,"RU",streetLayer),
     ...regionAliases(query).map((alias)=>makeUrl(alias,"UA","state")),
     ...(placeSearchAliases[primaryQueryName(query)] ?? []).filter((alias)=>variantKey(alias)!==variantKey(term)).map((alias)=>makeUrl(alias,"UA")),
     ...ruwikiAliasSearches(query).flatMap(({alias,area})=>
@@ -412,14 +413,16 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
       // Territory tiers dominate OSM place granularity so a local hamlet beats a Russian city.
-      score: hasAddressTerms(query)&&!wholeLocality ? detailedAddressScore(p,query) : (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
+      score: hasAddressTerms(query)&&!wholeLocality ? detailedAddressScore(p,query)*10 +
+        (matchesRequestedArea ? 6 : crimea ? 5 : territory ? 4 : outsidePriorityCountryRank(feature,crimea)) : (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
         (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank + (exactName ? 10 : 0),
       index,
       key: id,
       item: {
         id,
         title,
-        label,
+        label: osmKey==="highway"&&isStreetQuery(query)
+          ? `${label} (ориентировочная точка улицы)` : label,
         region,
         position: { lat: coordinates[1], lng: coordinates[0] },
       } satisfies Suggestion,
@@ -439,4 +442,24 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     })
     .slice(0, maxItems)
     .map(({ item }) => item);
+}
+
+/** Provider-backed street/locality association, never a generated street point.
+ * Priority-region membership comes from coordinates; ordinary region context
+ * must agree with the admitted settlement, not merely a same-name street. */
+export function photonStreetMatchesSettlement(feature: PhotonFeature, query: string, settlement: Suggestion): boolean {
+  const coordinates=feature.geometry?.coordinates;
+  const position=settlement.position;
+  if(!position||![position.lng,position.lat].every(Number.isFinite)||Math.abs(position.lng)>180||Math.abs(position.lat)>90)return false;
+  if(!coordinates||coordinates.length!==2||!coordinates.every(Number.isFinite)||
+      Math.abs(coordinates[0])>180||Math.abs(coordinates[1])>90) return false;
+  const p=feature.properties??{};
+  const cityNames=[p["city:ru"],p.city_ru,p.city,p.town,p.village].map(value=>normalize(text(value)).replace(/^(?:город|г)\s+/u,""));
+  if(!cityNames.includes(normalize(settlement.title)))return false;
+  if(detailedAddressScore(p,query)<4_000_000)return false;
+  const source=classifyForDisplay(coordinates[0],coordinates[1],SPECIAL_TERRITORY_BOUNDARIES);
+  const target=classifyForDisplay(position.lng,position.lat,SPECIAL_TERRITORY_BOUNDARIES);
+  if(source.territory!==target.territory||source.crimea!==target.crimea)return false;
+  if(!target.territory&&!target.crimea && ![p.state,p.county,p.city].some(value=>normalize(text(value))===normalize(settlement.region)))return false;
+  return rankPhotonFeatures([feature],SPECIAL_TERRITORY_BOUNDARIES,query).length>0;
 }

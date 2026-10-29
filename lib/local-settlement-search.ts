@@ -36,8 +36,9 @@ export async function searchLocalSettlements(query:string,signal?:AbortSignal):P
   void promise.catch(()=>{if(cached?.promise===promise)cached=undefined;});
  }
  const store=await cached.promise;
- const result=await store.loader.search(query,{signal});
- const omittedNameMatch=store.excludedNames.has(normalize(query));
+ const localQuery=query.replace(/[,;]/gu,' ').replace(/\s+/gu,' ').trim();
+ const result=await store.loader.search(localQuery,{signal});
+ const omittedNameMatch=store.excludedNames.has(normalize(localQuery));
  // Don't hide an already admitted exact city (e.g. Mariupol) because an
  // unrelated omitted homonym exists. Never substitute a mere prefix match
  // when the exact requested name is known only in the omitted corpus.

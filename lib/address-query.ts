@@ -1,9 +1,28 @@
 /** A detail query must never be replaced with a settlement-centre lookup. */
 export function hasAddressTerms(query: string): boolean {
-  return /\d|(?:^|\s)(?:ул\.?|улица|проспект|пр-т|переулок|пер\.?|шоссе|дом|д\.?|корпус|кв\.?)(?:\s|$)/iu.test(query);
+  return /\d|(?:^|[\s,;])(?:ул\.?|улица|проспект|пр-т|переулок|пер\.?|шоссе|дом|д\.?|корпус|кв\.?)(?:\s|$)/iu.test(query);
+}
+export function isStreetQuery(query: string): boolean {
+  return !/\d/u.test(query)&&/(?:^|[\s,;])(?:ул\.?|улица|проспект|пр-т|переулок|пер\.?|шоссе)(?:\s|$)/iu.test(query);
 }
 export function isDetailedAddress(query: string): boolean {
-  return hasAddressTerms(query)||/[,;]/u.test(query);
+  if (hasAddressTerms(query)) return true;
+  const parts=query.split(/[,;]/u).map(part=>part.trim());
+  // A comma separates regional context too, not only street/address detail.
+  return parts.length>1 && !(parts.length===2 && isRegionQualifier(parts[1]));
+}
+
+function isRegionQualifier(value: string): boolean {
+  return /^(?:днр|лнр|крым|республика крым|россия|рф|украина|[\p{L}\s-]+\s(?:область|обл\.?|край|республика))$/iu.test(value);
+}
+
+/** Only an unambiguous city-first street query may offer a separate city.
+ * Never guess a city from arbitrary word order or reinterpret a house query. */
+export function settlementForStreetQuery(query: string): string | null {
+  const parts=query.split(/[,;]/u).map(part=>part.trim());
+  if (/\d/u.test(query)||parts.length<2||!parts[0]||hasAddressTerms(parts[0])||
+      !parts.slice(1).some(hasAddressTerms)) return null;
+  return [parts[0],...parts.slice(1).filter(isRegionQualifier)].join(' ');
 }
 
 const markers=new Set(['г','город','городской','округ','улица','ул','проспект','пр','т','переулок','пер','шоссе','дом','д']);
