@@ -1,0 +1,32 @@
+{
+  "scope": "ONE real V3 YaltaCrimea -> StPetersburg calculation using GeoNames; no price certification or retries",
+  "startedAt": "2026-10-29T04:12:42.303Z",
+  "from": {
+    "id": "geonames-688533",
+    "title": "Ялта",
+    "label": "Ялта — Крым",
+    "region": "Крым",
+    "position": {
+      "lat": 44.50218,
+      "lng": 34.16624
+    }
+  },
+  "to": {
+    "id": "geonames-498817",
+    "title": "Санкт-Петербург",
+    "label": "Санкт-Петербург — Санкт-Петербург",
+    "region": "Санкт-Петербург",
+    "position": {
+      "lat": 59.93863,
+      "lng": 30.31413
+    }
+  },
+  "httpStatus": 502,
+  "curlExit": 0,
+  "sha256": "59cbe04d7236b165980f1616c95d53328b45021c47bceced5802a30956a9fbf2",
+  "error": "Сервис маршрутов временно недоступен. Попробуйте позже.",
+  "legs": 0,
+  "options": 0,
+  "status": "FAILED",
+  "elapsedMs": 5869
+}

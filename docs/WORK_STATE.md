@@ -1,3 +1,7 @@
+## 29.10.2026 — GeoNames pilot works locally; one real routeFAIL
+
+169431point opt-in actualV3API and desktop/mobile search/resetPASS; public defaultOFF. One requested realYaltaCrimea→SPb calculation502/5869ms: geocodingPASS,3routeproviders failed; no retry/rootcause speculation. [Full handoff/status4completed+2partial](../experiments/address-search/GEONAMES_V3_LOCAL_INTEGRATION.md), [checkpoint](checkpoints/2026-10-29-geonames-route-FAIL-handoff.md). Next immutable data inclusion/NFT+visibleCCBYattribution/coldHTTP verification; fullroute needs suitable evidence/environment. LOCAL only/no push/CI/Production.
+
 ## 29.10.2026 — production webpack build + new real GeoNames browser flow PASS
 
 DirectNext16.3.4webpackbuild/TS PASS onNode24.19.0, standard config unchanged; Turbopack EPERM separately retained. Actual local production V3 desktop/mobile search/reset/preserve-other-field with169431point pilot PASS/no address mocks. Actual35localHTTPrequests p9536.91ms, RSS164MiB/HWM207MiB; code NFT7.46MB+external pilot18.04MB (NOT yet deployable tracing bundle). [Checkpoint](checkpoints/2026-10-29-geonames-webpack-browser-PASS.md). Single real route check pending; no full route success claim. Public pilot off by default/no push/CI/Production. Next inspect one-route result then local evidence handoff.

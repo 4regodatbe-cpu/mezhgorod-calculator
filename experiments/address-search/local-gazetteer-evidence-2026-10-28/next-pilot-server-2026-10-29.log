@@ -1,0 +1,63 @@
+▲ Next.js 16.3.4
+- Local:         http://127.0.0.1:3139
+- Network:       http://127.0.0.1:3139
+✓ Ready in 149ms
+✓ Running next.config.ts took 31ms
+calculation_timing {
+  status: 502,
+  handlerElapsedMs: 5734.804,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.506,
+      maxMs: 0.506
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.111,
+      maxMs: 0.111
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 1,
+      totalMs: 5733.012,
+      maxMs: 5733.012
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 5732.474,
+      maxMs: 5732.474
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 5547.433,
+      maxMs: 5547.433
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 5352.143,
+      maxMs: 5352.143
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 5727.474,
+      maxMs: 5727.474
+    }
+  ],
+  stops: []
+}
