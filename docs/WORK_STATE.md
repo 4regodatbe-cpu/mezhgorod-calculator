@@ -1,3 +1,7 @@
+## 29.10.2026 — excluded coverage protected without importing52081records
+
+Coverage-only comparison finds57143omitted aliases/12027shared; hashed name-only guard prevents prefix substitution for omitted exact destinations, preserves admitted exact cities with partialcoverage metadata. Initial Mariupol guard regression fixed without weakening test.7focusedtests/TS PASS. [Checkpoint](checkpoints/2026-10-29-geonames-excluded-coverage-PASS.md). LocalPreviewgate+fallback safety retained; next narrow route transport diagnosis then changed-source build. No push/CI/Production.
+
 ## 29.10.2026 — Preview safety gate + local failure fallback fixed
 
 Pilot now restricted to exact VercelPreviewbranch; Production cannot enable even with localtest override. Localproductiontests need GEONAMES_LOCAL_TEST=1. Missing/corruptstore falls back to purePhoton, abort does not invokePhoton.2newtestsPASS. [Checkpoint](checkpoints/2026-10-29-geonames-preview-safety-PASS.md). No push/Preview/CI/Production; next coverage check52081excludedIDs, no full revalidation.

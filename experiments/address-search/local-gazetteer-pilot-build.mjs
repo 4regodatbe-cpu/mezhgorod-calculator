@@ -5,6 +5,7 @@ import {compileShards} from './local-gazetteer-shards.mjs';
 import {classifyTerritory} from '../../lib/special-territory-geometry.ts';
 import {SPECIAL_TERRITORY_BOUNDARIES} from '../../lib/special-territory-boundaries.ts';
 import {inCrimea} from '../../lib/crimea-geography.ts';
+import {writeExclusionGuard} from './local-gazetteer-exclusions.mjs';
 const [input,directory,output]=process.argv.slice(2);if(!input||!directory||!output)throw Error('Pass source catalog, shard directory and report');
 const bytes=readFileSync(input),data=JSON.parse(bytes),validation=validateCatalog(data);
 if(validation.status!=='STRUCTURAL_REVIEW_COMPLETE')throw Error('Catalog validation blocked');
@@ -24,6 +25,7 @@ const admission={scope:'local-pilot-only',sourceSha256:createHash('sha256').upda
 const pilot={...data,admission,records};
 const manifest=await compileShards(pilot,directory);
 // Explicit receipt prevents an arbitrary research catalog being silently enabled.
-writeFileSync(directory+'/admission.json',JSON.stringify({...admission,manifestSha256:createHash('sha256').update(readFileSync(directory+'/manifest.json')).digest('hex')})+'\n');
+const guard=writeExclusionGuard(data,records.map(r=>r[0]),directory);
+writeFileSync(directory+'/admission.json',JSON.stringify({...admission,manifestSha256:createHash('sha256').update(readFileSync(directory+'/manifest.json')).digest('hex'),excludedNamesSha256:guard.sha256})+'\n');
 writeFileSync(output,JSON.stringify({status:'LOCAL_PILOT_CORPUS',...admission,records:records.length,shards:Object.keys(manifest.shards).length,quarantine,
  structuralQuarantineCount:validation.issues.length},null,2)+'\n');console.log(JSON.stringify({records:records.length,quarantine:quarantine.length,scope:admission.scope}));

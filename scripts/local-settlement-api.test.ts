@@ -30,6 +30,7 @@ test('actual GET + admitted real data remain independent of completely unavailab
    }
    if(query==='Донецк')assert.deepEqual(body.items.slice(0,2).map((x:{id:string})=>x.id),['geonames-709717','geonames-565348']);
    if(query==='Волноваха')assert.equal(body.items[0].id,'geonames-689198');
+   if(query==='Мариуполь'){assert.equal(body.partial,true);assert.equal(body.localSource.omittedExactHomonymsPossible,true);}
   }
   assert.equal(calls,0);
   // V3 AddressField sends POST /r rather than calling GET directly.
@@ -40,6 +41,8 @@ test('actual GET + admitted real data remain independent of completely unavailab
   globalThis.fetch=async()=>{calls++;return new Response(JSON.stringify({features:[{type:'Feature',geometry:{type:'Point',coordinates:[37.617,55.75]},properties:{name:'улица Ленина',city:'Москва',country:'Россия',countrycode:'RU',osm_id:1,osm_type:'W',osm_key:'highway',osm_value:'residential'}}]}),{status:200,headers:{'content-type':'application/json'}});};
   const response=await GET(new NextRequest('http://localhost/api/suggest?q='+encodeURIComponent('Москва улица Ленина')));
   assert.equal(response.status,200);assert.ok(calls>0,'street/detail query reaches Photon');
+  const omitted=await GET(new NextRequest('http://localhost/api/suggest?q='+encodeURIComponent('Абазовка'))),omittedBody=await omitted.json();
+  assert.equal(omitted.status,200);assert.equal(omittedBody.localSource,undefined);assert.ok(omittedBody.items.every((item:{id:string})=>!item.id.startsWith('geonames-')));
  }finally{
   globalThis.fetch=original;
   for(const [key,value] of [['GEONAMES_LOCAL_PILOT',env[0]],['GEONAMES_LOCAL_PILOT_DIR',env[1]]] as const){if(value===undefined)delete process.env[key];else process.env[key]=value;}

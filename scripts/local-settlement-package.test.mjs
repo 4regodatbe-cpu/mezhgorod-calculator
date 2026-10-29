@@ -6,6 +6,7 @@ import {gunzipSync} from 'node:zlib';
 test('bundled local pilot preserves receipt, bounded shards and source attribution',()=>{
  const root=new URL('../data/local-settlements/',import.meta.url),bytes=readFileSync(new URL('manifest.json',root)),manifest=JSON.parse(bytes),receipt=JSON.parse(readFileSync(new URL('admission.json',root)));
  assert.equal(receipt.scope,'local-pilot-only');assert.equal(createHash('sha256').update(bytes).digest('hex'),receipt.manifestSha256);
+ const guard=readFileSync(new URL('excluded-names.json',root));assert.equal(createHash('sha256').update(guard).digest('hex'),receipt.excludedNamesSha256);assert.equal(JSON.parse(guard).excludedRecords,52081);
  assert.equal(manifest.recordCount,169431);assert.equal(manifest.license.name,'CC-BY-4.0');
  const checked=new Set();
  for(const meta of Object.values(manifest.shards)){
