@@ -1,3 +1,7 @@
+## 29.10.2026 — Stage A3 free DETAIL reserve review saved / operational reserve BLOCKED
+
+Reused existing official-source review, no new provider requests/accounts/keys. PublicNominatimautocomplete forbidden; Geoapify free candidate has finitequota and existingadapterCITYONLY/off/unreviewed; DaData detailcoverage/precision/provisioning unproved; ownOSMdetail corpus/build not prepared. [A3 evidence/next prerequisites](checkpoints/2026-10-29-stage-A3-detail-reserve-REVIEW.md). No working detailreserve claimed or new idleadapter created; GeoNamescity independence retained. A2localc962fb73 verified; next A4 bounded actuallocalAPI/UI/one route with explicit evidence boundaries. No push/CI/Production changes.
+
 ## 29.10.2026 — Stage A2 generic detailed-address fix LOCAL / exact Moscow house unconfirmed
 
 ActualPhoton5boundedrequests: RUКраснодарКрасная100 exists; exactМоскваТверская1 absent from two returnedwindows, not proved absent globally;2global503 preserved without retries. Genericcity/street/house evidence ranking, full detail query preservation, no detail bbox windows, safe source-backed priority-area admin labels implemented LOCAL; no city exceptions or invented addresses.79isolatedtargetedPASS; full offline1011PASS/1SKIP, TS/scopedESLint/webpackPASS. [Evidence/limits](checkpoints/2026-10-29-stage-A2-compound-address-LOCAL.md). GeoNames/20s/pool/route/tariffs unchanged. A1boundedDONE/fullcoveragePARTIAL(ownerPreview evidence); nextA3 free detailed-address reserve assessment then A4. No push; publisheda1c still has old A2 behavior.
