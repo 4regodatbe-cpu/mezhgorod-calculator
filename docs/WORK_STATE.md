@@ -1,3 +1,7 @@
+## 29.10.2026 — built local V3 desktop/mobile PASS / Preview AUTH BLOCKED
+
+Actual local production V3 → POST/r → admitted GeoNames → UI passed1280×900 and390×844: clear/retype A/B, Volnovakha, Donetsk DNR/Rostov, preserve other endpoint; no address mocks, HTTP200/geonames, no page errors. Calculation intentionally intercepted, so no live full-route claim. Evidence/screenshots/runtime hashes saved; [checkpoint](checkpoints/2026-10-29-b05-regional-ui-LOCAL-PASS.md). Source3b08ca23 runtime equals tested build. Existing CLI remains loggedInfalse; exact Preview browser tab still redirects to LoginVercel. No new login link/share/push/CI/Production change. Hosted checks remain UNVERIFIED; published Preview remains d5be, local fixes absent there. Next finish existing official auth, then exact Preview; publication needs separate approval.
+
 ## 29.10.2026 — explicit-region ranking LOCAL verified
 
 Generic ordinary-region qualifier now overrides default geographical priority in Photon; coordinate-classified priority areas cannot be overridden by provider state text. Donetsk-specific score bonus removed, namesake IDs/coordinates preserved. All seven requested queries covered in actual GeoNames API tests with Photon fully unavailable. 42 focused +7 actual-data tests PASS; full offline1005PASS/0FAIL/1SKIP; TS/scoped ESLint/webpack exit0. [Checkpoint](checkpoints/2026-10-29-b05-regions-LOCAL.md). No corpus/CI/push/deployment changes. Next built-source local desktop/mobile smoke; existing Preview still d5be and CLI auth false, so hosted checks remain unverified.
