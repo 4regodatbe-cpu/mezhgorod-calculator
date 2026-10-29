@@ -25,6 +25,10 @@ Full retained Donetsk→Moscow before/current API replay:12storedresponses each,
 
 `2026-10-29/timing-summary.json` pins3historical handler observations and3existing CPU profiles. Ordinary CI2225.425ms: routing1437.258/trace659.430/pricing48.794/response10.387. Special CI7318.419ms: routing1115.330/trace3267.508/pricing891.989/response590.168. Local Moscow→SPb4085.855ms: routing2064.693/trace1830.996/pricing119.838/response15.394. Routing/trace are network-inclusive; provider/parent stages overlap and cannot be added. Geometry admission/fastest selection/final JSON serialization remain unseparated. Prior decode6–9ms CPU fixture is not an exact network subtraction; no new profiling audit or normal-request speed claim.
 
-## B4–B5
+## B4 — measured obsolete-work reduction, not normal-request speedup
 
-IN PROGRESS. Next measured cancelled-work reduction, then five bounded saved-control assessments. No10s/SLA claim.
+One optimization: caller cancellation stops obsolete main V3 work, implemented in B2. Matched diagnostic provider starts3→1, two subsequent starts prevented, first in-flight signal aborted. Six regressions cover active main phases. Full noncancelled saved API body/requests EXACT MATCH,12responses/run/0misses. `2026-10-29/cancelled-work-summary.json` pins source hashes. Normal-request latency gain remains null; warm paired timing is not a speedup benchmark and no10s SLA is claimed. Auxiliary/legacy cancellation remains limited as stated in B2. Ordinary repeated analysis is not counted fixed or reprofiled.
+
+## B5
+
+IN PROGRESS: five named saved controls, no route audit or automatic new network replay.

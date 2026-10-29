@@ -1,3 +1,7 @@
+## 29.10.2026 — Stage B4 measured waste reduction LOCAL
+
+[B4checkpoint](checkpoints/2026-10-29-stage-B4-cancelled-work-LOCAL.md): единственная выбранная оптимизация — исправленная B2 отмена устаревшей работы; controlled provider starts3→1, два последующих старта предотвращены, первый in-flight abort доставлен. [Числа/sourceSHA](../experiments/routing-reliability/2026-10-29/cancelled-work-summary.json). Не выдано за ускорение нормальной поездки или10сSLA; uncancelled body/requests EXACT MATCH. Runtime180e7caa не менялся, gatesне повторялись. Далее B5 пять saved-controls с честными пробелами, без новых массовых запросов/публикации.
+
 ## 29.10.2026 — Stage B3 сохранённые timing разобраны LOCAL
 
 [Сводка с sourceSHA](../experiments/routing-reliability/2026-10-29/timing-summary.json), [checkpoint](checkpoints/2026-10-29-stage-B3-saved-timings-LOCAL.md): historical handler2.225/7.318/4.086с; основные крупные интервалы routing1.1–2.1с и network-inclusive trace0.66–3.27с. Нельзя суммировать перекрывающиеся provider/parent spans или выдавать CPU-профиль заE2E. Geometry/fastest-selection/JSON отдельно UNMEASURED. Старый special-split reuse не повторён; normal-speedup/10сSLA не заявлены. Дальше B4 measured cancelled-work reduction → B5 saved5controls. Только документы/выборки, без новой сети/сборки/push.
