@@ -1,3 +1,7 @@
+## 29.10.2026 — final display newPreview READY / real acceptance awaits access
+
+Exacta1c169d3 Preview5liov1bd6/dpl_BLWKSPSNgg4YbB1DLZTXqRkuXWAo READY but redirectsLoginVercel; exactURL sent toowner forConnector access, no loginloop/newshare/oldPreview substitution. [READY evidence](checkpoints/2026-10-29-b05-final-display-preview-READY.md). VerifyNode24.22.1/full1007PASS/1SKIP/TS/buildPASS; B03artifact18/18PASS; calctimingHTTP200/7.58s GitHubhandler, notVercelbrowser proof. livejobstillrunning at checkpoint. Cloudmemory/coldstart unmeasured despite catalogue/runtime-log inspection. Production051d51ea unchanged. Onepushused; notes+2artifactsLOCALONLY. Next finalCI review and realnewPreview onlyafteraccess.
+
 ## 29.10.2026 — final display fix publisheda1c169d3 / new CI and Preview pending
 
 ONE normal ffpush7preparedcommits/24files; exactremotea1c169d3c7dce49b7d1d3747b9698e7aee4b581a/tree19793e429d667ff925003cc58570a8010ed2e86d readbackPASS. No secret/sharetoken detected in changedfiles/ZIPpayloads; CI/runtime tariff routing policy unchanged. [Publication checkpoint](checkpoints/2026-10-29-b05-final-display-PUBLISHED.md). Automatic runs40881925570/40881925603 active; calctimingSUCCESS. NewexactPreview5liov1bd6/dpl_BLWKSPSNgg4YbB1DLZTXqRkuXWAo BUILDING; initialbrowsernavtimeout showed buildingpage, not search failure. Production051d51ea unchanged. Next finalCI/newREADY then actualnewPreview acceptance; if protected request owneraccess for exactURL, no loginloop/sharecreation. No secondpush; follow-upnotesLOCALONLY.
