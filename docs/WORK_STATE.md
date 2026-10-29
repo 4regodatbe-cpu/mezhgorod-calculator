@@ -1,3 +1,7 @@
+## 29.10.2026 — Photon verified-Russian settlement display LOCAL
+
+Coordinate-classified priority settlements require Russian source fields or existing reviewed area-scoped RuWiki names; no raw/unverified fallback or city display dictionary. Aliases, streets/houses, coordinates/IDs unchanged. 39 focused PASS; full offline1002PASS/0FAIL/1SKIP, TS/webpack/scoped ESLint exit0 (one pre-existing warning). [Checkpoint](checkpoints/2026-10-29-b05-photon-russian-LOCAL.md). Possible reduced Photon-only coverage without Russian evidence is intentional, not translated away. Next generic explicit-region tests. Existing CLI login still unconfirmed/loggedInfalse; Preview real checks unverified. No push; Preview remains d5be.
+
 ## 29.10.2026 — GeoNames Russian-name guard LOCAL / Photon incomplete
 
 Priority-area GeoNames no longer displays explicitly unverified, Latin or Ukrainian-specific display names; no invented translations or data regeneration. 13 targeted PASS; full offline 999PASS/0FAIL/1SKIP, TypeScript and webpack build exit0. [Checkpoint](checkpoints/2026-10-29-b05-geonames-russian-display-LOCAL.md). Photon unverified-name fallback remains unresolved, so cross-provider Russian-only guarantee is NOT complete. Authorized Vercel device confirmation pending. No push or deployment; Preview remains d5be.

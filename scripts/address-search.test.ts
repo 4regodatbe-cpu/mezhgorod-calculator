@@ -5,7 +5,9 @@ import { photonSearchUrls, rankPhotonFeatures, type PhotonFeature } from "../lib
 
 const feature = (name: string, lng: number, lat: number, osmId: number, osmValue = "city"): PhotonFeature => ({
   geometry: { coordinates: [lng, lat] },
-  properties: { name, city: name, state: name === "Донецк" ? (lng > 38 ? "Ростовская область" : "Донецкая область") : "Луганская область", country: lng > 38 ? "Россия" : "Украина", countrycode: lng > 38 ? "RU" : "UA", osm_key: ["city", "town", "village", "hamlet", "locality", "municipality", "isolated_dwelling", "farm"].includes(osmValue) ? "place" : osmValue === "administrative" ? "boundary" : "highway", osm_type: "N", osm_id: osmId, osm_value: osmValue },
+  // Ranking fixtures model localized Russian source fields. The separate
+  // photon-russian-display suite covers absent/invalid language evidence.
+  properties: { name, "name:ru": /[А-Яа-яЁё]/u.test(name)&&!/[A-Za-zІіЇїЄєҐґ]/u.test(name)?name:undefined, city: name, state: name === "Донецк" ? (lng > 38 ? "Ростовская область" : "Донецкая область") : "Луганская область", country: lng > 38 ? "Россия" : "Украина", countrycode: lng > 38 ? "RU" : "UA", osm_key: ["city", "town", "village", "hamlet", "locality", "municipality", "isolated_dwelling", "farm"].includes(osmValue) ? "place" : osmValue === "administrative" ? "boundary" : "highway", osm_type: "N", osm_id: osmId, osm_value: osmValue },
 });
 
 test("searches globally, within Ukraine and Russia, and in each priority territory", () => {
@@ -106,6 +108,7 @@ test("same-name city inside a special ADM1 polygon ranks above its Russian names
 
 test("Ukrainian Makeyevka spelling is matched and displayed in Russian for a Russian query", () => {
   const makeyevka = feature("Макіївка", 37.9028, 48.0171, 72, "town");
+  makeyevka.properties!["name:ru"] = "Макеевка";
   const results = rankPhotonFeatures([makeyevka], SPECIAL_TERRITORY_BOUNDARIES, "Макеевка");
   assert.equal(results[0].label, "Макеевка — ДНР");
   assert.equal(results[0].title, "Макеевка — ДНР");
@@ -228,6 +231,7 @@ test("localized Ukrainian oblast result matches a Russian region query by its ex
 
 test("Ukrainian locality spelling matches a Russian query and omits community suffix", () => {
   const donetsk = feature("Донецьк", 37.80134, 48.01587, 70, "administrative");
+  donetsk.properties!["name:ru"] = "Донецк";
   donetsk.properties!.city = "Донецька міська громада";
   const makeyevka = feature("Макеевка", 37.9028, 48.0171, 71, "administrative");
   makeyevka.properties!.city = "Макіївська міська рада";
@@ -237,6 +241,7 @@ test("Ukrainian locality spelling matches a Russian query and omits community su
   assert.equal(makeyevkaResults[0].label, "Макеевка — ДНР");
   assert.equal(makeyevkaResults[0].id, "N-71");
   const luhansk = feature("Луганськ", 39.3078, 48.574, 73, "city");
+  luhansk.properties!["name:ru"] = "Луганск";
   const luhanskResult = rankPhotonFeatures([luhansk], SPECIAL_TERRITORY_BOUNDARIES, "Луганск");
   assert.equal(luhanskResult[0].label, "Луганск — ЛНР");
 });
@@ -246,8 +251,10 @@ test("Russian Zaporizhzhia query searches and ranks Ukrainian city spelling", ()
   assert.equal(urls.length, 12);
   assert.equal(urls[3].searchParams.get("q"), "Запоріжжя");
   assert.equal(urls[3].searchParams.get("countrycode"), "UA");
+  const localizedZaporizhzhia = feature("Запоріжжя", 35.1182867, 47.8507859, 201, "city");
+  localizedZaporizhzhia.properties!["name:ru"] = "Запорожье";
   const results = rankPhotonFeatures([
-    feature("Запоріжжя", 35.1182867, 47.8507859, 201, "city"),
+    localizedZaporizhzhia,
     feature("Запорожье", 34.0, 44.5, 202, "village"),
   ], SPECIAL_TERRITORY_BOUNDARIES, "Запорожье");
   assert.ok(results[0]);

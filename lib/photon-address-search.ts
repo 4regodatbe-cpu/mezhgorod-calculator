@@ -98,7 +98,11 @@ function localityRank(feature: PhotonFeature, exactName: boolean): number {
   return 0;
 }
 
-function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean, exactName: boolean): { title: string; label: string; region: string } {
+function isRussianDisplayName(name: string): boolean {
+  return /[А-Яа-яЁё]/u.test(name) && !/[A-Za-zІіЇїЄєҐґ]/u.test(name);
+}
+
+function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean, exactName: boolean): { title: string; label: string; region: string } | null {
   const p = feature.properties ?? {};
   const street = [p.street, p.housenumber].map(text).filter(Boolean).join(", ");
   const name = text(p["name:ru"]) || text(p.name_ru) || text(p.name) || street || text(p.city);
@@ -116,8 +120,14 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
       return { title: "Крым", label: "Крым", region: "Крым" };
     }
     if (isLocality) {
-      const knownRuwikiName = ruwikiNames.get(normalize(name))?.find((row) => row.area === territory)?.names[0];
-      const localityName = knownRuwikiName || russianLocalityNames[normalize(name)] || name;
+      // Require a Russian-language source, not merely Cyrillic characters or
+      // a transliteration. The reviewed index is scoped by coordinate-derived
+      // territory; aliases remain usable for matching, never for invention.
+      const providerRussian = [text(p["name:ru"]), text(p.name_ru)].find(isRussianDisplayName);
+      const knownRuwikiName = localityNames(feature).flatMap(alias =>
+        ruwikiNames.get(normalize(alias)) ?? []).find(row => row.area === territory)?.names[0];
+      const localityName = providerRussian || (knownRuwikiName && isRussianDisplayName(knownRuwikiName) ? knownRuwikiName : null);
+      if (!localityName) return null;
       const label = `${localityName} — ${areaName}`;
       return { title: label, label, region: areaName };
     }
@@ -152,20 +162,6 @@ const placeSearchAliases: Record<string, string[]> = {
   запороже: ["Запоріжжя"],
   харков: ["Харків"],
   тарасовка: ["Тарасівка"],
-};
-const russianLocalityNames: Record<string, string> = {
-  донецк: "Донецк",
-  донецьк: "Донецк",
-  луганськ: "Луганск",
-  запоріжжя: "Запорожье",
-  луганск: "Луганск",
-  макиивка: "Макеевка",
-  мелитополь: "Мелитополь",
-  мариуполь: "Мариуполь",
-  запорижжя: "Запорожье",
-  харкив: "Харьков",
-  бердянск: "Бердянск",
-  енергодар: "Энергодар",
 };
 
 function geometryBounds(value: unknown): [number, number, number, number] | null {
@@ -371,7 +367,9 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const exactName = Boolean([...queryNames,...queryTransliterations].some((candidate) => candidate && normalizedNames.some((normalizedName) =>
       candidate === normalizedName ||
       (!regionQuery && candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
-    const { title, label, region } = displayName(feature, territory, crimea, exactName);
+    const display = displayName(feature, territory, crimea, exactName);
+    if (!display) return [];
+    const { title, label, region } = display;
     const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
     const locality = localityRank(feature, exactName);
     const administrativeRegion = regionQuery && placeType === "administrative" && exactName ? 4 : 0;
