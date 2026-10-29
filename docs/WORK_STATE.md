@@ -1,3 +1,7 @@
+## 29.10.2026 — Stage B5 пять controls STARTED LOCAL
+
+[B5 recovery/limits](checkpoints/2026-10-29-stage-B5-controls-STARTED.md). Точный Krasnodar→SPb archive найден, Donetsk→Moscow replay0miss уже сохранён, Moscow→SPb старый real200 и Yalta→SPb real502 не повторяются. Для недостаточно представленного Krasnodar→Moscow — один pinpoint current-handler real run: GeoNames координаты, departure15Oct09MSK, caller35с/max20upstream, raw capture, без повторов/подмены Домодедовом. Это разрешённое уточнение B5, не широкий аудит/публикация.
+
 ## 29.10.2026 — Stage B4 measured waste reduction LOCAL
 
 [B4checkpoint](checkpoints/2026-10-29-stage-B4-cancelled-work-LOCAL.md): единственная выбранная оптимизация — исправленная B2 отмена устаревшей работы; controlled provider starts3→1, два последующих старта предотвращены, первый in-flight abort доставлен. [Числа/sourceSHA](../experiments/routing-reliability/2026-10-29/cancelled-work-summary.json). Не выдано за ускорение нормальной поездки или10сSLA; uncancelled body/requests EXACT MATCH. Runtime180e7caa не менялся, gatesне повторялись. Далее B5 пять saved-controls с честными пробелами, без новых массовых запросов/публикации.
