@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "dateMSK": "2026-10-29",
+  "persisted": "LOCAL_ONLY_NOT_PUSHED",
+  "publishedCommit": "a1c169d3c7dce49b7d1d3747b9698e7aee4b581a",
+  "liveLocalRuntimeCommit": "c962fb730c42fd42f192ee55bbba9de20341bbbc",
+  "finalGateRuntimeCommit": "00e9983cf2669fad38f36681401e7ac6f5bd1e6a",
+  "finalGateTree": "8bbc1e712e6eb8c11fa91d7485d35f624789dda8",
+  "node": "24.19.0",
+  "next": "16.3.4",
+  "chromium": "154.0.8037.57",
+  "targeted": {
+    "pass": 81,
+    "fail": 0,
+    "exitCode": 0
+  },
+  "offlineAudit": {
+    "pass": 1013,
+    "fail": 0,
+    "skip": 1,
+    "quoteAndApiChecks": "PASS",
+    "exitCode": 0
+  },
+  "typeScriptExitCode": 0,
+  "scopedESLintExitCode": 0,
+  "webpackBuildExitCode": 0,
+  "resources": {
+    "scope": "local_whole_next_process_not_vercel",
+    "startupReadyMs": 124,
+    "startupIsFirstRequestColdLatency": false,
+    "sampledRssKiB": 197028,
+    "processElapsedAtRssSample": "06:24",
+    "compoundHttpSeconds": 4.93904,
+    "singleControlCalculationMs": 4229,
+    "cloudMemoryOrColdStartMeasured": false
+  },
+  "sourceFiles": [
+    {
+      "path": "lib/address-query.ts",
+      "sha256": "212ce37f46bdad7d6d14daad3792ccbd02318afb00dfe17a346e8fdc21682023"
+    },
+    {
+      "path": "lib/photon-address-search.ts",
+      "sha256": "5fe691de52f408bde8c74796b8d85d0283e468b0d7d9515a64714a12230be6e6"
+    },
+    {
+      "path": "lib/local-settlement-search.ts",
+      "sha256": "0ef0ad2ebae1113e1ff3b8217ff0f34821990705173b3da93b6b30a5daab5b36"
+    },
+    {
+      "path": "scripts/compound-address.test.ts",
+      "sha256": "eed80238cc80658f06fd9025abf10164f0c03b7174580b37a058881be91996df"
+    },
+    {
+      "path": "scripts/address-search.test.ts",
+      "sha256": "556a8dca6ccf69bde466e92f777ff258bb3b6d2f3e8b7062f8db2d4f5c932c82"
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6422,
+      "sha256": "ab7b663dc9da83e47b1d35d3d61dedad95bc97ebb565679b95c0b1c7f334658b"
+    },
+    {
+      "path": "city-browser-review.json",
+      "bytes": 23331,
+      "sha256": "5527109ff10d669ab2ba63aad908f3b0f6d086f5974e00107d8a79202030e17c"
+    },
+    {
+      "path": "city-browser-runner.mjs",
+      "bytes": 3779,
+      "sha256": "89ca503af3dca827f470406bd323e2a6fa5ebceaac39a9523992400ff1def3a6"
+    },
+    {
+      "path": "city-desktop.png",
+      "bytes": 242903,
+      "sha256": "65f5641118a880b102affe070f685ee2350545e070d124d173f0cc07c01b07cd"
+    },
+    {
+      "path": "city-mobile.png",
+      "bytes": 174792,
+      "sha256": "621355830b87dc2e622a580166e16d74d172a5b94e1c69d281771328e39a9275"
+    },
+    {
+      "path": "compound-api-http.json",
+      "bytes": 45,
+      "sha256": "8f31a884638967700c308b5d79004335f4bf6f8ec9fcfd805766a00499ef150e"
+    },
+    {
+      "path": "compound-api-response.json",
+      "bytes": 8030,
+      "sha256": "86a544a1eccf7fbe59d021227c3d8ecc96f21929b69790ac8ae3b16a4c23beb2"
+    },
+    {
+      "path": "detail-browser-review.json",
+      "bytes": 22012,
+      "sha256": "7182400b2dd704a49afc99eca2771a0c620188890276d83fe8fde71372b7ca9e"
+    },
+    {
+      "path": "detail-browser-runner.mjs",
+      "bytes": 1941,
+      "sha256": "6b3e7be64c2482dd391c203100273ea13ac5dfc1e8f552e137208822c3918b3d"
+    },
+    {
+      "path": "detail-desktop.png",
+      "bytes": 208746,
+      "sha256": "65f017e15befe53008046ad51bfd20f45832f8bf2c3a421c086d923ac5d5f393"
+    },
+    {
+      "path": "detail-mobile.png",
+      "bytes": 142717,
+      "sha256": "71b3aa6eb599a5d93699dac0a4a6c416ad7abc805ef767bd5d06985f14ae3695"
+    },
+    {
+      "path": "logs/audit.log",
+      "bytes": 152233,
+      "sha256": "76185adf5495ccb73b39a84d56e4610e1115532f91eb30bd2c1f452fc64a8523"
+    },
+    {
+      "path": "logs/build.log",
+      "bytes": 1202,
+      "sha256": "c94a9b0715589e13fcf3632a2762f8ffe932594b9eefb2063eadac79bfd09899"
+    },
+    {
+      "path": "logs/city-browser.log",
+      "bytes": 237,
+      "sha256": "68aef480637ed4b84efc71ede103ed29127c22201d2825018418083b3abcce0b"
+    },
+    {
+      "path": "logs/detail-browser.log",
+      "bytes": 149,
+      "sha256": "ddad2bfba50eb50a6f0cd3ee5a11a10c42931b68412718590db49366857faea6"
+    },
+    {
+      "path": "logs/earlier-shared-isolation-failure.log",
+      "bytes": 9195,
+      "sha256": "e7f21ee05e9c0c672b4ecf3c5215725cde6dc37c5716e0a1f476adaa29565a53"
+    },
+    {
+      "path": "logs/eslint.log",
+      "bytes": 198,
+      "sha256": "1c033a78bd3a0775df5613e8bd3498c1f821406d7cf582515f425f14dbe6f583"
+    },
+    {
+      "path": "logs/server.log",
+      "bytes": 1491,
+      "sha256": "c3ac4dc32e231415e3184573d2e86cc07151edf331586b57b6d237d5fae3f11c"
+    },
+    {
+      "path": "logs/targeted.log",
+      "bytes": 7907,
+      "sha256": "865e0fee51eefe3f54527497aa6f104e1dca88446da21e854d6ac95bb039fc4e"
+    },
+    {
+      "path": "logs/tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
