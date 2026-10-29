@@ -1,3 +1,7 @@
+## 29.10.2026 — C5 combinations PASS LOCAL / C6 gates STARTED
+
+[C5checkpoint](checkpoints/2026-10-29-stage-C5-combinations-LOCAL-PASS.md):Krasnodar→SPbexact5040+1130+3900+94+300=10464,16savedtrace/localresponsesneededforM4proof;Arzamas→PrimorskCKAD/ZSDmissing→unknown/null,notpartial5987. Bothgeometryhashesunchanged,duplicate/aggregateguardsPASS,0network. Initialharnesscontext/incorrectM12missingpremiselogspreserved/fixed,noruntimechange. ReverseM121713isexistingmodeloutput,notnewindependentoperatorcrosswalkproof. [C6STARTED](checkpoints/2026-10-29-stage-C6-regressions-STARTED.md):offlinegate/TS/scopedlint/directwebpackbuild,newtestcodeonly;nosource/browser/liveaudits. C2/C4realdata blockersremain;no push/CI/Production/A+Bchange.
+
 ## 29.10.2026 — C4 four-road boundedreview saved / ZSD known600 retained LOCAL
 
 [ZSD/C4checkpoint](checkpoints/2026-10-29-stage-C4-ZSD-products-PARTIAL.md), [twoquotes](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-zsd.json). ExistingexactKADsouth→Ekateringofkaproduct600retained;largerPlanernayatripquoteNULL/scope_not_reviewed,notborrowed300/600.RVP64infrastructureNOTautomaticpaymentgate. C4review5retainedrecords/0networkcomplete,realM11/M12/CKAD/largerZSDoperatorbindinggapsremain;latestofficialpricepolicyunchanged. NextC5savedcombinedgeometry/compositionchecks,thenC6gates. No push/runtime/data/A+B/CIchange.

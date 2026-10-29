@@ -1,0 +1,19 @@
+{"caseId":"pair-m4-m11-krasnodar-to-spb","status":"unknown","missing":["m4"],"components":[{"id":"m4","amount":null,"reason":"M-4 selected traversal is not completely priced; A-289 cannot replace it: Локальная проверка неполна: подтверждено 1 (route-traversal fallback 0), отклонено 0, не проверено 1 из 2."},{"id":"m11-15-58","amount":1130,"reason":"m11_head_ready_direct_pair_at_departure"},{"id":"m11-58-679","amount":3900,"reason":"matrix dated selected-route M11 direct pair"},{"id":"m11-679-684","amount":94,"reason":"user_approved_m11_tail_94_rub_for_both_directions"},{"id":"zsd","amount":300,"reason":"zsd_zone1_complete_directed_base_tariff"}]}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+null !== 10464
+
+    at file:///workspace/geonames-preview-publish-fc83523/experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.mjs:43:9 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: 10464,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
