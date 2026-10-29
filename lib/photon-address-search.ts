@@ -358,8 +358,17 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const { territory, crimea } = classifyForDisplay(coordinates[0], coordinates[1], zones);
     const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
     if (!fallbackLabel) return [];
-    const queryName = primaryQueryName(query);
     const queryArea = requestedArea(query);
+    // Ordinary provider regions can qualify a query too. Never let their text
+    // override the coordinate classification of the five priority areas.
+    const ordinaryRegion = !queryArea && !territory && !crimea
+      ? uniqueParts([p.state, p.county]).map(normalize).find(region =>
+          /(?:област|обл|край|республика|region|oblast)$/u.test(region) &&
+          normalize(query).endsWith(` ${region}`))
+      : undefined;
+    const queryName = ordinaryRegion
+      ? normalize(query).slice(0, -ordinaryRegion.length).trim()
+      : primaryQueryName(query);
     const normalizedNames = localityNames(feature).map(normalize);
     const queryNames = [queryName, ...placeAliases(query).map(normalize), ...regionAliases(query).map(normalize)];
     const queryTransliterations=placeAliases(query).map(transliterateUkrainian).map(normalize);
@@ -375,14 +384,10 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const administrativeRegion = regionQuery && placeType === "administrative" && exactName ? 4 : 0;
     const placeRank = Math.max(locality, administrativeRegion);
     // Keep exact matches in the five high-demand areas ahead of ordinary namesakes.
-    // For Донецк specifically, place Ростовская область second as requested.
     // Territory priority applies to named settlements and exact oblast results,
     // never to POIs/street names that happen to share a place name.
-    const matchesRequestedArea=Boolean(queryArea &&
-      (territory===queryArea || (queryArea==="crimea" && crimea)));
-    const rostovDonetsk=exactName && queryName==="донецк" &&
-      normalizedNames.includes("донецк") &&
-      [p.state,p.county].map((value)=>normalize(text(value))).some((value)=>/^(ростов|rostov)/u.test(value));
+    const matchesRequestedArea=Boolean(ordinaryRegion || (queryArea &&
+      (territory===queryArea || (queryArea==="crimea" && crimea))));
     // Comparable settlements: Crimea, four new territories, remaining Russia,
     // then other countries. An explicit qualifier wins.
     // Apply the country tier to every exact namesake. Photon can tag small
@@ -400,8 +405,7 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     return [{
       // Territory tiers dominate OSM place granularity so a local hamlet beats a Russian city.
       score: (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
-        (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank +
-        (rostovDonetsk && isRussianFeature(feature,crimea) ? 100_000 : 0) + (exactName ? 10 : 0),
+        (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank + (exactName ? 10 : 0),
       index,
       key: id,
       item: {

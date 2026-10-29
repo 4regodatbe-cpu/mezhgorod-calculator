@@ -21,7 +21,8 @@ test('actual GET + admitted real data remain independent of completely unavailab
  process.env.GEONAMES_LOCAL_PILOT='1';process.env.GEONAMES_LOCAL_PILOT_DIR=directory;
  globalThis.fetch=async()=>{calls++;throw Error('Controlled complete external outage');};
  try{
-  for(const query of ['Доне','Донецк','Донецк Ростовская область','Волноваха','Луганск','Мариуполь','Мелитополь','Бердянск','Геническ','Симферополь','Севастополь','Ялта','Ялта Крым','Керчь','Краснодар','Москва','Санкт-Петербург']){
+  const qualifiedRegions:Record<string,string>={'Донецк ДНР':'ДНР','Донецк Ростовская область':'Ростовская область','Ялта Крым':'Крым','Луганск ЛНР':'ЛНР','Мариуполь ДНР':'ДНР','Севастополь Крым':'Крым'};
+  for(const query of ['Доне','Донецк','Донецк ДНР','Донецк Ростовская область','Волноваха','Луганск','Луганск ЛНР','Мариуполь','Мариуполь ДНР','Мелитополь','Бердянск','Геническ','Симферополь','Севастополь','Севастополь Крым','Ялта','Ялта Крым','Керчь','Краснодар','Москва','Санкт-Петербург']){
    const response=await GET(new NextRequest('http://localhost/api/suggest?q='+encodeURIComponent(query))),body=await response.json();
    assert.equal(response.status,200,query);assert.ok(body.items.length,query);assert.equal(body.localSource.provider,'geonames');
    for(const item of body.items){
@@ -30,6 +31,8 @@ test('actual GET + admitted real data remain independent of completely unavailab
    }
    if(query==='Донецк')assert.deepEqual(body.items.slice(0,2).map((x:{id:string})=>x.id),['geonames-709717','geonames-565348']);
    if(query==='Волноваха')assert.equal(body.items[0].id,'geonames-689198');
+   if(qualifiedRegions[query])assert.equal(body.items[0].region.toLocaleLowerCase('ru-RU'),qualifiedRegions[query].toLocaleLowerCase('ru-RU'),query);
+   if(query==='Донецк Ростовская область')assert.equal(body.items[0].id,'geonames-565348');
    if(query==='Мариуполь'){assert.equal(body.partial,true);assert.equal(body.localSource.omittedExactHomonymsPossible,true);}
   }
   assert.equal(calls,0);

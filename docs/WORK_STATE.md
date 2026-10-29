@@ -1,3 +1,7 @@
+## 29.10.2026 — explicit-region ranking LOCAL verified
+
+Generic ordinary-region qualifier now overrides default geographical priority in Photon; coordinate-classified priority areas cannot be overridden by provider state text. Donetsk-specific score bonus removed, namesake IDs/coordinates preserved. All seven requested queries covered in actual GeoNames API tests with Photon fully unavailable. 42 focused +7 actual-data tests PASS; full offline1005PASS/0FAIL/1SKIP; TS/scoped ESLint/webpack exit0. [Checkpoint](checkpoints/2026-10-29-b05-regions-LOCAL.md). No corpus/CI/push/deployment changes. Next built-source local desktop/mobile smoke; existing Preview still d5be and CLI auth false, so hosted checks remain unverified.
+
 ## 29.10.2026 — Photon verified-Russian settlement display LOCAL
 
 Coordinate-classified priority settlements require Russian source fields or existing reviewed area-scoped RuWiki names; no raw/unverified fallback or city display dictionary. Aliases, streets/houses, coordinates/IDs unchanged. 39 focused PASS; full offline1002PASS/0FAIL/1SKIP, TS/webpack/scoped ESLint exit0 (one pre-existing warning). [Checkpoint](checkpoints/2026-10-29-b05-photon-russian-LOCAL.md). Possible reduced Photon-only coverage without Russian evidence is intentional, not translated away. Next generic explicit-region tests. Existing CLI login still unconfirmed/loggedInfalse; Preview real checks unverified. No push; Preview remains d5be.
