@@ -1,0 +1,391 @@
+{
+  "result": {
+    "events": [
+      {
+        "created": 1793305596376,
+        "date": 1793305596376,
+        "type": "stdout",
+        "text": "Build cache uploaded: 6.434s",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305589942,
+        "date": 1793305589942,
+        "type": "stdout",
+        "text": "Uploading build cache [327.75 MB]",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305589941,
+        "date": 1793305589941,
+        "type": "stdout",
+        "text": "Created build cache: 21s",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305569040,
+        "date": 1793305569040,
+        "type": "stdout",
+        "text": "Creating build cache...",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305568975,
+        "date": 1793305568975,
+        "type": "stdout",
+        "text": "Deployment completed",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519461,
+        "date": 1793305519461,
+        "type": "stdout",
+        "text": "Deploying outputs...",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519433,
+        "date": 1793305519433,
+        "type": "stderr",
+        "text": "Build Completed in /vercel/output [2m]",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "ƒ  (Dynamic)  server-rendered on demand",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "○  (Static)   prerendered as static content",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "└ ○ /v3",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ○ /v2/toll-roads",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ○ /v2",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ƒ /r",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ƒ /api/version",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ƒ /api/v3/calculate",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ƒ /api/v2/debug-route",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ƒ /api/v2/debug-pvp-node",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ƒ /api/v2/debug-m4",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ƒ /api/v2/classify",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ƒ /api/v2/calculate",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519085,
+        "date": 1793305519085,
+        "type": "stdout",
+        "text": "├ ƒ /api/suggest",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519084,
+        "date": 1793305519084,
+        "type": "stdout",
+        "text": "├ ƒ /api/collect",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519084,
+        "date": 1793305519084,
+        "type": "stdout",
+        "text": "├ ƒ /api/calculate",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519084,
+        "date": 1793305519084,
+        "type": "stdout",
+        "text": "├ ○ /_not-found",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519084,
+        "date": 1793305519084,
+        "type": "stdout",
+        "text": "┌ ○ /",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519084,
+        "date": 1793305519084,
+        "type": "stdout",
+        "text": "Route (app)",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305519082,
+        "date": 1793305519082,
+        "type": "stdout",
+        "text": "",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305517977,
+        "date": 1793305517977,
+        "type": "stdout",
+        "text": "  Running onBuildComplete from Vercel",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305517221,
+        "date": 1793305517221,
+        "type": "stdout",
+        "text": "  Finalizing page optimization ...",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305517213,
+        "date": 1793305517213,
+        "type": "stdout",
+        "text": "✓ Generating static pages using 1 worker (16/16) in 323ms",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305517068,
+        "date": 1793305517068,
+        "type": "stdout",
+        "text": "  Generating static pages using 1 worker (12/16) \r",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      },
+      {
+        "created": 1793305517060,
+        "date": 1793305517060,
+        "type": "stdout",
+        "text": "  Generating static pages using 1 worker (8/16) \r",
+        "info": {
+          "type": "build",
+          "name": "bld_fcui7ejix",
+          "entrypoint": "."
+        }
+      }
+    ]
+  }
+}

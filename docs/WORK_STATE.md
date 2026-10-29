@@ -1,3 +1,7 @@
+## 29.10.2026 — exact A+B Preview READY / real acceptance BLOCKED_AUTH
+
+Publishedc2f52ee9 exactPreviewf0h1q39tw READY/correctbranch/source;Next16.3.4/TS/static16PASS. ExistingCLIloggedInfalse; exactREADYbrowser→LoginVercel, no newlogin/share/protectionchange. [Access+CI evidence](checkpoints/2026-10-29-stage-AB-preview-READY-auth-BLOCKED.md). ActualPreviewcities/streets/A-B/desktop/mobile/route/callerdisconnectNOTRUN,cloudcold/RAM/functionsizeUNMEASURED. BothhostedverifySUCCESS1031PASS/1SKIP/TS/build;B03controlled18of18PASS;actualGitHubDonetsk→Moscow200/7.109s (NOTVercelbrowser),2artifactSHAverified. live_probe stillrunning; waitfinaloutcome, no rerun/secondpush. FinalnotesLOCALONLY.
+
 ## 29.10.2026 — A+B PUBLISHED c2f52ee9 / exact tree readback PASS
 
 ONE normalffpush20prepared+1preflightcommit; remotec2f52ee93cd98a81ecd05efa0358fb38c6704124/tree81b4edaee4ffb6a17c3c93308b87ec52fe08d054 exactreadbackPASS. [Publication](checkpoints/2026-10-29-stage-AB-PUBLISHED.md). Automatic40948475162/40948474945 started; classifier correctlyroute-runtime-changed, timingSUCCESS,verify/live/UI pending. ExactnewPreviewf0h1q39tw/dpl_HbLBjiztL9wCe4xn22gTho3V2Y4k BUILDING/sourcec2f52ee9; existingCLIloggedInfalse. No newshare/login/CI/protection/Production change; Production baseline051d51ea. Next finalCI/artifacts→exactREADY/access→realacceptance orBLOCKED_AUTH. ONEpushconsumed; thisandlaterfollow-upnotesLOCALONLY.
