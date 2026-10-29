@@ -1,3 +1,7 @@
+## 29.10.2026 —15control road points PASS /build sandbox BLOCKED
+
+15/15new OSRM nearest checksHTTP200/Ok, raw/status/SHA retained, no Photon/toll audit. Source-city point identity comparison retained; nearest points do not certify complete routes. DirectNextbuild under supported require_escalated stillEPERM/exit1; no more unchanged retries. [Checkpoint/next step](checkpoints/2026-10-29-geonames-controls-and-sandbox-PARTIAL.md). Next derive restricted local-pilot corpus and opt-in realAPI integration, not certify all221512points. LOCAL/no push.
+
 ## 29.10.2026 — full structural validation DONE /194576candidates
 
 Scanned221512rows; no duplicate IDs/invalid coordinates;194576structural candidates,26505unverified Russian names+431missing admin bindings quarantined by ID.3newtestsPASS. Semantic/roadaccess not certified. [Checkpoint and next step](checkpoints/2026-10-29-geonames-full-validation-DONE.md). LOCAL only/no push. Next15control nearest-point checks then bounded corpus admission/API work.
