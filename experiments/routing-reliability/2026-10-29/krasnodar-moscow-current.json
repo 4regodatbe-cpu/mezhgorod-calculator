@@ -1,0 +1,363 @@
+{
+  "scope": "ONE real current V3 handler Krasnodar–Moscow with GeoNames points; no audit or tariff certification",
+  "sourceRuntimeCommit": "180e7caad4381a92057035827ba1be88113e2bc1",
+  "node": "v24.19.0",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "spec": {
+    "from": {
+      "id": "geonames-542420",
+      "title": "Краснодар",
+      "label": "Краснодар — Краснодарский край",
+      "region": "Краснодарский край",
+      "position": {
+        "lat": 45.04534,
+        "lng": 38.98178
+      }
+    },
+    "to": {
+      "id": "geonames-524901",
+      "title": "Москва",
+      "label": "Москва — Москва",
+      "region": "Москва",
+      "position": {
+        "lat": 55.75204,
+        "lng": 37.61781
+      }
+    }
+  },
+  "httpStatus": 200,
+  "elapsedMs": 8597.232649,
+  "serverTiming": "calc_total;dur=8592.25, request_body;dur=3.216, geocoding;dur=0.128, route_leg;dur=8370.334, routing;dur=2317.528, provider_valhalla;dur=2168.478, provider_osrm;dur=2298.873, provider_brouter;dur=842.642, toll_matching;dur=4995.622, toll_pricing;dur=638.26, response_pricing;dur=162.99",
+  "callerAborted": false,
+  "requestCount": 14,
+  "timings": [
+    {
+      "status": 200,
+      "handlerElapsedMs": 8592.25,
+      "targetMs": 10000,
+      "overTarget": false,
+      "stages": [
+        {
+          "stage": "request_body",
+          "calls": 1,
+          "errors": 0,
+          "totalMs": 3.216,
+          "maxMs": 3.216
+        },
+        {
+          "stage": "geocoding",
+          "calls": 1,
+          "errors": 0,
+          "totalMs": 0.128,
+          "maxMs": 0.128
+        },
+        {
+          "stage": "route_leg",
+          "calls": 1,
+          "errors": 0,
+          "totalMs": 8370.334,
+          "maxMs": 8370.334
+        },
+        {
+          "stage": "routing",
+          "calls": 1,
+          "errors": 0,
+          "totalMs": 2317.528,
+          "maxMs": 2317.528
+        },
+        {
+          "stage": "provider_valhalla",
+          "calls": 1,
+          "errors": 0,
+          "totalMs": 2168.478,
+          "maxMs": 2168.478
+        },
+        {
+          "stage": "provider_osrm",
+          "calls": 1,
+          "errors": 0,
+          "totalMs": 2298.873,
+          "maxMs": 2298.873
+        },
+        {
+          "stage": "provider_brouter",
+          "calls": 1,
+          "errors": 1,
+          "totalMs": 842.642,
+          "maxMs": 842.642
+        },
+        {
+          "stage": "toll_matching",
+          "calls": 1,
+          "errors": 0,
+          "totalMs": 4995.622,
+          "maxMs": 4995.622
+        },
+        {
+          "stage": "toll_pricing",
+          "calls": 1,
+          "errors": 0,
+          "totalMs": 638.26,
+          "maxMs": 638.26
+        },
+        {
+          "stage": "response_pricing",
+          "calls": 1,
+          "errors": 0,
+          "totalMs": 162.99,
+          "maxMs": 162.99
+        }
+      ],
+      "stops": []
+    }
+  ],
+  "body": {
+    "legs": [
+      {
+        "from": "Краснодар — Краснодарский край",
+        "to": "Москва — Москва",
+        "fast": {
+          "meters": 1346445,
+          "seconds": 64394,
+          "m12StrictSpan": null,
+          "m12EndpointSpan": null,
+          "m11RoadEvidence": {
+            "provider": "valhalla",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "m4RoadBoundaries": {
+            "provider": "valhalla",
+            "targetRef": "М-4",
+            "routeSignature": "9e478e284b3d54f0e5a684f99275e52816fab1bdf427477c4bb9e6b4d039ac36",
+            "precision": "route-maneuver",
+            "status": "unknown",
+            "reason": "multiple_road_traversals",
+            "entry": null,
+            "exit": null
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "Valhalla"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": 5040,
+            "weekdayAmount": 5040,
+            "weekendAmount": 6090,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-4: m4-1223 → m4-71"
+            ],
+            "confidence": "matched",
+            "pricingStatus": "priced"
+          },
+          "tollValidation": {
+            "status": "toll",
+            "source": "Route toll composition",
+            "tollEdgeCount": 1,
+            "checkedEdgeCount": 1,
+            "wayIds": [],
+            "roadNames": [
+              "m4"
+            ],
+            "message": "Полный итог составлен из дорожных систем: m4",
+            "complete": true
+          },
+          "m4PvpPreview": {
+            "status": "boundaries_resolved",
+            "reason": null,
+            "roadBoundaries": {
+              "provider": "valhalla-trace",
+              "targetRef": "М-4",
+              "routeSignature": "9e478e284b3d54f0e5a684f99275e52816fab1bdf427477c4bb9e6b4d039ac36",
+              "precision": "matched-road-edge",
+              "status": "unknown",
+              "reason": "road_trace_multiple_or_discontinuous_traversals",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 3,
+            "confirmedPvps": [
+              "m4-1223",
+              "m4-71"
+            ],
+            "diagnosticOnly": true,
+            "tariffVector": {
+              "from": "m4-1223",
+              "to": "m4-71",
+              "profile": "monThu",
+              "selectionBasis": "confirmed-payment-boundaries",
+              "priceStatus": "known"
+            }
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m4",
+                "name": "М-4 «Дон»",
+                "status": "strict_pvp_found_full_price_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 1346.445,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар — Краснодарский край",
+                  "to": "Москва — Москва",
+                  "ratePerKm": 30,
+                  "amount": 40393,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 40393,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 1346.445,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар — Краснодарский край",
+                  "to": "Москва — Москва",
+                  "ratePerKm": 32.5,
+                  "amount": 43759,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 43759,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 1346.445,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар — Краснодарский край",
+                  "to": "Москва — Москва",
+                  "ratePerKm": 35,
+                  "amount": 47126,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 47126,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 1346.445,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар — Краснодарский край",
+                  "to": "Москва — Москва",
+                  "ratePerKm": 45,
+                  "amount": 60590,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 60590,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  },
+  "captureSha256": "8edfb11ae0da2f014d7b98989fc292114bb98b6ae77bd1fa3cb88d7a3491679a"
+}

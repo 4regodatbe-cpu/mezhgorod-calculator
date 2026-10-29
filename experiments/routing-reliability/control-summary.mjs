@@ -1,0 +1,19 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+const dir='experiments/routing-reliability/2026-10-29',read=p=>JSON.parse(fs.readFileSync(p,'utf8')),hash=p=>createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const fast=b=>b.legs?.[0]?.fast??b.options?.[0]?.fast;
+const row=(direction,source,scope,status,body,httpStatus,elapsedMs,extra={})=>{const f=fast(body);return {direction,source,sourceSha256:hash(source),scope,status,httpStatus,provider:f?.quality?.providers?.[0]??null,meters:f?.meters??null,seconds:f?.seconds??null,calculationMs:elapsedMs,pricingStatus:f?.tolls?.pricingStatus??'unknown',tollAmountRub:f?.tolls?.amount??null,error:body.error??null,...extra};};
+const moscowSource='experiments/address-search/2026-10-29-stage-a4-local/city-browser-review.json',moscow=read(moscowSource).controlRoute;
+const liveSource=dir+'/krasnodar-moscow-current.json',live=read(liveSource),admission=read(dir+'/live-candidate-admission.json');
+const spbSource=dir+'/krasnodar-spb-replay.json',spb=read(spbSource),dnrSource=dir+'/uncancelled-parity.json',dnr=read(dnrSource);
+const yaltaSource='experiments/address-search/local-gazetteer-evidence-2026-10-28/one-route-review-2026-10-29.json',yalta=read(yaltaSource),yaltaBody=read('experiments/address-search/local-gazetteer-evidence-2026-10-28/one-route-response-2026-10-29.json');
+const cases=[
+ row('Москва → Санкт-Петербург',moscowSource,'retained actual local browser/handler, old source c962fb73; not re-executed','RETAINED_PASS',moscow.body,moscow.httpStatus,moscow.elapsedMs),
+ row('Краснодар → Москва',liveSource,'ONE actual current Codex handler with external providers/trace; not Preview or browser','CURRENT_LIVE_PASS',live.body,live.httpStatus,live.elapsedMs,{upstreamRequests:live.requestCount,callerAborted:live.callerAborted,fastestAdmissibleCheck:admission.status}),
+ row('Краснодар → Санкт-Петербург',spbSource,'current offline API replay of retained exact OD; not network timing',spb.status,spb.body,spb.httpStatus,spb.elapsedMs,{missingStoredResponses:spb.misses.length}),
+ row('Донецк → Москва',dnrSource,'current/baseline offline full API parity; not network timing',dnr.status,dnr.result,dnr.status==='PASS'?200:null,dnr.afterMs,{missingStoredResponses:dnr.misses,bodyParity:dnr.apiBodyParity}),
+ row('Ялта → Санкт-Петербург',yaltaSource,'retained real502; raw provider bodies/socket causes absent; no unchanged retry','BLOCKED_BY_DATA',yaltaBody,yalta.httpStatus,yalta.elapsedMs,{blocker:'Exact historical per-provider cause and current admissible-route result not established from available snapshot.'}),
+];
+assert.equal(cases.length,5);assert.equal(live.httpStatus,200);assert.equal(live.callerAborted,false);assert.equal(admission.status,'PASS');assert.equal(spb.misses.length,0);assert.equal(dnr.misses,0);
+for(const c of cases)if(c.pricingStatus==='unknown')assert.equal(c.tollAmountRub,null,c.direction);
+const report={sourceRuntimeCommit:'180e7caad4381a92057035827ba1be88113e2bc1',cases,scope:'four positive control evidence sets with explicit live/offline/historic boundaries and one blocked historic failure; no tariff recertification',newLiveCalculations:1,newStandaloneBrouterProbes:1,normalSpeedupClaim:false,limitations:['One live8.6s sample and older2.2–7.3s samples do not prove a10s SLA.','Offline replay timing is not external-service latency.','Yalta exact historic failure remains unknown; native Moscow transport cause is not assigned retroactively.','No new Preview or Production test occurred.']};
+fs.writeFileSync(dir+'/control-summary.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(cases.map(({direction,status,httpStatus,provider,meters,seconds,calculationMs,pricingStatus})=>({direction,status,httpStatus,provider,meters,seconds,calculationMs,pricingStatus}))));

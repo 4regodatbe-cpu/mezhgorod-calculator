@@ -31,4 +31,20 @@ One optimization: caller cancellation stops obsolete main V3 work, implemented i
 
 ## B5
 
-IN PROGRESS: five named saved controls, no route audit or automatic new network replay.
+Five controls assessed, see `2026-10-29/control-summary.json`: retained Moscow→SPb200/711430m/24889s/4.229s; ONE new actual Krasnodar→Moscow200/Valhalla1346445m/64394s/8.597s,14upstream; exact current Krasnodar→SPb offline replay200/OSRM2061460m/94846s/19storedrequests/0misses; current Donetsk→Moscow offline parity200/OSRM1122972m/58268s/12responses/0misses. Offline times are not network/user latency. Historical Yalta→SPb502/5.869s remains BLOCKED_BY_DATA, no invented distance/time or route/provider cause. No Domodedovo substitution, wide audit, deployment or tariff recertification.
+
+The one live gap capture is explicitly authorized by the Stage B pinpoint-source clause and separately checkpointed before execution. Raw source/HTTP/SHA and matched-source fastest admission check retained. Valhalla64394s beats admissible OSRM65630s; BRouter400 `target island detected for section 0`, a different body from earlier no-track. Do not guess physical island/road/access cause or move endpoints. It does not suppress valid candidates.
+
+New actual timing:handler8592.250/routing2317.528/trace4995.622/tollpricing638.260/response162.990ms. Main trace is network-inclusive and the largest span; no bypass/10s SLA/normal-speedup claim. Published source remains old; A+new cancellation ready only for a separately authorized working-branch/CI/Preview check.
+
+## Final B1–B5 boundaries
+
+| Block | Result | Remaining limitation |
+|---|---|---|
+| B1 | Specific current BRouter error bodies and saved native/proxy difference classified. | Exact historic Yalta cause and deeper BRouter graph reason unknown. |
+| B2 | Main V3 geocode/routing/special/trace/backoff cancellation fixed; failover/geometry/unknown tests PASS. | Legacy V2, deeper auxiliary pricing I/O, body-stream abort and hosted caller-signal delivery not fully verified. |
+| B3 | Saved/network-inclusive stages and existing CPU profiles separated; new single real8.6s sample retained. | Geometry/fastest/serialization not separately instrumented; no10s guarantee. |
+| B4 | Matched obsolete-work reduction3→1provider starts, normal body/requests exact parity. | No demonstrated normal-request latency improvement. |
+| B5 | Four positive retained/current control evidence sets, scopes explicit. | Yalta current valid-route outcome BLOCKED_BY_DATA; new-source Preview pending. |
+
+Exact preserved evidence/source SHA: [manifest](2026-10-29/manifest.json). New runtime source is180e7caa; later commits only record results. Source/data checks confirm unchanged tariffs, road matrix, fastest policy, geography/control rules, V2 and Stage A source. Temporary dependency link removed; original worktrees retained. A verified incremental recovery bundle is kept outside the repository. No new-source GitHub Actions or Preview result is implied by local gates.
