@@ -18,8 +18,8 @@ async function load(directory:string):Promise<LocalLoader>{
 }
 /** Explicit local pilot only; unset switch preserves the existing public API. */
 export async function searchLocalSettlements(query:string,signal?:AbortSignal):Promise<null|{items:Suggestion[];partial:boolean;localSource:Record<string,unknown>}>{
- const directory=process.env.GEONAMES_LOCAL_PILOT_DIR;
- if(process.env.GEONAMES_LOCAL_PILOT!=='1'||!directory||isDetailedAddress(query))return null;
+ if(process.env.GEONAMES_LOCAL_PILOT!=='1'||isDetailedAddress(query))return null;
+ const directory=process.env.GEONAMES_LOCAL_PILOT_DIR??join(process.cwd(),'data/local-settlements');
  if(signal?.aborted)throw signal.reason??Error('Cancelled');
  if(cached?.directory!==directory){
   const promise=load(directory);cached={directory,promise};

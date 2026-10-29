@@ -1,3 +1,7 @@
+## 29.10.2026 — immutable data packaging STARTED
+
+Continuing independently:169431point data assets now localGit-staged, targetedNext tracing and visibleGeoNamesCCBYfooter added; module stillopt-in/defaultOFF. Package all-shard integrity testPASS, focused3APItestsPASS/TS. [Recovery checkpoint](checkpoints/2026-10-29-geonames-package-STARTED.md). Next newwebpackbuild+NFTinclusion/coldHTTP, not retry routeFAIL. No push/CI/Production.
+
 ## 29.10.2026 — GeoNames pilot works locally; one real routeFAIL
 
 169431point opt-in actualV3API and desktop/mobile search/resetPASS; public defaultOFF. One requested realYaltaCrimea→SPb calculation502/5869ms: geocodingPASS,3routeproviders failed; no retry/rootcause speculation. [Full handoff/status4completed+2partial](../experiments/address-search/GEONAMES_V3_LOCAL_INTEGRATION.md), [checkpoint](checkpoints/2026-10-29-geonames-route-FAIL-handoff.md). Next immutable data inclusion/NFT+visibleCCBYattribution/coldHTTP verification; fullroute needs suitable evidence/environment. LOCAL only/no push/CI/Production.
