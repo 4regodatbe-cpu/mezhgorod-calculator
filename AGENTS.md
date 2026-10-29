@@ -1,5 +1,13 @@
 # Instructions for contributors and coding agents
 
+## Address-search scope — owner decision, 2026-10-29
+
+The calculator requires a settlement; a street is an optional refinement within that settlement. House numbers, building blocks/structures/letters, apartments and entrances are NOT required. Do not develop house-level geocoding or treat an absent exact house number as a calculator defect or release blocker. Preserve existing working capabilities/tests unless a separate change is justified; this decision does not authorize removing features or weakening CI.
+
+Stage A scope is now A1 GeoNames settlements; A2 Photon streets correctly attached to settlements; A3 independent free settlement/street reserve, without houses; A4 settlement-only and settlement+street acceptance. Verify the settlement, street name and actual geographical membership. An identically named street in another city must not outrank a verified requested-city match. Use source-backed coordinates within the selected settlement; an explicitly approximate street point is allowed, never invented coordinates or a false exact-house claim.
+
+This decision overrides earlier house-level tasks/readiness criteria, including the previous Moscow/Tverskaya1 evidence gap. It does not certify untested street coverage or change publication/Production permissions. Read [the current scope and acceptance criteria](experiments/address-search/ADDRESS_SEARCH_SCOPE.md); preserve historical evidence unchanged.
+
 ## Latest execution rule — 2026-10-24
 
 Split large authorized work into small bounded blocks before implementation. Execute multiple blocks sequentially in the same response/work session: complete, verify, checkpoint, commit/persist/read back, then automatically continue to the next authorized block without ending the turn or asking the user to say “continue” after every block. Resume from the first unfinished block after interruption; do not repeat completed work. Record blockers and proceed with independent viable blocks. If persistence fails, restore it before expanding work. Follow the current clarification at the top of docs/WORKFLOW_RULES.md and existing CI/single-writer/safety requirements. This does not imply background execution after the final response.

@@ -1,3 +1,9 @@
+## 29.10.2026 — обязательные границы поиска: населённый пункт + необязательная улица
+
+Новое решение владельца имеет приоритет: A1 — GeoNames населённые пункты; A2 — Photon улицы с подтверждённой привязкой к населённому пункту; A3 — независимый бесплатный резерв населённых пунктов и улиц; A4 — приёмка населённого пункта и сочетания город+улица. Дома/корпуса/строения/литеры/квартиры/подъезды не нужны; их отсутствие не дефект и не blocker. Прежний пробел Москва/Тверская1 — OUT_OF_SCOPE, а не подтверждённая проверка улицы. Допустима явно ориентировочная подтверждённая точка улицы внутри выбранного населённого пункта, но не выдуманная координата или заявление о точном доме. Приоритет другого города по одному совпадению названия улицы недопустим.
+
+[Постоянное правило и актуальные критерии A1–A4](../experiments/address-search/ADDRESS_SEARCH_SCOPE.md) закреплены также в AGENTS и решениях поиска. [Checkpoint](checkpoints/2026-10-29-address-search-scope-settlement-street-LOCAL.md). A1 bounded DONE/полное покрытие PARTIAL сохраняется; подтверждения A2 остаются локальными, новые уличные сценарии автоматически не засчитаны; уличный резерв A3 и новая hosted-приёмка не объявлены DONE. Это docs-only изменение, без новых запросов геокодирования/сборки/тестов приложения, без удаления работающих механизмов и без изменения архивных доказательств. Remote a1c169d3/PR14 Draft проверены; push и Production не разрешены. Следующая инженерная проверка — недостающие сочетания город+улица по новым критериям, а не точные дома.
+
 ## 29.10.2026 — Stage A local acceptance saved / publication not authorized
 
 [Archive readback](checkpoints/2026-10-29-stage-A4-archive-readback-DONE.md): manifest/source hashes PASS; original raw-log whitespace warnings retained byte-for-byte, not treated as a passed staged whitespace check. Only the stage's own temporary server/symlink were removed; old worktrees/dependencies remain.

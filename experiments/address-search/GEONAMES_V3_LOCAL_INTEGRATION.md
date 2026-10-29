@@ -1,5 +1,9 @@
 # GeoNames → actual V3 API: local pilot result, 29.10.2026
 
+## Current scope clarification — owner decision, 29.10.2026
+
+The current product requires a settlement with an optional street, not an exact house. GeoNames remains settlement-only; Photon work/acceptance targets streets correctly attached to the selected settlement. Missing house numbers are not readiness blockers. A confirmed, explicitly approximate street point is acceptable; invented coordinates or false exact-house precision are not. See [ADDRESS_SEARCH_SCOPE.md](ADDRESS_SEARCH_SCOPE.md) for the overriding A1–A4 criteria and examples. The dated implementation/test evidence below is retained as history; house-related wording there does not create a current house-support requirement. Existing working features/tests are not removed by this clarification.
+
 This continues d044b07, not a new audit. No push, CI, Production/main/Android/backup changes. Prior local commits preserved. The module is OFF by default; no public outage resolution is claimed.
 
 ## Corpus admission
