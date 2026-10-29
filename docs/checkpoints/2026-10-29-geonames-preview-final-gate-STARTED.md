@@ -1,0 +1,9 @@
+# Final offline gate for changed API — STARTED
+
+29.10.2026 MSK; runtime source30aab79, later source changes are diagnostic/test only. Changed-source webpack productionbuild/TSexit0. New actualNFT6337files/6221datafiles/26385773-26385793bytes, no missing assets. Not reused prior runtime build. Focused7testsPASS including new scope/fallback/excluded guard.
+
+One mandatory offline `npm run test:audit` started with supported process permission, output `/tmp/local-gazetteer-review/preview-ready-offline-gate.log`. Reason for rerun: new runtime Preview scope/error fallback/exclusion guard could affect existing API; this is required full offline regression gate, NOT live jobs/route/tariff audit/repeated captures. Do not claim success until result reviewed. No workflow changes/rerun/Preview/push.
+
+Route diagnosis completed: controlMoscow→SPb native fetch ECONNREFUSED beforeHTTP. Ordinary supported Node --use-env-proxy with inherited proxy/TLS yields full actualV3 HTTP200/3454ms,1leg711430m/24889s, qualitysingleValhalla, pricingStatusunknown retained. Valhalla/OSRM200,BRouter400, trace calls200. No tariff/route changes, no new global env file/network configuration. Underlying originalYalta per-socket cause absent but current independent transport failure conclusively reproduced; no geocoder coordinate incompatibility found. BRouter400 reason not captured; separate routing-provider issue, not geocoder blocker.
+
+Next: save offline result/remaining risks/exact publication source-commit list and verified remote-parent plan. Remote fetchedfc83523d unchanged, treec14dc278... equals local6e8ab678 tree: source-history identities differ, so do NOT raw non-fast-forward push localHEAD. Future normal sequential replay/GitData nonforce parent chain must start at actualremote, retaining all original local commits. Denied historical WORK_LOG/NEXT_STEPS and CI paths have NOdiff againstremote. PR14Draft/mergedfalse confirmed; no publication authorization.

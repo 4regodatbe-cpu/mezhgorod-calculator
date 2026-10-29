@@ -1,11 +1,11 @@
 import {spawn,execFileSync} from 'node:child_process';
-import {createWriteStream,readFileSync,writeFileSync,statSync} from 'node:fs';
+import {createWriteStream,readFileSync,writeFileSync,statSync,readdirSync} from 'node:fs';
 import {resolve,dirname} from 'node:path';
 import {performance} from 'node:perf_hooks';
 import assert from 'node:assert/strict';
 const [output]=process.argv.slice(2);if(!output)throw Error('Pass report path');
 const logPath=output+'.server.log',log=createWriteStream(logPath),start=performance.now();
-const childEnv={...process.env,GEONAMES_LOCAL_PILOT:'1'};delete childEnv.GEONAMES_LOCAL_PILOT_DIR;
+const childEnv={...process.env,GEONAMES_LOCAL_PILOT:'1',GEONAMES_LOCAL_TEST:'1'};delete childEnv.GEONAMES_LOCAL_PILOT_DIR;
 const child=spawn(process.execPath,['node_modules/next/dist/bin/next','start','--hostname','127.0.0.1','--port','3141'],
  {env:childEnv,stdio:['ignore','pipe','pipe']});
 child.stdout.pipe(log,{end:false});child.stderr.pipe(log,{end:false});
@@ -24,7 +24,7 @@ try{
  for(const path of ['.next/server/app/r/route.js.nft.json','.next/server/app/api/suggest/route.js.nft.json']){
   const trace=JSON.parse(readFileSync(path,'utf8')),files=new Set(trace.files.map(f=>resolve(dirname(path),f)));let bytes=0,dataBytes=0,dataFiles=0;
   for(const f of files){const size=statSync(f).size;bytes+=size;if(f.includes('/data/local-settlements/')){dataBytes+=size;dataFiles++;}}
-  assert.equal(dataFiles,6220,'Every immutable pilot asset must be traced');assert.ok(bytes<250*1024*1024,'Documented ordinary function bundle limit, not plan certification');
+  assert.equal(dataFiles,readdirSync('data/local-settlements').length,'Every immutable pilot asset must be traced');assert.ok(bytes<250*1024*1024,'Documented ordinary function bundle limit, not plan certification');
   report.functions.push({trace:path,files:files.size,bytes,dataFiles,dataBytes});
  }
  report.status='PASS';
