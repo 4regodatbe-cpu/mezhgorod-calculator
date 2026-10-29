@@ -407,10 +407,12 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
         : territory && placeRank>0 ? 4_000_000
         : outsidePriorityCountryRank(feature,crimea) * 1_000_000
       : 0;
+    const wholeLocality = locality>0 && (normalizedNames.includes(normalize(query)) ||
+      ((queryArea||ordinaryRegion)&&!/[;,]/u.test(query)&&normalizedNames.includes(queryName)));
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
       // Territory tiers dominate OSM place granularity so a local hamlet beats a Russian city.
-      score: hasAddressTerms(query) ? detailedAddressScore(p,query) : (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
+      score: hasAddressTerms(query)&&!wholeLocality ? detailedAddressScore(p,query) : (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
         (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank + (exactName ? 10 : 0),
       index,
       key: id,

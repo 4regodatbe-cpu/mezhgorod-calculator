@@ -19,7 +19,13 @@ function words(value: unknown): string[] {
 export function detailedAddressScore(properties: Record<string,unknown>, query: string): number {
   const tokens=words(query),requested=new Set(tokens);
   const matches=(candidate:string[])=>candidate.length>0&&candidate.every(x=>requested.has(x));
-  const cities=['city:ru','city','town','village'].map(key=>words(properties[key]));
+  const cities=['city:ru','city','town','village'].map(key=>{
+    const value=properties[key];
+    // Some providers put an administrative unit into a locality slot. Its
+    // city-looking token still cannot establish membership in that city.
+    if(typeof value==='string'&&/(?:^|[^\p{L}])(?:область|обл|край|район|р-н|округ|громада|oblast|region|county|municipality)(?:$|[^\p{L}])/iu.test(value))return [];
+    return words(value);
+  });
   const street=words(properties.street??(properties.osm_key==='highway'?properties.name:undefined));
   const house=words(properties.housenumber);
   const city=cities.some(matches),streetMatch=matches(street);

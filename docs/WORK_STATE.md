@@ -1,3 +1,7 @@
+## 29.10.2026 — A4 boundary corrections LOCAL / final gates PASS
+
+Newregression-first guards preserve fullnumericsettlement-name priority and forbid municipal/county values masquerading as city evidence. Genericcode, no cityexceptions/coordinates/tariffs/pool changes.81isolatedtargetedPASS; finaloffline1013PASS/1SKIP,TS/scopedESLint/webpackPASS. [Guard checkpoint](checkpoints/2026-10-29-stage-A4-boundary-guards-LOCAL.md). ActuallocalAPI/UI/controlroute captures exercised precedingc962 corefix; latestguards verified offline/build, not a repeatedlive run. Next preserveA4 evidence and partialPreview/data/reserve status. No push; publisheda1c unchanged.
+
 ## 29.10.2026 — Stage A3 free DETAIL reserve review saved / operational reserve BLOCKED
 
 Reused existing official-source review, no new provider requests/accounts/keys. PublicNominatimautocomplete forbidden; Geoapify free candidate has finitequota and existingadapterCITYONLY/off/unreviewed; DaData detailcoverage/precision/provisioning unproved; ownOSMdetail corpus/build not prepared. [A3 evidence/next prerequisites](checkpoints/2026-10-29-stage-A3-detail-reserve-REVIEW.md). No working detailreserve claimed or new idleadapter created; GeoNamescity independence retained. A2localc962fb73 verified; next A4 bounded actuallocalAPI/UI/one route with explicit evidence boundaries. No push/CI/Production changes.
