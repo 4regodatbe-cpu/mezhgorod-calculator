@@ -1,5 +1,7 @@
 ## 29.10.2026 — Stage A local acceptance saved / publication not authorized
 
+[Archive readback](checkpoints/2026-10-29-stage-A4-archive-readback-DONE.md): manifest/source hashes PASS; original raw-log whitespace warnings retained byte-for-byte, not treated as a passed staged whitespace check. Only the stage's own temporary server/symlink were removed; old worktrees/dependencies remain.
+
 A1 bounded rules DONE, full coverage PARTIAL; A2 generic compound-query relevance and safe administrative labels FIXED LOCAL; A3 review DONE but operational free detail reserve BLOCKED. Actual local API puts Krasnodar/Krasnaya100 first; desktop/mobile clear/retype/swap PASS, one Moscow–SPb calculation HTTP200/4.229s. Runtime captures use c962fb73; subsequent 00e9983c guards passed 81 targeted and 1013 offline tests/1 SKIP, TS/scoped ESLint/webpack. [A4 checkpoint and source boundaries](checkpoints/2026-10-29-stage-A4-local-acceptance-PARTIAL.md), [saved evidence/logs](../experiments/address-search/2026-10-29-stage-a4-local/README.md). Exact Moscow/Tverskaya1, corrected-code hosted acceptance, cloud resources and the old mobile-timeout cause remain unconfirmed. Local Ready124ms/RSS197028KiB are not Vercel measurements. Remote a1c169d3/PR14 Draft unchanged; no push or Production change. Next: separate publication authorization, mandatory CI and exact new Preview acceptance; no repeated corpus/route audit. New stage history is checkpoint-first; protected legacy WORK_LOG/NEXT_STEPS remain untouched.
 
 ## 29.10.2026 — A4 boundary corrections LOCAL / final gates PASS
