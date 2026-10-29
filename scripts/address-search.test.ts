@@ -73,8 +73,7 @@ test("exact matches in all five high-demand areas rank before ordinary namesakes
     feature("Ялта", 32.6169, 46.6354, 11),
     feature("Ялта", 34.1689, 44.4988, 12),
   ], SPECIAL_TERRITORY_BOUNDARIES, "Ялта");
-  assert.deepEqual(results.slice(0, 4).map((item) => item.id), ["N-8", "N-9", "N-10", "N-11"]);
-  assert.deepEqual(results.slice(4).map((item) => item.id), ["N-7", "N-12"]);
+  assert.deepEqual(results.map((item) => item.id), ["N-12", "N-8", "N-9", "N-10", "N-11", "N-7"]);
 });
 
 test("Donetsk search ranks priority territories before Russia and foreign namesakes", () => {
@@ -87,7 +86,7 @@ test("Donetsk search ranks priority territories before Russia and foreign namesa
   const crimea = feature("Донецк", 34.1689, 44.4988, 16);
   crimea.properties!.state = "Республика Крым";
   const results = rankPhotonFeatures([other, crimea, rostov, dnr], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
-  assert.deepEqual(results.map((item) => item.id), ["N-13", "N-14", "N-16", "N-15"]);
+  assert.deepEqual(results.map((item) => item.id), ["N-16", "N-13", "N-14", "N-15"]);
 });
 
 test("same-name city inside a special ADM1 polygon ranks above its Russian namesake by coordinates", () => {
@@ -197,9 +196,9 @@ test("boosts exact namesake cities in special polygons while keeping unrelated p
   const yaltaCrimea = feature("Ялта", 34.1689, 44.4988, 53);
   const yaltaDnr = feature("Ялта", 37.2776, 46.9589, 54);
   const yalts = rankPhotonFeatures([yaltaCrimea, yaltaDnr], SPECIAL_TERRITORY_BOUNDARIES, "Ялта");
-  assert.equal(yalts[0].id, "N-54");
-  assert.equal(yalts[0].label, "Ялта — ДНР");
-  assert.equal(yalts[1].label, "Ялта — Крым");
+  assert.equal(yalts[0].id, "N-53");
+  assert.equal(yalts[0].label, "Ялта — Крым");
+  assert.equal(yalts[1].label, "Ялта — ДНР");
 });
 
 test("region query boosts exact oblast result and not a similarly named street", () => {
@@ -253,8 +252,9 @@ test("Russian Zaporizhzhia query searches and ranks Ukrainian city spelling", ()
   ], SPECIAL_TERRITORY_BOUNDARIES, "Запорожье");
   assert.ok(results[0]);
   assert.ok(results[0].position);
-  assert.equal(results[0].position.lat, 47.8507859);
-  assert.equal(results[0].label, "Запорожье — Запорожская область");
+  assert.equal(results[0].id, "N-202"); // Crimea namesake now has the owner-approved priority.
+  assert.equal(results[1].position.lat, 47.8507859);
+  assert.equal(results[1].label, "Запорожье — Запорожская область");
 });
 
 test("Russian Kharkiv query with country qualifier searches Ukrainian spelling and ranks the city first", () => {
@@ -289,7 +289,7 @@ test("all new-territory settlements rank before Russian namesakes regardless of 
   const otherSpecial = feature("Донецк", 35.365, 46.848, 313, "village");
   const crimea = feature("Донецк", 34.1689, 44.4988, 314, "city");
   const results = rankPhotonFeatures([otherSpecial, crimea, rostov, dnrHamlet], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
-  assert.deepEqual(results.map((item) => item.id), ["N-313", "N-312", "N-311", "N-314"]);
+  assert.deepEqual(results.map((item) => item.id), ["N-314", "N-313", "N-312", "N-311"]);
 });
 
 test("Tarasovka DNR ranks first, Kyiv region Tarasovka stays visible, and Russia precedes other countries", () => {
@@ -389,11 +389,11 @@ test("regional qualifier is removed from Photon query without changing full addr
 });
 
 
-test("unqualified Yalta prefers a new-territory namesake; explicit qualifiers win", () => {
+test("unqualified Yalta prefers Crimea; explicit qualifiers win", () => {
   const yaltaCrimea = feature("Ялта", 34.1689, 44.4988, 353, "city");
   const yaltaDnr = feature("Ялта", 37.2776, 46.9589, 354, "village");
   const features = [yaltaDnr, yaltaCrimea];
-  assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта").map((item) => item.id), ["N-354", "N-353"]);
+  assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта").map((item) => item.id), ["N-353", "N-354"]);
   assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта ДНР").map((item) => item.id), ["N-354", "N-353"]);
   assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта Крым").map((item) => item.id), ["N-353", "N-354"]);
 });

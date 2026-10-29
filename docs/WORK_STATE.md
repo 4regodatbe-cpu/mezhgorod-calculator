@@ -1,3 +1,7 @@
+## 29.10.2026 — Crimea-first ranking LOCAL / language and Preview pending
+
+GeoNames tiers and Photon comparable exact settlements now prefer Crimea, then new territories, remaining Russia, others. Regression-first tests reproduced old ordering; 43 targeted PASS, TypeScript/full offline gate/webpack build exit0. No corpus/coordinates/routing/tariff/CI changes or push. [Checkpoint](checkpoints/2026-10-29-b05-crimea-ranking-LOCAL.md). Verified-Russian-only display and generic explicit-region coverage still incomplete. Official authorized Vercel device login pending; existing Preview remains published d5be, not this local change.
+
 ## 29.10.2026 — actualCLI checked /loggedInfalse /TrustedSourcesneedsidentity
 
 Barevercelwhoami127 resolved by officialpinnedCLI65.7install; missinglocalglobaldir fixed via standardFSpermission, THENwhoami returnedloggedInfalse/linkedProjectnull/exit1. ProjectinspectNoexistingcredentials, unapprovedautomaticlogin stopped; envrunhelp confirmsdevOIDCpath but no token/envfile/link. No browserlogin request/share/protectionchange/secretread/push. [Exact checks/blocker](../experiments/address-search/CLI_TRUSTED_SOURCES_ACCESS_2026-10-29.md), [checkpoint](checkpoints/2026-10-29-geonames-cli-trusted-sources-auth-BLOCKED.md). Previewd5beREADY; actualUI/API/route/hostedcoldRAM UNVERIFIED. Next deliberate standardCLIauth with existingprojectrights, then vercelcurl+devOIDCoriginheader, no newpublication. NotesLOCALonly.

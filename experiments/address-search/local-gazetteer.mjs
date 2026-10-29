@@ -26,7 +26,7 @@ export function createLocalGazetteer(data){
    const crimea=!quality.includes('territory_ambiguous')&&inCrimea({lng:r[4],lat:r[3]});
    const region=territory?regionNames[territory]:crimea?'Крым':r[6][0]??r[5];
    const context=normalize([...r[2],...r[6],region].join(' '));if(!words.every(w=>context.includes(w)))continue;
-   const exact=r[2].some(n=>normalize(n)===q),tier=territory?0:crimea||r[5]==='RU'?1:2;
+   const exact=r[2].some(n=>normalize(n)===q),tier=crimea?0:territory?1:r[5]==='RU'?2:3;
    const label=[r[1],region,...r[6].filter(s=>s!==region)].join(' — ');
    matches.push({id:'geonames-'+r[0],title:r[1],label,region,position:{lat:r[3],lng:r[4]},territory:territory??(crimea?'crimea':null),
     qualityFlags:quality,source:{provider:'geonames',id:r[0],dump:r[12],line:r[10],modifiedAt:r[11],precision:data.coordinateAccuracy},exact,tier,population:r[7]});

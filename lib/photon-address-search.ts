@@ -385,15 +385,16 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const rostovDonetsk=exactName && queryName==="донецк" &&
       normalizedNames.includes("донецк") &&
       [p.state,p.county].map((value)=>normalize(text(value))).some((value)=>/^(ростов|rostov)/u.test(value));
-    // Default priority: four new territories, all Russian regions (including
-    // Crimea), Ukraine, then other countries. An explicit qualifier wins.
+    // Comparable settlements: Crimea, four new territories, remaining Russia,
+    // then other countries. An explicit qualifier wins.
     // Apply the country tier to every exact namesake. Photon can tag small
     // Russian localities inconsistently (or omit a place subtype), but that
     // must not let Kazakhstan/other-country results jump ahead of Russia.
     // The four priority areas still require a named settlement/admin result,
     // so unrelated POIs inside those polygons do not get the territory boost.
     const territoryRank=exactName
-      ? matchesRequestedArea && placeRank>0 ? 5_000_000
+      ? matchesRequestedArea && placeRank>0 ? 6_000_000
+        : crimea && locality>0 ? 5_000_000
         : territory && placeRank>0 ? 4_000_000
         : outsidePriorityCountryRank(feature,crimea) * 1_000_000
       : 0;
