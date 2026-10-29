@@ -1,3 +1,7 @@
+## 29.10.2026 — production webpack build + new real GeoNames browser flow PASS
+
+DirectNext16.3.4webpackbuild/TS PASS onNode24.19.0, standard config unchanged; Turbopack EPERM separately retained. Actual local production V3 desktop/mobile search/reset/preserve-other-field with169431point pilot PASS/no address mocks. Actual35localHTTPrequests p9536.91ms, RSS164MiB/HWM207MiB; code NFT7.46MB+external pilot18.04MB (NOT yet deployable tracing bundle). [Checkpoint](checkpoints/2026-10-29-geonames-webpack-browser-PASS.md). Single real route check pending; no full route success claim. Public pilot off by default/no push/CI/Production. Next inspect one-route result then local evidence handoff.
+
 ## 29.10.2026 — realAPI GeoNames local pilot implemented /169431records
 
 Opt-in GEONAMES_LOCAL_PILOT=1 + GEONAMES_LOCAL_PILOT_DIR; default public behavior unchanged. Real GET/suggest+POST/r tested with admitted169431record subset,17cityqueries/0externalcalls including Donetsks/Volnovakha; mixed street query reaches mockedPhoton.3tests/TS/lintPASS; route input/geocode compatibilityPASS, full route/browser not yet checked. Handler profileRSS136MB/p95warm3.19ms (NOT full Next server); corpusdisk18.04MB. [Checkpoint/evidence/next](checkpoints/2026-10-29-geonames-real-api-pilot-PARTIAL.md). Supported webpack build pending; ordinary buildEPERM retained. Everything LOCAL/no push/CI/Production.

@@ -1,0 +1,85 @@
+{
+  "scope": "Actual already-running production Next server; WARM process, curl startup included. Cold HTTP startup not measured here.",
+  "node": "v24.19.0",
+  "samples": 35,
+  "p95RoundTripMs": 36.90646099999998,
+  "beforeMemory": {
+    "rssKiB": 159384,
+    "highWaterKiB": 211760
+  },
+  "afterMemory": {
+    "rssKiB": 168336,
+    "highWaterKiB": 211760
+  },
+  "rows": [
+    {
+      "query": "Доне",
+      "roundTripWithCurlProcessMs": [
+        16.899085999999997,
+        12.814897000000002,
+        13.290576000000001,
+        12.680183,
+        13.045722999999995,
+        15.951532,
+        18.33842700000001
+      ]
+    },
+    {
+      "query": "Волноваха",
+      "roundTripWithCurlProcessMs": [
+        16.671892999999983,
+        11.601738000000012,
+        10.789124000000015,
+        11.330844999999982,
+        10.539699999999982,
+        10.625227999999993,
+        10.336190999999985
+      ]
+    },
+    {
+      "query": "Ялта Крым",
+      "roundTripWithCurlProcessMs": [
+        11.667553999999996,
+        11.686388999999991,
+        11.908958999999982,
+        11.17989099999997,
+        11.32054400000004,
+        11.225281999999993,
+        11.627209999999991
+      ]
+    },
+    {
+      "query": "Санкт-Петербург",
+      "roundTripWithCurlProcessMs": [
+        12.431750000000022,
+        10.176357999999993,
+        10.094460999999967,
+        10.54872499999999,
+        11.405953999999952,
+        10.311003999999969,
+        10.405643999999995
+      ]
+    },
+    {
+      "query": "Краснодар",
+      "roundTripWithCurlProcessMs": [
+        44.63175899999999,
+        36.90646099999998,
+        11.572840000000042,
+        11.055244000000016,
+        11.669685000000015,
+        10.768602999999985,
+        10.10600199999999
+      ]
+    }
+  ],
+  "traces": [
+    ".next/server/app/r/route.js.nft.json",
+    ".next/server/app/api/suggest/route.js.nft.json"
+  ],
+  "traceUniqueFiles": 117,
+  "traceBytes": 7455381,
+  "missingTraceFiles": [],
+  "packagingLimit": "Pilot data is external to current NFT trace, not yet deployable as a self-contained Vercel artifact. Include approved data + public visible attribution before Preview publication.",
+  "planLimit": "Vercel plan/account not inspected; prior documented function size/memory estimates are not a deployed plan verification."
+}
