@@ -21,6 +21,10 @@ Only one new external request in B1. Existing BRouter400 body was missing; new b
 
 Full retained Donetsk→Moscow before/current API replay:12storedresponses each,0misses/0network, fullbody/outboundrequests EXACT MATCH. This confirms noncancelled optional-signal compatibility, not all historical-source binary equivalence. A paired timing difference is not claimed as speedup. Evidence in2026-10-29/uncancelled-parity.json and cancellation JSON/logs. Main V3 cancellation fixed; legacyV2, auxiliary pricing evidence abort and body-stream cancellation remain unverified, not universally DONE.
 
-## B3–B5
+## B3 — saved timing breakdown
 
-IN PROGRESS. Next saved timing analysis, measured cancelled-work reduction, and five bounded saved-control assessments. No normal-request10s/SLA claim.
+`2026-10-29/timing-summary.json` pins3historical handler observations and3existing CPU profiles. Ordinary CI2225.425ms: routing1437.258/trace659.430/pricing48.794/response10.387. Special CI7318.419ms: routing1115.330/trace3267.508/pricing891.989/response590.168. Local Moscow→SPb4085.855ms: routing2064.693/trace1830.996/pricing119.838/response15.394. Routing/trace are network-inclusive; provider/parent stages overlap and cannot be added. Geometry admission/fastest selection/final JSON serialization remain unseparated. Prior decode6–9ms CPU fixture is not an exact network subtraction; no new profiling audit or normal-request speed claim.
+
+## B4–B5
+
+IN PROGRESS. Next measured cancelled-work reduction, then five bounded saved-control assessments. No10s/SLA claim.

@@ -1,3 +1,7 @@
+## 29.10.2026 — Stage B3 сохранённые timing разобраны LOCAL
+
+[Сводка с sourceSHA](../experiments/routing-reliability/2026-10-29/timing-summary.json), [checkpoint](checkpoints/2026-10-29-stage-B3-saved-timings-LOCAL.md): historical handler2.225/7.318/4.086с; основные крупные интервалы routing1.1–2.1с и network-inclusive trace0.66–3.27с. Нельзя суммировать перекрывающиеся provider/parent spans или выдавать CPU-профиль заE2E. Geometry/fastest-selection/JSON отдельно UNMEASURED. Старый special-split reuse не повторён; normal-speedup/10сSLA не заявлены. Дальше B4 measured cancelled-work reduction → B5 saved5controls. Только документы/выборки, без новой сети/сборки/push.
+
 ## 29.10.2026 — Stage B2: main V3 cancellation исправлена LOCAL / invariants PASS
 
 Доказанный дефект отмены устранён в geocode/ordinary+special routing/selected trace/429wait: caller signal объединяется с прежними25с/18с deadline, отменённый запрос получает безопасный400 без stale success. [Checkpoint и пределы](checkpoints/2026-10-29-stage-B2-cancellation-LOCAL-PASS.md).6новыхtests,31targetedPASS,1031offlinePASS/1SKIP,TS/lint/webpackPASS. Полный savedDonetsk→Moscow before/current replay12responses/0misses/0network, body+request EXACT MATCH. Диагностика после отмены:3starts→1 (первый abort, два новых предотвращены), не speedup нормальной поездки. V2/дальние вспомогательные pricing-I/O/body-stream abort не проверены полностью. Далее B3 сохранённые timings → B4 measured waste → B5 пять сохранённыхконтролей. Всё LOCAL ONLY; Stage A сохранён, push/Preview/Production/CI не менялись.

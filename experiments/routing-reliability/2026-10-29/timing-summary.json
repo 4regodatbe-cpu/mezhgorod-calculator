@@ -1,0 +1,200 @@
+{
+  "observations": [
+    {
+      "id": "ordinary-ci",
+      "source": "experiments/road-ref-boundaries/checks/2026-10-24-calculation-runtime-live/calculation-runtime-probe.json",
+      "sourceSha256": "07395e271860378def367c090145c272ea1c863e5cd2474ecd142e2c143cd3e1",
+      "scope": "historical single CI-host handler with external services, not Vercel/browser SLA",
+      "request": {
+        "from": {
+          "label": "Анапа",
+          "position": {
+            "lng": 37.32,
+            "lat": 44.9
+          }
+        },
+        "to": {
+          "label": "Краснодар",
+          "position": {
+            "lng": 38.98,
+            "lat": 45.04
+          }
+        },
+        "departureAt": "2026-10-13T09:00:00+03:00"
+      },
+      "httpStatus": 200,
+      "handlerElapsedMs": 2225.425,
+      "externalElapsedMs": 2230.925194,
+      "stages": {
+        "calc_total": 2225.425,
+        "request_body": 0.802,
+        "geocoding": 0.126,
+        "route_leg": 2166.925,
+        "routing": 1437.258,
+        "provider_valhalla": 1184.76,
+        "provider_osrm": 931.007,
+        "provider_brouter": 1422.401,
+        "toll_matching": 659.43,
+        "toll_pricing": 48.794,
+        "response_pricing": 10.387
+      }
+    },
+    {
+      "id": "special-ci",
+      "source": "experiments/road-ref-boundaries/checks/2026-10-24-special-runtime-live/calculation-runtime-probe.json",
+      "sourceSha256": "267eaf452a1ab54d399464a88b604de0e20ee0ac2b4802af819b80de02af66bc",
+      "scope": "historical single CI-host handler with external services, not Vercel/browser SLA",
+      "request": {
+        "from": {
+          "label": "Донецк — ДНР",
+          "position": {
+            "lng": 37.8029,
+            "lat": 48.0156
+          }
+        },
+        "to": {
+          "label": "Москва",
+          "position": {
+            "lng": 37.6174782,
+            "lat": 55.7505412
+          }
+        },
+        "departureAt": "2026-10-13T09:00:00+03:00"
+      },
+      "httpStatus": 200,
+      "handlerElapsedMs": 7318.419,
+      "externalElapsedMs": 7322.043186,
+      "stages": {
+        "calc_total": 7318.419,
+        "request_body": 0.447,
+        "geocoding": 0.054,
+        "special_options": 6696.892,
+        "routing": 1115.33,
+        "provider_valhalla": 985.476,
+        "provider_osrm": 1104.264,
+        "toll_matching": 3267.508,
+        "toll_pricing": 891.989,
+        "response_pricing": 590.168
+      }
+    },
+    {
+      "id": "moscow-spb-local",
+      "source": "experiments/address-search/2026-10-29-stage-a4-local/logs/server.log",
+      "sourceSha256": "c3ac4dc32e231415e3184573d2e86cc07151edf331586b57b6d237d5fae3f11c",
+      "scope": "historical actual local handler, not cloud or CPU-only",
+      "httpStatus": 200,
+      "handlerElapsedMs": 4085.855,
+      "stages": {
+        "request_body": 0.462,
+        "geocoding": 0.099,
+        "route_leg": 4068.522,
+        "routing": 2064.693,
+        "provider_valhalla": 2064.61,
+        "provider_osrm": 1371.615,
+        "provider_brouter": 895.285,
+        "toll_matching": 1830.996,
+        "toll_pricing": 119.838,
+        "response_pricing": 15.394
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "source": "docs/codebase-audit/computation-after-endpoint-cache.json",
+      "sourceSha256": "92b2cf9c0748d9782feba6993a9f4c8a5504d0dde7dfba8d1806cda4d3bf45b8",
+      "networkRequests": 0,
+      "scope": "existing saved offline CPU/parse workload, not directly subtractable from the CI network observations",
+      "fixtures": [
+        {
+          "id": "saved-long-eisk",
+          "coordinateCount": 9433,
+          "operations": [
+            {
+              "name": "geometryAndLegacyRecognition",
+              "medianMs": 60.58417199999997,
+              "p95Ms": 68.04437300000001
+            },
+            {
+              "name": "corridorRecovery",
+              "medianMs": 17.168157000000065,
+              "p95Ms": 17.536304999999857
+            },
+            {
+              "name": "composition",
+              "medianMs": 0.005366000000094573,
+              "p95Ms": 0.10141899999985071
+            },
+            {
+              "name": "apiSerialization",
+              "medianMs": 0.0013900000001285662,
+              "p95Ms": 0.019880999999941196
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/codebase-audit/computation-maykop-profile.json",
+      "sourceSha256": "8d881fc8c8a370d048cf114455101c43510e22484df52379b5840ef0414b211b",
+      "networkRequests": 0,
+      "scope": "existing saved offline CPU/parse workload, not directly subtractable from the CI network observations",
+      "fixtures": [
+        {
+          "id": "saved-long-maykop",
+          "coordinateCount": 9677,
+          "operations": [
+            {
+              "name": "geometryAndLegacyRecognition",
+              "medianMs": 64.92214000000013,
+              "p95Ms": 68.18281399999995
+            },
+            {
+              "name": "corridorRecovery",
+              "medianMs": 17.83936000000017,
+              "p95Ms": 19.56498099999999
+            },
+            {
+              "name": "composition",
+              "medianMs": 0.0048580000000129075,
+              "p95Ms": 0.01138200000013967
+            },
+            {
+              "name": "apiSerialization",
+              "medianMs": 0.0013910000000123546,
+              "p95Ms": 0.09425800000008167
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "docs/codebase-audit/provider-route-decode-profile.json",
+      "sourceSha256": "5a9fb264506f7a71a126134ee9d88264a0e88a653320eeac377b63baf9ee2c32",
+      "networkRequests": 0,
+      "scope": "existing saved offline CPU/parse workload, not directly subtractable from the CI network observations",
+      "fixtures": [
+        {
+          "id": "eisk",
+          "coordinateCount": 9433,
+          "medianMs": 9.073496999999989
+        },
+        {
+          "id": "maykop",
+          "coordinateCount": 9677,
+          "medianMs": 6.116663499999987
+        }
+      ]
+    }
+  ],
+  "notSeparatelyTimed": [
+    "geometry admission inside provider/route-leg paths",
+    "fastest selection inside route-leg/special_options",
+    "final JSON serialization outside response_pricing"
+  ],
+  "limitations": [
+    "Parallel and nested stages overlap; never sum all provider rows or nesting.",
+    "Provider spans include local parsing/evidence as well as network.",
+    "Toll matching includes external trace/retries, not CPU alone.",
+    "All observations are old inputs/hosts; no full normal-calculation speed gain or 10s SLA established."
+  ]
+}
