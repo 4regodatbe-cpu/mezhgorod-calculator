@@ -1,0 +1,7 @@
+# Full structural validation — DONE; semantic admission PARTIAL
+
+29.10.2026 MSK, local source d044b07; no push authorized. All221512corrected catalog rows scanned, SHA64b0af909e526c11e961da65106152ec4ed40511bcbfa8c5d998f759c4428c56. Validator checks tuple fields, IDs/duplicates, nonempty bounded names/aliases/control characters, coordinates/WGS84/nonzero, active settlement types, admin label/code structure, source dump/line/date, population and flags. GeoNames legacy textual admin keys preserved, not forced into invented numeric schema.
+
+Result:194576structural candidates,26505unverified ru names and431missing admin bindings quarantined in machine-readable issues. No duplicate IDs/invalid coordinates/remaining malformed structures found. No manual221512review, no semantic/road-access certification claimed. Script/test/evidence `experiments/address-search/local-gazetteer-validate.mjs`, `.test.mjs`, `local-gazetteer-evidence-2026-10-28/full-validation-2026-10-29.json`.3/3testsPASS; scopedESLint/diffcheckPASS. Report retains every issue ID and original provenance; no fabricated coordinates.
+
+Next bounded block:15existing controls, source comparison already retained; at most one OSRM nearest request per control (no toll/route audit), stop on transport/source failure, preserve response/status/error. Then integrate only an explicitly admitted subset; structural pass alone not full-data trust. Local user-directed commits supersede remote-save step here; denied historical WORK_LOG/NEXT_STEPS untouched.

@@ -1,3 +1,7 @@
+## 29.10.2026 — full structural validation DONE /194576candidates
+
+Scanned221512rows; no duplicate IDs/invalid coordinates;194576structural candidates,26505unverified Russian names+431missing admin bindings quarantined by ID.3newtestsPASS. Semantic/roadaccess not certified. [Checkpoint and next step](checkpoints/2026-10-29-geonames-full-validation-DONE.md). LOCAL only/no push. Next15control nearest-point checks then bounded corpus admission/API work.
+
 ## 29.10.2026 — source-backed Russian display fix; admission still PARTIAL
 
 Found generic compiler error: ru-tagged Latin alias could precede existing Cyrillic alias. Fixed source selection (no new translations/coordinates); full rebuild improves3048city titles/4701admin-label arrays, flags1462additional unverified names;221512IDs/coordinates/types/provenance unchanged.6Python testsPASS, all-row comparisonPASS. [Checkpoint/next steps](checkpoints/2026-10-29-geonames-display-alias-fix-PARTIAL.md). Corrected catalogSHA64b0af909e526c11e961da65106152ec4ed40511bcbfa8c5d998f759c4428c56; old profile data remains historical. No API activation before remaining data gates; current task LOCAL only/no push.
