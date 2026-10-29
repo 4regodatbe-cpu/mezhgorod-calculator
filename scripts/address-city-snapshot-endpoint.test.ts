@@ -7,6 +7,7 @@ import { GET } from "../app/api/suggest/route";
 import { POST } from "../app/r/route";
 
 test("real GET and /r use optional snapshot only for full outage, respecting partial/empty/abort/off/deadline/expiry", async () => {
+  const savedPilot=process.env.GEONAMES_LOCAL_PILOT;process.env.GEONAMES_LOCAL_PILOT="0";
   const saved = { fetch: globalThis.fetch, now: Date.now, warn: console.warn, error: console.error,
     enabled: switches.addressCitySnapshot, pool: switches.addressRequestPool };
   let mode = "outage", calls = 0, clock = Date.parse(snapshot.reviewedAt) + 1000;
@@ -54,5 +55,6 @@ test("real GET and /r use optional snapshot only for full outage, respecting par
   } finally {
     globalThis.fetch = saved.fetch; Date.now = saved.now; console.warn = saved.warn; console.error = saved.error;
     switches.addressCitySnapshot = saved.enabled; switches.addressRequestPool = saved.pool;
+    if(savedPilot===undefined)delete process.env.GEONAMES_LOCAL_PILOT;else process.env.GEONAMES_LOCAL_PILOT=savedPilot;
   }
 });

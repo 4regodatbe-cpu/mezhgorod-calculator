@@ -17,6 +17,7 @@ test("partial provider results must not hide recovered homonyms for five minutes
 
 test("API identifies usable but incomplete suggestions after provider503",async()=>{
   const original=globalThis.fetch;let calls=0;
+  const savedPilot=process.env.GEONAMES_LOCAL_PILOT;process.env.GEONAMES_LOCAL_PILOT="0";
   globalThis.fetch=async()=>{
     if(++calls!==1)return new Response("{}",{status:503});
     return new Response(JSON.stringify({features:[{properties:{name:"Донецк",osm_type:"R",osm_id:1413957,osm_key:"place",osm_value:"city",state:"Донецкая область"},geometry:{coordinates:[37.8013407,48.0158753]}}]}));
@@ -25,5 +26,5 @@ test("API identifies usable but incomplete suggestions after provider503",async(
     const response=await POST(new NextRequest("https://calculator.test/r",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({query:"Донецк"})}));
     assert.equal(response.status,200);const body=await response.json();
     assert.equal(body.items[0].id,"R-1413957");assert.equal(body.partial,true);
-  }finally{globalThis.fetch=original;}
+  }finally{globalThis.fetch=original;if(savedPilot===undefined)delete process.env.GEONAMES_LOCAL_PILOT;else process.env.GEONAMES_LOCAL_PILOT=savedPilot;}
 });

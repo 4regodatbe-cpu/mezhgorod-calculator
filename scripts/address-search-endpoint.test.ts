@@ -30,6 +30,7 @@ async function read(response: Response) {
 
 test("real endpoint/proxy flow survives sequential replacements, shared cancellation and partial outage", async () => {
   const originalFetch = globalThis.fetch, originalError = console.error, originalWarn = console.warn;
+  const savedPilot=process.env.GEONAMES_LOCAL_PILOT;process.env.GEONAMES_LOCAL_PILOT="0";
   const diagnostics: unknown[][] = [], evidence: Record<string, unknown>[] = [];
   const calledUrls: string[] = [];
   let active = 0, peak = 0, abandonedStarted = 0;
@@ -124,5 +125,6 @@ test("real endpoint/proxy flow survives sequential replacements, shared cancella
       JSON.stringify({ sourceBaseCommit: process.env.ADDRESS_ENDPOINT_SOURCE_COMMIT ?? null, scope: "deterministic Next endpoint/proxy with Photon mocks; not live/browser/mobile",
         liveRequests: 0, peakUpstream: peak, mockFetches: calledUrls.length, evidence,
         diagnosticCodes: [...new Set(diagnostics.map(row => row[0]))] }, null, 2) + "\n");
-  } finally { globalThis.fetch = originalFetch; console.error = originalError; console.warn = originalWarn; }
+  } finally { globalThis.fetch = originalFetch; console.error = originalError; console.warn = originalWarn;
+    if(savedPilot===undefined)delete process.env.GEONAMES_LOCAL_PILOT;else process.env.GEONAMES_LOCAL_PILOT=savedPilot; }
 });
