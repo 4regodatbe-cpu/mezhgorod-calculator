@@ -1,3 +1,7 @@
+## 29.10.2026 — bundled GeoNames/API/build/browser verified locally
+
+169431point opt-in pilot now bundled in localGit with fullsource/CCBYattribution; visibleV3footerPASS. Newab95345runtimewebpackbuild/TS PASS; actualNFT/r+/suggest each25.49MB inclALL6220assets. FreshNext ready257ms/firstДоне487ms/warmHTTPp9520ms/RSS206MiB. [Final packaging checkpoint](checkpoints/2026-10-29-geonames-package-cold-PASS.md), [full handoff](../experiments/address-search/GEONAMES_V3_LOCAL_INTEGRATION.md). Search desktop/mobilePASS/no address mocks, PhotonoutageAPItest0external. One real route502 remains; actualVercelplan/deployment/fullofflinegate unverified. Four original blocks complete/two partial, no100%claim. DefaultOFF/no push/CI/Production. Next separate publication permission + gates/remotecompatibility, not another oldaudit.
+
 ## 29.10.2026 — immutable data packaging STARTED
 
 Continuing independently:169431point data assets now localGit-staged, targetedNext tracing and visibleGeoNamesCCBYfooter added; module stillopt-in/defaultOFF. Package all-shard integrity testPASS, focused3APItestsPASS/TS. [Recovery checkpoint](checkpoints/2026-10-29-geonames-package-STARTED.md). Next newwebpackbuild+NFTinclusion/coldHTTP, not retry routeFAIL. No push/CI/Production.
