@@ -1,3 +1,7 @@
+## 29.10.2026 — C4/CKAD Golitsyno continuity retained / precise PK5 crosswalk BLOCKED LOCAL
+
+[CKADcheckpoint](checkpoints/2026-10-29-stage-C4-CKAD-Golitsyno-DATA-BLOCKED.md), [currentquote](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-ckad.json). SavedOSRMroute8contiguoustolltrueedges46–53/nextfree,notreentry. Currenteastarcresolverdoesnotbindwesternpair;unpricedcoveragepreservesckad,quoteNULL. PK5free/generalchainageoverlapnotexactway→freeboundary;donotassignzero. Needgeoreferencedpublisherplan/equivalentboundary;oldblockedYandexlinknotretried. NextZSDfinished+largerunboundcase;no push/runtime/data/A+B/CIchange.
+
 ## 29.10.2026 — C4/M12 actual22Н-0239 exit / operator registration BLOCKED LOCAL
 
 [M12checkpoint](checkpoints/2026-10-29-stage-C4-M12-operator-pair-DATA-BLOCKED.md), [currentquote](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-m12.json). OnepinnedOSRMMoscow→Arzamas:1550135076→1550561305→1206479738/22Н-0239,notР158. Currentfirstmarker184cannotexclude174given158.46kmroutegap; boundaryunknown,m12_current_operator_pair_not_bound/null,0network. Missingwestern/exitregisteredIDs+operatorproductcrosswalk,notorder302age. NextCKADGolitsyno→ZSD;M11partial58interfaceblockerretained. No push/runtime/data/A+B/CIchange.
