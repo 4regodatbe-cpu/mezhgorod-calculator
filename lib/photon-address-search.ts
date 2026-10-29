@@ -3,6 +3,7 @@ import { SPECIAL_TERRITORY_BOUNDARIES } from "./special-territory-boundaries.ts"
 import { inCrimea } from "./special-territory-policy.ts";
 import type { Suggestion } from "../app/v2/components/types.ts";
 import ruwikiSettlementIndex from "../data/ruwiki-settlement-index.json" with { type: "json" };
+import { selectRussianSettlementDisplay } from "./russian-settlement-display.ts";
 
 export type PhotonFeature = {
   geometry?: { coordinates?: [number, number] };
@@ -98,10 +99,6 @@ function localityRank(feature: PhotonFeature, exactName: boolean): number {
   return 0;
 }
 
-function isRussianDisplayName(name: string): boolean {
-  return /[А-Яа-яЁё]/u.test(name) && !/[A-Za-zІіЇїЄєҐґ]/u.test(name);
-}
-
 function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean, exactName: boolean): { title: string; label: string; region: string } | null {
   const p = feature.properties ?? {};
   const street = [p.street, p.housenumber].map(text).filter(Boolean).join(", ");
@@ -123,10 +120,9 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
       // Require a Russian-language source, not merely Cyrillic characters or
       // a transliteration. The reviewed index is scoped by coordinate-derived
       // territory; aliases remain usable for matching, never for invention.
-      const providerRussian = [text(p["name:ru"]), text(p.name_ru)].find(isRussianDisplayName);
       const knownRuwikiName = localityNames(feature).flatMap(alias =>
         ruwikiNames.get(normalize(alias)) ?? []).find(row => row.area === territory)?.names[0];
-      const localityName = providerRussian || (knownRuwikiName && isRussianDisplayName(knownRuwikiName) ? knownRuwikiName : null);
+      const localityName = selectRussianSettlementDisplay([text(p["name:ru"]), text(p.name_ru), knownRuwikiName ?? ""]);
       if (!localityName) return null;
       const label = `${localityName} — ${areaName}`;
       return { title: label, label, region: areaName };

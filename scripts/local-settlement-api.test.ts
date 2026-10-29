@@ -30,6 +30,13 @@ test('actual GET + admitted real data remain independent of completely unavailab
     assert.equal(validPoint(item),true);assert.deepEqual((await geocode(item)).position,item.position);
    }
    if(query==='Донецк')assert.deepEqual(body.items.slice(0,2).map((x:{id:string})=>x.id),['geonames-709717','geonames-565348']);
+   if(query==='Доне'){
+    assert.ok(!body.items.some((x:{id:string})=>x.id==='geonames-709711'),'conflicting ru/uk source spelling is withheld, never translated');
+    const homonyms=body.items.filter((x:{id:string})=>['geonames-709713','geonames-811884'].includes(x.id));
+    assert.equal(homonyms.length,2);assert.notEqual(homonyms[0].label,homonyms[1].label);
+    for(const item of body.items)assert.doesNotMatch(item.label,/geonames-|[сц]ьк|\d+\.\d+,\s*\d+\.\d+/iu);
+    assert.deepEqual(homonyms.map((x:{position:{lat:number;lng:number}})=>x.position),[{lat:48.6996,lng:38.67627},{lat:48.96667,lng:39.16694}]);
+   }
    if(query==='Волноваха')assert.equal(body.items[0].id,'geonames-689198');
    if(qualifiedRegions[query])assert.equal(body.items[0].region.toLocaleLowerCase('ru-RU'),qualifiedRegions[query].toLocaleLowerCase('ru-RU'),query);
    if(query==='Донецк Ростовская область')assert.equal(body.items[0].id,'geonames-565348');

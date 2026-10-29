@@ -2,6 +2,7 @@
 import {classifyTerritory} from '../../lib/special-territory-geometry.ts';
 import {SPECIAL_TERRITORY_BOUNDARIES} from '../../lib/special-territory-boundaries.ts';
 import {inCrimea} from '../../lib/crimea-geography.ts';
+import {selectRussianSettlementDisplay} from '../../lib/russian-settlement-display.ts';
 const regionNames={dnr:'ДНР',lnr:'ЛНР',zaporizhzhia:'Запорожская область',kherson:'Херсонская область'};
 export const normalize=value=>value.toLocaleLowerCase('ru-RU').replace(/ё/gu,'е').replace(/[—–-]/gu,' ').replace(/\s+/gu,' ').trim();
 export function createLocalGazetteer(data){
@@ -24,11 +25,10 @@ export function createLocalGazetteer(data){
    let territory=null;const quality=[...r[13]];
    try{territory=classifyTerritory({lat:r[3],lng:r[4]},SPECIAL_TERRITORY_BOUNDARIES);}catch{quality.push('territory_ambiguous');}
    const crimea=!quality.includes('territory_ambiguous')&&inCrimea({lng:r[4],lat:r[3]});
-   // The saved builder selected only source-tagged ru aliases. Do not expose
-   // its explicitly unverified fallback (or a visibly non-Russian name) in
-   // priority regions, and never manufacture a translation from search aliases.
+   // r[1] is selected from source-tagged ru aliases unless explicitly flagged.
+   // Untyped search aliases are never promoted to display/translated here.
    if((territory||crimea)&&(quality.includes('ru_name_unverified')||
-      !/[А-Яа-яЁё]/u.test(r[1])||/[A-Za-zІіЇїЄєҐґ]/u.test(r[1])))continue;
+      !selectRussianSettlementDisplay([r[1]])))continue;
    const region=territory?regionNames[territory]:crimea?'Крым':r[6][0]??r[5];
    const context=normalize([...r[2],...r[6],region].join(' '));if(!words.every(w=>context.includes(w)))continue;
    const exact=r[2].some(n=>normalize(n)===q),tier=crimea?0:territory?1:r[5]==='RU'?2:3;
@@ -38,7 +38,17 @@ export function createLocalGazetteer(data){
   }
   matches.sort((a,b)=>Number(b.exact)-Number(a.exact)||a.tier-b.tier||b.population-a.population||a.id.localeCompare(b.id));
   const counts=new Map();for(const m of matches)counts.set(m.label,(counts.get(m.label)??0)+1);
-  for(const m of matches)if(counts.get(m.label)>1)m.label+=` · ${m.id} · ${m.position.lat}, ${m.position.lng}`;
+  const ordinals=new Map();
+  for(const m of matches){
+   const label=m.label,count=counts.get(label);
+   if(count>1){
+    const ordinal=(ordinals.get(label)??0)+1;ordinals.set(label,ordinal);
+    // Keep the neutral ordinal near the name so mobile truncated labels
+    // remain distinguishable; it is not an invented administrative fact.
+    m.label+=` (${ordinal} из ${count})`;
+    if(m.qualityFlags.includes('admin_ru_unverified'))m.label+='; район не уточнён';
+   }
+  }
   const truncated=start<postings.length&&postings[start][0].startsWith(prefix);
   return {items:matches.slice(0,limit),runtimeApproved:false,truncated,hasMore:truncated||matches.length>limit,matchingRecords:matches.length,scanned,
     sourceDate:data.sourceDate,license:data.license};
