@@ -10,7 +10,7 @@ Project prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie/team_UFuw0UGXjMqBV2hJBxsWGAMS/Hobby/Nod
 
 -40825210808pull_requestSpecialterritory:overallSUCCESS, but live_probeFAIL (continue-on-error), not all checks clean. VerifyPASS onNode24.22.1:999tests/998PASS/0FAIL/1SKIP + classifier/capture checksPASS, TS/productionbuildPASS. calculation_timingPASS HTTP200/handler7895.408ms/supervisor8322.509ms; this is runner API timing, NOT deployedPreview E2E.
 -live_probe artifact: РостовPASS with1HTTP503, КраснPASS with2HTTP503+4cooldown, ДонецкSOURCE_UNAVAILABLE with4HTTP503+3cooldown/198ms. This job probes Photon without Previewpilotconfiguration, NOT a failure of deployed GeoNames. Geometry18verified/4unverified:Feodosia-Mariupol,Krasnodar-Donetsk,Donetsk-Krasnodar,Simferopol-Donetsk. Fullflow3results persisted (25.2s/22.0s/31.0s); no new route audit/retry undertaken. Do not claim all route issues solved.
--40825210791pull_requestB03SUCCESS; inspected artifact10current+8legacy=18PASS, controlled/mocked browser scenarios, NOT realVercelGeoNames. Chromium156.0.8078.57/Node24.22.1; CI merge tree equals publishedtree.
+-40825210791pull_requestB03SUCCESS; inspected artifact10current+8legacy=18PASS, controlled/mocked browser scenarios, NOT realVercelGeoNames. Chromium156.0.8078.47/Node24.22.1; CI merge tree equals publishedtree.
 -40825199214pushB03SUCCESS;40825199219pushRoutequality/offlinebenchmarkSUCCESS. All4automatic runs completed; no workflow_dispatch/rerun. Existing actionNode20deprecation warning retained (forcedNode24), no CI modification.
 
 Artifacts downloaded and SHA verified against GitHub metadata:
