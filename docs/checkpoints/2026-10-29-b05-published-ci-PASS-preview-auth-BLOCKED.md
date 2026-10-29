@@ -29,3 +29,7 @@ Therefore all requested real hosted city searches (DNR/Rostov Donetsk, Volnovakh
 ## Next action
 
 Complete the existing official Vercel device confirmation, then verify whoami and explicit project/team. Use vercel curl on the exact new URL and same-project development OIDC for origin-scoped browser access. Execute one bounded real desktop/mobile/city series and one full route; record actual timing and available resource evidence. Do not republish, create share access, repeat old tests/audits or weaken protection. Post-publication records need separate future push permission, not an implicit second push.
+
+## Access-flow closure observed after this evidence was recorded
+
+The single replacement CLI process subsequently ended exit1 without a successful-login message or owner confirmation. The npm update-check worker had reported a fetch failure earlier; the empty final output does not establish an authentication root cause. Do not reuse its old challenge or claim a live pending confirmation. No additional login loop was started. A fresh official device flow with timely owner confirmation is now required before hosted acceptance can continue; no passwords/tokens/share link are needed. The completed publication/CI/READY results above are unaffected.
