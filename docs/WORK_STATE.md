@@ -1,3 +1,7 @@
+## 29.10.2026 — Preview safety gate + local failure fallback fixed
+
+Pilot now restricted to exact VercelPreviewbranch; Production cannot enable even with localtest override. Localproductiontests need GEONAMES_LOCAL_TEST=1. Missing/corruptstore falls back to purePhoton, abort does not invokePhoton.2newtestsPASS. [Checkpoint](checkpoints/2026-10-29-geonames-preview-safety-PASS.md). No push/Preview/CI/Production; next coverage check52081excludedIDs, no full revalidation.
+
 ## 29.10.2026 — bundled GeoNames/API/build/browser verified locally
 
 169431point opt-in pilot now bundled in localGit with fullsource/CCBYattribution; visibleV3footerPASS. Newab95345runtimewebpackbuild/TS PASS; actualNFT/r+/suggest each25.49MB inclALL6220assets. FreshNext ready257ms/firstДоне487ms/warmHTTPp9520ms/RSS206MiB. [Final packaging checkpoint](checkpoints/2026-10-29-geonames-package-cold-PASS.md), [full handoff](../experiments/address-search/GEONAMES_V3_LOCAL_INTEGRATION.md). Search desktop/mobilePASS/no address mocks, PhotonoutageAPItest0external. One real route502 remains; actualVercelplan/deployment/fullofflinegate unverified. Four original blocks complete/two partial, no100%claim. DefaultOFF/no push/CI/Production. Next separate publication permission + gates/remotecompatibility, not another oldaudit.

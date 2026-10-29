@@ -14,8 +14,15 @@ export async function GET(request: NextRequest) {
 
   const started = Date.now();
   try {
-    const local = await searchLocalSettlements(q, request.signal);
-    if (local) return NextResponse.json(local);
+    try {
+      const local = await searchLocalSettlements(q, request.signal);
+      if (local) return NextResponse.json(local);
+    } catch {
+      if (request.signal.aborted) throw new Error("Cancelled");
+      // Optional local data must not take down otherwise available Photon.
+      // Never expose filesystem paths or merge corrupt/partial local results.
+      console.warn("address_search_local_unavailable");
+    }
     const { features, sourceCount, failures, budgetExpired, unavailable } = await collectAddressFeatures(q, { signal: request.signal });
     if (unavailable) {
       const fallback = searchCitySnapshot(q, { signal: request.signal, deadlineAt: started + ADDRESS_SEARCH_BUDGET_MS });
