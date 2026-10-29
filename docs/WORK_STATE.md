@@ -1,3 +1,7 @@
+## 29.10.2026 — C3 scoped boundary invariants 8/8PASS LOCAL / runtime unchanged
+
+[C3checkpoint](checkpoints/2026-10-29-stage-C3-invariants-LOCAL-PASS.md):new8regressions/0network guard complete+foreign+partialtrace,manoeuvreprecision,reentry/chunkambiguity,directedIDs,registeredbothdateamounts,partial/duplicateunknownnull. ScopedlintPASS; peerreviewcommentsaddressed, nonewoperatorpricecertificate or runtime/publicAPI change. C1inventory/C2graphpair donewithoperatorcrosswalkBLOCKED. NextC4M11→M12→CKAD→ZSD1–2savedcasesonly. No push/CI/Production/A+Bsourcechanges.
+
 ## 29.10.2026 — C2 one M4 graphpair confirmed / operator crosswalk BLOCKED LOCAL
 
 [C2checkpoint](checkpoints/2026-10-29-stage-C2-M4-graph-pair-DATA-BLOCKED.md), [raw-backed report](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/m4-evidence.json). Saved13trace+OSM9hashjoinPASS,network0:entry4443232947/447135768→1182567076/47.5105556,39.9708171;exit358467208/1211606940→28835034/48.186303,40.265878. Graphcontinuous/orderresolved;133M4refedges contain2tolltrue/131false,notautomaticoperatorproduct. Bothdatespriceunknown/null,kmunknown,no matcherfixjustified. Missingexactoperatoraccess→chargeproduct/branchscale/partialcollectionrule+matrixcell; no nearestPVP/kmguess/runtimeeligibleoverride. NextC3genericinvariants;no push/CI/Production/A+Bchange.
