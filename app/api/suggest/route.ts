@@ -3,6 +3,7 @@ import { SPECIAL_TERRITORY_BOUNDARIES } from "../../../lib/special-territory-bou
 import { rankPhotonFeatures } from "../../../lib/photon-address-search.ts";
 import { collectAddressFeatures, ADDRESS_SEARCH_BUDGET_MS } from "../../../lib/address-search-service.ts";
 import { searchCitySnapshot } from "../../../lib/address-city-snapshot.ts";
+import { searchLocalSettlements } from "../../../lib/local-settlement-search.ts";
 
 export const preferredRegion = "fra1";
 
@@ -13,6 +14,8 @@ export async function GET(request: NextRequest) {
 
   const started = Date.now();
   try {
+    const local = await searchLocalSettlements(q, request.signal);
+    if (local) return NextResponse.json(local);
     const { features, sourceCount, failures, budgetExpired, unavailable } = await collectAddressFeatures(q, { signal: request.signal });
     if (unavailable) {
       const fallback = searchCitySnapshot(q, { signal: request.signal, deadlineAt: started + ADDRESS_SEARCH_BUDGET_MS });
