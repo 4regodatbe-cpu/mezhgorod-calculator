@@ -1,5 +1,9 @@
 # Пробелы и отложенные проблемы
 
+## 29.10.2026 — C2 точное состояние KM-001 / TARIFF-001
+
+Поздние сохранённые24OctOSMcoords/topology уже доступны; новый [one-case join](checks/2026-10-29-stage-c/m4-evidence.json) подтверждает выбранные node4443232947→358467208,направленныеwayпары и порядок. Не повторять прежние неудачныеcoordinateзапросы или шестимаршрутныйаудит. **KM-001BLOCKED** теперь именно officialkm/branchscale/calibration; **TARIFF-001BLOCKED** именно operatorchargecrosswalk/partialcollectionrule/точнаяmatrixcell. Road-refspan133edges/2tolltrue не доказывает единый оплачиваемый продукт. Матчеркорректно возвращаетgraphresolved,priceunknown/null; runtime/fares/anchors не изменены. Историческая таблица24Oct ниже сохранена, не текущая сводка поискаадресов/UI.
+
 Обновлять датированными записями; рабочая часть алгоритма продолжается независимо. Unknown не free, неподтверждённая цена не0. Закрытие требует фактического evidence.
 
 | ID | Статус 24.10.2026 | Наблюдение / влияние | Следующий независимый шаг |

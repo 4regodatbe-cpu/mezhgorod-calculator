@@ -1,3 +1,7 @@
+## 29.10.2026 — C2 one M4 graphpair confirmed / operator crosswalk BLOCKED LOCAL
+
+[C2checkpoint](checkpoints/2026-10-29-stage-C2-M4-graph-pair-DATA-BLOCKED.md), [raw-backed report](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/m4-evidence.json). Saved13trace+OSM9hashjoinPASS,network0:entry4443232947/447135768→1182567076/47.5105556,39.9708171;exit358467208/1211606940→28835034/48.186303,40.265878. Graphcontinuous/orderresolved;133M4refedges contain2tolltrue/131false,notautomaticoperatorproduct. Bothdatespriceunknown/null,kmunknown,no matcherfixjustified. Missingexactoperatoraccess→chargeproduct/branchscale/partialcollectionrule+matrixcell; no nearestPVP/kmguess/runtimeeligibleoverride. NextC3genericinvariants;no push/CI/Production/A+Bchange.
+
 ## 29.10.2026 — Stage C1 inventory DONE LOCAL / C2 one M4 graphpair next
 
 Newlocal-only Ctask;remoteunchangedc2f52ee9/PR14Draft,previousA+Bnotesretained. [C1checkpoint](checkpoints/2026-10-29-stage-C1-state-DONE.md), [C1–C6scope/inventory](../experiments/road-ref-boundaries/STAGE_C.md). Existing selectedtrace/exactgraphboundaries/M4matrix/optionalKm/composition alreadyimplemented; do not rewrite. OSM4443232947→358467208coords+directedways were reviewed24Oct; operatorKm/scope/fare remainunknown. Next one savedGranitnoe→Kazan/rawtrace+B04evidence comparison, no repeatedsixcaseaudit/capture/roadnetworkrequests. No push/CI/Production/A+Bsourcechange permitted; checkpoints/localcommits only.

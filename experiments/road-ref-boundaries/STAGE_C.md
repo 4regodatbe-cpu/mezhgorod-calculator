@@ -20,7 +20,7 @@ Three conceptual outcomes remain separate: boundaries/vector unresolved; physica
 ## Authorized sequential work / recovery
 
 1. C1 DONE: bounded implementation/evidence inventory; no app change or old audit repeated.
-2. C2 STARTED next: one retained Granitnoe→Kazan graphpair4443232947→358467208, inspect savedprovider/13trace and later OSMintake only; produce exact node/way/continuity/coordinate/source evidence. No new capture/price assignment.
+2. C2 bounded review DONE / operator crosswalk BLOCKED_BY_DATA: [one-case evidence](checks/2026-10-29-stage-c/m4-evidence.json). Exact graphpair and OSMcoords agree with selectedroute;133road-refedges contain2tolltrue/131false, so roadspan cannot be silently treated as a single operator charge product. Currentgraphquotes bothdatesunknown/null,officialkmunknown. No matcher error established, no app/data mutation. [Checkpoint](../../docs/checkpoints/2026-10-29-stage-C2-M4-graph-pair-DATA-BLOCKED.md).
 3. C3: after C2, characterize any demonstrated general boundary-matching gap with regression first; leave already-correct mechanism unchanged. Optional diagnostic additions must remain isolated and not change publicAPI/prices/route choice.
 4. C4: one/two saved cases each M11→M12→CKAD(Golitsyno)→ZSD, exact unresolved facts and source requirements; no broad replay.
 5. C5: selected retained combined geometries/components and duplicate/partial-sum guards; no inter-road mega-matrix.

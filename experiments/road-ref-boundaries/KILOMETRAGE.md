@@ -1,5 +1,9 @@
 # Локальный модуль километража
 
+## Уточнение 29.10.2026 — координаты известны, официальный километраж нет
+
+Поздний B04intake24Oct уже содержит exactOSMcoords для node4443232947/358467208. [C2](checks/2026-10-29-stage-c/m4-evidence.json) связал их с выбранным сохранённым trace по точным node+directedwayIDs, не по ближайшему ПВП. Старые слова об отсутствии координат ниже относятся к graphresponse/раннему intake, а не к отсутствию любых OSMисточников сегодня. Runtime coordinate=null и runtimeEligiblefalse сохранены; официальныхkm/branchscale/operatorcrosswalk не появилось.133непрерывныхМ4refedges с2tolltrue не задают область единого тарифного продукта. Полная стоимость по-прежнемуunknown/null; координаты не заменяют калиброванный километраж.
+
 ## Назначение и подключение
 
 Дополнительная позиционная диагностика выбранных въезда/съезда М4. Не изменяет маршрут, распознавание платности, операторский scope, tariffVector, amount или pricingStatus. Обогащает m4PvpPreview.roadKilometrage, который уже включается в fast-ответ V3. Возвращает entry/exit с диапазоном километров, scaleId/branchId/source/method, направление и structured stops. Unknown/ambiguous не превращается в подтверждённый тариф.
