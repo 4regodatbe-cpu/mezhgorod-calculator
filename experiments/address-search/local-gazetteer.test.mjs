@@ -21,7 +21,8 @@ test('same-label homonyms retain distinct IDs, coordinates and disambiguating la
  assert.equal(r.runtimeApproved,false);
 });
 test('Crimea is classified by coordinate, not original country field',()=>{
- const r=createLocalGazetteer(data([row(1,'Test place',44.495,34.166,'UA')])).search('Test');
+ const place=row(1,'Проверенное место',44.495,34.166,'UA');place[2].push('Test place');
+ const r=createLocalGazetteer(data([place])).search('Test');
  assert.equal(r.items[0].territory,'crimea');assert.equal(r.items[0].region,'Крым');
 });
 test('invalid coordinates and unbounded queries are rejected',()=>{

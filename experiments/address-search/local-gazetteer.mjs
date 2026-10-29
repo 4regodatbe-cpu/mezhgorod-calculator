@@ -24,6 +24,11 @@ export function createLocalGazetteer(data){
    let territory=null;const quality=[...r[13]];
    try{territory=classifyTerritory({lat:r[3],lng:r[4]},SPECIAL_TERRITORY_BOUNDARIES);}catch{quality.push('territory_ambiguous');}
    const crimea=!quality.includes('territory_ambiguous')&&inCrimea({lng:r[4],lat:r[3]});
+   // The saved builder selected only source-tagged ru aliases. Do not expose
+   // its explicitly unverified fallback (or a visibly non-Russian name) in
+   // priority regions, and never manufacture a translation from search aliases.
+   if((territory||crimea)&&(quality.includes('ru_name_unverified')||
+      !/[А-Яа-яЁё]/u.test(r[1])||/[A-Za-zІіЇїЄєҐґ]/u.test(r[1])))continue;
    const region=territory?regionNames[territory]:crimea?'Крым':r[6][0]??r[5];
    const context=normalize([...r[2],...r[6],region].join(' '));if(!words.every(w=>context.includes(w)))continue;
    const exact=r[2].some(n=>normalize(n)===q),tier=crimea?0:territory?1:r[5]==='RU'?2:3;

@@ -1,3 +1,7 @@
+## 29.10.2026 — GeoNames Russian-name guard LOCAL / Photon incomplete
+
+Priority-area GeoNames no longer displays explicitly unverified, Latin or Ukrainian-specific display names; no invented translations or data regeneration. 13 targeted PASS; full offline 999PASS/0FAIL/1SKIP, TypeScript and webpack build exit0. [Checkpoint](checkpoints/2026-10-29-b05-geonames-russian-display-LOCAL.md). Photon unverified-name fallback remains unresolved, so cross-provider Russian-only guarantee is NOT complete. Authorized Vercel device confirmation pending. No push or deployment; Preview remains d5be.
+
 ## 29.10.2026 — Crimea-first ranking LOCAL / language and Preview pending
 
 GeoNames tiers and Photon comparable exact settlements now prefer Crimea, then new territories, remaining Russia, others. Regression-first tests reproduced old ordering; 43 targeted PASS, TypeScript/full offline gate/webpack build exit0. No corpus/coordinates/routing/tariff/CI changes or push. [Checkpoint](checkpoints/2026-10-29-b05-crimea-ranking-LOCAL.md). Verified-Russian-only display and generic explicit-region coverage still incomplete. Official authorized Vercel device login pending; existing Preview remains published d5be, not this local change.
