@@ -1,0 +1,7 @@
+# B05 Photon Russian-only settlement display — STARTED, local
+
+Base a425195dfc1bd8d5c471e976c1b5776c3087bc6a; allowed branch fix/v3-missing-route-prices-2026-10-15; PR14 remains Draft by standing requirement. Push explicitly prohibited.
+
+Regression-first test reproduced raw `Unverified — Крым`. Pending working changes in lib/photon-address-search.ts and source-localized synthetic fixtures remove the hand-maintained city display dictionary and require name:ru/name_ru or existing reviewed, coordinate-area-scoped RuWiki name evidence. Other aliases still match queries. Unknown names are withheld, not translated. This can reduce Photon-only settlement coverage where the provider supplies no Russian field or reviewed alias; GeoNames city search remains independent. Source language tags are evidence, not independent linguistic verification of every upstream record.
+
+Focused tests 39 PASS/0 FAIL, covering all five coordinate labels, source IDs/coordinates, foreign/unverified names and unchanged street response. Fixture language fields model source evidence; new negative tests explicitly exercise its absence. Next mandatory offline gate, TypeScript, scoped ESLint and local webpack build; preserve logs in /tmp/b05-photon-language-*.log and record exact completion. Do not publish or repeat live route audits. After this block, generic explicit-region matching regression and existing Preview if CLI auth completes. Existing login pending; whoami still false; no new link created.
