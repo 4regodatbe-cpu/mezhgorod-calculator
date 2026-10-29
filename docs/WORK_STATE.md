@@ -1,3 +1,7 @@
+## 29.10.2026 — A+B PUBLISHED c2f52ee9 / exact tree readback PASS
+
+ONE normalffpush20prepared+1preflightcommit; remotec2f52ee93cd98a81ecd05efa0358fb38c6704124/tree81b4edaee4ffb6a17c3c93308b87ec52fe08d054 exactreadbackPASS. [Publication](checkpoints/2026-10-29-stage-AB-PUBLISHED.md). Automatic40948475162/40948474945 started; classifier correctlyroute-runtime-changed, timingSUCCESS,verify/live/UI pending. ExactnewPreviewf0h1q39tw/dpl_HbLBjiztL9wCe4xn22gTho3V2Y4k BUILDING/sourcec2f52ee9; existingCLIloggedInfalse. No newshare/login/CI/protection/Production change; Production baseline051d51ea. Next finalCI/artifacts→exactREADY/access→realacceptance orBLOCKED_AUTH. ONEpushconsumed; thisandlaterfollow-upnotesLOCALONLY.
+
 ## 29.10.2026 — A+B single publication STARTED / preflight PASS
 
 Owner authorizes ONE working-branch ffpush + automatic existingCI + exact-sourcePreview acceptance; no secondpush for reports. Prepared eea93512 is20commits/131paths vs remotea1c169d3; dry-runPASS,PR14Draft,oldCIcompleted.98manifest/sourcehashesPASS,changedbytes+4archivepayloadsscan no credential/share hits; no data/tariff/CI/dependency changes. [Recovery/sequence](checkpoints/2026-10-29-stage-AB-publication-STARTED.md), [exactpreflight](../experiments/preview-acceptance/2026-10-29-ab/preflight.json). No new tests rerun; existing1031PASS/1SKIP/TS/lint/build reused at unchanged runtime. Next finalremotecheck→ONEpush/readback→actualCI→exactnewPreview only with authorized access; no share/protection/Production change. This note is STARTED, not publication/hosted success.
