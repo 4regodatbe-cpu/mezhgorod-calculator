@@ -1,0 +1,36 @@
+import {readFileSync,readdirSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+const dir=new URL('./',import.meta.url),source='c2f52ee93cd98a81ecd05efa0358fb38c6704124';
+const read=name=>readFileSync(new URL(name,dir));
+const json=name=>JSON.parse(read(name));
+const unzip=(archive,member)=>execFileSync('unzip',['-p',new URL(archive,dir).pathname,member],{encoding:'utf8',maxBuffer:32*1024*1024});
+const metadata=json('final-metadata.json'),runs=json('all-workflow-runs.json').workflow_runs;
+assert.equal(runs.length,3);assert.ok(runs.every(r=>r.head_sha===source&&r.status==='completed'));
+assert.equal(metadata.pr.head_sha,source);assert.equal(metadata.pr.draft,true);assert.equal(metadata.pr.merged,false);
+assert.ok(metadata.jobRuns.every(r=>r.jobs.every(j=>j.status==='completed')));
+const artifactReview=[];
+for(const [name,id] of [['b03-ui.zip',12930068474],['calculation-runtime.zip',12930785827],['live-probe.zip',12931445202]]){
+ const a=metadata.artifacts.find(x=>x.id===id),digest=createHash('sha256').update(read(name)).digest('hex');
+ assert.equal(a.digest,'sha256:'+digest);assert.equal(a.workflow_run.head_sha,source);artifactReview.push({name,id,sha256:digest,verified:true});
+}
+const b03=JSON.parse(unzip('b03-ui.zip','current/results.json')),legacy=JSON.parse(unzip('b03-ui.zip','legacy/summary.json'));
+assert.equal(b03.sourceSha,source);assert.ok(b03.results.every(x=>x.status==='PASS'));assert.equal(legacy.passed,8);assert.equal(legacy.failed,0);
+assert.equal(unzip('b03-ui.zip','checked-out-sha.txt').trim(),source);
+const timing=JSON.parse(unzip('calculation-runtime.zip','calculation-runtime-probe.json'));
+assert.equal(timing.httpStatus,200);assert.equal(timing.status,'PASS');
+const address=JSON.parse(unzip('live-probe.zip','address-search-runtime-probe.json'));
+const geometry=JSON.parse(unzip('live-probe.zip','special-territory-live-probe.json'));
+const prior=JSON.parse(execFileSync('unzip',['-p','experiments/address-search/2026-10-29-final-display-ci/live-probe.zip','special-territory-live-probe.json'],{encoding:'utf8'}));
+const warnings=rows=>rows.filter(x=>x.status!=='verified').map(x=>({sample:x.sample,provider:x.provider,status:x.status,reason:x.rescanTiming?.reason??null})).sort((a,b)=>(a.sample+a.provider).localeCompare(b.sample+b.provider));
+const geometryWarnings=warnings(geometry);assert.deepEqual(geometryWarnings,warnings(prior));
+const verifyLog=read('verify-special.log').toString('utf8');
+const cancelledTests=['an already cancelled calculation starts no geocoder or route request','caller cancellation reaches every pending route provider and does not start toll matching','cancellation during selected-route trace aborts matching and cannot turn partial evidence into a result','special corridors forward cancellation without switching to a different corridor','label-only geocoding also receives caller cancellation and never starts routing','abort interrupts trace429 Retry-After wait without an early or late retry'];
+assert.ok(cancelledTests.every(name=>verifyLog.includes('✔ '+name)));
+assert.equal(json('remote-commit.json').tree.sha,json('ci-merge-commit.json').tree.sha);
+const review={source,tree:json('remote-commit.json').tree.sha,ciMergeCommit:json('ci-merge-commit.json').sha,mergeTreeEqualsPublishedTree:true,runs:runs.map(({id,name,event,head_sha,status,conclusion})=>({id,name,event,head_sha,status,conclusion})),jobConclusions:metadata.jobRuns.flatMap(r=>r.jobs.map(j=>({runId:r.id,name:j.name,conclusion:j.conclusion}))),offline:{pass:1031,fail:0,skip:1,node:'24.22.1',typeScript:'PASS',productionBuild:'PASS',scopedESLint:'previous unchanged-source LOCAL PASS; not a hosted step'},browser:{passed:legacy.passed+b03.results.length,mode:'controlled API responses on GitHub runner, NOT real Preview',sourceSha:b03.sourceSha,chromium:b03.browser,current:b03.results.map(({id,status})=>({id,status}))},cancellation:{controlledRegressionPass:cancelledTests.length,hostedDisconnectDelivery:'UNVERIFIED',auxiliaryV2BodyStream:'NOT_CERTIFIED'},timing:{caseId:timing.caseId,httpStatus:timing.httpStatus,elapsedMs:timing.elapsedMs,meters:timing.meters,seconds:timing.seconds,tollPricingStatus:timing.tollPricingStatus,tollAmount:timing.tollAmount,scope:'actual handler/providers in GitHub runner, not Vercel browser/cold start, not an independently certified tariff or SLA'},live:{job:'FAILURE',workflowOverall:'SUCCESS due to continue-on-error',address:{status:address.status,mode:address.mode,rows:address.rows.map(({query,status,elapsedMs,failures,featureCount,checks})=>({query,status,elapsedMs,failures,featureCount,checks}))},geoNamesAPIExercisedByProbe:false,geometry:{total:geometry.length,verified:geometry.filter(x=>x.status==='verified').length,warnings:geometryWarnings,sameWarningsAsPriorPublishedArchive:true},skipped:['fixed 50-settlement audit','six Yandex route comparison']},artifacts:artifactReview,preview:json('preview-access.json'),next:'Existing authorized access to exact new Preview; no new share/push without permission. Independent C work can be scoped separately, A+B hosted acceptance remains incomplete.'};
+writeFileSync(new URL('final-review.json',dir),JSON.stringify(review,null,2)+'\n');
+const files=readdirSync(dir).filter(n=>n!=='manifest.json').sort().map(path=>{const b=read(path);return {path,bytes:b.length,sha256:createHash('sha256').update(b).digest('hex')};});
+writeFileSync(new URL('manifest.json',dir),JSON.stringify({source,tree:review.tree,persistence:'Follow-up evidence LOCAL ONLY; one authorized push consumed',files},null,2)+'\n');
+console.log(JSON.stringify({runs:review.runs.map(r=>({id:r.id,conclusion:r.conclusion})),offline:review.offline,browser:review.browser.passed,cancellation:review.cancellation.controlledRegressionPass,live:review.live.job,geometryWarningsUnchanged:true,artifactDigestsVerified:artifactReview.length,evidenceFiles:files.length,preview:'READY / BLOCKED_AUTH'},null,2));

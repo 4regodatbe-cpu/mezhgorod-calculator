@@ -1,0 +1,307 @@
+{
+  "source": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "tree": "81b4edaee4ffb6a17c3c93308b87ec52fe08d054",
+  "ciMergeCommit": "33ddd2ed0a3e03112567a653933295ef54acce12",
+  "mergeTreeEqualsPublishedTree": true,
+  "runs": [
+    {
+      "id": 40948474945,
+      "name": "B03 address UI browser scenarios",
+      "event": "pull_request",
+      "head_sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40948475162,
+      "name": "Special territory geometry and pricing",
+      "event": "pull_request",
+      "head_sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40948464866,
+      "name": "Route quality and offline benchmark integrity",
+      "event": "push",
+      "head_sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "jobConclusions": [
+    {
+      "runId": 40948464866,
+      "name": "route-quality",
+      "conclusion": "success"
+    },
+    {
+      "runId": 40948475162,
+      "name": "verify",
+      "conclusion": "success"
+    },
+    {
+      "runId": 40948475162,
+      "name": "classify_live_scope",
+      "conclusion": "success"
+    },
+    {
+      "runId": 40948475162,
+      "name": "calculation_timing",
+      "conclusion": "success"
+    },
+    {
+      "runId": 40948475162,
+      "name": "live_probe",
+      "conclusion": "failure"
+    },
+    {
+      "runId": 40948474945,
+      "name": "address-ui",
+      "conclusion": "success"
+    },
+    {
+      "runId": 40948474945,
+      "name": "verify",
+      "conclusion": "success"
+    }
+  ],
+  "offline": {
+    "pass": 1031,
+    "fail": 0,
+    "skip": 1,
+    "node": "24.22.1",
+    "typeScript": "PASS",
+    "productionBuild": "PASS",
+    "scopedESLint": "previous unchanged-source LOCAL PASS; not a hosted step"
+  },
+  "browser": {
+    "passed": 18,
+    "mode": "controlled API responses on GitHub runner, NOT real Preview",
+    "sourceSha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+    "chromium": "156.0.8078.47",
+    "current": [
+      {
+        "id": "01-select-A-and-B",
+        "status": "PASS"
+      },
+      {
+        "id": "02-Anapa-clear-Donetsk",
+        "status": "PASS"
+      },
+      {
+        "id": "03-fast-typing",
+        "status": "PASS"
+      },
+      {
+        "id": "04-late-response-after-replace",
+        "status": "PASS"
+      },
+      {
+        "id": "05-clear-active-request",
+        "status": "PASS"
+      },
+      {
+        "id": "06-same-name-choice",
+        "status": "PASS"
+      },
+      {
+        "id": "07-swap-and-refocus",
+        "status": "PASS"
+      },
+      {
+        "id": "08-503-429-empty-recovery",
+        "status": "PASS"
+      },
+      {
+        "id": "09-mobile-replace",
+        "status": "PASS"
+      },
+      {
+        "id": "10-fields-independent-and-cancel",
+        "status": "PASS"
+      }
+    ]
+  },
+  "cancellation": {
+    "controlledRegressionPass": 6,
+    "hostedDisconnectDelivery": "UNVERIFIED",
+    "auxiliaryV2BodyStream": "NOT_CERTIFIED"
+  },
+  "timing": {
+    "caseId": "donetsk-moscow",
+    "httpStatus": 200,
+    "elapsedMs": 7108.766201,
+    "meters": 1123250,
+    "seconds": 58336,
+    "tollPricingStatus": "priced",
+    "tollAmount": 3050,
+    "scope": "actual handler/providers in GitHub runner, not Vercel browser/cold start, not an independently certified tariff or SLA"
+  },
+  "live": {
+    "job": "FAILURE",
+    "workflowOverall": "SUCCESS due to continue-on-error",
+    "address": {
+      "status": "SOURCE_UNAVAILABLE",
+      "mode": "production-address-collector",
+      "rows": [
+        {
+          "query": "Ростов",
+          "status": "PASS",
+          "elapsedMs": 2490,
+          "failures": {},
+          "featureCount": 106,
+          "checks": {
+            "rostovOnDonWithinFirstEight": true
+          }
+        },
+        {
+          "query": "Красн",
+          "status": "CHECK_FAILED",
+          "elapsedMs": 938,
+          "failures": {
+            "http_503": 6
+          },
+          "featureCount": 20,
+          "checks": {
+            "krasnodarFirst": false
+          }
+        },
+        {
+          "query": "Донецк",
+          "status": "SOURCE_UNAVAILABLE",
+          "elapsedMs": 1,
+          "failures": {
+            "source_cooldown": 7
+          },
+          "featureCount": 0,
+          "checks": {
+            "donetskDnrFirst": false,
+            "donetskRostovSecond": false
+          }
+        }
+      ]
+    },
+    "geoNamesAPIExercisedByProbe": false,
+    "geometry": {
+      "total": 22,
+      "verified": 18,
+      "warnings": [
+        {
+          "sample": "Donetsk-Krasnodar",
+          "provider": "Valhalla",
+          "status": "unverified",
+          "reason": "LEG_CROSSES_ZONE"
+        },
+        {
+          "sample": "Feodosia-Mariupol",
+          "provider": "Valhalla",
+          "status": "unverified",
+          "reason": "LEG_TOTAL_MISMATCH"
+        },
+        {
+          "sample": "Krasnodar-Donetsk",
+          "provider": "Valhalla",
+          "status": "unverified",
+          "reason": "LEG_CROSSES_ZONE"
+        },
+        {
+          "sample": "Simferopol-Donetsk",
+          "provider": "Valhalla",
+          "status": "unverified",
+          "reason": "LEG_TOTAL_MISMATCH"
+        }
+      ],
+      "sameWarningsAsPriorPublishedArchive": true
+    },
+    "skipped": [
+      "fixed 50-settlement audit",
+      "six Yandex route comparison"
+    ]
+  },
+  "artifacts": [
+    {
+      "name": "b03-ui.zip",
+      "id": 12930068474,
+      "sha256": "2dfbaa8d80a7ba210cb7cde55f46f43eadf9b3aabc75981cba3d3ab21e1584f0",
+      "verified": true
+    },
+    {
+      "name": "calculation-runtime.zip",
+      "id": 12930785827,
+      "sha256": "58240175dae152ce89564ea544825a3b98172695f442579174636979474596e5",
+      "verified": true
+    },
+    {
+      "name": "live-probe.zip",
+      "id": 12931445202,
+      "sha256": "050b606409c506e181217463891fd8c1ca95194d09b7483bf2b2bbb6183d10c4",
+      "verified": true
+    }
+  ],
+  "preview": {
+    "sourceSha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+    "sourceTree": "81b4edaee4ffb6a17c3c93308b87ec52fe08d054",
+    "deployment": {
+      "id": "dpl_HbLBjiztL9wCe4xn22gTho3V2Y4k",
+      "name": "mezhgorod-calculator",
+      "url": "mezhgorod-calculator-f0h1q39tw-4regodatbe-5310.vercel.app",
+      "type": "LAMBDAS",
+      "state": "READY",
+      "createdAt": 1793305359063,
+      "creator": {
+        "uid": "kzdYyk5M2pQj46AFBwI7ZyTb",
+        "username": "4regodatbe-5310"
+      },
+      "project": {
+        "id": "prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie",
+        "name": "mezhgorod-calculator",
+        "framework": "nextjs"
+      },
+      "meta": {
+        "githubCommitRef": "fix/v3-missing-route-prices-2026-10-15",
+        "githubCommitSha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+        "githubCommitMessage": "docs(preview): checkpoint single authorized A+B publication preflight",
+        "githubRepo": "mezhgorod-calculator",
+        "githubOrg": "4regodatbe-cpu"
+      },
+      "alias": [
+        "mezhgorod-calculator-git-fix-v3-missing-208a8c-4regodatbe-5310.vercel.app"
+      ],
+      "target": null,
+      "regions": [
+        "iad1"
+      ],
+      "buildingAt": 1793305360071,
+      "ready": 1793305568806,
+      "readyState": "READY",
+      "source": "git",
+      "aliasError": null
+    },
+    "browserAccess": {
+      "url": "https://mezhgorod-calculator-f0h1q39tw-4regodatbe-5310.vercel.app/v3",
+      "actualPageTitle": "Login – Vercel",
+      "actualPageOrigin": "https://vercel.com",
+      "actualPagePath": "/login",
+      "status": "BLOCKED_AUTH",
+      "queryOmitted": "auth nonce intentionally not stored"
+    },
+    "cli": {
+      "version": "65.7.0",
+      "exitCode": 1,
+      "loggedIn": false,
+      "linkedProject": null
+    },
+    "hostedAcceptance": {
+      "addressSearch": "NOT_RUN_AUTH",
+      "desktopMobile": "NOT_RUN_AUTH",
+      "route": "NOT_RUN_AUTH",
+      "callerDisconnectDelivery": "UNVERIFIED",
+      "coldStartMs": null,
+      "memoryBytes": null,
+      "functionBytes": null
+    },
+    "accessPolicy": "No CLI login, share link, protection change or credential extraction; connected web_fetch explicitly creates/reuses temporary share and was not called."
+  },
+  "next": "Existing authorized access to exact new Preview; no new share/push without permission. Independent C work can be scoped separately, A+B hosted acceptance remains incomplete."
+}
