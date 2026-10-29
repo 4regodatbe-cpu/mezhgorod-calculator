@@ -1,3 +1,7 @@
+## 29.10.2026 — C4 four-road boundedreview saved / ZSD known600 retained LOCAL
+
+[ZSD/C4checkpoint](checkpoints/2026-10-29-stage-C4-ZSD-products-PARTIAL.md), [twoquotes](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-zsd.json). ExistingexactKADsouth→Ekateringofkaproduct600retained;largerPlanernayatripquoteNULL/scope_not_reviewed,notborrowed300/600.RVP64infrastructureNOTautomaticpaymentgate. C4review5retainedrecords/0networkcomplete,realM11/M12/CKAD/largerZSDoperatorbindinggapsremain;latestofficialpricepolicyunchanged. NextC5savedcombinedgeometry/compositionchecks,thenC6gates. No push/runtime/data/A+B/CIchange.
+
 ## 29.10.2026 — C4/CKAD Golitsyno continuity retained / precise PK5 crosswalk BLOCKED LOCAL
 
 [CKADcheckpoint](checkpoints/2026-10-29-stage-C4-CKAD-Golitsyno-DATA-BLOCKED.md), [currentquote](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-ckad.json). SavedOSRMroute8contiguoustolltrueedges46–53/nextfree,notreentry. Currenteastarcresolverdoesnotbindwesternpair;unpricedcoveragepreservesckad,quoteNULL. PK5free/generalchainageoverlapnotexactway→freeboundary;donotassignzero. Needgeoreferencedpublisherplan/equivalentboundary;oldblockedYandexlinknotretried. NextZSDfinished+largerunboundcase;no push/runtime/data/A+B/CIchange.
