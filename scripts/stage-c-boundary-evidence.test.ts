@@ -20,7 +20,7 @@ async function noNetwork(run:()=>Promise<void>){const original=globalThis.fetch;
 test('C3: complete selected graph transitions define a physical vector without inventing an operator fare',async()=>noNetwork(async()=>{
  const production=await resolveSelectedM4Endpoints(route,3600,complete());
  assert.equal(production.roadBoundaries?.status,'resolved');
- for(const date of dates){const quote=matrixM4Component(production,date,3600);assert.equal(quote.tariffVector.selectionBasis,'selected-road-transitions');assert.equal(quote.tariffVector.from,'osm-transition:100:10>20');assert.equal(quote.tariffVector.to,'osm-transition:200:20>30');assert.equal(quote.tariffVector.priceStatus,'unknown');assert.equal(quote.tolls,null);}
+ for(const date of dates){const quote=matrixM4Component(production,date,3600);assert.ok(quote);assert.equal(quote.tariffVector.selectionBasis,'selected-road-transitions');assert.equal(quote.tariffVector.from,'osm-transition:100:10>20');assert.equal(quote.tariffVector.to,'osm-transition:200:20>30');assert.equal(quote.tariffVector.priceStatus,'unknown');assert.equal(quote.tolls,null);}
 }));
 test('C3: incomplete selected trace cannot fall back to otherwise resolved maneuver or graph evidence',async()=>noNetwork(async()=>{
  for(const partial of [{complete:false,boothEventCoverage:'partial' as const},{complete:true,boothEventCoverage:'partial' as const}]){
@@ -50,14 +50,14 @@ test('C3: a synthetic reverse traversal keeps its own directed way keys and rema
  const reverse=roadBoundariesFromTrace([[edge(['Р-260'],30,200,0,1),edge(['М-4'],20,100,1,2),edge(['А-280'],10,999,2,3)]],[...route].reverse());
  assert.equal(reverse.status,'resolved');assert.equal(reverse.entry?.id,'osm-transition:200:30>20');assert.equal(reverse.exit?.id,'osm-transition:100:20>10');
  assert.notEqual(reverse.entry?.id,forward.exit?.id);assert.notEqual(reverse.exit?.id,forward.entry?.id);
- assert.equal(matrixM4Component({candidate:true,exact:false,endpointOnly:true,roadBoundaries:reverse},dates[0],3600).tolls,null);
+ const quote=matrixM4Component({candidate:true,exact:false,endpointOnly:true,roadBoundaries:reverse},dates[0],3600);assert.ok(quote);assert.equal(quote.tolls,null);
 });
 test('C3: existing active directed payment-boundary rows retain both registered departure-day amounts',()=>{
  const register=JSON.parse(readFileSync(new URL('../experiments/nationwide-tolls/M4_ACTIVE_ENDPOINT_REGISTER.json',import.meta.url),'utf8')) as {rows:Array<{from:string;to:string;profile:string;rub:number}>};
  const production={candidate:true,exact:true,endpointOnly:true,m4PvpPreview:{confirmedPvps:['m4-133','m4-1046']}};
  for(const [index,date] of dates.entries()){
   const profile=index===0?'monThu':'friSun',row=register.rows.find(r=>r.from==='m4-133'&&r.to==='m4-1046'&&r.profile===profile);assert.ok(row);
-  const quote=matrixM4Component(production,date,3600);assert.equal(quote.tariffVector.selectionBasis,'confirmed-payment-boundaries');assert.equal(quote.tariffVector.priceStatus,'known');assert.equal(quote.tolls.amount,row.rub);
+  const quote=matrixM4Component(production,date,3600);assert.ok(quote);assert.ok(quote.tolls);assert.equal(quote.tariffVector.selectionBasis,'confirmed-payment-boundaries');assert.equal(quote.tariffVector.priceStatus,'known');assert.equal(quote.tolls.amount,row.rub);
  }
 });
 test('C3: a known independent component or duplicate traversal cannot make an unknown/partial M4 total complete',()=>{
