@@ -1,3 +1,7 @@
+## 29.10.2026 — Stage B1 причины разобраны LOCAL / исторические пробелы сохранены
+
+Один разрешённый узкий BRouter probe получил400/941ms и точное `no track found at pass=0`; текущий отказ — no-track для данного профиля/входа, не доказанный сетевой или URL-дефект. [Таблица причин B1](../experiments/routing-reliability/STAGE_B.md), [checkpoint](checkpoints/2026-10-29-stage-B1-causes-LOCAL.md). Старый Moscow nativeECONNREFUSED/proxy200 разделён с Yalta502 без per-socket evidence; последняя причина UNKNOWN/BLOCKED_BY_DATA. Код/профили/тарифы не менялись. Далее B2 controlled failover/geometry/corridor/unknown/cancel, затем сохранённые timings; LOCAL ONLY, push/Production/CI не разрешены, Stage A сохранён.
+
 ## 29.10.2026 — Stage B routing/resilience/performance STARTED LOCAL
 
 Clean local ca627096 содержит весь Stage A; remote a1c169d3/PR14 Draft проверены, новые правки не опубликованы. [Ограниченный этап B1–B5](checkpoints/2026-10-29-stage-B-routing-STARTED.md): reuse сохранённых ошибок/профилей, один BRouter body-probe по отсутствующему evidence, controlled failover/corridor/unknown проверки, только доказанная локальная оптимизация, пять сохранённых направлений без массового аудита. Все прежние адресные ограничения сохранены; push/Preview/Production/CI не разрешены.

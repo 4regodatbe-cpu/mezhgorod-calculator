@@ -1,0 +1,20 @@
+# Stage B — routing reliability and full-calculation performance
+
+29.10.2026; LOCAL ONLY, working-branch ancestry. Stage A preserved, no push/Preview/Production/CI changes. New street/house work is out of this stage; route choice remains fastest **admissible** geometry with required special corridor, not cheapest/shortest. Tariffs/matrix/unknown guards unchanged.
+
+## B1 — concrete causes, no wide route audit
+
+| Case | Proven classification / evidence | Action / limit |
+|---|---|---|
+| Current BRouter Moscow→SPb400 | One exact historic URL repeated only to obtain missing body. HTTP400, `no track found at pass=0`,25bytes,941ms. Raw `2026-10-29/brouter-current.body`, URL/status/SHA in review. HTTP response proves current transport reached a responder; message indicates the routing engine found no track for these inputs/profile. | Treat as unavailable candidate, not proof all roads absent or app request malformed. Do not guess a different driving profile or retry. Underlying provider coverage/profile reason still unproved. |
+| Historic Moscow→SPb all-provider502 | Saved `../address-search/local-gazetteer-evidence-2026-10-29-route-transport/`: native Node ECONNREFUSED before HTTP; exact OSRM URL via sanctioned proxy200; supported `--use-env-proxy` full API200/3454ms. | Confirmed environment transport distinction, independent from GeoNames. No app network/security workaround or repeated check. |
+| Earlier Yalta→SPb502 | GeoNames succeeded, all three routing stages failed; exact per-socket/HTTP cause not captured. See `../address-search/GEONAMES_V3_LOCAL_INTEGRATION.md` historical evidence. | Exact historic cause BLOCKED_BY_DATA, not retroactively assigned the Moscow socket cause. Preserve no-admissible-route failure; no invented geometry. |
+| Differences across providers | Saved valid route distances/ETAs differ; `route-candidate.ts`, `route-leg.ts`, `special-options.ts` validate geometry/controls before fastest selector. | A disagreement alone is not a defect or a licence to change tariffs. Check deterministic fastest valid selection and exact selected geometry ownership in B2. |
+| Mandatory special corridor absent | `special-options.ts` selects only eligible preferred-corridor candidates; PREFERRED_ROUTE_UNAVAILABLE remains safe502. | Required fail-closed behavior, not arbitrary alternative-corridor fallback. |
+| Request cancellation | Route adapters use independent25s timeout signals; V3 API does not forward incoming request.signal to provider/trace calls. | Concrete unpropagated-cancellation boundary to characterize in B2; no claim already fixed. |
+
+Only one new external request in B1. Existing BRouter400 body was missing; new body does not establish that every historical400 had the same cause. No Valhalla/OSRM network replay or corpus/tariff audit run.
+
+## B2–B5
+
+IN PROGRESS. Next use controlled failover/cancellation and saved timing evidence, then one proven same-call optimization if justified, followed by five bounded saved-control assessments. This section is not a completion claim.

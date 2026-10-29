@@ -1,0 +1,7 @@
+# B1 — bounded cause review LOCAL DONE / historic gaps retained
+
+29.10.2026 MSK; parent25ba92f9, Stage A ca627096 intact. One exact saved BRouter Moscow→SPb URL queried with sanctioned network permission, inherited proxy/TLS and Node--use-env-proxy, max20s. HTTP400/941ms/body `no track found at pass=0`; SHA2568ad91f34168ca1c21811e27e0e5fd5b8b631d041d61bcb2eaccb7a9bc332962c. Raw body/review under experiments/routing-reliability/2026-10-29. No repeats or other route calls.
+
+[Cause table](../../experiments/routing-reliability/STAGE_B.md) distinguishes current provider no-track, saved native transport failure/proxy success, historic Yalta unknown cause, geometry/policy rejection and provider disagreement. Source `lib/route-providers.ts`, `lib/v3-calculation/{route-candidate,route-leg,special-options}.ts`. No malformed-request or physical-road-absence claim; current BRouter profile semantics unchanged. Full error reason behind all historic502/400 remains unproved where raw data is missing.
+
+Checks: preserved request/status/body metadata and exact raw SHA; existing adapter URL matches saved request; JSON/doc links/whitespace checked during save. Docs/raw-only, no mandatory runtime gate needed. No code/CI/tariff/route selection change, no push/Preview/Production/main/Android/backup. PR14 Draft read at stage start. All new results local; next B2 controlled provider failures, geometry/unknown/corridor invariants and cancellation characterization.
