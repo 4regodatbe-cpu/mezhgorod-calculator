@@ -1,3 +1,7 @@
+## 29.10.2026 — source-backed Russian display fix; admission still PARTIAL
+
+Found generic compiler error: ru-tagged Latin alias could precede existing Cyrillic alias. Fixed source selection (no new translations/coordinates); full rebuild improves3048city titles/4701admin-label arrays, flags1462additional unverified names;221512IDs/coordinates/types/provenance unchanged.6Python testsPASS, all-row comparisonPASS. [Checkpoint/next steps](checkpoints/2026-10-29-geonames-display-alias-fix-PARTIAL.md). Corrected catalogSHA64b0af909e526c11e961da65106152ec4ed40511bcbfa8c5d998f759c4428c56; old profile data remains historical. No API activation before remaining data gates; current task LOCAL only/no push.
+
 ## 29.10.2026 — bounded GeoNames loader PASS / runtime admission PARTIAL
 
 Reused existing index in immutable gzip shards:221512points, single resident shard/queue16; isolated19query parityPASS/0externalcalls,4loader testsPASS,TSexit0. FirstДоне93ms,Волноваха10ms; observed heap+16.7MB/RSS177MB; disk22.82MB. Fifteen explicit GeoNames-ID→Wikidata links and coordinate differences saved, not independent road-access certification. DirectNextbuild failedEPERM twice (default/network-permitted), not app defect established; no more unchanged retries. [Report/next steps](../experiments/address-search/LOCAL_GAZETTEER_INTEGRATION_REVIEW.md), [checkpoint](checkpoints/2026-10-29-geonames-shards-and-build-PARTIAL.md). Runtime/API and client unchanged; unresolved labels/coordinate-source admission prevent activation. Everything LOCAL/no push/CI/Preview.

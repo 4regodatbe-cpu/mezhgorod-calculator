@@ -2,6 +2,10 @@
 import argparse, collections, datetime, hashlib, io, json, math, pathlib, re, time, zipfile
 
 ACTIVE={'PPL','PPLA','PPLA2','PPLA3','PPLA4','PPLA5','PPLC','PPLF','PPLG','PPLL','PPLR'}
+def russian_display(names):
+    # A language tag can refer to romanization. Use an existing Cyrillic ru
+    # alias for display, never a generated translation; preserve all in search.
+    return next((name for name in names if re.search('[А-Яа-яЁё]',name)),None)
 def validate_manifest(manifest,aliases=False):
     files=manifest.get('files',[])
     if len(files)!=2 or {s.get('country') for s in files}!={'RU','UA'}:raise ValueError('manifest country coverage')
@@ -71,8 +75,9 @@ def main():
     records=[]
     for ident,(f,number,dump) in sorted(cities.items()):
         names=russian(ident);flags=[]
-        if not names:flags.append('ru_name_unverified');stats['missingRuName']+=1
-        name=names[0] if names else f[1]
+        display=russian_display(names)
+        if not display:flags.append('ru_name_unverified');stats['missingRuName']+=1
+        name=display or f[1]
         search=list(dict.fromkeys([name]+names+[f[1],f[2]]))
         if len(search)>32:stats['aliasCappedRecords']+=1;search=search[:32]
         admin_labels=[]
@@ -80,7 +85,7 @@ def main():
             if not f[9+level]:continue
             key='.'.join([f[8]]+f[10:10+level]);admin=admins.get(key)
             if admin:
-                translated=russian(admin[0]);admin_labels.append(translated[0] if translated else admin[1])
+                translated=russian_display(russian(admin[0]));admin_labels.append(translated or admin[1])
                 if not translated:flags.append('admin_ru_unverified')
             else:flags.append('admin_binding_missing')
         records.append([ident,name,search,float(f[4]),float(f[5]),f[8],list(dict.fromkeys(admin_labels)),int(f[14] or 0),f[7],f[10:14],number,f[18],dump,sorted(set(flags))])
