@@ -1,3 +1,7 @@
+## 29.10.2026 — C4/M11 one partial path reviewed / full product BLOCKED LOCAL
+
+[M11checkpoint](checkpoints/2026-10-29-stage-C4-M11-partial-DATA-BLOCKED.md), [currentquote](../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-m11.json). ActualNoginsk→CKAD→M11→M10traceexit6588472831/way1307036920proved;notp58entry/reversebooth. Currentboundarym11_outer_boundaries_unresolved/quoteNULL,0network. Existingp58↔p147money610/750notageblocked; materialgap selectedCKADapproach→virtual58/productdivision,parentpath. No fabricatedphysicalbooth requirement. C4nextM12→CKAD→ZSD; runtime/data/CI/A+Bunchanged,no push.
+
 ## 29.10.2026 — C3 scoped boundary invariants 8/8PASS LOCAL / runtime unchanged
 
 [C3checkpoint](checkpoints/2026-10-29-stage-C3-invariants-LOCAL-PASS.md):new8regressions/0network guard complete+foreign+partialtrace,manoeuvreprecision,reentry/chunkambiguity,directedIDs,registeredbothdateamounts,partial/duplicateunknownnull. ScopedlintPASS; peerreviewcommentsaddressed, nonewoperatorpricecertificate or runtime/publicAPI change. C1inventory/C2graphpair donewithoperatorcrosswalkBLOCKED. NextC4M11→M12→CKAD→ZSD1–2savedcasesonly. No push/CI/Production/A+Bsourcechanges.
