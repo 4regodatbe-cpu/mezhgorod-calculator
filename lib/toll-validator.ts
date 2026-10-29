@@ -195,7 +195,18 @@ function odintsovoTraceBlocks(edges: TraceEdge[]): NonNullable<TollValidation['o
   return blocks;
 }
 
-async function traceChunk(route: Coordinate[]) {
+async function waitForTraceRetry(delay: number, signal?: AbortSignal) {
+  signal?.throwIfAborted();
+  await new Promise<void>((resolve,reject)=>{
+    const finish=()=>{signal?.removeEventListener("abort",cancel);resolve();};
+    const timer=setTimeout(finish,delay);
+    const cancel=()=>{clearTimeout(timer);signal?.removeEventListener("abort",cancel);reject(signal?.reason??new Error("Cancelled"));};
+    signal?.addEventListener("abort",cancel,{once:true});
+  });
+}
+
+async function traceChunk(route: Coordinate[], callerSignal?: AbortSignal) {
+  callerSignal?.throwIfAborted();
   const url = new URL("https://valhalla1.openstreetmap.de/trace_attributes");
   const request = {
     shape: route.map(([lon, lat]) => ({ lat, lon })),
@@ -215,7 +226,10 @@ async function traceChunk(route: Coordinate[]) {
     },
   };
   const deadlineAt = Date.now() + 18_000;
-  const send = () => fetch(url, {
+  const send = () => {
+    callerSignal?.throwIfAborted();
+    const deadline=AbortSignal.timeout(Math.max(1, deadlineAt - Date.now()));
+    return fetch(url, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -224,8 +238,8 @@ async function traceChunk(route: Coordinate[]) {
     },
     body: JSON.stringify(request),
     cache: "no-store",
-    signal: AbortSignal.timeout(Math.max(1, deadlineAt - Date.now())),
-  });
+    signal: callerSignal?AbortSignal.any([callerSignal,deadline]):deadline,
+  });};
   let response = await send();
   // A long route sends several chunks. Retry transient rate limits twice with
   // bounded backoff. Respect Retry-After when supplied; if it is too long for
@@ -238,7 +252,7 @@ async function traceChunk(route: Coordinate[]) {
       : Number.isFinite(date) ? Math.max(0, date - Date.now()) : 1_000 * (2 ** retry);
     if (delay <= 5_000 && delay + 1_000 < deadlineAt - Date.now()) {
       await response.body?.cancel();
-      if (delay > 0) await new Promise(resolve => setTimeout(resolve, delay));
+      if (delay > 0) await waitForTraceRetry(delay,callerSignal);
       response = await send();
     } else {
       break;
@@ -267,7 +281,8 @@ async function mapConcurrent<T, R>(values: T[], limit: number, fn: (value: T, in
   return result;
 }
 
-export async function validateTollEdges(route: Coordinate[]): Promise<TollValidation> {
+export async function validateTollEdges(route: Coordinate[], signal?: AbortSignal): Promise<TollValidation> {
+  signal?.throwIfAborted();
   if (route.length < 2) {
     return {
       status: "unknown",
@@ -287,10 +302,13 @@ export async function validateTollEdges(route: Coordinate[]): Promise<TollValida
 
   const chunks = splitRoute(route).map(sampleRoute);
   const chunkResults = await mapConcurrent(chunks, CHUNK_CONCURRENCY, async (chunk) => {
+    signal?.throwIfAborted();
     try {
-      const response = await traceChunk(chunk);
+      const response = await traceChunk(chunk,signal);
+      signal?.throwIfAborted();
       return { ok: true as const, edges: response.edges ?? [] };
     } catch (error) {
+      if(signal?.aborted)throw error;
       return { ok: false as const, error: error instanceof Error ? error.message : "TRACE_ERROR" };
     }
   });

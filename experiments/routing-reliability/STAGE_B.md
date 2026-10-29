@@ -15,6 +15,12 @@
 
 Only one new external request in B1. Existing BRouter400 body was missing; new body does not establish that every historical400 had the same cause. No Valhalla/OSRM network replay or corpus/tariff audit run.
 
-## B2–B5
+## B2 — failover and bounded cancellation correction
 
-IN PROGRESS. Next use controlled failover/cancellation and saved timing evidence, then one proven same-call optimization if justified, followed by five bounded saved-control assessments. This section is not a completion claim.
+31targetedPASS,1031offlinePASS/1SKIP/0FAIL, TypeScript/scoped lint/webpackPASS. Existing tests retain fastest admissible geometry, selected-route toll evidence, strict corridor behavior, unknown/null, finite totals and no forbidden reentry. Six new cancellation tests cover already-aborted requests, all pending route providers, selected trace, special corridors, geocoding and429backoff. Main V3 signal propagation is now LOCAL implemented; provider25s/trace18s deadlines unchanged.
+
+Full retained Donetsk→Moscow before/current API replay:12storedresponses each,0misses/0network, fullbody/outboundrequests EXACT MATCH. This confirms noncancelled optional-signal compatibility, not all historical-source binary equivalence. A paired timing difference is not claimed as speedup. Evidence in2026-10-29/uncancelled-parity.json and cancellation JSON/logs. Main V3 cancellation fixed; legacyV2, auxiliary pricing evidence abort and body-stream cancellation remain unverified, not universally DONE.
+
+## B3–B5
+
+IN PROGRESS. Next saved timing analysis, measured cancelled-work reduction, and five bounded saved-control assessments. No normal-request10s/SLA claim.

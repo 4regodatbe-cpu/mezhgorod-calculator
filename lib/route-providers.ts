@@ -21,12 +21,19 @@ export type RouteWithGeometry = RouteSummary & {
   m4RoadBoundaries?: RoadBoundaryResolution;
 };
 
-export async function geocode(point: Point): Promise<Located> {
+function providerSignal(callerSignal?: AbortSignal): AbortSignal {
+  callerSignal?.throwIfAborted();
+  const deadline=AbortSignal.timeout(25_000);
+  return callerSignal?AbortSignal.any([callerSignal,deadline]):deadline;
+}
+
+export async function geocode(point: Point, callerSignal?: AbortSignal): Promise<Located> {
+  callerSignal?.throwIfAborted();
   if (point.position) return { label: point.label, position: point.position };
   const url = new URL("https://photon.komoot.io/api/");
   url.searchParams.set("q", point.label);
   url.searchParams.set("limit", "1");
-  const signal = AbortSignal.timeout(25_000);
+  const signal = providerSignal(callerSignal);
   let response: Response;
   try {
     response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" }, signal });
@@ -76,7 +83,7 @@ function decodePolyline(encoded: string, precision = 6): Coordinate[] {
   return coordinates;
 }
 
-export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, positions = safeRoutePositions(from, to), tollBoothPenalty = 0): Promise<RouteWithGeometry> {
+export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, positions = safeRoutePositions(from, to), tollBoothPenalty = 0, callerSignal?: AbortSignal): Promise<RouteWithGeometry> {
   const url = new URL("https://valhalla1.openstreetmap.de/route");
   const query = {
     locations: positions.map((point) => ({ lat: point.lat, lon: point.lng, type: "break" })),
@@ -93,7 +100,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
-    signal: AbortSignal.timeout(25_000),
+    signal: providerSignal(callerSignal),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
   const data = await readLimitedProviderJson<{
@@ -126,7 +133,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
   };
 }
 
-async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, positions = safeRoutePositions(from, to)): Promise<RouteWithGeometry> {
+async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal): Promise<RouteWithGeometry> {
   const url = new URL("https://brouter.de/brouter");
   url.searchParams.set("lonlats", positions.map((point) => `${point.lng},${point.lat}`).join("|"));
   url.searchParams.set("profile", "car-vario");
@@ -137,7 +144,7 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, pos
     headers: { Accept: "application/geo+json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
-    signal: AbortSignal.timeout(25_000),
+    signal: providerSignal(callerSignal),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
   const data = await readLimitedProviderJson<{
@@ -156,15 +163,15 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, pos
   return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates };
 }
 
-export function brouterFree(from: Located, to: Located, positions = safeRoutePositions(from, to)) {
-  return brouterRoute(from, to, true, positions);
+export function brouterFree(from: Located, to: Located, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal) {
+  return brouterRoute(from, to, true, positions, callerSignal);
 }
 
-export function brouterFast(from: Located, to: Located, positions = safeRoutePositions(from, to)) {
-  return brouterRoute(from, to, false, positions);
+export function brouterFast(from: Located, to: Located, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal) {
+  return brouterRoute(from, to, false, positions, callerSignal);
 }
 
-export async function osrmRoute(from: Located, to: Located, positions = safeRoutePositions(from, to)): Promise<RouteWithGeometry> {
+export async function osrmRoute(from: Located, to: Located, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal): Promise<RouteWithGeometry> {
   const path = positions.map((point) => `${point.lng},${point.lat}`).join(";");
   const url = new URL(`https://router.project-osrm.org/route/v1/driving/${path}`);
   url.searchParams.set("overview", "full");
@@ -174,7 +181,7 @@ export async function osrmRoute(from: Located, to: Located, positions = safeRout
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
-    signal: AbortSignal.timeout(25_000),
+    signal: providerSignal(callerSignal),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
   const data = await readLimitedProviderJson<{ routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> }>(response);

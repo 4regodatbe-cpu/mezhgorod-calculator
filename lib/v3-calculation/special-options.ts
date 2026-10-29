@@ -28,16 +28,18 @@ type PricedCandidate = {
   freeCandidate:null;
 };
 
-export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string,fastestOnly=false,timing?:CalculationTiming) {
+export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string,fastestOnly=false,timing?:CalculationTiming,signal?:AbortSignal) {
+  signal?.throwIfAborted();
   const measure = <T>(stage:CalculationStage,operation:()=>Promise<T>) => timing ? timing.measure(stage,operation) : operation();
   const plans=candidatePlans(from.position,to.position,zones);
   const preferredCorridor=plans[0]?.corridor??"mainland";
   const candidates = await Promise.all(plans.map(async plan => {
     const rejectedStretchProviders=new Map<string,number>();
     const responses=await measure("routing",()=>Promise.allSettled([
-      measure("provider_valhalla",()=>valhalla(from,to,1,plan.positions)),
-      measure("provider_osrm",()=>osrmRoute(from,to,plan.positions)),
+      measure("provider_valhalla",()=>valhalla(from,to,1,plan.positions,0,signal)),
+      measure("provider_osrm",()=>osrmRoute(from,to,plan.positions,signal)),
     ]));
+    signal?.throwIfAborted();
     const routed=responses.map((response,index) => {
       if(response.status!=="fulfilled")return null;
       try {
@@ -72,8 +74,11 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     const routesToPrice=fastestOnly?rankedRoutes.filter(item=>item.provider===routeChoice.provider):rankedRoutes;
     const selected:PricedCandidate[]=[];
     for(const item of routesToPrice){
-      const selectedRouteValidation=await measure("toll_matching",()=>validateTollEdges(item.route.coordinates));
+      signal?.throwIfAborted();
+      const selectedRouteValidation=await measure("toll_matching",()=>validateTollEdges(item.route.coordinates,signal));
+      signal?.throwIfAborted();
       const pricing=await measure("toll_pricing",()=>calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:selectedRouteValidation}));
+      signal?.throwIfAborted();
       const {route,index,...candidate}=item;
       void index;
       selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality,m4PvpPreview:pricing.m4PvpPreview,nationalTollCoverage:pricing.nationalTollCoverage}});
@@ -87,10 +92,10 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     if(!fastestOnly && selected.length<2){
       for(const penalty of [900,1800]){
         try{
-          const route=await valhalla(from,to,1,plan.positions,penalty);
+          const route=await valhalla(from,to,1,plan.positions,penalty,signal);
           if(!withinDetourLimits(main.fast,route)||!hasPracticalSavings(main.fast,route)||!followsPlan(route.coordinates,plan.positions,plan.corridor,true))continue;
           if(route.coordinates.length<3)continue;
-          const validation=await validateTollEdges(route.coordinates);
+          const validation=await validateTollEdges(route.coordinates,signal);
           if(validation.complete!==true||(validation.tollBoothCount??0)!==0)continue;
           const duplicate=selected.some(item=>Math.abs(item.fast.meters-route.meters)<3000&&Math.abs(item.fast.seconds-route.seconds)<120);
           if(duplicate)continue;
@@ -103,6 +108,7 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     }
     return selected;
   }));
+  signal?.throwIfAborted();
   const allCandidates=candidates.flat();
   const selection=selectGeographicTerritoryOption(allCandidates,preferredCorridor);
   if(!selection.options.length)throw new Error("PREFERRED_ROUTE_UNAVAILABLE");

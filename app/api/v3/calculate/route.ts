@@ -49,6 +49,7 @@ export async function POST(request: NextRequest) {
   };
   // V3 contract: one fastest route; no slower free-route substitution.
   try {
+    request.signal.throwIfAborted();
     const body = (await timing.measure("request_body", () => readLimitedJsonObject(request))) as {
       from?: Point;
       via?: Point;
@@ -74,7 +75,8 @@ export async function POST(request: NextRequest) {
     if (!validPoint(body.from) || !validPoint(body.to)) return respond({ error: "Проверьте точки маршрута" }, { status: 400 });
     const departureAt = body.departureAt ?? new Date().toISOString();
 
-    const [from,to] = await timing.measure("geocoding", () => Promise.all([geocode(body.from!),geocode(body.to!)]));
+    const [from,to] = await timing.measure("geocoding", () => Promise.all([geocode(body.from!,request.signal),geocode(body.to!,request.signal)]));
+    request.signal.throwIfAborted();
     const policy = endpointPolicy(from.position,to.position,zones);
     const automaticMode = policy.specialEndpoint ? "dual" : "standard";
     const mode = body.modeOverride === true && body.mode ? body.mode : policy.specialEndpoint ? "dual" : "standard";
@@ -103,13 +105,15 @@ export async function POST(request: NextRequest) {
       })]))};
     });
     if(policy.specialEndpoint) {
-      const special=await timing.measure("special_options", () => calculateSpecialOptions(from,to,departureAt,true,timing));
+      const special=await timing.measure("special_options", () => calculateSpecialOptions(from,to,departureAt,true,timing,request.signal));
+      request.signal.throwIfAborted();
       const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast,option.split),free:null,freeCandidate:null}));
       if(!options.length)throw new Error("MAINLAND_UNAVAILABLE");
       return respond({legs:options,options,mode,automaticMode,specialEndpoint:true,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
     }
     const plan=candidatePlans(from.position,to.position,zones)[0];
-    const leg=await timing.measure("route_leg", () => calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true,timing));
+    const leg=await timing.measure("route_leg", () => calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true,timing,request.signal));
+    request.signal.throwIfAborted();
     const attachAlternative = <T extends { meters:number;seconds:number;coordinates:Coordinate[] }>(trip:T|null) => {
       if(!trip)return null;
       try { return attachPricing(trip); } catch {return null;}
@@ -117,6 +121,7 @@ export async function POST(request: NextRequest) {
     const priced={...leg,fast:attachPricing(leg.fast),free:attachAlternative(leg.free),freeCandidate:attachAlternative(leg.freeCandidate)};
     return respond({legs:[priced],mode,automaticMode,specialEndpoint:false});
   } catch (error) {
+    if(request.signal.aborted)return respond({error:"Расчёт отменён"},{status:400});
     if (error instanceof RequestBodyError) return respond({ error: error.message }, { status: error.status });
     const failure = classifyCalculateApiError(error);
     return respond({ error: failure.message }, { status: failure.status });
