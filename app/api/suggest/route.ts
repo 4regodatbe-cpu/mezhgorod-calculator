@@ -49,10 +49,13 @@ export async function GET(request: NextRequest) {
     if (!request.signal.aborted && Object.keys(failures).length) {
       console.warn("address_search_partial", { elapsedMs: Date.now() - started, sourceCount, failures, budgetExpired });
     }
-    const confirmedStreetIds=new Set(settlementFallback?features.filter(feature=>photonStreetMatchesSettlement(feature,q,settlementFallback.items[0]))
+    const eligibleFeatures=settlementFallback
+      ? features.filter(feature=>photonStreetMatchesSettlement(feature,q,settlementFallback.items[0]))
+      : features;
+    const confirmedStreetIds=new Set(settlementFallback?eligibleFeatures
       .map(feature=>`${feature.properties?.osm_type||"place"}-${feature.properties?.osm_id}`):[]);
     if(settlementFallback && !confirmedStreetIds.size)return cityOnly("unconfirmed");
-    const items=rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, q).map(item=>{
+    const items=rankPhotonFeatures(eligibleFeatures, SPECIAL_TERRITORY_BOUNDARIES, q).map(item=>{
       // GeoNames supplies an admitted Russian city name; never invent a
       // translation of a provider's unverified administrative label.
       const city=settlementFallback?.items[0].title;

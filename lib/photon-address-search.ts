@@ -4,7 +4,7 @@ import { inCrimea } from "./special-territory-policy.ts";
 import type { Suggestion } from "../app/v2/components/types.ts";
 import ruwikiSettlementIndex from "../data/ruwiki-settlement-index.json" with { type: "json" };
 import { selectRussianSettlementDisplay } from "./russian-settlement-display.ts";
-import { hasAddressTerms, isStreetQuery, detailedAddressScore } from "./address-query.ts";
+import { hasAddressTerms, isStreetQuery, detailedAddressScore, settlementForStreetQuery } from "./address-query.ts";
 
 export type PhotonFeature = {
   geometry?: { coordinates?: [number, number] };
@@ -354,6 +354,8 @@ export function photonSearchUrls(query: string): string[] {
 
 /** Order suggestions and display regional names exclusively from each valid geocoded coordinate. */
 export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTerritory[], query: string, maxItems = 20): Suggestion[] {
+  const streetContext=settlementForStreetQuery(query);
+  const streetArea=streetContext?requestedArea(streetContext):null;
   const candidates = features.flatMap((feature, index) => {
     const coordinates = feature.geometry?.coordinates;
     const p = feature.properties ?? {};
@@ -363,6 +365,10 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
         !coordinates || coordinates.length !== 2 || !coordinates.every(Number.isFinite) ||
         coordinates[1] < -90 || coordinates[1] > 90 || coordinates[0] < -180 || coordinates[0] > 180) return [];
     const { territory, crimea } = classifyForDisplay(coordinates[0], coordinates[1], zones);
+    // Explicit settlement-region context is a constraint for streets, not
+    // just a small ranking bonus. Coordinates, not a provider's region text,
+    // decide compatibility even if the optional local store is unavailable.
+    if(streetArea && !(streetArea==='crimea'?crimea:territory===streetArea))return [];
     const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
     if (!fallbackLabel) return [];
     const queryArea = requestedArea(query);

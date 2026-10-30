@@ -19,10 +19,17 @@ function isRegionQualifier(value: string): boolean {
 /** Only an unambiguous city-first street query may offer a separate city.
  * Never guess a city from arbitrary word order or reinterpret a house query. */
 export function settlementForStreetQuery(query: string): string | null {
+  if (/\d/u.test(query)) return null;
   const parts=query.split(/[,;]/u).map(part=>part.trim());
-  if (/\d/u.test(query)||parts.length<2||!parts[0]||hasAddressTerms(parts[0])||
-      !parts.slice(1).some(hasAddressTerms)) return null;
-  return [parts[0],...parts.slice(1).filter(isRegionQualifier)].join(' ');
+  if (parts.length>1) {
+    if(!parts[0]||hasAddressTerms(parts[0])||!parts.slice(1).some(hasAddressTerms))return null;
+    return [parts[0],...parts.slice(1).filter(isRegionQualifier)].join(' ');
+  }
+  // City-first input need not contain a comma. Keep the explicit region in
+  // the prefix; never infer the city from the street name or arbitrary order.
+  const marker=/(?:^|\s)(?:ул\.?|улица|проспект|пр-т|переулок|пер\.?|шоссе)(?=\s|$)/iu.exec(query);
+  const prefix=marker?query.slice(0,marker.index).trim():'';
+  return prefix&&!hasAddressTerms(prefix)?prefix:null;
 }
 
 const markers=new Set(['г','город','городской','округ','улица','ул','проспект','пр','т','переулок','пер','шоссе','дом','д']);

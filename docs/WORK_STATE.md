@@ -1,3 +1,7 @@
+## 30.10.2026 — D1 minimal street-context fix LOCAL / final gates STARTED
+
+[D1codecheckpoint](checkpoints/2026-10-30-stage-D1-fix-LOCAL-gates-STARTED.md):8newregressions0PASS/8FAILbefore;26focusedPASSafter. Threefilesonly:city-firstnocommaprefixextractor,APIrankonlyeligiblefeatures,coordinate-basedexplicitpriorityregionconstraint. Incompatiblestreet→admittedoriginalcityfallback,nomadeupstreetcoords/cityexceptions. Fulloutage/cancel/20sbudgetandordinaryregionoppositeprioritycovered. StrictnewtesttypingPASS;lint0errors/1oldwarning. NextONEmandatoryofflinegate/projectTS/directbuildthenD1finalsave;no push/CI/Preview/Production/sourceaudits. D2readonlysourcebudgetfinished/no bindingyet;D3/D4nextafterD1save. StageC/localhistorypreserved.
+
 ## 30.10.2026 — Stage D1 explicit street geography STARTED LOCAL
 
 [D1STARTED](checkpoints/2026-10-30-stage-D1-street-context-STARTED.md),[D1–D4scope](../experiments/address-search/STAGE_D.md). Source210d4669/remote c2f52ee9/PR14Draft,StageCpreserved. Ownerexample `Донецк ДНР улица Артёма` exposes no-comma contextloss and currentAPIrankingallrawfeatures despitecompatiblecandidatechecks. Nextregressionfirst→minimalgenericparser/filter/admittedcityfallback→gates/localcommit. D2sourceagentreadonly/max4queries2opens/mainonlywriter;D3oldoperatorgaps thenD4table. No push/CI/Production/main/Android/backup/Previewshare or newroute/GeoNamesaudit permitted.
