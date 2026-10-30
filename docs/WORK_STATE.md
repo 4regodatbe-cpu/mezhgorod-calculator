@@ -1,3 +1,7 @@
+## 30.10.2026 — E recovery1 ZSD600 source grade LOCAL
+
+[ZSD600 checkpoint](checkpoints/2026-10-30-stage-E-recovery-ZSD600-LOCAL.md), [source review](../experiments/toll-estimates/PRACTICAL_RECOVERY.md). Derived300+300 supports working estimate, not independent exactOD confirmation; shadow600 nowestimated, strict priced/confirmed/600 and original matrix/source/status unchanged. Final5focusedPASS/scopedTS/lint exit0; initial null-vs0 assertion failure retained. No new full previouslyunknown result, no push/UI/CI/Production. Next saved Arzamas CKAD/ZSD; separate build exit capture pending.
+
 ## 30.10.2026 — Stage E practical recovery STARTED LOCAL
 
 [Recovery STARTED](checkpoints/2026-10-30-1208-stage-E-practical-recovery-STARTED.md): audit ZSD600 evidence grade, resolve saved Arzamas→Primorsk CKAD/ZSD where sources permit, one other previously unknown multiroad case, then one direct build with actual exit code. Source128807fb/remote c2f52ee9/PR14Draft verified; no prior gate or road audit repeat. Strict algorithm/matrix/geometry unchanged, estimate off, no push/UI/Production. New full estimates not yet established.

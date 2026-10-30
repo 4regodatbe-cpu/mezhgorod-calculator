@@ -1,5 +1,7 @@
 # Stage E — optional local toll-estimate prototype
 
+30.10 practical-recovery amendment: [source confidence review](PRACTICAL_RECOVERY.md). The retained ZSD600 is now **estimated** in the offline shadow, not independently confirmed; original strict600/confirmed/source remain unchanged. Earlier E3 artifacts/checkpoints below are historical, not rewritten. No UI activation.
+
 Sourcee6a8a2fe,30.10.2026 MSK. No runtime integration/activation, push, CI or Production change. Default `TOLL_ESTIMATES_DEFAULT=false`; callers must explicitly opt in to this separate shadow result. The original strict snapshot is returned unchanged, not rewritten to priced/free. Selected geometry and routing are opaque immutable IDs/hashes; the module cannot select a route.
 
 Contract: confirmed complete sum; clearly estimated complete sum; or insufficient/null with assessed/confirmed subtotals kept separate. Required paid-product inventory must be complete. A partial known subtotal is never a whole-route estimate; unknown is never zero. Coverage-key duplicates and family aggregate/part overlap reject composition rather than charging twice. Zero needs source-confirmed zero fare or independently confirmed no-paid-route.

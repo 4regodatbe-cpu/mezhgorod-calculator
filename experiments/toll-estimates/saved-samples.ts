@@ -106,8 +106,8 @@ export function buildSavedSamples():Sample[] {
   const conditions:Conditions={road:'ZSD',operator:'NCH',product:'kad-south-ekateringofka',direction:'northbound',category:'I',payment:'cash/card',profile:'allDays'};
   const input:EstimateInput={routeId:finished.caseId,geometrySha256:g.sha,departureAt:at,coverageComplete:true,requiredCoverage:['zsd:zone-1','zsd:zone-2'],strict:{pricingStatus:'priced',amount:q.rub,priceConfirmation:'confirmed'},
    components:[{id:'zsd-finished',conditions,entry:'kad-south',exit:'ekateringofka',family:'zsd',aggregate:true,coverageKeys:['zsd:zone-1','zsd:zone-2'],
-    scope:{proven:true,reference:finishedPath,routeId:finished.caseId,geometrySha256:g.sha},quote:{conditions,routeId:finished.caseId,geometrySha256:g.sha,departureAt:at,rub:q.rub,profile:'allDays',validity:'resolved',source:finishedPath,assurance:'confirmed'}}]};
-  out.push({caseId:finished.caseId,departureAt:at,source:c4,captureSha256:g.rawSha,geometrySha256:g.sha,input,result:estimateRouteTolls(input,{enabled:true}),strictTotalRub:q.rub,geometryUnchanged:g.unchanged(),note:'Existing finished600 control, not a new lane/receipt certification or zone-count rule.'});
+    scope:{proven:true,reference:finishedPath,routeId:finished.caseId,geometrySha256:g.sha},quote:{conditions,routeId:finished.caseId,geometrySha256:g.sha,departureAt:at,rub:q.rub,profile:'allDays',validity:'resolved',source:finishedPath,assurance:'working_estimate'}}]};
+  out.push({caseId:finished.caseId,departureAt:at,source:c4,captureSha256:g.rawSha,geometrySha256:g.sha,input,result:estimateRouteTolls(input,{enabled:true}),strictTotalRub:q.rub,geometryUnchanged:g.unchanged(),note:'Original strict600/confirmed and readiness source retained unchanged. Shadow600 is a working zone-sum interpretation (300+300), not a direct operator fare for this exact passage; see PRACTICAL_RECOVERY.md.'});
  }
  return out;
 }
