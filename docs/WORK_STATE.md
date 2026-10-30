@@ -1,3 +1,7 @@
+## 30.10.2026 — D cartography M12 physical points saved / map join UNRESOLVED
+
+[M12 checkpoint](checkpoints/2026-10-30-stage-D-cartography-M12-LOCAL-PARTIAL.md):6 source-exact points incl3 unidentified western frames. Ramp OSMnd order is reverse to actual selected traversal and has no one-way tag. Yandex motorway→22Н-0239 control57km/53min, ramp-interior control165m/1min; cause unknown, not independent direct-exit PASS. Coordinates/physical topology retained, legal/current join and operator registration endpoints unresolved. Two atlas checks/scopedlintPASS; no app/runtime/tariff change or new full route. M4/ZSD finished local atlas blocks preserved. Next M11/CKAD/extendedZSD source points and explicit map conflicts; no push/Production/CI/PR changes.
+
 ## 30.10.2026 — D cartography ZSD LOCAL / remaining exact road cases next
 
 [ZSD checkpoint](checkpoints/2026-10-30-stage-D-cartography-ZSD-LOCAL.md), [5point/3segment atlas](../experiments/junction-atlas/2026-10-30/zsd.json): KADsouth entry→northbound OSM PVP5→Ekateringofka exact retained source/trace match. Yandex short exit257m/1min and one inspected OSM raster corroborate С2/набережная geography; operator map maintenance/PVPpage no independent numbering proof. Existing600 finished vector retained, not barrier-counted or extended. Four checksPASS/scopedlintPASS, no new OSM/route call/runtime/price change. M4 prior11points/6checks saved. No push/Production/CI change; next retained M11/M12/CKAD/extendedZSD exact-point cases and final atlas counts, not old full audits.
