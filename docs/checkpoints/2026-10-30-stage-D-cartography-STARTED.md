@@ -1,0 +1,11 @@
+# Stage D addition — directed junction atlas STARTED LOCAL
+
+30.10.2026 MSK; parent `f29c83784c794dc77e4d9805465cab444d9d3e47`, published branch `c2f52ee93cd98a81ecd05efa0358fb38c6704124`, PR14 open/Draft/unmerged verified through Connector. Existing worktree clean, detached on permitted-branch ancestry; previous commits/evidence retained.
+
+Owner now requests active map analysis rather than textual-source search alone. Bounded sequence: (1) M4/PVP545 local interchanges/plaza/directed saved northbound case, separate southbound controls and existing product scope; (2) retained Granitnoe→StPetersburg ZSD entry/payment/exit, including evidence for PVP5 name; (3) exact retained M11/M12/CKAD/other ZSD gaps as tool/data availability permits; (4) structured atlas/acceptance counts and missing geography vs operator evidence.
+
+Opera Connector is callable: URL navigation, accessibility-tree reads and screenshots only. No click/drag/zoom UI actions are exposed; map scale can be requested by URL. No claim of a route or visible map observation without actual tool output. New browser tabs will be used; existing user tabs are not edited. At most one short map routing control per materially unresolved direction/road, not a new road audit. Normal lawful map sources only, no restriction bypass.
+
+Every atlas point must cite source/path/hash, lat/lon provenance, graph IDs/direction and explicit levels: visual map point, directed geometry/graph proof, operator product binding. Screenshot/URL alone never proves an exact surveyed coordinate or tariff. Existing working545320/410 and knownZSD600 remain unchanged; no double charge inferred from two product labels. Latest official source policy retained; no new prices, runtime integration or routing/tariff/CI changes.
+
+Root sole writer; one read-only agent extracts existing ZSD proof only. Save completed bounded road records with focused integrity/invariant tests, checkpoint/WORK_STATE and local commit. Current owner prohibits push; do not publish, alter Production/main/Android/backup/PR or rerun StageC/GeoNames/road audits. Resume from saved atlas/per-road outputs after interruption, not recapture. Next: navigate Yandex near exact retained M4 node5818209495 and inspect one saved local crosswalk, then checkpoint.
