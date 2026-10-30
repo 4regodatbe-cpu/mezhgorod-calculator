@@ -1,0 +1,162 @@
+{
+  "stage": "D4",
+  "date": "2026-10-30",
+  "timezone": "Europe/Moscow",
+  "scope": "local saved-evidence integrity only; no repeated app test, provider call or road audit",
+  "sourceRuntimeCommit": "ae5203df",
+  "sourceStageCCommit": "210d46695d83c05e6ecb4c85d54897cc05a22874",
+  "publishedHead": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "localParentBeforeConsolidation": "2208cb93bdc5f6f5e628e42b85f3523e43566361",
+  "pr": {
+    "number": 14,
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "verification": "GitHub Connector readback on30Oct2026; no mutation"
+  },
+  "checks": [
+    {
+      "name": "saved negative regression baseline is retained",
+      "status": "PASS"
+    },
+    {
+      "name": "saved focused and offline gate counts, not a test rerun",
+      "status": "PASS"
+    },
+    {
+      "name": "exact reported query retains admitted DNR city with explicit unconfirmed street precision",
+      "status": "PASS"
+    },
+    {
+      "name": "retained real Photon example source bytes still match their pinned SHA",
+      "status": "PASS"
+    },
+    {
+      "name": "new M11 original PDF size and SHA match successful retrieval record",
+      "status": "PASS"
+    },
+    {
+      "name": "M11 extraction limitation and exact raw HTTP line endings are preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "M12 failure is not misrepresented as downloaded primary evidence",
+      "status": "PASS"
+    },
+    {
+      "name": "four unresolved D3 bindings remain unknown, without invented prices or new routing requests",
+      "status": "PASS"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 1906,
+      "sha256": "55ac2dac65b673067ef40edd01e3356b48954af7246f9707f66251528d277c0a"
+    },
+    {
+      "path": "d1-audit.log",
+      "bytes": 159112,
+      "sha256": "8d6b71337d5a2ad21c1b192f35343cabe067356838cb68c4ec4cf66977cb601a"
+    },
+    {
+      "path": "d1-before.log",
+      "bytes": 8623,
+      "sha256": "301a629fcc6c1d77e87a756742be22d8f2e02714460f3d7e6d12de61fa07ae6c"
+    },
+    {
+      "path": "d1-build.log",
+      "bytes": 1200,
+      "sha256": "abdaf8b9c297702ddc89cd4d11a0736671d3afed7b57c232fbb68ba41575d2f1"
+    },
+    {
+      "path": "d1-eslint.log",
+      "bytes": 198,
+      "sha256": "cd6e66d26a72aa2b73839be76fbfc4b440761a4309a7ae5fb9a800fbd2770307"
+    },
+    {
+      "path": "d1-example.json",
+      "bytes": 3074,
+      "sha256": "7ed32f864d148c5772f0f8efc0cac694b9246fb738709b65fc552daa30c3af90"
+    },
+    {
+      "path": "d1-example.mjs",
+      "bytes": 2000,
+      "sha256": "ff5ad69aaf4aef0824839b9ecfe4d651185532bc80f7f3e622afe5c4e4418be8"
+    },
+    {
+      "path": "d1-focused.log",
+      "bytes": 2897,
+      "sha256": "a3c2e1bab05b538ce20f4e98055372ac213366dfb74e4e3b091fac6ebfa59652"
+    },
+    {
+      "path": "d1-test-tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "d1-test-typecheck-config.json",
+      "bytes": 243,
+      "sha256": "fe3314eb87e34bc801b9fb62693d2c22acd232bbd02467b8857034f37d1afe11"
+    },
+    {
+      "path": "d1-test-types-before.log",
+      "bytes": 273,
+      "sha256": "ec12f8afdd0c7b1c21deb85e4e864d00e604e9aeaa2470608f48d5bac602c623"
+    },
+    {
+      "path": "d1-tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "d2-primary-ledger.json",
+      "bytes": 2374,
+      "sha256": "8c2008c471ed5f32dbc3163e666201158e4ad14a4aeb4d71e4a4e9ea5ac58034"
+    },
+    {
+      "path": "d3-primary-ledger.json",
+      "bytes": 6907,
+      "sha256": "4afb103fb0d1f07626ccf041ffcb2dee59c40560c5340e13d25a88aa45157fcd"
+    },
+    {
+      "path": "m11-new-scheme.headers",
+      "bytes": 328,
+      "sha256": "15f70ef9b498bcca5228fd56fab781aee0cf32f352ed54b94410c04b9fbe71c9"
+    },
+    {
+      "path": "m11-new-scheme.pdf",
+      "bytes": 9573142,
+      "sha256": "2d21a764ececd557fc6a352c72633c05d754530f9f14f6d0f18d7855385a5a17"
+    },
+    {
+      "path": "m11-new-scheme.txt",
+      "bytes": 25,
+      "sha256": "c30b0131124bde0ba2adde1d09c45eb953842cb9b556b82629a85c81db9652d6"
+    },
+    {
+      "path": "m12-registration-lead.headers",
+      "bytes": 371,
+      "sha256": "6526247954f3f1526fb11979838fb00f54899cf0818ea0b663973f0fb75762c3"
+    },
+    {
+      "path": "verifier-initial-failure.md",
+      "bytes": 656,
+      "sha256": "3f36afa37e5e04767e3b77386c6c17fb383b308f24fea52341a0885505a3b9d8"
+    },
+    {
+      "path": "verify-evidence.mjs",
+      "bytes": 5295,
+      "sha256": "8cc3bbeb462f51e06f85b431456979071b87d0043cfad36947a4f9b8d1b86da0"
+    }
+  ],
+  "limitations": [
+    "Not a real Preview acceptance or confirmation of actual DNR street coverage.",
+    "Prior gate exit statuses/Node version are recorded in D1 checkpoint; empty compiler logs alone do not prove success.",
+    "D3 M11 document is supplementary facility evidence, not a new virtual product boundary.",
+    "Original negative-test/build/lint logs and raw HTTP headers include whitespace/CRLF that default git checks flag; source bytes are preserved, not normalized.",
+    "Publication is not authorized. All StageC/D commits remain local."
+  ],
+  "externalRequests": 0,
+  "evidenceDirectory": "/workspace/geonames-preview-publish-fc83523/experiments/address-search/2026-10-30-stage-d"
+}
