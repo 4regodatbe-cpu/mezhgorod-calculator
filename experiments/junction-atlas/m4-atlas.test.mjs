@@ -27,7 +27,9 @@ test('M4 atlas: three northbound paths remain connected, distinct and reject rev
 });
 test('M4 atlas: local opposite-direction gates are southbound, not reverse northbound tariff vectors',()=>{
  const south=atlas.connections.filter(x=>x.direction==='southbound');assert.equal(south.length,3);
- for(const c of south){validatePath(c.wayIds);assert.ok(nodes.get(c.toNode).lat<nodes.get(c.fromNode).lat);assert.equal(c.selectedRouteWitness,null);assert.equal(c.completeOperatorProduct,false);assert.equal(c.priceRub,null);}
+ for(const c of south){validatePath(c.wayIds);assert.ok(nodes.get(c.toNode).lat<nodes.get(c.fromNode).lat);assert.equal(c.completeOperatorProduct,false);assert.equal(c.priceRub,null);}
+ const witnessed=south.filter(c=>c.selectedRouteWitness);assert.equal(witnessed.length,1);assert.equal(witnessed[0].gateNode,'3842564088');assert.equal(witnessed[0].selectedRouteWitness.caseId,'pair-m4-a289-voronezh-to-taman');
+ assert.equal(atlas.selectedSouthboundPassage.traceComplete,true);assert.equal(atlas.selectedSouthboundPassage.observedPlaza545Hits.length,1);assert.equal(atlas.selectedSouthboundPassage.priceRub,null);
 });
 test('M4 atlas: newly located R298 connector matches the existing directed end-node witness',()=>{
  const way=full.elements.find(x=>x.type==='way');assert.equal(way.id,301694367);assert.equal(way.tags['destination:ref'],'Р-298');assert.equal(way.tags.oneway,'yes');assert.equal(String(way.nodes[0]),atlas.r298Exit.fromNode);assert.equal(String(way.nodes.at(-1)),atlas.r298Exit.toNode);

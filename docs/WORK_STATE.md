@@ -1,3 +1,7 @@
+## 30.10.2026 — D cartography M4 reciprocal selected witness LOCAL / final index next
+
+[M4 south checkpoint](checkpoints/2026-10-30-stage-D-cartography-M4-south-LOCAL.md): one available retained Voronezh→Taman capture, only545local5edge extraction;8/8complete, exactly one3842564088/702218806 passage. Adds actual southbound witness, not reverse-north fixture or new tariff. Updated M4sixchecksPASS/scopedlintPASS; old logs preserved, still15 distinct atlas checks overall. No network/app/runtime/tariff/CI/push changes. All32points and other per-road outputs saved; next final source manifest/report and portable local recovery. Two current Yandex map-detour conflicts remain unknown.
+
 ## 30.10.2026 — D cartography extendedZSD LOCAL / final atlas next
 
 [ExtendedZSD checkpoint](checkpoints/2026-10-30-stage-D-cartography-ZSD-extended-LOCAL-PARTIAL.md):3 source-exact points distinguish cash booth1766158781/way355755817 from64E gantry13020687195/пр.Крузенштерна. Missing Planernaya original recovered200; actual retained Arzamas→Prim gate witness indexed, not six-case motif replay. Yandex local172m/1min is local corroboration only; larger origin/product/payment bundle remains unknown, no600/300/zero imported. One atlas checkPASS. All six per-road/source blocks saved locally, no app/runtime/tariff/CI/push/Production change. Next final32point atlas,15 focused metadata checks total, six short controls vs two map-detour conflicts, provenance/recovery handoff.

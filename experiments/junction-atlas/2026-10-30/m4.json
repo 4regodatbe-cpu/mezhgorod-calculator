@@ -13,6 +13,10 @@
       "sha256": "2e7a667d74b5468eedcdf678f98ba96d21fc17d1593f5af9bdafd9c8bca67768"
     },
     {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/2026-10-16T00-11-20-485Z-capture.json.gz",
+      "sha256": "d04dc4f1c995ce0badecf4c75da16b16c04781f56b5c55a5672aa67325bf3b70"
+    },
+    {
       "path": "experiments/junction-atlas/2026-10-30/raw/m4-r298-node3057885104.json",
       "sha256": "a6391887025ef02d548301351dce25c77f40569e851f00a390f64047d03322b1"
     },
@@ -562,12 +566,61 @@
       "toNode": "6594393971",
       "gateNode": "3842564088",
       "proof": "retained exact one-way node order, contiguous at shared nodes",
-      "selectedRouteWitness": null,
+      "selectedRouteWitness": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/2026-10-16T00-11-20-485Z-capture.json.gz",
+        "caseId": "pair-m4-a289-voronezh-to-taman",
+        "callIndex": 3,
+        "gateEdgeIndex": 131,
+        "scope": "actual local passage, not a full operator product or inherited northbound price"
+      },
       "turnRestrictions": "all legal turns/access restrictions are not independently certified by this selected OSM subset",
       "completeOperatorProduct": false,
       "priceRub": null
     }
   ],
+  "selectedSouthboundPassage": {
+    "source": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/2026-10-16T00-11-20-485Z-capture.json.gz",
+    "traceComplete": true,
+    "chunkCount": 8,
+    "checkedChunkCount": 8,
+    "failedChunkCount": 0,
+    "observedPlaza545Hits": [
+      {
+        "callIndex": 3,
+        "gateEdgeIndex": 131,
+        "gateNodeId": "3842564088",
+        "localEdges": [
+          {
+            "index": 129,
+            "wayId": "499441800",
+            "endNodeId": "9748780693"
+          },
+          {
+            "index": 130,
+            "wayId": "1061032716",
+            "endNodeId": "6594393972"
+          },
+          {
+            "index": 131,
+            "wayId": "702218806",
+            "endNodeId": "3842564088"
+          },
+          {
+            "index": 132,
+            "wayId": "702218806",
+            "endNodeId": "6594393971"
+          },
+          {
+            "index": 133,
+            "wayId": "1061032715",
+            "endNodeId": "9748780692"
+          }
+        ]
+      }
+    ],
+    "operatorProduct": null,
+    "priceRub": null
+  },
   "r298Exit": {
     "fromNode": "3057885096",
     "toNode": "3057885104",

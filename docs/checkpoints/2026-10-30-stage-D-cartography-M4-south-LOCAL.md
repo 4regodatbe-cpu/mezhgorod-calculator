@@ -1,0 +1,9 @@
+# M4 south — one actual reciprocal passage, no copied northbound tariff
+
+30.10.2026 MSK; parentbed3c7b0. New bounded source reason: owner explicitly asks to separate Moscow/Krasnodar directions, while the first atlas had only local southbound OSM sections. One already retained reciprocal capture was available: `pair-m4-a289-voronezh-to-taman/2026-10-16T00-11-20-485Z-capture.json.gz`. No new routing/map/provider/network request.
+
+Only545-target events and two adjacent edges on either side were projected; no pricing replay, broader road audit or inventory expansion. Complete8/8 trace/no failedchunks; exactly one local545hit: **call3/edge131,way702218806,node3842564088**. Approach499441800→1061032716/6594393972, then702218806/3842564088→702218806/6594393971→1061032715/9748780692. This matches the independently retained southbound one-way OSM section. It is an actual selected reciprocal journey, not a reversed northbound fixture. Large validation arrays were initially printed accidentally and truncated; the saved atlas deliberately contains only bounded status/counts and the5edge local witness, original capture/SHA retained.
+
+The selected passage witness is attached only to this one southbound branch; other southbound gates remain local geometry only. Full operator product/price remain null for this southbound scope. Existing northbound73.9km320/410 component unchanged, not copied or doublecharged. Atlas point count still32 overall/11M4; new tariff pairs0.
+
+Projection asserts uniqueness/completeness; **updated M4 atlas6PASS**, exact new source hash included. Previous raw first6check log preserved; new log `m4-south-checks.log` verifies current enriched data, not6 additional distinct scenarios. Scoped ESLint of changed M4 analysis filesPASS. No app/lib/data/CI change or new full gate. Local checkpoint/commit only; next final consolidation, existing two map-control detours remain unresolved.

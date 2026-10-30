@@ -1,6 +1,7 @@
 // Offline atlas projection. Does not call a provider or change application data.
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {gunzipSync} from 'node:zlib';
 import assert from 'node:assert/strict';
 const root=new URL('../../',import.meta.url);
 const read=path=>readFileSync(new URL(path,root));
@@ -67,14 +68,29 @@ const connections=[
  connection('m4-545-south-northern-bank-local','southbound',['702218806'],'3842564088'),
 ];
 const gateNodes=connections.map(c=>c.gateNode);assert.equal(new Set(gateNodes).size,6);
+const southCapturePath='experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/2026-10-16T00-11-20-485Z-capture.json.gz';
+const southCapture=JSON.parse(gunzipSync(read(southCapturePath)).toString('utf8'));
+const southValidation=southCapture.record.validation;
+assert.equal(southValidation.complete,true);assert.equal(southValidation.failedChunkCount,0);
+const southHits=[];
+for(const [callIndex,call] of southCapture.calls.entries()){
+ if(!call.url?.includes('/trace_attributes'))continue;
+ const edges=JSON.parse(call.text).edges;
+ for(const [i,e] of edges.entries())if(gateNodes.includes(String(e.end_node?.node_id)))southHits.push({callIndex,gateEdgeIndex:i,gateNodeId:String(e.end_node.node_id),
+  localEdges:edges.slice(Math.max(0,i-2),i+3).map((x,k)=>({index:Math.max(0,i-2)+k,wayId:String(x.way_id),endNodeId:String(x.end_node?.node_id)}))});
+}
+assert.equal(southHits.length,1);assert.equal(southHits[0].gateNodeId,'3842564088');
+const southConnection=connections.find(c=>c.gateNode===southHits[0].gateNodeId);
+southConnection.selectedRouteWitness={path:southCapturePath,caseId:'pair-m4-a289-voronezh-to-taman',callIndex:southHits[0].callIndex,gateEdgeIndex:southHits[0].gateEdgeIndex,scope:'actual local passage, not a full operator product or inherited northbound price'};
 const onward=history.reviewedFinalChunk.onwardWayAndEndNodes;
 assert.ok(onward.some(x=>x.wayId==='301694367'&&x.endNodeId==='3057885104'));
-const sources=[osmPath,historyPath,nodeSource,waySource,base+'raw/m4-map-accessibility.txt',base+'raw/m4-north-short-route-accessibility.txt',base+'raw/m4-south-short-route-accessibility.txt',base+'raw/m4-operator-article-accessibility.txt',base+'raw/m4-osm-z15-19984-10901.png',base+'raw/m4-osm-z15-19984-10900.png'].map(hash);
+const sources=[osmPath,historyPath,southCapturePath,nodeSource,waySource,base+'raw/m4-map-accessibility.txt',base+'raw/m4-north-short-route-accessibility.txt',base+'raw/m4-south-short-route-accessibility.txt',base+'raw/m4-operator-article-accessibility.txt',base+'raw/m4-osm-z15-19984-10901.png',base+'raw/m4-osm-z15-19984-10900.png'].map(hash);
 console.log(JSON.stringify({schemaVersion:1,road:'M4',date:'2026-10-30',mode:'research_only_not_runtime',sources,
  sourceNotes:{retainedOsmDate:osm.source.retrievedDate,newOsmUrls:['https://api.openstreetmap.org/api/0.6/node/3057885104.json','https://api.openstreetmap.org/api/0.6/way/301694367/full.json'],newOsmHttpStatus:200,newOsmTimestamp:r298.timestamp,newOsmVersion:r298.version,
   operatorArticle:'https://avtodor-tr.ru/press-center/news/rezhim-platnosti-vveden-na-uchastke-avtomobilnoy-dorogi-m-4-don-v-obkhod-sela-novaya-usman-i-sela-ro/',articleDate:'2016-12-26',articleObservation:'existing operator browser tab read; no origin HTTP freshness inferred',
   attribution:'© OpenStreetMap contributors, ODbL; Yandex route UI is separate non-operator evidence'},
- points,connections,r298Exit:{fromNode:'3057885096',toNode:'3057885104',wayId:'301694367',oneway:true,destinationRef:'Р-298',destination:r298.tags.destination,sourcePath:waySource,selectedOnwardWitness:historyPath,officialKm:null},
+ points,connections,selectedSouthboundPassage:{source:southCapturePath,traceComplete:true,chunkCount:southValidation.chunkCount,checkedChunkCount:southValidation.checkedChunkCount,failedChunkCount:0,observedPlaza545Hits:southHits,operatorProduct:null,priceRub:null},
+ r298Exit:{fromNode:'3057885096',toNode:'3057885104',wayId:'301694367',oneway:true,destinationRef:'Р-298',destination:r298.tags.destination,sourcePath:waySource,selectedOnwardWitness:historyPath,officialKm:null},
  mapControls:[{direction:'northbound',requestedPoints:3,observedUiDistanceMeters:880,observedUiMinutes:2,constructed:true,exactViaSnapOrLaneVerified:false,evidence:base+'raw/m4-north-short-route-accessibility.txt'},
   {direction:'southbound',requestedPoints:2,observedUiDistanceMeters:25,observedUiMinutes:1,constructed:true,exactViaSnapOrLaneVerified:false,evidence:base+'raw/m4-south-short-route-accessibility.txt'}],
  tariffBindings:[{id:'existing-m4-545-north-73.9-working',status:'retained_owner_accepted_working_model_not_new_pair',caseId:history.caseId,direction:'northbound',products:['m4-545-a','m4-545-b'],weekdayAmount:320,weekendAmount:410,operatorCategory:'I',payment:'cash/card',physicalObservedPlazaEvents:1,
