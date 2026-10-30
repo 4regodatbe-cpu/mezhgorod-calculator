@@ -1,3 +1,7 @@
+## 30.10.2026 — D cartography CKAD exact local frame saved / product still unknown
+
+[CKAD checkpoint](checkpoints/2026-10-30-stage-D-cartography-CKAD-LOCAL-PARTIAL.md):3 source-exact points around12443433262/way1080462753, parent/oneway/node order now explicit. Yandex local570m/1min and inspected A113 raster corroborate geography, not free-domain boundary;275/274maplabels not official chainage. General PK5free and OSM fee/toll flags remain distinct; no zero/price invented. One atlas checkPASS. Previous M4/ZSD/M12/M11 saved, two current map-detour conflicts remain explicit. No push/runtime/tariff/CI changes. Next extendedZSD Planernaya/RVP64 then final atlas counts/evidence.
+
 ## 30.10.2026 — D cartography M11 LOCAL-PARTIAL / virtual58 and map control unresolved
 
 [M11 checkpoint](checkpoints/2026-10-30-stage-D-cartography-M11-LOCAL-PARTIAL.md):4 exact-source points, retained CKAD47 entry/merge plus recovered primary147exitway200. Gate6588472831/sourceoneway/destinationМ10 corroborated, not a new gate or virtual58. Yandex short-input entry→merge detours29.9km/22min; exact snap unavailable, cause unknown. One atlas checkPASS; p58→p147610/750 retained but selected whole product unbound, existing confirmed M11 untouched. Earlier M12 join conflict remains explicit. No push/runtime/tariff/CI changes; next CKAD then extendedZSD atlas, final source counts.
