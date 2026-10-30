@@ -1,0 +1,786 @@
+{
+  "caseId": "triple-m11-ckad-m12-torzhok-to-kazan",
+  "from": {
+    "label": "Торжок, центр",
+    "position": {
+      "lng": 34.962,
+      "lat": 57.041
+    },
+    "kind": "fixed-city-control"
+  },
+  "to": {
+    "label": "Казань, центр",
+    "position": {
+      "lng": 49.1221,
+      "lat": 55.7887
+    },
+    "kind": "fixed-city-control"
+  },
+  "capture": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/2026-10-16T00-34-01-248Z-capture.json.gz",
+    "sha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a"
+  },
+  "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+  "sourceEvidence": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+      "sha256": "44b9657c7cffe4635b88eecfb9fec4d995f25137991e1aa7345296b6782f5335"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m11-p214-three/cases/triple-m11-ckad-m12-torzhok-to-kazan.json",
+      "sha256": "4db57747e70c61086b4e71860481ab7f554d7c7267242dafc436f9ab8b6833d1"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+      "sha256": "b0d7d55edc6a3fa12c12e1bc7fc2a5d07e809f0a15e2f3b1e5b5aab5a07b9df6"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+      "sha256": "40e09039e567ccd76f90420e8040049546c2f6c17d837d118b427900fe6c6a30"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+      "sha256": "e6b2178c2448f071de92556d1d72237bd0281da9628f4855cb11b2cd32e6f9ca"
+    },
+    {
+      "path": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
+      "sha256": "527b0ac0bcf932a30e8a9d95a2bd9c6cac90ee081107371bebb1abd8d0f5d378"
+    }
+  ],
+  "proof": {
+    "traceChunks": 8,
+    "retainedTraceComplete": true,
+    "booths": [
+      {
+        "osmNodeId": "5286168661",
+        "wayId": "766468434"
+      },
+      {
+        "osmNodeId": "8087316064",
+        "wayId": "1270188041"
+      }
+    ],
+    "unmappedBooths": [],
+    "ckad": {
+      "from": "М-11 Нева",
+      "to": "М-7 Волга",
+      "rub": 941,
+      "shapeRange": [
+        1036,
+        1648
+      ],
+      "footnote120Applies": false
+    },
+    "productCoverage": "p214→p58 mainline + separate p58→CKAD47 concession head + CKAD M11→M7 + retained M12 Vladimir→Ivanovskoe working pair; no ZSD/M4",
+    "caution": "M12 source pair/model retained, not new independent registration-endpoint certification. CKAD directed named-road binding is a working source match, not operator receipt. Total estimated only."
+  },
+  "networkRequests": 0,
+  "newProviderCapture": 0,
+  "newFullRouteReplays": 0,
+  "newBoundaryInspections": 2,
+  "defaultEnabled": false,
+  "geometryUnchanged": true,
+  "rows": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "m11Boundary": {
+        "candidate": true,
+        "headDetected": true,
+        "resolved": true,
+        "reason": "m11_p214_p58_and_southbound_ckad_head_proved",
+        "parts": {
+          "from": "p214",
+          "to": "p58",
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "mainlineAt": "2026-10-15T09:00:00+03:00",
+          "mainlineWindowSeconds": 0,
+          "headDetected": true,
+          "head": {
+            "from": "solnechnogorsk",
+            "to": "tskad",
+            "paymentAt": "2026-10-15T09:00:00+03:00",
+            "paymentWindowSeconds": 0,
+            "timeBasis": "strict_ckad47_exit_at_departure"
+          }
+        }
+      },
+      "input": {
+        "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+        "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "coverageComplete": true,
+        "requiredCoverage": [
+          "m11-58-679",
+          "m11-15-58",
+          "ckad",
+          "m12"
+        ],
+        "components": [
+          {
+            "id": "m11-58-679",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-58-679",
+              "direction": "p214→p58",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "monThu"
+            },
+            "entry": "p214",
+            "exit": "p58",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-58-679"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "Avtodor",
+                "product": "m11-58-679",
+                "direction": "p214→p58",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "monThu"
+              },
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "rub": 1250,
+              "profile": "monThu",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "m11-15-58",
+            "conditions": {
+              "road": "M11",
+              "operator": "m11-neva",
+              "product": "m11-15-58",
+              "direction": "solnechnogorsk→tskad",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "monThu"
+            },
+            "entry": "solnechnogorsk",
+            "exit": "tskad",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-15-58"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "m11-neva",
+                "product": "m11-15-58",
+                "direction": "solnechnogorsk→tskad",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "monThu"
+              },
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "rub": 200,
+              "profile": "monThu",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "ckad",
+            "conditions": {
+              "road": "CKAD",
+              "operator": "Avtodor",
+              "product": "ckad",
+              "direction": "М-11 Нева→М-7 Волга",
+              "category": "I",
+              "payment": "post-payment",
+              "profile": "allDays"
+            },
+            "entry": "М-11 Нева",
+            "exit": "М-7 Волга",
+            "family": "CKAD",
+            "aggregate": false,
+            "coverageKeys": [
+              "ckad"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7"
+            },
+            "quote": {
+              "conditions": {
+                "road": "CKAD",
+                "operator": "Avtodor",
+                "product": "ckad",
+                "direction": "М-11 Нева→М-7 Волга",
+                "category": "I",
+                "payment": "post-payment",
+                "profile": "allDays"
+              },
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "rub": 941,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "assurance": "working_estimate"
+            }
+          },
+          {
+            "id": "m12",
+            "conditions": {
+              "road": "M12",
+              "operator": "Avtodor",
+              "product": "m12",
+              "direction": "vladimir→ivanovskoe_p241",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "vladimir",
+            "exit": "ivanovskoe_p241",
+            "family": "M12",
+            "aggregate": false,
+            "coverageKeys": [
+              "m12"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M12",
+                "operator": "Avtodor",
+                "product": "m12",
+                "direction": "vladimir→ivanovskoe_p241",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "allDays"
+              },
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "rub": 3513,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "assurance": "working_estimate"
+            }
+          }
+        ],
+        "strict": {
+          "pricingStatus": "unknown",
+          "amount": null,
+          "priceConfirmation": "unconfirmed"
+        }
+      },
+      "result": {
+        "status": "estimated",
+        "totalRub": 5904,
+        "confirmedSubtotalRub": 1450,
+        "assessedSubtotalRub": 5904,
+        "missingCoverage": [],
+        "components": [
+          {
+            "id": "m11-58-679",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-58-679",
+              "direction": "p214→p58",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "monThu"
+            },
+            "entry": "p214",
+            "exit": "p58",
+            "coverageKeys": [
+              "m11-58-679"
+            ],
+            "status": "confirmed",
+            "rub": 1250,
+            "range": {
+              "min": 1250,
+              "max": 1250
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "m11-15-58",
+            "conditions": {
+              "road": "M11",
+              "operator": "m11-neva",
+              "product": "m11-15-58",
+              "direction": "solnechnogorsk→tskad",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "monThu"
+            },
+            "entry": "solnechnogorsk",
+            "exit": "tskad",
+            "coverageKeys": [
+              "m11-15-58"
+            ],
+            "status": "confirmed",
+            "rub": 200,
+            "range": {
+              "min": 200,
+              "max": 200
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "ckad",
+            "conditions": {
+              "road": "CKAD",
+              "operator": "Avtodor",
+              "product": "ckad",
+              "direction": "М-11 Нева→М-7 Волга",
+              "category": "I",
+              "payment": "post-payment",
+              "profile": "allDays"
+            },
+            "entry": "М-11 Нева",
+            "exit": "М-7 Волга",
+            "coverageKeys": [
+              "ckad"
+            ],
+            "status": "estimated",
+            "rub": 941,
+            "range": {
+              "min": 941,
+              "max": 941
+            },
+            "method": "retained_working_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json"
+            ],
+            "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"
+          },
+          {
+            "id": "m12",
+            "conditions": {
+              "road": "M12",
+              "operator": "Avtodor",
+              "product": "m12",
+              "direction": "vladimir→ivanovskoe_p241",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "vladimir",
+            "exit": "ivanovskoe_p241",
+            "coverageKeys": [
+              "m12"
+            ],
+            "status": "estimated",
+            "rub": 3513,
+            "range": {
+              "min": 3513,
+              "max": 3513
+            },
+            "method": "retained_working_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json"
+            ],
+            "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"
+          }
+        ],
+        "strict": {
+          "pricingStatus": "unknown",
+          "amount": null,
+          "priceConfirmation": "unconfirmed"
+        },
+        "reasons": []
+      }
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "m11Boundary": {
+        "candidate": true,
+        "headDetected": true,
+        "resolved": true,
+        "reason": "m11_p214_p58_and_southbound_ckad_head_proved",
+        "parts": {
+          "from": "p214",
+          "to": "p58",
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "mainlineAt": "2026-10-17T09:00:00+03:00",
+          "mainlineWindowSeconds": 0,
+          "headDetected": true,
+          "head": {
+            "from": "solnechnogorsk",
+            "to": "tskad",
+            "paymentAt": "2026-10-17T09:00:00+03:00",
+            "paymentWindowSeconds": 0,
+            "timeBasis": "strict_ckad47_exit_at_departure"
+          }
+        }
+      },
+      "input": {
+        "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+        "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+        "departureAt": "2026-10-17T09:00:00+03:00",
+        "coverageComplete": true,
+        "requiredCoverage": [
+          "m11-58-679",
+          "m11-15-58",
+          "ckad",
+          "m12"
+        ],
+        "components": [
+          {
+            "id": "m11-58-679",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-58-679",
+              "direction": "p214→p58",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "friSun"
+            },
+            "entry": "p214",
+            "exit": "p58",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-58-679"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "Avtodor",
+                "product": "m11-58-679",
+                "direction": "p214→p58",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "friSun"
+              },
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "rub": 1390,
+              "profile": "friSun",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "m11-15-58",
+            "conditions": {
+              "road": "M11",
+              "operator": "m11-neva",
+              "product": "m11-15-58",
+              "direction": "solnechnogorsk→tskad",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "sat"
+            },
+            "entry": "solnechnogorsk",
+            "exit": "tskad",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-15-58"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "m11-neva",
+                "product": "m11-15-58",
+                "direction": "solnechnogorsk→tskad",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "sat"
+              },
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "rub": 240,
+              "profile": "sat",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "ckad",
+            "conditions": {
+              "road": "CKAD",
+              "operator": "Avtodor",
+              "product": "ckad",
+              "direction": "М-11 Нева→М-7 Волга",
+              "category": "I",
+              "payment": "post-payment",
+              "profile": "allDays"
+            },
+            "entry": "М-11 Нева",
+            "exit": "М-7 Волга",
+            "family": "CKAD",
+            "aggregate": false,
+            "coverageKeys": [
+              "ckad"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7"
+            },
+            "quote": {
+              "conditions": {
+                "road": "CKAD",
+                "operator": "Avtodor",
+                "product": "ckad",
+                "direction": "М-11 Нева→М-7 Волга",
+                "category": "I",
+                "payment": "post-payment",
+                "profile": "allDays"
+              },
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "rub": 941,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "assurance": "working_estimate"
+            }
+          },
+          {
+            "id": "m12",
+            "conditions": {
+              "road": "M12",
+              "operator": "Avtodor",
+              "product": "m12",
+              "direction": "vladimir→ivanovskoe_p241",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "vladimir",
+            "exit": "ivanovskoe_p241",
+            "family": "M12",
+            "aggregate": false,
+            "coverageKeys": [
+              "m12"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M12",
+                "operator": "Avtodor",
+                "product": "m12",
+                "direction": "vladimir→ivanovskoe_p241",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "allDays"
+              },
+              "routeId": "triple-m11-ckad-m12-torzhok-to-kazan",
+              "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "rub": 3513,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "assurance": "working_estimate"
+            }
+          }
+        ],
+        "strict": {
+          "pricingStatus": "unknown",
+          "amount": null,
+          "priceConfirmation": "unconfirmed"
+        }
+      },
+      "result": {
+        "status": "estimated",
+        "totalRub": 6084,
+        "confirmedSubtotalRub": 1630,
+        "assessedSubtotalRub": 6084,
+        "missingCoverage": [],
+        "components": [
+          {
+            "id": "m11-58-679",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-58-679",
+              "direction": "p214→p58",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "friSun"
+            },
+            "entry": "p214",
+            "exit": "p58",
+            "coverageKeys": [
+              "m11-58-679"
+            ],
+            "status": "confirmed",
+            "rub": 1390,
+            "range": {
+              "min": 1390,
+              "max": 1390
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "m11-15-58",
+            "conditions": {
+              "road": "M11",
+              "operator": "m11-neva",
+              "product": "m11-15-58",
+              "direction": "solnechnogorsk→tskad",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "sat"
+            },
+            "entry": "solnechnogorsk",
+            "exit": "tskad",
+            "coverageKeys": [
+              "m11-15-58"
+            ],
+            "status": "confirmed",
+            "rub": 240,
+            "range": {
+              "min": 240,
+              "max": 240
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "ckad",
+            "conditions": {
+              "road": "CKAD",
+              "operator": "Avtodor",
+              "product": "ckad",
+              "direction": "М-11 Нева→М-7 Волга",
+              "category": "I",
+              "payment": "post-payment",
+              "profile": "allDays"
+            },
+            "entry": "М-11 Нева",
+            "exit": "М-7 Волга",
+            "coverageKeys": [
+              "ckad"
+            ],
+            "status": "estimated",
+            "rub": 941,
+            "range": {
+              "min": 941,
+              "max": 941
+            },
+            "method": "retained_working_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json"
+            ],
+            "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"
+          },
+          {
+            "id": "m12",
+            "conditions": {
+              "road": "M12",
+              "operator": "Avtodor",
+              "product": "m12",
+              "direction": "vladimir→ivanovskoe_p241",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "vladimir",
+            "exit": "ivanovskoe_p241",
+            "coverageKeys": [
+              "m12"
+            ],
+            "status": "estimated",
+            "rub": 3513,
+            "range": {
+              "min": 3513,
+              "max": 3513
+            },
+            "method": "retained_working_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json"
+            ],
+            "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"
+          }
+        ],
+        "strict": {
+          "pricingStatus": "unknown",
+          "amount": null,
+          "priceConfirmation": "unconfirmed"
+        },
+        "reasons": []
+      }
+    }
+  ],
+  "newFullEstimatedRoutes": 1
+}

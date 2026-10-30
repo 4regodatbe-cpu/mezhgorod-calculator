@@ -1,3 +1,7 @@
+## 30.10.2026 — E recovery3 Torzhok→Kazan LOCAL /1new full estimate
+
+[Torzhok checkpoint](checkpoints/2026-10-30-stage-E-recovery-Torzhok-LOCAL.md): one previouslyunknown M11+CKAD+M12 route now shadowestimated5904Thu/6084Sat. Actual existingresolver proves p214→p58 and southboundhead200/240 (notforward280/320), both oldresidualbooths mapped once; CKADM11→M7 sourcepair941, M12existing3513workingmodel. Strictunknown/null and sourcegeometry/matrix unchanged. SixnewPASS/exit0/lint0;0network/capture/fullreplay/push/UI. ExactZSDbundle/truePrimorsk remainunresolved. Next one directbuild reliableexit + finalfocusedchecks/consolidation.
+
 ## 30.10.2026 — E recovery2 Arzamas PARTIAL LOCAL / CKAD941
 
 [Arzamas checkpoint](checkpoints/2026-10-30-stage-E-recovery-Arzamas-LOCAL.md): saved `arzamas-to-prim` actually ends onSPb Primorsky avenue, notPrimorsk. Actual CKADM7→M11 sourcepair941 nowassessed offline; parts6928Thu/7268Sat, fullnull due exactZSD cash/card bundle. Hypothesis900/conditional7828/8168 notadmitted asfare. Five newchecksPASS/exit0+scopedlint0; source/matrix/geometry unchanged/no replay/network/push. New fullunknownunlocks0. Next one different multiroad case, then reliableexit directbuild.
