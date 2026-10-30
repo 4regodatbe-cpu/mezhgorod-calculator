@@ -1,0 +1,28 @@
+
+> mezhgorod-calculator@2.0.0 lint
+> eslint . --ignore-pattern .next
+
+
+/workspace/geonames-preview-publish-fc83523/app/v2/components/use-v2-calculation.ts
+  25:141  warning  'analyticsVersion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/geonames-preview-publish-fc83523/experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs
+  7:7  warning  'root' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/geonames-preview-publish-fc83523/experiments/toll-od-matrix/m4-pvp-compiler.test.mjs
+  9:7  warning  'clone' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/geonames-preview-publish-fc83523/lib/photon-address-search.ts
+  441:16  warning  'key' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/geonames-preview-publish-fc83523/lib/toll-engine/m12-route-evidence.ts
+  16:7  warning  'amountByMarker' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/geonames-preview-publish-fc83523/lib/v2-calculation/special-options.ts
+  71:20  warning  'index' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/geonames-preview-publish-fc83523/scripts/v2-issue2-github-capture.mjs
+  94:34  warning  'responseText' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 7 problems (0 errors, 7 warnings)
+
