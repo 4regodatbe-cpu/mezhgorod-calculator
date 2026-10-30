@@ -1,3 +1,7 @@
+## 30.10.2026 — D2 M4 primary research BLOCKED / D1 localfix saved
+
+[D2checkpoint](checkpoints/2026-10-30-stage-D2-M4-primary-DATA-BLOCKED.md):4newofficial-domainqueriesempty,2primaryopens403/inaccessible,no newprimaryfacts/docdates/SHA claimed. Existing4443232947→358467208graph/coordsretained;officialkm/operatorproduct/pair/pricestillunknown. No oldfailedOSM/1038news/PDFqueryorrouteauditrerun,no guessedneighbour/PVP/zero. D1ae5203dfverified1047PASS/1SKIP/TS/lint/build andsavedlocally;unpublished. NextD3one/twonewprimaryleadsperM11/M12/CKAD/ZSDthenD4evidencetable. No push/CI/Production/otherbranch/PRchange.
+
 ## 30.10.2026 — D1 street geography FIXED_AND_VERIFIED_LOCAL / unpublished
 
 [D1PASScheckpoint](checkpoints/2026-10-30-stage-D1-street-context-LOCAL-PASS.md),[exactlocalexample](../experiments/address-search/2026-10-30-stage-d/d1-example.json). Runtimeae5203df:genericnocommacontext+eligiblefeaturefilter+coordinatepriorityconstraint. OwnerquerywithsavedwrongRostovreply→200/Донецк—ДНР/geonames709717/48.023,37.80224,streetunconfirmed;notinventedDNRstreet.8newtests0PASS8FAILbefore;26focused+1047offlinePASS/1SKIP,project/newteststrictTS/scopedlint0errors1oldwarning/webpackPASS. No otherroute/tariff/data/CI/A+Bclientchange. Remote c2f52ee9/PR14Draft,NO push/Preview/Production;hostedfixNOTVERIFIED. NextD2boundednewprimarysourcefindings→D3remainingroads→D4table,oldCresultsretained.
