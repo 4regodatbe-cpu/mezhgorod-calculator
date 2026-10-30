@@ -93,6 +93,8 @@ def m11():
            xp('M11', xml(merge_path), '3566326245', 'technical', 'Merge со стороныЦКАД на М11', merge_path, 'toward_M11_northbound', ['791520973', '1270188032'], ['ЦКАД', 'М-11']),
            jp('M11', recovered, '6588472831', 'plaza', 'Воскресенское147, выходная северного маршрута касса', recovered_path, 'from_M11_northbound_to_M10', ['1307036920'], ['М-11', 'М-10']),
            jp('M11', recovered, str(w['nodes'][-1]), 'technical', 'Конец кассовой части съезда, не конечный узел М10', recovered_path, 'from_M11_northbound_to_M10', ['1307036920'], ['М-11', 'М-10'])]
+    pts[0]['operatorScheme'] = entry['officialIdentity']['path'] + '#page=5'
+    pts[0]['operatorFacilityIdentity'] = entry['officialIdentity']['fact']
     return finish('M11', [node_path, merge_path, p + 'directed-ckad47-entry.json', p + 'entry-local-map.osm', recovered_path, BASE + 'raw/m11-entry-short-route-accessibility.txt'], pts,
                   directedEntry=entry['wayConnectivity'], exitGateWay={'id': str(w['id']), 'nodeOrder': [str(n) for n in w['nodes']], 'tags': w['tags']},
                   sourceRecovery='Gate coordinate already known from inventory report; new full-way200 recovers missing original raw proof, not a newly discovered physical gate.',

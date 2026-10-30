@@ -1,3 +1,7 @@
+## 30.10.2026 — D cartography M11 LOCAL-PARTIAL / virtual58 and map control unresolved
+
+[M11 checkpoint](checkpoints/2026-10-30-stage-D-cartography-M11-LOCAL-PARTIAL.md):4 exact-source points, retained CKAD47 entry/merge plus recovered primary147exitway200. Gate6588472831/sourceoneway/destinationМ10 corroborated, not a new gate or virtual58. Yandex short-input entry→merge detours29.9km/22min; exact snap unavailable, cause unknown. One atlas checkPASS; p58→p147610/750 retained but selected whole product unbound, existing confirmed M11 untouched. Earlier M12 join conflict remains explicit. No push/runtime/tariff/CI changes; next CKAD then extendedZSD atlas, final source counts.
+
 ## 30.10.2026 — D cartography M12 physical points saved / map join UNRESOLVED
 
 [M12 checkpoint](checkpoints/2026-10-30-stage-D-cartography-M12-LOCAL-PARTIAL.md):6 source-exact points incl3 unidentified western frames. Ramp OSMnd order is reverse to actual selected traversal and has no one-way tag. Yandex motorway→22Н-0239 control57km/53min, ramp-interior control165m/1min; cause unknown, not independent direct-exit PASS. Coordinates/physical topology retained, legal/current join and operator registration endpoints unresolved. Two atlas checks/scopedlintPASS; no app/runtime/tariff change or new full route. M4/ZSD finished local atlas blocks preserved. Next M11/CKAD/extendedZSD source points and explicit map conflicts; no push/Production/CI/PR changes.
