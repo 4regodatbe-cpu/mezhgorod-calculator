@@ -25,11 +25,18 @@ test("F2 ON confirmed/estimated/partial remain separate and cannot mutate strict
   const before=JSON.stringify(input),exact=assessV3Tolls(input)!;assert.equal(exact.status,"confirmed");assert.equal(exact.totalRub,123);assert.equal(JSON.stringify(input),before);
   const partial=assessV3Tolls({...input,strict:{...input.strict,pricingStatus:"unknown",amount:null},components:[...input.components,{id:"ckad",detected:true,tolls:null,reason:"missing"}]})!;
   assert.equal(partial.status,"unknown");assert.equal(partial.totalRub,null);assert.equal(partial.knownPartRub,123);assert.equal(validTollEstimateView(partial),true);
+  const longReason=assessV3Tolls({...input,strict:{...input.strict,pricingStatus:"unknown",amount:null},components:[{id:"ckad",detected:true,tolls:null,reason:"x".repeat(2000)}]})!;
+  assert.equal(validTollEstimateView(longReason),true,"optional error detail must fit its client contract, not reject the strict response");
   const duplicate=assessV3Tolls({...input,components:[...input.components,...input.components]})!;assert.equal(duplicate.totalRub,null);
   const independent=assessV3Tolls({...input,validation:null})!;assert.equal(independent.status,"confirmed");assert.equal(independent.totalRub,123);
   const incomplete=assessV3Tolls({...input,strict:{...input.strict,pricingStatus:"unknown",amount:null},validation:{...input.validation!,complete:false}})!;assert.equal(incomplete.status,"unknown");
   const model=assessV3Tolls({...input,components:[{...input.components[0],id:"m12",reason:"current model"}]})!;assert.equal(model.status,"estimated");assert.equal(model.totalRub,123);assert.equal(model.warnings.length,1);
   const invalid=assessV3Tolls({...input,departureAt:"2026-02-30T09:00:00+03:00"})!;assert.equal(invalid.totalRub,null);
+  const split={...input,strict:{...input.strict,pricingStatus:"unknown",amount:null},components:[
+   {...input.components[0],id:"m4" as const,tolls:{...input.components[0].tolls!,amount:100}},
+   {...input.components[0],id:"m4-545" as const,tolls:{...input.components[0].tolls!,amount:320}}],m4Sections:["m4-other"],m4545Sections:["m4-545-a","m4-545-b"]};
+  assert.equal(assessV3Tolls(split)!.totalRub,420,"CONTROLLED disjoint split, not a real tariff");
+  assert.equal(assessV3Tolls({...split,m4Sections:["m4-545-a","m4-545-b"]})!.totalRub,null,"overlapping aggregate/545 cannot charge twice");
  }finally{for(const [key,value] of [["V3_TOLL_ESTIMATE",saved.flag],["NODE_ENV",saved.mode],["VERCEL_ENV",saved.vercel]]){if(value===undefined)delete process.env[key!];else process.env[key!]=value;}}
 });
 test("F2 client view rejects numeric unknown and separates partial from full and approximate labels",()=>{

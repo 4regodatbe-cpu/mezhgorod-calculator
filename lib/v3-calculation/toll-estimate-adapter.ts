@@ -14,6 +14,8 @@ import {unpricedRoadCoverage} from "./unpriced-road-coverage";
 import headExit from "@/experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json" with {type:"json"};
 import {tollEstimateEnabled} from "./toll-estimate-switch";
 import validity from "@/experiments/nationwide-tolls/engine/fare-validity.cjs";
+import ckadReference from "@/experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/physical-directed.json" with {type:"json"};
+import {haversineKm} from "../toll-engine/m11-moscow-geometry";
 
 type Input = {
   route: RouteWithGeometry; departureAt: string; validation: TollValidation | null;
@@ -26,6 +28,10 @@ const M12_WARNING = "М-12: использована рабочая тарифн
 const working = (c: RouteTollComponent) => ["m4","m4-545","m4_a289","m12"].includes(c.id)
   || c.reason === "zsd_kad_south_ekateringofka_owner_zone_vector"
   || /estimat|approx|unverified|working|inferred|candidate/iu.test(c.reason ?? "");
+// Reuse the existing reviewed northern-arc reference and its conservative
+// path/chord bound, not a new atlas, tariff or per-km monetary rule.
+const ckadMaxKm = ckadReference.witnesses.slice(1).reduce((sum,p,i) => sum + haversineKm(
+  [ckadReference.witnesses[i].lon,ckadReference.witnesses[i].lat],[p.lon,p.lat]),0) * 1.3;
 
 function completeTrace(v: TollValidation | null) {
   return v?.complete === true && v.boothEventCoverage === "complete" && !!v.chunkCount
@@ -45,6 +51,19 @@ function ckadEstimate(input: Input, signature: string): RouteTollComponent | nul
   const forward = from?.includes("М-11") && to?.includes("М-7") && head.to === "tskad";
   const reverse = from?.includes("М-7") && to?.includes("М-11") && head.from === "tskad";
   if (!forward && !reverse) return null;
+  const firstLeg=b.entry.legIndex,lastLeg=b.exit.legIndex;
+  if(firstLeg===undefined||lastLeg===undefined||firstLeg>lastLeg)return null;
+  let arcKm=0;
+  for(let li=firstLeg;li<=lastLeg;li++){
+    const leg=legs[li],start=li===firstLeg?leg.maneuvers![b.entry.sourceIndex].begin_shape_index!:0;
+    const end=li===lastLeg?leg.maneuvers![b.exit.sourceIndex].end_shape_index!:leg.coordinates.length-1;
+    for(let i=start;i<end;i++){
+      const gap=haversineKm(leg.coordinates[i],leg.coordinates[i+1]);
+      if(!Number.isFinite(gap)||gap>5)return null;
+      arcKm+=gap;if(arcKm>ckadMaxKm)return null;
+    }
+  }
+  if(arcKm<=0)return null;
   const pair = forward ? {from:"М-11 Нева",to:"М-7 Волга"} : {from:"М-7 Волга",to:"М-11 Нева"};
   const q = matrixCkadComponent({exact:true,traversal:pair}, input.departureAt, 0);
   if (!q?.tolls || !Number.isSafeInteger(q.tolls.amount)) return null;
@@ -107,9 +126,12 @@ export function assessV3Tolls(input: Input): TollEstimateView | undefined {
     const result = estimateRouteTolls({routeId:signature,geometrySha256:signature,departureAt:input.departureAt,
       coverageComplete:completeTrace(input.validation),requiredCoverage:[...new Set(required)],components:parts,strict:input.strict,
       confirmedNoPaidCrossing:input.strict.pricingStatus === "free" && parts.length === 0},{enabled:true});
+    const zsdWorking=components.find(c=>c.reason==="zsd_kad_south_ekateringofka_owner_zone_vector"&&c.tolls);
     return {version:1,status:result.status === "insufficient" || result.status === "disabled" ? "unknown" : result.status,
       totalRub:result.totalRub,knownPartRub:result.assessedSubtotalRub,confirmedPartRub:result.confirmedSubtotalRub,
-      warnings:parts.some(c => c.id === "m12" && c.quote) ? [M12_WARNING] : [],reasons:result.reasons.slice(0,64)};
+      warnings:[...(parts.some(c => c.id === "m12" && c.quote) ? [M12_WARNING] : []),
+        ...(zsdWorking?.tolls
+          ? [`ЗСД: ${zsdWorking.tolls.amount} ₽ — рабочая зональная модель; состав оплаты конкретного проезда не подтверждён независимо. Это оценочный компонент, не точный тариф оператора.`] : [])],reasons:result.reasons.slice(0,64).map(s=>s.slice(0,1000))};
   } catch {
     // Optional evidence failure must not fail or rewrite the strict calculation.
     return unknown("estimate_evidence_unavailable");

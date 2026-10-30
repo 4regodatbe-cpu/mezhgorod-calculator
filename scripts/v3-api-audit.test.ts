@@ -68,4 +68,22 @@ test('valid leap day and explicit timezone dates remain accepted',async()=>{
   assert.equal(result.status,200,departureAt+': '+JSON.stringify(await result.json()));
  }
 });
+test('F4 actual V3 POST keeps legacy body OFF/ON and production-denies the optional layer in standard/dual modes',async()=>{
+ const saved={flag:process.env.V3_TOLL_ESTIMATE,mode:process.env.NODE_ENV,vercel:process.env.VERCEL_ENV};
+ const strip=(value:unknown):unknown=>Array.isArray(value)?value.map(strip):value&&typeof value==='object'
+  ?Object.fromEntries(Object.entries(value).filter(([k])=>k!=='tollEstimate').map(([k,v])=>[k,strip(v)])):value;
+ try{
+  process.env.NODE_ENV='test';delete process.env.VERCEL_ENV;
+  for(const from of [anapa,yalta]){
+   const body={from,to:krasnodar,departureAt:'2026-10-13T09:00:00+03:00',includeTollEstimate:true};
+   delete process.env.V3_TOLL_ESTIMATE;const offResponse=await POST(req(body)),off=await offResponse.json();assert.equal(offResponse.status,200);
+   assert.equal('tollEstimate' in off.legs[0].fast,false,'request fields cannot enable the server switch');
+   process.env.V3_TOLL_ESTIMATE='1';const onResponse=await POST(req(body)),on=await onResponse.json();assert.equal(onResponse.status,200);
+   assert.ok(on.legs[0].fast.tollEstimate);assert.deepEqual(strip(on),off,'all strict/vehicle/territory fields remain identical');
+   if(on.options)assert.deepEqual(on.options[0].fast.tollEstimate,on.legs[0].fast.tollEstimate);
+   process.env.VERCEL_ENV='production';const protectedResponse=await POST(req(body)),protectedBody=await protectedResponse.json();assert.equal(protectedResponse.status,200);
+   assert.equal('tollEstimate' in protectedBody.legs[0].fast,false);delete process.env.VERCEL_ENV;
+  }
+ }finally{for(const [key,value] of [['V3_TOLL_ESTIMATE',saved.flag],['NODE_ENV',saved.mode],['VERCEL_ENV',saved.vercel]]){if(value===undefined)delete process.env[key!];else process.env[key!]=value;}}
+});
 test.after(()=>{globalThis.fetch=originalFetch;});

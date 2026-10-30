@@ -1,3 +1,7 @@
+## 30.10.2026 — F4 контрольные интеграции PASS / F5 gates STARTED LOCAL
+
+[F4/F5 checkpoint](checkpoints/2026-10-30-stage-F4-controls-F5-STARTED-LOCAL.md), [точная таблица](../experiments/toll-estimates/INTEGRATION.md). ActualproducerOFF/ON: Tor5904/6084estimated+M12warning; Kras10464/12334estimated; Arzfullnull/part6928/7268. **Gran600 — компонентЗСД, не целыймаршрут**; фактическая wholeкомпозиция9534/11184estimated и строгие суммы не менялись. Первое ошибочное ожидание600whole сохранено какFAIL, не тарифныйфикс.9targetPASS/TS0/lint0 +actualPOSTstandard/dual/Productiondeny5PASS(CONTROLLEDtransport);0внешнихзапросов. Reverse/longarc/incomplete/duplicate/date guardsPASS. F5onecombined/offlinegate/wholelint/TS/directbuild pending; no push/CI/env/Preview/Production. Addressdefects/ЗСДexactbundle открыты, режимOFF.
+
 ## 30.10.2026 — F3 API/UI LOCAL OFF / F4 контролы STARTED
 
 [F3 checkpoint](checkpoints/2026-10-30-stage-F3-api-ui-LOCAL.md), [журнал](../experiments/toll-estimates/INTEGRATION.md). V3optionalfield+three-statecard/M12warning/manualinput/labelledclipboard готовы локально; strict/kmprice/fastestroute/V2 не менялись.8targetPASS/ReactSSR/APIshape, TS0/lint0 (initialTSunion failure сохранён). DefaultOFF/Productiondeny; нет browser/Previewclaim/push/CI/env/deploy. F4newintegrationcause: fourexisting captures ×2departures×OFF/ON, only recordedresponses, strict/geometry equality; затем F5requiredgate/build. Адресные дефекты и операторский ЗСДbundle остаются открытыми.
