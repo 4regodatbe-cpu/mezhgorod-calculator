@@ -1,3 +1,7 @@
+## 30.10.2026 — E recovery verification STARTED LOCAL
+
+[Verification checkpoint](checkpoints/2026-10-30-stage-E-recovery-verification-STARTED.md):39focusedtests/scopedTS/lint/projectTS, one mandatory existing offlineunitgate after new offlinecode (not route/sourceaudit), one requested directwebpackbuild with immediate persistedexit. Source/review guards pinned; actualresults pending. Prior3blocks saved locally;1new fullshadowroute5904/6084, Arzamasfullnull; no push/UI/app/CI/Production change.
+
 ## 30.10.2026 — E recovery3 Torzhok→Kazan LOCAL /1new full estimate
 
 [Torzhok checkpoint](checkpoints/2026-10-30-stage-E-recovery-Torzhok-LOCAL.md): one previouslyunknown M11+CKAD+M12 route now shadowestimated5904Thu/6084Sat. Actual existingresolver proves p214→p58 and southboundhead200/240 (notforward280/320), both oldresidualbooths mapped once; CKADM11→M7 sourcepair941, M12existing3513workingmodel. Strictunknown/null and sourcegeometry/matrix unchanged. SixnewPASS/exit0/lint0;0network/capture/fullreplay/push/UI. ExactZSDbundle/truePrimorsk remainunresolved. Next one directbuild reliableexit + finalfocusedchecks/consolidation.

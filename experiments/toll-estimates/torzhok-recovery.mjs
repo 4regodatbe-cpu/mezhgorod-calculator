@@ -29,7 +29,8 @@ export function buildTorzhokRecovery(){
  const coords=data.record.route.coordinates,geometrySha256=sha(JSON.stringify(coords));
  assert.equal(geometrySha256,'afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7');
  assert.equal(data.record.provider,'Valhalla');assert.equal(prior.captureSha256,sha(raw));
- assert.equal(prior.tolls.amount,null);assert.equal(prior.traceComplete,true);assert.equal(review.traceComplete,true);
+ assert.equal(prior.tolls.amount,null);assert.equal(prior.traceComplete,true);assert.equal(review.traceComplete,true);assert.equal(review.captureSha256,sha(raw));
+ assert.equal(prior.audit.components.find(c=>c.id==='unknown-paid-road')?.reason,'unmapped_selected_route_paid_booth','only a source-mapped booth residual may be discharged, never an unrelated missing road');
  const traces=data.calls.filter(c=>c.url.includes('/trace_attributes')).map(c=>{assert.equal(c.status,200);const t=JSON.parse(c.text);assert.ok(Array.isArray(t.edges));return t;});
  assert.equal(traces.length,review.chunkCount);assert.equal(review.checkedChunkCount,traces.length);
  const edges=traces.flatMap(t=>t.edges),booths=[...new Map(edges.filter(e=>e.end_node?.type==='toll_booth').map(e=>[String(e.end_node.node_id),{osmNodeId:String(e.end_node.node_id),wayId:String(e.way_id)}])).values()];
@@ -45,6 +46,7 @@ export function buildTorzhokRecovery(){
  assert.ok(ms.find(m=>m.end_shape_index===1036)?.street_names?.includes('М-11'));
  assert.ok(ms.find(m=>m.begin_shape_index===1648)?.street_names?.includes('М-7'));
  const ckadSource=read(ckadPath);assert.equal(sha(bytes('experiments/nationwide-tolls/'+ckadSource.sourceFile)),ckadSource.sourceSha256);
+ assert.equal(ckadSource.sourceSha256,'839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7');assert.equal(ckadSource.effectiveFrom,'2026-03-02T00:00:00+03:00');
  const ckadRub=ckadSource.directFareRub['М-11 Нева']['М-7 Волга'];assert.equal(ckadRub,941);
  const savedM12=prior.audit.components.find(c=>c.id==='m12');assert.ok(savedM12.tolls);
  const pair=savedM12.tolls.segments[0].match(/М-12:\s+(\S+)\s+→\s+(\S+)/u);assert.ok(pair);
