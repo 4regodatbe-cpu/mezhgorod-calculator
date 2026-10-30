@@ -130,9 +130,11 @@ def zsd_extended():
     pts.append(xp('ZSD', rvp, '13020687195', 'technical', 'РВП64/64E на проспектеКрузенштерна; не кассовый шлагбаум', rvp_path, 'westbound_toward_ZSD', ['351741889'], ['проспект Крузенштерна', 'ЗСД']))
     rvptags = tags(rvp.find('node[@id="13020687195"]'))
     assert rvptags['ref:rutoll'] == '64E'
-    return finish('ZSD_EXTENDED', [path, rvp_path, 'experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-zsd.json', BASE + 'raw/zsd-planernaya-short-route-accessibility.txt'], pts,
+    capture_path = SNAP + 'systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz'
+    reference_geometry = SNAP + 'zsd/2026-10-17-planernaya-no-reentry/geometry.json'
+    return finish('ZSD_EXTENDED', [path, rvp_path, capture_path, reference_geometry, 'experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-zsd.json', BASE + 'raw/zsd-planernaya-short-route-accessibility.txt'], pts,
                   directedGate={'wayId': str(way['id']), 'nodeOrder': [str(n) for n in way['nodes']], 'tags': way['tags']}, rvp64={'tags': rvptags, 'sourceNodeOrder': [n.get('ref') for n in rvp.find('way').findall('nd')]},
-                  selectedPlanernayaWitness={'caseId': 'max-chain-m12-ckad-m11-zsd-arzamas-to-prim', 'capturePath': SNAP + 'systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz', 'callIndex': 11, 'gateEdgeIndex': 109, 'orderedLocalWays': ['252148968', '355755817', '151490266', '355755820', '192140964', '151490260']},
+                  selectedPlanernayaWitness={'caseId': 'max-chain-m12-ckad-m11-zsd-arzamas-to-prim', 'capturePath': capture_path, 'callIndex': 11, 'gateEdgeIndex': 109, 'orderedLocalWays': ['252148968', '355755817', '151490266', '355755820', '192140964', '151490260']},
                   mapControl={'meters': 172, 'minutes': 1, 'status': 'SHORT_CONTROL_CONSTRUCTED', 'scope': 'gate-area to local urban-fork reference from another saved motif; not the whole Arzamas route or proof of reentry', 'polylineSnapRetrieved': False},
                   operatorGap='Full entry/exit cash-card zone/payment bundle and any applicable receipt treatment still unknown. RVP64/64E is registration infrastructure; do not import finished600 or isolated300/zero.',
                   geographyStatus='Exact Planernaya gate and RVP64 primary coordinates retained; full larger route outer operator boundary and legal/payment scope not inferred.')

@@ -1,3 +1,7 @@
+## 30.10.2026 — D cartography extendedZSD LOCAL / final atlas next
+
+[ExtendedZSD checkpoint](checkpoints/2026-10-30-stage-D-cartography-ZSD-extended-LOCAL-PARTIAL.md):3 source-exact points distinguish cash booth1766158781/way355755817 from64E gantry13020687195/пр.Крузенштерна. Missing Planernaya original recovered200; actual retained Arzamas→Prim gate witness indexed, not six-case motif replay. Yandex local172m/1min is local corroboration only; larger origin/product/payment bundle remains unknown, no600/300/zero imported. One atlas checkPASS. All six per-road/source blocks saved locally, no app/runtime/tariff/CI/push/Production change. Next final32point atlas,15 focused metadata checks total, six short controls vs two map-detour conflicts, provenance/recovery handoff.
+
 ## 30.10.2026 — D cartography CKAD exact local frame saved / product still unknown
 
 [CKAD checkpoint](checkpoints/2026-10-30-stage-D-cartography-CKAD-LOCAL-PARTIAL.md):3 source-exact points around12443433262/way1080462753, parent/oneway/node order now explicit. Yandex local570m/1min and inspected A113 raster corroborate geography, not free-domain boundary;275/274maplabels not official chainage. General PK5free and OSM fee/toll flags remain distinct; no zero/price invented. One atlas checkPASS. Previous M4/ZSD/M12/M11 saved, two current map-detour conflicts remain explicit. No push/runtime/tariff/CI changes. Next extendedZSD Planernaya/RVP64 then final atlas counts/evidence.
