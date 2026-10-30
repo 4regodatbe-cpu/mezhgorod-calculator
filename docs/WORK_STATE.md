@@ -1,3 +1,7 @@
+## 30.10.2026 — E2 disabled estimate prototype LOCAL /12checksPASS
+
+[E2 checkpoint](checkpoints/2026-10-30-stage-E2-prototype-LOCAL.md), [contract/module](../experiments/toll-estimates/README.md). Pure optional shadow returns confirmed/estimated/insufficient and unchanged strict snapshot; max only over documented exhaustive comparable candidates, no invented rate/product. Coverage/overlap/date/profile/zero/overflow guards, bounded work. Final12tests/scopedstrictTS/lintPASS; targeted profileguard negative retained/fixed, not liveappdefect. No app/runtime/data/CI activation/push. E1newcontrols timed out, causesunknown. Next E3small saved multi-road projection→E4toll-only viewmodel→E5onefinalgate/localhandoff, no old road/source audit.
+
 ## 30.10.2026 — E1 map placement controls BLOCKED / E2 prototype next
 
 [E1checkpoint](checkpoints/2026-10-30-stage-E1-map-BLOCKED.md), [two exact changed controls](../experiments/toll-estimates/checks/2026-10-30/e1-map-controls.json). Source mainline-before-junction M12 and ramp-interior M11 placements/directions checked; each new Opera navigation timed out30s/UNAVAILABLE, no tabID/UI results. No repeat/screenshot/security workaround, source32point audit not rerun. Both prior detour causes still unknown; no geometry/application defect asserted or changed. Next independent off-by-default E2 estimate/coverage module with source-compatible inputs, then saved-route sample/viewmodel/tests. No push/runtime/CI/Production change; remotec2f52ee9/PR14Draft.
