@@ -4,7 +4,7 @@ const require=createRequire(import.meta.url),ts=require('typescript'),React=requ
 const root=resolve(dirname(new URL(import.meta.url).pathname),'..'),cache=new Map();
 function load(file){if(!existsSync(file)){file=['.ts','.tsx'].map(s=>file+s).find(existsSync);}if(cache.has(file))return cache.get(file).exports;
  const mod={exports:{}};cache.set(file,mod);const code=ts.transpileModule(readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022}}).outputText;
- vm.runInNewContext(code,{module:mod,exports:mod.exports,require:name=>name.startsWith('.')?load(resolve(dirname(file),name)):require(name)});return mod.exports;}
+ vm.runInNewContext(code,{module:mod,exports:mod.exports,require:name=>name.startsWith('@/')?load(resolve(root,name.slice(2))):name.startsWith('.')?load(resolve(dirname(file),name)):require(name)});return mod.exports;}
 const {ResultPanels}=load(resolve(root,'app/v2/components/result-panels.tsx'));
 test('actual fastest result render preserves night price without confirmation notice',()=>{
  const fare={totalPrice:100,requiresSplit:false,reviewRequired:false,dualTariff:false,pricingSegments:[]};

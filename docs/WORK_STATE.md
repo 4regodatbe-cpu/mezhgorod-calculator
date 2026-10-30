@@ -1,3 +1,7 @@
+## 30.10.2026 — F5 loader repair LOCAL PASS / fullgate retry STARTED
+
+[Loader checkpoint](checkpoints/2026-10-30-stage-F5-loaders-LOCAL-retry-STARTED.md):14/14affected render/hook/clipboard testsPASS, same realTSalias loader as sharedhelper; no assertions/application logic changed. Source48d685a7 build0 stillapp-equivalent (diffexit0), no repeatedbuild. Freshmandatoryofflinegateretry+wholelint pending; initial1043PASS/10importFAIL/1SKIP retained, F5NOTDONE. Fourroutecontrols/53targets/TS/oldwholelintPASS; newmodule defaultOFF/Productiondeny. No push/env/deploy/CI; address protectedPreview/livePhoton/mobile gaps andZSDbundle open separately.
+
 ## 30.10.2026 — F5 PARTIAL LOCAL: build0, mandatorygate loader failure
 
 [First F5 results](checkpoints/2026-10-30-stage-F5-first-gates-PARTIAL-LOCAL.md).53targetPASS, TS0, wholelint0/7warnings, directNext16.3.4buildNode24.19.0 **actualexit0** at48d685a7. Fullofflinegateexit1/1043PASS/10FAIL/1SKIP: three old customVMloaders cannot resolve new @/lib/toll-estimate-view; existing assertions not reached, app/nativeReact/buildPASS. F5 NOTDONE; next minimal testloaderalias repair +targetedtests +justifiedfullgateretry, no app fix/securityworkaround. FourrouteOFF/ONcontrolsPASS, estimateOFF/Productiondeny/no push/CI/deploy. Addressopen separately: D1localfix not protectedPreview-accepted; live street/Photon resilience/mobile-timeout evidence incomplete. No address work inF.

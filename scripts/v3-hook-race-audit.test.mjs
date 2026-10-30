@@ -7,7 +7,7 @@ function harness(fetch,clipboard={writeText:async()=>{}}){
  const react={useRef:current=>({current}),useState:initial=>{const index=states.length;states.push(initial);return [initial,value=>{states[index]=typeof value==='function'?value(states[index]):value;}];},useEffect:effect=>{const cleanup=effect();if(cleanup)cleanups.push(cleanup);}};
  const file=resolve(root,'app/v3/components/use-v3-calculation.ts');const mod={exports:{}};
  const code=ts.transpileModule(readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
- vm.runInNewContext(code,{module:mod,exports:mod.exports,AbortController,Error,fetch,navigator:{clipboard},setTimeout,clearTimeout,require:name=>name==='react'?react:name.startsWith('.')?load(resolve(dirname(file),name)):require(name)});
+ vm.runInNewContext(code,{module:mod,exports:mod.exports,AbortController,Error,fetch,navigator:{clipboard},setTimeout,clearTimeout,require:name=>name==='react'?react:name.startsWith('@/')?load(resolve(root,name.slice(2))):name.startsWith('.')?load(resolve(dirname(file),name)):require(name)});
  const hook=mod.exports.useV3Calculation({from:{label:'A'},to:{label:'B'},rates:{},specialRates:{},requestMode:()=>({mode:'standard',modeOverride:false}),onServerMode:()=>{},multiplier:1});
  return {hook,states,cleanup:()=>cleanups.forEach(f=>f())};
 }
@@ -33,6 +33,16 @@ test('clipboard contains the same actual toll and warning as the displayed quote
  let copied='';const h=harness(async()=>Response.json({}),{writeText:async text=>{copied=text;}});
  const d=data('A'),leg=d.legs[0];await h.hook.copyStandard('k','title',leg,leg.fast,toll,undefined,'actual');
  assert.match(copied,/880/);assert.match(copied,/980/);assert.doesNotMatch(copied,/1130|1650/);assert.doesNotMatch(copied,/Стоимость не подтверждена|квитанц|провайдером/);h.cleanup();
+});
+test('F5 clipboard appends a labelled estimate without substituting the strict transfer total',async()=>{
+ let copied='';const h=harness(async()=>Response.json({}),{writeText:async text=>{copied=text;}});
+ const d=data('A'),leg=d.legs[0];
+ // CONTROLLED presentation fixture, not a second real tariff for this route.
+ leg.fast.tollEstimate={version:1,status:'estimated',totalRub:5904,knownPartRub:5904,confirmedPartRub:1250,warnings:['М-12: регистрационные границы не подтверждены'],reasons:[]};
+ await h.hook.copyStandard('k','title',leg,leg.fast,toll,undefined,'actual');
+ assert.match(copied,/Дополнительная оценка дорог \(не меняет строгий итог\)/u);
+ assert.match(copied,/5\s904 ₽ \(ориентировочно\)/u);assert.match(copied,/регистрационные границы/u);
+ assert.match(copied,/980/u);assert.doesNotMatch(copied,/6\s004/u);h.cleanup();
 });
 
 test('a late clipboard completion cannot mark a reset quote copied',async()=>{
