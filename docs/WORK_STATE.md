@@ -1,3 +1,7 @@
+## 30.10.2026 — E recovery2 Arzamas PARTIAL LOCAL / CKAD941
+
+[Arzamas checkpoint](checkpoints/2026-10-30-stage-E-recovery-Arzamas-LOCAL.md): saved `arzamas-to-prim` actually ends onSPb Primorsky avenue, notPrimorsk. Actual CKADM7→M11 sourcepair941 nowassessed offline; parts6928Thu/7268Sat, fullnull due exactZSD cash/card bundle. Hypothesis900/conditional7828/8168 notadmitted asfare. Five newchecksPASS/exit0+scopedlint0; source/matrix/geometry unchanged/no replay/network/push. New fullunknownunlocks0. Next one different multiroad case, then reliableexit directbuild.
+
 ## 30.10.2026 — E recovery1 ZSD600 source grade LOCAL
 
 [ZSD600 checkpoint](checkpoints/2026-10-30-stage-E-recovery-ZSD600-LOCAL.md), [source review](../experiments/toll-estimates/PRACTICAL_RECOVERY.md). Derived300+300 supports working estimate, not independent exactOD confirmation; shadow600 nowestimated, strict priced/confirmed/600 and original matrix/source/status unchanged. Final5focusedPASS/scopedTS/lint exit0; initial null-vs0 assertion failure retained. No new full previouslyunknown result, no push/UI/CI/Production. Next saved Arzamas CKAD/ZSD; separate build exit capture pending.
