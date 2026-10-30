@@ -45,6 +45,10 @@
     {
       "path": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
       "sha256": "527b0ac0bcf932a30e8a9d95a2bd9c6cac90ee081107371bebb1abd8d0f5d378"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/2026-04-24-15-58-category1.json",
+      "sha256": "375416b2ab4692ffb744661017e58106ea4167340953e10489912541f064f583"
     }
   ],
   "proof": {
@@ -156,7 +160,7 @@
               "rub": 1250,
               "profile": "monThu",
               "validity": "resolved",
-              "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "source": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "assurance": "confirmed"
             }
           },
@@ -200,7 +204,7 @@
               "rub": 200,
               "profile": "monThu",
               "validity": "resolved",
-              "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "source": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "assurance": "confirmed"
             }
           },
@@ -288,7 +292,7 @@
               "rub": 3513,
               "profile": "allDays",
               "validity": "resolved",
-              "source": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "source": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "assurance": "working_estimate"
             }
           }
@@ -330,7 +334,7 @@
             },
             "method": "direct_quote",
             "sources": [
-              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json"
             ],
             "reason": "source_bound_quote_at_departure"
@@ -359,7 +363,7 @@
             },
             "method": "direct_quote",
             "sources": [
-              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json"
             ],
             "reason": "source_bound_quote_at_departure"
@@ -417,7 +421,7 @@
             },
             "method": "retained_working_quote",
             "sources": [
-              "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json"
             ],
             "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"
@@ -506,7 +510,7 @@
               "rub": 1390,
               "profile": "friSun",
               "validity": "resolved",
-              "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "source": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "assurance": "confirmed"
             }
           },
@@ -550,7 +554,7 @@
               "rub": 240,
               "profile": "sat",
               "validity": "resolved",
-              "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "source": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "assurance": "confirmed"
             }
           },
@@ -638,7 +642,7 @@
               "rub": 3513,
               "profile": "allDays",
               "validity": "resolved",
-              "source": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "source": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "assurance": "working_estimate"
             }
           }
@@ -680,7 +684,7 @@
             },
             "method": "direct_quote",
             "sources": [
-              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json",
+              "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-entry5286168661/directed-entry.json"
             ],
             "reason": "source_bound_quote_at_departure"
@@ -709,7 +713,7 @@
             },
             "method": "direct_quote",
             "sources": [
-              "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json",
+              "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/directed-exit.json"
             ],
             "reason": "source_bound_quote_at_departure"
@@ -767,7 +771,7 @@
             },
             "method": "retained_working_quote",
             "sources": [
-              "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json",
+              "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
               "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json"
             ],
             "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"

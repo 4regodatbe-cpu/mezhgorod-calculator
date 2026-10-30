@@ -16,7 +16,8 @@ test('all eight retained trace chunks and both formerly unmapped plazas are sour
  assert.equal(r.proof.ckad.rub,941);assert.equal(r.proof.ckad.to,'М-7 Волга');assert.equal(r.proof.ckad.footnote120Applies,false);assert.equal(r.geometryUnchanged,true);assert.equal(r.networkRequests,0);assert.equal(r.newFullRouteReplays,0);
 });
 test('M12 retained3513 is explicitly working-grade, not new endpoint certification',()=>{
- for(const s of r.rows){const c=s.input.components.find(c=>c.id==='m12');assert.equal(c.quote.rub,3513);assert.equal(c.quote.assurance,'working_estimate');assert.equal(c.entry,'vladimir');assert.equal(c.exit,'ivanovskoe_p241');}
+ for(const s of r.rows){const c=s.input.components.find(c=>c.id==='m12');assert.equal(c.quote.rub,3513);assert.equal(c.quote.assurance,'working_estimate');assert.equal(c.entry,'vladimir');assert.equal(c.exit,'ivanovskoe_p241');
+  for(const part of s.input.components.filter(v=>v.id!=='ckad')){assert.equal(part.quote.source,'experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json');assert.notEqual(part.quote.source,part.scope.reference,'physical proof is not a monetary tariff source');}}
 });
 test('no full estimate if any recovered component lacks evidence or extra unknown product is present',()=>{
  const input=r.rows[0].input;

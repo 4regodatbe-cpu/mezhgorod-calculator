@@ -1,6 +1,6 @@
 # Stage E — optional local toll-estimate prototype
 
-30.10 practical-recovery amendment: [source confidence review](PRACTICAL_RECOVERY.md). The retained ZSD600 is now **estimated** in the offline shadow, not independently confirmed; original strict600/confirmed/source remain unchanged. Earlier E3 artifacts/checkpoints below are historical, not rewritten. No UI activation.
+30.10 practical-recovery amendment: [source review and actual new result](PRACTICAL_RECOVERY.md). **One previously unknown route Torzhok→Kazan now has full shadow estimates5904Thu/6084Sat**. Saved Arzamas case actually ends onSPb Primorskyave, notPrimorsk; assessed6928/7268, fullnull dueZSD bundle. Retained ZSD600 now **estimated**, not independently confirmed; original strict600/confirmed/source unchanged.40focusedPASS, mandatoryoffline1047PASS/1SKIP, newdirectbuild actualexit0. Earlier E3 artifacts/checkpoints below are historical, not rewritten. No UI/liveintegration/activation/push.
 
 Sourcee6a8a2fe,30.10.2026 MSK. No runtime integration/activation, push, CI or Production change. Default `TOLL_ESTIMATES_DEFAULT=false`; callers must explicitly opt in to this separate shadow result. The original strict snapshot is returned unchanged, not rewritten to priced/free. Selected geometry and routing are opaque immutable IDs/hashes; the module cannot select a route.
 

@@ -63,7 +63,8 @@ export function buildTorzhokRecovery(){
    const conditions={road,operator,product:name,direction:`${from}→${to}`,category:'I',payment:road==='CKAD'?'post-payment':'cash/card',profile};
    return {id:name,conditions,entry:from,exit:to,family:road,aggregate:false,coverageKeys:[name],
     scope:{proven:true,reference:source,routeId:id,geometrySha256},
-    quote:{conditions,routeId:id,geometrySha256,departureAt:at,rub,profile,validity:'resolved',source,assurance}};
+    // Physical register/replay proves scope; monetary provenance is the actual fare registry.
+    quote:{conditions,routeId:id,geometrySha256,departureAt:at,rub,profile,validity:'resolved',source:road==='CKAD'?ckadPath:registryPath,assurance}};
   };
   const components=[component('m11-58-679','M11','Avtodor',b.parts.from,b.parts.to,main.tolls.amount,m11MainlineTariffAt(at).profile,sourceEntry,'confirmed'),
    component('m11-15-58','M11','m11-neva',b.parts.head.from,b.parts.head.to,head.tolls.amount,m11HeadTariffAt(at).profile,sourceExit,'confirmed'),
@@ -74,7 +75,7 @@ export function buildTorzhokRecovery(){
   return {departureAt:at,m11Boundary:b,input,result:estimateRouteTolls(input,{enabled:true})};
  });
  return {caseId:id,from:data.record.spec.from,to:data.record.spec.to,capture:{path:capturePath,sha256:sha(raw)},geometrySha256,
-  sourceEvidence:[priorPath,priorReview,sourceEntry,sourceExit,ckadPath,registryPath].map(path=>({path,sha256:sha(bytes(path))})),
+  sourceEvidence:[priorPath,priorReview,sourceEntry,sourceExit,ckadPath,registryPath,'experiments/nationwide-tolls/source-snapshots/2026-04-24-15-58-category1.json'].map(path=>({path,sha256:sha(bytes(path))})),
   proof:{traceChunks:traces.length,retainedTraceComplete:true,booths,unmappedBooths:[],
    ckad:{from:'М-11 Нева',to:'М-7 Волга',rub:ckadRub,shapeRange:[1036,1648],footnote120Applies:false},
    productCoverage:'p214→p58 mainline + separate p58→CKAD47 concession head + CKAD M11→M7 + retained M12 Vladimir→Ivanovskoe working pair; no ZSD/M4',
