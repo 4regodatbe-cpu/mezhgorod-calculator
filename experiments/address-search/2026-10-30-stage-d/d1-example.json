@@ -1,0 +1,98 @@
+{
+  "query": "Донецк ДНР улица Артёма",
+  "source": {
+    "path": "experiments/address-search/2026-10-29-street-scope/street-2.body",
+    "sha256": "2b231e2c13b7f27c4419d0e8d19994c3168d3c640580abc3a7a36f763fcb4634",
+    "mode": "retained actual Photon response, not a new Preview/Photon capture",
+    "firstFeature": {
+      "type": "Feature",
+      "properties": {
+        "osm_type": "W",
+        "osm_id": 174010725,
+        "osm_key": "highway",
+        "osm_value": "residential",
+        "type": "street",
+        "name": "улица Артёма",
+        "locality": "Брылевка",
+        "city": "Донецк",
+        "state": "Ростовская область",
+        "country": "Россия",
+        "postcode": "346330",
+        "countrycode": "RU",
+        "extent": [
+          39.9818805,
+          48.318216,
+          39.9913515,
+          48.317632
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.9866201,
+          48.3179236
+        ]
+      }
+    }
+  },
+  "execution": {
+    "kind": "actual local GET handler + admitted GeoNames + controlled retained Photon reply",
+    "externalRequests": 0,
+    "mockedPhotonFetchCalls": 3
+  },
+  "response": {
+    "httpStatus": 200,
+    "body": {
+      "items": [
+        {
+          "id": "geonames-709717",
+          "title": "Донецк",
+          "label": "Донецк — ДНР",
+          "region": "ДНР",
+          "position": {
+            "lat": 48.023,
+            "lng": 37.80224
+          }
+        },
+        {
+          "id": "geonames-709714",
+          "title": "Донецкий",
+          "label": "Донецкий — ДНР (1 из 2); район не уточнён",
+          "region": "ДНР",
+          "position": {
+            "lat": 47.71556,
+            "lng": 38.40889
+          }
+        },
+        {
+          "id": "geonames-709715",
+          "title": "Донецкий",
+          "label": "Донецкий — ДНР (2 из 2); район не уточнён",
+          "region": "ДНР",
+          "position": {
+            "lat": 47.41667,
+            "lng": 37.95
+          }
+        }
+      ],
+      "partial": true,
+      "localSource": {
+        "provider": "geonames",
+        "scope": "local-pilot-only",
+        "precision": "settlement-centre",
+        "sourceDate": "2026-10-24",
+        "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceUrl": "https://www.geonames.org/",
+        "semanticAccuracyCertified": false,
+        "omittedExactHomonymsPossible": false
+      },
+      "streetSearch": {
+        "status": "unconfirmed",
+        "precision": "settlement-centre",
+        "message": "Улица не подтверждена. Можно выбрать населённый пункт."
+      }
+    }
+  },
+  "result": "incompatible Rostov street rejected; admitted DNR settlement remains selectable; no confirmed Artyoma street claimed"
+}

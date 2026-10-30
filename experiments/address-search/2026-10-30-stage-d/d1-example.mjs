@@ -1,0 +1,16 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {NextRequest} from 'next/server';
+import {GET} from '../../../app/api/suggest/route.ts';
+import {searchLocalSettlements} from '../../../lib/local-settlement-search.ts';
+const source='experiments/address-search/2026-10-29-street-scope/street-2.body',raw=readFileSync(source);
+const saved=JSON.parse(raw);let calls=0;
+process.env.GEONAMES_LOCAL_PILOT='1';process.env.GEONAMES_LOCAL_TEST='1';process.env.GEONAMES_LOCAL_PILOT_DIR='data/local-settlements';delete process.env.VERCEL;delete process.env.VERCEL_ENV;
+globalThis.fetch=async()=>{calls++;return new Response(raw,{status:200,headers:{'content-type':'application/json'}});};
+const query='Донецк ДНР улица Артёма',city=await searchLocalSettlements('Донецк ДНР');
+const response=await GET(new NextRequest('http://localhost/api/suggest?q='+encodeURIComponent(query))),body=await response.json();
+assert.equal(response.status,200);assert.equal(body.items[0].id,'geonames-709717');assert.deepEqual(body.items[0].position,city.items[0].position);assert.equal(body.streetSearch.status,'unconfirmed');
+const report={query,source:{path:source,sha256:createHash('sha256').update(raw).digest('hex'),mode:'retained actual Photon response, not a new Preview/Photon capture',firstFeature:saved.features[0]},execution:{kind:'actual local GET handler + admitted GeoNames + controlled retained Photon reply',externalRequests:0,mockedPhotonFetchCalls:calls},response:{httpStatus:response.status,body},result:'incompatible Rostov street rejected; admitted DNR settlement remains selectable; no confirmed Artyoma street claimed'};
+writeFileSync(new URL('./d1-example.json',import.meta.url),JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify({query,httpStatus:response.status,first:body.items[0],streetSearch:body.streetSearch,mockedPhotonFetchCalls:calls,externalRequests:0},null,2));

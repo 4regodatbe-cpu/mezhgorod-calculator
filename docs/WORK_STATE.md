@@ -1,3 +1,7 @@
+## 30.10.2026 — D1 street geography FIXED_AND_VERIFIED_LOCAL / unpublished
+
+[D1PASScheckpoint](checkpoints/2026-10-30-stage-D1-street-context-LOCAL-PASS.md),[exactlocalexample](../experiments/address-search/2026-10-30-stage-d/d1-example.json). Runtimeae5203df:genericnocommacontext+eligiblefeaturefilter+coordinatepriorityconstraint. OwnerquerywithsavedwrongRostovreply→200/Донецк—ДНР/geonames709717/48.023,37.80224,streetunconfirmed;notinventedDNRstreet.8newtests0PASS8FAILbefore;26focused+1047offlinePASS/1SKIP,project/newteststrictTS/scopedlint0errors1oldwarning/webpackPASS. No otherroute/tariff/data/CI/A+Bclientchange. Remote c2f52ee9/PR14Draft,NO push/Preview/Production;hostedfixNOTVERIFIED. NextD2boundednewprimarysourcefindings→D3remainingroads→D4table,oldCresultsretained.
+
 ## 30.10.2026 — D1 minimal street-context fix LOCAL / final gates STARTED
 
 [D1codecheckpoint](checkpoints/2026-10-30-stage-D1-fix-LOCAL-gates-STARTED.md):8newregressions0PASS/8FAILbefore;26focusedPASSafter. Threefilesonly:city-firstnocommaprefixextractor,APIrankonlyeligiblefeatures,coordinate-basedexplicitpriorityregionconstraint. Incompatiblestreet→admittedoriginalcityfallback,nomadeupstreetcoords/cityexceptions. Fulloutage/cancel/20sbudgetandordinaryregionoppositeprioritycovered. StrictnewtesttypingPASS;lint0errors/1oldwarning. NextONEmandatoryofflinegate/projectTS/directbuildthenD1finalsave;no push/CI/Preview/Production/sourceaudits. D2readonlysourcebudgetfinished/no bindingyet;D3/D4nextafterD1save. StageC/localhistorypreserved.
