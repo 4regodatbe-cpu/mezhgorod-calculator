@@ -1,3 +1,7 @@
+## 30.10.2026 — F2 адаптер LOCAL / OFF; подключение API/UI следующее
+
+[F2 checkpoint](checkpoints/2026-10-30-stage-F2-adapter-LOCAL.md), [контракт/журналF](../experiments/toll-estimates/INTEGRATION.md). Actualgeometry/per-road component→existing pureestimator, extraCKADM11↔M7 из текущих providersections+M11proof+completeexistingtrace, не fixtureцены. DefaultOFF/Productiondeny/exactPreviewbranch, boundedwork/null/duplicate guards и M12warning.4targetPASS/TS0/lint0; app/API/UI ещё не подключены. Strict/тарифы/геометрия/выбормаршрута неизменны. F3wiring→F4savedfourcases→F5mandatorygates/build; адресные дефекты/ЗСДbundle остаются открытыми. No push/CI/env/deploy.
+
 ## 30.10.2026 — Этап F: F1 проверен, локальная интеграция STARTED
 
 [F1 checkpoint](checkpoints/2026-10-30-stage-F1-state-LOCAL.md). Local620abe48clean/remote c2f52ee9/PR14Draft подтверждены. Разрешены F2 отдельный evidenceadapter+defaultOFF/Productiondeny, F3 optionalAPI/UI, F4 fourcase integration+guards, F5 gates/build with exits. Не переносить namedfixtures/суммы вruntime; strict/kmprice/fastestroute неизменны. Никаких push/CI/env/deploy/Production; addressdefects и ЗСДbundle остаются отдельными открытыми задачами. Старые E-проверки не повторяются без новой интеграционной причины.
