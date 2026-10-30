@@ -45,3 +45,28 @@ Additional negative guards reject reversed geometry with stale provider sections
 Final F4 suite9/9PASS/exit0 (four actual-source cases + source/geometry guards + four adapter tests), projectTS0/scopedlint0. Separate existing `scripts/v3-api-audit.test.ts` extended with one **real POST** standard/dual OFF/ON/Production-denial check;5/5PASS/exit0. That test uses CONTROLLED routing transport, not live routes/operator evidence; stripping the addition leaves the entire old public/vehicle/territory body identical. ReactSSR and recorded-response checks are distinguished from real Preview/browser acceptance, which has not been performed.
 
 F5 final combinedfocused/fulloffline/projectTS/wholeESLint/directproductionbuild now STARTED; no publication or environment activation. Address-search defects and ZSD exactcollectionbundle remain independent open tasks.
+
+## F5 — LOCAL READY, all required checks complete
+
+[Machine evidence/exits/source hashes](checks/2026-10-30-integration/verification.json). Node24.19.0, Next16.3.4. **53targetedPASS**, projectTypeScriptexit0; finalwholeESLintexit0/**0errors,7warnings**; finalmandatoryofflinegate **1057PASS/0FAIL/1SKIP**, quote/APIcontractsPASS, **actualexit0**. The existing skipped realGeoNamesGET test requires GEONAMES_TEST_DIR; not executed/notPASS, unrelated to F. No GeoNames/address/road audit repeated.
+
+The initial fullgate exited1 (1043PASS/10FAIL/1SKIP), because three custom testVMloaders lacked the same @/realTS resolution already supported by sharedhelper/nativeapp/Next. Two renderfiles failed during imports and eight hook tests before assertions. Only the three **test loaders** were repaired; no assertions removed/weakened and no application workaround. Their final14/14tests include a new supplementary-clipboard case retaining the original strict transfer total. Fullgate was retried once for this concrete cause and passed. Initial logs/exits remain intact.
+
+Direct productionbuild command `NEXT_TELEMETRY_DISABLED=1 node node_modules/next/dist/bin/next build --webpack`: **exit0**, compile/TypeScript/static16/16/traces/routescomplete, source `48d685a767010aa9011fc27f03f2e0736fcb973a`. Thereafter only testloaders/docs/evidence changed; application/config/data/dependency/CI **and imported pure estimator** compare identical to that built source. Build was not repeated or falsely attributed to a different entireGit tree. Finalgate source `77c9ce8b8deeb5aa77bb48c881ad7b8042d63182`. Build warning: existing preferredRegiondeprecation. V3 function's local productionNFTmanifest48files contains **no offlinecaptures, named-routefixtures, checklogs or atlas dependency**. This is local bundle tracing, not a Vercel-cloud memory/cold-start measurement.
+
+All F1–F5 are DONE_LOCAL within this stage; not all B01–B12/unknown fares and not a Productionrelease. No push, GitHubActions dispatch/rerun, remoteenvironment change, Preview creation or Productiondeployment. PR14 remains Draft; lastremote readbackc2f52ee93cd98a81ecd05efa0358fb38c6704124. Every stage/savepoint and initialfailed check preserved. Only temporary dependency symlink may be removed, never the real dependency directory or old worktrees/bundles.
+
+### Preview procedure — requires separate publication permission
+
+1. Recheck current remoteHEAD, complete pending localdiff/commits and target **Preview**, notProduction. Existing mandatoryCI remains unchanged; do not silently suppress automatically required jobs. This document does not authorize push, deployment or CI livejobs.
+2. Keep Production flag absent/OFF. For an authorized Preview of exactly `fix/v3-missing-route-prices-2026-10-15`, set only Preview-scoped `V3_TOLL_ESTIMATE=1`; the server additionally requires `VERCEL_ENV=preview` and the exact `VERCEL_GIT_COMMIT_REF`. Production is hard-denied even if flag were accidentally set. Never add a NEXT_PUBLIC/client/request override.
+3. Local developer opt-in uses `V3_TOLL_ESTIMATE=1` with NODE_ENVdevelopment/test and **no VERCEL_ENV**; existing dependencies suffice. No SDK/provider subscription, financial commitment or external flagservice.
+4. Test the actual new deployment/SHA after READY, not an oldPreview: APIoptionalfield/three UI states/manualcopy/standard+dual. For historical amounts use departures15/17October2026,09MSK and the saved exact endpoint/geometry; current dates use current departure calendars, not hard-coded example totals. Production aliases/build must remain unchanged.
+5. Explicitly retain M12/ZSD warnings and Arzamasunknown/null. ExtraCKADM11↔M7 requires this selected provider's full decoded sections plus complete trace; metadata unavailable (including some OSRM/BRouter outputs) meansunknown, **not a slower route choice**. Existing acceptedYandex overrides do not borrow an incompatible pre-override layer. Namedfixtures never enter runtime.
+
+### Independent remaining work, not closed by F
+
+- Exact expandedZSD cash/card collectionbundle missing; no complete Arzamasfare invented.
+- M12 registration-boundary certification remains a warning, not a claim of verified new operators' boundaries.
+- Address D1 street-context fix remains LOCAL-PASS pending protectedPreview acceptance; broader livePhoton/streetcoverage and prior mobile-timeout cause remain unconfirmed. No address components/data/provider logic were changed in F.
+- Real deployedPreview/browser desktop/mobile/cloud resource measurements have **not** been performed in F. Local evidence comprises realReactSSR, recorded-source component integration, CONTROLLED-transport actualPOST and offlinegates/build, explicitly distinguished above.
