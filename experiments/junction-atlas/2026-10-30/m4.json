@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "road": "M4",
+  "date": "2026-10-30",
+  "mode": "research_only_not_runtime",
+  "sources": [
+    {
+      "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+      "sha256": "2a97e707058e7177d957975013644bef16ef142e1b6cb54ad92e3cdebb8fa2c9"
+    },
+    {
+      "path": "experiments/tariff-proof-selection/m4-545-route-history-review.json",
+      "sha256": "2e7a667d74b5468eedcdf678f98ba96d21fc17d1593f5af9bdafd9c8bca67768"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-r298-node3057885104.json",
+      "sha256": "a6391887025ef02d548301351dce25c77f40569e851f00a390f64047d03322b1"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-r298-way301694367-full.json",
+      "sha256": "3f0f8fe2e390024de359e622475154bf0fc6103cbfcb1caf31c0d44e775f4951"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-map-accessibility.txt",
+      "sha256": "66847f4183981e678e534d99ef707c05486071ff595982b1c5bb619ff9bca953"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-north-short-route-accessibility.txt",
+      "sha256": "f89247729f1c9c6c96342a98da2521abfd4e0fe30665ed758f0083474aa5b409"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-south-short-route-accessibility.txt",
+      "sha256": "ac6b1561e99e40c356f03b00f34ca53a29cca0de827de2b22b2083ded296b4ca"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-operator-article-accessibility.txt",
+      "sha256": "18fd4d80984ffa8541b1e1f6141fb0d577ff7ae155b7e21f362fa8ffbb7f16c8"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-osm-z15-19984-10901.png",
+      "sha256": "3adea3faeda907fe1e5bf4b2f193fe0f16412658ca9cb3030cc0784ebf05980c"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-osm-z15-19984-10900.png",
+      "sha256": "50e1273ee93e48773f08c29fe40dc2c1328ec27c8439c92091b96dd69bcb0623"
+    }
+  ],
+  "sourceNotes": {
+    "retainedOsmDate": "2026-10-27",
+    "newOsmUrls": [
+      "https://api.openstreetmap.org/api/0.6/node/3057885104.json",
+      "https://api.openstreetmap.org/api/0.6/way/301694367/full.json"
+    ],
+    "newOsmHttpStatus": 200,
+    "newOsmTimestamp": "2024-07-09T15:33:50Z",
+    "newOsmVersion": 17,
+    "operatorArticle": "https://avtodor-tr.ru/press-center/news/rezhim-platnosti-vveden-na-uchastke-avtomobilnoy-dorogi-m-4-don-v-obkhod-sela-novaya-usman-i-sela-ro/",
+    "articleDate": "2016-12-26",
+    "articleObservation": "existing operator browser tab read; no origin HTTP freshness inferred",
+    "attribution": "© OpenStreetMap contributors, ODbL; Yandex route UI is separate non-operator evidence"
+  },
+  "points": [
+    {
+      "id": "m4-4522140254",
+      "road": "M4",
+      "kind": "technical",
+      "title": "Разделение трёх северных ветвей у Калина Ойл",
+      "position": {
+        "lat": 51.4679181,
+        "lon": 39.554631
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "4522140254",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "4522140254",
+        "wayIds": [
+          "799492317",
+          "799492326",
+          "522875739"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.554631%2C51.4679181&z=18&pt=39.554631%2C51.4679181%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-5818209495",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, южная северная кассовая ветвь в обходной коридор",
+      "position": {
+        "lat": 51.4702718,
+        "lon": 39.554704
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "5818209495",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "5818209495",
+        "wayIds": [
+          "615270691"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.554704%2C51.4702718&z=18&pt=39.554704%2C51.4702718%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-3504914294",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, северная кассовая ветвь",
+      "position": {
+        "lat": 51.4736578,
+        "lon": 39.5548118
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "3504914294",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "3504914294",
+        "wayIds": [
+          "606838738"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5548118%2C51.4736578&z=18&pt=39.5548118%2C51.4736578%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-9620416636",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, соседняя ветвь к старому коридору",
+      "position": {
+        "lat": 51.4702571,
+        "lon": 39.5543533
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "9620416636",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "9620416636",
+        "wayIds": [
+          "467980114"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5543533%2C51.4702571&z=18&pt=39.5543533%2C51.4702571%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-365274796",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, противоположное направление старого коридора",
+      "position": {
+        "lat": 51.4702443,
+        "lon": 39.5539863
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "365274796",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "southbound",
+      "osm": {
+        "nodeId": "365274796",
+        "wayIds": [
+          "467980112"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5539863%2C51.4702443&z=18&pt=39.5539863%2C51.4702443%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-6594393968",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, южная группа противоположного направления",
+      "position": {
+        "lat": 51.4702271,
+        "lon": 39.5536991
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "6594393968",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "southbound",
+      "osm": {
+        "nodeId": "6594393968",
+        "wayIds": [
+          "702218804"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5536991%2C51.4702271&z=18&pt=39.5536991%2C51.4702271%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-3842564088",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, северная группа противоположного направления",
+      "position": {
+        "lat": 51.4738083,
+        "lon": 39.553241
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "3842564088",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "southbound",
+      "osm": {
+        "nodeId": "3842564088",
+        "wayIds": [
+          "702218806"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.553241%2C51.4738083&z=18&pt=39.553241%2C51.4738083%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-4513805004",
+      "road": "M4",
+      "kind": "technical",
+      "title": "Общее слияние двух северных ветвей в обходной коридор",
+      "position": {
+        "lat": 51.4757199,
+        "lon": 39.5552263
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "4513805004",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "4513805004",
+        "wayIds": [
+          "799492323",
+          "1043769288",
+          "702218808"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5552263%2C51.4757199&z=18&pt=39.5552263%2C51.4757199%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-4512436102",
+      "road": "M4",
+      "kind": "technical",
+      "title": "Отдельный выход северной ветви к старому коридору",
+      "position": {
+        "lat": 51.4739566,
+        "lon": 39.55394
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "4512436102",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "4512436102",
+        "wayIds": [
+          "1043769285",
+          "454710293"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.55394%2C51.4739566&z=18&pt=39.55394%2C51.4739566%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-3057885096",
+      "road": "M4",
+      "kind": "technical",
+      "title": "Начало подтверждённого соединительного съезда М4 к Р-298",
+      "position": {
+        "lat": 51.6449648,
+        "lon": 39.314027
+      },
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/m4-r298-way301694367-full.json",
+        "nodeId": "3057885096",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound_to_west",
+      "osm": {
+        "nodeId": "3057885096",
+        "wayIds": [
+          "1044709392",
+          "301694367"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.314027%2C51.6449648&z=18&pt=39.314027%2C51.6449648%2Cpm2rdm",
+      "operatorScheme": null,
+      "evidence": {
+        "visual": "not independently viewed on a map in this block; original OSM node/way only",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    },
+    {
+      "id": "m4-3057885104",
+      "road": "M4",
+      "kind": "exit",
+      "title": "Конец съезда с М4 к Р-298, Курск/Воронеж",
+      "position": {
+        "lat": 51.6462483,
+        "lon": 39.3099156
+      },
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/m4-r298-way301694367-full.json",
+        "nodeId": "3057885104",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»",
+        "Р-298"
+      ],
+      "interchangeName": null,
+      "direction": "northbound_to_west",
+      "osm": {
+        "nodeId": "3057885104",
+        "wayIds": [
+          "301694367",
+          "705714822"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.3099156%2C51.6462483&z=18&pt=39.3099156%2C51.6462483%2Cpm2rdm",
+      "operatorScheme": null,
+      "evidence": {
+        "visual": "not independently viewed on a map in this block; original OSM node/way only",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding."
+    }
+  ],
+  "connections": [
+    {
+      "id": "m4-545-north-southern-cash",
+      "direction": "northbound",
+      "wayIds": [
+        "799492317",
+        "615270676",
+        "615270691",
+        "615270694",
+        "1043769287",
+        "799492323"
+      ],
+      "fromNode": "4522140254",
+      "toNode": "4513805004",
+      "gateNode": "5818209495",
+      "proof": "retained exact one-way node order, contiguous at shared nodes",
+      "selectedRouteWitness": {
+        "path": "experiments/tariff-proof-selection/m4-545-route-history-review.json",
+        "field": "reviewedFinalChunk.gatePathEdges/onwardWayAndEndNodes",
+        "caseId": "pair-m4-a289-taman-to-voronezh"
+      },
+      "turnRestrictions": "all legal turns/access restrictions are not independently certified by this selected OSM subset",
+      "completeOperatorProduct": false,
+      "priceRub": null
+    },
+    {
+      "id": "m4-545-north-northern-cash",
+      "direction": "northbound",
+      "wayIds": [
+        "799492326",
+        "799492325",
+        "606838738",
+        "799492324",
+        "1043769289",
+        "702218809",
+        "787089819",
+        "1043769288"
+      ],
+      "fromNode": "4522140254",
+      "toNode": "4513805004",
+      "gateNode": "3504914294",
+      "proof": "retained exact one-way node order, contiguous at shared nodes",
+      "selectedRouteWitness": null,
+      "turnRestrictions": "all legal turns/access restrictions are not independently certified by this selected OSM subset",
+      "completeOperatorProduct": false,
+      "priceRub": null
+    },
+    {
+      "id": "m4-545-north-old-road",
+      "direction": "northbound",
+      "wayIds": [
+        "522875739",
+        "799492316",
+        "467980114",
+        "467980113",
+        "1043769286",
+        "432522383",
+        "1043769285"
+      ],
+      "fromNode": "4522140254",
+      "toNode": "4512436102",
+      "gateNode": "9620416636",
+      "proof": "retained exact one-way node order, contiguous at shared nodes",
+      "selectedRouteWitness": null,
+      "turnRestrictions": "all legal turns/access restrictions are not independently certified by this selected OSM subset",
+      "completeOperatorProduct": false,
+      "priceRub": null
+    },
+    {
+      "id": "m4-545-south-old-road-local",
+      "direction": "southbound",
+      "wayIds": [
+        "467980112"
+      ],
+      "fromNode": "4625394256",
+      "toNode": "4625394255",
+      "gateNode": "365274796",
+      "proof": "retained exact one-way node order, contiguous at shared nodes",
+      "selectedRouteWitness": null,
+      "turnRestrictions": "all legal turns/access restrictions are not independently certified by this selected OSM subset",
+      "completeOperatorProduct": false,
+      "priceRub": null
+    },
+    {
+      "id": "m4-545-south-southern-bank-local",
+      "direction": "southbound",
+      "wayIds": [
+        "702218804"
+      ],
+      "fromNode": "6594393966",
+      "toNode": "6594393967",
+      "gateNode": "6594393968",
+      "proof": "retained exact one-way node order, contiguous at shared nodes",
+      "selectedRouteWitness": null,
+      "turnRestrictions": "all legal turns/access restrictions are not independently certified by this selected OSM subset",
+      "completeOperatorProduct": false,
+      "priceRub": null
+    },
+    {
+      "id": "m4-545-south-northern-bank-local",
+      "direction": "southbound",
+      "wayIds": [
+        "702218806"
+      ],
+      "fromNode": "6594393972",
+      "toNode": "6594393971",
+      "gateNode": "3842564088",
+      "proof": "retained exact one-way node order, contiguous at shared nodes",
+      "selectedRouteWitness": null,
+      "turnRestrictions": "all legal turns/access restrictions are not independently certified by this selected OSM subset",
+      "completeOperatorProduct": false,
+      "priceRub": null
+    }
+  ],
+  "r298Exit": {
+    "fromNode": "3057885096",
+    "toNode": "3057885104",
+    "wayId": "301694367",
+    "oneway": true,
+    "destinationRef": "Р-298",
+    "destination": "курск;воронеж",
+    "sourcePath": "experiments/junction-atlas/2026-10-30/raw/m4-r298-way301694367-full.json",
+    "selectedOnwardWitness": "experiments/tariff-proof-selection/m4-545-route-history-review.json",
+    "officialKm": null
+  },
+  "mapControls": [
+    {
+      "direction": "northbound",
+      "requestedPoints": 3,
+      "observedUiDistanceMeters": 880,
+      "observedUiMinutes": 2,
+      "constructed": true,
+      "exactViaSnapOrLaneVerified": false,
+      "evidence": "experiments/junction-atlas/2026-10-30/raw/m4-north-short-route-accessibility.txt"
+    },
+    {
+      "direction": "southbound",
+      "requestedPoints": 2,
+      "observedUiDistanceMeters": 25,
+      "observedUiMinutes": 1,
+      "constructed": true,
+      "exactViaSnapOrLaneVerified": false,
+      "evidence": "experiments/junction-atlas/2026-10-30/raw/m4-south-short-route-accessibility.txt"
+    }
+  ],
+  "tariffBindings": [
+    {
+      "id": "existing-m4-545-north-73.9-working",
+      "status": "retained_owner_accepted_working_model_not_new_pair",
+      "caseId": "pair-m4-a289-taman-to-voronezh",
+      "direction": "northbound",
+      "products": [
+        "m4-545-a",
+        "m4-545-b"
+      ],
+      "weekdayAmount": 320,
+      "weekendAmount": 410,
+      "operatorCategory": "I",
+      "payment": "cash/card",
+      "physicalObservedPlazaEvents": 1,
+      "sourceRuleDate": "2016-12-26",
+      "priceOrder": "58",
+      "priceEffectiveFrom": "2026-03-02T00:00:00+03:00",
+      "source": "experiments/tariff-proof-selection/B05_ACCEPTED_PRICE_BASIS.json",
+      "decision": "docs/checkpoints/2026-10-28-owner-best-available-working-truth-APPROVED.md",
+      "implementation": "experiments/tariff-proof-selection/m4-545-accepted-working.mjs",
+      "appliesOnlyWhen": "complete reviewed approach+gate5818209495+onwardR298 witness and existing no-overlap replacement guards pass; not every nearby gate, southbound path or whole M4 total",
+      "receiptVerified": false,
+      "introducedByAtlas": false
+    }
+  ],
+  "summary": {
+    "pointRecords": 11,
+    "localDirectedPlazaConnections": 6,
+    "geographicGroups": [
+      "PVP545 branch/plaza complex",
+      "M4→R298 connector"
+    ],
+    "newCoordinateBindings": 2,
+    "newOperatorTariffBindings": 0,
+    "newRouteProviderCalls": 0,
+    "newOsmRequests": 2,
+    "standardOsmTileViews": 2,
+    "appRuntimeChanged": false
+  },
+  "remaining": [
+    "No new official chainage assigned to R298 node; OSM coordinate/branch identity is now explicit.",
+    "No southbound full origin/destination vector or price admitted from three local opposite-direction gates.",
+    "Yandex approximate toll estimate is not imported; 320/410 remains the existing owner-approved model only.",
+    "Visual raster overview corroborates corridors, not exact lane IDs, legal-turn completeness or surveyed operator boundaries."
+  ]
+}
