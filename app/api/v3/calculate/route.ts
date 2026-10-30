@@ -12,6 +12,7 @@ import { calculateSpecialOptions } from "@/lib/v3-calculation/special-options";
 import { acceptedYandexRouteEstimate, yandexRouteEstimateTolls } from "@/lib/v3-calculation/yandex-route-estimates";
 import type { Coordinate } from "@/lib/tolls";
 import { createCalculationTiming } from "@/lib/calculation-timing";
+import type { TollEstimateView } from "@/lib/toll-estimate-view";
 
 type UserRates = { standard: number; comfort: number; comfortPlus: number; minivan: number };
 const VEHICLES: PricingVehicle[] = ["standard", "comfort", "comfort_plus", "minivan"];
@@ -82,10 +83,10 @@ export async function POST(request: NextRequest) {
     const mode = body.modeOverride === true && body.mode ? body.mode : policy.specialEndpoint ? "dual" : "standard";
     const normalRateOverrides = body.rates ? { ...body.rates, comfort_plus:body.rates.comfortPlus } : undefined;
     const specialRateOverrides = body.specialRates ? { ...body.specialRates, comfort_plus:body.specialRates.comfortPlus } : undefined;
-    const attachPricing = <T extends { meters:number; seconds:number; coordinates:Coordinate[]; legs?:unknown }>(trip:T, verifiedSplit?:ReturnType<typeof analyzeRoute>) => timing.measureSync("response_pricing", () => {
+    const attachPricing = <T extends { meters:number; seconds:number; coordinates:Coordinate[]; legs?:unknown; tollEstimate?:TollEstimateView }>(trip:T, verifiedSplit?:ReturnType<typeof analyzeRoute>) => timing.measureSync("response_pricing", () => {
       // Policy is independent of manual pricing mode, including every alternative.
       const territorySplit = verifiedSplit ?? analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
-      const {coordinates, legs, ...summary} = trip;
+      const {coordinates, legs, tollEstimate, ...summary} = trip;
       void coordinates; void legs;
       const tolls = "tolls" in trip && trip.tolls && typeof trip.tolls === "object"
         ? trip.tolls as Record<string, unknown> : null;
@@ -99,7 +100,7 @@ export async function POST(request: NextRequest) {
             ? value.map(segment => typeof segment === "string" ? segment.replace(/(?:\s*[·:—-]\s*)?Стоимость не подтверждена\.?/i, "").trim() : segment).filter(Boolean)
             : value]))
         : null;
-      return {...summary, ...(publicTolls ? {tolls:publicTolls} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
+      return {...summary, ...(publicTolls ? {tolls:publicTolls} : {}), ...(!yandexEstimate && tollEstimate ? {tollEstimate} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
         from:from.label,to:to.label,vehicle,mode,normalRateOverrides,specialRateOverrides,multiplier:body.multiplier,
         legs:[{from:from.label,to:to.label,distanceKm:trip.meters/1000,territorySplit}],
       })]))};

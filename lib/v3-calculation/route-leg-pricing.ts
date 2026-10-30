@@ -26,7 +26,10 @@ import { inspectM11PulkovoAccess } from "@/lib/toll-engine/m11-pulkovo-evidence"
 import { matrixM11TailComponent } from "@/lib/toll-engine/m11-tail-component";
 import { resolveCkadProductBoundaries } from "./ckad-product-boundaries";
 import { composeRouteTolls, detectedFamiliesFromLegacySegments, type RouteTollComponent } from "@/lib/toll-engine/route-toll-composition";
-import { compositionValidation, routeDifferenceEvidence, unknownValidation, zeroUnknownTolls, type TollEstimate } from "../v2-calculation/free-route-selection";
+import { compositionValidation, routeDifferenceEvidence, unknownValidation, zeroUnknownTolls, tollsForApi, type TollEstimate } from "../v2-calculation/free-route-selection";
+import { assessV3Tolls } from "./toll-estimate-adapter";
+import { tollEstimateEnabled } from "./toll-estimate-switch";
+import type { TollEstimateView } from "../toll-estimate-view";
 import type { RouteSummary, RouteWithGeometry } from "@/lib/route-providers";
 import { familySegments } from "../v2-calculation/route-leg-pricing-helpers";
 import { quoteAccepted545Working } from "@/experiments/tariff-proof-selection/m4-545-accepted-working.mjs";
@@ -34,6 +37,7 @@ import { inspect545TraceChunks } from "@/experiments/tariff-proof-selection/m4-5
 import { splitM4MatrixAt545 } from "./m4-545-product-replacement";
 
 type LegTollInput = {
+  includeTollEstimate?: boolean;
   routeGeometry: Coordinate[];
   routeSeconds: number;
   departureAt?: string;
@@ -45,13 +49,14 @@ type LegTollInput = {
 };
 
 export async function calculateLegTolls({
+  includeTollEstimate = false,
   routeGeometry,
   routeSeconds,
   departureAt = new Date().toISOString(),
   selectedFastRoute,
   confirmedFreeRoute,
   diagnosticFastValidation,
-}: LegTollInput): Promise<{ tolls: TollEstimate & {priceConfirmation:string;displayLabel:string | null}; fastValidation: TollValidation; componentAudit: {status:string;priced:string[];missing:string[];components:RouteTollComponent[]}; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
+}: LegTollInput): Promise<{ tollEstimate?: TollEstimateView; tolls: TollEstimate & {priceConfirmation:string;displayLabel:string | null}; fastValidation: TollValidation; componentAudit: {status:string;priced:string[];missing:string[];components:RouteTollComponent[]}; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
@@ -277,5 +282,11 @@ export async function calculateLegTolls({
   const componentAudit = {status:composition.status,priced:[...composition.priced],missing:[...composition.missing],
     components:components.filter(component=>component.detected).map(component=>({...component,
       tolls:component.tolls?{...component.tolls,segments:[...component.tolls.segments]}:null}))};
-  return { componentAudit, tolls: { ...tolls, priceConfirmation: matrixM4?.tolls && composition.status === "priced" ? matrixM4.priceConfirmation : "unconfirmed", displayLabel: null }, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
+  const strictTolls = { ...tolls, priceConfirmation: matrixM4?.tolls && composition.status === "priced" ? matrixM4.priceConfirmation : "unconfirmed", displayLabel: null };
+  const strictApi = includeTollEstimate && tollEstimateEnabled() ? tollsForApi(strictTolls, fastValidation) : null;
+  const tollEstimate = strictApi ? assessV3Tolls({route:{...selectedFastRoute,coordinates:routeGeometry},departureAt,
+    validation:diagnosticFastValidation,components:componentAudit.components,m11:m11Boundaries,
+    m4Sections:effectiveMatrixM4?.productCoverage?.sectionVector,m4545Sections:b05Accepted && "coverageKeys" in b05Accepted ? b05Accepted.coverageKeys : undefined,
+    strict:{pricingStatus:strictApi.pricingStatus,amount:strictApi.amount,priceConfirmation:strictTolls.priceConfirmation}}) : undefined;
+  return { componentAudit, tolls: strictTolls, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow}, ...(tollEstimate ? {tollEstimate} : {}) };
 }

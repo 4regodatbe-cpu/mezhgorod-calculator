@@ -123,6 +123,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   const valhallaEvidence = selectedFastIsValhalla ? selectedFastRoute : null;
   const selectedFastPricingProvider = selectedFastIsValhalla ? "Valhalla" : selectedFast.provider;
   const pricing = await measure("toll_pricing", () => calculateLegTolls({
+    includeTollEstimate: fastestOnly,
     routeGeometry,
     routeSeconds: selectedFast.route.seconds,
     departureAt,
@@ -141,7 +142,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   return {
     from: from.label,
     to: to.label,
-    fast: { ...selectedFast.route, coordinates: routeGeometry, quality: fastQuality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation, m4PvpPreview, nationalTollCoverage },
+    fast: { ...selectedFast.route, coordinates: routeGeometry, quality: fastQuality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation, m4PvpPreview, nationalTollCoverage, ...(pricing.tollEstimate ? {tollEstimate:pricing.tollEstimate} : {}) },
     free: !fastestOnly && confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
     freeCandidate: null,
     freeError: fastestOnly || confirmedFree ? undefined : "Не удалось подтвердить вариант с объездом пунктов оплаты.",

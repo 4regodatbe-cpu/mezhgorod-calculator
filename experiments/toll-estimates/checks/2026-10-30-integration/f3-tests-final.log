@@ -1,0 +1,16 @@
+✔ F2 switch is defaultOFF, local opt-in only, exact Preview branch, always denied in Production (0.912312ms)
+✔ F2 OFF is absent and leaves strict inputs byte-identical (0.655643ms)
+✔ F2 ON confirmed/estimated/partial remain separate and cannot mutate strict totals (4.680607ms)
+✔ F2 client view rejects numeric unknown and separates partial from full and approximate labels (4.872037ms)
+✔ F3 real React card renders confirmed and explicitly estimated toll-only states (28.334821ms)
+✔ F3 incomplete total cannot become a numeric full fare; input strict fields stay unchanged (3.607344ms)
+✔ F3 absent overlay keeps legacy unknown/manual UI and responsive markup; escaped warnings (5.722209ms)
+✔ F3 API keeps legacy contract OFF and accepts only a well-formed optional estimate ON (0.762376ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 828.314149

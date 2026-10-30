@@ -1,3 +1,7 @@
+## 30.10.2026 — F3 API/UI LOCAL OFF / F4 контролы STARTED
+
+[F3 checkpoint](checkpoints/2026-10-30-stage-F3-api-ui-LOCAL.md), [журнал](../experiments/toll-estimates/INTEGRATION.md). V3optionalfield+three-statecard/M12warning/manualinput/labelledclipboard готовы локально; strict/kmprice/fastestroute/V2 не менялись.8targetPASS/ReactSSR/APIshape, TS0/lint0 (initialTSunion failure сохранён). DefaultOFF/Productiondeny; нет browser/Previewclaim/push/CI/env/deploy. F4newintegrationcause: fourexisting captures ×2departures×OFF/ON, only recordedresponses, strict/geometry equality; затем F5requiredgate/build. Адресные дефекты и операторский ЗСДbundle остаются открытыми.
+
 ## 30.10.2026 — F2 адаптер LOCAL / OFF; подключение API/UI следующее
 
 [F2 checkpoint](checkpoints/2026-10-30-stage-F2-adapter-LOCAL.md), [контракт/журналF](../experiments/toll-estimates/INTEGRATION.md). Actualgeometry/per-road component→existing pureestimator, extraCKADM11↔M7 из текущих providersections+M11proof+completeexistingtrace, не fixtureцены. DefaultOFF/Productiondeny/exactPreviewbranch, boundedwork/null/duplicate guards и M12warning.4targetPASS/TS0/lint0; app/API/UI ещё не подключены. Strict/тарифы/геометрия/выбормаршрута неизменны. F3wiring→F4savedfourcases→F5mandatorygates/build; адресные дефекты/ЗСДbundle остаются открытыми. No push/CI/env/deploy.

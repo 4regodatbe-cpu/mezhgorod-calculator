@@ -1,3 +1,4 @@
+import type { TollEstimateView } from "@/lib/toll-estimate-view";
 export type Place = { label: string; position?: { lat: number; lng: number }; addressSource?: "reviewed_city_snapshot" };
 export type Suggestion = Place & { id: string; title: string; region: string };
 export type RouteQuality = { status: "verified" | "single" | "warning"; providers: string[]; distanceSpreadPercent: number | null; message: string };
@@ -60,7 +61,7 @@ export type NationalTollCoverage = {
   };
   candidateNetworks: Array<{ id: string; name: string; operator: string; status: string; hasReferenceFare: boolean }>;
 };
-export type Trip = { nationalTollCoverage?: NationalTollCoverage; m4PvpPreview?: M4PvpPreview; meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };
+export type Trip = { tollEstimate?: TollEstimateView; nationalTollCoverage?: NationalTollCoverage; m4PvpPreview?: M4PvpPreview; meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };
 export type TollView = { priceConfirmation?: string; displayLabel?: string | null; amount: number | null; weekdayAmount: number | null; weekendAmount: number | null; period: string; segments: string[]; confidence: "matched" | "none"; pricingStatus: "priced" | "free" | "unknown" };
 export type Leg = {
   from: string;

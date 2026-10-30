@@ -8,6 +8,7 @@ import { defaults, tariffNames } from "../../v2/components/pricing-data";
 import { buildAlternativeFareCopy, resolveTollAmount, shortPlaceName, totalWithToll, type TollPeriod } from "../../v2/components/quote-presentation";
 import { UserFacingCalculationError, userFacingCalculationErrorMessage } from "../../v2/components/request-errors";
 import type { Place, Result, Leg, Trip, TollView } from "../../v2/components/types";
+import { tollEstimateText } from "@/lib/toll-estimate-view";
 
 type CalculatorMode = "standard" | "dual";
 type CalculationInput = {
@@ -145,6 +146,12 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
       }
     }
     if (warning) lines.push(`Важно: ${warning}`);
+    if (trip.tollEstimate) {
+      const view = tollEstimateText(trip.tollEstimate);
+      lines.push("Дополнительная оценка дорог (не меняет строгий итог):", view.label);
+      if (view.partial) lines.push(view.partial);
+      lines.push(...trip.tollEstimate.warnings);
+    }
     await navigator.clipboard.writeText(lines.join("\n"));
     if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
     setCopiedKey(key);

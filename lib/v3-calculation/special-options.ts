@@ -23,6 +23,7 @@ type PricedCandidate = {
     quality:ReturnType<typeof selectLiveRouteCandidates>["quality"];
     m4PvpPreview?:Awaited<ReturnType<typeof calculateLegTolls>>["m4PvpPreview"];
     nationalTollCoverage?:Awaited<ReturnType<typeof calculateLegTolls>>["nationalTollCoverage"];
+    tollEstimate?:Awaited<ReturnType<typeof calculateLegTolls>>["tollEstimate"];
   };
   free:null;
   freeCandidate:null;
@@ -77,11 +78,11 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
       signal?.throwIfAborted();
       const selectedRouteValidation=await measure("toll_matching",()=>validateTollEdges(item.route.coordinates,signal));
       signal?.throwIfAborted();
-      const pricing=await measure("toll_pricing",()=>calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:selectedRouteValidation}));
+      const pricing=await measure("toll_pricing",()=>calculateLegTolls({includeTollEstimate:fastestOnly,routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:selectedRouteValidation}));
       signal?.throwIfAborted();
       const {route,index,...candidate}=item;
       void index;
-      selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality,m4PvpPreview:pricing.m4PvpPreview,nationalTollCoverage:pricing.nationalTollCoverage}});
+      selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality,m4PvpPreview:pricing.m4PvpPreview,nationalTollCoverage:pricing.nationalTollCoverage,...(pricing.tollEstimate?{tollEstimate:pricing.tollEstimate}:{})}});
     }
     const valid=selected;
     if(!valid.length)return [];
