@@ -1,3 +1,7 @@
+## 30.10.2026 — E5 prototype28checks LOCAL PASS / mandatory gates STARTED
+
+[E5 gate checkpoint](checkpoints/2026-10-30-stage-E5-prototype-checks-LOCAL-gates-STARTED.md): combined28testsPASS, finalscopedstrictTS/lintPASS after stronger testunionguard; negativeTSlogretained. Newmoduleoff/appbytesunchanged. Next ONEexistingofflinegate/projectTS/directwebpackbuild withsourceSHA andindividualexits, no liveaudit/CIchange/push. Real3routes1confirmed600/1estimated10464Thu12334Sat/1unknown, missingCKAD/ZSDnotguessed. E1mapcausesunknown; notfinalDONEuntilgatesfinish.
+
 ## 30.10.2026 — E5 final prototype regressions/gates STARTED LOCAL
 
 [E5STARTED](checkpoints/2026-10-30-stage-E5-final-gates-STARTED.md):5newsource-calendar/reverse/overlap/scopeacceptance tests plus prior23prototypechecks, then one mandatory offlineaudit/projectTS/directbuild for the new calculation prototype. No networkroad audit, CIchange/activation or push. E2/E3/E4locallysaved/off; samples1confirmed600/1estimated10464Thu12334Sat/1unknown(missingCKAD/ZSD), values/geometry unchanged. E1maptimeoutcausesunknown. E5notDONEuntilactualgateoutputsinspected; preservefailures andsourceSHA.

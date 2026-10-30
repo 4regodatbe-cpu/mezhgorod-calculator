@@ -35,7 +35,7 @@ test('E5 road-specific midnight and night calendars remain departure-based, not 
  const prior=priced('m11-58-679','p58','p147',before);assert.equal(prior.quote!.profile,'monThu');assert.equal(estimateRouteTolls(request([prior],before),{enabled:true}).totalRub,610);
  const head=priced('m11-15-58','moscow','solnechnogorsk',night),main=priced('m11-58-679','p58','p147',night);assert.equal(head.quote!.profile,'night');assert.equal(main.quote!.profile,'friSun');
  const out=estimateRouteTolls(request([head,main],night),{enabled:true});assert.equal(out.totalRub,1630);
- const frozen=departureTariffContext(thu,72*3600,m11MainlineTariffAt);assert.equal(frozen.begin.profile,'monThu');assert.equal(estimateRouteTolls(request([prior],'2026-10-17T00:30:00+03:00'),{enabled:true}).totalRub,null);
+ const frozen=departureTariffContext(thu,72*3600,m11MainlineTariffAt);assert.equal(frozen.status,'resolved');assert.ok('begin' in frozen);assert.equal(frozen.begin.profile,'monThu');assert.equal(estimateRouteTolls(request([prior],'2026-10-17T00:30:00+03:00'),{enabled:true}).totalRub,null);
 });
 test('E5 actual sample atomic M4 and ZSD coverage blocks aggregate plus partial duplicate charges',()=>{
  const samples=buildSavedSamples(),long=samples.find(s=>s.caseId==='pair-m4-m11-krasnodar-to-spb')!,full=samples.find(s=>s.caseId.startsWith('dnr-'))!;

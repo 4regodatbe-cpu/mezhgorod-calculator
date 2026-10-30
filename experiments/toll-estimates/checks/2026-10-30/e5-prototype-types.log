@@ -1,0 +1,2 @@
+experiments/toll-estimates/acceptance.test.ts(38,91): error TS2339: Property 'begin' does not exist on type '{ status: string; reason: any; } | { status: string; begin: any; }'.
+  Property 'begin' does not exist on type '{ status: string; reason: any; }'.
