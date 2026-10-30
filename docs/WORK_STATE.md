@@ -1,3 +1,7 @@
+## 30.10.2026 — E5 final prototype regressions/gates STARTED LOCAL
+
+[E5STARTED](checkpoints/2026-10-30-stage-E5-final-gates-STARTED.md):5newsource-calendar/reverse/overlap/scopeacceptance tests plus prior23prototypechecks, then one mandatory offlineaudit/projectTS/directbuild for the new calculation prototype. No networkroad audit, CIchange/activation or push. E2/E3/E4locallysaved/off; samples1confirmed600/1estimated10464Thu12334Sat/1unknown(missingCKAD/ZSD), values/geometry unchanged. E1maptimeoutcausesunknown. E5notDONEuntilactualgateoutputsinspected; preservefailures andsourceSHA.
+
 ## 30.10.2026 — E4 toll-only viewmodel LOCAL /6checksPASS
 
 [E4checkpoint](checkpoints/2026-10-30-stage-E4-viewmodel-LOCAL.md), [offline example](../experiments/toll-estimates/checks/2026-10-30/e4-demo.html). Three clear toll labels confirmed/ориентировочно/уточняется; unknown subtotal explicitly incomplete and non-additive. No base transfer fare input/relabel, disabled leaves strict display unchanged. Six tests/scopedstrictTS/lintPASS, escaped responsiveHTML only—not browser/Preview verification. E2/E3savedprototype remainsoff; realsample1confirmed/1estimated/1unknown with unchanged values. Next E5source-calendar/reverse/overlap checks +onefinalofflinegate/build, no network road audit/push/Production.
