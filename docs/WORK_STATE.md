@@ -1,3 +1,7 @@
+## 30.10.2026 — D3 bounded source research saved / operator gaps remain
+
+[D3checkpoint](checkpoints/2026-10-30-stage-D3-primary-sources-PARTIAL.md), [source ledger](../experiments/address-search/2026-10-30-stage-d/d3-primary-ledger.json): new M11 scanned operator PDF200/9.57MB/SHA retained; pages5–6 corroborate CKAD47/MMK48/50/Solnechnogorsk58 facilities, not a virtual mainline tariff cut. New M12 PDF403/no primary bytes, CKAD/ZSD targeted leads insufficient; all four exact product bindings remain BLOCKED. No old failed URL retry, route/OSM request or monetary change. D1 verified locally1047PASS/1SKIP/TS/lint/build, unpublished; D2 M4 exact operator crosswalk unknown. Next D4 explicit evidence/missing-document table and local recovery handoff. No push/CI/Production/PR change.
+
 ## 30.10.2026 — D2 M4 primary research BLOCKED / D1 localfix saved
 
 [D2checkpoint](checkpoints/2026-10-30-stage-D2-M4-primary-DATA-BLOCKED.md):4newofficial-domainqueriesempty,2primaryopens403/inaccessible,no newprimaryfacts/docdates/SHA claimed. Existing4443232947→358467208graph/coordsretained;officialkm/operatorproduct/pair/pricestillunknown. No oldfailedOSM/1038news/PDFqueryorrouteauditrerun,no guessedneighbour/PVP/zero. D1ae5203dfverified1047PASS/1SKIP/TS/lint/build andsavedlocally;unpublished. NextD3one/twonewprimaryleadsperM11/M12/CKAD/ZSDthenD4evidencetable. No push/CI/Production/otherbranch/PRchange.
