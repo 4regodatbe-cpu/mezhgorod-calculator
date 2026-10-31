@@ -1,5 +1,9 @@
 # Instructions for contributors and coding agents
 
+## Product delivery — owner decision, 2026-10-31
+
+Read [PRODUCT_DELIVERY_ADDENDUM.md](docs/PRODUCT_DELIVERY_ADDENDUM.md). Prioritize an end-to-end working product; P0/P1 block release, safe P2/P3 can be deferred. Small checkpoints are internal execution, not repeated approval requests. Continue authorized work in the current session; reuse valid evidence and preserve all mandatory gates and publication/security restrictions. With an explicit no-push instruction, save local commits/readback/bundles and continue permitted independent work; never claim GitHub persistence.
+
 ## Address-search scope — owner decision, 2026-10-29
 
 The calculator requires a settlement; a street is an optional refinement within that settlement. House numbers, building blocks/structures/letters, apartments and entrances are NOT required. Do not develop house-level geocoding or treat an absent exact house number as a calculator defect or release blocker. Preserve existing working capabilities/tests unless a separate change is justified; this decision does not authorize removing features or weakening CI.
