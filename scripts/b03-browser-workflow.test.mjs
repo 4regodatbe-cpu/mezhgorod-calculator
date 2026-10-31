@@ -3,15 +3,31 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const workflow=readFileSync(new URL('../.github/workflows/b03-address-ui-browser.yml',import.meta.url),'utf8');
 const runner=readFileSync(new URL('../experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs',import.meta.url),'utf8');
+function eventPaths(event) {
+  const lines=workflow.split('\n');
+  const start=lines.indexOf(`  ${event}:`);
+  assert.notEqual(start,-1,`Missing event: ${event}`);
+  let end=start+1;
+  while(end<lines.length&&!/^(?:\S|  \S)/u.test(lines[end]))end++;
+  return lines.slice(start+1,end).flatMap(line=>{
+    const match=line.match(/^      - (\S+)\s*$/u);
+    return match?[match[1]]:[];
+  });
+}
 test('AddressField updates trigger browser checks on PR as well as push',()=>{
   for(const event of ['push','pull_request']) {
-    const block=workflow.split(`  ${event}:`)[1]?.split(/^\S/m)[0];
-    assert.ok(block?.includes('app/v2/components/address-field.tsx'));
-    assert.ok(block?.includes('experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs'));
+    const paths=eventPaths(event);
+    assert.ok(paths.includes('app/v2/components/address-field.tsx'));
+    assert.ok(paths.includes('experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs'));
   }
   assert.ok(workflow.includes('github.event.pull_request.head.sha || github.sha'));
   assert.ok(workflow.includes("node-version: '24.x'"));
 });
+for(const event of ['push','pull_request']) {
+  test(`Snapshot changes trigger B03 browser checks on ${event}`,()=>{
+    assert.ok(eventPaths(event).includes('data/address-city-snapshot.json'),`${event} must track the snapshot itself, independently of the other event`);
+  });
+}
 test('CI executes new swap/refocus regression and preserves old suite failures',()=>{
   assert.match(workflow,/node experiments\/road-ref-boundaries\/scripts\/b03-current-input-flow\.mjs/);
   assert.match(workflow,/node experiments\/road-ref-boundaries\/scripts\/b03-address-ui-scenarios\.mjs/);

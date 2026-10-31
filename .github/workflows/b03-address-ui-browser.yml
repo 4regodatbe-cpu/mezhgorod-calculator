@@ -8,6 +8,7 @@ on:
       - experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs
       - app/v2/components/address-field.tsx
       - scripts/b03-browser-workflow.test.mjs
+      - data/address-city-snapshot.json
   pull_request:
     paths:
       - .github/workflows/b03-address-ui-browser.yml
@@ -15,6 +16,7 @@ on:
       - experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs
       - app/v2/components/address-field.tsx
       - scripts/b03-browser-workflow.test.mjs
+      - data/address-city-snapshot.json
 permissions:
   contents: read
 concurrency:
