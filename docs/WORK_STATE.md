@@ -1,4 +1,8 @@
-## 31.10.2026 — реорганизация V1 Release: инвентаризация A DONE
+## 31.10.2026 — реорганизация: удалённое сохранение A BLOCKED
+
+[Checkpoint блокировки](checkpoints/2026-10-31-reorganization-A-remote-save-BLOCKED.md). A проверен и закоммичен локально, но auto-review отклонил второй push после опубликованного STARTED: разрешение на новую публикацию сочтено недостаточно явным на фоне прежнего разового разрешения. Remote остаётся `320c50d4a07b4f2b122d2de3f4ee2f6b4134d591`. Переход к B/C/D/E/F приостановлен по CHECKPOINT_PROTOCOL до однозначно разрешённого remote checkpoint; локальные commit, patch и bundle сохранены.
+
+## 31.10.2026 — реорганизация V1 Release: инвентаризация A DONE локально
 
 [Инвентарь](reorganization/INVENTORY.json), [checkpoint A](checkpoints/2026-10-31-reorganization-inventory-DONE.md), [журнал](reorganization/WORK_LOG.md). От 320c50d4: 14 055 tracked-файлов, 402 106 462 байта; 689 исходных текстов проверены на литеральные зависимости, 395 целевых файлов найдены. `experiments` 369 МБ и содержат runtime/test/CI зависимости; пока 0 подтверждённо неиспользуемых файлов. EPERM при дочернем Git из Node устранён передачей вывода штатного Git по stdin. Следующее: B — три физических архива с манифестами и проверенным восстановлением до очистки. PR №14 Draft; Production/main/Android/backup без изменений.
 
