@@ -1,0 +1,7 @@
+# H3 — доступные этапы сведены LOCAL, G отсутствует
+
+31.10.2026МСК. Родитель1de3cc44ad1954d62e87094bd22acfd799db15ea(H3.1), ранееH2a158a7f5/F4a71c093; все сохранены, безreset/rebase. [Точный результат/план](../../experiments/toll-estimates/stage-h3-2026-10-31/README.md), [датированный журнал](../../experiments/toll-estimates/stage-h3-2026-10-31/WORK_LOG.md), [docchecks](../../experiments/toll-estimates/stage-h3-2026-10-31/validation.json).
+
+H3.1локальныйcommit/readback завершён до следующего блока. H3.2: точнаясовместимостьG/parents/treeBLOCKED_MISSING_G, Gфайловвосстановлено0; доступнаяцепочкаF→H2→H3сохранена. H3.3: актуальныеиндексы и датированноедополнение используют «оценённая часть 6 928/7 268 ₽», изнеёМ121713+ЦКАД941=2654оценочных; sourceценыЦКАД неравен подтверждённомупроезду; ЗСД/fullunknown/null;2085не тарифЗСД. Историческиеevidence/checkpoints не переписывали.
+
+H3.4: толькоцелевыепроверкидокументов/ссылок/metadata/sourcehashи diffapp/data/CI; H2тесты/fullgate/build/Яндекс не повторяли. Validationexit0 фиксируетсявartifact. Новых runtime/матрицы/geometry/CIзаписей нет. ДоступныеF/Hготовыквосстановлениюизлокальнойистории, **полнаясовокупностьF–G–HкконтролируемойпубликацииНЕготова**. НужныисходныеGobjects/files+SHA и безопаснаяreviewсовместимости, потом отдельное разрешениеpush. Нетpush/merge/Production/main/Android/backup/PRизменений. Локальныйcommit/readback/bundle — неGitHubсохранение; итоговыйSHA во внешнемhandoff.

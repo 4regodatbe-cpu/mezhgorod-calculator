@@ -70,3 +70,9 @@ All F1–F5 are DONE_LOCAL within this stage; not all B01–B12/unknown fares an
 - M12 registration-boundary certification remains a warning, not a claim of verified new operators' boundaries.
 - Address D1 street-context fix remains LOCAL-PASS pending protectedPreview acceptance; broader livePhoton/streetcoverage and prior mobile-timeout cause remain unconfirmed. No address components/data/provider logic were changed in F.
 - Real deployedPreview/browser desktop/mobile/cloud resource measurements have **not** been performed in F. Local evidence comprises realReactSSR, recorded-source component integration, CONTROLLED-transport actualPOST and offlinegates/build, explicitly distinguished above.
+
+## 31.10.2026 — H3 terminology and continuity clarification
+
+Current wording: **«оценённая часть 6 928/7 268 ₽»**. It includes estimated M12 **1713** and CKAD **941**, total **2654**. CKAD has an operator price source, but its selected-route applicability remains `working_estimate`. ZSD and whole total remain **unknown/null**. Yandex residual **2085 is not a ZSD tariff**. Historical F controls/artifacts above remain unchanged; no repeated H2/source audit or build was performed.
+
+[H3 record and exact missing G list/recovery plan](stage-h3-2026-10-31/README.md): F→H2→H3 local history preserved; Gdd3e2ff6 not found in accessible objects/refs/reflogs/bundles or GitHub lookup. No G files reconstructed from assumptions. Combined F–G–H publication readiness remains BLOCKED pending original G evidence/ancestry review and separate publication permission. No push, runtime/tariff/geometry/Production change; estimate remains OFF.
