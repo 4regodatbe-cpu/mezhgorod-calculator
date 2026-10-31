@@ -1,3 +1,7 @@
+## 31.10.2026 — Stage I3 STARTED LOCAL: обязательные финальные проверки
+
+[STARTED](checkpoints/2026-10-31-stage-I3-final-gates-STARTED-LOCAL.md). Кодовая база 8fbef652: snapshot review и 13 целевых tests PASS. Выполняются существующий offline gate, lint, прямой Next build, затем TypeScript последовательно. Результаты PENDING, новые CI/браузер/live-запуски не инициируются. Только локальные commits/readback/bundle; push и Production запрещены.
+
 ## 31.10.2026 — Stage I2 LOCAL: B03 freshness исправлен; Photon 503 — внешний блокер
 
 [Checkpoint](checkpoints/2026-10-31-stage-I2-photon-503-OFFLINE-LOCAL.md), [разбор](../experiments/address-search/stage-i-2026-10-31/PHOTON_503.md). I1 новый reviewed snapshot до 07.11.2026 17:50:17.541 МСК, flag OFF, 9 target PASS и guard exit 0. I2 четыре новые offline-регрессии PASS: 4×503+3×cooldown воспроизводятся без timeout; семь вариантов одного origin. Удалённая причина HTTP 503 не установлена без headers/body/upstream logs; runtime/CI не ослаблялись. Далее обязательные финальные проверки и локальный bundle; без push/Production/повторного CI. Полное устранение внешнего дефекта не заявлено.
