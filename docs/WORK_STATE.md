@@ -1,4 +1,8 @@
-## 31.10.2026 — реорганизация C STARTED: ограниченный архив исследований
+## 31.10.2026 — реорганизация C PARTIAL: 61 файл архивирован без удаления
+
+[Архив исследований](../archive/research/README.md), [checkpoint C](checkpoints/2026-10-31-reorganization-research-PARTIAL.md). 61 исторический файл из `preview-acceptance` и `release-candidate-1` сохранён в `source.tar.gz` 770 737 байт; распаковка и Git blob SHA 61/61 PASS. Оригиналы не удалены: на пути есть ссылки в 14 исторических документах. Остальные эксперименты требуют runtime/test/CI review; общий архив C и очистка D пока PARTIAL/NOT_DONE.
+
+## 31.10.2026 — реорганизация C STARTED: ограниченный архив исследований (история)
 
 [Checkpoint C STARTED](checkpoints/2026-10-31-reorganization-research-STARTED.md). B сохранён на remote `36d2cad23f5b547f58cb5a330b5ad379a7d283b5`: два малых архива и три манифеста, tree/readback совпали. Исследовательский кандидат: `experiments/preview-acceptance` и `experiments/release-candidate-1`, вместе 61 tracked-файл. В app/lib/scripts/data/workflow нет буквальных ссылок на их пути; внутренние скрипты внутри самих папок и исторические ссылки docs есть. Перед любым удалением нужен проверенный архив и разбор ссылок; пока только создание копии.
 

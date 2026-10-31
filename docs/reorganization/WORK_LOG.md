@@ -25,3 +25,7 @@
 ## 31.10.2026 — B remote readback PASS; C STARTED
 
 Обычный push B на `36d2cad23f5b547f58cb5a330b5ad379a7d283b5` exit0. Remote tree `07a7945f9cf2141eb00c2d3f4afe76adfabb5ae9`; GitHub blob SHA двух tar.gz и трёх manifest.json совпали с локальным Git. PR №14 OPEN/Draft. Для C ограничены исторические папки `experiments/preview-acceptance` и `experiments/release-candidate-1` (61 файл): `rg` по app/lib/scripts/data/.github/package/next.config не нашёл буквальных ссылок, но в docs есть 14 ссылающихся файлов, а внутри кандидатов есть скрипты. Поэтому сейчас только физический архив/манифест и восстановление, удаление требует отдельного доказательства сохранения ссылок.
+
+## 31.10.2026 — C PARTIAL: исследовательский архив создан и восстановлен
+
+`git archive --format=tar.gz -9 -o archive/research/source.tar.gz HEAD experiments/preview-acceptance experiments/release-candidate-1` на HEAD `4c5edd35`; `tar -xzf` в чистую директорию и проверка 61 Git blob SHA PASS. Архив 770 737 байт, SHA256 `2a89b241ae97059d5cd54f2cd9c8ea9a5cedfe49653672fb12ad1ef1d267d411`, исходные файлы 2 380 251 байт. Manifest содержит индивидуальные SHA256 и byte size. Оригиналы оставлены: ссылки из 14 исторических документов сохраняют текущие пути. Это ограниченный архив, не все 4 545 файлов `experiments` и не завершённая очистка.
