@@ -1,0 +1,11 @@
+# V3 RC1 — разрешённый локальный цикл завершён
+
+31.10.2026. Начало dbc701fb, проверенные исходники719d344b4de08953ba1e4af2db462a491723a327. [Сводный продуктовый отчёт](../V3_RELEASE_CANDIDATE_1.md), [правила поставки](../PRODUCT_DELIVERY_ADDENDUM.md), [журнал](../../experiments/release-candidate-1/2026-10-31/WORK_LOG.md), [логи/exit codes](../../experiments/release-candidate-1/2026-10-31/checks/RESULTS.json).
+
+Завершены правила и один bounded acceptance cycle. I1–I3/история/bundle сохранены. Реальные 11 HTTP городов/GeoNames при controlled Photon outage→0Photon, SSR V3/V2, unsafe rate400, один live Краснодар→Анапа200/2.281с/166347м/8713с/standard4159+toll620. Не сертификация toll/SLA. 52 targeted PASS, offline1063PASS/1SKIP/0FAIL и quote/API PASS, ESLint0errors7warnings, Next16.3.4 webpack build0, затем TypeScript0/Node24.19.0. Всё raw сохранено, существующие правила/CI/безопасность не ослаблены.
+
+Новых подтверждённых P0/P1 в проверенных сценариях нет, runtime fixes0; app/lib/data/CI/матрица не менялись ради числа операций. Source equivalence с I3 и старым input browser baseline проверена, но не выдана за новый mobile end-to-end. Current browser gap: helper в namespace UID65534, cloud browser одна попытка UNAVAILABLE30s без повтора/изменения Protection/share. Новый SHA в Actions/Preview NOT_RUN по прямому no-push. Production-политика GeoNames/опционального estimate остаётся gated; не выдана за активную публичную независимость от Photon.
+
+Вердикт: **локально готов к отдельно разрешённой контролируемой Preview-публикации, НЕ допущен в Production** до browser acceptance/реального CI и решения владельца об активации. P2/P3 с безопасным поведением вынесены в отчёт, не новый обязательный исследовательский план.
+
+Read-only GitHub подтвердил remote c0e76eccfda0bf4fd8eeb5ac299c6da1242baa57 и PR14 OPEN/Draft; запись не выполнялась. После итоговых документов — локальный commit/readback и новый incremental bundle, прежние bundles не заменять. Final SHA/bundle hash формируются после commit вне самоссылочного документа. No push/Production/main/Android/backup/merge/force. Следующее необходимое участие владельца — одно отдельное разрешение на контролируемую публикацию и рабочая авторизованная browser-среда, не согласование внутренних шагов.
