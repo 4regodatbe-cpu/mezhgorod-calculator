@@ -33,3 +33,7 @@
 ## 31.10.2026 — D BLOCKED: удалять нечего без потери гарантий
 
 C сохранён на remote `dba9cdd39ff5ce31e51fd2d6fd535a4faf04f343`, tree/blob readback PASS. Проверены точные импорты `app/v3/page.tsx`, `app/v3/components/use-v3-calculation.ts` → `app/v2/components` и прямые импорты `lib/v3-calculation` → `experiments/nationwide-tolls`, `toll-estimates`, `toll-od-matrix`; package/CI также ссылаются на experiments. У выбранного архивного набора остались исторические документальные ссылки. Большой V3 source asset не размещён из-за upload HTTP401. Доказанного безопасного кандидата для удаления нет, перенос shared компонентов не приносит установленной пользы; 0 перемещено, 0 удалено, рабочий код не менялся. Отдельные refactor/cleanup не начинать до разбора ссылок и полного удалённого восстановления.
+
+## 31.10.2026 — E STARTED
+
+D remote `3248ee40712056ced320d93f86d870d7f8659155` прочитан обратно; test environment Node24.19.0, pnpm11.25.0; новая чистая рабочая копия не содержит node_modules. Проверить frozen install, полный обязательный offline gate, TypeScript, ESLint, отдельный Next build и ограниченные V2/V3/GeoNames сценарии. При локальном EPERM дочернего Node-процесса применить штатный дополнительный sandbox permission либо точно записать NOT_RUN. Не менять runtime ради среды.

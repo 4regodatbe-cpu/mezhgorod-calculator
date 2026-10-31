@@ -1,3 +1,7 @@
+## 31.10.2026 — реорганизация E STARTED: обязательная проверка
+
+[Checkpoint E STARTED](checkpoints/2026-10-31-reorganization-verification-STARTED.md). D decision сохранён на remote `3248ee40712056ced320d93f86d870d7f8659155`, без удаления. Проверить Node24/pnpm11 frozen install, offline gate, TypeScript, ESLint, прямой Next production build, V2/V3/GeoNames smoke и восстановимость архивов. Новые результаты не подменять историческими; внешние тарифные аудиты не запускать.
+
 ## 31.10.2026 — реорганизация D BLOCKED: безопасной очистки пока нет
 
 [Checkpoint D](checkpoints/2026-10-31-reorganization-cleanup-BLOCKED.md). `app/v3/page.tsx` и hook V3 прямо импортируют `app/v2/components`; `lib/v3-calculation` напрямую импортирует `experiments/nationwide-tolls` и `toll-estimates`, а gate/CI используют fixture-пути. 61 файл исторических опытов архивирован, но старые документы всё ещё ссылаются на оригинальные пути. Полный V3 архив удалённо отсутствует. Доказанного безопасного удаления или пользы от переноса shared V2 сейчас нет: перемещено 0, удалено 0. Следующее — обязательная проверка E на неизменённом runtime.
