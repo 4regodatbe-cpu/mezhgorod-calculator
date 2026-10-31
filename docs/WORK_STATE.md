@@ -1,3 +1,7 @@
+## 31.10.2026 — V3 RC1 HTTP acceptance STARTED LOCAL
+
+[Checkpoint](checkpoints/2026-10-31-v3-RC1-http-acceptance-STARTED-LOCAL.md), [цикл/журнал](../experiments/release-candidate-1/2026-10-31/README.md). Правила поставки сохранены в 21cae380; app/lib/data равны проверенной I3 сборке. Реальный локальный HTTP с GeoNames и контролируемым отказом Photon, 11 городов и один bounded live расчёт Краснодар→Анапа. Browser helper остаётся owned UID65534 вместо root: не ослаблять sandbox, mobile interaction пока BLOCKED_ENVIRONMENT; продолжать API/replay/SSR. Итоги ещё PENDING; без push/Production/нового широкого аудита.
+
 ## 31.10.2026 — V3 RC1 STARTED LOCAL: приоритет работающего продукта
 
 [Правила поставки](PRODUCT_DELIVERY_ADDENDUM.md), [checkpoint](checkpoints/2026-10-31-v3-RC1-delivery-rules-STARTED-LOCAL.md), [минимальный продукт/приёмка](../experiments/release-candidate-1/2026-10-31/README.md), [журнал](../experiments/release-candidate-1/2026-10-31/WORK_LOG.md). Старт dbc701fb clean, I1–I3 сохраняются. P0/P1 блокируют выпуск, безопасные P2/P3 откладываются; внутренние блоки не требуют новых согласований. Один цикл UI/API/расчёт/отображение/mobile с минимальными исправлениями; все реальные результаты ещё PENDING. Не повторять закрытые исследования. Сохранение локальное: commits/readback/bundle; push/Production/main/Android/backup/merge/изменение PR14 запрещены.
