@@ -29,3 +29,7 @@
 ## 31.10.2026 — C PARTIAL: исследовательский архив создан и восстановлен
 
 `git archive --format=tar.gz -9 -o archive/research/source.tar.gz HEAD experiments/preview-acceptance experiments/release-candidate-1` на HEAD `4c5edd35`; `tar -xzf` в чистую директорию и проверка 61 Git blob SHA PASS. Архив 770 737 байт, SHA256 `2a89b241ae97059d5cd54f2cd9c8ea9a5cedfe49653672fb12ad1ef1d267d411`, исходные файлы 2 380 251 байт. Manifest содержит индивидуальные SHA256 и byte size. Оригиналы оставлены: ссылки из 14 исторических документов сохраняют текущие пути. Это ограниченный архив, не все 4 545 файлов `experiments` и не завершённая очистка.
+
+## 31.10.2026 — D BLOCKED: удалять нечего без потери гарантий
+
+C сохранён на remote `dba9cdd39ff5ce31e51fd2d6fd535a4faf04f343`, tree/blob readback PASS. Проверены точные импорты `app/v3/page.tsx`, `app/v3/components/use-v3-calculation.ts` → `app/v2/components` и прямые импорты `lib/v3-calculation` → `experiments/nationwide-tolls`, `toll-estimates`, `toll-od-matrix`; package/CI также ссылаются на experiments. У выбранного архивного набора остались исторические документальные ссылки. Большой V3 source asset не размещён из-за upload HTTP401. Доказанного безопасного кандидата для удаления нет, перенос shared компонентов не приносит установленной пользы; 0 перемещено, 0 удалено, рабочий код не менялся. Отдельные refactor/cleanup не начинать до разбора ссылок и полного удалённого восстановления.

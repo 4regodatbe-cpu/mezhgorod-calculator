@@ -1,3 +1,7 @@
+## 31.10.2026 — реорганизация D BLOCKED: безопасной очистки пока нет
+
+[Checkpoint D](checkpoints/2026-10-31-reorganization-cleanup-BLOCKED.md). `app/v3/page.tsx` и hook V3 прямо импортируют `app/v2/components`; `lib/v3-calculation` напрямую импортирует `experiments/nationwide-tolls` и `toll-estimates`, а gate/CI используют fixture-пути. 61 файл исторических опытов архивирован, но старые документы всё ещё ссылаются на оригинальные пути. Полный V3 архив удалённо отсутствует. Доказанного безопасного удаления или пользы от переноса shared V2 сейчас нет: перемещено 0, удалено 0. Следующее — обязательная проверка E на неизменённом runtime.
+
 ## 31.10.2026 — реорганизация C PARTIAL: 61 файл архивирован без удаления
 
 [Архив исследований](../archive/research/README.md), [checkpoint C](checkpoints/2026-10-31-reorganization-research-PARTIAL.md). 61 исторический файл из `preview-acceptance` и `release-candidate-1` сохранён в `source.tar.gz` 770 737 байт; распаковка и Git blob SHA 61/61 PASS. Оригиналы не удалены: на пути есть ссылки в 14 исторических документах. Остальные эксперименты требуют runtime/test/CI review; общий архив C и очистка D пока PARTIAL/NOT_DONE.
