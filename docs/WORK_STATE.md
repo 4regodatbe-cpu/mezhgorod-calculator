@@ -1,6 +1,6 @@
-## 31.10.2026 — реорганизация V1 Release: инвентаризация STARTED
+## 31.10.2026 — реорганизация V1 Release: инвентаризация A DONE
 
-[Checkpoint](checkpoints/2026-10-31-reorganization-inventory-STARTED.md), [журнал](reorganization/WORK_LOG.md). Чистая рабочая копия получена с remote `3fa46ce3c62c73610ca8209ae5070819015e5a61`; PR №14 OPEN/Draft, четыре контрольных release/archive refs проверены без изменения. Этапы A–F пока не завершены. Следующее: проверяемый инвентарь зависимостей, затем физические архивы с восстановлением до любой очистки.
+[Инвентарь](reorganization/INVENTORY.json), [checkpoint A](checkpoints/2026-10-31-reorganization-inventory-DONE.md), [журнал](reorganization/WORK_LOG.md). От 320c50d4: 14 055 tracked-файлов, 402 106 462 байта; 689 исходных текстов проверены на литеральные зависимости, 395 целевых файлов найдены. `experiments` 369 МБ и содержат runtime/test/CI зависимости; пока 0 подтверждённо неиспользуемых файлов. EPERM при дочернем Git из Node устранён передачей вывода штатного Git по stdin. Следующее: B — три физических архива с манифестами и проверенным восстановлением до очистки. PR №14 Draft; Production/main/Android/backup без изменений.
 
 ## 31.10.2026 — подготовка V1 Release / три архивные версии / одна песочница
 
