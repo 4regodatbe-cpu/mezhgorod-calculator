@@ -1,0 +1,99 @@
+name: V3 historical source archive
+
+on:
+  push:
+    branches: [fix/v3-missing-route-prices-2026-10-15]
+    paths:
+      - .github/workflows/v3-source-archive.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: v3-historical-source-archive
+  cancel-in-progress: false
+
+jobs:
+  archive-source:
+    if: github.repository == '4regodatbe-cpu/mezhgorod-calculator' && github.ref == 'refs/heads/fix/v3-missing-route-prices-2026-10-15'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      SOURCE_SHA: cde74243c88cfab313913d8b0435e8d56fae372e
+      SOURCE_TREE: c3e6cc8a5a8931952f7a230cc8269d2d41f28bf2
+      RELEASE_TAG: archive-pre-release-v3-source-2026-10-31
+      GH_REPO: 4regodatbe-cpu/mezhgorod-calculator
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check exact source and unused archive tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p archive-verification
+          test "$(git rev-parse "$SOURCE_SHA^{commit}")" = "$SOURCE_SHA"
+          test "$(git rev-parse "$SOURCE_SHA^{tree}")" = "$SOURCE_TREE"
+          test "$(git rev-parse "$SOURCE_SHA^{tree}")" = "$(jq -r .sourceTree archive/versions/pre-release-v3/manifest.json)"
+          if git ls-remote --tags --exit-code origin "refs/tags/$RELEASE_TAG" >/dev/null; then
+            echo "Archive tag already exists; refusing overwrite" >&2
+            exit 1
+          else
+            code=$?
+            test "$code" -eq 2
+          fi
+          printf 'node=%s\ngit=%s\nsource=%s\ntree=%s\nworkflow_head=%s\n' "$(node --version)" "$(git --version)" "$SOURCE_SHA" "$SOURCE_TREE" "$GITHUB_SHA" > archive-verification/environment.txt
+      - name: Reproduce archive and verify every source file
+        shell: bash
+        run: |
+          set -euo pipefail
+          git archive --format=tar.gz -9 -o "$RUNNER_TEMP/source.tar.gz" "$SOURCE_SHA"
+          mkdir -p "$RUNNER_TEMP/restored"
+          tar -xzf "$RUNNER_TEMP/source.tar.gz" -C "$RUNNER_TEMP/restored" --no-same-owner
+          git ls-tree -r -z "$SOURCE_SHA" | node docs/reorganization/verify-version-archive.mjs pre-release-v3 "$SOURCE_SHA" "$SOURCE_TREE" "$RUNNER_TEMP/source.tar.gz" "$RUNNER_TEMP/restored" archive-verification/actual-manifest.json
+          node --input-type=module -e '
+            import assert from "node:assert/strict";
+            import fs from "node:fs";
+            const expected=JSON.parse(fs.readFileSync("archive/versions/pre-release-v3/manifest.json","utf8"));
+            const actual=JSON.parse(fs.readFileSync("archive-verification/actual-manifest.json","utf8"));
+            for(const key of ["sourceCommit","sourceTree","fileCount","uncompressedFileBytes"])assert.deepEqual(actual[key],expected[key],key);
+            assert.deepEqual(actual.files,expected.files,"all 14042 source files");
+            console.log(JSON.stringify({fileCount:actual.fileCount,sourceTree:actual.sourceTree,archiveBytes:actual.archiveBytes,archiveSha256:actual.archiveSha256,originalArchiveSha256:expected.archiveSha256,originalCompressedBytes:expected.archiveBytes,allSourceFilesVerified:true}));
+          ' | tee archive-verification/source-review.json
+          sha256sum "$RUNNER_TEMP/source.tar.gz" > archive-verification/source-sha256.txt
+      - name: Create separate archival prerelease and upload asset
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          sha="$(jq -r .archiveSha256 archive-verification/actual-manifest.json)"
+          bytes="$(jq -r .archiveBytes archive-verification/actual-manifest.json)"
+          printf 'Historical source archive only; not the V1 product release.\nSource commit: %s\nSource tree: %s\nFiles: 14042 (each verified against the stored manifest and Git blob SHA).\nAsset: source.tar.gz, %s bytes, SHA256 %s.\n' "$SOURCE_SHA" "$SOURCE_TREE" "$bytes" "$sha" > archive-verification/release-notes.txt
+          gh release create "$RELEASE_TAG" "$RUNNER_TEMP/source.tar.gz" --target "$SOURCE_SHA" --title 'Pre-release V3 source archive (not a product release)' --notes-file archive-verification/release-notes.txt --prerelease --latest=false | tee archive-verification/release-create.stdout.txt
+      - name: Download asset and confirm exact bytes
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/readback"
+          gh release download "$RELEASE_TAG" --pattern source.tar.gz --dir "$RUNNER_TEMP/readback"
+          cmp "$RUNNER_TEMP/source.tar.gz" "$RUNNER_TEMP/readback/source.tar.gz"
+          gh api "repos/$GH_REPO/releases/tags/$RELEASE_TAG" > archive-verification/release-api.json
+          remote_bytes="$(jq -r '[.assets[] | select(.name=="source.tar.gz")][0].size' archive-verification/release-api.json)"
+          test "$remote_bytes" = "$(stat -c %s "$RUNNER_TEMP/source.tar.gz")"
+          test "$(gh api "repos/$GH_REPO/git/ref/tags/$RELEASE_TAG" --jq '.object.sha')" = "$SOURCE_SHA"
+          sha256sum "$RUNNER_TEMP/readback/source.tar.gz" > archive-verification/download-sha256.txt
+          printf 'asset_name=source.tar.gz\nasset_bytes=%s\nreadback_sha256=%s\n' "$remote_bytes" "$(sha256sum "$RUNNER_TEMP/readback/source.tar.gz" | cut -d' ' -f1)" > archive-verification/readback.txt
+      - name: Preserve receipt, not the large archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v3-historical-source-archive-${{ github.run_id }}
+          path: archive-verification/
+          if-no-files-found: warn
+          retention-days: 30
