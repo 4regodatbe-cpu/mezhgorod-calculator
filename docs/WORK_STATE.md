@@ -1,6 +1,6 @@
-## 01.11.2026 — UI V1 Release: первая точечная доработка STARTED
+## 01.11.2026 — UI-01 V1 Release: название на экране DONE
 
-[План/сверка исходников](ui-v1-release/README.md). Текущий рабочий header `app/v3/page.tsx` переименован с «Актуальный калькулятор» на «V1 Release», остальная форма и алгоритмы без изменений; визуальный дизайн не перестраивается. UI-02—UI-05 зарегистрированы как требующие браузерной проверки и уточнения перед реализацией. Новые CI/Preview результаты до публикации NOT_RUN. Production V1 Release на SHA e3ca3783; ветка PR14 Draft. Далее readback, CI, Preview и статус DONE только после проверок.
+[Требования и список UI-наблюдений](ui-v1-release/README.md), [checkpoint](checkpoints/2026-11-01-ui-v1-release-header-DONE.md). В `app/v3/page.tsx` подпись «Актуальный калькулятор» заменена на «V1 Release» без изменения расположения, логотипа, V2, маршрутов/тарифов/API. Исходный UI commit `f63fb41ce8c06553f8328574258fe41ee00e1131`; GitHub readback PASS. Actions Special Territory 41251210383 и B03 41251210382 SUCCESS. Vercel Preview dpl_ENRgrowFr9Uv6spwpcPngPvek6WN READY на точном commit, HTML /v3 200 и содержит новую подпись; desktop/mobile browser NOT_RUN (Opera UNAVAILABLE). PR14 Draft, Production на e3ca3783 без изменений. UI-02—UI-05 — только наблюдения, не реализованы. Следующее: согласовать приоритет следующих интерфейсных изменений; не менять дизайн по предположению.
 
 ## 01.11.2026 — реорганизация: архивы DONE; широкая очистка DEFERRED
 

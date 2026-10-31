@@ -19,9 +19,9 @@
 - `app/v3/components/use-v3-calculation.ts`: API V3, ошибка, отмена старого запроса, копирование.
 - Внешняя Opera browser accessibility/screenshot проверка: UNAVAILABLE 30s, поэтому визуальный mobile PASS не заявляется.
 
-## UI-01: отображаемое название (реализация в рабочей ветке)
+## UI-01: отображаемое название (DONE в рабочей ветке)
 
-В `app/v3/page.tsx` заменить только строку `Актуальный калькулятор · один самый быстрый маршрут` на `V1 Release · один самый быстрый маршрут`. Не менять лого, расположение, ссылки, API, тарифы или функции. Статическая проверка точной замены возможна по GitHub readback. CI/build и browser на момент формирования STARTED: NOT_RUN.
+В `app/v3/page.tsx` заменить только строку `Актуальный калькулятор · один самый быстрый маршрут` на `V1 Release · один самый быстрый маршрут`. Не менять лого, расположение, ссылки, API, тарифы или функции. Статическая проверка точной замены возможна по GitHub readback. Фактическая проверка после GitHub commit `f63fb41ce8c06553f8328574258fe41ee00e1131`: remote readback PASS; GitHub Actions Special territory run `41251210383` SUCCESS, B03 address UI run `41251210382` SUCCESS; Vercel Preview `dpl_ENRgrowFr9Uv6spwpcPngPvek6WN` READY на точном SHA; HTTP GET `/v3` 200, новая подпись присутствует в HTML, старая отсутствует. **Реальное desktop/mobile визуальное взаимодействие NOT_RUN**, Opera connector UNAVAILABLE. Production не обновлялся.
 
 ## Следующие наблюдения (НЕ ДОКАЗАННЫЕ БРАУЗЕРНЫЕ ДЕФЕКТЫ, НЕ РАЗРЕШЕНИЕ НА ИЗМЕНЕНИЕ)
 
