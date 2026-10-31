@@ -1,32 +1,58 @@
-# Реорганизация V1 Release — итог 31.10.2026
+# Реорганизация «Из А в Б»: итоговое состояние на 01.11.2026
 
-> Актуальное дополнение: [узкий Actions run 41241619408](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41241619408) успешно разместил V3 `source.tar.gz` в [отдельном архивном prerelease](https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/tag/archive-pre-release-v3-source-2026-10-31). Удалённый размер 343 730 585 байт и GitHub digest SHA256 `d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87` совпали с локальным; runner сверил 14 042 файла с Git blob manifest, скачал asset и сравнил байты. Ранее описанный HTTP401 снят штатным `GITHUB_TOKEN` runner, не повтором того же CLI upload. PR CI 41241626048: обязательный verify/TypeScript/build SUCCESS, live jobs SKIPPED. Ниже сохранена историческая сводка до этого события; очистка оценивается отдельно.
+**Вердикт: АРХИВИРОВАНИЕ ЗАВЕРШЕНО; ФИЗИЧЕСКАЯ ОЧИСТКА ЧАСТИЧНА И ОТЛОЖЕНА.**
 
-> Дополнение по очистке: из активного дерева убраны ровно шесть исторических `publication/*-before.*` metadata-файлов (17 957 байт), без runtime/build/CI/тестовых зависимостей и без прямых документальных ссылок по именам. Все шесть восстановлены из `archive/research/source.tar.gz` и побайтово сравнены до удаления; `preflight.json` и остальные 55 файлов оставлены. Это уменьшение текущего дерева, но **не** всей Git-истории. Общий статус очистки остаётся PARTIAL: перемещение остальных исследований пока не доказано безопасным.
+Это актуальная сводка, заменяющая устаревший статус до размещения архива V3. История попытки `HTTP 401`, промежуточные решения и необработанные логи сохранены в Git/checkpoints; **действующего блокера загрузки архива V3 больше нет**.
 
-**Статус: PARTIAL.** Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, PR №14 OPEN/Draft. V1 Release Production остаётся на `e3ca3783a8ba9de3271851959eba213bf7a76868`, deployment `dpl_E3e6gUCSd9izZ8tKHA9tf85fr115` READY. Main, Android, backup, release и три archive refs не изменены. Merge/force/deploy не выполнялись.
+## 1. Состояние продукта и Git
 
-## Реально построено
+- Рабочая ветка: `fix/v3-missing-route-prices-2026-10-15`; контрольный HEAD до настоящего документального закрытия: `461e342522a154b5124a7acb09281e3018494257`.
+- PR №14: OPEN / Draft, не слит.
+- Продуктовое имя стабильной версии: **V1 Release**. Не путать с историческим legacy V1. Неизменяемый снимок: `release/v1-release-2026-10-31` → `e3ca3783a8ba9de3271851959eba213bf7a76868`.
+- Публичный Production: [mezhgorod-calculator.vercel.app](https://mezhgorod-calculator.vercel.app); Vercel `dpl_E3e6gUCSd9izZ8tKHA9tf85fr115`, READY, исходный SHA `e3ca3783a8ba9de3271851959eba213bf7a76868` по последней отдельной проверке.
+- Main, Android, backup, release и архивные ветки не менялись; merge, force push и Production deploy при архивировании не выполнялись. Рабочая песочница остаётся одна: `fix/v3-missing-route-prices-2026-10-15`.
 
-| Раздел | Источник | Файлов | source.tar.gz | SHA256 | Восстановление | Размещение |
+## 2. Архивы: фактически доступны и проверены
+
+| Архив | Git source SHA | Файлов | Размер сжатого архива | SHA256 | Восстановление | Местонахождение |
 | --- | --- | ---: | ---: | --- | --- | --- |
-| legacy V1 | `636e6801bdd2a3db6ce4714830dc8a05fc73b7c9` | 316 | 350346 Б | `e398abe654526adbb41fd781dbbe1265396564c3531722d5cd2ec9149af0b69b` | 316/316 Git blobs PASS | GitHub рабочая ветка |
-| legacy V2 | `64631d23dc7ca44febafb9ebf1136162c7af9e82` | 431 | 1427554 Б | `a183e99f1aad65511e759bafbe796f5f5f22dbe0d1a406311ceba3505668789a` | 431/431 PASS | GitHub рабочая ветка |
-| pre-release V3 | `cde74243c88cfab313913d8b0435e8d56fae372e` | 14042 | 343730585 Б | `d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87` | 14042/14042 PASS | **Локально; GitHub asset BLOCKED** |
-| research-selected | рабочий SHA `4c5edd3582ff887b08c39e30a2ded007b336c821` | 61 | 770737 Б | `2a89b241ae97059d5cd54f2cd9c8ea9a5cedfe49653672fb12ad1ef1d267d411` | 61/61 PASS | GitHub рабочая ветка |
+| Legacy V1 | `636e6801bdd2a3db6ce4714830dc8a05fc73b7c9` | 316 | 350 346 Б | `e398abe654526adbb41fd781dbbe1265396564c3531722d5cd2ec9149af0b69b` | 316/316 PASS | [archive/versions/legacy-v1](../../archive/versions/legacy-v1/) в GitHub |
+| Legacy V2 | `64631d23dc7ca44febafb9ebf1136162c7af9e82` | 431 | 1 427 554 Б | `a183e99f1aad65511e759bafbe796f5f5f22dbe0d1a406311ceba3505668789a` | 431/431 PASS | [archive/versions/legacy-v2](../../archive/versions/legacy-v2/) в GitHub |
+| Pre-release V3 | `cde74243c88cfab313913d8b0435e8d56fae372e` | 14 042 | 343 730 585 Б | `d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87` | 14 042/14 042 PASS | [отдельный GitHub prerelease](https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/tag/archive-pre-release-v3-source-2026-10-31) |
+| Research-selected (два каталога) | `4c5edd3582ff887b08c39e30a2ded007b336c821` | 61 | 770 737 Б | `2a89b241ae97059d5cd54f2cd9c8ea9a5cedfe49653672fb12ad1ef1d267d411` | 61/61 PASS | [archive/research](../../archive/research/) в GitHub |
 
-Все исходники экспортированы из отслеживаемого Git-дерева. Распаковка каждого выполнена в чистый отдельный каталог; `verify-version-archive.mjs` проверил байты против точных Git blob SHA, режимы файлов и отсутствие лишних файлов. Манифесты содержат SHA256 каждого файла. Архив V3 локально: `/workspace/reorg-handoff-2026-10-31/pre-release-v3-source.tar.gz`. Пользователь отдельно разрешил публичный GitHub Release asset; `gh release create` получил `HTTP 401 Bad credentials` от `uploads.github.com`. Сбой не оставил release, tag или asset. Повтор с неизменной авторизацией не выполнялся, большой архив не помещался в обычную Git-историю.
+Для V3 GitHub Release asset `source.tar.gz` имеет подтверждённый статус `uploaded`, размер **343 730 585 Б**, digest `sha256:d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87`. [Actions run 41241619408](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41241619408) SUCCESS: исходные 14 042 Git blobs, загрузка и последующая скачанная побайтовая копия проверены. Штатный `GITHUB_TOKEN` GitHub runner разрешил прежний блокер `uploads.github.com` HTTP 401; новый пользовательский токен и обход защиты не использовались. Файл [можно получить напрямую](https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/download/archive-pre-release-v3-source-2026-10-31/source.tar.gz).
 
-Инвентарь A: 14 055 отслеживаемых файлов / 402 106 462 байта, 689 просмотренных кодовых/CI текстов, 395 целевых файлов с литеральными ссылками. Он не доказывает отсутствие всех динамических зависимостей. Исследовательский архив охватывает только две исторические папки: `experiments/preview-acceptance` и `experiments/release-candidate-1`; остальные experiments включают runtime, CI и тестовые зависимости. Из активного дерева перемещено **0** файлов и удалено **0**; уменьшение размера **0 байт**. Ссылки 14 исторических документов и неполный удалённый V3 архив не дают честно объявить очистку завершённой. Дополнительные копии увеличили размер репозитория; историю Git не переписывали.
+Архив `research-selected` охватывает только `experiments/preview-acceptance` и `experiments/release-candidate-1`; это **не** заявление, что все остальные эксперименты удалены или не используются. Отдельные архивные Git refs сохраняют точные исходные снимки.
 
-## Проверки текущей версии
+## 3. Инвентаризация и безопасная очистка
 
-[Машинная сводка](checks/RESULTS.json) и raw логи лежат в `checks/`. Node 24.19.0, pnpm 11.25.0, Next 16.3.4. Frozen install exit0 с доступным workspace store (первый запуск с default `/home/agent` получил exit254). `pnpm test:audit`: **1067 PASS, 0 FAIL, 1 SKIP**, exit0. `pnpm exec tsc --noEmit`: exit0. `pnpm lint`: exit0, 0 errors/7 warnings. `pnpm exec next build`: exit0. Локальная production-сборка вернула HTML200 для `/v2` и `/v3`, а `/r` — HTTP200/GeoNames для восьми городских запросов с подтверждённой первичной выдачей Донецка ДНР. Первый smoke assertion упал из-за регистра написания региона в самом тесте; исправленный тест exit0. Новый desktop/mobile браузер и live расчёт маршрута в этом этапе **NOT_RUN**; прежние browser-evidence соответствуют неизменённому UI, но не считаются новым запуском. Runtime пути `app`, `components`, `lib`, `data`, `scripts`, конфигурация и CI без diff относительно утверждённого Production source SHA.
+- Инвентарь A до добавления архивов: **14 055 отслеживаемых файлов, 402 106 462 байта**; исследованы исходники/CI и литеральные ссылки. Это не доказывает отсутствие динамических зависимостей.
+- Из активного дерева удалены **ровно 6 исторических metadata-файлов**, суммарно **17 957 байт**:
+  `actions-before.json`, `numstat-before.txt`, `paths-before.txt`, `pr-before.json`, `production-before.json`, `remote-before.txt` из `experiments/release-candidate-1/2026-10-31/publication/`.
+- Все шесть предварительно восстановлены из `archive/research/source.tar.gz` и побайтово сравнены (6/6 PASS). `preflight.json`, другие 55 файлов архивной подборки и всё используемое приложение сохранены.
+- **Другие файлы не удалены и не перемещены**. Остальная очистка намеренно отложена: V3 использует `app/v2/components`, часть `experiments` нужна для runtime, CI и тестов, а исторические документы ссылаются на прежние пути.
+- Уменьшение текущего активного дерева от этих шести файлов: **17 957 байт**. Полная Git-история не уменьшилась; новые архивы дополнительно занимают место. Не следует выдавать это за значительную экономию объёма репозитория.
+- Не выполнять массовое удаление ради числа файлов: будущий перенос требует новых доказательств отсутствия зависимостей, сохранения ссылок и проверенного восстановления.
 
-Raw build-лог содержит обычный deprecation `preferredRegion`. Сохранённые без редакции stdout имеют пробельные окончания строк; поэтому `git diff --check` для commit с логами выдаёт предупреждения на raw evidence. Это не ошибка приложения и не было объявлено PASS проверки whitespace. Секреты не обнаружены ограниченным поиском известных токеновых шаблонов; это не полный секретный аудит.
+## 4. Проверки и пределы доказательств
 
-## Следующие конкретные условия
+Проверка исходников реорганизации: Node 24.19.0, pnpm 11.25.0, Next 16.3.4.
 
-1. Исправить авторизацию GitHub Release upload endpoint `uploads.github.com` (CLI API-доступ и обычный push работают, asset upload — HTTP401), затем разместить **тот же проверенный** V3 архив как prerelease asset и проверить размер/хеш скачанного файла. Нельзя заменять GitHub URL локальным файлом или Git-веткой.
-2. Для дополнительных исследований составить точные доказательства неиспользуемости и план сохранения исторических ссылок. Только после удалённого архивного восстановления удалить конкретные файлы и повторить gates. При отсутствии доказанных лишних файлов оставить их на месте.
-3. Production/main/Android/backup/release/archive refs не менять. Песочница остаётся одна — разрешённая рабочая ветка.
+- `pnpm install --frozen-lockfile` — PASS с доступным workspace store (первый запуск на недоступном default store завершился ошибкой окружения exit254).
+- `pnpm test:audit` — **1067 PASS, 0 FAIL, 1 SKIP**.
+- `pnpm exec tsc --noEmit` — PASS.
+- `pnpm lint` — exit 0; 7 предупреждений, 0 ошибок.
+- `pnpm exec next build` — PASS.
+- Локально `/v2` и `/v3` — HTTP 200, восемь городских запросов обработаны GeoNames. Первая локальная smoke-проверка имела ошибку регистрозависимого assertion; исправленная завершилась PASS.
+- После публикации узкого архивного workflow: [run 41241626048](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41241626048) и [B03 41241625888](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41241625888) — SUCCESS. Для последнего HEAD `461e342522a154b5124a7acb09281e3018494257` отдельные [Special Territory 41248391619](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41248391619) и [B03 41248391613](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41248391613) — SUCCESS.
+- Новый desktop/mobile browser и новые live расчёты маршрутов **NOT_RUN** на этапе реорганизации. `live_probe`/`calculation_timing` в указанном CI-прогоне были SKIPPED. Не приравнивать моковые тесты или сохранённые browser evidence к новой live-проверке.
+- Runtime и тарифные файлы не менялись относительно зафиксированного Production source; текущее документальное закрытие не запускало новых тестов, так как не меняет код.
+
+## 5. Закрытие этапа и будущая работа
+
+**Архивирование трёх версий и выбранных исследовательских материалов — DONE.** Проверяемая безопасная очистка шести файлов — DONE. **Массовая очистка — DEFERRED, не DONE.** Это сознательное решение во избежание регрессий, а не потерянная работа.
+
+Дальнейшие улучшения интерфейса вести отдельными задачами в действующей единственной песочнице. Возвращаться к другим перемещениям только при наличии конкретного доказанного неиспользуемого набора файлов либо необходимости архитектурной переработки. Production и release refs не трогать без отдельного разрешения.
+
+Прежний блокер 401 и более старый статус PARTIAL описаны в Git-истории и датированных checkpoints. Не использовать их как текущую рекомендацию повторить загрузку V3.
