@@ -1,3 +1,7 @@
+## 31.10.2026 — F–H4 preflight PASS; единственный разрешённый push PENDING
+
+[Checkpoint](checkpoints/2026-10-31-FH4-publication-preflight-PASS.md), [журнал/gates](../experiments/toll-estimates/publication-2026-10-31/WORK_LOG.md). Initiala04c3195/tested82b6bf10,remote c2f52ee9/PR14Draft/ancestry/bundlePASS. Весь55commit/467filediffпроверен: D1address+Foverlay+proof,нетmatrix/CI/deployизменений/секретныхпутей; knownsecretpatterns0. Freshoffline1057PASS/0FAIL/1SKIP+contracts,67targetPASS,TSfinal0,ESLint0/7warnings,Next16.3.4build0/Node24.19. InitialTS2(.next/typesconcurrentregeneration)сохранён,последовательныйповтор0безappфикса. F OFF/Productiondeny, strict/unknownnullсохранены. Далееfreshremote+CIlease→одинnormalfast-forwardpush→remote/tree/pathreadback/Actions/newPreview;послепубликациитольколокальныезаписи,невторойpush. Поканеопубликовано;нетProduction/main/Android/backup/merge/force.
+
 ## 31.10.2026 — F–H4 publication preflight STARTED, push ещё НЕ выполнен
 
 [Checkpoint](checkpoints/2026-10-31-FH4-publication-STARTED.md), [журнал/план](../experiments/toll-estimates/publication-2026-10-31/WORK_LOG.md). Владелецразрешилодинnormalfast-forwardpushпослеуспешныхпроверок. Sourcea04c3195/remotec2f52ee9/PR14Draft/activeCI0,55pendingcommits/467files,ancestry/bundle0. Нетmatrix/CI/deployconfigизменений; F OFF/Productiondeny/strictnullguardsсохранены. Свежиеtarget/offline/TS/lint/buildPENDING. Дальшеfreshremotelease→одинpush→readback/Actions/Preview; postpushфиксациятольколокально,безвторогопуша. NoProduction/main/Android/backup/merge/force.
