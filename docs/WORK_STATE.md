@@ -1,3 +1,7 @@
+## 31.10.2026 — Stage I1 LOCAL: prefix capture недостаточен; snapshot не изменён
+
+[Checkpoint](checkpoints/2026-10-31-stage-I1-prefix-capture-BLOCKED-LOCAL.md), [следующие действия](../experiments/address-search/stage-i-2026-10-31/NEXT_STEPS.md). Донецк HTTP 200 / два ID; «Красн» HTTP 200 без Краснодара (5×503 + cooldown). Capture exit 2, остановлен до Ростова. B03 BLOCKED до полного нового review. Далее один bounded follow-up точных названий двух недостающих городов, затем offline-разбор Photon. Всё только локально; snapshot/expiry/CI/Production не изменены, второй push запрещён.
+
 ## 31.10.2026 — Stage I STARTED LOCAL: B03 recapture, затем Photon503
 
 [Checkpoint](checkpoints/2026-10-31-stage-I1-snapshot-recapture-STARTED.md), [журнал](../experiments/address-search/stage-i-2026-10-31/WORK_LOG.md). База223f72e6/clean,remoteпредыдущейпубликацииc0e76ecc,второйpushзапрещён. B03mockrunnersиспользуют4recordsпросроченногоснимка;неослаблятьfreshness/runtimeguard. Готовогоновогоснимкавсохранённыхподходящихcapturesнет;boundedPhotononlyrecapture3querymax/20s,stopпослепервогонеуспеха,статусPENDING. Затемreview/source/hash/testsилиBLOCKED→независимыйPhoton503/cooldownofflineразбор. Snapshotflag/Production/матрица/CIпока неизменны; браузервнеизменнойsandboxсреденеповторять.

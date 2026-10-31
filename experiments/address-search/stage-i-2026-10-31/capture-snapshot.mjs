@@ -9,9 +9,16 @@ import {createHash} from 'node:crypto';
 const out='experiments/address-search/stage-i-2026-10-31/';
 if(localPilotAllowed()||switches.addressCitySnapshot)throw Error('Capture must be Photon only: local pilot/snapshot OFF');
 const sourceCommit=process.argv[2];if(!/^[a-f0-9]{40}$/.test(sourceCommit??''))throw Error('Supply exact source SHA');
-const plans=[{id:'donetsk',query:'Донецк',required:['R-1413957','R-1517207']},{id:'krasn',query:'Красн',required:['R-7373058']},{id:'rostov',query:'Ростов',required:['R-1285772']}];
-const report={status:'STARTED',sourceCommit,transport:'Real current GET handler + Photon fetch; direct local handler invocation, not Preview HTTP; no mocks',maxQueries:3,perQueryBudgetMs:20000,rows:[]};
-const save=()=>fs.writeFileSync(out+'capture-review.json',JSON.stringify(report,null,2)+'\n');save();
+const exactMissing=process.argv[3]==='--exact-missing';
+if(process.argv[3]&&!exactMissing)throw Error('Unknown capture mode');
+if(exactMissing){
+ const previous=JSON.parse(fs.readFileSync(out+'capture-review.json','utf8'));
+ if(previous.status!=='BLOCKED_CAPTURE_NOT_ADMITTED'||previous.rows.length!==2||!previous.rows[0].requiredIdsPresent||previous.rows[1].id!=='krasn')throw Error('Follow-up requires preserved successful Donetsk and unsuccessful prefix capture');
+ if(fs.existsSync(out+'capture-review-exact.json'))throw Error('Follow-up already attempted; do not repeat unchanged');
+}
+const plans=exactMissing?[{id:'krasnodar-exact',query:'Краснодар',required:['R-7373058']},{id:'rostov-exact',query:'Ростов-на-Дону',required:['R-1285772']}]:[{id:'donetsk',query:'Донецк',required:['R-1413957','R-1517207']},{id:'krasn',query:'Красн',required:['R-7373058']},{id:'rostov',query:'Ростов',required:['R-1285772']}];
+const report={status:'STARTED',sourceCommit,transport:'Real current GET handler + Photon fetch; direct local handler invocation, not Preview HTTP; no mocks',maxQueries:plans.length,perQueryBudgetMs:20000,rows:[]};
+const save=()=>fs.writeFileSync(out+(exactMissing?'capture-review-exact.json':'capture-review.json'),JSON.stringify(report,null,2)+'\n');save();
 for(const plan of plans){
  const startedAt=new Date().toISOString(),at=performance.now();const c=new AbortController(),timer=setTimeout(()=>c.abort(),20500);
  try{
