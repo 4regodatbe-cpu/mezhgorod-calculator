@@ -1,3 +1,7 @@
+## 31.10.2026 — V3 RC1 HTTP PASS LOCAL; browser/mobile остаётся непроверенной границей
+
+[Checkpoint](checkpoints/2026-10-31-v3-RC1-http-acceptance-PASS-LOCAL.md), [реальные ответы](../experiments/release-candidate-1/2026-10-31/checks/api-flow.json). 11 POST /r реальный GeoNames с controlled Photon outage, attempts0; координаты/оба Донецка/явные регионы PASS. V3/V2 HTTP SSR200, unsafe tariff400. Один real V3 Краснодар→Анапа200/2.281с/166347м/8713с, transfer4159 при25₽/км, toll620 priced (не новая сертификация). Runtime неизменен; browser helper UID65534 не root, interactive/mobile не PASS. Продолжаются независимые replay/ценовые состояния и финальные gates, без push/Production/массового аудита.
+
 ## 31.10.2026 — V3 RC1 HTTP acceptance STARTED LOCAL
 
 [Checkpoint](checkpoints/2026-10-31-v3-RC1-http-acceptance-STARTED-LOCAL.md), [цикл/журнал](../experiments/release-candidate-1/2026-10-31/README.md). Правила поставки сохранены в 21cae380; app/lib/data равны проверенной I3 сборке. Реальный локальный HTTP с GeoNames и контролируемым отказом Photon, 11 городов и один bounded live расчёт Краснодар→Анапа. Browser helper остаётся owned UID65534 вместо root: не ослаблять sandbox, mobile interaction пока BLOCKED_ENVIRONMENT; продолжать API/replay/SSR. Итоги ещё PENDING; без push/Production/нового широкого аудита.
