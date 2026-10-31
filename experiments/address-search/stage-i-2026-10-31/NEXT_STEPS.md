@@ -1,5 +1,9 @@
 # Stage I — следующие действия, только локально
 
+## I3 snapshot-trigger — финальное дополнение, 31.10.2026
+
+Исправление filters DONE LOCAL: `data/address-city-snapshot.json` отслеживается независимо на push и PR. Target 5/5 PASS; offline 1063 PASS / 1 SKIP; TypeScript/ESLint/Next build exit 0. Предыдущий snapshot/review/история сохранены; freshness/SHA256/browser guards не менялись. Точные логи и исходники — `checks/i3-snapshot-trigger/RESULTS.json`, отдельный DONE checkpoint. Следующий шаг — только отдельно разрешённый remote preflight и публикация с проверкой настоящих Actions/Preview. Сейчас push запрещён; новый bundle не подменяет GitHub persistence. Photon503 повторно не исследовать без новых данных. Ниже — сохранённое состояние предшествующего блока.
+
 ## Текущее состояние после финальных проверок
 
 - I1 DONE LOCAL: новый реальный snapshot и provenance, дата-блокировка B03 устранена. Runtime flag OFF, expiry 07.11.2026 17:50:17.541 МСК. Повторять capture без новой причины не нужно.

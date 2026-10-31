@@ -1,3 +1,7 @@
+## 31.10.2026 — I3 B03 snapshot-trigger DONE LOCAL; готово к отдельной контролируемой публикации
+
+[Checkpoint](checkpoints/2026-10-31-stage-I3-snapshot-trigger-DONE-LOCAL.md), [результаты/логи](../experiments/address-search/stage-i-2026-10-31/checks/i3-snapshot-trigger/RESULTS.json). Parent 7d100728 и Stage I bundle сохранены. Snapshot добавлен в оба path filters B03; workflow изменён ровно двумя строками, freshness/SHA256/browser/verify/build неизменны. Два новых regression RED до исправления, после 5/5 PASS. Проверенные исходники 2750861c: полный offline **1063 PASS / 0 FAIL / 1 SKIP**, quote/API PASS, ESLint 0 (7 прежних warnings), Next build 0, затем TypeScript 0 / Node24.19.0. Runtime/snapshot/матрица не менялись, Photon повторно не исследовался, новых CI/browser/live запусков нет. Далее локальный commit/readback/новый bundle, **без push/Production**. Публикация требует отдельного разрешения и свежего remote preflight; внешний Photon503 остаётся отдельным блокером.
+
 ## 31.10.2026 — I3 snapshot-trigger fix LOCAL; финальные gates STARTED
 
 [Checkpoint](checkpoints/2026-10-31-stage-I3-snapshot-trigger-STARTED-LOCAL.md). Parent 7d100728 сохранён. Подтверждён дефект path filters B03: два новых теста RED (3 PASS / 2 FAIL), после добавления snapshot в push и PR — 5 PASS / exit 0. Разбор теста ограничен каждым событием отдельно. Workflow изменён ровно двумя path-строками, остальные байты/guards/jobs неизменны. По AGENTS выполняются обязательные offline/lint/build/TypeScript; результаты PENDING. Photon заново не исследуется, push/Production запрещены.
