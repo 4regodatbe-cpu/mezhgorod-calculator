@@ -1,5 +1,9 @@
 # Реорганизация V1 Release — журнал
 
+## 31.10.2026 — V3 source archive: hosted VERIFIED
+
+Обычный ff push workflow на `aea6a21c52d54b166da80e2dfc350588cee1a0eb` и remote/PR Draft readback PASS. Actions 41241619408 SUCCESS: Node24, exact cde74243/tree c3e6cc8, 14042/14042 файлов по Git blob/manifest, сжатый архив **побайтово совпал** с локальным (343730585 байт, SHA256 d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87). Отдельный prerelease asset 696474419 опубликован, runner скачал его и `cmp` PASS; GitHub API size/digest совпали. Локальное скачивание receipt artifact через текущую integration authorization вернуло HTTP403 от actions-results blob; по той же причине повтор не выполнялся, фактические stdout/run logs и GitHub asset API доступны и сохранены ссылкой в checkpoint. Автоматический special CI 41241626048 SUCCESS: classifier/verify/TS/build PASS, live_probe/calculation_timing SKIPPED. Не было новых тарифных/route проверок вручную.
+
 ## 31.10.2026 — A STARTED
 
 Решение владельца: одна рабочая ветка, четыре неизменяемых release/archive refs, три физические версии и архив исследований; очистка только после проверенного восстановления. Исходный remote `3fa46ce3c62c73610ca8209ae5070819015e5a61`, PR №14 OPEN/Draft. Старая грязная копия не изменялась. Контрольные refs сверены через `git ls-remote`; текущий checkout чист. Далее построить `INVENTORY.json`, проверить его, сохранить A. Production не затрагивать.

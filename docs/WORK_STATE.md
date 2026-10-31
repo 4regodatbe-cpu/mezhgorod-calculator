@@ -1,3 +1,7 @@
+## 31.10.2026 — V3 source archive: GitHub asset VERIFIED
+
+[Checkpoint](checkpoints/2026-10-31-v3-source-archive-hosted-VERIFIED.md). Workflow commit `aea6a21c52d54b166da80e2dfc350588cee1a0eb` readback PASS; Actions 41241619408 SUCCESS. GitHub отдельный prerelease asset `source.tar.gz`: 343730585 байт, SHA256 `d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87`, точно исходный файл; 14042/14042 Git blobs and post-upload download/cmp PASS. PR CI 41241626048 SUCCESS (mandatory verify/TS/build; live jobs SKIPPED), B03 41241625888 SUCCESS. Следующее: точечная очистка только доказанно неиспользуемых исторических файлов.
+
 ## 31.10.2026 — V3 source archive: узкий hosted workflow READY к публикации
 
 [Checkpoint](checkpoints/2026-10-31-v3-archive-hosted-workflow-READY.md). В `.github/workflows/v3-source-archive.yml` подготовлен один self-path push job с `contents:write`, source SHA `cde74243…` и ожидаемым tree `c3e6cc8…`. Он сравнивает все файлы с манифестом, создаёт отдельный prerelease, скачивает asset и проверяет байты/размер/SHA256; крупный файл не добавляется в Git. YAML и все bash-блоки прошли локальную проверку; release tag отсутствует. Модель классификатора по фактическому diff `ahead`/46+1 файлов дала `shouldRunLive:false`; предыдущий verify/classifier завершился SUCCESS. Следующий шаг — обычный fast-forward push workflow, remote readback и наблюдение фактического Actions. При неожиданном live job не считать этап закрытым.

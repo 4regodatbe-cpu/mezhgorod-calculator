@@ -1,5 +1,7 @@
 # Реорганизация V1 Release — итог 31.10.2026
 
+> Актуальное дополнение: [узкий Actions run 41241619408](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41241619408) успешно разместил V3 `source.tar.gz` в [отдельном архивном prerelease](https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/tag/archive-pre-release-v3-source-2026-10-31). Удалённый размер 343 730 585 байт и GitHub digest SHA256 `d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87` совпали с локальным; runner сверил 14 042 файла с Git blob manifest, скачал asset и сравнил байты. Ранее описанный HTTP401 снят штатным `GITHUB_TOKEN` runner, не повтором того же CLI upload. PR CI 41241626048: обязательный verify/TypeScript/build SUCCESS, live jobs SKIPPED. Ниже сохранена историческая сводка до этого события; очистка оценивается отдельно.
+
 **Статус: PARTIAL.** Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, PR №14 OPEN/Draft. V1 Release Production остаётся на `e3ca3783a8ba9de3271851959eba213bf7a76868`, deployment `dpl_E3e6gUCSd9izZ8tKHA9tf85fr115` READY. Main, Android, backup, release и три archive refs не изменены. Merge/force/deploy не выполнялись.
 
 ## Реально построено
