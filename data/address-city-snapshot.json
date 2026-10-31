@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "snapshotId": "positive-cities-2026-10-24",
-  "reviewedAt": "2026-10-24T13:17:55.454120+00:00",
-  "expiresAt": "2026-10-31T08:24:54Z",
+  "snapshotId": "positive-cities-2026-10-31",
+  "reviewedAt": "2026-10-31T14:54:49.000Z",
+  "expiresAt": "2026-11-07T14:50:17.541Z",
   "scope": "limited_settlements_only",
   "license": {
     "name": "ODbL-1.0",
@@ -26,10 +26,10 @@
         }
       },
       "source": {
-        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/donetsk.json",
-        "sha256": "412c820fe352e37c1e7a50cd9ea4f2553ae75025a3be1f3df21cf8499c4b4820",
-        "capturedAt": "Sat, 24 Oct 2026 08:25:42 GMT",
-        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "capturePath": "experiments/address-search/stage-i-2026-10-31/capture-donetsk.json",
+        "sha256": "c60683d225c67e3f805f1d8fcbe21c6d004ad46b7d82ce345fdc8d09690898f6",
+        "capturedAt": "2026-10-31T14:50:17.541Z",
+        "sourceCommit": "5600384e90d632f3f3bd0bf3e465013bb4fb87f9",
         "sourceId": "R-1413957"
       }
     },
@@ -49,10 +49,10 @@
         }
       },
       "source": {
-        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/donetsk.json",
-        "sha256": "412c820fe352e37c1e7a50cd9ea4f2553ae75025a3be1f3df21cf8499c4b4820",
-        "capturedAt": "Sat, 24 Oct 2026 08:25:42 GMT",
-        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "capturePath": "experiments/address-search/stage-i-2026-10-31/capture-donetsk.json",
+        "sha256": "c60683d225c67e3f805f1d8fcbe21c6d004ad46b7d82ce345fdc8d09690898f6",
+        "capturedAt": "2026-10-31T14:50:17.541Z",
+        "sourceCommit": "5600384e90d632f3f3bd0bf3e465013bb4fb87f9",
         "sourceId": "R-1517207"
       }
     },
@@ -71,10 +71,10 @@
         }
       },
       "source": {
-        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/krasn.json",
-        "sha256": "8c96abfde7d54881f230ee549b7b198f03e428890270c3abce569f50e604d63a",
-        "capturedAt": "Sat, 24 Oct 2026 08:25:23 GMT",
-        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "capturePath": "experiments/address-search/stage-i-2026-10-31/capture-krasnodar-exact.json",
+        "sha256": "243733a1d1be12567b3c9d62ec14265206a2ab268a19ec7ce43cb7c8543749c4",
+        "capturedAt": "2026-10-31T14:54:05.129Z",
+        "sourceCommit": "da0e545c5ec2038097230b7dc77723897af006ad",
         "sourceId": "R-7373058"
       }
     },
@@ -94,13 +94,13 @@
         }
       },
       "source": {
-        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/rostov.json",
-        "sha256": "6f358701fc45f7c62ec0ec512f0adef6f0203928f5248ab55a1fac06658f22df",
-        "capturedAt": "Sat, 24 Oct 2026 08:24:54 GMT",
-        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "capturePath": "experiments/address-search/stage-i-2026-10-31/capture-rostov-exact.json",
+        "sha256": "ff0642769c22412e52f7c7177f8b931e764f040b4b7568dc4e92f16d09962549",
+        "capturedAt": "2026-10-31T14:54:06.046Z",
+        "sourceCommit": "da0e545c5ec2038097230b7dc77723897af006ad",
         "sourceId": "R-1285772"
       }
     }
   ],
-  "recordsSha256": "98f0b3aff117d77525bcba9d65c4d507b1a29d540e0c9fdf553e5fb9494b2933"
+  "recordsSha256": "c72b3e2bf9be57e774a245c2f10ff6f69dd4d043258579dff60e46da65afa0a4"
 }

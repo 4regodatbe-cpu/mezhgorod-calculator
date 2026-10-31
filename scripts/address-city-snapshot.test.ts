@@ -16,6 +16,7 @@ test("snapshot contains only four exact successful live suggestions with source 
     assert.equal(createHash("sha256").update(bytes).digest("hex"), r.source.sha256);
     const capture = JSON.parse(bytes.toString());
     assert.equal(capture.status, 200); assert.equal(capture.sourceCommit, r.source.sourceCommit);
+    assert.equal(capture.capturedAt, r.source.capturedAt, "review timestamp must come from the preserved capture, not a date-only renewal");
     assert.deepEqual(capture.body.items.find((x: { id: string }) => x.id === r.suggestion.id), r.suggestion);
   }
   const result = searchCitySnapshot("ДОНЕЦК", options);

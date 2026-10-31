@@ -1,3 +1,7 @@
+## 31.10.2026 — Stage I1 LOCAL: B03 freshness исправлен новым capture/review, не изменением старого срока
+
+[Checkpoint](checkpoints/2026-10-31-stage-I1-snapshot-reviewed-LOCAL.md), [capture/review/журнал](../experiments/address-search/stage-i-2026-10-31/WORK_LOG.md). Реальные новые ответы GET+Photon: 4/4 прежних ID, подписи и координаты совпали. Новый snapshot до 07.11.2026 17:50:17.541 МСК, provenance/SHA обновлены, старые captures сохранены; флаг OFF, CI/freshness guard неизменны. 9 target PASS, точная workflow guard exit 0; браузер/Actions заново не запускались. Следующее — offline-разбор Photon 503 и финальные обязательные gates. Только локально, без второго push/Production.
+
 ## 31.10.2026 — Stage I1 LOCAL: prefix capture недостаточен; snapshot не изменён
 
 [Checkpoint](checkpoints/2026-10-31-stage-I1-prefix-capture-BLOCKED-LOCAL.md), [следующие действия](../experiments/address-search/stage-i-2026-10-31/NEXT_STEPS.md). Донецк HTTP 200 / два ID; «Красн» HTTP 200 без Краснодара (5×503 + cooldown). Capture exit 2, остановлен до Ростова. B03 BLOCKED до полного нового review. Далее один bounded follow-up точных названий двух недостающих городов, затем offline-разбор Photon. Всё только локально; snapshot/expiry/CI/Production не изменены, второй push запрещён.
