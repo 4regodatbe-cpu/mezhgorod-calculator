@@ -1,3 +1,7 @@
+## 31.10.2026 — реорганизация V1 Release: инвентаризация STARTED
+
+[Checkpoint](checkpoints/2026-10-31-reorganization-inventory-STARTED.md), [журнал](reorganization/WORK_LOG.md). Чистая рабочая копия получена с remote `3fa46ce3c62c73610ca8209ae5070819015e5a61`; PR №14 OPEN/Draft, четыре контрольных release/archive refs проверены без изменения. Этапы A–F пока не завершены. Следующее: проверяемый инвентарь зависимостей, затем физические архивы с восстановлением до любой очистки.
+
 ## 31.10.2026 — подготовка V1 Release / три архивные версии / одна песочница
 
 [Каталог версий](../archive/versions/README.md), [единственная песочница](../sandbox/README.md), [checkpoint и точные refs](checkpoints/2026-10-31-archive-restructure-prep.md). По решению владельца опубликованный V3 назван «V1 Release» (продуктовое имя; URL/интерфейс пока не менялись). Созданы и прочитаны обратно 4 safety refs: release→e3ca3783, legacy-V1→636e6801, legacy-V2→64631d23, pre-release-V3→cde74243; все неизменяемые snapshots. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15` пока единственная активная sandbox, Preview GeoNames привязан к ней. **Физический перенос старых версий/исследований, bundle, удаление веток и code cleanup НЕ ВЫПОЛНЕНЫ**: app/v3 использует app/v2/components, test:audit импортирует experiments/scripts, data/local-settlements участвует в production runtime. Следующее — граф зависимостей, проверяемый архив и атомарное поэтапное очищение в sandbox, без вмешательства в Production/main/Android/backup/PR14.
@@ -801,7 +805,3 @@ B10 V2 compare recovery начат отдельным [STARTED](checkpoints/2026
 Git push CLI без авторизации: использовать существующий GitHub connector, non-force expected_sha и exact tree readback. Секреты/credentials не извлекать. Для UTF-8 log tree entries читать bytes.decode, не read_text (CR/CRLF); workflow вне sparse — git add --sparse, exact path/blob check. Сохранять каждый малый завершённый блок до следующего; STARTED перед долгим run; не требовать «дальше» после каждого блока.
 
 [Предыдущий handoff целиком, точные исходные байты](WORK_STATE_HISTORY_2026-10-24.md) — история, не текущие NEXT. [Подробный append-only журнал](../experiments/road-ref-boundaries/WORK_LOG.md). [Сверка статусов](checkpoints/2026-10-24-settlement-status-reconciliation-DONE.md).
-## 31.10.2026 — реорганизация V1 Release: инвентаризация STARTED
-
-[Checkpoint](checkpoints/2026-10-31-reorganization-inventory-STARTED.md), [журнал](reorganization/WORK_LOG.md). Чистая рабочая копия получена с remote `3fa46ce3c62c73610ca8209ae5070819015e5a61`; PR №14 OPEN/Draft, четыре контрольных release/archive refs проверены без изменения. Этапы A–F пока не завершены. Следующее: проверяемый инвентарь зависимостей, затем физические архивы с восстановлением до любой очистки.
-
