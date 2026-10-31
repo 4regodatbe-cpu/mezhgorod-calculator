@@ -10,7 +10,10 @@ type Store={loader:LocalLoader;excludedNames:Set<string>};
 let cached: {directory:string; promise:Promise<Store>} | undefined;
 export function localPilotAllowed(env:NodeJS.ProcessEnv=process.env):boolean {
  if(env.GEONAMES_LOCAL_PILOT!=='1')return false;
- if(env.VERCEL==='1'||env.VERCEL_ENV!==undefined)return env.VERCEL_ENV==='preview'&&env.VERCEL_GIT_COMMIT_REF==='fix/v3-missing-route-prices-2026-10-15';
+ if(env.VERCEL==='1'||env.VERCEL_ENV!==undefined){
+  if(env.VERCEL_ENV==='production')return env.GEONAMES_PRODUCTION_ENABLED==='1';
+  return env.VERCEL_ENV==='preview'&&env.VERCEL_GIT_COMMIT_REF==='fix/v3-missing-route-prices-2026-10-15';
+ }
  return env.NODE_ENV!=='production'||env.GEONAMES_LOCAL_TEST==='1';
 }
 async function load(directory:string):Promise<Store>{
@@ -26,7 +29,7 @@ async function load(directory:string):Promise<Store>{
  if(guard.schemaVersion!==1||!Array.isArray(guard.names)||guard.names.length>300000||!guard.names.every((x:unknown)=>typeof x==='string'&&x.length>=3&&x.length<=200))throw Error('Invalid coverage guard');
  return {loader:createShardLoader(JSON.parse(manifest.toString('utf8')),file=>readFile(join(directory,file))),excludedNames:new Set(guard.names)};
 }
-/** Explicit local pilot only; unset switch preserves the existing public API. */
+/** GeoNames remains default OFF; Production needs both explicit server flags. */
 export async function searchLocalSettlements(query:string,signal?:AbortSignal):Promise<null|{items:Suggestion[];partial:boolean;localSource:Record<string,unknown>}>{
  if(!localPilotAllowed()||isDetailedAddress(query))return null;
  const directory=process.env.GEONAMES_LOCAL_PILOT_DIR??join(process.cwd(),'data/local-settlements');
