@@ -1,3 +1,7 @@
+## 31.10.2026 — Stage I2 LOCAL: B03 freshness исправлен; Photon 503 — внешний блокер
+
+[Checkpoint](checkpoints/2026-10-31-stage-I2-photon-503-OFFLINE-LOCAL.md), [разбор](../experiments/address-search/stage-i-2026-10-31/PHOTON_503.md). I1 новый reviewed snapshot до 07.11.2026 17:50:17.541 МСК, flag OFF, 9 target PASS и guard exit 0. I2 четыре новые offline-регрессии PASS: 4×503+3×cooldown воспроизводятся без timeout; семь вариантов одного origin. Удалённая причина HTTP 503 не установлена без headers/body/upstream logs; runtime/CI не ослаблялись. Далее обязательные финальные проверки и локальный bundle; без push/Production/повторного CI. Полное устранение внешнего дефекта не заявлено.
+
 ## 31.10.2026 — Stage I1 LOCAL: B03 freshness исправлен новым capture/review, не изменением старого срока
 
 [Checkpoint](checkpoints/2026-10-31-stage-I1-snapshot-reviewed-LOCAL.md), [capture/review/журнал](../experiments/address-search/stage-i-2026-10-31/WORK_LOG.md). Реальные новые ответы GET+Photon: 4/4 прежних ID, подписи и координаты совпали. Новый snapshot до 07.11.2026 17:50:17.541 МСК, provenance/SHA обновлены, старые captures сохранены; флаг OFF, CI/freshness guard неизменны. 9 target PASS, точная workflow guard exit 0; браузер/Actions заново не запускались. Следующее — offline-разбор Photon 503 и финальные обязательные gates. Только локально, без второго push/Production.
