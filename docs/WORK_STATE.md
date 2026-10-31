@@ -1,4 +1,8 @@
-## 31.10.2026 — реорганизация E STARTED: обязательная проверка
+## 31.10.2026 — реорганизация E: обязательные gates PASS, текущий browser/live NOT_RUN
+
+[Результаты и логи](reorganization/checks/RESULTS.json), [checkpoint E](checkpoints/2026-10-31-reorganization-verification-PARTIAL.md). Node24.19/pnpm11.25 frozen install PASS после переноса pnpm store в рабочее пространство; test:audit 1067 PASS/0 FAIL/1 SKIP, TS PASS, ESLint exit0/7 warnings, Next16.3.4 build PASS. Локально `/v2` и `/v3` HTML200 и восемь городских GeoNames-запросов200; Донецк ДНР первый, Ростовский одноимённый вариант сохранён. Падение первого smoke было ошибкой теста по регистру метки; исправленный тест PASS, runtime не менялся. Новый desktop/mobile browser и live route расчёт NOT_RUN; прежние браузерные evidence не выдаются за новый запуск. App/lib/data/scripts/package/config/CI идентичны V1 Release source `e3ca3783`. Дальше F — честный итог с B/C/D ограничениями.
+
+## 31.10.2026 — реорганизация E STARTED: обязательная проверка (история)
 
 [Checkpoint E STARTED](checkpoints/2026-10-31-reorganization-verification-STARTED.md). D decision сохранён на remote `3248ee40712056ced320d93f86d870d7f8659155`, без удаления. Проверить Node24/pnpm11 frozen install, offline gate, TypeScript, ESLint, прямой Next production build, V2/V3/GeoNames smoke и восстановимость архивов. Новые результаты не подменять историческими; внешние тарифные аудиты не запускать.
 
