@@ -1,5 +1,11 @@
 # Stage I — локальные исправления, 31.10.2026 МСК
 
+## I3 — финальные локальные проверки завершены
+
+Проверенные исходники be932d99. Один полный offline gate: 1061 PASS / 0 FAIL / 1 SKIP, quote/API contracts PASS, exit 0. ESLint exit 0 / 7 прежних warnings. Прямой Next 16.3.4 webpack production build exit 0, затем TypeScript --noEmit exit 0; Node 24.19.0. Deprecated preferredRegion warning сохранён. Полные логи и реальные exit codes — checks/, сводка checks/RESULTS.json. Новых live-аудитов, Actions и браузерных запусков нет.
+
+Старый snapshot в текущем времени expired, новый ready; exact suggestions 4/4 сохранены, default disabled. I1 pre-browser блокировка исправлена локально. I2 upstream503 не устранён и не объявлен исправленным; нужна внешняя диагностика, текущие данные не устанавливают причину самого HTTP 503. Все доступные части Stage I сохранены локально, без второго push. Итоговый checkpoint, файловый readback и incremental bundle обязательны; publication/Preview acceptance требуют отдельного разрешения. Старые STARTED/BLOCKED ниже отражают последовательность, а не новый итог.
+
 ## I2 — 31.10.2026: сохранённый Photon 503 разобран offline
 
 Источник — реальные query rows run 41198667966, не unit-test stdout внутри полного CI log. Донецк: 4 HTTP 503, 3 локальных cooldown, 0 features, 274 мс, без исчерпания 20-секундного бюджета. Код создаёт семь вариантов одного origin, не независимые резервы. Четыре новые регрессии воспроизводят счётчики и восстановление, exit 0 / 4 PASS. Runtime/порог/budget/retry/CI не менялись; разбор и точные ограничения — PHOTON_503.md. Первопричина удалённого 503 по имеющимся данным не установлена; BLOCKED_EXTERNAL_SOURCE. Не выдаём один новый успешный Донецк или mocks за устранение периодического отказа.

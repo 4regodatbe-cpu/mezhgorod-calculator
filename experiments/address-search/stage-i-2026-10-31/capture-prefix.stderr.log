@@ -1,0 +1,12 @@
+address_search_partial {
+  elapsedMs: 1638,
+  sourceCount: 7,
+  failures: { http_503: 1 },
+  budgetExpired: false
+}
+address_search_partial {
+  elapsedMs: 798,
+  sourceCount: 7,
+  failures: { http_503: 5, source_cooldown: 1 },
+  budgetExpired: false
+}

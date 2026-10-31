@@ -1,0 +1,12 @@
+✔ seven city variants share ONE upstream origin, not seven independent Photon providers (5.745475ms)
+✔ saved CI 4x503 + 3xcooldown is reproducible without timeout, ranking or missing-city assumptions (5.840194ms)
+✔ another query can inherit origin cooldown; it expires and a recovered source serves Donetsk (65.025445ms)
+✔ one503 does not discard healthy Donetsk variants or create a false unavailable result (1.494821ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 305.832948
