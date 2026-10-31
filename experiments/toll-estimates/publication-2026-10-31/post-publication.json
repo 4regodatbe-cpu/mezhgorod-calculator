@@ -1,0 +1,395 @@
+{
+  "initialLocalSha": "a04c31957c683a87dfced352de26dc0076ed6e4a",
+  "publishedSha": "c0e76eccfda0bf4fd8eeb5ac299c6da1242baa57",
+  "publishedTree": "948dceea8d341b8be5c9aadf634ce2109bf16fef",
+  "previousRemote": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "pushAttempts": 1,
+  "pushExit": 0,
+  "force": false,
+  "secondPush": false,
+  "readback": {
+    "head": "c0e76eccfda0bf4fd8eeb5ac299c6da1242baa57",
+    "tree": "948dceea8d341b8be5c9aadf634ce2109bf16fef",
+    "remoteTreeTruncated": false,
+    "changedFileBlobMatches": 508,
+    "scope": "Remote GitHub API tree entries match local Git blob identities for every published changed file; selected raw content readback follows."
+  },
+  "rawSelectedContentsVerified": 9,
+  "publishedDiff": {
+    "files": 508,
+    "bytes": 14522831,
+    "insertions": 84854,
+    "deletions": 22,
+    "commits": 57
+  },
+  "actions": [
+    {
+      "conclusion": "failure",
+      "databaseId": 41198667924,
+      "headSha": "c0e76eccfda0bf4fd8eeb5ac299c6da1242baa57",
+      "status": "completed",
+      "url": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41198667924",
+      "workflowName": "B03 address UI browser scenarios"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 41198667966,
+      "headSha": "c0e76eccfda0bf4fd8eeb5ac299c6da1242baa57",
+      "status": "completed",
+      "url": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41198667966",
+      "workflowName": "Special territory geometry and pricing"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 41198662023,
+      "headSha": "c0e76eccfda0bf4fd8eeb5ac299c6da1242baa57",
+      "status": "completed",
+      "url": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41198662023",
+      "workflowName": "Segment 8 route distance quality"
+    }
+  ],
+  "specialJobs": [
+    {
+      "name": "classify_live_scope",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Compare this PR update with its previous checked head; uncertainty fails open",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node scripts/special-territory-live-push-classifier.test.mjs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node scripts/b11-exact-reuse-change.test.mjs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete mandatory offline gate (no live providers)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node scripts/v2-issue2-github-capture.test.mjs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node node_modules/typescript/bin/tsc --noEmit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node node_modules/next/dist/bin/next build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "calculation_timing",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "conclusion": "success"
+        },
+        {
+          "name": "Measure one special V3 handler with real routing sources",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "live_probe",
+      "conclusion": "failure",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "conclusion": "success"
+        },
+        {
+          "name": "Probe live provider geometry and per-leg times",
+          "conclusion": "success"
+        },
+        {
+          "name": "Probe production address collector with bounded requests",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Audit the fixed 50-settlement route corpus",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Compare six Yandex screenshot routes with live providers",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "b03": {
+    "run": 41198667924,
+    "status": "failure",
+    "verify": "success",
+    "addressUi": "failure_before_browser_execution",
+    "reason": "BLOCKED_BY_EXPIRED_SNAPSHOT",
+    "expiresAt": "2026-10-31T08:24:54Z",
+    "checkedAt": "2026-10-31T11:53:21Z",
+    "preflightGap": "Expiration already preceded push; fresh local unit/type/lint/build gates did not cover this workflow freshness precondition.",
+    "browserScenariosExecuted": 0
+  },
+  "live": {
+    "run": 41198667966,
+    "workflowConclusion": "success",
+    "jobConclusion": "failure",
+    "continueOnError": true,
+    "failedStep": "Probe production address collector with bounded requests",
+    "donetsk": {
+      "status": "SOURCE_UNAVAILABLE",
+      "failures": {
+        "http_503": 4,
+        "source_cooldown": 3
+      },
+      "featureCount": 0
+    },
+    "downstream50SettlementAnd6YandexSteps": "skipped"
+  },
+  "observations": [
+    {
+      "type": "calculation-runtime-summary",
+      "caseId": "donetsk-moscow",
+      "status": "PASS",
+      "httpStatus": 200,
+      "elapsedMs": 8324.708002,
+      "handlerElapsedMs": 8319.343,
+      "targetMs": 10000,
+      "overTarget": false,
+      "meters": 1123250,
+      "seconds": 58336,
+      "tollPricingStatus": "priced",
+      "tollAmount": 3050,
+      "tariffIndependentlyVerified": false,
+      "deployedBrowserEndToEnd": false,
+      "importedMs": 634.9644890000001,
+      "serverTiming": "calc_total;dur=8319.343, request_body;dur=2.495, geocoding;dur=0.113, special_options;dur=8261.817, routing;dur=1299.685, provider_valhalla;dur=1299.63, provider_osrm;dur=899.808, toll_matching;dur=3659.983, toll_pricing;dur=917.634, response_pricing;dur=0.979"
+    },
+    {
+      "query": "Ростов",
+      "status": "PASS",
+      "elapsedMs": 1205,
+      "sourceCount": 7,
+      "failures": {
+        "http_503": 1
+      },
+      "featureCount": 103,
+      "checks": {
+        "rostovOnDonWithinFirstEight": true
+      }
+    },
+    {
+      "query": "Красн",
+      "status": "PASS",
+      "elapsedMs": 770,
+      "sourceCount": 7,
+      "failures": {
+        "http_503": 2,
+        "source_cooldown": 4
+      },
+      "featureCount": 20,
+      "checks": {
+        "krasnodarFirst": true
+      }
+    },
+    {
+      "query": "Донецк",
+      "status": "SOURCE_UNAVAILABLE",
+      "elapsedMs": 274,
+      "sourceCount": 7,
+      "failures": {
+        "http_503": 4,
+        "source_cooldown": 3
+      },
+      "featureCount": 0,
+      "checks": {
+        "donetskDnrFirst": false,
+        "donetskRostovSecond": false
+      }
+    },
+    {
+      "type": "address-runtime-probe-summary",
+      "mode": "production-address-collector",
+      "status": "SOURCE_UNAVAILABLE",
+      "completed": 3,
+      "planned": 3,
+      "remainingQueries": [],
+      "elapsedMs": 2266,
+      "perQueryBudgetMs": 20000,
+      "totalBudgetMs": 60000
+    }
+  ],
+  "artifacts": {
+    "timing": {
+      "id": 13041891477,
+      "name": "calculation-runtime-probe-41198667966",
+      "download": "403 Forbidden on signed blob storage redirect; body not read; no bypass/retry"
+    },
+    "live": {
+      "id": 13042165976,
+      "name": "special-territory-live-probe-41198667966",
+      "bodyRead": false
+    },
+    "b03Count": 0,
+    "jobLogsRead": true
+  },
+  "preview": {
+    "id": "dpl_99Y5nDYNv8JCPwrvhBZdVh8ebG6T",
+    "url": "https://mezhgorod-calculator-3si892hb9-4regodatbe-5310.vercel.app/v3",
+    "sha": "c0e76eccfda0bf4fd8eeb5ac299c6da1242baa57",
+    "state": "READY",
+    "environment": "preview",
+    "httpAndBrowserAcceptance": "NOT_PERFORMED",
+    "accessLimit": "Project SSO protects Preview; no installed authenticated CLI path; available MCP URL fetch creates/reuses share link, so not invoked without share permission.",
+    "shareCreated": false,
+    "protectionChanged": false
+  },
+  "production": {
+    "id": "dpl_6XMRbMu5V5vqWTzf684oPTMyubju",
+    "sha": "051d51ea4e4e40b21245af4f7e21b2fea4c4f00f",
+    "changed": false
+  },
+  "pr": {
+    "draft": true,
+    "head": "c0e76eccfda0bf4fd8eeb5ac299c6da1242baa57",
+    "merged": false,
+    "state": "open"
+  },
+  "acceptance": "PARTIAL_PUBLISHED_WITH_B03_FRESHNESS_AND_PHOTON_LIVE_BLOCKERS",
+  "postStatusLocalOnly": true
+}
