@@ -2,7 +2,7 @@
 
 Решение владельца от 31.10.2026: текущий работающий калькулятор получает продуктовое имя **V1 Release**. Предшествующие поколения сохраняются в трёх архивных разделах. Дальнейшие изменения выполняются в одной песочнице.
 
-Физические архивы legacy V1/V2 созданы в соответствующих папках, с SHA256 и полными манифестами. Архив pre-release V3 создан и проверен локально, но его 343-МБ GitHub Release asset ещё не опубликован: после явного разрешения владельца endpoint загрузки вернул HTTP 401 Bad credentials. Наличие манифеста и Git-ветки не равно удалённому физическому архиву. [Инвентарь](../../docs/reorganization/INVENTORY.json) подтвердил зависимости; очистка пока не выполнена.
+Физические архивы legacy V1/V2 созданы в соответствующих папках, с SHA256 и полными манифестами. Архив pre-release V3 размещён в отдельном GitHub prerelease и проверен после скачивания: [asset](https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/download/archive-pre-release-v3-source-2026-10-31/source.tar.gz), [Actions evidence](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41241619408). Старый локальный HTTP401 снят через штатный runner token. [Инвентарь](../../docs/reorganization/INVENTORY.json) подтвердил зависимости; очистка ограничена доказанно неиспользуемой группой.
 
 | Раздел | Полный исторический снимок Git | Что представляет |
 | --- | --- | --- |
@@ -14,9 +14,9 @@
 | --- | ---: | --- | --- |
 | [legacy V1](legacy-v1/source.tar.gz) | 350346 | [manifest](legacy-v1/manifest.json), 316/316 файлов | В рабочей ветке |
 | [legacy V2](legacy-v2/source.tar.gz) | 1427554 | [manifest](legacy-v2/manifest.json), 431/431 файлов | В рабочей ветке |
-| pre-release V3 | 343730585 | [manifest](pre-release-v3/manifest.json), 14042/14042 файлов | Только локально, upload HTTP401 |
+| [pre-release V3](https://github.com/4regodatbe-cpu/mezhgorod-calculator/releases/download/archive-pre-release-v3-source-2026-10-31/source.tar.gz) | 343730585 | [manifest](pre-release-v3/manifest.json), 14042/14042 файлов | GitHub Release asset, readback PASS |
 
-Для каждого архива точный исходный commit, tree, общий SHA256, индивидуальные Git blob SHA и SHA256 файлов указаны в манифесте. Малые архивы и манифесты прочитаны обратно из GitHub. V3 `source.tar.gz` локально расположен в `/workspace/reorg-handoff-2026-10-31/`, SHA256 `d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87`; GitHub URL для него пока отсутствует.
+Для каждого архива точный исходный commit, tree, общий SHA256, индивидуальные Git blob SHA и SHA256 файлов указаны в манифесте. Малые архивы и манифесты прочитаны обратно из GitHub. V3 `source.tar.gz` также остаётся локально в `/workspace/reorg-handoff-2026-10-31/`; удалённый asset 343730585 байт имеет тот же SHA256 `d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87`.
 
 **Рабочий выпуск:** [`release/v1-release-2026-10-31`](https://github.com/4regodatbe-cpu/mezhgorod-calculator/tree/release/v1-release-2026-10-31), исходный production SHA `e3ca3783a8ba9de3271851959eba213bf7a76868`; развёрнут в Vercel как `dpl_E3e6gUCSd9izZ8tKHA9tf85fr115`. Эта ветка — неизменяемый ориентир выпуска, не место активной работы. Репозиторий может сохранять `/v3` как технический URL; «V1 Release» — продуктовое название, без изменения публичного поведения до отдельной миграции.
 

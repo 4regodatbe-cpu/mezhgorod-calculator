@@ -1,3 +1,7 @@
+## 01.11.2026 — точечная очистка исторических metadata
+
+[Checkpoint](checkpoints/2026-10-31-reorganization-metadata-cleanup-PARTIAL.md). Шесть файлов `experiments/release-candidate-1/2026-10-31/publication/*-before.*` (17957 байт) восстановлены из проверенного `archive/research/source.tar.gz` в отдельный каталог и `cmp` PASS; прямых ссылок по именам в app/lib/data/scripts/.github/docs нет. Удалены только эти шесть исторических metadata-файлов; `preflight.json` и все остальные материалы сохранены. Runtime/test/build/dependencies не менялись, полный gate вручную не повторён. Общая очистка PARTIAL из-за остальных исторических ссылок и динамических зависимостей.
+
 ## 31.10.2026 — V3 source archive: GitHub asset VERIFIED
 
 [Checkpoint](checkpoints/2026-10-31-v3-source-archive-hosted-VERIFIED.md). Workflow commit `aea6a21c52d54b166da80e2dfc350588cee1a0eb` readback PASS; Actions 41241619408 SUCCESS. GitHub отдельный prerelease asset `source.tar.gz`: 343730585 байт, SHA256 `d6b772521569d61dfed3ee207fe2c1da4d78717a745b7455031c5cf79a100a87`, точно исходный файл; 14042/14042 Git blobs and post-upload download/cmp PASS. PR CI 41241626048 SUCCESS (mandatory verify/TS/build; live jobs SKIPPED), B03 41241625888 SUCCESS. Следующее: точечная очистка только доказанно неиспользуемых исторических файлов.
