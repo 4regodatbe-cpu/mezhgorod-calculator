@@ -1,0 +1,32 @@
+{
+  "status": "live-regression-found",
+  "previewCommit": "849102c5994c16db2dbfe1ca8d1c145b856725ea",
+  "deploymentId": "dpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXx",
+  "previewRequests": 3,
+  "postRequests": 0,
+  "queries": [
+    {
+      "query": "Ростов",
+      "status": 200,
+      "connectorElapsedMs": 7498
+    },
+    {
+      "query": "Красн",
+      "status": 200,
+      "connectorElapsedMs": 2449
+    },
+    {
+      "query": "Донецк",
+      "status": 502,
+      "connectorElapsedMs": 2884
+    }
+  ],
+  "diagnosis": "one partial upstream503 caused origin-wide pause; nextDonetsk rejected locally source_cooldown7; cooldown logic must be fixed",
+  "sha256": {
+    "runtime-logs.txt": "757194c4f02e42df29c20ddcc924bdcba56c6d8132dd173b5badfcc421635d0a",
+    "ci-readback.json": "f5f3a96f370aaadcd2e17e8a6de41a417647232ccb30eba55dca05e0c115e914",
+    "preview-krasn.json": "b4676f9b01d69c0a446825384bffd741049b19929e1db222e2ea7f2916619b36",
+    "preview-donetsk.json": "d3e6a8a21dd141737643cbed96ee15e4d5c9a6a029fac136e85cf4a51ae64a72",
+    "preview-rostov.json": "6e402d970d9fa27a6b51943c3ee60ebaef0677b2073f0d5ae65263fc89fe2bbd"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:48:48.566Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 105,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 16,
+    "spec": {
+      "caseId": "single-ckad-dmitrov-to-rostov",
+      "kind": "road",
+      "group": "single-ckad"
+    }
+  },
+  "caseId": "single-ckad-dmitrov-to-rostov",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-48-48-566Z-part16",
+  "parent": "ed2b39f14eb0beed3860a8daf959d38cfe7f9be7"
+}

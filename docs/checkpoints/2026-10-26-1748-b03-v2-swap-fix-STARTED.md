@@ -1,0 +1,9 @@
+# B03 focused V2 swap fix and final browser verification — STARTED
+
+- Status: STARTED, 26.10.2026 17:48 МСК.
+- Allowed branch `fix/v3-missing-route-prices-2026-10-15`; current remote base `97fca61d595e49531139641d89004fde35ebe7f0`; PR #14 Draft.
+- Evidence: corrected Chrome run [40342429468](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40342429468), [partial checkpoint](2026-10-26-1748-b03-ui-run2-PARTIAL.md), [per-case output](../../experiments/road-ref-boundaries/checks/2026-10-26-b03-address-ui-run-40342429468/).
+
+Scope: wire `onSwap` in `app/v2/page.tsx` to exchange complete A/B `Place` values (including coordinates and `addressSource`) and clear the previous result. Preserve user-entered values and metadata; do not modify V3, other Android paths, tariffs or external routing. Correct the B03 502 test to distinguish selectable suggestion labels from the intentional retry action. Make `openHarness` wait for the first mocked `/api/collect` request before user interactions as a React hydration signal.
+
+Acceptance: rerun all eight scenarios in hosted Chrome 156 with the same controlled loopback mocks; case03 must prove result existed, values/metadata swapped and old result disappeared; case06 must prove no stale suggestions and retry remains visible; case08 must reach the query/menu/keyboard checks and expose swap on 320px. Capture per-case actuals, errors, counts, viewport, versions, screenshots, stdout/stderr and artifact SHA. Before data use, fetch current remote snapshot and verify hash and expiry. If expired, stop use of records and block the snapshot-dependent cases pending capture/review. Keep `addressCitySnapshot=false`; do not claim original external B-only failure solved from mocks. Persist checkpoint/state/log and readback before selecting the next B01–B12 task.

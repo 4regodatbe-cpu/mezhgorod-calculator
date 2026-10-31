@@ -1,0 +1,1157 @@
+## DONE: сверка GeoNames статусов — 24.10.2026
+
+[Checkpoint](checkpoints/2026-10-24-settlement-status-reconciliation-DONE.md). Убраны устаревшие DNS/NOT_STARTED утверждения из текущих pilot/integration guide; GeoNames DATA_BLOCKED, snapshot false. NEXT: компактный актуальный handoff с сохранением истории.
+
+## DONE browser acceptance plan / запуск BLOCKED — 24.10.2026
+
+[Checkpoint](checkpoints/2026-10-24-city-snapshot-browser-acceptance-DONE.md). SSR код сохранён remote d22205e/treece123f0. В ADDRESS_CITY_SNAPSHOT.md 8 браузерных сценариев с expected/evidence и mock-only границами. Browser NOT_RUN: нужен доступный браузер и STARTED; не повторять поиск Chromium при прежней среде. Snapshot false, срок31.10.2026 11:24:54МСК; full898/ESLint/build PASS — только локальные gates.
+
+## DONE SSR-контракт / browser E2E NOT_RUN — 24.10.2026
+
+[Итог](checkpoints/2026-10-24-city-snapshot-render-DONE.md). Focused5/full898/quoteAPI/ESLint0errors5warnings/buildTypeScript/static16 PASS. Проверен rendered notice/credit при selected/swap-props/clear-props, не события браузера. Snapshot false. NEXT: конкретизировать browser acceptance; Chromium blocker сохраняется.
+
+## STARTED: SSR-контракт резервного города — 24.10.2026
+
+[План](checkpoints/2026-10-24-city-snapshot-render-STARTED.md). Проверить реальный серверный HTML attribution/selected/swap/clear; затем уточнить browser acceptance. Браузерный blocker сохраняется, snapshot false.
+
+## UI preflight BLOCKED / snapshot выключен — 24.10.2026
+
+[Checkpoint](checkpoints/2026-10-24-city-snapshot-ui-preflight-BLOCKED.md). Код d6d9023 и точное tree подтверждены remote. Chromium отсутствует; UI E2E NOT_RUN, сервер/браузер не запускались. NEXT: UI только при доступном браузере с отдельным STARTED; проверить срок снимка перед активацией. Тесты 895/895, ESLint 0 ошибок / 5 прежних предупреждений, build PASS. PR14 draft.
+
+## DONE LINT-001 / snapshotвыключен — 24.10.2026
+
+[Итог](checkpoints/2026-10-24-eslint-baseline-DONE.md) · [проверки](../experiments/road-ref-boundaries/checks/2026-10-24-eslint-baseline/README.md).19ошибокустранены:CommonJSscopepolicy+consttuple;TS/ESMrestrictionsсохранены. Full895/quoteAPI/buildTypeScript/static16/whole-repoESLint0errors5warningsPASS. NEXTUIenvironmentpreflight/локальнаяпроверкапридоступномбраузере;неактивироватьавтоматически/неповторятьмаршруты.
+
+## STARTED isolatedESLintbaseline — 24.10.2026
+
+[План](checkpoints/2026-10-24-eslint-baseline-STARTED.md):18ошибокCommonJSformatpolicy+1mixedlet/const,узкий.cjsoverrideсTS/ESMnegativeproof,Promise.allсемантикапрежняя. NEXTминимальнаяправка→fulltests/lint/buildпоследовательно;неослаблять25мсfixtures. Модульsnapshotfalse/Productionнет.
+
+## Remoteподтверждён4113542 / модульвыключен — 24.10.2026
+
+Кодовыйcommit411354238f4ab3b54b562384456c8682eb772e95/tree377f46024352cb940f9539c7339faf430a97a2daпроверены. [Exact-byte recovery](checkpoints/2026-10-24-city-snapshot-remote-byte-recovery-DONE.md).4cityfallbackготов/flagfalse;local894/buildPASS,whole-repoLintFAIL19baseline. NEXTbaseline-lintreview/позжеPreviewUI,безавтоактивации/повторамаршрутов.
+
+## DONE optionalcitysnapshot / DISABLED — 24.10.2026
+
+[Итог](checkpoints/2026-10-24-city-snapshot-module-DONE-DISABLED.md) · [подключение](../experiments/road-ref-boundaries/ADDRESS_CITY_SNAPSHOT.md). Кодготов:4savedlivecitySuggestion/fulloutageonly/7dayexpiry/shared20с/UIcoverage+OSMcredit;flagaddressCitySnapshot:false. Focused7/full894/quoteAPI/buildTypeScript/static16PASS;changedESLintPASS,whole-repoESLintFAIL19unchangederrors. NEXTотдельныйbaseline-lintreview,затемPreview/UIreview;неактивироватьавтоматически. Новыхlive0/Productionнет.
+
+## DONE4citypositive-subset / STARTEDdefault-offmodule — 24.10.2026
+
+[Review/implementationplan](checkpoints/2026-10-24-positive-city-subset-DONE-module-STARTED.md). Exactreuse4реальныхуспешныхPhotonSuggestion(2Донецка,Краснодар,Ростов-на-Дону),captureSHA/полигоныпроверены;неbenchmark/неGeoNames. NEXTизолированныйaddressCitySnapshot:false,fulloutageonly/7dayexpiry/20сbudget/UIcoverage+OSMcredit+localgates. Liveещёнеактивирован;большойcatalogblocked.
+
+## DONE bounded second-source / NEXT positivecapture review — 24.10.2026
+
+[Итог](checkpoints/2026-10-24-address-secondary-source-review-DONE.md):4queries/OSMcopyrightprimarydoc,0approvedlabels/coords;GeoNameslabelgapостаётсяblocked. NEXTofflineоценкареальныхsavedPhotonPASScapturesдлямалогоlocalcitysubset(неbenchmark/неальтернативныйorigindata). Передкодомreviewedmanifest+STARTED,необещатьвсеадреса.
+
+## DONE labelsremainder / DATA_BLOCKED — 24.10.2026
+
+[Итог](checkpoints/2026-10-24-geonames-label-refinement-DATA-BLOCKED-DONE.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-geonames-label-refinement/README.md).52cityremainder,44точныхADM3/4bindings/rualiases0;новыхрусскихlabels0. ПослеотбраковкиLatinruadmins19collisiongroups,включая2ДНРТарасовки. НЕповторятьGeoNamesdownload/alias/adminjoin;NEXTинойисточникточныхlabels/coordinatevalidationилиограниченныйreviewedsubset. Runtimeещёнет/неактивирован;PR14draft.
+
+## DONE ru/adminjoin / STARTED labelremainder — 24.10.2026
+
+[Итог/план](checkpoints/2026-10-24-geonames-alias-join-DONE-refinement-STARTED.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-geonames-alias-join/README.md). Ruимена92/93city,77/93admin;25cityissues,17collisiongroups,2ru-taggedLatinadmins.10fieldsschemaподтверждён,190rurowsсохранены;runtime0. NEXTточныйADM3/ADM4дляremainderизимеющихсяZIP,безновыхdownloads/геометрии.
+
+## DONE language archives / STARTED offlinejoin — 24.10.2026
+
+CI40094650834PASS,aliasesRU+UA14.95MB/SHA/CRCпроверены. [Manifest/планjoin](checkpoints/2026-10-24-geonames-alias-download-DONE-join-STARTED.md). ОбщийCI40094656564completed;NEXT8/10fieldsschema→ru/history→93cityIDs+exactADM1/ADM2labels;безсети/координатнойактивации/повторамаршрутов.
+
+## DONE новыйalias-source / STARTEDпоставка — 24.10.2026
+
+ОфициальныеcountryalternatenamesRU/UA(~12M/2.2M)могутзакрытьlanguagegapбезглобальногоV2. Schema/datefieldsпоканеизвестны. [План/лимиты](checkpoints/2026-10-24-geonames-country-alias-source-DONE-pilot-STARTED.md). NEXT2HEAD/2GETвread-onlyCI≤50MiB/SHA/CRC,послеcompletedmanifestиSTARTEDofflinejoin,безruntime/повтораgeographicdumps.
+
+## DONE candidate policy / validation BLOCKED — 24.10.2026
+
+[Разбор](checkpoints/2026-10-24-geonames-policy-review-DONE.md) · [политикакандидатов](../experiments/road-ref-boundaries/SETTLEMENT_CANDIDATE_POLICY.md). Все93selectedтипамикандидатны,но7queriesнеоднозначны;нужныru/adminlabels/проверенныецентры. Luhanskidentitycorroborated,точкиразнятся723м,accuracyUNVERIFIED;Donetskdoc timeout. Runtime0. NEXT bounded≤3primarysourcesдляpriorityID/labels/centres,передкодомSTARTED;неповторятьdownloads/корпус.
+
+## DONE GeoNames C / runtime ещё BLOCKED — 24.10.2026
+
+237006 P-records/458879строк, invalid/duplicate0;8имён→93кандидата,7запросовнеоднозначны. [Итог](checkpoints/2026-10-24-geonames-offline-review-DONE.md) · [данные/команды](../experiments/road-ref-boundaries/checks/2026-10-24-geonames-review/README.md). В4полигонахестьrecords, полнота/точность/ru aliases/adminlabelsнеподтверждены;КрымполигонUNKNOWN. NEXT bounded review93records/featurecodes/labels, затем independent validation;no activation.
+
+## DONE GeoNames B / STARTED C offline — 24.10.2026
+
+RU/UA получены и SHA/size/CRC проверены, manifest сохранён. CI40091639551 completed: verify/geometry/timing PASS,address FAIL,50/Yandex SKIPPED. [План C/точные источники](checkpoints/2026-10-24-geonames-download-DONE-review-STARTED.md). NEXT offline разбор8имён+4полигона из существующего artifact, без новых downloads/routes/активации.
+
+## DONE GeoNames A / STARTED B download — 24.10.2026
+
+CI40091487220:3HEAD200, RU+UA17657946bytes. [A evidence/B план](checkpoints/2026-10-24-geonames-ci-head-DONE-download-STARTED.md). Отдельный read-only workflow: два ZIP/exactETag/bytes/SHA/CRC/60с, no aliases download, no runtime. Дождаться B, сохранить manifest; C отдельно без повторного download.
+
+## STARTED GeoNames HEAD в GitHub Actions — 24.10.2026
+
+Новый сетевой путь: отдельный read-only CI, только3HEAD/10с, архивы0. [План](checkpoints/2026-10-24-geonames-ci-head-STARTED.md). Дождаться actual run и сохранить A-result; до B отдельный STARTED. Не повторять container DNS/маршруты; runtime не меняется.
+
+## DONE recovery / критерии приёмки GeoNames — 24.10.2026
+
+Remote source `7058f97` уже содержит source intake/DNS blocker/design: не повторены. [Checkpoint](checkpoints/2026-10-24-fallback-recovery-acceptance-DONE.md) · [критерии пилота](../experiments/road-ref-boundaries/SETTLEMENT_PILOT_ACCEPTANCE.md). Критерии готовы, данные/покрытие НЕ проверены; runtime0, новых запросов/маршрутов0. NEXT: pilot A только при изменении доступа к download.geonames.org; до B отдельный STARTED с размером/лимитами. PR14 draft, без Production.
+
+## DONE settlementFallback design-only / GeoNames delivery BLOCKED — 24.10.2026
+
+[Техническая схема отключаемого источника](../experiments/road-ref-boundaries/SETTLEMENT_FALLBACK_INTEGRATION.md) и [checkpoint](checkpoints/2026-10-24-settlement-fallback-contract-DONE.md) подтверждены чтением интерфейсов `/api/suggest`/`collectAddressFeatures`/`Suggestion`/switches. Это ТОЛЬКО DESIGN: нет switch, code, dataset, live-координат; таймаут общего запроса не удвоен. Pilot HEAD curl6/DNS, B/C NOT_STARTED; next реальный источник только при новой сети. PR14 draft/без Production, прошлые887 tests не повторялись.
+
+## BLOCKED GeoNames pilot A HEAD — 24.10.2026
+
+[3 фактических HEAD / DNS evidence](checkpoints/2026-10-24-address-geonames-head-DNS-BLOCKED.md): `RU.zip`, `UA.zip`, `alternateNamesV2.zip` → curl6/HTTP000, не удалось разрешить host `download.geonames.org`; bytes0. Это environmental DNS, не data/server failure. Pilot B/C NOT_STARTED, реальные sizes/coverage/aliases неизвестны, runtime0. НЕ повторять HEAD без новой доступной сети; следующий независимый шаг — read-only opt-in fallback integration contract. PR14 draft/без Production.
+
+## STARTED GeoNames limited source-delivery pilot A — 24.10.2026
+
+После source intake `868bb973` готов [ограниченный план A/B/C и правила остановки](checkpoints/2026-10-24-address-geonames-pilot-STARTED.md). Ближайший шаг: ≤3 HEAD к GeoNames country RU/UA и alternateNamesV2, таймауты; до длинной загрузки отдельный B-STARTED. Локальные координаты/coverage ещё0, code0, live0. При отказе сети фиксировать BLOCKED и не заменять домыслами. PR14 draft, Production нет.
+
+## DONE ADDRESS-001 coordinate-source intake / GeoNames pilot candidate — 24.10.2026
+
+GeoNames (CC BY 4.0, WGS84, RU/UA country dumps, ru aliases через alternateNamesV2, geonameid/admin disambiguation) **кандидат только для ограниченного offline пилота**, не новый runtime fallback. Реальный coverage приоритетных территорий, размеры RU/UA и качество координат пока не проверены. OSM РФ ~3.9 GB / ODbL отложен. [Первичные источники, критерии и запреты](checkpoints/2026-10-24-address-coordinate-source-intake-DONE.md). 4 searches/3 primary docs, ZIP0/live0/code0, 887 прежних tests не повторялись. NEXT: отдельный STARTED перед скачиванием/импортом с size/coverage/alias/homonyms/provenance gates. ADDRESS-AVAILABILITY по-прежнему BLOCKED. PR14 draft/без Production.
+
+## DONE outage/fallback review / next coordinate-source intake — 24.10.2026
+
+Все7вариантовДонецкаидутв1Photonorigin. Positiveкэши5миннепомогаютновомуcoldqueryприfull503. RuWiki2110имёнбезкоординат,benchmarkнельзяактивировать. [Итог/ограниченныйследующийшаг](checkpoints/2026-10-24-address-outage-fallback-review-DONE.md). Нуженпроверенныйcoordinatecitycatalog/независимыйautocompleteисточник;runtime0изменений/live0. До4primaryqueries/3docsintake,неroadnetwork/неповторperf/неугадыватьпозиции. Specialruntime7.318сDONE/887tests/buildPASSранее,Productionнет.
+
+## DONE special runtime / performance series closed — 24.10.2026
+
+Донецк→Москва:HTTP200/specialEndpoint:true/dual/mainland/OSRM,1123.25км,3050₽изматрицы(непересверенотдельно),handler7.318с/process7.587с. [Evidence/ограничения/next](checkpoints/2026-10-24-special-runtime-live-DONE.md). Обычный2.225с иspecial7.318с уложились10с;глобальныйbrowserE2EUNVERIFIED.887tests/buildPASS. Не расширять perfкорпус безпричины;следом bounded offline outage/fallback review поиска. RuWiki2110имёнбезкоординат неготовыйfallback. Км/тарифныепробелы сохранены,Productionнет.
+
+## DONE special probe setup / NEXT live — 24.10.2026
+
+Diagnostic whitelist/workercasebinding/specialbranch+stages checks готовы. CIвыбираеттолькоДонецк→Москва;Анапунеповторяет.22focused/887full/quote/API/ESLint/webpackTypeScript/static16/16PASS;localLive0. [Итог/next](checkpoints/2026-10-24-special-runtime-probe-DONE.md). Послеdurable прочитатьпервыйactualCI,сохранитьbody/timings/errors. Runtime/ценыбезизменений,Productionнет.
+
+## STARTED special runtime — 24.10.2026
+
+Следом один Донецк→Москва, diagnostic case ID/worker60с/один CI POST. Анапа уже DONE, не повторять. [План/лимиты](checkpoints/2026-10-24-special-runtime-STARTED.md). Runtime/цены не менять;послеcode gates/durable прочитать первый live результат и сохранить.
+
+## DONE first real-network handler POST — 24.10.2026
+
+Анапа→Краснодар:HTTP200/OSRM/165.009км/620₽,handler2.225с,totalprocess2.621с. [Полный результат/ограничения](checkpoints/2026-10-24-calculation-runtime-live-DONE.md). Один случай уложился10с на CI host;не браузерныйSLA. Code885tests/buildPASS;следом отдельный bounded special-route замер с STARTED,не повтор Анапы. Км/Photon blockersсохранены,Productionнет.
+
+## DONE runtime probe / NEXT actual single POST — 24.10.2026
+
+Один настоящий V3 handler Анапа→Краснодар в отдельном CI job, atomic progress/fullbody/Server-Timing,hard60с child/2minjob,отдельные API/timing/price integrity failures. Focused10/10/full885/885/quote/API/ESLint/webpackTypeScript/static16/16 PASS;local live0. [Итог/next](checkpoints/2026-10-24-calculation-runtime-probe-DONE.md). После durable прочитать actualCI/сохранить один runtime результат;не повторять для зелёного. Handler-with-network≠deployed/browserE2E. Без Production.
+
+## DONE special timing CI / STARTED one POST probe — 24.10.2026
+
+CI40082403690:verify/geometryPASS,addressFAIL,50/YandexSKIPPED. [План/лимит](checkpoints/2026-10-24-special-timing-ci-DONE-runtime-probe-STARTED.md). Следом отдельный CI diagnostic: один production handlerPOST Анапа→Краснодар с реальной сетью,child60с/atomic artifacts; не deployedE2E,не новые runtime запросы/тарифы.
+
+## DONE special timing — 24.10.2026
+
+Детализированы provider/routing/matching/pricing внутри special_options тем же optional calculationTiming. Focused16/16, full880/880, quote/API/ESLint/webpackTypeScript/static16/16 PASS. [Итог/следующий шаг](checkpoints/2026-10-24-special-timing-DONE.md). Новых live0, E2E10с UNVERIFIED; Preview требует auth. NEXT: exact remote/обычный CI, затем один авторизованный runtime POST либо bounded in-process CI probe с честной границей измерения. Цены/выбор не менялись, PR14 draft, без Production.
+
+## Preview BLOCKED / STARTED special timing — 24.10.2026
+
+Одна browser попытка exact Preview требует Vercel login. POST0, E2E UNVERIFIED; защита не менялась. [Следующий независимый блок](checkpoints/2026-10-24-preview-BLOCKED-special-timing-STARTED.md): детализация provider/matching/pricing внутри special_options существующим optional timing. Цены/маршруты/число запросов сохранить.
+
+## DONE timing CI / STARTED Preview — 24.10.2026
+
+CI40081150517: verify/geometry PASS, address external503 FAIL,50/Yandex SKIPPED. [Checkpoint/лимит одного расчёта](checkpoints/2026-10-24-timing-ci-DONE-preview-STARTED.md). Ссылка из docs: checkpoints/2026-10-24-timing-ci-DONE-preview-STARTED.md. NEXT после durable: exact Preview5d8e904 Анапа→Краснодар, один расчёт/сохранение timings или blocker. 10с UNVERIFIED; без Production.
+
+## DONE PERF-001 — диагностика времени V3, 24.10.2026
+
+Добавлен отдельный отключаемый calculationTiming: Server-Timing и structured logs этапов без адресов/координат/новой сети. Маршрут и цена не меняются. Focused9/9, full880/880, quote/API/ESLint/webpack+TypeScript/static16/16 PASS. [Итог](checkpoints/2026-10-24-calculation-timing-DONE.md) · [подключение](../experiments/road-ref-boundaries/CALCULATION_TIMING.md) · [evidence](../experiments/road-ref-boundaries/checks/2026-10-24-calculation-timing/verification.json). 10с E2E UNVERIFIED; special_options измеряется целиком. NEXT: exact remote/обычный CI; затем bounded Preview POST timing при доступном поддержанном транспорте. KM/source blockers сохраняются. PR14 draft, без Production.
+
+## DONE bounded KM intake / BLOCKED data / STARTED PERF review — 24.10.2026
+
+2OSMAPIopensнедоступны,4точечныхwebqueriesнеподтвердиликмnode4443232947/358467208. Сохранённыйtraceoutputshape/latlon/kmотсутствуют. Отклонёнложный1038кмкандидат(соседняяразвязкаНовочеркасска,неbindingПлатовnode). [Итог/планPERF](checkpoints/2026-10-24-km-intake-DATA-BLOCKED-performance-STARTED.md) · [sourceevidence](../experiments/road-ref-boundaries/checks/2026-10-24-km-intake/result.json). Runtimeкм/ценыбезизменений,новыхanchors0. NEXTпослеdurable—ограниченныйreviewсуществующихтайминговполногоV3,припробелеотдельнаяотключаемаядиагностикабезновойсети/сменымаршрута.10сE2Eпо-прежнемуUNVERIFIED. Addresssourceoutageотдельноblocked,готовые875tests/Previewнеповторятьбезпричины. PR14draft/безProduction.
+
+## DONE runtime CI / STARTED two-junction KM intake — 24.10.2026
+
+CI40078223671:verify/geometryPASS,newruntimeaddressprobeFAILза2225мс:Ростов/КраснPASS,Донецк4http503+3cooldown/0features.50/YandexSKIPPED;overall successнеlivePASS. [Readback/новыйплан](checkpoints/2026-10-24-runtime-ci-DONE-km-intake-STARTED.md) · [CIevidence](../experiments/road-ref-boundaries/checks/2026-10-24-runtime-ci-readback/result.json). ExternalavailabilityBLOCKED_BY_SOURCE;готовыеpool/contracts/Previewнеповторятьбезновогоматериала. NEXTпослеdurable:ограниченныйsourceintakeкмдляnode4443232947/358467208,неполнаясеть/нетарифы. Сохранённыйtraceoutputshapeотсутствует,requestиндексыдлякоординатнеиспользовать. Sourcee0295e4/PR14draft,Productionнет.
+
+## DONE live address series — 24.10.2026
+
+ЖивойbadPreviewвыявилнашложныйcooldown;fixthreshold3/15с+successresetсохранён. НовыйfixPreview5d7043a:Ростов/Красн/Донецквсе200,ДНРпервым/Ростоввторым;raw/logsсохранены. НовыйCIprobeиспользуетproductioncollector/pool≤3queries/≤60с,workflowполностьюсохранёнв16644a3(blobjecb7469);sparseпотеряindexисправленаотдельно. [Итогсерии](checkpoints/2026-10-24-address-live-fixed-series-DONE.md) · [новыйlive](../experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/summary.json).875tests/quote/API/ESLint/buildTypeScript/static16/16PASSлокально. Внешний503ещёвстречается;phone/mobileB-only/10сE2Eнепроверены;3GETнеизолированныйsameprocess<15сproof. NEXT:actualобычныйCIитоговогоhead,newruntimeprobe/sourcefailuresотдельно. Production/main/merge/backupнетронуты.
+
+## Persistence recovery — runtime workflow, 24.10.2026
+
+Commit5203f3aсохранилscript/tests/docs,ноgitaddпропустилworkflowoutside sparse-checkout. ПолноеCIподключениедоrecoveryнезаявлять. [Исправлениесохранения](checkpoints/2026-10-24-runtime-probe-workflow-transfer-DONE.md). Готовыйworkflowдобавить--sparse/commit/remoteexactpathreadback;liveещёнепродолжался. ЗатемтотжезаключительныйfixPreviewsmoke;875tests/buildнерепититьрадипередачи.
+
+## DONE actual-runtime CI probe / STARTED fixed Preview smoke — 24.10.2026
+
+Новыйscripts/address-search-runtime-probe.mjs используетproductioncollector/pool/ranking,≤3queries/20скаждая/60собщийnetworkbudget,atomicprogress/results,CLIнеPASSдляsource/check/timeout. PhotonCIstepзаменён,legacyсохранён,routecorpusнерасширен.31focused/875full/quote/API/ESLint/buildTypeScript/static16/16PASS;liveэтогопроба0. [Итог/заключительныйsmoke](checkpoints/2026-10-24-runtime-address-probe-DONE-livefix-STARTED.md). FixPreview5d7043aREADYdpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss;app/lib/dataсfixSHAсовпадают. NEXTпослеdurable≤3GETsmokeисправления,stopнаsourcefailure;отдельныйcheckpointиобычныйCIфинальногоhead. PR14draft,Productionнет.
+
+## DONE circuit fix / STARTED runtime CI probe — 24.10.2026
+
+ADDR-CIRCUIT-001 исправлен:cooldown после3серийных503/429 за15сбезsuccess,successсбрасываетstreak/паузу. PartialСочи200→новыйЛуганск200;полныйoutageотдельно502/<=4fetch. [Итог/следующийблок](checkpoints/2026-10-24-address-circuit-fix-DONE-runtime-probe-STARTED.md) · [checks](../experiments/road-ref-boundaries/checks/2026-10-24-address-circuit-fix/verification.json).16focused/867full/quote/API/ESLint/buildTypeScript/static16/16PASS;живойисправленныйPreviewнепроверен. Sourceb54f7d8/PR14draft. NEXTпослеdurable:boundedactualruntimeCIprobe3queries/≤60с/progress,старыйlegacyprobeсохранить. Productionнет,невыдаватьстарые200занewfixproof.
+
+## LIVE regression found / STARTED circuit fix — 24.10.2026
+
+ExactPreview849102c:Ростов200/Красн200/Донецк502,ровно3GET. Runtime logs:первые2partialс1http503,последний7source_cooldown/16мс. Новыйpoolошибочновключаетoriginpauseпослеодногочастичного503,мешаяследующемуадресу. [Checkpoint/исправление](checkpoints/2026-10-24-address-preview-DONE-circuit-fix-STARTED.md) · [raw/API/logs](../experiments/road-ref-boundaries/checks/2026-10-24-address-live/summary.json). NEXT:threshold3failures/15с + resetнаsuccess, regressionpartial→newquery,fulloutageотдельно;gates/сохранение. ЗатемruntimeCIprobepath. Старые864testsэтурегрессиюнепоймали;необъявлятьполныйпоискисправленным. Productionнет.
+
+## DONE CI / STARTED live Preview address smoke — 24.10.2026
+
+Source849102c/PR14draft подтверждён. CI40074351547:verify/geometryPASS, legacyPhotonFAIL, следующиеauditsSKIPPED. Legacyprobe обходитновыйpool; этоотдельныйдефектпроверки. ExactPreview dpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXxREADY. [План/лимиты](checkpoints/2026-10-24-address-live-STARTED.md) · [CIevidence](../experiments/road-ref-boundaries/checks/2026-10-24-address-live/ci-readback.json). NEXT: ≤3последовательныхGETадреса наPreview, stopприsourcefailure; сохранить, затемотдельныйruntimeprobe/CIpathfix. НеProduction,неmobileproof,неновыетарифы/километры.
+
+## DONE ADDRESS series — pool + endpoint regression, 24.10.2026
+
+Три блока сохранены последовательно: диагноз7–13URLs/1origin, pool/coordinator, Next endpoint/r regression. Source479f9dc/PR14draft. [Итог блока3](checkpoints/2026-10-24-address-endpoint-series-DONE.md) · [детерминированная последовательность](../experiments/road-ref-boundaries/checks/2026-10-24-address-endpoint/sequence.json) · [модуль](../experiments/road-ref-boundaries/ADDRESS_REQUEST_POOL.md). Анапа→Краснодар→Ростов→очистка→ДонецкPASS; общийsamequery/cancel/cache/partial503PASS, peak2,live0. Финальные48focused/864full/quote/API/ESLint/build+TypeScript/static16/16PASS. Первичныйfixturecasefailure сохранён/исправлен безprodправок. Switch addressRequestPool:false. ADDRESS-FANOUTfixed/verified; внешняяavailability/mobileB-only/10сE2EUNVERIFIED. NEXT: exactremote/обычныйCI итоговогоhead, затем толькоbounded live smoke при доступномисточнике, безbroadrouteповторов. Цены/км/Production/main/backup не менялись.
+
+## DONE address pool / STARTED endpoint regression — 24.10.2026
+
+Отдельный pool2/queue64/singleflight/positiveLRU128URL5мин/cooldown50342915с и общий20сbudget подключены к suggest; очистка одного subscriber не отменяет другой. Один addressRequestPool switch. СтарыеURLs/ranking/клиент/цены сохранены. [Итог блока2 / план3](checkpoints/2026-10-24-address-pool-DONE-endpoint-STARTED.md) · [модуль](../experiments/road-ref-boundaries/ADDRESS_REQUEST_POOL.md) · [checks](../experiments/road-ref-boundaries/checks/2026-10-24-address-pool/verification.json).54focused/863full/quote/API/ESLint/build+TypeScript/static16/16PASS, live0. Следующий блок в том же сеансе: endpoint /r последовательность замен/отмена/cache. Промежуточныйcodecommit skipci с локальнымиgates; обычныйCI на итоговомблоке3. Источник43d4813/PR14draft, безProduction. Availability/B-only/10снеобещаны.
+
+## DONE address diagnosis / STARTED bounded request pool — 24.10.2026
+
+Один autocomplete порождает7–13 одновременных запросов к одномуPhotonorigin; общего server pool/cache/singleflight нет. A/B используют один AddressField; отдельный B-only дефект не установлен. [Диагноз/последовательный план](checkpoints/2026-10-24-address-diagnosis-DONE-pool-STARTED.md) · [counts,live0](../experiments/road-ref-boundaries/checks/2026-10-24-address-pool/diagnosis.json). Source deed213/PR14draft. NEXT после durable readback: отдельный отключаемый pool2/queue/cache/cooldown и budget20с, прежний ranking/URLs сохранить; затем endpoint regression в том же сеансе. Цены/километры/Production не менять.
+
+## DONE правило — несколько малых блоков в одном ответе, 24.10.2026
+
+Большую разрешённую задачу заранее делить, выполнять блоки подряд: результат/проверка/checkpoint/commit/remote readback → следующий блок в том же сеансе без ожидания «дальше». После сбоя — первый незавершённый блок; локальные стопы логировать и продолжать независимое. [Актуальное правило](WORKFLOW_RULES.md) · [checkpoint](checkpoints/2026-10-24-sequential-blocks-one-response-DONE.md). Source9ffada1/PR14draft; CI40069527041 completed/overall success, live jobs этим шагом не оценивались. Runtime не менялся; NEXT разработки остаётся offline ADDRESS-001 после durable readback.
+
+## DONE module / BLOCKED data — отключаемый километраж, 24.10.2026
+
+Локальный модуль подключён только к M4 preview: exact node/transition, calibrated short-section projection, scale/branch/direction guards, bounded stops. Один switch data/toll-feature-switches.json; новых сетевых запросов/изменений цены0.14 named PVP groups/81 nodes из прежнего inventory; дополнительных reviewedsections0, км пары Платов→Р260 по-прежнемуunknown. [Итог](checkpoints/2026-10-24-road-kilometrage-DONE.md) · [подключить/отключить](../experiments/road-ref-boundaries/KILOMETRAGE.md) · [стопы](../experiments/road-ref-boundaries/BLOCKERS.md) · [проверки](../experiments/road-ref-boundaries/checks/2026-10-24-kilometrage/verification.json). Финальные851tests/quote/API/ESLint/webpack+TypeScript/static16/16PASS. Local module p95≤0.66мс в bounded benchmark, E2E10сUNVERIFIED. Parent50d36ae/CI40068908259 завершён:verifyPASS,PhotonFAIL. PR14draft,безProduction. NEXT: exact remote/новыйCI readback; затем offline ADDRESS-001, пробелы тарифов/км не блокируют независимые задачи.
+
+## STARTED — локальный отключаемый километраж, 24.10.2026
+
+Пользователь разрешил следующий этап и правило независимых модулей: выполнимое продолжать, стопы/пробелы логировать без угадывания цен. [План](checkpoints/2026-10-24-road-kilometrage-STARTED.md) · [модули](OPTIONAL_MODULES.md) · [проблемы](../experiments/road-ref-boundaries/BLOCKERS.md). Source5c61b6a/PR14draft; CI40067156518 завершён: verifyPASS, PhotonFAIL. NEXT: чистый локальный resolver, feature switch, preview integration и bounded checks; официальные км pending pair неизвестны и не блокируют ядро. До10с — цель, не измеренный SLA. БезProduction.
+
+## DONE recovery / IN PROGRESS external address search — 24.10.2026
+
+Source f2abc85/PR14draft подтверждён. CI39997833752 completed/success: verify и live geometry PASS, но live_probe FAILED из-за Photon503/timeouts/90s budget; 50-settlement и Yandex проверки SKIPPED (continue-on-error). Graph boundary реализация сохранена; 840 локальных tests/build повторно не запускались. [Recovery checkpoint](checkpoints/2026-10-24-road-ref-recovery-DONE.md) · [точные CI результаты](../experiments/road-ref-boundaries/checks/2026-10-24-recovery/ci-status.json). NEXT: ограниченный offline разбор внешнего поиска, отдельно от неизвестных тарифов. Не заявлять связь сбоя с A/B или исправление Photon без доказательства. Без Production/main/merge.
+
+## DONE — точные графовые переходы М4, 23.10.2026
+
+Активный метод использует node+направленные way IDs из полного trace выбранной геометрии. Ранние точки инструкций — только диагностика, не тарифные границы. Шесть сохранённых коротких маршрутов новых территорий→Казань:6/6 переходов resolved, один общий вектор4443232947→358467208, цены в обоих профиляхnull. Полный provider+13trace+V3/API replay прошёл без live-запросов.840 тестов, quote/API, ESLint и webpack build/static16/16 PASS. [Итог и ограничения](checkpoints/2026-10-23-road-ref-exact-graph-DONE.md) · [описание](../experiments/road-ref-boundaries/README.md) · [шесть случаев](../experiments/road-ref-boundaries/checks/2026-10-23-graph/six-cases.json). M4_GRAPH_ENDPOINT_REGISTER.json имеет0 активных цен и1pending физическую пару; прежние тарифы сохранены. PR14draft, безProduction. NEXT: exact remote/CI readback, затем проверенные tariff scope/цены независимо от распознавания. Все записи про maneuver-only границы ниже исторические.
+
+## DONE IMPLEMENTATION — дорожные переходы М4 и неизвестная цена, 23.10.2026
+
+OSRM/Valhalla сохраняют конкретные направленные переходы; М4 выбирает отдельный дорожный вектор при отсутствии цены/известныхПВП. Полный сохранённый Гранитное→Казань в двух профилях: вход/выход resolved, API amount=null до заполнения тарифа,0liveзапросов. Все833 теста, quote/API, ESLint и Next webpack build/static16/16 PASS. [Итог и ограничения](checkpoints/2026-10-23-road-ref-boundaries-integration-DONE.md) · [описание](../experiments/road-ref-boundaries/README.md) · [вектор/координаты](../experiments/road-ref-boundaries/checks/2026-10-23-integration/selected-vector.json). Операторский scope545/коротких участков не доказан; BRouter без инструкций использует прежний путь. PR14draft, изменения в рабочей ветке, безProduction. NEXT: exact remote readback/CI, затем проверенные строки тарифов по конкретным границам. Старые записи ниже исторические.
+
+## DONE LAYER / IN PROGRESS — дорожные переходы М4, 23.10.2026
+
+Добавлены фактические направленные переходы OSRM/Valhalla и выбор отдельного М4-вектора при неизвестной цене, в том числе без известныхПВП.28focusedtests/ESLint/tscPASS; существующаяцена700₽сохранена. Это ещё не полныйV3integration/build. [Checkpoint](checkpoints/2026-10-23-road-ref-boundaries-layer-DONE.md) · [журнал](../experiments/road-ref-boundaries/WORK_LOG.md). NEXT: сохранённый Гранитное→Казань через provider+composer и полныйgate. Цены/545scopeнеугадывать,PR14draft,безProduction.
+
+## IN PROGRESS — пользователь поручил начать привязку дорожных границ, 23.10.2026
+
+Прямая команда «Начинай» отменяет прежнее откладывание именно привязки въездов/съездов к тарифным векторам. Тарифные пробелы не блокируют разработку: определённую границу/вектор хранить отдельно от неизвестной суммы. Резервная ветка backup/algorithm-before-road-ref-2026-10-23 сохраняется наc7048e0. [STARTED](checkpoints/2026-10-23-road-ref-boundaries-STARTED.md) · [ограниченный план](../experiments/road-ref-boundaries/NEXT_STEPS.md). Первый случай — сохранённый Гранитное→Казань:0известныхПВП, но есть конкретныеМ4ways; не подменять пробел в области взимания доказательством бесплатности. Собственную дорожную сеть/упрощение городов не запускать.
+
+## CLARIFIED — недостающие тарифы не блокируют доработку, 23.10.2026
+
+Пользователь уточнил: цены можно заполнить позднее; распознавание конкретных въездов/съездов и выбор тарифного вектора разрабатываются/проверяются независимо от наличия суммы. Удалено ожидание тарифов как техническое условие начала. Различать «граница не определена» и «граница/вектор определены, стоимость неизвестна»; unknown не0, частичная сумма не полная. Прежнее прямое указание пока не приступать к реализации остаётся до отдельного поручения; текущее уточнение снимает зависимость от тарифов, не является реализацией. Резервная ветка сохранена. [Checkpoint](checkpoints/2026-10-23-tariff-data-not-implementation-blocker.md) · [следующие действия](../experiments/road-ref-boundaries/NEXT_STEPS.md). Этот пункт уточняет исторические записи ниже об ожидании тарифов.
+
+## DONE — резервная копия алгоритма; DEFERRED — привязка тарифных границ к дорогам, 23.10.2026
+
+По прямому поручению пользователя создана и прочитана обратно GitHub-ветка `backup/algorithm-before-road-ref-2026-10-23` на `c7048e0a7c0fc6b471c333292f01bcfa213abad4`: полный исходный код, тарифная матрица и evidence текущей рабочей версии. Это снимок рабочей ветки, не утверждение о совпадении с Production. Доработку сейчас **не начинать**; пользователь собирает недостающие тарифы. Будущая цель: существующие тарифные векторы сопоставлять с фактическими переходами дорог, конкретной развязкой и направлением; приоритет проверки — неоднозначные въезды/съезды М4 для новых территорий. Гипотеза ещё не реализована/не проверена; пара номеров дорог сама по себе не уникальный ключ. [Checkpoint](checkpoints/2026-10-23-algorithm-backup-road-ref-DEFERRED.md) · [журнал](../experiments/road-ref-boundaries/WORK_LOG.md) · [условия продолжения](../experiments/road-ref-boundaries/NEXT_STEPS.md). PR14 остаётся draft; runtime/матрица не менялись.
+
+## DEFERRED — собственная дорожная сеть, долгосрочный план, 20.10.2026
+
+По прямому решению пользователя [собственная дорожная база и возможное упрощение городов](LONG_TERM_ROAD_NETWORK_PLAN.md) сохранены на будущее. Сейчас не реализовывать, не скачивать данные/не собирать граф и не включать автоматически в очередь. Срока нет; возврат только по отдельному поручению. Приведённые объёмы предварительны, не измерены.
+
+## DONE PREVIEW — повторный ввод адресов, 20.10.2026
+
+Устранён10сек предел, отсекавший валидный Photon ответ11,27сек:20сек + безопасная диагностика отказов. Source4f62abf, exact tree0808d21e; Previewdpl_646vu3uc3f4dJzFmQDLpaPRL9svL READY/statussuccess. Новый UI/POST: «Доне» нашёлся; Анапа→Краснодар620₽ → очисткаB/Ростов1880₽ → очисткаA/Донецк/выборДНР прошли. Focused45/full819/quote/API/ESLint/buildPASS; Vercel819/static16/16PASS. [Полное evidence](checkpoints/2026-10-20-repeated-address-search-VERIFIED.md). Исторические ошибки каждого upstream не классифицированы; не обещать отсутствие всех сетевых сбоев. PR14draft, Production прежняя. NEXT: release только по прямому текущему поручению; при новом отказе смотреть новую диагностику.
+
+## IN PROGRESS — исправление короткого таймаута поиска, 20.10.2026
+
+На «Доне» реальный UI и API отказали; direct Photon вернул20адресов за11,27сек — дольше нашего10сек ограничения. Предел увеличен до20сек, добавлена безопасная диагностика всех отказов без текста адреса. Focused45/45, full819/819 + quote/API, ESLint, webpack buildPASS. Preview live ещё не проверен; точную причину Production отказа логи старой версии не раскрывают. [Patch/evidence](checkpoints/2026-10-20-repeated-address-search-PATCH.md). Production не менять без прямого поручения.
+
+## IN PROGRESS — повторный поиск адресов, 20.10.2026
+
+Проверен фактический UI: Анапа→Краснодар620₽; замена B на Ростов проходит; замена A на Донецк сначала проходит. При повторном вводе по частям «Доне» воспроизведён отказ, полный «Донецк» открывается из браузерного кэша. Причина конкретного сетевого отказа пока не видна: server catch скрывает ошибки, runtime logs пусты. [Evidence и следующий шаг](checkpoints/2026-10-20-repeated-address-search-UI.md). Поле/X постоянно не блокируется; не заявлять исправление.
+
+## DONE PREVIEW — Крым↔М4 через обход Краснодара, 20.10.2026
+
+Исправлена восточная контрольная точка, уводившая Крым→М4 мимо западного обхода. Направленные controls ПВП ДЗОК и проверка фактического проезда; Краснодар/Майкоп/Нальчик без обязательного обхода. Собственные live OSRM в обе стороны подтверждают ПВП; own trace + полный offline V3 composer: **2060₽будни/2210₽выходные**, включая410₽одинраз. Code commit `0f568c57384907b8fc5f2a08412f0e3687c22cb0`, exact remote/local tree совпал. Preview `dpl_2M44uZUARGfqjU7ZwxFkySrA3SpU` **READY/status success**; Vercel full standard build **817/817PASS**, quote/API/compile/static16/16PASS; GET страницы HTTP200. Live Preview POST/UI не проверен; сохранённый полный composer replay2consumed/misses0/network0. PR14draft; Production текущего выпуска поиска ещё без этой routing правки. [Checkpoint](checkpoints/2026-10-20-crimea-m4-bypass-DONE.md) · [журнал](../experiments/crimea-m4-bypass/WORK_LOG.md). NEXT: публикация проверенного source только по прямому запросу; аудит/captures не повторять.
+
+## DONE — исправление поиска адресов опубликовано, 20.10.2026
+
+По прямому поручению пользователя опубликован Production `dpl_DGhwwdXRTKwbbEMR127M5AbDMAoP`, source `4b647bfe01c903352f3842072ceafb23ea6d10a2`. Оба основных Vercel alias подтверждены за новым deployment. Build: **810/810 PASS**, quote/API PASS, Next compile и static 16/16 PASS. Production GET поиска «Ростов», «Красн», «Моск», «Краснодар»: **HTTP200, по20 подсказок**; / и /v2 HTTP200, V2 сохранена с пометкой «старый алгоритм». Error log scan нового deployment за5мин — No logs found; UI A→B/live POST /r отдельно не проверены. PR14 open/draft, без merge/main. [Итог публикации](checkpoints/2026-10-20-address-search-production-DONE.md). NEXT: если UI снова откажет — exact query/time и диагностика POST /r; аудит тарифов не повторять.
+
+## DONE — восстановлен поиск адресов точки Б в Preview, 19.10.2026
+
+После screenshot reports воспроизведены Photon connection timeouts в `iad1`; прокси `POST /r` не передавал `request.signal`. На PR #14 добавлены bounded Photon fetch с cancellation/10-секундным пределом, общий пятиминутный LRU-кэш, передача abort signal через `/r`, Vercel cancellation и `preferredRegion = "fra1"` для обоих адресных handlers. Проверена опубликованная ветка `b82e951` (Preview deployment `dpl_B9R6u4Y4eMiVrFEumgQwb4Qigwyf`): GET `/api/suggest` вернул HTTP 200 для «Ростов», «Красн», «Моск» и «Краснодар»; для «Ростов» среди первых трёх результатов есть «Ростов-на-Дону». Заголовок `x-vercel-id` содержит `::fra1::`. Regression suite: 43/43 PASS. Preview fetch-инструмент поддерживает только GET, поэтому POST `/r` отдельно live не отправлен; proxy signal покрыт локальным тестом. PR #14 остаётся open/draft; Production не менялась. [Проверка Preview](checkpoints/2026-10-19-address-search-preview-verification-DONE.md).
+
+## DONE — поиск адреса точки Б и повторный поиск, 19.10.2026
+
+В общий путь A/B добавлены ограничение Photon-запроса 10 сек с передачей отмены, а в браузере — LRU-кэш непустых подсказок на 5 минут/128 нормализованных запросов. Первый новый запрос всё ещё зависит от Photon; кэш ускоряет повтор того же запроса между полями A/B. Точный не найденный адрес пользователь не указал, поэтому адресный промах не воспроизведён. PR #14 получил коммит `b8c3766aa3163c0e9e0c0d4310ac22ac46dd1a29`; Vercel Preview READY. Полный `test:audit`: 809 passed, 0 failed; Next compile успешен, static generation 16/16. Preview `/api/suggest?q=Краснодар`: HTTP 200, 20 подсказок. PR остаётся draft; Production не менялась. Подробности: [DONE checkpoint](checkpoints/2026-10-19-address-search-DONE.md), [work log](../experiments/address-search/WORK_LOG.md).
+
+## HISTORICAL STARTED — 19.10.2026: поиск адреса точки Б
+
+Пользователь сообщил, что не находится точка Б. Поле Б использует общий address-field и `/api/suggest`. Live probe опубликованного API на «Краснодар» вернул HTTP 200 с результатами за 8.224717 с; прямой Photon — HTTP 200 за 6.779325 с. Текущий suggest handler запускает все Photon URLs без request timeout и не связывает их с `request.signal`; предыдущие handoff также фиксируют Photon 503/timeouts. Изменение тарификации/геометрии не планируется. Работа начата в разрешённой ветке, PR #14 остаётся draft. [STARTED checkpoint](checkpoints/2026-10-19-214500-address-search-latency-STARTED.md). NEXT: bounded upstream fetch + abort propagation, focused tests, required checks, remote readback/CI. Production не менять.
+
+## HISTORICAL BLOCKED — адрес точки Б: ожидалось разрешение на remote save
+
+На этом этапе ожидалось разрешение на запись; ожидание завершилось после согласия пользователя. Актуальный результат см. в DONE выше.
+
+## DONE — V3 опубликована основной версией, V2 сохранена как старый алгоритм
+
+Главная `/` и `/v3` ведут на актуальный V3; `/v2` остаётся доступна с пометкой «старый алгоритм». Опубликованный release commit `d6fd4c1c7904ea290abb00ce1b777094e5141cff`, tree `d8bc523dcd7fd713d15e72204ff3db77e012d0ff`; PR #14 остаётся open/draft, merge не выполнялся. Actions run `39287801436` completed/success, `verify=success`; live Photon probe завершился сетевыми 503/timeouts и последующие live corpus checks были skipped (job `continue-on-error`). Production deployment `dpl_8WnsqmTxKKi9GG8qAaAK3tpYFzaA` READY на том же SHA; aliases `mezhgorod-calculator.vercel.app` и `mezhgorod-calculator-4regodatbe-5310.vercel.app` назначены ему. Production `/`, `/v2`, `/v3` проверены: HTTP200; root/V3 содержат метку актуального калькулятора, V2 — «старый алгоритм». Локально `pnpm build`: 802 теста passed/0 failed, quote/API checks passed, `next build --webpack` success. Стандартный локальный Turbopack build отдельно не прошёл из-за resolve tracked CSS; при этом CI Next build на release head прошёл. Аудитные evidence, матрица тарифов и незакрытые выводы не изменялись. [DONE checkpoint](checkpoints/2026-10-19-v3-cutover-DONE.md). Дальше продолжать аудит незакрытых дорог; РВП-64 оставлять unknown, не 0, пока нет точной операторской схемы/таблицы или датированного наличного/карточного чека.
+
+## BLOCKED — РВП-64: короткие Yandex/V3 маршруты не изолируют цену рамки
+
+Выполнены только один Yandex pilot с via `59.961590,30.222442` (47 мин, `20,7 ми`, агрегированный toll `~600 ₽`) и один V3 pilot на тех же O-D без via: OSRM, 21,806 км, toll subresult 0 / confidence none / segments 0. V3 handler не использует объявленный `via`, а публичный ответ не содержит выбранную геометрию; совпадение пути не подтверждено. Поэтому оставшиеся 19 маршрутов не дадут честного matched comparison и не запускались. Это не доказательство тарифа; значение остаётся unknown, не 0. [Подробный blocker](checkpoints/2026-10-19-162600-rvp64-yandex-v3-comparison-BLOCKED.md). [STARTED и pilot](checkpoints/2026-10-19-161200-rvp64-yandex-route-comparison-STARTED.md). Нужен точный операторский crosswalk/таблица или датированный cash/card чек; код/runtime/матрица без изменений.
+
+## BLOCKED — РВП-64: точная тарифная связь не установлена
+
+Ответ Алисы не содержит первичного crosswalk или чека. Различать OSM label/ref `РВП-64`/`64E` и тарифную терминологию МСС; `933975069` подтверждён в сохранённых route данных как OSM node ID, но не как официальный номер МСС. Не доказано ни наличие тарифной связи, ни её отсутствие; сумма остаётся unknown, не 0. См. [оценку ответа](checkpoints/2026-10-19-153700-rvp64-alice-response-assessment.md). Продолжать только при точной операторской схеме/таблице или датированном чеке; runtime/матрица без изменений.
+
+## DONE / STARTED — V3 proxy capture/replay завершён; V2 comparison начат
+
+[V3 результаты и replay evidence](checkpoints/2026-10-19-issue2-yeysk-maykop-v3-capture-replay-DONE.md). Ейск→Москва V3 4 340 ₽ Thu / 5 240 ₽ Sat; Майкоп→Москва 5 040/6 090 ₽; offline replay 4/4, live fetch=0/misses=0/all responses consumed. Важное уточнение: широкие regression assertions 5 240/7 240 и 6 090/8 400 относятся к `/api/v2`, а не к V3. NEXT: durable STARTED для двух bounded V2 captures и same-call offline Thu/Sat replay; test amounts не считать operator fare source.
+
+[Фактические суммы и capture hashes](checkpoints/2026-10-19-issue2-yeysk-maykop-capture-DONE-replay-STARTED.md). По одному завершённому V3 capture на Ейск→Москва и Майкоп→Москва; полные requests/API responses/provider fetch responses сохранены. API amount Thu: 4 340 ₽ и 5 040 ₽; API weekday/weekend: 4 340/5 240 ₽ и 5 040/6 090 ₽. Отличается от прежних test assertions; точные исторические issue-controls и подтверждённый полный операторский тариф не установлены. NEXT: offline replay сохранённых calls для Thu/Sat с нулём сети/misses.
+
+## DONE — восстановлен runtime и найдены regression controls двух issue #2 OD
+
+[Runtime, controls и ограничения](checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-DONE.md). Sparse dirs восстановлены, `pnpm install --frozen-lockfile` успешен (429 пакетов); run39240195036 success. Существующий широкий runner не запускался. Regression coordinates найдены в `scripts/segment1-user-regression.mjs`, но точные исходные UI-точки issue #2 не подтверждены, saved captures отсутствуют. NEXT: STARTED на изолированный ровно двухмаршрутный capture + offline weekday/weekend replay; значения тестовых ожиданий не выдавать за confirmed fares.
+
+## HISTORICAL STARTED — восстановить checkout/runtime для оставшихся двух cases issue #2
+
+[Исходный STARTED checkpoint](checkpoints/2026-10-19-issue2-yeysk-maykop-runtime-STARTED.md); закрыт итогом выше. CI run39239030289 завершён `verify=success`, `live_probe=success`.
+
+## BLOCKED — Ейск—Москва и Майкоп—Москва: exact capture/runtime отсутствуют
+
+[Инвентарь и причина остановки](checkpoints/2026-10-19-issue2-yeysk-maykop-capture-availability-BLOCKED.md). В named paths и несжатых JSON двух целевых архивов exact route evidence не найдено; checkout sparse (только `docs/` и `experiments/nationwide-tolls/`), `scripts/` и `node_modules` отсутствуют. Новые route calls/replay не запускались. Случаи остаются непроверенными. NEXT: после CI восстановить полный checkout/deps, установить точные endpoint controls и runner; затем bounded pair capture/replay. PR14 draft.
+
+## DONE — старая авто-ошибка Москва—Казань не воспроизвелась на сохранённых системных трассах
+
+[Checkpoint](checkpoints/2026-10-19-issue2-m12-saved-route-review-DONE.md). В обе стороны saved M-12 traversal proven; 3 513 ₽ на 15/17 октября, но цена unconfirmed. Это только два близких сохранённых маршрута, не точная регрессия старого issue #2. Ейск—Москва и Майкоп—Москва в текущем дереве не имеют сохранённых route captures; остаются непроверенными. Код/матрица без изменений.
+
+## BLOCKED — официальный план ПК-5 недоступен по опубликованной ссылке
+
+[Проверка ссылки и evidence](checkpoints/2026-10-19-ckad-a113-pk5-plan-link-BLOCKED.md). Официальная страница ведёт к плану ПК-5 на Яндекс Диске, который сообщает, что файл заблокирован; содержимое не читалось, обхода нет. Точная привязка saved A-113 edges46–53 к пикетажу не доказана; ноль не добавлен. Код/матрица без изменений. Готовой следующей mapped-fare пары с доказанными границами и своей строкой тарифов handoff не называет. PR14 draft.
+
+## DONE / BLOCKED — пикетаж ПК-5 уточнён, точный crosswalk ещё нужен
+
+[Checkpoint и evidence](checkpoints/2026-10-19-ckad-a113-pk5-chainage-DONE.md). Оператор указывает, что ЦКАД-5 бесплатен; официальный диапазон ПК-5 км 252+170—334+440 охватывает отрезок ЦКАД в Голицыно км 268+001—273+700, включая развязку М-1. Это сужает сохранённый A-113 trace (edges46–53) до вероятного ПК-5, но точной привязки его координат/way IDs к пикетажу пока нет. Код/матрица без изменений, новых компонентов0. NEXT: искать официальный координатный план/линейную привязку, не обходя блокировку; при недоступности оставить blocker до появления доступного источника или новой доказанной пары. PR14 draft.
+
+## DONE / BLOCKED — новые официальные данные по ЦКАД и ЗСД
+
+[Результаты и точный следующий шаг](checkpoints/2026-10-19-ckad-whsd-source-followup-DONE.md). Официальные страницы различают узлы ЦКАД-3 «М-11/Никольское-Горки» и ЦКАД-4 «А-107/Егорьевское»; строка119₽ относится к первому, не к сохранённому выходу way119881263/node3140785578. Официальный сайт также говорит, что ЦКАД-5 бесплатен; сохранённый A-113 trace near Golitsyno says toll=true — exact road-section crosswalk unresolved. РВП-64 exact cash/card product не найден. Код/матрица не менялись, новых priced components0. NEXT: offline геопривязка сохранённого A-113 блока к пусковому комплексу; не начислять тариф без неё. PR14 draft.
+
+## DONE — короткий индекс следующего CKAD mapped-fare кандидата
+
+[Результат и blocker](checkpoints/2026-10-18-mapped-fare-index-DONE.md). В matrix есть М-11→А-107 119 ₽, но сохранённый новый boundary для этой пары не доказан; не назначать строку по имени. Подключённые пары М-11→Егорьевское/М-12 уже имеют отдельные строгие распознаватели. А-113 остаётся без exact endpoints. NEXT: перейти к следующему заранее подготовленному пункту, не повторяя источники или capture audits.
+
+## DONE — сохранённые CKAD inventories не соответствуют А-113 блоку Голицынo→Рублёво
+
+[Короткая сверка и следующий шаг](checkpoints/2026-10-18-ckad-a113-inventory-match-DONE.md). Три сохранённые physical inventory для М-11→М-12 и М-11→Раменское/А-107 не содержат IDs блока А-113 (совпадений0); они не покрывают его физические границы. Непрерывность edges46–53 подтверждена ранее; повторный въезд не проблема. Тариф не выбран. NEXT: перейти к следующему уже подготовленному пункту с сохранённой ценовой строкой и границами; этот CKAD blocker не проверять повторно без новых evidence.
+
+## DONE — сохранённый trace А-113 подтверждает непрерывный проезд
+
+[Результат и следующий шаг](checkpoints/2026-10-18-ckad-a113-saved-trace-continuity-DONE.md). Capture уже содержит 8 подряд идущих paid A-113 edges46–53, edge54 уже free; съезда/повторного заезда нет. Повтор way1080462753 на соседних отрезках — разбиение одной геометрии. Никакой тариф не выбран: границы блока пока не сопоставлены паре CKAD direct-fare matrix. Не усложнять проверкой повторного въезда; NEXT — проверить сохранённые physical boundary inventories на пару узлов матрицы.
+
+## DONE — локальная оценка пары матрицы ЦКАД для блока А-113
+
+[Результат и точный NEXT](checkpoints/2026-10-18-ckad-a113-matrix-pair-review-DONE.md). Head `2523791b`, CI `39159810679` success, PR14 draft. Готовая матрица требует конкретной пары въезд→выезд; собственный capture подтверждает платный А-113, но проверенные поля не дают CKAD entry→exit. Никакой тариф/код не менялся. NEXT: сопоставить точную пару с сохранённой физической геометрией и 15 узлами матрицы; при отсутствии однозначного соответствия не назначать сумму.
+
+## DONE — Одинцово базовые650 ₽ круглосуточно; новый CI pending
+
+[Новое правило, код и проверки](checkpoints/2026-10-18-odintsovo-planning-base-650-DONE.md). Прямое решение пользователя: плановая база650, ночь/пик не прогнозируются. Удалены runtime календарь/часовые профили и отказы00–01/2027 для этой пары. Матрица прежняя; дата только для срока действия строки. 196 временных проверок,10ownquotes,6APIreplays; focused14/14,full802/802+quote/API,Next16/16,TS/ESLint/diffPASS. Новые уведомления не добавлены. ForwardCKAD всё ещё unknown. NEXT послеremote/newCI: дальнейшие оценки по рациональным опорным тарифам; готовые источники не повторять. Общий fallback всех дорог ещё не внедрён. PR14draft.
+
+## Предыдущая история
+
+## STARTED — новая политика: Одинцово базовые650 ₽ в любое время
+
+[Решение пользователя и scope](checkpoints/2026-10-18-odintsovo-planning-base-650-STARTED.md). Ночь/пик не прогнозируются; runtime calendar2026 и блок00–01 для этой пары убрать, готовый ordinary vector650 использовать как плановую базу. Числа матрицы сохранить. Source dbd1b81c/tree d3dc45f3, CI39154472440success, fresh cloneclean. NEXT: minimal code+focused/fullbuild, DONE/remote/readback.
+
+## Предыдущая история
+
+## DONE — подключён тариф пары Одинцово; новый CI pending
+
+[Код, результаты и ограничения](checkpoints/2026-10-18-odintsovo-fare-PART-B-DONE.md). Два маршрута / 10 профилей: компонент 650/700/20 ₽ из прежней матрицы. Reverse API ready650, trace503→unknown; forward whole amount null из-за ЦКАД. Оценки unconfirmed, подтверждённых полных тарифов0. Focused14/14, full802/802+quote/API, Next16/16, TS/ESLint/diff PASS; initial ошибки тестового API-ожидания и TS сохранены. Календарь source-derived2026; 00–01 и другие годы unknown. NEXT после remote/newCI: точная рамка ЦКАД12443433262/1080462753 и операторский продукт, сначала сохранённые данные. PR14draft.
+
+## Предыдущая история
+
+## CALENDAR DONE / ОдинцовоfareCODESTARTED
+
+[Источники/инференция/лимиты](checkpoints/2026-10-18-odintsovo-calendar-DONE-fare-CODE-STARTED.md):2026calendarsource-derivedизофициальныхindexedtextМинтруда+adopted1466;directPDF503/HTML403безобхода,скачанныхисточниковнет. NEXT strictpairmatrixadapter+профильотправления;00–01/внегодакалендаряunknown,forwardCKADwholeunknown. Готовыеценынепересобирать.
+
+## Предыдущая история
+
+## RECOVERY DONE / календарьОдинцовоSTARTED
+
+[Восстановление/лимиты](checkpoints/2026-10-18-odintsovo-fare-recovery-calendar-STARTED.md): freshGitHubclone24ea6edc/tree566d967fclean,CI39149617219success. Sources/результатывосстановленыбезповтора. NEXT:≤2newofficialdomainqueries+≤2primaryreadsдляcalendar2026;таблицыM-Road/OSMнеповторять. ПослеcalendarотдельныйfareCODESTARTED.
+
+## Предыдущая история
+
+## PART A DONE — strictОдинцово17,7↔6,9, standaloneбезденег
+
+[Код/доказательства/проверки](checkpoints/2026-10-18-odintsovo-continuity-PART-A-DONE.md): optionalnamedtracecontext+exactdirectionmatcher, ownblocks61/59edges,2exactofflinevalidationreplays+1negativecitygap,40context/10geometrynegativechecksPASS. Focused13/13,full797/797+quote/API,Next16/16,TS/ESLint/diffPASS. Цены/матрицабезизменений,новыхpriced0. NEXT послеremote/newcodeCI: PART Bfareadapter+обоснованныйСООweekday/weekendHolidaycalendar,daystart,ownAPI; forwardCKADunknownсохранить. Sourcesготовы/неповторять. PR14draft.
+
+## Предыдущая история
+
+## STARTED — Одинцово strictконтекст/геометрия, безденег
+
+[BoundedA/Bscope](checkpoints/2026-10-18-odintsovo-continuity-STARTED.md): codeCI39148079088verify/liveSUCCESS. NEXT A: optionalnamedtraceblock+standalonematcher,2exactofflinevalidationreplay/negativeguards/fullbuild; источники4GET/27pointsготовы. Bfareadapterотдельно,day/timecalendarнегадать. ForwardCKADunknownсохранить. PR14draft.
+
+## Предыдущая история
+
+## FIXED — paidА113/fullCKADname учитываются; новыйcodeCI pending
+
+[Код/проверки](checkpoints/2026-10-18-ckad-paid-alias-coverage-CODE-DONE.md): ownforwardОдинцово missing=[ckad,odintsovo], reverse=[odintsovo]; обаAPIOSRM amountnull, никакихценне добавлено. Focused18/18,full792/792+quote,Next16/16,TS/ESLint/diffPASS; initialtestproviderassumption сохранён. Source95c1fbd3 durable, предыдущийCI39146933232verify/liveSUCCESS. NEXT послеremote/newcodeCI: strict17,7↔6,9continuity/no-reentry и отдельныйfareadapter; forwardнепоказыватьчастичнуюсумму. Источникиготовы/повторовнет. PR14draft.
+
+## Предыдущая история
+
+## SCOPE DONE / CODE STARTED — оплачиваемаяА113не должна теряться
+
+[Evidence/ограниченныйcode scope](checkpoints/2026-10-18-odintsovo-pair-scope-LOCAL-CI-BLOCKED.md): CI39146933232 verify/liveSUCCESS, ожиданиезавершено. ForwardОдинцово8paidА113edges/gantry12443433262, текущийcoverageне распознаётА113/fullCKADname. NEXT послеdurableSTARTED: минимальныйpaidproductnamematcher+ownforwardunknownCKAD/reversecontrol,focused/fullbuild; цены/gantryAPI/frozensне менять.
+
+## Предыдущая история
+
+## LOCAL ONLY — scopeDONE; remote save ждёт активныйCI
+
+[Локальныйcheckpoint/точныйNEXT](checkpoints/2026-10-18-odintsovo-pair-scope-LOCAL-CI-BLOCKED.md): codeCI39146933232 verifyPASS/live_probeactive; в forwardОдинцово rawtrace найден отдельный8edgepaidА113/gantry12443433262, который paidcoverage не распознаёт. ЦенунеподключатьдопокрытияCKAD. NEXT: послеCI сначала durablesaveэтогоблока, затем boundedA113coveragefix; всеисточникиужеесть.
+
+## Предыдущая история
+
+## FIXED — identity4полос Одинцово; codeCI pending
+
+[Код и реальные проверки](checkpoints/2026-10-18-odintsovo-identity-CODE-DONE.md): оба ownroutes теперь missing=[odintsovo], ложныеМ1/unknownaliases устранены; полного тарифа пока нет. Focused43/43, full788/788+quote, Next16/16,TS/ESLint/diff PASS. Sources0новых; матрица/ценыбезизменений. NEXT после remote/codeCI: strict17,7↔6,9scope/continuity/no-reentry, затем готовые fares с boundedSTARTED;4primaryGET/27points не повторять. PR14draft.
+
+## Предыдущая история
+
+## Одинцово — primary lanes DONE, identity CODE STARTED
+
+[Sourceproof и scope](checkpoints/2026-10-18-odintsovo-primary-DONE-identity-CODE-STARTED.md):4GET200,27ordered ownsourcepoints PASS; обе направленные пары17,7/6,9 привязаны физически. NEXT: exactnode/way identity, убрать ложныеM1/unknownaliases без добавления цены; focused/fullbuild. Готовые4GET/27points не повторять. Полный тариф пока unknown.
+
+## Предыдущая история
+
+## Одинцово — retained DONE, primary lanes STARTED
+
+[Scope/evidence](checkpoints/2026-10-18-odintsovo-retained-DONE-primary-STARTED.md): два known booth orders извлечены без повторного route audit; tariffbinding BLOCKED. NEXT: четыре exactway/full,≤60с/безretry,raw/progress; готовые тарифы/FAQ не искать. М11→Егорьевское codeCI39145260247 обе jobs PASS.
+
+## Предыдущая история
+
+## PART C DONE — codeCI успешно; далее Одинцово
+
+[Проверка и bounded inputs](checkpoints/2026-10-18-ckad-egoryevskoye-part-c-DONE-odintsovo-STARTED.md): bd811734/treeac581f87, CI39145260247 verify/live_probe success; PR14draft/localclean. М11→Егорьевское сохранён и проверен. NEXT: только retained directed PVP/tariff provenance двух Голицынo↔Рублёво; без повторного route audit/сети/источников М4/М3/ЗСД.
+
+## Предыдущая история
+
+## PART B DONE — ЦКАД М11 → Егорьевское подключён
+
+[Код, проверки и ограничения](checkpoints/2026-10-18-ckad-egoryevskoye-part-b-DONE.md): own Торжок→Раменское2668Thu/2828Fri/2848Sat/2928Sun, Thu23:59=2668, полный unconfirmed estimate. ЦКАД1218 из прежней матрицы, новый рассчитанный компонент1, подтверждённых полных тарифов0. APIready2668, trace503→null/unknown; frozen безctx остаётся unknown. Focused15/15, full784/784+quote, Next16/16, TS/ESLint/diff PASS; initial ошибка тестового status сохранена. Sources/audits не повторялись. Source b030cd71, CI39144007812 verify/livePASS. Новый codeCI pending. NEXT PART C: exact remote readback и codeCI; PR14draft, никаких main/merge/Production/Android.
+
+## Предыдущая история
+
+## PART A DONE — strict М11 → Егорьевское
+
+[Код и проверки](checkpoints/2026-10-18-ckad-egoryevskoye-part-a-DONE.md): focused3/3, TS/ESLint PASS. Standalone, composer пока не подключён; fullgate/build pending. NEXT B: resolver + own quote/API и полный gate.
+
+## IN PROGRESS — восстановление М11 → Егорьевское
+
+[Короткие части A/B/C](checkpoints/2026-10-18-ckad-egoryevskoe-recovery-STARTED.md). NEXT: A strict matcher, full gate pending.
+
+## OWNER BINDING DONE / CODE STARTED — М11→Егорьевское
+
+[OwnerPDFvisualproof/scope](checkpoints/2026-10-18-ckad-egoryevskoe-owner-DONE-CODE-STARTED.md): officialprojectpage25 + actualselectedA107southconnector,source-derivedalias. Currentdirectcell1218₽,неизменённая. NEXT: strictnamedctx+entry48/core12/exit29matcher,owncurrentparser/APIready2668/tracefailednull,focused/fullbuild. Готовыеисточникинеповторять,fullтарифещёнезаявлять.
+
+## Предыдущая история
+
+## OWNER PASS1 NOT_PROVEN / PASS2 STARTED — настоящийdomainsfilter
+
+[Результат и лимит2queries/2newownerreads](checkpoints/2026-10-18-ckad-ramenskoe-owner-pass1-DONE-pass2-STARTED.md): physicalexitдоказан;siteORпоискне далownerhits,tskad502/avtodor403,безобхода/повторов. NEXT:2domain-filteredofficialqueries;неподставлятьbillingpointпоA107. Runtime/priceunchanged,fullunknown. Готовые3GET/41pointsнеповторять.
+
+## Предыдущая история
+
+## PHYSICAL DONE / OWNER STARTED — ownЦКАД→A107exit
+
+[Доказательства/одинquery/дваownerreads](checkpoints/2026-10-18-ckad-ramenskoe-physical-DONE-owner-STARTED.md):3GET200,selected29exit+12retainedprefixpointsPASS. Exactexit10832306578/886019081,connector886019063,A107119881263. NEXT: подтвердитьoperatorbillingalias;понеоднозначномуA107ценуневыбирать. Runtimeunchanged/fullunknown. Готовые3GET/41pointproofнеповторять.
+
+## Предыдущая история
+
+## DIAGNOSIS DONE / SOURCE STARTED — точный выход ЦКАД к Раменскому
+
+[Contextreplay и3GETscope](checkpoints/2026-10-18-ckad-ramenskoe-exit-source-STARTED.md): owncurrenttracecomplete3/3,misses0,ноexitдругой:886019081→886019063→A107119881263. NEXT:3exactwayfullGET→sourceproof; billingpoint/ценыневыбиратьпоA107label. CI39132410371verify/liveобаPASS. Новыйrouting/trace0,готовыеисточникинеповторять.
+
+## Предыдущая история
+
+## FIXED — южный head М11→ЦКАД47; новый CI pending
+
+[Код, owncases и проверки](checkpoints/2026-10-18-m11-ckad47-exit-CODE-DONE.md): ownРаменскоеhead200Thu/240Sat, М11subtotal1450/1630, fullnull/missingCKAD. OwnКазань2componentprofilesPASS; Москва/КраснодарнеперенялиCKADhead. Focused27/27,full777/777+quote/API,Next16/16,TS/ESLintPASS; initialM4testassumptionfailureсохранён. NEXT послеCI: конкретныйownCKADexit/contextРаменского,безповтораобщихаудитов/источников.
+
+## Предыдущая история
+
+## SOURCE DONE / CODE STARTED — строгий съезд М11→ЦКАД47
+
+[Proof и кодовыйscope](checkpoints/2026-10-18-m11-ckad47-exit-source-DONE-CODE-STARTED.md):4GET200,10onewayways,48orderedownpointsPASS. NEXT: exactsouthboundheadmatcher+readyreversepair200Thu/240Sat,focused/fullbuild/TS/ESLint; CKADwholeunknownсохранить. СтарыеGET/48sourcepoints/p214prefixне повторять.
+
+## Предыдущая история
+
+## STARTED — четыре недостающих approachways съезда М11→ЦКАД47
+
+[Offlinegap/точныеinputs/лимиты](checkpoints/2026-10-18-m11-ckad47-exit-source-STARTED.md): ownРаменскоеstrictend9556466755;retainedgate8087316064/1270188041. NEXT:4exactOSMwayfullGET→sourcechainproof,per-responseprogress; безповторакарты/p214/routechecks. Headcandidate200Thu/240Sat,ценыruntimeне менялись. ПредыдущийCIverify/livePASS.
+
+## Предыдущая история
+
+## RECOVERY DONE — checkout восстановлен, прошлый CI полностью PASS
+
+[Восстановление и ограничения](checkpoints/2026-10-18-ramenskoe-checkout-recovery-DONE.md): remote/local24695f0f,CI39123710038 verify/liveобаsuccess. Код/доказательствавосстановленыизGitHub, безповторапроверок/источников. NEXT: ownРаменскоеsouthbound8087316064/1270188041 изretainedmap; сначалаofflineboundaryreview.
+
+## Предыдущая история
+
+## FIXED — exact p214 orphan; own Торжок → Москва полностью рассчитывается
+
+[Код, API и проверки](checkpoints/2026-10-18-m11-p214-orphan-CODE-DONE.md):2380Thu/2650Fri/2890Sat/3040Sun,missing=[],estimateunconfirmed. API ownreplay2380,traceunavailable→null. Focused28/28,full771/771+quote/API,build16/16,TS/ESLintPASS. НовыйcodeCIpending. NEXT послеCI: offlineownРаменскоеhead58→ЦКАД/southgate8087316064/way1270188041 по retainedmap; готовыеисточники/4cases/364inventoryнеповторять. Общиеblocksне закрыты однимestimate.
+
+## Предыдущая история
+
+## DIAGNOSIS DONE / CODE STARTED — exact p214 orphan
+
+[Причина, scope и проверки](checkpoints/2026-10-18-m11-p214-orphan-CODE-STARTED.md): unnamed5286168661/766468434 уже source-boundМ11, ноcoverageсоздаётunknown. CI39122753013 verify/liveобаPASS, ожиданиезавершено. NEXT: узкаяexacttupleклассификация + negatives/ownquote/APIreplay/fullgate. Никакихновыхsource/routeGET, ставок илибесплатныхисключений.
+
+## Предыдущая история
+
+## CODE DONE — М11 p214 → Москва; новый CI pending
+
+[Изменение, проверки и следующий шаг](checkpoints/2026-10-18-m11-p214-moscow-head-CODE-DONE.md): точный directed head1130Thu/1500Sat, М11subtotal2380/2890; полный API итогnull из-за `unknown-paid-road`. Focused25/25, fullaudit768/768+quote/API, build16/16, TS/ESLintPASS. NEXT: remote readback/codeCI, затем короткий offline exactorphan review на ownТоржок→Москва. Готовые4cases/364inventory/sourceGET не повторять; PhotonFAIL отдельно.
+
+## Предыдущая история
+
+## CODE STARTED — p214→Москва,строгийheadmatcher
+
+[Bindingreview/план/лимиты](checkpoints/2026-10-18-m11-p214-moscow-head-CODE-STARTED.md): retainedreverseheadpair1130Thu/1500Sat. Толькоподтверждённыйp214fallback+exactgate+strictM11доМКАД; полныйитогunknownpaidroadnull. NEXT: matcher/integration/focused/fullgate/TS/ESLint,безновойсети/sourceповторов.
+
+## Предыдущая история
+
+## SOURCE DONE — точная южная рамка М11
+
+[Sourceproof/ограничения](checkpoints/2026-10-18-m11-moscow-head-source-DONE.md): 2GET200,3orderedanchorsсовпали сownТоржок→Москва; node7171624764/way502872285southboundдоМКАД. Runtime/headценыunchanged. NEXT: offlineoperatorbindingreview solnechnogorsk→moscow; потомотдельныйCODE STARTED,focused/fullgate. Не повторять2GET/3anchors/готовые4p214cases. PhotonavailabilityFAILотдельно.
+
+## Предыдущая история
+
+## STARTED — точная рамка head Торжок→Москва
+
+[Scope/2GET/лимиты](checkpoints/2026-10-18-m11-moscow-head-source-STARTED.md): node7171624764/way502872285 отсутствуюткакdefinitionвretainedsource. Готовые3owncases/6profilesсохранены; неповторять. NEXT:2primaryGET,per-responseprogress, затемsourceDONE/BLOCKED. Runtime/ценыбезизменений; headunknown.
+
+## Предыдущая история
+
+## DONE — ещё три own p214 случая,6профилей
+
+[Результаты и caveat](checkpoints/2026-10-18-m11-p214-three-DONE.md): М11mainline1250/1390,9negativeguardsPASS,исключений0. Вместе сРаменское4/4owncaptures. Runtimeunchanged. Полныйитогunknown;4fetchattemptsМ4заблокированымоком,реальнойсети0,harnessfinalassertexit1сохранён. NEXT: offlineheadsource review ownТоржок→Москва; готовыеcases/sourcechecksне повторять. PhotonFAILостаётсяотдельно.
+
+## Предыдущая история
+
+## INVENTORY DONE / STARTED — три собственных p214 случая
+
+[Inputs и лимиты](checkpoints/2026-10-18-m11-p214-inventory-DONE-three-STARTED.md): 364capturefiles прочитаны,4exactmatches,готовыйРаменскоеисключён. NEXT: 3owncaptures/6профилей,strictmatcher+owncomponent/unknowncheck, timeout60s,перслучайprogress. КодCIverifyPASS; livePhotonFAILотдельно. Новыхсети/полныхмаршрутныхаудитов0.
+
+## Предыдущая история
+
+## PART C DONE — p214 codeCI PASS, внешний Photon FAIL
+
+[Remote и CI](checkpoints/2026-10-18-m11-p214-part-c-DONE.md): code3da74d0f, run39120413592 completed/success, verifyPASS; live_probeFAIL(Photon503/timeouts/budget), последующиеlivechecksSKIPPED. NEXT: короткаяofflineинвентаризация ещёнепроверенных owncaptures сexactp214gate; готовыйcase/41/15 не повторять. Полныйтарифunknown.
+
+## Предыдущая история
+
+## PART B DONE — М11 p214→p58 подключён, codeCI pending
+
+[Код, результаты и ограничения](checkpoints/2026-10-18-m11-p214-part-b-DONE.md): ownmainline1250/1390₽; focused19/19, audit762/762+quote/API, Next16/16, TS/ESLintPASS. Initialsymlinkbuildfailure сохранён. Полный итогnull: head58→ЦКАД/ЦКАД/unknown-paid-road. NEXT: exactremote readback и codeCI; только после success — boundedпроверка ещёнепроверенных собственныхp214captures.
+
+## Предыдущая история
+
+## PART A DONE — строгий распознаватель p214
+
+[Код и проверки](checkpoints/2026-10-18-m11-p214-part-a-DONE.md): standalone matcher, focused4/4 и tscPASS. Composer ещё не подключён; fullgate/build pending. NEXT PART B: p214→p58, ownquote и обязательные проверки; head58→ЦКАДunknown.
+
+## Предыдущая история
+
+## STARTED — восстановление p214, остаток разделён
+
+[План A→B→C](checkpoints/2026-10-18-m11-p214-hang-recovery-STARTED.md): matcher/focused → интеграция/fullgate → remote/codeCI. Runtime пока не менялся, источники завершены и не повторяются.
+
+## Предыдущая история
+
+## STARTED — строгая пара М11 p214→p58
+
+[Source review, scope и проверки](checkpoints/2026-10-18-m11-p214-entry-STARTED.md). Собственный въезд и p58 подтверждены; реализация ещё не выполнена. Head58→ЦКАД остаётсяunknown, полная цена не заявляется. После durable STARTED — узкий matcher, focused/fullgate/build и DONE.
+
+## Предыдущая история
+
+## DONE SOURCE — подтверждён фактический въезд М11
+
+Три GET200, пять направленных ways;61/61 independent ordered points совпали с собственным маршрутом. Соседний комплекс214км: p214 candidate, runtime/цены без изменений. [Доказательства, ограничения и команды](checkpoints/2026-10-18-m11-entry5286168661-source-DONE.md).
+
+**NEXT:** Offline: проверить operator p214 crosswalk и собственные p58/ЦКАД exit boundaries по retained источникам. Три GET въезда завершены, не повторять. До длительной работы или новых источников отдельный bounded STARTED.
+
+## Предыдущая история
+
+## STARTED — первичная привязка фактического въезда М11
+
+[План и лимиты](checkpoints/2026-10-18-m11-entry5286168661-STARTED.md): exact node5286168661 / way766468434, два GET и при необходимости одна локальная карта. Capture не повторять, runtime/цены пока без изменений. После durable STARTED выполнить source capture и сохранить DONE.
+
+## Предыдущая история
+
+## DONE — Торжок → Раменское: проверен другой въезд
+
+Собственный complete capture, два профиля: границы unresolved. Фактический gate5286168661 отличается от p258; его нет в retained карте Торжка. Runtime и цены не менялись. [Доказательства и ограничения](checkpoints/2026-10-18-m11-torzhok-ramenskoe-boundary-DONE.md).
+
+**NEXT:** Подтвердить primary node5286168661 / way766468434 и направленное продолжение для pair-m11-ckad-torzhok-to-ramenskoe, затем сопоставить с операторской тарифной точкой. До сети bounded STARTED; p258 не переносить по названию города.
+
+## Предыдущая история
+
+## DONE — ЦКАД47→М11: headпричина закрыта8/8
+
+Семь новых owncapturechecks/14датированныхпрофилей, исключений0, negativeguards21/21PASS; первыйпредставительнеповторялся. [Результаты и ограничения](checkpoints/2026-10-18-m11-ckad47-seven-DONE.md). Code29129946/CI39115104478verify/live_probeобаsuccess. Runtimeвпакетеunchanged, новыхheadcomponents7 (всего8), подтверждённыхwholefares0. По13исходнымfindingrecordsтеперь2fixed/1notreproduced/7blocked/3deferred; стараясводкасохраненавистории.
+
+**NEXT:** точныйсохранённыйслучайМ11 `pair-m11-ckad-torzhok-to-ramenskoe` — въезд/съезд иretainedprimaryТоржка. Не повторять41/15илиготовые8, не переноситьp679→p258выезд наинойвъезд/направление. До длительнойработыboundedSTARTED; послеэтогоDONEсначалаexactremote readback.
+
+## Предыдущая история
+
+## STARTED — семь собственных М11 head cases
+
+CodeCI39115104478по29129946completed/success,verify/live_probeобаPASS. [Пакет7cases/14профилей,лимитыиrecovery](checkpoints/2026-10-18-m11-ckad47-seven-STARTED.md). Новыхrouting/trace/сети0,первыйпредставительнеповторяется. ПослеdurableSTARTEDreadbackзапуститьrunner,сохранитьper-caseprogressиодинDONE. Runtimeнеизменяется.
+
+## Предыдущая история
+
+## DONE — М11: северный въезд ЦКАД47 исправлен
+
+Один собственный target: head280₽будни/320₽суббота, новыхкомпонентов1, fulltripunknown из-заЦКАД/ЗСД. [Изменение, sourceproof, проверки и ограничения](checkpoints/2026-10-18-m11-ckad47-implementation-DONE.md). Focused20/20, audit757/757+quote/API,TS,ESLint,Next16/16PASS; ошибкиlocalfixture/dependency сохранены.
+
+**NEXT:** после exactremotehead/tree/pathreadback проверить codeCI; затем boundedпакет7siblings owncapturedentrychecks сновымSTARTED. Семьне засчитаны этимпримером; маршруты/sourcepass не повторять. Ветка/PR14draft; никакихавтоматизаций/merge/Production/Android.
+
+## Предыдущая история
+
+## DONE SOURCE / STARTED CODE — въезд ЦКАД47→М11
+
+Новая первичная привязка gate8087316065 / ПВП18, четыреonewayсегмента и семь orderedanchors подтверждены наодном собственном маршруте. [Source proof и узкая интеграция](checkpoints/2026-10-18-m11-ckad47-source-DONE-implementation-STARTED.md). ТриGET200,безrouting/replay. Следующийшаг: strict northboundmatcher+готоваяпараtskad→solnechnogorsk,focused/fullgate/build. Runtimeпока unchanged,новыхpricedcomponents0. Остальные8случаевне засчитывать автоматически.
+
+## Предыдущая история
+
+## STARTED — М11: точный въезд с ЦКАД47
+
+В сохранённом собственном trace выделен gate8087316065→way1270188032, отдельный от прежних рамок ММК50. [Цель, входы и лимит3GET](checkpoints/2026-10-18-m11-ckad47-entry-STARTED.md). Сначала primaryidentity/topology, затем отдельное внедрение при доказательстве. Старые8/41routechecks не повторять, тариф пока unknown. ЗСД РВП64 остаётся BLOCKED до нового источника. Автоматизации не запускаются.
+
+## Предыдущая история
+
+## DONE — точный поиск РВП-64 завершён; тариф BLOCKED
+
+2 запроса, 1 исторический сторонний lead, 0 новых операторских страниц; цены/код без изменений. [Результат, evidence и точка продолжения](checkpoints/2026-10-18-rvp64-exact-owner-search-DONE.md). Предыдущий PDF сохранён в `e5e3042b`; все завершённые проверки повторять не требуется.
+
+**Условие продолжения этой причины:** новый независимый операторский документ/схема точного въезда РВП-64/ref64E либо датированный чек наличными/картой до КАД-юг. Текущие запросы/PDF/маршрутные проверки исчерпаны; повтор без нового основания не запускать.
+
+## Предыдущая история
+
+## STARTED — после остановки: точный поиск РВП-64
+
+Предыдущий PDF/source блок полностью сохранён в `e5e3042b`; повтор не требуется. Остаток разделён на 2 запроса → до 2 новых операторских страниц → сохранение результата. [Лимиты и восстановление](checkpoints/2026-10-18-rvp64-hang-recovery-exact-search-STARTED.md). Тариф пока BLOCKED.
+
+## Предыдущая история
+
+## DONE — текущие правила ЗСД прочитаны, точный тариф РВП-64 не доказан
+
+Один новый официальный PDF, HTTP 200; скан, релевантные страницы проверены визуально. Схема относится к Витебской развязке. Общие правила наличных/карты не определяют сбор именно РВП-64→КАД-юг. [Факты и ограничения](checkpoints/2026-10-18-rvp64-current-rules-DONE.md); runtime/цены без изменений, новых полных тарифов 0.
+
+**Следующий шаг:** bounded поиск точной операторской привязки РВП-64/ref64E и схемы въезда Макарова либо документа о сборе. Не повторять PDF/маршруты/старые source passes; до сети новый STARTED.
+
+## Предыдущая история
+
+## STARTED — РВП-64: действующие правила ЗСД
+
+План и точные лимиты: [STARTED](checkpoints/2026-10-18-rvp64-current-rules-STARTED.md). Один новый PDF правил с 01.10.2026, при необходимости одна связанная схема; без повторных маршрутов и старых source passes. Цена РВП-64→КАД-юг пока заблокирована. Recovery 19 файлов подтверждён в `ccde1c32`; подготовленная recovery-запись сохранена вместе с этим STARTED.
+
+## Предыдущая история
+
+## DONE — сохранение после остановки восстановлено
+
+19 подготовленных файлов сохранены в commit `ccde1c328359c39d5bdc1ba819d2ff4798dea536`; дерево и все 19 blob SHA прочитаны из разрешённой ветки и совпали. PR #14 открыт/draft. Новых запросов к источникам и пересчётов при восстановлении нет; PR workflow для этого docs-only commit отсутствует (`[skip ci]`). [Точка восстановления](checkpoints/2026-10-18-1038-zsd-save-recovery-DONE.md).
+
+РВП-64/ref64E определён физически. Его тарифный продукт и полная стоимость проезда до КАД-юг пока заблокированы отсутствием надёжных операторских данных. Следующий шаг: отдельный bounded STARTED для нового точного операторского источника; готовые четыре GET и проверки маршрутов не повторять. Правило деления остатка после зависания действует в [WORKFLOW_RULES](WORKFLOW_RULES.md).
+
+## Предыдущая история
+
+## DONE — установлен РВП64; тарифШкиперской кнемунепривязан
+
+4новыхprimaryGET200. Точныйnode13020687195/way351741889 названРВП64/ref64E. Тариф95Шкиперскойперечисляетдругиерамки; безТПвэтомпродуктеестьосвобождение,ноононеподтверждаетfree/0длянашегоРВП64→КАД-юг. [Источник и решение](checkpoints/2026-10-18-zsd-rvp64-identity-and-shkipersky-rule-DONE.md). Runtime/ценыбезизменений.
+
+NEXT:новыйточечныйowner crosswalkРВП64/ref64E иmainWHSDcash/cardscopeдо933975069; boundedSTARTEDдосети. ГотовыеGET/routechecksнеповторять; прежнийambiguousШкиперскийlabelнеиспользоватькакproductidentity.
+
+## Предыдущая история
+
+## STARTED — точный въезд ЗСД и тариф Шкиперской развязки
+
+Найдены3новыхPDFlinks вretainedownerindex. [План](checkpoints/2026-10-18-zsd-shkipersky-source-STARTED.md):3ownerPDF+1exactOSMway,0queries/route/replay. СперваразличитьфактическийвъездМакарова/Шкиперский,неприсваиватьразвязочныйтарифпоlabel.
+
+## DONE — очередь ZSD sibling boundary checks закрыта
+
+Вэтойсессии20новыхownsavedboundarychecks(7+13); вместе сготовымипредставителями группы8/8,5/5,4/4,7/7. Finalmaterialexceptions0/errors0. [Результат](checkpoints/2026-10-18-zsd-remaining-thirteen-DONE.md). Увъезднойрамки13020687195toll=falseподход ивrepresentative,ив6siblings;initialtoll=trueassumption/correction сохранены,плата/бесплатностьневыводятся.
+
+Явноunchecked siblings вdirectedGroupReviews0. Это неготовностьтарифов: новыеpricedcomponents/confirmedfullfares0. NEXT: конкретноеownercash/cardrule/datedreceipt въездМакарова/Шкиперский→КАД-юг(13020687195/933975069),сboundedSTARTED/newsource. Старыеrouteaudits/sourcepassesнеповторять.
+
+## Предыдущая история
+
+## DONE7ZSD / STARTED оставшиеся13boundarychecks
+
+Группа1e954:7siblings безотличий,8/8сучётомготовогопредставителя. [Результат и следующийпакет](checkpoints/2026-10-18-zsd-seven-DONE-remaining13-STARTED.md). Ценанедоказана; новыхрасчётов/сети0.
+
+NEXT:13ownsavedboundaryexceptions в3группах3493/3404/2c00(4+3+6),точныеinputsвchecks/2026-10-18-zsd-remaining-thirteen. Представителей/74componentchecksнеповторять,per-caseprogress.
+
+## STARTED — семь оставшихся границ ЗСД, КАД-север→КАД-юг
+
+Группа1e954c437e46:проверить7ownsavedcaptures/trace/entry/exit,безpricingreplay/сети/повтора74. [План](checkpoints/2026-10-18-zsd-north-south-seven-STARTED.md). Точныеinputs иper-caseprogress вchecks/2026-10-18-zsd-north-south-seven.
+
+## DONE — ещё6ZSD exit/trace exceptionchecks, группа7/7
+
+Группа258ee8:6own savedcaptures проверены, точнаяselectedgeometry/rawboothorder/exitКАД-север; exceptions0/errors0. [Результат](checkpoints/2026-10-18-zsd-north-kad-six-DONE.md). Это новаяпроверкаграниц, не повтор74component checks. ЦенаBLOCKED: operatorcollectionbundle отсутствует. Новыхцен/route/replay0.
+
+NEXT:7unchecked siblings группы1e954c437e46, КАД-север→КАД-юг. Передпакетом отдельныйboundedSTARTED, толькоownsavedexit/traceexceptionchecks. М3date иМ4sourcepasses не повторять безновогоисточника.
+
+## Предыдущая история
+
+## DONE М3source / STARTED шесть ZSD scope exceptions
+
+CI39101746826 verify/live_probe success. Новый M3sourcepass4queries/4reads не доказалдаты15/17Oct; verifiedThrough нерасширен. [Результат и следующий пакет](checkpoints/2026-10-18-m3-date-source-DONE-zsd-six-STARTED.md).
+
+NEXT:6явноunchecked siblings группы258ee8, только own savedcapture/trace/exit comparison с представителем; network/replay/componentrerun0. Inputs: experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/inputs.json. Per-caseprogress,одинфинальныйcheckpoint. Старыеroutebatches/M3source не повторять.
+
+## STARTED — проверка дат тарифного источника М3
+
+CI39101746826 по65bed1ae… completed/success:verify иlive_probe прошли. Исправление правилаотправления сохранено. [Новая source-задача](checkpoints/2026-10-18-m3-tariff-date-source-STARTED.md):до4queries/4новыхreads, даты15/17Oct, без старогоPDF/новостимарта/route replay. verifiedThrough не расширять безproof.
+
+## DONE — исправлено правило отправления в диагностике М1/М3
+
+Shadow больше не отвергает переход московской полуночи; тарифный профиль определяется отправлением. [Изменение и проверки](checkpoints/2026-10-18-m1-m3-departure-policy-DONE.md). Regression:до26/31,после31/31; full750/750+quote/API,TS,ESLint,cleanbuild16/16 PASS. Первичный buildcachefailure сохранён.
+
+verifiedThrough2026-10-10 не расширен; отправления15/17Oct и клиентские цены не разблокированы. Новых клиентских компонентов/подтверждённых полных тарифов0. NEXT: actualCI codecommit до записи в ветку; затем новый bounded officialМ3source/date только при независимом источнике. Старые маршруты/М4источники не повторять.
+
+## Предыдущая история
+
+## STARTED — исправление даты диагностического тарифаМ1/М3
+
+Обнаруженcodebug: shadow отвергаетпереходполуночи вопрекиправилуотправления. [План](checkpoints/2026-10-18-m1-m3-departure-policy-STARTED.md). Срокверификацииисточника нерасширять, никакогоcustomerpricecutover. Проверитьрегрессии+fullgateофлайн.
+
+## DONE — новыйsourcepass М4-545, привязкаBLOCKED
+
+Найден исторический operatorтекст о1/2участках; directoperator403, обе точныеownersectionpages «Элемент не найден». Текущаяполоса/тарифныйохват не доказаны; новыхцен0. [Отчёт](checkpoints/2026-10-18-m4-545-operator-source-DONE.md).4queries/6reads в2durablebounded проходах; безrouting/replay.
+
+NEXT: М4 удерживать до нового независимогоoperatorproof, этотsourcepass/старыеPDF/геометрию не повторять. Перейти к savedprovenance дат тарифовМ3; перед новойсетью отдельныйboundedSTARTED.
+
+## Предыдущая история
+
+## DONE discovery / STARTED — две связанные страницы М4-545
+
+4queries/4reads завершены:3operator403,ownerindex200. Найден исторический текст о раздельной/совместной оплате и две точные новые ссылки517–544/544–633. ПривязкаBLOCKED, новых цен0. [Следующий bounded проход](checkpoints/2026-10-18-m4-545-source-discovery-DONE-linked-sections-STARTED.md):2sectionpages+до2linked schemes,0searchqueries.
+
+## STARTED — официальный источник о взимании на М4-545
+
+До4queries/4новых primary reads, directGET15с/max-time20с. Старые403/PDF/OSM/route batches не повторять. [План](checkpoints/2026-10-18-m4-545-operator-source-STARTED.md).
+
+## DONE — М4-545: повтор geometry/PDF не требуется
+
+Сохранённые источники исчерпаны: точная полоса доказана, операторское соответствие двум тарифным вариантам нет. Проверены4objectSHA+2PDFSHA; новых сетевых запросов/расчётов/цен0. [Пробел и источники](checkpoints/2026-10-18-m4-545-retained-provenance-DONE.md).
+
+NEXT: новый операторский источник о взимании на545 и участках517–544/544–589, с bounded STARTED до сети. Старые403URL/22route replay/геометрию/рендерPDF не повторять.
+
+## Предыдущая история
+
+## DONE — очередь причин сверена,18.10.2026
+
+Исправлены путь отчёта Одинцово и устаревшее продолжение М12. Baseline13:1fixed/1not reproduced/8blocked/3deferred; поздние узкие исправления учтены отдельно, когорты не складываются. Части19/20 старого плана уже выполнены; повторный финальный аудит не нужен без причины. [Сверка](checkpoints/2026-10-18-0600-cause-handoff-reconciliation-DONE.md).
+
+NEXT: сохранённая provenance вариантов М4 1223→545-a/545-b, только точные документы; без повторов22/74/76/309, без угадывания цены. М12 продолжать только при новом независимом источнике.
+
+## Предыдущая история
+
+## DONE: официальный источник М-12 проверен
+
+Один GET HTTP200; релевантной схемы/доказательства тарифной привязки нет. Причина BLOCKED, новых цен0. [Результат](checkpoints/2026-10-18-m12-official-page-DONE.md). CI исходного кода39071021984 success. NEXT: сверить оставшиеся assessed causes PART19 и объём итоговой проверки по сохранённым данным. Западный М-12 повторять только при новом независимом источнике.
+
+## Предыдущая история
+
+## STARTED: новая официальная страница М-12
+
+CI39071021984 completed/success на a9ad4722…; PR14 draft. Ограничение: одна новая страница и одна связанная схема, без повторных маршрутов. [План](checkpoints/2026-10-18-m12-official-page-STARTED.md).
+
+## DONE: физическая проверка М-12 сохранена в a9ad4722…
+
+- Remote/PR14draft head **a9ad472218b15fc2952304b1fa5d70670ce929a1**, tree16f81749670cec8480fc8cfe5ce8b74bda7b4828. Non-force save и readback52pathSHA/head/draft — PASS. Файлы, первичные ответы, проверки, очередь и отчёт уже доступны из рабочей ветки.
+- Новый CI39071021984: verify117508472379 completed/success; live_probe117508472518 ещё выполняется. Полный run success не заявлен. Локальные744/quoteAPI/TS/ESLint/build16/16 прошли; тарифные привязки по-прежнему BLOCKED. Новых цен/компонентов/fullfares0.
+- [Фактическое подтверждение записи](checkpoints/2026-10-18-m12-western-remote-readback.json). Только эта последняя запись наблюдений/CI пока LOCAL ONLY из-за activeCI; основной блок52файла уже durable в a9ad4722…. Сохранить наблюдение в следующем разрешённом checkpoint.
+- **NEXT:** actualCI39071021984 и head/PR; затем один новый bounded проход по https://russianhighways.ru/for_drivers/m-12-vostok/ (точная ссылка найдена в сохранённом официальном AJAX-фрагменте, ещё не открывалась) и одной явно связанной схеме при наличии. Не повторять9OSM объектов/прежниеqueries/ЦКАД/74/76/309. Без официального соответствия рамок/съездов операторским интервалам2952/1239 не применять; при пробеле оставить BLOCKED и перейти к другим assessed causes.
+
+## Предыдущая сохранённая история
+
+## DONE physical / BLOCKED operator — М-12,18.10.2026
+
+- Девять primaryOSMответов HTTP200 за8.684с подтвердили три рамки и два разных связных съезда. Операторские идентификаторы не получены: Арзамас выходит на22Н-0239, Чебоксары — наМ-7 уВладимира. [DONE](checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md) · [отчёт](../experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/README.md).
+- Два поиска/четыре плановых чтения страниц и два отдельно учтённых чтения конкретного linkedendpoint не дали crosswalk. Raw/metadata сохранены. Нерелевантные результаты и неправильный домен исключены; отсутствие данных у оператора не утверждается. Новая ссылка m-12-vostok найдена, но ещё не открыта.
+- Frozen8/raw9hashes, offline reuse/noSTARTEDguard с0fetch, full744/quoteAPI/TS/ESLint/build16/16 — PASS. Initial отказ guard из-за смешанного каталога сохранён; исправлена организация данных. Runtime/матрица/цены не менялись. Новых routing/trace/pricingreplay/компонентов/подтверждённых fullfares0; прежний subtotal5475 — частичный. Остальная история и счётчики очереди сохранены.
+- Source d497df67…/CI39068966825success; durable STARTED1a8df19a…. Final code commit без skipCI; после exact head/tree/path readback проверить новый CI. PR14draft; main/merge/Production/Android без изменений.
+- **NEXT:** новый observed источник https://russianhighways.ru/for_drivers/m-12-vostok/ — один отдельный bounded проход после CI. Старые9OSM/поиски/ЦКАД/74/76/309 не повторять. Если crosswalk нет — BLOCKED и другие assessed causes.2952/1239 без доказательства не применять.
+
+## Предыдущая сохранённая история
+
+## STARTED — 18.10.2026 00:01 МСК: М-12 западные границы
+
+- Source d497df67…/PR14draft; CI39068966825 completed/success: verify иlive_probe фактическиуспешны; ожиданиеокончено. [STARTED](checkpoints/2026-10-18-000148-m12-western-boundaries-STARTED.md) · [9exact OSM URLs/frozen inputs](../experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/inputs.json).
+- Только3западныхgantry +дваразныхexit:9GET≤15с/120с,terminalcircuit;2узкихoperatorqueries/≤4pageopens. ДоdurableSTARTED/readback сетьнепускать. ЦКАДвходreuse; новыхrouting/trace0.1239/2952 кандидатамиостаютсядоproof.
+- **NEXT после durableSTARTED:** boundedprimarycapture иоператорскаяпривязка; припровалеисточникафиксироватьBLOCKEDбезрасширенияпоиска. Только доказательство разрешаетузкийadapter/обаowncases/fullgate; иначеruntime/ценыбезизменения. Старые74/76/309/ЦКАДнеповторять.
+
+## Предыдущая сохранённая история
+
+## DONE — ограничение address probe сохранено в remote d497df67…
+
+- Branch/PR14draft head **d497df67738696dbe9c11e4dc14e617717ea1a2a**, tree8e50f77a553ace772f0f1ccb39722baa5627062b.20path SHA + head/draft readbackPASS. Code/docs/evidence reachable из разрешённой GitHub-ветки; STARTED925c8c4d… был docs-onlyskip, finalcodecommit безskip.
+- Полный локальный gate:focused8/8,audit744/744+quote/API,TS,ESLint,Next16/16PASS. Новый CI39068966825 **verify completed/success**, live_probe активен (provider geometry при последнем наблюдении). Полный run success ещё НЕ заявлен.
+- [Фактический readback](checkpoints/2026-10-17-address-timeout-remote-readback.json). Эта последняя запись наблюдений/CI пока LOCAL ONLY из-за activeCI; исправление и20файлов ужеdurable вd497df67…. Сохранить наблюдения следующим разрешённым checkpoint.
+- **NEXT:** проверить CI39068966825 иhead/PRdraft; затем отдельный STARTED перед boundedprimary привязкой западныхМ-12 рамок10782165529/11214930528/11157985901 и разныхвыходов22Н-0239/М-7. Не повторятьпройденныеtests/ЦКАД/74/76/309 безновойпричины.2952/1239 бездоказательстваненазначать; fulltripunknown сохранять. Никакогоmain/merge/Production/Android.
+
+## Предыдущая сохранённая история
+
+## DONE — 17.10.2026: лимиты адресной сетевой проверки
+
+- Request+body10с, общий budget90с; abort/race, прекращение новых запросов, incremental atomic array/progress. Budget-exhausted не выдаётся заDONE (CLIexit1), ошибки источников видны. Диагностический probe и artifact path; app/lib/тарифы/матрица без изменения. [DONE](checkpoints/2026-10-17-2350-address-probe-timeout-DONE.md) · [отчёт/логи](../experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/README.md).
+- Focused8/8, full744/744+quote/API,TS,ESLint,Next16/16 PASS. Initial test-serialization failure и initial build environment failure сохранены; после локальной копии dependencies повторён только failed build. Новых local live/routing/trace/primary0. Sourcee3c07ac3…/CI39067254489success, durableSTARTED925c8c4d….
+- Evidence limitation: полный initial focused raw отсутствует (файл0байт); initial-observations.json фиксирует фактическое наблюдение ошибки. Final test/build logs и initial build raw сохранены.
+- Final code commit безskipci; после durable save проверить новыйCI фактически. До head/tree/blob readback код не считать опубликованным; PR14draft, no main/merge/Production/Android.
+- **NEXT после durable save:** фактический codeCI; затем первичная привязка западныхМ-12 рамок10782165529/11214930528/11157985901 и двух выходов22Н-0239/М-7 по saved inputs.2952/1239 без доказательства не назначать,74/76/309 иЦКАД не повторять.
+
+## Предыдущая сохранённая история
+
+## STARTED — 17.10.2026 23:49 МСК: ограничение времени адресной проверки
+
+- Source e3c07ac3…/PR14draft, **CI39067254489 completed/success**. Код ЦКАД сохранён и повторно не проверяется. [STARTED](checkpoints/2026-10-17-234931-address-probe-timeout-STARTED.md).
+- Один блок: request+body timeout10с, общий budget90с, abort/race, incremental array/progress и явный budget-exhausted статус; offline fault tests и обязательный full gate. Новых live/primary/routing/trace0, тарифы/матрица/app/lib без изменений.
+- Docs-only STARTED сохраняется с [skip ci] после content/link/diff checks; финальный code commit безskip, обычный CI обязателен. Это не успешный code CI для STARTED.
+- **NEXT после STARTED readback:** реализовать bounded probe/helper/tests, проверить fault scenarios без сети, full gate и DONE/remote readback. Затем — М-12.
+
+## Предыдущая сохранённая история
+
+## DONE — код ЦКАД надёжно сохранён, 17.10.2026 23:35 МСК
+
+- **Remote/PR14draft head e3c07ac3e09e8be1bbecd482b70974c691681f2b**, tree d3e0340c9e352cd858854666c0f225a168f31764. Non-force update выполнен после terminal success CI39066237658 и проверки parent fe5f1fc8…. Все62path SHA повторно прочитаны из GitHub и совпали. Перенос/аудит ЦКАД больше НЕ повторять.
+- Новый code CI39067254489: **verify completed/success**, реальный лог117497372912:284tests/pass284/fail0,TypeScript success,Next build/static16/16 success. Широкая live_probe ещё выполняется; весь run успешным не объявлен. Прежние audit736 и focused8 остаются прежними результатами.
+- Два собственных маршрута: ЦКАД981 каждый, subtotal5475, полная суммаunknown/missingm12. Матрица/тарифы без изменения.
+- [Readback evidence](checkpoints/2026-10-17-ckad-code-durable-readback.json), [точный статус](checkpoints/2026-10-17-pending-ckad-remote-save.json). Код/evidence/исходные журналы уже в remote e3c07ac3…. **Только эта новая запись фактического readback/CI пока локальна:** remote во время activeCI не обновлять; сохранить наблюдение в следующем разрешённом checkpoint.
+- **NEXT:** проверить actual CI39067254489 и head/PR; после terminal отдельным ограниченным блоком устранить отсутствие request/body timeout и общего бюджета в address-search-live-probe (без отмены текущегоCI). Затем — первичная привязка западныхМ-12 рамок10782165529/11214930528/11157985901 и разных выходов22Н-0239/М-7.2952/1239 без доказательства не назначать. Не повторять74/76/309; main/merge/Production/Android не менять.
+
+## Предыдущая локальная история (статусы ниже исторические)
+
+## LOCAL ONLY — code save готов, ожидается terminal CI39066237658
+
+- Удалённая разрешённая ветка/PR14draft: fe5f1fc8bd0986e222cb49a4e906a12005513c65. В ней надёжно сохранены manifest и bundle исходного блока ЦКАД.
+- Полностью подготовленный GitHub commit **e3c07ac3e09e8be1bbecd482b70974c691681f2b**, tree **d3e0340c9e352cd858854666c0f225a168f31764**, parent fe5f1fc8…;62path SHA проверены через GitHub. Объект существует, но ref на него ЕЩЁ НЕ ПЕРЕМЕЩЁН. Код в рабочую ветку пока не включён.
+- [Точная точка продолжения](checkpoints/2026-10-17-pending-ckad-remote-save.json): проверить actual CI/branch/PR; если CI terminal и head всё ещё fe5f1fc8…, выполнить **non-force update_ref** разрешённой ветки на e3c07ac3… с expected_sha fe5f1fc8…, затем head/tree/path readback и фактический новый code CI. Если head изменился — согласовать изменения; не force/reset. Не повторять аудит, сборку дерева и передачу62файлов.
+- Обнаружено: scripts/address-search-live-probe.mjs fetch без per-request timeout; workflow live_probe имеет только60минут общего лимита. Последнее наблюдение: verify success, адресный probe active; фактическое зависание отдельного запроса не доказано. Отдельный следующий технический fix — timeout запроса/тела и общий бюджет с incremental progress; активный CI автоматически не отменять.
+- **Эта верхняя запись локальная и ещё НЕ опубликована в GitHub из-за active-CI rule.** Нельзя объявлять ни её, ни новый код durable. Для нового чата без локального checkout использовать prepared commit e3c07ac3…/parent fe5f1fc8… из handoff, либо durable bundle в fe5f1fc8…. Новых тестов/маршрутных запросов в recovery0.
+
+## Предыдущая локальная история
+
+## Восстановлен готовый код ЦКАД — 17.10.2026: сохранение code tree
+
+- Исходный prepared a9f2bf… перенесён на актуальный remote fe5f1fc8…:57exact файлов +3согласованных журнала; новые правила после зависания и recovery-история сохраняются. [Recovery checkpoint](checkpoints/2026-10-17-2320-ckad-code-save-recovery-DONE.md). Исходный [DONE21:20](checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md) теперь сохраняется вместе с кодом/evidence.
+- Два собственных OSRM: ЦКАД981 каждый, subtotal5475; полный итог unknown/missingm12. Восстановлены прежние focused8/8, audit736/736, quote/API/TS/ESLint/build exit0; это прежние проверки, новые live/pricing0. Все runtime hashes соответствуют проверенному a9f2bf.
+- До terminal CI39066237658 remote ref не обновлять; после записи — exact tree/blob/head readback и отдельный code CI. Код считается durable только после этой записи/readback. PR14draft, main/merge/Production/Android без изменений.
+- **NEXT после durable code readback:** проверить code CI; затем первичная привязка западных М-12 рамок10782165529/11214930528/11157985901 и двух разных выходов22Н-0239/М-7.2952/1239 не назначать без доказательства; старые74/76/309 не повторять.
+
+## Предыдущая сохранённая история
+
+## DONE проверки / сохранение ожидает CI — 17.10.2026 23:12 МСК: ЦКАД recovery, часть 1
+
+- Проверены все60 файлов неопубликованного a9f2bf… (1306375байт), их Git blob/SHA256,6current runtime,13frozen source и12primary raw hashes. Сохранённые focused8/8, audit736/736, quote/API/TS/ESLint/build exit0 прочитаны; новых тестов/запросов0. [Checkpoint](checkpoints/2026-10-17-231217-ckad-recovery-part1-DONE.md) · [manifest](../experiments/nationwide-tolls/checks/2026-10-17-ckad-save-recovery/verification.json).
+- Remote/PR14draft5102b44… сверены. CI39065562352 verify success, live_probe активен при подготовке; до terminal ветку не обновлять. Код a9f2bf пока НЕ durable. Этот docs-only recovery checkpoint должен получить commit/readback до следующей независимой части.
+- Подготовлена переносимая копия `checks/2026-10-17-ckad-save-recovery/pending-ckad.bundle`:82729байт, head a9f2bf…, prerequisite a666fb48…, git bundle verify PASS. После commit/readback архив обеспечит восстановление60файлов без старого scratch; runtime ещё не интегрирован.
+- **NEXT после durable readback:** перенос60 exact файлов на актуальный remote с сохранением новых правил/журналов и per-file progress; затем запись code tree/readback и code CI. Старый аудит не повторять; обе полные цены пока unknown из-заМ-12.
+
+## Предыдущая сохранённая история
+
+## DONE — 17.10.2026 23:07 МСК: правило восстановления после зависания
+
+- Пользователь поручил после зависания делить последнюю незавершённую задачу на меньшие части. Правило добавлено в WORKFLOW_RULES, AGENTS и CHECKPOINT_PROTOCOL: проверка фактического прогресса, последовательные части, durable-сохранение каждой, повторное дробление при новой остановке. [Checkpoint](checkpoints/2026-10-17-230704-hang-recovery-rule-DONE.md).
+- Фактически проверены remote/PR14 draft head `a666fb4887ea54a328a29fb3bfc2dfa5102e5499` и CI39056837838 completed/success. Изменяются только документы; runtime/тарифы и старые проверки не перезапускались. Новый post-save CI проверять отдельно.
+- **Обнаруженная точка восстановления:** локальный `a9f2bf98106bc798cc3536a7c920cd2c4dbd10a2` в `/workspace/scratch/43bf6cdc55b7/mezhgorod` содержит подготовленный DONE ЦКАД (60 файлов), но не достижим из проверенного remote head. Его результаты НЕ объявлены durable. Исходный checkout и commit сохранены без изменений; текущая правка правил основана на remote `a666fb48…`, а не на неопубликованном runtime.
+- **NEXT:** восстановить сохранение ЦКАД отдельными частями: (1) проверить локальный a9f2bf…/60-файловый diff и уже записанные результаты/хеши без повторного аудита; (2) перенести готовый diff поверх нового remote, сохранив это правило и recovery-записи, сверить точные пути/blob/tree; (3) после terminal CI выполнить non-force запись/readback и обновить handoff. При отсутствии исходных файлов зафиксировать потерю доступности; не выдавать старые тесты за новые. Затем — отдельные задачи М-12.
+
+## Предыдущая сохранённая история
+
+## STARTED — 17.10.2026 21:08 МСК: ЦКАД М-11→М-12
+
+- Source/branch/PR14draft headf010d847… сверены; CI39055898864 success. [STARTED](checkpoints/2026-10-17-210814-ckad-m11-m12-STARTED.md) · [inputs](../experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/inputs.json).
+- Один ограниченный первичный проход:8 way/full+4 node GET,≤120с/15с каждый, terminal circuit; новых routing/trace0. До durable STARTED/readback сеть не запускать. При доказательстве — forward-only adapter и непрерывный named trace блока ЦКАД, оба случая и полный gate. М-12 остаётся отдельным unknown.
+- NEXT: durable STARTED, primary capture/proof; при нехватке данных конкретный blocker без расширения поиска. В активный CI remote не писать.
+
+## Предыдущая сохранённая история
+
+## DONE разбора / BLOCKED привязки — 17.10.2026 20:52 МСК: собственные М-12/ЦКАД
+
+- Проверены2 случая:1 представитель+1 исключение,19 сохранённых trace occurrences/13 raw,45 source hash entries. Общая геометрия ЦКАД М-11→М-12 полностью совпадает; адаптер поддерживает только М-11↔М-4. Выход М-12 к Чебоксарам —М-7 у Владимира; к Арзамасу —22Н-0239 после420. Один вектор между ними не переносить. [DONE](checkpoints/2026-10-17-205246-selected-osrm-m12-ckad-scope-DONE.md) · [отчёт](../experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/README.md).
+- Итог причины: **заблокирована отсутствием надёжной первичной привязки тарифных границ**. Координаты западных рамок уже есть; не доказаны их операторские номера и точные оплачиваемые интервалы. Готовые981/2952/1239 не назначены. Северная пара ЦКАД не использует условный участок М-12–Носовихинское; сноску120мин не разрешали по ETA.
+- Runtime и тарифы не менялись; новых routing/trace/primary0, pricing replay0, новых компонентов/полных расчётов/подтверждённых полных тарифов0. Исторические subtotal4494 и совокупные25компонентов/4расчёта/2unknown по шести OSRM без изменения. Audit728/quoteAPI/TS/ESLint/build16/16 PASS; initial hash-check version mismatch объяснён и сохранён.
+- Source54f4cccc…/PR14draft сверены. CI39054871192 при подготовке активен: verify success, live_probe работает. Remote только после его окончания, новый post-save CI отдельно.
+- **NEXT после durable DONE:** ограниченная первичная привязка общего ЦКАД М-11→М-12 по точным transition IDs из summary; затем узкий adapter только при доказательстве и обе case exceptions. Западные рамки М-12 и разные выходы — отдельная привязка. Не повторять74/76/309, тарифный поиск и исходные ZSD owner blocks.
+
+- Перед итоговой записью: CI39054871192 completed/success, verify и live_probe; пять последних runs завершены. Branch/PR head54f4cccc… совпали, PR14 draft. Ожидание закончено; новый post-save CI отдельно.
+
+## Предыдущая сохранённая история
+
+## DONE — 17.10.2026 20:34 МСК: М-11 Торжок p258
+
+- **Исправлена и проверена** направленная привязка3183012434 кp258/Будово. Собственный OSRM: **2400+94+300=2794 ₽** по отправлению15.10.2026. Три рассчитанных компонента, два новых; полный тариф внутренне unconfirmed, подтверждённых полных тарифов0. [DONE](checkpoints/2026-10-17-203458-m11-torzhok-p258-DONE.md) · [отчёт](../experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/README.md).
+- Три первичных OSM GET, семь связных paid links и девять собственных физических свидетелей. Новый directed access adapter, общие thresholds без изменения. Новых routing/trace0. Обратное направление и другие partial М-11 не включены.
+- Focused7/7, full728/728, quote/API, TypeScript, ESLint и build16/16 PASS. Сквозной OSRM5424 сохранён; API при недоступном trace остаётся unknown. Initial6/7: исправлено только тестовое ожидание скрытого поля API; лог сохранён.
+- По конкретным шести заменённым OSRM:25 рассчитанных компонентов, четыре составных расчёта/два unknown, ЗСД6×300, подтверждённых полных тарифов0. Исторический26/50 не является новой глобальной сводкой76. Source5281fa01…; durable STARTED5b000b5f… и CI39044745179 success проверены при продолжении.
+- **NEXT после durable DONE и актуального CI:** общий scope М-12/ЦКАД собственных OSRM к Арзамасу/Чебоксарам: `m12_current_operator_pair_not_bound`, `ckad_east_arc_not_proven`. Сначала saved evidence; subtotal4494 не полный итог. Старые owner blocks ЗСД остаются отдельно;74/76/309 не повторять.
+
+- Перед финальной записью: branch/PR head5b000b5f… совпали, PR14 draft. CI39044745179 completed/success (verify и live_probe), последние пять runs завершены. Новый post-save CI проверять отдельно.
+
+## Предыдущая сохранённая история
+
+## STARTED — 17.10.2026 18:18 МСК: точный съезд М-11 Торжка
+
+- Source/branch/PR14draft head5281fa01… сверены; CI39043652263 активен в начале, verify успешен. [STARTED](checkpoints/2026-10-17-181806-m11-torzhok-p258-STARTED.md). До прекращения CI ветку не обновлять.
+- Один собственный OSRM trace уже полный. Узел3183012434/795246101 не связан; p258/Будово — гипотеза, spatial facility отсутствует. Готовые2400/2490 пока лишь data lookup, к маршруту не применены. Нового routing/trace0.
+- NEXT: durable STARTED/readback, ограниченная первичная привязка; только при доказательстве — минимальное исправление и focused/full gate. При пробеле — конкретный blocker, без расширения порогов и поиска без конца.
+
+## Предыдущая сохранённая история
+
+## DONE — 17.10.2026 17:57 МСК: пять собственных OSRM trace ЗСД
+
+- **5/5 случаев, полные trace, ЗСД5×300 ₽** по готовому законченному вектору Благодатная → КАД-юг. Рассчитано 19 компонентов, подтверждённых полных тарифов0. Два расчёта к Воронежу — 7254/unconfirmed; три полных итога unknown. [DONE](checkpoints/2026-10-17-175742-zsd-osrm-five-DONE.md) · [отчёт](../experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/README.md).
+- 43 обращения trace:27 точных reuse,16 новых HTTP200 (15 для основной геометрии и один local М-4), нового routing0. Строгий offline replay5/5;20 raw, семь source SHA,15 отрицательных проверок PASS.721/quoteAPI/TS/build16/16 PASS. Runtime и тарифы не менялись;74/76/309 не повторялись.
+- Вместе с предыдущим представителем все шесть изменившихся OSRM имеют собственный trace и ЗСД300. Всего 23 рассчитанных компонента, три составных расчёта/три unknown, подтверждённых полных цен0. Исторический26/50 не пересчитан как глобальный baseline.
+- Source8fecbab5… /CI39041543624 success; durable STARTEDd9a96ec0…. Post-STARTED CI39042535356 активен при готовности пакета, verify успешен; до его завершения ветку не обновлять. Новый CI после DONE проверять отдельно.
+- **NEXT после durable DONE и актуального CI:** привязать съезд М-11 нового OSRM Торжка3183012434/795246101 и готовую пару; до доказательства unknown. Затем общий scope М-12/ЦКАД Арзамаса и Чебоксар. Исходный owner block ЗСД группы9 остаётся; общий поиск тех же ставок не повторять.
+
+- Подготовка NEXT: p258/Будово есть в операторском списке, facility p258 отсутствует в spatial snapshot. Связь с3183012434 пока гипотеза; доказать по первичным данным, не расширять порог расстояния. Подробности — torzhok-followup-notes.json.
+
+- Перед финальной записью: CI39042535356 завершился успешно (verify и live_probe); последние пять runs завершены. Branch/PR head d9a96ec0… совпали, PR14 draft. Ожидание CI закончено; новый post-save CI проверять отдельно.
+
+## Предыдущая сохранённая история
+
+## STARTED — 17.10.2026 17:49 МСК: пакет пяти собственных OSRM trace
+
+- Source/branch/PR14draft head8fecbab5… сверены. [STARTED](checkpoints/2026-10-17-174952-zsd-osrm-five-STARTED.md). CI39041543624 в начале активен; до его завершения ветку не обновлять.
+- Пять изменившихся OSRM, собственные metadata:41 request occurrences/19unique,4точных prior matches,15missing payloads. Пока только подготовка saved inputs, сеть/ценовые проверки0. Новый routing и74/76/309 не запускать.
+- NEXT: durable STARTED/readback, один bounded batch (35attempts/180с), per-case raw/progress, строгий offline replay и обязательный gate, один DONE commit/readback. Unknown не0; исторический26/50 не пересчитан.
+
+## Предыдущая сохранённая история
+
+## DONE — 17.10.2026 17:28 МСК: собственный trace одного OSRM
+
+- `pair-m11-zsd-prim-to-moscow`: выбран собственный OSRM из сохранённого ответа, 715622 м /30963 с. Новый trace6/6 HTTP200, coverage complete. Благодатная → КАД-юг через ПВП318102347; существующий вектор зоны1: **300 ₽**. [DONE](checkpoints/2026-10-17-172810-zsd-selected-osrm-trace-DONE.md).
+- Строгий offline replay совпал, misses0. Семь source SHA, шесть raw responses и пять отрицательных проверок PASS. Новых routing-запросов0. Проверен один случай, рассчитаны четыре компонента, включая один ЗСД. Сумма5424 по отправлению15.10.2026; **priceConfirmation=unconfirmed, подтверждённых полных тарифов0**. Остальные пять OSRM не пересчитаны; исторический26/50 не обновлён как новый baseline.
+- Sourcea49470b7… /CI39038119987 success; durable STARTEDdbb5a1ef…. Post-STARTED CI39040459995: verify успешен, широкая live_probe ещё активна при готовности случая. Финальная remote-запись только после прекращения CI; новый post-save CI проверять отдельно. Runtime не менялся.
+- Обязательные проверки новых скриптов: 721/721, quote/API, TypeScript и Next build16/16 PASS. Логи сохранены; runtime не менялся.
+- NEXT после durable DONE и актуального CI: один ограниченный пакет остальных пяти изменившихся OSRM. Сначала saved geometry и точные request keys; reuse только идентичного payload, недостающие chunks получить ограниченно. Пакет74/76/309 не повторять. Группа9 КАД → Планерная и другие непривязанные области оплаты остаются unknown.
+
+- Перед финальным сохранением: CI39040459995 completed/success (verify и live_probe), последние пять запусков завершены; branch/PR headdbb5a1ef… совпали, draft сохранён. Ожидание CI закончено. Новый post-save CI проверять отдельно.
+
+## Предыдущая сохранённая история
+
+## STARTED — 17.10.2026 17:21 МСК: собственный trace OSRM
+
+- CI39038119987 completed/success, branch/PR14draft head a49470b7… фактически проверены. [STARTED](checkpoints/2026-10-17-172148-zsd-selected-osrm-trace-STARTED.md).
+- Один `pair-m11-zsd-prim-to-moscow`: восстановить собственный OSRM из saved response, затем ограниченный live trace его изменившейся geometry. Старый Valhalla trace неприменим. Нового routing и повторов74/76/309 нет; цены пока не проверены.
+- NEXT: durable STARTED/readback перед сетью; один case result/progress и итоговый checkpoint. Unknown не0, subtotal не полный итог.
+
+## Предыдущая сохранённая история
+
+## DONE — 17.10.2026 16:46 МСК: no-reentry ЗСД
+
+- **Исправлена и проверена точная причина шести случаев5733:** общий V3 `isUsableRoute` исключает доказанный городской разворот и повторный заезд до ETA-ранжирования. Восемь физических свидетелей,15м, сегменты≤500м, местный путь≤4км. Один самый быстрый допустимый обычный кандидат; цена не участвует. Без допустимых кандидатов — ошибка маршрутизации. [DONE](checkpoints/2026-10-17-163758-zsd-no-reentry-DONE.md) · [результаты](../experiments/nationwide-tolls/checks/2026-10-17-zsd-no-reentry/README.md).
+- Шесть bad Valhalla отклонены / шесть собственных OSRM допущены; четыре непрерывных контроля не отклоняются. Focused24, full721 + quote/API, TS, ESLint и Next build16/16 PASS. Все три новых API-теста ожидаемо падают без guard. Initial A289 ENOENT восстановлен из трёх точных Git-фикстур; initial/PASS логи сохранены.
+- V2 и тарифы не менялись. Live/full replay0, новых подтверждённых цен0. Исторический baseline26priced/50unknown не пересчитан. Старый trace Valhalla не применять к новому OSRM. Guard ограничен доказанным мотивом; общая защита всех дорог не заявлена.
+- Durable STARTED80a15c… (source0cc2c469…), PR14draft. Post-STARTED CI39036931767: verify иlive_probe completed/success перед финальной записью; отмена не выполнялась. Этот кодовый блок сохраняется с expected parent80a15c… и точным tree/blob/head readback; новый code CI проверять отдельно.
+- NEXT после сохранения: фактический code CI; при продолжении pricing — собственный trace выбранного OSRM одного представителя, поскольку геометрия изменилась. Не повторять74/76/309 и26 siblings; no main/merge/Production/Android.
+
+## Предыдущая сохранённая история
+
+## STARTED — 17.10.2026 16:25 МСК: guard повторного заездаЗСД
+
+- Поручение: исправить6подтверждённых повторныхзаездов группы5733. Source head0cc2c469…, PR14draft. [STARTED](checkpoints/2026-10-17-162522-zsd-no-reentry-STARTED.md). До длительныхтестов сохранить и проверитьreadback; приактивномCI не обновлятьветку.
+- Решение: узкий geometryguard вобщемV3 `isUsableRoute` до выбораETA;8физическихсвидетелей, порядок/dense/maxlocalspan. ОбычныйOSRMкандидатестьво всех6savedresponses; цены не участвуют ввыборе, чужойtrace не переносить. V2/тарифы не менять.
+- NEXT: послеdurableSTARTED реализоватьguard иfocused/integrationтесты, затемfullgate/TS/build, per-caseprogress, одинDONEcheckpoint. Покаисправлениене выполнено; live/replay74/76/309 не запускать.
+
+## Предыдущая сохранённая история
+
+## Handoff — 17.10.2026 16:15 МСК: представители ЗСД и повторный заезд
+
+- **DONE:** 9 новых представителей +5проверок исключений =14уникальных сохранённых случаев; SHA и geometry выбранного провайдера совпали14/14. Накопленно представлены все11групп50unknown, но границы проверены только24/50случаев;26siblings не проверены. Новых цен0, baseline26рассчитанных компонентов/50unknown неизменён. [Checkpoint](checkpoints/2026-10-17-161512-zsd-remaining-representatives-DONE.md) · [таблица/доказательства](../experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/README.md).
+- **Новая подтверждённая причина:** все6маршрутов группы5733 от Приморского выходят с ЗСД к Богатырскому/Планерной, идут по городским links и заезжают наЗСД повторно. Это нарушает no-reentry; один обратный готовый вектор неприменим. Исправление кода **отложено до следующего отдельного блока**, ещё не выполнено; числовая ошибка не заявлена, текущий компонент unknown.
+- Остальные8новых представителей заблокированы по primary collection span. У группы2c00 обнаружен входКрузенштерна/Шкиперского с toll_gantry13020687195 на351741889 (toll=false): отдельную оплату не считатьнулевой и не переносить600Екатерингофки. Оператор403/владелец502; общий поиск техже ставок остановлен.
+- Source/remote/PRhead97d165fe…, PR14draft, CI39033008320success фактически проверен. Runtime/тарифы не менялись; новых component/date/full/liveзапусков0. Этот блок сохранятьодним connectorexpected-parentcommit/readback, post-saveCIпроверятьотдельно.
+- **NEXT:** кодовыйблок no-reentry по6сохранённымcapture5733: изучитьroute selection/trace contracts, реализоватьузкийguard, focused+обязательныеgate/build. Не повторять74/76/309 и26siblings дообщегорешения; не менятьmain/Production/Android.
+
+## Предыдущая сохранённая история
+
+## Handoff — 17.10.2026 15:31 МСК: группа9 заблокирована по источникам
+
+- **DONE анализ группы9; тариф BLOCKED:** 9 capture и sealed результатов проверены поSHA; восемь проверок исключений без отличий. Въезд КАД-юг, съезд к Богатырскому/Планерной через1766158781. Не хватает первичной направленной области cash/card сбора и зачёта для пары933974870→1766158781. Готовый600-вектор Екатерингофки не применён. Runtime/цены не менялись.
+- Следующий представитель группы7 Kazan→Sest проверен по сохранённому capture: физически КАД-юг→КАД-север/1766158812; надёжной привязки сбора нет, шесть остальных случаев не проверены. Новых цен0; baseline26 рассчитанных компонентов/50unknown сохраняется. Новых component/date, full replay и live-маршрутов0. [Checkpoint](checkpoints/2026-10-17-153001-zsd-planernaya-group9-BLOCKED.md) · [9case evidence](../experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/summary.json) · [следующий представитель](../experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/next-group-representative.json).
+- CI39031962573: verify и live_probe completed/success (повторная проверка15:31МСК); во время активногоCI ветка не менялась. Исходный remote/PR head567090bf…, PR14 draft. Этот блок сохраняется одним connector commit с expected parent и проверкой tree/blob/head; CLIpush не повторять.
+- NEXT после сохранения: обратная группа1e954c437e46, представитель `max-chain-m12-ckad-m11-zsd-sest-to-kazan`; использовать сохранённые данные, не повторять пакет74/76/309 и общий поиск тех же ставок.
+
+## Предыдущая сохранённая история
+
+## Handoff — 17.10.2026 15:08 МСК
+
+- **DONE пакет74:**74capture SHA проверены,148 component/date checks. Дополнительно24случая ЗСД600,50unknown,0execution errors; live/full-route replay0. Все trace/booth coverage complete.
+- Текущая правка проверена на всех76ZSD baseline cases: **26рассчитанных ZSD-компонентов /50unknown**, а не76подтверждённых полных поездок. Только предыдущий Гранитное имеет2full replay; для75остальных component-only.50unknown образуют11групп физических входов.
+- [DONE](checkpoints/2026-10-17-150839-zsd-batch74-DONE.md) · [таблица/воспроизведение](../experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/README.md) · [summary](../experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/summary.json). Node syntax/independent result-hash checks PASS; full704+quote/API PASS,TS PASS,build PASS. Runtime/цены не менялись. Первые sparse-fixture/transport ошибки восстановлены и записаны в checkpoint.
+- Разрешённая ветка/PR14draft; исходный code head3ae7761fc0cebccc72777f487c5af8ca0b926665, durable STARTED7f6e6b8a4488bc3ee0aa4ce760b727b03b57f28b. Для итоговой записи исключить активный CI39030982703; post-saveCI проверять отдельно. Старую историю сохранять, не включать её процент в текущие отчёты.
+
+## NEXT
+Один representative группы9: `max-chain-m12-ckad-m11-zsd-arzamas-to-prim`. Доказать по первичным источникам законченный cash/card scope, потом проверить исключения остальных8. Не повторять50маршрутов live. Unknown не0, полного подтверждения тарифов нет. No main/merge/Production/Android.
+
+## История
+
+## Handoff — 17.10.2026 15:01 МСК
+
+- STARTED: пользователь поручил пакет74 сохранённых случаев ЗСД, с отдельными case outputs и одним итоговым сохранением. [Входы/восстановление](checkpoints/2026-10-17-150159-zsd-batch74-STARTED.md), [правило](WORKFLOW_RULES.md). Старый процент больше не включать в текущие отчёты.
+- Source head3ae7761fc0cebccc72777f487c5af8ca0b926665, CI39029215204 success, PR14 draft. Runtime/тарифы не меняются. Пакет component-only, без live/full trip replay; ни один из74 ещё не засчитан.
+- NEXT: выполнить script на74 capture с SHA-проверкой, сохранить progress/per-case outputs, сгруппировать реальные guard-причины. Итоги только после наблюдаемого завершения и durable save.
+
+## История
+
+## Handoff — 17.10.2026 14:33 МСК
+
+- Проверен сохранённый code commit `dc44185940e0da95dafa00b5718b751fb729981c`: PR14 open/draft, Actions39026791473 **completed/success**. Правка ЗСД600 прошла CI.
+- DONE: Брянка→СПб, проверка исключений на собственном capture:26ways/12направленных свидетелей/complete trace+booths/завершённый съезд; текущий компонент600 на двух датах,3 отрицательные проверки unknown. Full trip replay/live0; общий итог этой поездки не пересчитан и не подтверждён.
+- Накопленно новая правка ЗСД проверена на **2/76 случаев**:1 full-route×2dates +1 component-only×2dates;74 ещё не проверены этой версией. Общая ZSD-причина частично source-gated; остальные причины не закрыты этим шагом.
+- [Checkpoint](checkpoints/2026-10-17-143328-zsd-bryanka-exceptions.md) · [evidence](checkpoints/evidence/2026-10-17-zsd-bryanka-exceptions.json). Код/тарифные источники не менялись; новый full gate не нужен. Формальный старый аудит **20/20=100%**, тарифы всей поездки unconfirmed.
+
+## NEXT
+После CI текущего сохранения проверить `lnr-лисичанск-saint-petersburg-center` только на исключения из того же физического scope. Не повторять309live. Только разрешённая ветка; no main/merge/Production/Android.
+
+## История
+
+## Handoff — 17.10.2026 13:53 МСК
+
+- ЗСД: реализован один source-derived законченный cash/card вектор КАД-юг→Екатерингофка **600 ₽** по первичным направленным определениям зон1/2 и текущим тарифам владельца. Срабатывает только на полном проверенном направлении с точными физическими свидетелями; старый zone1 расчёт сохранён.
+- Сохранённый fastest Гранитное→СПб: два offline replay дали **9534 ₽ (15.10)** / **11184 ₽ (17.10)**, missing=[]; общее `priceConfirmation=unconfirmed` сохранено. Один маршрут×две даты, ноль новых live route/capture. Остальные75 ZSD baseline cases не пересчитаны этим шагом.
+- Локально:704/704 full tests + quote/API checks PASS, TypeScript PASS, Next build PASS. Source head `fbc7be25b819f0b3d2f0784b19d89aba30a765ee`, Actions39025484086 success на нём. Новый run после этого code commit проверяется отдельно.
+- PR14 draft, только `fix/v3-missing-route-prices-2026-10-15`; [checkpoint](checkpoints/2026-10-17-135300-zsd-kad-ekateringofka-fixed.md), [evidence](checkpoints/evidence/2026-10-17-zsd-kad-ekateringofka-fixed.json). Формальный аудит20/20=100%; новая задача собственного процента не имеет.
+
+## NEXT
+После нового CI/head проверить исключения в группе уже совпадавшего физического ЗСД scope. Не считать все76 исправленными по одному примеру; не повторять live309. Следующая другая геометрия требует отдельной привязки. Main/merge/Production/Android не разрешены.
+
+## История
+
+## Работа сейчас — 17.10.2026 13:36 МСК
+
+ЗСД primary-scope исследование STARTED по прямому поручению пользователя. Source head `ea14eb19953d362cb22b2377b32f83203afba6ca`; Actions39022053725 success. Найдены доступные первичные PDF владельца о зонах/базовом тарифе/правилах; следующий шаг — извлечь и визуально проверить точную cash/card область ПВП5 для сохранённого КАД-юг→Екатерингофка. [Входы и восстановление](checkpoints/2026-10-17-133600-zsd-primary-scope-STARTED.md). Тариф пока unknown; новых route capture/replay0. Формальный аудит20/20=100%.
+
+# Калькулятор «Из А в Б»: актуальное состояние
+
+## Handoff — 2026-10-17T09:39:11Z (17.10.2026 12:39 МСК)
+
+- Прямое новое поручение пользователя: перейти к поиску решений по итогам аудита. PR14 open/draft; рабочая ветка `fix/v3-missing-route-prices-2026-10-15`; исходный verified head `69e7933257f5ac0d2ee42dd0bfbd258fcb1eb74f`.
+- Финальный Actions #39019024457 success на этом head. Старое автопродолжение завершённого 20-пунктного плана отключено. Формальная готовность остаётся **20/20=100%**, это не процент всей новой работы или тарифного покрытия.
+- Сохранён [разбор конкретных решений](../experiments/nationwide-tolls/POST_AUDIT_SOLUTIONS_2026-10-17.md). Первый объект — законченный cash/card вектор ЗСД по сохранённому КАД-юг→Екатерингофка; правило связанных ПВП по чеку (п.6.2.17) обязательно, слепая сумма шлагбаумов неверна. Адаптер пока ограничен зоной1; общая таблица цен не доказывает полный вектор.
+- Новых маршрутных проверок/повторов/цен/изменений кода нет. ЗСД и другие unresolved тарифы остаются unknown/null. Свежие страницы операторов вернули 502/403; готовый тариф не заявлен.
+- [Checkpoint](checkpoints/2026-10-17-123911-post-audit-solutions.md) · [evidence](checkpoints/evidence/2026-10-17-post-audit-solutions.json).
+
+## NEXT
+Найти первичную схему привязки ПВП5 к законченному cash/card проезду КАД-юг→Екатерингофка; сверить с сохранённой геометрией и исключениями. Не повторять 76 прогонов. Перед следующей записью проверить текущий head/PR и новый CI; только разрешённая ветка, без main/merge/Production/Android.
+
+## Предыдущие handoff и история
+
+## Handoff — 2026-10-17T08:51:29Z (2026-10-17 11:51 МСК)
+
+- PR14 открыт/draft; ветка `fix/v3-missing-route-prices-2026-10-15`. Перед Part20 PR и ветка совпадали на `cfb442401a3cde9b6311026675d39484df394182`.
+- Part19 завершена: 13 причин классифицированы — 1 исправлена и проверена (только A‑289 component binding), 1 не воспроизвелась, 8 заблокированы надёжными данными, 3 отложены. Пересекающиеся baseline case counts не складываются.
+- Part20 проверки завершены на source commit `cfb442401a3cde9b6311026675d39484df394182`: Actions #39016525904 success; тесты, TypeScript, Next build, live probes, аудит фиксированного набора из 50 settlement routes и 6 сравнений с Yandex screenshots прошли. Проверены JSON статусы и относительные ссылки handoff.
+- Формальный план: **20/20 = 100%** по `progressReporting`. Это только выполнение 20-пунктного route-audit плана, не готовность всего калькулятора и не подтверждённость тарифов.
+- Четыре названных M11 cases входят в сохранённую проверку 8 исключений общей причины; повторных прогонов не делал. M11 и другие source-gated amounts остаются unknown/null; полные тарифы не подтверждены.
+- [Checkpoint](checkpoints/2026-10-17-115129-part20-final-verification.md) · [план](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json) · [очередь причин](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json).
+
+## NEXT
+После сохранения этой handoff-записи проверить новый Actions run и точный PR/branch head. Если он успешен, отключить именно это автопродолжение: все 20 пунктов формального плана завершены. Не сливать PR и не публиковать приложение; дальнейшую работу над общей задачей начинать отдельно по прямому запросу.
+
+## Предыдущие handoff и история
+
+- PR14 открытый draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Перед синтезом remote head/PR head совпадали: `2e816d7a744298b5e7a8aa70d33c4b5c6a5de41f`; branch Actions #39014574620 завершился success на этом head. Проверить workflow уже сохранённого синтеза перед Part20.
+- Part19 завершена: все 13 сохранённых findings получили канонический исход с сохранением старых статусов/истории: 1 fixed and verified (только A-289 component binding, не полные тарифы), 1 not reproduced, 8 blocked by missing reliable data, 3 deferred. Кейсы между findings перекрываются.
+- Четыре ранее ожидавших M11 случаев уже включены в сохранённую восьмикейсную проверку общей причины; новых прогонов не запускал. M11 tariff remains unknown/null.
+- Новых live/replay, тестов, сборок, кодовых/тарифных изменений нет. Полные тарифные итоги не подтверждены.
+- Формальный план: **19/20 = 95%** (`progressReporting`); это не процент готовности тарифа или релиза.
+- [Checkpoint](checkpoints/2026-10-17-111116-part19-outcome-synthesis.md) · [очередь причин](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [Part19 findings](../experiments/nationwide-tolls/NEXT_STEPS.md).
+
+## NEXT
+После успешного запуска Actions для коммита синтеза выполнить Part20: проверки содержания и ссылок по docs-only gate, зафиксировать результат и handoff. Не сливать PR и не менять main/Production/Android.
+
+## Предыдущие handoff и история
+
+## Handoff — 2026-10-17T07:41:10Z (2026-10-17 10:41 МСК)
+
+- PR14 открыт/draft; рабочая ветка `fix/v3-missing-route-prices-2026-10-15`. Проверенный source head/tree: `bdf620e441d2cbe287a348bd388d28e188106341` / `2deefbad4cf1b3038576cabbbe77745643f2a818`; branch и PR head совпадали. Actions #39010035622 завершился success на source head; post-save запуск проверяется после нового коммита.
+- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS (cause queue рассмотрена, итоговая сверка статусов ещё нужна), Part20 PLANNED. Это процент формального плана, не подтверждённость тарифов.
+- `odintsovo:unpriced` (2 случая) проверен по сохранённым данным: 2 маршрута / 4 уникальных профиля дат / 6 evidence-файлов; все пути и SHA сохранены. Проезд по Северному обходу доказан на обоих выбранных маршрутах, но точная направленная пара ПВП не привязана к проверенному тарифному вектору. Официальная таблица категории I есть как candidate; отчёт выбора тарифов указывает `runtimeApproved=false` и integration pending. M1 и `unknown-paid-road` также не закрыты, поэтому полный итог остаётся null. Причина **blocked by missing reliable data**; тариф/сумма не подтверждены.
+- Сверена запись `arc_not_proven`: 34 случая уже имели сохранённый blocked outcome, но верхний status был устаревшим `needs_diagnosis`; он приведён в соответствие с сохранённым разбором.
+- Новых live-запросов, replay, тестов, сборок, изменений кода или тарифных значений нет. Unknown остаётся null.
+- [Checkpoint](checkpoints/2026-10-17-1041-part19-odintsovo-unpriced-blocked.md) · [evidence](checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json) · [очередь Part19](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [следующие шаги](../experiments/nationwide-tolls/NEXT_STEPS.md).
+
+## NEXT
+После завершения post-save CI синтезировать/сверить outcome для записей Part19; затем выполнить обязательные проверки Part20 по AGENTS.md и передать handoff.
+
+## Предыдущие handoff и история
+
+
+### Предыдущий handoff — 2026-10-17T04:35:31Z (2026-10-17 07:35 МСК)
+## Handoff — 2026-10-17T04:35:31Z (2026-10-17 07:35 МСК)
+
+- PR14 открыт/draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Перед шагом remote head/tree: `fec51dab8eddc1919b4e839cc1b59a1c345f3b05` / `0bd121306facb563761e924d54c57ad4aa4487c1`; PR head совпадает. Run #38999218280 завершён success на этом head; отдельный PR run #38959170444 также completed/success (старый head `7ce720c381265524189b198902f70b3c97009ab5`). Активных branch runs нет.
+- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это только процент формального плана, не готовность продукта, покрытия тарифов или релиза.
+- M11 boundary cases **5–8 уже DONE** в сохранённых checkpoints (four named cases). Общая причина остаётся **blocked by missing reliable data**; тарифы unknown/null. В этом запуске эти маршруты не запускались повторно.
+- `expected-road-not-proven`: 64/64 сохранённых строк проанализированы по report; все 64 raw/live-ссылки присутствуют, trace complete, same-date parity true. Метки отсутствующих expected roads: CKAD30, M12 11, Khabarovsk10, Odintsovo8, ZSD3, M4 2. 32 случая перекрываются уже рассмотренными findings, 32 не находятся в этих ledgers; счётчики не складываются. Это несколько независимых road labels, а не доказанная одна причина. Outcome **deferred**: отсутствующая метка сама по себе не доказывает, что fastest selected route проезжал chargeable сегмент; тариф не добавляли, full quote не подтверждён.
+- Нет новых live/replay/build/test запусков и новых тарифов. [Checkpoint](../docs/checkpoints/2026-10-17-0735-part19-expected-road-not-proven-deferred.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-expected-road-not-proven-deferred.json).
+- NEXT: `m12_current_operator_pair_not_bound` (4 baseline cases), saved evidence only; check overlap and user impact before any replay.
+
+## Предыдущие handoff и история
+
+### Предыдущий handoff — 2026-10-17T06:32:46 МСК
+## Handoff — 2026-10-17T06:32:46 МСК
+
+- PR14 открыт/draft; разрешённая ветка `fix/v3-missing-route-prices-2026-10-15`. Источник шага: head `6df92a4bf60ba64e0a3ac8ca2d5e856248de7c9b`, tree `dc4c2b12a326ab4316e364d2779d2d6c606c0869`; ветка и PR совпали до записи.
+- Последний проверенный Actions run до этой записи: [#38994773498](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/38994773498), success на исходном head. Он также выполнил успешный non-fastest toll-avoidance probe; этот лишний шаг удалён из PR workflow в текущем commit по уже принятому fastest-route-only правилу. Новый run нужно проверить отдельно.
+- Формальный план: **18/20 = 90%**; Part19 IN_PROGRESS, Part20 PLANNED. Это не готовность калькулятора или тарифное покрытие.
+- M11 58–679: **41/41** маршрутов по сохранённым данным, 82 уникальных weekday/weekend профиля; outcome blocked by missing reliable data. Тарифы M11 остаются unknown/null.
+- CKAD `arc_not_proven`: **34/34 случаев**, 68 профилей, 102 уникальных live/replay evidence файла. Все occurrences имеют `ckad_east_arc_not_proven`; все строки evidence/raw/trace/same-date complete, суммы weekday/weekend null. Широкий CKAD traversal proven в 22 строках и not proven в 12, но exact east-arc billing scope не подтверждён. Outcome **blocked_by_missing_reliable_data**; тариф/полный итог неизвестен.
+- Перекрытия не суммируются: ZSD16, M11 head8, M11 58–67914, unknown-paid-road18, expected-road-not-proven12, M12 pair2. Новых live/replay/build/tests и подтверждённых тарифов нет.
+- [Checkpoint](../docs/checkpoints/2026-10-17-0632-part19-arc-not-proven-blocked.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-arc-not-proven-blocked.json).
+- NEXT: `expected-road-not-proven` (baseline64), root cause/impact/exceptions from saved data only; no new probe absent material difference/evidence gap.
+
+## Предыдущая handoff-сводка (оставлена как история, не источник текущего состояния)
+
+16.10.2026. Рабочая ветка `fix/v3-missing-route-prices-2026-10-15`, draft PR14. Проверенный source head для правил `e197a7a40ec10ae08ea470f50ca61844a1226bfc`, tree `54b899d424b3da1170af5d7e2871ae2801ad49e8`; case3 reviewed from this tree, see latest checkpoint. Из него создан отдельный чистый checkout `calculator-rules`; старый расходящийся `calculator-run` сохранён. Пользователь утвердил [правила разбора по причинам и отчётности](WORKFLOW_RULES.md); они включены в AGENTS и автоматическое продолжение. [Checkpoint правил и Git auth](checkpoints/2026-10-16-215327-workflow-efficiency-rules.md).
+
+Наблюдаемый run `38951539156` для `e197a7a…`: completed/success. CLI Git auth не настроен; продолжаем сохранять через GitHub connector. PR14 открыт/draft.
+
+## Прогресс
+
+**90% по согласованному плану:18/20частей полностью завершены.** Часть19 IN_PROGRESS,20 PLANNED. Формула/смысл в [плане](../experiments/nationwide-tolls/SMALL_PARTS_PLAN.json). Это доля этапов, а не доля подтверждённых тарифов. Пользователь просит указывать процент в каждом отчёте.
+
+Части1–18:155/155+154/154, frozenREPORT340/340.19A/B:57A289helper-only+2wholecases (не59полныхтарифов).19C:25/25policyDONE,20wholeofflinequotes/5unknownZSD. Эти очереди не перезапускать.
+
+19D M4review22/22:5wholeunconfirmedestimates/3pricedM4componentswithotherunknowns/8physical545scopegates/6shortM4scopegates. Эти14sourcegates открыты, unknown≠0. [M4/очередь](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json).
+
+**ZSDreview76/76**: каждыйcase отдельно воспроизведён в2offlineprofiles; collection span остаётся source-gated. [Классификация](checkpoints/2026-10-16-zsd-classification-76-cases.md). **M4:unpriced22/22** классифицированы по saved evidence: 5 whole-route estimates без подтверждённого тарифа, 3 M4 components с другими неизвестными продуктами, 8 физических545 и 6 short-route scope gates. Тарифы/бесплатность не выведены. [Классификация M4](checkpoints/2026-10-16-part19-m4-unpriced-classification.md). Числоcases не есть покрытие тарифов.
+
+Исправление exactnode1766158781→ZSD валидировано: первичная направленная топология иselectedledger подтвердилиПВППланерная; redundantunknownpaidroad устранён, M11head/CKAD/ZSDблокеры сохранены. [Replay](checkpoints/2026-10-16-zsd-planernaya-corrected-replay.md).
+
+**Последняя полная проверка 696/696+quote/API+Nextwebpack/TypeScript/static16/16 PASS**, focused8/8/eslintnewtestexit0. [Fullgate](checkpoints/2026-10-16-zsd-planernaya-fullgate-pass.md). В audit-only classification код не менялся и новая сборка не запускалась. Не трактовать прежний full gate как тест текущей классификации.
+
+## NEXT — Part 19, one unresolved cause at a time
+
+M11 `m11_partial_head_entry_boundary_unresolved`: 8/8 saved cases reviewed; final outcome blocked by missing reliable data, no material exception. CKAD `arc_not_proven`: 34/34 cases and 68 weekday/weekend profiles reviewed from the frozen report, with 102 saved evidence files present; all occurrences remain `ckad_east_arc_not_proven`, outcome blocked by missing reliable data. 22/34 broader CKAD road traversals are proven and 12/34 are not; exact east-arc chargeable scope is unproven in both groups. Full toll totals remain unknown.
+
+**NEXT:** `expected-road-not-proven` (baseline64): compare common causes and exceptions against existing findings using saved evidence only. Counts overlap. No new live/replay unless evidence is incomplete or a material input/geometry/product/code difference is demonstrated. Formal plan stays **90% (18/20)**; Part19 remains IN_PROGRESS and Part20 PLANNED.
+
+The previous live workflow run executed a non-fastest toll-avoidance alternative; its step has been removed from the PR workflow in this commit to honor fastest-route-only scope. Observe the workflow triggered by this commit before the next independent step.
+
+[Part19 queue](../experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json) · [checkpoint](../docs/checkpoints/2026-10-17-0632-part19-arc-not-proven-blocked.md) · [evidence](../docs/checkpoints/evidence/2026-10-17-part19-arc-not-proven-blocked.json)
+
+2026-10-16 23:00 MSK: Case4 reviewed from parent `8819f8175edf616ed2229536cdf8abde5ef40a68` / tree `8b99cebadb42786e8e95e2b24b504bf713dbda2f`; result source-gated with no material exception. 3 saved profiles, 1 exact capture, 0 new live requests; M11 finding 4/8; formal plan90% (18/20), no new tariff confirmation. [Checkpoint](checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-16-m11-case4-boundary-review.json).
+
+2026-10-16 23:19:47 MSK: Case5 `triple-m11-ckad-m12-kazan-to-spb` reviewed offline from saved evidence at parent `7ce720c381265524189b198902f70b3c97009ab5`. Capture complete 11/11, 2,106 edges; live + same-date/weekend replay bind to capture SHA-256 `b4e49dba…cafe00`. M11 gate ways absent; approximate nearest gate-node distances 26.47m/41.76m (>25m). Fastest saved candidate Valhalla 61,507s vs OSRM 70,869s. No material exception to M11 boundary cause; CKAD east-arc and ZSD zone-1 scope remain separately unresolved; amounts unknown, route total null. No new live/code/tests. Cause check 5/8; plan 18/20=90% only. [Checkpoint](checkpoints/2026-10-16-part19-m11-case5-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-16-m11-case5-boundary-review.json).
+
+
+2026-10-16 23:39:00 MSK: Case6 `max-chain-m12-ckad-m11-zsd-cheboksary-to-prim` reviewed from saved evidence only. M11 gate ways absent and approximate nearest node distances 26.47m/41.76m (>25m); the shared M11 boundary cause remains blocked. Five complete profiles (live, early same-date/weekend, later same-date/weekend) bind capture SHA-256 ce2577c8…b1f6fdcf and preserve 1,380,434m/53,656s, but later replay adds exact ZSD node 1766158781 proof and removes prior redundant unknown-paid-road label. Expected M12 remains not proven, CKAD east arc not proven, ZSD beyond reviewed zone1. No new live/code/tests/tariff. Check6/8; plan18/20=90%. [Checkpoint](checkpoints/2026-10-16-part19-m11-case6-boundary-exception.md); [evidence](checkpoints/evidence/2026-10-16-m11-case6-boundary-exception.json).
+
+
+2026-10-17 00:16:00 MSK: Case7 `max-chain-m12-ckad-m11-zsd-vladimir-to-sest` reviewed from saved evidence. Complete 7/7 trace (1,690 edges); live + same-date/weekend replay share capture SHA-256 5e895d67…f52eb6f and route 921,380m/31,886s. M11 directed gate ways absent; approximate nearest gate distances 26.47m/41.76m >25m. Fastest saved Valhalla 31,886s vs OSRM 40,158s. No M11 exception; expected M12 traversal unproven, CKAD east arc and ZSD beyond reviewed zone1 unresolved, full amount unknown. No new live/code/tests. Review count7/8; plan18/20=90%. [Checkpoint](checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-17-m11-case7-boundary-source-gated.json).
+
+
+2026-10-17 01:45:16 MSK: Case8 `triple-m11-ckad-m12-arzamas-to-spb` DONE from saved capture/profile artifacts only. Three unique live/same-date/weekend profile blobs bind capture SHA-256 b47f5207…91ea61b; each preserves Valhalla fastest route 1,149,643m/43,716s. Duplicate replay blobs are not extra profiles. M11 head remains unresolved; M12 traversal represented, CKAD east arc and ZSD zone scope remain unresolved; full amount null. No new live/replay/code/tests or tariff confirmation. Cause exception review complete 8/8; outcome blocked by missing reliable data. Formal plan 18/20=90%. [Checkpoint](checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md); [evidence](checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json).
+
+
+2026-10-17 02:31:29 MSK: Reconciled Part19 findings queue after M11 case8. Corrected stale M11 row from 4/8 to 8/8 and recorded blocked-by-missing-reliable-data outcome; linked all eight case checkpoints/evidence. This is a state-ledger reconciliation, not new route testing or tariff confirmation. Latest CI #38977636786 succeeded at parent head. Next: diagnose `unknown-paid-road:unpriced` from saved evidence/current engine, comparing overlap with expected-road-not-proven; no replay/live without a material distinction.
+
+
+## Восстановленный отчёт исходного блока (до публикации, 21:20 МСК)
+
+## DONE — 17.10.2026 21:20 МСК: ЦКАД М-11→М-12
+
+- **Исправлена и проверена** одна общая причина двух собственных OSRM. Primary12GET/49witnesses, полный named контекст А-113 с non-toll links; новый forward-only adapter. У каждого ЦКАД981,5компонентов, subtotal5475; full amountnull/missingm12. Новых компонентов2, полных расчётов/подтверждённых полных тарифов0. [DONE](checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md) · [отчёт](../experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/README.md).
+- Focused8, full736/quoteAPI/TS/ESLint/build16/16 PASS.20 контекстных+6 геометрических отрицательных вариантов, API2, recorded control7254. Initial тестовые ошибки и один uninstrumented М-4 control fetch-capable invocation сохранены; final default fetch закрыт/exact replay. Не заявлять нулевую сетевую экспозицию всего блока. Primary/target queries считать отдельно. ProgressDONE12 восстановлен по exact raw без re-fetch.
+- По шести заменённым OSRM27 рассчитанных компонентов,4составных расчёта/2unknown, подтверждённых полных тарифов0. Historical26/50 без изменения. Старый полный ЦКАД arc/общие thresholds, матрица и цены не менялись; новые routing/target trace0.
+- Durable STARTEDa666fb48…/tree0e04b98c… verified, PR14draft. CI39056837838 активен при подготовке, verify success; до завершения remote не писать. Новый post-save CI отдельно.
+- **NEXT после durable DONE:** первичная привязка западных М-12 рамок и разных выходов. Рамки10782165529/11214930528/11157985901, выходы22Н-0239/М-7 у Владимира;2952/1239 не присваивать без доказательства. Без нового routing и повторов74/76/309. Затем остальные причины и итоговый gate/handoff; исходные ZSD owner blocks остаются отдельно.
+
+- Перед итоговой записью: CI39056837838 completed/success (verify и live_probe), последние пять runs завершены; branch/PR heada666fb48… совпали, PR14 draft. Final focused asserts0 неожиданных fetch attempts. Новый post-save CI отдельно.
+
+## Предыдущая сохранённая история

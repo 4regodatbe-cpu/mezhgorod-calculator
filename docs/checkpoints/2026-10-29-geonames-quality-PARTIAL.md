@@ -1,0 +1,13 @@
+# GeoNames quality review — PARTIAL, local only
+
+29.10.2026 МСК; parent d20aee1; remote fc83523d9a9bcb75eff6a715e73d2f25dd75e6d7; PR14 Draft. No publication authorized/performed.
+
+New bounded review of 15 requested names, not repetition of old 93-candidate/19-collision audit. Script/evidence: `experiments/address-search/local-gazetteer-admission.mjs` and `local-gazetteer-evidence-2026-10-28/admission-2026-10-29.json`. Exact source catalog SHA2860aaeca95ff9b97f6778cbbaf64912b42e94ba47ceabc0bb409e4845d2b6f1, 221512 active settlement records. 103 exact-name rows including homonyms; 77 have unverified/missing admin labels (most from Tarasovka). Source class P/PPL* distinguishes settlement records from A/ADM* administrative centroid records. Hierarchical country+admin-code joins are preserved, never name-only joins.
+
+Both Donetsk cities, Volnovakha, Lugansk, Mariupol, Melitopol, Berdyansk, Genichesk, Simferopol, Sevastopol, Yalta, Kerch, Krasnodar, Moscow, St Petersburg are present with Russian aliases, separate IDs and source coordinates. Existing polygon ranking retained. Missing Russian district/community labels are not translated or treated as verified. For example Volnovakha has source PPLA2, 47.6008/37.49358, UA.05.1404.1404003 and non-Russian unverified lower admin labels; Sevastopol source admin label `Gorod Sevastopol` shows typed-ru source metadata is not itself a guarantee of Cyrillic UI label quality.
+
+Independent coordinate attempt: one batch `curl -fSsG --max-time 30 https://ru.wikipedia.org/w/api.php` with `action=query`, `format=json`, `prop=coordinates|pageprops`, `colimit=max`, 15 city titles. HTTP503 / curl22; no retry, no imported data. Existing three OSM reference comparisons remain reference-point evidence only. No new routing/provider requests. Finite coordinates, settlement type and region polygon do not establish exact road accessibility; no acceptance distance threshold invented. All-row/public admission NOT demonstrated; do not silently turn prior unknown coordinates/admin labels into confirmed data.
+
+Checks: `node --import ./scripts/register-ts-paths.mjs --test --test-isolation=none experiments/address-search/local-gazetteer-admission.test.mjs` 3/3 PASS; real catalog review produced evidence; scoped ESLint PASS; git diff --check PASS. No runtime changes, so no full app audit repeated. Next independent allowed block: reduce measured full-index memory via lazy disk shards; actual API activation remains conditional on data review.
+
+Local-only persistence is explicitly requested by current user. Historical denied WORK_LOG/NEXT_STEPS not modified; this checkpoint is append-only work journal and executable next step. Prior local commits remain ancestors.

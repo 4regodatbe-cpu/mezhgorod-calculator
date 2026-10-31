@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "caseId": "dnr-гранитное-kazan-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+  "captureSha256": "5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9",
+  "method": "Replay one saved provider response; reuse its complete saved selected-route trace. No live network or independent tariff confirmation.",
+  "sourceProvider": "Valhalla",
+  "selectedMeters": 1696588,
+  "selectedSeconds": 86642,
+  "roadBoundaries": {
+    "provider": "valhalla",
+    "targetRef": "М-4",
+    "routeSignature": "a1d3ba1d21bf5d15c4cc153aefdc0069f53ac087ab3f54ea3183236f3d91790d",
+    "precision": "route-maneuver",
+    "status": "resolved",
+    "reason": "directed_road_transitions_resolved",
+    "entry": {
+      "id": "road-transition:dd09b189870270c9800edefc",
+      "kind": "road-transition",
+      "from": {
+        "refs": [],
+        "names": [
+          "Северный обход Ростова-на-Дону"
+        ]
+      },
+      "to": {
+        "refs": [
+          "E-115",
+          "E-50",
+          "М-4"
+        ],
+        "names": [
+          "«Дон»"
+        ]
+      },
+      "coordinate": [
+        39.838698,
+        47.378414
+      ],
+      "legIndex": 0,
+      "sourceIndex": 23,
+      "connectorCount": 0
+    },
+    "exit": {
+      "id": "road-transition:9f147230b739802282d36415",
+      "kind": "road-transition",
+      "from": {
+        "refs": [
+          "E-115",
+          "М-4"
+        ],
+        "names": [
+          "«Дон»"
+        ]
+      },
+      "to": {
+        "refs": [
+          "Р-260"
+        ],
+        "names": []
+      },
+      "coordinate": [
+        40.265878,
+        48.186303
+      ],
+      "legIndex": 0,
+      "sourceIndex": 24,
+      "connectorCount": 0
+    }
+  },
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tariffVector": {
+        "from": "road-transition:dd09b189870270c9800edefc",
+        "to": "road-transition:9f147230b739802282d36415",
+        "profile": "monThu",
+        "selectionBasis": "selected-road-transitions",
+        "priceStatus": "unknown"
+      },
+      "api": {
+        "pricingStatus": "unknown",
+        "amount": null
+      },
+      "missing": [
+        "m4"
+      ],
+      "component": {
+        "id": "m4",
+        "detected": true,
+        "tolls": null,
+        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_road_vector_price_unknown"
+      }
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tariffVector": {
+        "from": "road-transition:dd09b189870270c9800edefc",
+        "to": "road-transition:9f147230b739802282d36415",
+        "profile": "friSun",
+        "selectionBasis": "selected-road-transitions",
+        "priceStatus": "unknown"
+      },
+      "api": {
+        "pricingStatus": "unknown",
+        "amount": null
+      },
+      "missing": [
+        "m4"
+      ],
+      "component": {
+        "id": "m4",
+        "detected": true,
+        "tolls": null,
+        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_road_vector_price_unknown"
+      }
+    }
+  ],
+  "replay": {
+    "consumedProviderResponses": 1,
+    "missingResponses": 0,
+    "liveNetworkRequests": 0
+  },
+  "limitations": [
+    "Maneuver locations identify the selected access; they are not operator collection-scope proof.",
+    "No known PVP is invented. Prices remain unknown; 545 variants and short-scope fees are not guessed."
+  ]
+}

@@ -1,0 +1,9 @@
+# DONE — М3 source date BLOCKED / STARTED — шесть ZSD scope exceptions
+
+Source65bed1ae…; CI39101746826 completed/success, verify/live_probe всеstepssuccess. M3 STARTED3a7bc9d2…/tree24678f1c… durable5paths/head/PR14draft проверены. Выполнены4queries/4source reads. Новый business tariffs URL403, ownernews134108 относитсяк2025году, M3navigation —JSshell, exact observedtrack38AJAX200 не содержитдаттарифа и ссылаетсяназнакомыйtariffsURL. Test-host mirror/старыйPDF/мартовскоесообщение не повторялись. Нерелевантные search hits исключены; отсутствие источников вообще не утверждается.
+
+Outcome: blocked_by_missing_reliable_data. verifiedThrough2026-10-10 не расширен;15/17Oct остаютсянеподтверждёнными. Runtime/route/replay/новыеклиентскиецены0; source-only fullgate не запускался. Raw/metadata/SHA в experiments/nationwide-tolls/checks/2026-10-18-m3-tariff-date-source/. ПровереныJSON/gzip/hash/diff. Не повторять этотsourcepass без независимого новогоsource.
+
+## STARTED — bounded saved-evidence exception batch
+
+ГруппаЗСД258ee8abe7051eda2e4d11f093e10fa37184adc36cd3c3e12d67823afdd32f08: представительКазань→Сестрорецк подробнорассмотрен,6siblings явноunchecked. Новыйscope: только сравнение шести сохранённых собственныхcapture/trace/exitinstructions с представителем. Это не повтор74component checks и неpricing/fullroute replay. Входы/caseIDs/frozen report hashes: experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/inputs.json. Network0, максимум6cases,30с/case/120сtotal; per-case evidence/progressсразу. Полный gate не нужен дляevidence-only. Проверитьполнотуcapture, ordered booths/trace и реальный exit,неполагатьсянаto-sest вID. Materialexceptions не скрывать; не присваивать300/зонаилиготовыйvectorбезownercollectionproof. ПослепакетаодинDONE/commit/readback. Приостановке продолжатьper-caseprogress,неповторятьготовыеcase. Передпервымcase durableсохранитьэтузапись.

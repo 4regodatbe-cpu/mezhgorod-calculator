@@ -1,0 +1,11 @@
+# B11 before/after full API variants — LOCAL PASS / publication BLOCKED
+
+28.10.2026, parent remote702f37f44fdfce034a26e1de606408162c1e3a58; localSTARTEDbaa4cbb. Runtime API still originalblobac9a1552, not patched or published; no newActions. Security disposition unresolved, no retry/alternatewriter.
+
+Executed `node --import ./scripts/register-ts-paths.mjs scripts/b11-reuse-api-regression.test.mjs`:3/3PASS. Twelve controlled combinations ordinary/special ×standard/dual ×priced/unknown/incomplete compare fullbody, exactoutboundcalls and all4vehiclefarepayloads. SpecialAPIanalysiscalls1→0, ordinary1→1; explicitbranchassertion prevents false branch coverage. Errors/input/transportAbortError status/body parityPASS. No skippedtollchecks/geometrychange/selectionchange/unknown-to-zero.
+
+Initial prepared test failed1/3 because its supposedly specialYalta point did not activate the four-special-territory API branch. Corrected testinput to actualDonetskDNR and strengthened branch assertion; productioncodeunchanged. Second run3/3PASS. This was a testfixture defect, not an application failure or weakened assertion.
+
+Saved9046-point DonetskOSRM capture: immutablearchiveSHA8b168610a9b6e899b6ca4074e64cfbea2f52bc6ccafddc09f63c28716df2f630; all12requests/run resolved to storedprovider/trace responses,0misses/0network. Both actualPOST variants return200, byte-equivalent parsedAPIbody and selectedfastestroute time; fullfare/unknown/metadata comparison exact. One paired handler observation3100.276580→2015.159444ms (~1085ms saved). Source extraction/mock response delivery/responsebody parsing included; internet/providerwait, browser/networkcolddeployment not measured. One pair is NOT median/general10sSLA or deployed gain. Prior fragment1749→869ms remains a different measurement.
+
+Evidence: `experiments/address-search/checks/b11-reuse/local-api-variants.log`; sourcefixtures and tests retained. Scope/node24.19.0. Unusedtesttransportparameter removed after successful test; semanticnoop. Fullmandatorygate/TS/ESLint/build stillpending with laterlocalcodechange. Actualapplication3linepatch mustwaitsafeCIpublication/CIverification under user's required order. Nextindependentlocalunit B05acceptedworking320RUBgeometry/productmodel; preservepriorarchives/negativecontrols.

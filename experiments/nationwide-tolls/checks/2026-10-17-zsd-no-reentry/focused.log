@@ -1,0 +1,32 @@
+✔ max-chain-m12-ckad-m11-zsd-arzamas-to-prim: its own continuous recorded route is not rejected (26.163622ms)
+✔ max-chain-m12-ckad-m11-zsd-sest-to-kazan: its own continuous recorded route is not rejected (23.252718ms)
+✔ single-zsd-blag-to-prim: its own continuous recorded route is not rejected (1.762449ms)
+✔ dnr-гранитное-saint-petersburg-center: its own continuous recorded route is not rejected (32.759168ms)
+✔ physical witnesses retain their exact recorded coordinates and asset hash (1.374608ms)
+✔ pair-m11-zsd-prim-to-moscow: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (24.005448ms)
+✔ max-chain-m12-ckad-m11-zsd-prim-to-arzamas: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (30.909821ms)
+✔ max-chain-m12-ckad-m11-zsd-prim-to-cheboksary: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (45.62782ms)
+✔ max-chain-m4-ckad-m11-zsd-prim-to-voronezh: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (43.149607ms)
+✔ pair-m11-zsd-prim-to-torzhok: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (10.998331ms)
+✔ triple-m4-m11-zsd-prim-to-voronezh: reject its reentry before ETA selection; keep its own ordinary OSRM candidate (36.732871ms)
+✔ a northbound exit without reentry and an ordinary southbound entry remain admissible (2.54498ms)
+✔ nearby parallel geometry, a sparse chord and a disconnected local gap do not prove the reviewed turn (3.066182ms)
+✔ when all candidates violate the policy no route or zero quote is manufactured (8.099858ms)
+✔ fastest OSRM geometry owns the A289 quote; slower Valhalla evidence cannot replace it (68.391401ms)
+✔ ordinary V3 skips malformed fast distance and keeps the valid provider route (6.714428ms)
+✔ special-zone V3 filters invalid time before choosing and pricing the winning route (10.9767ms)
+✔ equal ETA keeps provider order in both ordinary and special V3 chains (11.978594ms)
+✔ route candidate requires finite positive totals, valid coordinates and matching endpoints (0.384446ms)
+✔ incomplete geometry never becomes a straight line priced as a real road (1.575578ms)
+✔ unresolved A289 vector stays unknown instead of reviving a legacy numeric total (5.390099ms)
+✔ ordinary V3 excludes the recorded faster reentry before ranking and validates only the admitted OSRM geometry (99.378088ms)
+✔ special-zone V3 uses the same admission guard before ETA and cannot promote an invalid reentry (5.420216ms)
+✔ ordinary V3 reports routing unavailable when only the forbidden reentry is returned (5.322755ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 621.626541

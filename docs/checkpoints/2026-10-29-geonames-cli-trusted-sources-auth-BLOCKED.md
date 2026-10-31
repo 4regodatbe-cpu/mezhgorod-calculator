@@ -1,0 +1,9 @@
+# CLI/Trusted Sources access checked — BLOCKED_BY_CLI_AUTH
+
+29.10.2026 MSK; parent local a86cd821, published d5be124153f649454dbb4fc55b4af427e7ab7d94. No push/newdeployment/Production/main/Android/backup/CI/protection changes. ExactPreviewREADY remains; no new code/tests needed or claimed.
+
+Actual standard checks exhausted: barevercelwhoami127→officialpinnedCLI65.7installed outside source→defaultglobaldirENOENT resolved via supportedfilesystempermission→whoamiJSONloggedInfalse/linkedProjectnull/exit1. Namedprojectinspect reportsNoexistingcredentials; automatically proposed unapprovedlogin stopped/exit143, ephemeralchallenge redacted. Env-runhelp exits0, developmentOIDC mechanism/header reviewed, token/envfile/projectlink presencefalse. No secret values printed or stored in Git. No browserlogin request, no link/pull/env mutation/share/bypass; no connectorcredential export.
+
+Detailed exactcommands/evidence/nextstep experiments/address-search/CLI_TRUSTED_SOURCES_ACCESS_2026-10-29.md. CLIidentity absent is the actual blocker, not an inferred Vercelpermission ban. Connected managementAPI access is not a localCLI/OIDC session. After deliberate authorizedCLI authentication under EXISTING projectrights, use vercelcurl exactURL and developmentOIDC viaenvrun/origin-scopedheader. Do not broaden TrustedSources or substitute sharelink. No existingauth means requestedrealPreview cities/A-B/mobile/Photonindependence/details/route and hostedcold/RAM remainUNVERIFIED.
+
+Independent metadataREADY and boundedruntimeerrorqueryempty preserved; no realapplication invocation confirmed, so no healthy-runtime or zero-error claim. Prior local/CI numbers not substituted. Raw sanitizedCLI logs under /tmp/geonames-vercel-cli-*.log and startuprecord /workspace/geonames-cli-access-2026-10-29; retain localGitrecord/portablehandoff. Next needs authorizedCLIidentity/projectdevOIDC, NOT anotherpush. HistoricaldeniedWORK_LOG/NEXT_STEPS untouched per checkpoint-first policy.

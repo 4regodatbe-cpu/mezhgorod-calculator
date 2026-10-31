@@ -1,0 +1,567 @@
+{
+  "mode": "actual current Next GET handler + admitted GeoNames; provider I/O replayed from five saved actual HTTP responses, NO new live calls",
+  "environment": {
+    "node": "v24.19.0"
+  },
+  "results": [
+    {
+      "query": "Краснодар",
+      "httpStatus": 200,
+      "elapsedMs": 262,
+      "controlledProviderFetches": 0,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-542420",
+            "title": "Краснодар",
+            "label": "Краснодар — Краснодарский край",
+            "region": "Краснодарский край",
+            "position": {
+              "lat": 45.04534,
+              "lng": 38.98178
+            }
+          },
+          {
+            "id": "geonames-808966",
+            "title": "Краснодар",
+            "label": "Краснодар — Воронежская Область",
+            "region": "Воронежская Область",
+            "position": {
+              "lat": 49.8958,
+              "lng": 40.24376
+            }
+          },
+          {
+            "id": "geonames-705177",
+            "title": "Краснодарка",
+            "label": "Краснодарка — Крым",
+            "region": "Крым",
+            "position": {
+              "lat": 45.60648,
+              "lng": 34.08541
+            }
+          },
+          {
+            "id": "geonames-1502124",
+            "title": "Краснодарка",
+            "label": "Краснодарка — Омская Область",
+            "region": "Омская Область",
+            "position": {
+              "lat": 54.2511,
+              "lng": 74.0239
+            }
+          },
+          {
+            "id": "geonames-542416",
+            "title": "Краснодарский",
+            "label": "Краснодарский — Ставрополье",
+            "region": "Ставрополье",
+            "position": {
+              "lat": 45.39248,
+              "lng": 41.21793
+            }
+          },
+          {
+            "id": "geonames-542418",
+            "title": "Краснодаровский",
+            "label": "Краснодаровский — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 47.5888,
+              "lng": 38.40151
+            }
+          },
+          {
+            "id": "geonames-7892189",
+            "title": "Краснодарское",
+            "label": "Краснодарское — Алтайский Край",
+            "region": "Алтайский Край",
+            "position": {
+              "lat": 52.1156,
+              "lng": 83.7924
+            }
+          },
+          {
+            "id": "geonames-840922",
+            "title": "Краснодарский",
+            "label": "Краснодарский — Краснодарский край (1 из 3)",
+            "region": "Краснодарский край",
+            "position": {
+              "lat": 45.15459,
+              "lng": 39.12815
+            }
+          },
+          {
+            "id": "geonames-840941",
+            "title": "Краснодарский",
+            "label": "Краснодарский — Краснодарский край (2 из 3)",
+            "region": "Краснодарский край",
+            "position": {
+              "lat": 45.08668,
+              "lng": 39.04356
+            }
+          },
+          {
+            "id": "geonames-872135",
+            "title": "Краснодарский",
+            "label": "Краснодарский — Краснодарский край (3 из 3)",
+            "region": "Краснодарский край",
+            "position": {
+              "lat": 45.28598,
+              "lng": 38.31711
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Краснодар, Красная улица",
+      "httpStatus": 200,
+      "elapsedMs": 71,
+      "controlledProviderFetches": 3,
+      "body": {
+        "items": [
+          {
+            "id": "W-259081047",
+            "title": "Красная улица",
+            "label": "Красная улица, Краснодар, Западный округ, городской округ Краснодар, Краснодарский край, Россия (ориентировочная точка улицы)",
+            "region": "Краснодар, Западный округ, городской округ Краснодар, Краснодарский край, Россия",
+            "position": {
+              "lat": 45.0389088,
+              "lng": 38.9752136
+            }
+          },
+          {
+            "id": "W-45834241",
+            "title": "Красная улица",
+            "label": "Красная улица, Краснодар, Прикубанский округ, городской округ Краснодар, Краснодарский край, Россия (ориентировочная точка улицы)",
+            "region": "Краснодар, Прикубанский округ, городской округ Краснодар, Краснодарский край, Россия",
+            "position": {
+              "lat": 45.0611063,
+              "lng": 38.8874739
+            }
+          },
+          {
+            "id": "W-372479868",
+            "title": "Красная улица",
+            "label": "Красная улица, Краснодар, Центральный округ, городской округ Краснодар, Краснодарский край, Россия (ориентировочная точка улицы)",
+            "region": "Краснодар, Центральный округ, городской округ Краснодар, Краснодарский край, Россия",
+            "position": {
+              "lat": 45.035332,
+              "lng": 38.9742355
+            }
+          }
+        ],
+        "partial": false
+      }
+    },
+    {
+      "query": "Москва",
+      "httpStatus": 200,
+      "elapsedMs": 5,
+      "controlledProviderFetches": 0,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-524901",
+            "title": "Москва",
+            "label": "Москва — Москва",
+            "region": "Москва",
+            "position": {
+              "lat": 55.75204,
+              "lng": 37.61781
+            }
+          },
+          {
+            "id": "geonames-524900",
+            "title": "Москва",
+            "label": "Москва — Тверская Область — Пеновский Район",
+            "region": "Тверская Область",
+            "position": {
+              "lat": 56.91775,
+              "lng": 32.16579
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Москва, Тверская улица",
+      "httpStatus": 200,
+      "elapsedMs": 56,
+      "controlledProviderFetches": 3,
+      "body": {
+        "items": [
+          {
+            "id": "W-427579341",
+            "title": "Тверская улица",
+            "label": "Тверская улица, Москва, Тверской, Россия (ориентировочная точка улицы)",
+            "region": "Москва, Тверской, Россия",
+            "position": {
+              "lat": 55.7687933,
+              "lng": 37.59786
+            }
+          },
+          {
+            "id": "W-1559107501",
+            "title": "2-я Тверская-Ямская улица",
+            "label": "2-я Тверская-Ямская улица, Москва, Тверской, Россия (ориентировочная точка улицы)",
+            "region": "Москва, Тверской, Россия",
+            "position": {
+              "lat": 55.7731903,
+              "lng": 37.5919553
+            }
+          },
+          {
+            "id": "W-427621303",
+            "title": "4-я Тверская-Ямская улица",
+            "label": "4-я Тверская-Ямская улица, Москва, Тверской, Россия (ориентировочная точка улицы)",
+            "region": "Москва, Тверской, Россия",
+            "position": {
+              "lat": 55.7742621,
+              "lng": 37.5940649
+            }
+          },
+          {
+            "id": "W-1137083335",
+            "title": "1-я Тверская-Ямская улица",
+            "label": "1-я Тверская-Ямская улица, Москва, Тверской, Россия (ориентировочная точка улицы)",
+            "region": "Москва, Тверской, Россия",
+            "position": {
+              "lat": 55.7760825,
+              "lng": 37.5858204
+            }
+          }
+        ],
+        "partial": false
+      }
+    },
+    {
+      "query": "Донецк, ДНР",
+      "httpStatus": 200,
+      "elapsedMs": 7,
+      "controlledProviderFetches": 0,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-709717",
+            "title": "Донецк",
+            "label": "Донецк — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.023,
+              "lng": 37.80224
+            }
+          },
+          {
+            "id": "geonames-709714",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР (1 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.71556,
+              "lng": 38.40889
+            }
+          },
+          {
+            "id": "geonames-709715",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР (2 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.41667,
+              "lng": 37.95
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Донецк, улица Артёма",
+      "httpStatus": 200,
+      "elapsedMs": 5,
+      "controlledProviderFetches": 3,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-709717",
+            "title": "Донецк",
+            "label": "Донецк — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.023,
+              "lng": 37.80224
+            }
+          },
+          {
+            "id": "geonames-565348",
+            "title": "Донецк",
+            "label": "Донецк — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.33711,
+              "lng": 39.95229
+            }
+          },
+          {
+            "id": "geonames-709713",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР (1 из 2); район не уточнён",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.6996,
+              "lng": 38.67627
+            }
+          },
+          {
+            "id": "geonames-709714",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР (1 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.71556,
+              "lng": 38.40889
+            }
+          },
+          {
+            "id": "geonames-709715",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР (2 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.41667,
+              "lng": 37.95
+            }
+          },
+          {
+            "id": "geonames-811884",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР (2 из 2); район не уточнён",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.96667,
+              "lng": 39.16694
+            }
+          },
+          {
+            "id": "geonames-11763020",
+            "title": "Донецкий Лесхоз",
+            "label": "Донецкий Лесхоз — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 49.03511,
+              "lng": 40.55049
+            }
+          },
+          {
+            "id": "geonames-565343",
+            "title": "Донетское",
+            "label": "Донетское — Оренбургская Область",
+            "region": "Оренбургская Область",
+            "position": {
+              "lat": 51.8987,
+              "lng": 54.41266
+            }
+          },
+          {
+            "id": "geonames-565345",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область (1 из 2)",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.7168,
+              "lng": 39.9838
+            }
+          },
+          {
+            "id": "geonames-565346",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область (2 из 2)",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 47.3136,
+              "lng": 42.4969
+            }
+          }
+        ],
+        "partial": true,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        },
+        "streetSearch": {
+          "status": "unconfirmed",
+          "precision": "settlement-centre",
+          "message": "Улица не подтверждена. Можно выбрать населённый пункт."
+        }
+      }
+    },
+    {
+      "query": "Ялта",
+      "httpStatus": 200,
+      "elapsedMs": 2,
+      "controlledProviderFetches": 0,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-688533",
+            "title": "Ялта",
+            "label": "Ялта — Крым",
+            "region": "Крым",
+            "position": {
+              "lat": 44.50218,
+              "lng": 34.16624
+            }
+          },
+          {
+            "id": "geonames-688532",
+            "title": "Ялта",
+            "label": "Ялта — ДНР (1 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 46.96098,
+              "lng": 37.27446
+            }
+          },
+          {
+            "id": "geonames-688531",
+            "title": "Ялта",
+            "label": "Ялта — ДНР (2 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.04505,
+              "lng": 36.74963
+            }
+          },
+          {
+            "id": "geonames-469349",
+            "title": "Ялта",
+            "label": "Ялта — Тульская Область",
+            "region": "Тульская Область",
+            "position": {
+              "lat": 53.47707,
+              "lng": 38.03542
+            }
+          },
+          {
+            "id": "geonames-821752",
+            "title": "Ялта",
+            "label": "Ялта — Рязанская Область",
+            "region": "Рязанская Область",
+            "position": {
+              "lat": 53.8879,
+              "lng": 40.4788
+            }
+          },
+          {
+            "id": "geonames-7614065",
+            "title": "Ялтау",
+            "label": "Ялтау — Татарстан",
+            "region": "Татарстан",
+            "position": {
+              "lat": 54.5586,
+              "lng": 51.9703
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Ялта, улица Кирова",
+      "httpStatus": 200,
+      "elapsedMs": 74,
+      "controlledProviderFetches": 3,
+      "body": {
+        "items": [
+          {
+            "id": "W-130707262",
+            "title": "улица Кирова",
+            "label": "улица Кирова, Крым (ориентировочная точка улицы), Ялта",
+            "region": "Крым",
+            "position": {
+              "lat": 44.4929406,
+              "lng": 34.1554909
+            }
+          }
+        ],
+        "partial": false
+      }
+    }
+  ],
+  "sourceFiles": {
+    "lib/address-query.ts": "c6be86c56602db0f96f0e9d4e24d94ab38a17229432ccdf327ed7bd1cc82088a",
+    "lib/photon-address-search.ts": "08f1d47a7dcc577b8804eda97b7ddd6a6352af89690676c9f8836a616fffbfd7",
+    "lib/local-settlement-search.ts": "ede317f8a4aa584577661e0a8d874d811590c66c61fff3652dfa99bd619d0544",
+    "app/api/suggest/route.ts": "7321bbecd19ce7735c6b63033d141270eed4dd4202d25d000b2e7a0836bc0d9c",
+    "app/v2/components/address-field.tsx": "f2f584b2a8df05b43eb2fbf29d699ae8d2bad33265dd297e2c21faca5fbcb78f",
+    "lib/route-input-validation.ts": "2ef4248d716b7bd1658eba8cb0d0b9a299fcc9b7cdd81298c754e408c402e401",
+    "lib/route-providers.ts": "a84303ae3bb7c1000ee6cc8658393fb656d3d0ca36b08ce7dc42bc52b63997ce"
+  },
+  "reusedEvidence": {
+    "path": "../2026-10-29-stage-a4-local/city-browser-review.json",
+    "sourceRuntimeCommit": "c962fb730c42fd42f192ee55bbba9de20341bbbc",
+    "cityInputCoordinateComparison": "PASS",
+    "newBrowserRun": false,
+    "newRouteRequest": false,
+    "controlRoute": {
+      "httpStatus": 200,
+      "elapsedMs": 4229,
+      "meters": 711430
+    }
+  }
+}

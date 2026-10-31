@@ -1,0 +1,3 @@
+{"caseId":"dnr-бахмут-kazan-center","mode":"live","provider":"OSRM","routeMeters":1452489,"traceComplete":true,"tolls":{"amount":850,"weekdayAmount":850,"weekendAmount":850,"period":"все дни","segments":["М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"],"confidence":"matched","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"priced"},"detectedRoadComponents":[{"id":"m12","amount":850,"reason":"matrix dated selected-route M12 directed endpoint pair"}]}
+
+EXIT_CODE=0

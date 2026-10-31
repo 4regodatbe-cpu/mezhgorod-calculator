@@ -1,0 +1,14 @@
+✔ M4 atlas: every point uses exact source node coordinates, not a map centre (1.509996ms)
+✔ M4 atlas: three northbound paths remain connected, distinct and reject reversed/missing-link alternatives (2.037918ms)
+✔ M4 atlas: local opposite-direction gates are southbound, not reverse northbound tariff vectors (0.172146ms)
+✔ M4 atlas: newly located R298 connector matches the existing directed end-node witness (0.682189ms)
+✔ M4 atlas: existing two-product320/410 working component is retained once, never per physical booth (0.280794ms)
+✔ M4 atlas: primary/source/map records retain exact integrity and bounded counts (1.300946ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.911088

@@ -1,0 +1,159 @@
+{
+  "caseId": "single-m12-murom-to-kazan",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 524972,
+      "seconds": 25899
+    },
+    {
+      "name": "OSRM",
+      "meters": 525744,
+      "seconds": 27268
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 524972,
+  "routeSeconds": 25899,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m12"
+    ],
+    "provenRoads": [
+      "m12"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1000304039",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1246011031",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1246011033",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m12": {
+      "occurrences": 211,
+      "uniqueWays": 161
+    }
+  },
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-murom-to-kazan/2026-10-16T00-23-34-429Z-capture.json.gz",
+  "captureSha256": "8e9d3855081621df5521464176e7e2ee837f6378e3ccb559121e699afba31f39",
+  "detectedRoadComponents": [
+    {
+      "id": "m12",
+      "amount": 2621,
+      "reason": "matrix dated selected-route M12 directed endpoint pair"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-12",
+    "«Восток»"
+  ],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": {
+    "beginKm": 8.806,
+    "endKm": 456.276
+  },
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 2621,
+    "weekdayAmount": 2621,
+    "weekendAmount": 2621,
+    "period": "все дни",
+    "segments": [
+      "М-12: murom → ivanovskoe_p241 · Стоимость не подтверждена"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m12"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": {
+          "amount": 2621,
+          "weekdayAmount": 2621,
+          "weekendAmount": 2621,
+          "period": "все дни",
+          "segments": [
+            "М-12: murom → ivanovskoe_p241 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      }
+    ]
+  }
+}

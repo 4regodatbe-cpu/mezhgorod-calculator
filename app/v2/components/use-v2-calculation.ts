@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { pickOptimal } from "./route-utils";
 import { distance, duration, money } from "./format";
 import { defaults, tariffNames } from "./pricing-data";
 import { buildAlternativeFareCopy, resolveTollAmount, shortPlaceName, totalWithToll, type TollPeriod } from "./quote-presentation";
+import { UserFacingCalculationError, userFacingCalculationErrorMessage } from "./request-errors";
 import type { Place, Result, Leg, Trip, TollView } from "./types";
 
 type CalculatorMode = "standard" | "dual";
@@ -23,6 +24,8 @@ const vehicleForRate = { standard: "standard", comfort: "comfort", comfortPlus: 
 
 export function useV2Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint = "/api/v2/calculate", analyticsVersion = "2.0" }: CalculationInput) {
   const pending=useRef<AbortController|null>(null);
+  const copiedTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
+  useEffect(() => () => { pending.current?.abort(); pending.current = null; if(copiedTimer.current)clearTimeout(copiedTimer.current); }, []);
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -34,7 +37,7 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
     data.legs.forEach((leg, legIndex) => {
       const variants: Array<{ type: string; trip: Trip; tolls: TollView | null }> = leg.fast.tolls.pricingStatus !== "free"
         ? [
-          { type: leg.fast.tolls.pricingStatus === "unknown" ? "Быстрый, цена дороги не подтверждена" : "Платный", trip: leg.fast, tolls: leg.fast.tolls },
+          { type: leg.fast.tolls.pricingStatus === "unknown" ? "Быстрый, цена дороги неизвестна" : "Платный", trip: leg.fast, tolls: leg.fast.tolls },
           ...(leg.free ? [{ type: "Альтернатива без пунктов оплаты", trip: leg.free, tolls: null }] : []),
         ]
         : [{ type: "Оптимальный", trip: pickOptimal(leg.fast, leg.free), tolls: null }];
@@ -71,6 +74,7 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
     pending.current?.abort();
     const controller=new AbortController();
     pending.current=controller;
+    if(copiedTimer.current)clearTimeout(copiedTimer.current);
     setError("");
     setResult(null);
     setLoading(true);
@@ -94,39 +98,43 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
       });
       const data = await response.json().catch(() => null);
       if(controller.signal.aborted)return;
-      if (!response.ok) throw new Error(typeof data?.error === "string" ? data.error : "Сервис маршрутов временно недоступен. Повторите расчёт.");
+      if (!response.ok) throw new UserFacingCalculationError(typeof data?.error === "string" && data.error.trim() ? data.error : "Сервис маршрутов временно недоступен. Повторите расчёт.");
       // A gateway/transport failure may return malformed success JSON. Never
       // commit such a payload to React state and crash the entire calculator.
       const valid = data && Array.isArray(data.legs) && data.legs.length > 0 && data.legs.every((leg: Leg) =>
         leg && typeof leg.from === "string" && typeof leg.to === "string" &&
         leg.fast && Number.isFinite(leg.fast.meters) && Number.isFinite(leg.fast.seconds) &&
         leg.fast.tolls && typeof leg.fast.tolls.pricingStatus === "string");
-      if(!valid) throw new Error("Маршрут получен не полностью. Повторите расчёт.");
+      if(!valid) throw new UserFacingCalculationError("Маршрут получен не полностью. Повторите расчёт.");
       if(data.automaticMode === "standard" || data.automaticMode === "dual") onServerMode(data.automaticMode);
       setResult(data as Result);
       // Telemetry is best-effort and must never break a successful route.
       try { recordRoutes(data as Result); } catch { /* do not abort quote for analytics */ }
     } catch (e) {
       if(controller.signal.aborted)return;
-      setError(e instanceof Error ? e.message : "Не удалось выполнить расчёт");
+      setError(userFacingCalculationErrorMessage(e, "Не удалось выполнить расчёт. Проверьте соединение и повторите попытку."));
     } finally {
       if(pending.current===controller)setLoading(false);
     }
   }
 
   async function copyStandard(key: string, title: string, leg: Leg, trip: Trip, toll?: TollView, warning?: string, tollPeriod: TollPeriod = "weekday", manualTollOverride?: string, fareOnly = false) {
+    const copyRequest=pending.current;
+    try {
     void title;
     if (fareOnly) {
       await navigator.clipboard.writeText(buildAlternativeFareCopy(leg.from, leg.to, trip));
+      if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
       setCopiedKey(key);
-      setTimeout(() => setCopiedKey(""), 1800);
+      if(copiedTimer.current)clearTimeout(copiedTimer.current);
+      copiedTimer.current=setTimeout(() => { copiedTimer.current=null; setCopiedKey(""); }, 1800);
       return;
     }
     const tollPrice = resolveTollAmount(toll, tollPeriod, manualTollOverride);
     const periodLabel = tollPeriod === "weekday" ? "будни, Пн–Чт" : "выходные, Пт–Вс";
     const lines = ["из А в Б", `${shortPlaceName(leg.from)} → ${shortPlaceName(leg.to)}`, `${distance(trip.meters)} · ${duration(trip.seconds)}`, `День поездки: ${periodLabel}`];
-    if (manualTollOverride?.trim()) lines.push("Сумма платных дорог введена вручную и не подтверждена провайдером.");
-    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог не подтверждена.");
+    if (manualTollOverride?.trim()) lines.push("Сумма платных дорог указана вручную.");
+    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог неизвестна.");
     for (const rate of Object.keys(defaults) as Array<keyof typeof defaults>) {
       const vehicle = vehicleForRate[rate];
       const baseFare = trip.pricingByVehicle?.[vehicle]?.requiresSplit ? null : trip.pricingByVehicle?.[vehicle]?.totalPrice;
@@ -136,10 +144,17 @@ export function useV2Calculation({ from, to, rates, specialRates, requestMode, o
     }
     if (warning) lines.push(`Важно: ${warning}`);
     await navigator.clipboard.writeText(lines.join("\n"));
+    if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
     setCopiedKey(key);
-    setTimeout(() => setCopiedKey(""), 1800);
+    if(copiedTimer.current)clearTimeout(copiedTimer.current);
+    copiedTimer.current=setTimeout(() => { copiedTimer.current=null; setCopiedKey(""); }, 1800);
+    } catch {
+      if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
+      setCopiedKey("");
+      setError("Не удалось скопировать результат. Разрешите доступ к буферу обмена и повторите попытку.");
+    }
   }
 
-  const clearResult = () => { pending.current?.abort(); pending.current=null; setLoading(false); setResult(null); };
+  const clearResult = () => { pending.current?.abort(); pending.current=null; setLoading(false); setResult(null); setError(""); setManualToll(""); setCopiedKey(""); if(copiedTimer.current)clearTimeout(copiedTimer.current); copiedTimer.current=null; };
   return { result, error, loading, deepTollDiagnostics, setDeepTollDiagnostics, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard };
 }

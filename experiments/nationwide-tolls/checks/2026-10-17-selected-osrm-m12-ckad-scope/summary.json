@@ -1,0 +1,134 @@
+{
+  "status": "DONE",
+  "sourceCommit": "54f4cccccd0d4b70ae34f063ac4db351b013acba",
+  "unit": "bounded common-scope and exception review",
+  "historicalCodeChanges": [
+    {
+      "path": "lib/v3-calculation/route-leg-pricing.ts",
+      "originalSha256": "58d7aa0a6e7049c99c40aeb251bc163b45cd29c3971b23a50ddfff607f818ab7",
+      "currentSha256": "2b8c640e740ffdc24958d9ffa63c21cab2835ebdc756d4c65f1b2cf44f4a7eaf",
+      "historicalSourceCommit": "5281fa019eda95128035be5a0a1d2d1d95f34425",
+      "reason": "Saved Torzhok change; this review does not run historical pricing or claim parity."
+    }
+  ],
+  "causeReviewStatus": "blocked_missing_reliable_boundary_data",
+  "cases": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "evidence": "cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas.json",
+      "ownFullTraceChunksChecked": 9,
+      "existingSubtotalRub": 4494,
+      "fullTripRub": null
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "evidence": "cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary.json",
+      "ownFullTraceChunksChecked": 10,
+      "existingSubtotalRub": 4494,
+      "fullTripRub": null
+    }
+  ],
+  "commonCkadCorridor": {
+    "exactOwnGeometryEqual": true,
+    "sha256": "2809793ae661e5178eda289723955fdc7fac43fe4afe3b89bcea8fe8b032fac1",
+    "providerScope": "М-11 → А-113 eastbound → М-12 eastbound; not the full М-11→М-4 arc",
+    "existingAdapterSupportsOnly": "М-11↔М-4 full east arc"
+  },
+  "m12MaterialException": "Arzamas leaves to22Н-0239 after the420 witness; Cheboksary leaves toМ-7 before the184 witness. Destination city is not the M12 tariff exit.",
+  "unboundCandidateRows": [
+    {
+      "road": "ckad",
+      "from": "М-11 Нева",
+      "to": "М-12 Восток",
+      "rub": 981,
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "source": "source-documents/ckad-order56-effective-2026-03-02.pdf",
+      "requiresTariffContext": false,
+      "bindingProven": false,
+      "appliedToCase": false
+    },
+    {
+      "road": "m12",
+      "from": "ckad",
+      "to": "arzamas_p158",
+      "rub": 2952,
+      "effectiveFrom": "2026-10-08T00:00:00+03:00",
+      "source": "source-documents/m12-order302-effective-2026-10-08.pdf",
+      "requiresTariffContext": false,
+      "bindingProven": false,
+      "appliedToCase": false
+    },
+    {
+      "road": "m12",
+      "from": "ckad",
+      "to": "vladimir",
+      "rub": 1239,
+      "effectiveFrom": "2026-10-08T00:00:00+03:00",
+      "source": "source-documents/m12-order302-effective-2026-10-08.pdf",
+      "requiresTariffContext": false,
+      "bindingProven": false,
+      "appliedToCase": false
+    }
+  ],
+  "tariffContext": {
+    "primaryFootnote": {
+      "page": 2,
+      "number": 2,
+      "scope": "M12–Nosovikhinskoe section when it is the initial/final CKAD segment",
+      "requires": "Operator120-minute recording conditions on CKAD M7–M12 or M12 Elektrougli–CKAD / CKAD–Orekhovo apply; source table alone does not prove chargeability.",
+      "runtimePolicy": "Only M12 endpoint pairs crossing the M12–Nosovikhinskoe initial/final segment need separately resolved tariff context; M12→M7/M10-side pairs do not use that segment.",
+      "conditionalDirectedCells": 16
+    },
+    "northOfM12PairUsesConditionalM12NosovSection": false,
+    "rationale": "The candidate М-11→М-12 pair is on the М7/М10 side; source policy excludes it from the16 conditional cells. This fact does not establish its physical binding."
+  },
+  "blockers": [
+    {
+      "id": "ckad_partial_physical_pair",
+      "needed": "Primary directed entry/exit/connector binding for selected М-11→М-12 subset and a complete-scope adapter. Full М4 arc cannot be shortened by weakening anchors.",
+      "exactWayIds": [
+        "1148492112",
+        "1148492111",
+        "1189855267",
+        "916593974",
+        "916593983",
+        "916593976",
+        "1189855268"
+      ]
+    },
+    {
+      "id": "m12_western_outer_boundaries",
+      "needed": "Primary physical-to-operator binding of CKAD entry, western gantries and both distinct exits; calibrated81/118/174 are absent. Exact first/last charged intervals must be proved before choosing direct cells.",
+      "coordinatesAlreadySavedInLimitedFixture": true,
+      "missingIsOperatorMarkerBindingNotCoordinates": true,
+      "sourceTraceGantryNodeIds": [
+        "10782165529",
+        "11214930528",
+        "11157985901"
+      ],
+      "distinctExitWayIds": [
+        "1550135076",
+        "1550561305",
+        "1206479738",
+        "972809728",
+        "972809720",
+        "292501171"
+      ]
+    }
+  ],
+  "counts": {
+    "reviewedCases": 2,
+    "representativeReviews": 1,
+    "siblingExceptionChecks": 1,
+    "verifiedTraceOccurrences": 19,
+    "distinctRawResponses": 13,
+    "newRoutingRequests": 0,
+    "newTraceRequests": 0,
+    "newPrimaryRequests": 0,
+    "fullPricingReplays": 0,
+    "newlyPricedComponents": 0,
+    "newlyCalculatedFullTrips": 0,
+    "confirmedFullTripFares": 0
+  },
+  "nextAction": "One bounded primary binding pass for the common CKAD М11→М12 segment using exact saved transition IDs; then add the narrow adapter only if proved. Investigate M12 western-entry and differing exit binding separately, without new routing or74/76/309 replay."
+}

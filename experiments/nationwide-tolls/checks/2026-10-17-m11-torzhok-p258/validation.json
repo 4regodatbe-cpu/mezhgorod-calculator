@@ -1,0 +1,134 @@
+{
+  "atUtc": "2026-10-17T17:34:58.280225+00:00",
+  "sourceHead": "5281fa019eda95128035be5a0a1d2d1d95f34425",
+  "startedCommit": "5b000b5ff6220ffab307b835feabb7764a661b89",
+  "startedCheckpoint": "docs/checkpoints/2026-10-17-181806-m11-torzhok-p258-STARTED.md",
+  "doneCheckpoint": "docs/checkpoints/2026-10-17-203458-m11-torzhok-p258-DONE.md",
+  "outcome": "fixed_and_verified",
+  "counts": {
+    "targetCases": 1,
+    "independentThroughControls": 1,
+    "pricedComponents": 3,
+    "newPricedComponents": 2,
+    "calculatedCompleteTripCases": 1,
+    "confirmedFullTripFares": 0,
+    "newRoutingRequests": 0,
+    "newTraceRequests": 0,
+    "primaryOsmGets": 3
+  },
+  "sourceChecks": [
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/capture.json.gz",
+      "sha256": "ad40dfa2b7bd7fc69266854e18816c5804d7152879edab54d5abb1a7e2b49bb4"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/route.json.gz",
+      "sha256": "3ca13bf5d3f36ec91fa14ed7a4b683423a6cc3f988780ce0a7f4ec57ca920597"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/result.json",
+      "sha256": "89ce4723dcd40069480659a170c12d99adf7b167ba362c449cd7ec5207214bf5"
+    },
+    {
+      "path": "data/tolls/m11/2026-10-01-58-679-category1-a1-current.json",
+      "sha256": "61628b9052b90a8a77c9b49277a0e17851490f7b00399806fb4c278314287bed"
+    },
+    {
+      "path": "data/tolls/m11/2026-10-01-58-679-spatial-anchors.json",
+      "sha256": "39919154bce0c9beea83afcc051d8e236a9e7e8605bb38cf633825b51015f854"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf",
+      "sha256": "6b52ca130ee7e8a7948c2b39982c00d82174e4e45ec5dcd3983355238c403b91"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/44c1cc0ad3628ba3be8c.osm",
+      "sha256": "c9491fdf1ed1ba896c49287f7156f5dbf2c5a3059d73505c80106c5857db1af6"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/60784499e48465c1db45.osm",
+      "sha256": "89d589e14441da2fb63a523d85c92bdf5c5274695273e2f8a5d5cb7207a86383"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/e16194851d1c15e2611d.osm",
+      "sha256": "ccf9f1c7228bb0f01edc7e03e2afb7a86c6b56173d8ffd19ff5e6aac7d62ed86"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-14-osm-tail-corridor.osm.gz",
+      "sha256": "cafaf34feca269290cde03d9ec0681c8609a46cdc88114393810044fd040ee51"
+    }
+  ],
+  "requiredChecks": [
+    {
+      "name": "audit",
+      "exitCode": 0,
+      "seconds": 9.88,
+      "bytes": 61972,
+      "log": "audit.log.gz"
+    },
+    {
+      "name": "tsc",
+      "exitCode": 0,
+      "seconds": 3.38,
+      "bytes": 0,
+      "log": "tsc.log.gz"
+    },
+    {
+      "name": "eslint",
+      "exitCode": 0,
+      "seconds": 1.75,
+      "bytes": 0,
+      "log": "eslint.log.gz"
+    },
+    {
+      "name": "build",
+      "exitCode": 0,
+      "seconds": 8.09,
+      "bytes": 1038,
+      "log": "build.log.gz"
+    }
+  ],
+  "initialFocusedFailure": "6/7, test expected internal priceConfirmation on public API; public contract intentionally omits it. Test only corrected; initial log retained.",
+  "focusedFinal": "7/7 PASS",
+  "fullAudit": "728/728 + quote/API PASS",
+  "preSaveCiAtResume": {
+    "runId": 39044745179,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "sha256": {
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/README.md": "03c95e5afc14b8e8b2d3410b5e8a8c6f8a5238e477d100566ff1e41365356e83",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/audit.log.gz": "feb8ddc44a3798241bf3b98043f7e5988d32cdc670045ff859099297ccfe4cff",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/build.log.gz": "4844a5440faf7141effc90333e129841890a0ca5b48690f406c93a9198b7a187",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/eslint.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/focused-initial.log.gz": "7028b7a177e93f1f35955e7e79bf3270415749bae9fcfa62bdbc7abd21e878b8",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/focused.log.gz": "af3ce37f81fb147ad4a138aefefef5ea0bab698a3fdbb0bb43d783499550646b",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/inputs.json": "f4eb8785c7740a841ec4b809f4f23a5c72fd8f2ede1637e558ee4e8bfe94ec4e",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/pre-save-readback.json": "29ef00cc2eaa921dbb3f020e578db266678d038547a480cb39fd98e45383f6e8",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/required-checks.json": "beb86b67dca06c3d26b6447fdaa2971819a87b8874fd4b4ad8f1b2ee51093ca3",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/result.json": "ccc36a3bc21092cdd44299f7f82bb7750988bdff35c69fd13eb9f229c281d736",
+    "experiments/nationwide-tolls/checks/2026-10-17-m11-torzhok-p258/tsc.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/44c1cc0ad3628ba3be8c.metadata.json": "f68237cf2c9b2cf9f779527a36cc84e1a0d298240f0fddbc977cc6ab998ecdb6",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/44c1cc0ad3628ba3be8c.osm": "c9491fdf1ed1ba896c49287f7156f5dbf2c5a3059d73505c80106c5857db1af6",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/60784499e48465c1db45.metadata.json": "023d63983b4e3ce4d62a37d45471411267186c1e5dce82031c476e4537c8d057",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/60784499e48465c1db45.osm": "89d589e14441da2fb63a523d85c92bdf5c5274695273e2f8a5d5cb7207a86383",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/README.md": "69cbff3da9b6ac2014b0c95dfb812b0b7ce8b3da033f4af2ae930e8444a022fb",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/binding-proof.json": "2cfeedb5e51a79b8eb397fbb0db75f7748bb97c9e9cbd6a5b0553039d4de17e9",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/directed-exit.json": "e617af7c322a9f82a8b9deccd952b3fd8367b18e3db96e76435e69ed30e7fc18",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/e16194851d1c15e2611d.metadata.json": "5b39c8497f5cab1ff7a063c348f19fd092d4367370dd9506e14422b7d0a2983e",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/e16194851d1c15e2611d.osm": "ccf9f1c7228bb0f01edc7e03e2afb7a86c6b56173d8ffd19ff5e6aac7d62ed86",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/progress.json": "819fcd78a274ce58468df213a81aaf62fa6262bac32753db81c3dd8bd62fe6f7",
+    "lib/v3-calculation/m11-p258-exit-boundary.ts": "6d8acc7cc6509c01c72bb6ab21f12b24fd8dc52416ec543e3f3e3a3b49663c83",
+    "lib/v3-calculation/m11-product-boundaries.ts": "cc9e78683c54a6ca278a7d7b32397988229e02d039f27ab095365d5c21458678",
+    "lib/v3-calculation/route-leg-pricing.ts": "2b8c640e740ffdc24958d9ffa63c21cab2835ebdc756d4c65f1b2cf44f4a7eaf",
+    "lib/v3-calculation/unpriced-road-coverage.ts": "dff894a7edf3e95096dc0b962434df41841a878c2939fc80c48570b1642a747b",
+    "scripts/v3-m11-p258-boundary.test.ts": "2cff4ca1f626320f9d42f35aa84ba4ebad7859d545726d9f346cf86f8f1a284c"
+  },
+  "preSaveCi": {
+    "runId": 39044745179,
+    "status": "completed",
+    "conclusion": "success",
+    "verify": "completed/success",
+    "live_probe": "completed/success"
+  }
+}

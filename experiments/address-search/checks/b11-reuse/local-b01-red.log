@@ -1,0 +1,37 @@
+✔ disabled default makes zero requests (1.470235ms)
+✔ full Photon 503 and 429 permit isolated candidate research without public admission (31.725277ms)
+✔ empty/partial successful primary and missing status never trigger fallback (0.265194ms)
+✔ missing credentials and expired budget do not request provider (0.176166ms)
+✔ cancellation before and during transport is propagated (0.728201ms)
+✔ HTTP failures and exception messages cannot leak credentials (0.973505ms)
+✔ invalid coordinates, missing administrative labels, wrong precision and duplicates rejected (1.605514ms)
+✔ request is one bounded city lookup, not a country-restricted approximate address (0.763083ms)
+✔ deadline during body parsing cannot admit late coordinates (0.494334ms)
+✖ provider metadata cannot echo API key or credential-bearing URLs into research results (7.929036ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 53.573429
+
+✖ failing tests:
+
+test at experiments/address-search/geoapify-fallback-experiment.test.mjs:68:1
+✖ provider metadata cannot echo API key or credential-bearing URLs into research results (7.929036ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!JSON.stringify(result).includes(key))
+  
+      at TestContext.<anonymous> (file:///tmp/b11-resume-current/experiments/address-search/geoapify-fallback-experiment.test.mjs:74:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

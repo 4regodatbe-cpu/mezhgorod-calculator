@@ -2,22 +2,23 @@ import type { Coordinate } from "../tolls";
 import type { ProductionM4Result, ProductionM4Tolls } from "../toll-engine/m4-production";
 import { priceA289Route } from "../toll-engine/a289-engine";
 import { inspectKrasnodarBypass } from "../toll-engine/krasnodar-bypass-evidence";
-import { composeRouteTolls, type RouteTollComponent } from "../toll-engine/route-toll-composition";
+import { composeRouteTolls, type RouteTollComponent, type RouteTollComponentValue } from "../toll-engine/route-toll-composition";
 import { matrixDzokComponent } from "@/experiments/nationwide-tolls/engine/dzok-route-adapter.mjs";
 import { a289Endpoint, a289ShortRoute } from "./a289-short-route";
 
 const BYPASS = "М-4: Дальний западный обход Краснодара";
-type MatrixM4 = {tolls: ProductionM4Tolls | null; reason: string} | null;
+type MatrixM4 = {tolls: ProductionM4Tolls | null; reason: string; productCoverage?: {sectionVector:string[]}|null} | null;
 
 /** Independent products for the upper V3 composer. The combined value remains
  * a compatibility view; callers must never add it alongside these components. */
 export function composeSelectedM4A289(route: Coordinate[], production: ProductionM4Result,
-  matrix: MatrixM4, legacySegments: string[], departureAt?: string, routeSeconds = 0) {
+  matrix: MatrixM4, legacySegments: string[], departureAt?: string, routeSeconds = 0,
+  accepted545: RouteTollComponentValue | null = null) {
   const hasM4Evidence = (production.m4PvpPreview?.confirmedPvps?.length ?? 0) > 0;
   const localEndpoints = route.length >= 2 && Boolean(a289Endpoint(route[0]) && a289Endpoint(route.at(-1)!));
   const physical = priceA289Route(route, departureAt);
   const local = a289ShortRoute(route, [], departureAt, hasM4Evidence);
-  const m4Detected = hasM4Evidence || (!localEndpoints && production.candidate);
+  const m4Detected = hasM4Evidence || (!localEndpoints && production.candidate) || Boolean(accepted545);
   const a289Detected = physical.crossedFrames.length > 0
     || legacySegments.some(name => name.startsWith("А-289:"));
   const bypassEvidence = inspectKrasnodarBypass(route);
@@ -32,6 +33,7 @@ export function composeSelectedM4A289(route: Coordinate[], production: Productio
   const bypass = bypassDetected ? matrixDzokComponent(bypassEvidence, departureAt, routeSeconds) : null;
   const components: RouteTollComponent[] = [
     {id:"m4",detected:m4Detected,tolls:m4,reason:m4?.confidence === "matched" ? matrix?.reason : m4Reason},
+    {id:"m4-545",detected:Boolean(accepted545),tolls:accepted545,reason:accepted545 ? "Accepted working component; excluded once from the M4 aggregate only when product coverage matched" : null},
     {id:"a289",detected:a289Detected,tolls:local?.tolls ?? null,reason:local?.reason ?? "A-289 crossing/exit binding unresolved"},
     {id:"krasnodar-west-bypass",detected:bypassDetected,tolls:bypass?.tolls ?? null,reason:bypass?.reason ?? bypassEvidence.reason},
   ];

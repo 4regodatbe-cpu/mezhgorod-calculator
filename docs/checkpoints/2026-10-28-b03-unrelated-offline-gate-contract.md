@@ -1,0 +1,11 @@
+# B03 hosted UI green; existing offline Node contract failure corrected
+
+28.10.2026 МСК. Parentremote5e94e47def9d43c7cd2873e5627c2464aa48af2a/treef8487bc3c058d791e1545e9c038cddaccaea00bc; appcomponentreadbackblob75bbf3391bcfd8bf777ce6b278c3fb78cff56981 matched. Allfourprecedingruns nowcompleted, nonecanceled. B03push40645189504+PR40645198568SUCCESS; special40645198508SUCCESS (widejobsSKIPPED). B01external502notfixed.
+
+Unexpected existing `segment8-route-quality.yml` pushrun40645189503/job122672258146 ran **offline** unit/regression/benchmark-integrity checks (not provider/50settlement/Yandexlive). FourofflineprechecksPASS, productionstep`pnpm build` failedwithin test:audit, beforeNextbuild/API-smoke. Cause: `scripts/audit-ci-node-version.test.mjs` demands1setupnode in `.github/workflows/route-quality.yml`, whose previouslyapprovedmonitor+build-onlyjobs alreadyhave2Node24setups. Bothfiles are byte-unchanged from sourceremoted5f3647; reproducedlocally1PASS/1FAILbeforecorrection. This is a latenttestcontractdefect, NOT an AddressField regression or a broadliveaudit. Do not claimallCIgreen yet.
+
+MinimalCItestcorrection: exactreviewedcounts2(route-quality)/1(systemic) and **every** versionmustbe24/24.x. Addednegativecontrols for wrongfirst/secondNode22, missing or extraNode24setup. No count>=1 relaxation, no disabledassertions, no actualrouteworkflowedited, no othercomponentor businesslogicchanged. Localnodecontract3/3 +classifier12/12+workflowcontract3/3PASS/diffPASS.
+
+To verifytheactuallyfailedrequiredgate on correctedSHA, B03offlineverify additionally runs `pnpm test:audit` once pernormaljob beforeTS/directNextbuild, preservingalloriginalcommands. This is the saved-data/unit gate alreadyinvoked by normalroutequalitybuild, not a newlive/massroutecapture. GenuineobservedCIworkerfailure is reasonfor this rerun; neverclaimoldSHAproofasnew. NewB03workflowcontract requiresofflinegate and stillforbids broadprovidercommands. Originalspecial/routequalityworkflowsuntouched.
+
+Nextafterdurablereadback: requireactualfullofflinegate/TS/build+bothB03suitesgreen on newhead, specialwideSKIPs, artifact/log/sourcehash verification. Ifotherfailureinspectexactcause, no testweakening. No branchwritewhileactiveCI. Then B12evidencehandoff, not repeatednetwork/roadresearch. No main/Production/Android/backup/merge/force.

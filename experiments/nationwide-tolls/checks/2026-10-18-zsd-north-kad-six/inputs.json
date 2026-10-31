@@ -1,0 +1,48 @@
+{
+  "status": "STARTED",
+  "atUtc": "2026-10-18T06:00:37.438303+00:00",
+  "sourceHead": "3a7bc9d2eecb42f90e896b9cce27dfa830bc730a",
+  "fingerprint": "258ee8abe7051eda2e4d11f093e10fa37184adc36cd3c3e12d67823afdd32f08",
+  "representative": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+  "representativeEvidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-planernaya-group9/next-group-representative.json",
+  "scope": "Only new sibling exit/trace exception review. No repeat component pricing, no route or capture replay, no network.",
+  "caseReports": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-murom-to-sest.json",
+      "sha256": "07e53d2354ed431ad4de87429ac5ac5dcb3b2421fe65f422d4bccc29ea97824a"
+    },
+    {
+      "caseId": "pair-m11-zsd-moscow-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-moscow-to-sest.json",
+      "sha256": "0dfa9d89f4096591b5081dd37142f5842fbd2e91ba776e4e6b7aecfcc6923d8d"
+    },
+    {
+      "caseId": "pair-m11-zsd-tver-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-tver-to-sest.json",
+      "sha256": "534dcf5b086c69e73fdeb111a977edec366c2f916c5c3a13b1dbeec4f4292c46"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-vladimir-to-sest.json",
+      "sha256": "dbbc68f4c4ee59c6e8fd034116b1c3a470cc6365052a74dccb59dc0604961690"
+    },
+    {
+      "caseId": "pair-m11-zsd-novgorod-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-novgorod-to-sest.json",
+      "sha256": "dcb64bcdc5a3375c94cb82c8fc05a978b9118d40d9584b2dd15d4dcb3c07c2ea"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-domodedovo-to-sest.json",
+      "sha256": "297bfb5c402617b9b7ea6720902b7b78944b9cf84fc2ca7670543f962f30cc8e"
+    }
+  ],
+  "limits": {
+    "cases": 6,
+    "secondsPerCase": 30,
+    "totalSeconds": 120,
+    "networkRequests": 0
+  },
+  "recovery": "Write each case and progress atomically; resume only unfinished cases. Preserve source reports/captures unchanged."
+}

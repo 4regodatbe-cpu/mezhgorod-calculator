@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 2,
+  "caseId": "dnr-гранитное-kazan-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+  "captureSha256": "5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9",
+  "method": "Full saved provider + all thirteen selected-route trace chunks replayed; both complete V3 API profiles checked. No live network.",
+  "provider": "Valhalla",
+  "selectedMeters": 1696588,
+  "roadBoundaries": {
+    "provider": "valhalla-trace",
+    "targetRef": "М-4",
+    "routeSignature": "a1d3ba1d21bf5d15c4cc153aefdc0069f53ac087ab3f54ea3183236f3d91790d",
+    "precision": "matched-road-edge",
+    "status": "resolved",
+    "reason": "directed_graph_transitions_resolved",
+    "entry": {
+      "id": "osm-transition:4443232947:447135768>1182567076",
+      "kind": "road-transition",
+      "from": {
+        "refs": [],
+        "names": [
+          "подъезд к аэропорту «Платов»",
+          "подъезд от магистрали «Дон» к аэропорту «Платов»"
+        ]
+      },
+      "to": {
+        "refs": [
+          "E-115",
+          "E-50",
+          "М-4"
+        ],
+        "names": [
+          "«Дон»"
+        ]
+      },
+      "coordinate": null,
+      "osmNodeId": "4443232947",
+      "fromWayId": "447135768",
+      "toWayId": "1182567076",
+      "chunkIndex": 1,
+      "sourceIndex": 138,
+      "connectorCount": 0
+    },
+    "exit": {
+      "id": "osm-transition:358467208:1211606940>28835034",
+      "kind": "road-transition",
+      "from": {
+        "refs": [
+          "E-115",
+          "М-4"
+        ],
+        "names": [
+          "«Дон»"
+        ]
+      },
+      "to": {
+        "refs": [
+          "Р-260"
+        ],
+        "names": []
+      },
+      "coordinate": null,
+      "osmNodeId": "358467208",
+      "fromWayId": "1211606940",
+      "toWayId": "28835034",
+      "chunkIndex": 2,
+      "sourceIndex": 35,
+      "connectorCount": 0
+    }
+  },
+  "maneuverDiagnostic": {
+    "provider": "valhalla",
+    "targetRef": "М-4",
+    "routeSignature": "a1d3ba1d21bf5d15c4cc153aefdc0069f53ac087ab3f54ea3183236f3d91790d",
+    "precision": "route-maneuver",
+    "status": "resolved",
+    "reason": "directed_road_transitions_resolved",
+    "entry": {
+      "id": "road-transition:dd09b189870270c9800edefc",
+      "kind": "road-transition",
+      "from": {
+        "refs": [],
+        "names": [
+          "Северный обход Ростова-на-Дону"
+        ]
+      },
+      "to": {
+        "refs": [
+          "E-115",
+          "E-50",
+          "М-4"
+        ],
+        "names": [
+          "«Дон»"
+        ]
+      },
+      "coordinate": [
+        39.838698,
+        47.378414
+      ],
+      "legIndex": 0,
+      "sourceIndex": 23,
+      "connectorCount": 0
+    },
+    "exit": {
+      "id": "road-transition:9f147230b739802282d36415",
+      "kind": "road-transition",
+      "from": {
+        "refs": [
+          "E-115",
+          "М-4"
+        ],
+        "names": [
+          "«Дон»"
+        ]
+      },
+      "to": {
+        "refs": [
+          "Р-260"
+        ],
+        "names": []
+      },
+      "coordinate": [
+        40.265878,
+        48.186303
+      ],
+      "legIndex": 0,
+      "sourceIndex": 24,
+      "connectorCount": 0
+    }
+  },
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tariffVector": {
+        "from": "osm-transition:4443232947:447135768>1182567076",
+        "to": "osm-transition:358467208:1211606940>28835034",
+        "profile": "monThu",
+        "selectionBasis": "selected-road-transitions",
+        "priceStatus": "unknown"
+      },
+      "api": {
+        "amount": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "m4"
+      ]
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tariffVector": {
+        "from": "osm-transition:4443232947:447135768>1182567076",
+        "to": "osm-transition:358467208:1211606940>28835034",
+        "profile": "friSun",
+        "selectionBasis": "selected-road-transitions",
+        "priceStatus": "unknown"
+      },
+      "api": {
+        "amount": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "m4"
+      ]
+    }
+  ],
+  "replay": {
+    "consumedResponses": 14,
+    "missingResponses": 0,
+    "liveRequests": 0
+  }
+}

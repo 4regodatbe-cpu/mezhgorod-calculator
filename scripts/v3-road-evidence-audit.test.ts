@@ -58,7 +58,7 @@ test('Tver proximity and p58 alone cannot prove the p147 paid boundary', async()
   assert.equal(calculateM11MoscowToPetersburg(route,7200,'2026-10-13T12:00:00+03:00').tolls,null);
 });
 
-test('M11 full geometry cannot omit the separately priced continuation beyond p679', async()=>{
+test('M11 tail continuation uses the user-approved 94 RUB component after p679', async()=>{
   const {calculateLegTolls}=await import('../lib/v3-calculation/route-leg-pricing.ts');
   const coordinates: M12SpanCoordinate[]=[[37.472,55.8842],[37.0712818,56.1391684],[31.2534812,59.1976987],[30.3598352,59.7750977],[30.3351,59.9343]];
   const selectedFastRoute={meters:700000,seconds:24000,coordinates,m11RoadEvidence:{provider:'valhalla' as const,malformedStrictCount:0,candidateClues:[],strictBlocks:[{
@@ -66,8 +66,9 @@ test('M11 full geometry cannot omit the separately priced continuation beyond p6
     beginCoordinate:coordinates[0],endCoordinate:coordinates[4],labels:['М-11'],
   }]}};
   const result=await calculateLegTolls({routeGeometry:coordinates,routeSeconds:24000,departureAt:'2026-10-13T09:00:00+03:00',selectedFastProvider:'Valhalla',selectedFastRoute,valhallaEvidence:selectedFastRoute,confirmedFreeRoute:null,diagnosticFastValidation:null});
-  assert.equal(result.tolls.amount,0);
-  assert.ok(result.tolls.segments.some(s=>s.includes('m11_679_684_continuation_not_priced')));
+  assert.ok(result.tolls.amount>0);
+  assert.equal(result.componentAudit.components.find(c=>c.id==='m11-679-684')?.tolls?.amount,94);
+  assert.equal(result.componentAudit.status,'priced');
 });
 
 test('M11 user single-entry policy does not scan for intermediate return trips', async()=>{

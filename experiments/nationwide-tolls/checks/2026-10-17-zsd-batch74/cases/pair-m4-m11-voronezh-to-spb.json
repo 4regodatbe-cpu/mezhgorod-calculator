@@ -1,0 +1,80 @@
+{
+  "caseId": "pair-m4-m11-voronezh-to-spb",
+  "sourceHead": "3ae7761fc0cebccc72777f487c5af8ca0b926665",
+  "startedCommit": "7f6e6b8a4488bc3ee0aa4ce760b727b03b57f28b",
+  "runIdentity": "59d5235b7bc898c2e3dc2bee864253f32aef5eaad7290b94e50d939f95fc6e65",
+  "mode": "saved_capture_current_component_exception_check",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/2026-10-16T00-14-21-840Z-capture.json.gz",
+  "expectedCaptureSha256": "1ee4623d549d84d8ba29838b2a5ab649a0875a5484c6c3df5dfa402d16f27904",
+  "previousEvidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-23-47-961Z.json",
+  "previousStatus": "source_gated_same_reviewed_zsd_scope",
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "wholeTripResult": "not_replayed",
+  "tariffConfirmation": "not_independently_confirmed",
+  "atUtc": "2026-10-17T12:06:01.304Z",
+  "actualCaptureSha256": "1ee4623d549d84d8ba29838b2a5ab649a0875a5484c6c3df5dfa402d16f27904",
+  "provider": "Valhalla",
+  "routeMeters": 1236369,
+  "coordinateCount": 7576,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "zsdWayIds": [
+    "1122966004",
+    "1122966005",
+    "1122966006",
+    "123709500",
+    "123709505",
+    "139658547",
+    "183912267",
+    "183912268",
+    "223744446",
+    "28934684",
+    "31369306",
+    "381576631",
+    "381576632",
+    "397223749",
+    "397223751",
+    "397223752",
+    "400111351",
+    "400111354",
+    "461676671",
+    "465117517",
+    "721628540",
+    "721628541",
+    "80056716",
+    "80056742",
+    "80056745",
+    "85763340"
+  ],
+  "zsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "edgeToll": true
+    }
+  ],
+  "physicalScopeFingerprint": "5538ef82450665f3119ea17d65ec0bc5a0fcb5c28ed5886c465e38882ed4a6b6",
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": 600,
+      "reason": "zsd_kad_south_ekateringofka_owner_zone_vector",
+      "componentResult": "priced",
+      "segments": [
+        "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+      ]
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": 600,
+      "reason": "zsd_kad_south_ekateringofka_owner_zone_vector",
+      "componentResult": "priced",
+      "segments": [
+        "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+      ]
+    }
+  ],
+  "checked": true,
+  "outcome": "fixed_and_verified_component_only"
+}

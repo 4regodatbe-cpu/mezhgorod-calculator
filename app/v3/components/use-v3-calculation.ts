@@ -6,7 +6,9 @@ import { pickOptimal } from "../../v2/components/route-utils";
 import { distance, duration, money } from "../../v2/components/format";
 import { defaults, tariffNames } from "../../v2/components/pricing-data";
 import { buildAlternativeFareCopy, resolveTollAmount, shortPlaceName, totalWithToll, type TollPeriod } from "../../v2/components/quote-presentation";
+import { UserFacingCalculationError, userFacingCalculationErrorMessage } from "../../v2/components/request-errors";
 import type { Place, Result, Leg, Trip, TollView } from "../../v2/components/types";
+import { tollEstimateText } from "@/lib/toll-estimate-view";
 
 type CalculatorMode = "standard" | "dual";
 type CalculationInput = {
@@ -37,7 +39,7 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
     data.legs.forEach((leg, legIndex) => {
       const variants: Array<{ type: string; trip: Trip; tolls: TollView | null }> = leg.fast.tolls.pricingStatus !== "free"
         ? [
-          { type: leg.fast.tolls.pricingStatus === "unknown" ? "Быстрый, цена дороги не подтверждена" : "Платный", trip: leg.fast, tolls: leg.fast.tolls },
+          { type: leg.fast.tolls.pricingStatus === "unknown" ? "Быстрый, цена дороги неизвестна" : "Платный", trip: leg.fast, tolls: leg.fast.tolls },
           ...(leg.free ? [{ type: "Альтернатива без пунктов оплаты", trip: leg.free, tolls: null }] : []),
         ]
         : [{ type: "Оптимальный", trip: pickOptimal(leg.fast, leg.free), tolls: null }];
@@ -98,18 +100,18 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
       });
       const data = await response.json().catch(() => null);
       if(controller.signal.aborted||pending.current!==controller)return;
-      if (!response.ok) throw new Error(typeof data?.error === "string" ? data.error : "Сервис маршрутов временно недоступен. Повторите расчёт.");
+      if (!response.ok) throw new UserFacingCalculationError(typeof data?.error === "string" && data.error.trim() ? data.error : "Сервис маршрутов временно недоступен. Повторите расчёт.");
       // A gateway/transport failure may return malformed success JSON. Never
       // commit such a payload to React state and crash the entire calculator.
       const valid = validV3Response(data);
-      if(!valid) throw new Error("Маршрут получен не полностью. Повторите расчёт.");
+      if(!valid) throw new UserFacingCalculationError("Маршрут получен не полностью. Повторите расчёт.");
       if(data.automaticMode === "standard" || data.automaticMode === "dual") onServerMode(data.automaticMode);
       setResult(data as Result);
       // Telemetry is best-effort and must never break a successful route.
       try { recordRoutes(data as Result); } catch { /* do not abort quote for analytics */ }
     } catch (e) {
       if(controller.signal.aborted||pending.current!==controller)return;
-      setError(e instanceof Error ? e.message : "Не удалось выполнить расчёт");
+      setError(userFacingCalculationErrorMessage(e, "Не удалось выполнить расчёт. Проверьте соединение и повторите попытку."));
     } finally {
       if(pending.current===controller)setLoading(false);
     }
@@ -130,17 +132,26 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
     const tollPrice = resolveTollAmount(toll, tollPeriod, manualTollOverride);
     const periodLabel = tollPeriod === "actual" ? (toll?.period ?? "дата расчёта") : tollPeriod === "weekday" ? "будни, Пн–Чт" : "выходные, Пт–Вс";
     const lines = ["из А в Б", `${shortPlaceName(leg.from)} → ${shortPlaceName(leg.to)}`, `${distance(trip.meters)} · ${duration(trip.seconds)}`, `День поездки: ${periodLabel}`];
-    if ((toll as (TollView & {priceConfirmation?:string}) | undefined)?.priceConfirmation === "unconfirmed") lines.push("Стоимость не подтверждена");
-    if (manualTollOverride?.trim()) lines.push("Сумма платных дорог введена вручную и не подтверждена провайдером.");
-    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог не подтверждена.");
+    if (manualTollOverride?.trim()) lines.push("Сумма платных дорог указана вручную.");
+    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог неизвестна.");
     for (const rate of Object.keys(defaults) as Array<keyof typeof defaults>) {
       const vehicle = vehicleForRate[rate];
       const baseFare = trip.pricingByVehicle?.[vehicle]?.requiresSplit ? null : trip.pricingByVehicle?.[vehicle]?.totalPrice;
       const total = totalWithToll(baseFare, tollPrice);
       const addition = tollPrice.amount === null ? "платные дороги: сумма неизвестна" : `+ ${money(tollPrice.amount)} ${tollPrice.status === "manual" ? "дороги вручную" : "платные дороги"}`;
-      lines.push(`${tariffNames[rate]}: ${baseFare == null ? "тариф не рассчитан" : money(baseFare)} ${addition} = ${total === null ? "итого не рассчитано" : money(total)}`);
+      if (baseFare != null && tollPrice.amount === null) {
+        lines.push(`${tariffNames[rate]}: ${money(baseFare)} без платных дорог`);
+      } else {
+        lines.push(`${tariffNames[rate]}: ${baseFare == null ? "тариф не рассчитан" : money(baseFare)} ${addition} = ${total === null ? "итого не рассчитано" : money(total)}`);
+      }
     }
     if (warning) lines.push(`Важно: ${warning}`);
+    if (trip.tollEstimate) {
+      const view = tollEstimateText(trip.tollEstimate);
+      lines.push("Дополнительная оценка дорог (не меняет строгий итог):", view.label);
+      if (view.partial) lines.push(view.partial);
+      lines.push(...trip.tollEstimate.warnings);
+    }
     await navigator.clipboard.writeText(lines.join("\n"));
     if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
     setCopiedKey(key);

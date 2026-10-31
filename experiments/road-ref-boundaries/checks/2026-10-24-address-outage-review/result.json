@@ -1,0 +1,25 @@
+{
+  "source": "a95a7a902a3116c108f6e24b1e2581aac7b03352",
+  "status": "BLOCKED_BY_SOURCE_ARCHITECTURE",
+  "newLiveRequests": 0,
+  "queryVariantCountOffline": 7,
+  "independentOrigins": 1,
+  "browserCache": {
+    "entries": 128,
+    "ttlMs": 300000,
+    "positiveOnly": true
+  },
+  "serverCache": {
+    "entries": 128,
+    "ttlMs": 300000,
+    "scope": "warm process, exact URL"
+  },
+  "ruwikiIndex": {
+    "entries": 2110,
+    "hasCoordinates": false,
+    "runtimeFallbackActivated": false
+  },
+  "benchmarkPromotedToRuntime": false,
+  "runtimeChanged": false,
+  "next": "bounded primary-source coordinate settlement catalog intake"
+}

@@ -1,0 +1,2260 @@
+{
+  "startedAt": "2026-10-15T11:54:05.201Z",
+  "scope": {
+    "region": null,
+    "group": null,
+    "limit": 40,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "dnr-гранитное-moscow-center",
+      "startedAt": "2026-10-15T11:54:05.202Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-54-48-347Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/2026-10-15T11-54-48-260Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-54-48-815Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-54-49-251Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": 4640,
+        "weekdayAmount": 3810,
+        "weekendAmount": 4640,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        }
+      ],
+      "finishedAt": "2026-10-15T11:54:49.260Z"
+    },
+    {
+      "caseId": "lnr-брянка-moscow-center",
+      "startedAt": "2026-10-15T11:54:49.261Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-29-456Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-moscow-center/2026-10-15T11-55-29-381Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-55-29-921Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-55-30-336Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 3610,
+        "weekdayAmount": 3610,
+        "weekendAmount": 4390,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-803 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 4390,
+        "weekdayAmount": 3610,
+        "weekendAmount": 4390,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-803 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 3610,
+          "reason": "matrix exact selected-route M4 vector"
+        }
+      ],
+      "finishedAt": "2026-10-15T11:55:30.346Z"
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-moscow-center",
+      "startedAt": "2026-10-15T11:55:30.348Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-55-57-758Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/2026-10-15T11-55-57-645Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-55-58-348Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-55-58-875Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        }
+      ],
+      "finishedAt": "2026-10-15T11:55:58.894Z"
+    },
+    {
+      "caseId": "kherson-раденск-moscow-center",
+      "startedAt": "2026-10-15T11:55:58.895Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-25-468Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/2026-10-15T11-56-25-327Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-56-26-023Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-56-26-550Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        }
+      ],
+      "finishedAt": "2026-10-15T11:56:26.562Z"
+    },
+    {
+      "caseId": "dnr-гранитное-saint-petersburg-center",
+      "startedAt": "2026-10-15T11:56:26.564Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-166Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-676Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-56-57-189Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, zsd",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "finishedAt": "2026-10-15T11:56:57.207Z"
+    },
+    {
+      "caseId": "lnr-брянка-saint-petersburg-center",
+      "startedAt": "2026-10-15T11:56:57.208Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-57-59-745Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/2026-10-15T11-57-59-642Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-58-00-294Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-58-00-835Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, zsd",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 880,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "finishedAt": "2026-10-15T11:58:00.852Z"
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-saint-petersburg-center",
+      "startedAt": "2026-10-15T11:58:00.854Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-58-33-488Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T11-58-33-357Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-58-34-133Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-58-34-722Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-15T11:58:34.748Z"
+    },
+    {
+      "caseId": "kherson-раденск-saint-petersburg-center",
+      "startedAt": "2026-10-15T11:58:34.749Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-59-10-667Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/2026-10-15T11-59-10-514Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T11-59-11-348Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T11-59-11-975Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-15T11:59:11.994Z"
+    },
+    {
+      "caseId": "dnr-гранитное-kazan-center",
+      "startedAt": "2026-10-15T11:59:11.995Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-00-533Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-00-01-050Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-00-01-515Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        }
+      ],
+      "finishedAt": "2026-10-15T12:00:01.526Z"
+    },
+    {
+      "caseId": "lnr-брянка-kazan-center",
+      "startedAt": "2026-10-15T12:00:01.528Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-26-476Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/2026-10-15T12-00-26-371Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-00-26-921Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-00-27-371Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 850,
+        "weekdayAmount": 850,
+        "weekendAmount": 850,
+        "period": "все дни",
+        "segments": [
+          "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 850,
+        "weekdayAmount": 850,
+        "weekendAmount": 850,
+        "period": "все дни",
+        "segments": [
+          "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m12",
+          "amount": 850,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:00:27.384Z"
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-kazan-center",
+      "startedAt": "2026-10-15T12:00:27.385Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-57-490Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/2026-10-15T12-00-57-345Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-00-58-072Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-00-58-638Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m12",
+          "amount": 850,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:00:58.662Z"
+    },
+    {
+      "caseId": "kherson-раденск-kazan-center",
+      "startedAt": "2026-10-15T12:00:58.664Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-39-761Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/2026-10-15T12-01-39-614Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-01-40-316Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-01-40-892Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m12",
+          "amount": 850,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:01:40.906Z"
+    },
+    {
+      "caseId": "dnr-гранитное-kerch-center",
+      "startedAt": "2026-10-15T12:01:40.909Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-53-490Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kerch-center/2026-10-15T12-01-53-430Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-01-53-950Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-01-54-351Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 1650,
+        "weekdayAmount": 1650,
+        "weekendAmount": 1800,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 1800,
+        "weekdayAmount": 1650,
+        "weekendAmount": 1800,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 850,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "a289",
+          "amount": 800,
+          "reason": "A-289 selected-route OD vector"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:01:54.365Z"
+    },
+    {
+      "caseId": "lnr-брянка-kerch-center",
+      "startedAt": "2026-10-15T12:01:54.368Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-15-442Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kerch-center/2026-10-15T12-02-15-379Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-15-866Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-16-291Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 2030,
+        "weekdayAmount": 2030,
+        "weekendAmount": 2250,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-1046 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 2250,
+        "weekdayAmount": 2030,
+        "weekendAmount": 2250,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-1046 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 1230,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "a289",
+          "amount": 800,
+          "reason": "A-289 selected-route OD vector"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:02:16.307Z"
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-kerch-center",
+      "startedAt": "2026-10-15T12:02:16.309Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-182Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kerch-center/2026-10-15T12-02-34-144Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-34-734Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-35-215Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "понедельник–четверг",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "weekend": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "пятница–воскресенье",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "components": [],
+      "finishedAt": "2026-10-15T12:02:35.235Z"
+    },
+    {
+      "caseId": "kherson-раденск-kerch-center",
+      "startedAt": "2026-10-15T12:02:35.237Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-02-49-131Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kerch-center/2026-10-15T12-02-49-106Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-02-49-470Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-02-49-803Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "понедельник–четверг",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "weekend": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "пятница–воскресенье",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "components": [],
+      "finishedAt": "2026-10-15T12:02:49.816Z"
+    },
+    {
+      "caseId": "dnr-широкино-moscow-center",
+      "startedAt": "2026-10-15T12:02:49.817Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-07-092Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/2026-10-15T12-03-07-004Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-07-608Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-08-132Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": 4640,
+        "weekdayAmount": 3810,
+        "weekendAmount": 4640,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:03:08.150Z"
+    },
+    {
+      "caseId": "lnr-лисичанск-moscow-center",
+      "startedAt": "2026-10-15T12:03:08.152Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/2026-10-15T12-03-20-913Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-21-427Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-21-896Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:03:21.910Z"
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-moscow-center",
+      "startedAt": "2026-10-15T12:03:21.912Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-45-504Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T12-03-45-382Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-03-46-143Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-03-46-753Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:03:46.772Z"
+    },
+    {
+      "caseId": "kherson-чулаковка-moscow-center",
+      "startedAt": "2026-10-15T12:03:46.774Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-248Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/2026-10-15T12-04-20-103Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-868Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-04-21-479Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:04:21.497Z"
+    },
+    {
+      "caseId": "dnr-широкино-saint-petersburg-center",
+      "startedAt": "2026-10-15T12:04:21.499Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-360Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/2026-10-15T12-04-54-252Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-878Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-04-55-393Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": 10494,
+        "weekdayAmount": 9234,
+        "weekendAmount": 10884,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-911 → m4-71 · Стоимость не подтверждена",
+          "М-11 15–58: moscow → solnechnogorsk: 1260 ₽ · Стоимость не подтверждена",
+          "М-11: p58 → p679 · Стоимость не подтверждена",
+          "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+          "ЗСД: тарифная зона 1 · 300 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:04:55.409Z"
+    },
+    {
+      "caseId": "lnr-лисичанск-saint-petersburg-center",
+      "startedAt": "2026-10-15T12:04:55.412Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-23-523Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-saint-petersburg-center/2026-10-15T12-05-23-413Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-05-24-017Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-05-24-545Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, zsd",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 880,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:05:24.565Z"
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
+      "startedAt": "2026-10-15T12:05:24.567Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-05-57-495Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T12-05-57-340Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-05-58-124Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-05-58-789Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:05:58.811Z"
+    },
+    {
+      "caseId": "kherson-чулаковка-saint-petersburg-center",
+      "startedAt": "2026-10-15T12:05:58.813Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-07-35-633Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/2026-10-15T12-07-35-510Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-07-36-306Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-07-36-968Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:07:36.991Z"
+    },
+    {
+      "caseId": "dnr-широкино-kazan-center",
+      "startedAt": "2026-10-15T12:07:36.992Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-35-550Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/2026-10-15T12-08-35-445Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-08-35-992Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-08-36-448Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        }
+      ],
+      "finishedAt": "2026-10-15T12:08:36.460Z"
+    },
+    {
+      "caseId": "lnr-лисичанск-kazan-center",
+      "startedAt": "2026-10-15T12:08:36.464Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-59-040Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kazan-center/2026-10-15T12-08-58-924Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-08-59-577Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-09-00-109Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 850,
+        "weekdayAmount": 850,
+        "weekendAmount": 850,
+        "period": "все дни",
+        "segments": [
+          "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 850,
+        "weekdayAmount": 850,
+        "weekendAmount": 850,
+        "period": "все дни",
+        "segments": [
+          "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m12",
+          "amount": 850,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:09:00.124Z"
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-kazan-center",
+      "startedAt": "2026-10-15T12:09:00.126Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-28-751Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/2026-10-15T12-09-28-553Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-09-29-577Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-09-30-280Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m12",
+          "amount": 850,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:09:30.303Z"
+    },
+    {
+      "caseId": "kherson-чулаковка-kazan-center",
+      "startedAt": "2026-10-15T12:09:30.306Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-128Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/2026-10-15T12-09-56-015Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-755Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-09-57-348Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m12",
+          "amount": 850,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:09:57.367Z"
+    },
+    {
+      "caseId": "dnr-широкино-kerch-center",
+      "startedAt": "2026-10-15T12:09:57.369Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-27-024Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kerch-center/2026-10-15T12-10-26-967Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-10-27-411Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-10-27-798Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 1650,
+        "weekdayAmount": 1650,
+        "weekendAmount": 1800,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 1800,
+        "weekdayAmount": 1650,
+        "weekendAmount": 1800,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 850,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "a289",
+          "amount": 800,
+          "reason": "A-289 selected-route OD vector"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:10:27.810Z"
+    },
+    {
+      "caseId": "lnr-лисичанск-kerch-center",
+      "startedAt": "2026-10-15T12:10:27.811Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-39-620Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-kerch-center/2026-10-15T12-10-39-555Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-10-40-022Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-10-40-432Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 2030,
+        "weekdayAmount": 2030,
+        "weekendAmount": 2250,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-1046 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 2250,
+        "weekdayAmount": 2030,
+        "weekendAmount": 2250,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-1046 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 1230,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "a289",
+          "amount": 800,
+          "reason": "A-289 selected-route OD vector"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:10:40.447Z"
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-kerch-center",
+      "startedAt": "2026-10-15T12:10:40.449Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-10-58-687Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kerch-center/2026-10-15T12-10-58-661Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-10-59-037Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-10-59-451Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "понедельник–четверг",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "weekend": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "пятница–воскресенье",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "components": [],
+      "finishedAt": "2026-10-15T12:10:59.463Z"
+    },
+    {
+      "caseId": "kherson-чулаковка-kerch-center",
+      "startedAt": "2026-10-15T12:10:59.465Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-11-17-312Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kerch-center/2026-10-15T12-11-17-292Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-11-17-730Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-11-18-052Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "понедельник–четверг",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "weekend": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "пятница–воскресенье",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "components": [],
+      "finishedAt": "2026-10-15T12:11:18.066Z"
+    },
+    {
+      "caseId": "dnr-урзуф-moscow-center",
+      "startedAt": "2026-10-15T12:11:18.069Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-12-21-839Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/2026-10-15T12-12-21-705Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-12-22-404Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-12-22-966Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:12:22.996Z"
+    },
+    {
+      "caseId": "lnr-рубежное-moscow-center",
+      "startedAt": "2026-10-15T12:12:22.997Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-00-615Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-moscow-center/2026-10-15T12-13-00-527Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-13-01-162Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-13-01-669Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:13:01.687Z"
+    },
+    {
+      "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+      "startedAt": "2026-10-15T12:13:01.689Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-13-26-622Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-moscow-center/2026-10-15T12-13-26-505Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-13-27-132Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-13-27-604Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": 4640,
+        "weekdayAmount": 3810,
+        "weekendAmount": 4640,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:13:27.618Z"
+    },
+    {
+      "caseId": "kherson-старая-збурьевка-moscow-center",
+      "startedAt": "2026-10-15T12:13:27.622Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-222Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/2026-10-15T12-14-47-097Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-782Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-14-48-330Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:14:48.363Z"
+    },
+    {
+      "caseId": "dnr-урзуф-saint-petersburg-center",
+      "startedAt": "2026-10-15T12:14:48.366Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-15-30-684Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/2026-10-15T12-15-30-557Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-15-31-442Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-15-32-276Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:15:32.295Z"
+    },
+    {
+      "caseId": "lnr-рубежное-saint-petersburg-center",
+      "startedAt": "2026-10-15T12:15:32.299Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-05-835Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-рубежное-saint-petersburg-center/2026-10-15T12-16-05-719Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-16-06-407Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-16-06-901Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, zsd",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 880,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:16:06.916Z"
+    },
+    {
+      "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+      "startedAt": "2026-10-15T12:16:06.919Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-313Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-saint-petersburg-center/2026-10-15T12-16-40-184Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-16-40-899Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-16-41-500Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, zsd",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:16:41.526Z"
+    },
+    {
+      "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+      "startedAt": "2026-10-15T12:16:41.528Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-17-15-859Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/2026-10-15T12-17-15-705Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T12-17-16-570Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T12-17-17-284Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4, a289",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_exit_payment"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-15T12:17:17.316Z"
+    }
+  ],
+  "finishedAt": "2026-10-15T12:17:17.318Z"
+}

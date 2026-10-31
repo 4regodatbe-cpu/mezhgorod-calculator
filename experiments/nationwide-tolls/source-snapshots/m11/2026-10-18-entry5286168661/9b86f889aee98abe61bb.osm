@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (64378 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="5286168661" visible="true" version="3" changeset="79971695" timestamp="2020-01-23T11:22:32Z" user="OrionX" uid="388977" lat="56.9836706" lon="35.4302054">
+  <tag k="barrier" v="toll_booth"/>
+  <tag k="fee" v="yes"/>
+  <tag k="maxwidth" v="6 m"/>
+  <tag k="payment:cash" v="yes"/>
+  <tag k="payment:mastercard" v="yes"/>
+  <tag k="payment:visa" v="yes"/>
+ </node>
+ <node id="7153719524" visible="true" version="1" changeset="79971695" timestamp="2020-01-23T11:22:32Z" user="OrionX" uid="388977" lat="56.9836953" lon="35.4303854"/>
+ <node id="7153719525" visible="true" version="1" changeset="79971695" timestamp="2020-01-23T11:22:32Z" user="OrionX" uid="388977" lat="56.9836454" lon="35.4300285"/>
+ <way id="766468434" visible="true" version="1" changeset="80069412" timestamp="2020-01-25T12:12:06Z" user="OrionX" uid="388977">
+  <nd ref="7153719524"/>
+  <nd ref="5286168661"/>
+  <nd ref="7153719525"/>
+  <tag k="covered" v="yes"/>
+  <tag k="destination" v="Москва"/>
+  <tag k="destination:ref" v="М-11"/>
+  <tag k="highway" v="primary_link"/>
+  <tag k="oneway" v="yes"/>
+ </way>
+</osm>

@@ -1,6 +1,9 @@
 import {deriveM12FromOsrm} from "@/lib/toll-engine/m12-osrm-span";
 import { safeRoutePositions } from "@/lib/safe-route";
+import { roadBoundariesFromOsrm, roadBoundariesFromValhalla, type RoadBoundaryResolution } from "@/lib/toll-engine/road-boundaries";
 import type { Coordinate } from "@/lib/tolls";
+import { readLimitedProviderJson } from "@/lib/limited-provider-json";
+import { requireProviderRouteGeometry } from "@/lib/provider-route-geometry";
 import { deriveM11EvidenceFromValhalla, deriveM11EvidenceFromOsrm, type M11OsrmStep, type M11RoadEvidence, type M11ValhallaManeuver } from "@/lib/toll-engine/m11-road-evidence";
 import { deriveStrictM12Span, type M12StrictRouteSpan } from "@/lib/toll-engine/m12-valhalla-span";
 
@@ -15,16 +18,34 @@ export type RouteWithGeometry = RouteSummary & {
   m12Candidate?: boolean;
   m12SpanReason?: string | null;
   m11RoadEvidence?: M11RoadEvidence | null;
+  m4RoadBoundaries?: RoadBoundaryResolution;
 };
 
-export async function geocode(point: Point): Promise<Located> {
+function providerSignal(callerSignal?: AbortSignal): AbortSignal {
+  callerSignal?.throwIfAborted();
+  const deadline=AbortSignal.timeout(25_000);
+  return callerSignal?AbortSignal.any([callerSignal,deadline]):deadline;
+}
+
+export async function geocode(point: Point, callerSignal?: AbortSignal): Promise<Located> {
+  callerSignal?.throwIfAborted();
   if (point.position) return { label: point.label, position: point.position };
   const url = new URL("https://photon.komoot.io/api/");
   url.searchParams.set("q", point.label);
   url.searchParams.set("limit", "1");
-  const response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" } });
+  const signal = providerSignal(callerSignal);
+  let response: Response;
+  try {
+    response = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" }, signal });
+  } catch (error) {
+    if (signal.aborted) throw new Error("GEOCODE_UNAVAILABLE");
+    throw error;
+  }
   if (!response.ok) throw new Error("GEOCODE_UNAVAILABLE");
-  const data = (await response.json()) as { features?: Array<{ geometry?: { coordinates?: Coordinate }; properties?: Record<string, string | undefined> }> };
+  const data = (await response.json().catch((error: unknown) => {
+    if (signal.aborted) throw new Error("GEOCODE_UNAVAILABLE");
+    throw error;
+  })) as { features?: Array<{ geometry?: { coordinates?: Coordinate }; properties?: Record<string, string | undefined> }> };
   const item = data.features?.[0];
   const coordinates = item?.geometry?.coordinates;
   if (!coordinates) throw new Error("ADDRESS_NOT_FOUND");
@@ -62,7 +83,7 @@ function decodePolyline(encoded: string, precision = 6): Coordinate[] {
   return coordinates;
 }
 
-export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, positions = safeRoutePositions(from, to), tollBoothPenalty = 0): Promise<RouteWithGeometry> {
+export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, positions = safeRoutePositions(from, to), tollBoothPenalty = 0, callerSignal?: AbortSignal): Promise<RouteWithGeometry> {
   const url = new URL("https://valhalla1.openstreetmap.de/route");
   const query = {
     locations: positions.map((point) => ({ lat: point.lat, lon: point.lng, type: "break" })),
@@ -79,15 +100,15 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
-    signal: AbortSignal.timeout(25_000),
+    signal: providerSignal(callerSignal),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as {
+  const data = await readLimitedProviderJson<{
     trip?: {
       summary?: { length?: number; time?: number };
       legs?: Array<{ summary?: { length?: number; time?: number }; shape?: string; maneuvers?: M11ValhallaManeuver[] }>;
     };
-  };
+  }>(response);
   const summary = data.trip?.summary;
   if (!summary?.length || !summary.time) throw new Error("ROUTE_NOT_FOUND");
   const decodedLegs = (data.trip?.legs ?? []).map((item) => ({
@@ -97,6 +118,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
     seconds: Number(item.summary?.time),
   }));
   const coordinates = decodedLegs.flatMap((item) => item.coordinates);
+  requireProviderRouteGeometry(coordinates);
   const m12StrictSpan = useTolls === 1 ? deriveStrictM12Span(decodedLegs) : null;
   const m11RoadEvidence = useTolls === 1 ? deriveM11EvidenceFromValhalla(decodedLegs) : null;
   return {
@@ -107,10 +129,11 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
     m12StrictSpan,
     m12EndpointSpan: useTolls === 1 ? deriveStrictM12Span(decodedLegs, true) : null,
     m11RoadEvidence,
+    m4RoadBoundaries: roadBoundariesFromValhalla(decodedLegs),
   };
 }
 
-async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, positions = safeRoutePositions(from, to)): Promise<RouteWithGeometry> {
+async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal): Promise<RouteWithGeometry> {
   const url = new URL("https://brouter.de/brouter");
   url.searchParams.set("lonlats", positions.map((point) => `${point.lng},${point.lat}`).join("|"));
   url.searchParams.set("profile", "car-vario");
@@ -121,32 +144,34 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, pos
     headers: { Accept: "application/geo+json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
-    signal: AbortSignal.timeout(25_000),
+    signal: providerSignal(callerSignal),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as {
+  const data = await readLimitedProviderJson<{
     features?: Array<{
       properties?: { "track-length"?: string | number; "total-time"?: string | number };
       geometry?: { coordinates?: Coordinate[] };
     }>;
-  };
+  }>(response);
   const feature = data.features?.[0];
   const properties = feature?.properties;
   const meters = Number(properties?.["track-length"]);
   const seconds = Number(properties?.["total-time"]);
   if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new Error("ROUTE_NOT_FOUND");
-  return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates: feature?.geometry?.coordinates ?? [] };
+  const coordinates = feature?.geometry?.coordinates;
+  requireProviderRouteGeometry(coordinates);
+  return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates };
 }
 
-export function brouterFree(from: Located, to: Located, positions = safeRoutePositions(from, to)) {
-  return brouterRoute(from, to, true, positions);
+export function brouterFree(from: Located, to: Located, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal) {
+  return brouterRoute(from, to, true, positions, callerSignal);
 }
 
-export function brouterFast(from: Located, to: Located, positions = safeRoutePositions(from, to)) {
-  return brouterRoute(from, to, false, positions);
+export function brouterFast(from: Located, to: Located, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal) {
+  return brouterRoute(from, to, false, positions, callerSignal);
 }
 
-export async function osrmRoute(from: Located, to: Located, positions = safeRoutePositions(from, to)): Promise<RouteWithGeometry> {
+export async function osrmRoute(from: Located, to: Located, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal): Promise<RouteWithGeometry> {
   const path = positions.map((point) => `${point.lng},${point.lat}`).join(";");
   const url = new URL(`https://router.project-osrm.org/route/v1/driving/${path}`);
   url.searchParams.set("overview", "full");
@@ -156,12 +181,14 @@ export async function osrmRoute(from: Located, to: Located, positions = safeRout
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
-    signal: AbortSignal.timeout(25_000),
+    signal: providerSignal(callerSignal),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = (await response.json()) as { routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> };
+  const data = await readLimitedProviderJson<{ routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> }>(response);
   const route = data.routes?.[0];
   if (!route?.distance || !route.duration) throw new Error("ROUTE_NOT_FOUND");
+  const coordinates = route.geometry?.coordinates;
+  requireProviderRouteGeometry(coordinates);
   const m12 = deriveM12FromOsrm(route.legs ?? [], route.geometry?.coordinates ?? []);
-  return { m12EndpointSpan:m12.endpointSpan,m12StrictSpan:m12.span,m12Candidate:m12.candidate,m12SpanReason:m12.reason,m11RoadEvidence: deriveM11EvidenceFromOsrm(route.legs ?? []), meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates: route.geometry?.coordinates ?? [] as Coordinate[], legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
+  return { m4RoadBoundaries:roadBoundariesFromOsrm(route.legs ?? [], coordinates), m12EndpointSpan:m12.endpointSpan,m12StrictSpan:m12.span,m12Candidate:m12.candidate,m12SpanReason:m12.reason,m11RoadEvidence: deriveM11EvidenceFromOsrm(route.legs ?? []), meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates, legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
 }

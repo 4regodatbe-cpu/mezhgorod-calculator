@@ -25,7 +25,13 @@ test('M11 local Moscow Friday profile, missing/expired/profile-transition/mixed 
 test('M11 geometry adapter prices both independent products from matrix, ignores native money',()=>{
  const parts={headAmount:100,headWeekday:100,headWeekend:200,head:{from:'solnechnogorsk',to:'moscow',paymentAt:date,paymentWindowSeconds:0},from:'p147',to:'p58',mainlineAt:date};
  const direct=matrixM11Component(m11('p147','p58'),date,0);
- assert.equal(matrixM11GeometryComponent({exact:true,parts}).tolls.amount,direct.tolls.amount+1130);
+ const combined=matrixM11GeometryComponent({exact:true,parts});
+ assert.deepEqual(combined.components.map(c=>c.id),['m11-15-58','m11-58-679']);
+ assert.equal(combined.components.reduce((sum,c)=>sum+c.tolls.amount,0),combined.tolls.amount);
+ assert.equal(combined.tolls.amount,direct.tolls.amount+1130);
+ const unresolvedHead=matrixM11GeometryComponent({exact:true,parts:{...parts,head:null,headDetected:true}});
+ assert.equal(unresolvedHead.tolls,null);
+ assert.equal(unresolvedHead.components[0].tolls,null);
  assert.equal(matrixM11GeometryComponent({exact:true,parts:{...parts,to:'missing'}}).tolls,null);
 });
 test('CKAD direct matrix uses actual direction and date, no guessed section sum',()=>{

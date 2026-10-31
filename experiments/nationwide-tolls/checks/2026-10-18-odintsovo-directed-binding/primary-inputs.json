@@ -1,0 +1,17 @@
+{
+  "status": "STARTED_AFTER_DURABLE_SAVE",
+  "sourceHead": "e3d1d050d5f1fda1c8a3cb0ccf3e5647e3ca902e",
+  "requests": [
+    "https://www.openstreetmap.org/api/0.6/way/1067836106/full",
+    "https://www.openstreetmap.org/api/0.6/way/374972862/full",
+    "https://www.openstreetmap.org/api/0.6/way/374972870/full",
+    "https://www.openstreetmap.org/api/0.6/way/1067836109/full"
+  ],
+  "maxRequests": 4,
+  "timeoutEachSeconds": 15,
+  "totalSeconds": 60,
+  "retry": false,
+  "circuitBreakOnTransportFailure": true,
+  "newRoutingOrTrace": false,
+  "recovery": "Continue only missing responses; preserve body/status/sha per response. Do not repeat saved200."
+}

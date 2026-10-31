@@ -1,0 +1,12 @@
+{
+  "purpose": "one exact saved BRouter URL; historic400 body missing",
+  "url": "https://brouter.de/brouter?lonlats=37.61781%2C55.75204%7C30.31413%2C59.93863&profile=car-vario&alternativeidx=0&format=geojson",
+  "historicHttpStatus": 400,
+  "startedAt": "2026-10-29T16:46:17.380Z",
+  "httpStatus": 400,
+  "bytes": 25,
+  "sha256": "8ad91f34168ca1c21811e27e0e5fd5b8b631d041d61bcb2eaccb7a9bc332962c",
+  "contentType": "text/plain; charset=utf-8",
+  "file": "brouter-current.body",
+  "elapsedMs": 941
+}

@@ -1,0 +1,53 @@
+{
+  "status": "SOURCE_POINT_COUNTS_ONLY",
+  "records": 221512,
+  "counts": {
+    "other-RU": 189037,
+    "crimea": 1081,
+    "dnr": 1595,
+    "outside-priority-UA": 26296,
+    "kherson": 956,
+    "zaporizhzhia": 1218,
+    "lnr": 1329
+  },
+  "bySourceCountry": {
+    "RU": 189041,
+    "UA": 32471
+  },
+  "qualityByRegion": {
+    "other-RU": {
+      "ru_name_unverified": 24897,
+      "admin_binding_missing": 453,
+      "admin_ru_unverified": 37
+    },
+    "crimea": {
+      "admin_ru_unverified": 236,
+      "admin_binding_missing": 47,
+      "ru_name_unverified": 10
+    },
+    "dnr": {
+      "admin_ru_unverified": 1590,
+      "ru_name_unverified": 9
+    },
+    "outside-priority-UA": {
+      "admin_ru_unverified": 26011,
+      "ru_name_unverified": 101,
+      "admin_binding_missing": 24
+    },
+    "kherson": {
+      "admin_ru_unverified": 948,
+      "ru_name_unverified": 6
+    },
+    "zaporizhzhia": {
+      "admin_ru_unverified": 1200,
+      "ru_name_unverified": 8
+    },
+    "lnr": {
+      "admin_ru_unverified": 1325,
+      "ru_name_unverified": 12
+    }
+  },
+  "elapsedMs": 1304.2154549999998,
+  "independentlyComplete": false,
+  "coordinateAccuracyVerified": false
+}

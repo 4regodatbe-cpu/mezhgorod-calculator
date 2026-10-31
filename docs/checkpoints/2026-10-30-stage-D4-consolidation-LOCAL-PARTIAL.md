@@ -1,0 +1,23 @@
+# D4 — consolidation complete / one local fix, five material operator gaps
+
+30.10.2026 MSK; parent `2208cb93bdc5f6f5e628e42b85f3523e43566361`. [Final Stage D report/table](../../experiments/address-search/STAGE_D_CONSOLIDATION.md), [short index](../../experiments/address-search/STAGE_D.md), [artifact manifest](../../experiments/address-search/2026-10-30-stage-d/final-review.json).
+
+## Outcomes
+
+D1 FIXED_AND_VERIFIED_LOCAL: unpunctuated explicit city/region street context retained; incompatible streets excluded from ranking, original admitted city remains selectable if street is not confirmed. Generic parser/membership rules, no Donetsk exception or invented street point. Actual saved wrong-Rostov response + local GET/admitted GeoNames returns ДНР city/unconfirmed street. This is controlled reproducibility, **not** live Preview verification. Runtime `ae5203df`; all later D2–D4 changes are source research/docs/evidence, not application behavior.
+
+D2 bounded new M4 primary research completed, underlying exact km/product/pair BLOCKED. D3 four bounded cases recorded: M11 supplementary original200/9,573,142bytes/SHA preserved, no complete virtual58 binding; M12 new lead403/no original, CKAD/ZSD no resolving new primary product. **Five material operator gaps remain**; no newly admitted tariff, pair or price. Existing ZSD600 and other confirmed outputs are not withdrawn. Latest retained official prices/rules remain applicable; no age-only/lane-certificate blocker added. No repeat of the Stage C audit or saved routes.
+
+## Checks actually performed
+
+- D1: new8 before0PASS/8FAIL; after26focusedPASS; mandatory offline1047PASS/0FAIL/1SKIP, quote/API contractsPASS; project/new-test TypeScriptPASS; scoped ESLint0errors/1oldwarning; Next16.3.4 direct webpack buildPASS/Node24.19.0. Exact logs and limitations in D1 checkpoint. Not rerun during D2–D4.
+- `git diff --quiet ae5203df HEAD -- app lib data public package.json pnpm-lock.yaml next.config.ts tsconfig.json scripts`: exit0 before this documentary consolidation. Application bytes remain those gated in D1. Compared to StageC only three intended runtime files changed: address-query, photon-address-search, suggest route; no road/tariff/CI/Android changes.
+- `node experiments/address-search/2026-10-30-stage-d/verify-evidence.mjs`: final exit0, **8 saved-evidence integrity checks PASS**, hashes/byte counts recorded. It does not execute the app, provider or routing engine. Initial exit1 from the verifier reading the wrong M11 ledger status path was corrected; [failure record](../../experiments/address-search/2026-10-30-stage-d/verifier-initial-failure.md). No application failure inferred or assertion weakened.
+- Scoped ESLint of the new metadata verifier: exit0, no warnings. Link/content and scoped source/doc whitespace checks performed before final local commit. Default raw-artifact whitespace checks returned2: HTTP CRLF/header terminator and existing negative-test/build/lint terminal whitespace (`m11-new-scheme.headers`, `d1-before.log`, `d1-build.log`, `d1-eslint.log`). These original evidence bytes are preserved and hash-verified, not silently normalized. No claim of a warning-free default raw-byte whitespace check; source/document/config checks are separate. No CI or application test changed to accommodate log formatting.
+- GitHub Connector final readback: head `c2f52ee93cd98a81ecd05efa0358fb38c6704124`, permitted branch, PR14 open/Draft/unmerged. No GitHub write or new Actions triggered. Existing published live Photon failure is not retested or claimed fixed by D1.
+
+## Preservation and remaining work
+
+Local commits preserve StageC/A+B notes and D1–D4 evidence. The existing isolated checkout remains detached on permitted-branch ancestry; no main/other branch switch, reset, rebase or history rewrite. A portable local Git bundle and its SHA are verified after this final checkpoint commit and reported with the final local HEAD; all original working copies remain intact. Temporary dependency symlink may be unlinked only if its exact known target is unchanged; shared dependency files are not removed.
+
+No push authorization; no push, Preview/Production deployment, CI config change, share link, new route/GeoNames audit, main/Android/backup modification, merge or force operation. D1 not yet hosted. Next: separate approval for publication of the reviewed local changes and exact authorized Preview acceptance; for roads, obtain the precise primary crosswalk/collection documents in the table. Do not repeat unchanged failed searches or assign convenient km/price/zero. StageD is **LOCAL-PARTIAL**, not functional completion of all B01–B12.

@@ -153,7 +153,7 @@ export function PriceRows({
           </article>
         );
       })}
-      {tollPrice.amount === null && <p className="px-1 text-xs leading-snug text-brand-muted">Плата за дороги не подтверждена; суммы указаны без неё.</p>}
+      {tollPrice.amount === null && <p className="px-1 text-xs leading-snug text-brand-muted">Стоимость платных дорог неизвестна; итог указан без неё.</p>}
     </div>
   );
 }

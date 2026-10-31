@@ -1,0 +1,329 @@
+{
+  "environment": {
+    "startedAt": "2026-10-26T14:53:52.797Z",
+    "runnerOs": "Linux",
+    "node": "v24.21.0",
+    "chrome": "156.0.8078.47",
+    "commit": "b0fc3deb311d49f9bac3dd0bb7d33345ac58bb0b",
+    "viewportSet": [
+      {
+        "width": 1280,
+        "height": 900
+      },
+      {
+        "width": 320,
+        "height": 720
+      }
+    ],
+    "snapshotId": "positive-cities-2026-10-24",
+    "snapshotExpiresAt": "2026-10-31T08:24:54Z",
+    "snapshotRecordsSha256": "98f0b3aff117d77525bcba9d65c4d507b1a29d540e0c9fdf553e5fb9494b2933",
+    "snapshotRecordsHashVerified": true,
+    "browserVersion": "156.0.8078.47"
+  },
+  "results": [
+    {
+      "id": "01-donetsk-disambiguation",
+      "name": "Two distinct Donetsk results in A; no auto-selection, notice and OSM attribution",
+      "status": "PASS",
+      "startedAt": "2026-10-26T14:53:53.293Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 3,
+      "addressRequestCount": 1,
+      "blockedExternalRequestCount": 0,
+      "evidence": [],
+      "actual": {
+        "suggestionCount": 2,
+        "suggestionTexts": [
+          "Донецк — ДНРДонецк — ДНР",
+          "ДонецкДонецк, Ростовская область, Россия"
+        ],
+        "inputValue": "Донецк",
+        "noticeCount": 1,
+        "creditHref": "https://www.openstreetmap.org/copyright",
+        "creditCount": 1
+      },
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:53:54.290Z"
+    },
+    {
+      "id": "02-select-a-and-b",
+      "name": "Select exact fallback items in both fields and retain source metadata/positions",
+      "status": "PASS",
+      "startedAt": "2026-10-26T14:53:54.297Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 8,
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0,
+      "evidence": [],
+      "actual": {
+        "selectedA": "Донецк — ДНР",
+        "selectedB": "Донецк, Ростовская область, Россия",
+        "addressSources": [
+          "reviewed_city_snapshot",
+          "reviewed_city_snapshot"
+        ],
+        "positions": [
+          {
+            "lat": 48.0158753,
+            "lng": 37.8013407
+          },
+          {
+            "lat": 48.3382864,
+            "lng": 39.9509488
+          }
+        ],
+        "noticeCounts": [
+          1,
+          1
+        ]
+      },
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/api/v2/classify",
+        "/r",
+        "/api/v2/classify",
+        "/api/v2/calculate",
+        "/api/collect"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:53:55.790Z"
+    },
+    {
+      "id": "03-swap-and-reset",
+      "name": "Swap selected A/B values and source metadata; reset existing calculation result",
+      "status": "PASS",
+      "startedAt": "2026-10-26T14:53:55.879Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 9,
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0,
+      "evidence": [],
+      "actual": {
+        "resultVisibleBeforeSwap": 1,
+        "swapButtonCount": 1,
+        "valuesAfterSwap": [
+          "Донецк, Ростовская область, Россия",
+          "Донецк — ДНР"
+        ],
+        "noticesAfterSwap": [
+          1,
+          1
+        ],
+        "resultCountAfterSwap": 0
+      },
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/api/v2/classify",
+        "/r",
+        "/api/v2/classify",
+        "/api/v2/calculate",
+        "/api/collect",
+        "/api/v2/classify"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:53:58.310Z"
+    },
+    {
+      "id": "04-clear-and-replace-b",
+      "name": "Clear B and replace its city without stale items or source state",
+      "status": "PASS",
+      "startedAt": "2026-10-26T14:53:58.370Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 6,
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0,
+      "evidence": [],
+      "actual": {
+        "beforeReplacement": 1,
+        "afterNewQuery": 2,
+        "staleSuggestions": [
+          "Ростов-на-ДонуРостов-на-Дону, городской округ Ростов-на-Дону, Ростовская область, Россия"
+        ],
+        "selectedB": "Ростов-на-Дону, городской округ Ростов-на-Дону, Ростовская область, Россия",
+        "noticeAfterSelection": 1
+      },
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/api/v2/classify",
+        "/r",
+        "/api/v2/classify"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:53:59.853Z"
+    },
+    {
+      "id": "05-stale-response-race",
+      "name": "Delayed response for old B query cannot restore stale data after a new query",
+      "status": "PASS",
+      "startedAt": "2026-10-26T14:53:59.859Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 4,
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0,
+      "evidence": [],
+      "actual": {
+        "currentValue": "Краснодар",
+        "visibleSuggestions": [
+          "КраснодарКраснодар, городской округ Краснодар, Краснодарский край, Россия"
+        ],
+        "oldResponseArrivedAfterEdit": true,
+        "pageErrors": []
+      },
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/r"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:54:02.861Z"
+    },
+    {
+      "id": "06-normal-empty-error-retry",
+      "name": "Normal, empty, 502 and retry responses preserve correct UI state",
+      "status": "PASS",
+      "startedAt": "2026-10-26T14:54:02.867Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 6,
+      "addressRequestCount": 4,
+      "blockedExternalRequestCount": 0,
+      "evidence": [],
+      "actual": {
+        "selectableTitlesAfterFailure": [],
+        "retryVisible": true,
+        "requestCount": 4,
+        "requestsBeforeRetry": 3,
+        "emptyMessageVisible": true,
+        "retryResult": [
+          "МоскваМосква, Россия"
+        ],
+        "noticeCount": 0
+      },
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/r",
+        "/r",
+        "/r"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:54:05.097Z"
+    },
+    {
+      "id": "07-fallback-not-in-legacy-cache",
+      "name": "Fallback repeats a fresh request while ordinary positive cache remains effective",
+      "status": "PASS",
+      "startedAt": "2026-10-26T14:54:05.103Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 5,
+      "addressRequestCount": 3,
+      "blockedExternalRequestCount": 0,
+      "evidence": [],
+      "actual": {
+        "fallbackRequests": 2,
+        "ordinaryRequestsBeforePositiveCache": 3,
+        "requestsAfterCacheHit": 3,
+        "cachedSuggestions": [
+          "МоскваМосква, Россия"
+        ]
+      },
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/r",
+        "/r"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:54:07.653Z"
+    },
+    {
+      "id": "08-mobile-keyboard",
+      "name": "Narrow viewport, attribution, keyboard selection, clear and swap controls",
+      "status": "PASS",
+      "startedAt": "2026-10-26T14:54:07.659Z",
+      "viewport": {
+        "width": 320,
+        "height": 720
+      },
+      "requestCount": 4,
+      "addressRequestCount": 1,
+      "blockedExternalRequestCount": 0,
+      "evidence": [
+        {
+          "file": "08-mobile-keyboard-mobile.png",
+          "sha256": "7747fc84f94d2fd83e71cf9301994ce1176d746df78714900697d99b80056f24"
+        }
+      ],
+      "actual": {
+        "viewport": {
+          "width": 320,
+          "height": 720
+        },
+        "documentScrollWidth": 320,
+        "menuBounds": {
+          "x": 25,
+          "y": 474.5,
+          "width": 270,
+          "height": 122
+        },
+        "creditVisible": true,
+        "clearVisible": true,
+        "swapVisible": true,
+        "keyboardFocusedSuggestion": "Донецк — ДНРДонецк — ДНР",
+        "selectedByKeyboard": "Донецк — ДНР",
+        "noticeAfterKeyboardSelection": 1
+      },
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/api/v2/classify"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:54:08.715Z"
+    }
+  ]
+}

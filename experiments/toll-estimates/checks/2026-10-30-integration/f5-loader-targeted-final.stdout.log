@@ -1,0 +1,22 @@
+✔ unknown V2 amount renders base-only total without zero or complete-total claim (23.469531ms)
+✔ manual V2 amount computes a labeled total without claiming the total is uncalculated (2.982399ms)
+✔ late response ignoring abort cannot replace a newer calculation (155.085777ms)
+✔ reset and unmount prevent late response commitment (32.801059ms)
+✔ clipboard failure is handled and never reports success (26.095689ms)
+✔ clipboard contains the same actual toll and warning as the displayed quote (11.914734ms)
+✔ F5 clipboard appends a labelled estimate without substituting the strict transfer total (11.281243ms)
+✔ a late clipboard completion cannot mark a reset quote copied (24.248502ms)
+✔ unknown road charge preserves a calculated special fare in copied text (11.37767ms)
+✔ V3 preserves safe HTTP errors, hides unexpected network details, and permits retry (91.664439ms)
+✔ V3 rejects malformed successful JSON with a safe incomplete-route message (9.695608ms)
+✔ actual fastest result render preserves night price without confirmation notice (24.437732ms)
+✔ V3 shared fastest-route UI keeps unknown tolls base-only and never presents zero as total (2.708141ms)
+✔ fastest V3 keeps dual fare visible and permits an explicitly manual road total (10.299233ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1612.970761

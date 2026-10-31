@@ -1,0 +1,29 @@
+{
+  "tsc": {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exitCode": 0
+  },
+  "eslint": {
+    "command": [
+      "node",
+      "node_modules/eslint/bin/eslint.js",
+      "lib/v3-calculation/m11-p214-entry-boundary.ts",
+      "lib/v3-calculation/unpriced-road-coverage.ts",
+      "scripts/v3-m11-p214-orphan.test.ts",
+      "scripts/v3-m11-p214-moscow-head.test.ts"
+    ],
+    "exitCode": 0
+  },
+  "diff-check": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0
+  }
+}

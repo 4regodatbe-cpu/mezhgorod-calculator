@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1326 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <way id="305638466" visible="true" version="7" changeset="139821981" timestamp="2023-08-13T12:35:42Z" user="Vas111" uid="16951803">
+  <nd ref="9003331664"/>
+  <nd ref="318102363"/>
+  <nd ref="318102361"/>
+  <nd ref="933974855"/>
+  <nd ref="933975000"/>
+  <nd ref="318102359"/>
+  <nd ref="933974996"/>
+  <nd ref="933974907"/>
+  <nd ref="318102357"/>
+  <nd ref="933974952"/>
+  <nd ref="933974874"/>
+  <nd ref="318102355"/>
+  <nd ref="933975019"/>
+  <nd ref="7556482061"/>
+  <nd ref="318102352"/>
+  <nd ref="318102349"/>
+  <nd ref="1378698815"/>
+  <nd ref="967181004"/>
+  <nd ref="3789313436"/>
+  <tag k="foot" v="no"/>
+  <tag k="highway" v="primary_link"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="40"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="surface:grade" v="3"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="375574651" visible="true" version="5" changeset="109614004" timestamp="2021-08-13T08:32:21Z" user="mini-me" uid="3846961">
+  <nd ref="3789313436"/>
+  <nd ref="318102347"/>
+  <nd ref="3789313425"/>
+  <tag k="covered" v="yes"/>
+  <tag k="foot" v="no"/>
+  <tag k="highway" v="primary_link"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="40"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="source" v="survey"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="surface:grade" v="3"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="375574664" visible="true" version="1" changeset="34679485" timestamp="2015-10-16T17:09:03Z" user="paavolobja" uid="386821">
+  <nd ref="3789313438"/>
+  <nd ref="3789313436"/>
+  <nd ref="3789313433"/>
+  <nd ref="3789313430"/>
+  <nd ref="3789313423"/>
+  <nd ref="3789313424"/>
+  <nd ref="3789313425"/>
+  <nd ref="3789313427"/>
+  <nd ref="3789313438"/>
+  <tag k="building" v="roof"/>
+ </way>
+</osm>

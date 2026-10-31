@@ -1,0 +1,11 @@
+# Одинцово: retained provenance DONE / primary lanes STARTED
+
+18.10.2026. Source e3d1d050/tree928ed733, PR14draft, предыдущий codeCI39145260247 verify/live_probe success. Docs C commit без runs. Локальная ветка выровнена с exact remote tree без изменений рабочего дерева.
+
+Только точная выборка двух известных captures и трёх provenance файлов, без повторного route assessment/replay. Доказательство trace/traversal уже было сохранено ранее; здесь оно не засчитано заново. Извлечены направленные booth tuples: к Москве3109177688/1067836106 затем3783549013/374972862; от Москвы3783549015/374972870 затем3109177690/1067836109. Никаких цен к ним не назначено. Candidate имеет96 выбранных offline строк, runtimeApproved=false; FAQ route/PVP examples уже найдены, повторять поиск не нужно. В sourceSnapshots candidate нет отдельного локального Одинцовского source reference; точный текстовый поиск четырёх nodeIDs по retained source-snapshots вне исходных replay/live не нашёл первичных definitions. Это не доказательство отсутствия данных во всех архивах.
+
+Evidence: experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/retained-gap.json: точные inputs/SHA/booth order/missing proof. Нужна primary physical lane identity и независимое соответствие operator plaza, затем scope selected route. Одного имени М1/СОО недостаточно. Старая заметка candidate про per-crossing время не отменяет пользовательское правило дня старта. Тарифы/код не менялись; routeaudit/replay/network/tests0; известный отсутствующий файл SOURCE_AUDIT_2026-10-12.md не использован.
+
+STARTED следующий короткий source шаг: четыре точных OSM way/full для1067836106,374972862,374972870,1067836109. Inputs сохранены в primary-inputs.json. ≤4GET,15с каждый/60с всего, без retry; terminal transport failure останавливает проход. Raw/status/SHA/progress писать сразу. Полученные200 не повторять. Routing/trace/operatorprice sources0, не искать уже найденные тарифы. После получения — только lane definitions и направление; operator price binding пока не обещана. Затем отдельный DONE/BLOCKED commit/readback до независимого шага. Пока все неподтверждённые суммыnull; M1 и unknownpaidroad отдельно.
+
+NEXT после durable readback: исполнить четыре exactprimaryGET и сохранить bounded результат. Main/merge/Production/Android не менялись.

@@ -60,7 +60,7 @@ export default function V3Page() {
       <header className="mb-4 flex items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2.5">
           <a href="/v3" aria-label="из А в Б — калькулятор" className="shrink-0 rounded-xl bg-[#F7F4EE] p-1"><Image src="/izavb-approved-logo.svg" alt="из А в Б" width={136} height={60} priority /></a>
-          <div className="min-w-0"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><p className="text-xs font-semibold text-brand-muted">Калькулятор поездок · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">Версия 2</a><a href="/v3" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">V3 · один самый быстрый</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
+          <div className="min-w-0"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><p className="text-xs font-semibold text-brand-muted">Актуальный калькулятор · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">V2 · старый алгоритм</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
         </div>
         <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle /></div>
       </header>
@@ -92,7 +92,7 @@ export default function V3Page() {
         <ResultPanels result={result} standardLeg={standardLeg} standardHasTolls={standardHasTolls} standardOptimal={standardOptimal} manualToll={manualToll} onManualToll={setManualToll} copiedKey={copiedKey} copyStandard={copyStandard} tollPeriod={tollPeriod} onTollPeriodChange={setTollPeriod} fastestOnly/>
       </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2"><FeedbackForm/><DonationCard/></div>
-      <footer className="mx-auto mt-6 max-w-3xl pb-5 text-center text-xs leading-relaxed text-brand-muted"><p className="flex items-center justify-center gap-1.5"><ShieldCheck className="h-4 w-4"/>Расчёт справочный. Фактический маршрут и тарифы операторов дорог могут измениться.</p></footer>
+      <footer className="mx-auto mt-6 max-w-3xl pb-5 text-center text-xs leading-relaxed text-brand-muted"><p className="flex items-center justify-center gap-1.5"><ShieldCheck className="h-4 w-4"/>Расчёт справочный. Фактический маршрут и тарифы операторов дорог могут измениться.</p><p className="mt-2">Локальный справочник населённых пунктов: <a href="https://www.geonames.org/" className="underline">GeoNames</a>, <a href="https://creativecommons.org/licenses/by/4.0/" className="underline">CC BY 4.0</a>. Снимок 24.10.2026; данные отфильтрованы и проиндексированы. Координаты населённых пунктов не являются точными адресами.</p></footer>
     </div>
   </main>;
 }

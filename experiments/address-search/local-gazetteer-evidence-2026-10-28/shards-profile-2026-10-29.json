@@ -1,0 +1,1722 @@
+{
+  "status": "ISOLATED_PROTOTYPE_ONLY",
+  "runtimeApproved": false,
+  "node": "v24.19.0",
+  "manifestSha256": "3552688ee3201d6b21891544affaace2a78ad5e1104e7635313068f741131613",
+  "sourceDate": "2026-10-24",
+  "records": 221512,
+  "shards": 8383,
+  "compressedBytes": 21837205,
+  "maxShardRawBytes": 1527964,
+  "manifestMs": 14.721501000000018,
+  "peakObservedRss": 177119232,
+  "peakPostGcHeapDelta": 16698544,
+  "warmP50Ms": 0.2693649999999934,
+  "warmP95Ms": 145.74751700000002,
+  "networkCalls": 0,
+  "notes": "Fresh Node process; OS cache not flushed; cold means process-local shard load; post-GC observations are not instantaneous allocation peak or integrated Next memory.",
+  "stats": {
+    "residentShards": 1,
+    "pending": 0,
+    "loads": 16
+  },
+  "results": [
+    {
+      "query": "Доне",
+      "coldMs": 93.41220999999999,
+      "warmMs": [
+        2.038062999999994,
+        1.90689500000002,
+        1.919696999999985,
+        1.7709120000000098,
+        1.9842560000000162,
+        2.5278979999999933,
+        2.0398569999999836,
+        2.0613159999999766,
+        1.939200000000028,
+        1.7887590000000273
+      ],
+      "items": [
+        {
+          "id": "geonames-709717",
+          "title": "Донецк",
+          "label": "Донецк — ДНР — Донецкая область — Donetsk Raion — Donetska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 48.023,
+            "lng": 37.80224
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 709717,
+            "dump": "UA",
+            "line": 22467,
+            "modifiedAt": "2026-07-02",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 901645
+        },
+        {
+          "id": "geonames-709713",
+          "title": "Донецкий",
+          "label": "Донецкий — ЛНР — Luganskaya Oblast’ — Alchevskyi Raion — Kadiivska Terytorialna Hromada",
+          "region": "ЛНР",
+          "position": {
+            "lat": 48.6996,
+            "lng": 38.67627
+          },
+          "territory": "lnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 709713,
+            "dump": "UA",
+            "line": 22463,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 3509
+        },
+        {
+          "id": "geonames-709711",
+          "title": "Донецьке",
+          "label": "Донецьке — ДНР — Донецкая область — Kramatorskyi Raion — Mykolaivka Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 48.93347,
+            "lng": 37.69006
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 709711,
+            "dump": "UA",
+            "line": 22461,
+            "modifiedAt": "2026-09-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 0
+        },
+        {
+          "id": "geonames-709714",
+          "title": "Донецкий",
+          "label": "Донецкий — ДНР — Донецкая область — Donetsk Raion — Amvrosiivska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 47.71556,
+            "lng": 38.40889
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 709714,
+            "dump": "UA",
+            "line": 22464,
+            "modifiedAt": "2026-09-11",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 0
+        }
+      ],
+      "truncated": false,
+      "hasMore": true,
+      "matchingRecords": 21,
+      "heapUsed": 29772536,
+      "rss": 122519552
+    },
+    {
+      "query": "Донецк",
+      "coldMs": 6.061658999999963,
+      "warmMs": [
+        0.9933849999999893,
+        1.0817430000000172,
+        0.9748199999999656,
+        0.9533720000000017,
+        0.9397369999999796,
+        1.21781500000003,
+        0.9506789999999796,
+        0.9364370000000122,
+        0.9287620000000061,
+        0.9963940000000093
+      ],
+      "items": [
+        {
+          "id": "geonames-709717",
+          "title": "Донецк",
+          "label": "Донецк — ДНР — Донецкая область — Donetsk Raion — Donetska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 48.023,
+            "lng": 37.80224
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 709717,
+            "dump": "UA",
+            "line": 22467,
+            "modifiedAt": "2026-07-02",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 901645
+        },
+        {
+          "id": "geonames-565348",
+          "title": "Донецк",
+          "label": "Донецк — Ростовская Область",
+          "region": "Ростовская Область",
+          "position": {
+            "lat": 48.33711,
+            "lng": 39.95229
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 565348,
+            "dump": "RU",
+            "line": 104374,
+            "modifiedAt": "2026-07-13",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 50850
+        },
+        {
+          "id": "geonames-709713",
+          "title": "Донецкий",
+          "label": "Донецкий — ЛНР — Luganskaya Oblast’ — Alchevskyi Raion — Kadiivska Terytorialna Hromada",
+          "region": "ЛНР",
+          "position": {
+            "lat": 48.6996,
+            "lng": 38.67627
+          },
+          "territory": "lnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 709713,
+            "dump": "UA",
+            "line": 22463,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 3509
+        },
+        {
+          "id": "geonames-709714",
+          "title": "Донецкий",
+          "label": "Донецкий — ДНР — Донецкая область — Donetsk Raion — Amvrosiivska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 47.71556,
+            "lng": 38.40889
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 709714,
+            "dump": "UA",
+            "line": 22464,
+            "modifiedAt": "2026-09-11",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 0
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 10,
+      "heapUsed": 29768128,
+      "rss": 122519552
+    },
+    {
+      "query": "Донецк Ростовская область",
+      "coldMs": 1.853174000000024,
+      "warmMs": [
+        2.0817860000000223,
+        0.9651780000000372,
+        0.930780000000027,
+        1.0375689999999622,
+        1.0203910000000178,
+        0.9380009999999857,
+        1.121816000000024,
+        1.034029999999973,
+        1.0164679999999748,
+        0.9272490000000175
+      ],
+      "items": [
+        {
+          "id": "geonames-565348",
+          "title": "Донецк",
+          "label": "Донецк — Ростовская Область",
+          "region": "Ростовская Область",
+          "position": {
+            "lat": 48.33711,
+            "lng": 39.95229
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 565348,
+            "dump": "RU",
+            "line": 104374,
+            "modifiedAt": "2026-07-13",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 1,
+          "population": 50850
+        },
+        {
+          "id": "geonames-11763020",
+          "title": "Донецкий Лесхоз",
+          "label": "Донецкий Лесхоз — Ростовская Область",
+          "region": "Ростовская Область",
+          "position": {
+            "lat": 49.03511,
+            "lng": 40.55049
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 11763020,
+            "dump": "RU",
+            "line": 353304,
+            "modifiedAt": "2017-11-10",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 1,
+          "population": 0
+        },
+        {
+          "id": "geonames-565345",
+          "title": "Донецкий",
+          "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+          "region": "Ростовская Область",
+          "position": {
+            "lat": 48.7168,
+            "lng": 39.9838
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 565345,
+            "dump": "RU",
+            "line": 104371,
+            "modifiedAt": "2017-10-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 1,
+          "population": 0
+        },
+        {
+          "id": "geonames-565346",
+          "title": "Донецкий",
+          "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+          "region": "Ростовская Область",
+          "position": {
+            "lat": 47.3136,
+            "lng": 42.4969
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 565346,
+            "dump": "RU",
+            "line": 104372,
+            "modifiedAt": "2012-02-01",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 1,
+          "population": 0
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 4,
+      "heapUsed": 29764384,
+      "rss": 122519552
+    },
+    {
+      "query": "Волноваха",
+      "coldMs": 10.36113800000004,
+      "warmMs": [
+        0.3059109999999805,
+        0.12964800000003152,
+        0.12263000000001512,
+        0.12291299999998273,
+        0.1270759999999882,
+        0.127303999999981,
+        0.16680900000000065,
+        0.12477499999999964,
+        0.12275099999999384,
+        0.11813900000004196
+      ],
+      "items": [
+        {
+          "id": "geonames-689198",
+          "title": "Волноваха",
+          "label": "Волноваха — ДНР — Донецкая область — Volnovakhskiy Rayon — Volnovaska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 47.6008,
+            "lng": 37.49358
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 689198,
+            "dump": "UA",
+            "line": 2504,
+            "modifiedAt": "2026-08-23",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 21166
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 1,
+      "heapUsed": 30424648,
+      "rss": 122806272
+    },
+    {
+      "query": "Луганск",
+      "coldMs": 6.219852000000003,
+      "warmMs": [
+        0.6539429999999697,
+        0.6135040000000345,
+        0.6426389999999742,
+        0.6422189999999546,
+        0.6615510000000313,
+        0.6636720000000196,
+        0.7839690000000132,
+        0.9368470000000002,
+        0.6101720000000341,
+        0.7144599999999741
+      ],
+      "items": [
+        {
+          "id": "geonames-702658",
+          "title": "Луганск",
+          "label": "Луганск — ЛНР — Luganskaya Oblast’ — Luhansk Raion — Luhanska Terytorialna Hromada",
+          "region": "ЛНР",
+          "position": {
+            "lat": 48.56814,
+            "lng": 39.30553
+          },
+          "territory": "lnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 702658,
+            "dump": "UA",
+            "line": 15624,
+            "modifiedAt": "2026-10-22",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 397677
+        },
+        {
+          "id": "geonames-1500304",
+          "title": "Луганск",
+          "label": "Луганск — Новосибирская Область",
+          "region": "Новосибирская Область",
+          "position": {
+            "lat": 53.62197,
+            "lng": 77.59906
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 1500304,
+            "dump": "RU",
+            "line": 175232,
+            "modifiedAt": "2026-04-17",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 101
+        },
+        {
+          "id": "geonames-702684",
+          "title": "Луганское",
+          "label": "Луганское — ДНР — Донецкая область — Бахмут — Svitlodarska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 48.4447,
+            "lng": 38.25519
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 702684,
+            "dump": "UA",
+            "line": 15649,
+            "modifiedAt": "2026-08-02",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 2604
+        },
+        {
+          "id": "geonames-702686",
+          "title": "Луганское",
+          "label": "Луганское — Запорожская область — Пологовский район — Rozivska Terytorialna Hromada",
+          "region": "Запорожская область",
+          "position": {
+            "lat": 47.36748,
+            "lng": 37.09784
+          },
+          "territory": "zaporizhzhia",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 702686,
+            "dump": "UA",
+            "line": 15650,
+            "modifiedAt": "2026-08-29",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 0
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 7,
+      "heapUsed": 29969960,
+      "rss": 122806272
+    },
+    {
+      "query": "Мариуполь",
+      "coldMs": 10.877067000000011,
+      "warmMs": [
+        0.18702899999999545,
+        0.2387329999999679,
+        0.16805199999998877,
+        0.16173400000002403,
+        0.16268400000001293,
+        0.284087999999997,
+        0.22519899999997506,
+        0.211941999999965,
+        0.2270550000000071,
+        0.17105800000001636
+      ],
+      "items": [
+        {
+          "id": "geonames-701822",
+          "title": "Мариуполь",
+          "label": "Мариуполь — ДНР — Донецкая область — Mariupolskyi Raion — Mariupolska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 47.09514,
+            "lng": 37.54131
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 701822,
+            "dump": "UA",
+            "line": 14812,
+            "modifiedAt": "2026-08-05",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 230000
+        },
+        {
+          "id": "geonames-529193",
+          "title": "Мариуполь",
+          "label": "Мариуполь — Мордовия",
+          "region": "Мордовия",
+          "position": {
+            "lat": 54.2027,
+            "lng": 45.95084
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 529193,
+            "dump": "RU",
+            "line": 68451,
+            "modifiedAt": "2025-12-31",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 215
+        },
+        {
+          "id": "geonames-1499334",
+          "title": "Мариуполь",
+          "label": "Мариуполь — Омская Область",
+          "region": "Омская Область",
+          "position": {
+            "lat": 54.36667,
+            "lng": 72.21667
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 1499334,
+            "dump": "RU",
+            "line": 174264,
+            "modifiedAt": "2012-01-17",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 0
+        },
+        {
+          "id": "geonames-813999",
+          "title": "Мариуполь",
+          "label": "Мариуполь — Смоленская Область",
+          "region": "Смоленская Область",
+          "position": {
+            "lat": 54.70616,
+            "lng": 34.13276
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 813999,
+            "dump": "RU",
+            "line": 135222,
+            "modifiedAt": "2012-01-19",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 0
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 5,
+      "heapUsed": 30952832,
+      "rss": 123084800
+    },
+    {
+      "query": "Мелитополь",
+      "coldMs": 4.828293000000031,
+      "warmMs": [
+        0.12555600000001732,
+        0.11568199999999251,
+        0.11642399999999498,
+        0.11264499999998634,
+        0.11205599999999549,
+        0.14894700000002103,
+        0.12292200000001685,
+        0.11229200000002493,
+        0.10915999999997439,
+        0.11286100000000943
+      ],
+      "items": [
+        {
+          "id": "geonames-701404",
+          "title": "Мелитополь",
+          "label": "Мелитополь — Запорожская область — Мелитопольский район — Melitopolska Terytorialna Hromada",
+          "region": "Запорожская область",
+          "position": {
+            "lat": 46.84735,
+            "lng": 35.38196
+          },
+          "territory": "zaporizhzhia",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 701404,
+            "dump": "UA",
+            "line": 14403,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 148851
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 1,
+      "heapUsed": 30075280,
+      "rss": 123084800
+    },
+    {
+      "query": "Бердянск",
+      "coldMs": 20.413139,
+      "warmMs": [
+        0.5964519999999993,
+        0.740951999999993,
+        0.6376450000000204,
+        0.5806900000000041,
+        0.6165280000000166,
+        0.659830999999997,
+        0.6632150000000365,
+        0.7188730000000305,
+        0.6210660000000416,
+        0.5637320000000159
+      ],
+      "items": [
+        {
+          "id": "geonames-712451",
+          "title": "Бердянск",
+          "label": "Бердянск — Запорожская область — Бердянский район — Berdianska Terytorialna Hromada",
+          "region": "Запорожская область",
+          "position": {
+            "lat": 46.75578,
+            "lng": 36.78815
+          },
+          "territory": "zaporizhzhia",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 712451,
+            "dump": "UA",
+            "line": 25124,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 106311
+        },
+        {
+          "id": "geonames-712443",
+          "title": "Бердянское",
+          "label": "Бердянское — ДНР — Донецкая область — Mariupolskyi Raion — Mariupolska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 47.10606,
+            "lng": 37.44703
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 712443,
+            "dump": "UA",
+            "line": 25116,
+            "modifiedAt": "2026-08-28",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 684
+        },
+        {
+          "id": "geonames-519450",
+          "title": "Бердянское",
+          "label": "Бердянское — Запорожская область — Бердянский район — Osypenkivska Terytorialna Hromada",
+          "region": "Запорожская область",
+          "position": {
+            "lat": 46.96865,
+            "lng": 37.00579
+          },
+          "territory": "zaporizhzhia",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 519450,
+            "dump": "UA",
+            "line": 33,
+            "modifiedAt": "2026-08-28",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 478
+        },
+        {
+          "id": "geonames-712448",
+          "title": "Бердянское",
+          "label": "Бердянское — ДНР — Донецкая область — Mariupolskyi Raion — Sartanska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 47.08961,
+            "lng": 37.78406
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 712448,
+            "dump": "UA",
+            "line": 25121,
+            "modifiedAt": "2026-08-28",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 191
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 4,
+      "heapUsed": 31304344,
+      "rss": 123244544
+    },
+    {
+      "query": "Геническ",
+      "coldMs": 1.2684830000000034,
+      "warmMs": [
+        0.45035100000001194,
+        0.28451700000005076,
+        0.2693649999999934,
+        0.30312400000002526,
+        0.2644719999999552,
+        0.2680880000000343,
+        0.26872500000001764,
+        0.31619499999999334,
+        0.2657050000000254,
+        0.3067720000000236
+      ],
+      "items": [
+        {
+          "id": "geonames-708878",
+          "title": "Геническ",
+          "label": "Геническ — Херсонская область — Генический район",
+          "region": "Херсонская область",
+          "position": {
+            "lat": 46.16824,
+            "lng": 34.80861
+          },
+          "territory": "kherson",
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 708878,
+            "dump": "UA",
+            "line": 21661,
+            "modifiedAt": "2025-11-27",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 19501
+        },
+        {
+          "id": "geonames-708877",
+          "title": "Геническая Горка",
+          "label": "Геническая Горка — Херсонская область — Генический район — Henicheska Terytorialna Hromada",
+          "region": "Херсонская область",
+          "position": {
+            "lat": 46.09688,
+            "lng": 34.8277
+          },
+          "territory": "kherson",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 708877,
+            "dump": "UA",
+            "line": 21660,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 495
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 2,
+      "heapUsed": 29768352,
+      "rss": 123244544
+    },
+    {
+      "query": "Симферополь",
+      "coldMs": 2.0609869999999546,
+      "warmMs": [
+        0.0397570000000087,
+        0.026853000000073735,
+        0.02733100000000377,
+        0.027502000000026783,
+        0.02703099999996539,
+        0.026845000000093933,
+        0.026101000000039676,
+        0.06923999999992247,
+        0.027634999999918364,
+        0.02583900000001904
+      ],
+      "items": [
+        {
+          "id": "geonames-693805",
+          "title": "Симферополь",
+          "label": "Симферополь — Крым — Simferopol’skiy rayon — Simferopolska Terytorialna Hromada",
+          "region": "Крым",
+          "position": {
+            "lat": 44.95719,
+            "lng": 34.11079
+          },
+          "territory": "crimea",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 693805,
+            "dump": "UA",
+            "line": 6982,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 336460
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 1,
+      "heapUsed": 29895176,
+      "rss": 123244544
+    },
+    {
+      "query": "Севастополь",
+      "coldMs": 3.6931150000000343,
+      "warmMs": [
+        0.10424399999999423,
+        0.0951790000000301,
+        0.08925599999997758,
+        0.08886700000005021,
+        0.0913909999999305,
+        0.13125000000002274,
+        0.10896900000000187,
+        0.08402799999998933,
+        0.06319599999994807,
+        0.09338100000002214
+      ],
+      "items": [
+        {
+          "id": "geonames-694423",
+          "title": "Севастополь",
+          "label": "Севастополь — Крым — Gorod Sevastopol",
+          "region": "Крым",
+          "position": {
+            "lat": 44.60795,
+            "lng": 33.52134
+          },
+          "territory": "crimea",
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 694423,
+            "dump": "UA",
+            "line": 7587,
+            "modifiedAt": "2026-04-08",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 547820
+        },
+        {
+          "id": "geonames-496443",
+          "title": "Севастополь",
+          "label": "Севастополь — Калужская Область",
+          "region": "Калужская Область",
+          "position": {
+            "lat": 53.45592,
+            "lng": 35.188
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 496443,
+            "dump": "RU",
+            "line": 35876,
+            "modifiedAt": "2012-01-17",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 0
+        },
+        {
+          "id": "geonames-496444",
+          "title": "Севастополь",
+          "label": "Севастополь — Оренбургская Область",
+          "region": "Оренбургская Область",
+          "position": {
+            "lat": 51.7688,
+            "lng": 59.0399
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 496444,
+            "dump": "RU",
+            "line": 35877,
+            "modifiedAt": "2020-06-10",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 0
+        },
+        {
+          "id": "geonames-496441",
+          "title": "Севастопольский",
+          "label": "Севастопольский — Ростовская Область",
+          "region": "Ростовская Область",
+          "position": {
+            "lat": 46.45,
+            "lng": 40.5
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 496441,
+            "dump": "RU",
+            "line": 35874,
+            "modifiedAt": "2012-01-17",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 1,
+          "population": 0
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 5,
+      "heapUsed": 30079016,
+      "rss": 123244544
+    },
+    {
+      "query": "Ялта",
+      "coldMs": 1.5377900000000864,
+      "warmMs": [
+        25.519367999999986,
+        0.42116599999997106,
+        0.3871470000000272,
+        0.42192499999998745,
+        0.49189899999998943,
+        0.4502740000000358,
+        0.4928669999999329,
+        0.4459519999999202,
+        0.3795470000000023,
+        0.39083400000004076
+      ],
+      "items": [
+        {
+          "id": "geonames-688532",
+          "title": "Ялта",
+          "label": "Ялта — ДНР — Донецкая область — Mariupolskyi Raion — Manhushska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 46.96098,
+            "lng": 37.27446
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 688532,
+            "dump": "UA",
+            "line": 1848,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 5519
+        },
+        {
+          "id": "geonames-688531",
+          "title": "Ялта",
+          "label": "Ялта — ДНР — Донецкая область — Volnovakhskiy Rayon — Komarska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 48.04505,
+            "lng": 36.74963
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 688531,
+            "dump": "UA",
+            "line": 1847,
+            "modifiedAt": "2026-08-30",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 143
+        },
+        {
+          "id": "geonames-688533",
+          "title": "Ялта",
+          "label": "Ялта — Крым — Ялтинский район — Yaltynska Terytorialna Hromada",
+          "region": "Крым",
+          "position": {
+            "lat": 44.50218,
+            "lng": 34.16624
+          },
+          "territory": "crimea",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 688533,
+            "dump": "UA",
+            "line": 1849,
+            "modifiedAt": "2026-08-29",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 77003
+        },
+        {
+          "id": "geonames-469349",
+          "title": "Ялта",
+          "label": "Ялта — Тульская Область",
+          "region": "Тульская Область",
+          "position": {
+            "lat": 53.47707,
+            "lng": 38.03542
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 469349,
+            "dump": "RU",
+            "line": 8930,
+            "modifiedAt": "2025-12-31",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 237
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 6,
+      "heapUsed": 29835208,
+      "rss": 123244544
+    },
+    {
+      "query": "Керчь",
+      "coldMs": 1.6961760000000368,
+      "warmMs": [
+        0.03651000000002114,
+        0.029608000000052925,
+        0.025819999999953325,
+        0.025115000000027976,
+        0.0258249999999407,
+        0.024787999999944077,
+        0.024483000000032007,
+        0.024523000000044703,
+        0.024543999999991684,
+        0.024659999999926185
+      ],
+      "items": [
+        {
+          "id": "geonames-706524",
+          "title": "Керчь",
+          "label": "Керчь — Крым — Gorodskoy okrug Kerch — Kerchenska Terytorialna Hromada",
+          "region": "Крым",
+          "position": {
+            "lat": 45.35675,
+            "lng": 36.47542
+          },
+          "territory": "crimea",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 706524,
+            "dump": "UA",
+            "line": 19382,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 148932
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 1,
+      "heapUsed": 29919800,
+      "rss": 123244544
+    },
+    {
+      "query": "Краснодар",
+      "coldMs": 23.066142000000013,
+      "warmMs": [
+        0.2417239999999765,
+        0.22570299999995314,
+        0.2190930000000435,
+        0.26119599999992715,
+        0.22830200000009881,
+        0.4331079999999474,
+        0.48308699999995497,
+        0.2382069999999885,
+        0.2217319999999745,
+        0.26181899999994585
+      ],
+      "items": [
+        {
+          "id": "geonames-542420",
+          "title": "Краснодар",
+          "label": "Краснодар — Краснодарский край",
+          "region": "Краснодарский край",
+          "position": {
+            "lat": 45.04534,
+            "lng": 38.98178
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 542420,
+            "dump": "RU",
+            "line": 81606,
+            "modifiedAt": "2026-08-30",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 899541
+        },
+        {
+          "id": "geonames-808966",
+          "title": "Краснодар",
+          "label": "Краснодар — Воронежская Область",
+          "region": "Воронежская Область",
+          "position": {
+            "lat": 49.8958,
+            "lng": 40.24376
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 808966,
+            "dump": "RU",
+            "line": 131980,
+            "modifiedAt": "2012-01-19",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 0
+        },
+        {
+          "id": "geonames-705177",
+          "title": "Краснодарка",
+          "label": "Краснодарка — Крым — Krasnogvardeyskiy rayon — Oleksandrivska",
+          "region": "Крым",
+          "position": {
+            "lat": 45.60648,
+            "lng": 34.08541
+          },
+          "territory": "crimea",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 705177,
+            "dump": "UA",
+            "line": 18074,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 1,
+          "population": 422
+        },
+        {
+          "id": "geonames-1502124",
+          "title": "Краснодарка",
+          "label": "Краснодарка — Омская Область",
+          "region": "Омская Область",
+          "position": {
+            "lat": 54.2511,
+            "lng": 74.0239
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 1502124,
+            "dump": "RU",
+            "line": 177040,
+            "modifiedAt": "2012-01-17",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 1,
+          "population": 0
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 10,
+      "heapUsed": 33046376,
+      "rss": 123383808
+    },
+    {
+      "query": "Москва",
+      "coldMs": 7.770516000000043,
+      "warmMs": [
+        0.03919699999994464,
+        0.03047100000003411,
+        0.028012999999987187,
+        0.026743000000010397,
+        0.02671900000007099,
+        0.026550999999926717,
+        0.028145999999992455,
+        0.02716900000007172,
+        0.11855099999991126,
+        0.04300999999998112
+      ],
+      "items": [
+        {
+          "id": "geonames-524901",
+          "title": "Москва",
+          "label": "Москва — Москва",
+          "region": "Москва",
+          "position": {
+            "lat": 55.75204,
+            "lng": 37.61781
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 524901,
+            "dump": "RU",
+            "line": 64173,
+            "modifiedAt": "2025-09-09",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 10381222
+        },
+        {
+          "id": "geonames-524900",
+          "title": "Москва",
+          "label": "Москва — Тверская Область — Пеновский Район",
+          "region": "Тверская Область",
+          "position": {
+            "lat": 56.91775,
+            "lng": 32.16579
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 524900,
+            "dump": "RU",
+            "line": 64172,
+            "modifiedAt": "2019-08-30",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 17
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 2,
+      "heapUsed": 30167072,
+      "rss": 123383808
+    },
+    {
+      "query": "Санкт-Петербург",
+      "coldMs": 5.471250999999938,
+      "warmMs": [
+        0.02942500000006021,
+        0.02095099999996819,
+        0.01958799999999883,
+        0.019181000000003223,
+        0.01938699999993787,
+        0.019091000000003078,
+        0.019166999999924883,
+        0.01927499999999327,
+        0.019174000000020897,
+        0.018957000000000335
+      ],
+      "items": [
+        {
+          "id": "geonames-498817",
+          "title": "Санкт-Петербург",
+          "label": "Санкт-Петербург — Санкт-Петербург",
+          "region": "Санкт-Петербург",
+          "position": {
+            "lat": 59.93863,
+            "lng": 30.31413
+          },
+          "territory": null,
+          "qualityFlags": [],
+          "source": {
+            "provider": "geonames",
+            "id": 498817,
+            "dump": "RU",
+            "line": 38237,
+            "modifiedAt": "2026-10-20",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 1,
+          "population": 5351935
+        }
+      ],
+      "truncated": false,
+      "hasMore": false,
+      "matchingRecords": 1,
+      "heapUsed": 29996448,
+      "rss": 123383808
+    },
+    {
+      "query": "Тарасовка",
+      "coldMs": 6.555801000000088,
+      "warmMs": [
+        2.095435000000066,
+        2.255538999999999,
+        2.256435999999894,
+        2.3491639999999734,
+        2.2230500000000575,
+        2.0800649999999905,
+        2.1539360000000443,
+        2.2898420000000215,
+        2.34642800000006,
+        2.290177999999969
+      ],
+      "items": [
+        {
+          "id": "geonames-691893",
+          "title": "Тарасовка",
+          "label": "Тарасовка — Херсонская область — Скадовский район — Skadovska Terytorialna Hromada",
+          "region": "Херсонская область",
+          "position": {
+            "lat": 46.14458,
+            "lng": 33.11739
+          },
+          "territory": "kherson",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 691893,
+            "dump": "UA",
+            "line": 5116,
+            "modifiedAt": "2026-08-30",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 1114
+        },
+        {
+          "id": "geonames-691863",
+          "title": "Тарасовка",
+          "label": "Тарасовка — ЛНР — Luganskaya Oblast’ — Svativskyi Raion — Nyzhnoduvanska Terytorialna Hromada",
+          "region": "ЛНР",
+          "position": {
+            "lat": 49.66406,
+            "lng": 38.38937
+          },
+          "territory": "lnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 691863,
+            "dump": "UA",
+            "line": 5086,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 848
+        },
+        {
+          "id": "geonames-11125193",
+          "title": "Тарасовка",
+          "label": "Тарасовка — Запорожская область — Запорожский район — Petro-Mykhailivska Terytorialna Hromada",
+          "region": "Запорожская область",
+          "position": {
+            "lat": 48.0624,
+            "lng": 35.14804
+          },
+          "territory": "zaporizhzhia",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 11125193,
+            "dump": "UA",
+            "line": 38826,
+            "modifiedAt": "2026-08-30",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 0
+        },
+        {
+          "id": "geonames-691877",
+          "title": "Тарасовка",
+          "label": "Тарасовка — ДНР — Донецкая область — Kramatorskyi Raion — Illinivska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 48.34967,
+            "lng": 37.55241
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 691877,
+            "dump": "UA",
+            "line": 5100,
+            "modifiedAt": "2026-08-30",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": true,
+          "tier": 0,
+          "population": 0
+        }
+      ],
+      "truncated": false,
+      "hasMore": true,
+      "matchingRecords": 75,
+      "heapUsed": 30310064,
+      "rss": 124825600
+    },
+    {
+      "query": "Нов",
+      "coldMs": 245.44935199999998,
+      "warmMs": [
+        161.69527000000005,
+        181.85499099999993,
+        171.3911579999999,
+        147.69590600000015,
+        153.8335169999998,
+        145.74751700000002,
+        160.2684220000001,
+        144.48506899999984,
+        145.87325999999985,
+        149.6476130000001
+      ],
+      "items": [
+        {
+          "id": "geonames-699839",
+          "title": "Новая Каховка",
+          "label": "Новая Каховка — Херсонская область — Каховский район — Novokakhovska Terytorialna Hromada",
+          "region": "Херсонская область",
+          "position": {
+            "lat": 46.75966,
+            "lng": 33.35591
+          },
+          "territory": "kherson",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 699839,
+            "dump": "UA",
+            "line": 12876,
+            "modifiedAt": "2026-08-05",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 44427
+        },
+        {
+          "id": "geonames-699557",
+          "title": "Новогродовка",
+          "label": "Новогродовка — ДНР — Донецкая область — Покровский район — Novoselivka Starostynskyi Okruh",
+          "region": "ДНР",
+          "position": {
+            "lat": 48.20052,
+            "lng": 37.33883
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 699557,
+            "dump": "UA",
+            "line": 12603,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 14037
+        },
+        {
+          "id": "geonames-699675",
+          "title": "Новоазовск",
+          "label": "Новоазовск — ДНР — Донецкая область — Kalmiuskyi Raion — Novoazovska Terytorialna Hromada",
+          "region": "ДНР",
+          "position": {
+            "lat": 47.11389,
+            "lng": 38.08599
+          },
+          "territory": "dnr",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 699675,
+            "dump": "UA",
+            "line": 12716,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 11051
+        },
+        {
+          "id": "geonames-699100",
+          "title": "Новотроицкое",
+          "label": "Новотроицкое — Херсонская область — Генический район — Novotroitska Terytorialna Hromada",
+          "region": "Херсонская область",
+          "position": {
+            "lat": 46.35088,
+            "lng": 34.33245
+          },
+          "territory": "kherson",
+          "qualityFlags": [
+            "admin_ru_unverified"
+          ],
+          "source": {
+            "provider": "geonames",
+            "id": 699100,
+            "dump": "UA",
+            "line": 12154,
+            "modifiedAt": "2026-08-03",
+            "precision": "source-reported-settlement-point-unverified"
+          },
+          "exact": false,
+          "tier": 0,
+          "population": 10647
+        }
+      ],
+      "truncated": false,
+      "hasMore": true,
+      "matchingRecords": 6626,
+      "heapUsed": 36794920,
+      "rss": 177119232
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "status": "EXPECTED_SAFETY_GUARD_EXPOSED_MIXED_METADATA_FOLDER",
+  "initialObservedExitCode": 1,
+  "unexpectedFetchCalls": 0,
+  "cause": "Strict OSM resume rejected separately captured operator-page metadata in the same directory; original source URLs/hashes were correct",
+  "resolution": "Separated operator HTML/metadata into operator/ subdirectory; capture guard unchanged, no new HTTP requests",
+  "log": "offline-capture-reuse-initial.log.gz"
+}

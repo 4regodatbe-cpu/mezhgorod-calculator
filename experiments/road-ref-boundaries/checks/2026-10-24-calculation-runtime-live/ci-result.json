@@ -1,0 +1,247 @@
+{
+  "source": "98524ccc89f6be98a676ef6cd4f106b940e752ce",
+  "run": 40082993536,
+  "jobs": [
+    {
+      "id": 120840187664,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40082993536,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run node node_modules/typescript/bin/tsc --noEmit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run node node_modules/next/dist/bin/next build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        }
+      ]
+    },
+    {
+      "id": 120840187796,
+      "name": "live_probe",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_id": 40082993536,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Probe live provider geometry and per-leg times",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Probe production address collector with bounded requests",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 7
+        },
+        {
+          "name": "Audit the fixed 50-settlement route corpus",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8
+        },
+        {
+          "name": "Compare six Yandex screenshot routes with live providers",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 9
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 19
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        }
+      ]
+    },
+    {
+      "id": 120840187906,
+      "name": "calculation_timing",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40082993536,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Measure one production V3 handler with real routing sources",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        }
+      ]
+    }
+  ],
+  "addressLog": [
+    "2026-10-24T09:47:00.4948455Z {\"query\":\"Ростов\",\"status\":\"PASS\",\"elapsedMs\":1289,\"sourceCount\":7,\"failures\":{\"http_503\":1},\"featureCount\":103,\"checks\":{\"rostovOnDonWithinFirstEight\":true}}",
+    "2026-10-24T09:47:01.3239289Z {\"query\":\"Красн\",\"status\":\"PASS\",\"elapsedMs\":827,\"sourceCount\":7,\"failures\":{\"http_503\":2,\"source_cooldown\":4},\"featureCount\":20,\"checks\":{\"krasnodarFirst\":true}}",
+    "2026-10-24T09:47:01.6344135Z {\"query\":\"Донецк\",\"status\":\"SOURCE_UNAVAILABLE\",\"elapsedMs\":309,\"sourceCount\":7,\"failures\":{\"http_503\":4,\"source_cooldown\":3},\"featureCount\":0,\"checks\":{\"donetskDnrFirst\":false,\"donetskRostovSecond\":false}}",
+    "2026-10-24T09:47:01.6381617Z {\"type\":\"address-runtime-probe-summary\",\"mode\":\"production-address-collector\",\"status\":\"SOURCE_UNAVAILABLE\",\"completed\":3,\"planned\":3,\"remainingQueries\":[],\"elapsedMs\":2432,\"perQueryBudgetMs\":20000,\"totalBudgetMs\":60000}",
+    "2026-10-24T09:47:01.6528223Z ##[error]Process completed with exit code 1."
+  ]
+}

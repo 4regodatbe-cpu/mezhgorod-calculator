@@ -1,0 +1,101 @@
+[
+  {
+    "name": "regression-before-fix",
+    "command": [
+      "node",
+      "--test",
+      "experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs"
+    ],
+    "startedAtUtc": "2026-10-18T05:44:05.209810+00:00",
+    "elapsedSeconds": 0.235,
+    "exitCode": 1,
+    "status": "FAIL",
+    "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/regression-before-fix.log.gz",
+    "uncompressedSha256": "b2986eb11641254552d232e2732a60a5616798f02e0d8747cc40107df19415bd"
+  },
+  {
+    "name": "focused",
+    "command": [
+      "node",
+      "--test",
+      "experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs"
+    ],
+    "startedAtUtc": "2026-10-18T05:44:18.704274+00:00",
+    "elapsedSeconds": 0.166,
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/focused.log.gz",
+    "uncompressedSha256": "8eb76cdaf4076c38cd21abc2af6e79f00f80c6a8c924e7f99329ebb97b223704"
+  },
+  {
+    "name": "audit",
+    "command": [
+      "npm",
+      "run",
+      "test:audit"
+    ],
+    "startedAtUtc": "2026-10-18T05:44:32.428551+00:00",
+    "elapsedSeconds": 10.051,
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/audit.log.gz",
+    "uncompressedSha256": "a7356d2b09eb6f9e755233dd6b21b9e6d8c8274ab6b6752645c45be37c1a952e"
+  },
+  {
+    "name": "build-clean-retry",
+    "command": [
+      "node",
+      "node_modules/next/dist/bin/next",
+      "build"
+    ],
+    "startedAtUtc": "2026-10-18T05:45:19.324646+00:00",
+    "elapsedSeconds": 11.152,
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/build-clean-retry.log.gz",
+    "uncompressedSha256": "1e328767c04b964cb32135466386a101d720b426c50f7ec62d86acb9210c6107"
+  },
+  {
+    "name": "build",
+    "command": [
+      "node",
+      "node_modules/next/dist/bin/next",
+      "build"
+    ],
+    "startedAtUtc": "2026-10-18T05:44:52.838418+00:00",
+    "elapsedSeconds": 1.154,
+    "exitCode": 1,
+    "status": "FAIL",
+    "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/build.log.gz",
+    "uncompressedSha256": "d0066983ef8432fe4fa520416bedfb7ddefe8072a8e088fe352310963f9a2f28"
+  },
+  {
+    "name": "eslint",
+    "command": [
+      "node",
+      "node_modules/eslint/bin/eslint.js",
+      "experiments/nationwide-tolls/m1-m3-shadow-quote.mjs",
+      "experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs"
+    ],
+    "startedAtUtc": "2026-10-18T05:44:32.428550+00:00",
+    "elapsedSeconds": 2.382,
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/eslint.log.gz",
+    "uncompressedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "tsc",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "startedAtUtc": "2026-10-18T05:44:43.926965+00:00",
+    "elapsedSeconds": 2.197,
+    "exitCode": 0,
+    "status": "PASS",
+    "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/tsc.log.gz",
+    "uncompressedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

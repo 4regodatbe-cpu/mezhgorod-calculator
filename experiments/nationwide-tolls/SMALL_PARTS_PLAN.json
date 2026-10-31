@@ -1,0 +1,1749 @@
+{
+  "createdAt": "2026-10-16T02:09:14.454441+03:00",
+  "source": "TWO_STAGE_AUDIT_PLAN.json",
+  "reviewPolicy": "../../docs/WORKFLOW_RULES.md",
+  "baseline": "777f33fc9ecd3545df0fc613c7fcfb555db640ce",
+  "executionUnit": "Один маршрут на отдельный сохраняемый микрошаг. После commit/push/head/tree readback сразу следующий микрошаг автоматически, без команды пользователя и без административной остановки после одного случая. Только последовательно, один writer; не накапливать группу до общего сохранения. Уточнение пользователя16.10.2026 10:27МСК.",
+  "parts": [
+    {
+      "id": 1,
+      "title": "Восстановление состояния и дробление работы",
+      "status": "done"
+    },
+    {
+      "id": 2,
+      "title": "Проверка ожиданий процесса, тайм-аутов и достоверного счётчика",
+      "status": "done"
+    },
+    {
+      "id": 3,
+      "title": "Этап 1: группа 1/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "zaporizhzhia-пришиб-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-moscow-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-молочанск-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-молочанск-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-молочанск-moscow-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-пришиб-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "dnr-бахмут-kazan-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-бахмут-kerch-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-бахмут-moscow-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-бахмут-saint-petersburg-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-волноваха-kazan-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-волноваха-kerch-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-волноваха-moscow-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-волноваха-saint-petersburg-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-донецк-kazan-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-донецк-kerch-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-донецк-moscow-center",
+          "kind": "regional",
+          "region": "dnr"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 4,
+      "title": "Этап 1: группа 2/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "dnr-донецк-saint-petersburg-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-краматорск-kazan-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-краматорск-kerch-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-краматорск-moscow-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "kherson-аскания-нова-kazan-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-аскания-нова-kerch-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-аскания-нова-moscow-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-аскания-нова-saint-petersburg-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-геническ-kazan-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-геническ-kerch-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-геническ-moscow-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-геническ-saint-petersburg-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-каховка-kazan-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-каховка-kerch-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-каховка-moscow-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-каховка-saint-petersburg-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-новая-збурьевка-kazan-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-новая-збурьевка-kerch-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-новая-збурьевка-moscow-center",
+          "kind": "regional",
+          "region": "kherson"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 5,
+      "title": "Этап 1: группа 3/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "lnr-алчевск-kazan-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-алчевск-kerch-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-алчевск-moscow-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-алчевск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-антрацит-kazan-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-антрацит-kerch-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-антрацит-moscow-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-антрацит-saint-petersburg-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-довжанск-kazan-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-довжанск-kerch-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-довжанск-moscow-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-довжанск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-марковка-kazan-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-марковка-kerch-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-марковка-moscow-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-марковка-saint-petersburg-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-moscow-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-бердянск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        }
+      ],
+      "completedCases": 20
+    },
+    {
+      "id": 6,
+      "title": "Этап 1: группа 4/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "zaporizhzhia-васильевка-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-васильевка-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-васильевка-moscow-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-васильевка-saint-petersburg-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-гуляйполе-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-ckad-domodedovo-to-spb",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-spb",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 7,
+      "title": "Этап 1: группа 5/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "pair-m11-ckad-spb-to-domodedovo",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        },
+        {
+          "caseId": "pair-m11-ckad-spb-to-noginsk",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        },
+        {
+          "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        },
+        {
+          "caseId": "pair-m11-zsd-moscow-to-prim",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-zsd-moscow-to-sest",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-zsd-prim-to-moscow",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-zsd-sest-to-moscow",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-zsd-tver-to-sest",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m12-ckad-dmitrov-to-kazan",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-dmitrov",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m12-ckad-kazan-to-klin",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-kazan",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m12-ckad-vladimir-to-klin",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m4-a289-kerch-to-rostov",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-a289-moscow-to-taman",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-a289-rostov-to-kerch",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-a289-taman-to-voronezh",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-a289-voronezh-to-taman",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-m11-krasnodar-to-spb",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 8,
+      "title": "Этап 1: группа 6/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "pair-m4-m11-rostov-to-spb",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        },
+        {
+          "caseId": "pair-m4-m11-spb-to-krasnodar",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        },
+        {
+          "caseId": "pair-m4-m11-spb-to-rostov",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        },
+        {
+          "caseId": "pair-m4-m11-voronezh-to-spb",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        },
+        {
+          "caseId": "single-a289-kerch-to-krasnodar",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-a289-krasnodar-to-kerch",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-a289-krasnodar-to-taman",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-a289-krasnodar-to-temryuk",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-a289-taman-to-krasnodar",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-ckad-domodedovo-to-klin",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-ckad-klin-to-domodedovo",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-ckad-noginsk-to-podolsk",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-ckad-podolsk-to-noginsk",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-ckad-ramenskoe-to-klin",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-khabarovsk-knyaze-to-smidovich",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-khabarovsk-smidovich-to-knyaze",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-khabarovsk-smidovich-to-nekrasovka",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-khabarovsk-smidovich-to-vyazemsky",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-khabarovsk-vyazemsky-to-smidovich",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-m11-moscow-to-spb",
+          "kind": "road",
+          "group": "single-m11"
+        }
+      ],
+      "completedCases": 20
+    },
+    {
+      "id": 9,
+      "title": "Этап 1: группа 7/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "single-m11-moscow-to-torzhok",
+          "kind": "road",
+          "group": "single-m11"
+        },
+        {
+          "caseId": "single-m11-moscow-to-tver",
+          "kind": "road",
+          "group": "single-m11"
+        },
+        {
+          "caseId": "single-m11-spb-to-moscow",
+          "kind": "road",
+          "group": "single-m11"
+        },
+        {
+          "caseId": "single-m11-tver-to-moscow",
+          "kind": "road",
+          "group": "single-m11"
+        },
+        {
+          "caseId": "single-m12-kazan-to-moscow",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m12-kazan-to-vladimir",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m12-moscow-to-kazan",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m12-murom-to-kazan",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m12-vladimir-to-kazan",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-moscow",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m3-moscow-to-kaluga",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m3-moscow-to-maloyaroslavets",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m3-moscow-to-obninsk",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m3-obninsk-to-moscow",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m4-domodedovo-to-krasnodar",
+          "kind": "road",
+          "group": "single-m4"
+        },
+        {
+          "caseId": "single-m4-krasnodar-to-domodedovo",
+          "kind": "road",
+          "group": "single-m4"
+        },
+        {
+          "caseId": "single-m4-krasnodar-to-rostov",
+          "kind": "road",
+          "group": "single-m4"
+        },
+        {
+          "caseId": "single-m4-krasnodar-to-voronezh",
+          "kind": "road",
+          "group": "single-m4"
+        },
+        {
+          "caseId": "single-m4-voronezh-to-krasnodar",
+          "kind": "road",
+          "group": "single-m4"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 10,
+      "title": "Этап 1: группа 8/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "single-odintsovo-golitsyno-to-moscow",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-odintsovo-moscow-to-golitsyno",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-odintsovo-moscow-to-kubinka",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-odintsovo-moscow-to-zvenigorod",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-odintsovo-zvenigorod-to-moscow",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-zsd-blag-to-prim",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "single-zsd-peterhof-to-sest",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "single-zsd-prim-to-blag",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "single-zsd-pushkin-to-sest",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "single-zsd-sest-to-pushkin",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-torzhok-to-kazan",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-tver-to-murom",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-rostov-to-sest",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-sest-to-krasnodar",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-voronezh-to-prim",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        }
+      ],
+      "completedCases": 20
+    },
+    {
+      "id": 11,
+      "title": "Этап 2: группа 1/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "lnr-лисичанск-moscow-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "dnr-краматорск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-новоазовск-kazan-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-новоазовск-kerch-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-новоазовск-moscow-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-новоазовск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-талаковка-kazan-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-талаковка-kerch-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-талаковка-moscow-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-талаковка-saint-petersburg-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-урзуф-kazan-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-урзуф-kerch-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-харцызск-kazan-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-харцызск-kerch-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-харцызск-moscow-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "dnr-харцызск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "dnr"
+        },
+        {
+          "caseId": "kherson-новая-збурьевка-saint-petersburg-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-скадовск-kazan-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-скадовск-kerch-center",
+          "kind": "regional",
+          "region": "kherson"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 12,
+      "title": "Этап 2: группа 2/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "kherson-скадовск-moscow-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-скадовск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-kazan-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-старая-збурьевка-kerch-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-таврийск-kazan-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-таврийск-kerch-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-таврийск-moscow-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-таврийск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-херсон-kazan-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-херсон-kerch-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-херсон-moscow-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "kherson-херсон-saint-petersburg-center",
+          "kind": "regional",
+          "region": "kherson"
+        },
+        {
+          "caseId": "lnr-ровеньки-kazan-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-ровеньки-kerch-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-ровеньки-moscow-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-ровеньки-saint-petersburg-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-рубежное-kazan-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-рубежное-kerch-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-сорокино-kazan-center",
+          "kind": "regional",
+          "region": "lnr"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 13,
+      "title": "Этап 2: группа 3/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "lnr-сорокино-kerch-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-сорокино-moscow-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-сорокино-saint-petersburg-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-старобельск-kazan-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-старобельск-kerch-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-старобельск-moscow-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "lnr-старобельск-saint-petersburg-center",
+          "kind": "regional",
+          "region": "lnr"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-moscow-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-кушугум-saint-petersburg-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-moscow-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-мелитополь-saint-petersburg-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-пологи-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-пологи-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-пологи-moscow-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-пологи-saint-petersburg-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-розовка-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 14,
+      "title": "Этап 2: группа 4/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "zaporizhzhia-розовка-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-розовка-moscow-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-розовка-saint-petersburg-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-токмак-kazan-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-токмак-kerch-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-токмак-moscow-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "zaporizhzhia-токмак-saint-petersburg-center",
+          "kind": "regional",
+          "region": "zaporizhzhia"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+          "kind": "road",
+          "group": "max-chain-m12-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-krasnodar",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-rostov",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+          "kind": "road",
+          "group": "max-chain-m4-ckad-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-ckad-domodedovo-to-novgorod",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        },
+        {
+          "caseId": "pair-m11-ckad-noginsk-to-tver",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        },
+        {
+          "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        }
+      ],
+      "completedCases": 20
+    },
+    {
+      "id": 15,
+      "title": "Этап 2: группа 5/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "pair-m11-ckad-ramenskoe-to-torzhok",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        },
+        {
+          "caseId": "pair-m11-ckad-tver-to-noginsk",
+          "kind": "road",
+          "group": "pair-m11-ckad"
+        },
+        {
+          "caseId": "pair-m11-zsd-novgorod-to-sest",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-zsd-prim-to-torzhok",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-zsd-sest-to-novgorod",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-zsd-sest-to-tver",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m11-zsd-torzhok-to-prim",
+          "kind": "road",
+          "group": "pair-m11-zsd"
+        },
+        {
+          "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m12-ckad-dmitrov-to-murom",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m12-ckad-domodedovo-to-arzamas",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m12-ckad-klin-to-vladimir",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m12-ckad-murom-to-dmitrov",
+          "kind": "road",
+          "group": "pair-m12-ckad"
+        },
+        {
+          "caseId": "pair-m4-a289-anapa-to-voronezh",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-a289-domodedovo-to-kerch",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-a289-kerch-to-domodedovo",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-a289-taman-to-moscow",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-a289-voronezh-to-anapa",
+          "kind": "road",
+          "group": "pair-m4-a289"
+        },
+        {
+          "caseId": "pair-m4-m11-krasnodar-to-torzhok",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        },
+        {
+          "caseId": "pair-m4-m11-rostov-to-tver",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 16,
+      "title": "Этап 2: группа 6/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "pair-m4-m11-spb-to-voronezh",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        },
+        {
+          "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        },
+        {
+          "caseId": "pair-m4-m11-tver-to-rostov",
+          "kind": "road",
+          "group": "pair-m4-m11"
+        },
+        {
+          "caseId": "single-a289-anapa-to-krasnodar",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-a289-krasnodar-to-anapa",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-a289-slavyansk-to-taman",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-a289-taman-to-slavyansk",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-a289-temryuk-to-krasnodar",
+          "kind": "road",
+          "group": "single-a289"
+        },
+        {
+          "caseId": "single-ckad-dmitrov-to-kazan",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-ckad-dmitrov-to-rostov",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-ckad-kazan-to-dmitrov",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-ckad-klin-to-ramenskoe",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-ckad-rostov-to-dmitrov",
+          "kind": "road",
+          "group": "single-ckad"
+        },
+        {
+          "caseId": "single-khabarovsk-berezovka-to-vyazemsky",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-khabarovsk-khabarovsk-to-vyazemsky",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-khabarovsk-nekrasovka-to-smidovich",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-khabarovsk-vyazemsky-to-berezovka",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-khabarovsk-vyazemsky-to-khabarovsk",
+          "kind": "road",
+          "group": "single-khabarovsk"
+        },
+        {
+          "caseId": "single-m11-moscow-to-novgorod",
+          "kind": "road",
+          "group": "single-m11"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 17,
+      "title": "Этап 2: группа 7/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "single-m11-novgorod-to-moscow",
+          "kind": "road",
+          "group": "single-m11"
+        },
+        {
+          "caseId": "single-m11-spb-to-tver",
+          "kind": "road",
+          "group": "single-m11"
+        },
+        {
+          "caseId": "single-m11-torzhok-to-moscow",
+          "kind": "road",
+          "group": "single-m11"
+        },
+        {
+          "caseId": "single-m11-tver-to-spb",
+          "kind": "road",
+          "group": "single-m11"
+        },
+        {
+          "caseId": "single-m12-arzamas-to-moscow",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m12-cheboksary-to-moscow",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m12-kazan-to-murom",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m12-moscow-to-arzamas",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m12-moscow-to-cheboksary",
+          "kind": "road",
+          "group": "single-m12"
+        },
+        {
+          "caseId": "single-m3-balabanovo-to-kaluga",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-balabanovo",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m3-kaluga-to-obninsk",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m3-maloyaroslavets-to-moscow",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m3-obninsk-to-kaluga",
+          "kind": "road",
+          "group": "single-m3"
+        },
+        {
+          "caseId": "single-m4-moscow-to-voronezh",
+          "kind": "road",
+          "group": "single-m4"
+        },
+        {
+          "caseId": "single-m4-rostov-to-krasnodar",
+          "kind": "road",
+          "group": "single-m4"
+        },
+        {
+          "caseId": "single-m4-rostov-to-voronezh",
+          "kind": "road",
+          "group": "single-m4"
+        },
+        {
+          "caseId": "single-m4-voronezh-to-moscow",
+          "kind": "road",
+          "group": "single-m4"
+        },
+        {
+          "caseId": "single-m4-voronezh-to-rostov",
+          "kind": "road",
+          "group": "single-m4"
+        }
+      ],
+      "completedCases": 19
+    },
+    {
+      "id": 18,
+      "title": "Этап 2: группа 8/8",
+      "status": "done",
+      "cases": [
+        {
+          "caseId": "single-odintsovo-golitsyno-to-rublevo",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-odintsovo-kubinka-to-moscow",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-odintsovo-lesnoy-to-moscow",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-odintsovo-moscow-to-lesnoy",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-odintsovo-rublevo-to-golitsyno",
+          "kind": "road",
+          "group": "single-odintsovo"
+        },
+        {
+          "caseId": "single-zsd-blag-to-sest",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "single-zsd-peterhof-to-prim",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "single-zsd-prim-to-peterhof",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "single-zsd-sest-to-blag",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "single-zsd-sest-to-peterhof",
+          "kind": "road",
+          "group": "single-zsd"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-murom-to-tver",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-novgorod-to-vladimir",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-spb-to-arzamas",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+          "kind": "road",
+          "group": "triple-m11-ckad-m12"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-prim-to-krasnodar",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        },
+        {
+          "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+          "kind": "road",
+          "group": "triple-m4-m11-zsd"
+        }
+      ],
+      "completedCases": 20
+    },
+    {
+      "id": 19,
+      "title": "Разбор находок и исправления по одной ошибке",
+      "status": "done",
+      "completedFixes": [
+        "a289-full-interior-vector",
+        "a289-slavyansk-directed-connector",
+        "zsd-planernaya-exact-booth-identity"
+      ],
+      "nextSubstep": "DONE: all 13 Part19 causes have a canonical outcome. Part20 remains planned and starts after this commit's workflow result is observed.",
+      "findingsQueue": "PART19_FINDINGS_QUEUE.json",
+      "completedAtUtc": "2026-10-17T08:11:16Z",
+      "outcomeSynthesis": {
+        "findingRecords": 13,
+        "canonicalOutcomeCounts": {
+          "not_reproduced": 1,
+          "fixed_and_verified": 1,
+          "blocked_by_missing_reliable_data": 8,
+          "deferred": 3
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "Итоговая проверка и передача состояния",
+      "status": "done",
+      "completedAtUtc": "2026-10-17T08:51:29Z",
+      "verification": {
+        "sourceHead": "cfb442401a3cde9b6311026675d39484df394182",
+        "workflowRun": 39016525904,
+        "workflowConclusion": "success",
+        "successfulJobs": [
+          "verify",
+          "live_probe"
+        ],
+        "checks": [
+          "scripts/*test.ts",
+          "typescript-noEmit",
+          "next-build",
+          "live-provider-geometry-and-leg-times",
+          "photon-address-suggestions",
+          "fixed-50-settlement-route-corpus",
+          "six-yandex-screenshot-route-comparisons",
+          "handoff-relative-links",
+          "part19-canonical-outcomes"
+        ]
+      }
+    }
+  ],
+  "progressReporting": {
+    "completedParts": 20,
+    "totalParts": 20,
+    "method": "100*completedParts/totalParts; unfinished parts earn no partial credit",
+    "meaning": "Completion of the agreed 20-part work plan; NOT percent verified tariff coverage or release readiness",
+    "scope": "Includes both 155- and 154-case route-audit batches; completion of the broader calculator/matrix task is not established by this percentage",
+    "percent": 100
+  },
+  "lastUpdatedAtUtc": "2026-10-17T08:51:29Z"
+}

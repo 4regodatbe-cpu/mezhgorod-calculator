@@ -1,0 +1,24 @@
+[
+  {
+    "command": [
+      "node",
+      "--test",
+      "experiments/nationwide-tolls/zsd-finding-review.test.mjs"
+    ],
+    "exitCode": 0,
+    "stdout": "✔ ZSD resume rejects duplicates, skipped cases and unresolved scope before advancing (1.207646ms)\n✔ replay identity, departure and complete recorded evidence are mandatory (1.193424ms)\n✔ known road component subtotal cannot pass as a whole unknown quote (0.479443ms)\n✔ scope equivalence retains physical gate order and recognizes exact unnamed identities only (0.43755ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 85.115398\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "experiments/nationwide-tolls/scripts/review-zsd-finding-case.mjs",
+      "experiments/nationwide-tolls/zsd-finding-review.test.mjs"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

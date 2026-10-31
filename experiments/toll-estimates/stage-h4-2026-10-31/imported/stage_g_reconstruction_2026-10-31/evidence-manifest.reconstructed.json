@@ -1,0 +1,15 @@
+{
+  "schema": "stage-g-reconstruction-manifest-v1",
+  "identity": "RECONSTRUCTED, NOT ORIGINAL",
+  "source_file": "source/YANDEX_PAID_ROADS_REPORT_2026-10-31.md",
+  "source_sha256": "9262482b666455be2a65550e77c88a327d804fd50abe480d8a02e9df53af8f76",
+  "source_type": "Original Cloud Browser report saved in ChatGPT Library, current-turn materialized copy",
+  "additional_source_type": "User-provided Stage G and H2/H3 completion reports in current conversation; not separately hashed",
+  "original_G_sha_unavailable": "dd3e2ff6ab6ffc7ec10b9630f2d064b32058ca29",
+  "stage_H3_local_head_reported_by_user": "7a6eb59d09824132becc75e192f18e77c704e2f9",
+  "original_component_analysis_exists": false,
+  "original_evidence_manifest_exists": false,
+  "screenshots_separately_available": false,
+  "lineage_note": "F→H2→H3 verified by external working session; no provenance claim for G. This recovery kit is independent and does not modify Git repositories.",
+  "reconstructed_component_analysis_sha256": "bfec7235a1e0aa899eb9c39499c4c57c5e39049be8f3c361ff5605922bcd2e94"
+}

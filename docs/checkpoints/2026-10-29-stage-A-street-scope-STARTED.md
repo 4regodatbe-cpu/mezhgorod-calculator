@@ -1,0 +1,11 @@
+# Stage A — city/street alignment STARTED, LOCAL ONLY
+
+29.10.2026 MSK. Actual clean local HEAD d7cc05f68f3950ceb2178324b89b25927bb4f249 descends from a0e27781; previous code/evidence preserved. GitHub read-only PR14 check: open/Draft, unmerged, head a1c169d3c7dce49b7d1d3747b9698e7aee4b581a. No new push/deployment/CI authorization. Do not rewrite the already adopted address scope.
+
+Bounded sequence:
+
+1. Add regression-first city+street contracts using existing real Photon captures and controlled adversarial features; include the exact comma-qualified city `Донецк, ДНР` with admitted GeoNames and no upstream access. Inspect whether commas/region qualifiers incorrectly force a city query to Photon. Minimal fix only for proved defects; preserve corpus, territories, IDs/coordinates, existing detailed input, cancellation/cooldown/20s and all routing/tariff behavior. Then focused/gate/build checks and local checkpoint/commit.
+2. Fill only missing street-source evidence with at most four initial Photon requests, one for each city+street control (Krasnodar/Krasnaya, Moscow/Tverskaya, Donetsk/Artyoma, Yalta/Kirova), street layer, one request at a time, per-request20s bound, no unchanged failed-URL retries. Up to one follow-up only for a concrete diagnosed source-parameter mismatch. Preserve HTTP/raw/SHA and distinguish provider administrative association from independently certified municipal geometry; no invented point or house requirement.
+3. Bounded acceptance: eight requested inputs, namesake streets/actual-source coordinates, city operation without Photon and truthful no-street fallback. Reuse saved desktop/mobile clear/swap and the single actual Moscow–SPb route evidence if their relevant code/input contracts are unchanged; otherwise run only a justified targeted regression. Do not repeat a route/corpus/toll audit. Final checkpoint/WORK_STATE/local commit; no claim new-source Preview checked.
+
+New code, if needed, requires mandatory offline gate/TS/scoped lint/build under existing rules. Standard extra permissions only for sandbox constraints. Old protected WORK_LOG/NEXT_STEPS, archives and published source remain untouched. Local saving is explicitly authorized instead of remote persistence for this task; retain the exact local HEAD and state.

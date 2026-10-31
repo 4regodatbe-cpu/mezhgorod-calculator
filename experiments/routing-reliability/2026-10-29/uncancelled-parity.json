@@ -1,0 +1,599 @@
+{
+  "source": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-moscow-center/2026-10-15T22-34-03-156Z-capture.json.gz",
+  "sourceSha256": "8b168610a9b6e899b6ca4074e64cfbea2f52bc6ccafddc09f63c28716df2f630",
+  "mode": "actual before/current API; current adapters with optional cancellation absent vs live nonaborted signal; all I/O from saved capture, no network",
+  "status": "PASS",
+  "apiBodyParity": "EXACT",
+  "requestParity": "EXACT",
+  "beforeMs": 2688.8853050000002,
+  "afterMs": 2358.653999,
+  "networkRequests": 0,
+  "callsPerRun": 12,
+  "misses": 0,
+  "bodySha256": "c5adeca45ed95b89655510380ff3aeedb892cffc13e229c8e342a4656c5d7837",
+  "result": {
+    "legs": [
+      {
+        "from": "Донецк — ДНР",
+        "to": "Москва, центр",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "383e326dbd1187be5b30a80d20fc05d488ea00ad5820edbcdb6cd0e0671d7b48",
+            "precision": "route-maneuver",
+            "status": "unknown",
+            "reason": "multiple_road_traversals",
+            "entry": null,
+            "exit": null
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 1122972,
+          "seconds": 58268,
+          "tolls": {
+            "amount": 3050,
+            "weekdayAmount": 3050,
+            "weekendAmount": 3370,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-4: m4-636 → m4-71"
+            ],
+            "confidence": "matched",
+            "pricingStatus": "priced"
+          },
+          "tollValidation": {
+            "status": "toll",
+            "source": "Route toll composition",
+            "tollEdgeCount": 1,
+            "checkedEdgeCount": 1,
+            "wayIds": [],
+            "roadNames": [
+              "m4"
+            ],
+            "message": "Полный итог составлен из дорожных систем: m4",
+            "complete": true
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "boundaries_resolved",
+            "reason": null,
+            "roadBoundaries": {
+              "provider": "valhalla-trace",
+              "targetRef": "М-4",
+              "routeSignature": "383e326dbd1187be5b30a80d20fc05d488ea00ad5820edbcdb6cd0e0671d7b48",
+              "precision": "matched-road-edge",
+              "status": "unknown",
+              "reason": "road_trace_multiple_or_discontinuous_traversals",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 3,
+            "confirmedPvps": [
+              "m4-636",
+              "m4-71"
+            ],
+            "diagnosticOnly": true,
+            "tariffVector": {
+              "from": "m4-636",
+              "to": "m4-71",
+              "profile": "monThu",
+              "selectionBasis": "confirmed-payment-boundaries",
+              "priceStatus": "known"
+            }
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m4",
+                "name": "М-4 «Дон»",
+                "status": "strict_pvp_found_full_price_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2943430051253,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 30,
+                  "amount": 24819,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 295.6776569948748,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 70,
+                  "amount": 20697,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 45516,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2943430051253,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 32.5,
+                  "amount": 26887,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 295.6776569948748,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 80,
+                  "amount": 23654,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 50541,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2943430051253,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 35,
+                  "amount": 28955,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 295.6776569948748,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 90,
+                  "amount": 26611,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 55566,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2943430051253,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 45,
+                  "amount": 37228,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 295.6776569948748,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 110,
+                  "amount": 32525,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 69753,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "options": [
+      {
+        "from": "Донецк — ДНР",
+        "to": "Москва, центр",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "383e326dbd1187be5b30a80d20fc05d488ea00ad5820edbcdb6cd0e0671d7b48",
+            "precision": "route-maneuver",
+            "status": "unknown",
+            "reason": "multiple_road_traversals",
+            "entry": null,
+            "exit": null
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 1122972,
+          "seconds": 58268,
+          "tolls": {
+            "amount": 3050,
+            "weekdayAmount": 3050,
+            "weekendAmount": 3370,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-4: m4-636 → m4-71"
+            ],
+            "confidence": "matched",
+            "pricingStatus": "priced"
+          },
+          "tollValidation": {
+            "status": "toll",
+            "source": "Route toll composition",
+            "tollEdgeCount": 1,
+            "checkedEdgeCount": 1,
+            "wayIds": [],
+            "roadNames": [
+              "m4"
+            ],
+            "message": "Полный итог составлен из дорожных систем: m4",
+            "complete": true
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "boundaries_resolved",
+            "reason": null,
+            "roadBoundaries": {
+              "provider": "valhalla-trace",
+              "targetRef": "М-4",
+              "routeSignature": "383e326dbd1187be5b30a80d20fc05d488ea00ad5820edbcdb6cd0e0671d7b48",
+              "precision": "matched-road-edge",
+              "status": "unknown",
+              "reason": "road_trace_multiple_or_discontinuous_traversals",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 3,
+            "confirmedPvps": [
+              "m4-636",
+              "m4-71"
+            ],
+            "diagnosticOnly": true,
+            "tariffVector": {
+              "from": "m4-636",
+              "to": "m4-71",
+              "profile": "monThu",
+              "selectionBasis": "confirmed-payment-boundaries",
+              "priceStatus": "known"
+            }
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m4",
+                "name": "М-4 «Дон»",
+                "status": "strict_pvp_found_full_price_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2943430051253,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 30,
+                  "amount": 24819,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 295.6776569948748,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 70,
+                  "amount": 20697,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 45516,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2943430051253,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 32.5,
+                  "amount": 26887,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 295.6776569948748,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 80,
+                  "amount": 23654,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 50541,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2943430051253,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 35,
+                  "amount": 28955,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 295.6776569948748,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 90,
+                  "amount": 26611,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 55566,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 827.2943430051253,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 45,
+                  "amount": 37228,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                },
+                {
+                  "distanceKm": 295.6776569948748,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "Донецк — ДНР",
+                  "to": "Москва, центр",
+                  "ratePerKm": 110,
+                  "amount": 32525,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 69753,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "dual",
+    "automaticMode": "dual",
+    "specialEndpoint": true,
+    "preferredCorridor": "mainland",
+    "routePolicy": "geographic-zone"
+  }
+}

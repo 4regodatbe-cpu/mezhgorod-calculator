@@ -1,10 +1,12 @@
 import type { Result } from '../../v2/components/types';
+import {validTollEstimateView} from '@/lib/toll-estimate-view';
 const money=(value:unknown)=>typeof value==='number'&&Number.isSafeInteger(value)&&value>=0;
 const positive=(value:unknown)=>typeof value==='number'&&Number.isFinite(value)&&value>0;
 const object=(value:unknown):value is Record<string,unknown>=>!!value&&typeof value==='object'&&!Array.isArray(value);
 const strings=(value:unknown)=>Array.isArray(value)&&value.every(x=>typeof x==='string');
 function validTrip(value:unknown):boolean {
  if(!object(value)||!positive(value.meters)||!positive(value.seconds))return false;
+ if(value.tollEstimate!==undefined&&!validTollEstimateView(value.tollEstimate))return false;
  if(value.quality!==undefined&&(!object(value.quality)||typeof value.quality.message!=='string'||!strings(value.quality.providers)))return false;
  if(!object(value.pricingByVehicle))return false;
  for(const vehicle of ['standard','comfort','comfort_plus','minivan']) {
@@ -24,7 +26,7 @@ function validLeg(value:unknown):boolean {
  const values=[t.amount,t.weekdayAmount,t.weekendAmount];
  if(t.pricingStatus==='unknown'){if(!values.every(x=>x===null))return false;}
  else if(t.pricingStatus==='free'){if(!values.every(x=>x===0))return false;}
- else if(t.pricingStatus==='priced'){if(!values.every(money)||!['confirmed','unconfirmed'].includes(String(t.priceConfirmation)))return false;}
+ else if(t.pricingStatus==='priced'){if(!values.every(money)||'priceConfirmation' in t||'displayLabel' in t)return false;}
  else return false;
  return value.free==null && value.freeCandidate==null;
 }
@@ -36,6 +38,7 @@ export function validV3Response(value:unknown):value is Result {
   if(!Array.isArray(value.options)||value.options.length!==1||!value.options.every(validLeg))return false;
   const primary=value.legs[0],option=value.options[0];
   if(primary.from!==option.from||primary.to!==option.to||primary.fast.meters!==option.fast.meters||primary.fast.seconds!==option.fast.seconds)return false;
+  if(JSON.stringify(primary.fast.tollEstimate)!==JSON.stringify(option.fast.tollEstimate))return false;
   for(const key of ['amount','weekdayAmount','weekendAmount','pricingStatus','period'])if(primary.fast.tolls[key]!==option.fast.tolls[key])return false;
   for(const vehicle of ['standard','comfort','comfort_plus','minivan'])if(primary.fast.pricingByVehicle[vehicle].totalPrice!==option.fast.pricingByVehicle[vehicle].totalPrice)return false;
  }

@@ -1,0 +1,1387 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Geometry-only retained OSM subset; no operator product/price admission",
+  "source": {
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=39.548,51.462,39.564,51.476",
+    "httpStatus": 200,
+    "retrievedDate": "2026-10-27",
+    "bytes": 1212291,
+    "sha256": "afe6dc37b1e22fd410fac7d199436646770ff46c0b7abffaceea6ce7d43e066a",
+    "attribution": "© OpenStreetMap contributors; ODbL; https://www.openstreetmap.org/copyright",
+    "subset": "Exact selected node coordinates, way node order, versions and tags; not complete bbox inventory"
+  },
+  "nodes": [
+    {
+      "id": "75715967",
+      "version": 45,
+      "lat": 51.490315,
+      "lon": 39.5517653,
+      "tags": {}
+    },
+    {
+      "id": "316994487",
+      "version": 17,
+      "lat": 51.4877693,
+      "lon": 39.5524602,
+      "tags": {}
+    },
+    {
+      "id": "316994489",
+      "version": 19,
+      "lat": 51.4722602,
+      "lon": 39.5541512,
+      "tags": {}
+    },
+    {
+      "id": "365274796",
+      "version": 21,
+      "lat": 51.4702443,
+      "lon": 39.5539863,
+      "tags": {
+        "barrier": "toll_booth",
+        "contact:email": "feedback@avtodor-tr.ru",
+        "contact:phone": "+7 800 7072323",
+        "contact:vk": "https://vk.com/tpass",
+        "contact:website": "https://avtodor-tr.ru/ru/",
+        "motor_vehicle": "yes",
+        "name": "ПВП 545 км",
+        "operator": "ООО «Автодор-Платные Дороги»"
+      }
+    },
+    {
+      "id": "365275228",
+      "version": 13,
+      "lat": 51.4731466,
+      "lon": 39.5540509,
+      "tags": {
+        "distance": "545",
+        "highway": "milestone"
+      }
+    },
+    {
+      "id": "383727273",
+      "version": 22,
+      "lat": 51.4674767,
+      "lon": 39.5552183,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Калина Ойл",
+        "operator": "ООО \"Калина Ойл\""
+      }
+    },
+    {
+      "id": "1547428412",
+      "version": 2,
+      "lat": 51.4895926,
+      "lon": 39.5520143,
+      "tags": {
+        "distance": "543",
+        "highway": "milestone"
+      }
+    },
+    {
+      "id": "1600877123",
+      "version": 3,
+      "lat": 51.4735454,
+      "lon": 39.553997,
+      "tags": {}
+    },
+    {
+      "id": "2096920539",
+      "version": 4,
+      "lat": 51.4715793,
+      "lon": 39.5542001,
+      "tags": {}
+    },
+    {
+      "id": "2194734415",
+      "version": 3,
+      "lat": 51.4710871,
+      "lon": 39.5542594,
+      "tags": {}
+    },
+    {
+      "id": "2305918880",
+      "version": 1,
+      "lat": 51.4900218,
+      "lon": 39.551867,
+      "tags": {}
+    },
+    {
+      "id": "2350820444",
+      "version": 2,
+      "lat": 51.4691249,
+      "lon": 39.5547059,
+      "tags": {}
+    },
+    {
+      "id": "3261760769",
+      "version": 2,
+      "lat": 51.4813358,
+      "lon": 39.5531261,
+      "tags": {
+        "distance": "544",
+        "highway": "milestone"
+      }
+    },
+    {
+      "id": "3504913992",
+      "version": 7,
+      "lat": 51.4780462,
+      "lon": 39.5540545,
+      "tags": {}
+    },
+    {
+      "id": "3504914293",
+      "version": 6,
+      "lat": 51.4760093,
+      "lon": 39.5552139,
+      "tags": {}
+    },
+    {
+      "id": "3504914294",
+      "version": 12,
+      "lat": 51.4736578,
+      "lon": 39.5548118,
+      "tags": {
+        "barrier": "toll_booth",
+        "contact:email": "feedback@avtodor-tr.ru",
+        "contact:phone": "+7 800 7072323",
+        "contact:vk": "https://vk.com/tpass",
+        "contact:website": "https://avtodor-tr.ru/ru/",
+        "fee": "yes",
+        "motor_vehicle": "yes",
+        "name": "ПВП 545 км",
+        "operator": "ООО «Автодор-Платные Дороги»"
+      }
+    },
+    {
+      "id": "3504914296",
+      "version": 6,
+      "lat": 51.4728745,
+      "lon": 39.5546401,
+      "tags": {}
+    },
+    {
+      "id": "3504914297",
+      "version": 7,
+      "lat": 51.4722186,
+      "lon": 39.5546495,
+      "tags": {}
+    },
+    {
+      "id": "3504914298",
+      "version": 4,
+      "lat": 51.4713209,
+      "lon": 39.5542272,
+      "tags": {}
+    },
+    {
+      "id": "3504914299",
+      "version": 4,
+      "lat": 51.4691132,
+      "lon": 39.5544979,
+      "tags": {}
+    },
+    {
+      "id": "3842564088",
+      "version": 11,
+      "lat": 51.4738083,
+      "lon": 39.553241,
+      "tags": {
+        "barrier": "toll_booth",
+        "contact:email": "feedback@avtodor-tr.ru",
+        "contact:phone": "+7 800 7072323",
+        "contact:vk": "https://vk.com/tpass",
+        "contact:website": "https://avtodor-tr.ru/ru/",
+        "fee": "yes",
+        "motor_vehicle": "yes",
+        "name": "ПВП 545 км",
+        "operator": "ООО «Автодор-Платные Дороги»"
+      }
+    },
+    {
+      "id": "4512436102",
+      "version": 4,
+      "lat": 51.4739566,
+      "lon": 39.55394,
+      "tags": {}
+    },
+    {
+      "id": "4513805004",
+      "version": 4,
+      "lat": 51.4757199,
+      "lon": 39.5552263,
+      "tags": {}
+    },
+    {
+      "id": "4513805005",
+      "version": 4,
+      "lat": 51.4772986,
+      "lon": 39.5546947,
+      "tags": {}
+    },
+    {
+      "id": "4513805007",
+      "version": 2,
+      "lat": 51.4766106,
+      "lon": 39.5550643,
+      "tags": {}
+    },
+    {
+      "id": "4522140251",
+      "version": 3,
+      "lat": 51.4711758,
+      "lon": 39.5548635,
+      "tags": {}
+    },
+    {
+      "id": "4522140252",
+      "version": 4,
+      "lat": 51.4691659,
+      "lon": 39.5548634,
+      "tags": {}
+    },
+    {
+      "id": "4522140253",
+      "version": 4,
+      "lat": 51.4699468,
+      "lon": 39.5550204,
+      "tags": {}
+    },
+    {
+      "id": "4522140254",
+      "version": 3,
+      "lat": 51.4679181,
+      "lon": 39.554631,
+      "tags": {}
+    },
+    {
+      "id": "4625394253",
+      "version": 3,
+      "lat": 51.4701372,
+      "lon": 39.5543652,
+      "tags": {}
+    },
+    {
+      "id": "4625394254",
+      "version": 3,
+      "lat": 51.470369,
+      "lon": 39.5543375,
+      "tags": {}
+    },
+    {
+      "id": "4625394255",
+      "version": 3,
+      "lat": 51.4701216,
+      "lon": 39.5539943,
+      "tags": {}
+    },
+    {
+      "id": "4625394256",
+      "version": 3,
+      "lat": 51.4703538,
+      "lon": 39.5539746,
+      "tags": {}
+    },
+    {
+      "id": "4904703527",
+      "version": 3,
+      "lat": 51.4703376,
+      "lon": 39.5549793,
+      "tags": {}
+    },
+    {
+      "id": "4904703528",
+      "version": 3,
+      "lat": 51.4708338,
+      "lon": 39.5549283,
+      "tags": {}
+    },
+    {
+      "id": "4904703532",
+      "version": 2,
+      "lat": 51.4718315,
+      "lon": 39.5541728,
+      "tags": {}
+    },
+    {
+      "id": "4904703533",
+      "version": 3,
+      "lat": 51.4725588,
+      "lon": 39.5546172,
+      "tags": {}
+    },
+    {
+      "id": "4904703534",
+      "version": 2,
+      "lat": 51.4725614,
+      "lon": 39.5541252,
+      "tags": {}
+    },
+    {
+      "id": "4904703535",
+      "version": 2,
+      "lat": 51.4727151,
+      "lon": 39.5541074,
+      "tags": {}
+    },
+    {
+      "id": "4904703538",
+      "version": 3,
+      "lat": 51.4758074,
+      "lon": 39.5552273,
+      "tags": {}
+    },
+    {
+      "id": "4904703541",
+      "version": 2,
+      "lat": 51.4770136,
+      "lon": 39.5548693,
+      "tags": {}
+    },
+    {
+      "id": "5818209495",
+      "version": 6,
+      "lat": 51.4702718,
+      "lon": 39.554704,
+      "tags": {
+        "barrier": "toll_booth",
+        "contact:email": "feedback@avtodor-tr.ru",
+        "contact:phone": "+7 800 7072323",
+        "contact:vk": "https://vk.com/tpass",
+        "contact:website": "https://avtodor-tr.ru/ru/",
+        "fee": "yes",
+        "motor_vehicle": "yes",
+        "name": "ПВП 545 км",
+        "operator": "ООО «Автодор-Платные Дороги»"
+      }
+    },
+    {
+      "id": "5818209496",
+      "version": 3,
+      "lat": 51.47433,
+      "lon": 39.5547268,
+      "tags": {}
+    },
+    {
+      "id": "5818209497",
+      "version": 3,
+      "lat": 51.4728672,
+      "lon": 39.5543378,
+      "tags": {}
+    },
+    {
+      "id": "5818209499",
+      "version": 2,
+      "lat": 51.470384,
+      "lon": 39.5546944,
+      "tags": {}
+    },
+    {
+      "id": "5818209500",
+      "version": 2,
+      "lat": 51.4701519,
+      "lon": 39.5547146,
+      "tags": {}
+    },
+    {
+      "id": "6594393966",
+      "version": 1,
+      "lat": 51.4703417,
+      "lon": 39.5536881,
+      "tags": {}
+    },
+    {
+      "id": "6594393967",
+      "version": 1,
+      "lat": 51.4701099,
+      "lon": 39.5537155,
+      "tags": {}
+    },
+    {
+      "id": "6594393968",
+      "version": 5,
+      "lat": 51.4702271,
+      "lon": 39.5536991,
+      "tags": {
+        "barrier": "toll_booth",
+        "contact:email": "feedback@avtodor-tr.ru",
+        "contact:phone": "+7 800 7072323",
+        "contact:vk": "https://vk.com/tpass",
+        "contact:website": "https://avtodor-tr.ru/ru/",
+        "motor_vehicle": "yes",
+        "name": "Автодор",
+        "operator": "ООО «Автодор-Платные Дороги»"
+      }
+    },
+    {
+      "id": "6594393971",
+      "version": 2,
+      "lat": 51.4737069,
+      "lon": 39.5532525,
+      "tags": {}
+    },
+    {
+      "id": "6594393972",
+      "version": 2,
+      "lat": 51.473922,
+      "lon": 39.5532295,
+      "tags": {}
+    },
+    {
+      "id": "6594393973",
+      "version": 2,
+      "lat": 51.473575,
+      "lon": 39.5547766,
+      "tags": {}
+    },
+    {
+      "id": "6594393974",
+      "version": 2,
+      "lat": 51.4737765,
+      "lon": 39.5548468,
+      "tags": {}
+    },
+    {
+      "id": "9605783250",
+      "version": 1,
+      "lat": 51.4728331,
+      "lon": 39.554092,
+      "tags": {}
+    },
+    {
+      "id": "9605783251",
+      "version": 1,
+      "lat": 51.4718597,
+      "lon": 39.5544825,
+      "tags": {}
+    },
+    {
+      "id": "9605783252",
+      "version": 2,
+      "lat": 51.4746657,
+      "lon": 39.555092,
+      "tags": {}
+    },
+    {
+      "id": "9620416636",
+      "version": 2,
+      "lat": 51.4702571,
+      "lon": 39.5543533,
+      "tags": {
+        "barrier": "toll_booth",
+        "contact:email": "feedback@avtodor-tr.ru",
+        "contact:phone": "+7 800 7072323",
+        "contact:vk": "https://vk.com/tpass",
+        "contact:website": "https://avtodor-tr.ru/ru/",
+        "motor_vehicle": "yes",
+        "name": "ПВП 545 км",
+        "operator": "ООО «Автодор-Платные Дороги»"
+      }
+    },
+    {
+      "id": "11071888926",
+      "version": 3,
+      "lat": 51.4759069,
+      "lon": 39.5552214,
+      "tags": {
+        "traffic_sign": "maxspeed=implicit",
+        "traffic_sign:direction": "forward"
+      }
+    },
+    {
+      "id": "13644779838",
+      "version": 1,
+      "lat": 51.4689128,
+      "lon": 39.5548121,
+      "tags": {}
+    },
+    {
+      "id": "13644813529",
+      "version": 1,
+      "lat": 51.469859,
+      "lon": 39.5550187,
+      "tags": {}
+    },
+    {
+      "id": "13644813536",
+      "version": 1,
+      "lat": 51.4717033,
+      "lon": 39.5547526,
+      "tags": {}
+    },
+    {
+      "id": "13644813578",
+      "version": 1,
+      "lat": 51.472483,
+      "lon": 39.5543524,
+      "tags": {}
+    },
+    {
+      "id": "13644813579",
+      "version": 1,
+      "lat": 51.4731337,
+      "lon": 39.5543786,
+      "tags": {}
+    },
+    {
+      "id": "13644813580",
+      "version": 1,
+      "lat": 51.4726954,
+      "lon": 39.5543283,
+      "tags": {}
+    },
+    {
+      "id": "13644823408",
+      "version": 1,
+      "lat": 51.473224,
+      "lon": 39.5546847,
+      "tags": {}
+    },
+    {
+      "id": "13644823412",
+      "version": 1,
+      "lat": 51.4736306,
+      "lon": 39.5545139,
+      "tags": {}
+    },
+    {
+      "id": "13644823414",
+      "version": 1,
+      "lat": 51.4740458,
+      "lon": 39.5546369,
+      "tags": {}
+    },
+    {
+      "id": "13644823417",
+      "version": 1,
+      "lat": 51.4734906,
+      "lon": 39.5547456,
+      "tags": {}
+    },
+    {
+      "id": "13644823419",
+      "version": 1,
+      "lat": 51.4745875,
+      "lon": 39.5548286,
+      "tags": {}
+    },
+    {
+      "id": "13644823421",
+      "version": 2,
+      "lat": 51.4751246,
+      "lon": 39.5550878,
+      "tags": {}
+    },
+    {
+      "id": "13644823422",
+      "version": 1,
+      "lat": 51.4749859,
+      "lon": 39.5552025,
+      "tags": {}
+    },
+    {
+      "id": "13644823423",
+      "version": 1,
+      "lat": 51.4750933,
+      "lon": 39.5552348,
+      "tags": {}
+    },
+    {
+      "id": "13644823424",
+      "version": 1,
+      "lat": 51.475302,
+      "lon": 39.555272,
+      "tags": {}
+    },
+    {
+      "id": "13644823425",
+      "version": 2,
+      "lat": 51.4752323,
+      "lon": 39.5551305,
+      "tags": {}
+    },
+    {
+      "id": "13644823426",
+      "version": 1,
+      "lat": 51.4753569,
+      "lon": 39.5551698,
+      "tags": {}
+    },
+    {
+      "id": "13644823427",
+      "version": 1,
+      "lat": 51.4754439,
+      "lon": 39.5552709,
+      "tags": {}
+    },
+    {
+      "id": "13644823428",
+      "version": 1,
+      "lat": 51.4751743,
+      "lon": 39.5552519,
+      "tags": {}
+    },
+    {
+      "id": "13644823432",
+      "version": 1,
+      "lat": 51.4767777,
+      "lon": 39.5549991,
+      "tags": {}
+    },
+    {
+      "id": "13644823433",
+      "version": 1,
+      "lat": 51.4769129,
+      "lon": 39.5549319,
+      "tags": {}
+    },
+    {
+      "id": "13644823434",
+      "version": 1,
+      "lat": 51.4771985,
+      "lon": 39.5547578,
+      "tags": {}
+    },
+    {
+      "id": "13644823435",
+      "version": 1,
+      "lat": 51.4764631,
+      "lon": 39.5551085,
+      "tags": {}
+    },
+    {
+      "id": "13644823436",
+      "version": 1,
+      "lat": 51.4763246,
+      "lon": 39.5551503,
+      "tags": {}
+    },
+    {
+      "id": "13644823437",
+      "version": 1,
+      "lat": 51.4761764,
+      "lon": 39.5551824,
+      "tags": {}
+    },
+    {
+      "id": "13644823441",
+      "version": 1,
+      "lat": 51.4774287,
+      "lon": 39.5545995,
+      "tags": {}
+    },
+    {
+      "id": "13644823442",
+      "version": 1,
+      "lat": 51.4775426,
+      "lon": 39.5545175,
+      "tags": {}
+    },
+    {
+      "id": "13644823443",
+      "version": 2,
+      "lat": 51.4777299,
+      "lon": 39.5543676,
+      "tags": {}
+    },
+    {
+      "id": "13644823445",
+      "version": 3,
+      "lat": 51.4779889,
+      "lon": 39.5541213,
+      "tags": {}
+    },
+    {
+      "id": "13644823446",
+      "version": 2,
+      "lat": 51.4778429,
+      "lon": 39.5542715,
+      "tags": {}
+    },
+    {
+      "id": "13645658518",
+      "version": 1,
+      "lat": 51.4752826,
+      "lon": 39.5551477,
+      "tags": {}
+    },
+    {
+      "id": "13645658530",
+      "version": 1,
+      "lat": 51.4761401,
+      "lon": 39.5551932,
+      "tags": {}
+    },
+    {
+      "id": "13645658532",
+      "version": 1,
+      "lat": 51.4753674,
+      "lon": 39.5552769,
+      "tags": {}
+    },
+    {
+      "id": "13645658533",
+      "version": 1,
+      "lat": 51.4754636,
+      "lon": 39.5551926,
+      "tags": {}
+    },
+    {
+      "id": "13645658623",
+      "version": 2,
+      "lat": 51.4779432,
+      "lon": 39.5541675,
+      "tags": {}
+    },
+    {
+      "id": "13646247893",
+      "version": 1,
+      "lat": 51.4783961,
+      "lon": 39.553473,
+      "tags": {}
+    },
+    {
+      "id": "13646247895",
+      "version": 1,
+      "lat": 51.4786768,
+      "lon": 39.5534431,
+      "tags": {}
+    }
+  ],
+  "ways": [
+    {
+      "id": "432522383",
+      "version": 10,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "4904703532",
+        "316994489",
+        "4904703534",
+        "4904703535",
+        "9605783250"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "60",
+        "name": "«Дон»",
+        "note": "Участок реконструирован; Участок реконструирован (янв.2009); Участок реконструирован",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source:maxspeed": "sign",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "id": "454710293",
+      "version": 7,
+      "timestamp": "2026-03-13T21:43:09Z",
+      "nodes": [
+        "4512436102",
+        "13646247893",
+        "13646247895",
+        "3261760769",
+        "316994487",
+        "1547428412",
+        "2305918880",
+        "75715967"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "2",
+        "lit": "no",
+        "maxspeed": "RU:rural",
+        "maxspeed:practical": "110",
+        "note": "Участок реконструирован; Участок реконструирован (янв.2009); Участок реконструирован",
+        "oneway": "yes",
+        "smoothness": "good",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "id": "467980112",
+      "version": 7,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "4625394256",
+        "365274796",
+        "4625394255"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "«Дон»",
+        "note": "Участок реконструирован",
+        "oneway": "yes",
+        "ref": "М-4",
+        "surface": "asphalt",
+        "toll": "yes",
+        "tunnel": "building_passage"
+      }
+    },
+    {
+      "id": "467980113",
+      "version": 5,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "4625394254",
+        "2194734415"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "«Дон»",
+        "note": "Участок реконструирован; Участок реконструирован (янв.2009); Участок реконструирован",
+        "oneway": "yes",
+        "ref": "М-4",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "id": "467980114",
+      "version": 9,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "4625394253",
+        "9620416636",
+        "4625394254"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "«Дон»",
+        "note": "Участок реконструирован; Участок реконструирован (янв.2009); Участок реконструирован",
+        "oneway": "yes",
+        "ref": "М-4",
+        "surface": "asphalt",
+        "toll": "yes",
+        "tunnel": "building_passage"
+      }
+    },
+    {
+      "id": "522875739",
+      "version": 11,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "4522140254",
+        "3504914299"
+      ],
+      "tags": {
+        "destination": "Новая Усмань; Воронеж; Москва",
+        "destination:ref": "М-4",
+        "highway": "trunk",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "50",
+        "name": "«Дон»",
+        "note": "Участок реконструирован; Участок реконструирован (янв.2009); Участок реконструирован",
+        "oneway": "yes",
+        "ref": "М-4",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "606838738",
+      "version": 13,
+      "timestamp": "2026-03-13T09:39:28Z",
+      "nodes": [
+        "4904703527",
+        "4904703528",
+        "4522140251",
+        "13644813536",
+        "3504914297"
+      ],
+      "tags": {
+        "destination": "Воронеж; Москва",
+        "destination:ref": "М-4",
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "50",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "615270676",
+      "version": 10,
+      "timestamp": "2023-06-30T07:08:18Z",
+      "nodes": [
+        "2350820444",
+        "5818209500"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "30",
+        "oneway": "yes",
+        "smoothness": "good",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "615270691",
+      "version": 9,
+      "timestamp": "2023-06-30T07:08:18Z",
+      "nodes": [
+        "5818209500",
+        "5818209495",
+        "5818209499"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "30",
+        "motorroad": "yes",
+        "oneway": "yes",
+        "smoothness": "good",
+        "surface": "asphalt",
+        "toll": "yes",
+        "tunnel": "building_passage"
+      }
+    },
+    {
+      "id": "615270694",
+      "version": 10,
+      "timestamp": "2023-06-30T07:08:18Z",
+      "nodes": [
+        "5818209499",
+        "9605783251"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "50",
+        "oneway": "yes",
+        "smoothness": "good",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "702218804",
+      "version": 9,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "6594393966",
+        "6594393968",
+        "6594393967"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "7",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "surface": "asphalt",
+        "toll": "yes",
+        "tunnel": "building_passage"
+      }
+    },
+    {
+      "id": "702218806",
+      "version": 10,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "6594393972",
+        "3842564088",
+        "6594393971"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "source:maxspeed": "sign",
+        "surface": "asphalt",
+        "toll": "yes",
+        "tunnel": "building_passage"
+      }
+    },
+    {
+      "id": "702218808",
+      "version": 16,
+      "timestamp": "2026-03-13T16:31:14Z",
+      "nodes": [
+        "4513805004",
+        "4904703538",
+        "11071888926",
+        "3504914293",
+        "13645658530",
+        "13644823437",
+        "13644823436",
+        "13644823435",
+        "4513805007",
+        "13644823432",
+        "13644823433",
+        "4904703541",
+        "13644823434",
+        "4513805005",
+        "13644823441",
+        "13644823442",
+        "13644823443",
+        "13644823446",
+        "13645658623",
+        "13644823445",
+        "3504913992"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "90",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "702218809",
+      "version": 9,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "6594393973",
+        "3504914294",
+        "6594393974"
+      ],
+      "tags": {
+        "destination": "Воронеж;Москва",
+        "destination:ref": "М-4",
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "surface": "asphalt",
+        "toll": "yes",
+        "tunnel": "building_passage"
+      }
+    },
+    {
+      "id": "787089819",
+      "version": 10,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "6594393974",
+        "9605783252"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "40",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "799492316",
+      "version": 6,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "3504914299",
+        "4625394253"
+      ],
+      "tags": {
+        "destination": "Новая Усмань; Воронеж; Москва",
+        "destination:ref": "М-4",
+        "highway": "trunk",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "«Дон»",
+        "note": "Участок реконструирован; Участок реконструирован (янв.2009); Участок реконструирован",
+        "oneway": "yes",
+        "ref": "М-4",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "799492317",
+      "version": 6,
+      "timestamp": "2023-06-30T07:08:18Z",
+      "nodes": [
+        "4522140254",
+        "2350820444"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "50",
+        "oneway": "yes",
+        "smoothness": "good",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "799492323",
+      "version": 8,
+      "timestamp": "2026-03-13T16:31:14Z",
+      "nodes": [
+        "5818209497",
+        "13644813579",
+        "13644823412",
+        "13644823414",
+        "5818209496",
+        "13644823419",
+        "13644823421",
+        "13644823425",
+        "13645658518",
+        "13644823426",
+        "13645658533",
+        "4513805004"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "70",
+        "oneway": "yes",
+        "smoothness": "good",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "799492324",
+      "version": 8,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "3504914297",
+        "4904703533",
+        "3504914296"
+      ],
+      "tags": {
+        "destination": "Воронеж; Москва",
+        "destination:ref": "М-4",
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "799492325",
+      "version": 9,
+      "timestamp": "2026-03-13T09:39:28Z",
+      "nodes": [
+        "4522140252",
+        "13644813529",
+        "4522140253",
+        "4904703527"
+      ],
+      "tags": {
+        "destination": "Воронеж; Москва",
+        "destination:ref": "М-4",
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "60",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "799492326",
+      "version": 9,
+      "timestamp": "2026-03-13T09:14:22Z",
+      "nodes": [
+        "4522140254",
+        "13644779838",
+        "4522140252"
+      ],
+      "tags": {
+        "destination": "Воронеж; Москва",
+        "destination:ref": "М-4",
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "50",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "1043769285",
+      "version": 3,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "9605783250",
+        "365275228",
+        "1600877123",
+        "4512436102"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "80",
+        "name": "«Дон»",
+        "note": "Участок реконструирован; Участок реконструирован (янв.2009); Участок реконструирован",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source:maxspeed": "sign",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "id": "1043769286",
+      "version": 3,
+      "timestamp": "2023-08-25T09:04:27Z",
+      "nodes": [
+        "2194734415",
+        "3504914298",
+        "2096920539",
+        "4904703532"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "30",
+        "maxspeed:practical": "110",
+        "name": "«Дон»",
+        "note": "Участок реконструирован; Участок реконструирован (янв.2009); Участок реконструирован",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source:maxspeed": "sign",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "id": "1043769287",
+      "version": 6,
+      "timestamp": "2026-03-13T09:39:28Z",
+      "nodes": [
+        "9605783251",
+        "13644813578",
+        "13644813580",
+        "5818209497"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "50",
+        "oneway": "yes",
+        "smoothness": "good",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "1043769288",
+      "version": 9,
+      "timestamp": "2026-03-13T16:31:14Z",
+      "nodes": [
+        "9605783252",
+        "13644823422",
+        "13644823423",
+        "13644823428",
+        "13644823424",
+        "13645658532",
+        "13644823427",
+        "4513805004"
+      ],
+      "tags": {
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "40",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "1043769289",
+      "version": 8,
+      "timestamp": "2026-03-13T09:39:28Z",
+      "nodes": [
+        "3504914296",
+        "13644823408",
+        "13644823417",
+        "6594393973"
+      ],
+      "tags": {
+        "destination": "Воронеж; Москва",
+        "destination:ref": "М-4",
+        "highway": "trunk",
+        "int_ref": "E 115",
+        "lanes": "5",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "«Дон»",
+        "oneway": "yes",
+        "ref": "М-4",
+        "source": "ГК Автодор",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    }
+  ]
+}

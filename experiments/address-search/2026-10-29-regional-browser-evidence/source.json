@@ -1,0 +1,18 @@
+{
+  "sourceCommit": "3b08ca23ce3f603628dd4ebc0425c62b7206c7b2",
+  "scope": "local built V3; not Vercel Preview",
+  "node": "24.19.0",
+  "next": "16.3.4",
+  "chromium": "154.0.8037.57",
+  "addressResponsesMocked": false,
+  "calculationIntentionallyIntercepted": true,
+  "runtimeFilesSha256": {
+    "lib/photon-address-search.ts": "7fecb2e3d93188940932d67a158fa4e9725a2ebc89b5f4ebef8266b576280c5d",
+    "experiments/address-search/local-gazetteer.mjs": "55d7a96f4e0606d044acd1c481103a9ea8e5f79d76f7644751b62cb6f925558a"
+  },
+  "evidenceSha256": {
+    "review.json": "459e9a7306179e25c9bbcee4197d5747ed8d3b929d3a50bb2a681f1299be2793",
+    "1280.png": "7961a2c67e61fc3c953d8d2e84d391e6907b2db16603937a59baa9b8b7a2ddb8",
+    "390.png": "18c24ef5983ac2e5a8a00e9ff5d6d435a6647070cd5267e7a633791133f9234d"
+  }
+}

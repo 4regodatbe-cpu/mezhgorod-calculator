@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:58:16.380Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 31,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 12,
+    "spec": {
+      "caseId": "lnr-ровеньки-kazan-center",
+      "kind": "regional",
+      "region": "lnr"
+    }
+  },
+  "caseId": "lnr-ровеньки-kazan-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-58-16-380Z-part12",
+  "parent": "7672c83ca8767bd6544847a10505f78cff2f3c1e"
+}

@@ -1,0 +1,47 @@
+{
+  "status": "DONE",
+  "sourceHead": "56e3fa884fd95248c542e6ccbc647a935e0869e7",
+  "responses": [
+    {
+      "url": "https://www.openstreetmap.org/api/0.6/way/1067836106/full",
+      "wayId": "1067836106",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "bodyFile": "1067836106.osm.xml",
+      "bytes": 1776,
+      "sha256": "896d898d5651728dd3fef071cb5e8272338584d17605ce2a273b90d1a108cbaa",
+      "elapsedSeconds": 6.762
+    },
+    {
+      "url": "https://www.openstreetmap.org/api/0.6/way/374972862/full",
+      "wayId": "374972862",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "bodyFile": "374972862.osm.xml",
+      "bytes": 3115,
+      "sha256": "4cd154f387f8e8d3b72efbb8a3c6c7513a689cb57f83b18cfb511897c50d70c3",
+      "elapsedSeconds": 4.846
+    },
+    {
+      "url": "https://www.openstreetmap.org/api/0.6/way/374972870/full",
+      "wayId": "374972870",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "bodyFile": "374972870.osm.xml",
+      "bytes": 3411,
+      "sha256": "9d8f83e52801b89f65194a0b3bf47a3cb3f28be3d511fc39904a1d3f76f3eb1b",
+      "elapsedSeconds": 5.073
+    },
+    {
+      "url": "https://www.openstreetmap.org/api/0.6/way/1067836109/full",
+      "wayId": "1067836109",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "bodyFile": "1067836109.osm.xml",
+      "bytes": 1846,
+      "sha256": "b3d9458ad972ab01d6dfa89b097a7529cbdd477aa8bf40a8d2ec9b2792dd5a02",
+      "elapsedSeconds": 4.932
+    }
+  ],
+  "elapsedSeconds": 21.615
+}

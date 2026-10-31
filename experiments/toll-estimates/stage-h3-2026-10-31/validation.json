@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "exit": 0,
+  "scope": "H3 documents only; no H2 tests/replay/build/Yandex",
+  "localLinksVerified": 6,
+  "rawSearchHashesVerified": 9,
+  "gRestored": false,
+  "terminologyVerified": true,
+  "h2ArtifactReadOnly": true,
+  "publicationReady": false,
+  "initialCheck": {
+    "exit": 1,
+    "reason": "Case-sensitive wording check found capitalized Оценённая in new WORK_STATE paragraph; document corrected, assertion retained."
+  }
+}

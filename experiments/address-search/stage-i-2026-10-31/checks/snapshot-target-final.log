@@ -1,0 +1,17 @@
+✔ snapshot contains only four exact successful live suggestions with source SHA and separate homonyms (3.816522ms)
+✔ bounded Cyrillic prefixes and reviewed qualifiers, no houses or unknown cities (1.437416ms)
+✔ disabled default, abort and exhausted original budget do not return fallback (0.349157ms)
+✔ expired/future-reviewed/overlong validity and altered payload fail closed (1.05476ms)
+✔ schema guards apply even to freshly hashed invalid records (1.17403ms)
+✔ returned suggestions cannot mutate subsequent snapshot results (0.587361ms)
+✔ AddressField updates trigger browser checks on PR as well as push (1.799593ms)
+✔ CI executes new swap/refocus regression and preserves old suite failures (0.277787ms)
+✔ push-only B03 runs retain the original mandatory offline verify commands (0.171011ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 199.676311

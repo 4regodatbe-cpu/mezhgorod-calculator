@@ -1,0 +1,16 @@
+{
+  "mode": "real local production V3 /r + actual GeoNames; no address mocks; calculation blocked to avoid unapproved extra live work",
+  "results": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "status": "FAIL",
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(searchResponses.length>=7)\n"
+    }
+  ],
+  "browser": "154.0.8037.57",
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(searchResponses.length>=7)\n",
+  "status": "BLOCKED_OR_FAILED"
+}

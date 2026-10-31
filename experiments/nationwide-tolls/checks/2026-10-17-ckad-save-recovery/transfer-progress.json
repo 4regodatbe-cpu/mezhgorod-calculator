@@ -1,0 +1,318 @@
+{
+  "status": "PREPARED_EXACT_TREE_BEFORE_BRANCH_SAVE",
+  "expectedParent": "fe5f1fc8bd0986e222cb49a4e906a12005513c65",
+  "pendingSource": "a9f2bf98106bc798cc3536a7c920cd2c4dbd10a2",
+  "originalFiles": 60,
+  "originalExactFiles": 57,
+  "mergedJournals": 3,
+  "newTestsRun": 0,
+  "newPricingReplay": 0,
+  "entries": [
+    {
+      "path": "docs/checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md",
+      "sha": "7a761691f71038f651ce3b7ca0d60ceab3a387e3",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/README.md",
+      "sha": "255a37d36c84f59a67184e84caf25c787f9230b9",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/build.log.gz",
+      "sha": "25c9997459d8f8e24429a34a13a816e3b28cecad",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/audit.log.gz",
+      "sha": "49c1c6b1e6596e53f92e04dc62731f34bdb617e2",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/ci-observed-during-work.json",
+      "sha": "c8b06640b344c91e912fb91c4b948be5efe6d276",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/eslint.log.gz",
+      "sha": "d4b9926df0b7defceb6caf0b474c4a190c5ca8f0",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-before-network-guard-check.json",
+      "sha": "cd362da2b68e67b612ae8730a0eecf0bb3c49a5d",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-before-network-guard.log.gz",
+      "sha": "607f9ec2f7d5da2a0b68df1db1d26c2b3809628d",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-check.json",
+      "sha": "fcaaa8ad64282ca011f885fc074752c09e5d34fa",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-initial-check.json",
+      "sha": "9bd6a56373543906d7afe7f85d6a0461b1a17f82",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-initial.log.gz",
+      "sha": "9eef6a2150b42361d9fe6d8ebbe4b0fe4c4225a4",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused.log.gz",
+      "sha": "3a71450c3b6bf701b6e997e9984d74492532ff34",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/initial-check-findings.json",
+      "sha": "8fac1c4829e0c10b8dacc094193381e54c0d6a9e",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/negative-context-checks.json",
+      "sha": "9404ac8354297534eb65051f826d3ab30e6c72d6",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/pre-save-readback.json",
+      "sha": "5e147bb55d0c7fa9abd92d7f497eee0f370bbc36",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary.json",
+      "sha": "2d458cc3bac54cf782983b8d42c2070d294ed987",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/progress.json",
+      "sha": "b6f1ab84ca4e957ffc1c9a7c3e91e586a878df7d",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/required-checks.json",
+      "sha": "dcc5c800439e2617244ffcd6d5d42ef69fa49ac0",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas.json",
+      "sha": "b3ed00fef943bb9130d2fab58fb61a327218feb2",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json",
+      "sha": "3641a61bfff1001f99990fec55131a0a9075e474",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/summary.json",
+      "sha": "60bff925294883357efe9d28e55a71b0208aa698",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/tsc.log.gz",
+      "sha": "d4b9926df0b7defceb6caf0b474c4a190c5ca8f0",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/01ba060f9aefa925fbec.metadata.json",
+      "sha": "a2c569f5d1152921ceb47ce1eb6b2db4fe445421",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/01ba060f9aefa925fbec.osm",
+      "sha": "1bbed3401773bf5ea3514575fbfe5b7a9cf17ad5",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/188b375d0695e2a1c254.metadata.json",
+      "sha": "95ef7890fcade8f26298ab2d642d5a435074145b",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/validation.json",
+      "sha": "952f95b9b29d90435503526ab7e44e229f236885",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/188b375d0695e2a1c254.osm",
+      "sha": "4602cbf3964b376098e2ecf508d1c0a7f7842c5a",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/311dc7698b6a73a2265f.metadata.json",
+      "sha": "8bc0d29c550b61e0a7f0b59c2839a47ab3be4e32",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/311dc7698b6a73a2265f.osm",
+      "sha": "93cef1c59686b9c660af40a0b674ff5a0fe890c2",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/3bfb7278c60ffb4a20a3.metadata.json",
+      "sha": "0a17018f391e85e26991805e031a8bb5cbe03fa1",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/616dc95325a09bcadbf8.metadata.json",
+      "sha": "afc3caf4b95fc0078aa573783368362f9c8eda7e",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/616dc95325a09bcadbf8.osm",
+      "sha": "34b70299814e31e40ba681c8d711b793023bf5fc",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/64a04cac63bfc59f524d.metadata.json",
+      "sha": "2211a74c5fe652f013b27301a4c118ab8d3e9705",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/3bfb7278c60ffb4a20a3.osm",
+      "sha": "35bce359da738d980816c38c07365e72299018b9",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/64a04cac63bfc59f524d.osm",
+      "sha": "c55ec45a0f413ee768d6c1efb58460e011eadf57",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/6587d1637ed49b3cbb47.metadata.json",
+      "sha": "fbb67331ab6d0c85c814a5beecd3906f72c8adf3",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/919bcb82b0adc9391fec.osm",
+      "sha": "cd963cedf5e88dc18dbf9654e5ab18509442f423",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/919bcb82b0adc9391fec.metadata.json",
+      "sha": "e065e087a02804a9f06aa218f6c6bd631a5a3b55",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/README.md",
+      "sha": "7f49c4b0bbbc9082830d3b646d1f6cc198714be0",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/6587d1637ed49b3cbb47.osm",
+      "sha": "b9c510003d0a5ff12a6b095f7130839a7036cc5b",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2d6f4bfb98c3a6535e9.metadata.json",
+      "sha": "e6f7095227461d8c7e41cd278c26e614d2120630",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2319a830347351be8d7.osm",
+      "sha": "c6bb3b7e2bfb4879ae5a6f897a35ba0ce81872cc",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2319a830347351be8d7.metadata.json",
+      "sha": "415ac87a9ccfadb4fabd8bc7e08c7bebc7c21e7f",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2d6f4bfb98c3a6535e9.osm",
+      "sha": "922f253ceb729c90b23648b3b5a488522ec95edd",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/dfdac5ff1ade415d779d.metadata.json",
+      "sha": "cf1566e0133015bedb56c71c61aa41920673ac06",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/c4b24dcb8db4743a900f.osm",
+      "sha": "36c09eddee55de90e58156928d6d0fb2c746805b",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/c4b24dcb8db4743a900f.metadata.json",
+      "sha": "6ba36fcc2699142fa10aa9238d0babf99239433e",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/physical-directed.json",
+      "sha": "e5e938b1173ef9fb0a58f6f4ded19dbb89f8c4e0",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/binding-proof.json",
+      "sha": "745843306a3fd355155ad956ade272639c76b7fe",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/dfdac5ff1ade415d779d.osm",
+      "sha": "2e7122ce6d52decdc5c4d8d14da81689a003a044",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/progress-before-reconcile.json",
+      "sha": "23f7366938c9622312fba4fd208e4bc1b38f4bbb",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/progress.json",
+      "sha": "60830bdbcb9528deaa34a9664a78206d5823ab4d",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "lib/v3-calculation/ckad-m11-m12-boundary.ts",
+      "sha": "a40cd3ba6757b7704fb8fbe4a858650ad90c3e5e",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "lib/toll-validator.ts",
+      "sha": "b472af9ec83e14461ccbb7415eb6fd4f9e5db572",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "lib/v3-calculation/ckad-product-boundaries.ts",
+      "sha": "fb896ee7ddd569336edf266131ec72bc335b99f0",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-17-2320-ckad-code-save-recovery-DONE.md",
+      "sha": "bce5e0adb432c710436d9c228e0f2f728c17d539",
+      "status": "prepared_updated_checkpoint"
+    },
+    {
+      "path": "lib/v3-calculation/route-leg-pricing.ts",
+      "sha": "2b39009a1e8bc756738c9882db9d38d097329039",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "scripts/v3-ckad-m11-m12-boundary.test.ts",
+      "sha": "31207127c747e558d36bba89deda47c14e735c26",
+      "status": "uploaded_exact_blob"
+    },
+    {
+      "path": "docs/WORK_STATE.md",
+      "sha": "8f397a4cacb973cbef9947adb9fb6fc465418936",
+      "status": "prepared_merged_journal"
+    },
+    {
+      "path": "experiments/nationwide-tolls/NEXT_STEPS.md",
+      "sha": "65f48ab3b429961c49f9321ed33204ea9669c67f",
+      "status": "prepared_merged_journal"
+    },
+    {
+      "path": "experiments/nationwide-tolls/WORK_LOG.md",
+      "sha": "5318bcdca9851f722ab8b8d25565bcfd6188a940",
+      "status": "prepared_merged_journal"
+    }
+  ],
+  "resume": "Verify exact tree and current branch/terminal CI, non-force update, then head/path SHA readback. Uploaded blobs alone do not mean saved runtime."
+}

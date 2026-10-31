@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-16T02:06:14.535Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 133,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 17,
+    "spec": {
+      "caseId": "single-m4-voronezh-to-rostov",
+      "kind": "road",
+      "group": "single-m4"
+    }
+  },
+  "caseId": "single-m4-voronezh-to-moscow",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-m4-voronezh-to-moscow",
+    "startedAt": "2026-10-16T02:05:43.123Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-05-46-867Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/2026-10-16T02-05-46-824Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-05-47-328Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-05-47-762Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m4"
+      ],
+      "provenRoads": [
+        "m4"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m4",
+        "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m4",
+        "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": null,
+        "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+      }
+    ],
+    "finishedAt": "2026-10-16T02:05:47.779Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-05-41-781Z-part17",
+  "parent": "b0da23d0c2e5981d36646586a4b5ad5d2b9bb4e0"
+}

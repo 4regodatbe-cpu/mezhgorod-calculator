@@ -1,16 +1,22 @@
 import { classifyTerritory, splitRouteByTerritory, type Position, type VerifiedTerritory, type GeoPoint } from "./special-territory-geometry.ts";
+import { inCrimea } from "./crimea-geography.ts";
 import { inCrimeaApproachZone } from "./special-territory-approach-zone.ts";
+import { inspectKrasnodarBypass, krasnodarBypassControls } from "./toll-engine/krasnodar-bypass-evidence.ts";
 export const BRIDGE: Position = { lat:45.2117, lng:36.7161 };
 const KRASNODAR: Position = { lat:45.045, lng:39.15 };
 const M4: Position = { lat:47.12, lng:39.86 };
 const CRIMEA_INTERIOR: Position = { lat:45.708, lng:34.395 };
-// Routing controls only, not declarations of road access or border crossing status.
-export function inCrimea(p: Position) {
-  const ring: GeoPoint[] = [[32.45,45.35],[33.6,44.35],[34.1,44.3],[34.9,44.7],[36.65,45.15],[36.65,45.55],[35.7,45.8],[35.02,46.18],[34.55,46.0],[33.6,46.23],[32.45,45.9]];
-  let inside=false;
-  for(let i=0,j=ring.length-1;i<ring.length;j=i++) { const a=ring[i],b=ring[j]; if((a[1]>p.lat)!==(b[1]>p.lat) && p.lng<(b[0]-a[0])*(p.lat-a[1])/(b[1]-a[1])+a[0]) inside=!inside; }
-  return inside;
+const BYPASS_NORTH = krasnodarBypassControls(true);
+const BYPASS_SOUTH = krasnodarBypassControls(false);
+function withCrimeaM4Bypass(positions:Position[]) {
+  const bridge=positions.indexOf(BRIDGE),m4=positions.indexOf(M4);
+  if(bridge<0 || m4<0)return positions;
+  const controls=bridge<m4?BYPASS_NORTH:BYPASS_SOUTH;
+  return positions.flatMap(p=>p===KRASNODAR?controls:[p]);
 }
+// Routing controls only, not declarations of road access or border crossing status.
+export { inCrimea } from "./crimea-geography.ts";
+
 export function endpointPolicy(from: Position,to: Position,zones: VerifiedTerritory[]) {
   const a=classifyTerritory(from,zones), b=classifyTerritory(to,zones);
   return { fromTerritory:a,toTerritory:b,specialEndpoint:a!==null||b!==null };
@@ -19,7 +25,7 @@ export function candidatePlans(from: Position,to: Position,zones: VerifiedTerrit
   const endpoints=endpointPolicy(from,to,zones);
   if(!endpoints.specialEndpoint) {
     const via = inCrimea(from)!==inCrimea(to) ? (inCrimea(from) ? [BRIDGE,KRASNODAR,...(to.lat>46.5?[M4]:[])] : [...(from.lat>46.5?[M4]:[]),KRASNODAR,BRIDGE]) : [];
-    return [{ corridor:"mainland" as const,positions:[from,...via,to] }];
+    return [{ corridor:"mainland" as const,positions:withCrimeaM4Bypass([from,...via,to]) }];
   }
   // Orient the controls toward the special endpoint, including reverse trips.
   const reverse = endpoints.fromTerritory!==null && endpoints.toTerritory===null;
@@ -30,13 +36,13 @@ export function candidatePlans(from: Position,to: Position,zones: VerifiedTerrit
   const mainland=endpoints.fromTerritory && endpoints.toTerritory
     ? [from,to]
     : [start,...(inCrimea(start)?[BRIDGE,KRASNODAR,M4]:[]),end];
-  const crimea=endpoints.fromTerritory && endpoints.toTerritory ? [from,CRIMEA_INTERIOR,to] : [start,...(inCrimea(start)?[]:[KRASNODAR,BRIDGE]),CRIMEA_INTERIOR,end];
+  const crimea=endpoints.fromTerritory && endpoints.toTerritory ? [from,CRIMEA_INTERIOR,to] : [start,...(inCrimea(start)?[]:[...(start.lat>46.5?[M4]:[]),KRASNODAR,BRIDGE]),CRIMEA_INTERIOR,end];
   // Geographic policy selects one corridor; the former timing threshold no longer applies.
   // If both endpoints are special, endpoint B determines the approach.
   const specialPoint=endpoints.toTerritory?to:from;
   const corridor=inCrimeaApproachZone(specialPoint)?"crimea" as const:"mainland" as const;
   const positions=corridor==="crimea"?crimea:mainland;
-  return [{corridor,positions:reverse?[...positions].reverse():positions}];
+  return [{corridor,positions:withCrimeaM4Bypass(reverse?[...positions].reverse():positions)}];
 }
 export function analyzeRoute(coordinates: GeoPoint[], meters:number,seconds:number,from:Position,to:Position,zones:VerifiedTerritory[]) {
   const split=splitRouteByTerritory({coordinates,routedDistanceMeters:meters,routedDurationSeconds:seconds,zones});
@@ -80,6 +86,15 @@ export function followsPlan(coordinates: GeoPoint[], positions:Position[], corri
   const indexes=orderedPlanControlIndexes(coordinates,positions);
   if(!indexes)return false;
   if(stretchAnomalyFromIndexes(coordinates,positions,indexes))return false;
+  // Ordinary control tolerance is kilometres wide. A Crimea→M4 plan must prove
+  // the actual directional plaza crossing, not merely pass near Krasnodar.
+  const samePoint=(a:Position,b:Position)=>a.lat===b.lat&&a.lng===b.lng;
+  const north=positions.some(p=>samePoint(p,BYPASS_NORTH[1]));
+  const south=positions.some(p=>samePoint(p,BYPASS_SOUTH[1]));
+  if(north||south) {
+    const bypass=inspectKrasnodarBypass(coordinates);
+    if(north===south || bypass.boundaryStatus!=="resolved" || bypass.from!==(north?"51":"0"))return false;
+  }
   if(specialEndpoint && corridor==="mainland" && !inCrimea(positions[0]) && !inCrimea(positions.at(-1)!)) {
     if(coordinates.some(([lng,lat])=>inCrimea({lng,lat})))return false;
   }

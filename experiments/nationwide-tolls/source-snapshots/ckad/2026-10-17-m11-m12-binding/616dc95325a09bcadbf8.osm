@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1323 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8235775428" visible="true" version="6" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8165487" lon="38.5602586"/>
+ <node id="8513080459" visible="true" version="3" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8137806" lon="38.5597597"/>
+ <node id="8513080460" visible="true" version="3" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8139415" lon="38.5601990"/>
+ <node id="8513080461" visible="true" version="2" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8141113" lon="38.5605741"/>
+ <node id="8513080462" visible="true" version="1" changeset="100949607" timestamp="2021-03-13T11:32:06Z" user="literan" uid="830106" lat="55.8143344" lon="38.5608906"/>
+ <node id="8513080463" visible="true" version="3" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8145227" lon="38.5610311"/>
+ <node id="8513080464" visible="true" version="4" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8148955" lon="38.5611923"/>
+ <node id="8513080465" visible="true" version="4" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8150532" lon="38.5612004"/>
+ <node id="8513080514" visible="true" version="4" changeset="152716019" timestamp="2024-06-15T11:01:33Z" user="literan" uid="830106" lat="55.8135748" lon="38.5589540"/>
+ <node id="11215213264" visible="true" version="3" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8154033" lon="38.5611047"/>
+ <node id="12512420883" visible="true" version="1" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8152569" lon="38.5611564"/>
+ <node id="12512420884" visible="true" version="1" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8147108" lon="38.5611259"/>
+ <way id="916593974" visible="true" version="21" changeset="187908409" timestamp="2026-08-23T20:52:10Z" user="Nine-tailed" uid="2006945">
+  <nd ref="8235775428"/>
+  <nd ref="11215213264"/>
+  <nd ref="12512420883"/>
+  <nd ref="8513080465"/>
+  <nd ref="8513080464"/>
+  <nd ref="12512420884"/>
+  <nd ref="8513080463"/>
+  <nd ref="8513080462"/>
+  <nd ref="8513080461"/>
+  <nd ref="8513080460"/>
+  <nd ref="8513080459"/>
+  <nd ref="8513080514"/>
+  <tag k="highway" v="trunk_link"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="motorroad" v="yes"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+</osm>

@@ -1,0 +1,273 @@
+{
+  "parent": "ee8f9456112155640179b726dab97d091f11081c",
+  "caseId": "single-zsd-peterhof-to-prim",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/2026-10-16T02-10-37-044Z-capture.json.gz",
+  "captureSha256": "a6094dac09cb047abc904962c94db56d59e9a96b43303aed84ef6dd59f54fbc3",
+  "provider": "OSRM",
+  "execution": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/2026-10-16T02-10-37-044Z-capture.json.gz",
+        "2026-10-15T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"single-zsd-peterhof-to-prim\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"OSRM\",\"routeMeters\":53044,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/2026-10-16T02-10-37-044Z-capture.json.gz",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"single-zsd-peterhof-to-prim\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"OSRM\",\"routeMeters\":53044,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": {
+    "ways": [
+      "1122966004",
+      "1122966005",
+      "1122966006",
+      "119176946",
+      "119176950",
+      "123232666",
+      "123232668",
+      "123303017",
+      "123709500",
+      "123709505",
+      "1257246766",
+      "1257246767",
+      "1257246771",
+      "1257246772",
+      "130062822",
+      "130068396",
+      "139658547",
+      "165035756",
+      "172404704",
+      "172999959",
+      "183912267",
+      "183912268",
+      "185060386",
+      "222395955",
+      "222395960",
+      "223744446",
+      "28934684",
+      "31369306",
+      "350477988",
+      "373871040",
+      "381576631",
+      "381576632",
+      "397223749",
+      "397223751",
+      "397223752",
+      "400111351",
+      "400111354",
+      "461676671",
+      "465117517",
+      "493643653",
+      "589047639",
+      "589047642",
+      "589047646",
+      "589047650",
+      "688149995",
+      "721628540",
+      "721628541",
+      "721628543",
+      "721628544",
+      "721839717",
+      "736881673",
+      "80056716",
+      "80056742",
+      "80056745",
+      "85763340",
+      "944399839"
+    ],
+    "gates": [
+      "933974870",
+      "1766158781"
+    ]
+  },
+  "sameReviewedScopeCase": null,
+  "status": "current_unknown_needs_distinct_scope_review",
+  "missing": [
+    "zsd"
+  ],
+  "uniqueZsdWays": [
+    "1122966004",
+    "1122966005",
+    "1122966006",
+    "119176946",
+    "119176950",
+    "123232666",
+    "123232668",
+    "123303017",
+    "123709500",
+    "123709505",
+    "1257246766",
+    "1257246767",
+    "1257246771",
+    "1257246772",
+    "130062822",
+    "130068396",
+    "139658547",
+    "165035756",
+    "172404704",
+    "172999959",
+    "183912267",
+    "183912268",
+    "185060386",
+    "222395955",
+    "222395960",
+    "223744446",
+    "28934684",
+    "31369306",
+    "350477988",
+    "373871040",
+    "381576631",
+    "381576632",
+    "397223749",
+    "397223751",
+    "397223752",
+    "400111351",
+    "400111354",
+    "461676671",
+    "465117517",
+    "493643653",
+    "589047639",
+    "589047642",
+    "589047646",
+    "589047650",
+    "688149995",
+    "721628540",
+    "721628541",
+    "721628543",
+    "721628544",
+    "721839717",
+    "736881673",
+    "80056716",
+    "80056742",
+    "80056745",
+    "85763340",
+    "944399839"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 486,
+      "endShapeIndex": 487
+    },
+    {
+      "osmNodeId": "1766158781",
+      "wayId": "355755817",
+      "roadNames": [],
+      "edgeIndex": 1,
+      "edgeToll": true,
+      "beginShapeIndex": 741,
+      "endShapeIndex": 742
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-16-54-387Z.json",
+      "sha256": "fab1f31d4cc0f6950bb8bc3a5d1628632274fdea88810d0e30021153931a2d15",
+      "caseId": "single-zsd-peterhof-to-prim",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "OSRM",
+      "captureSha256": "a6094dac09cb047abc904962c94db56d59e9a96b43303aed84ef6dd59f54fbc3",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-16-54-878Z.json",
+      "sha256": "23c269ee0a015175c98023d4c24f25618ed12c0bf26f8b682b668fc497de7ac1",
+      "caseId": "single-zsd-peterhof-to-prim",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "OSRM",
+      "captureSha256": "a6094dac09cb047abc904962c94db56d59e9a96b43303aed84ef6dd59f54fbc3",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    }
+  ],
+  "note": "Case69: both profiles exit0/complete/SHA/departure verified. Status current_unknown_needs_distinct_scope_review; whole-route missing zsd. Scope equivalence reuses diagnosis only, never a fare.",
+  "at": "2026-10-16T17:16:56.121Z",
+  "checkpoint": "docs/checkpoints/zsd-2026-10-16T17-16-56-120Z.md",
+  "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-16-56-120Z.json",
+  "overallPlanPercent": 90
+}

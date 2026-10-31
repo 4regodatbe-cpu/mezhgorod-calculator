@@ -1,0 +1,76 @@
+{
+  "startedAt": "2026-10-16T00:39:51.440Z",
+  "scope": {
+    "region": null,
+    "group": null,
+    "caseId": "dnr-новоазовск-kerch-center",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "dnr-новоазовск-kerch-center",
+      "startedAt": "2026-10-16T00:39:51.442Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-39-54-806Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kerch-center/2026-10-16T00-39-54-752Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-39-55-272Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-39-55-703Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4",
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "weekday": {
+        "amount": 1650,
+        "weekdayAmount": 1650,
+        "weekendAmount": 1800,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 1800,
+        "weekdayAmount": 1650,
+        "weekendAmount": 1800,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена",
+          "А-289: Maryanskaya → TamanBridge: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 850,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "a289",
+          "amount": 800,
+          "reason": "A-289 selected-route OD vector"
+        }
+      ],
+      "finishedAt": "2026-10-16T00:39:55.719Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T00:39:55.722Z"
+}

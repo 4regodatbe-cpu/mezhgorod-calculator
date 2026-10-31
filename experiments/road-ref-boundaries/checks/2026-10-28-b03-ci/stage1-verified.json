@@ -1,0 +1,75 @@
+{
+  "head": "abcad0c87df9448f7d3c461b53ed08e3cc4af126",
+  "tree": "140edaf317f6d9602d10e4a7a12ff9aa97cadbbd",
+  "special": {
+    "run": 40644589286,
+    "verify": "success",
+    "classify_live_scope": "success",
+    "live_probe": "skipped",
+    "calculation_timing": "skipped"
+  },
+  "browserPush": {
+    "run": 40644582844,
+    "verify": "success",
+    "address_ui": "failure_expected_regression_07",
+    "mainTests": 458,
+    "classifierTests": 12,
+    "workflowContractTests": 3,
+    "captureValidatorTests": 4,
+    "typecheck": "pass",
+    "nextBuild": "pass",
+    "staticPages": 16
+  },
+  "browserPr": {
+    "run": 40644589299,
+    "verify": "success",
+    "address_ui": "failure_expected_regression_07",
+    "summary": {
+      "sourceSha": "abcad0c87df9448f7d3c461b53ed08e3cc4af126",
+      "componentSha256": "1ad0808c05368c7962a911dec2607f48170f1795e4ef5209371e8f3d8d0285cd",
+      "browser": "156.0.8078.47",
+      "results": [
+        {
+          "id": "01-select-A-and-B",
+          "status": "PASS"
+        },
+        {
+          "id": "02-Anapa-clear-Donetsk",
+          "status": "PASS"
+        },
+        {
+          "id": "03-fast-typing",
+          "status": "PASS"
+        },
+        {
+          "id": "04-late-response-after-replace",
+          "status": "PASS"
+        },
+        {
+          "id": "05-clear-active-request",
+          "status": "PASS"
+        },
+        {
+          "id": "06-same-name-choice",
+          "status": "PASS"
+        },
+        {
+          "id": "07-swap-and-refocus",
+          "status": "FAIL",
+          "error": "AssertionError [ERR_ASSERTION]: Selected swapped B must not reopen old Anapa suggestions\n\n1 !== 0\n"
+        }
+      ]
+    }
+  },
+  "initialLegacyArchive": {
+    "run": 40643922713,
+    "legacyPassed": 8,
+    "currentPassed": 6,
+    "currentFailed": 1,
+    "currentNotRun": 3,
+    "artifact": 12796956685,
+    "sha256": "885d69e50ee4546be0bdc7b2ef40aff2def2b0f5063e05d91c42197b20bd9e83",
+    "downloadedAndHashVerified": true
+  },
+  "allRunsCompletedBeforePatch": true
+}

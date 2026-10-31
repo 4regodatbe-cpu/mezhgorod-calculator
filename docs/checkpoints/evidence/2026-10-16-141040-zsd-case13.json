@@ -1,0 +1,228 @@
+{
+  "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "index": 13,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+  "captureSha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0",
+  "selectedProvider": "Valhalla",
+  "routeMeters": 1158570,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "uniqueZsdWays": [
+    "1122966006",
+    "1122966005",
+    "1122966004",
+    "400111354",
+    "400111351",
+    "31369306",
+    "28934684",
+    "465117517",
+    "80056742",
+    "139658547",
+    "461676671",
+    "80056745",
+    "721628540",
+    "80056716",
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541",
+    "185060386",
+    "119176950",
+    "119176946",
+    "172999959",
+    "589047642",
+    "589047639",
+    "373871040",
+    "688149995",
+    "222395960",
+    "130062822",
+    "1257246767",
+    "1257246766",
+    "1257246772",
+    "1257246771",
+    "130068396",
+    "721628544",
+    "721628543",
+    "350477988",
+    "165035756",
+    "222395955",
+    "736881673",
+    "589047646",
+    "589047650",
+    "123232666",
+    "123232668",
+    "123303017",
+    "944399839",
+    "493643653",
+    "721839717"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 4,
+      "edgeToll": true,
+      "beginShapeIndex": 263,
+      "endShapeIndex": 264
+    }
+  ],
+  "sameExactZsdWayAndBoothSetAsReviewedFirstCase": false,
+  "status": "current_unknown_needs_distinct_scope_review",
+  "execution": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"max-chain-m12-ckad-m11-zsd-arzamas-to-prim\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1158570,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd, unknown-paid-road\",\"m11-15-58: m11_partial_head_entry_boundary_unresolved\",\"ckad: ckad_east_arc_not_proven\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\",\"unknown-paid-road: unmapped_selected_route_paid_booth\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":null,\"reason\":\"m11_partial_head_entry_boundary_unresolved\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"m12\",\"amount\":1713,\"reason\":\"matrix dated selected-route M12 directed endpoint pair\"},{\"id\":\"ckad\",\"amount\":null,\"reason\":\"ckad_east_arc_not_proven\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"},{\"id\":\"unknown-paid-road\",\"amount\":null,\"reason\":\"unmapped_selected_route_paid_booth\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"max-chain-m12-ckad-m11-zsd-arzamas-to-prim\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1158570,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd, unknown-paid-road\",\"m11-15-58: m11_partial_head_entry_boundary_unresolved\",\"ckad: ckad_east_arc_not_proven\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\",\"unknown-paid-road: unmapped_selected_route_paid_booth\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":null,\"reason\":\"m11_partial_head_entry_boundary_unresolved\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"m12\",\"amount\":1713,\"reason\":\"matrix dated selected-route M12 directed endpoint pair\"},{\"id\":\"ckad\",\"amount\":null,\"reason\":\"ckad_east_arc_not_proven\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"},{\"id\":\"unknown-paid-road\",\"amount\":null,\"reason\":\"unmapped_selected_route_paid_booth\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-10-39-734Z.json",
+      "sha256": "dfeee583042f8bb47c3a8adabaf16a4be40ece6ed18bf97f1c0611f77c48f610",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd, unknown-paid-road",
+          "m11-15-58: m11_partial_head_entry_boundary_unresolved",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "zsd",
+        "unknown-paid-road"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "amount": 1713,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ]
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-10-40-117Z.json",
+      "sha256": "5d78a9011722ceaf2b108b8165d87e4545c5b812e81e9263bbc454660855283d",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd, unknown-paid-road",
+          "m11-15-58: m11_partial_head_entry_boundary_unresolved",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "zsd",
+        "unknown-paid-road"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "amount": 1713,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+import { NextRequest, NextResponse } from "next/server";
+import { classifyCalculateApiError } from "@/lib/calculate-api-error";
+import { readLimitedJsonObject, RequestBodyError } from "@/lib/limited-json-body";
+import { validPoint } from "@/lib/route-input-validation";
+import { geocode, type Point } from "@/lib/route-providers";
+import { calculateLeg } from "@/lib/v3-calculation/route-leg";
+import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-integration";
+
+import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "@/lib/special-territory-boundaries";
+import { analyzeRoute, candidatePlans, endpointPolicy } from "@/lib/special-territory-policy";
+import { calculateSpecialOptions } from "@/lib/v3-calculation/special-options";
+import { acceptedYandexRouteEstimate, yandexRouteEstimateTolls } from "@/lib/v3-calculation/yandex-route-estimates";
+import type { Coordinate } from "@/lib/tolls";
+import { createCalculationTiming } from "@/lib/calculation-timing";
+
+type UserRates = { standard: number; comfort: number; comfortPlus: number; minivan: number };
+const VEHICLES: PricingVehicle[] = ["standard", "comfort", "comfort_plus", "minivan"];
+
+function validRate(value: unknown): value is number {
+  return typeof value === "number" && Number.isFinite(value) && value >= 1 && value <= 10000;
+}
+function validUserRates(value: unknown): value is UserRates {
+  if (!value || typeof value !== "object") return false;
+  const rates = value as Partial<UserRates>;
+  return validRate(rates.standard) && validRate(rates.comfort) && validRate(rates.comfortPlus) && validRate(rates.minivan);
+}
+
+// Validate the calendar before Date can normalize February 30 into March.
+// Timezone is required for timestamps so server timezone cannot select a tariff.
+function validDepartureAt(value: unknown): value is string {
+  if (typeof value !== "string") return false;
+  const match = /^(\d{4})-(\d{2})-(\d{2})(?:T(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d{1,3})?)?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d))?$/.exec(value);
+  if (!match) return false;
+  const calendar = new Date(`${match[1]}-${match[2]}-${match[3]}T00:00:00Z`);
+  return Number.isFinite(calendar.getTime())
+    && calendar.toISOString().slice(0, 10) === value.slice(0, 10)
+    && Number.isFinite(new Date(value).getTime());
+}
+
+export const maxDuration = 120;
+
+export async function POST(request: NextRequest) {
+  const timing = createCalculationTiming();
+  const respond = (body: unknown, init?: { status?: number }) => {
+    const response = NextResponse.json(body, init);
+    const result = timing.finish(response.status);
+    if (result?.header) response.headers.set("Server-Timing", result.header);
+    return response;
+  };
+  // V3 contract: one fastest route; no slower free-route substitution.
+  try {
+    const body = (await timing.measure("request_body", () => readLimitedJsonObject(request))) as {
+      from?: Point;
+      via?: Point;
+      to?: Point;
+      mode?: "standard" | "dual";
+      departureAt?: string;
+      diagnostics?: boolean;
+      vehicle?: PricingVehicle;
+      rates?: UserRates;
+      specialRates?: UserRates;
+      modeOverride?: boolean;
+      manualRates?: number[];
+      multiplier?: number;
+    };
+    if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return respond({ error: "Некорректный режим расчёта" }, { status: 400 });
+    if (body.departureAt !== undefined && !validDepartureAt(body.departureAt)) return respond({ error: "Некорректная дата поездки" }, { status: 400 });
+    if (body.vehicle !== undefined && !VEHICLES.includes(body.vehicle)) return respond({ error: "Некорректный класс автомобиля" }, { status: 400 });
+    if (body.modeOverride !== undefined && typeof body.modeOverride !== "boolean") return respond({error:"Некорректный режим"},{status:400});
+    if (body.specialRates !== undefined && !validUserRates(body.specialRates)) return respond({error:"Некорректные особые тарифы"},{status:400});
+    if (body.rates !== undefined && !validUserRates(body.rates)) return respond({ error: "Некорректные тарифы" }, { status: 400 });
+    if (body.manualRates !== undefined && (!Array.isArray(body.manualRates) || body.manualRates.length !== 2 || !body.manualRates.every(validRate))) return respond({ error: "Некорректные тарифы участков" }, { status: 400 });
+    if (body.multiplier !== undefined && (typeof body.multiplier !== "number" || !Number.isFinite(body.multiplier) || body.multiplier < 1 || body.multiplier > 6)) return respond({ error: "Некорректная наценка" }, { status: 400 });
+    if (!validPoint(body.from) || !validPoint(body.to)) return respond({ error: "Проверьте точки маршрута" }, { status: 400 });
+    const departureAt = body.departureAt ?? new Date().toISOString();
+
+    const [from,to] = await timing.measure("geocoding", () => Promise.all([geocode(body.from!),geocode(body.to!)]));
+    const policy = endpointPolicy(from.position,to.position,zones);
+    const automaticMode = policy.specialEndpoint ? "dual" : "standard";
+    const mode = body.modeOverride === true && body.mode ? body.mode : policy.specialEndpoint ? "dual" : "standard";
+    const normalRateOverrides = body.rates ? { ...body.rates, comfort_plus:body.rates.comfortPlus } : undefined;
+    const specialRateOverrides = body.specialRates ? { ...body.specialRates, comfort_plus:body.specialRates.comfortPlus } : undefined;
+    const attachPricing = <T extends { meters:number; seconds:number; coordinates:Coordinate[]; legs?:unknown }>(trip:T) => timing.measureSync("response_pricing", () => {
+      // Policy is independent of manual pricing mode, including every alternative.
+      const territorySplit = analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
+      const {coordinates, legs, ...summary} = trip;
+      void coordinates; void legs;
+      const tolls = "tolls" in trip && trip.tolls && typeof trip.tolls === "object"
+        ? trip.tolls as Record<string, unknown> : null;
+      const yandexEstimate = acceptedYandexRouteEstimate({ from: body.from, to: body.to, meters: trip.meters, departureAt });
+      const publicTolls = yandexEstimate
+        ? yandexRouteEstimateTolls(yandexEstimate)
+        : tolls
+        ? Object.fromEntries(Object.entries(tolls)
+          .filter(([key]) => key !== "priceConfirmation" && key !== "displayLabel")
+          .map(([key, value]) => [key, key === "segments" && Array.isArray(value)
+            ? value.map(segment => typeof segment === "string" ? segment.replace(/(?:\s*[·:—-]\s*)?Стоимость не подтверждена\.?/i, "").trim() : segment).filter(Boolean)
+            : value]))
+        : null;
+      return {...summary, ...(publicTolls ? {tolls:publicTolls} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
+        from:from.label,to:to.label,vehicle,mode,normalRateOverrides,specialRateOverrides,multiplier:body.multiplier,
+        legs:[{from:from.label,to:to.label,distanceKm:trip.meters/1000,territorySplit}],
+      })]))};
+    });
+    if(policy.specialEndpoint) {
+      const special=await timing.measure("special_options", () => calculateSpecialOptions(from,to,departureAt,true,timing));
+      const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast),free:null,freeCandidate:null}));
+      if(!options.length)throw new Error("MAINLAND_UNAVAILABLE");
+      return respond({legs:options,options,mode,automaticMode,specialEndpoint:true,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
+    }
+    const plan=candidatePlans(from.position,to.position,zones)[0];
+    const leg=await timing.measure("route_leg", () => calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true,timing));
+    const attachAlternative = <T extends { meters:number;seconds:number;coordinates:Coordinate[] }>(trip:T|null) => {
+      if(!trip)return null;
+      try { return attachPricing(trip); } catch {return null;}
+    };
+    const priced={...leg,fast:attachPricing(leg.fast),free:attachAlternative(leg.free),freeCandidate:attachAlternative(leg.freeCandidate)};
+    return respond({legs:[priced],mode,automaticMode,specialEndpoint:false});
+  } catch (error) {
+    if (error instanceof RequestBodyError) return respond({ error: error.message }, { status: error.status });
+    const failure = classifyCalculateApiError(error);
+    return respond({ error: failure.message }, { status: failure.status });
+  }
+}

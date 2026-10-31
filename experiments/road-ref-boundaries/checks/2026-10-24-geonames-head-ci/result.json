@@ -1,0 +1,43 @@
+{
+  "runId": 40091487220,
+  "sourceCommit": "0c2dbe846e8be9346483137b58f4a0798d553c36",
+  "jobId": 120864901345,
+  "artifactId": 12559197312,
+  "stage": "A_HEAD_ONLY",
+  "rows": [
+    {
+      "url": "https://download.geonames.org/export/dump/RU.zip",
+      "curlExit": 0,
+      "http": "200",
+      "contentLength": 15263760,
+      "etag": "\"e8e810-65e8c60db5937\"",
+      "lastModified": "Sat, 24 Oct 2026 01:54:33 GMT",
+      "error": "",
+      "timestamp": "2026-10-24T11:50:18.449713+00:00"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/UA.zip",
+      "curlExit": 0,
+      "http": "200",
+      "contentLength": 2394186,
+      "etag": "\"24884a-65e8c62e3b818\"",
+      "lastModified": "Sat, 24 Oct 2026 01:55:07 GMT",
+      "error": "",
+      "timestamp": "2026-10-24T11:50:19.289046+00:00"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/alternateNamesV2.zip",
+      "curlExit": 0,
+      "http": "200",
+      "contentLength": 205159418,
+      "etag": "\"c3a7bfa-65e8c7bb1722c\"",
+      "lastModified": "Sat, 24 Oct 2026 02:02:03 GMT",
+      "error": "",
+      "timestamp": "2026-10-24T11:50:20.132078+00:00"
+    }
+  ],
+  "bodyDownloads": 0,
+  "countryTotalBytes": 17657946,
+  "readyForSeparateBStarted": true,
+  "runtimeApproved": false
+}

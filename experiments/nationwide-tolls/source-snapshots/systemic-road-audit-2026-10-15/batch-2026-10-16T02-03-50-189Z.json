@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-10-16T02:03:50.189Z",
+  "scope": {
+    "region": null,
+    "group": "single-m4",
+    "caseId": "single-m4-moscow-to-voronezh",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-m4-moscow-to-voronezh",
+      "startedAt": "2026-10-16T02:03:50.192Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-moscow-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T02-03-55-265Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-moscow-to-voronezh/2026-10-16T02-03-55-223Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-03-55-704Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-03-56-134Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4"
+        ],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": 1830,
+        "weekdayAmount": 1830,
+        "weekendAmount": 2300,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-71 → m4-460 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 2300,
+        "weekdayAmount": 1830,
+        "weekendAmount": 2300,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-71 → m4-460 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 1830,
+          "reason": "matrix exact selected-route M4 vector"
+        }
+      ],
+      "finishedAt": "2026-10-16T02:03:56.150Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T02:03:56.153Z"
+}

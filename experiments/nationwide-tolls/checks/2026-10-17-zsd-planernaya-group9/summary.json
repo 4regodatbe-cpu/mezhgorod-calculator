@@ -1,0 +1,61 @@
+{
+  "atUtc": "2026-10-17T12:28:25.185060+00:00",
+  "sourceHead": "567090bf34db7ba9dc343469398d53682048bb48",
+  "fingerprint": "0c0e778a8622dfc6a3f57032f70fd16bc29fa010f3785c0215b8bb7ffae9c6c4",
+  "representative": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "representativeCases": 1,
+  "exceptionCases": 8,
+  "checkedCases": 9,
+  "materialExceptions": 0,
+  "pricedNewComponents": 0,
+  "remainingUnknownInGroup": 9,
+  "confirmedFullTripFares": 0,
+  "reusedPriorComponentDateResults": 18,
+  "newComponentDateChecks": 0,
+  "newFullRouteReplays": 0,
+  "newLiveRouteRequests": 0,
+  "outcome": "blocked_by_missing_reliable_data",
+  "caseResults": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "sha256": "77a599db7619b07738140cbfa94502e02df8d3b2c2ea180eab44cd02f05a7ca6"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+      "sha256": "4685dcf5b1f10a6814da49b868c1af12dbf8945c1c95c99736053a363be2d10d"
+    },
+    {
+      "caseId": "pair-m11-zsd-moscow-to-prim",
+      "sha256": "9caa383484d881f6bd35687e841bf48637dd826f75d6b5c9c808b890c6956d5c"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-voronezh-to-prim",
+      "sha256": "efdf45f6e25e3a93dc5ac4f0f1b1b93f590912ec5ceb33e5b0cffb862f47effd"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+      "sha256": "8e615ba47959b969e52c742bafcc653ba4480aa26378666421dd2615b4096253"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+      "sha256": "fa9f37444af9a941058891ceaac9bbc8f371bfe8dd3e7ddcb6e6370453f68ede"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+      "sha256": "9039c2d15d665363ae5da16411a3060546f5025e423b000fbf2df16288359712"
+    },
+    {
+      "caseId": "pair-m11-zsd-torzhok-to-prim",
+      "sha256": "015a1ee1f4e2bdc82d5c2bc9fdf75b3e667c0001de1d57efb0bea56758388a99"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+      "sha256": "d54c8f818c4a7321d1d1b7c2c0ff9dc36e9aad7eaca81ae6ecbb9e3dc4a19e06"
+    }
+  ],
+  "limits": [
+    "Boundary checks do not establish the cash/card collection bundle.",
+    "Not a new tariff replay; the 18 prior component/date results are only reused with unchanged source hashes.",
+    "The pre-existing 26 priced / 50 unknown baseline count remains unchanged."
+  ]
+}

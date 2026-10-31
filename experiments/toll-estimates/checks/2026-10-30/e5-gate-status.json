@@ -1,0 +1,227 @@
+{
+  "date": "2026-10-30",
+  "sourceSha": "86185310a3bd2ef9d3028fe8666b1756233a0ba6",
+  "node": "v24.19.0",
+  "commands": {
+    "prototypeTests": {
+      "distinctTests": 28,
+      "pass": 28,
+      "fail": 0,
+      "recordedCombinedCommandExit": 0
+    },
+    "offlineGate": {
+      "command": "npm run test:audit",
+      "tests": 1048,
+      "pass": 1047,
+      "fail": 0,
+      "skip": 1,
+      "status": "complete_pass_log_evidence",
+      "originalExitCode": null
+    },
+    "projectTypeScript": {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "reverifiedExitCode": 0,
+      "originalExitCode": null
+    },
+    "productionBuild": {
+      "command": "NEXT_TELEMETRY_DISABLED=1 node node_modules/next/dist/bin/next build --webpack",
+      "status": "complete_success_log_evidence",
+      "nextVersion": "16.3.4",
+      "staticPages": "16/16",
+      "originalExitCode": null,
+      "warnings": [
+        "existing preferredRegion deprecation"
+      ]
+    }
+  },
+  "metadataFailure": {
+    "overallOriginalShellExit": 1,
+    "cause": "post-check inline JSON writer syntax error; original per-command exits not persisted",
+    "detail": "e5-status-writer-failure.md",
+    "heavyAuditOrBuildRerun": false
+  },
+  "sampleCounts": {
+    "confirmed": 1,
+    "estimated": 1,
+    "unknown": 1
+  },
+  "distinctSavedRoutes": 3,
+  "multiRoadRoutes": 2,
+  "previouslyUnknownRoutesNewlyGivenNumericTotal": 0,
+  "defaultEnabled": false,
+  "liveIntegration": false,
+  "networkRouteReplays": 0,
+  "limitations": [
+    "E1fresh browser controls timed out; no exact detour cause established.",
+    "Original gate/build exit codes are unknown; success claimed only on complete retained logs, not fabricated exit0.",
+    "Local HTML/viewmodel is not real browser, Preview or Production acceptance.",
+    "No functional claim about all B01–B12 or all unknown tariff products."
+  ],
+  "artifacts": [
+    {
+      "path": "e1-map-controls.json",
+      "bytes": 2660,
+      "sha256": "99fe70a8e93852371d301d26a1f4bec9bec2a5a01b71dbd1093549aae219b40e"
+    },
+    {
+      "path": "e2-eslint-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e2-eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e2-profile-before.log",
+      "bytes": 1032,
+      "sha256": "75d4f82e4f23337c47bc137b57e5bd507ec58eededf9fea4d549d45b5d0fd555"
+    },
+    {
+      "path": "e2-tests-final.log",
+      "bytes": 1312,
+      "sha256": "efe539abad249744326501e30e8e1abdbdd714e5e1eadec24a8430a782225e91"
+    },
+    {
+      "path": "e2-tests.log",
+      "bytes": 1097,
+      "sha256": "2b9035d782b165784b734b43bf0cb6afdbece01447e3fc6ee638ce2bc8bf98af"
+    },
+    {
+      "path": "e2-types-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e2-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e3-eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e3-run-admission-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e3-run-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e3-run.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e3-samples.json",
+      "bytes": 80410,
+      "sha256": "8bb35bd2b95489177fcd89aba117f4f665317f8814a763e1431876b47628a24e"
+    },
+    {
+      "path": "e3-tests.log",
+      "bytes": 618,
+      "sha256": "7962afe7c61bb29d52c9d19f217fae2c3f4ddb3e73e86b29eae247cfad4bf71b"
+    },
+    {
+      "path": "e3-types-admission-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e3-types-after-normalization.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e3-types-final.log",
+      "bytes": 503,
+      "sha256": "66ab8b4bdd69aeef1d8b5da06a3636f9ff58d37f5b418b3dc2d24303b1b2e86f"
+    },
+    {
+      "path": "e3-types.log",
+      "bytes": 503,
+      "sha256": "66ab8b4bdd69aeef1d8b5da06a3636f9ff58d37f5b418b3dc2d24303b1b2e86f"
+    },
+    {
+      "path": "e4-demo.html",
+      "bytes": 2859,
+      "sha256": "e434d2c0057bcc441066c20717317b5df2a446c09d7eef0c485bb93fca12d458"
+    },
+    {
+      "path": "e4-eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e4-tests.log",
+      "bytes": 678,
+      "sha256": "2a56cbf74de4dd1493ff7d20fabfe2a19c4944db27751154a87cc06913b380ba"
+    },
+    {
+      "path": "e4-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e5-build.log",
+      "bytes": 1200,
+      "sha256": "bbeeadfe2944512fcb1af1df49db519ffa906724f0ec247da3f0446ff071253a"
+    },
+    {
+      "path": "e5-metadata-eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e5-offline-gate.log",
+      "bytes": 159099,
+      "sha256": "0f59dda0e4ba479f8f80d54c056c7ea2cbfb55fcbb6ac21850d31f7c69a54c59"
+    },
+    {
+      "path": "e5-project-types-reverified.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e5-project-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e5-prototype-eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e5-prototype-tests-final.log",
+      "bytes": 2943,
+      "sha256": "38cd963d66da6efce6fce54961a0f5a9d0375476f5cc1e7bc8dfec70fcae5c11"
+    },
+    {
+      "path": "e5-prototype-tests.log",
+      "bytes": 2942,
+      "sha256": "1b54de374ba85262d04db2137128c9fc7660581df07503e78d627367ff5405e4"
+    },
+    {
+      "path": "e5-prototype-types-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "e5-prototype-types.log",
+      "bytes": 256,
+      "sha256": "837dd44facae545456d068e0b89235876b92855ebdc09b7ca9f39afff429f362"
+    },
+    {
+      "path": "e5-status-writer-failure.md",
+      "bytes": 1307,
+      "sha256": "90f4257dc5f94f3c2ac5bc749ec54c30f974275b41731b9c1676daec00ea9686"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "status": "DONE",
+  "atMsk": "2026-10-18T12:22:04.441702+03:00",
+  "sourceProofCommit": "6b83a64899b8d45fe10ff2d8780fff066f50e503",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "prDraft": true,
+  "codeSha256": {
+    "lib/v3-calculation/m11-ckad-head-entry.ts": "a31e91bc84594e8e89954e2c16ae832c833f131b956dc4c7bf96120595ffbc68",
+    "lib/v3-calculation/m11-product-boundaries.ts": "a8ff22c2b03492312e727c18b25f095985ce9901d4ce1f3c5651b7641abe0f33",
+    "scripts/v3-m11-ckad-entry.test.ts": "9ddd21ce87ca11a95e30767c1f08a8ffd7b46e5b512c9b608a9a9df6d770ddfe",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/directed-ckad47-entry.json": "9410cc7be1ad3ae26bb0343ad4205d470eef6aafbd54f1c8498da28a35299f7e"
+  },
+  "targetCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "outcome": "fixed_and_verified_for_one_target_northbound_head_component",
+  "checks": {
+    "focusedPassed": 20,
+    "focusedFailed": 0,
+    "auditPassed": 757,
+    "auditFailed": 0,
+    "quoteApiContracts": "PASS",
+    "typescriptNoEmit": "PASS",
+    "eslintTargeted": "PASS",
+    "nextBuild": "PASS",
+    "staticPages": "16/16",
+    "composerProbe": "PASS own capture, zero fetch"
+  },
+  "headFares": {
+    "weekday": 280,
+    "saturday": 320,
+    "basis": "existing directed tskad→solnechnogorsk table at trip departure"
+  },
+  "m11ProductSubtotals": {
+    "weekday": 4180,
+    "saturday": 4520,
+    "scope": "head+58–679 only, not full trip"
+  },
+  "composer": {
+    "newHeadRub": 280,
+    "componentStatus": "unknown",
+    "priced": [
+      "m11-15-58",
+      "m11-58-679",
+      "m11-679-684",
+      "m12"
+    ],
+    "missing": [
+      "ckad",
+      "zsd"
+    ],
+    "requests": 0
+  },
+  "counts": {
+    "newlyPricedComponents": 1,
+    "newConfirmedFullTripFares": 0,
+    "targetCasesChecked": 1,
+    "uncheckedHeadSiblings": 7,
+    "newRoutingRequests": 0,
+    "newTraceRequests": 0,
+    "newFullPricingReplays": 0
+  },
+  "initialFailures": [
+    {
+      "kind": "exploratory guard",
+      "observed": "Gate unresolved when requiring non-toll approach ways in paid-only validation.wayIds. Corrected contract by exact gate event, paid continuation and primary38point physical corridor; no expansion of geometry threshold."
+    },
+    {
+      "kind": "local fixture availability",
+      "observed": "Three initial audit attempts failed only on missing exact archived fixture files in sparse checkout; restored required original Git blobs, unchanged. Logs retained; fourth audit757/757."
+    },
+    {
+      "kind": "build environment",
+      "observed": "npm build audit passed but Turbopack rejected external node_modules symlink. Replaced local symlink with local hard-linked dependency copy, no manifest/source changes; standalone next build16/16 and tsc then passed."
+    }
+  ],
+  "limits": [
+    "Only northbound CKAD47 entry; reverse not activated.",
+    "Only one own head case checked against the new code; seven siblings require own saved-capture exception checks.",
+    "Ordinary CKAD and ZSD components remain unknown for this target; full route not priced."
+  ],
+  "next": "Observe exact published-code CI; after completion perform one bounded seven-sibling own-capture exception batch, persist per-case progress, no new routing/source/replay unless a material exception requires it."
+}

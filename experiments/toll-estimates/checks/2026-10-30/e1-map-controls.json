@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-30",
+  "sourceHead": "e6a8a2fe2aeadd095b3dbdc3a33844e0044cb5a0",
+  "researcher": "single read-only E1 agent; root sole writer",
+  "scope": "two new materially changed placement controls; no32point audit",
+  "toolOutcome": {
+    "code": "UNAVAILABLE",
+    "rpcCode": -32007,
+    "message": "McpServerError: No browser response before the 30-second deadline. The action may have run and will not be automatically replayed.",
+    "newTabIdsReturned": false,
+    "retries": 0,
+    "screenshots": 0,
+    "uiResultsKnown": false
+  },
+  "cases": [
+    {
+      "road": "M12",
+      "from": {
+        "node": "11221977619",
+        "lat": 55.5010349,
+        "lon": 43.5592535
+      },
+      "to": {
+        "node": "10090995838",
+        "lat": 55.4981795,
+        "lon": 43.5658384
+      },
+      "url": "https://yandex.ru/maps/?rtext=55.5010349%2C43.5592535~55.4981795%2C43.5658384&rtt=auto",
+      "sources": [
+        "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/2aa50600164a08549851.osm",
+        "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm"
+      ],
+      "proof": "upstream actual mainline1550135076 one-way11221977619→10090995833→10090995797→14102954884; ramp1550561305 has no one-way tag and is traversed opposite nd enumeration in saved route",
+      "oldObservedDetourMeters": 57000,
+      "newObservedUi": null,
+      "status": "BLOCKED_MAP_ALIGNMENT"
+    },
+    {
+      "road": "M11",
+      "from": {
+        "node": "7832087256",
+        "lat": 56.0892585,
+        "lon": 37.209886
+      },
+      "to": {
+        "node": "3566326245",
+        "lat": 56.0888728,
+        "lon": 37.2016452
+      },
+      "url": "https://yandex.ru/maps/?rtext=56.0892585%2C37.2098860~56.0888728%2C37.2016452&rtt=auto",
+      "sources": [
+        "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/entry-local-map.osm",
+        "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/way1270188032.osm"
+      ],
+      "proof": "interior ramp791520973 one-way7832087256→3566326245 followed by mainline1270188032; not old toll-plaza origin",
+      "oldObservedDetourMeters": 29900,
+      "newObservedUi": null,
+      "status": "BLOCKED_MAP_ALIGNMENT"
+    }
+  ],
+  "conclusion": "Source placement/directions documented, no exact snapped edges or legal restriction obtained; neither Yandex error nor calculator geometry defect established. No geometry change. Proceed E2 independently.",
+  "requiredEvidence": "current snapped directed edges/polyline or direct applicable access/turn restriction evidence"
+}

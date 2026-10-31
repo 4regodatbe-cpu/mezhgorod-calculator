@@ -1,0 +1,27 @@
+{
+  "status": "BLOCKED_CAPTURE_NOT_ADMITTED",
+  "sourceCommit": "5600384e90d632f3f3bd0bf3e465013bb4fb87f9",
+  "transport": "Real current GET handler + Photon fetch; direct local handler invocation, not Preview HTTP; no mocks",
+  "maxQueries": 3,
+  "perQueryBudgetMs": 20000,
+  "rows": [
+    {
+      "id": "donetsk",
+      "path": "experiments/address-search/stage-i-2026-10-31/capture-donetsk.json",
+      "sha256": "c60683d225c67e3f805f1d8fcbe21c6d004ad46b7d82ce345fdc8d09690898f6",
+      "status": 200,
+      "capturedAt": "2026-10-31T14:50:17.541Z",
+      "elapsedMs": 1848.208637,
+      "requiredIdsPresent": true
+    },
+    {
+      "id": "krasn",
+      "path": "experiments/address-search/stage-i-2026-10-31/capture-krasn.json",
+      "sha256": "c544bb783efc8d4d2d16a68f5ec91800693b2790338649d7d40be61249662a41",
+      "status": 200,
+      "capturedAt": "2026-10-31T14:50:18.356Z",
+      "elapsedMs": 813.7357689999999,
+      "requiredIdsPresent": false
+    }
+  ]
+}

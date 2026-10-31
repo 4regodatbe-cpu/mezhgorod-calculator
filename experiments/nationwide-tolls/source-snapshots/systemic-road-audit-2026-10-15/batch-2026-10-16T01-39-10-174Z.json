@@ -1,0 +1,79 @@
+{
+  "startedAt": "2026-10-16T01:39:10.174Z",
+  "scope": {
+    "region": null,
+    "group": "pair-m4-a289",
+    "caseId": "pair-m4-a289-kerch-to-domodedovo",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "pair-m4-a289-kerch-to-domodedovo",
+      "startedAt": "2026-10-16T01:39:10.177Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-39-20-705Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/2026-10-16T01-39-20-603Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-39-21-338Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-39-21-948Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "a289"
+        ],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": 5840,
+        "weekdayAmount": 5840,
+        "weekendAmount": 6890,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-1223 → m4-71 · Стоимость не подтверждена",
+          "А-289: TamanBridge → Maryanskaya: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 6890,
+        "weekdayAmount": 5840,
+        "weekendAmount": 6890,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-1223 → m4-71 · Стоимость не подтверждена",
+          "А-289: TamanBridge → Maryanskaya: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "a289",
+          "amount": 800,
+          "reason": "A-289 selected-route OD vector"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:39:21.967Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:39:21.970Z"
+}

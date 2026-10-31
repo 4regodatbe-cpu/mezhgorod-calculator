@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "runtimeApproved": false,
+  "networkCalls": 0,
+  "queries": [
+    {
+      "query": "Доне",
+      "status": "PASS",
+      "count": 20,
+      "truncated": false
+    },
+    {
+      "query": "Донецк",
+      "status": "PASS",
+      "count": 10,
+      "truncated": false
+    },
+    {
+      "query": "Донецк Ростовская область",
+      "status": "PASS",
+      "count": 4,
+      "truncated": false
+    },
+    {
+      "query": "Волноваха",
+      "status": "PASS",
+      "count": 1,
+      "truncated": false
+    },
+    {
+      "query": "Луганск",
+      "status": "PASS",
+      "count": 7,
+      "truncated": false
+    },
+    {
+      "query": "Мариуполь",
+      "status": "PASS",
+      "count": 5,
+      "truncated": false
+    },
+    {
+      "query": "Мелитополь",
+      "status": "PASS",
+      "count": 1,
+      "truncated": false
+    },
+    {
+      "query": "Бердянск",
+      "status": "PASS",
+      "count": 4,
+      "truncated": false
+    },
+    {
+      "query": "Геническ",
+      "status": "PASS",
+      "count": 2,
+      "truncated": false
+    },
+    {
+      "query": "Симферополь",
+      "status": "PASS",
+      "count": 1,
+      "truncated": false
+    },
+    {
+      "query": "Севастополь",
+      "status": "PASS",
+      "count": 5,
+      "truncated": false
+    },
+    {
+      "query": "Ялта",
+      "status": "PASS",
+      "count": 6,
+      "truncated": false
+    },
+    {
+      "query": "Керчь",
+      "status": "PASS",
+      "count": 1,
+      "truncated": false
+    },
+    {
+      "query": "Краснодар",
+      "status": "PASS",
+      "count": 10,
+      "truncated": false
+    },
+    {
+      "query": "Москва",
+      "status": "PASS",
+      "count": 2,
+      "truncated": false
+    },
+    {
+      "query": "Санкт-Петербург",
+      "status": "PASS",
+      "count": 1,
+      "truncated": false
+    },
+    {
+      "query": "Тарасовка",
+      "status": "PASS",
+      "count": 20,
+      "truncated": false
+    },
+    {
+      "query": "Нов",
+      "status": "PASS",
+      "count": 20,
+      "truncated": false
+    },
+    {
+      "query": "несуществующийпункт",
+      "status": "PASS",
+      "count": 0,
+      "truncated": false
+    }
+  ]
+}

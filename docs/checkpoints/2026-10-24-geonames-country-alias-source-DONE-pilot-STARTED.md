@@ -1,0 +1,9 @@
+# DONE country-alias source discovery / STARTED bounded pilot — 24.10.2026 МСК
+
+Parent2e19bee62d05210823e1df80af1eb9762d24cde7/tree3eef5cf1addb4acc66b8b71a2d178d1a6f5c106c, разрешённаяfixbranch/PR14draft;последниеrunscompleted. ПредыдущиеRU/UAгеографическиеархивы и93кандидата не повторялись.
+
+Новый первичный источник: https://download.geonames.org/export/dump/alternatenames/ . Официальная listing содержит отдельныеRU.zip(~12M)/UA.zip(~2.2M), не глобальный205MBV2. Второй прочитанныйдокумент https://download.geonames.org/export/dump/readme.txt определяет language/id/preferred/short/colloquial/historic иfrom/toдляV2, лицензиюCCBY4.0, as-is. 2boundedsearchqueries/2primarydocs. Важно: фактическийschemaстрановыхaliasesещёНЕпрочитан;необъявлятьегоV2илидатированнымдоосмотра. Это новыйдопустимыйисточникдляlanguagegap,неповторDonetsktimeout.
+
+STARTEDпоставка: .github/workflows/geonames-country-alias-pilot.yml, отдельный read-only runner/no checkout/no branch writer. Только2новыхHEAD/10с и2GET/60с дляalternatenames/RU.zip,UA.zip. ДоGETrequireHEAD200/positiveContentLength/ETag/combined<=50MiB,If-Match/exactbytes/curlmaxsize;CRC/SHA/<=256MiBuncompressed/country/noextraction. Manifestatomic/headers/artifact14days. ГлобальныйV2/географическиеRU/UAнекачать. Приошибкеstopбезretry;неактивироватьruntimeкоординаты.
+
+ПередpublishпроверитьYAML/Pythoncompile/ограничения/mockHEADfailure;actualresultтолькопослеCI. НовыйPRcommitможетавтоматическизапуститьстарыйобщийCIполнымPRdiff:неотменятьи неписатьветкуприactive/queued,не запускатьвручнуюегоещёраз. ПослеCIcompletedсохранитьmanifest/DONE;отдельныйSTARTEDдоofflinejoinaliases→93records+ADM1/ADM2 изужеимеющегосяcountrydump. ОтсутствующиеdatefieldsсохранитьUNKNOWN,неподставлятьисторичность. Географическиеточность/Crimea/полнотаостаётсяUNVERIFIED. ПередruntimeimplementationотдельныйSTARTED/гейты.

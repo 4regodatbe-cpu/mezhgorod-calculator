@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import core from './quote.cjs';
 import {matrixM12Component,m12PairFromBoundary} from './m12-route-adapter.mjs';
+import {matrixCkadComponent} from './ckad-route-adapter.mjs';
 const component=(road,from,to,profile='allDays')=>({road,from,to,profile,localDate:'2026-10-14',routeId:'r',traversalId:road,exactTraversal:true,profileResolved:true});
 const request=components=>({routeId:'r',evidenceComplete:true,components});
 const production=(first,last,direction='forward')=>({core:{status:'priced',finalMarkers:[first,last],boundary:{status:'proven',firstRvpKm:first,lastRvpKm:last,direction}},tolls:{amount:1}});
@@ -49,8 +50,18 @@ test('missing separate bypass price never becomes a numeric M4 subtotal',()=>{
  assert.equal(q.rub,null);assert.equal(q.components[0].rub,1230);
 });
 test('CKAD footnote requires context only for the16M12–Nosov-side pairs',()=>{
+ const departureAt='2026-10-14T12:00:00+03:00';
  const matrix=JSON.parse(readFileSync(new URL('../TARIFF_VECTOR_MATRIX_2026-10-12.json',import.meta.url)));
- assert.equal(matrix.rows.filter(r=>r.road==='ckad'&&r.requiresTariffContext).length,16);
+ const contextRows=matrix.rows.filter(r=>r.road==='ckad'&&r.requiresTariffContext===true);
+ assert.equal(contextRows.length,16);
+ // The live adapter has no registration-history input. Each of these pairs
+ // must therefore remain unknown until the operator's120-minute allocation
+ // context is supplied; geometry alone cannot charge a second product.
+ for(const row of contextRows){
+  const result=matrixCkadComponent({exact:true,traversal:{from:row.from,to:row.to}},departureAt);
+  assert.equal(result.tolls,null,`${row.from} → ${row.to}`);
+  assert.equal(result.reason,'ckad_unresolved-operator-tariff-context');
+ }
  for(const[from,to]of [['М-12 Восток','М-7 Волга'],['М-7 Волга','М-12 Восток']])assert.equal(core.quote(request([component('ckad',from,to)])).rub,40);
  assert.equal(core.quote(request([component('ckad','М-12 Восток','Носовихинское шоссе')])).rub,null);
 });

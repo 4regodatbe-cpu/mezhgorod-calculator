@@ -1,0 +1,695 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUtc": "2026-10-17T06:28:16Z",
+  "reviewedAtMsk": "2026-10-17 09:28 МСК",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "sourceHead": "2b1882159d7ef0576c7eb8c3dcb6ca13f6bd0c21",
+  "sourceTree": "368b3ff960e9c86d4966d3738fb82ff40ef6c492",
+  "findingCode": "engine_not_yet_composed",
+  "baselineCaseCount": 13,
+  "parentOutcome": "deferred",
+  "causeReviews": [
+    {
+      "cause": "m3_engine_not_yet_composed",
+      "outcome": "blocked_by_missing_reliable_data",
+      "caseCount": 10,
+      "profileOccurrences": 30,
+      "reason": "Current route-leg pricing keeps M1/M3 under diagnostic shadow only. All ten saved M3 rows prove road traversal but return null amounts. Operator fare records are verified only through 2026-10-10; these route profiles depart 2026-10-15 and 2026-10-17. M3 gate identity inventory is explicitly not fare-version proof; shadow pricing requires all three ordered gates on this same route and a verified operator tariff date."
+    },
+    {
+      "cause": "m1_component_label_overlaps_odintsovo",
+      "outcome": "deferred",
+      "caseCount": 3,
+      "profileOccurrences": 9,
+      "reason": "Three M1-labeled rows are not an independent single cause: two overlap the queued odintsovo:unpriced finding and one overlaps expected-road-not-proven. Preserve them as distinct pending route-scope review."
+    }
+  ],
+  "report": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.json",
+    "generatedAt": "2026-10-16T02:19:51.916Z",
+    "gitBlobSha": "528163f94cf0092bf58ad5b0be200059d61baff9",
+    "rawSha256": "cf72f0f4084236e3acb442a961bae5a9c79f49980566b6d784bd8b73642d765e",
+    "reportTotals": {
+      "distinctCaseAttempts": 340,
+      "recordedLiveAttempts": 354,
+      "liveCaptured": 340,
+      "savedLiveSummaries": 340,
+      "missingOrInvalidReferences": 0,
+      "audited": 340,
+      "traceComplete": 340,
+      "sameDateParity": 340
+    },
+    "caseCount": 13,
+    "profileOccurrences": 39,
+    "evidenceOccurrencesPresent": 39,
+    "evidenceCompleteRows": 13,
+    "traceCompleteRows": 13,
+    "sameDateParityRows": 13,
+    "routeCoverageCounts": {
+      "traversal-proven": 12,
+      "expected-road-not-proven": 1
+    }
+  },
+  "overlaps": {
+    "expectedRoadNotProven": [
+      "single-odintsovo-kubinka-to-moscow"
+    ],
+    "odintsovoUnpriced": [
+      "single-odintsovo-golitsyno-to-rublevo",
+      "single-odintsovo-rublevo-to-golitsyno"
+    ]
+  },
+  "caseRows": [
+    {
+      "caseId": "single-m3-kaluga-to-moscow",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 181489,
+      "routeSeconds": 10079
+    },
+    {
+      "caseId": "single-m3-moscow-to-kaluga",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 184817,
+      "routeSeconds": 10636
+    },
+    {
+      "caseId": "single-m3-moscow-to-maloyaroslavets",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 121233,
+      "routeSeconds": 7471
+    },
+    {
+      "caseId": "single-m3-moscow-to-obninsk",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 108328,
+      "routeSeconds": 6455
+    },
+    {
+      "caseId": "single-m3-obninsk-to-moscow",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 109514,
+      "routeSeconds": 6238
+    },
+    {
+      "caseId": "single-m3-balabanovo-to-kaluga",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "Valhalla",
+      "routeMeters": 95315,
+      "routeSeconds": 4895
+    },
+    {
+      "caseId": "single-m3-kaluga-to-balabanovo",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 86918,
+      "routeSeconds": 4711
+    },
+    {
+      "caseId": "single-m3-kaluga-to-obninsk",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 80759,
+      "routeSeconds": 4399
+    },
+    {
+      "caseId": "single-m3-maloyaroslavets-to-moscow",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 119943,
+      "routeSeconds": 7045
+    },
+    {
+      "caseId": "single-m3-obninsk-to-kaluga",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "m3"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 80827,
+      "routeSeconds": 4428
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "odintsovo"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 46386,
+      "routeSeconds": 2811
+    },
+    {
+      "caseId": "single-odintsovo-kubinka-to-moscow",
+      "roadCoverage": "expected-road-not-proven",
+      "provenRoads": [
+        "m1"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 68300,
+      "routeSeconds": 4149
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "roadCoverage": "traversal-proven",
+      "provenRoads": [
+        "odintsovo"
+      ],
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "traceComplete": true,
+      "sameDateParity": true,
+      "provider": "OSRM",
+      "routeMeters": 43941,
+      "routeSeconds": 2638
+    }
+  ],
+  "occurrences": [
+    {
+      "caseId": "single-m3-kaluga-to-moscow",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-21-874Z.json",
+      "blobSha": "4438f5e85093eeb4f68e540c17a9dda39050e760"
+    },
+    {
+      "caseId": "single-m3-kaluga-to-moscow",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-24-22-237Z.json",
+      "blobSha": "42b2b8b22e11a39d84fbaf6c052e426e7b917ac7"
+    },
+    {
+      "caseId": "single-m3-kaluga-to-moscow",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-22-592Z.json",
+      "blobSha": "b9ed8431a33b61e39a3e94b018026c6d6443a426"
+    },
+    {
+      "caseId": "single-m3-moscow-to-kaluga",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T00-24-45-755Z.json",
+      "blobSha": "028afb6ce4996df73cacbb7fccfb4a2c0c67170b"
+    },
+    {
+      "caseId": "single-m3-moscow-to-kaluga",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-24-46-120Z.json",
+      "blobSha": "7ad9a070b3841ea4346d7b325a322e85151b1e6f"
+    },
+    {
+      "caseId": "single-m3-moscow-to-kaluga",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-24-46-465Z.json",
+      "blobSha": "7d49a4f10a7eac44c0255ced1dfcd2357f3d8982"
+    },
+    {
+      "caseId": "single-m3-moscow-to-maloyaroslavets",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-08-656Z.json",
+      "blobSha": "77de465258c69466fe225f939a9c3480c7387d71"
+    },
+    {
+      "caseId": "single-m3-moscow-to-maloyaroslavets",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-25-09-019Z.json",
+      "blobSha": "c934fc2f34c350a78362ee34f752c0bf64edc383"
+    },
+    {
+      "caseId": "single-m3-moscow-to-maloyaroslavets",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-09-362Z.json",
+      "blobSha": "39c3f484a052b0c1d973a99631877e505159329b"
+    },
+    {
+      "caseId": "single-m3-moscow-to-obninsk",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-31-334Z.json",
+      "blobSha": "855ec893ba803d1fee72cc09fa8a1782093d7084"
+    },
+    {
+      "caseId": "single-m3-moscow-to-obninsk",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-25-31-678Z.json",
+      "blobSha": "df2820b35804009f6524ca276cb1455cb07f4af4"
+    },
+    {
+      "caseId": "single-m3-moscow-to-obninsk",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-32-020Z.json",
+      "blobSha": "5c647c5069b5d0502c2b4a57989717c387dfb925"
+    },
+    {
+      "caseId": "single-m3-obninsk-to-moscow",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-25-53-765Z.json",
+      "blobSha": "2d5035fdeeff89ab8e237df0ede7dfddaa4b5fae"
+    },
+    {
+      "caseId": "single-m3-obninsk-to-moscow",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-25-54-107Z.json",
+      "blobSha": "2d34544ecab7df2f4b714aff173b8362e3b4136d"
+    },
+    {
+      "caseId": "single-m3-obninsk-to-moscow",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-25-54-436Z.json",
+      "blobSha": "0dab6a27a50115d44b5d9eac9fb1721343199016"
+    },
+    {
+      "caseId": "single-m3-balabanovo-to-kaluga",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-balabanovo-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T02-00-51-674Z.json",
+      "blobSha": "95bf471b6d8eed5fd24fa94d2ae04b62ee17d22e"
+    },
+    {
+      "caseId": "single-m3-balabanovo-to-kaluga",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-balabanovo-to-kaluga/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-00-52-015Z.json",
+      "blobSha": "419961fa94c5b3b9cb1eaeb4fd71a831f5f0c314"
+    },
+    {
+      "caseId": "single-m3-balabanovo-to-kaluga",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-balabanovo-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-00-52-339Z.json",
+      "blobSha": "fd6394a044802338b528660c4c1103f56c7d5ccb"
+    },
+    {
+      "caseId": "single-m3-kaluga-to-balabanovo",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-balabanovo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-01-27-975Z.json",
+      "blobSha": "32ce3fa715546d67a1d2858734b70b0ef9d8b86d"
+    },
+    {
+      "caseId": "single-m3-kaluga-to-balabanovo",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-balabanovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-01-28-322Z.json",
+      "blobSha": "607f75d6b64d6936d7f385621c01fcdb43e9403a"
+    },
+    {
+      "caseId": "single-m3-kaluga-to-balabanovo",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-balabanovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-01-28-647Z.json",
+      "blobSha": "79d0ec1b64407ffb0c549f703560af066252fe2d"
+    },
+    {
+      "caseId": "single-m3-kaluga-to-obninsk",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-obninsk/live-2026-10-15T09-00-00-03-00-2026-10-16T02-02-04-445Z.json",
+      "blobSha": "d074e7529313f473147cabc2aac963a6c4f720c0"
+    },
+    {
+      "caseId": "single-m3-kaluga-to-obninsk",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-obninsk/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-02-04-790Z.json",
+      "blobSha": "016930da62a83601de56348b7b16607a1b064843"
+    },
+    {
+      "caseId": "single-m3-kaluga-to-obninsk",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-obninsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-02-05-127Z.json",
+      "blobSha": "7de7cf46c326d46192d211f010e898acb63e1c2a"
+    },
+    {
+      "caseId": "single-m3-maloyaroslavets-to-moscow",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-02-40-584Z.json",
+      "blobSha": "7fb3ad4913f161bc89d258b13deac281609eb075"
+    },
+    {
+      "caseId": "single-m3-maloyaroslavets-to-moscow",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-02-40-925Z.json",
+      "blobSha": "8a3b51f17373b306bc11624fd6b879dbd1721789"
+    },
+    {
+      "caseId": "single-m3-maloyaroslavets-to-moscow",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-02-41-254Z.json",
+      "blobSha": "8223f2a1088178607175127fbe2a92e4361d4734"
+    },
+    {
+      "caseId": "single-m3-obninsk-to-kaluga",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/live-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-150Z.json",
+      "blobSha": "ce9dfd0f82ed5a16671fb687fccbc9fd5f768cc3"
+    },
+    {
+      "caseId": "single-m3-obninsk-to-kaluga",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-03-16-500Z.json",
+      "blobSha": "999466b7096137055cf3e8c19619f51dcd30fb3b"
+    },
+    {
+      "caseId": "single-m3-obninsk-to-kaluga",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m3",
+      "reason": "m3_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-03-16-820Z.json",
+      "blobSha": "b34ac10d40b8f304c0df8c4b34fde18d90283944"
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m1",
+      "reason": "m1_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-00-759Z.json",
+      "blobSha": "0d5afc24abe4041046b70fc44cadeda211c1ed33"
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m1",
+      "reason": "m1_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-07-01-099Z.json",
+      "blobSha": "8594bf39002a14a012880f542c1c9ff0d388ffea"
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m1",
+      "reason": "m1_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-07-01-434Z.json",
+      "blobSha": "4d1429992236276254f01be4bce064d916d4014c"
+    },
+    {
+      "caseId": "single-odintsovo-kubinka-to-moscow",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m1",
+      "reason": "m1_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-36-426Z.json",
+      "blobSha": "b543fbc40132058923eaee67d45d7f9c34c55010"
+    },
+    {
+      "caseId": "single-odintsovo-kubinka-to-moscow",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m1",
+      "reason": "m1_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-07-36-763Z.json",
+      "blobSha": "5b39b68c314abd072f914ace8967984515d7433c"
+    },
+    {
+      "caseId": "single-odintsovo-kubinka-to-moscow",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m1",
+      "reason": "m1_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-07-37-082Z.json",
+      "blobSha": "c3bd5c60b0ea9d9792651178d56873237221bd75"
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m1",
+      "reason": "m1_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/live-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-629Z.json",
+      "blobSha": "c70949de22cd0e47a2e9010044547246e0e73369"
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "component": "m1",
+      "reason": "m1_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-973Z.json",
+      "blobSha": "a5bf1cc6500eca903c0e525feb98b698971190b5"
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "component": "m1",
+      "reason": "m1_engine_not_yet_composed",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-09-25-301Z.json",
+      "blobSha": "bbf04b11459402f3883e5e97e6f970d0809843cd"
+    }
+  ],
+  "currentCode": {
+    "routeLegPricingPath": "lib/v3-calculation/route-leg-pricing.ts",
+    "routeLegPricingBlobSha": "a78a198ad76da4563088204763b30996c2fa1aa0",
+    "behavior": "m1 and m3 detected components are passed with tolls:null; m1/m3 audit outputs are diagnostic shadow and strictPriceAllowed=false.",
+    "shadowModule": "experiments/nationwide-tolls/m1-m3-shadow-quote.mjs",
+    "shadowBlobSha": "3791e4ed5c27364bc26cdf567e47bf11d1833b4e",
+    "gateAuditModule": "experiments/nationwide-tolls/m1-m3-gate-evidence.mjs",
+    "gateAuditBlobSha": "104af478f12c466f47b1f466aa4428ea9770e052",
+    "noM1orM3ProductionEngineFiles": [
+      "lib/toll-engine/m11-boundaries.ts",
+      "lib/toll-engine/m11-boundary-resolver.ts",
+      "lib/toll-engine/m11-current-selection.ts",
+      "lib/toll-engine/m11-current-tariffs.ts",
+      "lib/toll-engine/m11-moscow-geometry.ts",
+      "lib/toll-engine/m11-moscow-production.ts",
+      "lib/toll-engine/m11-moscow-schedule.ts",
+      "lib/toll-engine/m11-production.ts",
+      "lib/toll-engine/m11-pulkovo-evidence.ts",
+      "lib/toll-engine/m11-road-evidence-types.ts",
+      "lib/toll-engine/m11-road-evidence.ts",
+      "lib/toll-engine/m11-spatial-anchors.ts",
+      "lib/toll-engine/m11-tail-component.ts",
+      "lib/toll-engine/m12-osrm-span.ts",
+      "lib/toll-engine/m12-production.ts",
+      "lib/toll-engine/m12-route-core.ts",
+      "lib/toll-engine/m12-route-evidence.ts",
+      "lib/toll-engine/m12-route-projection.ts",
+      "lib/toll-engine/m12-route-types.ts",
+      "lib/toll-engine/m12-tariffs.ts",
+      "lib/toll-engine/m12-valhalla-span.ts"
+    ]
+  },
+  "tariffEvidence": {
+    "nationalRegistryPath": "experiments/nationwide-tolls/national-registry.json",
+    "nationalRegistryBlobSha": "a66a8acb1540d15423603cb090fe82bc4c9de116",
+    "gatesPath": "experiments/nationwide-tolls/m1-m3-official-gates.json",
+    "gatesBlobSha": "5ebfaea59e5380c642c80d0b6b1bfc1c34c6b85a",
+    "m1m3OfficialGates": {
+      "m1": {
+        "effectiveFrom": "2026-03-02",
+        "effectiveTo": null,
+        "source": "https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf",
+        "kind": "section_matrix",
+        "verifiedFor": "category-I-no-transponder",
+        "rows": {
+          "m1-33-66": {
+            "all": 250
+          }
+        },
+        "verifiedThrough": "2026-10-10",
+        "operatorOrder": "2026-02-27 №54"
+      },
+      "m3": {
+        "effectiveFrom": "2026-03-02",
+        "effectiveTo": null,
+        "source": "https://avtodor-tr.ru/upload/iblock/cb5/9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf",
+        "kind": "section_matrix",
+        "verifiedFor": "category-I-no-transponder",
+        "rows": {
+          "m3-65-86": {
+            "monThu": 100,
+            "friSun": 100
+          },
+          "m3-112-150": {
+            "monThu": 190,
+            "friSun": 190
+          },
+          "m3-150-194": {
+            "monThu": 190,
+            "friSun": 230
+          }
+        },
+        "verifiedThrough": "2026-10-10",
+        "operatorOrder": "2026-02-27 №53"
+      },
+      "m1Gate": {
+        "id": "m1-pvp-46",
+        "roadId": "m1",
+        "km": 46,
+        "officialSection": "33–66",
+        "fareRowId": "m1-33-66",
+        "verifiedOsmNodeIds": [],
+        "coordinateAnchor": null,
+        "locationConfidence": "operator_km_only",
+        "versionVerifiedForPricing": false
+      },
+      "m3Gates": [
+        {
+          "id": "m3-pvp-86",
+          "km": 86,
+          "versionVerifiedForPricing": false,
+          "verifiedNodeCount": 2
+        },
+        {
+          "id": "m3-pvp-136",
+          "km": 136,
+          "versionVerifiedForPricing": false,
+          "verifiedNodeCount": 2
+        },
+        {
+          "id": "m3-pvp-168",
+          "km": 168,
+          "versionVerifiedForPricing": false,
+          "verifiedNodeCount": 2
+        }
+      ],
+      "m1PhysicalInventory": {
+        "roadId": "m1",
+        "name": "М-1 «Беларусь» (33–66 км)",
+        "eligibility": "count-unresolved",
+        "minimumPhysicalPointsProven": null,
+        "pointIdentities": [],
+        "sources": [
+          "https://avtodor-tr.ru/road/tariffs/"
+        ],
+        "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+      }
+    }
+  },
+  "checks": {
+    "savedReportAndCurrentCodeReview": true,
+    "newLiveOrReplayRuns": 0,
+    "testsRun": 0,
+    "buildsRun": 0,
+    "tariffConfirmed": false,
+    "unknownMeansFree": false
+  },
+  "formalPlan": {
+    "completedParts": 18,
+    "totalParts": 20,
+    "percent": 90,
+    "meaning": "Completion of the agreed 20-part work plan; NOT percent verified tariff coverage or release readiness"
+  },
+  "next": "Review odintsovo:unpriced (baseline2) from saved evidence; compare overlap with these M1-labelled rows and expected-road-not-proven before assigning its cause."
+}

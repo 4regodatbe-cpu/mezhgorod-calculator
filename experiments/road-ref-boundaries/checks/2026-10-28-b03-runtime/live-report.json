@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-27T21:59:51.042Z",
+  "node": "v24.19.0",
+  "browser": "154.0.8037.57",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "componentSha256": "5ece9b654422c35e43442208f5b778cbf0d173fc19f6da946dd21bbc08728a4d",
+  "sourceApiRemote": "75d55b8a257d6e9685e13c9da179b3385f7ca7d6 (API code unchanged)",
+  "addressApi": "LIVE local /r → actual production collector → Photon",
+  "classifyAndCollect": "MOCKED, never counted as live",
+  "requests": [
+    "Анапа"
+  ],
+  "errors": [],
+  "steps": [
+    {
+      "city": "Анапа",
+      "httpStatus": 502,
+      "elapsedMs": 7141,
+      "file": "response-1.json",
+      "sha256": "b95d4f631601309de642febf3326f364c4ed9d4d6645fcafd9986d1d2a40c9c6",
+      "outcome": "LIVE_LOOKUP_UNAVAILABLE_OR_EMPTY",
+      "uiError": "ТОЧКА B\n\nСервис поиска временно недоступен.\n\nПовторить"
+    }
+  ],
+  "status": "BLOCKED_BY_LIVE_SOURCE",
+  "finishedAt": "2026-10-27T21:59:59.638Z"
+}

@@ -1,0 +1,48 @@
+{
+  "status": "DONE",
+  "fingerprint": "1ea03b40cb54472b3b95aaeff95abe0b685000471b8c5f77855dc20f67798cbf",
+  "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/2026-10-16T01-24-11-271Z-capture.json.gz",
+  "captureGitBlob": "80bf282afa92f210adc7d141bc204ebb48d326df",
+  "captureSha256": "5e895d6785df78dafd9a016706e733fd3da66502001fbb5611ff34d33f52eb6f",
+  "provider": "Valhalla",
+  "routeMeters": 921380,
+  "routeSeconds": 31886,
+  "completeOwnCapture": true,
+  "gateIndex": 1688.001260747911,
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "physicalResolved": true,
+      "boundariesResolved": true,
+      "from": "tskad",
+      "to": "solnechnogorsk",
+      "headRub": 280,
+      "headReason": "m11_head_ready_direct_pair_at_departure",
+      "headWithoutSelectedGateValidation": null,
+      "m11SubtotalRub": 4180,
+      "wholeTripEvaluated": false
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "physicalResolved": true,
+      "boundariesResolved": true,
+      "from": "tskad",
+      "to": "solnechnogorsk",
+      "headRub": 320,
+      "headReason": "m11_head_ready_direct_pair_at_departure",
+      "headWithoutSelectedGateValidation": null,
+      "m11SubtotalRub": 4520,
+      "wholeTripEvaluated": false
+    }
+  ],
+  "negativeChecks": {
+    "reverseRejected": true,
+    "incompleteRejected": true,
+    "absentGateRejected": true
+  },
+  "recoveredHeadComponent": true,
+  "outcome": "fixed_and_verified_for_this_own_capture",
+  "confirmedWholeTripFares": 0,
+  "networkCalls": 0
+}

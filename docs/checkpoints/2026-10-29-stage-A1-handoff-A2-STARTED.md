@@ -1,0 +1,11 @@
+# Stage A — A1 bounded closure / A2 STARTED, LOCAL
+
+Base4c2d1a6bf93effc7695215780eb0a070bbe03e84; remotea1c169d3 independently re-read. No push/CI/Production changes allowed. Owner's new Stage A request reports actual no-mock checks on publisheda1c169d3: both GeoNames display defects absent, city/region priorities and control cities working. This is OWNER-REPORTED deployed evidence, distinct from the earlier agent's access-blocked inspection; no fabricated agent rerun or raw capture claimed.
+
+A1 DONE for bounded admitted-corpus requirements under existing tests and owner's deployed acceptance: immutable169431-record pilot, Russian-source screen, Crimea/new-region order, homonyms, original IDs/coordinates and52081-exclusion guard preserved. A1 full national coverage/linguistic semantic certification remains PARTIAL. Omitted exact names still fall through rather than substitute a prefix; admitted exact cities with excluded homonyms declare partial coverage. No excluded record imported and no full corpus audit/build repeated.
+
+A2 source inspection: detailed queries pass all terms in ordinary cases but ranker gives any locality a type bonus with no city/street/house evidence score. Street-only input can also trigger locality bbox variants. Region suffix handling can truncate a detailed comma-separated query. Priority-area nonlocality labels currently echo raw provider administrative fields. These are code facts; existence of either requested exact house remains unconfirmed.
+
+Next bounded A2 diagnosis: at most4initial Photon requests (two reported queries, global/RU windows),20s per request, max2concurrent; preserve HTTP/status/body/SHA and inspect only address properties. At most2follow-ups if exact presence needs a justified street-layer/window check. No route-provider calls or paid sources. Then regression-first generic address-evidence ranking and source-backed administrative display, targeted tests/full mandatory offline gate/TS/lint/build. A3 reuse existing source/adaptor research, no public Nominatim autocomplete or paid account; A4 separate controlled tests/local API versus deployed acceptance.
+
+Save each completed local block/checkpoint/WORK_STATE. Archived protected address WORK_LOG/NEXT_STEPS remain untouched under checkpoint-first rule. No public reserve activation or push implicit in this plan.

@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-20",
+  "source": "4b647bfe01c903352f3842072ceafb23ea6d10a2",
+  "production": "dpl_DGhwwdXRTKwbbEMR127M5AbDMAoP",
+  "aliases": [
+    "mezhgorod-calculator.vercel.app",
+    "mezhgorod-calculator-4regodatbe-5310.vercel.app"
+  ],
+  "build": {
+    "tests": 810,
+    "pass": 810,
+    "fail": 0,
+    "staticPages": "16/16",
+    "compile": "success"
+  },
+  "probes": [
+    {
+      "path": "/",
+      "status": 200,
+      "current": true,
+      "old": true
+    },
+    {
+      "path": "/v2",
+      "status": 200,
+      "current": false,
+      "old": true
+    },
+    {
+      "path": "/api/suggest?q=%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2",
+      "status": 200,
+      "count": 20,
+      "top": [
+        "Ростов",
+        "Ростов",
+        "Ростов-на-Дону"
+      ]
+    },
+    {
+      "path": "/api/suggest?q=%D0%9A%D1%80%D0%B0%D1%81%D0%BD",
+      "status": 200,
+      "count": 20,
+      "top": [
+        "Краснодар",
+        "Красноярск",
+        "Красногорск"
+      ]
+    },
+    {
+      "path": "/api/suggest?q=%D0%9C%D0%BE%D1%81%D0%BA",
+      "status": 200,
+      "count": 20,
+      "top": [
+        "Москва",
+        "Куликівське — ДНР",
+        "Москалівка"
+      ]
+    },
+    {
+      "path": "/api/suggest?q=%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80",
+      "status": 200,
+      "count": 20,
+      "top": [
+        "Краснодар",
+        "Краснодар",
+        "Краснодар"
+      ]
+    }
+  ],
+  "runtimeErrorScan": "No logs found for deployment / last 5m",
+  "limits": [
+    "UI A-to-B not live-tested",
+    "POST /r not live-tested"
+  ],
+  "pr": 14,
+  "prDraft": true,
+  "merged": false
+}

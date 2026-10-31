@@ -1,0 +1,31 @@
+{
+  "optimization": "stop obsolete routing/trace work on V3 caller cancellation",
+  "baselineSources": {
+    "file": "cancel-before.json",
+    "sha256": "60d7dd445cf7d9f5aee52b26c50799cb4e610554358477d94fd30c757937d376"
+  },
+  "currentSources": {
+    "file": "cancel-after.json",
+    "sha256": "81925f95b99f877519bae16b586948fdff267d0d6e691dfc5c1c4c6e17cd5d00"
+  },
+  "providerStartsInControlledAbort": {
+    "before": 3,
+    "after": 1,
+    "subsequentStartsPrevented": 2,
+    "firstInFlightAbortDelivered": true
+  },
+  "noncancelledBehavior": {
+    "bodyParity": "EXACT",
+    "requestParity": "EXACT",
+    "savedResponsesPerRun": 12,
+    "source": "uncancelled-parity.json",
+    "sha256": "1c8233e17a9be218db22ee1f91561f551fed87cc7a8010eb9b43d0ac1fdea488"
+  },
+  "normalRequestSpeedupMs": null,
+  "realNetworkLatencyGainMeasured": false,
+  "limitations": [
+    "Transport responds cooperatively to AbortSignal; this experiment does not measure server-side provider CPU after socket cancellation.",
+    "Six regression cases cover main V3 geocode/routing/trace/backoff, not every auxiliary pricing lookup or legacy V2.",
+    "No ordinary-request speedup, broad retry reduction or 10s SLA is inferred."
+  ]
+}

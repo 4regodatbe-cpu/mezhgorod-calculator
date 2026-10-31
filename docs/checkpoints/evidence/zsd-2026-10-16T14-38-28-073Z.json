@@ -1,0 +1,243 @@
+{
+  "parent": "40f3e6e5b00f225e8b97f3f3dcb1042d415ee448",
+  "caseId": "zaporizhzhia-розовка-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/2026-10-16T01-17-39-935Z-capture.json.gz",
+  "captureSha256": "68ab50393b30454a81c0b17950b3d26d6e3680ddc8cc1314acbe7143ead856a6",
+  "provider": "Valhalla",
+  "execution": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/2026-10-16T01-17-39-935Z-capture.json.gz",
+        "2026-10-15T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"zaporizhzhia-розовка-saint-petersburg-center\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":2018857,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":3810,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-15-58\",\"amount\":1130,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/2026-10-16T01-17-39-935Z-capture.json.gz",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"zaporizhzhia-розовка-saint-petersburg-center\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":2018857,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":4640,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-15-58\",\"amount\":1650,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": {
+    "ways": [
+      "1122966004",
+      "1122966005",
+      "1122966006",
+      "123709500",
+      "123709505",
+      "139658547",
+      "183912267",
+      "183912268",
+      "223744446",
+      "28934684",
+      "31369306",
+      "381576631",
+      "381576632",
+      "397223749",
+      "397223751",
+      "397223752",
+      "400111351",
+      "400111354",
+      "461676671",
+      "465117517",
+      "721628540",
+      "721628541",
+      "80056716",
+      "80056742",
+      "80056745",
+      "85763340"
+    ],
+    "gates": [
+      "933974870"
+    ]
+  },
+  "sameReviewedScopeCase": "lnr-брянка-saint-petersburg-center",
+  "status": "source_gated_same_reviewed_zsd_scope",
+  "missing": [
+    "zsd"
+  ],
+  "uniqueZsdWays": [
+    "1122966004",
+    "1122966005",
+    "1122966006",
+    "123709500",
+    "123709505",
+    "139658547",
+    "183912267",
+    "183912268",
+    "223744446",
+    "28934684",
+    "31369306",
+    "381576631",
+    "381576632",
+    "397223749",
+    "397223751",
+    "397223752",
+    "400111351",
+    "400111354",
+    "461676671",
+    "465117517",
+    "721628540",
+    "721628541",
+    "80056716",
+    "80056742",
+    "80056745",
+    "85763340"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 15,
+      "edgeToll": true,
+      "beginShapeIndex": 465,
+      "endShapeIndex": 466
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T14-38-27-500Z.json",
+      "sha256": "a2ac81cf3c3f847d0a8e3721ab1cc4731b4d8ebc60556ba28c586958725360b6",
+      "caseId": "zaporizhzhia-розовка-saint-petersburg-center",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "68ab50393b30454a81c0b17950b3d26d6e3680ddc8cc1314acbe7143ead856a6",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m4",
+          "amount": 3810,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T14-38-28-036Z.json",
+      "sha256": "fe867d661dffdb744bf0f48242cb494a67e4f93617f2a2b5a315245f647cf1f0",
+      "caseId": "zaporizhzhia-розовка-saint-petersburg-center",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "68ab50393b30454a81c0b17950b3d26d6e3680ddc8cc1314acbe7143ead856a6",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m4",
+          "amount": 4640,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    }
+  ],
+  "note": "Case51: both profiles exit0/complete/SHA/departure verified. Status source_gated_same_reviewed_zsd_scope; whole-route missing zsd. Scope equivalence reuses diagnosis only, never a fare.",
+  "at": "2026-10-16T14:38:28.073Z",
+  "checkpoint": "docs/checkpoints/zsd-2026-10-16T14-38-28-073Z.md",
+  "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-38-28-073Z.json",
+  "overallPlanPercent": 90
+}

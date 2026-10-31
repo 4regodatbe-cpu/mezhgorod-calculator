@@ -1,0 +1,15 @@
+import fs from 'node:fs';import zlib from 'node:zlib';import {createHash} from 'node:crypto';import {NextRequest} from 'next/server';import {POST} from '../../app/api/v3/calculate/route.ts';
+const source='experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-spb/2026-10-16T00-11-59-083Z-capture.json.gz',bytes=fs.readFileSync(source),saved=JSON.parse(zlib.gunzipSync(bytes));
+const original=globalThis.fetch,info=console.info,calls=[],misses=[],used=new Set(),hash=b=>createHash('sha256').update(b).digest('hex');
+function matches(c,url,body){
+ const a=new URL(c.url);if(a.hostname!==url.hostname||a.pathname!==url.pathname)return false;
+ if(url.pathname==='/route'){const x=JSON.parse(a.searchParams.get('json')),y=JSON.parse(url.searchParams.get('json'));return JSON.stringify(x.locations)===JSON.stringify(y.locations)&&x.costing===y.costing&&x.costing_options?.auto?.use_tolls===y.costing_options?.auto?.use_tolls;}
+ if(url.hostname==='brouter.de')return ['lonlats','profile','profile:avoid_toll'].every(k=>a.searchParams.get(k)===url.searchParams.get(k));
+ if(url.pathname==='/trace_attributes')return JSON.stringify(JSON.parse(c.body).shape)===JSON.stringify(JSON.parse(body).shape);
+ return a.pathname===url.pathname;
+}
+globalThis.fetch=async(input,init)=>{const url=new URL(input),body=String(init?.body??'');calls.push({url:String(url),bodySha256:hash(body)});let index=saved.calls.findIndex((c,i)=>!used.has(i)&&matches(c,url,body));if(index<0)index=saved.calls.findIndex(c=>matches(c,url,body));if(index<0){misses.push({url:String(url),bodySha256:hash(body)});return new Response('{}',{status:503});}used.add(index);const c=saved.calls[index];return new Response(c.text,{status:c.status,headers:{'content-type':c.contentType??'application/json'}});};console.info=()=>{};
+const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),35000),start=performance.now();let response,body;
+try{response=await POST(new NextRequest('http://localhost/api/v3/calculate',{method:'POST',signal:controller.signal,body:JSON.stringify({from:saved.record.spec.from,to:saved.record.spec.to,departureAt:saved.departureAt??'2026-10-15T09:00:00+03:00'})}));body=await response.json();}finally{clearTimeout(timer);globalThis.fetch=original;console.info=info;}
+const report={source,sourceSha256:hash(bytes),sourceRuntimeCommit:'180e7caad4381a92057035827ba1be88113e2bc1',mode:'current V3 API against exact retained provider endpoints and trace shapes, all fetches intercepted; not live or tariff recertification',networkRequests:0,status:response.status===200&&misses.length===0?'PASS':'BLOCKED_BY_DATA_OR_ARCHIVED_CANDIDATE',httpStatus:response.status,elapsedMs:performance.now()-start,calls:calls.length,misses,selectedProvider:body.legs?.[0]?.fast?.quality?.providers,meters:body.legs?.[0]?.fast?.meters,seconds:body.legs?.[0]?.fast?.seconds,pricingStatus:body.legs?.[0]?.fast?.tolls?.pricingStatus,body};
+fs.writeFileSync('experiments/routing-reliability/2026-10-29/krasnodar-spb-replay.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,body:undefined}));

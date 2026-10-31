@@ -1,0 +1,342 @@
+{
+  "parent": "39dd3f1e6d2f83de903c9f107d823bc4118e0c56",
+  "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz",
+  "captureSha256": "a2173d14fed6e04452f39096e87344095c47341c926639d241c1136cc8e63571",
+  "provider": "Valhalla",
+  "execution": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz",
+        "2026-10-15T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"triple-m4-m11-zsd-sest-to-domodedovo\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":791471,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\",\"unknown-paid-road: unmapped_selected_route_paid_booth\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":200,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"},{\"id\":\"unknown-paid-road\",\"amount\":null,\"reason\":\"unmapped_selected_route_paid_booth\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"triple-m4-m11-zsd-sest-to-domodedovo\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":791471,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\",\"unknown-paid-road: unmapped_selected_route_paid_booth\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":240,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"},{\"id\":\"unknown-paid-road\",\"amount\":null,\"reason\":\"unmapped_selected_route_paid_booth\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": {
+    "ways": [
+      "1053072562",
+      "1090759975",
+      "1120339785",
+      "119176958",
+      "123232667",
+      "123232674",
+      "1257246768",
+      "1257246769",
+      "1257246773",
+      "1257246774",
+      "129037579",
+      "129780705",
+      "130062824",
+      "130068395",
+      "139658546",
+      "147598441",
+      "165031077",
+      "165035750",
+      "172999960",
+      "183912265",
+      "183912266",
+      "183912269",
+      "183921952",
+      "183921953",
+      "189271976",
+      "222395953",
+      "224933657",
+      "224933659",
+      "224933661",
+      "224933663",
+      "224933667",
+      "224933670",
+      "224933671",
+      "233006897",
+      "27462206",
+      "350477987",
+      "351741888",
+      "375574640",
+      "375646973",
+      "396293723",
+      "396293725",
+      "397223750",
+      "400111352",
+      "400111353",
+      "458501123",
+      "458501127",
+      "46948905",
+      "589047640",
+      "589047641",
+      "589047643",
+      "589047648",
+      "688149996",
+      "721628539",
+      "721628542",
+      "721628545",
+      "736306923",
+      "736881674",
+      "776695124",
+      "776695125",
+      "776695126",
+      "776695127",
+      "776695128",
+      "776695129",
+      "80056721",
+      "80056729",
+      "80056747",
+      "81348980"
+    ],
+    "gates": [
+      "1766158804",
+      "933975069"
+    ]
+  },
+  "sameReviewedScopeCase": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+  "status": "source_gated_same_reviewed_zsd_scope",
+  "missing": [
+    "unknown-paid-road",
+    "zsd"
+  ],
+  "uniqueZsdWays": [
+    "1053072562",
+    "1090759975",
+    "1120339785",
+    "119176958",
+    "123232667",
+    "123232674",
+    "1257246768",
+    "1257246769",
+    "1257246773",
+    "1257246774",
+    "129037579",
+    "129780705",
+    "130062824",
+    "130068395",
+    "139658546",
+    "147598441",
+    "165031077",
+    "165035750",
+    "172999960",
+    "183912265",
+    "183912266",
+    "183912269",
+    "183921952",
+    "183921953",
+    "189271976",
+    "222395953",
+    "224933657",
+    "224933659",
+    "224933661",
+    "224933663",
+    "224933667",
+    "224933670",
+    "224933671",
+    "233006897",
+    "27462206",
+    "350477987",
+    "351741888",
+    "375574640",
+    "375646973",
+    "396293723",
+    "396293725",
+    "397223750",
+    "400111352",
+    "400111353",
+    "458501123",
+    "458501127",
+    "46948905",
+    "589047640",
+    "589047641",
+    "589047643",
+    "589047648",
+    "688149996",
+    "721628539",
+    "721628542",
+    "721628545",
+    "736306923",
+    "736881674",
+    "776695124",
+    "776695125",
+    "776695126",
+    "776695127",
+    "776695128",
+    "776695129",
+    "80056721",
+    "80056729",
+    "80056747",
+    "81348980"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "1766158804",
+      "wayId": "458501127",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 271,
+      "endShapeIndex": 272
+    },
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 1,
+      "edgeToll": true,
+      "beginShapeIndex": 592,
+      "endShapeIndex": 593
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-39-00-174Z.json",
+      "sha256": "356a26f50a43b7bbc487de5860c7b4535c6be97bd0fbd757da3f66a1e6f474a3",
+      "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "a2173d14fed6e04452f39096e87344095c47341c926639d241c1136cc8e63571",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m11-15-58",
+          "amount": 200,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd",
+          "unknown-paid-road"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-39-00-786Z.json",
+      "sha256": "4b65e5f7d441c71a450164f216d0af0f31fbdb4c59546cbb5b168dd97503a34c",
+      "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "a2173d14fed6e04452f39096e87344095c47341c926639d241c1136cc8e63571",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m11-15-58",
+          "amount": 240,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd",
+          "unknown-paid-road"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    }
+  ],
+  "note": "Case76: both profiles exit0/complete/SHA/departure verified. Status source_gated_same_reviewed_zsd_scope; whole-route missing unknown-paid-road,zsd. Scope equivalence reuses diagnosis only, never a fare.",
+  "at": "2026-10-16T17:39:01.255Z",
+  "checkpoint": "docs/checkpoints/zsd-2026-10-16T17-39-01-254Z.md",
+  "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-39-01-254Z.json",
+  "overallPlanPercent": 90
+}

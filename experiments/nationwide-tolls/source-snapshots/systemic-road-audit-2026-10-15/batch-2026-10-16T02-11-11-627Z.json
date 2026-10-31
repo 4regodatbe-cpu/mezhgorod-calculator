@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-10-16T02:11:11.627Z",
+  "scope": {
+    "region": null,
+    "group": "single-zsd",
+    "caseId": "single-zsd-prim-to-peterhof",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-zsd-prim-to-peterhof",
+      "startedAt": "2026-10-16T02:11:11.630Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-peterhof/live-2026-10-15T09-00-00-03-00-2026-10-16T02-11-13-966Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-peterhof/2026-10-16T02-11-13-953Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-11-14-318Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-11-14-661Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": 300,
+        "weekdayAmount": 300,
+        "weekendAmount": 300,
+        "period": "все дни, без транспондера",
+        "segments": [
+          "ЗСД: тарифная зона 1 · 300 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 300,
+        "weekdayAmount": 300,
+        "weekendAmount": 300,
+        "period": "все дни, без транспондера",
+        "segments": [
+          "ЗСД: тарифная зона 1 · 300 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "zsd",
+          "amount": 300,
+          "reason": "zsd_zone1_complete_directed_base_tariff"
+        }
+      ],
+      "finishedAt": "2026-10-16T02:11:14.675Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T02:11:14.679Z"
+}

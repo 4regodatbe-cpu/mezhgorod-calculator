@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "road": "ZSD",
+  "date": "2026-10-30",
+  "mode": "research_only_not_runtime",
+  "sources": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+      "sha256": "debfe6e45d6c51554d2710b83068f206ffbf93cf9f4b3bc4d9aa3bdfdbd0a8c5"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-ways.osm.gz",
+      "sha256": "327c5bdd61576e414184ef2d6b2fbebfab71cc32cb7589a55c5fd98ab1a3b954"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/exit-way183902370.osm",
+      "sha256": "a0b3d4eb094cc9aae28196a4f4804604c871df0699d179b53b80a3e548d1c37f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/readiness.json",
+      "sha256": "24bc1ef0a00bf3da64e4bd59b05eede366338dd31ac6ce5d3de311641caba034"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+      "sha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/zsd-operator-map-accessibility.txt",
+      "sha256": "3af79753ae7ccb85a02099d2d2e06603ca7beb1e6624de6d3750a5a6995f3d80"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/zsd-operator-pvp-accessibility.txt",
+      "sha256": "c048d1ea5511b1a37bbe22af50080b8145575264d9ffe77e5d669be5900fe7c8"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/zsd-exit-short-route-accessibility.txt",
+      "sha256": "fdf5a767d11a9bc869d61043ddc099b5e6321d8b0ab1f109bd2cc679d4b0b0ec"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/zsd-exit-osm-z16-38274-19067.png",
+      "sha256": "1cf7fcf68b0b1fd119efa2a33d868a6a1cfd993b96c00a856a230b0d29bf45b7"
+    }
+  ],
+  "points": [
+    {
+      "id": "zsd-10270133471",
+      "road": "ZSD",
+      "kind": "entry",
+      "title": "Начало сохранённого соединительного въезда с КАДюг",
+      "position": {
+        "lat": 59.8359361,
+        "lon": 30.2805497
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "А-118/КАД (юг)",
+        "ЗСД"
+      ],
+      "osm": {
+        "nodeId": "10270133471",
+        "wayIds": [
+          "1122966006"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+        "field": "osm/node[@id=\"10270133471\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2805497%2C59.8359361&z=18",
+      "evidence": {
+        "visual": "not independently viewed at this point",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count."
+    },
+    {
+      "id": "zsd-1833109726",
+      "road": "ZSD",
+      "kind": "technical",
+      "title": "Конец сохранённого соединительного въезда",
+      "position": {
+        "lat": 59.836389,
+        "lon": 30.2807444
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "КАДюг",
+        "ЗСД"
+      ],
+      "osm": {
+        "nodeId": "1833109726",
+        "wayIds": [
+          "1122966006"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+        "field": "osm/node[@id=\"1833109726\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2807444%2C59.836389&z=18",
+      "evidence": {
+        "visual": "not independently viewed at this point",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count."
+    },
+    {
+      "id": "zsd-933974870",
+      "road": "ZSD",
+      "kind": "plaza",
+      "title": "ПВП5 — номер подтверждён OSM, не новым операторским перечнем",
+      "position": {
+        "lat": 59.872213,
+        "lon": 30.2955029
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "ЗСД"
+      ],
+      "osm": {
+        "nodeId": "933974870",
+        "wayIds": [
+          "381576632"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+        "field": "osm/node[@id=\"933974870\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2955029%2C59.872213&z=18",
+      "evidence": {
+        "visual": "not independently viewed at this point",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count."
+    },
+    {
+      "id": "zsd-1339782267",
+      "road": "ZSD",
+      "kind": "technical",
+      "title": "Начало направленного выхода к Екатерингофке",
+      "position": {
+        "lat": 59.9004241,
+        "lon": 30.2467344
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "ЗСД",
+        "набережная реки Екатерингофки"
+      ],
+      "osm": {
+        "nodeId": "1339782267",
+        "wayIds": [
+          "183902370"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/exit-way183902370.osm",
+        "field": "osm/node[@id=\"1339782267\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2467344%2C59.9004241&z=18",
+      "evidence": {
+        "visual": "exit-area map corroboration only",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count."
+    },
+    {
+      "id": "zsd-25893875",
+      "road": "ZSD",
+      "kind": "exit",
+      "title": "Конец направленного выхода к Екатерингофке",
+      "position": {
+        "lat": 59.9023393,
+        "lon": 30.2493057
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "ЗСД",
+        "набережная реки Екатерингофки"
+      ],
+      "osm": {
+        "nodeId": "25893875",
+        "wayIds": [
+          "183902370"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/exit-way183902370.osm",
+        "field": "osm/node[@id=\"25893875\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2493057%2C59.9023393&z=18",
+      "evidence": {
+        "visual": "exit-area map corroboration only",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count."
+    }
+  ],
+  "segments": [
+    {
+      "wayId": "1122966006",
+      "label": "КАДюг→ЗСД на север",
+      "oneway": true,
+      "nodeOrder": [
+        "10270133471",
+        "2326313083",
+        "1833109726"
+      ],
+      "sourceWayPath": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-ways.osm.gz",
+      "sourceNodePath": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway_link",
+        "lanes": "6",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:rural",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "wayId": "381576632",
+      "label": "ПВП5 по OSM; северное направление",
+      "oneway": true,
+      "nodeOrder": [
+        "3847689344",
+        "933974870",
+        "3847689346"
+      ],
+      "sourceWayPath": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-ways.osm.gz",
+      "sourceNodePath": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+      "tags": {
+        "check_date": "2012-10-10",
+        "covered": "yes",
+        "description": "правое направление (на север)",
+        "highway": "motorway",
+        "lanes": "10",
+        "lit": "yes",
+        "maxspeed": "40",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "wayId": "183902370",
+      "label": "ЗСД→набережная реки Екатерингофки",
+      "oneway": true,
+      "nodeOrder": [
+        "1339782267",
+        "7020792290",
+        "1943198683",
+        "2903386149",
+        "2396020561",
+        "25893875"
+      ],
+      "sourceWayPath": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/exit-way183902370.osm",
+      "sourceNodePath": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/exit-way183902370.osm",
+      "tags": {
+        "description": "ЗСД ->наб. р. Екатерингофка",
+        "foot": "no",
+        "highway": "primary",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "RU:urban",
+        "name": "набережная реки Екатерингофки",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    }
+  ],
+  "selectedTraceWitnesses": [
+    {
+      "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+      "callIndex": 16,
+      "edgeRangeInclusive": [
+        191,
+        193
+      ],
+      "orderedWayIds": [
+        "27462229",
+        "1122966006",
+        "1122966005"
+      ],
+      "proof": "retained selected-route trace, not new route calculation"
+    },
+    {
+      "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+      "callIndex": 17,
+      "edgeRangeInclusive": [
+        12,
+        15
+      ],
+      "orderedWayIds": [
+        "80056716",
+        "381576632",
+        "381576631"
+      ],
+      "proof": "retained selected-route trace, not new route calculation"
+    },
+    {
+      "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+      "callIndex": 17,
+      "edgeRangeInclusive": [
+        31,
+        36
+      ],
+      "orderedWayIds": [
+        "435710010",
+        "183902370",
+        "119176972"
+      ],
+      "proof": "retained selected-route trace, not new route calculation"
+    }
+  ],
+  "operatorMap": {
+    "url": "https://www.nch-spb.com/about/map/",
+    "status": "technical maintenance notice; no operator map geometry exposed"
+  },
+  "operatorPvpPage": {
+    "url": "https://www.nch-spb.com/travel/pvp/",
+    "status": "generic lane/payment guidance, no specific PVP5 location crosswalk found"
+  },
+  "pvp5Name": {
+    "value": "ПВП 5",
+    "basis": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+    "field": "node933974870/tag[name]",
+    "independentlyOperatorConfirmed": false
+  },
+  "mapControl": {
+    "constructed": true,
+    "fromLabel": "ЗСД, съезд С2",
+    "toLabel": "набережная реки Екатерингофки",
+    "meters": 257,
+    "minutes": 1,
+    "exactPolylineOrSnapRetrieved": false,
+    "scope": "exit connector only, not a full-route or toll-payment proof"
+  },
+  "tariffBindings": [
+    {
+      "id": "existing-kad-south-ekateringofka",
+      "status": "retained_existing_finished_vector",
+      "from": "kad-south",
+      "to": "ekateringofka",
+      "zones": [
+        "zone-1",
+        "zone-2"
+      ],
+      "amount": 600,
+      "payment": "cash_or_bank_card_without_transponder",
+      "basis": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/readiness.json",
+      "introducedByAtlas": false,
+      "receiptVerified": false,
+      "ruleLimit": "6.2.17 receipt exception is the specified Auto→Blagodatnaya movement, not a universal60minute waiver"
+    }
+  ],
+  "summary": {
+    "pointRecords": 5,
+    "directedEntryExits": 2,
+    "selectedDirectedSegments": 3,
+    "newTariffBindings": 0,
+    "newOsmRequests": 0,
+    "standardOsmTileViews": 1,
+    "newRouteProviderCalls": 0
+  },
+  "limitations": [
+    "No exact operator tariff boundary is inferred from an OSM endpoint alone.",
+    "PVP5 is the retained OSM name; operator numbering/geographic crosswalk remains unconfirmed.",
+    "Retained600 is a finished source-backed vector, not a count of barriers or arbitrary crossed zones.",
+    "Extended Planernaya and RVP64/64E cases do not inherit this price or payment bundle.",
+    "Entry/PVP not newly viewed as images; only exit-area raster inspected."
+  ]
+}

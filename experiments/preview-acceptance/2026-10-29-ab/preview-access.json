@@ -1,0 +1,64 @@
+{
+  "sourceSha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "sourceTree": "81b4edaee4ffb6a17c3c93308b87ec52fe08d054",
+  "deployment": {
+    "id": "dpl_HbLBjiztL9wCe4xn22gTho3V2Y4k",
+    "name": "mezhgorod-calculator",
+    "url": "mezhgorod-calculator-f0h1q39tw-4regodatbe-5310.vercel.app",
+    "type": "LAMBDAS",
+    "state": "READY",
+    "createdAt": 1793305359063,
+    "creator": {
+      "uid": "kzdYyk5M2pQj46AFBwI7ZyTb",
+      "username": "4regodatbe-5310"
+    },
+    "project": {
+      "id": "prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie",
+      "name": "mezhgorod-calculator",
+      "framework": "nextjs"
+    },
+    "meta": {
+      "githubCommitRef": "fix/v3-missing-route-prices-2026-10-15",
+      "githubCommitSha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+      "githubCommitMessage": "docs(preview): checkpoint single authorized A+B publication preflight",
+      "githubRepo": "mezhgorod-calculator",
+      "githubOrg": "4regodatbe-cpu"
+    },
+    "alias": [
+      "mezhgorod-calculator-git-fix-v3-missing-208a8c-4regodatbe-5310.vercel.app"
+    ],
+    "target": null,
+    "regions": [
+      "iad1"
+    ],
+    "buildingAt": 1793305360071,
+    "ready": 1793305568806,
+    "readyState": "READY",
+    "source": "git",
+    "aliasError": null
+  },
+  "browserAccess": {
+    "url": "https://mezhgorod-calculator-f0h1q39tw-4regodatbe-5310.vercel.app/v3",
+    "actualPageTitle": "Login – Vercel",
+    "actualPageOrigin": "https://vercel.com",
+    "actualPagePath": "/login",
+    "status": "BLOCKED_AUTH",
+    "queryOmitted": "auth nonce intentionally not stored"
+  },
+  "cli": {
+    "version": "65.7.0",
+    "exitCode": 1,
+    "loggedIn": false,
+    "linkedProject": null
+  },
+  "hostedAcceptance": {
+    "addressSearch": "NOT_RUN_AUTH",
+    "desktopMobile": "NOT_RUN_AUTH",
+    "route": "NOT_RUN_AUTH",
+    "callerDisconnectDelivery": "UNVERIFIED",
+    "coldStartMs": null,
+    "memoryBytes": null,
+    "functionBytes": null
+  },
+  "accessPolicy": "No CLI login, share link, protection change or credential extraction; connected web_fetch explicitly creates/reuses temporary share and was not called."
+}

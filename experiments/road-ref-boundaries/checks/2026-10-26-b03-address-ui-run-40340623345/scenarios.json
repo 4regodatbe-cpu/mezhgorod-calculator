@@ -1,0 +1,306 @@
+{
+  "environment": {
+    "startedAt": "2026-10-26T14:35:19.254Z",
+    "runnerOs": "Linux",
+    "node": "v24.21.0",
+    "chrome": "156.0.8078.47",
+    "commit": "9210cc6a86a389d96912c68efcb4b6e2f3f67c86",
+    "viewportSet": [
+      {
+        "width": 1280,
+        "height": 900
+      },
+      {
+        "width": 320,
+        "height": 720
+      }
+    ],
+    "snapshotId": "positive-cities-2026-10-24",
+    "snapshotExpiresAt": "2026-10-31T08:24:54Z",
+    "snapshotRecordsSha256": "98f0b3aff117d77525bcba9d65c4d507b1a29d540e0c9fdf553e5fb9494b2933",
+    "snapshotRecordsHashVerified": true,
+    "browserVersion": "156.0.8078.47"
+  },
+  "results": [
+    {
+      "id": "01-donetsk-disambiguation",
+      "name": "Two distinct Donetsk results in A; no auto-selection, notice and OSM attribution",
+      "status": "PASS",
+      "startedAt": "2026-10-26T14:35:19.946Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 3,
+      "addressRequestCount": 1,
+      "blockedExternalRequestCount": 0,
+      "evidence": [],
+      "actual": {
+        "suggestionCount": 2,
+        "suggestionTexts": [
+          "Донецк — ДНРДонецк — ДНР",
+          "ДонецкДонецк, Ростовская область, Россия"
+        ],
+        "inputValue": "Донецк",
+        "noticeCount": 1,
+        "creditHref": "https://www.openstreetmap.org/copyright",
+        "creditCount": 1
+      },
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:35:21.184Z"
+    },
+    {
+      "id": "02-select-a-and-b",
+      "name": "Select exact fallback items in both fields and retain source metadata/positions",
+      "status": "FAIL",
+      "startedAt": "2026-10-26T14:35:21.193Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 8,
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0,
+      "evidence": [
+        {
+          "file": "02-select-a-and-b-failure.png",
+          "sha256": "4a3eea5a375c93b5851ca49749769efe56a213e142fff5d2358a2169c1ccad26"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for getByRole('heading', { name: 'Быстрый маршрут' }) to be visible\n",
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/api/v2/classify",
+        "/r",
+        "/api/v2/classify",
+        "/api/v2/calculate",
+        "/api/collect"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:35:33.135Z"
+    },
+    {
+      "id": "03-swap-and-reset",
+      "name": "Swap selected A/B values and source metadata; reset existing calculation result",
+      "status": "FAIL",
+      "startedAt": "2026-10-26T14:35:33.142Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 8,
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0,
+      "evidence": [
+        {
+          "file": "03-swap-and-reset-failure.png",
+          "sha256": "4a3eea5a375c93b5851ca49749769efe56a213e142fff5d2358a2169c1ccad26"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for getByRole('heading', { name: 'Быстрый маршрут' }) to be visible\n",
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/api/v2/classify",
+        "/r",
+        "/api/v2/classify",
+        "/api/v2/calculate",
+        "/api/collect"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:35:45.131Z"
+    },
+    {
+      "id": "04-clear-and-replace-b",
+      "name": "Clear B and replace its city without stale items or source state",
+      "status": "FAIL",
+      "startedAt": "2026-10-26T14:35:45.138Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 3,
+      "addressRequestCount": 1,
+      "blockedExternalRequestCount": 0,
+      "evidence": [
+        {
+          "file": "04-clear-and-replace-b-failure.png",
+          "sha256": "f0a1da10c8bf96a04bd55b5f6a1ef91c6bc0920532ee746a7f80154ba3040475"
+        }
+      ],
+      "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('input[placeholder=\"Куда\"]').locator('xpath=ancestor::label[1]').locator('[role=\"status\"] button').filter({ hasText: 'Краснодар, городской округ Краснодар, Краснодарский край, Россия' }).first()\n",
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:35:56.497Z"
+    },
+    {
+      "id": "05-stale-response-race",
+      "name": "Delayed response for old B query cannot restore stale data after a new query",
+      "status": "FAIL",
+      "startedAt": "2026-10-26T14:35:56.503Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 4,
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0,
+      "evidence": [
+        {
+          "file": "05-stale-response-race-failure.png",
+          "sha256": "f0a1da10c8bf96a04bd55b5f6a1ef91c6bc0920532ee746a7f80154ba3040475"
+        }
+      ],
+      "actual": {
+        "currentValue": "Краснодар",
+        "visibleSuggestions": [
+          "Донецк — ДНРДонецк — ДНР",
+          "ДонецкДонецк, Ростовская область, Россия"
+        ],
+        "oldResponseArrivedAfterEdit": true,
+        "pageErrors": []
+      },
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n",
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/r"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:35:59.862Z"
+    },
+    {
+      "id": "06-normal-empty-error-retry",
+      "name": "Normal, empty, 502 and retry responses preserve correct UI state",
+      "status": "FAIL",
+      "startedAt": "2026-10-26T14:35:59.868Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 2,
+      "addressRequestCount": 0,
+      "blockedExternalRequestCount": 0,
+      "evidence": [
+        {
+          "file": "06-normal-empty-error-retry-failure.png",
+          "sha256": "a099dba0f4097ed6de0e7046a23bc5bf9755c9c12635e1aaf90a031ed270a271"
+        }
+      ],
+      "error": "page.waitForRequest: Timeout 10000ms exceeded while waiting for event \"request\"",
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:36:10.510Z"
+    },
+    {
+      "id": "07-fallback-not-in-legacy-cache",
+      "name": "Fallback repeats a fresh request while ordinary positive cache remains effective",
+      "status": "FAIL",
+      "startedAt": "2026-10-26T14:36:10.519Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "requestCount": 6,
+      "addressRequestCount": 4,
+      "blockedExternalRequestCount": 0,
+      "evidence": [
+        {
+          "file": "07-fallback-not-in-legacy-cache-failure.png",
+          "sha256": "7b77b0c1563c5aa7dadf5a5ceddb2a500b5a51f428904f557509298e7dca1203"
+        }
+      ],
+      "actual": {
+        "fallbackRequests": 2,
+        "ordinaryRequestsBeforePositiveCache": 3,
+        "requestsAfterCacheHit": 4,
+        "cachedSuggestions": [
+          "Донецк — ДНРДонецк — ДНР",
+          "ДонецкДонецк, Ростовская область, Россия"
+        ]
+      },
+      "error": "ordinary positive cache should avoid an extra /r request\n\n4 !== 3\n",
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/r",
+        "/r",
+        "/r"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:36:13.481Z"
+    },
+    {
+      "id": "08-mobile-keyboard",
+      "name": "Narrow viewport, attribution, keyboard selection, clear and swap controls",
+      "status": "FAIL",
+      "startedAt": "2026-10-26T14:36:13.491Z",
+      "viewport": {
+        "width": 320,
+        "height": 720
+      },
+      "requestCount": 4,
+      "addressRequestCount": 1,
+      "blockedExternalRequestCount": 0,
+      "evidence": [
+        {
+          "file": "08-mobile-keyboard-mobile.png",
+          "sha256": "4779908c09ff050861df8ee6c450bcc68537c92ce2ca4021178ac53c61cefa9f"
+        }
+      ],
+      "actual": {
+        "viewport": {
+          "width": 320,
+          "height": 720
+        },
+        "documentScrollWidth": 320,
+        "menuBounds": {
+          "x": 25,
+          "y": 474.5,
+          "width": 270,
+          "height": 122
+        },
+        "creditVisible": true,
+        "clearVisible": true,
+        "swapVisible": false,
+        "keyboardFocusedSuggestion": "Донецк — ДНРДонецк — ДНР",
+        "selectedByKeyboard": "Донецк — ДНР",
+        "noticeAfterKeyboardSelection": 1
+      },
+      "error": "A↔B control must remain available on narrow screens\n\nfalse !== true\n",
+      "requestPaths": [
+        "/api/collect",
+        "/api/collect",
+        "/r",
+        "/api/v2/classify"
+      ],
+      "pageErrors": [],
+      "routeErrors": [],
+      "finishedAt": "2026-10-26T14:36:14.884Z"
+    }
+  ]
+}

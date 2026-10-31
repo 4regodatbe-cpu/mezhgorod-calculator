@@ -52,20 +52,20 @@ test('wrong-way geometry, proximity and a long interpolated chord cannot bind a 
  assert.equal(inspectKrasnodarBypass(nearby).candidate,false);
 });
 
-test('a bypass label cannot become a price; missing dated profile remains unknown',()=>{
+test('bypass needs proven boundaries and valid departure; later Friday does not reprice',()=>{
  const simple:Coordinate[]=[[38.98,45.24],[38.68,45.0]];
  const result=composeSelectedM4A289(simple,empty,null,[BYPASS,BYPASS],date,3600);
  assert.equal(result?.tolls,null);
  assert.deepEqual(result?.components.filter(c=>c.detected).map(c=>c.id),['krasnodar-west-bypass']);
  const evidence=inspectKrasnodarBypass(routeFor(gates.gates[0]));
  for(const at of ['2026-03-01T12:00:00+03:00','2026-10-14','2026-02-30T12:00:00+03:00','2027-01-01T12:00:00+03:00'])assert.equal(matrixDzokComponent(evidence,at,60).tolls,null);
- assert.equal(matrixDzokComponent(evidence,'2026-10-15T23:59:00+03:00',120).tolls,null);
+ assert.equal(matrixDzokComponent(evidence,'2026-10-15T23:59:00+03:00',120).tolls?.amount,matrixDzokComponent(evidence,'2026-10-15T23:59:00+03:00',0).tolls?.amount);
 });
 
 test('M4, A289 and bypass compose three independent ready fares exactly once',()=>{
  const production={candidate:true,exact:true,tolls:{amount:1,weekdayAmount:1,weekendAmount:1,
   confidence:'matched',period:'monThu',segments:[]},m4PvpPreview:{confirmedPvps:['m4-1046','m4-1093','m4-1184','m4-1223']}} as unknown as ProductionM4Result;
- const matrix=matrixM4Component(production,date,3600);
+ const matrix=matrixM4Component(production,date,3600) as Parameters<typeof composeSelectedM4A289>[2];
  const g=gates.gates.find(g=>g.from==='0')!;
  const route:Coordinate[]=[[37.62,55.76],...routeFor(g),[38.5327744,45.171408],[37.8330177,45.1961096],[37.5878131,45.168457],[34.16,44.5]];
  const result=composeSelectedM4A289(route,production,matrix,[],date,3600)!;

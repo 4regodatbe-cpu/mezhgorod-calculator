@@ -1,0 +1,17 @@
+{
+  "url": "https://russianhighways.ru/ajax/gettrack.php?track=86127&site=",
+  "startedAt": "2026-10-17T21:17:27.390Z",
+  "purpose": "One exact linked official M12 map-data read discovered in retained HTML; no additional search/page open/routing",
+  "discoveredFrom": "operator-m12-page.html",
+  "timeoutMs": 15000,
+  "status": 200,
+  "finalUrl": "https://russianhighways.ru/for_drivers/?track=86127",
+  "contentType": "text/html; charset=UTF-8",
+  "bytes": 89907,
+  "sha256": "ea745971b10bdd1c280225e16182f778a3022ce34774da2b5852dfefc44e15ad",
+  "bodyFile": "official-m12-track.response.gz",
+  "bodyCompression": "gzip",
+  "storedSha256": "b7ca378dd7423041e884c1e216a88b70889c4e7ef6bce3e443ca62012510557e",
+  "storedBytes": 22776,
+  "operatorBindingsConfirmed": 0
+}

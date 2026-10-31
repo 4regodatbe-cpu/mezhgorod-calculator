@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "node": "v24.19.0",
+  "warmup": 2,
+  "repeats": 10,
+  "networkRequests": 0,
+  "stage": "Valhalla saved response → bounded JSON parse, polyline decode, geometry validation and route evidence derivation",
+  "fixtures": [
+    {
+      "routeId": "eisk",
+      "source": "experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/2026-10-19/yeisk-to-moscow.json.gz",
+      "sourceSha256": "425d4622d3851d9f33c94caf8731ce3df439bf8e95eb34c8d70dbfe3889ea27f",
+      "providerResponseSha256": "085400290023f13499b72a4ffc474246725d8cae33c215609a690eaa4d20d6bd",
+      "coordinateCount": 9433,
+      "geometrySha256": "3d73c234fdf81bf777259c22beab36b905d646d057c8b88f61ff97fea175a44f",
+      "mockFetches": 12,
+      "medianMs": 9.073496999999989,
+      "p95Ms": 24.10617400000001,
+      "resultParity": "MATCH"
+    },
+    {
+      "routeId": "maykop",
+      "source": "experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/2026-10-19/maykop-to-moscow.json.gz",
+      "sourceSha256": "97465139af01510b4439ac494d56fb008b78177ce15efd05edb8996b66934366",
+      "providerResponseSha256": "e8b70c5e416fa5e9408e1c150c042b0fd7b9764c8132692fc3b6e00b2d875555",
+      "coordinateCount": 9677,
+      "geometrySha256": "086f162a7802af547a1d23774736befd1436cc18cb9a7de3f0c7b65cf5106a10",
+      "mockFetches": 12,
+      "medianMs": 6.116663499999987,
+      "p95Ms": 10.222455000000025,
+      "resultParity": "MATCH"
+    }
+  ]
+}

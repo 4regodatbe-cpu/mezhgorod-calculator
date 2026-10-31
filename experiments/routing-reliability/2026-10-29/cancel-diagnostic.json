@@ -1,0 +1,26 @@
+{
+  "mode": "actual current V3 handler with controlled immediate upstream failures; no network",
+  "calls": [
+    {
+      "host": "valhalla1.openstreetmap.de",
+      "callerAborted": true,
+      "providerSignalAborted": false
+    },
+    {
+      "host": "router.project-osrm.org",
+      "callerAborted": true,
+      "providerSignalAborted": false
+    },
+    {
+      "host": "brouter.de",
+      "callerAborted": true,
+      "providerSignalAborted": false
+    }
+  ],
+  "source": "ca627096 routing code unchanged at B2",
+  "finding": "CONFIRMED_CALLER_ABORT_NOT_PROPAGATED",
+  "httpStatus": 502,
+  "response": {
+    "error": "Сервис маршрутов временно недоступен. Попробуйте позже."
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "audit",
+    "exitCode": 0,
+    "seconds": 11.0,
+    "bytes": 60991,
+    "log": "audit.log.gz"
+  },
+  {
+    "name": "tsc",
+    "exitCode": 0,
+    "seconds": 2.3,
+    "bytes": 0,
+    "log": "tsc.log.gz"
+  },
+  {
+    "name": "build",
+    "exitCode": 0,
+    "seconds": 9.09,
+    "bytes": 1038,
+    "log": "build.log.gz"
+  }
+]

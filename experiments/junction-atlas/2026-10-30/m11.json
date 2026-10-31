@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "road": "M11",
+  "date": "2026-10-30",
+  "mode": "research_only_not_runtime",
+  "sources": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/node8087316065.osm",
+      "sha256": "9e18ba1c744305a891d216cc7136f6e7fe2225762dd2d4fc7c801a73a6865f9b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/way1270188032.osm",
+      "sha256": "4c256346c4501333073d235bffd4284d000849f23119cc10765243a78b65b500"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/directed-ckad47-entry.json",
+      "sha256": "9410cc7be1ad3ae26bb0343ad4205d470eef6aafbd54f1c8498da28a35299f7e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/entry-local-map.osm",
+      "sha256": "4c67bf668d770e1c2f2925bf19d622cea4a4deca37db7a1d010415bbef7dc85c"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m11-exit-way1307036920-full.json",
+      "sha256": "286756e1da0623ca54ce4037664a6b8b11b0592c871244e307e312f93a4053e1"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m11-entry-short-route-accessibility.txt",
+      "sha256": "0070eb738f58cb624428f68f07731cc3dbd7bc366e0e98c475c9a31daab19fdd"
+    }
+  ],
+  "points": [
+    {
+      "id": "M11-8087316065",
+      "road": "M11",
+      "kind": "entry",
+      "title": "ПВП18 ЦКАД47; не виртуальная58",
+      "position": {
+        "lat": 56.0910646,
+        "lon": 37.2128116
+      },
+      "direction": "CKAD_approach_toward_M11_northbound",
+      "osm": {
+        "nodeId": "8087316065",
+        "wayIds": [
+          "954011576"
+        ]
+      },
+      "crossingRoads": [
+        "ЦКАД",
+        "М-11"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/node8087316065.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.2128116%2C56.0910646&z=18",
+      "operatorScheme": "experiments/nationwide-tolls/source-documents/m11-head-passage-rules-retrieved-2026-10-14.pdf#page=5",
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "operatorFacilityIdentity": "ПВП18 ЦКАД — подъезд к пусковому комплексу3 ЦКАД, примыкающий к М11 на47км; отличен отММК48/50."
+    },
+    {
+      "id": "M11-3566326245",
+      "road": "M11",
+      "kind": "technical",
+      "title": "Merge со стороныЦКАД на М11",
+      "position": {
+        "lat": 56.0888728,
+        "lon": 37.2016452
+      },
+      "direction": "toward_M11_northbound",
+      "osm": {
+        "nodeId": "3566326245",
+        "wayIds": [
+          "791520973",
+          "1270188032"
+        ]
+      },
+      "crossingRoads": [
+        "ЦКАД",
+        "М-11"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/way1270188032.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.2016452%2C56.0888728&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    },
+    {
+      "id": "M11-6588472831",
+      "road": "M11",
+      "kind": "plaza",
+      "title": "Воскресенское147, выходная северного маршрута касса",
+      "position": {
+        "lat": 56.7331188,
+        "lon": 36.2530645
+      },
+      "direction": "from_M11_northbound_to_M10",
+      "osm": {
+        "nodeId": "6588472831",
+        "wayIds": [
+          "1307036920"
+        ]
+      },
+      "crossingRoads": [
+        "М-11",
+        "М-10"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/m11-exit-way1307036920-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=36.2530645%2C56.7331188&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    },
+    {
+      "id": "M11-5878125873",
+      "road": "M11",
+      "kind": "technical",
+      "title": "Конец кассовой части съезда, не конечный узел М10",
+      "position": {
+        "lat": 56.7317488,
+        "lon": 36.2592182
+      },
+      "direction": "from_M11_northbound_to_M10",
+      "osm": {
+        "nodeId": "5878125873",
+        "wayIds": [
+          "1307036920"
+        ]
+      },
+      "crossingRoads": [
+        "М-11",
+        "М-10"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/m11-exit-way1307036920-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=36.2592182%2C56.7317488&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    }
+  ],
+  "newTariffBindings": 0,
+  "appRuntimeChanged": false,
+  "directedEntry": [
+    {
+      "wayId": "954011576",
+      "firstNodeId": "11385232740",
+      "lastNodeId": "8087316056",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "954011577",
+      "firstNodeId": "8087316056",
+      "lastNodeId": "7832087256",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "791520973",
+      "firstNodeId": "7832087256",
+      "lastNodeId": "3566326245",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "1270188032",
+      "firstNodeId": "3566326245",
+      "lastNodeId": "1872038476",
+      "oneway": "yes"
+    }
+  ],
+  "exitGateWay": {
+    "id": "1307036920",
+    "nodeOrder": [
+      "3742581855",
+      "5878125869",
+      "6588472831",
+      "3742581854",
+      "5878125873"
+    ],
+    "tags": {
+      "destination": "Тверь",
+      "destination:lang:en": "Tver'",
+      "destination:ref": "М-10",
+      "highway": "trunk_link",
+      "lanes": "2",
+      "lit": "yes",
+      "maxspeed": "30",
+      "oneway": "yes",
+      "parking:both:restriction": "no_stopping",
+      "source": "http://spb-projects.ru/forum/files/spad_200.jpg",
+      "start_date": "2019-07-03",
+      "surface": "asphalt"
+    }
+  },
+  "sourceRecovery": "Gate coordinate already known from inventory report; new full-way200 recovers missing original raw proof, not a newly discovered physical gate.",
+  "mapControl": {
+    "scope": "PVP18 approach to merge",
+    "meters": 29900,
+    "minutes": 22,
+    "status": "UNRESOLVED_DETOUR",
+    "polylineSnapRetrieved": false
+  },
+  "virtual58": {
+    "position": null,
+    "operatorPartition": null,
+    "notEquivalentTo": [
+      "PVP18/CKAD47",
+      "nearby Solnechnogorsk facility"
+    ]
+  },
+  "operatorGap": "p58→p147 cells610/750 retained, but this exact CKAD→58head/mainline→147 vector remains unbound. A physical booth at virtual58 is not required.",
+  "geographyStatus": "Original directed entry and saved northbound exit are documented; current map control detour is unresolved, not proof that all existing M11 routes are wrong."
+}

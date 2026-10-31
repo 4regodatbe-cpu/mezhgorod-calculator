@@ -1,0 +1,78 @@
+{
+  "road": "m12",
+  "date": "2026-10-15T09:00:00+03:00",
+  "source": "current pure boundary/quote adapters on1–2retainedrecords; not provider/trace/API replay or a mass route audit",
+  "externalRequests": 0,
+  "pricePolicy": "latest retained official price/rule until replaced; neither document age nor an optional lane certificate is a standalone blocker; geometry/product conflicts remain material",
+  "results": [
+    {
+      "caseId": "single-m12-moscow-to-arzamas",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/2026-10-16T01-59-35-968Z-capture.json.gz",
+        "sha256": "5f4671a2236dcd45e4c49a8f6c9ca260e8f9aefaa92c9c33901c2f6535348aec",
+        "expectedShaPreviouslyPinned": true
+      },
+      "provider": "OSRM",
+      "meters": 445102,
+      "seconds": 23299,
+      "selectedTraceComplete": true,
+      "physical": {
+        "directedExit": {
+          "fromWay": "1550135076",
+          "rampWay": "1550561305",
+          "toWay": "1206479738",
+          "to": "22Н-0239",
+          "not": "Р-158"
+        },
+        "sourceCall": 5,
+        "sourceEdges": [
+          77,
+          79
+        ],
+        "selectedSpan": {
+          "beginKm": 25.656,
+          "endKm": 419.418
+        }
+      },
+      "boundary": {
+        "boundary": {
+          "direction": "forward",
+          "firstRvpKm": 184,
+          "lastRvpKm": 420,
+          "entryOutsideRvpKm": 174,
+          "exitOutsideRvpKm": 485,
+          "entryRouteGapKm": 158.462643,
+          "exitRouteGapKm": 0.218848,
+          "entryOfficialGapKm": 10,
+          "exitOfficialGapKm": 65,
+          "calibrationMarginKm": 2.5,
+          "status": "unknown",
+          "reason": "Entry boundary does not exclude the previous official RVP"
+        },
+        "directMarkers": [
+          184,
+          281,
+          314,
+          392,
+          420
+        ],
+        "reason": "Entry boundary does not exclude the previous official RVP"
+      },
+      "quote": {
+        "tolls": null,
+        "reason": "m12_current_operator_pair_not_bound"
+      },
+      "coverage": {
+        "core": [
+          "m12"
+        ],
+        "regional": []
+      },
+      "status": "BLOCKED_BY_DATA",
+      "missingEvidence": [
+        "operator registration/charge boundary IDs for the actual22Н-0239 exit and observed frame sequence",
+        "mapping that registered journey to published order302 endpoints; generic Арзамас label or nearest442km is insufficient"
+      ]
+    }
+  ]
+}

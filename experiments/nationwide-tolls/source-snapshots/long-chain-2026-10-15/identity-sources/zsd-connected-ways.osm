@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1316 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <way id="28935150" visible="true" version="13" changeset="128758142" timestamp="2022-11-11T04:04:05Z" user="Dinamik" uid="39040">
+  <nd ref="301550064"/>
+  <nd ref="318102335"/>
+  <nd ref="933975074"/>
+  <nd ref="318102336"/>
+  <nd ref="3847689343"/>
+  <tag k="destination" v="Благодатная ул.;Кубинская ул."/>
+  <tag k="highway" v="primary_link"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="40"/>
+  <tag k="motorroad" v="yes"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="source" v="survey"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="surface:grade" v="3"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="381084532" visible="true" version="2" changeset="35470642" timestamp="2015-11-20T20:39:00Z" user="paavolobja" uid="386821">
+  <nd ref="3843341597"/>
+  <nd ref="3847689346"/>
+  <nd ref="3847689345"/>
+  <nd ref="3843341596"/>
+  <nd ref="3843341594"/>
+  <nd ref="3847689343"/>
+  <nd ref="3847689344"/>
+  <nd ref="3843341595"/>
+  <nd ref="3843341597"/>
+  <tag k="building" v="roof"/>
+ </way>
+ <way id="381576635" visible="true" version="5" changeset="128758142" timestamp="2022-11-11T04:04:05Z" user="Dinamik" uid="39040">
+  <nd ref="3847689343"/>
+  <nd ref="933974949"/>
+  <nd ref="3847689345"/>
+  <tag k="covered" v="yes"/>
+  <tag k="foot" v="no"/>
+  <tag k="highway" v="primary_link"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="40"/>
+  <tag k="motorroad" v="yes"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="source" v="survey"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="surface:grade" v="3"/>
+  <tag k="toll" v="yes"/>
+ </way>
+</osm>

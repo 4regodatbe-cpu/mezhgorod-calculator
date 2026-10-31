@@ -1,0 +1,36 @@
+✔ E5 comparable bound uses actual same-product matrix cells, never a whole-route benchmark (8.832122ms)
+✔ E5 reverse matrix quote must be resolved independently, a northbound quote cannot be inherited (1.012119ms)
+✔ E5 road-specific midnight and night calendars remain departure-based, not a global weekend or arrival profile (1.618714ms)
+✔ E5 actual sample atomic M4 and ZSD coverage blocks aggregate plus partial duplicate charges (97.742508ms)
+✔ E5 a blocked map/product scope cannot acquire a price merely because comparable tariffs exist (0.561228ms)
+✔ E2 disabled module passes strict object through without activating estimates (1.352379ms)
+✔ E2 fully confirmed complete route retains exact total (1.26506ms)
+✔ E2 one and multiple working estimates mark only the complete toll total as estimated (0.536594ms)
+✔ E2 mixed roads sum confirmed and estimated components without relabelling strict input (1.207283ms)
+✔ E2 insufficient product data never turns known subtotal into a full total (0.900872ms)
+✔ E2 comparable upper bound requires a documented exhaustive same-product candidate set (0.40125ms)
+✔ E2 incompatible road direction category payment product profile or date cannot be a convenient estimate (0.429414ms)
+✔ E2 duplicate and aggregate-overlap protection rejects double charging (0.190208ms)
+✔ E2 unsafe route scope malformed date and unknown zero remain insufficient (0.469971ms)
+✔ E2 confirmed strict conflict and unsafe arithmetic never overwrite an existing confirmed calculation (0.417923ms)
+✔ E2 resolved component profile at departure cannot be replaced by another quote profile (0.174897ms)
+✔ E2 local work limits return structured insufficient instead of unbounded candidate evaluation (0.241593ms)
+✔ E4 confirmed full toll label is exact and has no approximate suffix (4.528614ms)
+✔ E4 estimated full toll label has explicit approximation and applies only to tolls (0.431368ms)
+✔ E4 unknown full total displays clarified status and non-additive partial explanation (0.373613ms)
+✔ E4 disabled shadow view does not replace existing strict presentation (0.138451ms)
+✔ E4 insufficient state cannot accidentally publish a stale numeric total (0.253541ms)
+✔ E4 standalone responsive markup escapes source text and stays visibly local/offline (1.065258ms)
+✔ E3 full saved multi-road total retained exactly and explicitly graded estimated (1.337574ms)
+✔ E3 missing CKAD/ZSD does not turn5987 or6327 into a complete route estimate (0.205945ms)
+✔ E3 existing confirmed finished ZSD600 remains confirmed on both dates (0.156121ms)
+✔ E3 selected geometry strict snapshots and departure calendars remain source-bound without network (0.220001ms)
+✔ E3 report counts three distinct retained routes, not six evaluations or synthetic estimates (93.218831ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1135.46424

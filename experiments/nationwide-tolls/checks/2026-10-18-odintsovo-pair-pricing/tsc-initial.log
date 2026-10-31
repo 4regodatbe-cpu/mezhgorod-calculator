@@ -1,0 +1,2 @@
+lib/v3-calculation/odintsovo-pair-component.ts(50,62): error TS2339: Property 'reason' does not exist on type '{ pricingStatus: string; rub: null; priceConfirmation: string; displayLabel: string; reason: any; components: any[]; } | { pricingStatus: string; rub: any; priceConfirmation: string; displayLabel: string | null; components: any[]; }'.
+  Property 'reason' does not exist on type '{ pricingStatus: string; rub: any; priceConfirmation: string; displayLabel: string | null; components: any[]; }'.

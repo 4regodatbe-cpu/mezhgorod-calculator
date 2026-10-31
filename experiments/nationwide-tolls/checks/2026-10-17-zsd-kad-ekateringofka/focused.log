@@ -1,0 +1,24 @@
+✔ finished-vector sources and selected capture retain their exact hashes (2.673608ms)
+✔ recorded directed KAD-south to Ekateringofka trace selects its ready two-zone cash/card vector (37.868332ms)
+✔ a ready fare cannot revive a future tariff at a later gate crossing (32.510291ms)
+✔ incomplete or materially different paid scope stays unknown (2.362489ms)
+✔ extra, repeated or unpaid plazas do not receive the finished vector (2.691525ms)
+✔ the direction, actual entry and complete exit are required (37.108533ms)
+✔ known ZSD price does not become a full trip total while another product is unknown (8.495178ms)
+✔ Planernaya plaza identity has hashed primary booth and continuous directed ZSD topology (6.36566ms)
+✔ actual unnamed Planernaya event resolves as ZSD while its larger trip still has no zone1 fare (6.205639ms)
+✔ an unreviewed neighbouring node on the same unnamed way remains an unknown paid road (0.363057ms)
+✔ resolving Planernaya identity cannot hide incomplete selected payment coverage (0.321153ms)
+✔ primary owner HTML gives actual cash base fare and matches saved hashes (2.27678ms)
+✔ either actual directed zone1 plaza charges exactly300 without a transponder/night discount (2.684754ms)
+✔ another zone, missing IDs, repeated plazas and incomplete trace cannot turn zone1 into a complete ZSD total (0.504821ms)
+✔ recorded complete Krasnodar–Moscow–SPb geometry prices its actual ZSD zone1, not a named-road guess (41.672439ms)
+✔ ZSD fare validity uses departure, never a later gate crossing that could revive a future fare (0.720906ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 371.307321

@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "node": "11385232741",
+      "coordinate": [
+        37.2134958,
+        56.0914169
+      ],
+      "meters": 0.0,
+      "routeIndex": 3542,
+      "fraction": 0.000289
+    },
+    {
+      "node": "8087316065",
+      "coordinate": [
+        37.2128116,
+        56.0910646
+      ],
+      "meters": 0.015,
+      "routeIndex": 3543,
+      "fraction": 0.001263
+    },
+    {
+      "node": "11385232716",
+      "coordinate": [
+        37.2123606,
+        56.0908277
+      ],
+      "meters": 0.002,
+      "routeIndex": 3544,
+      "fraction": 0.000428
+    },
+    {
+      "node": "8087316056",
+      "coordinate": [
+        37.2113612,
+        56.0901571
+      ],
+      "meters": 0.002,
+      "routeIndex": 3544,
+      "fraction": 0.99983
+    },
+    {
+      "node": "7832087256",
+      "coordinate": [
+        37.209886,
+        56.0892585
+      ],
+      "meters": 0.041,
+      "routeIndex": 3547,
+      "fraction": 0.001084
+    },
+    {
+      "node": "3566326245",
+      "coordinate": [
+        37.2016452,
+        56.0888728
+      ],
+      "meters": 0.015,
+      "routeIndex": 3575,
+      "fraction": 0.999365
+    },
+    {
+      "node": "1872038476",
+      "coordinate": [
+        37.2004102,
+        56.0897492
+      ],
+      "meters": 0.024,
+      "routeIndex": 3577,
+      "fraction": 0.000627
+    }
+  ],
+  "topology": "PASS",
+  "scope": "one saved case; not a runtime test or replay"
+}

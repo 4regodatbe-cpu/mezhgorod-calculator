@@ -1,0 +1,311 @@
+{
+  "parent": "0be61672c9761ab627bc53a11894fe4fe6dd8929",
+  "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/2026-10-16T02-17-24-374Z-capture.json.gz",
+  "captureSha256": "860f18ffe2fa0627df462b57888a8033a4f16964316f79dfacdfe9af0e976374",
+  "provider": "OSRM",
+  "execution": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/2026-10-16T02-17-24-374Z-capture.json.gz",
+        "2026-10-15T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"triple-m4-m11-zsd-krasnodar-to-prim\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"OSRM\",\"routeMeters\":2073839,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":5040,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-15-58\",\"amount\":1130,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/2026-10-16T02-17-24-374Z-capture.json.gz",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"triple-m4-m11-zsd-krasnodar-to-prim\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"OSRM\",\"routeMeters\":2073839,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":6090,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-15-58\",\"amount\":1650,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": {
+    "ways": [
+      "1122966004",
+      "1122966005",
+      "1122966006",
+      "119176946",
+      "119176950",
+      "123232666",
+      "123232668",
+      "123303017",
+      "123709500",
+      "123709505",
+      "1257246766",
+      "1257246767",
+      "1257246771",
+      "1257246772",
+      "130062822",
+      "130068396",
+      "139658547",
+      "165035756",
+      "172999959",
+      "183912267",
+      "183912268",
+      "185060386",
+      "222395955",
+      "222395960",
+      "223744446",
+      "28934684",
+      "31369306",
+      "350477988",
+      "373871040",
+      "381576631",
+      "381576632",
+      "397223749",
+      "397223751",
+      "397223752",
+      "400111351",
+      "400111354",
+      "461676671",
+      "465117517",
+      "493643653",
+      "589047639",
+      "589047642",
+      "589047646",
+      "589047650",
+      "688149995",
+      "721628540",
+      "721628541",
+      "721628543",
+      "721628544",
+      "721839717",
+      "736881673",
+      "80056716",
+      "80056742",
+      "80056745",
+      "85763340",
+      "944399839"
+    ],
+    "gates": [
+      "933974870",
+      "1766158781"
+    ]
+  },
+  "sameReviewedScopeCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "status": "source_gated_same_reviewed_zsd_scope",
+  "missing": [
+    "zsd"
+  ],
+  "uniqueZsdWays": [
+    "1122966004",
+    "1122966005",
+    "1122966006",
+    "119176946",
+    "119176950",
+    "123232666",
+    "123232668",
+    "123303017",
+    "123709500",
+    "123709505",
+    "1257246766",
+    "1257246767",
+    "1257246771",
+    "1257246772",
+    "130062822",
+    "130068396",
+    "139658547",
+    "165035756",
+    "172999959",
+    "183912267",
+    "183912268",
+    "185060386",
+    "222395955",
+    "222395960",
+    "223744446",
+    "28934684",
+    "31369306",
+    "350477988",
+    "373871040",
+    "381576631",
+    "381576632",
+    "397223749",
+    "397223751",
+    "397223752",
+    "400111351",
+    "400111354",
+    "461676671",
+    "465117517",
+    "493643653",
+    "589047639",
+    "589047642",
+    "589047646",
+    "589047650",
+    "688149995",
+    "721628540",
+    "721628541",
+    "721628543",
+    "721628544",
+    "721839717",
+    "736881673",
+    "80056716",
+    "80056742",
+    "80056745",
+    "85763340",
+    "944399839"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 18,
+      "edgeToll": true,
+      "beginShapeIndex": 593,
+      "endShapeIndex": 594
+    },
+    {
+      "osmNodeId": "1766158781",
+      "wayId": "355755817",
+      "roadNames": [],
+      "edgeIndex": 19,
+      "edgeToll": true,
+      "beginShapeIndex": 848,
+      "endShapeIndex": 849
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-35-04-615Z.json",
+      "sha256": "d66627643c5445896615c8496690bf1b9bcd2f1abbca42151456c6132ede108c",
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "OSRM",
+      "captureSha256": "860f18ffe2fa0627df462b57888a8033a4f16964316f79dfacdfe9af0e976374",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-35-06-774Z.json",
+      "sha256": "fa20314fc1739396c5a209272dfcc8207414eef83671b365e65c2ced36e10918",
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "OSRM",
+      "captureSha256": "860f18ffe2fa0627df462b57888a8033a4f16964316f79dfacdfe9af0e976374",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m4",
+          "amount": 6090,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "zsd"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    }
+  ],
+  "note": "Case74: both profiles exit0/complete/SHA/departure verified. Status source_gated_same_reviewed_zsd_scope; whole-route missing zsd. Scope equivalence reuses diagnosis only, never a fare.",
+  "at": "2026-10-16T17:35:07.405Z",
+  "checkpoint": "docs/checkpoints/zsd-2026-10-16T17-35-07-404Z.md",
+  "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-35-07-404Z.json",
+  "overallPlanPercent": 90
+}

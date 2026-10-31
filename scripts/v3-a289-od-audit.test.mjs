@@ -18,7 +18,7 @@ test('stored intermediate A289 pairs reach V3 in both directions',()=>{
   for(const geometry of [route,route.toReversed()]){
    const result=a289ShortRoute(geometry,[],date);
    assert.equal(result?.tolls?.amount,amount,JSON.stringify({geometry,result}));
-   assert.match(result.tolls.segments[0],/Стоимость не подтверждена/);
+   assert.doesNotMatch(result.tolls.segments[0],/Стоимость не подтверждена|квитанц/);
   }
  }
 });

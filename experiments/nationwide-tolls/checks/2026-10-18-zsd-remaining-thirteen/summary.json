@@ -1,0 +1,142 @@
+{
+  "atUtc": "2026-10-18T06:12:26.649338+00:00",
+  "startedHead": "d28d66295c1dd19583d3bba1d05df7d745e87628",
+  "inputsSha256": "be910b256f691ce0c3d11c898f50f6c9b8b469d407b23c0363d173e8cab2ec54",
+  "extractionMethodReference": "experiments/nationwide-tolls/scripts/review-zsd-remaining-scopes.py",
+  "extractionMethodReferenceSha256": "5f9fa2e9a436e86314a985153749e7858a18e3d4cd8a45f31135b5b03c8a82f5",
+  "processed": 13,
+  "expected": 13,
+  "reviewErrors": 0,
+  "materialExceptions": 0,
+  "newSiblingBoundaryChecks": 13,
+  "newPricingCalls": 0,
+  "newRouteCalls": 0,
+  "newTraceCalls": 0,
+  "newFullRouteReplays": 0,
+  "newPricedComponents": 0,
+  "confirmedFullFares": 0,
+  "elapsedSeconds": 0.615,
+  "groups": [
+    {
+      "fingerprint": "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c",
+      "newSiblingChecks": 4,
+      "priorRepresentativeChecks": 1,
+      "groupSize": 5,
+      "errors": 0,
+      "materialExceptions": 0
+    },
+    {
+      "fingerprint": "3404a9c7bbd60f8c3caa6644223c2434ee84611661181bab6b9c1cf626c57851",
+      "newSiblingChecks": 3,
+      "priorRepresentativeChecks": 1,
+      "groupSize": 4,
+      "errors": 0,
+      "materialExceptions": 0
+    },
+    {
+      "fingerprint": "2c00c1cc6c1d9e8f8b34365454ebb654ed4c4054a8530c84c21fe727dd5f5377",
+      "newSiblingChecks": 6,
+      "priorRepresentativeChecks": 1,
+      "groupSize": 7,
+      "errors": 0,
+      "materialExceptions": 0
+    }
+  ],
+  "caseResults": [
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/max-chain-m4-ckad-m11-zsd-rostov-to-sest.json",
+      "sha256": "1f6f48751caac56fb927fc1d1afd1bf2384939afc2fb5480440ed4a5c16bbddb",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "single-zsd-pushkin-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/single-zsd-pushkin-to-sest.json",
+      "sha256": "80a5e681e429a25dcbdf70591926219594b26a0c0e8e240e579bc8c5fccaf3b4",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m4-m11-zsd-krasnodar-to-sest.json",
+      "sha256": "3315e082e6b3b92cb01b6f1fb19bf1a7db9a2ce42127ed230c9ed3248ec6a432",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-rostov-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m4-m11-zsd-rostov-to-sest.json",
+      "sha256": "72e3a23d0427c4366089f95eeb8fa84cebebe81ebeff91d6c2371c508b7a6097",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/max-chain-m4-ckad-m11-zsd-sest-to-rostov.json",
+      "sha256": "b8cbb74bb48a0993b6dadd611256e0e6d729a371b8bc007a09ff96c684d49751",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-krasnodar",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m4-m11-zsd-sest-to-krasnodar.json",
+      "sha256": "41a5bb2dfea7f08614b7334765ebf127226504e707483263e4b0c6493a0e6b3c",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-rostov",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m4-m11-zsd-sest-to-rostov.json",
+      "sha256": "073f3ebe291a14cdd139ff8f668817c09848fd490b1077a27ca871b2d42ef74e",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "pair-m11-ckad-spb-to-noginsk",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/pair-m11-ckad-spb-to-noginsk.json",
+      "sha256": "b79331b3a4be146cdb71ea9d1c444bd0400b1f8e9ff0b29360d8b8033a4be2d6",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "single-m11-spb-to-moscow",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/single-m11-spb-to-moscow.json",
+      "sha256": "4cc026a3fc3a838ddc991874900dbf978643cd736769d02f56910f33a7828127",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m11-ckad-m12-spb-to-kazan.json",
+      "sha256": "71761bd5e4a5bb63bc00fdc4dae7fd6ff3b7c635791b7f288bfb00beca9fc85c",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "pair-m4-m11-spb-to-voronezh",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/pair-m4-m11-spb-to-voronezh.json",
+      "sha256": "72cde982fe427b06a591245f0e5f6b4896347038db8b9374f0317bee7a4928e0",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "single-m11-spb-to-tver",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/single-m11-spb-to-tver.json",
+      "sha256": "b0bb9c34ee5fb2f3584ca1ad8be7433a7ae8cef9696b02c0278125128d597180",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-spb-to-arzamas",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/cases/triple-m11-ckad-m12-spb-to-arzamas.json",
+      "sha256": "c92feb9b5f8060d98ca0565140e2f1f87e1a46afd6d335cc65639b547622ab6c",
+      "outcome": "blocked_by_same_missing_directed_owner_collection_scope"
+    }
+  ],
+  "comparisonCorrection": {
+    "initialFalsePositives": 6,
+    "sourceOfMistake": "New one-off comparator assumed gantry approach must have toll=true, though retained representative saysfalse. No source/runtime changes.",
+    "correction": "Match actual own gantry identity/type/toll flag against exact retained representative; keep payment unproven.",
+    "initialOutputsPreservedAt": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/initial-gantry-toll-assumption",
+    "correctedCases": [
+      "pair-m11-ckad-spb-to-noginsk",
+      "single-m11-spb-to-moscow",
+      "triple-m11-ckad-m12-spb-to-kazan",
+      "pair-m4-m11-spb-to-voronezh",
+      "single-m11-spb-to-tver",
+      "triple-m11-ckad-m12-spb-to-arzamas"
+    ],
+    "captureRereads": 0,
+    "newRequests": 0,
+    "newPricingCalls": 0
+  }
+}

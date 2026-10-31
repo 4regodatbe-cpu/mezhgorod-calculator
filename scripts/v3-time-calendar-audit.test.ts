@@ -6,6 +6,7 @@ import {matrixM4Component} from '../experiments/nationwide-tolls/engine/m4-route
 import {composeSelectedM4A289} from '../lib/v3-calculation/m4-a289-composition.ts';
 import {m4TariffPeriodAt} from '../experiments/toll-od-matrix/m4-fare-calendar-2026.mjs';
 import {matrixM11Component} from '../experiments/nationwide-tolls/engine/m11-route-adapter.mjs';
+import type {ProductionM4Result} from '../lib/toll-engine/m4-production.ts';
 
 test('legacy toll weekday display uses Moscow time independently of the host timezone',()=>{
  const original=process.env.TZ;
@@ -23,15 +24,19 @@ test('M11 head respects exact 01:00 and 06:00 Moscow night boundaries and its ow
  assert.equal(section15Amount(new Date('2026-11-03T12:00:00+03:00')).profile,'friday');
  assert.equal(section15Amount(new Date('2026-11-04T12:00:00+03:00')).profile,'saturday');
 });
-test('M4 midnight/unsupported calendar cannot resurrect native M4 plus A289 money',()=>{
- const p={candidate:true,exact:true,tolls:{amount:850,weekdayAmount:850,weekendAmount:1000,period:'понедельник–четверг',confidence:'matched' as const,segments:['М-4: test']},m4PvpPreview:{confirmedPvps:['m4-1223','m4-1184','m4-1093']}};
+test('M4 and known A289 retain Thursday fares; missing M4, invalid dates and durations still block',()=>{
+ const p:ProductionM4Result={candidate:true,exact:true,validation:null,reason:'saved calendar fixture',
+  tolls:{amount:850,weekdayAmount:850,weekendAmount:1000,period:'понедельник–четверг',confidence:'matched',segments:['М-4: test']},
+  m4PvpPreview:{status:'matched',reason:null,priceRub:850,verifiedPriceCells:3,candidateCount:3,confirmedPvps:['m4-1223','m4-1184','m4-1093'],diagnosticOnly:false}};
  const route:[number,number][]=[[38.13,45.25],[38.5327744,45.171408],[39.7015,47.2357]];
  const date='2026-10-15T23:30:00+03:00';
- const m=matrixM4Component(p,date,3600);
- assert.equal(m.tolls,null);
- assert.equal(composeSelectedM4A289(route,p,m,[],date)?.tolls,null);
- assert.equal(matrixM4Component(p,'2027-10-13T12:00:00+03:00',900).tolls,null);
- assert.equal(matrixM4Component(p,'2026-10-13T12:00:00+03:00',Number.MAX_VALUE).tolls,null);
+ const m=matrixM4Component(p,date,3600) as Parameters<typeof composeSelectedM4A289>[2];
+ assert.ok(m?.tolls);
+ assert.equal(m.tolls.amount,850);
+ assert.equal(composeSelectedM4A289(route,p,m,[],date)?.tolls?.amount,1265);
+ assert.equal(composeSelectedM4A289(route,p,{tolls:null,reason:'missing exact M4 fare'},[],date)?.tolls,null);
+ assert.equal(matrixM4Component(p,'2027-10-13T12:00:00+03:00',900)?.tolls??null,null);
+ assert.equal(matrixM4Component(p,'2026-10-13T12:00:00+03:00',Number.MAX_VALUE)?.tolls??null,null);
 });
 test('M4 calendar rejects normalized impossible dates before tariff lookup',()=>{
  for(const date of ['2026-02-30T12:00:00+03:00','2026-04-31T12:00:00Z'])assert.equal(m4TariffPeriodAt(date).status,'unknown');
@@ -39,13 +44,17 @@ test('M4 calendar rejects normalized impossible dates before tariff lookup',()=>
 });
 test('M11 date-only cannot fabricate an entry hour or a midnight transition',()=>{
  const production={boundaryStatus:'resolved',traversal:{entryPointId:'p593',exitPointId:'p679'}};
- assert.equal(matrixM11Component(production,'2026-10-13',3600).tolls,null);
- assert.ok(matrixM11Component(production,'2026-10-13T12:00:00+03:00',3600).tolls);
+ assert.equal(matrixM11Component(production,'2026-10-13',3600)?.tolls??null,null);
+ assert.ok(matrixM11Component(production,'2026-10-13T12:00:00+03:00',3600)?.tolls);
 });
 
 test('M11 mainline uses its own verified order274 holiday schedule and rejects unsupported years',()=>{
  const p={boundaryStatus:'resolved',traversal:{entryPointId:'p593',exitPointId:'p679'}};
- for(const date of ['2026-11-03T12:00:00+03:00','2026-11-04T12:00:00+03:00'])assert.equal(matrixM11Component(p,date,900).tolls.period,'пятница–воскресенье');
- assert.equal(matrixM11Component(p,'2027-10-13T12:00:00+03:00',900).tolls,null);
+ for(const date of ['2026-11-03T12:00:00+03:00','2026-11-04T12:00:00+03:00']){
+  const holiday=matrixM11Component(p,date,900);
+  assert.ok(holiday?.tolls);
+  assert.equal(holiday.tolls.period,'пятница–воскресенье');
+ }
+ assert.equal(matrixM11Component(p,'2027-10-13T12:00:00+03:00',900)?.tolls??null,null);
  assert.equal(section15Amount(new Date('2026-11-03T12:00:00+03:00')).amount,1650);
 });

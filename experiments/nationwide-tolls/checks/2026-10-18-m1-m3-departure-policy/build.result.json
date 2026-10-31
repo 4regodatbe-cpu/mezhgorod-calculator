@@ -1,0 +1,14 @@
+{
+  "name": "build",
+  "command": [
+    "node",
+    "node_modules/next/dist/bin/next",
+    "build"
+  ],
+  "startedAtUtc": "2026-10-18T05:44:52.838418+00:00",
+  "elapsedSeconds": 1.154,
+  "exitCode": 1,
+  "status": "FAIL",
+  "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/build.log.gz",
+  "uncompressedSha256": "d0066983ef8432fe4fa520416bedfb7ddefe8072a8e088fe352310963f9a2f28"
+}
