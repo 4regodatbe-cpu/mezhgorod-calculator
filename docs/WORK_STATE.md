@@ -1,3 +1,7 @@
+## 31.10.2026 — реорганизация C STARTED: ограниченный архив исследований
+
+[Checkpoint C STARTED](checkpoints/2026-10-31-reorganization-research-STARTED.md). B сохранён на remote `36d2cad23f5b547f58cb5a330b5ad379a7d283b5`: два малых архива и три манифеста, tree/readback совпали. Исследовательский кандидат: `experiments/preview-acceptance` и `experiments/release-candidate-1`, вместе 61 tracked-файл. В app/lib/scripts/data/workflow нет буквальных ссылок на их пути; внутренние скрипты внутри самих папок и исторические ссылки docs есть. Перед любым удалением нужен проверенный архив и разбор ссылок; пока только создание копии.
+
 ## 31.10.2026 — реорганизация B PARTIAL: 2/3 архива в дереве, V3 локально
 
 [Checkpoint B](checkpoints/2026-10-31-reorganization-archives-PARTIAL.md), [манифесты](../archive/versions/README.md). Из точных исторических SHA созданы три `source.tar.gz`; каждый распакован в чистую директорию, все 316/431/14 042 файлов сверены с Git blob SHA. Архивы legacy V1/V2 по 350 346 и 1 427 554 байт готовятся к GitHub в обычном рабочем коммите. Pre-release V3 — 343 730 585 байт, локальный SHA256 `d6b77252…`. Владелец явно разрешил публичный GitHub Release asset; попытка штатного `gh release create` прошла проверку полномочий, но endpoint загрузки `uploads.github.com` ответил HTTP 401 Bad credentials. Release/tag/asset после сбоя отсутствуют. Манифест V3 в дереве не равен размещённому архиву. Очистка запрещена до доступного удалённого восстановления; далее независимая классификация исследований без удаления.
