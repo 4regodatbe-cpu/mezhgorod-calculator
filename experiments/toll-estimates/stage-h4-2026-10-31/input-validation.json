@@ -1,0 +1,45 @@
+{
+  "identity": "H4_RECONSTRUCTED_NOT_ORIGINAL_G",
+  "baseHead": "7a6eb59d09824132becc75e192f18e77c704e2f9",
+  "archiveFilenameUploaded": "stage_g_reconstruction_2026-10-31(1).zip",
+  "archiveSha256": "3831aed252a3ed6fb5f2b14dd750e5acf6de7e26c5f01b2e2677d92f7c10bce5",
+  "zipCrcExit": 0,
+  "entries": 5,
+  "uncompressedBytes": 31052,
+  "allEntriesRegularFiles": true,
+  "inputBlockerClosed": true,
+  "sourceReportShaVerified": true,
+  "sourceReportSha256": "9262482b666455be2a65550e77c88a327d804fd50abe480d8a02e9df53af8f76",
+  "componentAnalysisShaVerified": true,
+  "originalCommitRecovered": false,
+  "archiveValidationClaimsReusedAsTests": false,
+  "compatibilityReview": "PENDING",
+  "scope": "Archive/source hashes verified against declarations in supplied package; not independent proof of Library authorship or screenshots.",
+  "files": [
+    {
+      "archivePath": "stage_g_reconstruction_2026-10-31/README.md",
+      "localPath": "experiments/toll-estimates/stage-h4-2026-10-31/imported/stage_g_reconstruction_2026-10-31/README.md",
+      "sha256": "5d2ef05e5440d70dd83c75782a587c0a940e6ba27f83d5c3eee57a0747f64fe3"
+    },
+    {
+      "archivePath": "stage_g_reconstruction_2026-10-31/VALIDATION.json",
+      "localPath": "experiments/toll-estimates/stage-h4-2026-10-31/imported/stage_g_reconstruction_2026-10-31/VALIDATION.json",
+      "sha256": "8d781b868f93523c2ecd3604bcbb1d71a7857de02842339f7482cd273a8dc189"
+    },
+    {
+      "archivePath": "stage_g_reconstruction_2026-10-31/component-analysis.reconstructed.json",
+      "localPath": "experiments/toll-estimates/stage-h4-2026-10-31/imported/stage_g_reconstruction_2026-10-31/component-analysis.reconstructed.json",
+      "sha256": "bfec7235a1e0aa899eb9c39499c4c57c5e39049be8f3c361ff5605922bcd2e94"
+    },
+    {
+      "archivePath": "stage_g_reconstruction_2026-10-31/evidence-manifest.reconstructed.json",
+      "localPath": "experiments/toll-estimates/stage-h4-2026-10-31/imported/stage_g_reconstruction_2026-10-31/evidence-manifest.reconstructed.json",
+      "sha256": "7ab55fc3ff09e65c7b01b7d3b77455ca97174fcf6690b7e2259b3c4604585b88"
+    },
+    {
+      "archivePath": "stage_g_reconstruction_2026-10-31/source/YANDEX_PAID_ROADS_REPORT_2026-10-31.md",
+      "localPath": "experiments/toll-estimates/stage-h4-2026-10-31/imported/stage_g_reconstruction_2026-10-31/source/YANDEX_PAID_ROADS_REPORT_2026-10-31.md",
+      "sha256": "9262482b666455be2a65550e77c88a327d804fd50abe480d8a02e9df53af8f76"
+    }
+  ]
+}
