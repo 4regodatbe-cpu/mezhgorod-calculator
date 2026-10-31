@@ -1,0 +1,11 @@
+# H4 — реконструкция G content сверена и сохранена LOCAL
+
+31.10.2026МСК. БазаH3 7a6eb59d09824132becc75e192f18e77c704e2f9, inputcommit aa817e33d73b9d8c923f8f0adeed99d90c632ef1/rawreadbackPASS. [Полныйсвод/готовность](../../experiments/toll-estimates/stage-h4-2026-10-31/README.md), [журнал](../../experiments/toll-estimates/stage-h4-2026-10-31/WORK_LOG.md), [сверка/finding](../../experiments/toll-estimates/stage-h4-2026-10-31/comparison.json), [входныеSHA](../../experiments/toll-estimates/stage-h4-2026-10-31/input-validation.json), [проверки](../../experiments/toll-estimates/stage-h4-2026-10-31/verification.json).
+
+H4-INPUT-BLOCKED закрыт: новыйZIPCRC0,sourceSHA9262482b666455be2a65550e77c88a327d804fd50abe480d8a02e9df53af8f76,analysisSHA совпали. ZIP/5исходныхфайлов сохранены побайтно отдельно, **RECONSTRUCTED, NOT ORIGINAL G**. Нетповторапоискаdd3e2ff6/H3/H2/Яндекса/массовогоаудита. OriginalGparents/tree/testsне восстановлены, архивныйVALIDATION7не нашрезультат.
+
+4A/BиE/FgeometrySHA/историческиесуммысовпали; exactYandexgeometry/date/paymentmatchнеподтверждены. ВsourceзафиксированыстарыйstrictunknownГранитного иmissinghead/CKAD/unmappedАрзамаса, не перенесены в currentFкакновыедефекты. Оценённаячасть6 928/7 268 включаетМ121713+ЦКАД941=2654оценочных,ЦКАДприменимостьworkingestimate. ЗСД/fullunknown/null,2085не тарифЗСД. ImportedsourceиисторическиеE/F/H2/H3evidenceнеизменны; несовпадениядокументированы.
+
+Фактически8новыхtargetPASS/0FAIL/0SKIP/exit0Node24.19.0;compare/syntax/CRC0;source/filehash/link/productionpaths-diffPASS. Никакихновыхappgate/build; прежниеPASSневыдаютсязаисполнившиесянаfinalGitSHA. Подробныекоманды/loghashвverification. Созданытолькоofflineanalysis/docs/artifacts, app/lib/data/engine/матрица/geometry/CIнеизменны. PR14Draft/remote c2f52ee93cd98a81ecd05efa0358fb38c6704124read-onlyподтверждены.
+
+**НоваядокументальнаялинияF→H2→H3→H4готовакотдельнойконтролируемойпубликациипослесогласования, но не Production/runtimeЯндексadmission.** Фактическийpushнеразрешён/невыполнялся;FпоумолчаниюOFF/Productiondeny. Передпубликациейотдельнаясверкаremote/fast-forward/pendingdiff/CIeffects иразрешение,потомсуществующиеCI/Preview; источниковыепробелыостаются. Локальныйfinalcommit/readback/bundleфиксируютсявнешнимhandoff, неGitHubсохранением.

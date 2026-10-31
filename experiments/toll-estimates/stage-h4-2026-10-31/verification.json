@@ -1,0 +1,74 @@
+{
+  "identity": "H4_RECONSTRUCTED_NOT_ORIGINAL_G",
+  "sourceHead": "7a6eb59d09824132becc75e192f18e77c704e2f9",
+  "inputCommit": "aa817e33d73b9d8c923f8f0adeed99d90c632ef1",
+  "node": "v24.19.0",
+  "checks": {
+    "zipCrcExit": 0,
+    "compareExit": 0,
+    "syntaxExit": 0,
+    "targetedTests": {
+      "pass": 8,
+      "fail": 0,
+      "skip": 0,
+      "exit": 0,
+      "command": "node --test --test-isolation=none experiments/toll-estimates/stage-h4-2026-10-31/compare.test.mjs"
+    },
+    "archivedValidation7NotReused": true,
+    "h2H3TestsNotRepeated": true,
+    "newYandexRequests": 0,
+    "applicationBuildRepeated": false
+  },
+  "commands": [
+    "unzip -t experiments/toll-estimates/stage-h4-2026-10-31/stage_g_reconstruction_2026-10-31.zip",
+    "node experiments/toll-estimates/stage-h4-2026-10-31/compare.mjs",
+    "node --test --test-isolation=none experiments/toll-estimates/stage-h4-2026-10-31/compare.test.mjs",
+    "node --check experiments/toll-estimates/stage-h4-2026-10-31/compare.mjs",
+    "node --check experiments/toll-estimates/stage-h4-2026-10-31/compare.test.mjs"
+  ],
+  "inputBlockerClosed": true,
+  "documentarySequenceReadyForSeparatelyAuthorizedPublication": true,
+  "originalGHistoryRecovered": false,
+  "externalYandexRuntimeAdmission": false,
+  "pr14": "open/Draft/unmerged",
+  "remoteHeadReadOnly": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "pushPerformed": false,
+  "files": [
+    {
+      "path": "experiments/toll-estimates/stage-h4-2026-10-31/compare.mjs",
+      "sha256": "45dd01714a3ba93686a43cbd4f391f3e3a568710c6ac4364a0724116c64172b3"
+    },
+    {
+      "path": "experiments/toll-estimates/stage-h4-2026-10-31/compare.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/toll-estimates/stage-h4-2026-10-31/compare.stdout.log",
+      "sha256": "978a72d50163bc00ee176503eb0c154efab21cd7596e5f3c449ab6cf25209635"
+    },
+    {
+      "path": "experiments/toll-estimates/stage-h4-2026-10-31/compare.test.mjs",
+      "sha256": "b8483547e5a708d758577a4071c6d28b4ec81b64d78e584494f69203b15281de"
+    },
+    {
+      "path": "experiments/toll-estimates/stage-h4-2026-10-31/comparison.json",
+      "sha256": "a29b56dba05ff34e80ad5fde151fa9587bea7e22623aff76aa0cf3333f5ca56f"
+    },
+    {
+      "path": "experiments/toll-estimates/stage-h4-2026-10-31/input-validation.json",
+      "sha256": "b6cc299245d5602439c61524825307a379d117a5e46b43136b1f910acb717ee0"
+    },
+    {
+      "path": "experiments/toll-estimates/stage-h4-2026-10-31/targeted.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/toll-estimates/stage-h4-2026-10-31/targeted.stdout.log",
+      "sha256": "3d188bb041c9c844ca4b75462e95c2a3cca555333689c40c346778f07ea75eb0"
+    },
+    {
+      "path": "experiments/toll-estimates/stage-h4-2026-10-31/zip-crc.stdout.log",
+      "sha256": "371feda8a8940bcba1e332b07633d935c701e43098a43954ebef51331b889242"
+    }
+  ]
+}
