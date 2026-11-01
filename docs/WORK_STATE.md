@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-12 пояснение зон LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-zones-copy-LOCAL.md). Пояснение перенесено из V1 формы под завершённый dual result; V2 сохранён. Form12/12, result6/6, TS/scoped lint PASS. Push нет, визуальные и hosted gates открыты. Далее независимые UI-пункты/AUDIT-01.
+
 ## 01.11.2026 — UI-09 атрибуция LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-attribution-LOCAL.md). Технический текст справочника убран с /v3, GeoNames/CC BY 4.0 attribution сохранена, статистика не менялась. Result-render5/5, TS/scoped lint PASS; push нет. Далее UI-12 и независимые блоки.

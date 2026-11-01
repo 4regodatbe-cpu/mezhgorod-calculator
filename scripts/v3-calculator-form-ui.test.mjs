@@ -10,7 +10,7 @@ function load(file){if(!existsSync(file))file=['.ts','.tsx'].map(s=>file+s).find
 const {CalculatorForm}=load(resolve(root,'app/v2/components/calculator-form.tsx'));
 const {DonationCard}=load(resolve(root,'app/v2/components/donation-card.tsx'));
 const defaults={standard:25,comfort:30,comfortPlus:35,minivan:50};
-function render(from,to,loading=false,releaseCopy=true){return renderToStaticMarkup(React.createElement(CalculatorForm,{mode:'standard',onModeChange:()=>{},onResetResult:()=>{},from,onFromChange:()=>{},to,onToChange:()=>{},onSwap:()=>{},rates:defaults,onRatesChange:()=>{},specialRates:defaults,onSpecialRatesChange:()=>{},urgent:false,onUrgentChange:()=>{},urgentPercent:20,onUrgentPercentChange:()=>{},loading,hasResult:false,error:'',onCalculate:()=>{},deepTollDiagnostics:false,onDeepTollDiagnosticsChange:()=>{},releaseCopy}));}
+function render(from,to,loading=false,releaseCopy=true,mode='standard'){return renderToStaticMarkup(React.createElement(CalculatorForm,{mode,onModeChange:()=>{},onResetResult:()=>{},from,onFromChange:()=>{},to,onToChange:()=>{},onSwap:()=>{},rates:defaults,onRatesChange:()=>{},specialRates:defaults,onSpecialRatesChange:()=>{},urgent:false,onUrgentChange:()=>{},urgentPercent:20,onUrgentPercentChange:()=>{},loading,hasResult:false,error:'',onCalculate:()=>{},deepTollDiagnostics:false,onDeepTollDiagnosticsChange:()=>{},releaseCopy}));}
 test('both loading indicators use the approved one-minute message',()=>{
  const html=render({label:'Москва'},{label:'Казань'},true);
  assert.equal(html.split('Подождите минуту, пока загружается маршрут.').length-1,2);
@@ -32,6 +32,13 @@ test('V1 Release keeps A/B inside fields and accessible names, V2 keeps outer la
  assert.match(current,/aria-label="Куда"/);
  assert.equal((current.match(/pointer-events-none absolute left-9 top-3/g)||[]).length,2);
  assert.equal((legacy.match(/mb-1\.5 block text-xs font-bold uppercase/g)||[]).length,2);
+});
+test('V1 dual form keeps the zone heading but moves explanation out of the form',()=>{
+ const current=render({label:''},{label:''},false,true,'dual');
+ const legacy=render({label:''},{label:''},false,false,'dual');
+ assert.match(current,/>Особые тарифные зоны<\/p>/);
+ assert.doesNotMatch(current,/Пробег внутри и вне зон определяется/);
+ assert.match(legacy,/Пробег внутри и вне зон определяется/);
 });
 test('project support card keeps the existing destination and approved copy',()=>{
  const html=renderToStaticMarkup(React.createElement(DonationCard,{releaseCopy:true}));

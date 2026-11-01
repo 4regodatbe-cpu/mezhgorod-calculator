@@ -89,6 +89,7 @@ export default function V3Page() {
       />
       <div ref={resultRef} className="scroll-mt-3">
         <ResultPanels result={result} standardLeg={standardLeg} standardHasTolls={standardHasTolls} standardOptimal={standardOptimal} manualToll={manualToll} onManualToll={setManualToll} copiedKey={copiedKey} copyStandard={copyStandard} tollPeriod={tollPeriod} onTollPeriodChange={setTollPeriod} fastestOnly/>
+        {result && mode === "dual" && <p className="mt-3 rounded-xl border border-brand-route/40 bg-brand-route/5 px-3 py-2 text-sm font-semibold leading-relaxed text-brand-text">Границы участков с обычной и специальной тарификацией определяются автоматически по построенному маршруту.</p>}
         {result && <p role="note" className="mt-3 rounded-xl border border-brand-border bg-brand-surface px-3 py-2 text-sm font-semibold leading-relaxed text-brand-text">Расчёт носит справочный характер. Фактический маршрут, время в пути и стоимость проезда по платным дорогам могут отличаться от указанных.</p>}
       </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2"><FeedbackForm/><DonationCard releaseCopy/></div>

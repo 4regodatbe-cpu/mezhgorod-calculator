@@ -16,6 +16,10 @@ test('V1 Release keeps GeoNames attribution without technical corpus copy',()=>{
  assert.match(page,/https:\/\/creativecommons\.org\/licenses\/by\/4\.0\//);
  assert.doesNotMatch(page,/Локальный справочник населённых пунктов|Снимок 24\.10\.2026/);
 });
+test('special-zone explanation follows only a completed dual result',()=>{
+ const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');
+ assert.match(page,/\{result && mode === "dual" && <p[^>]*>Границы участков с обычной и специальной тарификацией определяются автоматически по построенному маршруту\.<\/p>\}/);
+});
 test('actual fastest result render preserves night price without confirmation notice',()=>{
  const fare={totalPrice:100,requiresSplit:false,reviewRequired:false,dualTariff:false,pricingSegments:[]};
  const toll={amount:880,weekdayAmount:1130,weekendAmount:1650,period:'ночной проезд',segments:[],pricingStatus:'priced',confidence:'matched'};

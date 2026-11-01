@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-12, LOCAL
+
+Заголовок зоны в V1 форме оставлен, пояснение показано только после completed dual result; /v2 исходный текст сохранён. SSR form12/12, result6/6, TS/scoped lint PASS. Только local commit/bundle. Далее UI и AUDIT-01.
+
 ## 01.11.2026 — UI-09, LOCAL
 
 Удалено техническое описание локальной базы из footer V3, сохранены GeoNames и CC BY 4.0 links; статистика не затронута. Result-render5/5, TS/scoped lint PASS. Commit/bundle local, no push. Далее UI-12.
