@@ -5,6 +5,15 @@ import {inCrimea} from '../../lib/crimea-geography.ts';
 import {selectRussianSettlementDisplay} from '../../lib/russian-settlement-display.ts';
 const regionNames={dnr:'ДНР',lnr:'ЛНР',zaporizhzhia:'Запорожская область',kherson:'Херсонская область'};
 export const normalize=value=>value.toLocaleLowerCase('ru-RU').replace(/ё/gu,'е').replace(/[—–-]/gu,' ').replace(/\s+/gu,' ').trim();
+// GeoNames 501175's primary Russian label is abbreviated; its own aliases
+// include the unambiguous full city name. Bind display correction to the
+// reviewed identity and region, never to an arbitrary "Ростов" text match.
+function displayName(record){
+ if(record[0]===501175&&record[1]==='Ростов'&&record[5]==='RU'&&
+   record[6].includes('Ростовская Область')&&record[2].includes('Ростов-на-Дону')&&
+   Math.abs(record[3]-47.21997)<0.001&&Math.abs(record[4]-39.70769)<0.001)return 'Ростов-на-Дону';
+ return record[1];
+}
 export function createLocalGazetteer(data){
  if(data?.schemaVersion!==1||data.runtimeApproved!==false||!Array.isArray(data.records)||data.records.length>300000)throw Error('Invalid research gazetteer');
  const records=data.records,postings=[];
@@ -32,8 +41,8 @@ export function createLocalGazetteer(data){
    const region=territory?regionNames[territory]:crimea?'Крым':r[6][0]??r[5];
    const context=normalize([...r[2],...r[6],region].join(' '));if(!words.every(w=>context.includes(w)))continue;
    const exact=r[2].some(n=>normalize(n)===q),tier=crimea?0:territory?1:r[5]==='RU'?2:3;
-   const label=[r[1],region,...r[6].filter(s=>s!==region)].join(' — ');
-   matches.push({id:'geonames-'+r[0],title:r[1],label,region,position:{lat:r[3],lng:r[4]},territory:territory??(crimea?'crimea':null),
+   const title=displayName(r),label=[title,region,...r[6].filter(s=>s!==region)].join(' — ');
+   matches.push({id:'geonames-'+r[0],title,label,region,position:{lat:r[3],lng:r[4]},territory:territory??(crimea?'crimea':null),
     qualityFlags:quality,source:{provider:'geonames',id:r[0],dump:r[12],line:r[10],modifiedAt:r[11],precision:data.coordinateAccuracy},exact,tier,population:r[7]});
   }
   matches.sort((a,b)=>Number(b.exact)-Number(a.exact)||a.tier-b.tier||b.population-a.population||a.id.localeCompare(b.id));

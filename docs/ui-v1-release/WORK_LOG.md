@@ -92,3 +92,7 @@ Vercel Preview `dpl_46d42SspdWHkqaG4SnB49jCXWS92` READY, Git SHA совпада�
 ## 01.11.2026 — internal special-only V3 tariff, LOCAL
 
 После routing checkpoint добавлен V3-only критерий полной внутренней геометрии, отказ внешнего детура и защита от ручного ordinary override. Форма/результат/копия показывают единственный особый тариф после подтверждённого маршрута; V2 defaults прежние. Целевые API/SSR/геометрические тесты PASS, TS и scoped ESLint exit0, Webpack build exit0. Общий offline 182/185 test files PASS и три sandbox EPERM; штатный Turbopack build EPERM. Два ограниченных OSRM ответа с полной внутренней геометрией подтверждены; локальный POST 502 из-за Node fetch ECONNREFUSED при доступном curl/proxy. Подробности в checkpoint. No push.
+
+## 01.11.2026 — Rostov GeoNames label, LOCAL
+
+Локальный корпус уже содержит точный алиас «Ростов-на-Дону» для ID 501175. Только эта идентичность теперь отображается полным именем при совпадении проверенных региона/координат; Ярославский ID 501183 не затронут. `/api/suggest` и `/r` с выключенным Photon, выбор координат и сохранённый snapshot при фиксированной дате PASS; runtime fallback switch остаётся OFF. См. checkpoint. No push.
