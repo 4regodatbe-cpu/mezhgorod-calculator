@@ -27,11 +27,12 @@ type RouteCardProps = {
   onManualToll?: (value: string) => void;
   onCopy: () => void;
   copied: boolean;
+  showFastestSummary?: boolean;
 };
 
 export function RouteCard({
   title, accent, trip, toll, tollPeriod, onTollPeriodChange,
-  manualToll, onManualToll, onCopy, copied,
+  manualToll, onManualToll, onCopy, copied, showFastestSummary = false,
 }: RouteCardProps) {
   const isUnknown = toll?.pricingStatus === "unknown";
   const isPriced = toll?.pricingStatus === "priced";
@@ -47,10 +48,10 @@ export function RouteCard({
   return (
     <article className={"min-w-0 w-full rounded-[24px] border border-brand-border/25 border-s-4 bg-brand-surface p-2.5 shadow-[0_12px_32px_rgba(16,42,67,.07)] " + (accent === "blue" ? "border-brand-action/35 border-s-brand-action" : "border-brand-route/40 border-s-brand-route")}>
       <div className="flex min-w-0 items-center justify-between gap-2">
-        <h3 className="min-w-0 truncate text-lg font-black text-brand-text sm:text-xl">{title}</h3>
-        <span className={"shrink-0 rounded-full px-2.5 py-1 text-xs font-extrabold " + (accent === "blue" ? "bg-brand-subtle text-brand-action" : "bg-brand-route/15 text-brand-text")}>{accent === "blue" ? "Маршрут" : "Вариант проезда"}</span>
+        <h3 className="min-w-0 text-base font-black leading-snug text-brand-text sm:text-lg">{showFastestSummary ? "Выбран маршрут с минимальным временем в пути" : title}</h3>
+        <span className={"shrink-0 rounded-full px-2.5 py-1 text-xs font-extrabold " + (accent === "blue" ? "bg-brand-subtle text-brand-action" : "bg-brand-route/15 text-brand-text")}>{showFastestSummary ? <Route aria-hidden="true" strokeWidth={2.5} className="h-5 w-5" /> : accent === "blue" ? "Маршрут" : "Вариант проезда"}</span>
       </div>
-      <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
+      <div className={"mt-2 gap-x-3 gap-y-1.5 text-sm " + (showFastestSummary ? "grid grid-cols-2" : "flex flex-wrap")}>
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Route className="h-4 w-4 text-brand-action" />{distance(trip.meters)}</span>
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Clock3 className="h-4 w-4 text-brand-action" />{duration(trip.seconds)}</span>
       </div>

@@ -32,6 +32,7 @@ export function ResultPanels({
     return <section className="mt-4 grid min-w-0 grid-cols-1 gap-3">
       <RouteCard
         title="Самый быстрый маршрут"
+        showFastestSummary
         accent="blue"
         trip={leg.fast}
         toll={leg.fast.tolls}

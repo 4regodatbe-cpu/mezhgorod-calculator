@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-14 заголовок результата LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-route-heading-LOCAL.md). Быстрейшая V1 карточка показывает утверждённое сообщение, усиленный значок, строку расстояния/времени; /v2 не изменён. Result-render6/6, TS/scoped lint PASS. Визуальная узкая ширина и hosted gate открыты, push нет.
+
 ## 01.11.2026 — UI-12 пояснение зон LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-zones-copy-LOCAL.md). Пояснение перенесено из V1 формы под завершённый dual result; V2 сохранён. Form12/12, result6/6, TS/scoped lint PASS. Push нет, визуальные и hosted gates открыты. Далее независимые UI-пункты/AUDIT-01.

@@ -26,6 +26,8 @@ test('actual fastest result render preserves night price without confirmation no
  const fast={meters:10000,seconds:1000,tolls:toll,pricingByVehicle:Object.fromEntries(['standard','comfort','comfort_plus','minivan'].map(k=>[k,fare]))};
  const leg={from:'A',to:'B',fast,free:null};
  const html=renderToStaticMarkup(React.createElement(ResultPanels,{result:{legs:[leg]},fastestOnly:true,tollPeriod:'weekday',onTollPeriodChange:()=>{},copyStandard:async()=>{},copiedKey:'',manualToll:'',onManualToll:()=>{},standardHasTolls:true,standardOptimal:null}));
+ assert.match(html,/Выбран маршрут с минимальным временем в пути/);
+ assert.doesNotMatch(html,/>Самый быстрый маршрут</);
  assert.match(html,/880/);assert.match(html,/980/);assert.doesNotMatch(html,/Стоимость не подтверждена|квитанц|оператором/);
  assert.doesNotMatch(html,/1130|1650|Пн–Чт|Пт–Вс/);
 });
