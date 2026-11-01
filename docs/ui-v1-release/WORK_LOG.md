@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — локальная передача PARTIAL
+
+[Матрица](ACCEPTANCE_STATUS.md), [checkpoint](../../docs/checkpoints/2026-11-01-ui-v1-local-handoff-PARTIAL.md). Все UI01–14 реализованы локально, но visual/hosted gates не закрыты. AUDIT-01 остаётся PARTIAL. Remote read-only `beb57c80…`, PR14 Draft; push нет.
+
 ## 01.11.2026 — UI-04, LOCAL
 
 [Checkpoint](../../docs/checkpoints/2026-11-01-ui-v1-first-screen-LOCAL.md). Снижены вертикальные отступы первого мобильного экрана V1 без сокращения текста/44px targets и без изменения V2. SSR16/16, TS/scoped lint PASS; реальные viewport и увеличенный шрифт NOT_RUN. Все UI01–14 реализованы локально, визуальная/hosted приёмка не закрыта. No push.

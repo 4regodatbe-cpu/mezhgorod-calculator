@@ -1,3 +1,7 @@
+## 01.11.2026 — V1 Release UI локальная передача PARTIAL
+
+[Матрица](ui-v1-release/ACCEPTANCE_STATUS.md), [checkpoint](checkpoints/2026-11-01-ui-v1-local-handoff-PARTIAL.md). 14/14 UI-пунктов имеют локальные изменения; form16/16, result7/7, TS/scoped lint PASS. Визуальная и hosted CI/Preview приёмка открыта; AUDIT-01 PARTIAL с локальными 502 до pricing. Remote `beb57c80…` read-only подтверждён, PR14 OPEN/Draft, Production не менялся. Push нет.
+
 ## 01.11.2026 — UI-04 компактный первый экран LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-first-screen-LOCAL.md). Только V1: вертикальные отступы первого экрана уменьшены без уменьшения текста/44px кнопок и без изменения V2; form SSR16/16, TypeScript/scoped lint/diff PASS. Геометрия mobile, увеличенный системный шрифт и клавиатура NOT_RUN — пользовательская приёмка открыта. 14/14 UI-пунктов имеют локальные изменения, но не все визуально подтверждены; AUDIT-01 PARTIAL. No push.
