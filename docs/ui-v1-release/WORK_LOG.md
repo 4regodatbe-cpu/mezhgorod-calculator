@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-13, LOCAL
+
+V1 fastest-only dual cards: активная рамка/ring/фон, остальные контрастные; состояние также aria/Chevron, hit area сохранена. V2 стиль прежний. Result7/7, TS/scoped lint PASS; browser NOT_RUN. Commit/bundle local, no push.
+
 ## 01.11.2026 — UI-01, LOCAL
 
 Прозрачный SVG не менялся: opaque cream fill был у anchor V3, удалён; `dark:invert` только в тёмной теме. Result-render7/7, TS/scoped lint PASS. Реальное визуальное подтверждение dark/mobile отсутствует. Commit/bundle local, no push.

@@ -56,6 +56,8 @@ test('fastest V3 keeps dual fare visible and permits an explicitly manual road t
  const leg={from:'Волноваха',to:'Москва',fast,free:null};
  const props={result:{legs:[leg]},fastestOnly:true,tollPeriod:'actual',onTollPeriodChange:()=>{},copyStandard:async()=>{},copiedKey:'',manualToll:'',onManualToll:()=>{},standardHasTolls:true,standardOptimal:null};
  const html=renderToStaticMarkup(React.createElement(ResultPanels,props));
+ assert.match(html,/ring-2 ring-brand-action\/40/);
+ assert.match(html,/border-brand-border\/70 bg-brand-surface/);
  assert.match(html,/55[\s\u00a0\u202f]?299/);assert.match(html,/Итого без дорог/);
  assert.match(html,/Стоимость платных дорог вручную/);assert.doesNotMatch(html,/Не рассчитано/);
  let args;const manualProps={...props,manualToll:'3050',copyStandard:(...values)=>{args=values;}};

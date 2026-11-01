@@ -57,7 +57,7 @@ export function RouteCard({
       </div>
       <QualityNote quality={trip.quality} />
       {isUnknown && !hasManualToll && !estimateText && <p role="note" className="mt-2 text-sm font-semibold text-amber-700">Стоимость платных дорог неизвестна — полная сумма поездки не рассчитана.</p>}
-      <PriceRows trip={trip} toll={toll} period={tollPeriod} manualToll={manualToll} />
+      <PriceRows trip={trip} toll={toll} period={tollPeriod} manualToll={manualToll} emphasizeDual={showFastestSummary} />
       {estimateText && estimate && <section aria-label="Стоимость платных дорог" className="mt-2 rounded-2xl border border-brand-route/35 bg-brand-route/10 p-2">
         <p role="status" className="text-sm font-bold text-brand-text">{estimateText.label}</p>
         {estimateText.partial && <p className="mt-1 text-xs text-brand-muted">{estimateText.partial}</p>}

@@ -87,16 +87,18 @@ export function PriceRows({
   period,
   manualToll,
   fareOnly = false,
+  emphasizeDual = false,
 }: {
   trip: Trip;
   toll?: TollView;
   period: TollPeriod;
   manualToll?: string;
   fareOnly?: boolean;
+  emphasizeDual?: boolean;
 }) {
   const hasDualTariff = vehicleKeys.some(([, vehicle]) => trip.pricingByVehicle?.[vehicle]?.dualTariff);
   if (hasDualTariff) {
-    return <DualTariffPriceRows trip={trip} toll={toll} period={period} manualToll={manualToll} fareOnly={fareOnly} />;
+    return <DualTariffPriceRows trip={trip} toll={toll} period={period} manualToll={manualToll} fareOnly={fareOnly} emphasizeDual={emphasizeDual} />;
   }
 
   if (fareOnly) {
@@ -164,12 +166,14 @@ function DualTariffPriceRows({
   period,
   manualToll,
   fareOnly,
+  emphasizeDual,
 }: {
   trip: Trip;
   toll?: TollView;
   period: TollPeriod;
   manualToll?: string;
   fareOnly: boolean;
+  emphasizeDual: boolean;
 }) {
   const [expandedVehicle, setExpandedVehicle] = useState<PricingVehicle | null>("comfort");
   const listId = useId();
@@ -191,7 +195,7 @@ function DualTariffPriceRows({
           .reduce((sum, segment) => sum + segment.amount, 0) ?? 0;
 
         return (
-          <article key={vehicle} className="min-w-0 overflow-hidden rounded-2xl border border-brand-border/25 bg-brand-surface shadow-sm">
+          <article key={vehicle} className={"min-w-0 overflow-hidden rounded-2xl border shadow-sm " + (emphasizeDual ? expanded ? "border-brand-action bg-brand-subtle/60 ring-2 ring-brand-action/40" : "border-brand-border/70 bg-brand-surface" : "border-brand-border/25 bg-brand-surface")}>
             <button
               type="button"
               aria-expanded={expanded}
