@@ -18,7 +18,7 @@ class MainActivity : Activity() {
     private lateinit var webView: WebView
     private lateinit var progress: ProgressBar
     private lateinit var offline: TextView
-    private val home = "https://mezhgorod-calculator.vercel.app/"
+    private val home = "https://mezhgorod-calculator.vercel.app/v3"
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,18 +32,18 @@ class MainActivity : Activity() {
             javaScriptEnabled = true
             domStorageEnabled = true
             setSupportZoom(false)
-            userAgentString = "$userAgentString MezhgorodAndroid/1.0"
+            userAgentString = "$userAgentString MezhgorodAndroid/1.01"
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                isAlgorithmicDarkeningAllowed = true
+                isAlgorithmicDarkeningAllowed = false
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 @Suppress("DEPRECATION")
-                forceDark = android.webkit.WebSettings.FORCE_DARK_ON
+                forceDark = android.webkit.WebSettings.FORCE_DARK_OFF
             }
         }
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
                 val uri = request.url
-                return if (uri.host == "mezhgorod-calculator.vercel.app") false
+                return if (uri.scheme == "https" && uri.host == "mezhgorod-calculator.vercel.app") false
                 else { openExternal(uri); true }
             }
             override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
@@ -56,12 +56,14 @@ class MainActivity : Activity() {
             }
         }
         offline.setOnClickListener { webView.loadUrl(home) }
-        webView.loadUrl(savedInstanceState?.getString("url") ?: home)
+        val previousUrl = savedInstanceState?.getString("url")
+        val launchUrl = previousUrl?.takeIf { it == home || it.startsWith("$home?") || it.startsWith("$home#") } ?: home
+        webView.loadUrl(launchUrl)
     }
 
     private fun openExternal(uri: Uri) {
         try { startActivity(Intent(Intent.ACTION_VIEW, uri)) }
-        catch (_: Exception) { webView.loadUrl(uri.toString()) }
+        catch (_: Exception) { offline.visibility = View.VISIBLE }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
