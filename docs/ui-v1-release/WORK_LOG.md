@@ -96,3 +96,7 @@ Vercel Preview `dpl_46d42SspdWHkqaG4SnB49jCXWS92` READY, Git SHA совпада�
 ## 01.11.2026 — Rostov GeoNames label, LOCAL
 
 Локальный корпус уже содержит точный алиас «Ростов-на-Дону» для ID 501175. Только эта идентичность теперь отображается полным именем при совпадении проверенных региона/координат; Ярославский ID 501183 не затронут. `/api/suggest` и `/r` с выключенным Photon, выбор координат и сохранённый snapshot при фиксированной дате PASS; runtime fallback switch остаётся OFF. См. checkpoint. No push.
+
+## 01.11.2026 — mobile browser attempt, BLOCKED_BY_ENV
+
+Локальный `next start` для Webpack-сборки READY при дополнительном сетевом разрешении. Chromium 390×844 с отключённым JavaScript и 18-секундным лимитом повторял TLS `net_error -202` и не создал screenshot. Это не визуальный PASS; SSR группы/карточки прошёл отдельно. Процесс браузера и локальный сервер остановлены, push нет.
