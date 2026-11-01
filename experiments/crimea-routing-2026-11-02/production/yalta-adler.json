@@ -1,0 +1,315 @@
+{
+  "capturedAt": "2026-11-01T22:05:06.779Z",
+  "summary": {
+    "id": "yalta-adler",
+    "httpStatus": 200,
+    "meters": 739289,
+    "seconds": 39617,
+    "providers": [
+      "OSRM"
+    ],
+    "tolls": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "pricingStatus": "free"
+    }
+  },
+  "body": {
+    "legs": [
+      {
+        "from": "yalta",
+        "to": "adler",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "57dee5903bdfedd73242f121b0db804f2dffb3d6ff312f199b367160b83dda5c",
+            "precision": "route-maneuver",
+            "status": "resolved",
+            "reason": "directed_road_transitions_resolved",
+            "entry": {
+              "id": "road-transition:9b45ec1af92a9541c786fc1d",
+              "kind": "road-transition",
+              "from": {
+                "refs": [],
+                "names": [
+                  "Судостальская улица",
+                  "ул. Судостальская"
+                ]
+              },
+              "to": {
+                "refs": [
+                  "М-4"
+                ],
+                "names": [
+                  "Сухумское шоссе"
+                ]
+              },
+              "coordinate": [
+                37.795819,
+                44.736969
+              ],
+              "legIndex": 1,
+              "sourceIndex": 24,
+              "connectorCount": 0
+            },
+            "exit": {
+              "id": "road-transition:9408c2f1c87469b59faea3b3",
+              "kind": "road-transition",
+              "from": {
+                "refs": [
+                  "М-4"
+                ],
+                "names": [
+                  "«Дон»"
+                ]
+              },
+              "to": {
+                "refs": [
+                  "А-147"
+                ],
+                "names": []
+              },
+              "coordinate": [
+                38.702048,
+                44.365391
+              ],
+              "legIndex": 1,
+              "sourceIndex": 43,
+              "connectorCount": 1
+            }
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 739289,
+          "seconds": 39617,
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": 0,
+            "weekdayAmount": 0,
+            "weekendAmount": 0,
+            "period": "понедельник–четверг",
+            "segments": [],
+            "confidence": "none",
+            "pricingStatus": "free"
+          },
+          "tollValidation": {
+            "status": "free",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 3046,
+            "wayIds": [],
+            "roadNames": [],
+            "paidRoadEdges": [],
+            "m4RoadBoundaries": {
+              "provider": "valhalla-trace",
+              "targetRef": "М-4",
+              "routeSignature": "57dee5903bdfedd73242f121b0db804f2dffb3d6ff312f199b367160b83dda5c",
+              "precision": "matched-road-edge",
+              "status": "unknown",
+              "reason": "road_trace_multiple_or_discontinuous_traversals",
+              "entry": null,
+              "exit": null
+            },
+            "message": "Платные дорожные рёбра не обнаружены во всём проверенном маршруте",
+            "tollBoothCount": 0,
+            "tollBooths": [],
+            "chunkCount": 6,
+            "checkedChunkCount": 6,
+            "failedChunkCount": 0,
+            "complete": true,
+            "boothEventCoverage": "complete"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+            "roadBoundaries": {
+              "provider": "valhalla-trace",
+              "targetRef": "М-4",
+              "routeSignature": "57dee5903bdfedd73242f121b0db804f2dffb3d6ff312f199b367160b83dda5c",
+              "precision": "matched-road-edge",
+              "status": "unknown",
+              "reason": "road_trace_multiple_or_discontinuous_traversals",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 0,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 739.289,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "yalta",
+                  "to": "adler",
+                  "ratePerKm": 30,
+                  "amount": 22179,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 22179,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 739.289,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "yalta",
+                  "to": "adler",
+                  "ratePerKm": 32.5,
+                  "amount": 24027,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 24027,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 739.289,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "yalta",
+                  "to": "adler",
+                  "ratePerKm": 35,
+                  "amount": 25875,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 25875,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 739.289,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "yalta",
+                  "to": "adler",
+                  "ratePerKm": 45,
+                  "amount": 33268,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 33268,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  }
+}

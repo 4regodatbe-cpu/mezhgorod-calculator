@@ -106,3 +106,6 @@ Vercel Preview `dpl_46d42SspdWHkqaG4SnB49jCXWS92` READY, Git SHA совпада�
 ## 01.11.2026 23:24 MSK — Android V1.01 download, LOCAL/PARTIAL
 
 Выполнена локальная интеграция проверенного APK из artifact 13097107982 в `public/downloads/`; SHA-256 `a7a44d60a68940fa695532aec8482cd98111bd8841f2ec921205861ff1b6c69a`. На `/v3` подготовлена кнопка скачивания, V2 не менялась. Попытка отдельного GitHub prerelease asset получила HTTP401 на upload host; пустой release/tag не остался. Tests 2/2, TypeScript, scoped ESLint, прямой Next build и локальный HTTP200/819945 bytes/SHA PASS; local full audit 183/186 test files, три известных sandbox child-process сбоя. Desktop/mobile Chromium не завершился из-за TLS -202. Публичная ссылка и Preview пока не проверены: push/Production запрещены. [Подробный checkpoint](../checkpoints/2026-11-01-2324-android-v101-download-LOCAL-PARTIAL.md).
+## 02.11.2026 — Crimea routing P1 release
+
+Production a05fba10 READY, все 14 реальных двунаправленных контролей HTTP200. Убран обязательный Краснодар для обычных Крым↔материк поездок, мост сохранён; V3 выбирает планы по времени. Hosted offline1099/0fail/1skip, TS/build/browser PASS, отдельный известный Photon503 остаётся. Итоги и исходные ответы: [checkpoint](../checkpoints/2026-11-02-crimea-routing-production-DONE.md). Main/Android V2 не менялись, PR14 Draft; финальная запись local.

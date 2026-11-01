@@ -1,3 +1,7 @@
+## 02.11.2026 — Crimea routing P1 опубликован и проверен на Production
+
+[Checkpoint](checkpoints/2026-11-02-crimea-routing-production-DONE.md). Production `a05fba100055787e9351122eaafa1471bffc44ff`, deployment dpl_VdMSM7rCqAvwK4jHAV9pasDXDm8x READY; /api/version подтвердил SHA. Все 14 main-site controls HTTP200: Анапа↔Керчь 133–134 км, Анапа↔Ялта ~388 км, Ялта↔Адлер ~739 км, платность free/0. Дальние Москва/Ростов строятся, неполные тарифы unknown/null; внутренние особые маршруты без регрессий. Hosted offline 1099 PASS/0 FAIL/1 SKIP, TS/build/browser PASS; live_probe отдельно FAILED на прежнем Photon503/cooldown. PR14 Draft, main/Android V2 сохранены. Итоговые результаты после выпуска сохранены локально; source Production a05fba10.
+
 ## 02.11.2026 — Crimea routing P1 prepublication PASS
 
 [Checkpoint](checkpoints/2026-11-02-crimea-routing-prepublish.md). Ordinary Crimea plans require bridge only; V3 considers all plans by actual seconds. 14 real bidirectional controls HTTP200, six short Crimea cases free/0 with no A289 frame crossing; Moscow/Rostov incomplete tolls remain unknown. Offline 1093 PASS/0 FAIL/1 SKIP, additional six saved-geometry tests PASS, TS/lint/build PASS. Evidence: experiments/crimea-routing-2026-11-02. Owner authorizes push and Production; awaiting hosted checks and release. Main/Android V2 unchanged.
