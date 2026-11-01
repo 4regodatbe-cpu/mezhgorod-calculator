@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — AUDIT-01, PARTIAL LOCAL
+
+[Checkpoint](../../docs/checkpoints/2026-11-01-ui-v1-audit01-route-reproduction-PARTIAL-LOCAL.md). Два реальных POST к V3 handler для Донецка→Волновахи/Мелитополя: HTTP502, остановка на special_options/routing до pricing; сохранены полные ответы и timing. Наблюдения Preview о суммах и 614,2 км не воспроизведены; точная причина требует исходного успешного response/trace, одинаковые live-пробы не повторялись. No push.
+
 ## 01.11.2026 — UI-10, LOCAL
 
 V1-only transition effect scrolls after dual DOM appears, once per mode transition, cleans rAF, skips active input and respects reduced motion. Form15/15, TS/scoped lint PASS. Browser keyboard/mobile NOT_RUN; provisional until Preview. Commit/bundle local.

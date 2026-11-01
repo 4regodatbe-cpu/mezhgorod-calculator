@@ -1,3 +1,7 @@
+## 01.11.2026 — AUDIT-01 локальное воспроизведение PARTIAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-audit01-route-reproduction-PARTIAL-LOCAL.md). Два реальных route POST с центрами GeoNames завершились HTTP502 до `response_pricing` (~5.2/5.6 с), leg/геометрия/суммы отсутствуют. Причина 614,2 км и отсутствие четырёх тарифов именно в Preview остаются неустановленными; тарифы/политика не менялись, одинаковые live-запросы не повторять. Нужен исходный успешный Preview response/trace. Только local commit/bundle, no push.
+
 ## 01.11.2026 — AUDIT-01 ограниченная проверка STARTED LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-audit01-STARTED-LOCAL.md). Три центра городов подтверждены локальным GeoNames; далее ровно два real route POST для причины отсутствующих/сомнительных сумм. Без смены политики, no push.
