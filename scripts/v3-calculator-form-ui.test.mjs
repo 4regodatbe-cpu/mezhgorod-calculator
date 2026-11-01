@@ -10,7 +10,7 @@ function load(file){if(!existsSync(file))file=['.ts','.tsx'].map(s=>file+s).find
 const {CalculatorForm}=load(resolve(root,'app/v2/components/calculator-form.tsx'));
 const {DonationCard}=load(resolve(root,'app/v2/components/donation-card.tsx'));
 const defaults={standard:25,comfort:30,comfortPlus:35,minivan:50};
-function render(from,to,loading=false,releaseCopy=true,mode='standard'){return renderToStaticMarkup(React.createElement(CalculatorForm,{mode,onModeChange:()=>{},onResetResult:()=>{},from,onFromChange:()=>{},to,onToChange:()=>{},onSwap:()=>{},rates:defaults,onRatesChange:()=>{},specialRates:defaults,onSpecialRatesChange:()=>{},urgent:false,onUrgentChange:()=>{},urgentPercent:20,onUrgentPercentChange:()=>{},loading,hasResult:false,error:'',onCalculate:()=>{},deepTollDiagnostics:false,onDeepTollDiagnosticsChange:()=>{},releaseCopy}));}
+function render(from,to,loading=false,releaseCopy=true,mode='standard',hasResult=false){return renderToStaticMarkup(React.createElement(CalculatorForm,{mode,onModeChange:()=>{},onResetResult:()=>{},from,onFromChange:()=>{},to,onToChange:()=>{},onSwap:()=>{},rates:defaults,onRatesChange:()=>{},specialRates:defaults,onSpecialRatesChange:()=>{},urgent:false,onUrgentChange:()=>{},urgentPercent:20,onUrgentPercentChange:()=>{},loading,hasResult,error:'',onCalculate:()=>{},deepTollDiagnostics:false,onDeepTollDiagnosticsChange:()=>{},releaseCopy}));}
 test('both loading indicators use the approved one-minute message',()=>{
  const html=render({label:'Москва'},{label:'Казань'},true);
  assert.equal(html.split('Подождите минуту, пока загружается маршрут.').length-1,2);
@@ -46,6 +46,14 @@ test('V1 rate cards are compact and contrasted while touch targets stay 44px',()
  assert.equal((current.match(/border-brand-border\/70 p-1\.5/g)||[]).length,8);
  assert.match(current,/grid h-11 w-11 min-h-11 min-w-11/);
  assert.equal((legacy.match(/border-brand-border\/25 p-1\.5/g)||[]).length,8);
+});
+test('V1 dual form keeps eight tariffs, urgent switch and one mobile calculate action after a result',()=>{
+ const current=render({label:'Москва'},{label:'Казань'},false,true,'dual',true);
+ const legacy=render({label:'Москва'},{label:'Казань'},false,false,'dual',true);
+ assert.equal((current.match(/aria-label="Цена за км:/g)||[]).length,8);
+ assert.match(current,/aria-label="Срочная поездка"/);
+ assert.equal((current.match(/>Рассчитать поездку</g)||[]).length,2);
+ assert.equal((legacy.match(/>Рассчитать поездку</g)||[]).length,1);
 });
 test('project support card keeps the existing destination and approved copy',()=>{
  const html=renderToStaticMarkup(React.createElement(DonationCard,{releaseCopy:true}));

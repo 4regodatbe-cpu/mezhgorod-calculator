@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-11 мобильная кнопка и 8 тарифов LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-dual-action-LOCAL.md). Fixed mobile calculate остаётся после результата только на V1, 8 dual полей и urgent switch сохранены; SSR14/14, TS/scoped lint PASS. Перекрытия/клавиатура требуют браузера, push нет.
+
 ## 01.11.2026 — UI-03 тарифные карточки LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-rate-cards-LOCAL.md). Только V1: рамки контрастнее, padding/иконки меньше при 44px touch targets; V2 сохранён. Form13/13, TS/scoped lint PASS. Визуальная приёмка открыта, push нет.

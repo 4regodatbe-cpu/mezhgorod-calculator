@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-11, LOCAL
+
+V1 fixed mobile calculate доступен и после результата, нижний spacer защищает footer; V2 прежнее поведение. SSR14/14 включая 8 dual полей/urgent, TS/scoped lint PASS. Реальная keyboard/mobile проверка NOT_RUN. Commit/bundle local, no push.
+
 ## 01.11.2026 — UI-03, LOCAL
 
 V1 TariffInputs: stronger border, compact padding/smaller Chevron, 44px hit targets preserved, rates/step untouched; V2 styles remain. Initial SSR regex assumed wrong class order, corrected. Form13/13, TS/scoped lint PASS. Visual light/dark/mobile NOT_RUN, commit/bundle local.
