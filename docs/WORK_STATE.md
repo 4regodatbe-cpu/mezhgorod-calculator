@@ -1,6 +1,6 @@
-## 01.11.2026 — Android V1.01 (оболочка обновлена; hosted APK pending)
+## 01.11.2026 — Android V1.01 APK собран, GitHub Actions PASS (установка на устройстве НЕ ПРОВЕРЕНА)
 
-[Checkpoint](checkpoints/2026-11-01-android-v101-APK-PENDING.md). `android-app` теперь открывает /v3, versionCode 5 / versionName 1.01, WebView не форсирует тёмную тему. Отдельный workflow `android-v101-apk.yml` собирает debug APK как артефакт без выпуска в Google Play или Release. Старая `android-app-v2` сохранена. В среде нет Android SDK: результат CI/ссылка на APK до запуска НЕ ПОДТВЕРЖДЕНЫ.
+[Checkpoint](checkpoints/2026-11-01-android-v101-APK-PENDING.md). GitHub Actions [run 41340511993](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41340511993) завершился SUCCESS на `d306f5b8a283f7f192295b2dbc0c5b4f4f085670`. APK `Iz-A-v-B-V1.01-debug.apk` (applicationId `ru.mezhgorod.calculator`, versionCode `5`, versionName `1.01`) присутствует в артефакте `Iz-A-v-B-V1.01-APK` (artifact ID `13097107982`, до 01.12.2026). ZIP integrity, APK `unzip -t`, aapt package metadata, SHA-256 `a7a44d60a68940fa695532aec8482cd98111bd8841f2ec921205861ff1b6c69a` — PASS. Сборка DEBUG-подписанная; обновление поверх прежней APK зависит от совпадения сертификата и не подтверждено. Старая V2 и Production сайта без изменений; PR №14 Draft. Пользовательское устройство и runtime веб-калькулятора в WebView ещё НЕ ПРОВЕРЕНЫ.
 
 ## 01.11.2026 — V1.01 «Ростов-на-Дону» в локальном GeoNames, LOCAL
 

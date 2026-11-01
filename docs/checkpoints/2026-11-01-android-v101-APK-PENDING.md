@@ -9,3 +9,13 @@
 - Подпись: стандартная DEBUG-подпись GitHub runner, **не стабильная release-подпись**; совместимость обновления поверх прежнего APK не гарантируется. Для бесшовного обновления потребуется существующий release keystore/сертификат.
 - Локальная Android-сборка не запускалась: в текущей среде нет Android SDK и Gradle. Hosted Actions и реальная установка на устройстве необходимы.
 - Следующий шаг: выполнить workflow, проверить APK metadata, SHA256 и дать пользователю фактический артефакт; Android V2 и Production сайта не изменять.
+
+## 01.11.2026 — hosted build: DONE (user-device acceptance OPEN)
+
+- Фактически опубликованный SHA исходного Android кода: `d306f5b8a283f7f192295b2dbc0c5b4f4f085670`; remote readback PASS; PR №14 Draft.
+- GitHub Actions: https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/41340511993 — SUCCESS, все этапы, включая `gradle assembleDebug` и Upload artifact, завершились успешно.
+- GitHub Actions artifact ID `13097107982`, `Iz-A-v-B-V1.01-APK` (ZIP), expires 2026-12-01. APK `Iz-A-v-B-V1.01-debug.apk`, размер 819945 байт.
+- `aapt dump badging`: package `ru.mezhgorod.calculator`, `versionCode=5`, `versionName=1.01`, `compileSdk=35`; целевой gradle `minSdk=24`.
+- `unzip -t` артефакта и APK: PASS. SHA-256 APK: `a7a44d60a68940fa695532aec8482cd98111bd8841f2ec921205861ff1b6c69a`, совпал с файлом контрольной суммы в артефакте.
+- Пользователю передан проверенный APK и SHA256; **Android-девайс и обновление поверх существующей установки не тестировались**, debug signing может отличаться от прежнего APK.
+- Production сайта, Android V2, main и резервные ветки не менялись. Следующий шаг: установить на пользовательском устройстве и проверить тему/поиск/расчёт; для обновления без удаления рассмотреть стабильный подписывающий ключ, не публикуя его в репозитории.
