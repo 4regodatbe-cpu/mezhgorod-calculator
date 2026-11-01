@@ -30,7 +30,9 @@ test('V1 Release keeps A/B inside fields and accessible names, V2 keeps outer la
  assert.equal((current.match(/class="sr-only">Точка [AB]/g)||[]).length,2);
  assert.match(current,/aria-label="Откуда"/);
  assert.match(current,/aria-label="Куда"/);
- assert.equal((current.match(/pointer-events-none absolute left-9 top-3/g)||[]).length,2);
+ assert.equal((current.match(/pointer-events-none absolute left-10 top-2\.5/g)||[]).length,2);
+ assert.match(current,/aria-hidden="true"[^>]*>А<\/span>/);
+ assert.match(current,/aria-hidden="true"[^>]*>Б<\/span>/);
  assert.equal((legacy.match(/mb-1\.5 block text-xs font-bold uppercase/g)||[]).length,2);
 });
 test('V1 dual form keeps the zone heading but moves explanation out of the form',()=>{
@@ -51,7 +53,7 @@ test('V1 first-screen vertical spacing is compact without shrinking text or V2 s
  const current=render({label:''},{label:''});
  const legacy=render({label:''},{label:''},false,false);
  const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');
- assert.match(page,/header className="mb-2 flex/);
+ assert.match(page,/header className="mb-2 grid grid-cols-\[1fr_auto_1fr\]/);
  assert.match(current,/class="mb-2\.5 grid grid-cols-2 rounded-2xl/);
  assert.match(current,/class="mt-3 pt-3 border-t/);
  assert.match(current,/class="mt-2 p-2\.5 flex min-w-0/);

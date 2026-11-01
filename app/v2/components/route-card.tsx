@@ -48,14 +48,14 @@ export function RouteCard({
   return (
     <article className={"min-w-0 w-full rounded-[24px] border border-brand-border/25 border-s-4 bg-brand-surface p-2.5 shadow-[0_12px_32px_rgba(16,42,67,.07)] " + (accent === "blue" ? "border-brand-action/35 border-s-brand-action" : "border-brand-route/40 border-s-brand-route")}>
       <div className="flex min-w-0 items-center justify-between gap-2">
-        <h3 className="min-w-0 text-base font-black leading-snug text-brand-text sm:text-lg">{showFastestSummary ? "Выбран маршрут с минимальным временем в пути" : title}</h3>
-        <span className={"shrink-0 rounded-full px-2.5 py-1 text-xs font-extrabold " + (accent === "blue" ? "bg-brand-subtle text-brand-action" : "bg-brand-route/15 text-brand-text")}>{showFastestSummary ? <Route aria-hidden="true" strokeWidth={2.5} className="h-5 w-5" /> : accent === "blue" ? "Маршрут" : "Вариант проезда"}</span>
+        <h3 className={"min-w-0 leading-snug text-brand-text " + (showFastestSummary ? "text-lg font-bold sm:text-xl" : "text-base font-black sm:text-lg")}>{showFastestSummary ? "Выбран маршрут с минимальным временем" : title}</h3>
+        {!showFastestSummary && <span className={"shrink-0 rounded-full px-2.5 py-1 text-xs font-extrabold " + (accent === "blue" ? "bg-brand-subtle text-brand-action" : "bg-brand-route/15 text-brand-text")}>{accent === "blue" ? "Маршрут" : "Вариант проезда"}</span>}
       </div>
-      <div className={"mt-2 gap-x-3 gap-y-1.5 text-sm " + (showFastestSummary ? "grid grid-cols-2" : "flex flex-wrap")}>
+      <div className={"mt-2 gap-x-3 gap-y-1.5 text-sm " + (showFastestSummary ? "grid grid-cols-2 items-center" : "flex flex-wrap")}>
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Route className="h-4 w-4 text-brand-action" />{distance(trip.meters)}</span>
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Clock3 className="h-4 w-4 text-brand-action" />{duration(trip.seconds)}</span>
       </div>
-      <QualityNote quality={trip.quality} />
+      {(!showFastestSummary || trip.quality?.status !== "single" || trip.quality.message !== "Выбран маршрут с минимальным временем") && <QualityNote quality={trip.quality} />}
       {isUnknown && !hasManualToll && !estimateText && <p role="note" className="mt-2 text-sm font-semibold text-amber-700">Стоимость платных дорог неизвестна — полная сумма поездки не рассчитана.</p>}
       <PriceRows trip={trip} toll={toll} period={tollPeriod} manualToll={manualToll} emphasizeDual={showFastestSummary} />
       {estimateText && estimate && <section aria-label="Стоимость платных дорог" className="mt-2 rounded-2xl border border-brand-route/35 bg-brand-route/10 p-2">

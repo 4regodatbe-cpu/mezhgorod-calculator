@@ -122,7 +122,7 @@ export function PriceRows({
 
   const tollPrice = resolveTollAmount(toll, period, manualToll);
   return (
-    <div className="mt-2.5 grid min-w-0 grid-cols-1 gap-1.5">
+    <div className={"mt-2.5 grid min-w-0 gap-1.5 " + (emphasizeDual && (tollPrice.amount === null || tollPrice.status === "free") ? "grid-cols-2" : "grid-cols-1")}>
       {vehicleKeys.map(([key, vehicle], index) => {
         const price = trip.pricingByVehicle?.[vehicle];
         const baseFare = price && !price.requiresSplit ? price.totalPrice : null;

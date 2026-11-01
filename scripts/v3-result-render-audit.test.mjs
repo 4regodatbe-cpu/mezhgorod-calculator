@@ -15,6 +15,9 @@ test('V1 Release keeps GeoNames attribution without technical corpus copy',()=>{
  assert.match(page,/https:\/\/www\.geonames\.org\//);
  assert.match(page,/https:\/\/creativecommons\.org\/licenses\/by\/4\.0\//);
  assert.doesNotMatch(page,/Локальный справочник населённых пунктов|Снимок 24\.10\.2026/);
+ assert.doesNotMatch(page,/Расчёт справочный\. Фактический маршрут и тарифы операторов дорог могут измениться\./);
+ assert.match(page,/V1\.01/);
+ assert.doesNotMatch(page,/>V2 · старый алгоритм|>Платные дороги России/);
 });
 test('special-zone explanation follows only a completed dual result',()=>{
  const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');
@@ -28,10 +31,13 @@ test('V1 logo container has no opaque fill and increases dark contrast',()=>{
 test('actual fastest result render preserves night price without confirmation notice',()=>{
  const fare={totalPrice:100,requiresSplit:false,reviewRequired:false,dualTariff:false,pricingSegments:[]};
  const toll={amount:880,weekdayAmount:1130,weekendAmount:1650,period:'ночной проезд',segments:[],pricingStatus:'priced',confidence:'matched'};
- const fast={meters:10000,seconds:1000,tolls:toll,pricingByVehicle:Object.fromEntries(['standard','comfort','comfort_plus','minivan'].map(k=>[k,fare]))};
+ const fast={meters:10000,seconds:1000,tolls:toll,quality:{status:'single',message:'Выбран маршрут с минимальным временем'},pricingByVehicle:Object.fromEntries(['standard','comfort','comfort_plus','minivan'].map(k=>[k,fare]))};
  const leg={from:'A',to:'B',fast,free:null};
  const html=renderToStaticMarkup(React.createElement(ResultPanels,{result:{legs:[leg]},fastestOnly:true,tollPeriod:'weekday',onTollPeriodChange:()=>{},copyStandard:async()=>{},copiedKey:'',manualToll:'',onManualToll:()=>{},standardHasTolls:true,standardOptimal:null}));
- assert.match(html,/Выбран маршрут с минимальным временем в пути/);
+ assert.match(html,/Выбран маршрут с минимальным временем/);
+ assert.equal((html.match(/Выбран маршрут с минимальным временем/g)||[]).length,1);
+ assert.doesNotMatch(html,/Выбран маршрут с минимальным временем в пути/);
+ assert.match(html,/mt-2\.5 grid min-w-0 gap-1\.5 grid-cols-1/);
  assert.doesNotMatch(html,/>Самый быстрый маршрут</);
  assert.match(html,/880/);assert.match(html,/980/);assert.doesNotMatch(html,/Стоимость не подтверждена|квитанц|оператором/);
  assert.doesNotMatch(html,/1130|1650|Пн–Чт|Пт–Вс/);
@@ -44,6 +50,7 @@ test('V3 shared fastest-route UI keeps unknown tolls base-only and never present
  const leg={from:'A',to:'B',fast,free:null};
  const html=renderToStaticMarkup(React.createElement(ResultPanels,{result:{legs:[leg]},fastestOnly:true,tollPeriod:'actual',onTollPeriodChange:()=>{},copyStandard:async()=>{},copiedKey:'',manualToll:'',onManualToll:()=>{},standardHasTolls:true,standardOptimal:null}));
  assert.match(html,/Стоимость платных дорог неизвестна/);assert.match(html,/Итого без дорог/);
+ assert.match(html,/mt-2\.5 grid min-w-0 gap-1\.5 grid-cols-2/);
  assert.doesNotMatch(html,/Итого за поездку|=\s*0(?:[,.]00)?\s*₽/);
 });
 

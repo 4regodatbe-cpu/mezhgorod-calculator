@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { FeedbackForm } from "../v2/components/feedback-form";
 import { DonationCard } from "../v2/components/donation-card";
@@ -69,12 +68,12 @@ export default function V3Page() {
   const standardOptimal = standardLeg ? pickOptimal(standardLeg.fast, standardLeg.free) : null;
   return <main translate="no" className="notranslate calculator-modern min-h-screen bg-brand-page pb-[env(safe-area-inset-bottom)] text-brand-text">
     <div className="v2-page-inset mx-auto w-full max-w-3xl px-3 sm:px-6">
-      <header className="mb-2 flex items-center justify-between gap-2 sm:mb-4">
-        <div className="flex min-w-0 items-center gap-2.5">
+      <header className="mb-2 grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:mb-4">
+        <div className="flex min-w-0 items-center">
           <a href="/v3" aria-label="из А в Б — калькулятор" className="shrink-0 rounded-xl p-1"><Image src="/izavb-approved-logo.svg" alt="из А в Б" width={136} height={60} priority className="dark:invert" /></a>
-          <div className="min-w-0"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><p className="text-xs font-semibold text-brand-muted">V1 Release · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">V2 · старый алгоритм</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
         </div>
-        <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle /></div>
+        <div className="text-center"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><span className="whitespace-nowrap text-xs font-bold tracking-wide text-brand-muted">V1.01</span></div>
+        <div className="flex min-w-0 items-center justify-end gap-1.5"><ThemeToggle /></div>
       </header>
       <div ref={formRef} className="scroll-mt-2"><CalculatorForm
         releaseCopy
@@ -105,7 +104,7 @@ export default function V3Page() {
         {result && <p role="note" className="mt-3 rounded-xl border border-brand-border bg-brand-surface px-3 py-2 text-sm font-semibold leading-relaxed text-brand-text">Расчёт носит справочный характер. Фактический маршрут, время в пути и стоимость проезда по платным дорогам могут отличаться от указанных.</p>}
       </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2"><FeedbackForm/><DonationCard releaseCopy/></div>
-      <footer className="mx-auto mt-6 max-w-3xl pb-5 text-center text-xs leading-relaxed text-brand-muted"><p className="flex items-center justify-center gap-1.5"><ShieldCheck className="h-4 w-4"/>Расчёт справочный. Фактический маршрут и тарифы операторов дорог могут измениться.</p><p className="mt-2">Данные населённых пунктов: <a href="https://www.geonames.org/" className="underline">GeoNames</a> · <a href="https://creativecommons.org/licenses/by/4.0/" className="underline">CC BY 4.0</a>.</p></footer>
+      <footer className="mx-auto mt-3 max-w-3xl pb-3 text-center text-[11px] leading-relaxed text-brand-muted">Данные населённых пунктов: <a href="https://www.geonames.org/" className="underline underline-offset-2">GeoNames</a> · <a href="https://creativecommons.org/licenses/by/4.0/" className="underline underline-offset-2">CC BY 4.0</a>.</footer>
       <div aria-hidden="true" className="h-20 md:hidden" />
     </div>
   </main>;
