@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
-import { analyzeRoute, candidatePlans, endpointPolicy, findPlanLegStretchAnomaly, followsPlan, inCrimea } from "../lib/special-territory-policy.ts";
+import { analyzeRoute, candidatePlans, endpointPolicy, findPlanLegStretchAnomaly, followsPlan, inCrimea, isInternalSpecialRoute } from "../lib/special-territory-policy.ts";
 import { splitRouteByTerritory, type VerifiedTerritory, type GeoPoint } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
 import { selectGeographicTerritoryOption } from "../lib/special-territory-options.ts";
@@ -81,6 +81,14 @@ test("two special endpoints use direct controls in both directions and across re
   assert.ok(policy.fromTerritory&&policy.toTerritory);
   assert.deepEqual(candidatePlans(from,to,zones),[{corridor:"mainland",positions:[from,to]}]);
  }
+});
+test("only fully covered internal geometry permits a single special tariff",()=>{
+ const volnovakha={lat:47.6019,lng:37.4968};
+ const internal=analyzeRoute([[d.lng,d.lat],[volnovakha.lng,volnovakha.lat]],60000,3600,d,volnovakha,zones);
+ assert.equal(isInternalSpecialRoute(d,volnovakha,internal,zones),true);
+ const escaped=analyzeRoute([[d.lng,d.lat],[39.2,47.2],[volnovakha.lng,volnovakha.lat]],300000,20000,d,volnovakha,zones);
+ assert.equal(isInternalSpecialRoute(d,volnovakha,escaped,zones),false);
+ assert.equal(isInternalSpecialRoute(k,d,internal,zones),false);
 });
 const synthetic:VerifiedTerritory[]=(["dnr","lnr","zaporizhzhia","kherson"] as const).map((id,i)=>({id,verified:true,source:{url:"https://example.org",title:"test",checkedAt:"2026-10-03"},geometry:{type:"Polygon",coordinates:[[[i*10,-1],[i*10+2,-1],[i*10+2,1],[i*10,1],[i*10,-1]]]}}));
 const legs=[{meters:100000,seconds:900,coordinates:[[-1,0],[0,0]] as GeoPoint[]},{meters:200000,seconds:8000,coordinates:[[0,0],[1,0],[2,0]] as GeoPoint[]},{meters:100000,seconds:1100,coordinates:[[2,0],[3,0]] as GeoPoint[]}];

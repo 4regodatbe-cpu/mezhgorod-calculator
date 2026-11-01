@@ -130,6 +130,9 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
     const tollPrice = resolveTollAmount(toll, tollPeriod, manualTollOverride);
     const periodLabel = tollPeriod === "actual" ? (toll?.period ?? "дата расчёта") : tollPeriod === "weekday" ? "будни, Пн–Чт" : "выходные, Пт–Вс";
     const lines = ["из А в Б", `${shortPlaceName(leg.from)} → ${shortPlaceName(leg.to)}`, `${distance(trip.meters)} · ${duration(trip.seconds)}`, `День поездки: ${periodLabel}`];
+    if (Object.values(trip.pricingByVehicle ?? {}).length===4 &&
+      Object.values(trip.pricingByVehicle ?? {}).every(price=>price.pricingSegments.length===1 && price.pricingSegments[0].tariffType==="special"))
+      lines.push("Тариф: Особые тарифные зоны");
     if (manualTollOverride?.trim()) lines.push("Сумма платных дорог указана вручную.");
     else if (tollPrice.amount === null) lines.push("Стоимость платных дорог неизвестна.");
     for (const rate of Object.keys(defaults) as Array<keyof typeof defaults>) {

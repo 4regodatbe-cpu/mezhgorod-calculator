@@ -33,6 +33,7 @@ export function ResultPanels({
       <RouteCard
         title="Самый быстрый маршрут"
         showFastestSummary
+        specialOnly={result.specialOnly === true}
         accent="blue"
         trip={leg.fast}
         toll={leg.fast.tolls}

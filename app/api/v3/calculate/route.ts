@@ -7,7 +7,7 @@ import { calculateLeg } from "@/lib/v3-calculation/route-leg";
 import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-integration";
 
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "@/lib/special-territory-boundaries";
-import { analyzeRoute, candidatePlans, endpointPolicy } from "@/lib/special-territory-policy";
+import { analyzeRoute, candidatePlans, endpointPolicy, isInternalSpecialRoute } from "@/lib/special-territory-policy";
 import { calculateSpecialOptions } from "@/lib/v3-calculation/special-options";
 import { acceptedYandexRouteEstimate, yandexRouteEstimateTolls } from "@/lib/v3-calculation/yandex-route-estimates";
 import type { Coordinate } from "@/lib/tolls";
@@ -80,7 +80,9 @@ export async function POST(request: NextRequest) {
     request.signal.throwIfAborted();
     const policy = endpointPolicy(from.position,to.position,zones);
     const automaticMode = policy.specialEndpoint ? "dual" : "standard";
-    const mode = body.modeOverride === true && body.mode ? body.mode : policy.specialEndpoint ? "dual" : "standard";
+    // A manual ordinary-mode override cannot erase verified special-zone mileage.
+    const mode = policy.fromTerritory && policy.toTerritory ? "dual"
+      : body.modeOverride === true && body.mode ? body.mode : automaticMode;
     const normalRateOverrides = body.rates ? { ...body.rates, comfort_plus:body.rates.comfortPlus } : undefined;
     const specialRateOverrides = body.specialRates ? { ...body.specialRates, comfort_plus:body.specialRates.comfortPlus } : undefined;
     const attachPricing = <T extends { meters:number; seconds:number; coordinates:Coordinate[]; legs?:unknown; tollEstimate?:TollEstimateView }>(trip:T, verifiedSplit?:ReturnType<typeof analyzeRoute>) => timing.measureSync("response_pricing", () => {
@@ -110,7 +112,8 @@ export async function POST(request: NextRequest) {
       request.signal.throwIfAborted();
       const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast,option.split),free:null,freeCandidate:null}));
       if(!options.length)throw new Error("MAINLAND_UNAVAILABLE");
-      return respond({legs:options,options,mode,automaticMode,specialEndpoint:true,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
+      const specialOnly = isInternalSpecialRoute(from.position,to.position,special.options[0].split,zones);
+      return respond({legs:options,options,mode,automaticMode,specialEndpoint:true,specialOnly,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
     }
     const plan=candidatePlans(from.position,to.position,zones)[0];
     const leg=await timing.measure("route_leg", () => calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true,timing,request.signal));

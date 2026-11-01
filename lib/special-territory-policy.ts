@@ -1,4 +1,4 @@
-import { classifyTerritory, splitRouteByTerritory, type Position, type VerifiedTerritory, type GeoPoint } from "./special-territory-geometry.ts";
+import { classifyTerritory, splitRouteByTerritory, type Position, type VerifiedTerritory, type GeoPoint, type TerritorySplit } from "./special-territory-geometry.ts";
 import { inCrimea } from "./crimea-geography.ts";
 import { inCrimeaApproachZone } from "./special-territory-approach-zone.ts";
 import { inspectKrasnodarBypass, krasnodarBypassControls } from "./toll-engine/krasnodar-bypass-evidence.ts";
@@ -20,6 +20,13 @@ export { inCrimea } from "./crimea-geography.ts";
 export function endpointPolicy(from: Position,to: Position,zones: VerifiedTerritory[]) {
   const a=classifyTerritory(from,zones), b=classifyTerritory(to,zones);
   return { fromTerritory:a,toTerritory:b,specialEndpoint:a!==null||b!==null };
+}
+/** Both endpoints and every measured piece must have verified special-zone coverage. */
+export function isInternalSpecialRoute(from: Position, to: Position, split: TerritorySplit, zones: VerifiedTerritory[]) {
+  const endpoints = endpointPolicy(from, to, zones);
+  return Boolean(endpoints.fromTerritory && endpoints.toTerritory && split.verified &&
+    split.pieces.length > 0 && split.pieces.every(piece => piece.territory !== null && piece.meters > 0) &&
+    split.ordinaryKm === 0 && split.specialKm > 0);
 }
 export function candidatePlans(from: Position,to: Position,zones: VerifiedTerritory[]) {
   const endpoints=endpointPolicy(from,to,zones);

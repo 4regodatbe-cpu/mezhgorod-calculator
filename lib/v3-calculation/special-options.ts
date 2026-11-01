@@ -1,7 +1,7 @@
 import { isUsableRoute } from "./route-candidate";
 import { valhalla, osrmRoute, type Located, type RouteWithGeometry } from "../route-providers";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../special-territory-boundaries";
-import { analyzeRoute, candidatePlans, findPlanLegStretchAnomaly, followsPlan } from "../special-territory-policy";
+import { analyzeRoute, candidatePlans, endpointPolicy, findPlanLegStretchAnomaly, followsPlan, isInternalSpecialRoute } from "../special-territory-policy";
 import { selectGeographicTerritoryOption } from "../special-territory-options";
 import { selectLiveRouteCandidates } from "../route-quality";
 import { calculateLegTolls } from "./route-leg-pricing";
@@ -33,6 +33,8 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
   signal?.throwIfAborted();
   const measure = <T>(stage:CalculationStage,operation:()=>Promise<T>) => timing ? timing.measure(stage,operation) : operation();
   const plans=candidatePlans(from.position,to.position,zones);
+  const endpoints=endpointPolicy(from.position,to.position,zones);
+  const requiresInternalRoute=Boolean(endpoints.fromTerritory&&endpoints.toTerritory);
   const preferredCorridor=plans[0]?.corridor??"mainland";
   const candidates = await Promise.all(plans.map(async plan => {
     const rejectedStretchProviders=new Map<string,number>();
@@ -51,6 +53,7 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
         if(stretch){rejectedStretchProviders.set(providerName,stretch.stretchRatio);return null;}
         if(!followsPlan(route.coordinates,plan.positions,plan.corridor,true))return null;
         const split=analyzeRoute(route.coordinates,route.meters,route.seconds,from.position,to.position,zones);
+        if(requiresInternalRoute&&!isInternalSpecialRoute(from.position,to.position,split,zones))return null;
         return {corridor:plan.corridor,provider:index===0?"Valhalla":"OSRM",split,from:from.label,to:to.label,route,index,fast:{...route,tolls:{pricingStatus:"unknown" as const},tollValidation:undefined},free:null,freeCandidate:null};
       } catch {return null;}
     });

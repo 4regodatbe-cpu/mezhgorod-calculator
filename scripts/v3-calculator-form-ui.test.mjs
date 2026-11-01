@@ -10,7 +10,15 @@ function load(file){if(!existsSync(file))file=['.ts','.tsx'].map(s=>file+s).find
 const {CalculatorForm}=load(resolve(root,'app/v2/components/calculator-form.tsx'));
 const {DonationCard}=load(resolve(root,'app/v2/components/donation-card.tsx'));
 const defaults={standard:25,comfort:30,comfortPlus:35,minivan:50};
-function render(from,to,loading=false,releaseCopy=true,mode='standard',hasResult=false){return renderToStaticMarkup(React.createElement(CalculatorForm,{mode,onModeChange:()=>{},onResetResult:()=>{},from,onFromChange:()=>{},to,onToChange:()=>{},onSwap:()=>{},rates:defaults,onRatesChange:()=>{},specialRates:defaults,onSpecialRatesChange:()=>{},urgent:false,onUrgentChange:()=>{},urgentPercent:20,onUrgentPercentChange:()=>{},loading,hasResult,error:'',onCalculate:()=>{},deepTollDiagnostics:false,onDeepTollDiagnosticsChange:()=>{},releaseCopy}));}
+function render(from,to,loading=false,releaseCopy=true,mode='standard',hasResult=false,specialOnly=false){return renderToStaticMarkup(React.createElement(CalculatorForm,{mode,onModeChange:()=>{},onResetResult:()=>{},from,onFromChange:()=>{},to,onToChange:()=>{},onSwap:()=>{},rates:defaults,onRatesChange:()=>{},specialRates:defaults,onSpecialRatesChange:()=>{},urgent:false,onUrgentChange:()=>{},urgentPercent:20,onUrgentPercentChange:()=>{},loading,hasResult,error:'',onCalculate:()=>{},deepTollDiagnostics:false,onDeepTollDiagnosticsChange:()=>{},releaseCopy,specialOnly}));}
+test('verified V3 internal trip shows one special tariff group; legacy V2 stays dual',()=>{
+ const internal=render({label:'Донецк'},{label:'Волноваха'},false,true,'dual',true,true);
+ const legacy=render({label:'Донецк'},{label:'Волноваха'},false,false,'dual',true);
+ assert.equal((internal.match(/aria-label="Цена за км:/g)||[]).length,4);
+ assert.match(internal,/Особые тарифные зоны/);
+ assert.doesNotMatch(internal,/Обычная часть маршрута|Обычные тарифы|Двойная тарификация/);
+ assert.equal((legacy.match(/aria-label="Цена за км:/g)||[]).length,8);
+});
 test('both loading indicators use the approved one-minute message',()=>{
  const html=render({label:'Москва'},{label:'Казань'},true);
  assert.equal(html.split('Подождите минуту, пока загружается маршрут.').length-1,2);

@@ -21,7 +21,18 @@ test('V1 Release keeps GeoNames attribution without technical corpus copy',()=>{
 });
 test('special-zone explanation follows only a completed dual result',()=>{
  const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');
- assert.match(page,/\{result && mode === "dual" && <p[^>]*>Границы участков с обычной и специальной тарификацией определяются автоматически по построенному маршруту\.<\/p>\}/);
+ assert.match(page,/\{result && mode === "dual" && !result\.specialOnly && <p[^>]*>Границы участков с обычной и специальной тарификацией определяются автоматически по построенному маршруту\.<\/p>\}/);
+});
+test('verified internal V3 result renders four simple special prices without an ordinary breakdown',()=>{
+ const vehicles=['standard','comfort','comfort_plus','minivan'];
+ const pricingByVehicle=Object.fromEntries(vehicles.map((key,index)=>[key,{totalPrice:[70,80,90,110][index]*60,requiresSplit:false,reviewRequired:false,dualTariff:true,pricingSegments:[{tariffType:'special',type:'special',amount:[70,80,90,110][index]*60}]}]));
+ const fast={meters:60000,seconds:3600,tolls:{amount:0,weekdayAmount:0,weekendAmount:0,period:'',segments:[],pricingStatus:'free',confidence:'none'},pricingByVehicle};
+ const leg={from:'Донецк',to:'Волноваха',fast,free:null};
+ const html=renderToStaticMarkup(React.createElement(ResultPanels,{result:{legs:[leg],specialOnly:true},fastestOnly:true,tollPeriod:'actual',onTollPeriodChange:()=>{},copyStandard:async()=>{},copiedKey:'',manualToll:'',onManualToll:()=>{},standardHasTolls:false,standardOptimal:null}));
+ assert.match(html,/4[\s\u00a0\u202f]?200/);
+ assert.match(html,/6[\s\u00a0\u202f]?600/);
+ assert.match(html,/Тариф: Особые тарифные зоны/);
+ assert.doesNotMatch(html,/Обычная часть|Пробег внутри особых/);
 });
 test('V1 logo container has no opaque fill and increases dark contrast',()=>{
  const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');

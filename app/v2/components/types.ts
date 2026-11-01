@@ -71,4 +71,4 @@ export type Leg = {
   freeCandidate?: Trip | null;
   freeError?: string;
 };
-export type Result = { automaticMode?: "standard"|"dual"; legs: Leg[]; options?: Leg[]; mode?: "standard"|"dual"; specialEndpoint?:boolean; crimeaComparisonVerified?:boolean; crimeaAccepted?:boolean };
+export type Result = { automaticMode?: "standard"|"dual"; legs: Leg[]; options?: Leg[]; mode?: "standard"|"dual"; specialEndpoint?:boolean; specialOnly?:boolean; crimeaComparisonVerified?:boolean; crimeaAccepted?:boolean };

@@ -32,8 +32,17 @@ function validLeg(value:unknown):boolean {
 }
 export function validV3Response(value:unknown):value is Result {
  if(!object(value))return false;
+ if(value.specialOnly!==undefined&&typeof value.specialOnly!=='boolean')return false;
  if(value.automaticMode!==undefined&&!['standard','dual'].includes(String(value.automaticMode)))return false;
  if(!Array.isArray(value.legs)||value.legs.length!==1||!value.legs.every(validLeg))return false;
+ if(value.specialOnly===true){
+  if(value.specialEndpoint!==true||value.mode!=='dual')return false;
+  const trip=value.legs[0].fast;
+  for(const vehicle of ['standard','comfort','comfort_plus','minivan']){
+   const price=trip.pricingByVehicle[vehicle];
+   if(price.totalPrice===null||price.pricingSegments.length!==1||price.pricingSegments[0].tariffType!=='special')return false;
+  }
+ }
  if(value.options!==undefined){
   if(!Array.isArray(value.options)||value.options.length!==1||!value.options.every(validLeg))return false;
   const primary=value.legs[0],option=value.options[0];

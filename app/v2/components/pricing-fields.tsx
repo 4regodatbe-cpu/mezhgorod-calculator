@@ -90,6 +90,7 @@ export function PriceRows({
   manualToll,
   fareOnly = false,
   emphasizeDual = false,
+  specialOnly = false,
 }: {
   trip: Trip;
   toll?: TollView;
@@ -97,9 +98,10 @@ export function PriceRows({
   manualToll?: string;
   fareOnly?: boolean;
   emphasizeDual?: boolean;
+  specialOnly?: boolean;
 }) {
   const hasDualTariff = vehicleKeys.some(([, vehicle]) => trip.pricingByVehicle?.[vehicle]?.dualTariff);
-  if (hasDualTariff) {
+  if (hasDualTariff && !specialOnly) {
     return <DualTariffPriceRows trip={trip} toll={toll} period={period} manualToll={manualToll} fareOnly={fareOnly} emphasizeDual={emphasizeDual} />;
   }
 
