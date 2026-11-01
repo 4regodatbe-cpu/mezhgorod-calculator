@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { candidatePlans, followsPlan } from "../lib/special-territory-policy.ts";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
-import { inspectKrasnodarBypass } from "../lib/toll-engine/krasnodar-bypass-evidence.ts";
+import { inspectKrasnodarBypass, krasnodarBypassControls } from "../lib/toll-engine/krasnodar-bypass-evidence.ts";
 import type { GeoPoint } from "../lib/special-territory-geometry.ts";
 import { readFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
@@ -13,15 +13,15 @@ const yalta={lat:44.4987874,lng:34.1689358};
 const rostov={lat:47.2357,lng:39.7015};
 const coordinates=(positions:Array<{lat:number;lng:number}>):GeoPoint[]=>positions.map(p=>[p.lng,p.lat]);
 
-test("Crimea to northbound M4 uses the paid west bypass in both driving directions",()=>{
+test("ordinary Crimea plans do not fabricate evidence of a paid west bypass",()=>{
  for(const crimea of [yalta,{lat:44.616,lng:33.525},{lat:45.357,lng:36.468}]) {
   for(const mainland of [rostov,{lat:51.6615,lng:39.2003},{lat:55.7505,lng:37.6175}]) {
-   for(const [from,to,expectedFrom] of [[crimea,mainland,"51"],[mainland,crimea,"0"]] as const) {
+   for(const [from,to] of [[crimea,mainland],[mainland,crimea]] as const) {
     const plan=candidatePlans(from,to,zones)[0];
     const route=coordinates(plan.positions);
     const bypass=inspectKrasnodarBypass(route);
-    assert.equal(bypass.boundaryStatus,"resolved");
-    assert.equal(bypass.from,expectedFrom);
+    assert.equal(bypass.boundaryStatus,"unknown");
+    assert.equal(plan.positions.length,3);
     assert.equal(followsPlan(route,plan.positions,plan.corridor,false),true);
     assert.ok(!plan.positions.some(p=>p.lat===45.045&&p.lng===39.15));
    }
@@ -29,19 +29,19 @@ test("Crimea to northbound M4 uses the paid west bypass in both driving directio
  }
 });
 
-test("Krasnodar, Maykop and Kabardino-Balkaria retain the southern city approach",()=>{
+test("southern mainland destinations do not force an intermediate city",()=>{
  for(const destination of [{lat:45.0355,lng:38.9753},{lat:44.6098,lng:40.1006},{lat:43.4853,lng:43.6071}]) {
   for(const [from,to] of [[yalta,destination],[destination,yalta]]) {
    const plan=candidatePlans(from,to,zones)[0];
-   assert.equal(plan.positions.length,4);
-   assert.ok(plan.positions.some(p=>p.lat===45.045&&p.lng===39.15));
+   assert.equal(plan.positions.length,3);
+   assert.ok(!plan.positions.some(p=>p.lat===45.045&&p.lng===39.15));
    assert.equal(inspectKrasnodarBypass(coordinates(plan.positions)).boundaryStatus,"unknown");
   }
  }
 });
 
 test("a Crimea M4 route must cross the directional plaza, not just pass within broad control tolerance",()=>{
- const plan=candidatePlans(yalta,rostov,zones)[0];
+ const plan={corridor:"mainland" as const,positions:[yalta,{lat:45.2117,lng:36.7161},...krasnodarBypassControls(true),{lat:47.12,lng:39.86},rostov]};
  const shifted=coordinates(plan.positions).map(([lng,lat])=>lng>38.73&&lng<38.75?[lng+0.003,lat] as GeoPoint:[lng,lat] as GeoPoint);
  assert.equal(followsPlan(shifted,plan.positions,plan.corridor,false),false);
  const wrongDirection=coordinates(plan.positions).toReversed();

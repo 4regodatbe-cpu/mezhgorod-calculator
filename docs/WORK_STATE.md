@@ -1,3 +1,7 @@
+## 02.11.2026 — Crimea routing P1 prepublication PASS
+
+[Checkpoint](checkpoints/2026-11-02-crimea-routing-prepublish.md). Ordinary Crimea plans require bridge only; V3 considers all plans by actual seconds. 14 real bidirectional controls HTTP200, six short Crimea cases free/0 with no A289 frame crossing; Moscow/Rostov incomplete tolls remain unknown. Offline 1093 PASS/0 FAIL/1 SKIP, additional six saved-geometry tests PASS, TS/lint/build PASS. Evidence: experiments/crimea-routing-2026-11-02. Owner authorizes push and Production; awaiting hosted checks and release. Main/Android V2 unchanged.
+
 ## 02.11.2026 — Android V1.01 опубликован на Production
 
 [Checkpoint](checkpoints/2026-11-02-android-v101-production-DONE.md). Source/remote `2bba1f4036409ea1a45021fd04c783cce0fc5d4e`; обычный push выполнен. Actions 41352242498/41352242447 SUCCESS: offline 1092 PASS/0 FAIL/1 SKIP, TS/build/browser regressions PASS; live jobs штатно SKIPPED. Production deployment `dpl_7YckGZayaDjZLPQgiSJ6JGws3w5p` READY. Основной /v3 содержит кнопку, браузер подтвердил её ссылку; публичный APK GET HTTP200, 819945 bytes, исходный SHA256 совпал. Production поиск Ростов HTTP200/Ростов-на-Дону первым; полный Донецк→Волноваха HTTP200, 56.678 км, 3414 с, четыре особые суммы и одна группа. Физический Android, обновление старой установки и mobile visual acceptance не проверены. PR14 Draft, main/V2 сохранены. Итоговые документы пока local; Production source 2bba1f40.
