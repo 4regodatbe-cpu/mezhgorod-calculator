@@ -53,9 +53,9 @@ export function CalculatorForm({
         <button type="button" onClick={() => { onModeChange("dual"); onResetResult(); }} className={mode === "dual" ? selectedTab : idleTab}>Двойная тарификация</button>
       </div>
       <div className={"grid min-w-0 items-end gap-2 " + (onSwap ? "sm:grid-cols-[minmax(0,1fr)_2.5rem_minmax(0,1fr)]" : "sm:grid-cols-2")}>
-        <AddressField label="Точка A" value={from} onChange={onFromChange} placeholder="Откуда" />
+        <AddressField label="Точка A" value={from} onChange={onFromChange} placeholder="Откуда" releaseCopy={releaseCopy} />
         {onSwap && <button type="button" aria-label="Поменять точки A и B местами" onClick={onSwap} className="mx-auto grid h-10 w-10 sm:mb-1 place-items-center rounded-full bg-brand-action text-brand-action-foreground shadow-sm transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-focus"><ArrowLeftRight className="h-5 w-5 rotate-90 sm:rotate-0" aria-hidden="true" /></button>}
-        <AddressField label="Точка B" value={to} onChange={onToChange} placeholder="Куда" />
+        <AddressField label="Точка B" value={to} onChange={onToChange} placeholder="Куда" releaseCopy={releaseCopy} />
       </div>
       <div className="mt-4 border-t border-brand-border/15 pt-4">
         <div className="mb-2 flex items-center gap-2 text-sm font-extrabold text-brand-text"><Settings2 className="h-4 w-4 text-brand-action" />{mode === "standard" ? "Тарифы" : "Обычные тарифы"}</div>

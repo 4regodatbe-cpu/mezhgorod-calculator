@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-02 поля A/B LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-address-fields-LOCAL.md). На /v3 внешние подписи визуально скрыты, A/B внутри полей, MapPin/placeholder/aria/реверс сохранены; /v2 не меняет прежний вид. SSR11/11, TS/scoped ESLint PASS. Browser/mobile пока NOT_RUN, push нет. Далее независимые UI-блоки.
+
 ## 01.11.2026 — UI-05 ПВП переключатель удалён из V1 Release LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-pvp-switch-LOCAL.md). На /v3 нет пользовательского ПВП toggle/state/handler; /v2 сохранён. Обязательная серверная тарификация не зависит от no-op диагностического флага. SSR10/10, TS/scoped ESLint PASS. Push не выполнялся; full hosted gate нужен до публикации. Далее UI-02.

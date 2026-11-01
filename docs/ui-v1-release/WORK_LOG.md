@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-02, LOCAL
+
+Release-only внутренние A/B значки рядом с MapPin, внешние строки sr-only; поля и реверс не меняют поведения, /v2 прежний. SSR11/11, TS, scoped lint PASS. Light/dark/mobile визуально не проверены. Commit/bundle local, push запрещён. Далее UI-08 и прочие независимые блоки.
+
 ## 01.11.2026 — UI-05, LOCAL
 
 Скрыт toggle при releaseCopy, из V3 page/hook удалены его state/handler/request field. Серверный diagnostic flag опционален и `void` в route-leg, обязательная проверка дороги сохранена. V2 untouched. SSR10/10, TS, scoped lint, diff check PASS. Full audit/build ожидают подходящей среды, push запрещён. Далее UI-02.

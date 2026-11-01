@@ -24,6 +24,15 @@ test('V1 Release hides the optional PVP switch while V2 retains it',()=>{
  assert.doesNotMatch(render({label:''},{label:''}),/Углублённая проверка ПВП/);
  assert.match(render({label:''},{label:''},false,false),/Углублённая проверка ПВП/);
 });
+test('V1 Release keeps A/B inside fields and accessible names, V2 keeps outer labels',()=>{
+ const current=render({label:''},{label:''});
+ const legacy=render({label:''},{label:''},false,false);
+ assert.equal((current.match(/class="sr-only">Точка [AB]/g)||[]).length,2);
+ assert.match(current,/aria-label="Откуда"/);
+ assert.match(current,/aria-label="Куда"/);
+ assert.equal((current.match(/pointer-events-none absolute left-9 top-3/g)||[]).length,2);
+ assert.equal((legacy.match(/mb-1\.5 block text-xs font-bold uppercase/g)||[]).length,2);
+});
 test('project support card keeps the existing destination and approved copy',()=>{
  const html=renderToStaticMarkup(React.createElement(DonationCard,{releaseCopy:true}));
  assert.match(html,/Поддержать проект «Из А в Б»/);
