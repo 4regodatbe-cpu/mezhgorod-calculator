@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-08 справочное предупреждение LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-result-disclaimer-LOCAL.md). Утверждённая строка появляется только после V1 результата; result-render4/4, TS/scoped ESLint PASS. Визуальная dark/mobile приёмка открыта, push нет. Далее UI-09/12.
+
 ## 01.11.2026 — UI-02 поля A/B LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-address-fields-LOCAL.md). На /v3 внешние подписи визуально скрыты, A/B внутри полей, MapPin/placeholder/aria/реверс сохранены; /v2 не меняет прежний вид. SSR11/11, TS/scoped ESLint PASS. Browser/mobile пока NOT_RUN, push нет. Далее независимые UI-блоки.

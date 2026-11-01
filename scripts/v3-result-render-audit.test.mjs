@@ -6,6 +6,10 @@ function load(file){if(!existsSync(file)){file=['.ts','.tsx'].map(s=>file+s).fin
  const mod={exports:{}};cache.set(file,mod);const code=ts.transpileModule(readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022}}).outputText;
  vm.runInNewContext(code,{module:mod,exports:mod.exports,require:name=>name.startsWith('@/')?load(resolve(root,name.slice(2))):name.startsWith('.')?load(resolve(dirname(file),name)):require(name)});return mod.exports;}
 const {ResultPanels}=load(resolve(root,'app/v2/components/result-panels.tsx'));
+test('V1 Release page renders the reference notice only after a result',()=>{
+ const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');
+ assert.match(page,/\{result && <p role="note"[^>]*>Расчёт носит справочный характер\. Фактический маршрут, время в пути и стоимость проезда по платным дорогам могут отличаться от указанных\.<\/p>\}/);
+});
 test('actual fastest result render preserves night price without confirmation notice',()=>{
  const fare={totalPrice:100,requiresSplit:false,reviewRequired:false,dualTariff:false,pricingSegments:[]};
  const toll={amount:880,weekdayAmount:1130,weekendAmount:1650,period:'ночной проезд',segments:[],pricingStatus:'priced',confidence:'matched'};

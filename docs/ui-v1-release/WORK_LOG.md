@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-08, LOCAL
+
+V3-only conditional reference notice after result. Result render tests4/4, TS, scoped lint PASS; browser dark/mobile NOT_RUN. Commit/bundle local, no push. Далее UI-09/12.
+
 ## 01.11.2026 — UI-02, LOCAL
 
 Release-only внутренние A/B значки рядом с MapPin, внешние строки sr-only; поля и реверс не меняют поведения, /v2 прежний. SSR11/11, TS, scoped lint PASS. Light/dark/mobile визуально не проверены. Commit/bundle local, push запрещён. Далее UI-08 и прочие независимые блоки.
