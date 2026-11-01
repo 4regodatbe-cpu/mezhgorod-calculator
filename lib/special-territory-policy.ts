@@ -23,6 +23,11 @@ export function endpointPolicy(from: Position,to: Position,zones: VerifiedTerrit
 }
 export function candidatePlans(from: Position,to: Position,zones: VerifiedTerritory[]) {
   const endpoints=endpointPolicy(from,to,zones);
+  // A trip wholly between the four special territories has no approach corridor.
+  // Let the providers find the fastest usable direct route; its geometry is
+  // checked separately before any territory split or tariff is accepted.
+  if(endpoints.fromTerritory && endpoints.toTerritory)
+    return [{corridor:"mainland" as const,positions:[from,to]}];
   if(!endpoints.specialEndpoint) {
     const via = inCrimea(from)!==inCrimea(to) ? (inCrimea(from) ? [BRIDGE,KRASNODAR,...(to.lat>46.5?[M4]:[])] : [...(from.lat>46.5?[M4]:[]),KRASNODAR,BRIDGE]) : [];
     return [{ corridor:"mainland" as const,positions:withCrimeaM4Bypass([from,...via,to]) }];
@@ -33,12 +38,10 @@ export function candidatePlans(from: Position,to: Position,zones: VerifiedTerrit
   // On the mainland, these are routing constraints, not a prescribed road:
   // let the router choose the road between endpoints and reject Crimea transit below.
   // Keep Bridge → Krasnodar → M-4 controls only when one endpoint is in Crimea.
-  const mainland=endpoints.fromTerritory && endpoints.toTerritory
-    ? [from,to]
-    : [start,...(inCrimea(start)?[BRIDGE,KRASNODAR,M4]:[]),end];
-  const crimea=endpoints.fromTerritory && endpoints.toTerritory ? [from,CRIMEA_INTERIOR,to] : [start,...(inCrimea(start)?[]:[...(start.lat>46.5?[M4]:[]),KRASNODAR,BRIDGE]),CRIMEA_INTERIOR,end];
+  const mainland=[start,...(inCrimea(start)?[BRIDGE,KRASNODAR,M4]:[]),end];
+  const crimea=[start,...(inCrimea(start)?[]:[...(start.lat>46.5?[M4]:[]),KRASNODAR,BRIDGE]),CRIMEA_INTERIOR,end];
   // Geographic policy selects one corridor; the former timing threshold no longer applies.
-  // If both endpoints are special, endpoint B determines the approach.
+  // This approach rule applies only when exactly one endpoint is special.
   const specialPoint=endpoints.toTerritory?to:from;
   const corridor=inCrimeaApproachZone(specialPoint)?"crimea" as const:"mainland" as const;
   const positions=corridor==="crimea"?crimea:mainland;

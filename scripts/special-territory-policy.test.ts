@@ -64,13 +64,23 @@ test("geographic route zone selects one corridor without forcing a mainland deto
  assert.equal(followsPlan([[k.lng,k.lat],[d.lng,d.lat]],donetskPlans[0].positions,"mainland",true),true,"direct mainland route is accepted");
  assert.equal(followsPlan([[k.lng,k.lat],[34.1689,44.4988],[d.lng,d.lat]],donetskPlans[0].positions,"mainland",true),false,"mainland route crossing Crimea is still rejected");
  const kherson={lat:46.6354,lng:32.6169};
- assert.equal(candidatePlans(kherson,d,zones)[0].corridor,"mainland","special destination outside the routing zone selects mainland");
- assert.equal(candidatePlans(d,kherson,zones)[0].corridor,"crimea","reversed trip uses its special destination inside the routing zone");
+ assert.equal(candidatePlans(kherson,d,zones)[0].corridor,"mainland","internal trip has no approach corridor");
+ assert.equal(candidatePlans(d,kherson,zones)[0].corridor,"mainland","reverse internal trip has no Crimea detour");
  assert.equal(candidatePlans(kherson,d,zones).length,1);
  const edgeMidpoint={lng:31.16,lat:46.39};
  assert.equal(inCrimeaApproachZone(edgeMidpoint),true,"a point exactly on the screenshot-traced contour is included");
  assert.equal(inCrimeaApproachZone({lng:31.16,lat:46.389}),false,"a point just outside the contour remains outside");
  assert.equal(inCrimeaApproachZone({lng:31.16,lat:46.391}),true,"a point just inside the contour remains inside");
+});
+test("two special endpoints use direct controls in both directions and across regions",()=>{
+ const volnovakha={lat:47.6019,lng:37.4968};
+ const melitopol={lat:46.848,lng:35.365};
+ const kherson={lat:46.6354,lng:32.6169};
+ for(const [from,to] of [[d,volnovakha],[volnovakha,d],[d,melitopol],[melitopol,d],[d,kherson],[kherson,d]] as const){
+  const policy=endpointPolicy(from,to,zones);
+  assert.ok(policy.fromTerritory&&policy.toTerritory);
+  assert.deepEqual(candidatePlans(from,to,zones),[{corridor:"mainland",positions:[from,to]}]);
+ }
 });
 const synthetic:VerifiedTerritory[]=(["dnr","lnr","zaporizhzhia","kherson"] as const).map((id,i)=>({id,verified:true,source:{url:"https://example.org",title:"test",checkedAt:"2026-10-03"},geometry:{type:"Polygon",coordinates:[[[i*10,-1],[i*10+2,-1],[i*10+2,1],[i*10,1],[i*10,-1]]]}}));
 const legs=[{meters:100000,seconds:900,coordinates:[[-1,0],[0,0]] as GeoPoint[]},{meters:200000,seconds:8000,coordinates:[[0,0],[1,0],[2,0]] as GeoPoint[]},{meters:100000,seconds:1100,coordinates:[[2,0],[3,0]] as GeoPoint[]}];
