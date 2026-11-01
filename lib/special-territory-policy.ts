@@ -36,8 +36,10 @@ export function candidatePlans(from: Position,to: Position,zones: VerifiedTerrit
   if(endpoints.fromTerritory && endpoints.toTerritory)
     return [{corridor:"mainland" as const,positions:[from,to]}];
   if(!endpoints.specialEndpoint) {
-    const via = inCrimea(from)!==inCrimea(to) ? (inCrimea(from) ? [BRIDGE,KRASNODAR,...(to.lat>46.5?[M4]:[])] : [...(from.lat>46.5?[M4]:[]),KRASNODAR,BRIDGE]) : [];
-    return [{ corridor:"mainland" as const,positions:withCrimeaM4Bypass([from,...via,to]) }];
+    // The bridge is the geographic constraint. Mainland roads (including
+    // Krasnodar/M4 on long trips) are chosen by actual provider travel time.
+    const via = inCrimea(from)!==inCrimea(to) ? [BRIDGE] : [];
+    return [{ corridor:"mainland" as const,positions:[from,...via,to] }];
   }
   // Orient the controls toward the special endpoint, including reverse trips.
   const reverse = endpoints.fromTerritory!==null && endpoints.toTerritory===null;

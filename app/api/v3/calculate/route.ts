@@ -115,8 +115,12 @@ export async function POST(request: NextRequest) {
       const specialOnly = isInternalSpecialRoute(from.position,to.position,special.options[0].split,zones);
       return respond({legs:options,options,mode,automaticMode,specialEndpoint:true,specialOnly,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
     }
-    const plan=candidatePlans(from.position,to.position,zones)[0];
-    const leg=await timing.measure("route_leg", () => calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true,timing,request.signal));
+    const plans=candidatePlans(from.position,to.position,zones);
+    const candidates=await Promise.allSettled(plans.map(plan => timing.measure("route_leg", () => calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true,timing,request.signal))));
+    const available=candidates.flatMap(candidate=>candidate.status==="fulfilled"?[candidate.value]:[]);
+    available.sort((a,b)=>a.fast.seconds-b.fast.seconds || a.fast.meters-b.fast.meters);
+    if(!available.length)throw candidates.find(candidate=>candidate.status==="rejected")?.reason ?? new Error("ROUTING_UNAVAILABLE");
+    const leg=available[0];
     request.signal.throwIfAborted();
     const attachAlternative = <T extends { meters:number;seconds:number;coordinates:Coordinate[] }>(trip:T|null) => {
       if(!trip)return null;
