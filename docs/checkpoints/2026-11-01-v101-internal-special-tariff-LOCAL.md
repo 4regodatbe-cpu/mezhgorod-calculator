@@ -11,7 +11,7 @@
 
 ## Доказательства и ограничения
 
-- `scripts/v3-internal-special-pricing.test.ts`: управляемый реальный API с имитацией OSRM проверяет суммы 4200/4800/5400/6600 ₽ за 60 км, ручной override и отказ маршрута с выходом из зоны. UI SSR проверяет 4 поля вместо 8, один тариф и сохранение V2.
+- `scripts/v3-internal-special-pricing.test.ts`: управляемый реальный API с имитацией OSRM проверяет в обоих направлениях суммы 4200/4800/5400/6600 ₽ за 60 км, ручной override и отказ маршрута с выходом из зоны. UI SSR проверяет 4 поля вместо 8, один тариф и сохранение V2. Обратное направление добавлено отдельным последующим локальным тестовым commit без смены runtime.
 - Целевые наборы `special-territory-policy`, `v3-internal-special-pricing`, `v3-calculator-form-ui`, `v3-result-render-audit`, `local-settlement-api` — PASS. TypeScript и scoped ESLint exit0.
 - `npm run test:audit` exit1: 182/185 test files PASS, три исследовательских child-process файла упали из-за sandbox `spawnSync ... EPERM`; точечный повтор с `with_additional_permissions` сохранил EPERM. Это не PASS обязательного gate.
 - `npx next build` exit1: Turbopack/PostCSS `creating new process / binding to a port / EPERM`, включая штатное дополнительное сетевое разрешение. `npx next build --webpack` exit0, Next 16.3.4, 16/16 static pages; это альтернативная, не штатная проверка.

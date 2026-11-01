@@ -23,22 +23,27 @@ test("V3 uses one special tariff for verified internal trip even with manual ord
   globalThis.fetch = async input => {
     const url = new URL(String(input));
     requested.push(url.hostname + url.pathname);
-    if (url.hostname === "router.project-osrm.org") return respond(route);
+    if (url.hostname === "router.project-osrm.org") {
+      const reverse=url.pathname.includes("37.4968,47.6019;37.8029,48.0156");
+      return respond(reverse?{routes:[{...route.routes[0],geometry:{coordinates:[...route.routes[0].geometry.coordinates].reverse()}}]}:route);
+    }
     return respond({}, 503);
   };
   try {
-    const response = await POST(request({mode:"standard",modeOverride:true}));
-    const body = await response.json();
-    assert.equal(response.status, 200, JSON.stringify(body));
-    assert.equal(body.mode, "dual");
-    assert.equal(body.specialOnly, true);
-    assert.equal(validV3Response(body), true, JSON.stringify(body));
-    assert.equal(body.legs[0].fast.meters, 60_000);
-    for (const [vehicle,rate] of Object.entries({standard:70,comfort:80,comfort_plus:90,minivan:110})) {
-      const price=body.legs[0].fast.pricingByVehicle[vehicle];
-      assert.equal(price.totalPrice, 60*rate);
-      assert.equal(price.pricingSegments.length,1);
-      assert.equal(price.pricingSegments[0].tariffType,"special");
+    for(const endpoints of [{from:donetsk,to:volnovakha},{from:volnovakha,to:donetsk}]) {
+      const response = await POST(request({...endpoints,mode:"standard",modeOverride:true}));
+      const body = await response.json();
+      assert.equal(response.status, 200, JSON.stringify(body));
+      assert.equal(body.mode, "dual");
+      assert.equal(body.specialOnly, true);
+      assert.equal(validV3Response(body), true, JSON.stringify(body));
+      assert.equal(body.legs[0].fast.meters, 60_000);
+      for (const [vehicle,rate] of Object.entries({standard:70,comfort:80,comfort_plus:90,minivan:110})) {
+        const price=body.legs[0].fast.pricingByVehicle[vehicle];
+        assert.equal(price.totalPrice, 60*rate);
+        assert.equal(price.pricingSegments.length,1);
+        assert.equal(price.pricingSegments[0].tariffType,"special");
+      }
     }
     assert.ok(requested.some(url=>url.startsWith("router.project-osrm.org")));
     assert.equal(requested.some(url=>url.startsWith("photon.komoot.io")),false);
