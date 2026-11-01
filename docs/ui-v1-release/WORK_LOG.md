@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-03, LOCAL
+
+V1 TariffInputs: stronger border, compact padding/smaller Chevron, 44px hit targets preserved, rates/step untouched; V2 styles remain. Initial SSR regex assumed wrong class order, corrected. Form13/13, TS/scoped lint PASS. Visual light/dark/mobile NOT_RUN, commit/bundle local.
+
 ## 01.11.2026 — UI-13, LOCAL
 
 V1 fastest-only dual cards: активная рамка/ring/фон, остальные контрастные; состояние также aria/Chevron, hit area сохранена. V2 стиль прежний. Result7/7, TS/scoped lint PASS; browser NOT_RUN. Commit/bundle local, no push.

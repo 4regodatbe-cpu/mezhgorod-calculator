@@ -40,6 +40,13 @@ test('V1 dual form keeps the zone heading but moves explanation out of the form'
  assert.doesNotMatch(current,/Пробег внутри и вне зон определяется/);
  assert.match(legacy,/Пробег внутри и вне зон определяется/);
 });
+test('V1 rate cards are compact and contrasted while touch targets stay 44px',()=>{
+ const current=render({label:''},{label:''},false,true,'dual');
+ const legacy=render({label:''},{label:''},false,false,'dual');
+ assert.equal((current.match(/border-brand-border\/70 p-1\.5/g)||[]).length,8);
+ assert.match(current,/grid h-11 w-11 min-h-11 min-w-11/);
+ assert.equal((legacy.match(/border-brand-border\/25 p-1\.5/g)||[]).length,8);
+});
 test('project support card keeps the existing destination and approved copy',()=>{
  const html=renderToStaticMarkup(React.createElement(DonationCard,{releaseCopy:true}));
  assert.match(html,/Поддержать проект «Из А в Б»/);
