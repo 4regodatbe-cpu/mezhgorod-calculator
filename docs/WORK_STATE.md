@@ -1,3 +1,7 @@
+## 01.11.2026 — V1 Release push выполнен, CI/Preview FAILED
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-push-ci-FAILED-local-followup.md). Единственный разрешённый fast-forward push опубликован как `55aa69ae…`; GitHub remote/readback PASS, PR14 Draft. Четыре Actions завершились FAILURE: два offline clipboard harness assertion после удаления UI-05 state; B03 browser job SUCCESS (current 10/10), timing SUCCESS, live_probe отдельно упал на Photon 503/cooldown для Донецка. Preview точного SHA создан, но ERROR на тех же offline assertions. Локальный узкий test fix 9/9, TS/lint PASS, **не опубликован**; второй push запрещён данным разрешением. Desktop/mobile Preview NOT_RUN, AUDIT-01 PARTIAL, Production прежний.
+
 ## 01.11.2026 — V1 Release UI локальная передача PARTIAL
 
 [Матрица](ui-v1-release/ACCEPTANCE_STATUS.md), [checkpoint](checkpoints/2026-11-01-ui-v1-local-handoff-PARTIAL.md). 14/14 UI-пунктов имеют локальные изменения; form16/16, result7/7, TS/scoped lint PASS. Визуальная и hosted CI/Preview приёмка открыта; AUDIT-01 PARTIAL с локальными 502 до pricing. Remote `beb57c80…` read-only подтверждён, PR14 OPEN/Draft, Production не менялся. Push нет.

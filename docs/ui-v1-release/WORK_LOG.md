@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — единственный push, CI/Preview FAILED, локальное исправление теста
+
+[Checkpoint](../../docs/checkpoints/2026-11-01-ui-v1-push-ci-FAILED-local-followup.md). Remote `55aa69ae…`/readback PASS, PR14 Draft. Actions 41288602244, 41288607999, 41288602256, 41288608013 FAILURE; B03 browser job SUCCESS, 2 stale clipboard harness indices остановили offline gate/Next build. `live_probe` Донецк Photon 503/cooldown отдельно FAILURE. Preview `dpl_GksaLeCZEyz3BLRfkYqy981ibnVh` ERROR, browser acceptance NOT_RUN. Индексы исправлены только локально (hook9/9, TS/lint PASS), второй push не выполнялся. AUDIT-01 PARTIAL.
+
 ## 01.11.2026 — локальная передача PARTIAL
 
 [Матрица](ACCEPTANCE_STATUS.md), [checkpoint](../../docs/checkpoints/2026-11-01-ui-v1-local-handoff-PARTIAL.md). Все UI01–14 реализованы локально, но visual/hosted gates не закрыты. AUDIT-01 остаётся PARTIAL. Remote read-only `beb57c80…`, PR14 Draft; push нет.

@@ -27,7 +27,7 @@ test('reset and unmount prevent late response commitment',async()=>{
 test('clipboard failure is handled and never reports success',async()=>{
  const h=harness(async()=>Response.json({}),{writeText:async()=>{throw Error('denied');}});
  const d=data('A'),leg=d.legs[0];await h.hook.copyStandard('k','title',leg,leg.fast,toll,undefined,'actual');
- assert.equal(h.states[5],'');assert.match(h.states[1],/буферу обмена/);h.cleanup();
+ assert.equal(h.states[4],'');assert.match(h.states[1],/буферу обмена/);h.cleanup();
 });
 test('clipboard contains the same actual toll and warning as the displayed quote',async()=>{
  let copied='';const h=harness(async()=>Response.json({}),{writeText:async text=>{copied=text;}});
@@ -49,7 +49,7 @@ test('a late clipboard completion cannot mark a reset quote copied',async()=>{
  const pending=deferred(),d=data('A');
  const h=harness(async url=>Response.json(url==='/api/collect'?{}:d),{writeText:()=>pending.promise});
  await h.hook.calculate();const leg=d.legs[0];const copy=h.hook.copyStandard('old','title',leg,leg.fast,toll,undefined,'actual');
- h.hook.clearResult();pending.resolve();await copy;assert.equal(h.states[5],'');assert.equal(h.states[0],null);h.cleanup();
+ h.hook.clearResult();pending.resolve();await copy;assert.equal(h.states[4],'');assert.equal(h.states[0],null);h.cleanup();
 });
 
 
