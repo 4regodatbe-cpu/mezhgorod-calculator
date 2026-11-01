@@ -8,12 +8,20 @@ const require=createRequire(import.meta.url),ts=require('typescript'),React=requ
 const root=resolve(dirname(new URL(import.meta.url).pathname),'..'),cache=new Map();
 function load(file){if(!existsSync(file))file=['.ts','.tsx'].map(s=>file+s).find(existsSync);if(cache.has(file))return cache.get(file).exports;const mod={exports:{}};cache.set(file,mod);const code=ts.transpileModule(readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022}}).outputText;vm.runInNewContext(code,{module:mod,exports:mod.exports,require:name=>name.startsWith('.')?load(resolve(dirname(file),name)):require(name)});return mod.exports;}
 const {CalculatorForm}=load(resolve(root,'app/v2/components/calculator-form.tsx'));
+const {DonationCard}=load(resolve(root,'app/v2/components/donation-card.tsx'));
 const defaults={standard:25,comfort:30,comfortPlus:35,minivan:50};
 function render(from,to,loading=false){return renderToStaticMarkup(React.createElement(CalculatorForm,{mode:'standard',onModeChange:()=>{},onResetResult:()=>{},from,onFromChange:()=>{},to,onToChange:()=>{},onSwap:()=>{},rates:defaults,onRatesChange:()=>{},specialRates:defaults,onSpecialRatesChange:()=>{},urgent:false,onUrgentChange:()=>{},urgentPercent:20,onUrgentPercentChange:()=>{},loading,hasResult:false,error:'',onCalculate:()=>{},deepTollDiagnostics:false,onDeepTollDiagnosticsChange:()=>{}}));}
 test('both loading indicators use the approved one-minute message',()=>{
  const html=render({label:'Москва'},{label:'Казань'},true);
  assert.equal(html.split('Подождите минуту, пока загружается маршрут.').length-1,2);
  assert.doesNotMatch(html,/Подождите пару минут/);
+});
+test('project support card keeps the existing destination and approved copy',()=>{
+ const html=renderToStaticMarkup(React.createElement(DonationCard));
+ assert.match(html,/Поддержать проект «Из А в Б»/);
+ assert.match(html,/Калькулятор развивается и остаётся бесплатным/);
+ assert.match(html,/href="https:\/\/t\.tb\.ru\/pm_short\/4YCKLToUeM6"/);
+ assert.doesNotMatch(html,/Сбор на API Яндекс Карт/);
 });
 test('both calculate buttons wait until both addresses are entered, and swap control is rendered',()=>{
  const incomplete=render({label:'Москва'}, {label:'   '});

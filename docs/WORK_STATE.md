@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-07 поддержка проекта LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-project-support-LOCAL.md). Утверждённый текст карточки поддержки и кнопки внедрён, прежний платёжный URL сохранён; общий компонент /v3 и /v2. SSR regression 7/7 PASS, TypeScript PASS, scoped ESLint exit0. Full gate/build остаются непроверенными в подходящей среде после локального sandbox EPERM; push не разрешён. Следующий блок — AUDIT-01 без смены бизнес-правил.
+
 ## 01.11.2026 — UI-06 текст ожидания LOCAL, gate ограничен sandbox
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-loading-copy-LOCAL.md). Две строки общего `CalculatorForm` обновлены на «Подождите минуту», новый SSR test 6/6 PASS. TypeScript PASS, lint exit0/7 прежних warnings. Локальный `test:audit` остановился на трёх известных child-process failures; Next build — EPERM при создании процесса/порта Turbopack. Не считать полный gate/build пройденными. Только локальный commit/bundle, push не разрешён. Следующее UI-07, затем hosted gate при отдельном разрешении на публикацию.
