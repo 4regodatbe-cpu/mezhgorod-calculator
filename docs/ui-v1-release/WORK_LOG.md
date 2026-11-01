@@ -100,3 +100,6 @@ Vercel Preview `dpl_46d42SspdWHkqaG4SnB49jCXWS92` READY, Git SHA совпада�
 ## 01.11.2026 — mobile browser attempt, BLOCKED_BY_ENV
 
 Локальный `next start` для Webpack-сборки READY при дополнительном сетевом разрешении. Chromium 390×844 с отключённым JavaScript и 18-секундным лимитом повторял TLS `net_error -202` и не создал screenshot. Это не визуальный PASS; SSR группы/карточки прошёл отдельно. Процесс браузера и локальный сервер остановлены, push нет.
+## 01.11.2026 18:49 UTC — V1.01 special routes / Rostov publication, PARTIAL
+
+Один fast-forward push `2c52c814…` → `3f185c7b…` успешен; remote readback и PR14 Draft подтверждены. Hosted route-quality и B03 browser SUCCESS (10/10 current browser); special verify offline 1090 PASS/0 FAIL/1 SKIP, TS/build PASS. `calculation_timing` Donetsk→Moscow HTTP200; `live_probe` отдельно FAILED на Photon HTTP503/cooldown для Донецка. Preview этого SHA READY, но Vercel Authentication и отсутствие CLI/OIDC плюс browser connector UNAVAILABLE не позволяют провести живые desktop/mobile сценарии. Контрольные внутренние/обратные маршруты и четыре суммы в Preview не подтверждены. Полные данные и ссылки: [checkpoint](../checkpoints/2026-11-01-1849-v101-special-push-preview-PARTIAL.md). Запись local; нового push нет.
