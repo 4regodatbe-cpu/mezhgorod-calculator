@@ -69,7 +69,7 @@ export default function V3Page() {
   const standardOptimal = standardLeg ? pickOptimal(standardLeg.fast, standardLeg.free) : null;
   return <main translate="no" className="notranslate calculator-modern min-h-screen bg-brand-page pb-[env(safe-area-inset-bottom)] text-brand-text">
     <div className="v2-page-inset mx-auto w-full max-w-3xl px-3 sm:px-6">
-      <header className="mb-4 flex items-center justify-between gap-2">
+      <header className="mb-2 flex items-center justify-between gap-2 sm:mb-4">
         <div className="flex min-w-0 items-center gap-2.5">
           <a href="/v3" aria-label="из А в Б — калькулятор" className="shrink-0 rounded-xl p-1"><Image src="/izavb-approved-logo.svg" alt="из А в Б" width={136} height={60} priority className="dark:invert" /></a>
           <div className="min-w-0"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><p className="text-xs font-semibold text-brand-muted">V1 Release · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">V2 · старый алгоритм</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>

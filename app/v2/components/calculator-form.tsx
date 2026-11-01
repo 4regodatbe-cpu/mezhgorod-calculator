@@ -48,7 +48,7 @@ export function CalculatorForm({
   const idleTab = "min-h-11 rounded-xl px-2 text-sm font-extrabold text-brand-muted transition hover:text-brand-text";
   return (
     <section translate="no" className="notranslate min-w-0 rounded-[1.5rem] border border-brand-border/20 bg-brand-surface p-3 shadow-[0_14px_40px_rgba(16,42,67,.08)] sm:p-5">
-      <div className="mb-4 grid grid-cols-2 rounded-2xl bg-brand-subtle p-1">
+      <div className={(releaseCopy ? "mb-2.5" : "mb-4") + " grid grid-cols-2 rounded-2xl bg-brand-subtle p-1"}>
         <button type="button" onClick={() => { onModeChange("standard"); onResetResult(); }} className={mode === "standard" ? selectedTab : idleTab}>Обычный расчёт</button>
         <button type="button" onClick={() => { onModeChange("dual"); onResetResult(); }} className={mode === "dual" ? selectedTab : idleTab}>Двойная тарификация</button>
       </div>
@@ -57,7 +57,7 @@ export function CalculatorForm({
         {onSwap && <button type="button" aria-label="Поменять точки A и B местами" onClick={onSwap} className="mx-auto grid h-10 w-10 sm:mb-1 place-items-center rounded-full bg-brand-action text-brand-action-foreground shadow-sm transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-focus"><ArrowLeftRight className="h-5 w-5 rotate-90 sm:rotate-0" aria-hidden="true" /></button>}
         <AddressField label="Точка B" value={to} onChange={onToChange} placeholder="Куда" releaseCopy={releaseCopy} />
       </div>
-      <div className="mt-4 border-t border-brand-border/15 pt-4">
+      <div className={(releaseCopy ? "mt-3 pt-3" : "mt-4 pt-4") + " border-t border-brand-border/15"}>
         <div className="mb-2 flex items-center gap-2 text-sm font-extrabold text-brand-text"><Settings2 className="h-4 w-4 text-brand-action" />{mode === "standard" ? "Тарифы" : "Обычные тарифы"}</div>
         <div className={mode === "dual" ? "rounded-2xl border border-brand-border/25 bg-brand-subtle/30 p-2 sm:p-3" : ""}>
           {mode === "dual" && <p className="mb-2 text-xs font-bold uppercase tracking-wide text-brand-muted">Обычная часть маршрута</p>}
@@ -65,7 +65,7 @@ export function CalculatorForm({
         </div>
         {mode === "dual" && <div className="mt-2 rounded-2xl border border-brand-route/30 bg-brand-route/5 p-2 sm:mt-3 sm:p-3"><p className="mb-2 text-xs font-bold uppercase tracking-wide text-brand-route">{releaseCopy ? "Особые тарифные зоны" : "Внутри особых тарифных зон"}</p><TariffInputs rates={specialRates} setRates={onSpecialRatesChange} compact idPrefix="special-rate" releaseCopy={releaseCopy} />{!releaseCopy && <p className="mt-1.5 text-[11px] leading-snug text-brand-muted">Пробег внутри и вне зон определяется по маршруту автоматически.</p>}</div>}
       </div>
-      <div className="mt-3 flex min-w-0 flex-wrap items-center gap-3 rounded-2xl bg-brand-subtle p-3">
+      <div className={(releaseCopy ? "mt-2 p-2.5" : "mt-3 p-3") + " flex min-w-0 flex-wrap items-center gap-3 rounded-2xl bg-brand-subtle"}>
         <button type="button" role="switch" aria-label="Срочная поездка" aria-checked={urgent} onClick={() => onUrgentChange(!urgent)} className={"relative h-7 w-12 shrink-0 rounded-full transition " + (urgent ? "bg-brand-accent" : "bg-brand-border/50")}><span className={"absolute top-1 h-5 w-5 rounded-full bg-brand-surface transition " + (urgent ? "left-6" : "left-1")} /></button>
         <span className="text-sm font-extrabold text-brand-text">Срочная поездка</span>
         {urgent && <label className="ml-auto flex items-center gap-1 rounded-xl border border-brand-border/20 bg-brand-surface px-2"><Percent className="h-4 w-4 text-brand-accent" /><input aria-label="Наценка за срочность" type="number" min="0" max="500" value={urgentPercent} onChange={(event) => onUrgentPercentChange(clampNumber(Number(event.target.value), 0, 500, 0))} className="h-9 w-14 bg-transparent text-right font-bold text-brand-text outline-none" /><span className="text-sm text-brand-muted">%</span></label>}

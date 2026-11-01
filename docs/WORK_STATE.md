@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-04 компактный первый экран LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-first-screen-LOCAL.md). Только V1: вертикальные отступы первого экрана уменьшены без уменьшения текста/44px кнопок и без изменения V2; form SSR16/16, TypeScript/scoped lint/diff PASS. Геометрия mobile, увеличенный системный шрифт и клавиатура NOT_RUN — пользовательская приёмка открыта. 14/14 UI-пунктов имеют локальные изменения, но не все визуально подтверждены; AUDIT-01 PARTIAL. No push.
+
 ## 01.11.2026 — AUDIT-01 локальное воспроизведение PARTIAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-audit01-route-reproduction-PARTIAL-LOCAL.md). Два реальных route POST с центрами GeoNames завершились HTTP502 до `response_pricing` (~5.2/5.6 с), leg/геометрия/суммы отсутствуют. Причина 614,2 км и отсутствие четырёх тарифов именно в Preview остаются неустановленными; тарифы/политика не менялись, одинаковые live-запросы не повторять. Нужен исходный успешный Preview response/trace. Только local commit/bundle, no push.

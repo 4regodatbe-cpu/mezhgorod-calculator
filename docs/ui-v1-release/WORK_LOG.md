@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-04, LOCAL
+
+[Checkpoint](../../docs/checkpoints/2026-11-01-ui-v1-first-screen-LOCAL.md). Снижены вертикальные отступы первого мобильного экрана V1 без сокращения текста/44px targets и без изменения V2. SSR16/16, TS/scoped lint PASS; реальные viewport и увеличенный шрифт NOT_RUN. Все UI01–14 реализованы локально, визуальная/hosted приёмка не закрыта. No push.
+
 ## 01.11.2026 — AUDIT-01, PARTIAL LOCAL
 
 [Checkpoint](../../docs/checkpoints/2026-11-01-ui-v1-audit01-route-reproduction-PARTIAL-LOCAL.md). Два реальных POST к V3 handler для Донецка→Волновахи/Мелитополя: HTTP502, остановка на special_options/routing до pricing; сохранены полные ответы и timing. Наблюдения Preview о суммах и 614,2 км не воспроизведены; точная причина требует исходного успешного response/trace, одинаковые live-пробы не повторялись. No push.

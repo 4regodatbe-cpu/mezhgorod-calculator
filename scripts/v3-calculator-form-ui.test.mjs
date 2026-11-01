@@ -47,6 +47,19 @@ test('V1 rate cards are compact and contrasted while touch targets stay 44px',()
  assert.match(current,/grid h-11 w-11 min-h-11 min-w-11/);
  assert.equal((legacy.match(/border-brand-border\/25 p-1\.5/g)||[]).length,8);
 });
+test('V1 first-screen vertical spacing is compact without shrinking text or V2 spacing',()=>{
+ const current=render({label:''},{label:''});
+ const legacy=render({label:''},{label:''},false,false);
+ const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');
+ assert.match(page,/header className="mb-2 flex/);
+ assert.match(current,/class="mb-2\.5 grid grid-cols-2 rounded-2xl/);
+ assert.match(current,/class="mt-3 pt-3 border-t/);
+ assert.match(current,/class="mt-2 p-2\.5 flex min-w-0/);
+ assert.match(legacy,/class="mb-4 grid grid-cols-2 rounded-2xl/);
+ assert.match(legacy,/class="mt-4 pt-4 border-t/);
+ assert.match(legacy,/class="mt-3 p-3 flex min-w-0/);
+ assert.match(current,/grid h-11 w-11 min-h-11 min-w-11/);
+});
 test('V1 dual form keeps eight tariffs, urgent switch and one mobile calculate action after a result',()=>{
  const current=render({label:'Москва'},{label:'Казань'},false,true,'dual',true);
  const legacy=render({label:'Москва'},{label:'Казань'},false,false,'dual',true);
