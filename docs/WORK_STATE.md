@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-06 текст ожидания LOCAL, gate ограничен sandbox
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-loading-copy-LOCAL.md). Две строки общего `CalculatorForm` обновлены на «Подождите минуту», новый SSR test 6/6 PASS. TypeScript PASS, lint exit0/7 прежних warnings. Локальный `test:audit` остановился на трёх известных child-process failures; Next build — EPERM при создании процесса/порта Turbopack. Не считать полный gate/build пройденными. Только локальный commit/bundle, push не разрешён. Следующее UI-07, затем hosted gate при отдельном разрешении на публикацию.
+
 ## 01.11.2026 — UI-01 V1 Release: название на экране DONE
 
 [Требования и список UI-наблюдений](ui-v1-release/README.md), [checkpoint](checkpoints/2026-11-01-ui-v1-release-header-DONE.md). В `app/v3/page.tsx` подпись «Актуальный калькулятор» заменена на «V1 Release» без изменения расположения, логотипа, V2, маршрутов/тарифов/API. Исходный UI commit `f63fb41ce8c06553f8328574258fe41ee00e1131`; GitHub readback PASS. Actions Special Territory 41251210383 и B03 41251210382 SUCCESS. Vercel Preview dpl_ENRgrowFr9Uv6spwpcPngPvek6WN READY на точном commit, HTML /v3 200 и содержит новую подпись; desktop/mobile browser NOT_RUN (Opera UNAVAILABLE). PR14 Draft, Production на e3ca3783 без изменений. UI-02—UI-05 — только наблюдения, не реализованы. Следующее: согласовать приоритет следующих интерфейсных изменений; не менять дизайн по предположению.
