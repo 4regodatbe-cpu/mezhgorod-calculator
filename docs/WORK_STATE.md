@@ -1,3 +1,7 @@
+## 01.11.2026 — AUDIT-01 ограниченная проверка STARTED LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-audit01-STARTED-LOCAL.md). Три центра городов подтверждены локальным GeoNames; далее ровно два real route POST для причины отсутствующих/сомнительных сумм. Без смены политики, no push.
+
 ## 01.11.2026 — UI-10 прокрутка dual LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-dual-scroll-LOCAL.md). Одноразовая rAF прокрутка при переходе в dual, без реакции на тарифные ставки и активный ввод. Form15/15, TS/scoped lint PASS. Browser keyboard/mobile NOT_RUN, push нет.
