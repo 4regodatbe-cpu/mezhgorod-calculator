@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-09, LOCAL
+
+Удалено техническое описание локальной базы из footer V3, сохранены GeoNames и CC BY 4.0 links; статистика не затронута. Result-render5/5, TS/scoped lint PASS. Commit/bundle local, no push. Далее UI-12.
+
 ## 01.11.2026 — UI-08, LOCAL
 
 V3-only conditional reference notice after result. Result render tests4/4, TS, scoped lint PASS; browser dark/mobile NOT_RUN. Commit/bundle local, no push. Далее UI-09/12.

@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-09 атрибуция LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-attribution-LOCAL.md). Технический текст справочника убран с /v3, GeoNames/CC BY 4.0 attribution сохранена, статистика не менялась. Result-render5/5, TS/scoped lint PASS; push нет. Далее UI-12 и независимые блоки.
+
 ## 01.11.2026 — UI-08 справочное предупреждение LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-result-disclaimer-LOCAL.md). Утверждённая строка появляется только после V1 результата; result-render4/4, TS/scoped ESLint PASS. Визуальная dark/mobile приёмка открыта, push нет. Далее UI-09/12.
