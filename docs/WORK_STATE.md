@@ -1,3 +1,7 @@
+## 01.11.2026 — V1/V2 тексты изолированы LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-v2-copy-isolation-LOCAL.md). `releaseCopy` включён только на /v3: UI-06/07 видны в V1 Release, старый /v2 сохранил прежние строки. SSR 9/9 PASS, TypeScript/scoped ESLint PASS. Push не выполнялся; full gate/build ожидают подходящей среды. Далее другие UI-блоки.
+
 ## 01.11.2026 — UI-07 поддержка проекта LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-project-support-LOCAL.md). Утверждённый текст карточки поддержки и кнопки внедрён, прежний платёжный URL сохранён; общий компонент /v3 и /v2. SSR regression 7/7 PASS, TypeScript PASS, scoped ESLint exit0. Full gate/build остаются непроверенными в подходящей среде после локального sandbox EPERM; push не разрешён. Следующий блок — AUDIT-01 без смены бизнес-правил.

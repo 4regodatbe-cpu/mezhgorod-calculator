@@ -10,18 +10,27 @@ function load(file){if(!existsSync(file))file=['.ts','.tsx'].map(s=>file+s).find
 const {CalculatorForm}=load(resolve(root,'app/v2/components/calculator-form.tsx'));
 const {DonationCard}=load(resolve(root,'app/v2/components/donation-card.tsx'));
 const defaults={standard:25,comfort:30,comfortPlus:35,minivan:50};
-function render(from,to,loading=false){return renderToStaticMarkup(React.createElement(CalculatorForm,{mode:'standard',onModeChange:()=>{},onResetResult:()=>{},from,onFromChange:()=>{},to,onToChange:()=>{},onSwap:()=>{},rates:defaults,onRatesChange:()=>{},specialRates:defaults,onSpecialRatesChange:()=>{},urgent:false,onUrgentChange:()=>{},urgentPercent:20,onUrgentPercentChange:()=>{},loading,hasResult:false,error:'',onCalculate:()=>{},deepTollDiagnostics:false,onDeepTollDiagnosticsChange:()=>{}}));}
+function render(from,to,loading=false,releaseCopy=true){return renderToStaticMarkup(React.createElement(CalculatorForm,{mode:'standard',onModeChange:()=>{},onResetResult:()=>{},from,onFromChange:()=>{},to,onToChange:()=>{},onSwap:()=>{},rates:defaults,onRatesChange:()=>{},specialRates:defaults,onSpecialRatesChange:()=>{},urgent:false,onUrgentChange:()=>{},urgentPercent:20,onUrgentPercentChange:()=>{},loading,hasResult:false,error:'',onCalculate:()=>{},deepTollDiagnostics:false,onDeepTollDiagnosticsChange:()=>{},releaseCopy}));}
 test('both loading indicators use the approved one-minute message',()=>{
  const html=render({label:'Москва'},{label:'Казань'},true);
  assert.equal(html.split('Подождите минуту, пока загружается маршрут.').length-1,2);
  assert.doesNotMatch(html,/Подождите пару минут/);
 });
+test('V2 keeps its previous loading text',()=>{
+ const html=render({label:'Москва'},{label:'Казань'},true,false);
+ assert.equal(html.split('Подождите пару минут, пока загружается маршрут.').length-1,2);
+});
 test('project support card keeps the existing destination and approved copy',()=>{
- const html=renderToStaticMarkup(React.createElement(DonationCard));
+ const html=renderToStaticMarkup(React.createElement(DonationCard,{releaseCopy:true}));
  assert.match(html,/Поддержать проект «Из А в Б»/);
  assert.match(html,/Калькулятор развивается и остаётся бесплатным/);
  assert.match(html,/href="https:\/\/t\.tb\.ru\/pm_short\/4YCKLToUeM6"/);
  assert.doesNotMatch(html,/Сбор на API Яндекс Карт/);
+});
+test('V2 keeps its previous support card copy',()=>{
+ const html=renderToStaticMarkup(React.createElement(DonationCard));
+ assert.match(html,/Сбор на API Яндекс Карт/);
+ assert.match(html,/Поддержать подключение/);
 });
 test('both calculate buttons wait until both addresses are entered, and swap control is rendered',()=>{
  const incomplete=render({label:'Москва'}, {label:'   '});
