@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Image from "next/image";
+import { Download } from "lucide-react";
 import { FeedbackForm } from "../v2/components/feedback-form";
 import { DonationCard } from "../v2/components/donation-card";
 import { CalculatorForm } from "../v2/components/calculator-form";
@@ -22,6 +23,8 @@ import type { Place } from "../v2/components/types";
 function storedNumber(key: string, min: number, max: number, fallback: number) { if (typeof window === "undefined") return fallback; try {const saved = localStorage.getItem(key); return saved === null ? fallback : clampNumber(Number(saved), min, max, fallback);}catch{return fallback;} }
 
 export default function V3Page() {
+  const [isAndroidApp, setIsAndroidApp] = useState(false);
+  useEffect(() => { setIsAndroidApp(navigator.userAgent.includes("MezhgorodAndroid")); }, []);
   const resultRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
   const [tollPeriod, setTollPeriod] = useState<TollPeriod>("weekday");
@@ -75,6 +78,7 @@ export default function V3Page() {
         <div className="text-center"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><span className="whitespace-nowrap text-xs font-bold tracking-wide text-brand-muted">V1.01</span></div>
         <div className="flex min-w-0 items-center justify-end gap-1.5"><ThemeToggle /></div>
       </header>
+      {!isAndroidApp && <div className="mb-2 flex justify-end"><a href="/downloads/Iz-A-v-B-V1.01-debug.apk" download="Iz-A-v-B-V1.01-debug.apk" aria-label="Скачать для Android" className="inline-flex min-h-10 items-center gap-1.5 rounded-xl bg-brand-action px-3 text-xs font-bold text-brand-action-foreground transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action"><Download className="h-4 w-4 shrink-0" aria-hidden="true"/>Скачать для Android · V1.01</a></div>}
       <div ref={formRef} className="scroll-mt-2"><CalculatorForm
         releaseCopy
         specialOnly={result?.specialOnly === true}
