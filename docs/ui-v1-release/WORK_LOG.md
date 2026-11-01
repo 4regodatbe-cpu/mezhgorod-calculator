@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — второй push VERIFIED, CI PASS / Preview browser PARTIAL
+
+[Checkpoint](../../docs/checkpoints/2026-11-01-ui-v1-second-push-ci-PASS-preview-PARTIAL.md). `d54bf5bc…` remote/readback PASS; Actions 41290799596/41290799660 overall SUCCESS, offline 1082/0/1, TS/Next build PASS, full local ESLint exit0/7 warnings. `live_probe` отдельно FAILURE (Донецк Photon 503/cooldown). Preview exact SHA READY, но Vercel Authentication без штатного OIDC блокирует браузер. Local Chromium desktop/mobile light/dark с моками PASS; не считать Preview/реальными маршрутами. Production и PR14 Draft без изменений. Документальный checkpoint остаётся local, третьего push нет.
+
 ## 01.11.2026 — единственный push, CI/Preview FAILED, локальное исправление теста
 
 [Checkpoint](../../docs/checkpoints/2026-11-01-ui-v1-push-ci-FAILED-local-followup.md). Remote `55aa69ae…`/readback PASS, PR14 Draft. Actions 41288602244, 41288607999, 41288602256, 41288608013 FAILURE; B03 browser job SUCCESS, 2 stale clipboard harness indices остановили offline gate/Next build. `live_probe` Донецк Photon 503/cooldown отдельно FAILURE. Preview `dpl_GksaLeCZEyz3BLRfkYqy981ibnVh` ERROR, browser acceptance NOT_RUN. Индексы исправлены только локально (hook9/9, TS/lint PASS), второй push не выполнялся. AUDIT-01 PARTIAL.
