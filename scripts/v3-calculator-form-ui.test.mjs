@@ -55,6 +55,13 @@ test('V1 dual form keeps eight tariffs, urgent switch and one mobile calculate a
  assert.equal((current.match(/>Рассчитать поездку</g)||[]).length,2);
  assert.equal((legacy.match(/>Рассчитать поездку</g)||[]).length,1);
 });
+test('V1 page scrolls only on a transition into dual mode',()=>{
+ const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');
+ assert.match(page,/previousModeRef\.current = mode/);
+ assert.match(page,/if \(wasDual \|\| mode !== "dual"\) return/);
+ assert.match(page,/requestAnimationFrame\(\(\) => \{/);
+ assert.match(page,/formRef\.current\?\.scrollIntoView/);
+});
 test('project support card keeps the existing destination and approved copy',()=>{
  const html=renderToStaticMarkup(React.createElement(DonationCard,{releaseCopy:true}));
  assert.match(html,/Поддержать проект «Из А в Б»/);

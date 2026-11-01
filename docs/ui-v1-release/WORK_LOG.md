@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-10, LOCAL
+
+V1-only transition effect scrolls after dual DOM appears, once per mode transition, cleans rAF, skips active input and respects reduced motion. Form15/15, TS/scoped lint PASS. Browser keyboard/mobile NOT_RUN; provisional until Preview. Commit/bundle local.
+
 ## 01.11.2026 — UI-11, LOCAL
 
 V1 fixed mobile calculate доступен и после результата, нижний spacer защищает footer; V2 прежнее поведение. SSR14/14 включая 8 dual полей/urgent, TS/scoped lint PASS. Реальная keyboard/mobile проверка NOT_RUN. Commit/bundle local, no push.

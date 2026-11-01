@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-10 прокрутка dual LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-dual-scroll-LOCAL.md). Одноразовая rAF прокрутка при переходе в dual, без реакции на тарифные ставки и активный ввод. Form15/15, TS/scoped lint PASS. Browser keyboard/mobile NOT_RUN, push нет.
+
 ## 01.11.2026 — UI-11 мобильная кнопка и 8 тарифов LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-dual-action-LOCAL.md). Fixed mobile calculate остаётся после результата только на V1, 8 dual полей и urgent switch сохранены; SSR14/14, TS/scoped lint PASS. Перекрытия/клавиатура требуют браузера, push нет.

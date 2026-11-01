@@ -24,10 +24,22 @@ function storedNumber(key: string, min: number, max: number, fallback: number) {
 
 export default function V3Page() {
   const resultRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
   const [tollPeriod, setTollPeriod] = useState<TollPeriod>("weekday");
   const [from,setFrom]=useState<Place>({label:""});
   const [to,setTo]=useState<Place>({label:""});
   const {mode,setMode,requestMode,onServerMode}=useTariffMode(from,to);
+  const previousModeRef = useRef(mode);
+  useEffect(() => {
+    const wasDual = previousModeRef.current === "dual";
+    previousModeRef.current = mode;
+    if (wasDual || mode !== "dual") return;
+    const frame = requestAnimationFrame(() => {
+      if (document.activeElement instanceof HTMLInputElement) return;
+      formRef.current?.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [mode]);
   const [rates,setRates]=useState(defaults);
   const [specialRates,setSpecialRates]=useState({standard:70,comfort:80,comfortPlus:90,minivan:110});
   const [ratesLoaded,setRatesLoaded]=useState(false);
@@ -64,7 +76,7 @@ export default function V3Page() {
         </div>
         <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle /></div>
       </header>
-      <CalculatorForm
+      <div ref={formRef} className="scroll-mt-2"><CalculatorForm
         releaseCopy
         mode={mode}
         onModeChange={setMode}
@@ -86,7 +98,7 @@ export default function V3Page() {
         hasResult={Boolean(result)}
         error={error}
         onCalculate={calculate}
-      />
+      /></div>
       <div ref={resultRef} className="scroll-mt-3">
         <ResultPanels result={result} standardLeg={standardLeg} standardHasTolls={standardHasTolls} standardOptimal={standardOptimal} manualToll={manualToll} onManualToll={setManualToll} copiedKey={copiedKey} copyStandard={copyStandard} tollPeriod={tollPeriod} onTollPeriodChange={setTollPeriod} fastestOnly/>
         {result && mode === "dual" && <p className="mt-3 rounded-xl border border-brand-route/40 bg-brand-route/5 px-3 py-2 text-sm font-semibold leading-relaxed text-brand-text">Границы участков с обычной и специальной тарификацией определяются автоматически по построенному маршруту.</p>}
