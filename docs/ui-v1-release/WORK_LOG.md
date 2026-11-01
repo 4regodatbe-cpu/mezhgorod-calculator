@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-01, LOCAL
+
+Прозрачный SVG не менялся: opaque cream fill был у anchor V3, удалён; `dark:invert` только в тёмной теме. Result-render7/7, TS/scoped lint PASS. Реальное визуальное подтверждение dark/mobile отсутствует. Commit/bundle local, no push.
+
 ## 01.11.2026 — UI-14, LOCAL
 
 Fastest-only V1 RouteCard имеет новый заголовок и горизонтальные metrics, без изменения маршрута/copy; /v2 прежний badge/text. Result-render6/6, TS/scoped lint PASS, visual NOT_RUN. Commit/bundle local, no push.

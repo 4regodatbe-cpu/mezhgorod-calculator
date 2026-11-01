@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-01 фон логотипа LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-logo-LOCAL.md). Удалена непрозрачная плашка контейнера /v3, тёмная тема инвертирует SVG для контраста; форма логотипа не менялась. Result-render7/7, TS/scoped lint PASS, визуальная приёмка открыта. Push нет.
+
 ## 01.11.2026 — UI-14 заголовок результата LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-route-heading-LOCAL.md). Быстрейшая V1 карточка показывает утверждённое сообщение, усиленный значок, строку расстояния/времени; /v2 не изменён. Result-render6/6, TS/scoped lint PASS. Визуальная узкая ширина и hosted gate открыты, push нет.
