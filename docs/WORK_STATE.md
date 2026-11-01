@@ -1,3 +1,7 @@
+## 01.11.2026 — UI-05 ПВП переключатель удалён из V1 Release LOCAL
+
+[Checkpoint](checkpoints/2026-11-01-ui-v1-pvp-switch-LOCAL.md). На /v3 нет пользовательского ПВП toggle/state/handler; /v2 сохранён. Обязательная серверная тарификация не зависит от no-op диагностического флага. SSR10/10, TS/scoped ESLint PASS. Push не выполнялся; full hosted gate нужен до публикации. Далее UI-02.
+
 ## 01.11.2026 — V1/V2 тексты изолированы LOCAL
 
 [Checkpoint](checkpoints/2026-11-01-ui-v1-v2-copy-isolation-LOCAL.md). `releaseCopy` включён только на /v3: UI-06/07 видны в V1 Release, старый /v2 сохранил прежние строки. SSR 9/9 PASS, TypeScript/scoped ESLint PASS. Push не выполнялся; full gate/build ожидают подходящей среды. Далее другие UI-блоки.

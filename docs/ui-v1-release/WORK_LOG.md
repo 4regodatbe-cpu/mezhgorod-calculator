@@ -1,5 +1,9 @@
 # V1 Release UI — журнал
 
+## 01.11.2026 — UI-05, LOCAL
+
+Скрыт toggle при releaseCopy, из V3 page/hook удалены его state/handler/request field. Серверный diagnostic flag опционален и `void` в route-leg, обязательная проверка дороги сохранена. V2 untouched. SSR10/10, TS, scoped lint, diff check PASS. Full audit/build ожидают подходящей среды, push запрещён. Далее UI-02.
+
 ## 01.11.2026 — изоляция текстов V1/V2, LOCAL
 
 Два общих компонента получили необязательный `releaseCopy`, который выставляет только /v3. /v2 сохранил исторические надписи UI-06/07 без дублирования алгоритма. SSR9/9, TypeScript, scoped ESLint и diff check PASS; React review не выявил новых hooks/эффектов/запросов. Commit/bundle local, без push. Далее UI-01–05/08–14.

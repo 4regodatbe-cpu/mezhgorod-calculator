@@ -20,6 +20,10 @@ test('V2 keeps its previous loading text',()=>{
  const html=render({label:'Москва'},{label:'Казань'},true,false);
  assert.equal(html.split('Подождите пару минут, пока загружается маршрут.').length-1,2);
 });
+test('V1 Release hides the optional PVP switch while V2 retains it',()=>{
+ assert.doesNotMatch(render({label:''},{label:''}),/Углублённая проверка ПВП/);
+ assert.match(render({label:''},{label:''},false,false),/Углублённая проверка ПВП/);
+});
 test('project support card keeps the existing destination and approved copy',()=>{
  const html=renderToStaticMarkup(React.createElement(DonationCard,{releaseCopy:true}));
  assert.match(html,/Поддержать проект «Из А в Б»/);

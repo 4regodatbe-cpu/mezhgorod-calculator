@@ -31,7 +31,6 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [deepTollDiagnostics, setDeepTollDiagnostics] = useState(false);
   const [manualToll, setManualToll] = useState("");
   const [copiedKey, setCopiedKey] = useState("");
 
@@ -92,7 +91,6 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
           from,
           to,
           departureAt: new Date().toISOString(),
-          diagnostics: deepTollDiagnostics,
           rates,
           specialRates,
           multiplier,
@@ -161,5 +159,5 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
   }
 
   const clearResult = () => { pending.current?.abort(); pending.current=null; setLoading(false); setResult(null); setError(""); setManualToll(""); setCopiedKey(""); if(copiedTimer.current)clearTimeout(copiedTimer.current); };
-  return { result, error, loading, deepTollDiagnostics, setDeepTollDiagnostics, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard };
+  return { result, error, loading, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard };
 }
