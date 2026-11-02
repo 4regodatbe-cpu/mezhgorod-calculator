@@ -2,6 +2,15 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {compareCorridors} from './compare.mjs';
 const route=(id,hours,specialHours,km)=>({id,seconds:hours*3600,specialSeconds:specialHours*3600,meters:km*1000,verified:true});
+test('owner trial weight: two ordinary hours equal one special hour; tie prefers less actual time',()=>{
+ const direct=route('direct',1,1,60),external=route('external',2,0,120);
+ const r=compareCorridors([external,direct]);
+ assert.equal(r.specialTimeWeight,2);
+ assert.equal(r.ranked[0].score,r.ranked[1].score);
+ assert.equal(r.selected,'direct');
+ assert.equal(compareCorridors([direct,route('external',1.9,0,115)]).selected,'external');
+ assert.equal(compareCorridors([direct,route('external',2.1,0,125)]).selected,'direct');
+});
 test('huge detour for a small reduction retains the direct trip',()=>{
  const r=compareCorridors([route('direct',3,3,200),route('external',12,2,900)]);
  assert.equal(r.selected,'direct');
