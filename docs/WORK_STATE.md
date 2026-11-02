@@ -1,3 +1,7 @@
+## 02.11.2026 — компактная шапка Android/theme LOCAL
+
+[Checkpoint](checkpoints/2026-11-02-compact-download-header-LOCAL.md). V3 download визуально уменьшен и перенесён в правый верхний стек над ThemeToggle; version text и отдельная download-строка убраны. Mode/address area структурно выше, safe-area сохранена; 44px link touch target. V2/APK URL/тарифы прежние. Target2+17+9 PASS, offline1104/0fail/1skip, TS/lint/build PASS; визуальный browser NOT_RUN. Только local, без push/Production.
+
 ## 02.11.2026 — подписи выбранного проезда опубликованы
 
 [Checkpoint](checkpoints/2026-11-02-route-heading-production-DONE.md). Production/remote76442adbddcedceea8b9ff2b2ddc846ec861b5e7, deployment dpl_7bL6TnTJBw9sPTBhJQaNzo7e4fcE READY. /api/version и опубликованные JS подтвердили новые подписи. Реальные Donetsk→Volnovakha и Donetsk→Yalta POST HTTP200 дают внутреннюю/материковую подпись по проверенному mapping. Hosted offline1104/0fail/1skip, TS/build/browser PASS; отдельный live_probe прежний Photon503. PR14 Draft, main/Android V2 прежние. Переключатель пока только в отдельном demo, к app не подключён. APK получает обновлённый /v3 после перезагрузки; device check не выполнен. Итоговая запись local.
