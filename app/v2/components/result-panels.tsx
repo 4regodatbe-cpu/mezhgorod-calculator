@@ -1,6 +1,7 @@
 "use client";
 
 import { RouteCard } from "./route-card";
+import {v3RouteHeading} from './route-heading';
 import { AlternativeRouteCard } from "./unverified-route-card";
 import { RouteUnavailable } from "./route-notices";
 import { confirmedFreeToll, type TollPeriod } from "./quote-presentation";
@@ -29,10 +30,12 @@ export function ResultPanels({
   if (fastestOnly && result) {
     const leg = result.options?.[0] ?? result.legs[0];
     if (!leg) return null;
+    const heading=v3RouteHeading(result,leg);
     return <section className="mt-4 grid min-w-0 grid-cols-1 gap-3">
       <RouteCard
         title="Самый быстрый маршрут"
         showFastestSummary
+        summaryTitle={heading}
         specialOnly={result.specialOnly === true}
         accent="blue"
         trip={leg.fast}
@@ -41,7 +44,7 @@ export function ResultPanels({
         manualToll={manualToll}
         onManualToll={onManualToll}
         onTollPeriodChange={onTollPeriodChange}
-        onCopy={() => copyStandard("fastest-only", "Самый быстрый маршрут", leg, leg.fast, leg.fast.tolls, undefined, "actual", manualToll)}
+        onCopy={() => copyStandard("fastest-only", heading, leg, leg.fast, leg.fast.tolls, undefined, "actual", manualToll)}
         copied={copiedKey === "fastest-only"}
       />
     </section>;

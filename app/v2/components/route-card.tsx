@@ -28,12 +28,13 @@ type RouteCardProps = {
   onCopy: () => void;
   copied: boolean;
   showFastestSummary?: boolean;
+  summaryTitle?: string;
   specialOnly?: boolean;
 };
 
 export function RouteCard({
   title, accent, trip, toll, tollPeriod, onTollPeriodChange,
-  manualToll, onManualToll, onCopy, copied, showFastestSummary = false, specialOnly = false,
+  manualToll, onManualToll, onCopy, copied, showFastestSummary = false, specialOnly = false, summaryTitle,
 }: RouteCardProps) {
   const isUnknown = toll?.pricingStatus === "unknown";
   const isPriced = toll?.pricingStatus === "priced";
@@ -49,7 +50,7 @@ export function RouteCard({
   return (
     <article className={"min-w-0 w-full rounded-[24px] border border-brand-border/25 border-s-4 bg-brand-surface p-2.5 shadow-[0_12px_32px_rgba(16,42,67,.07)] " + (accent === "blue" ? "border-brand-action/35 border-s-brand-action" : "border-brand-route/40 border-s-brand-route")}>
       <div className="flex min-w-0 items-center justify-between gap-2">
-        <h3 className={"min-w-0 leading-snug text-brand-text " + (showFastestSummary ? "text-lg font-bold sm:text-xl" : "text-base font-black sm:text-lg")}>{showFastestSummary ? "Выбран маршрут с минимальным временем" : title}</h3>
+        <h3 className={"min-w-0 leading-snug text-brand-text " + (showFastestSummary ? "text-lg font-bold sm:text-xl" : "text-base font-black sm:text-lg")}>{showFastestSummary ? summaryTitle ?? "Выбран маршрут с минимальным временем" : title}</h3>
         {!showFastestSummary && <span className={"shrink-0 rounded-full px-2.5 py-1 text-xs font-extrabold " + (accent === "blue" ? "bg-brand-subtle text-brand-action" : "bg-brand-route/15 text-brand-text")}>{accent === "blue" ? "Маршрут" : "Вариант проезда"}</span>}
       </div>
       <div className={"mt-2 gap-x-3 gap-y-1.5 text-sm " + (showFastestSummary ? "grid grid-cols-2 items-center" : "flex flex-wrap")}>

@@ -64,6 +64,7 @@ export type NationalTollCoverage = {
 export type Trip = { tollEstimate?: TollEstimateView; nationalTollCoverage?: NationalTollCoverage; m4PvpPreview?: M4PvpPreview; meters: number; seconds: number; quality?: RouteQuality; tollValidation?: TollValidationView; pricingByVehicle?: Record<PricingVehicle, PricingView> };
 export type TollView = { priceConfirmation?: string; displayLabel?: string | null; amount: number | null; weekdayAmount: number | null; weekendAmount: number | null; period: string; segments: string[]; confidence: "matched" | "none"; pricingStatus: "priced" | "free" | "unknown" };
 export type Leg = {
+  corridor?: "mainland" | "crimea";
   from: string;
   to: string;
   fast: Trip & { tolls: TollView };
@@ -71,4 +72,4 @@ export type Leg = {
   freeCandidate?: Trip | null;
   freeError?: string;
 };
-export type Result = { automaticMode?: "standard"|"dual"; legs: Leg[]; options?: Leg[]; mode?: "standard"|"dual"; specialEndpoint?:boolean; specialOnly?:boolean; crimeaComparisonVerified?:boolean; crimeaAccepted?:boolean };
+export type Result = { preferredCorridor?: "mainland"|"crimea"; automaticMode?: "standard"|"dual"; legs: Leg[]; options?: Leg[]; mode?: "standard"|"dual"; specialEndpoint?:boolean; specialOnly?:boolean; crimeaComparisonVerified?:boolean; crimeaAccepted?:boolean };

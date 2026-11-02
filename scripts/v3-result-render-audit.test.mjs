@@ -6,6 +6,16 @@ function load(file){if(!existsSync(file)){file=['.ts','.tsx'].map(s=>file+s).fin
  const mod={exports:{}};cache.set(file,mod);const code=ts.transpileModule(readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022}}).outputText;
  vm.runInNewContext(code,{module:mod,exports:mod.exports,require:name=>name.startsWith('@/')?load(resolve(root,name.slice(2))):name.startsWith('.')?load(resolve(dirname(file),name)):require(name)});return mod.exports;}
 const {ResultPanels}=load(resolve(root,'app/v2/components/result-panels.tsx'));
+test('V3 actual result headings describe constrained corridors without claiming global fastest',()=>{
+ const toll={amount:0,weekdayAmount:0,weekendAmount:0,period:'все дни',segments:[],confidence:'none',pricingStatus:'free'};
+ const fast={meters:60000,seconds:3600,tolls:toll,quality:{status:'single',message:'Выбран маршрут с минимальным временем'}};
+ const leg={from:'A',to:'B',corridor:'mainland',fast,free:null};
+ for(const [specialOnly,corridor,expected] of [[true,'mainland','Выбран маршрут по новым территориям'],[false,'mainland','Выбран маршрут через материк'],[false,'crimea','Выбран маршрут через Крым']]){
+  const option={...leg,corridor};
+  const html=renderToStaticMarkup(React.createElement(ResultPanels,{result:{specialEndpoint:true,specialOnly,legs:[option],options:[option]},fastestOnly:true,standardHasTolls:false,standardOptimal:null,manualToll:'',onManualToll:()=>{},copiedKey:'',copyStandard:async()=>{},tollPeriod:'actual',onTollPeriodChange:()=>{}}));
+  assert.ok(html.includes(expected));assert.doesNotMatch(html,/Выбран маршрут с минимальным временем/);
+ }
+});
 test('V1 Release page renders the reference notice only after a result',()=>{
  const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');
  assert.match(page,/\{result && <p role="note"[^>]*>Расчёт носит справочный характер\. Фактический маршрут, время в пути и стоимость проезда по платным дорогам могут отличаться от указанных\.<\/p>\}/);
