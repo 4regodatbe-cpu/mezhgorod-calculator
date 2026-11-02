@@ -1,5 +1,11 @@
 # Rational corridor comparison — offline proposal
 
+## Local interface demo
+
+Open `demo-preview.html` as a standalone file (no server or dependencies), or run `node experiments/rational-corridor/serve-demo.mjs` and visit http://127.0.0.1:3188. Rebuild the standalone file after edits with `node experiments/rational-corridor/build-demo.mjs`.
+
+The demo uses generic selectable test endpoints and explicitly synthetic numbers, not live geocoding/routing. It exercises a single-result direct/external toggle for two distinct special endpoints, automatic 2:1 initial recommendation, explicit user override, signed time/price differences, address swap/reset, unavailable alternatives and unknown toll completeness. No requests leave the page. The real integration still needs verified geometry/territory leg times for BOTH candidates and correct ordinary/special vehicle pricing; do not substitute these fixtures for actual routes. Main app and Production are unchanged.
+
 Owner discussion 2026-11-02: the Dzhankoy 60km sector was illustrative, not a geographic constraint. Do not implement place-name/radius exceptions or claim that time in administrative polygons proves safety. No verified dynamic front-line/access data exists in this model.
 
 Build two physically valid candidates when appropriate: direct and external approach. Measure total driving time T and time S within the four special territories from verified routed legs (never proportional allocation by mileage). Compare T + w*S. The prototype w=1 means one additional minute inside the territories counts as one additional minute of inconvenience on top of total travel time. This is an explicit provisional preference, NOT an empirically established risk coefficient. Expose sensitivity to w during evaluation, not as a new public control.

@@ -1,3 +1,7 @@
+## 02.11.2026 — отдельный стенд переключателя проезда LOCAL
+
+[Checkpoint](checkpoints/2026-11-02-corridor-switch-demo-LOCAL.md). Standalone experiments/rational-corridor/demo-preview.html: две особые тестовые точки включают переключатель direct/external, один результат, разница времени/цены, начальная рекомендация2:1 и ручной выбор. Учебные данные явно обозначены; реальные адреса/провайдеры ещё не подключены. 11 model/comparator tests PASS, scoped lint и syntax checks PASS; mobile Chromium TLS timeout, visual acceptance OPEN. App/Production не менялись, push нет.
+
 ## 02.11.2026 — пробный вес особого времени 2:1, LOCAL
 
 [Checkpoint](checkpoints/2026-11-02-rational-corridor-weight-2to1-LOCAL.md). Владелец выбрал 2 часа вне особых территорий = 1 часу внутри. Прототип явно использует ordinary + 2*special (=total+special), на равенстве предпочитает меньшее реальное время. Пограничные регрессии добавлены; runtime/Production не менялись.
