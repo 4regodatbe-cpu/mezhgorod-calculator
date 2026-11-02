@@ -1,3 +1,7 @@
+## 02.11.2026 — честные подписи выбранного проезда V3 LOCAL
+
+[Checkpoint](checkpoints/2026-11-02-route-heading-LOCAL.md). Заголовок и копия V3 различают verified specialOnly, mainland и crimea; без metadata нейтральная подпись, обычные поездки и V2 прежние. Не утверждается проезд через Краснодар по одному имени corridor. Heading2/SSR9 PASS, offline1104 PASS/0FAIL/1SKIP, TS/lint/build PASS. Волгоград: offline plans Донецк/Волноваха mainland без моста, Мелитополь crimea с мостом в обе стороны. Переключатель остаётся отдельным demo до двух реальных рассчитанных вариантов; fake alternative не подключён. No push/Production.
+
 ## 02.11.2026 — отдельный стенд переключателя проезда LOCAL
 
 [Checkpoint](checkpoints/2026-11-02-corridor-switch-demo-LOCAL.md). Standalone experiments/rational-corridor/demo-preview.html: две особые тестовые точки включают переключатель direct/external, один результат, разница времени/цены, начальная рекомендация2:1 и ручной выбор. Учебные данные явно обозначены; реальные адреса/провайдеры ещё не подключены. 11 model/comparator tests PASS, scoped lint и syntax checks PASS; mobile Chromium TLS timeout, visual acceptance OPEN. App/Production не менялись, push нет.
