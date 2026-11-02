@@ -1,3 +1,7 @@
+## 02.11.2026 — уточнение северных маршрутов: полные суммы подтверждены
+
+[Checkpoint](checkpoints/2026-11-02-crimea-north-policy-RECONCILED.md). Предыдущие unknown в северных controls были получены с bare date, тогда как UI отправляет ISO instant. Реальная Production-проверка с 2026-11-02T12:00:00+03:00: Ялта↔Ростов 2060/2210 ₽, Ялта↔Москва 4725/5625 ₽, все четыре HTTP200/priced. Ростов сохраняет А289800+обход410; Москва идёт через другой съезд А289385, полный800/обход410 ей не назначаются. Ранее сделанный вывод о недостатке тарифных данных для этих конкретных проверок исправлен. Runtime/Production a05fba10 не менялись. Исправлен probe, добавлены 2 PASS regression, TS/lint PASS; исходные исторические evidence сохранены. Новые результаты local.
+
 ## 02.11.2026 — Crimea routing P1 опубликован и проверен на Production
 
 [Checkpoint](checkpoints/2026-11-02-crimea-routing-production-DONE.md). Production `a05fba100055787e9351122eaafa1471bffc44ff`, deployment dpl_VdMSM7rCqAvwK4jHAV9pasDXDm8x READY; /api/version подтвердил SHA. Все 14 main-site controls HTTP200: Анапа↔Керчь 133–134 км, Анапа↔Ялта ~388 км, Ялта↔Адлер ~739 км, платность free/0. Дальние Москва/Ростов строятся, неполные тарифы unknown/null; внутренние особые маршруты без регрессий. Hosted offline 1099 PASS/0 FAIL/1 SKIP, TS/build/browser PASS; live_probe отдельно FAILED на прежнем Photon503/cooldown. PR14 Draft, main/Android V2 сохранены. Итоговые результаты после выпуска сохранены локально; source Production a05fba10.
