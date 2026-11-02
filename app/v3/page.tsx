@@ -71,14 +71,16 @@ export default function V3Page() {
   const standardOptimal = standardLeg ? pickOptimal(standardLeg.fast, standardLeg.free) : null;
   return <main translate="no" className="notranslate calculator-modern min-h-screen bg-brand-page pb-[env(safe-area-inset-bottom)] text-brand-text">
     <div className="v2-page-inset mx-auto w-full max-w-3xl px-3 sm:px-6">
-      <header className="mb-2 grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:mb-4">
+      <header className="mb-1 flex items-start justify-between gap-2">
         <div className="flex min-w-0 items-center">
           <a href="/v3" aria-label="из А в Б — калькулятор" className="shrink-0 rounded-xl p-1"><Image src="/izavb-approved-logo.svg" alt="из А в Б" width={136} height={60} priority className="dark:invert" /></a>
         </div>
-        <div className="text-center"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><span className="whitespace-nowrap text-xs font-bold tracking-wide text-brand-muted">V1.01</span></div>
-        <div className="flex min-w-0 items-center justify-end gap-1.5"><ThemeToggle /></div>
+        <h1 className="sr-only">из А в Б — калькулятор поездок</h1>
+        <div className="flex shrink-0 flex-col items-end">
+          {!isAndroidApp && <a href="/downloads/Iz-A-v-B-V1.01-debug.apk" download="Iz-A-v-B-V1.01-debug.apk" aria-label="Скачать для Android" className="inline-flex min-h-11 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action"><span className="inline-flex min-h-7 items-center gap-1 rounded-lg bg-brand-action px-2 text-[11px] font-bold text-brand-action-foreground transition hover:brightness-110"><Download className="h-3.5 w-3.5 shrink-0" aria-hidden="true"/>Скачать для Android</span></a>}
+          <ThemeToggle />
+        </div>
       </header>
-      {!isAndroidApp && <div className="mb-2 flex justify-end"><a href="/downloads/Iz-A-v-B-V1.01-debug.apk" download="Iz-A-v-B-V1.01-debug.apk" aria-label="Скачать для Android" className="inline-flex min-h-10 items-center gap-1.5 rounded-xl bg-brand-action px-3 text-xs font-bold text-brand-action-foreground transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action"><Download className="h-4 w-4 shrink-0" aria-hidden="true"/>Скачать для Android · V1.01</a></div>}
       <div ref={formRef} className="scroll-mt-2"><CalculatorForm
         releaseCopy
         specialOnly={result?.specialOnly === true}

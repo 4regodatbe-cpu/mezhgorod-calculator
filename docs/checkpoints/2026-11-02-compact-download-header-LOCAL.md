@@ -1,0 +1,5 @@
+# Compact V3 download header — LOCAL
+
+Owner asks to move a smaller Android download above the theme control, remove version text, and lift the mode/address area. V3 header is now a left logo/right stacked-actions flex row; removed centred version and the separate below-header download row. Download uses a smaller 28px visual pill with an unchanged accessible 44px minimum link target. Same APK URL/bytes; hidden in Android WebView as before. V2 and calculations unchanged.
+
+Target APK/link tests2, form UI tests18, result SSR tests9 PASS; TypeScript and scoped ESLint exit0. Existing source-layout expectation updated from the superseded three-column header to the requested flex layout, preserving all other form/V2 assertions. Full offline/build pending. No mobile/desktop visual screenshot verified yet; previous Chromium attempts in this environment failed TLS -202. No push/Production in this block.

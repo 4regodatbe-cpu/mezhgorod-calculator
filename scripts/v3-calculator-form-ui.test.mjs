@@ -61,7 +61,7 @@ test('V1 first-screen vertical spacing is compact without shrinking text or V2 s
  const current=render({label:''},{label:''});
  const legacy=render({label:''},{label:''},false,false);
  const page=readFileSync(resolve(root,'app/v3/page.tsx'),'utf8');
- assert.match(page,/header className="mb-2 grid grid-cols-\[1fr_auto_1fr\]/);
+ assert.match(page,/header className="mb-1 flex items-start justify-between gap-2"/);
  assert.match(current,/class="mb-2\.5 grid grid-cols-2 rounded-2xl/);
  assert.match(current,/class="mt-3 pt-3 border-t/);
  assert.match(current,/class="mt-2 p-2\.5 flex min-w-0/);
