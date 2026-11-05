@@ -1,0 +1,56 @@
+name: V3 live browser acceptance (read-only Production)
+
+on:
+  push:
+    branches: [fix/v3-missing-route-prices-2026-10-15]
+    paths:
+      - .github/workflows/v3-live-browser-acceptance.yml
+      - scripts/v3-live-browser-acceptance.mjs
+      - scripts/v3-live-browser-workflow.test.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v3-live-browser-acceptance-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  live-v3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      V3_ACCEPTANCE_URL: https://mezhgorod-calculator.vercel.app/v3
+      V3_ACCEPTANCE_OUTPUT: v3-live-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+      - name: Install pinned Playwright in temporary folder
+        run: npm install --prefix "$RUNNER_TEMP/v3-playwright" --no-save --package-lock=false --no-audit --no-fund playwright@1.56.0
+      - name: Install Chrome already proven in B03 workflow
+        id: chrome
+        uses: browser-actions/setup-chrome@c785b87e244131f27c9f19c1a33e2ead956ab7ce # v1
+        with:
+          chrome-version: '156.0.8078.47'
+          install-dependencies: true
+          install-chromedriver: false
+      - name: Validate runner script syntax
+        run: node --check scripts/v3-live-browser-acceptance.mjs
+      - name: Run workflow and live-acceptance contract tests
+        run: node --test scripts/v3-live-browser-workflow.test.mjs
+      - name: Run live production acceptance; /r and /api/v3/calculate are not mocked
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          PLAYWRIGHT_MODULE: ${{ runner.temp }}/v3-playwright/node_modules/playwright/index.mjs
+        run: node scripts/v3-live-browser-acceptance.mjs
+      - name: Upload exact response summary, screenshots and failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v3-live-browser-acceptance-${{ github.run_id }}
+          path: v3-live-results/
+          retention-days: 30
+          if-no-files-found: warn

@@ -1,0 +1,9 @@
+# 2026-11-05 — V3 production browser acceptance workflow (LOCAL)
+
+Owner requested a real GitHub Actions browser test against published V3, with no changes to Production and no TinyFish. The prepared archive was available and ZIP integrity passed. PR #14/remote head was confirmed as open Draft at `a6bea89dd4b481a1352dc492969004e6cd1e6e38`; the current local development branch has 91 unpushed commits, so the acceptance-only candidate is based on `a6bea89…` in an isolated worktree to avoid bundling unrelated local changes into its one later fast-forward push.
+
+Reviewed all three supplied files against the actual V3 page/API and `RouteCard`. The supplied result selector incorrectly expected “Самый быстрый маршрут”, while the real component renders `Выбран маршрут с минимальным временем` or special-territory variants. The clear flow reused the invalid selector, weakening its stale-result check. Corrected both to use the real heading variants and added assertions that rendered distance and duration match the real `/api/v3/calculate` response.
+
+Also ensured the workflow runs the static contract test and triggers when that test changes. Confirmed the only network interception is `/api/collect` abort (`blockedbyclient`) before sending, while `/r` and `/api/v3/calculate` are not mocked. `/api/version` is requested first, and unidentified SHA remains a failed/partial result. Existing B03 workflow was not changed.
+
+Checks: runner syntax PASS; static contract file PASS (exit 0); PyYAML structural validation PASS; `git diff --check` PASS. No live browser or Actions run was started because push is explicitly not authorized in this task. No app runtime, tariffs, Production, Android or 2GIS were touched. Detailed checkpoint: `docs/checkpoints/2026-11-05-2322-v3-live-browser-acceptance-LOCAL.md`.
