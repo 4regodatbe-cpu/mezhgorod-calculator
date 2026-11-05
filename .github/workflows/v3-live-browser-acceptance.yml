@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/v3-live-browser-acceptance.yml
       - scripts/v3-live-browser-acceptance.mjs
+      - scripts/v3-live-browser-acceptance-contract.mjs
       - scripts/v3-live-browser-workflow.test.mjs
   workflow_dispatch:
 
