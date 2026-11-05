@@ -31,8 +31,15 @@ The prior runner queried `article.filter({hasText: /^...$/})`. The regular expre
 - `git diff --check` — PASS.
 - No live browser rerun, app test/build, or GitHub Actions run was performed in this local-only stage. Production’s previous real-browser outcomes remain as above; no new route status is claimed.
 
+## Post-push live result
+
+- Exactly one ordinary fast-forward push was performed after the owner authorized it. GitHub readback and PR #14 confirmed head `7d5caee6602ae0431906566ab2ec074fd89b8540`; PR remains OPEN / Draft. Production was not changed; `/api/version` reports `a6bea89dd4b481a1352dc492969004e6cd1e6e38`.
+- Live workflow [42116523393](https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/42116523393) completed FAILURE in 2m31s on the live test step; static contract step passed and artifact upload passed. Artifact `13456406844` digest is `sha256:111e7de41e63894bcf0184bea8821ac16363c188a11322262c053671d85f380c`.
+- Eight outcomes: 3 PASS (#05 Donetsk→Volnovakha, #07 Krasnodar→Rostov-на-Дону, #08 analytics isolation), 2 FAIL (#01 Yalta→St Petersburg, #06 Donetsk→Melitopol), 3 BLOCKED (#02–04); no API_PASS/UI_FAIL.
+- #01 and #06 both timed out after 30 seconds waiting for suggestion buttons. In both cases the runner recorded `requestSent:false`, no `/r` HTTP status/latency/items, no visible error/loading/empty/results state, and zero page errors. Failure screenshots show the input blank. The evidence localizes failure before the search HTTP request; it does not establish Photon failure, empty response or a delayed response. This may be an automation/client-hydration input-readiness race, but current evidence cannot prove that over a runtime interaction defect.
+- #05: `/api/v3/calculate` HTTP 200 in 3599 ms; 58.301 km / 4325 s; toll status `free`; DOM showed 58.3 km, 1 h 12 min, four fare totals; no page errors. #07 (mobile): HTTP 200 in 3511 ms; 273.894 km / 14627 s; toll status `priced`; DOM showed 273.9 km, 4 h 4 min and 1,000 ₽ tolls (Fri–Sun); no page errors. #08: one analytics request observed, one abort succeeded, zero abort errors, based on successful #07 API+DOM result.
+- Artifact contains screenshots for #01, #05, #06 and #07 only; blocked steps and derived #08 have no separate screenshots. All available screenshots were inspected.
+
 ## Next step
 
-Local checkpoint commit has parent `700b3ce5d1e22bb1c02da67bf17e4c8d42875653`. Incremental bundle: `/workspace/v3-live-browser-acceptance-stage-s-2026-11-06.bundle`; `git bundle verify` passed and reports that it requires the parent commit as a prerequisite.
-
-The candidate is prepared for one separately authorized ordinary fast-forward push from parent `700b3ce…`. Push is explicitly not authorized in this stage. After authorization, run the existing workflow and inspect its new `results.json`, HTTP evidence, failure evidence and screenshots. Do not claim seven route calculations passed until those new outputs establish it.
+Do not perform another push without separate authorization. The smallest diagnostic follow-up is to capture the actual input value immediately after fill and after a short control-stability check, then wait for the client component to be interactive before issuing city searches. Re-run the existing acceptance to distinguish input/hydration timing from a runtime search defect. Do not change GeoNames, Photon or production code until a repeatable user-level failure or `/r` response supports it. The original 91 local-only commits remain untouched.
