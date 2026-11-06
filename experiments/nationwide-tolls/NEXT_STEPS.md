@@ -1,3 +1,32 @@
+# STAGE Z — isolated M‑4 integration complete; M‑11 blocked pending Stage 8 handoff
+
+Candidate is local only in `/workspace/stage-z-tariff-integration`, branch `codex/stage-z-tariff-integration`, based on `d60e733313860d2412d8be64f4be10ef71f7de28`. Stage X corrected M‑4 data and Stage V selected-route trace protection are integrated. M‑11 patch was not available, so do not claim it is integrated or changed. See [Stage Z report](checks/2026-11-06-stage-z-integration/README.md) and [DONE-LOCAL checkpoint](../../docs/checkpoints/2026-11-06-stage-z-tariff-integration-DONE-LOCAL.md).
+
+**Next actions, in order:**
+
+1. Obtain and SHA256-verify `2gis-diagnostics-stage8-2026-11-06.tar.gz` (`310d3b70f53e79057e45927beb3edf448f08ca0a17200f782e1eb8f40f223918`), or the exact Stage 8 patch/handoff plus its source bundle. Required inspection set: official M‑11 source documents/effective-date evidence and manifest; old and new `data/tolls/m11/` snapshots/matrix; `lib/toll-engine/m11-moscow-schedule.ts`, `m11-moscow-production.ts`, `m11-current-tariffs.ts`; `lib/v3-calculation/m11-product-boundaries.ts`; any `route-leg-pricing.ts` diff; Stage 8 tests covering both products/directions/dates, boundary time and special days; Stage 8 README/checkpoint/file list and SHA manifest. Do not synthesize missing rows from the handoff summary.
+2. Verify the official period-selection rule at the M‑11 boundary `2026-11-02T01:00:00+03:00`; if entry/exit-PVP time cannot be derived from supported route evidence, keep the result unknown/estimate. Preserve historical rates and the 15–58 vs 58–679 product boundary.
+3. Resolve whether the later posted M‑4 table has a documented effective date; Order 58 remains the only locally retained dated source in Stage X. Preserve `unknown` for four external-only controls and incomplete full trip totals.
+4. Run the combined candidate on a supported dependency-complete ordinary GitHub Actions runner after a separately authorized push, only on the exact candidate SHA. Required workflows: `special-territory-policy.yml` and `calculator-final-gate.yml`; no push is currently authorized. Keep the five current local full-suite failures visible; do not weaken tests or claim green.
+
+Historical Stage X/Y/Stage W sections below are preserved; Stage W's intermediate tariff interpretation remains superseded for correctness.
+
+# STAGE X DONE LOCAL — no push/publication
+
+Stage X restored selected M‑4 fares from Order 58 and corrected the Stage W category/column mapping. Evidence, quantitative impacts, and actual gate results: [Stage X report](checks/2026-11-06-stage-x-m4-reconciliation/README.md) and [DONE checkpoint](../../docs/checkpoints/2026-11-06-stage-x-m4-column-reconciliation-DONE-LOCAL.md). Keep Stage W's original report/checkpoint unchanged as historical evidence; they are superseded for fare correctness.
+
+**Next: obtain a dated, reproducible official current HTML/PDF source capture (including effective date), then rerun the full offline gate in an unconstrained dependency-complete CI runner.** The exact HTML response used by Stage W is not in the repository, and local full gate is blocked by sandbox subprocess/browser restrictions. The candidate is not release-ready. Push/publication remains forbidden.
+
+# STAGE W DONE LOCAL (historical candidate; correctness under review)
+
+Read the detailed report and final checkpoint first:
+- `checks/2026-11-06-stage-w-m4-current-tariffs/README.md`
+- `../../docs/checkpoints/2026-11-06-stage-w-m4-current-tariffs-DONE-LOCAL.md`
+
+Current V3 M‑4 endpoint/south rows are now deterministically repriced from the observed official category-I no-transponder tariff table, not historical Order 58. Treat every transferred current-table amount as an **unconfirmed estimate**, with observed-at lower date bound only; no detailed-PDF legal effective date is asserted. Four Yandex-only controls without an official product vector remain `unknown`. Route-boundary/geometry logic and other road tariffs were not changed. Yalta→Rostov saved replay estimates changed to 2,210 ₽ (weekday) / 3,000 ₽ (Saturday); both are explicitly unconfirmed.
+
+Passed: focused M‑4/south-route/calendar regressions 71/71, quote/API script, JSON/JS syntax, idempotent generation, `git diff --check`. Not completed: full offline gate, TypeScript, ESLint, Webpack build—dependencies absent; `pnpm run test:audit` exit 254 attempting `/home/agent/.local/share/pnpm/store`. Preserve the original Stage V five-gate diagnostic; do not claim green. **Do not publish** until the current tariff PDF/effective date is independently established and CI gates run in a dependency-complete environment. Next concrete step: obtain/fetch the operator-linked detailed current tariff PDF through an authorized source; then rerun exact full gates in CI or a complete local environment. No repeated route or 2GIS audit.
+
 # DONE — V3 published as primary, V2 retained as the old algorithm
 
 Published release SHA `d6fd4c1c7904ea290abb00ce1b777094e5141cff` (tree `d8bc523dcd7fd713d15e72204ff3db77e012d0ff`): `/` and `/v3` use the active V3 calculator; `/v2` remains available and marked “старый алгоритм”. Production deployment `dpl_8WnsqmTxKKi9GG8qAaAK3tpYFzaA` is READY; both production aliases and `/`, `/v2`, `/v3` were verified. CI run `39287801436` completed/success (`verify=success`); optional Photon live probe got 503/timeouts and later live corpus steps were skipped under `continue-on-error`. Local full test/build results and the Turbopack limitation are recorded in the [DONE checkpoint](../../docs/checkpoints/2026-10-19-v3-cutover-DONE.md). PR #14 remains open/draft; no merge or main change. Audit evidence, tariff matrix, and findings were untouched. Resume unresolved audit work; РВП-64 remains unknown, not zero, pending exact primary crosswalk or dated cash/card receipt.
