@@ -4,6 +4,7 @@ import {readFileSync, mkdirSync, writeFileSync} from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {validateTollEdges, type TollValidation} from '../lib/toll-validator.ts';
 import {inspectOdintsovoPair} from '../lib/v3-calculation/odintsovo-pair-boundary.ts';
+import {roadRouteSignature} from '../lib/toll-engine/road-boundaries.ts';
 import {replayingFetch} from '../experiments/nationwide-tolls/scripts/systemic-audit-io.mjs';
 import {calculateLegTolls} from '../lib/v3-calculation/route-leg-pricing.ts';
 import {tollsForApi} from '../lib/v2-calculation/free-route-selection.ts';
@@ -39,9 +40,10 @@ test.before(async () => {
   globalThis.fetch = async input => {unexpected.push(String(input)); throw Error('UNRECORDED_FETCH');};
   for (const [i, c] of cases.entries()) {
     c.validation = await replay(c);
-    const {odintsovoTraceBlocks, ckadTraceBlocks: _ckad, ...oldFields} = c.validation;
+    const {odintsovoTraceBlocks, ckadTraceBlocks: _ckad, routeSignature, ...oldFields} = c.validation;
     void _ckad;
     assert.deepEqual(oldFields, c.capture.record.validation);
+    assert.equal(routeSignature, roadRouteSignature(c.capture.record.route.coordinates), 'trace records the exact geometry it validates');
     assert.equal(odintsovoTraceBlocks?.length, 1);
     save(`validation-${i}`, c.validation);
   }

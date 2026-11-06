@@ -40,6 +40,8 @@ export type TollValidation = {
   failedChunkCount?: number;
   complete?: boolean;
   boothEventCoverage?: "complete" | "partial" | "none";
+  /** Exact selected geometry this validation was computed for; never transfer evidence across routes. */
+  routeSignature?: string;
   m4RoadBoundaries?: RoadBoundaryResolution;
   odintsovoTraceBlocks?: Array<{
     edges: OdintsovoTraceEdge[];
@@ -297,6 +299,7 @@ export async function validateTollEdges(route: Coordinate[], signal?: AbortSigna
       failedChunkCount: 0,
       complete: false,
       boothEventCoverage: "none",
+      routeSignature: roadRouteSignature(route),
     };
   }
 
@@ -364,6 +367,7 @@ export async function validateTollEdges(route: Coordinate[], signal?: AbortSigna
       failedChunkCount: failed.length,
       complete: false,
       boothEventCoverage: successful.length > 0 ? "partial" : "none",
+      routeSignature: roadRouteSignature(route),
     };
   }
 
@@ -390,6 +394,7 @@ export async function validateTollEdges(route: Coordinate[], signal?: AbortSigna
     failedChunkCount: 0,
     complete: true,
     boothEventCoverage: "complete",
+    routeSignature: roadRouteSignature(route),
   };
   privateTraceChunks.set(result, {routeSignature:roadRouteSignature(route),chunks:successful.map(item => item.edges)});
   return result;
