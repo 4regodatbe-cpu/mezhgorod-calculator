@@ -10,7 +10,7 @@ on:
       - scripts/v3-live-browser-readiness.mjs
       - scripts/v3-live-browser-readiness-contract.mjs
       - scripts/v3-live-browser-workflow.test.mjs
-      - scripts/v3-live-browser-hydration.test.mjs
+      - scripts/v3-live-browser-hydration.browser.mjs
   workflow_dispatch:
 
 permissions:
@@ -47,7 +47,7 @@ jobs:
         env:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
           PLAYWRIGHT_MODULE: ${{ runner.temp }}/v3-playwright/node_modules/playwright/index.mjs
-        run: node --test scripts/v3-live-browser-workflow.test.mjs scripts/v3-live-browser-hydration.test.mjs
+        run: node --test scripts/v3-live-browser-workflow.test.mjs scripts/v3-live-browser-hydration.browser.mjs
       - name: Run live production acceptance; /r and /api/v3/calculate are not mocked
         env:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}

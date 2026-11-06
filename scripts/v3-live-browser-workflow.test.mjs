@@ -6,14 +6,14 @@ import {classifyAddressSearchDiagnostic,readinessProbeSource} from './v3-live-br
 
 const workflow=readFileSync(new URL('../.github/workflows/v3-live-browser-acceptance.yml',import.meta.url),'utf8');
 const runner=readFileSync(new URL('./v3-live-browser-acceptance.mjs',import.meta.url),'utf8');
-const hydrationTest=readFileSync(new URL('./v3-live-browser-hydration.test.mjs',import.meta.url),'utf8');
+const hydrationTest=readFileSync(new URL('./v3-live-browser-hydration.browser.mjs',import.meta.url),'utf8');
 
 test('new workflow is limited to V3 acceptance files and has explicit read-only permissions',()=>{
   assert.match(workflow,/name: V3 live browser acceptance/);
   assert.match(workflow,/permissions:\s*\n\s*contents: read/);
   assert.match(workflow,/scripts\/v3-live-browser-acceptance\.mjs/);
   assert.match(workflow,/scripts\/v3-live-browser-workflow\.test\.mjs/);
-  assert.match(workflow,/scripts\/v3-live-browser-hydration\.test\.mjs/);
+  assert.match(workflow,/scripts\/v3-live-browser-hydration\.browser\.mjs/);
   assert.match(workflow,/PLAYWRIGHT_MODULE:/);
   assert.match(workflow,/scripts\/v3-live-browser-readiness\.mjs/);
   assert.match(workflow,/actions\/upload-artifact@v4/);

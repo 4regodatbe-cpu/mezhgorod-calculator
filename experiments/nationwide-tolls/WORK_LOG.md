@@ -6,6 +6,12 @@ Read only the current handoff, CKAD tariff row names/values and the relevant pro
 
 Полная прежняя история без изменения содержания: [WORK_LOG_HISTORY_2026-10-15_2228.md](WORK_LOG_HISTORY_2026-10-15_2228.md). Новые записи добавляются ниже; подробности каждого малого шага — в docs/checkpoints/.
 
+## 2026-11-06 — Stage Z stabilization: CKAD/browser contracts fixed; 3 sandbox subprocess failures remain
+
+В отдельном worktree `codex/stage-z-stabilization`, от сохранённого Stage Z `40d650a29ee06643ee325402c3c4f7fead302dd9`, исправлен CKAD test contract: capture действительно есть; новая computed `routeSignature` исключена из legacy deep equality и отдельно сверяется с собственной replay geometry. Устаревшее ожидание API 7 254 ₽ для Voronezh M‑4 route заменено на fail-closed `unknown/null`: в capture 1 из 5 текущих M‑4 validation responses, 4 отсутствуют; исторический amount имел `unconfirmed`. Browser hydration test перемещён в `.browser.mjs`: общий offline glob не запускает fixture без Playwright, выделенный workflow по-прежнему исполняет его с pinned Playwright/Chrome. Tariff/runtime/route changes отсутствуют.
+
+Targeted CKAD/V3 saved route 8/8 PASS; M‑4 62→71/trace/A‑289 5/5 test files PASS; static browser workflow 1/1 PASS; direct full offline equivalent 191/194, три оставшихся failures имеют доказанные sandbox subprocess causes. `pnpm test:audit` заблокирован auto-install store path `/home/agent/.local/share/pnpm/store`; отдельные quote/API, TypeScript, ESLint (0 errors/9 warnings), Webpack build, YAML/JS syntax и diff check PASS. Hosted workflow не запускался и реальный браузер локально не проверялся (Playwright отсутствует). Подробно: [report/log](checks/2026-11-06-stage-z-stabilization/README.md), [checkpoint](../../docs/checkpoints/2026-11-06-stage-z-stabilization-DONE-LOCAL.md). Push не разрешён; M‑11 Stage 8 evidence и актуальная M‑4 effective date/full-total uncertainty остаются открыты.
+
 ## 2026-11-06 — Stage Z: изолированная интеграция Stage X/Y М‑4 и Stage V trace; M‑11 handoff отсутствует
 
 Создан отдельный worktree `/workspace/stage-z-tariff-integration` на базе опубликованного development SHA `d60e733313860d2412d8be64f4be10ef71f7de28`; исходная 91-коммитная копия, safety ref, Stage V и Stage X/Y worktrees не менялись. Архив `2gis-diagnostics-stage8-2026-11-06.tar.gz`, заявленный Stage 8 patch `136a5a72…`, handoff `79a09e81…` и соответствующие локальные Git objects отсутствовали в доступном workspace. Поэтому M‑11 runtime оставлен строго на d60, без принятия тарифов только из отчёта.

@@ -11,6 +11,7 @@ import {matrixCkadComponent} from '../experiments/nationwide-tolls/engine/ckad-r
 import {calculateLegTolls} from '../lib/v3-calculation/route-leg-pricing.ts';
 import {tollsForApi} from '../lib/v2-calculation/free-route-selection.ts';
 import {validateTollEdges, type TollValidation} from '../lib/toll-validator.ts';
+import {roadRouteSignature} from '../lib/toll-engine/road-boundaries.ts';
 import type {RouteWithGeometry} from '../lib/route-providers.ts';
 import type {Coordinate} from '../lib/tolls.ts';
 import {replayingFetch} from '../experiments/nationwide-tolls/scripts/systemic-audit-io.mjs';
@@ -67,9 +68,10 @@ test.before(async () => {
   };
   for (const c of cases) {
     c.validation = await validation(c);
-    const {ckadTraceBlocks, ...originalFields} = c.validation;
+    const {ckadTraceBlocks, routeSignature, ...originalFields} = c.validation;
     assert.deepEqual(originalFields, c.capture.validation);
     assert.equal(ckadTraceBlocks?.length, 1);
+    assert.equal(routeSignature, roadRouteSignature(c.route.coordinates), 'derived trace signature must bind to the replayed route');
   }
 });
 test.after(() => {globalThis.fetch = networkFetch; assert.deepEqual(unexpectedRequests, []);});
@@ -180,7 +182,7 @@ test('each own quote adds981 only to the known subtotal; M12 remains the sole mi
   }
 });
 
-test('independent own Voronezh OSRM keeps7254 and gains no CKAD merely from its historical case name', async () => {
+test('independent own Voronezh OSRM keeps its subtotal non-final when M4 trace coverage is incomplete', async () => {
   const id = 'max-chain-m4-ckad-m11-zsd-prim-to-voronezh';
   const c = {id, route: gz(`${root}/cases/${id}/route.json.gz`) as RouteWithGeometry,
     capture: gz(`${root}/cases/${id}/capture.json.gz`), validation: null as TollValidation | null};
@@ -197,8 +199,17 @@ test('independent own Voronezh OSRM keeps7254 and gains no CKAD merely from its 
   try {
     const q = await quote(c);
     assert.equal(q.componentAudit.priced.includes('ckad'), false);
-    assert.equal(tollsForApi(q.tolls, c.validation!).amount, 7254);
-    assert.equal(count, 1); assert.deepEqual(replay.misses, []);
+    assert.equal(q.componentAudit.status, 'unknown');
+    assert.equal(q.componentAudit.missing.includes('m4'), true);
+    assert.equal(q.componentAudit.components.find(component => component.id === 'm4')?.tolls, null);
+    const api = tollsForApi(q.tolls, c.validation!);
+    assert.equal(api.amount, null);
+    assert.equal(api.pricingStatus, 'unknown');
+    assert.match(api.segments.join('\n'), /Обнаружены, но не полностью оценены платные системы:.*m4/);
+    // This historical capture contains only one extra M4 response; all five
+    // attempts are observed, and the four absent responses must keep M4 unknown.
+    assert.equal(count, 5);
+    assert.equal(replay.misses.length, 4);
   } finally {globalThis.fetch = original;}
 });
 
